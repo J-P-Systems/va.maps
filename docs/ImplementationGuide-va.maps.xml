@@ -1,0 +1,2000 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ImplementationGuide xmlns="http://hl7.org/fhir">
+  <id value="va.maps"/>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><h2>VAMapsIG</h2><p>The official URL for this implementation guide is: </p><pre>http://va.gov/fhir/ImplementationGuide/va.maps</pre><div><p>This implementation guide is a FHIR IG rendering of the KBS Map Set from VA sources (primarily VistA) to FHIR. Where appropriate these maps conform to the us-core profiles.</p>
+</div></div>
+  </text>
+  <url value="http://va.gov/fhir/ImplementationGuide/va.maps"/>
+  <version value="0.1.0"/>
+  <name value="VAMapsIG"/>
+  <title value="US Veterans Health Administration FHIR Map Set Implementation Guide"/>
+  <status value="draft"/>
+  <date value="2023-10-17T15:32:01+00:00"/>
+  <publisher value="JPSys"/>
+  <contact>
+    <name value="JPSys"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.jpsys.com"/>
+    </telecom>
+  </contact>
+  <description value="This implementation guide is a FHIR IG rendering of the KBS Map Set from VA sources (primarily VistA) to FHIR. Where appropriate these maps conform to the us-core profiles."/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="US"/>
+      <display value="United States of America"/>
+    </coding>
+  </jurisdiction>
+  <packageId value="va.maps"/>
+  <license value="CC0-1.0"/>
+  <fhirVersion value="4.0.1"/>
+  <dependsOn id="hl7tx">
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment">
+      <valueMarkdown value="Automatically added as a dependency - all IGs depend on HL7 Terminology"/>
+    </extension>
+    <uri value="http://terminology.hl7.org/ImplementationGuide/hl7.terminology"/>
+    <packageId value="hl7.terminology.r4"/>
+    <version value="5.3.0"/>
+  </dependsOn>
+  <dependsOn id="hl7ext">
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment">
+      <valueMarkdown value="Automatically added as a dependency - all IGs depend on the HL7 Extension Pack"/>
+    </extension>
+    <uri value="http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions"/>
+    <packageId value="hl7.fhir.uv.extensions.r4"/>
+    <version value="1.0.0"/>
+  </dependsOn>
+  <dependsOn id="hl7_fhir_us_core">
+    <uri value="http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core"/>
+    <packageId value="hl7.fhir.us.core"/>
+    <version value="5.0.1"/>
+  </dependsOn>
+  <definition>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="copyrightyear"/>
+      </extension>
+      <extension url="value">
+        <valueString value="2023+"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="releaselabel"/>
+      </extension>
+      <extension url="value">
+        <valueString value="ci-build"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="autoload-resources"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="path-liquid"/>
+      </extension>
+      <extension url="value">
+        <valueString value="template/liquid"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="path-liquid"/>
+      </extension>
+      <extension url="value">
+        <valueString value="input/liquid"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="path-qa"/>
+      </extension>
+      <extension url="value">
+        <valueString value="temp/qa"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="path-temp"/>
+      </extension>
+      <extension url="value">
+        <valueString value="temp/pages"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="path-output"/>
+      </extension>
+      <extension url="value">
+        <valueString value="output"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="path-suppressed-warnings"/>
+      </extension>
+      <extension url="value">
+        <valueString value="input/ignoreWarnings.txt"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="path-history"/>
+      </extension>
+      <extension url="value">
+        <valueString value="http://va.gov/fhir/history.html"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="template-html"/>
+      </extension>
+      <extension url="value">
+        <valueString value="template-page.html"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="template-md"/>
+      </extension>
+      <extension url="value">
+        <valueString value="template-page-md.html"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-contact"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-context"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-copyright"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-jurisdiction"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-license"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-publisher"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-version"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-wg"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="active-tables"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="fmm-definition"/>
+      </extension>
+      <extension url="value">
+        <valueString value="http://hl7.org/fhir/versions.html#maturity"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="propagate-status"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="excludelogbinaryformat"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="tabbed-snapshots"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency">
+      <valueCode value="hl7.fhir.uv.tools#current"/>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="copyrightyear"/>
+      </extension>
+      <extension url="value">
+        <valueString value="2023+"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="releaselabel"/>
+      </extension>
+      <extension url="value">
+        <valueString value="ci-build"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="autoload-resources"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="path-liquid"/>
+      </extension>
+      <extension url="value">
+        <valueString value="template/liquid"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="path-liquid"/>
+      </extension>
+      <extension url="value">
+        <valueString value="input/liquid"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="path-qa"/>
+      </extension>
+      <extension url="value">
+        <valueString value="temp/qa"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="path-temp"/>
+      </extension>
+      <extension url="value">
+        <valueString value="temp/pages"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="path-output"/>
+      </extension>
+      <extension url="value">
+        <valueString value="output"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="path-suppressed-warnings"/>
+      </extension>
+      <extension url="value">
+        <valueString value="input/ignoreWarnings.txt"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="path-history"/>
+      </extension>
+      <extension url="value">
+        <valueString value="http://va.gov/fhir/history.html"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="template-html"/>
+      </extension>
+      <extension url="value">
+        <valueString value="template-page.html"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="template-md"/>
+      </extension>
+      <extension url="value">
+        <valueString value="template-page-md.html"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="apply-contact"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="apply-context"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="apply-copyright"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="apply-jurisdiction"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="apply-license"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="apply-publisher"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="apply-version"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="apply-wg"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="active-tables"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="fmm-definition"/>
+      </extension>
+      <extension url="value">
+        <valueString value="http://hl7.org/fhir/versions.html#maturity"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="propagate-status"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="excludelogbinaryformat"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="tabbed-snapshots"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <grouping id="group0">
+      <name value="AllergyIntolerance"/>
+    </grouping>
+    <grouping id="group1">
+      <name value="Patient"/>
+    </grouping>
+    <grouping id="group2">
+      <name value="Appointment"/>
+    </grouping>
+    <grouping id="group3">
+      <name value="Condition"/>
+    </grouping>
+    <grouping id="group4">
+      <name value="Diagnostic Report for Lab"/>
+    </grouping>
+    <grouping id="group5">
+      <name value="Document Reference"/>
+    </grouping>
+    <grouping id="group6">
+      <name value="Encounter"/>
+    </grouping>
+    <grouping id="group7">
+      <name value="Immunization"/>
+    </grouping>
+    <grouping id="group8">
+      <name value="Implantable Device"/>
+    </grouping>
+    <grouping id="group9">
+      <name value="Lab Observation"/>
+    </grouping>
+    <grouping id="group10">
+      <name value="Location"/>
+    </grouping>
+    <grouping id="group11">
+      <name value="MedicationRequest"/>
+    </grouping>
+    <grouping id="group12">
+      <name value="MedRequestOrigXXX"/>
+    </grouping>
+    <grouping id="group13">
+      <name value="Observation EXAM"/>
+    </grouping>
+    <grouping id="group14">
+      <name value="Organization"/>
+    </grouping>
+    <grouping id="group15">
+      <name value="Practitioner"/>
+    </grouping>
+    <grouping id="group16">
+      <name value="Practitioner Role"/>
+    </grouping>
+    <grouping id="group17">
+      <name value="Procedure"/>
+    </grouping>
+    <grouping id="group18">
+      <name value="Smoking Status Observation"/>
+    </grouping>
+    <grouping id="group19">
+      <name value="Vital Signs"/>
+    </grouping>
+    <grouping id="group20">
+      <name value="MedDispenseOrig"/>
+    </grouping>
+    <grouping id="group21">
+      <name value="MedDispensePartial"/>
+    </grouping>
+    <grouping id="group22">
+      <name value="MedDispenseRefill"/>
+    </grouping>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/AllergyIntolerance"/>
+      </reference>
+      <name value="AllergyIntolerance"/>
+      <description value="This StructureDefinition contains the maps for Use Case AllergyIntolerance"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="group0"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/Appointment"/>
+      </reference>
+      <name value="Appointment"/>
+      <description value="This StructureDefinition contains the maps for Use Case Appointment"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="group2"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ConditionEncounterdiagnosis"/>
+      </reference>
+      <name value="Condition: Encounter diagnosis"/>
+      <description value="This StructureDefinition contains the maps for Use Case Condition, Variation Encounter diagnosis"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="group3"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ConditionProblem"/>
+      </reference>
+      <name value="Condition: Problem"/>
+      <description value="This StructureDefinition contains the maps for Use Case Condition, Variation Problem"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="group3"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/DiagnosticReportforLabDiagnosticReport"/>
+      </reference>
+      <name value="Diagnostic Report for Lab {DiagnosticReport}"/>
+      <description value="This StructureDefinition contains the maps for Use Case Diagnostic Report for Lab, ResourceType DiagnosticReport"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="group4"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/DiagnosticReportforLabChemhemtoxriaserDiagnosticReport"/>
+      </reference>
+      <name value="Diagnostic Report for Lab: Chem, hem, tox, ria, ser {DiagnosticReport}"/>
+      <description value="This StructureDefinition contains the maps for Use Case Diagnostic Report for Lab: Chem, hem, tox, ria, ser, ResourceType DiagnosticReport"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="group4"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/DiagnosticReportforLabCytopathologyDiagnosticReport"/>
+      </reference>
+      <name value="Diagnostic Report for Lab: Cytopathology {DiagnosticReport}"/>
+      <description value="This StructureDefinition contains the maps for Use Case Diagnostic Report for Lab: Cytopathology, ResourceType DiagnosticReport"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="group4"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/DiagnosticReportforLabElectronMicroscopyDiagnosticReport"/>
+      </reference>
+      <name value="Diagnostic Report for Lab: Electron Microscopy {DiagnosticReport}"/>
+      <description value="This StructureDefinition contains the maps for Use Case Diagnostic Report for Lab: Electron Microscopy, ResourceType DiagnosticReport"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="group4"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/DiagnosticReportforLabMicrobiologyDiagnosticReport"/>
+      </reference>
+      <name value="Diagnostic Report for Lab: Microbiology {DiagnosticReport}"/>
+      <description value="This StructureDefinition contains the maps for Use Case Diagnostic Report for Lab: Microbiology, ResourceType DiagnosticReport"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="group4"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/DiagnosticReportforLabMicrobiologyDiagnosticReportBacteriology"/>
+      </reference>
+      <name value="Diagnostic Report for Lab: Microbiology {DiagnosticReport}: Bacteriology"/>
+      <description value="This StructureDefinition contains the maps for Use Case Diagnostic Report for Lab: Microbiology, ResourceType DiagnosticReport, Variation Bacteriology"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="group4"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/DiagnosticReportforLabMicrobiologyDiagnosticReportMycobacteriolo"/>
+      </reference>
+      <name value="Diagnostic Report for Lab: Microbiology {DiagnosticReport}: Mycobacteriology"/>
+      <description value="This StructureDefinition contains the maps for Use Case Diagnostic Report for Lab: Microbiology, ResourceType DiagnosticReport, Variation Mycobacteriology"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="group4"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/DiagnosticReportforLabMicrobiologyDiagnosticReportMycology"/>
+      </reference>
+      <name value="Diagnostic Report for Lab: Microbiology {DiagnosticReport}: Mycology"/>
+      <description value="This StructureDefinition contains the maps for Use Case Diagnostic Report for Lab: Microbiology, ResourceType DiagnosticReport, Variation Mycology"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="group4"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/DiagnosticReportforLabMicrobiologyDiagnosticReportParasitology"/>
+      </reference>
+      <name value="Diagnostic Report for Lab: Microbiology {DiagnosticReport}: Parasitology"/>
+      <description value="This StructureDefinition contains the maps for Use Case Diagnostic Report for Lab: Microbiology, ResourceType DiagnosticReport, Variation Parasitology"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="group4"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/DiagnosticReportforLabMicrobiologyDiagnosticReportVirology"/>
+      </reference>
+      <name value="Diagnostic Report for Lab: Microbiology {DiagnosticReport}: Virology"/>
+      <description value="This StructureDefinition contains the maps for Use Case Diagnostic Report for Lab: Microbiology, ResourceType DiagnosticReport, Variation Virology"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="group4"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/DiagnosticReportforLabSurgicalPathologyDiagnosticReport"/>
+      </reference>
+      <name value="Diagnostic Report for Lab: Surgical Pathology {DiagnosticReport}"/>
+      <description value="This StructureDefinition contains the maps for Use Case Diagnostic Report for Lab: Surgical Pathology, ResourceType DiagnosticReport"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="group4"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/DocumentReference"/>
+      </reference>
+      <name value="Document Reference"/>
+      <description value="This StructureDefinition contains the maps for Use Case Document Reference"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="group5"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/EncounterInpatientPTF"/>
+      </reference>
+      <name value="Encounter: Inpatient (PTF)"/>
+      <description value="This StructureDefinition contains the maps for Use Case Encounter, Variation Inpatient (PTF)"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="group6"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/EncounterOutpatientVisit"/>
+      </reference>
+      <name value="Encounter: Outpatient (Visit)"/>
+      <description value="This StructureDefinition contains the maps for Use Case Encounter, Variation Outpatient (Visit)"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="group6"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/Immunization"/>
+      </reference>
+      <name value="Immunization"/>
+      <description value="This StructureDefinition contains the maps for Use Case Immunization"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="group7"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ImmunizationObservation"/>
+      </reference>
+      <name value="Immunization {Observation}"/>
+      <description value="This StructureDefinition contains the maps for Use Case Immunization, ResourceType Observation"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="group7"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ImplantableDeviceDevice"/>
+      </reference>
+      <name value="Implantable Device {Device}"/>
+      <description value="This StructureDefinition contains the maps for Use Case Implantable Device, ResourceType Device"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="group8"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ImplantableDeviceALeadDevice"/>
+      </reference>
+      <name value="Implantable Device: A Lead {Device}"/>
+      <description value="This StructureDefinition contains the maps for Use Case Implantable Device: A Lead, ResourceType Device"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="group8"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ImplantableDeviceDentalDevice"/>
+      </reference>
+      <name value="Implantable Device: Dental {Device}"/>
+      <description value="This StructureDefinition contains the maps for Use Case Implantable Device: Dental, ResourceType Device"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="group8"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ImplantableDevicePacemakerDevice"/>
+      </reference>
+      <name value="Implantable Device: Pacemaker {Device}"/>
+      <description value="This StructureDefinition contains the maps for Use Case Implantable Device: Pacemaker, ResourceType Device"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="group8"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ImplantableDeviceProsthesisDevice"/>
+      </reference>
+      <name value="Implantable Device: Prosthesis {Device}"/>
+      <description value="This StructureDefinition contains the maps for Use Case Implantable Device: Prosthesis, ResourceType Device"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="group8"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ImplantableDeviceTransmitterDevice"/>
+      </reference>
+      <name value="Implantable Device: Transmitter {Device}"/>
+      <description value="This StructureDefinition contains the maps for Use Case Implantable Device: Transmitter, ResourceType Device"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="group8"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ImplantableDeviceVLeadDevice"/>
+      </reference>
+      <name value="Implantable Device: V Lead {Device}"/>
+      <description value="This StructureDefinition contains the maps for Use Case Implantable Device: V Lead, ResourceType Device"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="group8"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/LabObservationObservation"/>
+      </reference>
+      <name value="Lab Observation {Observation}"/>
+      <description value="This StructureDefinition contains the maps for Use Case Lab Observation, ResourceType Observation"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="group9"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/LabObservationChemhemtoxriaserObservation"/>
+      </reference>
+      <name value="Lab Observation: Chem, hem, tox, ria, ser {Observation}"/>
+      <description value="This StructureDefinition contains the maps for Use Case Lab Observation: Chem, hem, tox, ria, ser, ResourceType Observation"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="group9"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/LabObservationChemhemtoxriaserSpecimen"/>
+      </reference>
+      <name value="Lab Observation: Chem, hem, tox, ria, ser {Specimen}"/>
+      <description value="This StructureDefinition contains the maps for Use Case Lab Observation: Chem, hem, tox, ria, ser, ResourceType Specimen"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="group9"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/LabObservationCytopathologyObservation"/>
+      </reference>
+      <name value="Lab Observation: Cytopathology {Observation}"/>
+      <description value="This StructureDefinition contains the maps for Use Case Lab Observation: Cytopathology, ResourceType Observation"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="group9"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/LabObservationCytopathologySpecimen"/>
+      </reference>
+      <name value="Lab Observation: Cytopathology {Specimen}"/>
+      <description value="This StructureDefinition contains the maps for Use Case Lab Observation: Cytopathology, ResourceType Specimen"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="group9"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/LabObservationElectronMicroscopyObservation"/>
+      </reference>
+      <name value="Lab Observation: Electron Microscopy {Observation}"/>
+      <description value="This StructureDefinition contains the maps for Use Case Lab Observation: Electron Microscopy, ResourceType Observation"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="group9"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/LabObservationElectronMicroscopySpecimen"/>
+      </reference>
+      <name value="Lab Observation: Electron Microscopy {Specimen}"/>
+      <description value="This StructureDefinition contains the maps for Use Case Lab Observation: Electron Microscopy, ResourceType Specimen"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="group9"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/LabObservationMicrobiologyObservation"/>
+      </reference>
+      <name value="Lab Observation: Microbiology {Observation}"/>
+      <description value="This StructureDefinition contains the maps for Use Case Lab Observation: Microbiology, ResourceType Observation"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="group9"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/LabObservationMicrobiologyObservationBacteriology"/>
+      </reference>
+      <name value="Lab Observation: Microbiology {Observation}: Bacteriology"/>
+      <description value="This StructureDefinition contains the maps for Use Case Lab Observation: Microbiology, ResourceType Observation, Variation Bacteriology"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="group9"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/LabObservationMicrobiologyObservationMycobacteriology"/>
+      </reference>
+      <name value="Lab Observation: Microbiology {Observation}: Mycobacteriology"/>
+      <description value="This StructureDefinition contains the maps for Use Case Lab Observation: Microbiology, ResourceType Observation, Variation Mycobacteriology"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="group9"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/LabObservationMicrobiologyObservationMycology"/>
+      </reference>
+      <name value="Lab Observation: Microbiology {Observation}: Mycology"/>
+      <description value="This StructureDefinition contains the maps for Use Case Lab Observation: Microbiology, ResourceType Observation, Variation Mycology"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="group9"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/LabObservationMicrobiologyObservationParasitology"/>
+      </reference>
+      <name value="Lab Observation: Microbiology {Observation}: Parasitology"/>
+      <description value="This StructureDefinition contains the maps for Use Case Lab Observation: Microbiology, ResourceType Observation, Variation Parasitology"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="group9"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/LabObservationMicrobiologyObservationVirology"/>
+      </reference>
+      <name value="Lab Observation: Microbiology {Observation}: Virology"/>
+      <description value="This StructureDefinition contains the maps for Use Case Lab Observation: Microbiology, ResourceType Observation, Variation Virology"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="group9"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/LabObservationMicrobiologySpecimen"/>
+      </reference>
+      <name value="Lab Observation: Microbiology {Specimen}"/>
+      <description value="This StructureDefinition contains the maps for Use Case Lab Observation: Microbiology, ResourceType Specimen"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="group9"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/LabObservationSurgicalPathologyObservation"/>
+      </reference>
+      <name value="Lab Observation: Surgical Pathology {Observation}"/>
+      <description value="This StructureDefinition contains the maps for Use Case Lab Observation: Surgical Pathology, ResourceType Observation"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="group9"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/LabObservationSurgicalPathologySpecimen"/>
+      </reference>
+      <name value="Lab Observation: Surgical Pathology {Specimen}"/>
+      <description value="This StructureDefinition contains the maps for Use Case Lab Observation: Surgical Pathology, ResourceType Specimen"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="group9"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/Location"/>
+      </reference>
+      <name value="Location"/>
+      <description value="This StructureDefinition contains the maps for Use Case Location"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="group10"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/MedDispenseOrigMedicationDispense"/>
+      </reference>
+      <name value="MedDispenseOrig {MedicationDispense}"/>
+      <description value="This StructureDefinition contains the maps for Use Case MedDispenseOrig, ResourceType MedicationDispense"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="group20"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/MedDispensePartialMedicationDispense"/>
+      </reference>
+      <name value="MedDispensePartial {MedicationDispense}"/>
+      <description value="This StructureDefinition contains the maps for Use Case MedDispensePartial, ResourceType MedicationDispense"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="group21"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/MedDispenseRefillMedicationDispense"/>
+      </reference>
+      <name value="MedDispenseRefill {MedicationDispense}"/>
+      <description value="This StructureDefinition contains the maps for Use Case MedDispenseRefill, ResourceType MedicationDispense"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="group22"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/MedicationRequestVAOrder"/>
+      </reference>
+      <name value="MedicationRequest: VA Order"/>
+      <description value="This StructureDefinition contains the maps for Use Case MedicationRequest, Variation VA Order"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="group11"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/MedRequestOrigXXXMedicationRequest"/>
+      </reference>
+      <name value="MedRequestOrigXXX {MedicationRequest}"/>
+      <description value="This StructureDefinition contains the maps for Use Case MedRequestOrigXXX, ResourceType MedicationRequest"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="group12"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ObservationEXAMObservation"/>
+      </reference>
+      <name value="Observation EXAM {Observation}"/>
+      <description value="This StructureDefinition contains the maps for Use Case Observation EXAM, ResourceType Observation"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="group13"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/Organization"/>
+      </reference>
+      <name value="Organization"/>
+      <description value="This StructureDefinition contains the maps for Use Case Organization"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="group14"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/Patient"/>
+      </reference>
+      <name value="Patient"/>
+      <description value="This StructureDefinition contains the maps for Use Case Patient"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="group1"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/Practitioner"/>
+      </reference>
+      <name value="Practitioner"/>
+      <description value="This StructureDefinition contains the maps for Use Case Practitioner"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="group15"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/PractitionerRole"/>
+      </reference>
+      <name value="Practitioner Role"/>
+      <description value="This StructureDefinition contains the maps for Use Case Practitioner Role"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="group16"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ProcedureOutpatientProcedure"/>
+      </reference>
+      <name value="Procedure: Outpatient {Procedure}"/>
+      <description value="This StructureDefinition contains the maps for Use Case Procedure: Outpatient, ResourceType Procedure"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="group17"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ProcedureRadiologyProcedure"/>
+      </reference>
+      <name value="Procedure: Radiology {Procedure}"/>
+      <description value="This StructureDefinition contains the maps for Use Case Procedure: Radiology, ResourceType Procedure"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="group17"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/ProcedureSurgeryProcedure"/>
+      </reference>
+      <name value="Procedure: Surgery {Procedure}"/>
+      <description value="This StructureDefinition contains the maps for Use Case Procedure: Surgery, ResourceType Procedure"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="group17"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/SmokingStatusObservationObservation"/>
+      </reference>
+      <name value="Smoking Status Observation {Observation}"/>
+      <description value="This StructureDefinition contains the maps for Use Case Smoking Status Observation, ResourceType Observation"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="group18"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ConceptMap"/>
+      </extension>
+      <reference>
+        <reference value="ConceptMap/VFallergyActive"/>
+      </reference>
+      <name value="VF_allergyActive"/>
+      <description value="Terminology Maps VF_allergyActive"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ConceptMap"/>
+      </extension>
+      <reference>
+        <reference value="ConceptMap/VFallergyEnteredInError"/>
+      </reference>
+      <name value="VF_allergyEnteredInError"/>
+      <description value="Terminology Maps VF_allergyEnteredInError"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ConceptMap"/>
+      </extension>
+      <reference>
+        <reference value="ConceptMap/VFallergyMechanism"/>
+      </reference>
+      <name value="VF_allergyMechanism"/>
+      <description value="Terminology Maps VF_allergyMechanism"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ConceptMap"/>
+      </extension>
+      <reference>
+        <reference value="ConceptMap/VFallergySeverity"/>
+      </reference>
+      <name value="VF_allergySeverity"/>
+      <description value="Terminology Maps VF_allergySeverity"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ConceptMap"/>
+      </extension>
+      <reference>
+        <reference value="ConceptMap/VFallergySubstanceCategory"/>
+      </reference>
+      <name value="VF_allergySubstanceCategory"/>
+      <description value="Terminology Maps VF_allergySubstanceCategory"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ConceptMap"/>
+      </extension>
+      <reference>
+        <reference value="ConceptMap/VFallergyVerificationStatus"/>
+      </reference>
+      <name value="VF_allergyVerificationStatus"/>
+      <description value="Terminology Maps VF_allergyVerificationStatus"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ConceptMap"/>
+      </extension>
+      <reference>
+        <reference value="ConceptMap/VFAntibioticSensitivityInterpretation"/>
+      </reference>
+      <name value="VF_AntibioticSensitivityInterpretation"/>
+      <description value="Terminology Maps VF_AntibioticSensitivityInterpretation"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ConceptMap"/>
+      </extension>
+      <reference>
+        <reference value="ConceptMap/VFAppointmentStatus"/>
+      </reference>
+      <name value="VF_AppointmentStatus"/>
+      <description value="Terminology Maps VF_AppointmentStatus"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ConceptMap"/>
+      </extension>
+      <reference>
+        <reference value="ConceptMap/VFBoolean"/>
+      </reference>
+      <name value="VF_Boolean"/>
+      <description value="Terminology Maps VF_Boolean"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ConceptMap"/>
+      </extension>
+      <reference>
+        <reference value="ConceptMap/VFCommunicationQualifier"/>
+      </reference>
+      <name value="VF_CommunicationQualifier"/>
+      <description value="Terminology Maps VF_CommunicationQualifier"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ConceptMap"/>
+      </extension>
+      <reference>
+        <reference value="ConceptMap/VFCoverageRelationship"/>
+      </reference>
+      <name value="VF_CoverageRelationship"/>
+      <description value="Terminology Maps VF_CoverageRelationship"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ConceptMap"/>
+      </extension>
+      <reference>
+        <reference value="ConceptMap/VFCoverageStatusForce"/>
+      </reference>
+      <name value="VF_CoverageStatusForce"/>
+      <description value="Terminology Maps VF_CoverageStatusForce"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ConceptMap"/>
+      </extension>
+      <reference>
+        <reference value="ConceptMap/VFDentalDeviceStatus"/>
+      </reference>
+      <name value="VF_DentalDeviceStatus"/>
+      <description value="Terminology Maps VF_DentalDeviceStatus"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ConceptMap"/>
+      </extension>
+      <reference>
+        <reference value="ConceptMap/VFdeviceTypePacemaker"/>
+      </reference>
+      <name value="VF_deviceTypePacemaker"/>
+      <description value="Terminology Maps VF_deviceTypePacemaker"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ConceptMap"/>
+      </extension>
+      <reference>
+        <reference value="ConceptMap/VFDiagnosticReportLabStatus"/>
+      </reference>
+      <name value="VF_DiagnosticReportLabStatus"/>
+      <description value="Terminology Maps VF_DiagnosticReportLabStatus"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ConceptMap"/>
+      </extension>
+      <reference>
+        <reference value="ConceptMap/VFdocumentReferencedocStatus"/>
+      </reference>
+      <name value="VF_documentReferencedocStatus"/>
+      <description value="Terminology Maps VF_documentReferencedocStatus"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ConceptMap"/>
+      </extension>
+      <reference>
+        <reference value="ConceptMap/VFencounterClass"/>
+      </reference>
+      <name value="VF_encounterClass"/>
+      <description value="Terminology Maps VF_encounterClass"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ConceptMap"/>
+      </extension>
+      <reference>
+        <reference value="ConceptMap/VFencounterProblemStatus"/>
+      </reference>
+      <name value="VF_encounterProblemStatus"/>
+      <description value="Terminology Maps VF_encounterProblemStatus"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ConceptMap"/>
+      </extension>
+      <reference>
+        <reference value="ConceptMap/VFencounterProblemVerificationStatus"/>
+      </reference>
+      <name value="VF_encounterProblemVerificationStatus"/>
+      <description value="Terminology Maps VF_encounterProblemVerificationStatus"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ConceptMap"/>
+      </extension>
+      <reference>
+        <reference value="ConceptMap/VFethnicityCategory"/>
+      </reference>
+      <name value="VF_ethnicityCategory"/>
+      <description value="Terminology Maps VF_ethnicityCategory"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ConceptMap"/>
+      </extension>
+      <reference>
+        <reference value="ConceptMap/VFExamResultInterpretation"/>
+      </reference>
+      <name value="VF_ExamResultInterpretation"/>
+      <description value="Terminology Maps VF_ExamResultInterpretation"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ConceptMap"/>
+      </extension>
+      <reference>
+        <reference value="ConceptMap/VFExamStatus"/>
+      </reference>
+      <name value="VF_ExamStatus"/>
+      <description value="Terminology Maps VF_ExamStatus"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ConceptMap"/>
+      </extension>
+      <reference>
+        <reference value="ConceptMap/VFgenderIdentity"/>
+      </reference>
+      <name value="VF_genderIdentity"/>
+      <description value="Terminology Maps VF_genderIdentity"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ConceptMap"/>
+      </extension>
+      <reference>
+        <reference value="ConceptMap/VFICDCodingSystems"/>
+      </reference>
+      <name value="VF_ICDCodingSystems"/>
+      <description value="Terminology Maps VF_ICDCodingSystems"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ConceptMap"/>
+      </extension>
+      <reference>
+        <reference value="ConceptMap/VFICDVersion"/>
+      </reference>
+      <name value="VF_ICDVersion"/>
+      <description value="Terminology Maps VF_ICDVersion"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ConceptMap"/>
+      </extension>
+      <reference>
+        <reference value="ConceptMap/VFimmunizationPrimarySource"/>
+      </reference>
+      <name value="VF_immunizationPrimarySource"/>
+      <description value="Terminology Maps VF_immunizationPrimarySource"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ConceptMap"/>
+      </extension>
+      <reference>
+        <reference value="ConceptMap/VFImmunizationReaction"/>
+      </reference>
+      <name value="VF_ImmunizationReaction"/>
+      <description value="Terminology Maps VF_ImmunizationReaction"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ConceptMap"/>
+      </extension>
+      <reference>
+        <reference value="ConceptMap/VFimmunizationStatusReason"/>
+      </reference>
+      <name value="VF_immunizationStatusReason"/>
+      <description value="Terminology Maps VF_immunizationStatusReason"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ConceptMap"/>
+      </extension>
+      <reference>
+        <reference value="ConceptMap/VFinferredCVX"/>
+      </reference>
+      <name value="VF_inferredCVX"/>
+      <description value="Terminology Maps VF_inferredCVX"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ConceptMap"/>
+      </extension>
+      <reference>
+        <reference value="ConceptMap/VFLabInterpretation"/>
+      </reference>
+      <name value="VF_LabInterpretation"/>
+      <description value="Terminology Maps VF_LabInterpretation"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ConceptMap"/>
+      </extension>
+      <reference>
+        <reference value="ConceptMap/VFLabObservationStatus"/>
+      </reference>
+      <name value="VF_LabObservationStatus"/>
+      <description value="Terminology Maps VF_LabObservationStatus"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ConceptMap"/>
+      </extension>
+      <reference>
+        <reference value="ConceptMap/VFLocationStatus"/>
+      </reference>
+      <name value="VF_LocationStatus"/>
+      <description value="Terminology Maps VF_LocationStatus"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ConceptMap"/>
+      </extension>
+      <reference>
+        <reference value="ConceptMap/VFMaritalStatus"/>
+      </reference>
+      <name value="VF_MaritalStatus"/>
+      <description value="Terminology Maps VF_MaritalStatus"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ConceptMap"/>
+      </extension>
+      <reference>
+        <reference value="ConceptMap/VFOrganizationIdentifierType"/>
+      </reference>
+      <name value="VF_OrganizationIdentifierType"/>
+      <description value="Terminology Maps VF_OrganizationIdentifierType"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ConceptMap"/>
+      </extension>
+      <reference>
+        <reference value="ConceptMap/VFOutpatMedReq"/>
+      </reference>
+      <name value="VF_OutpatMedReq"/>
+      <description value="Terminology Maps VF_OutpatMedReq"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ConceptMap"/>
+      </extension>
+      <reference>
+        <reference value="ConceptMap/VFPersonIdentifierType"/>
+      </reference>
+      <name value="VF_PersonIdentifierType"/>
+      <description value="Terminology Maps VF_PersonIdentifierType"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ConceptMap"/>
+      </extension>
+      <reference>
+        <reference value="ConceptMap/VFPharmacyPersonType"/>
+      </reference>
+      <name value="VF_PharmacyPersonType"/>
+      <description value="Terminology Maps VF_PharmacyPersonType"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ConceptMap"/>
+      </extension>
+      <reference>
+        <reference value="ConceptMap/VFPositiveNegative"/>
+      </reference>
+      <name value="VF_PositiveNegative"/>
+      <description value="Terminology Maps VF_PositiveNegative"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ConceptMap"/>
+      </extension>
+      <reference>
+        <reference value="ConceptMap/VFPractitionerCountry"/>
+      </reference>
+      <name value="VF_PractitionerCountry"/>
+      <description value="Terminology Maps VF_PractitionerCountry"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ConceptMap"/>
+      </extension>
+      <reference>
+        <reference value="ConceptMap/VFproblemStatus"/>
+      </reference>
+      <name value="VF_problemStatus"/>
+      <description value="Terminology Maps VF_problemStatus"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ConceptMap"/>
+      </extension>
+      <reference>
+        <reference value="ConceptMap/VFproblemVerificationStatus"/>
+      </reference>
+      <name value="VF_problemVerificationStatus"/>
+      <description value="Terminology Maps VF_problemVerificationStatus"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ConceptMap"/>
+      </extension>
+      <reference>
+        <reference value="ConceptMap/VFProcedureCodeSystem"/>
+      </reference>
+      <name value="VF_ProcedureCodeSystem"/>
+      <description value="Terminology Maps VF_ProcedureCodeSystem"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ConceptMap"/>
+      </extension>
+      <reference>
+        <reference value="ConceptMap/VFproviderGender"/>
+      </reference>
+      <name value="VF_providerGender"/>
+      <description value="Terminology Maps VF_providerGender"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ConceptMap"/>
+      </extension>
+      <reference>
+        <reference value="ConceptMap/VFraceCategory"/>
+      </reference>
+      <name value="VF_raceCategory"/>
+      <description value="Terminology Maps VF_raceCategory"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ConceptMap"/>
+      </extension>
+      <reference>
+        <reference value="ConceptMap/VFRadiologyProcedureStatus"/>
+      </reference>
+      <name value="VF_RadiologyProcedureStatus"/>
+      <description value="Terminology Maps VF_RadiologyProcedureStatus"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ConceptMap"/>
+      </extension>
+      <reference>
+        <reference value="ConceptMap/VFReligion"/>
+      </reference>
+      <name value="VF_Religion"/>
+      <description value="Terminology Maps VF_Religion"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ConceptMap"/>
+      </extension>
+      <reference>
+        <reference value="ConceptMap/VFSmokingStatus"/>
+      </reference>
+      <name value="VF_SmokingStatus"/>
+      <description value="Terminology Maps VF_SmokingStatus"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ConceptMap"/>
+      </extension>
+      <reference>
+        <reference value="ConceptMap/VFSourceOfAdmission"/>
+      </reference>
+      <name value="VF_SourceOfAdmission"/>
+      <description value="Terminology Maps VF_SourceOfAdmission"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ConceptMap"/>
+      </extension>
+      <reference>
+        <reference value="ConceptMap/VFVitalsCodes"/>
+      </reference>
+      <name value="VF_VitalsCodes"/>
+      <description value="Terminology Maps VF_VitalsCodes"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ConceptMap"/>
+      </extension>
+      <reference>
+        <reference value="ConceptMap/VFVitalsDevice"/>
+      </reference>
+      <name value="VF_VitalsDevice"/>
+      <description value="Terminology Maps VF_VitalsDevice"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ConceptMap"/>
+      </extension>
+      <reference>
+        <reference value="ConceptMap/VFVitalsLaterality"/>
+      </reference>
+      <name value="VF_VitalsLaterality"/>
+      <description value="Terminology Maps VF_VitalsLaterality"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ConceptMap"/>
+      </extension>
+      <reference>
+        <reference value="ConceptMap/VFVitalsMethod"/>
+      </reference>
+      <name value="VF_VitalsMethod"/>
+      <description value="Terminology Maps VF_VitalsMethod"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ConceptMap"/>
+      </extension>
+      <reference>
+        <reference value="ConceptMap/VFVitalsPosition"/>
+      </reference>
+      <name value="VF_VitalsPosition"/>
+      <description value="Terminology Maps VF_VitalsPosition"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ConceptMap"/>
+      </extension>
+      <reference>
+        <reference value="ConceptMap/VFVitalsSite"/>
+      </reference>
+      <name value="VF_VitalsSite"/>
+      <description value="Terminology Maps VF_VitalsSite"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ConceptMap"/>
+      </extension>
+      <reference>
+        <reference value="ConceptMap/VFVitalsUnits"/>
+      </reference>
+      <name value="VF_VitalsUnits"/>
+      <description value="Terminology Maps VF_VitalsUnits"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ConceptMap"/>
+      </extension>
+      <reference>
+        <reference value="ConceptMap/VFYesNo"/>
+      </reference>
+      <name value="VF_YesNo"/>
+      <description value="Terminology Maps VF_YesNo"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ConceptMap"/>
+      </extension>
+      <reference>
+        <reference value="ConceptMap/VistaNCPDPCoverageRelationship"/>
+      </reference>
+      <name value="Vista-NCPDPCoverageRelationship"/>
+      <description value="Terminology Maps Vista-NCPDPCoverageRelationship"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/VitalSignsObservation"/>
+      </reference>
+      <name value="Vital Signs {Observation}"/>
+      <description value="This StructureDefinition contains the maps for Use Case Vital Signs, ResourceType Observation"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="group19"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/VitalSignsObservationConcentration"/>
+      </reference>
+      <name value="Vital Signs {Observation}: Concentration"/>
+      <description value="This StructureDefinition contains the maps for Use Case Vital Signs, ResourceType Observation, Variation Concentration"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="group19"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/VitalSignsObservationdiastolic"/>
+      </reference>
+      <name value="Vital Signs {Observation}: diastolic"/>
+      <description value="This StructureDefinition contains the maps for Use Case Vital Signs, ResourceType Observation, Variation diastolic"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="group19"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/VitalSignsObservationFlow"/>
+      </reference>
+      <name value="Vital Signs {Observation}: Flow"/>
+      <description value="This StructureDefinition contains the maps for Use Case Vital Signs, ResourceType Observation, Variation Flow"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="group19"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/VitalSignsObservationsystolic"/>
+      </reference>
+      <name value="Vital Signs {Observation}: systolic"/>
+      <description value="This StructureDefinition contains the maps for Use Case Vital Signs, ResourceType Observation, Variation systolic"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="group19"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/VitalSignsOrganization"/>
+      </reference>
+      <name value="Vital Signs {Organization}"/>
+      <description value="This StructureDefinition contains the maps for Use Case Vital Signs, ResourceType Organization"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="group19"/>
+    </resource>
+    <page>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+        <valueUrl value="toc.html"/>
+      </extension>
+      <nameUrl value="toc.html"/>
+      <title value="Table of Contents"/>
+      <generation value="html"/>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="index.html"/>
+        </extension>
+        <nameUrl value="index.html"/>
+        <title value="Home"/>
+        <generation value="markdown"/>
+      </page>
+    </page>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/capabilities"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/examples"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/extensions"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/models"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/operations"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/profiles"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/resources"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/vocabulary"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/maps"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/testing"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/history"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="fsh-generated/resources"/>
+    </parameter>
+    <parameter>
+      <code value="path-pages"/>
+      <value value="template/config"/>
+    </parameter>
+    <parameter>
+      <code value="path-pages"/>
+      <value value="input/images"/>
+    </parameter>
+    <parameter>
+      <code value="path-tx-cache"/>
+      <value value="input-cache/txcache"/>
+    </parameter>
+  </definition>
+</ImplementationGuide>

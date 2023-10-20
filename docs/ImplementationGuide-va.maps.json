@@ -1,0 +1,2301 @@
+{
+  "resourceType" : "ImplementationGuide",
+  "id" : "va.maps",
+  "text" : {
+    "status" : "extensions",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>VAMapsIG</h2><p>The official URL for this implementation guide is: </p><pre>http://va.gov/fhir/ImplementationGuide/va.maps</pre><div><p>This implementation guide is a FHIR IG rendering of the KBS Map Set from VA sources (primarily VistA) to FHIR. Where appropriate these maps conform to the us-core profiles.</p>\n</div></div>"
+  },
+  "url" : "http://va.gov/fhir/ImplementationGuide/va.maps",
+  "version" : "0.1.0",
+  "name" : "VAMapsIG",
+  "title" : "US Veterans Health Administration FHIR Map Set Implementation Guide",
+  "status" : "draft",
+  "date" : "2023-10-17T15:32:01+00:00",
+  "publisher" : "JPSys",
+  "contact" : [{
+    "name" : "JPSys",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www.jpsys.com"
+    }]
+  }],
+  "description" : "This implementation guide is a FHIR IG rendering of the KBS Map Set from VA sources (primarily VistA) to FHIR. Where appropriate these maps conform to the us-core profiles.",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "US",
+      "display" : "United States of America"
+    }]
+  }],
+  "packageId" : "va.maps",
+  "license" : "CC0-1.0",
+  "fhirVersion" : ["4.0.1"],
+  "dependsOn" : [{
+    "id" : "hl7tx",
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment",
+      "valueMarkdown" : "Automatically added as a dependency - all IGs depend on HL7 Terminology"
+    }],
+    "uri" : "http://terminology.hl7.org/ImplementationGuide/hl7.terminology",
+    "packageId" : "hl7.terminology.r4",
+    "version" : "5.3.0"
+  },
+  {
+    "id" : "hl7ext",
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment",
+      "valueMarkdown" : "Automatically added as a dependency - all IGs depend on the HL7 Extension Pack"
+    }],
+    "uri" : "http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions",
+    "packageId" : "hl7.fhir.uv.extensions.r4",
+    "version" : "1.0.0"
+  },
+  {
+    "id" : "hl7_fhir_us_core",
+    "uri" : "http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core",
+    "packageId" : "hl7.fhir.us.core",
+    "version" : "5.0.1"
+  }],
+  "definition" : {
+    "extension" : [{
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "copyrightyear"
+      },
+      {
+        "url" : "value",
+        "valueString" : "2023+"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "releaselabel"
+      },
+      {
+        "url" : "value",
+        "valueString" : "ci-build"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "autoload-resources"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "path-liquid"
+      },
+      {
+        "url" : "value",
+        "valueString" : "template/liquid"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "path-liquid"
+      },
+      {
+        "url" : "value",
+        "valueString" : "input/liquid"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "path-qa"
+      },
+      {
+        "url" : "value",
+        "valueString" : "temp/qa"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "path-temp"
+      },
+      {
+        "url" : "value",
+        "valueString" : "temp/pages"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "path-output"
+      },
+      {
+        "url" : "value",
+        "valueString" : "output"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "path-suppressed-warnings"
+      },
+      {
+        "url" : "value",
+        "valueString" : "input/ignoreWarnings.txt"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "path-history"
+      },
+      {
+        "url" : "value",
+        "valueString" : "http://va.gov/fhir/history.html"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "template-html"
+      },
+      {
+        "url" : "value",
+        "valueString" : "template-page.html"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "template-md"
+      },
+      {
+        "url" : "value",
+        "valueString" : "template-page-md.html"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "apply-contact"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "apply-context"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "apply-copyright"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "apply-jurisdiction"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "apply-license"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "apply-publisher"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "apply-version"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "apply-wg"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "active-tables"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "fmm-definition"
+      },
+      {
+        "url" : "value",
+        "valueString" : "http://hl7.org/fhir/versions.html#maturity"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "propagate-status"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "excludelogbinaryformat"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "tabbed-snapshots"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency",
+      "valueCode" : "hl7.fhir.uv.tools#current"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "copyrightyear"
+      },
+      {
+        "url" : "value",
+        "valueString" : "2023+"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "releaselabel"
+      },
+      {
+        "url" : "value",
+        "valueString" : "ci-build"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "autoload-resources"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "path-liquid"
+      },
+      {
+        "url" : "value",
+        "valueString" : "template/liquid"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "path-liquid"
+      },
+      {
+        "url" : "value",
+        "valueString" : "input/liquid"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "path-qa"
+      },
+      {
+        "url" : "value",
+        "valueString" : "temp/qa"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "path-temp"
+      },
+      {
+        "url" : "value",
+        "valueString" : "temp/pages"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "path-output"
+      },
+      {
+        "url" : "value",
+        "valueString" : "output"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "path-suppressed-warnings"
+      },
+      {
+        "url" : "value",
+        "valueString" : "input/ignoreWarnings.txt"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "path-history"
+      },
+      {
+        "url" : "value",
+        "valueString" : "http://va.gov/fhir/history.html"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "template-html"
+      },
+      {
+        "url" : "value",
+        "valueString" : "template-page.html"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "template-md"
+      },
+      {
+        "url" : "value",
+        "valueString" : "template-page-md.html"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "apply-contact"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "apply-context"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "apply-copyright"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "apply-jurisdiction"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "apply-license"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "apply-publisher"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "apply-version"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "apply-wg"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "active-tables"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "fmm-definition"
+      },
+      {
+        "url" : "value",
+        "valueString" : "http://hl7.org/fhir/versions.html#maturity"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "propagate-status"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "excludelogbinaryformat"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "tabbed-snapshots"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    }],
+    "grouping" : [{
+      "id" : "group0",
+      "name" : "AllergyIntolerance"
+    },
+    {
+      "id" : "group1",
+      "name" : "Patient"
+    },
+    {
+      "id" : "group2",
+      "name" : "Appointment"
+    },
+    {
+      "id" : "group3",
+      "name" : "Condition"
+    },
+    {
+      "id" : "group4",
+      "name" : "Diagnostic Report for Lab"
+    },
+    {
+      "id" : "group5",
+      "name" : "Document Reference"
+    },
+    {
+      "id" : "group6",
+      "name" : "Encounter"
+    },
+    {
+      "id" : "group7",
+      "name" : "Immunization"
+    },
+    {
+      "id" : "group8",
+      "name" : "Implantable Device"
+    },
+    {
+      "id" : "group9",
+      "name" : "Lab Observation"
+    },
+    {
+      "id" : "group10",
+      "name" : "Location"
+    },
+    {
+      "id" : "group11",
+      "name" : "MedicationRequest"
+    },
+    {
+      "id" : "group12",
+      "name" : "MedRequestOrigXXX"
+    },
+    {
+      "id" : "group13",
+      "name" : "Observation EXAM"
+    },
+    {
+      "id" : "group14",
+      "name" : "Organization"
+    },
+    {
+      "id" : "group15",
+      "name" : "Practitioner"
+    },
+    {
+      "id" : "group16",
+      "name" : "Practitioner Role"
+    },
+    {
+      "id" : "group17",
+      "name" : "Procedure"
+    },
+    {
+      "id" : "group18",
+      "name" : "Smoking Status Observation"
+    },
+    {
+      "id" : "group19",
+      "name" : "Vital Signs"
+    },
+    {
+      "id" : "group20",
+      "name" : "MedDispenseOrig"
+    },
+    {
+      "id" : "group21",
+      "name" : "MedDispensePartial"
+    },
+    {
+      "id" : "group22",
+      "name" : "MedDispenseRefill"
+    }],
+    "resource" : [{
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/AllergyIntolerance"
+      },
+      "name" : "AllergyIntolerance",
+      "description" : "This StructureDefinition contains the maps for Use Case AllergyIntolerance",
+      "exampleBoolean" : false,
+      "groupingId" : "group0"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/Appointment"
+      },
+      "name" : "Appointment",
+      "description" : "This StructureDefinition contains the maps for Use Case Appointment",
+      "exampleBoolean" : false,
+      "groupingId" : "group2"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/ConditionEncounterdiagnosis"
+      },
+      "name" : "Condition: Encounter diagnosis",
+      "description" : "This StructureDefinition contains the maps for Use Case Condition, Variation Encounter diagnosis",
+      "exampleBoolean" : false,
+      "groupingId" : "group3"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/ConditionProblem"
+      },
+      "name" : "Condition: Problem",
+      "description" : "This StructureDefinition contains the maps for Use Case Condition, Variation Problem",
+      "exampleBoolean" : false,
+      "groupingId" : "group3"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/DiagnosticReportforLabDiagnosticReport"
+      },
+      "name" : "Diagnostic Report for Lab {DiagnosticReport}",
+      "description" : "This StructureDefinition contains the maps for Use Case Diagnostic Report for Lab, ResourceType DiagnosticReport",
+      "exampleBoolean" : false,
+      "groupingId" : "group4"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/DiagnosticReportforLabChemhemtoxriaserDiagnosticReport"
+      },
+      "name" : "Diagnostic Report for Lab: Chem, hem, tox, ria, ser {DiagnosticReport}",
+      "description" : "This StructureDefinition contains the maps for Use Case Diagnostic Report for Lab: Chem, hem, tox, ria, ser, ResourceType DiagnosticReport",
+      "exampleBoolean" : false,
+      "groupingId" : "group4"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/DiagnosticReportforLabCytopathologyDiagnosticReport"
+      },
+      "name" : "Diagnostic Report for Lab: Cytopathology {DiagnosticReport}",
+      "description" : "This StructureDefinition contains the maps for Use Case Diagnostic Report for Lab: Cytopathology, ResourceType DiagnosticReport",
+      "exampleBoolean" : false,
+      "groupingId" : "group4"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/DiagnosticReportforLabElectronMicroscopyDiagnosticReport"
+      },
+      "name" : "Diagnostic Report for Lab: Electron Microscopy {DiagnosticReport}",
+      "description" : "This StructureDefinition contains the maps for Use Case Diagnostic Report for Lab: Electron Microscopy, ResourceType DiagnosticReport",
+      "exampleBoolean" : false,
+      "groupingId" : "group4"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/DiagnosticReportforLabMicrobiologyDiagnosticReport"
+      },
+      "name" : "Diagnostic Report for Lab: Microbiology {DiagnosticReport}",
+      "description" : "This StructureDefinition contains the maps for Use Case Diagnostic Report for Lab: Microbiology, ResourceType DiagnosticReport",
+      "exampleBoolean" : false,
+      "groupingId" : "group4"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/DiagnosticReportforLabMicrobiologyDiagnosticReportBacteriology"
+      },
+      "name" : "Diagnostic Report for Lab: Microbiology {DiagnosticReport}: Bacteriology",
+      "description" : "This StructureDefinition contains the maps for Use Case Diagnostic Report for Lab: Microbiology, ResourceType DiagnosticReport, Variation Bacteriology",
+      "exampleBoolean" : false,
+      "groupingId" : "group4"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/DiagnosticReportforLabMicrobiologyDiagnosticReportMycobacteriolo"
+      },
+      "name" : "Diagnostic Report for Lab: Microbiology {DiagnosticReport}: Mycobacteriology",
+      "description" : "This StructureDefinition contains the maps for Use Case Diagnostic Report for Lab: Microbiology, ResourceType DiagnosticReport, Variation Mycobacteriology",
+      "exampleBoolean" : false,
+      "groupingId" : "group4"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/DiagnosticReportforLabMicrobiologyDiagnosticReportMycology"
+      },
+      "name" : "Diagnostic Report for Lab: Microbiology {DiagnosticReport}: Mycology",
+      "description" : "This StructureDefinition contains the maps for Use Case Diagnostic Report for Lab: Microbiology, ResourceType DiagnosticReport, Variation Mycology",
+      "exampleBoolean" : false,
+      "groupingId" : "group4"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/DiagnosticReportforLabMicrobiologyDiagnosticReportParasitology"
+      },
+      "name" : "Diagnostic Report for Lab: Microbiology {DiagnosticReport}: Parasitology",
+      "description" : "This StructureDefinition contains the maps for Use Case Diagnostic Report for Lab: Microbiology, ResourceType DiagnosticReport, Variation Parasitology",
+      "exampleBoolean" : false,
+      "groupingId" : "group4"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/DiagnosticReportforLabMicrobiologyDiagnosticReportVirology"
+      },
+      "name" : "Diagnostic Report for Lab: Microbiology {DiagnosticReport}: Virology",
+      "description" : "This StructureDefinition contains the maps for Use Case Diagnostic Report for Lab: Microbiology, ResourceType DiagnosticReport, Variation Virology",
+      "exampleBoolean" : false,
+      "groupingId" : "group4"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/DiagnosticReportforLabSurgicalPathologyDiagnosticReport"
+      },
+      "name" : "Diagnostic Report for Lab: Surgical Pathology {DiagnosticReport}",
+      "description" : "This StructureDefinition contains the maps for Use Case Diagnostic Report for Lab: Surgical Pathology, ResourceType DiagnosticReport",
+      "exampleBoolean" : false,
+      "groupingId" : "group4"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/DocumentReference"
+      },
+      "name" : "Document Reference",
+      "description" : "This StructureDefinition contains the maps for Use Case Document Reference",
+      "exampleBoolean" : false,
+      "groupingId" : "group5"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/EncounterInpatientPTF"
+      },
+      "name" : "Encounter: Inpatient (PTF)",
+      "description" : "This StructureDefinition contains the maps for Use Case Encounter, Variation Inpatient (PTF)",
+      "exampleBoolean" : false,
+      "groupingId" : "group6"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/EncounterOutpatientVisit"
+      },
+      "name" : "Encounter: Outpatient (Visit)",
+      "description" : "This StructureDefinition contains the maps for Use Case Encounter, Variation Outpatient (Visit)",
+      "exampleBoolean" : false,
+      "groupingId" : "group6"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/Immunization"
+      },
+      "name" : "Immunization",
+      "description" : "This StructureDefinition contains the maps for Use Case Immunization",
+      "exampleBoolean" : false,
+      "groupingId" : "group7"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/ImmunizationObservation"
+      },
+      "name" : "Immunization {Observation}",
+      "description" : "This StructureDefinition contains the maps for Use Case Immunization, ResourceType Observation",
+      "exampleBoolean" : false,
+      "groupingId" : "group7"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/ImplantableDeviceDevice"
+      },
+      "name" : "Implantable Device {Device}",
+      "description" : "This StructureDefinition contains the maps for Use Case Implantable Device, ResourceType Device",
+      "exampleBoolean" : false,
+      "groupingId" : "group8"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/ImplantableDeviceALeadDevice"
+      },
+      "name" : "Implantable Device: A Lead {Device}",
+      "description" : "This StructureDefinition contains the maps for Use Case Implantable Device: A Lead, ResourceType Device",
+      "exampleBoolean" : false,
+      "groupingId" : "group8"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/ImplantableDeviceDentalDevice"
+      },
+      "name" : "Implantable Device: Dental {Device}",
+      "description" : "This StructureDefinition contains the maps for Use Case Implantable Device: Dental, ResourceType Device",
+      "exampleBoolean" : false,
+      "groupingId" : "group8"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/ImplantableDevicePacemakerDevice"
+      },
+      "name" : "Implantable Device: Pacemaker {Device}",
+      "description" : "This StructureDefinition contains the maps for Use Case Implantable Device: Pacemaker, ResourceType Device",
+      "exampleBoolean" : false,
+      "groupingId" : "group8"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/ImplantableDeviceProsthesisDevice"
+      },
+      "name" : "Implantable Device: Prosthesis {Device}",
+      "description" : "This StructureDefinition contains the maps for Use Case Implantable Device: Prosthesis, ResourceType Device",
+      "exampleBoolean" : false,
+      "groupingId" : "group8"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/ImplantableDeviceTransmitterDevice"
+      },
+      "name" : "Implantable Device: Transmitter {Device}",
+      "description" : "This StructureDefinition contains the maps for Use Case Implantable Device: Transmitter, ResourceType Device",
+      "exampleBoolean" : false,
+      "groupingId" : "group8"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/ImplantableDeviceVLeadDevice"
+      },
+      "name" : "Implantable Device: V Lead {Device}",
+      "description" : "This StructureDefinition contains the maps for Use Case Implantable Device: V Lead, ResourceType Device",
+      "exampleBoolean" : false,
+      "groupingId" : "group8"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/LabObservationObservation"
+      },
+      "name" : "Lab Observation {Observation}",
+      "description" : "This StructureDefinition contains the maps for Use Case Lab Observation, ResourceType Observation",
+      "exampleBoolean" : false,
+      "groupingId" : "group9"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/LabObservationChemhemtoxriaserObservation"
+      },
+      "name" : "Lab Observation: Chem, hem, tox, ria, ser {Observation}",
+      "description" : "This StructureDefinition contains the maps for Use Case Lab Observation: Chem, hem, tox, ria, ser, ResourceType Observation",
+      "exampleBoolean" : false,
+      "groupingId" : "group9"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/LabObservationChemhemtoxriaserSpecimen"
+      },
+      "name" : "Lab Observation: Chem, hem, tox, ria, ser {Specimen}",
+      "description" : "This StructureDefinition contains the maps for Use Case Lab Observation: Chem, hem, tox, ria, ser, ResourceType Specimen",
+      "exampleBoolean" : false,
+      "groupingId" : "group9"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/LabObservationCytopathologyObservation"
+      },
+      "name" : "Lab Observation: Cytopathology {Observation}",
+      "description" : "This StructureDefinition contains the maps for Use Case Lab Observation: Cytopathology, ResourceType Observation",
+      "exampleBoolean" : false,
+      "groupingId" : "group9"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/LabObservationCytopathologySpecimen"
+      },
+      "name" : "Lab Observation: Cytopathology {Specimen}",
+      "description" : "This StructureDefinition contains the maps for Use Case Lab Observation: Cytopathology, ResourceType Specimen",
+      "exampleBoolean" : false,
+      "groupingId" : "group9"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/LabObservationElectronMicroscopyObservation"
+      },
+      "name" : "Lab Observation: Electron Microscopy {Observation}",
+      "description" : "This StructureDefinition contains the maps for Use Case Lab Observation: Electron Microscopy, ResourceType Observation",
+      "exampleBoolean" : false,
+      "groupingId" : "group9"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/LabObservationElectronMicroscopySpecimen"
+      },
+      "name" : "Lab Observation: Electron Microscopy {Specimen}",
+      "description" : "This StructureDefinition contains the maps for Use Case Lab Observation: Electron Microscopy, ResourceType Specimen",
+      "exampleBoolean" : false,
+      "groupingId" : "group9"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/LabObservationMicrobiologyObservation"
+      },
+      "name" : "Lab Observation: Microbiology {Observation}",
+      "description" : "This StructureDefinition contains the maps for Use Case Lab Observation: Microbiology, ResourceType Observation",
+      "exampleBoolean" : false,
+      "groupingId" : "group9"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/LabObservationMicrobiologyObservationBacteriology"
+      },
+      "name" : "Lab Observation: Microbiology {Observation}: Bacteriology",
+      "description" : "This StructureDefinition contains the maps for Use Case Lab Observation: Microbiology, ResourceType Observation, Variation Bacteriology",
+      "exampleBoolean" : false,
+      "groupingId" : "group9"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/LabObservationMicrobiologyObservationMycobacteriology"
+      },
+      "name" : "Lab Observation: Microbiology {Observation}: Mycobacteriology",
+      "description" : "This StructureDefinition contains the maps for Use Case Lab Observation: Microbiology, ResourceType Observation, Variation Mycobacteriology",
+      "exampleBoolean" : false,
+      "groupingId" : "group9"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/LabObservationMicrobiologyObservationMycology"
+      },
+      "name" : "Lab Observation: Microbiology {Observation}: Mycology",
+      "description" : "This StructureDefinition contains the maps for Use Case Lab Observation: Microbiology, ResourceType Observation, Variation Mycology",
+      "exampleBoolean" : false,
+      "groupingId" : "group9"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/LabObservationMicrobiologyObservationParasitology"
+      },
+      "name" : "Lab Observation: Microbiology {Observation}: Parasitology",
+      "description" : "This StructureDefinition contains the maps for Use Case Lab Observation: Microbiology, ResourceType Observation, Variation Parasitology",
+      "exampleBoolean" : false,
+      "groupingId" : "group9"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/LabObservationMicrobiologyObservationVirology"
+      },
+      "name" : "Lab Observation: Microbiology {Observation}: Virology",
+      "description" : "This StructureDefinition contains the maps for Use Case Lab Observation: Microbiology, ResourceType Observation, Variation Virology",
+      "exampleBoolean" : false,
+      "groupingId" : "group9"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/LabObservationMicrobiologySpecimen"
+      },
+      "name" : "Lab Observation: Microbiology {Specimen}",
+      "description" : "This StructureDefinition contains the maps for Use Case Lab Observation: Microbiology, ResourceType Specimen",
+      "exampleBoolean" : false,
+      "groupingId" : "group9"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/LabObservationSurgicalPathologyObservation"
+      },
+      "name" : "Lab Observation: Surgical Pathology {Observation}",
+      "description" : "This StructureDefinition contains the maps for Use Case Lab Observation: Surgical Pathology, ResourceType Observation",
+      "exampleBoolean" : false,
+      "groupingId" : "group9"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/LabObservationSurgicalPathologySpecimen"
+      },
+      "name" : "Lab Observation: Surgical Pathology {Specimen}",
+      "description" : "This StructureDefinition contains the maps for Use Case Lab Observation: Surgical Pathology, ResourceType Specimen",
+      "exampleBoolean" : false,
+      "groupingId" : "group9"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/Location"
+      },
+      "name" : "Location",
+      "description" : "This StructureDefinition contains the maps for Use Case Location",
+      "exampleBoolean" : false,
+      "groupingId" : "group10"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/MedDispenseOrigMedicationDispense"
+      },
+      "name" : "MedDispenseOrig {MedicationDispense}",
+      "description" : "This StructureDefinition contains the maps for Use Case MedDispenseOrig, ResourceType MedicationDispense",
+      "exampleBoolean" : false,
+      "groupingId" : "group20"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/MedDispensePartialMedicationDispense"
+      },
+      "name" : "MedDispensePartial {MedicationDispense}",
+      "description" : "This StructureDefinition contains the maps for Use Case MedDispensePartial, ResourceType MedicationDispense",
+      "exampleBoolean" : false,
+      "groupingId" : "group21"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/MedDispenseRefillMedicationDispense"
+      },
+      "name" : "MedDispenseRefill {MedicationDispense}",
+      "description" : "This StructureDefinition contains the maps for Use Case MedDispenseRefill, ResourceType MedicationDispense",
+      "exampleBoolean" : false,
+      "groupingId" : "group22"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/MedicationRequestVAOrder"
+      },
+      "name" : "MedicationRequest: VA Order",
+      "description" : "This StructureDefinition contains the maps for Use Case MedicationRequest, Variation VA Order",
+      "exampleBoolean" : false,
+      "groupingId" : "group11"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/MedRequestOrigXXXMedicationRequest"
+      },
+      "name" : "MedRequestOrigXXX {MedicationRequest}",
+      "description" : "This StructureDefinition contains the maps for Use Case MedRequestOrigXXX, ResourceType MedicationRequest",
+      "exampleBoolean" : false,
+      "groupingId" : "group12"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/ObservationEXAMObservation"
+      },
+      "name" : "Observation EXAM {Observation}",
+      "description" : "This StructureDefinition contains the maps for Use Case Observation EXAM, ResourceType Observation",
+      "exampleBoolean" : false,
+      "groupingId" : "group13"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/Organization"
+      },
+      "name" : "Organization",
+      "description" : "This StructureDefinition contains the maps for Use Case Organization",
+      "exampleBoolean" : false,
+      "groupingId" : "group14"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/Patient"
+      },
+      "name" : "Patient",
+      "description" : "This StructureDefinition contains the maps for Use Case Patient",
+      "exampleBoolean" : false,
+      "groupingId" : "group1"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/Practitioner"
+      },
+      "name" : "Practitioner",
+      "description" : "This StructureDefinition contains the maps for Use Case Practitioner",
+      "exampleBoolean" : false,
+      "groupingId" : "group15"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/PractitionerRole"
+      },
+      "name" : "Practitioner Role",
+      "description" : "This StructureDefinition contains the maps for Use Case Practitioner Role",
+      "exampleBoolean" : false,
+      "groupingId" : "group16"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/ProcedureOutpatientProcedure"
+      },
+      "name" : "Procedure: Outpatient {Procedure}",
+      "description" : "This StructureDefinition contains the maps for Use Case Procedure: Outpatient, ResourceType Procedure",
+      "exampleBoolean" : false,
+      "groupingId" : "group17"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/ProcedureRadiologyProcedure"
+      },
+      "name" : "Procedure: Radiology {Procedure}",
+      "description" : "This StructureDefinition contains the maps for Use Case Procedure: Radiology, ResourceType Procedure",
+      "exampleBoolean" : false,
+      "groupingId" : "group17"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/ProcedureSurgeryProcedure"
+      },
+      "name" : "Procedure: Surgery {Procedure}",
+      "description" : "This StructureDefinition contains the maps for Use Case Procedure: Surgery, ResourceType Procedure",
+      "exampleBoolean" : false,
+      "groupingId" : "group17"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/SmokingStatusObservationObservation"
+      },
+      "name" : "Smoking Status Observation {Observation}",
+      "description" : "This StructureDefinition contains the maps for Use Case Smoking Status Observation, ResourceType Observation",
+      "exampleBoolean" : false,
+      "groupingId" : "group18"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VFallergyActive"
+      },
+      "name" : "VF_allergyActive",
+      "description" : "Terminology Maps VF_allergyActive",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VFallergyEnteredInError"
+      },
+      "name" : "VF_allergyEnteredInError",
+      "description" : "Terminology Maps VF_allergyEnteredInError",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VFallergyMechanism"
+      },
+      "name" : "VF_allergyMechanism",
+      "description" : "Terminology Maps VF_allergyMechanism",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VFallergySeverity"
+      },
+      "name" : "VF_allergySeverity",
+      "description" : "Terminology Maps VF_allergySeverity",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VFallergySubstanceCategory"
+      },
+      "name" : "VF_allergySubstanceCategory",
+      "description" : "Terminology Maps VF_allergySubstanceCategory",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VFallergyVerificationStatus"
+      },
+      "name" : "VF_allergyVerificationStatus",
+      "description" : "Terminology Maps VF_allergyVerificationStatus",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VFAntibioticSensitivityInterpretation"
+      },
+      "name" : "VF_AntibioticSensitivityInterpretation",
+      "description" : "Terminology Maps VF_AntibioticSensitivityInterpretation",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VFAppointmentStatus"
+      },
+      "name" : "VF_AppointmentStatus",
+      "description" : "Terminology Maps VF_AppointmentStatus",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VFBoolean"
+      },
+      "name" : "VF_Boolean",
+      "description" : "Terminology Maps VF_Boolean",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VFCommunicationQualifier"
+      },
+      "name" : "VF_CommunicationQualifier",
+      "description" : "Terminology Maps VF_CommunicationQualifier",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VFCoverageRelationship"
+      },
+      "name" : "VF_CoverageRelationship",
+      "description" : "Terminology Maps VF_CoverageRelationship",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VFCoverageStatusForce"
+      },
+      "name" : "VF_CoverageStatusForce",
+      "description" : "Terminology Maps VF_CoverageStatusForce",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VFDentalDeviceStatus"
+      },
+      "name" : "VF_DentalDeviceStatus",
+      "description" : "Terminology Maps VF_DentalDeviceStatus",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VFdeviceTypePacemaker"
+      },
+      "name" : "VF_deviceTypePacemaker",
+      "description" : "Terminology Maps VF_deviceTypePacemaker",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VFDiagnosticReportLabStatus"
+      },
+      "name" : "VF_DiagnosticReportLabStatus",
+      "description" : "Terminology Maps VF_DiagnosticReportLabStatus",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VFdocumentReferencedocStatus"
+      },
+      "name" : "VF_documentReferencedocStatus",
+      "description" : "Terminology Maps VF_documentReferencedocStatus",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VFencounterClass"
+      },
+      "name" : "VF_encounterClass",
+      "description" : "Terminology Maps VF_encounterClass",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VFencounterProblemStatus"
+      },
+      "name" : "VF_encounterProblemStatus",
+      "description" : "Terminology Maps VF_encounterProblemStatus",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VFencounterProblemVerificationStatus"
+      },
+      "name" : "VF_encounterProblemVerificationStatus",
+      "description" : "Terminology Maps VF_encounterProblemVerificationStatus",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VFethnicityCategory"
+      },
+      "name" : "VF_ethnicityCategory",
+      "description" : "Terminology Maps VF_ethnicityCategory",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VFExamResultInterpretation"
+      },
+      "name" : "VF_ExamResultInterpretation",
+      "description" : "Terminology Maps VF_ExamResultInterpretation",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VFExamStatus"
+      },
+      "name" : "VF_ExamStatus",
+      "description" : "Terminology Maps VF_ExamStatus",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VFgenderIdentity"
+      },
+      "name" : "VF_genderIdentity",
+      "description" : "Terminology Maps VF_genderIdentity",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VFICDCodingSystems"
+      },
+      "name" : "VF_ICDCodingSystems",
+      "description" : "Terminology Maps VF_ICDCodingSystems",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VFICDVersion"
+      },
+      "name" : "VF_ICDVersion",
+      "description" : "Terminology Maps VF_ICDVersion",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VFimmunizationPrimarySource"
+      },
+      "name" : "VF_immunizationPrimarySource",
+      "description" : "Terminology Maps VF_immunizationPrimarySource",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VFImmunizationReaction"
+      },
+      "name" : "VF_ImmunizationReaction",
+      "description" : "Terminology Maps VF_ImmunizationReaction",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VFimmunizationStatusReason"
+      },
+      "name" : "VF_immunizationStatusReason",
+      "description" : "Terminology Maps VF_immunizationStatusReason",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VFinferredCVX"
+      },
+      "name" : "VF_inferredCVX",
+      "description" : "Terminology Maps VF_inferredCVX",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VFLabInterpretation"
+      },
+      "name" : "VF_LabInterpretation",
+      "description" : "Terminology Maps VF_LabInterpretation",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VFLabObservationStatus"
+      },
+      "name" : "VF_LabObservationStatus",
+      "description" : "Terminology Maps VF_LabObservationStatus",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VFLocationStatus"
+      },
+      "name" : "VF_LocationStatus",
+      "description" : "Terminology Maps VF_LocationStatus",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VFMaritalStatus"
+      },
+      "name" : "VF_MaritalStatus",
+      "description" : "Terminology Maps VF_MaritalStatus",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VFOrganizationIdentifierType"
+      },
+      "name" : "VF_OrganizationIdentifierType",
+      "description" : "Terminology Maps VF_OrganizationIdentifierType",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VFOutpatMedReq"
+      },
+      "name" : "VF_OutpatMedReq",
+      "description" : "Terminology Maps VF_OutpatMedReq",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VFPersonIdentifierType"
+      },
+      "name" : "VF_PersonIdentifierType",
+      "description" : "Terminology Maps VF_PersonIdentifierType",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VFPharmacyPersonType"
+      },
+      "name" : "VF_PharmacyPersonType",
+      "description" : "Terminology Maps VF_PharmacyPersonType",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VFPositiveNegative"
+      },
+      "name" : "VF_PositiveNegative",
+      "description" : "Terminology Maps VF_PositiveNegative",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VFPractitionerCountry"
+      },
+      "name" : "VF_PractitionerCountry",
+      "description" : "Terminology Maps VF_PractitionerCountry",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VFproblemStatus"
+      },
+      "name" : "VF_problemStatus",
+      "description" : "Terminology Maps VF_problemStatus",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VFproblemVerificationStatus"
+      },
+      "name" : "VF_problemVerificationStatus",
+      "description" : "Terminology Maps VF_problemVerificationStatus",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VFProcedureCodeSystem"
+      },
+      "name" : "VF_ProcedureCodeSystem",
+      "description" : "Terminology Maps VF_ProcedureCodeSystem",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VFproviderGender"
+      },
+      "name" : "VF_providerGender",
+      "description" : "Terminology Maps VF_providerGender",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VFraceCategory"
+      },
+      "name" : "VF_raceCategory",
+      "description" : "Terminology Maps VF_raceCategory",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VFRadiologyProcedureStatus"
+      },
+      "name" : "VF_RadiologyProcedureStatus",
+      "description" : "Terminology Maps VF_RadiologyProcedureStatus",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VFReligion"
+      },
+      "name" : "VF_Religion",
+      "description" : "Terminology Maps VF_Religion",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VFSmokingStatus"
+      },
+      "name" : "VF_SmokingStatus",
+      "description" : "Terminology Maps VF_SmokingStatus",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VFSourceOfAdmission"
+      },
+      "name" : "VF_SourceOfAdmission",
+      "description" : "Terminology Maps VF_SourceOfAdmission",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VFVitalsCodes"
+      },
+      "name" : "VF_VitalsCodes",
+      "description" : "Terminology Maps VF_VitalsCodes",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VFVitalsDevice"
+      },
+      "name" : "VF_VitalsDevice",
+      "description" : "Terminology Maps VF_VitalsDevice",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VFVitalsLaterality"
+      },
+      "name" : "VF_VitalsLaterality",
+      "description" : "Terminology Maps VF_VitalsLaterality",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VFVitalsMethod"
+      },
+      "name" : "VF_VitalsMethod",
+      "description" : "Terminology Maps VF_VitalsMethod",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VFVitalsPosition"
+      },
+      "name" : "VF_VitalsPosition",
+      "description" : "Terminology Maps VF_VitalsPosition",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VFVitalsSite"
+      },
+      "name" : "VF_VitalsSite",
+      "description" : "Terminology Maps VF_VitalsSite",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VFVitalsUnits"
+      },
+      "name" : "VF_VitalsUnits",
+      "description" : "Terminology Maps VF_VitalsUnits",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VFYesNo"
+      },
+      "name" : "VF_YesNo",
+      "description" : "Terminology Maps VF_YesNo",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VistaNCPDPCoverageRelationship"
+      },
+      "name" : "Vista-NCPDPCoverageRelationship",
+      "description" : "Terminology Maps Vista-NCPDPCoverageRelationship",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/VitalSignsObservation"
+      },
+      "name" : "Vital Signs {Observation}",
+      "description" : "This StructureDefinition contains the maps for Use Case Vital Signs, ResourceType Observation",
+      "exampleBoolean" : false,
+      "groupingId" : "group19"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/VitalSignsObservationConcentration"
+      },
+      "name" : "Vital Signs {Observation}: Concentration",
+      "description" : "This StructureDefinition contains the maps for Use Case Vital Signs, ResourceType Observation, Variation Concentration",
+      "exampleBoolean" : false,
+      "groupingId" : "group19"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/VitalSignsObservationdiastolic"
+      },
+      "name" : "Vital Signs {Observation}: diastolic",
+      "description" : "This StructureDefinition contains the maps for Use Case Vital Signs, ResourceType Observation, Variation diastolic",
+      "exampleBoolean" : false,
+      "groupingId" : "group19"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/VitalSignsObservationFlow"
+      },
+      "name" : "Vital Signs {Observation}: Flow",
+      "description" : "This StructureDefinition contains the maps for Use Case Vital Signs, ResourceType Observation, Variation Flow",
+      "exampleBoolean" : false,
+      "groupingId" : "group19"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/VitalSignsObservationsystolic"
+      },
+      "name" : "Vital Signs {Observation}: systolic",
+      "description" : "This StructureDefinition contains the maps for Use Case Vital Signs, ResourceType Observation, Variation systolic",
+      "exampleBoolean" : false,
+      "groupingId" : "group19"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/VitalSignsOrganization"
+      },
+      "name" : "Vital Signs {Organization}",
+      "description" : "This StructureDefinition contains the maps for Use Case Vital Signs, ResourceType Organization",
+      "exampleBoolean" : false,
+      "groupingId" : "group19"
+    }],
+    "page" : {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+        "valueUrl" : "toc.html"
+      }],
+      "nameUrl" : "toc.html",
+      "title" : "Table of Contents",
+      "generation" : "html",
+      "page" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "index.html"
+        }],
+        "nameUrl" : "index.html",
+        "title" : "Home",
+        "generation" : "markdown"
+      }]
+    },
+    "parameter" : [{
+      "code" : "path-resource",
+      "value" : "input/capabilities"
+    },
+    {
+      "code" : "path-resource",
+      "value" : "input/examples"
+    },
+    {
+      "code" : "path-resource",
+      "value" : "input/extensions"
+    },
+    {
+      "code" : "path-resource",
+      "value" : "input/models"
+    },
+    {
+      "code" : "path-resource",
+      "value" : "input/operations"
+    },
+    {
+      "code" : "path-resource",
+      "value" : "input/profiles"
+    },
+    {
+      "code" : "path-resource",
+      "value" : "input/resources"
+    },
+    {
+      "code" : "path-resource",
+      "value" : "input/vocabulary"
+    },
+    {
+      "code" : "path-resource",
+      "value" : "input/maps"
+    },
+    {
+      "code" : "path-resource",
+      "value" : "input/testing"
+    },
+    {
+      "code" : "path-resource",
+      "value" : "input/history"
+    },
+    {
+      "code" : "path-resource",
+      "value" : "fsh-generated/resources"
+    },
+    {
+      "code" : "path-pages",
+      "value" : "template/config"
+    },
+    {
+      "code" : "path-pages",
+      "value" : "input/images"
+    },
+    {
+      "code" : "path-tx-cache",
+      "value" : "input-cache/txcache"
+    }]
+  }
+}

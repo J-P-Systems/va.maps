@@ -1,0 +1,2182 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://va.gov/fhir/ImplementationGuide/va.maps> a fhir:ImplementationGuide ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "va.maps"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>VAMapsIG</h2><p>The official URL for this implementation guide is: </p><pre>http://va.gov/fhir/ImplementationGuide/va.maps</pre><div><p>This implementation guide is a FHIR IG rendering of the KBS Map Set from VA sources (primarily VistA) to FHIR. Where appropriate these maps conform to the us-core profiles.</p>\n</div></div>"
+  ] ; # 
+  fhir:url [ fhir:v "http://va.gov/fhir/ImplementationGuide/va.maps"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.1.0"] ; # 
+  fhir:name [ fhir:v "VAMapsIG"] ; # 
+  fhir:title [ fhir:v "US Veterans Health Administration FHIR Map Set Implementation Guide"] ; # 
+  fhir:status [ fhir:v "draft"] ; # 
+  fhir:date [ fhir:v "2023-10-17T15:32:01+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "JPSys"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "JPSys" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://www.jpsys.com" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "This implementation guide is a FHIR IG rendering of the KBS Map Set from VA sources (primarily VistA) to FHIR. Where appropriate these maps conform to the us-core profiles."] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "US" ] ;
+       fhir:display [ fhir:v "United States of America" ]
+     ] )
+  ] ) ; # 
+  fhir:packageId [ fhir:v "va.maps"] ; # 
+  fhir:license [ fhir:v "CC0-1.0"] ; # 
+  fhir:fhirVersion ( [ fhir:v "4.0.1"] ) ; # 
+  fhir:dependsOn ( [
+     fhir:id [ fhir:v "hl7tx" ] ;
+     fhir:extension ( [
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "Automatically added as a dependency - all IGs depend on HL7 Terminology" ]
+     ] ) ;
+     fhir:uri [
+       fhir:v "http://terminology.hl7.org/ImplementationGuide/hl7.terminology"^^xsd:anyURI ;
+       fhir:link <http://terminology.hl7.org/ImplementationGuide/hl7.terminology>
+     ] ;
+     fhir:packageId [ fhir:v "hl7.terminology.r4" ] ;
+     fhir:version [ fhir:v "5.3.0" ]
+  ] [
+     fhir:id [ fhir:v "hl7ext" ] ;
+     fhir:extension ( [
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "Automatically added as a dependency - all IGs depend on the HL7 Extension Pack" ]
+     ] ) ;
+     fhir:uri [
+       fhir:v "http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions"^^xsd:anyURI ;
+       fhir:link <http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions>
+     ] ;
+     fhir:packageId [ fhir:v "hl7.fhir.uv.extensions.r4" ] ;
+     fhir:version [ fhir:v "1.0.0" ]
+  ] [
+     fhir:id [ fhir:v "hl7_fhir_us_core" ] ;
+     fhir:uri [
+       fhir:v "http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core"^^xsd:anyURI ;
+       fhir:link <http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core>
+     ] ;
+     fhir:packageId [ fhir:v "hl7.fhir.us.core" ] ;
+     fhir:version [ fhir:v "5.0.1" ]
+  ] ) ; # 
+  fhir:definition [
+     fhir:extension ( [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "copyrightyear" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "2023+" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "releaselabel" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ci-build" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "autoload-resources" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "true" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "path-liquid" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "template/liquid" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "path-liquid" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "input/liquid" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "path-qa" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "temp/qa" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "path-temp" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "temp/pages" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "path-output" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "output" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "path-suppressed-warnings" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "input/ignoreWarnings.txt" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "path-history" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "http://va.gov/fhir/history.html" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "template-html" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "template-page.html" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "template-md" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "template-page-md.html" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "apply-contact" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "true" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "apply-context" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "true" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "apply-copyright" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "true" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "apply-jurisdiction" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "true" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "apply-license" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "true" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "apply-publisher" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "true" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "apply-version" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "true" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "apply-wg" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "true" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "active-tables" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "true" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "fmm-definition" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "http://hl7.org/fhir/versions.html#maturity" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "propagate-status" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "true" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "excludelogbinaryformat" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "true" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "tabbed-snapshots" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "true" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "hl7.fhir.uv.tools#current" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "copyrightyear" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "2023+" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "releaselabel" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ci-build" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "autoload-resources" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "true" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "path-liquid" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "template/liquid" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "path-liquid" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "input/liquid" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "path-qa" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "temp/qa" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "path-temp" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "temp/pages" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "path-output" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "output" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "path-suppressed-warnings" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "input/ignoreWarnings.txt" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "path-history" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "http://va.gov/fhir/history.html" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "template-html" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "template-page.html" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "template-md" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "template-page-md.html" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "apply-contact" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "true" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "apply-context" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "true" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "apply-copyright" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "true" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "apply-jurisdiction" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "true" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "apply-license" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "true" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "apply-publisher" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "true" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "apply-version" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "true" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "apply-wg" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "true" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "active-tables" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "true" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "fmm-definition" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "http://hl7.org/fhir/versions.html#maturity" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "propagate-status" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "true" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "excludelogbinaryformat" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "true" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "code"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "tabbed-snapshots" ]
+       ] [
+         fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "true" ]
+       ] ) ;
+       fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
+     ] ) ;
+     fhir:grouping ( [
+       fhir:id [ fhir:v "group0" ] ;
+       fhir:name [ fhir:v "AllergyIntolerance" ]
+     ] [
+       fhir:id [ fhir:v "group1" ] ;
+       fhir:name [ fhir:v "Patient" ]
+     ] [
+       fhir:id [ fhir:v "group2" ] ;
+       fhir:name [ fhir:v "Appointment" ]
+     ] [
+       fhir:id [ fhir:v "group3" ] ;
+       fhir:name [ fhir:v "Condition" ]
+     ] [
+       fhir:id [ fhir:v "group4" ] ;
+       fhir:name [ fhir:v "Diagnostic Report for Lab" ]
+     ] [
+       fhir:id [ fhir:v "group5" ] ;
+       fhir:name [ fhir:v "Document Reference" ]
+     ] [
+       fhir:id [ fhir:v "group6" ] ;
+       fhir:name [ fhir:v "Encounter" ]
+     ] [
+       fhir:id [ fhir:v "group7" ] ;
+       fhir:name [ fhir:v "Immunization" ]
+     ] [
+       fhir:id [ fhir:v "group8" ] ;
+       fhir:name [ fhir:v "Implantable Device" ]
+     ] [
+       fhir:id [ fhir:v "group9" ] ;
+       fhir:name [ fhir:v "Lab Observation" ]
+     ] [
+       fhir:id [ fhir:v "group10" ] ;
+       fhir:name [ fhir:v "Location" ]
+     ] [
+       fhir:id [ fhir:v "group11" ] ;
+       fhir:name [ fhir:v "MedicationRequest" ]
+     ] [
+       fhir:id [ fhir:v "group12" ] ;
+       fhir:name [ fhir:v "MedRequestOrigXXX" ]
+     ] [
+       fhir:id [ fhir:v "group13" ] ;
+       fhir:name [ fhir:v "Observation EXAM" ]
+     ] [
+       fhir:id [ fhir:v "group14" ] ;
+       fhir:name [ fhir:v "Organization" ]
+     ] [
+       fhir:id [ fhir:v "group15" ] ;
+       fhir:name [ fhir:v "Practitioner" ]
+     ] [
+       fhir:id [ fhir:v "group16" ] ;
+       fhir:name [ fhir:v "Practitioner Role" ]
+     ] [
+       fhir:id [ fhir:v "group17" ] ;
+       fhir:name [ fhir:v "Procedure" ]
+     ] [
+       fhir:id [ fhir:v "group18" ] ;
+       fhir:name [ fhir:v "Smoking Status Observation" ]
+     ] [
+       fhir:id [ fhir:v "group19" ] ;
+       fhir:name [ fhir:v "Vital Signs" ]
+     ] [
+       fhir:id [ fhir:v "group20" ] ;
+       fhir:name [ fhir:v "MedDispenseOrig" ]
+     ] [
+       fhir:id [ fhir:v "group21" ] ;
+       fhir:name [ fhir:v "MedDispensePartial" ]
+     ] [
+       fhir:id [ fhir:v "group22" ] ;
+       fhir:name [ fhir:v "MedDispenseRefill" ]
+     ] ) ;
+     fhir:resource ( [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/StructureDefinition/AllergyIntolerance> ;
+         fhir:reference [ fhir:v "StructureDefinition/AllergyIntolerance" ]
+       ] ;
+       fhir:name [ fhir:v "AllergyIntolerance" ] ;
+       fhir:description [ fhir:v "This StructureDefinition contains the maps for Use Case AllergyIntolerance" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "group0" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/StructureDefinition/Appointment> ;
+         fhir:reference [ fhir:v "StructureDefinition/Appointment" ]
+       ] ;
+       fhir:name [ fhir:v "Appointment" ] ;
+       fhir:description [ fhir:v "This StructureDefinition contains the maps for Use Case Appointment" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "group2" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/StructureDefinition/ConditionEncounterdiagnosis> ;
+         fhir:reference [ fhir:v "StructureDefinition/ConditionEncounterdiagnosis" ]
+       ] ;
+       fhir:name [ fhir:v "Condition: Encounter diagnosis" ] ;
+       fhir:description [ fhir:v "This StructureDefinition contains the maps for Use Case Condition, Variation Encounter diagnosis" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "group3" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/StructureDefinition/ConditionProblem> ;
+         fhir:reference [ fhir:v "StructureDefinition/ConditionProblem" ]
+       ] ;
+       fhir:name [ fhir:v "Condition: Problem" ] ;
+       fhir:description [ fhir:v "This StructureDefinition contains the maps for Use Case Condition, Variation Problem" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "group3" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/StructureDefinition/DiagnosticReportforLabDiagnosticReport> ;
+         fhir:reference [ fhir:v "StructureDefinition/DiagnosticReportforLabDiagnosticReport" ]
+       ] ;
+       fhir:name [ fhir:v "Diagnostic Report for Lab {DiagnosticReport}" ] ;
+       fhir:description [ fhir:v "This StructureDefinition contains the maps for Use Case Diagnostic Report for Lab, ResourceType DiagnosticReport" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "group4" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/StructureDefinition/DiagnosticReportforLabChemhemtoxriaserDiagnosticReport> ;
+         fhir:reference [ fhir:v "StructureDefinition/DiagnosticReportforLabChemhemtoxriaserDiagnosticReport" ]
+       ] ;
+       fhir:name [ fhir:v "Diagnostic Report for Lab: Chem, hem, tox, ria, ser {DiagnosticReport}" ] ;
+       fhir:description [ fhir:v "This StructureDefinition contains the maps for Use Case Diagnostic Report for Lab: Chem, hem, tox, ria, ser, ResourceType DiagnosticReport" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "group4" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/StructureDefinition/DiagnosticReportforLabCytopathologyDiagnosticReport> ;
+         fhir:reference [ fhir:v "StructureDefinition/DiagnosticReportforLabCytopathologyDiagnosticReport" ]
+       ] ;
+       fhir:name [ fhir:v "Diagnostic Report for Lab: Cytopathology {DiagnosticReport}" ] ;
+       fhir:description [ fhir:v "This StructureDefinition contains the maps for Use Case Diagnostic Report for Lab: Cytopathology, ResourceType DiagnosticReport" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "group4" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/StructureDefinition/DiagnosticReportforLabElectronMicroscopyDiagnosticReport> ;
+         fhir:reference [ fhir:v "StructureDefinition/DiagnosticReportforLabElectronMicroscopyDiagnosticReport" ]
+       ] ;
+       fhir:name [ fhir:v "Diagnostic Report for Lab: Electron Microscopy {DiagnosticReport}" ] ;
+       fhir:description [ fhir:v "This StructureDefinition contains the maps for Use Case Diagnostic Report for Lab: Electron Microscopy, ResourceType DiagnosticReport" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "group4" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/StructureDefinition/DiagnosticReportforLabMicrobiologyDiagnosticReport> ;
+         fhir:reference [ fhir:v "StructureDefinition/DiagnosticReportforLabMicrobiologyDiagnosticReport" ]
+       ] ;
+       fhir:name [ fhir:v "Diagnostic Report for Lab: Microbiology {DiagnosticReport}" ] ;
+       fhir:description [ fhir:v "This StructureDefinition contains the maps for Use Case Diagnostic Report for Lab: Microbiology, ResourceType DiagnosticReport" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "group4" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/StructureDefinition/DiagnosticReportforLabMicrobiologyDiagnosticReportBacteriology> ;
+         fhir:reference [ fhir:v "StructureDefinition/DiagnosticReportforLabMicrobiologyDiagnosticReportBacteriology" ]
+       ] ;
+       fhir:name [ fhir:v "Diagnostic Report for Lab: Microbiology {DiagnosticReport}: Bacteriology" ] ;
+       fhir:description [ fhir:v "This StructureDefinition contains the maps for Use Case Diagnostic Report for Lab: Microbiology, ResourceType DiagnosticReport, Variation Bacteriology" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "group4" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/StructureDefinition/DiagnosticReportforLabMicrobiologyDiagnosticReportMycobacteriolo> ;
+         fhir:reference [ fhir:v "StructureDefinition/DiagnosticReportforLabMicrobiologyDiagnosticReportMycobacteriolo" ]
+       ] ;
+       fhir:name [ fhir:v "Diagnostic Report for Lab: Microbiology {DiagnosticReport}: Mycobacteriology" ] ;
+       fhir:description [ fhir:v "This StructureDefinition contains the maps for Use Case Diagnostic Report for Lab: Microbiology, ResourceType DiagnosticReport, Variation Mycobacteriology" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "group4" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/StructureDefinition/DiagnosticReportforLabMicrobiologyDiagnosticReportMycology> ;
+         fhir:reference [ fhir:v "StructureDefinition/DiagnosticReportforLabMicrobiologyDiagnosticReportMycology" ]
+       ] ;
+       fhir:name [ fhir:v "Diagnostic Report for Lab: Microbiology {DiagnosticReport}: Mycology" ] ;
+       fhir:description [ fhir:v "This StructureDefinition contains the maps for Use Case Diagnostic Report for Lab: Microbiology, ResourceType DiagnosticReport, Variation Mycology" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "group4" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/StructureDefinition/DiagnosticReportforLabMicrobiologyDiagnosticReportParasitology> ;
+         fhir:reference [ fhir:v "StructureDefinition/DiagnosticReportforLabMicrobiologyDiagnosticReportParasitology" ]
+       ] ;
+       fhir:name [ fhir:v "Diagnostic Report for Lab: Microbiology {DiagnosticReport}: Parasitology" ] ;
+       fhir:description [ fhir:v "This StructureDefinition contains the maps for Use Case Diagnostic Report for Lab: Microbiology, ResourceType DiagnosticReport, Variation Parasitology" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "group4" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/StructureDefinition/DiagnosticReportforLabMicrobiologyDiagnosticReportVirology> ;
+         fhir:reference [ fhir:v "StructureDefinition/DiagnosticReportforLabMicrobiologyDiagnosticReportVirology" ]
+       ] ;
+       fhir:name [ fhir:v "Diagnostic Report for Lab: Microbiology {DiagnosticReport}: Virology" ] ;
+       fhir:description [ fhir:v "This StructureDefinition contains the maps for Use Case Diagnostic Report for Lab: Microbiology, ResourceType DiagnosticReport, Variation Virology" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "group4" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/StructureDefinition/DiagnosticReportforLabSurgicalPathologyDiagnosticReport> ;
+         fhir:reference [ fhir:v "StructureDefinition/DiagnosticReportforLabSurgicalPathologyDiagnosticReport" ]
+       ] ;
+       fhir:name [ fhir:v "Diagnostic Report for Lab: Surgical Pathology {DiagnosticReport}" ] ;
+       fhir:description [ fhir:v "This StructureDefinition contains the maps for Use Case Diagnostic Report for Lab: Surgical Pathology, ResourceType DiagnosticReport" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "group4" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/StructureDefinition/DocumentReference> ;
+         fhir:reference [ fhir:v "StructureDefinition/DocumentReference" ]
+       ] ;
+       fhir:name [ fhir:v "Document Reference" ] ;
+       fhir:description [ fhir:v "This StructureDefinition contains the maps for Use Case Document Reference" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "group5" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/StructureDefinition/EncounterInpatientPTF> ;
+         fhir:reference [ fhir:v "StructureDefinition/EncounterInpatientPTF" ]
+       ] ;
+       fhir:name [ fhir:v "Encounter: Inpatient (PTF)" ] ;
+       fhir:description [ fhir:v "This StructureDefinition contains the maps for Use Case Encounter, Variation Inpatient (PTF)" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "group6" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/StructureDefinition/EncounterOutpatientVisit> ;
+         fhir:reference [ fhir:v "StructureDefinition/EncounterOutpatientVisit" ]
+       ] ;
+       fhir:name [ fhir:v "Encounter: Outpatient (Visit)" ] ;
+       fhir:description [ fhir:v "This StructureDefinition contains the maps for Use Case Encounter, Variation Outpatient (Visit)" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "group6" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/StructureDefinition/Immunization> ;
+         fhir:reference [ fhir:v "StructureDefinition/Immunization" ]
+       ] ;
+       fhir:name [ fhir:v "Immunization" ] ;
+       fhir:description [ fhir:v "This StructureDefinition contains the maps for Use Case Immunization" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "group7" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/StructureDefinition/ImmunizationObservation> ;
+         fhir:reference [ fhir:v "StructureDefinition/ImmunizationObservation" ]
+       ] ;
+       fhir:name [ fhir:v "Immunization {Observation}" ] ;
+       fhir:description [ fhir:v "This StructureDefinition contains the maps for Use Case Immunization, ResourceType Observation" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "group7" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/StructureDefinition/ImplantableDeviceDevice> ;
+         fhir:reference [ fhir:v "StructureDefinition/ImplantableDeviceDevice" ]
+       ] ;
+       fhir:name [ fhir:v "Implantable Device {Device}" ] ;
+       fhir:description [ fhir:v "This StructureDefinition contains the maps for Use Case Implantable Device, ResourceType Device" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "group8" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/StructureDefinition/ImplantableDeviceALeadDevice> ;
+         fhir:reference [ fhir:v "StructureDefinition/ImplantableDeviceALeadDevice" ]
+       ] ;
+       fhir:name [ fhir:v "Implantable Device: A Lead {Device}" ] ;
+       fhir:description [ fhir:v "This StructureDefinition contains the maps for Use Case Implantable Device: A Lead, ResourceType Device" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "group8" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/StructureDefinition/ImplantableDeviceDentalDevice> ;
+         fhir:reference [ fhir:v "StructureDefinition/ImplantableDeviceDentalDevice" ]
+       ] ;
+       fhir:name [ fhir:v "Implantable Device: Dental {Device}" ] ;
+       fhir:description [ fhir:v "This StructureDefinition contains the maps for Use Case Implantable Device: Dental, ResourceType Device" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "group8" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/StructureDefinition/ImplantableDevicePacemakerDevice> ;
+         fhir:reference [ fhir:v "StructureDefinition/ImplantableDevicePacemakerDevice" ]
+       ] ;
+       fhir:name [ fhir:v "Implantable Device: Pacemaker {Device}" ] ;
+       fhir:description [ fhir:v "This StructureDefinition contains the maps for Use Case Implantable Device: Pacemaker, ResourceType Device" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "group8" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/StructureDefinition/ImplantableDeviceProsthesisDevice> ;
+         fhir:reference [ fhir:v "StructureDefinition/ImplantableDeviceProsthesisDevice" ]
+       ] ;
+       fhir:name [ fhir:v "Implantable Device: Prosthesis {Device}" ] ;
+       fhir:description [ fhir:v "This StructureDefinition contains the maps for Use Case Implantable Device: Prosthesis, ResourceType Device" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "group8" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/StructureDefinition/ImplantableDeviceTransmitterDevice> ;
+         fhir:reference [ fhir:v "StructureDefinition/ImplantableDeviceTransmitterDevice" ]
+       ] ;
+       fhir:name [ fhir:v "Implantable Device: Transmitter {Device}" ] ;
+       fhir:description [ fhir:v "This StructureDefinition contains the maps for Use Case Implantable Device: Transmitter, ResourceType Device" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "group8" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/StructureDefinition/ImplantableDeviceVLeadDevice> ;
+         fhir:reference [ fhir:v "StructureDefinition/ImplantableDeviceVLeadDevice" ]
+       ] ;
+       fhir:name [ fhir:v "Implantable Device: V Lead {Device}" ] ;
+       fhir:description [ fhir:v "This StructureDefinition contains the maps for Use Case Implantable Device: V Lead, ResourceType Device" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "group8" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/StructureDefinition/LabObservationObservation> ;
+         fhir:reference [ fhir:v "StructureDefinition/LabObservationObservation" ]
+       ] ;
+       fhir:name [ fhir:v "Lab Observation {Observation}" ] ;
+       fhir:description [ fhir:v "This StructureDefinition contains the maps for Use Case Lab Observation, ResourceType Observation" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "group9" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/StructureDefinition/LabObservationChemhemtoxriaserObservation> ;
+         fhir:reference [ fhir:v "StructureDefinition/LabObservationChemhemtoxriaserObservation" ]
+       ] ;
+       fhir:name [ fhir:v "Lab Observation: Chem, hem, tox, ria, ser {Observation}" ] ;
+       fhir:description [ fhir:v "This StructureDefinition contains the maps for Use Case Lab Observation: Chem, hem, tox, ria, ser, ResourceType Observation" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "group9" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/StructureDefinition/LabObservationChemhemtoxriaserSpecimen> ;
+         fhir:reference [ fhir:v "StructureDefinition/LabObservationChemhemtoxriaserSpecimen" ]
+       ] ;
+       fhir:name [ fhir:v "Lab Observation: Chem, hem, tox, ria, ser {Specimen}" ] ;
+       fhir:description [ fhir:v "This StructureDefinition contains the maps for Use Case Lab Observation: Chem, hem, tox, ria, ser, ResourceType Specimen" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "group9" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/StructureDefinition/LabObservationCytopathologyObservation> ;
+         fhir:reference [ fhir:v "StructureDefinition/LabObservationCytopathologyObservation" ]
+       ] ;
+       fhir:name [ fhir:v "Lab Observation: Cytopathology {Observation}" ] ;
+       fhir:description [ fhir:v "This StructureDefinition contains the maps for Use Case Lab Observation: Cytopathology, ResourceType Observation" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "group9" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/StructureDefinition/LabObservationCytopathologySpecimen> ;
+         fhir:reference [ fhir:v "StructureDefinition/LabObservationCytopathologySpecimen" ]
+       ] ;
+       fhir:name [ fhir:v "Lab Observation: Cytopathology {Specimen}" ] ;
+       fhir:description [ fhir:v "This StructureDefinition contains the maps for Use Case Lab Observation: Cytopathology, ResourceType Specimen" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "group9" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/StructureDefinition/LabObservationElectronMicroscopyObservation> ;
+         fhir:reference [ fhir:v "StructureDefinition/LabObservationElectronMicroscopyObservation" ]
+       ] ;
+       fhir:name [ fhir:v "Lab Observation: Electron Microscopy {Observation}" ] ;
+       fhir:description [ fhir:v "This StructureDefinition contains the maps for Use Case Lab Observation: Electron Microscopy, ResourceType Observation" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "group9" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/StructureDefinition/LabObservationElectronMicroscopySpecimen> ;
+         fhir:reference [ fhir:v "StructureDefinition/LabObservationElectronMicroscopySpecimen" ]
+       ] ;
+       fhir:name [ fhir:v "Lab Observation: Electron Microscopy {Specimen}" ] ;
+       fhir:description [ fhir:v "This StructureDefinition contains the maps for Use Case Lab Observation: Electron Microscopy, ResourceType Specimen" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "group9" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/StructureDefinition/LabObservationMicrobiologyObservation> ;
+         fhir:reference [ fhir:v "StructureDefinition/LabObservationMicrobiologyObservation" ]
+       ] ;
+       fhir:name [ fhir:v "Lab Observation: Microbiology {Observation}" ] ;
+       fhir:description [ fhir:v "This StructureDefinition contains the maps for Use Case Lab Observation: Microbiology, ResourceType Observation" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "group9" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/StructureDefinition/LabObservationMicrobiologyObservationBacteriology> ;
+         fhir:reference [ fhir:v "StructureDefinition/LabObservationMicrobiologyObservationBacteriology" ]
+       ] ;
+       fhir:name [ fhir:v "Lab Observation: Microbiology {Observation}: Bacteriology" ] ;
+       fhir:description [ fhir:v "This StructureDefinition contains the maps for Use Case Lab Observation: Microbiology, ResourceType Observation, Variation Bacteriology" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "group9" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/StructureDefinition/LabObservationMicrobiologyObservationMycobacteriology> ;
+         fhir:reference [ fhir:v "StructureDefinition/LabObservationMicrobiologyObservationMycobacteriology" ]
+       ] ;
+       fhir:name [ fhir:v "Lab Observation: Microbiology {Observation}: Mycobacteriology" ] ;
+       fhir:description [ fhir:v "This StructureDefinition contains the maps for Use Case Lab Observation: Microbiology, ResourceType Observation, Variation Mycobacteriology" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "group9" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/StructureDefinition/LabObservationMicrobiologyObservationMycology> ;
+         fhir:reference [ fhir:v "StructureDefinition/LabObservationMicrobiologyObservationMycology" ]
+       ] ;
+       fhir:name [ fhir:v "Lab Observation: Microbiology {Observation}: Mycology" ] ;
+       fhir:description [ fhir:v "This StructureDefinition contains the maps for Use Case Lab Observation: Microbiology, ResourceType Observation, Variation Mycology" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "group9" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/StructureDefinition/LabObservationMicrobiologyObservationParasitology> ;
+         fhir:reference [ fhir:v "StructureDefinition/LabObservationMicrobiologyObservationParasitology" ]
+       ] ;
+       fhir:name [ fhir:v "Lab Observation: Microbiology {Observation}: Parasitology" ] ;
+       fhir:description [ fhir:v "This StructureDefinition contains the maps for Use Case Lab Observation: Microbiology, ResourceType Observation, Variation Parasitology" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "group9" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/StructureDefinition/LabObservationMicrobiologyObservationVirology> ;
+         fhir:reference [ fhir:v "StructureDefinition/LabObservationMicrobiologyObservationVirology" ]
+       ] ;
+       fhir:name [ fhir:v "Lab Observation: Microbiology {Observation}: Virology" ] ;
+       fhir:description [ fhir:v "This StructureDefinition contains the maps for Use Case Lab Observation: Microbiology, ResourceType Observation, Variation Virology" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "group9" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/StructureDefinition/LabObservationMicrobiologySpecimen> ;
+         fhir:reference [ fhir:v "StructureDefinition/LabObservationMicrobiologySpecimen" ]
+       ] ;
+       fhir:name [ fhir:v "Lab Observation: Microbiology {Specimen}" ] ;
+       fhir:description [ fhir:v "This StructureDefinition contains the maps for Use Case Lab Observation: Microbiology, ResourceType Specimen" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "group9" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/StructureDefinition/LabObservationSurgicalPathologyObservation> ;
+         fhir:reference [ fhir:v "StructureDefinition/LabObservationSurgicalPathologyObservation" ]
+       ] ;
+       fhir:name [ fhir:v "Lab Observation: Surgical Pathology {Observation}" ] ;
+       fhir:description [ fhir:v "This StructureDefinition contains the maps for Use Case Lab Observation: Surgical Pathology, ResourceType Observation" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "group9" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/StructureDefinition/LabObservationSurgicalPathologySpecimen> ;
+         fhir:reference [ fhir:v "StructureDefinition/LabObservationSurgicalPathologySpecimen" ]
+       ] ;
+       fhir:name [ fhir:v "Lab Observation: Surgical Pathology {Specimen}" ] ;
+       fhir:description [ fhir:v "This StructureDefinition contains the maps for Use Case Lab Observation: Surgical Pathology, ResourceType Specimen" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "group9" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/StructureDefinition/Location> ;
+         fhir:reference [ fhir:v "StructureDefinition/Location" ]
+       ] ;
+       fhir:name [ fhir:v "Location" ] ;
+       fhir:description [ fhir:v "This StructureDefinition contains the maps for Use Case Location" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "group10" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/StructureDefinition/MedDispenseOrigMedicationDispense> ;
+         fhir:reference [ fhir:v "StructureDefinition/MedDispenseOrigMedicationDispense" ]
+       ] ;
+       fhir:name [ fhir:v "MedDispenseOrig {MedicationDispense}" ] ;
+       fhir:description [ fhir:v "This StructureDefinition contains the maps for Use Case MedDispenseOrig, ResourceType MedicationDispense" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "group20" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/StructureDefinition/MedDispensePartialMedicationDispense> ;
+         fhir:reference [ fhir:v "StructureDefinition/MedDispensePartialMedicationDispense" ]
+       ] ;
+       fhir:name [ fhir:v "MedDispensePartial {MedicationDispense}" ] ;
+       fhir:description [ fhir:v "This StructureDefinition contains the maps for Use Case MedDispensePartial, ResourceType MedicationDispense" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "group21" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/StructureDefinition/MedDispenseRefillMedicationDispense> ;
+         fhir:reference [ fhir:v "StructureDefinition/MedDispenseRefillMedicationDispense" ]
+       ] ;
+       fhir:name [ fhir:v "MedDispenseRefill {MedicationDispense}" ] ;
+       fhir:description [ fhir:v "This StructureDefinition contains the maps for Use Case MedDispenseRefill, ResourceType MedicationDispense" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "group22" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/StructureDefinition/MedicationRequestVAOrder> ;
+         fhir:reference [ fhir:v "StructureDefinition/MedicationRequestVAOrder" ]
+       ] ;
+       fhir:name [ fhir:v "MedicationRequest: VA Order" ] ;
+       fhir:description [ fhir:v "This StructureDefinition contains the maps for Use Case MedicationRequest, Variation VA Order" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "group11" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/StructureDefinition/MedRequestOrigXXXMedicationRequest> ;
+         fhir:reference [ fhir:v "StructureDefinition/MedRequestOrigXXXMedicationRequest" ]
+       ] ;
+       fhir:name [ fhir:v "MedRequestOrigXXX {MedicationRequest}" ] ;
+       fhir:description [ fhir:v "This StructureDefinition contains the maps for Use Case MedRequestOrigXXX, ResourceType MedicationRequest" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "group12" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/StructureDefinition/ObservationEXAMObservation> ;
+         fhir:reference [ fhir:v "StructureDefinition/ObservationEXAMObservation" ]
+       ] ;
+       fhir:name [ fhir:v "Observation EXAM {Observation}" ] ;
+       fhir:description [ fhir:v "This StructureDefinition contains the maps for Use Case Observation EXAM, ResourceType Observation" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "group13" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/StructureDefinition/Organization> ;
+         fhir:reference [ fhir:v "StructureDefinition/Organization" ]
+       ] ;
+       fhir:name [ fhir:v "Organization" ] ;
+       fhir:description [ fhir:v "This StructureDefinition contains the maps for Use Case Organization" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "group14" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/StructureDefinition/Patient> ;
+         fhir:reference [ fhir:v "StructureDefinition/Patient" ]
+       ] ;
+       fhir:name [ fhir:v "Patient" ] ;
+       fhir:description [ fhir:v "This StructureDefinition contains the maps for Use Case Patient" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "group1" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/StructureDefinition/Practitioner> ;
+         fhir:reference [ fhir:v "StructureDefinition/Practitioner" ]
+       ] ;
+       fhir:name [ fhir:v "Practitioner" ] ;
+       fhir:description [ fhir:v "This StructureDefinition contains the maps for Use Case Practitioner" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "group15" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/StructureDefinition/PractitionerRole> ;
+         fhir:reference [ fhir:v "StructureDefinition/PractitionerRole" ]
+       ] ;
+       fhir:name [ fhir:v "Practitioner Role" ] ;
+       fhir:description [ fhir:v "This StructureDefinition contains the maps for Use Case Practitioner Role" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "group16" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/StructureDefinition/ProcedureOutpatientProcedure> ;
+         fhir:reference [ fhir:v "StructureDefinition/ProcedureOutpatientProcedure" ]
+       ] ;
+       fhir:name [ fhir:v "Procedure: Outpatient {Procedure}" ] ;
+       fhir:description [ fhir:v "This StructureDefinition contains the maps for Use Case Procedure: Outpatient, ResourceType Procedure" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "group17" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/StructureDefinition/ProcedureRadiologyProcedure> ;
+         fhir:reference [ fhir:v "StructureDefinition/ProcedureRadiologyProcedure" ]
+       ] ;
+       fhir:name [ fhir:v "Procedure: Radiology {Procedure}" ] ;
+       fhir:description [ fhir:v "This StructureDefinition contains the maps for Use Case Procedure: Radiology, ResourceType Procedure" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "group17" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/StructureDefinition/ProcedureSurgeryProcedure> ;
+         fhir:reference [ fhir:v "StructureDefinition/ProcedureSurgeryProcedure" ]
+       ] ;
+       fhir:name [ fhir:v "Procedure: Surgery {Procedure}" ] ;
+       fhir:description [ fhir:v "This StructureDefinition contains the maps for Use Case Procedure: Surgery, ResourceType Procedure" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "group17" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/StructureDefinition/SmokingStatusObservationObservation> ;
+         fhir:reference [ fhir:v "StructureDefinition/SmokingStatusObservationObservation" ]
+       ] ;
+       fhir:name [ fhir:v "Smoking Status Observation {Observation}" ] ;
+       fhir:description [ fhir:v "This StructureDefinition contains the maps for Use Case Smoking Status Observation, ResourceType Observation" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "group18" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ConceptMap" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/ConceptMap/VFallergyActive> ;
+         fhir:reference [ fhir:v "ConceptMap/VFallergyActive" ]
+       ] ;
+       fhir:name [ fhir:v "VF_allergyActive" ] ;
+       fhir:description [ fhir:v "Terminology Maps VF_allergyActive" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ConceptMap" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/ConceptMap/VFallergyEnteredInError> ;
+         fhir:reference [ fhir:v "ConceptMap/VFallergyEnteredInError" ]
+       ] ;
+       fhir:name [ fhir:v "VF_allergyEnteredInError" ] ;
+       fhir:description [ fhir:v "Terminology Maps VF_allergyEnteredInError" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ConceptMap" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/ConceptMap/VFallergyMechanism> ;
+         fhir:reference [ fhir:v "ConceptMap/VFallergyMechanism" ]
+       ] ;
+       fhir:name [ fhir:v "VF_allergyMechanism" ] ;
+       fhir:description [ fhir:v "Terminology Maps VF_allergyMechanism" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ConceptMap" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/ConceptMap/VFallergySeverity> ;
+         fhir:reference [ fhir:v "ConceptMap/VFallergySeverity" ]
+       ] ;
+       fhir:name [ fhir:v "VF_allergySeverity" ] ;
+       fhir:description [ fhir:v "Terminology Maps VF_allergySeverity" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ConceptMap" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/ConceptMap/VFallergySubstanceCategory> ;
+         fhir:reference [ fhir:v "ConceptMap/VFallergySubstanceCategory" ]
+       ] ;
+       fhir:name [ fhir:v "VF_allergySubstanceCategory" ] ;
+       fhir:description [ fhir:v "Terminology Maps VF_allergySubstanceCategory" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ConceptMap" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/ConceptMap/VFallergyVerificationStatus> ;
+         fhir:reference [ fhir:v "ConceptMap/VFallergyVerificationStatus" ]
+       ] ;
+       fhir:name [ fhir:v "VF_allergyVerificationStatus" ] ;
+       fhir:description [ fhir:v "Terminology Maps VF_allergyVerificationStatus" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ConceptMap" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/ConceptMap/VFAntibioticSensitivityInterpretation> ;
+         fhir:reference [ fhir:v "ConceptMap/VFAntibioticSensitivityInterpretation" ]
+       ] ;
+       fhir:name [ fhir:v "VF_AntibioticSensitivityInterpretation" ] ;
+       fhir:description [ fhir:v "Terminology Maps VF_AntibioticSensitivityInterpretation" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ConceptMap" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/ConceptMap/VFAppointmentStatus> ;
+         fhir:reference [ fhir:v "ConceptMap/VFAppointmentStatus" ]
+       ] ;
+       fhir:name [ fhir:v "VF_AppointmentStatus" ] ;
+       fhir:description [ fhir:v "Terminology Maps VF_AppointmentStatus" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ConceptMap" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/ConceptMap/VFBoolean> ;
+         fhir:reference [ fhir:v "ConceptMap/VFBoolean" ]
+       ] ;
+       fhir:name [ fhir:v "VF_Boolean" ] ;
+       fhir:description [ fhir:v "Terminology Maps VF_Boolean" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ConceptMap" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/ConceptMap/VFCommunicationQualifier> ;
+         fhir:reference [ fhir:v "ConceptMap/VFCommunicationQualifier" ]
+       ] ;
+       fhir:name [ fhir:v "VF_CommunicationQualifier" ] ;
+       fhir:description [ fhir:v "Terminology Maps VF_CommunicationQualifier" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ConceptMap" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/ConceptMap/VFCoverageRelationship> ;
+         fhir:reference [ fhir:v "ConceptMap/VFCoverageRelationship" ]
+       ] ;
+       fhir:name [ fhir:v "VF_CoverageRelationship" ] ;
+       fhir:description [ fhir:v "Terminology Maps VF_CoverageRelationship" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ConceptMap" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/ConceptMap/VFCoverageStatusForce> ;
+         fhir:reference [ fhir:v "ConceptMap/VFCoverageStatusForce" ]
+       ] ;
+       fhir:name [ fhir:v "VF_CoverageStatusForce" ] ;
+       fhir:description [ fhir:v "Terminology Maps VF_CoverageStatusForce" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ConceptMap" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/ConceptMap/VFDentalDeviceStatus> ;
+         fhir:reference [ fhir:v "ConceptMap/VFDentalDeviceStatus" ]
+       ] ;
+       fhir:name [ fhir:v "VF_DentalDeviceStatus" ] ;
+       fhir:description [ fhir:v "Terminology Maps VF_DentalDeviceStatus" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ConceptMap" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/ConceptMap/VFdeviceTypePacemaker> ;
+         fhir:reference [ fhir:v "ConceptMap/VFdeviceTypePacemaker" ]
+       ] ;
+       fhir:name [ fhir:v "VF_deviceTypePacemaker" ] ;
+       fhir:description [ fhir:v "Terminology Maps VF_deviceTypePacemaker" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ConceptMap" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/ConceptMap/VFDiagnosticReportLabStatus> ;
+         fhir:reference [ fhir:v "ConceptMap/VFDiagnosticReportLabStatus" ]
+       ] ;
+       fhir:name [ fhir:v "VF_DiagnosticReportLabStatus" ] ;
+       fhir:description [ fhir:v "Terminology Maps VF_DiagnosticReportLabStatus" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ConceptMap" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/ConceptMap/VFdocumentReferencedocStatus> ;
+         fhir:reference [ fhir:v "ConceptMap/VFdocumentReferencedocStatus" ]
+       ] ;
+       fhir:name [ fhir:v "VF_documentReferencedocStatus" ] ;
+       fhir:description [ fhir:v "Terminology Maps VF_documentReferencedocStatus" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ConceptMap" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/ConceptMap/VFencounterClass> ;
+         fhir:reference [ fhir:v "ConceptMap/VFencounterClass" ]
+       ] ;
+       fhir:name [ fhir:v "VF_encounterClass" ] ;
+       fhir:description [ fhir:v "Terminology Maps VF_encounterClass" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ConceptMap" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/ConceptMap/VFencounterProblemStatus> ;
+         fhir:reference [ fhir:v "ConceptMap/VFencounterProblemStatus" ]
+       ] ;
+       fhir:name [ fhir:v "VF_encounterProblemStatus" ] ;
+       fhir:description [ fhir:v "Terminology Maps VF_encounterProblemStatus" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ConceptMap" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/ConceptMap/VFencounterProblemVerificationStatus> ;
+         fhir:reference [ fhir:v "ConceptMap/VFencounterProblemVerificationStatus" ]
+       ] ;
+       fhir:name [ fhir:v "VF_encounterProblemVerificationStatus" ] ;
+       fhir:description [ fhir:v "Terminology Maps VF_encounterProblemVerificationStatus" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ConceptMap" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/ConceptMap/VFethnicityCategory> ;
+         fhir:reference [ fhir:v "ConceptMap/VFethnicityCategory" ]
+       ] ;
+       fhir:name [ fhir:v "VF_ethnicityCategory" ] ;
+       fhir:description [ fhir:v "Terminology Maps VF_ethnicityCategory" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ConceptMap" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/ConceptMap/VFExamResultInterpretation> ;
+         fhir:reference [ fhir:v "ConceptMap/VFExamResultInterpretation" ]
+       ] ;
+       fhir:name [ fhir:v "VF_ExamResultInterpretation" ] ;
+       fhir:description [ fhir:v "Terminology Maps VF_ExamResultInterpretation" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ConceptMap" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/ConceptMap/VFExamStatus> ;
+         fhir:reference [ fhir:v "ConceptMap/VFExamStatus" ]
+       ] ;
+       fhir:name [ fhir:v "VF_ExamStatus" ] ;
+       fhir:description [ fhir:v "Terminology Maps VF_ExamStatus" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ConceptMap" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/ConceptMap/VFgenderIdentity> ;
+         fhir:reference [ fhir:v "ConceptMap/VFgenderIdentity" ]
+       ] ;
+       fhir:name [ fhir:v "VF_genderIdentity" ] ;
+       fhir:description [ fhir:v "Terminology Maps VF_genderIdentity" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ConceptMap" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/ConceptMap/VFICDCodingSystems> ;
+         fhir:reference [ fhir:v "ConceptMap/VFICDCodingSystems" ]
+       ] ;
+       fhir:name [ fhir:v "VF_ICDCodingSystems" ] ;
+       fhir:description [ fhir:v "Terminology Maps VF_ICDCodingSystems" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ConceptMap" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/ConceptMap/VFICDVersion> ;
+         fhir:reference [ fhir:v "ConceptMap/VFICDVersion" ]
+       ] ;
+       fhir:name [ fhir:v "VF_ICDVersion" ] ;
+       fhir:description [ fhir:v "Terminology Maps VF_ICDVersion" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ConceptMap" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/ConceptMap/VFimmunizationPrimarySource> ;
+         fhir:reference [ fhir:v "ConceptMap/VFimmunizationPrimarySource" ]
+       ] ;
+       fhir:name [ fhir:v "VF_immunizationPrimarySource" ] ;
+       fhir:description [ fhir:v "Terminology Maps VF_immunizationPrimarySource" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ConceptMap" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/ConceptMap/VFImmunizationReaction> ;
+         fhir:reference [ fhir:v "ConceptMap/VFImmunizationReaction" ]
+       ] ;
+       fhir:name [ fhir:v "VF_ImmunizationReaction" ] ;
+       fhir:description [ fhir:v "Terminology Maps VF_ImmunizationReaction" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ConceptMap" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/ConceptMap/VFimmunizationStatusReason> ;
+         fhir:reference [ fhir:v "ConceptMap/VFimmunizationStatusReason" ]
+       ] ;
+       fhir:name [ fhir:v "VF_immunizationStatusReason" ] ;
+       fhir:description [ fhir:v "Terminology Maps VF_immunizationStatusReason" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ConceptMap" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/ConceptMap/VFinferredCVX> ;
+         fhir:reference [ fhir:v "ConceptMap/VFinferredCVX" ]
+       ] ;
+       fhir:name [ fhir:v "VF_inferredCVX" ] ;
+       fhir:description [ fhir:v "Terminology Maps VF_inferredCVX" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ConceptMap" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/ConceptMap/VFLabInterpretation> ;
+         fhir:reference [ fhir:v "ConceptMap/VFLabInterpretation" ]
+       ] ;
+       fhir:name [ fhir:v "VF_LabInterpretation" ] ;
+       fhir:description [ fhir:v "Terminology Maps VF_LabInterpretation" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ConceptMap" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/ConceptMap/VFLabObservationStatus> ;
+         fhir:reference [ fhir:v "ConceptMap/VFLabObservationStatus" ]
+       ] ;
+       fhir:name [ fhir:v "VF_LabObservationStatus" ] ;
+       fhir:description [ fhir:v "Terminology Maps VF_LabObservationStatus" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ConceptMap" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/ConceptMap/VFLocationStatus> ;
+         fhir:reference [ fhir:v "ConceptMap/VFLocationStatus" ]
+       ] ;
+       fhir:name [ fhir:v "VF_LocationStatus" ] ;
+       fhir:description [ fhir:v "Terminology Maps VF_LocationStatus" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ConceptMap" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/ConceptMap/VFMaritalStatus> ;
+         fhir:reference [ fhir:v "ConceptMap/VFMaritalStatus" ]
+       ] ;
+       fhir:name [ fhir:v "VF_MaritalStatus" ] ;
+       fhir:description [ fhir:v "Terminology Maps VF_MaritalStatus" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ConceptMap" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/ConceptMap/VFOrganizationIdentifierType> ;
+         fhir:reference [ fhir:v "ConceptMap/VFOrganizationIdentifierType" ]
+       ] ;
+       fhir:name [ fhir:v "VF_OrganizationIdentifierType" ] ;
+       fhir:description [ fhir:v "Terminology Maps VF_OrganizationIdentifierType" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ConceptMap" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/ConceptMap/VFOutpatMedReq> ;
+         fhir:reference [ fhir:v "ConceptMap/VFOutpatMedReq" ]
+       ] ;
+       fhir:name [ fhir:v "VF_OutpatMedReq" ] ;
+       fhir:description [ fhir:v "Terminology Maps VF_OutpatMedReq" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ConceptMap" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/ConceptMap/VFPersonIdentifierType> ;
+         fhir:reference [ fhir:v "ConceptMap/VFPersonIdentifierType" ]
+       ] ;
+       fhir:name [ fhir:v "VF_PersonIdentifierType" ] ;
+       fhir:description [ fhir:v "Terminology Maps VF_PersonIdentifierType" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ConceptMap" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/ConceptMap/VFPharmacyPersonType> ;
+         fhir:reference [ fhir:v "ConceptMap/VFPharmacyPersonType" ]
+       ] ;
+       fhir:name [ fhir:v "VF_PharmacyPersonType" ] ;
+       fhir:description [ fhir:v "Terminology Maps VF_PharmacyPersonType" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ConceptMap" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/ConceptMap/VFPositiveNegative> ;
+         fhir:reference [ fhir:v "ConceptMap/VFPositiveNegative" ]
+       ] ;
+       fhir:name [ fhir:v "VF_PositiveNegative" ] ;
+       fhir:description [ fhir:v "Terminology Maps VF_PositiveNegative" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ConceptMap" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/ConceptMap/VFPractitionerCountry> ;
+         fhir:reference [ fhir:v "ConceptMap/VFPractitionerCountry" ]
+       ] ;
+       fhir:name [ fhir:v "VF_PractitionerCountry" ] ;
+       fhir:description [ fhir:v "Terminology Maps VF_PractitionerCountry" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ConceptMap" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/ConceptMap/VFproblemStatus> ;
+         fhir:reference [ fhir:v "ConceptMap/VFproblemStatus" ]
+       ] ;
+       fhir:name [ fhir:v "VF_problemStatus" ] ;
+       fhir:description [ fhir:v "Terminology Maps VF_problemStatus" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ConceptMap" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/ConceptMap/VFproblemVerificationStatus> ;
+         fhir:reference [ fhir:v "ConceptMap/VFproblemVerificationStatus" ]
+       ] ;
+       fhir:name [ fhir:v "VF_problemVerificationStatus" ] ;
+       fhir:description [ fhir:v "Terminology Maps VF_problemVerificationStatus" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ConceptMap" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/ConceptMap/VFProcedureCodeSystem> ;
+         fhir:reference [ fhir:v "ConceptMap/VFProcedureCodeSystem" ]
+       ] ;
+       fhir:name [ fhir:v "VF_ProcedureCodeSystem" ] ;
+       fhir:description [ fhir:v "Terminology Maps VF_ProcedureCodeSystem" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ConceptMap" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/ConceptMap/VFproviderGender> ;
+         fhir:reference [ fhir:v "ConceptMap/VFproviderGender" ]
+       ] ;
+       fhir:name [ fhir:v "VF_providerGender" ] ;
+       fhir:description [ fhir:v "Terminology Maps VF_providerGender" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ConceptMap" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/ConceptMap/VFraceCategory> ;
+         fhir:reference [ fhir:v "ConceptMap/VFraceCategory" ]
+       ] ;
+       fhir:name [ fhir:v "VF_raceCategory" ] ;
+       fhir:description [ fhir:v "Terminology Maps VF_raceCategory" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ConceptMap" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/ConceptMap/VFRadiologyProcedureStatus> ;
+         fhir:reference [ fhir:v "ConceptMap/VFRadiologyProcedureStatus" ]
+       ] ;
+       fhir:name [ fhir:v "VF_RadiologyProcedureStatus" ] ;
+       fhir:description [ fhir:v "Terminology Maps VF_RadiologyProcedureStatus" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ConceptMap" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/ConceptMap/VFReligion> ;
+         fhir:reference [ fhir:v "ConceptMap/VFReligion" ]
+       ] ;
+       fhir:name [ fhir:v "VF_Religion" ] ;
+       fhir:description [ fhir:v "Terminology Maps VF_Religion" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ConceptMap" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/ConceptMap/VFSmokingStatus> ;
+         fhir:reference [ fhir:v "ConceptMap/VFSmokingStatus" ]
+       ] ;
+       fhir:name [ fhir:v "VF_SmokingStatus" ] ;
+       fhir:description [ fhir:v "Terminology Maps VF_SmokingStatus" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ConceptMap" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/ConceptMap/VFSourceOfAdmission> ;
+         fhir:reference [ fhir:v "ConceptMap/VFSourceOfAdmission" ]
+       ] ;
+       fhir:name [ fhir:v "VF_SourceOfAdmission" ] ;
+       fhir:description [ fhir:v "Terminology Maps VF_SourceOfAdmission" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ConceptMap" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/ConceptMap/VFVitalsCodes> ;
+         fhir:reference [ fhir:v "ConceptMap/VFVitalsCodes" ]
+       ] ;
+       fhir:name [ fhir:v "VF_VitalsCodes" ] ;
+       fhir:description [ fhir:v "Terminology Maps VF_VitalsCodes" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ConceptMap" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/ConceptMap/VFVitalsDevice> ;
+         fhir:reference [ fhir:v "ConceptMap/VFVitalsDevice" ]
+       ] ;
+       fhir:name [ fhir:v "VF_VitalsDevice" ] ;
+       fhir:description [ fhir:v "Terminology Maps VF_VitalsDevice" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ConceptMap" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/ConceptMap/VFVitalsLaterality> ;
+         fhir:reference [ fhir:v "ConceptMap/VFVitalsLaterality" ]
+       ] ;
+       fhir:name [ fhir:v "VF_VitalsLaterality" ] ;
+       fhir:description [ fhir:v "Terminology Maps VF_VitalsLaterality" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ConceptMap" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/ConceptMap/VFVitalsMethod> ;
+         fhir:reference [ fhir:v "ConceptMap/VFVitalsMethod" ]
+       ] ;
+       fhir:name [ fhir:v "VF_VitalsMethod" ] ;
+       fhir:description [ fhir:v "Terminology Maps VF_VitalsMethod" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ConceptMap" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/ConceptMap/VFVitalsPosition> ;
+         fhir:reference [ fhir:v "ConceptMap/VFVitalsPosition" ]
+       ] ;
+       fhir:name [ fhir:v "VF_VitalsPosition" ] ;
+       fhir:description [ fhir:v "Terminology Maps VF_VitalsPosition" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ConceptMap" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/ConceptMap/VFVitalsSite> ;
+         fhir:reference [ fhir:v "ConceptMap/VFVitalsSite" ]
+       ] ;
+       fhir:name [ fhir:v "VF_VitalsSite" ] ;
+       fhir:description [ fhir:v "Terminology Maps VF_VitalsSite" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ConceptMap" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/ConceptMap/VFVitalsUnits> ;
+         fhir:reference [ fhir:v "ConceptMap/VFVitalsUnits" ]
+       ] ;
+       fhir:name [ fhir:v "VF_VitalsUnits" ] ;
+       fhir:description [ fhir:v "Terminology Maps VF_VitalsUnits" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ConceptMap" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/ConceptMap/VFYesNo> ;
+         fhir:reference [ fhir:v "ConceptMap/VFYesNo" ]
+       ] ;
+       fhir:name [ fhir:v "VF_YesNo" ] ;
+       fhir:description [ fhir:v "Terminology Maps VF_YesNo" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ConceptMap" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/ConceptMap/VistaNCPDPCoverageRelationship> ;
+         fhir:reference [ fhir:v "ConceptMap/VistaNCPDPCoverageRelationship" ]
+       ] ;
+       fhir:name [ fhir:v "Vista-NCPDPCoverageRelationship" ] ;
+       fhir:description [ fhir:v "Terminology Maps Vista-NCPDPCoverageRelationship" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/StructureDefinition/VitalSignsObservation> ;
+         fhir:reference [ fhir:v "StructureDefinition/VitalSignsObservation" ]
+       ] ;
+       fhir:name [ fhir:v "Vital Signs {Observation}" ] ;
+       fhir:description [ fhir:v "This StructureDefinition contains the maps for Use Case Vital Signs, ResourceType Observation" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "group19" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/StructureDefinition/VitalSignsObservationConcentration> ;
+         fhir:reference [ fhir:v "StructureDefinition/VitalSignsObservationConcentration" ]
+       ] ;
+       fhir:name [ fhir:v "Vital Signs {Observation}: Concentration" ] ;
+       fhir:description [ fhir:v "This StructureDefinition contains the maps for Use Case Vital Signs, ResourceType Observation, Variation Concentration" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "group19" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/StructureDefinition/VitalSignsObservationdiastolic> ;
+         fhir:reference [ fhir:v "StructureDefinition/VitalSignsObservationdiastolic" ]
+       ] ;
+       fhir:name [ fhir:v "Vital Signs {Observation}: diastolic" ] ;
+       fhir:description [ fhir:v "This StructureDefinition contains the maps for Use Case Vital Signs, ResourceType Observation, Variation diastolic" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "group19" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/StructureDefinition/VitalSignsObservationFlow> ;
+         fhir:reference [ fhir:v "StructureDefinition/VitalSignsObservationFlow" ]
+       ] ;
+       fhir:name [ fhir:v "Vital Signs {Observation}: Flow" ] ;
+       fhir:description [ fhir:v "This StructureDefinition contains the maps for Use Case Vital Signs, ResourceType Observation, Variation Flow" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "group19" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/StructureDefinition/VitalSignsObservationsystolic> ;
+         fhir:reference [ fhir:v "StructureDefinition/VitalSignsObservationsystolic" ]
+       ] ;
+       fhir:name [ fhir:v "Vital Signs {Observation}: systolic" ] ;
+       fhir:description [ fhir:v "This StructureDefinition contains the maps for Use Case Vital Signs, ResourceType Observation, Variation systolic" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "group19" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/StructureDefinition/VitalSignsOrganization> ;
+         fhir:reference [ fhir:v "StructureDefinition/VitalSignsOrganization" ]
+       ] ;
+       fhir:name [ fhir:v "Vital Signs {Organization}" ] ;
+       fhir:description [ fhir:v "This StructureDefinition contains the maps for Use Case Vital Signs, ResourceType Organization" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "group19" ]
+     ] ) ;
+     fhir:page [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "toc.html"^^xsd:anyURI ]
+       ] ) ;
+       fhir:name [ fhir:v "toc.html"^^xsd:anyURI ] ;
+       fhir:title [ fhir:v "Table of Contents" ] ;
+       fhir:generation [ fhir:v "html" ] ;
+       fhir:page ( [
+         fhir:extension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "index.html"^^xsd:anyURI ]
+         ] ) ;
+         fhir:name [ fhir:v "index.html"^^xsd:anyURI ] ;
+         fhir:title [ fhir:v "Home" ] ;
+         fhir:generation [ fhir:v "markdown" ]
+       ] )
+     ] ;
+     fhir:parameter ( [
+       fhir:code [ fhir:v "path-resource" ] ;
+       fhir:value [ fhir:v "input/capabilities" ]
+     ] [
+       fhir:code [ fhir:v "path-resource" ] ;
+       fhir:value [ fhir:v "input/examples" ]
+     ] [
+       fhir:code [ fhir:v "path-resource" ] ;
+       fhir:value [ fhir:v "input/extensions" ]
+     ] [
+       fhir:code [ fhir:v "path-resource" ] ;
+       fhir:value [ fhir:v "input/models" ]
+     ] [
+       fhir:code [ fhir:v "path-resource" ] ;
+       fhir:value [ fhir:v "input/operations" ]
+     ] [
+       fhir:code [ fhir:v "path-resource" ] ;
+       fhir:value [ fhir:v "input/profiles" ]
+     ] [
+       fhir:code [ fhir:v "path-resource" ] ;
+       fhir:value [ fhir:v "input/resources" ]
+     ] [
+       fhir:code [ fhir:v "path-resource" ] ;
+       fhir:value [ fhir:v "input/vocabulary" ]
+     ] [
+       fhir:code [ fhir:v "path-resource" ] ;
+       fhir:value [ fhir:v "input/maps" ]
+     ] [
+       fhir:code [ fhir:v "path-resource" ] ;
+       fhir:value [ fhir:v "input/testing" ]
+     ] [
+       fhir:code [ fhir:v "path-resource" ] ;
+       fhir:value [ fhir:v "input/history" ]
+     ] [
+       fhir:code [ fhir:v "path-resource" ] ;
+       fhir:value [ fhir:v "fsh-generated/resources" ]
+     ] [
+       fhir:code [ fhir:v "path-pages" ] ;
+       fhir:value [ fhir:v "template/config" ]
+     ] [
+       fhir:code [ fhir:v "path-pages" ] ;
+       fhir:value [ fhir:v "input/images" ]
+     ] [
+       fhir:code [ fhir:v "path-tx-cache" ] ;
+       fhir:value [ fhir:v "input-cache/txcache" ]
+     ] )
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+
