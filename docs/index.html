@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Home - US Veterans Health Administration FHIR Map Set Implementation Guide v0.1.0</title>
+    <title>Home - US Veterans Administration FHIR Map Set Implementation Guide v0.1.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -19,6 +19,7 @@
     <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
   	<link href="assets/css/prism.css" rel="stylesheet" />
     <!-- Placeholder for child template CSS declarations -->
+    <link href="assets/css/va-maps.css" rel="stylesheet"/>
 
     <script type="text/javascript" src="fhir-table-scripts.js"> </script>
 
@@ -46,17 +47,16 @@
         <!-- Placeholder for child template header declarations -->
 
 <div id="project-nav">
-    <a id="project-logo" no-external="true" href="https://jpsys.com"><img height="50"
-            alt="Visit the JPSys website" src="assets/images/jpsys40y.png" /> </a>
-</div>
-
-<div id="family-nav">
     <a id="family-logo" no-external="true" href="https://va.gov"><img height="50" alt="Visit the VA website"
         src="assets/images/va.png" /> </a>
 </div>
 
+<div id="family-nav">
+    <a id="family-logo" no-external="true" href="http://hl7.org/fhir"><img height="50" alt="Visit the FHIR website" src="assets/images/fhir-logo-www.png"/> </a>
+</div>
+
         <div id="ig-status">
-          <p><span style="font-size:12pt;font-weight:bold">US Veterans Health Administration FHIR Map Set Implementation Guide</span>
+          <p><span style="font-size:12pt;font-weight:bold">US Veterans Administration FHIR Map Set Implementation Guide</span>
             <br/>
             <span style="display:inline-block;">0.1.0 - ci-build
 
@@ -93,6 +93,9 @@
     <a href="index.html">Home</a>
   </li>
   <li>
+    <a href="classes.html">Classes</a>
+  </li>
+  <li>
     <a href="artifacts.html">Artifacts</a>
   </li>
 </ul>
@@ -127,7 +130,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">US Veterans Health Administration FHIR Map Set Implementation Guide - Local Development build (v0.1.0). See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">US Veterans Administration FHIR Map Set Implementation Guide - Local Development build (v0.1.0). See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>Home</h2>
   
 
@@ -158,7 +161,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
         
           Draft
           
-            as of 2023-10-17
+            as of 2023-10-31
           
         
       </td>
@@ -182,12 +185,54 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 
     <p><!-- white space is critical inside of capture --></p>
-<div>
-<!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
-</div>
-<h1 id="vamapsig">VAMapsIG</h1>
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#how-to-read" id="markdown-toc-how-to-read">How to Read</a></li>
+  <li><a href="#how-to-improve-this-guide" id="markdown-toc-how-to-improve-this-guide">How to Improve This Guide</a></li>
+  <li><a href="#methods-used" id="markdown-toc-methods-used">Methods used</a></li>
+</ul>
 
-<p>Feel free to modify this index page with your own awesome content!</p>
+</div>
+<p>This implementation guide (IG) provides maps from Veterans Health Administration (VHA) data sources – primarily but not exclusively VistA – to Fast Healthcare Interoperability Resources (FHIR). The maps are asserted in the StructureDefinition resources that profile FHIR US Core R4 profiles, where available, and R4 core FHIR resources where no R4 US Core profile is defined.</p>
+
+<p>Developers of FHIR interfaces for specific clinical purposes, whether they develop IGs or not, can use these maps to ensure that their assumptions about data equivalence are shared by other VHA stakeholders and partners.</p>
+
+<p>It is anticipated that these maps may be specified more formally as StructureMap resources, but this will require consensus on representing VistA data as StructureDefinition files. Since clients to date have used a variety of interfaces to VistA (including Vx130 via CDW, VPR, VPR via VDIF, VIA, and HDR), it is not clear that this more strictly enforceable approach would actually support better governance.</p>
+
+<h3 id="how-to-read">How to Read</h3>
+
+<p>If you wish to map VistA to FHIR, there are three ways to search this specification.</p>
+
+<ol>
+  <li>If you are familiar with FHIR, or comfortable browsing, look for a profile with a name that matches your interest.</li>
+  <li>Consult this table for VistA file-to-FHIR Resource correspondences.</li>
+  <li>Search “my term” site: <url>. This method will not work while the site is hosted at github.io.</url></li>
+</ol>
+
+<p>The resource profile of interest will have a tab at the top of the page including the link “Mappings.” This links to a page of all the mappings defined for the profile. Many of these mappings are inherited from the base specification, but the VistA mappings (and other VA-sources mappings, as available) will be found there.</p>
+
+<p>Note that the publication tool infers that any mapped element is of interest. These elements are the ones that appear on the main page of the profile, even though the profile asserts no constraints on them.</p>
+
+<p>The guide also contains concept maps for generating valid coded elements based on VistA content. [links not yet implemented]</p>
+
+<p>Other data sources may be added to this specification as needed.</p>
+
+<p>If you find what you need, please let the VA FHIR Community of Practice (link) know, so that we may understand how widely the maps are being used, and so that we may notify you if any changes are contemplated at the enterprise level.</p>
+
+<h3 id="how-to-improve-this-guide">How to Improve This Guide</h3>
+
+<p>If you do not find what you need, please contact the VA FHIR Community of Practice (link) for assistance in creating new maps that will support your use case. If you have already created maps, please let us know so that we can publicize your work and encourage consensus.</p>
+
+<p>If you identify a problem or issue, feel free to bring it to the VA FHIR Community of Practice (see Process Guidance).</p>
+
+<h3 id="methods-used">Methods used</h3>
+
+<p>The VistA data dictionary has over 70,000 entries, so we are not able to map all fields. Map creation is driven by business need. Most cases to date have involved mapping to commonly understood elements outside the enterprise, so the elements required or constrained in the US Core IG have been the first priority.</p>
+
+<p>For more information on the mapping process and design assumptions, see Design Guidance.</p>
+
+<p>For more information on engaging with the CoP team, see Process Guidance.</p>
+
 
 
 
@@ -213,7 +258,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.jpsys.com">JPSys</a>.  Package va.maps#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Oct 17, 2023 15:32+0000">2023-10-17</span>
+          IG &#169; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Oct 31, 2023 15:37+0000">2023-10-31</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
