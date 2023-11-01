@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Guidance - US Veterans Administration FHIR Map Set Implementation Guide v0.1.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+    <link href="assets/css/va-maps.css" rel="stylesheet"/>
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+
+    <style type="text/css">h2{--heading-prefix:"3"}
+    h3,h4,h5,h6{--heading-prefix:"3"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+        <!-- Placeholder for child template header declarations -->
+
+<div id="project-nav">
+    <a id="family-logo" no-external="true" href="https://va.gov"><img height="50" alt="Visit the VA website"
+        src="assets/images/va.png" /> </a>
+</div>
+
+<div id="family-nav">
+    <a id="family-logo" no-external="true" href="http://hl7.org/fhir"><img height="50" alt="Visit the FHIR website" src="assets/images/fhir-logo-www.png"/> </a>
+</div>
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">US Veterans Administration FHIR Map Set Implementation Guide</span>
+            <br/>
+            <span style="display:inline-block;">0.1.0 - ci-build
+
+
+
+  <img alt="United States of America flag" src="assets/images/usa.svg" height="16" title="United States of America"/>
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li>
+    <a href="classes.html">Classes</a>
+  </li>
+  <li>
+    <a href="artifacts.html">Artifacts</a>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Guidance</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">US Veterans Administration FHIR Map Set Implementation Guide - Local Development build (v0.1.0). See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <h2>Guidance</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#design-decisions" id="markdown-toc-design-decisions">Design Decisions</a></li>
+  <li><a href="#principles" id="markdown-toc-principles">Principles</a>    <ul>
+      <li><a href="#implications" id="markdown-toc-implications">Implications</a></li>
+      <li><a href="#implication" id="markdown-toc-implication">Implication</a></li>
+    </ul>
+  </li>
+  <li><a href="#profiling-concept" id="markdown-toc-profiling-concept">Profiling Concept</a></li>
+  <li><a href="#version" id="markdown-toc-version">Version</a></li>
+  <li><a href="#environment" id="markdown-toc-environment">Environment</a></li>
+  <li><a href="#mapping-approach" id="markdown-toc-mapping-approach">Mapping approach</a></li>
+  <li><a href="#containment-and-reference" id="markdown-toc-containment-and-reference">Containment and reference</a></li>
+  <li><a href="#terminology-mapping-approach" id="markdown-toc-terminology-mapping-approach">Terminology mapping approach</a></li>
+  <li><a href="#extensions" id="markdown-toc-extensions">Extensions</a></li>
+  <li><a href="#fhir-design-decisons" id="markdown-toc-fhir-design-decisons">FHIR design decisons</a>    <ul>
+      <li><a href="#uniform-resource-identifiers" id="markdown-toc-uniform-resource-identifiers">Uniform Resource Identifiers</a></li>
+      <li><a href="#identifiers" id="markdown-toc-identifiers">Identifiers</a></li>
+    </ul>
+  </li>
+</ul>
+
+</div>
+<h1 id="design-decisions">Design Decisions</h1>
+
+<p>These design decisions have guided the mapping process. They are documented here to clarify why the maps were done the way they were and to support consensus across the enterprise.</p>
+
+<h1 id="principles">Principles</h1>
+<p>This guide follows two key principles:</p>
+<ol>
+  <li>The purpose of FHIR is to support interoperability. Every effort should be made to ensure that data will be comprehensible to receivers, including, to the extent possible, receivers without “out-of-band” communication channels to settle integration issues.
+    <h2 id="implications">Implications</h2>
+    <p>Where possible, FHIR properties should be used in preference to extensions.
+Tactics for doing so, in order:</p>
+    <ul>
+      <li>Using FHIR Core properties</li>
+      <li>Using commonly recognized extensions that already exist</li>
+      <li>Using elements from future releases of FHIR reproduced as extensions</li>
+      <li>Creating new extensions and publishing them to support external comprehension
+Extensions, where necessary, should include full documentation. A publicly available Implementation Guide, identified with a URL, is the best way to expose these designs; other tools may be necessary in the interim.</li>
+    </ul>
+  </li>
+  <li>Health record semantics must be preserved. If FHIR is unable to support required patient information, extensions must be used.
+    <h2 id="implication">Implication</h2>
+    <p>There will be cases where required FHIR values will be included in addition to more precise values in VA extensions; viz., status values.</p>
+  </li>
+</ol>
+
+<h1 id="profiling-concept">Profiling Concept</h1>
+
+<p>International Core FHIR resources are under-specified to support a variety of communities of support. Large communities can constrain those resources with profiles to support more specific expectations. This profiling can be repeated any number of times to constrain data to increasingly narrow expectations for increasingly specialized uses.</p>
+
+<p>This Implementation Guide (IG) follows the US Core. The design supports the ability of implementers to create more specialized guides that will inherit the mappings from this guide without further effort.</p>
+
+<h1 id="version">Version</h1>
+
+<p>These maps follow FHIR US Core R4 (https://hl7.org/fhir/us/core/STU4/) where possible. Where profiles follow US Core guidance, they assert that conformance in the meta.profile element.</p>
+
+<p>Migration to later versions will be undertaken per the specification of the enterprise FHIR version by the CIDMO Knowledge-Based Systems, Standards &amp; Terminology division.</p>
+
+<h1 id="environment">Environment</h1>
+<p>There are several interfaces providing access to patient record data, primarily held in VistA.</p>
+<ul>
+  <li>ECP provides data to CPRS.</li>
+  <li>vx130 extracts data that is used in the Clinical Data Warehouse and to support integration with Millennium.</li>
+  <li>VPR extracts data for use in the VA Data Integration Framework (VDIF) and for exchange in VHIE and JHIE.</li>
+  <li>HDR</li>
+  <li>
+    <p>VIA
+Rather than provide maps to each of these tools, we map VistA elements to FHIR. Implementers taking data from any of these interfaces should work with the interface owner to determine how that interface exposes the elements.</p>
+  </li>
+  <li>Persistence
+Facade model
+Write capabilities</li>
+</ul>
+
+<h1 id="mapping-approach">Mapping approach</h1>
+
+<p>Element maps will use the following approaches, in order:</p>
+
+<ol>
+  <li>Where FHIR has fields that support VistA semantics directly, they will be mapped.
+    <ul>
+      <li>E.g., ADVERSE REACTION REPORTING - DATE/TIME OF EVENT (OBSERVATION) (120.85-.01) =&gt; AllergyIntolerance.reaction.onset</li>
+    </ul>
+  </li>
+  <li>Terminology maps will support cases where a semantic match does not include a syntactic match.
+    <ul>
+      <li>E.g., Allergy mechanisms “A” and “P” (“allergy” and “pharmacologic”) are mapped to FHIR “allergy” and “intolerance” (“Allergy” and “Intolerance”).</li>
+    </ul>
+  </li>
+  <li>First choice will be properties belonging to the “focal” FHIR resource. If no such property exists, this guidance may propose maps to “ancillary” FHIR resources.
+    <ul>
+      <li>Recommended
+– Encounters can be used to provide common context for different resources, when, e.g., a VistA record tracks patient location. 
+— E.g., a VistA order contains information about the clinic or hospital where a medication was ordered (NON-VERIFIED ORDERS-APPOINTMENT DATE/TIME). FHIR MedicationRequest has no such property. It may, however, include a related Encounter resource, and this resource may record a location.
+– Observations capture information about patients and devices. They support rich metadata and complex nested structures. Several patient properties (including those concerning service history) imply nesting.
+— Create one Observation profile for each of these elements, or a general Observation profile with a value set for the codes? Each code may have a different value set for resulting values. These differences might be expressed as FHIR “slices,” but this would require some kind of bundle to collect and assert the slices.
+– Provenance resources are designed for capturing record management data; they are recommended where VistA captures this information, but the core FHIR resources do not. Provenance requires both a time and an agent; if one of these is not available, an extension on the base resource must be used. [Or Data Absent Reason extension in Provenance: is there a criterion for this decision?]
+– DetectedIssue resources are designed to support drug checks and other decision support functions.</li>
+      <li>Not recommended
+– The AuditEvent resource is designed for capturing record management data. Unlike Provenance, it can capture events that do not modify data, and its use cases are typically assumed to involve security and other system administration duties.
+– Questionnaires are typically to solicit information, and they can be used when the form of presentation more significant than data persistence. This is not the case for this project.</li>
+    </ul>
+  </li>
+  <li>Where FHIR fields do not support VistA semantics, extensions are recommended.
+    <ul>
+      <li>Where available, we will adopt existing extensions.
+– E.g., us-core-race</li>
+      <li>Where no extensions exist, and future releases do (viz., for AMPL maps using STU3), we will pre-adopt properties.
+– E.g., 52.41-25 (PENDING OUTPATIENT ORDERS - PRIORITY) to http://hl7.org/fhir/4.0/StructureDefinition/extension-MedicationOrder.priority</li>
+      <li>Where neither of these is possible, we will create VA extensions
+– E.g., PATIENT ALLERGIES - OBSERVED/HISTORICAL (120.8-6) =&gt; http://va.gov/fhir/StructureDefinition/allergyintolerance-reactionObservationMode</li>
+    </ul>
+  </li>
+</ol>
+
+<h1 id="containment-and-reference">Containment and reference</h1>
+
+<p>Maps don’t specify whether a referenced resource should be instantiated independently or as contained. It is expected that most resources will be independent. The less information a resource contains (e.g., a location name with no other information), or the less likely it is to be queried for independently (e.g., a service location in a patient record api), the more sense it may make to embed that information directly in the primary resource.</p>
+
+<h1 id="terminology-mapping-approach">Terminology mapping approach</h1>
+
+<p>We follow the guidance below for situations defined by the FHIR constraint (across the top) and VistA content (left column).</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td>FHIR Target</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>1<br /> CodeableConcept, optional binding</td>
+      <td>2<br /> CodeableConcept, required or extensible binding</td>
+      <td>3<br /> Code</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>A</td>
+      <td>VA data not coded</td>
+      <td>CodeableConcept.text</td>
+      <td>CodeableConcept.text<br /> Map to code</td>
+      <td>Map to code<br /> VA value in extension</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>B</td>
+      <td>VA codes are standard</td>
+      <td>Code &amp; value in element<br /> Include system</td>
+      <td>Code &amp; value in element<br /> Include system</td>
+      <td>Code in element</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>C</td>
+      <td>VA codes with standard translations</td>
+      <td>Code &amp; value in element<br /> Include system &amp; ‘selected’<br /> Optional standard coding</td>
+      <td>Code &amp; value in element<br /> Include system &amp; ‘selected’<br /> Include standard coding</td>
+      <td>Mapped code<br /> VA value in extension</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>D</td>
+      <td>VA codes without standard translations</td>
+      <td>Code &amp; value in element<br /> If no system available,  use VistA system scheme URL</td>
+      <td>Required: Not supported<br /> Extensible: use VA value</td>
+      <td>Not supported<br /> VA value in extension</td>
+      <td>”</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="extensions">Extensions</h1>
+
+<p>Maps will use existing Core elements where possible, expanding the solution space where necessary as follows:</p>
+<ol>
+  <li>US Core, with extensions</li>
+  <li>FHIR Core</li>
+  <li>FHIR Core extensions</li>
+  <li>VA extensions</li>
+</ol>
+
+<p>VA extensions will be necessary for more specialized use cases where VA processes require data not anticipated by FHIR core to be in the 80% of most common elements.</p>
+
+<h1 id="fhir-design-decisons">FHIR design decisons</h1>
+
+<h3 id="uniform-resource-identifiers">Uniform Resource Identifiers</h3>
+
+<p>Different implementers may implement a variety of endpoints; these are subject to tactical constraints and are not addressed here. Definitional artifacts, however, require consistent definitional uris. For these artifacts, we define the VA FHIR definitional endpoint:
+	http://va.gov/fhir/</p>
+
+<p>This root supports definition of VA FHIR profiles, e.g.,
+	http://va.gov/fhir/problem-condition
+ 	http://va.gov/fhir/diagnosis-condition</p>
+
+<p>Value sets, field identification for question codes, and identifiers also require URIs. These hierarchies, however, are not specific to FHIR:
+	http://va.gov/terminology/vistaDefinedTerms
+	http://va.gov/terminology/vistaDefinedElements
+	http://va.gov/identifiers</p>
+
+<p>These subhierarchies support definition of artifacts specific to VistA fields. E.g., Patient religious preference is stored in VistA file 2, field .07, so the codes in that field have this system uri:
+ 	http://va.gov/terminology/vistaDefinedTerms/2-.07</p>
+
+<h3 id="identifiers">Identifiers</h3>
+
+<p>Patient identifers are VA ICNs scoped by the VA OID:</p>
+<identifier>
+    <system value="urn:uuid:2.16.840.1.113883.4.349" />
+    <value value=" 1015128742V345328 " />
+</identifier>
+
+<p>Other identifiers use the VistA file &amp; field concatenated to the VA root and the VAMC Sta3n. Because some interfaces do not provide maps to VistA files, we also provide a domain tag (practitioner, location, organization).</p>
+
+<identifier>
+    <system value="http://va.gov/identifiers/practitioner/631/2" />
+    <value value=" 33603899 " />
+</identifier>
+
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+      if(window.location.hash != "") {
+          $('a[href="' + window.location.hash + '"]').click()
+      }
+    });
+  </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Nov 1, 2023 18:52+0000">2023-11-01</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+  
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script>anchors.options.visible = 'hover'
+anchors.add()</script>
+  
+<!-- feedback form - Google forms -->
+<!-- v0.1, 2021-01-09 -->
+
+
+
+<!-- / feedback form  -->
+
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+
