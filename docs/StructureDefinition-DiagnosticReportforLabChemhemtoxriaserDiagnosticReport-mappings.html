@@ -44,8 +44,8 @@
 
 	  <script src="assets/js/prism.js"></script>
 
-    <style type="text/css">h2{--heading-prefix:"4.7"}
-    h3,h4,h5,h6{--heading-prefix:"4.7"}</style>
+    <style type="text/css">h2{--heading-prefix:"5.7"}
+    h3,h4,h5,h6{--heading-prefix:"5.7"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
         <!-- Placeholder for child template header declarations -->
@@ -200,7 +200,7 @@
         
           Draft
           
-            as of 2023-11-01
+            as of 2023-11-08
           
         
       </td>
@@ -243,6 +243,8 @@
  <tr><td>&nbsp;&nbsp;&nbsp;basedOn</td><td>ORC? OBR-2/3?</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>OBR-25 (not 1:1 mapping)</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;category</td><td>OBR-24</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>C*E.1-8, C*E.10-22</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>C*E.9. But note many systems use C*E.2 for this</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;category (LaboratorySlice)</td><td>OBR-24</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;code</td><td>OBR-4 (HL7 v2 doesn't provide an easy way to indicate both the ordered test and the performed panel)</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>C*E.1-8, C*E.10-22</td> </tr>
@@ -280,6 +282,10 @@
  <tr><td>&nbsp;&nbsp;&nbsp;basedOn</td><td>outboundRelationship[typeCode=FLFS].target</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>statusCode  Note: final and amended are distinguished by whether observation is the subject of a ControlAct event of type &quot;revise&quot;</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;category</td><td>inboundRelationship[typeCode=COMP].source[classCode=LIST, moodCode=EVN, code &lt; LabService].code</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>union(., ./translation)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>./originalText[mediaType/code=&quot;text/plain&quot;]/data</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;category (LaboratorySlice)</td><td>inboundRelationship[typeCode=COMP].source[classCode=LIST, moodCode=EVN, code &lt; LabService].code</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;code</td><td>code</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
@@ -325,6 +331,25 @@
 <a name="cdw"> </a><h3>Mappings for Clinical Data Warehouse (CDW) ()</h3><table class="grid">
  <tr><td colspan="3"><b>DiagnosticReportforLabChemhemtoxriaserDiagnosticReport</b></td></tr>
  <tr><td>DiagnosticReport</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>Micro.AntibioticSensitivity.LRDFN
+Micro.AntibioticSensitivityComment.LRDFN
+Pathology.Autopsy.LRDFN
+Micro.BacteriologyReports.LRDFN
+Pathology.CytoOrganTissueFunction.StaffIEN
+Micro.MicroAntibioticLevel.LRDFN
+Micro.MicroAudit.LRDFN
+Micro.Microbiology.LRDFN
+Micro.MicroOrderedTest.LRDFN
+Micro.MicroSterilityResults.LRDFN
+Micro.MycobacteriologyReports.LRDFN
+Micro.Mycology.LRDFN
+Micro.MycologyReports.LRDFN
+Micro.Parasitology.LRDFN
+Micro.ParasitologyReports.LRDFN
+Micro.ParasitologyStage.LRDFN
+SStaff.SMicroOrderedTest.LRDFN
+Micro.Virology.LRDFN
+Micro.VirologyReports.LRDFN</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;effective[x] (effectiveDateTime)</td><td>Chem.LabChem.LabChemSpecimenDateTime
 Chem.LabPanel.LabChemSpecimenDateTime
 Chem.OrderedLabPanel.LabChemSpecimenDateTime
@@ -340,11 +365,62 @@ Chem.PatientLabChem.LabChemCompleteDateTime</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>1602: source value from CHEM, HEM, TOX, RIA, SER, etc. - ORDERED TEST &gt; ORDERED TEST - IEN (#63.04-.35 &gt; 63.07-.001)</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>1415: terminologyMaps using VF_DiagnosticReportLabStatus on CHEM, HEM, TOX, RIA, SER, etc. - ORDERED TEST &gt; ORDERED TEST - DISPOSITION (#63.04-.35 &gt; 63.07-10)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;category</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>1419: fixed value = http://terminology.hl7.org/CodeSystem/v2-0074|LAB</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;code</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>1535: source value from CHEM, HEM, TOX, RIA, SER, etc. - ORDERED TEST &gt; ORDERED TEST - COLLECTION SAMPLE &gt; COLLECTION SAMPLE - LAB SECTION &gt; LAB SECTION - NAME (#63.04-.35 &gt; 63.07-9 &gt; 62-6 &gt; 62.2-.01)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>1421: reference from PATIENT - LABORATORY REFERENCE &gt; LAB DATA - LRDFN (#2-63 &gt; 63-.01)</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;effective[x] (effectiveDateTime)</td><td>1423: source value from CHEM, HEM, TOX, RIA, SER, etc. - DATE/TIME SPECIMEN TAKEN (#63.04-.01)</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;issued</td><td>1428: source value from CHEM, HEM, TOX, RIA, SER, etc. - DATE REPORT COMPLETED (#63.04-.03)</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;performer</td><td>1433: reference from CHEM, HEM, TOX, RIA, SER, etc. - VERIFY PERSON (#63.04-.04)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;result</td><td>1437: reference from See mapping for Lab Observation (#null)</td> </tr>
+</table>
+<a name="cdw"> </a><h3>Mappings for Clinical Data Warehouse (CDW) ()</h3><table class="grid">
+ <tr><td colspan="3"><b>DiagnosticReportforLabChemhemtoxriaserDiagnosticReport</b></td></tr>
+ <tr><td>DiagnosticReport</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>Micro.AntibioticSensitivity.LRDFN
+Micro.AntibioticSensitivityComment.LRDFN
+Pathology.Autopsy.LRDFN
+Micro.BacteriologyReports.LRDFN
+Pathology.CytoOrganTissueFunction.StaffIEN
+Micro.MicroAntibioticLevel.LRDFN
+Micro.MicroAudit.LRDFN
+Micro.Microbiology.LRDFN
+Micro.MicroOrderedTest.LRDFN
+Micro.MicroSterilityResults.LRDFN
+Micro.MycobacteriologyReports.LRDFN
+Micro.Mycology.LRDFN
+Micro.MycologyReports.LRDFN
+Micro.Parasitology.LRDFN
+Micro.ParasitologyReports.LRDFN
+Micro.ParasitologyStage.LRDFN
+SStaff.SMicroOrderedTest.LRDFN
+Micro.Virology.LRDFN
+Micro.VirologyReports.LRDFN</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;effective[x] (effectiveDateTime)</td><td>Chem.LabChem.LabChemSpecimenDateTime
+Chem.LabPanel.LabChemSpecimenDateTime
+Chem.OrderedLabPanel.LabChemSpecimenDateTime
+Chem.PatientLabChem.LabChemSpecimenDateTime</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;issued</td><td>Chem.LabChem.LabChemCompleteDateTime
+Chem.LabPanel.LabChemCompleteDateTime
+Chem.OrderedLabPanel.LabChemCompleteDateTime
+Chem.PatientLabChem.LabChemCompleteDateTime</td> </tr>
+</table>
+<a name="vista"> </a><h3>Mappings for Veterans Health Information Systems Technology and Architecture (VistA) ()</h3><table class="grid">
+ <tr><td colspan="3"><b>DiagnosticReportforLabChemhemtoxriaserDiagnosticReport</b></td></tr>
+ <tr><td>DiagnosticReport</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>1602: source value from CHEM, HEM, TOX, RIA, SER, etc. - ORDERED TEST &gt; ORDERED TEST - IEN (#63.04-.35 &gt; 63.07-.001)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>1415: terminologyMaps using VF_DiagnosticReportLabStatus on CHEM, HEM, TOX, RIA, SER, etc. - ORDERED TEST &gt; ORDERED TEST - DISPOSITION (#63.04-.35 &gt; 63.07-10)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;category</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>1419: fixed value = http://terminology.hl7.org/CodeSystem/v2-0074|LAB</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;code</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>1535: source value from CHEM, HEM, TOX, RIA, SER, etc. - ORDERED TEST &gt; ORDERED TEST - COLLECTION SAMPLE &gt; COLLECTION SAMPLE - LAB SECTION &gt; LAB SECTION - NAME (#63.04-.35 &gt; 63.07-9 &gt; 62-6 &gt; 62.2-.01)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>1421: reference from PATIENT - LABORATORY REFERENCE &gt; LAB DATA - LRDFN (#2-63 &gt; 63-.01)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;effective[x] (effectiveDateTime)</td><td>1423: source value from CHEM, HEM, TOX, RIA, SER, etc. - DATE/TIME SPECIMEN TAKEN (#63.04-.01)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;issued</td><td>1428: source value from CHEM, HEM, TOX, RIA, SER, etc. - DATE REPORT COMPLETED (#63.04-.03)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;performer</td><td>1433: reference from CHEM, HEM, TOX, RIA, SER, etc. - VERIFY PERSON (#63.04-.04)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;result</td><td>1437: reference from See mapping for Lab Observation (#null)</td> </tr>
 </table>
 
 
@@ -399,7 +475,7 @@ Chem.PatientLabChem.LabChemCompleteDateTime</td> </tr>
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Nov 1, 2023 18:52+0000">2023-11-01</span>
+          IG &#169; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Nov 8, 2023 21:21+0000">2023-11-08</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
