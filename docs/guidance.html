@@ -93,6 +93,15 @@
     <a href="index.html">Home</a>
   </li>
   <li>
+    <a href="toc.html">Table of Content</a>
+  </li>
+  <li>
+    <a href="process.html">Process</a>
+  </li>
+  <li>
+    <a href="guidance.html">Guidance</a>
+  </li>
+  <li>
     <a href="classes.html">Classes</a>
   </li>
   <li>
@@ -149,11 +158,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <div class="markdown-toc">
 <ul id="markdown-toc">
   <li><a href="#design-decisions" id="markdown-toc-design-decisions">Design Decisions</a></li>
-  <li><a href="#principles" id="markdown-toc-principles">Principles</a>    <ul>
-      <li><a href="#implications" id="markdown-toc-implications">Implications</a></li>
-      <li><a href="#implication" id="markdown-toc-implication">Implication</a></li>
-    </ul>
-  </li>
+  <li><a href="#principles" id="markdown-toc-principles">Principles</a></li>
   <li><a href="#profiling-concept" id="markdown-toc-profiling-concept">Profiling Concept</a></li>
   <li><a href="#version" id="markdown-toc-version">Version</a></li>
   <li><a href="#environment" id="markdown-toc-environment">Environment</a></li>
@@ -161,52 +166,54 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><a href="#containment-and-reference" id="markdown-toc-containment-and-reference">Containment and reference</a></li>
   <li><a href="#terminology-mapping-approach" id="markdown-toc-terminology-mapping-approach">Terminology mapping approach</a></li>
   <li><a href="#extensions" id="markdown-toc-extensions">Extensions</a></li>
-  <li><a href="#fhir-design-decisons" id="markdown-toc-fhir-design-decisons">FHIR design decisons</a>    <ul>
-      <li><a href="#uniform-resource-identifiers" id="markdown-toc-uniform-resource-identifiers">Uniform Resource Identifiers</a></li>
-      <li><a href="#identifiers" id="markdown-toc-identifiers">Identifiers</a></li>
-    </ul>
-  </li>
+  <li><a href="#fhir-design-decisons" id="markdown-toc-fhir-design-decisons">FHIR design decisons</a></li>
 </ul>
 
 </div>
-<h1 id="design-decisions">Design Decisions</h1>
+<h3 id="design-decisions">Design Decisions</h3>
 
 <p>These design decisions have guided the mapping process. They are documented here to clarify why the maps were done the way they were and to support consensus across the enterprise.</p>
 
-<h1 id="principles">Principles</h1>
+<h3 id="principles">Principles</h3>
+
 <p>This guide follows two key principles:</p>
 <ol>
   <li>The purpose of FHIR is to support interoperability. Every effort should be made to ensure that data will be comprehensible to receivers, including, to the extent possible, receivers without “out-of-band” communication channels to settle integration issues.
-    <h2 id="implications">Implications</h2>
-    <p>Where possible, FHIR properties should be used in preference to extensions.
+    <blockquote>
+      <p><strong>Implications</strong>
+Where possible, FHIR properties should be used in preference to extensions.
 Tactics for doing so, in order:</p>
-    <ul>
-      <li>Using FHIR Core properties</li>
-      <li>Using commonly recognized extensions that already exist</li>
-      <li>Using elements from future releases of FHIR reproduced as extensions</li>
-      <li>Creating new extensions and publishing them to support external comprehension
+      <ul>
+        <li>Using FHIR Core properties</li>
+        <li>Using commonly recognized extensions that already exist</li>
+        <li>Using elements from future releases of FHIR reproduced as extensions</li>
+        <li>Creating new extensions and publishing them to support external comprehension
 Extensions, where necessary, should include full documentation. A publicly available Implementation Guide, identified with a URL, is the best way to expose these designs; other tools may be necessary in the interim.</li>
-    </ul>
+      </ul>
+    </blockquote>
   </li>
   <li>Health record semantics must be preserved. If FHIR is unable to support required patient information, extensions must be used.
-    <h2 id="implication">Implication</h2>
-    <p>There will be cases where required FHIR values will be included in addition to more precise values in VA extensions; viz., status values.</p>
+    <blockquote>
+      <p><strong>Implication</strong>
+There will be cases where required FHIR values will be included in addition to more precise values in VA extensions; viz., status values.</p>
+    </blockquote>
   </li>
 </ol>
 
-<h1 id="profiling-concept">Profiling Concept</h1>
+<h3 id="profiling-concept">Profiling Concept</h3>
 
 <p>International Core FHIR resources are under-specified to support a variety of communities of support. Large communities can constrain those resources with profiles to support more specific expectations. This profiling can be repeated any number of times to constrain data to increasingly narrow expectations for increasingly specialized uses.</p>
 
 <p>This Implementation Guide (IG) follows the US Core. The design supports the ability of implementers to create more specialized guides that will inherit the mappings from this guide without further effort.</p>
 
-<h1 id="version">Version</h1>
+<h3 id="version">Version</h3>
 
 <p>These maps follow FHIR US Core R4 (https://hl7.org/fhir/us/core/STU4/) where possible. Where profiles follow US Core guidance, they assert that conformance in the meta.profile element.</p>
 
 <p>Migration to later versions will be undertaken per the specification of the enterprise FHIR version by the CIDMO Knowledge-Based Systems, Standards &amp; Terminology division.</p>
 
-<h1 id="environment">Environment</h1>
+<h3 id="environment">Environment</h3>
+
 <p>There are several interfaces providing access to patient record data, primarily held in VistA.</p>
 <ul>
   <li>ECP provides data to CPRS.</li>
@@ -222,7 +229,7 @@ Facade model
 Write capabilities</li>
 </ul>
 
-<h1 id="mapping-approach">Mapping approach</h1>
+<h3 id="mapping-approach">Mapping approach</h3>
 
 <p>Element maps will use the following approaches, in order:</p>
 
@@ -240,34 +247,55 @@ Write capabilities</li>
   <li>First choice will be properties belonging to the “focal” FHIR resource. If no such property exists, this guidance may propose maps to “ancillary” FHIR resources.
     <ul>
       <li>Recommended
-– Encounters can be used to provide common context for different resources, when, e.g., a VistA record tracks patient location. 
-— E.g., a VistA order contains information about the clinic or hospital where a medication was ordered (NON-VERIFIED ORDERS-APPOINTMENT DATE/TIME). FHIR MedicationRequest has no such property. It may, however, include a related Encounter resource, and this resource may record a location.
-– Observations capture information about patients and devices. They support rich metadata and complex nested structures. Several patient properties (including those concerning service history) imply nesting.
-— Create one Observation profile for each of these elements, or a general Observation profile with a value set for the codes? Each code may have a different value set for resulting values. These differences might be expressed as FHIR “slices,” but this would require some kind of bundle to collect and assert the slices.
-– Provenance resources are designed for capturing record management data; they are recommended where VistA captures this information, but the core FHIR resources do not. Provenance requires both a time and an agent; if one of these is not available, an extension on the base resource must be used. [Or Data Absent Reason extension in Provenance: is there a criterion for this decision?]
-– DetectedIssue resources are designed to support drug checks and other decision support functions.</li>
+        <ul>
+          <li>Encounters can be used to provide common context for different resources, when, e.g., a VistA record tracks patient location.
+            <ul>
+              <li>E.g., a VistA order contains information about the clinic or hospital where a medication was ordered (NON-VERIFIED ORDERS-APPOINTMENT DATE/TIME). FHIR MedicationRequest has no such property. It may, however, include a related Encounter resource, and this resource may record a location.</li>
+            </ul>
+          </li>
+          <li>Observations capture information about patients and devices. They support rich metadata and complex nested structures. Several patient properties (including those concerning service history) imply nesting.
+            <ul>
+              <li>Create one Observation profile for each of these elements, or a general Observation profile with a value set for the codes? Each code may have a different value set for resulting values. These differences might be expressed as FHIR “slices,” but this would require some kind of bundle to collect and assert the slices.</li>
+            </ul>
+          </li>
+          <li>Provenance resources are designed for capturing record management data; they are recommended where VistA captures this information, but the core FHIR resources do not. Provenance requires both a time and an agent; if one of these is not available, an extension on the base resource must be used. [Or Data Absent Reason extension in Provenance: is there a criterion for this decision?]</li>
+          <li>DetectedIssue resources are designed to support drug checks and other decision support functions.</li>
+        </ul>
+      </li>
       <li>Not recommended
-– The AuditEvent resource is designed for capturing record management data. Unlike Provenance, it can capture events that do not modify data, and its use cases are typically assumed to involve security and other system administration duties.
-– Questionnaires are typically to solicit information, and they can be used when the form of presentation more significant than data persistence. This is not the case for this project.</li>
+        <ul>
+          <li>The AuditEvent resource is designed for capturing record management data. Unlike Provenance, it can capture events that do not modify data, and its use cases are typically assumed to involve security and other system administration duties.</li>
+          <li>Questionnaires are typically to solicit information, and they can be used when the form of presentation more significant than data persistence. This is not the case for this project.</li>
+        </ul>
+      </li>
     </ul>
   </li>
   <li>Where FHIR fields do not support VistA semantics, extensions are recommended.
     <ul>
       <li>Where available, we will adopt existing extensions.
-– E.g., us-core-race</li>
+        <ul>
+          <li>E.g., us-core-race</li>
+        </ul>
+      </li>
       <li>Where no extensions exist, and future releases do (viz., for AMPL maps using STU3), we will pre-adopt properties.
-– E.g., 52.41-25 (PENDING OUTPATIENT ORDERS - PRIORITY) to http://hl7.org/fhir/4.0/StructureDefinition/extension-MedicationOrder.priority</li>
+        <ul>
+          <li>E.g., 52.41-25 (PENDING OUTPATIENT ORDERS - PRIORITY) to http://hl7.org/fhir/4.0/StructureDefinition/extension-MedicationOrder.priority</li>
+        </ul>
+      </li>
       <li>Where neither of these is possible, we will create VA extensions
-– E.g., PATIENT ALLERGIES - OBSERVED/HISTORICAL (120.8-6) =&gt; http://va.gov/fhir/StructureDefinition/allergyintolerance-reactionObservationMode</li>
+        <ul>
+          <li>E.g., PATIENT ALLERGIES - OBSERVED/HISTORICAL (120.8-6) =&gt; http://va.gov/fhir/StructureDefinition/allergyintolerance-reactionObservationMode</li>
+        </ul>
+      </li>
     </ul>
   </li>
 </ol>
 
-<h1 id="containment-and-reference">Containment and reference</h1>
+<h3 id="containment-and-reference">Containment and reference</h3>
 
 <p>Maps don’t specify whether a referenced resource should be instantiated independently or as contained. It is expected that most resources will be independent. The less information a resource contains (e.g., a location name with no other information), or the less likely it is to be queried for independently (e.g., a service location in a patient record api), the more sense it may make to embed that information directly in the primary resource.</p>
 
-<h1 id="terminology-mapping-approach">Terminology mapping approach</h1>
+<h3 id="terminology-mapping-approach">Terminology mapping approach</h3>
 
 <p>We follow the guidance below for situations defined by the FHIR constraint (across the top) and VistA content (left column).</p>
 
@@ -332,7 +360,7 @@ Write capabilities</li>
   </tbody>
 </table>
 
-<h1 id="extensions">Extensions</h1>
+<h3 id="extensions">Extensions</h3>
 
 <p>Maps will use existing Core elements where possible, expanding the solution space where necessary as follows:</p>
 <ol>
@@ -344,26 +372,30 @@ Write capabilities</li>
 
 <p>VA extensions will be necessary for more specialized use cases where VA processes require data not anticipated by FHIR core to be in the 80% of most common elements.</p>
 
-<h1 id="fhir-design-decisons">FHIR design decisons</h1>
+<h3 id="fhir-design-decisons">FHIR design decisons</h3>
 
-<h3 id="uniform-resource-identifiers">Uniform Resource Identifiers</h3>
+<h4 id="uniform-resource-identifiers">Uniform Resource Identifiers</h4>
 
-<p>Different implementers may implement a variety of endpoints; these are subject to tactical constraints and are not addressed here. Definitional artifacts, however, require consistent definitional uris. For these artifacts, we define the VA FHIR definitional endpoint:
-	http://va.gov/fhir/</p>
+<p>Different implementers may implement a variety of endpoints; these are subject to tactical constraints and are not addressed here. Definitional artifacts, however, require consistent definitional uris. For these artifacts, we define the VA FHIR definitional endpoint:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	http://va.gov/fhir/
+</code></pre></div></div>
 
-<p>This root supports definition of VA FHIR profiles, e.g.,
-	http://va.gov/fhir/problem-condition
- 	http://va.gov/fhir/diagnosis-condition</p>
+<p>This root supports definition of VA FHIR profiles, e.g.,</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	http://va.gov/fhir/problem-condition
+ 	http://va.gov/fhir/diagnosis-condition
+</code></pre></div></div>
 
-<p>Value sets, field identification for question codes, and identifiers also require URIs. These hierarchies, however, are not specific to FHIR:
-	http://va.gov/terminology/vistaDefinedTerms
+<p>Value sets, field identification for question codes, and identifiers also require URIs. These hierarchies, however, are not specific to FHIR:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	http://va.gov/terminology/vistaDefinedTerms
 	http://va.gov/terminology/vistaDefinedElements
-	http://va.gov/identifiers</p>
+	http://va.gov/identifiers
+</code></pre></div></div>
 
-<p>These subhierarchies support definition of artifacts specific to VistA fields. E.g., Patient religious preference is stored in VistA file 2, field .07, so the codes in that field have this system uri:
- 	http://va.gov/terminology/vistaDefinedTerms/2-.07</p>
+<p>These subhierarchies support definition of artifacts specific to VistA fields. E.g., Patient religious preference is stored in VistA file 2, field .07, so the codes in that field have this system uri:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> 	http://va.gov/terminology/vistaDefinedTerms/2-.07
+</code></pre></div></div>
 
-<h3 id="identifiers">Identifiers</h3>
+<h4 id="identifiers">Identifiers</h4>
 
 <p>Patient identifers are VA ICNs scoped by the VA OID:</p>
 <identifier>
@@ -403,7 +435,7 @@ Write capabilities</li>
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Nov 8, 2023 21:21+0000">2023-11-08</span>
+          IG &#169; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Nov 8, 2023 21:56+0000">2023-11-08</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
