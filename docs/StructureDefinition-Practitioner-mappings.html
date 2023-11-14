@@ -422,28 +422,67 @@ Staff.Staff.DateofBirth</td> </tr>
 </table>
 <a name="vista"> </a><h3>Mappings for Veterans Health Information Systems Technology and Architecture (VistA) ()</h3><table class="grid">
  <tr><td colspan="3"><b>Practitioner</b></td></tr>
- <tr><td>Practitioner</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>376: source value from NEW PERSON - NPI (#200-41.99), 377: source value from NEW PERSON - DEA# (#200-53.2), 378: source value from NEW PERSON - VA# (#200-53.3), 379: source value from NEW PERSON - VPID (#200-9000), 415: source value from NEW PERSON - IEN (#200-.001)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;period</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;start</td><td>380: source value from NEW PERSON - EFFECTIVE DATE/TIME (#200-42) case For NPI only</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;name</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>382: source value from NEW PERSON - NAME COMPONENTS &gt; NAME COMPONENTS - (#200-10.1 &gt; 20-)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;telecom</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>383: source value from NEW PERSON - PHONE (HOME) (#200-.131)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;address</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;line</td><td>396: source value from NEW PERSON - STREET ADDRESS 1 (#200-.111), 397: source value from NEW PERSON - STREET ADDRESS 2 (#200-.112), 398: source value from NEW PERSON - STREET ADDRESS 3 (#200-.113), 402: source value from NEW PERSON - TEMPORARY ADDRESS 1 (#200-.1211), 403: source value from NEW PERSON - TEMPORARY ADDRESS 2 (#200-.1212), 404: source value from NEW PERSON - TEMPORARY ADDRESS 3 (#200-.1213)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;city</td><td>399: source value from NEW PERSON - CITY (#200-.114), 405: source value from NEW PERSON - TEMPORARY CITY (#200-.1214)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;state</td><td>400: source value from NEW PERSON - STATE (#200-.115), 406: source value from NEW PERSON - TEMPORARY STATE (#200-.1215)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;postalCode</td><td>401: source value from NEW PERSON - ZIP CODE (#200-.116), 407: source value from NEW PERSON - TEMPORARY ZIP CODE (#200-.1216)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;country</td><td>1530: terminologyMaps using VF_PractitionerCountry on NEW PERSON - STATE (#200-.115) case not NULL, 1531: fixed value without value? if NEW PERSON - STATE (#200-.115) case NULL, 1532: terminologyMaps using VF_PractitionerCountry on NEW PERSON - STATE (#200-.1215) case not NULL, 1533: fixed value without value? if NEW PERSON - STATE (#200-.1215) case NULL</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;period</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;start</td><td>408: source value from NEW PERSON - START DATE OF TEMP ADDRES (#200-.1217)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end</td><td>409: source value from NEW PERSON - END DATE OF TEMP ADDRESS (#200-.1218)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;birthDate</td><td>394: source value from NEW PERSON - DOB (#200-5)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;qualification</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>395: source value from NEW PERSON - DEGREE (#200-10.6)</td> </tr>
+ <tr><td>Practitioner</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>376: source value from NEW PERSON - NPI (#200-41.99), 377: source value from NEW PERSON - DEA# (#200-53.2), 378: source value from NEW PERSON - VA# (#200-53.3), 379: source value from NEW PERSON - VPID (#200-9000), 415: source value from NEW PERSON - IEN (#200-.001)</td><td><p>changed .code from PRN to NPI</p>
+, <p>changed .code from PRN to DEA</p>
+, <p>changed .code from PRN to VA_Number. Value set is extensible</p>
+, <p>changed .code from PRN to VPID. Value set is extensible</p>
+, </td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;period</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;start</td><td>380: source value from NEW PERSON - EFFECTIVE DATE/TIME (#200-42) case For NPI only</td><td><p>MvdZ QA 6-jul-2023</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;name</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>382: source value from NEW PERSON - NAME COMPONENTS &gt; NAME COMPONENTS - (#200-10.1 &gt; 20-)</td><td><p>Change map to better align with US Core Must Support (last name only)
+MvdZ QA 6-jul-2023</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;telecom</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>383: source value from NEW PERSON - PHONE (HOME) (#200-.131)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;address</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;line</td><td>396: source value from NEW PERSON - STREET ADDRESS 1 (#200-.111), 397: source value from NEW PERSON - STREET ADDRESS 2 (#200-.112), 398: source value from NEW PERSON - STREET ADDRESS 3 (#200-.113), 402: source value from NEW PERSON - TEMPORARY ADDRESS 1 (#200-.1211), 403: source value from NEW PERSON - TEMPORARY ADDRESS 2 (#200-.1212), 404: source value from NEW PERSON - TEMPORARY ADDRESS 3 (#200-.1213)</td><td><p>Changed use case and FHIR Path to Practitioner to align with US Core
+MvdZ QA 6-jul-2023</p>
+, <p>Changed use case and FHIR Path to Practitioner to align with US Core
+MvdZ QA 6-jul-2023</p>
+, <p>Changed use case and FHIR Path to Practitioner to align with US Core
+MvdZ QA 6-jul-2023</p>
+, <p>Changed use case and FHIR Path to Practitioner to fix mapping and align with US Core
+MvdZ QA 6-jul-2023</p>
+, <p>MvdZ QA 6-jul-2023</p>
+, <p>MvdZ QA 6-jul-2023</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;city</td><td>399: source value from NEW PERSON - CITY (#200-.114), 405: source value from NEW PERSON - TEMPORARY CITY (#200-.1214)</td><td><p>Changed use case and FHIR Path to Practitioner to align with US Core
+MvdZ QA 6-jul-2023</p>
+, <p>MvdZ QA 6-jul-2023</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;state</td><td>400: source value from NEW PERSON - STATE (#200-.115), 406: source value from NEW PERSON - TEMPORARY STATE (#200-.1215)</td><td><p>Changed use case and FHIR Path to Practitioner to align with US Core
+MvdZ QA 6-jul-2023</p>
+, <p>MvdZ QA 6-jul-2023</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;postalCode</td><td>401: source value from NEW PERSON - ZIP CODE (#200-.116), 407: source value from NEW PERSON - TEMPORARY ZIP CODE (#200-.1216)</td><td><p>Changed use case and FHIR Path to Practitioner to align with US Core
+MvdZ QA 6-jul-2023</p>
+, <p>MvdZ QA 6-jul-2023</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;country</td><td>1530: terminologyMaps using VF_PractitionerCountry on NEW PERSON - STATE (#200-.115) case not NULL, 1531: fixed value without value? if NEW PERSON - STATE (#200-.115) case NULL, 1532: terminologyMaps using VF_PractitionerCountry on NEW PERSON - STATE (#200-.1215) case not NULL, 1533: fixed value without value? if NEW PERSON - STATE (#200-.1215) case NULL</td><td><p>Added country to support Inferno testing (where country is required)
+MvdZ QA 6-jul-2023</p>
+, <p>If country is not known (i.e. &quot;Europe&quot;), use the Data Absent Reason field with &quot;unknown&quot;</p>
+<p>Added country to support Inferno testing (where country is required)
+MvdZ QA 6-jul-2023</p>
+, <p>Added country to support Inferno testing (where country is required)
+MvdZ QA 6-jul-2023</p>
+, <p>If country is not known (i.e. &quot;Europe&quot;), use the Data Absent Reason field with &quot;unknown&quot;</p>
+<p>Added country to support Inferno testing (where country is required)
+MvdZ QA 6-jul-2023</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;period</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;start</td><td>408: source value from NEW PERSON - START DATE OF TEMP ADDRES (#200-.1217)</td><td><p>MvdZ QA 6-jul-2023</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end</td><td>409: source value from NEW PERSON - END DATE OF TEMP ADDRESS (#200-.1218)</td><td><p>MvdZ QA 6-jul-2023</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;birthDate</td><td>394: source value from NEW PERSON - DOB (#200-5)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;qualification</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>395: source value from NEW PERSON - DEGREE (#200-10.6)</td><td><p>There is also 12.1 CURRENT DEGREE LEVEL; not in cdw</p>
+</td> </tr>
 </table>
 
 
@@ -498,7 +537,7 @@ Staff.Staff.DateofBirth</td> </tr>
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.3.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Nov 14, 2023 14:54+0000">2023-11-14</span>
+          IG &#169; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.3.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Nov 14, 2023 17:25+0000">2023-11-14</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

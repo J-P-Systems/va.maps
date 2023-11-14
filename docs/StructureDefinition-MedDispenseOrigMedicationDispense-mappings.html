@@ -442,32 +442,35 @@ RxOut.RxOutpatFill.LocalDrugNameWithDose</td> </tr>
 </table>
 <a name="vista"> </a><h3>Mappings for Veterans Health Information Systems Technology and Architecture (VistA) ()</h3><table class="grid">
  <tr><td colspan="3"><b>MedDispenseOrigMedicationDispense</b></td></tr>
- <tr><td>MedicationDispense</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>1541: fixed value = completed if PRESCRIPTION - RELEASED DATE/TIME (#52-31) case not null</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;medication[x]</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;medication[x] (medicationCodeableConcept)</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>1545: source value from PRESCRIPTION - DRUG &gt; DRUG - PSNDF VA PRODUCT NAME ENTRY (#52-6 &gt; 50-22)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>1544: source value from PRESCRIPTION - DRUG &gt; DRUG - GENERIC NAME (#52-6 &gt; 50-.01)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>820: reference from PRESCRIPTION - PATIENT (#52-2)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;location</td><td>821: reference from PRESCRIPTION - CLINIC (#52-5)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;authorizingPrescription</td><td>822: source value from PRESCRIPTION - PLACER ORDER # (#52-39.3)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;quantity</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>823: source value from PRESCRIPTION - QTY (#52-7)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;daysSupply</td><td>826: source value from PRESCRIPTION - DAYS SUPPLY (#52-8)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;whenPrepared</td><td>1548: source value from PRESCRIPTION - FILL DATE (#52-22)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;whenHandedOver</td><td>832: source value from PRESCRIPTION - RELEASED DATE/TIME (#52-31)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;destination</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display</td><td>835: source value from PRESCRIPTION - MAIL/WINDOW (#52-11)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;dosageInstruction</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>838: source value from PRESCRIPTION - SIG (#52-10)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;patientInstruction</td><td>839: source value from PRESCRIPTION - PATIENT INSTRUCTIONS (#52-114)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;doseAndRate</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dose[x]</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dose[x] (doseQuantity)</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>840: source value from PRESCRIPTION - MEDICATION INSTRUCTIONS &gt; MEDICATION INSTRUCTIONS - DOSAGE ORDERED (#52-113 &gt; 52.0113-.01) case number</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;unit</td><td>842: source value from PRESCRIPTION - MEDICATION INSTRUCTIONS &gt; MEDICATION INSTRUCTIONS - UNITS (#52-113 &gt; 52.0113-2)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>1575: source value from PRESCRIPTION - MEDICATION INSTRUCTIONS &gt; MEDICATION INSTRUCTIONS - UNITS (#52-113 &gt; 52.0113-2)</td> </tr>
+ <tr><td>MedicationDispense</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>1541: fixed value = completed if PRESCRIPTION - RELEASED DATE/TIME (#52-31) case not null</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;medication[x]</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;medication[x] (medicationCodeableConcept)</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>1545: source value from PRESCRIPTION - DRUG &gt; DRUG - PSNDF VA PRODUCT NAME ENTRY (#52-6 &gt; 50-22)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>1544: source value from PRESCRIPTION - DRUG &gt; DRUG - GENERIC NAME (#52-6 &gt; 50-.01)</td><td><p>This may not be necessary; we have the product.</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>820: reference from PRESCRIPTION - PATIENT (#52-2)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;location</td><td>821: reference from PRESCRIPTION - CLINIC (#52-5)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;authorizingPrescription</td><td>822: source value from PRESCRIPTION - PLACER ORDER # (#52-39.3)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;quantity</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>823: source value from PRESCRIPTION - QTY (#52-7)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;daysSupply</td><td>826: source value from PRESCRIPTION - DAYS SUPPLY (#52-8)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;whenPrepared</td><td>1548: source value from PRESCRIPTION - FILL DATE (#52-22)</td><td><p>Per discussion with Pharma: Josh Miller 5/27/22</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;whenHandedOver</td><td>832: source value from PRESCRIPTION - RELEASED DATE/TIME (#52-31)</td><td><p>Per discussion with Pharma: Josh Miller 5/27/22</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;destination</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display</td><td>835: source value from PRESCRIPTION - MAIL/WINDOW (#52-11)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;dosageInstruction</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>838: source value from PRESCRIPTION - SIG (#52-10)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;patientInstruction</td><td>839: source value from PRESCRIPTION - PATIENT INSTRUCTIONS (#52-114)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;doseAndRate</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dose[x]</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dose[x] (doseQuantity)</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>840: source value from PRESCRIPTION - MEDICATION INSTRUCTIONS &gt; MEDICATION INSTRUCTIONS - DOSAGE ORDERED (#52-113 &gt; 52.0113-.01) case number</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;unit</td><td>842: source value from PRESCRIPTION - MEDICATION INSTRUCTIONS &gt; MEDICATION INSTRUCTIONS - UNITS (#52-113 &gt; 52.0113-2)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>1575: source value from PRESCRIPTION - MEDICATION INSTRUCTIONS &gt; MEDICATION INSTRUCTIONS - UNITS (#52-113 &gt; 52.0113-2)</td><td></td> </tr>
 </table>
 <a name="vpr"> </a><h3>Mappings for Virtual Patient Record (VPR) ()</h3><table class="grid">
  <tr><td colspan="3"><b>MedDispenseOrigMedicationDispense</b></td></tr>
@@ -540,7 +543,7 @@ RxOut.RxOutpatFill.LocalDrugNameWithDose</td> </tr>
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.3.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Nov 14, 2023 14:54+0000">2023-11-14</span>
+          IG &#169; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.3.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Nov 14, 2023 17:25+0000">2023-11-14</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

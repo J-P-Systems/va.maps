@@ -17,7 +17,7 @@
   fhir:name [ fhir:v "EncounterOutpatientVisit"] ; # 
   fhir:title [ fhir:v "Encounter: Outpatient (Visit)"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2023-11-14T14:54:31+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2023-11-14T17:25:19+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "VA"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "VA" ] ;
@@ -893,10 +893,12 @@
          fhir:map [ fhir:v "430: transform using planned on VISIT - VISIT/ADMIT DATE&TIME (#9000010-.01) case null or > now" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "431: transform using in-progress on VISIT - VISIT/ADMIT DATE&TIME (#9000010-.01) case not null, < now, .18 null" ]
+         fhir:map [ fhir:v "431: transform using in-progress on VISIT - VISIT/ADMIT DATE&TIME (#9000010-.01) case not null, < now, .18 null" ] ;
+         fhir:comment [ fhir:v "tweaked case logic 9/21" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "432: transform using finished on VISIT - CHECK OUT DATE&TIME (#9000010-.18) case not null, < now" ]
+         fhir:map [ fhir:v "432: transform using finished on VISIT - CHECK OUT DATE&TIME (#9000010-.18) case not null, < now" ] ;
+         fhir:comment [ fhir:v "tweaked case logic 9/21" ]
        ] )
      ] [
        fhir:id [ fhir:v "Encounter.statusHistory" ] ;
@@ -1825,7 +1827,8 @@
          fhir:map [ fhir:v "Outpat.Visit.ServiceCategory\nOutpat.Workload.ServiceCategory" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "439: source value from VISIT - SERVICE CATEGORY (#9000010-.07)" ]
+         fhir:map [ fhir:v "439: source value from VISIT - SERVICE CATEGORY (#9000010-.07)" ] ;
+         fhir:comment [ fhir:v "MvdZ QA" ]
        ] )
      ] [
        fhir:id [ fhir:v "Encounter.serviceType.coding.display" ] ;
@@ -3113,7 +3116,8 @@
          fhir:map [ fhir:v "Dim.ICD10.ICD10Code\nDim.ICD9.ICD9Code" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "447: source value from V POV - POV > ICD DIAGNOSIS - CODE NUMBER (#9000010.07-.01 > 80-.01)" ]
+         fhir:map [ fhir:v "447: source value from V POV - POV > ICD DIAGNOSIS - CODE NUMBER (#9000010.07-.01 > 80-.01)" ] ;
+         fhir:comment [ fhir:v "MvdZ QA" ]
        ] )
      ] [
        fhir:id [ fhir:v "Encounter.reasonCode.coding.display" ] ;
@@ -4633,10 +4637,12 @@
          fhir:map [ fhir:v "430: transform using planned on VISIT - VISIT/ADMIT DATE&TIME (#9000010-.01) case null or > now" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "431: transform using in-progress on VISIT - VISIT/ADMIT DATE&TIME (#9000010-.01) case not null, < now, .18 null" ]
+         fhir:map [ fhir:v "431: transform using in-progress on VISIT - VISIT/ADMIT DATE&TIME (#9000010-.01) case not null, < now, .18 null" ] ;
+         fhir:comment [ fhir:v "tweaked case logic 9/21" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "432: transform using finished on VISIT - CHECK OUT DATE&TIME (#9000010-.18) case not null, < now" ]
+         fhir:map [ fhir:v "432: transform using finished on VISIT - CHECK OUT DATE&TIME (#9000010-.18) case not null, < now" ] ;
+         fhir:comment [ fhir:v "tweaked case logic 9/21" ]
        ] )
      ] [
        fhir:id [ fhir:v "Encounter.serviceType.coding.code" ] ;
@@ -4646,7 +4652,8 @@
          fhir:map [ fhir:v "Outpat.Visit.ServiceCategory\nOutpat.Workload.ServiceCategory" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "439: source value from VISIT - SERVICE CATEGORY (#9000010-.07)" ]
+         fhir:map [ fhir:v "439: source value from VISIT - SERVICE CATEGORY (#9000010-.07)" ] ;
+         fhir:comment [ fhir:v "MvdZ QA" ]
        ] )
      ] [
        fhir:id [ fhir:v "Encounter.subject" ] ;
@@ -4683,7 +4690,8 @@
          fhir:map [ fhir:v "Dim.ICD10.ICD10Code\nDim.ICD9.ICD9Code" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "447: source value from V POV - POV > ICD DIAGNOSIS - CODE NUMBER (#9000010.07-.01 > 80-.01)" ]
+         fhir:map [ fhir:v "447: source value from V POV - POV > ICD DIAGNOSIS - CODE NUMBER (#9000010.07-.01 > 80-.01)" ] ;
+         fhir:comment [ fhir:v "MvdZ QA" ]
        ] )
      ] [
        fhir:id [ fhir:v "Encounter.diagnosis.condition" ] ;

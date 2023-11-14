@@ -34,7 +34,7 @@
   <name value="Immunization"/>
   <title value="Immunization"/>
   <status value="draft"/>
-  <date value="2023-11-14T14:54:31+00:00"/>
+  <date value="2023-11-14T17:25:19+00:00"/>
   <publisher value="VA"/>
   <contact>
     <name value="VA"/>
@@ -533,10 +533,12 @@
       <mapping>
         <identity value="vista"/>
         <map value="297: fixed value = completed if V IMMUNIZATION - IMMUNIZATION &gt; IMMUNIZATION - CVX CODE (#9000010.11-.01 &gt; 9999999.14-.03) case CVX populated"/>
+        <comment value="subfile: .03 is CVX"/>
       </mapping>
       <mapping>
         <identity value="vista"/>
         <map value="299: transform using &quot;not-done&quot; on V IMMUNIZATION - IMMUNIZATION &gt; IMMUNIZATION - NAME (#9000010.11-.01 &gt; 9999999.14-.01) case text like 'contraindicated', 'refused', 'decline', 'not avail'"/>
+        <comment value="subfile: .01 is text&#xA;Transform because multiple sources&#xA;Use map?"/>
       </mapping>
     </element>
     <element id="Immunization.statusReason">
@@ -659,6 +661,7 @@
       <mapping>
         <identity value="vista"/>
         <map value="332: source value from V IMMUNIZATION - IMMUNIZATION &gt; IMMUNIZATION - CVX CODE (#9000010.11-.01 &gt; 9999999.14-.03) case not null"/>
+        <comment value="subfile: .03 is CVX"/>
       </mapping>
     </element>
     <element id="Immunization.vaccineCode.id">
@@ -1367,6 +1370,7 @@
       <mapping>
         <identity value="vista"/>
         <map value="1593: source value from V IMMUNIZATION - DATE/TIME RECORDED (#9000010.11-1205)"/>
+        <comment value="identified byMHV"/>
       </mapping>
     </element>
     <element id="Immunization.primarySource">
@@ -1593,6 +1597,7 @@
       <mapping>
         <identity value="vista"/>
         <map value="338: source value from IMMUNIZATION LOT - LOT NUMBER (#9999999.41-.01)"/>
+        <comment value="pointer to subfile 9999999.04-.02 MVX code, 9999999.04-.01 lot"/>
       </mapping>
     </element>
     <element id="Immunization.expirationDate">
@@ -2258,6 +2263,7 @@
       <mapping>
         <identity value="vista"/>
         <map value="342: reference from V IMMUNIZATION - ENCOUNTER PROVIDER (#9000010.11-1204)"/>
+        <comment value="instantiate with function or reference.display?"/>
       </mapping>
     </element>
     <element id="Immunization.note">
@@ -3543,6 +3549,7 @@
       <mapping>
         <identity value="vista"/>
         <map value="344: source value from V IMMUNIZATION - SERIES (#9000010.11-.04)"/>
+        <comment value="Can be numeral or letter"/>
       </mapping>
     </element>
     <element id="Immunization.protocolApplied.seriesDoses[x]">
@@ -3596,10 +3603,12 @@
       <mapping>
         <identity value="vista"/>
         <map value="297: fixed value = completed if V IMMUNIZATION - IMMUNIZATION &gt; IMMUNIZATION - CVX CODE (#9000010.11-.01 &gt; 9999999.14-.03) case CVX populated"/>
+        <comment value="subfile: .03 is CVX"/>
       </mapping>
       <mapping>
         <identity value="vista"/>
         <map value="299: transform using &quot;not-done&quot; on V IMMUNIZATION - IMMUNIZATION &gt; IMMUNIZATION - NAME (#9000010.11-.01 &gt; 9999999.14-.01) case text like 'contraindicated', 'refused', 'decline', 'not avail'"/>
+        <comment value="subfile: .01 is text&#xA;Transform because multiple sources&#xA;Use map?"/>
       </mapping>
     </element>
     <element id="Immunization.statusReason">
@@ -3638,6 +3647,7 @@
       <mapping>
         <identity value="vista"/>
         <map value="332: source value from V IMMUNIZATION - IMMUNIZATION &gt; IMMUNIZATION - CVX CODE (#9000010.11-.01 &gt; 9999999.14-.03) case not null"/>
+        <comment value="subfile: .03 is CVX"/>
       </mapping>
     </element>
     <element id="Immunization.vaccineCode.coding.code">
@@ -3694,6 +3704,7 @@
       <mapping>
         <identity value="vista"/>
         <map value="1593: source value from V IMMUNIZATION - DATE/TIME RECORDED (#9000010.11-1205)"/>
+        <comment value="identified byMHV"/>
       </mapping>
     </element>
     <element id="Immunization.primarySource">
@@ -3719,6 +3730,7 @@
       <mapping>
         <identity value="vista"/>
         <map value="338: source value from IMMUNIZATION LOT - LOT NUMBER (#9999999.41-.01)"/>
+        <comment value="pointer to subfile 9999999.04-.02 MVX code, 9999999.04-.01 lot"/>
       </mapping>
     </element>
     <element id="Immunization.doseQuantity">
@@ -3756,6 +3768,7 @@
       <mapping>
         <identity value="vista"/>
         <map value="342: reference from V IMMUNIZATION - ENCOUNTER PROVIDER (#9000010.11-1204)"/>
+        <comment value="instantiate with function or reference.display?"/>
       </mapping>
     </element>
     <element id="Immunization.note.text">
@@ -3806,6 +3819,7 @@
       <mapping>
         <identity value="vista"/>
         <map value="344: source value from V IMMUNIZATION - SERIES (#9000010.11-.04)"/>
+        <comment value="Can be numeral or letter"/>
       </mapping>
     </element>
   </differential>

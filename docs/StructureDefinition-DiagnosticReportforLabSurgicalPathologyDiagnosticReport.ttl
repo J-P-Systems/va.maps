@@ -17,7 +17,7 @@
   fhir:name [ fhir:v "DiagnosticReportforLabSurgicalPathologyDiagnosticReport"] ; # 
   fhir:title [ fhir:v "Diagnostic Report for Lab: Surgical Pathology {DiagnosticReport}"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2023-11-14T14:54:31+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2023-11-14T17:25:19+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "VA"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "VA" ] ;
@@ -958,7 +958,8 @@
          fhir:map [ fhir:v "Pathology.SurgPathOrderedTest.DispositionLabCodeIEN" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "1417: terminologyMaps using VF_DiagnosticReportLabStatus on SURGICAL PATHOLOGY - ORDERED TEST > ORDERED TEST - DISPOSITION (#63.08-.35 > 63.53-10)" ]
+         fhir:map [ fhir:v "1417: terminologyMaps using VF_DiagnosticReportLabStatus on SURGICAL PATHOLOGY - ORDERED TEST > ORDERED TEST - DISPOSITION (#63.08-.35 > 63.53-10)" ] ;
+         fhir:comment [ fhir:v "US Core 5 has new constraints: if status is partial, preliminary, final, ammended, corrected or appended effective[x] and issued are required" ]
        ] )
      ] [
        fhir:id [ fhir:v "DiagnosticReport.category" ] ;
@@ -1296,7 +1297,8 @@
          fhir:map [ fhir:v "fhir:CodeableConcept.text rdfs:subPropertyOf dt:CD.originalText" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "1537: source value from SURGICAL PATHOLOGY - ORDERED TEST > ORDERED TEST - COLLECTION SAMPLE > COLLECTION SAMPLE - LAB SECTION > LAB SECTION - NAME (#63.08-.35 > 63.08-9 > 62-6 > 62.2-.01)" ]
+         fhir:map [ fhir:v "1537: source value from SURGICAL PATHOLOGY - ORDERED TEST > ORDERED TEST - COLLECTION SAMPLE > COLLECTION SAMPLE - LAB SECTION > LAB SECTION - NAME (#63.08-.35 > 63.08-9 > 62-6 > 62.2-.01)" ] ;
+         fhir:comment [ fhir:v "Use this map in addition to key 1521 to indicate the coded value of \"Laboratory report\" and include the type of report from VistA" ]
        ] )
      ] [
        fhir:id [ fhir:v "DiagnosticReport.subject" ] ;
@@ -2067,7 +2069,8 @@
          fhir:map [ fhir:v "inboundRelationship[typeCode=\"SPRT\"].source[classCode=OBS, moodCode=EVN, code=LOINC:48767-8].value (type=ST)" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "1447: source value from SURGICAL PATHOLOGY - SURGICAL PATH DIAGNOSIS (#63.08-1.4)" ]
+         fhir:map [ fhir:v "1447: source value from SURGICAL PATHOLOGY - SURGICAL PATH DIAGNOSIS (#63.08-1.4)" ] ;
+         fhir:comment [ fhir:v "Vista field is word processing so CodeableConcept cannot be used" ]
        ] )
      ] [
        fhir:id [ fhir:v "DiagnosticReport.conclusionCode" ] ;
@@ -2181,14 +2184,16 @@
          fhir:map [ fhir:v "Pathology.SurgPathOrderedTest.DispositionLabCodeIEN" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "1417: terminologyMaps using VF_DiagnosticReportLabStatus on SURGICAL PATHOLOGY - ORDERED TEST > ORDERED TEST - DISPOSITION (#63.08-.35 > 63.53-10)" ]
+         fhir:map [ fhir:v "1417: terminologyMaps using VF_DiagnosticReportLabStatus on SURGICAL PATHOLOGY - ORDERED TEST > ORDERED TEST - DISPOSITION (#63.08-.35 > 63.53-10)" ] ;
+         fhir:comment [ fhir:v "US Core 5 has new constraints: if status is partial, preliminary, final, ammended, corrected or appended effective[x] and issued are required" ]
        ] )
      ] [
        fhir:id [ fhir:v "DiagnosticReport.code.text" ] ;
        fhir:path [ fhir:v "DiagnosticReport.code.text" ] ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "1537: source value from SURGICAL PATHOLOGY - ORDERED TEST > ORDERED TEST - COLLECTION SAMPLE > COLLECTION SAMPLE - LAB SECTION > LAB SECTION - NAME (#63.08-.35 > 63.08-9 > 62-6 > 62.2-.01)" ]
+         fhir:map [ fhir:v "1537: source value from SURGICAL PATHOLOGY - ORDERED TEST > ORDERED TEST - COLLECTION SAMPLE > COLLECTION SAMPLE - LAB SECTION > LAB SECTION - NAME (#63.08-.35 > 63.08-9 > 62-6 > 62.2-.01)" ] ;
+         fhir:comment [ fhir:v "Use this map in addition to key 1521 to indicate the coded value of \"Laboratory report\" and include the type of report from VistA" ]
        ] )
      ] [
        fhir:id [ fhir:v "DiagnosticReport.effective[x]" ] ;
@@ -2264,7 +2269,8 @@
        fhir:path [ fhir:v "DiagnosticReport.conclusion" ] ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "1447: source value from SURGICAL PATHOLOGY - SURGICAL PATH DIAGNOSIS (#63.08-1.4)" ]
+         fhir:map [ fhir:v "1447: source value from SURGICAL PATHOLOGY - SURGICAL PATH DIAGNOSIS (#63.08-1.4)" ] ;
+         fhir:comment [ fhir:v "Vista field is word processing so CodeableConcept cannot be used" ]
        ] )
      ] )
   ] . # 

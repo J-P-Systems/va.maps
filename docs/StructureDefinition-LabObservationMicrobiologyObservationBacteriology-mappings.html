@@ -402,17 +402,22 @@
 </table>
 <a name="vista"> </a><h3>Mappings for Veterans Health Information Systems Technology and Architecture (VistA) ()</h3><table class="grid">
  <tr><td colspan="3"><b>LabObservationMicrobiologyObservationBacteriology</b></td></tr>
- <tr><td>Observation</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>1488: terminologyMaps using VF_LabObservationStatus on MICROBIOLOGY - BACT RPT STATUS (#63.05-11.5)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;code</td><td>1525: fixed value without value? if MICROBIOLOGY - ORDERED TEST &gt; ORDERED TEST - LAB TEST ORDERED &gt; LABORATORY TEST - SITE/SPECIMEN &gt; SITE/SPECIMEN - LOINC CODE (#63.05-.35 &gt; 63.5-13 &gt; 60-100 &gt; 60.01-95.03) case NULL</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;value[x]</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;value[x] (valueCodeableConcept)</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>1516: terminologyMaps using VF_PositiveNegative on MICROBIOLOGY - URINE SCREEN (#63.05-11.57)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;value[x] (valueString)</td><td>1517: source value from MICROBIOLOGY - SPUTUM SCREEN (#63.05-11.58), 1518: source value from MICROBIOLOGY - GRAM STAIN &gt; GRAM STAIN - GRAM STAIN (#63.05-11.6 &gt; 63.29-.01)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;component</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>1522: transform using null on MICROBIOLOGY - ORGANISM &gt; ORGANISM - ORGANISM (#63.05-12 &gt; 63.3-5 to 160)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x] (valueString)</td><td>1523: source value from MICROBIOLOGY - ORGANISM &gt; ORGANISM - ORGANISM (#63.05-12 &gt; 63.3-5 to 160)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;interpretation</td><td>1524: terminologyMaps using VF_AntibioticSensitivityInterpretation on MICROBIOLOGY - ORGANISM &gt; ORGANISM - ORGANISM (#63.05-12 &gt; 63.3-5.1+to+160.1)</td> </tr>
+ <tr><td>Observation</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>1488: terminologyMaps using VF_LabObservationStatus on MICROBIOLOGY - BACT RPT STATUS (#63.05-11.5)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;code</td><td>1525: fixed value without value? if MICROBIOLOGY - ORDERED TEST &gt; ORDERED TEST - LAB TEST ORDERED &gt; LABORATORY TEST - SITE/SPECIMEN &gt; SITE/SPECIMEN - LOINC CODE (#63.05-.35 &gt; 63.5-13 &gt; 60-100 &gt; 60.01-95.03) case NULL</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;value[x]</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;value[x] (valueCodeableConcept)</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>1516: terminologyMaps using VF_PositiveNegative on MICROBIOLOGY - URINE SCREEN (#63.05-11.57)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;value[x] (valueString)</td><td>1517: source value from MICROBIOLOGY - SPUTUM SCREEN (#63.05-11.58), 1518: source value from MICROBIOLOGY - GRAM STAIN &gt; GRAM STAIN - GRAM STAIN (#63.05-11.6 &gt; 63.29-.01)</td><td>, </td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;component</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>1522: transform using null on MICROBIOLOGY - ORGANISM &gt; ORGANISM - ORGANISM (#63.05-12 &gt; 63.3-5 to 160)</td><td><p>antibiotic sensitivity
+What is default if no LOINC? Use text or is there a default LOINC?
+48611-8 Antibiotic tested [Identifier] against isolate</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x] (valueString)</td><td>1523: source value from MICROBIOLOGY - ORGANISM &gt; ORGANISM - ORGANISM (#63.05-12 &gt; 63.3-5 to 160)</td><td><p>antibiotic sensitivity</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;interpretation</td><td>1524: terminologyMaps using VF_AntibioticSensitivityInterpretation on MICROBIOLOGY - ORGANISM &gt; ORGANISM - ORGANISM (#63.05-12 &gt; 63.3-5.1+to+160.1)</td><td><p>antibiotic sensitivity</p>
+</td> </tr>
 </table>
 
 
@@ -467,7 +472,7 @@
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.3.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Nov 14, 2023 14:54+0000">2023-11-14</span>
+          IG &#169; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.3.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Nov 14, 2023 17:25+0000">2023-11-14</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

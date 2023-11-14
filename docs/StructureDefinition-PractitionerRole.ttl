@@ -17,7 +17,7 @@
   fhir:name [ fhir:v "PractitionerRole"] ; # 
   fhir:title [ fhir:v "Practitioner Role"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2023-11-14T14:54:31+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2023-11-14T17:25:19+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "VA"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "VA" ] ;
@@ -887,10 +887,12 @@
          fhir:map [ fhir:v "StaffSub.ProviderTypeAssignment.ExpirationDate" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "411: transform using true on NEW PERSON - PERSON CLASS > PERSON CLASS - EXPIRATION DATE (#200-8932.1 > 200.05-3) case date > now or = null" ]
+         fhir:map [ fhir:v "411: transform using true on NEW PERSON - PERSON CLASS > PERSON CLASS - EXPIRATION DATE (#200-8932.1 > 200.05-3) case date > now or = null" ] ;
+         fhir:comment [ fhir:v "Changed mapping to indicate the expiration date field related to the class which aligns to the role\n\n04/12/23 Confirmed during FHIR Office Hours: Role expiration date should be used; termination date is a system date" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "412: transform using false on NEW PERSON - PERSON CLASS > PERSON CLASS - EXPIRATION DATE (#200-8932.1 > 200.05-3) case date < now" ]
+         fhir:map [ fhir:v "412: transform using false on NEW PERSON - PERSON CLASS > PERSON CLASS - EXPIRATION DATE (#200-8932.1 > 200.05-3) case date < now" ] ;
+         fhir:comment [ fhir:v "Changed mapping to indicate the expiration date field related to the class which aligns to the role\n\n04/12/23 Confirmed during FHIR Office Hours: Role expiration date should be used; termination date is a system date" ]
        ] )
      ] [
        fhir:id [ fhir:v "PractitionerRole.period" ] ;
@@ -1053,7 +1055,8 @@
          fhir:map [ fhir:v "StaffSub.ProviderTypeAssignment.EffectiveDate" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "413: source value from NEW PERSON - PERSON CLASS > PERSON CLASS - EFFECTIVE DATE (#200-8932.1 > 200.05-2)" ]
+         fhir:map [ fhir:v "413: source value from NEW PERSON - PERSON CLASS > PERSON CLASS - EFFECTIVE DATE (#200-8932.1 > 200.05-2)" ] ;
+         fhir:comment [ fhir:v "Changed mapping to indicate the effective date field related to the class which aligns to the role" ]
        ] )
      ] [
        fhir:id [ fhir:v "PractitionerRole.period.end" ] ;
@@ -1097,7 +1100,8 @@
          fhir:map [ fhir:v "StaffSub.ProviderTypeAssignment.ExpirationDate" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "416: source value from NEW PERSON - PERSON CLASS > PERSON CLASS - EXPIRATION DATE (#200-8932.1 > 200.05-3)" ]
+         fhir:map [ fhir:v "416: source value from NEW PERSON - PERSON CLASS > PERSON CLASS - EXPIRATION DATE (#200-8932.1 > 200.05-3)" ] ;
+         fhir:comment [ fhir:v "Changed mapping to indicate the expiration date field related to the class which aligns to the role\n\n04/12/23 Confirmed during FHIR Office Hours: Role expiration date should be used; termination date is a system date" ]
        ] )
      ] [
        fhir:id [ fhir:v "PractitionerRole.practitioner" ] ;
@@ -1141,7 +1145,8 @@
          fhir:map [ fhir:v "SStaff.PrescribingProvider.StaffName\nSStaff.SStaff.StaffName" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "414: reference from NEW PERSON - NAME (#200-.01)" ]
+         fhir:map [ fhir:v "414: reference from NEW PERSON - NAME (#200-.01)" ] ;
+         fhir:comment [ fhir:v "Use US Core Practitioner Profile.\nChanged map to better align with US Core" ]
        ] )
      ] [
        fhir:id [ fhir:v "PractitionerRole.organization" ] ;
@@ -2038,7 +2043,8 @@
          fhir:map [ fhir:v "Dim.ProviderType.X12Code" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "419: source value from PERSON CLASS - X12 CODE (#8932.1-6)" ]
+         fhir:map [ fhir:v "419: source value from PERSON CLASS - X12 CODE (#8932.1-6)" ] ;
+         fhir:comment [ fhir:v "Added paths" ]
        ] )
      ] [
        fhir:id [ fhir:v "PractitionerRole.specialty.coding.display" ] ;
@@ -2212,7 +2218,8 @@
          fhir:map [ fhir:v "(ServD maps Practitioners and Organizations via another entity, so this concept is not available)<br/> However these are accessed via the Site.ServiceSite.ServiceSiteProvider record. (The Site has the location)" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "422: reference from PROVIDER - PROVIDER (#44.1-.01)" ]
+         fhir:map [ fhir:v "422: reference from PROVIDER - PROVIDER (#44.1-.01)" ] ;
+         fhir:comment [ fhir:v "This is a reverse pointer. Location 44 contains 44.1, pointing at providers" ]
        ] )
      ] [
        fhir:id [ fhir:v "PractitionerRole.healthcareService" ] ;
@@ -2485,28 +2492,36 @@
          fhir:map [ fhir:v "SStaff.PrescribingProvider.EmailAddress\nSStaff.SStaff.EmailAddress" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "384: source value from NEW PERSON - OFFICE PHONE (#200-.132)" ]
+         fhir:map [ fhir:v "384: source value from NEW PERSON - OFFICE PHONE (#200-.132)" ] ;
+         fhir:comment [ fhir:v "Change from Practitioner to PractitionerRole (use case and FHIR Path) to support US Core" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "385: source value from NEW PERSON - PHONE #3 (#200-.133)" ]
+         fhir:map [ fhir:v "385: source value from NEW PERSON - PHONE #3 (#200-.133)" ] ;
+         fhir:comment [ fhir:v "Change from Practitioner to PractitionerRole (use case and FHIR Path) to support US Core" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "386: source value from NEW PERSON - PHONE #4 (#200-.134)" ]
+         fhir:map [ fhir:v "386: source value from NEW PERSON - PHONE #4 (#200-.134)" ] ;
+         fhir:comment [ fhir:v "Change from Practitioner to PractitionerRole (use case and FHIR Path) to support US Core" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "387: source value from NEW PERSON - COMMERCIAL PHONE (#200-.135)" ]
+         fhir:map [ fhir:v "387: source value from NEW PERSON - COMMERCIAL PHONE (#200-.135)" ] ;
+         fhir:comment [ fhir:v "Change from Practitioner to PractitionerRole (use case and FHIR Path) to support US Core" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "388: source value from NEW PERSON - FAX NUMBER (#200-.136)" ]
+         fhir:map [ fhir:v "388: source value from NEW PERSON - FAX NUMBER (#200-.136)" ] ;
+         fhir:comment [ fhir:v "Change from Practitioner to PractitionerRole (use case and FHIR Path) to support US Core" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "389: source value from NEW PERSON - VOICE PAGER (#200-.137)" ]
+         fhir:map [ fhir:v "389: source value from NEW PERSON - VOICE PAGER (#200-.137)" ] ;
+         fhir:comment [ fhir:v "Change from Practitioner to PractitionerRole (use case and FHIR Path) to support US Core" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "390: source value from NEW PERSON - DIGITAL PAGER (#200-.138)" ]
+         fhir:map [ fhir:v "390: source value from NEW PERSON - DIGITAL PAGER (#200-.138)" ] ;
+         fhir:comment [ fhir:v "Change from Practitioner to PractitionerRole (use case and FHIR Path) to support US Core" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "391: source value from NEW PERSON - EMAIL ADDRESS (#200-.151)" ]
+         fhir:map [ fhir:v "391: source value from NEW PERSON - EMAIL ADDRESS (#200-.151)" ] ;
+         fhir:comment [ fhir:v "Change from Practitioner to PractitionerRole (use case and FHIR Path) to support US Core" ]
        ] )
      ] [
        fhir:id [ fhir:v "PractitionerRole.telecom.use" ] ;
@@ -3259,10 +3274,12 @@
          fhir:map [ fhir:v "StaffSub.ProviderTypeAssignment.ExpirationDate" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "411: transform using true on NEW PERSON - PERSON CLASS > PERSON CLASS - EXPIRATION DATE (#200-8932.1 > 200.05-3) case date > now or = null" ]
+         fhir:map [ fhir:v "411: transform using true on NEW PERSON - PERSON CLASS > PERSON CLASS - EXPIRATION DATE (#200-8932.1 > 200.05-3) case date > now or = null" ] ;
+         fhir:comment [ fhir:v "Changed mapping to indicate the expiration date field related to the class which aligns to the role\n\n04/12/23 Confirmed during FHIR Office Hours: Role expiration date should be used; termination date is a system date" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "412: transform using false on NEW PERSON - PERSON CLASS > PERSON CLASS - EXPIRATION DATE (#200-8932.1 > 200.05-3) case date < now" ]
+         fhir:map [ fhir:v "412: transform using false on NEW PERSON - PERSON CLASS > PERSON CLASS - EXPIRATION DATE (#200-8932.1 > 200.05-3) case date < now" ] ;
+         fhir:comment [ fhir:v "Changed mapping to indicate the expiration date field related to the class which aligns to the role\n\n04/12/23 Confirmed during FHIR Office Hours: Role expiration date should be used; termination date is a system date" ]
        ] )
      ] [
        fhir:id [ fhir:v "PractitionerRole.period.start" ] ;
@@ -3272,7 +3289,8 @@
          fhir:map [ fhir:v "StaffSub.ProviderTypeAssignment.EffectiveDate" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "413: source value from NEW PERSON - PERSON CLASS > PERSON CLASS - EFFECTIVE DATE (#200-8932.1 > 200.05-2)" ]
+         fhir:map [ fhir:v "413: source value from NEW PERSON - PERSON CLASS > PERSON CLASS - EFFECTIVE DATE (#200-8932.1 > 200.05-2)" ] ;
+         fhir:comment [ fhir:v "Changed mapping to indicate the effective date field related to the class which aligns to the role" ]
        ] )
      ] [
        fhir:id [ fhir:v "PractitionerRole.period.end" ] ;
@@ -3282,7 +3300,8 @@
          fhir:map [ fhir:v "StaffSub.ProviderTypeAssignment.ExpirationDate" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "416: source value from NEW PERSON - PERSON CLASS > PERSON CLASS - EXPIRATION DATE (#200-8932.1 > 200.05-3)" ]
+         fhir:map [ fhir:v "416: source value from NEW PERSON - PERSON CLASS > PERSON CLASS - EXPIRATION DATE (#200-8932.1 > 200.05-3)" ] ;
+         fhir:comment [ fhir:v "Changed mapping to indicate the expiration date field related to the class which aligns to the role\n\n04/12/23 Confirmed during FHIR Office Hours: Role expiration date should be used; termination date is a system date" ]
        ] )
      ] [
        fhir:id [ fhir:v "PractitionerRole.practitioner" ] ;
@@ -3292,7 +3311,8 @@
          fhir:map [ fhir:v "SStaff.PrescribingProvider.StaffName\nSStaff.SStaff.StaffName" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "414: reference from NEW PERSON - NAME (#200-.01)" ]
+         fhir:map [ fhir:v "414: reference from NEW PERSON - NAME (#200-.01)" ] ;
+         fhir:comment [ fhir:v "Use US Core Practitioner Profile.\nChanged map to better align with US Core" ]
        ] )
      ] [
        fhir:id [ fhir:v "PractitionerRole.code.coding.code" ] ;
@@ -3309,14 +3329,16 @@
          fhir:map [ fhir:v "Dim.ProviderType.X12Code" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "419: source value from PERSON CLASS - X12 CODE (#8932.1-6)" ]
+         fhir:map [ fhir:v "419: source value from PERSON CLASS - X12 CODE (#8932.1-6)" ] ;
+         fhir:comment [ fhir:v "Added paths" ]
        ] )
      ] [
        fhir:id [ fhir:v "PractitionerRole.location" ] ;
        fhir:path [ fhir:v "PractitionerRole.location" ] ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "422: reference from PROVIDER - PROVIDER (#44.1-.01)" ]
+         fhir:map [ fhir:v "422: reference from PROVIDER - PROVIDER (#44.1-.01)" ] ;
+         fhir:comment [ fhir:v "This is a reverse pointer. Location 44 contains 44.1, pointing at providers" ]
        ] )
      ] [
        fhir:id [ fhir:v "PractitionerRole.telecom.value" ] ;
@@ -3347,28 +3369,36 @@
          fhir:map [ fhir:v "SStaff.PrescribingProvider.EmailAddress\nSStaff.SStaff.EmailAddress" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "384: source value from NEW PERSON - OFFICE PHONE (#200-.132)" ]
+         fhir:map [ fhir:v "384: source value from NEW PERSON - OFFICE PHONE (#200-.132)" ] ;
+         fhir:comment [ fhir:v "Change from Practitioner to PractitionerRole (use case and FHIR Path) to support US Core" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "385: source value from NEW PERSON - PHONE #3 (#200-.133)" ]
+         fhir:map [ fhir:v "385: source value from NEW PERSON - PHONE #3 (#200-.133)" ] ;
+         fhir:comment [ fhir:v "Change from Practitioner to PractitionerRole (use case and FHIR Path) to support US Core" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "386: source value from NEW PERSON - PHONE #4 (#200-.134)" ]
+         fhir:map [ fhir:v "386: source value from NEW PERSON - PHONE #4 (#200-.134)" ] ;
+         fhir:comment [ fhir:v "Change from Practitioner to PractitionerRole (use case and FHIR Path) to support US Core" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "387: source value from NEW PERSON - COMMERCIAL PHONE (#200-.135)" ]
+         fhir:map [ fhir:v "387: source value from NEW PERSON - COMMERCIAL PHONE (#200-.135)" ] ;
+         fhir:comment [ fhir:v "Change from Practitioner to PractitionerRole (use case and FHIR Path) to support US Core" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "388: source value from NEW PERSON - FAX NUMBER (#200-.136)" ]
+         fhir:map [ fhir:v "388: source value from NEW PERSON - FAX NUMBER (#200-.136)" ] ;
+         fhir:comment [ fhir:v "Change from Practitioner to PractitionerRole (use case and FHIR Path) to support US Core" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "389: source value from NEW PERSON - VOICE PAGER (#200-.137)" ]
+         fhir:map [ fhir:v "389: source value from NEW PERSON - VOICE PAGER (#200-.137)" ] ;
+         fhir:comment [ fhir:v "Change from Practitioner to PractitionerRole (use case and FHIR Path) to support US Core" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "390: source value from NEW PERSON - DIGITAL PAGER (#200-.138)" ]
+         fhir:map [ fhir:v "390: source value from NEW PERSON - DIGITAL PAGER (#200-.138)" ] ;
+         fhir:comment [ fhir:v "Change from Practitioner to PractitionerRole (use case and FHIR Path) to support US Core" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "391: source value from NEW PERSON - EMAIL ADDRESS (#200-.151)" ]
+         fhir:map [ fhir:v "391: source value from NEW PERSON - EMAIL ADDRESS (#200-.151)" ] ;
+         fhir:comment [ fhir:v "Change from Practitioner to PractitionerRole (use case and FHIR Path) to support US Core" ]
        ] )
      ] )
   ] . # 

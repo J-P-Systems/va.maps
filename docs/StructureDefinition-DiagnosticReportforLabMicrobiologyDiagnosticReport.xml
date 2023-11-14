@@ -20,7 +20,7 @@
   <name value="DiagnosticReportforLabMicrobiologyDiagnosticReport"/>
   <title value="Diagnostic Report for Lab: Microbiology {DiagnosticReport}"/>
   <status value="draft"/>
-  <date value="2023-11-14T14:54:31+00:00"/>
+  <date value="2023-11-14T17:25:19+00:00"/>
   <publisher value="VA"/>
   <contact>
     <name value="VA"/>
@@ -897,6 +897,7 @@
       <mapping>
         <identity value="vista"/>
         <map value="1416: terminologyMaps using VF_DiagnosticReportLabStatus on MICROBIOLOGY - ORDERED TEST &gt; ORDERED TEST - DISPOSITION (#63.05-.35 &gt; 63.5-10)"/>
+        <comment value="disposition based on HL7 Table 0123 status codes&#xA;&#xA;US Core 5 has new constraints: if status is partial, preliminary, final, ammended, corrected or appended effective[x] and issued are required"/>
       </mapping>
     </element>
     <element id="DiagnosticReport.category">
@@ -1378,6 +1379,7 @@
       <mapping>
         <identity value="vista"/>
         <map value="1536: source value from MICROBIOLOGY - ORDERED TEST &gt; ORDERED TEST - COLLECTION SAMPLE &gt; COLLECTION SAMPLE - LAB SECTION &gt; LAB SECTION - NAME (#63.05-.35 &gt; 63.5-9 &gt; 62-6 &gt; 62.2-.01)"/>
+        <comment value="Use this map in addition to key 1521 to indicate the coded value of &quot;Laboratory report&quot; and include the type of report from VistA"/>
       </mapping>
     </element>
     <element id="DiagnosticReport.subject">
@@ -1435,6 +1437,7 @@
       <mapping>
         <identity value="vista"/>
         <map value="1421: reference from PATIENT - LABORATORY REFERENCE &gt; LAB DATA - LRDFN (#2-63 &gt; 63-.01)"/>
+        <comment value="Pointer from PATIENT (2)"/>
       </mapping>
     </element>
     <element id="DiagnosticReport.encounter">
@@ -1717,6 +1720,7 @@
       <mapping>
         <identity value="vista"/>
         <map value="1434: reference from MICROBIOLOGY - VERIFY PERSON (#63.05-.04)"/>
+        <comment value="US Core Practitioner is must support resource"/>
       </mapping>
     </element>
     <element id="DiagnosticReport.resultsInterpreter">
@@ -2223,6 +2227,7 @@
       <mapping>
         <identity value="vista"/>
         <map value="1416: terminologyMaps using VF_DiagnosticReportLabStatus on MICROBIOLOGY - ORDERED TEST &gt; ORDERED TEST - DISPOSITION (#63.05-.35 &gt; 63.5-10)"/>
+        <comment value="disposition based on HL7 Table 0123 status codes&#xA;&#xA;US Core 5 has new constraints: if status is partial, preliminary, final, ammended, corrected or appended effective[x] and issued are required"/>
       </mapping>
     </element>
     <element id="DiagnosticReport.code.text">
@@ -2230,6 +2235,7 @@
       <mapping>
         <identity value="vista"/>
         <map value="1536: source value from MICROBIOLOGY - ORDERED TEST &gt; ORDERED TEST - COLLECTION SAMPLE &gt; COLLECTION SAMPLE - LAB SECTION &gt; LAB SECTION - NAME (#63.05-.35 &gt; 63.5-9 &gt; 62-6 &gt; 62.2-.01)"/>
+        <comment value="Use this map in addition to key 1521 to indicate the coded value of &quot;Laboratory report&quot; and include the type of report from VistA"/>
       </mapping>
     </element>
     <element id="DiagnosticReport.effective[x]">
@@ -2287,6 +2293,7 @@
       <mapping>
         <identity value="vista"/>
         <map value="1434: reference from MICROBIOLOGY - VERIFY PERSON (#63.05-.04)"/>
+        <comment value="US Core Practitioner is must support resource"/>
       </mapping>
     </element>
   </differential>

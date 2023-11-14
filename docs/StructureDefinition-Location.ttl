@@ -17,7 +17,7 @@
   fhir:name [ fhir:v "Location"] ; # 
   fhir:title [ fhir:v "Location"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2023-11-14T14:54:31+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2023-11-14T17:25:19+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "VA"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "VA" ] ;
@@ -724,7 +724,8 @@
          fhir:map [ fhir:v "./Value" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "755: source value from HOSPITAL LOCATION - IEN (#44-.001)" ]
+         fhir:map [ fhir:v "755: source value from HOSPITAL LOCATION - IEN (#44-.001)" ] ;
+         fhir:comment [ fhir:v "MvdZ QA 6-jul-2023" ]
        ] )
      ] [
        fhir:id [ fhir:v "Location.identifier.period" ] ;
@@ -852,7 +853,8 @@
          fhir:map [ fhir:v ".statusCode" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "1278: terminologyMaps using VF_LocationStatus" ]
+         fhir:map [ fhir:v "1278: terminologyMaps using VF_LocationStatus" ] ;
+         fhir:comment [ fhir:v "Derive somehow from 44-2505 INACTIVATE 44-2506 REACTIVATE  \nOr use VAST, not ViSTA.\nMvdZ QA 6-jul-2023" ]
        ] )
      ] [
        fhir:id [ fhir:v "Location.operationalStatus" ] ;
@@ -982,10 +984,12 @@
          fhir:map [ fhir:v "Dim.Location.LocationAbbreviation" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "1276: source value from HOSPITAL LOCATION - ABBREVIATION (#44-1)" ]
+         fhir:map [ fhir:v "1276: source value from HOSPITAL LOCATION - ABBREVIATION (#44-1)" ] ;
+         fhir:comment [ fhir:v "MvdZ QA 6-jul-2023" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "1277: source value from HOSPITAL LOCATION - SYNONYM (#44-13)" ]
+         fhir:map [ fhir:v "1277: source value from HOSPITAL LOCATION - SYNONYM (#44-13)" ] ;
+         fhir:comment [ fhir:v "MvdZ QA 6-jul-2023" ]
        ] )
      ] [
        fhir:id [ fhir:v "Location.description" ] ;
@@ -1295,7 +1299,8 @@
          fhir:map [ fhir:v "Dim.Location.MedicalService" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "1412: terminologyMaps using VF_LocationStatus on HOSPITAL LOCATION - SERVICE (#44-9)" ]
+         fhir:map [ fhir:v "1412: terminologyMaps using VF_LocationStatus on HOSPITAL LOCATION - SERVICE (#44-9)" ] ;
+         fhir:comment [ fhir:v "could map Medical Service text to FHIR type valueset, e.g.\n\"NEUROLOGY\" to \"NEUR Neurology clinic\"\nOr is this combination of TREATEMENT SPECIALTY (9.5) and SERVICE/SECTION? and STOP CODE?" ]
        ] )
      ] [
        fhir:id [ fhir:v "Location.telecom" ] ;
@@ -1503,7 +1508,8 @@
          fhir:map [ fhir:v "Dim.Location.PhoneNumber" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "1280: transform using concat (44-99,\" ext. \",44-99.1) on HOSPITAL LOCATION - TELEPHONE > TELEPHONE EXTENSION (#44-99 > 44-99.1)" ]
+         fhir:map [ fhir:v "1280: transform using concat (44-99,\" ext. \",44-99.1) on HOSPITAL LOCATION - TELEPHONE > TELEPHONE EXTENSION (#44-99 > 44-99.1)" ] ;
+         fhir:comment [ fhir:v "MvdZ QA 6-jul-2023" ]
        ] )
      ] [
        fhir:id [ fhir:v "Location.telecom.use" ] ;
@@ -1671,7 +1677,8 @@
          fhir:map [ fhir:v "n/a" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "1326: source not supported case mailing slice" ]
+         fhir:map [ fhir:v "1326: source not supported case mailing slice" ] ;
+         fhir:comment [ fhir:v "source not supported because Location has only physical address and supports only 1 address" ]
        ] )
      ] [
        fhir:id [ fhir:v "Location.address.id" ] ;
@@ -1809,7 +1816,8 @@
          fhir:map [ fhir:v "./AddressPurpose" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "1407: source not supported case mailing slice" ]
+         fhir:map [ fhir:v "1407: source not supported case mailing slice" ] ;
+         fhir:comment [ fhir:v "source not supported because Location has only physical address and supports only 1 address" ]
        ] )
      ] [
        fhir:id [ fhir:v "Location.address.type" ] ;
@@ -1870,7 +1878,8 @@
          fhir:map [ fhir:v "1322: fixed value = physical if HOSPITAL LOCATION - INSTITUTION (#44-3)" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "1328: source not supported case mailing slice" ]
+         fhir:map [ fhir:v "1328: source not supported case mailing slice" ] ;
+         fhir:comment [ fhir:v "source not supported because Location has only physical address and supports only 1 address" ]
        ] )
      ] [
        fhir:id [ fhir:v "Location.address.text" ] ;
@@ -1976,10 +1985,12 @@
          fhir:map [ fhir:v "1318: source value from HOSPITAL LOCATION - INSTITUTION > STREET ADDR. 2 (#44-3 > 4-1.02)" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "1323: source not supported case mailing slice" ]
+         fhir:map [ fhir:v "1323: source not supported case mailing slice" ] ;
+         fhir:comment [ fhir:v "source not supported because Location has only physical address and supports only 1 address" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "1324: source not supported case mailing slice" ]
+         fhir:map [ fhir:v "1324: source not supported case mailing slice" ] ;
+         fhir:comment [ fhir:v "source not supported because Location has only physical address and supports only 1 address" ]
        ] )
      ] [
        fhir:id [ fhir:v "Location.address.city" ] ;
@@ -2035,7 +2046,8 @@
          fhir:map [ fhir:v "1319: source value from HOSPITAL LOCATION - INSTITUTION > CITY (#44-3 > 4-1.03)" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "1325: source not supported case mailing slice" ]
+         fhir:map [ fhir:v "1325: source not supported case mailing slice" ] ;
+         fhir:comment [ fhir:v "source not supported because Location has only physical address and supports only 1 address" ]
        ] )
      ] [
        fhir:id [ fhir:v "Location.address.district" ] ;
@@ -2195,7 +2207,8 @@
          fhir:map [ fhir:v "1320: source value from HOSPITAL LOCATION - INSTITUTION > ZIP (#44-3 > 4-1.04)" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "1327: source not supported case mailing slice" ]
+         fhir:map [ fhir:v "1327: source not supported case mailing slice" ] ;
+         fhir:comment [ fhir:v "source not supported because Location has only physical address and supports only 1 address" ]
        ] )
      ] [
        fhir:id [ fhir:v "Location.address.country" ] ;
@@ -2243,7 +2256,8 @@
          fhir:map [ fhir:v "1405: source value from HOSPITAL LOCATION - INSTITUTION > COUNTRY > COUNTRY - CODE (#44-3 > 4-801 > 779.004-0.1)" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "1406: source not supported case mailing slice" ]
+         fhir:map [ fhir:v "1406: source not supported case mailing slice" ] ;
+         fhir:comment [ fhir:v "source not supported because Location has only physical address and supports only 1 address" ]
        ] )
      ] [
        fhir:id [ fhir:v "Location.address.period" ] ;
@@ -3432,7 +3446,8 @@
        fhir:path [ fhir:v "Location.identifier.value" ] ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "755: source value from HOSPITAL LOCATION - IEN (#44-.001)" ]
+         fhir:map [ fhir:v "755: source value from HOSPITAL LOCATION - IEN (#44-.001)" ] ;
+         fhir:comment [ fhir:v "MvdZ QA 6-jul-2023" ]
        ] )
      ] [
        fhir:id [ fhir:v "Location.status" ] ;
@@ -3446,7 +3461,8 @@
        ] ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "1278: terminologyMaps using VF_LocationStatus" ]
+         fhir:map [ fhir:v "1278: terminologyMaps using VF_LocationStatus" ] ;
+         fhir:comment [ fhir:v "Derive somehow from 44-2505 INACTIVATE 44-2506 REACTIVATE  \nOr use VAST, not ViSTA.\nMvdZ QA 6-jul-2023" ]
        ] )
      ] [
        fhir:id [ fhir:v "Location.name" ] ;
@@ -3466,10 +3482,12 @@
          fhir:map [ fhir:v "Dim.Location.LocationAbbreviation" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "1276: source value from HOSPITAL LOCATION - ABBREVIATION (#44-1)" ]
+         fhir:map [ fhir:v "1276: source value from HOSPITAL LOCATION - ABBREVIATION (#44-1)" ] ;
+         fhir:comment [ fhir:v "MvdZ QA 6-jul-2023" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "1277: source value from HOSPITAL LOCATION - SYNONYM (#44-13)" ]
+         fhir:map [ fhir:v "1277: source value from HOSPITAL LOCATION - SYNONYM (#44-13)" ] ;
+         fhir:comment [ fhir:v "MvdZ QA 6-jul-2023" ]
        ] )
      ] [
        fhir:id [ fhir:v "Location.description" ] ;
@@ -3496,7 +3514,8 @@
          fhir:map [ fhir:v "Dim.Location.MedicalService" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "1412: terminologyMaps using VF_LocationStatus on HOSPITAL LOCATION - SERVICE (#44-9)" ]
+         fhir:map [ fhir:v "1412: terminologyMaps using VF_LocationStatus on HOSPITAL LOCATION - SERVICE (#44-9)" ] ;
+         fhir:comment [ fhir:v "could map Medical Service text to FHIR type valueset, e.g.\n\"NEUROLOGY\" to \"NEUR Neurology clinic\"\nOr is this combination of TREATEMENT SPECIALTY (9.5) and SERVICE/SECTION? and STOP CODE?" ]
        ] )
      ] [
        fhir:id [ fhir:v "Location.telecom.value" ] ;
@@ -3506,21 +3525,24 @@
          fhir:map [ fhir:v "Dim.Location.PhoneNumber" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "1280: transform using concat (44-99,\" ext. \",44-99.1) on HOSPITAL LOCATION - TELEPHONE > TELEPHONE EXTENSION (#44-99 > 44-99.1)" ]
+         fhir:map [ fhir:v "1280: transform using concat (44-99,\" ext. \",44-99.1) on HOSPITAL LOCATION - TELEPHONE > TELEPHONE EXTENSION (#44-99 > 44-99.1)" ] ;
+         fhir:comment [ fhir:v "MvdZ QA 6-jul-2023" ]
        ] )
      ] [
        fhir:id [ fhir:v "Location.address" ] ;
        fhir:path [ fhir:v "Location.address" ] ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "1326: source not supported case mailing slice" ]
+         fhir:map [ fhir:v "1326: source not supported case mailing slice" ] ;
+         fhir:comment [ fhir:v "source not supported because Location has only physical address and supports only 1 address" ]
        ] )
      ] [
        fhir:id [ fhir:v "Location.address.use" ] ;
        fhir:path [ fhir:v "Location.address.use" ] ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "1407: source not supported case mailing slice" ]
+         fhir:map [ fhir:v "1407: source not supported case mailing slice" ] ;
+         fhir:comment [ fhir:v "source not supported because Location has only physical address and supports only 1 address" ]
        ] )
      ] [
        fhir:id [ fhir:v "Location.address.type" ] ;
@@ -3530,7 +3552,8 @@
          fhir:map [ fhir:v "1322: fixed value = physical if HOSPITAL LOCATION - INSTITUTION (#44-3)" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "1328: source not supported case mailing slice" ]
+         fhir:map [ fhir:v "1328: source not supported case mailing slice" ] ;
+         fhir:comment [ fhir:v "source not supported because Location has only physical address and supports only 1 address" ]
        ] )
      ] [
        fhir:id [ fhir:v "Location.address.line" ] ;
@@ -3549,10 +3572,12 @@
          fhir:map [ fhir:v "1318: source value from HOSPITAL LOCATION - INSTITUTION > STREET ADDR. 2 (#44-3 > 4-1.02)" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "1323: source not supported case mailing slice" ]
+         fhir:map [ fhir:v "1323: source not supported case mailing slice" ] ;
+         fhir:comment [ fhir:v "source not supported because Location has only physical address and supports only 1 address" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "1324: source not supported case mailing slice" ]
+         fhir:map [ fhir:v "1324: source not supported case mailing slice" ] ;
+         fhir:comment [ fhir:v "source not supported because Location has only physical address and supports only 1 address" ]
        ] )
      ] [
        fhir:id [ fhir:v "Location.address.city" ] ;
@@ -3565,7 +3590,8 @@
          fhir:map [ fhir:v "1319: source value from HOSPITAL LOCATION - INSTITUTION > CITY (#44-3 > 4-1.03)" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "1325: source not supported case mailing slice" ]
+         fhir:map [ fhir:v "1325: source not supported case mailing slice" ] ;
+         fhir:comment [ fhir:v "source not supported because Location has only physical address and supports only 1 address" ]
        ] )
      ] [
        fhir:id [ fhir:v "Location.address.district" ] ;
@@ -3595,7 +3621,8 @@
          fhir:map [ fhir:v "1320: source value from HOSPITAL LOCATION - INSTITUTION > ZIP (#44-3 > 4-1.04)" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "1327: source not supported case mailing slice" ]
+         fhir:map [ fhir:v "1327: source not supported case mailing slice" ] ;
+         fhir:comment [ fhir:v "source not supported because Location has only physical address and supports only 1 address" ]
        ] )
      ] [
        fhir:id [ fhir:v "Location.address.country" ] ;
@@ -3605,7 +3632,8 @@
          fhir:map [ fhir:v "1405: source value from HOSPITAL LOCATION - INSTITUTION > COUNTRY > COUNTRY - CODE (#44-3 > 4-801 > 779.004-0.1)" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "1406: source not supported case mailing slice" ]
+         fhir:map [ fhir:v "1406: source not supported case mailing slice" ] ;
+         fhir:comment [ fhir:v "source not supported because Location has only physical address and supports only 1 address" ]
        ] )
      ] [
        fhir:id [ fhir:v "Location.physicalType.text" ] ;

@@ -17,7 +17,7 @@
   fhir:name [ fhir:v "MedicationRequestVAOrder"] ; # 
   fhir:title [ fhir:v "MedicationRequest: VA Order"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2023-11-14T14:54:31+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2023-11-14T17:25:19+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "VA"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "VA" ] ;
@@ -485,7 +485,8 @@
          fhir:map [ fhir:v ".id" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "1225: source value from ORDER - ORDER # (#100-.01) case package like 'PS%' & class 'I' & [exclude supply]" ]
+         fhir:map [ fhir:v "1225: source value from ORDER - ORDER # (#100-.01) case package like 'PS%' & class 'I' & [exclude supply]" ] ;
+         fhir:comment [ fhir:v "confirm case" ]
        ] )
      ] [
        fhir:id [ fhir:v "MedicationRequest.status" ] ;
@@ -594,7 +595,8 @@
          fhir:map [ fhir:v ".inboundRelationship[typeCode=SUBJ].source[classCode=CACT, moodCode=EVN].reasonCOde" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "1237: source value from ORDER - DC REASON (#100-64)" ]
+         fhir:map [ fhir:v "1237: source value from ORDER - DC REASON (#100-64)" ] ;
+         fhir:comment [ fhir:v "no appropriate standard found" ]
        ] )
      ] [
        fhir:id [ fhir:v "MedicationRequest.statusReason.id" ] ;
@@ -820,7 +822,8 @@
          fhir:map [ fhir:v "1346: fixed value = order if NON-VA MEDS - ORDER NUMBER (#55.05-7) case Null" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "1540: fixed value = plan if NON-VA MEDS - ORDER NUMBER (#55.05-7) case Not null" ]
+         fhir:map [ fhir:v "1540: fixed value = plan if NON-VA MEDS - ORDER NUMBER (#55.05-7) case Not null" ] ;
+         fhir:comment [ fhir:v "Revisit this if we can influence US Core" ]
        ] )
      ] [
        fhir:id [ fhir:v "MedicationRequest.category" ] ;
@@ -1288,7 +1291,8 @@
          fhir:map [ fhir:v "CPRSOrder.CPRSOrder.ItemOrderedParentFileIEN\nCPRSOrder.CPRSOrder.ItemOrderedParentFileNumber" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "1549: source value from ORDER - ITEM ORDERED (#100-7)" ]
+         fhir:map [ fhir:v "1549: source value from ORDER - ITEM ORDERED (#100-7)" ] ;
+         fhir:comment [ fhir:v "confirm lookup" ]
        ] )
      ] [
        fhir:id [ fhir:v "MedicationRequest.subject" ] ;
@@ -5156,7 +5160,8 @@
        fhir:path [ fhir:v "MedicationRequest.identifier" ] ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "1225: source value from ORDER - ORDER # (#100-.01) case package like 'PS%' & class 'I' & [exclude supply]" ]
+         fhir:map [ fhir:v "1225: source value from ORDER - ORDER # (#100-.01) case package like 'PS%' & class 'I' & [exclude supply]" ] ;
+         fhir:comment [ fhir:v "confirm case" ]
        ] )
      ] [
        fhir:id [ fhir:v "MedicationRequest.status" ] ;
@@ -5170,7 +5175,8 @@
        fhir:path [ fhir:v "MedicationRequest.statusReason" ] ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "1237: source value from ORDER - DC REASON (#100-64)" ]
+         fhir:map [ fhir:v "1237: source value from ORDER - DC REASON (#100-64)" ] ;
+         fhir:comment [ fhir:v "no appropriate standard found" ]
        ] )
      ] [
        fhir:id [ fhir:v "MedicationRequest.statusReason.text" ] ;
@@ -5190,7 +5196,8 @@
          fhir:map [ fhir:v "1346: fixed value = order if NON-VA MEDS - ORDER NUMBER (#55.05-7) case Null" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "1540: fixed value = plan if NON-VA MEDS - ORDER NUMBER (#55.05-7) case Not null" ]
+         fhir:map [ fhir:v "1540: fixed value = plan if NON-VA MEDS - ORDER NUMBER (#55.05-7) case Not null" ] ;
+         fhir:comment [ fhir:v "Revisit this if we can influence US Core" ]
        ] )
      ] [
        fhir:id [ fhir:v "MedicationRequest.category" ] ;
@@ -5255,7 +5262,8 @@
          fhir:map [ fhir:v "CPRSOrder.CPRSOrder.ItemOrderedParentFileIEN\nCPRSOrder.CPRSOrder.ItemOrderedParentFileNumber" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "1549: source value from ORDER - ITEM ORDERED (#100-7)" ]
+         fhir:map [ fhir:v "1549: source value from ORDER - ITEM ORDERED (#100-7)" ] ;
+         fhir:comment [ fhir:v "confirm lookup" ]
        ] )
      ] [
        fhir:id [ fhir:v "MedicationRequest.subject" ] ;

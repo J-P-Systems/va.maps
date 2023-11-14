@@ -17,7 +17,7 @@
   fhir:name [ fhir:v "EncounterInpatientPTF"] ; # 
   fhir:title [ fhir:v "Encounter: Inpatient (PTF)"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2023-11-14T14:54:31+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2023-11-14T17:25:19+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "VA"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "VA" ] ;
@@ -744,7 +744,8 @@
          fhir:map [ fhir:v "Inpat.Census.AdmitEligibilityIEN\nInpat.Inpatient.AdmitEligibilityIEN\nInpat.InpatientFeeBasis.AdmitEligibilityIEN" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "427: source value from PTF - NUMBER (#45-.001)" ]
+         fhir:map [ fhir:v "427: source value from PTF - NUMBER (#45-.001)" ] ;
+         fhir:comment [ fhir:v "MvdZ QA\nremoved use=IFN typo and split of class to new mapset row" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
          fhir:map [ fhir:v "428: source value from PTF - INTERNAL ADMISSION # (#45-2.1)" ]
@@ -896,7 +897,8 @@
          fhir:map [ fhir:v "433: transform using planned on PTF - ADMISSION DATE (#45-2) case null or > now" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "434: transform using in-progress on PTF - ADMISSION DATE (#45-2) case not null, < now, field 70 null" ]
+         fhir:map [ fhir:v "434: transform using in-progress on PTF - ADMISSION DATE (#45-2) case not null, < now, field 70 null" ] ;
+         fhir:comment [ fhir:v "tweaked case logic 9/21" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
          fhir:map [ fhir:v "435: fixed value = finished if PTF - DISCHARGE DATE (#45-70) case not null" ]
@@ -1182,7 +1184,8 @@
          fhir:map [ fhir:v ".inboundRelationship[typeCode=SUBJ].source[classCode=LIST].code" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "1601: fixed value = http://terminology.hl7.org/CodeSystem/v3-ActCode|IMP" ]
+         fhir:map [ fhir:v "1601: fixed value = http://terminology.hl7.org/CodeSystem/v3-ActCode|IMP" ] ;
+         fhir:comment [ fhir:v "MvdZ QA" ]
        ] )
      ] [
        fhir:id [ fhir:v "Encounter.classHistory" ] ;
@@ -2013,7 +2016,8 @@
          fhir:map [ fhir:v ".role" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "442: reference from PTF - PROVIDER (#45-79.1)" ]
+         fhir:map [ fhir:v "442: reference from PTF - PROVIDER (#45-79.1)" ] ;
+         fhir:comment [ fhir:v "MvdZ QA" ]
        ] )
      ] [
        fhir:id [ fhir:v "Encounter.appointment" ] ;
@@ -2370,10 +2374,12 @@
          fhir:map [ fhir:v "448: source value from PTF - PRINCIPAL DIAGNOSIS (#45-79)" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "449: source value from PTF - SECONDARY DIAGNOSIS [#] (#45-79.16)" ]
+         fhir:map [ fhir:v "449: source value from PTF - SECONDARY DIAGNOSIS [#] (#45-79.16)" ] ;
+         fhir:comment [ fhir:v "79.16 and following" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "450: source value from PTF - PROCEDURE [#] (#45-45.01)" ]
+         fhir:map [ fhir:v "450: source value from PTF - PROCEDURE [#] (#45-45.01)" ] ;
+         fhir:comment [ fhir:v "45.01 and following" ]
        ] )
      ] [
        fhir:id [ fhir:v "Encounter.reasonReference" ] ;
@@ -3406,7 +3412,8 @@
          fhir:map [ fhir:v "Inpat.Census.AdmitSourceIEN\nInpat.Inpatient.AdmitSourceIEN\nInpat.InpatientFeeBasis.AdmitSourceIEN" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "955: terminologyMaps using VF_SourceOfAdmission on PTF - SOURCE OF ADMISSION > PRF CODE (#45-20 > 45.1-.01)" ]
+         fhir:map [ fhir:v "955: terminologyMaps using VF_SourceOfAdmission on PTF - SOURCE OF ADMISSION > PRF CODE (#45-20 > 45.1-.01)" ] ;
+         fhir:comment [ fhir:v "preferred binding\nMvdZ QA" ]
        ] )
      ] [
        fhir:id [ fhir:v "Encounter.hospitalization.admitSource.coding.id" ] ;
@@ -3608,7 +3615,8 @@
          fhir:map [ fhir:v "Inpat.Census.AdmitSourceIEN\nInpat.Inpatient.AdmitSourceIEN\nInpat.InpatientFeeBasis.AdmitSourceIEN" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "453: source value from PTF - SOURCE OF ADMISSION > PRF CODE (#45-20 > 45.1-.01)" ]
+         fhir:map [ fhir:v "453: source value from PTF - SOURCE OF ADMISSION > PRF CODE (#45-20 > 45.1-.01)" ] ;
+         fhir:comment [ fhir:v "MvdZ QA" ]
        ] )
      ] [
        fhir:id [ fhir:v "Encounter.hospitalization.admitSource.coding.display" ] ;
@@ -4455,10 +4463,12 @@
          fhir:map [ fhir:v "Inpat.Census.DischargeFacility\nInpat.Inpatient.DischargeFromFacility\nInpat.InpatientFeeBasis.DischargeFacility" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "460: reference from PTF - WARD AT DISCHARGE (#45-2.2)" ]
+         fhir:map [ fhir:v "460: reference from PTF - WARD AT DISCHARGE (#45-2.2)" ] ;
+         fhir:comment [ fhir:v "added slicing" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "461: reference from PTF - FACILITY (#45-3)" ]
+         fhir:map [ fhir:v "461: reference from PTF - FACILITY (#45-3)" ] ;
+         fhir:comment [ fhir:v "added slicing" ]
        ] )
      ] [
        fhir:id [ fhir:v "Encounter.location.status" ] ;
@@ -4682,7 +4692,8 @@
          fhir:map [ fhir:v "Inpat.Census.AdmitEligibilityIEN\nInpat.Inpatient.AdmitEligibilityIEN\nInpat.InpatientFeeBasis.AdmitEligibilityIEN" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "427: source value from PTF - NUMBER (#45-.001)" ]
+         fhir:map [ fhir:v "427: source value from PTF - NUMBER (#45-.001)" ] ;
+         fhir:comment [ fhir:v "MvdZ QA\nremoved use=IFN typo and split of class to new mapset row" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
          fhir:map [ fhir:v "428: source value from PTF - INTERNAL ADMISSION # (#45-2.1)" ]
@@ -4704,7 +4715,8 @@
          fhir:map [ fhir:v "433: transform using planned on PTF - ADMISSION DATE (#45-2) case null or > now" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "434: transform using in-progress on PTF - ADMISSION DATE (#45-2) case not null, < now, field 70 null" ]
+         fhir:map [ fhir:v "434: transform using in-progress on PTF - ADMISSION DATE (#45-2) case not null, < now, field 70 null" ] ;
+         fhir:comment [ fhir:v "tweaked case logic 9/21" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
          fhir:map [ fhir:v "435: fixed value = finished if PTF - DISCHARGE DATE (#45-70) case not null" ]
@@ -4714,7 +4726,8 @@
        fhir:path [ fhir:v "Encounter.class" ] ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "1601: fixed value = http://terminology.hl7.org/CodeSystem/v3-ActCode|IMP" ]
+         fhir:map [ fhir:v "1601: fixed value = http://terminology.hl7.org/CodeSystem/v3-ActCode|IMP" ] ;
+         fhir:comment [ fhir:v "MvdZ QA" ]
        ] )
      ] [
        fhir:id [ fhir:v "Encounter.subject" ] ;
@@ -4731,7 +4744,8 @@
        fhir:path [ fhir:v "Encounter.participant.individual" ] ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "442: reference from PTF - PROVIDER (#45-79.1)" ]
+         fhir:map [ fhir:v "442: reference from PTF - PROVIDER (#45-79.1)" ] ;
+         fhir:comment [ fhir:v "MvdZ QA" ]
        ] )
      ] [
        fhir:id [ fhir:v "Encounter.period.start" ] ;
@@ -4767,10 +4781,12 @@
          fhir:map [ fhir:v "448: source value from PTF - PRINCIPAL DIAGNOSIS (#45-79)" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "449: source value from PTF - SECONDARY DIAGNOSIS [#] (#45-79.16)" ]
+         fhir:map [ fhir:v "449: source value from PTF - SECONDARY DIAGNOSIS [#] (#45-79.16)" ] ;
+         fhir:comment [ fhir:v "79.16 and following" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "450: source value from PTF - PROCEDURE [#] (#45-45.01)" ]
+         fhir:map [ fhir:v "450: source value from PTF - PROCEDURE [#] (#45-45.01)" ] ;
+         fhir:comment [ fhir:v "45.01 and following" ]
        ] )
      ] [
        fhir:id [ fhir:v "Encounter.hospitalization.origin.display" ] ;
@@ -4797,7 +4813,8 @@
          fhir:map [ fhir:v "Inpat.Census.AdmitSourceIEN\nInpat.Inpatient.AdmitSourceIEN\nInpat.InpatientFeeBasis.AdmitSourceIEN" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "955: terminologyMaps using VF_SourceOfAdmission on PTF - SOURCE OF ADMISSION > PRF CODE (#45-20 > 45.1-.01)" ]
+         fhir:map [ fhir:v "955: terminologyMaps using VF_SourceOfAdmission on PTF - SOURCE OF ADMISSION > PRF CODE (#45-20 > 45.1-.01)" ] ;
+         fhir:comment [ fhir:v "preferred binding\nMvdZ QA" ]
        ] )
      ] [
        fhir:id [ fhir:v "Encounter.hospitalization.admitSource.coding.code" ] ;
@@ -4807,7 +4824,8 @@
          fhir:map [ fhir:v "Inpat.Census.AdmitSourceIEN\nInpat.Inpatient.AdmitSourceIEN\nInpat.InpatientFeeBasis.AdmitSourceIEN" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "453: source value from PTF - SOURCE OF ADMISSION > PRF CODE (#45-20 > 45.1-.01)" ]
+         fhir:map [ fhir:v "453: source value from PTF - SOURCE OF ADMISSION > PRF CODE (#45-20 > 45.1-.01)" ] ;
+         fhir:comment [ fhir:v "MvdZ QA" ]
        ] )
      ] [
        fhir:id [ fhir:v "Encounter.hospitalization.destination.display" ] ;
@@ -4840,10 +4858,12 @@
          fhir:map [ fhir:v "Inpat.Census.DischargeFacility\nInpat.Inpatient.DischargeFromFacility\nInpat.InpatientFeeBasis.DischargeFacility" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "460: reference from PTF - WARD AT DISCHARGE (#45-2.2)" ]
+         fhir:map [ fhir:v "460: reference from PTF - WARD AT DISCHARGE (#45-2.2)" ] ;
+         fhir:comment [ fhir:v "added slicing" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "461: reference from PTF - FACILITY (#45-3)" ]
+         fhir:map [ fhir:v "461: reference from PTF - FACILITY (#45-3)" ] ;
+         fhir:comment [ fhir:v "added slicing" ]
        ] )
      ] [
        fhir:id [ fhir:v "Encounter.serviceProvider" ] ;

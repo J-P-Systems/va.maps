@@ -244,7 +244,7 @@
   "<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.name">name</a>" : "Immunization",
   "<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.title">title</a>" : "Immunization",
   "<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.status">status</a>" : "draft",
-  "<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.date">date</a>" : "2023-11-14T14:54:31+00:00",
+  "<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.date">date</a>" : "2023-11-14T17:25:19+00:00",
   "<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.publisher">publisher</a>" : "VA",
   "<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.contact">contact</a>" : [
     {
@@ -838,11 +838,13 @@
           },
           {
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a>" : "vista",
-            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>" : "297: fixed value = completed if V IMMUNIZATION - IMMUNIZATION &gt; IMMUNIZATION - CVX CODE (#9000010.11-.01 &gt; 9999999.14-.03) case CVX populated"
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>" : "297: fixed value = completed if V IMMUNIZATION - IMMUNIZATION &gt; IMMUNIZATION - CVX CODE (#9000010.11-.01 &gt; 9999999.14-.03) case CVX populated",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.comment">comment</a>" : "subfile: .03 is CVX"
           },
           {
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a>" : "vista",
-            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>" : "299: transform using \&quot;not-done\&quot; on V IMMUNIZATION - IMMUNIZATION &gt; IMMUNIZATION - NAME (#9000010.11-.01 &gt; 9999999.14-.01) case text like 'contraindicated', 'refused', 'decline', 'not avail'"
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>" : "299: transform using \&quot;not-done\&quot; on V IMMUNIZATION - IMMUNIZATION &gt; IMMUNIZATION - NAME (#9000010.11-.01 &gt; 9999999.14-.01) case text like 'contraindicated', 'refused', 'decline', 'not avail'",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.comment">comment</a>" : "subfile: .01 is text\nTransform because multiple sources\nUse map?"
           }
         ]
       },
@@ -980,7 +982,8 @@
           },
           {
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a>" : "vista",
-            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>" : "332: source value from V IMMUNIZATION - IMMUNIZATION &gt; IMMUNIZATION - CVX CODE (#9000010.11-.01 &gt; 9999999.14-.03) case not null"
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>" : "332: source value from V IMMUNIZATION - IMMUNIZATION &gt; IMMUNIZATION - CVX CODE (#9000010.11-.01 &gt; 9999999.14-.03) case not null",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.comment">comment</a>" : "subfile: .03 is CVX"
           }
         ]
       },
@@ -1835,7 +1838,8 @@
           },
           {
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a>" : "vista",
-            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>" : "1593: source value from V IMMUNIZATION - DATE/TIME RECORDED (#9000010.11-1205)"
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>" : "1593: source value from V IMMUNIZATION - DATE/TIME RECORDED (#9000010.11-1205)",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.comment">comment</a>" : "identified byMHV"
           }
         ]
       },
@@ -2103,7 +2107,8 @@
           },
           {
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a>" : "vista",
-            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>" : "338: source value from IMMUNIZATION LOT - LOT NUMBER (#9999999.41-.01)"
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>" : "338: source value from IMMUNIZATION LOT - LOT NUMBER (#9999999.41-.01)",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.comment">comment</a>" : "pointer to subfile 9999999.04-.02 MVX code, 9999999.04-.01 lot"
           }
         ]
       },
@@ -2922,7 +2927,8 @@
           },
           {
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a>" : "vista",
-            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>" : "342: reference from V IMMUNIZATION - ENCOUNTER PROVIDER (#9000010.11-1204)"
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>" : "342: reference from V IMMUNIZATION - ENCOUNTER PROVIDER (#9000010.11-1204)",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.comment">comment</a>" : "instantiate with function or reference.display?"
           }
         ]
       },
@@ -4512,7 +4518,8 @@
           },
           {
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a>" : "vista",
-            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>" : "344: source value from V IMMUNIZATION - SERIES (#9000010.11-.04)"
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>" : "344: source value from V IMMUNIZATION - SERIES (#9000010.11-.04)",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.comment">comment</a>" : "Can be numeral or letter"
           }
         ]
       },
@@ -4578,11 +4585,13 @@
           },
           {
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a>" : "vista",
-            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>" : "297: fixed value = completed if V IMMUNIZATION - IMMUNIZATION &gt; IMMUNIZATION - CVX CODE (#9000010.11-.01 &gt; 9999999.14-.03) case CVX populated"
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>" : "297: fixed value = completed if V IMMUNIZATION - IMMUNIZATION &gt; IMMUNIZATION - CVX CODE (#9000010.11-.01 &gt; 9999999.14-.03) case CVX populated",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.comment">comment</a>" : "subfile: .03 is CVX"
           },
           {
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a>" : "vista",
-            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>" : "299: transform using \&quot;not-done\&quot; on V IMMUNIZATION - IMMUNIZATION &gt; IMMUNIZATION - NAME (#9000010.11-.01 &gt; 9999999.14-.01) case text like 'contraindicated', 'refused', 'decline', 'not avail'"
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>" : "299: transform using \&quot;not-done\&quot; on V IMMUNIZATION - IMMUNIZATION &gt; IMMUNIZATION - NAME (#9000010.11-.01 &gt; 9999999.14-.01) case text like 'contraindicated', 'refused', 'decline', 'not avail'",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.comment">comment</a>" : "subfile: .01 is text\nTransform because multiple sources\nUse map?"
           }
         ]
       },
@@ -4626,7 +4635,8 @@
           },
           {
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a>" : "vista",
-            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>" : "332: source value from V IMMUNIZATION - IMMUNIZATION &gt; IMMUNIZATION - CVX CODE (#9000010.11-.01 &gt; 9999999.14-.03) case not null"
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>" : "332: source value from V IMMUNIZATION - IMMUNIZATION &gt; IMMUNIZATION - CVX CODE (#9000010.11-.01 &gt; 9999999.14-.03) case not null",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.comment">comment</a>" : "subfile: .03 is CVX"
           }
         ]
       },
@@ -4702,7 +4712,8 @@
         "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping">mapping</a>" : [
           {
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a>" : "vista",
-            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>" : "1593: source value from V IMMUNIZATION - DATE/TIME RECORDED (#9000010.11-1205)"
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>" : "1593: source value from V IMMUNIZATION - DATE/TIME RECORDED (#9000010.11-1205)",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.comment">comment</a>" : "identified byMHV"
           }
         ]
       },
@@ -4736,7 +4747,8 @@
         "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping">mapping</a>" : [
           {
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a>" : "vista",
-            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>" : "338: source value from IMMUNIZATION LOT - LOT NUMBER (#9999999.41-.01)"
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>" : "338: source value from IMMUNIZATION LOT - LOT NUMBER (#9999999.41-.01)",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.comment">comment</a>" : "pointer to subfile 9999999.04-.02 MVX code, 9999999.04-.01 lot"
           }
         ]
       },
@@ -4786,7 +4798,8 @@
           },
           {
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a>" : "vista",
-            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>" : "342: reference from V IMMUNIZATION - ENCOUNTER PROVIDER (#9000010.11-1204)"
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>" : "342: reference from V IMMUNIZATION - ENCOUNTER PROVIDER (#9000010.11-1204)",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.comment">comment</a>" : "instantiate with function or reference.display?"
           }
         ]
       },
@@ -4854,7 +4867,8 @@
           },
           {
             "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a>" : "vista",
-            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>" : "344: source value from V IMMUNIZATION - SERIES (#9000010.11-.04)"
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>" : "344: source value from V IMMUNIZATION - SERIES (#9000010.11-.04)",
+            "<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.comment">comment</a>" : "Can be numeral or letter"
           }
         ]
       }
@@ -4914,7 +4928,7 @@
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.3.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Nov 14, 2023 14:54+0000">2023-11-14</span>
+          IG &#169; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.3.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Nov 14, 2023 17:25+0000">2023-11-14</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

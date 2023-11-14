@@ -438,30 +438,37 @@ Appt.AppointmentMultiple.LengthOfAppointment</td> </tr>
 </table>
 <a name="vista"> </a><h3>Mappings for Veterans Health Information Systems Technology and Architecture (VistA) ()</h3><table class="grid">
  <tr><td colspan="3"><b>Appointment</b></td></tr>
- <tr><td>Appointment</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>731: terminologyMaps using VF_AppointmentStatus on APPOINTMENT - STATUS (#2.98-3), 732: transform using &quot;booked&quot; on APPOINTMENT - STATUS (#2.98-3) case I, NT, Null; Null check-in date (44.003-309), null check-out date (44.003-303), 733: transform using &quot;arrived&quot; on APPOINTMENT - STATUS (#2.98-3) case I, NT, Null; Non-null check-in date (44.003-309), null check-out date (44.003-303), 734: transform using &quot;fulfilled&quot; on APPOINTMENT - STATUS (#2.98-3) case I, NT, Null; Non-null check-in date (44.003-309), non-null check-out date (44.003-303), 748: transform using &quot;waitlist&quot; on SD WAIT LIST - PATIENT (#409.3-.01) case not null</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;cancelationReason</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>735: source value from APPOINTMENT - CANCELLATION REASON (#2.98-16)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;serviceCategory</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>736: source value from APPOINTMENT - CLINIC &gt; HOSPITAL LOCATION - SERVICE (#2.98-.01 &gt; 44-9), 749: source value from SD WAIT LIST - APPT STOP CODE (#409.3-13.4)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;serviceType</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>737: source value from APPOINTMENT - CLINIC &gt; HOSPITAL LOCATION - STOP CODE NUMBER (#2.98-.01 &gt; 44-8), 738: source value from APPOINTMENT - CLINIC &gt; HOSPITAL LOCATION - CREDIT STOP CODE (#2.98-.01 &gt; 44-2503)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;specialty</td><td>739: target not supported</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;appointmentType</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>740: source value from APPOINTMENT - APPOINTMENT TYPE (#2.98-9.5)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;reasonCode</td><td>741: target not supported</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;reasonReference</td><td>742: target not supported</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;start</td><td>743: source value from APPOINTMENT - APPOINTMENT DATE/TIME (#2.98-.001), 750: source value from SD WAIT LIST - DESIRED DATE OF APPOINTMENT (#409.3-22)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;end</td><td>1612: source value from APPOINTMENT - OUTPATIENT ENCOUNTER &gt; OUTPATIENT ENCOUNTER - CHECK OUT PROCESS COMPLETION (#2.98-21 &gt; 409.68-.07)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;minutesDuration</td><td>744: source value from PATIENT - LENGTH OF APP'T (#44.003-1)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;created</td><td>745: source value from APPOINTMENT - DATE APPT. MADE (#2.98-20), 751: source value from SD WAIT LIST - ORIGINATING DATE (#409.3-1)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;comment</td><td>752: source value from SD WAIT LIST - COMMENTS (#409.3-25)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;participant</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;actor</td><td>746: reference from APPOINTMENT - CLINIC (#2.98-.01), 754: reference from SD WAIT LIST - APPT CLINIC (#409.3-13.2)</td> </tr>
+ <tr><td>Appointment</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>731: terminologyMaps using VF_AppointmentStatus on APPOINTMENT - STATUS (#2.98-3), 732: transform using &quot;booked&quot; on APPOINTMENT - STATUS (#2.98-3) case I, NT, Null; Null check-in date (44.003-309), null check-out date (44.003-303), 733: transform using &quot;arrived&quot; on APPOINTMENT - STATUS (#2.98-3) case I, NT, Null; Non-null check-in date (44.003-309), null check-out date (44.003-303), 734: transform using &quot;fulfilled&quot; on APPOINTMENT - STATUS (#2.98-3) case I, NT, Null; Non-null check-in date (44.003-309), non-null check-out date (44.003-303), 748: transform using &quot;waitlist&quot; on SD WAIT LIST - PATIENT (#409.3-.01) case not null</td><td><p>simple maps in Terminology; complex defined here.</p>
+, <p>simple maps in Terminology; complex defined here.</p>
+, <p>simple maps in Terminology; complex defined here.</p>
+, <p>simple maps in Terminology; complex defined here.</p>
+, <p>LVH returns &quot;Waitlisted&quot;. &quot;Waitlisted&quot; is the display value and &quot;waitlist&quot; is the code. This is a required FHIR value set. 3/15/2023 LVH will fix</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;cancelationReason</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>735: source value from APPOINTMENT - CANCELLATION REASON (#2.98-16)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;serviceCategory</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>736: source value from APPOINTMENT - CLINIC &gt; HOSPITAL LOCATION - SERVICE (#2.98-.01 &gt; 44-9), 749: source value from SD WAIT LIST - APPT STOP CODE (#409.3-13.4)</td><td>, </td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;serviceType</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>737: source value from APPOINTMENT - CLINIC &gt; HOSPITAL LOCATION - STOP CODE NUMBER (#2.98-.01 &gt; 44-8), 738: source value from APPOINTMENT - CLINIC &gt; HOSPITAL LOCATION - CREDIT STOP CODE (#2.98-.01 &gt; 44-2503)</td><td>, </td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;specialty</td><td>739: target not supported</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;appointmentType</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>740: source value from APPOINTMENT - APPOINTMENT TYPE (#2.98-9.5)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;reasonCode</td><td>741: target not supported</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;reasonReference</td><td>742: target not supported</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;start</td><td>743: source value from APPOINTMENT - APPOINTMENT DATE/TIME (#2.98-.001), 750: source value from SD WAIT LIST - DESIRED DATE OF APPOINTMENT (#409.3-22)</td><td>, </td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;end</td><td>1612: source value from APPOINTMENT - OUTPATIENT ENCOUNTER &gt; OUTPATIENT ENCOUNTER - CHECK OUT PROCESS COMPLETION (#2.98-21 &gt; 409.68-.07)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;minutesDuration</td><td>744: source value from PATIENT - LENGTH OF APP'T (#44.003-1)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;created</td><td>745: source value from APPOINTMENT - DATE APPT. MADE (#2.98-20), 751: source value from SD WAIT LIST - ORIGINATING DATE (#409.3-1)</td><td>, </td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;comment</td><td>752: source value from SD WAIT LIST - COMMENTS (#409.3-25)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;participant</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;actor</td><td>746: reference from APPOINTMENT - CLINIC (#2.98-.01), 754: reference from SD WAIT LIST - APPT CLINIC (#409.3-13.2)</td><td><p>@MZ: ref-issue: Should be split into Location</p>
+, <p>@MZ: ref-issue: Should be split into Location</p>
+</td> </tr>
 </table>
 <a name="vpr"> </a><h3>Mappings for Virtual Patient Record (VPR) ()</h3><table class="grid">
  <tr><td colspan="3"><b>Appointment</b></td></tr>
@@ -534,7 +541,7 @@ appointment.location</td> </tr>
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.3.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Nov 14, 2023 14:54+0000">2023-11-14</span>
+          IG &#169; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.3.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Nov 14, 2023 17:25+0000">2023-11-14</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -388,25 +388,44 @@ SStaff.SStaff.EmailAddress</td> </tr>
 </table>
 <a name="vista"> </a><h3>Mappings for Veterans Health Information Systems Technology and Architecture (VistA) ()</h3><table class="grid">
  <tr><td colspan="3"><b>PractitionerRole</b></td></tr>
- <tr><td>PractitionerRole</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;extension</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x] (valueCodeableConcept)</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>417: source value from SIGNATURE BLOCK TITLE (#200-20.3), 418: source value from NEW PERSON - TITLE &gt; TITLE – NAME (#200-8 &gt; 3.1-.01)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;active</td><td>411: transform using true on NEW PERSON - PERSON CLASS &gt; PERSON CLASS - EXPIRATION DATE (#200-8932.1 &gt; 200.05-3) case date &gt; now or = null, 412: transform using false on NEW PERSON - PERSON CLASS &gt; PERSON CLASS - EXPIRATION DATE (#200-8932.1 &gt; 200.05-3) case date &lt; now</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;period</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;start</td><td>413: source value from NEW PERSON - PERSON CLASS &gt; PERSON CLASS - EFFECTIVE DATE (#200-8932.1 &gt; 200.05-2)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end</td><td>416: source value from NEW PERSON - PERSON CLASS &gt; PERSON CLASS - EXPIRATION DATE (#200-8932.1 &gt; 200.05-3)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;practitioner</td><td>414: reference from NEW PERSON - NAME (#200-.01)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;code</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>1408: source value from NEW PERSON - PERSON CLASS &gt; PERSON CLASS - Person Class &gt; PERSON CLASS - X12 CODE (#200-8932.1 &gt; 200.05-.01 &gt; 8932.1-6)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;specialty</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>419: source value from PERSON CLASS - X12 CODE (#8932.1-6)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;location</td><td>422: reference from PROVIDER - PROVIDER (#44.1-.01)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;telecom</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>384: source value from NEW PERSON - OFFICE PHONE (#200-.132), 385: source value from NEW PERSON - PHONE #3 (#200-.133), 386: source value from NEW PERSON - PHONE #4 (#200-.134), 387: source value from NEW PERSON - COMMERCIAL PHONE (#200-.135), 388: source value from NEW PERSON - FAX NUMBER (#200-.136), 389: source value from NEW PERSON - VOICE PAGER (#200-.137), 390: source value from NEW PERSON - DIGITAL PAGER (#200-.138), 391: source value from NEW PERSON - EMAIL ADDRESS (#200-.151)</td> </tr>
+ <tr><td>PractitionerRole</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;extension</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x] (valueCodeableConcept)</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>417: source value from SIGNATURE BLOCK TITLE (#200-20.3), 418: source value from NEW PERSON - TITLE &gt; TITLE – NAME (#200-8 &gt; 3.1-.01)</td><td>, </td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;active</td><td>411: transform using true on NEW PERSON - PERSON CLASS &gt; PERSON CLASS - EXPIRATION DATE (#200-8932.1 &gt; 200.05-3) case date &gt; now or = null, 412: transform using false on NEW PERSON - PERSON CLASS &gt; PERSON CLASS - EXPIRATION DATE (#200-8932.1 &gt; 200.05-3) case date &lt; now</td><td><p>Changed mapping to indicate the expiration date field related to the class which aligns to the role</p>
+<p>04/12/23 Confirmed during FHIR Office Hours: Role expiration date should be used; termination date is a system date</p>
+, <p>Changed mapping to indicate the expiration date field related to the class which aligns to the role</p>
+<p>04/12/23 Confirmed during FHIR Office Hours: Role expiration date should be used; termination date is a system date</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;period</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;start</td><td>413: source value from NEW PERSON - PERSON CLASS &gt; PERSON CLASS - EFFECTIVE DATE (#200-8932.1 &gt; 200.05-2)</td><td><p>Changed mapping to indicate the effective date field related to the class which aligns to the role</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end</td><td>416: source value from NEW PERSON - PERSON CLASS &gt; PERSON CLASS - EXPIRATION DATE (#200-8932.1 &gt; 200.05-3)</td><td><p>Changed mapping to indicate the expiration date field related to the class which aligns to the role</p>
+<p>04/12/23 Confirmed during FHIR Office Hours: Role expiration date should be used; termination date is a system date</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;practitioner</td><td>414: reference from NEW PERSON - NAME (#200-.01)</td><td><p>Use US Core Practitioner Profile.
+Changed map to better align with US Core</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;code</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>1408: source value from NEW PERSON - PERSON CLASS &gt; PERSON CLASS - Person Class &gt; PERSON CLASS - X12 CODE (#200-8932.1 &gt; 200.05-.01 &gt; 8932.1-6)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;specialty</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>419: source value from PERSON CLASS - X12 CODE (#8932.1-6)</td><td><p>Added paths</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;location</td><td>422: reference from PROVIDER - PROVIDER (#44.1-.01)</td><td><p>This is a reverse pointer. Location 44 contains 44.1, pointing at providers</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;telecom</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>384: source value from NEW PERSON - OFFICE PHONE (#200-.132), 385: source value from NEW PERSON - PHONE #3 (#200-.133), 386: source value from NEW PERSON - PHONE #4 (#200-.134), 387: source value from NEW PERSON - COMMERCIAL PHONE (#200-.135), 388: source value from NEW PERSON - FAX NUMBER (#200-.136), 389: source value from NEW PERSON - VOICE PAGER (#200-.137), 390: source value from NEW PERSON - DIGITAL PAGER (#200-.138), 391: source value from NEW PERSON - EMAIL ADDRESS (#200-.151)</td><td><p>Change from Practitioner to PractitionerRole (use case and FHIR Path) to support US Core</p>
+, <p>Change from Practitioner to PractitionerRole (use case and FHIR Path) to support US Core</p>
+, <p>Change from Practitioner to PractitionerRole (use case and FHIR Path) to support US Core</p>
+, <p>Change from Practitioner to PractitionerRole (use case and FHIR Path) to support US Core</p>
+, <p>Change from Practitioner to PractitionerRole (use case and FHIR Path) to support US Core</p>
+, <p>Change from Practitioner to PractitionerRole (use case and FHIR Path) to support US Core</p>
+, <p>Change from Practitioner to PractitionerRole (use case and FHIR Path) to support US Core</p>
+, <p>Change from Practitioner to PractitionerRole (use case and FHIR Path) to support US Core</p>
+</td> </tr>
 </table>
 
 
@@ -461,7 +480,7 @@ SStaff.SStaff.EmailAddress</td> </tr>
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.3.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Nov 14, 2023 14:54+0000">2023-11-14</span>
+          IG &#169; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.3.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Nov 14, 2023 17:25+0000">2023-11-14</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

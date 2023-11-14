@@ -17,7 +17,7 @@
   fhir:name [ fhir:v "ImplantableDeviceTransmitterDevice"] ; # 
   fhir:title [ fhir:v "Implantable Device: Transmitter {Device}"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2023-11-14T14:54:31+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2023-11-14T17:25:19+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "VA"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "VA" ] ;
@@ -1293,7 +1293,8 @@
          fhir:map [ fhir:v "1355: target not supported" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "1356: transform using \"active\" on GENERATOR IMPLANT - EXPLANT DATE (#698-96) case is NULL" ]
+         fhir:map [ fhir:v "1356: transform using \"active\" on GENERATOR IMPLANT - EXPLANT DATE (#698-96) case is NULL" ] ;
+         fhir:comment [ fhir:v "If NULL, can it be assumed it is active?" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
          fhir:map [ fhir:v "1357: transform using \"inactive\" on GENERATOR IMPLANT - EXPLANT DATE (#698-96) case is not NULL" ]
@@ -1612,7 +1613,8 @@
          fhir:map [ fhir:v "1381: target not supported" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "1380: source value from GENERATOR IMPLANT - PACEMAKER SERIAL NUMBER (#698-4)" ]
+         fhir:map [ fhir:v "1380: source value from GENERATOR IMPLANT - PACEMAKER SERIAL NUMBER (#698-4)" ] ;
+         fhir:comment [ fhir:v "Do not use with the Transmitter use case; use transmitter serial number if it has its own." ]
        ] )
      ] [
        fhir:id [ fhir:v "Device.deviceName" ] ;
@@ -1956,10 +1958,12 @@
          fhir:map [ fhir:v "Device.type" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "1394: terminologyMaps using VF_deviceTypePacemaker on GENERATOR IMPLANT - PACEMAKER MODEL > PACEMAKER EQUIPMENT - TYPE OF EQUIPMENT (#698-2 > 698.4-1)" ]
+         fhir:map [ fhir:v "1394: terminologyMaps using VF_deviceTypePacemaker on GENERATOR IMPLANT - PACEMAKER MODEL > PACEMAKER EQUIPMENT - TYPE OF EQUIPMENT (#698-2 > 698.4-1)" ] ;
+         fhir:comment [ fhir:v "A request for more specific SNOMED codes will be submitted (01/04/2023)" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "1395: terminologyMaps using VF_deviceTypePacemaker on GENERATOR IMPLANT - TRANSMITTER MODEL > PACEMAKER EQUIPMENT - TYPE OF EQUIPMENT (#698-12 > 698.4-1)" ]
+         fhir:map [ fhir:v "1395: terminologyMaps using VF_deviceTypePacemaker on GENERATOR IMPLANT - TRANSMITTER MODEL > PACEMAKER EQUIPMENT - TYPE OF EQUIPMENT (#698-12 > 698.4-1)" ] ;
+         fhir:comment [ fhir:v "A request for more specific SNOMED codes will be submitted (01/04/2023)" ]
        ] )
      ] [
        fhir:id [ fhir:v "Device.specialization" ] ;
@@ -2949,7 +2953,8 @@
        fhir:path [ fhir:v "Device.type" ] ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "1395: terminologyMaps using VF_deviceTypePacemaker on GENERATOR IMPLANT - TRANSMITTER MODEL > PACEMAKER EQUIPMENT - TYPE OF EQUIPMENT (#698-12 > 698.4-1)" ]
+         fhir:map [ fhir:v "1395: terminologyMaps using VF_deviceTypePacemaker on GENERATOR IMPLANT - TRANSMITTER MODEL > PACEMAKER EQUIPMENT - TYPE OF EQUIPMENT (#698-12 > 698.4-1)" ] ;
+         fhir:comment [ fhir:v "A request for more specific SNOMED codes will be submitted (01/04/2023)" ]
        ] )
      ] )
   ] . # 

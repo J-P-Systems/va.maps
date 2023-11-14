@@ -17,7 +17,7 @@
   fhir:name [ fhir:v "Immunization"] ; # 
   fhir:title [ fhir:v "Immunization"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2023-11-14T14:54:31+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2023-11-14T17:25:19+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "VA"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "VA" ] ;
@@ -548,10 +548,12 @@
          fhir:map [ fhir:v "Immun.Immunization.ImmunizationNameIEN" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "297: fixed value = completed if V IMMUNIZATION - IMMUNIZATION > IMMUNIZATION - CVX CODE (#9000010.11-.01 > 9999999.14-.03) case CVX populated" ]
+         fhir:map [ fhir:v "297: fixed value = completed if V IMMUNIZATION - IMMUNIZATION > IMMUNIZATION - CVX CODE (#9000010.11-.01 > 9999999.14-.03) case CVX populated" ] ;
+         fhir:comment [ fhir:v "subfile: .03 is CVX" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "299: transform using \"not-done\" on V IMMUNIZATION - IMMUNIZATION > IMMUNIZATION - NAME (#9000010.11-.01 > 9999999.14-.01) case text like 'contraindicated', 'refused', 'decline', 'not avail'" ]
+         fhir:map [ fhir:v "299: transform using \"not-done\" on V IMMUNIZATION - IMMUNIZATION > IMMUNIZATION - NAME (#9000010.11-.01 > 9999999.14-.01) case text like 'contraindicated', 'refused', 'decline', 'not avail'" ] ;
+         fhir:comment [ fhir:v "subfile: .01 is text\nTransform because multiple sources\nUse map?" ]
        ] )
      ] [
        fhir:id [ fhir:v "Immunization.statusReason" ] ;
@@ -672,7 +674,8 @@
          fhir:map [ fhir:v "528: terminologyMaps using VF_inferredCVX on V IMMUNIZATION - IMMUNIZATION > IMMUNIZATION - NAME (#9000010.11-.01 > 9999999.14-.01) case V IMMUNIZATION - IMMUNIZATION null" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "332: source value from V IMMUNIZATION - IMMUNIZATION > IMMUNIZATION - CVX CODE (#9000010.11-.01 > 9999999.14-.03) case not null" ]
+         fhir:map [ fhir:v "332: source value from V IMMUNIZATION - IMMUNIZATION > IMMUNIZATION - CVX CODE (#9000010.11-.01 > 9999999.14-.03) case not null" ] ;
+         fhir:comment [ fhir:v "subfile: .03 is CVX" ]
        ] )
      ] [
        fhir:id [ fhir:v "Immunization.vaccineCode.id" ] ;
@@ -1393,7 +1396,8 @@
          fhir:map [ fhir:v ".participation[typeCode=AUT].time" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "1593: source value from V IMMUNIZATION - DATE/TIME RECORDED (#9000010.11-1205)" ]
+         fhir:map [ fhir:v "1593: source value from V IMMUNIZATION - DATE/TIME RECORDED (#9000010.11-1205)" ] ;
+         fhir:comment [ fhir:v "identified byMHV" ]
        ] )
      ] [
        fhir:id [ fhir:v "Immunization.primarySource" ] ;
@@ -1627,7 +1631,8 @@
          fhir:map [ fhir:v "ClinicalDocument/component/StructuredBody/component/section/entry/substanceAdministration/consumable/manfacturedProduct/manufacturedMaterial/lotNumberText" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "338: source value from IMMUNIZATION LOT - LOT NUMBER (#9999999.41-.01)" ]
+         fhir:map [ fhir:v "338: source value from IMMUNIZATION LOT - LOT NUMBER (#9999999.41-.01)" ] ;
+         fhir:comment [ fhir:v "pointer to subfile 9999999.04-.02 MVX code, 9999999.04-.01 lot" ]
        ] )
      ] [
        fhir:id [ fhir:v "Immunization.expirationDate" ] ;
@@ -2342,7 +2347,8 @@
          fhir:map [ fhir:v "Immun.Immunization.ImmunizingStaffIEN" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "342: reference from V IMMUNIZATION - ENCOUNTER PROVIDER (#9000010.11-1204)" ]
+         fhir:map [ fhir:v "342: reference from V IMMUNIZATION - ENCOUNTER PROVIDER (#9000010.11-1204)" ] ;
+         fhir:comment [ fhir:v "instantiate with function or reference.display?" ]
        ] )
      ] [
        fhir:id [ fhir:v "Immunization.note" ] ;
@@ -3752,7 +3758,8 @@
          fhir:map [ fhir:v "Immun.Immunization.Series" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "344: source value from V IMMUNIZATION - SERIES (#9000010.11-.04)" ]
+         fhir:map [ fhir:v "344: source value from V IMMUNIZATION - SERIES (#9000010.11-.04)" ] ;
+         fhir:comment [ fhir:v "Can be numeral or letter" ]
        ] )
      ] [
        fhir:id [ fhir:v "Immunization.protocolApplied.seriesDoses[x]" ] ;
@@ -3806,10 +3813,12 @@
          fhir:map [ fhir:v "Immun.Immunization.ImmunizationNameIEN" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "297: fixed value = completed if V IMMUNIZATION - IMMUNIZATION > IMMUNIZATION - CVX CODE (#9000010.11-.01 > 9999999.14-.03) case CVX populated" ]
+         fhir:map [ fhir:v "297: fixed value = completed if V IMMUNIZATION - IMMUNIZATION > IMMUNIZATION - CVX CODE (#9000010.11-.01 > 9999999.14-.03) case CVX populated" ] ;
+         fhir:comment [ fhir:v "subfile: .03 is CVX" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "299: transform using \"not-done\" on V IMMUNIZATION - IMMUNIZATION > IMMUNIZATION - NAME (#9000010.11-.01 > 9999999.14-.01) case text like 'contraindicated', 'refused', 'decline', 'not avail'" ]
+         fhir:map [ fhir:v "299: transform using \"not-done\" on V IMMUNIZATION - IMMUNIZATION > IMMUNIZATION - NAME (#9000010.11-.01 > 9999999.14-.01) case text like 'contraindicated', 'refused', 'decline', 'not avail'" ] ;
+         fhir:comment [ fhir:v "subfile: .01 is text\nTransform because multiple sources\nUse map?" ]
        ] )
      ] [
        fhir:id [ fhir:v "Immunization.statusReason" ] ;
@@ -3849,7 +3858,8 @@
          fhir:map [ fhir:v "528: terminologyMaps using VF_inferredCVX on V IMMUNIZATION - IMMUNIZATION > IMMUNIZATION - NAME (#9000010.11-.01 > 9999999.14-.01) case V IMMUNIZATION - IMMUNIZATION null" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "332: source value from V IMMUNIZATION - IMMUNIZATION > IMMUNIZATION - CVX CODE (#9000010.11-.01 > 9999999.14-.03) case not null" ]
+         fhir:map [ fhir:v "332: source value from V IMMUNIZATION - IMMUNIZATION > IMMUNIZATION - CVX CODE (#9000010.11-.01 > 9999999.14-.03) case not null" ] ;
+         fhir:comment [ fhir:v "subfile: .03 is CVX" ]
        ] )
      ] [
        fhir:id [ fhir:v "Immunization.vaccineCode.coding.code" ] ;
@@ -3904,7 +3914,8 @@
        fhir:path [ fhir:v "Immunization.recorded" ] ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "1593: source value from V IMMUNIZATION - DATE/TIME RECORDED (#9000010.11-1205)" ]
+         fhir:map [ fhir:v "1593: source value from V IMMUNIZATION - DATE/TIME RECORDED (#9000010.11-1205)" ] ;
+         fhir:comment [ fhir:v "identified byMHV" ]
        ] )
      ] [
        fhir:id [ fhir:v "Immunization.primarySource" ] ;
@@ -3928,7 +3939,8 @@
        fhir:path [ fhir:v "Immunization.lotNumber" ] ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "338: source value from IMMUNIZATION LOT - LOT NUMBER (#9999999.41-.01)" ]
+         fhir:map [ fhir:v "338: source value from IMMUNIZATION LOT - LOT NUMBER (#9999999.41-.01)" ] ;
+         fhir:comment [ fhir:v "pointer to subfile 9999999.04-.02 MVX code, 9999999.04-.01 lot" ]
        ] )
      ] [
        fhir:id [ fhir:v "Immunization.doseQuantity" ] ;
@@ -3965,7 +3977,8 @@
          fhir:map [ fhir:v "Immun.Immunization.ImmunizingStaffIEN" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "342: reference from V IMMUNIZATION - ENCOUNTER PROVIDER (#9000010.11-1204)" ]
+         fhir:map [ fhir:v "342: reference from V IMMUNIZATION - ENCOUNTER PROVIDER (#9000010.11-1204)" ] ;
+         fhir:comment [ fhir:v "instantiate with function or reference.display?" ]
        ] )
      ] [
        fhir:id [ fhir:v "Immunization.note.text" ] ;
@@ -4016,7 +4029,8 @@
          fhir:map [ fhir:v "Immun.Immunization.Series" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "344: source value from V IMMUNIZATION - SERIES (#9000010.11-.04)" ]
+         fhir:map [ fhir:v "344: source value from V IMMUNIZATION - SERIES (#9000010.11-.04)" ] ;
+         fhir:comment [ fhir:v "Can be numeral or letter" ]
        ] )
      ] )
   ] . # 

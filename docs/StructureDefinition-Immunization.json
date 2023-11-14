@@ -10,7 +10,7 @@
   "name" : "Immunization",
   "title" : "Immunization",
   "status" : "draft",
-  "date" : "2023-11-14T14:54:31+00:00",
+  "date" : "2023-11-14T17:25:19+00:00",
   "publisher" : "VA",
   "contact" : [{
     "name" : "VA",
@@ -526,11 +526,13 @@
       },
       {
         "identity" : "vista",
-        "map" : "297: fixed value = completed if V IMMUNIZATION - IMMUNIZATION > IMMUNIZATION - CVX CODE (#9000010.11-.01 > 9999999.14-.03) case CVX populated"
+        "map" : "297: fixed value = completed if V IMMUNIZATION - IMMUNIZATION > IMMUNIZATION - CVX CODE (#9000010.11-.01 > 9999999.14-.03) case CVX populated",
+        "comment" : "subfile: .03 is CVX"
       },
       {
         "identity" : "vista",
-        "map" : "299: transform using \"not-done\" on V IMMUNIZATION - IMMUNIZATION > IMMUNIZATION - NAME (#9000010.11-.01 > 9999999.14-.01) case text like 'contraindicated', 'refused', 'decline', 'not avail'"
+        "map" : "299: transform using \"not-done\" on V IMMUNIZATION - IMMUNIZATION > IMMUNIZATION - NAME (#9000010.11-.01 > 9999999.14-.01) case text like 'contraindicated', 'refused', 'decline', 'not avail'",
+        "comment" : "subfile: .01 is text\nTransform because multiple sources\nUse map?"
       }]
     },
     {
@@ -654,7 +656,8 @@
       },
       {
         "identity" : "vista",
-        "map" : "332: source value from V IMMUNIZATION - IMMUNIZATION > IMMUNIZATION - CVX CODE (#9000010.11-.01 > 9999999.14-.03) case not null"
+        "map" : "332: source value from V IMMUNIZATION - IMMUNIZATION > IMMUNIZATION - CVX CODE (#9000010.11-.01 > 9999999.14-.03) case not null",
+        "comment" : "subfile: .03 is CVX"
       }]
     },
     {
@@ -1385,7 +1388,8 @@
       },
       {
         "identity" : "vista",
-        "map" : "1593: source value from V IMMUNIZATION - DATE/TIME RECORDED (#9000010.11-1205)"
+        "map" : "1593: source value from V IMMUNIZATION - DATE/TIME RECORDED (#9000010.11-1205)",
+        "comment" : "identified byMHV"
       }]
     },
     {
@@ -1617,7 +1621,8 @@
       },
       {
         "identity" : "vista",
-        "map" : "338: source value from IMMUNIZATION LOT - LOT NUMBER (#9999999.41-.01)"
+        "map" : "338: source value from IMMUNIZATION LOT - LOT NUMBER (#9999999.41-.01)",
+        "comment" : "pointer to subfile 9999999.04-.02 MVX code, 9999999.04-.01 lot"
       }]
     },
     {
@@ -2306,7 +2311,8 @@
       },
       {
         "identity" : "vista",
-        "map" : "342: reference from V IMMUNIZATION - ENCOUNTER PROVIDER (#9000010.11-1204)"
+        "map" : "342: reference from V IMMUNIZATION - ENCOUNTER PROVIDER (#9000010.11-1204)",
+        "comment" : "instantiate with function or reference.display?"
       }]
     },
     {
@@ -3636,7 +3642,8 @@
       },
       {
         "identity" : "vista",
-        "map" : "344: source value from V IMMUNIZATION - SERIES (#9000010.11-.04)"
+        "map" : "344: source value from V IMMUNIZATION - SERIES (#9000010.11-.04)",
+        "comment" : "Can be numeral or letter"
       }]
     },
     {
@@ -3692,11 +3699,13 @@
       },
       {
         "identity" : "vista",
-        "map" : "297: fixed value = completed if V IMMUNIZATION - IMMUNIZATION > IMMUNIZATION - CVX CODE (#9000010.11-.01 > 9999999.14-.03) case CVX populated"
+        "map" : "297: fixed value = completed if V IMMUNIZATION - IMMUNIZATION > IMMUNIZATION - CVX CODE (#9000010.11-.01 > 9999999.14-.03) case CVX populated",
+        "comment" : "subfile: .03 is CVX"
       },
       {
         "identity" : "vista",
-        "map" : "299: transform using \"not-done\" on V IMMUNIZATION - IMMUNIZATION > IMMUNIZATION - NAME (#9000010.11-.01 > 9999999.14-.01) case text like 'contraindicated', 'refused', 'decline', 'not avail'"
+        "map" : "299: transform using \"not-done\" on V IMMUNIZATION - IMMUNIZATION > IMMUNIZATION - NAME (#9000010.11-.01 > 9999999.14-.01) case text like 'contraindicated', 'refused', 'decline', 'not avail'",
+        "comment" : "subfile: .01 is text\nTransform because multiple sources\nUse map?"
       }]
     },
     {
@@ -3736,7 +3745,8 @@
       },
       {
         "identity" : "vista",
-        "map" : "332: source value from V IMMUNIZATION - IMMUNIZATION > IMMUNIZATION - CVX CODE (#9000010.11-.01 > 9999999.14-.03) case not null"
+        "map" : "332: source value from V IMMUNIZATION - IMMUNIZATION > IMMUNIZATION - CVX CODE (#9000010.11-.01 > 9999999.14-.03) case not null",
+        "comment" : "subfile: .03 is CVX"
       }]
     },
     {
@@ -3798,7 +3808,8 @@
       "path" : "Immunization.recorded",
       "mapping" : [{
         "identity" : "vista",
-        "map" : "1593: source value from V IMMUNIZATION - DATE/TIME RECORDED (#9000010.11-1205)"
+        "map" : "1593: source value from V IMMUNIZATION - DATE/TIME RECORDED (#9000010.11-1205)",
+        "comment" : "identified byMHV"
       }]
     },
     {
@@ -3826,7 +3837,8 @@
       "path" : "Immunization.lotNumber",
       "mapping" : [{
         "identity" : "vista",
-        "map" : "338: source value from IMMUNIZATION LOT - LOT NUMBER (#9999999.41-.01)"
+        "map" : "338: source value from IMMUNIZATION LOT - LOT NUMBER (#9999999.41-.01)",
+        "comment" : "pointer to subfile 9999999.04-.02 MVX code, 9999999.04-.01 lot"
       }]
     },
     {
@@ -3866,7 +3878,8 @@
       },
       {
         "identity" : "vista",
-        "map" : "342: reference from V IMMUNIZATION - ENCOUNTER PROVIDER (#9000010.11-1204)"
+        "map" : "342: reference from V IMMUNIZATION - ENCOUNTER PROVIDER (#9000010.11-1204)",
+        "comment" : "instantiate with function or reference.display?"
       }]
     },
     {
@@ -3920,7 +3933,8 @@
       },
       {
         "identity" : "vista",
-        "map" : "344: source value from V IMMUNIZATION - SERIES (#9000010.11-.04)"
+        "map" : "344: source value from V IMMUNIZATION - SERIES (#9000010.11-.04)",
+        "comment" : "Can be numeral or letter"
       }]
     }]
   }

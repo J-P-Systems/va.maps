@@ -457,25 +457,29 @@ Dim.ICD9.ICD9Code</td> </tr>
 </table>
 <a name="vista"> </a><h3>Mappings for Veterans Health Information Systems Technology and Architecture (VistA) ()</h3><table class="grid">
  <tr><td colspan="3"><b>EncounterOutpatientVisit</b></td></tr>
- <tr><td>Encounter</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>429: source value from VISIT - VISIT ID (#9000010-15001)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>430: transform using planned on VISIT - VISIT/ADMIT DATE&amp;TIME (#9000010-.01) case null or &gt; now, 431: transform using in-progress on VISIT - VISIT/ADMIT DATE&amp;TIME (#9000010-.01) case not null, &lt; now, .18 null, 432: transform using finished on VISIT - CHECK OUT DATE&amp;TIME (#9000010-.18) case not null, &lt; now</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;serviceType</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>439: source value from VISIT - SERVICE CATEGORY (#9000010-.07)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>440: source value from VISIT - PATIENT NAME (#9000010-.05)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;period</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;start</td><td>443: source value from VISIT - VISIT/ADMIT DATE&amp;TIME (#9000010-.01)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end</td><td>444: source value from VISIT - CHECK OUT DATE&amp;TIME (#9000010-.18)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;reasonCode</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>447: source value from V POV - POV &gt; ICD DIAGNOSIS - CODE NUMBER (#9000010.07-.01 &gt; 80-.01)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;diagnosis</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;condition</td><td>452: reference from V POV - PROBLEM LIST ENTRY (#9000010.07-.16)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;location</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;location</td><td>458: source value from VISIT - DSS ID (#9000010-.08) case stop, 459: source value from VISIT - HOSPITAL LOCATION (#9000010-.22) case location</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;serviceProvider</td><td>1599: reference from VISIT - LOC. OF ENCOUNTER &gt; LOCATION - POINTER TO INSTITUTION FILE (#4) (#9000010-.06 &gt; 9999999.06-.1)</td> </tr>
+ <tr><td>Encounter</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>429: source value from VISIT - VISIT ID (#9000010-15001)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>430: transform using planned on VISIT - VISIT/ADMIT DATE&amp;TIME (#9000010-.01) case null or &gt; now, 431: transform using in-progress on VISIT - VISIT/ADMIT DATE&amp;TIME (#9000010-.01) case not null, &lt; now, .18 null, 432: transform using finished on VISIT - CHECK OUT DATE&amp;TIME (#9000010-.18) case not null, &lt; now</td><td>, <p>tweaked case logic 9/21</p>
+, <p>tweaked case logic 9/21</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;serviceType</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>439: source value from VISIT - SERVICE CATEGORY (#9000010-.07)</td><td><p>MvdZ QA</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>440: source value from VISIT - PATIENT NAME (#9000010-.05)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;period</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;start</td><td>443: source value from VISIT - VISIT/ADMIT DATE&amp;TIME (#9000010-.01)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end</td><td>444: source value from VISIT - CHECK OUT DATE&amp;TIME (#9000010-.18)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;reasonCode</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>447: source value from V POV - POV &gt; ICD DIAGNOSIS - CODE NUMBER (#9000010.07-.01 &gt; 80-.01)</td><td><p>MvdZ QA</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;diagnosis</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;condition</td><td>452: reference from V POV - PROBLEM LIST ENTRY (#9000010.07-.16)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;location</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;location</td><td>458: source value from VISIT - DSS ID (#9000010-.08) case stop, 459: source value from VISIT - HOSPITAL LOCATION (#9000010-.22) case location</td><td>, </td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;serviceProvider</td><td>1599: reference from VISIT - LOC. OF ENCOUNTER &gt; LOCATION - POINTER TO INSTITUTION FILE (#4) (#9000010-.06 &gt; 9999999.06-.1)</td><td></td> </tr>
 </table>
 
 
@@ -530,7 +534,7 @@ Dim.ICD9.ICD9Code</td> </tr>
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.3.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Nov 14, 2023 14:54+0000">2023-11-14</span>
+          IG &#169; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.3.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Nov 14, 2023 17:25+0000">2023-11-14</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -45,7 +45,7 @@
   <name value="DocumentReference"/>
   <title value="Document Reference"/>
   <status value="draft"/>
-  <date value="2023-11-14T14:54:31+00:00"/>
+  <date value="2023-11-14T17:25:19+00:00"/>
   <publisher value="VA"/>
   <contact>
     <name value="VA"/>
@@ -505,6 +505,7 @@
       <mapping>
         <identity value="vista"/>
         <map value="870: target not supported"/>
+        <comment value="Not Must Support"/>
       </mapping>
     </element>
     <element id="DocumentReference.identifier">
@@ -724,6 +725,7 @@
       <mapping>
         <identity value="vista"/>
         <map value="874: source value from TIU DOCUMENT - DOCUMENT TYPE &gt; TIU DOCUMENT DEFINITION - VHA ENTERPRISE STANDARD TITLE (#8925-.01 &gt; 8925.1-1501)"/>
+        <comment value="Get LOINC from VistA or use TIU_VHA_ENTERPRISE_STANDARD_TITLE_8926.1 file provided by KBS to look up LOINC mapping&#xA;CDW now has a view."/>
       </mapping>
     </element>
     <element id="DocumentReference.category">
@@ -795,6 +797,7 @@
       <mapping>
         <identity value="vista"/>
         <map value="875: transform using TIU_VHA_ENTERPRISE_STANDARD_TITLE_8926.1 on TIU DOCUMENT - DOCUMENT TYPE &gt; TIU VHA ENTERPRISE STANDARD TITLE - DOCUMENT TYPE (#8925-.01 &gt; 8926.1-.08)"/>
+        <comment value="(= NOTE, ADDENDUM, CONSULT, etc.?)&#xA;Use TIU_VHA_ENTERPRISE_STANDARD_TITLE_8926.1 file provided by KBS to look up DocType"/>
       </mapping>
     </element>
     <element id="DocumentReference.category:us-core">
@@ -912,6 +915,7 @@
       <mapping>
         <identity value="vista"/>
         <map value="876: source value from TIU DOCUMENT - PATIENT (#8925-.02)"/>
+        <comment value="Pointer to PATIENT/HIS FILE (#9000001)"/>
       </mapping>
     </element>
     <element id="DocumentReference.date">
@@ -964,6 +968,7 @@
       <mapping>
         <identity value="vista"/>
         <map value="877: source value from TIU DOCUMENT - ENTRY DATE/TIME (#8925-1201)"/>
+        <comment value="looking into façade pattern guidance on whether this is meaningful. 03/6/23 updated mapping based on LHV feedback"/>
       </mapping>
     </element>
     <element id="DocumentReference.author">
@@ -1153,6 +1158,7 @@
       <mapping>
         <identity value="vista"/>
         <map value="880: source value from TIU DOCUMENT - DIVISION (#8925-1212)"/>
+        <comment value="who maintains the document = VA…. Or maybe a specific? Clinic&#xA;Per 03/02/2023 email from LH, changed the Vista field from 1205 (hospital location) to 1212 (division)."/>
       </mapping>
     </element>
     <element id="DocumentReference.relatesTo">
@@ -1555,6 +1561,7 @@
       <mapping>
         <identity value="vista"/>
         <map value="887: target not supported"/>
+        <comment value="remove"/>
       </mapping>
     </element>
     <element id="DocumentReference.content.extension">
@@ -1721,6 +1728,7 @@
       <mapping>
         <identity value="vista"/>
         <map value="888: source value from TIU DOCUMENT - IEN (#8925-.001)"/>
+        <comment value="keep. Using HDR to pull text; need this"/>
       </mapping>
     </element>
     <element id="DocumentReference.content.attachment.extension">
@@ -1916,6 +1924,7 @@
       <mapping>
         <identity value="vista"/>
         <map value="891: source value from TIU DOCUMENT - REPORT TEXT (#8925-2)"/>
+        <comment value="option 1: tbd"/>
       </mapping>
     </element>
     <element id="DocumentReference.content.attachment.url">
@@ -1992,6 +2001,7 @@
       <mapping>
         <identity value="vista"/>
         <map value="893: transform using null"/>
+        <comment value="calculated"/>
       </mapping>
     </element>
     <element id="DocumentReference.content.attachment.hash">
@@ -2027,6 +2037,7 @@
       <mapping>
         <identity value="vista"/>
         <map value="894: transform using null"/>
+        <comment value="calculated"/>
       </mapping>
     </element>
     <element id="DocumentReference.content.attachment.title">
@@ -2068,6 +2079,7 @@
       <mapping>
         <identity value="vista"/>
         <map value="895: source value from TIU DOCUMENT - DOCUMENT TYPE &gt; TIU DOCUMENT DEFINITION - VHA ENTERPRISE STANDARD TITLE &gt; TIU VHA ENTERPRISE STANDARD TITLE - STANDARD TITLE (#8925-.01 &gt; 8925.1-1501 &gt; 8926.1-.01)"/>
+        <comment value="03/06/23 added the secondary subfield based on LH feedback"/>
       </mapping>
     </element>
     <element id="DocumentReference.content.attachment.creation">
@@ -2106,6 +2118,7 @@
       <mapping>
         <identity value="vista"/>
         <map value="896: source value from TIU DOCUMENT - ENTRY DATE/TIME (#8925-1201)"/>
+        <comment value=".07 does not indicate parent or child document only the treatment episode associated with document"/>
       </mapping>
     </element>
     <element id="DocumentReference.content.format">
@@ -2157,6 +2170,7 @@
       <mapping>
         <identity value="vista"/>
         <map value="897: target not supported"/>
+        <comment value="These are specific document types, mostly IHE, not MIME"/>
       </mapping>
     </element>
     <element id="DocumentReference.context">
@@ -2217,6 +2231,7 @@
       <mapping>
         <identity value="vista"/>
         <map value="898: target not supported"/>
+        <comment value="Or ad hoc, for transient assets"/>
       </mapping>
     </element>
     <element id="DocumentReference.context.extension">
@@ -2401,6 +2416,7 @@
       <mapping>
         <identity value="vista"/>
         <map value="900: source value from TIU DOCUMENT - VISIT TYPE (#8925-.13)"/>
+        <comment value="candidate: 8925-.13"/>
       </mapping>
     </element>
     <element id="DocumentReference.context.period">
@@ -2761,6 +2777,7 @@
       <mapping>
         <identity value="vista"/>
         <map value="905: target not supported"/>
+        <comment value="a snapshot of patient at time of document"/>
       </mapping>
     </element>
     <element id="DocumentReference.context.related">
@@ -2808,6 +2825,7 @@
       <mapping>
         <identity value="vista"/>
         <map value="906: target not supported"/>
+        <comment value="other related assets"/>
       </mapping>
     </element>
   </snapshot>
@@ -2820,6 +2838,7 @@
       <mapping>
         <identity value="vista"/>
         <map value="870: target not supported"/>
+        <comment value="Not Must Support"/>
       </mapping>
     </element>
     <element id="DocumentReference.identifier">
@@ -2834,6 +2853,7 @@
       <mapping>
         <identity value="vista"/>
         <map value="874: source value from TIU DOCUMENT - DOCUMENT TYPE &gt; TIU DOCUMENT DEFINITION - VHA ENTERPRISE STANDARD TITLE (#8925-.01 &gt; 8925.1-1501)"/>
+        <comment value="Get LOINC from VistA or use TIU_VHA_ENTERPRISE_STANDARD_TITLE_8926.1 file provided by KBS to look up LOINC mapping&#xA;CDW now has a view."/>
       </mapping>
     </element>
     <element id="DocumentReference.category">
@@ -2845,6 +2865,7 @@
       <mapping>
         <identity value="vista"/>
         <map value="875: transform using TIU_VHA_ENTERPRISE_STANDARD_TITLE_8926.1 on TIU DOCUMENT - DOCUMENT TYPE &gt; TIU VHA ENTERPRISE STANDARD TITLE - DOCUMENT TYPE (#8925-.01 &gt; 8926.1-.08)"/>
+        <comment value="(= NOTE, ADDENDUM, CONSULT, etc.?)&#xA;Use TIU_VHA_ENTERPRISE_STANDARD_TITLE_8926.1 file provided by KBS to look up DocType"/>
       </mapping>
     </element>
     <element id="DocumentReference.subject">
@@ -2852,6 +2873,7 @@
       <mapping>
         <identity value="vista"/>
         <map value="876: source value from TIU DOCUMENT - PATIENT (#8925-.02)"/>
+        <comment value="Pointer to PATIENT/HIS FILE (#9000001)"/>
       </mapping>
     </element>
     <element id="DocumentReference.date">
@@ -2863,6 +2885,7 @@
       <mapping>
         <identity value="vista"/>
         <map value="877: source value from TIU DOCUMENT - ENTRY DATE/TIME (#8925-1201)"/>
+        <comment value="looking into façade pattern guidance on whether this is meaningful. 03/6/23 updated mapping based on LHV feedback"/>
       </mapping>
     </element>
     <element id="DocumentReference.author">
@@ -2884,6 +2907,7 @@
       <mapping>
         <identity value="vista"/>
         <map value="880: source value from TIU DOCUMENT - DIVISION (#8925-1212)"/>
+        <comment value="who maintains the document = VA…. Or maybe a specific? Clinic&#xA;Per 03/02/2023 email from LH, changed the Vista field from 1205 (hospital location) to 1212 (division)."/>
       </mapping>
     </element>
     <element id="DocumentReference.description">
@@ -2909,6 +2933,7 @@
       <mapping>
         <identity value="vista"/>
         <map value="887: target not supported"/>
+        <comment value="remove"/>
       </mapping>
     </element>
     <element id="DocumentReference.content.attachment.id">
@@ -2916,6 +2941,7 @@
       <mapping>
         <identity value="vista"/>
         <map value="888: source value from TIU DOCUMENT - IEN (#8925-.001)"/>
+        <comment value="keep. Using HDR to pull text; need this"/>
       </mapping>
     </element>
     <element id="DocumentReference.content.attachment.contentType">
@@ -2937,6 +2963,7 @@
       <mapping>
         <identity value="vista"/>
         <map value="891: source value from TIU DOCUMENT - REPORT TEXT (#8925-2)"/>
+        <comment value="option 1: tbd"/>
       </mapping>
     </element>
     <element id="DocumentReference.content.attachment.size">
@@ -2944,6 +2971,7 @@
       <mapping>
         <identity value="vista"/>
         <map value="893: transform using null"/>
+        <comment value="calculated"/>
       </mapping>
     </element>
     <element id="DocumentReference.content.attachment.hash">
@@ -2951,6 +2979,7 @@
       <mapping>
         <identity value="vista"/>
         <map value="894: transform using null"/>
+        <comment value="calculated"/>
       </mapping>
     </element>
     <element id="DocumentReference.content.attachment.title">
@@ -2958,6 +2987,7 @@
       <mapping>
         <identity value="vista"/>
         <map value="895: source value from TIU DOCUMENT - DOCUMENT TYPE &gt; TIU DOCUMENT DEFINITION - VHA ENTERPRISE STANDARD TITLE &gt; TIU VHA ENTERPRISE STANDARD TITLE - STANDARD TITLE (#8925-.01 &gt; 8925.1-1501 &gt; 8926.1-.01)"/>
+        <comment value="03/06/23 added the secondary subfield based on LH feedback"/>
       </mapping>
     </element>
     <element id="DocumentReference.content.attachment.creation">
@@ -2969,6 +2999,7 @@
       <mapping>
         <identity value="vista"/>
         <map value="896: source value from TIU DOCUMENT - ENTRY DATE/TIME (#8925-1201)"/>
+        <comment value=".07 does not indicate parent or child document only the treatment episode associated with document"/>
       </mapping>
     </element>
     <element id="DocumentReference.content.format">
@@ -2976,6 +3007,7 @@
       <mapping>
         <identity value="vista"/>
         <map value="897: target not supported"/>
+        <comment value="These are specific document types, mostly IHE, not MIME"/>
       </mapping>
     </element>
     <element id="DocumentReference.context.id">
@@ -2983,6 +3015,7 @@
       <mapping>
         <identity value="vista"/>
         <map value="898: target not supported"/>
+        <comment value="Or ad hoc, for transient assets"/>
       </mapping>
     </element>
     <element id="DocumentReference.context.encounter">
@@ -3001,6 +3034,7 @@
       <mapping>
         <identity value="vista"/>
         <map value="900: source value from TIU DOCUMENT - VISIT TYPE (#8925-.13)"/>
+        <comment value="candidate: 8925-.13"/>
       </mapping>
     </element>
     <element id="DocumentReference.context.period.start">
@@ -3048,6 +3082,7 @@
       <mapping>
         <identity value="vista"/>
         <map value="905: target not supported"/>
+        <comment value="a snapshot of patient at time of document"/>
       </mapping>
     </element>
     <element id="DocumentReference.context.related">
@@ -3055,6 +3090,7 @@
       <mapping>
         <identity value="vista"/>
         <map value="906: target not supported"/>
+        <comment value="other related assets"/>
       </mapping>
     </element>
   </differential>

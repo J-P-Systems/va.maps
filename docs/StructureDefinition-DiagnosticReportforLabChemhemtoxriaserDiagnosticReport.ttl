@@ -17,7 +17,7 @@
   fhir:name [ fhir:v "DiagnosticReportforLabChemhemtoxriaserDiagnosticReport"] ; # 
   fhir:title [ fhir:v "Diagnostic Report for Lab: Chem, hem, tox, ria, ser {DiagnosticReport}"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2023-11-14T14:54:31+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2023-11-14T17:25:19+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "VA"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "VA" ] ;
@@ -961,7 +961,8 @@
          fhir:map [ fhir:v "statusCode  Note: final and amended are distinguished by whether observation is the subject of a ControlAct event of type \"revise\"" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "1415: terminologyMaps using VF_DiagnosticReportLabStatus on CHEM, HEM, TOX, RIA, SER, etc. - ORDERED TEST > ORDERED TEST - DISPOSITION (#63.04-.35 > 63.07-10)" ]
+         fhir:map [ fhir:v "1415: terminologyMaps using VF_DiagnosticReportLabStatus on CHEM, HEM, TOX, RIA, SER, etc. - ORDERED TEST > ORDERED TEST - DISPOSITION (#63.04-.35 > 63.07-10)" ] ;
+         fhir:comment [ fhir:v "disposition based on HL7 Table 0123 status codes\n\nUS Core 5 has new constraints: if status is partial, preliminary, final, ammended, corrected or appended effective[x] and issued are required" ]
        ] )
      ] [
        fhir:id [ fhir:v "DiagnosticReport.category" ] ;
@@ -1464,7 +1465,8 @@
          fhir:map [ fhir:v "fhir:CodeableConcept.text rdfs:subPropertyOf dt:CD.originalText" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "1535: source value from CHEM, HEM, TOX, RIA, SER, etc. - ORDERED TEST > ORDERED TEST - COLLECTION SAMPLE > COLLECTION SAMPLE - LAB SECTION > LAB SECTION - NAME (#63.04-.35 > 63.07-9 > 62-6 > 62.2-.01)" ]
+         fhir:map [ fhir:v "1535: source value from CHEM, HEM, TOX, RIA, SER, etc. - ORDERED TEST > ORDERED TEST - COLLECTION SAMPLE > COLLECTION SAMPLE - LAB SECTION > LAB SECTION - NAME (#63.04-.35 > 63.07-9 > 62-6 > 62.2-.01)" ] ;
+         fhir:comment [ fhir:v "Use this map in addition to key 1521 to indicate the coded value of \"Laboratory report\" and include the type of report from VistA" ]
        ] )
      ] [
        fhir:id [ fhir:v "DiagnosticReport.subject" ] ;
@@ -1521,7 +1523,8 @@
          fhir:map [ fhir:v "Micro.AntibioticSensitivity.LRDFN\nMicro.AntibioticSensitivityComment.LRDFN\nPathology.Autopsy.LRDFN\nMicro.BacteriologyReports.LRDFN\nPathology.CytoOrganTissueFunction.StaffIEN\nMicro.MicroAntibioticLevel.LRDFN\nMicro.MicroAudit.LRDFN\nMicro.Microbiology.LRDFN\nMicro.MicroOrderedTest.LRDFN\nMicro.MicroSterilityResults.LRDFN\nMicro.MycobacteriologyReports.LRDFN\nMicro.Mycology.LRDFN\nMicro.MycologyReports.LRDFN\nMicro.Parasitology.LRDFN\nMicro.ParasitologyReports.LRDFN\nMicro.ParasitologyStage.LRDFN\nSStaff.SMicroOrderedTest.LRDFN\nMicro.Virology.LRDFN\nMicro.VirologyReports.LRDFN" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "1421: reference from PATIENT - LABORATORY REFERENCE > LAB DATA - LRDFN (#2-63 > 63-.01)" ]
+         fhir:map [ fhir:v "1421: reference from PATIENT - LABORATORY REFERENCE > LAB DATA - LRDFN (#2-63 > 63-.01)" ] ;
+         fhir:comment [ fhir:v "Pointer from PATIENT (2)" ]
        ] )
      ] [
        fhir:id [ fhir:v "DiagnosticReport.encounter" ] ;
@@ -1794,7 +1797,8 @@
          fhir:map [ fhir:v ".participation[typeCode=PRF]" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "1433: reference from CHEM, HEM, TOX, RIA, SER, etc. - VERIFY PERSON (#63.04-.04)" ]
+         fhir:map [ fhir:v "1433: reference from CHEM, HEM, TOX, RIA, SER, etc. - VERIFY PERSON (#63.04-.04)" ] ;
+         fhir:comment [ fhir:v "US Core Practitioner is must support resource" ]
        ] )
      ] [
        fhir:id [ fhir:v "DiagnosticReport.resultsInterpreter" ] ;
@@ -2346,14 +2350,16 @@
        ] ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "1415: terminologyMaps using VF_DiagnosticReportLabStatus on CHEM, HEM, TOX, RIA, SER, etc. - ORDERED TEST > ORDERED TEST - DISPOSITION (#63.04-.35 > 63.07-10)" ]
+         fhir:map [ fhir:v "1415: terminologyMaps using VF_DiagnosticReportLabStatus on CHEM, HEM, TOX, RIA, SER, etc. - ORDERED TEST > ORDERED TEST - DISPOSITION (#63.04-.35 > 63.07-10)" ] ;
+         fhir:comment [ fhir:v "disposition based on HL7 Table 0123 status codes\n\nUS Core 5 has new constraints: if status is partial, preliminary, final, ammended, corrected or appended effective[x] and issued are required" ]
        ] )
      ] [
        fhir:id [ fhir:v "DiagnosticReport.code.text" ] ;
        fhir:path [ fhir:v "DiagnosticReport.code.text" ] ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "1535: source value from CHEM, HEM, TOX, RIA, SER, etc. - ORDERED TEST > ORDERED TEST - COLLECTION SAMPLE > COLLECTION SAMPLE - LAB SECTION > LAB SECTION - NAME (#63.04-.35 > 63.07-9 > 62-6 > 62.2-.01)" ]
+         fhir:map [ fhir:v "1535: source value from CHEM, HEM, TOX, RIA, SER, etc. - ORDERED TEST > ORDERED TEST - COLLECTION SAMPLE > COLLECTION SAMPLE - LAB SECTION > LAB SECTION - NAME (#63.04-.35 > 63.07-9 > 62-6 > 62.2-.01)" ] ;
+         fhir:comment [ fhir:v "Use this map in addition to key 1521 to indicate the coded value of \"Laboratory report\" and include the type of report from VistA" ]
        ] )
      ] [
        fhir:id [ fhir:v "DiagnosticReport.effective[x]" ] ;
@@ -2412,7 +2418,8 @@
        ] ) ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "1433: reference from CHEM, HEM, TOX, RIA, SER, etc. - VERIFY PERSON (#63.04-.04)" ]
+         fhir:map [ fhir:v "1433: reference from CHEM, HEM, TOX, RIA, SER, etc. - VERIFY PERSON (#63.04-.04)" ] ;
+         fhir:comment [ fhir:v "US Core Practitioner is must support resource" ]
        ] )
      ] )
   ] . # 

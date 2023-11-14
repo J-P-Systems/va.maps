@@ -17,7 +17,7 @@
   fhir:name [ fhir:v "SmokingStatusObservationObservation"] ; # 
   fhir:title [ fhir:v "Smoking Status Observation {Observation}"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2023-11-14T14:54:31+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2023-11-14T17:25:19+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "VA"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "VA" ] ;
@@ -2016,7 +2016,8 @@
          fhir:map [ fhir:v "participation[typeCode=PRF]" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "1248: reference from V HEALTH FACTOR - ENCOUNTER PROVIDER (#9000010.23-1204)" ]
+         fhir:map [ fhir:v "1248: reference from V HEALTH FACTOR - ENCOUNTER PROVIDER (#9000010.23-1204)" ] ;
+         fhir:comment [ fhir:v "Only encounter provider is in CDW, so ordering provider was not included at this time. If ordering provider needs to be included in the future, will need to determine a way to distinguish ordering provider from encounter provider in the practitioner resource." ]
        ] )
      ] [
        fhir:id [ fhir:v "Observation.value[x]" ] ;
@@ -2127,7 +2128,8 @@
          fhir:map [ fhir:v "Observation.valueCodeableConcept" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "1249: terminologyMaps using VF_SmokingStatus on V HEALTH FACTOR - HEALTH FACTOR (#9000010.23-.01)" ]
+         fhir:map [ fhir:v "1249: terminologyMaps using VF_SmokingStatus on V HEALTH FACTOR - HEALTH FACTOR (#9000010.23-.01)" ] ;
+         fhir:comment [ fhir:v "If duplicates occur, the latest instance only should be sent." ]
        ] )
      ] [
        fhir:id [ fhir:v "Observation.dataAbsentReason" ] ;
@@ -3686,7 +3688,8 @@
        ] ) ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "1248: reference from V HEALTH FACTOR - ENCOUNTER PROVIDER (#9000010.23-1204)" ]
+         fhir:map [ fhir:v "1248: reference from V HEALTH FACTOR - ENCOUNTER PROVIDER (#9000010.23-1204)" ] ;
+         fhir:comment [ fhir:v "Only encounter provider is in CDW, so ordering provider was not included at this time. If ordering provider needs to be included in the future, will need to determine a way to distinguish ordering provider from encounter provider in the practitioner resource." ]
        ] )
      ] [
        fhir:id [ fhir:v "Observation.value[x]:valueCodeableConcept" ] ;
@@ -3704,7 +3707,8 @@
        ] ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "1249: terminologyMaps using VF_SmokingStatus on V HEALTH FACTOR - HEALTH FACTOR (#9000010.23-.01)" ]
+         fhir:map [ fhir:v "1249: terminologyMaps using VF_SmokingStatus on V HEALTH FACTOR - HEALTH FACTOR (#9000010.23-.01)" ] ;
+         fhir:comment [ fhir:v "If duplicates occur, the latest instance only should be sent." ]
        ] )
      ] [
        fhir:id [ fhir:v "Observation.note.text" ] ;

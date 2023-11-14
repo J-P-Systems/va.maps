@@ -17,7 +17,7 @@
   fhir:name [ fhir:v "AllergyIntolerance"] ; # 
   fhir:title [ fhir:v "AllergyIntolerance"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2023-11-14T14:54:31+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2023-11-14T17:25:19+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "VA"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "VA" ] ;
@@ -756,7 +756,8 @@
          fhir:map [ fhir:v "233: source value from PATIENT ALLERGIES - IEN (#120.8-.001)" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "1610: source value from CDW.cdwwork.allergy.allergy.AllergySID (#null)" ]
+         fhir:map [ fhir:v "1610: source value from CDW.cdwwork.allergy.allergy.AllergySID (#null)" ] ;
+         fhir:comment [ fhir:v "Source is AllergySID from Allergy Table in CDW" ]
        ] )
      ] [
        fhir:id [ fhir:v "AllergyIntolerance.identifier.period" ] ;
@@ -892,7 +893,8 @@
          fhir:map [ fhir:v "Allergy.Allergy.EnteredInErrorFlag" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "536: terminologyMaps using VF_allergyActive on PATIENT ALLERGIES - ENTERED IN ERROR (#120.8-22)" ]
+         fhir:map [ fhir:v "536: terminologyMaps using VF_allergyActive on PATIENT ALLERGIES - ENTERED IN ERROR (#120.8-22)" ] ;
+         fhir:comment [ fhir:v "confirm CHAPI" ]
        ] )
      ] [
        fhir:id [ fhir:v "AllergyIntolerance.verificationStatus" ] ;
@@ -1342,7 +1344,8 @@
          fhir:map [ fhir:v "Allergy.Allergy.AllergicReactant" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "245: source value from PATIENT ALLERGIES - REACTANT (#120.8-.02)" ]
+         fhir:map [ fhir:v "245: source value from PATIENT ALLERGIES - REACTANT (#120.8-.02)" ] ;
+         fhir:comment [ fhir:v "text only" ]
        ] )
      ] [
        fhir:id [ fhir:v "AllergyIntolerance.patient" ] ;
@@ -1395,7 +1398,8 @@
          fhir:map [ fhir:v "AllergyIntolerance.patient" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "248: source value from PATIENT ALLERGIES - PATIENT (#120.8-.01)" ]
+         fhir:map [ fhir:v "248: source value from PATIENT ALLERGIES - PATIENT (#120.8-.01)" ] ;
+         fhir:comment [ fhir:v "Source is MVIPersonFullICN from SMVIPerson Table" ]
        ] )
      ] [
        fhir:id [ fhir:v "AllergyIntolerance.encounter" ] ;
@@ -1521,7 +1525,8 @@
          fhir:map [ fhir:v "Allergy.AllergicReaction.OriginationDateTime\nAllergy.Allergy.OriginationDateTime\nAllergy.AllergyComment.OriginationDateTime\nAllergy.AllergyDrugClass.OriginationDateTime\nAllergy.AllergyDrugIngredient.OriginationDateTime" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "1224: source value from PATIENT ALLERGIES - ORIGINATION DATE/TIME (#120.8-4)" ]
+         fhir:map [ fhir:v "1224: source value from PATIENT ALLERGIES - ORIGINATION DATE/TIME (#120.8-4)" ] ;
+         fhir:comment [ fhir:v "Lighthouse exposes this source object as RecordedDate FHIR field" ]
        ] )
      ] [
        fhir:id [ fhir:v "AllergyIntolerance.recorder" ] ;
@@ -2302,7 +2307,8 @@
          fhir:map [ fhir:v "inboundRelationship[typeCode=SUBJ].source[classCode=OBS, moodCode=EVN, code=SEV, value <= SeverityObservation (Severity Level)]" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "557: terminologyMaps using VF_allergySeverity on ADVERSE REACTION REPORTING - SEVERITY (#120.85-14.5)" ]
+         fhir:map [ fhir:v "557: terminologyMaps using VF_allergySeverity on ADVERSE REACTION REPORTING - SEVERITY (#120.85-14.5)" ] ;
+         fhir:comment [ fhir:v "This Data is not in CDW\nAssess for CHAPI via VPR" ]
        ] )
      ] [
        fhir:id [ fhir:v "AllergyIntolerance.reaction.exposureRoute" ] ;
@@ -2396,7 +2402,8 @@
          fhir:map [ fhir:v "233: source value from PATIENT ALLERGIES - IEN (#120.8-.001)" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "1610: source value from CDW.cdwwork.allergy.allergy.AllergySID (#null)" ]
+         fhir:map [ fhir:v "1610: source value from CDW.cdwwork.allergy.allergy.AllergySID (#null)" ] ;
+         fhir:comment [ fhir:v "Source is AllergySID from Allergy Table in CDW" ]
        ] )
      ] [
        fhir:id [ fhir:v "AllergyIntolerance.clinicalStatus" ] ;
@@ -2413,7 +2420,8 @@
          fhir:map [ fhir:v "Allergy.Allergy.EnteredInErrorFlag" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "536: terminologyMaps using VF_allergyActive on PATIENT ALLERGIES - ENTERED IN ERROR (#120.8-22)" ]
+         fhir:map [ fhir:v "536: terminologyMaps using VF_allergyActive on PATIENT ALLERGIES - ENTERED IN ERROR (#120.8-22)" ] ;
+         fhir:comment [ fhir:v "confirm CHAPI" ]
        ] )
      ] [
        fhir:id [ fhir:v "AllergyIntolerance.verificationStatus" ] ;
@@ -2496,14 +2504,16 @@
          fhir:map [ fhir:v "Allergy.Allergy.AllergicReactant" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "245: source value from PATIENT ALLERGIES - REACTANT (#120.8-.02)" ]
+         fhir:map [ fhir:v "245: source value from PATIENT ALLERGIES - REACTANT (#120.8-.02)" ] ;
+         fhir:comment [ fhir:v "text only" ]
        ] )
      ] [
        fhir:id [ fhir:v "AllergyIntolerance.patient" ] ;
        fhir:path [ fhir:v "AllergyIntolerance.patient" ] ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "248: source value from PATIENT ALLERGIES - PATIENT (#120.8-.01)" ]
+         fhir:map [ fhir:v "248: source value from PATIENT ALLERGIES - PATIENT (#120.8-.01)" ] ;
+         fhir:comment [ fhir:v "Source is MVIPersonFullICN from SMVIPerson Table" ]
        ] )
      ] [
        fhir:id [ fhir:v "AllergyIntolerance.recordedDate" ] ;
@@ -2513,7 +2523,8 @@
          fhir:map [ fhir:v "Allergy.AllergicReaction.OriginationDateTime\nAllergy.Allergy.OriginationDateTime\nAllergy.AllergyComment.OriginationDateTime\nAllergy.AllergyDrugClass.OriginationDateTime\nAllergy.AllergyDrugIngredient.OriginationDateTime" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "1224: source value from PATIENT ALLERGIES - ORIGINATION DATE/TIME (#120.8-4)" ]
+         fhir:map [ fhir:v "1224: source value from PATIENT ALLERGIES - ORIGINATION DATE/TIME (#120.8-4)" ] ;
+         fhir:comment [ fhir:v "Lighthouse exposes this source object as RecordedDate FHIR field" ]
        ] )
      ] [
        fhir:id [ fhir:v "AllergyIntolerance.recorder" ] ;
@@ -2582,7 +2593,8 @@
        ] ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "557: terminologyMaps using VF_allergySeverity on ADVERSE REACTION REPORTING - SEVERITY (#120.85-14.5)" ]
+         fhir:map [ fhir:v "557: terminologyMaps using VF_allergySeverity on ADVERSE REACTION REPORTING - SEVERITY (#120.85-14.5)" ] ;
+         fhir:comment [ fhir:v "This Data is not in CDW\nAssess for CHAPI via VPR" ]
        ] )
      ] )
   ] . # 

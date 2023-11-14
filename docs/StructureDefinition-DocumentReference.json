@@ -10,7 +10,7 @@
   "name" : "DocumentReference",
   "title" : "Document Reference",
   "status" : "draft",
-  "date" : "2023-11-14T14:54:31+00:00",
+  "date" : "2023-11-14T17:25:19+00:00",
   "publisher" : "VA",
   "contact" : [{
     "name" : "VA",
@@ -485,7 +485,8 @@
       },
       {
         "identity" : "vista",
-        "map" : "870: target not supported"
+        "map" : "870: target not supported",
+        "comment" : "Not Must Support"
       }]
     },
     {
@@ -710,7 +711,8 @@
       },
       {
         "identity" : "vista",
-        "map" : "874: source value from TIU DOCUMENT - DOCUMENT TYPE > TIU DOCUMENT DEFINITION - VHA ENTERPRISE STANDARD TITLE (#8925-.01 > 8925.1-1501)"
+        "map" : "874: source value from TIU DOCUMENT - DOCUMENT TYPE > TIU DOCUMENT DEFINITION - VHA ENTERPRISE STANDARD TITLE (#8925-.01 > 8925.1-1501)",
+        "comment" : "Get LOINC from VistA or use TIU_VHA_ENTERPRISE_STANDARD_TITLE_8926.1 file provided by KBS to look up LOINC mapping\nCDW now has a view."
       }]
     },
     {
@@ -783,7 +785,8 @@
       },
       {
         "identity" : "vista",
-        "map" : "875: transform using TIU_VHA_ENTERPRISE_STANDARD_TITLE_8926.1 on TIU DOCUMENT - DOCUMENT TYPE > TIU VHA ENTERPRISE STANDARD TITLE - DOCUMENT TYPE (#8925-.01 > 8926.1-.08)"
+        "map" : "875: transform using TIU_VHA_ENTERPRISE_STANDARD_TITLE_8926.1 on TIU DOCUMENT - DOCUMENT TYPE > TIU VHA ENTERPRISE STANDARD TITLE - DOCUMENT TYPE (#8925-.01 > 8926.1-.08)",
+        "comment" : "(= NOTE, ADDENDUM, CONSULT, etc.?)\nUse TIU_VHA_ENTERPRISE_STANDARD_TITLE_8926.1 file provided by KBS to look up DocType"
       }]
     },
     {
@@ -902,7 +905,8 @@
       },
       {
         "identity" : "vista",
-        "map" : "876: source value from TIU DOCUMENT - PATIENT (#8925-.02)"
+        "map" : "876: source value from TIU DOCUMENT - PATIENT (#8925-.02)",
+        "comment" : "Pointer to PATIENT/HIS FILE (#9000001)"
       }]
     },
     {
@@ -955,7 +959,8 @@
       },
       {
         "identity" : "vista",
-        "map" : "877: source value from TIU DOCUMENT - ENTRY DATE/TIME (#8925-1201)"
+        "map" : "877: source value from TIU DOCUMENT - ENTRY DATE/TIME (#8925-1201)",
+        "comment" : "looking into façade pattern guidance on whether this is meaningful. 03/6/23 updated mapping based on LHV feedback"
       }]
     },
     {
@@ -1159,7 +1164,8 @@
       },
       {
         "identity" : "vista",
-        "map" : "880: source value from TIU DOCUMENT - DIVISION (#8925-1212)"
+        "map" : "880: source value from TIU DOCUMENT - DIVISION (#8925-1212)",
+        "comment" : "who maintains the document = VA…. Or maybe a specific? Clinic\nPer 03/02/2023 email from LH, changed the Vista field from 1205 (hospital location) to 1212 (division)."
       }]
     },
     {
@@ -1576,7 +1582,8 @@
       },
       {
         "identity" : "vista",
-        "map" : "887: target not supported"
+        "map" : "887: target not supported",
+        "comment" : "remove"
       }]
     },
     {
@@ -1747,7 +1754,8 @@
       },
       {
         "identity" : "vista",
-        "map" : "888: source value from TIU DOCUMENT - IEN (#8925-.001)"
+        "map" : "888: source value from TIU DOCUMENT - IEN (#8925-.001)",
+        "comment" : "keep. Using HDR to pull text; need this"
       }]
     },
     {
@@ -1951,7 +1959,8 @@
       },
       {
         "identity" : "vista",
-        "map" : "891: source value from TIU DOCUMENT - REPORT TEXT (#8925-2)"
+        "map" : "891: source value from TIU DOCUMENT - REPORT TEXT (#8925-2)",
+        "comment" : "option 1: tbd"
       }]
     },
     {
@@ -2029,7 +2038,8 @@
       },
       {
         "identity" : "vista",
-        "map" : "893: transform using null"
+        "map" : "893: transform using null",
+        "comment" : "calculated"
       }]
     },
     {
@@ -2065,7 +2075,8 @@
       },
       {
         "identity" : "vista",
-        "map" : "894: transform using null"
+        "map" : "894: transform using null",
+        "comment" : "calculated"
       }]
     },
     {
@@ -2108,7 +2119,8 @@
       },
       {
         "identity" : "vista",
-        "map" : "895: source value from TIU DOCUMENT - DOCUMENT TYPE > TIU DOCUMENT DEFINITION - VHA ENTERPRISE STANDARD TITLE > TIU VHA ENTERPRISE STANDARD TITLE - STANDARD TITLE (#8925-.01 > 8925.1-1501 > 8926.1-.01)"
+        "map" : "895: source value from TIU DOCUMENT - DOCUMENT TYPE > TIU DOCUMENT DEFINITION - VHA ENTERPRISE STANDARD TITLE > TIU VHA ENTERPRISE STANDARD TITLE - STANDARD TITLE (#8925-.01 > 8925.1-1501 > 8926.1-.01)",
+        "comment" : "03/06/23 added the secondary subfield based on LH feedback"
       }]
     },
     {
@@ -2147,7 +2159,8 @@
       },
       {
         "identity" : "vista",
-        "map" : "896: source value from TIU DOCUMENT - ENTRY DATE/TIME (#8925-1201)"
+        "map" : "896: source value from TIU DOCUMENT - ENTRY DATE/TIME (#8925-1201)",
+        "comment" : ".07 does not indicate parent or child document only the treatment episode associated with document"
       }]
     },
     {
@@ -2199,7 +2212,8 @@
       },
       {
         "identity" : "vista",
-        "map" : "897: target not supported"
+        "map" : "897: target not supported",
+        "comment" : "These are specific document types, mostly IHE, not MIME"
       }]
     },
     {
@@ -2262,7 +2276,8 @@
       },
       {
         "identity" : "vista",
-        "map" : "898: target not supported"
+        "map" : "898: target not supported",
+        "comment" : "Or ad hoc, for transient assets"
       }]
     },
     {
@@ -2451,7 +2466,8 @@
       },
       {
         "identity" : "vista",
-        "map" : "900: source value from TIU DOCUMENT - VISIT TYPE (#8925-.13)"
+        "map" : "900: source value from TIU DOCUMENT - VISIT TYPE (#8925-.13)",
+        "comment" : "candidate: 8925-.13"
       }]
     },
     {
@@ -2822,7 +2838,8 @@
       },
       {
         "identity" : "vista",
-        "map" : "905: target not supported"
+        "map" : "905: target not supported",
+        "comment" : "a snapshot of patient at time of document"
       }]
     },
     {
@@ -2870,7 +2887,8 @@
       },
       {
         "identity" : "vista",
-        "map" : "906: target not supported"
+        "map" : "906: target not supported",
+        "comment" : "other related assets"
       }]
     }]
   },
@@ -2884,7 +2902,8 @@
       "path" : "DocumentReference.masterIdentifier",
       "mapping" : [{
         "identity" : "vista",
-        "map" : "870: target not supported"
+        "map" : "870: target not supported",
+        "comment" : "Not Must Support"
       }]
     },
     {
@@ -2900,7 +2919,8 @@
       "path" : "DocumentReference.type",
       "mapping" : [{
         "identity" : "vista",
-        "map" : "874: source value from TIU DOCUMENT - DOCUMENT TYPE > TIU DOCUMENT DEFINITION - VHA ENTERPRISE STANDARD TITLE (#8925-.01 > 8925.1-1501)"
+        "map" : "874: source value from TIU DOCUMENT - DOCUMENT TYPE > TIU DOCUMENT DEFINITION - VHA ENTERPRISE STANDARD TITLE (#8925-.01 > 8925.1-1501)",
+        "comment" : "Get LOINC from VistA or use TIU_VHA_ENTERPRISE_STANDARD_TITLE_8926.1 file provided by KBS to look up LOINC mapping\nCDW now has a view."
       }]
     },
     {
@@ -2912,7 +2932,8 @@
       },
       {
         "identity" : "vista",
-        "map" : "875: transform using TIU_VHA_ENTERPRISE_STANDARD_TITLE_8926.1 on TIU DOCUMENT - DOCUMENT TYPE > TIU VHA ENTERPRISE STANDARD TITLE - DOCUMENT TYPE (#8925-.01 > 8926.1-.08)"
+        "map" : "875: transform using TIU_VHA_ENTERPRISE_STANDARD_TITLE_8926.1 on TIU DOCUMENT - DOCUMENT TYPE > TIU VHA ENTERPRISE STANDARD TITLE - DOCUMENT TYPE (#8925-.01 > 8926.1-.08)",
+        "comment" : "(= NOTE, ADDENDUM, CONSULT, etc.?)\nUse TIU_VHA_ENTERPRISE_STANDARD_TITLE_8926.1 file provided by KBS to look up DocType"
       }]
     },
     {
@@ -2920,7 +2941,8 @@
       "path" : "DocumentReference.subject",
       "mapping" : [{
         "identity" : "vista",
-        "map" : "876: source value from TIU DOCUMENT - PATIENT (#8925-.02)"
+        "map" : "876: source value from TIU DOCUMENT - PATIENT (#8925-.02)",
+        "comment" : "Pointer to PATIENT/HIS FILE (#9000001)"
       }]
     },
     {
@@ -2932,7 +2954,8 @@
       },
       {
         "identity" : "vista",
-        "map" : "877: source value from TIU DOCUMENT - ENTRY DATE/TIME (#8925-1201)"
+        "map" : "877: source value from TIU DOCUMENT - ENTRY DATE/TIME (#8925-1201)",
+        "comment" : "looking into façade pattern guidance on whether this is meaningful. 03/6/23 updated mapping based on LHV feedback"
       }]
     },
     {
@@ -2956,7 +2979,8 @@
       "path" : "DocumentReference.custodian",
       "mapping" : [{
         "identity" : "vista",
-        "map" : "880: source value from TIU DOCUMENT - DIVISION (#8925-1212)"
+        "map" : "880: source value from TIU DOCUMENT - DIVISION (#8925-1212)",
+        "comment" : "who maintains the document = VA…. Or maybe a specific? Clinic\nPer 03/02/2023 email from LH, changed the Vista field from 1205 (hospital location) to 1212 (division)."
       }]
     },
     {
@@ -2984,7 +3008,8 @@
       "path" : "DocumentReference.content.id",
       "mapping" : [{
         "identity" : "vista",
-        "map" : "887: target not supported"
+        "map" : "887: target not supported",
+        "comment" : "remove"
       }]
     },
     {
@@ -2992,7 +3017,8 @@
       "path" : "DocumentReference.content.attachment.id",
       "mapping" : [{
         "identity" : "vista",
-        "map" : "888: source value from TIU DOCUMENT - IEN (#8925-.001)"
+        "map" : "888: source value from TIU DOCUMENT - IEN (#8925-.001)",
+        "comment" : "keep. Using HDR to pull text; need this"
       }]
     },
     {
@@ -3016,7 +3042,8 @@
       "path" : "DocumentReference.content.attachment.data",
       "mapping" : [{
         "identity" : "vista",
-        "map" : "891: source value from TIU DOCUMENT - REPORT TEXT (#8925-2)"
+        "map" : "891: source value from TIU DOCUMENT - REPORT TEXT (#8925-2)",
+        "comment" : "option 1: tbd"
       }]
     },
     {
@@ -3024,7 +3051,8 @@
       "path" : "DocumentReference.content.attachment.size",
       "mapping" : [{
         "identity" : "vista",
-        "map" : "893: transform using null"
+        "map" : "893: transform using null",
+        "comment" : "calculated"
       }]
     },
     {
@@ -3032,7 +3060,8 @@
       "path" : "DocumentReference.content.attachment.hash",
       "mapping" : [{
         "identity" : "vista",
-        "map" : "894: transform using null"
+        "map" : "894: transform using null",
+        "comment" : "calculated"
       }]
     },
     {
@@ -3040,7 +3069,8 @@
       "path" : "DocumentReference.content.attachment.title",
       "mapping" : [{
         "identity" : "vista",
-        "map" : "895: source value from TIU DOCUMENT - DOCUMENT TYPE > TIU DOCUMENT DEFINITION - VHA ENTERPRISE STANDARD TITLE > TIU VHA ENTERPRISE STANDARD TITLE - STANDARD TITLE (#8925-.01 > 8925.1-1501 > 8926.1-.01)"
+        "map" : "895: source value from TIU DOCUMENT - DOCUMENT TYPE > TIU DOCUMENT DEFINITION - VHA ENTERPRISE STANDARD TITLE > TIU VHA ENTERPRISE STANDARD TITLE - STANDARD TITLE (#8925-.01 > 8925.1-1501 > 8926.1-.01)",
+        "comment" : "03/06/23 added the secondary subfield based on LH feedback"
       }]
     },
     {
@@ -3052,7 +3082,8 @@
       },
       {
         "identity" : "vista",
-        "map" : "896: source value from TIU DOCUMENT - ENTRY DATE/TIME (#8925-1201)"
+        "map" : "896: source value from TIU DOCUMENT - ENTRY DATE/TIME (#8925-1201)",
+        "comment" : ".07 does not indicate parent or child document only the treatment episode associated with document"
       }]
     },
     {
@@ -3060,7 +3091,8 @@
       "path" : "DocumentReference.content.format",
       "mapping" : [{
         "identity" : "vista",
-        "map" : "897: target not supported"
+        "map" : "897: target not supported",
+        "comment" : "These are specific document types, mostly IHE, not MIME"
       }]
     },
     {
@@ -3068,7 +3100,8 @@
       "path" : "DocumentReference.context.id",
       "mapping" : [{
         "identity" : "vista",
-        "map" : "898: target not supported"
+        "map" : "898: target not supported",
+        "comment" : "Or ad hoc, for transient assets"
       }]
     },
     {
@@ -3088,7 +3121,8 @@
       },
       {
         "identity" : "vista",
-        "map" : "900: source value from TIU DOCUMENT - VISIT TYPE (#8925-.13)"
+        "map" : "900: source value from TIU DOCUMENT - VISIT TYPE (#8925-.13)",
+        "comment" : "candidate: 8925-.13"
       }]
     },
     {
@@ -3140,7 +3174,8 @@
       "path" : "DocumentReference.context.sourcePatientInfo",
       "mapping" : [{
         "identity" : "vista",
-        "map" : "905: target not supported"
+        "map" : "905: target not supported",
+        "comment" : "a snapshot of patient at time of document"
       }]
     },
     {
@@ -3148,7 +3183,8 @@
       "path" : "DocumentReference.context.related",
       "mapping" : [{
         "identity" : "vista",
-        "map" : "906: target not supported"
+        "map" : "906: target not supported",
+        "comment" : "other related assets"
       }]
     }]
   }

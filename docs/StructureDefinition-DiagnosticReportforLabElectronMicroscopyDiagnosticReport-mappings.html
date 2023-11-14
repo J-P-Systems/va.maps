@@ -359,18 +359,21 @@ Pathology.EMTIUReference.SpecimenTakenDateTime</td> </tr>
 </table>
 <a name="vista"> </a><h3>Mappings for Veterans Health Information Systems Technology and Architecture (VistA) ()</h3><table class="grid">
  <tr><td colspan="3"><b>DiagnosticReportforLabElectronMicroscopyDiagnosticReport</b></td></tr>
- <tr><td>DiagnosticReport</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>1604: source value from EM - ORDERED TEST &gt; ORDERED TEST - IEN (#63.02-.35 &gt; 63.52-.001)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>1414: terminologyMaps using VF_DiagnosticReportLabStatus on EM - ORDERED TEST &gt; ORDERED TEST - DISPOSITION (#63.02-.35 &gt; 63.52-10)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;code</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>1534: source value from EM - ORDERED TEST &gt; ORDERED TEST - COLLECTION SAMPLE &gt; COLLECTION SAMPLE - LAB SECTION &gt; LAB SECTION - NAME (#63.02-.35 &gt; 63.52-9 &gt; 62-6 &gt; 62.2-.01)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;effective[x] (effectiveDateTime)</td><td>1422: source value from EM - DATE/TIME SPECIMEN TAKEN (#63.02-.01)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;issued</td><td>1427: source value from EM - DATE REPORT COMPLETED (#63.02-.03)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;performer</td><td>1432: source value from ELECTRON MICROSCOPY - RELEASED BY (#63.02-.13)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;media</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;link</td><td>1438: reference from EM - IMAGE (#63.02-2005)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;conclusion</td><td>1441: source value from EM - EM DIAGNOSIS (#63.02-1.4)</td> </tr>
+ <tr><td>DiagnosticReport</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>1604: source value from EM - ORDERED TEST &gt; ORDERED TEST - IEN (#63.02-.35 &gt; 63.52-.001)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>1414: terminologyMaps using VF_DiagnosticReportLabStatus on EM - ORDERED TEST &gt; ORDERED TEST - DISPOSITION (#63.02-.35 &gt; 63.52-10)</td><td><p>US Core 5 has new constraints: if status is partial, preliminary, final, ammended, corrected or appended effective[x] and issued are required</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;code</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>1534: source value from EM - ORDERED TEST &gt; ORDERED TEST - COLLECTION SAMPLE &gt; COLLECTION SAMPLE - LAB SECTION &gt; LAB SECTION - NAME (#63.02-.35 &gt; 63.52-9 &gt; 62-6 &gt; 62.2-.01)</td><td><p>Use this map in addition to key 1521 to indicate the coded value of &quot;Laboratory report&quot; and include the type of report from VistA</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;effective[x] (effectiveDateTime)</td><td>1422: source value from EM - DATE/TIME SPECIMEN TAKEN (#63.02-.01)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;issued</td><td>1427: source value from EM - DATE REPORT COMPLETED (#63.02-.03)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;performer</td><td>1432: source value from ELECTRON MICROSCOPY - RELEASED BY (#63.02-.13)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;media</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;link</td><td>1438: reference from EM - IMAGE (#63.02-2005)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;conclusion</td><td>1441: source value from EM - EM DIAGNOSIS (#63.02-1.4)</td><td><p>Vista field is word processing so CodeableConcept cannot be used</p>
+</td> </tr>
 </table>
 
 
@@ -425,7 +428,7 @@ Pathology.EMTIUReference.SpecimenTakenDateTime</td> </tr>
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.3.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Nov 14, 2023 14:54+0000">2023-11-14</span>
+          IG &#169; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.3.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Nov 14, 2023 17:25+0000">2023-11-14</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

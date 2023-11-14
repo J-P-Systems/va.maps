@@ -341,26 +341,33 @@ Allergy.AllergyDrugIngredient.OriginationDateTime</td> </tr>
 </table>
 <a name="vista"> </a><h3>Mappings for Veterans Health Information Systems Technology and Architecture (VistA) ()</h3><table class="grid">
  <tr><td colspan="3"><b>AllergyIntolerance</b></td></tr>
- <tr><td>AllergyIntolerance</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>233: source value from PATIENT ALLERGIES - IEN (#120.8-.001), 1610: source value from CDW.cdwwork.allergy.allergy.AllergySID (#null)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;clinicalStatus</td><td>536: terminologyMaps using VF_allergyActive on PATIENT ALLERGIES - ENTERED IN ERROR (#120.8-22)</td> </tr>
+ <tr><td>AllergyIntolerance</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>233: source value from PATIENT ALLERGIES - IEN (#120.8-.001), 1610: source value from CDW.cdwwork.allergy.allergy.AllergySID (#null)</td><td>, <p>Source is AllergySID from Allergy Table in CDW</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;clinicalStatus</td><td>536: terminologyMaps using VF_allergyActive on PATIENT ALLERGIES - ENTERED IN ERROR (#120.8-22)</td><td><p>confirm CHAPI</p>
+</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;verificationStatus</td><td>535: terminologyMaps using VF_allergyVerificationStatus on PATIENT ALLERGIES - VERIFIED (#120.8-19), 1515: transform using if exists -&gt; confirmed
-else -&gt; unconfirmed on PATIENT ALLERGIES - VERIFICATION DATE/TIME (#120.8-20), 537: terminologyMaps using VF_allergyEnteredInError on PATIENT ALLERGIES - ENTERED IN ERROR (#120.8-22)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;type</td><td>531: terminologyMaps using VF_allergyMechanism on PATIENT ALLERGIES - MECHANISM (#120.8-17)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;category</td><td>556: terminologyMaps using VF_allergySubstanceCategory on PATIENT ALLERGIES - ALLERGY TYPE (#120.8-3.1)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;code</td><td>246: source value from PATIENT ALLERGIES - GMR ALLERGY (#120.8-1), 1505: source value from PATIENT ALLERGIES - DRUG INGREDIENTS (#120.8-2)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>245: source value from PATIENT ALLERGIES - REACTANT (#120.8-.02)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;patient</td><td>248: source value from PATIENT ALLERGIES - PATIENT (#120.8-.01)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;recordedDate</td><td>1224: source value from PATIENT ALLERGIES - ORIGINATION DATE/TIME (#120.8-4)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;recorder</td><td>251: source value from PATIENT ALLERGIES - ORIGINATOR (#120.8-5)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;note</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;author[x] (authorString)</td><td>1503: source value from PATIENT ALLERGIES - COMMENTS &gt; COMMENTS - USER ENTERING (#120.8-26 &gt; 120.826-1)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;time</td><td>1502: source value from PATIENT ALLERGIES - COMMENTS &gt; COMMENTS - DATE/TIME COMMENT ENTERED (#120.8-26 &gt; 120.826-.01)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>1504: source value from PATIENT ALLERGIES - COMMENTS &gt; COMMENTS - COMMENTS (#120.8-26 &gt; 120.826-2)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;reaction</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;manifestation</td><td>252: source value from REACTIONS - REACTION &gt; SIGN/SYMPTOMS (#120.81-.01 &gt; 120.83-)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;severity</td><td>557: terminologyMaps using VF_allergySeverity on ADVERSE REACTION REPORTING - SEVERITY (#120.85-14.5)</td> </tr>
+else -&gt; unconfirmed on PATIENT ALLERGIES - VERIFICATION DATE/TIME (#120.8-20), 537: terminologyMaps using VF_allergyEnteredInError on PATIENT ALLERGIES - ENTERED IN ERROR (#120.8-22)</td><td>, , </td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;type</td><td>531: terminologyMaps using VF_allergyMechanism on PATIENT ALLERGIES - MECHANISM (#120.8-17)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;category</td><td>556: terminologyMaps using VF_allergySubstanceCategory on PATIENT ALLERGIES - ALLERGY TYPE (#120.8-3.1)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;code</td><td>246: source value from PATIENT ALLERGIES - GMR ALLERGY (#120.8-1), 1505: source value from PATIENT ALLERGIES - DRUG INGREDIENTS (#120.8-2)</td><td>, </td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>245: source value from PATIENT ALLERGIES - REACTANT (#120.8-.02)</td><td><p>text only</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;patient</td><td>248: source value from PATIENT ALLERGIES - PATIENT (#120.8-.01)</td><td><p>Source is MVIPersonFullICN from SMVIPerson Table</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;recordedDate</td><td>1224: source value from PATIENT ALLERGIES - ORIGINATION DATE/TIME (#120.8-4)</td><td><p>Lighthouse exposes this source object as RecordedDate FHIR field</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;recorder</td><td>251: source value from PATIENT ALLERGIES - ORIGINATOR (#120.8-5)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;note</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;author[x] (authorString)</td><td>1503: source value from PATIENT ALLERGIES - COMMENTS &gt; COMMENTS - USER ENTERING (#120.8-26 &gt; 120.826-1)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;time</td><td>1502: source value from PATIENT ALLERGIES - COMMENTS &gt; COMMENTS - DATE/TIME COMMENT ENTERED (#120.8-26 &gt; 120.826-.01)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>1504: source value from PATIENT ALLERGIES - COMMENTS &gt; COMMENTS - COMMENTS (#120.8-26 &gt; 120.826-2)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;reaction</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;manifestation</td><td>252: source value from REACTIONS - REACTION &gt; SIGN/SYMPTOMS (#120.81-.01 &gt; 120.83-)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;severity</td><td>557: terminologyMaps using VF_allergySeverity on ADVERSE REACTION REPORTING - SEVERITY (#120.85-14.5)</td><td><p>This Data is not in CDW
+Assess for CHAPI via VPR</p>
+</td> </tr>
 </table>
 
 
@@ -415,7 +422,7 @@ else -&gt; unconfirmed on PATIENT ALLERGIES - VERIFICATION DATE/TIME (#120.8-20)
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.3.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Nov 14, 2023 14:54+0000">2023-11-14</span>
+          IG &#169; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.3.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Nov 14, 2023 17:25+0000">2023-11-14</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

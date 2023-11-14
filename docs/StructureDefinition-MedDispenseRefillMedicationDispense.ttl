@@ -17,7 +17,7 @@
   fhir:name [ fhir:v "MedDispenseRefillMedicationDispense"] ; # 
   fhir:title [ fhir:v "MedDispenseRefill {MedicationDispense}"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2023-11-14T14:54:31+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2023-11-14T17:25:19+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "VA"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "VA" ] ;
@@ -580,7 +580,8 @@
          fhir:map [ fhir:v "CombinedMedicationDispense.SupplyEvent.statusCode" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "869: fixed value = completed if PRESCRIPTION - REFILL > REFILL - RELEASED DATE/TIME (#52-52 > 52.1-17) case not null" ]
+         fhir:map [ fhir:v "869: fixed value = completed if PRESCRIPTION - REFILL > REFILL - RELEASED DATE/TIME (#52-52 > 52.1-17) case not null" ] ;
+         fhir:comment [ fhir:v "updated table id (was a dup)" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
          fhir:map [ fhir:v "819: fixed value = in-progress if PRESCRIPTION - REFILL > REFILL - RELEASED DATE/TIME (#52-52 > 52.1-17) case null" ]
@@ -1266,7 +1267,8 @@
          fhir:map [ fhir:v "Dim.IVAdditiveIngredient.LocalDrugNameWithDose\nDim.IVSolutionIngredient.LocalDrugNameWithDose\nDim.LocalDrug.CorrespondingInpatientLocalDrugNameWithDose\nDim.LocalDrug.CorrespondingOutpatientLocalDrugNameWithDose\nDim.LocalDrug.LocalDrugNameWithDose\nDim.LocalDrug.LocalDrugNameWithDose\nRxOut.RxOutpatFill.LocalDrugNameWithDose" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "1560: source value from PRESCRIPTION - DRUG > DRUG - GENERIC NAME (#52-6 > 50-.01)" ]
+         fhir:map [ fhir:v "1560: source value from PRESCRIPTION - DRUG > DRUG - GENERIC NAME (#52-6 > 50-.01)" ] ;
+         fhir:comment [ fhir:v "This may not be necessary; we have the product." ]
        ] )
      ] [
        fhir:id [ fhir:v "MedicationDispense.subject" ] ;
@@ -4310,7 +4312,8 @@
        fhir:path [ fhir:v "MedicationDispense.status" ] ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "869: fixed value = completed if PRESCRIPTION - REFILL > REFILL - RELEASED DATE/TIME (#52-52 > 52.1-17) case not null" ]
+         fhir:map [ fhir:v "869: fixed value = completed if PRESCRIPTION - REFILL > REFILL - RELEASED DATE/TIME (#52-52 > 52.1-17) case not null" ] ;
+         fhir:comment [ fhir:v "updated table id (was a dup)" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
          fhir:map [ fhir:v "819: fixed value = in-progress if PRESCRIPTION - REFILL > REFILL - RELEASED DATE/TIME (#52-52 > 52.1-17) case null" ]
@@ -4356,7 +4359,8 @@
          fhir:map [ fhir:v "Dim.IVAdditiveIngredient.LocalDrugNameWithDose\nDim.IVSolutionIngredient.LocalDrugNameWithDose\nDim.LocalDrug.CorrespondingInpatientLocalDrugNameWithDose\nDim.LocalDrug.CorrespondingOutpatientLocalDrugNameWithDose\nDim.LocalDrug.LocalDrugNameWithDose\nDim.LocalDrug.LocalDrugNameWithDose\nRxOut.RxOutpatFill.LocalDrugNameWithDose" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "1560: source value from PRESCRIPTION - DRUG > DRUG - GENERIC NAME (#52-6 > 50-.01)" ]
+         fhir:map [ fhir:v "1560: source value from PRESCRIPTION - DRUG > DRUG - GENERIC NAME (#52-6 > 50-.01)" ] ;
+         fhir:comment [ fhir:v "This may not be necessary; we have the product." ]
        ] )
      ] [
        fhir:id [ fhir:v "MedicationDispense.subject" ] ;

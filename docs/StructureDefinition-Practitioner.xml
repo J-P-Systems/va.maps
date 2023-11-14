@@ -32,7 +32,7 @@
   <name value="Practitioner"/>
   <title value="Practitioner"/>
   <status value="draft"/>
-  <date value="2023-11-14T14:54:31+00:00"/>
+  <date value="2023-11-14T17:25:19+00:00"/>
   <publisher value="VA"/>
   <contact>
     <name value="VA"/>
@@ -736,18 +736,22 @@
       <mapping>
         <identity value="vista"/>
         <map value="376: source value from NEW PERSON - NPI (#200-41.99)"/>
+        <comment value="changed .code from PRN to NPI"/>
       </mapping>
       <mapping>
         <identity value="vista"/>
         <map value="377: source value from NEW PERSON - DEA# (#200-53.2)"/>
+        <comment value="changed .code from PRN to DEA"/>
       </mapping>
       <mapping>
         <identity value="vista"/>
         <map value="378: source value from NEW PERSON - VA# (#200-53.3)"/>
+        <comment value="changed .code from PRN to VA_Number. Value set is extensible"/>
       </mapping>
       <mapping>
         <identity value="vista"/>
         <map value="379: source value from NEW PERSON - VPID (#200-9000)"/>
+        <comment value="changed .code from PRN to VPID. Value set is extensible"/>
       </mapping>
       <mapping>
         <identity value="vista"/>
@@ -901,6 +905,7 @@
       <mapping>
         <identity value="vista"/>
         <map value="380: source value from NEW PERSON - EFFECTIVE DATE/TIME (#200-42) case For NPI only"/>
+        <comment value="MvdZ QA 6-jul-2023"/>
       </mapping>
     </element>
     <element id="Practitioner.identifier.period.end">
@@ -1259,6 +1264,7 @@
       <mapping>
         <identity value="vista"/>
         <map value="382: source value from NEW PERSON - NAME COMPONENTS &gt; NAME COMPONENTS - (#200-10.1 &gt; 20-)"/>
+        <comment value="Change map to better align with US Core Must Support (last name only)&#xA;MvdZ QA 6-jul-2023"/>
       </mapping>
     </element>
     <element id="Practitioner.name.family">
@@ -2114,26 +2120,32 @@
       <mapping>
         <identity value="vista"/>
         <map value="396: source value from NEW PERSON - STREET ADDRESS 1 (#200-.111)"/>
+        <comment value="Changed use case and FHIR Path to Practitioner to align with US Core&#xA;MvdZ QA 6-jul-2023"/>
       </mapping>
       <mapping>
         <identity value="vista"/>
         <map value="397: source value from NEW PERSON - STREET ADDRESS 2 (#200-.112)"/>
+        <comment value="Changed use case and FHIR Path to Practitioner to align with US Core&#xA;MvdZ QA 6-jul-2023"/>
       </mapping>
       <mapping>
         <identity value="vista"/>
         <map value="398: source value from NEW PERSON - STREET ADDRESS 3 (#200-.113)"/>
+        <comment value="Changed use case and FHIR Path to Practitioner to align with US Core&#xA;MvdZ QA 6-jul-2023"/>
       </mapping>
       <mapping>
         <identity value="vista"/>
         <map value="402: source value from NEW PERSON - TEMPORARY ADDRESS 1 (#200-.1211)"/>
+        <comment value="Changed use case and FHIR Path to Practitioner to fix mapping and align with US Core&#xA;MvdZ QA 6-jul-2023"/>
       </mapping>
       <mapping>
         <identity value="vista"/>
         <map value="403: source value from NEW PERSON - TEMPORARY ADDRESS 2 (#200-.1212)"/>
+        <comment value="MvdZ QA 6-jul-2023"/>
       </mapping>
       <mapping>
         <identity value="vista"/>
         <map value="404: source value from NEW PERSON - TEMPORARY ADDRESS 3 (#200-.1213)"/>
+        <comment value="MvdZ QA 6-jul-2023"/>
       </mapping>
     </element>
     <element id="Practitioner.address.city">
@@ -2193,10 +2205,12 @@
       <mapping>
         <identity value="vista"/>
         <map value="399: source value from NEW PERSON - CITY (#200-.114)"/>
+        <comment value="Changed use case and FHIR Path to Practitioner to align with US Core&#xA;MvdZ QA 6-jul-2023"/>
       </mapping>
       <mapping>
         <identity value="vista"/>
         <map value="405: source value from NEW PERSON - TEMPORARY CITY (#200-.1214)"/>
+        <comment value="MvdZ QA 6-jul-2023"/>
       </mapping>
     </element>
     <element id="Practitioner.address.district">
@@ -2301,10 +2315,12 @@
       <mapping>
         <identity value="vista"/>
         <map value="400: source value from NEW PERSON - STATE (#200-.115)"/>
+        <comment value="Changed use case and FHIR Path to Practitioner to align with US Core&#xA;MvdZ QA 6-jul-2023"/>
       </mapping>
       <mapping>
         <identity value="vista"/>
         <map value="406: source value from NEW PERSON - TEMPORARY STATE (#200-.1215)"/>
+        <comment value="MvdZ QA 6-jul-2023"/>
       </mapping>
     </element>
     <element id="Practitioner.address.postalCode">
@@ -2364,10 +2380,12 @@
       <mapping>
         <identity value="vista"/>
         <map value="401: source value from NEW PERSON - ZIP CODE (#200-.116)"/>
+        <comment value="Changed use case and FHIR Path to Practitioner to align with US Core&#xA;MvdZ QA 6-jul-2023"/>
       </mapping>
       <mapping>
         <identity value="vista"/>
         <map value="407: source value from NEW PERSON - TEMPORARY ZIP CODE (#200-.1216)"/>
+        <comment value="MvdZ QA 6-jul-2023"/>
       </mapping>
     </element>
     <element id="Practitioner.address.country">
@@ -2427,18 +2445,22 @@
       <mapping>
         <identity value="vista"/>
         <map value="1530: terminologyMaps using VF_PractitionerCountry on NEW PERSON - STATE (#200-.115) case not NULL"/>
+        <comment value="Added country to support Inferno testing (where country is required)&#xA;MvdZ QA 6-jul-2023"/>
       </mapping>
       <mapping>
         <identity value="vista"/>
         <map value="1531: fixed value without value? if NEW PERSON - STATE (#200-.115) case NULL"/>
+        <comment value="If country is not known (i.e. &quot;Europe&quot;), use the Data Absent Reason field with &quot;unknown&quot;&#xA;&#xA;Added country to support Inferno testing (where country is required)&#xA;MvdZ QA 6-jul-2023"/>
       </mapping>
       <mapping>
         <identity value="vista"/>
         <map value="1532: terminologyMaps using VF_PractitionerCountry on NEW PERSON - STATE (#200-.1215) case not NULL"/>
+        <comment value="Added country to support Inferno testing (where country is required)&#xA;MvdZ QA 6-jul-2023"/>
       </mapping>
       <mapping>
         <identity value="vista"/>
         <map value="1533: fixed value without value? if NEW PERSON - STATE (#200-.1215) case NULL"/>
+        <comment value="If country is not known (i.e. &quot;Europe&quot;), use the Data Absent Reason field with &quot;unknown&quot;&#xA;&#xA;Added country to support Inferno testing (where country is required)&#xA;MvdZ QA 6-jul-2023"/>
       </mapping>
     </element>
     <element id="Practitioner.address.period">
@@ -2600,6 +2622,7 @@
       <mapping>
         <identity value="vista"/>
         <map value="408: source value from NEW PERSON - START DATE OF TEMP ADDRES (#200-.1217)"/>
+        <comment value="MvdZ QA 6-jul-2023"/>
       </mapping>
     </element>
     <element id="Practitioner.address.period.end">
@@ -2644,6 +2667,7 @@
       <mapping>
         <identity value="vista"/>
         <map value="409: source value from NEW PERSON - END DATE OF TEMP ADDRESS (#200-.1218)"/>
+        <comment value="MvdZ QA 6-jul-2023"/>
       </mapping>
     </element>
     <element id="Practitioner.gender">
@@ -3147,6 +3171,7 @@
       <mapping>
         <identity value="vista"/>
         <map value="395: source value from NEW PERSON - DEGREE (#200-10.6)"/>
+        <comment value="There is also 12.1 CURRENT DEGREE LEVEL; not in cdw"/>
       </mapping>
     </element>
     <element id="Practitioner.qualification.period">
@@ -3295,18 +3320,22 @@
       <mapping>
         <identity value="vista"/>
         <map value="376: source value from NEW PERSON - NPI (#200-41.99)"/>
+        <comment value="changed .code from PRN to NPI"/>
       </mapping>
       <mapping>
         <identity value="vista"/>
         <map value="377: source value from NEW PERSON - DEA# (#200-53.2)"/>
+        <comment value="changed .code from PRN to DEA"/>
       </mapping>
       <mapping>
         <identity value="vista"/>
         <map value="378: source value from NEW PERSON - VA# (#200-53.3)"/>
+        <comment value="changed .code from PRN to VA_Number. Value set is extensible"/>
       </mapping>
       <mapping>
         <identity value="vista"/>
         <map value="379: source value from NEW PERSON - VPID (#200-9000)"/>
+        <comment value="changed .code from PRN to VPID. Value set is extensible"/>
       </mapping>
       <mapping>
         <identity value="vista"/>
@@ -3318,6 +3347,7 @@
       <mapping>
         <identity value="vista"/>
         <map value="380: source value from NEW PERSON - EFFECTIVE DATE/TIME (#200-42) case For NPI only"/>
+        <comment value="MvdZ QA 6-jul-2023"/>
       </mapping>
     </element>
     <element id="Practitioner.name.text">
@@ -3325,6 +3355,7 @@
       <mapping>
         <identity value="vista"/>
         <map value="382: source value from NEW PERSON - NAME COMPONENTS &gt; NAME COMPONENTS - (#200-10.1 &gt; 20-)"/>
+        <comment value="Change map to better align with US Core Must Support (last name only)&#xA;MvdZ QA 6-jul-2023"/>
       </mapping>
     </element>
     <element id="Practitioner.telecom.value">
@@ -3367,26 +3398,32 @@
       <mapping>
         <identity value="vista"/>
         <map value="396: source value from NEW PERSON - STREET ADDRESS 1 (#200-.111)"/>
+        <comment value="Changed use case and FHIR Path to Practitioner to align with US Core&#xA;MvdZ QA 6-jul-2023"/>
       </mapping>
       <mapping>
         <identity value="vista"/>
         <map value="397: source value from NEW PERSON - STREET ADDRESS 2 (#200-.112)"/>
+        <comment value="Changed use case and FHIR Path to Practitioner to align with US Core&#xA;MvdZ QA 6-jul-2023"/>
       </mapping>
       <mapping>
         <identity value="vista"/>
         <map value="398: source value from NEW PERSON - STREET ADDRESS 3 (#200-.113)"/>
+        <comment value="Changed use case and FHIR Path to Practitioner to align with US Core&#xA;MvdZ QA 6-jul-2023"/>
       </mapping>
       <mapping>
         <identity value="vista"/>
         <map value="402: source value from NEW PERSON - TEMPORARY ADDRESS 1 (#200-.1211)"/>
+        <comment value="Changed use case and FHIR Path to Practitioner to fix mapping and align with US Core&#xA;MvdZ QA 6-jul-2023"/>
       </mapping>
       <mapping>
         <identity value="vista"/>
         <map value="403: source value from NEW PERSON - TEMPORARY ADDRESS 2 (#200-.1212)"/>
+        <comment value="MvdZ QA 6-jul-2023"/>
       </mapping>
       <mapping>
         <identity value="vista"/>
         <map value="404: source value from NEW PERSON - TEMPORARY ADDRESS 3 (#200-.1213)"/>
+        <comment value="MvdZ QA 6-jul-2023"/>
       </mapping>
     </element>
     <element id="Practitioner.address.city">
@@ -3402,10 +3439,12 @@
       <mapping>
         <identity value="vista"/>
         <map value="399: source value from NEW PERSON - CITY (#200-.114)"/>
+        <comment value="Changed use case and FHIR Path to Practitioner to align with US Core&#xA;MvdZ QA 6-jul-2023"/>
       </mapping>
       <mapping>
         <identity value="vista"/>
         <map value="405: source value from NEW PERSON - TEMPORARY CITY (#200-.1214)"/>
+        <comment value="MvdZ QA 6-jul-2023"/>
       </mapping>
     </element>
     <element id="Practitioner.address.state">
@@ -3421,10 +3460,12 @@
       <mapping>
         <identity value="vista"/>
         <map value="400: source value from NEW PERSON - STATE (#200-.115)"/>
+        <comment value="Changed use case and FHIR Path to Practitioner to align with US Core&#xA;MvdZ QA 6-jul-2023"/>
       </mapping>
       <mapping>
         <identity value="vista"/>
         <map value="406: source value from NEW PERSON - TEMPORARY STATE (#200-.1215)"/>
+        <comment value="MvdZ QA 6-jul-2023"/>
       </mapping>
     </element>
     <element id="Practitioner.address.postalCode">
@@ -3440,10 +3481,12 @@
       <mapping>
         <identity value="vista"/>
         <map value="401: source value from NEW PERSON - ZIP CODE (#200-.116)"/>
+        <comment value="Changed use case and FHIR Path to Practitioner to align with US Core&#xA;MvdZ QA 6-jul-2023"/>
       </mapping>
       <mapping>
         <identity value="vista"/>
         <map value="407: source value from NEW PERSON - TEMPORARY ZIP CODE (#200-.1216)"/>
+        <comment value="MvdZ QA 6-jul-2023"/>
       </mapping>
     </element>
     <element id="Practitioner.address.country">
@@ -3471,18 +3514,22 @@
       <mapping>
         <identity value="vista"/>
         <map value="1530: terminologyMaps using VF_PractitionerCountry on NEW PERSON - STATE (#200-.115) case not NULL"/>
+        <comment value="Added country to support Inferno testing (where country is required)&#xA;MvdZ QA 6-jul-2023"/>
       </mapping>
       <mapping>
         <identity value="vista"/>
         <map value="1531: fixed value without value? if NEW PERSON - STATE (#200-.115) case NULL"/>
+        <comment value="If country is not known (i.e. &quot;Europe&quot;), use the Data Absent Reason field with &quot;unknown&quot;&#xA;&#xA;Added country to support Inferno testing (where country is required)&#xA;MvdZ QA 6-jul-2023"/>
       </mapping>
       <mapping>
         <identity value="vista"/>
         <map value="1532: terminologyMaps using VF_PractitionerCountry on NEW PERSON - STATE (#200-.1215) case not NULL"/>
+        <comment value="Added country to support Inferno testing (where country is required)&#xA;MvdZ QA 6-jul-2023"/>
       </mapping>
       <mapping>
         <identity value="vista"/>
         <map value="1533: fixed value without value? if NEW PERSON - STATE (#200-.1215) case NULL"/>
+        <comment value="If country is not known (i.e. &quot;Europe&quot;), use the Data Absent Reason field with &quot;unknown&quot;&#xA;&#xA;Added country to support Inferno testing (where country is required)&#xA;MvdZ QA 6-jul-2023"/>
       </mapping>
     </element>
     <element id="Practitioner.address.period.start">
@@ -3494,6 +3541,7 @@
       <mapping>
         <identity value="vista"/>
         <map value="408: source value from NEW PERSON - START DATE OF TEMP ADDRES (#200-.1217)"/>
+        <comment value="MvdZ QA 6-jul-2023"/>
       </mapping>
     </element>
     <element id="Practitioner.address.period.end">
@@ -3505,6 +3553,7 @@
       <mapping>
         <identity value="vista"/>
         <map value="409: source value from NEW PERSON - END DATE OF TEMP ADDRESS (#200-.1218)"/>
+        <comment value="MvdZ QA 6-jul-2023"/>
       </mapping>
     </element>
     <element id="Practitioner.birthDate">
@@ -3523,6 +3572,7 @@
       <mapping>
         <identity value="vista"/>
         <map value="395: source value from NEW PERSON - DEGREE (#200-10.6)"/>
+        <comment value="There is also 12.1 CURRENT DEGREE LEVEL; not in cdw"/>
       </mapping>
     </element>
   </differential>

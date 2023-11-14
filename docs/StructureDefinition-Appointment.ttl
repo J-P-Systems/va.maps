@@ -17,7 +17,7 @@
   fhir:name [ fhir:v "Appointment"] ; # 
   fhir:title [ fhir:v "Appointment"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2023-11-14T14:54:31+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2023-11-14T17:25:19+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "VA"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "VA" ] ;
@@ -567,19 +567,24 @@
          fhir:map [ fhir:v "Appt.Appointment.AppointmentStatus" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "731: terminologyMaps using VF_AppointmentStatus on APPOINTMENT - STATUS (#2.98-3)" ]
+         fhir:map [ fhir:v "731: terminologyMaps using VF_AppointmentStatus on APPOINTMENT - STATUS (#2.98-3)" ] ;
+         fhir:comment [ fhir:v "simple maps in Terminology; complex defined here." ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "732: transform using \"booked\" on APPOINTMENT - STATUS (#2.98-3) case I, NT, Null; Null check-in date (44.003-309), null check-out date (44.003-303)" ]
+         fhir:map [ fhir:v "732: transform using \"booked\" on APPOINTMENT - STATUS (#2.98-3) case I, NT, Null; Null check-in date (44.003-309), null check-out date (44.003-303)" ] ;
+         fhir:comment [ fhir:v "simple maps in Terminology; complex defined here." ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "733: transform using \"arrived\" on APPOINTMENT - STATUS (#2.98-3) case I, NT, Null; Non-null check-in date (44.003-309), null check-out date (44.003-303)" ]
+         fhir:map [ fhir:v "733: transform using \"arrived\" on APPOINTMENT - STATUS (#2.98-3) case I, NT, Null; Non-null check-in date (44.003-309), null check-out date (44.003-303)" ] ;
+         fhir:comment [ fhir:v "simple maps in Terminology; complex defined here." ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "734: transform using \"fulfilled\" on APPOINTMENT - STATUS (#2.98-3) case I, NT, Null; Non-null check-in date (44.003-309), non-null check-out date (44.003-303)" ]
+         fhir:map [ fhir:v "734: transform using \"fulfilled\" on APPOINTMENT - STATUS (#2.98-3) case I, NT, Null; Non-null check-in date (44.003-309), non-null check-out date (44.003-303)" ] ;
+         fhir:comment [ fhir:v "simple maps in Terminology; complex defined here." ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "748: transform using \"waitlist\" on SD WAIT LIST - PATIENT (#409.3-.01) case not null" ]
+         fhir:map [ fhir:v "748: transform using \"waitlist\" on SD WAIT LIST - PATIENT (#409.3-.01) case not null" ] ;
+         fhir:comment [ fhir:v "LVH returns \"Waitlisted\". \"Waitlisted\" is the display value and \"waitlist\" is the code. This is a required FHIR value set. 3/15/2023 LVH will fix" ]
        ] [
          fhir:identity [ fhir:v "vpr" ] ;
          fhir:map [ fhir:v "appointment.apptStatus" ]
@@ -3501,10 +3506,12 @@
          fhir:map [ fhir:v "Appt.Appointment.LocationIEN" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "746: reference from APPOINTMENT - CLINIC (#2.98-.01)" ]
+         fhir:map [ fhir:v "746: reference from APPOINTMENT - CLINIC (#2.98-.01)" ] ;
+         fhir:comment [ fhir:v "@MZ: ref-issue: Should be split into Location" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "754: reference from SD WAIT LIST - APPT CLINIC (#409.3-13.2)" ]
+         fhir:map [ fhir:v "754: reference from SD WAIT LIST - APPT CLINIC (#409.3-13.2)" ] ;
+         fhir:comment [ fhir:v "@MZ: ref-issue: Should be split into Location" ]
        ] [
          fhir:identity [ fhir:v "vpr" ] ;
          fhir:map [ fhir:v "appointment.clinStop\nAppointment.facility\nappointment.location" ]
@@ -3707,19 +3714,24 @@
          fhir:map [ fhir:v "Appt.Appointment.AppointmentStatus" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "731: terminologyMaps using VF_AppointmentStatus on APPOINTMENT - STATUS (#2.98-3)" ]
+         fhir:map [ fhir:v "731: terminologyMaps using VF_AppointmentStatus on APPOINTMENT - STATUS (#2.98-3)" ] ;
+         fhir:comment [ fhir:v "simple maps in Terminology; complex defined here." ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "732: transform using \"booked\" on APPOINTMENT - STATUS (#2.98-3) case I, NT, Null; Null check-in date (44.003-309), null check-out date (44.003-303)" ]
+         fhir:map [ fhir:v "732: transform using \"booked\" on APPOINTMENT - STATUS (#2.98-3) case I, NT, Null; Null check-in date (44.003-309), null check-out date (44.003-303)" ] ;
+         fhir:comment [ fhir:v "simple maps in Terminology; complex defined here." ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "733: transform using \"arrived\" on APPOINTMENT - STATUS (#2.98-3) case I, NT, Null; Non-null check-in date (44.003-309), null check-out date (44.003-303)" ]
+         fhir:map [ fhir:v "733: transform using \"arrived\" on APPOINTMENT - STATUS (#2.98-3) case I, NT, Null; Non-null check-in date (44.003-309), null check-out date (44.003-303)" ] ;
+         fhir:comment [ fhir:v "simple maps in Terminology; complex defined here." ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "734: transform using \"fulfilled\" on APPOINTMENT - STATUS (#2.98-3) case I, NT, Null; Non-null check-in date (44.003-309), non-null check-out date (44.003-303)" ]
+         fhir:map [ fhir:v "734: transform using \"fulfilled\" on APPOINTMENT - STATUS (#2.98-3) case I, NT, Null; Non-null check-in date (44.003-309), non-null check-out date (44.003-303)" ] ;
+         fhir:comment [ fhir:v "simple maps in Terminology; complex defined here." ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "748: transform using \"waitlist\" on SD WAIT LIST - PATIENT (#409.3-.01) case not null" ]
+         fhir:map [ fhir:v "748: transform using \"waitlist\" on SD WAIT LIST - PATIENT (#409.3-.01) case not null" ] ;
+         fhir:comment [ fhir:v "LVH returns \"Waitlisted\". \"Waitlisted\" is the display value and \"waitlist\" is the code. This is a required FHIR value set. 3/15/2023 LVH will fix" ]
        ] [
          fhir:identity [ fhir:v "vpr" ] ;
          fhir:map [ fhir:v "appointment.apptStatus" ]
@@ -3882,10 +3894,12 @@
          fhir:map [ fhir:v "Appt.Appointment.LocationIEN" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "746: reference from APPOINTMENT - CLINIC (#2.98-.01)" ]
+         fhir:map [ fhir:v "746: reference from APPOINTMENT - CLINIC (#2.98-.01)" ] ;
+         fhir:comment [ fhir:v "@MZ: ref-issue: Should be split into Location" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "754: reference from SD WAIT LIST - APPT CLINIC (#409.3-13.2)" ]
+         fhir:map [ fhir:v "754: reference from SD WAIT LIST - APPT CLINIC (#409.3-13.2)" ] ;
+         fhir:comment [ fhir:v "@MZ: ref-issue: Should be split into Location" ]
        ] [
          fhir:identity [ fhir:v "vpr" ] ;
          fhir:map [ fhir:v "appointment.clinStop\nAppointment.facility\nappointment.location" ]

@@ -460,24 +460,26 @@ Vital.VitalSign.VitalResultNumeric</td> </tr>
 </table>
 <a name="vista"> </a><h3>Mappings for Veterans Health Information Systems Technology and Architecture (VistA) ()</h3><table class="grid">
  <tr><td colspan="3"><b>VitalSignsObservation</b></td></tr>
- <tr><td>Observation</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>660: source value from GMRV VITAL MEASUREMENT - IEN (#120.5-.001)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>655: transform using &quot;final&quot; on GMRV VITAL MEASUREMENT - REASON ENTERED IN ERROR (#120.5-4) case null, 656: transform using &quot;entered-in-error&quot; on GMRV VITAL MEASUREMENT - REASON ENTERED IN ERROR (#120.5-4) case not null</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;category</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>658: fixed value = vital-signs</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>659: reference from GMRV VITAL MEASUREMENT - PATIENT (#120.5-.02)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;effective[x] (effectiveDateTime)</td><td>657: source value from GMRV VITAL MEASUREMENT - DATE/TIME VITALS TAKEN (#120.5-.01)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;issued</td><td>652: source value from GMRV VITAL MEASUREMENT - DATE/TIME VITALS ENTERED (#120.5-.04)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;performer</td><td>++: reference from GMRV VITAL MEASUREMENT - HOSPITAL LOCATION (#120.5-.05)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;value[x]</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;value[x] (valueQuantity)</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>664: source value from GMRV VITAL MEASUREMENT - RATE (#120.5-1.2) case VUID not = 4500634</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>665: transform using VF_VitalsUnits on GMRV VITAL MEASUREMENT - VITAL TYPE (#120.5-.03)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;bodySite</td><td>662: terminologyMaps using VF_VitalsSite on GMRV VITAL MEASUREMENT - QUALIFIER (#120.5-5)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;method</td><td>867: terminologyMaps using VF_VitalsMethod on GMRV VITAL MEASUREMENT - QUALIFIER (#120.5-5)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;device</td><td>++: reference from GMRV VITAL MEASUREMENT – QUALIFIER &gt; GMRV VITAL QUALIFIER – VUID (#120.5-5 &gt; 120.52-99.99)</td> </tr>
+ <tr><td>Observation</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>660: source value from GMRV VITAL MEASUREMENT - IEN (#120.5-.001)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>655: transform using &quot;final&quot; on GMRV VITAL MEASUREMENT - REASON ENTERED IN ERROR (#120.5-4) case null, 656: transform using &quot;entered-in-error&quot; on GMRV VITAL MEASUREMENT - REASON ENTERED IN ERROR (#120.5-4) case not null</td><td>, </td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;category</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>658: fixed value = vital-signs</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>659: reference from GMRV VITAL MEASUREMENT - PATIENT (#120.5-.02)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;effective[x] (effectiveDateTime)</td><td>657: source value from GMRV VITAL MEASUREMENT - DATE/TIME VITALS TAKEN (#120.5-.01)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;issued</td><td>652: source value from GMRV VITAL MEASUREMENT - DATE/TIME VITALS ENTERED (#120.5-.04)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;performer</td><td>++: reference from GMRV VITAL MEASUREMENT - HOSPITAL LOCATION (#120.5-.05)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;value[x]</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;value[x] (valueQuantity)</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>664: source value from GMRV VITAL MEASUREMENT - RATE (#120.5-1.2) case VUID not = 4500634</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>665: transform using VF_VitalsUnits on GMRV VITAL MEASUREMENT - VITAL TYPE (#120.5-.03)</td><td><p>VPR may transform</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;bodySite</td><td>662: terminologyMaps using VF_VitalsSite on GMRV VITAL MEASUREMENT - QUALIFIER (#120.5-5)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;method</td><td>867: terminologyMaps using VF_VitalsMethod on GMRV VITAL MEASUREMENT - QUALIFIER (#120.5-5)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;device</td><td>++: reference from GMRV VITAL MEASUREMENT – QUALIFIER &gt; GMRV VITAL QUALIFIER – VUID (#120.5-5 &gt; 120.52-99.99)</td><td><p>contained</p>
+</td> </tr>
 </table>
 
 
@@ -532,7 +534,7 @@ Vital.VitalSign.VitalResultNumeric</td> </tr>
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.3.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Nov 14, 2023 14:54+0000">2023-11-14</span>
+          IG &#169; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.3.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Nov 14, 2023 17:25+0000">2023-11-14</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -29,7 +29,7 @@
   <name value="PractitionerRole"/>
   <title value="Practitioner Role"/>
   <status value="draft"/>
-  <date value="2023-11-14T14:54:31+00:00"/>
+  <date value="2023-11-14T17:25:19+00:00"/>
   <publisher value="VA"/>
   <contact>
     <name value="VA"/>
@@ -849,10 +849,12 @@
       <mapping>
         <identity value="vista"/>
         <map value="411: transform using true on NEW PERSON - PERSON CLASS &gt; PERSON CLASS - EXPIRATION DATE (#200-8932.1 &gt; 200.05-3) case date &gt; now or = null"/>
+        <comment value="Changed mapping to indicate the expiration date field related to the class which aligns to the role&#xA;&#xA;04/12/23 Confirmed during FHIR Office Hours: Role expiration date should be used; termination date is a system date"/>
       </mapping>
       <mapping>
         <identity value="vista"/>
         <map value="412: transform using false on NEW PERSON - PERSON CLASS &gt; PERSON CLASS - EXPIRATION DATE (#200-8932.1 &gt; 200.05-3) case date &lt; now"/>
+        <comment value="Changed mapping to indicate the expiration date field related to the class which aligns to the role&#xA;&#xA;04/12/23 Confirmed during FHIR Office Hours: Role expiration date should be used; termination date is a system date"/>
       </mapping>
     </element>
     <element id="PractitionerRole.period">
@@ -1011,6 +1013,7 @@
       <mapping>
         <identity value="vista"/>
         <map value="413: source value from NEW PERSON - PERSON CLASS &gt; PERSON CLASS - EFFECTIVE DATE (#200-8932.1 &gt; 200.05-2)"/>
+        <comment value="Changed mapping to indicate the effective date field related to the class which aligns to the role"/>
       </mapping>
     </element>
     <element id="PractitionerRole.period.end">
@@ -1055,6 +1058,7 @@
       <mapping>
         <identity value="vista"/>
         <map value="416: source value from NEW PERSON - PERSON CLASS &gt; PERSON CLASS - EXPIRATION DATE (#200-8932.1 &gt; 200.05-3)"/>
+        <comment value="Changed mapping to indicate the expiration date field related to the class which aligns to the role&#xA;&#xA;04/12/23 Confirmed during FHIR Office Hours: Role expiration date should be used; termination date is a system date"/>
       </mapping>
     </element>
     <element id="PractitionerRole.practitioner">
@@ -1095,6 +1099,7 @@
       <mapping>
         <identity value="vista"/>
         <map value="414: reference from NEW PERSON - NAME (#200-.01)"/>
+        <comment value="Use US Core Practitioner Profile.&#xA;Changed map to better align with US Core"/>
       </mapping>
     </element>
     <element id="PractitionerRole.organization">
@@ -1948,6 +1953,7 @@
       <mapping>
         <identity value="vista"/>
         <map value="419: source value from PERSON CLASS - X12 CODE (#8932.1-6)"/>
+        <comment value="Added paths"/>
       </mapping>
     </element>
     <element id="PractitionerRole.specialty.coding.display">
@@ -2114,6 +2120,7 @@
       <mapping>
         <identity value="vista"/>
         <map value="422: reference from PROVIDER - PROVIDER (#44.1-.01)"/>
+        <comment value="This is a reverse pointer. Location 44 contains 44.1, pointing at providers"/>
       </mapping>
     </element>
     <element id="PractitionerRole.healthcareService">
@@ -2377,34 +2384,42 @@
       <mapping>
         <identity value="vista"/>
         <map value="384: source value from NEW PERSON - OFFICE PHONE (#200-.132)"/>
+        <comment value="Change from Practitioner to PractitionerRole (use case and FHIR Path) to support US Core"/>
       </mapping>
       <mapping>
         <identity value="vista"/>
         <map value="385: source value from NEW PERSON - PHONE #3 (#200-.133)"/>
+        <comment value="Change from Practitioner to PractitionerRole (use case and FHIR Path) to support US Core"/>
       </mapping>
       <mapping>
         <identity value="vista"/>
         <map value="386: source value from NEW PERSON - PHONE #4 (#200-.134)"/>
+        <comment value="Change from Practitioner to PractitionerRole (use case and FHIR Path) to support US Core"/>
       </mapping>
       <mapping>
         <identity value="vista"/>
         <map value="387: source value from NEW PERSON - COMMERCIAL PHONE (#200-.135)"/>
+        <comment value="Change from Practitioner to PractitionerRole (use case and FHIR Path) to support US Core"/>
       </mapping>
       <mapping>
         <identity value="vista"/>
         <map value="388: source value from NEW PERSON - FAX NUMBER (#200-.136)"/>
+        <comment value="Change from Practitioner to PractitionerRole (use case and FHIR Path) to support US Core"/>
       </mapping>
       <mapping>
         <identity value="vista"/>
         <map value="389: source value from NEW PERSON - VOICE PAGER (#200-.137)"/>
+        <comment value="Change from Practitioner to PractitionerRole (use case and FHIR Path) to support US Core"/>
       </mapping>
       <mapping>
         <identity value="vista"/>
         <map value="390: source value from NEW PERSON - DIGITAL PAGER (#200-.138)"/>
+        <comment value="Change from Practitioner to PractitionerRole (use case and FHIR Path) to support US Core"/>
       </mapping>
       <mapping>
         <identity value="vista"/>
         <map value="391: source value from NEW PERSON - EMAIL ADDRESS (#200-.151)"/>
+        <comment value="Change from Practitioner to PractitionerRole (use case and FHIR Path) to support US Core"/>
       </mapping>
     </element>
     <element id="PractitionerRole.telecom.use">
@@ -3100,10 +3115,12 @@
       <mapping>
         <identity value="vista"/>
         <map value="411: transform using true on NEW PERSON - PERSON CLASS &gt; PERSON CLASS - EXPIRATION DATE (#200-8932.1 &gt; 200.05-3) case date &gt; now or = null"/>
+        <comment value="Changed mapping to indicate the expiration date field related to the class which aligns to the role&#xA;&#xA;04/12/23 Confirmed during FHIR Office Hours: Role expiration date should be used; termination date is a system date"/>
       </mapping>
       <mapping>
         <identity value="vista"/>
         <map value="412: transform using false on NEW PERSON - PERSON CLASS &gt; PERSON CLASS - EXPIRATION DATE (#200-8932.1 &gt; 200.05-3) case date &lt; now"/>
+        <comment value="Changed mapping to indicate the expiration date field related to the class which aligns to the role&#xA;&#xA;04/12/23 Confirmed during FHIR Office Hours: Role expiration date should be used; termination date is a system date"/>
       </mapping>
     </element>
     <element id="PractitionerRole.period.start">
@@ -3115,6 +3132,7 @@
       <mapping>
         <identity value="vista"/>
         <map value="413: source value from NEW PERSON - PERSON CLASS &gt; PERSON CLASS - EFFECTIVE DATE (#200-8932.1 &gt; 200.05-2)"/>
+        <comment value="Changed mapping to indicate the effective date field related to the class which aligns to the role"/>
       </mapping>
     </element>
     <element id="PractitionerRole.period.end">
@@ -3126,6 +3144,7 @@
       <mapping>
         <identity value="vista"/>
         <map value="416: source value from NEW PERSON - PERSON CLASS &gt; PERSON CLASS - EXPIRATION DATE (#200-8932.1 &gt; 200.05-3)"/>
+        <comment value="Changed mapping to indicate the expiration date field related to the class which aligns to the role&#xA;&#xA;04/12/23 Confirmed during FHIR Office Hours: Role expiration date should be used; termination date is a system date"/>
       </mapping>
     </element>
     <element id="PractitionerRole.practitioner">
@@ -3137,6 +3156,7 @@
       <mapping>
         <identity value="vista"/>
         <map value="414: reference from NEW PERSON - NAME (#200-.01)"/>
+        <comment value="Use US Core Practitioner Profile.&#xA;Changed map to better align with US Core"/>
       </mapping>
     </element>
     <element id="PractitionerRole.code.coding.code">
@@ -3155,6 +3175,7 @@
       <mapping>
         <identity value="vista"/>
         <map value="419: source value from PERSON CLASS - X12 CODE (#8932.1-6)"/>
+        <comment value="Added paths"/>
       </mapping>
     </element>
     <element id="PractitionerRole.location">
@@ -3162,6 +3183,7 @@
       <mapping>
         <identity value="vista"/>
         <map value="422: reference from PROVIDER - PROVIDER (#44.1-.01)"/>
+        <comment value="This is a reverse pointer. Location 44 contains 44.1, pointing at providers"/>
       </mapping>
     </element>
     <element id="PractitionerRole.telecom.value">
@@ -3201,34 +3223,42 @@
       <mapping>
         <identity value="vista"/>
         <map value="384: source value from NEW PERSON - OFFICE PHONE (#200-.132)"/>
+        <comment value="Change from Practitioner to PractitionerRole (use case and FHIR Path) to support US Core"/>
       </mapping>
       <mapping>
         <identity value="vista"/>
         <map value="385: source value from NEW PERSON - PHONE #3 (#200-.133)"/>
+        <comment value="Change from Practitioner to PractitionerRole (use case and FHIR Path) to support US Core"/>
       </mapping>
       <mapping>
         <identity value="vista"/>
         <map value="386: source value from NEW PERSON - PHONE #4 (#200-.134)"/>
+        <comment value="Change from Practitioner to PractitionerRole (use case and FHIR Path) to support US Core"/>
       </mapping>
       <mapping>
         <identity value="vista"/>
         <map value="387: source value from NEW PERSON - COMMERCIAL PHONE (#200-.135)"/>
+        <comment value="Change from Practitioner to PractitionerRole (use case and FHIR Path) to support US Core"/>
       </mapping>
       <mapping>
         <identity value="vista"/>
         <map value="388: source value from NEW PERSON - FAX NUMBER (#200-.136)"/>
+        <comment value="Change from Practitioner to PractitionerRole (use case and FHIR Path) to support US Core"/>
       </mapping>
       <mapping>
         <identity value="vista"/>
         <map value="389: source value from NEW PERSON - VOICE PAGER (#200-.137)"/>
+        <comment value="Change from Practitioner to PractitionerRole (use case and FHIR Path) to support US Core"/>
       </mapping>
       <mapping>
         <identity value="vista"/>
         <map value="390: source value from NEW PERSON - DIGITAL PAGER (#200-.138)"/>
+        <comment value="Change from Practitioner to PractitionerRole (use case and FHIR Path) to support US Core"/>
       </mapping>
       <mapping>
         <identity value="vista"/>
         <map value="391: source value from NEW PERSON - EMAIL ADDRESS (#200-.151)"/>
+        <comment value="Change from Practitioner to PractitionerRole (use case and FHIR Path) to support US Core"/>
       </mapping>
     </element>
   </differential>

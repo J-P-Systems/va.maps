@@ -370,19 +370,24 @@ Chem.PatientLabChem.LabChemCompleteDateTime</td> </tr>
 </table>
 <a name="vista"> </a><h3>Mappings for Veterans Health Information Systems Technology and Architecture (VistA) ()</h3><table class="grid">
  <tr><td colspan="3"><b>DiagnosticReportforLabChemhemtoxriaserDiagnosticReport</b></td></tr>
- <tr><td>DiagnosticReport</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>1602: source value from CHEM, HEM, TOX, RIA, SER, etc. - ORDERED TEST &gt; ORDERED TEST - IEN (#63.04-.35 &gt; 63.07-.001)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>1415: terminologyMaps using VF_DiagnosticReportLabStatus on CHEM, HEM, TOX, RIA, SER, etc. - ORDERED TEST &gt; ORDERED TEST - DISPOSITION (#63.04-.35 &gt; 63.07-10)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;category</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>1419: fixed value = http://terminology.hl7.org/CodeSystem/v2-0074|LAB</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;code</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>1535: source value from CHEM, HEM, TOX, RIA, SER, etc. - ORDERED TEST &gt; ORDERED TEST - COLLECTION SAMPLE &gt; COLLECTION SAMPLE - LAB SECTION &gt; LAB SECTION - NAME (#63.04-.35 &gt; 63.07-9 &gt; 62-6 &gt; 62.2-.01)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>1421: reference from PATIENT - LABORATORY REFERENCE &gt; LAB DATA - LRDFN (#2-63 &gt; 63-.01)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;effective[x] (effectiveDateTime)</td><td>1423: source value from CHEM, HEM, TOX, RIA, SER, etc. - DATE/TIME SPECIMEN TAKEN (#63.04-.01)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;issued</td><td>1428: source value from CHEM, HEM, TOX, RIA, SER, etc. - DATE REPORT COMPLETED (#63.04-.03)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;performer</td><td>1433: reference from CHEM, HEM, TOX, RIA, SER, etc. - VERIFY PERSON (#63.04-.04)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;result</td><td>1437: reference from See mapping for Lab Observation (#null)</td> </tr>
+ <tr><td>DiagnosticReport</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>1602: source value from CHEM, HEM, TOX, RIA, SER, etc. - ORDERED TEST &gt; ORDERED TEST - IEN (#63.04-.35 &gt; 63.07-.001)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>1415: terminologyMaps using VF_DiagnosticReportLabStatus on CHEM, HEM, TOX, RIA, SER, etc. - ORDERED TEST &gt; ORDERED TEST - DISPOSITION (#63.04-.35 &gt; 63.07-10)</td><td><p>disposition based on HL7 Table 0123 status codes</p>
+<p>US Core 5 has new constraints: if status is partial, preliminary, final, ammended, corrected or appended effective[x] and issued are required</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;category</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>1419: fixed value = http://terminology.hl7.org/CodeSystem/v2-0074|LAB</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;code</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>1535: source value from CHEM, HEM, TOX, RIA, SER, etc. - ORDERED TEST &gt; ORDERED TEST - COLLECTION SAMPLE &gt; COLLECTION SAMPLE - LAB SECTION &gt; LAB SECTION - NAME (#63.04-.35 &gt; 63.07-9 &gt; 62-6 &gt; 62.2-.01)</td><td><p>Use this map in addition to key 1521 to indicate the coded value of &quot;Laboratory report&quot; and include the type of report from VistA</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>1421: reference from PATIENT - LABORATORY REFERENCE &gt; LAB DATA - LRDFN (#2-63 &gt; 63-.01)</td><td><p>Pointer from PATIENT (2)</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;effective[x] (effectiveDateTime)</td><td>1423: source value from CHEM, HEM, TOX, RIA, SER, etc. - DATE/TIME SPECIMEN TAKEN (#63.04-.01)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;issued</td><td>1428: source value from CHEM, HEM, TOX, RIA, SER, etc. - DATE REPORT COMPLETED (#63.04-.03)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;performer</td><td>1433: reference from CHEM, HEM, TOX, RIA, SER, etc. - VERIFY PERSON (#63.04-.04)</td><td><p>US Core Practitioner is must support resource</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;result</td><td>1437: reference from See mapping for Lab Observation (#null)</td><td></td> </tr>
 </table>
 <a name="cdw"> </a><h3>Mappings for Clinical Data Warehouse (CDW) ()</h3><table class="grid">
  <tr><td colspan="3"><b>DiagnosticReportforLabChemhemtoxriaserDiagnosticReport</b></td></tr>
@@ -417,19 +422,24 @@ Chem.PatientLabChem.LabChemCompleteDateTime</td> </tr>
 </table>
 <a name="vista"> </a><h3>Mappings for Veterans Health Information Systems Technology and Architecture (VistA) ()</h3><table class="grid">
  <tr><td colspan="3"><b>DiagnosticReportforLabChemhemtoxriaserDiagnosticReport</b></td></tr>
- <tr><td>DiagnosticReport</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>1602: source value from CHEM, HEM, TOX, RIA, SER, etc. - ORDERED TEST &gt; ORDERED TEST - IEN (#63.04-.35 &gt; 63.07-.001)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>1415: terminologyMaps using VF_DiagnosticReportLabStatus on CHEM, HEM, TOX, RIA, SER, etc. - ORDERED TEST &gt; ORDERED TEST - DISPOSITION (#63.04-.35 &gt; 63.07-10)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;category</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>1419: fixed value = http://terminology.hl7.org/CodeSystem/v2-0074|LAB</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;code</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>1535: source value from CHEM, HEM, TOX, RIA, SER, etc. - ORDERED TEST &gt; ORDERED TEST - COLLECTION SAMPLE &gt; COLLECTION SAMPLE - LAB SECTION &gt; LAB SECTION - NAME (#63.04-.35 &gt; 63.07-9 &gt; 62-6 &gt; 62.2-.01)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>1421: reference from PATIENT - LABORATORY REFERENCE &gt; LAB DATA - LRDFN (#2-63 &gt; 63-.01)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;effective[x] (effectiveDateTime)</td><td>1423: source value from CHEM, HEM, TOX, RIA, SER, etc. - DATE/TIME SPECIMEN TAKEN (#63.04-.01)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;issued</td><td>1428: source value from CHEM, HEM, TOX, RIA, SER, etc. - DATE REPORT COMPLETED (#63.04-.03)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;performer</td><td>1433: reference from CHEM, HEM, TOX, RIA, SER, etc. - VERIFY PERSON (#63.04-.04)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;result</td><td>1437: reference from See mapping for Lab Observation (#null)</td> </tr>
+ <tr><td>DiagnosticReport</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>1602: source value from CHEM, HEM, TOX, RIA, SER, etc. - ORDERED TEST &gt; ORDERED TEST - IEN (#63.04-.35 &gt; 63.07-.001)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>1415: terminologyMaps using VF_DiagnosticReportLabStatus on CHEM, HEM, TOX, RIA, SER, etc. - ORDERED TEST &gt; ORDERED TEST - DISPOSITION (#63.04-.35 &gt; 63.07-10)</td><td><p>disposition based on HL7 Table 0123 status codes</p>
+<p>US Core 5 has new constraints: if status is partial, preliminary, final, ammended, corrected or appended effective[x] and issued are required</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;category</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>1419: fixed value = http://terminology.hl7.org/CodeSystem/v2-0074|LAB</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;code</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>1535: source value from CHEM, HEM, TOX, RIA, SER, etc. - ORDERED TEST &gt; ORDERED TEST - COLLECTION SAMPLE &gt; COLLECTION SAMPLE - LAB SECTION &gt; LAB SECTION - NAME (#63.04-.35 &gt; 63.07-9 &gt; 62-6 &gt; 62.2-.01)</td><td><p>Use this map in addition to key 1521 to indicate the coded value of &quot;Laboratory report&quot; and include the type of report from VistA</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>1421: reference from PATIENT - LABORATORY REFERENCE &gt; LAB DATA - LRDFN (#2-63 &gt; 63-.01)</td><td><p>Pointer from PATIENT (2)</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;effective[x] (effectiveDateTime)</td><td>1423: source value from CHEM, HEM, TOX, RIA, SER, etc. - DATE/TIME SPECIMEN TAKEN (#63.04-.01)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;issued</td><td>1428: source value from CHEM, HEM, TOX, RIA, SER, etc. - DATE REPORT COMPLETED (#63.04-.03)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;performer</td><td>1433: reference from CHEM, HEM, TOX, RIA, SER, etc. - VERIFY PERSON (#63.04-.04)</td><td><p>US Core Practitioner is must support resource</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;result</td><td>1437: reference from See mapping for Lab Observation (#null)</td><td></td> </tr>
 </table>
 
 
@@ -484,7 +494,7 @@ Chem.PatientLabChem.LabChemCompleteDateTime</td> </tr>
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.3.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Nov 14, 2023 14:54+0000">2023-11-14</span>
+          IG &#169; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.3.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Nov 14, 2023 17:25+0000">2023-11-14</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

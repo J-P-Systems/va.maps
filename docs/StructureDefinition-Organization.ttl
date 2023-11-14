@@ -17,7 +17,7 @@
   fhir:name [ fhir:v "Organization"] ; # 
   fhir:title [ fhir:v "Organization"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2023-11-14T14:54:31+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2023-11-14T17:25:19+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "VA"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "VA" ] ;
@@ -766,7 +766,8 @@
          fhir:map [ fhir:v "Dim.Institution.NPI" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "1252: source value from INSTITUTION - NPI (#4-41.99) case NPI slice" ]
+         fhir:map [ fhir:v "1252: source value from INSTITUTION - NPI (#4-41.99) case NPI slice" ] ;
+         fhir:comment [ fhir:v "Is mapCase used to indicate slice?" ]
        ] )
      ] [
        fhir:id [ fhir:v "Organization.identifier.period" ] ;
@@ -994,7 +995,8 @@
          fhir:map [ fhir:v "./Status (however this concept in ServD more covers why the organization is active or not, could be delisted, deregistered, not operational yet) this could alternatively be derived from ./StartDate and ./EndDate and given a context date." ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "1253: fixed value = true" ]
+         fhir:map [ fhir:v "1253: fixed value = true" ] ;
+         fhir:comment [ fhir:v "MvdZ QA 20-jun-2023" ]
        ] )
      ] [
        fhir:id [ fhir:v "Organization.type" ] ;
@@ -1950,7 +1952,8 @@
          fhir:map [ fhir:v "Dim.Institution.MedicalDistrict" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "1261: source value from INSTITUTION - DISTRICT (#4-.03)" ]
+         fhir:map [ fhir:v "1261: source value from INSTITUTION - DISTRICT (#4-.03)" ] ;
+         fhir:comment [ fhir:v "MvdZ QA 20-jun-2023" ]
        ] )
      ] [
        fhir:id [ fhir:v "Organization.address.state" ] ;
@@ -2118,7 +2121,8 @@
          fhir:map [ fhir:v "1264: source value from INSTITUTION - COUNTRY > COUNTRY - CODE (#4-801 > 779.004-.01)" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "1274: source value from INSTITUTION - COUNTRY > COUNTRY - CODE (#4-801 > 779.004-.01)" ]
+         fhir:map [ fhir:v "1274: source value from INSTITUTION - COUNTRY > COUNTRY - CODE (#4-801 > 779.004-.01)" ] ;
+         fhir:comment [ fhir:v "Assume country is same as for physical\nOrganization.address.where(type=\"postal\")" ]
        ] )
      ] [
        fhir:id [ fhir:v "Organization.address.period" ] ;
@@ -2446,7 +2450,8 @@
          fhir:map [ fhir:v "./name" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "1265: source value from INSTITUTION - CONTACT > CONTACT – NAME (#4-4 > 4.03-.01)" ]
+         fhir:map [ fhir:v "1265: source value from INSTITUTION - CONTACT > CONTACT – NAME (#4-4 > 4.03-.01)" ] ;
+         fhir:comment [ fhir:v "MvdZ QA 20-jun-2023" ]
        ] )
      ] [
        fhir:id [ fhir:v "Organization.contact.telecom" ] ;
@@ -2654,7 +2659,8 @@
          fhir:map [ fhir:v "./Value" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "1266: source value from INSTITUTION - CONTACT > CONTACT – PHONE # (#4-4 > 4.03-.03)" ]
+         fhir:map [ fhir:v "1266: source value from INSTITUTION - CONTACT > CONTACT – PHONE # (#4-4 > 4.03-.03)" ] ;
+         fhir:comment [ fhir:v "MvdZ QA 20-jun-2023" ]
        ] )
      ] [
        fhir:id [ fhir:v "Organization.contact.telecom.use" ] ;
@@ -2873,14 +2879,16 @@
          fhir:map [ fhir:v "Dim.Institution.NPI" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "1252: source value from INSTITUTION - NPI (#4-41.99) case NPI slice" ]
+         fhir:map [ fhir:v "1252: source value from INSTITUTION - NPI (#4-41.99) case NPI slice" ] ;
+         fhir:comment [ fhir:v "Is mapCase used to indicate slice?" ]
        ] )
      ] [
        fhir:id [ fhir:v "Organization.active" ] ;
        fhir:path [ fhir:v "Organization.active" ] ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "1253: fixed value = true" ]
+         fhir:map [ fhir:v "1253: fixed value = true" ] ;
+         fhir:comment [ fhir:v "MvdZ QA 20-jun-2023" ]
        ] )
      ] [
        fhir:id [ fhir:v "Organization.type" ] ;
@@ -2962,7 +2970,8 @@
          fhir:map [ fhir:v "Dim.Institution.MedicalDistrict" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "1261: source value from INSTITUTION - DISTRICT (#4-.03)" ]
+         fhir:map [ fhir:v "1261: source value from INSTITUTION - DISTRICT (#4-.03)" ] ;
+         fhir:comment [ fhir:v "MvdZ QA 20-jun-2023" ]
        ] )
      ] [
        fhir:id [ fhir:v "Organization.address.state" ] ;
@@ -3004,21 +3013,24 @@
          fhir:map [ fhir:v "1264: source value from INSTITUTION - COUNTRY > COUNTRY - CODE (#4-801 > 779.004-.01)" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "1274: source value from INSTITUTION - COUNTRY > COUNTRY - CODE (#4-801 > 779.004-.01)" ]
+         fhir:map [ fhir:v "1274: source value from INSTITUTION - COUNTRY > COUNTRY - CODE (#4-801 > 779.004-.01)" ] ;
+         fhir:comment [ fhir:v "Assume country is same as for physical\nOrganization.address.where(type=\"postal\")" ]
        ] )
      ] [
        fhir:id [ fhir:v "Organization.contact.name" ] ;
        fhir:path [ fhir:v "Organization.contact.name" ] ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "1265: source value from INSTITUTION - CONTACT > CONTACT – NAME (#4-4 > 4.03-.01)" ]
+         fhir:map [ fhir:v "1265: source value from INSTITUTION - CONTACT > CONTACT – NAME (#4-4 > 4.03-.01)" ] ;
+         fhir:comment [ fhir:v "MvdZ QA 20-jun-2023" ]
        ] )
      ] [
        fhir:id [ fhir:v "Organization.contact.telecom.value" ] ;
        fhir:path [ fhir:v "Organization.contact.telecom.value" ] ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "1266: source value from INSTITUTION - CONTACT > CONTACT – PHONE # (#4-4 > 4.03-.03)" ]
+         fhir:map [ fhir:v "1266: source value from INSTITUTION - CONTACT > CONTACT – PHONE # (#4-4 > 4.03-.03)" ] ;
+         fhir:comment [ fhir:v "MvdZ QA 20-jun-2023" ]
        ] )
      ] )
   ] . # 
