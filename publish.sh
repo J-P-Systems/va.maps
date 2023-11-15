@@ -1,4 +1,6 @@
 #!/bin/bash
+rm fsh/*
+cp ../jpsys-maps-ig-sushi/fsh/* fsh
 rm -r docs/*
 cp -r ../jpsys-maps-ig-sushi/output/* docs
 git add docs
