@@ -7,7 +7,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Observation EXAM {Observation} - Mappings - US Veterans Administration FHIR Map Set Implementation Guide v0.3.0</title>
+    <title>Observation EXAM {Observation} - Mappings - US Veterans Administration FHIR Map Set Implementation Guide v0.4.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -62,7 +62,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">US Veterans Administration FHIR Map Set Implementation Guide</span>
             <br/>
-            <span style="display:inline-block;">0.3.0 - ci-build
+            <span style="display:inline-block;">0.4.0 - ci-build
 
 
 
@@ -136,7 +136,7 @@
           <div class="inner-wrapper">
 
 <div style="counter-reset: section 5" class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">US Veterans Administration FHIR Map Set Implementation Guide - Local Development build (v0.3.0). See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">US Veterans Administration FHIR Map Set Implementation Guide - Local Development build (v0.4.0). See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   
 
 
@@ -209,7 +209,7 @@
         
           Draft
           
-            as of 2023-11-14
+            as of 2023-11-15
           
         
       </td>
@@ -405,22 +405,13 @@
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td>363714003 |Interprets|</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;interpretation</td><td>363713009 |Has interpretation|</td> </tr>
 </table>
-<a name="cdw"> </a><h3>Mappings for Clinical Data Warehouse (CDW) ()</h3><table class="grid">
- <tr><td colspan="3"><b>ObservationEXAMObservation</b></td></tr>
- <tr><td>Observation</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;encounter</td><td>Outpat.VExam.VisitDateTime</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;effective[x] (effectiveDateTime)</td><td>Outpat.VExam.EventDateTime</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;interpretation</td><td>Outpat.VExam.AbnormalNormal</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;note</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>Outpat.VExam.Comments</td> </tr>
-</table>
 <a name="vista"> </a><h3>Mappings for Veterans Health Information Systems Technology and Architecture (VistA) ()</h3><table class="grid">
  <tr><td colspan="3"><b>ObservationEXAMObservation</b></td></tr>
  <tr><td>Observation</td><td></td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>1589: fixed value = final</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;category</td><td>1591: fixed value = http://terminology.hl7.org/CodeSystem/observation-category|exam</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;code</td><td></td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>1580: source value from V EXAM - EXAM &gt; EXAM (#9000010.13-.01 &gt; 9999999.15-), 1581: source value from V EXAM - EXAM &gt; EXAM (#9000010.13-.01 &gt; 9999999.15-)</td><td><p>in CDW through ExamSID</p>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>1580: source value from V EXAM - EXAM &gt; EXAM (#9000010.13-.01 &gt; 9999999.15-), 1581: source value from V EXAM - EXAM &gt; EXAM – CODE MAPPINGS (#9000010.13-.01 &gt; 9999999.15-210)</td><td><p>in CDW through ExamSID</p>
 , <p>in CDW through ExamSID</p>
 </td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>1582: reference from V EXAM - PATIENT NAME &gt; PATIENT/IHS - NAME (#9000010.13-.02 &gt; 9000001-.01)</td><td><p>in CDW through PatientSID</p>
@@ -434,6 +425,15 @@
  <tr><td>&nbsp;&nbsp;&nbsp;interpretation</td><td>1584: transform using VF_ExamResultInterpretation on V EXAM - RESULT (#9000010.13-.04)</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;note</td><td></td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>1587: source value from V EXAM - COMMENTS (#9000010.13-81101)</td><td></td> </tr>
+</table>
+<a name="cdw"> </a><h3>Mappings for Clinical Data Warehouse (CDW) ()</h3><table class="grid">
+ <tr><td colspan="3"><b>ObservationEXAMObservation</b></td></tr>
+ <tr><td>Observation</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;encounter</td><td>Outpat.VExam.VisitDateTime</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;effective[x] (effectiveDateTime)</td><td>Outpat.VExam.EventDateTime</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;interpretation</td><td>Outpat.VExam.AbnormalNormal</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;note</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>Outpat.VExam.Comments</td> </tr>
 </table>
 
 
@@ -488,7 +488,7 @@
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.3.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Nov 14, 2023 17:25+0000">2023-11-14</span>
+          IG &#169; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.4.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Nov 15, 2023 12:04+0000">2023-11-15</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

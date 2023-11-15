@@ -7,7 +7,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>AllergyIntolerance - Mappings - US Veterans Administration FHIR Map Set Implementation Guide v0.3.0</title>
+    <title>AllergyIntolerance - Mappings - US Veterans Administration FHIR Map Set Implementation Guide v0.4.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -62,7 +62,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">US Veterans Administration FHIR Map Set Implementation Guide</span>
             <br/>
-            <span style="display:inline-block;">0.3.0 - ci-build
+            <span style="display:inline-block;">0.4.0 - ci-build
 
 
 
@@ -136,7 +136,7 @@
           <div class="inner-wrapper">
 
 <div style="counter-reset: section 5" class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">US Veterans Administration FHIR Map Set Implementation Guide - Local Development build (v0.3.0). See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">US Veterans Administration FHIR Map Set Implementation Guide - Local Development build (v0.4.0). See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   
 
 
@@ -209,7 +209,7 @@
         
           Draft
           
-            as of 2023-11-14
+            as of 2023-11-15
           
         
       </td>
@@ -322,23 +322,6 @@
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;manifestation</td><td>AL1-5</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;onset</td><td>AL1-6</td> </tr>
 </table>
-<a name="cdw"> </a><h3>Mappings for Clinical Data Warehouse (CDW) ()</h3><table class="grid">
- <tr><td colspan="3"><b>AllergyIntolerance</b></td></tr>
- <tr><td>AllergyIntolerance</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;clinicalStatus</td><td>Allergy.Allergy.EnteredInErrorFlag</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;verificationStatus</td><td>Allergy.Allergy.VerifiedFlag, Allergy.Allergy.VerificationDateTime, Allergy.Allergy.EnteredInErrorFlag</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;type</td><td>Allergy.Allergy.Mechanism</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;category</td><td>Allergy.Allergy.AllergyType</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;code</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>Allergy.Allergy.AllergicReactant</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;recordedDate</td><td>Allergy.AllergicReaction.OriginationDateTime
-Allergy.Allergy.OriginationDateTime
-Allergy.AllergyComment.OriginationDateTime
-Allergy.AllergyDrugClass.OriginationDateTime
-Allergy.AllergyDrugIngredient.OriginationDateTime</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;note</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;time</td><td>Allergy.AllergyComment.CommentEnteredDateTime</td> </tr>
-</table>
 <a name="vista"> </a><h3>Mappings for Veterans Health Information Systems Technology and Architecture (VistA) ()</h3><table class="grid">
  <tr><td colspan="3"><b>AllergyIntolerance</b></td></tr>
  <tr><td>AllergyIntolerance</td><td></td><td></td> </tr>
@@ -368,6 +351,23 @@ else -&gt; unconfirmed on PATIENT ALLERGIES - VERIFICATION DATE/TIME (#120.8-20)
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;severity</td><td>557: terminologyMaps using VF_allergySeverity on ADVERSE REACTION REPORTING - SEVERITY (#120.85-14.5)</td><td><p>This Data is not in CDW
 Assess for CHAPI via VPR</p>
 </td> </tr>
+</table>
+<a name="cdw"> </a><h3>Mappings for Clinical Data Warehouse (CDW) ()</h3><table class="grid">
+ <tr><td colspan="3"><b>AllergyIntolerance</b></td></tr>
+ <tr><td>AllergyIntolerance</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;clinicalStatus</td><td>Allergy.Allergy.EnteredInErrorFlag</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;verificationStatus</td><td>Allergy.Allergy.VerifiedFlag, Allergy.Allergy.VerificationDateTime, Allergy.Allergy.EnteredInErrorFlag</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;type</td><td>Allergy.Allergy.Mechanism</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;category</td><td>Allergy.Allergy.AllergyType</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;code</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>Allergy.Allergy.AllergicReactant</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;recordedDate</td><td>Allergy.AllergicReaction.OriginationDateTime
+Allergy.Allergy.OriginationDateTime
+Allergy.AllergyComment.OriginationDateTime
+Allergy.AllergyDrugClass.OriginationDateTime
+Allergy.AllergyDrugIngredient.OriginationDateTime</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;note</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;time</td><td>Allergy.AllergyComment.CommentEnteredDateTime</td> </tr>
 </table>
 
 
@@ -422,7 +422,7 @@ Assess for CHAPI via VPR</p>
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.3.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Nov 14, 2023 17:25+0000">2023-11-14</span>
+          IG &#169; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.4.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Nov 15, 2023 12:04+0000">2023-11-15</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -26,11 +26,11 @@
 <tr><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3goXBCwdPqAP0wAAAldJREFUOMuNk0tIlFEYhp9z/vE2jHkhxXA0zJCMitrUQlq4lnSltEqCFhFG2MJFhIvIFpkEWaTQqjaWZRkp0g26URZkTpbaaOJkDqk10szoODP//7XIMUe0elcfnPd9zsfLOYplGrpRwZaqTtw3K7PtGem7Q6FoidbGgqHVy/HRb669R+56zx7eRV1L31JGxYbBtjKK93cxeqfyQHbehkZbUkK20goELEuIzEd+dHS+qz/Y8PTSif0FnGkbiwcAjHaU1+QWOptFiyCLp/LnKptpqIuXHx6rbR26kJcBX3yLgBfnd7CxwJmflpP2wUg0HIAoUUpZBmKzELGWcN8nAr6Gpu7tLU/CkwAaoKTWRSQyt89Q8w6J+oVQkKnBoblH7V0PPvUOvDYXfopE/SJmALsxnVm6LbkotrUtNowMeIrVrBcBpaMmdS0j9df7abpSuy7HWehwJdt1lhVwi/J58U5beXGAF6c3UXLycw1wdFklArBn87xdh0ZsZtArghBdAA3+OEDVubG4UEzP6x1FOWneHh2VDAHBAt80IbdXDcesNoCvs3E5AFyNSU5nbrDPZpcUEQQTFZiEVx+51fxMhhyJEAgvlriadIJZZksRuwBYMOPBbO3hePVVqgEJhFeUuFLhIPkRP6BQLIBrmMenujm/3g4zc398awIe90Zb5A1vREALqneMcYgP/xVQWlG+Ncu5vgwwlaUNx+3799rfe96u9K0JSDXcOzOTJg4B6IgmXfsygc7/Bvg9g9E58/cDVmGIBOP/zT8Bz1zqWqpbXIsd0O9hajXfL6u4BaOS6SeWAAAAAElFTkSuQmCC" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr></table></div>
   </text>
   <url value="http://va.gov/fhir/StructureDefinition/AllergyIntolerance"/>
-  <version value="0.3.0"/>
+  <version value="0.4.0"/>
   <name value="AllergyIntolerance"/>
   <title value="AllergyIntolerance"/>
   <status value="draft"/>
-  <date value="2023-11-14T17:25:19+00:00"/>
+  <date value="2023-11-15T12:04:59+00:00"/>
   <publisher value="VA"/>
   <contact>
     <name value="VA"/>
@@ -64,12 +64,12 @@
     <name value="HL7 v2 Mapping"/>
   </mapping>
   <mapping>
-    <identity value="cdw"/>
-    <name value="Clinical Data Warehouse (CDW)"/>
-  </mapping>
-  <mapping>
     <identity value="vista"/>
     <name value="Veterans Health Information Systems Technology and Architecture (VistA)"/>
+  </mapping>
+  <mapping>
+    <identity value="cdw"/>
+    <name value="Clinical Data Warehouse (CDW)"/>
   </mapping>
   <kind value="resource"/>
   <abstract value="false"/>
@@ -842,13 +842,13 @@
         <map value="AllergyIntolerance.status"/>
       </mapping>
       <mapping>
-        <identity value="cdw"/>
-        <map value="Allergy.Allergy.EnteredInErrorFlag"/>
-      </mapping>
-      <mapping>
         <identity value="vista"/>
         <map value="536: terminologyMaps using VF_allergyActive on PATIENT ALLERGIES - ENTERED IN ERROR (#120.8-22)"/>
         <comment value="confirm CHAPI"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Allergy.Allergy.EnteredInErrorFlag"/>
       </mapping>
     </element>
     <element id="AllergyIntolerance.verificationStatus">
@@ -897,18 +897,6 @@
         <map value="AllergyIntolerance.status"/>
       </mapping>
       <mapping>
-        <identity value="cdw"/>
-        <map value="Allergy.Allergy.VerifiedFlag"/>
-      </mapping>
-      <mapping>
-        <identity value="cdw"/>
-        <map value="Allergy.Allergy.VerificationDateTime"/>
-      </mapping>
-      <mapping>
-        <identity value="cdw"/>
-        <map value="Allergy.Allergy.EnteredInErrorFlag"/>
-      </mapping>
-      <mapping>
         <identity value="vista"/>
         <map value="535: terminologyMaps using VF_allergyVerificationStatus on PATIENT ALLERGIES - VERIFIED (#120.8-19)"/>
       </mapping>
@@ -919,6 +907,18 @@
       <mapping>
         <identity value="vista"/>
         <map value="537: terminologyMaps using VF_allergyEnteredInError on PATIENT ALLERGIES - ENTERED IN ERROR (#120.8-22)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Allergy.Allergy.VerifiedFlag"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Allergy.Allergy.VerificationDateTime"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Allergy.Allergy.EnteredInErrorFlag"/>
       </mapping>
     </element>
     <element id="AllergyIntolerance.type">
@@ -965,12 +965,12 @@
         <map value="code"/>
       </mapping>
       <mapping>
-        <identity value="cdw"/>
-        <map value="Allergy.Allergy.Mechanism"/>
-      </mapping>
-      <mapping>
         <identity value="vista"/>
         <map value="531: terminologyMaps using VF_allergyMechanism on PATIENT ALLERGIES - MECHANISM (#120.8-17)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Allergy.Allergy.Mechanism"/>
       </mapping>
     </element>
     <element id="AllergyIntolerance.category">
@@ -1019,12 +1019,12 @@
         <map value="value &lt; IntoleranceValue (Agent)"/>
       </mapping>
       <mapping>
-        <identity value="cdw"/>
-        <map value="Allergy.Allergy.AllergyType"/>
-      </mapping>
-      <mapping>
         <identity value="vista"/>
         <map value="556: terminologyMaps using VF_allergySubstanceCategory on PATIENT ALLERGIES - ALLERGY TYPE (#120.8-3.1)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Allergy.Allergy.AllergyType"/>
       </mapping>
     </element>
     <element id="AllergyIntolerance.criticality">
@@ -1287,13 +1287,13 @@
         <map value="fhir:CodeableConcept.text rdfs:subPropertyOf dt:CD.originalText"/>
       </mapping>
       <mapping>
-        <identity value="cdw"/>
-        <map value="Allergy.Allergy.AllergicReactant"/>
-      </mapping>
-      <mapping>
         <identity value="vista"/>
         <map value="245: source value from PATIENT ALLERGIES - REACTANT (#120.8-.02)"/>
         <comment value="text only"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Allergy.Allergy.AllergicReactant"/>
       </mapping>
     </element>
     <element id="AllergyIntolerance.patient">
@@ -1465,13 +1465,13 @@
         <map value=".participation[typeCode=AUT].time"/>
       </mapping>
       <mapping>
-        <identity value="cdw"/>
-        <map value="Allergy.AllergicReaction.OriginationDateTime&#xA;Allergy.Allergy.OriginationDateTime&#xA;Allergy.AllergyComment.OriginationDateTime&#xA;Allergy.AllergyDrugClass.OriginationDateTime&#xA;Allergy.AllergyDrugIngredient.OriginationDateTime"/>
-      </mapping>
-      <mapping>
         <identity value="vista"/>
         <map value="1224: source value from PATIENT ALLERGIES - ORIGINATION DATE/TIME (#120.8-4)"/>
         <comment value="Lighthouse exposes this source object as RecordedDate FHIR field"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Allergy.AllergicReaction.OriginationDateTime&#xA;Allergy.Allergy.OriginationDateTime&#xA;Allergy.AllergyComment.OriginationDateTime&#xA;Allergy.AllergyDrugClass.OriginationDateTime&#xA;Allergy.AllergyDrugIngredient.OriginationDateTime"/>
       </mapping>
     </element>
     <element id="AllergyIntolerance.recorder">
@@ -1814,12 +1814,12 @@
         <map value="Act.effectiveTime"/>
       </mapping>
       <mapping>
-        <identity value="cdw"/>
-        <map value="Allergy.AllergyComment.CommentEnteredDateTime"/>
-      </mapping>
-      <mapping>
         <identity value="vista"/>
         <map value="1502: source value from PATIENT ALLERGIES - COMMENTS &gt; COMMENTS - DATE/TIME COMMENT ENTERED (#120.8-26 &gt; 120.826-.01)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Allergy.AllergyComment.CommentEnteredDateTime"/>
       </mapping>
     </element>
     <element id="AllergyIntolerance.note.text">
@@ -2276,13 +2276,13 @@
         <valueSet value="http://va.gov/fhir/ValueSet/VSVFallergyActive"/>
       </binding>
       <mapping>
-        <identity value="cdw"/>
-        <map value="Allergy.Allergy.EnteredInErrorFlag"/>
-      </mapping>
-      <mapping>
         <identity value="vista"/>
         <map value="536: terminologyMaps using VF_allergyActive on PATIENT ALLERGIES - ENTERED IN ERROR (#120.8-22)"/>
         <comment value="confirm CHAPI"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Allergy.Allergy.EnteredInErrorFlag"/>
       </mapping>
     </element>
     <element id="AllergyIntolerance.verificationStatus">
@@ -2291,18 +2291,6 @@
         <strength value="required"/>
         <valueSet value="http://va.gov/fhir/ValueSet/VSVFallergyEnteredInError"/>
       </binding>
-      <mapping>
-        <identity value="cdw"/>
-        <map value="Allergy.Allergy.VerifiedFlag"/>
-      </mapping>
-      <mapping>
-        <identity value="cdw"/>
-        <map value="Allergy.Allergy.VerificationDateTime"/>
-      </mapping>
-      <mapping>
-        <identity value="cdw"/>
-        <map value="Allergy.Allergy.EnteredInErrorFlag"/>
-      </mapping>
       <mapping>
         <identity value="vista"/>
         <map value="535: terminologyMaps using VF_allergyVerificationStatus on PATIENT ALLERGIES - VERIFIED (#120.8-19)"/>
@@ -2315,6 +2303,18 @@
         <identity value="vista"/>
         <map value="537: terminologyMaps using VF_allergyEnteredInError on PATIENT ALLERGIES - ENTERED IN ERROR (#120.8-22)"/>
       </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Allergy.Allergy.VerifiedFlag"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Allergy.Allergy.VerificationDateTime"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Allergy.Allergy.EnteredInErrorFlag"/>
+      </mapping>
     </element>
     <element id="AllergyIntolerance.type">
       <path value="AllergyIntolerance.type"/>
@@ -2323,12 +2323,12 @@
         <valueSet value="http://va.gov/fhir/ValueSet/VSVFallergyMechanism"/>
       </binding>
       <mapping>
-        <identity value="cdw"/>
-        <map value="Allergy.Allergy.Mechanism"/>
-      </mapping>
-      <mapping>
         <identity value="vista"/>
         <map value="531: terminologyMaps using VF_allergyMechanism on PATIENT ALLERGIES - MECHANISM (#120.8-17)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Allergy.Allergy.Mechanism"/>
       </mapping>
     </element>
     <element id="AllergyIntolerance.category">
@@ -2338,12 +2338,12 @@
         <valueSet value="http://va.gov/fhir/ValueSet/VSVFallergySubstanceCategory"/>
       </binding>
       <mapping>
-        <identity value="cdw"/>
-        <map value="Allergy.Allergy.AllergyType"/>
-      </mapping>
-      <mapping>
         <identity value="vista"/>
         <map value="556: terminologyMaps using VF_allergySubstanceCategory on PATIENT ALLERGIES - ALLERGY TYPE (#120.8-3.1)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Allergy.Allergy.AllergyType"/>
       </mapping>
     </element>
     <element id="AllergyIntolerance.code">
@@ -2360,13 +2360,13 @@
     <element id="AllergyIntolerance.code.text">
       <path value="AllergyIntolerance.code.text"/>
       <mapping>
-        <identity value="cdw"/>
-        <map value="Allergy.Allergy.AllergicReactant"/>
-      </mapping>
-      <mapping>
         <identity value="vista"/>
         <map value="245: source value from PATIENT ALLERGIES - REACTANT (#120.8-.02)"/>
         <comment value="text only"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Allergy.Allergy.AllergicReactant"/>
       </mapping>
     </element>
     <element id="AllergyIntolerance.patient">
@@ -2380,13 +2380,13 @@
     <element id="AllergyIntolerance.recordedDate">
       <path value="AllergyIntolerance.recordedDate"/>
       <mapping>
-        <identity value="cdw"/>
-        <map value="Allergy.AllergicReaction.OriginationDateTime&#xA;Allergy.Allergy.OriginationDateTime&#xA;Allergy.AllergyComment.OriginationDateTime&#xA;Allergy.AllergyDrugClass.OriginationDateTime&#xA;Allergy.AllergyDrugIngredient.OriginationDateTime"/>
-      </mapping>
-      <mapping>
         <identity value="vista"/>
         <map value="1224: source value from PATIENT ALLERGIES - ORIGINATION DATE/TIME (#120.8-4)"/>
         <comment value="Lighthouse exposes this source object as RecordedDate FHIR field"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Allergy.AllergicReaction.OriginationDateTime&#xA;Allergy.Allergy.OriginationDateTime&#xA;Allergy.AllergyComment.OriginationDateTime&#xA;Allergy.AllergyDrugClass.OriginationDateTime&#xA;Allergy.AllergyDrugIngredient.OriginationDateTime"/>
       </mapping>
     </element>
     <element id="AllergyIntolerance.recorder">
@@ -2423,12 +2423,12 @@
     <element id="AllergyIntolerance.note.time">
       <path value="AllergyIntolerance.note.time"/>
       <mapping>
-        <identity value="cdw"/>
-        <map value="Allergy.AllergyComment.CommentEnteredDateTime"/>
-      </mapping>
-      <mapping>
         <identity value="vista"/>
         <map value="1502: source value from PATIENT ALLERGIES - COMMENTS &gt; COMMENTS - DATE/TIME COMMENT ENTERED (#120.8-26 &gt; 120.826-.01)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Allergy.AllergyComment.CommentEnteredDateTime"/>
       </mapping>
     </element>
     <element id="AllergyIntolerance.note.text">

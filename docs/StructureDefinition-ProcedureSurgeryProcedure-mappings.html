@@ -7,7 +7,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Procedure: Surgery {Procedure} - Mappings - US Veterans Administration FHIR Map Set Implementation Guide v0.3.0</title>
+    <title>Procedure: Surgery {Procedure} - Mappings - US Veterans Administration FHIR Map Set Implementation Guide v0.4.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -62,7 +62,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">US Veterans Administration FHIR Map Set Implementation Guide</span>
             <br/>
-            <span style="display:inline-block;">0.3.0 - ci-build
+            <span style="display:inline-block;">0.4.0 - ci-build
 
 
 
@@ -136,7 +136,7 @@
           <div class="inner-wrapper">
 
 <div style="counter-reset: section 5" class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">US Veterans Administration FHIR Map Set Implementation Guide - Local Development build (v0.3.0). See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">US Veterans Administration FHIR Map Set Implementation Guide - Local Development build (v0.4.0). See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   
 
 
@@ -209,7 +209,7 @@
         
           Draft
           
-            as of 2023-11-14
+            as of 2023-11-15
           
         
       </td>
@@ -391,6 +391,33 @@
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>C*E.9. But note many systems use C*E.2 for this</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;note</td><td>NTE</td> </tr>
 </table>
+<a name="vista"> </a><h3>Mappings for Veterans Health Information Systems Technology and Architecture (VistA) ()</h3><table class="grid">
+ <tr><td colspan="3"><b>ProcedureSurgeryProcedure</b></td></tr>
+ <tr><td>Procedure</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>1520: transform using see VistaRulesForProcStat sheet</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;category</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>1313: fixed value = 387713003</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;code</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>1344: source value from SURGERY - PLANNED PRIN PROCEDURE CODE &gt; CPT (#130-27 &gt; 81)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>1343: source value from SURGERY - PRINCIPAL PROCEDURE (#130-26)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>1287: reference from SURGERY - PATIENT (#130-.01)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;encounter</td><td>1285: reference from SURGERY - VISIT (#130-.015)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;performed[x]</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;performed[x] (performedDateTime)</td><td>1286: source value from SURGERY - DATE OF OPERATION (#130-.09)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;performed[x] (performedPeriod)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;start</td><td>1290: source value from SURGERY - TIME PROCEDURE BEGAN (#130-121) case 130-118 NON-OR PROCEDURE == ‘Y’, 1292: source value from SURGERY - TIME OPERATION BEGAN (#130-.22) case 130-118 NON-OR PROCEDURE != ‘Y’</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end</td><td>1291: source value from SURGERY - TIME PROCEDURE ENDED (#130-122) case 130-118 NON-OR PROCEDURE == ‘Y’, 1293: source value from SURGERY - TIME OPERATION ENDS (#130-.23) case 130-118 NON-OR PROCEDURE != ‘Y’</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;performer</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;actor</td><td>1298: reference from SURGERY - PERFUSIONIST (#130-.167), 1330: reference from SURGERY - PRIMARY SURGEON (#130-.14), 1331: reference from SURGERY - FIRST ASST (#130-.15), 1332: reference from SURGERY - SECOND ASST (#130-.16), 1333: reference from SURGERY - ATTENDING SURGEON (#130-.164), 1334: reference from SURGERY - ASST PERFUSIONIST (#130-.168), 1335: reference from SURGERY - SKIN PREPPED BY (1) (#130-.18), 1336: reference from SURGERY - PRINC ANESTHETIST (#130-.31), 1337: reference from SURGERY - RELIEF ANESTHETIST (#130-.32), 1338: reference from SURGERY - ASST ANESTHETIST (#130-.33), 1339: reference from SURGERY - ANESTHESIOLOGIST SUPVR (#130-.34), 1340: reference from SURGERY - VERIFIER (#130-.522), 1341: reference from SURGERY - PROVIDER (#130-123), 1342: reference from SURGERY - FOLEY CATHETER INSERTED BY (#130-.57)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;location</td><td>1294: reference from SURGERY - NON-OR LOCATION (#130-119) case 130-118 NON-OR PROCEDURE != ‘Y’, 1295: reference from SURGERY - OP ROOM PROCEDURE PERFORMED (#130-.02) case 130-118 NON-OR PROCEDURE == ‘Y’</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;reasonCode</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>1289: source value from SURGERY - PRINCIPAL PRE-OP DIAGNOSIS (#130-32)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;complication</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>1296: fixed value = 88797001 if SURGERY - STOMA COMPLICATIONS (#130-688) case == ‘Y’, 1297: fixed value = 22298006 if SURGERY - MYOCARDIAL INFARCTION (#130-258) case == ‘Y’</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;note</td><td>1288: source value from SURGERY - GENERAL COMMENTS (#130-.28)</td> </tr>
+</table>
 <a name="cdw"> </a><h3>Mappings for Clinical Data Warehouse (CDW) ()</h3><table class="grid">
  <tr><td colspan="3"><b>ProcedureSurgeryProcedure</b></td></tr>
  <tr><td>Procedure</td><td></td> </tr>
@@ -471,33 +498,6 @@ Surg.SurgeryPRE.EndOperationDateTime</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;reasonCode</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>Surg.SurgeryPRE.PrincipalPreOpDiagnosisText</td> </tr>
 </table>
-<a name="vista"> </a><h3>Mappings for Veterans Health Information Systems Technology and Architecture (VistA) ()</h3><table class="grid">
- <tr><td colspan="3"><b>ProcedureSurgeryProcedure</b></td></tr>
- <tr><td>Procedure</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>1520: transform using see VistaRulesForProcStat sheet</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;category</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>1313: fixed value = 387713003</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;code</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>1344: source value from SURGERY - PLANNED PRIN PROCEDURE CODE &gt; CPT (#130-27 &gt; 81)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>1343: source value from SURGERY - PRINCIPAL PROCEDURE (#130-26)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>1287: reference from SURGERY - PATIENT (#130-.01)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;encounter</td><td>1285: reference from SURGERY - VISIT (#130-.015)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;performed[x]</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;performed[x] (performedDateTime)</td><td>1286: source value from SURGERY - DATE OF OPERATION (#130-.09)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;performed[x] (performedPeriod)</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;start</td><td>1290: source value from SURGERY - TIME PROCEDURE BEGAN (#130-121) case 130-118 NON-OR PROCEDURE == ‘Y’, 1292: source value from SURGERY - TIME OPERATION BEGAN (#130-.22) case 130-118 NON-OR PROCEDURE != ‘Y’</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end</td><td>1291: source value from SURGERY - TIME PROCEDURE ENDED (#130-122) case 130-118 NON-OR PROCEDURE == ‘Y’, 1293: source value from SURGERY - TIME OPERATION ENDS (#130-.23) case 130-118 NON-OR PROCEDURE != ‘Y’</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;performer</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;actor</td><td>1298: reference from SURGERY - PERFUSIONIST (#130-.167), 1330: reference from SURGERY - PRIMARY SURGEON (#130-.14), 1331: reference from SURGERY - FIRST ASST (#130-.15), 1332: reference from SURGERY - SECOND ASST (#130-.16), 1333: reference from SURGERY - ATTENDING SURGEON (#130-.164), 1334: reference from SURGERY - ASST PERFUSIONIST (#130-.168), 1335: reference from SURGERY - SKIN PREPPED BY (1) (#130-.18), 1336: reference from SURGERY - PRINC ANESTHETIST (#130-.31), 1337: reference from SURGERY - RELIEF ANESTHETIST (#130-.32), 1338: reference from SURGERY - ASST ANESTHETIST (#130-.33), 1339: reference from SURGERY - ANESTHESIOLOGIST SUPVR (#130-.34), 1340: reference from SURGERY - VERIFIER (#130-.522), 1341: reference from SURGERY - PROVIDER (#130-123), 1342: reference from SURGERY - FOLEY CATHETER INSERTED BY (#130-.57)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;location</td><td>1294: reference from SURGERY - NON-OR LOCATION (#130-119) case 130-118 NON-OR PROCEDURE != ‘Y’, 1295: reference from SURGERY - OP ROOM PROCEDURE PERFORMED (#130-.02) case 130-118 NON-OR PROCEDURE == ‘Y’</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;reasonCode</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>1289: source value from SURGERY - PRINCIPAL PRE-OP DIAGNOSIS (#130-32)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;complication</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>1296: fixed value = 88797001 if SURGERY - STOMA COMPLICATIONS (#130-688) case == ‘Y’, 1297: fixed value = 22298006 if SURGERY - MYOCARDIAL INFARCTION (#130-258) case == ‘Y’</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;note</td><td>1288: source value from SURGERY - GENERAL COMMENTS (#130-.28)</td> </tr>
-</table>
 
 
   <!-- insert notes if present -->
@@ -551,7 +551,7 @@ Surg.SurgeryPRE.EndOperationDateTime</td> </tr>
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.3.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Nov 14, 2023 17:25+0000">2023-11-14</span>
+          IG &#169; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.4.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Nov 15, 2023 12:04+0000">2023-11-15</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

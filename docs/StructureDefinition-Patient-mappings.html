@@ -7,7 +7,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Patient - Mappings - US Veterans Administration FHIR Map Set Implementation Guide v0.3.0</title>
+    <title>Patient - Mappings - US Veterans Administration FHIR Map Set Implementation Guide v0.4.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -62,7 +62,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">US Veterans Administration FHIR Map Set Implementation Guide</span>
             <br/>
-            <span style="display:inline-block;">0.3.0 - ci-build
+            <span style="display:inline-block;">0.4.0 - ci-build
 
 
 
@@ -136,7 +136,7 @@
           <div class="inner-wrapper">
 
 <div style="counter-reset: section 5" class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">US Veterans Administration FHIR Map Set Implementation Guide - Local Development build (v0.3.0). See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">US Veterans Administration FHIR Map Set Implementation Guide - Local Development build (v0.4.0). See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   
 
 
@@ -209,7 +209,7 @@
         
           Draft
           
-            as of 2023-11-14
+            as of 2023-11-15
           
         
       </td>
@@ -459,38 +459,6 @@
  <tr><td>Patient</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;birthDate</td><td>21112-8</td> </tr>
 </table>
-<a name="cdw"> </a><h3>Mappings for Clinical Data Warehouse (CDW) ()</h3><table class="grid">
- <tr><td colspan="3"><b>Patient</b></td></tr>
- <tr><td>Patient</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;extension</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;extension (race)</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;extension (ethnicity)</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;extension (birthsex)</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td>Patient.Patient.Gender
-SPatient.SPatient.Gender</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>Patient.Patient.PatientICN
-Patient.PatientICN.PatientICN
-SPatient.SPatient.PatientICN
-SPatient.SPatientGISAddress.PatientICN</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;name</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>SPatient.SPatient.PatientFirstName
-SPatient.SPatient.PatientLastName
-SPatient.SPatient.PatientName
-SPatient.SPatientAlias.PatientName</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;gender</td><td>Patient.Patient.SelfIdentifiedGender
-SPatient.SPatient.SelfIdentifiedGender</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;birthDate</td><td>SPatient.PlaceOfBirth.BirthDateTime
-SPatient.SPatient.BirthDateTime</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;deceased[x] (deceasedDateTime)</td><td>Patient.Patient.DeathDateTime
-SPatient.SPatient.DeathDateTime</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;address</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;line</td><td>SPatient.SPatientGISAddress.StreetAddress1, SPatient.SPatientGISAddress.StreetAddress2</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;city</td><td>SPatient.SPatientGISAddress.City</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;state</td><td>SPatient.SPatientGISAddress.StateIEN</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;postalCode</td><td>SPatient.SPatientGISAddress.Zip4</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;maritalStatus</td><td>Outpat.Visit.PatientMaritalStatus
-Outpat.Workload.PatientMaritalStatus</td> </tr>
-</table>
 <a name="vista"> </a><h3>Mappings for Veterans Health Information Systems Technology and Architecture (VistA) ()</h3><table class="grid">
  <tr><td colspan="3"><b>Patient</b></td></tr>
  <tr><td>Patient</td><td></td><td></td> </tr>
@@ -541,6 +509,38 @@ note: values fit in gender map, so no second map provided</p>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;language</td><td>295: source value from PATIENT - LANGUAGE DATE/TIME &gt; LANGUAGE DATE/TIME - PREFERRED LANGUAGE (#2-7 &gt; 2.07-.02)</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;managingOrganization</td><td></td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display</td><td>296: fixed value = Veterans Health Administration</td><td></td> </tr>
+</table>
+<a name="cdw"> </a><h3>Mappings for Clinical Data Warehouse (CDW) ()</h3><table class="grid">
+ <tr><td colspan="3"><b>Patient</b></td></tr>
+ <tr><td>Patient</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;extension</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;extension (race)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;extension (ethnicity)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;extension (birthsex)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td>Patient.Patient.Gender
+SPatient.SPatient.Gender</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>Patient.Patient.PatientICN
+Patient.PatientICN.PatientICN
+SPatient.SPatient.PatientICN
+SPatient.SPatientGISAddress.PatientICN</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;name</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>SPatient.SPatient.PatientFirstName
+SPatient.SPatient.PatientLastName
+SPatient.SPatient.PatientName
+SPatient.SPatientAlias.PatientName</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;gender</td><td>Patient.Patient.SelfIdentifiedGender
+SPatient.SPatient.SelfIdentifiedGender</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;birthDate</td><td>SPatient.PlaceOfBirth.BirthDateTime
+SPatient.SPatient.BirthDateTime</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;deceased[x] (deceasedDateTime)</td><td>Patient.Patient.DeathDateTime
+SPatient.SPatient.DeathDateTime</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;address</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;line</td><td>SPatient.SPatientGISAddress.StreetAddress1, SPatient.SPatientGISAddress.StreetAddress2</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;city</td><td>SPatient.SPatientGISAddress.City</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;state</td><td>SPatient.SPatientGISAddress.StateIEN</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;postalCode</td><td>SPatient.SPatientGISAddress.Zip4</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;maritalStatus</td><td>Outpat.Visit.PatientMaritalStatus
+Outpat.Workload.PatientMaritalStatus</td> </tr>
 </table>
 
 
@@ -595,7 +595,7 @@ note: values fit in gender map, so no second map provided</p>
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.3.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Nov 14, 2023 17:25+0000">2023-11-14</span>
+          IG &#169; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.4.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Nov 15, 2023 12:04+0000">2023-11-15</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

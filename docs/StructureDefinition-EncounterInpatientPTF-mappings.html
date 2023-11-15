@@ -7,7 +7,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Encounter: Inpatient (PTF) - Mappings - US Veterans Administration FHIR Map Set Implementation Guide v0.3.0</title>
+    <title>Encounter: Inpatient (PTF) - Mappings - US Veterans Administration FHIR Map Set Implementation Guide v0.4.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -62,7 +62,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">US Veterans Administration FHIR Map Set Implementation Guide</span>
             <br/>
-            <span style="display:inline-block;">0.3.0 - ci-build
+            <span style="display:inline-block;">0.4.0 - ci-build
 
 
 
@@ -136,7 +136,7 @@
           <div class="inner-wrapper">
 
 <div style="counter-reset: section 5" class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">US Veterans Administration FHIR Map Set Implementation Guide - Local Development build (v0.3.0). See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">US Veterans Administration FHIR Map Set Implementation Guide - Local Development build (v0.4.0). See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   
 
 
@@ -209,7 +209,7 @@
         
           Draft
           
-            as of 2023-11-14
+            as of 2023-11-15
           
         
       </td>
@@ -426,6 +426,45 @@
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;location</td><td>PV1-3 / PV1-6 / PV1-11 / PV1-42 / PV1-43</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;serviceProvider</td><td>PL.6  &amp; PL.1</td> </tr>
 </table>
+<a name="vista"> </a><h3>Mappings for Veterans Health Information Systems Technology and Architecture (VistA) ()</h3><table class="grid">
+ <tr><td colspan="3"><b>EncounterInpatientPTF</b></td></tr>
+ <tr><td>Encounter</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>427: source value from PTF - NUMBER (#45-.001), 428: source value from PTF - INTERNAL ADMISSION # (#45-2.1)</td><td><p>MvdZ QA
+removed use=IFN typo and split of class to new mapset row</p>
+, </td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>433: transform using planned on PTF - ADMISSION DATE (#45-2) case null or &gt; now, 434: transform using in-progress on PTF - ADMISSION DATE (#45-2) case not null, &lt; now, field 70 null, 435: fixed value = finished if PTF - DISCHARGE DATE (#45-70) case not null</td><td>, <p>tweaked case logic 9/21</p>
+, </td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;class</td><td>1601: fixed value = http://terminology.hl7.org/CodeSystem/v3-ActCode|IMP</td><td><p>MvdZ QA</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>441: source value from PTF - PATIENT (#45-.01)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;participant</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;individual</td><td>442: reference from PTF - PROVIDER (#45-79.1)</td><td><p>MvdZ QA</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;period</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;start</td><td>445: source value from PTF - ADMISSION DATE (#45-2)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end</td><td>446: source value from PTF - DISCHARGE DATE (#45-70)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;reasonCode</td><td>448: source value from PTF - PRINCIPAL DIAGNOSIS (#45-79), 449: source value from PTF - SECONDARY DIAGNOSIS [#] (#45-79.16), 450: source value from PTF - PROCEDURE [#] (#45-45.01)</td><td>, <p>79.16 and following</p>
+, <p>45.01 and following</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;hospitalization</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;origin</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display</td><td>454: source value from PTF - TRANSFERRING FACILITY (#45-21.1)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;admitSource</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>955: terminologyMaps using VF_SourceOfAdmission on PTF - SOURCE OF ADMISSION &gt; PRF CODE (#45-20 &gt; 45.1-.01)</td><td><p>preferred binding
+MvdZ QA</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>453: source value from PTF - SOURCE OF ADMISSION &gt; PRF CODE (#45-20 &gt; 45.1-.01)</td><td><p>MvdZ QA</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;destination</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display</td><td>455: source value from PTF - RECEIVING FACILITY (#45-76.1)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dischargeDisposition</td><td>456: source value from PTF - PLACE OF DISPOSITION (#45-75)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;location</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;location</td><td>460: reference from PTF - WARD AT DISCHARGE (#45-2.2), 461: reference from PTF - FACILITY (#45-3)</td><td><p>added slicing</p>
+, <p>added slicing</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;serviceProvider</td><td>1600: reference from PTF - FACILITY (#45-3)</td><td></td> </tr>
+</table>
 <a name="cdw"> </a><h3>Mappings for Clinical Data Warehouse (CDW) ()</h3><table class="grid">
  <tr><td colspan="3"><b>EncounterInpatientPTF</b></td></tr>
  <tr><td>Encounter</td><td></td> </tr>
@@ -540,45 +579,6 @@ Inpat.InpatientFeeBasis.PlaceOfDispositionIEN</td> </tr>
 Inpat.Inpatient.DischargeFromFacility
 Inpat.InpatientFeeBasis.DischargeFacility</td> </tr>
 </table>
-<a name="vista"> </a><h3>Mappings for Veterans Health Information Systems Technology and Architecture (VistA) ()</h3><table class="grid">
- <tr><td colspan="3"><b>EncounterInpatientPTF</b></td></tr>
- <tr><td>Encounter</td><td></td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td></td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>427: source value from PTF - NUMBER (#45-.001), 428: source value from PTF - INTERNAL ADMISSION # (#45-2.1)</td><td><p>MvdZ QA
-removed use=IFN typo and split of class to new mapset row</p>
-, </td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>433: transform using planned on PTF - ADMISSION DATE (#45-2) case null or &gt; now, 434: transform using in-progress on PTF - ADMISSION DATE (#45-2) case not null, &lt; now, field 70 null, 435: fixed value = finished if PTF - DISCHARGE DATE (#45-70) case not null</td><td>, <p>tweaked case logic 9/21</p>
-, </td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;class</td><td>1601: fixed value = http://terminology.hl7.org/CodeSystem/v3-ActCode|IMP</td><td><p>MvdZ QA</p>
-</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>441: source value from PTF - PATIENT (#45-.01)</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;participant</td><td></td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;individual</td><td>442: reference from PTF - PROVIDER (#45-79.1)</td><td><p>MvdZ QA</p>
-</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;period</td><td></td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;start</td><td>445: source value from PTF - ADMISSION DATE (#45-2)</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end</td><td>446: source value from PTF - DISCHARGE DATE (#45-70)</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;reasonCode</td><td>448: source value from PTF - PRINCIPAL DIAGNOSIS (#45-79), 449: source value from PTF - SECONDARY DIAGNOSIS [#] (#45-79.16), 450: source value from PTF - PROCEDURE [#] (#45-45.01)</td><td>, <p>79.16 and following</p>
-, <p>45.01 and following</p>
-</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;hospitalization</td><td></td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;origin</td><td></td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display</td><td>454: source value from PTF - TRANSFERRING FACILITY (#45-21.1)</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;admitSource</td><td></td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>955: terminologyMaps using VF_SourceOfAdmission on PTF - SOURCE OF ADMISSION &gt; PRF CODE (#45-20 &gt; 45.1-.01)</td><td><p>preferred binding
-MvdZ QA</p>
-</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>453: source value from PTF - SOURCE OF ADMISSION &gt; PRF CODE (#45-20 &gt; 45.1-.01)</td><td><p>MvdZ QA</p>
-</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;destination</td><td></td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display</td><td>455: source value from PTF - RECEIVING FACILITY (#45-76.1)</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dischargeDisposition</td><td>456: source value from PTF - PLACE OF DISPOSITION (#45-75)</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;location</td><td></td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;location</td><td>460: reference from PTF - WARD AT DISCHARGE (#45-2.2), 461: reference from PTF - FACILITY (#45-3)</td><td><p>added slicing</p>
-, <p>added slicing</p>
-</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;serviceProvider</td><td>1600: reference from PTF - FACILITY (#45-3)</td><td></td> </tr>
-</table>
 
 
   <!-- insert notes if present -->
@@ -632,7 +632,7 @@ MvdZ QA</p>
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.3.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Nov 14, 2023 17:25+0000">2023-11-14</span>
+          IG &#169; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.4.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Nov 15, 2023 12:04+0000">2023-11-15</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

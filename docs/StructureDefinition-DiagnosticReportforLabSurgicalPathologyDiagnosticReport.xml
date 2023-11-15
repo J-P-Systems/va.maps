@@ -19,11 +19,11 @@
 <tr><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3goXBCwdPqAP0wAAAldJREFUOMuNk0tIlFEYhp9z/vE2jHkhxXA0zJCMitrUQlq4lnSltEqCFhFG2MJFhIvIFpkEWaTQqjaWZRkp0g26URZkTpbaaOJkDqk10szoODP//7XIMUe0elcfnPd9zsfLOYplGrpRwZaqTtw3K7PtGem7Q6FoidbGgqHVy/HRb669R+56zx7eRV1L31JGxYbBtjKK93cxeqfyQHbehkZbUkK20goELEuIzEd+dHS+qz/Y8PTSif0FnGkbiwcAjHaU1+QWOptFiyCLp/LnKptpqIuXHx6rbR26kJcBX3yLgBfnd7CxwJmflpP2wUg0HIAoUUpZBmKzELGWcN8nAr6Gpu7tLU/CkwAaoKTWRSQyt89Q8w6J+oVQkKnBoblH7V0PPvUOvDYXfopE/SJmALsxnVm6LbkotrUtNowMeIrVrBcBpaMmdS0j9df7abpSuy7HWehwJdt1lhVwi/J58U5beXGAF6c3UXLycw1wdFklArBn87xdh0ZsZtArghBdAA3+OEDVubG4UEzP6x1FOWneHh2VDAHBAt80IbdXDcesNoCvs3E5AFyNSU5nbrDPZpcUEQQTFZiEVx+51fxMhhyJEAgvlriadIJZZksRuwBYMOPBbO3hePVVqgEJhFeUuFLhIPkRP6BQLIBrmMenujm/3g4zc398awIe90Zb5A1vREALqneMcYgP/xVQWlG+Ncu5vgwwlaUNx+3799rfe96u9K0JSDXcOzOTJg4B6IgmXfsygc7/Bvg9g9E58/cDVmGIBOP/zT8Bz1zqWqpbXIsd0O9hajXfL6u4BaOS6SeWAAAAAElFTkSuQmCC" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr></table></div>
   </text>
   <url value="http://va.gov/fhir/StructureDefinition/DiagnosticReportforLabSurgicalPathologyDiagnosticReport"/>
-  <version value="0.3.0"/>
+  <version value="0.4.0"/>
   <name value="DiagnosticReportforLabSurgicalPathologyDiagnosticReport"/>
   <title value="Diagnostic Report for Lab: Surgical Pathology {DiagnosticReport}"/>
   <status value="draft"/>
-  <date value="2023-11-14T17:25:19+00:00"/>
+  <date value="2023-11-15T12:04:59+00:00"/>
   <publisher value="VA"/>
   <contact>
     <name value="VA"/>
@@ -62,12 +62,12 @@
     <name value="FiveWs Pattern Mapping"/>
   </mapping>
   <mapping>
-    <identity value="cdw"/>
-    <name value="Clinical Data Warehouse (CDW)"/>
-  </mapping>
-  <mapping>
     <identity value="vista"/>
     <name value="Veterans Health Information Systems Technology and Architecture (VistA)"/>
+  </mapping>
+  <mapping>
+    <identity value="cdw"/>
+    <name value="Clinical Data Warehouse (CDW)"/>
   </mapping>
   <kind value="resource"/>
   <abstract value="false"/>
@@ -898,13 +898,13 @@
         <map value="statusCode  Note: final and amended are distinguished by whether observation is the subject of a ControlAct event of type &quot;revise&quot;"/>
       </mapping>
       <mapping>
-        <identity value="cdw"/>
-        <map value="Pathology.SurgPathOrderedTest.DispositionLabCodeIEN"/>
-      </mapping>
-      <mapping>
         <identity value="vista"/>
         <map value="1417: terminologyMaps using VF_DiagnosticReportLabStatus on SURGICAL PATHOLOGY - ORDERED TEST &gt; ORDERED TEST - DISPOSITION (#63.08-.35 &gt; 63.53-10)"/>
         <comment value="US Core 5 has new constraints: if status is partial, preliminary, final, ammended, corrected or appended effective[x] and issued are required"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Pathology.SurgPathOrderedTest.DispositionLabCodeIEN"/>
       </mapping>
     </element>
     <element id="DiagnosticReport.category">
@@ -1442,12 +1442,12 @@
         <map value="effectiveTime"/>
       </mapping>
       <mapping>
-        <identity value="cdw"/>
-        <map value="Pathology.SurgicalPathology.SpecimenTakenDateTime&#xA;Pathology.SurgPathComment.SpecimenTakenDateTime&#xA;Pathology.SurgPathDelayedComment.SpecimenTakenDateTime&#xA;Pathology.SurgPathDiagnosis.SpecimenTakenDateTime&#xA;Pathology.SurgPathFrozenSection.SpecimenTakenDateTime&#xA;Pathology.SurgPathGrossDescription.SpecimenTakenDateTime&#xA;Pathology.SurgPathMicroscopicExam.SpecimenTakenDateTime&#xA;Pathology.SurgPathOpFindings.SpecimenTakenDateTime&#xA;Pathology.SurgPathOrderedTest.SpecimenTakenDateTime&#xA;Pathology.SurgPathOrganTissueDisease.SpecimenTakenDateTime&#xA;Pathology.SurgPathOrganTissueFunction.SpecimenTakenDateTime&#xA;Pathology.SurgPathOrganTissueProcedure.SpecimenTakenDateTime&#xA;Pathology.SurgPathPostOpDiagnosis.SpecimenTakenDateTime&#xA;Pathology.SurgPathPreOpDiagnosis.SpecimenTakenDateTime&#xA;Pathology.SurgPathSpecimen.SpecimenTakenDateTime&#xA;Pathology.SurgPathSupplement.SpecimenTakenDateTime&#xA;Pathology.SurgPathSupplementDescript.SpecimenTakenDateTime&#xA;Pathology.SurgPathTIUReference.SpecimenTakenDateTime"/>
-      </mapping>
-      <mapping>
         <identity value="vista"/>
         <map value="1425: source value from SURGICAL PATHOLOGY- DATE/TIME SPECIMEN TAKEN (#63.08-.01)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Pathology.SurgicalPathology.SpecimenTakenDateTime&#xA;Pathology.SurgPathComment.SpecimenTakenDateTime&#xA;Pathology.SurgPathDelayedComment.SpecimenTakenDateTime&#xA;Pathology.SurgPathDiagnosis.SpecimenTakenDateTime&#xA;Pathology.SurgPathFrozenSection.SpecimenTakenDateTime&#xA;Pathology.SurgPathGrossDescription.SpecimenTakenDateTime&#xA;Pathology.SurgPathMicroscopicExam.SpecimenTakenDateTime&#xA;Pathology.SurgPathOpFindings.SpecimenTakenDateTime&#xA;Pathology.SurgPathOrderedTest.SpecimenTakenDateTime&#xA;Pathology.SurgPathOrganTissueDisease.SpecimenTakenDateTime&#xA;Pathology.SurgPathOrganTissueFunction.SpecimenTakenDateTime&#xA;Pathology.SurgPathOrganTissueProcedure.SpecimenTakenDateTime&#xA;Pathology.SurgPathPostOpDiagnosis.SpecimenTakenDateTime&#xA;Pathology.SurgPathPreOpDiagnosis.SpecimenTakenDateTime&#xA;Pathology.SurgPathSpecimen.SpecimenTakenDateTime&#xA;Pathology.SurgPathSupplement.SpecimenTakenDateTime&#xA;Pathology.SurgPathSupplementDescript.SpecimenTakenDateTime&#xA;Pathology.SurgPathTIUReference.SpecimenTakenDateTime"/>
       </mapping>
     </element>
     <element id="DiagnosticReport.issued">
@@ -1494,12 +1494,12 @@
         <map value="participation[typeCode=VRF or AUT].time"/>
       </mapping>
       <mapping>
-        <identity value="cdw"/>
-        <map value="Pathology.SurgicalPathology.ReportCompletedDateTime"/>
-      </mapping>
-      <mapping>
         <identity value="vista"/>
         <map value="1430: source value from SURGICAL PATHOLOGY - DATE REPORT COMPLETED (#63.08-.03)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Pathology.SurgicalPathology.ReportCompletedDateTime"/>
       </mapping>
     </element>
     <element id="DiagnosticReport.performer">
@@ -1558,12 +1558,12 @@
         <map value=".participation[typeCode=PRF]"/>
       </mapping>
       <mapping>
-        <identity value="cdw"/>
-        <map value="Pathology.SurgicalPathology.ReleasedByStaffIEN"/>
-      </mapping>
-      <mapping>
         <identity value="vista"/>
         <map value="1435: reference from SURGICAL PATHOLOGY - RELEASED BY (#63.08-.13)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Pathology.SurgicalPathology.ReleasedByStaffIEN"/>
       </mapping>
     </element>
     <element id="DiagnosticReport.resultsInterpreter">
@@ -2073,13 +2073,13 @@
         <valueSet value="http://va.gov/fhir/ValueSet/VSVFDiagnosticReportLabStatus"/>
       </binding>
       <mapping>
-        <identity value="cdw"/>
-        <map value="Pathology.SurgPathOrderedTest.DispositionLabCodeIEN"/>
-      </mapping>
-      <mapping>
         <identity value="vista"/>
         <map value="1417: terminologyMaps using VF_DiagnosticReportLabStatus on SURGICAL PATHOLOGY - ORDERED TEST &gt; ORDERED TEST - DISPOSITION (#63.08-.35 &gt; 63.53-10)"/>
         <comment value="US Core 5 has new constraints: if status is partial, preliminary, final, ammended, corrected or appended effective[x] and issued are required"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Pathology.SurgPathOrderedTest.DispositionLabCodeIEN"/>
       </mapping>
     </element>
     <element id="DiagnosticReport.code.text">
@@ -2113,23 +2113,23 @@
         <code value="dateTime"/>
       </type>
       <mapping>
-        <identity value="cdw"/>
-        <map value="Pathology.SurgicalPathology.SpecimenTakenDateTime&#xA;Pathology.SurgPathComment.SpecimenTakenDateTime&#xA;Pathology.SurgPathDelayedComment.SpecimenTakenDateTime&#xA;Pathology.SurgPathDiagnosis.SpecimenTakenDateTime&#xA;Pathology.SurgPathFrozenSection.SpecimenTakenDateTime&#xA;Pathology.SurgPathGrossDescription.SpecimenTakenDateTime&#xA;Pathology.SurgPathMicroscopicExam.SpecimenTakenDateTime&#xA;Pathology.SurgPathOpFindings.SpecimenTakenDateTime&#xA;Pathology.SurgPathOrderedTest.SpecimenTakenDateTime&#xA;Pathology.SurgPathOrganTissueDisease.SpecimenTakenDateTime&#xA;Pathology.SurgPathOrganTissueFunction.SpecimenTakenDateTime&#xA;Pathology.SurgPathOrganTissueProcedure.SpecimenTakenDateTime&#xA;Pathology.SurgPathPostOpDiagnosis.SpecimenTakenDateTime&#xA;Pathology.SurgPathPreOpDiagnosis.SpecimenTakenDateTime&#xA;Pathology.SurgPathSpecimen.SpecimenTakenDateTime&#xA;Pathology.SurgPathSupplement.SpecimenTakenDateTime&#xA;Pathology.SurgPathSupplementDescript.SpecimenTakenDateTime&#xA;Pathology.SurgPathTIUReference.SpecimenTakenDateTime"/>
-      </mapping>
-      <mapping>
         <identity value="vista"/>
         <map value="1425: source value from SURGICAL PATHOLOGY- DATE/TIME SPECIMEN TAKEN (#63.08-.01)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Pathology.SurgicalPathology.SpecimenTakenDateTime&#xA;Pathology.SurgPathComment.SpecimenTakenDateTime&#xA;Pathology.SurgPathDelayedComment.SpecimenTakenDateTime&#xA;Pathology.SurgPathDiagnosis.SpecimenTakenDateTime&#xA;Pathology.SurgPathFrozenSection.SpecimenTakenDateTime&#xA;Pathology.SurgPathGrossDescription.SpecimenTakenDateTime&#xA;Pathology.SurgPathMicroscopicExam.SpecimenTakenDateTime&#xA;Pathology.SurgPathOpFindings.SpecimenTakenDateTime&#xA;Pathology.SurgPathOrderedTest.SpecimenTakenDateTime&#xA;Pathology.SurgPathOrganTissueDisease.SpecimenTakenDateTime&#xA;Pathology.SurgPathOrganTissueFunction.SpecimenTakenDateTime&#xA;Pathology.SurgPathOrganTissueProcedure.SpecimenTakenDateTime&#xA;Pathology.SurgPathPostOpDiagnosis.SpecimenTakenDateTime&#xA;Pathology.SurgPathPreOpDiagnosis.SpecimenTakenDateTime&#xA;Pathology.SurgPathSpecimen.SpecimenTakenDateTime&#xA;Pathology.SurgPathSupplement.SpecimenTakenDateTime&#xA;Pathology.SurgPathSupplementDescript.SpecimenTakenDateTime&#xA;Pathology.SurgPathTIUReference.SpecimenTakenDateTime"/>
       </mapping>
     </element>
     <element id="DiagnosticReport.issued">
       <path value="DiagnosticReport.issued"/>
       <mapping>
-        <identity value="cdw"/>
-        <map value="Pathology.SurgicalPathology.ReportCompletedDateTime"/>
-      </mapping>
-      <mapping>
         <identity value="vista"/>
         <map value="1430: source value from SURGICAL PATHOLOGY - DATE REPORT COMPLETED (#63.08-.03)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Pathology.SurgicalPathology.ReportCompletedDateTime"/>
       </mapping>
     </element>
     <element id="DiagnosticReport.performer">
@@ -2143,12 +2143,12 @@
         </targetProfile>
       </type>
       <mapping>
-        <identity value="cdw"/>
-        <map value="Pathology.SurgicalPathology.ReleasedByStaffIEN"/>
-      </mapping>
-      <mapping>
         <identity value="vista"/>
         <map value="1435: reference from SURGICAL PATHOLOGY - RELEASED BY (#63.08-.13)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Pathology.SurgicalPathology.ReleasedByStaffIEN"/>
       </mapping>
     </element>
     <element id="DiagnosticReport.media.link">

@@ -7,7 +7,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Practitioner - Mappings - US Veterans Administration FHIR Map Set Implementation Guide v0.3.0</title>
+    <title>Practitioner - Mappings - US Veterans Administration FHIR Map Set Implementation Guide v0.4.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -62,7 +62,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">US Veterans Administration FHIR Map Set Implementation Guide</span>
             <br/>
-            <span style="display:inline-block;">0.3.0 - ci-build
+            <span style="display:inline-block;">0.4.0 - ci-build
 
 
 
@@ -136,7 +136,7 @@
           <div class="inner-wrapper">
 
 <div style="counter-reset: section 5" class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">US Veterans Administration FHIR Map Set Implementation Guide - Local Development build (v0.3.0). See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">US Veterans Administration FHIR Map Set Implementation Guide - Local Development build (v0.4.0). See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   
 
 
@@ -209,7 +209,7 @@
         
           Draft
           
-            as of 2023-11-14
+            as of 2023-11-15
           
         
       </td>
@@ -234,10 +234,16 @@
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;system</td><td>CX.4 / EI-2-4</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>CX.1 / EI.1</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;period</td><td>CX.7 + CX.8</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assigner</td><td>CX.4 / (CX.4,CX.9,CX.10)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier (NPI)</td><td>PRD-7 (or XCN.1)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;use</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td>CX.5</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;system</td><td>CX.4 / EI-2-4</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>CX.1 / EI.1</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;period</td><td>CX.7 + CX.8</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;start</td><td>DR.1</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end</td><td>DR.2</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assigner</td><td>CX.4 / (CX.4,CX.9,CX.10)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;identifier (NPI)</td><td>PRD-7 (or XCN.1)</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;name</td><td>XCN Components</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;use</td><td>XPN.7, but often indicated by which field contains the name</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>implied by XPN.11</td> </tr>
@@ -288,12 +294,20 @@
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;system</td><td>II.root or Role.id.root</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>II.extension or II.root if system indicates OID or GUID (Or Role.id.extension or root)</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;period</td><td>Role.effectiveTime or implied by context</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assigner</td><td>II.assigningAuthorityName but note that this is an improper use by the definition of the field.  Also Role.scoper</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier (NPI)</td><td>./id</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;use</td><td>Role.code or implied by context</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td>Role.code or implied by context</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;system</td><td>II.root or Role.id.root</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>II.extension or II.root if system indicates OID or GUID (Or Role.id.extension or root)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;period</td><td>Role.effectiveTime or implied by context</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;start</td><td>./low</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end</td><td>./high</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assigner</td><td>II.assigningAuthorityName but note that this is an improper use by the definition of the field.  Also Role.scoper</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;identifier (NPI)</td><td>./id</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;active</td><td>./statusCode</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;name</td><td>./name</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
@@ -325,6 +339,11 @@
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;state</td><td>AD.part[parttype = STA]</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;postalCode</td><td>AD.part[parttype = ZIP]</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;country</td><td>AD.part[parttype = CNT]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;url</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x] (valueCode)</td><td>N/A</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;period</td><td>./usablePeriod[type=&quot;IVL&lt;TS&gt;&quot;]</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
@@ -356,6 +375,10 @@
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;period</td><td>./StartDate and ./EndDate</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assigner</td><td>./IdentifierIssuingAuthority</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;identifier (NPI)</td><td>./Identifiers</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;system</td><td>./IdentifierType</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>./Value</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;period</td><td>./StartDate and ./EndDate</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assigner</td><td>./IdentifierIssuingAuthority</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;name</td><td>./PreferredName (GivenNames, FamilyName, TitleCode)</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;use</td><td>./NamePurpose</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;family</td><td>./FamilyName</td> </tr>
@@ -390,45 +413,18 @@
  <tr><td>&nbsp;&nbsp;&nbsp;identifier (NPI)</td><td>FiveWs.identifier</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;active</td><td>FiveWs.status</td> </tr>
 </table>
-<a name="cdw"> </a><h3>Mappings for Clinical Data Warehouse (CDW) ()</h3><table class="grid">
- <tr><td colspan="3"><b>Practitioner</b></td></tr>
- <tr><td>Practitioner</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>SStaff.PrescribingProvider.NPI
-SStaff.SStaff.NPI, SStaff.PrescribingProvider.DEA
-SStaff.SStaff.DEA, SStaff.PrescribingProvider.VANumber
-SStaff.SStaff.VANumber, SStaff.PrescribingProvider.VPID</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;telecom</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>SStaff.PrescribingProvider.HomePhone
-SStaff.SStaff.HomePhone</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;address</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;line</td><td>SStaff.PrescribingProvider.StreetAddress1
-SStaff.SStaff.StreetAddress1, SStaff.PrescribingProvider.StreetAddress2
-SStaff.SStaff.StreetAddress2, SStaff.PrescribingProvider.StreetAddress3
-SStaff.SStaff.StreetAddress3, SStaff.SStaff.TemporaryAddress1, SStaff.SStaff.TemporaryAddress2, SStaff.SStaff.TemporaryAddress3</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;city</td><td>SStaff.PrescribingProvider.City
-SStaff.SStaff.City, SStaff.SStaff.TemporaryCity</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;state</td><td>SStaff.PrescribingProvider.StateIEN
-SStaff.SStaff.StateName, SStaff.SStaff.TemporaryStateName</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;postalCode</td><td>SStaff.PrescribingProvider.ZipCode
-SStaff.SStaff.ZipCode, SStaff.SStaff.TemporaryZipCode</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;country</td><td>SStaff.PrescribingProvider.StateIEN
-SStaff.SStaff.StateName, SStaff.SStaff.TemporaryStateName</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;period</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;start</td><td>SStaff.SStaff.TemporaryAddressStartDate</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end</td><td>SStaff.SStaff.TemporaryAddressEndDate</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;birthDate</td><td>SStaff.SStaff.DateOfBirth
-Staff.Staff.DateofBirth</td> </tr>
-</table>
 <a name="vista"> </a><h3>Mappings for Veterans Health Information Systems Technology and Architecture (VistA) ()</h3><table class="grid">
  <tr><td colspan="3"><b>Practitioner</b></td></tr>
  <tr><td>Practitioner</td><td></td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td></td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>376: source value from NEW PERSON - NPI (#200-41.99), 377: source value from NEW PERSON - DEA# (#200-53.2), 378: source value from NEW PERSON - VA# (#200-53.3), 379: source value from NEW PERSON - VPID (#200-9000), 415: source value from NEW PERSON - IEN (#200-.001)</td><td><p>changed .code from PRN to NPI</p>
-, <p>changed .code from PRN to DEA</p>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>377: source value from NEW PERSON - DEA# (#200-53.2), 378: source value from NEW PERSON - VA# (#200-53.3), 379: source value from NEW PERSON - VPID (#200-9000), 415: source value from NEW PERSON - IEN (#200-.001)</td><td><p>changed .code from PRN to DEA</p>
 , <p>changed .code from PRN to VA_Number. Value set is extensible</p>
 , <p>changed .code from PRN to VPID. Value set is extensible</p>
 , </td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;period</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier (NPI)</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>376: source value from NEW PERSON - NPI (#200-41.99)</td><td><p>changed .code from PRN to NPI</p>
+</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;period</td><td></td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;start</td><td>380: source value from NEW PERSON - EFFECTIVE DATE/TIME (#200-42) case For NPI only</td><td><p>MvdZ QA 6-jul-2023</p>
 </td> </tr>
@@ -462,12 +458,14 @@ MvdZ QA 6-jul-2023</p>
 MvdZ QA 6-jul-2023</p>
 , <p>MvdZ QA 6-jul-2023</p>
 </td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;country</td><td>1530: terminologyMaps using VF_PractitionerCountry on NEW PERSON - STATE (#200-.115) case not NULL, 1531: fixed value without value? if NEW PERSON - STATE (#200-.115) case NULL, 1532: terminologyMaps using VF_PractitionerCountry on NEW PERSON - STATE (#200-.1215) case not NULL, 1533: fixed value without value? if NEW PERSON - STATE (#200-.1215) case NULL</td><td><p>Added country to support Inferno testing (where country is required)
-MvdZ QA 6-jul-2023</p>
-, <p>If country is not known (i.e. &quot;Europe&quot;), use the Data Absent Reason field with &quot;unknown&quot;</p>
-<p>Added country to support Inferno testing (where country is required)
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;country</td><td>1530: terminologyMaps using VF_PractitionerCountry on NEW PERSON - STATE (#200-.115) case not NULL, 1532: terminologyMaps using VF_PractitionerCountry on NEW PERSON - STATE (#200-.1215) case not NULL</td><td><p>Added country to support Inferno testing (where country is required)
 MvdZ QA 6-jul-2023</p>
 , <p>Added country to support Inferno testing (where country is required)
+MvdZ QA 6-jul-2023</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x] (valueCode)</td><td>1531: fixed value = unknown if NEW PERSON - STATE (#200-.115) case NULL, 1533: fixed value = unknown if NEW PERSON - STATE (#200-.1215) case NULL</td><td><p>If country is not known (i.e. &quot;Europe&quot;), use the Data Absent Reason field with &quot;unknown&quot;</p>
+<p>Added country to support Inferno testing (where country is required)
 MvdZ QA 6-jul-2023</p>
 , <p>If country is not known (i.e. &quot;Europe&quot;), use the Data Absent Reason field with &quot;unknown&quot;</p>
 <p>Added country to support Inferno testing (where country is required)
@@ -483,6 +481,41 @@ MvdZ QA 6-jul-2023</p>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td></td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>395: source value from NEW PERSON - DEGREE (#200-10.6)</td><td><p>There is also 12.1 CURRENT DEGREE LEVEL; not in cdw</p>
 </td> </tr>
+</table>
+<a name="cdw"> </a><h3>Mappings for Clinical Data Warehouse (CDW) ()</h3><table class="grid">
+ <tr><td colspan="3"><b>Practitioner</b></td></tr>
+ <tr><td>Practitioner</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>SStaff.PrescribingProvider.DEA
+SStaff.SStaff.DEA, SStaff.PrescribingProvider.VANumber
+SStaff.SStaff.VANumber, SStaff.PrescribingProvider.VPID</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier (NPI)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>SStaff.PrescribingProvider.NPI
+SStaff.SStaff.NPI</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;telecom</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>SStaff.PrescribingProvider.HomePhone
+SStaff.SStaff.HomePhone</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;address</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;line</td><td>SStaff.PrescribingProvider.StreetAddress1
+SStaff.SStaff.StreetAddress1, SStaff.PrescribingProvider.StreetAddress2
+SStaff.SStaff.StreetAddress2, SStaff.PrescribingProvider.StreetAddress3
+SStaff.SStaff.StreetAddress3, SStaff.SStaff.TemporaryAddress1, SStaff.SStaff.TemporaryAddress2, SStaff.SStaff.TemporaryAddress3</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;city</td><td>SStaff.PrescribingProvider.City
+SStaff.SStaff.City, SStaff.SStaff.TemporaryCity</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;state</td><td>SStaff.PrescribingProvider.StateIEN
+SStaff.SStaff.StateName, SStaff.SStaff.TemporaryStateName</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;postalCode</td><td>SStaff.PrescribingProvider.ZipCode
+SStaff.SStaff.ZipCode, SStaff.SStaff.TemporaryZipCode</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;country</td><td>SStaff.PrescribingProvider.StateIEN
+SStaff.SStaff.StateName, SStaff.SStaff.TemporaryStateName</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x] (valueCode)</td><td>SStaff.PrescribingProvider.StateIEN
+SStaff.SStaff.StateName, SStaff.SStaff.TemporaryStateName</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;period</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;start</td><td>SStaff.SStaff.TemporaryAddressStartDate</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end</td><td>SStaff.SStaff.TemporaryAddressEndDate</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;birthDate</td><td>SStaff.SStaff.DateOfBirth
+Staff.Staff.DateofBirth</td> </tr>
 </table>
 
 
@@ -537,7 +570,7 @@ MvdZ QA 6-jul-2023</p>
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.3.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Nov 14, 2023 17:25+0000">2023-11-14</span>
+          IG &#169; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.4.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Nov 15, 2023 12:04+0000">2023-11-15</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

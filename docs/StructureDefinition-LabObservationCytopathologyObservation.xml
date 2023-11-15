@@ -19,11 +19,11 @@
 <tr><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3goXBCwdPqAP0wAAAldJREFUOMuNk0tIlFEYhp9z/vE2jHkhxXA0zJCMitrUQlq4lnSltEqCFhFG2MJFhIvIFpkEWaTQqjaWZRkp0g26URZkTpbaaOJkDqk10szoODP//7XIMUe0elcfnPd9zsfLOYplGrpRwZaqTtw3K7PtGem7Q6FoidbGgqHVy/HRb669R+56zx7eRV1L31JGxYbBtjKK93cxeqfyQHbehkZbUkK20goELEuIzEd+dHS+qz/Y8PTSif0FnGkbiwcAjHaU1+QWOptFiyCLp/LnKptpqIuXHx6rbR26kJcBX3yLgBfnd7CxwJmflpP2wUg0HIAoUUpZBmKzELGWcN8nAr6Gpu7tLU/CkwAaoKTWRSQyt89Q8w6J+oVQkKnBoblH7V0PPvUOvDYXfopE/SJmALsxnVm6LbkotrUtNowMeIrVrBcBpaMmdS0j9df7abpSuy7HWehwJdt1lhVwi/J58U5beXGAF6c3UXLycw1wdFklArBn87xdh0ZsZtArghBdAA3+OEDVubG4UEzP6x1FOWneHh2VDAHBAt80IbdXDcesNoCvs3E5AFyNSU5nbrDPZpcUEQQTFZiEVx+51fxMhhyJEAgvlriadIJZZksRuwBYMOPBbO3hePVVqgEJhFeUuFLhIPkRP6BQLIBrmMenujm/3g4zc398awIe90Zb5A1vREALqneMcYgP/xVQWlG+Ncu5vgwwlaUNx+3799rfe96u9K0JSDXcOzOTJg4B6IgmXfsygc7/Bvg9g9E58/cDVmGIBOP/zT8Bz1zqWqpbXIsd0O9hajXfL6u4BaOS6SeWAAAAAElFTkSuQmCC" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr></table></div>
   </text>
   <url value="http://va.gov/fhir/StructureDefinition/LabObservationCytopathologyObservation"/>
-  <version value="0.3.0"/>
+  <version value="0.4.0"/>
   <name value="LabObservationCytopathologyObservation"/>
   <title value="Lab Observation: Cytopathology {Observation}"/>
   <status value="draft"/>
-  <date value="2023-11-14T17:25:19+00:00"/>
+  <date value="2023-11-15T12:04:59+00:00"/>
   <publisher value="VA"/>
   <contact>
     <name value="VA"/>
@@ -72,10 +72,6 @@
     <name value="SNOMED CT Attribute Binding"/>
   </mapping>
   <mapping>
-    <identity value="cdw"/>
-    <name value="Clinical Data Warehouse (CDW)"/>
-  </mapping>
-  <mapping>
     <identity value="vista"/>
     <name value="Veterans Health Information Systems Technology and Architecture (VistA)"/>
   </mapping>
@@ -86,6 +82,10 @@
   <mapping>
     <identity value="vista"/>
     <name value="Veterans Health Information Systems Technology and Architecture (VistA)"/>
+  </mapping>
+  <mapping>
+    <identity value="cdw"/>
+    <name value="Clinical Data Warehouse (CDW)"/>
   </mapping>
   <kind value="resource"/>
   <abstract value="false"/>
@@ -981,12 +981,12 @@
         <map value="Observation.status"/>
       </mapping>
       <mapping>
-        <identity value="cdw"/>
-        <map value="Pathology.CytoOrderedTest.DispositionLabCodeIEN"/>
-      </mapping>
-      <mapping>
         <identity value="vista"/>
         <map value="1494: terminologyMaps using VF_DiagnosticReportLabStatus on CYTOPATHOLOGY - ORDERED TEST &gt; ORDERED TEST - DISPOSITION (#63.09-.35 &gt; 63.51-10)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Pathology.CytoOrderedTest.DispositionLabCodeIEN"/>
       </mapping>
     </element>
     <element id="Observation.category">
@@ -1329,6 +1329,12 @@
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
+      <constraint>
+        <key value="inv-8"/>
+        <severity value="warning"/>
+        <human value="843: fixed value &quot;laboratory&quot;"/>
+        <source value="http://va.gov/fhir/StructureDefinition/LabObservationObservation"/>
+      </constraint>
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
@@ -1646,13 +1652,13 @@
         <map value="Observation.subject"/>
       </mapping>
       <mapping>
-        <identity value="cdw"/>
-        <map value="Micro.AntibioticSensitivity.LRDFN&#xA;Micro.AntibioticSensitivityComment.LRDFN&#xA;Pathology.Autopsy.LRDFN&#xA;Micro.BacteriologyReports.LRDFN&#xA;Pathology.CytoOrganTissueFunction.StaffIEN&#xA;Micro.MicroAntibioticLevel.LRDFN&#xA;Micro.MicroAudit.LRDFN&#xA;Micro.Microbiology.LRDFN&#xA;Micro.MicroOrderedTest.LRDFN&#xA;Micro.MicroSterilityResults.LRDFN&#xA;Micro.MycobacteriologyReports.LRDFN&#xA;Micro.Mycology.LRDFN&#xA;Micro.MycologyReports.LRDFN&#xA;Micro.Parasitology.LRDFN&#xA;Micro.ParasitologyReports.LRDFN&#xA;Micro.ParasitologyStage.LRDFN&#xA;SStaff.SMicroOrderedTest.LRDFN&#xA;Micro.Virology.LRDFN&#xA;Micro.VirologyReports.LRDFN"/>
-      </mapping>
-      <mapping>
         <identity value="vista"/>
         <map value="844: reference from PATIENT - LABORATORY REFERENCE &gt; LAB DATA - LRDFN (#2-63 &gt; 63-.01)"/>
         <comment value="Pointer from PATIENT (2)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Micro.AntibioticSensitivity.LRDFN&#xA;Micro.AntibioticSensitivityComment.LRDFN&#xA;Pathology.Autopsy.LRDFN&#xA;Micro.BacteriologyReports.LRDFN&#xA;Pathology.CytoOrganTissueFunction.StaffIEN&#xA;Micro.MicroAntibioticLevel.LRDFN&#xA;Micro.MicroAudit.LRDFN&#xA;Micro.Microbiology.LRDFN&#xA;Micro.MicroOrderedTest.LRDFN&#xA;Micro.MicroSterilityResults.LRDFN&#xA;Micro.MycobacteriologyReports.LRDFN&#xA;Micro.Mycology.LRDFN&#xA;Micro.MycologyReports.LRDFN&#xA;Micro.Parasitology.LRDFN&#xA;Micro.ParasitologyReports.LRDFN&#xA;Micro.ParasitologyStage.LRDFN&#xA;SStaff.SMicroOrderedTest.LRDFN&#xA;Micro.Virology.LRDFN&#xA;Micro.VirologyReports.LRDFN"/>
       </mapping>
     </element>
     <element id="Observation.focus">
@@ -1889,12 +1895,12 @@
         <map value="Observation.effective[x]"/>
       </mapping>
       <mapping>
-        <identity value="cdw"/>
-        <map value="Pathology.CytoDelayedReportComment.SpecimenTakenDateTime&#xA;Pathology.CytoDiagnosis.SpecimenTakenDateTime&#xA;Pathology.CytoGrossDescription.SpecimenTakenDateTime&#xA;Pathology.CytoMicroscopicExam.SpecimenTakenDateTime&#xA;Pathology.CytoOpFinding.SpecimenTakenDateTime&#xA;Pathology.CytoOrderedTest.SpecimenTakenDateTime&#xA;Pathology.CytoOrganTissueDisease.SpecimenTakenDateTime&#xA;Pathology.CytoOrganTissueFunction.SpecimenTakenDateTime&#xA;Pathology.CytoOrganTissueProcedure.SpecimenTakenDateTime&#xA;Pathology.Cytopathology.SpecimenTakenDateTime&#xA;Pathology.CytoPostOpDiagnosis.SpecimenTakenDateTime&#xA;Pathology.CytoPreOpDiagnosis.SpecimenTakenDateTime&#xA;Pathology.CytoReportComment.SpecimenTakenDateTime&#xA;Pathology.CytoSpecimen.SpecimenTakenDateTime&#xA;Pathology.CytoStainBlock.SpecimenTakenDateTime&#xA;Pathology.CytoStainCytospin.SpecimenTakenDateTime&#xA;Pathology.CytoStainMembrane.SpecimenTakenDateTime&#xA;Pathology.CytoStainProcedure.SpecimenTakenDateTime&#xA;Pathology.CytoStainSlide.SpecimenTakenDateTime&#xA;Pathology.CytoSupplement.SpecimenTakenDateTime&#xA;Pathology.CytoSupplementDescript.SpecimenTakenDateTime&#xA;Pathology.CytoTIUReference.SpecimenTakenDateTime"/>
-      </mapping>
-      <mapping>
         <identity value="vista"/>
         <map value="1452: source value from CYTOPATHOLOGY - DATE/TIME SPECIMEN TAKEN (#63.09-.01)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Pathology.CytoDelayedReportComment.SpecimenTakenDateTime&#xA;Pathology.CytoDiagnosis.SpecimenTakenDateTime&#xA;Pathology.CytoGrossDescription.SpecimenTakenDateTime&#xA;Pathology.CytoMicroscopicExam.SpecimenTakenDateTime&#xA;Pathology.CytoOpFinding.SpecimenTakenDateTime&#xA;Pathology.CytoOrderedTest.SpecimenTakenDateTime&#xA;Pathology.CytoOrganTissueDisease.SpecimenTakenDateTime&#xA;Pathology.CytoOrganTissueFunction.SpecimenTakenDateTime&#xA;Pathology.CytoOrganTissueProcedure.SpecimenTakenDateTime&#xA;Pathology.Cytopathology.SpecimenTakenDateTime&#xA;Pathology.CytoPostOpDiagnosis.SpecimenTakenDateTime&#xA;Pathology.CytoPreOpDiagnosis.SpecimenTakenDateTime&#xA;Pathology.CytoReportComment.SpecimenTakenDateTime&#xA;Pathology.CytoSpecimen.SpecimenTakenDateTime&#xA;Pathology.CytoStainBlock.SpecimenTakenDateTime&#xA;Pathology.CytoStainCytospin.SpecimenTakenDateTime&#xA;Pathology.CytoStainMembrane.SpecimenTakenDateTime&#xA;Pathology.CytoStainProcedure.SpecimenTakenDateTime&#xA;Pathology.CytoStainSlide.SpecimenTakenDateTime&#xA;Pathology.CytoSupplement.SpecimenTakenDateTime&#xA;Pathology.CytoSupplementDescript.SpecimenTakenDateTime&#xA;Pathology.CytoTIUReference.SpecimenTakenDateTime"/>
       </mapping>
     </element>
     <element id="Observation.issued">
@@ -1935,12 +1941,12 @@
         <map value="participation[typeCode=AUT].time"/>
       </mapping>
       <mapping>
-        <identity value="cdw"/>
-        <map value="Pathology.Cytopathology.ReportCompletedDateTime"/>
-      </mapping>
-      <mapping>
         <identity value="vista"/>
         <map value="1486: source value from CYTOPATHOLOGY - DATE REPORT COMPLETED (#63.09-.03)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Pathology.Cytopathology.ReportCompletedDateTime"/>
       </mapping>
     </element>
     <element id="Observation.performer">
@@ -1986,12 +1992,12 @@
         <map value="participation[typeCode=PRF]"/>
       </mapping>
       <mapping>
-        <identity value="cdw"/>
-        <map value="Pathology.Cytopathology.ReleasingInstitutionIEN"/>
-      </mapping>
-      <mapping>
         <identity value="vista"/>
         <map value="1466: reference from CYTOPATHOLOGY - RELEASING SITE (#63.09-.345)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Pathology.Cytopathology.ReleasingInstitutionIEN"/>
       </mapping>
     </element>
     <element id="Observation.value[x]">
@@ -2331,12 +2337,12 @@
         <map value="subjectOf.observationEvent[code=&quot;annotation&quot;].value"/>
       </mapping>
       <mapping>
-        <identity value="cdw"/>
-        <map value="Pathology.CytoReportComment.CytopathologyComment"/>
-      </mapping>
-      <mapping>
         <identity value="vista"/>
         <map value="1462: source value from CYTOPATHOLOGY - COMMENT &gt; COMMENT - COMMENT (#63.09-.99 &gt; 63.908-.01)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Pathology.CytoReportComment.CytopathologyComment"/>
       </mapping>
     </element>
     <element id="Observation.bodySite">
@@ -3393,12 +3399,12 @@
         <valueSet value="http://va.gov/fhir/ValueSet/VSVFDiagnosticReportLabStatus"/>
       </binding>
       <mapping>
-        <identity value="cdw"/>
-        <map value="Pathology.CytoOrderedTest.DispositionLabCodeIEN"/>
-      </mapping>
-      <mapping>
         <identity value="vista"/>
         <map value="1494: terminologyMaps using VF_DiagnosticReportLabStatus on CYTOPATHOLOGY - ORDERED TEST &gt; ORDERED TEST - DISPOSITION (#63.09-.35 &gt; 63.51-10)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Pathology.CytoOrderedTest.DispositionLabCodeIEN"/>
       </mapping>
     </element>
     <element id="Observation.code">
@@ -3431,23 +3437,23 @@
         <code value="dateTime"/>
       </type>
       <mapping>
-        <identity value="cdw"/>
-        <map value="Pathology.CytoDelayedReportComment.SpecimenTakenDateTime&#xA;Pathology.CytoDiagnosis.SpecimenTakenDateTime&#xA;Pathology.CytoGrossDescription.SpecimenTakenDateTime&#xA;Pathology.CytoMicroscopicExam.SpecimenTakenDateTime&#xA;Pathology.CytoOpFinding.SpecimenTakenDateTime&#xA;Pathology.CytoOrderedTest.SpecimenTakenDateTime&#xA;Pathology.CytoOrganTissueDisease.SpecimenTakenDateTime&#xA;Pathology.CytoOrganTissueFunction.SpecimenTakenDateTime&#xA;Pathology.CytoOrganTissueProcedure.SpecimenTakenDateTime&#xA;Pathology.Cytopathology.SpecimenTakenDateTime&#xA;Pathology.CytoPostOpDiagnosis.SpecimenTakenDateTime&#xA;Pathology.CytoPreOpDiagnosis.SpecimenTakenDateTime&#xA;Pathology.CytoReportComment.SpecimenTakenDateTime&#xA;Pathology.CytoSpecimen.SpecimenTakenDateTime&#xA;Pathology.CytoStainBlock.SpecimenTakenDateTime&#xA;Pathology.CytoStainCytospin.SpecimenTakenDateTime&#xA;Pathology.CytoStainMembrane.SpecimenTakenDateTime&#xA;Pathology.CytoStainProcedure.SpecimenTakenDateTime&#xA;Pathology.CytoStainSlide.SpecimenTakenDateTime&#xA;Pathology.CytoSupplement.SpecimenTakenDateTime&#xA;Pathology.CytoSupplementDescript.SpecimenTakenDateTime&#xA;Pathology.CytoTIUReference.SpecimenTakenDateTime"/>
-      </mapping>
-      <mapping>
         <identity value="vista"/>
         <map value="1452: source value from CYTOPATHOLOGY - DATE/TIME SPECIMEN TAKEN (#63.09-.01)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Pathology.CytoDelayedReportComment.SpecimenTakenDateTime&#xA;Pathology.CytoDiagnosis.SpecimenTakenDateTime&#xA;Pathology.CytoGrossDescription.SpecimenTakenDateTime&#xA;Pathology.CytoMicroscopicExam.SpecimenTakenDateTime&#xA;Pathology.CytoOpFinding.SpecimenTakenDateTime&#xA;Pathology.CytoOrderedTest.SpecimenTakenDateTime&#xA;Pathology.CytoOrganTissueDisease.SpecimenTakenDateTime&#xA;Pathology.CytoOrganTissueFunction.SpecimenTakenDateTime&#xA;Pathology.CytoOrganTissueProcedure.SpecimenTakenDateTime&#xA;Pathology.Cytopathology.SpecimenTakenDateTime&#xA;Pathology.CytoPostOpDiagnosis.SpecimenTakenDateTime&#xA;Pathology.CytoPreOpDiagnosis.SpecimenTakenDateTime&#xA;Pathology.CytoReportComment.SpecimenTakenDateTime&#xA;Pathology.CytoSpecimen.SpecimenTakenDateTime&#xA;Pathology.CytoStainBlock.SpecimenTakenDateTime&#xA;Pathology.CytoStainCytospin.SpecimenTakenDateTime&#xA;Pathology.CytoStainMembrane.SpecimenTakenDateTime&#xA;Pathology.CytoStainProcedure.SpecimenTakenDateTime&#xA;Pathology.CytoStainSlide.SpecimenTakenDateTime&#xA;Pathology.CytoSupplement.SpecimenTakenDateTime&#xA;Pathology.CytoSupplementDescript.SpecimenTakenDateTime&#xA;Pathology.CytoTIUReference.SpecimenTakenDateTime"/>
       </mapping>
     </element>
     <element id="Observation.issued">
       <path value="Observation.issued"/>
       <mapping>
-        <identity value="cdw"/>
-        <map value="Pathology.Cytopathology.ReportCompletedDateTime"/>
-      </mapping>
-      <mapping>
         <identity value="vista"/>
         <map value="1486: source value from CYTOPATHOLOGY - DATE REPORT COMPLETED (#63.09-.03)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Pathology.Cytopathology.ReportCompletedDateTime"/>
       </mapping>
     </element>
     <element id="Observation.performer">
@@ -3457,12 +3463,12 @@
         <targetProfile value="http://hl7.org/fhir/StructureDefinition/Organization"/>
       </type>
       <mapping>
-        <identity value="cdw"/>
-        <map value="Pathology.Cytopathology.ReleasingInstitutionIEN"/>
-      </mapping>
-      <mapping>
         <identity value="vista"/>
         <map value="1466: reference from CYTOPATHOLOGY - RELEASING SITE (#63.09-.345)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Pathology.Cytopathology.ReleasingInstitutionIEN"/>
       </mapping>
     </element>
     <element id="Observation.value[x]">
@@ -3499,12 +3505,12 @@
     <element id="Observation.note">
       <path value="Observation.note"/>
       <mapping>
-        <identity value="cdw"/>
-        <map value="Pathology.CytoReportComment.CytopathologyComment"/>
-      </mapping>
-      <mapping>
         <identity value="vista"/>
         <map value="1462: source value from CYTOPATHOLOGY - COMMENT &gt; COMMENT - COMMENT (#63.09-.99 &gt; 63.908-.01)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Pathology.CytoReportComment.CytopathologyComment"/>
       </mapping>
     </element>
     <element id="Observation.specimen">
