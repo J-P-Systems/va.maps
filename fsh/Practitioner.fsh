@@ -7,7 +7,7 @@ Description: "This StructureDefinition contains the maps for VistA NEW PERSON (f
 * address ^slicing.discriminator.type = #value
 * address ^slicing.discriminator.path = "use"
 * address ^slicing.rules = #open
-* address contains home 0..1 and temp 0..1
+* address contains home 0..1 and temp 0..1 and physical 0..1 and postal 0..1
 * address[home].country from http://va.gov/fhir/ValueSet/VSVFPractitionerCountry
 * address[temp].country from http://va.gov/fhir/ValueSet/VSVFPractitionerCountry
 

@@ -6,4 +6,4 @@ Usage: #definition
 * title = "VF_ImmunizationReaction"
 * status = #active
 * experimental = true
-* description = "ValueSet VF_ImmunizationReaction"
+* description = "Use the link in the Expansion section to navigate to the ConceptMap."

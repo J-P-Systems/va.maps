@@ -6,4 +6,4 @@ Usage: #definition
 * title = "VF_SourceOfAdmission"
 * status = #active
 * experimental = true
-* description = "ValueSet VF_SourceOfAdmission"
+* description = "Use the link in the Expansion section to navigate to the ConceptMap."

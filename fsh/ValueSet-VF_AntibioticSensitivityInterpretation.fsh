@@ -6,4 +6,4 @@ Usage: #definition
 * title = "VF_AntibioticSensitivityInterpretation"
 * status = #active
 * experimental = true
-* description = "ValueSet VF_AntibioticSensitivityInterpretation"
+* description = "Use the link in the Expansion section to navigate to the ConceptMap."

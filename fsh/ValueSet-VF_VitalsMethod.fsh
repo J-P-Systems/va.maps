@@ -6,4 +6,4 @@ Usage: #definition
 * title = "VF_VitalsMethod"
 * status = #active
 * experimental = true
-* description = "ValueSet VF_VitalsMethod"
+* description = "Use the link in the Expansion section to navigate to the ConceptMap."

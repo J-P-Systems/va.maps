@@ -6,4 +6,4 @@ Usage: #definition
 * title = "VF_allergyEnteredInError"
 * status = #active
 * experimental = true
-* description = "ValueSet VF_allergyEnteredInError"
+* description = "Use the link in the Expansion section to navigate to the ConceptMap."

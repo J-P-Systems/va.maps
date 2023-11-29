@@ -24,7 +24,7 @@ Mapping: vista-to-Patient
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: Patient
-* identifier -> "272: source value from PATIENT - INTEGRATION CONTROL NUMBER (#2-991.01)" "MvdZ QA"
+* identifier.value -> "272: source value from PATIENT - INTEGRATION CONTROL NUMBER (#2-991.01)" "MvdZ QA"
 * name.text -> "273: source value from PATIENT - NAME (#2-.01)" "MvdZ QA"
 * telecom.value -> "274: source value from PATIENT - PHONE NUMBER [RESIDENCE] (#2-.131)"
 * telecom.value -> "275: source value from PATIENT - PHONE NUMBER [WORK] (#2-.132)"
@@ -54,7 +54,7 @@ Mapping: cdw-to-Patient
 Id: cdw
 Title: "Clinical Data Warehouse (CDW)"
 Source: Patient
-* identifier -> "Patient.Patient.PatientICN\nPatient.PatientICN.PatientICN\nSPatient.SPatient.PatientICN\nSPatient.SPatientGISAddress.PatientICN"
+* identifier.value -> "Patient.Patient.PatientICN\nPatient.PatientICN.PatientICN\nSPatient.SPatient.PatientICN\nSPatient.SPatientGISAddress.PatientICN"
 * name.text -> "SPatient.SPatient.PatientFirstName\nSPatient.SPatient.PatientLastName\nSPatient.SPatient.PatientName\nSPatient.SPatientAlias.PatientName"
 * gender -> "Patient.Patient.SelfIdentifiedGender\nSPatient.SPatient.SelfIdentifiedGender"
 * birthDate -> "SPatient.PlaceOfBirth.BirthDateTime\nSPatient.SPatient.BirthDateTime"

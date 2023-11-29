@@ -6,4 +6,4 @@ Usage: #definition
 * title = "VF_PractitionerCountry"
 * status = #active
 * experimental = true
-* description = "ValueSet VF_PractitionerCountry"
+* description = "Use the link in the Expansion section to navigate to the ConceptMap."

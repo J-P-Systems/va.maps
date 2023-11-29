@@ -6,4 +6,4 @@ Usage: #definition
 * title = "VF_raceCategory"
 * status = #active
 * experimental = true
-* description = "ValueSet VF_raceCategory"
+* description = "Use the link in the Expansion section to navigate to the ConceptMap."

@@ -6,4 +6,4 @@ Usage: #definition
 * title = "VF_PositiveNegative"
 * status = #active
 * experimental = true
-* description = "ValueSet VF_PositiveNegative"
+* description = "Use the link in the Expansion section to navigate to the ConceptMap."

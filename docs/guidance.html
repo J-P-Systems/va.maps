@@ -398,17 +398,35 @@ Write capabilities</li>
 <h4 id="identifiers">Identifiers</h4>
 
 <p>Patient identifers are VA ICNs scoped by the VA OID:</p>
-<identifier>
-    <system value="urn:uuid:2.16.840.1.113883.4.349" />
-    <value value=" 1015128742V345328 " />
-</identifier>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	"identifier" : [{
+			"system" : "urn:oid:2.16.840.1.113883.4.349",
+			"value" : "1015128742V345328"
+			}],
+</code></pre></div></div>
+
+<p>This identifier can also describe the VA as an organization</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	"identifier" : [{
+			"value" : "urn:oid:2.16.840.1.113883.4.349"
+			}],
+</code></pre></div></div>
+
+<p>or scope its VAMCs:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	"identifier" : [{
+			"system" : "urn:oid:2.16.840.1.113883.4.349",
+			"value" : "urn:oid:2.16.840.1.113883.4.349.7.508.430"
+			}],
+</code></pre></div></div>
+
+<p>Note that the facility OID is not generated as a pattern, but is taken from the VAST system list. This list contains OIDs for over 1700 locations.</p>
 
 <p>Other identifiers use the VistA file &amp; field concatenated to the VA root and the VAMC Sta3n. Because some interfaces do not provide maps to VistA files, we also provide a domain tag (practitioner, location, organization).</p>
 
-<identifier>
-    <system value="http://va.gov/identifiers/practitioner/631/2" />
-    <value value=" 33603899 " />
-</identifier>
+<p>E.g., for Prescription (file 52) Rx# (field .01):</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	"identifier" : [{
+			"system" : "http://va.gov/identifiers/practitioner/52/.01",
+			"value" : "3603899"
+			}],
+</code></pre></div></div>
 
 
 
@@ -435,7 +453,7 @@ Write capabilities</li>
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.5.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Nov 15, 2023 20:37+0000">2023-11-15</span>
+          IG &#169; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.5.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Nov 29, 2023 20:32+0000">2023-11-29</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
