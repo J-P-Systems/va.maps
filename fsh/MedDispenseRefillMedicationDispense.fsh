@@ -4,19 +4,19 @@ Id: MedDispenseRefillMedicationDispense
 Title: "MedDispenseRefill {MedicationDispense}"
 Description: "This StructureDefinition contains the maps for VistA PRESCRIPTION (file 52) to FHIR MedicationDispense"
 * ^status = #draft
-* status obeys inv-38
-* status obeys inv-39
 * status obeys inv-40
+* status obeys inv-41
+* status obeys inv-42
 
-Invariant: inv-38
+Invariant: inv-40
 Description: "869: fixed value = completed if PRESCRIPTION - REFILL > REFILL - RELEASED DATE/TIME (#52-52 > 52.1-17) case not null"
 Severity: #warning
 
-Invariant: inv-39
+Invariant: inv-41
 Description: "819: fixed value = in-progress if PRESCRIPTION - REFILL > REFILL - RELEASED DATE/TIME (#52-52 > 52.1-17) case null"
 Severity: #warning
 
-Invariant: inv-40
+Invariant: inv-42
 Description: "1555: fixed value = in-progress if PRESCRIPTION - RELEASED DATE/TIME (#52-31) case null"
 Severity: #warning
 

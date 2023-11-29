@@ -4,15 +4,15 @@ Id: ImmunizationObservation
 Title: "Immunization {Observation}"
 Description: "This StructureDefinition contains the maps for VistA ? (file ?) to FHIR Observation"
 * ^status = #draft
-* code obeys inv-41
-* status obeys inv-42
+* code obeys inv-43
+* status obeys inv-44
 * valueCodeableConcept from http://va.gov/fhir/ValueSet/VSVFImmunizationReaction
 
-Invariant: inv-41
+Invariant: inv-43
 Description: "1594: fixed value = http://loinc.org|31044-1"
 Severity: #warning
 
-Invariant: inv-42
+Invariant: inv-44
 Description: "++: fixed value = completed"
 Severity: #warning
 

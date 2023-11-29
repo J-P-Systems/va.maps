@@ -4,14 +4,14 @@ Id: MedDispensePartialMedicationDispense
 Title: "MedDispensePartial {MedicationDispense}"
 Description: "This StructureDefinition contains the maps for VistA PRESCRIPTION (file 52) to FHIR MedicationDispense"
 * ^status = #draft
-* status obeys inv-36
-* status obeys inv-37
+* status obeys inv-38
+* status obeys inv-39
 
-Invariant: inv-36
+Invariant: inv-38
 Description: "1577: fixed value = completed if PRESCRIPTION - PARTIAL DATE > PARTIAL DATE - RELEASED DATE/TIME (#52-60 > 52.2-8) case not null"
 Severity: #warning
 
-Invariant: inv-37
+Invariant: inv-39
 Description: "1578: fixed value = in-progress if PRESCRIPTION - PARTIAL DATE > PARTIAL DATE - RELEASED DATE/TIME (#52-60 > 52.2-8) case null"
 Severity: #warning
 

@@ -4,9 +4,9 @@ Id: MedDispenseOrigMedicationDispense
 Title: "MedDispenseOrig {MedicationDispense}"
 Description: "This StructureDefinition contains the maps for VistA PRESCRIPTION (file 52) to FHIR MedicationDispense"
 * ^status = #draft
-* status obeys inv-35
+* status obeys inv-37
 
-Invariant: inv-35
+Invariant: inv-37
 Description: "1541: fixed value = completed if PRESCRIPTION - RELEASED DATE/TIME (#52-31) case not null"
 Severity: #warning
 

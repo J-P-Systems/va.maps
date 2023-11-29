@@ -9,7 +9,7 @@ Description: "This StructureDefinition contains the maps for VistA INSTITUTION (
 * address ^slicing.discriminator.type = #value
 * address ^slicing.discriminator.path = "use"
 * address ^slicing.rules = #open
-* address contains physical 0..1 and postal 0..1
+* address contains home 0..1 and temp 0..1 and physical 0..1 and postal 0..1
 * address[physical].type obeys inv-24
 * address[postal].type obeys inv-25
 

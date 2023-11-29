@@ -5,13 +5,13 @@ Title: "Vital Signs {Observation}"
 Description: "This StructureDefinition contains the maps for VistA GMRV VITAL MEASUREMENT (file 120.5) to FHIR Observation"
 * ^status = #draft
 * performer only Reference(VitalSignsOrganization)
-* category.coding.code obeys inv-34
+* category.coding.code obeys inv-36
 * code.coding from http://va.gov/fhir/ValueSet/VSVFVitalsCodes
 * bodySite from http://va.gov/fhir/ValueSet/VSVFVitalsSite
 * device only Reference(VitalSignsDevice)
 * method from http://va.gov/fhir/ValueSet/VSVFVitalsMethod
 
-Invariant: inv-34
+Invariant: inv-36
 Description: "658: fixed value = vital-signs"
 Severity: #warning
 

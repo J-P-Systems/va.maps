@@ -5,6 +5,7 @@ Title: "Practitioner Role"
 Description: "This StructureDefinition contains the maps for VistA NEW PERSON (file 200) to FHIR PractitionerRole"
 * ^status = #draft
 * extension contains http://hl7.org/fhir/StructureDefinition/practitioner-job-title named practitioner-job-title 0..1
+* extension contains http://hl7.org/fhir/StructureDefinition/practitioner-job-title named practitioner-job-title 0..1
 
 Mapping: vista-to-PractitionerRole
 Id: vista

@@ -8,7 +8,7 @@ Description: "This StructureDefinition contains the maps for VistA PATIENT (file
 * address ^slicing.discriminator.type = #value
 * address ^slicing.discriminator.path = "use"
 * address ^slicing.rules = #open
-* address contains home 0..1 and temp 0..1
+* address contains home 0..1 and temp 0..1 and physical 0..1 and postal 0..1
 * managingOrganization.display obeys inv-26
 * extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex].valueCode from http://va.gov/fhir/ValueSet/VSVFgenderIdentity
 * gender from http://va.gov/fhir/ValueSet/VSVFgenderIdentity

@@ -8,7 +8,7 @@ Usage: #definition
 * experimental = true
 * description = "Terminology Maps VF_VitalsPosition"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFVitalsPosition"
-* group[0].source = "undefined"
+* group[0].source = "http://va.gov/terminology/vistaDefinedElements/120.5-5"
 * group[=].target = "http://snomed.info/sct"
 * group[=].element[0].code = #5335366
 * group[=].element[=].target.code = #102536004
