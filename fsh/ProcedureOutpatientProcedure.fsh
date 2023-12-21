@@ -4,14 +4,14 @@ Id: ProcedureOutpatientProcedure
 Title: "Procedure: Outpatient {Procedure}"
 Description: "This StructureDefinition contains the maps for VistA V CPT (file 9000010.18) to FHIR Procedure"
 * ^status = #draft
-* category.coding.code obeys inv-29
-* status obeys inv-30
+* category.coding.code obeys inv-30
+* status obeys inv-31
 
-Invariant: inv-29
+Invariant: inv-30
 Description: "1314: fixed value = 371883000"
 Severity: #warning
 
-Invariant: inv-30
+Invariant: inv-31
 Description: "1539: fixed value = completed"
 Severity: #warning
 

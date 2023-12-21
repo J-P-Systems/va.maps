@@ -20,21 +20,21 @@ Usage: #definition
 * group[=].element[=].target.display = "Married"
 * group[=].element[=].target.equivalence = #equivalent
 * group[=].element[=].display = "MARRIED"
-* group[=].element[+].code = #WIDOWED
-* group[=].element[=].target.code = #W
-* group[=].element[=].target.display = "Widowed"
-* group[=].element[=].target.equivalence = #equivalent
-* group[=].element[=].display = "WIDOWED"
-* group[=].element[+].code = #SEPARATED
-* group[=].element[=].target.code = #L
-* group[=].element[=].target.display = "Legally Separated"
-* group[=].element[=].target.equivalence = #equivalent
-* group[=].element[=].display = "SEPARATED"
 * group[=].element[+].code = #"NEVER MARRIED"
 * group[=].element[=].target.code = #S
 * group[=].element[=].target.display = "Never Married"
 * group[=].element[=].target.equivalence = #equivalent
 * group[=].element[=].display = "NEVER MARRIED"
+* group[=].element[+].code = #SEPARATED
+* group[=].element[=].target.code = #L
+* group[=].element[=].target.display = "Legally Separated"
+* group[=].element[=].target.equivalence = #equivalent
+* group[=].element[=].display = "SEPARATED"
+* group[=].element[+].code = #WIDOWED
+* group[=].element[=].target.code = #W
+* group[=].element[=].target.display = "Widowed"
+* group[=].element[=].target.equivalence = #equivalent
+* group[=].element[=].display = "WIDOWED"
 * group[+].source = "http://va.gov/terminology/vistaDefinedElements/2-.05"
 * group[=].target = "http://terminology.hl7.org/CodeSystem/v3-NullFlavor"
 * group[=].element[0].code = #UNKNOWN

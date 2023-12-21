@@ -40,6 +40,11 @@ Usage: #definition
 * group[=].element[=].target.display = "Animism"
 * group[=].element[=].target.equivalence = #equivalent
 * group[=].element[=].display = "ANIMISM"
+* group[=].element[+].code = #10
+* group[=].element[=].target.code = #1061
+* group[=].element[=].target.display = "Assembly of God"
+* group[=].element[=].target.equivalence = #equivalent
+* group[=].element[=].display = "ASSEMBLY OF GOD"
 * group[=].element[+].code = #37
 * group[=].element[=].target.code = #1007
 * group[=].element[=].target.display = "Atheism"
@@ -60,6 +65,11 @@ Usage: #definition
 * group[=].element[=].target.display = "Bon"
 * group[=].element[=].target.equivalence = #equivalent
 * group[=].element[=].display = "BON"
+* group[=].element[+].code = #11
+* group[=].element[=].target.code = #1062
+* group[=].element[=].target.display = "Brethren"
+* group[=].element[=].target.equivalence = #equivalent
+* group[=].element[=].display = "BRETHREN"
 * group[=].element[+].code = #40
 * group[=].element[=].target.code = #1011
 * group[=].element[=].target.display = "Cao Dai"
@@ -75,21 +85,61 @@ Usage: #definition
 * group[=].element[=].target.display = "Christian (non-Catholic, non-specific)"
 * group[=].element[=].target.equivalence = #equivalent
 * group[=].element[=].display = "CHRISTIAN (NON-SPECIFIC)"
+* group[=].element[+].code = #12
+* group[=].element[=].target.code = #1063
+* group[=].element[=].target.display = "Christian Scientist"
+* group[=].element[=].target.equivalence = #equivalent
+* group[=].element[=].display = "CHRISTIAN SCIENTIST"
+* group[=].element[+].code = #13
+* group[=].element[=].target.code = #1064
+* group[=].element[=].target.display = "Church of Christ"
+* group[=].element[=].target.equivalence = #equivalent
+* group[=].element[=].display = "CHURCH OF CHRIST"
+* group[=].element[+].code = #14
+* group[=].element[=].target.code = #1065
+* group[=].element[=].target.display = "Church of God"
+* group[=].element[=].target.equivalence = #equivalent
+* group[=].element[=].display = "CHURCH OF GOD"
 * group[=].element[+].code = #43
 * group[=].element[=].target.code = #1014
 * group[=].element[=].target.display = "Confucianism"
 * group[=].element[=].target.equivalence = #equivalent
 * group[=].element[=].display = "CONFUCIANISM"
+* group[=].element[+].code = #44
+* group[=].element[=].target.code = #1066
+* group[=].element[=].target.display = "Congregational"
+* group[=].element[=].target.equivalence = #equivalent
+* group[=].element[=].display = "CONGREGATIONAL"
 * group[=].element[+].code = #45
 * group[=].element[=].target.code = #1015
 * group[=].element[=].target.display = "Cyberculture Religions"
 * group[=].element[=].target.equivalence = #equivalent
 * group[=].element[=].display = "CYBERCULTURE RELIGIONS"
+* group[=].element[+].code = #15
+* group[=].element[=].target.code = #1067
+* group[=].element[=].target.display = "Disciples of Christ"
+* group[=].element[=].target.equivalence = #equivalent
+* group[=].element[=].display = "DISCIPLES OF CHRIST"
 * group[=].element[+].code = #46
 * group[=].element[=].target.code = #1016
 * group[=].element[=].target.display = "Divination"
 * group[=].element[=].target.equivalence = #equivalent
 * group[=].element[=].display = "DIVINATION"
+* group[=].element[+].code = #2
+* group[=].element[=].target.code = #1068
+* group[=].element[=].target.display = "Eastern Orthodox"
+* group[=].element[=].target.equivalence = #equivalent
+* group[=].element[=].display = "EASTERN ORTHODOX"
+* group[=].element[+].code = #8
+* group[=].element[=].target.code = #1069
+* group[=].element[=].target.display = "Episcopalian"
+* group[=].element[=].target.equivalence = #equivalent
+* group[=].element[=].display = "EPISCOPALIAN"
+* group[=].element[+].code = #16
+* group[=].element[=].target.code = #1070
+* group[=].element[=].target.display = "Evangelical Covenant"
+* group[=].element[=].target.equivalence = #equivalent
+* group[=].element[=].display = "EVANGELICAL COVENANT"
 * group[=].element[+].code = #47
 * group[=].element[=].target.code = #1017
 * group[=].element[=].target.display = "Fourth Way"
@@ -100,6 +150,16 @@ Usage: #definition
 * group[=].element[=].target.display = "Free Daism"
 * group[=].element[=].target.equivalence = #equivalent
 * group[=].element[=].display = "FREE DAISM"
+* group[=].element[+].code = #17
+* group[=].element[=].target.code = #1071
+* group[=].element[=].target.display = "Friends"
+* group[=].element[=].target.equivalence = #equivalent
+* group[=].element[=].display = "FRIENDS"
+* group[=].element[+].code = #49
+* group[=].element[=].target.code = #1072
+* group[=].element[=].target.display = "Full Gospel"
+* group[=].element[=].target.equivalence = #equivalent
+* group[=].element[=].display = "FULL GOSPEL"
 * group[=].element[+].code = #50
 * group[=].element[=].target.code = #1019
 * group[=].element[=].target.display = "Gnosis"
@@ -165,11 +225,26 @@ Usage: #definition
 * group[=].element[=].target.display = "Messianic Judaism"
 * group[=].element[=].target.equivalence = #equivalent
 * group[=].element[=].display = "MESSIANIC JUDAISM"
+* group[=].element[+].code = #4
+* group[=].element[=].target.code = #1073
+* group[=].element[=].target.display = "Methodist"
+* group[=].element[=].target.equivalence = #equivalent
+* group[=].element[=].display = "METHODIST"
 * group[=].element[+].code = #58
 * group[=].element[=].target.code = #1032
 * group[=].element[=].target.display = "Mitraism"
 * group[=].element[=].target.equivalence = #equivalent
 * group[=].element[=].display = "MITRAISM"
+* group[=].element[+].code = #30
+* group[=].element[=].target.code = #1074
+* group[=].element[=].target.display = "Native American"
+* group[=].element[=].target.equivalence = #equivalent
+* group[=].element[=].display = "NATIVE AMERICAN"
+* group[=].element[+].code = #21
+* group[=].element[=].target.code = #1075
+* group[=].element[=].target.display = "Nazarene"
+* group[=].element[=].target.equivalence = #equivalent
+* group[=].element[=].display = "NAZARENE"
 * group[=].element[+].code = #59
 * group[=].element[=].target.code = #1033
 * group[=].element[=].target.display = "New Age"
@@ -200,11 +275,31 @@ Usage: #definition
 * group[=].element[=].target.display = "Pentecostal"
 * group[=].element[=].target.equivalence = #equivalent
 * group[=].element[=].display = "PENTECOSTAL"
+* group[=].element[+].code = #6
+* group[=].element[=].target.code = #1076
+* group[=].element[=].target.display = "Presbyterian"
+* group[=].element[=].target.equivalence = #equivalent
+* group[=].element[=].display = "PRESBYTERIAN"
 * group[=].element[+].code = #64
 * group[=].element[=].target.code = #1039
 * group[=].element[=].target.display = "Process, The"
 * group[=].element[=].target.equivalence = #equivalent
 * group[=].element[=].display = "PROCESS, THE"
+* group[=].element[+].code = #24
+* group[=].element[=].target.code = #1077
+* group[=].element[=].target.display = "Protestant"
+* group[=].element[=].target.equivalence = #equivalent
+* group[=].element[=].display = "PROTESTANT"
+* group[=].element[+].code = #25
+* group[=].element[=].target.code = #1078
+* group[=].element[=].target.display = "Protestant, No Denomination"
+* group[=].element[=].target.equivalence = #equivalent
+* group[=].element[=].display = "PROTESTANT, NO DENOMINATION"
+* group[=].element[+].code = #26
+* group[=].element[=].target.code = #1079
+* group[=].element[=].target.display = "Reformed"
+* group[=].element[=].target.equivalence = #equivalent
+* group[=].element[=].display = "REFORMED"
 * group[=].element[+].code = #65
 * group[=].element[=].target.code = #1040
 * group[=].element[=].target.display = "Reformed/Presbyterian"
@@ -215,6 +310,11 @@ Usage: #definition
 * group[=].element[=].target.display = "Roman Catholic Church"
 * group[=].element[=].target.equivalence = #equivalent
 * group[=].element[=].display = "ROMAN CATHOLIC CHURCH"
+* group[=].element[+].code = #27
+* group[=].element[=].target.code = #1080
+* group[=].element[=].target.display = "Salvation Army"
+* group[=].element[=].target.equivalence = #equivalent
+* group[=].element[=].display = "SALVATION ARMY"
 * group[=].element[+].code = #66
 * group[=].element[=].target.code = #1042
 * group[=].element[=].target.display = "Satanism"
@@ -270,6 +370,11 @@ Usage: #definition
 * group[=].element[=].target.display = "Unitarian-Universalism"
 * group[=].element[=].target.equivalence = #equivalent
 * group[=].element[=].display = "UNITARIAN-UNIVERSALISM"
+* group[=].element[+].code = #7
+* group[=].element[=].target.code = #1082
+* group[=].element[=].target.display = "United Church of Christ"
+* group[=].element[=].target.equivalence = #equivalent
+* group[=].element[=].display = "UNITED CHURCH OF CHRIST"
 * group[=].element[+].code = #76
 * group[=].element[=].target.code = #1053
 * group[=].element[=].target.display = "Universal Life Church"
@@ -310,111 +415,6 @@ Usage: #definition
 * group[=].element[=].target.display = "Zoroastrianism"
 * group[=].element[=].target.equivalence = #equivalent
 * group[=].element[=].display = "ZOROASTRIANISM"
-* group[=].element[+].code = #10
-* group[=].element[=].target.code = #1061
-* group[=].element[=].target.display = "Assembly of God"
-* group[=].element[=].target.equivalence = #equivalent
-* group[=].element[=].display = "ASSEMBLY OF GOD"
-* group[=].element[+].code = #11
-* group[=].element[=].target.code = #1062
-* group[=].element[=].target.display = "Brethren"
-* group[=].element[=].target.equivalence = #equivalent
-* group[=].element[=].display = "BRETHREN"
-* group[=].element[+].code = #12
-* group[=].element[=].target.code = #1063
-* group[=].element[=].target.display = "Christian Scientist"
-* group[=].element[=].target.equivalence = #equivalent
-* group[=].element[=].display = "CHRISTIAN SCIENTIST"
-* group[=].element[+].code = #13
-* group[=].element[=].target.code = #1064
-* group[=].element[=].target.display = "Church of Christ"
-* group[=].element[=].target.equivalence = #equivalent
-* group[=].element[=].display = "CHURCH OF CHRIST"
-* group[=].element[+].code = #14
-* group[=].element[=].target.code = #1065
-* group[=].element[=].target.display = "Church of God"
-* group[=].element[=].target.equivalence = #equivalent
-* group[=].element[=].display = "CHURCH OF GOD"
-* group[=].element[+].code = #44
-* group[=].element[=].target.code = #1066
-* group[=].element[=].target.display = "Congregational"
-* group[=].element[=].target.equivalence = #equivalent
-* group[=].element[=].display = "CONGREGATIONAL"
-* group[=].element[+].code = #15
-* group[=].element[=].target.code = #1067
-* group[=].element[=].target.display = "Disciples of Christ"
-* group[=].element[=].target.equivalence = #equivalent
-* group[=].element[=].display = "DISCIPLES OF CHRIST"
-* group[=].element[+].code = #2
-* group[=].element[=].target.code = #1068
-* group[=].element[=].target.display = "Eastern Orthodox"
-* group[=].element[=].target.equivalence = #equivalent
-* group[=].element[=].display = "EASTERN ORTHODOX"
-* group[=].element[+].code = #8
-* group[=].element[=].target.code = #1069
-* group[=].element[=].target.display = "Episcopalian"
-* group[=].element[=].target.equivalence = #equivalent
-* group[=].element[=].display = "EPISCOPALIAN"
-* group[=].element[+].code = #16
-* group[=].element[=].target.code = #1070
-* group[=].element[=].target.display = "Evangelical Covenant"
-* group[=].element[=].target.equivalence = #equivalent
-* group[=].element[=].display = "EVANGELICAL COVENANT"
-* group[=].element[+].code = #17
-* group[=].element[=].target.code = #1071
-* group[=].element[=].target.display = "Friends"
-* group[=].element[=].target.equivalence = #equivalent
-* group[=].element[=].display = "FRIENDS"
-* group[=].element[+].code = #49
-* group[=].element[=].target.code = #1072
-* group[=].element[=].target.display = "Full Gospel"
-* group[=].element[=].target.equivalence = #equivalent
-* group[=].element[=].display = "FULL GOSPEL"
-* group[=].element[+].code = #4
-* group[=].element[=].target.code = #1073
-* group[=].element[=].target.display = "Methodist"
-* group[=].element[=].target.equivalence = #equivalent
-* group[=].element[=].display = "METHODIST"
-* group[=].element[+].code = #30
-* group[=].element[=].target.code = #1074
-* group[=].element[=].target.display = "Native American"
-* group[=].element[=].target.equivalence = #equivalent
-* group[=].element[=].display = "NATIVE AMERICAN"
-* group[=].element[+].code = #21
-* group[=].element[=].target.code = #1075
-* group[=].element[=].target.display = "Nazarene"
-* group[=].element[=].target.equivalence = #equivalent
-* group[=].element[=].display = "NAZARENE"
-* group[=].element[+].code = #6
-* group[=].element[=].target.code = #1076
-* group[=].element[=].target.display = "Presbyterian"
-* group[=].element[=].target.equivalence = #equivalent
-* group[=].element[=].display = "PRESBYTERIAN"
-* group[=].element[+].code = #24
-* group[=].element[=].target.code = #1077
-* group[=].element[=].target.display = "Protestant"
-* group[=].element[=].target.equivalence = #equivalent
-* group[=].element[=].display = "PROTESTANT"
-* group[=].element[+].code = #25
-* group[=].element[=].target.code = #1078
-* group[=].element[=].target.display = "Protestant, No Denomination"
-* group[=].element[=].target.equivalence = #equivalent
-* group[=].element[=].display = "PROTESTANT, NO DENOMINATION"
-* group[=].element[+].code = #26
-* group[=].element[=].target.code = #1079
-* group[=].element[=].target.display = "Reformed"
-* group[=].element[=].target.equivalence = #equivalent
-* group[=].element[=].display = "REFORMED"
-* group[=].element[+].code = #27
-* group[=].element[=].target.code = #1080
-* group[=].element[=].target.display = "Salvation Army"
-* group[=].element[=].target.equivalence = #equivalent
-* group[=].element[=].display = "SALVATION ARMY"
-* group[=].element[+].code = #7
-* group[=].element[=].target.code = #1082
-* group[=].element[=].target.display = "United Church of Christ"
-* group[=].element[=].target.equivalence = #equivalent
-* group[=].element[=].display = "UNITED CHURCH OF CHRIST"
 * group[+].source = "http://va.gov/terminology/vistaDefinedElements/2-.08"
 * group[=].target = "http://terminology.hl7.org/CodeSystem/v3-NullFlavor"
 * group[=].element[0].code = #83

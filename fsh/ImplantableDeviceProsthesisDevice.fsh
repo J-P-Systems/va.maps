@@ -4,9 +4,9 @@ Id: ImplantableDeviceProsthesisDevice
 Title: "Implantable Device: Prosthesis {Device}"
 Description: "This StructureDefinition contains the maps for VistA PROSTHESIS INSTALLED (file 130.01) to FHIR Device"
 * ^status = #draft
-* type.coding.code obeys inv-8
+* type.coding.code obeys inv-9
 
-Invariant: inv-8
+Invariant: inv-9
 Description: "1393: fixed value = 63653004"
 Severity: #warning
 

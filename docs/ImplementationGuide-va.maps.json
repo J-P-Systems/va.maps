@@ -6,11 +6,11 @@
     "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>VAMapsIG</h2><p>The official URL for this implementation guide is: </p><pre>http://va.gov/fhir/ImplementationGuide/va.maps</pre><div><p>This implementation guide is a FHIR IG rendering of the KBS Map Set from VA sources (primarily VistA) to FHIR. Where appropriate these maps conform to the us-core profiles.</p>\n</div></div>"
   },
   "url" : "http://va.gov/fhir/ImplementationGuide/va.maps",
-  "version" : "0.7.0",
+  "version" : "0.9.0",
   "name" : "VAMapsIG",
   "title" : "US Veterans Administration FHIR Map Set Implementation Guide",
   "status" : "draft",
-  "date" : "2023-12-12T19:04:11+00:00",
+  "date" : "2023-12-21T07:51:53+00:00",
   "publisher" : "VA",
   "contact" : [{
     "name" : "VA",
@@ -633,79 +633,83 @@
     },
     {
       "id" : "group5",
-      "name" : "Diagnostic Report for Lab"
-    },
-    {
-      "id" : "group6",
       "name" : "Lab Observation"
     },
     {
-      "id" : "group7",
+      "id" : "group6",
       "name" : "Document Reference"
     },
     {
-      "id" : "group8",
+      "id" : "group7",
       "name" : "Encounter"
     },
     {
-      "id" : "group9",
+      "id" : "group8",
       "name" : "Immunization"
     },
     {
-      "id" : "group10",
+      "id" : "group9",
       "name" : "Implantable Device"
     },
     {
-      "id" : "group11",
+      "id" : "group10",
       "name" : "Location"
     },
     {
+      "id" : "group11",
+      "name" : "MedicationRequestUnsigned"
+    },
+    {
       "id" : "group12",
-      "name" : "MedicationRequest"
+      "name" : "MedicationRequestNonVA"
     },
     {
       "id" : "group13",
-      "name" : "MedRequestOrigXXX"
+      "name" : "MedicationRequestOutpatient"
     },
     {
       "id" : "group14",
-      "name" : "Observation EXAM"
+      "name" : "MedicationDispenseOriginal"
     },
     {
       "id" : "group15",
-      "name" : "Organization"
+      "name" : "Observation EXAM"
     },
     {
       "id" : "group16",
-      "name" : "Practitioner"
+      "name" : "Organization"
     },
     {
       "id" : "group17",
-      "name" : "Practitioner Role"
+      "name" : "Practitioner"
     },
     {
       "id" : "group18",
-      "name" : "Procedure"
+      "name" : "Practitioner Role"
     },
     {
       "id" : "group19",
-      "name" : "Smoking Status Observation"
+      "name" : "Procedure"
     },
     {
       "id" : "group20",
-      "name" : "Vital Signs"
+      "name" : "Smoking Status Observation"
     },
     {
       "id" : "group21",
-      "name" : "MedDispenseOrig"
+      "name" : "Vital Signs"
     },
     {
       "id" : "group22",
-      "name" : "MedDispensePartial"
+      "name" : "MedicationDispensePartial"
     },
     {
       "id" : "group23",
-      "name" : "MedDispenseRefill"
+      "name" : "MedicationDispenseRefill"
+    },
+    {
+      "id" : "group24",
+      "name" : "Observation Imaging Result"
     }],
     "resource" : [{
       "extension" : [{
@@ -742,7 +746,7 @@
         "reference" : "StructureDefinition/ConditionEncounterdiagnosis"
       },
       "name" : "Condition: Encounter diagnosis",
-      "description" : "This StructureDefinition contains the maps for VistA V POV (file 9000010.07) to FHIR Condition",
+      "description" : "This StructureDefinition contains the maps for VistA ? (file ?) to FHIR Condition",
       "exampleBoolean" : false,
       "groupingId" : "group3"
     },
@@ -755,7 +759,7 @@
         "reference" : "StructureDefinition/ConditionProblem"
       },
       "name" : "Condition: Problem",
-      "description" : "This StructureDefinition contains the maps for VistA PROBLEM (file 9000011) to FHIR Condition",
+      "description" : "This StructureDefinition contains the maps for VistA ? (file ?) to FHIR Condition",
       "exampleBoolean" : false,
       "groupingId" : "group3"
     },
@@ -778,149 +782,25 @@
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/DiagnosticReportforLabDiagnosticReport"
-      },
-      "name" : "Diagnostic Report for Lab {DiagnosticReport}",
-      "description" : "This StructureDefinition contains the maps for VistA ? (file ?) to FHIR DiagnosticReport",
-      "exampleBoolean" : false,
-      "groupingId" : "group5"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:resource"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/DiagnosticReportforLabChemhemtoxriaserDiagnosticReport"
-      },
-      "name" : "Diagnostic Report for Lab: Chem, hem, tox, ria, ser {DiagnosticReport}",
-      "description" : "This StructureDefinition contains the maps for VistA CHEM, HEM, TOX, RIA, SER, etc. (file 63.04) to FHIR DiagnosticReport",
-      "exampleBoolean" : false,
-      "groupingId" : "group5"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:resource"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/DiagnosticReportforLabCytopathologyDiagnosticReport"
-      },
-      "name" : "Diagnostic Report for Lab: Cytopathology {DiagnosticReport}",
-      "description" : "This StructureDefinition contains the maps for VistA CYTOPATHOLOGY (file 63.09) to FHIR DiagnosticReport",
-      "exampleBoolean" : false,
-      "groupingId" : "group5"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:resource"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/DiagnosticReportforLabElectronMicroscopyDiagnosticReport"
-      },
-      "name" : "Diagnostic Report for Lab: Electron Microscopy {DiagnosticReport}",
-      "description" : "This StructureDefinition contains the maps for VistA EM (file 63.02) to FHIR DiagnosticReport",
-      "exampleBoolean" : false,
-      "groupingId" : "group5"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:resource"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/DiagnosticReportforLabMicrobiologyDiagnosticReport"
-      },
-      "name" : "Diagnostic Report for Lab: Microbiology {DiagnosticReport}",
-      "description" : "This StructureDefinition contains the maps for VistA MICROBIOLOGY (file 63.05) to FHIR DiagnosticReport",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:resource"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/DiagnosticReportforLabMicrobiologyDiagnosticReportBacteriology"
-      },
-      "name" : "Diagnostic Report for Lab: Microbiology {DiagnosticReport}: Bacteriology",
-      "description" : "This StructureDefinition contains the maps for VistA MICROBIOLOGY (file 63.05) to FHIR DiagnosticReport",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:resource"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/DiagnosticReportforLabMicrobiologyDiagnosticReportMycobacteriolo"
-      },
-      "name" : "Diagnostic Report for Lab: Microbiology {DiagnosticReport}: Mycobacteriology",
-      "description" : "This StructureDefinition contains the maps for VistA MICROBIOLOGY (file 63.05) to FHIR DiagnosticReport",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:resource"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/DiagnosticReportforLabMicrobiologyDiagnosticReportMycology"
-      },
-      "name" : "Diagnostic Report for Lab: Microbiology {DiagnosticReport}: Mycology",
-      "description" : "This StructureDefinition contains the maps for VistA MICROBIOLOGY (file 63.05) to FHIR DiagnosticReport",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:resource"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/DiagnosticReportforLabMicrobiologyDiagnosticReportParasitology"
-      },
-      "name" : "Diagnostic Report for Lab: Microbiology {DiagnosticReport}: Parasitology",
-      "description" : "This StructureDefinition contains the maps for VistA MICROBIOLOGY (file 63.05) to FHIR DiagnosticReport",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:resource"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/DiagnosticReportforLabMicrobiologyDiagnosticReportVirology"
-      },
-      "name" : "Diagnostic Report for Lab: Microbiology {DiagnosticReport}: Virology",
-      "description" : "This StructureDefinition contains the maps for VistA MICROBIOLOGY (file 63.05) to FHIR DiagnosticReport",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:resource"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/DiagnosticReportforLabSurgicalPathologyDiagnosticReport"
-      },
-      "name" : "Diagnostic Report for Lab: Surgical Pathology {DiagnosticReport}",
-      "description" : "This StructureDefinition contains the maps for VistA SURGICAL PATHOLOGY (file 63.08) to FHIR DiagnosticReport",
-      "exampleBoolean" : false,
-      "groupingId" : "group5"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:resource"
-      }],
-      "reference" : {
         "reference" : "StructureDefinition/DocumentReference"
       },
       "name" : "Document Reference",
-      "description" : "This StructureDefinition contains the maps for VistA TIU DOCUMENT (file 8925) to FHIR DocumentReference",
+      "description" : "This StructureDefinition contains the maps for VistA ? (file ?) to FHIR DocumentReference",
       "exampleBoolean" : false,
-      "groupingId" : "group7"
+      "groupingId" : "group6"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/DocumentReferenceBinary"
+      },
+      "name" : "Document Reference {Binary}",
+      "description" : "This StructureDefinition contains the maps for VistA TIU DOCUMENT (file 8925) to FHIR Binary",
+      "exampleBoolean" : false,
+      "groupingId" : "group6"
     },
     {
       "extension" : [{
@@ -933,7 +813,7 @@
       "name" : "Encounter: Inpatient (PTF)",
       "description" : "This StructureDefinition contains the maps for VistA PTF (file 45) to FHIR Encounter",
       "exampleBoolean" : false,
-      "groupingId" : "group8"
+      "groupingId" : "group7"
     },
     {
       "extension" : [{
@@ -946,7 +826,7 @@
       "name" : "Encounter: Outpatient (Visit)",
       "description" : "This StructureDefinition contains the maps for VistA VISIT (file 9000010) to FHIR Encounter",
       "exampleBoolean" : false,
-      "groupingId" : "group8"
+      "groupingId" : "group7"
     },
     {
       "extension" : [{
@@ -959,7 +839,7 @@
       "name" : "Immunization",
       "description" : "This StructureDefinition contains the maps for VistA V IMMUNIZATION (file 9000010.11) to FHIR Immunization",
       "exampleBoolean" : false,
-      "groupingId" : "group9"
+      "groupingId" : "group8"
     },
     {
       "extension" : [{
@@ -972,7 +852,7 @@
       "name" : "Immunization {Observation}",
       "description" : "This StructureDefinition contains the maps for VistA ? (file ?) to FHIR Observation",
       "exampleBoolean" : false,
-      "groupingId" : "group9"
+      "groupingId" : "group8"
     },
     {
       "extension" : [{
@@ -985,7 +865,7 @@
       "name" : "Implantable Device {Device}",
       "description" : "This StructureDefinition contains the maps for VistA ? (file ?) to FHIR Device",
       "exampleBoolean" : false,
-      "groupingId" : "group10"
+      "groupingId" : "group9"
     },
     {
       "extension" : [{
@@ -998,7 +878,7 @@
       "name" : "Implantable Device: A Lead {Device}",
       "description" : "This StructureDefinition contains the maps for VistA A LEAD IMPLANT (file 698.2) to FHIR Device",
       "exampleBoolean" : false,
-      "groupingId" : "group10"
+      "groupingId" : "group9"
     },
     {
       "extension" : [{
@@ -1011,7 +891,7 @@
       "name" : "Implantable Device: Dental {Device}",
       "description" : "This StructureDefinition contains the maps for VistA DENTAL DEVICE TRACKING (file 228.9) to FHIR Device",
       "exampleBoolean" : false,
-      "groupingId" : "group10"
+      "groupingId" : "group9"
     },
     {
       "extension" : [{
@@ -1024,7 +904,7 @@
       "name" : "Implantable Device: Pacemaker {Device}",
       "description" : "This StructureDefinition contains the maps for VistA GENERATOR IMPLANT (file 698) to FHIR Device",
       "exampleBoolean" : false,
-      "groupingId" : "group10"
+      "groupingId" : "group9"
     },
     {
       "extension" : [{
@@ -1037,7 +917,7 @@
       "name" : "Implantable Device: Prosthesis {Device}",
       "description" : "This StructureDefinition contains the maps for VistA PROSTHESIS INSTALLED (file 130.01) to FHIR Device",
       "exampleBoolean" : false,
-      "groupingId" : "group10"
+      "groupingId" : "group9"
     },
     {
       "extension" : [{
@@ -1050,7 +930,7 @@
       "name" : "Implantable Device: Transmitter {Device}",
       "description" : "This StructureDefinition contains the maps for VistA GENERATOR IMPLANT (file 698) to FHIR Device",
       "exampleBoolean" : false,
-      "groupingId" : "group10"
+      "groupingId" : "group9"
     },
     {
       "extension" : [{
@@ -1063,7 +943,20 @@
       "name" : "Implantable Device: V Lead {Device}",
       "description" : "This StructureDefinition contains the maps for VistA V LEAD IMPLANT (file 698.1) to FHIR Device",
       "exampleBoolean" : false,
-      "groupingId" : "group10"
+      "groupingId" : "group9"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/LabObservationDiagnosticReport"
+      },
+      "name" : "Lab Observation {DiagnosticReport}",
+      "description" : "This StructureDefinition contains the maps for VistA ? (file ?) to FHIR DiagnosticReport",
+      "exampleBoolean" : false,
+      "groupingId" : "group5"
     },
     {
       "extension" : [{
@@ -1076,7 +969,20 @@
       "name" : "Lab Observation {Observation}",
       "description" : "This StructureDefinition contains the maps for VistA ? (file ?) to FHIR Observation",
       "exampleBoolean" : false,
-      "groupingId" : "group6"
+      "groupingId" : "group5"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/LabObservationChemhemtoxriaserDiagnosticReport"
+      },
+      "name" : "Lab Observation: Chem, hem, tox, ria, ser {DiagnosticReport}",
+      "description" : "This StructureDefinition contains the maps for VistA CHEM, HEM, TOX, RIA, SER, etc. (file 63.04) to FHIR DiagnosticReport",
+      "exampleBoolean" : false,
+      "groupingId" : "group5"
     },
     {
       "extension" : [{
@@ -1089,7 +995,7 @@
       "name" : "Lab Observation: Chem, hem, tox, ria, ser {Observation}",
       "description" : "This StructureDefinition contains the maps for VistA CHEM, HEM, TOX, RIA, SER, etc. (file 63.04) to FHIR Observation",
       "exampleBoolean" : false,
-      "groupingId" : "group6"
+      "groupingId" : "group5"
     },
     {
       "extension" : [{
@@ -1102,7 +1008,20 @@
       "name" : "Lab Observation: Chem, hem, tox, ria, ser {Specimen}",
       "description" : "This StructureDefinition contains the maps for VistA CHEM, HEM, TOX, RIA, SER, etc. (file 63.04) to FHIR Specimen",
       "exampleBoolean" : false,
-      "groupingId" : "group6"
+      "groupingId" : "group5"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/LabObservationCytopathologyDiagnosticReport"
+      },
+      "name" : "Lab Observation: Cytopathology {DiagnosticReport}",
+      "description" : "This StructureDefinition contains the maps for VistA CYTOPATHOLOGY (file 63.09) to FHIR DiagnosticReport",
+      "exampleBoolean" : false,
+      "groupingId" : "group5"
     },
     {
       "extension" : [{
@@ -1115,7 +1034,7 @@
       "name" : "Lab Observation: Cytopathology {Observation}",
       "description" : "This StructureDefinition contains the maps for VistA CYTOPATHOLOGY (file 63.09) to FHIR Observation",
       "exampleBoolean" : false,
-      "groupingId" : "group6"
+      "groupingId" : "group5"
     },
     {
       "extension" : [{
@@ -1128,7 +1047,20 @@
       "name" : "Lab Observation: Cytopathology {Specimen}",
       "description" : "This StructureDefinition contains the maps for VistA CYTOPATHOLOGY (file 63.09) to FHIR Specimen",
       "exampleBoolean" : false,
-      "groupingId" : "group6"
+      "groupingId" : "group5"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/LabObservationElectronMicroscopyDiagnosticReport"
+      },
+      "name" : "Lab Observation: Electron Microscopy {DiagnosticReport}",
+      "description" : "This StructureDefinition contains the maps for VistA EM (file 63.02) to FHIR DiagnosticReport",
+      "exampleBoolean" : false,
+      "groupingId" : "group5"
     },
     {
       "extension" : [{
@@ -1141,7 +1073,7 @@
       "name" : "Lab Observation: Electron Microscopy {Observation}",
       "description" : "This StructureDefinition contains the maps for VistA EM (file 63.02) to FHIR Observation",
       "exampleBoolean" : false,
-      "groupingId" : "group6"
+      "groupingId" : "group5"
     },
     {
       "extension" : [{
@@ -1154,7 +1086,7 @@
       "name" : "Lab Observation: Electron Microscopy {Specimen}",
       "description" : "This StructureDefinition contains the maps for VistA EM (file 63.02) to FHIR Specimen",
       "exampleBoolean" : false,
-      "groupingId" : "group6"
+      "groupingId" : "group5"
     },
     {
       "extension" : [{
@@ -1167,7 +1099,7 @@
       "name" : "Lab Observation: Microbiology {DiagnosticReport}",
       "description" : "This StructureDefinition contains the maps for VistA MICROBIOLOGY (file 63.05) to FHIR DiagnosticReport",
       "exampleBoolean" : false,
-      "groupingId" : "group6"
+      "groupingId" : "group5"
     },
     {
       "extension" : [{
@@ -1180,7 +1112,7 @@
       "name" : "Lab Observation: Microbiology {DiagnosticReport}: Bacteriology",
       "description" : "This StructureDefinition contains the maps for VistA MICROBIOLOGY (file 63.05) to FHIR DiagnosticReport",
       "exampleBoolean" : false,
-      "groupingId" : "group6"
+      "groupingId" : "group5"
     },
     {
       "extension" : [{
@@ -1193,7 +1125,7 @@
       "name" : "Lab Observation: Microbiology {DiagnosticReport}: Mycobacteriology",
       "description" : "This StructureDefinition contains the maps for VistA MICROBIOLOGY (file 63.05) to FHIR DiagnosticReport",
       "exampleBoolean" : false,
-      "groupingId" : "group6"
+      "groupingId" : "group5"
     },
     {
       "extension" : [{
@@ -1206,7 +1138,7 @@
       "name" : "Lab Observation: Microbiology {DiagnosticReport}: Mycology",
       "description" : "This StructureDefinition contains the maps for VistA MICROBIOLOGY (file 63.05) to FHIR DiagnosticReport",
       "exampleBoolean" : false,
-      "groupingId" : "group6"
+      "groupingId" : "group5"
     },
     {
       "extension" : [{
@@ -1219,7 +1151,7 @@
       "name" : "Lab Observation: Microbiology {DiagnosticReport}: Parasitology",
       "description" : "This StructureDefinition contains the maps for VistA MICROBIOLOGY (file 63.05) to FHIR DiagnosticReport",
       "exampleBoolean" : false,
-      "groupingId" : "group6"
+      "groupingId" : "group5"
     },
     {
       "extension" : [{
@@ -1232,7 +1164,7 @@
       "name" : "Lab Observation: Microbiology {DiagnosticReport}: Virology",
       "description" : "This StructureDefinition contains the maps for VistA MICROBIOLOGY (file 63.05) to FHIR DiagnosticReport",
       "exampleBoolean" : false,
-      "groupingId" : "group6"
+      "groupingId" : "group5"
     },
     {
       "extension" : [{
@@ -1245,7 +1177,7 @@
       "name" : "Lab Observation: Microbiology {Observation}",
       "description" : "This StructureDefinition contains the maps for VistA MICROBIOLOGY (file 63.05) to FHIR Observation",
       "exampleBoolean" : false,
-      "groupingId" : "group6"
+      "groupingId" : "group5"
     },
     {
       "extension" : [{
@@ -1258,7 +1190,7 @@
       "name" : "Lab Observation: Microbiology {Observation}: Bacteriology",
       "description" : "This StructureDefinition contains the maps for VistA MICROBIOLOGY (file 63.05) to FHIR Observation",
       "exampleBoolean" : false,
-      "groupingId" : "group6"
+      "groupingId" : "group5"
     },
     {
       "extension" : [{
@@ -1271,7 +1203,7 @@
       "name" : "Lab Observation: Microbiology {Observation}: Mycobacteriology",
       "description" : "This StructureDefinition contains the maps for VistA MICROBIOLOGY (file 63.05) to FHIR Observation",
       "exampleBoolean" : false,
-      "groupingId" : "group6"
+      "groupingId" : "group5"
     },
     {
       "extension" : [{
@@ -1284,7 +1216,7 @@
       "name" : "Lab Observation: Microbiology {Observation}: Mycology",
       "description" : "This StructureDefinition contains the maps for VistA MICROBIOLOGY (file 63.05) to FHIR Observation",
       "exampleBoolean" : false,
-      "groupingId" : "group6"
+      "groupingId" : "group5"
     },
     {
       "extension" : [{
@@ -1297,7 +1229,7 @@
       "name" : "Lab Observation: Microbiology {Observation}: Parasitology",
       "description" : "This StructureDefinition contains the maps for VistA MICROBIOLOGY (file 63.05) to FHIR Observation",
       "exampleBoolean" : false,
-      "groupingId" : "group6"
+      "groupingId" : "group5"
     },
     {
       "extension" : [{
@@ -1310,7 +1242,7 @@
       "name" : "Lab Observation: Microbiology {Observation}: Virology",
       "description" : "This StructureDefinition contains the maps for VistA MICROBIOLOGY (file 63.05) to FHIR Observation",
       "exampleBoolean" : false,
-      "groupingId" : "group6"
+      "groupingId" : "group5"
     },
     {
       "extension" : [{
@@ -1323,7 +1255,20 @@
       "name" : "Lab Observation: Microbiology {Specimen}",
       "description" : "This StructureDefinition contains the maps for VistA MICROBIOLOGY (file 63.05) to FHIR Specimen",
       "exampleBoolean" : false,
-      "groupingId" : "group6"
+      "groupingId" : "group5"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/LabObservationSurgicalPathologyDiagnosticReport"
+      },
+      "name" : "Lab Observation: Surgical Pathology {DiagnosticReport}",
+      "description" : "This StructureDefinition contains the maps for VistA SURGICAL PATHOLOGY (file 63.08) to FHIR DiagnosticReport",
+      "exampleBoolean" : false,
+      "groupingId" : "group5"
     },
     {
       "extension" : [{
@@ -1336,7 +1281,7 @@
       "name" : "Lab Observation: Surgical Pathology {Observation}",
       "description" : "This StructureDefinition contains the maps for VistA SURGICAL PATHOLOGY (file 63.08) to FHIR Observation",
       "exampleBoolean" : false,
-      "groupingId" : "group6"
+      "groupingId" : "group5"
     },
     {
       "extension" : [{
@@ -1349,7 +1294,7 @@
       "name" : "Lab Observation: Surgical Pathology {Specimen}",
       "description" : "This StructureDefinition contains the maps for VistA SURGICAL PATHOLOGY (file 63.08) to FHIR Specimen",
       "exampleBoolean" : false,
-      "groupingId" : "group6"
+      "groupingId" : "group5"
     },
     {
       "extension" : [{
@@ -1362,7 +1307,7 @@
       "name" : "Location",
       "description" : "This StructureDefinition contains the maps for VistA HOSPITAL LOCATION (file 44) to FHIR Location",
       "exampleBoolean" : false,
-      "groupingId" : "group11"
+      "groupingId" : "group10"
     },
     {
       "extension" : [{
@@ -1370,12 +1315,12 @@
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/MedDispenseOrigMedicationDispense"
+        "reference" : "StructureDefinition/MedicationDispenseOriginalMedicationDispense"
       },
-      "name" : "MedDispenseOrig {MedicationDispense}",
+      "name" : "MedicationDispenseOriginal {MedicationDispense}",
       "description" : "This StructureDefinition contains the maps for VistA PRESCRIPTION (file 52) to FHIR MedicationDispense",
       "exampleBoolean" : false,
-      "groupingId" : "group21"
+      "groupingId" : "group14"
     },
     {
       "extension" : [{
@@ -1383,9 +1328,9 @@
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/MedDispensePartialMedicationDispense"
+        "reference" : "StructureDefinition/MedicationDispensePartialMedicationDispense"
       },
-      "name" : "MedDispensePartial {MedicationDispense}",
+      "name" : "MedicationDispensePartial {MedicationDispense}",
       "description" : "This StructureDefinition contains the maps for VistA PRESCRIPTION (file 52) to FHIR MedicationDispense",
       "exampleBoolean" : false,
       "groupingId" : "group22"
@@ -1396,9 +1341,9 @@
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/MedDispenseRefillMedicationDispense"
+        "reference" : "StructureDefinition/MedicationDispenseRefillMedicationDispense"
       },
-      "name" : "MedDispenseRefill {MedicationDispense}",
+      "name" : "MedicationDispenseRefill {MedicationDispense}",
       "description" : "This StructureDefinition contains the maps for VistA PRESCRIPTION (file 52) to FHIR MedicationDispense",
       "exampleBoolean" : false,
       "groupingId" : "group23"
@@ -1409,10 +1354,10 @@
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/MedicationRequestVAOrder"
+        "reference" : "StructureDefinition/MedicationRequestNonVAMedicationRequest"
       },
-      "name" : "MedicationRequest: VA Order",
-      "description" : "This StructureDefinition contains the maps for VistA ORDER (file 100) to FHIR MedicationRequest",
+      "name" : "MedicationRequestNonVA {MedicationRequest}",
+      "description" : "This StructureDefinition contains the maps for VistA NON (file 55.05) to FHIR MedicationRequest",
       "exampleBoolean" : false,
       "groupingId" : "group12"
     },
@@ -1422,12 +1367,25 @@
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/MedRequestOrigXXXMedicationRequest"
+        "reference" : "StructureDefinition/MedicationRequestOutpatientMedicationRequest"
       },
-      "name" : "MedRequestOrigXXX {MedicationRequest}",
-      "description" : "This StructureDefinition contains the maps for VistA PRESCRIPTION (file 52) to FHIR MedicationRequest",
+      "name" : "MedicationRequestOutpatient {MedicationRequest}",
+      "description" : "This StructureDefinition contains the maps for VistA ? (file ?) to FHIR MedicationRequest",
       "exampleBoolean" : false,
       "groupingId" : "group13"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/MedicationRequestUnsignedMedicationRequestVAOrder"
+      },
+      "name" : "MedicationRequestUnsigned {MedicationRequest}: VA Order",
+      "description" : "This StructureDefinition contains the maps for VistA ORDER (file 100) to FHIR MedicationRequest",
+      "exampleBoolean" : false,
+      "groupingId" : "group11"
     },
     {
       "extension" : [{
@@ -1440,7 +1398,59 @@
       "name" : "Observation EXAM {Observation}",
       "description" : "This StructureDefinition contains the maps for VistA V EXAM (file 9000010.13) to FHIR Observation",
       "exampleBoolean" : false,
-      "groupingId" : "group14"
+      "groupingId" : "group15"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/ObservationImagingResultObservation"
+      },
+      "name" : "Observation Imaging Result {Observation}",
+      "description" : "This StructureDefinition contains the maps for VistA ? (file ?) to FHIR Observation",
+      "exampleBoolean" : false,
+      "groupingId" : "group24"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/ObservationImagingResultEchoObservation"
+      },
+      "name" : "Observation Imaging Result: Echo {Observation}",
+      "description" : "This StructureDefinition contains the maps for VistA ECHO (file 691) to FHIR Observation",
+      "exampleBoolean" : false,
+      "groupingId" : "group24"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/ObservationImagingResultEKGObservation"
+      },
+      "name" : "Observation Imaging Result: EKG {Observation}",
+      "description" : "This StructureDefinition contains the maps for VistA ELECTROCARDIOGRAM (EKG) (file 691.5) to FHIR Observation",
+      "exampleBoolean" : false,
+      "groupingId" : "group24"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/ObservationImagingResultRadNucObservation"
+      },
+      "name" : "Observation Imaging Result: Rad/Nuc {Observation}",
+      "description" : "This StructureDefinition contains the maps for VistA RAD/NUC MED REPORTS (file 74) to FHIR Observation",
+      "exampleBoolean" : false,
+      "groupingId" : "group24"
     },
     {
       "extension" : [{
@@ -1453,7 +1463,7 @@
       "name" : "Organization",
       "description" : "This StructureDefinition contains the maps for VistA INSTITUTION (file 4) to FHIR Organization",
       "exampleBoolean" : false,
-      "groupingId" : "group15"
+      "groupingId" : "group16"
     },
     {
       "extension" : [{
@@ -1479,7 +1489,7 @@
       "name" : "Practitioner",
       "description" : "This StructureDefinition contains the maps for VistA NEW PERSON (file 200) to FHIR Practitioner",
       "exampleBoolean" : false,
-      "groupingId" : "group16"
+      "groupingId" : "group17"
     },
     {
       "extension" : [{
@@ -1492,7 +1502,7 @@
       "name" : "Practitioner Role",
       "description" : "This StructureDefinition contains the maps for VistA NEW PERSON (file 200) to FHIR PractitionerRole",
       "exampleBoolean" : false,
-      "groupingId" : "group17"
+      "groupingId" : "group18"
     },
     {
       "extension" : [{
@@ -1505,7 +1515,7 @@
       "name" : "Procedure: Outpatient {Procedure}",
       "description" : "This StructureDefinition contains the maps for VistA V CPT (file 9000010.18) to FHIR Procedure",
       "exampleBoolean" : false,
-      "groupingId" : "group18"
+      "groupingId" : "group19"
     },
     {
       "extension" : [{
@@ -1518,7 +1528,7 @@
       "name" : "Procedure: Radiology {Procedure}",
       "description" : "This StructureDefinition contains the maps for VistA EXAMINATIONS (file 70.03) to FHIR Procedure",
       "exampleBoolean" : false,
-      "groupingId" : "group18"
+      "groupingId" : "group19"
     },
     {
       "extension" : [{
@@ -1531,7 +1541,7 @@
       "name" : "Procedure: Surgery {Procedure}",
       "description" : "This StructureDefinition contains the maps for VistA SURGERY (file 130) to FHIR Procedure",
       "exampleBoolean" : false,
-      "groupingId" : "group18"
+      "groupingId" : "group19"
     },
     {
       "extension" : [{
@@ -1544,7 +1554,7 @@
       "name" : "Smoking Status Observation {Observation}",
       "description" : "This StructureDefinition contains the maps for VistA V HEALTH FACTORS (file 9000010.23) to FHIR Observation",
       "exampleBoolean" : false,
-      "groupingId" : "group19"
+      "groupingId" : "group20"
     },
     {
       "extension" : [{
@@ -2152,6 +2162,78 @@
         "valueString" : "ConceptMap"
       }],
       "reference" : {
+        "reference" : "ConceptMap/CMVFImageInterpretation"
+      },
+      "name" : "VF_ImageInterpretation",
+      "description" : "Terminology Maps VF_ImageInterpretation",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/VSVFImageInterpretation"
+      },
+      "name" : "VF_ImageInterpretation",
+      "description" : "Use the link in the Expansion section to navigate to the ConceptMap.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/CMVFImageStatus"
+      },
+      "name" : "VF_ImageStatus",
+      "description" : "Terminology Maps VF_ImageStatus",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/VSVFImageStatus"
+      },
+      "name" : "VF_ImageStatus",
+      "description" : "Use the link in the Expansion section to navigate to the ConceptMap.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/CMVFImageStatusRadNuc"
+      },
+      "name" : "VF_ImageStatusRadNuc",
+      "description" : "Terminology Maps VF_ImageStatusRadNuc",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/VSVFImageStatusRadNuc"
+      },
+      "name" : "VF_ImageStatusRadNuc",
+      "description" : "Use the link in the Expansion section to navigate to the ConceptMap.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
         "reference" : "ConceptMap/CMVFimmunizationPrimarySource"
       },
       "name" : "VF_immunizationPrimarySource",
@@ -2344,6 +2426,30 @@
         "valueString" : "ConceptMap"
       }],
       "reference" : {
+        "reference" : "ConceptMap/CMVFOrderPatientClass"
+      },
+      "name" : "VF_OrderPatientClass",
+      "description" : "Terminology Maps VF_OrderPatientClass",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/VSVFOrderPatientClass"
+      },
+      "name" : "VF_OrderPatientClass",
+      "description" : "Use the link in the Expansion section to navigate to the ConceptMap.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
         "reference" : "ConceptMap/CMVFOrganizationIdentifierType"
       },
       "name" : "VF_OrganizationIdentifierType",
@@ -2368,10 +2474,10 @@
         "valueString" : "ConceptMap"
       }],
       "reference" : {
-        "reference" : "ConceptMap/CMVFOutpatMedReq"
+        "reference" : "ConceptMap/CMVFOutMedRequestStatus"
       },
-      "name" : "VF_OutpatMedReq",
-      "description" : "Terminology Maps VF_OutpatMedReq",
+      "name" : "VF_OutMedRequestStatus",
+      "description" : "Terminology Maps VF_OutMedRequestStatus",
       "exampleBoolean" : false
     },
     {
@@ -2380,9 +2486,9 @@
         "valueString" : "ValueSet"
       }],
       "reference" : {
-        "reference" : "ValueSet/VSVFOutpatMedReq"
+        "reference" : "ValueSet/VSVFOutMedRequestStatus"
       },
-      "name" : "VF_OutpatMedReq",
+      "name" : "VF_OutMedRequestStatus",
       "description" : "Use the link in the Expansion section to navigate to the ConceptMap.",
       "exampleBoolean" : false
     },
@@ -2872,10 +2978,10 @@
         "valueString" : "ConceptMap"
       }],
       "reference" : {
-        "reference" : "ConceptMap/CMVFYesNo"
+        "reference" : "ConceptMap/CMVFYesNo10"
       },
-      "name" : "VF_YesNo",
-      "description" : "Terminology Maps VF_YesNo",
+      "name" : "VF_YesNo10",
+      "description" : "Terminology Maps VF_YesNo10",
       "exampleBoolean" : false
     },
     {
@@ -2884,9 +2990,9 @@
         "valueString" : "ValueSet"
       }],
       "reference" : {
-        "reference" : "ValueSet/VSVFYesNo"
+        "reference" : "ValueSet/VSVFYesNo10"
       },
-      "name" : "VF_YesNo",
+      "name" : "VF_YesNo10",
       "description" : "Use the link in the Expansion section to navigate to the ConceptMap.",
       "exampleBoolean" : false
     },
@@ -2925,7 +3031,7 @@
       "name" : "Vital Signs {Device}",
       "description" : "This StructureDefinition contains the maps for VistA GMRV VITAL MEASUREMENT (file 120.5) to FHIR Device",
       "exampleBoolean" : false,
-      "groupingId" : "group20"
+      "groupingId" : "group21"
     },
     {
       "extension" : [{
@@ -2938,7 +3044,7 @@
       "name" : "Vital Signs {Observation}",
       "description" : "This StructureDefinition contains the maps for VistA GMRV VITAL MEASUREMENT (file 120.5) to FHIR Observation",
       "exampleBoolean" : false,
-      "groupingId" : "group20"
+      "groupingId" : "group21"
     },
     {
       "extension" : [{
@@ -2951,7 +3057,7 @@
       "name" : "Vital Signs {Observation}: Concentration",
       "description" : "This StructureDefinition contains the maps for VistA GMRV VITAL MEASUREMENT (file 120.5) to FHIR Observation",
       "exampleBoolean" : false,
-      "groupingId" : "group20"
+      "groupingId" : "group21"
     },
     {
       "extension" : [{
@@ -2964,7 +3070,7 @@
       "name" : "Vital Signs {Observation}: diastolic",
       "description" : "This StructureDefinition contains the maps for VistA GMRV VITAL MEASUREMENT (file 120.5) to FHIR Observation",
       "exampleBoolean" : false,
-      "groupingId" : "group20"
+      "groupingId" : "group21"
     },
     {
       "extension" : [{
@@ -2977,7 +3083,7 @@
       "name" : "Vital Signs {Observation}: Flow",
       "description" : "This StructureDefinition contains the maps for VistA GMRV VITAL MEASUREMENT (file 120.5) to FHIR Observation",
       "exampleBoolean" : false,
-      "groupingId" : "group20"
+      "groupingId" : "group21"
     },
     {
       "extension" : [{
@@ -2990,7 +3096,7 @@
       "name" : "Vital Signs {Observation}: systolic",
       "description" : "This StructureDefinition contains the maps for VistA GMRV VITAL MEASUREMENT (file 120.5) to FHIR Observation",
       "exampleBoolean" : false,
-      "groupingId" : "group20"
+      "groupingId" : "group21"
     },
     {
       "extension" : [{
@@ -3003,7 +3109,7 @@
       "name" : "Vital Signs {Organization}",
       "description" : "This StructureDefinition contains the maps for VistA GMRV VITAL MEASUREMENT (file 120.5) to FHIR Organization",
       "exampleBoolean" : false,
-      "groupingId" : "group20"
+      "groupingId" : "group21"
     }],
     "page" : {
       "extension" : [{

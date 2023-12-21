@@ -1,5 +1,5 @@
 Profile: ImplantableDeviceDentalDevice
-Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-implantable-device
+Parent: http://va.gov/fhir/StructureDefinition/ImplantableDeviceDevice
 Id: ImplantableDeviceDentalDevice
 Title: "Implantable Device: Dental {Device}"
 Description: "This StructureDefinition contains the maps for VistA DENTAL DEVICE TRACKING (file 228.9) to FHIR Device"

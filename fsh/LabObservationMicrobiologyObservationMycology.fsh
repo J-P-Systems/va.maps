@@ -4,10 +4,10 @@ Id: LabObservationMicrobiologyObservationMycology
 Title: "Lab Observation: Microbiology {Observation}: Mycology"
 Description: "This StructureDefinition contains the maps for VistA MICROBIOLOGY (file 63.05) to FHIR Observation"
 * ^status = #draft
-* code obeys inv-12
+* code obeys inv-13
 * status from http://va.gov/fhir/ValueSet/VSVFLabObservationStatus
 
-Invariant: inv-12
+Invariant: inv-13
 Description: "1527: fixed value without value? if MICROBIOLOGY - ORDERED TEST > ORDERED TEST - LAB TEST ORDERED > LABORATORY TEST - SITE/SPECIMEN > SITE/SPECIMEN - LOINC CODE (#63.05-.35 > 63.5-13 > 60-100 > 60.01-95.03) case NULL"
 Severity: #warning
 

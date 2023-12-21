@@ -10,16 +10,16 @@ Description: "This StructureDefinition contains the maps for VistA NEW PERSON (f
 * address contains home 0..1 and temp 0..1 and physical 0..1 and postal 0..1
 * address[home].country from http://va.gov/fhir/ValueSet/VSVFPractitionerCountry
 * address[home].country.extension contains http://hl7.org/fhir/StructureDefinition/data-absent-reason named data-absent-reason 0..1
-* address[home].country.extension[http://hl7.org/fhir/StructureDefinition/data-absent-reason].valueCode obeys inv-27
+* address[home].country.extension[http://hl7.org/fhir/StructureDefinition/data-absent-reason].valueCode obeys inv-28
 * address[temp].country from http://va.gov/fhir/ValueSet/VSVFPractitionerCountry
 * address[temp].country.extension contains http://hl7.org/fhir/StructureDefinition/data-absent-reason named data-absent-reason 0..1
-* address[temp].country.extension[http://hl7.org/fhir/StructureDefinition/data-absent-reason].valueCode obeys inv-28
+* address[temp].country.extension[http://hl7.org/fhir/StructureDefinition/data-absent-reason].valueCode obeys inv-29
 
-Invariant: inv-27
+Invariant: inv-28
 Description: "1531: fixed value = unknown if NEW PERSON - STATE (#200-.115) case NULL"
 Severity: #warning
 
-Invariant: inv-28
+Invariant: inv-29
 Description: "1533: fixed value = unknown if NEW PERSON - STATE (#200-.1215) case NULL"
 Severity: #warning
 
@@ -31,8 +31,8 @@ Source: Practitioner
 * identifier.value -> "377: source value from NEW PERSON - DEA# (#200-53.2)" "changed .code from PRN to DEA"
 * identifier.value -> "378: source value from NEW PERSON - VA# (#200-53.3)" "changed .code from PRN to VA_Number. Value set is extensible"
 * identifier.value -> "379: source value from NEW PERSON - VPID (#200-9000)" "changed .code from PRN to VPID. Value set is extensible"
-* identifier[NPI].period.start -> "380: source value from NEW PERSON - EFFECTIVE DATE/TIME (#200-42) case For NPI only" "MvdZ QA 6-jul-2023"
-* name.text -> "382: source value from NEW PERSON - NAME COMPONENTS > NAME COMPONENTS - (#200-10.1 > 20-)" "Change map to better align with US Core Must Support (last name only)\nMvdZ QA 6-jul-2023"
+* identifier[NPI].period.start -> "380: source value from NEW PERSON - EFFECTIVE DATE/TIME (#200-42)" "MvdZ QA 6-jul-2023"
+* name.text -> "382: source value from NEW PERSON - NAME COMPONENTS > NAME COMPONENTS - (#200-10.1 > 20 -)" "Change map to better align with US Core Must Support (last name only)\nMvdZ QA 6-jul-2023"
 * telecom.value -> "383: source value from NEW PERSON - PHONE (HOME) (#200-.131)"
 * birthDate -> "394: source value from NEW PERSON - DOB (#200-5)"
 * qualification.code.text -> "395: source value from NEW PERSON - DEGREE (#200-10.6)" "There is also 12.1 CURRENT DEGREE LEVEL; not in cdw"

@@ -4,28 +4,28 @@ Id: Organization
 Title: "Organization"
 Description: "This StructureDefinition contains the maps for VistA INSTITUTION (file 4) to FHIR Organization"
 * ^status = #draft
-* active obeys inv-22
-* type obeys inv-23
+* active obeys inv-23
+* type obeys inv-24
 * address ^slicing.discriminator.type = #value
 * address ^slicing.discriminator.path = "use"
 * address ^slicing.rules = #open
 * address contains home 0..1 and temp 0..1 and physical 0..1 and postal 0..1
-* address[physical].type obeys inv-24
-* address[postal].type obeys inv-25
+* address[physical].type obeys inv-25
+* address[postal].type obeys inv-26
 
-Invariant: inv-22
+Invariant: inv-23
 Description: "1253: fixed value = true"
 Severity: #warning
 
-Invariant: inv-23
-Description: "1254: fixed value = #prov"
-Severity: #warning
-
 Invariant: inv-24
-Description: "1257: fixed value = #physical"
+Description: "1254: fixed value = prov"
 Severity: #warning
 
 Invariant: inv-25
+Description: "1257: fixed value = #physical"
+Severity: #warning
+
+Invariant: inv-26
 Description: "1268: fixed value = #postal"
 Severity: #warning
 
@@ -34,9 +34,9 @@ Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: Organization
 * name -> "1251: source value from INSTITUTION - NAME (#4-.01)"
-* identifier[NPI].value -> "1252: source value from INSTITUTION - NPI (#4-41.99)" "Is mapCase used to indicate slice?"
+* identifier.value -> "1252: source value from INSTITUTION - NPI (#4-41.99) case NPI slice" "Is mapCase used to indicate slice?"
 * active -> "1253: fixed value = true" "MvdZ QA 20-jun-2023"
-* type -> "1254: fixed value = #prov"
+* type -> "1254: fixed value = prov"
 * alias -> "1255: source value from INSTITUTION - SHORT NAME (#4-.05)"
 * address[physical].type -> "1257: fixed value = #physical"
 * address[physical].line -> "1258: source value from INSTITUTION - STREET ADDR. 1 (#4-1.01)"
@@ -61,7 +61,7 @@ Id: cdw
 Title: "Clinical Data Warehouse (CDW)"
 Source: Organization
 * name -> "Dim.AutoDiscontinuedRule.InstitutionName\nDim.Institution.InstitutionName\nDim.RequestService.IFCRoutingInstitution"
-* identifier[NPI].value -> "Dim.Institution.NPI"
+* identifier.value -> "Dim.Institution.NPI"
 * alias -> "Dim.Institution.InstitutionShortName"
 * address[physical].line -> "Dim.Institution.StreetAddress1"
 * address[physical].line -> "Dim.Institution.StreetAddress2"

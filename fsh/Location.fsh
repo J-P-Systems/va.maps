@@ -5,15 +5,15 @@ Title: "Location"
 Description: "This StructureDefinition contains the maps for VistA HOSPITAL LOCATION (file 44) to FHIR Location"
 * ^status = #draft
 * status from http://va.gov/fhir/ValueSet/VSVFLocationStatus
-* managingOrganization.display obeys inv-15
-* address.type obeys inv-16
+* managingOrganization.display obeys inv-16
+* address.type obeys inv-17
 * type.text from http://va.gov/fhir/ValueSet/VSVFLocationStatus
 
-Invariant: inv-15
+Invariant: inv-16
 Description: "1283: fixed value = Veterans Administration"
 Severity: #warning
 
-Invariant: inv-16
+Invariant: inv-17
 Description: "1322: fixed value = #physical if HOSPITAL LOCATION - INSTITUTION (#44-3)"
 Severity: #warning
 

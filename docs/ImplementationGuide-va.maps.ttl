@@ -13,11 +13,11 @@
      fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>VAMapsIG</h2><p>The official URL for this implementation guide is: </p><pre>http://va.gov/fhir/ImplementationGuide/va.maps</pre><div><p>This implementation guide is a FHIR IG rendering of the KBS Map Set from VA sources (primarily VistA) to FHIR. Where appropriate these maps conform to the us-core profiles.</p>\n</div></div>"
   ] ; # 
   fhir:url [ fhir:v "http://va.gov/fhir/ImplementationGuide/va.maps"^^xsd:anyURI] ; # 
-  fhir:version [ fhir:v "0.7.0"] ; # 
+  fhir:version [ fhir:v "0.9.0"] ; # 
   fhir:name [ fhir:v "VAMapsIG"] ; # 
   fhir:title [ fhir:v "US Veterans Administration FHIR Map Set Implementation Guide"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2023-12-12T19:04:11+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2023-12-21T07:51:53+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "VA"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "VA" ] ;
@@ -542,61 +542,64 @@
        fhir:name [ fhir:v "CPM Vital Signs" ]
      ] [
        fhir:id [ fhir:v "group5" ] ;
-       fhir:name [ fhir:v "Diagnostic Report for Lab" ]
-     ] [
-       fhir:id [ fhir:v "group6" ] ;
        fhir:name [ fhir:v "Lab Observation" ]
      ] [
-       fhir:id [ fhir:v "group7" ] ;
+       fhir:id [ fhir:v "group6" ] ;
        fhir:name [ fhir:v "Document Reference" ]
      ] [
-       fhir:id [ fhir:v "group8" ] ;
+       fhir:id [ fhir:v "group7" ] ;
        fhir:name [ fhir:v "Encounter" ]
      ] [
-       fhir:id [ fhir:v "group9" ] ;
+       fhir:id [ fhir:v "group8" ] ;
        fhir:name [ fhir:v "Immunization" ]
      ] [
-       fhir:id [ fhir:v "group10" ] ;
+       fhir:id [ fhir:v "group9" ] ;
        fhir:name [ fhir:v "Implantable Device" ]
      ] [
-       fhir:id [ fhir:v "group11" ] ;
+       fhir:id [ fhir:v "group10" ] ;
        fhir:name [ fhir:v "Location" ]
      ] [
+       fhir:id [ fhir:v "group11" ] ;
+       fhir:name [ fhir:v "MedicationRequestUnsigned" ]
+     ] [
        fhir:id [ fhir:v "group12" ] ;
-       fhir:name [ fhir:v "MedicationRequest" ]
+       fhir:name [ fhir:v "MedicationRequestNonVA" ]
      ] [
        fhir:id [ fhir:v "group13" ] ;
-       fhir:name [ fhir:v "MedRequestOrigXXX" ]
+       fhir:name [ fhir:v "MedicationRequestOutpatient" ]
      ] [
        fhir:id [ fhir:v "group14" ] ;
-       fhir:name [ fhir:v "Observation EXAM" ]
+       fhir:name [ fhir:v "MedicationDispenseOriginal" ]
      ] [
        fhir:id [ fhir:v "group15" ] ;
-       fhir:name [ fhir:v "Organization" ]
+       fhir:name [ fhir:v "Observation EXAM" ]
      ] [
        fhir:id [ fhir:v "group16" ] ;
-       fhir:name [ fhir:v "Practitioner" ]
+       fhir:name [ fhir:v "Organization" ]
      ] [
        fhir:id [ fhir:v "group17" ] ;
-       fhir:name [ fhir:v "Practitioner Role" ]
+       fhir:name [ fhir:v "Practitioner" ]
      ] [
        fhir:id [ fhir:v "group18" ] ;
-       fhir:name [ fhir:v "Procedure" ]
+       fhir:name [ fhir:v "Practitioner Role" ]
      ] [
        fhir:id [ fhir:v "group19" ] ;
-       fhir:name [ fhir:v "Smoking Status Observation" ]
+       fhir:name [ fhir:v "Procedure" ]
      ] [
        fhir:id [ fhir:v "group20" ] ;
-       fhir:name [ fhir:v "Vital Signs" ]
+       fhir:name [ fhir:v "Smoking Status Observation" ]
      ] [
        fhir:id [ fhir:v "group21" ] ;
-       fhir:name [ fhir:v "MedDispenseOrig" ]
+       fhir:name [ fhir:v "Vital Signs" ]
      ] [
        fhir:id [ fhir:v "group22" ] ;
-       fhir:name [ fhir:v "MedDispensePartial" ]
+       fhir:name [ fhir:v "MedicationDispensePartial" ]
      ] [
        fhir:id [ fhir:v "group23" ] ;
-       fhir:name [ fhir:v "MedDispenseRefill" ]
+       fhir:name [ fhir:v "MedicationDispenseRefill" ]
+     ] [
+       fhir:id [ fhir:v "group24" ] ;
+       fhir:name [ fhir:v "Observation Imaging Result" ]
      ] ) ;
      fhir:resource ( [
        fhir:extension ( [
@@ -634,7 +637,7 @@
          fhir:reference [ fhir:v "StructureDefinition/ConditionEncounterdiagnosis" ]
        ] ;
        fhir:name [ fhir:v "Condition: Encounter diagnosis" ] ;
-       fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA V POV (file 9000010.07) to FHIR Condition" ] ;
+       fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA ? (file ?) to FHIR Condition" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ] ;
        fhir:groupingId [ fhir:v "group3" ]
      ] [
@@ -647,7 +650,7 @@
          fhir:reference [ fhir:v "StructureDefinition/ConditionProblem" ]
        ] ;
        fhir:name [ fhir:v "Condition: Problem" ] ;
-       fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA PROBLEM (file 9000011) to FHIR Condition" ] ;
+       fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA ? (file ?) to FHIR Condition" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ] ;
        fhir:groupingId [ fhir:v "group3" ]
      ] [
@@ -669,150 +672,26 @@
          fhir:value [ fhir:v "StructureDefinition:resource" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://va.gov/fhir/StructureDefinition/DiagnosticReportforLabDiagnosticReport> ;
-         fhir:reference [ fhir:v "StructureDefinition/DiagnosticReportforLabDiagnosticReport" ]
-       ] ;
-       fhir:name [ fhir:v "Diagnostic Report for Lab {DiagnosticReport}" ] ;
-       fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA ? (file ?) to FHIR DiagnosticReport" ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:groupingId [ fhir:v "group5" ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:resource" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://va.gov/fhir/StructureDefinition/DiagnosticReportforLabChemhemtoxriaserDiagnosticReport> ;
-         fhir:reference [ fhir:v "StructureDefinition/DiagnosticReportforLabChemhemtoxriaserDiagnosticReport" ]
-       ] ;
-       fhir:name [ fhir:v "Diagnostic Report for Lab: Chem, hem, tox, ria, ser {DiagnosticReport}" ] ;
-       fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA CHEM, HEM, TOX, RIA, SER, etc. (file 63.04) to FHIR DiagnosticReport" ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:groupingId [ fhir:v "group5" ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:resource" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://va.gov/fhir/StructureDefinition/DiagnosticReportforLabCytopathologyDiagnosticReport> ;
-         fhir:reference [ fhir:v "StructureDefinition/DiagnosticReportforLabCytopathologyDiagnosticReport" ]
-       ] ;
-       fhir:name [ fhir:v "Diagnostic Report for Lab: Cytopathology {DiagnosticReport}" ] ;
-       fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA CYTOPATHOLOGY (file 63.09) to FHIR DiagnosticReport" ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:groupingId [ fhir:v "group5" ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:resource" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://va.gov/fhir/StructureDefinition/DiagnosticReportforLabElectronMicroscopyDiagnosticReport> ;
-         fhir:reference [ fhir:v "StructureDefinition/DiagnosticReportforLabElectronMicroscopyDiagnosticReport" ]
-       ] ;
-       fhir:name [ fhir:v "Diagnostic Report for Lab: Electron Microscopy {DiagnosticReport}" ] ;
-       fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA EM (file 63.02) to FHIR DiagnosticReport" ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:groupingId [ fhir:v "group5" ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:resource" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://va.gov/fhir/StructureDefinition/DiagnosticReportforLabMicrobiologyDiagnosticReport> ;
-         fhir:reference [ fhir:v "StructureDefinition/DiagnosticReportforLabMicrobiologyDiagnosticReport" ]
-       ] ;
-       fhir:name [ fhir:v "Diagnostic Report for Lab: Microbiology {DiagnosticReport}" ] ;
-       fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA MICROBIOLOGY (file 63.05) to FHIR DiagnosticReport" ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:resource" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://va.gov/fhir/StructureDefinition/DiagnosticReportforLabMicrobiologyDiagnosticReportBacteriology> ;
-         fhir:reference [ fhir:v "StructureDefinition/DiagnosticReportforLabMicrobiologyDiagnosticReportBacteriology" ]
-       ] ;
-       fhir:name [ fhir:v "Diagnostic Report for Lab: Microbiology {DiagnosticReport}: Bacteriology" ] ;
-       fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA MICROBIOLOGY (file 63.05) to FHIR DiagnosticReport" ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:resource" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://va.gov/fhir/StructureDefinition/DiagnosticReportforLabMicrobiologyDiagnosticReportMycobacteriolo> ;
-         fhir:reference [ fhir:v "StructureDefinition/DiagnosticReportforLabMicrobiologyDiagnosticReportMycobacteriolo" ]
-       ] ;
-       fhir:name [ fhir:v "Diagnostic Report for Lab: Microbiology {DiagnosticReport}: Mycobacteriology" ] ;
-       fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA MICROBIOLOGY (file 63.05) to FHIR DiagnosticReport" ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:resource" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://va.gov/fhir/StructureDefinition/DiagnosticReportforLabMicrobiologyDiagnosticReportMycology> ;
-         fhir:reference [ fhir:v "StructureDefinition/DiagnosticReportforLabMicrobiologyDiagnosticReportMycology" ]
-       ] ;
-       fhir:name [ fhir:v "Diagnostic Report for Lab: Microbiology {DiagnosticReport}: Mycology" ] ;
-       fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA MICROBIOLOGY (file 63.05) to FHIR DiagnosticReport" ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:resource" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://va.gov/fhir/StructureDefinition/DiagnosticReportforLabMicrobiologyDiagnosticReportParasitology> ;
-         fhir:reference [ fhir:v "StructureDefinition/DiagnosticReportforLabMicrobiologyDiagnosticReportParasitology" ]
-       ] ;
-       fhir:name [ fhir:v "Diagnostic Report for Lab: Microbiology {DiagnosticReport}: Parasitology" ] ;
-       fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA MICROBIOLOGY (file 63.05) to FHIR DiagnosticReport" ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:resource" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://va.gov/fhir/StructureDefinition/DiagnosticReportforLabMicrobiologyDiagnosticReportVirology> ;
-         fhir:reference [ fhir:v "StructureDefinition/DiagnosticReportforLabMicrobiologyDiagnosticReportVirology" ]
-       ] ;
-       fhir:name [ fhir:v "Diagnostic Report for Lab: Microbiology {DiagnosticReport}: Virology" ] ;
-       fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA MICROBIOLOGY (file 63.05) to FHIR DiagnosticReport" ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:resource" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://va.gov/fhir/StructureDefinition/DiagnosticReportforLabSurgicalPathologyDiagnosticReport> ;
-         fhir:reference [ fhir:v "StructureDefinition/DiagnosticReportforLabSurgicalPathologyDiagnosticReport" ]
-       ] ;
-       fhir:name [ fhir:v "Diagnostic Report for Lab: Surgical Pathology {DiagnosticReport}" ] ;
-       fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA SURGICAL PATHOLOGY (file 63.08) to FHIR DiagnosticReport" ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:groupingId [ fhir:v "group5" ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:resource" ]
-       ] ) ;
-       fhir:reference [
          fhir:link <http://va.gov/fhir/StructureDefinition/DocumentReference> ;
          fhir:reference [ fhir:v "StructureDefinition/DocumentReference" ]
        ] ;
        fhir:name [ fhir:v "Document Reference" ] ;
-       fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA TIU DOCUMENT (file 8925) to FHIR DocumentReference" ] ;
+       fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA ? (file ?) to FHIR DocumentReference" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:groupingId [ fhir:v "group7" ]
+       fhir:groupingId [ fhir:v "group6" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/StructureDefinition/DocumentReferenceBinary> ;
+         fhir:reference [ fhir:v "StructureDefinition/DocumentReferenceBinary" ]
+       ] ;
+       fhir:name [ fhir:v "Document Reference {Binary}" ] ;
+       fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA TIU DOCUMENT (file 8925) to FHIR Binary" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "group6" ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
@@ -825,7 +704,7 @@
        fhir:name [ fhir:v "Encounter: Inpatient (PTF)" ] ;
        fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA PTF (file 45) to FHIR Encounter" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:groupingId [ fhir:v "group8" ]
+       fhir:groupingId [ fhir:v "group7" ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
@@ -838,7 +717,7 @@
        fhir:name [ fhir:v "Encounter: Outpatient (Visit)" ] ;
        fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA VISIT (file 9000010) to FHIR Encounter" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:groupingId [ fhir:v "group8" ]
+       fhir:groupingId [ fhir:v "group7" ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
@@ -851,7 +730,7 @@
        fhir:name [ fhir:v "Immunization" ] ;
        fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA V IMMUNIZATION (file 9000010.11) to FHIR Immunization" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:groupingId [ fhir:v "group9" ]
+       fhir:groupingId [ fhir:v "group8" ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
@@ -864,7 +743,7 @@
        fhir:name [ fhir:v "Immunization {Observation}" ] ;
        fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA ? (file ?) to FHIR Observation" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:groupingId [ fhir:v "group9" ]
+       fhir:groupingId [ fhir:v "group8" ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
@@ -877,7 +756,7 @@
        fhir:name [ fhir:v "Implantable Device {Device}" ] ;
        fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA ? (file ?) to FHIR Device" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:groupingId [ fhir:v "group10" ]
+       fhir:groupingId [ fhir:v "group9" ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
@@ -890,7 +769,7 @@
        fhir:name [ fhir:v "Implantable Device: A Lead {Device}" ] ;
        fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA A LEAD IMPLANT (file 698.2) to FHIR Device" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:groupingId [ fhir:v "group10" ]
+       fhir:groupingId [ fhir:v "group9" ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
@@ -903,7 +782,7 @@
        fhir:name [ fhir:v "Implantable Device: Dental {Device}" ] ;
        fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA DENTAL DEVICE TRACKING (file 228.9) to FHIR Device" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:groupingId [ fhir:v "group10" ]
+       fhir:groupingId [ fhir:v "group9" ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
@@ -916,7 +795,7 @@
        fhir:name [ fhir:v "Implantable Device: Pacemaker {Device}" ] ;
        fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA GENERATOR IMPLANT (file 698) to FHIR Device" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:groupingId [ fhir:v "group10" ]
+       fhir:groupingId [ fhir:v "group9" ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
@@ -929,7 +808,7 @@
        fhir:name [ fhir:v "Implantable Device: Prosthesis {Device}" ] ;
        fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA PROSTHESIS INSTALLED (file 130.01) to FHIR Device" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:groupingId [ fhir:v "group10" ]
+       fhir:groupingId [ fhir:v "group9" ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
@@ -942,7 +821,7 @@
        fhir:name [ fhir:v "Implantable Device: Transmitter {Device}" ] ;
        fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA GENERATOR IMPLANT (file 698) to FHIR Device" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:groupingId [ fhir:v "group10" ]
+       fhir:groupingId [ fhir:v "group9" ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
@@ -955,7 +834,20 @@
        fhir:name [ fhir:v "Implantable Device: V Lead {Device}" ] ;
        fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA V LEAD IMPLANT (file 698.1) to FHIR Device" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:groupingId [ fhir:v "group10" ]
+       fhir:groupingId [ fhir:v "group9" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/StructureDefinition/LabObservationDiagnosticReport> ;
+         fhir:reference [ fhir:v "StructureDefinition/LabObservationDiagnosticReport" ]
+       ] ;
+       fhir:name [ fhir:v "Lab Observation {DiagnosticReport}" ] ;
+       fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA ? (file ?) to FHIR DiagnosticReport" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "group5" ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
@@ -968,7 +860,20 @@
        fhir:name [ fhir:v "Lab Observation {Observation}" ] ;
        fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA ? (file ?) to FHIR Observation" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:groupingId [ fhir:v "group6" ]
+       fhir:groupingId [ fhir:v "group5" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/StructureDefinition/LabObservationChemhemtoxriaserDiagnosticReport> ;
+         fhir:reference [ fhir:v "StructureDefinition/LabObservationChemhemtoxriaserDiagnosticReport" ]
+       ] ;
+       fhir:name [ fhir:v "Lab Observation: Chem, hem, tox, ria, ser {DiagnosticReport}" ] ;
+       fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA CHEM, HEM, TOX, RIA, SER, etc. (file 63.04) to FHIR DiagnosticReport" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "group5" ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
@@ -981,7 +886,7 @@
        fhir:name [ fhir:v "Lab Observation: Chem, hem, tox, ria, ser {Observation}" ] ;
        fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA CHEM, HEM, TOX, RIA, SER, etc. (file 63.04) to FHIR Observation" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:groupingId [ fhir:v "group6" ]
+       fhir:groupingId [ fhir:v "group5" ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
@@ -994,7 +899,20 @@
        fhir:name [ fhir:v "Lab Observation: Chem, hem, tox, ria, ser {Specimen}" ] ;
        fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA CHEM, HEM, TOX, RIA, SER, etc. (file 63.04) to FHIR Specimen" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:groupingId [ fhir:v "group6" ]
+       fhir:groupingId [ fhir:v "group5" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/StructureDefinition/LabObservationCytopathologyDiagnosticReport> ;
+         fhir:reference [ fhir:v "StructureDefinition/LabObservationCytopathologyDiagnosticReport" ]
+       ] ;
+       fhir:name [ fhir:v "Lab Observation: Cytopathology {DiagnosticReport}" ] ;
+       fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA CYTOPATHOLOGY (file 63.09) to FHIR DiagnosticReport" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "group5" ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
@@ -1007,7 +925,7 @@
        fhir:name [ fhir:v "Lab Observation: Cytopathology {Observation}" ] ;
        fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA CYTOPATHOLOGY (file 63.09) to FHIR Observation" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:groupingId [ fhir:v "group6" ]
+       fhir:groupingId [ fhir:v "group5" ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
@@ -1020,7 +938,20 @@
        fhir:name [ fhir:v "Lab Observation: Cytopathology {Specimen}" ] ;
        fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA CYTOPATHOLOGY (file 63.09) to FHIR Specimen" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:groupingId [ fhir:v "group6" ]
+       fhir:groupingId [ fhir:v "group5" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/StructureDefinition/LabObservationElectronMicroscopyDiagnosticReport> ;
+         fhir:reference [ fhir:v "StructureDefinition/LabObservationElectronMicroscopyDiagnosticReport" ]
+       ] ;
+       fhir:name [ fhir:v "Lab Observation: Electron Microscopy {DiagnosticReport}" ] ;
+       fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA EM (file 63.02) to FHIR DiagnosticReport" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "group5" ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
@@ -1033,7 +964,7 @@
        fhir:name [ fhir:v "Lab Observation: Electron Microscopy {Observation}" ] ;
        fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA EM (file 63.02) to FHIR Observation" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:groupingId [ fhir:v "group6" ]
+       fhir:groupingId [ fhir:v "group5" ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
@@ -1046,7 +977,7 @@
        fhir:name [ fhir:v "Lab Observation: Electron Microscopy {Specimen}" ] ;
        fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA EM (file 63.02) to FHIR Specimen" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:groupingId [ fhir:v "group6" ]
+       fhir:groupingId [ fhir:v "group5" ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
@@ -1059,7 +990,7 @@
        fhir:name [ fhir:v "Lab Observation: Microbiology {DiagnosticReport}" ] ;
        fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA MICROBIOLOGY (file 63.05) to FHIR DiagnosticReport" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:groupingId [ fhir:v "group6" ]
+       fhir:groupingId [ fhir:v "group5" ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
@@ -1072,7 +1003,7 @@
        fhir:name [ fhir:v "Lab Observation: Microbiology {DiagnosticReport}: Bacteriology" ] ;
        fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA MICROBIOLOGY (file 63.05) to FHIR DiagnosticReport" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:groupingId [ fhir:v "group6" ]
+       fhir:groupingId [ fhir:v "group5" ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
@@ -1085,7 +1016,7 @@
        fhir:name [ fhir:v "Lab Observation: Microbiology {DiagnosticReport}: Mycobacteriology" ] ;
        fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA MICROBIOLOGY (file 63.05) to FHIR DiagnosticReport" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:groupingId [ fhir:v "group6" ]
+       fhir:groupingId [ fhir:v "group5" ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
@@ -1098,7 +1029,7 @@
        fhir:name [ fhir:v "Lab Observation: Microbiology {DiagnosticReport}: Mycology" ] ;
        fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA MICROBIOLOGY (file 63.05) to FHIR DiagnosticReport" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:groupingId [ fhir:v "group6" ]
+       fhir:groupingId [ fhir:v "group5" ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
@@ -1111,7 +1042,7 @@
        fhir:name [ fhir:v "Lab Observation: Microbiology {DiagnosticReport}: Parasitology" ] ;
        fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA MICROBIOLOGY (file 63.05) to FHIR DiagnosticReport" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:groupingId [ fhir:v "group6" ]
+       fhir:groupingId [ fhir:v "group5" ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
@@ -1124,7 +1055,7 @@
        fhir:name [ fhir:v "Lab Observation: Microbiology {DiagnosticReport}: Virology" ] ;
        fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA MICROBIOLOGY (file 63.05) to FHIR DiagnosticReport" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:groupingId [ fhir:v "group6" ]
+       fhir:groupingId [ fhir:v "group5" ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
@@ -1137,7 +1068,7 @@
        fhir:name [ fhir:v "Lab Observation: Microbiology {Observation}" ] ;
        fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA MICROBIOLOGY (file 63.05) to FHIR Observation" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:groupingId [ fhir:v "group6" ]
+       fhir:groupingId [ fhir:v "group5" ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
@@ -1150,7 +1081,7 @@
        fhir:name [ fhir:v "Lab Observation: Microbiology {Observation}: Bacteriology" ] ;
        fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA MICROBIOLOGY (file 63.05) to FHIR Observation" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:groupingId [ fhir:v "group6" ]
+       fhir:groupingId [ fhir:v "group5" ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
@@ -1163,7 +1094,7 @@
        fhir:name [ fhir:v "Lab Observation: Microbiology {Observation}: Mycobacteriology" ] ;
        fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA MICROBIOLOGY (file 63.05) to FHIR Observation" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:groupingId [ fhir:v "group6" ]
+       fhir:groupingId [ fhir:v "group5" ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
@@ -1176,7 +1107,7 @@
        fhir:name [ fhir:v "Lab Observation: Microbiology {Observation}: Mycology" ] ;
        fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA MICROBIOLOGY (file 63.05) to FHIR Observation" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:groupingId [ fhir:v "group6" ]
+       fhir:groupingId [ fhir:v "group5" ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
@@ -1189,7 +1120,7 @@
        fhir:name [ fhir:v "Lab Observation: Microbiology {Observation}: Parasitology" ] ;
        fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA MICROBIOLOGY (file 63.05) to FHIR Observation" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:groupingId [ fhir:v "group6" ]
+       fhir:groupingId [ fhir:v "group5" ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
@@ -1202,7 +1133,7 @@
        fhir:name [ fhir:v "Lab Observation: Microbiology {Observation}: Virology" ] ;
        fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA MICROBIOLOGY (file 63.05) to FHIR Observation" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:groupingId [ fhir:v "group6" ]
+       fhir:groupingId [ fhir:v "group5" ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
@@ -1215,7 +1146,20 @@
        fhir:name [ fhir:v "Lab Observation: Microbiology {Specimen}" ] ;
        fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA MICROBIOLOGY (file 63.05) to FHIR Specimen" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:groupingId [ fhir:v "group6" ]
+       fhir:groupingId [ fhir:v "group5" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/StructureDefinition/LabObservationSurgicalPathologyDiagnosticReport> ;
+         fhir:reference [ fhir:v "StructureDefinition/LabObservationSurgicalPathologyDiagnosticReport" ]
+       ] ;
+       fhir:name [ fhir:v "Lab Observation: Surgical Pathology {DiagnosticReport}" ] ;
+       fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA SURGICAL PATHOLOGY (file 63.08) to FHIR DiagnosticReport" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "group5" ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
@@ -1228,7 +1172,7 @@
        fhir:name [ fhir:v "Lab Observation: Surgical Pathology {Observation}" ] ;
        fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA SURGICAL PATHOLOGY (file 63.08) to FHIR Observation" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:groupingId [ fhir:v "group6" ]
+       fhir:groupingId [ fhir:v "group5" ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
@@ -1241,7 +1185,7 @@
        fhir:name [ fhir:v "Lab Observation: Surgical Pathology {Specimen}" ] ;
        fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA SURGICAL PATHOLOGY (file 63.08) to FHIR Specimen" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:groupingId [ fhir:v "group6" ]
+       fhir:groupingId [ fhir:v "group5" ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
@@ -1254,30 +1198,30 @@
        fhir:name [ fhir:v "Location" ] ;
        fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA HOSPITAL LOCATION (file 44) to FHIR Location" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:groupingId [ fhir:v "group11" ]
+       fhir:groupingId [ fhir:v "group10" ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "StructureDefinition:resource" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://va.gov/fhir/StructureDefinition/MedDispenseOrigMedicationDispense> ;
-         fhir:reference [ fhir:v "StructureDefinition/MedDispenseOrigMedicationDispense" ]
+         fhir:link <http://va.gov/fhir/StructureDefinition/MedicationDispenseOriginalMedicationDispense> ;
+         fhir:reference [ fhir:v "StructureDefinition/MedicationDispenseOriginalMedicationDispense" ]
        ] ;
-       fhir:name [ fhir:v "MedDispenseOrig {MedicationDispense}" ] ;
+       fhir:name [ fhir:v "MedicationDispenseOriginal {MedicationDispense}" ] ;
        fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA PRESCRIPTION (file 52) to FHIR MedicationDispense" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:groupingId [ fhir:v "group21" ]
+       fhir:groupingId [ fhir:v "group14" ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "StructureDefinition:resource" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://va.gov/fhir/StructureDefinition/MedDispensePartialMedicationDispense> ;
-         fhir:reference [ fhir:v "StructureDefinition/MedDispensePartialMedicationDispense" ]
+         fhir:link <http://va.gov/fhir/StructureDefinition/MedicationDispensePartialMedicationDispense> ;
+         fhir:reference [ fhir:v "StructureDefinition/MedicationDispensePartialMedicationDispense" ]
        ] ;
-       fhir:name [ fhir:v "MedDispensePartial {MedicationDispense}" ] ;
+       fhir:name [ fhir:v "MedicationDispensePartial {MedicationDispense}" ] ;
        fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA PRESCRIPTION (file 52) to FHIR MedicationDispense" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ] ;
        fhir:groupingId [ fhir:v "group22" ]
@@ -1287,10 +1231,10 @@
          fhir:value [ fhir:v "StructureDefinition:resource" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://va.gov/fhir/StructureDefinition/MedDispenseRefillMedicationDispense> ;
-         fhir:reference [ fhir:v "StructureDefinition/MedDispenseRefillMedicationDispense" ]
+         fhir:link <http://va.gov/fhir/StructureDefinition/MedicationDispenseRefillMedicationDispense> ;
+         fhir:reference [ fhir:v "StructureDefinition/MedicationDispenseRefillMedicationDispense" ]
        ] ;
-       fhir:name [ fhir:v "MedDispenseRefill {MedicationDispense}" ] ;
+       fhir:name [ fhir:v "MedicationDispenseRefill {MedicationDispense}" ] ;
        fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA PRESCRIPTION (file 52) to FHIR MedicationDispense" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ] ;
        fhir:groupingId [ fhir:v "group23" ]
@@ -1300,11 +1244,11 @@
          fhir:value [ fhir:v "StructureDefinition:resource" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://va.gov/fhir/StructureDefinition/MedicationRequestVAOrder> ;
-         fhir:reference [ fhir:v "StructureDefinition/MedicationRequestVAOrder" ]
+         fhir:link <http://va.gov/fhir/StructureDefinition/MedicationRequestNonVAMedicationRequest> ;
+         fhir:reference [ fhir:v "StructureDefinition/MedicationRequestNonVAMedicationRequest" ]
        ] ;
-       fhir:name [ fhir:v "MedicationRequest: VA Order" ] ;
-       fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA ORDER (file 100) to FHIR MedicationRequest" ] ;
+       fhir:name [ fhir:v "MedicationRequestNonVA {MedicationRequest}" ] ;
+       fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA NON (file 55.05) to FHIR MedicationRequest" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ] ;
        fhir:groupingId [ fhir:v "group12" ]
      ] [
@@ -1313,13 +1257,26 @@
          fhir:value [ fhir:v "StructureDefinition:resource" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://va.gov/fhir/StructureDefinition/MedRequestOrigXXXMedicationRequest> ;
-         fhir:reference [ fhir:v "StructureDefinition/MedRequestOrigXXXMedicationRequest" ]
+         fhir:link <http://va.gov/fhir/StructureDefinition/MedicationRequestOutpatientMedicationRequest> ;
+         fhir:reference [ fhir:v "StructureDefinition/MedicationRequestOutpatientMedicationRequest" ]
        ] ;
-       fhir:name [ fhir:v "MedRequestOrigXXX {MedicationRequest}" ] ;
-       fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA PRESCRIPTION (file 52) to FHIR MedicationRequest" ] ;
+       fhir:name [ fhir:v "MedicationRequestOutpatient {MedicationRequest}" ] ;
+       fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA ? (file ?) to FHIR MedicationRequest" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ] ;
        fhir:groupingId [ fhir:v "group13" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/StructureDefinition/MedicationRequestUnsignedMedicationRequestVAOrder> ;
+         fhir:reference [ fhir:v "StructureDefinition/MedicationRequestUnsignedMedicationRequestVAOrder" ]
+       ] ;
+       fhir:name [ fhir:v "MedicationRequestUnsigned {MedicationRequest}: VA Order" ] ;
+       fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA ORDER (file 100) to FHIR MedicationRequest" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "group11" ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
@@ -1332,7 +1289,59 @@
        fhir:name [ fhir:v "Observation EXAM {Observation}" ] ;
        fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA V EXAM (file 9000010.13) to FHIR Observation" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:groupingId [ fhir:v "group14" ]
+       fhir:groupingId [ fhir:v "group15" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/StructureDefinition/ObservationImagingResultObservation> ;
+         fhir:reference [ fhir:v "StructureDefinition/ObservationImagingResultObservation" ]
+       ] ;
+       fhir:name [ fhir:v "Observation Imaging Result {Observation}" ] ;
+       fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA ? (file ?) to FHIR Observation" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "group24" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/StructureDefinition/ObservationImagingResultEchoObservation> ;
+         fhir:reference [ fhir:v "StructureDefinition/ObservationImagingResultEchoObservation" ]
+       ] ;
+       fhir:name [ fhir:v "Observation Imaging Result: Echo {Observation}" ] ;
+       fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA ECHO (file 691) to FHIR Observation" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "group24" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/StructureDefinition/ObservationImagingResultEKGObservation> ;
+         fhir:reference [ fhir:v "StructureDefinition/ObservationImagingResultEKGObservation" ]
+       ] ;
+       fhir:name [ fhir:v "Observation Imaging Result: EKG {Observation}" ] ;
+       fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA ELECTROCARDIOGRAM (EKG) (file 691.5) to FHIR Observation" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "group24" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/StructureDefinition/ObservationImagingResultRadNucObservation> ;
+         fhir:reference [ fhir:v "StructureDefinition/ObservationImagingResultRadNucObservation" ]
+       ] ;
+       fhir:name [ fhir:v "Observation Imaging Result: Rad/Nuc {Observation}" ] ;
+       fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA RAD/NUC MED REPORTS (file 74) to FHIR Observation" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "group24" ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
@@ -1345,7 +1354,7 @@
        fhir:name [ fhir:v "Organization" ] ;
        fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA INSTITUTION (file 4) to FHIR Organization" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:groupingId [ fhir:v "group15" ]
+       fhir:groupingId [ fhir:v "group16" ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
@@ -1371,7 +1380,7 @@
        fhir:name [ fhir:v "Practitioner" ] ;
        fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA NEW PERSON (file 200) to FHIR Practitioner" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:groupingId [ fhir:v "group16" ]
+       fhir:groupingId [ fhir:v "group17" ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
@@ -1384,7 +1393,7 @@
        fhir:name [ fhir:v "Practitioner Role" ] ;
        fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA NEW PERSON (file 200) to FHIR PractitionerRole" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:groupingId [ fhir:v "group17" ]
+       fhir:groupingId [ fhir:v "group18" ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
@@ -1397,7 +1406,7 @@
        fhir:name [ fhir:v "Procedure: Outpatient {Procedure}" ] ;
        fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA V CPT (file 9000010.18) to FHIR Procedure" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:groupingId [ fhir:v "group18" ]
+       fhir:groupingId [ fhir:v "group19" ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
@@ -1410,7 +1419,7 @@
        fhir:name [ fhir:v "Procedure: Radiology {Procedure}" ] ;
        fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA EXAMINATIONS (file 70.03) to FHIR Procedure" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:groupingId [ fhir:v "group18" ]
+       fhir:groupingId [ fhir:v "group19" ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
@@ -1423,7 +1432,7 @@
        fhir:name [ fhir:v "Procedure: Surgery {Procedure}" ] ;
        fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA SURGERY (file 130) to FHIR Procedure" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:groupingId [ fhir:v "group18" ]
+       fhir:groupingId [ fhir:v "group19" ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
@@ -1436,7 +1445,7 @@
        fhir:name [ fhir:v "Smoking Status Observation {Observation}" ] ;
        fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA V HEALTH FACTORS (file 9000010.23) to FHIR Observation" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:groupingId [ fhir:v "group19" ]
+       fhir:groupingId [ fhir:v "group20" ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
@@ -2043,6 +2052,78 @@
          fhir:value [ fhir:v "ConceptMap" ]
        ] ) ;
        fhir:reference [
+         fhir:link <http://va.gov/fhir/ConceptMap/CMVFImageInterpretation> ;
+         fhir:reference [ fhir:v "ConceptMap/CMVFImageInterpretation" ]
+       ] ;
+       fhir:name [ fhir:v "VF_ImageInterpretation" ] ;
+       fhir:description [ fhir:v "Terminology Maps VF_ImageInterpretation" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/ValueSet/VSVFImageInterpretation> ;
+         fhir:reference [ fhir:v "ValueSet/VSVFImageInterpretation" ]
+       ] ;
+       fhir:name [ fhir:v "VF_ImageInterpretation" ] ;
+       fhir:description [ fhir:v "Use the link in the Expansion section to navigate to the ConceptMap." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ConceptMap" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/ConceptMap/CMVFImageStatus> ;
+         fhir:reference [ fhir:v "ConceptMap/CMVFImageStatus" ]
+       ] ;
+       fhir:name [ fhir:v "VF_ImageStatus" ] ;
+       fhir:description [ fhir:v "Terminology Maps VF_ImageStatus" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/ValueSet/VSVFImageStatus> ;
+         fhir:reference [ fhir:v "ValueSet/VSVFImageStatus" ]
+       ] ;
+       fhir:name [ fhir:v "VF_ImageStatus" ] ;
+       fhir:description [ fhir:v "Use the link in the Expansion section to navigate to the ConceptMap." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ConceptMap" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/ConceptMap/CMVFImageStatusRadNuc> ;
+         fhir:reference [ fhir:v "ConceptMap/CMVFImageStatusRadNuc" ]
+       ] ;
+       fhir:name [ fhir:v "VF_ImageStatusRadNuc" ] ;
+       fhir:description [ fhir:v "Terminology Maps VF_ImageStatusRadNuc" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/ValueSet/VSVFImageStatusRadNuc> ;
+         fhir:reference [ fhir:v "ValueSet/VSVFImageStatusRadNuc" ]
+       ] ;
+       fhir:name [ fhir:v "VF_ImageStatusRadNuc" ] ;
+       fhir:description [ fhir:v "Use the link in the Expansion section to navigate to the ConceptMap." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ConceptMap" ]
+       ] ) ;
+       fhir:reference [
          fhir:link <http://va.gov/fhir/ConceptMap/CMVFimmunizationPrimarySource> ;
          fhir:reference [ fhir:v "ConceptMap/CMVFimmunizationPrimarySource" ]
        ] ;
@@ -2235,6 +2316,30 @@
          fhir:value [ fhir:v "ConceptMap" ]
        ] ) ;
        fhir:reference [
+         fhir:link <http://va.gov/fhir/ConceptMap/CMVFOrderPatientClass> ;
+         fhir:reference [ fhir:v "ConceptMap/CMVFOrderPatientClass" ]
+       ] ;
+       fhir:name [ fhir:v "VF_OrderPatientClass" ] ;
+       fhir:description [ fhir:v "Terminology Maps VF_OrderPatientClass" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/ValueSet/VSVFOrderPatientClass> ;
+         fhir:reference [ fhir:v "ValueSet/VSVFOrderPatientClass" ]
+       ] ;
+       fhir:name [ fhir:v "VF_OrderPatientClass" ] ;
+       fhir:description [ fhir:v "Use the link in the Expansion section to navigate to the ConceptMap." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ConceptMap" ]
+       ] ) ;
+       fhir:reference [
          fhir:link <http://va.gov/fhir/ConceptMap/CMVFOrganizationIdentifierType> ;
          fhir:reference [ fhir:v "ConceptMap/CMVFOrganizationIdentifierType" ]
        ] ;
@@ -2259,11 +2364,11 @@
          fhir:value [ fhir:v "ConceptMap" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://va.gov/fhir/ConceptMap/CMVFOutpatMedReq> ;
-         fhir:reference [ fhir:v "ConceptMap/CMVFOutpatMedReq" ]
+         fhir:link <http://va.gov/fhir/ConceptMap/CMVFOutMedRequestStatus> ;
+         fhir:reference [ fhir:v "ConceptMap/CMVFOutMedRequestStatus" ]
        ] ;
-       fhir:name [ fhir:v "VF_OutpatMedReq" ] ;
-       fhir:description [ fhir:v "Terminology Maps VF_OutpatMedReq" ] ;
+       fhir:name [ fhir:v "VF_OutMedRequestStatus" ] ;
+       fhir:description [ fhir:v "Terminology Maps VF_OutMedRequestStatus" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -2271,10 +2376,10 @@
          fhir:value [ fhir:v "ValueSet" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://va.gov/fhir/ValueSet/VSVFOutpatMedReq> ;
-         fhir:reference [ fhir:v "ValueSet/VSVFOutpatMedReq" ]
+         fhir:link <http://va.gov/fhir/ValueSet/VSVFOutMedRequestStatus> ;
+         fhir:reference [ fhir:v "ValueSet/VSVFOutMedRequestStatus" ]
        ] ;
-       fhir:name [ fhir:v "VF_OutpatMedReq" ] ;
+       fhir:name [ fhir:v "VF_OutMedRequestStatus" ] ;
        fhir:description [ fhir:v "Use the link in the Expansion section to navigate to the ConceptMap." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
@@ -2763,11 +2868,11 @@
          fhir:value [ fhir:v "ConceptMap" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://va.gov/fhir/ConceptMap/CMVFYesNo> ;
-         fhir:reference [ fhir:v "ConceptMap/CMVFYesNo" ]
+         fhir:link <http://va.gov/fhir/ConceptMap/CMVFYesNo10> ;
+         fhir:reference [ fhir:v "ConceptMap/CMVFYesNo10" ]
        ] ;
-       fhir:name [ fhir:v "VF_YesNo" ] ;
-       fhir:description [ fhir:v "Terminology Maps VF_YesNo" ] ;
+       fhir:name [ fhir:v "VF_YesNo10" ] ;
+       fhir:description [ fhir:v "Terminology Maps VF_YesNo10" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -2775,10 +2880,10 @@
          fhir:value [ fhir:v "ValueSet" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://va.gov/fhir/ValueSet/VSVFYesNo> ;
-         fhir:reference [ fhir:v "ValueSet/VSVFYesNo" ]
+         fhir:link <http://va.gov/fhir/ValueSet/VSVFYesNo10> ;
+         fhir:reference [ fhir:v "ValueSet/VSVFYesNo10" ]
        ] ;
-       fhir:name [ fhir:v "VF_YesNo" ] ;
+       fhir:name [ fhir:v "VF_YesNo10" ] ;
        fhir:description [ fhir:v "Use the link in the Expansion section to navigate to the ConceptMap." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
@@ -2817,7 +2922,7 @@
        fhir:name [ fhir:v "Vital Signs {Device}" ] ;
        fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA GMRV VITAL MEASUREMENT (file 120.5) to FHIR Device" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:groupingId [ fhir:v "group20" ]
+       fhir:groupingId [ fhir:v "group21" ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
@@ -2830,7 +2935,7 @@
        fhir:name [ fhir:v "Vital Signs {Observation}" ] ;
        fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA GMRV VITAL MEASUREMENT (file 120.5) to FHIR Observation" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:groupingId [ fhir:v "group20" ]
+       fhir:groupingId [ fhir:v "group21" ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
@@ -2843,7 +2948,7 @@
        fhir:name [ fhir:v "Vital Signs {Observation}: Concentration" ] ;
        fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA GMRV VITAL MEASUREMENT (file 120.5) to FHIR Observation" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:groupingId [ fhir:v "group20" ]
+       fhir:groupingId [ fhir:v "group21" ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
@@ -2856,7 +2961,7 @@
        fhir:name [ fhir:v "Vital Signs {Observation}: diastolic" ] ;
        fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA GMRV VITAL MEASUREMENT (file 120.5) to FHIR Observation" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:groupingId [ fhir:v "group20" ]
+       fhir:groupingId [ fhir:v "group21" ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
@@ -2869,7 +2974,7 @@
        fhir:name [ fhir:v "Vital Signs {Observation}: Flow" ] ;
        fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA GMRV VITAL MEASUREMENT (file 120.5) to FHIR Observation" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:groupingId [ fhir:v "group20" ]
+       fhir:groupingId [ fhir:v "group21" ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
@@ -2882,7 +2987,7 @@
        fhir:name [ fhir:v "Vital Signs {Observation}: systolic" ] ;
        fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA GMRV VITAL MEASUREMENT (file 120.5) to FHIR Observation" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:groupingId [ fhir:v "group20" ]
+       fhir:groupingId [ fhir:v "group21" ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
@@ -2895,7 +3000,7 @@
        fhir:name [ fhir:v "Vital Signs {Organization}" ] ;
        fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA GMRV VITAL MEASUREMENT (file 120.5) to FHIR Organization" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:groupingId [ fhir:v "group20" ]
+       fhir:groupingId [ fhir:v "group21" ]
      ] ) ;
      fhir:page [
        fhir:extension ( [

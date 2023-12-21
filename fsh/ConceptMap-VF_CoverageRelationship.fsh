@@ -14,54 +14,43 @@ Usage: #definition
 * group[=].element[=].target.code = #self
 * group[=].element[=].target.display = "Self"
 * group[=].element[=].target.equivalence = #equivalent
-* group[=].element[=].target.comment = "urn:oid:2.16.840.1.113883.4.642.4.1386"
 * group[=].element[+].code = #"HIPAA 01 SPOUSE"
 * group[=].element[=].target.code = #spouse
 * group[=].element[=].target.display = "Spouse"
 * group[=].element[=].target.equivalence = #equivalent
-* group[=].element[=].target.comment = "urn:oid:2.16.840.1.113883.4.642.4.1386"
 * group[=].element[+].code = #"HIPAA 19 CHILD"
 * group[=].element[=].target.code = #child
 * group[=].element[=].target.display = "Child"
 * group[=].element[=].target.equivalence = #equivalent
-* group[=].element[=].target.comment = "urn:oid:2.16.840.1.113883.4.642.4.1386"
 * group[=].element[+].code = #"HIPAA 20 EMPLOYEE"
 * group[=].element[=].target.code = #other
 * group[=].element[=].target.display = "Other"
 * group[=].element[=].target.equivalence = #equivalent
-* group[=].element[=].target.comment = "urn:oid:2.16.840.1.113883.4.642.4.1386"
 * group[=].element[+].code = #"HIPAA 39 ORGAN DONOR"
 * group[=].element[=].target.code = #other
 * group[=].element[=].target.display = "Other"
 * group[=].element[=].target.equivalence = #equivalent
-* group[=].element[=].target.comment = "urn:oid:2.16.840.1.113883.4.642.4.1386"
 * group[=].element[+].code = #"HIPAA 41 INJURED PLAINTIFF"
 * group[=].element[=].target.code = #injured
 * group[=].element[=].target.display = "Injured"
 * group[=].element[=].target.equivalence = #equivalent
-* group[=].element[=].target.comment = "urn:oid:2.16.840.1.113883.4.642.4.1386"
 * group[=].element[+].code = #"HIPAA 32 MOTHER"
 * group[=].element[=].target.code = #parent
 * group[=].element[=].target.display = "Parent"
 * group[=].element[=].target.equivalence = #equivalent
-* group[=].element[=].target.comment = "urn:oid:2.16.840.1.113883.4.642.4.1386"
 * group[=].element[+].code = #"HIPAA 33 FATHER"
 * group[=].element[=].target.code = #parent
 * group[=].element[=].target.display = "Parent"
 * group[=].element[=].target.equivalence = #equivalent
-* group[=].element[=].target.comment = "urn:oid:2.16.840.1.113883.4.642.4.1386"
 * group[=].element[+].code = #"HIPAA 29 SIGNIFICANT OTHER"
 * group[=].element[=].target.code = #other
 * group[=].element[=].target.display = "Other"
 * group[=].element[=].target.equivalence = #equivalent
-* group[=].element[=].target.comment = "urn:oid:2.16.840.1.113883.4.642.4.1386"
 * group[=].element[+].code = #"HIPAA 53 LIFE PARTNER"
 * group[=].element[=].target.code = #common
 * group[=].element[=].target.display = "Common"
 * group[=].element[=].target.equivalence = #equivalent
-* group[=].element[=].target.comment = "urn:oid:2.16.840.1.113883.4.642.4.1386"
 * group[=].element[+].code = #"HIPAA G8 OTHER RELATIONSHIP"
 * group[=].element[=].target.code = #other
 * group[=].element[=].target.display = "Other"
 * group[=].element[=].target.equivalence = #equivalent
-* group[=].element[=].target.comment = "urn:oid:2.16.840.1.113883.4.642.4.1386"

@@ -112,7 +112,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","n/a"
 "Encounter.type","Encounter.type","","","",1,*,"Y","","Y","CodeableConcept {[]} {[]}
 ","Specific type of encounter","Specific type of encounter (e.g. e-mail consultation, surgical day-care, skilled nursing, rehabilitation).","Since there are many ways to further classify encounters, this element is 0..*.","","","","","","","","",,"extensible","Valueset to describe the Encounter Type","http://hl7.org/fhir/us/core/ValueSet/us-core-encounter-type","",,,,"Encounter.type",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","Event.code",".code","FiveWs.class","PV1-4 / PV1-18"
+","Event.code",".code","FiveWs.class","PV1-4 / PV1-18","1615: source value from V CPT - CPT > CPT (#9000010.18-.01 > 81-)"
 "Encounter.serviceType","Encounter.serviceType","","","",0,1,"","","Y","CodeableConcept {[]} {[]}
 ","Specific type of service","Broad categorization of the service that is to be provided (e.g. cardiology).","","","","","","","","","",,"example","Broad categorization of the service that is to be provided.","http://hl7.org/fhir/ValueSet/service-type","",,,,"Encounter.serviceType",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","Event.code","n/a","PV1-10"
@@ -189,7 +189,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ",".time","ROL-5, ROL-6 (or maybe PRT-5)"
 "Encounter.participant.individual","Encounter.participant.individual","","","",0,1,"Y","","Y","Reference {[]} {[CanonicalType[http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner], CanonicalType[http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitionerrole], CanonicalType[http://hl7.org/fhir/us/core/StructureDefinition/us-core-relatedperson]]}
 ","Persons involved in the encounter other than the patient","Persons involved in the encounter other than the patient.","","","","","","","","","",,,,,"",,,,"Encounter.participant.individual",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","Event.performer.actor",".role","FiveWs.who","ROL-4"
+","Event.performer.actor",".role","FiveWs.who","ROL-4","1614: reference from V PROVIDER - PROVIDER > NEW PERSON (#9000010.06-.01 > 200-)"
 "Encounter.appointment","Encounter.appointment","","","",0,*,"","","Y","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/Appointment]]}
 ","The appointment that scheduled this encounter","The appointment that scheduled this encounter.","","","","","","","","","",,,,,"",,,,"Encounter.appointment",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","Event.basedOn",".outboundRelationship[typeCode=FLFS].target[classCode=ENC, moodCode=APT]","SCH-1 / SCH-2"
@@ -278,7 +278,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "Encounter.diagnosis.condition","Encounter.diagnosis.condition","","Admission diagnosis
 discharge diagnosisindication","",1,1,"","","Y","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/Condition], CanonicalType[http://hl7.org/fhir/StructureDefinition/Procedure]]}
 ","The diagnosis or procedure relevant to the encounter","Reason the encounter takes place, as specified using information from another resource. For admissions, this is the admission diagnosis. The indication will typically be a Condition (with other resources referenced in the evidence.detail), or a Procedure.","For systems that need to know which was the primary diagnosis, these will be marked with the standard extension primaryDiagnosis (which is a sequence value rather than a flag, 1 = primary diagnosis).","","","","","","","","",,,,,"",,,,"Encounter.diagnosis.condition",1,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","Event.reasonReference",".outboundRelationship[typeCode=RSON].target","FiveWs.why[x]","Resources that would commonly referenced at Encounter.indication would be Condition and/or Procedure. These most closely align with DG1/PRB and PR1 respectively.","452: reference from V POV - PROBLEM LIST ENTRY (#9000010.07-.16)"
+","Event.reasonReference",".outboundRelationship[typeCode=RSON].target","FiveWs.why[x]","Resources that would commonly referenced at Encounter.indication would be Condition and/or Procedure. These most closely align with DG1/PRB and PR1 respectively."
 "Encounter.diagnosis.use","Encounter.diagnosis.use","","","",0,1,"","","","CodeableConcept {[]} {[]}
 ","Role that this diagnosis has within the encounter (e.g. admission, billing, discharge …)","Role that this diagnosis has within the encounter (e.g. admission, billing, discharge …).","","","","","","","","","",,"preferred","The type of diagnosis this condition represents.","http://hl7.org/fhir/ValueSet/diagnosis-role","",,,,"Encounter.diagnosis.use",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","n/a"

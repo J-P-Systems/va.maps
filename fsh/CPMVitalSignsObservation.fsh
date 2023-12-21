@@ -1,5 +1,5 @@
 Profile: CPMVitalSignsObservation
-Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-vital-signs
+Parent: http://va.gov/fhir/StructureDefinition/VitalSignsObservation
 Id: CPMVitalSignsObservation
 Title: "CPM Vital Signs {Observation}"
 Description: "This StructureDefinition contains the maps for VistA GMRV VITAL MEASUREMENT (file 120.5) to FHIR Observation"

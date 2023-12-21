@@ -4,19 +4,18 @@ Id: Patient
 Title: "Patient"
 Description: "This StructureDefinition contains the maps for VistA PATIENT (file 2) to FHIR Patient"
 * ^status = #draft
-* gender from http://va.gov/fhir/ValueSet/VSVFgenderIdentity
 * address ^slicing.discriminator.type = #value
 * address ^slicing.discriminator.path = "use"
 * address ^slicing.rules = #open
 * address contains home 0..1 and temp 0..1 and physical 0..1 and postal 0..1
-* managingOrganization.display obeys inv-26
+* managingOrganization.display obeys inv-27
 * extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex].valueCode from http://va.gov/fhir/ValueSet/VSVFgenderIdentity
 * gender from http://va.gov/fhir/ValueSet/VSVFgenderIdentity
 * maritalStatus from http://va.gov/fhir/ValueSet/VSVFMaritalStatus
 * extension contains http://hl7.org/fhir/StructureDefinition/patient-religion named patient-religion 0..1
 * extension[http://hl7.org/fhir/StructureDefinition/patient-religion].valueCodeableConcept from http://va.gov/fhir/ValueSet/VSVFReligion
 
-Invariant: inv-26
+Invariant: inv-27
 Description: "296: fixed value = Veterans Health Administration"
 Severity: #warning
 
@@ -29,7 +28,6 @@ Source: Patient
 * telecom.value -> "274: source value from PATIENT - PHONE NUMBER [RESIDENCE] (#2-.131)"
 * telecom.value -> "275: source value from PATIENT - PHONE NUMBER [WORK] (#2-.132)"
 * telecom.value -> "276: source value from PATIENT - PHONE NUMBER [CELLULAR] (#2-.134)"
-* gender -> "277: terminologyMaps using VF_genderIdentity on PATIENT - SELF IDENTIFIED GENDER (#2-.024)" "removed case 9/22\nnote: values fit in gender map, so no second map provided"
 * birthDate -> "284: source value from PATIENT - DATE OF BIRTH (#2-.03)"
 * deceasedDateTime -> "285: source value from PATIENT - DATE OF DEATH (#2-.351) case not null" "removed \"true\" based on Validator testing 6/30/23"
 * address[home].line -> "286: source value from PATIENT - STREET ADDRESS [LINE 1] (#2-.111)"
@@ -56,7 +54,6 @@ Title: "Clinical Data Warehouse (CDW)"
 Source: Patient
 * identifier.value -> "Patient.Patient.PatientICN\nPatient.PatientICN.PatientICN\nSPatient.SPatient.PatientICN\nSPatient.SPatientGISAddress.PatientICN"
 * name.text -> "SPatient.SPatient.PatientFirstName\nSPatient.SPatient.PatientLastName\nSPatient.SPatient.PatientName\nSPatient.SPatientAlias.PatientName"
-* gender -> "Patient.Patient.SelfIdentifiedGender\nSPatient.SPatient.SelfIdentifiedGender"
 * birthDate -> "SPatient.PlaceOfBirth.BirthDateTime\nSPatient.SPatient.BirthDateTime"
 * deceasedDateTime -> "Patient.Patient.DeathDateTime\nSPatient.SPatient.DeathDateTime"
 * address[home].line -> "SPatient.SPatientGISAddress.StreetAddress1"
@@ -68,3 +65,9 @@ Source: Patient
 * gender -> "Patient.Patient.SelfIdentifiedGender\nSPatient.SPatient.SelfIdentifiedGender"
 * maritalStatus -> "Outpat.Visit.PatientMaritalStatus\nOutpat.Workload.PatientMaritalStatus"
 * extension[http://hl7.org/fhir/StructureDefinition/patient-religion].valueCodeableConcept -> "Outpat.Visit.PatientReligion\nOutpat.Visit.PatientReligionCode\nOutpat.Workload.PatientReligion\nOutpat.Workload.PatientReligionCode"
+
+Mapping: vpr-to-Patient
+Id: vpr
+Title: "Virtual Patient Record (VPR)"
+Source: Patient
+* identifier.value -> "GET PATIENT DATA-reaction.mechanism"

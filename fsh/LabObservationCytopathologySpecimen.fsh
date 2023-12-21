@@ -9,8 +9,8 @@ Mapping: vista-to-LabObservationCytopathologySpecimen
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: LabObservationCytopathologySpecimen
-* accessionIdentifier -> "1473: source value from CYTOPATHOLOGY - CYTOPATH ACC # (#63.09-.06)" "@MZ: ref-issue: Should be split into Specimen"
-* type.text -> "1474: source value from CYTOPATHOLOGY - SPECIMEN > SPECIMEN - SPECIMEN (#63.09-.012 > 63.902-.01)" "@MZ: ref-issue: Should be split into Specimen"
+* accessionIdentifier -> "1473: source value from CYTOPATHOLOGY - CYTOPATH ACC # (#63.09-.06)"
+* type.text -> "1474: source value from CYTOPATHOLOGY - SPECIMEN > SPECIMEN - SPECIMEN (#63.09-.012 > 63.902-.01)"
 
 Mapping: cdw-to-LabObservationCytopathologySpecimen
 Id: cdw

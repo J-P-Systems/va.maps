@@ -4,16 +4,16 @@ Id: SmokingStatusObservationObservation
 Title: "Smoking Status Observation {Observation}"
 Description: "This StructureDefinition contains the maps for VistA V HEALTH FACTORS (file 9000010.23) to FHIR Observation"
 * ^status = #draft
-* status obeys inv-34
-* category.coding.code obeys inv-35
+* status obeys inv-35
+* category.coding.code obeys inv-36
 * performer only Reference(http://hl7.org/fhir/StructureDefinition/Practitioner)
 * valueCodeableConcept from http://va.gov/fhir/ValueSet/VSVFSmokingStatus
 
-Invariant: inv-34
+Invariant: inv-35
 Description: "1242: fixed value = final"
 Severity: #warning
 
-Invariant: inv-35
+Invariant: inv-36
 Description: "1243: fixed value = social-history"
 Severity: #warning
 

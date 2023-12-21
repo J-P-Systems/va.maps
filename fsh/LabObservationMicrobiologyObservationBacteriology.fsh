@@ -4,12 +4,12 @@ Id: LabObservationMicrobiologyObservationBacteriology
 Title: "Lab Observation: Microbiology {Observation}: Bacteriology"
 Description: "This StructureDefinition contains the maps for VistA MICROBIOLOGY (file 63.05) to FHIR Observation"
 * ^status = #draft
-* code obeys inv-10
+* code obeys inv-11
 * status from http://va.gov/fhir/ValueSet/VSVFLabObservationStatus
 * valueCodeableConcept.coding from http://va.gov/fhir/ValueSet/VSVFPositiveNegative
 * component.interpretation from http://va.gov/fhir/ValueSet/VSVFAntibioticSensitivityInterpretation
 
-Invariant: inv-10
+Invariant: inv-11
 Description: "1525: fixed value without value? if MICROBIOLOGY - ORDERED TEST > ORDERED TEST - LAB TEST ORDERED > LABORATORY TEST - SITE/SPECIMEN > SITE/SPECIMEN - LOINC CODE (#63.05-.35 > 63.5-13 > 60-100 > 60.01-95.03) case NULL"
 Severity: #warning
 
@@ -22,9 +22,9 @@ Source: LabObservationMicrobiologyObservationBacteriology
 * valueCodeableConcept.coding -> "1516: terminologyMaps using VF_PositiveNegative on MICROBIOLOGY - URINE SCREEN (#63.05-11.57)"
 * valueString -> "1517: source value from MICROBIOLOGY - SPUTUM SCREEN (#63.05-11.58)"
 * valueString -> "1518: source value from MICROBIOLOGY - GRAM STAIN > GRAM STAIN - GRAM STAIN (#63.05-11.6 > 63.29-.01)"
-* component.code -> "1522: transform using null on MICROBIOLOGY - ORGANISM > ORGANISM - ORGANISM (#63.05-12 > 63.3-5 to 160)" "antibiotic sensitivity\nWhat is default if no LOINC? Use text or is there a default LOINC?\n48611-8 Antibiotic tested [Identifier] against isolate"
-* component.valueString -> "1523: source value from MICROBIOLOGY - ORGANISM > ORGANISM - ORGANISM (#63.05-12 > 63.3-5 to 160)" "antibiotic sensitivity"
-* component.interpretation -> "1524: terminologyMaps using VF_AntibioticSensitivityInterpretation on MICROBIOLOGY - ORGANISM > ORGANISM - ORGANISM (#63.05-12 > 63.3-5.1+to+160.1)" "antibiotic sensitivity"
+* component.code -> "1522: transform using null on MICROBIOLOGY - ORGANISM > ORGANISM - ORGANISM (#63.05-12 > 63.3-5+to+160)" "antibiotic sensitivity\nWhat is default if no LOINC? Use text or is there a default LOINC?\n48611-8 Antibiotic tested [Identifier] against isolate"
+* component.valueString -> "1523: source value from MICROBIOLOGY - ORGANISM > ORGANISM - ORGANISM (#63.05-12 > 63.3-5+to+160)" "antibiotic sensitivity.AntibioticSensitivityValue"
+* component.interpretation -> "1524: terminologyMaps using VF_AntibioticSensitivityInterpretation on MICROBIOLOGY - ORGANISM > ORGANISM - ORGANISM (#63.05-12 > 63.3-5.1+to+160.1)" "antibiotic sensitivity.AntibioticSensitivityInterpretation"
 
 Mapping: cdw-to-LabObservationMicrobiologyObservationBacteriology
 Id: cdw

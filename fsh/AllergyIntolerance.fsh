@@ -25,7 +25,6 @@ Source: AllergyIntolerance
 * reaction.manifestation -> "252: source value from REACTIONS - REACTION > SIGN/SYMPTOMS (#120.81-.01 > 120.83-)"
 * type -> "531: terminologyMaps using VF_allergyMechanism on PATIENT ALLERGIES - MECHANISM (#120.8-17)"
 * verificationStatus -> "535: terminologyMaps using VF_allergyVerificationStatus on PATIENT ALLERGIES - VERIFIED (#120.8-19)"
-* verificationStatus -> "1515: transform using if exists -> confirmed\nelse -> unconfirmed on PATIENT ALLERGIES - VERIFICATION DATE/TIME (#120.8-20)"
 * clinicalStatus -> "536: terminologyMaps using VF_allergyActive on PATIENT ALLERGIES - ENTERED IN ERROR (#120.8-22)" "confirm CHAPI"
 * verificationStatus -> "537: terminologyMaps using VF_allergyEnteredInError on PATIENT ALLERGIES - ENTERED IN ERROR (#120.8-22)"
 * category -> "556: terminologyMaps using VF_allergySubstanceCategory on PATIENT ALLERGIES - ALLERGY TYPE (#120.8-3.1)"
@@ -33,7 +32,26 @@ Source: AllergyIntolerance
 * note.time -> "1502: source value from PATIENT ALLERGIES - COMMENTS > COMMENTS - DATE/TIME COMMENT ENTERED (#120.8-26 > 120.826-.01)"
 * note.authorString -> "1503: source value from PATIENT ALLERGIES - COMMENTS > COMMENTS - USER ENTERING (#120.8-26 > 120.826-1)"
 * note.text -> "1504: source value from PATIENT ALLERGIES - COMMENTS > COMMENTS - COMMENTS (#120.8-26 > 120.826-2)"
-* code -> "1505: source value from PATIENT ALLERGIES - DRUG INGREDIENTS (#120.8-2)"
+* code -> "1505: source value from PATIENT ALLERGIES - DRUG INGREDIENTS (#120.8-2)" "CHAPI to rxn code; looking into"
+* reaction.onset -> "1652: source value from PATIENT ALLERGIES - REACTIONS > REACTIONS - DATE ENTERED (#120.8-10 > 120.81-3)"
+
+Mapping: vpr-to-AllergyIntolerance
+Id: vpr
+Title: "Virtual Patient Record (VPR)"
+Source: AllergyIntolerance
+* identifier.value -> "GET PATIENT DATA-reaction.id"
+* code.text -> "GET PATIENT DATA-reaction.name"
+* code -> "GET PATIENT DATA-reaction.vuid"
+* recordedDate -> "GET PATIENT DATA-reaction.entered"
+* reaction.manifestation -> "GET PATIENT DATA-reaction.reaction [m]"
+* verificationStatus -> "GET PATIENT DATA-reaction.verified"
+* clinicalStatus -> "GET PATIENT DATA-reaction.removed"
+* verificationStatus -> "GET PATIENT DATA-reaction.type"
+* category -> "GET PATIENT DATA-reaction.severity"
+* reaction.severity -> "GET PATIENT DATA-reaction.comment [m].entered"
+* note.time -> "GET PATIENT DATA-reaction.comment [m].enteredBy"
+* note.authorString -> "GET PATIENT DATA-reaction.comment [m].commentText"
+* note.text -> "GET PATIENT DATA-reaction.drugIngredient [m]"
 
 Mapping: cdw-to-AllergyIntolerance
 Id: cdw
@@ -43,7 +61,6 @@ Source: AllergyIntolerance
 * recordedDate -> "Allergy.AllergicReaction.OriginationDateTime\nAllergy.Allergy.OriginationDateTime\nAllergy.AllergyComment.OriginationDateTime\nAllergy.AllergyDrugClass.OriginationDateTime\nAllergy.AllergyDrugIngredient.OriginationDateTime"
 * type -> "Allergy.Allergy.Mechanism"
 * verificationStatus -> "Allergy.Allergy.VerifiedFlag"
-* verificationStatus -> "Allergy.Allergy.VerificationDateTime"
 * clinicalStatus -> "Allergy.Allergy.EnteredInErrorFlag"
 * verificationStatus -> "Allergy.Allergy.EnteredInErrorFlag"
 * category -> "Allergy.Allergy.AllergyType"

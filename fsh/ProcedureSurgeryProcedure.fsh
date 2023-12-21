@@ -4,19 +4,19 @@ Id: ProcedureSurgeryProcedure
 Title: "Procedure: Surgery {Procedure}"
 Description: "This StructureDefinition contains the maps for VistA SURGERY (file 130) to FHIR Procedure"
 * ^status = #draft
-* complication.coding.code obeys inv-31
 * complication.coding.code obeys inv-32
-* category.coding.code obeys inv-33
+* complication.coding.code obeys inv-33
+* category.coding.code obeys inv-34
 
-Invariant: inv-31
+Invariant: inv-32
 Description: "1296: fixed value = 88797001 if SURGERY - STOMA COMPLICATIONS (#130-688) case == ‘Y’"
 Severity: #warning
 
-Invariant: inv-32
+Invariant: inv-33
 Description: "1297: fixed value = 22298006 if SURGERY - MYOCARDIAL INFARCTION (#130-258) case == ‘Y’"
 Severity: #warning
 
-Invariant: inv-33
+Invariant: inv-34
 Description: "1313: fixed value = 387713003"
 Severity: #warning
 

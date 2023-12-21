@@ -9,8 +9,8 @@ Mapping: vista-to-LabObservationMicrobiologySpecimen
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: LabObservationMicrobiologySpecimen
-* accessionIdentifier -> "1469: source value from MICROBIOLOGY - MICROBIOLOGY ACCESSION (#63.05-.06)" "@MZ: ref-issue: Should be split into Specimen"
-* type.text -> "1470: source value from MICROBIOLOGY - COLLECTION SAMPLE > COLLECTION SAMPLE - NAME (#63.05-.055 > 62-.01)" "@MZ: ref-issue: Should be split into Specimen"
+* accessionIdentifier -> "1469: source value from MICROBIOLOGY - MICROBIOLOGY ACCESSION (#63.05-.06)"
+* type.text -> "1470: source value from MICROBIOLOGY - COLLECTION SAMPLE > COLLECTION SAMPLE - NAME (#63.05-.055 > 62-.01)"
 
 Mapping: cdw-to-LabObservationMicrobiologySpecimen
 Id: cdw

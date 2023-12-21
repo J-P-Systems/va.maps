@@ -4,9 +4,9 @@ Id: LabObservationObservation
 Title: "Lab Observation {Observation}"
 Description: "This StructureDefinition contains the maps for VistA ? (file ?) to FHIR Observation"
 * ^status = #draft
-* category.coding.code obeys inv-9
+* category.coding.code obeys inv-10
 
-Invariant: inv-9
+Invariant: inv-10
 Description: "843: fixed value = laboratory"
 Severity: #warning
 

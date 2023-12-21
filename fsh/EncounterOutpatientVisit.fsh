@@ -19,10 +19,11 @@ Source: EncounterOutpatientVisit
 * period.start -> "443: source value from VISIT - VISIT/ADMIT DATE&TIME (#9000010-.01)"
 * period.end -> "444: source value from VISIT - CHECK OUT DATE&TIME (#9000010-.18)"
 * reasonCode.coding.code -> "447: source value from V POV - POV > ICD DIAGNOSIS - CODE NUMBER (#9000010.07-.01 > 80-.01)" "MvdZ QA"
-* diagnosis.condition -> "452: reference from V POV - PROBLEM LIST ENTRY (#9000010.07-.16)"
 * location.location -> "458: source value from VISIT - DSS ID (#9000010-.08) case stop"
 * location.location -> "459: source value from VISIT - HOSPITAL LOCATION (#9000010-.22) case location"
 * serviceProvider -> "1599: reference from VISIT - LOC. OF ENCOUNTER > LOCATION - POINTER TO INSTITUTION FILE (#4) (#9000010-.06 > 9999999.06-.1)"
+* participant.individual -> "1614: reference from V PROVIDER - PROVIDER > NEW PERSON (#9000010.06-.01 > 200-)"
+* type -> "1615: source value from V CPT - CPT > CPT (#9000010.18-.01 > 81-)"
 
 Mapping: cdw-to-EncounterOutpatientVisit
 Id: cdw

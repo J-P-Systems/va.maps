@@ -2,23 +2,23 @@ Profile: ConditionProblem
 Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-problems-health-concerns
 Id: ConditionProblem
 Title: "Condition: Problem"
-Description: "This StructureDefinition contains the maps for VistA PROBLEM (file 9000011) to FHIR Condition"
+Description: "This StructureDefinition contains the maps for VistA ? (file ?) to FHIR Condition"
 * ^status = #draft
 * category obeys inv-0
 * clinicalStatus from http://va.gov/fhir/ValueSet/VSVFproblemStatus
 * verificationStatus from http://va.gov/fhir/ValueSet/VSVFproblemVerificationStatus
 
 Invariant: inv-0
-Description: "1607: fixed value = http://terminology.hl7.org/CodeSystem/condition-category|problem-list-item if PROBLEM (#9000011)"
+Description: "1607: fixed value = http://terminology.hl7.org/CodeSystem/condition-category|problem-list-item"
 Severity: #warning
 
 Mapping: vista-to-ConditionProblem
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: ConditionProblem
+* category -> "1607: fixed value = http://terminology.hl7.org/CodeSystem/condition-category|problem-list-item" "QA"
 * identifier.value -> "345: source value from PROBLEM - IEN (#9000011-.001)"
-* category -> "1607: fixed value = http://terminology.hl7.org/CodeSystem/condition-category|problem-list-item if PROBLEM (#9000011)" "QA"
-* clinicalStatus -> "349: transform using \"resolved\" on PROBLEM - DATE RESOLVED (#9000011-1.07) case Not Null"
+* clinicalStatus -> "349: transform using \"resolved\" on PROBLEM - DATE RESOLVED (#9000011-1.07) case Not Null" "dependency on 605?"
 * code -> "365: source value from PROBLEM - DIAGNOSIS > ICD DIAGNOSIS (#9000011-.01 > 80-)"
 * code.coding.code -> "366: source value from PROBLEM - SNOMED CT CONCEPT CODE (#9000011-80001)"
 * code.text -> "957: source value from PROBLEM - PROVIDER NARRATIVE (#9000011-.05)"

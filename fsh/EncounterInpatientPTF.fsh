@@ -4,16 +4,16 @@ Id: EncounterInpatientPTF
 Title: "Encounter: Inpatient (PTF)"
 Description: "This StructureDefinition contains the maps for VistA PTF (file 45) to FHIR Encounter"
 * ^status = #draft
-* class obeys inv-5
-* status obeys inv-6
+* class obeys inv-6
+* status obeys inv-7
 * hospitalization.admitSource.coding from http://va.gov/fhir/ValueSet/VSVFSourceOfAdmission
 * serviceProvider only Reference(http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization)
 
-Invariant: inv-5
+Invariant: inv-6
 Description: "1601: fixed value = http://terminology.hl7.org/CodeSystem/v3-ActCode|IMP"
 Severity: #warning
 
-Invariant: inv-6
+Invariant: inv-7
 Description: "435: fixed value = finished if PTF - DISCHARGE DATE (#45-70) case not null"
 Severity: #warning
 
@@ -42,6 +42,7 @@ Source: EncounterInpatientPTF
 * location.location -> "460: reference from PTF - WARD AT DISCHARGE (#45-2.2)" "added slicing"
 * location.location -> "461: reference from PTF - FACILITY (#45-3)" "added slicing"
 * serviceProvider -> "1600: reference from PTF - FACILITY (#45-3)"
+* type -> "1616: source value from INPATIENT CPT CODE - CPT CODE > CPT (#46-.01 > 81-)"
 
 Mapping: cdw-to-EncounterInpatientPTF
 Id: cdw
@@ -63,3 +64,5 @@ Source: EncounterInpatientPTF
 * hospitalization.dischargeDisposition -> "Inpat.Census.PlaceOfDispositionIEN\nInpat.Inpatient.PlaceOfDispositionIEN\nInpat.InpatientFeeBasis.PlaceOfDispositionIEN"
 * location.location -> "Inpat.Inpatient.Discharge45WardLocationIEN"
 * location.location -> "Inpat.Census.DischargeFacility\nInpat.Inpatient.DischargeFromFacility\nInpat.InpatientFeeBasis.DischargeFacility"
+* serviceProvider -> "Inpat.Census.DischargeFacility\nInpat.Inpatient.DischargeFromFacility\nInpat.InpatientFeeBasis.DischargeFacility"
+* type -> "Inpat.InpatientCPTProcedure.CPTIEN"

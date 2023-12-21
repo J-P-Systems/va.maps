@@ -63,7 +63,7 @@ Inpat.InpatientFeeBasis.AdmitEligibilityIEN"
 ","II.assigningAuthorityName but note that this is an improper use by the definition of the field.  Also Role.scoper","CX.4 / (CX.4,CX.9,CX.10)"
 "Encounter.status","Encounter.status","","","",1,1,"Y","Y","Y","code {[]} {[]}
 ","planned | arrived | triaged | in-progress | onleave | finished | cancelled +","planned | arrived | triaged | in-progress | onleave | finished | cancelled +.","Note that internal business rules will determine the appropriate transitions that may occur between statuses (and also classes).","","","","","","","","",,"required","Current state of the encounter.","http://hl7.org/fhir/ValueSet/encounter-status|4.0.1","",,,,"Encounter.status",1,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-inv-6:435: fixed value = finished if PTF - DISCHARGE DATE (#45-70) case not null {null}","Event.status",".statusCode","FiveWs.status","No clear equivalent in HL7 v2; active/finished could be inferred from PV1-44, PV1-45, PV2-24; inactive could be inferred from PV2-16","433: transform using planned on PTF - ADMISSION DATE (#45-2) case null or > now","434: transform using in-progress on PTF - ADMISSION DATE (#45-2) case not null, < now, field 70 null","435: fixed value = finished if PTF - DISCHARGE DATE (#45-70) case not null","Inpat.Census.AdmitDateTime
+inv-7:435: fixed value = finished if PTF - DISCHARGE DATE (#45-70) case not null {null}","Event.status",".statusCode","FiveWs.status","No clear equivalent in HL7 v2; active/finished could be inferred from PV1-44, PV1-45, PV2-24; inactive could be inferred from PV2-16","433: transform using planned on PTF - ADMISSION DATE (#45-2) case null or > now","434: transform using in-progress on PTF - ADMISSION DATE (#45-2) case not null, < now, field 70 null","435: fixed value = finished if PTF - DISCHARGE DATE (#45-70) case not null","Inpat.Census.AdmitDateTime
 Inpat.Census501.AdmitDateTime
 Inpat.Census501Diagnosis.AdmitDateTime
 Inpat.Census535.AdmitDateTime
@@ -119,7 +119,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","n/a"
 "Encounter.class","Encounter.class","","","",1,1,"Y","","Y","Coding {[]} {[]}
 ","Classification of patient encounter","Concepts representing classification of patient encounter such as ambulatory (outpatient), inpatient, emergency, home health or others due to local variations.","","","","","","","","","",,"extensible","Classification of the encounter.","http://terminology.hl7.org/ValueSet/v3-ActEncounterCode","",,,,"Encounter.class",1,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-inv-5:1601: fixed value = http://terminology.hl7.org/CodeSystem/v3-ActCode|IMP {null}",".inboundRelationship[typeCode=SUBJ].source[classCode=LIST].code","FiveWs.class","PV1-2","1601: fixed value = http://terminology.hl7.org/CodeSystem/v3-ActCode|IMP"
+inv-6:1601: fixed value = http://terminology.hl7.org/CodeSystem/v3-ActCode|IMP {null}",".inboundRelationship[typeCode=SUBJ].source[classCode=LIST].code","FiveWs.class","PV1-2","1601: fixed value = http://terminology.hl7.org/CodeSystem/v3-ActCode|IMP"
 "Encounter.classHistory","Encounter.classHistory","","","",0,*,"","","","BackboneElement {[]} {[]}
 ","List of past encounter classes","The class history permits the tracking of the encounters transitions without needing to go  through the resource history.  This would be used for a case where an admission starts of as an emergency encounter, then transitions into an inpatient scenario. Doing this and not restarting a new encounter ensures that any lab/diagnostic results can more easily follow the patient and not require re-processing and not get lost or cancelled during a kind of discharge from emergency to inpatient.","","","","","","","","","",,,,,"",,,,"Encounter.classHistory",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","n/a"
@@ -143,7 +143,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","n/a"
 "Encounter.type","Encounter.type","","","",1,*,"Y","","Y","CodeableConcept {[]} {[]}
 ","Specific type of encounter","Specific type of encounter (e.g. e-mail consultation, surgical day-care, skilled nursing, rehabilitation).","Since there are many ways to further classify encounters, this element is 0..*.","","","","","","","","",,"extensible","Valueset to describe the Encounter Type","http://hl7.org/fhir/us/core/ValueSet/us-core-encounter-type","",,,,"Encounter.type",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","Event.code",".code","FiveWs.class","PV1-4 / PV1-18"
+","Event.code",".code","FiveWs.class","PV1-4 / PV1-18","1616: source value from INPATIENT CPT CODE - CPT CODE > CPT (#46-.01 > 81-)","Inpat.InpatientCPTProcedure.CPTIEN"
 "Encounter.serviceType","Encounter.serviceType","","","",0,1,"","","Y","CodeableConcept {[]} {[]}
 ","Specific type of service","Broad categorization of the service that is to be provided (e.g. cardiology).","","","","","","","","","",,"example","Broad categorization of the service that is to be provided.","http://hl7.org/fhir/ValueSet/service-type","",,,,"Encounter.serviceType",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","Event.code","n/a","PV1-10"
@@ -466,7 +466,9 @@ There may be many levels in the hierachy, and this may only pic specific levels 
 ",".time"
 "Encounter.serviceProvider","Encounter.serviceProvider","","","",0,1,"Y","","","Reference {[]} {[CanonicalType[http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization]]}
 ","The organization (facility) responsible for this encounter","The organization that is primarily responsible for this Encounter's services. This MAY be the same as the organization on the Patient record, however it could be different, such as if the actor performing the services was from an external organization (which may be billed seperately) for an external consultation.  Refer to the example bundle showing an abbreviated set of Encounters for a colonoscopy.","","","","","","","","","",,,,,"",,,,"Encounter.serviceProvider",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","Event.performer.actor",".particiaption[typeCode=PFM].role","PL.6  & PL.1","1600: reference from PTF - FACILITY (#45-3)"
+","Event.performer.actor",".particiaption[typeCode=PFM].role","PL.6  & PL.1","1600: reference from PTF - FACILITY (#45-3)","Inpat.Census.DischargeFacility
+Inpat.Inpatient.DischargeFromFacility
+Inpat.InpatientFeeBasis.DischargeFacility"
 "Encounter.partOf","Encounter.partOf","","","",0,1,"","","","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/Encounter]]}
 ","Another Encounter this encounter is part of","Another Encounter of which this encounter is a part of (administratively or in time).","This is also used for associating a child's encounter back to the mother's encounter.Refer to the Notes section in the Patient resource for further details.","","","","","","","","",,,,,"",,,,"Encounter.partOf",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","Event.partOf",".inboundRelationship[typeCode=COMP].source[classCode=COMP, moodCode=EVN]"
