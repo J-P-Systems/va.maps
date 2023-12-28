@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-    <title>Encounter: Outpatient (Visit) - Mappings - US Veterans Administration FHIR Map Set Implementation Guide v0.10.0</title>
+    <title>Encounter: Outpatient (Visit) - Mappings - US Veterans Administration FHIR Map Set Implementation Guide v0.11.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -57,7 +57,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">US Veterans Administration FHIR Map Set Implementation Guide</span>
             <br/>
-            <span style="display:inline-block;">0.10.0 - ci-build
+            <span style="display:inline-block;">0.11.0 - ci-build
 
 
 
@@ -131,7 +131,7 @@
           <div class="inner-wrapper">
 
 <div style="counter-reset: section 5" class="col-12">
-    <!-- ReleaseHeader --><p id="publish-box">US Veterans Administration FHIR Map Set Implementation Guide - Local Development build (v0.10.0). See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
+    <!-- ReleaseHeader --><p id="publish-box">US Veterans Administration FHIR Map Set Implementation Guide - Local Development build (v0.11.0). See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
   
 
 
@@ -204,7 +204,7 @@
         
           Draft
           
-            as of 2023-12-21
+            as of 2023-12-28
           
         
       </td>
@@ -224,18 +224,14 @@
 
 <p>See also the <a href="https://github.com/J-P-Systems/va.maps/tree/main/fsh/EncounterOutpatientVisit.fsh">FHIR Shorthand</a>.</p>
 
-<p><a name="l326">​</a><a href="#mappings-for-veterans-health-information-systems-technology-and">VistA mappings</a>.</p>
+<p><a name="l326">​</a>Jump down to <a href="#mappings-for-veterans-health-information-systems-technology-and">VistA, CDW &amp; VPR mappings</a>.</p>
 
 <h4 id="raw-mappings">Raw mappings</h4>
 
 <table border="1" cellpadding="0" cellspacing="0" class="table-ta1"><tr class="row-ro1">
 <th class="cell-ce1">key</th>
 <th class="cell-ce1">status</th>
-<th class="cell-ce1">Direction</th>
 <th class="cell-ce1">VistA File - Field</th>
-<th class="cell-ce1">VistA File - Field #</th>
-<th class="cell-ce1">subFile - subField</th>
-<th class="cell-ce1">subFile-subField #</th>
 <th class="cell-ce1">mapApproach</th>
 <th class="cell-ce1">mapCase</th>
 <th class="cell-ce1">FHIR Path</th>
@@ -243,17 +239,12 @@
 <th class="cell-ce1">mapValue</th>
 <th class="cell-ce1">mapParameter</th>
 <th class="cell-ce1">mapComment</th>
-<th class="cell-ce1">VistA URL</th>
 <th class="cell-ce1">FHIR URL | Ver</th>
 </tr>
 <tr class="row-ro1">
 <td class="cell-ce1">429</td>
 <td class="cell-ce1">team-approved</td>
-<td class="cell-ce1">V2F</td>
-<td class="cell-ce1">VISIT - VISIT ID</td>
-<td class="cell-ce1">9000010-15001</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1"></td>
+<td class="cell-ce1">VISIT - VISIT ID (#9000010-15001)</td>
 <td class="cell-ce1">source value</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">Encounter.identifier</td>
@@ -261,17 +252,12 @@
 <td class="cell-ce1"></td>
 <td class="cell-ce1">.system=http://va.gov/terminology/VistADefinedTerms/9000010-15001</td>
 <td class="cell-ce1"></td>
-<td class="cell-ce1">http://va.gov/terminology/vistaDefinedElements/9000010-15001</td>
 <td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
 <td class="cell-ce1">430</td>
 <td class="cell-ce1">team-approved</td>
-<td class="cell-ce1">V2F</td>
-<td class="cell-ce1">VISIT - VISIT/ADMIT DATE&amp;TIME</td>
-<td class="cell-ce1">9000010-.01</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1"></td>
+<td class="cell-ce1">VISIT - VISIT/ADMIT DATE&amp;TIME (#9000010-.01)</td>
 <td class="cell-ce1">transform</td>
 <td class="cell-ce1">null or &gt; now</td>
 <td class="cell-ce1">Encounter.status</td>
@@ -279,17 +265,12 @@
 <td class="cell-ce1">planned</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1"></td>
-<td class="cell-ce1">http://va.gov/terminology/vistaDefinedElements/9000010-.01</td>
 <td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
 <td class="cell-ce1">431</td>
 <td class="cell-ce1">team-approved</td>
-<td class="cell-ce1">V2F</td>
-<td class="cell-ce1">VISIT - VISIT/ADMIT DATE&amp;TIME</td>
-<td class="cell-ce1">9000010-.01</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1"></td>
+<td class="cell-ce1">VISIT - VISIT/ADMIT DATE&amp;TIME (#9000010-.01)</td>
 <td class="cell-ce1">transform</td>
 <td class="cell-ce1">not null, &lt; now, .18 null</td>
 <td class="cell-ce1">Encounter.status</td>
@@ -297,17 +278,12 @@
 <td class="cell-ce1">in-progress</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">tweaked case logic 9/21</td>
-<td class="cell-ce1">http://va.gov/terminology/vistaDefinedElements/9000010-.01</td>
 <td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
 <td class="cell-ce1">432</td>
 <td class="cell-ce1">team-approved</td>
-<td class="cell-ce1">V2F</td>
-<td class="cell-ce1">VISIT - CHECK OUT DATE&amp;TIME</td>
-<td class="cell-ce1">9000010-.18</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1"></td>
+<td class="cell-ce1">VISIT - CHECK OUT DATE&amp;TIME (#9000010-.18)</td>
 <td class="cell-ce1">transform</td>
 <td class="cell-ce1">not null, &lt; now</td>
 <td class="cell-ce1">Encounter.status</td>
@@ -315,17 +291,12 @@
 <td class="cell-ce1">finished</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">tweaked case logic 9/21</td>
-<td class="cell-ce1">http://va.gov/terminology/vistaDefinedElements/9000010-.18</td>
 <td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
 <td class="cell-ce1">439</td>
 <td class="cell-ce1">team-approved</td>
-<td class="cell-ce1">V2F</td>
-<td class="cell-ce1">VISIT - SERVICE CATEGORY</td>
-<td class="cell-ce1">9000010-.07</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1"></td>
+<td class="cell-ce1">VISIT - SERVICE CATEGORY (#9000010-.07)</td>
 <td class="cell-ce1">source value</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">Encounter.serviceType.coding</td>
@@ -333,17 +304,12 @@
 <td class="cell-ce1"></td>
 <td class="cell-ce1">.system=http://va.gov/terminology/VistADefinedTerms/9000010-.07</td>
 <td class="cell-ce1">MvdZ QA</td>
-<td class="cell-ce1">http://va.gov/terminology/vistaDefinedElements/9000010-.07</td>
 <td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
 <td class="cell-ce1">440</td>
 <td class="cell-ce1">team-approved</td>
-<td class="cell-ce1">V2F</td>
-<td class="cell-ce1">VISIT - PATIENT NAME</td>
-<td class="cell-ce1">9000010-.05</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1"></td>
+<td class="cell-ce1">VISIT - PATIENT NAME (#9000010-.05)</td>
 <td class="cell-ce1">source value</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">Encounter.subject</td>
@@ -351,17 +317,12 @@
 <td class="cell-ce1"></td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1"></td>
-<td class="cell-ce1">http://va.gov/terminology/vistaDefinedElements/9000010-.05</td>
 <td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
 <td class="cell-ce1">443</td>
 <td class="cell-ce1">team-approved</td>
-<td class="cell-ce1">V2F</td>
-<td class="cell-ce1">VISIT - VISIT/ADMIT DATE&amp;TIME</td>
-<td class="cell-ce1">9000010-.01</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1"></td>
+<td class="cell-ce1">VISIT - VISIT/ADMIT DATE&amp;TIME (#9000010-.01)</td>
 <td class="cell-ce1">source value</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">Encounter.period</td>
@@ -369,17 +330,12 @@
 <td class="cell-ce1"></td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1"></td>
-<td class="cell-ce1">http://va.gov/terminology/vistaDefinedElements/9000010-.01</td>
 <td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
 <td class="cell-ce1">444</td>
 <td class="cell-ce1">team-approved</td>
-<td class="cell-ce1">V2F</td>
-<td class="cell-ce1">VISIT - CHECK OUT DATE&amp;TIME</td>
-<td class="cell-ce1">9000010-.18</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1"></td>
+<td class="cell-ce1">VISIT - CHECK OUT DATE&amp;TIME (#9000010-.18)</td>
 <td class="cell-ce1">source value</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">Encounter.period</td>
@@ -387,17 +343,12 @@
 <td class="cell-ce1"></td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1"></td>
-<td class="cell-ce1">http://va.gov/terminology/vistaDefinedElements/9000010-.18</td>
 <td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
 <td class="cell-ce1">447</td>
 <td class="cell-ce1">team-approved</td>
-<td class="cell-ce1">V2F</td>
-<td class="cell-ce1">V POV - POV</td>
-<td class="cell-ce1">9000010.07-.01</td>
-<td class="cell-ce1">ICD DIAGNOSIS - CODE NUMBER</td>
-<td class="cell-ce1">80-.01</td>
+<td class="cell-ce1">V POV - POV &gt; ICD DIAGNOSIS - CODE NUMBER (#9000010.07-.01 &gt; 80-.01)</td>
 <td class="cell-ce1">source value</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">Encounter.reasonCode.coding</td>
@@ -405,17 +356,12 @@
 <td class="cell-ce1"></td>
 <td class="cell-ce1">.system=termmap({VF_ICDCodingSystems,CODING SYSTEM(1.1)})</td>
 <td class="cell-ce1">MvdZ QA</td>
-<td class="cell-ce1">http://va.gov/terminology/vistaDefinedElements/9000010.07-.01</td>
 <td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
 <td class="cell-ce1">458</td>
 <td class="cell-ce1">team-approved</td>
-<td class="cell-ce1">V2F</td>
-<td class="cell-ce1">VISIT - DSS ID</td>
-<td class="cell-ce1">9000010-.08</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1"></td>
+<td class="cell-ce1">VISIT - DSS ID (#9000010-.08)</td>
 <td class="cell-ce1">source value</td>
 <td class="cell-ce1">stop</td>
 <td class="cell-ce1">Encounter.location.location</td>
@@ -423,17 +369,12 @@
 <td class="cell-ce1"></td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1"></td>
-<td class="cell-ce1">http://va.gov/terminology/vistaDefinedElements/9000010-.08</td>
 <td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
 <td class="cell-ce1">459</td>
 <td class="cell-ce1">team-approved</td>
-<td class="cell-ce1">V2F</td>
-<td class="cell-ce1">VISIT - HOSPITAL LOCATION</td>
-<td class="cell-ce1">9000010-.22</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1"></td>
+<td class="cell-ce1">VISIT - HOSPITAL LOCATION (#9000010-.22)</td>
 <td class="cell-ce1">source value</td>
 <td class="cell-ce1">location</td>
 <td class="cell-ce1">Encounter.location.location</td>
@@ -441,17 +382,12 @@
 <td class="cell-ce1"></td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1"></td>
-<td class="cell-ce1">http://va.gov/terminology/vistaDefinedElements/9000010-.22</td>
 <td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
 <td class="cell-ce1">1599</td>
 <td class="cell-ce1">for review</td>
-<td class="cell-ce1">V2F</td>
-<td class="cell-ce1">VISIT - LOC. OF ENCOUNTER</td>
-<td class="cell-ce1">9000010-.06</td>
-<td class="cell-ce1">LOCATION - POINTER TO INSTITUTION FILE (#4)</td>
-<td class="cell-ce1">9999999.06-.1</td>
+<td class="cell-ce1">VISIT - LOC. OF ENCOUNTER &gt; LOCATION - POINTER TO INSTITUTION FILE (#4) (#9000010-.06 &gt; 9999999.06-.1)</td>
 <td class="cell-ce1">reference</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">Encounter.serviceProvider</td>
@@ -459,17 +395,12 @@
 <td class="cell-ce1"></td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1"></td>
-<td class="cell-ce1">http://va.gov/terminology/vistaDefinedElements/9999999.06-.1</td>
 <td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
 <td class="cell-ce1">1614</td>
 <td class="cell-ce1">for review</td>
-<td class="cell-ce1">V2F</td>
-<td class="cell-ce1">V PROVIDER - PROVIDER</td>
-<td class="cell-ce1">9000010.06-.01</td>
-<td class="cell-ce1">NEW PERSON</td>
-<td class="cell-ce1">200-</td>
+<td class="cell-ce1">V PROVIDER - PROVIDER &gt; NEW PERSON (#9000010.06-.01 &gt; 200-)</td>
 <td class="cell-ce1">reference</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">Encounter.participant.individual</td>
@@ -477,17 +408,12 @@
 <td class="cell-ce1"></td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1"></td>
-<td class="cell-ce1">http://va.gov/terminology/vistaDefinedElements/9999999.06-.01</td>
 <td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
 <td class="cell-ce1">1615</td>
 <td class="cell-ce1">for review</td>
-<td class="cell-ce1">V2F</td>
-<td class="cell-ce1">V CPT - CPT</td>
-<td class="cell-ce1">9000010.18-.01</td>
-<td class="cell-ce1">CPT</td>
-<td class="cell-ce1">81-</td>
+<td class="cell-ce1">V CPT - CPT &gt; CPT (#9000010.18-.01 &gt; 81-)</td>
 <td class="cell-ce1">source value</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">Encounter.type</td>
@@ -498,7 +424,6 @@
 .coding[0].display =  {SHORT NAME (2)}&nbsp;
 .text = {SHORT NAME (2)}</td>
 <td class="cell-ce1"></td>
-<td class="cell-ce1">http://va.gov/terminology/vistaDefinedElements/9999999.18-.01</td>
 <td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter | 5.0.1</td>
 </tr>
 </table>
@@ -818,7 +743,7 @@ Dim.ICD9.ICD9Code</td> </tr>
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.10.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Dec 21, 2023 16:22+0000">2023-12-21</span>
+          IG &copy; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.11.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Dec 28, 2023 09:08+0000">2023-12-28</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

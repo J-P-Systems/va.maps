@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-    <title>Observation EXAM {Observation} - Mappings - US Veterans Administration FHIR Map Set Implementation Guide v0.10.0</title>
+    <title>Observation EXAM {Observation} - Mappings - US Veterans Administration FHIR Map Set Implementation Guide v0.11.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -57,7 +57,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">US Veterans Administration FHIR Map Set Implementation Guide</span>
             <br/>
-            <span style="display:inline-block;">0.10.0 - ci-build
+            <span style="display:inline-block;">0.11.0 - ci-build
 
 
 
@@ -131,7 +131,7 @@
           <div class="inner-wrapper">
 
 <div style="counter-reset: section 5" class="col-12">
-    <!-- ReleaseHeader --><p id="publish-box">US Veterans Administration FHIR Map Set Implementation Guide - Local Development build (v0.10.0). See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
+    <!-- ReleaseHeader --><p id="publish-box">US Veterans Administration FHIR Map Set Implementation Guide - Local Development build (v0.11.0). See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
   
 
 
@@ -204,7 +204,7 @@
         
           Draft
           
-            as of 2023-12-21
+            as of 2023-12-28
           
         
       </td>
@@ -224,18 +224,14 @@
 
 <p>See also the <a href="https://github.com/J-P-Systems/va.maps/tree/main/fsh/ObservationEXAMObservation.fsh">FHIR Shorthand</a>.</p>
 
-<p><a name="l326">​</a><a href="#mappings-for-veterans-health-information-systems-technology-and">VistA mappings</a>.</p>
+<p><a name="l326">​</a>Jump down to <a href="#mappings-for-veterans-health-information-systems-technology-and">VistA, CDW &amp; VPR mappings</a>.</p>
 
 <h4 id="raw-mappings">Raw mappings</h4>
 
 <table border="1" cellpadding="0" cellspacing="0" class="table-ta1"><tr class="row-ro1">
 <th class="cell-ce1">key</th>
 <th class="cell-ce1">status</th>
-<th class="cell-ce1">Direction</th>
 <th class="cell-ce1">VistA File - Field</th>
-<th class="cell-ce1">VistA File - Field #</th>
-<th class="cell-ce1">subFile - subField</th>
-<th class="cell-ce1">subFile-subField #</th>
 <th class="cell-ce1">mapApproach</th>
 <th class="cell-ce1">mapCase</th>
 <th class="cell-ce1">FHIR Path</th>
@@ -243,17 +239,12 @@
 <th class="cell-ce1">mapValue</th>
 <th class="cell-ce1">mapParameter</th>
 <th class="cell-ce1">mapComment</th>
-<th class="cell-ce1">VistA URL</th>
 <th class="cell-ce1">FHIR URL | Ver</th>
 </tr>
 <tr class="row-ro1">
 <td class="cell-ce1">1580</td>
 <td class="cell-ce1">in process</td>
-<td class="cell-ce1">V2F</td>
-<td class="cell-ce1">V EXAM - EXAM</td>
-<td class="cell-ce1">9000010.13-.01</td>
-<td class="cell-ce1">EXAM</td>
-<td class="cell-ce1">9999999.15-</td>
+<td class="cell-ce1">V EXAM - EXAM &gt; EXAM (#9000010.13-.01 &gt; 9999999.15-)</td>
 <td class="cell-ce1">source value</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">Observation.code.coding</td>
@@ -263,17 +254,12 @@
 .code = {NAME(.01)}
 .display = {PRINT NAME(200)}</td>
 <td class="cell-ce1">in CDW through ExamSID</td>
-<td class="cell-ce1">http://va.gov/terminology/vistaDefinedElements/9000010.13-.01</td>
 <td class="cell-ce1">http://hl7.org/fhir/StructureDefinition/Observation | 4.0.1</td>
 </tr>
 <tr class="row-ro1">
 <td class="cell-ce1">1581</td>
 <td class="cell-ce1">in process</td>
-<td class="cell-ce1">V2F</td>
-<td class="cell-ce1">V EXAM - EXAM</td>
-<td class="cell-ce1">9000010.13-.01</td>
-<td class="cell-ce1">EXAM - CODE MAPPINGS</td>
-<td class="cell-ce1">9999999.15-210</td>
+<td class="cell-ce1">V EXAM - EXAM &gt; EXAM - CODE MAPPINGS (#9000010.13-.01 &gt; 9999999.15-210)</td>
 <td class="cell-ce1">source value</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">Observation.code.coding</td>
@@ -282,17 +268,12 @@
 <td class="cell-ce1">.code = termmap(VF_ExamCodingSystem,{CODING SYSTEM(.01})
 .code = {CODE(1)}</td>
 <td class="cell-ce1">in CDW through ExamSID</td>
-<td class="cell-ce1">http://va.gov/terminology/vistaDefinedElements/9000010.13-.01</td>
 <td class="cell-ce1">http://hl7.org/fhir/StructureDefinition/Observation | 4.0.1</td>
 </tr>
 <tr class="row-ro1">
 <td class="cell-ce1">1582</td>
 <td class="cell-ce1">in process</td>
-<td class="cell-ce1">V2F</td>
-<td class="cell-ce1">V EXAM - PATIENT NAME</td>
-<td class="cell-ce1">9000010.13-.02</td>
-<td class="cell-ce1">PATIENT/IHS - NAME</td>
-<td class="cell-ce1">9000001-.01</td>
+<td class="cell-ce1">V EXAM - PATIENT NAME &gt; PATIENT/IHS - NAME (#9000010.13-.02 &gt; 9000001-.01)</td>
 <td class="cell-ce1">reference</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">Observation.subject</td>
@@ -300,17 +281,12 @@
 <td class="cell-ce1"></td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">in CDW through PatientSID</td>
-<td class="cell-ce1">http://va.gov/terminology/vistaDefinedElements/9000010.13-.02</td>
 <td class="cell-ce1">http://hl7.org/fhir/StructureDefinition/Observation | 4.0.1</td>
 </tr>
 <tr class="row-ro1">
 <td class="cell-ce1">1583</td>
 <td class="cell-ce1">in process</td>
-<td class="cell-ce1">V2F</td>
-<td class="cell-ce1">V EXAM - VISIT</td>
-<td class="cell-ce1">9000010.13-.03</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1"></td>
+<td class="cell-ce1">V EXAM - VISIT (#9000010.13-.03)</td>
 <td class="cell-ce1">reference</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">Observation.encounter</td>
@@ -318,17 +294,12 @@
 <td class="cell-ce1"></td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1"></td>
-<td class="cell-ce1">http://va.gov/terminology/vistaDefinedElements/9000010.13-.03</td>
 <td class="cell-ce1">http://hl7.org/fhir/StructureDefinition/Observation | 4.0.1</td>
 </tr>
 <tr class="row-ro1">
 <td class="cell-ce1">1584</td>
 <td class="cell-ce1">in process</td>
-<td class="cell-ce1">V2F</td>
-<td class="cell-ce1">V EXAM - RESULT</td>
-<td class="cell-ce1">9000010.13-.04</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1"></td>
+<td class="cell-ce1">V EXAM - RESULT (#9000010.13-.04)</td>
 <td class="cell-ce1">transform</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">Observation.interpretation</td>
@@ -336,17 +307,12 @@
 <td class="cell-ce1">VF_ExamResultInterpretation</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1"></td>
-<td class="cell-ce1">http://va.gov/terminology/vistaDefinedElements/9000010.13-.04</td>
 <td class="cell-ce1">http://hl7.org/fhir/StructureDefinition/Observation | 4.0.1</td>
 </tr>
 <tr class="row-ro1">
 <td class="cell-ce1">1585</td>
 <td class="cell-ce1">in process</td>
-<td class="cell-ce1">V2F</td>
-<td class="cell-ce1">V EXAM - MAGNITUDE</td>
-<td class="cell-ce1">9000010.13-220</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1"></td>
+<td class="cell-ce1">V EXAM - MAGNITUDE (#9000010.13-220)</td>
 <td class="cell-ce1">source value</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">Observation.valueQuantity</td>
@@ -354,17 +320,12 @@
 <td class="cell-ce1"></td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1"></td>
-<td class="cell-ce1">http://va.gov/terminology/vistaDefinedElements/9000010.13-220</td>
 <td class="cell-ce1">http://hl7.org/fhir/StructureDefinition/Observation | 4.0.1</td>
 </tr>
 <tr class="row-ro1">
 <td class="cell-ce1">1586</td>
 <td class="cell-ce1">in process</td>
-<td class="cell-ce1">V2F</td>
-<td class="cell-ce1">V EXAM - UCUM CODE</td>
-<td class="cell-ce1">9000010.13-221</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1"></td>
+<td class="cell-ce1">V EXAM - UCUM CODE (#9000010.13-221)</td>
 <td class="cell-ce1">source value</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">Observation.valueQuantity</td>
@@ -373,17 +334,12 @@
 <td class="cell-ce1">.unit = {UCUM CODES - DESCRIPTION (757.5-.01)}  
 .code= {UCUM CODES - UCUM CODE (757.5-1)}</td>
 <td class="cell-ce1"></td>
-<td class="cell-ce1">http://va.gov/terminology/vistaDefinedElements/9000010.13-221</td>
 <td class="cell-ce1">http://hl7.org/fhir/StructureDefinition/Observation | 4.0.1</td>
 </tr>
 <tr class="row-ro1">
 <td class="cell-ce1">1587</td>
 <td class="cell-ce1">in process</td>
-<td class="cell-ce1">V2F</td>
-<td class="cell-ce1">V EXAM - COMMENTS</td>
-<td class="cell-ce1">9000010.13-81101</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1"></td>
+<td class="cell-ce1">V EXAM - COMMENTS (#9000010.13-81101)</td>
 <td class="cell-ce1">source value</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">Observation.note</td>
@@ -391,17 +347,12 @@
 <td class="cell-ce1"></td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1"></td>
-<td class="cell-ce1">http://va.gov/terminology/vistaDefinedElements/9000010.13-81101</td>
 <td class="cell-ce1">http://hl7.org/fhir/StructureDefinition/Observation | 4.0.1</td>
 </tr>
 <tr class="row-ro1">
 <td class="cell-ce1">1588</td>
 <td class="cell-ce1">in process</td>
-<td class="cell-ce1">V2F</td>
-<td class="cell-ce1">V EXAM - EVENT DATE AND TIME</td>
-<td class="cell-ce1">9000010.13-1201</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1"></td>
+<td class="cell-ce1">V EXAM - EVENT DATE AND TIME (#9000010.13-1201)</td>
 <td class="cell-ce1">source value</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">Observation.effectiveDateTime</td>
@@ -409,17 +360,12 @@
 <td class="cell-ce1"></td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1"></td>
-<td class="cell-ce1">http://va.gov/terminology/vistaDefinedElements/9000010.13-1201</td>
 <td class="cell-ce1">http://hl7.org/fhir/StructureDefinition/Observation | 4.0.1</td>
 </tr>
 <tr class="row-ro1">
 <td class="cell-ce1">1589</td>
 <td class="cell-ce1">in process</td>
-<td class="cell-ce1">V2F</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1"></td>
+<td class="cell-ce1">null (#null)</td>
 <td class="cell-ce1">fixed value</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">Observation.status</td>
@@ -427,17 +373,12 @@
 <td class="cell-ce1">final</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1"></td>
-<td class="cell-ce1"></td>
 <td class="cell-ce1">http://hl7.org/fhir/StructureDefinition/Observation | 4.0.1</td>
 </tr>
 <tr class="row-ro1">
 <td class="cell-ce1">1590</td>
 <td class="cell-ce1">in process</td>
-<td class="cell-ce1">V2F</td>
-<td class="cell-ce1">V EXAM - ENCOUNTER PROVIDER</td>
-<td class="cell-ce1">9000010.13-1204</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1"></td>
+<td class="cell-ce1">V EXAM - ENCOUNTER PROVIDER (#9000010.13-1204)</td>
 <td class="cell-ce1">reference</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">Observation.performer</td>
@@ -445,23 +386,17 @@
 <td class="cell-ce1"></td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1"></td>
-<td class="cell-ce1">http://va.gov/terminology/vistaDefinedElements/9000010.13-1204</td>
 <td class="cell-ce1">http://hl7.org/fhir/StructureDefinition/Observation | 4.0.1</td>
 </tr>
 <tr class="row-ro1">
 <td class="cell-ce1">1591</td>
 <td class="cell-ce1">in process</td>
-<td class="cell-ce1">V2F</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1"></td>
+<td class="cell-ce1">null (#null)</td>
 <td class="cell-ce1">fixed value</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">Observation.category</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">http://terminology.hl7.org/CodeSystem/observation-category|exam</td>
-<td class="cell-ce1"></td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">http://hl7.org/fhir/StructureDefinition/Observation | 4.0.1</td>
@@ -736,7 +671,7 @@
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.10.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Dec 21, 2023 16:22+0000">2023-12-21</span>
+          IG &copy; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.11.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Dec 28, 2023 09:08+0000">2023-12-28</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

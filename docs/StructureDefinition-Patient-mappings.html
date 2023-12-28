@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-    <title>Patient - Mappings - US Veterans Administration FHIR Map Set Implementation Guide v0.10.0</title>
+    <title>Patient - Mappings - US Veterans Administration FHIR Map Set Implementation Guide v0.11.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -57,7 +57,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">US Veterans Administration FHIR Map Set Implementation Guide</span>
             <br/>
-            <span style="display:inline-block;">0.10.0 - ci-build
+            <span style="display:inline-block;">0.11.0 - ci-build
 
 
 
@@ -131,7 +131,7 @@
           <div class="inner-wrapper">
 
 <div style="counter-reset: section 5" class="col-12">
-    <!-- ReleaseHeader --><p id="publish-box">US Veterans Administration FHIR Map Set Implementation Guide - Local Development build (v0.10.0). See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
+    <!-- ReleaseHeader --><p id="publish-box">US Veterans Administration FHIR Map Set Implementation Guide - Local Development build (v0.11.0). See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
   
 
 
@@ -204,7 +204,7 @@
         
           Draft
           
-            as of 2023-12-21
+            as of 2023-12-28
           
         
       </td>
@@ -224,18 +224,14 @@
 
 <p>See also the <a href="https://github.com/J-P-Systems/va.maps/tree/main/fsh/Patient.fsh">FHIR Shorthand</a>.</p>
 
-<p><a name="l326">​</a><a href="#mappings-for-veterans-health-information-systems-technology-and">VistA mappings</a>.</p>
+<p><a name="l326">​</a>Jump down to <a href="#mappings-for-veterans-health-information-systems-technology-and">VistA, CDW &amp; VPR mappings</a>.</p>
 
 <h4 id="raw-mappings">Raw mappings</h4>
 
 <table border="1" cellpadding="0" cellspacing="0" class="table-ta1"><tr class="row-ro1">
 <th class="cell-ce1">key</th>
 <th class="cell-ce1">status</th>
-<th class="cell-ce1">Direction</th>
 <th class="cell-ce1">VistA File - Field</th>
-<th class="cell-ce1">VistA File - Field #</th>
-<th class="cell-ce1">subFile - subField</th>
-<th class="cell-ce1">subFile-subField #</th>
 <th class="cell-ce1">mapApproach</th>
 <th class="cell-ce1">mapCase</th>
 <th class="cell-ce1">FHIR Path</th>
@@ -243,17 +239,12 @@
 <th class="cell-ce1">mapValue</th>
 <th class="cell-ce1">mapParameter</th>
 <th class="cell-ce1">mapComment</th>
-<th class="cell-ce1">VistA URL</th>
 <th class="cell-ce1">FHIR URL | Ver</th>
 </tr>
 <tr class="row-ro1">
 <td class="cell-ce1">272</td>
 <td class="cell-ce1">for review</td>
-<td class="cell-ce1">V2F</td>
-<td class="cell-ce1">PATIENT - INTEGRATION CONTROL NUMBER</td>
-<td class="cell-ce1">2-991.01</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1"></td>
+<td class="cell-ce1">PATIENT - INTEGRATION CONTROL NUMBER (#2-991.01)</td>
 <td class="cell-ce1">source value</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">Patient.identifier</td>
@@ -263,17 +254,12 @@
 .type.coding[0].code=#MR
 .type.coding[0].system=http://terminology.hl7.org/CodeSystem/v2-0203</td>
 <td class="cell-ce1">MvdZ QA</td>
-<td class="cell-ce1">http://va.gov/terminology/vistaDefinedElements/2-991.01</td>
 <td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
 <td class="cell-ce1">273</td>
 <td class="cell-ce1">for review</td>
-<td class="cell-ce1">V2F</td>
-<td class="cell-ce1">PATIENT - NAME</td>
-<td class="cell-ce1">2-.01</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1"></td>
+<td class="cell-ce1">PATIENT - NAME (#2-.01)</td>
 <td class="cell-ce1">source value</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">Patient.name</td>
@@ -284,17 +270,12 @@
 .given[1]=MIDDLE
 .suffix[0]=SUFFIX</td>
 <td class="cell-ce1">MvdZ QA</td>
-<td class="cell-ce1">http://va.gov/terminology/vistaDefinedElements/2-.01</td>
 <td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
 <td class="cell-ce1">274</td>
 <td class="cell-ce1">for review</td>
-<td class="cell-ce1">V2F</td>
-<td class="cell-ce1">PATIENT - PHONE NUMBER [RESIDENCE]</td>
-<td class="cell-ce1">2-.131</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1"></td>
+<td class="cell-ce1">PATIENT - PHONE NUMBER [RESIDENCE] (#2-.131)</td>
 <td class="cell-ce1">source value</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">Patient.telecom</td>
@@ -303,17 +284,12 @@
 <td class="cell-ce1">.system=phone
 .use=home</td>
 <td class="cell-ce1"></td>
-<td class="cell-ce1">http://va.gov/terminology/vistaDefinedElements/2-.131</td>
 <td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
 <td class="cell-ce1">275</td>
 <td class="cell-ce1">for review</td>
-<td class="cell-ce1">V2F</td>
-<td class="cell-ce1">PATIENT - PHONE NUMBER [WORK]</td>
-<td class="cell-ce1">2-.132</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1"></td>
+<td class="cell-ce1">PATIENT - PHONE NUMBER [WORK] (#2-.132)</td>
 <td class="cell-ce1">source value</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">Patient.telecom</td>
@@ -322,17 +298,12 @@
 <td class="cell-ce1">.system="phone"
 .use="work"</td>
 <td class="cell-ce1"></td>
-<td class="cell-ce1">http://va.gov/terminology/vistaDefinedElements/2-.132</td>
 <td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
 <td class="cell-ce1">276</td>
 <td class="cell-ce1">for review</td>
-<td class="cell-ce1">V2F</td>
-<td class="cell-ce1">PATIENT - PHONE NUMBER [CELLULAR]</td>
-<td class="cell-ce1">2-.134</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1"></td>
+<td class="cell-ce1">PATIENT - PHONE NUMBER [CELLULAR] (#2-.134)</td>
 <td class="cell-ce1">source value</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">Patient.telecom</td>
@@ -341,17 +312,12 @@
 <td class="cell-ce1">.system="phone"
 .use="mobile"</td>
 <td class="cell-ce1"></td>
-<td class="cell-ce1">http://va.gov/terminology/vistaDefinedElements/2-.134</td>
 <td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
 <td class="cell-ce1">284</td>
 <td class="cell-ce1">for review</td>
-<td class="cell-ce1">V2F</td>
-<td class="cell-ce1">PATIENT - DATE OF BIRTH</td>
-<td class="cell-ce1">2-.03</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1"></td>
+<td class="cell-ce1">PATIENT - DATE OF BIRTH (#2-.03)</td>
 <td class="cell-ce1">source value</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">Patient.birthDate</td>
@@ -359,17 +325,12 @@
 <td class="cell-ce1"></td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1"></td>
-<td class="cell-ce1">http://va.gov/terminology/vistaDefinedElements/2-.03</td>
 <td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
 <td class="cell-ce1">285</td>
 <td class="cell-ce1">for review</td>
-<td class="cell-ce1">V2F</td>
-<td class="cell-ce1">PATIENT - DATE OF DEATH</td>
-<td class="cell-ce1">2-.351</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1"></td>
+<td class="cell-ce1">PATIENT - DATE OF DEATH (#2-.351)</td>
 <td class="cell-ce1">source value</td>
 <td class="cell-ce1">not null</td>
 <td class="cell-ce1">Patient.deceasedDateTime</td>
@@ -377,17 +338,12 @@
 <td class="cell-ce1"></td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">removed "true" based on Validator testing 6/30/23</td>
-<td class="cell-ce1">http://va.gov/terminology/vistaDefinedElements/2-.351</td>
 <td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
 <td class="cell-ce1">286</td>
 <td class="cell-ce1">for review</td>
-<td class="cell-ce1">V2F</td>
-<td class="cell-ce1">PATIENT - STREET ADDRESS [LINE 1]</td>
-<td class="cell-ce1">2-.111</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1"></td>
+<td class="cell-ce1">PATIENT - STREET ADDRESS [LINE 1] (#2-.111)</td>
 <td class="cell-ce1">source value</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">Patient.address[home]</td>
@@ -396,17 +352,12 @@
 <td class="cell-ce1">.use=#home
 .type=#postal</td>
 <td class="cell-ce1"></td>
-<td class="cell-ce1">http://va.gov/terminology/vistaDefinedElements/2-.111</td>
 <td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
 <td class="cell-ce1">287</td>
 <td class="cell-ce1">for review</td>
-<td class="cell-ce1">V2F</td>
-<td class="cell-ce1">PATIENT - STREET ADDRESS [LINE 2]</td>
-<td class="cell-ce1">2-.112</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1"></td>
+<td class="cell-ce1">PATIENT - STREET ADDRESS [LINE 2] (#2-.112)</td>
 <td class="cell-ce1">source value</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">Patient.address[home]</td>
@@ -414,17 +365,12 @@
 <td class="cell-ce1"></td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1"></td>
-<td class="cell-ce1">http://va.gov/terminology/vistaDefinedElements/2-.112</td>
 <td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
 <td class="cell-ce1">288</td>
 <td class="cell-ce1">for review</td>
-<td class="cell-ce1">V2F</td>
-<td class="cell-ce1">PATIENT - STREET ADDRESS [LINE 3]</td>
-<td class="cell-ce1">2-.113</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1"></td>
+<td class="cell-ce1">PATIENT - STREET ADDRESS [LINE 3] (#2-.113)</td>
 <td class="cell-ce1">source value</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">Patient.address[home]</td>
@@ -432,17 +378,12 @@
 <td class="cell-ce1"></td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1"></td>
-<td class="cell-ce1">http://va.gov/terminology/vistaDefinedElements/2-.113</td>
 <td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
 <td class="cell-ce1">289</td>
 <td class="cell-ce1">for review</td>
-<td class="cell-ce1">V2F</td>
-<td class="cell-ce1">PATIENT - CITY</td>
-<td class="cell-ce1">2-.114</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1"></td>
+<td class="cell-ce1">PATIENT - CITY (#2-.114)</td>
 <td class="cell-ce1">source value</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">Patient.address[home]</td>
@@ -450,17 +391,12 @@
 <td class="cell-ce1"></td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1"></td>
-<td class="cell-ce1">http://va.gov/terminology/vistaDefinedElements/2-.114</td>
 <td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
 <td class="cell-ce1">290</td>
 <td class="cell-ce1">for review</td>
-<td class="cell-ce1">V2F</td>
-<td class="cell-ce1">PATIENT - STATE</td>
-<td class="cell-ce1">2-.115</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1"></td>
+<td class="cell-ce1">PATIENT - STATE (#2-.115)</td>
 <td class="cell-ce1">source value</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">Patient.address[home]</td>
@@ -468,17 +404,12 @@
 <td class="cell-ce1"></td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1"></td>
-<td class="cell-ce1">http://va.gov/terminology/vistaDefinedElements/2-.115</td>
 <td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
 <td class="cell-ce1">291</td>
 <td class="cell-ce1">for review</td>
-<td class="cell-ce1">V2F</td>
-<td class="cell-ce1">PATIENT - ZIP+4</td>
-<td class="cell-ce1">2-.1112</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1"></td>
+<td class="cell-ce1">PATIENT - ZIP+4 (#2-.1112)</td>
 <td class="cell-ce1">source value</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">Patient.address[home]</td>
@@ -486,17 +417,12 @@
 <td class="cell-ce1"></td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1"></td>
-<td class="cell-ce1">http://va.gov/terminology/vistaDefinedElements/2-.1112</td>
 <td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
 <td class="cell-ce1">292</td>
 <td class="cell-ce1">for review</td>
-<td class="cell-ce1">V2F</td>
-<td class="cell-ce1">PATIENT - COUNTRY</td>
-<td class="cell-ce1">2-.1173</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1"></td>
+<td class="cell-ce1">PATIENT - COUNTRY (#2-.1173)</td>
 <td class="cell-ce1">source value</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">Patient.address[home]</td>
@@ -504,17 +430,12 @@
 <td class="cell-ce1"></td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">confirm association with .111 etc.</td>
-<td class="cell-ce1">http://va.gov/terminology/vistaDefinedElements/2-.1173</td>
 <td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
 <td class="cell-ce1">293</td>
 <td class="cell-ce1">for review</td>
-<td class="cell-ce1">V2F</td>
-<td class="cell-ce1">PATIENT - TEMPORARY ADDRESS START DATE</td>
-<td class="cell-ce1">2-.1217</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1"></td>
+<td class="cell-ce1">PATIENT - TEMPORARY ADDRESS START DATE (#2-.1217)</td>
 <td class="cell-ce1">source value</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">Patient.address[home]</td>
@@ -522,17 +443,12 @@
 <td class="cell-ce1"></td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">need other addresses, including temp; not just range</td>
-<td class="cell-ce1">http://va.gov/terminology/vistaDefinedElements/2-.1217</td>
 <td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
 <td class="cell-ce1">294</td>
 <td class="cell-ce1">for review</td>
-<td class="cell-ce1">V2F</td>
-<td class="cell-ce1">PATIENT - TEMPORARY ADDRESS END DATE</td>
-<td class="cell-ce1">2-.1218</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1"></td>
+<td class="cell-ce1">PATIENT - TEMPORARY ADDRESS END DATE (#2-.1218)</td>
 <td class="cell-ce1">source value</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">Patient.address[home]</td>
@@ -540,17 +456,12 @@
 <td class="cell-ce1"></td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">need other addresses, including temp; not just range</td>
-<td class="cell-ce1">http://va.gov/terminology/vistaDefinedElements/2-.1218</td>
 <td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
 <td class="cell-ce1">295</td>
 <td class="cell-ce1">for review</td>
-<td class="cell-ce1">V2F</td>
-<td class="cell-ce1">PATIENT - LANGUAGE DATE/TIME</td>
-<td class="cell-ce1">2-7</td>
-<td class="cell-ce1">LANGUAGE DATE/TIME - PREFERRED LANGUAGE</td>
-<td class="cell-ce1">2.07-.02</td>
+<td class="cell-ce1">PATIENT - LANGUAGE DATE/TIME &gt; LANGUAGE DATE/TIME - PREFERRED LANGUAGE (#2-7 &gt; 2.07-.02)</td>
 <td class="cell-ce1">source value</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">Patient.communication.language</td>
@@ -558,17 +469,12 @@
 <td class="cell-ce1"></td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1"></td>
-<td class="cell-ce1">http://va.gov/terminology/vistaDefinedElements/2-7</td>
 <td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
 <td class="cell-ce1">296</td>
 <td class="cell-ce1">for review</td>
-<td class="cell-ce1">V2F</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1"></td>
+<td class="cell-ce1">null (#null)</td>
 <td class="cell-ce1">fixed value</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">Patient.managingOrganization</td>
@@ -576,17 +482,12 @@
 <td class="cell-ce1">Veterans Health Administration</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1"></td>
-<td class="cell-ce1"></td>
 <td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
 <td class="cell-ce1">554</td>
 <td class="cell-ce1">for review</td>
-<td class="cell-ce1">V2F</td>
-<td class="cell-ce1">PATIENT - SEX</td>
-<td class="cell-ce1">2-.02</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1"></td>
+<td class="cell-ce1">PATIENT - SEX (#2-.02)</td>
 <td class="cell-ce1">terminologyMaps</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">Patient.extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex]</td>
@@ -594,17 +495,12 @@
 <td class="cell-ce1">VF_genderIdentity</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">added extension url</td>
-<td class="cell-ce1">http://va.gov/terminology/vistaDefinedElements/2-.02</td>
 <td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
 <td class="cell-ce1">555</td>
 <td class="cell-ce1">for review</td>
-<td class="cell-ce1">V2F</td>
-<td class="cell-ce1">PATIENT - SELF IDENTIFIED GENDER</td>
-<td class="cell-ce1">2-.024</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1"></td>
+<td class="cell-ce1">PATIENT - SELF IDENTIFIED GENDER (#2-.024)</td>
 <td class="cell-ce1">terminologyMaps</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">Patient.gender</td>
@@ -612,17 +508,12 @@
 <td class="cell-ce1">VF_genderIdentity</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1"></td>
-<td class="cell-ce1">http://va.gov/terminology/vistaDefinedElements/2-.024</td>
 <td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
 <td class="cell-ce1">575</td>
 <td class="cell-ce1">for review</td>
-<td class="cell-ce1">V2F</td>
-<td class="cell-ce1">PATIENT - ETHNICITY INFORMATION</td>
-<td class="cell-ce1">2-6</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1"></td>
+<td class="cell-ce1">PATIENT - ETHNICITY INFORMATION (#2-6)</td>
 <td class="cell-ce1">transform</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">Patient.extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity].extension[text]</td>
@@ -630,17 +521,12 @@
 <td class="cell-ce1">VF_ethnicityCategory</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1"></td>
-<td class="cell-ce1">http://va.gov/terminology/vistaDefinedElements/2-6</td>
 <td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
 <td class="cell-ce1">576</td>
 <td class="cell-ce1">for review</td>
-<td class="cell-ce1">V2F</td>
-<td class="cell-ce1">PATIENT - RACE INFORMATION</td>
-<td class="cell-ce1">2-2</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1"></td>
+<td class="cell-ce1">PATIENT - RACE INFORMATION (#2-2)</td>
 <td class="cell-ce1">transform</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">Patient.extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-race].extension[text]</td>
@@ -648,17 +534,12 @@
 <td class="cell-ce1">VF_raceCategory</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">Do we collect any detailed race data?</td>
-<td class="cell-ce1">http://va.gov/terminology/vistaDefinedElements/2-2</td>
 <td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
 <td class="cell-ce1">1597</td>
 <td class="cell-ce1">for review</td>
-<td class="cell-ce1">V2F</td>
-<td class="cell-ce1">PATIENT - MARITAL STATUS</td>
-<td class="cell-ce1">2-.05</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1"></td>
+<td class="cell-ce1">PATIENT - MARITAL STATUS (#2-.05)</td>
 <td class="cell-ce1">terminologyMaps</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">Patient.maritalStatus</td>
@@ -666,17 +547,12 @@
 <td class="cell-ce1">VF_MaritalStatus</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1"></td>
-<td class="cell-ce1">http://va.gov/terminology/vistaDefinedElements/2-.05</td>
 <td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
 <td class="cell-ce1">1598</td>
 <td class="cell-ce1">for review</td>
-<td class="cell-ce1">V2F</td>
-<td class="cell-ce1">PATIENT - RELIGIOUS PREFERENCE</td>
-<td class="cell-ce1">2-.08</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1"></td>
+<td class="cell-ce1">PATIENT - RELIGIOUS PREFERENCE (#2-.08)</td>
 <td class="cell-ce1">terminologyMaps</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">Patient.extension[http://hl7.org/fhir/StructureDefinition/patient-religion]</td>
@@ -684,7 +560,6 @@
 <td class="cell-ce1">VF_Religion</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1"></td>
-<td class="cell-ce1">http://va.gov/terminology/vistaDefinedElements/2-.08</td>
 <td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition | 5.0.1</td>
 </tr>
 </table>
@@ -1187,7 +1062,7 @@ Outpat.Workload.PatientMaritalStatus</td> </tr>
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.10.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Dec 21, 2023 16:22+0000">2023-12-21</span>
+          IG &copy; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.11.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Dec 28, 2023 09:08+0000">2023-12-28</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

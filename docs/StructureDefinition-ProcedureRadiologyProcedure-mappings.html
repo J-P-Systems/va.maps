@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-    <title>Procedure: Radiology {Procedure} - Mappings - US Veterans Administration FHIR Map Set Implementation Guide v0.10.0</title>
+    <title>Procedure: Radiology {Procedure} - Mappings - US Veterans Administration FHIR Map Set Implementation Guide v0.11.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -57,7 +57,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">US Veterans Administration FHIR Map Set Implementation Guide</span>
             <br/>
-            <span style="display:inline-block;">0.10.0 - ci-build
+            <span style="display:inline-block;">0.11.0 - ci-build
 
 
 
@@ -131,7 +131,7 @@
           <div class="inner-wrapper">
 
 <div style="counter-reset: section 5" class="col-12">
-    <!-- ReleaseHeader --><p id="publish-box">US Veterans Administration FHIR Map Set Implementation Guide - Local Development build (v0.10.0). See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
+    <!-- ReleaseHeader --><p id="publish-box">US Veterans Administration FHIR Map Set Implementation Guide - Local Development build (v0.11.0). See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
   
 
 
@@ -204,7 +204,7 @@
         
           Draft
           
-            as of 2023-12-21
+            as of 2023-12-28
           
         
       </td>
@@ -224,18 +224,14 @@
 
 <p>See also the <a href="https://github.com/J-P-Systems/va.maps/tree/main/fsh/ProcedureRadiologyProcedure.fsh">FHIR Shorthand</a>.</p>
 
-<p><a name="l326">​</a><a href="#mappings-for-veterans-health-information-systems-technology-and">VistA mappings</a>.</p>
+<p><a name="l326">​</a>Jump down to <a href="#mappings-for-veterans-health-information-systems-technology-and">VistA, CDW &amp; VPR mappings</a>.</p>
 
 <h4 id="raw-mappings">Raw mappings</h4>
 
 <table border="1" cellpadding="0" cellspacing="0" class="table-ta1"><tr class="row-ro1">
 <th class="cell-ce1">key</th>
 <th class="cell-ce1">status</th>
-<th class="cell-ce1">Direction</th>
 <th class="cell-ce1">VistA File - Field</th>
-<th class="cell-ce1">VistA File - Field #</th>
-<th class="cell-ce1">subFile - subField</th>
-<th class="cell-ce1">subFile-subField #</th>
 <th class="cell-ce1">mapApproach</th>
 <th class="cell-ce1">mapCase</th>
 <th class="cell-ce1">FHIR Path</th>
@@ -243,17 +239,12 @@
 <th class="cell-ce1">mapValue</th>
 <th class="cell-ce1">mapParameter</th>
 <th class="cell-ce1">mapComment</th>
-<th class="cell-ce1">VistA URL</th>
 <th class="cell-ce1">FHIR URL | Ver</th>
 </tr>
 <tr class="row-ro1">
 <td class="cell-ce1">1506</td>
 <td class="cell-ce1">for review</td>
-<td class="cell-ce1">V2F</td>
-<td class="cell-ce1">EXAMINATIONS - EXAM STATUS</td>
-<td class="cell-ce1">70.03-3</td>
-<td class="cell-ce1">EXAMINATION STATUS - STATUS</td>
-<td class="cell-ce1">72-.01</td>
+<td class="cell-ce1">EXAMINATIONS - EXAM STATUS &gt; EXAMINATION STATUS - STATUS (#70.03-3 &gt; 72-.01)</td>
 <td class="cell-ce1">source value</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">Procedure.status</td>
@@ -261,17 +252,12 @@
 <td class="cell-ce1">VF_RadiologyProcedureStatus</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1"></td>
-<td class="cell-ce1">http://va.gov/terminology/vistaDefinedElements/70.03-3</td>
 <td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
 <td class="cell-ce1">1507</td>
 <td class="cell-ce1">for review</td>
-<td class="cell-ce1">V2F</td>
-<td class="cell-ce1">EXAMINATIONS - REASON FOR CANCELLATION</td>
-<td class="cell-ce1">70.03-3.5</td>
-<td class="cell-ce1">RAD/NUC MED REASON - REASON</td>
-<td class="cell-ce1">75.2-.01</td>
+<td class="cell-ce1">EXAMINATIONS - REASON FOR CANCELLATION &gt; RAD/NUC MED REASON - REASON (#70.03-3.5 &gt; 75.2-.01)</td>
 <td class="cell-ce1">source value</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">Procedure.statusReason</td>
@@ -279,17 +265,12 @@
 <td class="cell-ce1"></td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1"></td>
-<td class="cell-ce1">http://va.gov/terminology/vistaDefinedElements/70.03-3.5</td>
 <td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
 <td class="cell-ce1">1508</td>
 <td class="cell-ce1">for review</td>
-<td class="cell-ce1">V2F</td>
-<td class="cell-ce1">REGISTERED EXAMS - TYPE OF IMAGING</td>
-<td class="cell-ce1">70.02-2</td>
-<td class="cell-ce1">IMAGING TYPE - TYPE OF IMAGING</td>
-<td class="cell-ce1">79.2-.01</td>
+<td class="cell-ce1">REGISTERED EXAMS - TYPE OF IMAGING &gt; IMAGING TYPE - TYPE OF IMAGING (#70.02-2 &gt; 79.2-.01)</td>
 <td class="cell-ce1">source value</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">Procedure.category</td>
@@ -297,17 +278,12 @@
 <td class="cell-ce1"></td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1"></td>
-<td class="cell-ce1">http://va.gov/terminology/vistaDefinedElements/70.02-2</td>
 <td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
 <td class="cell-ce1">1509</td>
 <td class="cell-ce1">for review</td>
-<td class="cell-ce1">V2F</td>
-<td class="cell-ce1">EXAMINATIONS - PROCEDURE</td>
-<td class="cell-ce1">70.03-2</td>
-<td class="cell-ce1">RAD/NUC MED PROCEDURES - CPT CODE &gt; CPT</td>
-<td class="cell-ce1">71-9 &gt; 81-</td>
+<td class="cell-ce1">EXAMINATIONS - PROCEDURE &gt; RAD/NUC MED PROCEDURES - CPT CODE &gt; CPT (#70.03-2 &gt; 71-9 &gt; 81-)</td>
 <td class="cell-ce1">source value</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">Procedure.code.coding</td>
@@ -317,17 +293,12 @@
 .code = {CPT CODE(.01)}
 .display = {SHORT NAME(2)}</td>
 <td class="cell-ce1"></td>
-<td class="cell-ce1">http://va.gov/terminology/vistaDefinedElements/70.03-2</td>
 <td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
 <td class="cell-ce1">1510</td>
 <td class="cell-ce1">for review</td>
-<td class="cell-ce1">V2F</td>
-<td class="cell-ce1">RAD/NUC MED PATIENT - NAME</td>
-<td class="cell-ce1">70-.01</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1"></td>
+<td class="cell-ce1">RAD/NUC MED PATIENT - NAME (#70-.01)</td>
 <td class="cell-ce1">reference</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">Procedure.subject</td>
@@ -335,17 +306,12 @@
 <td class="cell-ce1"></td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1"></td>
-<td class="cell-ce1">http://va.gov/terminology/vistaDefinedElements/70-.01</td>
 <td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
 <td class="cell-ce1">1511</td>
 <td class="cell-ce1">for review</td>
-<td class="cell-ce1">V2F</td>
-<td class="cell-ce1">EXAMINATIONS - VISIT</td>
-<td class="cell-ce1">70.03-27</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1"></td>
+<td class="cell-ce1">EXAMINATIONS - VISIT (#70.03-27)</td>
 <td class="cell-ce1">reference</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">Procedure.encounter</td>
@@ -353,17 +319,12 @@
 <td class="cell-ce1"></td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1"></td>
-<td class="cell-ce1">http://va.gov/terminology/vistaDefinedElements/70.03-27</td>
 <td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
 <td class="cell-ce1">1512</td>
 <td class="cell-ce1">for review</td>
-<td class="cell-ce1">V2F</td>
-<td class="cell-ce1">REGISTERED EXAMS - EXAM DATE</td>
-<td class="cell-ce1">70.02-.01</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1"></td>
+<td class="cell-ce1">REGISTERED EXAMS - EXAM DATE (#70.02-.01)</td>
 <td class="cell-ce1">source value</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">Procedure.performedDateTime</td>
@@ -371,17 +332,12 @@
 <td class="cell-ce1"></td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">required if the status is 'completed' or 'in-progress'</td>
-<td class="cell-ce1">http://va.gov/terminology/vistaDefinedElements/70.02-.01</td>
 <td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
 <td class="cell-ce1">1513</td>
 <td class="cell-ce1">for review</td>
-<td class="cell-ce1">V2F</td>
-<td class="cell-ce1">EXAMINATIONS - PRIMARY INTERPRETING STAFF</td>
-<td class="cell-ce1">70.03-15</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1"></td>
+<td class="cell-ce1">EXAMINATIONS - PRIMARY INTERPRETING STAFF (#70.03-15)</td>
 <td class="cell-ce1">reference</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">Procedure.performer.actor</td>
@@ -389,17 +345,12 @@
 <td class="cell-ce1"></td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1"></td>
-<td class="cell-ce1">http://va.gov/terminology/vistaDefinedElements/70.03-15</td>
 <td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
 <td class="cell-ce1">1514</td>
 <td class="cell-ce1">for review</td>
-<td class="cell-ce1">V2F</td>
-<td class="cell-ce1">REGISTERED EXAMS - IMAGING LOCATION</td>
-<td class="cell-ce1">70.02-4</td>
-<td class="cell-ce1">IMAGING LOCATIONS - LOCATION</td>
-<td class="cell-ce1">79.1-.01</td>
+<td class="cell-ce1">REGISTERED EXAMS - IMAGING LOCATION &gt; IMAGING LOCATIONS - LOCATION (#70.02-4 &gt; 79.1-.01)</td>
 <td class="cell-ce1">reference</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">Procedure.location</td>
@@ -407,7 +358,6 @@
 <td class="cell-ce1"></td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1"></td>
-<td class="cell-ce1">http://va.gov/terminology/vistaDefinedElements/70.02-4</td>
 <td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure | 5.0.1</td>
 </tr>
 </table>
@@ -631,7 +581,7 @@ Rad.RadiologyRegisteredExam.ExamDateTime</td> </tr>
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.10.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Dec 21, 2023 16:22+0000">2023-12-21</span>
+          IG &copy; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.11.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Dec 28, 2023 09:08+0000">2023-12-28</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
