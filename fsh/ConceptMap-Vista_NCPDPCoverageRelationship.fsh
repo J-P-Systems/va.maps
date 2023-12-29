@@ -2,11 +2,11 @@ Instance: CMVistaNCPDPCoverageRelationship
 InstanceOf: ConceptMap
 Usage: #definition
 * url = "http://va.gov/fhir/ConceptMap/CMVistaNCPDPCoverageRelationship"
-* name = "Vista-NCPDPCoverageRelationship"
-* title = "Vista-NCPDPCoverageRelationship"
+* name = "Vista_NCPDPCoverageRelationship"
+* title = "Vista_NCPDPCoverageRelationship"
 * status = #active
 * experimental = true
-* description = "Terminology Maps Vista-NCPDPCoverageRelationship"
+* description = "Terminology Maps Vista_NCPDPCoverageRelationship"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VSVistaNCPDPCoverageRelationship"
 * group[0].source = "undefined"
 * group[=].target = "undefined"

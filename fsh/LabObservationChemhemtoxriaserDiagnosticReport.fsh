@@ -17,7 +17,7 @@ Source: LabObservationChemhemtoxriaserDiagnosticReport
 * effectiveDateTime -> "1423: source value from CHEM, HEM, TOX, RIA, SER, etc. - DATE/TIME SPECIMEN TAKEN (#63.04-.01)"
 * issued -> "1428: source value from CHEM, HEM, TOX, RIA, SER, etc. - DATE REPORT COMPLETED (#63.04-.03)"
 * performer -> "1433: reference from CHEM, HEM, TOX, RIA, SER, etc. - VERIFY PERSON (#63.04-.04)" "US Core Practitioner is must support resource"
-* result -> "++: reference from null (#null)"
+* result -> "++: reference"
 
 Mapping: cdw-to-LabObservationChemhemtoxriaserDiagnosticReport
 Id: cdw

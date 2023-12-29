@@ -35,7 +35,7 @@ Source: Immunization
 * protocolApplied.doseNumberString -> "344: source value from V IMMUNIZATION - SERIES (#9000010.11-.04)" "Can be numeral or letter"
 * doseQuantity -> "464: source value from V IMMUNIZATION - DOSE UNITS > UCUM CODES - (#9000010.11-1313 > 757.5-)"
 * recorded -> "1593: source value from V IMMUNIZATION - DATE/TIME RECORDED (#9000010.11-1205)" "identified byMHV"
-* reaction.detail -> "++: reference from null (#null)"
+* reaction.detail -> "++: reference"
 
 Mapping: cdw-to-Immunization
 Id: cdw

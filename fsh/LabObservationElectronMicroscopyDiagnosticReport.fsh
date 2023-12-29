@@ -16,7 +16,7 @@ Source: LabObservationElectronMicroscopyDiagnosticReport
 * effectiveDateTime -> "1422: source value from EM - DATE/TIME SPECIMEN TAKEN (#63.02-.01)"
 * issued -> "1427: source value from EM - DATE REPORT COMPLETED (#63.02-.03)"
 * performer -> "1432: source value from ELECTRON MICROSCOPY - RELEASED BY (#63.02-.13)"
-* result -> "++: reference from null (#null)"
+* result -> "++: reference"
 * media.link -> "1438: reference from EM - IMAGE (#63.02-2005)"
 * conclusion -> "1441: source value from EM - EM DIAGNOSIS (#63.02-1.4)" "Vista field is word processing so CodeableConcept cannot be used"
 

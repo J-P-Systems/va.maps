@@ -8,7 +8,7 @@ Usage: #definition
 * experimental = true
 * description = "Terminology Maps VF_VitalsUnits"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFVitalsUnits"
-* group[0].source = "undefined"
+* group[0].source = "http://va.gov/terminology/vistaDefinedElements/120.5-.03"
 * group[=].target = "undefined"
 * group[=].element[0].code = #4688718
 * group[=].element[=].target.code = #"<omit code>"
@@ -42,7 +42,7 @@ Usage: #definition
 * group[=].element[=].target.code = #"<omit code>"
 * group[=].element[=].target.equivalence = #equal
 * group[=].element[=].display = "VISION UNCORRECTED"
-* group[+].source = "undefined"
+* group[+].source = "http://va.gov/terminology/vistaDefinedElements/120.5-.03"
 * group[=].target = "http://unitsofmeasure.org"
 * group[=].element[0].code = #4500634
 * group[=].element[=].target.code = #mm[Hg]

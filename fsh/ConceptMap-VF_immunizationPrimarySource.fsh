@@ -8,7 +8,7 @@ Usage: #definition
 * experimental = true
 * description = "Terminology Maps VF_immunizationPrimarySource"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFimmunizationPrimarySource"
-* group[0].source = "undefined"
+* group[0].source = "http://va.gov/terminology/vistaDefinedElements/9000010.11-1301"
 * group[=].target = "undefined"
 * group[=].element[0].code = #5197425
 * group[=].element[=].target.code = #false

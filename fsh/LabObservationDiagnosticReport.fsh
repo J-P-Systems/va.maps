@@ -19,7 +19,7 @@ Source: LabObservationDiagnosticReport
 * code.coding -> "1420: source value from LABORATORY TEST - NATIONAL VA LAB CODE > WKLD CODE - DEFAULT LOINC CODE > LAB LOINC (#60-64 > 64-25 > 95.3)" "Typically LOINC. \nChanged VistA mapping to support some coded values and add the lab test name (non-standardized)"
 * code.text -> "1661: source value from LABORATORY TEST - NAME (#60-.01)" "Added the lab test name (non-standardized)"
 * subject -> "1421: reference from PATIENT - LABORATORY REFERENCE > LAB DATA - LRDFN (#2-63 > 63-.01)" "Pointer from PATIENT (2)"
-* result -> "1437: reference from See mapping for Lab Observation (#null)"
+* result -> "1437: reference from See mapping for Lab Observation"
 
 Mapping: cdw-to-LabObservationDiagnosticReport
 Id: cdw

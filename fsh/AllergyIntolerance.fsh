@@ -16,7 +16,7 @@ Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: AllergyIntolerance
 * identifier.value -> "233: source value from PATIENT ALLERGIES - IEN (#120.8-.001)"
-* identifier.value -> "1610: source value from CDW.cdwwork.allergy.allergy.AllergySID (#null)" "Source is AllergySID from Allergy Table in CDW"
+* identifier.value -> "1610: source value from CDW.cdwwork.allergy.allergy.AllergySID" "Source is AllergySID from Allergy Table in CDW"
 * code.text -> "245: source value from PATIENT ALLERGIES - REACTANT (#120.8-.02)" "text only"
 * code -> "246: source value from PATIENT ALLERGIES - GMR ALLERGY (#120.8-1)"
 * patient -> "248: source value from PATIENT ALLERGIES - PATIENT (#120.8-.01)" "Source is MVIPersonFullICN from SMVIPerson Table"

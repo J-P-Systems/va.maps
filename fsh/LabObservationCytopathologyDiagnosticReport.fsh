@@ -17,7 +17,7 @@ Source: LabObservationCytopathologyDiagnosticReport
 * effectiveDateTime -> "1426: source value from CYTOPATHOLOGY - DATE/TIME SPECIMEN TAKEN (#63.09-.01)"
 * issued -> "1431: source value from CYTOPATHOLOGY - DATE REPORT COMPLETED (#63.09-.03)"
 * performer -> "1436: reference from CYTOPATHOLOGY - RELEASED BY (#63.09-.13)"
-* result -> "++: reference from null (#null)"
+* result -> "++: reference"
 * media.link -> "1440: reference from CYTOPATHOLOGY - CYTOPATHOLOGY DIAGNOSIS (#63.09-2005)"
 * conclusion -> "1448: source value from CYTOPATHOLOGY - CYTOPATHOLOGY DIAGNOSIS (#63.09-1.4)" "Vista field is word processing so CodeableConcept cannot be used"
 

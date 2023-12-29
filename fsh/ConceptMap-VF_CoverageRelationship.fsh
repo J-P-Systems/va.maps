@@ -32,7 +32,7 @@ Usage: #definition
 * group[=].element[=].target.equivalence = #equivalent
 * group[=].element[+].code = #"HIPAA 41 INJURED PLAINTIFF"
 * group[=].element[=].target.code = #injured
-* group[=].element[=].target.display = "Injured"
+* group[=].element[=].target.display = "Injured Party"
 * group[=].element[=].target.equivalence = #equivalent
 * group[=].element[+].code = #"HIPAA 32 MOTHER"
 * group[=].element[=].target.code = #parent
@@ -48,7 +48,7 @@ Usage: #definition
 * group[=].element[=].target.equivalence = #equivalent
 * group[=].element[+].code = #"HIPAA 53 LIFE PARTNER"
 * group[=].element[=].target.code = #common
-* group[=].element[=].target.display = "Common"
+* group[=].element[=].target.display = "Common Law Spouse"
 * group[=].element[=].target.equivalence = #equivalent
 * group[=].element[+].code = #"HIPAA G8 OTHER RELATIONSHIP"
 * group[=].element[=].target.code = #other

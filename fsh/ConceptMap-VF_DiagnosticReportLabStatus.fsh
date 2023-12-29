@@ -27,7 +27,7 @@ Usage: #definition
 * group[=].element[=].display = "NO ORDER ON RECORD"
 * group[=].element[+].code = #R
 * group[=].element[=].target.code = #preliminary
-* group[=].element[=].target.display = "Partial"
+* group[=].element[=].target.display = "Preliminary"
 * group[=].element[=].target.equivalence = #equivalent
 * group[=].element[=].display = "NOT VERIFIED"
 * group[=].element[+].code = #X

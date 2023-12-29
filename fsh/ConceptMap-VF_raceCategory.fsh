@@ -8,7 +8,7 @@ Usage: #definition
 * experimental = true
 * description = "Terminology Maps VF_raceCategory"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFraceCategory"
-* group[0].source = "undefined"
+* group[0].source = "http://va.gov/terminology/vistaDefinedElements/2-2"
 * group[=].target = "http://terminology.hl7.org/CodeSystem/v3-NullFlavor"
 * group[=].element[0].code = #null
 * group[=].element[=].target.code = #UNK
@@ -22,7 +22,7 @@ Usage: #definition
 * group[=].element[=].target.code = #ASKU
 * group[=].element[=].target.equivalence = #wider
 * group[=].element[=].display = "UNKNOWN BY PATIENT"
-* group[+].source = "undefined"
+* group[+].source = "http://va.gov/terminology/vistaDefinedElements/2-2"
 * group[=].target = "urn:oid:2.16.840.1.113883.6.238"
 * group[=].element[0].code = #null
 * group[=].element[=].target.code = #1002-5

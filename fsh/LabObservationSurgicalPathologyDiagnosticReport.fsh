@@ -17,7 +17,7 @@ Source: LabObservationSurgicalPathologyDiagnosticReport
 * effectiveDateTime -> "1425: source value from SURGICAL PATHOLOGY- DATE/TIME SPECIMEN TAKEN (#63.08-.01)"
 * issued -> "1430: source value from SURGICAL PATHOLOGY - DATE REPORT COMPLETED (#63.08-.03)"
 * performer -> "1435: reference from SURGICAL PATHOLOGY - RELEASED BY (#63.08-.13)"
-* result -> "++: reference from null (#null)"
+* result -> "++: reference"
 * media.link -> "1439: reference from SURGICAL PATHOLOGY - SURGICAL PATH DIAGNOSIS (#63.08-2005)"
 * conclusion -> "1447: source value from SURGICAL PATHOLOGY - SURGICAL PATH DIAGNOSIS (#63.08-1.4)" "Vista field is word processing so CodeableConcept cannot be used"
 

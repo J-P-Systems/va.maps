@@ -17,7 +17,7 @@ Source: LabObservationMicrobiologyDiagnosticReport
 * effectiveDateTime -> "1424: source value from MICROBIOLOGY - DATE/TIME SPECIMEN TAKEN (#63.05-.01)"
 * issued -> "1429: source value from MICROBIOLOGY - DATE REPORT COMPLETED (#63.05-.03)"
 * performer -> "1434: reference from MICROBIOLOGY - VERIFY PERSON (#63.05-.04)" "US Core Practitioner is must support resource"
-* result -> "++: reference from null (#null)"
+* result -> "++: reference"
 
 Mapping: cdw-to-LabObservationMicrobiologyDiagnosticReport
 Id: cdw
