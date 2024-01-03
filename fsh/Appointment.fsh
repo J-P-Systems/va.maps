@@ -2,7 +2,7 @@ Profile: Appointment
 Parent: http://hl7.org/fhir/StructureDefinition/Appointment
 Id: Appointment
 Title: "Appointment"
-Description: "This StructureDefinition contains the maps for VistA APPOINTMENT (file 2.98) to FHIR Appointment"
+Description: "This StructureDefinition contains the maps for VistA file APPOINTMENT (#2.98) to Appointment"
 * ^status = #draft
 * status from http://va.gov/fhir/ValueSet/VSVFAppointmentStatus
 * participant.actor only Reference(http://hl7.org/fhir/StructureDefinition/Location)

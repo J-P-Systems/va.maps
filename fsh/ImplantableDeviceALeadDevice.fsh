@@ -2,7 +2,7 @@ Profile: ImplantableDeviceALeadDevice
 Parent: http://va.gov/fhir/StructureDefinition/ImplantableDeviceDevice
 Id: ImplantableDeviceALeadDevice
 Title: "Implantable Device: A Lead {Device}"
-Description: "This StructureDefinition contains the maps for VistA A LEAD IMPLANT (file 698.2) to FHIR Device"
+Description: "This StructureDefinition contains the maps for VistA file A LEAD IMPLANT (#698.2) to ImplantableDeviceDevice"
 * ^status = #draft
 * type from http://va.gov/fhir/ValueSet/VSVFdeviceTypePacemaker
 

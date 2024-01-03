@@ -2,7 +2,7 @@ Profile: ObservationImagingResultRadNucObservation
 Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-imaging
 Id: ObservationImagingResultRadNucObservation
 Title: "Observation Imaging Result: Rad/Nuc {Observation}"
-Description: "This StructureDefinition contains the maps for VistA RAD/NUC MED REPORTS (file 74) to FHIR Observation"
+Description: "This StructureDefinition contains the maps for VistA file RAD/NUC MED REPORTS (#74) to us-core-observation-imaging"
 * ^status = #draft
 * partOf only Reference(http://hl7.org/fhir/StructureDefinition/Procedure)
 * status from http://va.gov/fhir/ValueSet/VSVFImageStatusRadNuc

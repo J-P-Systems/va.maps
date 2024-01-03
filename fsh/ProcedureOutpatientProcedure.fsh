@@ -2,7 +2,7 @@ Profile: ProcedureOutpatientProcedure
 Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure
 Id: ProcedureOutpatientProcedure
 Title: "Procedure: Outpatient {Procedure}"
-Description: "This StructureDefinition contains the maps for VistA V CPT (file 9000010.18) to FHIR Procedure"
+Description: "This StructureDefinition contains the maps for VistA file V CPT (#9000010.18) to us-core-procedure"
 * ^status = #draft
 * category.coding.code obeys inv-30
 * status obeys inv-31

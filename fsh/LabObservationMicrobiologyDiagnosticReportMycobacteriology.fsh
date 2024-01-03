@@ -2,7 +2,7 @@ Profile: LabObservationMicrobiologyDiagnosticReportMycobacteriology
 Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-lab
 Id: LabObservationMicrobiologyDiagnosticReportMycobacteriology
 Title: "Lab Observation: Microbiology {DiagnosticReport}: Mycobacteriology"
-Description: "This StructureDefinition contains the maps for VistA MICROBIOLOGY (file 63.05) to FHIR DiagnosticReport"
+Description: "This StructureDefinition contains the maps for VistA file MICROBIOLOGY (#63.05) to us-core-diagnosticreport-lab"
 * ^status = #draft
 
 Mapping: vista-to-LabObservationMicrobiologyDiagnosticReportMycobacteriology

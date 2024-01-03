@@ -2,7 +2,7 @@ Profile: ImplantableDeviceTransmitterDevice
 Parent: http://va.gov/fhir/StructureDefinition/ImplantableDevicePacemakerDevice
 Id: ImplantableDeviceTransmitterDevice
 Title: "Implantable Device: Transmitter {Device}"
-Description: "This StructureDefinition contains the maps for VistA GENERATOR IMPLANT (file 698) to FHIR Device"
+Description: "This StructureDefinition contains the maps for VistA file GENERATOR IMPLANT (#698) to ImplantableDevicePacemakerDevice"
 * ^status = #draft
 * type from http://va.gov/fhir/ValueSet/VSVFdeviceTypePacemaker
 

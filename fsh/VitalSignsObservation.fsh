@@ -2,7 +2,7 @@ Profile: VitalSignsObservation
 Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-vital-signs
 Id: VitalSignsObservation
 Title: "Vital Signs {Observation}"
-Description: "This StructureDefinition contains the maps for VistA GMRV VITAL MEASUREMENT (file 120.5) to FHIR Observation"
+Description: "This StructureDefinition contains the maps for VistA file GMRV VITAL MEASUREMENT (#120.5) to us-core-vital-signs"
 * ^status = #draft
 * performer only Reference(VitalSignsOrganization)
 * category.coding.code obeys inv-37

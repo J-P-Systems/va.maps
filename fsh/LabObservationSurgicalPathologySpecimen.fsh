@@ -2,7 +2,7 @@ Profile: LabObservationSurgicalPathologySpecimen
 Parent: http://hl7.org/fhir/StructureDefinition/Specimen
 Id: LabObservationSurgicalPathologySpecimen
 Title: "Lab Observation: Surgical Pathology {Specimen}"
-Description: "This StructureDefinition contains the maps for VistA SURGICAL PATHOLOGY (file 63.08) to FHIR Specimen"
+Description: "This StructureDefinition contains the maps for VistA file SURGICAL PATHOLOGY (#63.08) to Specimen"
 * ^status = #draft
 
 Mapping: vista-to-LabObservationSurgicalPathologySpecimen

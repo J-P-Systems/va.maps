@@ -2,7 +2,7 @@ Profile: Organization
 Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization
 Id: Organization
 Title: "Organization"
-Description: "This StructureDefinition contains the maps for VistA INSTITUTION (file 4) to FHIR Organization"
+Description: "This StructureDefinition contains the maps for VistA file INSTITUTION (#4) to us-core-organization"
 * ^status = #draft
 * active obeys inv-23
 * type obeys inv-24

@@ -2,7 +2,7 @@ Profile: MedicationRequestOutpatientMedicationRequest
 Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest
 Id: MedicationRequestOutpatientMedicationRequest
 Title: "MedicationRequestOutpatient {MedicationRequest}"
-Description: "This StructureDefinition contains the maps for VistA ? (file ?) to FHIR MedicationRequest"
+Description: "This StructureDefinition contains the maps for VistA file ? (#?) to us-core-medicationrequest"
 * ^status = #draft
 * intent obeys inv-20
 

@@ -2,7 +2,7 @@ Profile: ImmunizationObservation
 Parent: http://hl7.org/fhir/StructureDefinition/Observation
 Id: ImmunizationObservation
 Title: "Immunization {Observation}"
-Description: "This StructureDefinition contains the maps for VistA ? (file ?) to FHIR Observation"
+Description: "This StructureDefinition contains the maps for VistA file ? (#?) to Observation"
 * ^status = #draft
 * status obeys inv-44
 * code obeys inv-45

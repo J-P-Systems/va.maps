@@ -2,7 +2,7 @@ Profile: LabObservationMicrobiologyObservationBacteriology
 Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab
 Id: LabObservationMicrobiologyObservationBacteriology
 Title: "Lab Observation: Microbiology {Observation}: Bacteriology"
-Description: "This StructureDefinition contains the maps for VistA MICROBIOLOGY (file 63.05) to FHIR Observation"
+Description: "This StructureDefinition contains the maps for VistA file MICROBIOLOGY (#63.05) to us-core-observation-lab"
 * ^status = #draft
 * code obeys inv-11
 * status from http://va.gov/fhir/ValueSet/VSVFLabObservationStatus
@@ -10,14 +10,14 @@ Description: "This StructureDefinition contains the maps for VistA MICROBIOLOGY 
 * component.interpretation from http://va.gov/fhir/ValueSet/VSVFAntibioticSensitivityInterpretation
 
 Invariant: inv-11
-Description: "1525: fixed value without value? if MICROBIOLOGY - ORDERED TEST > ORDERED TEST - LAB TEST ORDERED > LABORATORY TEST - SITE/SPECIMEN > SITE/SPECIMEN - LOINC CODE (#63.05-.35 > 63.5-13 > 60-100 > 60.01-95.03) case NULL"
+Description: "1525: fixed value without value? when MICROBIOLOGY - ORDERED TEST > ORDERED TEST - LAB TEST ORDERED > LABORATORY TEST - SITE/SPECIMEN > SITE/SPECIMEN - LOINC CODE (#63.05-.35 > 63.5-13 > 60-100 > 60.01-95.03) case NULL"
 Severity: #warning
 
 Mapping: vista-to-LabObservationMicrobiologyObservationBacteriology
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: LabObservationMicrobiologyObservationBacteriology
-* code -> "1525: fixed value without value? if MICROBIOLOGY - ORDERED TEST > ORDERED TEST - LAB TEST ORDERED > LABORATORY TEST - SITE/SPECIMEN > SITE/SPECIMEN - LOINC CODE (#63.05-.35 > 63.5-13 > 60-100 > 60.01-95.03) case NULL"
+* code -> "1525: fixed value without value? when MICROBIOLOGY - ORDERED TEST > ORDERED TEST - LAB TEST ORDERED > LABORATORY TEST - SITE/SPECIMEN > SITE/SPECIMEN - LOINC CODE (#63.05-.35 > 63.5-13 > 60-100 > 60.01-95.03) case NULL"
 * status -> "1488: terminologyMaps using VF_LabObservationStatus on MICROBIOLOGY - BACT RPT STATUS (#63.05-11.5)"
 * valueCodeableConcept.coding -> "1516: terminologyMaps using VF_PositiveNegative on MICROBIOLOGY - URINE SCREEN (#63.05-11.57)"
 * valueString -> "1517: source value from MICROBIOLOGY - SPUTUM SCREEN (#63.05-11.58)"

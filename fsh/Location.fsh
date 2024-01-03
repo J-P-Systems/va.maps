@@ -2,7 +2,7 @@ Profile: Location
 Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-location
 Id: Location
 Title: "Location"
-Description: "This StructureDefinition contains the maps for VistA HOSPITAL LOCATION (file 44) to FHIR Location"
+Description: "This StructureDefinition contains the maps for VistA file HOSPITAL LOCATION (#44) to us-core-location"
 * ^status = #draft
 * status from http://va.gov/fhir/ValueSet/VSVFLocationStatus
 * managingOrganization.display obeys inv-16
@@ -14,7 +14,7 @@ Description: "1283: fixed value = Veterans Administration"
 Severity: #warning
 
 Invariant: inv-17
-Description: "1322: fixed value = #physical if HOSPITAL LOCATION - INSTITUTION (#44-3)"
+Description: "1322: fixed value = #physical when HOSPITAL LOCATION - INSTITUTION (#44-3)"
 Severity: #warning
 
 Mapping: vista-to-Location
@@ -37,7 +37,7 @@ Source: Location
 * address.city -> "1319: source value from HOSPITAL LOCATION - INSTITUTION > CITY (#44-3 > 4-1.03)"
 * address.postalCode -> "1320: source value from HOSPITAL LOCATION - INSTITUTION > ZIP (#44-3 > 4-1.04)"
 * address.country -> "1405: source value from HOSPITAL LOCATION - INSTITUTION > COUNTRY > COUNTRY - CODE (#44-3 > 4-801 > 779.004-0.1)"
-* address.type -> "1322: fixed value = #physical if HOSPITAL LOCATION - INSTITUTION (#44-3)"
+* address.type -> "1322: fixed value = #physical when HOSPITAL LOCATION - INSTITUTION (#44-3)"
 * address.line -> "1323: source not supported case mailing slice" "source not supported because Location has only physical address and supports only 1 address"
 * address.line -> "1324: source not supported case mailing slice" "source not supported because Location has only physical address and supports only 1 address"
 * address.city -> "1325: source not supported case mailing slice" "source not supported because Location has only physical address and supports only 1 address"

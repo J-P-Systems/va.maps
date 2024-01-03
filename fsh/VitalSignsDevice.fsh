@@ -2,7 +2,7 @@ Profile: VitalSignsDevice
 Parent: http://hl7.org/fhir/StructureDefinition/Device
 Id: VitalSignsDevice
 Title: "Vital Signs {Device}"
-Description: "This StructureDefinition contains the maps for VistA GMRV VITAL MEASUREMENT (file 120.5) to FHIR Device"
+Description: "This StructureDefinition contains the maps for VistA file GMRV VITAL MEASUREMENT (#120.5) to Device"
 * ^status = #draft
 * type from http://va.gov/fhir/ValueSet/VSVFVitalsDevice
 

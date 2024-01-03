@@ -2,18 +2,18 @@ Profile: ProcedureSurgeryProcedure
 Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure
 Id: ProcedureSurgeryProcedure
 Title: "Procedure: Surgery {Procedure}"
-Description: "This StructureDefinition contains the maps for VistA SURGERY (file 130) to FHIR Procedure"
+Description: "This StructureDefinition contains the maps for VistA file SURGERY (#130) to us-core-procedure"
 * ^status = #draft
 * complication.coding.code obeys inv-32
 * complication.coding.code obeys inv-33
 * category.coding.code obeys inv-34
 
 Invariant: inv-32
-Description: "1296: fixed value = 88797001 if SURGERY - STOMA COMPLICATIONS (#130-688) case == ‘Y’"
+Description: "1296: fixed value = 88797001 when SURGERY - STOMA COMPLICATIONS (#130-688) case == ‘Y’"
 Severity: #warning
 
 Invariant: inv-33
-Description: "1297: fixed value = 22298006 if SURGERY - MYOCARDIAL INFARCTION (#130-258) case == ‘Y’"
+Description: "1297: fixed value = 22298006 when SURGERY - MYOCARDIAL INFARCTION (#130-258) case == ‘Y’"
 Severity: #warning
 
 Invariant: inv-34
@@ -35,8 +35,8 @@ Source: ProcedureSurgeryProcedure
 * performedPeriod.end -> "1293: source value from SURGERY - TIME OPERATION ENDS (#130-.23) case 130-118 NON-OR PROCEDURE != ‘Y’"
 * location -> "1294: reference from SURGERY - NON-OR LOCATION (#130-119) case 130-118 NON-OR PROCEDURE != ‘Y’"
 * location -> "1295: reference from SURGERY - OP ROOM PROCEDURE PERFORMED (#130-.02) case 130-118 NON-OR PROCEDURE == ‘Y’"
-* complication.coding.code -> "1296: fixed value = 88797001 if SURGERY - STOMA COMPLICATIONS (#130-688) case == ‘Y’"
-* complication.coding.code -> "1297: fixed value = 22298006 if SURGERY - MYOCARDIAL INFARCTION (#130-258) case == ‘Y’"
+* complication.coding.code -> "1296: fixed value = 88797001 when SURGERY - STOMA COMPLICATIONS (#130-688) case == ‘Y’"
+* complication.coding.code -> "1297: fixed value = 22298006 when SURGERY - MYOCARDIAL INFARCTION (#130-258) case == ‘Y’"
 * performer.actor -> "1298: reference from SURGERY - PERFUSIONIST (#130-.167)"
 * category.coding.code -> "1313: fixed value = 387713003"
 * performer.actor -> "1330: reference from SURGERY - PRIMARY SURGEON (#130-.14)"

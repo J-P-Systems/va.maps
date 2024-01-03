@@ -2,7 +2,7 @@ Profile: ProcedureRadiologyProcedure
 Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure
 Id: ProcedureRadiologyProcedure
 Title: "Procedure: Radiology {Procedure}"
-Description: "This StructureDefinition contains the maps for VistA EXAMINATIONS (file 70.03) to FHIR Procedure"
+Description: "This StructureDefinition contains the maps for VistA file EXAMINATIONS (#70.03) to us-core-procedure"
 * ^status = #draft
 * performer.actor only Reference(http://hl7.org/fhir/StructureDefinition/Practitioner)
 

@@ -2,7 +2,7 @@ Profile: LabObservationCytopathologyObservation
 Parent: http://va.gov/fhir/StructureDefinition/LabObservationObservation
 Id: LabObservationCytopathologyObservation
 Title: "Lab Observation: Cytopathology {Observation}"
-Description: "This StructureDefinition contains the maps for VistA CYTOPATHOLOGY (file 63.09) to FHIR Observation"
+Description: "This StructureDefinition contains the maps for VistA file CYTOPATHOLOGY (#63.09) to LabObservationObservation"
 * ^status = #draft
 * performer only Reference(http://hl7.org/fhir/StructureDefinition/Organization)
 * specimen only Reference(LabObservationCytopathologySpecimen)

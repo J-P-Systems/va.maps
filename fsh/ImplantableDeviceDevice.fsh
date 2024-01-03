@@ -2,7 +2,7 @@ Profile: ImplantableDeviceDevice
 Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-implantable-device
 Id: ImplantableDeviceDevice
 Title: "Implantable Device {Device}"
-Description: "This StructureDefinition contains the maps for VistA ? (file ?) to FHIR Device"
+Description: "This StructureDefinition contains the maps for VistA file ? (#?) to us-core-implantable-device"
 * ^status = #draft
 
 Mapping: vista-to-ImplantableDeviceDevice

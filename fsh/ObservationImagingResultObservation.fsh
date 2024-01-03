@@ -2,7 +2,7 @@ Profile: ObservationImagingResultObservation
 Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-imaging
 Id: ObservationImagingResultObservation
 Title: "Observation Imaging Result {Observation}"
-Description: "This StructureDefinition contains the maps for VistA ? (file ?) to FHIR Observation"
+Description: "This StructureDefinition contains the maps for VistA file ? (#?) to us-core-observation-imaging"
 * ^status = #draft
 * category.coding.code obeys inv-46
 

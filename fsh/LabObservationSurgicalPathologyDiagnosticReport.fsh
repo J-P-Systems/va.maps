@@ -2,7 +2,7 @@ Profile: LabObservationSurgicalPathologyDiagnosticReport
 Parent: http://va.gov/fhir/StructureDefinition/LabObservationDiagnosticReport
 Id: LabObservationSurgicalPathologyDiagnosticReport
 Title: "Lab Observation: Surgical Pathology {DiagnosticReport}"
-Description: "This StructureDefinition contains the maps for VistA SURGICAL PATHOLOGY (file 63.08) to FHIR DiagnosticReport"
+Description: "This StructureDefinition contains the maps for VistA file SURGICAL PATHOLOGY (#63.08) to LabObservationDiagnosticReport"
 * ^status = #draft
 * status from http://va.gov/fhir/ValueSet/VSVFDiagnosticReportLabStatus
 * performer only Reference(http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner)

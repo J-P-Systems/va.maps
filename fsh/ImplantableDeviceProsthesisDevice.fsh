@@ -2,7 +2,7 @@ Profile: ImplantableDeviceProsthesisDevice
 Parent: http://va.gov/fhir/StructureDefinition/ImplantableDeviceDevice
 Id: ImplantableDeviceProsthesisDevice
 Title: "Implantable Device: Prosthesis {Device}"
-Description: "This StructureDefinition contains the maps for VistA PROSTHESIS INSTALLED (file 130.01) to FHIR Device"
+Description: "This StructureDefinition contains the maps for VistA file PROSTHESIS INSTALLED (#130.01) to ImplantableDeviceDevice"
 * ^status = #draft
 * type.coding.code obeys inv-9
 

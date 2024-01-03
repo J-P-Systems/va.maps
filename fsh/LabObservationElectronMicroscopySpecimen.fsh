@@ -2,7 +2,7 @@ Profile: LabObservationElectronMicroscopySpecimen
 Parent: http://hl7.org/fhir/StructureDefinition/Specimen
 Id: LabObservationElectronMicroscopySpecimen
 Title: "Lab Observation: Electron Microscopy {Specimen}"
-Description: "This StructureDefinition contains the maps for VistA EM (file 63.02) to FHIR Specimen"
+Description: "This StructureDefinition contains the maps for VistA file EM (#63.02) to Specimen"
 * ^status = #draft
 
 Mapping: vista-to-LabObservationElectronMicroscopySpecimen

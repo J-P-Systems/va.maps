@@ -2,7 +2,7 @@ Profile: VitalSignsObservationSpO2
 Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-pulse-oximetry
 Id: VitalSignsObservationSpO2
 Title: "Vital Signs {Observation}: SpO2"
-Description: "This StructureDefinition contains the maps for VistA GMRV VITAL MEASUREMENT (file 120.5) to FHIR Observation"
+Description: "This StructureDefinition contains the maps for VistA file GMRV VITAL MEASUREMENT (#120.5) to us-core-pulse-oximetry"
 * ^status = #draft
 
 Mapping: vista-to-VitalSignsObservationSpO2

@@ -2,7 +2,7 @@ Profile: MedicationRequestUnsignedMedicationRequestVAOrder
 Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest
 Id: MedicationRequestUnsignedMedicationRequestVAOrder
 Title: "MedicationRequestUnsigned {MedicationRequest}: VA Order"
-Description: "This StructureDefinition contains the maps for VistA ORDER (file 100) to FHIR MedicationRequest"
+Description: "This StructureDefinition contains the maps for VistA file ORDER (#100) to us-core-medicationrequest"
 * ^status = #draft
 
 Mapping: vista-to-MedicationRequestUnsignedMedicationRequestVAOrder

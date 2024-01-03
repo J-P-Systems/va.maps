@@ -2,7 +2,7 @@ Profile: Practitioner
 Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner
 Id: Practitioner
 Title: "Practitioner"
-Description: "This StructureDefinition contains the maps for VistA NEW PERSON (file 200) to FHIR Practitioner"
+Description: "This StructureDefinition contains the maps for VistA file NEW PERSON (#200) to us-core-practitioner"
 * ^status = #draft
 * address ^slicing.discriminator.type = #value
 * address ^slicing.discriminator.path = "use"
@@ -16,11 +16,11 @@ Description: "This StructureDefinition contains the maps for VistA NEW PERSON (f
 * address[temp].country.extension[http://hl7.org/fhir/StructureDefinition/data-absent-reason].valueCode obeys inv-29
 
 Invariant: inv-28
-Description: "1531: fixed value = unknown if NEW PERSON - STATE (#200-.115) case NULL"
+Description: "1531: fixed value = unknown when NEW PERSON - STATE (#200-.115) case NULL"
 Severity: #warning
 
 Invariant: inv-29
-Description: "1533: fixed value = unknown if NEW PERSON - STATE (#200-.1215) case NULL"
+Description: "1533: fixed value = unknown when NEW PERSON - STATE (#200-.1215) case NULL"
 Severity: #warning
 
 Mapping: vista-to-Practitioner
@@ -44,7 +44,7 @@ Source: Practitioner
 * address[home].state -> "400: source value from NEW PERSON - STATE (#200-.115)" "Changed use case and FHIR Path to Practitioner to align with US Core\nMvdZ QA 6-jul-2023"
 * address[home].postalCode -> "401: source value from NEW PERSON - ZIP CODE (#200-.116)" "Changed use case and FHIR Path to Practitioner to align with US Core\nMvdZ QA 6-jul-2023"
 * address[home].country -> "1530: terminologyMaps using VF_PractitionerCountry on NEW PERSON - STATE (#200-.115) case not NULL" "Added country to support Inferno testing (where country is required)\nMvdZ QA 6-jul-2023"
-* address[home].country.extension[http://hl7.org/fhir/StructureDefinition/data-absent-reason].valueCode -> "1531: fixed value = unknown if NEW PERSON - STATE (#200-.115) case NULL" "If country is not known (i.e. \"Europe\"), use the Data Absent Reason field with \"unknown\"\n\nAdded country to support Inferno testing (where country is required)\nMvdZ QA 6-jul-2023"
+* address[home].country.extension[http://hl7.org/fhir/StructureDefinition/data-absent-reason].valueCode -> "1531: fixed value = unknown when NEW PERSON - STATE (#200-.115) case NULL" "If country is not known (i.e. \"Europe\"), use the Data Absent Reason field with \"unknown\"\n\nAdded country to support Inferno testing (where country is required)\nMvdZ QA 6-jul-2023"
 * address[temp].line -> "402: source value from NEW PERSON - TEMPORARY ADDRESS 1 (#200-.1211)" "Changed use case and FHIR Path to Practitioner to fix mapping and align with US Core\nMvdZ QA 6-jul-2023"
 * address[temp].line -> "403: source value from NEW PERSON - TEMPORARY ADDRESS 2 (#200-.1212)" "MvdZ QA 6-jul-2023"
 * address[temp].line -> "404: source value from NEW PERSON - TEMPORARY ADDRESS 3 (#200-.1213)" "MvdZ QA 6-jul-2023"
@@ -52,7 +52,7 @@ Source: Practitioner
 * address[temp].state -> "406: source value from NEW PERSON - TEMPORARY STATE (#200-.1215)" "MvdZ QA 6-jul-2023"
 * address[temp].postalCode -> "407: source value from NEW PERSON - TEMPORARY ZIP CODE (#200-.1216)" "MvdZ QA 6-jul-2023"
 * address[temp].country -> "1532: terminologyMaps using VF_PractitionerCountry on NEW PERSON - STATE (#200-.1215) case not NULL" "Added country to support Inferno testing (where country is required)\nMvdZ QA 6-jul-2023"
-* address[temp].country.extension[http://hl7.org/fhir/StructureDefinition/data-absent-reason].valueCode -> "1533: fixed value = unknown if NEW PERSON - STATE (#200-.1215) case NULL" "If country is not known (i.e. \"Europe\"), use the Data Absent Reason field with \"unknown\"\n\nAdded country to support Inferno testing (where country is required)\nMvdZ QA 6-jul-2023"
+* address[temp].country.extension[http://hl7.org/fhir/StructureDefinition/data-absent-reason].valueCode -> "1533: fixed value = unknown when NEW PERSON - STATE (#200-.1215) case NULL" "If country is not known (i.e. \"Europe\"), use the Data Absent Reason field with \"unknown\"\n\nAdded country to support Inferno testing (where country is required)\nMvdZ QA 6-jul-2023"
 * address[temp].period.start -> "408: source value from NEW PERSON - START DATE OF TEMP ADDRES (#200-.1217)" "MvdZ QA 6-jul-2023"
 * address[temp].period.end -> "409: source value from NEW PERSON - END DATE OF TEMP ADDRESS (#200-.1218)" "MvdZ QA 6-jul-2023"
 

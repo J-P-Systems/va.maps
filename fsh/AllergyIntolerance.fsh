@@ -2,7 +2,7 @@ Profile: AllergyIntolerance
 Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-allergyintolerance
 Id: AllergyIntolerance
 Title: "AllergyIntolerance"
-Description: "This StructureDefinition contains the maps for VistA PATIENT ALLERGIES (file 120.8) to FHIR AllergyIntolerance"
+Description: "This StructureDefinition contains the maps for VistA file PATIENT ALLERGIES (#120.8) to us-core-allergyintolerance"
 * ^status = #draft
 * type from http://va.gov/fhir/ValueSet/VSVFallergyMechanism
 * verificationStatus from http://va.gov/fhir/ValueSet/VSVFallergyVerificationStatus

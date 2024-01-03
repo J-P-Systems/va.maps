@@ -2,7 +2,7 @@ Profile: Immunization
 Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-immunization
 Id: Immunization
 Title: "Immunization"
-Description: "This StructureDefinition contains the maps for VistA V IMMUNIZATION (file 9000010.11) to FHIR Immunization"
+Description: "This StructureDefinition contains the maps for VistA file V IMMUNIZATION (#9000010.11) to us-core-immunization"
 * ^status = #draft
 * statusReason from http://va.gov/fhir/ValueSet/VSVFimmunizationStatusReason
 * vaccineCode from http://va.gov/fhir/ValueSet/VSVFinferredCVX
@@ -11,7 +11,7 @@ Description: "This StructureDefinition contains the maps for VistA V IMMUNIZATIO
 * reaction.detail only Reference(ImmunizationObservation)
 
 Invariant: inv-8
-Description: "297: fixed value = completed if V IMMUNIZATION - IMMUNIZATION > IMMUNIZATION - CVX CODE (#9000010.11-.01 > 9999999.14-.03) case CVX populated"
+Description: "297: fixed value = completed when V IMMUNIZATION - IMMUNIZATION > IMMUNIZATION - CVX CODE (#9000010.11-.01 > 9999999.14-.03) case CVX populated"
 Severity: #warning
 
 Mapping: vista-to-Immunization
@@ -21,7 +21,7 @@ Source: Immunization
 * statusReason -> "527: terminologyMaps using VF_immunizationStatusReason on V IMMUNIZATION - IMMUNIZATION > IMMUNIZATION - NAME (#9000010.11-.01 > 9999999.14-.01) case V IMMUNIZATION - IMMUNIZATION null"
 * vaccineCode -> "528: terminologyMaps using VF_inferredCVX on V IMMUNIZATION - IMMUNIZATION > IMMUNIZATION - NAME (#9000010.11-.01 > 9999999.14-.01) case V IMMUNIZATION - IMMUNIZATION null" "This map is used to identify CVX codes for immunizations that were not given, and which therefore are not coded. The name can be used to determine what the CVX Group."
 * primarySource -> "607: transform using VF_immunizationPrimarySource on V IMMUNIZATION - EVENT INFORMATION SOURCE (#9000010.11-1301)"
-* status -> "297: fixed value = completed if V IMMUNIZATION - IMMUNIZATION > IMMUNIZATION - CVX CODE (#9000010.11-.01 > 9999999.14-.03) case CVX populated" "subfile: .03 is CVX"
+* status -> "297: fixed value = completed when V IMMUNIZATION - IMMUNIZATION > IMMUNIZATION - CVX CODE (#9000010.11-.01 > 9999999.14-.03) case CVX populated" "subfile: .03 is CVX"
 * status -> "299: transform using \"not-done\" on V IMMUNIZATION - IMMUNIZATION > IMMUNIZATION - NAME (#9000010.11-.01 > 9999999.14-.01) case text like 'contraindicated', 'refused', 'decline', 'not avail'" "subfile: .01 is text\nTransform because multiple sources\nuse map?"
 * vaccineCode -> "332: source value from V IMMUNIZATION - IMMUNIZATION > IMMUNIZATION - CVX CODE (#9000010.11-.01 > 9999999.14-.03) case not null" "subfile: .03 is CVX"
 * patient -> "333: source value from V IMMUNIZATION - PATIENT NAME (#9000010.11-.02)"

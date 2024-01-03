@@ -2,7 +2,7 @@ Profile: Patient
 Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient
 Id: Patient
 Title: "Patient"
-Description: "This StructureDefinition contains the maps for VistA PATIENT (file 2) to FHIR Patient"
+Description: "This StructureDefinition contains the maps for VistA file PATIENT (#2) to us-core-patient"
 * ^status = #draft
 * address ^slicing.discriminator.type = #value
 * address ^slicing.discriminator.path = "use"

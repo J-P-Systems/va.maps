@@ -2,7 +2,7 @@ Profile: LabObservationDiagnosticReport
 Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-lab
 Id: LabObservationDiagnosticReport
 Title: "Lab Observation {DiagnosticReport}"
-Description: "This StructureDefinition contains the maps for VistA ? (file ?) to FHIR DiagnosticReport"
+Description: "This StructureDefinition contains the maps for VistA file ? (#?) to us-core-diagnosticreport-lab"
 * ^status = #draft
 * category.coding obeys inv-2
 

@@ -2,7 +2,7 @@ Profile: DocumentReference
 Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference
 Id: DocumentReference
 Title: "Document Reference"
-Description: "This StructureDefinition contains the maps for VistA ? (file ?) to FHIR DocumentReference"
+Description: "This StructureDefinition contains the maps for VistA file ? (#?) to us-core-documentreference"
 * ^status = #draft
 * category obeys inv-3
 * content.attachment.contentType obeys inv-4

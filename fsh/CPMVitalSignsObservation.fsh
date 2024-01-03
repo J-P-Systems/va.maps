@@ -2,7 +2,7 @@ Profile: CPMVitalSignsObservation
 Parent: http://va.gov/fhir/StructureDefinition/VitalSignsObservation
 Id: CPMVitalSignsObservation
 Title: "CPM Vital Signs {Observation}"
-Description: "This StructureDefinition contains the maps for VistA GMRV VITAL MEASUREMENT (file 120.5) to FHIR Observation"
+Description: "This StructureDefinition contains the maps for VistA file GMRV VITAL MEASUREMENT (#120.5) to VitalSignsObservation"
 * ^status = #draft
 * extension contains http://hl7.org/fhir/StructureDefinition/observation-bodyPosition named observation-bodyPosition 0..1
 * extension[http://hl7.org/fhir/StructureDefinition/observation-bodyPosition].valueCodeableConcept from http://va.gov/fhir/ValueSet/VSVFVitalsPosition

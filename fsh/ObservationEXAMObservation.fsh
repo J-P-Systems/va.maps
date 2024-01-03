@@ -2,7 +2,7 @@ Profile: ObservationEXAMObservation
 Parent: http://hl7.org/fhir/StructureDefinition/Observation
 Id: ObservationEXAMObservation
 Title: "Observation EXAM {Observation}"
-Description: "This StructureDefinition contains the maps for VistA V EXAM (file 9000010.13) to FHIR Observation"
+Description: "This StructureDefinition contains the maps for VistA file V EXAM (#9000010.13) to Observation"
 * ^status = #draft
 * status obeys inv-21
 * performer only Reference(http://hl7.org/fhir/StructureDefinition/Practitioner)

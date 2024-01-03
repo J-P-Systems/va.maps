@@ -2,7 +2,7 @@ Profile: LabObservationElectronMicroscopyDiagnosticReport
 Parent: http://va.gov/fhir/StructureDefinition/LabObservationDiagnosticReport
 Id: LabObservationElectronMicroscopyDiagnosticReport
 Title: "Lab Observation: Electron Microscopy {DiagnosticReport}"
-Description: "This StructureDefinition contains the maps for VistA EM (file 63.02) to FHIR DiagnosticReport"
+Description: "This StructureDefinition contains the maps for VistA file EM (#63.02) to LabObservationDiagnosticReport"
 * ^status = #draft
 * status from http://va.gov/fhir/ValueSet/VSVFDiagnosticReportLabStatus
 * result only Reference(LabObservationElectronMicroscopyObservation)

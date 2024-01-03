@@ -2,7 +2,7 @@ Profile: ObservationImagingResultEchoObservation
 Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-imaging
 Id: ObservationImagingResultEchoObservation
 Title: "Observation Imaging Result: Echo {Observation}"
-Description: "This StructureDefinition contains the maps for VistA ECHO (file 691) to FHIR Observation"
+Description: "This StructureDefinition contains the maps for VistA file ECHO (#691) to us-core-observation-imaging"
 * ^status = #draft
 * status from http://va.gov/fhir/ValueSet/VSVFImageStatus
 * performer only Reference(http://hl7.org/fhir/StructureDefinition/Practitioner)

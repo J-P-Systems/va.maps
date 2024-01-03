@@ -2,7 +2,7 @@ Profile: VitalSignsOrganization
 Parent: http://hl7.org/fhir/StructureDefinition/Organization
 Id: VitalSignsOrganization
 Title: "Vital Signs {Organization}"
-Description: "This StructureDefinition contains the maps for VistA GMRV VITAL MEASUREMENT (file 120.5) to FHIR Organization"
+Description: "This StructureDefinition contains the maps for VistA file GMRV VITAL MEASUREMENT (#120.5) to Organization"
 * ^status = #draft
 
 Mapping: vista-to-VitalSignsOrganization
