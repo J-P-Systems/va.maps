@@ -9,9 +9,10 @@ Usage: #definition
 * description = "Terminology Maps Vista_NCPDPCoverageRelationship"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VSVistaNCPDPCoverageRelationship"
 * group[0].source = "undefined"
-* group[=].target = "undefined"
+* group[=].target = "null"
 * group[=].element[0].code = #"not specified"
-* group[=].element[=].target.equivalence = #unmatched
+* group[=].element[=].target.code = #null
+* group[=].element[=].target.equivalence = #equivalent
 * group[=].element[+].code = #cardholder
 * group[=].element[=].target.code = #self
 * group[=].element[=].target.equivalence = #equivalent

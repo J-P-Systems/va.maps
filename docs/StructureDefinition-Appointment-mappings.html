@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-    <title>Appointment - Mappings - US Veterans Administration FHIR Map Set Implementation Guide v0.13.0</title>
+    <title>Appointment - Mappings - US Veterans Administration FHIR Map Set Implementation Guide v0.14.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -57,7 +57,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">US Veterans Administration FHIR Map Set Implementation Guide</span>
             <br/>
-            <span style="display:inline-block;">0.13.0 - ci-build
+            <span style="display:inline-block;">0.14.0 - ci-build
 
 
 
@@ -131,7 +131,7 @@
           <div class="inner-wrapper">
 
 <div style="counter-reset: section 5" class="col-12">
-    <!-- ReleaseHeader --><p id="publish-box">US Veterans Administration FHIR Map Set Implementation Guide - Local Development build (v0.13.0) built by the FHIR (HL7&reg; FHIR&reg; Standard) Build Tools. See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
+    <!-- ReleaseHeader --><p id="publish-box">US Veterans Administration FHIR Map Set Implementation Guide - Local Development build (v0.14.0) built by the FHIR (HL7&reg; FHIR&reg; Standard) Build Tools. See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
   
 
 
@@ -204,7 +204,7 @@
         
           Draft
           
-            as of 2024-01-03
+            as of 2024-01-13
           
         
       </td>
@@ -417,6 +417,32 @@
 <td class="cell-ce1">source value</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">Appointment.end</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/StructureDefinition/Appointment | 4.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">744</td>
+<td class="cell-ce1">team-approved</td>
+<td class="cell-ce1">PATIENT - LENGTH OF APP'T (#44.003-1)</td>
+<td class="cell-ce1">source value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Appointment.minutesDuration</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/StructureDefinition/Appointment | 4.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">745</td>
+<td class="cell-ce1">team-approved</td>
+<td class="cell-ce1">APPOINTMENT - DATE APPT. MADE (#2.98-20)</td>
+<td class="cell-ce1">source value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Appointment.created</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1"></td>
@@ -735,7 +761,8 @@
  <tr><td>&nbsp;&nbsp;&nbsp;reasonReference</td><td>742: target not supported</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;start</td><td>743: source value from APPOINTMENT - APPOINTMENT DATE/TIME (#2.98-.001), 750: source value from SD WAIT LIST - DESIRED DATE OF APPOINTMENT (#409.3-22)</td><td>, </td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;end</td><td>1612: source value from APPOINTMENT - OUTPATIENT ENCOUNTER &gt; OUTPATIENT ENCOUNTER - CHECK OUT PROCESS COMPLETION (#2.98-21 &gt; 409.68-.07)</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;created</td><td>751: source value from SD WAIT LIST - ORIGINATING DATE (#409.3-1)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;minutesDuration</td><td>744: source value from PATIENT - LENGTH OF APP'T (#44.003-1)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;created</td><td>745: source value from APPOINTMENT - DATE APPT. MADE (#2.98-20), 751: source value from SD WAIT LIST - ORIGINATING DATE (#409.3-1)</td><td>, </td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;comment</td><td>752: source value from SD WAIT LIST - COMMENTS (#409.3-25)</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;participant</td><td></td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;actor</td><td>746: reference from APPOINTMENT - CLINIC (#2.98-.01), 754: reference from SD WAIT LIST - APPT CLINIC (#409.3-13.2)</td><td>, </td> </tr>
@@ -758,7 +785,9 @@
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>Appt.Appointment.AppointmentTypeIEN</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;start</td><td>Appt.Appointment.AppointmentDateTime, Appt.WaitList.AppointmentDesiredDate</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;end</td><td>Appt.Appointment.VisitIEN</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;created</td><td>Appt.WaitList.OriginatingDate</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;minutesDuration</td><td>Appt.Appointment.LengthOfAppointment
+Appt.AppointmentMultiple.LengthOfAppointment</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;created</td><td>Appt.Appointment.AppointmentMadeDate, Appt.WaitList.OriginatingDate</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;comment</td><td>Appt.WaitList.WaitListComments</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;participant</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;actor</td><td>Appt.Appointment.LocationIEN</td> </tr>
@@ -832,7 +861,7 @@ appointment.patientClass</td> </tr>
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.13.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Jan 3, 2024 19:41+0000">2024-01-03</span>
+          IG &copy; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.14.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Sat, Jan 13, 2024 13:47+0000">2024-01-13</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

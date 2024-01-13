@@ -9,9 +9,10 @@ Usage: #definition
 * description = "Terminology Maps VF_CoverageStatusForce"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFCoverageStatusForce"
 * group[0].source = "undefined"
-* group[=].target = "undefined"
+* group[=].target = "null"
 * group[=].element[0].code = #"0' FOR NOT COVERED;"
-* group[=].element[=].target.equivalence = #unmatched
+* group[=].element[=].target.code = #false
+* group[=].element[=].target.equivalence = #equivalent
 * group[=].element[+].code = #"1' FOR COVERED;"
 * group[=].element[=].target.code = #true
 * group[=].element[=].target.equivalence = #equivalent

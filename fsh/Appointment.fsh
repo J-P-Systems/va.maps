@@ -4,6 +4,7 @@ Id: Appointment
 Title: "Appointment"
 Description: "This StructureDefinition contains the maps for VistA file APPOINTMENT (#2.98) to Appointment"
 * ^status = #draft
+* status and cancelationReason.coding.code and serviceCategory.coding.code and serviceType.coding.code and specialty and appointmentType.coding.code and reasonCode and reasonReference and start and end and minutesDuration and created and participant.actor and comment MS
 * status from http://va.gov/fhir/ValueSet/VSVFAppointmentStatus
 * participant.actor only Reference(http://hl7.org/fhir/StructureDefinition/Location)
 * participant.actor only Reference(http://hl7.org/fhir/StructureDefinition/Location)
@@ -26,6 +27,8 @@ Source: Appointment
 * reasonReference -> "742: target not supported"
 * start -> "743: source value from APPOINTMENT - APPOINTMENT DATE/TIME (#2.98-.001)"
 * end -> "1612: source value from APPOINTMENT - OUTPATIENT ENCOUNTER > OUTPATIENT ENCOUNTER - CHECK OUT PROCESS COMPLETION (#2.98-21 > 409.68-.07)"
+* minutesDuration -> "744: source value from PATIENT - LENGTH OF APP'T (#44.003-1)"
+* created -> "745: source value from APPOINTMENT - DATE APPT. MADE (#2.98-20)"
 * participant.actor -> "746: reference from APPOINTMENT - CLINIC (#2.98-.01)"
 * status -> "748: transform using \"waitlist\" on SD WAIT LIST - PATIENT (#409.3-.01) case not null" "LVH returns \"Waitlisted\". \"Waitlisted\" is the display value and \"waitlist\" is the code. This is a required FHIR value set. 3/15/2023 LVH will fix"
 * serviceCategory.coding.code -> "749: source value from SD WAIT LIST - APPT STOP CODE (#409.3-13.4)"
@@ -49,6 +52,8 @@ Source: Appointment
 * appointmentType.coding.code -> "Appt.Appointment.AppointmentTypeIEN"
 * start -> "Appt.Appointment.AppointmentDateTime"
 * end -> "Appt.Appointment.VisitIEN"
+* minutesDuration -> "Appt.Appointment.LengthOfAppointment\nAppt.AppointmentMultiple.LengthOfAppointment"
+* created -> "Appt.Appointment.AppointmentMadeDate"
 * participant.actor -> "Appt.Appointment.LocationIEN"
 * start -> "Appt.WaitList.AppointmentDesiredDate"
 * created -> "Appt.WaitList.OriginatingDate"

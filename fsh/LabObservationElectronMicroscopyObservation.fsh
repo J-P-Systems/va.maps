@@ -1,9 +1,10 @@
 Profile: LabObservationElectronMicroscopyObservation
-Parent: http://va.gov/fhir/StructureDefinition/LabObservationObservation
+Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab
 Id: LabObservationElectronMicroscopyObservation
-Title: "Lab Observation: Electron Microscopy {Observation}"
-Description: "This StructureDefinition contains the maps for VistA file EM (#63.02) to LabObservationObservation"
+Title: "Lab Observation: Electron Microscopy Observation"
+Description: "This StructureDefinition contains the maps for VistA file EM (#63.02) to us-core-observation-lab"
 * ^status = #draft
+* effectiveDateTime and note and performer and specimen and identifier.value and code and issued and status and valueString MS
 * performer only Reference(http://hl7.org/fhir/StructureDefinition/Organization)
 * specimen only Reference(LabObservationElectronMicroscopySpecimen)
 * status from http://va.gov/fhir/ValueSet/VSVFDiagnosticReportLabStatus

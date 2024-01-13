@@ -1,9 +1,10 @@
 Profile: LabObservationCytopathologyDiagnosticReport
-Parent: http://va.gov/fhir/StructureDefinition/LabObservationDiagnosticReport
+Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-lab
 Id: LabObservationCytopathologyDiagnosticReport
-Title: "Lab Observation: Cytopathology {DiagnosticReport}"
-Description: "This StructureDefinition contains the maps for VistA file CYTOPATHOLOGY (#63.09) to LabObservationDiagnosticReport"
+Title: "Lab Observation: Cytopathology DiagnosticReport"
+Description: "This StructureDefinition contains the maps for VistA file CYTOPATHOLOGY (#63.09) to us-core-diagnosticreport-lab"
 * ^status = #draft
+* identifier.value and status and effectiveDateTime and issued and performer and result and media.link and conclusion MS
 * status from http://va.gov/fhir/ValueSet/VSVFDiagnosticReportLabStatus
 * performer only Reference(http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner)
 * result only Reference(LabObservationCytopathologyObservation)

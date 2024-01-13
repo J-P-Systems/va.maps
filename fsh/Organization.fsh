@@ -4,30 +4,11 @@ Id: Organization
 Title: "Organization"
 Description: "This StructureDefinition contains the maps for VistA file INSTITUTION (#4) to us-core-organization"
 * ^status = #draft
-* active obeys inv-23
-* type obeys inv-24
 * address ^slicing.discriminator.type = #value
 * address ^slicing.discriminator.path = "use"
 * address ^slicing.rules = #open
-* address contains home 0..1 and temp 0..1 and physical 0..1 and postal 0..1
-* address[physical].type obeys inv-25
-* address[postal].type obeys inv-26
-
-Invariant: inv-23
-Description: "1253: fixed value = true"
-Severity: #warning
-
-Invariant: inv-24
-Description: "1254: fixed value = prov"
-Severity: #warning
-
-Invariant: inv-25
-Description: "1257: fixed value = #physical"
-Severity: #warning
-
-Invariant: inv-26
-Description: "1268: fixed value = #postal"
-Severity: #warning
+* address contains physical 0..1 and postal 0..1
+* name and identifier.value and active and type and alias and address[physical].type and address[physical].line and address[physical].city and address[physical].district and address[physical].state and address[physical].postalCode and address[physical].country and contact.name.text and contact.telecom.value and address[postal].type and address[postal].line and address[postal].city and address[postal].state and address[postal].postalCode and address[postal].country MS
 
 Mapping: vista-to-Organization
 Id: vista

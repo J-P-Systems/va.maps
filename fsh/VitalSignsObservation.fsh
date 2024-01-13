@@ -1,19 +1,15 @@
 Profile: VitalSignsObservation
 Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-vital-signs
 Id: VitalSignsObservation
-Title: "Vital Signs {Observation}"
+Title: "Vital Signs Observation"
 Description: "This StructureDefinition contains the maps for VistA file GMRV VITAL MEASUREMENT (#120.5) to us-core-vital-signs"
 * ^status = #draft
+* issued and performer and status and effectiveDateTime and category.coding.code and subject and identifier.value and code.coding and bodySite and device and method and valueQuantity.value and valueQuantity.code MS
 * performer only Reference(VitalSignsOrganization)
-* category.coding.code obeys inv-37
 * code.coding from http://va.gov/fhir/ValueSet/VSVFVitalsCodes
 * bodySite from http://va.gov/fhir/ValueSet/VSVFVitalsSite
 * device only Reference(VitalSignsDevice)
 * method from http://va.gov/fhir/ValueSet/VSVFVitalsMethod
-
-Invariant: inv-37
-Description: "658: fixed value = vital-signs"
-Severity: #warning
 
 Mapping: vista-to-VitalSignsObservation
 Id: vista

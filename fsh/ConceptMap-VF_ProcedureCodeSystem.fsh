@@ -9,7 +9,7 @@ Usage: #definition
 * description = "Terminology Maps VF_ProcedureCodeSystem"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFProcedureCodeSystem"
 * group[0].source = "undefined"
-* group[=].target = "undefined"
+* group[=].target = "null"
 * group[=].element[0].code = #CPT
 * group[=].element[=].target.code = #http://www.ama-assn.org/go/cpt
 * group[=].element[=].target.equivalence = #equivalent

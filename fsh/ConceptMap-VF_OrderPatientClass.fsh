@@ -11,12 +11,12 @@ Usage: #definition
 * group[0].source = "http://va.gov/terminology/vistaDefinedElements/100-10"
 * group[=].target = "http://terminology.hl7.org/CodeSystem/medicationrequest-category"
 * group[=].element[0].code = #I
+* group[=].element[=].display = "INPATIENT"
 * group[=].element[=].target.code = #inpatient
 * group[=].element[=].target.display = "Inpatient"
 * group[=].element[=].target.equivalence = #equal
-* group[=].element[=].display = "INPATIENT"
 * group[=].element[+].code = #O
+* group[=].element[=].display = "OUTPATIENT"
 * group[=].element[=].target.code = #outpatient
 * group[=].element[=].target.display = "Outpatient"
 * group[=].element[=].target.equivalence = #equal
-* group[=].element[=].display = "OUTPATIENT"

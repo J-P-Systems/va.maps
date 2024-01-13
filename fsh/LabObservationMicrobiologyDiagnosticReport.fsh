@@ -1,9 +1,10 @@
 Profile: LabObservationMicrobiologyDiagnosticReport
-Parent: http://va.gov/fhir/StructureDefinition/LabObservationDiagnosticReport
+Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-lab
 Id: LabObservationMicrobiologyDiagnosticReport
-Title: "Lab Observation: Microbiology {DiagnosticReport}"
-Description: "This StructureDefinition contains the maps for VistA file MICROBIOLOGY (#63.05) to LabObservationDiagnosticReport"
+Title: "Lab Observation: Microbiology DiagnosticReport"
+Description: "This StructureDefinition contains the maps for VistA file MICROBIOLOGY (#63.05) to us-core-diagnosticreport-lab"
 * ^status = #draft
+* identifier.value and status and effectiveDateTime and issued and performer and result MS
 * status from http://va.gov/fhir/ValueSet/VSVFDiagnosticReportLabStatus
 * performer only Reference(http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner)
 * result only Reference(LabObservationMicrobiologyObservation)

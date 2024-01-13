@@ -11,7 +11,7 @@ Usage: #definition
 * group[0].source = "http://va.gov/terminology/vistaDefinedElements/120.8-22"
 * group[=].target = "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical"
 * group[=].element[0].code = #<null>
+* group[=].element[=].display = "ENTERED IN ERROR - NULL"
 * group[=].element[=].target.code = #active
 * group[=].element[=].target.display = "active"
 * group[=].element[=].target.equivalence = #wider
-* group[=].element[=].display = "ENTERED IN ERROR - NULL"

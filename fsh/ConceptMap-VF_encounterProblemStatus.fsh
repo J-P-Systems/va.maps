@@ -11,7 +11,7 @@ Usage: #definition
 * group[0].source = "http://va.gov/terminology/vistaDefinedElements/9000010.07-.06"
 * group[=].target = "http://terminology.hl7.org/CodeSystem/condition-clinical"
 * group[=].element[0].code = #R
+* group[=].element[=].display = "RESOLVED"
 * group[=].element[=].target.code = #resolved
 * group[=].element[=].target.display = "resolved"
 * group[=].element[=].target.equivalence = #equal
-* group[=].element[=].display = "RESOLVED"

@@ -1,9 +1,10 @@
 Profile: LabObservationChemhemtoxriaserObservation
-Parent: http://va.gov/fhir/StructureDefinition/LabObservationObservation
+Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab
 Id: LabObservationChemhemtoxriaserObservation
-Title: "Lab Observation: Chem, hem, tox, ria, ser {Observation}"
-Description: "This StructureDefinition contains the maps for VistA file CHEM, HEM, TOX, RIA, SER, etc. (#63.04) to LabObservationObservation"
+Title: "Lab Observation: Chem, hem, tox, ria, ser Observation"
+Description: "This StructureDefinition contains the maps for VistA file CHEM, HEM, TOX, RIA, SER, etc. (#63.04) to us-core-observation-lab"
 * ^status = #draft
+* effectiveDateTime and note and performer and specimen and referenceRange.high and referenceRange.low and identifier.value and interpretation and code and issued and status and valueQuantity.value and valueQuantity.unit MS
 * performer only Reference(http://hl7.org/fhir/StructureDefinition/Organization)
 * specimen only Reference(LabObservationChemhemtoxriaserSpecimen)
 * interpretation from http://va.gov/fhir/ValueSet/VSVFLabInterpretation

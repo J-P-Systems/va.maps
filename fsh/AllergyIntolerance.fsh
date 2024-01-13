@@ -4,6 +4,7 @@ Id: AllergyIntolerance
 Title: "AllergyIntolerance"
 Description: "This StructureDefinition contains the maps for VistA file PATIENT ALLERGIES (#120.8) to us-core-allergyintolerance"
 * ^status = #draft
+* identifier.value and code.text and code and patient and recordedDate and recorder and reaction.manifestation and type and verificationStatus and clinicalStatus and category and reaction.severity and note.time and note.authorString and note.text and reaction.onset MS
 * type from http://va.gov/fhir/ValueSet/VSVFallergyMechanism
 * verificationStatus from http://va.gov/fhir/ValueSet/VSVFallergyVerificationStatus
 * clinicalStatus from http://va.gov/fhir/ValueSet/VSVFallergyActive
@@ -35,6 +36,19 @@ Source: AllergyIntolerance
 * code -> "1505: source value from PATIENT ALLERGIES - DRUG INGREDIENTS (#120.8-2)" "CHAPI to rxn code; looking into"
 * reaction.onset -> "1652: source value from PATIENT ALLERGIES - REACTIONS > REACTIONS - DATE ENTERED (#120.8-10 > 120.81-3)"
 
+Mapping: cdw-to-AllergyIntolerance
+Id: cdw
+Title: "Clinical Data Warehouse (CDW)"
+Source: AllergyIntolerance
+* code.text -> "Allergy.Allergy.AllergicReactant"
+* recordedDate -> "Allergy.AllergicReaction.OriginationDateTime\nAllergy.Allergy.OriginationDateTime\nAllergy.AllergyComment.OriginationDateTime\nAllergy.AllergyDrugClass.OriginationDateTime\nAllergy.AllergyDrugIngredient.OriginationDateTime"
+* type -> "Allergy.Allergy.Mechanism"
+* verificationStatus -> "Allergy.Allergy.VerifiedFlag"
+* clinicalStatus -> "Allergy.Allergy.EnteredInErrorFlag"
+* verificationStatus -> "Allergy.Allergy.EnteredInErrorFlag"
+* category -> "Allergy.Allergy.AllergyType"
+* note.time -> "Allergy.AllergyComment.CommentEnteredDateTime"
+
 Mapping: vpr-to-AllergyIntolerance
 Id: vpr
 Title: "Virtual Patient Record (VPR)"
@@ -52,16 +66,3 @@ Source: AllergyIntolerance
 * note.time -> "GET PATIENT DATA-reaction.comment [m].enteredBy"
 * note.authorString -> "GET PATIENT DATA-reaction.comment [m].commentText"
 * note.text -> "GET PATIENT DATA-reaction.drugIngredient [m]"
-
-Mapping: cdw-to-AllergyIntolerance
-Id: cdw
-Title: "Clinical Data Warehouse (CDW)"
-Source: AllergyIntolerance
-* code.text -> "Allergy.Allergy.AllergicReactant"
-* recordedDate -> "Allergy.AllergicReaction.OriginationDateTime\nAllergy.Allergy.OriginationDateTime\nAllergy.AllergyComment.OriginationDateTime\nAllergy.AllergyDrugClass.OriginationDateTime\nAllergy.AllergyDrugIngredient.OriginationDateTime"
-* type -> "Allergy.Allergy.Mechanism"
-* verificationStatus -> "Allergy.Allergy.VerifiedFlag"
-* clinicalStatus -> "Allergy.Allergy.EnteredInErrorFlag"
-* verificationStatus -> "Allergy.Allergy.EnteredInErrorFlag"
-* category -> "Allergy.Allergy.AllergyType"
-* note.time -> "Allergy.AllergyComment.CommentEnteredDateTime"

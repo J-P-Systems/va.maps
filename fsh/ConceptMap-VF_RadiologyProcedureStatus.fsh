@@ -11,32 +11,32 @@ Usage: #definition
 * group[0].source = "undefined"
 * group[=].target = "http://hl7.org/fhir/event-status"
 * group[=].element[0].code = #null
+* group[=].element[=].display = "CALLED FOR EXAM"
 * group[=].element[=].target.code = #preparation
 * group[=].element[=].target.display = "Preparation"
 * group[=].element[=].target.equivalence = #equivalent
-* group[=].element[=].display = "CALLED FOR EXAM"
 * group[=].element[+].code = #null
+* group[=].element[=].display = "CANCELLED"
 * group[=].element[=].target.code = #not-done
 * group[=].element[=].target.display = "Not Done"
 * group[=].element[=].target.equivalence = #equivalent
-* group[=].element[=].display = "CANCELLED"
 * group[=].element[+].code = #null
+* group[=].element[=].display = "COMPLETE"
 * group[=].element[=].target.code = #completed
 * group[=].element[=].target.display = "Completed"
 * group[=].element[=].target.equivalence = #equivalent
-* group[=].element[=].display = "COMPLETE"
 * group[=].element[+].code = #null
-* group[=].element[=].target.code = #in-progress
-* group[=].element[=].target.display = "In Progress"
-* group[=].element[=].target.equivalence = #equivalent
 * group[=].element[=].display = "EXAMINED"
-* group[=].element[+].code = #null
 * group[=].element[=].target.code = #in-progress
 * group[=].element[=].target.display = "In Progress"
 * group[=].element[=].target.equivalence = #equivalent
-* group[=].element[=].display = "TRANSCRIBED"
 * group[=].element[+].code = #null
+* group[=].element[=].display = "TRANSCRIBED"
+* group[=].element[=].target.code = #in-progress
+* group[=].element[=].target.display = "In Progress"
+* group[=].element[=].target.equivalence = #equivalent
+* group[=].element[+].code = #null
+* group[=].element[=].display = "WAITING FOR EXAM"
 * group[=].element[=].target.code = #preparation
 * group[=].element[=].target.display = "Preparation"
 * group[=].element[=].target.equivalence = #equivalent
-* group[=].element[=].display = "WAITING FOR EXAM"

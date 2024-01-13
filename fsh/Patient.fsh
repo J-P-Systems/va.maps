@@ -7,17 +7,13 @@ Description: "This StructureDefinition contains the maps for VistA file PATIENT 
 * address ^slicing.discriminator.type = #value
 * address ^slicing.discriminator.path = "use"
 * address ^slicing.rules = #open
-* address contains home 0..1 and temp 0..1 and physical 0..1 and postal 0..1
-* managingOrganization.display obeys inv-27
+* address contains home 0..1
+* extension contains http://hl7.org/fhir/StructureDefinition/patient-religion named patient-religion 0..1
+* identifier.value and name.text and telecom.value and birthDate and deceasedDateTime and address[home].line and address[home].city and address[home].state and address[home].postalCode and address[home].country and address[home].period.start and address[home].period.end and communication.language and managingOrganization.display and extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex].valueCode and gender and extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity].extension[text].valueString and extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-race].extension[text].valueString and maritalStatus and extension[http://hl7.org/fhir/StructureDefinition/patient-religion].valueCodeableConcept MS
 * extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex].valueCode from http://va.gov/fhir/ValueSet/VSVFgenderIdentity
 * gender from http://va.gov/fhir/ValueSet/VSVFgenderIdentity
 * maritalStatus from http://va.gov/fhir/ValueSet/VSVFMaritalStatus
-* extension contains http://hl7.org/fhir/StructureDefinition/patient-religion named patient-religion 0..1
 * extension[http://hl7.org/fhir/StructureDefinition/patient-religion].valueCodeableConcept from http://va.gov/fhir/ValueSet/VSVFReligion
-
-Invariant: inv-27
-Description: "296: fixed value = Veterans Health Administration"
-Severity: #warning
 
 Mapping: vista-to-Patient
 Id: vista

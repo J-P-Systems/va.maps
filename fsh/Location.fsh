@@ -4,18 +4,9 @@ Id: Location
 Title: "Location"
 Description: "This StructureDefinition contains the maps for VistA file HOSPITAL LOCATION (#44) to us-core-location"
 * ^status = #draft
+* identifier.value and name and alias and status and description and telecom.value and managingOrganization.display and physicalType.text and address.state and address.district and address.line and address.city and address.postalCode and address.country and address.type and address and address.use and type.text MS
 * status from http://va.gov/fhir/ValueSet/VSVFLocationStatus
-* managingOrganization.display obeys inv-16
-* address.type obeys inv-17
 * type.text from http://va.gov/fhir/ValueSet/VSVFLocationStatus
-
-Invariant: inv-16
-Description: "1283: fixed value = Veterans Administration"
-Severity: #warning
-
-Invariant: inv-17
-Description: "1322: fixed value = #physical when HOSPITAL LOCATION - INSTITUTION (#44-3)"
-Severity: #warning
 
 Mapping: vista-to-Location
 Id: vista

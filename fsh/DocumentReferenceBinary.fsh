@@ -1,14 +1,10 @@
 Profile: DocumentReferenceBinary
 Parent: http://hl7.org/fhir/StructureDefinition/Binary
 Id: DocumentReferenceBinary
-Title: "Document Reference {Binary}"
+Title: "Document Reference Binary"
 Description: "This StructureDefinition contains the maps for VistA file TIU DOCUMENT (#8925) to Binary"
 * ^status = #draft
-* contentType obeys inv-5
-
-Invariant: inv-5
-Description: "++: fixed value = text/plain"
-Severity: #warning
+* data and contentType MS
 
 Mapping: vista-to-DocumentReferenceBinary
 Id: vista

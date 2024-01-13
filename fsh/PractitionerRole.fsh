@@ -6,6 +6,7 @@ Description: "This StructureDefinition contains the maps for VistA file NEW PERS
 * ^status = #draft
 * extension contains http://hl7.org/fhir/StructureDefinition/practitioner-job-title named practitioner-job-title 0..1
 * extension contains http://hl7.org/fhir/StructureDefinition/practitioner-job-title named practitioner-job-title 0..1
+* telecom.value and active and period.start and practitioner and period.end and extension[http://hl7.org/fhir/StructureDefinition/practitioner-job-title].valueCodeableConcept.text and specialty.coding.code and location and code.coding.code MS
 
 Mapping: vista-to-PractitionerRole
 Id: vista

@@ -1,9 +1,10 @@
 Profile: LabObservationMicrobiologyObservation
-Parent: http://va.gov/fhir/StructureDefinition/LabObservationObservation
+Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab
 Id: LabObservationMicrobiologyObservation
-Title: "Lab Observation: Microbiology {Observation}"
-Description: "This StructureDefinition contains the maps for VistA file MICROBIOLOGY (#63.05) to LabObservationObservation"
+Title: "Lab Observation: Microbiology Observation"
+Description: "This StructureDefinition contains the maps for VistA file MICROBIOLOGY (#63.05) to us-core-observation-lab"
 * ^status = #draft
+* effectiveDateTime and note and performer and specimen and identifier.value and code and issued and valueCodeableConcept.coding MS
 * performer only Reference(http://hl7.org/fhir/StructureDefinition/Organization)
 * specimen only Reference(LabObservationMicrobiologySpecimen)
 

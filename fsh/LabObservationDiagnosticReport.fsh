@@ -1,14 +1,10 @@
 Profile: LabObservationDiagnosticReport
 Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-lab
 Id: LabObservationDiagnosticReport
-Title: "Lab Observation {DiagnosticReport}"
-Description: "This StructureDefinition contains the maps for VistA file ? (#?) to us-core-diagnosticreport-lab"
+Title: "Lab Observation DiagnosticReport"
+Description: "This StructureDefinition contains the maps for VistA file LABORATORY TEST (#60) to us-core-diagnosticreport-lab"
 * ^status = #draft
-* category.coding obeys inv-2
-
-Invariant: inv-2
-Description: "1419: fixed value = http://terminology.hl7.org/CodeSystem/v2-0074|LAB"
-Severity: #warning
+* category.coding and category.text and code.coding and code.text and subject and result MS
 
 Mapping: vista-to-LabObservationDiagnosticReport
 Id: vista

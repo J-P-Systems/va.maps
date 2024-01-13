@@ -7,21 +7,12 @@ Description: "This StructureDefinition contains the maps for VistA file NEW PERS
 * address ^slicing.discriminator.type = #value
 * address ^slicing.discriminator.path = "use"
 * address ^slicing.rules = #open
-* address contains home 0..1 and temp 0..1 and physical 0..1 and postal 0..1
-* address[home].country from http://va.gov/fhir/ValueSet/VSVFPractitionerCountry
+* address contains home 0..1 and temp 0..1
 * address[home].country.extension contains http://hl7.org/fhir/StructureDefinition/data-absent-reason named data-absent-reason 0..1
-* address[home].country.extension[http://hl7.org/fhir/StructureDefinition/data-absent-reason].valueCode obeys inv-28
-* address[temp].country from http://va.gov/fhir/ValueSet/VSVFPractitionerCountry
 * address[temp].country.extension contains http://hl7.org/fhir/StructureDefinition/data-absent-reason named data-absent-reason 0..1
-* address[temp].country.extension[http://hl7.org/fhir/StructureDefinition/data-absent-reason].valueCode obeys inv-29
-
-Invariant: inv-28
-Description: "1531: fixed value = unknown when NEW PERSON - STATE (#200-.115) case NULL"
-Severity: #warning
-
-Invariant: inv-29
-Description: "1533: fixed value = unknown when NEW PERSON - STATE (#200-.1215) case NULL"
-Severity: #warning
+* identifier[NPI].value and identifier.value and identifier[NPI].period.start and name.text and telecom.value and birthDate and qualification.code.text and address[home].line and address[home].city and address[home].state and address[home].postalCode and address[home].country and address[home].country.extension[http://hl7.org/fhir/StructureDefinition/data-absent-reason].valueCode and address[temp].line and address[temp].city and address[temp].state and address[temp].postalCode and address[temp].country and address[temp].country.extension[http://hl7.org/fhir/StructureDefinition/data-absent-reason].valueCode and address[temp].period.start and address[temp].period.end MS
+* address[home].country from http://va.gov/fhir/ValueSet/VSVFPractitionerCountry
+* address[temp].country from http://va.gov/fhir/ValueSet/VSVFPractitionerCountry
 
 Mapping: vista-to-Practitioner
 Id: vista

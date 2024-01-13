@@ -11,12 +11,12 @@ Usage: #definition
 * group[0].source = "undefined"
 * group[=].target = "http://terminology.hl7.org/CodeSystem/v3-ActCode"
 * group[=].element[0].code = #1
+* group[=].element[=].display = "IN"
 * group[=].element[=].target.code = #IMP
 * group[=].element[=].target.display = "inpatient encounter"
 * group[=].element[=].target.equivalence = #equal
-* group[=].element[=].display = "IN"
 * group[=].element[+].code = #0
+* group[=].element[=].display = "OUT"
 * group[=].element[=].target.code = #AMB
 * group[=].element[=].target.display = "ambulatory"
 * group[=].element[=].target.equivalence = #wider
-* group[=].element[=].display = "OUT"

@@ -1,14 +1,10 @@
 Profile: LabObservationObservation
 Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab
 Id: LabObservationObservation
-Title: "Lab Observation {Observation}"
-Description: "This StructureDefinition contains the maps for VistA file ? (#?) to us-core-observation-lab"
+Title: "Lab Observation Observation"
+Description: "This StructureDefinition contains the maps for VistA file PATIENT (#2) to us-core-observation-lab"
 * ^status = #draft
-* category.coding.code obeys inv-10
-
-Invariant: inv-10
-Description: "843: fixed value = laboratory"
-Severity: #warning
+* category.coding.code and subject MS
 
 Mapping: vista-to-LabObservationObservation
 Id: vista
