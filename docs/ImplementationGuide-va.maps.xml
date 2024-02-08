@@ -7,11 +7,11 @@
 </div></div>
   </text>
   <url value="http://va.gov/fhir/ImplementationGuide/va.maps"/>
-  <version value="0.15.0"/>
+  <version value="0.16.0"/>
   <name value="VAMapsIG"/>
   <title value="US Veterans Administration FHIR Map Set Implementation Guide"/>
   <status value="draft"/>
-  <date value="2024-01-14T11:16:16+00:00"/>
+  <date value="2024-02-08T09:36:20+00:00"/>
   <publisher value="VA"/>
   <contact>
     <name value="VA"/>
@@ -254,7 +254,7 @@
       </extension>
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency">
-      <valueCode value="hl7.fhir.uv.tools#current"/>
+      <valueCode value="hl7.fhir.uv.tools#0.1.0"/>
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
       <extension url="code">
@@ -490,45 +490,33 @@
       <name value="Location"/>
     </grouping>
     <grouping id="group11">
-      <name value="MedicationRequestUnsigned VA Order"/>
+      <name value="MedicationRequest"/>
     </grouping>
     <grouping id="group12">
-      <name value="MedicationRequestNonVA"/>
+      <name value="MedicationDispense"/>
     </grouping>
     <grouping id="group13">
-      <name value="MedicationRequestOutpatient"/>
-    </grouping>
-    <grouping id="group14">
-      <name value="MedicationDispenseOriginal"/>
-    </grouping>
-    <grouping id="group15">
       <name value="Observation EXAM"/>
     </grouping>
-    <grouping id="group16">
+    <grouping id="group14">
       <name value="Organization"/>
     </grouping>
-    <grouping id="group17">
+    <grouping id="group15">
       <name value="Practitioner"/>
     </grouping>
-    <grouping id="group18">
+    <grouping id="group16">
       <name value="Practitioner Role"/>
     </grouping>
-    <grouping id="group19">
+    <grouping id="group17">
       <name value="Procedure"/>
     </grouping>
-    <grouping id="group20">
+    <grouping id="group18">
       <name value="Smoking Status Observation"/>
     </grouping>
-    <grouping id="group21">
+    <grouping id="group19">
       <name value="Vital Signs"/>
     </grouping>
-    <grouping id="group22">
-      <name value="MedicationDispensePartial"/>
-    </grouping>
-    <grouping id="group23">
-      <name value="MedicationDispenseRefill"/>
-    </grouping>
-    <grouping id="group24">
+    <grouping id="group20">
       <name value="Observation Imaging Result"/>
     </grouping>
     <resource>
@@ -1090,44 +1078,8 @@
       <reference>
         <reference value="StructureDefinition/MedicationDispenseOriginal"/>
       </reference>
-      <name value="MedicationDispenseOriginal"/>
+      <name value="MedicationDispense: Original"/>
       <description value="This StructureDefinition contains the maps for VistA file PRESCRIPTION (#52) to MedicationDispense"/>
-      <exampleBoolean value="false"/>
-      <groupingId value="group14"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:resource"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/MedicationDispensePartial"/>
-      </reference>
-      <name value="MedicationDispensePartial"/>
-      <description value="This StructureDefinition contains the maps for VistA file PRESCRIPTION (#52) to MedicationDispense"/>
-      <exampleBoolean value="false"/>
-      <groupingId value="group22"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:resource"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/MedicationDispenseRefill"/>
-      </reference>
-      <name value="MedicationDispenseRefill"/>
-      <description value="This StructureDefinition contains the maps for VistA file PRESCRIPTION (#52) to MedicationDispense"/>
-      <exampleBoolean value="false"/>
-      <groupingId value="group23"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:resource"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/MedicationRequestNonVA"/>
-      </reference>
-      <name value="MedicationRequestNonVA"/>
-      <description value="This StructureDefinition contains the maps for VistA file NON (#55.05) to us-core-medicationrequest"/>
       <exampleBoolean value="false"/>
       <groupingId value="group12"/>
     </resource>
@@ -1136,12 +1088,48 @@
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
+        <reference value="StructureDefinition/MedicationDispensePartial"/>
+      </reference>
+      <name value="MedicationDispense: Partial"/>
+      <description value="This StructureDefinition contains the maps for VistA file PRESCRIPTION (#52) to MedicationDispense"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="group12"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/MedicationDispenseRefill"/>
+      </reference>
+      <name value="MedicationDispense: Refill"/>
+      <description value="This StructureDefinition contains the maps for VistA file PRESCRIPTION (#52) to MedicationDispense"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="group12"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/MedicationRequestNonVA"/>
+      </reference>
+      <name value="MedicationRequest: NonVA"/>
+      <description value="This StructureDefinition contains the maps for VistA file NON (#55.05) to us-core-medicationrequest"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="group11"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
         <reference value="StructureDefinition/MedicationRequestOutpatient"/>
       </reference>
-      <name value="MedicationRequestOutpatient"/>
+      <name value="MedicationRequest: Outpatient"/>
       <description value="This StructureDefinition contains the maps for VistA file PRESCRIPTION (#52) to us-core-medicationrequest"/>
       <exampleBoolean value="false"/>
-      <groupingId value="group13"/>
+      <groupingId value="group11"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1150,7 +1138,7 @@
       <reference>
         <reference value="StructureDefinition/MedicationRequestUnsignedVAOrder"/>
       </reference>
-      <name value="MedicationRequestUnsigned VA Order"/>
+      <name value="MedicationRequest: Unsigned VA Order"/>
       <description value="This StructureDefinition contains the maps for VistA file ORDER (#100) to us-core-medicationrequest"/>
       <exampleBoolean value="false"/>
       <groupingId value="group11"/>
@@ -1165,7 +1153,7 @@
       <name value="Observation EXAM"/>
       <description value="This StructureDefinition contains the maps for VistA file V EXAM (#9000010.13) to Observation"/>
       <exampleBoolean value="false"/>
-      <groupingId value="group15"/>
+      <groupingId value="group13"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1177,7 +1165,7 @@
       <name value="Observation Imaging Result"/>
       <description value="This StructureDefinition contains the maps for VistA file undefined (#undefined) to us-core-observation-imaging"/>
       <exampleBoolean value="false"/>
-      <groupingId value="group24"/>
+      <groupingId value="group20"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1189,7 +1177,7 @@
       <name value="Observation Imaging Result: Echo"/>
       <description value="This StructureDefinition contains the maps for VistA file ECHO (#691) to us-core-observation-imaging"/>
       <exampleBoolean value="false"/>
-      <groupingId value="group24"/>
+      <groupingId value="group20"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1201,7 +1189,7 @@
       <name value="Observation Imaging Result: EKG"/>
       <description value="This StructureDefinition contains the maps for VistA file ELECTROCARDIOGRAM (EKG) (#691.5) to us-core-observation-imaging"/>
       <exampleBoolean value="false"/>
-      <groupingId value="group24"/>
+      <groupingId value="group20"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1213,7 +1201,7 @@
       <name value="Observation Imaging Result: Rad/Nuc"/>
       <description value="This StructureDefinition contains the maps for VistA file RAD/NUC MED REPORTS (#74) to us-core-observation-imaging"/>
       <exampleBoolean value="false"/>
-      <groupingId value="group24"/>
+      <groupingId value="group20"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1225,7 +1213,7 @@
       <name value="Organization"/>
       <description value="This StructureDefinition contains the maps for VistA file INSTITUTION (#4) to us-core-organization"/>
       <exampleBoolean value="false"/>
-      <groupingId value="group16"/>
+      <groupingId value="group14"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1249,7 +1237,7 @@
       <name value="Practitioner"/>
       <description value="This StructureDefinition contains the maps for VistA file NEW PERSON (#200) to us-core-practitioner"/>
       <exampleBoolean value="false"/>
-      <groupingId value="group17"/>
+      <groupingId value="group15"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1261,7 +1249,7 @@
       <name value="Practitioner Role"/>
       <description value="This StructureDefinition contains the maps for VistA file NEW PERSON (#200) to us-core-practitionerrole"/>
       <exampleBoolean value="false"/>
-      <groupingId value="group18"/>
+      <groupingId value="group16"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1273,7 +1261,7 @@
       <name value="Procedure: Outpatient"/>
       <description value="This StructureDefinition contains the maps for VistA file V CPT (#9000010.18) to us-core-procedure"/>
       <exampleBoolean value="false"/>
-      <groupingId value="group19"/>
+      <groupingId value="group17"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1285,7 +1273,7 @@
       <name value="Procedure: Radiology"/>
       <description value="This StructureDefinition contains the maps for VistA file EXAMINATIONS (#70.03) to us-core-procedure"/>
       <exampleBoolean value="false"/>
-      <groupingId value="group19"/>
+      <groupingId value="group17"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1297,7 +1285,7 @@
       <name value="Procedure: Surgery"/>
       <description value="This StructureDefinition contains the maps for VistA file SURGERY (#130) to us-core-procedure"/>
       <exampleBoolean value="false"/>
-      <groupingId value="group19"/>
+      <groupingId value="group17"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1309,7 +1297,7 @@
       <name value="Smoking Status Observation"/>
       <description value="This StructureDefinition contains the maps for VistA file V HEALTH FACTORS (#9000010.23) to us-core-smokingstatus"/>
       <exampleBoolean value="false"/>
-      <groupingId value="group20"/>
+      <groupingId value="group18"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -2663,7 +2651,7 @@
       <name value="Vital Signs Device"/>
       <description value="This StructureDefinition contains the maps for VistA file GMRV VITAL MEASUREMENT (#120.5) to Device"/>
       <exampleBoolean value="false"/>
-      <groupingId value="group21"/>
+      <groupingId value="group19"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -2675,7 +2663,7 @@
       <name value="Vital Signs Observation"/>
       <description value="This StructureDefinition contains the maps for VistA file GMRV VITAL MEASUREMENT (#120.5) to us-core-vital-signs"/>
       <exampleBoolean value="false"/>
-      <groupingId value="group21"/>
+      <groupingId value="group19"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -2687,7 +2675,7 @@
       <name value="Vital Signs Organization"/>
       <description value="This StructureDefinition contains the maps for VistA file GMRV VITAL MEASUREMENT (#120.5) to Organization"/>
       <exampleBoolean value="false"/>
-      <groupingId value="group21"/>
+      <groupingId value="group19"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -2699,7 +2687,7 @@
       <name value="Vital Signs: BP"/>
       <description value="This StructureDefinition contains the maps for VistA file GMRV VITAL MEASUREMENT (#120.5) to us-core-blood-pressure"/>
       <exampleBoolean value="false"/>
-      <groupingId value="group21"/>
+      <groupingId value="group19"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -2711,7 +2699,7 @@
       <name value="Vital Signs: SpO2"/>
       <description value="This StructureDefinition contains the maps for VistA file GMRV VITAL MEASUREMENT (#120.5) to us-core-pulse-oximetry"/>
       <exampleBoolean value="false"/>
-      <groupingId value="group21"/>
+      <groupingId value="group19"/>
     </resource>
     <page>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
@@ -2750,6 +2738,14 @@
         </extension>
         <nameUrl value="process.html"/>
         <title value="Process"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="profileDesign.html"/>
+        </extension>
+        <nameUrl value="profileDesign.html"/>
+        <title value="Profile Design"/>
         <generation value="markdown"/>
       </page>
     </page>

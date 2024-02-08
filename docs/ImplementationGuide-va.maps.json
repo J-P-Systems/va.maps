@@ -6,11 +6,11 @@
     "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>VAMapsIG</h2><p>The official URL for this implementation guide is: </p><pre>http://va.gov/fhir/ImplementationGuide/va.maps</pre><div><p>This implementation guide is a FHIR IG rendering of the KBS Map Set from VA sources (primarily VistA) to FHIR. Where appropriate these maps conform to the us-core profiles.</p>\n</div></div>"
   },
   "url" : "http://va.gov/fhir/ImplementationGuide/va.maps",
-  "version" : "0.15.0",
+  "version" : "0.16.0",
   "name" : "VAMapsIG",
   "title" : "US Veterans Administration FHIR Map Set Implementation Guide",
   "status" : "draft",
-  "date" : "2024-01-14T11:16:16+00:00",
+  "date" : "2024-02-08T09:36:20+00:00",
   "publisher" : "VA",
   "contact" : [{
     "name" : "VA",
@@ -334,7 +334,7 @@
     },
     {
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency",
-      "valueCode" : "hl7.fhir.uv.tools#current"
+      "valueCode" : "hl7.fhir.uv.tools#0.1.0"
     },
     {
       "extension" : [{
@@ -657,58 +657,42 @@
     },
     {
       "id" : "group11",
-      "name" : "MedicationRequestUnsigned VA Order"
+      "name" : "MedicationRequest"
     },
     {
       "id" : "group12",
-      "name" : "MedicationRequestNonVA"
+      "name" : "MedicationDispense"
     },
     {
       "id" : "group13",
-      "name" : "MedicationRequestOutpatient"
-    },
-    {
-      "id" : "group14",
-      "name" : "MedicationDispenseOriginal"
-    },
-    {
-      "id" : "group15",
       "name" : "Observation EXAM"
     },
     {
-      "id" : "group16",
+      "id" : "group14",
       "name" : "Organization"
     },
     {
-      "id" : "group17",
+      "id" : "group15",
       "name" : "Practitioner"
     },
     {
-      "id" : "group18",
+      "id" : "group16",
       "name" : "Practitioner Role"
     },
     {
-      "id" : "group19",
+      "id" : "group17",
       "name" : "Procedure"
     },
     {
-      "id" : "group20",
+      "id" : "group18",
       "name" : "Smoking Status Observation"
     },
     {
-      "id" : "group21",
+      "id" : "group19",
       "name" : "Vital Signs"
     },
     {
-      "id" : "group22",
-      "name" : "MedicationDispensePartial"
-    },
-    {
-      "id" : "group23",
-      "name" : "MedicationDispenseRefill"
-    },
-    {
-      "id" : "group24",
+      "id" : "group20",
       "name" : "Observation Imaging Result"
     }],
     "resource" : [{
@@ -1317,47 +1301,8 @@
       "reference" : {
         "reference" : "StructureDefinition/MedicationDispenseOriginal"
       },
-      "name" : "MedicationDispenseOriginal",
+      "name" : "MedicationDispense: Original",
       "description" : "This StructureDefinition contains the maps for VistA file PRESCRIPTION (#52) to MedicationDispense",
-      "exampleBoolean" : false,
-      "groupingId" : "group14"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:resource"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/MedicationDispensePartial"
-      },
-      "name" : "MedicationDispensePartial",
-      "description" : "This StructureDefinition contains the maps for VistA file PRESCRIPTION (#52) to MedicationDispense",
-      "exampleBoolean" : false,
-      "groupingId" : "group22"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:resource"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/MedicationDispenseRefill"
-      },
-      "name" : "MedicationDispenseRefill",
-      "description" : "This StructureDefinition contains the maps for VistA file PRESCRIPTION (#52) to MedicationDispense",
-      "exampleBoolean" : false,
-      "groupingId" : "group23"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:resource"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/MedicationRequestNonVA"
-      },
-      "name" : "MedicationRequestNonVA",
-      "description" : "This StructureDefinition contains the maps for VistA file NON (#55.05) to us-core-medicationrequest",
       "exampleBoolean" : false,
       "groupingId" : "group12"
     },
@@ -1367,12 +1312,51 @@
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
+        "reference" : "StructureDefinition/MedicationDispensePartial"
+      },
+      "name" : "MedicationDispense: Partial",
+      "description" : "This StructureDefinition contains the maps for VistA file PRESCRIPTION (#52) to MedicationDispense",
+      "exampleBoolean" : false,
+      "groupingId" : "group12"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/MedicationDispenseRefill"
+      },
+      "name" : "MedicationDispense: Refill",
+      "description" : "This StructureDefinition contains the maps for VistA file PRESCRIPTION (#52) to MedicationDispense",
+      "exampleBoolean" : false,
+      "groupingId" : "group12"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/MedicationRequestNonVA"
+      },
+      "name" : "MedicationRequest: NonVA",
+      "description" : "This StructureDefinition contains the maps for VistA file NON (#55.05) to us-core-medicationrequest",
+      "exampleBoolean" : false,
+      "groupingId" : "group11"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
         "reference" : "StructureDefinition/MedicationRequestOutpatient"
       },
-      "name" : "MedicationRequestOutpatient",
+      "name" : "MedicationRequest: Outpatient",
       "description" : "This StructureDefinition contains the maps for VistA file PRESCRIPTION (#52) to us-core-medicationrequest",
       "exampleBoolean" : false,
-      "groupingId" : "group13"
+      "groupingId" : "group11"
     },
     {
       "extension" : [{
@@ -1382,7 +1366,7 @@
       "reference" : {
         "reference" : "StructureDefinition/MedicationRequestUnsignedVAOrder"
       },
-      "name" : "MedicationRequestUnsigned VA Order",
+      "name" : "MedicationRequest: Unsigned VA Order",
       "description" : "This StructureDefinition contains the maps for VistA file ORDER (#100) to us-core-medicationrequest",
       "exampleBoolean" : false,
       "groupingId" : "group11"
@@ -1398,7 +1382,7 @@
       "name" : "Observation EXAM",
       "description" : "This StructureDefinition contains the maps for VistA file V EXAM (#9000010.13) to Observation",
       "exampleBoolean" : false,
-      "groupingId" : "group15"
+      "groupingId" : "group13"
     },
     {
       "extension" : [{
@@ -1411,7 +1395,7 @@
       "name" : "Observation Imaging Result",
       "description" : "This StructureDefinition contains the maps for VistA file undefined (#undefined) to us-core-observation-imaging",
       "exampleBoolean" : false,
-      "groupingId" : "group24"
+      "groupingId" : "group20"
     },
     {
       "extension" : [{
@@ -1424,7 +1408,7 @@
       "name" : "Observation Imaging Result: Echo",
       "description" : "This StructureDefinition contains the maps for VistA file ECHO (#691) to us-core-observation-imaging",
       "exampleBoolean" : false,
-      "groupingId" : "group24"
+      "groupingId" : "group20"
     },
     {
       "extension" : [{
@@ -1437,7 +1421,7 @@
       "name" : "Observation Imaging Result: EKG",
       "description" : "This StructureDefinition contains the maps for VistA file ELECTROCARDIOGRAM (EKG) (#691.5) to us-core-observation-imaging",
       "exampleBoolean" : false,
-      "groupingId" : "group24"
+      "groupingId" : "group20"
     },
     {
       "extension" : [{
@@ -1450,7 +1434,7 @@
       "name" : "Observation Imaging Result: Rad/Nuc",
       "description" : "This StructureDefinition contains the maps for VistA file RAD/NUC MED REPORTS (#74) to us-core-observation-imaging",
       "exampleBoolean" : false,
-      "groupingId" : "group24"
+      "groupingId" : "group20"
     },
     {
       "extension" : [{
@@ -1463,7 +1447,7 @@
       "name" : "Organization",
       "description" : "This StructureDefinition contains the maps for VistA file INSTITUTION (#4) to us-core-organization",
       "exampleBoolean" : false,
-      "groupingId" : "group16"
+      "groupingId" : "group14"
     },
     {
       "extension" : [{
@@ -1489,7 +1473,7 @@
       "name" : "Practitioner",
       "description" : "This StructureDefinition contains the maps for VistA file NEW PERSON (#200) to us-core-practitioner",
       "exampleBoolean" : false,
-      "groupingId" : "group17"
+      "groupingId" : "group15"
     },
     {
       "extension" : [{
@@ -1502,7 +1486,7 @@
       "name" : "Practitioner Role",
       "description" : "This StructureDefinition contains the maps for VistA file NEW PERSON (#200) to us-core-practitionerrole",
       "exampleBoolean" : false,
-      "groupingId" : "group18"
+      "groupingId" : "group16"
     },
     {
       "extension" : [{
@@ -1515,7 +1499,7 @@
       "name" : "Procedure: Outpatient",
       "description" : "This StructureDefinition contains the maps for VistA file V CPT (#9000010.18) to us-core-procedure",
       "exampleBoolean" : false,
-      "groupingId" : "group19"
+      "groupingId" : "group17"
     },
     {
       "extension" : [{
@@ -1528,7 +1512,7 @@
       "name" : "Procedure: Radiology",
       "description" : "This StructureDefinition contains the maps for VistA file EXAMINATIONS (#70.03) to us-core-procedure",
       "exampleBoolean" : false,
-      "groupingId" : "group19"
+      "groupingId" : "group17"
     },
     {
       "extension" : [{
@@ -1541,7 +1525,7 @@
       "name" : "Procedure: Surgery",
       "description" : "This StructureDefinition contains the maps for VistA file SURGERY (#130) to us-core-procedure",
       "exampleBoolean" : false,
-      "groupingId" : "group19"
+      "groupingId" : "group17"
     },
     {
       "extension" : [{
@@ -1554,7 +1538,7 @@
       "name" : "Smoking Status Observation",
       "description" : "This StructureDefinition contains the maps for VistA file V HEALTH FACTORS (#9000010.23) to us-core-smokingstatus",
       "exampleBoolean" : false,
-      "groupingId" : "group20"
+      "groupingId" : "group18"
     },
     {
       "extension" : [{
@@ -3031,7 +3015,7 @@
       "name" : "Vital Signs Device",
       "description" : "This StructureDefinition contains the maps for VistA file GMRV VITAL MEASUREMENT (#120.5) to Device",
       "exampleBoolean" : false,
-      "groupingId" : "group21"
+      "groupingId" : "group19"
     },
     {
       "extension" : [{
@@ -3044,7 +3028,7 @@
       "name" : "Vital Signs Observation",
       "description" : "This StructureDefinition contains the maps for VistA file GMRV VITAL MEASUREMENT (#120.5) to us-core-vital-signs",
       "exampleBoolean" : false,
-      "groupingId" : "group21"
+      "groupingId" : "group19"
     },
     {
       "extension" : [{
@@ -3057,7 +3041,7 @@
       "name" : "Vital Signs Organization",
       "description" : "This StructureDefinition contains the maps for VistA file GMRV VITAL MEASUREMENT (#120.5) to Organization",
       "exampleBoolean" : false,
-      "groupingId" : "group21"
+      "groupingId" : "group19"
     },
     {
       "extension" : [{
@@ -3070,7 +3054,7 @@
       "name" : "Vital Signs: BP",
       "description" : "This StructureDefinition contains the maps for VistA file GMRV VITAL MEASUREMENT (#120.5) to us-core-blood-pressure",
       "exampleBoolean" : false,
-      "groupingId" : "group21"
+      "groupingId" : "group19"
     },
     {
       "extension" : [{
@@ -3083,7 +3067,7 @@
       "name" : "Vital Signs: SpO2",
       "description" : "This StructureDefinition contains the maps for VistA file GMRV VITAL MEASUREMENT (#120.5) to us-core-pulse-oximetry",
       "exampleBoolean" : false,
-      "groupingId" : "group21"
+      "groupingId" : "group19"
     }],
     "page" : {
       "extension" : [{
@@ -3127,6 +3111,15 @@
         }],
         "nameUrl" : "process.html",
         "title" : "Process",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "profileDesign.html"
+        }],
+        "nameUrl" : "profileDesign.html",
+        "title" : "Profile Design",
         "generation" : "markdown"
       }]
     },

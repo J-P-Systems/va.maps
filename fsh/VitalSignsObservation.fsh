@@ -25,7 +25,7 @@ Source: VitalSignsObservation
 * identifier.value -> "660: source value from GMRV VITAL MEASUREMENT - IEN (#120.5-.001)"
 * code.coding -> "661: terminologyMaps using VF_VitalsCodes on GMRV VITAL MEASUREMENT - VITAL TYPE (#120.5-.03)" "Pulse Oximetry has 2 values"
 * bodySite -> "662: terminologyMaps using VF_VitalsSite on GMRV VITAL MEASUREMENT - QUALIFIER (#120.5-5)"
-* device -> "1655: reference from GMRV VITAL MEASUREMENT – QUALIFIER > GMRV VITAL QUALIFIER – VUID (#120.5-5 > 120.52-99.99)" "contained"
+* device -> "1655: reference from GMRV VITAL MEASUREMENT - QUALIFIER > GMRV VITAL QUALIFIER - VUID (#120.5-5 > 120.52-99.99)" "contained"
 * method -> "867: terminologyMaps using VF_VitalsMethod on GMRV VITAL MEASUREMENT - QUALIFIER (#120.5-5)"
 * valueQuantity.value -> "664: source value from GMRV VITAL MEASUREMENT - RATE (#120.5-1.2) case VUID not = 4500634"
 * valueQuantity.code -> "665: transform using VF_VitalsUnits on GMRV VITAL MEASUREMENT - VITAL TYPE (#120.5-.03)" "VPR may transform"

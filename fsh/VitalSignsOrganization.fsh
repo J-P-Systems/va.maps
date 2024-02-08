@@ -11,7 +11,7 @@ Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: VitalSignsOrganization
 * identifier -> "1654: source value from GMRV VITAL MEASUREMENT - HOSPITAL LOCATION > INSTITUTION - STATION NUMBER (#120.5-.05 > 4-99)"
-* name -> "654: source value from GMRV VITAL MEASUREMENT - HOSPITAL LOCATION > INSTITUTION – NAME (#120.5-.05 > 4-.01)" "Institution file 4 is joined via Location file 44"
+* name -> "654: source value from GMRV VITAL MEASUREMENT - HOSPITAL LOCATION > INSTITUTION - NAME (#120.5-.05 > 4-.01)" "Institution file 4 is joined via Location file 44"
 
 Mapping: cdw-to-VitalSignsOrganization
 Id: cdw

@@ -18,7 +18,7 @@ Source: LabObservationElectronMicroscopyObservation
 * performer -> "1463: reference from EM - RELEASING SITE (#63.02-.345)"
 * specimen -> "1658: reference from EM - EM ACC # (#63.02-.06)"
 * identifier.value -> "1475: source value from EM - IEN (#63.02-.001)"
-* code -> "1479: source value from EM - ORDERED TEST > ORDERED TEST - LAB TEST ORDERED > LABORATORY TEST - SITE/SPECIMEN > SITE/SPECIMEN - LOINC CODE (#63.02-.35 > 63.52-13--> 60-100--> 60.01-95.03)"
+* code -> "1479: source value from EM - ORDERED TEST > ORDERED TEST - LAB TEST ORDERED > LABORATORY TEST - SITE/SPECIMEN > SITE/SPECIMEN - LOINC CODE (#63.02-.35 > 63.52-13>60-100>60.01-95.03)"
 * issued -> "1483: source value from EM - DATE REPORT COMPLETED (#63.02-.03)"
 * status -> "1487: terminologyMaps using VF_DiagnosticReportLabStatus on EM - ORDERED TEST > ORDERED TEST - DISPOSITION (#63.02-.35 > 63.52-10)"
 * valueString -> "1495: source value from EM - GROSS DESCRIPTION (#63.02-1)"
