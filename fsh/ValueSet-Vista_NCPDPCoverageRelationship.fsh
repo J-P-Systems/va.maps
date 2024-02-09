@@ -6,4 +6,4 @@ Usage: #definition
 * title = "Vista_NCPDPCoverageRelationship"
 * status = #active
 * experimental = true
-* description = "Use the link in the Expansion section to navigate to the ConceptMap."
+* description = "Navigate to the [ConceptMap Vista_NCPDPCoverageRelationship](ConceptMap-CMVistaNCPDPCoverageRelationship.html)."

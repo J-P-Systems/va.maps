@@ -6,4 +6,4 @@ Usage: #definition
 * title = "VF_AntibioticSensitivityInterpretation"
 * status = #active
 * experimental = true
-* description = "Use the link in the Expansion section to navigate to the ConceptMap."
+* description = "Navigate to the [ConceptMap VF_AntibioticSensitivityInterpretation](ConceptMap-CMVFAntibioticSensitivityInterpretation.html)."
