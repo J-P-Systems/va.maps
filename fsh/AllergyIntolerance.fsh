@@ -48,6 +48,7 @@ Source: AllergyIntolerance
 * verificationStatus -> "Allergy.Allergy.EnteredInErrorFlag"
 * category -> "Allergy.Allergy.AllergyType"
 * note.time -> "Allergy.AllergyComment.CommentEnteredDateTime"
+* reaction.onset -> "Allergy.AllergicReaction.EnteredDateTime"
 
 Mapping: vpr-to-AllergyIntolerance
 Id: vpr

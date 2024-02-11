@@ -19,9 +19,9 @@ Usage: #definition
 * group[=].element[+].code = #ICD-9-CM
 * group[=].element[=].target.code = #http://hl7.org/fhir/sid/icd-9-cm
 * group[=].element[=].target.equivalence = #equivalent
-* group[=].element[+].code = #"NATIONAL DRUG CODE"
+* group[=].element[+].code = #NATIONAL_DRUG_CODE
 * group[=].element[=].target.code = #http://hl7.org/fhir/sid/ndc
 * group[=].element[=].target.equivalence = #equivalent
-* group[=].element[+].code = #"MUTUALLY DEFINED"
+* group[=].element[+].code = #MUTUALLY_DEFINED
 * group[=].element[=].target.code = #urn:oid:2.16.840.1.113883.3.8901.3.1.3658002.18001
 * group[=].element[=].target.equivalence = #equivalent

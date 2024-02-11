@@ -4,13 +4,13 @@ Id: MedicationDispenseOriginal
 Title: "MedicationDispense: Original"
 Description: "This StructureDefinition contains the maps for VistA file PRESCRIPTION (#52) to MedicationDispense"
 * ^status = #draft
-* daysSupply and authorizingPrescription and destination.display and dosageInstruction.doseAndRate.doseQuantity.unit and dosageInstruction.doseAndRate.doseQuantity.code and dosageInstruction.doseAndRate.doseQuantity.value and dosageInstruction.patientInstruction and dosageInstruction.text and location and medicationCodeableConcept.coding.code and medicationCodeableConcept.text and quantity.value and status and subject and whenHandedOver and whenPrepared and category MS
+* type and authorizingPrescription and daysSupply and destination.display and dosageInstruction.doseAndRate.doseQuantity.unit and dosageInstruction.doseAndRate.doseQuantity.code and dosageInstruction.doseAndRate.doseQuantity.value and dosageInstruction.patientInstruction and dosageInstruction.text and location and medicationCodeableConcept.coding.code and medicationCodeableConcept.text and quantity.value and status and subject and whenHandedOver and whenPrepared and category and performer.actor and note.text MS
 
 Mapping: vista-to-MedicationDispenseOriginal
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: MedicationDispenseOriginal
-* daysSupply -> "1672: source value from PRESCRIPTION - DAYS SUPPLY (#52-8)"
+* type -> "1708: fixed value = FF"
 * authorizingPrescription -> "822: source value from PRESCRIPTION - PLACER ORDER # (#52-39.3)"
 * daysSupply -> "826: source value from PRESCRIPTION - DAYS SUPPLY (#52-8)"
 * destination.display -> "835: source value from PRESCRIPTION - MAIL/WINDOW (#52-11)"
@@ -28,6 +28,8 @@ Source: MedicationDispenseOriginal
 * whenHandedOver -> "832: source value from PRESCRIPTION - RELEASED DATE/TIME (#52-31)" "Per discussion with Pharma: Josh Miller 5/27/22"
 * whenPrepared -> "1548: source value from PRESCRIPTION - FILL DATE (#52-22)" "Per discussion with Pharma: Josh Miller 5/27/22"
 * category -> "1668: fixed value = outpatient"
+* performer.actor -> "1711: reference from PRESCRIPTION - DIVISION (#52-20)"
+* note.text -> "1716: source value from PRESCRIPTION - REMARKS (#52-12)"
 
 Mapping: cdw-to-MedicationDispenseOriginal
 Id: cdw
@@ -46,7 +48,6 @@ Mapping: vpr-to-MedicationDispenseOriginal
 Id: vpr
 Title: "Virtual Patient Record (VPR)"
 Source: MedicationDispenseOriginal
-* daysSupply -> "Pharmacy: daysSupply"
 * daysSupply -> "Pharmacy: daysSupply"
 * destination.display -> "Pharmacy: routing"
 * dosageInstruction.doseAndRate.doseQuantity.unit -> "Pharmacy: dose.units"

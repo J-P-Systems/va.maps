@@ -30,4 +30,4 @@ Usage: #definition
 * group[=].element[=].target.code = #IND
 * group[=].element[=].target.display = "Indeterminate"
 * group[=].element[=].target.equivalence = #equal
-* group[=].element[=].target.comment = "’Technically Unsatifactory’ is used with EKG/ECG but not ECHO"
+* group[=].element[=].target.comment = "'Technically Unsatifactory' is used with EKG/ECG but not ECHO"

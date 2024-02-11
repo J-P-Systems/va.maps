@@ -28,12 +28,12 @@ Usage: #definition
 * group[=].element[+].code = #PCA
 * group[=].element[=].target.code = #cancelled
 * group[=].element[=].target.equivalence = #equivalent
-* group[=].element[+].code = #"I, NT, Null; Null check-in date (44.003-309), null check-out date (44.003-303)"
+* group[=].element[+].code = #I,_NT,_Null;_Null_check-in_date_(44.003-309),_null_check-out_date_(44.003-303)
 * group[=].element[=].target.code = #booked
 * group[=].element[=].target.equivalence = #equivalent
-* group[=].element[+].code = #"I, NT, Null; Non-null check-in date (44.003-309), null check-out date (44.003-303)"
+* group[=].element[+].code = #I,_NT,_Null;_Non-null_check-in_date_(44.003-309),_null_check-out_date_(44.003-303)
 * group[=].element[=].target.code = #arrived
 * group[=].element[=].target.equivalence = #equivalent
-* group[=].element[+].code = #"I, NT, Null; Non-null check-in date (44.003-309), non-null check-out date (44.003-303)"
+* group[=].element[+].code = #I,_NT,_Null;_Non-null_check-in_date_(44.003-309),_non-null_check-out_date_(44.003-303)
 * group[=].element[=].target.code = #fulfilled
 * group[=].element[=].target.equivalence = #equivalent

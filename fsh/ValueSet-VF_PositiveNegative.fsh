@@ -1,9 +1,5 @@
-Instance: VSVFPositiveNegative
-InstanceOf: ValueSet
-Usage: #definition
-* url = "http://va.gov/fhir/ValueSet/VSVFPositiveNegative"
-* name = "VF_PositiveNegative"
-* title = "VF_PositiveNegative"
-* status = #active
-* experimental = true
-* description = "Navigate to the [ConceptMap VF_PositiveNegative](ConceptMap-CMVFPositiveNegative.html)."
+ValueSet: VSVFPositiveNegative
+Title: "VF_PositiveNegative"
+Description: "Navigate to [ConceptMap VF_PositiveNegative](ConceptMap-CMVFPositiveNegative.html)"
+* include urn:undefined#N "NEGATIVE"
+* include urn:undefined#P "POSITIVE"

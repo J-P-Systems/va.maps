@@ -1,9 +1,5 @@
-Instance: VSVFproviderGender
-InstanceOf: ValueSet
-Usage: #definition
-* url = "http://va.gov/fhir/ValueSet/VSVFproviderGender"
-* name = "VF_providerGender"
-* title = "VF_providerGender"
-* status = #active
-* experimental = true
-* description = "Navigate to the [ConceptMap VF_providerGender](ConceptMap-CMVFproviderGender.html)."
+ValueSet: VSVFproviderGender
+Title: "VF_providerGender"
+Description: "Navigate to [ConceptMap VF_providerGender](ConceptMap-CMVFproviderGender.html)"
+* include urn:undefined#F "FEMALE"
+* include urn:undefined#M "MALE"

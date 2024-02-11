@@ -18,7 +18,7 @@ Source: DocumentReferenceDocumentReference
 * date -> "877: source value from TIU DOCUMENT - ENTRY DATE/TIME (#8925-1201)" "looking into façade pattern guidance on whether this is meaningful. 03/6/23 updated mapping based on LHV feedback"
 * author -> "878: source value from TIU DOCUMENT - AUTHOR/DICTATOR (#8925-1202)"
 * author -> "1663: source value from TIU DOCUMENT - SIGNED BY (#8925-1502)" "Added signed by as an author since it allows more than one."
-* authenticator -> "y: source value from TIU DOCUMENT - VERIFIED BY (#8925-1306)"
+* authenticator -> "879: source value from TIU DOCUMENT - VERIFIED BY (#8925-1306)"
 * custodian -> "880: source value from TIU DOCUMENT - DIVISION (#8925-1212)" "who maintains the document = VA…. Or maybe a specific? Clinic\nPer 03/02/2023 email from LH, changed the Vista field from 1205 (hospital location) to 1212 (division)."
 * description -> "885: source value from TIU DOCUMENT - SUBJECT (#8925-1701)"
 * securityLabel -> "886: target not supported"

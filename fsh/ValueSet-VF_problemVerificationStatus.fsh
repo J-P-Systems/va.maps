@@ -1,9 +1,6 @@
-Instance: VSVFproblemVerificationStatus
-InstanceOf: ValueSet
-Usage: #definition
-* url = "http://va.gov/fhir/ValueSet/VSVFproblemVerificationStatus"
-* name = "VF_problemVerificationStatus"
-* title = "VF_problemVerificationStatus"
-* status = #active
-* experimental = true
-* description = "Navigate to the [ConceptMap VF_problemVerificationStatus](ConceptMap-CMVFproblemVerificationStatus.html)."
+ValueSet: VSVFproblemVerificationStatus
+Title: "VF_problemVerificationStatus"
+Description: "Navigate to [ConceptMap VF_problemVerificationStatus](ConceptMap-CMVFproblemVerificationStatus.html)"
+* include http://va.gov/terminology/vistaDefinedElements/9000011-1.02#H "HIDDEN"
+* include http://va.gov/terminology/vistaDefinedElements/9000011-1.02#P "PERMANENT"
+* include http://va.gov/terminology/vistaDefinedElements/9000011-1.02#T "TRANSCRIBED"

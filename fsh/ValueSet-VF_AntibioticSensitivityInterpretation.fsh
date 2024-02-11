@@ -1,9 +1,10 @@
-Instance: VSVFAntibioticSensitivityInterpretation
-InstanceOf: ValueSet
-Usage: #definition
-* url = "http://va.gov/fhir/ValueSet/VSVFAntibioticSensitivityInterpretation"
-* name = "VF_AntibioticSensitivityInterpretation"
-* title = "VF_AntibioticSensitivityInterpretation"
-* status = #active
-* experimental = true
-* description = "Navigate to the [ConceptMap VF_AntibioticSensitivityInterpretation](ConceptMap-CMVFAntibioticSensitivityInterpretation.html)."
+ValueSet: VSVFAntibioticSensitivityInterpretation
+Title: "VF_AntibioticSensitivityInterpretation"
+Description: "Navigate to [ConceptMap VF_AntibioticSensitivityInterpretation](ConceptMap-CMVFAntibioticSensitivityInterpretation.html)"
+* include urn:undefined#I "Intermediate"
+* include urn:undefined#R "Resistant"
+* include urn:undefined#Resistant "Resistant"
+* include urn:undefined#S "Sensitive"
+* include urn:undefined#Sensitive "Sensitive"
+* include urn:undefined#SYN-S 
+* include urn:undefined#SYN-R 

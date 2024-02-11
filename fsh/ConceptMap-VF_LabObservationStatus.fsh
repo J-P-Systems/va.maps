@@ -8,7 +8,7 @@ Usage: #definition
 * experimental = true
 * description = "Terminology Maps VF_LabObservationStatus"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFLabObservationStatus"
-* group[0].source = "http://va.gov/terminology/vistaDefinedElements/63.05-34"
+* group[0].source = "undefined"
 * group[=].target = "http://hl7.org/fhir/observation-status"
 * group[=].element[0].code = #F
 * group[=].element[=].display = "FINAL REPORT"

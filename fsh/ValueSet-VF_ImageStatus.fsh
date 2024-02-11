@@ -1,9 +1,11 @@
-Instance: VSVFImageStatus
-InstanceOf: ValueSet
-Usage: #definition
-* url = "http://va.gov/fhir/ValueSet/VSVFImageStatus"
-* name = "VF_ImageStatus"
-* title = "VF_ImageStatus"
-* status = #active
-* experimental = true
-* description = "Navigate to the [ConceptMap VF_ImageStatus](ConceptMap-CMVFImageStatus.html)."
+ValueSet: VSVFImageStatus
+Title: "VF_ImageStatus"
+Description: "Navigate to [ConceptMap VF_ImageStatus](ConceptMap-CMVFImageStatus.html)"
+* include http://va.gov/terminology/vistaDefinedElements/691.5-1506#D "DRAFT"
+* include http://va.gov/terminology/vistaDefinedElements/691.5-1506#PD "PROBLEM DRAFT"
+* include http://va.gov/terminology/vistaDefinedElements/691.5-1506#RNV "RELEASED NOT VERIFIED"
+* include http://va.gov/terminology/vistaDefinedElements/691.5-1506#ROV "RELEASED OFF-LINE VERIFIED"
+* include http://va.gov/terminology/vistaDefinedElements/691.5-1506#SROV "RELEASED OFF-LINE VERIFIED OF SUPERSEDED"
+* include http://va.gov/terminology/vistaDefinedElements/691.5-1506#RV "RELEASED ON-LINE VERIFIED"
+* include http://va.gov/terminology/vistaDefinedElements/691.5-1506#SRV "RELEASED ON-LINE VERIFIED OF SUPERSEDED"
+* include http://va.gov/terminology/vistaDefinedElements/691.5-1506#S "SUPERSEDED"

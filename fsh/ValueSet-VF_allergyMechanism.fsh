@@ -1,9 +1,5 @@
-Instance: VSVFallergyMechanism
-InstanceOf: ValueSet
-Usage: #definition
-* url = "http://va.gov/fhir/ValueSet/VSVFallergyMechanism"
-* name = "VF_allergyMechanism"
-* title = "VF_allergyMechanism"
-* status = #active
-* experimental = true
-* description = "Navigate to the [ConceptMap VF_allergyMechanism](ConceptMap-CMVFallergyMechanism.html)."
+ValueSet: VSVFallergyMechanism
+Title: "VF_allergyMechanism"
+Description: "Navigate to [ConceptMap VF_allergyMechanism](ConceptMap-CMVFallergyMechanism.html)"
+* include http://va.gov/terminology/vistaDefinedElements/120.8-17#A "ALLERGY"
+* include http://va.gov/terminology/vistaDefinedElements/120.8-17#P "PHARMACOLOGIC"

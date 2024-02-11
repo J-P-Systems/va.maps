@@ -10,7 +10,7 @@
   "name" : "VAMapsIG",
   "title" : "US Veterans Administration FHIR Map Set Implementation Guide",
   "status" : "draft",
-  "date" : "2024-02-09T16:38:59+00:00",
+  "date" : "2024-02-11T14:24:24+00:00",
   "publisher" : "VA",
   "contact" : [{
     "name" : "VA",
@@ -749,10 +749,10 @@
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/CPMVitalSigns"
+        "reference" : "StructureDefinition/DocumentReference"
       },
-      "name" : "CPM Vital Signs",
-      "description" : "This StructureDefinition contains the maps for VistA file GMRV VITAL MEASUREMENT (#120.5) to us-core-vital-signs",
+      "name" : "Document Reference",
+      "description" : "This StructureDefinition contains the maps for VistA file TIU DOCUMENT (#8925) to us-core-documentreference",
       "exampleBoolean" : false
     },
     {
@@ -787,9 +787,22 @@
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/EncounterInpatient"
+        "reference" : "StructureDefinition/EncounterInpatientCondition"
       },
-      "name" : "Encounter: Inpatient",
+      "name" : "Encounter: Inpatient Condition",
+      "description" : "This StructureDefinition contains the maps for VistA file PTF (#45) to us-core-condition-problems-health-concerns",
+      "exampleBoolean" : false,
+      "groupingId" : "group7"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/EncounterInpatientEncounter"
+      },
+      "name" : "Encounter: Inpatient Encounter",
       "description" : "This StructureDefinition contains the maps for VistA file PTF (#45) to us-core-encounter",
       "exampleBoolean" : false,
       "groupingId" : "group7"
@@ -1008,19 +1021,6 @@
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/LabObservationCytopathologyObservation"
-      },
-      "name" : "Lab Observation: Cytopathology Observation",
-      "description" : "This StructureDefinition contains the maps for VistA file CYTOPATHOLOGY (#63.09) to us-core-observation-lab",
-      "exampleBoolean" : false,
-      "groupingId" : "group5"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:resource"
-      }],
-      "reference" : {
         "reference" : "StructureDefinition/LabObservationCytopathologySpecimen"
       },
       "name" : "Lab Observation: Cytopathology Specimen",
@@ -1038,19 +1038,6 @@
       },
       "name" : "Lab Observation: Electron Microscopy DiagnosticReport",
       "description" : "This StructureDefinition contains the maps for VistA file EM (#63.02) to us-core-diagnosticreport-lab",
-      "exampleBoolean" : false,
-      "groupingId" : "group5"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:resource"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/LabObservationElectronMicroscopyObservation"
-      },
-      "name" : "Lab Observation: Electron Microscopy Observation",
-      "description" : "This StructureDefinition contains the maps for VistA file EM (#63.02) to us-core-observation-lab",
       "exampleBoolean" : false,
       "groupingId" : "group5"
     },
@@ -1255,19 +1242,6 @@
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/LabObservationSurgicalPathologyObservation"
-      },
-      "name" : "Lab Observation: Surgical Pathology Observation",
-      "description" : "This StructureDefinition contains the maps for VistA file SURGICAL PATHOLOGY (#63.08) to us-core-observation-lab",
-      "exampleBoolean" : false,
-      "groupingId" : "group5"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:resource"
-      }],
-      "reference" : {
         "reference" : "StructureDefinition/LabObservationSurgicalPathologySpecimen"
       },
       "name" : "Lab Observation: Surgical Pathology Specimen",
@@ -1346,9 +1320,22 @@
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/MedicationRequestOutpatient"
+        "reference" : "StructureDefinition/MedicationRequestOutpatientEncounter"
       },
-      "name" : "MedicationRequest: Outpatient",
+      "name" : "MedicationRequest: Outpatient Encounter",
+      "description" : "This StructureDefinition contains the maps for VistA file PRESCRIPTION (#52) to us-core-encounter",
+      "exampleBoolean" : false,
+      "groupingId" : "group11"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/MedicationRequestOutpatientMedicationRequest"
+      },
+      "name" : "MedicationRequest: Outpatient MedicationRequest",
       "description" : "This StructureDefinition contains the maps for VistA file PRESCRIPTION (#52) to us-core-medicationrequest",
       "exampleBoolean" : false,
       "groupingId" : "group11"
@@ -1538,6 +1525,18 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/VSVFallergyActive"
+      },
+      "name" : "VF_allergyActive",
+      "description" : "Navigate to [ConceptMap VF_allergyActive](ConceptMap-CMVFallergyActive.html)",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ConceptMap"
       }],
       "reference" : {
@@ -1553,10 +1552,10 @@
         "valueString" : "ValueSet"
       }],
       "reference" : {
-        "reference" : "ValueSet/VSVFallergyActive"
+        "reference" : "ValueSet/VSVFallergyEnteredInError"
       },
-      "name" : "VF_allergyActive",
-      "description" : "Navigate to the [ConceptMap VF_allergyActive](ConceptMap-CMVFallergyActive.html).",
+      "name" : "VF_allergyEnteredInError",
+      "description" : "Navigate to [ConceptMap VF_allergyEnteredInError](ConceptMap-CMVFallergyEnteredInError.html)",
       "exampleBoolean" : false
     },
     {
@@ -1577,10 +1576,10 @@
         "valueString" : "ValueSet"
       }],
       "reference" : {
-        "reference" : "ValueSet/VSVFallergyEnteredInError"
+        "reference" : "ValueSet/VSVFallergyMechanism"
       },
-      "name" : "VF_allergyEnteredInError",
-      "description" : "Navigate to the [ConceptMap VF_allergyEnteredInError](ConceptMap-CMVFallergyEnteredInError.html).",
+      "name" : "VF_allergyMechanism",
+      "description" : "Navigate to [ConceptMap VF_allergyMechanism](ConceptMap-CMVFallergyMechanism.html)",
       "exampleBoolean" : false
     },
     {
@@ -1601,10 +1600,10 @@
         "valueString" : "ValueSet"
       }],
       "reference" : {
-        "reference" : "ValueSet/VSVFallergyMechanism"
+        "reference" : "ValueSet/VSVFallergySeverity"
       },
-      "name" : "VF_allergyMechanism",
-      "description" : "Navigate to the [ConceptMap VF_allergyMechanism](ConceptMap-CMVFallergyMechanism.html).",
+      "name" : "VF_allergySeverity",
+      "description" : "Navigate to [ConceptMap VF_allergySeverity](ConceptMap-CMVFallergySeverity.html)",
       "exampleBoolean" : false
     },
     {
@@ -1625,10 +1624,10 @@
         "valueString" : "ValueSet"
       }],
       "reference" : {
-        "reference" : "ValueSet/VSVFallergySeverity"
+        "reference" : "ValueSet/VSVFallergySubstanceCategory"
       },
-      "name" : "VF_allergySeverity",
-      "description" : "Navigate to the [ConceptMap VF_allergySeverity](ConceptMap-CMVFallergySeverity.html).",
+      "name" : "VF_allergySubstanceCategory",
+      "description" : "Navigate to [ConceptMap VF_allergySubstanceCategory](ConceptMap-CMVFallergySubstanceCategory.html)",
       "exampleBoolean" : false
     },
     {
@@ -1649,10 +1648,10 @@
         "valueString" : "ValueSet"
       }],
       "reference" : {
-        "reference" : "ValueSet/VSVFallergySubstanceCategory"
+        "reference" : "ValueSet/VSVFallergyVerificationStatus"
       },
-      "name" : "VF_allergySubstanceCategory",
-      "description" : "Navigate to the [ConceptMap VF_allergySubstanceCategory](ConceptMap-CMVFallergySubstanceCategory.html).",
+      "name" : "VF_allergyVerificationStatus",
+      "description" : "Navigate to [ConceptMap VF_allergyVerificationStatus](ConceptMap-CMVFallergyVerificationStatus.html)",
       "exampleBoolean" : false
     },
     {
@@ -1673,10 +1672,10 @@
         "valueString" : "ValueSet"
       }],
       "reference" : {
-        "reference" : "ValueSet/VSVFallergyVerificationStatus"
+        "reference" : "ValueSet/VSVFAntibioticSensitivityInterpretation"
       },
-      "name" : "VF_allergyVerificationStatus",
-      "description" : "Navigate to the [ConceptMap VF_allergyVerificationStatus](ConceptMap-CMVFallergyVerificationStatus.html).",
+      "name" : "VF_AntibioticSensitivityInterpretation",
+      "description" : "Navigate to [ConceptMap VF_AntibioticSensitivityInterpretation](ConceptMap-CMVFAntibioticSensitivityInterpretation.html)",
       "exampleBoolean" : false
     },
     {
@@ -1697,10 +1696,10 @@
         "valueString" : "ValueSet"
       }],
       "reference" : {
-        "reference" : "ValueSet/VSVFAntibioticSensitivityInterpretation"
+        "reference" : "ValueSet/VSVFAppointmentStatus"
       },
-      "name" : "VF_AntibioticSensitivityInterpretation",
-      "description" : "Navigate to the [ConceptMap VF_AntibioticSensitivityInterpretation](ConceptMap-CMVFAntibioticSensitivityInterpretation.html).",
+      "name" : "VF_AppointmentStatus",
+      "description" : "Navigate to [ConceptMap VF_AppointmentStatus](ConceptMap-CMVFAppointmentStatus.html)",
       "exampleBoolean" : false
     },
     {
@@ -1721,10 +1720,10 @@
         "valueString" : "ValueSet"
       }],
       "reference" : {
-        "reference" : "ValueSet/VSVFAppointmentStatus"
+        "reference" : "ValueSet/VSVFBoolean"
       },
-      "name" : "VF_AppointmentStatus",
-      "description" : "Navigate to the [ConceptMap VF_AppointmentStatus](ConceptMap-CMVFAppointmentStatus.html).",
+      "name" : "VF_Boolean",
+      "description" : "Navigate to [ConceptMap VF_Boolean](ConceptMap-CMVFBoolean.html)",
       "exampleBoolean" : false
     },
     {
@@ -1745,10 +1744,10 @@
         "valueString" : "ValueSet"
       }],
       "reference" : {
-        "reference" : "ValueSet/VSVFBoolean"
+        "reference" : "ValueSet/VSVFCommunicationQualifier"
       },
-      "name" : "VF_Boolean",
-      "description" : "Navigate to the [ConceptMap VF_Boolean](ConceptMap-CMVFBoolean.html).",
+      "name" : "VF_CommunicationQualifier",
+      "description" : "Navigate to [ConceptMap VF_CommunicationQualifier](ConceptMap-CMVFCommunicationQualifier.html)",
       "exampleBoolean" : false
     },
     {
@@ -1769,10 +1768,10 @@
         "valueString" : "ValueSet"
       }],
       "reference" : {
-        "reference" : "ValueSet/VSVFCommunicationQualifier"
+        "reference" : "ValueSet/VSVFCoverageRelationship"
       },
-      "name" : "VF_CommunicationQualifier",
-      "description" : "Navigate to the [ConceptMap VF_CommunicationQualifier](ConceptMap-CMVFCommunicationQualifier.html).",
+      "name" : "VF_CoverageRelationship",
+      "description" : "Navigate to [ConceptMap VF_CoverageRelationship](ConceptMap-CMVFCoverageRelationship.html)",
       "exampleBoolean" : false
     },
     {
@@ -1793,10 +1792,10 @@
         "valueString" : "ValueSet"
       }],
       "reference" : {
-        "reference" : "ValueSet/VSVFCoverageRelationship"
+        "reference" : "ValueSet/VSVFCoverageStatusForce"
       },
-      "name" : "VF_CoverageRelationship",
-      "description" : "Navigate to the [ConceptMap VF_CoverageRelationship](ConceptMap-CMVFCoverageRelationship.html).",
+      "name" : "VF_CoverageStatusForce",
+      "description" : "Navigate to [ConceptMap VF_CoverageStatusForce](ConceptMap-CMVFCoverageStatusForce.html)",
       "exampleBoolean" : false
     },
     {
@@ -1817,10 +1816,10 @@
         "valueString" : "ValueSet"
       }],
       "reference" : {
-        "reference" : "ValueSet/VSVFCoverageStatusForce"
+        "reference" : "ValueSet/VSVFDentalDeviceStatus"
       },
-      "name" : "VF_CoverageStatusForce",
-      "description" : "Navigate to the [ConceptMap VF_CoverageStatusForce](ConceptMap-CMVFCoverageStatusForce.html).",
+      "name" : "VF_DentalDeviceStatus",
+      "description" : "Navigate to [ConceptMap VF_DentalDeviceStatus](ConceptMap-CMVFDentalDeviceStatus.html)",
       "exampleBoolean" : false
     },
     {
@@ -1841,10 +1840,10 @@
         "valueString" : "ValueSet"
       }],
       "reference" : {
-        "reference" : "ValueSet/VSVFDentalDeviceStatus"
+        "reference" : "ValueSet/VSVFdeviceTypePacemaker"
       },
-      "name" : "VF_DentalDeviceStatus",
-      "description" : "Navigate to the [ConceptMap VF_DentalDeviceStatus](ConceptMap-CMVFDentalDeviceStatus.html).",
+      "name" : "VF_deviceTypePacemaker",
+      "description" : "Navigate to [ConceptMap VF_deviceTypePacemaker](ConceptMap-CMVFdeviceTypePacemaker.html)",
       "exampleBoolean" : false
     },
     {
@@ -1865,10 +1864,10 @@
         "valueString" : "ValueSet"
       }],
       "reference" : {
-        "reference" : "ValueSet/VSVFdeviceTypePacemaker"
+        "reference" : "ValueSet/VSVFDiagnosticReportLabStatus"
       },
-      "name" : "VF_deviceTypePacemaker",
-      "description" : "Navigate to the [ConceptMap VF_deviceTypePacemaker](ConceptMap-CMVFdeviceTypePacemaker.html).",
+      "name" : "VF_DiagnosticReportLabStatus",
+      "description" : "Navigate to [ConceptMap VF_DiagnosticReportLabStatus](ConceptMap-CMVFDiagnosticReportLabStatus.html)",
       "exampleBoolean" : false
     },
     {
@@ -1889,10 +1888,10 @@
         "valueString" : "ValueSet"
       }],
       "reference" : {
-        "reference" : "ValueSet/VSVFDiagnosticReportLabStatus"
+        "reference" : "ValueSet/VSVFdocumentReferencedocStatus"
       },
-      "name" : "VF_DiagnosticReportLabStatus",
-      "description" : "Navigate to the [ConceptMap VF_DiagnosticReportLabStatus](ConceptMap-CMVFDiagnosticReportLabStatus.html).",
+      "name" : "VF_documentReferencedocStatus",
+      "description" : "Navigate to [ConceptMap VF_documentReferencedocStatus](ConceptMap-CMVFdocumentReferencedocStatus.html)",
       "exampleBoolean" : false
     },
     {
@@ -1913,10 +1912,10 @@
         "valueString" : "ValueSet"
       }],
       "reference" : {
-        "reference" : "ValueSet/VSVFdocumentReferencedocStatus"
+        "reference" : "ValueSet/VSVFencounterClass"
       },
-      "name" : "VF_documentReferencedocStatus",
-      "description" : "Navigate to the [ConceptMap VF_documentReferencedocStatus](ConceptMap-CMVFdocumentReferencedocStatus.html).",
+      "name" : "VF_encounterClass",
+      "description" : "Navigate to [ConceptMap VF_encounterClass](ConceptMap-CMVFencounterClass.html)",
       "exampleBoolean" : false
     },
     {
@@ -1937,10 +1936,10 @@
         "valueString" : "ValueSet"
       }],
       "reference" : {
-        "reference" : "ValueSet/VSVFencounterClass"
+        "reference" : "ValueSet/VSVFencounterProblemStatus"
       },
-      "name" : "VF_encounterClass",
-      "description" : "Navigate to the [ConceptMap VF_encounterClass](ConceptMap-CMVFencounterClass.html).",
+      "name" : "VF_encounterProblemStatus",
+      "description" : "Navigate to [ConceptMap VF_encounterProblemStatus](ConceptMap-CMVFencounterProblemStatus.html)",
       "exampleBoolean" : false
     },
     {
@@ -1961,10 +1960,10 @@
         "valueString" : "ValueSet"
       }],
       "reference" : {
-        "reference" : "ValueSet/VSVFencounterProblemStatus"
+        "reference" : "ValueSet/VSVFencounterProblemVerificationStatus"
       },
-      "name" : "VF_encounterProblemStatus",
-      "description" : "Navigate to the [ConceptMap VF_encounterProblemStatus](ConceptMap-CMVFencounterProblemStatus.html).",
+      "name" : "VF_encounterProblemVerificationStatus",
+      "description" : "Navigate to [ConceptMap VF_encounterProblemVerificationStatus](ConceptMap-CMVFencounterProblemVerificationStatus.html)",
       "exampleBoolean" : false
     },
     {
@@ -1985,10 +1984,10 @@
         "valueString" : "ValueSet"
       }],
       "reference" : {
-        "reference" : "ValueSet/VSVFencounterProblemVerificationStatus"
+        "reference" : "ValueSet/VSVFethnicityCategory"
       },
-      "name" : "VF_encounterProblemVerificationStatus",
-      "description" : "Navigate to the [ConceptMap VF_encounterProblemVerificationStatus](ConceptMap-CMVFencounterProblemVerificationStatus.html).",
+      "name" : "VF_ethnicityCategory",
+      "description" : "Navigate to [ConceptMap VF_ethnicityCategory](ConceptMap-CMVFethnicityCategory.html)",
       "exampleBoolean" : false
     },
     {
@@ -2009,10 +2008,10 @@
         "valueString" : "ValueSet"
       }],
       "reference" : {
-        "reference" : "ValueSet/VSVFethnicityCategory"
+        "reference" : "ValueSet/VSVFExamResultInterpretation"
       },
-      "name" : "VF_ethnicityCategory",
-      "description" : "Navigate to the [ConceptMap VF_ethnicityCategory](ConceptMap-CMVFethnicityCategory.html).",
+      "name" : "VF_ExamResultInterpretation",
+      "description" : "Navigate to [ConceptMap VF_ExamResultInterpretation](ConceptMap-CMVFExamResultInterpretation.html)",
       "exampleBoolean" : false
     },
     {
@@ -2033,10 +2032,10 @@
         "valueString" : "ValueSet"
       }],
       "reference" : {
-        "reference" : "ValueSet/VSVFExamResultInterpretation"
+        "reference" : "ValueSet/VSVFExamStatus"
       },
-      "name" : "VF_ExamResultInterpretation",
-      "description" : "Navigate to the [ConceptMap VF_ExamResultInterpretation](ConceptMap-CMVFExamResultInterpretation.html).",
+      "name" : "VF_ExamStatus",
+      "description" : "Navigate to [ConceptMap VF_ExamStatus](ConceptMap-CMVFExamStatus.html)",
       "exampleBoolean" : false
     },
     {
@@ -2057,10 +2056,10 @@
         "valueString" : "ValueSet"
       }],
       "reference" : {
-        "reference" : "ValueSet/VSVFExamStatus"
+        "reference" : "ValueSet/VSVFgenderIdentity"
       },
-      "name" : "VF_ExamStatus",
-      "description" : "Navigate to the [ConceptMap VF_ExamStatus](ConceptMap-CMVFExamStatus.html).",
+      "name" : "VF_genderIdentity",
+      "description" : "Navigate to [ConceptMap VF_genderIdentity](ConceptMap-CMVFgenderIdentity.html)",
       "exampleBoolean" : false
     },
     {
@@ -2081,10 +2080,10 @@
         "valueString" : "ValueSet"
       }],
       "reference" : {
-        "reference" : "ValueSet/VSVFgenderIdentity"
+        "reference" : "ValueSet/VSVFICDCodingSystems"
       },
-      "name" : "VF_genderIdentity",
-      "description" : "Navigate to the [ConceptMap VF_genderIdentity](ConceptMap-CMVFgenderIdentity.html).",
+      "name" : "VF_ICDCodingSystems",
+      "description" : "Navigate to [ConceptMap VF_ICDCodingSystems](ConceptMap-CMVFICDCodingSystems.html)",
       "exampleBoolean" : false
     },
     {
@@ -2105,10 +2104,10 @@
         "valueString" : "ValueSet"
       }],
       "reference" : {
-        "reference" : "ValueSet/VSVFICDCodingSystems"
+        "reference" : "ValueSet/VSVFICDVersion"
       },
-      "name" : "VF_ICDCodingSystems",
-      "description" : "Navigate to the [ConceptMap VF_ICDCodingSystems](ConceptMap-CMVFICDCodingSystems.html).",
+      "name" : "VF_ICDVersion",
+      "description" : "Navigate to [ConceptMap VF_ICDVersion](ConceptMap-CMVFICDVersion.html)",
       "exampleBoolean" : false
     },
     {
@@ -2129,10 +2128,10 @@
         "valueString" : "ValueSet"
       }],
       "reference" : {
-        "reference" : "ValueSet/VSVFICDVersion"
+        "reference" : "ValueSet/VSVFImageInterpretation"
       },
-      "name" : "VF_ICDVersion",
-      "description" : "Navigate to the [ConceptMap VF_ICDVersion](ConceptMap-CMVFICDVersion.html).",
+      "name" : "VF_ImageInterpretation",
+      "description" : "Navigate to [ConceptMap VF_ImageInterpretation](ConceptMap-CMVFImageInterpretation.html)",
       "exampleBoolean" : false
     },
     {
@@ -2153,10 +2152,10 @@
         "valueString" : "ValueSet"
       }],
       "reference" : {
-        "reference" : "ValueSet/VSVFImageInterpretation"
+        "reference" : "ValueSet/VSVFImageStatus"
       },
-      "name" : "VF_ImageInterpretation",
-      "description" : "Navigate to the [ConceptMap VF_ImageInterpretation](ConceptMap-CMVFImageInterpretation.html).",
+      "name" : "VF_ImageStatus",
+      "description" : "Navigate to [ConceptMap VF_ImageStatus](ConceptMap-CMVFImageStatus.html)",
       "exampleBoolean" : false
     },
     {
@@ -2177,10 +2176,10 @@
         "valueString" : "ValueSet"
       }],
       "reference" : {
-        "reference" : "ValueSet/VSVFImageStatus"
+        "reference" : "ValueSet/VSVFImageStatusRadNuc"
       },
-      "name" : "VF_ImageStatus",
-      "description" : "Navigate to the [ConceptMap VF_ImageStatus](ConceptMap-CMVFImageStatus.html).",
+      "name" : "VF_ImageStatusRadNuc",
+      "description" : "Navigate to [ConceptMap VF_ImageStatusRadNuc](ConceptMap-CMVFImageStatusRadNuc.html)",
       "exampleBoolean" : false
     },
     {
@@ -2201,10 +2200,10 @@
         "valueString" : "ValueSet"
       }],
       "reference" : {
-        "reference" : "ValueSet/VSVFImageStatusRadNuc"
+        "reference" : "ValueSet/VSVFimmunizationPrimarySource"
       },
-      "name" : "VF_ImageStatusRadNuc",
-      "description" : "Navigate to the [ConceptMap VF_ImageStatusRadNuc](ConceptMap-CMVFImageStatusRadNuc.html).",
+      "name" : "VF_immunizationPrimarySource",
+      "description" : "Navigate to [ConceptMap VF_immunizationPrimarySource](ConceptMap-CMVFimmunizationPrimarySource.html)",
       "exampleBoolean" : false
     },
     {
@@ -2225,10 +2224,10 @@
         "valueString" : "ValueSet"
       }],
       "reference" : {
-        "reference" : "ValueSet/VSVFimmunizationPrimarySource"
+        "reference" : "ValueSet/VSVFImmunizationReaction"
       },
-      "name" : "VF_immunizationPrimarySource",
-      "description" : "Navigate to the [ConceptMap VF_immunizationPrimarySource](ConceptMap-CMVFimmunizationPrimarySource.html).",
+      "name" : "VF_ImmunizationReaction",
+      "description" : "Navigate to [ConceptMap VF_ImmunizationReaction](ConceptMap-CMVFImmunizationReaction.html)",
       "exampleBoolean" : false
     },
     {
@@ -2249,10 +2248,10 @@
         "valueString" : "ValueSet"
       }],
       "reference" : {
-        "reference" : "ValueSet/VSVFImmunizationReaction"
+        "reference" : "ValueSet/VSVFimmunizationStatusReason"
       },
-      "name" : "VF_ImmunizationReaction",
-      "description" : "Navigate to the [ConceptMap VF_ImmunizationReaction](ConceptMap-CMVFImmunizationReaction.html).",
+      "name" : "VF_immunizationStatusReason",
+      "description" : "Navigate to [ConceptMap VF_immunizationStatusReason](ConceptMap-CMVFimmunizationStatusReason.html)",
       "exampleBoolean" : false
     },
     {
@@ -2273,10 +2272,10 @@
         "valueString" : "ValueSet"
       }],
       "reference" : {
-        "reference" : "ValueSet/VSVFimmunizationStatusReason"
+        "reference" : "ValueSet/VSVFinferredCVX"
       },
-      "name" : "VF_immunizationStatusReason",
-      "description" : "Navigate to the [ConceptMap VF_immunizationStatusReason](ConceptMap-CMVFimmunizationStatusReason.html).",
+      "name" : "VF_inferredCVX",
+      "description" : "Navigate to [ConceptMap VF_inferredCVX](ConceptMap-CMVFinferredCVX.html)",
       "exampleBoolean" : false
     },
     {
@@ -2297,10 +2296,10 @@
         "valueString" : "ValueSet"
       }],
       "reference" : {
-        "reference" : "ValueSet/VSVFinferredCVX"
+        "reference" : "ValueSet/VSVFLabInterpretation"
       },
-      "name" : "VF_inferredCVX",
-      "description" : "Navigate to the [ConceptMap VF_inferredCVX](ConceptMap-CMVFinferredCVX.html).",
+      "name" : "VF_LabInterpretation",
+      "description" : "Navigate to [ConceptMap VF_LabInterpretation](ConceptMap-CMVFLabInterpretation.html)",
       "exampleBoolean" : false
     },
     {
@@ -2321,10 +2320,10 @@
         "valueString" : "ValueSet"
       }],
       "reference" : {
-        "reference" : "ValueSet/VSVFLabInterpretation"
+        "reference" : "ValueSet/VSVFLabObservationStatus"
       },
-      "name" : "VF_LabInterpretation",
-      "description" : "Navigate to the [ConceptMap VF_LabInterpretation](ConceptMap-CMVFLabInterpretation.html).",
+      "name" : "VF_LabObservationStatus",
+      "description" : "Navigate to [ConceptMap VF_LabObservationStatus](ConceptMap-CMVFLabObservationStatus.html)",
       "exampleBoolean" : false
     },
     {
@@ -2345,10 +2344,10 @@
         "valueString" : "ValueSet"
       }],
       "reference" : {
-        "reference" : "ValueSet/VSVFLabObservationStatus"
+        "reference" : "ValueSet/VSVFLocationStatus"
       },
-      "name" : "VF_LabObservationStatus",
-      "description" : "Navigate to the [ConceptMap VF_LabObservationStatus](ConceptMap-CMVFLabObservationStatus.html).",
+      "name" : "VF_LocationStatus",
+      "description" : "Navigate to [ConceptMap VF_LocationStatus](ConceptMap-CMVFLocationStatus.html)",
       "exampleBoolean" : false
     },
     {
@@ -2369,10 +2368,10 @@
         "valueString" : "ValueSet"
       }],
       "reference" : {
-        "reference" : "ValueSet/VSVFLocationStatus"
+        "reference" : "ValueSet/VSVFMaritalStatus"
       },
-      "name" : "VF_LocationStatus",
-      "description" : "Navigate to the [ConceptMap VF_LocationStatus](ConceptMap-CMVFLocationStatus.html).",
+      "name" : "VF_MaritalStatus",
+      "description" : "Navigate to [ConceptMap VF_MaritalStatus](ConceptMap-CMVFMaritalStatus.html)",
       "exampleBoolean" : false
     },
     {
@@ -2393,10 +2392,10 @@
         "valueString" : "ValueSet"
       }],
       "reference" : {
-        "reference" : "ValueSet/VSVFMaritalStatus"
+        "reference" : "ValueSet/VSVFOrderPatientClass"
       },
-      "name" : "VF_MaritalStatus",
-      "description" : "Navigate to the [ConceptMap VF_MaritalStatus](ConceptMap-CMVFMaritalStatus.html).",
+      "name" : "VF_OrderPatientClass",
+      "description" : "Navigate to [ConceptMap VF_OrderPatientClass](ConceptMap-CMVFOrderPatientClass.html)",
       "exampleBoolean" : false
     },
     {
@@ -2417,10 +2416,10 @@
         "valueString" : "ValueSet"
       }],
       "reference" : {
-        "reference" : "ValueSet/VSVFOrderPatientClass"
+        "reference" : "ValueSet/VSVFOrganizationIdentifierType"
       },
-      "name" : "VF_OrderPatientClass",
-      "description" : "Navigate to the [ConceptMap VF_OrderPatientClass](ConceptMap-CMVFOrderPatientClass.html).",
+      "name" : "VF_OrganizationIdentifierType",
+      "description" : "Navigate to [ConceptMap VF_OrganizationIdentifierType](ConceptMap-CMVFOrganizationIdentifierType.html)",
       "exampleBoolean" : false
     },
     {
@@ -2441,10 +2440,10 @@
         "valueString" : "ValueSet"
       }],
       "reference" : {
-        "reference" : "ValueSet/VSVFOrganizationIdentifierType"
+        "reference" : "ValueSet/VSVFOutMedRequestStatus"
       },
-      "name" : "VF_OrganizationIdentifierType",
-      "description" : "Navigate to the [ConceptMap VF_OrganizationIdentifierType](ConceptMap-CMVFOrganizationIdentifierType.html).",
+      "name" : "VF_OutMedRequestStatus",
+      "description" : "Navigate to [ConceptMap VF_OutMedRequestStatus](ConceptMap-CMVFOutMedRequestStatus.html)",
       "exampleBoolean" : false
     },
     {
@@ -2465,10 +2464,10 @@
         "valueString" : "ValueSet"
       }],
       "reference" : {
-        "reference" : "ValueSet/VSVFOutMedRequestStatus"
+        "reference" : "ValueSet/VSVFPersonIdentifierType"
       },
-      "name" : "VF_OutMedRequestStatus",
-      "description" : "Navigate to the [ConceptMap VF_OutMedRequestStatus](ConceptMap-CMVFOutMedRequestStatus.html).",
+      "name" : "VF_PersonIdentifierType",
+      "description" : "Navigate to [ConceptMap VF_PersonIdentifierType](ConceptMap-CMVFPersonIdentifierType.html)",
       "exampleBoolean" : false
     },
     {
@@ -2489,10 +2488,10 @@
         "valueString" : "ValueSet"
       }],
       "reference" : {
-        "reference" : "ValueSet/VSVFPersonIdentifierType"
+        "reference" : "ValueSet/VSVFPharmacyPersonType"
       },
-      "name" : "VF_PersonIdentifierType",
-      "description" : "Navigate to the [ConceptMap VF_PersonIdentifierType](ConceptMap-CMVFPersonIdentifierType.html).",
+      "name" : "VF_PharmacyPersonType",
+      "description" : "Navigate to [ConceptMap VF_PharmacyPersonType](ConceptMap-CMVFPharmacyPersonType.html)",
       "exampleBoolean" : false
     },
     {
@@ -2513,10 +2512,10 @@
         "valueString" : "ValueSet"
       }],
       "reference" : {
-        "reference" : "ValueSet/VSVFPharmacyPersonType"
+        "reference" : "ValueSet/VSVFPositiveNegative"
       },
-      "name" : "VF_PharmacyPersonType",
-      "description" : "Navigate to the [ConceptMap VF_PharmacyPersonType](ConceptMap-CMVFPharmacyPersonType.html).",
+      "name" : "VF_PositiveNegative",
+      "description" : "Navigate to [ConceptMap VF_PositiveNegative](ConceptMap-CMVFPositiveNegative.html)",
       "exampleBoolean" : false
     },
     {
@@ -2537,10 +2536,10 @@
         "valueString" : "ValueSet"
       }],
       "reference" : {
-        "reference" : "ValueSet/VSVFPositiveNegative"
+        "reference" : "ValueSet/VSVFPractitionerCountry"
       },
-      "name" : "VF_PositiveNegative",
-      "description" : "Navigate to the [ConceptMap VF_PositiveNegative](ConceptMap-CMVFPositiveNegative.html).",
+      "name" : "VF_PractitionerCountry",
+      "description" : "Navigate to [ConceptMap VF_PractitionerCountry](ConceptMap-CMVFPractitionerCountry.html)",
       "exampleBoolean" : false
     },
     {
@@ -2561,10 +2560,10 @@
         "valueString" : "ValueSet"
       }],
       "reference" : {
-        "reference" : "ValueSet/VSVFPractitionerCountry"
+        "reference" : "ValueSet/VSVFproblemStatus"
       },
-      "name" : "VF_PractitionerCountry",
-      "description" : "Navigate to the [ConceptMap VF_PractitionerCountry](ConceptMap-CMVFPractitionerCountry.html).",
+      "name" : "VF_problemStatus",
+      "description" : "Navigate to [ConceptMap VF_problemStatus](ConceptMap-CMVFproblemStatus.html)",
       "exampleBoolean" : false
     },
     {
@@ -2585,10 +2584,10 @@
         "valueString" : "ValueSet"
       }],
       "reference" : {
-        "reference" : "ValueSet/VSVFproblemStatus"
+        "reference" : "ValueSet/VSVFproblemVerificationStatus"
       },
-      "name" : "VF_problemStatus",
-      "description" : "Navigate to the [ConceptMap VF_problemStatus](ConceptMap-CMVFproblemStatus.html).",
+      "name" : "VF_problemVerificationStatus",
+      "description" : "Navigate to [ConceptMap VF_problemVerificationStatus](ConceptMap-CMVFproblemVerificationStatus.html)",
       "exampleBoolean" : false
     },
     {
@@ -2609,10 +2608,10 @@
         "valueString" : "ValueSet"
       }],
       "reference" : {
-        "reference" : "ValueSet/VSVFproblemVerificationStatus"
+        "reference" : "ValueSet/VSVFProcedureCodeSystem"
       },
-      "name" : "VF_problemVerificationStatus",
-      "description" : "Navigate to the [ConceptMap VF_problemVerificationStatus](ConceptMap-CMVFproblemVerificationStatus.html).",
+      "name" : "VF_ProcedureCodeSystem",
+      "description" : "Navigate to [ConceptMap VF_ProcedureCodeSystem](ConceptMap-CMVFProcedureCodeSystem.html)",
       "exampleBoolean" : false
     },
     {
@@ -2633,10 +2632,10 @@
         "valueString" : "ValueSet"
       }],
       "reference" : {
-        "reference" : "ValueSet/VSVFProcedureCodeSystem"
+        "reference" : "ValueSet/VSVFproviderGender"
       },
-      "name" : "VF_ProcedureCodeSystem",
-      "description" : "Navigate to the [ConceptMap VF_ProcedureCodeSystem](ConceptMap-CMVFProcedureCodeSystem.html).",
+      "name" : "VF_providerGender",
+      "description" : "Navigate to [ConceptMap VF_providerGender](ConceptMap-CMVFproviderGender.html)",
       "exampleBoolean" : false
     },
     {
@@ -2657,10 +2656,10 @@
         "valueString" : "ValueSet"
       }],
       "reference" : {
-        "reference" : "ValueSet/VSVFproviderGender"
+        "reference" : "ValueSet/VSVFraceCategory"
       },
-      "name" : "VF_providerGender",
-      "description" : "Navigate to the [ConceptMap VF_providerGender](ConceptMap-CMVFproviderGender.html).",
+      "name" : "VF_raceCategory",
+      "description" : "Navigate to [ConceptMap VF_raceCategory](ConceptMap-CMVFraceCategory.html)",
       "exampleBoolean" : false
     },
     {
@@ -2681,10 +2680,10 @@
         "valueString" : "ValueSet"
       }],
       "reference" : {
-        "reference" : "ValueSet/VSVFraceCategory"
+        "reference" : "ValueSet/VSVFRadiologyProcedureStatus"
       },
-      "name" : "VF_raceCategory",
-      "description" : "Navigate to the [ConceptMap VF_raceCategory](ConceptMap-CMVFraceCategory.html).",
+      "name" : "VF_RadiologyProcedureStatus",
+      "description" : "Navigate to [ConceptMap VF_RadiologyProcedureStatus](ConceptMap-CMVFRadiologyProcedureStatus.html)",
       "exampleBoolean" : false
     },
     {
@@ -2705,10 +2704,10 @@
         "valueString" : "ValueSet"
       }],
       "reference" : {
-        "reference" : "ValueSet/VSVFRadiologyProcedureStatus"
+        "reference" : "ValueSet/VSVFReligion"
       },
-      "name" : "VF_RadiologyProcedureStatus",
-      "description" : "Navigate to the [ConceptMap VF_RadiologyProcedureStatus](ConceptMap-CMVFRadiologyProcedureStatus.html).",
+      "name" : "VF_Religion",
+      "description" : "Navigate to [ConceptMap VF_Religion](ConceptMap-CMVFReligion.html)",
       "exampleBoolean" : false
     },
     {
@@ -2729,10 +2728,10 @@
         "valueString" : "ValueSet"
       }],
       "reference" : {
-        "reference" : "ValueSet/VSVFReligion"
+        "reference" : "ValueSet/VSVFSmokingStatus"
       },
-      "name" : "VF_Religion",
-      "description" : "Navigate to the [ConceptMap VF_Religion](ConceptMap-CMVFReligion.html).",
+      "name" : "VF_SmokingStatus",
+      "description" : "Navigate to [ConceptMap VF_SmokingStatus](ConceptMap-CMVFSmokingStatus.html)",
       "exampleBoolean" : false
     },
     {
@@ -2753,10 +2752,10 @@
         "valueString" : "ValueSet"
       }],
       "reference" : {
-        "reference" : "ValueSet/VSVFSmokingStatus"
+        "reference" : "ValueSet/VSVFSourceOfAdmission"
       },
-      "name" : "VF_SmokingStatus",
-      "description" : "Navigate to the [ConceptMap VF_SmokingStatus](ConceptMap-CMVFSmokingStatus.html).",
+      "name" : "VF_SourceOfAdmission",
+      "description" : "Navigate to [ConceptMap VF_SourceOfAdmission](ConceptMap-CMVFSourceOfAdmission.html)",
       "exampleBoolean" : false
     },
     {
@@ -2777,10 +2776,34 @@
         "valueString" : "ValueSet"
       }],
       "reference" : {
-        "reference" : "ValueSet/VSVFSourceOfAdmission"
+        "reference" : "ValueSet/VSVFVitalsBodySite"
       },
-      "name" : "VF_SourceOfAdmission",
-      "description" : "Navigate to the [ConceptMap VF_SourceOfAdmission](ConceptMap-CMVFSourceOfAdmission.html).",
+      "name" : "VF_VitalsBodySite",
+      "description" : "Navigate to [ConceptMap VF_VitalsBodySite](ConceptMap-CMVFVitalsBodySite.html)",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/CMVFVitalsBodySite"
+      },
+      "name" : "VF_VitalsBodySite",
+      "description" : "Terminology Maps VF_VitalsBodySite",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/VSVFVitalsCodes"
+      },
+      "name" : "VF_VitalsCodes",
+      "description" : "Navigate to [ConceptMap VF_VitalsCodes](ConceptMap-CMVFVitalsCodes.html)",
       "exampleBoolean" : false
     },
     {
@@ -2801,10 +2824,34 @@
         "valueString" : "ValueSet"
       }],
       "reference" : {
-        "reference" : "ValueSet/VSVFVitalsCodes"
+        "reference" : "ValueSet/VSVFVitalsCuffSize"
       },
-      "name" : "VF_VitalsCodes",
-      "description" : "Navigate to the [ConceptMap VF_VitalsCodes](ConceptMap-CMVFVitalsCodes.html).",
+      "name" : "VF_VitalsCuffSize",
+      "description" : "Navigate to [ConceptMap VF_VitalsCuffSize](ConceptMap-CMVFVitalsCuffSize.html)",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/CMVFVitalsCuffSize"
+      },
+      "name" : "VF_VitalsCuffSize",
+      "description" : "Terminology Maps VF_VitalsCuffSize",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/VSVFVitalsDevice"
+      },
+      "name" : "VF_VitalsDevice",
+      "description" : "Navigate to [ConceptMap VF_VitalsDevice](ConceptMap-CMVFVitalsDevice.html)",
       "exampleBoolean" : false
     },
     {
@@ -2825,10 +2872,10 @@
         "valueString" : "ValueSet"
       }],
       "reference" : {
-        "reference" : "ValueSet/VSVFVitalsDevice"
+        "reference" : "ValueSet/VSVFVitalsLaterality"
       },
-      "name" : "VF_VitalsDevice",
-      "description" : "Navigate to the [ConceptMap VF_VitalsDevice](ConceptMap-CMVFVitalsDevice.html).",
+      "name" : "VF_VitalsLaterality",
+      "description" : "Navigate to [ConceptMap VF_VitalsLaterality](ConceptMap-CMVFVitalsLaterality.html)",
       "exampleBoolean" : false
     },
     {
@@ -2849,10 +2896,34 @@
         "valueString" : "ValueSet"
       }],
       "reference" : {
-        "reference" : "ValueSet/VSVFVitalsLaterality"
+        "reference" : "ValueSet/VSVFVitalsMeasurementDevice"
       },
-      "name" : "VF_VitalsLaterality",
-      "description" : "Navigate to the [ConceptMap VF_VitalsLaterality](ConceptMap-CMVFVitalsLaterality.html).",
+      "name" : "VF_VitalsMeasurementDevice",
+      "description" : "Navigate to [ConceptMap VF_VitalsMeasurementDevice](ConceptMap-CMVFVitalsMeasurementDevice.html)",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/CMVFVitalsMeasurementDevice"
+      },
+      "name" : "VF_VitalsMeasurementDevice",
+      "description" : "Terminology Maps VF_VitalsMeasurementDevice",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/VSVFVitalsMethod"
+      },
+      "name" : "VF_VitalsMethod",
+      "description" : "Navigate to [ConceptMap VF_VitalsMethod](ConceptMap-CMVFVitalsMethod.html)",
       "exampleBoolean" : false
     },
     {
@@ -2873,10 +2944,10 @@
         "valueString" : "ValueSet"
       }],
       "reference" : {
-        "reference" : "ValueSet/VSVFVitalsMethod"
+        "reference" : "ValueSet/VSVFVitalsPosition"
       },
-      "name" : "VF_VitalsMethod",
-      "description" : "Navigate to the [ConceptMap VF_VitalsMethod](ConceptMap-CMVFVitalsMethod.html).",
+      "name" : "VF_VitalsPosition",
+      "description" : "Navigate to [ConceptMap VF_VitalsPosition](ConceptMap-CMVFVitalsPosition.html)",
       "exampleBoolean" : false
     },
     {
@@ -2897,10 +2968,10 @@
         "valueString" : "ValueSet"
       }],
       "reference" : {
-        "reference" : "ValueSet/VSVFVitalsPosition"
+        "reference" : "ValueSet/VSVFVitalsQualifyingDevice"
       },
-      "name" : "VF_VitalsPosition",
-      "description" : "Navigate to the [ConceptMap VF_VitalsPosition](ConceptMap-CMVFVitalsPosition.html).",
+      "name" : "VF_VitalsQualifyingDevice",
+      "description" : "Navigate to [ConceptMap VF_VitalsQualifyingDevice](ConceptMap-CMVFVitalsQualifyingDevice.html)",
       "exampleBoolean" : false
     },
     {
@@ -2909,10 +2980,10 @@
         "valueString" : "ConceptMap"
       }],
       "reference" : {
-        "reference" : "ConceptMap/CMVFVitalsSite"
+        "reference" : "ConceptMap/CMVFVitalsQualifyingDevice"
       },
-      "name" : "VF_VitalsSite",
-      "description" : "Terminology Maps VF_VitalsSite",
+      "name" : "VF_VitalsQualifyingDevice",
+      "description" : "Terminology Maps VF_VitalsQualifyingDevice",
       "exampleBoolean" : false
     },
     {
@@ -2921,10 +2992,10 @@
         "valueString" : "ValueSet"
       }],
       "reference" : {
-        "reference" : "ValueSet/VSVFVitalsSite"
+        "reference" : "ValueSet/VSVFVitalsUnits"
       },
-      "name" : "VF_VitalsSite",
-      "description" : "Navigate to the [ConceptMap VF_VitalsSite](ConceptMap-CMVFVitalsSite.html).",
+      "name" : "VF_VitalsUnits",
+      "description" : "Navigate to [ConceptMap VF_VitalsUnits](ConceptMap-CMVFVitalsUnits.html)",
       "exampleBoolean" : false
     },
     {
@@ -2945,10 +3016,10 @@
         "valueString" : "ValueSet"
       }],
       "reference" : {
-        "reference" : "ValueSet/VSVFVitalsUnits"
+        "reference" : "ValueSet/VSVFYesNo10"
       },
-      "name" : "VF_VitalsUnits",
-      "description" : "Navigate to the [ConceptMap VF_VitalsUnits](ConceptMap-CMVFVitalsUnits.html).",
+      "name" : "VF_YesNo10",
+      "description" : "Navigate to [ConceptMap VF_YesNo10](ConceptMap-CMVFYesNo10.html)",
       "exampleBoolean" : false
     },
     {
@@ -2969,10 +3040,10 @@
         "valueString" : "ValueSet"
       }],
       "reference" : {
-        "reference" : "ValueSet/VSVFYesNo10"
+        "reference" : "ValueSet/VSVistaNCPDPCoverageRelationship"
       },
-      "name" : "VF_YesNo10",
-      "description" : "Navigate to the [ConceptMap VF_YesNo10](ConceptMap-CMVFYesNo10.html).",
+      "name" : "Vista_NCPDPCoverageRelationship",
+      "description" : "Navigate to [ConceptMap Vista_NCPDPCoverageRelationship](ConceptMap-CMVistaNCPDPCoverageRelationship.html)",
       "exampleBoolean" : false
     },
     {
@@ -2990,14 +3061,15 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ValueSet"
+        "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
-        "reference" : "ValueSet/VSVistaNCPDPCoverageRelationship"
+        "reference" : "StructureDefinition/VitalSignsBP"
       },
-      "name" : "Vista_NCPDPCoverageRelationship",
-      "description" : "Navigate to the [ConceptMap Vista_NCPDPCoverageRelationship](ConceptMap-CMVistaNCPDPCoverageRelationship.html).",
-      "exampleBoolean" : false
+      "name" : "Vital Signs BP",
+      "description" : "This StructureDefinition contains the maps for VistA file GMRV VITAL MEASUREMENT (#120.5) to us-core-blood-pressure",
+      "exampleBoolean" : false,
+      "groupingId" : "group4"
     },
     {
       "extension" : [{
@@ -3044,10 +3116,10 @@
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/VitalSignsBP"
+        "reference" : "StructureDefinition/VitalSignsSpO2"
       },
-      "name" : "Vital Signs: BP",
-      "description" : "This StructureDefinition contains the maps for VistA file GMRV VITAL MEASUREMENT (#120.5) to us-core-blood-pressure",
+      "name" : "Vital Signs SpO2",
+      "description" : "This StructureDefinition contains the maps for VistA file GMRV VITAL MEASUREMENT (#120.5) to us-core-pulse-oximetry",
       "exampleBoolean" : false,
       "groupingId" : "group4"
     },
@@ -3061,19 +3133,6 @@
       },
       "name" : "Vital Signs: CPM",
       "description" : "This StructureDefinition contains the maps for VistA file GMRV VITAL MEASUREMENT (#120.5) to us-core-vital-signs",
-      "exampleBoolean" : false,
-      "groupingId" : "group4"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:resource"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/VitalSignsSpO2"
-      },
-      "name" : "Vital Signs: SpO2",
-      "description" : "This StructureDefinition contains the maps for VistA file GMRV VITAL MEASUREMENT (#120.5) to us-core-pulse-oximetry",
       "exampleBoolean" : false,
       "groupingId" : "group4"
     }],

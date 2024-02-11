@@ -6,7 +6,6 @@ Description: "This StructureDefinition contains the maps for VistA file ECHO (#6
 * ^status = #draft
 * identifier.value and status and subject and effectiveDateTime and issued and performer and valueString and interpretation and note MS
 * status from http://va.gov/fhir/ValueSet/VSVFImageStatus
-* performer only Reference(http://hl7.org/fhir/StructureDefinition/Practitioner)
 * interpretation from http://va.gov/fhir/ValueSet/VSVFImageInterpretation
 
 Mapping: vista-to-ObservationImagingResultEcho

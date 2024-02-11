@@ -1,9 +1,7 @@
-Instance: VSVFICDCodingSystems
-InstanceOf: ValueSet
-Usage: #definition
-* url = "http://va.gov/fhir/ValueSet/VSVFICDCodingSystems"
-* name = "VF_ICDCodingSystems"
-* title = "VF_ICDCodingSystems"
-* status = #active
-* experimental = true
-* description = "Navigate to the [ConceptMap VF_ICDCodingSystems](ConceptMap-CMVFICDCodingSystems.html)."
+ValueSet: VSVFICDCodingSystems
+Title: "VF_ICDCodingSystems"
+Description: "Navigate to [ConceptMap VF_ICDCodingSystems](ConceptMap-CMVFICDCodingSystems.html)"
+* include http://va.gov/terminology/vistaDefinedElements/80.4-.01#ICD-10-CM 
+* include http://va.gov/terminology/vistaDefinedElements/80.4-.01#ICD-9-CM 
+* include http://va.gov/terminology/vistaDefinedElements/80.4-.01#ICD-9_Proc 
+* include http://va.gov/terminology/vistaDefinedElements/80.4-.01#ICD-10-PCS 

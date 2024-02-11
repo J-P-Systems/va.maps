@@ -1,9 +1,10 @@
-Instance: VSVFencounterProblemVerificationStatus
-InstanceOf: ValueSet
-Usage: #definition
-* url = "http://va.gov/fhir/ValueSet/VSVFencounterProblemVerificationStatus"
-* name = "VF_encounterProblemVerificationStatus"
-* title = "VF_encounterProblemVerificationStatus"
-* status = #active
-* experimental = true
-* description = "Navigate to the [ConceptMap VF_encounterProblemVerificationStatus](ConceptMap-CMVFencounterProblemVerificationStatus.html)."
+ValueSet: VSVFencounterProblemVerificationStatus
+Title: "VF_encounterProblemVerificationStatus"
+Description: "Navigate to [ConceptMap VF_encounterProblemVerificationStatus](ConceptMap-CMVFencounterProblemVerificationStatus.html)"
+* include http://va.gov/terminology/vistaDefinedElements/9000010.07-.06#C "CONSIDER"
+* include http://va.gov/terminology/vistaDefinedElements/9000010.07-.06#D "DOUBTFUL"
+* include http://va.gov/terminology/vistaDefinedElements/9000010.07-.06#F "FOLLOW UP"
+* include http://va.gov/terminology/vistaDefinedElements/9000010.07-.06#M "MAYBE, POSSIBLE, PERHAPS"
+* include http://va.gov/terminology/vistaDefinedElements/9000010.07-.06#P "PROBABLE"
+* include http://va.gov/terminology/vistaDefinedElements/9000010.07-.06#O "RULE OUT"
+* include http://va.gov/terminology/vistaDefinedElements/9000010.07-.06#S "SUSPECT, SUSPICIOUS"

@@ -1,9 +1,9 @@
-Instance: VSVFRadiologyProcedureStatus
-InstanceOf: ValueSet
-Usage: #definition
-* url = "http://va.gov/fhir/ValueSet/VSVFRadiologyProcedureStatus"
-* name = "VF_RadiologyProcedureStatus"
-* title = "VF_RadiologyProcedureStatus"
-* status = #active
-* experimental = true
-* description = "Navigate to the [ConceptMap VF_RadiologyProcedureStatus](ConceptMap-CMVFRadiologyProcedureStatus.html)."
+ValueSet: VSVFRadiologyProcedureStatus
+Title: "VF_RadiologyProcedureStatus"
+Description: "Navigate to [ConceptMap VF_RadiologyProcedureStatus](ConceptMap-CMVFRadiologyProcedureStatus.html)"
+* include urn:undefined#null "CALLED FOR EXAM"
+* include urn:undefined#null "CANCELLED"
+* include urn:undefined#null "COMPLETE"
+* include urn:undefined#null "EXAMINED"
+* include urn:undefined#null "TRANSCRIBED"
+* include urn:undefined#null "WAITING FOR EXAM"

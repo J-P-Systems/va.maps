@@ -4,12 +4,14 @@ Id: MedicationDispensePartial
 Title: "MedicationDispense: Partial"
 Description: "This StructureDefinition contains the maps for VistA file PRESCRIPTION (#52) to MedicationDispense"
 * ^status = #draft
-* authorizingPrescription and daysSupply and destination.display and dosageInstruction.doseAndRate.doseQuantity.unit and dosageInstruction.doseAndRate.doseQuantity.code and dosageInstruction.doseAndRate.doseQuantity.value and dosageInstruction.patientInstruction and dosageInstruction.text and location and medicationCodeableConcept.coding.code and medicationCodeableConcept.text and quantity.value and status and subject and whenHandedOver and whenPrepared MS
+* type and destination.display and authorizingPrescription and daysSupply and dosageInstruction.doseAndRate.doseQuantity.unit and dosageInstruction.doseAndRate.doseQuantity.code and dosageInstruction.doseAndRate.doseQuantity.value and dosageInstruction.patientInstruction and dosageInstruction.text and location and medicationCodeableConcept.coding.code and medicationCodeableConcept.text and quantity.value and status and subject and whenHandedOver and whenPrepared and performer.actor and note.text MS
 
 Mapping: vista-to-MedicationDispensePartial
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: MedicationDispensePartial
+* type -> "1710: fixed value = PF"
+* destination.display -> "1713: source value from PRESCRIPTION - PARTIAL DATE > PARTIAL DATE - MAIL/WINDOW (#52-60 > 52.2-.02)"
 * authorizingPrescription -> "1565: source value from PRESCRIPTION - PLACER ORDER # (#52-39.3)"
 * daysSupply -> "828: source value from PRESCRIPTION - PARTIAL DATE > PARTIAL DATE- DAYS SUPPLY (#52-60 > 52.2-.041)"
 * destination.display -> "837: source value from PRESCRIPTION - PARTIAL DATE > PARTIAL DATE - MAIL/WINDOW (#52-60 > 52.2-.02)"
@@ -27,6 +29,8 @@ Source: MedicationDispensePartial
 * subject -> "1563: reference from PRESCRIPTION - PATIENT (#52-2)"
 * whenHandedOver -> "834: source value from PRESCRIPTION - PARTIAL DATE > PARTIAL DATE - RELEASED DATE/TIME (#52-60 > 52.2-8)"
 * whenPrepared -> "831: source value from PRESCRIPTION - PARTIAL DATE > PARTIAL DATE - PARTIAL DATE (#52-60 > 52.2-.01)"
+* performer.actor -> "1714: reference from PRESCRIPTION - PARTIAL DATE > PARTIAL DATE - DIVISION (#52-60 > 52.2-.09)"
+* note.text -> "1717: source value from PRESCRIPTION - PARTIAL DATE > PARTIAL DATE - REMARKS (#52-60 > 52.2-.03)"
 
 Mapping: cdw-to-MedicationDispensePartial
 Id: cdw

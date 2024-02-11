@@ -10,21 +10,21 @@ Usage: #definition
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFCommunicationQualifier"
 * group[0].source = "http://www.va.gov/Terminology/VistADefinedTerms/365.26-.04"
 * group[=].target = "urn:oid:2.16.840.1.113883.3.8901.3.1.3658026.8004"
-* group[=].element[0].code = #"EM Electronic Mail"
+* group[=].element[0].code = #EM_Electronic_Mail
 * group[=].element[=].target.code = #email
 * group[=].element[=].target.equivalence = #equivalent
-* group[=].element[+].code = #"FX Facsimile"
+* group[=].element[+].code = #FX_Facsimile
 * group[=].element[=].target.code = #fax
 * group[=].element[=].target.equivalence = #equivalent
-* group[=].element[+].code = #"TE Telephone"
+* group[=].element[+].code = #TE_Telephone
 * group[=].element[=].target.code = #phone
 * group[=].element[=].target.equivalence = #equivalent
-* group[=].element[+].code = #"EX Telephone Extension"
+* group[=].element[+].code = #EX_Telephone_Extension
 * group[=].element[=].target.code = #phone
 * group[=].element[=].target.equivalence = #equivalent
-* group[=].element[+].code = #"HP Home Phone Number"
+* group[=].element[+].code = #HP_Home_Phone_Number
 * group[=].element[=].target.code = #phone/home
 * group[=].element[=].target.equivalence = #equivalent
-* group[=].element[+].code = #"WP Work Phone Number"
+* group[=].element[+].code = #WP_Work_Phone_Number
 * group[=].element[=].target.code = #phone/work
 * group[=].element[=].target.equivalence = #equivalent

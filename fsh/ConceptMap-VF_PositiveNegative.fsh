@@ -8,7 +8,7 @@ Usage: #definition
 * experimental = true
 * description = "Terminology Maps VF_PositiveNegative"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFPositiveNegative"
-* group[0].source = "http://va.gov/terminology/vistaDefinedElements/63.05-11.57"
+* group[0].source = "undefined"
 * group[=].target = "http://snomed.info/sct"
 * group[=].element[0].code = #N
 * group[=].element[=].display = "NEGATIVE"

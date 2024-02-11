@@ -4,12 +4,14 @@ Id: MedicationDispenseRefill
 Title: "MedicationDispense: Refill"
 Description: "This StructureDefinition contains the maps for VistA file PRESCRIPTION (#52) to MedicationDispense"
 * ^status = #draft
-* authorizingPrescription and daysSupply and destination.display and dosageInstruction.doseAndRate.doseQuantity.unit and dosageInstruction.doseAndRate.doseQuantity.code and dosageInstruction.doseAndRate.doseQuantity.value and dosageInstruction.patientInstruction and dosageInstruction.text and location and medicationCodeableConcept.coding.code and medicationCodeableConcept.text and quantity.value and status and subject and whenHandedOver and whenPrepared MS
+* type and destination.display and authorizingPrescription and daysSupply and dosageInstruction.doseAndRate.doseQuantity.unit and dosageInstruction.doseAndRate.doseQuantity.code and dosageInstruction.doseAndRate.doseQuantity.value and dosageInstruction.patientInstruction and dosageInstruction.text and location and medicationCodeableConcept.coding.code and medicationCodeableConcept.text and quantity.value and status and subject and whenHandedOver and whenPrepared and performer.actor and note.text MS
 
 Mapping: vista-to-MedicationDispenseRefill
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: MedicationDispenseRefill
+* type -> "1709: fixed value = RF"
+* destination.display -> "1712: source value from PRESCRIPTION - REFILL > REFILL - MAIL/WINDOW/PARK (#52-52 > 52.1-.01)"
 * authorizingPrescription -> "1553: source value from PRESCRIPTION - PLACER ORDER # (#52-39.3)"
 * daysSupply -> "827: source value from PRESCRIPTION - REFILL > REFILL - DAYS SUPPLY (#52-52 > 52.1-1.1)"
 * destination.display -> "836: source value from PRESCRIPTION - REFILL > REFILL - MAIL/WINDOW (#52-52 > 52.1-2)"
@@ -28,6 +30,8 @@ Source: MedicationDispenseRefill
 * subject -> "1551: reference from PRESCRIPTION - PATIENT (#52-2)"
 * whenHandedOver -> "833: source value from PRESCRIPTION - REFILL > REFILL - RELEASED DATE/TIME (#52-52 > 52.1-17)"
 * whenPrepared -> "830: source value from PRESCRIPTION - REFILL > REFILL - REFILL DATE (#52-52 > 52.1-.01)"
+* performer.actor -> "1715: reference from PRESCRIPTION - REFILL > REFILL - DIVISION (#52-52 > 52.1-8)"
+* note.text -> "1718: source value from PRESCRIPTION - REFILL > REFILL - REMARKS (#52-52 > 52.1-3)"
 
 Mapping: cdw-to-MedicationDispenseRefill
 Id: cdw

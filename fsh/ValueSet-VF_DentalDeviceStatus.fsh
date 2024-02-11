@@ -1,9 +1,6 @@
-Instance: VSVFDentalDeviceStatus
-InstanceOf: ValueSet
-Usage: #definition
-* url = "http://va.gov/fhir/ValueSet/VSVFDentalDeviceStatus"
-* name = "VF_DentalDeviceStatus"
-* title = "VF_DentalDeviceStatus"
-* status = #active
-* experimental = true
-* description = "Navigate to the [ConceptMap VF_DentalDeviceStatus](ConceptMap-CMVFDentalDeviceStatus.html)."
+ValueSet: VSVFDentalDeviceStatus
+Title: "VF_DentalDeviceStatus"
+Description: "Navigate to [ConceptMap VF_DentalDeviceStatus](ConceptMap-CMVFDentalDeviceStatus.html)"
+* include http://va.gov/terminology/vistaDefinedTerms/228.9-.08#2 "Deleted"
+* include http://va.gov/terminology/vistaDefinedTerms/228.9-.08#0 "Existing"
+* include http://va.gov/terminology/vistaDefinedTerms/228.9-.08#1 "Removed"

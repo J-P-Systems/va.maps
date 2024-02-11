@@ -5,7 +5,6 @@ Title: "Observation Imaging Result: Rad/Nuc"
 Description: "This StructureDefinition contains the maps for VistA file RAD/NUC MED REPORTS (#74) to us-core-observation-imaging"
 * ^status = #draft
 * identifier.value and partOf and status and subject and effectiveDateTime and issued and performer and valueString MS
-* partOf only Reference(http://hl7.org/fhir/StructureDefinition/Procedure)
 * status from http://va.gov/fhir/ValueSet/VSVFImageStatusRadNuc
 
 Mapping: vista-to-ObservationImagingResultRadNuc

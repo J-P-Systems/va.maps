@@ -1,9 +1,9 @@
-Instance: VSVFExamStatus
-InstanceOf: ValueSet
-Usage: #definition
-* url = "http://va.gov/fhir/ValueSet/VSVFExamStatus"
-* name = "VF_ExamStatus"
-* title = "VF_ExamStatus"
-* status = #active
-* experimental = true
-* description = "Navigate to the [ConceptMap VF_ExamStatus](ConceptMap-CMVFExamStatus.html)."
+ValueSet: VSVFExamStatus
+Title: "VF_ExamStatus"
+Description: "Navigate to [ConceptMap VF_ExamStatus](ConceptMap-CMVFExamStatus.html)"
+* include urn:undefined#X "CANCELLED BY MAS"
+* include urn:undefined#RX "CANCELLED BY RO"
+* include urn:undefined#C "COMPLETED"
+* include urn:undefined#O "OPEN"
+* include urn:undefined#O "OPEN"
+* include urn:undefined#T 

@@ -1,9 +1,10 @@
-Instance: VSVFSmokingStatus
-InstanceOf: ValueSet
-Usage: #definition
-* url = "http://va.gov/fhir/ValueSet/VSVFSmokingStatus"
-* name = "VF_SmokingStatus"
-* title = "VF_SmokingStatus"
-* status = #active
-* experimental = true
-* description = "Navigate to the [ConceptMap VF_SmokingStatus](ConceptMap-CMVFSmokingStatus.html)."
+ValueSet: VSVFSmokingStatus
+Title: "VF_SmokingStatus"
+Description: "Navigate to [ConceptMap VF_SmokingStatus](ConceptMap-CMVFSmokingStatus.html)"
+* include http://va.gov/terminology/vistaDefinedTerms/9999999.64#5316637 "CURRENT SMOKER"
+* include http://va.gov/terminology/vistaDefinedTerms/9999999.64#5316643 "CURRENT TOBACCO USE"
+* include http://va.gov/terminology/vistaDefinedTerms/9999999.64#5316635 "FORMER SMOKER - <100 LIFETIME CIGARETTES"
+* include http://va.gov/terminology/vistaDefinedTerms/9999999.64#5316641 "HF V9 CURRENT SMOKER"
+* include http://va.gov/terminology/vistaDefinedTerms/9999999.64#5316645 "LIFETIME NON-SMOKER"
+* include http://va.gov/terminology/vistaDefinedTerms/9999999.64#5316639 "ONS RA MH CALMING ID-SMOKING"
+* include http://va.gov/terminology/vistaDefinedTerms/9999999.64#5316633 "PREVIOUS SMOKER"

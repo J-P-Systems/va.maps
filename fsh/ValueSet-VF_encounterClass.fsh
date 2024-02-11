@@ -1,9 +1,5 @@
-Instance: VSVFencounterClass
-InstanceOf: ValueSet
-Usage: #definition
-* url = "http://va.gov/fhir/ValueSet/VSVFencounterClass"
-* name = "VF_encounterClass"
-* title = "VF_encounterClass"
-* status = #active
-* experimental = true
-* description = "Navigate to the [ConceptMap VF_encounterClass](ConceptMap-CMVFencounterClass.html)."
+ValueSet: VSVFencounterClass
+Title: "VF_encounterClass"
+Description: "Navigate to [ConceptMap VF_encounterClass](ConceptMap-CMVFencounterClass.html)"
+* include urn:undefined#1 "IN"
+* include urn:undefined#0 "OUT"

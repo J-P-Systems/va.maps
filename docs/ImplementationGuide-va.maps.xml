@@ -11,7 +11,7 @@
   <name value="VAMapsIG"/>
   <title value="US Veterans Administration FHIR Map Set Implementation Guide"/>
   <status value="draft"/>
-  <date value="2024-02-09T16:38:59+00:00"/>
+  <date value="2024-02-11T14:24:24+00:00"/>
   <publisher value="VA"/>
   <contact>
     <name value="VA"/>
@@ -569,10 +569,10 @@
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/CPMVitalSigns"/>
+        <reference value="StructureDefinition/DocumentReference"/>
       </reference>
-      <name value="CPM Vital Signs"/>
-      <description value="This StructureDefinition contains the maps for VistA file GMRV VITAL MEASUREMENT (#120.5) to us-core-vital-signs"/>
+      <name value="Document Reference"/>
+      <description value="This StructureDefinition contains the maps for VistA file TIU DOCUMENT (#8925) to us-core-documentreference"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -604,9 +604,21 @@
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/EncounterInpatient"/>
+        <reference value="StructureDefinition/EncounterInpatientCondition"/>
       </reference>
-      <name value="Encounter: Inpatient"/>
+      <name value="Encounter: Inpatient Condition"/>
+      <description value="This StructureDefinition contains the maps for VistA file PTF (#45) to us-core-condition-problems-health-concerns"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="group7"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/EncounterInpatientEncounter"/>
+      </reference>
+      <name value="Encounter: Inpatient Encounter"/>
       <description value="This StructureDefinition contains the maps for VistA file PTF (#45) to us-core-encounter"/>
       <exampleBoolean value="false"/>
       <groupingId value="group7"/>
@@ -808,18 +820,6 @@
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/LabObservationCytopathologyObservation"/>
-      </reference>
-      <name value="Lab Observation: Cytopathology Observation"/>
-      <description value="This StructureDefinition contains the maps for VistA file CYTOPATHOLOGY (#63.09) to us-core-observation-lab"/>
-      <exampleBoolean value="false"/>
-      <groupingId value="group5"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:resource"/>
-      </extension>
-      <reference>
         <reference value="StructureDefinition/LabObservationCytopathologySpecimen"/>
       </reference>
       <name value="Lab Observation: Cytopathology Specimen"/>
@@ -836,18 +836,6 @@
       </reference>
       <name value="Lab Observation: Electron Microscopy DiagnosticReport"/>
       <description value="This StructureDefinition contains the maps for VistA file EM (#63.02) to us-core-diagnosticreport-lab"/>
-      <exampleBoolean value="false"/>
-      <groupingId value="group5"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:resource"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/LabObservationElectronMicroscopyObservation"/>
-      </reference>
-      <name value="Lab Observation: Electron Microscopy Observation"/>
-      <description value="This StructureDefinition contains the maps for VistA file EM (#63.02) to us-core-observation-lab"/>
       <exampleBoolean value="false"/>
       <groupingId value="group5"/>
     </resource>
@@ -1036,18 +1024,6 @@
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/LabObservationSurgicalPathologyObservation"/>
-      </reference>
-      <name value="Lab Observation: Surgical Pathology Observation"/>
-      <description value="This StructureDefinition contains the maps for VistA file SURGICAL PATHOLOGY (#63.08) to us-core-observation-lab"/>
-      <exampleBoolean value="false"/>
-      <groupingId value="group5"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:resource"/>
-      </extension>
-      <reference>
         <reference value="StructureDefinition/LabObservationSurgicalPathologySpecimen"/>
       </reference>
       <name value="Lab Observation: Surgical Pathology Specimen"/>
@@ -1120,9 +1096,21 @@
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/MedicationRequestOutpatient"/>
+        <reference value="StructureDefinition/MedicationRequestOutpatientEncounter"/>
       </reference>
-      <name value="MedicationRequest: Outpatient"/>
+      <name value="MedicationRequest: Outpatient Encounter"/>
+      <description value="This StructureDefinition contains the maps for VistA file PRESCRIPTION (#52) to us-core-encounter"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="group11"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/MedicationRequestOutpatientMedicationRequest"/>
+      </reference>
+      <name value="MedicationRequest: Outpatient MedicationRequest"/>
       <description value="This StructureDefinition contains the maps for VistA file PRESCRIPTION (#52) to us-core-medicationrequest"/>
       <exampleBoolean value="false"/>
       <groupingId value="group11"/>
@@ -1297,6 +1285,17 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/VSVFallergyActive"/>
+      </reference>
+      <name value="VF_allergyActive"/>
+      <description value="Navigate to [ConceptMap VF_allergyActive](ConceptMap-CMVFallergyActive.html)"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="ConceptMap"/>
       </extension>
       <reference>
@@ -1311,10 +1310,10 @@
         <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="ValueSet/VSVFallergyActive"/>
+        <reference value="ValueSet/VSVFallergyEnteredInError"/>
       </reference>
-      <name value="VF_allergyActive"/>
-      <description value="Navigate to the [ConceptMap VF_allergyActive](ConceptMap-CMVFallergyActive.html)."/>
+      <name value="VF_allergyEnteredInError"/>
+      <description value="Navigate to [ConceptMap VF_allergyEnteredInError](ConceptMap-CMVFallergyEnteredInError.html)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1333,10 +1332,10 @@
         <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="ValueSet/VSVFallergyEnteredInError"/>
+        <reference value="ValueSet/VSVFallergyMechanism"/>
       </reference>
-      <name value="VF_allergyEnteredInError"/>
-      <description value="Navigate to the [ConceptMap VF_allergyEnteredInError](ConceptMap-CMVFallergyEnteredInError.html)."/>
+      <name value="VF_allergyMechanism"/>
+      <description value="Navigate to [ConceptMap VF_allergyMechanism](ConceptMap-CMVFallergyMechanism.html)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1355,10 +1354,10 @@
         <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="ValueSet/VSVFallergyMechanism"/>
+        <reference value="ValueSet/VSVFallergySeverity"/>
       </reference>
-      <name value="VF_allergyMechanism"/>
-      <description value="Navigate to the [ConceptMap VF_allergyMechanism](ConceptMap-CMVFallergyMechanism.html)."/>
+      <name value="VF_allergySeverity"/>
+      <description value="Navigate to [ConceptMap VF_allergySeverity](ConceptMap-CMVFallergySeverity.html)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1377,10 +1376,10 @@
         <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="ValueSet/VSVFallergySeverity"/>
+        <reference value="ValueSet/VSVFallergySubstanceCategory"/>
       </reference>
-      <name value="VF_allergySeverity"/>
-      <description value="Navigate to the [ConceptMap VF_allergySeverity](ConceptMap-CMVFallergySeverity.html)."/>
+      <name value="VF_allergySubstanceCategory"/>
+      <description value="Navigate to [ConceptMap VF_allergySubstanceCategory](ConceptMap-CMVFallergySubstanceCategory.html)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1399,10 +1398,10 @@
         <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="ValueSet/VSVFallergySubstanceCategory"/>
+        <reference value="ValueSet/VSVFallergyVerificationStatus"/>
       </reference>
-      <name value="VF_allergySubstanceCategory"/>
-      <description value="Navigate to the [ConceptMap VF_allergySubstanceCategory](ConceptMap-CMVFallergySubstanceCategory.html)."/>
+      <name value="VF_allergyVerificationStatus"/>
+      <description value="Navigate to [ConceptMap VF_allergyVerificationStatus](ConceptMap-CMVFallergyVerificationStatus.html)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1421,10 +1420,10 @@
         <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="ValueSet/VSVFallergyVerificationStatus"/>
+        <reference value="ValueSet/VSVFAntibioticSensitivityInterpretation"/>
       </reference>
-      <name value="VF_allergyVerificationStatus"/>
-      <description value="Navigate to the [ConceptMap VF_allergyVerificationStatus](ConceptMap-CMVFallergyVerificationStatus.html)."/>
+      <name value="VF_AntibioticSensitivityInterpretation"/>
+      <description value="Navigate to [ConceptMap VF_AntibioticSensitivityInterpretation](ConceptMap-CMVFAntibioticSensitivityInterpretation.html)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1443,10 +1442,10 @@
         <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="ValueSet/VSVFAntibioticSensitivityInterpretation"/>
+        <reference value="ValueSet/VSVFAppointmentStatus"/>
       </reference>
-      <name value="VF_AntibioticSensitivityInterpretation"/>
-      <description value="Navigate to the [ConceptMap VF_AntibioticSensitivityInterpretation](ConceptMap-CMVFAntibioticSensitivityInterpretation.html)."/>
+      <name value="VF_AppointmentStatus"/>
+      <description value="Navigate to [ConceptMap VF_AppointmentStatus](ConceptMap-CMVFAppointmentStatus.html)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1465,10 +1464,10 @@
         <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="ValueSet/VSVFAppointmentStatus"/>
+        <reference value="ValueSet/VSVFBoolean"/>
       </reference>
-      <name value="VF_AppointmentStatus"/>
-      <description value="Navigate to the [ConceptMap VF_AppointmentStatus](ConceptMap-CMVFAppointmentStatus.html)."/>
+      <name value="VF_Boolean"/>
+      <description value="Navigate to [ConceptMap VF_Boolean](ConceptMap-CMVFBoolean.html)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1487,10 +1486,10 @@
         <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="ValueSet/VSVFBoolean"/>
+        <reference value="ValueSet/VSVFCommunicationQualifier"/>
       </reference>
-      <name value="VF_Boolean"/>
-      <description value="Navigate to the [ConceptMap VF_Boolean](ConceptMap-CMVFBoolean.html)."/>
+      <name value="VF_CommunicationQualifier"/>
+      <description value="Navigate to [ConceptMap VF_CommunicationQualifier](ConceptMap-CMVFCommunicationQualifier.html)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1509,10 +1508,10 @@
         <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="ValueSet/VSVFCommunicationQualifier"/>
+        <reference value="ValueSet/VSVFCoverageRelationship"/>
       </reference>
-      <name value="VF_CommunicationQualifier"/>
-      <description value="Navigate to the [ConceptMap VF_CommunicationQualifier](ConceptMap-CMVFCommunicationQualifier.html)."/>
+      <name value="VF_CoverageRelationship"/>
+      <description value="Navigate to [ConceptMap VF_CoverageRelationship](ConceptMap-CMVFCoverageRelationship.html)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1531,10 +1530,10 @@
         <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="ValueSet/VSVFCoverageRelationship"/>
+        <reference value="ValueSet/VSVFCoverageStatusForce"/>
       </reference>
-      <name value="VF_CoverageRelationship"/>
-      <description value="Navigate to the [ConceptMap VF_CoverageRelationship](ConceptMap-CMVFCoverageRelationship.html)."/>
+      <name value="VF_CoverageStatusForce"/>
+      <description value="Navigate to [ConceptMap VF_CoverageStatusForce](ConceptMap-CMVFCoverageStatusForce.html)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1553,10 +1552,10 @@
         <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="ValueSet/VSVFCoverageStatusForce"/>
+        <reference value="ValueSet/VSVFDentalDeviceStatus"/>
       </reference>
-      <name value="VF_CoverageStatusForce"/>
-      <description value="Navigate to the [ConceptMap VF_CoverageStatusForce](ConceptMap-CMVFCoverageStatusForce.html)."/>
+      <name value="VF_DentalDeviceStatus"/>
+      <description value="Navigate to [ConceptMap VF_DentalDeviceStatus](ConceptMap-CMVFDentalDeviceStatus.html)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1575,10 +1574,10 @@
         <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="ValueSet/VSVFDentalDeviceStatus"/>
+        <reference value="ValueSet/VSVFdeviceTypePacemaker"/>
       </reference>
-      <name value="VF_DentalDeviceStatus"/>
-      <description value="Navigate to the [ConceptMap VF_DentalDeviceStatus](ConceptMap-CMVFDentalDeviceStatus.html)."/>
+      <name value="VF_deviceTypePacemaker"/>
+      <description value="Navigate to [ConceptMap VF_deviceTypePacemaker](ConceptMap-CMVFdeviceTypePacemaker.html)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1597,10 +1596,10 @@
         <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="ValueSet/VSVFdeviceTypePacemaker"/>
+        <reference value="ValueSet/VSVFDiagnosticReportLabStatus"/>
       </reference>
-      <name value="VF_deviceTypePacemaker"/>
-      <description value="Navigate to the [ConceptMap VF_deviceTypePacemaker](ConceptMap-CMVFdeviceTypePacemaker.html)."/>
+      <name value="VF_DiagnosticReportLabStatus"/>
+      <description value="Navigate to [ConceptMap VF_DiagnosticReportLabStatus](ConceptMap-CMVFDiagnosticReportLabStatus.html)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1619,10 +1618,10 @@
         <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="ValueSet/VSVFDiagnosticReportLabStatus"/>
+        <reference value="ValueSet/VSVFdocumentReferencedocStatus"/>
       </reference>
-      <name value="VF_DiagnosticReportLabStatus"/>
-      <description value="Navigate to the [ConceptMap VF_DiagnosticReportLabStatus](ConceptMap-CMVFDiagnosticReportLabStatus.html)."/>
+      <name value="VF_documentReferencedocStatus"/>
+      <description value="Navigate to [ConceptMap VF_documentReferencedocStatus](ConceptMap-CMVFdocumentReferencedocStatus.html)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1641,10 +1640,10 @@
         <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="ValueSet/VSVFdocumentReferencedocStatus"/>
+        <reference value="ValueSet/VSVFencounterClass"/>
       </reference>
-      <name value="VF_documentReferencedocStatus"/>
-      <description value="Navigate to the [ConceptMap VF_documentReferencedocStatus](ConceptMap-CMVFdocumentReferencedocStatus.html)."/>
+      <name value="VF_encounterClass"/>
+      <description value="Navigate to [ConceptMap VF_encounterClass](ConceptMap-CMVFencounterClass.html)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1663,10 +1662,10 @@
         <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="ValueSet/VSVFencounterClass"/>
+        <reference value="ValueSet/VSVFencounterProblemStatus"/>
       </reference>
-      <name value="VF_encounterClass"/>
-      <description value="Navigate to the [ConceptMap VF_encounterClass](ConceptMap-CMVFencounterClass.html)."/>
+      <name value="VF_encounterProblemStatus"/>
+      <description value="Navigate to [ConceptMap VF_encounterProblemStatus](ConceptMap-CMVFencounterProblemStatus.html)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1685,10 +1684,10 @@
         <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="ValueSet/VSVFencounterProblemStatus"/>
+        <reference value="ValueSet/VSVFencounterProblemVerificationStatus"/>
       </reference>
-      <name value="VF_encounterProblemStatus"/>
-      <description value="Navigate to the [ConceptMap VF_encounterProblemStatus](ConceptMap-CMVFencounterProblemStatus.html)."/>
+      <name value="VF_encounterProblemVerificationStatus"/>
+      <description value="Navigate to [ConceptMap VF_encounterProblemVerificationStatus](ConceptMap-CMVFencounterProblemVerificationStatus.html)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1707,10 +1706,10 @@
         <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="ValueSet/VSVFencounterProblemVerificationStatus"/>
+        <reference value="ValueSet/VSVFethnicityCategory"/>
       </reference>
-      <name value="VF_encounterProblemVerificationStatus"/>
-      <description value="Navigate to the [ConceptMap VF_encounterProblemVerificationStatus](ConceptMap-CMVFencounterProblemVerificationStatus.html)."/>
+      <name value="VF_ethnicityCategory"/>
+      <description value="Navigate to [ConceptMap VF_ethnicityCategory](ConceptMap-CMVFethnicityCategory.html)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1729,10 +1728,10 @@
         <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="ValueSet/VSVFethnicityCategory"/>
+        <reference value="ValueSet/VSVFExamResultInterpretation"/>
       </reference>
-      <name value="VF_ethnicityCategory"/>
-      <description value="Navigate to the [ConceptMap VF_ethnicityCategory](ConceptMap-CMVFethnicityCategory.html)."/>
+      <name value="VF_ExamResultInterpretation"/>
+      <description value="Navigate to [ConceptMap VF_ExamResultInterpretation](ConceptMap-CMVFExamResultInterpretation.html)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1751,10 +1750,10 @@
         <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="ValueSet/VSVFExamResultInterpretation"/>
+        <reference value="ValueSet/VSVFExamStatus"/>
       </reference>
-      <name value="VF_ExamResultInterpretation"/>
-      <description value="Navigate to the [ConceptMap VF_ExamResultInterpretation](ConceptMap-CMVFExamResultInterpretation.html)."/>
+      <name value="VF_ExamStatus"/>
+      <description value="Navigate to [ConceptMap VF_ExamStatus](ConceptMap-CMVFExamStatus.html)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1773,10 +1772,10 @@
         <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="ValueSet/VSVFExamStatus"/>
+        <reference value="ValueSet/VSVFgenderIdentity"/>
       </reference>
-      <name value="VF_ExamStatus"/>
-      <description value="Navigate to the [ConceptMap VF_ExamStatus](ConceptMap-CMVFExamStatus.html)."/>
+      <name value="VF_genderIdentity"/>
+      <description value="Navigate to [ConceptMap VF_genderIdentity](ConceptMap-CMVFgenderIdentity.html)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1795,10 +1794,10 @@
         <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="ValueSet/VSVFgenderIdentity"/>
+        <reference value="ValueSet/VSVFICDCodingSystems"/>
       </reference>
-      <name value="VF_genderIdentity"/>
-      <description value="Navigate to the [ConceptMap VF_genderIdentity](ConceptMap-CMVFgenderIdentity.html)."/>
+      <name value="VF_ICDCodingSystems"/>
+      <description value="Navigate to [ConceptMap VF_ICDCodingSystems](ConceptMap-CMVFICDCodingSystems.html)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1817,10 +1816,10 @@
         <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="ValueSet/VSVFICDCodingSystems"/>
+        <reference value="ValueSet/VSVFICDVersion"/>
       </reference>
-      <name value="VF_ICDCodingSystems"/>
-      <description value="Navigate to the [ConceptMap VF_ICDCodingSystems](ConceptMap-CMVFICDCodingSystems.html)."/>
+      <name value="VF_ICDVersion"/>
+      <description value="Navigate to [ConceptMap VF_ICDVersion](ConceptMap-CMVFICDVersion.html)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1839,10 +1838,10 @@
         <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="ValueSet/VSVFICDVersion"/>
+        <reference value="ValueSet/VSVFImageInterpretation"/>
       </reference>
-      <name value="VF_ICDVersion"/>
-      <description value="Navigate to the [ConceptMap VF_ICDVersion](ConceptMap-CMVFICDVersion.html)."/>
+      <name value="VF_ImageInterpretation"/>
+      <description value="Navigate to [ConceptMap VF_ImageInterpretation](ConceptMap-CMVFImageInterpretation.html)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1861,10 +1860,10 @@
         <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="ValueSet/VSVFImageInterpretation"/>
+        <reference value="ValueSet/VSVFImageStatus"/>
       </reference>
-      <name value="VF_ImageInterpretation"/>
-      <description value="Navigate to the [ConceptMap VF_ImageInterpretation](ConceptMap-CMVFImageInterpretation.html)."/>
+      <name value="VF_ImageStatus"/>
+      <description value="Navigate to [ConceptMap VF_ImageStatus](ConceptMap-CMVFImageStatus.html)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1883,10 +1882,10 @@
         <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="ValueSet/VSVFImageStatus"/>
+        <reference value="ValueSet/VSVFImageStatusRadNuc"/>
       </reference>
-      <name value="VF_ImageStatus"/>
-      <description value="Navigate to the [ConceptMap VF_ImageStatus](ConceptMap-CMVFImageStatus.html)."/>
+      <name value="VF_ImageStatusRadNuc"/>
+      <description value="Navigate to [ConceptMap VF_ImageStatusRadNuc](ConceptMap-CMVFImageStatusRadNuc.html)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1905,10 +1904,10 @@
         <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="ValueSet/VSVFImageStatusRadNuc"/>
+        <reference value="ValueSet/VSVFimmunizationPrimarySource"/>
       </reference>
-      <name value="VF_ImageStatusRadNuc"/>
-      <description value="Navigate to the [ConceptMap VF_ImageStatusRadNuc](ConceptMap-CMVFImageStatusRadNuc.html)."/>
+      <name value="VF_immunizationPrimarySource"/>
+      <description value="Navigate to [ConceptMap VF_immunizationPrimarySource](ConceptMap-CMVFimmunizationPrimarySource.html)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1927,10 +1926,10 @@
         <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="ValueSet/VSVFimmunizationPrimarySource"/>
+        <reference value="ValueSet/VSVFImmunizationReaction"/>
       </reference>
-      <name value="VF_immunizationPrimarySource"/>
-      <description value="Navigate to the [ConceptMap VF_immunizationPrimarySource](ConceptMap-CMVFimmunizationPrimarySource.html)."/>
+      <name value="VF_ImmunizationReaction"/>
+      <description value="Navigate to [ConceptMap VF_ImmunizationReaction](ConceptMap-CMVFImmunizationReaction.html)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1949,10 +1948,10 @@
         <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="ValueSet/VSVFImmunizationReaction"/>
+        <reference value="ValueSet/VSVFimmunizationStatusReason"/>
       </reference>
-      <name value="VF_ImmunizationReaction"/>
-      <description value="Navigate to the [ConceptMap VF_ImmunizationReaction](ConceptMap-CMVFImmunizationReaction.html)."/>
+      <name value="VF_immunizationStatusReason"/>
+      <description value="Navigate to [ConceptMap VF_immunizationStatusReason](ConceptMap-CMVFimmunizationStatusReason.html)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1971,10 +1970,10 @@
         <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="ValueSet/VSVFimmunizationStatusReason"/>
+        <reference value="ValueSet/VSVFinferredCVX"/>
       </reference>
-      <name value="VF_immunizationStatusReason"/>
-      <description value="Navigate to the [ConceptMap VF_immunizationStatusReason](ConceptMap-CMVFimmunizationStatusReason.html)."/>
+      <name value="VF_inferredCVX"/>
+      <description value="Navigate to [ConceptMap VF_inferredCVX](ConceptMap-CMVFinferredCVX.html)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1993,10 +1992,10 @@
         <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="ValueSet/VSVFinferredCVX"/>
+        <reference value="ValueSet/VSVFLabInterpretation"/>
       </reference>
-      <name value="VF_inferredCVX"/>
-      <description value="Navigate to the [ConceptMap VF_inferredCVX](ConceptMap-CMVFinferredCVX.html)."/>
+      <name value="VF_LabInterpretation"/>
+      <description value="Navigate to [ConceptMap VF_LabInterpretation](ConceptMap-CMVFLabInterpretation.html)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -2015,10 +2014,10 @@
         <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="ValueSet/VSVFLabInterpretation"/>
+        <reference value="ValueSet/VSVFLabObservationStatus"/>
       </reference>
-      <name value="VF_LabInterpretation"/>
-      <description value="Navigate to the [ConceptMap VF_LabInterpretation](ConceptMap-CMVFLabInterpretation.html)."/>
+      <name value="VF_LabObservationStatus"/>
+      <description value="Navigate to [ConceptMap VF_LabObservationStatus](ConceptMap-CMVFLabObservationStatus.html)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -2037,10 +2036,10 @@
         <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="ValueSet/VSVFLabObservationStatus"/>
+        <reference value="ValueSet/VSVFLocationStatus"/>
       </reference>
-      <name value="VF_LabObservationStatus"/>
-      <description value="Navigate to the [ConceptMap VF_LabObservationStatus](ConceptMap-CMVFLabObservationStatus.html)."/>
+      <name value="VF_LocationStatus"/>
+      <description value="Navigate to [ConceptMap VF_LocationStatus](ConceptMap-CMVFLocationStatus.html)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -2059,10 +2058,10 @@
         <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="ValueSet/VSVFLocationStatus"/>
+        <reference value="ValueSet/VSVFMaritalStatus"/>
       </reference>
-      <name value="VF_LocationStatus"/>
-      <description value="Navigate to the [ConceptMap VF_LocationStatus](ConceptMap-CMVFLocationStatus.html)."/>
+      <name value="VF_MaritalStatus"/>
+      <description value="Navigate to [ConceptMap VF_MaritalStatus](ConceptMap-CMVFMaritalStatus.html)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -2081,10 +2080,10 @@
         <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="ValueSet/VSVFMaritalStatus"/>
+        <reference value="ValueSet/VSVFOrderPatientClass"/>
       </reference>
-      <name value="VF_MaritalStatus"/>
-      <description value="Navigate to the [ConceptMap VF_MaritalStatus](ConceptMap-CMVFMaritalStatus.html)."/>
+      <name value="VF_OrderPatientClass"/>
+      <description value="Navigate to [ConceptMap VF_OrderPatientClass](ConceptMap-CMVFOrderPatientClass.html)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -2103,10 +2102,10 @@
         <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="ValueSet/VSVFOrderPatientClass"/>
+        <reference value="ValueSet/VSVFOrganizationIdentifierType"/>
       </reference>
-      <name value="VF_OrderPatientClass"/>
-      <description value="Navigate to the [ConceptMap VF_OrderPatientClass](ConceptMap-CMVFOrderPatientClass.html)."/>
+      <name value="VF_OrganizationIdentifierType"/>
+      <description value="Navigate to [ConceptMap VF_OrganizationIdentifierType](ConceptMap-CMVFOrganizationIdentifierType.html)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -2125,10 +2124,10 @@
         <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="ValueSet/VSVFOrganizationIdentifierType"/>
+        <reference value="ValueSet/VSVFOutMedRequestStatus"/>
       </reference>
-      <name value="VF_OrganizationIdentifierType"/>
-      <description value="Navigate to the [ConceptMap VF_OrganizationIdentifierType](ConceptMap-CMVFOrganizationIdentifierType.html)."/>
+      <name value="VF_OutMedRequestStatus"/>
+      <description value="Navigate to [ConceptMap VF_OutMedRequestStatus](ConceptMap-CMVFOutMedRequestStatus.html)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -2147,10 +2146,10 @@
         <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="ValueSet/VSVFOutMedRequestStatus"/>
+        <reference value="ValueSet/VSVFPersonIdentifierType"/>
       </reference>
-      <name value="VF_OutMedRequestStatus"/>
-      <description value="Navigate to the [ConceptMap VF_OutMedRequestStatus](ConceptMap-CMVFOutMedRequestStatus.html)."/>
+      <name value="VF_PersonIdentifierType"/>
+      <description value="Navigate to [ConceptMap VF_PersonIdentifierType](ConceptMap-CMVFPersonIdentifierType.html)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -2169,10 +2168,10 @@
         <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="ValueSet/VSVFPersonIdentifierType"/>
+        <reference value="ValueSet/VSVFPharmacyPersonType"/>
       </reference>
-      <name value="VF_PersonIdentifierType"/>
-      <description value="Navigate to the [ConceptMap VF_PersonIdentifierType](ConceptMap-CMVFPersonIdentifierType.html)."/>
+      <name value="VF_PharmacyPersonType"/>
+      <description value="Navigate to [ConceptMap VF_PharmacyPersonType](ConceptMap-CMVFPharmacyPersonType.html)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -2191,10 +2190,10 @@
         <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="ValueSet/VSVFPharmacyPersonType"/>
+        <reference value="ValueSet/VSVFPositiveNegative"/>
       </reference>
-      <name value="VF_PharmacyPersonType"/>
-      <description value="Navigate to the [ConceptMap VF_PharmacyPersonType](ConceptMap-CMVFPharmacyPersonType.html)."/>
+      <name value="VF_PositiveNegative"/>
+      <description value="Navigate to [ConceptMap VF_PositiveNegative](ConceptMap-CMVFPositiveNegative.html)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -2213,10 +2212,10 @@
         <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="ValueSet/VSVFPositiveNegative"/>
+        <reference value="ValueSet/VSVFPractitionerCountry"/>
       </reference>
-      <name value="VF_PositiveNegative"/>
-      <description value="Navigate to the [ConceptMap VF_PositiveNegative](ConceptMap-CMVFPositiveNegative.html)."/>
+      <name value="VF_PractitionerCountry"/>
+      <description value="Navigate to [ConceptMap VF_PractitionerCountry](ConceptMap-CMVFPractitionerCountry.html)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -2235,10 +2234,10 @@
         <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="ValueSet/VSVFPractitionerCountry"/>
+        <reference value="ValueSet/VSVFproblemStatus"/>
       </reference>
-      <name value="VF_PractitionerCountry"/>
-      <description value="Navigate to the [ConceptMap VF_PractitionerCountry](ConceptMap-CMVFPractitionerCountry.html)."/>
+      <name value="VF_problemStatus"/>
+      <description value="Navigate to [ConceptMap VF_problemStatus](ConceptMap-CMVFproblemStatus.html)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -2257,10 +2256,10 @@
         <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="ValueSet/VSVFproblemStatus"/>
+        <reference value="ValueSet/VSVFproblemVerificationStatus"/>
       </reference>
-      <name value="VF_problemStatus"/>
-      <description value="Navigate to the [ConceptMap VF_problemStatus](ConceptMap-CMVFproblemStatus.html)."/>
+      <name value="VF_problemVerificationStatus"/>
+      <description value="Navigate to [ConceptMap VF_problemVerificationStatus](ConceptMap-CMVFproblemVerificationStatus.html)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -2279,10 +2278,10 @@
         <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="ValueSet/VSVFproblemVerificationStatus"/>
+        <reference value="ValueSet/VSVFProcedureCodeSystem"/>
       </reference>
-      <name value="VF_problemVerificationStatus"/>
-      <description value="Navigate to the [ConceptMap VF_problemVerificationStatus](ConceptMap-CMVFproblemVerificationStatus.html)."/>
+      <name value="VF_ProcedureCodeSystem"/>
+      <description value="Navigate to [ConceptMap VF_ProcedureCodeSystem](ConceptMap-CMVFProcedureCodeSystem.html)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -2301,10 +2300,10 @@
         <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="ValueSet/VSVFProcedureCodeSystem"/>
+        <reference value="ValueSet/VSVFproviderGender"/>
       </reference>
-      <name value="VF_ProcedureCodeSystem"/>
-      <description value="Navigate to the [ConceptMap VF_ProcedureCodeSystem](ConceptMap-CMVFProcedureCodeSystem.html)."/>
+      <name value="VF_providerGender"/>
+      <description value="Navigate to [ConceptMap VF_providerGender](ConceptMap-CMVFproviderGender.html)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -2323,10 +2322,10 @@
         <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="ValueSet/VSVFproviderGender"/>
+        <reference value="ValueSet/VSVFraceCategory"/>
       </reference>
-      <name value="VF_providerGender"/>
-      <description value="Navigate to the [ConceptMap VF_providerGender](ConceptMap-CMVFproviderGender.html)."/>
+      <name value="VF_raceCategory"/>
+      <description value="Navigate to [ConceptMap VF_raceCategory](ConceptMap-CMVFraceCategory.html)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -2345,10 +2344,10 @@
         <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="ValueSet/VSVFraceCategory"/>
+        <reference value="ValueSet/VSVFRadiologyProcedureStatus"/>
       </reference>
-      <name value="VF_raceCategory"/>
-      <description value="Navigate to the [ConceptMap VF_raceCategory](ConceptMap-CMVFraceCategory.html)."/>
+      <name value="VF_RadiologyProcedureStatus"/>
+      <description value="Navigate to [ConceptMap VF_RadiologyProcedureStatus](ConceptMap-CMVFRadiologyProcedureStatus.html)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -2367,10 +2366,10 @@
         <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="ValueSet/VSVFRadiologyProcedureStatus"/>
+        <reference value="ValueSet/VSVFReligion"/>
       </reference>
-      <name value="VF_RadiologyProcedureStatus"/>
-      <description value="Navigate to the [ConceptMap VF_RadiologyProcedureStatus](ConceptMap-CMVFRadiologyProcedureStatus.html)."/>
+      <name value="VF_Religion"/>
+      <description value="Navigate to [ConceptMap VF_Religion](ConceptMap-CMVFReligion.html)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -2389,10 +2388,10 @@
         <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="ValueSet/VSVFReligion"/>
+        <reference value="ValueSet/VSVFSmokingStatus"/>
       </reference>
-      <name value="VF_Religion"/>
-      <description value="Navigate to the [ConceptMap VF_Religion](ConceptMap-CMVFReligion.html)."/>
+      <name value="VF_SmokingStatus"/>
+      <description value="Navigate to [ConceptMap VF_SmokingStatus](ConceptMap-CMVFSmokingStatus.html)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -2411,10 +2410,10 @@
         <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="ValueSet/VSVFSmokingStatus"/>
+        <reference value="ValueSet/VSVFSourceOfAdmission"/>
       </reference>
-      <name value="VF_SmokingStatus"/>
-      <description value="Navigate to the [ConceptMap VF_SmokingStatus](ConceptMap-CMVFSmokingStatus.html)."/>
+      <name value="VF_SourceOfAdmission"/>
+      <description value="Navigate to [ConceptMap VF_SourceOfAdmission](ConceptMap-CMVFSourceOfAdmission.html)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -2433,10 +2432,32 @@
         <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="ValueSet/VSVFSourceOfAdmission"/>
+        <reference value="ValueSet/VSVFVitalsBodySite"/>
       </reference>
-      <name value="VF_SourceOfAdmission"/>
-      <description value="Navigate to the [ConceptMap VF_SourceOfAdmission](ConceptMap-CMVFSourceOfAdmission.html)."/>
+      <name value="VF_VitalsBodySite"/>
+      <description value="Navigate to [ConceptMap VF_VitalsBodySite](ConceptMap-CMVFVitalsBodySite.html)"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ConceptMap"/>
+      </extension>
+      <reference>
+        <reference value="ConceptMap/CMVFVitalsBodySite"/>
+      </reference>
+      <name value="VF_VitalsBodySite"/>
+      <description value="Terminology Maps VF_VitalsBodySite"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/VSVFVitalsCodes"/>
+      </reference>
+      <name value="VF_VitalsCodes"/>
+      <description value="Navigate to [ConceptMap VF_VitalsCodes](ConceptMap-CMVFVitalsCodes.html)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -2455,10 +2476,32 @@
         <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="ValueSet/VSVFVitalsCodes"/>
+        <reference value="ValueSet/VSVFVitalsCuffSize"/>
       </reference>
-      <name value="VF_VitalsCodes"/>
-      <description value="Navigate to the [ConceptMap VF_VitalsCodes](ConceptMap-CMVFVitalsCodes.html)."/>
+      <name value="VF_VitalsCuffSize"/>
+      <description value="Navigate to [ConceptMap VF_VitalsCuffSize](ConceptMap-CMVFVitalsCuffSize.html)"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ConceptMap"/>
+      </extension>
+      <reference>
+        <reference value="ConceptMap/CMVFVitalsCuffSize"/>
+      </reference>
+      <name value="VF_VitalsCuffSize"/>
+      <description value="Terminology Maps VF_VitalsCuffSize"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/VSVFVitalsDevice"/>
+      </reference>
+      <name value="VF_VitalsDevice"/>
+      <description value="Navigate to [ConceptMap VF_VitalsDevice](ConceptMap-CMVFVitalsDevice.html)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -2477,10 +2520,10 @@
         <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="ValueSet/VSVFVitalsDevice"/>
+        <reference value="ValueSet/VSVFVitalsLaterality"/>
       </reference>
-      <name value="VF_VitalsDevice"/>
-      <description value="Navigate to the [ConceptMap VF_VitalsDevice](ConceptMap-CMVFVitalsDevice.html)."/>
+      <name value="VF_VitalsLaterality"/>
+      <description value="Navigate to [ConceptMap VF_VitalsLaterality](ConceptMap-CMVFVitalsLaterality.html)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -2499,10 +2542,32 @@
         <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="ValueSet/VSVFVitalsLaterality"/>
+        <reference value="ValueSet/VSVFVitalsMeasurementDevice"/>
       </reference>
-      <name value="VF_VitalsLaterality"/>
-      <description value="Navigate to the [ConceptMap VF_VitalsLaterality](ConceptMap-CMVFVitalsLaterality.html)."/>
+      <name value="VF_VitalsMeasurementDevice"/>
+      <description value="Navigate to [ConceptMap VF_VitalsMeasurementDevice](ConceptMap-CMVFVitalsMeasurementDevice.html)"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ConceptMap"/>
+      </extension>
+      <reference>
+        <reference value="ConceptMap/CMVFVitalsMeasurementDevice"/>
+      </reference>
+      <name value="VF_VitalsMeasurementDevice"/>
+      <description value="Terminology Maps VF_VitalsMeasurementDevice"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/VSVFVitalsMethod"/>
+      </reference>
+      <name value="VF_VitalsMethod"/>
+      <description value="Navigate to [ConceptMap VF_VitalsMethod](ConceptMap-CMVFVitalsMethod.html)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -2521,10 +2586,10 @@
         <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="ValueSet/VSVFVitalsMethod"/>
+        <reference value="ValueSet/VSVFVitalsPosition"/>
       </reference>
-      <name value="VF_VitalsMethod"/>
-      <description value="Navigate to the [ConceptMap VF_VitalsMethod](ConceptMap-CMVFVitalsMethod.html)."/>
+      <name value="VF_VitalsPosition"/>
+      <description value="Navigate to [ConceptMap VF_VitalsPosition](ConceptMap-CMVFVitalsPosition.html)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -2543,10 +2608,10 @@
         <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="ValueSet/VSVFVitalsPosition"/>
+        <reference value="ValueSet/VSVFVitalsQualifyingDevice"/>
       </reference>
-      <name value="VF_VitalsPosition"/>
-      <description value="Navigate to the [ConceptMap VF_VitalsPosition](ConceptMap-CMVFVitalsPosition.html)."/>
+      <name value="VF_VitalsQualifyingDevice"/>
+      <description value="Navigate to [ConceptMap VF_VitalsQualifyingDevice](ConceptMap-CMVFVitalsQualifyingDevice.html)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -2554,10 +2619,10 @@
         <valueString value="ConceptMap"/>
       </extension>
       <reference>
-        <reference value="ConceptMap/CMVFVitalsSite"/>
+        <reference value="ConceptMap/CMVFVitalsQualifyingDevice"/>
       </reference>
-      <name value="VF_VitalsSite"/>
-      <description value="Terminology Maps VF_VitalsSite"/>
+      <name value="VF_VitalsQualifyingDevice"/>
+      <description value="Terminology Maps VF_VitalsQualifyingDevice"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -2565,10 +2630,10 @@
         <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="ValueSet/VSVFVitalsSite"/>
+        <reference value="ValueSet/VSVFVitalsUnits"/>
       </reference>
-      <name value="VF_VitalsSite"/>
-      <description value="Navigate to the [ConceptMap VF_VitalsSite](ConceptMap-CMVFVitalsSite.html)."/>
+      <name value="VF_VitalsUnits"/>
+      <description value="Navigate to [ConceptMap VF_VitalsUnits](ConceptMap-CMVFVitalsUnits.html)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -2587,10 +2652,10 @@
         <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="ValueSet/VSVFVitalsUnits"/>
+        <reference value="ValueSet/VSVFYesNo10"/>
       </reference>
-      <name value="VF_VitalsUnits"/>
-      <description value="Navigate to the [ConceptMap VF_VitalsUnits](ConceptMap-CMVFVitalsUnits.html)."/>
+      <name value="VF_YesNo10"/>
+      <description value="Navigate to [ConceptMap VF_YesNo10](ConceptMap-CMVFYesNo10.html)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -2609,10 +2674,10 @@
         <valueString value="ValueSet"/>
       </extension>
       <reference>
-        <reference value="ValueSet/VSVFYesNo10"/>
+        <reference value="ValueSet/VSVistaNCPDPCoverageRelationship"/>
       </reference>
-      <name value="VF_YesNo10"/>
-      <description value="Navigate to the [ConceptMap VF_YesNo10](ConceptMap-CMVFYesNo10.html)."/>
+      <name value="Vista_NCPDPCoverageRelationship"/>
+      <description value="Navigate to [ConceptMap Vista_NCPDPCoverageRelationship](ConceptMap-CMVistaNCPDPCoverageRelationship.html)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -2628,14 +2693,15 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="ValueSet"/>
+        <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
-        <reference value="ValueSet/VSVistaNCPDPCoverageRelationship"/>
+        <reference value="StructureDefinition/VitalSignsBP"/>
       </reference>
-      <name value="Vista_NCPDPCoverageRelationship"/>
-      <description value="Navigate to the [ConceptMap Vista_NCPDPCoverageRelationship](ConceptMap-CMVistaNCPDPCoverageRelationship.html)."/>
+      <name value="Vital Signs BP"/>
+      <description value="This StructureDefinition contains the maps for VistA file GMRV VITAL MEASUREMENT (#120.5) to us-core-blood-pressure"/>
       <exampleBoolean value="false"/>
+      <groupingId value="group4"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -2678,10 +2744,10 @@
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/VitalSignsBP"/>
+        <reference value="StructureDefinition/VitalSignsSpO2"/>
       </reference>
-      <name value="Vital Signs: BP"/>
-      <description value="This StructureDefinition contains the maps for VistA file GMRV VITAL MEASUREMENT (#120.5) to us-core-blood-pressure"/>
+      <name value="Vital Signs SpO2"/>
+      <description value="This StructureDefinition contains the maps for VistA file GMRV VITAL MEASUREMENT (#120.5) to us-core-pulse-oximetry"/>
       <exampleBoolean value="false"/>
       <groupingId value="group4"/>
     </resource>
@@ -2694,18 +2760,6 @@
       </reference>
       <name value="Vital Signs: CPM"/>
       <description value="This StructureDefinition contains the maps for VistA file GMRV VITAL MEASUREMENT (#120.5) to us-core-vital-signs"/>
-      <exampleBoolean value="false"/>
-      <groupingId value="group4"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:resource"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/VitalSignsSpO2"/>
-      </reference>
-      <name value="Vital Signs: SpO2"/>
-      <description value="This StructureDefinition contains the maps for VistA file GMRV VITAL MEASUREMENT (#120.5) to us-core-pulse-oximetry"/>
       <exampleBoolean value="false"/>
       <groupingId value="group4"/>
     </resource>

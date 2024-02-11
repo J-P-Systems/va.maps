@@ -20,7 +20,7 @@ Usage: #definition
 * group[=].element[=].target.code = #M
 * group[=].element[=].target.display = "Married"
 * group[=].element[=].target.equivalence = #equivalent
-* group[=].element[+].code = #"NEVER MARRIED"
+* group[=].element[+].code = #NEVER_MARRIED
 * group[=].element[=].display = "NEVER MARRIED"
 * group[=].element[=].target.code = #S
 * group[=].element[=].target.display = "Never Married"

@@ -1,9 +1,16 @@
-Instance: VSVFOutMedRequestStatus
-InstanceOf: ValueSet
-Usage: #definition
-* url = "http://va.gov/fhir/ValueSet/VSVFOutMedRequestStatus"
-* name = "VF_OutMedRequestStatus"
-* title = "VF_OutMedRequestStatus"
-* status = #active
-* experimental = true
-* description = "Navigate to the [ConceptMap VF_OutMedRequestStatus](ConceptMap-CMVFOutMedRequestStatus.html)."
+ValueSet: VSVFOutMedRequestStatus
+Title: "VF_OutMedRequestStatus"
+Description: "Navigate to [ConceptMap VF_OutMedRequestStatus](ConceptMap-CMVFOutMedRequestStatus.html)"
+* include http://va.gov/terminology/vistaDefinedTerms/52-100#0 "ACTIVE"
+* include http://va.gov/terminology/vistaDefinedTerms/52-100#NULL "ACTIVE"
+* include http://va.gov/terminology/vistaDefinedTerms/52-100#13 "DELETED"
+* include http://va.gov/terminology/vistaDefinedTerms/52-100#12 "DISCONTINUED"
+* include http://va.gov/terminology/vistaDefinedTerms/52-100#12 "DISCONTINUED"
+* include http://va.gov/terminology/vistaDefinedTerms/52-100#15 "DISCONTINUED (EDIT)"
+* include http://va.gov/terminology/vistaDefinedTerms/52-100#14 "DISCONTINUED BY PROVIDER"
+* include http://va.gov/terminology/vistaDefinedTerms/52-100#4 "DRUG INTERACTIONS"
+* include http://va.gov/terminology/vistaDefinedTerms/52-100#11 "EXPIRED"
+* include http://va.gov/terminology/vistaDefinedTerms/52-100#3 "HOLD"
+* include http://va.gov/terminology/vistaDefinedTerms/52-100#1 "NON-VERIFIED"
+* include http://va.gov/terminology/vistaDefinedTerms/52-100#16 "PROVIDER HOLD"
+* include http://va.gov/terminology/vistaDefinedTerms/52-100#5 "SUSPENDED"

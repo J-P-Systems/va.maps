@@ -1,9 +1,12 @@
-Instance: VSVFimmunizationPrimarySource
-InstanceOf: ValueSet
-Usage: #definition
-* url = "http://va.gov/fhir/ValueSet/VSVFimmunizationPrimarySource"
-* name = "VF_immunizationPrimarySource"
-* title = "VF_immunizationPrimarySource"
-* status = #active
-* experimental = true
-* description = "Navigate to the [ConceptMap VF_immunizationPrimarySource](ConceptMap-CMVFimmunizationPrimarySource.html)."
+ValueSet: VSVFimmunizationPrimarySource
+Title: "VF_immunizationPrimarySource"
+Description: "Navigate to [ConceptMap VF_immunizationPrimarySource](ConceptMap-CMVFimmunizationPrimarySource.html)"
+* include urn:undefined#5197425 "HISTORICAL INFORMATION - FROM BIRTH CERTIFICATE"
+* include urn:undefined#5197421 "HISTORICAL INFORMATION - FROM OTHER PROVIDER"
+* include urn:undefined#5197424 "HISTORICAL INFORMATION - FROM OTHER REGISTRY"
+* include urn:undefined#5197423 "HISTORICAL INFORMATION - FROM PARENT'S RECALL"
+* include urn:undefined#5197422 "HISTORICAL INFORMATION - FROM PARENT'S WRITTEN RECORD"
+* include urn:undefined#5197427 "HISTORICAL INFORMATION - FROM PUBLIC AGENCY"
+* include urn:undefined#5197426 "HISTORICAL INFORMATION - FROM SCHOOL RECORD"
+* include urn:undefined#5197420 "HISTORICAL INFORMATION - SOURCE UNSPECIFIED"
+* include urn:undefined#5197419 "NEW IMMUNIZATION RECORD"

@@ -25,7 +25,7 @@ Usage: #definition
 * group[=].element[=].target.code = #CAN
 * group[=].element[=].target.display = "Canada"
 * group[=].element[=].target.equivalence = #equivalent
-* group[=].element[+].code = #"AMERICAN SAMOA"
+* group[=].element[+].code = #AMERICAN_SAMOA
 * group[=].element[=].display = "AMERICAN SAMOA"
 * group[=].element[=].target.code = #ASM
 * group[=].element[=].target.display = "American Samoa"
@@ -40,22 +40,22 @@ Usage: #definition
 * group[=].element[=].target.code = #USA
 * group[=].element[=].target.display = "United States of America"
 * group[=].element[=].target.equivalence = #equivalent
-* group[=].element[+].code = #"ARMED FORCES AF,EU,ME,CA"
+* group[=].element[+].code = #ARMED_FORCES_AF,EU,ME,CA
 * group[=].element[=].display = "ARMED FORCES AF,EU,ME,CA"
 * group[=].element[=].target.code = #USA
 * group[=].element[=].target.display = "United States of America"
 * group[=].element[=].target.equivalence = #equivalent
-* group[=].element[+].code = #"ARMED FORCES AMER (EXC CANADA)"
+* group[=].element[+].code = #ARMED_FORCES_AMER_(EXC_CANADA)
 * group[=].element[=].display = "ARMED FORCES AMER (EXC CANADA)"
 * group[=].element[=].target.code = #USA
 * group[=].element[=].target.display = "United States of America"
 * group[=].element[=].target.equivalence = #equivalent
-* group[=].element[+].code = #"ARMED FORCES PACIFIC"
+* group[=].element[+].code = #ARMED_FORCES_PACIFIC
 * group[=].element[=].display = "ARMED FORCES PACIFIC"
 * group[=].element[=].target.code = #USA
 * group[=].element[=].target.display = "United States of America"
 * group[=].element[=].target.equivalence = #equivalent
-* group[=].element[+].code = #"BRITISH COLUMBIA"
+* group[=].element[+].code = #BRITISH_COLUMBIA
 * group[=].element[=].display = "BRITISH COLUMBIA"
 * group[=].element[=].target.code = #CAN
 * group[=].element[=].target.display = "Canada"
@@ -85,12 +85,12 @@ Usage: #definition
 * group[=].element[=].target.code = #USA
 * group[=].element[=].target.display = "United States of America"
 * group[=].element[=].target.equivalence = #equivalent
-* group[=].element[+].code = #"DISTRICT OF COLUMBIA"
+* group[=].element[+].code = #DISTRICT_OF_COLUMBIA
 * group[=].element[=].display = "DISTRICT OF COLUMBIA"
 * group[=].element[=].target.code = #USA
 * group[=].element[=].target.display = "United States of America"
 * group[=].element[=].target.equivalence = #equivalent
-* group[=].element[+].code = #"FEDERATED STATES OF MICRONESIA"
+* group[=].element[+].code = #FEDERATED_STATES_OF_MICRONESIA
 * group[=].element[=].display = "FEDERATED STATES OF MICRONESIA"
 * group[=].element[=].target.code = #FSM
 * group[=].element[=].target.display = "Federated States of Micronesia"
@@ -160,7 +160,7 @@ Usage: #definition
 * group[=].element[=].target.code = #CAN
 * group[=].element[=].target.display = "Canada"
 * group[=].element[=].target.equivalence = #equivalent
-* group[=].element[+].code = #"MARSHALL ISLANDS"
+* group[=].element[+].code = #MARSHALL_ISLANDS
 * group[=].element[=].display = "MARSHALL ISLANDS"
 * group[=].element[=].target.code = #MHL
 * group[=].element[=].target.display = "Marshall Islands"
@@ -215,27 +215,27 @@ Usage: #definition
 * group[=].element[=].target.code = #USA
 * group[=].element[=].target.display = "United States of America"
 * group[=].element[=].target.equivalence = #equivalent
-* group[=].element[+].code = #"NEW BRUNSWICK"
+* group[=].element[+].code = #NEW_BRUNSWICK
 * group[=].element[=].display = "NEW BRUNSWICK"
 * group[=].element[=].target.code = #CAN
 * group[=].element[=].target.display = "Canada"
 * group[=].element[=].target.equivalence = #equivalent
-* group[=].element[+].code = #"NEW HAMPSHIRE"
+* group[=].element[+].code = #NEW_HAMPSHIRE
 * group[=].element[=].display = "NEW HAMPSHIRE"
 * group[=].element[=].target.code = #USA
 * group[=].element[=].target.display = "United States of America"
 * group[=].element[=].target.equivalence = #equivalent
-* group[=].element[+].code = #"NEW JERSEY"
+* group[=].element[+].code = #NEW_JERSEY
 * group[=].element[=].display = "NEW JERSEY"
 * group[=].element[=].target.code = #USA
 * group[=].element[=].target.display = "United States of America"
 * group[=].element[=].target.equivalence = #equivalent
-* group[=].element[+].code = #"NEW MEXICO"
+* group[=].element[+].code = #NEW_MEXICO
 * group[=].element[=].display = "NEW MEXICO"
 * group[=].element[=].target.code = #USA
 * group[=].element[=].target.display = "United States of America"
 * group[=].element[=].target.equivalence = #equivalent
-* group[=].element[+].code = #"NEW YORK"
+* group[=].element[+].code = #NEW_YORK
 * group[=].element[=].display = "NEW YORK"
 * group[=].element[=].target.code = #USA
 * group[=].element[=].target.display = "United States of America"
@@ -245,32 +245,32 @@ Usage: #definition
 * group[=].element[=].target.code = #CAN
 * group[=].element[=].target.display = "Canada"
 * group[=].element[=].target.equivalence = #equivalent
-* group[=].element[+].code = #"NORTH CAROLINA"
+* group[=].element[+].code = #NORTH_CAROLINA
 * group[=].element[=].display = "NORTH CAROLINA"
 * group[=].element[=].target.code = #USA
 * group[=].element[=].target.display = "United States of America"
 * group[=].element[=].target.equivalence = #equivalent
-* group[=].element[+].code = #"NORTH DAKOTA"
+* group[=].element[+].code = #NORTH_DAKOTA
 * group[=].element[=].display = "NORTH DAKOTA"
 * group[=].element[=].target.code = #USA
 * group[=].element[=].target.display = "United States of America"
 * group[=].element[=].target.equivalence = #equivalent
-* group[=].element[+].code = #"NORTHERN MARIANA ISLANDS"
+* group[=].element[+].code = #NORTHERN_MARIANA_ISLANDS
 * group[=].element[=].display = "NORTHERN MARIANA ISLANDS"
 * group[=].element[=].target.code = #MNP
 * group[=].element[=].target.display = "Northern Mariana Islands"
 * group[=].element[=].target.equivalence = #equivalent
-* group[=].element[+].code = #"NORTHWEST TERRITORIES"
+* group[=].element[+].code = #NORTHWEST_TERRITORIES
 * group[=].element[=].display = "NORTHWEST TERRITORIES"
 * group[=].element[=].target.code = #CAN
 * group[=].element[=].target.display = "Canada"
 * group[=].element[=].target.equivalence = #equivalent
-* group[=].element[+].code = #"NOVA SCOTIA"
+* group[=].element[+].code = #NOVA_SCOTIA
 * group[=].element[=].display = "NOVA SCOTIA"
 * group[=].element[=].target.code = #CAN
 * group[=].element[=].target.display = "Canada"
 * group[=].element[=].target.equivalence = #equivalent
-* group[=].element[+].code = #"NUNAVUT PROVINCE"
+* group[=].element[+].code = #NUNAVUT_PROVINCE
 * group[=].element[=].display = "NUNAVUT PROVINCE"
 * group[=].element[=].target.code = #CAN
 * group[=].element[=].target.display = "Canada"
@@ -310,12 +310,12 @@ Usage: #definition
 * group[=].element[=].target.code = #PHL
 * group[=].element[=].target.display = "Phillipines"
 * group[=].element[=].target.equivalence = #equivalent
-* group[=].element[+].code = #"PRINCE EDWARD ISLAND"
+* group[=].element[+].code = #PRINCE_EDWARD_ISLAND
 * group[=].element[=].display = "PRINCE EDWARD ISLAND"
 * group[=].element[=].target.code = #CAN
 * group[=].element[=].target.display = "Canada"
 * group[=].element[=].target.equivalence = #equivalent
-* group[=].element[+].code = #"PUERTO RICO"
+* group[=].element[+].code = #PUERTO_RICO
 * group[=].element[=].display = "PUERTO RICO"
 * group[=].element[=].target.code = #PRI
 * group[=].element[=].target.display = "Puerto Rico"
@@ -325,7 +325,7 @@ Usage: #definition
 * group[=].element[=].target.code = #CAN
 * group[=].element[=].target.display = "Canada"
 * group[=].element[=].target.equivalence = #equivalent
-* group[=].element[+].code = #"RHODE ISLAND"
+* group[=].element[+].code = #RHODE_ISLAND
 * group[=].element[=].display = "RHODE ISLAND"
 * group[=].element[=].target.code = #USA
 * group[=].element[=].target.display = "United States of America"
@@ -335,12 +335,12 @@ Usage: #definition
 * group[=].element[=].target.code = #CAN
 * group[=].element[=].target.display = "Canada"
 * group[=].element[=].target.equivalence = #equivalent
-* group[=].element[+].code = #"SOUTH CAROLINA"
+* group[=].element[+].code = #SOUTH_CAROLINA
 * group[=].element[=].display = "SOUTH CAROLINA"
 * group[=].element[=].target.code = #USA
 * group[=].element[=].target.display = "United States of America"
 * group[=].element[=].target.equivalence = #equivalent
-* group[=].element[+].code = #"SOUTH DAKOTA"
+* group[=].element[+].code = #SOUTH_DAKOTA
 * group[=].element[=].display = "SOUTH DAKOTA"
 * group[=].element[=].target.code = #USA
 * group[=].element[=].target.display = "United States of America"
@@ -355,7 +355,7 @@ Usage: #definition
 * group[=].element[=].target.code = #USA
 * group[=].element[=].target.display = "United States of America"
 * group[=].element[=].target.equivalence = #equivalent
-* group[=].element[+].code = #"U.S. MINOR OUTLYING ISLANDS"
+* group[=].element[+].code = #U.S._MINOR_OUTLYING_ISLANDS
 * group[=].element[=].display = "U.S. MINOR OUTLYING ISLANDS"
 * group[=].element[=].target.code = #UMI
 * group[=].element[=].target.display = "U.S. Minor Outlying Islands"
@@ -370,7 +370,7 @@ Usage: #definition
 * group[=].element[=].target.code = #USA
 * group[=].element[=].target.display = "United States of America"
 * group[=].element[=].target.equivalence = #equivalent
-* group[=].element[+].code = #"VIRGIN ISLANDS"
+* group[=].element[+].code = #VIRGIN_ISLANDS
 * group[=].element[=].display = "VIRGIN ISLANDS"
 * group[=].element[=].target.code = #VIR
 * group[=].element[=].target.display = "Virgin Islands"
@@ -385,7 +385,7 @@ Usage: #definition
 * group[=].element[=].target.code = #USA
 * group[=].element[=].target.display = "United States of America"
 * group[=].element[=].target.equivalence = #equivalent
-* group[=].element[+].code = #"WEST VIRGINIA"
+* group[=].element[+].code = #WEST_VIRGINIA
 * group[=].element[=].display = "WEST VIRGINIA"
 * group[=].element[=].target.code = #USA
 * group[=].element[=].target.display = "United States of America"
@@ -400,7 +400,7 @@ Usage: #definition
 * group[=].element[=].target.code = #USA
 * group[=].element[=].target.display = "United States of America"
 * group[=].element[=].target.equivalence = #equivalent
-* group[=].element[+].code = #"YUKON TERRITORY"
+* group[=].element[+].code = #YUKON_TERRITORY
 * group[=].element[=].display = "YUKON TERRITORY"
 * group[=].element[=].target.code = #CAN
 * group[=].element[=].target.display = "Canada"

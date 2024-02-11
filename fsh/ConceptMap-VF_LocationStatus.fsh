@@ -8,7 +8,7 @@ Usage: #definition
 * experimental = true
 * description = "Terminology Maps VF_LocationStatus"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFLocationStatus"
-* group[0].source = "VAST"
+* group[0].source = "urn:VAST"
 * group[=].target = "http://hl7.org/fhir/location-status"
 * group[=].element[0].code = #A
 * group[=].element[=].display = "Active"

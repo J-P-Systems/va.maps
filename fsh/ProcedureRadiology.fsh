@@ -5,7 +5,6 @@ Title: "Procedure: Radiology"
 Description: "This StructureDefinition contains the maps for VistA file EXAMINATIONS (#70.03) to us-core-procedure"
 * ^status = #draft
 * status and statusReason.text and category.text and code.coding and subject and encounter and performedDateTime and performer.actor and location MS
-* performer.actor only Reference(http://hl7.org/fhir/StructureDefinition/Practitioner)
 
 Mapping: vista-to-ProcedureRadiology
 Id: vista

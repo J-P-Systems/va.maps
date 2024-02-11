@@ -30,6 +30,7 @@ Source: Appointment
 * minutesDuration -> "744: source value from PATIENT - LENGTH OF APP'T (#44.003-1)"
 * created -> "745: source value from APPOINTMENT - DATE APPT. MADE (#2.98-20)"
 * participant.actor -> "746: reference from APPOINTMENT - CLINIC (#2.98-.01)"
+* participant.actor -> "1722: reference from PATIENT (#2-)" "Added patient to the appointment map so that it is not assumed"
 * status -> "748: transform using \"waitlist\" on SD WAIT LIST - PATIENT (#409.3-.01) case not null" "LVH returns \"Waitlisted\". \"Waitlisted\" is the display value and \"waitlist\" is the code. This is a required FHIR value set. 3/15/2023 LVH will fix"
 * serviceCategory.coding.code -> "749: source value from SD WAIT LIST - APPT STOP CODE (#409.3-13.4)"
 * start -> "750: source value from SD WAIT LIST - DESIRED DATE OF APPOINTMENT (#409.3-22)"

@@ -1,9 +1,5 @@
-Instance: VSVFExamResultInterpretation
-InstanceOf: ValueSet
-Usage: #definition
-* url = "http://va.gov/fhir/ValueSet/VSVFExamResultInterpretation"
-* name = "VF_ExamResultInterpretation"
-* title = "VF_ExamResultInterpretation"
-* status = #active
-* experimental = true
-* description = "Navigate to the [ConceptMap VF_ExamResultInterpretation](ConceptMap-CMVFExamResultInterpretation.html)."
+ValueSet: VSVFExamResultInterpretation
+Title: "VF_ExamResultInterpretation"
+Description: "Navigate to [ConceptMap VF_ExamResultInterpretation](ConceptMap-CMVFExamResultInterpretation.html)"
+* include http://va.gov/terminology/vistaDefinedElements/9000010.15-.04#A "Abnormal"
+* include http://va.gov/terminology/vistaDefinedElements/9000010.15-.04#N "Normal"

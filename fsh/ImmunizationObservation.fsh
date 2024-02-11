@@ -16,3 +16,11 @@ Source: ImmunizationObservation
 * valueCodeableConcept -> "1594: terminologyMaps using VF_ImmunizationReaction on V IMMUNIZATION - REACTION (#9000010.11-.06)" "identified byMHV"
 * valueCodeableConcept.coding.code -> "1595: source value from V IMMUNIZATION - REACTION (#9000010.11-.06)" "identified byMHV"
 * valueCodeableConcept.text -> "1596: source value from V IMMUNIZATION - REACTION (#9000010.11-.06)" "identified byMHV"
+
+Mapping: cdw-to-ImmunizationObservation
+Id: cdw
+Title: "Clinical Data Warehouse (CDW)"
+Source: ImmunizationObservation
+* valueCodeableConcept -> "Immun.Immunization.Reaction"
+* valueCodeableConcept.coding.code -> "Immun.Immunization.Reaction"
+* valueCodeableConcept.text -> "Immun.Immunization.Reaction"

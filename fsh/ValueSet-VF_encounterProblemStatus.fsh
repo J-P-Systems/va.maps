@@ -1,9 +1,4 @@
-Instance: VSVFencounterProblemStatus
-InstanceOf: ValueSet
-Usage: #definition
-* url = "http://va.gov/fhir/ValueSet/VSVFencounterProblemStatus"
-* name = "VF_encounterProblemStatus"
-* title = "VF_encounterProblemStatus"
-* status = #active
-* experimental = true
-* description = "Navigate to the [ConceptMap VF_encounterProblemStatus](ConceptMap-CMVFencounterProblemStatus.html)."
+ValueSet: VSVFencounterProblemStatus
+Title: "VF_encounterProblemStatus"
+Description: "Navigate to [ConceptMap VF_encounterProblemStatus](ConceptMap-CMVFencounterProblemStatus.html)"
+* include http://va.gov/terminology/vistaDefinedElements/9000010.07-.06#R "RESOLVED"

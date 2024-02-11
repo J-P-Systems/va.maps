@@ -1,9 +1,5 @@
-Instance: VSVFOrderPatientClass
-InstanceOf: ValueSet
-Usage: #definition
-* url = "http://va.gov/fhir/ValueSet/VSVFOrderPatientClass"
-* name = "VF_OrderPatientClass"
-* title = "VF_OrderPatientClass"
-* status = #active
-* experimental = true
-* description = "Navigate to the [ConceptMap VF_OrderPatientClass](ConceptMap-CMVFOrderPatientClass.html)."
+ValueSet: VSVFOrderPatientClass
+Title: "VF_OrderPatientClass"
+Description: "Navigate to [ConceptMap VF_OrderPatientClass](ConceptMap-CMVFOrderPatientClass.html)"
+* include http://va.gov/terminology/vistaDefinedElements/100-10#I "INPATIENT"
+* include http://va.gov/terminology/vistaDefinedElements/100-10#O "OUTPATIENT"

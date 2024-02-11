@@ -1,9 +1,11 @@
-Instance: VSVFraceCategory
-InstanceOf: ValueSet
-Usage: #definition
-* url = "http://va.gov/fhir/ValueSet/VSVFraceCategory"
-* name = "VF_raceCategory"
-* title = "VF_raceCategory"
-* status = #active
-* experimental = true
-* description = "Navigate to the [ConceptMap VF_raceCategory](ConceptMap-CMVFraceCategory.html)."
+ValueSet: VSVFraceCategory
+Title: "VF_raceCategory"
+Description: "Navigate to [ConceptMap VF_raceCategory](ConceptMap-CMVFraceCategory.html)"
+* include urn:undefined#null "*Unknown at this time*"
+* include urn:undefined#null "DECLINED TO ANSWER"
+* include urn:undefined#null "UNKNOWN BY PATIENT"
+* include urn:undefined#null "AMERICAN INDIAN OR ALASKA NATIVE"
+* include urn:undefined#null "BLACK OR AFRICAN AMERICAN"
+* include urn:undefined#null "NATIVE HAWAIIAN OR OTHER PACIFIC ISLANDER"
+* include urn:undefined#null "WHITE"
+* include urn:undefined#null "WHITE NOT OF HISP ORIG"

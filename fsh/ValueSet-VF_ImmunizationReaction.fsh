@@ -1,9 +1,15 @@
-Instance: VSVFImmunizationReaction
-InstanceOf: ValueSet
-Usage: #definition
-* url = "http://va.gov/fhir/ValueSet/VSVFImmunizationReaction"
-* name = "VF_ImmunizationReaction"
-* title = "VF_ImmunizationReaction"
-* status = #active
-* experimental = true
-* description = "Navigate to the [ConceptMap VF_ImmunizationReaction](ConceptMap-CMVFImmunizationReaction.html)."
+ValueSet: VSVFImmunizationReaction
+Title: "VF_ImmunizationReaction"
+Description: "Navigate to [ConceptMap VF_ImmunizationReaction](ConceptMap-CMVFImmunizationReaction.html)"
+* include http://va.gov/terminology/vistaDefinedElements/9000010.11-.06#9 "ANAPHYLAXIS OR COLLAPSE"
+* include http://va.gov/terminology/vistaDefinedElements/9000010.11-.06#8 "ARTHRITIS OR ARTHRALGIAS"
+* include http://va.gov/terminology/vistaDefinedElements/9000010.11-.06#7 "CONVULSIONS"
+* include http://va.gov/terminology/vistaDefinedElements/9000010.11-.06#1 "FEVER"
+* include http://va.gov/terminology/vistaDefinedElements/9000010.11-.06#2 "IRRITABILITY"
+* include http://va.gov/terminology/vistaDefinedElements/9000010.11-.06#6 "LETHARGY"
+* include http://va.gov/terminology/vistaDefinedElements/9000010.11-.06#3 "LOCAL REACTION OR SWELLING"
+* include http://va.gov/terminology/vistaDefinedElements/9000010.11-.06#11 "OTHER"
+* include http://va.gov/terminology/vistaDefinedElements/9000010.11-.06#5 "RASH OR ITCHING"
+* include http://va.gov/terminology/vistaDefinedElements/9000010.11-.06#10 "RESPIRATORY DISTRESS"
+* include http://va.gov/terminology/vistaDefinedElements/9000010.11-.06#4 "VOMITING"
+* include http://va.gov/terminology/vistaDefinedElements/9000010.11-.06#0 "NONE"

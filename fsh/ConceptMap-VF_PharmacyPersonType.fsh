@@ -10,15 +10,15 @@ Usage: #definition
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFPharmacyPersonType"
 * group[0].source = "undefined"
 * group[=].target = "http://terminology.hl7.org/CodeSystem/subscriber-relationship"
-* group[=].element[0].code = #"001 = Cardholder"
+* group[=].element[0].code = #001_=_Cardholder
 * group[=].element[=].target.code = #self
 * group[=].element[=].target.display = "Self"
 * group[=].element[=].target.equivalence = #equivalent
-* group[=].element[+].code = #"002 = Spouse"
+* group[=].element[+].code = #002_=_Spouse
 * group[=].element[=].target.code = #spouse
 * group[=].element[=].target.display = "Spouse"
 * group[=].element[=].target.equivalence = #equivalent
-* group[=].element[+].code = #"003 - 999 = Dependents and Others"
+* group[=].element[+].code = #003_-_999_=_Dependents_and_Others
 * group[=].element[=].target.code = #other
 * group[=].element[=].target.display = "Other"
 * group[=].element[=].target.equivalence = #equivalent

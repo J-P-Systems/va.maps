@@ -1,9 +1,23 @@
-Instance: VSVFVitalsMethod
-InstanceOf: ValueSet
-Usage: #definition
-* url = "http://va.gov/fhir/ValueSet/VSVFVitalsMethod"
-* name = "VF_VitalsMethod"
-* title = "VF_VitalsMethod"
-* status = #active
-* experimental = true
-* description = "Navigate to the [ConceptMap VF_VitalsMethod](ConceptMap-CMVFVitalsMethod.html)."
+ValueSet: VSVFVitalsMethod
+Title: "VF_VitalsMethod"
+Description: "Navigate to [ConceptMap VF_VitalsMethod](ConceptMap-CMVFVitalsMethod.html)"
+* include http://va.gov/terminology/vistaDefinedElements/120.5-5#4688634 "ACTUAL"
+* include http://va.gov/terminology/vistaDefinedElements/120.5-5#4688702 "AFTER EXERCISE"
+* include http://va.gov/terminology/vistaDefinedElements/120.5-5#4688697 "AT REST"
+* include http://va.gov/terminology/vistaDefinedElements/120.5-5#4688639 "AUSCULTATE"
+* include http://va.gov/terminology/vistaDefinedElements/120.5-5#4537031 "CALCULATED"
+* include http://va.gov/terminology/vistaDefinedElements/120.5-5#4688652 "DRY"
+* include http://va.gov/terminology/vistaDefinedElements/120.5-5#4688653 "ESTIMATED"
+* include http://va.gov/terminology/vistaDefinedElements/120.5-5#4691085 "ESTIMATED BY ARM SPAN"
+* include http://va.gov/terminology/vistaDefinedElements/120.5-5#4688700 "INVASIVE"
+* include http://va.gov/terminology/vistaDefinedElements/120.5-5#4688668 "NON-INVASIVE (NONINVASIVE)"
+* include http://va.gov/terminology/vistaDefinedElements/120.5-5#4688669 "PALPATED"
+* include http://va.gov/terminology/vistaDefinedElements/120.5-5#4688681 "ROOM AIR"
+* include http://va.gov/terminology/vistaDefinedElements/120.5-5#4688706 "SPONTANEOUS"
+* include http://va.gov/terminology/vistaDefinedElements/120.5-5#4688692 "STATED"
+* include http://va.gov/terminology/vistaDefinedElements/120.5-5#4688683 "TRANSTRACHEAL"
+* include http://va.gov/terminology/vistaDefinedElements/120.5-5#4688699 "WITH ACTIVITY"
+* include http://va.gov/terminology/vistaDefinedElements/120.5-5#4536421 "WITH AMBULATION"
+* include http://va.gov/terminology/vistaDefinedElements/120.5-5#4500992 "WITH CAST OR BRACE"
+* include http://va.gov/terminology/vistaDefinedElements/120.5-5#4500993 "WITH PROSTHESIS"
+* include http://va.gov/terminology/vistaDefinedElements/120.5-5#4500994 "WITHOUT PROSTHESIS"

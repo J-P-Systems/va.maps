@@ -1,9 +1,10 @@
-Instance: VSVFgenderIdentity
-InstanceOf: ValueSet
-Usage: #definition
-* url = "http://va.gov/fhir/ValueSet/VSVFgenderIdentity"
-* name = "VF_genderIdentity"
-* title = "VF_genderIdentity"
-* status = #active
-* experimental = true
-* description = "Navigate to the [ConceptMap VF_genderIdentity](ConceptMap-CMVFgenderIdentity.html)."
+ValueSet: VSVFgenderIdentity
+Title: "VF_genderIdentity"
+Description: "Navigate to [ConceptMap VF_genderIdentity](ConceptMap-CMVFgenderIdentity.html)"
+* include http://va.gov/terminology/vistaDefinedElements/2-.024#N "DOES NOT WISH TO DISCLOSE"
+* include http://va.gov/terminology/vistaDefinedElements/2-.024#F "FEMALE"
+* include http://va.gov/terminology/vistaDefinedElements/2-.024#M "MALE"
+* include http://va.gov/terminology/vistaDefinedElements/2-.024#B "NON-BINARY"
+* include http://va.gov/terminology/vistaDefinedElements/2-.024#O "OTHER"
+* include http://va.gov/terminology/vistaDefinedElements/2-.024#TF "TRANSGENDER FEMALE"
+* include http://va.gov/terminology/vistaDefinedElements/2-.024#TM "TRANSGENDER MALE"

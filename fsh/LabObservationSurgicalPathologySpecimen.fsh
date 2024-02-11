@@ -10,8 +10,8 @@ Mapping: vista-to-LabObservationSurgicalPathologySpecimen
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: LabObservationSurgicalPathologySpecimen
-* accessionIdentifier -> "1471: source value from SURGICAL PATHOLOGY - SURGICAL PATH ACC # (#63.08-.06)"
-* type.text -> "1472: source value from SURGICAL PATHOLOGY - SPECIMEN > SPECIMEN - SPECIMEN (#63.08-.012 > 63.812-.01)"
+* accessionIdentifier -> "1702: source value from SURGICAL PATHOLOGY - SURGICAL PATH ACC # (#63.08-.06)"
+* type.text -> "1703: source value from SURGICAL PATHOLOGY - SPECIMEN > SPECIMEN - SPECIMEN (#63.08-.012 > 63.812-.01)"
 
 Mapping: cdw-to-LabObservationSurgicalPathologySpecimen
 Id: cdw

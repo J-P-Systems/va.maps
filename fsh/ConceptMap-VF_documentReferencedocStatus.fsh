@@ -28,11 +28,11 @@ Usage: #definition
 * group[=].element[=].target.equivalence = #relatedto
 * group[=].element[+].code = #4501128
 * group[=].element[=].display = "INACTIVE"
-* group[=].element[=].target.code = #"<exclude record>"
+* group[=].element[=].target.code = #<exclude_record>
 * group[=].element[=].target.equivalence = #equivalent
 * group[=].element[+].code = #4501287
 * group[=].element[=].display = "PURGED"
-* group[=].element[=].target.code = #"<exclude record>"
+* group[=].element[=].target.code = #<exclude_record>
 * group[=].element[=].target.equivalence = #relatedto
 * group[=].element[+].code = #4501288
 * group[=].element[=].display = "RETRACTED"
@@ -40,7 +40,7 @@ Usage: #definition
 * group[=].element[=].target.equivalence = #wider
 * group[=].element[+].code = #4501289
 * group[=].element[=].display = "TEST"
-* group[=].element[=].target.code = #"<exclude record>"
+* group[=].element[=].target.code = #<exclude_record>
 * group[=].element[=].target.equivalence = #equivalent
 * group[=].element[+].code = #4501290
 * group[=].element[=].display = "UNCOSIGNED"

@@ -5,6 +5,7 @@ Title: "Lab Observation DiagnosticReport"
 Description: "This StructureDefinition contains the maps for VistA file LABORATORY TEST (#60) to us-core-diagnosticreport-lab"
 * ^status = #draft
 * category.coding and category.text and code.coding and code.text and subject and result MS
+* result only Reference(LabObservationObservation)
 
 Mapping: vista-to-LabObservationDiagnosticReport
 Id: vista

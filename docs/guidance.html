@@ -62,7 +62,7 @@
 
 
 
-  <img alt="United States of America flag" src="assets/images/usa.svg" height="16" title="United States of America"/>
+  United States of America
 
 
             </span>
@@ -173,6 +173,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </ul>
 
 </div>
+<style>table, td, th { border: 1px solid black; padding:5px; }</style>
+
 <h3 id="design-decisions">Design Decisions</h3>
 
 <p>These design decisions have guided the mapping process. They are documented here to clarify why the maps were done the way they were and to support consensus across the enterprise.</p>
@@ -380,44 +382,49 @@ Write capabilities</li>
 <h4 id="uniform-resource-identifiers">Uniform Resource Identifiers</h4>
 
 <p>Different implementers may implement a variety of endpoints; these are subject to tactical constraints and are not addressed here. Definitional artifacts, however, require consistent definitional uris. For these artifacts, we define the VA FHIR definitional endpoint:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	http://va.gov/fhir/
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://va.gov/fhir/
 </code></pre></div></div>
 
-<p>This root supports definition of VA FHIR profiles, e.g.,</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	http://va.gov/fhir/problem-condition
- 	http://va.gov/fhir/diagnosis-condition
+<p>This root supports definition of VA FHIR artifacts, e.g.,</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://va.gov/fhir/StructureDefinition/AllergyIntoleranc
+http://va.gov/fhir/ConceptMap/CMVFallergyActive
+http://va.gov/fhir/ValueSet/VSVFallergyActive
 </code></pre></div></div>
 
 <p>Value sets, field identification for question codes, and identifiers also require URIs. These hierarchies, however, are not specific to FHIR:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	http://va.gov/terminology/vistaDefinedTerms
-	http://va.gov/terminology/vistaDefinedElements
-	http://va.gov/identifiers
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://va.gov/terminology/vistaDefinedTerms
+http://va.gov/terminology/vistaDefinedElements
+http://va.gov/identifiers
 </code></pre></div></div>
 
 <p>These subhierarchies support definition of artifacts specific to VistA fields. E.g., Patient religious preference is stored in VistA file 2, field .07, so the codes in that field have this system uri:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> 	http://va.gov/terminology/vistaDefinedTerms/2-.07
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://va.gov/terminology/vistaDefinedTerms/2-.07
 </code></pre></div></div>
+
+<h4 id="codeableconcepts">CodeableConcepts</h4>
+
+<p>…</p>
 
 <h4 id="identifiers">Identifiers</h4>
 
 <p>Patient identifers are VA ICNs scoped by the VA OID:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	"identifier" : [{
-			"system" : "urn:oid:2.16.840.1.113883.4.349",
-			"value" : "1015128742V345328"
-			}],
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"identifier" : [{
+	"system" : "urn:oid:2.16.840.1.113883.4.349",
+	"value" : "1015128742V345328"
+}],
 </code></pre></div></div>
 
 <p>This identifier can also describe the VA as an organization</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	"identifier" : [{
-			"value" : "urn:oid:2.16.840.1.113883.4.349"
-			}],
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"identifier" : [{
+	"value" : "urn:oid:2.16.840.1.113883.4.349"
+}],
 </code></pre></div></div>
 
 <p>or scope its VAMCs:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	"identifier" : [{
-			"system" : "urn:oid:2.16.840.1.113883.4.349",
-			"value" : "urn:oid:2.16.840.1.113883.4.349.7.508.430"
-			}],
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"identifier" : [{
+	"system" : "urn:oid:2.16.840.1.113883.4.349",
+	"value" : "urn:oid:2.16.840.1.113883.4.349.7.508.430"
+}],
 </code></pre></div></div>
 
 <p>Note that the facility OID is not generated as a pattern, but is taken from the VAST system list. This list contains OIDs for over 1700 locations.</p>
@@ -425,10 +432,10 @@ Write capabilities</li>
 <p>Other identifiers use the VistA file &amp; field concatenated to the VA root and the VAMC Sta3n. Because some interfaces do not provide maps to VistA files, we also provide a domain tag (practitioner, location, organization).</p>
 
 <p>E.g., for Prescription (file 52) Rx# (field .01):</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	"identifier" : [{
-			"system" : "http://va.gov/identifiers/practitioner/52/.01",
-			"value" : "3603899"
-			}],
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"identifier" : [{
+	"system" : "http://va.gov/identifiers/practitioner/52/.01",
+	"value" : "3603899"
+}],
 </code></pre></div></div>
 
 
@@ -456,7 +463,7 @@ Write capabilities</li>
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.16.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Feb 9, 2024 16:38+0000">2024-02-09</span>
+          IG &#169; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.16.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Sun, Feb 11, 2024 14:24+0000">2024-02-11</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

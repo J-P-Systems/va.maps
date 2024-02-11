@@ -12,35 +12,35 @@ Usage: #definition
 * group[=].target = "null"
 * group[=].element[0].code = #4688718
 * group[=].element[=].display = "AUDIOMETRY"
-* group[=].element[=].target.code = #"<omit code>"
+* group[=].element[=].target.code = #<omit_code>
 * group[=].element[=].target.equivalence = #equal
 * group[=].element[+].code = #4688721
 * group[=].element[=].display = "FETAL HEART TONES"
-* group[=].element[=].target.code = #"<omit code>"
+* group[=].element[=].target.code = #<omit_code>
 * group[=].element[=].target.equivalence = #equal
 * group[=].element[+].code = #4688722
 * group[=].element[=].display = "FUNDAL HEIGHT"
-* group[=].element[=].target.code = #"<omit code>"
+* group[=].element[=].target.code = #<omit_code>
 * group[=].element[=].target.equivalence = #equal
 * group[=].element[+].code = #4688723
 * group[=].element[=].display = "HEARING"
-* group[=].element[=].target.code = #"<omit code>"
+* group[=].element[=].target.code = #<omit_code>
 * group[=].element[=].target.equivalence = #equal
 * group[=].element[+].code = #4500635
 * group[=].element[=].display = "PAIN"
-* group[=].element[=].target.code = #"<omit code>"
+* group[=].element[=].target.code = #<omit_code>
 * group[=].element[=].target.equivalence = #equal
 * group[=].element[+].code = #4688726
 * group[=].element[=].display = "TONOMETRY"
-* group[=].element[=].target.code = #"<omit code>"
+* group[=].element[=].target.code = #<omit_code>
 * group[=].element[=].target.equivalence = #equal
 * group[=].element[+].code = #4688727
 * group[=].element[=].display = "VISION CORRECTED"
-* group[=].element[=].target.code = #"<omit code>"
+* group[=].element[=].target.code = #<omit_code>
 * group[=].element[=].target.equivalence = #equal
 * group[=].element[+].code = #4688728
 * group[=].element[=].display = "VISION UNCORRECTED"
-* group[=].element[=].target.code = #"<omit code>"
+* group[=].element[=].target.code = #<omit_code>
 * group[=].element[=].target.equivalence = #equal
 * group[+].source = "undefined"
 * group[=].target = "http://unitsofmeasure.org"

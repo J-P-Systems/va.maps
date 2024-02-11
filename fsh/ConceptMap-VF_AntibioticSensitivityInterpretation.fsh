@@ -8,7 +8,7 @@ Usage: #definition
 * experimental = true
 * description = "Terminology Maps VF_AntibioticSensitivityInterpretation"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFAntibioticSensitivityInterpretation"
-* group[0].source = "http://va.gov/terminology/vistaDefinedElements/63.3-5.1+to+160.1"
+* group[0].source = "undefined"
 * group[=].target = "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation"
 * group[=].element[0].code = #I
 * group[=].element[=].display = "Intermediate"

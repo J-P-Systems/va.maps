@@ -1,9 +1,6 @@
-Instance: VSVFallergySeverity
-InstanceOf: ValueSet
-Usage: #definition
-* url = "http://va.gov/fhir/ValueSet/VSVFallergySeverity"
-* name = "VF_allergySeverity"
-* title = "VF_allergySeverity"
-* status = #active
-* experimental = true
-* description = "Navigate to the [ConceptMap VF_allergySeverity](ConceptMap-CMVFallergySeverity.html)."
+ValueSet: VSVFallergySeverity
+Title: "VF_allergySeverity"
+Description: "Navigate to [ConceptMap VF_allergySeverity](ConceptMap-CMVFallergySeverity.html)"
+* include http://va.gov/terminology/vistaDefinedElements/120.85-14.5#1 "MILD"
+* include http://va.gov/terminology/vistaDefinedElements/120.85-14.5#2 "MODERATE"
+* include http://va.gov/terminology/vistaDefinedElements/120.85-14.5#3 "SEVERE"

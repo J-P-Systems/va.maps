@@ -1,9 +1,8 @@
-Instance: VSVFProcedureCodeSystem
-InstanceOf: ValueSet
-Usage: #definition
-* url = "http://va.gov/fhir/ValueSet/VSVFProcedureCodeSystem"
-* name = "VF_ProcedureCodeSystem"
-* title = "VF_ProcedureCodeSystem"
-* status = #active
-* experimental = true
-* description = "Navigate to the [ConceptMap VF_ProcedureCodeSystem](ConceptMap-CMVFProcedureCodeSystem.html)."
+ValueSet: VSVFProcedureCodeSystem
+Title: "VF_ProcedureCodeSystem"
+Description: "Navigate to [ConceptMap VF_ProcedureCodeSystem](ConceptMap-CMVFProcedureCodeSystem.html)"
+* include urn:undefined#CPT 
+* include urn:undefined#HCPCS 
+* include urn:undefined#ICD-9-CM 
+* include urn:undefined#NATIONAL_DRUG_CODE 
+* include urn:undefined#MUTUALLY_DEFINED 

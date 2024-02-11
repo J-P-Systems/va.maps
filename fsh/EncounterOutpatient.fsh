@@ -4,8 +4,7 @@ Id: EncounterOutpatient
 Title: "Encounter: Outpatient"
 Description: "This StructureDefinition contains the maps for VistA file VISIT (#9000010) to us-core-encounter"
 * ^status = #draft
-* identifier.value and status and serviceType.coding.code and subject and period.start and period.end and reasonCode.coding.code and location.location and serviceProvider and participant.individual and type MS
-* serviceProvider only Reference(http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization)
+* identifier.value and status and serviceType.coding.code and subject and period.start and period.end and reasonCode.coding.code and diagnosis.condition and location.location and serviceProvider and participant.individual and type MS
 
 Mapping: vista-to-EncounterOutpatient
 Id: vista
@@ -20,8 +19,9 @@ Source: EncounterOutpatient
 * period.start -> "443: source value from VISIT - VISIT/ADMIT DATE&TIME (#9000010-.01)"
 * period.end -> "444: source value from VISIT - CHECK OUT DATE&TIME (#9000010-.18)"
 * reasonCode.coding.code -> "447: source value from V POV - POV > ICD DIAGNOSIS - CODE NUMBER (#9000010.07-.01 > 80-.01)" "MvdZ QA"
-* location.location -> "458: source value from VISIT - DSS ID (#9000010-.08) case stop"
-* location.location -> "459: source value from VISIT - HOSPITAL LOCATION (#9000010-.22) case location"
+* diagnosis.condition -> "452: reference from V POV - PROBLEM LIST ENTRY (#9000010.07-.16)" "added parameter"
+* location.location -> "458: reference from VISIT - DSS ID (#9000010-.08) case stop"
+* location.location -> "459: reference from VISIT - HOSPITAL LOCATION (#9000010-.22) case location"
 * serviceProvider -> "1599: reference from VISIT - LOC. OF ENCOUNTER > LOCATION - POINTER TO INSTITUTION FILE (#4) (#9000010-.06 > 9999999.06-.1)"
 * participant.individual -> "1614: reference from V PROVIDER - PROVIDER > NEW PERSON (#9000010.06-.01 > 200-)"
 * type -> "1615: source value from V CPT - CPT > CPT (#9000010.18-.01 > 81-)"

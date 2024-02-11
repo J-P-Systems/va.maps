@@ -1,9 +1,5 @@
-Instance: VSVFBoolean
-InstanceOf: ValueSet
-Usage: #definition
-* url = "http://va.gov/fhir/ValueSet/VSVFBoolean"
-* name = "VF_Boolean"
-* title = "VF_Boolean"
-* status = #active
-* experimental = true
-* description = "Navigate to the [ConceptMap VF_Boolean](ConceptMap-CMVFBoolean.html)."
+ValueSet: VSVFBoolean
+Title: "VF_Boolean"
+Description: "Navigate to [ConceptMap VF_Boolean](ConceptMap-CMVFBoolean.html)"
+* include urn:undefined#0 "No"
+* include urn:undefined#1 "Yes"

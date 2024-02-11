@@ -1,9 +1,22 @@
-Instance: VSVFVitalsCodes
-InstanceOf: ValueSet
-Usage: #definition
-* url = "http://va.gov/fhir/ValueSet/VSVFVitalsCodes"
-* name = "VF_VitalsCodes"
-* title = "VF_VitalsCodes"
-* status = #active
-* experimental = true
-* description = "Navigate to the [ConceptMap VF_VitalsCodes](ConceptMap-CMVFVitalsCodes.html)."
+ValueSet: VSVFVitalsCodes
+Title: "VF_VitalsCodes"
+Description: "Navigate to [ConceptMap VF_VitalsCodes](ConceptMap-CMVFVitalsCodes.html)"
+* include http://va.gov/terminology/vistaDefinedElements/120.5-.03#4688718 "AUDIOMETRY"
+* include http://va.gov/terminology/vistaDefinedElements/120.5-.03#4500634 "BLOOD PRESSURE"
+* include http://va.gov/terminology/vistaDefinedElements/120.5-.03#null "BODY MASS INDEX"
+* include http://va.gov/terminology/vistaDefinedElements/120.5-.03#4688719 "CENTRAL VENOUS PRESSURE"
+* include http://va.gov/terminology/vistaDefinedElements/120.5-.03#4688720 "CIRCUMFERENCE/GIRTH"
+* include http://va.gov/terminology/vistaDefinedElements/120.5-.03#4688721 "FETAL HEART TONES"
+* include http://va.gov/terminology/vistaDefinedElements/120.5-.03#4688722 "FUNDAL HEIGHT"
+* include http://va.gov/terminology/vistaDefinedElements/120.5-.03#4688723 "HEARING"
+* include http://va.gov/terminology/vistaDefinedElements/120.5-.03#4688724 "HEIGHT"
+* include http://va.gov/terminology/vistaDefinedElements/120.5-.03#4500635 "PAIN"
+* include http://va.gov/terminology/vistaDefinedElements/120.5-.03#4500636 "PULSE"
+* include http://va.gov/terminology/vistaDefinedElements/120.5-.03#4500637 "PULSE OXIMETRY"
+* include http://va.gov/terminology/vistaDefinedElements/120.5-.03#4500637 "PULSE OXIMETRY"
+* include http://va.gov/terminology/vistaDefinedElements/120.5-.03#4688725 "RESPIRATION"
+* include http://va.gov/terminology/vistaDefinedElements/120.5-.03#4500638 "TEMPERATURE"
+* include http://va.gov/terminology/vistaDefinedElements/120.5-.03#4688726 "TONOMETRY"
+* include http://va.gov/terminology/vistaDefinedElements/120.5-.03#4688727 "VISION CORRECTED"
+* include http://va.gov/terminology/vistaDefinedElements/120.5-.03#4688728 "VISION UNCORRECTED"
+* include http://va.gov/terminology/vistaDefinedElements/120.5-.03#4500639 "WEIGHT"

@@ -16,7 +16,7 @@ Usage: #definition
 * group[=].element[+].code = #ICD-9-CM
 * group[=].element[=].target.code = #http://hl7.org/fhir/sid/icd-9-cm
 * group[=].element[=].target.equivalence = #equal
-* group[=].element[+].code = #"ICD-9 Proc"
+* group[=].element[+].code = #ICD-9_Proc
 * group[=].element[=].target.code = #null
 * group[=].element[=].target.equivalence = #equal
 * group[=].element[+].code = #ICD-10-PCS

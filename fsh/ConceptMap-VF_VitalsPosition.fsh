@@ -15,7 +15,7 @@ Usage: #definition
 * group[=].element[=].target.code = #102536004
 * group[=].element[=].target.display = "Left lateral decubitus position (finding)"
 * group[=].element[=].target.equivalence = #equal
-* group[=].element[+].code = #4711343
+* group[=].element[+].code = #4688663
 * group[=].element[=].display = "LYING"
 * group[=].element[=].target.code = #102538003
 * group[=].element[=].target.display = "Recumbent body position (finding)"
@@ -30,27 +30,27 @@ Usage: #definition
 * group[=].element[=].target.code = #102535000
 * group[=].element[=].target.display = "Right lateral decubitus position (finding)"
 * group[=].element[=].target.equivalence = #equal
-* group[=].element[+].code = #4711354
+* group[=].element[+].code = #4688682
 * group[=].element[=].display = "SEMIFOWLERS"
 * group[=].element[=].target.code = #426408003
 * group[=].element[=].target.display = "Semi-Fowler's position (finding)"
 * group[=].element[=].target.equivalence = #equal
-* group[=].element[+].code = #4711357
+* group[=].element[+].code = #4688703
 * group[=].element[=].display = "SITTING"
 * group[=].element[=].target.code = #33586001
 * group[=].element[=].target.display = "Sitting position (finding)"
 * group[=].element[=].target.equivalence = #equal
-* group[=].element[+].code = #4711361
+* group[=].element[+].code = #4688707
 * group[=].element[=].display = "STANDING"
 * group[=].element[=].target.code = #10904000
 * group[=].element[=].target.display = "Orthostatic body position (finding)"
 * group[=].element[=].target.equivalence = #equal
-* group[=].element[+].code = #4711362
+* group[=].element[+].code = #4500643
 * group[=].element[=].display = "STANDING WEIGHT"
 * group[=].element[=].target.code = #10904000
 * group[=].element[=].target.display = "Orthostatic body position (finding)"
 * group[=].element[=].target.equivalence = #equal
-* group[=].element[+].code = #4711369
+* group[=].element[+].code = #4688694
 * group[=].element[=].display = "TRENDELENBURG"
 * group[=].element[=].target.code = #34106002
 * group[=].element[=].target.display = "Trendelenburg position (finding)"

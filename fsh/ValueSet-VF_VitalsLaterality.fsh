@@ -1,9 +1,5 @@
-Instance: VSVFVitalsLaterality
-InstanceOf: ValueSet
-Usage: #definition
-* url = "http://va.gov/fhir/ValueSet/VSVFVitalsLaterality"
-* name = "VF_VitalsLaterality"
-* title = "VF_VitalsLaterality"
-* status = #active
-* experimental = true
-* description = "Navigate to the [ConceptMap VF_VitalsLaterality](ConceptMap-CMVFVitalsLaterality.html)."
+ValueSet: VSVFVitalsLaterality
+Title: "VF_VitalsLaterality"
+Description: "Navigate to [ConceptMap VF_VitalsLaterality](ConceptMap-CMVFVitalsLaterality.html)"
+* include urn:undefined#4688660 "LEFT"
+* include urn:undefined#4688680 "RIGHT"

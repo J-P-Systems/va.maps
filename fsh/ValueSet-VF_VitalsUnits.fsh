@@ -1,9 +1,21 @@
-Instance: VSVFVitalsUnits
-InstanceOf: ValueSet
-Usage: #definition
-* url = "http://va.gov/fhir/ValueSet/VSVFVitalsUnits"
-* name = "VF_VitalsUnits"
-* title = "VF_VitalsUnits"
-* status = #active
-* experimental = true
-* description = "Navigate to the [ConceptMap VF_VitalsUnits](ConceptMap-CMVFVitalsUnits.html)."
+ValueSet: VSVFVitalsUnits
+Title: "VF_VitalsUnits"
+Description: "Navigate to [ConceptMap VF_VitalsUnits](ConceptMap-CMVFVitalsUnits.html)"
+* include urn:undefined#4688718 "AUDIOMETRY"
+* include urn:undefined#4688721 "FETAL HEART TONES"
+* include urn:undefined#4688722 "FUNDAL HEIGHT"
+* include urn:undefined#4688723 "HEARING"
+* include urn:undefined#4500635 "PAIN"
+* include urn:undefined#4688726 "TONOMETRY"
+* include urn:undefined#4688727 "VISION CORRECTED"
+* include urn:undefined#4688728 "VISION UNCORRECTED"
+* include urn:undefined#4500634 "BLOOD PRESSURE"
+* include urn:undefined#null "BODY MASS INDEX"
+* include urn:undefined#4688719 "CENTRAL VENOUS PRESSURE"
+* include urn:undefined#4688720 "CIRCUMFERENCE/GIRTH"
+* include urn:undefined#4688724 "HEIGHT"
+* include urn:undefined#4500636 "PULSE"
+* include urn:undefined#4500637 "PULSE OXIMETRY"
+* include urn:undefined#4688725 "RESPIRATION"
+* include urn:undefined#4500638 "TEMPERATURE"
+* include urn:undefined#4500639 "WEIGHT"

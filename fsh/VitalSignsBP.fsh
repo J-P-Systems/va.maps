@@ -1,7 +1,7 @@
 Profile: VitalSignsBP
 Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-blood-pressure
 Id: VitalSignsBP
-Title: "Vital Signs: BP"
+Title: "Vital Signs BP"
 Description: "This StructureDefinition contains the maps for VistA file GMRV VITAL MEASUREMENT (#120.5) to us-core-blood-pressure"
 * ^status = #draft
 * component[systolic].valueQuantity.value and component[diastolic].valueQuantity.value MS

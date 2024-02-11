@@ -17,7 +17,7 @@
   fhir:name [ fhir:v "VAMapsIG"] ; # 
   fhir:title [ fhir:v "US Veterans Administration FHIR Map Set Implementation Guide"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2024-02-09T16:38:59+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2024-02-11T14:24:24+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "VA"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "VA" ] ;
@@ -644,11 +644,11 @@
          fhir:value [ fhir:v "StructureDefinition:resource" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://va.gov/fhir/StructureDefinition/CPMVitalSigns> ;
-         fhir:reference [ fhir:v "StructureDefinition/CPMVitalSigns" ]
+         fhir:link <http://va.gov/fhir/StructureDefinition/DocumentReference> ;
+         fhir:reference [ fhir:v "StructureDefinition/DocumentReference" ]
        ] ;
-       fhir:name [ fhir:v "CPM Vital Signs" ] ;
-       fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA file GMRV VITAL MEASUREMENT (#120.5) to us-core-vital-signs" ] ;
+       fhir:name [ fhir:v "Document Reference" ] ;
+       fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA file TIU DOCUMENT (#8925) to us-core-documentreference" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -682,10 +682,23 @@
          fhir:value [ fhir:v "StructureDefinition:resource" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://va.gov/fhir/StructureDefinition/EncounterInpatient> ;
-         fhir:reference [ fhir:v "StructureDefinition/EncounterInpatient" ]
+         fhir:link <http://va.gov/fhir/StructureDefinition/EncounterInpatientCondition> ;
+         fhir:reference [ fhir:v "StructureDefinition/EncounterInpatientCondition" ]
        ] ;
-       fhir:name [ fhir:v "Encounter: Inpatient" ] ;
+       fhir:name [ fhir:v "Encounter: Inpatient Condition" ] ;
+       fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA file PTF (#45) to us-core-condition-problems-health-concerns" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "group7" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/StructureDefinition/EncounterInpatientEncounter> ;
+         fhir:reference [ fhir:v "StructureDefinition/EncounterInpatientEncounter" ]
+       ] ;
+       fhir:name [ fhir:v "Encounter: Inpatient Encounter" ] ;
        fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA file PTF (#45) to us-core-encounter" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ] ;
        fhir:groupingId [ fhir:v "group7" ]
@@ -903,19 +916,6 @@
          fhir:value [ fhir:v "StructureDefinition:resource" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://va.gov/fhir/StructureDefinition/LabObservationCytopathologyObservation> ;
-         fhir:reference [ fhir:v "StructureDefinition/LabObservationCytopathologyObservation" ]
-       ] ;
-       fhir:name [ fhir:v "Lab Observation: Cytopathology Observation" ] ;
-       fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA file CYTOPATHOLOGY (#63.09) to us-core-observation-lab" ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:groupingId [ fhir:v "group5" ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:resource" ]
-       ] ) ;
-       fhir:reference [
          fhir:link <http://va.gov/fhir/StructureDefinition/LabObservationCytopathologySpecimen> ;
          fhir:reference [ fhir:v "StructureDefinition/LabObservationCytopathologySpecimen" ]
        ] ;
@@ -934,19 +934,6 @@
        ] ;
        fhir:name [ fhir:v "Lab Observation: Electron Microscopy DiagnosticReport" ] ;
        fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA file EM (#63.02) to us-core-diagnosticreport-lab" ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:groupingId [ fhir:v "group5" ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:resource" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://va.gov/fhir/StructureDefinition/LabObservationElectronMicroscopyObservation> ;
-         fhir:reference [ fhir:v "StructureDefinition/LabObservationElectronMicroscopyObservation" ]
-       ] ;
-       fhir:name [ fhir:v "Lab Observation: Electron Microscopy Observation" ] ;
-       fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA file EM (#63.02) to us-core-observation-lab" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ] ;
        fhir:groupingId [ fhir:v "group5" ]
      ] [
@@ -1150,19 +1137,6 @@
          fhir:value [ fhir:v "StructureDefinition:resource" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://va.gov/fhir/StructureDefinition/LabObservationSurgicalPathologyObservation> ;
-         fhir:reference [ fhir:v "StructureDefinition/LabObservationSurgicalPathologyObservation" ]
-       ] ;
-       fhir:name [ fhir:v "Lab Observation: Surgical Pathology Observation" ] ;
-       fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA file SURGICAL PATHOLOGY (#63.08) to us-core-observation-lab" ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:groupingId [ fhir:v "group5" ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:resource" ]
-       ] ) ;
-       fhir:reference [
          fhir:link <http://va.gov/fhir/StructureDefinition/LabObservationSurgicalPathologySpecimen> ;
          fhir:reference [ fhir:v "StructureDefinition/LabObservationSurgicalPathologySpecimen" ]
        ] ;
@@ -1241,10 +1215,23 @@
          fhir:value [ fhir:v "StructureDefinition:resource" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://va.gov/fhir/StructureDefinition/MedicationRequestOutpatient> ;
-         fhir:reference [ fhir:v "StructureDefinition/MedicationRequestOutpatient" ]
+         fhir:link <http://va.gov/fhir/StructureDefinition/MedicationRequestOutpatientEncounter> ;
+         fhir:reference [ fhir:v "StructureDefinition/MedicationRequestOutpatientEncounter" ]
        ] ;
-       fhir:name [ fhir:v "MedicationRequest: Outpatient" ] ;
+       fhir:name [ fhir:v "MedicationRequest: Outpatient Encounter" ] ;
+       fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA file PRESCRIPTION (#52) to us-core-encounter" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "group11" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/StructureDefinition/MedicationRequestOutpatientMedicationRequest> ;
+         fhir:reference [ fhir:v "StructureDefinition/MedicationRequestOutpatientMedicationRequest" ]
+       ] ;
+       fhir:name [ fhir:v "MedicationRequest: Outpatient MedicationRequest" ] ;
        fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA file PRESCRIPTION (#52) to us-core-medicationrequest" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ] ;
        fhir:groupingId [ fhir:v "group11" ]
@@ -1433,6 +1420,18 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/ValueSet/VSVFallergyActive> ;
+         fhir:reference [ fhir:v "ValueSet/VSVFallergyActive" ]
+       ] ;
+       fhir:name [ fhir:v "VF_allergyActive" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_allergyActive](ConceptMap-CMVFallergyActive.html)" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "ConceptMap" ]
        ] ) ;
        fhir:reference [
@@ -1448,11 +1447,11 @@
          fhir:value [ fhir:v "ValueSet" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://va.gov/fhir/ValueSet/VSVFallergyActive> ;
-         fhir:reference [ fhir:v "ValueSet/VSVFallergyActive" ]
+         fhir:link <http://va.gov/fhir/ValueSet/VSVFallergyEnteredInError> ;
+         fhir:reference [ fhir:v "ValueSet/VSVFallergyEnteredInError" ]
        ] ;
-       fhir:name [ fhir:v "VF_allergyActive" ] ;
-       fhir:description [ fhir:v "Navigate to the [ConceptMap VF_allergyActive](ConceptMap-CMVFallergyActive.html)." ] ;
+       fhir:name [ fhir:v "VF_allergyEnteredInError" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_allergyEnteredInError](ConceptMap-CMVFallergyEnteredInError.html)" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -1472,11 +1471,11 @@
          fhir:value [ fhir:v "ValueSet" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://va.gov/fhir/ValueSet/VSVFallergyEnteredInError> ;
-         fhir:reference [ fhir:v "ValueSet/VSVFallergyEnteredInError" ]
+         fhir:link <http://va.gov/fhir/ValueSet/VSVFallergyMechanism> ;
+         fhir:reference [ fhir:v "ValueSet/VSVFallergyMechanism" ]
        ] ;
-       fhir:name [ fhir:v "VF_allergyEnteredInError" ] ;
-       fhir:description [ fhir:v "Navigate to the [ConceptMap VF_allergyEnteredInError](ConceptMap-CMVFallergyEnteredInError.html)." ] ;
+       fhir:name [ fhir:v "VF_allergyMechanism" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_allergyMechanism](ConceptMap-CMVFallergyMechanism.html)" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -1496,11 +1495,11 @@
          fhir:value [ fhir:v "ValueSet" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://va.gov/fhir/ValueSet/VSVFallergyMechanism> ;
-         fhir:reference [ fhir:v "ValueSet/VSVFallergyMechanism" ]
+         fhir:link <http://va.gov/fhir/ValueSet/VSVFallergySeverity> ;
+         fhir:reference [ fhir:v "ValueSet/VSVFallergySeverity" ]
        ] ;
-       fhir:name [ fhir:v "VF_allergyMechanism" ] ;
-       fhir:description [ fhir:v "Navigate to the [ConceptMap VF_allergyMechanism](ConceptMap-CMVFallergyMechanism.html)." ] ;
+       fhir:name [ fhir:v "VF_allergySeverity" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_allergySeverity](ConceptMap-CMVFallergySeverity.html)" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -1520,11 +1519,11 @@
          fhir:value [ fhir:v "ValueSet" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://va.gov/fhir/ValueSet/VSVFallergySeverity> ;
-         fhir:reference [ fhir:v "ValueSet/VSVFallergySeverity" ]
+         fhir:link <http://va.gov/fhir/ValueSet/VSVFallergySubstanceCategory> ;
+         fhir:reference [ fhir:v "ValueSet/VSVFallergySubstanceCategory" ]
        ] ;
-       fhir:name [ fhir:v "VF_allergySeverity" ] ;
-       fhir:description [ fhir:v "Navigate to the [ConceptMap VF_allergySeverity](ConceptMap-CMVFallergySeverity.html)." ] ;
+       fhir:name [ fhir:v "VF_allergySubstanceCategory" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_allergySubstanceCategory](ConceptMap-CMVFallergySubstanceCategory.html)" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -1544,11 +1543,11 @@
          fhir:value [ fhir:v "ValueSet" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://va.gov/fhir/ValueSet/VSVFallergySubstanceCategory> ;
-         fhir:reference [ fhir:v "ValueSet/VSVFallergySubstanceCategory" ]
+         fhir:link <http://va.gov/fhir/ValueSet/VSVFallergyVerificationStatus> ;
+         fhir:reference [ fhir:v "ValueSet/VSVFallergyVerificationStatus" ]
        ] ;
-       fhir:name [ fhir:v "VF_allergySubstanceCategory" ] ;
-       fhir:description [ fhir:v "Navigate to the [ConceptMap VF_allergySubstanceCategory](ConceptMap-CMVFallergySubstanceCategory.html)." ] ;
+       fhir:name [ fhir:v "VF_allergyVerificationStatus" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_allergyVerificationStatus](ConceptMap-CMVFallergyVerificationStatus.html)" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -1568,11 +1567,11 @@
          fhir:value [ fhir:v "ValueSet" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://va.gov/fhir/ValueSet/VSVFallergyVerificationStatus> ;
-         fhir:reference [ fhir:v "ValueSet/VSVFallergyVerificationStatus" ]
+         fhir:link <http://va.gov/fhir/ValueSet/VSVFAntibioticSensitivityInterpretation> ;
+         fhir:reference [ fhir:v "ValueSet/VSVFAntibioticSensitivityInterpretation" ]
        ] ;
-       fhir:name [ fhir:v "VF_allergyVerificationStatus" ] ;
-       fhir:description [ fhir:v "Navigate to the [ConceptMap VF_allergyVerificationStatus](ConceptMap-CMVFallergyVerificationStatus.html)." ] ;
+       fhir:name [ fhir:v "VF_AntibioticSensitivityInterpretation" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_AntibioticSensitivityInterpretation](ConceptMap-CMVFAntibioticSensitivityInterpretation.html)" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -1592,11 +1591,11 @@
          fhir:value [ fhir:v "ValueSet" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://va.gov/fhir/ValueSet/VSVFAntibioticSensitivityInterpretation> ;
-         fhir:reference [ fhir:v "ValueSet/VSVFAntibioticSensitivityInterpretation" ]
+         fhir:link <http://va.gov/fhir/ValueSet/VSVFAppointmentStatus> ;
+         fhir:reference [ fhir:v "ValueSet/VSVFAppointmentStatus" ]
        ] ;
-       fhir:name [ fhir:v "VF_AntibioticSensitivityInterpretation" ] ;
-       fhir:description [ fhir:v "Navigate to the [ConceptMap VF_AntibioticSensitivityInterpretation](ConceptMap-CMVFAntibioticSensitivityInterpretation.html)." ] ;
+       fhir:name [ fhir:v "VF_AppointmentStatus" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_AppointmentStatus](ConceptMap-CMVFAppointmentStatus.html)" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -1616,11 +1615,11 @@
          fhir:value [ fhir:v "ValueSet" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://va.gov/fhir/ValueSet/VSVFAppointmentStatus> ;
-         fhir:reference [ fhir:v "ValueSet/VSVFAppointmentStatus" ]
+         fhir:link <http://va.gov/fhir/ValueSet/VSVFBoolean> ;
+         fhir:reference [ fhir:v "ValueSet/VSVFBoolean" ]
        ] ;
-       fhir:name [ fhir:v "VF_AppointmentStatus" ] ;
-       fhir:description [ fhir:v "Navigate to the [ConceptMap VF_AppointmentStatus](ConceptMap-CMVFAppointmentStatus.html)." ] ;
+       fhir:name [ fhir:v "VF_Boolean" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_Boolean](ConceptMap-CMVFBoolean.html)" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -1640,11 +1639,11 @@
          fhir:value [ fhir:v "ValueSet" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://va.gov/fhir/ValueSet/VSVFBoolean> ;
-         fhir:reference [ fhir:v "ValueSet/VSVFBoolean" ]
+         fhir:link <http://va.gov/fhir/ValueSet/VSVFCommunicationQualifier> ;
+         fhir:reference [ fhir:v "ValueSet/VSVFCommunicationQualifier" ]
        ] ;
-       fhir:name [ fhir:v "VF_Boolean" ] ;
-       fhir:description [ fhir:v "Navigate to the [ConceptMap VF_Boolean](ConceptMap-CMVFBoolean.html)." ] ;
+       fhir:name [ fhir:v "VF_CommunicationQualifier" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_CommunicationQualifier](ConceptMap-CMVFCommunicationQualifier.html)" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -1664,11 +1663,11 @@
          fhir:value [ fhir:v "ValueSet" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://va.gov/fhir/ValueSet/VSVFCommunicationQualifier> ;
-         fhir:reference [ fhir:v "ValueSet/VSVFCommunicationQualifier" ]
+         fhir:link <http://va.gov/fhir/ValueSet/VSVFCoverageRelationship> ;
+         fhir:reference [ fhir:v "ValueSet/VSVFCoverageRelationship" ]
        ] ;
-       fhir:name [ fhir:v "VF_CommunicationQualifier" ] ;
-       fhir:description [ fhir:v "Navigate to the [ConceptMap VF_CommunicationQualifier](ConceptMap-CMVFCommunicationQualifier.html)." ] ;
+       fhir:name [ fhir:v "VF_CoverageRelationship" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_CoverageRelationship](ConceptMap-CMVFCoverageRelationship.html)" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -1688,11 +1687,11 @@
          fhir:value [ fhir:v "ValueSet" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://va.gov/fhir/ValueSet/VSVFCoverageRelationship> ;
-         fhir:reference [ fhir:v "ValueSet/VSVFCoverageRelationship" ]
+         fhir:link <http://va.gov/fhir/ValueSet/VSVFCoverageStatusForce> ;
+         fhir:reference [ fhir:v "ValueSet/VSVFCoverageStatusForce" ]
        ] ;
-       fhir:name [ fhir:v "VF_CoverageRelationship" ] ;
-       fhir:description [ fhir:v "Navigate to the [ConceptMap VF_CoverageRelationship](ConceptMap-CMVFCoverageRelationship.html)." ] ;
+       fhir:name [ fhir:v "VF_CoverageStatusForce" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_CoverageStatusForce](ConceptMap-CMVFCoverageStatusForce.html)" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -1712,11 +1711,11 @@
          fhir:value [ fhir:v "ValueSet" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://va.gov/fhir/ValueSet/VSVFCoverageStatusForce> ;
-         fhir:reference [ fhir:v "ValueSet/VSVFCoverageStatusForce" ]
+         fhir:link <http://va.gov/fhir/ValueSet/VSVFDentalDeviceStatus> ;
+         fhir:reference [ fhir:v "ValueSet/VSVFDentalDeviceStatus" ]
        ] ;
-       fhir:name [ fhir:v "VF_CoverageStatusForce" ] ;
-       fhir:description [ fhir:v "Navigate to the [ConceptMap VF_CoverageStatusForce](ConceptMap-CMVFCoverageStatusForce.html)." ] ;
+       fhir:name [ fhir:v "VF_DentalDeviceStatus" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_DentalDeviceStatus](ConceptMap-CMVFDentalDeviceStatus.html)" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -1736,11 +1735,11 @@
          fhir:value [ fhir:v "ValueSet" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://va.gov/fhir/ValueSet/VSVFDentalDeviceStatus> ;
-         fhir:reference [ fhir:v "ValueSet/VSVFDentalDeviceStatus" ]
+         fhir:link <http://va.gov/fhir/ValueSet/VSVFdeviceTypePacemaker> ;
+         fhir:reference [ fhir:v "ValueSet/VSVFdeviceTypePacemaker" ]
        ] ;
-       fhir:name [ fhir:v "VF_DentalDeviceStatus" ] ;
-       fhir:description [ fhir:v "Navigate to the [ConceptMap VF_DentalDeviceStatus](ConceptMap-CMVFDentalDeviceStatus.html)." ] ;
+       fhir:name [ fhir:v "VF_deviceTypePacemaker" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_deviceTypePacemaker](ConceptMap-CMVFdeviceTypePacemaker.html)" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -1760,11 +1759,11 @@
          fhir:value [ fhir:v "ValueSet" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://va.gov/fhir/ValueSet/VSVFdeviceTypePacemaker> ;
-         fhir:reference [ fhir:v "ValueSet/VSVFdeviceTypePacemaker" ]
+         fhir:link <http://va.gov/fhir/ValueSet/VSVFDiagnosticReportLabStatus> ;
+         fhir:reference [ fhir:v "ValueSet/VSVFDiagnosticReportLabStatus" ]
        ] ;
-       fhir:name [ fhir:v "VF_deviceTypePacemaker" ] ;
-       fhir:description [ fhir:v "Navigate to the [ConceptMap VF_deviceTypePacemaker](ConceptMap-CMVFdeviceTypePacemaker.html)." ] ;
+       fhir:name [ fhir:v "VF_DiagnosticReportLabStatus" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_DiagnosticReportLabStatus](ConceptMap-CMVFDiagnosticReportLabStatus.html)" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -1784,11 +1783,11 @@
          fhir:value [ fhir:v "ValueSet" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://va.gov/fhir/ValueSet/VSVFDiagnosticReportLabStatus> ;
-         fhir:reference [ fhir:v "ValueSet/VSVFDiagnosticReportLabStatus" ]
+         fhir:link <http://va.gov/fhir/ValueSet/VSVFdocumentReferencedocStatus> ;
+         fhir:reference [ fhir:v "ValueSet/VSVFdocumentReferencedocStatus" ]
        ] ;
-       fhir:name [ fhir:v "VF_DiagnosticReportLabStatus" ] ;
-       fhir:description [ fhir:v "Navigate to the [ConceptMap VF_DiagnosticReportLabStatus](ConceptMap-CMVFDiagnosticReportLabStatus.html)." ] ;
+       fhir:name [ fhir:v "VF_documentReferencedocStatus" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_documentReferencedocStatus](ConceptMap-CMVFdocumentReferencedocStatus.html)" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -1808,11 +1807,11 @@
          fhir:value [ fhir:v "ValueSet" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://va.gov/fhir/ValueSet/VSVFdocumentReferencedocStatus> ;
-         fhir:reference [ fhir:v "ValueSet/VSVFdocumentReferencedocStatus" ]
+         fhir:link <http://va.gov/fhir/ValueSet/VSVFencounterClass> ;
+         fhir:reference [ fhir:v "ValueSet/VSVFencounterClass" ]
        ] ;
-       fhir:name [ fhir:v "VF_documentReferencedocStatus" ] ;
-       fhir:description [ fhir:v "Navigate to the [ConceptMap VF_documentReferencedocStatus](ConceptMap-CMVFdocumentReferencedocStatus.html)." ] ;
+       fhir:name [ fhir:v "VF_encounterClass" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_encounterClass](ConceptMap-CMVFencounterClass.html)" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -1832,11 +1831,11 @@
          fhir:value [ fhir:v "ValueSet" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://va.gov/fhir/ValueSet/VSVFencounterClass> ;
-         fhir:reference [ fhir:v "ValueSet/VSVFencounterClass" ]
+         fhir:link <http://va.gov/fhir/ValueSet/VSVFencounterProblemStatus> ;
+         fhir:reference [ fhir:v "ValueSet/VSVFencounterProblemStatus" ]
        ] ;
-       fhir:name [ fhir:v "VF_encounterClass" ] ;
-       fhir:description [ fhir:v "Navigate to the [ConceptMap VF_encounterClass](ConceptMap-CMVFencounterClass.html)." ] ;
+       fhir:name [ fhir:v "VF_encounterProblemStatus" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_encounterProblemStatus](ConceptMap-CMVFencounterProblemStatus.html)" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -1856,11 +1855,11 @@
          fhir:value [ fhir:v "ValueSet" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://va.gov/fhir/ValueSet/VSVFencounterProblemStatus> ;
-         fhir:reference [ fhir:v "ValueSet/VSVFencounterProblemStatus" ]
+         fhir:link <http://va.gov/fhir/ValueSet/VSVFencounterProblemVerificationStatus> ;
+         fhir:reference [ fhir:v "ValueSet/VSVFencounterProblemVerificationStatus" ]
        ] ;
-       fhir:name [ fhir:v "VF_encounterProblemStatus" ] ;
-       fhir:description [ fhir:v "Navigate to the [ConceptMap VF_encounterProblemStatus](ConceptMap-CMVFencounterProblemStatus.html)." ] ;
+       fhir:name [ fhir:v "VF_encounterProblemVerificationStatus" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_encounterProblemVerificationStatus](ConceptMap-CMVFencounterProblemVerificationStatus.html)" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -1880,11 +1879,11 @@
          fhir:value [ fhir:v "ValueSet" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://va.gov/fhir/ValueSet/VSVFencounterProblemVerificationStatus> ;
-         fhir:reference [ fhir:v "ValueSet/VSVFencounterProblemVerificationStatus" ]
+         fhir:link <http://va.gov/fhir/ValueSet/VSVFethnicityCategory> ;
+         fhir:reference [ fhir:v "ValueSet/VSVFethnicityCategory" ]
        ] ;
-       fhir:name [ fhir:v "VF_encounterProblemVerificationStatus" ] ;
-       fhir:description [ fhir:v "Navigate to the [ConceptMap VF_encounterProblemVerificationStatus](ConceptMap-CMVFencounterProblemVerificationStatus.html)." ] ;
+       fhir:name [ fhir:v "VF_ethnicityCategory" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_ethnicityCategory](ConceptMap-CMVFethnicityCategory.html)" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -1904,11 +1903,11 @@
          fhir:value [ fhir:v "ValueSet" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://va.gov/fhir/ValueSet/VSVFethnicityCategory> ;
-         fhir:reference [ fhir:v "ValueSet/VSVFethnicityCategory" ]
+         fhir:link <http://va.gov/fhir/ValueSet/VSVFExamResultInterpretation> ;
+         fhir:reference [ fhir:v "ValueSet/VSVFExamResultInterpretation" ]
        ] ;
-       fhir:name [ fhir:v "VF_ethnicityCategory" ] ;
-       fhir:description [ fhir:v "Navigate to the [ConceptMap VF_ethnicityCategory](ConceptMap-CMVFethnicityCategory.html)." ] ;
+       fhir:name [ fhir:v "VF_ExamResultInterpretation" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_ExamResultInterpretation](ConceptMap-CMVFExamResultInterpretation.html)" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -1928,11 +1927,11 @@
          fhir:value [ fhir:v "ValueSet" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://va.gov/fhir/ValueSet/VSVFExamResultInterpretation> ;
-         fhir:reference [ fhir:v "ValueSet/VSVFExamResultInterpretation" ]
+         fhir:link <http://va.gov/fhir/ValueSet/VSVFExamStatus> ;
+         fhir:reference [ fhir:v "ValueSet/VSVFExamStatus" ]
        ] ;
-       fhir:name [ fhir:v "VF_ExamResultInterpretation" ] ;
-       fhir:description [ fhir:v "Navigate to the [ConceptMap VF_ExamResultInterpretation](ConceptMap-CMVFExamResultInterpretation.html)." ] ;
+       fhir:name [ fhir:v "VF_ExamStatus" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_ExamStatus](ConceptMap-CMVFExamStatus.html)" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -1952,11 +1951,11 @@
          fhir:value [ fhir:v "ValueSet" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://va.gov/fhir/ValueSet/VSVFExamStatus> ;
-         fhir:reference [ fhir:v "ValueSet/VSVFExamStatus" ]
+         fhir:link <http://va.gov/fhir/ValueSet/VSVFgenderIdentity> ;
+         fhir:reference [ fhir:v "ValueSet/VSVFgenderIdentity" ]
        ] ;
-       fhir:name [ fhir:v "VF_ExamStatus" ] ;
-       fhir:description [ fhir:v "Navigate to the [ConceptMap VF_ExamStatus](ConceptMap-CMVFExamStatus.html)." ] ;
+       fhir:name [ fhir:v "VF_genderIdentity" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_genderIdentity](ConceptMap-CMVFgenderIdentity.html)" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -1976,11 +1975,11 @@
          fhir:value [ fhir:v "ValueSet" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://va.gov/fhir/ValueSet/VSVFgenderIdentity> ;
-         fhir:reference [ fhir:v "ValueSet/VSVFgenderIdentity" ]
+         fhir:link <http://va.gov/fhir/ValueSet/VSVFICDCodingSystems> ;
+         fhir:reference [ fhir:v "ValueSet/VSVFICDCodingSystems" ]
        ] ;
-       fhir:name [ fhir:v "VF_genderIdentity" ] ;
-       fhir:description [ fhir:v "Navigate to the [ConceptMap VF_genderIdentity](ConceptMap-CMVFgenderIdentity.html)." ] ;
+       fhir:name [ fhir:v "VF_ICDCodingSystems" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_ICDCodingSystems](ConceptMap-CMVFICDCodingSystems.html)" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -2000,11 +1999,11 @@
          fhir:value [ fhir:v "ValueSet" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://va.gov/fhir/ValueSet/VSVFICDCodingSystems> ;
-         fhir:reference [ fhir:v "ValueSet/VSVFICDCodingSystems" ]
+         fhir:link <http://va.gov/fhir/ValueSet/VSVFICDVersion> ;
+         fhir:reference [ fhir:v "ValueSet/VSVFICDVersion" ]
        ] ;
-       fhir:name [ fhir:v "VF_ICDCodingSystems" ] ;
-       fhir:description [ fhir:v "Navigate to the [ConceptMap VF_ICDCodingSystems](ConceptMap-CMVFICDCodingSystems.html)." ] ;
+       fhir:name [ fhir:v "VF_ICDVersion" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_ICDVersion](ConceptMap-CMVFICDVersion.html)" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -2024,11 +2023,11 @@
          fhir:value [ fhir:v "ValueSet" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://va.gov/fhir/ValueSet/VSVFICDVersion> ;
-         fhir:reference [ fhir:v "ValueSet/VSVFICDVersion" ]
+         fhir:link <http://va.gov/fhir/ValueSet/VSVFImageInterpretation> ;
+         fhir:reference [ fhir:v "ValueSet/VSVFImageInterpretation" ]
        ] ;
-       fhir:name [ fhir:v "VF_ICDVersion" ] ;
-       fhir:description [ fhir:v "Navigate to the [ConceptMap VF_ICDVersion](ConceptMap-CMVFICDVersion.html)." ] ;
+       fhir:name [ fhir:v "VF_ImageInterpretation" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_ImageInterpretation](ConceptMap-CMVFImageInterpretation.html)" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -2048,11 +2047,11 @@
          fhir:value [ fhir:v "ValueSet" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://va.gov/fhir/ValueSet/VSVFImageInterpretation> ;
-         fhir:reference [ fhir:v "ValueSet/VSVFImageInterpretation" ]
+         fhir:link <http://va.gov/fhir/ValueSet/VSVFImageStatus> ;
+         fhir:reference [ fhir:v "ValueSet/VSVFImageStatus" ]
        ] ;
-       fhir:name [ fhir:v "VF_ImageInterpretation" ] ;
-       fhir:description [ fhir:v "Navigate to the [ConceptMap VF_ImageInterpretation](ConceptMap-CMVFImageInterpretation.html)." ] ;
+       fhir:name [ fhir:v "VF_ImageStatus" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_ImageStatus](ConceptMap-CMVFImageStatus.html)" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -2072,11 +2071,11 @@
          fhir:value [ fhir:v "ValueSet" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://va.gov/fhir/ValueSet/VSVFImageStatus> ;
-         fhir:reference [ fhir:v "ValueSet/VSVFImageStatus" ]
+         fhir:link <http://va.gov/fhir/ValueSet/VSVFImageStatusRadNuc> ;
+         fhir:reference [ fhir:v "ValueSet/VSVFImageStatusRadNuc" ]
        ] ;
-       fhir:name [ fhir:v "VF_ImageStatus" ] ;
-       fhir:description [ fhir:v "Navigate to the [ConceptMap VF_ImageStatus](ConceptMap-CMVFImageStatus.html)." ] ;
+       fhir:name [ fhir:v "VF_ImageStatusRadNuc" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_ImageStatusRadNuc](ConceptMap-CMVFImageStatusRadNuc.html)" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -2096,11 +2095,11 @@
          fhir:value [ fhir:v "ValueSet" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://va.gov/fhir/ValueSet/VSVFImageStatusRadNuc> ;
-         fhir:reference [ fhir:v "ValueSet/VSVFImageStatusRadNuc" ]
+         fhir:link <http://va.gov/fhir/ValueSet/VSVFimmunizationPrimarySource> ;
+         fhir:reference [ fhir:v "ValueSet/VSVFimmunizationPrimarySource" ]
        ] ;
-       fhir:name [ fhir:v "VF_ImageStatusRadNuc" ] ;
-       fhir:description [ fhir:v "Navigate to the [ConceptMap VF_ImageStatusRadNuc](ConceptMap-CMVFImageStatusRadNuc.html)." ] ;
+       fhir:name [ fhir:v "VF_immunizationPrimarySource" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_immunizationPrimarySource](ConceptMap-CMVFimmunizationPrimarySource.html)" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -2120,11 +2119,11 @@
          fhir:value [ fhir:v "ValueSet" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://va.gov/fhir/ValueSet/VSVFimmunizationPrimarySource> ;
-         fhir:reference [ fhir:v "ValueSet/VSVFimmunizationPrimarySource" ]
+         fhir:link <http://va.gov/fhir/ValueSet/VSVFImmunizationReaction> ;
+         fhir:reference [ fhir:v "ValueSet/VSVFImmunizationReaction" ]
        ] ;
-       fhir:name [ fhir:v "VF_immunizationPrimarySource" ] ;
-       fhir:description [ fhir:v "Navigate to the [ConceptMap VF_immunizationPrimarySource](ConceptMap-CMVFimmunizationPrimarySource.html)." ] ;
+       fhir:name [ fhir:v "VF_ImmunizationReaction" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_ImmunizationReaction](ConceptMap-CMVFImmunizationReaction.html)" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -2144,11 +2143,11 @@
          fhir:value [ fhir:v "ValueSet" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://va.gov/fhir/ValueSet/VSVFImmunizationReaction> ;
-         fhir:reference [ fhir:v "ValueSet/VSVFImmunizationReaction" ]
+         fhir:link <http://va.gov/fhir/ValueSet/VSVFimmunizationStatusReason> ;
+         fhir:reference [ fhir:v "ValueSet/VSVFimmunizationStatusReason" ]
        ] ;
-       fhir:name [ fhir:v "VF_ImmunizationReaction" ] ;
-       fhir:description [ fhir:v "Navigate to the [ConceptMap VF_ImmunizationReaction](ConceptMap-CMVFImmunizationReaction.html)." ] ;
+       fhir:name [ fhir:v "VF_immunizationStatusReason" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_immunizationStatusReason](ConceptMap-CMVFimmunizationStatusReason.html)" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -2168,11 +2167,11 @@
          fhir:value [ fhir:v "ValueSet" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://va.gov/fhir/ValueSet/VSVFimmunizationStatusReason> ;
-         fhir:reference [ fhir:v "ValueSet/VSVFimmunizationStatusReason" ]
+         fhir:link <http://va.gov/fhir/ValueSet/VSVFinferredCVX> ;
+         fhir:reference [ fhir:v "ValueSet/VSVFinferredCVX" ]
        ] ;
-       fhir:name [ fhir:v "VF_immunizationStatusReason" ] ;
-       fhir:description [ fhir:v "Navigate to the [ConceptMap VF_immunizationStatusReason](ConceptMap-CMVFimmunizationStatusReason.html)." ] ;
+       fhir:name [ fhir:v "VF_inferredCVX" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_inferredCVX](ConceptMap-CMVFinferredCVX.html)" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -2192,11 +2191,11 @@
          fhir:value [ fhir:v "ValueSet" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://va.gov/fhir/ValueSet/VSVFinferredCVX> ;
-         fhir:reference [ fhir:v "ValueSet/VSVFinferredCVX" ]
+         fhir:link <http://va.gov/fhir/ValueSet/VSVFLabInterpretation> ;
+         fhir:reference [ fhir:v "ValueSet/VSVFLabInterpretation" ]
        ] ;
-       fhir:name [ fhir:v "VF_inferredCVX" ] ;
-       fhir:description [ fhir:v "Navigate to the [ConceptMap VF_inferredCVX](ConceptMap-CMVFinferredCVX.html)." ] ;
+       fhir:name [ fhir:v "VF_LabInterpretation" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_LabInterpretation](ConceptMap-CMVFLabInterpretation.html)" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -2216,11 +2215,11 @@
          fhir:value [ fhir:v "ValueSet" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://va.gov/fhir/ValueSet/VSVFLabInterpretation> ;
-         fhir:reference [ fhir:v "ValueSet/VSVFLabInterpretation" ]
+         fhir:link <http://va.gov/fhir/ValueSet/VSVFLabObservationStatus> ;
+         fhir:reference [ fhir:v "ValueSet/VSVFLabObservationStatus" ]
        ] ;
-       fhir:name [ fhir:v "VF_LabInterpretation" ] ;
-       fhir:description [ fhir:v "Navigate to the [ConceptMap VF_LabInterpretation](ConceptMap-CMVFLabInterpretation.html)." ] ;
+       fhir:name [ fhir:v "VF_LabObservationStatus" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_LabObservationStatus](ConceptMap-CMVFLabObservationStatus.html)" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -2240,11 +2239,11 @@
          fhir:value [ fhir:v "ValueSet" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://va.gov/fhir/ValueSet/VSVFLabObservationStatus> ;
-         fhir:reference [ fhir:v "ValueSet/VSVFLabObservationStatus" ]
+         fhir:link <http://va.gov/fhir/ValueSet/VSVFLocationStatus> ;
+         fhir:reference [ fhir:v "ValueSet/VSVFLocationStatus" ]
        ] ;
-       fhir:name [ fhir:v "VF_LabObservationStatus" ] ;
-       fhir:description [ fhir:v "Navigate to the [ConceptMap VF_LabObservationStatus](ConceptMap-CMVFLabObservationStatus.html)." ] ;
+       fhir:name [ fhir:v "VF_LocationStatus" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_LocationStatus](ConceptMap-CMVFLocationStatus.html)" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -2264,11 +2263,11 @@
          fhir:value [ fhir:v "ValueSet" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://va.gov/fhir/ValueSet/VSVFLocationStatus> ;
-         fhir:reference [ fhir:v "ValueSet/VSVFLocationStatus" ]
+         fhir:link <http://va.gov/fhir/ValueSet/VSVFMaritalStatus> ;
+         fhir:reference [ fhir:v "ValueSet/VSVFMaritalStatus" ]
        ] ;
-       fhir:name [ fhir:v "VF_LocationStatus" ] ;
-       fhir:description [ fhir:v "Navigate to the [ConceptMap VF_LocationStatus](ConceptMap-CMVFLocationStatus.html)." ] ;
+       fhir:name [ fhir:v "VF_MaritalStatus" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_MaritalStatus](ConceptMap-CMVFMaritalStatus.html)" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -2288,11 +2287,11 @@
          fhir:value [ fhir:v "ValueSet" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://va.gov/fhir/ValueSet/VSVFMaritalStatus> ;
-         fhir:reference [ fhir:v "ValueSet/VSVFMaritalStatus" ]
+         fhir:link <http://va.gov/fhir/ValueSet/VSVFOrderPatientClass> ;
+         fhir:reference [ fhir:v "ValueSet/VSVFOrderPatientClass" ]
        ] ;
-       fhir:name [ fhir:v "VF_MaritalStatus" ] ;
-       fhir:description [ fhir:v "Navigate to the [ConceptMap VF_MaritalStatus](ConceptMap-CMVFMaritalStatus.html)." ] ;
+       fhir:name [ fhir:v "VF_OrderPatientClass" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_OrderPatientClass](ConceptMap-CMVFOrderPatientClass.html)" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -2312,11 +2311,11 @@
          fhir:value [ fhir:v "ValueSet" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://va.gov/fhir/ValueSet/VSVFOrderPatientClass> ;
-         fhir:reference [ fhir:v "ValueSet/VSVFOrderPatientClass" ]
+         fhir:link <http://va.gov/fhir/ValueSet/VSVFOrganizationIdentifierType> ;
+         fhir:reference [ fhir:v "ValueSet/VSVFOrganizationIdentifierType" ]
        ] ;
-       fhir:name [ fhir:v "VF_OrderPatientClass" ] ;
-       fhir:description [ fhir:v "Navigate to the [ConceptMap VF_OrderPatientClass](ConceptMap-CMVFOrderPatientClass.html)." ] ;
+       fhir:name [ fhir:v "VF_OrganizationIdentifierType" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_OrganizationIdentifierType](ConceptMap-CMVFOrganizationIdentifierType.html)" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -2336,11 +2335,11 @@
          fhir:value [ fhir:v "ValueSet" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://va.gov/fhir/ValueSet/VSVFOrganizationIdentifierType> ;
-         fhir:reference [ fhir:v "ValueSet/VSVFOrganizationIdentifierType" ]
+         fhir:link <http://va.gov/fhir/ValueSet/VSVFOutMedRequestStatus> ;
+         fhir:reference [ fhir:v "ValueSet/VSVFOutMedRequestStatus" ]
        ] ;
-       fhir:name [ fhir:v "VF_OrganizationIdentifierType" ] ;
-       fhir:description [ fhir:v "Navigate to the [ConceptMap VF_OrganizationIdentifierType](ConceptMap-CMVFOrganizationIdentifierType.html)." ] ;
+       fhir:name [ fhir:v "VF_OutMedRequestStatus" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_OutMedRequestStatus](ConceptMap-CMVFOutMedRequestStatus.html)" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -2360,11 +2359,11 @@
          fhir:value [ fhir:v "ValueSet" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://va.gov/fhir/ValueSet/VSVFOutMedRequestStatus> ;
-         fhir:reference [ fhir:v "ValueSet/VSVFOutMedRequestStatus" ]
+         fhir:link <http://va.gov/fhir/ValueSet/VSVFPersonIdentifierType> ;
+         fhir:reference [ fhir:v "ValueSet/VSVFPersonIdentifierType" ]
        ] ;
-       fhir:name [ fhir:v "VF_OutMedRequestStatus" ] ;
-       fhir:description [ fhir:v "Navigate to the [ConceptMap VF_OutMedRequestStatus](ConceptMap-CMVFOutMedRequestStatus.html)." ] ;
+       fhir:name [ fhir:v "VF_PersonIdentifierType" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_PersonIdentifierType](ConceptMap-CMVFPersonIdentifierType.html)" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -2384,11 +2383,11 @@
          fhir:value [ fhir:v "ValueSet" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://va.gov/fhir/ValueSet/VSVFPersonIdentifierType> ;
-         fhir:reference [ fhir:v "ValueSet/VSVFPersonIdentifierType" ]
+         fhir:link <http://va.gov/fhir/ValueSet/VSVFPharmacyPersonType> ;
+         fhir:reference [ fhir:v "ValueSet/VSVFPharmacyPersonType" ]
        ] ;
-       fhir:name [ fhir:v "VF_PersonIdentifierType" ] ;
-       fhir:description [ fhir:v "Navigate to the [ConceptMap VF_PersonIdentifierType](ConceptMap-CMVFPersonIdentifierType.html)." ] ;
+       fhir:name [ fhir:v "VF_PharmacyPersonType" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_PharmacyPersonType](ConceptMap-CMVFPharmacyPersonType.html)" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -2408,11 +2407,11 @@
          fhir:value [ fhir:v "ValueSet" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://va.gov/fhir/ValueSet/VSVFPharmacyPersonType> ;
-         fhir:reference [ fhir:v "ValueSet/VSVFPharmacyPersonType" ]
+         fhir:link <http://va.gov/fhir/ValueSet/VSVFPositiveNegative> ;
+         fhir:reference [ fhir:v "ValueSet/VSVFPositiveNegative" ]
        ] ;
-       fhir:name [ fhir:v "VF_PharmacyPersonType" ] ;
-       fhir:description [ fhir:v "Navigate to the [ConceptMap VF_PharmacyPersonType](ConceptMap-CMVFPharmacyPersonType.html)." ] ;
+       fhir:name [ fhir:v "VF_PositiveNegative" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_PositiveNegative](ConceptMap-CMVFPositiveNegative.html)" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -2432,11 +2431,11 @@
          fhir:value [ fhir:v "ValueSet" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://va.gov/fhir/ValueSet/VSVFPositiveNegative> ;
-         fhir:reference [ fhir:v "ValueSet/VSVFPositiveNegative" ]
+         fhir:link <http://va.gov/fhir/ValueSet/VSVFPractitionerCountry> ;
+         fhir:reference [ fhir:v "ValueSet/VSVFPractitionerCountry" ]
        ] ;
-       fhir:name [ fhir:v "VF_PositiveNegative" ] ;
-       fhir:description [ fhir:v "Navigate to the [ConceptMap VF_PositiveNegative](ConceptMap-CMVFPositiveNegative.html)." ] ;
+       fhir:name [ fhir:v "VF_PractitionerCountry" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_PractitionerCountry](ConceptMap-CMVFPractitionerCountry.html)" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -2456,11 +2455,11 @@
          fhir:value [ fhir:v "ValueSet" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://va.gov/fhir/ValueSet/VSVFPractitionerCountry> ;
-         fhir:reference [ fhir:v "ValueSet/VSVFPractitionerCountry" ]
+         fhir:link <http://va.gov/fhir/ValueSet/VSVFproblemStatus> ;
+         fhir:reference [ fhir:v "ValueSet/VSVFproblemStatus" ]
        ] ;
-       fhir:name [ fhir:v "VF_PractitionerCountry" ] ;
-       fhir:description [ fhir:v "Navigate to the [ConceptMap VF_PractitionerCountry](ConceptMap-CMVFPractitionerCountry.html)." ] ;
+       fhir:name [ fhir:v "VF_problemStatus" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_problemStatus](ConceptMap-CMVFproblemStatus.html)" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -2480,11 +2479,11 @@
          fhir:value [ fhir:v "ValueSet" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://va.gov/fhir/ValueSet/VSVFproblemStatus> ;
-         fhir:reference [ fhir:v "ValueSet/VSVFproblemStatus" ]
+         fhir:link <http://va.gov/fhir/ValueSet/VSVFproblemVerificationStatus> ;
+         fhir:reference [ fhir:v "ValueSet/VSVFproblemVerificationStatus" ]
        ] ;
-       fhir:name [ fhir:v "VF_problemStatus" ] ;
-       fhir:description [ fhir:v "Navigate to the [ConceptMap VF_problemStatus](ConceptMap-CMVFproblemStatus.html)." ] ;
+       fhir:name [ fhir:v "VF_problemVerificationStatus" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_problemVerificationStatus](ConceptMap-CMVFproblemVerificationStatus.html)" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -2504,11 +2503,11 @@
          fhir:value [ fhir:v "ValueSet" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://va.gov/fhir/ValueSet/VSVFproblemVerificationStatus> ;
-         fhir:reference [ fhir:v "ValueSet/VSVFproblemVerificationStatus" ]
+         fhir:link <http://va.gov/fhir/ValueSet/VSVFProcedureCodeSystem> ;
+         fhir:reference [ fhir:v "ValueSet/VSVFProcedureCodeSystem" ]
        ] ;
-       fhir:name [ fhir:v "VF_problemVerificationStatus" ] ;
-       fhir:description [ fhir:v "Navigate to the [ConceptMap VF_problemVerificationStatus](ConceptMap-CMVFproblemVerificationStatus.html)." ] ;
+       fhir:name [ fhir:v "VF_ProcedureCodeSystem" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_ProcedureCodeSystem](ConceptMap-CMVFProcedureCodeSystem.html)" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -2528,11 +2527,11 @@
          fhir:value [ fhir:v "ValueSet" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://va.gov/fhir/ValueSet/VSVFProcedureCodeSystem> ;
-         fhir:reference [ fhir:v "ValueSet/VSVFProcedureCodeSystem" ]
+         fhir:link <http://va.gov/fhir/ValueSet/VSVFproviderGender> ;
+         fhir:reference [ fhir:v "ValueSet/VSVFproviderGender" ]
        ] ;
-       fhir:name [ fhir:v "VF_ProcedureCodeSystem" ] ;
-       fhir:description [ fhir:v "Navigate to the [ConceptMap VF_ProcedureCodeSystem](ConceptMap-CMVFProcedureCodeSystem.html)." ] ;
+       fhir:name [ fhir:v "VF_providerGender" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_providerGender](ConceptMap-CMVFproviderGender.html)" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -2552,11 +2551,11 @@
          fhir:value [ fhir:v "ValueSet" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://va.gov/fhir/ValueSet/VSVFproviderGender> ;
-         fhir:reference [ fhir:v "ValueSet/VSVFproviderGender" ]
+         fhir:link <http://va.gov/fhir/ValueSet/VSVFraceCategory> ;
+         fhir:reference [ fhir:v "ValueSet/VSVFraceCategory" ]
        ] ;
-       fhir:name [ fhir:v "VF_providerGender" ] ;
-       fhir:description [ fhir:v "Navigate to the [ConceptMap VF_providerGender](ConceptMap-CMVFproviderGender.html)." ] ;
+       fhir:name [ fhir:v "VF_raceCategory" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_raceCategory](ConceptMap-CMVFraceCategory.html)" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -2576,11 +2575,11 @@
          fhir:value [ fhir:v "ValueSet" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://va.gov/fhir/ValueSet/VSVFraceCategory> ;
-         fhir:reference [ fhir:v "ValueSet/VSVFraceCategory" ]
+         fhir:link <http://va.gov/fhir/ValueSet/VSVFRadiologyProcedureStatus> ;
+         fhir:reference [ fhir:v "ValueSet/VSVFRadiologyProcedureStatus" ]
        ] ;
-       fhir:name [ fhir:v "VF_raceCategory" ] ;
-       fhir:description [ fhir:v "Navigate to the [ConceptMap VF_raceCategory](ConceptMap-CMVFraceCategory.html)." ] ;
+       fhir:name [ fhir:v "VF_RadiologyProcedureStatus" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_RadiologyProcedureStatus](ConceptMap-CMVFRadiologyProcedureStatus.html)" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -2600,11 +2599,11 @@
          fhir:value [ fhir:v "ValueSet" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://va.gov/fhir/ValueSet/VSVFRadiologyProcedureStatus> ;
-         fhir:reference [ fhir:v "ValueSet/VSVFRadiologyProcedureStatus" ]
+         fhir:link <http://va.gov/fhir/ValueSet/VSVFReligion> ;
+         fhir:reference [ fhir:v "ValueSet/VSVFReligion" ]
        ] ;
-       fhir:name [ fhir:v "VF_RadiologyProcedureStatus" ] ;
-       fhir:description [ fhir:v "Navigate to the [ConceptMap VF_RadiologyProcedureStatus](ConceptMap-CMVFRadiologyProcedureStatus.html)." ] ;
+       fhir:name [ fhir:v "VF_Religion" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_Religion](ConceptMap-CMVFReligion.html)" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -2624,11 +2623,11 @@
          fhir:value [ fhir:v "ValueSet" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://va.gov/fhir/ValueSet/VSVFReligion> ;
-         fhir:reference [ fhir:v "ValueSet/VSVFReligion" ]
+         fhir:link <http://va.gov/fhir/ValueSet/VSVFSmokingStatus> ;
+         fhir:reference [ fhir:v "ValueSet/VSVFSmokingStatus" ]
        ] ;
-       fhir:name [ fhir:v "VF_Religion" ] ;
-       fhir:description [ fhir:v "Navigate to the [ConceptMap VF_Religion](ConceptMap-CMVFReligion.html)." ] ;
+       fhir:name [ fhir:v "VF_SmokingStatus" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_SmokingStatus](ConceptMap-CMVFSmokingStatus.html)" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -2648,11 +2647,11 @@
          fhir:value [ fhir:v "ValueSet" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://va.gov/fhir/ValueSet/VSVFSmokingStatus> ;
-         fhir:reference [ fhir:v "ValueSet/VSVFSmokingStatus" ]
+         fhir:link <http://va.gov/fhir/ValueSet/VSVFSourceOfAdmission> ;
+         fhir:reference [ fhir:v "ValueSet/VSVFSourceOfAdmission" ]
        ] ;
-       fhir:name [ fhir:v "VF_SmokingStatus" ] ;
-       fhir:description [ fhir:v "Navigate to the [ConceptMap VF_SmokingStatus](ConceptMap-CMVFSmokingStatus.html)." ] ;
+       fhir:name [ fhir:v "VF_SourceOfAdmission" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_SourceOfAdmission](ConceptMap-CMVFSourceOfAdmission.html)" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -2672,11 +2671,35 @@
          fhir:value [ fhir:v "ValueSet" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://va.gov/fhir/ValueSet/VSVFSourceOfAdmission> ;
-         fhir:reference [ fhir:v "ValueSet/VSVFSourceOfAdmission" ]
+         fhir:link <http://va.gov/fhir/ValueSet/VSVFVitalsBodySite> ;
+         fhir:reference [ fhir:v "ValueSet/VSVFVitalsBodySite" ]
        ] ;
-       fhir:name [ fhir:v "VF_SourceOfAdmission" ] ;
-       fhir:description [ fhir:v "Navigate to the [ConceptMap VF_SourceOfAdmission](ConceptMap-CMVFSourceOfAdmission.html)." ] ;
+       fhir:name [ fhir:v "VF_VitalsBodySite" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_VitalsBodySite](ConceptMap-CMVFVitalsBodySite.html)" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ConceptMap" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/ConceptMap/CMVFVitalsBodySite> ;
+         fhir:reference [ fhir:v "ConceptMap/CMVFVitalsBodySite" ]
+       ] ;
+       fhir:name [ fhir:v "VF_VitalsBodySite" ] ;
+       fhir:description [ fhir:v "Terminology Maps VF_VitalsBodySite" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/ValueSet/VSVFVitalsCodes> ;
+         fhir:reference [ fhir:v "ValueSet/VSVFVitalsCodes" ]
+       ] ;
+       fhir:name [ fhir:v "VF_VitalsCodes" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_VitalsCodes](ConceptMap-CMVFVitalsCodes.html)" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -2696,11 +2719,35 @@
          fhir:value [ fhir:v "ValueSet" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://va.gov/fhir/ValueSet/VSVFVitalsCodes> ;
-         fhir:reference [ fhir:v "ValueSet/VSVFVitalsCodes" ]
+         fhir:link <http://va.gov/fhir/ValueSet/VSVFVitalsCuffSize> ;
+         fhir:reference [ fhir:v "ValueSet/VSVFVitalsCuffSize" ]
        ] ;
-       fhir:name [ fhir:v "VF_VitalsCodes" ] ;
-       fhir:description [ fhir:v "Navigate to the [ConceptMap VF_VitalsCodes](ConceptMap-CMVFVitalsCodes.html)." ] ;
+       fhir:name [ fhir:v "VF_VitalsCuffSize" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_VitalsCuffSize](ConceptMap-CMVFVitalsCuffSize.html)" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ConceptMap" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/ConceptMap/CMVFVitalsCuffSize> ;
+         fhir:reference [ fhir:v "ConceptMap/CMVFVitalsCuffSize" ]
+       ] ;
+       fhir:name [ fhir:v "VF_VitalsCuffSize" ] ;
+       fhir:description [ fhir:v "Terminology Maps VF_VitalsCuffSize" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/ValueSet/VSVFVitalsDevice> ;
+         fhir:reference [ fhir:v "ValueSet/VSVFVitalsDevice" ]
+       ] ;
+       fhir:name [ fhir:v "VF_VitalsDevice" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_VitalsDevice](ConceptMap-CMVFVitalsDevice.html)" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -2720,11 +2767,11 @@
          fhir:value [ fhir:v "ValueSet" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://va.gov/fhir/ValueSet/VSVFVitalsDevice> ;
-         fhir:reference [ fhir:v "ValueSet/VSVFVitalsDevice" ]
+         fhir:link <http://va.gov/fhir/ValueSet/VSVFVitalsLaterality> ;
+         fhir:reference [ fhir:v "ValueSet/VSVFVitalsLaterality" ]
        ] ;
-       fhir:name [ fhir:v "VF_VitalsDevice" ] ;
-       fhir:description [ fhir:v "Navigate to the [ConceptMap VF_VitalsDevice](ConceptMap-CMVFVitalsDevice.html)." ] ;
+       fhir:name [ fhir:v "VF_VitalsLaterality" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_VitalsLaterality](ConceptMap-CMVFVitalsLaterality.html)" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -2744,11 +2791,35 @@
          fhir:value [ fhir:v "ValueSet" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://va.gov/fhir/ValueSet/VSVFVitalsLaterality> ;
-         fhir:reference [ fhir:v "ValueSet/VSVFVitalsLaterality" ]
+         fhir:link <http://va.gov/fhir/ValueSet/VSVFVitalsMeasurementDevice> ;
+         fhir:reference [ fhir:v "ValueSet/VSVFVitalsMeasurementDevice" ]
        ] ;
-       fhir:name [ fhir:v "VF_VitalsLaterality" ] ;
-       fhir:description [ fhir:v "Navigate to the [ConceptMap VF_VitalsLaterality](ConceptMap-CMVFVitalsLaterality.html)." ] ;
+       fhir:name [ fhir:v "VF_VitalsMeasurementDevice" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_VitalsMeasurementDevice](ConceptMap-CMVFVitalsMeasurementDevice.html)" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ConceptMap" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/ConceptMap/CMVFVitalsMeasurementDevice> ;
+         fhir:reference [ fhir:v "ConceptMap/CMVFVitalsMeasurementDevice" ]
+       ] ;
+       fhir:name [ fhir:v "VF_VitalsMeasurementDevice" ] ;
+       fhir:description [ fhir:v "Terminology Maps VF_VitalsMeasurementDevice" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/ValueSet/VSVFVitalsMethod> ;
+         fhir:reference [ fhir:v "ValueSet/VSVFVitalsMethod" ]
+       ] ;
+       fhir:name [ fhir:v "VF_VitalsMethod" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_VitalsMethod](ConceptMap-CMVFVitalsMethod.html)" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -2768,11 +2839,11 @@
          fhir:value [ fhir:v "ValueSet" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://va.gov/fhir/ValueSet/VSVFVitalsMethod> ;
-         fhir:reference [ fhir:v "ValueSet/VSVFVitalsMethod" ]
+         fhir:link <http://va.gov/fhir/ValueSet/VSVFVitalsPosition> ;
+         fhir:reference [ fhir:v "ValueSet/VSVFVitalsPosition" ]
        ] ;
-       fhir:name [ fhir:v "VF_VitalsMethod" ] ;
-       fhir:description [ fhir:v "Navigate to the [ConceptMap VF_VitalsMethod](ConceptMap-CMVFVitalsMethod.html)." ] ;
+       fhir:name [ fhir:v "VF_VitalsPosition" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_VitalsPosition](ConceptMap-CMVFVitalsPosition.html)" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -2792,11 +2863,11 @@
          fhir:value [ fhir:v "ValueSet" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://va.gov/fhir/ValueSet/VSVFVitalsPosition> ;
-         fhir:reference [ fhir:v "ValueSet/VSVFVitalsPosition" ]
+         fhir:link <http://va.gov/fhir/ValueSet/VSVFVitalsQualifyingDevice> ;
+         fhir:reference [ fhir:v "ValueSet/VSVFVitalsQualifyingDevice" ]
        ] ;
-       fhir:name [ fhir:v "VF_VitalsPosition" ] ;
-       fhir:description [ fhir:v "Navigate to the [ConceptMap VF_VitalsPosition](ConceptMap-CMVFVitalsPosition.html)." ] ;
+       fhir:name [ fhir:v "VF_VitalsQualifyingDevice" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_VitalsQualifyingDevice](ConceptMap-CMVFVitalsQualifyingDevice.html)" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -2804,11 +2875,11 @@
          fhir:value [ fhir:v "ConceptMap" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://va.gov/fhir/ConceptMap/CMVFVitalsSite> ;
-         fhir:reference [ fhir:v "ConceptMap/CMVFVitalsSite" ]
+         fhir:link <http://va.gov/fhir/ConceptMap/CMVFVitalsQualifyingDevice> ;
+         fhir:reference [ fhir:v "ConceptMap/CMVFVitalsQualifyingDevice" ]
        ] ;
-       fhir:name [ fhir:v "VF_VitalsSite" ] ;
-       fhir:description [ fhir:v "Terminology Maps VF_VitalsSite" ] ;
+       fhir:name [ fhir:v "VF_VitalsQualifyingDevice" ] ;
+       fhir:description [ fhir:v "Terminology Maps VF_VitalsQualifyingDevice" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -2816,11 +2887,11 @@
          fhir:value [ fhir:v "ValueSet" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://va.gov/fhir/ValueSet/VSVFVitalsSite> ;
-         fhir:reference [ fhir:v "ValueSet/VSVFVitalsSite" ]
+         fhir:link <http://va.gov/fhir/ValueSet/VSVFVitalsUnits> ;
+         fhir:reference [ fhir:v "ValueSet/VSVFVitalsUnits" ]
        ] ;
-       fhir:name [ fhir:v "VF_VitalsSite" ] ;
-       fhir:description [ fhir:v "Navigate to the [ConceptMap VF_VitalsSite](ConceptMap-CMVFVitalsSite.html)." ] ;
+       fhir:name [ fhir:v "VF_VitalsUnits" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_VitalsUnits](ConceptMap-CMVFVitalsUnits.html)" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -2840,11 +2911,11 @@
          fhir:value [ fhir:v "ValueSet" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://va.gov/fhir/ValueSet/VSVFVitalsUnits> ;
-         fhir:reference [ fhir:v "ValueSet/VSVFVitalsUnits" ]
+         fhir:link <http://va.gov/fhir/ValueSet/VSVFYesNo10> ;
+         fhir:reference [ fhir:v "ValueSet/VSVFYesNo10" ]
        ] ;
-       fhir:name [ fhir:v "VF_VitalsUnits" ] ;
-       fhir:description [ fhir:v "Navigate to the [ConceptMap VF_VitalsUnits](ConceptMap-CMVFVitalsUnits.html)." ] ;
+       fhir:name [ fhir:v "VF_YesNo10" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_YesNo10](ConceptMap-CMVFYesNo10.html)" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -2864,11 +2935,11 @@
          fhir:value [ fhir:v "ValueSet" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://va.gov/fhir/ValueSet/VSVFYesNo10> ;
-         fhir:reference [ fhir:v "ValueSet/VSVFYesNo10" ]
+         fhir:link <http://va.gov/fhir/ValueSet/VSVistaNCPDPCoverageRelationship> ;
+         fhir:reference [ fhir:v "ValueSet/VSVistaNCPDPCoverageRelationship" ]
        ] ;
-       fhir:name [ fhir:v "VF_YesNo10" ] ;
-       fhir:description [ fhir:v "Navigate to the [ConceptMap VF_YesNo10](ConceptMap-CMVFYesNo10.html)." ] ;
+       fhir:name [ fhir:v "Vista_NCPDPCoverageRelationship" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap Vista_NCPDPCoverageRelationship](ConceptMap-CMVistaNCPDPCoverageRelationship.html)" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -2885,15 +2956,16 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "ValueSet" ]
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://va.gov/fhir/ValueSet/VSVistaNCPDPCoverageRelationship> ;
-         fhir:reference [ fhir:v "ValueSet/VSVistaNCPDPCoverageRelationship" ]
+         fhir:link <http://va.gov/fhir/StructureDefinition/VitalSignsBP> ;
+         fhir:reference [ fhir:v "StructureDefinition/VitalSignsBP" ]
        ] ;
-       fhir:name [ fhir:v "Vista_NCPDPCoverageRelationship" ] ;
-       fhir:description [ fhir:v "Navigate to the [ConceptMap Vista_NCPDPCoverageRelationship](ConceptMap-CMVistaNCPDPCoverageRelationship.html)." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
+       fhir:name [ fhir:v "Vital Signs BP" ] ;
+       fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA file GMRV VITAL MEASUREMENT (#120.5) to us-core-blood-pressure" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "group4" ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
@@ -2939,11 +3011,11 @@
          fhir:value [ fhir:v "StructureDefinition:resource" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://va.gov/fhir/StructureDefinition/VitalSignsBP> ;
-         fhir:reference [ fhir:v "StructureDefinition/VitalSignsBP" ]
+         fhir:link <http://va.gov/fhir/StructureDefinition/VitalSignsSpO2> ;
+         fhir:reference [ fhir:v "StructureDefinition/VitalSignsSpO2" ]
        ] ;
-       fhir:name [ fhir:v "Vital Signs: BP" ] ;
-       fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA file GMRV VITAL MEASUREMENT (#120.5) to us-core-blood-pressure" ] ;
+       fhir:name [ fhir:v "Vital Signs SpO2" ] ;
+       fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA file GMRV VITAL MEASUREMENT (#120.5) to us-core-pulse-oximetry" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ] ;
        fhir:groupingId [ fhir:v "group4" ]
      ] [
@@ -2957,19 +3029,6 @@
        ] ;
        fhir:name [ fhir:v "Vital Signs: CPM" ] ;
        fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA file GMRV VITAL MEASUREMENT (#120.5) to us-core-vital-signs" ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:groupingId [ fhir:v "group4" ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:resource" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <http://va.gov/fhir/StructureDefinition/VitalSignsSpO2> ;
-         fhir:reference [ fhir:v "StructureDefinition/VitalSignsSpO2" ]
-       ] ;
-       fhir:name [ fhir:v "Vital Signs: SpO2" ] ;
-       fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA file GMRV VITAL MEASUREMENT (#120.5) to us-core-pulse-oximetry" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ] ;
        fhir:groupingId [ fhir:v "group4" ]
      ] ) ;

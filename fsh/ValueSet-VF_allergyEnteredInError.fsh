@@ -1,9 +1,4 @@
-Instance: VSVFallergyEnteredInError
-InstanceOf: ValueSet
-Usage: #definition
-* url = "http://va.gov/fhir/ValueSet/VSVFallergyEnteredInError"
-* name = "VF_allergyEnteredInError"
-* title = "VF_allergyEnteredInError"
-* status = #active
-* experimental = true
-* description = "Navigate to the [ConceptMap VF_allergyEnteredInError](ConceptMap-CMVFallergyEnteredInError.html)."
+ValueSet: VSVFallergyEnteredInError
+Title: "VF_allergyEnteredInError"
+Description: "Navigate to [ConceptMap VF_allergyEnteredInError](ConceptMap-CMVFallergyEnteredInError.html)"
+* include http://va.gov/terminology/vistaDefinedElements/120.8-22#1 "ENTERED IN ERROR - YES"

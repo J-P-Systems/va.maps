@@ -10,5 +10,5 @@ Mapping: vista-to-DocumentReferenceBinary
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: DocumentReferenceBinary
-* data -> "++: source value from TIU DOCUMENT - REPORT TEXT (#8925-2)"
-* contentType -> "++: fixed value = text/plain"
+* data -> "1725: source value from TIU DOCUMENT - REPORT TEXT (#8925-2)"
+* contentType -> "1726: fixed value = text/plain"

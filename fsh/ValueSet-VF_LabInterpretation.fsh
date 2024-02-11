@@ -1,9 +1,7 @@
-Instance: VSVFLabInterpretation
-InstanceOf: ValueSet
-Usage: #definition
-* url = "http://va.gov/fhir/ValueSet/VSVFLabInterpretation"
-* name = "VF_LabInterpretation"
-* title = "VF_LabInterpretation"
-* status = #active
-* experimental = true
-* description = "Navigate to the [ConceptMap VF_LabInterpretation](ConceptMap-CMVFLabInterpretation.html)."
+ValueSet: VSVFLabInterpretation
+Title: "VF_LabInterpretation"
+Description: "Navigate to [ConceptMap VF_LabInterpretation](ConceptMap-CMVFLabInterpretation.html)"
+* include http://va.gov/terminology/vistaDefinedElements/63.04-2+through+862#H 
+* include http://va.gov/terminology/vistaDefinedElements/63.04-2+through+862#L 
+* include http://va.gov/terminology/vistaDefinedElements/63.04-2+through+862#H* 
+* include http://va.gov/terminology/vistaDefinedElements/63.04-2+through+862#L* 

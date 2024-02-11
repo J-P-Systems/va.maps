@@ -5,7 +5,6 @@ Title: "Observation EXAM"
 Description: "This StructureDefinition contains the maps for VistA file V EXAM (#9000010.13) to Observation"
 * ^status = #draft
 * code.coding and subject and encounter and interpretation and valueQuantity.value and valueQuantity and note.text and effectiveDateTime and status and performer and category MS
-* performer only Reference(http://hl7.org/fhir/StructureDefinition/Practitioner)
 
 Mapping: vista-to-ObservationEXAM
 Id: vista

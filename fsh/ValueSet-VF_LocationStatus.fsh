@@ -1,9 +1,7 @@
-Instance: VSVFLocationStatus
-InstanceOf: ValueSet
-Usage: #definition
-* url = "http://va.gov/fhir/ValueSet/VSVFLocationStatus"
-* name = "VF_LocationStatus"
-* title = "VF_LocationStatus"
-* status = #active
-* experimental = true
-* description = "Navigate to the [ConceptMap VF_LocationStatus](ConceptMap-CMVFLocationStatus.html)."
+ValueSet: VSVFLocationStatus
+Title: "VF_LocationStatus"
+Description: "Navigate to [ConceptMap VF_LocationStatus](ConceptMap-CMVFLocationStatus.html)"
+* include urn:VAST#A "Active"
+* include urn:VAST#D "Permanently Deactivated"
+* include urn:VAST#P "Planned"
+* include urn:VAST#T "Temporarily Deactivated"

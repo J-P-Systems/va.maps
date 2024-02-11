@@ -7,7 +7,6 @@ Description: "This StructureDefinition contains the maps for VistA file V IMMUNI
 * statusReason and vaccineCode and primarySource and status and patient and occurrenceDateTime and lotNumber and manufacturer and vaccineCode.coding.code and doseQuantity.value and performer.actor and note.text and protocolApplied.doseNumberString and doseQuantity and recorded and reaction.detail MS
 * statusReason from http://va.gov/fhir/ValueSet/VSVFimmunizationStatusReason
 * vaccineCode from http://va.gov/fhir/ValueSet/VSVFinferredCVX
-* performer.actor only Reference(http://hl7.org/fhir/StructureDefinition/Practitioner)
 * reaction.detail only Reference(ImmunizationObservation)
 
 Mapping: vista-to-ImmunizationImmunization
@@ -50,3 +49,4 @@ Source: ImmunizationImmunization
 * note.text -> "Immun.Immunization.ImmunizationComments"
 * protocolApplied.doseNumberString -> "Immun.Immunization.Series"
 * doseQuantity -> "Immun.Immunization.DoseUnit"
+* recorded -> "Immun.Immunization.RecordedDateTime"

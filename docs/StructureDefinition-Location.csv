@@ -110,7 +110,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","./scheme"
 "Location.telecom.value","Location.telecom.value","","","",0,1,"Y","","Y","string {[]} {[]}
 ","The actual contact point details","The actual contact point details, in a form that is meaningful to the designated communication system (i.e. phone number or email address).","Additional text data such as phone extension numbers, or notes about use of the contact are sometimes included in the value.","Need to support legacy numbers that are not in a tightly controlled format.","","","","","","","",,,,,"",,,,"ContactPoint.value",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","./url","1280: transform using concat (44-99,"" ext. "",44-99.1) on HOSPITAL LOCATION - TELEPHONE (#44-99)","Dim.Location.PhoneNumber"
+","./url","1280: transform using concat (44-99,"" ext. "",44-99.1) on HOSPITAL LOCATION - TELEPHONE > TELEPHONE EXTENSION (#44-99 > 44-99.1)","Dim.Location.PhoneNumber"
 "Location.telecom.use","Location.telecom.use","","","",0,1,"","Y","Y","code {[]} {[]}
 ","home | work | temp | old | mobile - purpose of this contact point","Identifies the purpose for the contact point.","Applications can assume that a contact is current unless it explicitly says that it is temporary or old.","Need to track the way a person uses this contact, so a user can choose which is appropriate for their purpose.","","","","","","","",,"required","Use of contact point.","http://hl7.org/fhir/ValueSet/contact-point-use|4.0.1","",,,,"ContactPoint.use",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","unique(./use)"
@@ -141,26 +141,26 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","./formatted"
 "Location.address.line","Location.address.line","","","",0,*,"Y","","Y","string {[]} {[]}
 ","Street name, number, direction & P.O. Box etc.","This component contains the house number, apartment number, street name, street direction,  P.O. Box number, delivery hints, and similar address information.","","","","","","","<valueString xmlns=""http://hl7.org/fhir"" value=""137 Nowhere Street""/>","","",,,,,"",,,,"Address.line",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","AD.part[parttype = AL]","1317: source value from HOSPITAL LOCATION - INSTITUTION > INSTITUTION - STREET ADDR. 1 (#44-3 > 4-1.01)","1318: source value from HOSPITAL LOCATION - INSTITUTION > INSTITUTION - STREET ADDR. 2 (#44-3 > 4-1.02)","1323: source not supported case mailing slice","1324: source not supported case mailing slice","Dim.Institution.StreetAddress1","Dim.Institution.StreetAddress2"
+","AD.part[parttype = AL]","1317: source value from HOSPITAL LOCATION - INSTITUTION > STREET ADDR. 1 (#44-3 > 4-1.01)","1318: source value from HOSPITAL LOCATION - INSTITUTION > STREET ADDR. 2 (#44-3 > 4-1.02)","1323: source not supported case mailing slice","1324: source not supported case mailing slice","Dim.Institution.StreetAddress1","Dim.Institution.StreetAddress2"
 "Location.address.city","Location.address.city","","Municpality
 ","",0,1,"Y","","Y","string {[]} {[]}
 ","Name of city, town etc.","The name of the city, town, suburb, village or other community or delivery center.","","","","","","","<valueString xmlns=""http://hl7.org/fhir"" value=""Erewhon""/>","","",,,,,"",,,,"Address.city",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","AD.part[parttype = CTY]","1319: source value from HOSPITAL LOCATION - INSTITUTION > INSTITUTION - CITY (#44-3 > 4-1.03)","1325: source not supported case mailing slice","Dim.Institution.City"
+","AD.part[parttype = CTY]","1319: source value from HOSPITAL LOCATION - INSTITUTION > CITY (#44-3 > 4-1.03)","1325: source not supported case mailing slice","Dim.Institution.City"
 "Location.address.district","Location.address.district","","County
 ","",0,1,"Y","","Y","string {[]} {[]}
 ","District name (aka county)","The name of the administrative area (county).","District is sometimes known as county, but in some regions 'county' is used in place of city (municipality), so county name should be conveyed in city instead.","","","","","","<valueString xmlns=""http://hl7.org/fhir"" value=""Madison""/>","","",,,,,"",,,,"Address.district",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","AD.part[parttype = CNT | CPA]","1316: source value from HOSPITAL LOCATION - INSTITUTION > INSTITUTION - DISTRICT (#44-3 > 4-.03)","Dim.Institution.MedicalDistrict"
+","AD.part[parttype = CNT | CPA]","1316: source value from HOSPITAL LOCATION - INSTITUTION > DISTRICT (#44-3 > 4-.03)","Dim.Institution.MedicalDistrict"
 "Location.address.state","Location.address.state","","Province
 Territory","",0,1,"Y","","Y","string {[]} {[]}
 ","Sub-unit of country (abbreviations ok)","Sub-unit of a country with limited sovereignty in a federally organized country. A code may be used if codes are in common use (e.g. US 2 letter state codes).","","","","","","","","","",,"extensible","Two letter USPS alphabetic codes.","http://hl7.org/fhir/us/core/ValueSet/us-core-usps-state","",,,,"Address.state",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","AD.part[parttype = STA]","1315: source value from HOSPITAL LOCATION - INSTITUTION > INSTITUTION - STATE > STATE - ABBREVIATION (#44-3 > 4-.02 > 5-1)"
+","AD.part[parttype = STA]","1315: source value from HOSPITAL LOCATION - INSTITUTION > STATE > STATE - ABBREVIATION (#44-3 > 4-.02 > 5-1)"
 "Location.address.postalCode","Location.address.postalCode","","Zip
 ","",0,1,"Y","","Y","string {[]} {[]}
 ","US Zip Codes","A postal code designating a region defined by the postal service.","","","","","","","<valueString xmlns=""http://hl7.org/fhir"" value=""9132""/>","","",,,,,"",,,,"Address.postalCode",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","AD.part[parttype = ZIP]","1320: source value from HOSPITAL LOCATION - INSTITUTION > INSTITUTION - ZIP (#44-3 > 4-1.04)","1327: source not supported case mailing slice","Dim.Institution.Zip"
+","AD.part[parttype = ZIP]","1320: source value from HOSPITAL LOCATION - INSTITUTION > ZIP (#44-3 > 4-1.04)","1327: source not supported case mailing slice","Dim.Institution.Zip"
 "Location.address.country","Location.address.country","","","",0,1,"Y","","Y","string {[]} {[]}
 ","Country (e.g. can be ISO 3166 2 or 3 letter code)","Country - a nation as commonly understood or generally accepted.","ISO 3166 3 letter codes can be used in place of a human readable country name.","","","","","","","","",,,,,"",,,,"Address.country",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","AD.part[parttype = CNT]","1405: source value from HOSPITAL LOCATION - INSTITUTION > INSTITUTION - COUNTRY > COUNTRY - CODE (#44-3 > 4-801 > 779.004-0.1)","1406: source not supported case mailing slice"
+","AD.part[parttype = CNT]","1405: source value from HOSPITAL LOCATION - INSTITUTION > COUNTRY > COUNTRY - CODE (#44-3 > 4-801 > 779.004-0.1)","1406: source not supported case mailing slice"
 "Location.address.period","Location.address.period","","","",0,1,"","","Y","Period {[]} {[]}
 ","Time period when address was/is in use","Time period when address was/is in use.","","Allows addresses to be placed in historical context.","","","","","<valuePeriod xmlns=""http://hl7.org/fhir"">
   <start value=""2010-03-23""/>
