@@ -4,12 +4,11 @@ Usage: #definition
 * url = "http://va.gov/fhir/ConceptMap/CMVFVitalsUnits"
 * name = "VF_VitalsUnits"
 * title = "VF_VitalsUnits"
-* status = #active
+* status = #draft
 * experimental = true
 * description = "Terminology Maps VF_VitalsUnits"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFVitalsUnits"
-* group[0].source = "undefined"
-* group[=].target = "null"
+* group[0].source = "http://va.gov/terminology/vistaDefinedElements/120.5-.03"
 * group[=].element[0].code = #4688718
 * group[=].element[=].display = "AUDIOMETRY"
 * group[=].element[=].target.code = #<omit_code>
@@ -42,7 +41,7 @@ Usage: #definition
 * group[=].element[=].display = "VISION UNCORRECTED"
 * group[=].element[=].target.code = #<omit_code>
 * group[=].element[=].target.equivalence = #equal
-* group[+].source = "undefined"
+* group[+].source = "http://va.gov/terminology/vistaDefinedElements/120.5-.03"
 * group[=].target = "http://unitsofmeasure.org"
 * group[=].element[0].code = #4500634
 * group[=].element[=].display = "BLOOD PRESSURE"

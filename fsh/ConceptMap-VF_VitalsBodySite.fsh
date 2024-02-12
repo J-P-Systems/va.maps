@@ -4,11 +4,11 @@ Usage: #definition
 * url = "http://va.gov/fhir/ConceptMap/CMVFVitalsBodySite"
 * name = "VF_VitalsBodySite"
 * title = "VF_VitalsBodySite"
-* status = #active
+* status = #draft
 * experimental = true
 * description = "Terminology Maps VF_VitalsBodySite"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFVitalsBodySite"
-* group[0].source = "undefined"
+* group[0].source = "urn:undefined"
 * group[=].target = "http://snomed.info/sct"
 * group[=].element[0].code = #4688633
 * group[=].element[=].display = "ABDOMINAL"

@@ -4,7 +4,7 @@ Usage: #definition
 * url = "http://va.gov/fhir/ConceptMap/CMVFOutMedRequestStatus"
 * name = "VF_OutMedRequestStatus"
 * title = "VF_OutMedRequestStatus"
-* status = #active
+* status = #draft
 * experimental = true
 * description = "Terminology Maps VF_OutMedRequestStatus"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFOutMedRequestStatus"

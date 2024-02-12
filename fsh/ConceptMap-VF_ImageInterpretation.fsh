@@ -4,7 +4,7 @@ Usage: #definition
 * url = "http://va.gov/fhir/ConceptMap/CMVFImageInterpretation"
 * name = "VF_ImageInterpretation"
 * title = "VF_ImageInterpretation"
-* status = #active
+* status = #draft
 * experimental = true
 * description = "Terminology Maps VF_ImageInterpretation"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFImageInterpretation"

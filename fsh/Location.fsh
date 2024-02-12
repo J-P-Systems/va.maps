@@ -4,7 +4,7 @@ Id: Location
 Title: "Location"
 Description: "This StructureDefinition contains the maps for VistA file HOSPITAL LOCATION (#44) to us-core-location"
 * ^status = #draft
-* identifier.value and name and alias and status and description and telecom.value and managingOrganization.display and physicalType.text and address.state and address.district and address.line and address.city and address.postalCode and address.country and address.type and address and address.use and type.text MS
+* identifier.value and name and alias and status and description and telecom.value and managingOrganization.display and physicalType.text and address.state and address.district and address.line and address.city and address.postalCode and address.country and address.type and type.text MS
 * status from http://va.gov/fhir/ValueSet/VSVFLocationStatus
 * type.text from http://va.gov/fhir/ValueSet/VSVFLocationStatus
 
@@ -29,14 +29,6 @@ Source: Location
 * address.postalCode -> "1320: source value from HOSPITAL LOCATION - INSTITUTION > ZIP (#44-3 > 4-1.04)"
 * address.country -> "1405: source value from HOSPITAL LOCATION - INSTITUTION > COUNTRY > COUNTRY - CODE (#44-3 > 4-801 > 779.004-0.1)"
 * address.type -> "1322: fixed value = #physical when HOSPITAL LOCATION - INSTITUTION (#44-3)"
-* address.line -> "1323: source not supported case mailing slice" "source not supported because Location has only physical address and supports only 1 address"
-* address.line -> "1324: source not supported case mailing slice" "source not supported because Location has only physical address and supports only 1 address"
-* address.city -> "1325: source not supported case mailing slice" "source not supported because Location has only physical address and supports only 1 address"
-* address -> "1326: source not supported case mailing slice" "source not supported because Location has only physical address and supports only 1 address"
-* address.postalCode -> "1327: source not supported case mailing slice" "source not supported because Location has only physical address and supports only 1 address"
-* address.country -> "1406: source not supported case mailing slice" "source not supported because Location has only physical address and supports only 1 address"
-* address.type -> "1328: source not supported case mailing slice" "source not supported because Location has only physical address and supports only 1 address"
-* address.use -> "1407: source not supported case mailing slice" "source not supported because Location has only physical address and supports only 1 address"
 * type.text -> "1412: terminologyMaps using VF_LocationStatus on HOSPITAL LOCATION - SERVICE (#44-9)" "could map Medical Service text to FHIR type valueset, e.g.\n\"NEUROLOGY\" to \"NEUR Neurology clinic\"\nOr is this combination of TREATEMENT SPECIALTY (9.5) and SERVICE/SECTION? and STOP CODE?"
 
 Mapping: cdw-to-Location

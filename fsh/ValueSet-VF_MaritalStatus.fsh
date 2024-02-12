@@ -1,6 +1,7 @@
 ValueSet: VSVFMaritalStatus
 Title: "VF_MaritalStatus"
 Description: "Navigate to [ConceptMap VF_MaritalStatus](ConceptMap-CMVFMaritalStatus.html)"
+* ^experimental = true
 * include http://va.gov/terminology/vistaDefinedElements/2-.05#DIVORCED "DIVORCED"
 * include http://va.gov/terminology/vistaDefinedElements/2-.05#MARRIED "MARRIED"
 * include http://va.gov/terminology/vistaDefinedElements/2-.05#NEVER_MARRIED "NEVER MARRIED"

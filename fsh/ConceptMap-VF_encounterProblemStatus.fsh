@@ -4,7 +4,7 @@ Usage: #definition
 * url = "http://va.gov/fhir/ConceptMap/CMVFencounterProblemStatus"
 * name = "VF_encounterProblemStatus"
 * title = "VF_encounterProblemStatus"
-* status = #active
+* status = #draft
 * experimental = true
 * description = "Terminology Maps VF_encounterProblemStatus"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFencounterProblemStatus"

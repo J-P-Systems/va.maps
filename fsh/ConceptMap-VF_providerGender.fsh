@@ -4,11 +4,11 @@ Usage: #definition
 * url = "http://va.gov/fhir/ConceptMap/CMVFproviderGender"
 * name = "VF_providerGender"
 * title = "VF_providerGender"
-* status = #active
+* status = #draft
 * experimental = true
 * description = "Terminology Maps VF_providerGender"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFproviderGender"
-* group[0].source = "undefined"
+* group[0].source = "urn:undefined"
 * group[=].target = "http://hl7.org/fhir/administrative-gender"
 * group[=].element[0].code = #F
 * group[=].element[=].display = "FEMALE"

@@ -1,6 +1,7 @@
 ValueSet: VSVFCoverageRelationship
 Title: "VF_CoverageRelationship"
 Description: "Navigate to [ConceptMap VF_CoverageRelationship](ConceptMap-CMVFCoverageRelationship.html)"
+* ^experimental = true
 * include urn:undefined#HIPAA_18_SELF 
 * include urn:undefined#HIPAA_01_SPOUSE 
 * include urn:undefined#HIPAA_19_CHILD 

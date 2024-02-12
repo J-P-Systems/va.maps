@@ -4,11 +4,11 @@ Usage: #definition
 * url = "http://va.gov/fhir/ConceptMap/CMVFPositiveNegative"
 * name = "VF_PositiveNegative"
 * title = "VF_PositiveNegative"
-* status = #active
+* status = #draft
 * experimental = true
 * description = "Terminology Maps VF_PositiveNegative"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFPositiveNegative"
-* group[0].source = "undefined"
+* group[0].source = "urn:undefined"
 * group[=].target = "http://snomed.info/sct"
 * group[=].element[0].code = #N
 * group[=].element[=].display = "NEGATIVE"

@@ -4,11 +4,11 @@ Usage: #definition
 * url = "http://va.gov/fhir/ConceptMap/CMVFVitalsLaterality"
 * name = "VF_VitalsLaterality"
 * title = "VF_VitalsLaterality"
-* status = #active
+* status = #draft
 * experimental = true
 * description = "Terminology Maps VF_VitalsLaterality"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFVitalsLaterality"
-* group[0].source = "undefined"
+* group[0].source = "urn:undefined"
 * group[=].target = "http://snomed.info/sct"
 * group[=].element[0].code = #4688660
 * group[=].element[=].display = "LEFT"

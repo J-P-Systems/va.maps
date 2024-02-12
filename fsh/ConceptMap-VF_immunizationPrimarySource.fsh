@@ -4,12 +4,11 @@ Usage: #definition
 * url = "http://va.gov/fhir/ConceptMap/CMVFimmunizationPrimarySource"
 * name = "VF_immunizationPrimarySource"
 * title = "VF_immunizationPrimarySource"
-* status = #active
+* status = #draft
 * experimental = true
 * description = "Terminology Maps VF_immunizationPrimarySource"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFimmunizationPrimarySource"
-* group[0].source = "undefined"
-* group[=].target = "null"
+* group[0].source = "http://va.gov/terminology/vistaDefinedElements/9000010.11-1301"
 * group[=].element[0].code = #5197425
 * group[=].element[=].display = "HISTORICAL INFORMATION - FROM BIRTH CERTIFICATE"
 * group[=].element[=].target.code = #false

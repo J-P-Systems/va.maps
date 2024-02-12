@@ -4,12 +4,11 @@ Usage: #definition
 * url = "http://va.gov/fhir/ConceptMap/CMVFCoverageStatusForce"
 * name = "VF_CoverageStatusForce"
 * title = "VF_CoverageStatusForce"
-* status = #active
+* status = #draft
 * experimental = true
 * description = "Terminology Maps VF_CoverageStatusForce"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFCoverageStatusForce"
-* group[0].source = "undefined"
-* group[=].target = "null"
+* group[0].source = "urn:undefined"
 * group[=].element[0].code = #0'_FOR_NOT_COVERED;
 * group[=].element[=].target.code = #false
 * group[=].element[=].target.equivalence = #equivalent

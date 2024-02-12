@@ -5,7 +5,11 @@ Title: "MedicationRequest: Outpatient MedicationRequest"
 Description: "This StructureDefinition contains the maps for VistA file PRESCRIPTION (#52) to us-core-medicationrequest"
 * ^status = #draft
 * id and status and extension.valueCoding.code and intent and subject and requester and dispenseRequest.validityPeriod.end and extension and dispenseRequest.numberOfRepeatsAllowed and dispenseRequest.quantity.value and dispenseRequest.expectedSupplyDuration and encounter and reasonCode.text and extension.valueBoolean MS
+* status.extension contains http://hl7.org/fhir/StructureDefinition/11179-permitted-value-conceptmap named 11179-permitted-value-conceptmap 0..1
+* status.extension[11179-permitted-value-conceptmap].valueCanonical = "http://va.gov/fhir/ConceptMap/CMVFOutMedRequestStatus"
 * encounter only Reference(MedicationRequestOutpatientEncounter)
+* extension.valueBoolean.extension contains http://hl7.org/fhir/StructureDefinition/11179-permitted-value-conceptmap named 11179-permitted-value-conceptmap 0..1
+* extension.valueBoolean.extension[11179-permitted-value-conceptmap].valueCanonical = "http://va.gov/fhir/ConceptMap/CMVFBoolean"
 
 Mapping: vista-to-MedicationRequestOutpatientMedicationRequest
 Id: vista

@@ -1,6 +1,7 @@
 ValueSet: VSVFVitalsCodes
 Title: "VF_VitalsCodes"
 Description: "Navigate to [ConceptMap VF_VitalsCodes](ConceptMap-CMVFVitalsCodes.html)"
+* ^experimental = true
 * include http://va.gov/terminology/vistaDefinedElements/120.5-.03#4688718 "AUDIOMETRY"
 * include http://va.gov/terminology/vistaDefinedElements/120.5-.03#4500634 "BLOOD PRESSURE"
 * include http://va.gov/terminology/vistaDefinedElements/120.5-.03#null "BODY MASS INDEX"

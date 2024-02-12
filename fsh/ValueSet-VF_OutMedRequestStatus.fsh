@@ -1,6 +1,7 @@
 ValueSet: VSVFOutMedRequestStatus
 Title: "VF_OutMedRequestStatus"
 Description: "Navigate to [ConceptMap VF_OutMedRequestStatus](ConceptMap-CMVFOutMedRequestStatus.html)"
+* ^experimental = true
 * include http://va.gov/terminology/vistaDefinedTerms/52-100#0 "ACTIVE"
 * include http://va.gov/terminology/vistaDefinedTerms/52-100#NULL "ACTIVE"
 * include http://va.gov/terminology/vistaDefinedTerms/52-100#13 "DELETED"

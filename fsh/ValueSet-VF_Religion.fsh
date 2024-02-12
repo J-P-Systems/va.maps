@@ -1,6 +1,7 @@
 ValueSet: VSVFReligion
 Title: "VF_Religion"
 Description: "Navigate to [ConceptMap VF_Religion](ConceptMap-CMVFReligion.html)"
+* ^experimental = true
 * include http://va.gov/terminology/vistaDefinedElements/2-.08#9 "ADVENTIST"
 * include http://va.gov/terminology/vistaDefinedElements/2-.08#32 "AFRICAN RELIGIONS"
 * include http://va.gov/terminology/vistaDefinedElements/2-.08#33 "AFRO-CARIBBEAN RELIGIONS"

@@ -4,7 +4,7 @@ Usage: #definition
 * url = "http://va.gov/fhir/ConceptMap/CMVFVitalsDevice"
 * name = "VF_VitalsDevice"
 * title = "VF_VitalsDevice"
-* status = #active
+* status = #draft
 * experimental = true
 * description = "Terminology Maps VF_VitalsDevice"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFVitalsDevice"

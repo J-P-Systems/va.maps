@@ -4,12 +4,11 @@ Usage: #definition
 * url = "http://va.gov/fhir/ConceptMap/CMVFBoolean"
 * name = "VF_Boolean"
 * title = "VF_Boolean"
-* status = #active
+* status = #draft
 * experimental = true
 * description = "Terminology Maps VF_Boolean"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFBoolean"
-* group[0].source = "undefined"
-* group[=].target = "null"
+* group[0].source = "http://va.gov/terminology/vistaDefinedElements/51-129"
 * group[=].element[0].code = #0
 * group[=].element[=].display = "No"
 * group[=].element[=].target.code = #false

@@ -4,7 +4,7 @@ Usage: #definition
 * url = "http://va.gov/fhir/ConceptMap/CMVFDentalDeviceStatus"
 * name = "VF_DentalDeviceStatus"
 * title = "VF_DentalDeviceStatus"
-* status = #active
+* status = #draft
 * experimental = true
 * description = "Terminology Maps VF_DentalDeviceStatus"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFDentalDeviceStatus"

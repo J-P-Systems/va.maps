@@ -4,7 +4,7 @@ Usage: #definition
 * url = "http://va.gov/fhir/ConceptMap/CMVFimmunizationStatusReason"
 * name = "VF_immunizationStatusReason"
 * title = "VF_immunizationStatusReason"
-* status = #active
+* status = #draft
 * experimental = true
 * description = "Terminology Maps VF_immunizationStatusReason"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFimmunizationStatusReason"

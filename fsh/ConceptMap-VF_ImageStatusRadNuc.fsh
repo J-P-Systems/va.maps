@@ -4,7 +4,7 @@ Usage: #definition
 * url = "http://va.gov/fhir/ConceptMap/CMVFImageStatusRadNuc"
 * name = "VF_ImageStatusRadNuc"
 * title = "VF_ImageStatusRadNuc"
-* status = #active
+* status = #draft
 * experimental = true
 * description = "Terminology Maps VF_ImageStatusRadNuc"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFImageStatusRadNuc"

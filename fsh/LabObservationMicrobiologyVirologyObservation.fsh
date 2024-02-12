@@ -5,7 +5,7 @@ Title: "Lab Observation: Microbiology Virology Observation"
 Description: "This StructureDefinition contains the maps for VistA file MICROBIOLOGY (#63.05) to us-core-observation-lab"
 * ^status = #draft
 * code and status MS
-* status from http://va.gov/fhir/ValueSet/VSnull
+* status from http://va.gov/fhir/ValueSet/VSundefined
 
 Mapping: vista-to-LabObservationMicrobiologyVirologyObservation
 Id: vista

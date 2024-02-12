@@ -4,12 +4,11 @@ Usage: #definition
 * url = "http://va.gov/fhir/ConceptMap/CMVFProcedureCodeSystem"
 * name = "VF_ProcedureCodeSystem"
 * title = "VF_ProcedureCodeSystem"
-* status = #active
+* status = #draft
 * experimental = true
 * description = "Terminology Maps VF_ProcedureCodeSystem"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFProcedureCodeSystem"
-* group[0].source = "undefined"
-* group[=].target = "null"
+* group[0].source = "urn:undefined"
 * group[=].element[0].code = #CPT
 * group[=].element[=].target.code = #http://www.ama-assn.org/go/cpt
 * group[=].element[=].target.equivalence = #equivalent

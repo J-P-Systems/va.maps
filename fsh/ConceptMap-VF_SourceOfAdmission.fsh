@@ -4,7 +4,7 @@ Usage: #definition
 * url = "http://va.gov/fhir/ConceptMap/CMVFSourceOfAdmission"
 * name = "VF_SourceOfAdmission"
 * title = "VF_SourceOfAdmission"
-* status = #active
+* status = #draft
 * experimental = true
 * description = "Terminology Maps VF_SourceOfAdmission"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFSourceOfAdmission"

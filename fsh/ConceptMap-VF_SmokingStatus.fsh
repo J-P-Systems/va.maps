@@ -4,7 +4,7 @@ Usage: #definition
 * url = "http://va.gov/fhir/ConceptMap/CMVFSmokingStatus"
 * name = "VF_SmokingStatus"
 * title = "VF_SmokingStatus"
-* status = #active
+* status = #draft
 * experimental = true
 * description = "Terminology Maps VF_SmokingStatus"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFSmokingStatus"

@@ -4,12 +4,11 @@ Usage: #definition
 * url = "http://va.gov/fhir/ConceptMap/CMVFExamStatus"
 * name = "VF_ExamStatus"
 * title = "VF_ExamStatus"
-* status = #active
+* status = #draft
 * experimental = true
 * description = "Terminology Maps VF_ExamStatus"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFExamStatus"
-* group[0].source = "undefined"
-* group[=].target = "null"
+* group[0].source = "urn:undefined"
 * group[=].element[0].code = #X
 * group[=].element[=].display = "CANCELLED BY MAS"
 * group[=].element[=].target.code = #cancelled

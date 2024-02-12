@@ -4,12 +4,11 @@ Usage: #definition
 * url = "http://va.gov/fhir/ConceptMap/CMVFPractitionerCountry"
 * name = "VF_PractitionerCountry"
 * title = "VF_PractitionerCountry"
-* status = #active
+* status = #draft
 * experimental = true
 * description = "Terminology Maps VF_PractitionerCountry"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFPractitionerCountry"
 * group[0].source = "http://va.gov/terminology/vistaDefinedElements/200-.1215"
-* group[=].target = "null"
 * group[=].element[0].code = #ALABAMA
 * group[=].element[=].display = "ALABAMA"
 * group[=].element[=].target.code = #USA

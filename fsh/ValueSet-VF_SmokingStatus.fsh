@@ -1,6 +1,7 @@
 ValueSet: VSVFSmokingStatus
 Title: "VF_SmokingStatus"
 Description: "Navigate to [ConceptMap VF_SmokingStatus](ConceptMap-CMVFSmokingStatus.html)"
+* ^experimental = true
 * include http://va.gov/terminology/vistaDefinedTerms/9999999.64#5316637 "CURRENT SMOKER"
 * include http://va.gov/terminology/vistaDefinedTerms/9999999.64#5316643 "CURRENT TOBACCO USE"
 * include http://va.gov/terminology/vistaDefinedTerms/9999999.64#5316635 "FORMER SMOKER - <100 LIFETIME CIGARETTES"

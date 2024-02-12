@@ -1,6 +1,7 @@
 ValueSet: VSVFPractitionerCountry
 Title: "VF_PractitionerCountry"
 Description: "Navigate to [ConceptMap VF_PractitionerCountry](ConceptMap-CMVFPractitionerCountry.html)"
+* ^experimental = true
 * include http://va.gov/terminology/vistaDefinedElements/200-.1215#ALABAMA "ALABAMA"
 * include http://va.gov/terminology/vistaDefinedElements/200-.1215#ALASKA "ALASKA"
 * include http://va.gov/terminology/vistaDefinedElements/200-.1215#ALBERTA "ALBERTA"

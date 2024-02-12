@@ -4,12 +4,11 @@ Usage: #definition
 * url = "http://va.gov/fhir/ConceptMap/CMVFICDVersion"
 * name = "VF_ICDVersion"
 * title = "VF_ICDVersion"
-* status = #active
+* status = #draft
 * experimental = true
 * description = "Terminology Maps VF_ICDVersion"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFICDVersion"
-* group[0].source = "undefined"
-* group[=].target = "null"
+* group[0].source = "urn:undefined"
 * group[=].element[0].code = #10D
 * group[=].element[=].display = "ICD-10-CM"
 * group[=].element[=].target.code = #http://hl7.org/fhir/sid/icd-10-cm

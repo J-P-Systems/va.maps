@@ -1,6 +1,7 @@
 ValueSet: VSVFImageStatus
 Title: "VF_ImageStatus"
 Description: "Navigate to [ConceptMap VF_ImageStatus](ConceptMap-CMVFImageStatus.html)"
+* ^experimental = true
 * include http://va.gov/terminology/vistaDefinedElements/691.5-1506#D "DRAFT"
 * include http://va.gov/terminology/vistaDefinedElements/691.5-1506#PD "PROBLEM DRAFT"
 * include http://va.gov/terminology/vistaDefinedElements/691.5-1506#RNV "RELEASED NOT VERIFIED"

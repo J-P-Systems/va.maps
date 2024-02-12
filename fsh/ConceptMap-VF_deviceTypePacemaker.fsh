@@ -4,7 +4,7 @@ Usage: #definition
 * url = "http://va.gov/fhir/ConceptMap/CMVFdeviceTypePacemaker"
 * name = "VF_deviceTypePacemaker"
 * title = "VF_deviceTypePacemaker"
-* status = #active
+* status = #draft
 * experimental = true
 * description = "Terminology Maps VF_deviceTypePacemaker"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFdeviceTypePacemaker"

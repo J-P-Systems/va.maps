@@ -1,6 +1,7 @@
 ValueSet: VSVFdocumentReferencedocStatus
 Title: "VF_documentReferencedocStatus"
 Description: "Navigate to [ConceptMap VF_documentReferencedocStatus](ConceptMap-CMVFdocumentReferencedocStatus.html)"
+* ^experimental = true
 * include urn:undefined#4696298 "ACTIVE"
 * include urn:undefined#4501286 "AMENDED"
 * include urn:undefined#4501014 "COMPLETED"

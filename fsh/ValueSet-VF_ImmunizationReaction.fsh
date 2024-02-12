@@ -1,6 +1,7 @@
 ValueSet: VSVFImmunizationReaction
 Title: "VF_ImmunizationReaction"
 Description: "Navigate to [ConceptMap VF_ImmunizationReaction](ConceptMap-CMVFImmunizationReaction.html)"
+* ^experimental = true
 * include http://va.gov/terminology/vistaDefinedElements/9000010.11-.06#9 "ANAPHYLAXIS OR COLLAPSE"
 * include http://va.gov/terminology/vistaDefinedElements/9000010.11-.06#8 "ARTHRITIS OR ARTHRALGIAS"
 * include http://va.gov/terminology/vistaDefinedElements/9000010.11-.06#7 "CONVULSIONS"

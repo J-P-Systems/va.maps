@@ -1,6 +1,7 @@
 ValueSet: VSVFVitalsBodySite
 Title: "VF_VitalsBodySite"
 Description: "Navigate to [ConceptMap VF_VitalsBodySite](ConceptMap-CMVFVitalsBodySite.html)"
+* ^experimental = true
 * include urn:undefined#4688633 "ABDOMINAL"
 * include urn:undefined#4688636 "ANKLE"
 * include urn:undefined#4688636 "ANKLE"

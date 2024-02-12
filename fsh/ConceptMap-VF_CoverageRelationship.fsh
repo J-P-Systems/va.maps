@@ -4,11 +4,11 @@ Usage: #definition
 * url = "http://va.gov/fhir/ConceptMap/CMVFCoverageRelationship"
 * name = "VF_CoverageRelationship"
 * title = "VF_CoverageRelationship"
-* status = #active
+* status = #draft
 * experimental = true
 * description = "Terminology Maps VF_CoverageRelationship"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFCoverageRelationship"
-* group[0].source = "undefined"
+* group[0].source = "urn:undefined"
 * group[=].target = "http://terminology.hl7.org/CodeSystem/subscriber-relationship"
 * group[=].element[0].code = #HIPAA_18_SELF
 * group[=].element[=].target.code = #self

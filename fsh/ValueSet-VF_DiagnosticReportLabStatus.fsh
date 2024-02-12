@@ -1,6 +1,7 @@
 ValueSet: VSVFDiagnosticReportLabStatus
 Title: "VF_DiagnosticReportLabStatus"
 Description: "Navigate to [ConceptMap VF_DiagnosticReportLabStatus](ConceptMap-CMVFDiagnosticReportLabStatus.html)"
+* ^experimental = true
 * include http://va.gov/terminology/vistaDefinedElements/63.53-10#C "CORRECTED RESULTS"
 * include http://va.gov/terminology/vistaDefinedElements/63.53-10#F "FINAL RESULTS"
 * include http://va.gov/terminology/vistaDefinedElements/63.53-10#Y "NO ORDER ON RECORD"

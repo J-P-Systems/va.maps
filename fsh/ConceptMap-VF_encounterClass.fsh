@@ -4,11 +4,11 @@ Usage: #definition
 * url = "http://va.gov/fhir/ConceptMap/CMVFencounterClass"
 * name = "VF_encounterClass"
 * title = "VF_encounterClass"
-* status = #active
+* status = #draft
 * experimental = true
 * description = "Terminology Maps VF_encounterClass"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFencounterClass"
-* group[0].source = "undefined"
+* group[0].source = "urn:undefined"
 * group[=].target = "http://terminology.hl7.org/CodeSystem/v3-ActCode"
 * group[=].element[0].code = #1
 * group[=].element[=].display = "IN"

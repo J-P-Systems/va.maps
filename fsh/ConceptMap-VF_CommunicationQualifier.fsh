@@ -4,7 +4,7 @@ Usage: #definition
 * url = "http://va.gov/fhir/ConceptMap/CMVFCommunicationQualifier"
 * name = "VF_CommunicationQualifier"
 * title = "VF_CommunicationQualifier"
-* status = #active
+* status = #draft
 * experimental = true
 * description = "Terminology Maps VF_CommunicationQualifier"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFCommunicationQualifier"

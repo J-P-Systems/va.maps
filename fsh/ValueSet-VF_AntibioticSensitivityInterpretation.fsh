@@ -1,6 +1,7 @@
 ValueSet: VSVFAntibioticSensitivityInterpretation
 Title: "VF_AntibioticSensitivityInterpretation"
 Description: "Navigate to [ConceptMap VF_AntibioticSensitivityInterpretation](ConceptMap-CMVFAntibioticSensitivityInterpretation.html)"
+* ^experimental = true
 * include urn:undefined#I "Intermediate"
 * include urn:undefined#R "Resistant"
 * include urn:undefined#Resistant "Resistant"

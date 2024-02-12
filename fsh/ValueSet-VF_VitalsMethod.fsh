@@ -1,6 +1,7 @@
 ValueSet: VSVFVitalsMethod
 Title: "VF_VitalsMethod"
 Description: "Navigate to [ConceptMap VF_VitalsMethod](ConceptMap-CMVFVitalsMethod.html)"
+* ^experimental = true
 * include http://va.gov/terminology/vistaDefinedElements/120.5-5#4688634 "ACTUAL"
 * include http://va.gov/terminology/vistaDefinedElements/120.5-5#4688702 "AFTER EXERCISE"
 * include http://va.gov/terminology/vistaDefinedElements/120.5-5#4688697 "AT REST"

@@ -4,7 +4,7 @@ Usage: #definition
 * url = "http://va.gov/fhir/ConceptMap/CMVFVitalsPosition"
 * name = "VF_VitalsPosition"
 * title = "VF_VitalsPosition"
-* status = #active
+* status = #draft
 * experimental = true
 * description = "Terminology Maps VF_VitalsPosition"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFVitalsPosition"

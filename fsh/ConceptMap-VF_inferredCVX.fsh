@@ -4,7 +4,7 @@ Usage: #definition
 * url = "http://va.gov/fhir/ConceptMap/CMVFinferredCVX"
 * name = "VF_inferredCVX"
 * title = "VF_inferredCVX"
-* status = #active
+* status = #draft
 * experimental = true
 * description = "Terminology Maps VF_inferredCVX"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFinferredCVX"

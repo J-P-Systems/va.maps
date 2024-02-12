@@ -4,12 +4,11 @@ Usage: #definition
 * url = "http://va.gov/fhir/ConceptMap/CMVFAppointmentStatus"
 * name = "VF_AppointmentStatus"
 * title = "VF_AppointmentStatus"
-* status = #active
+* status = #draft
 * experimental = true
 * description = "Terminology Maps VF_AppointmentStatus"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFAppointmentStatus"
 * group[0].source = "http://va.gov/terminology/vistaDefinedElements/2.98-3"
-* group[=].target = "null"
 * group[=].element[0].code = #C
 * group[=].element[=].target.code = #cancelled
 * group[=].element[=].target.equivalence = #equivalent

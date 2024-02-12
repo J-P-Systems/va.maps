@@ -4,7 +4,7 @@ Usage: #definition
 * url = "http://va.gov/fhir/ConceptMap/CMVFMaritalStatus"
 * name = "VF_MaritalStatus"
 * title = "VF_MaritalStatus"
-* status = #active
+* status = #draft
 * experimental = true
 * description = "Terminology Maps VF_MaritalStatus"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFMaritalStatus"

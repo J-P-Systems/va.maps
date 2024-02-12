@@ -4,7 +4,7 @@ Usage: #definition
 * url = "http://va.gov/fhir/ConceptMap/CMVFLabInterpretation"
 * name = "VF_LabInterpretation"
 * title = "VF_LabInterpretation"
-* status = #active
+* status = #draft
 * experimental = true
 * description = "Terminology Maps VF_LabInterpretation"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFLabInterpretation"

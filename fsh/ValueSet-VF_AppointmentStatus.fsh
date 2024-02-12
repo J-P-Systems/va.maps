@@ -1,6 +1,7 @@
 ValueSet: VSVFAppointmentStatus
 Title: "VF_AppointmentStatus"
 Description: "Navigate to [ConceptMap VF_AppointmentStatus](ConceptMap-CMVFAppointmentStatus.html)"
+* ^experimental = true
 * include http://va.gov/terminology/vistaDefinedElements/2.98-3#C 
 * include http://va.gov/terminology/vistaDefinedElements/2.98-3#CA 
 * include http://va.gov/terminology/vistaDefinedElements/2.98-3#N 

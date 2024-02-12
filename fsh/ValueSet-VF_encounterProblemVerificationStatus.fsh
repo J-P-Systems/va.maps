@@ -1,6 +1,7 @@
 ValueSet: VSVFencounterProblemVerificationStatus
 Title: "VF_encounterProblemVerificationStatus"
 Description: "Navigate to [ConceptMap VF_encounterProblemVerificationStatus](ConceptMap-CMVFencounterProblemVerificationStatus.html)"
+* ^experimental = true
 * include http://va.gov/terminology/vistaDefinedElements/9000010.07-.06#C "CONSIDER"
 * include http://va.gov/terminology/vistaDefinedElements/9000010.07-.06#D "DOUBTFUL"
 * include http://va.gov/terminology/vistaDefinedElements/9000010.07-.06#F "FOLLOW UP"

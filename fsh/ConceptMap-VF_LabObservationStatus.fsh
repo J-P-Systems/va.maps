@@ -4,11 +4,11 @@ Usage: #definition
 * url = "http://va.gov/fhir/ConceptMap/CMVFLabObservationStatus"
 * name = "VF_LabObservationStatus"
 * title = "VF_LabObservationStatus"
-* status = #active
+* status = #draft
 * experimental = true
 * description = "Terminology Maps VF_LabObservationStatus"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFLabObservationStatus"
-* group[0].source = "undefined"
+* group[0].source = "urn:undefined"
 * group[=].target = "http://hl7.org/fhir/observation-status"
 * group[=].element[0].code = #F
 * group[=].element[=].display = "FINAL REPORT"

@@ -4,7 +4,7 @@ Usage: #definition
 * url = "http://va.gov/fhir/ConceptMap/CMVFOrganizationIdentifierType"
 * name = "VF_OrganizationIdentifierType"
 * title = "VF_OrganizationIdentifierType"
-* status = #active
+* status = #draft
 * experimental = true
 * description = "Terminology Maps VF_OrganizationIdentifierType"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFOrganizationIdentifierType"

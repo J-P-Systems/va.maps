@@ -4,11 +4,11 @@ Usage: #definition
 * url = "http://va.gov/fhir/ConceptMap/CMVFAntibioticSensitivityInterpretation"
 * name = "VF_AntibioticSensitivityInterpretation"
 * title = "VF_AntibioticSensitivityInterpretation"
-* status = #active
+* status = #draft
 * experimental = true
 * description = "Terminology Maps VF_AntibioticSensitivityInterpretation"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFAntibioticSensitivityInterpretation"
-* group[0].source = "undefined"
+* group[0].source = "urn:undefined"
 * group[=].target = "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation"
 * group[=].element[0].code = #I
 * group[=].element[=].display = "Intermediate"

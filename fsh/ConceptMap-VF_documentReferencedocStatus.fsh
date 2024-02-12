@@ -4,12 +4,11 @@ Usage: #definition
 * url = "http://va.gov/fhir/ConceptMap/CMVFdocumentReferencedocStatus"
 * name = "VF_documentReferencedocStatus"
 * title = "VF_documentReferencedocStatus"
-* status = #active
+* status = #draft
 * experimental = true
 * description = "Terminology Maps VF_documentReferencedocStatus"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFdocumentReferencedocStatus"
-* group[0].source = "undefined"
-* group[=].target = "null"
+* group[0].source = "urn:undefined"
 * group[=].element[0].code = #4696298
 * group[=].element[=].display = "ACTIVE"
 * group[=].element[=].target.code = #preliminary

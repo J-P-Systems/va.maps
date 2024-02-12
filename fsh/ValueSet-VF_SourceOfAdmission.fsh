@@ -1,6 +1,7 @@
 ValueSet: VSVFSourceOfAdmission
 Title: "VF_SourceOfAdmission"
 Description: "Navigate to [ConceptMap VF_SourceOfAdmission](ConceptMap-CMVFSourceOfAdmission.html)"
+* ^experimental = true
 * include http://va.gov/terminology/vistaDefinedElements/45.1-.01#1K "ALL OTHER NON VA HOSP NOT UNDER VA AUSPICES"
 * include http://va.gov/terminology/vistaDefinedElements/45.1-.01#4Y "ALL OTHER SOURCES, UNKNOWN OR NO INFO"
 * include http://va.gov/terminology/vistaDefinedElements/45.1-.01#1H "COMMUNITY NURSING HOME NOT UNDER VA AUSPICES"

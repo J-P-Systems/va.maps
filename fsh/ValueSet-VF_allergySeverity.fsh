@@ -1,6 +1,7 @@
 ValueSet: VSVFallergySeverity
 Title: "VF_allergySeverity"
 Description: "Navigate to [ConceptMap VF_allergySeverity](ConceptMap-CMVFallergySeverity.html)"
+* ^experimental = true
 * include http://va.gov/terminology/vistaDefinedElements/120.85-14.5#1 "MILD"
 * include http://va.gov/terminology/vistaDefinedElements/120.85-14.5#2 "MODERATE"
 * include http://va.gov/terminology/vistaDefinedElements/120.85-14.5#3 "SEVERE"

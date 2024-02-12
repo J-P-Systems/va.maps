@@ -1,6 +1,7 @@
 ValueSet: VSVFVitalsDevice
 Title: "VF_VitalsDevice"
 Description: "Navigate to [ConceptMap VF_VitalsDevice](ConceptMap-CMVFVitalsDevice.html)"
+* ^experimental = true
 * include http://va.gov/terminology/vistaDefinedElements/120.5-5#4688641 "BED"
 * include http://va.gov/terminology/vistaDefinedElements/120.5-5#4688695 "BIPAP (BI-LEVEL POSITIVE AIRWAY PRESSURE)"
 * include http://va.gov/terminology/vistaDefinedElements/120.5-5#4688691 "BIPAP-CPAP (BI-LEVEL POSITIVE AIRWAY PRESSURE-CONTINUOUS POSITIVE AIRWAY PRESSURE)"

@@ -1,6 +1,7 @@
 ValueSet: VSVFgenderIdentity
 Title: "VF_genderIdentity"
 Description: "Navigate to [ConceptMap VF_genderIdentity](ConceptMap-CMVFgenderIdentity.html)"
+* ^experimental = true
 * include http://va.gov/terminology/vistaDefinedElements/2-.024#N "DOES NOT WISH TO DISCLOSE"
 * include http://va.gov/terminology/vistaDefinedElements/2-.024#F "FEMALE"
 * include http://va.gov/terminology/vistaDefinedElements/2-.024#M "MALE"

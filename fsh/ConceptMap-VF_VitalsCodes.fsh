@@ -4,7 +4,7 @@ Usage: #definition
 * url = "http://va.gov/fhir/ConceptMap/CMVFVitalsCodes"
 * name = "VF_VitalsCodes"
 * title = "VF_VitalsCodes"
-* status = #active
+* status = #draft
 * experimental = true
 * description = "Terminology Maps VF_VitalsCodes"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFVitalsCodes"

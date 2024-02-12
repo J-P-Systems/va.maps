@@ -4,7 +4,7 @@ Usage: #definition
 * url = "http://va.gov/fhir/ConceptMap/CMVFOrderPatientClass"
 * name = "VF_OrderPatientClass"
 * title = "VF_OrderPatientClass"
-* status = #active
+* status = #draft
 * experimental = true
 * description = "Terminology Maps VF_OrderPatientClass"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFOrderPatientClass"

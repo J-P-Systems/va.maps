@@ -1,6 +1,7 @@
 ValueSet: VSVFinferredCVX
 Title: "VF_inferredCVX"
 Description: "Navigate to [ConceptMap VF_inferredCVX](ConceptMap-CMVFinferredCVX.html)"
+* ^experimental = true
 * include http://va.gov/terminology/vistaDefinedElements/9999999.14-.01#null "DECLINED FLU IMM (HISTORICAL)"
 * include http://va.gov/terminology/vistaDefinedElements/9999999.14-.01#null "DECLINED PNEUMOCOCCAL (HISTORICAL)"
 * include http://va.gov/terminology/vistaDefinedElements/9999999.14-.01#null "DECLINED TETANUS/DIPT (HISTORICAL)"

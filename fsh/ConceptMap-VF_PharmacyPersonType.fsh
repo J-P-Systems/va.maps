@@ -4,11 +4,11 @@ Usage: #definition
 * url = "http://va.gov/fhir/ConceptMap/CMVFPharmacyPersonType"
 * name = "VF_PharmacyPersonType"
 * title = "VF_PharmacyPersonType"
-* status = #active
+* status = #draft
 * experimental = true
 * description = "Terminology Maps VF_PharmacyPersonType"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFPharmacyPersonType"
-* group[0].source = "undefined"
+* group[0].source = "urn:undefined"
 * group[=].target = "http://terminology.hl7.org/CodeSystem/subscriber-relationship"
 * group[=].element[0].code = #001_=_Cardholder
 * group[=].element[=].target.code = #self

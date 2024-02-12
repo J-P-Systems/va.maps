@@ -1,6 +1,7 @@
 ValueSet: VSVFimmunizationStatusReason
 Title: "VF_immunizationStatusReason"
 Description: "Navigate to [ConceptMap VF_immunizationStatusReason](ConceptMap-CMVFimmunizationStatusReason.html)"
+* ^experimental = true
 * include http://va.gov/terminology/vistaDefinedElements/9999999.14-.01#null "DECLINED FLU IMM (HISTORICAL)"
 * include http://va.gov/terminology/vistaDefinedElements/9999999.14-.01#null "DECLINED PNEUMOCOCCAL (HISTORICAL)"
 * include http://va.gov/terminology/vistaDefinedElements/9999999.14-.01#null "DECLINED TETANUS/DIPT (HISTORICAL)"

@@ -4,7 +4,7 @@ Usage: #definition
 * url = "http://va.gov/fhir/ConceptMap/CMVFReligion"
 * name = "VF_Religion"
 * title = "VF_Religion"
-* status = #active
+* status = #draft
 * experimental = true
 * description = "Terminology Maps VF_Religion"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFReligion"

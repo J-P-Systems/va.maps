@@ -4,7 +4,7 @@ Usage: #definition
 * url = "http://va.gov/fhir/ConceptMap/CMVFgenderIdentity"
 * name = "VF_genderIdentity"
 * title = "VF_genderIdentity"
-* status = #active
+* status = #draft
 * experimental = true
 * description = "Terminology Maps VF_genderIdentity"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFgenderIdentity"

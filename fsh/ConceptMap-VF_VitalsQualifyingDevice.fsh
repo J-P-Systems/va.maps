@@ -4,11 +4,11 @@ Usage: #definition
 * url = "http://va.gov/fhir/ConceptMap/CMVFVitalsQualifyingDevice"
 * name = "VF_VitalsQualifyingDevice"
 * title = "VF_VitalsQualifyingDevice"
-* status = #active
+* status = #draft
 * experimental = true
 * description = "Terminology Maps VF_VitalsQualifyingDevice"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFVitalsQualifyingDevice"
-* group[0].source = "undefined"
+* group[0].source = "urn:undefined"
 * group[=].target = "http://snomed.info/sct"
 * group[=].element[0].code = #4688635
 * group[=].element[=].display = "AEROSOL/HUMIDIFIED MASK"

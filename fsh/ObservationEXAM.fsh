@@ -5,6 +5,8 @@ Title: "Observation EXAM"
 Description: "This StructureDefinition contains the maps for VistA file V EXAM (#9000010.13) to Observation"
 * ^status = #draft
 * code.coding and subject and encounter and interpretation and valueQuantity.value and valueQuantity and note.text and effectiveDateTime and status and performer and category MS
+* interpretation.extension contains http://hl7.org/fhir/StructureDefinition/11179-permitted-value-conceptmap named 11179-permitted-value-conceptmap 0..1
+* interpretation.extension[11179-permitted-value-conceptmap].valueCanonical = "http://va.gov/fhir/ConceptMap/CMVFExamResultInterpretation"
 
 Mapping: vista-to-ObservationEXAM
 Id: vista

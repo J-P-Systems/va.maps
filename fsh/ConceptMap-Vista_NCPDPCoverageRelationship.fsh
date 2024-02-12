@@ -4,12 +4,11 @@ Usage: #definition
 * url = "http://va.gov/fhir/ConceptMap/CMVistaNCPDPCoverageRelationship"
 * name = "Vista_NCPDPCoverageRelationship"
 * title = "Vista_NCPDPCoverageRelationship"
-* status = #active
+* status = #draft
 * experimental = true
 * description = "Terminology Maps Vista_NCPDPCoverageRelationship"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VSVistaNCPDPCoverageRelationship"
-* group[0].source = "undefined"
-* group[=].target = "null"
+* group[0].source = "urn:undefined"
 * group[=].element[0].code = #not_specified
 * group[=].element[=].target.code = #null
 * group[=].element[=].target.equivalence = #equivalent

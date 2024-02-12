@@ -4,7 +4,7 @@ Usage: #definition
 * url = "http://va.gov/fhir/ConceptMap/CMVFallergySeverity"
 * name = "VF_allergySeverity"
 * title = "VF_allergySeverity"
-* status = #active
+* status = #draft
 * experimental = true
 * description = "Terminology Maps VF_allergySeverity"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFallergySeverity"

@@ -7,6 +7,8 @@ Description: "This StructureDefinition contains the maps for VistA file V IMMUNI
 * statusReason and vaccineCode and primarySource and status and patient and occurrenceDateTime and lotNumber and manufacturer and vaccineCode.coding.code and doseQuantity.value and performer.actor and note.text and protocolApplied.doseNumberString and doseQuantity and recorded and reaction.detail MS
 * statusReason from http://va.gov/fhir/ValueSet/VSVFimmunizationStatusReason
 * vaccineCode from http://va.gov/fhir/ValueSet/VSVFinferredCVX
+* primarySource.extension contains http://hl7.org/fhir/StructureDefinition/11179-permitted-value-conceptmap named 11179-permitted-value-conceptmap 0..1
+* primarySource.extension[11179-permitted-value-conceptmap].valueCanonical = "http://va.gov/fhir/ConceptMap/CMVFimmunizationPrimarySource"
 * reaction.detail only Reference(ImmunizationObservation)
 
 Mapping: vista-to-ImmunizationImmunization

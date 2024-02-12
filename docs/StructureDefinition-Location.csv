@@ -122,7 +122,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","./usablePeriod[type=""IVL<TS>""]"
 "Location.address","Location.address","","","",0,1,"Y","","","Address {[]} {[]}
 ","Physical location","Physical location.","Additional addresses should be recorded using another instance of the Location resource, or via the Organization.","If locations can be visited, we need to keep track of their address.","","","","","","","",,,,,"",,,,"Location.address",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-",".addr","1326: source not supported case mailing slice"
+",".addr"
 "Location.address.id","Location.address.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"","","n/a"
 "Location.address.extension","Location.address.extension","","extensions
@@ -130,22 +130,22 @@ user content","",0,*,"","","","Extension {[]} {[]}
 ","Additional content defined by implementations","May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.","There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.","","","","","","","","",,,,,"","value:url}
 ","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}","n/a"
-"Location.address.use","Location.address.use","","","",0,1,"Y","Y","Y","code {[]} {[]}
+"Location.address.use","Location.address.use","","","",0,1,"","Y","Y","code {[]} {[]}
 ","home | work | temp | old | billing - purpose of this address","The purpose of this address.","Applications can assume that an address is current unless it explicitly says that it is temporary or old.","Allows an appropriate address to be chosen from a list of many.","","","","","<valueCode xmlns=""http://hl7.org/fhir"" value=""home""/>","","",,"required","The use of an address.","http://hl7.org/fhir/ValueSet/address-use|4.0.1","",,,,"Address.use",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","unique(./use)","1407: source not supported case mailing slice"
+","unique(./use)"
 "Location.address.type","Location.address.type","","","",0,1,"Y","","Y","code {[]} {[]}
 ","postal | physical | both","Distinguishes between physical addresses (those you can visit) and mailing addresses (e.g. PO Boxes and care-of addresses). Most addresses are both.","The definition of Address states that ""address is intended to describe postal addresses, not physical locations"". However, many applications track whether an address has a dual purpose of being a location that can be visited as well as being a valid delivery destination, and Postal addresses are often used as proxies for physical locations (also see the [Location](http://hl7.org/fhir/R4/location.html#) resource).","","","","","","<valueCode xmlns=""http://hl7.org/fhir"" value=""both""/>","","",,"required","The type of an address (physical / postal).","http://hl7.org/fhir/ValueSet/address-type|4.0.1","",,,,"Address.type",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","unique(./use)","1322: fixed value = #physical when HOSPITAL LOCATION - INSTITUTION (#44-3)","1328: source not supported case mailing slice"
+","unique(./use)","1322: fixed value = #physical when HOSPITAL LOCATION - INSTITUTION (#44-3)"
 "Location.address.text","Location.address.text","","","",0,1,"","","Y","string {[]} {[]}
 ","Text representation of the address","Specifies the entire address as it should be displayed e.g. on a postal label. This may be provided instead of or as well as the specific parts.","Can provide both a text representation and parts. Applications updating an address SHALL ensure that  when both text and parts are present,  no content is included in the text that isn't found in a part.","A renderable, unencoded form.","","","","","<valueString xmlns=""http://hl7.org/fhir"" value=""137 Nowhere Street, Erewhon 9132""/>","","",,,,,"",,,,"Address.text",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","./formatted"
 "Location.address.line","Location.address.line","","","",0,*,"Y","","Y","string {[]} {[]}
 ","Street name, number, direction & P.O. Box etc.","This component contains the house number, apartment number, street name, street direction,  P.O. Box number, delivery hints, and similar address information.","","","","","","","<valueString xmlns=""http://hl7.org/fhir"" value=""137 Nowhere Street""/>","","",,,,,"",,,,"Address.line",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","AD.part[parttype = AL]","1317: source value from HOSPITAL LOCATION - INSTITUTION > STREET ADDR. 1 (#44-3 > 4-1.01)","1318: source value from HOSPITAL LOCATION - INSTITUTION > STREET ADDR. 2 (#44-3 > 4-1.02)","1323: source not supported case mailing slice","1324: source not supported case mailing slice","Dim.Institution.StreetAddress1","Dim.Institution.StreetAddress2"
+","AD.part[parttype = AL]","1317: source value from HOSPITAL LOCATION - INSTITUTION > STREET ADDR. 1 (#44-3 > 4-1.01)","1318: source value from HOSPITAL LOCATION - INSTITUTION > STREET ADDR. 2 (#44-3 > 4-1.02)","Dim.Institution.StreetAddress1","Dim.Institution.StreetAddress2"
 "Location.address.city","Location.address.city","","Municpality
 ","",0,1,"Y","","Y","string {[]} {[]}
 ","Name of city, town etc.","The name of the city, town, suburb, village or other community or delivery center.","","","","","","","<valueString xmlns=""http://hl7.org/fhir"" value=""Erewhon""/>","","",,,,,"",,,,"Address.city",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","AD.part[parttype = CTY]","1319: source value from HOSPITAL LOCATION - INSTITUTION > CITY (#44-3 > 4-1.03)","1325: source not supported case mailing slice","Dim.Institution.City"
+","AD.part[parttype = CTY]","1319: source value from HOSPITAL LOCATION - INSTITUTION > CITY (#44-3 > 4-1.03)","Dim.Institution.City"
 "Location.address.district","Location.address.district","","County
 ","",0,1,"Y","","Y","string {[]} {[]}
 ","District name (aka county)","The name of the administrative area (county).","District is sometimes known as county, but in some regions 'county' is used in place of city (municipality), so county name should be conveyed in city instead.","","","","","","<valueString xmlns=""http://hl7.org/fhir"" value=""Madison""/>","","",,,,,"",,,,"Address.district",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
@@ -157,10 +157,10 @@ Territory","",0,1,"Y","","Y","string {[]} {[]}
 "Location.address.postalCode","Location.address.postalCode","","Zip
 ","",0,1,"Y","","Y","string {[]} {[]}
 ","US Zip Codes","A postal code designating a region defined by the postal service.","","","","","","","<valueString xmlns=""http://hl7.org/fhir"" value=""9132""/>","","",,,,,"",,,,"Address.postalCode",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","AD.part[parttype = ZIP]","1320: source value from HOSPITAL LOCATION - INSTITUTION > ZIP (#44-3 > 4-1.04)","1327: source not supported case mailing slice","Dim.Institution.Zip"
+","AD.part[parttype = ZIP]","1320: source value from HOSPITAL LOCATION - INSTITUTION > ZIP (#44-3 > 4-1.04)","Dim.Institution.Zip"
 "Location.address.country","Location.address.country","","","",0,1,"Y","","Y","string {[]} {[]}
 ","Country (e.g. can be ISO 3166 2 or 3 letter code)","Country - a nation as commonly understood or generally accepted.","ISO 3166 3 letter codes can be used in place of a human readable country name.","","","","","","","","",,,,,"",,,,"Address.country",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","AD.part[parttype = CNT]","1405: source value from HOSPITAL LOCATION - INSTITUTION > COUNTRY > COUNTRY - CODE (#44-3 > 4-801 > 779.004-0.1)","1406: source not supported case mailing slice"
+","AD.part[parttype = CNT]","1405: source value from HOSPITAL LOCATION - INSTITUTION > COUNTRY > COUNTRY - CODE (#44-3 > 4-801 > 779.004-0.1)"
 "Location.address.period","Location.address.period","","","",0,1,"","","Y","Period {[]} {[]}
 ","Time period when address was/is in use","Time period when address was/is in use.","","Allows addresses to be placed in historical context.","","","","","<valuePeriod xmlns=""http://hl7.org/fhir"">
   <start value=""2010-03-23""/>

@@ -214,6 +214,29 @@ Vital.VitalSign.VitalResultNumeric"
 "Observation.value[x]:valueQuantity.code","Observation.value[x].code","","","",0,1,"Y","","Y","code {[]} {[]}
 ","Coded form of the unit","A computer processable form of the unit in some unit representation system.","The preferred system is UCUM, but SNOMED CT can also be used (for customary units) or ISO 4217 for currency.  The context of use may additionally require a code from a particular system.","Need a computable form of the unit that is fixed across all forms. UCUM provides this for quantities, but SNOMED CT provides many units of interest.","","","","","","","",,,,,"",,,,"Quantity.code",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","(see OBX.6 etc.) / CQ.2","PQ.code, MO.currency, PQ.translation.code","665: transform using VF_VitalsUnits on GMRV VITAL MEASUREMENT - VITAL TYPE (#120.5-.03)"
+"Observation.value[x]:valueQuantity.code.id","Observation.value[x].code.id","","","",0,1,"","","","string {[]} {[]}
+","xml:id (or equivalent in JSON)","unique id for the element within a resource (for internal references)","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"",""
+"Observation.value[x]:valueQuantity.code.extension","Observation.value[x].code.extension","","","",0,*,"","","","Extension {[]} {[]}
+","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
+","",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"Observation.value[x]:valueQuantity.code.extension:11179-permitted-value-conceptmap","Observation.value[x].code.extension","11179-permitted-value-conceptmap","","",0,1,"","","","Extension {[CanonicalType[http://hl7.org/fhir/StructureDefinition/11179-permitted-value-conceptmap]]} {[]}
+","Mapping from permitted to transmitted","Expresses the linkage between the internal codes used for storage and the codes used for exchange.","The permitted value set must have a 1..1 set of codes for each code in the value meaning value set.  The source for the concept map is the value set the extension appears on.  The target is the permitted-value-valueset.","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}","N/A","N/A"
+"Observation.value[x]:valueQuantity.code.extension:11179-permitted-value-conceptmap.id","Observation.value[x].code.extension.id","","","",0,1,"","","","string {[]} {[]}
+","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"","","n/a"
+"Observation.value[x]:valueQuantity.code.extension:11179-permitted-value-conceptmap.extension","Observation.value[x].code.extension.extension","","","",0,0,"","","","Extension {[]} {[]}
+","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
+","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"Observation.value[x]:valueQuantity.code.extension:11179-permitted-value-conceptmap.url","Observation.value[x].code.extension.url","","","",1,1,"","","","uri {[]} {[]}
+","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""http://hl7.org/fhir/StructureDefinition/11179-permitted-value-conceptmap""/>","","","","",,,,,"",,,,"Extension.url",1,1,"","","N/A"
+"Observation.value[x]:valueQuantity.code.extension:11179-permitted-value-conceptmap.value[x]","Observation.value[x].code.extension.value[x]","","","",1,1,"","","","canonical {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/ConceptMap]]}
+","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/extensibility.html) for a list).","","","","","","<valueCanonical xmlns=""http://hl7.org/fhir"" value=""http://va.gov/fhir/ConceptMap/CMVFVitalsUnits""/>","","","",,,,,"",,,,"Extension.value[x]",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+","N/A"
+"Observation.value[x]:valueQuantity.code.value","Observation.value[x].code.value","","","",0,1,"","","","string {[]} {[]}
+","Primitive value for code","Primitive value for code","","","","","","","","","",,,,,"",,,,"string.value",0,1,"",""
 "Observation.dataAbsentReason","Observation.dataAbsentReason","","","",0,1,"Y","","","CodeableConcept {[]} {[]}
 ","Why the result is missing","Provides a reason why the expected value in the element Observation.value[x] is missing.","Null or exceptional values can be represented two ways in FHIR Observations.  One way is to simply include them in the value set and represent the exceptions in the value.  For example, measurement values for a serology test could be  ""detected"", ""not detected"", ""inconclusive"", or  ""specimen unsatisfactory"".   
 
