@@ -47,7 +47,7 @@ Usage: #definition
 * group[=].element[=].display = "BLOOD PRESSURE"
 * group[=].element[=].target.code = #mm[Hg]
 * group[=].element[=].target.equivalence = #equal
-* group[=].element[+].code = #null
+* group[=].element[+].code = #4536993
 * group[=].element[=].display = "BODY MASS INDEX"
 * group[=].element[=].target.code = #kg/m2
 * group[=].element[=].target.equivalence = #equal

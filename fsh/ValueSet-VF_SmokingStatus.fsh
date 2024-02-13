@@ -2,6 +2,7 @@ ValueSet: VSVFSmokingStatus
 Title: "VF_SmokingStatus"
 Description: "Navigate to [ConceptMap VF_SmokingStatus](ConceptMap-CMVFSmokingStatus.html)"
 * ^experimental = true
+* ^name = "VF_SmokingStatus"
 * include http://va.gov/terminology/vistaDefinedTerms/9999999.64#5316637 "CURRENT SMOKER"
 * include http://va.gov/terminology/vistaDefinedTerms/9999999.64#5316643 "CURRENT TOBACCO USE"
 * include http://va.gov/terminology/vistaDefinedTerms/9999999.64#5316635 "FORMER SMOKER - <100 LIFETIME CIGARETTES"
@@ -9,3 +10,10 @@ Description: "Navigate to [ConceptMap VF_SmokingStatus](ConceptMap-CMVFSmokingSt
 * include http://va.gov/terminology/vistaDefinedTerms/9999999.64#5316645 "LIFETIME NON-SMOKER"
 * include http://va.gov/terminology/vistaDefinedTerms/9999999.64#5316639 "ONS RA MH CALMING ID-SMOKING"
 * include http://va.gov/terminology/vistaDefinedTerms/9999999.64#5316633 "PREVIOUS SMOKER"
+* include http://snomed.info/sct#77176002 "Smoker (finding)"
+* include http://snomed.info/sct#110483000 "Tobacco user (finding)"
+* include http://snomed.info/sct#8517006 "Ex-smoker (finding)"
+* include http://snomed.info/sct#77176002 "Smoker (finding)"
+* include http://snomed.info/sct#266919005 "Never smoked tobacco (finding)"
+* include http://snomed.info/sct#77176002 "Smoker (finding)"
+* include http://snomed.info/sct#8517006 "Ex-smoker (finding)"

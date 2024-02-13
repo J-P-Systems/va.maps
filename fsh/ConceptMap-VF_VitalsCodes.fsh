@@ -20,7 +20,7 @@ Usage: #definition
 * group[=].element[=].target.code = #85354-9
 * group[=].element[=].target.display = "Blood pressure panel with all children optional"
 * group[=].element[=].target.equivalence = #equal
-* group[=].element[+].code = #null
+* group[=].element[+].code = #4536993
 * group[=].element[=].display = "BODY MASS INDEX"
 * group[=].element[=].target.code = #39156-5
 * group[=].element[=].target.display = "Body mass index (BMI) [Ratio]"

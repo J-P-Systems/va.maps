@@ -2,6 +2,7 @@ ValueSet: VSVFSourceOfAdmission
 Title: "VF_SourceOfAdmission"
 Description: "Navigate to [ConceptMap VF_SourceOfAdmission](ConceptMap-CMVFSourceOfAdmission.html)"
 * ^experimental = true
+* ^name = "VF_SourceOfAdmission"
 * include http://va.gov/terminology/vistaDefinedElements/45.1-.01#1K "ALL OTHER NON VA HOSP NOT UNDER VA AUSPICES"
 * include http://va.gov/terminology/vistaDefinedElements/45.1-.01#4Y "ALL OTHER SOURCES, UNKNOWN OR NO INFO"
 * include http://va.gov/terminology/vistaDefinedElements/45.1-.01#1H "COMMUNITY NURSING HOME NOT UNDER VA AUSPICES"
@@ -55,3 +56,56 @@ Description: "Navigate to [ConceptMap VF_SourceOfAdmission](ConceptMap-CMVFSourc
 * include http://va.gov/terminology/vistaDefinedElements/45.1-.01#5C "VA DOMICILLARY"
 * include http://va.gov/terminology/vistaDefinedElements/45.1-.01#5A "VA MEDICAL CENTER"
 * include http://va.gov/terminology/vistaDefinedElements/45.1-.01#1D "VA NURSING HOME CARE UNIT"
+* include http://terminology.hl7.org/CodeSystem/admit-source#hosp-trans 
+* include http://terminology.hl7.org/CodeSystem/admit-source#other 
+* include http://terminology.hl7.org/CodeSystem/admit-source#nursing 
+* include http://terminology.hl7.org/CodeSystem/admit-source#nursing 
+* include http://terminology.hl7.org/CodeSystem/admit-source#hosp-trans 
+* include http://terminology.hl7.org/CodeSystem/admit-source#hosp-trans 
+* include http://terminology.hl7.org/CodeSystem/admit-source#other 
+* include http://terminology.hl7.org/CodeSystem/admit-source#other 
+* include http://terminology.hl7.org/CodeSystem/admit-source#other 
+* include http://terminology.hl7.org/CodeSystem/admit-source#hosp-trans 
+* include http://terminology.hl7.org/CodeSystem/admit-source#hosp-trans 
+* include http://terminology.hl7.org/CodeSystem/admit-source#nursing 
+* include http://terminology.hl7.org/CodeSystem/admit-source#nursing 
+* include http://terminology.hl7.org/CodeSystem/admit-source#hosp-trans 
+* include http://terminology.hl7.org/CodeSystem/admit-source#hosp-trans 
+* include http://terminology.hl7.org/CodeSystem/admit-source#hosp-trans 
+* include http://terminology.hl7.org/CodeSystem/admit-source#hosp-trans 
+* include http://terminology.hl7.org/CodeSystem/admit-source#other 
+* include http://terminology.hl7.org/CodeSystem/admit-source#nursing 
+* include http://terminology.hl7.org/CodeSystem/admit-source#hosp-trans 
+* include http://terminology.hl7.org/CodeSystem/admit-source#hosp-trans 
+* include http://terminology.hl7.org/CodeSystem/admit-source#nursing 
+* include http://terminology.hl7.org/CodeSystem/admit-source#psych 
+* include http://terminology.hl7.org/CodeSystem/admit-source#hosp-trans 
+* include http://terminology.hl7.org/CodeSystem/admit-source#other 
+* include http://terminology.hl7.org/CodeSystem/admit-source#hosp-trans 
+* include http://terminology.hl7.org/CodeSystem/admit-source#other 
+* include http://terminology.hl7.org/CodeSystem/admit-source#other 
+* include http://terminology.hl7.org/CodeSystem/admit-source#other 
+* include http://terminology.hl7.org/CodeSystem/admit-source#hosp-trans 
+* include http://terminology.hl7.org/CodeSystem/admit-source#outp 
+* include http://terminology.hl7.org/CodeSystem/admit-source#other 
+* include http://terminology.hl7.org/CodeSystem/admit-source#outp 
+* include http://terminology.hl7.org/CodeSystem/admit-source#other 
+* include http://terminology.hl7.org/CodeSystem/admit-source#other 
+* include http://terminology.hl7.org/CodeSystem/admit-source#other 
+* include http://terminology.hl7.org/CodeSystem/admit-source#other 
+* include http://terminology.hl7.org/CodeSystem/admit-source#other 
+* include http://terminology.hl7.org/CodeSystem/admit-source#other 
+* include http://terminology.hl7.org/CodeSystem/admit-source#nursing 
+* include http://terminology.hl7.org/CodeSystem/admit-source#hosp-trans 
+* include http://terminology.hl7.org/CodeSystem/admit-source#other 
+* include http://terminology.hl7.org/CodeSystem/admit-source#nursing 
+* include http://terminology.hl7.org/CodeSystem/admit-source#hosp-trans 
+* include http://terminology.hl7.org/CodeSystem/admit-source#nursing 
+* include http://terminology.hl7.org/CodeSystem/admit-source#hosp-trans 
+* include http://terminology.hl7.org/CodeSystem/admit-source#nursing 
+* include http://terminology.hl7.org/CodeSystem/admit-source#other 
+* include http://terminology.hl7.org/CodeSystem/admit-source#hosp-trans 
+* include http://terminology.hl7.org/CodeSystem/admit-source#other 
+* include http://terminology.hl7.org/CodeSystem/admit-source#other 
+* include http://terminology.hl7.org/CodeSystem/admit-source#other 
+* include http://terminology.hl7.org/CodeSystem/admit-source#nursing 

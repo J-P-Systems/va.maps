@@ -55,11 +55,6 @@ Usage: #definition
 * group[=].element[=].target.code = #completed
 * group[=].element[=].target.display = "completed"
 * group[=].element[=].target.equivalence = #equal
-* group[=].element[+].code = #3
-* group[=].element[=].display = "HOLD"
-* group[=].element[=].target.code = #active
-* group[=].element[=].target.display = "active"
-* group[=].element[=].target.equivalence = #wider
 * group[=].element[+].code = #1
 * group[=].element[=].display = "NON-VERIFIED"
 * group[=].element[=].target.code = #draft
@@ -72,6 +67,13 @@ Usage: #definition
 * group[=].element[=].target.equivalence = #wider
 * group[=].element[+].code = #5
 * group[=].element[=].display = "SUSPENDED"
+* group[=].element[=].target.code = #active
+* group[=].element[=].target.display = "active"
+* group[=].element[=].target.equivalence = #wider
+* group[+].source = "http://va.gov/terminology/vistaDefinedTerms/52-100"
+* group[=].target = "http://hl7.org/fhir/CodeSystem/medicationrequest-status"
+* group[=].element[0].code = #3
+* group[=].element[=].display = "HOLD"
 * group[=].element[=].target.code = #active
 * group[=].element[=].target.display = "active"
 * group[=].element[=].target.equivalence = #wider

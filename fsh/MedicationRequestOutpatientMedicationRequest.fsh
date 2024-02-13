@@ -26,7 +26,7 @@ Source: MedicationRequestOutpatientMedicationRequest
 * dispenseRequest.numberOfRepeatsAllowed -> "816: source value from PRESCRIPTION - # OF REFILLS (#52-9)" "confirm"
 * dispenseRequest.quantity.value -> "1669: source value from PRESCRIPTION - QTY (#52-7)"
 * dispenseRequest.expectedSupplyDuration -> "1670: source value from PRESCRIPTION - DAYS SUPPLY (#52-8)"
-* encounter -> "++: reference"
+* encounter -> "1724: reference"
 * reasonCode.text -> "1705: source value from PRESCRIPTION - INDICATION FOR USE (#52-128)"
 * extension.valueBoolean -> "1706: transform using VF_Boolean on PRESCRIPTION - INDICATION FOR USE FLAG (#51-129)"
 * extension.valueCoding.code -> "1707: source value from PRESCRIPTION - MAIL/WINDOW/PARK (#52-11)" "This value is consistent with Active. \nAdd a second value, or overwrite Active with Parked?"

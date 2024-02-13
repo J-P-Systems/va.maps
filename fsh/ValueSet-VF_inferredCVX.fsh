@@ -2,6 +2,7 @@ ValueSet: VSVFinferredCVX
 Title: "VF_inferredCVX"
 Description: "Navigate to [ConceptMap VF_inferredCVX](ConceptMap-CMVFinferredCVX.html)"
 * ^experimental = true
+* ^name = "VF_inferredCVX"
 * include http://va.gov/terminology/vistaDefinedElements/9999999.14-.01#null "DECLINED FLU IMM (HISTORICAL)"
 * include http://va.gov/terminology/vistaDefinedElements/9999999.14-.01#null "DECLINED PNEUMOCOCCAL (HISTORICAL)"
 * include http://va.gov/terminology/vistaDefinedElements/9999999.14-.01#null "DECLINED TETANUS/DIPT (HISTORICAL)"
@@ -31,3 +32,32 @@ Description: "Navigate to [ConceptMap VF_inferredCVX](ConceptMap-CMVFinferredCVX
 * include http://va.gov/terminology/vistaDefinedElements/9999999.14-.01#null "TETANUS CONTRAINDICATED (HISTORICAL)"
 * include http://va.gov/terminology/vistaDefinedElements/9999999.14-.01#null "TETANUS REFUSED (HISTORICAL)"
 * include http://va.gov/terminology/vistaDefinedElements/9999999.14-.01#null "ZZPNEUMOCOCCAL REFUSED (HISTORICAL)"
+* include http://hl7.org/fhir/sid/cvx#88 
+* include http://hl7.org/fhir/sid/cvx#109 
+* include http://hl7.org/fhir/sid/cvx#139 
+* include http://hl7.org/fhir/sid/cvx#88 
+* include http://hl7.org/fhir/sid/cvx#109 
+* include http://hl7.org/fhir/sid/cvx#88 
+* include http://hl7.org/fhir/sid/cvx#88 
+* include http://hl7.org/fhir/sid/cvx#88 
+* include http://hl7.org/fhir/sid/cvx#88 
+* include http://hl7.org/fhir/sid/cvx#88 
+* include http://hl7.org/fhir/sid/cvx#88 
+* include http://hl7.org/fhir/sid/cvx#88 
+* include http://hl7.org/fhir/sid/cvx#88 
+* include http://hl7.org/fhir/sid/cvx#109 
+* include http://hl7.org/fhir/sid/cvx#109 
+* include http://hl7.org/fhir/sid/cvx#109 
+* include http://hl7.org/fhir/sid/cvx#109 
+* include http://hl7.org/fhir/sid/cvx#109 
+* include http://hl7.org/fhir/sid/cvx#109 
+* include http://hl7.org/fhir/sid/cvx#88 
+* include http://hl7.org/fhir/sid/cvx#137 
+* include http://hl7.org/fhir/sid/cvx#88 
+* include http://hl7.org/fhir/sid/cvx#109 
+* include http://hl7.org/fhir/sid/cvx#139 
+* include http://hl7.org/fhir/sid/cvx#88 
+* include http://hl7.org/fhir/sid/cvx#139 
+* include http://hl7.org/fhir/sid/cvx#139 
+* include http://hl7.org/fhir/sid/cvx#139 
+* include http://hl7.org/fhir/sid/cvx#109 
