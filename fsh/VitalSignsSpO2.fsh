@@ -1,7 +1,7 @@
 Profile: VitalSignsSpO2
 Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-pulse-oximetry
 Id: VitalSignsSpO2
-Title: "Vital Signs SpO2"
+Title: "Vital Signs: SpO2"
 Description: "This StructureDefinition contains the maps for VistA file GMRV VITAL MEASUREMENT (#120.5) to us-core-pulse-oximetry"
 * ^status = #draft
 * component[FlowRate].valueQuantity.value and component[Concentration].valueQuantity.value MS

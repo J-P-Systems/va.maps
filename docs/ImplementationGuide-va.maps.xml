@@ -7,11 +7,11 @@
 </div></div>
   </text>
   <url value="http://va.gov/fhir/ImplementationGuide/va.maps"/>
-  <version value="0.18.0"/>
+  <version value="0.19.0"/>
   <name value="VAMapsIG"/>
   <title value="US Veterans Administration FHIR Map Set Implementation Guide"/>
   <status value="draft"/>
-  <date value="2024-02-13T17:27:52+00:00"/>
+  <date value="2024-02-13T18:57:41+00:00"/>
   <publisher value="VA"/>
   <contact>
     <name value="VA"/>
@@ -67,6 +67,14 @@
       </extension>
       <extension url="value">
         <valueString value="ci-build"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="excludettl"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
       </extension>
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
@@ -274,6 +282,14 @@
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
       <extension url="code">
+        <valueCode value="excludettl"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
         <valueCode value="autoload-resources"/>
       </extension>
       <extension url="value">
@@ -459,20 +475,11 @@
     <grouping id="group0">
       <name value="AllergyIntolerance"/>
     </grouping>
-    <grouping id="group1">
-      <name value="Patient"/>
-    </grouping>
     <grouping id="group2">
       <name value="Appointment"/>
     </grouping>
     <grouping id="group3">
       <name value="Condition"/>
-    </grouping>
-    <grouping id="group4">
-      <name value="Vital Signs"/>
-    </grouping>
-    <grouping id="group5">
-      <name value="Lab Observation"/>
     </grouping>
     <grouping id="group6">
       <name value="Document Reference"/>
@@ -486,20 +493,29 @@
     <grouping id="group9">
       <name value="Implantable Device"/>
     </grouping>
+    <grouping id="group5">
+      <name value="Lab Observation"/>
+    </grouping>
     <grouping id="group10">
       <name value="Location"/>
-    </grouping>
-    <grouping id="group11">
-      <name value="MedicationRequest"/>
     </grouping>
     <grouping id="group12">
       <name value="MedicationDispense"/>
     </grouping>
+    <grouping id="group11">
+      <name value="MedicationRequest"/>
+    </grouping>
     <grouping id="group13">
       <name value="Observation EXAM"/>
     </grouping>
+    <grouping id="group19">
+      <name value="Observation Imaging Result"/>
+    </grouping>
     <grouping id="group14">
       <name value="Organization"/>
+    </grouping>
+    <grouping id="group1">
+      <name value="Patient"/>
     </grouping>
     <grouping id="group15">
       <name value="Practitioner"/>
@@ -513,8 +529,8 @@
     <grouping id="group18">
       <name value="Smoking Status Observation"/>
     </grouping>
-    <grouping id="group19">
-      <name value="Observation Imaging Result"/>
+    <grouping id="group4">
+      <name value="Vital Signs"/>
     </grouping>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -563,17 +579,6 @@
       <description value="This StructureDefinition contains the maps for VistA file PROBLEM (#9000011) to us-core-condition-problems-health-concerns"/>
       <exampleBoolean value="false"/>
       <groupingId value="group3"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:resource"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/DocumentReference"/>
-      </reference>
-      <name value="Document Reference"/>
-      <description value="This StructureDefinition contains the maps for VistA file TIU DOCUMENT (#8925) to us-core-documentreference"/>
-      <exampleBoolean value="false"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -2696,18 +2701,6 @@
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/VitalSignsBP"/>
-      </reference>
-      <name value="Vital Signs BP"/>
-      <description value="This StructureDefinition contains the maps for VistA file GMRV VITAL MEASUREMENT (#120.5) to us-core-blood-pressure"/>
-      <exampleBoolean value="false"/>
-      <groupingId value="group4"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:resource"/>
-      </extension>
-      <reference>
         <reference value="StructureDefinition/VitalSignsDevice"/>
       </reference>
       <name value="Vital Signs Device"/>
@@ -2744,10 +2737,10 @@
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/VitalSignsSpO2"/>
+        <reference value="StructureDefinition/VitalSignsBP"/>
       </reference>
-      <name value="Vital Signs SpO2"/>
-      <description value="This StructureDefinition contains the maps for VistA file GMRV VITAL MEASUREMENT (#120.5) to us-core-pulse-oximetry"/>
+      <name value="Vital Signs: BP"/>
+      <description value="This StructureDefinition contains the maps for VistA file GMRV VITAL MEASUREMENT (#120.5) to us-core-blood-pressure"/>
       <exampleBoolean value="false"/>
       <groupingId value="group4"/>
     </resource>
@@ -2760,6 +2753,18 @@
       </reference>
       <name value="Vital Signs: CPM"/>
       <description value="This StructureDefinition contains the maps for VistA file GMRV VITAL MEASUREMENT (#120.5) to us-core-vital-signs"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="group4"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/VitalSignsSpO2"/>
+      </reference>
+      <name value="Vital Signs: SpO2"/>
+      <description value="This StructureDefinition contains the maps for VistA file GMRV VITAL MEASUREMENT (#120.5) to us-core-pulse-oximetry"/>
       <exampleBoolean value="false"/>
       <groupingId value="group4"/>
     </resource>
