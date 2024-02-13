@@ -9,7 +9,7 @@ Usage: #definition
 * description = "Terminology Maps VF_DentalDeviceStatus"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFDentalDeviceStatus"
 * group[0].source = "http://va.gov/terminology/vistaDefinedTerms/228.9-.08"
-* group[=].target = "http://hl7.org/fhir/ValueSet/device-status"
+* group[=].target = "http://hl7.org/fhir/device-status"
 * group[=].element[0].code = #2
 * group[=].element[=].display = "Deleted"
 * group[=].element[=].target.code = #entered-in-error

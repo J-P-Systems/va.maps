@@ -9,13 +9,11 @@ Description: "This StructureDefinition contains the maps for VistA file PATIENT 
 * address ^slicing.rules = #open
 * address contains home 0..1
 * extension contains http://hl7.org/fhir/StructureDefinition/patient-religion named patient-religion 0..1
-* identifier.value and name.text and telecom.value and birthDate and deceasedDateTime and address[home].line and address[home].city and address[home].state and address[home].postalCode and address[home].country and address[home].period.start and address[home].period.end and communication.language and managingOrganization.display and extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex].valueCode and gender and extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity].extension[text].valueString and extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-race].extension[text].valueString and maritalStatus and extension[http://hl7.org/fhir/StructureDefinition/patient-religion].valueCodeableConcept MS
+* identifier.value and name.text and telecom.value and birthDate and deceasedDateTime and address[home].line and address[home].city and address[home].state and address[home].postalCode and address[home].country and address[home].period.start and address[home].period.end and communication.language and managingOrganization.display and extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex].valueCode and gender and extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity].extension[ombCategory].valueCoding.code and extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-race].extension[ombCategory].valueCoding.code and maritalStatus and extension[http://hl7.org/fhir/StructureDefinition/patient-religion].valueCodeableConcept MS
 * extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex].valueCode from http://va.gov/fhir/ValueSet/VSVFgenderIdentity
 * gender from http://va.gov/fhir/ValueSet/VSVFgenderIdentity
-* extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity].extension[text].valueString.extension contains http://hl7.org/fhir/StructureDefinition/11179-permitted-value-conceptmap named 11179-permitted-value-conceptmap 0..1
-* extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity].extension[text].valueString.extension[11179-permitted-value-conceptmap].valueCanonical = "http://va.gov/fhir/ConceptMap/CMVFethnicityCategory"
-* extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-race].extension[text].valueString.extension contains http://hl7.org/fhir/StructureDefinition/11179-permitted-value-conceptmap named 11179-permitted-value-conceptmap 0..1
-* extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-race].extension[text].valueString.extension[11179-permitted-value-conceptmap].valueCanonical = "http://va.gov/fhir/ConceptMap/CMVFraceCategory"
+* extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity].extension[ombCategory].valueCoding.code from http://va.gov/fhir/ValueSet/VSVFethnicityCategory
+* extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-race].extension[ombCategory].valueCoding.code from http://va.gov/fhir/ValueSet/VSVFraceCategory
 * maritalStatus from http://va.gov/fhir/ValueSet/VSVFMaritalStatus
 * extension[http://hl7.org/fhir/StructureDefinition/patient-religion].valueCodeableConcept from http://va.gov/fhir/ValueSet/VSVFReligion
 
@@ -43,8 +41,8 @@ Source: Patient
 * managingOrganization.display -> "296: fixed value = Veterans Health Administration"
 * extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex].valueCode -> "554: terminologyMaps using VF_genderIdentity on PATIENT - SEX (#2-.02)" "added extension url"
 * gender -> "555: terminologyMaps using VF_genderIdentity on PATIENT - SELF IDENTIFIED GENDER (#2-.024)"
-* extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity].extension[text].valueString -> "575: transform using VF_ethnicityCategory on PATIENT - ETHNICITY INFORMATION (#2-6)"
-* extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-race].extension[text].valueString -> "576: transform using VF_raceCategory on PATIENT - RACE INFORMATION (#2-2)" "Do we collect any detailed race data?"
+* extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity].extension[ombCategory].valueCoding.code -> "575: terminologyMaps using VF_ethnicityCategory on PATIENT - ETHNICITY INFORMATION (#2-6)"
+* extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-race].extension[ombCategory].valueCoding.code -> "576: terminologyMaps using VF_raceCategory on PATIENT - RACE INFORMATION (#2-2)" "Do we collect any detailed race data?"
 * maritalStatus -> "1597: terminologyMaps using VF_MaritalStatus on PATIENT - MARITAL STATUS (#2-.05)"
 * extension[http://hl7.org/fhir/StructureDefinition/patient-religion].valueCodeableConcept -> "1598: terminologyMaps using VF_Religion on PATIENT - RELIGIOUS PREFERENCE (#2-.08)"
 

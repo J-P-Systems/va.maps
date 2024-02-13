@@ -9,7 +9,7 @@ Usage: #definition
 * description = "Terminology Maps VF_ImageStatus"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFImageStatus"
 * group[0].source = "http://va.gov/terminology/vistaDefinedElements/691.5-1506"
-* group[=].target = "http://hl7.org/fhir/ValueSet/observation-status"
+* group[=].target = "http://hl7.org/fhir/observation-status"
 * group[=].element[0].code = #D
 * group[=].element[=].display = "DRAFT"
 * group[=].element[=].target.code = #preliminary

@@ -5,8 +5,7 @@ Title: "MedicationRequest: Outpatient MedicationRequest"
 Description: "This StructureDefinition contains the maps for VistA file PRESCRIPTION (#52) to us-core-medicationrequest"
 * ^status = #draft
 * id and status and extension.valueCoding.code and intent and subject and requester and dispenseRequest.validityPeriod.end and extension and dispenseRequest.numberOfRepeatsAllowed and dispenseRequest.quantity.value and dispenseRequest.expectedSupplyDuration and encounter and reasonCode.text and extension.valueBoolean MS
-* status.extension contains http://hl7.org/fhir/StructureDefinition/11179-permitted-value-conceptmap named 11179-permitted-value-conceptmap 0..1
-* status.extension[11179-permitted-value-conceptmap].valueCanonical = "http://va.gov/fhir/ConceptMap/CMVFOutMedRequestStatus"
+* status from http://va.gov/fhir/ValueSet/VSVFOutMedRequestStatus
 * encounter only Reference(MedicationRequestOutpatientEncounter)
 * extension.valueBoolean.extension contains http://hl7.org/fhir/StructureDefinition/11179-permitted-value-conceptmap named 11179-permitted-value-conceptmap 0..1
 * extension.valueBoolean.extension[11179-permitted-value-conceptmap].valueCanonical = "http://va.gov/fhir/ConceptMap/CMVFBoolean"
@@ -16,7 +15,7 @@ Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: MedicationRequestOutpatientMedicationRequest
 * id -> "798: transform using ID_generation"
-* status -> "799: transform using VF_OutMedRequestStatus on PRESCRIPTION - STATUS (#52-100)"
+* status -> "799: terminologyMaps using VF_OutMedRequestStatus on PRESCRIPTION - STATUS (#52-100)"
 * extension.valueCoding.code -> "800: source value from PRESCRIPTION - STATUS (#52-100)"
 * intent -> "801: fixed value = order" "All records from file 52 are orders"
 * subject -> "806: reference from PRESCRIPTION - PATIENT (#52-2)"

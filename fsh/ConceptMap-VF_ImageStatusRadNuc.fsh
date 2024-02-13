@@ -9,7 +9,7 @@ Usage: #definition
 * description = "Terminology Maps VF_ImageStatusRadNuc"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFImageStatusRadNuc"
 * group[0].source = "http://va.gov/terminology/vistaDefinedElements/74-5"
-* group[=].target = "http://hl7.org/fhir/ValueSet/observation-status"
+* group[=].target = "http://hl7.org/fhir/observation-status"
 * group[=].element[0].code = #X
 * group[=].element[=].display = "DELETED"
 * group[=].element[=].target.code = #cancelled

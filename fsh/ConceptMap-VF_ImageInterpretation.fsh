@@ -9,7 +9,7 @@ Usage: #definition
 * description = "Terminology Maps VF_ImageInterpretation"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFImageInterpretation"
 * group[0].source = "http://va.gov/terminology/vistaDefinedElements/691.5-.03"
-* group[=].target = "http://hl7.org/fhir/ValueSet/observation-interpretation"
+* group[=].target = "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation"
 * group[=].element[0].code = #A
 * group[=].element[=].display = "ABNORMAL"
 * group[=].element[=].target.code = #A
