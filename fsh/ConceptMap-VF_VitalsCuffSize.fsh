@@ -10,7 +10,7 @@ Usage: #definition
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFVitalsCuffSize"
 * group[0].source = "urn:undefined"
 * group[=].target = "http://snomed.info/sct"
-* group[=].element[0].code = #null
+* group[=].element[0].code = #ADULT
 * group[=].element[=].display = "ADULT"
 * group[=].element[=].target.code = #720737000
 * group[=].element[=].target.display = "Blood pressure cuff, adult size (physical object)"

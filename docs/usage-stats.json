@@ -1,9 +1,31 @@
 {
   "package": "va.maps",
-  "version": "0.19.0",
+  "version": "0.20.0",
   "fhirVersion": "4.0.1",
   "jurisdiction": "US",
-  "extensions": [],
+  "extensions": [
+    {
+      "url": "http://va.gov/fhir/StructureDefinition/medicationrequest-cancelDate",
+      "title": "MedicationRequestCancelDate",
+      "types": [
+        "dateTime"
+      ]
+    },
+    {
+      "url": "http://va.gov/fhir/StructureDefinition/medicationrequest-includeIndicationInSig",
+      "title": "MedicationRequestIncludeIndicationInSig",
+      "types": [
+        "boolean"
+      ]
+    },
+    {
+      "url": "http://va.gov/fhir/StructureDefinition/medicationrequest-pharmacyOrderStatus",
+      "title": "MedicationRequestPharmacyOrderStatus",
+      "types": [
+        "Coding"
+      ]
+    }
+  ],
   "profiles": {
     "AllergyIntolerance": [
       {
@@ -227,6 +249,15 @@
     ],
     "http://hl7.org/fhir/us/core/StructureDefinition/us-core-race": [
       "Patient"
+    ],
+    "http://va.gov/fhir/StructureDefinition/medicationrequest-cancelDate": [
+      "MedicationRequest"
+    ],
+    "http://va.gov/fhir/StructureDefinition/medicationrequest-includeIndicationInSig": [
+      "MedicationRequest"
+    ],
+    "http://va.gov/fhir/StructureDefinition/medicationrequest-pharmacyOrderStatus": [
+      "MedicationRequest"
     ]
   }
 }

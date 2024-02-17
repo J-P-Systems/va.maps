@@ -15,7 +15,7 @@ Usage: #definition
 * group[=].element[=].target.code = #entered-in-error
 * group[=].element[=].target.display = "Entered in Error"
 * group[=].element[=].target.equivalence = #equal
-* group[=].element[+].code = #0
+* group[=].element[+].code = #Existing
 * group[=].element[=].display = "Existing"
 * group[=].element[=].target.code = #active
 * group[=].element[=].target.display = "Active"

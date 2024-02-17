@@ -10,8 +10,7 @@ Usage: #definition
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VSVistaNCPDPCoverageRelationship"
 * group[0].source = "urn:undefined"
 * group[=].element[0].code = #not_specified
-* group[=].element[=].target.code = #null
-* group[=].element[=].target.equivalence = #equivalent
+* group[=].element[=].target.equivalence = #unmatched
 * group[=].element[+].code = #cardholder
 * group[=].element[=].target.code = #self
 * group[=].element[=].target.equivalence = #equivalent

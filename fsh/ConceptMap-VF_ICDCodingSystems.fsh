@@ -16,8 +16,7 @@ Usage: #definition
 * group[=].element[=].target.code = #http://hl7.org/fhir/sid/icd-9-cm
 * group[=].element[=].target.equivalence = #equal
 * group[=].element[+].code = #ICD-9_Proc
-* group[=].element[=].target.code = #null
-* group[=].element[=].target.equivalence = #equal
+* group[=].element[=].target.equivalence = #unmatched
 * group[=].element[+].code = #ICD-10-PCS
 * group[=].element[=].target.code = #http://www.cms.gov/Medicare/Coding/ICD10
 * group[=].element[=].target.equivalence = #equal

@@ -22,8 +22,7 @@ Usage: #definition
 * group[=].element[=].target.equivalence = #equal
 * group[=].element[+].code = #P
 * group[=].element[=].display = "Planned"
-* group[=].element[=].target.code = #null
-* group[=].element[=].target.equivalence = #equivalent
+* group[=].element[=].target.equivalence = #unmatched
 * group[=].element[=].target.comment = "There is no code for planned in FHIR"
 * group[=].element[+].code = #T
 * group[=].element[=].display = "Temporarily Deactivated"

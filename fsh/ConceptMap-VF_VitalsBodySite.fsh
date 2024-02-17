@@ -47,16 +47,14 @@ Usage: #definition
 * group[=].element[=].target.equivalence = #equal
 * group[=].element[+].code = #4688640
 * group[=].element[=].display = "AXILLARY"
-* group[=].element[=].target.code = #null
 * group[=].element[=].target.display = "764473004 |Skin structure of left axilla (body structure)|
 20437008 |Structure of left axillary region (body structure)|"
-* group[=].element[=].target.equivalence = #equal
+* group[=].element[=].target.equivalence = #unmatched
 * group[=].element[+].code = #4688640
 * group[=].element[=].display = "AXILLARY"
-* group[=].element[=].target.code = #null
 * group[=].element[=].target.display = "764474005 |Skin structure of right axilla (body structure)|
 19654004 |Structure of right axillary region (body structure)|"
-* group[=].element[=].target.equivalence = #equal
+* group[=].element[=].target.equivalence = #unmatched
 * group[=].element[+].code = #4688642
 * group[=].element[=].display = "BILATERAL PERIPHERALS"
 * group[=].element[=].target.code = #54718008

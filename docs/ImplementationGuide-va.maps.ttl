@@ -13,11 +13,11 @@
      fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>VAMapsIG</h2><p>The official URL for this implementation guide is: </p><pre>http://va.gov/fhir/ImplementationGuide/va.maps</pre><div><p>This implementation guide is a FHIR IG rendering of the KBS Map Set from VA sources (primarily VistA) to FHIR. Where appropriate these maps conform to the us-core profiles.</p>\n</div></div>"
   ] ; # 
   fhir:url [ fhir:v "http://va.gov/fhir/ImplementationGuide/va.maps"^^xsd:anyURI] ; # 
-  fhir:version [ fhir:v "0.19.0"] ; # 
+  fhir:version [ fhir:v "0.20.0"] ; # 
   fhir:name [ fhir:v "VAMapsIG"] ; # 
   fhir:title [ fhir:v "US Veterans Administration FHIR Map Set Implementation Guide"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2024-02-13T19:55:01+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2024-02-17T09:04:28+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "VA"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "VA" ] ;
@@ -1257,6 +1257,39 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/StructureDefinition/medicationrequest-cancelDate> ;
+         fhir:reference [ fhir:v "StructureDefinition/medicationrequest-cancelDate" ]
+       ] ;
+       fhir:name [ fhir:v "MedicationRequestCancelDate" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/StructureDefinition/medicationrequest-includeIndicationInSig> ;
+         fhir:reference [ fhir:v "StructureDefinition/medicationrequest-includeIndicationInSig" ]
+       ] ;
+       fhir:name [ fhir:v "MedicationRequestIncludeIndicationInSig" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/StructureDefinition/medicationrequest-pharmacyOrderStatus> ;
+         fhir:reference [ fhir:v "StructureDefinition/medicationrequest-pharmacyOrderStatus" ]
+       ] ;
+       fhir:name [ fhir:v "MedicationRequestPharmacyOrderStatus" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "StructureDefinition:resource" ]
        ] ) ;
        fhir:reference [
@@ -1433,7 +1466,7 @@
          fhir:reference [ fhir:v "ValueSet/VSVFallergyActive" ]
        ] ;
        fhir:name [ fhir:v "VF_allergyActive" ] ;
-       fhir:description [ fhir:v "Navigate to [ConceptMap VF_allergyActive](ConceptMap-CMVFallergyActive.html)" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_allergyActive](ConceptMap-CMVFallergyActive.html)\n\n> Note that the FHIR binding is to the codes in the fhir system. The codes from the VistADefinedElements system are map source codes: they may be included in addition to the fhir codes, but they don't address the binding requirement." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -1457,7 +1490,7 @@
          fhir:reference [ fhir:v "ValueSet/VSVFallergyEnteredInError" ]
        ] ;
        fhir:name [ fhir:v "VF_allergyEnteredInError" ] ;
-       fhir:description [ fhir:v "Navigate to [ConceptMap VF_allergyEnteredInError](ConceptMap-CMVFallergyEnteredInError.html)" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_allergyEnteredInError](ConceptMap-CMVFallergyEnteredInError.html)\n\n> Note that the FHIR binding is to the codes in the fhir system. The codes from the VistADefinedElements system are map source codes: they may be included in addition to the fhir codes, but they don't address the binding requirement." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -1481,7 +1514,7 @@
          fhir:reference [ fhir:v "ValueSet/VSVFallergyMechanism" ]
        ] ;
        fhir:name [ fhir:v "VF_allergyMechanism" ] ;
-       fhir:description [ fhir:v "Navigate to [ConceptMap VF_allergyMechanism](ConceptMap-CMVFallergyMechanism.html)" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_allergyMechanism](ConceptMap-CMVFallergyMechanism.html)\n\n> Note that the FHIR binding is to the codes in the fhir system. The codes from the VistADefinedElements system are map source codes: they may be included in addition to the fhir codes, but they don't address the binding requirement." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -1505,7 +1538,7 @@
          fhir:reference [ fhir:v "ValueSet/VSVFallergySeverity" ]
        ] ;
        fhir:name [ fhir:v "VF_allergySeverity" ] ;
-       fhir:description [ fhir:v "Navigate to [ConceptMap VF_allergySeverity](ConceptMap-CMVFallergySeverity.html)" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_allergySeverity](ConceptMap-CMVFallergySeverity.html)\n\n> Note that the FHIR binding is to the codes in the fhir system. The codes from the VistADefinedElements system are map source codes: they may be included in addition to the fhir codes, but they don't address the binding requirement." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -1529,7 +1562,7 @@
          fhir:reference [ fhir:v "ValueSet/VSVFallergySubstanceCategory" ]
        ] ;
        fhir:name [ fhir:v "VF_allergySubstanceCategory" ] ;
-       fhir:description [ fhir:v "Navigate to [ConceptMap VF_allergySubstanceCategory](ConceptMap-CMVFallergySubstanceCategory.html)" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_allergySubstanceCategory](ConceptMap-CMVFallergySubstanceCategory.html)\n\n> Note that the FHIR binding is to the codes in the fhir system. The codes from the VistADefinedElements system are map source codes: they may be included in addition to the fhir codes, but they don't address the binding requirement." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -1553,7 +1586,7 @@
          fhir:reference [ fhir:v "ValueSet/VSVFallergyVerificationStatus" ]
        ] ;
        fhir:name [ fhir:v "VF_allergyVerificationStatus" ] ;
-       fhir:description [ fhir:v "Navigate to [ConceptMap VF_allergyVerificationStatus](ConceptMap-CMVFallergyVerificationStatus.html)" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_allergyVerificationStatus](ConceptMap-CMVFallergyVerificationStatus.html)\n\n> Note that the FHIR binding is to the codes in the fhir system. The codes from the VistADefinedElements system are map source codes: they may be included in addition to the fhir codes, but they don't address the binding requirement." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -1577,7 +1610,7 @@
          fhir:reference [ fhir:v "ValueSet/VSVFAntibioticSensitivityInterpretation" ]
        ] ;
        fhir:name [ fhir:v "VF_AntibioticSensitivityInterpretation" ] ;
-       fhir:description [ fhir:v "Navigate to [ConceptMap VF_AntibioticSensitivityInterpretation](ConceptMap-CMVFAntibioticSensitivityInterpretation.html)" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_AntibioticSensitivityInterpretation](ConceptMap-CMVFAntibioticSensitivityInterpretation.html)\n\n> Note that the FHIR binding is to the codes in the fhir system. The codes from the VistADefinedElements system are map source codes: they may be included in addition to the fhir codes, but they don't address the binding requirement." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -1601,7 +1634,7 @@
          fhir:reference [ fhir:v "ValueSet/VSVFAppointmentStatus" ]
        ] ;
        fhir:name [ fhir:v "VF_AppointmentStatus" ] ;
-       fhir:description [ fhir:v "Navigate to [ConceptMap VF_AppointmentStatus](ConceptMap-CMVFAppointmentStatus.html)" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_AppointmentStatus](ConceptMap-CMVFAppointmentStatus.html)\n\n> Note that the FHIR binding is to the codes in the fhir system. The codes from the VistADefinedElements system are map source codes: they may be included in addition to the fhir codes, but they don't address the binding requirement." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -1625,7 +1658,7 @@
          fhir:reference [ fhir:v "ValueSet/VSVFBoolean" ]
        ] ;
        fhir:name [ fhir:v "VF_Boolean" ] ;
-       fhir:description [ fhir:v "Navigate to [ConceptMap VF_Boolean](ConceptMap-CMVFBoolean.html)" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_Boolean](ConceptMap-CMVFBoolean.html)\n\n> Note that the FHIR binding is to the codes in the fhir system. The codes from the VistADefinedElements system are map source codes: they may be included in addition to the fhir codes, but they don't address the binding requirement." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -1649,7 +1682,7 @@
          fhir:reference [ fhir:v "ValueSet/VSVFCommunicationQualifier" ]
        ] ;
        fhir:name [ fhir:v "VF_CommunicationQualifier" ] ;
-       fhir:description [ fhir:v "Navigate to [ConceptMap VF_CommunicationQualifier](ConceptMap-CMVFCommunicationQualifier.html)" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_CommunicationQualifier](ConceptMap-CMVFCommunicationQualifier.html)\n\n> Note that the FHIR binding is to the codes in the fhir system. The codes from the VistADefinedElements system are map source codes: they may be included in addition to the fhir codes, but they don't address the binding requirement." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -1673,7 +1706,7 @@
          fhir:reference [ fhir:v "ValueSet/VSVFCoverageRelationship" ]
        ] ;
        fhir:name [ fhir:v "VF_CoverageRelationship" ] ;
-       fhir:description [ fhir:v "Navigate to [ConceptMap VF_CoverageRelationship](ConceptMap-CMVFCoverageRelationship.html)" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_CoverageRelationship](ConceptMap-CMVFCoverageRelationship.html)\n\n> Note that the FHIR binding is to the codes in the fhir system. The codes from the VistADefinedElements system are map source codes: they may be included in addition to the fhir codes, but they don't address the binding requirement." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -1697,7 +1730,7 @@
          fhir:reference [ fhir:v "ValueSet/VSVFCoverageStatusForce" ]
        ] ;
        fhir:name [ fhir:v "VF_CoverageStatusForce" ] ;
-       fhir:description [ fhir:v "Navigate to [ConceptMap VF_CoverageStatusForce](ConceptMap-CMVFCoverageStatusForce.html)" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_CoverageStatusForce](ConceptMap-CMVFCoverageStatusForce.html)\n\n> Note that the FHIR binding is to the codes in the fhir system. The codes from the VistADefinedElements system are map source codes: they may be included in addition to the fhir codes, but they don't address the binding requirement." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -1721,7 +1754,7 @@
          fhir:reference [ fhir:v "ValueSet/VSVFDentalDeviceStatus" ]
        ] ;
        fhir:name [ fhir:v "VF_DentalDeviceStatus" ] ;
-       fhir:description [ fhir:v "Navigate to [ConceptMap VF_DentalDeviceStatus](ConceptMap-CMVFDentalDeviceStatus.html)" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_DentalDeviceStatus](ConceptMap-CMVFDentalDeviceStatus.html)\n\n> Note that the FHIR binding is to the codes in the fhir system. The codes from the VistADefinedElements system are map source codes: they may be included in addition to the fhir codes, but they don't address the binding requirement." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -1745,7 +1778,7 @@
          fhir:reference [ fhir:v "ValueSet/VSVFdeviceTypePacemaker" ]
        ] ;
        fhir:name [ fhir:v "VF_deviceTypePacemaker" ] ;
-       fhir:description [ fhir:v "Navigate to [ConceptMap VF_deviceTypePacemaker](ConceptMap-CMVFdeviceTypePacemaker.html)" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_deviceTypePacemaker](ConceptMap-CMVFdeviceTypePacemaker.html)\n\n> Note that the FHIR binding is to the codes in the fhir system. The codes from the VistADefinedElements system are map source codes: they may be included in addition to the fhir codes, but they don't address the binding requirement." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -1769,7 +1802,7 @@
          fhir:reference [ fhir:v "ValueSet/VSVFDiagnosticReportLabStatus" ]
        ] ;
        fhir:name [ fhir:v "VF_DiagnosticReportLabStatus" ] ;
-       fhir:description [ fhir:v "Navigate to [ConceptMap VF_DiagnosticReportLabStatus](ConceptMap-CMVFDiagnosticReportLabStatus.html)" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_DiagnosticReportLabStatus](ConceptMap-CMVFDiagnosticReportLabStatus.html)\n\n> Note that the FHIR binding is to the codes in the fhir system. The codes from the VistADefinedElements system are map source codes: they may be included in addition to the fhir codes, but they don't address the binding requirement." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -1793,7 +1826,7 @@
          fhir:reference [ fhir:v "ValueSet/VSVFdocumentReferencedocStatus" ]
        ] ;
        fhir:name [ fhir:v "VF_documentReferencedocStatus" ] ;
-       fhir:description [ fhir:v "Navigate to [ConceptMap VF_documentReferencedocStatus](ConceptMap-CMVFdocumentReferencedocStatus.html)" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_documentReferencedocStatus](ConceptMap-CMVFdocumentReferencedocStatus.html)\n\n> Note that the FHIR binding is to the codes in the fhir system. The codes from the VistADefinedElements system are map source codes: they may be included in addition to the fhir codes, but they don't address the binding requirement." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -1817,7 +1850,7 @@
          fhir:reference [ fhir:v "ValueSet/VSVFencounterClass" ]
        ] ;
        fhir:name [ fhir:v "VF_encounterClass" ] ;
-       fhir:description [ fhir:v "Navigate to [ConceptMap VF_encounterClass](ConceptMap-CMVFencounterClass.html)" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_encounterClass](ConceptMap-CMVFencounterClass.html)\n\n> Note that the FHIR binding is to the codes in the fhir system. The codes from the VistADefinedElements system are map source codes: they may be included in addition to the fhir codes, but they don't address the binding requirement." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -1841,7 +1874,7 @@
          fhir:reference [ fhir:v "ValueSet/VSVFencounterProblemStatus" ]
        ] ;
        fhir:name [ fhir:v "VF_encounterProblemStatus" ] ;
-       fhir:description [ fhir:v "Navigate to [ConceptMap VF_encounterProblemStatus](ConceptMap-CMVFencounterProblemStatus.html)" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_encounterProblemStatus](ConceptMap-CMVFencounterProblemStatus.html)\n\n> Note that the FHIR binding is to the codes in the fhir system. The codes from the VistADefinedElements system are map source codes: they may be included in addition to the fhir codes, but they don't address the binding requirement." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -1865,7 +1898,7 @@
          fhir:reference [ fhir:v "ValueSet/VSVFencounterProblemVerificationStatus" ]
        ] ;
        fhir:name [ fhir:v "VF_encounterProblemVerificationStatus" ] ;
-       fhir:description [ fhir:v "Navigate to [ConceptMap VF_encounterProblemVerificationStatus](ConceptMap-CMVFencounterProblemVerificationStatus.html)" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_encounterProblemVerificationStatus](ConceptMap-CMVFencounterProblemVerificationStatus.html)\n\n> Note that the FHIR binding is to the codes in the fhir system. The codes from the VistADefinedElements system are map source codes: they may be included in addition to the fhir codes, but they don't address the binding requirement." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -1889,7 +1922,7 @@
          fhir:reference [ fhir:v "ValueSet/VSVFethnicityCategory" ]
        ] ;
        fhir:name [ fhir:v "VF_ethnicityCategory" ] ;
-       fhir:description [ fhir:v "Navigate to [ConceptMap VF_ethnicityCategory](ConceptMap-CMVFethnicityCategory.html)" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_ethnicityCategory](ConceptMap-CMVFethnicityCategory.html)\n\n> Note that the FHIR binding is to the codes in the fhir system. The codes from the VistADefinedElements system are map source codes: they may be included in addition to the fhir codes, but they don't address the binding requirement." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -1913,7 +1946,7 @@
          fhir:reference [ fhir:v "ValueSet/VSVFExamResultInterpretation" ]
        ] ;
        fhir:name [ fhir:v "VF_ExamResultInterpretation" ] ;
-       fhir:description [ fhir:v "Navigate to [ConceptMap VF_ExamResultInterpretation](ConceptMap-CMVFExamResultInterpretation.html)" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_ExamResultInterpretation](ConceptMap-CMVFExamResultInterpretation.html)\n\n> Note that the FHIR binding is to the codes in the fhir system. The codes from the VistADefinedElements system are map source codes: they may be included in addition to the fhir codes, but they don't address the binding requirement." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -1937,7 +1970,7 @@
          fhir:reference [ fhir:v "ValueSet/VSVFExamStatus" ]
        ] ;
        fhir:name [ fhir:v "VF_ExamStatus" ] ;
-       fhir:description [ fhir:v "Navigate to [ConceptMap VF_ExamStatus](ConceptMap-CMVFExamStatus.html)" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_ExamStatus](ConceptMap-CMVFExamStatus.html)\n\n> Note that the FHIR binding is to the codes in the fhir system. The codes from the VistADefinedElements system are map source codes: they may be included in addition to the fhir codes, but they don't address the binding requirement." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -1961,7 +1994,7 @@
          fhir:reference [ fhir:v "ValueSet/VSVFgenderIdentity" ]
        ] ;
        fhir:name [ fhir:v "VF_genderIdentity" ] ;
-       fhir:description [ fhir:v "Navigate to [ConceptMap VF_genderIdentity](ConceptMap-CMVFgenderIdentity.html)" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_genderIdentity](ConceptMap-CMVFgenderIdentity.html)\n\n> Note that the FHIR binding is to the codes in the fhir system. The codes from the VistADefinedElements system are map source codes: they may be included in addition to the fhir codes, but they don't address the binding requirement." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -1985,7 +2018,7 @@
          fhir:reference [ fhir:v "ValueSet/VSVFICDCodingSystems" ]
        ] ;
        fhir:name [ fhir:v "VF_ICDCodingSystems" ] ;
-       fhir:description [ fhir:v "Navigate to [ConceptMap VF_ICDCodingSystems](ConceptMap-CMVFICDCodingSystems.html)" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_ICDCodingSystems](ConceptMap-CMVFICDCodingSystems.html)\n\n> Note that the FHIR binding is to the codes in the fhir system. The codes from the VistADefinedElements system are map source codes: they may be included in addition to the fhir codes, but they don't address the binding requirement." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -2009,7 +2042,7 @@
          fhir:reference [ fhir:v "ValueSet/VSVFICDVersion" ]
        ] ;
        fhir:name [ fhir:v "VF_ICDVersion" ] ;
-       fhir:description [ fhir:v "Navigate to [ConceptMap VF_ICDVersion](ConceptMap-CMVFICDVersion.html)" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_ICDVersion](ConceptMap-CMVFICDVersion.html)\n\n> Note that the FHIR binding is to the codes in the fhir system. The codes from the VistADefinedElements system are map source codes: they may be included in addition to the fhir codes, but they don't address the binding requirement." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -2033,7 +2066,7 @@
          fhir:reference [ fhir:v "ValueSet/VSVFImageInterpretation" ]
        ] ;
        fhir:name [ fhir:v "VF_ImageInterpretation" ] ;
-       fhir:description [ fhir:v "Navigate to [ConceptMap VF_ImageInterpretation](ConceptMap-CMVFImageInterpretation.html)" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_ImageInterpretation](ConceptMap-CMVFImageInterpretation.html)\n\n> Note that the FHIR binding is to the codes in the fhir system. The codes from the VistADefinedElements system are map source codes: they may be included in addition to the fhir codes, but they don't address the binding requirement." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -2057,7 +2090,7 @@
          fhir:reference [ fhir:v "ValueSet/VSVFImageStatus" ]
        ] ;
        fhir:name [ fhir:v "VF_ImageStatus" ] ;
-       fhir:description [ fhir:v "Navigate to [ConceptMap VF_ImageStatus](ConceptMap-CMVFImageStatus.html)" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_ImageStatus](ConceptMap-CMVFImageStatus.html)\n\n> Note that the FHIR binding is to the codes in the fhir system. The codes from the VistADefinedElements system are map source codes: they may be included in addition to the fhir codes, but they don't address the binding requirement." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -2081,7 +2114,7 @@
          fhir:reference [ fhir:v "ValueSet/VSVFImageStatusRadNuc" ]
        ] ;
        fhir:name [ fhir:v "VF_ImageStatusRadNuc" ] ;
-       fhir:description [ fhir:v "Navigate to [ConceptMap VF_ImageStatusRadNuc](ConceptMap-CMVFImageStatusRadNuc.html)" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_ImageStatusRadNuc](ConceptMap-CMVFImageStatusRadNuc.html)\n\n> Note that the FHIR binding is to the codes in the fhir system. The codes from the VistADefinedElements system are map source codes: they may be included in addition to the fhir codes, but they don't address the binding requirement." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -2105,7 +2138,7 @@
          fhir:reference [ fhir:v "ValueSet/VSVFimmunizationPrimarySource" ]
        ] ;
        fhir:name [ fhir:v "VF_immunizationPrimarySource" ] ;
-       fhir:description [ fhir:v "Navigate to [ConceptMap VF_immunizationPrimarySource](ConceptMap-CMVFimmunizationPrimarySource.html)" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_immunizationPrimarySource](ConceptMap-CMVFimmunizationPrimarySource.html)\n\n> Note that the FHIR binding is to the codes in the fhir system. The codes from the VistADefinedElements system are map source codes: they may be included in addition to the fhir codes, but they don't address the binding requirement." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -2129,7 +2162,7 @@
          fhir:reference [ fhir:v "ValueSet/VSVFImmunizationReaction" ]
        ] ;
        fhir:name [ fhir:v "VF_ImmunizationReaction" ] ;
-       fhir:description [ fhir:v "Navigate to [ConceptMap VF_ImmunizationReaction](ConceptMap-CMVFImmunizationReaction.html)" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_ImmunizationReaction](ConceptMap-CMVFImmunizationReaction.html)\n\n> Note that the FHIR binding is to the codes in the fhir system. The codes from the VistADefinedElements system are map source codes: they may be included in addition to the fhir codes, but they don't address the binding requirement." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -2153,7 +2186,7 @@
          fhir:reference [ fhir:v "ValueSet/VSVFimmunizationStatusReason" ]
        ] ;
        fhir:name [ fhir:v "VF_immunizationStatusReason" ] ;
-       fhir:description [ fhir:v "Navigate to [ConceptMap VF_immunizationStatusReason](ConceptMap-CMVFimmunizationStatusReason.html)" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_immunizationStatusReason](ConceptMap-CMVFimmunizationStatusReason.html)\n\n> Note that the FHIR binding is to the codes in the fhir system. The codes from the VistADefinedElements system are map source codes: they may be included in addition to the fhir codes, but they don't address the binding requirement." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -2177,7 +2210,7 @@
          fhir:reference [ fhir:v "ValueSet/VSVFinferredCVX" ]
        ] ;
        fhir:name [ fhir:v "VF_inferredCVX" ] ;
-       fhir:description [ fhir:v "Navigate to [ConceptMap VF_inferredCVX](ConceptMap-CMVFinferredCVX.html)" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_inferredCVX](ConceptMap-CMVFinferredCVX.html)\n\n> Note that the FHIR binding is to the codes in the fhir system. The codes from the VistADefinedElements system are map source codes: they may be included in addition to the fhir codes, but they don't address the binding requirement." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -2201,7 +2234,7 @@
          fhir:reference [ fhir:v "ValueSet/VSVFLabInterpretation" ]
        ] ;
        fhir:name [ fhir:v "VF_LabInterpretation" ] ;
-       fhir:description [ fhir:v "Navigate to [ConceptMap VF_LabInterpretation](ConceptMap-CMVFLabInterpretation.html)" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_LabInterpretation](ConceptMap-CMVFLabInterpretation.html)\n\n> Note that the FHIR binding is to the codes in the fhir system. The codes from the VistADefinedElements system are map source codes: they may be included in addition to the fhir codes, but they don't address the binding requirement." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -2225,7 +2258,7 @@
          fhir:reference [ fhir:v "ValueSet/VSVFLabObservationStatus" ]
        ] ;
        fhir:name [ fhir:v "VF_LabObservationStatus" ] ;
-       fhir:description [ fhir:v "Navigate to [ConceptMap VF_LabObservationStatus](ConceptMap-CMVFLabObservationStatus.html)" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_LabObservationStatus](ConceptMap-CMVFLabObservationStatus.html)\n\n> Note that the FHIR binding is to the codes in the fhir system. The codes from the VistADefinedElements system are map source codes: they may be included in addition to the fhir codes, but they don't address the binding requirement." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -2249,7 +2282,7 @@
          fhir:reference [ fhir:v "ValueSet/VSVFLocationStatus" ]
        ] ;
        fhir:name [ fhir:v "VF_LocationStatus" ] ;
-       fhir:description [ fhir:v "Navigate to [ConceptMap VF_LocationStatus](ConceptMap-CMVFLocationStatus.html)" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_LocationStatus](ConceptMap-CMVFLocationStatus.html)\n\n> Note that the FHIR binding is to the codes in the fhir system. The codes from the VistADefinedElements system are map source codes: they may be included in addition to the fhir codes, but they don't address the binding requirement." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -2273,7 +2306,7 @@
          fhir:reference [ fhir:v "ValueSet/VSVFMaritalStatus" ]
        ] ;
        fhir:name [ fhir:v "VF_MaritalStatus" ] ;
-       fhir:description [ fhir:v "Navigate to [ConceptMap VF_MaritalStatus](ConceptMap-CMVFMaritalStatus.html)" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_MaritalStatus](ConceptMap-CMVFMaritalStatus.html)\n\n> Note that the FHIR binding is to the codes in the fhir system. The codes from the VistADefinedElements system are map source codes: they may be included in addition to the fhir codes, but they don't address the binding requirement." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -2297,7 +2330,7 @@
          fhir:reference [ fhir:v "ValueSet/VSVFOrderPatientClass" ]
        ] ;
        fhir:name [ fhir:v "VF_OrderPatientClass" ] ;
-       fhir:description [ fhir:v "Navigate to [ConceptMap VF_OrderPatientClass](ConceptMap-CMVFOrderPatientClass.html)" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_OrderPatientClass](ConceptMap-CMVFOrderPatientClass.html)\n\n> Note that the FHIR binding is to the codes in the fhir system. The codes from the VistADefinedElements system are map source codes: they may be included in addition to the fhir codes, but they don't address the binding requirement." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -2321,7 +2354,7 @@
          fhir:reference [ fhir:v "ValueSet/VSVFOrganizationIdentifierType" ]
        ] ;
        fhir:name [ fhir:v "VF_OrganizationIdentifierType" ] ;
-       fhir:description [ fhir:v "Navigate to [ConceptMap VF_OrganizationIdentifierType](ConceptMap-CMVFOrganizationIdentifierType.html)" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_OrganizationIdentifierType](ConceptMap-CMVFOrganizationIdentifierType.html)\n\n> Note that the FHIR binding is to the codes in the fhir system. The codes from the VistADefinedElements system are map source codes: they may be included in addition to the fhir codes, but they don't address the binding requirement." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -2345,7 +2378,7 @@
          fhir:reference [ fhir:v "ValueSet/VSVFOutMedRequestStatus" ]
        ] ;
        fhir:name [ fhir:v "VF_OutMedRequestStatus" ] ;
-       fhir:description [ fhir:v "Navigate to [ConceptMap VF_OutMedRequestStatus](ConceptMap-CMVFOutMedRequestStatus.html)" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_OutMedRequestStatus](ConceptMap-CMVFOutMedRequestStatus.html)\n\n> Note that the FHIR binding is to the codes in the fhir system. The codes from the VistADefinedElements system are map source codes: they may be included in addition to the fhir codes, but they don't address the binding requirement." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -2369,7 +2402,7 @@
          fhir:reference [ fhir:v "ValueSet/VSVFPersonIdentifierType" ]
        ] ;
        fhir:name [ fhir:v "VF_PersonIdentifierType" ] ;
-       fhir:description [ fhir:v "Navigate to [ConceptMap VF_PersonIdentifierType](ConceptMap-CMVFPersonIdentifierType.html)" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_PersonIdentifierType](ConceptMap-CMVFPersonIdentifierType.html)\n\n> Note that the FHIR binding is to the codes in the fhir system. The codes from the VistADefinedElements system are map source codes: they may be included in addition to the fhir codes, but they don't address the binding requirement." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -2393,7 +2426,7 @@
          fhir:reference [ fhir:v "ValueSet/VSVFPharmacyPersonType" ]
        ] ;
        fhir:name [ fhir:v "VF_PharmacyPersonType" ] ;
-       fhir:description [ fhir:v "Navigate to [ConceptMap VF_PharmacyPersonType](ConceptMap-CMVFPharmacyPersonType.html)" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_PharmacyPersonType](ConceptMap-CMVFPharmacyPersonType.html)\n\n> Note that the FHIR binding is to the codes in the fhir system. The codes from the VistADefinedElements system are map source codes: they may be included in addition to the fhir codes, but they don't address the binding requirement." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -2417,7 +2450,7 @@
          fhir:reference [ fhir:v "ValueSet/VSVFPositiveNegative" ]
        ] ;
        fhir:name [ fhir:v "VF_PositiveNegative" ] ;
-       fhir:description [ fhir:v "Navigate to [ConceptMap VF_PositiveNegative](ConceptMap-CMVFPositiveNegative.html)" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_PositiveNegative](ConceptMap-CMVFPositiveNegative.html)\n\n> Note that the FHIR binding is to the codes in the fhir system. The codes from the VistADefinedElements system are map source codes: they may be included in addition to the fhir codes, but they don't address the binding requirement." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -2441,7 +2474,7 @@
          fhir:reference [ fhir:v "ValueSet/VSVFPractitionerCountry" ]
        ] ;
        fhir:name [ fhir:v "VF_PractitionerCountry" ] ;
-       fhir:description [ fhir:v "Navigate to [ConceptMap VF_PractitionerCountry](ConceptMap-CMVFPractitionerCountry.html)" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_PractitionerCountry](ConceptMap-CMVFPractitionerCountry.html)\n\n> Note that the FHIR binding is to the codes in the fhir system. The codes from the VistADefinedElements system are map source codes: they may be included in addition to the fhir codes, but they don't address the binding requirement." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -2465,7 +2498,7 @@
          fhir:reference [ fhir:v "ValueSet/VSVFproblemStatus" ]
        ] ;
        fhir:name [ fhir:v "VF_problemStatus" ] ;
-       fhir:description [ fhir:v "Navigate to [ConceptMap VF_problemStatus](ConceptMap-CMVFproblemStatus.html)" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_problemStatus](ConceptMap-CMVFproblemStatus.html)\n\n> Note that the FHIR binding is to the codes in the fhir system. The codes from the VistADefinedElements system are map source codes: they may be included in addition to the fhir codes, but they don't address the binding requirement." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -2489,7 +2522,7 @@
          fhir:reference [ fhir:v "ValueSet/VSVFproblemVerificationStatus" ]
        ] ;
        fhir:name [ fhir:v "VF_problemVerificationStatus" ] ;
-       fhir:description [ fhir:v "Navigate to [ConceptMap VF_problemVerificationStatus](ConceptMap-CMVFproblemVerificationStatus.html)" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_problemVerificationStatus](ConceptMap-CMVFproblemVerificationStatus.html)\n\n> Note that the FHIR binding is to the codes in the fhir system. The codes from the VistADefinedElements system are map source codes: they may be included in addition to the fhir codes, but they don't address the binding requirement." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -2513,7 +2546,7 @@
          fhir:reference [ fhir:v "ValueSet/VSVFProcedureCodeSystem" ]
        ] ;
        fhir:name [ fhir:v "VF_ProcedureCodeSystem" ] ;
-       fhir:description [ fhir:v "Navigate to [ConceptMap VF_ProcedureCodeSystem](ConceptMap-CMVFProcedureCodeSystem.html)" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_ProcedureCodeSystem](ConceptMap-CMVFProcedureCodeSystem.html)\n\n> Note that the FHIR binding is to the codes in the fhir system. The codes from the VistADefinedElements system are map source codes: they may be included in addition to the fhir codes, but they don't address the binding requirement." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -2537,7 +2570,7 @@
          fhir:reference [ fhir:v "ValueSet/VSVFproviderGender" ]
        ] ;
        fhir:name [ fhir:v "VF_providerGender" ] ;
-       fhir:description [ fhir:v "Navigate to [ConceptMap VF_providerGender](ConceptMap-CMVFproviderGender.html)" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_providerGender](ConceptMap-CMVFproviderGender.html)\n\n> Note that the FHIR binding is to the codes in the fhir system. The codes from the VistADefinedElements system are map source codes: they may be included in addition to the fhir codes, but they don't address the binding requirement." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -2561,7 +2594,7 @@
          fhir:reference [ fhir:v "ValueSet/VSVFraceCategory" ]
        ] ;
        fhir:name [ fhir:v "VF_raceCategory" ] ;
-       fhir:description [ fhir:v "Navigate to [ConceptMap VF_raceCategory](ConceptMap-CMVFraceCategory.html)" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_raceCategory](ConceptMap-CMVFraceCategory.html)\n\n> Note that the FHIR binding is to the codes in the fhir system. The codes from the VistADefinedElements system are map source codes: they may be included in addition to the fhir codes, but they don't address the binding requirement." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -2585,7 +2618,7 @@
          fhir:reference [ fhir:v "ValueSet/VSVFRadiologyProcedureStatus" ]
        ] ;
        fhir:name [ fhir:v "VF_RadiologyProcedureStatus" ] ;
-       fhir:description [ fhir:v "Navigate to [ConceptMap VF_RadiologyProcedureStatus](ConceptMap-CMVFRadiologyProcedureStatus.html)" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_RadiologyProcedureStatus](ConceptMap-CMVFRadiologyProcedureStatus.html)\n\n> Note that the FHIR binding is to the codes in the fhir system. The codes from the VistADefinedElements system are map source codes: they may be included in addition to the fhir codes, but they don't address the binding requirement." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -2609,7 +2642,7 @@
          fhir:reference [ fhir:v "ValueSet/VSVFReligion" ]
        ] ;
        fhir:name [ fhir:v "VF_Religion" ] ;
-       fhir:description [ fhir:v "Navigate to [ConceptMap VF_Religion](ConceptMap-CMVFReligion.html)" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_Religion](ConceptMap-CMVFReligion.html)\n\n> Note that the FHIR binding is to the codes in the fhir system. The codes from the VistADefinedElements system are map source codes: they may be included in addition to the fhir codes, but they don't address the binding requirement." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -2633,7 +2666,7 @@
          fhir:reference [ fhir:v "ValueSet/VSVFSmokingStatus" ]
        ] ;
        fhir:name [ fhir:v "VF_SmokingStatus" ] ;
-       fhir:description [ fhir:v "Navigate to [ConceptMap VF_SmokingStatus](ConceptMap-CMVFSmokingStatus.html)" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_SmokingStatus](ConceptMap-CMVFSmokingStatus.html)\n\n> Note that the FHIR binding is to the codes in the fhir system. The codes from the VistADefinedElements system are map source codes: they may be included in addition to the fhir codes, but they don't address the binding requirement." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -2657,7 +2690,7 @@
          fhir:reference [ fhir:v "ValueSet/VSVFSourceOfAdmission" ]
        ] ;
        fhir:name [ fhir:v "VF_SourceOfAdmission" ] ;
-       fhir:description [ fhir:v "Navigate to [ConceptMap VF_SourceOfAdmission](ConceptMap-CMVFSourceOfAdmission.html)" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_SourceOfAdmission](ConceptMap-CMVFSourceOfAdmission.html)\n\n> Note that the FHIR binding is to the codes in the fhir system. The codes from the VistADefinedElements system are map source codes: they may be included in addition to the fhir codes, but they don't address the binding requirement." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -2681,7 +2714,7 @@
          fhir:reference [ fhir:v "ValueSet/VSVFVitalsBodySite" ]
        ] ;
        fhir:name [ fhir:v "VF_VitalsBodySite" ] ;
-       fhir:description [ fhir:v "Navigate to [ConceptMap VF_VitalsBodySite](ConceptMap-CMVFVitalsBodySite.html)" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_VitalsBodySite](ConceptMap-CMVFVitalsBodySite.html)\n\n> Note that the FHIR binding is to the codes in the fhir system. The codes from the VistADefinedElements system are map source codes: they may be included in addition to the fhir codes, but they don't address the binding requirement." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -2705,7 +2738,7 @@
          fhir:reference [ fhir:v "ValueSet/VSVFVitalsCodes" ]
        ] ;
        fhir:name [ fhir:v "VF_VitalsCodes" ] ;
-       fhir:description [ fhir:v "Navigate to [ConceptMap VF_VitalsCodes](ConceptMap-CMVFVitalsCodes.html)" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_VitalsCodes](ConceptMap-CMVFVitalsCodes.html)\n\n> Note that the FHIR binding is to the codes in the fhir system. The codes from the VistADefinedElements system are map source codes: they may be included in addition to the fhir codes, but they don't address the binding requirement." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -2729,7 +2762,7 @@
          fhir:reference [ fhir:v "ValueSet/VSVFVitalsCuffSize" ]
        ] ;
        fhir:name [ fhir:v "VF_VitalsCuffSize" ] ;
-       fhir:description [ fhir:v "Navigate to [ConceptMap VF_VitalsCuffSize](ConceptMap-CMVFVitalsCuffSize.html)" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_VitalsCuffSize](ConceptMap-CMVFVitalsCuffSize.html)\n\n> Note that the FHIR binding is to the codes in the fhir system. The codes from the VistADefinedElements system are map source codes: they may be included in addition to the fhir codes, but they don't address the binding requirement." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -2753,7 +2786,7 @@
          fhir:reference [ fhir:v "ValueSet/VSVFVitalsDevice" ]
        ] ;
        fhir:name [ fhir:v "VF_VitalsDevice" ] ;
-       fhir:description [ fhir:v "Navigate to [ConceptMap VF_VitalsDevice](ConceptMap-CMVFVitalsDevice.html)" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_VitalsDevice](ConceptMap-CMVFVitalsDevice.html)\n\n> Note that the FHIR binding is to the codes in the fhir system. The codes from the VistADefinedElements system are map source codes: they may be included in addition to the fhir codes, but they don't address the binding requirement." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -2777,7 +2810,7 @@
          fhir:reference [ fhir:v "ValueSet/VSVFVitalsLaterality" ]
        ] ;
        fhir:name [ fhir:v "VF_VitalsLaterality" ] ;
-       fhir:description [ fhir:v "Navigate to [ConceptMap VF_VitalsLaterality](ConceptMap-CMVFVitalsLaterality.html)" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_VitalsLaterality](ConceptMap-CMVFVitalsLaterality.html)\n\n> Note that the FHIR binding is to the codes in the fhir system. The codes from the VistADefinedElements system are map source codes: they may be included in addition to the fhir codes, but they don't address the binding requirement." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -2801,7 +2834,7 @@
          fhir:reference [ fhir:v "ValueSet/VSVFVitalsMeasurementDevice" ]
        ] ;
        fhir:name [ fhir:v "VF_VitalsMeasurementDevice" ] ;
-       fhir:description [ fhir:v "Navigate to [ConceptMap VF_VitalsMeasurementDevice](ConceptMap-CMVFVitalsMeasurementDevice.html)" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_VitalsMeasurementDevice](ConceptMap-CMVFVitalsMeasurementDevice.html)\n\n> Note that the FHIR binding is to the codes in the fhir system. The codes from the VistADefinedElements system are map source codes: they may be included in addition to the fhir codes, but they don't address the binding requirement." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -2825,7 +2858,7 @@
          fhir:reference [ fhir:v "ValueSet/VSVFVitalsMethod" ]
        ] ;
        fhir:name [ fhir:v "VF_VitalsMethod" ] ;
-       fhir:description [ fhir:v "Navigate to [ConceptMap VF_VitalsMethod](ConceptMap-CMVFVitalsMethod.html)" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_VitalsMethod](ConceptMap-CMVFVitalsMethod.html)\n\n> Note that the FHIR binding is to the codes in the fhir system. The codes from the VistADefinedElements system are map source codes: they may be included in addition to the fhir codes, but they don't address the binding requirement." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -2849,7 +2882,7 @@
          fhir:reference [ fhir:v "ValueSet/VSVFVitalsPosition" ]
        ] ;
        fhir:name [ fhir:v "VF_VitalsPosition" ] ;
-       fhir:description [ fhir:v "Navigate to [ConceptMap VF_VitalsPosition](ConceptMap-CMVFVitalsPosition.html)" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_VitalsPosition](ConceptMap-CMVFVitalsPosition.html)\n\n> Note that the FHIR binding is to the codes in the fhir system. The codes from the VistADefinedElements system are map source codes: they may be included in addition to the fhir codes, but they don't address the binding requirement." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -2873,7 +2906,7 @@
          fhir:reference [ fhir:v "ValueSet/VSVFVitalsQualifyingDevice" ]
        ] ;
        fhir:name [ fhir:v "VF_VitalsQualifyingDevice" ] ;
-       fhir:description [ fhir:v "Navigate to [ConceptMap VF_VitalsQualifyingDevice](ConceptMap-CMVFVitalsQualifyingDevice.html)" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_VitalsQualifyingDevice](ConceptMap-CMVFVitalsQualifyingDevice.html)\n\n> Note that the FHIR binding is to the codes in the fhir system. The codes from the VistADefinedElements system are map source codes: they may be included in addition to the fhir codes, but they don't address the binding requirement." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -2897,7 +2930,7 @@
          fhir:reference [ fhir:v "ValueSet/VSVFVitalsUnits" ]
        ] ;
        fhir:name [ fhir:v "VF_VitalsUnits" ] ;
-       fhir:description [ fhir:v "Navigate to [ConceptMap VF_VitalsUnits](ConceptMap-CMVFVitalsUnits.html)" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_VitalsUnits](ConceptMap-CMVFVitalsUnits.html)\n\n> Note that the FHIR binding is to the codes in the fhir system. The codes from the VistADefinedElements system are map source codes: they may be included in addition to the fhir codes, but they don't address the binding requirement." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -2921,7 +2954,7 @@
          fhir:reference [ fhir:v "ValueSet/VSVFYesNo10" ]
        ] ;
        fhir:name [ fhir:v "VF_YesNo10" ] ;
-       fhir:description [ fhir:v "Navigate to [ConceptMap VF_YesNo10](ConceptMap-CMVFYesNo10.html)" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap VF_YesNo10](ConceptMap-CMVFYesNo10.html)\n\n> Note that the FHIR binding is to the codes in the fhir system. The codes from the VistADefinedElements system are map source codes: they may be included in addition to the fhir codes, but they don't address the binding requirement." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -2945,7 +2978,7 @@
          fhir:reference [ fhir:v "ValueSet/VSVistaNCPDPCoverageRelationship" ]
        ] ;
        fhir:name [ fhir:v "Vista_NCPDPCoverageRelationship" ] ;
-       fhir:description [ fhir:v "Navigate to [ConceptMap Vista_NCPDPCoverageRelationship](ConceptMap-CMVistaNCPDPCoverageRelationship.html)" ] ;
+       fhir:description [ fhir:v "Navigate to [ConceptMap Vista_NCPDPCoverageRelationship](ConceptMap-CMVistaNCPDPCoverageRelationship.html)\n\n> Note that the FHIR binding is to the codes in the fhir system. The codes from the VistADefinedElements system are map source codes: they may be included in addition to the fhir codes, but they don't address the binding requirement." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [

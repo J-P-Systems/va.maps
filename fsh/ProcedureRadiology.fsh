@@ -5,12 +5,13 @@ Title: "Procedure: Radiology"
 Description: "This StructureDefinition contains the maps for VistA file EXAMINATIONS (#70.03) to us-core-procedure"
 * ^status = #draft
 * status and statusReason.text and category.text and code.coding and subject and encounter and performedDateTime and performer.actor and location MS
+* status from http://va.gov/fhir/ValueSet/VSVFRadiologyProcedureStatus
 
 Mapping: vista-to-ProcedureRadiology
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: ProcedureRadiology
-* status -> "1506: source value from EXAMINATIONS - EXAM STATUS > EXAMINATION STATUS - STATUS (#70.03-3 > 72-.01)"
+* status -> "1506: terminologyMaps using VF_RadiologyProcedureStatus on EXAMINATIONS - EXAM STATUS > EXAMINATION STATUS - STATUS (#70.03-3 > 72-.01)"
 * statusReason.text -> "1507: source value from EXAMINATIONS - REASON FOR CANCELLATION > RAD/NUC MED REASON - REASON (#70.03-3.5 > 75.2-.01)"
 * category.text -> "1508: source value from REGISTERED EXAMS - TYPE OF IMAGING > IMAGING TYPE - TYPE OF IMAGING (#70.02-2 > 79.2-.01)"
 * code.coding -> "1509: source value from EXAMINATIONS - PROCEDURE > RAD/NUC MED PROCEDURES - CPT CODE > CPT (#70.03-2 > 71-9 > 81-)"

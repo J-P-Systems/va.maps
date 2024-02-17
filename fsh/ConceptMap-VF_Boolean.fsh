@@ -9,10 +9,9 @@ Usage: #definition
 * description = "Terminology Maps VF_Boolean"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFBoolean"
 * group[0].source = "http://va.gov/terminology/vistaDefinedElements/51-129"
-* group[=].element[0].code = #0
+* group[=].element[0].code = #No
 * group[=].element[=].display = "No"
-* group[=].element[=].target.code = #false
-* group[=].element[=].target.equivalence = #equivalent
+* group[=].element[=].target.equivalence = #unmatched
 * group[=].element[+].code = #1
 * group[=].element[=].display = "Yes"
 * group[=].element[=].target.code = #true

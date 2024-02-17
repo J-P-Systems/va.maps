@@ -67,7 +67,7 @@ Usage: #definition
 * group[=].element[=].target.equivalence = #equivalent
 * group[+].source = "http://va.gov/terminology/vistaDefinedElements/9000010.11-.06"
 * group[=].target = "http://loinc.org"
-* group[=].element[0].code = #0
+* group[=].element[0].code = #NONE
 * group[=].element[=].display = "NONE"
 * group[=].element[=].target.code = #LA137-2
 * group[=].element[=].target.display = "None"

@@ -19,3 +19,7 @@ Usage: #definition
 * group[=].element[=].display = "FOOD"
 * group[=].element[=].target.code = #food
 * group[=].element[=].target.equivalence = #equal
+* group[+].source = "http://va.gov/terminology/vistaDefinedElements/120.8-3.1"
+* group[=].element[0].code = #O
+* group[=].element[=].display = "OTHER"
+* group[=].element[=].target.equivalence = #unmatched

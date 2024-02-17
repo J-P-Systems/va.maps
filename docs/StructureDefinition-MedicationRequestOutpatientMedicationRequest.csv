@@ -21,71 +21,99 @@ htmlxhtmldisplay","",0,1,"","","","Narrative {[]} {[]}
 "MedicationRequest.contained","MedicationRequest.contained","","inline resources
 anonymous resourcescontained resources","",0,*,"","","","Resource {[]} {[]}
 ","Contained, inline Resources","These resources do not have an independent existence apart from the resource that contains them - they cannot be identified independently, and nor can they have their own independent transaction scope.","This should never be done when the content can be identified properly, as once identification is lost, it is extremely difficult (and context dependent) to restore it again. Contained resources may have profiles and tags In their meta elements, but SHALL NOT have security labels.","","","","","","","","",,,,,"",,,,"DomainResource.contained",0,*,"","","N/A"
-"MedicationRequest.extension","MedicationRequest.extension","","","",0,*,"Y","","","Extension {[]} {[]}
-","Extension","An Extension","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}","1704: source value from PRESCRIPTION - CANCEL DATE (#52-26.1)","RxOut.RxOutpat.CancelDate"
-"MedicationRequest.extension.id","MedicationRequest.extension.id","","","",0,1,"","","","string {[]} {[]}
+"MedicationRequest.extension","MedicationRequest.extension","","","",0,*,"","","","Extension {[]} {[]}
+","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
+","",,"open","DomainResource.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"MedicationRequest.extension:medicationrequest-pharmacyOrderStatus","MedicationRequest.extension","medicationrequest-pharmacyOrderStatus","","",0,1,"","","","Extension {[CanonicalType[http://va.gov/fhir/StructureDefinition/medicationrequest-pharmacyOrderStatus]]} {[]}
+","Optional Extensions Element","Optional Extension Element - found in all resources.","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}","n/a","N/A"
+"MedicationRequest.extension:medicationrequest-pharmacyOrderStatus.id","MedicationRequest.extension.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"","","n/a"
-"MedicationRequest.extension.extension","MedicationRequest.extension.extension","","","",0,0,"","","","Extension {[]} {[]}
+"MedicationRequest.extension:medicationrequest-pharmacyOrderStatus.extension","MedicationRequest.extension.extension","","","",0,0,"","","","Extension {[]} {[]}
 ","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
 ","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"MedicationRequest.extension.url","MedicationRequest.extension.url","","","",1,1,"","","","uri {[]} {[]}
-","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","","","","","",,,,,"",,,,"Extension.url",1,1,"","","N/A"
-"MedicationRequest.extension.value[x]","MedicationRequest.extension.value[x]","","","",0,1,"","","","boolean {[]} {[]}
-Coding {[]} {[]}","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,,,,"","type:$this}
-","",,"closed","Extension.value[x]",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","N/A"
-"MedicationRequest.extension.value[x]:valueCoding","MedicationRequest.extension.value[x]","valueCoding","","",0,1,"","","","Coding {[]} {[]}
+"MedicationRequest.extension:medicationrequest-pharmacyOrderStatus.url","MedicationRequest.extension.url","","","",1,1,"","","","uri {[]} {[]}
+","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""http://va.gov/fhir/StructureDefinition/medicationrequest-pharmacyOrderStatus""/>","","","","",,,,,"",,,,"Extension.url",1,1,"","","N/A"
+"MedicationRequest.extension:medicationrequest-pharmacyOrderStatus.value[x]","MedicationRequest.extension.value[x]","","","",0,1,"","","","Coding {[]} {[]}
 ","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","N/A"
-"MedicationRequest.extension.value[x]:valueCoding.id","MedicationRequest.extension.value[x].id","","","",0,1,"","","","string {[]} {[]}
+"MedicationRequest.extension:medicationrequest-pharmacyOrderStatus.value[x].id","MedicationRequest.extension.value[x].id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"","","n/a"
-"MedicationRequest.extension.value[x]:valueCoding.extension","MedicationRequest.extension.value[x].extension","","extensions
+"MedicationRequest.extension:medicationrequest-pharmacyOrderStatus.value[x].extension","MedicationRequest.extension.value[x].extension","","extensions
 user content","",0,*,"","","","Extension {[]} {[]}
 ","Additional content defined by implementations","May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.","There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.","","","","","","","","",,,,,"","value:url}
 ","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}","n/a"
-"MedicationRequest.extension.value[x]:valueCoding.system","MedicationRequest.extension.value[x].system","","","",0,1,"","","Y","uri {[]} {[]}
+"MedicationRequest.extension:medicationrequest-pharmacyOrderStatus.value[x].system","MedicationRequest.extension.value[x].system","","","",0,1,"","","Y","uri {[]} {[]}
 ","Identity of the terminology system","The identification of the code system that defines the meaning of the symbol in the code.","The URI may be an OID (urn:oid:...) or a UUID (urn:uuid:...).  OIDs and UUIDs SHALL be references to the HL7 OID registry. Otherwise, the URI should come from HL7's list of FHIR defined special URIs or it should reference to some definition that establishes the system clearly and unambiguously.","Need to be unambiguous about the source of the definition of the symbol.","","","","","","","",,,,,"",,,,"Coding.system",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","./codeSystem","C*E.3"
-"MedicationRequest.extension.value[x]:valueCoding.version","MedicationRequest.extension.value[x].version","","","",0,1,"","","Y","string {[]} {[]}
+"MedicationRequest.extension:medicationrequest-pharmacyOrderStatus.value[x].version","MedicationRequest.extension.value[x].version","","","",0,1,"","","Y","string {[]} {[]}
 ","Version of the system - if relevant","The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured, and when the meaning is not guaranteed to be consistent, the version SHOULD be exchanged.","Where the terminology does not clearly define what string should be used to identify code system versions, the recommendation is to use the date (expressed in FHIR date format) on which that version was officially published as the version date.","","","","","","","","",,,,,"",,,,"Coding.version",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","./codeSystemVersion","C*E.7"
-"MedicationRequest.extension.value[x]:valueCoding.code","MedicationRequest.extension.value[x].code","","","",0,1,"Y","","Y","code {[]} {[]}
+"MedicationRequest.extension:medicationrequest-pharmacyOrderStatus.value[x].code","MedicationRequest.extension.value[x].code","","","",0,1,"Y","","Y","code {[]} {[]}
 ","Symbol in syntax defined by the system","A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination).","","Need to refer to a particular code in the system.","","","","","","","",,,,,"",,,,"Coding.code",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","./code","C*E.1","800: source value from PRESCRIPTION - STATUS (#52-100)","1707: source value from PRESCRIPTION - MAIL/WINDOW/PARK (#52-11)","RxOut.RxOutpat.RxStatus"
-"MedicationRequest.extension.value[x]:valueCoding.display","MedicationRequest.extension.value[x].display","","","",0,1,"","","Y","string {[]} {[]}
+"MedicationRequest.extension:medicationrequest-pharmacyOrderStatus.value[x].display","MedicationRequest.extension.value[x].display","","","",0,1,"","","Y","string {[]} {[]}
 ","Representation defined by the system","A representation of the meaning of the code in the system, following the rules of the system.","","Need to be able to carry a human-readable meaning of the code for readers that do not know  the system.","","","","","","","",,,,,"",,,,"Coding.display",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","CV.displayName","C*E.2 - but note this is not well followed"
-"MedicationRequest.extension.value[x]:valueCoding.userSelected","MedicationRequest.extension.value[x].userSelected","","","",0,1,"","","Y","boolean {[]} {[]}
+"MedicationRequest.extension:medicationrequest-pharmacyOrderStatus.value[x].userSelected","MedicationRequest.extension.value[x].userSelected","","","",0,1,"","","Y","boolean {[]} {[]}
 ","If this coding was chosen directly by the user","Indicates that this coding was chosen by a user directly - e.g. off a pick list of available items (codes or displays).","Amongst a set of alternatives, a directly chosen code is the most appropriate starting point for new translations. There is some ambiguity about what exactly 'directly chosen' implies, and trading partner agreement may be needed to clarify the use of this element and its consequences more completely.","This has been identified as a clinical safety criterium - that this exact system/code pair was chosen explicitly, rather than inferred by the system based on some rules or language processing.","","","","","","","",,,,,"",,,,"Coding.userSelected",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","CD.codingRationale","Sometimes implied by being first"
-"MedicationRequest.extension.value[x]:valueBoolean","MedicationRequest.extension.value[x]","valueBoolean","","",0,1,"Y","","","boolean {[]} {[]}
-","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","N/A","1706: transform using VF_Boolean on PRESCRIPTION - INDICATION FOR USE FLAG (#51-129)"
-"MedicationRequest.extension.value[x]:valueBoolean.id","MedicationRequest.extension.value[x].id","","","",0,1,"","","","string {[]} {[]}
-","xml:id (or equivalent in JSON)","unique id for the element within a resource (for internal references)","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"",""
-"MedicationRequest.extension.value[x]:valueBoolean.extension","MedicationRequest.extension.value[x].extension","","","",0,*,"","","","Extension {[]} {[]}
-","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
-","",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"MedicationRequest.extension.value[x]:valueBoolean.extension:11179-permitted-value-conceptmap","MedicationRequest.extension.value[x].extension","11179-permitted-value-conceptmap","","",0,1,"","","","Extension {[CanonicalType[http://hl7.org/fhir/StructureDefinition/11179-permitted-value-conceptmap]]} {[]}
-","Mapping from permitted to transmitted","Expresses the linkage between the internal codes used for storage and the codes used for exchange.","The permitted value set must have a 1..1 set of codes for each code in the value meaning value set.  The source for the concept map is the value set the extension appears on.  The target is the permitted-value-valueset.","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
+"MedicationRequest.extension:medicationrequest-cancelDate","MedicationRequest.extension","medicationrequest-cancelDate","","",0,1,"","","","Extension {[CanonicalType[http://va.gov/fhir/StructureDefinition/medicationrequest-cancelDate]]} {[]}
+","Optional Extensions Element","Optional Extension Element - found in all resources.","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}","N/A","N/A"
-"MedicationRequest.extension.value[x]:valueBoolean.extension:11179-permitted-value-conceptmap.id","MedicationRequest.extension.value[x].extension.id","","","",0,1,"","","","string {[]} {[]}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}","n/a","N/A"
+"MedicationRequest.extension:medicationrequest-cancelDate.id","MedicationRequest.extension.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"","","n/a"
-"MedicationRequest.extension.value[x]:valueBoolean.extension:11179-permitted-value-conceptmap.extension","MedicationRequest.extension.value[x].extension.extension","","","",0,0,"","","","Extension {[]} {[]}
+"MedicationRequest.extension:medicationrequest-cancelDate.extension","MedicationRequest.extension.extension","","","",0,0,"","","","Extension {[]} {[]}
 ","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
 ","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
-"MedicationRequest.extension.value[x]:valueBoolean.extension:11179-permitted-value-conceptmap.url","MedicationRequest.extension.value[x].extension.url","","","",1,1,"","","","uri {[]} {[]}
+"MedicationRequest.extension:medicationrequest-cancelDate.url","MedicationRequest.extension.url","","","",1,1,"","","","uri {[]} {[]}
+","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""http://va.gov/fhir/StructureDefinition/medicationrequest-cancelDate""/>","","","","",,,,,"",,,,"Extension.url",1,1,"","","N/A"
+"MedicationRequest.extension:medicationrequest-cancelDate.value[x]","MedicationRequest.extension.value[x]","","","",0,1,"Y","","","dateTime {[]} {[]}
+","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+","N/A","1704: source value from PRESCRIPTION - CANCEL DATE (#52-26.1)","RxOut.RxOutpat.CancelDate"
+"MedicationRequest.extension:medicationrequest-includeIndicationInSig","MedicationRequest.extension","medicationrequest-includeIndicationInSig","","",0,1,"","","","Extension {[CanonicalType[http://va.gov/fhir/StructureDefinition/medicationrequest-includeIndicationInSig]]} {[]}
+","Optional Extensions Element","Optional Extension Element - found in all resources.","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}","n/a","N/A"
+"MedicationRequest.extension:medicationrequest-includeIndicationInSig.id","MedicationRequest.extension.id","","","",0,1,"","","","string {[]} {[]}
+","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"","","n/a"
+"MedicationRequest.extension:medicationrequest-includeIndicationInSig.extension","MedicationRequest.extension.extension","","","",0,0,"","","","Extension {[]} {[]}
+","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
+","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"MedicationRequest.extension:medicationrequest-includeIndicationInSig.url","MedicationRequest.extension.url","","","",1,1,"","","","uri {[]} {[]}
+","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""http://va.gov/fhir/StructureDefinition/medicationrequest-includeIndicationInSig""/>","","","","",,,,,"",,,,"Extension.url",1,1,"","","N/A"
+"MedicationRequest.extension:medicationrequest-includeIndicationInSig.value[x]","MedicationRequest.extension.value[x]","","","",0,1,"Y","","","boolean {[]} {[]}
+","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+","N/A","1706: transform using VF_Boolean on PRESCRIPTION - INDICATION FOR USE FLAG (#51-129)"
+"MedicationRequest.extension:medicationrequest-includeIndicationInSig.value[x].id","MedicationRequest.extension.value[x].id","","","",0,1,"","","","string {[]} {[]}
+","xml:id (or equivalent in JSON)","unique id for the element within a resource (for internal references)","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"",""
+"MedicationRequest.extension:medicationrequest-includeIndicationInSig.value[x].extension","MedicationRequest.extension.value[x].extension","","","",0,*,"","","","Extension {[]} {[]}
+","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
+","",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"MedicationRequest.extension:medicationrequest-includeIndicationInSig.value[x].extension:11179-permitted-value-conceptmap","MedicationRequest.extension.value[x].extension","11179-permitted-value-conceptmap","","",0,1,"","","","Extension {[CanonicalType[http://hl7.org/fhir/StructureDefinition/11179-permitted-value-conceptmap]]} {[]}
+","Mapping from permitted to transmitted","Expresses the linkage between the internal codes used for storage and the codes used for exchange.","The permitted value set must have a 1..1 set of codes for each code in the value meaning value set.  The source for the concept map is the value set the extension appears on.  The target is the permitted-value-valueset.","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}","N/A","N/A"
+"MedicationRequest.extension:medicationrequest-includeIndicationInSig.value[x].extension:11179-permitted-value-conceptmap.id","MedicationRequest.extension.value[x].extension.id","","","",0,1,"","","","string {[]} {[]}
+","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"","","n/a"
+"MedicationRequest.extension:medicationrequest-includeIndicationInSig.value[x].extension:11179-permitted-value-conceptmap.extension","MedicationRequest.extension.value[x].extension.extension","","","",0,0,"","","","Extension {[]} {[]}
+","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
+","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"MedicationRequest.extension:medicationrequest-includeIndicationInSig.value[x].extension:11179-permitted-value-conceptmap.url","MedicationRequest.extension.value[x].extension.url","","","",1,1,"","","","uri {[]} {[]}
 ","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""http://hl7.org/fhir/StructureDefinition/11179-permitted-value-conceptmap""/>","","","","",,,,,"",,,,"Extension.url",1,1,"","","N/A"
-"MedicationRequest.extension.value[x]:valueBoolean.extension:11179-permitted-value-conceptmap.value[x]","MedicationRequest.extension.value[x].extension.value[x]","","","",1,1,"","","","canonical {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/ConceptMap]]}
+"MedicationRequest.extension:medicationrequest-includeIndicationInSig.value[x].extension:11179-permitted-value-conceptmap.value[x]","MedicationRequest.extension.value[x].extension.value[x]","","","",1,1,"","","","canonical {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/ConceptMap]]}
 ","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/extensibility.html) for a list).","","","","","","<valueCanonical xmlns=""http://hl7.org/fhir"" value=""http://va.gov/fhir/ConceptMap/CMVFBoolean""/>","","","",,,,,"",,,,"Extension.value[x]",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","N/A"
-"MedicationRequest.extension.value[x]:valueBoolean.value","MedicationRequest.extension.value[x].value","","","",0,1,"","","","boolean {[]} {[]}
+"MedicationRequest.extension:medicationrequest-includeIndicationInSig.value[x].value","MedicationRequest.extension.value[x].value","","","",0,1,"","","","boolean {[]} {[]}
 ","Primitive value for boolean","The actual value","","","","","","","","","",,,,,"",,,,"boolean.value",0,1,"",""
 "MedicationRequest.modifierExtension","MedicationRequest.modifierExtension","","extensions
 user content","",0,*,"","Y","","Extension {[]} {[]}

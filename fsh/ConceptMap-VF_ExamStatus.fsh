@@ -30,5 +30,4 @@ Usage: #definition
 * group[=].element[=].target.code = #preliminary
 * group[=].element[=].target.equivalence = #equivalent
 * group[=].element[+].code = #T
-* group[=].element[=].target.code = #null
-* group[=].element[=].target.equivalence = #equivalent
+* group[=].element[=].target.equivalence = #unmatched
