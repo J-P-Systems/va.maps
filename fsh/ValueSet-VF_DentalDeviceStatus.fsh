@@ -1,6 +1,5 @@
 ValueSet: VSVFDentalDeviceStatus
 Title: "VF_DentalDeviceStatus"
-Description: "Navigate to [ConceptMap VF_DentalDeviceStatus](ConceptMap-CMVFDentalDeviceStatus.html)\n\n> Note that the FHIR binding is to the codes in the fhir system. The codes from the VistADefinedElements system are map source codes: they may be included in addition to the fhir codes, but they don't address the binding requirement."
 * ^experimental = true
 * ^name = "VF_DentalDeviceStatus"
 * include http://hl7.org/fhir/device-status#entered-in-error "Entered in Error"

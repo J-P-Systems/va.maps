@@ -8,7 +8,7 @@ Usage: #definition
 * experimental = true
 * description = "Terminology Maps VF_VitalsMethod"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFVitalsMethod"
-* group[0].source = "http://va.gov/terminology/vistaDefinedElements/120.5-5"
+* group[0].source = "http://va.gov/terminology/vistaDefinedTerms/120.5-5"
 * group[=].target = "http://snomed.info/sct"
 * group[=].element[0].code = #4688634
 * group[=].element[=].display = "ACTUAL"

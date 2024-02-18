@@ -8,7 +8,7 @@ Usage: #definition
 * experimental = true
 * description = "Terminology Maps VF_allergyEnteredInError"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFallergyEnteredInError"
-* group[0].source = "http://va.gov/terminology/vistaDefinedElements/120.8-22"
+* group[0].source = "http://va.gov/terminology/vistaDefinedTerms/120.8-22"
 * group[=].target = "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification"
 * group[=].element[0].code = #1
 * group[=].element[=].display = "ENTERED IN ERROR - YES"

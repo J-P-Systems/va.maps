@@ -8,7 +8,7 @@ Usage: #definition
 * experimental = true
 * description = "Terminology Maps VF_allergyVerificationStatus"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFallergyVerificationStatus"
-* group[0].source = "http://va.gov/terminology/vistaDefinedElements/120.8-19"
+* group[0].source = "http://va.gov/terminology/vistaDefinedTerms/120.8-19"
 * group[=].target = "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification"
 * group[=].element[0].code = #0
 * group[=].element[=].display = "VERIFIED - NO"

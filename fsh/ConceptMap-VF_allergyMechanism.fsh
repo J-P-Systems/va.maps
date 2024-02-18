@@ -8,7 +8,7 @@ Usage: #definition
 * experimental = true
 * description = "Terminology Maps VF_allergyMechanism"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFallergyMechanism"
-* group[0].source = "http://va.gov/terminology/vistaDefinedElements/120.8-17"
+* group[0].source = "http://va.gov/terminology/vistaDefinedTerms/120.8-17"
 * group[=].target = "http://hl7.org/fhir/allergy-intolerance-type"
 * group[=].element[0].code = #A
 * group[=].element[=].display = "ALLERGY"

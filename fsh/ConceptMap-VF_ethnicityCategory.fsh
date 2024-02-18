@@ -8,7 +8,7 @@ Usage: #definition
 * experimental = true
 * description = "Terminology Maps VF_ethnicityCategory"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFethnicityCategory"
-* group[0].source = "http://va.gov/terminology/vistaDefinedElements/2-6"
+* group[0].source = "http://va.gov/terminology/vistaDefinedTerms/2-6"
 * group[=].target = "http://terminology.hl7.org/CodeSystem/v3-NullFlavor"
 * group[=].element[0].code = #_Unknown_at_this_time_
 * group[=].element[=].display = "*Unknown at this time*"
@@ -22,7 +22,7 @@ Usage: #definition
 * group[=].element[=].display = "UNKNOWN BY PATIENT"
 * group[=].element[=].target.code = #ASKU
 * group[=].element[=].target.equivalence = #wider
-* group[+].source = "http://va.gov/terminology/vistaDefinedElements/2-6"
+* group[+].source = "http://va.gov/terminology/vistaDefinedTerms/2-6"
 * group[=].target = "urn:oid:2.16.840.1.113883.6.238"
 * group[=].element[0].code = #H
 * group[=].element[=].display = "HISPANIC OR LATINO"

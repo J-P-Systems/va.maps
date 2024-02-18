@@ -8,7 +8,7 @@ Usage: #definition
 * experimental = true
 * description = "Terminology Maps VF_inferredCVX"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFinferredCVX"
-* group[0].source = "http://va.gov/terminology/vistaDefinedElements/9999999.14-.01"
+* group[0].source = "http://va.gov/terminology/vistaDefinedTerms/9999999.14-.01"
 * group[=].target = "http://hl7.org/fhir/sid/cvx"
 * group[=].element[0].code = #DECLINED_FLU_IMM__HISTORICAL_
 * group[=].element[=].display = "DECLINED FLU IMM (HISTORICAL)"

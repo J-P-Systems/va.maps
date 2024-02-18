@@ -8,7 +8,7 @@ Usage: #definition
 * experimental = true
 * description = "Terminology Maps VF_deviceTypePacemaker"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFdeviceTypePacemaker"
-* group[0].source = "http://va.gov/terminology/vistaDefinedElements/698.4-1"
+* group[0].source = "http://va.gov/terminology/vistaDefinedTerms/698.4-1"
 * group[=].target = "http://snomed.info/sct"
 * group[=].element[0].code = #A
 * group[=].element[=].display = "'A' FOR A LEAD;"

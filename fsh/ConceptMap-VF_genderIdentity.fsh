@@ -8,7 +8,7 @@ Usage: #definition
 * experimental = true
 * description = "Terminology Maps VF_genderIdentity"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFgenderIdentity"
-* group[0].source = "http://va.gov/terminology/vistaDefinedElements/2-.024"
+* group[0].source = "http://va.gov/terminology/vistaDefinedTerms/2-.024"
 * group[=].target = "http://hl7.org/fhir/administrative-gender"
 * group[=].element[0].code = #N
 * group[=].element[=].display = "DOES NOT WISH TO DISCLOSE"

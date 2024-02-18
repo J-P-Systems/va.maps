@@ -8,7 +8,7 @@ Usage: #definition
 * experimental = true
 * description = "Terminology Maps VF_RadiologyProcedureStatus"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFRadiologyProcedureStatus"
-* group[0].source = "http://va.gov/terminology/vistaDefinedElements/72-.01"
+* group[0].source = "http://va.gov/terminology/vistaDefinedTerms/72-.01"
 * group[=].target = "http://hl7.org/fhir/event-status"
 * group[=].element[0].code = #CALLED_FOR_EXAM
 * group[=].element[=].display = "CALLED FOR EXAM"

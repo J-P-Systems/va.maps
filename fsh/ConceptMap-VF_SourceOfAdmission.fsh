@@ -8,7 +8,7 @@ Usage: #definition
 * experimental = true
 * description = "Terminology Maps VF_SourceOfAdmission"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFSourceOfAdmission"
-* group[0].source = "http://va.gov/terminology/vistaDefinedElements/45.1-.01"
+* group[0].source = "http://va.gov/terminology/vistaDefinedTerms/45.1-.01"
 * group[=].target = "http://terminology.hl7.org/CodeSystem/admit-source"
 * group[=].element[0].code = #1K
 * group[=].element[=].display = "ALL OTHER NON VA HOSP NOT UNDER VA AUSPICES"

@@ -8,7 +8,7 @@ Usage: #definition
 * experimental = true
 * description = "Terminology Maps VF_Boolean"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFBoolean"
-* group[0].source = "http://va.gov/terminology/vistaDefinedElements/51-129"
+* group[0].source = "http://va.gov/terminology/vistaDefinedTerms/51-129"
 * group[=].element[0].code = #No
 * group[=].element[=].display = "No"
 * group[=].element[=].target.equivalence = #unmatched

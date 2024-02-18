@@ -1,6 +1,5 @@
 ValueSet: VSVFProcedureCodeSystem
 Title: "VF_ProcedureCodeSystem"
-Description: "Navigate to [ConceptMap VF_ProcedureCodeSystem](ConceptMap-CMVFProcedureCodeSystem.html)\n\n> Note that the FHIR binding is to the codes in the fhir system. The codes from the VistADefinedElements system are map source codes: they may be included in addition to the fhir codes, but they don't address the binding requirement."
 * ^experimental = true
 * ^name = "VF_ProcedureCodeSystem"
 * include urn:undefined#http://www.ama-assn.org/go/cpt 

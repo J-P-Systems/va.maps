@@ -8,7 +8,7 @@ Usage: #definition
 * experimental = true
 * description = "Terminology Maps VF_PractitionerCountry"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFPractitionerCountry"
-* group[0].source = "http://va.gov/terminology/vistaDefinedElements/200-.1215"
+* group[0].source = "http://va.gov/terminology/vistaDefinedTerms/200-.1215"
 * group[=].element[0].code = #ALABAMA
 * group[=].element[=].display = "ALABAMA"
 * group[=].element[=].target.code = #USA

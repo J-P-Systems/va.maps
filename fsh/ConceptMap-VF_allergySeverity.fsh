@@ -8,7 +8,7 @@ Usage: #definition
 * experimental = true
 * description = "Terminology Maps VF_allergySeverity"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFallergySeverity"
-* group[0].source = "http://va.gov/terminology/vistaDefinedElements/120.85-14.5"
+* group[0].source = "http://va.gov/terminology/vistaDefinedTerms/120.85-14.5"
 * group[=].target = "http://hl7.org/fhir/reaction-event-severity"
 * group[=].element[0].code = #1
 * group[=].element[=].display = "MILD"

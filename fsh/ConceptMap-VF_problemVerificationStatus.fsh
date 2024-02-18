@@ -8,7 +8,7 @@ Usage: #definition
 * experimental = true
 * description = "Terminology Maps VF_problemVerificationStatus"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFproblemVerificationStatus"
-* group[0].source = "http://va.gov/terminology/vistaDefinedElements/9000011-1.02"
+* group[0].source = "http://va.gov/terminology/vistaDefinedTerms/9000011-1.02"
 * group[=].target = "http://terminology.hl7.org/CodeSystem/condition-ver-status"
 * group[=].element[0].code = #H
 * group[=].element[=].display = "HIDDEN"

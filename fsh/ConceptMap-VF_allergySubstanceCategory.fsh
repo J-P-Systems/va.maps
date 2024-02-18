@@ -8,7 +8,7 @@ Usage: #definition
 * experimental = true
 * description = "Terminology Maps VF_allergySubstanceCategory"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFallergySubstanceCategory"
-* group[0].source = "http://va.gov/terminology/vistaDefinedElements/120.8-3.1"
+* group[0].source = "http://va.gov/terminology/vistaDefinedTerms/120.8-3.1"
 * group[=].target = "http://hl7.org/fhir/allergy-intolerance-category"
 * group[=].element[0].code = #D
 * group[=].element[=].display = "DRUG"
@@ -19,7 +19,7 @@ Usage: #definition
 * group[=].element[=].display = "FOOD"
 * group[=].element[=].target.code = #food
 * group[=].element[=].target.equivalence = #equal
-* group[+].source = "http://va.gov/terminology/vistaDefinedElements/120.8-3.1"
+* group[+].source = "http://va.gov/terminology/vistaDefinedTerms/120.8-3.1"
 * group[=].element[0].code = #O
 * group[=].element[=].display = "OTHER"
 * group[=].element[=].target.equivalence = #unmatched

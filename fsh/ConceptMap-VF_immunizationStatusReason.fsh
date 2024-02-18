@@ -8,7 +8,7 @@ Usage: #definition
 * experimental = true
 * description = "Terminology Maps VF_immunizationStatusReason"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFimmunizationStatusReason"
-* group[0].source = "http://va.gov/terminology/vistaDefinedElements/9999999.14-.01"
+* group[0].source = "http://va.gov/terminology/vistaDefinedTerms/9999999.14-.01"
 * group[=].target = "http://terminology.hl7.org/CodeSystem/v3-ActReason"
 * group[=].element[0].code = #DECLINED_FLU_IMM__HISTORICAL_
 * group[=].element[=].display = "DECLINED FLU IMM (HISTORICAL)"
