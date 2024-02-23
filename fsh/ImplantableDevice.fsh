@@ -4,7 +4,6 @@ Id: ImplantableDevice
 Title: "Implantable Device"
 Description: "This StructureDefinition contains the maps for VistA file undefined (#undefined) to us-core-implantable-device"
 * ^status = #draft
-* udiCarrier.deviceIdentifier and status and distinctIdentifier and manufactureDate and expirationDate and lotNumber and serialNumber and deviceName MS
 
 Mapping: vista-to-ImplantableDevice
 Id: vista

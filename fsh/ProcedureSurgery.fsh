@@ -5,6 +5,7 @@ Title: "Procedure: Surgery"
 Description: "This StructureDefinition contains the maps for VistA file SURGERY (#130) to us-core-procedure"
 * ^status = #draft
 * encounter and performedDateTime and subject and note and reasonCode.text and performedPeriod.start and performedPeriod.end and location and complication.coding.code and performer.actor and category.coding.code and code.text and code.coding and status MS
+* category.coding.code = #387713003
 
 Mapping: vista-to-ProcedureSurgery
 Id: vista
@@ -21,10 +22,10 @@ Source: ProcedureSurgery
 * performedPeriod.end -> "1293: source value from SURGERY - TIME OPERATION ENDS (#130-.23) case 130-118 NON-OR PROCEDURE != ‘Y’"
 * location -> "1294: reference from SURGERY - NON-OR LOCATION (#130-119) case 130-118 NON-OR PROCEDURE != ‘Y’"
 * location -> "1295: reference from SURGERY - OP ROOM PROCEDURE PERFORMED (#130-.02) case 130-118 NON-OR PROCEDURE == ‘Y’"
-* complication.coding.code -> "1296: fixed value = 88797001 when SURGERY - STOMA COMPLICATIONS (#130-688) case == ‘Y’"
-* complication.coding.code -> "1297: fixed value = 22298006 when SURGERY - MYOCARDIAL INFARCTION (#130-258) case == ‘Y’"
+* complication.coding.code -> "1296: fixed value = #88797001 when SURGERY - STOMA COMPLICATIONS (#130-688) case == ‘Y’"
+* complication.coding.code -> "1297: fixed value = #22298006 when SURGERY - MYOCARDIAL INFARCTION (#130-258) case == ‘Y’"
 * performer.actor -> "1298: reference from SURGERY - PERFUSIONIST (#130-.167)"
-* category.coding.code -> "1313: fixed value = 387713003"
+* category.coding.code -> "1313: fixed value = #387713003"
 * performer.actor -> "1330: reference from SURGERY - PRIMARY SURGEON (#130-.14)"
 * performer.actor -> "1331: reference from SURGERY - FIRST ASST (#130-.15)"
 * performer.actor -> "1332: reference from SURGERY - SECOND ASST (#130-.16)"

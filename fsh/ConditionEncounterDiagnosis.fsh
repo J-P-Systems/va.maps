@@ -5,6 +5,7 @@ Title: "Condition: Encounter Diagnosis"
 Description: "This StructureDefinition contains the maps for VistA file V POV (#9000010.07) to us-core-condition-encounter-diagnosis"
 * ^status = #draft
 * category and identifier.value and code and subject and encounter and onsetDateTime and recordedDate and clinicalStatus and verificationStatus MS
+* category = http://terminology.hl7.org/CodeSystem/condition-category#encounter-diagnosis
 * clinicalStatus from http://va.gov/fhir/ValueSet/VSVFencounterProblemStatus
 * verificationStatus from http://va.gov/fhir/ValueSet/VSVFencounterProblemVerificationStatus
 
@@ -12,7 +13,7 @@ Mapping: vista-to-ConditionEncounterDiagnosis
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: ConditionEncounterDiagnosis
-* category -> "1608: fixed value = http://terminology.hl7.org/CodeSystem/condition-category|encounter-diagnosis" "QA"
+* category -> "1608: fixed value = http://terminology.hl7.org/CodeSystem/condition-category#encounter-diagnosis"
 * identifier.value -> "346: source value from V POV - IEN (#9000010.07-.001)"
 * code -> "1613: source value from V POV - POV > ICD DIAGNOSIS (#9000010.07-.01 > 80-)"
 * subject -> "1611: reference from V POV - PATIENT NAME (#9000010.07-.02)"

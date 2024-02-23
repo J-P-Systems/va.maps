@@ -5,6 +5,8 @@ Title: "Procedure: Outpatient"
 Description: "This StructureDefinition contains the maps for VistA file V CPT (#9000010.18) to us-core-procedure"
 * ^status = #draft
 * subject and encounter and code.text and reasonCode and performedDateTime and performer.actor and note.text and category.coding.code and code.coding and status MS
+* category.coding.code = #371883000
+* status = #completed
 
 Mapping: vista-to-ProcedureOutpatient
 Id: vista
@@ -24,9 +26,9 @@ Source: ProcedureOutpatient
 * performedDateTime -> "1310: source value from V CPT - EVENT DATE AND TIME (#9000010.18-1201)"
 * performer.actor -> "1311: reference from V CPT - ENCOUNTER PROVIDER (#9000010.18-1204)"
 * note.text -> "1312: source value from V CPT - COMMENTS (#9000010.18-81101)"
-* category.coding.code -> "1314: fixed value = 371883000"
+* category.coding.code -> "1314: fixed value = #371883000"
 * code.coding -> "1413: source value from V CPT - CPT > CPT (#9000010.18-.01 > 81-)"
-* status -> "1539: fixed value = completed" "From the description of the file these look like completed procedures. Check with Jay."
+* status -> "1539: fixed value = #completed" "From the description of the file these look like completed procedures. Check with Jay."
 
 Mapping: cdw-to-ProcedureOutpatient
 Id: cdw

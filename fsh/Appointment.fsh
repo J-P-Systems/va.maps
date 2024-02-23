@@ -4,7 +4,7 @@ Id: Appointment
 Title: "Appointment"
 Description: "This StructureDefinition contains the maps for VistA file APPOINTMENT (#2.98) to Appointment"
 * ^status = #draft
-* status and cancelationReason.coding.code and serviceCategory.coding.code and serviceType.coding.code and specialty and appointmentType.coding.code and reasonCode and reasonReference and start and end and minutesDuration and created and participant.actor and comment MS
+* status and cancelationReason.coding.code and serviceCategory.coding.code and serviceType.coding.code and appointmentType.coding.code and start and end and minutesDuration and created and participant.actor and comment MS
 * status from http://va.gov/fhir/ValueSet/VSVFAppointmentStatus
 * participant.actor only Reference(http://hl7.org/fhir/StructureDefinition/Location)
 * participant.actor only Reference(http://hl7.org/fhir/StructureDefinition/Location)

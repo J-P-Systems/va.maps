@@ -9,6 +9,7 @@ Description: "This StructureDefinition contains the maps for VistA file PRESCRIP
 * extension contains http://va.gov/fhir/StructureDefinition/medicationrequest-includeIndicationInSig named medicationrequest-includeIndicationInSig 0..1
 * id and status and extension[http://va.gov/fhir/StructureDefinition/medicationrequest-pharmacyOrderStatus].valueCoding.code and intent and subject and requester and dispenseRequest.validityPeriod.end and extension[http://va.gov/fhir/StructureDefinition/medicationrequest-cancelDate].valueDateTime and dispenseRequest.numberOfRepeatsAllowed and dispenseRequest.quantity.value and dispenseRequest.expectedSupplyDuration and encounter and reasonCode.text and extension[http://va.gov/fhir/StructureDefinition/medicationrequest-includeIndicationInSig].valueBoolean MS
 * status from http://va.gov/fhir/ValueSet/VSVFOutMedRequestStatus
+* intent = #order
 * encounter only Reference(MedicationRequestOutpatientEncounter)
 * extension[http://va.gov/fhir/StructureDefinition/medicationrequest-includeIndicationInSig].valueBoolean.extension contains http://hl7.org/fhir/StructureDefinition/11179-permitted-value-conceptmap named 11179-permitted-value-conceptmap 0..1
 * extension[http://va.gov/fhir/StructureDefinition/medicationrequest-includeIndicationInSig].valueBoolean.extension[11179-permitted-value-conceptmap].valueCanonical = "http://va.gov/fhir/ConceptMap/CMVFBoolean"
@@ -20,7 +21,7 @@ Source: MedicationRequestOutpatientMedicationRequest
 * id -> "798: transform using ID_generation"
 * status -> "799: terminologyMaps using VF_OutMedRequestStatus on PRESCRIPTION - STATUS (#52-100)"
 * extension[http://va.gov/fhir/StructureDefinition/medicationrequest-pharmacyOrderStatus].valueCoding.code -> "800: source value from PRESCRIPTION - STATUS (#52-100)"
-* intent -> "801: fixed value = order" "All records from file 52 are orders"
+* intent -> "801: fixed value = #order" "All records from file 52 are orders"
 * subject -> "806: reference from PRESCRIPTION - PATIENT (#52-2)"
 * requester -> "808: reference from PRESCRIPTION - PROVIDER (#52-4)" "retrieve via order"
 * dispenseRequest.validityPeriod.end -> "815: source value from PRESCRIPTION - EXPIRATION DATE (#52-26)" "confirm"

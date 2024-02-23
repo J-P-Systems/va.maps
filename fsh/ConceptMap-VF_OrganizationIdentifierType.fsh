@@ -8,7 +8,7 @@ Usage: #definition
 * experimental = true
 * description = "Terminology Maps VF_OrganizationIdentifierType"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFOrganizationIdentifierType"
-* group[0].source = "http://www.va.gov/Terminology/VistADefinedTerms/36-6.01"
+* group[0].source = "http://va.gov/Terminology/VistADefinedTerms/36-6.01"
 * group[=].target = "urn:oid:2.16.840.1.113883.3.8901.3.1.36.68001"
 * group[=].element[0].code = #2U
 * group[=].element[=].display = "PAYER ID #"

@@ -7,6 +7,8 @@ Description: "This StructureDefinition contains the maps for VistA file V EXAM (
 * code.coding and subject and encounter and interpretation and valueQuantity.value and valueQuantity and note.text and effectiveDateTime and status and performer and category MS
 * interpretation.extension contains http://hl7.org/fhir/StructureDefinition/11179-permitted-value-conceptmap named 11179-permitted-value-conceptmap 0..1
 * interpretation.extension[11179-permitted-value-conceptmap].valueCanonical = "http://va.gov/fhir/ConceptMap/CMVFExamResultInterpretation"
+* status = #final
+* category = http://terminology.hl7.org/CodeSystem/observation-category#exam
 
 Mapping: vista-to-ObservationEXAM
 Id: vista
@@ -21,9 +23,9 @@ Source: ObservationEXAM
 * valueQuantity -> "1586: source value from V EXAM - UCUM CODE (#9000010.13-221)"
 * note.text -> "1587: source value from V EXAM - COMMENTS (#9000010.13-81101)"
 * effectiveDateTime -> "1588: source value from V EXAM - EVENT DATE AND TIME (#9000010.13-1201)"
-* status -> "1589: fixed value = final"
+* status -> "1589: fixed value = #final"
 * performer -> "1590: reference from V EXAM - ENCOUNTER PROVIDER (#9000010.13-1204)"
-* category -> "1591: fixed value = http://terminology.hl7.org/CodeSystem/observation-category|exam"
+* category -> "1591: fixed value = http://terminology.hl7.org/CodeSystem/observation-category#exam"
 
 Mapping: cdw-to-ObservationEXAM
 Id: cdw

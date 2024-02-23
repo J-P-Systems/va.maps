@@ -5,6 +5,7 @@ Title: "Condition: Problem"
 Description: "This StructureDefinition contains the maps for VistA file PROBLEM (#9000011) to us-core-condition-problems-health-concerns"
 * ^status = #draft
 * category and identifier.value and clinicalStatus and code and code.coding.code and code.text and subject and onsetDateTime and recordedDate and recorder and verificationStatus MS
+* category = http://terminology.hl7.org/CodeSystem/condition-category#problem-list-item
 * clinicalStatus from http://va.gov/fhir/ValueSet/VSVFproblemStatus
 * verificationStatus from http://va.gov/fhir/ValueSet/VSVFproblemVerificationStatus
 
@@ -12,7 +13,7 @@ Mapping: vista-to-ConditionProblem
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: ConditionProblem
-* category -> "1607: fixed value = http://terminology.hl7.org/CodeSystem/condition-category|problem-list-item when PROBLEM - . (#9000011-)" "QA"
+* category -> "1607: fixed value = http://terminology.hl7.org/CodeSystem/condition-category#problem-list-item when PROBLEM - . (#9000011-)"
 * identifier.value -> "345: source value from PROBLEM - IEN (#9000011-.001)"
 * clinicalStatus -> "349: transform using \"resolved\" on PROBLEM - DATE RESOLVED (#9000011-1.07) case Not Null" "dependency on 605?"
 * code -> "365: source value from PROBLEM - DIAGNOSIS > ICD DIAGNOSIS (#9000011-.01 > 80-)"

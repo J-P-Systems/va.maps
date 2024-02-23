@@ -5,12 +5,13 @@ Title: "Lab Observation Observation"
 Description: "This StructureDefinition contains the maps for VistA file PATIENT (#2) to us-core-observation-lab"
 * ^status = #draft
 * category.coding.code and subject MS
+* category.coding.code = #laboratory
 
 Mapping: vista-to-LabObservationObservation
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: LabObservationObservation
-* category.coding.code -> "843: fixed value = laboratory"
+* category.coding.code -> "843: fixed value = #laboratory"
 * subject -> "844: reference from PATIENT - LABORATORY REFERENCE > LAB DATA - LRDFN (#2-63 > 63-.01)" "Pointer from PATIENT (2)"
 
 Mapping: cdw-to-LabObservationObservation

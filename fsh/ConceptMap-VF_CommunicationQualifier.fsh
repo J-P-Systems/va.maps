@@ -8,7 +8,7 @@ Usage: #definition
 * experimental = true
 * description = "Terminology Maps VF_CommunicationQualifier"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFCommunicationQualifier"
-* group[0].source = "http://www.va.gov/Terminology/VistADefinedTerms/365.26-.04"
+* group[0].source = "http://va.gov/Terminology/VistADefinedTerms/365.26-.04"
 * group[=].target = "urn:oid:2.16.840.1.113883.3.8901.3.1.3658026.8004"
 * group[=].element[0].code = #EM
 * group[=].element[=].display = "Electronic Mail"

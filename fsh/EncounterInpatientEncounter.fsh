@@ -5,6 +5,7 @@ Title: "Encounter: Inpatient Encounter"
 Description: "This StructureDefinition contains the maps for VistA file PTF (#45) to us-core-encounter"
 * ^status = #draft
 * identifier.value and class and status and subject and participant.individual and period.start and period.end and reasonCode and diagnosis.condition and hospitalization.admitSource.coding.code and hospitalization.admitSource.coding and hospitalization.origin.display and hospitalization.destination.display and hospitalization.dischargeDisposition and location.location and serviceProvider and type MS
+* class = http://terminology.hl7.org/CodeSystem/v3-ActCode#IMP
 * diagnosis.condition only Reference(EncounterInpatientCondition)
 * hospitalization.admitSource.coding from http://va.gov/fhir/ValueSet/VSVFSourceOfAdmission
 
@@ -13,11 +14,11 @@ Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: EncounterInpatientEncounter
 * identifier.value -> "427: source value from PTF - NUMBER (#45-.001)" "MvdZ QA\nremoved use=IFN typo and split of class to new mapset row"
-* class -> "1601: fixed value = http://terminology.hl7.org/CodeSystem/v3-ActCode|IMP" "MvdZ QA"
+* class -> "1601: fixed value = http://terminology.hl7.org/CodeSystem/v3-ActCode#IMP"
 * identifier.value -> "428: source value from PTF - INTERNAL ADMISSION # (#45-2.1)"
 * status -> "433: transform using planned on PTF - ADMISSION DATE (#45-2) case null or > now"
 * status -> "434: transform using in-progress on PTF - ADMISSION DATE (#45-2) case not null, < now, field 70 null" "tweaked case logic 9/21"
-* status -> "435: fixed value = finished when PTF - DISCHARGE DATE (#45-70) case not null"
+* status -> "435: fixed value = #finished when PTF - DISCHARGE DATE (#45-70) case not null"
 * subject -> "441: source value from PTF - PATIENT (#45-.01)"
 * participant.individual -> "442: reference from PTF - PROVIDER (#45-79.1)" "MvdZ QA"
 * period.start -> "445: source value from PTF - ADMISSION DATE (#45-2)"

@@ -6,6 +6,8 @@ Description: "This StructureDefinition contains the maps for VistA file HOSPITAL
 * ^status = #draft
 * identifier.value and name and alias and status and description and telecom.value and managingOrganization.display and physicalType.text and address.state and address.district and address.line and address.city and address.postalCode and address.country and address.type and type.text MS
 * status from http://va.gov/fhir/ValueSet/VSVFLocationStatus
+* managingOrganization.display = "Veterans Administration"
+* address.type = #physical
 * type.text from http://va.gov/fhir/ValueSet/VSVFLocationStatus
 
 Mapping: vista-to-Location

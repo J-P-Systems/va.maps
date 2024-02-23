@@ -5,13 +5,14 @@ Title: "MedicationDispense: Partial"
 Description: "This StructureDefinition contains the maps for VistA file PRESCRIPTION (#52) to MedicationDispense"
 * ^status = #draft
 * type and destination.display and authorizingPrescription and daysSupply and dosageInstruction.doseAndRate.doseQuantity.unit and dosageInstruction.doseAndRate.doseQuantity.code and dosageInstruction.doseAndRate.doseQuantity.value and dosageInstruction.patientInstruction and dosageInstruction.text and location and medicationCodeableConcept.coding.code and medicationCodeableConcept.text and quantity.value and status and subject and whenHandedOver and whenPrepared and performer.actor and note.text MS
+* type = #PF
 * dosageInstruction.doseAndRate.doseQuantity.code from http://va.gov/fhir/ValueSet/VSVFDoseUnits
 
 Mapping: vista-to-MedicationDispensePartial
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: MedicationDispensePartial
-* type -> "1710: fixed value = PF"
+* type -> "1710: fixed value = #PF"
 * destination.display -> "1713: source value from PRESCRIPTION - PARTIAL DATE > PARTIAL DATE - MAIL/WINDOW (#52-60 > 52.2-.02)"
 * authorizingPrescription -> "1565: source value from PRESCRIPTION - PLACER ORDER # (#52-39.3)"
 * daysSupply -> "828: source value from PRESCRIPTION - PARTIAL DATE > PARTIAL DATE- DAYS SUPPLY (#52-60 > 52.2-.041)"
@@ -25,8 +26,8 @@ Source: MedicationDispensePartial
 * medicationCodeableConcept.coding.code -> "1573: source value from PRESCRIPTION - DRUG > DRUG - PSNDF VA PRODUCT NAME ENTRY (#52-6 > 50-22)"
 * medicationCodeableConcept.text -> "1572: source value from PRESCRIPTION - DRUG > DRUG - GENERIC NAME (#52-6 > 50-.01)" "This may not be necessary; we have the product."
 * quantity.value -> "1566: source value from PRESCRIPTION - PARTIAL DATE > PARTIAL DATE - QTY (#52-60 > 52.2-.04)"
-* status -> "1577: fixed value = completed when PRESCRIPTION - PARTIAL DATE > PARTIAL DATE - RELEASED DATE/TIME (#52-60 > 52.2-8) case not null"
-* status -> "1578: fixed value = in-progress when PRESCRIPTION - PARTIAL DATE > PARTIAL DATE - RELEASED DATE/TIME (#52-60 > 52.2-8) case null"
+* status -> "1577: fixed value = #completed when PRESCRIPTION - PARTIAL DATE > PARTIAL DATE - RELEASED DATE/TIME (#52-60 > 52.2-8) case not null"
+* status -> "1578: fixed value = #in-progress when PRESCRIPTION - PARTIAL DATE > PARTIAL DATE - RELEASED DATE/TIME (#52-60 > 52.2-8) case null"
 * subject -> "1563: reference from PRESCRIPTION - PATIENT (#52-2)"
 * whenHandedOver -> "834: source value from PRESCRIPTION - PARTIAL DATE > PARTIAL DATE - RELEASED DATE/TIME (#52-60 > 52.2-8)"
 * whenPrepared -> "831: source value from PRESCRIPTION - PARTIAL DATE > PARTIAL DATE - PARTIAL DATE (#52-60 > 52.2-.01)"

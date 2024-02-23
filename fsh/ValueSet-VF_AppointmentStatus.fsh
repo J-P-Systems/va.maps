@@ -11,8 +11,6 @@ Title: "VF_AppointmentStatus"
 * include http://va.gov/terminology/vistaDefinedTerms/2.98-3#PC 
 * include http://va.gov/terminology/vistaDefinedTerms/2.98-3#PCA 
 * include http://hl7.org/fhir/appointmentstatus#booked 
-* include http://va.gov/terminology/vistaDefinedTerms/2.98-3#I,_NT,_Null;_Null_check-in_date_(44.003-309),_null_check-out_date_(44.003-303) 
+* include http://va.gov/terminology/vistaDefinedTerms/2.98-3#I,_NT,_Null 
 * include http://hl7.org/fhir/appointmentstatus#arrived 
-* include http://va.gov/terminology/vistaDefinedTerms/2.98-3#I,_NT,_Null;_Non-null_check-in_date_(44.003-309),_null_check-out_date_(44.003-303) 
 * include http://hl7.org/fhir/appointmentstatus#fulfilled 
-* include http://va.gov/terminology/vistaDefinedTerms/2.98-3#I,_NT,_Null;_Non-null_check-in_date_(44.003-309),_non-null_check-out_date_(44.003-303) 
