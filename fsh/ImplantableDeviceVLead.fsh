@@ -12,8 +12,8 @@ Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: ImplantableDeviceVLead
 * identifier.value -> "1351: source value from V LEAD IMPLANT - IEN (#698.1-.001)"
-* status -> "1360: transform using \"active\" on V LEAD IMPLANT - EXPLANT DATE (#698.1-56) case is NULL" "If NULL, can it be assumed it is active?"
-* status -> "1361: transform using \"inactive\" on V LEAD IMPLANT - EXPLANT DATE (#698.1-56) case is not NULL"
+* status -> "1360: transform using #active on V LEAD IMPLANT - EXPLANT DATE (#698.1-56) case is NULL" "If NULL, can it be assumed it is active?"
+* status -> "1361: transform using #inactive on V LEAD IMPLANT - EXPLANT DATE (#698.1-56) case is not NULL"
 * manufacturer -> "1369: source value from V LEAD IMPLANT - V LEAD MANUFACTURER > PACEMAKER MANUFACTURER - NAME (#698.1-3 > 698.6-.01)"
 * serialNumber -> "1383: source value from V LEAD - V LEAD SERIAL NUMBER (#698.1-4)"
 * modelNumber -> "1391: source value from V LEAD IMPLANT - V LEAD MODEL > PACEMAKER EQUIPMENT - MODEL NUMBER/NAME (#698.1-2 > 698.4-.01)"

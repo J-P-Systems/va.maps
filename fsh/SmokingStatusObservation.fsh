@@ -4,7 +4,7 @@ Id: SmokingStatusObservation
 Title: "Smoking Status Observation"
 Description: "This StructureDefinition contains the maps for VistA file V HEALTH FACTORS (#9000010.23) to us-core-smokingstatus"
 * ^status = #draft
-* identifier.value and status and category.coding.code and code.coding.code and subject and encounter and effectiveDateTime and performer and valueCodeableConcept and note.text MS
+* identifier.value and status and category.coding.code and code.coding and subject and encounter and effectiveDateTime and performer and valueCodeableConcept and note.text MS
 * status = #final
 * category.coding.code = #social-history
 * valueCodeableConcept from http://va.gov/fhir/ValueSet/VSVFSmokingStatus
@@ -16,7 +16,7 @@ Source: SmokingStatusObservation
 * identifier.value -> "1241: source value from V HEALTH FACTORS - IEN (#9000010.23-.001)"
 * status -> "1242: fixed value = #final"
 * category.coding.code -> "1243: fixed value = #social-history"
-* code.coding.code -> "1244: transform using \"72166-2\" on HEALTH FACTORS - CATEGORY (#9999999.64-.03) case TOBACCO"
+* code.coding -> "1244: transform using http://loinc.org#72166-2 on HEALTH FACTORS - CATEGORY (#9999999.64-.03) case TOBACCO"
 * subject -> "1245: reference from V HEALTH FACTOR - PATIENT NAME (#9000010.23-.02)"
 * encounter -> "1246: reference from V HEALTH FACTOR - VISIT (#9000010.23-.03)"
 * effectiveDateTime -> "1247: source value from V HEALTH FACTOR - EVENT DATE AND TIME (#9000010.23-1201)"
@@ -28,7 +28,7 @@ Mapping: cdw-to-SmokingStatusObservation
 Id: cdw
 Title: "Clinical Data Warehouse (CDW)"
 Source: SmokingStatusObservation
-* code.coding.code -> "Dim.HealthFactorType.CategoryHealthFactorTypeIEN"
+* code.coding -> "Dim.HealthFactorType.CategoryHealthFactorTypeIEN"
 * encounter -> "HF.HealthFactor.VisitDateTime"
 * effectiveDateTime -> "HF.HealthFactor.EventDateTime"
 * note.text -> "HF.HealthFactor.Comments"

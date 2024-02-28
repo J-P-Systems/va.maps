@@ -28,12 +28,27 @@ Usage: #definition
 * group[=].element[+].code = #PCA
 * group[=].element[=].target.code = #cancelled
 * group[=].element[=].target.equivalence = #equivalent
-* group[=].element[+].code = #I,_NT,_Null
+
+* group[=].element[+].code = #I,NT,Null
 * group[=].element[=].target.code = #booked
 * group[=].element[=].target.equivalence = #equivalent
-* group[=].element[+].code = #I,_NT,_Null
+* group[=].element[=].target.dependsOn[+].property = "http://va.gov/terminology/vistaDefinedElements/44.003_309_CHECKED_IN"
+* group[=].element[=].target.dependsOn[=].value = "null"
+* group[=].element[=].target.dependsOn[+].property = "http://va.gov/terminology/vistaDefinedElements/44.003_303_CHECKED_OUT"
+* group[=].element[=].target.dependsOn[=].value = "null"
+
+* group[=].element[+].code = #I,NT,Null
 * group[=].element[=].target.code = #arrived
 * group[=].element[=].target.equivalence = #equivalent
-* group[=].element[+].code = #I,_NT,_Null
-* group[=].element[=].target.code = #fulfilled
+* group[=].element[=].target.dependsOn[+].property = "http://va.gov/terminology/vistaDefinedElements/44.003_309_CHECKED_IN"
+* group[=].element[=].target.dependsOn[=].value = "not null"
+* group[=].element[=].target.dependsOn[+].property = "http://va.gov/terminology/vistaDefinedElements/44.003_303_CHECKED_OUT"
+* group[=].element[=].target.dependsOn[=].value = "null"
+
+* group[=].element[+].code = #I,NT,Null
+* group[=].element[=].target.code = #fullfilled
 * group[=].element[=].target.equivalence = #equivalent
+* group[=].element[=].target.dependsOn[+].property = "http://va.gov/terminology/vistaDefinedElements/44.003_309_CHECKED_IN"
+* group[=].element[=].target.dependsOn[=].value = "not null"
+* group[=].element[=].target.dependsOn[+].property = "http://va.gov/terminology/vistaDefinedElements/44.003_303_CHECKED_OUT"
+* group[=].element[=].target.dependsOn[=].value = "not null"

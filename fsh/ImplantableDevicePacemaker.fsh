@@ -12,8 +12,8 @@ Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: ImplantableDevicePacemaker
 * identifier.value -> "1349: source value from GENERATOR IMPLANT - IEN (#698-.001)"
-* status -> "1356: transform using \"active\" on GENERATOR IMPLANT - EXPLANT DATE (#698-96) case is NULL" "If NULL, can it be assumed it is active?"
-* status -> "1357: transform using \"inactive\" on GENERATOR IMPLANT - EXPLANT DATE (#698-96) case is not NULL"
+* status -> "1356: transform using #active on GENERATOR IMPLANT - EXPLANT DATE (#698-96) case is NULL" "If NULL, can it be assumed it is active?"
+* status -> "1357: transform using #inactive on GENERATOR IMPLANT - EXPLANT DATE (#698-96) case is not NULL"
 * manufacturer -> "1366: source value from GENERATOR IMPLANT - PACEMAKER MANUFACTURER > PACEMAKER MANUFACTURER - NAME (#698-3 > 698.6-.01)"
 * serialNumber -> "1380: source value from GENERATOR IMPLANT - PACEMAKER SERIAL NUMBER (#698-4)" "Do not use with the Transmitter use case; use transmitter serial number if it has its own."
 * modelNumber -> "1388: source value from GENERATOR IMPLANT - PACEMAKER MODEL > PACEMAKER EQUIPMENT - MODEL NUMBER/NAME (#698-2 > 698.4-.01)"
