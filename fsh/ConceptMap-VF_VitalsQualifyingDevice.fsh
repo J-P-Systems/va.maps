@@ -8,7 +8,7 @@ Usage: #definition
 * experimental = true
 * description = "Terminology Maps VF_VitalsQualifyingDevice"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFVitalsQualifyingDevice"
-* group[0].source = "urn:undefined"
+* group[0].source = "http://terminology.hl7.org/CodeSystem/VHA"
 * group[=].target = "http://snomed.info/sct"
 * group[=].element[0].code = #4688635
 * group[=].element[=].display = "AEROSOL/HUMIDIFIED MASK"

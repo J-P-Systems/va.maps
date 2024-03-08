@@ -8,7 +8,7 @@ Usage: #definition
 * experimental = true
 * description = "Terminology Maps VF_VitalsBodySite"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFVitalsBodySite"
-* group[0].source = "urn:undefined"
+* group[0].source = "http://terminology.hl7.org/CodeSystem/VHA"
 * group[=].target = "http://snomed.info/sct"
 * group[=].element[0].code = #4688633
 * group[=].element[=].display = "ABDOMINAL"

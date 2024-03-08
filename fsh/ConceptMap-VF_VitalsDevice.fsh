@@ -8,7 +8,7 @@ Usage: #definition
 * experimental = true
 * description = "Terminology Maps VF_VitalsDevice"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFVitalsDevice"
-* group[0].source = "http://va.gov/terminology/vistaDefinedTerms/120.5-5"
+* group[0].source = "http://terminology.hl7.org/CodeSystem/VHA"
 * group[=].target = "http://snomed.info/sct"
 * group[=].element[0].code = #4688641
 * group[=].element[=].display = "BED"

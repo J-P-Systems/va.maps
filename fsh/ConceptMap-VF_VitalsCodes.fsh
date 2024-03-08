@@ -8,7 +8,7 @@ Usage: #definition
 * experimental = true
 * description = "Terminology Maps VF_VitalsCodes"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFVitalsCodes"
-* group[0].source = "http://va.gov/terminology/vistaDefinedTerms/120.5-.03"
+* group[0].source = "http://terminology.hl7.org/CodeSystem/VHA"
 * group[=].target = "http://loinc.org"
 * group[=].element[0].code = #4688718
 * group[=].element[=].display = "AUDIOMETRY"
