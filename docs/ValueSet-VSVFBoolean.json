@@ -3,15 +3,15 @@
   "id" : "VSVFBoolean",
   "text" : {
     "status" : "generated",
-    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>This value set includes codes based on the following rules:</p><ul><li>Include these codes as defined in <code>http://va.gov/terminology/vistaDefinedTerms/51-129</code><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b><a href=\"ConceptMap-CMVFBoolean.html\">VF_Boolean</a></b></td></tr><tr><td>No</td><td>No</td><td/></tr><tr><td>1</td><td>Yes</td><td><span title=\"EQUIVALENT\">~</span>true</td></tr></table></li><li>Include these codes as defined in <code>urn:undefined</code><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b><a href=\"ConceptMap-CMVFBoolean.html\">VF_Boolean</a></b></td></tr><tr><td>true</td><td/><td/></tr></table></li></ul></div>"
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>This value set includes codes based on the following rules:</p><ul><li>Include these codes as defined in <code>http://hl7.org/fhir/StructureDefinition/boolean</code><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b><a href=\"ConceptMap-CMVFBoolean.html\">VF_Boolean</a></b></td></tr><tr><td>false</td><td/><td/></tr><tr><td>true</td><td/><td/></tr></table></li><li>Include these codes as defined in <code>http://va.gov/terminology/vistaDefinedTerms/51-129</code><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b><a href=\"ConceptMap-CMVFBoolean.html\">VF_Boolean</a></b></td></tr><tr><td>0</td><td>No</td><td><span title=\"EQUIVALENT\">~</span>false</td></tr><tr><td>1</td><td>Yes</td><td><span title=\"EQUIVALENT\">~</span>true</td></tr></table></li></ul></div>"
   },
   "url" : "http://va.gov/fhir/ValueSet/VSVFBoolean",
-  "version" : "0.24.0",
+  "version" : "0.26.0",
   "name" : "VF_Boolean",
   "title" : "VF_Boolean",
   "status" : "draft",
   "experimental" : true,
-  "date" : "2024-02-28T12:35:36+00:00",
+  "date" : "2024-03-08T13:22:05+00:00",
   "publisher" : "VA",
   "contact" : [{
     "name" : "VA",
@@ -20,6 +20,7 @@
       "value" : "https://www.va.gov"
     }]
   }],
+  "description" : "ValueSet for terminology map VF_Boolean",
   "jurisdiction" : [{
     "coding" : [{
       "system" : "urn:iso:std:iso:3166",
@@ -29,20 +30,23 @@
   }],
   "compose" : {
     "include" : [{
+      "system" : "http://hl7.org/fhir/StructureDefinition/boolean",
+      "concept" : [{
+        "code" : "false"
+      },
+      {
+        "code" : "true"
+      }]
+    },
+    {
       "system" : "http://va.gov/terminology/vistaDefinedTerms/51-129",
       "concept" : [{
-        "code" : "No",
+        "code" : "0",
         "display" : "No"
       },
       {
         "code" : "1",
         "display" : "Yes"
-      }]
-    },
-    {
-      "system" : "urn:undefined",
-      "concept" : [{
-        "code" : "true"
       }]
     }]
   }

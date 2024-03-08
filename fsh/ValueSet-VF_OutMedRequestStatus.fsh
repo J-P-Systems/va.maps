@@ -1,5 +1,6 @@
 ValueSet: VSVFOutMedRequestStatus
 Title: "VF_OutMedRequestStatus"
+Description: "ValueSet for Terminology Maps VF_OutMedRequestStatus"
 * ^experimental = true
 * ^name = "VF_OutMedRequestStatus"
 * include http://hl7.org/fhir/CodeSystem/medicationrequest-status#active "active"

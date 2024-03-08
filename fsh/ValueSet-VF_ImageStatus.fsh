@@ -1,5 +1,6 @@
 ValueSet: VSVFImageStatus
 Title: "VF_ImageStatus"
+Description: "ValueSet for Terminology Maps VF_ImageStatus"
 * ^experimental = true
 * ^name = "VF_ImageStatus"
 * include http://hl7.org/fhir/observation-status#preliminary "Preliminary"

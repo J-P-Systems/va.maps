@@ -1,5 +1,6 @@
 ValueSet: VSVFallergySubstanceCategory
 Title: "VF_allergySubstanceCategory"
+Description: "ValueSet for Terminology Maps VF_allergySubstanceCategory"
 * ^experimental = true
 * ^name = "VF_allergySubstanceCategory"
 * include http://hl7.org/fhir/allergy-intolerance-category#medication "medication"

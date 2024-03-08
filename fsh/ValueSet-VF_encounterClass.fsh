@@ -1,5 +1,6 @@
 ValueSet: VSVFencounterClass
 Title: "VF_encounterClass"
+Description: "ValueSet for Terminology Maps VF_encounterClass"
 * ^experimental = true
 * ^name = "VF_encounterClass"
 * include http://terminology.hl7.org/CodeSystem/v3-ActCode#IMP "inpatient encounter"

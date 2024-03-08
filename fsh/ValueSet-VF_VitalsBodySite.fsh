@@ -1,5 +1,6 @@
 ValueSet: VSVFVitalsBodySite
 Title: "VF_VitalsBodySite"
+Description: "ValueSet for Terminology Maps VF_VitalsBodySite"
 * ^experimental = true
 * ^name = "VF_VitalsBodySite"
 * include http://snomed.info/sct#818983003 "Abdomen (body structure)"

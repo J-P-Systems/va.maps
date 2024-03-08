@@ -1,5 +1,6 @@
 ValueSet: VSVFdocumentReferencedocStatus
 Title: "VF_documentReferencedocStatus"
+Description: "ValueSet for Terminology Maps VF_documentReferencedocStatus"
 * ^experimental = true
 * ^name = "VF_documentReferencedocStatus"
 * include urn:undefined#preliminary 

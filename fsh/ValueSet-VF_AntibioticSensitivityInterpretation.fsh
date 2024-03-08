@@ -1,5 +1,6 @@
 ValueSet: VSVFAntibioticSensitivityInterpretation
 Title: "VF_AntibioticSensitivityInterpretation"
+Description: "ValueSet for Terminology Maps VF_AntibioticSensitivityInterpretation"
 * ^experimental = true
 * ^name = "VF_AntibioticSensitivityInterpretation"
 * include http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#I "Intermediate"

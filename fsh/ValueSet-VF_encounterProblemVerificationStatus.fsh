@@ -1,5 +1,6 @@
 ValueSet: VSVFencounterProblemVerificationStatus
 Title: "VF_encounterProblemVerificationStatus"
+Description: "ValueSet for Terminology Maps VF_encounterProblemVerificationStatus"
 * ^experimental = true
 * ^name = "VF_encounterProblemVerificationStatus"
 * include http://terminology.hl7.org/CodeSystem/condition-ver-status#provisional 

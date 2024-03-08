@@ -1,5 +1,6 @@
 ValueSet: VSVistaNCPDPCoverageRelationship
 Title: "Vista_NCPDPCoverageRelationship"
+Description: "ValueSet for Terminology Maps Vista_NCPDPCoverageRelationship"
 * ^experimental = true
 * ^name = "Vista_NCPDPCoverageRelationship"
 * include urn:undefined#not_specified 

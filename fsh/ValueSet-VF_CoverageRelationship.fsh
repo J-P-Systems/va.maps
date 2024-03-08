@@ -1,5 +1,6 @@
 ValueSet: VSVFCoverageRelationship
 Title: "VF_CoverageRelationship"
+Description: "ValueSet for Terminology Maps VF_CoverageRelationship"
 * ^experimental = true
 * ^name = "VF_CoverageRelationship"
 * include http://terminology.hl7.org/CodeSystem/subscriber-relationship#self "Self"

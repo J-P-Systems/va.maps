@@ -1,5 +1,6 @@
 ValueSet: VSVFVitalsDevice
 Title: "VF_VitalsDevice"
+Description: "ValueSet for Terminology Maps VF_VitalsDevice"
 * ^experimental = true
 * ^name = "VF_VitalsDevice"
 * include http://snomed.info/sct#466289007 "Bed scale (physical object)"

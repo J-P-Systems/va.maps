@@ -1,5 +1,6 @@
 ValueSet: VSVFVitalsMethod
 Title: "VF_VitalsMethod"
+Description: "ValueSet for Terminology Maps VF_VitalsMethod"
 * ^experimental = true
 * ^name = "VF_VitalsMethod"
 * include http://snomed.info/sct#258104002 "Measured (qualifier value)"

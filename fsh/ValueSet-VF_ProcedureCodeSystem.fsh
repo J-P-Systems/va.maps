@@ -1,5 +1,6 @@
 ValueSet: VSVFProcedureCodeSystem
 Title: "VF_ProcedureCodeSystem"
+Description: "ValueSet for Terminology Maps VF_ProcedureCodeSystem"
 * ^experimental = true
 * ^name = "VF_ProcedureCodeSystem"
 * include urn:undefined#http://www.ama-assn.org/go/cpt 

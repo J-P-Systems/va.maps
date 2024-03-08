@@ -1,5 +1,6 @@
 ValueSet: VSVFVitalsUnits
 Title: "VF_VitalsUnits"
+Description: "ValueSet for Terminology Maps VF_VitalsUnits"
 * ^experimental = true
 * ^name = "VF_VitalsUnits"
 * include urn:undefined#<omit_code> 

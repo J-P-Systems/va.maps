@@ -1,5 +1,6 @@
 ValueSet: VSVFVitalsPosition
 Title: "VF_VitalsPosition"
+Description: "ValueSet for Terminology Maps VF_VitalsPosition"
 * ^experimental = true
 * ^name = "VF_VitalsPosition"
 * include http://snomed.info/sct#102536004 "Left lateral decubitus position (finding)"

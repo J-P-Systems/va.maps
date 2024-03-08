@@ -1,5 +1,6 @@
 ValueSet: VSVFallergyVerificationStatus
 Title: "VF_allergyVerificationStatus"
+Description: "ValueSet for Terminology Maps VF_allergyVerificationStatus"
 * ^experimental = true
 * ^name = "VF_allergyVerificationStatus"
 * include http://terminology.hl7.org/CodeSystem/allergyintolerance-verification#unconfirmed "unconfirmed"

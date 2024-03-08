@@ -1,5 +1,6 @@
 ValueSet: VSVFImageStatusRadNuc
 Title: "VF_ImageStatusRadNuc"
+Description: "ValueSet for Terminology Maps VF_ImageStatusRadNuc"
 * ^experimental = true
 * ^name = "VF_ImageStatusRadNuc"
 * include http://hl7.org/fhir/observation-status#cancelled "Cancelled"

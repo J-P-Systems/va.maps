@@ -1,5 +1,6 @@
 ValueSet: VSVFPersonIdentifierType
 Title: "VF_PersonIdentifierType"
+Description: "ValueSet for Terminology Maps VF_PersonIdentifierType"
 * ^experimental = true
 * ^name = "VF_PersonIdentifierType"
 * include http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBIdentifierType#pat "Account number"

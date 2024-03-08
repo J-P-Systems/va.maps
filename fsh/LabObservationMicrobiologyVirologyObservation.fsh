@@ -10,7 +10,7 @@ Mapping: vista-to-LabObservationMicrobiologyVirologyObservation
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: LabObservationMicrobiologyVirologyObservation
-* code -> "1529: fixed value without value? when MICROBIOLOGY - ORDERED TEST > ORDERED TEST - LAB TEST ORDERED > LABORATORY TEST - SITE/SPECIMEN > SITE/SPECIMEN - LOINC CODE > LAB LOINC (#63.05-.35 > 63.5-13 > 60-100 > 60.01-95.03 > 95.03-) case NULL"
+* code -> "1529: fixed value = http://loinc.org#42808-6 Virus identified in Isolate when MICROBIOLOGY - ORDERED TEST > ORDERED TEST - LAB TEST ORDERED > LABORATORY TEST - SITE/SPECIMEN > SITE/SPECIMEN - LOINC CODE > LAB LOINC (#63.05-.35 > 63.5-13 > 60-100 > 60.01-95.03 > 95.03-) case NULL"
 * status -> "1492: terminologyMaps using null on MICROBIOLOGY - VIROLOGY REPORT STATUS (#63.05-34)"
 
 Mapping: cdw-to-LabObservationMicrobiologyVirologyObservation

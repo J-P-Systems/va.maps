@@ -1,5 +1,6 @@
 ValueSet: VSVFImmunizationReaction
 Title: "VF_ImmunizationReaction"
+Description: "ValueSet for Terminology Maps VF_ImmunizationReaction"
 * ^experimental = true
 * ^name = "VF_ImmunizationReaction"
 * include http://snomed.info/sct#293104008 "Adverse reaction to component of vaccine product (disorder)"
@@ -21,4 +22,4 @@ Title: "VF_ImmunizationReaction"
 * include http://snomed.info/sct#422400008 "Vomiting (disorder)"
 * include http://va.gov/terminology/vistaDefinedElements/9000010.11-.06#4 "VOMITING"
 * include http://loinc.org#LA137-2 "None"
-* include http://va.gov/terminology/vistaDefinedElements/9000010.11-.06#NONE "NONE"
+* include http://va.gov/terminology/vistaDefinedElements/9000010.11-.06#0 "NONE"

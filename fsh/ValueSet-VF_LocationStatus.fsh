@@ -1,5 +1,6 @@
 ValueSet: VSVFLocationStatus
 Title: "VF_LocationStatus"
+Description: "ValueSet for Terminology Maps VF_LocationStatus"
 * ^experimental = true
 * ^name = "VF_LocationStatus"
 * include http://hl7.org/fhir/location-status#active "Active"

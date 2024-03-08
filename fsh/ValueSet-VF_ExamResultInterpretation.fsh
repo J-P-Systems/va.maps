@@ -1,5 +1,6 @@
 ValueSet: VSVFExamResultInterpretation
 Title: "VF_ExamResultInterpretation"
+Description: "ValueSet for Terminology Maps VF_ExamResultInterpretation"
 * ^experimental = true
 * ^name = "VF_ExamResultInterpretation"
 * include http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#A "Abnormal"

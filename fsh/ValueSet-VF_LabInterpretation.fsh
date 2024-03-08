@@ -1,5 +1,6 @@
 ValueSet: VSVFLabInterpretation
 Title: "VF_LabInterpretation"
+Description: "ValueSet for Terminology Maps VF_LabInterpretation"
 * ^experimental = true
 * ^name = "VF_LabInterpretation"
 * include http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#H "High"

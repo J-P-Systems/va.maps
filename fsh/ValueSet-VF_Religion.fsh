@@ -1,5 +1,6 @@
 ValueSet: VSVFReligion
 Title: "VF_Religion"
+Description: "ValueSet for Terminology Maps VF_Religion"
 * ^experimental = true
 * ^name = "VF_Religion"
 * include http://terminology.hl7.org/CodeSystem/v3-ReligiousAffiliation#1001 "Adventist"

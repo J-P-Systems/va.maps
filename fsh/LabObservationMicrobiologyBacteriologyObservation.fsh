@@ -10,7 +10,7 @@ Mapping: vista-to-LabObservationMicrobiologyBacteriologyObservation
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: LabObservationMicrobiologyBacteriologyObservation
-* code -> "1525: fixed value without value? when MICROBIOLOGY - ORDERED TEST > ORDERED TEST - LAB TEST ORDERED > LABORATORY TEST - SITE/SPECIMEN > SITE/SPECIMEN - LOINC CODE > LAB LOINC (#63.05-.35 > 63.5-13 > 60-100 > 60.01-95.03 > 95.03-) case NULL"
+* code -> "1525: fixed value = http://loinc.org#42803-7 Bacteria identified in Isolate when MICROBIOLOGY - ORDERED TEST > ORDERED TEST - LAB TEST ORDERED > LABORATORY TEST - SITE/SPECIMEN > SITE/SPECIMEN - LOINC CODE > LAB LOINC (#63.05-.35 > 63.5-13 > 60-100 > 60.01-95.03 > 95.03-) case NULL"
 * status -> "1488: terminologyMaps using null on MICROBIOLOGY - BACT RPT STATUS (#63.05-11.5)"
 * valueCodeableConcept.coding -> "1516: terminologyMaps using null on MICROBIOLOGY - URINE SCREEN (#63.05-11.57)"
 * valueString -> "1517: source value from MICROBIOLOGY - SPUTUM SCREEN (#63.05-11.58)"

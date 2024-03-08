@@ -1,5 +1,6 @@
 ValueSet: VSVFdeviceTypePacemaker
 Title: "VF_deviceTypePacemaker"
+Description: "ValueSet for Terminology Maps VF_deviceTypePacemaker"
 * ^experimental = true
 * ^name = "VF_deviceTypePacemaker"
 * include http://snomed.info/sct#360129009 "Cardiac pacemaker lead (physical object)"

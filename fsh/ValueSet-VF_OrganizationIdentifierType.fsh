@@ -1,5 +1,6 @@
 ValueSet: VSVFOrganizationIdentifierType
 Title: "VF_OrganizationIdentifierType"
+Description: "ValueSet for Terminology Maps VF_OrganizationIdentifierType"
 * ^experimental = true
 * ^name = "VF_OrganizationIdentifierType"
 * include urn:oid:2.16.840.1.113883.3.8901.3.1.36.68001#INSTPAYER 

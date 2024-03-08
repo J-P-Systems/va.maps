@@ -4,9 +4,9 @@ Id: VitalSignsObservation
 Title: "Vital Signs Observation"
 Description: "This StructureDefinition contains the maps for VistA file GMRV VITAL MEASUREMENT (#120.5) to us-core-vital-signs"
 * ^status = #draft
-* issued and performer and status and effectiveDateTime and category.coding.code and subject and identifier.value and code.coding and device and method and valueQuantity.value and valueQuantity.code MS
+* issued and performer and status and effectiveDateTime and category and subject and identifier.value and code.coding and device and method and valueQuantity.value and valueQuantity.code MS
 * performer only Reference(VitalSignsOrganization)
-* category.coding.code = #vital-signs
+* category = http://terminology.hl7.org/CodeSystem/observation-category#vital-signs
 * code.coding from http://va.gov/fhir/ValueSet/VSVFVitalsCodes
 * device only Reference(VitalSignsDevice)
 * method from http://va.gov/fhir/ValueSet/VSVFVitalsMethod
@@ -22,7 +22,7 @@ Source: VitalSignsObservation
 * status -> "655: transform using #final on GMRV VITAL MEASUREMENT - REASON ENTERED IN ERROR (#120.5-4) case null"
 * status -> "656: transform using #entered-in-error on GMRV VITAL MEASUREMENT - REASON ENTERED IN ERROR (#120.5-4) case not null"
 * effectiveDateTime -> "657: source value from GMRV VITAL MEASUREMENT - DATE/TIME VITALS TAKEN (#120.5-.01)"
-* category.coding.code -> "658: fixed value = #vital-signs"
+* category -> "658: fixed value = http://terminology.hl7.org/CodeSystem/observation-category#vital-signs"
 * subject -> "659: reference from GMRV VITAL MEASUREMENT - PATIENT (#120.5-.02)"
 * identifier.value -> "660: source value from GMRV VITAL MEASUREMENT - IEN (#120.5-.001)"
 * code.coding -> "661: terminologyMaps using VF_VitalsCodes on GMRV VITAL MEASUREMENT - VITAL TYPE (#120.5-.03)" "Pulse Oximetry has 2 values"

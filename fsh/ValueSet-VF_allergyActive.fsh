@@ -1,5 +1,6 @@
 ValueSet: VSVFallergyActive
 Title: "VF_allergyActive"
+Description: "ValueSet for Terminology Maps VF_allergyActive"
 * ^experimental = true
 * ^name = "VF_allergyActive"
 * include http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical#active "active"

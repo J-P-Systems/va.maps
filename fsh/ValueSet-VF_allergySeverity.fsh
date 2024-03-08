@@ -1,5 +1,6 @@
 ValueSet: VSVFallergySeverity
 Title: "VF_allergySeverity"
+Description: "ValueSet for Terminology Maps VF_allergySeverity"
 * ^experimental = true
 * ^name = "VF_allergySeverity"
 * include http://hl7.org/fhir/reaction-event-severity#mild 

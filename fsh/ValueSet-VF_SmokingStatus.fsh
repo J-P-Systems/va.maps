@@ -1,5 +1,6 @@
 ValueSet: VSVFSmokingStatus
 Title: "VF_SmokingStatus"
+Description: "ValueSet for Terminology Maps VF_SmokingStatus"
 * ^experimental = true
 * ^name = "VF_SmokingStatus"
 * include http://snomed.info/sct#77176002 "Smoker (finding)"

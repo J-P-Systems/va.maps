@@ -1,5 +1,6 @@
 ValueSet: VSVFRadiologyProcedureStatus
 Title: "VF_RadiologyProcedureStatus"
+Description: "ValueSet for Terminology Maps VF_RadiologyProcedureStatus"
 * ^experimental = true
 * ^name = "VF_RadiologyProcedureStatus"
 * include http://hl7.org/fhir/event-status#preparation "Preparation"

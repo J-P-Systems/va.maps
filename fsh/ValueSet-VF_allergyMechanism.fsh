@@ -1,5 +1,6 @@
 ValueSet: VSVFallergyMechanism
 Title: "VF_allergyMechanism"
+Description: "ValueSet for Terminology Maps VF_allergyMechanism"
 * ^experimental = true
 * ^name = "VF_allergyMechanism"
 * include http://hl7.org/fhir/allergy-intolerance-type#allergy "allergy"

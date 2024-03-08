@@ -1,5 +1,6 @@
 ValueSet: VSVFVitalsCodes
 Title: "VF_VitalsCodes"
+Description: "ValueSet for Terminology Maps VF_VitalsCodes"
 * ^experimental = true
 * ^name = "VF_VitalsCodes"
 * include http://loinc.org#28615-3 "Audiology study"

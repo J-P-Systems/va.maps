@@ -1,5 +1,6 @@
 ValueSet: VSVFImageInterpretation
 Title: "VF_ImageInterpretation"
+Description: "ValueSet for Terminology Maps VF_ImageInterpretation"
 * ^experimental = true
 * ^name = "VF_ImageInterpretation"
 * include http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#A "Abnormal"

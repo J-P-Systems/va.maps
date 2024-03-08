@@ -1,5 +1,6 @@
 ValueSet: VSVFPractitionerCountry
 Title: "VF_PractitionerCountry"
+Description: "ValueSet for Terminology Maps VF_PractitionerCountry"
 * ^experimental = true
 * ^name = "VF_PractitionerCountry"
 * include urn:undefined#USA "United States of America"

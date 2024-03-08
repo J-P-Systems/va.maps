@@ -1,5 +1,6 @@
 ValueSet: VSVFproblemVerificationStatus
 Title: "VF_problemVerificationStatus"
+Description: "ValueSet for Terminology Maps VF_problemVerificationStatus"
 * ^experimental = true
 * ^name = "VF_problemVerificationStatus"
 * include http://terminology.hl7.org/CodeSystem/condition-ver-status#refuted "refuted"

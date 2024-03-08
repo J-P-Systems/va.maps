@@ -4,8 +4,8 @@ Id: ImplantableDeviceProsthesis
 Title: "Implantable Device: Prosthesis"
 Description: "This StructureDefinition contains the maps for VistA file PROSTHESIS INSTALLED (#130.01) to us-core-implantable-device"
 * ^status = #draft
-* identifier.value and manufacturer and expirationDate and lotNumber and serialNumber and deviceName.name and modelNumber and type.coding.code and patient MS
-* type.coding.code = #63653004
+* identifier.value and manufacturer and expirationDate and lotNumber and serialNumber and deviceName.name and modelNumber and type and patient MS
+* type = http://snomed.info/sct#63653004 "Biomedical device"
 
 Mapping: vista-to-ImplantableDeviceProsthesis
 Id: vista
@@ -18,7 +18,7 @@ Source: ImplantableDeviceProsthesis
 * serialNumber -> "1379: source value from PROSTHESIS INSTALLED - SERIAL NUMBER (#130.01-12)"
 * deviceName.name -> "1385: source value from PROSTHESIS INSTALLED - PROSTHESIS ITEM > PROSTHESIS - NAME (#130.01-.01 > 131.9-.01)"
 * modelNumber -> "1387: source value from PROSTHESIS INSTALLED - MODEL (#130.01-2)"
-* type.coding.code -> "1393: fixed value = #63653004" "required, must support. SCT codes under 49062001 (Device)"
+* type -> "1393: fixed value = http://snomed.info/sct#63653004 Biomedical device" "required, must support. SCT codes under 49062001 (Device)"
 * patient -> "1399: reference from SURGERY - PATIENT (#130-.01)" "Surgery points to Prosthesis Installed in field .47"
 
 Mapping: cdw-to-ImplantableDeviceProsthesis

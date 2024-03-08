@@ -1,5 +1,6 @@
 ValueSet: VSVFVitalsQualifyingDevice
 Title: "VF_VitalsQualifyingDevice"
+Description: "ValueSet for Terminology Maps VF_VitalsQualifyingDevice"
 * ^experimental = true
 * ^name = "VF_VitalsQualifyingDevice"
 * include http://snomed.info/sct#426851007 "Aerosol oxygen mask (physical object)"

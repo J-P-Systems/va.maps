@@ -46,7 +46,7 @@ Usage: #definition
 * group[=].element[=].target.dependsOn[=].value = "null"
 
 * group[=].element[+].code = #I,NT,Null
-* group[=].element[=].target.code = #fullfilled
+* group[=].element[=].target.code = #fulfilled
 * group[=].element[=].target.equivalence = #equivalent
 * group[=].element[=].target.dependsOn[+].property = "http://va.gov/terminology/vistaDefinedElements/44.003_309_CHECKED_IN"
 * group[=].element[=].target.dependsOn[=].value = "not null"

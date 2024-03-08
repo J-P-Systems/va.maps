@@ -1,5 +1,6 @@
 ValueSet: VSVFICDVersion
 Title: "VF_ICDVersion"
+Description: "ValueSet for Terminology Maps VF_ICDVersion"
 * ^experimental = true
 * ^name = "VF_ICDVersion"
 * include urn:undefined#http://hl7.org/fhir/sid/icd-10-cm 

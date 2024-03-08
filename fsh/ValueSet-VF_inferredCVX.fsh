@@ -1,5 +1,6 @@
 ValueSet: VSVFinferredCVX
 Title: "VF_inferredCVX"
+Description: "ValueSet for Terminology Maps VF_inferredCVX"
 * ^experimental = true
 * ^name = "VF_inferredCVX"
 * include http://hl7.org/fhir/sid/cvx#88 

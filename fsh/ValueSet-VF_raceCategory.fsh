@@ -1,5 +1,6 @@
 ValueSet: VSVFraceCategory
 Title: "VF_raceCategory"
+Description: "ValueSet for Terminology Maps VF_raceCategory"
 * ^experimental = true
 * ^name = "VF_raceCategory"
 * include http://terminology.hl7.org/CodeSystem/v3-NullFlavor#UNK 

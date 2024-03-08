@@ -10,7 +10,7 @@ Mapping: vista-to-LabObservationMicrobiologyParasitologyObservation
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: LabObservationMicrobiologyParasitologyObservation
-* code -> "1528: fixed value without value? when MICROBIOLOGY - ORDERED TEST > ORDERED TEST - LAB TEST ORDERED > LABORATORY TEST - SITE/SPECIMEN > SITE/SPECIMEN - LOINC CODE > LAB LOINC (#63.05-.35 > 63.5-13 > 60-100 > 60.01-95.03 > 95.03-) case NULL"
+* code -> "1528: fixed value = http://loinc.org#42807-8 Parasite identified in Isolate when MICROBIOLOGY - ORDERED TEST > ORDERED TEST - LAB TEST ORDERED > LABORATORY TEST - SITE/SPECIMEN > SITE/SPECIMEN - LOINC CODE > LAB LOINC (#63.05-.35 > 63.5-13 > 60-100 > 60.01-95.03 > 95.03-) case NULL"
 * status -> "1489: terminologyMaps using null on MICROBIOLOGY - PARASITE RPT STATUS (#63.05-15)"
 
 Mapping: cdw-to-LabObservationMicrobiologyParasitologyObservation

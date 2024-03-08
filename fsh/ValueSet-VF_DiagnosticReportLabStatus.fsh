@@ -1,5 +1,6 @@
 ValueSet: VSVFDiagnosticReportLabStatus
 Title: "VF_DiagnosticReportLabStatus"
+Description: "ValueSet for Terminology Maps VF_DiagnosticReportLabStatus"
 * ^experimental = true
 * ^name = "VF_DiagnosticReportLabStatus"
 * include http://hl7.org/fhir/diagnostic-report-status#corrected "Corrected"

@@ -1,5 +1,6 @@
 ValueSet: VSVFgenderIdentity
 Title: "VF_genderIdentity"
+Description: "ValueSet for Terminology Maps VF_genderIdentity"
 * ^experimental = true
 * ^name = "VF_genderIdentity"
 * include http://hl7.org/fhir/administrative-gender#unknown 

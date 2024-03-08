@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-    <title>Implantable Device: Prosthesis - Mappings - US Veterans Administration FHIR Map Set Implementation Guide v0.24.0</title>
+    <title>Implantable Device: Prosthesis - Mappings - US Veterans Administration FHIR Map Set Implementation Guide v0.26.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -57,7 +57,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">US Veterans Administration FHIR Map Set Implementation Guide</span>
             <br/>
-            <span style="display:inline-block;">0.24.0 - ci-build
+            <span style="display:inline-block;">0.26.0 - ci-build
 
 
 
@@ -134,7 +134,7 @@
           <div class="inner-wrapper">
 
 <div style="counter-reset: section 5" class="col-12">
-    <!-- ReleaseHeader --><p id="publish-box">US Veterans Administration FHIR Map Set Implementation Guide - Local Development build (v0.24.0) built by the FHIR (HL7&reg; FHIR&reg; Standard) Build Tools. See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
+    <!-- ReleaseHeader --><p id="publish-box">US Veterans Administration FHIR Map Set Implementation Guide - Local Development build (v0.26.0) built by the FHIR (HL7&reg; FHIR&reg; Standard) Build Tools. See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
   
 
 
@@ -207,7 +207,7 @@
         
           Draft
           
-            as of 2024-02-28
+            as of 2024-03-08
           
         
       </td>
@@ -345,11 +345,10 @@
 <td class="cell-ce1"></td>
 <td class="cell-ce1">fixed value</td>
 <td class="cell-ce1"></td>
-<td class="cell-ce1">Device.type.coding</td>
-<td class="cell-ce1">.code</td>
-<td class="cell-ce1">#63653004</td>
-<td class="cell-ce1">.system = "http://snomed.info/sct"
-.display = "Biomedical device"</td>
+<td class="cell-ce1">Device.type</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://snomed.info/sct#63653004 "Biomedical device"</td>
+<td class="cell-ce1"></td>
 <td class="cell-ce1">required, must support. SCT codes under 49062001 (Device)</td>
 <td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-implantable-device | 5.0.1</td>
 </tr>
@@ -413,18 +412,6 @@
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td>.playedRole[typeCode=MANU].code</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;modelNumber</td><td>.softwareName (included as part)</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;partNumber</td><td>.playedRole[typeCode=MANU].id</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;type</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>union(., ./translation)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;system</td><td>./codeSystem</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;version</td><td>./codeSystemVersion</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>./code</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display</td><td>CV.displayName</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;userSelected</td><td>CD.codingRationale</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>./originalText[mediaType/code="text/plain"]/data</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;specialization</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
@@ -508,9 +495,7 @@ ICCBA DIs for other devices:
  <tr><td>&nbsp;&nbsp;&nbsp;deviceName</td><td></td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name</td><td>1385: source value from PROSTHESIS INSTALLED - PROSTHESIS ITEM &gt; PROSTHESIS - NAME (#130.01-.01 &gt; 131.9-.01)</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;modelNumber</td><td>1387: source value from PROSTHESIS INSTALLED - MODEL (#130.01-2)</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;type</td><td></td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td></td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>1393: fixed value = #63653004</td><td><p>required, must support. SCT codes under 49062001 (Device)</p>
+ <tr><td>&nbsp;&nbsp;&nbsp;type</td><td>1393: fixed value = http://snomed.info/sct#63653004 Biomedical device</td><td><p>required, must support. SCT codes under 49062001 (Device)</p>
 </td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;patient</td><td>1399: reference from SURGERY - PATIENT (#130-.01)</td><td><p>Surgery points to Prosthesis Installed in field .47</p>
 </td> </tr>
@@ -606,7 +591,7 @@ Surg.SurgORScrubSupportTime.PatientIEN</td> </tr>
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.24.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Feb 28, 2024 12:35+0000">2024-02-28</span>
+          IG &copy; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.26.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Mar 8, 2024 13:22+0000">2024-03-08</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -1,5 +1,6 @@
 ValueSet: VSVFLabObservationStatus
 Title: "VF_LabObservationStatus"
+Description: "ValueSet for Terminology Maps VF_LabObservationStatus"
 * ^experimental = true
 * ^name = "VF_LabObservationStatus"
 * include http://hl7.org/fhir/observation-status#final "Final"

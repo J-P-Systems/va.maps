@@ -13,6 +13,6 @@ Usage: #definition
 * group[=].element[0].code = #1
 * group[=].element[=].target.code = #Y
 * group[=].element[=].target.equivalence = #equivalent
-* group[=].element[+].code = #null
+* group[=].element[+].code = #0
 * group[=].element[=].target.code = #N
 * group[=].element[=].target.equivalence = #equivalent

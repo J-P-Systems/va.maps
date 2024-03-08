@@ -1,5 +1,6 @@
 ValueSet: VSVFproviderGender
 Title: "VF_providerGender"
+Description: "ValueSet for Terminology Maps VF_providerGender"
 * ^experimental = true
 * ^name = "VF_providerGender"
 * include http://hl7.org/fhir/administrative-gender#female 

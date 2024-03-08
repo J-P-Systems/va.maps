@@ -1,5 +1,6 @@
 ValueSet: VSVFethnicityCategory
 Title: "VF_ethnicityCategory"
+Description: "ValueSet for Terminology Maps VF_ethnicityCategory"
 * ^experimental = true
 * ^name = "VF_ethnicityCategory"
 * include http://terminology.hl7.org/CodeSystem/v3-NullFlavor#UNK 

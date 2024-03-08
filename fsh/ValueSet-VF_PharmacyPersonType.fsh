@@ -1,5 +1,6 @@
 ValueSet: VSVFPharmacyPersonType
 Title: "VF_PharmacyPersonType"
+Description: "ValueSet for Terminology Maps VF_PharmacyPersonType"
 * ^experimental = true
 * ^name = "VF_PharmacyPersonType"
 * include http://terminology.hl7.org/CodeSystem/subscriber-relationship#self "Self"

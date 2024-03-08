@@ -10,7 +10,7 @@ Mapping: vista-to-LabObservationMicrobiologyMycobacteriologyObservation
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: LabObservationMicrobiologyMycobacteriologyObservation
-* code -> "1526: fixed value without value? when MICROBIOLOGY - ORDERED TEST > ORDERED TEST - LAB TEST ORDERED > LABORATORY TEST - SITE/SPECIMEN > SITE/SPECIMEN - LOINC CODE > LAB LOINC (#63.05-.35 > 63.5-13 > 60-100 > 60.01-95.03 > 95.03-) case NULL"
+* code -> "1526: fixed value = http://loinc.org#9825-1 Mycobacterium sp identified in Isolate when MICROBIOLOGY - ORDERED TEST > ORDERED TEST - LAB TEST ORDERED > LABORATORY TEST - SITE/SPECIMEN > SITE/SPECIMEN - LOINC CODE > LAB LOINC (#63.05-.35 > 63.5-13 > 60-100 > 60.01-95.03 > 95.03-) case NULL"
 * status -> "1491: terminologyMaps using null on MICROBIOLOGY - TB RPT STATUS (#63.05-23)"
 * valueString -> "1519: source value from MICROBIOLOGY - ACID FAST STAIN (#63.05-24)"
 

@@ -1,5 +1,6 @@
 ValueSet: VSVFSourceOfAdmission
 Title: "VF_SourceOfAdmission"
+Description: "ValueSet for Terminology Maps VF_SourceOfAdmission"
 * ^experimental = true
 * ^name = "VF_SourceOfAdmission"
 * include http://terminology.hl7.org/CodeSystem/admit-source#hosp-trans 

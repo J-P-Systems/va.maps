@@ -1,5 +1,6 @@
 ValueSet: VSVFExamStatus
 Title: "VF_ExamStatus"
+Description: "ValueSet for Terminology Maps VF_ExamStatus"
 * ^experimental = true
 * ^name = "VF_ExamStatus"
 * include urn:undefined#cancelled 

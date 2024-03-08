@@ -1,5 +1,6 @@
 ValueSet: VSVFimmunizationStatusReason
 Title: "VF_immunizationStatusReason"
+Description: "ValueSet for Terminology Maps VF_immunizationStatusReason"
 * ^experimental = true
 * ^name = "VF_immunizationStatusReason"
 * include http://terminology.hl7.org/CodeSystem/v3-ActReason#PATOBJ "patient objection"

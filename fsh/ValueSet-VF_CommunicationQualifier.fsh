@@ -1,5 +1,6 @@
 ValueSet: VSVFCommunicationQualifier
 Title: "VF_CommunicationQualifier"
+Description: "ValueSet for Terminology Maps VF_CommunicationQualifier"
 * ^experimental = true
 * ^name = "VF_CommunicationQualifier"
 * include urn:oid:2.16.840.1.113883.3.8901.3.1.3658026.8004#email 

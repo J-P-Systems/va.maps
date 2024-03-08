@@ -1,5 +1,6 @@
 ValueSet: VSVFAppointmentStatus
 Title: "VF_AppointmentStatus"
+Description: "ValueSet for Terminology Maps VF_AppointmentStatus"
 * ^experimental = true
 * ^name = "VF_AppointmentStatus"
 * include http://hl7.org/fhir/appointmentstatus#cancelled 

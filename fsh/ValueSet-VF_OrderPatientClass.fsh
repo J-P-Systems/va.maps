@@ -1,5 +1,6 @@
 ValueSet: VSVFOrderPatientClass
 Title: "VF_OrderPatientClass"
+Description: "ValueSet for Terminology Maps VF_OrderPatientClass"
 * ^experimental = true
 * ^name = "VF_OrderPatientClass"
 * include http://terminology.hl7.org/CodeSystem/medicationrequest-category#inpatient "Inpatient"

@@ -1,5 +1,6 @@
 ValueSet: VSVFproblemStatus
 Title: "VF_problemStatus"
+Description: "ValueSet for Terminology Maps VF_problemStatus"
 * ^experimental = true
 * ^name = "VF_problemStatus"
 * include http://terminology.hl7.org/CodeSystem/condition-clinical#active 

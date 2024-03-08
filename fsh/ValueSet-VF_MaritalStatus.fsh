@@ -1,5 +1,6 @@
 ValueSet: VSVFMaritalStatus
 Title: "VF_MaritalStatus"
+Description: "ValueSet for Terminology Maps VF_MaritalStatus"
 * ^experimental = true
 * ^name = "VF_MaritalStatus"
 * include http://terminology.hl7.org/CodeSystem/v3-MaritalStatus#D "Divorced"
