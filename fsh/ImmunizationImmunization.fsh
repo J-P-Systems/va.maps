@@ -38,12 +38,12 @@ Mapping: cdw-to-ImmunizationImmunization
 Id: cdw
 Title: "Clinical Data Warehouse (CDW)"
 Source: ImmunizationImmunization
-* statusReason -> "Immun.Immunization.ImmunizationNameIEN"
-* vaccineCode -> "Immun.Immunization.ImmunizationNameIEN"
+* statusReason -> "Immun.Immunization.ImmunizationNameIEN\nDim.ImmunizationName.ImmunizationName,Dim.PharmacyOrderableItem.ImmunizationName"
+* vaccineCode -> "Immun.Immunization.ImmunizationNameIEN\nDim.ImmunizationName.ImmunizationName,Dim.PharmacyOrderableItem.ImmunizationName"
 * primarySource -> "Immun.Immunization.ImmunizationInformationSourceIEN"
-* status -> "Immun.Immunization.ImmunizationNameIEN"
-* status -> "Immun.Immunization.ImmunizationNameIEN"
-* vaccineCode -> "Immun.Immunization.ImmunizationNameIEN"
+* status -> "Immun.Immunization.ImmunizationNameIEN\nDim.ImmunizationName.CVXCode"
+* status -> "Immun.Immunization.ImmunizationNameIEN\nDim.ImmunizationName.ImmunizationName,Dim.PharmacyOrderableItem.ImmunizationName"
+* vaccineCode -> "Immun.Immunization.ImmunizationNameIEN\nDim.ImmunizationName.CVXCode"
 * patient -> "Immun.Immunization.PatientIEN"
 * occurrenceDateTime -> "Immun.Immunization.EventDateTime"
 * doseQuantity.value -> "Immun.Immunization.Dosage"

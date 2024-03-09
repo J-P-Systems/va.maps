@@ -9,6 +9,7 @@ Usage: #definition
 * description = "Terminology Maps VF_documentReferencedocStatus"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFdocumentReferencedocStatus"
 * group[0].source = "http://terminology.hl7.org/CodeSystem/VHA"
+* group[=].target = "http://hl7.org/fhir/composition-status"
 * group[=].element[0].code = #4696298
 * group[=].element[=].display = "ACTIVE"
 * group[=].element[=].target.code = #preliminary
@@ -25,22 +26,10 @@ Usage: #definition
 * group[=].element[=].display = "DELETED"
 * group[=].element[=].target.code = #entered-in-error
 * group[=].element[=].target.equivalence = #relatedto
-* group[=].element[+].code = #4501128
-* group[=].element[=].display = "INACTIVE"
-* group[=].element[=].target.code = #<exclude_record>
-* group[=].element[=].target.equivalence = #equivalent
-* group[=].element[+].code = #4501287
-* group[=].element[=].display = "PURGED"
-* group[=].element[=].target.code = #<exclude_record>
-* group[=].element[=].target.equivalence = #relatedto
 * group[=].element[+].code = #4501288
 * group[=].element[=].display = "RETRACTED"
 * group[=].element[=].target.code = #entered-in-error
 * group[=].element[=].target.equivalence = #wider
-* group[=].element[+].code = #4501289
-* group[=].element[=].display = "TEST"
-* group[=].element[=].target.code = #<exclude_record>
-* group[=].element[=].target.equivalence = #equivalent
 * group[=].element[+].code = #4501290
 * group[=].element[=].display = "UNCOSIGNED"
 * group[=].element[=].target.code = #preliminary
@@ -65,3 +54,16 @@ Usage: #definition
 * group[=].element[=].display = "UNVERIFIED"
 * group[=].element[=].target.code = #preliminary
 * group[=].element[=].target.equivalence = #wider
+* group[+].source = "http://terminology.hl7.org/CodeSystem/VHA"
+* group[=].element[0].code = #4501128
+* group[=].element[=].display = "INACTIVE"
+* group[=].element[=].target.code = #<exclude_record>
+* group[=].element[=].target.equivalence = #equivalent
+* group[=].element[+].code = #4501287
+* group[=].element[=].display = "PURGED"
+* group[=].element[=].target.code = #<exclude_record>
+* group[=].element[=].target.equivalence = #relatedto
+* group[=].element[+].code = #4501289
+* group[=].element[=].display = "TEST"
+* group[=].element[=].target.code = #<exclude_record>
+* group[=].element[=].target.equivalence = #equivalent

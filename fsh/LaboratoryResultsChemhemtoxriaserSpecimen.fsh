@@ -17,4 +17,4 @@ Mapping: cdw-to-LaboratoryResultsChemhemtoxriaserSpecimen
 Id: cdw
 Title: "Clinical Data Warehouse (CDW)"
 Source: LaboratoryResultsChemhemtoxriaserSpecimen
-* accessionIdentifier -> "Chem.LabChem.ShortAccessionNumber\nChem.PatientLabChem.ShortAccessionNumber"
+* accessionIdentifier -> "Chem.LabChem.ShortAccessionNumber,Chem.PatientLabChem.ShortAccessionNumber"

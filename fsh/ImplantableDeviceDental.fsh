@@ -38,4 +38,4 @@ Source: ImplantableDeviceDental
 * serialNumber -> "Dental.DeviceTracking.SerialNumber"
 * modelNumber -> "Dental.DeviceTracking.DeviceModel"
 * type.text -> "Dental.DeviceTracking.DeviceType"
-* patient -> "Dental.DeviceTracking.PatientIEN\nDental.DeviceTrackingDetail.PatientIEN"
+* patient -> "Dental.DeviceTracking.PatientIEN,Dental.DeviceTrackingDetail.PatientIEN"

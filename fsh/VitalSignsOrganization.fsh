@@ -18,4 +18,4 @@ Id: cdw
 Title: "Clinical Data Warehouse (CDW)"
 Source: VitalSignsOrganization
 * identifier -> "Dim.Institution.InstitutionCode"
-* name -> "Dim.AutoDiscontinuedRule.InstitutionName\nDim.Institution.InstitutionName\nDim.RequestService.IFCRoutingInstitution"
+* name -> "Dim.AutoDiscontinuedRule.InstitutionName,Dim.Institution.InstitutionName,Dim.RequestService.IFCRoutingInstitution"

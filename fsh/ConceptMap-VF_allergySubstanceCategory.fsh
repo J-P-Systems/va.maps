@@ -15,11 +15,10 @@ Usage: #definition
 * group[=].element[=].target.code = #medication
 * group[=].element[=].target.display = "medication"
 * group[=].element[=].target.equivalence = #equal
+* group[=].element[+].code = #O
+* group[=].element[=].display = "OTHER"
+* group[=].element[=].target.equivalence = #unmatched
 * group[=].element[+].code = #F
 * group[=].element[=].display = "FOOD"
 * group[=].element[=].target.code = #food
 * group[=].element[=].target.equivalence = #equal
-* group[+].source = "http://va.gov/terminology/vistaDefinedTerms/120.8-3.1"
-* group[=].element[0].code = #O
-* group[=].element[=].display = "OTHER"
-* group[=].element[=].target.equivalence = #unmatched

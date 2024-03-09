@@ -36,5 +36,5 @@ Id: cdw
 Title: "Clinical Data Warehouse (CDW)"
 Source: VitalSignsObservation
 * issued -> "Vital.VitalSign.VitalSignEnteredDateTime"
-* effectiveDateTime -> "Vital.VitalSign.VitalSignTakenDateTime\nVital.VitalSignQualifier.VitalSignTakenDateTime"
-* valueQuantity.value -> "Vital.VitalSign.Diastolic\nVital.VitalSign.Systolic\nVital.VitalSign.VitalResult\nVital.VitalSign.VitalResultNumeric"
+* effectiveDateTime -> "Vital.VitalSign.VitalSignTakenDateTime,Vital.VitalSignQualifier.VitalSignTakenDateTime"
+* valueQuantity.value -> "Vital.VitalSign.Diastolic,Vital.VitalSign.Systolic,Vital.VitalSign.VitalResult,Vital.VitalSign.VitalResultNumeric"

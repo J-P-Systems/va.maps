@@ -51,19 +51,19 @@ Mapping: cdw-to-Patient
 Id: cdw
 Title: "Clinical Data Warehouse (CDW)"
 Source: Patient
-* identifier.value -> "Patient.Patient.PatientICN\nPatient.PatientICN.PatientICN\nSPatient.SPatient.PatientICN\nSPatient.SPatientGISAddress.PatientICN"
-* name.text -> "SPatient.SPatient.PatientFirstName\nSPatient.SPatient.PatientLastName\nSPatient.SPatient.PatientName\nSPatient.SPatientAlias.PatientName"
-* birthDate -> "SPatient.PlaceOfBirth.BirthDateTime\nSPatient.SPatient.BirthDateTime"
-* deceasedDateTime -> "Patient.Patient.DeathDateTime\nSPatient.SPatient.DeathDateTime"
+* identifier.value -> "Patient.Patient.PatientICN,Patient.PatientICN.PatientICN,SPatient.SPatient.PatientICN,SPatient.SPatientGISAddress.PatientICN"
+* name.text -> "SPatient.SPatient.PatientFirstName,SPatient.SPatient.PatientLastName,SPatient.SPatient.PatientName,SPatient.SPatientAlias.PatientName"
+* birthDate -> "SPatient.PlaceOfBirth.BirthDateTime,SPatient.SPatient.BirthDateTime"
+* deceasedDateTime -> "Patient.Patient.DeathDateTime,SPatient.SPatient.DeathDateTime"
 * address[home].line -> "SPatient.SPatientGISAddress.StreetAddress1"
 * address[home].line -> "SPatient.SPatientGISAddress.StreetAddress2"
 * address[home].city -> "SPatient.SPatientGISAddress.City"
 * address[home].state -> "SPatient.SPatientGISAddress.StateIEN"
 * address[home].postalCode -> "SPatient.SPatientGISAddress.Zip4"
-* extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex].valueCode -> "Patient.Patient.Gender\nSPatient.SPatient.Gender"
-* gender -> "Patient.Patient.SelfIdentifiedGender\nSPatient.SPatient.SelfIdentifiedGender"
-* maritalStatus -> "Outpat.Visit.PatientMaritalStatus\nOutpat.Workload.PatientMaritalStatus"
-* extension[http://hl7.org/fhir/StructureDefinition/patient-religion].valueCodeableConcept -> "Outpat.Visit.PatientReligion\nOutpat.Visit.PatientReligionCode\nOutpat.Workload.PatientReligion\nOutpat.Workload.PatientReligionCode"
+* extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex].valueCode -> "Patient.Patient.Gender,SPatient.SPatient.Gender"
+* gender -> "Patient.Patient.SelfIdentifiedGender,SPatient.SPatient.SelfIdentifiedGender"
+* maritalStatus -> "Outpat.Visit.PatientMaritalStatus,Outpat.Workload.PatientMaritalStatus"
+* extension[http://hl7.org/fhir/StructureDefinition/patient-religion].valueCodeableConcept -> "Outpat.Visit.PatientReligion,Outpat.Visit.PatientReligionCode,Outpat.Workload.PatientReligion,Outpat.Workload.PatientReligionCode"
 
 Mapping: vpr-to-Patient
 Id: vpr

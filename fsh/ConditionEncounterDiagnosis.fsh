@@ -27,8 +27,8 @@ Mapping: cdw-to-ConditionEncounterDiagnosis
 Id: cdw
 Title: "Clinical Data Warehouse (CDW)"
 Source: ConditionEncounterDiagnosis
-* encounter -> "Outpat.VDiagnosis.VisitDateTime\nOutpat.WorkloadVDiagnosis.VisitDateTime"
-* onsetDateTime -> "Outpat.VDiagnosis.InjuryDateTime\nOutpat.WorkloadVDiagnosis.InjuryDateTime"
-* recordedDate -> "Outpat.VDiagnosis.VisitDateTime\nOutpat.WorkloadVDiagnosis.VisitDateTime"
-* clinicalStatus -> "Outpat.VDiagnosis.Modifier\nOutpat.WorkloadVDiagnosis.Modifier"
-* verificationStatus -> "Outpat.VDiagnosis.Modifier\nOutpat.WorkloadVDiagnosis.Modifier"
+* encounter -> "Outpat.VDiagnosis.VisitDateTime,Outpat.WorkloadVDiagnosis.VisitDateTime"
+* onsetDateTime -> "Outpat.VDiagnosis.InjuryDateTime,Outpat.WorkloadVDiagnosis.InjuryDateTime"
+* recordedDate -> "Outpat.VDiagnosis.VisitDateTime,Outpat.WorkloadVDiagnosis.VisitDateTime\nOutpat.Visit.VisitDateTime,Outpat.Workload.VisitDateTime"
+* clinicalStatus -> "Outpat.VDiagnosis.Modifier,Outpat.WorkloadVDiagnosis.Modifier"
+* verificationStatus -> "Outpat.VDiagnosis.Modifier,Outpat.WorkloadVDiagnosis.Modifier"

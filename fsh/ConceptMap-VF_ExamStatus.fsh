@@ -9,6 +9,7 @@ Usage: #definition
 * description = "Terminology Maps VF_ExamStatus"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFExamStatus"
 * group[0].source = "urn:undefined"
+* group[=].target = "http://hl7.org/fhir/observation-status"
 * group[=].element[0].code = #X
 * group[=].element[=].display = "CANCELLED BY MAS"
 * group[=].element[=].target.code = #cancelled
@@ -25,9 +26,14 @@ Usage: #definition
 * group[=].element[=].display = "OPEN"
 * group[=].element[=].target.code = #registred
 * group[=].element[=].target.equivalence = #equivalent
+* group[=].element[=].target.dependsOn[+].property = "condition"
+* group[=].element[=].target.dependsOn[=].value = "369.4-70 = NULL"
 * group[=].element[+].code = #O
 * group[=].element[=].display = "OPEN"
 * group[=].element[=].target.code = #preliminary
 * group[=].element[=].target.equivalence = #equivalent
+* group[=].element[=].target.dependsOn[+].property = "condition"
+* group[=].element[=].target.dependsOn[=].value = "396.4-70 != NULL"
 * group[=].element[+].code = #T
+* group[=].element[=].display = "TRANSFERRED OUT"
 * group[=].element[=].target.equivalence = #unmatched

@@ -15,7 +15,7 @@ Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: ObservationEXAM
 * code.coding -> "1580: source value from V EXAM - EXAM > EXAM (#9000010.13-.01 > 9999999.15-)" "in CDW through ExamSID"
-* code.coding -> "1581: source value from V EXAM - EXAM > EXAM - CODE MAPPINGS (#9000010.13-.01 > 9999999.15-210)" "in CDW through ExamSID"
+* code.coding -> "1581: source value from V EXAM - EXAM > EXAM - CODE MAPPINGS > CODE MAPPINGS (#9000010.13-.01 > 9999999.15-210>9999999.18)" "in CDW through ExamSID"
 * subject -> "1582: reference from V EXAM - PATIENT NAME > PATIENT/IHS - NAME (#9000010.13-.02 > 9000001-.01)" "in CDW through PatientSID"
 * encounter -> "1583: reference from V EXAM - VISIT (#9000010.13-.03)"
 * interpretation -> "1584: transform using VF_ExamResultInterpretation on V EXAM - RESULT (#9000010.13-.04)"

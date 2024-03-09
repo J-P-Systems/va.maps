@@ -41,7 +41,7 @@ Id: cdw
 Title: "Clinical Data Warehouse (CDW)"
 Source: AllergyIntolerance
 * code.text -> "Allergy.Allergy.AllergicReactant"
-* recordedDate -> "Allergy.AllergicReaction.OriginationDateTime\nAllergy.Allergy.OriginationDateTime\nAllergy.AllergyComment.OriginationDateTime\nAllergy.AllergyDrugClass.OriginationDateTime\nAllergy.AllergyDrugIngredient.OriginationDateTime"
+* recordedDate -> "Allergy.AllergicReaction.OriginationDateTime,Allergy.Allergy.OriginationDateTime,Allergy.AllergyComment.OriginationDateTime,Allergy.AllergyDrugClass.OriginationDateTime,Allergy.AllergyDrugIngredient.OriginationDateTime"
 * type -> "Allergy.Allergy.Mechanism"
 * verificationStatus -> "Allergy.Allergy.VerifiedFlag"
 * clinicalStatus -> "Allergy.Allergy.EnteredInErrorFlag"

@@ -28,4 +28,4 @@ Source: ProcedureRadiology
 * status -> "Dim.RadiologyExamStatus.RadiologyExamStatus"
 * statusReason.text -> "Dim.RadiologyHoldCancelReason.RadiologyHoldCancelReason"
 * category.text -> "Dim.ImagingType.ImagingType"
-* performedDateTime -> "Rad.RadiologyExam.ExamDateTime\nRad.RadiologyExamActivityLog.ExamDateTime\nRad.RadiologyExamContrastMedia.ExamDateTime\nRad.RadiologyExamCPTModifier.ExamDateTime\nRad.RadiologyExamMedication.ExamDateTime\nRad.RadiologyExamSecondaryDiagnosticCode.ExamDateTime\nRad.RadiologyExamStatusList.ExamDateTime\nRad.RadiologyExamTechnologist.ExamDateTime\nRad.RadiologyRegisteredExam.ExamDateTime"
+* performedDateTime -> "Rad.RadiologyExam.ExamDateTime,Rad.RadiologyExamActivityLog.ExamDateTime,Rad.RadiologyExamContrastMedia.ExamDateTime,Rad.RadiologyExamCPTModifier.ExamDateTime,Rad.RadiologyExamMedication.ExamDateTime,Rad.RadiologyExamSecondaryDiagnosticCode.ExamDateTime,Rad.RadiologyExamStatusList.ExamDateTime,Rad.RadiologyExamTechnologist.ExamDateTime,Rad.RadiologyRegisteredExam.ExamDateTime"

@@ -9,6 +9,7 @@ Usage: #definition
 * description = "Terminology Maps VF_ICDCodingSystems"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFICDCodingSystems"
 * group[0].source = "http://va.gov/terminology/vistaDefinedElements/80.4-.01"
+* group[=].target = "urn:ietf:rfc:2141"
 * group[=].element[0].code = #ICD-10-CM
 * group[=].element[=].target.code = #http://hl7.org/fhir/sid/icd-10-cm
 * group[=].element[=].target.equivalence = #equal

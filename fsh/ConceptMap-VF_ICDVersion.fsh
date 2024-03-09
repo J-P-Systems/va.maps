@@ -9,6 +9,7 @@ Usage: #definition
 * description = "Terminology Maps VF_ICDVersion"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFICDVersion"
 * group[0].source = "urn:undefined"
+* group[=].target = "urn:ietf:rfc:2141"
 * group[=].element[0].code = #10D
 * group[=].element[=].display = "ICD-10-CM"
 * group[=].element[=].target.code = #http://hl7.org/fhir/sid/icd-10-cm

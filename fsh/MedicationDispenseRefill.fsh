@@ -45,8 +45,8 @@ Source: MedicationDispenseRefill
 * dosageInstruction.doseAndRate.doseQuantity.value -> "RxOut.RxOutpatMedInstructions.DoseOrdered"
 * dosageInstruction.patientInstruction -> "RxOut.RxOutpatSig.PatientInstructions"
 * location -> "RxOut.RxOutpatFill.PrescribingDivisionIEN"
-* medicationCodeableConcept.coding.code -> "Dim.LocalDrug.DrugNameWithoutDoseIEN\nDim.LocalDrug.NationalDrugIEN\nDim.LocalDrug.NationalDrugIEN"
-* medicationCodeableConcept.text -> "Dim.IVAdditiveIngredient.LocalDrugNameWithDose\nDim.IVSolutionIngredient.LocalDrugNameWithDose\nDim.LocalDrug.CorrespondingInpatientLocalDrugNameWithDose\nDim.LocalDrug.CorrespondingOutpatientLocalDrugNameWithDose\nDim.LocalDrug.LocalDrugNameWithDose\nDim.LocalDrug.LocalDrugNameWithDose\nRxOut.RxOutpatFill.LocalDrugNameWithDose"
+* medicationCodeableConcept.coding.code -> "Dim.LocalDrug.DrugNameWithoutDoseIEN,Dim.LocalDrug.NationalDrugIEN,Dim.LocalDrug.NationalDrugIEN"
+* medicationCodeableConcept.text -> "Dim.IVAdditiveIngredient.LocalDrugNameWithDose,Dim.IVSolutionIngredient.LocalDrugNameWithDose,Dim.LocalDrug.CorrespondingInpatientLocalDrugNameWithDose,Dim.LocalDrug.CorrespondingOutpatientLocalDrugNameWithDose,Dim.LocalDrug.LocalDrugNameWithDose,Dim.LocalDrug.LocalDrugNameWithDose,RxOut.RxOutpatFill.LocalDrugNameWithDose"
 
 Mapping: vpr-to-MedicationDispenseRefill
 Id: vpr

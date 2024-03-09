@@ -34,7 +34,7 @@ Mapping: cdw-to-ProcedureOutpatient
 Id: cdw
 Title: "Clinical Data Warehouse (CDW)"
 Source: ProcedureOutpatient
-* encounter -> "Outpat.VProcedure.VisitDateTime\nOutpat.VProcedureCPTModifier.VisitDateTime\nOutpat.VProcedureDiagnosis.VisitDateTime\nOutpat.WorkloadVProcedure.VisitDateTime\nOutpat.WorkloadVProcedureCPTModifier.VisitDateTime\nOutpat.WorkloadVProcedureDiagnosis.VisitDateTime"
+* encounter -> "Outpat.VProcedure.VisitDateTime,Outpat.VProcedureCPTModifier.VisitDateTime,Outpat.VProcedureDiagnosis.VisitDateTime,Outpat.WorkloadVProcedure.VisitDateTime,Outpat.WorkloadVProcedureCPTModifier.VisitDateTime,Outpat.WorkloadVProcedureDiagnosis.VisitDateTime"
 * code.text -> "Dim.ProviderNarrative.ProviderNarrative"
-* performedDateTime -> "Outpat.VProcedure.EventDateTime\nOutpat.VProcedureDiagnosis.EventDateTime\nOutpat.WorkloadVProcedure.EventDateTime\nOutpat.WorkloadVProcedureDiagnosis.EventDateTime"
-* note.text -> "Outpat.VProcedure.Comments\nOutpat.WorkloadVProcedure.Comments"
+* performedDateTime -> "Outpat.VProcedure.EventDateTime,Outpat.VProcedureDiagnosis.EventDateTime,Outpat.WorkloadVProcedure.EventDateTime,Outpat.WorkloadVProcedureDiagnosis.EventDateTime"
+* note.text -> "Outpat.VProcedure.Comments,Outpat.WorkloadVProcedure.Comments"

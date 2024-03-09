@@ -22,8 +22,8 @@ Mapping: cdw-to-MedicationRequestUnsigned
 Id: cdw
 Title: "Clinical Data Warehouse (CDW)"
 Source: MedicationRequestUnsigned
-* subject -> "CPRSOrder.OrderAction.ObjectOfOrderIEN\nCPRSOrder.OrderAction.ObjectOfOrderPatientIEN\nCPRSOrder.OrderAction.ParentFileNumber"
-* authoredOn -> "CPRSOrder.CPRSOrder.EnteredDateTime\nCPRSOrder.CPRSOrder.EnteredVistaDate\nCPRSOrder.OrderedItem.EnteredDateTime\nCPRSOrder.OrderedItem.EnteredVistaDate"
-* dosageInstruction.timing.repeat.boundsPeriod.start -> "CPRSOrder.CPRSOrder.OrderStartDateTime\nCPRSOrder.CPRSOrder.OrderStartVistaDate\nCPRSOrder.OrderAction.OrderStartDateTime\nCPRSOrder.OrderedItem.OrderStartDateTime\nCPRSOrder.OrderedItem.OrderStartVistaDate"
-* dosageInstruction.timing.repeat.boundsPeriod.end -> "CPRSOrder.CPRSOrder.OrderStopDateTime\nCPRSOrder.CPRSOrder.OrderStopVistaDate\nCPRSOrder.OrderedItem.OrderStopDateTime\nCPRSOrder.OrderedItem.OrderStopVistaDate"
-* medicationCodeableConcept -> "CPRSOrder.CPRSOrder.ItemOrderedParentFileIEN\nCPRSOrder.CPRSOrder.ItemOrderedParentFileNumber"
+* subject -> "CPRSOrder.OrderAction.ObjectOfOrderIEN,CPRSOrder.OrderAction.ObjectOfOrderPatientIEN,CPRSOrder.OrderAction.ParentFileNumber"
+* authoredOn -> "CPRSOrder.CPRSOrder.EnteredDateTime,CPRSOrder.CPRSOrder.EnteredVistaDate,CPRSOrder.OrderedItem.EnteredDateTime,CPRSOrder.OrderedItem.EnteredVistaDate"
+* dosageInstruction.timing.repeat.boundsPeriod.start -> "CPRSOrder.CPRSOrder.OrderStartDateTime,CPRSOrder.CPRSOrder.OrderStartVistaDate,CPRSOrder.OrderAction.OrderStartDateTime,CPRSOrder.OrderedItem.OrderStartDateTime,CPRSOrder.OrderedItem.OrderStartVistaDate"
+* dosageInstruction.timing.repeat.boundsPeriod.end -> "CPRSOrder.CPRSOrder.OrderStopDateTime,CPRSOrder.CPRSOrder.OrderStopVistaDate,CPRSOrder.OrderedItem.OrderStopDateTime,CPRSOrder.OrderedItem.OrderStopVistaDate"
+* medicationCodeableConcept -> "CPRSOrder.CPRSOrder.ItemOrderedParentFileIEN,CPRSOrder.CPRSOrder.ItemOrderedParentFileNumber"

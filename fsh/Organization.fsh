@@ -45,14 +45,14 @@ Mapping: cdw-to-Organization
 Id: cdw
 Title: "Clinical Data Warehouse (CDW)"
 Source: Organization
-* name -> "Dim.AutoDiscontinuedRule.InstitutionName\nDim.Institution.InstitutionName\nDim.RequestService.IFCRoutingInstitution"
+* name -> "Dim.AutoDiscontinuedRule.InstitutionName,Dim.Institution.InstitutionName,Dim.RequestService.IFCRoutingInstitution"
 * identifier.value -> "Dim.Institution.NPI"
 * alias -> "Dim.Institution.InstitutionShortName"
 * address[physical].line -> "Dim.Institution.StreetAddress1"
 * address[physical].line -> "Dim.Institution.StreetAddress2"
 * address[physical].city -> "Dim.Institution.City"
 * address[physical].district -> "Dim.Institution.MedicalDistrict"
-* address[physical].state -> "Dim.State.StateAbbrev\nDim.State.StateAbbrev"
+* address[physical].state -> "Dim.State.StateAbbrev,Dim.State.StateAbbrev"
 * address[physical].postalCode -> "Dim.Institution.Zip"
 * address[physical].country -> "Dim.Country.CountryCode"
 * address[postal].country -> "Dim.Country.CountryCode"

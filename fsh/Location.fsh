@@ -40,7 +40,7 @@ Source: Location
 * name -> "Dim.Location.LocationName"
 * alias -> "Dim.Location.LocationAbbreviation"
 * description -> "Dim.Location.PatientFriendlyLocationName"
-* telecom.value -> "Dim.Location.PhoneNumber"
+* telecom.value -> "Dim.Location.PhoneNumber\nDim.Location.PhoneNumberExtension"
 * physicalType.text -> "Dim.Location.PhysicalLocation"
 * address.district -> "Dim.Institution.MedicalDistrict"
 * address.line -> "Dim.Institution.StreetAddress1"
