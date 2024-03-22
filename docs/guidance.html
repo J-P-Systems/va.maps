@@ -4,10 +4,14 @@
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <title>Guidance - US Veterans Administration FHIR Map Set Implementation Guide v0.19.0</title>
 =======
     <title>Guidance - US Veterans Administration FHIR Map Set Implementation Guide v0.32.0</title>
 >>>>>>> d705eb409... new version
+=======
+    <title>Guidance - US Veterans Administration FHIR Map Set Implementation Guide v0.32.0</title>
+>>>>>>> d705eb4094de1058548d040174d23adca117e2e7
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -63,10 +67,14 @@
           <p><span style="font-size:12pt;font-weight:bold">US Veterans Administration FHIR Map Set Implementation Guide</span>
             <br/>
 <<<<<<< HEAD
+<<<<<<< HEAD
             <span style="display:inline-block;">0.19.0 - ci-build
 =======
             <span style="display:inline-block;">0.32.0 - ci-build
 >>>>>>> d705eb409... new version
+=======
+            <span style="display:inline-block;">0.32.0 - ci-build
+>>>>>>> d705eb4094de1058548d040174d23adca117e2e7
 
 
 
@@ -151,10 +159,14 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </style>
 <div class="col-12">
 <<<<<<< HEAD
+<<<<<<< HEAD
   <!--ReleaseHeader--><p id="publish-box">US Veterans Administration FHIR Map Set Implementation Guide - Local Development build (v0.19.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
 =======
   <!--ReleaseHeader--><p id="publish-box">US Veterans Administration FHIR Map Set Implementation Guide - Local Development build (v0.32.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
 >>>>>>> d705eb409... new version
+=======
+  <!--ReleaseHeader--><p id="publish-box">US Veterans Administration FHIR Map Set Implementation Guide - Local Development build (v0.32.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+>>>>>>> d705eb4094de1058548d040174d23adca117e2e7
   <h2>Guidance</h2>
   
 
@@ -317,38 +329,22 @@ Write capabilities</li>
 <p>We follow the guidance below for situations defined by the FHIR constraint (across the top) and VistA content (left column).</p>
 
 <table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>VistA Content</th>
+      <th>FHIR Target<br />1. CodeableConcept, optional binding</th>
+      <th><br />2. CodeableConcept, required or extensible binding</th>
+      <th><br />3. Code</th>
+    </tr>
+  </thead>
   <tbody>
-    <tr>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td>FHIR Target</td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td> </td>
-      <td>1<br /> CodeableConcept, optional binding</td>
-      <td>2<br /> CodeableConcept, required or extensible binding</td>
-      <td>3<br /> Code</td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-    </tr>
     <tr>
       <td>A</td>
       <td>VA data not coded</td>
       <td>CodeableConcept.text</td>
       <td>CodeableConcept.text<br /> Map to code</td>
       <td>Map to code<br /> VA value in extension</td>
-      <td> </td>
     </tr>
     <tr>
       <td>B</td>
@@ -356,7 +352,6 @@ Write capabilities</li>
       <td>Code &amp; value in element<br /> Include system</td>
       <td>Code &amp; value in element<br /> Include system</td>
       <td>Code in element</td>
-      <td> </td>
     </tr>
     <tr>
       <td>C</td>
@@ -364,7 +359,6 @@ Write capabilities</li>
       <td>Code &amp; value in element<br /> Include system &amp; ‘selected’<br /> Optional standard coding</td>
       <td>Code &amp; value in element<br /> Include system &amp; ‘selected’<br /> Include standard coding</td>
       <td>Mapped code<br /> VA value in extension</td>
-      <td> </td>
     </tr>
     <tr>
       <td>D</td>
@@ -372,7 +366,6 @@ Write capabilities</li>
       <td>Code &amp; value in element<br /> If no system available,  use VistA system scheme URL</td>
       <td>Required: Not supported<br /> Extensible: use VA value</td>
       <td>Not supported<br /> VA value in extension</td>
-      <td>”</td>
     </tr>
   </tbody>
 </table>
@@ -413,10 +406,6 @@ http://va.gov/identifiers
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://va.gov/terminology/vistaDefinedTerms/2-.07
 </code></pre></div></div>
 
-<h4 id="codeableconcepts">CodeableConcepts</h4>
-
-<p>…</p>
-
 <h4 id="identifiers">Identifiers</h4>
 
 <p>Patient identifers are VA ICNs scoped by the VA OID:</p>
@@ -450,6 +439,44 @@ http://va.gov/identifiers
 }],
 </code></pre></div></div>
 
+<h4 id="codings-and-codeableconcepts">Codings and CodeableConcepts</h4>
+
+<ul>
+  <li>Codings SHALL always contain the source VistA Term or Entry alongside the required FHIR Coding. Terminology Mapping is defined in  mapParameters and results in ValueSet and ConceptMaps.</li>
+</ul>
+
+<h4 id="valuesets-and-conceptmaps">ValueSets and ConceptMaps</h4>
+
+<ul>
+  <li>ValueSets are named “VS{termmapname}”</li>
+  <li>ValueSets contain both the (required) FHIR ValueSet values and the VistA values.</li>
+  <li>ConceptMaps are named “CM{termmapname}”</li>
+</ul>
+
+<h4 id="structuredefinition-profiles">StructureDefinition (Profiles)</h4>
+
+<p>All elements with a VistA mapping …</p>
+
+<ul>
+  <li>… are marked must-support <span style="padding-left: 3px; padding-right: 3px; color: white; background-color: red" title="This element must be supported">S</span></li>
+  <li>… slices are added when used</li>
+  <li>… extensions are added when used</li>
+  <li>… optionally have 1 or more CDW mappings</li>
+  <li>… optionally have 1 or more VPR mappings</li>
+  <li>… can have a terminology mapping expressed as a ValueSet and a ConceptMap</li>
+  <li>… can have a transform (e.g. string to boolean) expressed as a ValueSet and a ConceptMap using the 11179-permitted-value-conceptmap extension</li>
+  <li>… reference types are constrained when defined as part of the mappings</li>
+  <li>… fixed value unless there is a case</li>
+</ul>
+
+<h4 id="must-support">Must-support</h4>
+
+<p>… in this guide means …</p>
+
+<h4 id="structuredefinition-va-extensions">StructureDefinition (VA Extensions)</h4>
+
+<p>Defined in <a href="artifacts.html#structures-extension-definitions">this IG</a> using namespace http://va.gov/fhir/StructureDefinition/</p>
+
 
 
 
@@ -476,10 +503,14 @@ http://va.gov/identifiers
       <div class="inner-wrapper">
         <p>
 <<<<<<< HEAD
+<<<<<<< HEAD
           IG &#169; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.19.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Feb 13, 2024 19:55+0000">2024-02-13</span>
 =======
           IG &#169; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.32.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Mar 22, 2024 16:04+0000">2024-03-22</span>
 >>>>>>> d705eb409... new version
+=======
+          IG &#169; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.32.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Mar 22, 2024 16:04+0000">2024-03-22</span>
+>>>>>>> d705eb4094de1058548d040174d23adca117e2e7
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

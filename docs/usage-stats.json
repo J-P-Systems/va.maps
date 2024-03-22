@@ -1,13 +1,39 @@
 {
   "package": "va.maps",
 <<<<<<< HEAD
+<<<<<<< HEAD
   "version": "0.19.0",
 =======
   "version": "0.32.0",
 >>>>>>> d705eb409... new version
+=======
+  "version": "0.32.0",
+>>>>>>> d705eb4094de1058548d040174d23adca117e2e7
   "fhirVersion": "4.0.1",
   "jurisdiction": "US",
-  "extensions": [],
+  "extensions": [
+    {
+      "url": "http://va.gov/fhir/StructureDefinition/medicationrequest-cancelDate",
+      "title": "MedicationRequestCancelDate",
+      "types": [
+        "dateTime"
+      ]
+    },
+    {
+      "url": "http://va.gov/fhir/StructureDefinition/medicationrequest-includeIndicationInSig",
+      "title": "MedicationRequestIncludeIndicationInSig",
+      "types": [
+        "boolean"
+      ]
+    },
+    {
+      "url": "http://va.gov/fhir/StructureDefinition/medicationrequest-pharmacyOrderStatus",
+      "title": "MedicationRequestPharmacyOrderStatus",
+      "types": [
+        "Coding"
+      ]
+    }
+  ],
   "profiles": {
     "AllergyIntolerance": [
       {
@@ -65,14 +91,14 @@
     ],
     "DiagnosticReport": [
       {
-        "url": "http://va.gov/fhir/StructureDefinition/LabObservationSurgicalPathologyDiagnosticReport",
-        "title": "Lab Observation: Surgical Pathology DiagnosticReport"
+        "url": "http://va.gov/fhir/StructureDefinition/LaboratoryResultsSurgicalPathologyDiagnosticReport",
+        "title": "Laboratory Results: Surgical Pathology DiagnosticReport"
       }
     ],
     "Specimen": [
       {
-        "url": "http://va.gov/fhir/StructureDefinition/LabObservationSurgicalPathologySpecimen",
-        "title": "Lab Observation: Surgical Pathology Specimen"
+        "url": "http://va.gov/fhir/StructureDefinition/LaboratoryResultsSurgicalPathologySpecimen",
+        "title": "Laboratory Results: Surgical Pathology Specimen"
       }
     ],
     "Location": [
@@ -99,6 +125,10 @@
       {
         "url": "http://va.gov/fhir/StructureDefinition/MedicationRequestOutpatientMedicationRequest",
         "title": "MedicationRequest: Outpatient MedicationRequest"
+      },
+      {
+        "url": "http://va.gov/fhir/StructureDefinition/MedicationRequestUnsigned",
+        "title": "MedicationRequest: Unsigned"
       },
       {
         "url": "http://va.gov/fhir/StructureDefinition/MedicationRequestUnsignedVAOrder",
@@ -152,7 +182,8 @@
       "Immunization.primarySource",
       "MedicationRequest.extension.value[x]",
       "Observation.interpretation",
-      "Observation.value[x].code"
+      "Observation.value[x].code",
+      "Practitioner.address.country"
     ],
     "http://hl7.org/fhir/StructureDefinition/condition-assertedDate": [
       "Condition"
@@ -231,6 +262,15 @@
     ],
     "http://hl7.org/fhir/us/core/StructureDefinition/us-core-race": [
       "Patient"
+    ],
+    "http://va.gov/fhir/StructureDefinition/medicationrequest-cancelDate": [
+      "MedicationRequest"
+    ],
+    "http://va.gov/fhir/StructureDefinition/medicationrequest-includeIndicationInSig": [
+      "MedicationRequest"
+    ],
+    "http://va.gov/fhir/StructureDefinition/medicationrequest-pharmacyOrderStatus": [
+      "MedicationRequest"
     ]
   }
 }

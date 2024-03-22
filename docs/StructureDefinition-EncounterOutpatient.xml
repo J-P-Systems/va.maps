@@ -30,6 +30,7 @@
   </text>
   <url value="http://va.gov/fhir/StructureDefinition/EncounterOutpatient"/>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <version value="0.19.0"/>
   <name value="EncounterOutpatient"/>
   <title value="Encounter: Outpatient"/>
@@ -42,6 +43,13 @@
   <status value="draft"/>
   <date value="2024-03-22T16:04:14+00:00"/>
 >>>>>>> d705eb409... new version
+=======
+  <version value="0.32.0"/>
+  <name value="EncounterOutpatient"/>
+  <title value="Encounter: Outpatient"/>
+  <status value="draft"/>
+  <date value="2024-03-22T16:04:14+00:00"/>
+>>>>>>> d705eb4094de1058548d040174d23adca117e2e7
   <publisher value="VA"/>
   <contact>
     <name value="VA"/>
@@ -59,6 +67,14 @@
     </coding>
   </jurisdiction>
   <fhirVersion value="4.0.1"/>
+  <mapping>
+    <identity value="vista"/>
+    <name value="Veterans Health Information Systems Technology and Architecture (VistA)"/>
+  </mapping>
+  <mapping>
+    <identity value="cdw"/>
+    <name value="Clinical Data Warehouse (CDW)"/>
+  </mapping>
   <mapping>
     <identity value="workflow"/>
     <uri value="http://hl7.org/fhir/workflow"/>
@@ -78,14 +94,6 @@
     <identity value="v2"/>
     <uri value="http://hl7.org/v2"/>
     <name value="HL7 v2 Mapping"/>
-  </mapping>
-  <mapping>
-    <identity value="vista"/>
-    <name value="Veterans Health Information Systems Technology and Architecture (VistA)"/>
-  </mapping>
-  <mapping>
-    <identity value="cdw"/>
-    <name value="Clinical Data Warehouse (CDW)"/>
   </mapping>
   <kind value="resource"/>
   <abstract value="false"/>
@@ -713,7 +721,7 @@
       </mapping>
       <mapping>
         <identity value="cdw"/>
-        <map value="Outpat.Visit.VisitIdentifier&#xA;Outpat.Workload.VisitIdentifier"/>
+        <map value="Outpat.Visit.VisitIdentifier,Outpat.Workload.VisitIdentifier"/>
       </mapping>
     </element>
     <element id="Encounter.identifier.period">
@@ -859,11 +867,11 @@
       </mapping>
       <mapping>
         <identity value="cdw"/>
-        <map value="Outpat.Visit.VisitDateTime&#xA;Outpat.Workload.VisitDateTime"/>
+        <map value="Outpat.Visit.VisitDateTime,Outpat.Workload.VisitDateTime"/>
       </mapping>
       <mapping>
         <identity value="cdw"/>
-        <map value="Outpat.Visit.CheckOutDateTime&#xA;Outpat.Workload.CheckOutDateTime"/>
+        <map value="Outpat.Visit.CheckOutDateTime,Outpat.Workload.CheckOutDateTime"/>
       </mapping>
     </element>
     <element id="Encounter.statusHistory">
@@ -1728,7 +1736,7 @@
       </mapping>
       <mapping>
         <identity value="cdw"/>
-        <map value="Outpat.Visit.ServiceCategory&#xA;Outpat.Workload.ServiceCategory"/>
+        <map value="Outpat.Visit.ServiceCategory,Outpat.Workload.ServiceCategory"/>
       </mapping>
     </element>
     <element id="Encounter.serviceType.coding.display">
@@ -2511,7 +2519,7 @@
       </mapping>
       <mapping>
         <identity value="cdw"/>
-        <map value="Outpat.Visit.VisitDateTime&#xA;Outpat.Workload.VisitDateTime"/>
+        <map value="Outpat.Visit.VisitDateTime,Outpat.Workload.VisitDateTime"/>
       </mapping>
     </element>
     <element id="Encounter.period.end">
@@ -2556,7 +2564,7 @@
       </mapping>
       <mapping>
         <identity value="cdw"/>
-        <map value="Outpat.Visit.CheckOutDateTime&#xA;Outpat.Workload.CheckOutDateTime"/>
+        <map value="Outpat.Visit.CheckOutDateTime,Outpat.Workload.CheckOutDateTime"/>
       </mapping>
     </element>
     <element id="Encounter.length">
@@ -2957,7 +2965,7 @@
       </mapping>
       <mapping>
         <identity value="cdw"/>
-        <map value="Dim.ICD10.ICD10Code&#xA;Dim.ICD9.ICD9Code"/>
+        <map value="Dim.ICD10.ICD10Code,Dim.ICD9.ICD9Code"/>
       </mapping>
     </element>
     <element id="Encounter.reasonCode.coding.display">
@@ -4308,7 +4316,7 @@
       </mapping>
       <mapping>
         <identity value="cdw"/>
-        <map value="Outpat.Visit.VisitIdentifier&#xA;Outpat.Workload.VisitIdentifier"/>
+        <map value="Outpat.Visit.VisitIdentifier,Outpat.Workload.VisitIdentifier"/>
       </mapping>
     </element>
     <element id="Encounter.status">
@@ -4329,15 +4337,31 @@
       </mapping>
       <mapping>
         <identity value="cdw"/>
-        <map value="Outpat.Visit.VisitDateTime&#xA;Outpat.Workload.VisitDateTime"/>
+        <map value="Outpat.Visit.VisitDateTime,Outpat.Workload.VisitDateTime"/>
       </mapping>
       <mapping>
         <identity value="cdw"/>
-        <map value="Outpat.Visit.VisitDateTime&#xA;Outpat.Workload.VisitDateTime"/>
+        <map value="Outpat.Visit.VisitDateTime,Outpat.Workload.VisitDateTime"/>
       </mapping>
       <mapping>
         <identity value="cdw"/>
-        <map value="Outpat.Visit.CheckOutDateTime&#xA;Outpat.Workload.CheckOutDateTime"/>
+        <map value="Outpat.Visit.CheckOutDateTime,Outpat.Workload.CheckOutDateTime"/>
+      </mapping>
+    </element>
+    <element id="Encounter.class">
+      <path value="Encounter.class"/>
+      <binding>
+        <strength value="required"/>
+        <valueSet value="http://va.gov/fhir/ValueSet/VSVFencounterClass"/>
+      </binding>
+      <mapping>
+        <identity value="vista"/>
+        <map value="614: terminologyMaps using VF_encounterClass on VISIT - PATIENT STATUS IN/OUT (#9000010-15002)"/>
+        <comment value="84% are Outpatient (2024 Jan-Mar)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Outpat.Visit.PatientStatusInOut,Outpat.Workload.PatientStatusInOut"/>
       </mapping>
     </element>
     <element id="Encounter.class">
@@ -4373,7 +4397,7 @@
       </mapping>
       <mapping>
         <identity value="cdw"/>
-        <map value="Outpat.Visit.ServiceCategory&#xA;Outpat.Workload.ServiceCategory"/>
+        <map value="Outpat.Visit.ServiceCategory,Outpat.Workload.ServiceCategory"/>
       </mapping>
     </element>
     <element id="Encounter.subject">
@@ -4399,7 +4423,7 @@
       </mapping>
       <mapping>
         <identity value="cdw"/>
-        <map value="Outpat.Visit.VisitDateTime&#xA;Outpat.Workload.VisitDateTime"/>
+        <map value="Outpat.Visit.VisitDateTime,Outpat.Workload.VisitDateTime"/>
       </mapping>
     </element>
     <element id="Encounter.period.end">
@@ -4411,7 +4435,7 @@
       </mapping>
       <mapping>
         <identity value="cdw"/>
-        <map value="Outpat.Visit.CheckOutDateTime&#xA;Outpat.Workload.CheckOutDateTime"/>
+        <map value="Outpat.Visit.CheckOutDateTime,Outpat.Workload.CheckOutDateTime"/>
       </mapping>
     </element>
     <element id="Encounter.reasonCode.coding.code">
@@ -4424,7 +4448,7 @@
       </mapping>
       <mapping>
         <identity value="cdw"/>
-        <map value="Dim.ICD10.ICD10Code&#xA;Dim.ICD9.ICD9Code"/>
+        <map value="Dim.ICD10.ICD10Code,Dim.ICD9.ICD9Code"/>
       </mapping>
     </element>
     <element id="Encounter.diagnosis.condition">

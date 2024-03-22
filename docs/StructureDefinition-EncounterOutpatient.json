@@ -7,6 +7,7 @@
   },
   "url" : "http://va.gov/fhir/StructureDefinition/EncounterOutpatient",
 <<<<<<< HEAD
+<<<<<<< HEAD
   "version" : "0.19.0",
   "name" : "EncounterOutpatient",
   "title" : "Encounter: Outpatient",
@@ -19,6 +20,13 @@
   "status" : "draft",
   "date" : "2024-03-22T16:04:14+00:00",
 >>>>>>> d705eb409... new version
+=======
+  "version" : "0.32.0",
+  "name" : "EncounterOutpatient",
+  "title" : "Encounter: Outpatient",
+  "status" : "draft",
+  "date" : "2024-03-22T16:04:14+00:00",
+>>>>>>> d705eb4094de1058548d040174d23adca117e2e7
   "publisher" : "VA",
   "contact" : [{
     "name" : "VA",
@@ -37,6 +45,14 @@
   }],
   "fhirVersion" : "4.0.1",
   "mapping" : [{
+    "identity" : "vista",
+    "name" : "Veterans Health Information Systems Technology and Architecture (VistA)"
+  },
+  {
+    "identity" : "cdw",
+    "name" : "Clinical Data Warehouse (CDW)"
+  },
+  {
     "identity" : "workflow",
     "uri" : "http://hl7.org/fhir/workflow",
     "name" : "Workflow Pattern"
@@ -55,14 +71,6 @@
     "identity" : "v2",
     "uri" : "http://hl7.org/v2",
     "name" : "HL7 v2 Mapping"
-  },
-  {
-    "identity" : "vista",
-    "name" : "Veterans Health Information Systems Technology and Architecture (VistA)"
-  },
-  {
-    "identity" : "cdw",
-    "name" : "Clinical Data Warehouse (CDW)"
   }],
   "kind" : "resource",
   "abstract" : false,
@@ -714,7 +722,7 @@
       },
       {
         "identity" : "cdw",
-        "map" : "Outpat.Visit.VisitIdentifier\nOutpat.Workload.VisitIdentifier"
+        "map" : "Outpat.Visit.VisitIdentifier,Outpat.Workload.VisitIdentifier"
       }]
     },
     {
@@ -864,11 +872,11 @@
       },
       {
         "identity" : "cdw",
-        "map" : "Outpat.Visit.VisitDateTime\nOutpat.Workload.VisitDateTime"
+        "map" : "Outpat.Visit.VisitDateTime,Outpat.Workload.VisitDateTime"
       },
       {
         "identity" : "cdw",
-        "map" : "Outpat.Visit.CheckOutDateTime\nOutpat.Workload.CheckOutDateTime"
+        "map" : "Outpat.Visit.CheckOutDateTime,Outpat.Workload.CheckOutDateTime"
       }]
     },
     {
@@ -1763,7 +1771,7 @@
       },
       {
         "identity" : "cdw",
-        "map" : "Outpat.Visit.ServiceCategory\nOutpat.Workload.ServiceCategory"
+        "map" : "Outpat.Visit.ServiceCategory,Outpat.Workload.ServiceCategory"
       }]
     },
     {
@@ -2577,7 +2585,7 @@
       },
       {
         "identity" : "cdw",
-        "map" : "Outpat.Visit.VisitDateTime\nOutpat.Workload.VisitDateTime"
+        "map" : "Outpat.Visit.VisitDateTime,Outpat.Workload.VisitDateTime"
       }]
     },
     {
@@ -2623,7 +2631,7 @@
       },
       {
         "identity" : "cdw",
-        "map" : "Outpat.Visit.CheckOutDateTime\nOutpat.Workload.CheckOutDateTime"
+        "map" : "Outpat.Visit.CheckOutDateTime,Outpat.Workload.CheckOutDateTime"
       }]
     },
     {
@@ -3037,7 +3045,7 @@
       },
       {
         "identity" : "cdw",
-        "map" : "Dim.ICD10.ICD10Code\nDim.ICD9.ICD9Code"
+        "map" : "Dim.ICD10.ICD10Code,Dim.ICD9.ICD9Code"
       }]
     },
     {
@@ -4449,7 +4457,7 @@
       },
       {
         "identity" : "cdw",
-        "map" : "Outpat.Visit.VisitIdentifier\nOutpat.Workload.VisitIdentifier"
+        "map" : "Outpat.Visit.VisitIdentifier,Outpat.Workload.VisitIdentifier"
       }]
     },
     {
@@ -4471,15 +4479,32 @@
       },
       {
         "identity" : "cdw",
-        "map" : "Outpat.Visit.VisitDateTime\nOutpat.Workload.VisitDateTime"
+        "map" : "Outpat.Visit.VisitDateTime,Outpat.Workload.VisitDateTime"
       },
       {
         "identity" : "cdw",
-        "map" : "Outpat.Visit.VisitDateTime\nOutpat.Workload.VisitDateTime"
+        "map" : "Outpat.Visit.VisitDateTime,Outpat.Workload.VisitDateTime"
       },
       {
         "identity" : "cdw",
-        "map" : "Outpat.Visit.CheckOutDateTime\nOutpat.Workload.CheckOutDateTime"
+        "map" : "Outpat.Visit.CheckOutDateTime,Outpat.Workload.CheckOutDateTime"
+      }]
+    },
+    {
+      "id" : "Encounter.class",
+      "path" : "Encounter.class",
+      "binding" : {
+        "strength" : "required",
+        "valueSet" : "http://va.gov/fhir/ValueSet/VSVFencounterClass"
+      },
+      "mapping" : [{
+        "identity" : "vista",
+        "map" : "614: terminologyMaps using VF_encounterClass on VISIT - PATIENT STATUS IN/OUT (#9000010-15002)",
+        "comment" : "84% are Outpatient (2024 Jan-Mar)"
+      },
+      {
+        "identity" : "cdw",
+        "map" : "Outpat.Visit.PatientStatusInOut,Outpat.Workload.PatientStatusInOut"
       }]
     },
     {
@@ -4518,7 +4543,7 @@
       },
       {
         "identity" : "cdw",
-        "map" : "Outpat.Visit.ServiceCategory\nOutpat.Workload.ServiceCategory"
+        "map" : "Outpat.Visit.ServiceCategory,Outpat.Workload.ServiceCategory"
       }]
     },
     {
@@ -4547,7 +4572,7 @@
       },
       {
         "identity" : "cdw",
-        "map" : "Outpat.Visit.VisitDateTime\nOutpat.Workload.VisitDateTime"
+        "map" : "Outpat.Visit.VisitDateTime,Outpat.Workload.VisitDateTime"
       }]
     },
     {
@@ -4560,7 +4585,7 @@
       },
       {
         "identity" : "cdw",
-        "map" : "Outpat.Visit.CheckOutDateTime\nOutpat.Workload.CheckOutDateTime"
+        "map" : "Outpat.Visit.CheckOutDateTime,Outpat.Workload.CheckOutDateTime"
       }]
     },
     {
@@ -4574,7 +4599,7 @@
       },
       {
         "identity" : "cdw",
-        "map" : "Dim.ICD10.ICD10Code\nDim.ICD9.ICD9Code"
+        "map" : "Dim.ICD10.ICD10Code,Dim.ICD9.ICD9Code"
       }]
     },
     {

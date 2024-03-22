@@ -14,6 +14,7 @@
   ] ; # 
   fhir:url [ fhir:v "http://va.gov/fhir/StructureDefinition/EncounterOutpatient"^^xsd:anyURI] ; # 
 <<<<<<< HEAD
+<<<<<<< HEAD
   fhir:version [ fhir:v "0.19.0"] ; # 
   fhir:name [ fhir:v "EncounterOutpatient"] ; # 
   fhir:title [ fhir:v "Encounter: Outpatient"] ; # 
@@ -26,6 +27,13 @@
   fhir:status [ fhir:v "draft"] ; # 
   fhir:date [ fhir:v "2024-03-22T16:04:14+00:00"^^xsd:dateTime] ; # 
 >>>>>>> d705eb409... new version
+=======
+  fhir:version [ fhir:v "0.32.0"] ; # 
+  fhir:name [ fhir:v "EncounterOutpatient"] ; # 
+  fhir:title [ fhir:v "Encounter: Outpatient"] ; # 
+  fhir:status [ fhir:v "draft"] ; # 
+  fhir:date [ fhir:v "2024-03-22T16:04:14+00:00"^^xsd:dateTime] ; # 
+>>>>>>> d705eb4094de1058548d040174d23adca117e2e7
   fhir:publisher [ fhir:v "VA"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "VA" ] ;
@@ -44,6 +52,12 @@
   ] ) ; # 
   fhir:fhirVersion [ fhir:v "4.0.1"] ; # 
   fhir:mapping ( [
+     fhir:identity [ fhir:v "vista" ] ;
+     fhir:name [ fhir:v "Veterans Health Information Systems Technology and Architecture (VistA)" ]
+  ] [
+     fhir:identity [ fhir:v "cdw" ] ;
+     fhir:name [ fhir:v "Clinical Data Warehouse (CDW)" ]
+  ] [
      fhir:identity [ fhir:v "workflow" ] ;
      fhir:uri [ fhir:v "http://hl7.org/fhir/workflow"^^xsd:anyURI ] ;
      fhir:name [ fhir:v "Workflow Pattern" ]
@@ -59,12 +73,6 @@
      fhir:identity [ fhir:v "v2" ] ;
      fhir:uri [ fhir:v "http://hl7.org/v2"^^xsd:anyURI ] ;
      fhir:name [ fhir:v "HL7 v2 Mapping" ]
-  ] [
-     fhir:identity [ fhir:v "vista" ] ;
-     fhir:name [ fhir:v "Veterans Health Information Systems Technology and Architecture (VistA)" ]
-  ] [
-     fhir:identity [ fhir:v "cdw" ] ;
-     fhir:name [ fhir:v "Clinical Data Warehouse (CDW)" ]
   ] ) ; # 
   fhir:kind [ fhir:v "resource"] ; # 
   fhir:abstract [ fhir:v "false"^^xsd:boolean] ; # 
@@ -746,7 +754,7 @@
          fhir:map [ fhir:v "429: source value from VISIT - VISIT ID (#9000010-15001)" ]
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
-         fhir:map [ fhir:v "Outpat.Visit.VisitIdentifier\nOutpat.Workload.VisitIdentifier" ]
+         fhir:map [ fhir:v "Outpat.Visit.VisitIdentifier,Outpat.Workload.VisitIdentifier" ]
        ] )
      ] [
        fhir:id [ fhir:v "Encounter.identifier.period" ] ;
@@ -897,10 +905,10 @@
          fhir:comment [ fhir:v "tweaked case logic 9/21" ]
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
-         fhir:map [ fhir:v "Outpat.Visit.VisitDateTime\nOutpat.Workload.VisitDateTime" ]
+         fhir:map [ fhir:v "Outpat.Visit.VisitDateTime,Outpat.Workload.VisitDateTime" ]
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
-         fhir:map [ fhir:v "Outpat.Visit.CheckOutDateTime\nOutpat.Workload.CheckOutDateTime" ]
+         fhir:map [ fhir:v "Outpat.Visit.CheckOutDateTime,Outpat.Workload.CheckOutDateTime" ]
        ] )
      ] [
        fhir:id [ fhir:v "Encounter.statusHistory" ] ;
@@ -1828,7 +1836,7 @@
          fhir:comment [ fhir:v "MvdZ QA" ]
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
-         fhir:map [ fhir:v "Outpat.Visit.ServiceCategory\nOutpat.Workload.ServiceCategory" ]
+         fhir:map [ fhir:v "Outpat.Visit.ServiceCategory,Outpat.Workload.ServiceCategory" ]
        ] )
      ] [
        fhir:id [ fhir:v "Encounter.serviceType.coding.display" ] ;
@@ -2661,7 +2669,7 @@
          fhir:map [ fhir:v "443: source value from VISIT - VISIT/ADMIT DATE&TIME (#9000010-.01)" ]
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
-         fhir:map [ fhir:v "Outpat.Visit.VisitDateTime\nOutpat.Workload.VisitDateTime" ]
+         fhir:map [ fhir:v "Outpat.Visit.VisitDateTime,Outpat.Workload.VisitDateTime" ]
        ] )
      ] [
        fhir:id [ fhir:v "Encounter.period.end" ] ;
@@ -2706,7 +2714,7 @@
          fhir:map [ fhir:v "444: source value from VISIT - CHECK OUT DATE&TIME (#9000010-.18)" ]
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
-         fhir:map [ fhir:v "Outpat.Visit.CheckOutDateTime\nOutpat.Workload.CheckOutDateTime" ]
+         fhir:map [ fhir:v "Outpat.Visit.CheckOutDateTime,Outpat.Workload.CheckOutDateTime" ]
        ] )
      ] [
        fhir:id [ fhir:v "Encounter.length" ] ;
@@ -3123,7 +3131,7 @@
          fhir:comment [ fhir:v "MvdZ QA" ]
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
-         fhir:map [ fhir:v "Dim.ICD10.ICD10Code\nDim.ICD9.ICD9Code" ]
+         fhir:map [ fhir:v "Dim.ICD10.ICD10Code,Dim.ICD9.ICD9Code" ]
        ] )
      ] [
        fhir:id [ fhir:v "Encounter.reasonCode.coding.display" ] ;
@@ -4619,7 +4627,7 @@
          fhir:map [ fhir:v "429: source value from VISIT - VISIT ID (#9000010-15001)" ]
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
-         fhir:map [ fhir:v "Outpat.Visit.VisitIdentifier\nOutpat.Workload.VisitIdentifier" ]
+         fhir:map [ fhir:v "Outpat.Visit.VisitIdentifier,Outpat.Workload.VisitIdentifier" ]
        ] )
      ] [
        fhir:id [ fhir:v "Encounter.status" ] ;
@@ -4637,13 +4645,31 @@
          fhir:comment [ fhir:v "tweaked case logic 9/21" ]
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
-         fhir:map [ fhir:v "Outpat.Visit.VisitDateTime\nOutpat.Workload.VisitDateTime" ]
+         fhir:map [ fhir:v "Outpat.Visit.VisitDateTime,Outpat.Workload.VisitDateTime" ]
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
-         fhir:map [ fhir:v "Outpat.Visit.VisitDateTime\nOutpat.Workload.VisitDateTime" ]
+         fhir:map [ fhir:v "Outpat.Visit.VisitDateTime,Outpat.Workload.VisitDateTime" ]
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
-         fhir:map [ fhir:v "Outpat.Visit.CheckOutDateTime\nOutpat.Workload.CheckOutDateTime" ]
+         fhir:map [ fhir:v "Outpat.Visit.CheckOutDateTime,Outpat.Workload.CheckOutDateTime" ]
+       ] )
+     ] [
+       fhir:id [ fhir:v "Encounter.class" ] ;
+       fhir:path [ fhir:v "Encounter.class" ] ;
+       fhir:binding [
+         fhir:strength [ fhir:v "required" ] ;
+         fhir:valueSet [
+           fhir:v "http://va.gov/fhir/ValueSet/VSVFencounterClass"^^xsd:anyURI ;
+           fhir:link <http://va.gov/fhir/ValueSet/VSVFencounterClass>
+         ]
+       ] ;
+       fhir:mapping ( [
+         fhir:identity [ fhir:v "vista" ] ;
+         fhir:map [ fhir:v "614: terminologyMaps using VF_encounterClass on VISIT - PATIENT STATUS IN/OUT (#9000010-15002)" ] ;
+         fhir:comment [ fhir:v "84% are Outpatient (2024 Jan-Mar)" ]
+       ] [
+         fhir:identity [ fhir:v "cdw" ] ;
+         fhir:map [ fhir:v "Outpat.Visit.PatientStatusInOut,Outpat.Workload.PatientStatusInOut" ]
        ] )
      ] [
        fhir:id [ fhir:v "Encounter.class" ] ;
@@ -4680,7 +4706,7 @@
          fhir:comment [ fhir:v "MvdZ QA" ]
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
-         fhir:map [ fhir:v "Outpat.Visit.ServiceCategory\nOutpat.Workload.ServiceCategory" ]
+         fhir:map [ fhir:v "Outpat.Visit.ServiceCategory,Outpat.Workload.ServiceCategory" ]
        ] )
      ] [
        fhir:id [ fhir:v "Encounter.subject" ] ;
@@ -4705,7 +4731,7 @@
          fhir:map [ fhir:v "443: source value from VISIT - VISIT/ADMIT DATE&TIME (#9000010-.01)" ]
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
-         fhir:map [ fhir:v "Outpat.Visit.VisitDateTime\nOutpat.Workload.VisitDateTime" ]
+         fhir:map [ fhir:v "Outpat.Visit.VisitDateTime,Outpat.Workload.VisitDateTime" ]
        ] )
      ] [
        fhir:id [ fhir:v "Encounter.period.end" ] ;
@@ -4716,7 +4742,7 @@
          fhir:map [ fhir:v "444: source value from VISIT - CHECK OUT DATE&TIME (#9000010-.18)" ]
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
-         fhir:map [ fhir:v "Outpat.Visit.CheckOutDateTime\nOutpat.Workload.CheckOutDateTime" ]
+         fhir:map [ fhir:v "Outpat.Visit.CheckOutDateTime,Outpat.Workload.CheckOutDateTime" ]
        ] )
      ] [
        fhir:id [ fhir:v "Encounter.reasonCode.coding.code" ] ;
@@ -4728,7 +4754,7 @@
          fhir:comment [ fhir:v "MvdZ QA" ]
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
-         fhir:map [ fhir:v "Dim.ICD10.ICD10Code\nDim.ICD9.ICD9Code" ]
+         fhir:map [ fhir:v "Dim.ICD10.ICD10Code,Dim.ICD9.ICD9Code" ]
        ] )
      ] [
        fhir:id [ fhir:v "Encounter.diagnosis.condition" ] ;

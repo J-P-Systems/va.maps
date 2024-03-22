@@ -14,6 +14,7 @@
   ] ; # 
   fhir:url [ fhir:v "http://va.gov/fhir/StructureDefinition/VitalSignsOrganization"^^xsd:anyURI] ; # 
 <<<<<<< HEAD
+<<<<<<< HEAD
   fhir:version [ fhir:v "0.19.0"] ; # 
   fhir:name [ fhir:v "VitalSignsOrganization"] ; # 
   fhir:title [ fhir:v "Vital Signs Organization"] ; # 
@@ -26,6 +27,13 @@
   fhir:status [ fhir:v "draft"] ; # 
   fhir:date [ fhir:v "2024-03-22T16:04:14+00:00"^^xsd:dateTime] ; # 
 >>>>>>> d705eb409... new version
+=======
+  fhir:version [ fhir:v "0.32.0"] ; # 
+  fhir:name [ fhir:v "VitalSignsOrganization"] ; # 
+  fhir:title [ fhir:v "Vital Signs Organization"] ; # 
+  fhir:status [ fhir:v "draft"] ; # 
+  fhir:date [ fhir:v "2024-03-22T16:04:14+00:00"^^xsd:dateTime] ; # 
+>>>>>>> d705eb4094de1058548d040174d23adca117e2e7
   fhir:publisher [ fhir:v "VA"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "VA" ] ;
@@ -44,6 +52,12 @@
   ] ) ; # 
   fhir:fhirVersion [ fhir:v "4.0.1"] ; # 
   fhir:mapping ( [
+     fhir:identity [ fhir:v "vista" ] ;
+     fhir:name [ fhir:v "Veterans Health Information Systems Technology and Architecture (VistA)" ]
+  ] [
+     fhir:identity [ fhir:v "cdw" ] ;
+     fhir:name [ fhir:v "Clinical Data Warehouse (CDW)" ]
+  ] [
      fhir:identity [ fhir:v "v2" ] ;
      fhir:uri [ fhir:v "http://hl7.org/v2"^^xsd:anyURI ] ;
      fhir:name [ fhir:v "HL7 v2 Mapping" ]
@@ -59,12 +73,6 @@
      fhir:identity [ fhir:v "w5" ] ;
      fhir:uri [ fhir:v "http://hl7.org/fhir/fivews"^^xsd:anyURI ] ;
      fhir:name [ fhir:v "FiveWs Pattern Mapping" ]
-  ] [
-     fhir:identity [ fhir:v "vista" ] ;
-     fhir:name [ fhir:v "Veterans Health Information Systems Technology and Architecture (VistA)" ]
-  ] [
-     fhir:identity [ fhir:v "cdw" ] ;
-     fhir:name [ fhir:v "Clinical Data Warehouse (CDW)" ]
   ] ) ; # 
   fhir:kind [ fhir:v "resource"] ; # 
   fhir:abstract [ fhir:v "false"^^xsd:boolean] ; # 
@@ -641,7 +649,7 @@
          fhir:comment [ fhir:v "Institution file 4 is joined via Location file 44" ]
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
-         fhir:map [ fhir:v "Dim.AutoDiscontinuedRule.InstitutionName\nDim.Institution.InstitutionName\nDim.RequestService.IFCRoutingInstitution" ]
+         fhir:map [ fhir:v "Dim.AutoDiscontinuedRule.InstitutionName,Dim.Institution.InstitutionName,Dim.RequestService.IFCRoutingInstitution" ]
        ] )
      ] [
        fhir:id [ fhir:v "Organization.alias" ] ;
@@ -1190,7 +1198,7 @@
          fhir:comment [ fhir:v "Institution file 4 is joined via Location file 44" ]
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
-         fhir:map [ fhir:v "Dim.AutoDiscontinuedRule.InstitutionName\nDim.Institution.InstitutionName\nDim.RequestService.IFCRoutingInstitution" ]
+         fhir:map [ fhir:v "Dim.AutoDiscontinuedRule.InstitutionName,Dim.Institution.InstitutionName,Dim.RequestService.IFCRoutingInstitution" ]
        ] )
      ] )
   ] . # 

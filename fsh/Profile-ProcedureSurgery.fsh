@@ -1,0 +1,73 @@
+Profile: ProcedureSurgery
+Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure
+Id: ProcedureSurgery
+Title: "Procedure: Surgery"
+Description: "This StructureDefinition contains the maps for VistA file SURGERY (#130) to us-core-procedure"
+* ^status = #draft
+* encounter and performedDateTime and subject and note and reasonCode.text and performedPeriod.start and performedPeriod.end and location and complication.coding and performer.actor and category.coding and code.text and code.coding and status MS
+* category.coding = http://snomed.info/sct#387713003 "Surgical procedure"
+
+Mapping: vista-to-ProcedureSurgery
+Id: vista
+Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
+Source: ProcedureSurgery
+* encounter -> "1285: reference from SURGERY - VISIT (#130-.015)"
+* performedDateTime -> "1286: source value from SURGERY - DATE OF OPERATION (#130-.09)"
+* subject -> "1287: reference from SURGERY - PATIENT (#130-.01)"
+* note -> "1288: source value from SURGERY - GENERAL COMMENTS (#130-.28)"
+* reasonCode.text -> "1289: source value from SURGERY - PRINCIPAL PRE-OP DIAGNOSIS (#130-32)"
+* performedPeriod.start -> "1290: source value from SURGERY - TIME PROCEDURE BEGAN (#130-121) case 130-118 NON-OR PROCEDURE == ‘Y’"
+* performedPeriod.end -> "1291: source value from SURGERY - TIME PROCEDURE ENDED (#130-122) case 130-118 NON-OR PROCEDURE == ‘Y’"
+* performedPeriod.start -> "1292: source value from SURGERY - TIME OPERATION BEGAN (#130-.22) case 130-118 NON-OR PROCEDURE != ‘Y’"
+* performedPeriod.end -> "1293: source value from SURGERY - TIME OPERATION ENDS (#130-.23) case 130-118 NON-OR PROCEDURE != ‘Y’"
+* location -> "1294: reference from SURGERY - NON-OR LOCATION (#130-119) case 130-118 NON-OR PROCEDURE != ‘Y’"
+* location -> "1295: reference from SURGERY - OP ROOM PROCEDURE PERFORMED (#130-.02) case 130-118 NON-OR PROCEDURE == ‘Y’"
+* complication.coding -> "1296: fixed value = http://snomed.info/sct#88797001 Complication of surgical procedure (disorder) when SURGERY - STOMA COMPLICATIONS (#130-688) case == ‘Y’"
+* complication.coding -> "1297: fixed value = http://snomed.info/sct#22298006 Myocardial infarction (disorder) when SURGERY - MYOCARDIAL INFARCTION (#130-258) case == ‘Y’"
+* performer.actor -> "1298: reference from SURGERY - PERFUSIONIST (#130-.167)"
+* category.coding -> "1313: fixed value = http://snomed.info/sct#387713003 Surgical procedure"
+* performer.actor -> "1330: reference from SURGERY - PRIMARY SURGEON (#130-.14)"
+* performer.actor -> "1331: reference from SURGERY - FIRST ASST (#130-.15)"
+* performer.actor -> "1332: reference from SURGERY - SECOND ASST (#130-.16)"
+* performer.actor -> "1333: reference from SURGERY - ATTENDING SURGEON (#130-.164)"
+* performer.actor -> "1334: reference from SURGERY - ASST PERFUSIONIST (#130-.168)"
+* performer.actor -> "1335: reference from SURGERY - SKIN PREPPED BY (1) (#130-.18)"
+* performer.actor -> "1336: reference from SURGERY - PRINC ANESTHETIST (#130-.31)"
+* performer.actor -> "1337: reference from SURGERY - RELIEF ANESTHETIST (#130-.32)"
+* performer.actor -> "1338: reference from SURGERY - ASST ANESTHETIST (#130-.33)"
+* performer.actor -> "1339: reference from SURGERY - ANESTHESIOLOGIST SUPVR (#130-.34)"
+* performer.actor -> "1340: reference from SURGERY - VERIFIER (#130-.522)"
+* performer.actor -> "1341: reference from SURGERY - PROVIDER (#130-123)"
+* performer.actor -> "1342: reference from SURGERY - FOLEY CATHETER INSERTED BY (#130-.57)"
+* code.text -> "1343: source value from SURGERY - PRINCIPAL PROCEDURE (#130-26)"
+* code.coding -> "1344: source value from SURGERY - PLANNED PRIN PROCEDURE CODE > CPT (#130-27 > 81)"
+* status -> "1520: transform using see VistaRulesForProcStat sheet"
+
+Mapping: cdw-to-ProcedureSurgery
+Id: cdw
+Title: "Clinical Data Warehouse (CDW)"
+Source: ProcedureSurgery
+* performedDateTime -> "Surg.AnesthesiaAgent.SurgeryDateTime,Surg.AnesthesiaBlockSite.SurgeryDateTime,Surg.AnesthesiaTechnique.SurgeryDateTime,Surg.AnesthesiaTestDose.SurgeryDateTime,SPatient.ImplantedProsthesis.SurgeryDateTime,SPatient.OperationsIndication.SurgeryDateTime,Surg.ReferringPhysician.SurgeryDateTime,Surg.ReplacementFluidType.SurgeryDateTime,Surg.SurgeryAssistant.SurgeryDateTime,Surg.SurgeryAssistantOther.SurgeryDateTime,Surg.SurgeryDelay.SurgeryDateTime,Surg.SurgeryINTRA.SurgeryDateTime,Surg.SurgeryIrrigation.SurgeryDateTime,Surg.SurgeryMedication.SurgeryDateTime,Surg.SurgeryOccurrenceNonOp.SurgeryDateTime,Surg.SurgeryOtherPostOpDiagnosis.SurgeryDateTime,Surg.SurgeryOtherProcedure.SurgeryDateTime,Surg.SurgeryOtherProcedureCPTModifier.SurgeryDateTime,Surg.SurgeryOtherProcedureDiagnosis.SurgeryDateTime,Surg.SurgeryPOST.SurgeryDateTime,Surg.SurgeryPostOpDiagnosis.SurgeryDateTime,Surg.SurgeryPRE.SurgeryDateTime,Surg.SurgeryPreOpDiagnosis.SurgeryDateTime,Surg.SurgeryPrincipalAssociatedDiagnosis.SurgeryDateTime,Surg.SurgeryPrincipalAssociatedProcedure.SurgeryDateTime,Surg.SurgeryPrincipalCPTModifier.SurgeryDateTime,Surg.SurgeryPrincipalDiagnosis.SurgeryDateTime,Surg.SurgeryProcedureCPTModifier.SurgeryDateTime,Surg.SurgeryProcedureDiagnosisCode.SurgeryDateTime,Surg.SurgeryProcedureOccurrence.SurgeryDateTime,Surg.SurgeryRequiredBloodProducts.SurgeryDateTime,Surg.SurgeryReturnCase.SurgeryDateTime,Surg.SurgORCircSupport.SurgeryDateTime,Surg.SurgORCircSupportTime.SurgeryDateTime,Surg.SurgORScrubSupport.SurgeryDateTime,Surg.SurgORScrubSupportTime.SurgeryDateTime"
+* subject -> "Surg.AnesthesiaAgent.PatientIEN,Surg.AnesthesiaBlockSite.PatientIEN,Surg.AnesthesiaTechnique.PatientIEN,Surg.AnesthesiaTestDose.PatientIEN,Surg.ReferringPhysician.PatientIEN,Surg.ReplacementFluidType.PatientIEN,Surg.SurgeryAssistant.PatientIEN,Surg.SurgeryAssistantOther.PatientIEN,Surg.SurgeryDelay.PatientIEN,Surg.SurgeryINTRA.PatientIEN,Surg.SurgeryIrrigation.PatientIEN,Surg.SurgeryMedication.PatientIEN,Surg.SurgeryOccurrenceNonOp.PatientIEN,Surg.SurgeryOtherProcedure.PatientIEN,Surg.SurgeryOtherProcedureCPTModifier.PatientIEN,Surg.SurgeryOtherProcedureDiagnosis.PatientIEN,Surg.SurgeryPostOpDiagnosis.PatientIEN,Surg.SurgeryPreOpDiagnosis.PatientIEN,Surg.SurgeryPrincipalDiagnosis.PatientIEN,Surg.SurgeryProcedureCPTModifier.PatientIEN,Surg.SurgeryProcedureOccurrence.PatientIEN,Surg.SurgeryRequiredBloodProducts.PatientIEN,Surg.SurgeryReturnCase.PatientIEN,Surg.SurgORCircSupport.PatientIEN,Surg.SurgORCircSupportTime.PatientIEN,Surg.SurgORScrubSupport.PatientIEN,Surg.SurgORScrubSupportTime.PatientIEN"
+* reasonCode.text -> "Surg.SurgeryPRE.PrincipalPreOpDiagnosisText"
+* performedPeriod.start -> "Surg.SurgeryINTRA.BeginNonORProcedureDateTime"
+* performedPeriod.end -> "Surg.SurgeryINTRA.EndNonORProcedureDateTime"
+* performedPeriod.start -> "Surg.SurgeryINTRA.BeginOperationDateTime,Surg.SurgeryPRE.BeginOperationDateTime"
+* performedPeriod.end -> "Surg.SurgeryINTRA.EndOperationDateTime,Surg.SurgeryPRE.EndOperationDateTime"
+* location -> "Surg.SurgeryINTRA.NonORLocationIEN"
+* location -> "Surg.SurgeryINTRA.OperatingRoomIEN"
+* performer.actor -> "Surg.SurgeryINTRA.PerfusionistStaffIEN"
+* performer.actor -> "Surg.SurgeryINTRA.SurgeonStaffIEN"
+* performer.actor -> "Surg.SurgeryINTRA.FirstAssistingStaffIEN"
+* performer.actor -> "Surg.SurgeryINTRA.SecondAssistingStaffIEN"
+* performer.actor -> "Surg.SurgeryINTRA.AttendingSurgeonStaffIEN"
+* performer.actor -> "Surg.SurgeryINTRA.AssistingPerfusionistStaffIEN"
+* performer.actor -> "Surg.SurgeryINTRA.SkinPreparationStaffIEN"
+* performer.actor -> "Surg.SurgeryINTRA.PrincipalAnesthetistStaffIEN"
+* performer.actor -> "Surg.SurgeryINTRA.ReliefAnesthetistStaffIEN"
+* performer.actor -> "Surg.SurgeryINTRA.AssistingAnesthetistStaffIEN"
+* performer.actor -> "Surg.SurgeryINTRA.AnesthesiologistSupervisorStaffIEN"
+* performer.actor -> "Surg.SurgeryINTRA.VerifierStaffIEN"
+* performer.actor -> "Surg.SurgeryINTRA.ProviderIEN"
+* performer.actor -> "Surg.SurgeryINTRA.FoleyCatheterStaffIEN"
+* code.text -> "Surg.SurgeryPRE.PrincipalProcedureText"
