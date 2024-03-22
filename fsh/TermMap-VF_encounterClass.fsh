@@ -9,7 +9,7 @@ Usage: #definition
 * description = "Terminology Maps VF_encounterClass"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFencounterClass-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/VSVFencounterClass"
-* group[0].source = "urn:undefined"
+* group[0].source = "http://va.gov/terminology/vistaDefinedTerms/9000010-15002"
 * group[=].target = "http://terminology.hl7.org/CodeSystem/v3-ActCode"
 * group[=].element[0].code = #1
 * group[=].element[=].display = "IN"
@@ -35,5 +35,5 @@ Title: "VF_encounterClass VistA"
 Description: "VistA Source ValueSet for Terminology Maps VF_encounterClass"
 * ^experimental = false
 * ^name = "VF_encounterClass"
-* include urn:undefined#1 "IN"
-* include urn:undefined#0 "OUT"
+* include http://va.gov/terminology/vistaDefinedTerms/9000010-15002#1 "IN"
+* include http://va.gov/terminology/vistaDefinedTerms/9000010-15002#0 "OUT"
