@@ -8,7 +8,7 @@ Description: "This StructureDefinition contains the maps for VistA file INSTITUT
 * address ^slicing.discriminator.path = "use"
 * address ^slicing.rules = #open
 * address contains physical 0..1 and postal 0..1
-* name and identifier.value and active and type and alias and address[physical].type and address[physical].line and address[physical].city and address[physical].district and address[physical].state and address[physical].postalCode and address[physical].country and contact.name.text and contact.telecom.value and address[postal].type and address[postal].line and address[postal].city and address[postal].state and address[postal].postalCode and address[postal].country MS
+* name and identifier[NPI].value and active and type and alias and address[physical].type and address[physical].line and address[physical].city and address[physical].district and address[physical].state and address[physical].postalCode and address[physical].country and contact.name.text and contact.telecom.value and address[postal].type and address[postal].line and address[postal].city and address[postal].state and address[postal].postalCode and address[postal].country MS
 * active = true
 * type = #prov
 * address[physical].type = #physical
@@ -19,7 +19,7 @@ Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: Organization
 * name -> "1251: source value from INSTITUTION - NAME (#4-.01)"
-* identifier.value -> "1252: source value from INSTITUTION - NPI (#4-41.99) case NPI slice" "Is mapCase used to indicate slice?"
+* identifier[NPI].value -> "1252: source value from INSTITUTION - NPI (#4-41.99)" "Is mapCase used to indicate slice?"
 * active -> "1253: fixed value = true" "MvdZ QA 20-jun-2023"
 * type -> "1254: fixed value = #prov"
 * alias -> "1255: source value from INSTITUTION - SHORT NAME (#4-.05)"
@@ -46,7 +46,7 @@ Id: cdw
 Title: "Clinical Data Warehouse (CDW)"
 Source: Organization
 * name -> "Dim.AutoDiscontinuedRule.InstitutionName,Dim.Institution.InstitutionName,Dim.RequestService.IFCRoutingInstitution"
-* identifier.value -> "Dim.Institution.NPI"
+* identifier[NPI].value -> "Dim.Institution.NPI"
 * alias -> "Dim.Institution.InstitutionShortName"
 * address[physical].line -> "Dim.Institution.StreetAddress1"
 * address[physical].line -> "Dim.Institution.StreetAddress2"

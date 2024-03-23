@@ -4,7 +4,7 @@ Id: ConditionProblem
 Title: "Condition: Problem"
 Description: "This StructureDefinition contains the maps for VistA file PROBLEM (#9000011) to us-core-condition-problems-health-concerns"
 * ^status = #draft
-* category[us-core] and identifier.value and clinicalStatus and code and code.coding.code and code.text and subject and onsetDateTime and recordedDate and recorder and verificationStatus MS
+* category[us-core] and identifier.value and clinicalStatus and code and code.coding.code and code.text and subject and onsetDateTime and recordedDate and recorder and verificationStatus and abatementDateTime MS
 * category[us-core] = http://terminology.hl7.org/CodeSystem/condition-category#problem-list-item
 * clinicalStatus from http://va.gov/fhir/ValueSet/VSVFproblemStatus
 * verificationStatus from http://va.gov/fhir/ValueSet/VSVFproblemVerificationStatus
@@ -25,6 +25,7 @@ Source: ConditionProblem
 * recorder -> "373: source value from PROBLEM - RECORDING PROVIDER (#9000011-1.04)"
 * clinicalStatus -> "605: terminologyMaps using VF_problemStatus on PROBLEM - STATUS (#9000011-.12)"
 * verificationStatus -> "611: terminologyMaps using VF_problemVerificationStatus on PROBLEM - CONDITION (#9000011-1.02)"
+* abatementDateTime -> "1761: source value from PROBLEM - DATE RESOLVED (#9000011-1.07)"
 
 Mapping: cdw-to-ConditionProblem
 Id: cdw
@@ -40,3 +41,4 @@ Source: ConditionProblem
 * recorder -> "Outpat.ProblemList.RecordingProviderIEN"
 * clinicalStatus -> "Outpat.ProblemList.ActiveFlag"
 * verificationStatus -> "Outpat.ProblemList.ProblemListCondition"
+* abatementDateTime -> "Outpat.ProblemList.ResolvedDateTime"

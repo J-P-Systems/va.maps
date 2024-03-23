@@ -5,7 +5,7 @@ Title: "Practitioner Role"
 Description: "This StructureDefinition contains the maps for VistA file NEW PERSON (#200) to us-core-practitionerrole"
 * ^status = #draft
 * extension contains http://hl7.org/fhir/StructureDefinition/practitioner-job-title named practitioner-job-title 0..1
-* telecom.value and active and period.start and practitioner and period.end and extension[http://hl7.org/fhir/StructureDefinition/practitioner-job-title].valueCodeableConcept.text and specialty.coding.code and location and code.coding.code MS
+* telecom.value and active and period.start and practitioner and period.end and extension[http://hl7.org/fhir/StructureDefinition/practitioner-job-title].valueCodeableConcept.text and specialty.coding.code and location and code.coding.code and organization MS
 
 Mapping: vista-to-PractitionerRole
 Id: vista
@@ -29,6 +29,7 @@ Source: PractitionerRole
 * specialty.coding.code -> "419: source value from PERSON CLASS - X12 CODE (#8932.1-6)" "Added paths"
 * location -> "422: reference from PROVIDER - PROVIDER (#44.1-.01)" "This is a reverse pointer. Location 44 contains 44.1, pointing at providers"
 * code.coding.code -> "1408: source value from NEW PERSON - PERSON CLASS > PERSON CLASS - Person Class > PERSON CLASS - X12 CODE (#200-8932.1 > 200.05-.01 > 8932.1-6)"
+* organization -> "1411: reference from NEW PERSON - DIVISION (#200-16)" "Marked inactive. Division is not in CDW with a linkage to New Person. Institution is what Division points to, but there is no linkage from New Person to Institution either. The link from LocationProvider seems to be a \"Provider Directory\" rather than where the Provider saw the patient.\nVistA New Person does not have an authoritative organization. For the PHAPI, we could use the Encounter.serviceProvider, but in those cases we already have it on the Encounter, so it adds no value. For the Directory use case, locations or services will have lists of available providers via PractitionerRole. Unclear whether Division will play a role."
 
 Mapping: cdw-to-PractitionerRole
 Id: cdw

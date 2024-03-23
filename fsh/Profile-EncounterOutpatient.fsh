@@ -12,14 +12,14 @@ Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: EncounterOutpatient
 * identifier.value -> "429: source value from VISIT - VISIT ID (#9000010-15001)"
-* status -> "430: transform using planned on VISIT - VISIT/ADMIT DATE&TIME (#9000010-.01) case null or > now"
-* status -> "431: transform using in-progress on VISIT - VISIT/ADMIT DATE&TIME (#9000010-.01) case not null, < now, .18 null" "tweaked case logic 9/21"
-* status -> "432: transform using finished on VISIT - CHECK OUT DATE&TIME (#9000010-.18) case not null, < now" "tweaked case logic 9/21"
-* serviceType.coding.code -> "439: source value from VISIT - SERVICE CATEGORY (#9000010-.07)" "MvdZ QA"
+* status -> "430: fixed value = #planned when VISIT - VISIT/ADMIT DATE&TIME (#9000010-.01) case null or > now"
+* status -> "431: fixed value = #in-progress when VISIT - VISIT/ADMIT DATE&TIME (#9000010-.01) case not null, < now, .18 null" "tweaked case logic 9/21"
+* status -> "432: fixed value = #finished when VISIT - CHECK OUT DATE&TIME (#9000010-.18) case not null, < now" "tweaked case logic 9/21"
+* serviceType.coding.code -> "439: source value from VISIT - SERVICE CATEGORY (#9000010-.07)"
 * subject -> "440: source value from VISIT - PATIENT NAME (#9000010-.05)"
 * period.start -> "443: source value from VISIT - VISIT/ADMIT DATE&TIME (#9000010-.01)"
 * period.end -> "444: source value from VISIT - CHECK OUT DATE&TIME (#9000010-.18)"
-* reasonCode.coding.code -> "447: source value from V POV - POV > ICD DIAGNOSIS - CODE NUMBER (#9000010.07-.01 > 80-.01)" "MvdZ QA"
+* reasonCode.coding.code -> "447: source value from V POV - POV > ICD DIAGNOSIS - CODE NUMBER (#9000010.07-.01 > 80-.01)"
 * diagnosis.condition -> "452: reference from V POV - PROBLEM LIST ENTRY (#9000010.07-.16)" "added parameter"
 * location.location -> "458: reference from VISIT - DSS ID (#9000010-.08) case stop"
 * location.location -> "459: reference from VISIT - HOSPITAL LOCATION (#9000010-.22) case location"
@@ -32,19 +32,6 @@ Mapping: cdw-to-EncounterOutpatient
 Id: cdw
 Title: "Clinical Data Warehouse (CDW)"
 Source: EncounterOutpatient
-<<<<<<< HEAD:fsh/EncounterOutpatient.fsh
-<<<<<<< HEAD:fsh/EncounterOutpatient.fsh
-* identifier.value -> "Outpat.Visit.VisitIdentifier\nOutpat.Workload.VisitIdentifier"
-* status -> "Outpat.Visit.VisitDateTime\nOutpat.Workload.VisitDateTime"
-* status -> "Outpat.Visit.VisitDateTime\nOutpat.Workload.VisitDateTime"
-* status -> "Outpat.Visit.CheckOutDateTime\nOutpat.Workload.CheckOutDateTime"
-* serviceType.coding.code -> "Outpat.Visit.ServiceCategory\nOutpat.Workload.ServiceCategory"
-* period.start -> "Outpat.Visit.VisitDateTime\nOutpat.Workload.VisitDateTime"
-* period.end -> "Outpat.Visit.CheckOutDateTime\nOutpat.Workload.CheckOutDateTime"
-* reasonCode.coding.code -> "Dim.ICD10.ICD10Code\nDim.ICD9.ICD9Code"
-=======
-=======
->>>>>>> d705eb4094de1058548d040174d23adca117e2e7:fsh/Profile-EncounterOutpatient.fsh
 * identifier.value -> "Outpat.Visit.VisitIdentifier,Outpat.Workload.VisitIdentifier"
 * status -> "Outpat.Visit.VisitDateTime,Outpat.Workload.VisitDateTime"
 * status -> "Outpat.Visit.VisitDateTime,Outpat.Workload.VisitDateTime"
@@ -53,9 +40,4 @@ Source: EncounterOutpatient
 * period.start -> "Outpat.Visit.VisitDateTime,Outpat.Workload.VisitDateTime"
 * period.end -> "Outpat.Visit.CheckOutDateTime,Outpat.Workload.CheckOutDateTime"
 * reasonCode.coding.code -> "Dim.ICD10.ICD10Code,Dim.ICD9.ICD9Code"
-<<<<<<< HEAD:fsh/EncounterOutpatient.fsh
 * class -> "Outpat.Visit.PatientStatusInOut,Outpat.Workload.PatientStatusInOut"
->>>>>>> d705eb409... new version:fsh/Profile-EncounterOutpatient.fsh
-=======
-* class -> "Outpat.Visit.PatientStatusInOut,Outpat.Workload.PatientStatusInOut"
->>>>>>> d705eb4094de1058548d040174d23adca117e2e7:fsh/Profile-EncounterOutpatient.fsh
