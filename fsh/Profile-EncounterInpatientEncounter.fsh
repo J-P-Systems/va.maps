@@ -13,7 +13,7 @@ Mapping: vista-to-EncounterInpatientEncounter
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: EncounterInpatientEncounter
-* identifier.value -> "427: source value from PTF - NUMBER (#45-.001)" "MvdZ QA\nremoved use=IFN typo and split of class to new mapset row"
+* identifier.value -> "427: source value from PTF - NUMBER (#45-.001)" "removed use=IFN typo and split of class to new mapset row"
 * class -> "1601: fixed value = http://terminology.hl7.org/CodeSystem/v3-ActCode#IMP"
 * identifier.value -> "428: source value from PTF - INTERNAL ADMISSION # (#45-2.1)"
 * status -> "433: fixed value = #planned when PTF - ADMISSION DATE (#45-2) case null or > now"

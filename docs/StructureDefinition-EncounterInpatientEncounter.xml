@@ -35,11 +35,11 @@
 <tr><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3goXBCwdPqAP0wAAAldJREFUOMuNk0tIlFEYhp9z/vE2jHkhxXA0zJCMitrUQlq4lnSltEqCFhFG2MJFhIvIFpkEWaTQqjaWZRkp0g26URZkTpbaaOJkDqk10szoODP//7XIMUe0elcfnPd9zsfLOYplGrpRwZaqTtw3K7PtGem7Q6FoidbGgqHVy/HRb669R+56zx7eRV1L31JGxYbBtjKK93cxeqfyQHbehkZbUkK20goELEuIzEd+dHS+qz/Y8PTSif0FnGkbiwcAjHaU1+QWOptFiyCLp/LnKptpqIuXHx6rbR26kJcBX3yLgBfnd7CxwJmflpP2wUg0HIAoUUpZBmKzELGWcN8nAr6Gpu7tLU/CkwAaoKTWRSQyt89Q8w6J+oVQkKnBoblH7V0PPvUOvDYXfopE/SJmALsxnVm6LbkotrUtNowMeIrVrBcBpaMmdS0j9df7abpSuy7HWehwJdt1lhVwi/J58U5beXGAF6c3UXLycw1wdFklArBn87xdh0ZsZtArghBdAA3+OEDVubG4UEzP6x1FOWneHh2VDAHBAt80IbdXDcesNoCvs3E5AFyNSU5nbrDPZpcUEQQTFZiEVx+51fxMhhyJEAgvlriadIJZZksRuwBYMOPBbO3hePVVqgEJhFeUuFLhIPkRP6BQLIBrmMenujm/3g4zc398awIe90Zb5A1vREALqneMcYgP/xVQWlG+Ncu5vgwwlaUNx+3799rfe96u9K0JSDXcOzOTJg4B6IgmXfsygc7/Bvg9g9E58/cDVmGIBOP/zT8Bz1zqWqpbXIsd0O9hajXfL6u4BaOS6SeWAAAAAElFTkSuQmCC" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr></table></div>
   </text>
   <url value="http://va.gov/fhir/StructureDefinition/EncounterInpatientEncounter"/>
-  <version value="0.32.0"/>
+  <version value="0.34.0"/>
   <name value="EncounterInpatientEncounter"/>
   <title value="Encounter: Inpatient Encounter"/>
   <status value="draft"/>
-  <date value="2024-03-22T16:04:14+00:00"/>
+  <date value="2024-03-29T18:32:47+00:00"/>
   <publisher value="VA"/>
   <contact>
     <name value="VA"/>
@@ -708,7 +708,7 @@
       <mapping>
         <identity value="vista"/>
         <map value="427: source value from PTF - NUMBER (#45-.001)"/>
-        <comment value="MvdZ QA&#xA;removed use=IFN typo and split of class to new mapset row"/>
+        <comment value="removed use=IFN typo and split of class to new mapset row"/>
       </mapping>
       <mapping>
         <identity value="vista"/>
@@ -848,11 +848,11 @@
       </mapping>
       <mapping>
         <identity value="vista"/>
-        <map value="433: transform using planned on PTF - ADMISSION DATE (#45-2) case null or &gt; now"/>
+        <map value="433: fixed value = #planned when PTF - ADMISSION DATE (#45-2) case null or &gt; now"/>
       </mapping>
       <mapping>
         <identity value="vista"/>
-        <map value="434: transform using in-progress on PTF - ADMISSION DATE (#45-2) case not null, &lt; now, field 70 null"/>
+        <map value="434: fixed value = #in-progress when PTF - ADMISSION DATE (#45-2) case not null, &lt; now, field 70 null"/>
         <comment value="tweaked case logic 9/21"/>
       </mapping>
       <mapping>
@@ -1895,7 +1895,6 @@
       <mapping>
         <identity value="vista"/>
         <map value="442: reference from PTF - PROVIDER (#45-79.1)"/>
-        <comment value="MvdZ QA"/>
       </mapping>
     </element>
     <element id="Encounter.appointment">
@@ -3186,7 +3185,7 @@
       <mapping>
         <identity value="vista"/>
         <map value="955: terminologyMaps using VF_SourceOfAdmission on PTF - SOURCE OF ADMISSION &gt; PRF CODE (#45-20 &gt; 45.1-.01)"/>
-        <comment value="preferred binding&#xA;MvdZ QA"/>
+        <comment value="preferred binding"/>
       </mapping>
       <mapping>
         <identity value="cdw"/>
@@ -3384,7 +3383,6 @@
       <mapping>
         <identity value="vista"/>
         <map value="453: source value from PTF - SOURCE OF ADMISSION &gt; PRF CODE (#45-20 &gt; 45.1-.01)"/>
-        <comment value="MvdZ QA"/>
       </mapping>
       <mapping>
         <identity value="cdw"/>
@@ -4369,7 +4367,7 @@
       <mapping>
         <identity value="vista"/>
         <map value="427: source value from PTF - NUMBER (#45-.001)"/>
-        <comment value="MvdZ QA&#xA;removed use=IFN typo and split of class to new mapset row"/>
+        <comment value="removed use=IFN typo and split of class to new mapset row"/>
       </mapping>
       <mapping>
         <identity value="vista"/>
@@ -4384,11 +4382,11 @@
       <path value="Encounter.status"/>
       <mapping>
         <identity value="vista"/>
-        <map value="433: transform using planned on PTF - ADMISSION DATE (#45-2) case null or &gt; now"/>
+        <map value="433: fixed value = #planned when PTF - ADMISSION DATE (#45-2) case null or &gt; now"/>
       </mapping>
       <mapping>
         <identity value="vista"/>
-        <map value="434: transform using in-progress on PTF - ADMISSION DATE (#45-2) case not null, &lt; now, field 70 null"/>
+        <map value="434: fixed value = #in-progress when PTF - ADMISSION DATE (#45-2) case not null, &lt; now, field 70 null"/>
         <comment value="tweaked case logic 9/21"/>
       </mapping>
       <mapping>
@@ -4446,7 +4444,6 @@
       <mapping>
         <identity value="vista"/>
         <map value="442: reference from PTF - PROVIDER (#45-79.1)"/>
-        <comment value="MvdZ QA"/>
       </mapping>
     </element>
     <element id="Encounter.period.start">
@@ -4532,7 +4529,7 @@
       <mapping>
         <identity value="vista"/>
         <map value="955: terminologyMaps using VF_SourceOfAdmission on PTF - SOURCE OF ADMISSION &gt; PRF CODE (#45-20 &gt; 45.1-.01)"/>
-        <comment value="preferred binding&#xA;MvdZ QA"/>
+        <comment value="preferred binding"/>
       </mapping>
       <mapping>
         <identity value="cdw"/>
@@ -4545,7 +4542,6 @@
       <mapping>
         <identity value="vista"/>
         <map value="453: source value from PTF - SOURCE OF ADMISSION &gt; PRF CODE (#45-20 &gt; 45.1-.01)"/>
-        <comment value="MvdZ QA"/>
       </mapping>
       <mapping>
         <identity value="cdw"/>

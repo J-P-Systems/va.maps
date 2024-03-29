@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-    <title>Condition: Encounter Diagnosis - Mappings - US Veterans Administration FHIR Map Set Implementation Guide v0.32.0</title>
+    <title>Condition: Encounter Diagnosis - Mappings - US Veterans Administration FHIR Map Set Implementation Guide v0.34.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -57,7 +57,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">US Veterans Administration FHIR Map Set Implementation Guide</span>
             <br/>
-            <span style="display:inline-block;">0.32.0 - ci-build
+            <span style="display:inline-block;">0.34.0 - ci-build
 
 
 
@@ -134,7 +134,7 @@
           <div class="inner-wrapper">
 
 <div style="counter-reset: section 5" class="col-12">
-    <!-- ReleaseHeader --><p id="publish-box">US Veterans Administration FHIR Map Set Implementation Guide - Local Development build (v0.32.0) built by the FHIR (HL7&reg; FHIR&reg; Standard) Build Tools. See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
+    <!-- ReleaseHeader --><p id="publish-box">US Veterans Administration FHIR Map Set Implementation Guide - Local Development build (v0.34.0) built by the FHIR (HL7&reg; FHIR&reg; Standard) Build Tools. See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
   
 
 
@@ -207,7 +207,7 @@
         
           Draft
           
-            as of 2024-03-22
+            as of 2024-03-29
           
         
       </td>
@@ -366,6 +366,19 @@
 <td class="cell-ce1"></td>
 <td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-encounter-diagnosis | 5.0.1</td>
 </tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1766</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">target not supported</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Condition.abatementDateTime</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">abatementDate is must support</td>
+<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-problems-health-concerns | 5.0.1</td>
+</tr>
 </table>
 
 </div>
@@ -385,6 +398,8 @@
  <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>1611: reference from V POV - PATIENT NAME (#9000010.07-.02)</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;encounter</td><td>368: source value from V POV - VISIT (#9000010.07-.03)</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;onset[x] (onsetDateTime)</td><td>370: source value from V POV - DATE OF INJURY (#9000010.07-.13)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;abatement[x] (abatementDateTime)</td><td>1766: target not supported</td><td><p>abatementDate is must support</p>
+</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;recordedDate</td><td>372: source value from V POV - VISIT &gt; VISIT - VISIT/ADMIT DATE&amp;TIME (#9000010.07-.03 &gt; 9000010-.01)</td><td><p>Added the sub file and field</p>
 </td> </tr>
 </table>
@@ -492,6 +507,7 @@ OR &lt; 272379006 |Event|</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;onset[x]</td><td>.effectiveTime.low or .inboundRelationship[typeCode=SUBJ].source[classCode=OBS, moodCode=EVN, code="age at onset"].value</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;onset[x] (onsetDateTime)</td><td>.effectiveTime.low or .inboundRelationship[typeCode=SUBJ].source[classCode=OBS, moodCode=EVN, code="age at onset"].value</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;abatement[x]</td><td>.effectiveTime.high or .inboundRelationship[typeCode=SUBJ].source[classCode=OBS, moodCode=EVN, code="age at remission"].value or .inboundRelationship[typeCode=SUBJ]source[classCode=CONC, moodCode=EVN].status=completed</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;abatement[x] (abatementDateTime)</td><td>.effectiveTime.high or .inboundRelationship[typeCode=SUBJ].source[classCode=OBS, moodCode=EVN, code="age at remission"].value or .inboundRelationship[typeCode=SUBJ]source[classCode=CONC, moodCode=EVN].status=completed</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;recordedDate</td><td>.participation[typeCode=AUT].time</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;recorder</td><td>.participation[typeCode=AUT].role</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;asserter</td><td>.participation[typeCode=INF].role</td> </tr>
@@ -525,6 +541,7 @@ OR &lt; 272379006 |Event|</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;onset[x]</td><td>FiveWs.init</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;onset[x] (onsetDateTime)</td><td>FiveWs.init</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;abatement[x]</td><td>FiveWs.done[x]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;abatement[x] (abatementDateTime)</td><td>FiveWs.done[x]</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;recordedDate</td><td>FiveWs.recorded</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;recorder</td><td>FiveWs.author</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;asserter</td><td>FiveWs.source</td> </tr>
@@ -593,7 +610,7 @@ OR &lt; 272379006 |Event|</td> </tr>
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.32.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Mar 22, 2024 16:04+0000">2024-03-22</span>
+          IG &copy; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.34.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Mar 29, 2024 18:32+0000">2024-03-29</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

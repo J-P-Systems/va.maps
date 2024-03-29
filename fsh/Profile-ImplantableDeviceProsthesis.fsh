@@ -20,6 +20,14 @@ Source: ImplantableDeviceProsthesis
 * modelNumber -> "1387: source value from PROSTHESIS INSTALLED - MODEL (#130.01-2)"
 * type -> "1393: fixed value = http://snomed.info/sct#63653004 Biomedical device" "required, must support. SCT codes under 49062001 (Device)"
 * patient -> "1399: reference from SURGERY - PATIENT (#130-.01)" "Surgery points to Prosthesis Installed in field .47"
+* udiCarrier.deviceIdentifier -> "1353: target not supported"
+* status -> "1355: target not supported"
+* distinctIdentifier -> "1363: target not supported"
+* manufactureDate -> "1371: target not supported"
+* expirationDate -> "1374: target not supported"
+* lotNumber -> "1377: target not supported"
+* serialNumber -> "1381: target not supported"
+* deviceName -> "1386: target not supported"
 
 Mapping: cdw-to-ImplantableDeviceProsthesis
 Id: cdw

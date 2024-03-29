@@ -22,6 +22,7 @@ Source: ConditionEncounterDiagnosis
 * recordedDate -> "372: source value from V POV - VISIT > VISIT - VISIT/ADMIT DATE&TIME (#9000010.07-.03 > 9000010-.01)" "Added the sub file and field"
 * clinicalStatus -> "604: terminologyMaps using VF_encounterProblemStatus on V POV - MODIFIER (#9000010.07-.06)"
 * verificationStatus -> "606: terminologyMaps using VF_encounterProblemVerificationStatus on V POV - MODIFIER (#9000010.07-.06)"
+* abatementDateTime -> "1766: target not supported" "abatementDate is must support"
 
 Mapping: cdw-to-ConditionEncounterDiagnosis
 Id: cdw

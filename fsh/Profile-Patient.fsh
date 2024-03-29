@@ -22,8 +22,8 @@ Mapping: vista-to-Patient
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: Patient
-* identifier.value -> "272: source value from PATIENT - INTEGRATION CONTROL NUMBER (#2-991.01)" "MvdZ QA"
-* name.text -> "273: source value from PATIENT - NAME (#2-.01)" "MvdZ QA"
+* identifier.value -> "272: source value from PATIENT - INTEGRATION CONTROL NUMBER (#2-991.01)"
+* name.text -> "273: source value from PATIENT - NAME (#2-.01)"
 * telecom.value -> "274: source value from PATIENT - PHONE NUMBER [RESIDENCE] (#2-.131)"
 * telecom.value -> "275: source value from PATIENT - PHONE NUMBER [WORK] (#2-.132)"
 * telecom.value -> "276: source value from PATIENT - PHONE NUMBER [CELLULAR] (#2-.134)"

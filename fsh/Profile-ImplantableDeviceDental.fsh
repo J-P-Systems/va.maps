@@ -23,6 +23,14 @@ Source: ImplantableDeviceDental
 * modelNumber -> "1392: source value from DENTAL DEVICE TRACKING - MODEL (#228.9-4.2)"
 * type.text -> "1398: source value from DENTAL DEVICE TRACKING - TYPE (#228.9-2)"
 * patient -> "1403: reference from DENTAL DEVICE TRACKING - PATIENT (#228.9-.03)"
+* udiCarrier.deviceIdentifier -> "1353: target not supported"
+* status -> "1355: target not supported"
+* distinctIdentifier -> "1363: target not supported"
+* manufactureDate -> "1371: target not supported"
+* expirationDate -> "1374: target not supported"
+* lotNumber -> "1377: target not supported"
+* serialNumber -> "1381: target not supported"
+* deviceName -> "1386: target not supported"
 
 Mapping: cdw-to-ImplantableDeviceDental
 Id: cdw

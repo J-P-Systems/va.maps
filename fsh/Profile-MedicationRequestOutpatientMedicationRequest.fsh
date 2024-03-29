@@ -18,7 +18,7 @@ Mapping: vista-to-MedicationRequestOutpatientMedicationRequest
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: MedicationRequestOutpatientMedicationRequest
-* id -> "798: transform using ID_generation"
+* id -> "798: transform using ID_generation()"
 * status -> "799: terminologyMaps using VF_OutMedRequestStatus on PRESCRIPTION - STATUS (#52-100)"
 * extension[http://va.gov/fhir/StructureDefinition/medicationrequest-pharmacyOrderStatus].valueCoding.code -> "800: source value from PRESCRIPTION - STATUS (#52-100)"
 * intent -> "801: fixed value = #order" "All records from file 52 are orders"

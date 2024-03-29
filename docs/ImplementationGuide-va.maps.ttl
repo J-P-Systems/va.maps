@@ -13,11 +13,11 @@
      fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>VAMapsIG</h2><p>The official URL for this implementation guide is: </p><pre>http://va.gov/fhir/ImplementationGuide/va.maps</pre><div><p>This implementation guide is a FHIR IG rendering of the KBS Map Set from VA sources (primarily VistA) to FHIR. Where appropriate these maps conform to the us-core profiles.</p>\n</div></div>"
   ] ; # 
   fhir:url [ fhir:v "http://va.gov/fhir/ImplementationGuide/va.maps"^^xsd:anyURI] ; # 
-  fhir:version [ fhir:v "0.32.0"] ; # 
+  fhir:version [ fhir:v "0.34.0"] ; # 
   fhir:name [ fhir:v "VAMapsIG"] ; # 
   fhir:title [ fhir:v "US Veterans Administration FHIR Map Set Implementation Guide"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2024-03-22T16:04:14+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2024-03-29T18:32:47+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "VA"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "VA" ] ;
@@ -1288,6 +1288,18 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/StructureDefinition/medicationrequest-recordedLocation> ;
+         fhir:reference [ fhir:v "StructureDefinition/medicationrequest-recordedLocation" ]
+       ] ;
+       fhir:name [ fhir:v "MedicationrequestRecordedLocation" ] ;
+       fhir:description [ fhir:v "Extension medicationrequest-recordedLocation" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "StructureDefinition:resource" ]
        ] ) ;
        fhir:reference [
@@ -1363,6 +1375,42 @@
        fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA file INSTITUTION (#4) to us-core-organization" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ] ;
        fhir:groupingId [ fhir:v "group14" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/StructureDefinition/organization-allowMultipleBedsections> ;
+         fhir:reference [ fhir:v "StructureDefinition/organization-allowMultipleBedsections" ]
+       ] ;
+       fhir:name [ fhir:v "OrganizationAllowMultipleBedsections" ] ;
+       fhir:description [ fhir:v "Extension organization-allowMultipleBedsections" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/StructureDefinition/organization-anotherCompanyProcessesInpatClaims> ;
+         fhir:reference [ fhir:v "StructureDefinition/organization-anotherCompanyProcessesInpatClaims" ]
+       ] ;
+       fhir:name [ fhir:v "OrganizationAnotherCompanyProcessesInpatClaims" ] ;
+       fhir:description [ fhir:v "Extension organization-anotherCompanyProcessesInpatClaims" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/StructureDefinition/organization-oneOutpatVisitOnBillOnly> ;
+         fhir:reference [ fhir:v "StructureDefinition/organization-oneOutpatVisitOnBillOnly" ]
+       ] ;
+       fhir:name [ fhir:v "OrganizationOneOutpatVisitOnBillOnly" ] ;
+       fhir:description [ fhir:v "Extension organization-oneOutpatVisitOnBillOnly" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
@@ -3803,10 +3851,23 @@
          fhir:value [ fhir:v "StructureDefinition:resource" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://va.gov/fhir/StructureDefinition/VitalSignsBP> ;
-         fhir:reference [ fhir:v "StructureDefinition/VitalSignsBP" ]
+         fhir:link <http://va.gov/fhir/StructureDefinition/VitalSignsBPDevice> ;
+         fhir:reference [ fhir:v "StructureDefinition/VitalSignsBPDevice" ]
        ] ;
-       fhir:name [ fhir:v "Vital Signs: BP" ] ;
+       fhir:name [ fhir:v "Vital Signs: BP Device" ] ;
+       fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA file GMRV VITAL MEASUREMENT (#120.5) to Device" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "group4" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/StructureDefinition/VitalSignsBPObservation> ;
+         fhir:reference [ fhir:v "StructureDefinition/VitalSignsBPObservation" ]
+       ] ;
+       fhir:name [ fhir:v "Vital Signs: BP Observation" ] ;
        fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA file GMRV VITAL MEASUREMENT (#120.5) to us-core-blood-pressure" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ] ;
        fhir:groupingId [ fhir:v "group4" ]
@@ -3816,10 +3877,36 @@
          fhir:value [ fhir:v "StructureDefinition:resource" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://va.gov/fhir/StructureDefinition/VitalSignsCPM> ;
-         fhir:reference [ fhir:v "StructureDefinition/VitalSignsCPM" ]
+         fhir:link <http://va.gov/fhir/StructureDefinition/VitalSignsBPOrganization> ;
+         fhir:reference [ fhir:v "StructureDefinition/VitalSignsBPOrganization" ]
        ] ;
-       fhir:name [ fhir:v "Vital Signs: CPM" ] ;
+       fhir:name [ fhir:v "Vital Signs: BP Organization" ] ;
+       fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA file GMRV VITAL MEASUREMENT (#120.5) to Organization" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "group4" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/StructureDefinition/VitalSignsCPMDevice> ;
+         fhir:reference [ fhir:v "StructureDefinition/VitalSignsCPMDevice" ]
+       ] ;
+       fhir:name [ fhir:v "Vital Signs: CPM Device" ] ;
+       fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA file GMRV VITAL MEASUREMENT (#120.5) to Device" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "group4" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/StructureDefinition/VitalSignsCPMObservation> ;
+         fhir:reference [ fhir:v "StructureDefinition/VitalSignsCPMObservation" ]
+       ] ;
+       fhir:name [ fhir:v "Vital Signs: CPM Observation" ] ;
        fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA file GMRV VITAL MEASUREMENT (#120.5) to us-core-vital-signs" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ] ;
        fhir:groupingId [ fhir:v "group4" ]
@@ -3829,11 +3916,50 @@
          fhir:value [ fhir:v "StructureDefinition:resource" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://va.gov/fhir/StructureDefinition/VitalSignsSpO2> ;
-         fhir:reference [ fhir:v "StructureDefinition/VitalSignsSpO2" ]
+         fhir:link <http://va.gov/fhir/StructureDefinition/VitalSignsCPMOrganization> ;
+         fhir:reference [ fhir:v "StructureDefinition/VitalSignsCPMOrganization" ]
        ] ;
-       fhir:name [ fhir:v "Vital Signs: SpO2" ] ;
+       fhir:name [ fhir:v "Vital Signs: CPM Organization" ] ;
+       fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA file GMRV VITAL MEASUREMENT (#120.5) to Organization" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "group4" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/StructureDefinition/VitalSignsSpO2Device> ;
+         fhir:reference [ fhir:v "StructureDefinition/VitalSignsSpO2Device" ]
+       ] ;
+       fhir:name [ fhir:v "Vital Signs: SpO2 Device" ] ;
+       fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA file GMRV VITAL MEASUREMENT (#120.5) to Device" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "group4" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/StructureDefinition/VitalSignsSpO2Observation> ;
+         fhir:reference [ fhir:v "StructureDefinition/VitalSignsSpO2Observation" ]
+       ] ;
+       fhir:name [ fhir:v "Vital Signs: SpO2 Observation" ] ;
        fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA file GMRV VITAL MEASUREMENT (#120.5) to us-core-pulse-oximetry" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "group4" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/StructureDefinition/VitalSignsSpO2Organization> ;
+         fhir:reference [ fhir:v "StructureDefinition/VitalSignsSpO2Organization" ]
+       ] ;
+       fhir:name [ fhir:v "Vital Signs: SpO2 Organization" ] ;
+       fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA file GMRV VITAL MEASUREMENT (#120.5) to Organization" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ] ;
        fhir:groupingId [ fhir:v "group4" ]
      ] ) ;

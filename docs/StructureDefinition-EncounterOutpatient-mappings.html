@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-    <title>Encounter: Outpatient - Mappings - US Veterans Administration FHIR Map Set Implementation Guide v0.32.0</title>
+    <title>Encounter: Outpatient - Mappings - US Veterans Administration FHIR Map Set Implementation Guide v0.34.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -57,7 +57,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">US Veterans Administration FHIR Map Set Implementation Guide</span>
             <br/>
-            <span style="display:inline-block;">0.32.0 - ci-build
+            <span style="display:inline-block;">0.34.0 - ci-build
 
 
 
@@ -134,7 +134,7 @@
           <div class="inner-wrapper">
 
 <div style="counter-reset: section 5" class="col-12">
-    <!-- ReleaseHeader --><p id="publish-box">US Veterans Administration FHIR Map Set Implementation Guide - Local Development build (v0.32.0) built by the FHIR (HL7&reg; FHIR&reg; Standard) Build Tools. See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
+    <!-- ReleaseHeader --><p id="publish-box">US Veterans Administration FHIR Map Set Implementation Guide - Local Development build (v0.34.0) built by the FHIR (HL7&reg; FHIR&reg; Standard) Build Tools. See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
   
 
 
@@ -207,7 +207,7 @@
         
           Draft
           
-            as of 2024-03-22
+            as of 2024-03-29
           
         
       </td>
@@ -265,11 +265,11 @@
 <td class="cell-ce1">430</td>
 <td class="cell-ce1">team-approved</td>
 <td class="cell-ce1">VISIT - VISIT/ADMIT DATE&amp;TIME (#9000010-.01)</td>
-<td class="cell-ce1">transform</td>
+<td class="cell-ce1">fixed value</td>
 <td class="cell-ce1">null or &gt; now</td>
 <td class="cell-ce1">Encounter.status</td>
 <td class="cell-ce1"></td>
-<td class="cell-ce1">planned</td>
+<td class="cell-ce1">#planned</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter | 5.0.1</td>
@@ -278,11 +278,11 @@
 <td class="cell-ce1">431</td>
 <td class="cell-ce1">team-approved</td>
 <td class="cell-ce1">VISIT - VISIT/ADMIT DATE&amp;TIME (#9000010-.01)</td>
-<td class="cell-ce1">transform</td>
+<td class="cell-ce1">fixed value</td>
 <td class="cell-ce1">not null, &lt; now, .18 null</td>
 <td class="cell-ce1">Encounter.status</td>
 <td class="cell-ce1"></td>
-<td class="cell-ce1">in-progress</td>
+<td class="cell-ce1">#in-progress</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">tweaked case logic 9/21</td>
 <td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter | 5.0.1</td>
@@ -291,11 +291,11 @@
 <td class="cell-ce1">432</td>
 <td class="cell-ce1">team-approved</td>
 <td class="cell-ce1">VISIT - CHECK OUT DATE&amp;TIME (#9000010-.18)</td>
-<td class="cell-ce1">transform</td>
+<td class="cell-ce1">fixed value</td>
 <td class="cell-ce1">not null, &lt; now</td>
 <td class="cell-ce1">Encounter.status</td>
 <td class="cell-ce1"></td>
-<td class="cell-ce1">finished</td>
+<td class="cell-ce1">#finished</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">tweaked case logic 9/21</td>
 <td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter | 5.0.1</td>
@@ -310,7 +310,7 @@
 <td class="cell-ce1">.code</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">.system=http://va.gov/terminology/VistADefinedTerms/9000010-.07</td>
-<td class="cell-ce1">MvdZ QA</td>
+<td class="cell-ce1"></td>
 <td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
@@ -362,7 +362,7 @@
 <td class="cell-ce1">.code</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">.system=termmap({VF_ICDCodingSystems,CODING SYSTEM(1.1)})</td>
-<td class="cell-ce1">MvdZ QA</td>
+<td class="cell-ce1"></td>
 <td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
@@ -436,10 +436,12 @@
 <td class="cell-ce1">V PROVIDER - PROVIDER &gt; NEW PERSON (#9000010.06-.01 &gt; 200-)</td>
 <td class="cell-ce1">reference</td>
 <td class="cell-ce1"></td>
-<td class="cell-ce1">Encounter.participant.individual</td>
+<td class="cell-ce1">Encounter.participant</td>
+<td class="cell-ce1">.individual</td>
 <td class="cell-ce1"></td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1"></td>
+<td class="cell-ce1">.type[0].coding[0].system = http://terminology.hl7.org/CodeSystem/v3-ParticipationType
+.type[0].coding[0].code=PPRF
+.period = “DAR.target not supported”</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter | 5.0.1</td>
 </tr>
@@ -471,7 +473,7 @@
  <tr><td>Encounter</td><td></td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td></td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>429: source value from VISIT - VISIT ID (#9000010-15001)</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>430: transform using planned on VISIT - VISIT/ADMIT DATE&amp;TIME (#9000010-.01) case null or &gt; now, 431: transform using in-progress on VISIT - VISIT/ADMIT DATE&amp;TIME (#9000010-.01) case not null, &lt; now, .18 null, 432: transform using finished on VISIT - CHECK OUT DATE&amp;TIME (#9000010-.18) case not null, &lt; now</td><td>, <p>tweaked case logic 9/21</p>
+ <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>430: fixed value = #planned when VISIT - VISIT/ADMIT DATE&amp;TIME (#9000010-.01) case null or &gt; now, 431: fixed value = #in-progress when VISIT - VISIT/ADMIT DATE&amp;TIME (#9000010-.01) case not null, &lt; now, .18 null, 432: fixed value = #finished when VISIT - CHECK OUT DATE&amp;TIME (#9000010-.18) case not null, &lt; now</td><td>, <p>tweaked case logic 9/21</p>
 , <p>tweaked case logic 9/21</p>
 </td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;class</td><td>614: terminologyMaps using VF_encounterClass on VISIT - PATIENT STATUS IN/OUT (#9000010-15002)</td><td><p>84% are Outpatient (2024 Jan-Mar)</p>
@@ -479,8 +481,7 @@
  <tr><td>&nbsp;&nbsp;&nbsp;type</td><td>1615: source value from V CPT - CPT &gt; CPT (#9000010.18-.01 &gt; 81-)</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;serviceType</td><td></td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td></td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>439: source value from VISIT - SERVICE CATEGORY (#9000010-.07)</td><td><p>MvdZ QA</p>
-</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>439: source value from VISIT - SERVICE CATEGORY (#9000010-.07)</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>440: source value from VISIT - PATIENT NAME (#9000010-.05)</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;participant</td><td></td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;individual</td><td>1614: reference from V PROVIDER - PROVIDER &gt; NEW PERSON (#9000010.06-.01 &gt; 200-)</td><td></td> </tr>
@@ -489,8 +490,7 @@
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end</td><td>444: source value from VISIT - CHECK OUT DATE&amp;TIME (#9000010-.18)</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;reasonCode</td><td></td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td></td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>447: source value from V POV - POV &gt; ICD DIAGNOSIS - CODE NUMBER (#9000010.07-.01 &gt; 80-.01)</td><td><p>MvdZ QA</p>
-</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>447: source value from V POV - POV &gt; ICD DIAGNOSIS - CODE NUMBER (#9000010.07-.01 &gt; 80-.01)</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;diagnosis</td><td></td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;condition</td><td>452: reference from V POV - PROBLEM LIST ENTRY (#9000010.07-.16)</td><td><p>added parameter</p>
 </td> </tr>
@@ -775,7 +775,7 @@
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.32.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Mar 22, 2024 16:04+0000">2024-03-22</span>
+          IG &copy; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.34.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Mar 29, 2024 18:32+0000">2024-03-29</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

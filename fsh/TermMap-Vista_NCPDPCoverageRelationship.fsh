@@ -9,7 +9,7 @@ Usage: #definition
 * description = "Terminology Maps Vista_NCPDPCoverageRelationship"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VSVistaNCPDPCoverageRelationship-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/VSVistaNCPDPCoverageRelationship"
-* group[0].source = "urn:undefined"
+* group[0].source = "http://va.gov/terminology/vistaDefinedTerms/2.312-4.05"
 * group[=].element[0].code = #not_specified
 * group[=].element[=].target.equivalence = #unmatched
 * group[=].element[+].code = #cardholder
@@ -40,8 +40,8 @@ Title: "Vista_NCPDPCoverageRelationship VistA"
 Description: "VistA Source ValueSet for Terminology Maps Vista_NCPDPCoverageRelationship"
 * ^experimental = false
 * ^name = "Vista_NCPDPCoverageRelationship"
-* include urn:undefined#not_specified 
-* include urn:undefined#cardholder 
-* include urn:undefined#spouse 
-* include urn:undefined#child 
-* include urn:undefined#other 
+* include http://va.gov/terminology/vistaDefinedTerms/2.312-4.05#not_specified 
+* include http://va.gov/terminology/vistaDefinedTerms/2.312-4.05#cardholder 
+* include http://va.gov/terminology/vistaDefinedTerms/2.312-4.05#spouse 
+* include http://va.gov/terminology/vistaDefinedTerms/2.312-4.05#child 
+* include http://va.gov/terminology/vistaDefinedTerms/2.312-4.05#other 

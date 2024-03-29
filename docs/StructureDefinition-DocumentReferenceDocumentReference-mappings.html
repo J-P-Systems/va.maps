@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-    <title>Document Reference DocumentReference - Mappings - US Veterans Administration FHIR Map Set Implementation Guide v0.32.0</title>
+    <title>Document Reference DocumentReference - Mappings - US Veterans Administration FHIR Map Set Implementation Guide v0.34.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -57,7 +57,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">US Veterans Administration FHIR Map Set Implementation Guide</span>
             <br/>
-            <span style="display:inline-block;">0.32.0 - ci-build
+            <span style="display:inline-block;">0.34.0 - ci-build
 
 
 
@@ -134,7 +134,7 @@
           <div class="inner-wrapper">
 
 <div style="counter-reset: section 5" class="col-12">
-    <!-- ReleaseHeader --><p id="publish-box">US Veterans Administration FHIR Map Set Implementation Guide - Local Development build (v0.32.0) built by the FHIR (HL7&reg; FHIR&reg; Standard) Build Tools. See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
+    <!-- ReleaseHeader --><p id="publish-box">US Veterans Administration FHIR Map Set Implementation Guide - Local Development build (v0.34.0) built by the FHIR (HL7&reg; FHIR&reg; Standard) Build Tools. See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
   
 
 
@@ -207,7 +207,7 @@
         
           Draft
           
-            as of 2024-03-22
+            as of 2024-03-29
           
         
       </td>
@@ -294,7 +294,7 @@ CDW now has a view.</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">fixed value</td>
 <td class="cell-ce1"></td>
-<td class="cell-ce1">DocumentReference.category</td>
+<td class="cell-ce1">DocumentReference.category[us-core]</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">#clinical-note</td>
 <td class="cell-ce1"></td>
@@ -477,12 +477,12 @@ US Core: DocumentReference.content.attachment.url or DocumentReference.content.a
 <tr class="row-ro1">
 <td class="cell-ce1">893</td>
 <td class="cell-ce1">team-approved</td>
-<td class="cell-ce1">TIU DOCUMENT - REPORT TEXT (#null)</td>
+<td class="cell-ce1">TIU DOCUMENT - REPORT TEXT (#8925-2)</td>
 <td class="cell-ce1">transform</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">DocumentReference.content.attachment.size</td>
 <td class="cell-ce1"></td>
-<td class="cell-ce1">calculate</td>
+<td class="cell-ce1">calculate()</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference | 5.0.1</td>
@@ -490,12 +490,12 @@ US Core: DocumentReference.content.attachment.url or DocumentReference.content.a
 <tr class="row-ro1">
 <td class="cell-ce1">894</td>
 <td class="cell-ce1">team-approved</td>
-<td class="cell-ce1">TIU DOCUMENT - REPORT TEXT (#null)</td>
+<td class="cell-ce1">TIU DOCUMENT - REPORT TEXT (#8925-2)</td>
 <td class="cell-ce1">transform</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">DocumentReference.content.attachment.hash</td>
 <td class="cell-ce1"></td>
-<td class="cell-ce1">calculate</td>
+<td class="cell-ce1">calculate()</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference | 5.0.1</td>
@@ -672,7 +672,7 @@ US Core: DocumentReference.content.attachment.url or DocumentReference.content.a
  <tr><td>&nbsp;&nbsp;&nbsp;type</td><td>874: source value from TIU DOCUMENT - DOCUMENT TYPE &gt; TIU DOCUMENT DEFINITION - VHA ENTERPRISE STANDARD TITLE &gt; TIU VHA ENTERPRISE STANDARD TITLE - DOCUMENT TYPE (#8925-.01 &gt; 8925.1-1501 &gt; 8926.1-.08)</td><td><p>Get LOINC from VistA or use TIU_VHA_ENTERPRISE_STANDARD_TITLE_8926.1 file provided by KBS to look up LOINC mapping
 CDW now has a view.</p>
 </td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;category</td><td>875: fixed value = #clinical-note</td><td><p>(= NOTE, ADDENDUM, CONSULT, etc.?)
+ <tr><td>&nbsp;&nbsp;&nbsp;category (us-core)</td><td>875: fixed value = #clinical-note</td><td><p>(= NOTE, ADDENDUM, CONSULT, etc.?)
 Use TIU_VHA_ENTERPRISE_STANDARD_TITLE_8926.1 file provided by KBS to look up DocType
 If the document has a type or parent value, use that for the category</p>
 </td> </tr>
@@ -699,8 +699,8 @@ Per 03/02/2023 email from LH, changed the Vista field from 1205 (hospital locati
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data</td><td>891: source value from TIU DOCUMENT - REPORT TEXT (#8925-2)</td><td><p>option 1: tbd
 US Core: DocumentReference.content.attachment.url or DocumentReference.content.attachment.data or both SHALL be present.</p>
 </td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;size</td><td>893: transform using calculate</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hash</td><td>894: transform using calculate</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;size</td><td>893: transform using calculate() on TIU DOCUMENT - REPORT TEXT (#8925-2)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hash</td><td>894: transform using calculate() on TIU DOCUMENT - REPORT TEXT (#8925-2)</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;title</td><td>895: source value from TIU DOCUMENT - DOCUMENT TYPE &gt; TIU DOCUMENT DEFINITION - VHA ENTERPRISE STANDARD TITLE &gt; TIU VHA ENTERPRISE STANDARD TITLE - STANDARD TITLE (#8925-.01 &gt; 8925.1-1501 &gt; 8926.1-.01)</td><td><p>03/06/23 added the secondary subfield based on LH feedback</p>
 </td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;creation</td><td>896: source value from TIU DOCUMENT - ENTRY DATE/TIME (#8925-1201)</td><td><p>.07 does not indicate parent or child document only the treatment episode associated with document</p>
@@ -997,7 +997,7 @@ serviceEvent/effectiveTime/high/
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.32.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Mar 22, 2024 16:04+0000">2024-03-22</span>
+          IG &copy; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.34.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Mar 29, 2024 18:32+0000">2024-03-29</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

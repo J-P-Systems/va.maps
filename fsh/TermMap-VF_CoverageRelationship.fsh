@@ -9,7 +9,7 @@ Usage: #definition
 * description = "Terminology Maps VF_CoverageRelationship"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFCoverageRelationship-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/VSVFCoverageRelationship"
-* group[0].source = "urn:undefined"
+* group[0].source = "http://va.gov/terminology/vistaDefinedTerms/365-8.01"
 * group[=].target = "http://terminology.hl7.org/CodeSystem/subscriber-relationship"
 * group[=].element[0].code = #HIPAA_18_SELF
 * group[=].element[=].target.code = #self
@@ -74,14 +74,14 @@ Title: "VF_CoverageRelationship VistA"
 Description: "VistA Source ValueSet for Terminology Maps VF_CoverageRelationship"
 * ^experimental = false
 * ^name = "VF_CoverageRelationship"
-* include urn:undefined#HIPAA_18_SELF 
-* include urn:undefined#HIPAA_01_SPOUSE 
-* include urn:undefined#HIPAA_19_CHILD 
-* include urn:undefined#HIPAA_20_EMPLOYEE 
-* include urn:undefined#HIPAA_39_ORGAN_DONOR 
-* include urn:undefined#HIPAA_41_INJURED_PLAINTIFF 
-* include urn:undefined#HIPAA_32_MOTHER 
-* include urn:undefined#HIPAA_33_FATHER 
-* include urn:undefined#HIPAA_29_SIGNIFICANT_OTHER 
-* include urn:undefined#HIPAA_53_LIFE_PARTNER 
-* include urn:undefined#HIPAA_G8_OTHER_RELATIONSHIP 
+* include http://va.gov/terminology/vistaDefinedTerms/365-8.01#HIPAA_18_SELF 
+* include http://va.gov/terminology/vistaDefinedTerms/365-8.01#HIPAA_01_SPOUSE 
+* include http://va.gov/terminology/vistaDefinedTerms/365-8.01#HIPAA_19_CHILD 
+* include http://va.gov/terminology/vistaDefinedTerms/365-8.01#HIPAA_20_EMPLOYEE 
+* include http://va.gov/terminology/vistaDefinedTerms/365-8.01#HIPAA_39_ORGAN_DONOR 
+* include http://va.gov/terminology/vistaDefinedTerms/365-8.01#HIPAA_41_INJURED_PLAINTIFF 
+* include http://va.gov/terminology/vistaDefinedTerms/365-8.01#HIPAA_32_MOTHER 
+* include http://va.gov/terminology/vistaDefinedTerms/365-8.01#HIPAA_33_FATHER 
+* include http://va.gov/terminology/vistaDefinedTerms/365-8.01#HIPAA_29_SIGNIFICANT_OTHER 
+* include http://va.gov/terminology/vistaDefinedTerms/365-8.01#HIPAA_53_LIFE_PARTNER 
+* include http://va.gov/terminology/vistaDefinedTerms/365-8.01#HIPAA_G8_OTHER_RELATIONSHIP 

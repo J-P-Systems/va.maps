@@ -14,13 +14,13 @@ Mapping: vista-to-Location
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: Location
-* identifier.value -> "755: source value from HOSPITAL LOCATION - IEN (#44-.001)" "MvdZ QA 6-jul-2023"
+* identifier.value -> "755: source value from HOSPITAL LOCATION - IEN (#44-.001)"
 * name -> "756: source value from HOSPITAL LOCATION - NAME (#44-.01)"
-* alias -> "1276: source value from HOSPITAL LOCATION - ABBREVIATION (#44-1)" "MvdZ QA 6-jul-2023"
-* alias -> "1277: source value from HOSPITAL LOCATION - SYNONYM (#44-13)" "MvdZ QA 6-jul-2023"
-* status -> "1278: terminologyMaps using VF_LocationStatus" "Derive somehow from 44-2505 INACTIVATE 44-2506 REACTIVATE  \nOr use VAST, not ViSTA.\nMvdZ QA 6-jul-2023"
+* alias -> "1276: source value from HOSPITAL LOCATION - ABBREVIATION (#44-1)"
+* alias -> "1277: source value from HOSPITAL LOCATION - SYNONYM (#44-13)"
+* status -> "1278: terminologyMaps using VF_LocationStatus" "Derive somehow from 44-2505 INACTIVATE 44-2506 REACTIVATE  \nOr use VAST, not ViSTA."
 * description -> "1279: source value from HOSPITAL LOCATION - PATIENT FRIENDLY NAME (#44-60)"
-* telecom.value -> "1280: transform using concat (44-99,\" ext. \",44-99.1) on HOSPITAL LOCATION - TELEPHONE > TELEPHONE EXTENSION (#44-99 > 44-99.1)" "MvdZ QA 6-jul-2023"
+* telecom.value -> "1280: transform using concat (44-99,\" ext. \",44-99.1) on HOSPITAL LOCATION - TELEPHONE > TELEPHONE EXTENSION (#44-99 > 44-99.1)"
 * managingOrganization.display -> "1283: fixed value = Veterans Administration"
 * physicalType.text -> "1284: source value from HOSPITAL LOCATION - PHYSICAL LOCATION (#44-10)"
 * address.state -> "1315: source value from HOSPITAL LOCATION - INSTITUTION > STATE > STATE - ABBREVIATION (#44-3 > 4-.02 > 5-1)"

@@ -26,7 +26,7 @@ Usage: #definition
 * group[=].element[+].code = #4500698
 * group[=].element[=].display = "DELETED"
 * group[=].element[=].target.code = #entered-in-error
-* group[=].element[=].target.equivalence = #relatedto
+* group[=].element[=].target.equivalence = #equal
 * group[=].element[+].code = #4501288
 * group[=].element[=].display = "RETRACTED"
 * group[=].element[=].target.code = #entered-in-error
@@ -63,7 +63,7 @@ Usage: #definition
 * group[=].element[+].code = #4501287
 * group[=].element[=].display = "PURGED"
 * group[=].element[=].target.code = #<exclude_record>
-* group[=].element[=].target.equivalence = #relatedto
+* group[=].element[=].target.equivalence = #equal
 * group[=].element[+].code = #4501289
 * group[=].element[=].display = "TEST"
 * group[=].element[=].target.code = #<exclude_record>

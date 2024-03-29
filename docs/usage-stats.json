@@ -1,6 +1,6 @@
 {
   "package": "va.maps",
-  "version": "0.32.0",
+  "version": "0.34.0",
   "fhirVersion": "4.0.1",
   "jurisdiction": "US",
   "extensions": [
@@ -23,6 +23,34 @@
       "title": "MedicationRequestPharmacyOrderStatus",
       "types": [
         "Coding"
+      ]
+    },
+    {
+      "url": "http://va.gov/fhir/StructureDefinition/medicationrequest-recordedLocation",
+      "title": "MedicationrequestRecordedLocation",
+      "types": [
+        "Reference"
+      ]
+    },
+    {
+      "url": "http://va.gov/fhir/StructureDefinition/organization-allowMultipleBedsections",
+      "title": "OrganizationAllowMultipleBedsections",
+      "types": [
+        "boolean"
+      ]
+    },
+    {
+      "url": "http://va.gov/fhir/StructureDefinition/organization-anotherCompanyProcessesInpatClaims",
+      "title": "OrganizationAnotherCompanyProcessesInpatClaims",
+      "types": [
+        "boolean"
+      ]
+    },
+    {
+      "url": "http://va.gov/fhir/StructureDefinition/organization-oneOutpatVisitOnBillOnly",
+      "title": "OrganizationOneOutpatVisitOnBillOnly",
+      "types": [
+        "boolean"
       ]
     }
   ],
@@ -71,14 +99,14 @@
     ],
     "Observation": [
       {
-        "url": "http://va.gov/fhir/StructureDefinition/VitalSignsSpO2",
-        "title": "Vital Signs: SpO2"
+        "url": "http://va.gov/fhir/StructureDefinition/VitalSignsSpO2Observation",
+        "title": "Vital Signs: SpO2 Observation"
       }
     ],
     "Device": [
       {
-        "url": "http://va.gov/fhir/StructureDefinition/VitalSignsDevice",
-        "title": "Vital Signs Device"
+        "url": "http://va.gov/fhir/StructureDefinition/VitalSignsSpO2Device",
+        "title": "Vital Signs: SpO2 Device"
       }
     ],
     "DiagnosticReport": [
@@ -129,8 +157,8 @@
     ],
     "Organization": [
       {
-        "url": "http://va.gov/fhir/StructureDefinition/VitalSignsOrganization",
-        "title": "Vital Signs Organization"
+        "url": "http://va.gov/fhir/StructureDefinition/VitalSignsSpO2Organization",
+        "title": "Vital Signs: SpO2 Organization"
       }
     ],
     "Patient": [
@@ -262,6 +290,9 @@
       "MedicationRequest"
     ],
     "http://va.gov/fhir/StructureDefinition/medicationrequest-pharmacyOrderStatus": [
+      "MedicationRequest"
+    ],
+    "http://va.gov/fhir/StructureDefinition/medicationrequest-recordedLocation": [
       "MedicationRequest"
     ]
   }

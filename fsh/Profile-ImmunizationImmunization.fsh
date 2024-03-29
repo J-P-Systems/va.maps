@@ -4,7 +4,7 @@ Id: ImmunizationImmunization
 Title: "Immunization Immunization"
 Description: "This StructureDefinition contains the maps for VistA file V IMMUNIZATION (#9000010.11) to us-core-immunization"
 * ^status = #draft
-* statusReason and vaccineCode and primarySource and status and patient and occurrenceDateTime and lotNumber and manufacturer and vaccineCode.coding.code and doseQuantity.value and performer.actor and note.text and protocolApplied.doseNumberString and doseQuantity and recorded and reaction.detail MS
+* statusReason and vaccineCode and primarySource and status and patient and occurrenceDateTime and lotNumber and manufacturer and vaccineCode.coding.code and doseQuantity.value and performer.actor and note.text and protocolApplied.doseNumberString and doseQuantity and recorded and reaction.detail and encounter MS
 * statusReason from http://va.gov/fhir/ValueSet/VSVFimmunizationStatusReason
 * vaccineCode from http://va.gov/fhir/ValueSet/VSVFinferredCVX
 * primarySource.extension contains http://hl7.org/fhir/StructureDefinition/11179-permitted-value-conceptmap named 11179-permitted-value-conceptmap 0..1
@@ -19,7 +19,7 @@ Source: ImmunizationImmunization
 * vaccineCode -> "528: terminologyMaps using VF_inferredCVX on V IMMUNIZATION - IMMUNIZATION > IMMUNIZATION - NAME (#9000010.11-.01 > 9999999.14-.01) case V IMMUNIZATION - IMMUNIZATION null" "This map is used to identify CVX codes for immunizations that were not given, and which therefore are not coded. The name can be used to determine what the CVX Group."
 * primarySource -> "607: transform using VF_immunizationPrimarySource on V IMMUNIZATION - EVENT INFORMATION SOURCE (#9000010.11-1301)"
 * status -> "297: fixed value = #completed when V IMMUNIZATION - IMMUNIZATION > IMMUNIZATION - CVX CODE (#9000010.11-.01 > 9999999.14-.03) case CVX populated" "subfile: .03 is CVX"
-* status -> "299: transform using #not-done on V IMMUNIZATION - IMMUNIZATION > IMMUNIZATION - NAME (#9000010.11-.01 > 9999999.14-.01) case text like 'contraindicated', 'refused', 'decline', 'not avail'" "subfile: .01 is text\nTransform because multiple sources\nuse map?"
+* status -> "299: fixed value = #not-done when V IMMUNIZATION - IMMUNIZATION > IMMUNIZATION - NAME (#9000010.11-.01 > 9999999.14-.01) case text like 'contraindicated', 'refused', 'decline', 'not avail'" "subfile: .01 is text\nTransform because multiple sources\nuse map?"
 * vaccineCode -> "332: source value from V IMMUNIZATION - IMMUNIZATION > IMMUNIZATION - CVX CODE (#9000010.11-.01 > 9999999.14-.03) case not null" "subfile: .03 is CVX"
 * patient -> "333: source value from V IMMUNIZATION - PATIENT NAME (#9000010.11-.02)"
 * occurrenceDateTime -> "334: source value from V IMMUNIZATION - EVENT DATE AND TIME (#9000010.11-1201)"
@@ -33,6 +33,7 @@ Source: ImmunizationImmunization
 * doseQuantity -> "464: source value from V IMMUNIZATION - DOSE UNITS > UCUM CODES - (#9000010.11-1313 > 757.5-)"
 * recorded -> "1593: source value from V IMMUNIZATION - DATE/TIME RECORDED (#9000010.11-1205)" "identified byMHV"
 * reaction.detail -> "1673: reference"
+* encounter -> "1767: reference from V IMMUNIZATION - VISIT (#9000010.11-.03)"
 
 Mapping: cdw-to-ImmunizationImmunization
 Id: cdw
@@ -52,3 +53,4 @@ Source: ImmunizationImmunization
 * protocolApplied.doseNumberString -> "Immun.Immunization.Series"
 * doseQuantity -> "Immun.Immunization.DoseUnit"
 * recorded -> "Immun.Immunization.RecordedDateTime"
+* encounter -> "Immun.Immunization.OutsideLocation,Immun.Immunization.VisitDateTime,Immun.Immunization.VisitIEN"

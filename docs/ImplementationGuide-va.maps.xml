@@ -7,11 +7,11 @@
 </div></div>
   </text>
   <url value="http://va.gov/fhir/ImplementationGuide/va.maps"/>
-  <version value="0.32.0"/>
+  <version value="0.34.0"/>
   <name value="VAMapsIG"/>
   <title value="US Veterans Administration FHIR Map Set Implementation Guide"/>
   <status value="draft"/>
-  <date value="2024-03-22T16:04:14+00:00"/>
+  <date value="2024-03-29T18:32:47+00:00"/>
   <publisher value="VA"/>
   <contact>
     <name value="VA"/>
@@ -1163,6 +1163,17 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/medicationrequest-recordedLocation"/>
+      </reference>
+      <name value="MedicationrequestRecordedLocation"/>
+      <description value="Extension medicationrequest-recordedLocation"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
@@ -1232,6 +1243,39 @@
       <description value="This StructureDefinition contains the maps for VistA file INSTITUTION (#4) to us-core-organization"/>
       <exampleBoolean value="false"/>
       <groupingId value="group14"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/organization-allowMultipleBedsections"/>
+      </reference>
+      <name value="OrganizationAllowMultipleBedsections"/>
+      <description value="Extension organization-allowMultipleBedsections"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/organization-anotherCompanyProcessesInpatClaims"/>
+      </reference>
+      <name value="OrganizationAnotherCompanyProcessesInpatClaims"/>
+      <description value="Extension organization-anotherCompanyProcessesInpatClaims"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/organization-oneOutpatVisitOnBillOnly"/>
+      </reference>
+      <name value="OrganizationOneOutpatVisitOnBillOnly"/>
+      <description value="Extension organization-oneOutpatVisitOnBillOnly"/>
+      <exampleBoolean value="false"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -3470,9 +3514,21 @@
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/VitalSignsBP"/>
+        <reference value="StructureDefinition/VitalSignsBPDevice"/>
       </reference>
-      <name value="Vital Signs: BP"/>
+      <name value="Vital Signs: BP Device"/>
+      <description value="This StructureDefinition contains the maps for VistA file GMRV VITAL MEASUREMENT (#120.5) to Device"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="group4"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/VitalSignsBPObservation"/>
+      </reference>
+      <name value="Vital Signs: BP Observation"/>
       <description value="This StructureDefinition contains the maps for VistA file GMRV VITAL MEASUREMENT (#120.5) to us-core-blood-pressure"/>
       <exampleBoolean value="false"/>
       <groupingId value="group4"/>
@@ -3482,9 +3538,33 @@
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/VitalSignsCPM"/>
+        <reference value="StructureDefinition/VitalSignsBPOrganization"/>
       </reference>
-      <name value="Vital Signs: CPM"/>
+      <name value="Vital Signs: BP Organization"/>
+      <description value="This StructureDefinition contains the maps for VistA file GMRV VITAL MEASUREMENT (#120.5) to Organization"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="group4"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/VitalSignsCPMDevice"/>
+      </reference>
+      <name value="Vital Signs: CPM Device"/>
+      <description value="This StructureDefinition contains the maps for VistA file GMRV VITAL MEASUREMENT (#120.5) to Device"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="group4"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/VitalSignsCPMObservation"/>
+      </reference>
+      <name value="Vital Signs: CPM Observation"/>
       <description value="This StructureDefinition contains the maps for VistA file GMRV VITAL MEASUREMENT (#120.5) to us-core-vital-signs"/>
       <exampleBoolean value="false"/>
       <groupingId value="group4"/>
@@ -3494,10 +3574,46 @@
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/VitalSignsSpO2"/>
+        <reference value="StructureDefinition/VitalSignsCPMOrganization"/>
       </reference>
-      <name value="Vital Signs: SpO2"/>
+      <name value="Vital Signs: CPM Organization"/>
+      <description value="This StructureDefinition contains the maps for VistA file GMRV VITAL MEASUREMENT (#120.5) to Organization"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="group4"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/VitalSignsSpO2Device"/>
+      </reference>
+      <name value="Vital Signs: SpO2 Device"/>
+      <description value="This StructureDefinition contains the maps for VistA file GMRV VITAL MEASUREMENT (#120.5) to Device"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="group4"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/VitalSignsSpO2Observation"/>
+      </reference>
+      <name value="Vital Signs: SpO2 Observation"/>
       <description value="This StructureDefinition contains the maps for VistA file GMRV VITAL MEASUREMENT (#120.5) to us-core-pulse-oximetry"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="group4"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/VitalSignsSpO2Organization"/>
+      </reference>
+      <name value="Vital Signs: SpO2 Organization"/>
+      <description value="This StructureDefinition contains the maps for VistA file GMRV VITAL MEASUREMENT (#120.5) to Organization"/>
       <exampleBoolean value="false"/>
       <groupingId value="group4"/>
     </resource>

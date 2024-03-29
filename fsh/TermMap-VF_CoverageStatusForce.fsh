@@ -9,7 +9,7 @@ Usage: #definition
 * description = "Terminology Maps VF_CoverageStatusForce"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFCoverageStatusForce-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/VSVFCoverageStatusForce"
-* group[0].source = "urn:undefined"
+* group[0].source = "http://va.gov/terminology/vistaDefinedTerms/355.32-.04"
 * group[=].target = "http://hl7.org/fhir/StructureDefinition/boolean"
 * group[=].element[0].code = #0
 * group[=].element[=].display = "NOT COVERED"
@@ -37,6 +37,6 @@ Title: "VF_CoverageStatusForce VistA"
 Description: "VistA Source ValueSet for Terminology Maps VF_CoverageStatusForce"
 * ^experimental = false
 * ^name = "VF_CoverageStatusForce"
-* include urn:undefined#0 "NOT COVERED"
-* include urn:undefined#1 "COVERED"
-* include urn:undefined#2 "CONDITIONAL COVERAGE"
+* include http://va.gov/terminology/vistaDefinedTerms/355.32-.04#0 "NOT COVERED"
+* include http://va.gov/terminology/vistaDefinedTerms/355.32-.04#1 "COVERED"
+* include http://va.gov/terminology/vistaDefinedTerms/355.32-.04#2 "CONDITIONAL COVERAGE"
