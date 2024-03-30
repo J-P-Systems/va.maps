@@ -4,9 +4,10 @@ Id: ObservationImagingResultEKG
 Title: "Observation Imaging Result: EKG"
 Description: "This StructureDefinition contains the maps for VistA file ELECTROCARDIOGRAM (EKG) (#691.5) to us-core-observation-imaging"
 * ^status = #draft
-* identifier.value and status and subject and effectiveDateTime and issued and performer and valueString and interpretation and note MS
+* identifier.value and status and subject and effectiveDateTime and issued and performer and valueString and interpretation and note and category MS
 * status from http://va.gov/fhir/ValueSet/VSVFImageStatus
 * interpretation from http://va.gov/fhir/ValueSet/VSVFImageInterpretation
+* category = http://terminology.hl7.org/CodeSystem/observation-category#imaging
 
 Mapping: vista-to-ObservationImagingResultEKG
 Id: vista
@@ -23,3 +24,7 @@ Source: ObservationImagingResultEKG
 * valueString -> "1646: source value from ELECTROCARDIOGRAM (EKG) - INTERPRETATION CODE (PACING) > INTERPRETATION CODE (PACING) - INTERPRETATION CODE (PACING) > ECG INTERPRETATION - INTERPRETATION (#691.5-14.2 > 691.56-.01 > 693.3-.01)"
 * interpretation -> "1649: terminologyMaps using VF_ImageInterpretation on ELECTROCARDIOGRAM (EKG) - SUMMARY (#691.5-.03)"
 * note -> "1651: source value from ELECTROCARDIOGRAM (EKG) - COMMENT (#691.5-.03)"
+* category -> "1624: fixed value = http://terminology.hl7.org/CodeSystem/observation-category#imaging"
+* dataAbsentReason -> "1795: target not supported" "Always has data"
+* valueQuantity -> "1796: target not supported" "value is string"
+* valueCodeableConcept -> "1797: target not supported" "value is string"

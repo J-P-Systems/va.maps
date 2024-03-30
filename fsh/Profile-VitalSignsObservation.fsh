@@ -4,6 +4,7 @@ Id: VitalSignsObservation
 Title: "Vital Signs Observation"
 Description: "This StructureDefinition contains the maps for VistA file GMRV VITAL MEASUREMENT (#120.5) to us-core-vital-signs"
 * ^status = #draft
+* ^abstract = true
 * issued and performer and status and effectiveDateTime and category and subject and identifier.value and code.coding and device and method and valueQuantity.value and valueQuantity.code MS
 * performer only Reference(VitalSignsOrganization)
 * category = http://terminology.hl7.org/CodeSystem/observation-category#vital-signs
@@ -30,6 +31,8 @@ Source: VitalSignsObservation
 * method -> "867: terminologyMaps using VF_VitalsMethod on GMRV VITAL MEASUREMENT - QUALIFIER (#120.5-5)"
 * valueQuantity.value -> "664: source value from GMRV VITAL MEASUREMENT - RATE (#120.5-1.2) case VUID not = 4500634"
 * valueQuantity.code -> "665: transform using VF_VitalsUnits on GMRV VITAL MEASUREMENT - VITAL TYPE (#120.5-.03)" "VPR may transform"
+* dataAbsentReason -> "1792: target not supported" "Always has data"
+* component.dataAbsentReason -> "1793: target not supported" "Always has data"
 
 Mapping: cdw-to-VitalSignsObservation
 Id: cdw

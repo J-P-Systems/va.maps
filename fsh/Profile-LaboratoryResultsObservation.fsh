@@ -4,6 +4,7 @@ Id: LaboratoryResultsObservation
 Title: "Laboratory Results Observation"
 Description: "This StructureDefinition contains the maps for VistA file PATIENT (#2) to us-core-observation-lab"
 * ^status = #draft
+* ^abstract = true
 * category and subject MS
 * category = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
 

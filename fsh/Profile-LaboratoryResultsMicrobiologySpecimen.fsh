@@ -4,6 +4,7 @@ Id: LaboratoryResultsMicrobiologySpecimen
 Title: "Laboratory Results: Microbiology Specimen"
 Description: "This StructureDefinition contains the maps for VistA file MICROBIOLOGY (#63.05) to Specimen"
 * ^status = #draft
+* ^abstract = true
 * accessionIdentifier and type.text MS
 
 Mapping: vista-to-LaboratoryResultsMicrobiologySpecimen

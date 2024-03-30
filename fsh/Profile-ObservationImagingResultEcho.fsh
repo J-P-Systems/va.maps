@@ -4,9 +4,10 @@ Id: ObservationImagingResultEcho
 Title: "Observation Imaging Result: Echo"
 Description: "This StructureDefinition contains the maps for VistA file ECHO (#691) to us-core-observation-imaging"
 * ^status = #draft
-* identifier.value and status and subject and effectiveDateTime and issued and performer and valueString and interpretation and note MS
+* identifier.value and status and subject and effectiveDateTime and issued and performer and valueString and interpretation and note and category MS
 * status from http://va.gov/fhir/ValueSet/VSVFImageStatus
 * interpretation from http://va.gov/fhir/ValueSet/VSVFImageInterpretation
+* category = http://terminology.hl7.org/CodeSystem/observation-category#imaging
 
 Mapping: vista-to-ObservationImagingResultEcho
 Id: vista
@@ -21,3 +22,7 @@ Source: ObservationImagingResultEcho
 * valueString -> "1643: source value from ECHO - FINDINGS > FINDINGS - FINDINGS (#691-37 > 691.06-.01)" "Should Doppler findings be included? (691-34) Can have only 1 value in US Core."
 * interpretation -> "1648: terminologyMaps using VF_ImageInterpretation on ECHO - SUMMARY (#691-.03)"
 * note -> "1650: source value from ECHO - OTHER CONCLUSION (#691-38)"
+* category -> "1624: fixed value = http://terminology.hl7.org/CodeSystem/observation-category#imaging"
+* dataAbsentReason -> "1795: target not supported" "Always has data"
+* valueQuantity -> "1796: target not supported" "value is string"
+* valueCodeableConcept -> "1797: target not supported" "value is string"

@@ -4,6 +4,7 @@ Id: LaboratoryResultsDiagnosticReport
 Title: "Laboratory Results DiagnosticReport"
 Description: "This StructureDefinition contains the maps for VistA file LABORATORY TEST (#60) to us-core-diagnosticreport-lab"
 * ^status = #draft
+* ^abstract = true
 * category and category.text and code.coding and code.text and subject and result MS
 * category = http://terminology.hl7.org/CodeSystem/v2-0074#LAB
 * result only Reference(LaboratoryResultsObservation)

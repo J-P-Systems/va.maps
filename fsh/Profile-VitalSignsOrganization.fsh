@@ -4,6 +4,7 @@ Id: VitalSignsOrganization
 Title: "Vital Signs Organization"
 Description: "This StructureDefinition contains the maps for VistA file GMRV VITAL MEASUREMENT (#120.5) to Organization"
 * ^status = #draft
+* ^abstract = true
 * identifier and name MS
 
 Mapping: vista-to-VitalSignsOrganization

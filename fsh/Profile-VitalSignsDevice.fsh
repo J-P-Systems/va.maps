@@ -4,6 +4,7 @@ Id: VitalSignsDevice
 Title: "Vital Signs Device"
 Description: "This StructureDefinition contains the maps for VistA file GMRV VITAL MEASUREMENT (#120.5) to Device"
 * ^status = #draft
+* ^abstract = true
 * type MS
 * type from http://va.gov/fhir/ValueSet/VSVFVitalsDevice
 

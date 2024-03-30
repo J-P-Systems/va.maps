@@ -20,6 +20,7 @@ Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: VitalSignsCPMObservation
 * extension[http://hl7.org/fhir/StructureDefinition/observation-bodyPosition].valueCodeableConcept -> "866: terminologyMaps using VF_VitalsPosition on GMRV VITAL MEASUREMENT - QUALIFIER (#120.5-5)" "Not part of US core. Will need to handle the different program uses."
+* component -> "1791: target not supported" "Has no components"
 * issued -> "652: source value from GMRV VITAL MEASUREMENT - DATE/TIME VITALS ENTERED (#120.5-.04)"
 * performer -> "1653: reference from GMRV VITAL MEASUREMENT - HOSPITAL LOCATION (#120.5-.05)"
 * status -> "655: fixed value = #final when GMRV VITAL MEASUREMENT - REASON ENTERED IN ERROR (#120.5-4) case null"
@@ -33,6 +34,8 @@ Source: VitalSignsCPMObservation
 * method -> "867: terminologyMaps using VF_VitalsMethod on GMRV VITAL MEASUREMENT - QUALIFIER (#120.5-5)"
 * valueQuantity.value -> "664: source value from GMRV VITAL MEASUREMENT - RATE (#120.5-1.2) case VUID not = 4500634"
 * valueQuantity.code -> "665: transform using VF_VitalsUnits on GMRV VITAL MEASUREMENT - VITAL TYPE (#120.5-.03)" "VPR may transform"
+* dataAbsentReason -> "1792: target not supported" "Always has data"
+* component.dataAbsentReason -> "1793: target not supported" "Always has data"
 
 Mapping: cdw-to-VitalSignsCPMObservation
 Id: cdw
