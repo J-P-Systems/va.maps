@@ -21,9 +21,9 @@ Source: ObservationImagingResultRadNuc
 * performer -> "1642: source value from RAD/NUC MED REPORTS - VERIFYING PHYSICIAN (#74-9)"
 * valueString -> "1647: source value from RAD/NUC MED REPORTS - IMPRESSION TEXT > IMPRESSION TEXT - IMPRESSION TEXT (#74-300 > 74.03-.01)"
 * category -> "1624: fixed value = http://terminology.hl7.org/CodeSystem/observation-category#imaging"
-* dataAbsentReason -> "1795: target not supported" "Always has data"
-* valueQuantity -> "1796: target not supported" "value is string"
-* valueCodeableConcept -> "1797: target not supported" "value is string"
+* dataAbsentReason -> "1796: target not supported" "Always has data"
+* valueQuantity -> "1797: target not supported" "value is string"
+* valueCodeableConcept -> "1798: target not supported" "value is string"
 
 Mapping: cdw-to-ObservationImagingResultRadNuc
 Id: cdw

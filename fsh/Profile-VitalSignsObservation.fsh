@@ -31,8 +31,8 @@ Source: VitalSignsObservation
 * method -> "867: terminologyMaps using VF_VitalsMethod on GMRV VITAL MEASUREMENT - QUALIFIER (#120.5-5)"
 * valueQuantity.value -> "664: source value from GMRV VITAL MEASUREMENT - RATE (#120.5-1.2) case VUID not = 4500634"
 * valueQuantity.code -> "665: transform using VF_VitalsUnits on GMRV VITAL MEASUREMENT - VITAL TYPE (#120.5-.03)" "VPR may transform"
-* dataAbsentReason -> "1792: target not supported" "Always has data"
-* component.dataAbsentReason -> "1793: target not supported" "Always has data"
+* dataAbsentReason -> "1793: target not supported" "Always has data"
+* component.dataAbsentReason -> "1794: target not supported" "Always has data"
 
 Mapping: cdw-to-VitalSignsObservation
 Id: cdw

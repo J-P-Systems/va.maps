@@ -11,3 +11,8 @@ Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: MedicationRequestUnsignedVAOrder
 * identifier -> "1225: source value from ORDER - ORDER # (#100-.01) case package like 'PS%' & class 'I' & [exclude supply]" "confirm case"
+
+Mapping: cdw-to-MedicationRequestUnsignedVAOrder
+Id: cdw
+Title: "Clinical Data Warehouse (CDW)"
+Source: MedicationRequestUnsignedVAOrder

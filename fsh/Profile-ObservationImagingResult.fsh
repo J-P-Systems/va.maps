@@ -13,6 +13,11 @@ Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: ObservationImagingResult
 * category -> "1624: fixed value = http://terminology.hl7.org/CodeSystem/observation-category#imaging"
-* dataAbsentReason -> "1795: target not supported" "Always has data"
-* valueQuantity -> "1796: target not supported" "value is string"
-* valueCodeableConcept -> "1797: target not supported" "value is string"
+* dataAbsentReason -> "1796: target not supported" "Always has data"
+* valueQuantity -> "1797: target not supported" "value is string"
+* valueCodeableConcept -> "1798: target not supported" "value is string"
+
+Mapping: cdw-to-ObservationImagingResult
+Id: cdw
+Title: "Clinical Data Warehouse (CDW)"
+Source: ObservationImagingResult

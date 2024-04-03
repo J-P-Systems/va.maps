@@ -15,3 +15,8 @@ Source: MedicationRequestNonVA
 * reportedBoolean -> "1347: fixed value = true when NON-VA MEDS - ORDER NUMBER (#55.05-7) case Not null"
 * note -> "1764: source value from NON-VA MEDS - DISCLAIMER (#55.05-10)" "Concatenate to Comment. Delimit with a period."
 * extension[http://va.gov/fhir/StructureDefinition/medicationrequest-recordedLocation].valueReference -> "1765: reference from NON-VA MEDS - CLINIC (#55.05-13)"
+
+Mapping: cdw-to-MedicationRequestNonVA
+Id: cdw
+Title: "Clinical Data Warehouse (CDW)"
+Source: MedicationRequestNonVA

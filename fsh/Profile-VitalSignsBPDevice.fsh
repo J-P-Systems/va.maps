@@ -12,3 +12,8 @@ Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: VitalSignsBPDevice
 * type -> "663: terminologyMaps using VF_VitalsDevice on GMRV VITAL MEASUREMENT - QUALIFIER (#120.5-5)"
+
+Mapping: cdw-to-VitalSignsBPDevice
+Id: cdw
+Title: "Clinical Data Warehouse (CDW)"
+Source: VitalSignsBPDevice

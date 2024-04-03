@@ -27,4 +27,9 @@ Source: ImplantableDeviceALead
 * lotNumber -> "1377: target not supported"
 * serialNumber -> "1381: target not supported"
 * deviceName -> "1386: target not supported"
-* udiCarrier.carrierHRF -> "1794: target not supported"
+* udiCarrier.carrierHRF -> "1795: target not supported"
+
+Mapping: cdw-to-ImplantableDeviceALead
+Id: cdw
+Title: "Clinical Data Warehouse (CDW)"
+Source: ImplantableDeviceALead

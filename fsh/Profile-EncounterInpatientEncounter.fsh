@@ -36,6 +36,7 @@ Source: EncounterInpatientEncounter
 * location.location -> "461: reference from PTF - FACILITY (#45-3)"
 * serviceProvider -> "1600: reference from PTF - FACILITY (#45-3)"
 * type -> "1616: source value from INPATIENT CPT CODE - CPT CODE > CPT (#46-.01 > 81-)"
+* participant.period -> "1800: target not supported"
 
 Mapping: cdw-to-EncounterInpatientEncounter
 Id: cdw

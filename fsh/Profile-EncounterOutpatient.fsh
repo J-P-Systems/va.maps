@@ -27,6 +27,7 @@ Source: EncounterOutpatient
 * serviceProvider -> "1599: reference from VISIT - LOC. OF ENCOUNTER > LOCATION - POINTER TO INSTITUTION FILE (#4) (#9000010-.06 > 9999999.06-.1)"
 * participant.individual -> "1614: reference from V PROVIDER - PROVIDER > NEW PERSON (#9000010.06-.01 > 200-)"
 * type -> "1615: source value from V CPT - CPT > CPT (#9000010.18-.01 > 81-)"
+* participant.period -> "1799: target not supported"
 
 Mapping: cdw-to-EncounterOutpatient
 Id: cdw

@@ -23,6 +23,11 @@ Source: ObservationImagingResultEcho
 * interpretation -> "1648: terminologyMaps using VF_ImageInterpretation on ECHO - SUMMARY (#691-.03)"
 * note -> "1650: source value from ECHO - OTHER CONCLUSION (#691-38)"
 * category -> "1624: fixed value = http://terminology.hl7.org/CodeSystem/observation-category#imaging"
-* dataAbsentReason -> "1795: target not supported" "Always has data"
-* valueQuantity -> "1796: target not supported" "value is string"
-* valueCodeableConcept -> "1797: target not supported" "value is string"
+* dataAbsentReason -> "1796: target not supported" "Always has data"
+* valueQuantity -> "1797: target not supported" "value is string"
+* valueCodeableConcept -> "1798: target not supported" "value is string"
+
+Mapping: cdw-to-ObservationImagingResultEcho
+Id: cdw
+Title: "Clinical Data Warehouse (CDW)"
+Source: ObservationImagingResultEcho

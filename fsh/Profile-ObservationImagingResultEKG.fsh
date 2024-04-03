@@ -25,6 +25,11 @@ Source: ObservationImagingResultEKG
 * interpretation -> "1649: terminologyMaps using VF_ImageInterpretation on ELECTROCARDIOGRAM (EKG) - SUMMARY (#691.5-.03)"
 * note -> "1651: source value from ELECTROCARDIOGRAM (EKG) - COMMENT (#691.5-.03)"
 * category -> "1624: fixed value = http://terminology.hl7.org/CodeSystem/observation-category#imaging"
-* dataAbsentReason -> "1795: target not supported" "Always has data"
-* valueQuantity -> "1796: target not supported" "value is string"
-* valueCodeableConcept -> "1797: target not supported" "value is string"
+* dataAbsentReason -> "1796: target not supported" "Always has data"
+* valueQuantity -> "1797: target not supported" "value is string"
+* valueCodeableConcept -> "1798: target not supported" "value is string"
+
+Mapping: cdw-to-ObservationImagingResultEKG
+Id: cdw
+Title: "Clinical Data Warehouse (CDW)"
+Source: ObservationImagingResultEKG
