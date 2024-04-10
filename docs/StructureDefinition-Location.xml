@@ -29,11 +29,11 @@
 <tr><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3goXBCwdPqAP0wAAAldJREFUOMuNk0tIlFEYhp9z/vE2jHkhxXA0zJCMitrUQlq4lnSltEqCFhFG2MJFhIvIFpkEWaTQqjaWZRkp0g26URZkTpbaaOJkDqk10szoODP//7XIMUe0elcfnPd9zsfLOYplGrpRwZaqTtw3K7PtGem7Q6FoidbGgqHVy/HRb669R+56zx7eRV1L31JGxYbBtjKK93cxeqfyQHbehkZbUkK20goELEuIzEd+dHS+qz/Y8PTSif0FnGkbiwcAjHaU1+QWOptFiyCLp/LnKptpqIuXHx6rbR26kJcBX3yLgBfnd7CxwJmflpP2wUg0HIAoUUpZBmKzELGWcN8nAr6Gpu7tLU/CkwAaoKTWRSQyt89Q8w6J+oVQkKnBoblH7V0PPvUOvDYXfopE/SJmALsxnVm6LbkotrUtNowMeIrVrBcBpaMmdS0j9df7abpSuy7HWehwJdt1lhVwi/J58U5beXGAF6c3UXLycw1wdFklArBn87xdh0ZsZtArghBdAA3+OEDVubG4UEzP6x1FOWneHh2VDAHBAt80IbdXDcesNoCvs3E5AFyNSU5nbrDPZpcUEQQTFZiEVx+51fxMhhyJEAgvlriadIJZZksRuwBYMOPBbO3hePVVqgEJhFeUuFLhIPkRP6BQLIBrmMenujm/3g4zc398awIe90Zb5A1vREALqneMcYgP/xVQWlG+Ncu5vgwwlaUNx+3799rfe96u9K0JSDXcOzOTJg4B6IgmXfsygc7/Bvg9g9E58/cDVmGIBOP/zT8Bz1zqWqpbXIsd0O9hajXfL6u4BaOS6SeWAAAAAElFTkSuQmCC" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr></table></div>
   </text>
   <url value="http://va.gov/fhir/StructureDefinition/Location"/>
-  <version value="0.36.0"/>
+  <version value="0.37.0"/>
   <name value="Location"/>
   <title value="Location"/>
   <status value="draft"/>
-  <date value="2024-04-10T18:17:58+00:00"/>
+  <date value="2024-04-10T21:21:54+00:00"/>
   <publisher value="VA"/>
   <contact>
     <name value="VA"/>
@@ -1413,11 +1413,11 @@
       </mapping>
       <mapping>
         <identity value="vista"/>
-        <map value="1280: transform using concat (44-99,&quot; ext. &quot;,44-99.1) on HOSPITAL LOCATION - TELEPHONE &gt; TELEPHONE EXTENSION (44-99 &gt; 44-99.1)"/>
+        <map value="1280: transform using concat (44-99,&quot; ext. &quot;,44-99.1) on HOSPITAL LOCATION - TELEPHONE (44-99)"/>
       </mapping>
       <mapping>
         <identity value="cdw"/>
-        <map value="Dim.Location.PhoneNumber&#xA;Dim.Location.PhoneNumberExtension"/>
+        <map value="Dim.Location.PhoneNumber"/>
       </mapping>
     </element>
     <element id="Location.telecom.use">
@@ -1847,11 +1847,11 @@
       </mapping>
       <mapping>
         <identity value="vista"/>
-        <map value="1317: source value from HOSPITAL LOCATION - INSTITUTION &gt; STREET ADDR. 1 (44-3 &gt; 4-1.01)"/>
+        <map value="1317: source value from HOSPITAL LOCATION - INSTITUTION &gt; INSTITUTION - STREET ADDR. 1 (44-3 &gt; 4-1.01)"/>
       </mapping>
       <mapping>
         <identity value="vista"/>
-        <map value="1318: source value from HOSPITAL LOCATION - INSTITUTION &gt; STREET ADDR. 2 (44-3 &gt; 4-1.02)"/>
+        <map value="1318: source value from HOSPITAL LOCATION - INSTITUTION &gt; INSTITUTION - STREET ADDR. 2 (44-3 &gt; 4-1.02)"/>
       </mapping>
       <mapping>
         <identity value="cdw"/>
@@ -1910,7 +1910,7 @@
       </mapping>
       <mapping>
         <identity value="vista"/>
-        <map value="1319: source value from HOSPITAL LOCATION - INSTITUTION &gt; CITY (44-3 &gt; 4-1.03)"/>
+        <map value="1319: source value from HOSPITAL LOCATION - INSTITUTION &gt; INSTITUTION - CITY (44-3 &gt; 4-1.03)"/>
       </mapping>
       <mapping>
         <identity value="cdw"/>
@@ -1958,7 +1958,7 @@
       </mapping>
       <mapping>
         <identity value="vista"/>
-        <map value="1316: source value from HOSPITAL LOCATION - INSTITUTION &gt; DISTRICT (44-3 &gt; 4-.03)"/>
+        <map value="1316: source value from HOSPITAL LOCATION - INSTITUTION &gt; INSTITUTION - DISTRICT (44-3 &gt; 4-.03)"/>
       </mapping>
       <mapping>
         <identity value="cdw"/>
@@ -2019,7 +2019,7 @@
       </mapping>
       <mapping>
         <identity value="vista"/>
-        <map value="1315: source value from HOSPITAL LOCATION - INSTITUTION &gt; STATE &gt; STATE - ABBREVIATION (44-3 &gt; 4-.02 &gt; 5-1)"/>
+        <map value="1315: source value from HOSPITAL LOCATION - INSTITUTION &gt; INSTITUTION - STATE &gt; STATE - ABBREVIATION (44-3 &gt; 4-.02 &gt; 5-1)"/>
       </mapping>
     </element>
     <element id="Location.address.postalCode">
@@ -2070,7 +2070,7 @@
       </mapping>
       <mapping>
         <identity value="vista"/>
-        <map value="1320: source value from HOSPITAL LOCATION - INSTITUTION &gt; ZIP (44-3 &gt; 4-1.04)"/>
+        <map value="1320: source value from HOSPITAL LOCATION - INSTITUTION &gt; INSTITUTION - ZIP (44-3 &gt; 4-1.04)"/>
       </mapping>
       <mapping>
         <identity value="cdw"/>
@@ -2121,7 +2121,7 @@
       </mapping>
       <mapping>
         <identity value="vista"/>
-        <map value="1405: source value from HOSPITAL LOCATION - INSTITUTION &gt; COUNTRY &gt; COUNTRY - CODE (44-3 &gt; 4-801 &gt; 779.004-0.1)"/>
+        <map value="1405: source value from HOSPITAL LOCATION - INSTITUTION &gt; INSTITUTION - COUNTRY &gt; COUNTRY - CODE (44-3 &gt; 4-801 &gt; 779.004-0.1)"/>
       </mapping>
     </element>
     <element id="Location.address.period">
@@ -3285,11 +3285,11 @@
       <mustSupport value="true"/>
       <mapping>
         <identity value="vista"/>
-        <map value="1280: transform using concat (44-99,&quot; ext. &quot;,44-99.1) on HOSPITAL LOCATION - TELEPHONE &gt; TELEPHONE EXTENSION (44-99 &gt; 44-99.1)"/>
+        <map value="1280: transform using concat (44-99,&quot; ext. &quot;,44-99.1) on HOSPITAL LOCATION - TELEPHONE (44-99)"/>
       </mapping>
       <mapping>
         <identity value="cdw"/>
-        <map value="Dim.Location.PhoneNumber&#xA;Dim.Location.PhoneNumberExtension"/>
+        <map value="Dim.Location.PhoneNumber"/>
       </mapping>
     </element>
     <element id="Location.address.type">
@@ -3305,11 +3305,11 @@
       <path value="Location.address.line"/>
       <mapping>
         <identity value="vista"/>
-        <map value="1317: source value from HOSPITAL LOCATION - INSTITUTION &gt; STREET ADDR. 1 (44-3 &gt; 4-1.01)"/>
+        <map value="1317: source value from HOSPITAL LOCATION - INSTITUTION &gt; INSTITUTION - STREET ADDR. 1 (44-3 &gt; 4-1.01)"/>
       </mapping>
       <mapping>
         <identity value="vista"/>
-        <map value="1318: source value from HOSPITAL LOCATION - INSTITUTION &gt; STREET ADDR. 2 (44-3 &gt; 4-1.02)"/>
+        <map value="1318: source value from HOSPITAL LOCATION - INSTITUTION &gt; INSTITUTION - STREET ADDR. 2 (44-3 &gt; 4-1.02)"/>
       </mapping>
       <mapping>
         <identity value="cdw"/>
@@ -3324,7 +3324,7 @@
       <path value="Location.address.city"/>
       <mapping>
         <identity value="vista"/>
-        <map value="1319: source value from HOSPITAL LOCATION - INSTITUTION &gt; CITY (44-3 &gt; 4-1.03)"/>
+        <map value="1319: source value from HOSPITAL LOCATION - INSTITUTION &gt; INSTITUTION - CITY (44-3 &gt; 4-1.03)"/>
       </mapping>
       <mapping>
         <identity value="cdw"/>
@@ -3336,7 +3336,7 @@
       <mustSupport value="true"/>
       <mapping>
         <identity value="vista"/>
-        <map value="1316: source value from HOSPITAL LOCATION - INSTITUTION &gt; DISTRICT (44-3 &gt; 4-.03)"/>
+        <map value="1316: source value from HOSPITAL LOCATION - INSTITUTION &gt; INSTITUTION - DISTRICT (44-3 &gt; 4-.03)"/>
       </mapping>
       <mapping>
         <identity value="cdw"/>
@@ -3347,14 +3347,14 @@
       <path value="Location.address.state"/>
       <mapping>
         <identity value="vista"/>
-        <map value="1315: source value from HOSPITAL LOCATION - INSTITUTION &gt; STATE &gt; STATE - ABBREVIATION (44-3 &gt; 4-.02 &gt; 5-1)"/>
+        <map value="1315: source value from HOSPITAL LOCATION - INSTITUTION &gt; INSTITUTION - STATE &gt; STATE - ABBREVIATION (44-3 &gt; 4-.02 &gt; 5-1)"/>
       </mapping>
     </element>
     <element id="Location.address.postalCode">
       <path value="Location.address.postalCode"/>
       <mapping>
         <identity value="vista"/>
-        <map value="1320: source value from HOSPITAL LOCATION - INSTITUTION &gt; ZIP (44-3 &gt; 4-1.04)"/>
+        <map value="1320: source value from HOSPITAL LOCATION - INSTITUTION &gt; INSTITUTION - ZIP (44-3 &gt; 4-1.04)"/>
       </mapping>
       <mapping>
         <identity value="cdw"/>
@@ -3366,7 +3366,7 @@
       <mustSupport value="true"/>
       <mapping>
         <identity value="vista"/>
-        <map value="1405: source value from HOSPITAL LOCATION - INSTITUTION &gt; COUNTRY &gt; COUNTRY - CODE (44-3 &gt; 4-801 &gt; 779.004-0.1)"/>
+        <map value="1405: source value from HOSPITAL LOCATION - INSTITUTION &gt; INSTITUTION - COUNTRY &gt; COUNTRY - CODE (44-3 &gt; 4-801 &gt; 779.004-0.1)"/>
       </mapping>
     </element>
     <element id="Location.physicalType.text">

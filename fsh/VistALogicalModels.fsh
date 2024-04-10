@@ -36,15 +36,15 @@ Title: "INSTITUTION (4)"
 Characteristics: #can-be-target
 * StationNumber 0..1 Element "STATION NUMBER (99)"
 * Name 0..1 Element "NAME (.01)"
-* Npi 0..1 Element "NPI (41.99)"
-* ShortName 0..1 Element "SHORT NAME (.05)"
+* State 0..1 Reference "STATE (.02)"
+* District 0..1 Element "DISTRICT (.03)"
 * StreetAddr1 0..1 Element "STREET ADDR. 1 (1.01)"
 * StreetAddr2 0..1 Element "STREET ADDR. 2 (1.02)"
 * City 0..1 Element "CITY (1.03)"
-* District 0..1 Element "DISTRICT (.03)"
-* State 0..1 Reference "STATE (.02)"
 * Zip 0..1 Element "ZIP (1.04)"
 * Country 0..1 Reference "COUNTRY (801)"
+* Npi 0..1 Element "NPI (41.99)"
+* ShortName 0..1 Element "SHORT NAME (.05)"
 * Contact 0..1 Reference "CONTACT (4)"
 * StAddr1Mailing 0..1 Element "ST. ADDR. 1 (MAILING) (4.01)"
 * StAddr2Mailing 0..1 Element "ST. ADDR. 2 (MAILING) (4.02)"
@@ -77,7 +77,7 @@ Characteristics: #can-be-target
 * Telephone 0..1 Element "TELEPHONE (99)"
 * PhysicalLocation 0..1 Element "PHYSICAL LOCATION (10)"
 * Institution 0..1 Reference "INSTITUTION (3)"
-* Institution only Reference(Country779004)
+* Institution only Reference(Institution4)
 
 Logical: Ptf45
 Id: Ptf45
