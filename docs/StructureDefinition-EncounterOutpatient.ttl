@@ -17,7 +17,7 @@
   fhir:name [ fhir:v "EncounterOutpatient"] ; # 
   fhir:title [ fhir:v "Encounter: Outpatient"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2024-04-03T08:58:56+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2024-04-10T18:17:58+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "VA"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "VA" ] ;
@@ -26,7 +26,7 @@
        fhir:value [ fhir:v "https://www.va.gov" ]
      ] )
   ] ) ; # 
-  fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA file VISIT (#9000010) to us-core-encounter"] ; # 
+  fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA file VISIT (9000010) to us-core-encounter"] ; # 
   fhir:jurisdiction ( [
      fhir:coding ( [
        fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
@@ -735,7 +735,7 @@
          fhir:map [ fhir:v "./Value" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "429: source value from VISIT - VISIT ID (#9000010-15001)" ]
+         fhir:map [ fhir:v "429: source value from VISIT - VISIT ID (9000010-15001)" ]
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "Outpat.Visit.VisitIdentifier,Outpat.Workload.VisitIdentifier" ]
@@ -878,14 +878,14 @@
          fhir:map [ fhir:v ".statusCode" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "430: fixed value = #planned when VISIT - VISIT/ADMIT DATE&TIME (#9000010-.01) case null or > now" ]
+         fhir:map [ fhir:v "430: fixed value = #planned when VISIT - VISIT/ADMIT DATE&TIME (9000010-.01) case null or > now" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "431: fixed value = #in-progress when VISIT - VISIT/ADMIT DATE&TIME (#9000010-.01) case not null, < now, .18 null" ] ;
+         fhir:map [ fhir:v "431: fixed value = #in-progress when VISIT - VISIT/ADMIT DATE&TIME (9000010-.01) case not null, < now, .18 null" ] ;
          fhir:comment [ fhir:v "tweaked case logic 9/21" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "432: fixed value = #finished when VISIT - CHECK OUT DATE&TIME (#9000010-.18) case not null, < now" ] ;
+         fhir:map [ fhir:v "432: fixed value = #finished when VISIT - CHECK OUT DATE&TIME (9000010-.18) case not null, < now" ] ;
          fhir:comment [ fhir:v "tweaked case logic 9/21" ]
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
@@ -1166,7 +1166,7 @@
          fhir:map [ fhir:v ".inboundRelationship[typeCode=SUBJ].source[classCode=LIST].code" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "614: terminologyMaps using VF_encounterClass on VISIT - PATIENT STATUS IN/OUT (#9000010-15002)" ] ;
+         fhir:map [ fhir:v "614: terminologyMaps using VF_encounterClass on VISIT - PATIENT STATUS IN/OUT (9000010-15002)" ] ;
          fhir:comment [ fhir:v "84% are Outpatient (2024 Jan-Mar)" ]
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
@@ -1448,7 +1448,7 @@
          fhir:map [ fhir:v ".code" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "1615: source value from V CPT - CPT > CPT (#9000010.18-.01 > 81-)" ]
+         fhir:map [ fhir:v "1615: source value from V CPT - CPT > CPT (9000010.18-.01 > 81-)" ]
        ] )
      ] [
        fhir:id [ fhir:v "Encounter.serviceType" ] ;
@@ -1816,7 +1816,7 @@
          fhir:map [ fhir:v "fhir:Coding.code rdfs:subPropertyOf dt:CDCoding.code" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "439: source value from VISIT - SERVICE CATEGORY (#9000010-.07)" ]
+         fhir:map [ fhir:v "439: source value from VISIT - SERVICE CATEGORY (9000010-.07)" ]
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "Outpat.Visit.ServiceCategory,Outpat.Workload.ServiceCategory" ]
@@ -2050,7 +2050,7 @@
          fhir:map [ fhir:v "FiveWs.subject" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "440: source value from VISIT - PATIENT NAME (#9000010-.05)" ]
+         fhir:map [ fhir:v "440: reference from VISIT - PATIENT NAME (9000010-.05)" ]
        ] )
      ] [
        fhir:id [ fhir:v "Encounter.episodeOfCare" ] ;
@@ -2448,7 +2448,7 @@
          fhir:map [ fhir:v ".role" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "1614: reference from V PROVIDER - PROVIDER > NEW PERSON (#9000010.06-.01 > 200-)" ]
+         fhir:map [ fhir:v "1614: reference from V PROVIDER - PROVIDER > NEW PERSON (9000010.06-.01 > 200-)" ]
        ] )
      ] [
        fhir:id [ fhir:v "Encounter.appointment" ] ;
@@ -2652,7 +2652,7 @@
          fhir:map [ fhir:v "./low" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "443: source value from VISIT - VISIT/ADMIT DATE&TIME (#9000010-.01)" ]
+         fhir:map [ fhir:v "443: source value from VISIT - VISIT/ADMIT DATE&TIME (9000010-.01)" ]
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "Outpat.Visit.VisitDateTime,Outpat.Workload.VisitDateTime" ]
@@ -2697,7 +2697,7 @@
          fhir:map [ fhir:v "./high" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "444: source value from VISIT - CHECK OUT DATE&TIME (#9000010-.18)" ]
+         fhir:map [ fhir:v "444: source value from VISIT - CHECK OUT DATE&TIME (9000010-.18)" ]
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "Outpat.Visit.CheckOutDateTime,Outpat.Workload.CheckOutDateTime" ]
@@ -3113,7 +3113,7 @@
          fhir:map [ fhir:v "fhir:Coding.code rdfs:subPropertyOf dt:CDCoding.code" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "447: source value from V POV - POV > ICD DIAGNOSIS - CODE NUMBER (#9000010.07-.01 > 80-.01)" ]
+         fhir:map [ fhir:v "447: source value from V POV - POV > ICD DIAGNOSIS - CODE NUMBER (9000010.07-.01 > 80-.01)" ]
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "Dim.ICD10.ICD10Code,Dim.ICD9.ICD9Code" ]
@@ -3525,7 +3525,7 @@
          fhir:map [ fhir:v ".outboundRelationship[typeCode=RSON].target" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "452: reference from V POV - PROBLEM LIST ENTRY (#9000010.07-.16)" ] ;
+         fhir:map [ fhir:v "452: reference from V POV - PROBLEM LIST ENTRY (9000010.07-.16)" ] ;
          fhir:comment [ fhir:v "added parameter" ]
        ] )
      ] [
@@ -4385,10 +4385,10 @@
          fhir:map [ fhir:v ".role" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "458: reference from VISIT - DSS ID (#9000010-.08) case stop" ]
+         fhir:map [ fhir:v "458: reference from VISIT - DSS ID (9000010-.08) case stop" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "459: reference from VISIT - HOSPITAL LOCATION (#9000010-.22) case location" ]
+         fhir:map [ fhir:v "459: reference from VISIT - HOSPITAL LOCATION (9000010-.22) case location" ]
        ] )
      ] [
        fhir:id [ fhir:v "Encounter.location.status" ] ;
@@ -4552,7 +4552,7 @@
          fhir:map [ fhir:v ".particiaption[typeCode=PFM].role" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "1599: reference from VISIT - LOC. OF ENCOUNTER > LOCATION - POINTER TO INSTITUTION FILE (#4) (#9000010-.06 > 9999999.06-.1)" ]
+         fhir:map [ fhir:v "1599: reference from VISIT - LOC. OF ENCOUNTER > LOCATION - POINTER TO INSTITUTION FILE (#4) (9000010-.06 > 9999999.06-.1)" ]
        ] )
      ] [
        fhir:id [ fhir:v "Encounter.partOf" ] ;
@@ -4609,7 +4609,7 @@
        fhir:path [ fhir:v "Encounter.identifier.value" ] ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "429: source value from VISIT - VISIT ID (#9000010-15001)" ]
+         fhir:map [ fhir:v "429: source value from VISIT - VISIT ID (9000010-15001)" ]
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "Outpat.Visit.VisitIdentifier,Outpat.Workload.VisitIdentifier" ]
@@ -4619,14 +4619,14 @@
        fhir:path [ fhir:v "Encounter.status" ] ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "430: fixed value = #planned when VISIT - VISIT/ADMIT DATE&TIME (#9000010-.01) case null or > now" ]
+         fhir:map [ fhir:v "430: fixed value = #planned when VISIT - VISIT/ADMIT DATE&TIME (9000010-.01) case null or > now" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "431: fixed value = #in-progress when VISIT - VISIT/ADMIT DATE&TIME (#9000010-.01) case not null, < now, .18 null" ] ;
+         fhir:map [ fhir:v "431: fixed value = #in-progress when VISIT - VISIT/ADMIT DATE&TIME (9000010-.01) case not null, < now, .18 null" ] ;
          fhir:comment [ fhir:v "tweaked case logic 9/21" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "432: fixed value = #finished when VISIT - CHECK OUT DATE&TIME (#9000010-.18) case not null, < now" ] ;
+         fhir:map [ fhir:v "432: fixed value = #finished when VISIT - CHECK OUT DATE&TIME (9000010-.18) case not null, < now" ] ;
          fhir:comment [ fhir:v "tweaked case logic 9/21" ]
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
@@ -4650,7 +4650,7 @@
        ] ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "614: terminologyMaps using VF_encounterClass on VISIT - PATIENT STATUS IN/OUT (#9000010-15002)" ] ;
+         fhir:map [ fhir:v "614: terminologyMaps using VF_encounterClass on VISIT - PATIENT STATUS IN/OUT (9000010-15002)" ] ;
          fhir:comment [ fhir:v "84% are Outpatient (2024 Jan-Mar)" ]
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
@@ -4661,7 +4661,7 @@
        fhir:path [ fhir:v "Encounter.type" ] ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "1615: source value from V CPT - CPT > CPT (#9000010.18-.01 > 81-)" ]
+         fhir:map [ fhir:v "1615: source value from V CPT - CPT > CPT (9000010.18-.01 > 81-)" ]
        ] )
      ] [
        fhir:id [ fhir:v "Encounter.serviceType.coding.code" ] ;
@@ -4669,7 +4669,7 @@
        fhir:mustSupport [ fhir:v "true"^^xsd:boolean ] ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "439: source value from VISIT - SERVICE CATEGORY (#9000010-.07)" ]
+         fhir:map [ fhir:v "439: source value from VISIT - SERVICE CATEGORY (9000010-.07)" ]
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "Outpat.Visit.ServiceCategory,Outpat.Workload.ServiceCategory" ]
@@ -4679,7 +4679,7 @@
        fhir:path [ fhir:v "Encounter.subject" ] ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "440: source value from VISIT - PATIENT NAME (#9000010-.05)" ]
+         fhir:map [ fhir:v "440: reference from VISIT - PATIENT NAME (9000010-.05)" ]
        ] )
      ] [
        fhir:id [ fhir:v "Encounter.participant.period" ] ;
@@ -4693,7 +4693,7 @@
        fhir:path [ fhir:v "Encounter.participant.individual" ] ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "1614: reference from V PROVIDER - PROVIDER > NEW PERSON (#9000010.06-.01 > 200-)" ]
+         fhir:map [ fhir:v "1614: reference from V PROVIDER - PROVIDER > NEW PERSON (9000010.06-.01 > 200-)" ]
        ] )
      ] [
        fhir:id [ fhir:v "Encounter.period.start" ] ;
@@ -4701,7 +4701,7 @@
        fhir:mustSupport [ fhir:v "true"^^xsd:boolean ] ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "443: source value from VISIT - VISIT/ADMIT DATE&TIME (#9000010-.01)" ]
+         fhir:map [ fhir:v "443: source value from VISIT - VISIT/ADMIT DATE&TIME (9000010-.01)" ]
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "Outpat.Visit.VisitDateTime,Outpat.Workload.VisitDateTime" ]
@@ -4712,7 +4712,7 @@
        fhir:mustSupport [ fhir:v "true"^^xsd:boolean ] ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "444: source value from VISIT - CHECK OUT DATE&TIME (#9000010-.18)" ]
+         fhir:map [ fhir:v "444: source value from VISIT - CHECK OUT DATE&TIME (9000010-.18)" ]
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "Outpat.Visit.CheckOutDateTime,Outpat.Workload.CheckOutDateTime" ]
@@ -4723,7 +4723,7 @@
        fhir:mustSupport [ fhir:v "true"^^xsd:boolean ] ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "447: source value from V POV - POV > ICD DIAGNOSIS - CODE NUMBER (#9000010.07-.01 > 80-.01)" ]
+         fhir:map [ fhir:v "447: source value from V POV - POV > ICD DIAGNOSIS - CODE NUMBER (9000010.07-.01 > 80-.01)" ]
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "Dim.ICD10.ICD10Code,Dim.ICD9.ICD9Code" ]
@@ -4734,7 +4734,7 @@
        fhir:mustSupport [ fhir:v "true"^^xsd:boolean ] ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "452: reference from V POV - PROBLEM LIST ENTRY (#9000010.07-.16)" ] ;
+         fhir:map [ fhir:v "452: reference from V POV - PROBLEM LIST ENTRY (9000010.07-.16)" ] ;
          fhir:comment [ fhir:v "added parameter" ]
        ] )
      ] [
@@ -4742,17 +4742,17 @@
        fhir:path [ fhir:v "Encounter.location.location" ] ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "458: reference from VISIT - DSS ID (#9000010-.08) case stop" ]
+         fhir:map [ fhir:v "458: reference from VISIT - DSS ID (9000010-.08) case stop" ]
        ] [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "459: reference from VISIT - HOSPITAL LOCATION (#9000010-.22) case location" ]
+         fhir:map [ fhir:v "459: reference from VISIT - HOSPITAL LOCATION (9000010-.22) case location" ]
        ] )
      ] [
        fhir:id [ fhir:v "Encounter.serviceProvider" ] ;
        fhir:path [ fhir:v "Encounter.serviceProvider" ] ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "vista" ] ;
-         fhir:map [ fhir:v "1599: reference from VISIT - LOC. OF ENCOUNTER > LOCATION - POINTER TO INSTITUTION FILE (#4) (#9000010-.06 > 9999999.06-.1)" ]
+         fhir:map [ fhir:v "1599: reference from VISIT - LOC. OF ENCOUNTER > LOCATION - POINTER TO INSTITUTION FILE (#4) (9000010-.06 > 9999999.06-.1)" ]
        ] )
      ] )
   ] . # 

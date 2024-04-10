@@ -10,7 +10,7 @@ Usage: #definition
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFICDCodingSystems-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/VSVFICDCodingSystems"
 * group[0].source = "http://va.gov/terminology/vistaDefinedElements/80.4-.01"
-* group[=].target = "urn:ietf:rfc:2141"
+* group[=].target = "urn:ietf:rfc:3986"
 * group[=].element[0].code = #ICD-10-CM
 * group[=].element[=].display = "10D"
 * group[=].element[=].target.code = #http://hl7.org/fhir/sid/icd-10-cm
@@ -33,10 +33,10 @@ Title: "VF_ICDCodingSystems"
 Description: "FHIR Target ValueSet for Terminology Maps VF_ICDCodingSystems"
 * ^experimental = false
 * ^name = "VF_ICDCodingSystems"
-* include urn:ietf:rfc:2141#http://hl7.org/fhir/sid/icd-10-cm 
-* include urn:ietf:rfc:2141#http://hl7.org/fhir/sid/icd-9-cm 
-* include urn:ietf:rfc:2141#urn:undefined 
-* include urn:ietf:rfc:2141#http://www.cms.gov/Medicare/Coding/ICD10 
+* include urn:ietf:rfc:3986#http://hl7.org/fhir/sid/icd-10-cm 
+* include urn:ietf:rfc:3986#http://hl7.org/fhir/sid/icd-9-cm 
+* include urn:ietf:rfc:3986#urn:undefined 
+* include urn:ietf:rfc:3986#http://www.cms.gov/Medicare/Coding/ICD10 
 
 ValueSet: VSVFICDCodingSystems-vista
 Title: "VF_ICDCodingSystems VistA"

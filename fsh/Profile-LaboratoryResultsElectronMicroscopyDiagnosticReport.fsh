@@ -2,7 +2,7 @@ Profile: LaboratoryResultsElectronMicroscopyDiagnosticReport
 Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-lab
 Id: LaboratoryResultsElectronMicroscopyDiagnosticReport
 Title: "Laboratory Results: Electron Microscopy DiagnosticReport"
-Description: "This StructureDefinition contains the maps for VistA file EM (#63.02) to us-core-diagnosticreport-lab"
+Description: "This StructureDefinition contains the maps for VistA file EM (63.02) to us-core-diagnosticreport-lab"
 * ^status = #draft
 * identifier.value and basedOn and status and effectiveDateTime and issued and performer and resultsInterpreter and specimen and media.link and conclusion and presentedForm.data and category and category.text and code.coding and code.text and subject and result MS
 * status from http://va.gov/fhir/ValueSet/VSVFDiagnosticReportLabStatus
@@ -14,23 +14,23 @@ Mapping: vista-to-LaboratoryResultsElectronMicroscopyDiagnosticReport
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: LaboratoryResultsElectronMicroscopyDiagnosticReport
-* identifier.value -> "1604: source value from EM - ORDERED TEST > ORDERED TEST - IEN (#63.02-.35 > 63.52-.001)"
-* basedOn -> "1689: reference from EM - ORDERED TEST > ORDERED TEST - CPRS ORDER # (#63.02-.35 > 63.52-3)"
-* status -> "1414: terminologyMaps using VF_DiagnosticReportLabStatus on EM - ORDERED TEST > ORDERED TEST - DISPOSITION (#63.02-.35 > 63.52-10)" "US Core 5 has new constraints: if status is partial, preliminary, final, ammended, corrected or appended effective[x] and issued are required"
-* effectiveDateTime -> "1422: source value from EM - DATE/TIME SPECIMEN TAKEN (#63.02-.01)"
-* issued -> "1427: source value from EM - DATE REPORT COMPLETED (#63.02-.03)"
-* performer -> "1432: reference from ELECTRON MICROSCOPY - RELEASED BY (#63.02-.13)"
-* performer -> "1685: reference from ELECTRON MICROSCOPY - RELEASING SITE (#63.02-.345)"
-* resultsInterpreter -> "1696: reference from EM - PATHOLOGIST (#63.02-.02)"
-* specimen -> "1697: reference from EM - EM ACC # (#63.02-.06)"
-* media.link -> "1438: reference from EM - IMAGE (#63.02-2005)"
-* conclusion -> "1441: source value from EM - EM DIAGNOSIS (#63.02-1.4)" "Vista field is word processing so CodeableConcept cannot be used"
-* presentedForm.data -> "1720: source value from EM - TIU REFERENCE DATE/TIME - EM > TIU REFERENCE DATE/TIME - EM - TIU ENTRY POINTER - EM > REPORT TEXT (#63.02-.16 > 63.49-1 > 8925-2)" "HDR may be used to get the report"
+* identifier.value -> "1604: source value from EM - ORDERED TEST > ORDERED TEST - IEN (63.02-.35 > 63.52-.001)"
+* basedOn -> "1689: reference from EM - ORDERED TEST > ORDERED TEST - CPRS ORDER # (63.02-.35 > 63.52-3)"
+* status -> "1414: terminologyMaps using VF_DiagnosticReportLabStatus on EM - ORDERED TEST > ORDERED TEST - DISPOSITION (63.02-.35 > 63.52-10)" "US Core 5 has new constraints: if status is partial, preliminary, final, ammended, corrected or appended effective[x] and issued are required"
+* effectiveDateTime -> "1422: source value from EM - DATE/TIME SPECIMEN TAKEN (63.02-.01)"
+* issued -> "1427: source value from EM - DATE REPORT COMPLETED (63.02-.03)"
+* performer -> "1432: reference from ELECTRON MICROSCOPY - RELEASED BY (63.02-.13)"
+* performer -> "1685: reference from ELECTRON MICROSCOPY - RELEASING SITE (63.02-.345)"
+* resultsInterpreter -> "1696: reference from EM - PATHOLOGIST (63.02-.02)"
+* specimen -> "1697: reference from EM - EM ACC # (63.02-.06)"
+* media.link -> "1438: reference from EM - IMAGE (63.02-2005)"
+* conclusion -> "1441: source value from EM - EM DIAGNOSIS (63.02-1.4)" "Vista field is word processing so CodeableConcept cannot be used"
+* presentedForm.data -> "1720: source value from EM - TIU REFERENCE DATE/TIME - EM > TIU REFERENCE DATE/TIME - EM - TIU ENTRY POINTER - EM > REPORT TEXT (63.02-.16 > 63.49-1 > 8925-2)" "HDR may be used to get the report"
 * category -> "1419: fixed value = http://terminology.hl7.org/CodeSystem/v2-0074#LAB"
-* category.text -> "1662: source value from LABORATORY TEST - NATIONAL VA LAB CODE > WLKD CODE - WKLD CODE LAB SECTION > WLKD CODE LAB SECT - NAME (#60-64 > 64-13 > 64.21-.01)" "Lab Section"
-* code.coding -> "1420: source value from LABORATORY TEST - NATIONAL VA LAB CODE > WKLD CODE - DEFAULT LOINC CODE > LAB LOINC (#60-64 > 64-25 > 95.3)" "Typically LOINC. \nChanged VistA mapping to support some coded values and add the lab test name (non-standardized)"
-* code.text -> "1661: source value from LABORATORY TEST - NAME (#60-.01)" "Added the lab test name (non-standardized)"
-* subject -> "1421: reference from PATIENT - LABORATORY REFERENCE > LAB DATA - LRDFN (#2-63 > 63-.01)" "Pointer from PATIENT (2)"
+* category.text -> "1662: source value from LABORATORY TEST - NATIONAL VA LAB CODE > WLKD CODE - WKLD CODE LAB SECTION > WLKD CODE LAB SECT - NAME (60-64 > 64-13 > 64.21-.01)" "Lab Section"
+* code.coding -> "1420: source value from LABORATORY TEST - NATIONAL VA LAB CODE > WKLD CODE - DEFAULT LOINC CODE > LAB LOINC (60-64 > 64-25 > 95.3)" "Typically LOINC. \nChanged VistA mapping to support some coded values and add the lab test name (non-standardized)"
+* code.text -> "1661: source value from LABORATORY TEST - NAME (60-.01)" "Added the lab test name (non-standardized)"
+* subject -> "1421: reference from PATIENT - LABORATORY REFERENCE > LAB DATA - LRDFN (2-63 > 63-.01)" "Pointer from PATIENT (2)"
 * result -> "1437: reference from See mapping for Laboratory Results"
 
 Mapping: cdw-to-LaboratoryResultsElectronMicroscopyDiagnosticReport

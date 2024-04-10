@@ -167,7 +167,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <div>
 <!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
 </div>
-<table><tr><th colspan="4">use-case AllergyIntolerance</th></tr>
+<style>th { border-bottom:solid; } td { border-bottom:solid; border-bottom-width: thin; }</style>
+
+<table><tr><td>key</td><td>column</td><td>old value</td><td>new value</td></tr><tr><th colspan="4">use-case AllergyIntolerance</th></tr>
 <tr><td colspan="4"><i>resource AllergyIntolerance</i></td></tr>
 <tr><td></td><td>no changes</td></tr>
 <tr><th colspan="4">use-case Patient</th></tr>
@@ -184,10 +186,6 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <tr><td></td><td>mapApproach</td><td>transform</td><td>fixed value</td></tr>
 <tr><td>734</td></tr>
 <tr><td></td><td>mapApproach</td><td>transform</td><td>fixed value</td></tr>
-<tr><td>747</td></tr>
-<tr><td></td><td>vistaFileFieldName</td><td></td><td>PATIENT</td></tr>
-<tr><td></td><td>mapApproach</td><td>source value</td><td>reference</td></tr>
-<tr><td></td><td>fhirSubPath</td><td></td><td>.actor</td></tr>
 <tr><td>748</td></tr>
 <tr><td></td><td>mapApproach</td><td>transform</td><td>fixed value</td></tr>
 <tr><th colspan="4">use-case Observation 2507 EXAM</th></tr>
@@ -246,6 +244,11 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <tr><td>434</td></tr>
 <tr><td></td><td>mapApproach</td><td>transform</td><td>fixed value</td></tr>
 <tr><td></td><td>mapValue</td><td>in-progress</td><td>#in-progress</td></tr>
+<tr><td>441</td></tr>
+<tr><td></td><td>mapApproach</td><td>source value</td><td>reference</td></tr>
+<tr><td>456</td></tr>
+<tr><td></td><td>fhirPath</td><td>Encounter.hospitalization.dischargeDisposition</td><td>Encounter.hospitalization.dischargeDisposition.coding</td></tr>
+<tr><td></td><td>fhirSubPath</td><td></td><td>.code</td></tr>
 <tr><td colspan="2">1800 new maprow</td></tr>
 <tr><td colspan="4"><i>resource Condition</i></td></tr>
 <tr><td></td><td>no changes</td></tr>
@@ -260,6 +263,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <tr><td>432</td></tr>
 <tr><td></td><td>mapApproach</td><td>transform</td><td>fixed value</td></tr>
 <tr><td></td><td>mapValue</td><td>finished</td><td>#finished</td></tr>
+<tr><td>440</td></tr>
+<tr><td></td><td>mapApproach</td><td>source value</td><td>reference</td></tr>
 <tr><td>614</td></tr>
 <tr><td></td><td>status</td><td>issue</td><td>for review</td></tr>
 <tr><td>1614</td></tr>
@@ -330,7 +335,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <tr><td></td><td>fhirPath</td><td>Organization.extension</td><td>Organization.extension[http://va.gov/fhir/StructureDefinition/organization-ambulatorySurgeryRevenueCode]</td></tr>
 <tr><td></td><td>fhirSubPath</td><td></td><td>.valueCoding.code</td></tr>
 <tr><td></td><td>mapParameters</td><td>url=http://va.gov/fhir/StructureDefinition/organization-ambulatorySurgeryRevenueCode
-value.coding.system=http://va.gov/terminology/vistaDefinedTerms/399.2</td><td>valueCoding.system=http://va.gov/terminology/vistaDefinedTerms/399.2</td></tr>
+value.coding.system=http://va.gov/terminology/vistaDefinedTerms/399.2</td><td>.valueCoding.system=http://va.gov/terminology/vistaDefinedTerms/399.2</td></tr>
 <tr><td>1074</td></tr>
 <tr><td></td><td>mapApproach</td><td>source value</td><td>reference</td></tr>
 <tr><td></td><td>fhirPath</td><td>Organization.contact.extension</td><td>Organization.contact.extension[http://hl7.org/fhir/us/directory-query/StructureDefinition/via-intermediary]</td></tr>
@@ -370,7 +375,6 @@ value.coding.system=http://va.gov/terminology/vistaDefinedTerms/399.2</td><td>va
 <tr><td colspan="4"><i>new resource Encounter</i></td></tr>
 <tr><td colspan="4"><i>new resource ImagingStudy</i></td></tr>
 <tr><td colspan="4"><i>new resource Condition</i></td></tr>
-<tr><th colspan="4">new use-case MedicationRequest: Unsigned VA Order</th></tr>
 <tr><th colspan="4">use-case MedicationRequest: Unsigned</th></tr>
 <tr><td colspan="4"><i>resource MedicationRequest</i></td></tr>
 <tr><td></td><td>no changes</td></tr>
@@ -380,7 +384,6 @@ value.coding.system=http://va.gov/terminology/vistaDefinedTerms/399.2</td><td>va
 <tr><td></td><td>vistaFileFieldName</td><td></td><td>NON-VA MEDS - ORDER NUMBER</td></tr>
 <tr><td></td><td>vistaFileField</td><td></td><td>55.05-7</td></tr>
 <tr><td></td><td>mapCase</td><td></td><td>Not null</td></tr>
-<tr><td></td><td>mapValue</td><td>#plan</td><td>plan</td></tr>
 <tr><td>1347</td></tr>
 <tr><td></td><td>vistaFileFieldName</td><td></td><td>NON-VA MEDS - ORDER NUMBER</td></tr>
 <tr><td></td><td>vistaFileField</td><td></td><td>55.05-7</td></tr>
@@ -437,6 +440,8 @@ value.coding.system=http://va.gov/terminology/vistaDefinedTerms/399.2</td><td>va
 <tr><td></td><td>mapParameters</td><td>.system=http://terminology.hl7.org/CodeSystem/medicationrequest-category</td><td></td></tr>
 <tr><td>1724</td></tr>
 <tr><td></td><td>status</td><td>issue</td><td>for review</td></tr>
+<tr><td>1706</td></tr>
+<tr><td></td><td>vistaFileFieldName</td><td>PRESCRIPTION - INDICATION FOR USE FLAG</td><td>MEDICATION INSTRUCTION - INDICATION FOR USE FLAG</td></tr>
 <tr><td colspan="2">1707 new maprow</td></tr>
 <tr><td colspan="4"><i>new resource Encounter</i></td></tr>
 <tr><th colspan="4">use-case MedicationDispense: Original</th></tr>
@@ -488,7 +493,12 @@ value.coding.system=http://va.gov/terminology/vistaDefinedTerms/399.2</td><td>va
 <tr><td></td><td>fhirSubPath</td><td></td><td>Organization</td></tr>
 <tr><th colspan="4">use-case Observation EXAM</th></tr>
 <tr><td colspan="4"><i>resource Observation</i></td></tr>
-<tr><td></td><td>no changes</td></tr>
+<tr><td>1581</td></tr>
+<tr><td></td><td>vistaSubFileFieldName</td><td>EXAM - CODE MAPPINGS</td><td>EXAM - CODE MAPPINGS &gt; CODE MAPPINGS</td></tr>
+<tr><td></td><td>vistaSubFileField</td><td>9999999.15-210</td><td>9999999.15-210&gt;9999999.18</td></tr>
+<tr><td></td><td>mapParameters</td><td>.code = termmap(VF_ExamCodingSystem,{CODING SYSTEM(.01})
+.code = {CODE(1)}</td><td>.code = termmap(VF_ICDCodingSystems,{CODING SYSTEM(.01})
+.code = {CODE(1)}</td></tr>
 <tr><th colspan="4">use-case Organization</th></tr>
 <tr><td colspan="4"><i>resource Organization</i></td></tr>
 <tr><td>1252</td></tr>
@@ -499,10 +509,25 @@ value.coding.system=http://va.gov/terminology/vistaDefinedTerms/399.2</td><td>va
 <tr><td colspan="2">1786 new maprow</td></tr>
 <tr><th colspan="4">use-case Practitioner</th></tr>
 <tr><td colspan="4"><i>resource Practitioner</i></td></tr>
+<tr><td>376</td></tr>
+<tr><td></td><td>mapParameters</td><td>.system = http://hl7.org/fhir/sid/us-npi
+.type.coding[0].code=NPI 
+.type.coding[0].system=http://terminology.hl7.org/CodeSystem/v2-0203</td><td>.system = http://hl7.org/fhir/sid/us-npi
+.type.coding[0].code=NPI
+.type.coding[0].system=http://terminology.hl7.org/CodeSystem/v2-0203</td></tr>
+<tr><td>377</td></tr>
+<tr><td></td><td>mapParameters</td><td>.system = urn:oid:2.16.840.1.113883.4.814 
+.type.coding[0].code=DEA 
+.type.coding[0].system=http://terminology.hl7.org/CodeSystem/v2-0203</td><td>.system = urn:oid:2.16.840.1.113883.4.814
+.type.coding[0].code=DEA
+.type.coding[0].system=http://terminology.hl7.org/CodeSystem/v2-0203</td></tr>
 <tr><td>1530</td></tr>
 <tr><td></td><td>mapApproach</td><td>terminologyMaps</td><td>transform</td></tr>
 <tr><td>1532</td></tr>
+<tr><td></td><td>vistaFileFieldName</td><td>NEW PERSON - STATE</td><td>NEW PERSON - TEMPORARY STATE</td></tr>
 <tr><td></td><td>mapApproach</td><td>terminologyMaps</td><td>transform</td></tr>
+<tr><td>1533</td></tr>
+<tr><td></td><td>vistaFileFieldName</td><td>NEW PERSON - STATE</td><td>NEW PERSON - TEMPORARY STATE</td></tr>
 <tr><td colspan="2">1790 new maprow</td></tr>
 <tr><td colspan="4"><i>resource PractitionerRole</i></td></tr>
 <tr><td></td><td>no changes</td></tr>
@@ -599,7 +624,72 @@ value.coding.system=http://va.gov/terminology/vistaDefinedTerms/399.2</td><td>va
 <tr><td></td><td>mapParameters</td><td>.system = "http://terminology.hl7.org/CodeSystem/observation-category"</td><td></td></tr>
 <tr><td colspan="2">1796 new maprow</td></tr>
 <tr><td colspan="2">1797 new maprow</td></tr>
-<tr><td colspan="2">1798 new maprow</td></tr></table>
+<tr><td colspan="2">1798 new maprow</td></tr>
+<tr><th colspan="4">termmap VF_AppointmentStatus</th></tr>
+<tr><th colspan="4">termmap VF_ethnicityCategory</th></tr>
+<tr><th colspan="4">termmap VF_raceCategory</th></tr>
+<tr><th colspan="4">termmap VF_deviceTypePacemaker</th></tr>
+<tr><th colspan="4">termmap VF_VitalsBodySite</th></tr>
+<tr><th colspan="4">termmap VF_ExamResultInterpretation</th></tr>
+<tr><th colspan="4">termmap VF_ImageInterpretation</th></tr>
+<tr><th colspan="4">termmap VF_documentReferencedocStatus</th></tr>
+<tr><th colspan="4">termmap VF_OutMedRequestStatus</th></tr>
+<tr><th colspan="4">termmap VF_problemStatus</th></tr>
+<tr><th colspan="4">termmap VF_LocationStatus</th></tr>
+<tr><th colspan="4">termmap VF_VitalsMethod</th></tr>
+<tr><th colspan="4">termmap VF_VitalsCuffSize</th></tr>
+<tr><th colspan="4">termmap VF_Religion</th></tr>
+<tr><th colspan="4">termmap VF_VitalsQualifyingDevice</th></tr>
+<tr><th colspan="4">termmap VF_PractitionerCountry</th></tr>
+<tr><th colspan="4">termmap VF_SourceOfAdmission</th></tr>
+<tr><th colspan="4">termmap VF_allergyMechanism</th></tr>
+<tr><th colspan="4">termmap VF_ImmunizationReaction</th></tr>
+<tr><th colspan="4">termmap VF_VitalsMeasurementDevice</th></tr>
+<tr><th colspan="4">termmap VF_VitalsCodes</th></tr>
+<tr><th colspan="4">termmap VF_VitalsUnits</th></tr>
+<tr><th colspan="4">termmap VF_VitalsDevice</th></tr>
+<tr><th colspan="4">termmap VF_RadiologyProcedureStatus</th></tr>
+<tr><th colspan="4">termmap VF_ExamStatus</th></tr>
+<tr><th colspan="4">termmap VF_encounterProblemVerificationStatus</th></tr>
+<tr><th colspan="4">termmap VF_DiagnosticReportLabStatus</th></tr>
+<tr><th colspan="4">termmap VF_SmokingStatus</th></tr>
+<tr><th colspan="4">termmap VF_immunizationStatusReason</th></tr>
+<tr><th colspan="4">termmap VF_inferredCVX</th></tr>
+<tr><th colspan="4">termmap VF_DentalDeviceStatus</th></tr>
+<tr><th colspan="4">termmap VF_ImageStatusRadNuc</th></tr>
+<tr><th colspan="4">termmap VF_MaritalStatus</th></tr>
+<tr><th colspan="4">termmap VF_genderIdentity</th></tr>
+<tr><th colspan="4">termmap VF_ImageStatus</th></tr>
+<tr><th colspan="4">termmap VF_allergySubstanceCategory</th></tr>
+<tr><th colspan="4">termmap VF_allergyActive</th></tr>
+<tr><th colspan="4">termmap VF_allergyEnteredInError</th></tr>
+<tr><th colspan="4">termmap VF_providerGender</th></tr>
+<tr><th colspan="4">termmap VF_LabObservationStatus</th></tr>
+<tr><th colspan="4">termmap VF_problemVerificationStatus</th></tr>
+<tr><th colspan="4">termmap VF_immunizationPrimarySource</th></tr>
+<tr><th colspan="4">termmap VF_ICDVersion</th></tr>
+<tr><th colspan="4">termmap VF_encounterClass</th></tr>
+<tr><th colspan="4">termmap VF_AntibioticSensitivityInterpretation</th></tr>
+<tr><th colspan="4">termmap VF_VitalsLaterality</th></tr>
+<tr><th colspan="4">termmap VF_VitalsPosition</th></tr>
+<tr><th colspan="4">termmap VF_allergySeverity</th></tr>
+<tr><th colspan="4">termmap VF_PositiveNegative</th></tr>
+<tr><th colspan="4">termmap VF_Boolean</th></tr>
+<tr><th colspan="4">termmap VF_encounterProblemStatus</th></tr>
+<tr><th colspan="4">termmap VF_allergyVerificationStatus</th></tr>
+<tr><th colspan="4">termmap VF_CommunicationQualifier</th></tr>
+<tr><th colspan="4">termmap VF_CoverageRelationship</th></tr>
+<tr><th colspan="4">termmap VF_CoverageStatusForce</th></tr>
+<tr><th colspan="4">termmap VF_LabInterpretation</th></tr>
+<tr><th colspan="4">termmap VF_OrganizationIdentifierType</th></tr>
+<tr><th colspan="4">termmap VF_PersonIdentifierType</th></tr>
+<tr><th colspan="4">termmap VF_PharmacyPersonType</th></tr>
+<tr><th colspan="4">termmap VF_ProcedureCodeSystem</th></tr>
+<tr><th colspan="4">termmap VF_YesNo10</th></tr>
+<tr><th colspan="4">termmap Vista_NCPDPCoverageRelationship</th></tr>
+<tr><th colspan="4">termmap VF_ICDCodingSystems</th></tr>
+<tr><th colspan="4">termmap VF_OrderPatientClass</th></tr></table>
+
 
 
 
@@ -625,7 +715,7 @@ value.coding.system=http://va.gov/terminology/vistaDefinedTerms/399.2</td><td>va
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.36.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Apr 3, 2024 08:58+0000">2024-04-03</span>
+          IG &#169; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.36.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Apr 10, 2024 18:17+0000">2024-04-10</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

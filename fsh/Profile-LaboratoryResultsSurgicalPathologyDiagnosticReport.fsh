@@ -2,7 +2,7 @@ Profile: LaboratoryResultsSurgicalPathologyDiagnosticReport
 Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-lab
 Id: LaboratoryResultsSurgicalPathologyDiagnosticReport
 Title: "Laboratory Results: Surgical Pathology DiagnosticReport"
-Description: "This StructureDefinition contains the maps for VistA file SURGICAL PATHOLOGY (#63.08) to us-core-diagnosticreport-lab"
+Description: "This StructureDefinition contains the maps for VistA file SURGICAL PATHOLOGY (63.08) to us-core-diagnosticreport-lab"
 * ^status = #draft
 * identifier.value and basedOn and status and effectiveDateTime and issued and performer and resultsInterpreter and specimen and media.link and conclusion and presentedForm.data and category and category.text and code.coding and code.text and subject and result MS
 * status from http://va.gov/fhir/ValueSet/VSVFDiagnosticReportLabStatus
@@ -14,23 +14,23 @@ Mapping: vista-to-LaboratoryResultsSurgicalPathologyDiagnosticReport
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: LaboratoryResultsSurgicalPathologyDiagnosticReport
-* identifier.value -> "1606: source value from SURGICAL PATHOLOGY - ORDERED TEST > ORDERED TEST - IEN (#63.08-.35 > 63.53-.001)"
-* basedOn -> "1691: reference from SURGICAL PATHOLOGY - ORDERED TEST > ORDERED TEST - CPRS ORDER # (#63.08-.35 > 63.53-3)"
-* status -> "1417: terminologyMaps using VF_DiagnosticReportLabStatus on SURGICAL PATHOLOGY - ORDERED TEST > ORDERED TEST - DISPOSITION (#63.08-.35 > 63.53-10)" "US Core 5 has new constraints: if status is partial, preliminary, final, ammended, corrected or appended effective[x] and issued are required"
-* effectiveDateTime -> "1425: source value from SURGICAL PATHOLOGY- DATE/TIME SPECIMEN TAKEN (#63.08-.01)"
-* issued -> "1430: source value from SURGICAL PATHOLOGY - DATE REPORT COMPLETED (#63.08-.03)"
-* performer -> "1435: reference from SURGICAL PATHOLOGY - RELEASED BY (#63.08-.13)"
-* performer -> "1686: reference from SURGICAL PATHOLOGY - RELEASING SITE (#63.08-.345)"
-* resultsInterpreter -> "1700: reference from SURGICAL PATHOLOGY - PATHOLOGIST (#63.08-.02)"
-* specimen -> "1701: reference from SURGICAL PATHOLOGY - SURGICAL PATH ACC # (#63.08-.06)"
-* media.link -> "1439: reference from SURGICAL PATHOLOGY - SURGICAL PATH DIAGNOSIS (#63.08-2005)"
-* conclusion -> "1447: source value from SURGICAL PATHOLOGY - SURGICAL PATH DIAGNOSIS (#63.08-1.4)" "Vista field is word processing so CodeableConcept cannot be used"
-* presentedForm.data -> "1721: source value from SURGICAL PATHOLOGY - TIU REFERENCE DATE/TIME - SP > TIU REFERENCE DATE/TIME - SP - TIU ENTRY POINTER - SP > REPORT TEXT (#63.08-.16 > 63.19-1 > 8925-2)" "HDR may be used to get the report"
+* identifier.value -> "1606: source value from SURGICAL PATHOLOGY - ORDERED TEST > ORDERED TEST - IEN (63.08-.35 > 63.53-.001)"
+* basedOn -> "1691: reference from SURGICAL PATHOLOGY - ORDERED TEST > ORDERED TEST - CPRS ORDER # (63.08-.35 > 63.53-3)"
+* status -> "1417: terminologyMaps using VF_DiagnosticReportLabStatus on SURGICAL PATHOLOGY - ORDERED TEST > ORDERED TEST - DISPOSITION (63.08-.35 > 63.53-10)" "US Core 5 has new constraints: if status is partial, preliminary, final, ammended, corrected or appended effective[x] and issued are required"
+* effectiveDateTime -> "1425: source value from SURGICAL PATHOLOGY- DATE/TIME SPECIMEN TAKEN (63.08-.01)"
+* issued -> "1430: source value from SURGICAL PATHOLOGY - DATE REPORT COMPLETED (63.08-.03)"
+* performer -> "1435: reference from SURGICAL PATHOLOGY - RELEASED BY (63.08-.13)"
+* performer -> "1686: reference from SURGICAL PATHOLOGY - RELEASING SITE (63.08-.345)"
+* resultsInterpreter -> "1700: reference from SURGICAL PATHOLOGY - PATHOLOGIST (63.08-.02)"
+* specimen -> "1701: reference from SURGICAL PATHOLOGY - SURGICAL PATH ACC # (63.08-.06)"
+* media.link -> "1439: reference from SURGICAL PATHOLOGY - SURGICAL PATH DIAGNOSIS (63.08-2005)"
+* conclusion -> "1447: source value from SURGICAL PATHOLOGY - SURGICAL PATH DIAGNOSIS (63.08-1.4)" "Vista field is word processing so CodeableConcept cannot be used"
+* presentedForm.data -> "1721: source value from SURGICAL PATHOLOGY - TIU REFERENCE DATE/TIME - SP > TIU REFERENCE DATE/TIME - SP - TIU ENTRY POINTER - SP > REPORT TEXT (63.08-.16 > 63.19-1 > 8925-2)" "HDR may be used to get the report"
 * category -> "1419: fixed value = http://terminology.hl7.org/CodeSystem/v2-0074#LAB"
-* category.text -> "1662: source value from LABORATORY TEST - NATIONAL VA LAB CODE > WLKD CODE - WKLD CODE LAB SECTION > WLKD CODE LAB SECT - NAME (#60-64 > 64-13 > 64.21-.01)" "Lab Section"
-* code.coding -> "1420: source value from LABORATORY TEST - NATIONAL VA LAB CODE > WKLD CODE - DEFAULT LOINC CODE > LAB LOINC (#60-64 > 64-25 > 95.3)" "Typically LOINC. \nChanged VistA mapping to support some coded values and add the lab test name (non-standardized)"
-* code.text -> "1661: source value from LABORATORY TEST - NAME (#60-.01)" "Added the lab test name (non-standardized)"
-* subject -> "1421: reference from PATIENT - LABORATORY REFERENCE > LAB DATA - LRDFN (#2-63 > 63-.01)" "Pointer from PATIENT (2)"
+* category.text -> "1662: source value from LABORATORY TEST - NATIONAL VA LAB CODE > WLKD CODE - WKLD CODE LAB SECTION > WLKD CODE LAB SECT - NAME (60-64 > 64-13 > 64.21-.01)" "Lab Section"
+* code.coding -> "1420: source value from LABORATORY TEST - NATIONAL VA LAB CODE > WKLD CODE - DEFAULT LOINC CODE > LAB LOINC (60-64 > 64-25 > 95.3)" "Typically LOINC. \nChanged VistA mapping to support some coded values and add the lab test name (non-standardized)"
+* code.text -> "1661: source value from LABORATORY TEST - NAME (60-.01)" "Added the lab test name (non-standardized)"
+* subject -> "1421: reference from PATIENT - LABORATORY REFERENCE > LAB DATA - LRDFN (2-63 > 63-.01)" "Pointer from PATIENT (2)"
 * result -> "1437: reference from See mapping for Laboratory Results"
 
 Mapping: cdw-to-LaboratoryResultsSurgicalPathologyDiagnosticReport
