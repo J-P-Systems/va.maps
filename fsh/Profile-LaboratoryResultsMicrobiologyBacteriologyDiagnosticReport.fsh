@@ -4,9 +4,9 @@ Id: LaboratoryResultsMicrobiologyBacteriologyDiagnosticReport
 Title: "Laboratory Results: Microbiology Bacteriology DiagnosticReport"
 Description: "This StructureDefinition contains the maps for VistA file MICROBIOLOGY (63.05) to us-core-diagnosticreport-lab"
 * ^status = #draft
-* conclusion and identifier.value and basedOn and status and effectiveDateTime and issued and performer and category and category.text and code.coding and code.text and subject and result MS
+* conclusion and identifier.value and basedOn and status and effectiveDateTime and issued and performer and category[LaboratorySlice] and category.text and code.coding and code.text and subject and result MS
 * status from http://va.gov/fhir/ValueSet/VSVFDiagnosticReportLabStatus
-* category = http://terminology.hl7.org/CodeSystem/v2-0074#LAB
+* category[LaboratorySlice] = http://terminology.hl7.org/CodeSystem/v2-0074#LAB
 * result only Reference(LaboratoryResultsObservation)
 
 Mapping: vista-to-LaboratoryResultsMicrobiologyBacteriologyDiagnosticReport
@@ -21,7 +21,7 @@ Source: LaboratoryResultsMicrobiologyBacteriologyDiagnosticReport
 * issued -> "1429: source value from MICROBIOLOGY - DATE REPORT COMPLETED (63.05-.03)"
 * performer -> "1434: reference from MICROBIOLOGY - VERIFY PERSON (63.05-.04)" "US Core Practitioner is must support resource"
 * performer -> "1682: reference from MICROBIOLOGY - ACCESSIONING INSTITUTION (63.05-.112)"
-* category -> "1419: fixed value = http://terminology.hl7.org/CodeSystem/v2-0074#LAB"
+* category[LaboratorySlice] -> "1419: fixed value = http://terminology.hl7.org/CodeSystem/v2-0074#LAB"
 * category.text -> "1662: source value from LABORATORY TEST - NATIONAL VA LAB CODE > WLKD CODE - WKLD CODE LAB SECTION > WLKD CODE LAB SECT - NAME (60-64 > 64-13 > 64.21-.01)" "Lab Section"
 * code.coding -> "1420: source value from LABORATORY TEST - NATIONAL VA LAB CODE > WKLD CODE - DEFAULT LOINC CODE > LAB LOINC (60-64 > 64-25 > 95.3)" "Typically LOINC. \nChanged VistA mapping to support some coded values and add the lab test name (non-standardized)"
 * code.text -> "1661: source value from LABORATORY TEST - NAME (60-.01)" "Added the lab test name (non-standardized)"
