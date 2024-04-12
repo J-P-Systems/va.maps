@@ -20,12 +20,18 @@ Characteristics: #can-be-target
 * temporaryAddressStartDate 0..1 Element "TEMPORARY ADDRESS START DATE (-.1217)"
 * temporaryAddressEndDate 0..1 Element "TEMPORARY ADDRESS END DATE (-.1218)"
 * languageDatetime 0..1 Reference "LANGUAGE DATE/TIME (-7)"
-* sex 0..1 Element "SEX (-.02)"
-* selfIdentifiedGender 0..1 Element "SELF IDENTIFIED GENDER (-.024)"
-* ethnicityInformation 0..1 Element "ETHNICITY INFORMATION (-6)"
-* raceInformation 0..1 Element "RACE INFORMATION (-2)"
-* maritalStatus 0..1 Element "MARITAL STATUS (-.05)"
-* religiousPreference 0..1 Element "RELIGIOUS PREFERENCE (-.08)"
+* sex 0..1 Coding "SEX (-.02)"
+* sex from http://va.gov/fhir/ValueSet/VSVFgenderIdentity-vista (example)
+* selfIdentifiedGender 0..1 Coding "SELF IDENTIFIED GENDER (-.024)"
+* selfIdentifiedGender from http://va.gov/fhir/ValueSet/VSVFgenderIdentity-vista (example)
+* ethnicityInformation 0..1 Coding "ETHNICITY INFORMATION (-6)"
+* ethnicityInformation from http://va.gov/fhir/ValueSet/VSVFethnicityCategory-vista (example)
+* raceInformation 0..1 Coding "RACE INFORMATION (-2)"
+* raceInformation from http://va.gov/fhir/ValueSet/VSVFraceCategory-vista (example)
+* maritalStatus 0..1 Coding "MARITAL STATUS (-.05)"
+* maritalStatus from http://va.gov/fhir/ValueSet/VSVFMaritalStatus-vista (example)
+* religiousPreference 0..1 Coding "RELIGIOUS PREFERENCE (-.08)"
+* religiousPreference from http://va.gov/fhir/ValueSet/VSVFReligion-vista (example)
 * patient 0..1 Element "PATIENT (-)"
 * laboratoryReference 0..1 Reference "LABORATORY REFERENCE (-63)"
 * languageDatetime only Reference(LanguageDatetime207)
@@ -69,7 +75,8 @@ Id: HospitalLocation44
 Title: "HOSPITAL LOCATION (44)"
 Description: "-"
 Characteristics: #can-be-target
-* service 0..1 Element "SERVICE (-9)"
+* service 0..1 Coding "SERVICE (-9)"
+* service from http://va.gov/fhir/ValueSet/VSVFLocationStatus-vista (example)
 * stopCodeNumber 0..1 Element "STOP CODE NUMBER (-8)"
 * creditStopCode 0..1 Element "CREDIT STOP CODE (-2503)"
 * type 0..1 Element "TYPE (-2)"
@@ -97,7 +104,8 @@ Characteristics: #can-be-target
 * principalDiagnosis 0..1 Element "PRINCIPAL DIAGNOSIS (-79)"
 * secondaryDiagnosis  0..1 Element "SECONDARY DIAGNOSIS [#] (-79.16)"
 * procedure  0..1 Element "PROCEDURE [#] (-45.01)"
-* sourceOfAdmission 0..1 Element "SOURCE OF ADMISSION (-20)"
+* sourceOfAdmission 0..1 Coding "SOURCE OF ADMISSION (-20)"
+* sourceOfAdmission from http://va.gov/fhir/ValueSet/VSVFSourceOfAdmission-vista (example)
 * transferringFacility 0..1 Element "TRANSFERRING FACILITY (-21.1)"
 * receivingFacility 0..1 Element "RECEIVING FACILITY (-76.1)"
 * placeOfDisposition 0..1 Element "PLACE OF DISPOSITION (-75)"
@@ -131,7 +139,8 @@ Id: Prescription52
 Title: "PRESCRIPTION (52)"
 Description: "-"
 Characteristics: #can-be-target
-* status 0..1 Element "STATUS (-100)"
+* status 0..1 Coding "STATUS (-100)"
+* status from http://va.gov/fhir/ValueSet/VSVFOutMedRequestStatus-vista (example)
 * patient 0..1 Element "PATIENT (-2)"
 * provider 0..1 Element "PROVIDER (-4)"
 * expirationDate 0..1 Element "EXPIRATION DATE (-26)"
@@ -144,7 +153,7 @@ Characteristics: #can-be-target
 * clinic 0..1 Element "CLINIC (-5)"
 * placerOrder  0..1 Element "PLACER ORDER # (-39.3)"
 * mailwindow 0..1 Element "MAIL/WINDOW (-11)"
-* medicationInstructions 0..1 Reference "MEDICATION INSTRUCTIONS (-113)"
+* medicationInstructions 0..1 Reference "MEDICATION INSTRUCTIONS (-113) w/ binding http://va.gov/fhir/ValueSet/VSVFDoseUnits-vista"
 * patientInstructions 0..1 Element "PATIENT INSTRUCTIONS (-114)"
 * sig 0..1 Element "SIG (-10)"
 * drug 0..1 Reference "DRUG (-6)"
@@ -220,7 +229,8 @@ Title: "RAD/NUC MED REPORTS (74)"
 Description: "-"
 Characteristics: #can-be-target
 * ien 0..1 Element "IEN (-.001)"
-* reportStatus 0..1 Element "REPORT STATUS (-5)"
+* reportStatus 0..1 Coding "REPORT STATUS (-5)"
+* reportStatus from http://va.gov/fhir/ValueSet/VSVFImageStatusRadNuc-vista (example)
 * patientName 0..1 Element "PATIENT NAME (-2)"
 * examDatetime 0..1 Element "EXAM DATE/TIME (-3)"
 * verifiedDate 0..1 Element "VERIFIED DATE (-7)"
@@ -319,7 +329,8 @@ Characteristics: #can-be-target
 * temporaryZipCode 0..1 Element "TEMPORARY ZIP CODE (-.1216)"
 * startDateOfTempAddres 0..1 Element "START DATE OF TEMP ADDRES (-.1217)"
 * endDateOfTempAddress 0..1 Element "END DATE OF TEMP ADDRESS (-.1218)"
-* sex 0..1 Element "SEX (-4)"
+* sex 0..1 Coding "SEX (-4)"
+* sex from http://va.gov/fhir/ValueSet/VSVFproviderGender-vista (example)
 * officePhone 0..1 Element "OFFICE PHONE (-.132)"
 * phone3 0..1 Element "PHONE #3 (-.133)"
 * phone4 0..1 Element "PHONE #4 (-.134)"
@@ -343,13 +354,15 @@ Title: "ECHO (691)"
 Description: "-"
 Characteristics: #can-be-target
 * ien 0..1 Element "IEN (-.001)"
-* releaseCode 0..1 Element "RELEASE CODE (-1506)"
+* releaseCode 0..1 Coding "RELEASE CODE (-1506)"
+* releaseCode from http://va.gov/fhir/ValueSet/VSVFImageStatus-vista (example)
 * medicalPatient 0..1 Element "MEDICAL PATIENT (-1)"
 * datetime 0..1 Element "DATE/TIME (-.01)"
 * dateOfVerified 0..1 Element "DATE OF VERIFIED (-1508)"
 * cardiologyAttending 0..1 Element "CARDIOLOGY ATTENDING (-39)"
 * findings 0..1 Reference "FINDINGS (-37)"
-* summary 0..1 Element "SUMMARY (-.03)"
+* summary 0..1 Coding "SUMMARY (-.03)"
+* summary from http://va.gov/fhir/ValueSet/VSVFImageInterpretation-vista (example)
 * otherConclusion 0..1 Element "OTHER CONCLUSION (-38)"
 * findings only Reference(Findings69106)
 
@@ -362,10 +375,10 @@ Characteristics: #can-be-target
 * explantDate 0..1 Element "EXPLANT DATE (-96)"
 * pacemakerManufacturer 0..1 Reference "PACEMAKER MANUFACTURER (-3)"
 * pacemakerSerialNumber 0..1 Element "PACEMAKER SERIAL NUMBER (-4)"
-* pacemakerModel 0..1 Reference "PACEMAKER MODEL (-2)"
+* pacemakerModel 0..1 Reference "PACEMAKER MODEL (-2) w/ binding http://va.gov/fhir/ValueSet/VSVFdeviceTypePacemaker-vista"
 * medicalPatient 0..1 Element "MEDICAL PATIENT (-1)"
 * transmitterManufacturer 0..1 Reference "TRANSMITTER MANUFACTURER (-13)"
-* transmitterModel 0..1 Reference "TRANSMITTER MODEL (-12)"
+* transmitterModel 0..1 Reference "TRANSMITTER MODEL (-12) w/ binding http://va.gov/fhir/ValueSet/VSVFdeviceTypePacemaker-vista"
 * pacemakerManufacturer only Reference(PacemakerManufacturer6986)
 * pacemakerModel only Reference(PacemakerEquipment6984)
 * transmitterManufacturer only Reference(PacemakerManufacturer6986)
@@ -414,7 +427,8 @@ Characteristics: #can-be-target
 * patientName 0..1 Element "PATIENT NAME (-.05)"
 * dssId 0..1 Element "DSS ID (-.08)"
 * hospitalLocation 0..1 Element "HOSPITAL LOCATION (-.22)"
-* patientStatusInout 0..1 Element "PATIENT STATUS IN/OUT (-15002)"
+* patientStatusInout 0..1 Coding "PATIENT STATUS IN/OUT (-15002)"
+* patientStatusInout from http://va.gov/fhir/ValueSet/VSVFencounterClass-vista (example)
 * locOfEncounter 0..1 Reference "LOC. OF ENCOUNTER (-.06)"
 * locOfEncounter only Reference(Location999999906)
 
@@ -432,8 +446,10 @@ Characteristics: #can-be-target
 * dateOfOnset 0..1 Element "DATE OF ONSET (-.13)"
 * dateEntered 0..1 Element "DATE ENTERED (-.08)"
 * recordingProvider 0..1 Element "RECORDING PROVIDER (-1.04)"
-* status 0..1 Element "STATUS (-.12)"
-* condition 0..1 Element "CONDITION (-1.02)"
+* status 0..1 Coding "STATUS (-.12)"
+* status from http://va.gov/fhir/ValueSet/VSVFproblemStatus-vista (example)
+* condition 0..1 Coding "CONDITION (-1.02)"
+* condition from http://va.gov/fhir/ValueSet/VSVFproblemVerificationStatus-vista (example)
 
 Logical: PatientAllergies1208
 Id: PatientAllergies1208
@@ -446,10 +462,14 @@ Characteristics: #can-be-target
 * patient 0..1 Element "PATIENT (-.01)"
 * originationDatetime 0..1 Element "ORIGINATION DATE/TIME (-4)"
 * originator 0..1 Element "ORIGINATOR (-5)"
-* mechanism 0..1 Element "MECHANISM (-17)"
-* verified 0..1 Element "VERIFIED (-19)"
-* enteredInError 0..1 Element "ENTERED IN ERROR (-22)"
-* allergyType 0..1 Element "ALLERGY TYPE (-3.1)"
+* mechanism 0..1 Coding "MECHANISM (-17)"
+* mechanism from http://va.gov/fhir/ValueSet/VSVFallergyMechanism-vista (example)
+* verified 0..1 Coding "VERIFIED (-19)"
+* verified from http://va.gov/fhir/ValueSet/VSVFallergyVerificationStatus-vista (example)
+* enteredInError 0..1 Coding "ENTERED IN ERROR (-22)"
+* enteredInError from http://va.gov/fhir/ValueSet/VSVFallergyEnteredInError-vista (example)
+* allergyType 0..1 Coding "ALLERGY TYPE (-3.1)"
+* allergyType from http://va.gov/fhir/ValueSet/VSVFallergySubstanceCategory-vista (example)
 * comments 0..1 Reference "COMMENTS (-26)"
 * drugIngredients 0..1 Element "DRUG INGREDIENTS (-2)"
 * reactions 0..1 Reference "REACTIONS (-10)"
@@ -475,7 +495,8 @@ Id: AdverseReactionReporting12085
 Title: "ADVERSE REACTION REPORTING (120.85)"
 Description: "-"
 Characteristics: #can-be-target
-* severity 0..1 Element "SEVERITY (-14.5)"
+* severity 0..1 Coding "SEVERITY (-14.5)"
+* severity from http://va.gov/fhir/ValueSet/VSVFallergySeverity-vista (example)
 
 Logical: Comments120826
 Id: Comments120826
@@ -498,7 +519,8 @@ Id: Appointment298
 Title: "APPOINTMENT (2.98)"
 Description: "-"
 Characteristics: #can-be-target
-* status 0..1 Element "STATUS (-3)"
+* status 0..1 Coding "STATUS (-3)"
+* status from http://va.gov/fhir/ValueSet/VSVFAppointmentStatus-vista (example)
 * cancellationReason 0..1 Element "CANCELLATION REASON (-16)"
 * clinic 0..1 Reference "CLINIC (-.01)"
 * appointmentType 0..1 Reference "APPOINTMENT TYPE (-9.5)"
@@ -552,7 +574,8 @@ Characteristics: #can-be-target
 * patientName 0..1 Element "PATIENT NAME (-.02)"
 * visit 0..1 Reference "VISIT (-.03)"
 * dateOfInjury 0..1 Element "DATE OF INJURY (-.13)"
-* modifier 0..1 Element "MODIFIER (-.06)"
+* modifier 0..1 Coding "MODIFIER (-.06)"
+* modifier from http://va.gov/fhir/ValueSet/VSVFencounterProblemVerificationStatus-vista (example)
 * problemListEntry 0..1 Element "PROBLEM LIST ENTRY (-.16)"
 * visit only Reference(Visit9000010)
 * pov only Reference(IcdDiagnosis80)
@@ -562,14 +585,15 @@ Id: GmrvVitalMeasurement1205
 Title: "GMRV VITAL MEASUREMENT (120.5)"
 Description: "-"
 Characteristics: #can-be-target
-* qualifier 0..1 Reference "QUALIFIER (-5)"
+* qualifier 0..1 Reference "QUALIFIER (-5) w/ binding http://va.gov/fhir/ValueSet/VSVFVitalsDevice-vista"
 * datetimeVitalsEntered 0..1 Element "DATE/TIME VITALS ENTERED (-.04)"
 * hospitalLocation 0..1 Reference "HOSPITAL LOCATION (-.05)"
 * reasonEnteredInError 0..1 Element "REASON ENTERED IN ERROR (-4)"
 * datetimeVitalsTaken 0..1 Element "DATE/TIME VITALS TAKEN (-.01)"
 * patient 0..1 Element "PATIENT (-.02)"
 * ien 0..1 Element "IEN (-.001)"
-* vitalType 0..1 Element "VITAL TYPE (-.03)"
+* vitalType 0..1 Coding "VITAL TYPE (-.03)"
+* vitalType from http://va.gov/fhir/ValueSet/VSVFVitalsCodes-vista (example)
 * rate 0..1 Element "RATE (-1.2)"
 * supplementalO2 0..1 Element "SUPPLEMENTAL O2 (-1.4)"
 * qualifier only Reference(GmrvVitalQualifier12052)
@@ -600,7 +624,7 @@ Id: ChemHemToxRiaSerEtc6304
 Title: "CHEM, HEM, TOX, RIA, SER, etc. (63.04)"
 Description: "-"
 Characteristics: #can-be-target
-* orderedTest 0..1 Reference "ORDERED TEST (-.35)"
+* orderedTest 0..1 Reference "ORDERED TEST (-.35) w/ binding http://va.gov/fhir/ValueSet/VSVFLabObservationStatus-vista"
 * datetimeSpecimenTaken 0..1 Element "DATE/TIME SPECIMEN TAKEN (-.01)"
 * dateReportCompleted 0..1 Element "DATE REPORT COMPLETED (-.03)"
 * verifyPerson 0..1 Element "VERIFY PERSON (-.04)"
@@ -646,7 +670,7 @@ Id: Cytopathology6309
 Title: "CYTOPATHOLOGY (63.09)"
 Description: "-"
 Characteristics: #can-be-target
-* orderedTest 0..1 Reference "ORDERED TEST (-.35)"
+* orderedTest 0..1 Reference "ORDERED TEST (-.35) w/ binding http://va.gov/fhir/ValueSet/VSVFDiagnosticReportLabStatus-vista"
 * datetimeSpecimenTaken 0..1 Element "DATE/TIME SPECIMEN TAKEN (-.01)"
 * dateReportCompleted 0..1 Element "DATE REPORT COMPLETED (-.03)"
 * releasedBy 0..1 Element "RELEASED BY (-.13)"
@@ -689,7 +713,7 @@ Id: Em6302
 Title: "EM (63.02)"
 Description: "-"
 Characteristics: #can-be-target
-* orderedTest 0..1 Reference "ORDERED TEST (-.35)"
+* orderedTest 0..1 Reference "ORDERED TEST (-.35) w/ binding http://va.gov/fhir/ValueSet/VSVFDiagnosticReportLabStatus-vista"
 * datetimeSpecimenTaken 0..1 Element "DATE/TIME SPECIMEN TAKEN (-.01)"
 * dateReportCompleted 0..1 Element "DATE REPORT COMPLETED (-.03)"
 * releasedBy 0..1 Element "RELEASED BY (-.13)"
@@ -732,7 +756,7 @@ Id: Microbiology6305
 Title: "MICROBIOLOGY (63.05)"
 Description: "-"
 Characteristics: #can-be-target
-* orderedTest 0..1 Reference "ORDERED TEST (-.35)"
+* orderedTest 0..1 Reference "ORDERED TEST (-.35) w/ binding http://va.gov/fhir/ValueSet/VSVFDiagnosticReportLabStatus-vista"
 * datetimeSpecimenTaken 0..1 Element "DATE/TIME SPECIMEN TAKEN (-.01)"
 * dateReportCompleted 0..1 Element "DATE REPORT COMPLETED (-.03)"
 * verifyPerson 0..1 Element "VERIFY PERSON (-.04)"
@@ -743,19 +767,24 @@ Characteristics: #can-be-target
 * ien 0..1 Element "IEN (-.001)"
 * collectionSample 0..1 Reference "COLLECTION SAMPLE (-.055)"
 * bactRptRemark 0..1 Reference "BACT RPT REMARK (-13)"
-* bactRptStatus 0..1 Element "BACT RPT STATUS (-11.5)"
+* bactRptStatus 0..1 Coding "BACT RPT STATUS (-11.5)"
+* bactRptStatus from http://va.gov/fhir/ValueSet/VSVFLabObservationStatus-vista (example)
 * urineScreen 0..1 Element "URINE SCREEN (-11.57)"
 * sputumScreen 0..1 Element "SPUTUM SCREEN (-11.58)"
 * gramStain 0..1 Reference "GRAM STAIN (-11.6)"
 * parasiteRptRemark 0..1 Reference "PARASITE RPT REMARK (-17)"
-* parasiteRptStatus 0..1 Element "PARASITE RPT STATUS (-15)"
+* parasiteRptStatus 0..1 Coding "PARASITE RPT STATUS (-15)"
+* parasiteRptStatus from http://va.gov/fhir/ValueSet/VSVFLabObservationStatus-vista (example)
 * mycologyRptRemark 0..1 Reference "MYCOLOGY RPT REMARK (-21)"
-* mycologyRptStatus 0..1 Element "MYCOLOGY RPT STATUS (-19)"
+* mycologyRptStatus 0..1 Coding "MYCOLOGY RPT STATUS (-19)"
+* mycologyRptStatus from http://va.gov/fhir/ValueSet/VSVFLabObservationStatus-vista (example)
 * tbRptRemark 0..1 Reference "TB RPT REMARK (-27)"
-* tbRptStatus 0..1 Element "TB RPT STATUS (-23)"
+* tbRptStatus 0..1 Coding "TB RPT STATUS (-23)"
+* tbRptStatus from http://va.gov/fhir/ValueSet/VSVFLabObservationStatus-vista (example)
 * acidFastStain 0..1 Element "ACID FAST STAIN (-24)"
 * virologyRptRemark 0..1 Reference "VIROLOGY RPT REMARK (-37)"
-* virologyReportStatus 0..1 Element "VIROLOGY REPORT STATUS (-34)"
+* virologyReportStatus 0..1 Coding "VIROLOGY REPORT STATUS (-34)"
+* virologyReportStatus from http://va.gov/fhir/ValueSet/VSVFLabObservationStatus-vista (example)
 * orderedTest only Reference(OrderedTest635)
 * organism only Reference(Organism633)
 * collectionSample only Reference(CollectionSample62)
@@ -840,7 +869,7 @@ Id: SurgicalPathology6308
 Title: "SURGICAL PATHOLOGY (63.08)"
 Description: "-"
 Characteristics: #can-be-target
-* orderedTest 0..1 Reference "ORDERED TEST (-.35)"
+* orderedTest 0..1 Reference "ORDERED TEST (-.35) w/ binding http://va.gov/fhir/ValueSet/VSVFDiagnosticReportLabStatus-vista"
 * datetimeSpecimenTaken 0..1 Element "DATE/TIME SPECIMEN TAKEN (-.01)"
 * dateReportCompleted 0..1 Element "DATE REPORT COMPLETED (-.03)"
 * releasedBy 0..1 Element "RELEASED BY (-.13)"
@@ -941,7 +970,7 @@ Id: VImmunization900001011
 Title: "V IMMUNIZATION (9000010.11)"
 Description: "-"
 Characteristics: #can-be-target
-* immunization 0..1 Reference "IMMUNIZATION (-.01)"
+* immunization 0..1 Reference "IMMUNIZATION (-.01) w/ binding http://va.gov/fhir/ValueSet/VSVFinferredCVX-vista"
 * eventInformationSource 0..1 Element "EVENT INFORMATION SOURCE (-1301)"
 * patientName 0..1 Element "PATIENT NAME (-.02)"
 * eventDateAndTime 0..1 Element "EVENT DATE AND TIME (-1201)"
@@ -952,7 +981,8 @@ Characteristics: #can-be-target
 * doseUnits 0..1 Reference "DOSE UNITS (-1313)"
 * datetimeRecorded 0..1 Element "DATE/TIME RECORDED (-1205)"
 * visit 0..1 Element "VISIT (-.03)"
-* reaction 0..1 Element "REACTION (-.06)"
+* reaction 0..1 Coding "REACTION (-.06)"
+* reaction from http://va.gov/fhir/ValueSet/VSVFImmunizationReaction-vista (example)
 * immunization only Reference(Immunization999999914)
 * doseUnits only Reference(UcumCodes7575)
 
@@ -988,7 +1018,7 @@ Characteristics: #can-be-target
 * explantDate 0..1 Element "EXPLANT DATE (-56)"
 * aLeadManufacturer 0..1 Reference "A LEAD MANUFACTURER (-3)"
 * aLeadSerialNumber 0..1 Element "A LEAD SERIAL NUMBER (-4)"
-* aLeadModel 0..1 Reference "A LEAD MODEL (-2)"
+* aLeadModel 0..1 Reference "A LEAD MODEL (-2) w/ binding http://va.gov/fhir/ValueSet/VSVFdeviceTypePacemaker-vista"
 * medicalPatient 0..1 Element "MEDICAL PATIENT (-1)"
 * aLeadManufacturer only Reference(PacemakerManufacturer6986)
 * aLeadModel only Reference(PacemakerEquipment6984)
@@ -1015,7 +1045,8 @@ Description: "-"
 Characteristics: #can-be-target
 * ien 0..1 Element "IEN (-.001)"
 * udi 0..1 Element "UDI (-1)"
-* status 0..1 Element "STATUS (-.08)"
+* status 0..1 Coding "STATUS (-.08)"
+* status from http://va.gov/fhir/ValueSet/VSVFDentalDeviceStatus-vista (example)
 * donationId 0..1 Element "DONATION ID (-4.8)"
 * manufacturer 0..1 Element "MANUFACTURER (-4.1)"
 * manufacturerDate 0..1 Element "MANUFACTURER DATE (-4.6)"
@@ -1056,7 +1087,7 @@ Characteristics: #can-be-target
 * explantDate 0..1 Element "EXPLANT DATE (-56)"
 * vLeadManufacturer 0..1 Reference "V LEAD MANUFACTURER (-3)"
 * vLeadSerialNumber 0..1 Element "V LEAD SERIAL NUMBER (-4)"
-* vLeadModel 0..1 Reference "V LEAD MODEL (-2)"
+* vLeadModel 0..1 Reference "V LEAD MODEL (-2) w/ binding http://va.gov/fhir/ValueSet/VSVFdeviceTypePacemaker-vista"
 * medicalPatient 0..1 Element "MEDICAL PATIENT (-1)"
 * vLeadManufacturer only Reference(PacemakerManufacturer6986)
 * vLeadModel only Reference(PacemakerEquipment6984)
@@ -1199,7 +1230,7 @@ Id: Examinations7003
 Title: "EXAMINATIONS (70.03)"
 Description: "-"
 Characteristics: #can-be-target
-* examStatus 0..1 Reference "EXAM STATUS (-3)"
+* examStatus 0..1 Reference "EXAM STATUS (-3) w/ binding http://va.gov/fhir/ValueSet/VSVFRadiologyProcedureStatus-vista"
 * reasonForCancellation 0..1 Reference "REASON FOR CANCELLATION (-3.5)"
 * procedure 0..1 Reference "PROCEDURE (-2)"
 * visit 0..1 Element "VISIT (-27)"
@@ -1251,7 +1282,8 @@ Characteristics: #can-be-target
 * visit 0..1 Element "VISIT (-.03)"
 * eventDateAndTime 0..1 Element "EVENT DATE AND TIME (-1201)"
 * encounterProvider 0..1 Element "ENCOUNTER PROVIDER (-1204)"
-* healthFactor 0..1 Element "HEALTH FACTOR (-.01)"
+* healthFactor 0..1 Coding "HEALTH FACTOR (-.01)"
+* healthFactor from http://va.gov/fhir/ValueSet/VSVFSmokingStatus-vista (example)
 * comments 0..1 Element "COMMENTS (-81101)"
 
 Logical: HealthFactors999999964
@@ -1274,7 +1306,8 @@ Title: "ELECTROCARDIOGRAM (EKG) (691.5)"
 Description: "-"
 Characteristics: #can-be-target
 * ien 0..1 Element "IEN (-.001)"
-* releaseStatus 0..1 Element "RELEASE STATUS (-1506)"
+* releaseStatus 0..1 Coding "RELEASE STATUS (-1506)"
+* releaseStatus from http://va.gov/fhir/ValueSet/VSVFImageStatus-vista (example)
 * medicalPatient 0..1 Element "MEDICAL PATIENT (-1)"
 * datetime 0..1 Element "DATE/TIME (-.01)"
 * dateOfVerified 0..1 Element "DATE OF VERIFIED (-1508)"
@@ -1282,7 +1315,8 @@ Characteristics: #can-be-target
 * interpretationCodeRhythm 0..1 Reference "INTERPRETATION CODE (RHYTHM) (-14)"
 * interpretationCodeConfig 0..1 Reference "INTERPRETATION CODE (CONFIG) (-14.1)"
 * interpretationCodePacing 0..1 Reference "INTERPRETATION CODE (PACING) (-14.2)"
-* summary 0..1 Element "SUMMARY (-.03)"
+* summary 0..1 Coding "SUMMARY (-.03)"
+* summary from http://va.gov/fhir/ValueSet/VSVFImageInterpretation-vista (example)
 * comment 0..1 Element "COMMENT (-.03)"
 * interpretationCodeRhythm only Reference(InterpretationCodeRhythm69154)
 * interpretationCodeConfig only Reference(InterpretationCodeConfig69155)
