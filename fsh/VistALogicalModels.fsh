@@ -153,7 +153,7 @@ Characteristics: #can-be-target
 * clinic 0..1 Element "CLINIC (-5)"
 * placerOrder  0..1 Element "PLACER ORDER # (-39.3)"
 * mailwindow 0..1 Element "MAIL/WINDOW (-11)"
-* medicationInstructions 0..1 Reference "MEDICATION INSTRUCTIONS (-113) w/ binding http://va.gov/fhir/ValueSet/VSVFDoseUnits-vista"
+* medicationInstructions 0..1 Reference "MEDICATION INSTRUCTIONS (-113)"
 * patientInstructions 0..1 Element "PATIENT INSTRUCTIONS (-114)"
 * sig 0..1 Element "SIG (-10)"
 * drug 0..1 Reference "DRUG (-6)"
@@ -221,7 +221,8 @@ Id: ExaminationStatus72
 Title: "EXAMINATION STATUS (72)"
 Description: "-"
 Characteristics: #can-be-target
-* status 0..1 Element "STATUS (-.01)"
+* status 0..1 Coding "STATUS (-.01)"
+* status from http://va.gov/fhir/ValueSet/VSVFRadiologyProcedureStatus-vista (example)
 
 Logical: RadnucMedReports74
 Id: RadnucMedReports74
@@ -375,10 +376,10 @@ Characteristics: #can-be-target
 * explantDate 0..1 Element "EXPLANT DATE (-96)"
 * pacemakerManufacturer 0..1 Reference "PACEMAKER MANUFACTURER (-3)"
 * pacemakerSerialNumber 0..1 Element "PACEMAKER SERIAL NUMBER (-4)"
-* pacemakerModel 0..1 Reference "PACEMAKER MODEL (-2) w/ binding http://va.gov/fhir/ValueSet/VSVFdeviceTypePacemaker-vista"
+* pacemakerModel 0..1 Reference "PACEMAKER MODEL (-2)"
 * medicalPatient 0..1 Element "MEDICAL PATIENT (-1)"
 * transmitterManufacturer 0..1 Reference "TRANSMITTER MANUFACTURER (-13)"
-* transmitterModel 0..1 Reference "TRANSMITTER MODEL (-12) w/ binding http://va.gov/fhir/ValueSet/VSVFdeviceTypePacemaker-vista"
+* transmitterModel 0..1 Reference "TRANSMITTER MODEL (-12)"
 * pacemakerManufacturer only Reference(PacemakerManufacturer6986)
 * pacemakerModel only Reference(PacemakerEquipment6984)
 * transmitterManufacturer only Reference(PacemakerManufacturer6986)
@@ -624,7 +625,7 @@ Id: ChemHemToxRiaSerEtc6304
 Title: "CHEM, HEM, TOX, RIA, SER, etc. (63.04)"
 Description: "-"
 Characteristics: #can-be-target
-* orderedTest 0..1 Reference "ORDERED TEST (-.35) w/ binding http://va.gov/fhir/ValueSet/VSVFLabObservationStatus-vista"
+* orderedTest 0..1 Reference "ORDERED TEST (-.35) w/ binding http://va.gov/fhir/ValueSet/VSVFLabInterpretation-vista"
 * datetimeSpecimenTaken 0..1 Element "DATE/TIME SPECIMEN TAKEN (-.01)"
 * dateReportCompleted 0..1 Element "DATE REPORT COMPLETED (-.03)"
 * verifyPerson 0..1 Element "VERIFY PERSON (-.04)"
@@ -642,7 +643,8 @@ Description: "-"
 Characteristics: #can-be-target
 * ien 0..1 Element "IEN (-.001)"
 * cprsOrder  0..1 Element "CPRS ORDER # (-3)"
-* disposition 0..1 Element "DISPOSITION (-10)"
+* disposition 0..1 Coding "DISPOSITION (-10)"
+* disposition from http://va.gov/fhir/ValueSet/VSVFLabObservationStatus-vista (example)
 * labTestOrdered 0..1 Reference "LAB TEST ORDERED (-13)"
 * collectionSample 0..1 Reference "COLLECTION SAMPLE (-9)"
 * labTestOrdered only Reference(LaboratoryTest60)
@@ -670,7 +672,7 @@ Id: Cytopathology6309
 Title: "CYTOPATHOLOGY (63.09)"
 Description: "-"
 Characteristics: #can-be-target
-* orderedTest 0..1 Reference "ORDERED TEST (-.35) w/ binding http://va.gov/fhir/ValueSet/VSVFDiagnosticReportLabStatus-vista"
+* orderedTest 0..1 Reference "ORDERED TEST (-.35)"
 * datetimeSpecimenTaken 0..1 Element "DATE/TIME SPECIMEN TAKEN (-.01)"
 * dateReportCompleted 0..1 Element "DATE REPORT COMPLETED (-.03)"
 * releasedBy 0..1 Element "RELEASED BY (-.13)"
@@ -691,7 +693,8 @@ Description: "-"
 Characteristics: #can-be-target
 * ien 0..1 Element "IEN (-.001)"
 * cprsOrder  0..1 Element "CPRS ORDER # (-3)"
-* disposition 0..1 Element "DISPOSITION (-10)"
+* disposition 0..1 Coding "DISPOSITION (-10)"
+* disposition from http://va.gov/fhir/ValueSet/VSVFDiagnosticReportLabStatus-vista (example)
 
 Logical: TiuReferenceDatetime6347
 Id: TiuReferenceDatetime6347
@@ -713,7 +716,7 @@ Id: Em6302
 Title: "EM (63.02)"
 Description: "-"
 Characteristics: #can-be-target
-* orderedTest 0..1 Reference "ORDERED TEST (-.35) w/ binding http://va.gov/fhir/ValueSet/VSVFDiagnosticReportLabStatus-vista"
+* orderedTest 0..1 Reference "ORDERED TEST (-.35)"
 * datetimeSpecimenTaken 0..1 Element "DATE/TIME SPECIMEN TAKEN (-.01)"
 * dateReportCompleted 0..1 Element "DATE REPORT COMPLETED (-.03)"
 * releasedBy 0..1 Element "RELEASED BY (-.13)"
@@ -735,7 +738,8 @@ Description: "-"
 Characteristics: #can-be-target
 * ien 0..1 Element "IEN (-.001)"
 * cprsOrder  0..1 Element "CPRS ORDER # (-3)"
-* disposition 0..1 Element "DISPOSITION (-10)"
+* disposition 0..1 Coding "DISPOSITION (-10)"
+* disposition from http://va.gov/fhir/ValueSet/VSVFDiagnosticReportLabStatus-vista (example)
 
 Logical: TiuReferenceDatetime6349
 Id: TiuReferenceDatetime6349
@@ -756,7 +760,7 @@ Id: Microbiology6305
 Title: "MICROBIOLOGY (63.05)"
 Description: "-"
 Characteristics: #can-be-target
-* orderedTest 0..1 Reference "ORDERED TEST (-.35) w/ binding http://va.gov/fhir/ValueSet/VSVFDiagnosticReportLabStatus-vista"
+* orderedTest 0..1 Reference "ORDERED TEST (-.35)"
 * datetimeSpecimenTaken 0..1 Element "DATE/TIME SPECIMEN TAKEN (-.01)"
 * dateReportCompleted 0..1 Element "DATE REPORT COMPLETED (-.03)"
 * verifyPerson 0..1 Element "VERIFY PERSON (-.04)"
@@ -802,7 +806,8 @@ Description: "-"
 Characteristics: #can-be-target
 * ien 0..1 Element "IEN (-.001)"
 * cprsOrder  0..1 Element "CPRS ORDER # (-3)"
-* disposition 0..1 Element "DISPOSITION (-10)"
+* disposition 0..1 Coding "DISPOSITION (-10)"
+* disposition from http://va.gov/fhir/ValueSet/VSVFDiagnosticReportLabStatus-vista (example)
 * labTestOrdered 0..1 Reference "LAB TEST ORDERED (-13)"
 * labTestOrdered only Reference(LaboratoryTest60)
 
@@ -869,7 +874,7 @@ Id: SurgicalPathology6308
 Title: "SURGICAL PATHOLOGY (63.08)"
 Description: "-"
 Characteristics: #can-be-target
-* orderedTest 0..1 Reference "ORDERED TEST (-.35) w/ binding http://va.gov/fhir/ValueSet/VSVFDiagnosticReportLabStatus-vista"
+* orderedTest 0..1 Reference "ORDERED TEST (-.35)"
 * datetimeSpecimenTaken 0..1 Element "DATE/TIME SPECIMEN TAKEN (-.01)"
 * dateReportCompleted 0..1 Element "DATE REPORT COMPLETED (-.03)"
 * releasedBy 0..1 Element "RELEASED BY (-.13)"
@@ -890,7 +895,8 @@ Description: "-"
 Characteristics: #can-be-target
 * ien 0..1 Element "IEN (-.001)"
 * cprsOrder  0..1 Element "CPRS ORDER # (-3)"
-* disposition 0..1 Element "DISPOSITION (-10)"
+* disposition 0..1 Coding "DISPOSITION (-10)"
+* disposition from http://va.gov/fhir/ValueSet/VSVFDiagnosticReportLabStatus-vista (example)
 
 Logical: TiuReferenceDatetime6319
 Id: TiuReferenceDatetime6319
@@ -970,7 +976,7 @@ Id: VImmunization900001011
 Title: "V IMMUNIZATION (9000010.11)"
 Description: "-"
 Characteristics: #can-be-target
-* immunization 0..1 Reference "IMMUNIZATION (-.01) w/ binding http://va.gov/fhir/ValueSet/VSVFinferredCVX-vista"
+* immunization 0..1 Reference "IMMUNIZATION (-.01)"
 * eventInformationSource 0..1 Element "EVENT INFORMATION SOURCE (-1301)"
 * patientName 0..1 Element "PATIENT NAME (-.02)"
 * eventDateAndTime 0..1 Element "EVENT DATE AND TIME (-1201)"
@@ -991,7 +997,8 @@ Id: Immunization999999914
 Title: "IMMUNIZATION (9999999.14)"
 Description: "-"
 Characteristics: #can-be-target
-* name 0..1 Element "NAME (-.01)"
+* name 0..1 Coding "NAME (-.01)"
+* name from http://va.gov/fhir/ValueSet/VSVFinferredCVX-vista (example)
 * cvxCode 0..1 Element "CVX CODE (-.03)"
 
 Logical: ImmunizationLot999999941
@@ -1018,7 +1025,7 @@ Characteristics: #can-be-target
 * explantDate 0..1 Element "EXPLANT DATE (-56)"
 * aLeadManufacturer 0..1 Reference "A LEAD MANUFACTURER (-3)"
 * aLeadSerialNumber 0..1 Element "A LEAD SERIAL NUMBER (-4)"
-* aLeadModel 0..1 Reference "A LEAD MODEL (-2) w/ binding http://va.gov/fhir/ValueSet/VSVFdeviceTypePacemaker-vista"
+* aLeadModel 0..1 Reference "A LEAD MODEL (-2)"
 * medicalPatient 0..1 Element "MEDICAL PATIENT (-1)"
 * aLeadManufacturer only Reference(PacemakerManufacturer6986)
 * aLeadModel only Reference(PacemakerEquipment6984)
@@ -1036,7 +1043,8 @@ Title: "PACEMAKER EQUIPMENT (698.4)"
 Description: "-"
 Characteristics: #can-be-target
 * modelNumbername 0..1 Element "MODEL NUMBER/NAME (-.01)"
-* typeOfEquipment 0..1 Element "TYPE OF EQUIPMENT (-1)"
+* typeOfEquipment 0..1 Coding "TYPE OF EQUIPMENT (-1)"
+* typeOfEquipment from http://va.gov/fhir/ValueSet/VSVFdeviceTypePacemaker-vista (example)
 
 Logical: DentalDeviceTracking2289
 Id: DentalDeviceTracking2289
@@ -1087,7 +1095,7 @@ Characteristics: #can-be-target
 * explantDate 0..1 Element "EXPLANT DATE (-56)"
 * vLeadManufacturer 0..1 Reference "V LEAD MANUFACTURER (-3)"
 * vLeadSerialNumber 0..1 Element "V LEAD SERIAL NUMBER (-4)"
-* vLeadModel 0..1 Reference "V LEAD MODEL (-2) w/ binding http://va.gov/fhir/ValueSet/VSVFdeviceTypePacemaker-vista"
+* vLeadModel 0..1 Reference "V LEAD MODEL (-2)"
 * medicalPatient 0..1 Element "MEDICAL PATIENT (-1)"
 * vLeadManufacturer only Reference(PacemakerManufacturer6986)
 * vLeadModel only Reference(PacemakerEquipment6984)
@@ -1113,7 +1121,8 @@ Id: MedicationInstructions520113
 Title: "MEDICATION INSTRUCTIONS (52.0113)"
 Description: "-"
 Characteristics: #can-be-target
-* units 0..1 Element "UNITS (-2)"
+* units 0..1 Coding "UNITS (-2)"
+* units from http://va.gov/fhir/ValueSet/VSVFDoseUnits-vista (example)
 * dosageOrdered 0..1 Element "DOSAGE ORDERED (-.01)"
 
 Logical: Refill521
@@ -1230,7 +1239,7 @@ Id: Examinations7003
 Title: "EXAMINATIONS (70.03)"
 Description: "-"
 Characteristics: #can-be-target
-* examStatus 0..1 Reference "EXAM STATUS (-3) w/ binding http://va.gov/fhir/ValueSet/VSVFRadiologyProcedureStatus-vista"
+* examStatus 0..1 Reference "EXAM STATUS (-3)"
 * reasonForCancellation 0..1 Reference "REASON FOR CANCELLATION (-3.5)"
 * procedure 0..1 Reference "PROCEDURE (-2)"
 * visit 0..1 Element "VISIT (-27)"
