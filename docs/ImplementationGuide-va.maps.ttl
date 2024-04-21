@@ -13,11 +13,11 @@
      fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>VAMapsIG</h2><p>The official URL for this implementation guide is: </p><pre>http://va.gov/fhir/ImplementationGuide/va.maps</pre><div><p>This implementation guide is a FHIR IG rendering of the KBS Map Set from VA sources (primarily VistA) to FHIR. Where appropriate these maps conform to the us-core profiles.</p>\n</div></div>"
   ] ; # 
   fhir:url [ fhir:v "http://va.gov/fhir/ImplementationGuide/va.maps"^^xsd:anyURI] ; # 
-  fhir:version [ fhir:v "0.40.0"] ; # 
+  fhir:version [ fhir:v "0.41.0"] ; # 
   fhir:name [ fhir:v "VAMapsIG"] ; # 
   fhir:title [ fhir:v "US Veterans Administration FHIR Map Set Implementation Guide"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2024-04-13T07:20:06+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2024-04-21T15:38:45+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "VA"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "VA" ] ;
@@ -48,7 +48,7 @@
        fhir:link <http://terminology.hl7.org/ImplementationGuide/hl7.terminology>
      ] ;
      fhir:packageId [ fhir:v "hl7.terminology.r4" ] ;
-     fhir:version [ fhir:v "5.3.0" ]
+     fhir:version [ fhir:v "5.5.0" ]
   ] [
      fhir:id [ fhir:v "hl7ext" ] ;
      fhir:extension ( [
@@ -1039,6 +1039,17 @@
          fhir:value [ fhir:v "StructureDefinition:logical" ]
        ] ) ;
        fhir:reference [
+         fhir:link <http://va.gov/fhir/StructureDefinition/HospitalLocation12083> ;
+         fhir:reference [ fhir:v "StructureDefinition/HospitalLocation12083" ]
+       ] ;
+       fhir:name [ fhir:v "HOSPITAL LOCATION (120.83)" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:logical" ]
+       ] ) ;
+       fhir:reference [
          fhir:link <http://va.gov/fhir/StructureDefinition/HospitalLocation44> ;
          fhir:reference [ fhir:v "StructureDefinition/HospitalLocation44" ]
        ] ;
@@ -1958,7 +1969,7 @@
          fhir:link <http://va.gov/fhir/StructureDefinition/NameComponents20> ;
          fhir:reference [ fhir:v "StructureDefinition/NameComponents20" ]
        ] ;
-       fhir:name [ fhir:v "NAME COMPONENTS (20 )" ] ;
+       fhir:name [ fhir:v "NAME COMPONENTS (20)" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -2554,17 +2565,6 @@
          fhir:value [ fhir:v "StructureDefinition:logical" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://va.gov/fhir/StructureDefinition/Signsymptoms12083> ;
-         fhir:reference [ fhir:v "StructureDefinition/Signsymptoms12083" ]
-       ] ;
-       fhir:name [ fhir:v "SIGN/SYMPTOMS (120.83)" ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:logical" ]
-       ] ) ;
-       fhir:reference [
          fhir:link <http://va.gov/fhir/StructureDefinition/Sitespecimen6001> ;
          fhir:reference [ fhir:v "StructureDefinition/Sitespecimen6001" ]
        ] ;
@@ -3112,6 +3112,42 @@
        ] ;
        fhir:name [ fhir:v "VF_AppointmentStatus VistA" ] ;
        fhir:description [ fhir:v "VistA Source ValueSet for Terminology Maps VF_AppointmentStatus" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/ValueSet/VSVFbirthSex> ;
+         fhir:reference [ fhir:v "ValueSet/VSVFbirthSex" ]
+       ] ;
+       fhir:name [ fhir:v "VF_birthSex" ] ;
+       fhir:description [ fhir:v "FHIR Target ValueSet for Terminology Maps VF_birthSex" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ConceptMap" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/ConceptMap/CMVFbirthSex> ;
+         fhir:reference [ fhir:v "ConceptMap/CMVFbirthSex" ]
+       ] ;
+       fhir:name [ fhir:v "VF_birthSex" ] ;
+       fhir:description [ fhir:v "Terminology Maps VF_birthSex" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/ValueSet/VSVFbirthSex-vista> ;
+         fhir:reference [ fhir:v "ValueSet/VSVFbirthSex-vista" ]
+       ] ;
+       fhir:name [ fhir:v "VF_birthSex VistA" ] ;
+       fhir:description [ fhir:v "VistA Source ValueSet for Terminology Maps VF_birthSex" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -5313,10 +5349,10 @@
          fhir:value [ fhir:v "StructureDefinition:logical" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://va.gov/fhir/StructureDefinition/WlkdCode64> ;
-         fhir:reference [ fhir:v "StructureDefinition/WlkdCode64" ]
+         fhir:link <http://va.gov/fhir/StructureDefinition/WkldCode64> ;
+         fhir:reference [ fhir:v "StructureDefinition/WkldCode64" ]
        ] ;
-       fhir:name [ fhir:v "WLKD CODE (64)" ] ;
+       fhir:name [ fhir:v "WKLD CODE (64)" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -5324,10 +5360,10 @@
          fhir:value [ fhir:v "StructureDefinition:logical" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://va.gov/fhir/StructureDefinition/WlkdCodeLabSect6421> ;
-         fhir:reference [ fhir:v "StructureDefinition/WlkdCodeLabSect6421" ]
+         fhir:link <http://va.gov/fhir/StructureDefinition/WkldCodeLabSect6421> ;
+         fhir:reference [ fhir:v "StructureDefinition/WkldCodeLabSect6421" ]
        ] ;
-       fhir:name [ fhir:v "WLKD CODE LAB SECT (64.21)" ] ;
+       fhir:name [ fhir:v "WKLD CODE LAB SECT (64.21)" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] ) ;
      fhir:page [
@@ -5369,6 +5405,14 @@
          ] ) ;
          fhir:name [ fhir:v "guidance.html"^^xsd:anyURI ] ;
          fhir:title [ fhir:v "Guidance" ] ;
+         fhir:generation [ fhir:v "markdown" ]
+       ] [
+         fhir:extension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "mapset-qa.html"^^xsd:anyURI ]
+         ] ) ;
+         fhir:name [ fhir:v "mapset-qa.html"^^xsd:anyURI ] ;
+         fhir:title [ fhir:v "Mapset Qa" ] ;
          fhir:generation [ fhir:v "markdown" ]
        ] [
          fhir:extension ( [

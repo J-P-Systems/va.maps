@@ -11,7 +11,7 @@ Description: "This StructureDefinition contains the maps for VistA file PATIENT 
 * extension contains http://hl7.org/fhir/StructureDefinition/patient-religion named patient-religion 0..1
 * identifier.value and name.text and telecom.value and birthDate and deceasedDateTime and address[home].line and address[home].city and address[home].state and address[home].postalCode and address[home].country and address[home].period.start and address[home].period.end and communication.language and managingOrganization.display and extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex].valueCode and gender and extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity].extension[ombCategory].valueCoding.code and extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-race].extension[ombCategory].valueCoding.code and maritalStatus and extension[http://hl7.org/fhir/StructureDefinition/patient-religion].valueCodeableConcept MS
 * managingOrganization.display = "Veterans Health Administration"
-* extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex].valueCode from http://va.gov/fhir/ValueSet/VSVFgenderIdentity
+* extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex].valueCode from http://va.gov/fhir/ValueSet/VSVFbirthSex
 * gender from http://va.gov/fhir/ValueSet/VSVFgenderIdentity
 * extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity].extension[ombCategory].valueCoding.code from http://va.gov/fhir/ValueSet/VSVFethnicityCategory
 * extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-race].extension[ombCategory].valueCoding.code from http://va.gov/fhir/ValueSet/VSVFraceCategory
@@ -40,7 +40,7 @@ Source: Patient
 * address[home].period.end -> "294: source value from PATIENT - TEMPORARY ADDRESS END DATE (2-.1218)" "need other addresses, including temp; not just range"
 * communication.language -> "295: source value from PATIENT - LANGUAGE DATE/TIME > LANGUAGE DATE/TIME - PREFERRED LANGUAGE (2-7 > 2.07-.02)"
 * managingOrganization.display -> "296: fixed value = Veterans Health Administration"
-* extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex].valueCode -> "554: terminologyMaps using VF_genderIdentity on PATIENT - SEX (2-.02)" "added extension url"
+* extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex].valueCode -> "554: terminologyMaps using VF_birthSex on PATIENT - SEX (2-.02)" "added extension url"
 * gender -> "555: terminologyMaps using VF_genderIdentity on PATIENT - SELF IDENTIFIED GENDER (2-.024)"
 * extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity].extension[ombCategory].valueCoding.code -> "575: terminologyMaps using VF_ethnicityCategory on PATIENT - ETHNICITY INFORMATION (2-6)"
 * extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-race].extension[ombCategory].valueCoding.code -> "576: terminologyMaps using VF_raceCategory on PATIENT - RACE INFORMATION (2-2)" "Do we collect any detailed race data?"

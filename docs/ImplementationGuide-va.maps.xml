@@ -7,11 +7,11 @@
 </div></div>
   </text>
   <url value="http://va.gov/fhir/ImplementationGuide/va.maps"/>
-  <version value="0.40.0"/>
+  <version value="0.41.0"/>
   <name value="VAMapsIG"/>
   <title value="US Veterans Administration FHIR Map Set Implementation Guide"/>
   <status value="draft"/>
-  <date value="2024-04-13T07:20:06+00:00"/>
+  <date value="2024-04-21T15:38:45+00:00"/>
   <publisher value="VA"/>
   <contact>
     <name value="VA"/>
@@ -37,7 +37,7 @@
     </extension>
     <uri value="http://terminology.hl7.org/ImplementationGuide/hl7.terminology"/>
     <packageId value="hl7.terminology.r4"/>
-    <version value="5.3.0"/>
+    <version value="5.5.0"/>
   </dependsOn>
   <dependsOn id="hl7ext">
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment">
@@ -929,6 +929,16 @@
         <valueString value="StructureDefinition:logical"/>
       </extension>
       <reference>
+        <reference value="StructureDefinition/HospitalLocation12083"/>
+      </reference>
+      <name value="HOSPITAL LOCATION (120.83)"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:logical"/>
+      </extension>
+      <reference>
         <reference value="StructureDefinition/HospitalLocation44"/>
       </reference>
       <name value="HOSPITAL LOCATION (44)"/>
@@ -1773,7 +1783,7 @@
       <reference>
         <reference value="StructureDefinition/NameComponents20"/>
       </reference>
-      <name value="NAME COMPONENTS (20 )"/>
+      <name value="NAME COMPONENTS (20)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -2318,16 +2328,6 @@
         <valueString value="StructureDefinition:logical"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/Signsymptoms12083"/>
-      </reference>
-      <name value="SIGN/SYMPTOMS (120.83)"/>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:logical"/>
-      </extension>
-      <reference>
         <reference value="StructureDefinition/Sitespecimen6001"/>
       </reference>
       <name value="SITE/SPECIMEN (60.01)"/>
@@ -2827,6 +2827,39 @@
       </reference>
       <name value="VF_AppointmentStatus VistA"/>
       <description value="VistA Source ValueSet for Terminology Maps VF_AppointmentStatus"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/VSVFbirthSex"/>
+      </reference>
+      <name value="VF_birthSex"/>
+      <description value="FHIR Target ValueSet for Terminology Maps VF_birthSex"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ConceptMap"/>
+      </extension>
+      <reference>
+        <reference value="ConceptMap/CMVFbirthSex"/>
+      </reference>
+      <name value="VF_birthSex"/>
+      <description value="Terminology Maps VF_birthSex"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/VSVFbirthSex-vista"/>
+      </reference>
+      <name value="VF_birthSex VistA"/>
+      <description value="VistA Source ValueSet for Terminology Maps VF_birthSex"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -4846,9 +4879,9 @@
         <valueString value="StructureDefinition:logical"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/WlkdCode64"/>
+        <reference value="StructureDefinition/WkldCode64"/>
       </reference>
-      <name value="WLKD CODE (64)"/>
+      <name value="WKLD CODE (64)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -4856,9 +4889,9 @@
         <valueString value="StructureDefinition:logical"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/WlkdCodeLabSect6421"/>
+        <reference value="StructureDefinition/WkldCodeLabSect6421"/>
       </reference>
-      <name value="WLKD CODE LAB SECT (64.21)"/>
+      <name value="WKLD CODE LAB SECT (64.21)"/>
       <exampleBoolean value="false"/>
     </resource>
     <page>
@@ -4898,6 +4931,14 @@
         </extension>
         <nameUrl value="guidance.html"/>
         <title value="Guidance"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="mapset-qa.html"/>
+        </extension>
+        <nameUrl value="mapset-qa.html"/>
+        <title value="Mapset Qa"/>
         <generation value="markdown"/>
       </page>
       <page>

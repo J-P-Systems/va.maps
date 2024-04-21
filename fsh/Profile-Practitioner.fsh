@@ -26,7 +26,7 @@ Source: Practitioner
 * identifier.value -> "378: source value from NEW PERSON - VA# (200-53.3)" "changed .code from PRN to VA_Number. Value set is extensible"
 * identifier.value -> "379: source value from NEW PERSON - VPID (200-9000)" "changed .code from PRN to VPID. Value set is extensible"
 * identifier[NPI].period.start -> "380: source value from NEW PERSON - EFFECTIVE DATE/TIME (200-42)"
-* name.text -> "382: source value from NEW PERSON - NAME COMPONENTS > NAME COMPONENTS - (200-10.1 > 20 -)" "Change map to better align with US Core Must Support (last name only)"
+* name.text -> "382: source value from NEW PERSON - NAME COMPONENTS > NAME COMPONENTS - (200-10.1 > 20-)" "Change map to better align with US Core Must Support (last name only)"
 * telecom.value -> "383: source value from NEW PERSON - PHONE (HOME) (200-.131)"
 * birthDate -> "394: source value from NEW PERSON - DOB (200-5)"
 * qualification.code.text -> "395: source value from NEW PERSON - DEGREE (200-10.6)" "There is also 12.1 CURRENT DEGREE LEVEL; not in cdw"

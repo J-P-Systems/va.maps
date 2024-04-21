@@ -1,0 +1,555 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Mapset Qa - US Veterans Administration FHIR Map Set Implementation Guide v0.41.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+    <link href="assets/css/va-maps.css" rel="stylesheet"/>
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+
+    <style type="text/css">h2{--heading-prefix:"5"}
+    h3,h4,h5,h6{--heading-prefix:"5"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+        <!-- Placeholder for child template header declarations -->
+
+<div id="project-nav">
+    <a id="family-logo" no-external="true" href="https://va.gov"><img height="50" alt="Visit the VA website"
+        src="assets/images/va.png" /> </a>
+</div>
+
+<div id="family-nav">
+    <a id="family-logo" no-external="true" href="http://hl7.org/fhir"><img height="50" alt="Visit the FHIR website" src="assets/images/fhir-logo-www.png"/> </a>
+</div>
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">US Veterans Administration FHIR Map Set Implementation Guide</span>
+            <br/>
+            <span style="display:inline-block;">0.41.0 - ci-build
+
+
+
+  United States of America
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li>
+    <a href="toc.html">Table of Content</a>
+  </li>
+  <li>
+    <a href="process.html">Process</a>
+  </li>
+  <li>
+    <a href="profileDesign.html">Profile Design</a>
+  </li>
+  <li>
+    <a href="guidance.html">Design Guidance</a>
+  </li>
+  <li>
+    <a href="mustSupport.html">Must Support</a>
+  </li>
+  <li>
+    <a href="classes.html">Classes</a>
+  </li>
+  <li>
+    <a href="artifacts.html">Artifacts</a>
+  </li>
+  <li>
+    <a href="changes.html">Changes</a>
+  </li>
+  <li>
+    <a href="mapset-qa.html">MapSet QA</a>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Mapset Qa</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">US Veterans Administration FHIR Map Set Implementation Guide - Local Development build (v0.41.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <h2>Mapset Qa</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div>
+<!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
+</div>
+<h1 id="elementmaps">ElementMaps</h1>
+<ol>
+  <li>1051: ERROR: mapValue required for transform</li>
+  <li>1516: ERROR: mapValue required for terminologyMaps</li>
+  <li>1522: ERROR: mapValue required for transform</li>
+  <li>1524: ERROR: mapValue required for terminologyMaps</li>
+</ol>
+
+<h1 id="use-cases">Use Cases</h1>
+<ol>
+  <li>252: WARN: profile AllergyIntolerance vistaFile mismatch 120.8 != 120.81</li>
+  <li>557: WARN: profile AllergyIntolerance vistaFile mismatch 120.8 != 120.85</li>
+  <li>744: WARN: profile Appointment vistaFile mismatch 2.98 != 44.003</li>
+  <li>1722: WARN: profile Appointment vistaFile mismatch 2.98 != 2</li>
+  <li>748: WARN: profile Appointment vistaFile mismatch 2.98 != 409.3</li>
+  <li>749: WARN: profile Appointment vistaFile mismatch 2.98 != 409.3</li>
+  <li>750: WARN: profile Appointment vistaFile mismatch 2.98 != 409.3</li>
+  <li>751: WARN: profile Appointment vistaFile mismatch 2.98 != 409.3</li>
+  <li>752: WARN: profile Appointment vistaFile mismatch 2.98 != 409.3</li>
+  <li>754: WARN: profile Appointment vistaFile mismatch 2.98 != 409.3</li>
+  <li>1421: WARN: profile LaboratoryResultsDiagnosticReport vistaFile mismatch 60 != 2</li>
+  <li>1662: WARN: profile LaboratoryResultsChemhemtoxriaserDiagnosticReport vistaFile mismatch 63.04 != 60</li>
+  <li>1420: WARN: profile LaboratoryResultsChemhemtoxriaserDiagnosticReport vistaFile mismatch 63.04 != 60</li>
+  <li>1661: WARN: profile LaboratoryResultsChemhemtoxriaserDiagnosticReport vistaFile mismatch 63.04 != 60</li>
+  <li>1421: WARN: profile LaboratoryResultsChemhemtoxriaserDiagnosticReport vistaFile mismatch 63.04 != 2</li>
+  <li>844: WARN: profile LaboratoryResultsChemhemtoxriaserObservation vistaFile mismatch 63.04 != 2</li>
+  <li>1662: WARN: profile LaboratoryResultsCytopathologyDiagnosticReport vistaFile mismatch 63.09 != 60</li>
+  <li>1420: WARN: profile LaboratoryResultsCytopathologyDiagnosticReport vistaFile mismatch 63.09 != 60</li>
+  <li>1661: WARN: profile LaboratoryResultsCytopathologyDiagnosticReport vistaFile mismatch 63.09 != 60</li>
+  <li>1421: WARN: profile LaboratoryResultsCytopathologyDiagnosticReport vistaFile mismatch 63.09 != 2</li>
+  <li>1662: WARN: profile LaboratoryResultsElectronMicroscopyDiagnosticReport vistaFile mismatch 63.02 != 60</li>
+  <li>1420: WARN: profile LaboratoryResultsElectronMicroscopyDiagnosticReport vistaFile mismatch 63.02 != 60</li>
+  <li>1661: WARN: profile LaboratoryResultsElectronMicroscopyDiagnosticReport vistaFile mismatch 63.02 != 60</li>
+  <li>1421: WARN: profile LaboratoryResultsElectronMicroscopyDiagnosticReport vistaFile mismatch 63.02 != 2</li>
+  <li>1662: WARN: profile LaboratoryResultsMicrobiologyDiagnosticReport vistaFile mismatch 63.05 != 60</li>
+  <li>1420: WARN: profile LaboratoryResultsMicrobiologyDiagnosticReport vistaFile mismatch 63.05 != 60</li>
+  <li>1661: WARN: profile LaboratoryResultsMicrobiologyDiagnosticReport vistaFile mismatch 63.05 != 60</li>
+  <li>1421: WARN: profile LaboratoryResultsMicrobiologyDiagnosticReport vistaFile mismatch 63.05 != 2</li>
+  <li>844: WARN: profile LaboratoryResultsMicrobiologyObservation vistaFile mismatch 63.05 != 2</li>
+  <li>1662: WARN: profile LaboratoryResultsMicrobiologyBacteriologyDiagnosticReport vistaFile mismatch 63.05 != 60</li>
+  <li>1420: WARN: profile LaboratoryResultsMicrobiologyBacteriologyDiagnosticReport vistaFile mismatch 63.05 != 60</li>
+  <li>1661: WARN: profile LaboratoryResultsMicrobiologyBacteriologyDiagnosticReport vistaFile mismatch 63.05 != 60</li>
+  <li>1421: WARN: profile LaboratoryResultsMicrobiologyBacteriologyDiagnosticReport vistaFile mismatch 63.05 != 2</li>
+  <li>844: WARN: profile LaboratoryResultsMicrobiologyBacteriologyObservation vistaFile mismatch 63.05 != 2</li>
+  <li>1662: WARN: profile LaboratoryResultsMicrobiologyParasitologyDiagnosticReport vistaFile mismatch 63.05 != 60</li>
+  <li>1420: WARN: profile LaboratoryResultsMicrobiologyParasitologyDiagnosticReport vistaFile mismatch 63.05 != 60</li>
+  <li>1661: WARN: profile LaboratoryResultsMicrobiologyParasitologyDiagnosticReport vistaFile mismatch 63.05 != 60</li>
+  <li>1421: WARN: profile LaboratoryResultsMicrobiologyParasitologyDiagnosticReport vistaFile mismatch 63.05 != 2</li>
+  <li>844: WARN: profile LaboratoryResultsMicrobiologyParasitologyObservation vistaFile mismatch 63.05 != 2</li>
+  <li>1662: WARN: profile LaboratoryResultsMicrobiologyMycologyDiagnosticReport vistaFile mismatch 63.05 != 60</li>
+  <li>1420: WARN: profile LaboratoryResultsMicrobiologyMycologyDiagnosticReport vistaFile mismatch 63.05 != 60</li>
+  <li>1661: WARN: profile LaboratoryResultsMicrobiologyMycologyDiagnosticReport vistaFile mismatch 63.05 != 60</li>
+  <li>1421: WARN: profile LaboratoryResultsMicrobiologyMycologyDiagnosticReport vistaFile mismatch 63.05 != 2</li>
+  <li>844: WARN: profile LaboratoryResultsMicrobiologyMycologyObservation vistaFile mismatch 63.05 != 2</li>
+  <li>1662: WARN: profile LaboratoryResultsMicrobiologyMycobacteriologyDiagnosticReport vistaFile mismatch 63.05 != 60</li>
+  <li>1420: WARN: profile LaboratoryResultsMicrobiologyMycobacteriologyDiagnosticReport vistaFile mismatch 63.05 != 60</li>
+  <li>1661: WARN: profile LaboratoryResultsMicrobiologyMycobacteriologyDiagnosticReport vistaFile mismatch 63.05 != 60</li>
+  <li>1421: WARN: profile LaboratoryResultsMicrobiologyMycobacteriologyDiagnosticReport vistaFile mismatch 63.05 != 2</li>
+  <li>844: WARN: profile LaboratoryResultsMicrobiologyMycobacteriologyObservation vistaFile mismatch 63.05 != 2</li>
+  <li>1662: WARN: profile LaboratoryResultsMicrobiologyVirologyDiagnosticReport vistaFile mismatch 63.05 != 60</li>
+  <li>1420: WARN: profile LaboratoryResultsMicrobiologyVirologyDiagnosticReport vistaFile mismatch 63.05 != 60</li>
+  <li>1661: WARN: profile LaboratoryResultsMicrobiologyVirologyDiagnosticReport vistaFile mismatch 63.05 != 60</li>
+  <li>1421: WARN: profile LaboratoryResultsMicrobiologyVirologyDiagnosticReport vistaFile mismatch 63.05 != 2</li>
+  <li>844: WARN: profile LaboratoryResultsMicrobiologyVirologyObservation vistaFile mismatch 63.05 != 2</li>
+  <li>1662: WARN: profile LaboratoryResultsSurgicalPathologyDiagnosticReport vistaFile mismatch 63.08 != 60</li>
+  <li>1420: WARN: profile LaboratoryResultsSurgicalPathologyDiagnosticReport vistaFile mismatch 63.08 != 60</li>
+  <li>1661: WARN: profile LaboratoryResultsSurgicalPathologyDiagnosticReport vistaFile mismatch 63.08 != 60</li>
+  <li>1421: WARN: profile LaboratoryResultsSurgicalPathologyDiagnosticReport vistaFile mismatch 63.08 != 2</li>
+  <li>1616: WARN: profile EncounterInpatientEncounter vistaFile mismatch 45 != 46</li>
+  <li>447: WARN: profile EncounterOutpatient vistaFile mismatch 9000010 != 9000010.07</li>
+  <li>452: WARN: profile EncounterOutpatient vistaFile mismatch 9000010 != 9000010.07</li>
+  <li>1614: WARN: profile EncounterOutpatient vistaFile mismatch 9000010 != 9000010.06</li>
+  <li>1615: WARN: profile EncounterOutpatient vistaFile mismatch 9000010 != 9000010.18</li>
+  <li>338: WARN: profile ImmunizationImmunization vistaFile mismatch 9000010.11 != 9999999.41</li>
+  <li>339: WARN: profile ImmunizationImmunization vistaFile mismatch 9000010.11 != 9999999.41</li>
+  <li>1609: WARN: profile ImmunizationImmunization vistaFile mismatch 9000010.11 != 9999999.41</li>
+  <li>1399: WARN: profile ImplantableDeviceProsthesis vistaFile mismatch 130.01 != 130</li>
+  <li>1807: WARN: profile ImplantableDeviceProsthesis vistaFile mismatch 130.01 != 130</li>
+  <li>1706: WARN: profile MedicationRequestOutpatientMedicationRequest vistaFile mismatch 52 != 51</li>
+  <li>419: WARN: profile PractitionerRole vistaFile mismatch 200 != 8932.1</li>
+  <li>422: WARN: profile PractitionerRole vistaFile mismatch 200 != 44.1</li>
+  <li>1508: WARN: profile ProcedureRadiology vistaFile mismatch 70.03 != 70.02</li>
+  <li>1510: WARN: profile ProcedureRadiology vistaFile mismatch 70.03 != 70</li>
+  <li>1512: WARN: profile ProcedureRadiology vistaFile mismatch 70.03 != 70.02</li>
+  <li>1514: WARN: profile ProcedureRadiology vistaFile mismatch 70.03 != 70.02</li>
+  <li>1244: WARN: profile SmokingStatusObservation vistaFile mismatch 9000010.23 != 9999999.64</li>
+  <li>1620: WARN: profile ObservationImagingResultRadNuc vistaFile mismatch 74 != 70.02</li>
+</ol>
+
+<h1 id="termmaps">TermMaps</h1>
+<ol>
+  <li>WARN: VF_AppointmentStatus sourceSystem missing; using derived http://va.gov/terminology/vistaDefinedTerms/2.98-3</li>
+  <li>WARN: VF_ethnicityCategory sourceSystem missing; using derived http://va.gov/terminology/vistaDefinedTerms/2-6</li>
+  <li>WARN: VF_ethnicityCategory sourceSystem missing; using derived http://va.gov/terminology/vistaDefinedTerms/2-6</li>
+  <li>WARN: VF_raceCategory sourceSystem missing; using derived http://va.gov/terminology/vistaDefinedTerms/2-2</li>
+  <li>WARN: VF_raceCategory sourceSystem missing; using derived http://va.gov/terminology/vistaDefinedTerms/2-2</li>
+  <li>WARN: VF_deviceTypePacemaker sourceSystem missing; using derived http://va.gov/terminology/vistaDefinedTerms/698.4-1</li>
+  <li>WARN: VF_ImageInterpretation sourceSystem missing; using derived http://va.gov/terminology/vistaDefinedTerms/691.5-.03</li>
+  <li>ERROR: VF_documentReferencedocStatus targetSystem missing; manual lookup from FHIR resource!; using urn:undefined</li>
+  <li>WARN: VF_problemStatus sourceSystem missing; using derived http://va.gov/terminology/vistaDefinedTerms/9000011-.12</li>
+  <li>ERROR: VF_VitalsCuffSize sourceSystem missing and could not derive; using urn:undefined</li>
+  <li>WARN: VF_PractitionerCountry sourceSystem missing; using derived http://va.gov/terminology/vistaDefinedTerms/200-.1215</li>
+  <li>WARN: VF_SourceOfAdmission sourceSystem missing; using derived http://va.gov/terminology/vistaDefinedTerms/45.1-.01</li>
+  <li>WARN: VF_allergyMechanism sourceSystem missing; using derived http://va.gov/terminology/vistaDefinedTerms/120.8-17</li>
+  <li>ERROR: VF_VitalsUnits targetSystem missing; manual lookup from FHIR resource!; using urn:undefined</li>
+  <li>WARN: VF_RadiologyProcedureStatus sourceSystem missing; using derived http://va.gov/terminology/vistaDefinedTerms/72-.01</li>
+  <li>WARN: VF_ExamStatus sourceSystem missing; using derived http://va.gov/terminology/vistaDefinedTerms/396.4-.04</li>
+  <li>WARN: VF_encounterProblemVerificationStatus sourceSystem missing; using derived http://va.gov/terminology/vistaDefinedTerms/9000010.07-.06</li>
+  <li>WARN: VF_immunizationStatusReason sourceSystem missing; using derived http://va.gov/terminology/vistaDefinedTerms/9999999.14-.01</li>
+  <li>WARN: VF_inferredCVX sourceSystem missing; using derived http://va.gov/terminology/vistaDefinedTerms/9999999.14-.01</li>
+  <li>WARN: VF_ImageStatusRadNuc sourceSystem missing; using derived http://va.gov/terminology/vistaDefinedTerms/74-5</li>
+  <li>WARN: VF_genderIdentity sourceSystem missing; using derived http://va.gov/terminology/vistaDefinedTerms/2-.024</li>
+  <li>WARN: VF_ImageStatus sourceSystem missing; using derived http://va.gov/terminology/vistaDefinedTerms/691.5-1506</li>
+  <li>WARN: VF_allergySubstanceCategory sourceSystem missing; using derived http://va.gov/terminology/vistaDefinedTerms/120.8-3.1</li>
+  <li>WARN: VF_allergyActive sourceSystem missing; using derived http://va.gov/terminology/vistaDefinedTerms/120.8-22</li>
+  <li>WARN: VF_allergyEnteredInError sourceSystem missing; using derived http://va.gov/terminology/vistaDefinedTerms/120.8-22</li>
+  <li>WARN: VF_providerGender sourceSystem missing; using derived http://va.gov/terminology/vistaDefinedTerms/200-4</li>
+  <li>WARN: VF_problemVerificationStatus sourceSystem missing; using derived http://va.gov/terminology/vistaDefinedTerms/9000011-1.02</li>
+  <li>WARN: VF_encounterClass sourceSystem missing; using derived http://va.gov/terminology/vistaDefinedTerms/9000010-15002</li>
+  <li>ERROR: VF_AntibioticSensitivityInterpretation sourceSystem missing and could not derive; using urn:undefined</li>
+  <li>WARN: VF_allergySeverity sourceSystem missing; using derived http://va.gov/terminology/vistaDefinedTerms/120.85-14.5</li>
+  <li>ERROR: VF_PositiveNegative sourceSystem missing and could not derive; using urn:undefined</li>
+  <li>WARN: VF_Boolean sourceSystem missing; using derived http://va.gov/terminology/vistaDefinedTerms/51-129</li>
+  <li>WARN: VF_encounterProblemStatus sourceSystem missing; using derived http://va.gov/terminology/vistaDefinedTerms/9000010.07-.06</li>
+  <li>WARN: VF_allergyVerificationStatus sourceSystem missing; using derived http://va.gov/terminology/vistaDefinedTerms/120.8-19</li>
+  <li>WARN: VF_CoverageRelationship sourceSystem missing; using derived http://va.gov/terminology/vistaDefinedTerms/365-8.01</li>
+  <li>WARN: VF_CoverageStatusForce sourceSystem missing; using derived http://va.gov/terminology/vistaDefinedTerms/355.32-.04</li>
+  <li>WARN: VF_LabInterpretation sourceSystem missing; using derived http://va.gov/terminology/vistaDefinedTerms/63.04-2+through+862</li>
+  <li>ERROR: VF_PersonIdentifierType sourceSystem missing and could not derive; using urn:undefined</li>
+  <li>ERROR: VF_PersonIdentifierType sourceSystem missing and could not derive; using urn:undefined</li>
+  <li>ERROR: VF_PharmacyPersonType sourceSystem missing and could not derive; using urn:undefined</li>
+  <li>ERROR: VF_ProcedureCodeSystem sourceSystem missing and could not derive; using urn:undefined</li>
+  <li>ERROR: VF_YesNo10 sourceSystem missing and could not derive; using urn:undefined</li>
+  <li>WARN: Vista_NCPDPCoverageRelationship sourceSystem missing; using derived http://va.gov/terminology/vistaDefinedTerms/2.312-4.05</li>
+  <li>ERROR: Vista_NCPDPCoverageRelationship targetSystem missing; manual lookup from FHIR resource!; using urn:undefined</li>
+  <li>WARN: VF_birthSex sourceSystem missing; using derived http://va.gov/terminology/vistaDefinedTerms/2-.02</li>
+  <li>WARN: VF_birthSex sourceSystem missing; using derived http://va.gov/terminology/vistaDefinedTerms/2-.02</li>
+</ol>
+
+<h1 id="plantuml-files">PlantUML files</h1>
+
+<h1 id="vista-logical-models">VistA Logical Models</h1>
+<ol>
+  <li>ERROR: Logical Model CHEM, HEM, TOX, RIA, SER, etc.-ORDERED TEST (63.04-2+through+862) display mismatch “ORDERED TEST (-.35)” != “ORDERED TEST (-2+through+862)”</li>
+  <li>ERROR: Logical Model CHEM, HEM, TOX, RIA, SER, etc.-ORDERED TEST (63.04-2+through+862) display mismatch “ORDERED TEST (-.35)” != “ORDERED TEST (-2+through+862)”</li>
+  <li>ERROR: Logical Model CYTOPATHOLOGY-CYTOPATHOLOGY DIAGNOSIS (63.09-1.4) display mismatch “CYTOPATHOLOGY DIAGNOSIS (-2005)” != “CYTOPATHOLOGY DIAGNOSIS (-1.4)”</li>
+  <li>ERROR: Logical Model ORGANISM-ORGANISM (63.3-5.1+to+160.1) display mismatch “ORGANISM (-5+to+160)” != “ORGANISM (-5.1+to+160.1)”</li>
+  <li>ERROR: Logical Model SURGICAL PATHOLOGY-SURGICAL PATH DIAGNOSIS (63.08-1.4) display mismatch “SURGICAL PATH DIAGNOSIS (-2005)” != “SURGICAL PATH DIAGNOSIS (-1.4)”</li>
+  <li>WARN: GmrvVitalMeasurement1205.qualifier has binding http://va.gov/fhir/ValueSet/VSVFVitalsDevice-vista and reference GmrvVitalQualifier12052?</li>
+  <li>WARN: ChemHemToxRiaSerEtc6304.orderedTest has binding http://va.gov/fhir/ValueSet/VSVFLabInterpretation-vista and reference OrderedTest6307?</li>
+</ol>
+
+<h1 id="vista-filefield-numnames">VistA File/Field Num/Names</h1>
+<ol>
+  <li>WARN: 252 subfile-field 120.83 expected “SIGN/SYMPTOMS” but got “HOSPITAL LOCATION -“</li>
+  <li>WARN: 852 unknown file-field 63.04-2+through+862</li>
+  <li>WARN: 857 unknown file-field 63.04-2+through+862</li>
+  <li>WARN: 1440 file-field 63.09-2005 expected “CYTOPATHOLOGY-IMAGE” but got “CYTOPATHOLOGY-CYTOPATHOLOGY DIAGNOSIS”</li>
+  <li>WARN: 1719 subfile-field 63.47-1 expected “TIU REFERENCE DATE/TIME - CY-TIU ENTRY POINTER - CY” but got “TIU REFERENCE DATE/TIME-CY - TIU ENTRY POINTER - CY”</li>
+  <li>WARN: 1432 file-field 63.02-.13 expected “EM-RELEASED BY” but got “ELECTRON MICROSCOPY-RELEASED BY”</li>
+  <li>WARN: 1685 file-field 63.02-.345 expected “EM-RELEASING SITE” but got “ELECTRON MICROSCOPY-RELEASING SITE”</li>
+  <li>WARN: 1720 subfile-field 63.49-1 expected “TIU REFERENCE DATE/TIME - EM-TIU ENTRY POINTER - EM” but got “TIU REFERENCE DATE/TIME-EM - TIU ENTRY POINTER - EM”</li>
+  <li>WARN: 1720 subfile-field 8925-2 expected “TIU DOCUMENT-REPORT TEXT” but got “REPORT TEXT”</li>
+  <li>WARN: 1522 unknown subfile-field 63.3-5+to+160</li>
+  <li>WARN: 1523 unknown subfile-field 63.3-5+to+160</li>
+  <li>WARN: 1524 unknown subfile-field 63.3-5.1+to+160.1</li>
+  <li>WARN: 1425 file-field 63.08-.01 expected “SURGICAL PATHOLOGY-DATE/TIME SPECIMEN TAKEN” but got “SURGICAL PATHOLOGY- DATE/TIME SPECIMEN TAKEN”</li>
+  <li>WARN: 1439 file-field 63.08-2005 expected “SURGICAL PATHOLOGY-IMAGE” but got “SURGICAL PATHOLOGY-SURGICAL PATH DIAGNOSIS”</li>
+  <li>WARN: 1721 subfile-field 63.19-1 expected “TIU REFERENCE DATE/TIME - SP-TIU ENTRY POINTER - SP” but got “TIU REFERENCE DATE/TIME-SP - TIU ENTRY POINTER - SP”</li>
+  <li>WARN: 1721 subfile-field 8925-2 expected “TIU DOCUMENT-REPORT TEXT” but got “REPORT TEXT”</li>
+  <li>WARN: 885 file-field 8925-1701 expected “TIU DOCUMENT-SUBJECT (OPTIONAL description)” but got “TIU DOCUMENT-SUBJECT”</li>
+  <li>WARN: 449 file-field 45-79.16 expected “PTF-SECONDARY DIAGNOSIS 1” but got “PTF-SECONDARY DIAGNOSIS [#]”</li>
+  <li>WARN: 450 file-field 45-45.01 expected “PTF-PROCEDURE 1” but got “PTF-PROCEDURE [#]”</li>
+  <li>WARN: 453 subfile-field 45.1-.01 expected “SOURCE OF ADMISSION-PTF CODE” but got “PRF CODE”</li>
+  <li>WARN: 955 subfile-field 45.1-.01 expected “SOURCE OF ADMISSION-PTF CODE” but got “PRF CODE”</li>
+  <li>WARN: 1599 unknown subfile-field 9999999.06-.1</li>
+  <li>WARN: 464 subfile-field 757.5 expected “UCUM CODES” but got “UCUM CODES -“</li>
+  <li>WARN: 1382 file-field 698.2-4 expected “A LEAD IMPLANT-A LEAD SERIAL NUMBER” but got “A LEAD-A LEAD SERIAL NUMBER”</li>
+  <li>WARN: 1375 file-field 228.9-4.7 expected “DENTAL DEVICE TRACKING-EXPIRATION DATE” but got “DENTAL DEVICE TRACKING-EXPRATION DATE”</li>
+  <li>WARN: 1383 file-field 698.1-4 expected “V LEAD IMPLANT-V LEAD SERIAL NUMBER” but got “V LEAD-V LEAD SERIAL NUMBER”</li>
+  <li>WARN: 1405 subfile-field 779.004-.01 expected “COUNTRY CODE-CODE” but got “COUNTRY-CODE”</li>
+  <li>WARN: 1705 unknown file-field 52-128</li>
+  <li>WARN: 1706 unknown file-field 51-129</li>
+  <li>WARN: 1707 file-field 52-11 expected “PRESCRIPTION-MAIL/WINDOW” but got “PRESCRIPTION-MAIL/WINDOW/PARK”</li>
+  <li>WARN: 1712 subfile-field 52.1-.01 expected “REFILL-REFILL DATE” but got “REFILL-MAIL/WINDOW/PARK”</li>
+  <li>WARN: 836 subfile-field 52.1-2 expected “REFILL-MAIL/WINDOW/PARK” but got “REFILL-MAIL/WINDOW”</li>
+  <li>WARN: 828 subfile-field 52.2-.041 expected “PARTIAL DATE-DAYS SUPPLY” but got “PARTIAL DATE- DAYS SUPPLY”</li>
+  <li>WARN: 1264 subfile-field 779.004-.01 expected “COUNTRY CODE-CODE” but got “COUNTRY-CODE”</li>
+  <li>WARN: 1265 subfile-field 4.03-.01 expected “CONTACT-CONTACT” but got “CONTACT-NAME”</li>
+  <li>WARN: 1274 subfile-field 779.004-.01 expected “COUNTRY CODE-CODE” but got “COUNTRY-CODE”</li>
+  <li>WARN: 382 subfile-field 20 expected “NAME COMPONENTS” but got “NAME COMPONENTS -“</li>
+  <li>WARN: 411 subfile-field 200.05-3 expected “PERSON CLASS-Expiration Date” but got “PERSON CLASS-EXPIRATION DATE”</li>
+  <li>WARN: 412 subfile-field 200.05-3 expected “PERSON CLASS-Expiration Date” but got “PERSON CLASS-EXPIRATION DATE”</li>
+  <li>WARN: 413 subfile-field 200.05-2 expected “PERSON CLASS-Effective Date” but got “PERSON CLASS-EFFECTIVE DATE”</li>
+  <li>WARN: 416 subfile-field 200.05-3 expected “PERSON CLASS-Expiration Date” but got “PERSON CLASS-EXPIRATION DATE”</li>
+  <li>WARN: 417 file-field 200-20.3 expected “NEW PERSON-SIGNATURE BLOCK TITLE” but got “SIGNATURE BLOCK TITLE”</li>
+  <li>WARN: 1245 file-field 9000010.23-.02 expected “V HEALTH FACTORS-PATIENT NAME” but got “V HEALTH FACTOR-PATIENT NAME”</li>
+  <li>WARN: 1246 file-field 9000010.23-.03 expected “V HEALTH FACTORS-VISIT” but got “V HEALTH FACTOR-VISIT”</li>
+  <li>WARN: 1247 file-field 9000010.23-1201 expected “V HEALTH FACTORS-EVENT DATE AND TIME” but got “V HEALTH FACTOR-EVENT DATE AND TIME”</li>
+  <li>WARN: 1248 file-field 9000010.23-1204 expected “V HEALTH FACTORS-ENCOUNTER PROVIDER” but got “V HEALTH FACTOR-ENCOUNTER PROVIDER”</li>
+  <li>WARN: 1249 file-field 9000010.23-.01 expected “V HEALTH FACTORS-HEALTH FACTOR” but got “V HEALTH FACTOR-HEALTH FACTOR”</li>
+  <li>WARN: 1250 file-field 9000010.23-81101 expected “V HEALTH FACTORS-COMMENTS” but got “V HEALTH FACTOR-COMMENTS”</li>
+  <li>WARN: 1651 file-field 691.5-.03 expected “ELECTROCARDIOGRAM (EKG)-SUMMARY” but got “ELECTROCARDIOGRAM (EKG)-COMMENT”</li>
+  <li>WARN: 1647 unknown subfile-field 74.03-.01</li>
+</ol>
+
+<h1 id="mustsupport">MustSupport</h1>
+<ol>
+  <li>WARN: use-case “Condition: Problem” missing map for MS Condition.extension[assertedDate]</li>
+  <li>WARN: use-case “Condition: Encounter Diagnosis” missing map for MS Condition.extension[assertedDate]</li>
+  <li>WARN: use-case “Laboratory Results” is abstract skip MS check</li>
+  <li>WARN: use-case “Laboratory Results: Chem, hem, tox, ria, ser” missing map for MS Observation.valueCodeableConcept</li>
+  <li>WARN: use-case “Laboratory Results: Chem, hem, tox, ria, ser” missing map for MS Observation.valueString</li>
+  <li>WARN: use-case “Laboratory Results: Chem, hem, tox, ria, ser” missing map for MS Observation.dataAbsentReason</li>
+  <li>WARN: use-case “Laboratory Results: Cytopathology” missing map for MS Observation.status</li>
+  <li>WARN: use-case “Laboratory Results: Cytopathology” missing map for MS Observation.code</li>
+  <li>WARN: use-case “Laboratory Results: Cytopathology” missing map for MS Observation.effectiveDateTime</li>
+  <li>WARN: use-case “Laboratory Results: Cytopathology” missing map for MS Observation.valueQuantity</li>
+  <li>WARN: use-case “Laboratory Results: Cytopathology” missing map for MS Observation.valueCodeableConcept</li>
+  <li>WARN: use-case “Laboratory Results: Cytopathology” missing map for MS Observation.valueString</li>
+  <li>WARN: use-case “Laboratory Results: Cytopathology” missing map for MS Observation.dataAbsentReason</li>
+  <li>WARN: use-case “Laboratory Results: Electron Microscopy” missing map for MS Observation.status</li>
+  <li>WARN: use-case “Laboratory Results: Electron Microscopy” missing map for MS Observation.code</li>
+  <li>WARN: use-case “Laboratory Results: Electron Microscopy” missing map for MS Observation.effectiveDateTime</li>
+  <li>WARN: use-case “Laboratory Results: Electron Microscopy” missing map for MS Observation.valueQuantity</li>
+  <li>WARN: use-case “Laboratory Results: Electron Microscopy” missing map for MS Observation.valueCodeableConcept</li>
+  <li>WARN: use-case “Laboratory Results: Electron Microscopy” missing map for MS Observation.valueString</li>
+  <li>WARN: use-case “Laboratory Results: Electron Microscopy” missing map for MS Observation.dataAbsentReason</li>
+  <li>WARN: use-case “Laboratory Results: Microbiology” is abstract skip MS check</li>
+  <li>WARN: use-case “Laboratory Results: Microbiology Bacteriology” missing map for MS Observation.valueQuantity</li>
+  <li>WARN: use-case “Laboratory Results: Microbiology Bacteriology” missing map for MS Observation.dataAbsentReason</li>
+  <li>WARN: use-case “Laboratory Results: Microbiology Parasitology” missing map for MS Observation.valueQuantity</li>
+  <li>WARN: use-case “Laboratory Results: Microbiology Parasitology” missing map for MS Observation.valueCodeableConcept</li>
+  <li>WARN: use-case “Laboratory Results: Microbiology Parasitology” missing map for MS Observation.valueString</li>
+  <li>WARN: use-case “Laboratory Results: Microbiology Parasitology” missing map for MS Observation.dataAbsentReason</li>
+  <li>WARN: use-case “Laboratory Results: Microbiology Mycology” missing map for MS Observation.valueQuantity</li>
+  <li>WARN: use-case “Laboratory Results: Microbiology Mycology” missing map for MS Observation.valueCodeableConcept</li>
+  <li>WARN: use-case “Laboratory Results: Microbiology Mycology” missing map for MS Observation.valueString</li>
+  <li>WARN: use-case “Laboratory Results: Microbiology Mycology” missing map for MS Observation.dataAbsentReason</li>
+  <li>WARN: use-case “Laboratory Results: Microbiology Mycobacteriology” missing map for MS Observation.valueQuantity</li>
+  <li>WARN: use-case “Laboratory Results: Microbiology Mycobacteriology” missing map for MS Observation.valueCodeableConcept</li>
+  <li>WARN: use-case “Laboratory Results: Microbiology Mycobacteriology” missing map for MS Observation.dataAbsentReason</li>
+  <li>WARN: use-case “Laboratory Results: Microbiology Virology” missing map for MS Observation.valueQuantity</li>
+  <li>WARN: use-case “Laboratory Results: Microbiology Virology” missing map for MS Observation.valueCodeableConcept</li>
+  <li>WARN: use-case “Laboratory Results: Microbiology Virology” missing map for MS Observation.valueString</li>
+  <li>WARN: use-case “Laboratory Results: Microbiology Virology” missing map for MS Observation.dataAbsentReason</li>
+  <li>WARN: use-case “Laboratory Results: Surgical Pathology” missing map for MS Observation.status</li>
+  <li>WARN: use-case “Laboratory Results: Surgical Pathology” missing map for MS Observation.code</li>
+  <li>WARN: use-case “Laboratory Results: Surgical Pathology” missing map for MS Observation.effectiveDateTime</li>
+  <li>WARN: use-case “Laboratory Results: Surgical Pathology” missing map for MS Observation.valueQuantity</li>
+  <li>WARN: use-case “Laboratory Results: Surgical Pathology” missing map for MS Observation.valueCodeableConcept</li>
+  <li>WARN: use-case “Laboratory Results: Surgical Pathology” missing map for MS Observation.valueString</li>
+  <li>WARN: use-case “Laboratory Results: Surgical Pathology” missing map for MS Observation.dataAbsentReason</li>
+  <li>WARN: use-case “Document Reference” missing map for MS DocumentReference.status</li>
+  <li>WARN: use-case “Document Reference” missing map for MS DocumentReference.content.attachment.url</li>
+  <li>WARN: use-case “Encounter: Inpatient” missing map for MS Encounter.reasonReference</li>
+  <li>WARN: use-case “Encounter: Inpatient” missing map for MS Condition.extension[assertedDate]</li>
+  <li>WARN: use-case “Encounter: Inpatient” missing map for MS Condition.clinicalStatus</li>
+  <li>WARN: use-case “Encounter: Inpatient” missing map for MS Condition.verificationStatus</li>
+  <li>WARN: use-case “Encounter: Inpatient” missing map for MS Condition.category[us-core]</li>
+  <li>WARN: use-case “Encounter: Inpatient” missing map for MS Condition.category[sdoh]</li>
+  <li>WARN: use-case “Encounter: Inpatient” missing map for MS Condition.subject</li>
+  <li>WARN: use-case “Encounter: Inpatient” missing map for MS Condition.onsetDateTime</li>
+  <li>WARN: use-case “Encounter: Inpatient” missing map for MS Condition.abatementDateTime</li>
+  <li>WARN: use-case “Encounter: Inpatient” missing map for MS Condition.recordedDate</li>
+  <li>WARN: use-case “Encounter: Outpatient” missing map for MS Encounter.reasonReference</li>
+  <li>WARN: use-case “Encounter: Outpatient” missing map for MS Encounter.hospitalization</li>
+  <li>WARN: use-case “Encounter: Outpatient” missing map for MS Encounter.hospitalization.dischargeDisposition</li>
+  <li>WARN: use-case “Implantable Device” is abstract skip MS check</li>
+  <li>WARN: use-case “MedicationRequest: Unsigned” missing map for MS MedicationRequest.status</li>
+  <li>WARN: use-case “MedicationRequest: Unsigned” missing map for MS MedicationRequest.intent</li>
+  <li>WARN: use-case “MedicationRequest: Unsigned” missing map for MS MedicationRequest.category</li>
+  <li>WARN: use-case “MedicationRequest: Unsigned” missing map for MS MedicationRequest.category[us-core]</li>
+  <li>WARN: use-case “MedicationRequest: Unsigned” missing map for MS MedicationRequest.reportedBoolean</li>
+  <li>WARN: use-case “MedicationRequest: Unsigned” missing map for MS MedicationRequest.reportedReference</li>
+  <li>WARN: use-case “MedicationRequest: Unsigned” missing map for MS MedicationRequest.medicationReference</li>
+  <li>WARN: use-case “MedicationRequest: Unsigned” missing map for MS MedicationRequest.encounter</li>
+  <li>WARN: use-case “MedicationRequest: Unsigned” missing map for MS MedicationRequest.dosageInstruction.text</li>
+  <li>WARN: use-case “MedicationRequest: NonVA” missing map for MS MedicationRequest.status</li>
+  <li>WARN: use-case “MedicationRequest: NonVA” missing map for MS MedicationRequest.category</li>
+  <li>WARN: use-case “MedicationRequest: NonVA” missing map for MS MedicationRequest.category[us-core]</li>
+  <li>WARN: use-case “MedicationRequest: NonVA” missing map for MS MedicationRequest.reportedReference</li>
+  <li>WARN: use-case “MedicationRequest: NonVA” missing map for MS MedicationRequest.medicationCodeableConcept</li>
+  <li>WARN: use-case “MedicationRequest: NonVA” missing map for MS MedicationRequest.medicationReference</li>
+  <li>WARN: use-case “MedicationRequest: NonVA” missing map for MS MedicationRequest.subject</li>
+  <li>WARN: use-case “MedicationRequest: NonVA” missing map for MS MedicationRequest.encounter</li>
+  <li>WARN: use-case “MedicationRequest: NonVA” missing map for MS MedicationRequest.authoredOn</li>
+  <li>WARN: use-case “MedicationRequest: NonVA” missing map for MS MedicationRequest.requester</li>
+  <li>WARN: use-case “MedicationRequest: NonVA” missing map for MS MedicationRequest.dosageInstruction</li>
+  <li>WARN: use-case “MedicationRequest: NonVA” missing map for MS MedicationRequest.dosageInstruction.text</li>
+  <li>WARN: use-case “MedicationRequest: Outpatient” missing map for MS MedicationRequest.category</li>
+  <li>WARN: use-case “MedicationRequest: Outpatient” missing map for MS MedicationRequest.category[us-core]</li>
+  <li>WARN: use-case “MedicationRequest: Outpatient” missing map for MS MedicationRequest.reportedBoolean</li>
+  <li>WARN: use-case “MedicationRequest: Outpatient” missing map for MS MedicationRequest.reportedReference</li>
+  <li>WARN: use-case “MedicationRequest: Outpatient” missing map for MS MedicationRequest.medicationCodeableConcept</li>
+  <li>WARN: use-case “MedicationRequest: Outpatient” missing map for MS MedicationRequest.medicationReference</li>
+  <li>WARN: use-case “MedicationRequest: Outpatient” missing map for MS MedicationRequest.authoredOn</li>
+  <li>WARN: use-case “MedicationRequest: Outpatient” missing map for MS MedicationRequest.dosageInstruction</li>
+  <li>WARN: use-case “MedicationRequest: Outpatient” missing map for MS MedicationRequest.dosageInstruction.text</li>
+  <li>WARN: use-case “MedicationRequest: Outpatient” missing map for MS Encounter.identifier</li>
+  <li>WARN: use-case “MedicationRequest: Outpatient” missing map for MS Encounter.identifier.system</li>
+  <li>WARN: use-case “MedicationRequest: Outpatient” missing map for MS Encounter.identifier.value</li>
+  <li>WARN: use-case “MedicationRequest: Outpatient” missing map for MS Encounter.class</li>
+  <li>WARN: use-case “MedicationRequest: Outpatient” missing map for MS Encounter.type</li>
+  <li>WARN: use-case “MedicationRequest: Outpatient” missing map for MS Encounter.subject</li>
+  <li>WARN: use-case “MedicationRequest: Outpatient” missing map for MS Encounter.participant</li>
+  <li>WARN: use-case “MedicationRequest: Outpatient” missing map for MS Encounter.participant.type</li>
+  <li>WARN: use-case “MedicationRequest: Outpatient” missing map for MS Encounter.participant.period</li>
+  <li>WARN: use-case “MedicationRequest: Outpatient” missing map for MS Encounter.participant.individual</li>
+  <li>WARN: use-case “MedicationRequest: Outpatient” missing map for MS Encounter.period</li>
+  <li>WARN: use-case “MedicationRequest: Outpatient” missing map for MS Encounter.reasonCode</li>
+  <li>WARN: use-case “MedicationRequest: Outpatient” missing map for MS Encounter.reasonReference</li>
+  <li>WARN: use-case “MedicationRequest: Outpatient” missing map for MS Encounter.hospitalization</li>
+  <li>WARN: use-case “MedicationRequest: Outpatient” missing map for MS Encounter.hospitalization.dischargeDisposition</li>
+  <li>WARN: use-case “MedicationRequest: Outpatient” missing map for MS Encounter.serviceProvider</li>
+  <li>WARN: use-case “Practitioner Role” missing map for MS PractitionerRole.endpoint</li>
+  <li>WARN: use-case “Vital Signs” is abstract skip MS check</li>
+  <li>WARN: use-case “Vital Signs: BP” missing map for MS Observation.component.value[x].value</li>
+  <li>WARN: use-case “Vital Signs: BP” missing map for MS Observation.component.value[x].unit</li>
+  <li>WARN: use-case “Vital Signs: BP” missing map for MS Observation.component.value[x].system</li>
+  <li>WARN: use-case “Vital Signs: BP” missing map for MS Observation.component.value[x].code</li>
+  <li>WARN: use-case “Vital Signs: SpO2” missing map for MS Observation.component.value[x].value</li>
+  <li>WARN: use-case “Vital Signs: SpO2” missing map for MS Observation.component.value[x].unit</li>
+  <li>WARN: use-case “Vital Signs: SpO2” missing map for MS Observation.component.value[x].system</li>
+  <li>WARN: use-case “Vital Signs: SpO2” missing map for MS Observation.component.value[x].code</li>
+  <li>WARN: use-case “Observation Imaging Result: Echo” missing map for MS Observation.code</li>
+  <li>WARN: use-case “Observation Imaging Result: EKG” missing map for MS Observation.code</li>
+  <li>WARN: use-case “Observation Imaging Result: Rad/Nuc” missing map for MS Observation.code</li>
+  <li>WARN: use-case “Observation Imaging Result” is abstract skip MS check</li>
+</ol>
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.41.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Sun, Apr 21, 2024 15:38+0000">2024-04-21</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+  
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

@@ -23,7 +23,7 @@ Source: AllergyIntolerance
 * patient -> "248: source value from PATIENT ALLERGIES - PATIENT (120.8-.01)" "Source is MVIPersonFullICN from SMVIPerson Table"
 * recordedDate -> "1224: source value from PATIENT ALLERGIES - ORIGINATION DATE/TIME (120.8-4)" "Lighthouse exposes this source object as RecordedDate FHIR field"
 * recorder -> "251: source value from PATIENT ALLERGIES - ORIGINATOR (120.8-5)"
-* reaction.manifestation -> "252: source value from REACTIONS - REACTION > SIGN/SYMPTOMS (120.81-.01 > 120.83-)"
+* reaction.manifestation -> "252: source value from REACTIONS - REACTION > HOSPITAL LOCATION - (120.81-.01 > 120.83-)"
 * type -> "531: terminologyMaps using VF_allergyMechanism on PATIENT ALLERGIES - MECHANISM (120.8-17)"
 * verificationStatus -> "535: terminologyMaps using VF_allergyVerificationStatus on PATIENT ALLERGIES - VERIFIED (120.8-19)"
 * clinicalStatus -> "536: terminologyMaps using VF_allergyActive on PATIENT ALLERGIES - ENTERED IN ERROR (120.8-22)" "confirm CHAPI"

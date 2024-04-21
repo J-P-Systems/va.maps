@@ -21,7 +21,7 @@ Characteristics: #can-be-target
 * temporaryAddressEndDate 0..1 Element "TEMPORARY ADDRESS END DATE (-.1218)"
 * languageDatetime 0..1 Reference "LANGUAGE DATE/TIME (-7)"
 * sex 0..1 Coding "SEX (-.02)"
-* sex from http://va.gov/fhir/ValueSet/VSVFgenderIdentity-vista (example)
+* sex from http://va.gov/fhir/ValueSet/VSVFbirthSex-vista (example)
 * selfIdentifiedGender 0..1 Coding "SELF IDENTIFIED GENDER (-.024)"
 * selfIdentifiedGender from http://va.gov/fhir/ValueSet/VSVFgenderIdentity-vista (example)
 * ethnicityInformation 0..1 Coding "ETHNICITY INFORMATION (-6)"
@@ -32,7 +32,7 @@ Characteristics: #can-be-target
 * maritalStatus from http://va.gov/fhir/ValueSet/VSVFMaritalStatus-vista (example)
 * religiousPreference 0..1 Coding "RELIGIOUS PREFERENCE (-.08)"
 * religiousPreference from http://va.gov/fhir/ValueSet/VSVFReligion-vista (example)
-* patient 0..1 Element "PATIENT (-)"
+* appointment 0..1 Element "APPOINTMENT (-1900)"
 * laboratoryReference 0..1 Reference "LABORATORY REFERENCE (-63)"
 * languageDatetime only Reference(LanguageDatetime207)
 * laboratoryReference only Reference(LabData63)
@@ -69,6 +69,12 @@ Title: "STATE (5)"
 Description: "-"
 Characteristics: #can-be-target
 * abbreviation 0..1 Element "ABBREVIATION (-1)"
+
+Logical: NameComponents20
+Id: NameComponents20
+Title: "NAME COMPONENTS (20)"
+Description: "-"
+Characteristics: #can-be-target
 
 Logical: HospitalLocation44
 Id: HospitalLocation44
@@ -176,7 +182,7 @@ Characteristics: #can-be-target
 * nationalVaLabCode 0..1 Reference "NATIONAL VA LAB CODE (-64)"
 * name 0..1 Element "NAME (-.01)"
 * sitespecimen 0..1 Reference "SITE/SPECIMEN (-100)"
-* nationalVaLabCode only Reference(WlkdCode64)
+* nationalVaLabCode only Reference(WkldCode64)
 * sitespecimen only Reference(Sitespecimen6001)
 
 Logical: CollectionSample62
@@ -193,14 +199,14 @@ Description: "-"
 Characteristics: #can-be-target
 * lrdfn 0..1 Element "LRDFN (-.01)"
 
-Logical: WlkdCode64
-Id: WlkdCode64
-Title: "WLKD CODE (64)"
+Logical: WkldCode64
+Id: WkldCode64
+Title: "WKLD CODE (64)"
 Description: "-"
 Characteristics: #can-be-target
 * wkldCodeLabSection 0..1 Reference "WKLD CODE LAB SECTION (-13)"
 * defaultLoincCode 0..1 Element "DEFAULT LOINC CODE (-25)"
-* wkldCodeLabSection only Reference(WlkdCodeLabSect6421)
+* wkldCodeLabSection only Reference(WkldCodeLabSect6421)
 
 Logical: RadnucMedPatient70
 Id: RadnucMedPatient70
@@ -345,7 +351,7 @@ Characteristics: #can-be-target
 * signatureBlockTitle 0..1 Element "SIGNATURE BLOCK TITLE (-20.3)"
 * title 0..1 Reference "TITLE (-8)"
 * division 0..1 Element "DIVISION (-16)"
-* nameComponents only Reference(NameComponents20 )
+* nameComponents only Reference(NameComponents20)
 * personClass only Reference(PersonClass20005)
 * title only Reference(Title31)
 
@@ -482,12 +488,13 @@ Id: Reactions12081
 Title: "REACTIONS (120.81)"
 Description: "-"
 Characteristics: #can-be-target
-* reaction 0..1 Element "REACTION (-.01)"
+* reaction 0..1 Reference "REACTION (-.01)"
 * dateEntered 0..1 Element "DATE ENTERED (-3)"
+* reaction only Reference(HospitalLocation12083)
 
-Logical: Signsymptoms12083
-Id: Signsymptoms12083
-Title: "SIGN/SYMPTOMS (120.83)"
+Logical: HospitalLocation12083
+Id: HospitalLocation12083
+Title: "HOSPITAL LOCATION (120.83)"
 Description: "-"
 Characteristics: #can-be-target
 
@@ -607,9 +614,9 @@ Description: "-"
 Characteristics: #can-be-target
 * vuid 0..1 Element "VUID (-99.99)"
 
-Logical: WlkdCodeLabSect6421
-Id: WlkdCodeLabSect6421
-Title: "WLKD CODE LAB SECT (64.21)"
+Logical: WkldCodeLabSect6421
+Id: WkldCodeLabSect6421
+Title: "WKLD CODE LAB SECT (64.21)"
 Description: "-"
 Characteristics: #can-be-target
 * name 0..1 Element "NAME (-.01)"
@@ -1105,7 +1112,7 @@ Id: Country779004
 Title: "COUNTRY (779.004)"
 Description: "-"
 Characteristics: #can-be-target
-* code 0..1 Element "CODE (-0.1)"
+* code 0..1 Element "CODE (-.01)"
 
 Logical: Non5505
 Id: Non5505
@@ -1189,12 +1196,6 @@ Description: "-"
 Characteristics: #can-be-target
 * name 0..1 Element "NAME (-.01)"
 * phone  0..1 Element "PHONE # (-.03)"
-
-Logical: NameComponents20 
-Id: NameComponents20 
-Title: "NAME COMPONENTS (20 )"
-Description: "-"
-Characteristics: #can-be-target
 
 Logical: PersonClass20005
 Id: PersonClass20005

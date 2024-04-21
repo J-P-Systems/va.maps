@@ -6,11 +6,11 @@
     "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>VAMapsIG</h2><p>The official URL for this implementation guide is: </p><pre>http://va.gov/fhir/ImplementationGuide/va.maps</pre><div><p>This implementation guide is a FHIR IG rendering of the KBS Map Set from VA sources (primarily VistA) to FHIR. Where appropriate these maps conform to the us-core profiles.</p>\n</div></div>"
   },
   "url" : "http://va.gov/fhir/ImplementationGuide/va.maps",
-  "version" : "0.40.0",
+  "version" : "0.41.0",
   "name" : "VAMapsIG",
   "title" : "US Veterans Administration FHIR Map Set Implementation Guide",
   "status" : "draft",
-  "date" : "2024-04-13T07:20:06+00:00",
+  "date" : "2024-04-21T15:38:45+00:00",
   "publisher" : "VA",
   "contact" : [{
     "name" : "VA",
@@ -38,7 +38,7 @@
     }],
     "uri" : "http://terminology.hl7.org/ImplementationGuide/hl7.terminology",
     "packageId" : "hl7.terminology.r4",
-    "version" : "5.3.0"
+    "version" : "5.5.0"
   },
   {
     "id" : "hl7ext",
@@ -1144,6 +1144,17 @@
         "valueString" : "StructureDefinition:logical"
       }],
       "reference" : {
+        "reference" : "StructureDefinition/HospitalLocation12083"
+      },
+      "name" : "HOSPITAL LOCATION (120.83)",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:logical"
+      }],
+      "reference" : {
         "reference" : "StructureDefinition/HospitalLocation44"
       },
       "name" : "HOSPITAL LOCATION (44)",
@@ -2062,7 +2073,7 @@
       "reference" : {
         "reference" : "StructureDefinition/NameComponents20"
       },
-      "name" : "NAME COMPONENTS (20 )",
+      "name" : "NAME COMPONENTS (20)",
       "exampleBoolean" : false
     },
     {
@@ -2659,17 +2670,6 @@
         "valueString" : "StructureDefinition:logical"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/Signsymptoms12083"
-      },
-      "name" : "SIGN/SYMPTOMS (120.83)",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:logical"
-      }],
-      "reference" : {
         "reference" : "StructureDefinition/Sitespecimen6001"
       },
       "name" : "SITE/SPECIMEN (60.01)",
@@ -3216,6 +3216,42 @@
       },
       "name" : "VF_AppointmentStatus VistA",
       "description" : "VistA Source ValueSet for Terminology Maps VF_AppointmentStatus",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/VSVFbirthSex"
+      },
+      "name" : "VF_birthSex",
+      "description" : "FHIR Target ValueSet for Terminology Maps VF_birthSex",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/CMVFbirthSex"
+      },
+      "name" : "VF_birthSex",
+      "description" : "Terminology Maps VF_birthSex",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/VSVFbirthSex-vista"
+      },
+      "name" : "VF_birthSex VistA",
+      "description" : "VistA Source ValueSet for Terminology Maps VF_birthSex",
       "exampleBoolean" : false
     },
     {
@@ -5418,9 +5454,9 @@
         "valueString" : "StructureDefinition:logical"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/WlkdCode64"
+        "reference" : "StructureDefinition/WkldCode64"
       },
-      "name" : "WLKD CODE (64)",
+      "name" : "WKLD CODE (64)",
       "exampleBoolean" : false
     },
     {
@@ -5429,9 +5465,9 @@
         "valueString" : "StructureDefinition:logical"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/WlkdCodeLabSect6421"
+        "reference" : "StructureDefinition/WkldCodeLabSect6421"
       },
-      "name" : "WLKD CODE LAB SECT (64.21)",
+      "name" : "WKLD CODE LAB SECT (64.21)",
       "exampleBoolean" : false
     }],
     "page" : {
@@ -5476,6 +5512,15 @@
         }],
         "nameUrl" : "guidance.html",
         "title" : "Guidance",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "mapset-qa.html"
+        }],
+        "nameUrl" : "mapset-qa.html",
+        "title" : "Mapset Qa",
         "generation" : "markdown"
       },
       {
