@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Changes - US Veterans Administration FHIR Map Set Implementation Guide v0.42.0</title>
+    <title>Changes - US Veterans Administration FHIR Map Set Implementation Guide v0.43.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -58,7 +58,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">US Veterans Administration FHIR Map Set Implementation Guide</span>
             <br/>
-            <span style="display:inline-block;">0.42.0 - ci-build
+            <span style="display:inline-block;">0.43.0 - ci-build
 
 
 
@@ -151,7 +151,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">US Veterans Administration FHIR Map Set Implementation Guide - Local Development build (v0.42.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">US Veterans Administration FHIR Map Set Implementation Guide - Local Development build (v0.43.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>Changes</h2>
   
 
@@ -176,55 +176,37 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <tr><td colspan="4"><i>resource AllergyIntolerance</i></td></tr>
 <tr><td>252</td></tr>
 <tr><td></td><td>vistaSubFileFieldName</td><td>SIGN/SYMPTOMS</td><td>HOSPITAL LOCATION -</td></tr>
+<tr><td>1652</td></tr>
+<tr><td></td><td>mapCase</td><td>6 OBSERVED/HISTORICAL = O</td><td></td></tr>
 <tr><th colspan="4">use-case Patient</th></tr>
 <tr><td colspan="4"><i>resource Patient</i></td></tr>
-<tr><td>554</td></tr>
-<tr><td></td><td>mapValue</td><td>VF_genderIdentity</td><td>VF_birthSex</td></tr>
-<tr><td>1597</td></tr>
-<tr><td></td><td>fhirURL</td><td>http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition | 5.0.1</td><td>http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient | 5.0.1</td></tr>
-<tr><td>1598</td></tr>
-<tr><td></td><td>fhirURL</td><td>http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition | 5.0.1</td><td>http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient | 5.0.1</td></tr>
+<tr><td>555</td></tr>
+<tr><td></td><td>mapValue</td><td>VF_adminGender</td><td>VF_genderIdentity</td></tr>
 <tr><th colspan="4">use-case Appointment</th></tr>
 <tr><td colspan="4"><i>resource Appointment</i></td></tr>
-<tr><td>732</td></tr>
-<tr><td></td><td>mapApproach</td><td>transform</td><td>fixed value</td></tr>
-<tr><td>733</td></tr>
-<tr><td></td><td>mapApproach</td><td>transform</td><td>fixed value</td></tr>
-<tr><td>734</td></tr>
-<tr><td></td><td>mapApproach</td><td>transform</td><td>fixed value</td></tr>
 <tr><td>740</td></tr>
-<tr><td></td><td>vistaSubFileFieldName</td><td></td><td>APPOINTMENT TYPE - NAME</td></tr>
-<tr><td></td><td>vistaSubFileField</td><td></td><td>409.1-.01</td></tr>
+<tr><td></td><td>fhirPath</td><td>Appointment.appointmentType</td><td>Appointment.appointmentType.coding</td></tr>
+<tr><td></td><td>fhirSubPath</td><td>.text</td><td>.code</td></tr>
 <tr><td>1722</td></tr>
 <tr><td></td><td>vistaFileFieldName</td><td>PATIENT</td><td>PATIENT - APPOINTMENT</td></tr>
 <tr><td></td><td>vistaFileField</td><td>2-</td><td>2-1900</td></tr>
 <tr><td></td><td>vistaSubFileFieldName</td><td></td><td>APPOINTMENT</td></tr>
 <tr><td></td><td>vistaSubFileField</td><td></td><td>2.98</td></tr>
-<tr><td>748</td></tr>
-<tr><td></td><td>mapApproach</td><td>transform</td><td>fixed value</td></tr>
+<tr><td></td><td>mapParameters</td><td>.type[0].coding[0].code = PART
+.status = #accepted</td><td>.type[0].coding[0].code = PART
+.status = "accepted"</td></tr>
 <tr><th colspan="4">use-case Observation 2507 EXAM</th></tr>
 <tr><td colspan="4"><i>resource Observation</i></td></tr>
-<tr><td>910</td></tr>
-<tr><td></td><td>mapApproach</td><td>transform</td><td>terminologyMaps</td></tr>
+<tr><td></td><td>no changes</td></tr>
 <tr><th colspan="4">use-case Condition: Problem</th></tr>
 <tr><td colspan="4"><i>resource Condition</i></td></tr>
-<tr><td>1607</td></tr>
-<tr><td></td><td>vistaFileFieldName</td><td>PROBLEM - .</td><td></td></tr>
-<tr><td></td><td>vistaFileField</td><td>9000011-</td><td></td></tr>
-<tr><td></td><td>fhirPath</td><td>Condition.category</td><td>Condition.category[us-core]</td></tr>
-<tr><td>349</td></tr>
-<tr><td></td><td>mapApproach</td><td>transform</td><td>fixed value</td></tr>
-<tr><td>958</td></tr>
-<tr><td></td><td>status</td><td>team-approved</td><td>issue</td></tr>
-<tr><td colspan="2">1761 new maprow</td></tr>
+<tr><td></td><td>no changes</td></tr>
 <tr><th colspan="4">use-case Condition: Encounter Diagnosis</th></tr>
 <tr><td colspan="4"><i>resource Condition</i></td></tr>
-<tr><td>1608</td></tr>
-<tr><td></td><td>fhirPath</td><td>Condition.category</td><td>Condition.category[us-core]</td></tr>
-<tr><td colspan="2">1766 new maprow</td></tr>
+<tr><td></td><td>no changes</td></tr>
 <tr><th colspan="4">use-case Vital Signs: CPM</th></tr>
 <tr><td colspan="4"><i>resource Observation</i></td></tr>
-<tr><td colspan="2">1792 new maprow</td></tr>
+<tr><td></td><td>no changes</td></tr>
 <tr><th colspan="4">new use-case Laboratory Results</th></tr>
 <tr><th colspan="4">new use-case Laboratory Results: Chem, hem, tox, ria, ser</th></tr>
 <tr><th colspan="4">new use-case Laboratory Results: Cytopathology</th></tr>
@@ -238,136 +220,67 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <tr><th colspan="4">new use-case Laboratory Results: Surgical Pathology</th></tr>
 <tr><th colspan="4">use-case Document Reference</th></tr>
 <tr><td colspan="4"><i>resource DocumentReference</i></td></tr>
-<tr><td>875</td></tr>
-<tr><td></td><td>fhirPath</td><td>DocumentReference.category</td><td>DocumentReference.category[us-core]</td></tr>
-<tr><td>892</td></tr>
-<tr><td></td><td>mapApproach</td><td>transform</td><td>reference</td></tr>
-<tr><td>893</td></tr>
-<tr><td></td><td>vistaFileField</td><td></td><td>8925-2</td></tr>
-<tr><td></td><td>mapValue</td><td></td><td>calculate()</td></tr>
-<tr><td>894</td></tr>
-<tr><td></td><td>vistaFileField</td><td></td><td>8925-2</td></tr>
-<tr><td></td><td>mapValue</td><td></td><td>calculate()</td></tr>
+<tr><td></td><td>no changes</td></tr>
 <tr><td colspan="4"><i>resource Binary</i></td></tr>
 <tr><td></td><td>no changes</td></tr>
 <tr><th colspan="4">use-case Encounter: Inpatient</th></tr>
 <tr><td colspan="4"><i>resource Encounter</i></td></tr>
-<tr><td>433</td></tr>
-<tr><td></td><td>mapApproach</td><td>transform</td><td>fixed value</td></tr>
-<tr><td></td><td>mapValue</td><td>planned</td><td>#planned</td></tr>
-<tr><td>434</td></tr>
-<tr><td></td><td>mapApproach</td><td>transform</td><td>fixed value</td></tr>
-<tr><td></td><td>mapValue</td><td>in-progress</td><td>#in-progress</td></tr>
 <tr><td>441</td></tr>
 <tr><td></td><td>mapApproach</td><td>source value</td><td>reference</td></tr>
 <tr><td>456</td></tr>
 <tr><td></td><td>fhirPath</td><td>Encounter.hospitalization.dischargeDisposition</td><td>Encounter.hospitalization.dischargeDisposition.coding</td></tr>
 <tr><td></td><td>fhirSubPath</td><td></td><td>.code</td></tr>
-<tr><td colspan="2">1800 new maprow</td></tr>
 <tr><td colspan="4"><i>resource Condition</i></td></tr>
 <tr><td></td><td>no changes</td></tr>
 <tr><th colspan="4">use-case Encounter: Outpatient</th></tr>
 <tr><td colspan="4"><i>resource Encounter</i></td></tr>
-<tr><td>430</td></tr>
-<tr><td></td><td>mapApproach</td><td>transform</td><td>fixed value</td></tr>
-<tr><td></td><td>mapValue</td><td>planned</td><td>#planned</td></tr>
-<tr><td>431</td></tr>
-<tr><td></td><td>mapApproach</td><td>transform</td><td>fixed value</td></tr>
-<tr><td></td><td>mapValue</td><td>in-progress</td><td>#in-progress</td></tr>
-<tr><td>432</td></tr>
-<tr><td></td><td>mapApproach</td><td>transform</td><td>fixed value</td></tr>
-<tr><td></td><td>mapValue</td><td>finished</td><td>#finished</td></tr>
 <tr><td>440</td></tr>
 <tr><td></td><td>mapApproach</td><td>source value</td><td>reference</td></tr>
-<tr><td>614</td></tr>
-<tr><td></td><td>status</td><td>issue</td><td>for review</td></tr>
-<tr><td>1614</td></tr>
-<tr><td></td><td>fhirPath</td><td>Encounter.participant.individual</td><td>Encounter.participant</td></tr>
-<tr><td></td><td>fhirSubPath</td><td></td><td>.individual</td></tr>
-<tr><td></td><td>mapParameters</td><td></td><td>.type[0].coding[0].system = http://terminology.hl7.org/CodeSystem/v3-ParticipationType
-.type[0].coding[0].code=PPRF</td></tr>
-<tr><td colspan="2">1799 new maprow</td></tr>
 <tr><th colspan="4">use-case Immunization</th></tr>
 <tr><td colspan="4"><i>resource Immunization</i></td></tr>
-<tr><td>299</td></tr>
-<tr><td></td><td>mapApproach</td><td>transform</td><td>fixed value</td></tr>
-<tr><td colspan="2">1767 new maprow</td></tr>
+<tr><td></td><td>no changes</td></tr>
 <tr><td colspan="4"><i>resource Observation</i></td></tr>
 <tr><td></td><td>no changes</td></tr>
 <tr><th colspan="4">use-case Implantable Device</th></tr>
 <tr><td colspan="4"><i>resource Device</i></td></tr>
-<tr><td colspan="2">1795 new maprow</td></tr>
+<tr><td></td><td>no changes</td></tr>
 <tr><th colspan="4">use-case Implantable Device: A Lead</th></tr>
 <tr><td colspan="4"><i>resource Device</i></td></tr>
-<tr><td>1358</td></tr>
-<tr><td></td><td>mapApproach</td><td>transform</td><td>fixed value</td></tr>
-<tr><td>1359</td></tr>
-<tr><td></td><td>mapApproach</td><td>transform</td><td>fixed value</td></tr>
+<tr><td></td><td>no changes</td></tr>
 <tr><th colspan="4">use-case Implantable Device: Dental</th></tr>
 <tr><td colspan="4"><i>resource Device</i></td></tr>
 <tr><td></td><td>no changes</td></tr>
 <tr><th colspan="4">use-case Implantable Device: Pacemaker</th></tr>
 <tr><td colspan="4"><i>resource Device</i></td></tr>
-<tr><td>1356</td></tr>
-<tr><td></td><td>mapApproach</td><td>transform</td><td>fixed value</td></tr>
-<tr><td>1357</td></tr>
-<tr><td></td><td>mapApproach</td><td>transform</td><td>fixed value</td></tr>
+<tr><td></td><td>no changes</td></tr>
 <tr><th colspan="4">use-case Implantable Device: Prosthesis</th></tr>
 <tr><td colspan="4"><i>resource Device</i></td></tr>
-<tr><td>1393</td></tr>
-<tr><td></td><td>fhirPath</td><td>Device.type.coding</td><td>Device.type</td></tr>
-<tr><td></td><td>fhirSubPath</td><td>.code</td><td></td></tr>
-<tr><td></td><td>mapValue</td><td>#63653004</td><td>http://snomed.info/sct#63653004 "Biomedical device"</td></tr>
-<tr><td></td><td>mapParameters</td><td>.system = "http://snomed.info/sct"
-.display = "Biomedical device"</td><td></td></tr>
-<tr><td colspan="2">1807 new maprow</td></tr>
+<tr><td>1807</td></tr>
+<tr><td></td><td>status</td><td>for review</td><td>issue</td></tr>
+<tr><td></td><td>fhirPath</td><td>Device.organization</td><td>Device.owner</td></tr>
 <tr><th colspan="4">use-case Implantable Device: Transmitter</th></tr>
 <tr><td colspan="4"><i>resource Device</i></td></tr>
 <tr><td></td><td>no changes</td></tr>
 <tr><th colspan="4">use-case Implantable Device: V Lead</th></tr>
 <tr><td colspan="4"><i>resource Device</i></td></tr>
-<tr><td>1360</td></tr>
-<tr><td></td><td>mapApproach</td><td>transform</td><td>fixed value</td></tr>
-<tr><td>1361</td></tr>
-<tr><td></td><td>mapApproach</td><td>transform</td><td>fixed value</td></tr>
+<tr><td></td><td>no changes</td></tr>
 <tr><th colspan="4">use-case Insurance Verification Read</th></tr>
 <tr><td colspan="4"><i>resource computed</i></td></tr>
 <tr><td></td><td>no changes</td></tr>
 <tr><td colspan="4"><i>resource Coverage</i></td></tr>
 <tr><td></td><td>no changes</td></tr>
 <tr><td colspan="4"><i>resource Organization</i></td></tr>
-<tr><td>1065</td></tr>
-<tr><td></td><td>mapApproach</td><td>source value</td><td>transform</td></tr>
-<tr><td></td><td>fhirPath</td><td>Organization.extension</td><td>Organization.extension[http://va.gov/fhir/StructureDefinition/organization-allowMultipleBedsections]</td></tr>
-<tr><td></td><td>fhirSubPath</td><td></td><td>.valueBoolean</td></tr>
-<tr><td></td><td>mapParameters</td><td>url=http://va.gov/fhir/StructureDefinition/organization-allowMultipleBedsections</td><td></td></tr>
-<tr><td>1066</td></tr>
-<tr><td></td><td>mapApproach</td><td>source value</td><td>transform</td></tr>
-<tr><td></td><td>fhirPath</td><td>Organization.extension</td><td>Organization.extension[http://va.gov/fhir/StructureDefinition/organization-oneOutpatVisitOnBillOnly]</td></tr>
-<tr><td></td><td>fhirSubPath</td><td></td><td>.valueBoolean</td></tr>
-<tr><td></td><td>mapParameters</td><td>url=http://va.gov/fhir/StructureDefinition/organization-oneOutpatVisitOnBillOnly</td><td></td></tr>
-<tr><td>1067</td></tr>
-<tr><td></td><td>fhirPath</td><td>Organization.extension</td><td>Organization.extension[http://va.gov/fhir/StructureDefinition/organization-ambulatorySurgeryRevenueCode]</td></tr>
-<tr><td></td><td>fhirSubPath</td><td></td><td>.valueCoding.code</td></tr>
-<tr><td></td><td>mapParameters</td><td>url=http://va.gov/fhir/StructureDefinition/organization-ambulatorySurgeryRevenueCode
-value.coding.system=http://va.gov/terminology/vistaDefinedTerms/399.2</td><td>.valueCoding.system=http://va.gov/terminology/vistaDefinedTerms/399.2</td></tr>
 <tr><td>1074</td></tr>
 <tr><td></td><td>mapApproach</td><td>source value</td><td>reference</td></tr>
-<tr><td></td><td>fhirPath</td><td>Organization.contact.extension</td><td>Organization.contact.extension[http://hl7.org/fhir/us/directory-query/StructureDefinition/via-intermediary]</td></tr>
 <tr><td></td><td>fhirSubPath</td><td></td><td>.valueReference</td></tr>
-<tr><td></td><td>mapParameters</td><td>url=http://hl7.org/fhir/us/directory-query/StructureDefinition/via-intermediary</td><td></td></tr>
-<tr><td>1075</td></tr>
-<tr><td></td><td>mapApproach</td><td>source value</td><td>transform</td></tr>
-<tr><td></td><td>fhirPath</td><td>Organization.extension</td><td>Organization.extension[http://va.gov/fhir/StructureDefinition/organization-anotherCompanyProcessesInpatClaims]</td></tr>
-<tr><td></td><td>fhirSubPath</td><td></td><td>.valueBoolean</td></tr>
-<tr><td></td><td>mapParameters</td><td>url=http://va.gov/fhir/StructureDefinition/organization-anotherCompanyProcessesInpatClaims</td><td></td></tr>
 <tr><td colspan="4"><i>resource InsurancePlan</i></td></tr>
 <tr><td></td><td>no changes</td></tr>
 <tr><td colspan="4"><i>resource Insurance</i></td></tr>
 <tr><td></td><td>no changes</td></tr>
 <tr><th colspan="4">use-case Insurance Verification Write</th></tr>
 <tr><td colspan="4"><i>resource CoverageEligibilityResponse</i></td></tr>
-<tr><td></td><td>no changes</td></tr>
+<tr><td>1037</td></tr>
+<tr><td></td><td>status</td><td>issue</td><td>for review</td></tr>
 <tr><td colspan="4"><i>resource Coverage</i></td></tr>
 <tr><td></td><td>no changes</td></tr>
 <tr><td colspan="4"><i>resource Patient</i></td></tr>
@@ -383,35 +296,6 @@ value.coding.system=http://va.gov/terminology/vistaDefinedTerms/399.2</td><td>.v
 <tr><td>1280</td></tr>
 <tr><td></td><td>vistaSubFileFieldName</td><td>TELEPHONE EXTENSION</td><td></td></tr>
 <tr><td></td><td>vistaSubFileField</td><td>44-99.1</td><td></td></tr>
-<tr><td>1315</td></tr>
-<tr><td></td><td>vistaSubFileFieldName</td><td>STATE &gt; STATE - ABBREVIATION</td><td>INSTITUTION - STATE &gt; STATE - ABBREVIATION</td></tr>
-<tr><td>1316</td></tr>
-<tr><td></td><td>vistaSubFileFieldName</td><td>DISTRICT</td><td>INSTITUTION - DISTRICT</td></tr>
-<tr><td>1317</td></tr>
-<tr><td></td><td>vistaSubFileFieldName</td><td>STREET ADDR. 1</td><td>INSTITUTION - STREET ADDR. 1</td></tr>
-<tr><td>1318</td></tr>
-<tr><td></td><td>vistaSubFileFieldName</td><td>STREET ADDR. 2</td><td>INSTITUTION - STREET ADDR. 2</td></tr>
-<tr><td>1319</td></tr>
-<tr><td></td><td>vistaSubFileFieldName</td><td>CITY</td><td>INSTITUTION - CITY</td></tr>
-<tr><td>1320</td></tr>
-<tr><td></td><td>vistaSubFileFieldName</td><td>ZIP</td><td>INSTITUTION - ZIP</td></tr>
-<tr><td>1405</td></tr>
-<tr><td></td><td>vistaSubFileFieldName</td><td>COUNTRY &gt; COUNTRY - CODE</td><td>INSTITUTION - COUNTRY &gt; COUNTRY - CODE</td></tr>
-<tr><td></td><td>vistaSubFileField</td><td>4-801 &gt; 779.004-0.1</td><td>4-801 &gt; 779.004-.01</td></tr>
-<tr><td>1323</td></tr>
-<tr><td></td><td>vistaSubFileFieldName</td><td>ST. ADDR. 1 (MAILING)</td><td>INSTITUTION - ST. ADDR. 1 (MAILING)</td></tr>
-<tr><td>1324</td></tr>
-<tr><td></td><td>vistaSubFileFieldName</td><td>ST. ADDR. 2 (MAILING)</td><td>INSTITUTION - ST. ADDR. 2 (MAILING)</td></tr>
-<tr><td>1325</td></tr>
-<tr><td></td><td>vistaSubFileFieldName</td><td>CITY (MAILING)</td><td>INSTITUTION - CITY (MAILING)</td></tr>
-<tr><td>1326</td></tr>
-<tr><td></td><td>vistaSubFileFieldName</td><td>STATE (MAILING) &gt; STATE - ABBREVIATION</td><td>INSTITUTION - STATE (MAILING) &gt; STATE - ABBREVIATION</td></tr>
-<tr><td>1327</td></tr>
-<tr><td></td><td>vistaSubFileFieldName</td><td>ZIP (MAILING)</td><td>INSTITUTION - ZIP (MAILING)</td></tr>
-<tr><td>1406</td></tr>
-<tr><td></td><td>vistaSubFileFieldName</td><td>COUNTRY &gt; COUNTRY - CODE</td><td>INSTITUTION - COUNTRY &gt; COUNTRY - CODE</td></tr>
-<tr><td></td><td>vistaSubFileField</td><td>4-801 &gt; 779.004-0.1</td><td>4-801 &gt; 779.004-.01</td></tr>
-<tr><td colspan="2">1806 new maprow</td></tr>
 <tr><th colspan="4">use-case Lung Cancer Screening</th></tr>
 <tr><td colspan="4"><i>resource DiagnosticReport</i></td></tr>
 <tr><td>935</td></tr>
@@ -426,6 +310,7 @@ value.coding.system=http://va.gov/terminology/vistaDefinedTerms/399.2</td><td>.v
 <tr><td></td><td>no changes</td></tr>
 <tr><th colspan="4">use-case MedicationRequest: NonVA</th></tr>
 <tr><td colspan="4"><i>resource MedicationRequest</i></td></tr>
+<tr><td colspan="2">1346 new maprow</td></tr>
 <tr><td>1540</td></tr>
 <tr><td></td><td>vistaFileFieldName</td><td></td><td>NON-VA MEDS - ORDER NUMBER</td></tr>
 <tr><td></td><td>vistaFileField</td><td></td><td>55.05-7</td></tr>
@@ -434,14 +319,13 @@ value.coding.system=http://va.gov/terminology/vistaDefinedTerms/399.2</td><td>.v
 <tr><td></td><td>vistaFileFieldName</td><td></td><td>NON-VA MEDS - ORDER NUMBER</td></tr>
 <tr><td></td><td>vistaFileField</td><td></td><td>55.05-7</td></tr>
 <tr><td></td><td>mapCase</td><td></td><td>Not null</td></tr>
-<tr><td colspan="2">1764 new maprow</td></tr>
-<tr><td colspan="2">1765 new maprow</td></tr>
+<tr><td>1765</td></tr>
+<tr><td></td><td>fhirPath</td><td>MedicationRequest.extension[http://va.gov/fhir/StructureDefinition/recordedLocation].valueReference</td><td>MedicationRequest.extension[http://va.gov/fhir/StructureDefinition/medicationrequest-recordedLocation].valueReference</td></tr>
 <tr><th colspan="4">use-case MedicationRequest: Outpatient</th></tr>
 <tr><td colspan="4"><i>resource MedicationRequest</i></td></tr>
 <tr><td>798</td></tr>
 <tr><td></td><td>vistaFileFieldName</td><td>PRESCRIPTION - IEN</td><td></td></tr>
 <tr><td></td><td>vistaFileField</td><td>52-.001</td><td></td></tr>
-<tr><td></td><td>mapValue</td><td>ID_generation</td><td>ID_generation()</td></tr>
 <tr><td>803</td></tr>
 <tr><td></td><td>status</td><td>for review</td><td>issue</td></tr>
 <tr><td></td><td>vistaSubFileFieldName</td><td>DRUG - PSNDF &gt; VA PRODUCT - NAME</td><td>DRUG - GENERIC NAME</td></tr>
@@ -455,9 +339,6 @@ value.coding.system=http://va.gov/terminology/vistaDefinedTerms/399.2</td><td>.v
 <tr><td></td><td>mapValue</td><td></td><td>VF_VUIDRxNorm</td></tr>
 <tr><td>807</td></tr>
 <tr><td></td><td>status</td><td>for review</td><td>issue</td></tr>
-<tr><td>808</td></tr>
-<tr><td></td><td>fhirSubPath</td><td></td><td>us-core-practitioner</td></tr>
-<tr><td></td><td>mapValue</td><td>us-core-practitioner</td><td></td></tr>
 <tr><td>809</td></tr>
 <tr><td></td><td>status</td><td>for review</td><td>issue</td></tr>
 <tr><td>810</td></tr>
@@ -482,8 +363,6 @@ value.coding.system=http://va.gov/terminology/vistaDefinedTerms/399.2</td><td>.v
 <tr><td></td><td>status</td><td>for review</td><td>issue</td></tr>
 <tr><td>1666</td></tr>
 <tr><td></td><td>status</td><td>for review</td><td>issue</td></tr>
-<tr><td></td><td>mapValue</td><td>#outpatient</td><td>http://terminology.hl7.org/CodeSystem/medicationrequest-category#outpatient</td></tr>
-<tr><td></td><td>mapParameters</td><td>.system=http://terminology.hl7.org/CodeSystem/medicationrequest-category</td><td></td></tr>
 <tr><td>1724</td></tr>
 <tr><td></td><td>status</td><td>issue</td><td>for review</td></tr>
 <tr><td>1706</td></tr>
@@ -539,121 +418,72 @@ value.coding.system=http://va.gov/terminology/vistaDefinedTerms/399.2</td><td>.v
 <tr><td></td><td>fhirSubPath</td><td></td><td>Organization</td></tr>
 <tr><th colspan="4">use-case Observation EXAM</th></tr>
 <tr><td colspan="4"><i>resource Observation</i></td></tr>
-<tr><td>1581</td></tr>
-<tr><td></td><td>vistaSubFileFieldName</td><td>EXAM - CODE MAPPINGS</td><td>EXAM - CODE MAPPINGS &gt; CODE MAPPINGS</td></tr>
-<tr><td></td><td>vistaSubFileField</td><td>9999999.15-210</td><td>9999999.15-210&gt;9999999.18</td></tr>
-<tr><td></td><td>mapParameters</td><td>.code = termmap(VF_ExamCodingSystem,{CODING SYSTEM(.01})
-.code = {CODE(1)}</td><td>.code = termmap(VF_ICDCodingSystems,{CODING SYSTEM(.01})
-.code = {CODE(1)}</td></tr>
+<tr><td></td><td>no changes</td></tr>
 <tr><th colspan="4">use-case Organization</th></tr>
 <tr><td colspan="4"><i>resource Organization</i></td></tr>
-<tr><td>1252</td></tr>
-<tr><td></td><td>mapCase</td><td>NPI slice</td><td></td></tr>
-<tr><td></td><td>fhirPath</td><td>Organization.identifier</td><td>Organization.identifier[NPI]</td></tr>
-<tr><td>1254</td></tr>
-<tr><td></td><td>mapValue</td><td>prov</td><td>#prov</td></tr>
-<tr><td colspan="2">1786 new maprow</td></tr>
+<tr><td></td><td>no changes</td></tr>
 <tr><th colspan="4">use-case Practitioner</th></tr>
 <tr><td colspan="4"><i>resource Practitioner</i></td></tr>
-<tr><td>376</td></tr>
-<tr><td></td><td>mapParameters</td><td>.system = http://hl7.org/fhir/sid/us-npi
-.type.coding[0].code=NPI 
-.type.coding[0].system=http://terminology.hl7.org/CodeSystem/v2-0203</td><td>.system = http://hl7.org/fhir/sid/us-npi
-.type.coding[0].code=NPI
-.type.coding[0].system=http://terminology.hl7.org/CodeSystem/v2-0203</td></tr>
-<tr><td>377</td></tr>
-<tr><td></td><td>mapParameters</td><td>.system = urn:oid:2.16.840.1.113883.4.814 
-.type.coding[0].code=DEA 
-.type.coding[0].system=http://terminology.hl7.org/CodeSystem/v2-0203</td><td>.system = urn:oid:2.16.840.1.113883.4.814
-.type.coding[0].code=DEA
-.type.coding[0].system=http://terminology.hl7.org/CodeSystem/v2-0203</td></tr>
 <tr><td>382</td></tr>
 <tr><td></td><td>vistaSubFileField</td><td>20 -</td><td>20-</td></tr>
-<tr><td>1530</td></tr>
-<tr><td></td><td>mapApproach</td><td>terminologyMaps</td><td>transform</td></tr>
 <tr><td>1532</td></tr>
 <tr><td></td><td>vistaFileFieldName</td><td>NEW PERSON - STATE</td><td>NEW PERSON - TEMPORARY STATE</td></tr>
-<tr><td></td><td>mapApproach</td><td>terminologyMaps</td><td>transform</td></tr>
 <tr><td>1533</td></tr>
 <tr><td></td><td>vistaFileFieldName</td><td>NEW PERSON - STATE</td><td>NEW PERSON - TEMPORARY STATE</td></tr>
-<tr><td colspan="2">1790 new maprow</td></tr>
 <tr><td colspan="4"><i>resource PractitionerRole</i></td></tr>
 <tr><td></td><td>no changes</td></tr>
 <tr><th colspan="4">use-case Practitioner Role</th></tr>
 <tr><td colspan="4"><i>resource PractitionerRole</i></td></tr>
-<tr><td>411</td></tr>
-<tr><td></td><td>mapApproach</td><td>transform</td><td>fixed value</td></tr>
-<tr><td>412</td></tr>
-<tr><td></td><td>mapApproach</td><td>transform</td><td>fixed value</td></tr>
-<tr><td>1411</td></tr>
-<tr><td></td><td>status</td><td>inactive</td><td>for review</td></tr>
+<tr><td></td><td>no changes</td></tr>
 <tr><th colspan="4">use-case Procedure: Outpatient</th></tr>
 <tr><td colspan="4"><i>resource Procedure</i></td></tr>
-<tr><td>1314</td></tr>
-<tr><td></td><td>fhirPath</td><td>Procedure.category.coding</td><td>Procedure.category</td></tr>
-<tr><td></td><td>fhirSubPath</td><td>.code</td><td></td></tr>
-<tr><td></td><td>mapValue</td><td>#371883000</td><td>http://snomed.info/sct#371883000 "Outpatient procedure (procedure)"</td></tr>
-<tr><td></td><td>mapParameters</td><td>.system="http://snomed.info/sct"
-.display=”Outpatient procedure (procedure)”</td><td></td></tr>
+<tr><td></td><td>no changes</td></tr>
 <tr><th colspan="4">use-case Procedure: Radiology</th></tr>
 <tr><td colspan="4"><i>resource Procedure</i></td></tr>
 <tr><td></td><td>no changes</td></tr>
 <tr><th colspan="4">use-case Procedure: Surgery</th></tr>
 <tr><td colspan="4"><i>resource Procedure</i></td></tr>
-<tr><td>1296</td></tr>
-<tr><td></td><td>fhirSubPath</td><td>.coding.code</td><td>.coding</td></tr>
-<tr><td></td><td>mapValue</td><td>#88797001</td><td>http://snomed.info/sct#88797001 "Complication of surgical procedure (disorder)"</td></tr>
-<tr><td></td><td>mapParameters</td><td>.coding.system="http://snomed.info/sct" 
-.coding.display=”Complication of surgical procedure (disorder)”
-.text="STOMA COMPLICATIONS"</td><td>.text="STOMA COMPLICATIONS"</td></tr>
 <tr><td>1297</td></tr>
-<tr><td></td><td>fhirSubPath</td><td>.coding.code</td><td>.coding</td></tr>
-<tr><td></td><td>mapValue</td><td>#22298006</td><td>http://snomed.info/sct#22298006 "Myocardial infarction (disorder)"</td></tr>
-<tr><td></td><td>mapParameters</td><td>.coding.system="http://snomed.info/sct" 
-.coding.display=”Myocardial infarction (disorder)”
-.text="PERIOPERATIVE MYOCARDIAL INFARCTION"</td><td>.text="PERIOPERATIVE MYOCARDIAL INFARCTION"</td></tr>
-<tr><td>1313</td></tr>
-<tr><td></td><td>fhirSubPath</td><td>.coding.code</td><td>.coding</td></tr>
-<tr><td></td><td>mapValue</td><td>#387713003</td><td>http://snomed.info/sct#387713003 "Surgical procedure"</td></tr>
-<tr><td></td><td>mapParameters</td><td>.coding.system="http://snomed.info/sct"
-.coding.display=”Surgical procedure”</td><td></td></tr>
+<tr><td></td><td>mapParameters</td><td>.text="MYOCARDIAL INFARCTION"</td><td>.text="PERIOPERATIVE MYOCARDIAL INFARCTION"</td></tr>
 <tr><th colspan="4">use-case Smoking Status Observation</th></tr>
 <tr><td colspan="4"><i>resource Observation</i></td></tr>
-<tr><td>1243</td></tr>
-<tr><td></td><td>fhirPath</td><td>Observation.category.coding</td><td>Observation.category[SocialHistory]</td></tr>
-<tr><td></td><td>fhirSubPath</td><td>.code</td><td></td></tr>
-<tr><td></td><td>mapValue</td><td>#social-history</td><td>http://terminology.hl7.org/CodeSystem/observation-category#social-history</td></tr>
-<tr><td></td><td>mapParameters</td><td>.system = "http://terminology.hl7.org/CodeSystem/observation-category"</td><td></td></tr>
-<tr><td>1244</td></tr>
-<tr><td></td><td>mapApproach</td><td>transform</td><td>fixed value</td></tr>
+<tr><td>1245</td></tr>
+<tr><td></td><td>vistaFileFieldName</td><td>V HEALTH FACTOR - PATIENT NAME</td><td>V HEALTH FACTORS - PATIENT NAME</td></tr>
+<tr><td>1246</td></tr>
+<tr><td></td><td>vistaFileFieldName</td><td>V HEALTH FACTOR - VISIT</td><td>V HEALTH FACTORS - VISIT</td></tr>
+<tr><td>1247</td></tr>
+<tr><td></td><td>vistaFileFieldName</td><td>V HEALTH FACTOR - EVENT DATE AND TIME</td><td>V HEALTH FACTORS - EVENT DATE AND TIME</td></tr>
+<tr><td>1248</td></tr>
+<tr><td></td><td>vistaFileFieldName</td><td>V HEALTH FACTOR - ENCOUNTER PROVIDER</td><td>V HEALTH FACTORS - ENCOUNTER PROVIDER</td></tr>
+<tr><td>1249</td></tr>
+<tr><td></td><td>vistaFileFieldName</td><td>V HEALTH FACTOR - HEALTH FACTOR</td><td>V HEALTH FACTORS - HEALTH FACTOR</td></tr>
+<tr><td>1250</td></tr>
+<tr><td></td><td>vistaFileFieldName</td><td>V HEALTH FACTOR - COMMENTS</td><td>V HEALTH FACTORS - COMMENTS</td></tr>
 <tr><th colspan="4">use-case Vital Signs</th></tr>
 <tr><td colspan="4"><i>resource Observation</i></td></tr>
-<tr><td>655</td></tr>
-<tr><td></td><td>mapApproach</td><td>transform</td><td>fixed value</td></tr>
-<tr><td>656</td></tr>
-<tr><td></td><td>mapApproach</td><td>transform</td><td>fixed value</td></tr>
-<tr><td>658</td></tr>
-<tr><td></td><td>fhirSubPath</td><td>.coding.code</td><td></td></tr>
-<tr><td></td><td>mapValue</td><td>#vital-signs</td><td>http://terminology.hl7.org/CodeSystem/observation-category#vital-signs</td></tr>
-<tr><td></td><td>mapParameters</td><td>.coding.system = "http://terminology.hl7.org/CodeSystem/observation-category"</td><td></td></tr>
-<tr><td colspan="2">1793 new maprow</td></tr>
-<tr><td colspan="2">1794 new maprow</td></tr>
+<tr><td>662</td></tr>
+<tr><td></td><td>status</td><td>for review</td><td>issue</td></tr>
+<tr><td></td><td>vistaSubFileFieldName</td><td>GMRV VITAL QUALIFIER - VUID</td><td></td></tr>
+<tr><td></td><td>vistaSubFileField</td><td>120.52-99.99</td><td></td></tr>
+<tr><td></td><td>mapValue</td><td>VF_VitalsBodySite</td><td>VF_VitalsSite</td></tr>
+<tr><td>1655</td></tr>
+<tr><td></td><td>status</td><td>inactive</td><td>for review</td></tr>
+<tr><td></td><td>vistaSubFileFieldName</td><td></td><td>GMRV VITAL QUALIFIER - VUID</td></tr>
+<tr><td></td><td>vistaSubFileField</td><td></td><td>120.52-99.99</td></tr>
+<tr><td></td><td>mapApproach</td><td>terminologyMaps</td><td>reference</td></tr>
+<tr><td></td><td>mapValue</td><td></td><td>Device</td></tr>
+<tr><td>867</td></tr>
+<tr><td></td><td>vistaSubFileFieldName</td><td>GMRV VITAL QUALIFIER - VUID</td><td></td></tr>
+<tr><td></td><td>vistaSubFileField</td><td>120.52-99.99</td><td></td></tr>
 <tr><td colspan="4"><i>resource Organization</i></td></tr>
 <tr><td></td><td>no changes</td></tr>
-<tr><td colspan="4"><i>resource Device</i></td></tr>
-<tr><td></td><td>no changes</td></tr>
+<tr><td colspan="4"><i>new resource Device</i></td></tr>
 <tr><th colspan="4">use-case Vital Signs: BP</th></tr>
 <tr><td colspan="4"><i>resource Observation</i></td></tr>
-<tr><td>666</td></tr>
-<tr><td></td><td>mapValue</td><td>Split_rate_value.Systolic</td><td>Split_rate_value.Systolic()</td></tr>
-<tr><td>667</td></tr>
-<tr><td></td><td>mapValue</td><td>Split_rate_value.Diastolic</td><td>Split_rate_value.Diastolic()</td></tr>
+<tr><td></td><td>no changes</td></tr>
 <tr><th colspan="4">use-case Vital Signs: SpO2</th></tr>
 <tr><td colspan="4"><i>resource Observation</i></td></tr>
-<tr><td>1239</td></tr>
-<tr><td></td><td>mapValue</td><td>Split_SpO2_value.Flow</td><td>Split_SpO2_value.Flow()</td></tr>
-<tr><td>1240</td></tr>
-<tr><td></td><td>mapValue</td><td>Split_SpO2_value.Consentraion</td><td>Split_SpO2_value.Consentration()</td></tr>
+<tr><td></td><td>no changes</td></tr>
 <tr><th colspan="4">use-case Observation Imaging Result: Echo</th></tr>
 <tr><td colspan="4"><i>resource Observation</i></td></tr>
 <tr><td></td><td>no changes</td></tr>
@@ -665,14 +495,7 @@ value.coding.system=http://va.gov/terminology/vistaDefinedTerms/399.2</td><td>.v
 <tr><td></td><td>no changes</td></tr>
 <tr><th colspan="4">use-case Observation Imaging Result</th></tr>
 <tr><td colspan="4"><i>resource Observation</i></td></tr>
-<tr><td>1624</td></tr>
-<tr><td></td><td>fhirPath</td><td>Observation.category.coding</td><td>Observation.category</td></tr>
-<tr><td></td><td>fhirSubPath</td><td>.code</td><td></td></tr>
-<tr><td></td><td>mapValue</td><td>#imaging</td><td>http://terminology.hl7.org/CodeSystem/observation-category#imaging</td></tr>
-<tr><td></td><td>mapParameters</td><td>.system = "http://terminology.hl7.org/CodeSystem/observation-category"</td><td></td></tr>
-<tr><td colspan="2">1796 new maprow</td></tr>
-<tr><td colspan="2">1797 new maprow</td></tr>
-<tr><td colspan="2">1798 new maprow</td></tr>
+<tr><td></td><td>no changes</td></tr>
 <tr><th colspan="4">termmap VF_AppointmentStatus</th></tr>
 <tr><th colspan="4">termmap VF_ethnicityCategory</th></tr>
 <tr><th colspan="4">termmap VF_raceCategory</th></tr>
@@ -695,7 +518,7 @@ value.coding.system=http://va.gov/terminology/vistaDefinedTerms/399.2</td><td>.v
 <tr><th colspan="4">termmap VF_VitalsMeasurementDevice</th></tr>
 <tr><th colspan="4">termmap VF_VitalsCodes</th></tr>
 <tr><th colspan="4">termmap VF_VitalsUnits</th></tr>
-<tr><th colspan="4">termmap VF_VitalsDevice</th></tr>
+<tr><th colspan="4">new termmap VF_VitalsDevice</th></tr>
 <tr><th colspan="4">termmap VF_RadiologyProcedureStatus</th></tr>
 <tr><th colspan="4">termmap VF_ExamStatus</th></tr>
 <tr><th colspan="4">termmap VF_encounterProblemVerificationStatus</th></tr>
@@ -719,7 +542,7 @@ value.coding.system=http://va.gov/terminology/vistaDefinedTerms/399.2</td><td>.v
 <tr><th colspan="4">termmap VF_encounterClass</th></tr>
 <tr><th colspan="4">termmap VF_AntibioticSensitivityInterpretation</th></tr>
 <tr><th colspan="4">termmap VF_VitalsLaterality</th></tr>
-<tr><th colspan="4">termmap VF_VitalsPosition</th></tr>
+<tr><th colspan="4">new termmap VF_VitalsPosition</th></tr>
 <tr><th colspan="4">termmap VF_allergySeverity</th></tr>
 <tr><th colspan="4">termmap VF_PositiveNegative</th></tr>
 <tr><th colspan="4">termmap VF_Boolean</th></tr>
@@ -737,7 +560,7 @@ value.coding.system=http://va.gov/terminology/vistaDefinedTerms/399.2</td><td>.v
 <tr><th colspan="4">termmap Vista_NCPDPCoverageRelationship</th></tr>
 <tr><th colspan="4">termmap VF_ICDCodingSystems</th></tr>
 <tr><th colspan="4">termmap VF_OrderPatientClass</th></tr>
-<tr><th colspan="4">new termmap VF_birthSex</th></tr></table>
+<tr><th colspan="4">termmap VF_birthSex</th></tr></table>
 
 
 
@@ -758,7 +581,7 @@ value.coding.system=http://va.gov/terminology/vistaDefinedTerms/399.2</td><td>.v
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.42.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Apr 22, 2024 07:04+0000">2024-04-22</span>
+          IG &#169; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.43.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Apr 24, 2024 08:47+0000">2024-04-24</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

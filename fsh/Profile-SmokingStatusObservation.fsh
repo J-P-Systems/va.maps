@@ -17,12 +17,12 @@ Source: SmokingStatusObservation
 * status -> "1242: fixed value = #final"
 * category[SocialHistory] -> "1243: fixed value = http://terminology.hl7.org/CodeSystem/observation-category#social-history"
 * code.coding -> "1244: fixed value = http://loinc.org#72166-2 when HEALTH FACTORS - CATEGORY (9999999.64-.03) case TOBACCO"
-* subject -> "1245: reference from V HEALTH FACTOR - PATIENT NAME (9000010.23-.02)"
-* encounter -> "1246: reference from V HEALTH FACTOR - VISIT (9000010.23-.03)"
-* effectiveDateTime -> "1247: source value from V HEALTH FACTOR - EVENT DATE AND TIME (9000010.23-1201)"
-* performer -> "1248: reference from V HEALTH FACTOR - ENCOUNTER PROVIDER (9000010.23-1204)" "Only encounter provider is in CDW, so ordering provider was not included at this time. If ordering provider needs to be included in the future, will need to determine a way to distinguish ordering provider from encounter provider in the practitioner resource."
-* valueCodeableConcept -> "1249: terminologyMaps using VF_SmokingStatus on V HEALTH FACTOR - HEALTH FACTOR (9000010.23-.01)" "If duplicates occur, the latest instance only should be sent."
-* note.text -> "1250: source value from V HEALTH FACTOR - COMMENTS (9000010.23-81101)"
+* subject -> "1245: reference from V HEALTH FACTORS - PATIENT NAME (9000010.23-.02)"
+* encounter -> "1246: reference from V HEALTH FACTORS - VISIT (9000010.23-.03)"
+* effectiveDateTime -> "1247: source value from V HEALTH FACTORS - EVENT DATE AND TIME (9000010.23-1201)"
+* performer -> "1248: reference from V HEALTH FACTORS - ENCOUNTER PROVIDER (9000010.23-1204)" "Only encounter provider is in CDW, so ordering provider was not included at this time. If ordering provider needs to be included in the future, will need to determine a way to distinguish ordering provider from encounter provider in the practitioner resource."
+* valueCodeableConcept -> "1249: terminologyMaps using VF_SmokingStatus on V HEALTH FACTORS - HEALTH FACTOR (9000010.23-.01)" "If duplicates occur, the latest instance only should be sent."
+* note.text -> "1250: source value from V HEALTH FACTORS - COMMENTS (9000010.23-81101)"
 
 Mapping: cdw-to-SmokingStatusObservation
 Id: cdw
