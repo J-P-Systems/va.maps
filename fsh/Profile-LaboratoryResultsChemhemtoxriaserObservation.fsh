@@ -27,7 +27,7 @@ Source: LaboratoryResultsChemhemtoxriaserObservation
 * issued -> "858: source value from CHEM, HEM, TOX, RIA, SER, etc. - DATE REPORT COMPLETED (63.04-.03)"
 * status -> "860: terminologyMaps using VF_LabObservationStatus on CHEM, HEM, TOX, RIA, SER, etc. - ORDERED TEST > ORDERED TEST - DISPOSITION (63.04-.35 > 63.07-10)"
 * valueQuantity.value -> "857: source value from CHEM, HEM, TOX, RIA, SER, etc. - ORDERED TEST (63.04-2+through+862)"
-* valueQuantity.unit -> "864: source value from CHEM, HEM, TOX, RIA, SER, etc. - ORDERED TEST > ORDERED TEST - LAB TEST ORDERED > LABORATORY TEST - SITE/SPECIMEN > SITE/SPECIMEN-UNITS (63.04-.35 > 63.07-13 > 60-100 > 60.01-6)" "Use CTTDM map \"VistA Lab Chem Units to UCUM\" to convert VistA text units to UCUM, where possible"
+* valueQuantity.unit -> "864: source value from CHEM, HEM, TOX, RIA, SER, etc. - ORDERED TEST > ORDERED TEST - LAB TEST ORDERED > LABORATORY TEST - SITE/SPECIMEN > SITE/SPECIMEN - UNITS (63.04-.35 > 63.07-13 > 60-100 > 60.01-6)" "Use CTTDM map \"VistA Lab Chem Units to UCUM\" to convert VistA text units to UCUM, where possible"
 * category -> "843: fixed value = http://terminology.hl7.org/CodeSystem/observation-category#laboratory"
 * subject -> "844: reference from PATIENT - LABORATORY REFERENCE > LAB DATA - LRDFN (2-63 > 63-.01)" "Pointer from PATIENT (2)"
 

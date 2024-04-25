@@ -15,7 +15,7 @@ Source: MedicationDispensePartial
 * type -> "1710: fixed value = #PF"
 * destination.display -> "1713: source value from PRESCRIPTION - PARTIAL DATE > PARTIAL DATE - MAIL/WINDOW (52-60 > 52.2-.02)"
 * authorizingPrescription -> "1565: source value from PRESCRIPTION - PLACER ORDER # (52-39.3)"
-* daysSupply -> "828: source value from PRESCRIPTION - PARTIAL DATE > PARTIAL DATE- DAYS SUPPLY (52-60 > 52.2-.041)"
+* daysSupply -> "828: source value from PRESCRIPTION - PARTIAL DATE > PARTIAL DATE - DAYS SUPPLY (52-60 > 52.2-.041)"
 * destination.display -> "837: source value from PRESCRIPTION - PARTIAL DATE > PARTIAL DATE - MAIL/WINDOW (52-60 > 52.2-.02)"
 * dosageInstruction.doseAndRate.doseQuantity.unit -> "1571: source value from PRESCRIPTION - MEDICATION INSTRUCTIONS > MEDICATION INSTRUCTIONS - UNITS (52-113 > 52.0113-2)"
 * dosageInstruction.doseAndRate.doseQuantity.code -> "1576: terminologyMaps using VF_DoseUnits on PRESCRIPTION - MEDICATION INSTRUCTIONS > MEDICATION INSTRUCTIONS - UNITS (52-113 > 52.0113-2)"

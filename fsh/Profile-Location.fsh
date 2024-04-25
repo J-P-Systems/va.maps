@@ -30,7 +30,7 @@ Source: Location
 * address.line -> "1318: source value from HOSPITAL LOCATION - INSTITUTION > INSTITUTION - STREET ADDR. 2 (44-3 > 4-1.02)"
 * address.city -> "1319: source value from HOSPITAL LOCATION - INSTITUTION > INSTITUTION - CITY (44-3 > 4-1.03)"
 * address.postalCode -> "1320: source value from HOSPITAL LOCATION - INSTITUTION > INSTITUTION - ZIP (44-3 > 4-1.04)"
-* address.country -> "1405: source value from HOSPITAL LOCATION - INSTITUTION > INSTITUTION - COUNTRY > COUNTRY - CODE (44-3 > 4-801 > 779.004-.01)"
+* address.country -> "1405: source value from HOSPITAL LOCATION - INSTITUTION > INSTITUTION - COUNTRY > COUNTRY CODE - CODE (44-3 > 4-801 > 779.004-.01)"
 * address.type -> "1322: fixed value = #physical when HOSPITAL LOCATION - INSTITUTION (44-3)"
 * type.text -> "1412: terminologyMaps using VF_LocationStatus on HOSPITAL LOCATION - SERVICE (44-9)" "could map Medical Service text to FHIR type valueset, e.g.\n\"NEUROLOGY\" to \"NEUR Neurology clinic\"\nOr is this combination of TREATEMENT SPECIALTY (9.5) and SERVICE/SECTION? and STOP CODE?"
 * mode -> "1806: fixed value = #instance" "Added 4/5/24 to match LH PHAPI"

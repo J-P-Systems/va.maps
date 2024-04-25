@@ -30,8 +30,8 @@ Source: Organization
 * address[physical].district -> "1261: source value from INSTITUTION - DISTRICT (4-.03)"
 * address[physical].state -> "1262: source value from INSTITUTION - STATE > STATE - ABBREVIATION (4-.02 > 5-1)"
 * address[physical].postalCode -> "1263: source value from INSTITUTION - ZIP (4-1.04)"
-* address[physical].country -> "1264: source value from INSTITUTION - COUNTRY > COUNTRY - CODE (4-801 > 779.004-.01)"
-* contact.name.text -> "1265: source value from INSTITUTION - CONTACT > CONTACT - NAME (4-4 > 4.03-.01)"
+* address[physical].country -> "1264: source value from INSTITUTION - COUNTRY > COUNTRY CODE - CODE (4-801 > 779.004-.01)"
+* contact.name.text -> "1265: source value from INSTITUTION - CONTACT > CONTACT - CONTACT (4-4 > 4.03-.01)"
 * contact.telecom.value -> "1266: source value from INSTITUTION - CONTACT > CONTACT - PHONE # (4-4 > 4.03-.03)"
 * address[postal].type -> "1268: fixed value = #postal"
 * address[postal].line -> "1269: source value from INSTITUTION - ST. ADDR. 1 (MAILING) (4-4.01)"
@@ -39,7 +39,7 @@ Source: Organization
 * address[postal].city -> "1271: source value from INSTITUTION - CITY (MAILING) (4-4.03)"
 * address[postal].state -> "1272: source value from INSTITUTION - STATE (MAILING) (4-4.04)"
 * address[postal].postalCode -> "1273: source value from INSTITUTION - ZIP (MAILING) (4-4.05)"
-* address[postal].country -> "1274: source value from INSTITUTION - COUNTRY > COUNTRY - CODE (4-801 > 779.004-.01)" "Assume country is same as for physical\nOrganization.address.where(type=\"postal\")"
+* address[postal].country -> "1274: source value from INSTITUTION - COUNTRY > COUNTRY CODE - CODE (4-801 > 779.004-.01)" "Assume country is same as for physical\nOrganization.address.where(type=\"postal\")"
 * telecom -> "1786: target not supported" "Institution does not have a root level phone number"
 
 Mapping: cdw-to-Organization

@@ -23,7 +23,7 @@ Source: LaboratoryResultsCytopathologyDiagnosticReport
 * performer -> "1684: reference from CYTOPATHOLOGY - RELEASING SITE (63.09-.345)"
 * resultsInterpreter -> "1694: reference from CYTOPATHOLOGY - PATHOLOGIST/CYTOTECHNOLOGIST (63.09-.02)"
 * specimen -> "1692: reference from CYTOPATHOLOGY - CYTOPATH ACC # (63.09-.06)"
-* media.link -> "1440: reference from CYTOPATHOLOGY - CYTOPATHOLOGY DIAGNOSIS (63.09-2005)"
+* media.link -> "1440: reference from CYTOPATHOLOGY - IMAGE (63.09-2005)"
 * conclusion -> "1448: source value from CYTOPATHOLOGY - CYTOPATHOLOGY DIAGNOSIS (63.09-1.4)" "Vista field is word processing so CodeableConcept cannot be used"
 * presentedForm.data -> "1719: source value from CYTOPATHOLOGY - TIU REFERENCE DATE/TIME - CY > TIU REFERENCE DATE/TIME - CY - TIU ENTRY POINTER - CY > TIU DOCUMENT - REPORT TEXT (63.09-.16 > 63.47-1 > 8925-2)" "HDR may be used to get the report"
 * category[LaboratorySlice] -> "1419: fixed value = http://terminology.hl7.org/CodeSystem/v2-0074#LAB"

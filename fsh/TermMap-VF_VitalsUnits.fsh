@@ -10,41 +10,11 @@ Usage: #definition
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFVitalsUnits-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/VSVFVitalsUnits"
 * group[0].source = "http://terminology.hl7.org/CodeSystem/VHA"
+* group[=].target = "http://unitsofmeasure.org"
 * group[=].element[0].code = #4688718
 * group[=].element[=].display = "AUDIOMETRY"
-* group[=].element[=].target.code = #<omit_code>
-* group[=].element[=].target.equivalence = #equal
-* group[=].element[+].code = #4688721
-* group[=].element[=].display = "FETAL HEART TONES"
-* group[=].element[=].target.code = #<omit_code>
-* group[=].element[=].target.equivalence = #equal
-* group[=].element[+].code = #4688722
-* group[=].element[=].display = "FUNDAL HEIGHT"
-* group[=].element[=].target.code = #<omit_code>
-* group[=].element[=].target.equivalence = #equal
-* group[=].element[+].code = #4688723
-* group[=].element[=].display = "HEARING"
-* group[=].element[=].target.code = #<omit_code>
-* group[=].element[=].target.equivalence = #equal
-* group[=].element[+].code = #4500635
-* group[=].element[=].display = "PAIN"
-* group[=].element[=].target.code = #<omit_code>
-* group[=].element[=].target.equivalence = #equal
-* group[=].element[+].code = #4688726
-* group[=].element[=].display = "TONOMETRY"
-* group[=].element[=].target.code = #<omit_code>
-* group[=].element[=].target.equivalence = #equal
-* group[=].element[+].code = #4688727
-* group[=].element[=].display = "VISION CORRECTED"
-* group[=].element[=].target.code = #<omit_code>
-* group[=].element[=].target.equivalence = #equal
-* group[=].element[+].code = #4688728
-* group[=].element[=].display = "VISION UNCORRECTED"
-* group[=].element[=].target.code = #<omit_code>
-* group[=].element[=].target.equivalence = #equal
-* group[+].source = "http://terminology.hl7.org/CodeSystem/VHA"
-* group[=].target = "http://unitsofmeasure.org"
-* group[=].element[0].code = #4500634
+* group[=].element[=].target.equivalence = #unmatched
+* group[=].element[+].code = #4500634
 * group[=].element[=].display = "BLOOD PRESSURE"
 * group[=].element[=].target.code = #mm[Hg]
 * group[=].element[=].target.equivalence = #equal
@@ -61,11 +31,23 @@ Usage: #definition
 * group[=].element[=].target.code = #[in_i]
 * group[=].element[=].target.display = "[in_i]"
 * group[=].element[=].target.equivalence = #equal
+* group[=].element[+].code = #4688721
+* group[=].element[=].display = "FETAL HEART TONES"
+* group[=].element[=].target.equivalence = #unmatched
+* group[=].element[+].code = #4688722
+* group[=].element[=].display = "FUNDAL HEIGHT"
+* group[=].element[=].target.equivalence = #unmatched
+* group[=].element[+].code = #4688723
+* group[=].element[=].display = "HEARING"
+* group[=].element[=].target.equivalence = #unmatched
 * group[=].element[+].code = #4688724
 * group[=].element[=].display = "HEIGHT"
 * group[=].element[=].target.code = #[in_i]
 * group[=].element[=].target.display = "[in_i]"
 * group[=].element[=].target.equivalence = #equal
+* group[=].element[+].code = #4500635
+* group[=].element[=].display = "PAIN"
+* group[=].element[=].target.equivalence = #unmatched
 * group[=].element[+].code = #4500636
 * group[=].element[=].display = "PULSE"
 * group[=].element[=].target.code = #/min
@@ -86,6 +68,15 @@ Usage: #definition
 * group[=].element[=].target.code = #[degF]
 * group[=].element[=].target.display = "[degF]"
 * group[=].element[=].target.equivalence = #equal
+* group[=].element[+].code = #4688726
+* group[=].element[=].display = "TONOMETRY"
+* group[=].element[=].target.equivalence = #unmatched
+* group[=].element[+].code = #4688727
+* group[=].element[=].display = "VISION CORRECTED"
+* group[=].element[=].target.equivalence = #unmatched
+* group[=].element[+].code = #4688728
+* group[=].element[=].display = "VISION UNCORRECTED"
+* group[=].element[=].target.equivalence = #unmatched
 * group[=].element[+].code = #4500639
 * group[=].element[=].display = "WEIGHT"
 * group[=].element[=].target.code = #[lb_av]
@@ -97,7 +88,6 @@ Title: "VF_VitalsUnits"
 Description: "FHIR Target ValueSet for Terminology Maps VF_VitalsUnits"
 * ^experimental = false
 * ^name = "VF_VitalsUnits"
-* include urn:undefined#<omit_code> 
 * include http://unitsofmeasure.org#mm[Hg] 
 * include http://unitsofmeasure.org#kg/m2 
 * include http://unitsofmeasure.org#cm[H2O] 
@@ -113,20 +103,20 @@ Description: "VistA Source ValueSet for Terminology Maps VF_VitalsUnits"
 * ^experimental = false
 * ^name = "VF_VitalsUnits"
 * include http://terminology.hl7.org/CodeSystem/VHA#4688718 "AUDIOMETRY"
-* include http://terminology.hl7.org/CodeSystem/VHA#4688721 "FETAL HEART TONES"
-* include http://terminology.hl7.org/CodeSystem/VHA#4688722 "FUNDAL HEIGHT"
-* include http://terminology.hl7.org/CodeSystem/VHA#4688723 "HEARING"
-* include http://terminology.hl7.org/CodeSystem/VHA#4500635 "PAIN"
-* include http://terminology.hl7.org/CodeSystem/VHA#4688726 "TONOMETRY"
-* include http://terminology.hl7.org/CodeSystem/VHA#4688727 "VISION CORRECTED"
-* include http://terminology.hl7.org/CodeSystem/VHA#4688728 "VISION UNCORRECTED"
 * include http://terminology.hl7.org/CodeSystem/VHA#4500634 "BLOOD PRESSURE"
 * include http://terminology.hl7.org/CodeSystem/VHA#4536993 "BODY MASS INDEX"
 * include http://terminology.hl7.org/CodeSystem/VHA#4688719 "CENTRAL VENOUS PRESSURE"
 * include http://terminology.hl7.org/CodeSystem/VHA#4688720 "CIRCUMFERENCE/GIRTH"
+* include http://terminology.hl7.org/CodeSystem/VHA#4688721 "FETAL HEART TONES"
+* include http://terminology.hl7.org/CodeSystem/VHA#4688722 "FUNDAL HEIGHT"
+* include http://terminology.hl7.org/CodeSystem/VHA#4688723 "HEARING"
 * include http://terminology.hl7.org/CodeSystem/VHA#4688724 "HEIGHT"
+* include http://terminology.hl7.org/CodeSystem/VHA#4500635 "PAIN"
 * include http://terminology.hl7.org/CodeSystem/VHA#4500636 "PULSE"
 * include http://terminology.hl7.org/CodeSystem/VHA#4500637 "PULSE OXIMETRY"
 * include http://terminology.hl7.org/CodeSystem/VHA#4688725 "RESPIRATION"
 * include http://terminology.hl7.org/CodeSystem/VHA#4500638 "TEMPERATURE"
+* include http://terminology.hl7.org/CodeSystem/VHA#4688726 "TONOMETRY"
+* include http://terminology.hl7.org/CodeSystem/VHA#4688727 "VISION CORRECTED"
+* include http://terminology.hl7.org/CodeSystem/VHA#4688728 "VISION UNCORRECTED"
 * include http://terminology.hl7.org/CodeSystem/VHA#4500639 "WEIGHT"

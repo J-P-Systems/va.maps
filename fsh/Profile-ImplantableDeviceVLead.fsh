@@ -15,7 +15,7 @@ Source: ImplantableDeviceVLead
 * status -> "1360: fixed value = #active when V LEAD IMPLANT - EXPLANT DATE (698.1-56) case is NULL" "If NULL, can it be assumed it is active?"
 * status -> "1361: fixed value = #inactive when V LEAD IMPLANT - EXPLANT DATE (698.1-56) case is not NULL"
 * manufacturer -> "1369: source value from V LEAD IMPLANT - V LEAD MANUFACTURER > PACEMAKER MANUFACTURER - NAME (698.1-3 > 698.6-.01)"
-* serialNumber -> "1383: source value from V LEAD - V LEAD SERIAL NUMBER (698.1-4)"
+* serialNumber -> "1383: source value from V LEAD IMPLANT - V LEAD SERIAL NUMBER (698.1-4)"
 * modelNumber -> "1391: source value from V LEAD IMPLANT - V LEAD MODEL > PACEMAKER EQUIPMENT - MODEL NUMBER/NAME (698.1-2 > 698.4-.01)"
 * type -> "1397: terminologyMaps using VF_deviceTypePacemaker on V LEAD IMPLANT - V LEAD MODEL > PACEMAKER EQUIPMENT - TYPE OF EQUIPMENT (698.1-2 > 698.4-1)" "A request for more specific SNOMED codes will be submitted (01/04/2023)"
 * patient -> "1402: reference from V LEAD IMPLANT - MEDICAL PATIENT (698.1-1)"

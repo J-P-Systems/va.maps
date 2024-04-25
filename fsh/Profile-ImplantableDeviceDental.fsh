@@ -17,7 +17,7 @@ Source: ImplantableDeviceDental
 * distinctIdentifier -> "1364: source value from DENTAL DEVICE TRACKING - DONATION ID (228.9-4.8)"
 * manufacturer -> "1370: source value from DENTAL DEVICE TRACKING - MANUFACTURER (228.9-4.1)"
 * manufactureDate -> "1372: source value from DENTAL DEVICE TRACKING - MANUFACTURER DATE (228.9-4.6)"
-* expirationDate -> "1375: source value from DENTAL DEVICE TRACKING - EXPRATION DATE (228.9-4.7)"
+* expirationDate -> "1375: source value from DENTAL DEVICE TRACKING - EXPIRATION DATE (228.9-4.7)"
 * lotNumber -> "1378: source value from DENTAL DEVICE TRACKING - LOT (228.9-4.4)"
 * serialNumber -> "1384: source value from DENTAL DEVICE TRACKING - S/N (228.9-4.3)"
 * modelNumber -> "1392: source value from DENTAL DEVICE TRACKING - MODEL (228.9-4.2)"

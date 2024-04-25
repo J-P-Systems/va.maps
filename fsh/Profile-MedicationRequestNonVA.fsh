@@ -2,7 +2,7 @@ Profile: MedicationRequestNonVA
 Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest
 Id: MedicationRequestNonVA
 Title: "MedicationRequest: NonVA"
-Description: "This StructureDefinition contains the maps for VistA file NON (55.05) to us-core-medicationrequest"
+Description: "This StructureDefinition contains the maps for VistA file NON-VA MEDS (55.05) to us-core-medicationrequest"
 * ^status = #draft
 * extension contains http://va.gov/fhir/StructureDefinition/medicationrequest-recordedLocation named medicationrequest-recordedLocation 0..1
 * intent and reportedBoolean and note and extension[http://va.gov/fhir/StructureDefinition/medicationrequest-recordedLocation].valueReference MS

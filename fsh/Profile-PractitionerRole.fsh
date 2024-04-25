@@ -24,7 +24,7 @@ Source: PractitionerRole
 * period.start -> "413: source value from NEW PERSON - PERSON CLASS > PERSON CLASS - EFFECTIVE DATE (200-8932.1 > 200.05-2)" "Changed mapping to indicate the effective date field related to the class which aligns to the role"
 * practitioner -> "414: reference from NEW PERSON - NAME (200-.01)" "Use US Core Practitioner Profile.\nChanged map to better align with US Core"
 * period.end -> "416: source value from NEW PERSON - PERSON CLASS > PERSON CLASS - EXPIRATION DATE (200-8932.1 > 200.05-3)" "Changed mapping to indicate the expiration date field related to the class which aligns to the role\n\n04/12/23 Confirmed during FHIR Office Hours: Role expiration date should be used; termination date is a system date"
-* extension[http://hl7.org/fhir/StructureDefinition/practitioner-job-title].valueCodeableConcept.text -> "417: source value from SIGNATURE BLOCK TITLE (200-20.3)"
+* extension[http://hl7.org/fhir/StructureDefinition/practitioner-job-title].valueCodeableConcept.text -> "417: source value from NEW PERSON - SIGNATURE BLOCK TITLE (200-20.3)"
 * extension[http://hl7.org/fhir/StructureDefinition/practitioner-job-title].valueCodeableConcept.text -> "418: source value from NEW PERSON - TITLE > TITLE - NAME (200-8 > 3.1-.01)"
 * specialty.coding.code -> "419: source value from PERSON CLASS - X12 CODE (8932.1-6)" "Added paths"
 * location -> "422: reference from PROVIDER - PROVIDER (44.1-.01)" "This is a reverse pointer. Location 44 contains 44.1, pointing at providers"

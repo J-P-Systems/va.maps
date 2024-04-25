@@ -60,7 +60,7 @@ Characteristics: #can-be-target
 * stateMailing 0..1 Element "STATE (MAILING) (-4.04)"
 * zipMailing 0..1 Element "ZIP (MAILING) (-4.05)"
 * state only Reference(State5)
-* country only Reference(Country779004)
+* country only Reference(CountryCode779004)
 * contact only Reference(Contact403)
 
 Logical: State5
@@ -110,13 +110,13 @@ Characteristics: #can-be-target
 * principalDiagnosis 0..1 Element "PRINCIPAL DIAGNOSIS (-79)"
 * secondaryDiagnosis  0..1 Element "SECONDARY DIAGNOSIS [#] (-79.16)"
 * procedure  0..1 Element "PROCEDURE [#] (-45.01)"
-* sourceOfAdmission 0..1 Coding "SOURCE OF ADMISSION (-20)"
-* sourceOfAdmission from http://va.gov/fhir/ValueSet/VSVFSourceOfAdmission-vista (example)
+* sourceOfAdmission 0..1 Reference "SOURCE OF ADMISSION (-20)"
 * transferringFacility 0..1 Element "TRANSFERRING FACILITY (-21.1)"
 * receivingFacility 0..1 Element "RECEIVING FACILITY (-76.1)"
 * placeOfDisposition 0..1 Element "PLACE OF DISPOSITION (-75)"
 * wardAtDischarge 0..1 Element "WARD AT DISCHARGE (-2.2)"
 * facility 0..1 Element "FACILITY (-3)"
+* sourceOfAdmission only Reference(SourceOfAdmission451)
 
 Logical: InpatientCptCode46
 Id: InpatientCptCode46
@@ -488,13 +488,12 @@ Id: Reactions12081
 Title: "REACTIONS (120.81)"
 Description: "-"
 Characteristics: #can-be-target
-* reaction 0..1 Reference "REACTION (-.01)"
+* reaction 0..1 Element "REACTION (-.01)"
 * dateEntered 0..1 Element "DATE ENTERED (-3)"
-* reaction only Reference(HospitalLocation12083)
 
-Logical: HospitalLocation12083
-Id: HospitalLocation12083
-Title: "HOSPITAL LOCATION (120.83)"
+Logical: Signsymptoms12083
+Id: Signsymptoms12083
+Title: "SIGN/SYMPTOMS (120.83)"
 Description: "-"
 Characteristics: #can-be-target
 
@@ -686,7 +685,8 @@ Characteristics: #can-be-target
 * releasingSite 0..1 Element "RELEASING SITE (-.345)"
 * pathologistcytotechnologist 0..1 Element "PATHOLOGIST/CYTOTECHNOLOGIST (-.02)"
 * cytopathAcc  0..1 Element "CYTOPATH ACC # (-.06)"
-* cytopathologyDiagnosis 0..1 Element "CYTOPATHOLOGY DIAGNOSIS (-2005)"
+* image 0..1 Element "IMAGE (-2005)"
+* cytopathologyDiagnosis 0..1 Element "CYTOPATHOLOGY DIAGNOSIS (-1.4)"
 * tiuReferenceDatetimeCy 0..1 Reference "TIU REFERENCE DATE/TIME - CY (-.16)"
 * specimen 0..1 Reference "SPECIMEN (-.012)"
 * orderedTest only Reference(OrderedTest6351)
@@ -753,7 +753,8 @@ Id: TiuReferenceDatetime6349
 Title: "TIU REFERENCE DATE/TIME (63.49)"
 Description: "-"
 Characteristics: #can-be-target
-* emTiuEntryPointerEm 0..1 Element "EM - TIU ENTRY POINTER - EM (-1)"
+* emTiuEntryPointerEm 0..1 Reference "EM - TIU ENTRY POINTER - EM (-1)"
+* emTiuEntryPointerEm only Reference(TiuDocument8925)
 
 Logical: Specimen63202
 Id: Specimen63202
@@ -882,13 +883,14 @@ Title: "SURGICAL PATHOLOGY (63.08)"
 Description: "-"
 Characteristics: #can-be-target
 * orderedTest 0..1 Reference "ORDERED TEST (-.35)"
-* datetimeSpecimenTaken 0..1 Element "DATE/TIME SPECIMEN TAKEN (-.01)"
+* urgicalPathologyDatetimeSpecimenTaken 0..1 Element "URGICAL PATHOLOGY- DATE/TIME SPECIMEN TAKEN (-.01)"
 * dateReportCompleted 0..1 Element "DATE REPORT COMPLETED (-.03)"
 * releasedBy 0..1 Element "RELEASED BY (-.13)"
 * releasingSite 0..1 Element "RELEASING SITE (-.345)"
 * pathologist 0..1 Element "PATHOLOGIST (-.02)"
 * surgicalPathAcc  0..1 Element "SURGICAL PATH ACC # (-.06)"
-* surgicalPathDiagnosis 0..1 Element "SURGICAL PATH DIAGNOSIS (-2005)"
+* image 0..1 Element "IMAGE (-2005)"
+* surgicalPathDiagnosis 0..1 Element "SURGICAL PATH DIAGNOSIS (-1.4)"
 * tiuReferenceDatetimeSp 0..1 Reference "TIU REFERENCE DATE/TIME - SP (-.16)"
 * specimen 0..1 Reference "SPECIMEN (-.012)"
 * orderedTest only Reference(OrderedTest6353)
@@ -910,7 +912,8 @@ Id: TiuReferenceDatetime6319
 Title: "TIU REFERENCE DATE/TIME (63.19)"
 Description: "-"
 Characteristics: #can-be-target
-* spTiuEntryPointerSp 0..1 Element "SP - TIU ENTRY POINTER - SP (-1)"
+* spTiuEntryPointerSp 0..1 Reference "SP - TIU ENTRY POINTER - SP (-1)"
+* spTiuEntryPointerSp only Reference(TiuDocument8925)
 
 Logical: Specimen63812
 Id: Specimen63812
@@ -935,11 +938,13 @@ Characteristics: #can-be-target
 * documentType 0..1 Element "DOCUMENT TYPE (-.08)"
 * standardTitle 0..1 Element "STANDARD TITLE (-.01)"
 
-Logical: PrfCode451
-Id: PrfCode451
-Title: "PRF CODE (45.1)"
+Logical: SourceOfAdmission451
+Id: SourceOfAdmission451
+Title: "SOURCE OF ADMISSION (45.1)"
 Description: "-"
 Characteristics: #can-be-target
+* ptfCode 0..1 Coding "PTF CODE (-.01)"
+* ptfCode from http://va.gov/fhir/ValueSet/VSVFSourceOfAdmission-vista (example)
 
 Logical: Location999999906
 Id: Location999999906
@@ -1065,7 +1070,7 @@ Characteristics: #can-be-target
 * donationId 0..1 Element "DONATION ID (-4.8)"
 * manufacturer 0..1 Element "MANUFACTURER (-4.1)"
 * manufacturerDate 0..1 Element "MANUFACTURER DATE (-4.6)"
-* exprationDate 0..1 Element "EXPRATION DATE (-4.7)"
+* expirationDate 0..1 Element "EXPIRATION DATE (-4.7)"
 * lot 0..1 Element "LOT (-4.4)"
 * sn 0..1 Element "S/N (-4.3)"
 * model 0..1 Element "MODEL (-4.2)"
@@ -1107,21 +1112,21 @@ Characteristics: #can-be-target
 * vLeadManufacturer only Reference(PacemakerManufacturer6986)
 * vLeadModel only Reference(PacemakerEquipment6984)
 
-Logical: Country779004
-Id: Country779004
-Title: "COUNTRY (779.004)"
+Logical: CountryCode779004
+Id: CountryCode779004
+Title: "COUNTRY CODE (779.004)"
 Description: "-"
 Characteristics: #can-be-target
 * code 0..1 Element "CODE (-.01)"
 
-Logical: Non5505
-Id: Non5505
-Title: "NON (55.05)"
+Logical: NonvaMeds5505
+Id: NonvaMeds5505
+Title: "NON-VA MEDS (55.05)"
 Description: "-"
 Characteristics: #can-be-target
-* vaMedsOrderNumber 0..1 Element "VA MEDS - ORDER NUMBER (-7)"
-* vaMedsDisclaimer 0..1 Element "VA MEDS - DISCLAIMER (-10)"
-* vaMedsClinic 0..1 Element "VA MEDS - CLINIC (-13)"
+* orderNumber 0..1 Element "ORDER NUMBER (-7)"
+* disclaimer 0..1 Element "DISCLAIMER (-10)"
+* clinic 0..1 Element "CLINIC (-13)"
 
 Logical: MedicationInstructions520113
 Id: MedicationInstructions520113
@@ -1194,7 +1199,7 @@ Id: Contact403
 Title: "CONTACT (4.03)"
 Description: "-"
 Characteristics: #can-be-target
-* name 0..1 Element "NAME (-.01)"
+* contact 0..1 Element "CONTACT (-.01)"
 * phone  0..1 Element "PHONE # (-.03)"
 
 Logical: PersonClass20005
