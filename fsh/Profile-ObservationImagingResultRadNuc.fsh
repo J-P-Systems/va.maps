@@ -19,7 +19,7 @@ Source: ObservationImagingResultRadNuc
 * effectiveDateTime -> "1636: source value from RAD/NUC MED REPORTS - EXAM DATE/TIME (74-3)"
 * issued -> "1639: source value from RAD/NUC MED REPORTS - VERIFIED DATE (74-7)"
 * performer -> "1642: source value from RAD/NUC MED REPORTS - VERIFYING PHYSICIAN (74-9)"
-* valueString -> "1647: source value from RAD/NUC MED REPORTS - IMPRESSION TEXT > IMPRESSION TEXT - IMPRESSION TEXT (74-300 > 74.03-.01)"
+* valueString -> "1647: source value from RAD/NUC MED REPORTS - IMPRESSION TEXT (74-300)"
 * category -> "1624: fixed value = http://terminology.hl7.org/CodeSystem/observation-category#imaging"
 * dataAbsentReason -> "1796: target not supported" "Always has data"
 * valueQuantity -> "1797: target not supported" "value is string"
@@ -32,4 +32,3 @@ Source: ObservationImagingResultRadNuc
 * status -> "SStaff.RadiologyNuclearMedicineReport.ReportStatus"
 * effectiveDateTime -> "SStaff.RadiologyNuclearMedicineReport.ExamDateTime"
 * issued -> "SStaff.RadiologyNuclearMedicineReport.VerifiedDateTime"
-* valueString -> "SPatientText.RadiologyImpressions.ImpressionText"

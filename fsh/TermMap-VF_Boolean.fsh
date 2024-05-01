@@ -9,7 +9,7 @@ Usage: #definition
 * description = "Terminology Maps VF_Boolean"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFBoolean-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/VSVFBoolean"
-* group[0].source = "http://va.gov/terminology/vistaDefinedTerms/51-129"
+* group[0].source = "http://va.gov/terminology/vistaDefinedTerms/52-129"
 * group[=].target = "http://hl7.org/fhir/StructureDefinition/boolean"
 * group[=].element[0].code = #0
 * group[=].element[=].display = "No"
@@ -33,5 +33,5 @@ Title: "VF_Boolean VistA"
 Description: "VistA Source ValueSet for Terminology Maps VF_Boolean"
 * ^experimental = false
 * ^name = "VF_Boolean"
-* include http://va.gov/terminology/vistaDefinedTerms/51-129#0 "No"
-* include http://va.gov/terminology/vistaDefinedTerms/51-129#1 "Yes"
+* include http://va.gov/terminology/vistaDefinedTerms/52-129#0 "No"
+* include http://va.gov/terminology/vistaDefinedTerms/52-129#1 "Yes"

@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Mapset Qa - US Veterans Administration FHIR Map Set Implementation Guide v0.44.0</title>
+    <title>Mapset Qa - US Veterans Administration FHIR Map Set Implementation Guide v0.45.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -58,7 +58,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">US Veterans Administration FHIR Map Set Implementation Guide</span>
             <br/>
-            <span style="display:inline-block;">0.44.0 - ci-build
+            <span style="display:inline-block;">0.45.0 - 240501
 
 
 
@@ -151,7 +151,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">US Veterans Administration FHIR Map Set Implementation Guide - Local Development build (v0.44.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">US Veterans Administration FHIR Map Set Implementation Guide - Local Development build (v0.45.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>Mapset Qa</h2>
   
 
@@ -257,7 +257,6 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li>WARN: 339 profile ImmunizationImmunization expected only vistaFile 9000010.11 but got 9999999.41</li>
   <li>WARN: 1609 profile ImmunizationImmunization expected only vistaFile 9000010.11 but got 9999999.41</li>
   <li>WARN: 1399 profile ImplantableDeviceProsthesis expected only vistaFile 130.01 but got 130</li>
-  <li>WARN: 1706 profile MedicationRequestOutpatientMedicationRequest expected only vistaFile 52 but got 51</li>
   <li>WARN: 419 profile PractitionerRole expected only vistaFile 200 but got 8932.1</li>
   <li>WARN: 422 profile PractitionerRole expected only vistaFile 200 but got 44.1</li>
   <li>WARN: 1508 profile ProcedureRadiology expected only vistaFile 70.03 but got 70.02</li>
@@ -277,9 +276,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li>WARN: VF_raceCategory sourceSystem missing; using derived http://va.gov/terminology/vistaDefinedTerms/2-2</li>
   <li>WARN: VF_deviceTypePacemaker sourceSystem missing; using derived http://va.gov/terminology/vistaDefinedTerms/698.4-1</li>
   <li>WARN: VF_ImageInterpretation sourceSystem missing; using derived http://va.gov/terminology/vistaDefinedTerms/691.5-.03</li>
-  <li>ERROR: VF_documentReferencedocStatus targetSystem missing; manual lookup from FHIR resource!; using urn:undefined</li>
   <li>WARN: VF_problemStatus sourceSystem missing; using derived http://va.gov/terminology/vistaDefinedTerms/9000011-.12</li>
-  <li>ERROR: VF_VitalsCuffSize sourceSystem missing and not used; default to urn:undefined</li>
+  <li>WARN: VF_VitalsCuffSize sourceSystem missing; using derived http://va.gov/terminology/vistaDefinedTerms/120.52-99.99</li>
   <li>WARN: VF_PractitionerCountry sourceSystem missing; using derived http://va.gov/terminology/vistaDefinedTerms/200-.1215</li>
   <li>WARN: VF_SourceOfAdmission sourceSystem missing; using derived http://va.gov/terminology/vistaDefinedTerms/45.1-.01</li>
   <li>WARN: VF_allergyMechanism sourceSystem missing; using derived http://va.gov/terminology/vistaDefinedTerms/120.8-17</li>
@@ -300,7 +298,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li>ERROR: VF_AntibioticSensitivityInterpretation sourceSystem missing and not used; default to urn:undefined</li>
   <li>WARN: VF_allergySeverity sourceSystem missing; using derived http://va.gov/terminology/vistaDefinedTerms/120.85-14.5</li>
   <li>ERROR: VF_PositiveNegative sourceSystem missing and not used; default to urn:undefined</li>
-  <li>WARN: VF_Boolean sourceSystem missing; using derived http://va.gov/terminology/vistaDefinedTerms/51-129</li>
+  <li>WARN: VF_Boolean sourceSystem missing; using derived http://va.gov/terminology/vistaDefinedTerms/52-129</li>
   <li>WARN: VF_encounterProblemStatus sourceSystem missing; using derived http://va.gov/terminology/vistaDefinedTerms/9000010.07-.06</li>
   <li>WARN: VF_allergyVerificationStatus sourceSystem missing; using derived http://va.gov/terminology/vistaDefinedTerms/120.8-19</li>
   <li>WARN: VF_CoverageRelationship sourceSystem missing; using derived http://va.gov/terminology/vistaDefinedTerms/365-8.01</li>
@@ -323,54 +321,21 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <ol>
   <li>ERROR: Logical Model CHEM, HEM, TOX, RIA, SER, etc. (63.04) field has more than 1 fieldNum: “ORDERED TEST (-.35)” and “ORDERED TEST (-2+through+862)”?</li>
   <li>ERROR: Logical Model CHEM, HEM, TOX, RIA, SER, etc. (63.04) field has more than 1 fieldNum: “ORDERED TEST (-.35)” and “ORDERED TEST (-2+through+862)”?</li>
-  <li>ERROR: Logical Model CYTOPATHOLOGY (63.09) field has more than 1 fieldNum: “CYTOPATHOLOGY DIAGNOSIS (-2005)” and “CYTOPATHOLOGY DIAGNOSIS (-1.4)”?</li>
   <li>ERROR: Logical Model ORGANISM (63.3) field has more than 1 fieldNum: “ORGANISM (-5+to+160)” and “ORGANISM (-5.1+to+160.1)”?</li>
-  <li>WARN: GmrvVitalMeasurement1205.qualifier has binding http://va.gov/fhir/ValueSet/VSVFVitalsDevice-vista and reference GmrvVitalQualifier12052?</li>
+  <li>ERROR: Logical Model REFILL (52.1) field has more than 1 fieldNum: “MAIL/WINDOW/PARK (-.01)” and “MAIL/WINDOW/PARK (-2)”?</li>
   <li>WARN: ChemHemToxRiaSerEtc6304.orderedTest has binding http://va.gov/fhir/ValueSet/VSVFLabInterpretation-vista and reference OrderedTest6307?</li>
 </ol>
 
 <h3 id="vista-filefield-numnames">VistA File/Field Num/Names</h3>
 <ol>
-  <li>WARN: 252 subfile-field 120.83 expected “SIGN/SYMPTOMS” but got “HOSPITAL LOCATION -“</li>
   <li>WARN: 852 unknown file-field 63.04-2+through+862</li>
   <li>WARN: 857 unknown file-field 63.04-2+through+862</li>
-  <li>WARN: 1440 file-field 63.09-2005 expected “CYTOPATHOLOGY - IMAGE” but got “CYTOPATHOLOGY - CYTOPATHOLOGY DIAGNOSIS”</li>
-  <li>WARN: 1432 file-field 63.02-.13 expected “EM - RELEASED BY” but got “ELECTRON MICROSCOPY - RELEASED BY”</li>
-  <li>WARN: 1685 file-field 63.02-.345 expected “EM - RELEASING SITE” but got “ELECTRON MICROSCOPY - RELEASING SITE”</li>
-  <li>WARN: 1720 subfile-field 8925-2 expected “TIU DOCUMENT - REPORT TEXT” but got “REPORT TEXT”</li>
   <li>WARN: 1522 unknown subfile-field 63.3-5+to+160</li>
   <li>WARN: 1523 unknown subfile-field 63.3-5+to+160</li>
   <li>WARN: 1524 unknown subfile-field 63.3-5.1+to+160.1</li>
-  <li>WARN: 1425 file-field 63.08-.01 expected “SURGICAL PATHOLOGY - DATE/TIME SPECIMEN TAKEN” but got “SURGICAL PATHOLOGY- DATE/TIME SPECIMEN TAKEN”</li>
-  <li>WARN: 1721 subfile-field 8925-2 expected “TIU DOCUMENT - REPORT TEXT” but got “REPORT TEXT”</li>
-  <li>WARN: 885 file-field 8925-1701 expected “TIU DOCUMENT - SUBJECT (OPTIONAL description)” but got “TIU DOCUMENT - SUBJECT”</li>
   <li>WARN: 449 file-field 45-79.16 expected “PTF - SECONDARY DIAGNOSIS 1” but got “PTF - SECONDARY DIAGNOSIS [#]”</li>
   <li>WARN: 450 file-field 45-45.01 expected “PTF - PROCEDURE 1” but got “PTF - PROCEDURE [#]”</li>
-  <li>WARN: 453 subfile-field 45.1-.01 expected “SOURCE OF ADMISSION - PTF CODE” but got “PRF CODE”</li>
-  <li>WARN: 955 subfile-field 45.1-.01 expected “SOURCE OF ADMISSION - PTF CODE” but got “PRF CODE”</li>
-  <li>WARN: 1599 unknown subfile-field 9999999.06-.1</li>
-  <li>WARN: 464 subfile-field 757.5 expected “UCUM CODES” but got “UCUM CODES -“</li>
-  <li>WARN: 1382 file-field 698.2-4 expected “A LEAD IMPLANT - A LEAD SERIAL NUMBER” but got “A LEAD - A LEAD SERIAL NUMBER”</li>
-  <li>WARN: 1375 file-field 228.9-4.7 expected “DENTAL DEVICE TRACKING - EXPIRATION DATE” but got “DENTAL DEVICE TRACKING - EXPRATION DATE”</li>
-  <li>WARN: 1383 file-field 698.1-4 expected “V LEAD IMPLANT - V LEAD SERIAL NUMBER” but got “V LEAD - V LEAD SERIAL NUMBER”</li>
-  <li>WARN: 1405 subfile-field 779.004-.01 expected “COUNTRY CODE - CODE” but got “COUNTRY - CODE”</li>
-  <li>WARN: 1705 unknown file-field 52-128</li>
-  <li>WARN: 1706 unknown file-field 51-129</li>
-  <li>WARN: 1707 file-field 52-11 expected “PRESCRIPTION - MAIL/WINDOW” but got “PRESCRIPTION - MAIL/WINDOW/PARK”</li>
   <li>WARN: 1712 subfile-field 52.1-.01 expected “REFILL - REFILL DATE” but got “REFILL - MAIL/WINDOW/PARK”</li>
-  <li>WARN: 836 subfile-field 52.1-2 expected “REFILL - MAIL/WINDOW/PARK” but got “REFILL - MAIL/WINDOW”</li>
-  <li>WARN: 828 subfile-field 52.2-.041 expected “PARTIAL DATE - DAYS SUPPLY” but got “PARTIAL DATE- DAYS SUPPLY”</li>
-  <li>WARN: 1264 subfile-field 779.004-.01 expected “COUNTRY CODE - CODE” but got “COUNTRY - CODE”</li>
-  <li>WARN: 1265 subfile-field 4.03-.01 expected “CONTACT - CONTACT” but got “CONTACT - NAME”</li>
-  <li>WARN: 1274 subfile-field 779.004-.01 expected “COUNTRY CODE - CODE” but got “COUNTRY - CODE”</li>
-  <li>WARN: 382 subfile-field 20 expected “NAME COMPONENTS” but got “NAME COMPONENTS -“</li>
-  <li>WARN: 411 subfile-field 200.05-3 expected “PERSON CLASS - Expiration Date” but got “PERSON CLASS - EXPIRATION DATE”</li>
-  <li>WARN: 412 subfile-field 200.05-3 expected “PERSON CLASS - Expiration Date” but got “PERSON CLASS - EXPIRATION DATE”</li>
-  <li>WARN: 413 subfile-field 200.05-2 expected “PERSON CLASS - Effective Date” but got “PERSON CLASS - EFFECTIVE DATE”</li>
-  <li>WARN: 416 subfile-field 200.05-3 expected “PERSON CLASS - Expiration Date” but got “PERSON CLASS - EXPIRATION DATE”</li>
-  <li>WARN: 417 file-field 200-20.3 expected “NEW PERSON - SIGNATURE BLOCK TITLE” but got “SIGNATURE BLOCK TITLE”</li>
-  <li>WARN: 1651 file-field 691.5-.03 expected “ELECTROCARDIOGRAM (EKG) - SUMMARY” but got “ELECTROCARDIOGRAM (EKG) - COMMENT”</li>
-  <li>WARN: 1647 unknown subfile-field 74.03-.01</li>
 </ol>
 
 <h1 id="mustsupport">MustSupport</h1>
@@ -512,7 +477,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.44.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Apr 25, 2024 08:17+0000">2024-04-25</span>
+          IG &#169; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.45.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, May 1, 2024 09:37+0000">2024-05-01</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

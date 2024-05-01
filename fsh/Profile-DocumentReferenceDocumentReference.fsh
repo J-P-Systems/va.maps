@@ -22,7 +22,7 @@ Source: DocumentReferenceDocumentReference
 * author -> "1663: source value from TIU DOCUMENT - SIGNED BY (8925-1502)" "Added signed by as an author since it allows more than one."
 * authenticator -> "879: source value from TIU DOCUMENT - VERIFIED BY (8925-1306)"
 * custodian -> "880: source value from TIU DOCUMENT - DIVISION (8925-1212)" "who maintains the document = VA…. Or maybe a specific? Clinic\nPer 03/02/2023 email from LH, changed the Vista field from 1205 (hospital location) to 1212 (division)."
-* description -> "885: source value from TIU DOCUMENT - SUBJECT (8925-1701)"
+* description -> "885: source value from TIU DOCUMENT - SUBJECT (OPTIONAL description) (8925-1701)"
 * securityLabel -> "886: target not supported"
 * content.id -> "887: target not supported" "remove"
 * content.attachment.id -> "888: source value from TIU DOCUMENT - IEN (8925-.001)" "keep. Using HDR to pull text; need this"

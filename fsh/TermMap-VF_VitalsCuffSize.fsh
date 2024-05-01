@@ -9,7 +9,7 @@ Usage: #definition
 * description = "Terminology Maps VF_VitalsCuffSize"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFVitalsCuffSize-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/VSVFVitalsCuffSize"
-* group[0].source = "urn:undefined"
+* group[0].source = "http://va.gov/terminology/vistaDefinedTerms/120.52-99.99"
 * group[=].target = "http://snomed.info/sct"
 * group[=].element[0].code = #ADULT
 * group[=].element[=].display = "ADULT"
@@ -34,5 +34,5 @@ Title: "VF_VitalsCuffSize VistA"
 Description: "VistA Source ValueSet for Terminology Maps VF_VitalsCuffSize"
 * ^experimental = false
 * ^name = "VF_VitalsCuffSize"
-* include urn:undefined#ADULT "ADULT"
-* include urn:undefined#4500641 "ADULT CUFF"
+* include http://va.gov/terminology/vistaDefinedTerms/120.52-99.99#ADULT "ADULT"
+* include http://va.gov/terminology/vistaDefinedTerms/120.52-99.99#4500641 "ADULT CUFF"

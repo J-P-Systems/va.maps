@@ -133,13 +133,6 @@ Characteristics: #can-be-target
 * psndfVaProductNameEntry 0..1 Element "PSNDF VA PRODUCT NAME ENTRY (-22)"
 * genericName 0..1 Element "GENERIC NAME (-.01)"
 
-Logical: MedicationInstruction51
-Id: MedicationInstruction51
-Title: "MEDICATION INSTRUCTION (51)"
-Description: "-"
-Characteristics: #can-be-target
-* indicationForUseFlag 0..1 Element "INDICATION FOR USE FLAG (-129)"
-
 Logical: Prescription52
 Id: Prescription52
 Title: "PRESCRIPTION (52)"
@@ -155,10 +148,10 @@ Characteristics: #can-be-target
 * qty 0..1 Element "QTY (-7)"
 * daysSupply 0..1 Element "DAYS SUPPLY (-8)"
 * indicationForUse 0..1 Element "INDICATION FOR USE (-128)"
+* indicationForUseFlag 0..1 Element "INDICATION FOR USE FLAG (-129)"
 * mailwindowpark 0..1 Element "MAIL/WINDOW/PARK (-11)"
 * clinic 0..1 Element "CLINIC (-5)"
 * placerOrder  0..1 Element "PLACER ORDER # (-39.3)"
-* mailwindow 0..1 Element "MAIL/WINDOW (-11)"
 * medicationInstructions 0..1 Reference "MEDICATION INSTRUCTIONS (-113)"
 * patientInstructions 0..1 Element "PATIENT INSTRUCTIONS (-114)"
 * sig 0..1 Element "SIG (-10)"
@@ -242,8 +235,7 @@ Characteristics: #can-be-target
 * examDatetime 0..1 Element "EXAM DATE/TIME (-3)"
 * verifiedDate 0..1 Element "VERIFIED DATE (-7)"
 * verifyingPhysician 0..1 Element "VERIFYING PHYSICIAN (-9)"
-* impressionText 0..1 Reference "IMPRESSION TEXT (-300)"
-* impressionText only Reference(ImpressionText7403)
+* impressionText 0..1 Element "IMPRESSION TEXT (-300)"
 
 Logical: IcdDiagnosis80
 Id: IcdDiagnosis80
@@ -405,7 +397,7 @@ Characteristics: #can-be-target
 * signedBy 0..1 Element "SIGNED BY (-1502)"
 * verifiedBy 0..1 Element "VERIFIED BY (-1306)"
 * division 0..1 Element "DIVISION (-1212)"
-* subject 0..1 Element "SUBJECT (-1701)"
+* subjectOptionalDescription 0..1 Element "SUBJECT (OPTIONAL description) (-1701)"
 * visit 0..1 Element "VISIT (-.03)"
 * visitType 0..1 Element "VISIT TYPE (-.13)"
 * episodeBeginDatetime 0..1 Element "EPISODE BEGIN DATE/TIME (-.07)"
@@ -592,7 +584,7 @@ Id: GmrvVitalMeasurement1205
 Title: "GMRV VITAL MEASUREMENT (120.5)"
 Description: "-"
 Characteristics: #can-be-target
-* qualifier 0..1 Reference "QUALIFIER (-5) w/ binding http://va.gov/fhir/ValueSet/VSVFVitalsDevice-vista"
+* qualifier 0..1 Reference "QUALIFIER (-5)"
 * datetimeVitalsEntered 0..1 Element "DATE/TIME VITALS ENTERED (-.04)"
 * hospitalLocation 0..1 Reference "HOSPITAL LOCATION (-.05)"
 * reasonEnteredInError 0..1 Element "REASON ENTERED IN ERROR (-4)"
@@ -611,7 +603,8 @@ Id: GmrvVitalQualifier12052
 Title: "GMRV VITAL QUALIFIER (120.52)"
 Description: "-"
 Characteristics: #can-be-target
-* vuid 0..1 Element "VUID (-99.99)"
+* vuid 0..1 Coding "VUID (-99.99)"
+* vuid from http://va.gov/fhir/ValueSet/VSVFVitalsDevice-vista (example)
 
 Logical: WkldCodeLabSect6421
 Id: WkldCodeLabSect6421
@@ -883,7 +876,7 @@ Title: "SURGICAL PATHOLOGY (63.08)"
 Description: "-"
 Characteristics: #can-be-target
 * orderedTest 0..1 Reference "ORDERED TEST (-.35)"
-* urgicalPathologyDatetimeSpecimenTaken 0..1 Element "URGICAL PATHOLOGY- DATE/TIME SPECIMEN TAKEN (-.01)"
+* datetimeSpecimenTaken 0..1 Element "DATE/TIME SPECIMEN TAKEN (-.01)"
 * dateReportCompleted 0..1 Element "DATE REPORT COMPLETED (-.03)"
 * releasedBy 0..1 Element "RELEASED BY (-.13)"
 * releasingSite 0..1 Element "RELEASING SITE (-.345)"
@@ -951,7 +944,7 @@ Id: Location999999906
 Title: "LOCATION (9999999.06)"
 Description: "-"
 Characteristics: #can-be-target
-* pointerToInstitutionFile4 0..1 Element "POINTER TO INSTITUTION FILE (#4) (-.1)"
+* name 0..1 Element "NAME (-.01)"
 
 Logical: VProvider900001006
 Id: VProvider900001006
@@ -1144,7 +1137,6 @@ Description: "-"
 Characteristics: #can-be-target
 * mailwindowpark 0..1 Element "MAIL/WINDOW/PARK (-.01)"
 * daysSupply 0..1 Element "DAYS SUPPLY (-1.1)"
-* mailwindow 0..1 Element "MAIL/WINDOW (-2)"
 * qty 0..1 Element "QTY (-1)"
 * releasedDatetime 0..1 Element "RELEASED DATE/TIME (-17)"
 * refillDate 0..1 Element "REFILL DATE (-.01)"
@@ -1207,8 +1199,8 @@ Id: PersonClass20005
 Title: "PERSON CLASS (200.05)"
 Description: "-"
 Characteristics: #can-be-target
-* expirationDate 0..1 Element "EXPIRATION DATE (-3)"
-* effectiveDate 0..1 Element "EFFECTIVE DATE (-2)"
+* expirationDate 0..1 Element "Expiration Date (-3)"
+* effectiveDate 0..1 Element "Effective Date (-2)"
 * personClass 0..1 Reference "Person Class (-.01)"
 * personClass only Reference(PersonClass89321)
 
@@ -1332,7 +1324,7 @@ Characteristics: #can-be-target
 * interpretationCodePacing 0..1 Reference "INTERPRETATION CODE (PACING) (-14.2)"
 * summary 0..1 Coding "SUMMARY (-.03)"
 * summary from http://va.gov/fhir/ValueSet/VSVFImageInterpretation-vista (example)
-* comment 0..1 Element "COMMENT (-.03)"
+* comment 0..1 Element "COMMENT (-17)"
 * interpretationCodeRhythm only Reference(InterpretationCodeRhythm69154)
 * interpretationCodeConfig only Reference(InterpretationCodeConfig69155)
 * interpretationCodePacing only Reference(InterpretationCodePacing69156)
@@ -1367,10 +1359,3 @@ Description: "-"
 Characteristics: #can-be-target
 * interpretationCodePacing 0..1 Reference "INTERPRETATION CODE (PACING) (-.01)"
 * interpretationCodePacing only Reference(EcgInterpretation6933)
-
-Logical: ImpressionText7403
-Id: ImpressionText7403
-Title: "IMPRESSION TEXT (74.03)"
-Description: "-"
-Characteristics: #can-be-target
-* impressionText 0..1 Element "IMPRESSION TEXT (-.01)"

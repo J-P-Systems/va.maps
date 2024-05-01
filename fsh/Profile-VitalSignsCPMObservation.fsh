@@ -5,21 +5,22 @@ Title: "Vital Signs: CPM Observation"
 Description: "This StructureDefinition contains the maps for VistA file GMRV VITAL MEASUREMENT (120.5) to us-core-vital-signs"
 * ^status = #draft
 * extension contains http://hl7.org/fhir/StructureDefinition/observation-bodyPosition named observation-bodyPosition 0..1
-* extension[http://hl7.org/fhir/StructureDefinition/observation-bodyPosition].valueCodeableConcept and issued and performer and status and effectiveDateTime and category and subject and identifier.value and code.coding and device and method and valueQuantity.value and valueQuantity.code MS
-* extension[http://hl7.org/fhir/StructureDefinition/observation-bodyPosition].valueCodeableConcept from http://va.gov/fhir/ValueSet/VSVFVitalsPosition
+* extension[http://hl7.org/fhir/StructureDefinition/observation-bodyPosition].valueCodeableConcept and issued and performer and status and effectiveDateTime and category and subject and identifier.value and code.coding and method and valueQuantity.value and valueQuantity.code and component.valueCodeableConcept.coding MS
+* extension[http://hl7.org/fhir/StructureDefinition/observation-bodyPosition].valueCodeableConcept from http://va.gov/fhir/ValueSet/VSVFVitalsBodyPosition
 * performer only Reference(VitalSignsOrganization)
 * category = http://terminology.hl7.org/CodeSystem/observation-category#vital-signs
 * code.coding from http://va.gov/fhir/ValueSet/VSVFVitalsCodes
-* device only Reference(VitalSignsDevice)
 * method from http://va.gov/fhir/ValueSet/VSVFVitalsMethod
 * valueQuantity.code.extension contains http://hl7.org/fhir/StructureDefinition/11179-permitted-value-conceptmap named 11179-permitted-value-conceptmap 0..1
 * valueQuantity.code.extension[11179-permitted-value-conceptmap].valueCanonical = "http://va.gov/fhir/ConceptMap/CMVFVitalsUnits"
+* extension[http://hl7.org/fhir/StructureDefinition/observation-bodyPosition].valueCodeableConcept from http://va.gov/fhir/ValueSet/VSVFVitalsBodyPosition
+* component.valueCodeableConcept.coding from http://va.gov/fhir/ValueSet/VSVFVitalsCuffSize
 
 Mapping: vista-to-VitalSignsCPMObservation
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: VitalSignsCPMObservation
-* extension[http://hl7.org/fhir/StructureDefinition/observation-bodyPosition].valueCodeableConcept -> "866: terminologyMaps using VF_VitalsPosition on GMRV VITAL MEASUREMENT - QUALIFIER (120.5-5)" "Not part of US core. Will need to handle the different program uses."
+* extension[http://hl7.org/fhir/StructureDefinition/observation-bodyPosition].valueCodeableConcept -> "866: terminologyMaps using VF_VitalsBodyPosition on GMRV VITAL MEASUREMENT - QUALIFIER > GMRV VITAL QUALIFIER - VUID (120.5-5 > 120.52-99.99)" "Not part of US core. Will need to handle the different program uses."
 * component -> "1792: target not supported" "Has no components"
 * issued -> "652: source value from GMRV VITAL MEASUREMENT - DATE/TIME VITALS ENTERED (120.5-.04)"
 * performer -> "1653: reference from GMRV VITAL MEASUREMENT - HOSPITAL LOCATION (120.5-.05)"
@@ -30,12 +31,13 @@ Source: VitalSignsCPMObservation
 * subject -> "659: reference from GMRV VITAL MEASUREMENT - PATIENT (120.5-.02)"
 * identifier.value -> "660: source value from GMRV VITAL MEASUREMENT - IEN (120.5-.001)"
 * code.coding -> "661: terminologyMaps using VF_VitalsCodes on GMRV VITAL MEASUREMENT - VITAL TYPE (120.5-.03)" "Pulse Oximetry has 2 values"
-* device -> "1655: reference from GMRV VITAL MEASUREMENT - QUALIFIER > GMRV VITAL QUALIFIER - VUID (120.5-5 > 120.52-99.99)" "There is no device instance; just a code"
-* method -> "867: terminologyMaps using VF_VitalsMethod on GMRV VITAL MEASUREMENT - QUALIFIER (120.5-5)"
+* method -> "867: terminologyMaps using VF_VitalsMethod on GMRV VITAL MEASUREMENT - QUALIFIER > GMRV VITAL QUALIFIER - VUID (120.5-5 > 120.52-99.99)"
 * valueQuantity.value -> "664: source value from GMRV VITAL MEASUREMENT - RATE (120.5-1.2) case VUID not = 4500634"
 * valueQuantity.code -> "665: transform using VF_VitalsUnits on GMRV VITAL MEASUREMENT - VITAL TYPE (120.5-.03)" "VPR may transform"
 * dataAbsentReason -> "1793: target not supported" "Always has data"
 * component.dataAbsentReason -> "1794: target not supported" "Always has data"
+* extension[http://hl7.org/fhir/StructureDefinition/observation-bodyPosition].valueCodeableConcept -> "1804: terminologyMaps using VF_VitalsBodyPosition on GMRV VITAL MEASUREMENT - QUALIFIER > GMRV VITAL QUALIFIER - VUID (120.5-5 > 120.52-99.99)"
+* component.valueCodeableConcept.coding -> "1805: terminologyMaps using VF_VitalsCuffSize on GMRV VITAL MEASUREMENT - QUALIFIER > GMRV VITAL QUALIFIER - VUID (120.5-5 > 120.52-99.99)"
 
 Mapping: cdw-to-VitalSignsCPMObservation
 Id: cdw

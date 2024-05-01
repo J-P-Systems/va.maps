@@ -31,7 +31,7 @@ Source: MedicationRequestOutpatientMedicationRequest
 * dispenseRequest.expectedSupplyDuration -> "1670: source value from PRESCRIPTION - DAYS SUPPLY (52-8)"
 * encounter -> "1724: reference"
 * reasonCode.text -> "1705: source value from PRESCRIPTION - INDICATION FOR USE (52-128)"
-* extension[http://va.gov/fhir/StructureDefinition/medicationrequest-includeIndicationInSig].valueBoolean -> "1706: transform using VF_Boolean on MEDICATION INSTRUCTION - INDICATION FOR USE FLAG (51-129)"
+* extension[http://va.gov/fhir/StructureDefinition/medicationrequest-includeIndicationInSig].valueBoolean -> "1706: transform using VF_Boolean on PRESCRIPTION - INDICATION FOR USE FLAG (52-129)"
 * extension[http://va.gov/fhir/StructureDefinition/medicationrequest-pharmacyOrderStatus].valueCoding.code -> "1707: source value from PRESCRIPTION - MAIL/WINDOW/PARK (52-11)" "This value is consistent with Active. \nAdd a second value, or overwrite Active with Parked?"
 
 Mapping: cdw-to-MedicationRequestOutpatientMedicationRequest

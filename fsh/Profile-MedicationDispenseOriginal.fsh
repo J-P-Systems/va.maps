@@ -16,7 +16,7 @@ Source: MedicationDispenseOriginal
 * type -> "1708: fixed value = #FF"
 * authorizingPrescription -> "822: source value from PRESCRIPTION - PLACER ORDER # (52-39.3)"
 * daysSupply -> "826: source value from PRESCRIPTION - DAYS SUPPLY (52-8)"
-* destination.display -> "835: source value from PRESCRIPTION - MAIL/WINDOW (52-11)"
+* destination.display -> "835: source value from PRESCRIPTION - MAIL/WINDOW/PARK (52-11)"
 * dosageInstruction.doseAndRate.doseQuantity.unit -> "842: source value from PRESCRIPTION - MEDICATION INSTRUCTIONS > MEDICATION INSTRUCTIONS - UNITS (52-113 > 52.0113-2)"
 * dosageInstruction.doseAndRate.doseQuantity.code -> "1575: terminologyMaps using VF_DoseUnits on PRESCRIPTION - MEDICATION INSTRUCTIONS > MEDICATION INSTRUCTIONS - UNITS (52-113 > 52.0113-2)"
 * dosageInstruction.doseAndRate.doseQuantity.value -> "840: source value from PRESCRIPTION - MEDICATION INSTRUCTIONS > MEDICATION INSTRUCTIONS - DOSAGE ORDERED (52-113 > 52.0113-.01) case number"

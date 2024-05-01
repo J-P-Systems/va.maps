@@ -12,7 +12,7 @@ Mapping: vista-to-VitalSignsDevice
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: VitalSignsDevice
-* type -> "663: terminologyMaps using VF_VitalsDevice on GMRV VITAL MEASUREMENT - QUALIFIER (120.5-5)"
+* type -> "663: terminologyMaps using VF_VitalsDevice on GMRV VITAL MEASUREMENT - QUALIFIER > GMRV VITAL QUALIFIER - VUID (120.5-5 > 120.52-99.99)"
 
 Mapping: cdw-to-VitalSignsDevice
 Id: cdw
