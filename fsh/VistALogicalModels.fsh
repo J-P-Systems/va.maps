@@ -624,7 +624,7 @@ Id: ChemHemToxRiaSerEtc6304
 Title: "CHEM, HEM, TOX, RIA, SER, etc. (63.04)"
 Description: "-"
 Characteristics: #can-be-target
-* orderedTest 0..1 Reference "ORDERED TEST (-.35) w/ binding http://va.gov/fhir/ValueSet/VSVFLabInterpretation-vista"
+* orderedTest 0..1 Reference "ORDERED TEST (-.35)"
 * datetimeSpecimenTaken 0..1 Element "DATE/TIME SPECIMEN TAKEN (-.01)"
 * dateReportCompleted 0..1 Element "DATE REPORT COMPLETED (-.03)"
 * verifyPerson 0..1 Element "VERIFY PERSON (-.04)"
@@ -632,6 +632,8 @@ Characteristics: #can-be-target
 * comment 0..1 Reference "COMMENT (-.99)"
 * accession 0..1 Element "ACCESSION (-.06)"
 * ien 0..1 Element "IEN (-.001)"
+* testnames 0..1 Coding "testnames (-2+through+862)"
+* testnames from http://va.gov/fhir/ValueSet/VSVFLabInterpretation-vista (example)
 * orderedTest only Reference(OrderedTest6307)
 * comment only Reference(Comment63041)
 
