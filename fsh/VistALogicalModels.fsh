@@ -130,40 +130,45 @@ Id: Drug50
 Title: "DRUG (50)"
 Description: "-"
 Characteristics: #can-be-target
+* drugPsndfVaProductNameEntry 0..1 Reference "DRUG - PSNDF VA PRODUCT NAME ENTRY (-22)"
+* nationalDrugFileEntry 0..1 Reference "NATIONAL DRUG FILE ENTRY (-20)"
 * psndfVaProductNameEntry 0..1 Element "PSNDF VA PRODUCT NAME ENTRY (-22)"
 * genericName 0..1 Element "GENERIC NAME (-.01)"
+* drugPsndfVaProductNameEntry only Reference(VaProduct5068)
+* nationalDrugFileEntry only Reference(VaGeneric506)
 
 Logical: Prescription52
 Id: Prescription52
 Title: "PRESCRIPTION (52)"
 Description: "-"
 Characteristics: #can-be-target
+* ien 0..1 Element "IEN (-.001)"
 * status 0..1 Coding "STATUS (-100)"
 * status from http://va.gov/fhir/ValueSet/VSVFOutMedRequestStatus-vista (example)
+* drug 0..1 Reference "DRUG (-6)"
 * patient 0..1 Element "PATIENT (-2)"
+* issueDate 0..1 Element "ISSUE DATE (-1)"
 * provider 0..1 Element "PROVIDER (-4)"
+* sig 0..1 Element "SIG (-10)"
+* patientInstructions 0..1 Element "PATIENT INSTRUCTIONS (-114)"
+* medicationInstructions 0..1 Reference "MEDICATION INSTRUCTIONS (-113)"
 * expirationDate 0..1 Element "EXPIRATION DATE (-26)"
 * cancelDate 0..1 Element "CANCEL DATE (-26.1)"
-* ofRefills 0..1 Element "# OF REFILLS (-9)"
 * qty 0..1 Element "QTY (-7)"
 * daysSupply 0..1 Element "DAYS SUPPLY (-8)"
+* rx  0..1 Element "RX # (-.01)"
 * indicationForUse 0..1 Element "INDICATION FOR USE (-128)"
 * indicationForUseFlag 0..1 Element "INDICATION FOR USE FLAG (-129)"
 * mailwindowpark 0..1 Element "MAIL/WINDOW/PARK (-11)"
 * clinic 0..1 Element "CLINIC (-5)"
 * placerOrder  0..1 Element "PLACER ORDER # (-39.3)"
-* medicationInstructions 0..1 Reference "MEDICATION INSTRUCTIONS (-113)"
-* patientInstructions 0..1 Element "PATIENT INSTRUCTIONS (-114)"
-* sig 0..1 Element "SIG (-10)"
-* drug 0..1 Reference "DRUG (-6)"
 * releasedDatetime 0..1 Element "RELEASED DATE/TIME (-31)"
-* fillDate 0..1 Element "FILL DATE (-22)"
 * division 0..1 Element "DIVISION (-20)"
 * remarks 0..1 Element "REMARKS (-12)"
 * refill 0..1 Reference "REFILL (-52)"
 * partialDate 0..1 Reference "PARTIAL DATE (-60)"
-* medicationInstructions only Reference(MedicationInstructions520113)
 * drug only Reference(Drug50)
+* medicationInstructions only Reference(MedicationInstructions520113)
 * refill only Reference(Refill521)
 * partialDate only Reference(PartialDate522)
 
@@ -270,6 +275,7 @@ Title: "SURGERY (130)"
 Description: "-"
 Characteristics: #can-be-target
 * patient 0..1 Element "PATIENT (-.01)"
+* division 0..1 Element "DIVISION (-50)"
 * visit 0..1 Element "VISIT (-.015)"
 * dateOfOperation 0..1 Element "DATE OF OPERATION (-.09)"
 * generalComments 0..1 Element "GENERAL COMMENTS (-.28)"
@@ -389,8 +395,8 @@ Title: "TIU DOCUMENT (8925)"
 Description: "-"
 Characteristics: #can-be-target
 * reportText 0..1 Element "REPORT TEXT (-2)"
-* ien 0..1 Element "IEN (-.001)"
 * documentType 0..1 Reference "DOCUMENT TYPE (-.01)"
+* ien 0..1 Element "IEN (-.001)"
 * patient 0..1 Element "PATIENT (-.02)"
 * entryDatetime 0..1 Element "ENTRY DATE/TIME (-1201)"
 * authordictator 0..1 Element "AUTHOR/DICTATOR (-1202)"
@@ -706,6 +712,40 @@ Characteristics: #can-be-target
 * cyTiuEntryPointerCy 0..1 Reference "CY - TIU ENTRY POINTER - CY (-1)"
 * cyTiuEntryPointerCy only Reference(TiuDocument8925)
 
+Logical: TiuDocumentDefinition89251
+Id: TiuDocumentDefinition89251
+Title: "TIU DOCUMENT DEFINITION (8925.1)"
+Description: "-"
+Characteristics: #can-be-target
+* name 0..1 Element "NAME (-.01)"
+* vhaEnterpriseStandardTitle 0..1 Reference "VHA ENTERPRISE STANDARD TITLE (-1501)"
+* vhaEnterpriseStandardTitle only Reference(TiuVhaEnterpriseStandardTitle89261)
+
+Logical: TiuVhaEnterpriseStandardTitle89261
+Id: TiuVhaEnterpriseStandardTitle89261
+Title: "TIU VHA ENTERPRISE STANDARD TITLE (8926.1)"
+Description: "-"
+Characteristics: #can-be-target
+* codingSystem 0..1 Reference "CODING SYSTEM (-2)"
+* documentType 0..1 Element "DOCUMENT TYPE (-.08)"
+* standardTitle 0..1 Element "STANDARD TITLE (-.01)"
+* codingSystem only Reference(CodingSystem892612)
+
+Logical: CodingSystem892612
+Id: CodingSystem892612
+Title: "CODING SYSTEM (8926.12)"
+Description: "-"
+Characteristics: #can-be-target
+* code 0..1 Reference "CODE (-.02)"
+* code only Reference(Code8926121)
+
+Logical: Code8926121
+Id: Code8926121
+Title: "CODE (8926.121)"
+Description: "-"
+Characteristics: #can-be-target
+* code 0..1 Element "CODE (-.01)"
+
 Logical: Specimen63902
 Id: Specimen63902
 Title: "SPECIMEN (63.902)"
@@ -917,22 +957,6 @@ Description: "-"
 Characteristics: #can-be-target
 * specimen 0..1 Element "SPECIMEN (-.01)"
 
-Logical: TiuDocumentDefinition89251
-Id: TiuDocumentDefinition89251
-Title: "TIU DOCUMENT DEFINITION (8925.1)"
-Description: "-"
-Characteristics: #can-be-target
-* vhaEnterpriseStandardTitle 0..1 Reference "VHA ENTERPRISE STANDARD TITLE (-1501)"
-* vhaEnterpriseStandardTitle only Reference(TiuVhaEnterpriseStandardTitle89261)
-
-Logical: TiuVhaEnterpriseStandardTitle89261
-Id: TiuVhaEnterpriseStandardTitle89261
-Title: "TIU VHA ENTERPRISE STANDARD TITLE (8926.1)"
-Description: "-"
-Characteristics: #can-be-target
-* documentType 0..1 Element "DOCUMENT TYPE (-.08)"
-* standardTitle 0..1 Element "STANDARD TITLE (-.01)"
-
 Logical: SourceOfAdmission451
 Id: SourceOfAdmission451
 Title: "SOURCE OF ADMISSION (45.1)"
@@ -993,11 +1017,12 @@ Characteristics: #can-be-target
 * series 0..1 Element "SERIES (-.04)"
 * doseUnits 0..1 Reference "DOSE UNITS (-1313)"
 * datetimeRecorded 0..1 Element "DATE/TIME RECORDED (-1205)"
-* visit 0..1 Element "VISIT (-.03)"
+* visit 0..1 Reference "VISIT (-.03)"
 * reaction 0..1 Coding "REACTION (-.06)"
 * reaction from http://va.gov/fhir/ValueSet/VSVFImmunizationReaction-vista (example)
 * immunization only Reference(Immunization999999914)
 * doseUnits only Reference(UcumCodes7575)
+* visit only Reference(Visit9000010)
 
 Logical: Immunization999999914
 Id: Immunization999999914
@@ -1123,14 +1148,38 @@ Characteristics: #can-be-target
 * disclaimer 0..1 Element "DISCLAIMER (-10)"
 * clinic 0..1 Element "CLINIC (-13)"
 
+Logical: VaProduct5068
+Id: VaProduct5068
+Title: "VA PRODUCT (50.68)"
+Description: "-"
+Characteristics: #can-be-target
+* vaPrintName 0..1 Element "VA PRINT NAME (-5)"
+
+Logical: VaGeneric506
+Id: VaGeneric506
+Title: "VA GENERIC (50.6)"
+Description: "-"
+Characteristics: #can-be-target
+* codingSystem 0..1 Reference "CODING SYSTEM (-5)"
+* codingSystem only Reference(CodingSystem5065)
+
+Logical: CodingSystem5065
+Id: CodingSystem5065
+Title: "CODING SYSTEM (50.65)"
+Description: "-"
+Characteristics: #can-be-target
+* code 0..1 Element "CODE (-.02)"
+
 Logical: MedicationInstructions520113
 Id: MedicationInstructions520113
 Title: "MEDICATION INSTRUCTIONS (52.0113)"
 Description: "-"
 Characteristics: #can-be-target
+* dosageOrdered 0..1 Element "DOSAGE ORDERED (-.01)"
 * units 0..1 Coding "UNITS (-2)"
 * units from http://va.gov/fhir/ValueSet/VSVFDoseUnits-vista (example)
-* dosageOrdered 0..1 Element "DOSAGE ORDERED (-.01)"
+* noun 0..1 Element "NOUN (-3)"
+* route 0..1 Element "ROUTE (-6)"
 
 Logical: Refill521
 Id: Refill521
@@ -1141,7 +1190,6 @@ Characteristics: #can-be-target
 * daysSupply 0..1 Element "DAYS SUPPLY (-1.1)"
 * qty 0..1 Element "QTY (-1)"
 * releasedDatetime 0..1 Element "RELEASED DATE/TIME (-17)"
-* refillDate 0..1 Element "REFILL DATE (-.01)"
 * division 0..1 Element "DIVISION (-8)"
 * remarks 0..1 Element "REMARKS (-3)"
 
@@ -1154,7 +1202,6 @@ Characteristics: #can-be-target
 * daysSupply 0..1 Element "DAYS SUPPLY (-.041)"
 * qty 0..1 Element "QTY (-.04)"
 * releasedDatetime 0..1 Element "RELEASED DATE/TIME (-8)"
-* partialDate 0..1 Element "PARTIAL DATE (-.01)"
 * division 0..1 Element "DIVISION (-.09)"
 * remarks 0..1 Element "REMARKS (-.03)"
 

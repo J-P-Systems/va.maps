@@ -20,3 +20,6 @@ Mapping: cdw-to-MedicationRequestNonVA
 Id: cdw
 Title: "Clinical Data Warehouse (CDW)"
 Source: MedicationRequestNonVA
+* intent -> "NonVAMed.NonVAMed.CPRSOrderIEN"
+* reportedBoolean -> "NonVAMed.NonVAMed.CPRSOrderIEN"
+* extension[http://va.gov/fhir/StructureDefinition/medicationrequest-recordedLocation].valueReference -> "NonVAMed.NonVAMed.LocationIEN"

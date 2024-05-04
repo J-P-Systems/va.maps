@@ -16,4 +16,4 @@ Mapping: cdw-to-MedicationRequestOutpatientEncounter
 Id: cdw
 Title: "Clinical Data Warehouse (CDW)"
 Source: MedicationRequestOutpatientEncounter
-* location -> "RxOut.RxOutpatFill.PrescribingDivisionIEN"
+* location -> "RxOut.RxOutpat.DivisionIEN,RxOut.RxOutpat.LocationIEN,RxOut.RxOutpatFill.PrescribingDivisionIEN"

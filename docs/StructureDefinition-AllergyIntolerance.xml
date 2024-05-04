@@ -27,11 +27,11 @@
 <tr><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3goXBCwdPqAP0wAAAldJREFUOMuNk0tIlFEYhp9z/vE2jHkhxXA0zJCMitrUQlq4lnSltEqCFhFG2MJFhIvIFpkEWaTQqjaWZRkp0g26URZkTpbaaOJkDqk10szoODP//7XIMUe0elcfnPd9zsfLOYplGrpRwZaqTtw3K7PtGem7Q6FoidbGgqHVy/HRb669R+56zx7eRV1L31JGxYbBtjKK93cxeqfyQHbehkZbUkK20goELEuIzEd+dHS+qz/Y8PTSif0FnGkbiwcAjHaU1+QWOptFiyCLp/LnKptpqIuXHx6rbR26kJcBX3yLgBfnd7CxwJmflpP2wUg0HIAoUUpZBmKzELGWcN8nAr6Gpu7tLU/CkwAaoKTWRSQyt89Q8w6J+oVQkKnBoblH7V0PPvUOvDYXfopE/SJmALsxnVm6LbkotrUtNowMeIrVrBcBpaMmdS0j9df7abpSuy7HWehwJdt1lhVwi/J58U5beXGAF6c3UXLycw1wdFklArBn87xdh0ZsZtArghBdAA3+OEDVubG4UEzP6x1FOWneHh2VDAHBAt80IbdXDcesNoCvs3E5AFyNSU5nbrDPZpcUEQQTFZiEVx+51fxMhhyJEAgvlriadIJZZksRuwBYMOPBbO3hePVVqgEJhFeUuFLhIPkRP6BQLIBrmMenujm/3g4zc398awIe90Zb5A1vREALqneMcYgP/xVQWlG+Ncu5vgwwlaUNx+3799rfe96u9K0JSDXcOzOTJg4B6IgmXfsygc7/Bvg9g9E58/cDVmGIBOP/zT8Bz1zqWqpbXIsd0O9hajXfL6u4BaOS6SeWAAAAAElFTkSuQmCC" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr></table></div>
   </text>
   <url value="http://va.gov/fhir/StructureDefinition/AllergyIntolerance"/>
-  <version value="0.46.0"/>
+  <version value="0.47.0"/>
   <name value="AllergyIntolerance"/>
   <title value="AllergyIntolerance"/>
   <status value="draft"/>
-  <date value="2024-05-01T10:34:27+00:00"/>
+  <date value="2024-05-04T09:18:00+00:00"/>
   <publisher value="VA"/>
   <contact>
     <name value="VA"/>
@@ -1376,6 +1376,10 @@
         <map value="248: source value from PATIENT ALLERGIES - PATIENT (120.8-.01)"/>
         <comment value="Source is MVIPersonFullICN from SMVIPerson Table"/>
       </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Allergy.AllergicReaction.PatientIEN,Allergy.Allergy.PatientIEN,Allergy.AllergyComment.PatientIEN,Allergy.AllergyDrugClass.PatientIEN,Allergy.AllergyDrugIngredient.PatientIEN"/>
+      </mapping>
     </element>
     <element id="AllergyIntolerance.encounter">
       <path value="AllergyIntolerance.encounter"/>
@@ -1548,6 +1552,10 @@
       <mapping>
         <identity value="vista"/>
         <map value="251: source value from PATIENT ALLERGIES - ORIGINATOR (120.8-5)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Allergy.Allergy.OriginatingStaffIEN"/>
       </mapping>
     </element>
     <element id="AllergyIntolerance.asserter">
@@ -1814,6 +1822,10 @@
       <mapping>
         <identity value="vista"/>
         <map value="1503: source value from PATIENT ALLERGIES - COMMENTS &gt; COMMENTS - USER ENTERING (120.8-26 &gt; 120.826-1)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Allergy.AllergyComment.EnteringStaffIEN"/>
       </mapping>
       <mapping>
         <identity value="vpr"/>
@@ -2129,6 +2141,10 @@
         <map value="252: source value from REACTIONS - REACTION &gt; SIGN/SYMPTOMS (120.81-.01 &gt; 120.83-)"/>
       </mapping>
       <mapping>
+        <identity value="cdw"/>
+        <map value="Allergy.AllergicReaction.ReactionIEN"/>
+      </mapping>
+      <mapping>
         <identity value="vpr"/>
         <map value="GET PATIENT DATA-reaction.reaction [m]"/>
       </mapping>
@@ -2200,7 +2216,7 @@
       </mapping>
       <mapping>
         <identity value="vista"/>
-        <map value="1652: source value from PATIENT ALLERGIES - REACTIONS &gt; REACTIONS - DATE ENTERED (120.8-10 &gt; 120.81-3)"/>
+        <map value="1652: source value from PATIENT ALLERGIES - REACTIONS &gt; REACTIONS - DATE ENTERED (120.8-10 &gt; 120.81-3) case 6 OBSERVED/HISTORICAL = O"/>
       </mapping>
       <mapping>
         <identity value="cdw"/>
@@ -2472,6 +2488,10 @@
         <map value="248: source value from PATIENT ALLERGIES - PATIENT (120.8-.01)"/>
         <comment value="Source is MVIPersonFullICN from SMVIPerson Table"/>
       </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Allergy.AllergicReaction.PatientIEN,Allergy.Allergy.PatientIEN,Allergy.AllergyComment.PatientIEN,Allergy.AllergyDrugClass.PatientIEN,Allergy.AllergyDrugIngredient.PatientIEN"/>
+      </mapping>
     </element>
     <element id="AllergyIntolerance.recordedDate">
       <path value="AllergyIntolerance.recordedDate"/>
@@ -2497,6 +2517,10 @@
         <identity value="vista"/>
         <map value="251: source value from PATIENT ALLERGIES - ORIGINATOR (120.8-5)"/>
       </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Allergy.Allergy.OriginatingStaffIEN"/>
+      </mapping>
     </element>
     <element id="AllergyIntolerance.note.author[x]">
       <path value="AllergyIntolerance.note.author[x]"/>
@@ -2521,6 +2545,10 @@
       <mapping>
         <identity value="vista"/>
         <map value="1503: source value from PATIENT ALLERGIES - COMMENTS &gt; COMMENTS - USER ENTERING (120.8-26 &gt; 120.826-1)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Allergy.AllergyComment.EnteringStaffIEN"/>
       </mapping>
       <mapping>
         <identity value="vpr"/>
@@ -2562,6 +2590,10 @@
         <map value="252: source value from REACTIONS - REACTION &gt; SIGN/SYMPTOMS (120.81-.01 &gt; 120.83-)"/>
       </mapping>
       <mapping>
+        <identity value="cdw"/>
+        <map value="Allergy.AllergicReaction.ReactionIEN"/>
+      </mapping>
+      <mapping>
         <identity value="vpr"/>
         <map value="GET PATIENT DATA-reaction.reaction [m]"/>
       </mapping>
@@ -2571,7 +2603,7 @@
       <mustSupport value="true"/>
       <mapping>
         <identity value="vista"/>
-        <map value="1652: source value from PATIENT ALLERGIES - REACTIONS &gt; REACTIONS - DATE ENTERED (120.8-10 &gt; 120.81-3)"/>
+        <map value="1652: source value from PATIENT ALLERGIES - REACTIONS &gt; REACTIONS - DATE ENTERED (120.8-10 &gt; 120.81-3) case 6 OBSERVED/HISTORICAL = O"/>
       </mapping>
       <mapping>
         <identity value="cdw"/>

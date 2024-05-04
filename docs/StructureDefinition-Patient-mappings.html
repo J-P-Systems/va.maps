@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-    <title>Patient - Mappings - US Veterans Administration FHIR Map Set Implementation Guide v0.46.0</title>
+    <title>Patient - Mappings - US Veterans Administration FHIR Map Set Implementation Guide v0.47.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -57,7 +57,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">US Veterans Administration FHIR Map Set Implementation Guide</span>
             <br/>
-            <span style="display:inline-block;">0.46.0 - 240501
+            <span style="display:inline-block;">0.47.0 - 240501
 
 
 
@@ -143,7 +143,7 @@
           <div class="inner-wrapper">
 
 <div style="counter-reset: section 5" class="col-12">
-    <!-- ReleaseHeader --><p id="publish-box">US Veterans Administration FHIR Map Set Implementation Guide - Local Development build (v0.46.0) built by the FHIR (HL7&reg; FHIR&reg; Standard) Build Tools. See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
+    <!-- ReleaseHeader --><p id="publish-box">US Veterans Administration FHIR Map Set Implementation Guide - Local Development build (v0.47.0) built by the FHIR (HL7&reg; FHIR&reg; Standard) Build Tools. See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
   
 
 
@@ -216,7 +216,7 @@
         
           Draft
           
-            as of 2024-05-01
+            as of 2024-05-04
           
         
       </td>
@@ -521,7 +521,7 @@
 <td class="cell-ce1"></td>
 <td class="cell-ce1">Patient.gender</td>
 <td class="cell-ce1"></td>
-<td class="cell-ce1">VF_genderIdentity</td>
+<td class="cell-ce1">VF_adminGender</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient | 5.0.1</td>
@@ -578,6 +578,19 @@
 <td class="cell-ce1"></td>
 <td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient | 5.0.1</td>
 </tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1808</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">PATIENT - SELF IDENTIFIED GENDER (2-.024)</td>
+<td class="cell-ce1">terminologyMaps</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Patient.extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-genderIdentity]</td>
+<td class="cell-ce1">.valueCodeableConcept</td>
+<td class="cell-ce1">VF_genderIdentity</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient | 5.0.1</td>
+</tr>
 </table>
 
 </div>
@@ -608,6 +621,7 @@
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td>554: terminologyMaps using VF_birthSex on PATIENT - SEX (2-.02)</td><td><p>added extension url</p>
 </td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;extension (genderIdentity)</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td>1808: terminologyMaps using VF_genderIdentity on PATIENT - SELF IDENTIFIED GENDER (2-.024)</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;extension (patient-religion)</td><td></td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td>1598: terminologyMaps using VF_Religion on PATIENT - RELIGIOUS PREFERENCE (2-.08)</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td></td><td></td> </tr>
@@ -616,7 +630,7 @@
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>273: source value from PATIENT - NAME (2-.01)</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;telecom</td><td></td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>274: source value from PATIENT - PHONE NUMBER [RESIDENCE] (2-.131), 275: source value from PATIENT - PHONE NUMBER [WORK] (2-.132), 276: source value from PATIENT - PHONE NUMBER [CELLULAR] (2-.134)</td><td>, , </td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;gender</td><td>555: terminologyMaps using VF_genderIdentity on PATIENT - SELF IDENTIFIED GENDER (2-.024)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;gender</td><td>555: terminologyMaps using VF_adminGender on PATIENT - SELF IDENTIFIED GENDER (2-.024)</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;birthDate</td><td>284: source value from PATIENT - DATE OF BIRTH (2-.03)</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;deceased[x] (deceasedDateTime)</td><td>285: source value from PATIENT - DATE OF DEATH (2-.351) case not null</td><td><p>removed "true" based on Validator testing 6/30/23</p>
 </td> </tr>
@@ -647,14 +661,15 @@
  <tr><td>&nbsp;&nbsp;&nbsp;extension (race)</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;extension (ethnicity)</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;extension (birthsex)</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td>Patient.Patient.Gender,SPatient.SPatient.Gender</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td>Patient.Patient.Gender,Patient.PatientBirthSex.BirthSex,SPatient.SPatient.Gender,SPatient.SPatientBirthSex.BirthSex,SPatient.SPatientBirthSex.BirthSex</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;extension (genderIdentity)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td>Patient.Patient.SelfIdentifiedGender,SPatient.SPatient.SelfIdentifiedGender</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;extension (patient-religion)</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td>Outpat.Visit.PatientReligion,Outpat.Visit.PatientReligionCode,Outpat.Workload.PatientReligion,Outpat.Workload.PatientReligionCode</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td>Outpat.Visit.PatientReligion,Outpat.Visit.PatientReligionCode,Outpat.Workload.PatientReligion,Outpat.Workload.PatientReligionCode,Patient.Patient.ReligionIEN,SPatient.SPatient.ReligionIEN</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>Patient.Patient.PatientICN,Patient.PatientICN.PatientICN,SPatient.SPatient.PatientICN,SPatient.SPatientGISAddress.PatientICN</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;name</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>SPatient.SPatient.PatientFirstName,SPatient.SPatient.PatientLastName,SPatient.SPatient.PatientName,SPatient.SPatientAlias.PatientName</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>SPatient.SPatient.DestinationMergePatientIEN,SPatient.SPatient.PatientFirstName,SPatient.SPatient.PatientLastName,SPatient.SPatient.PatientName,SPatient.SPatientAlias.PatientName</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;gender</td><td>Patient.Patient.SelfIdentifiedGender,SPatient.SPatient.SelfIdentifiedGender</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;birthDate</td><td>SPatient.PlaceOfBirth.BirthDateTime,SPatient.SPatient.BirthDateTime</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;deceased[x] (deceasedDateTime)</td><td>Patient.Patient.DeathDateTime,SPatient.SPatient.DeathDateTime</td> </tr>
@@ -662,9 +677,11 @@
  <tr><td>&nbsp;&nbsp;&nbsp;address (home)</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;line</td><td>SPatient.SPatientGISAddress.StreetAddress1, SPatient.SPatientGISAddress.StreetAddress2</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;city</td><td>SPatient.SPatientGISAddress.City</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;state</td><td>SPatient.SPatientGISAddress.StateIEN</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;state</td><td>SPatient.SPatientGISAddress.StateIEN,SPatient.SPatientGISAddress.StateSID</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;postalCode</td><td>SPatient.SPatientGISAddress.Zip4</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;maritalStatus</td><td>Outpat.Visit.PatientMaritalStatus,Outpat.Workload.PatientMaritalStatus</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;maritalStatus</td><td>Outpat.Visit.PatientMaritalStatus,Outpat.Workload.PatientMaritalStatus,Patient.Patient.MaritalStatusIEN,SPatient.SPatient.MaritalStatusIEN</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;communication</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;language</td><td>Patient.PreferredLanguage.PreferredLanguage</td> </tr>
 </table>
 <a name="vpr"> </a><h3>Mappings for Virtual Patient Record (VPR) ()</h3><table class="grid">
  <tr><td colspan="3"><b>Patient</b></td></tr>
@@ -733,6 +750,9 @@
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;url</td><td>N/A</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td>N/A</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;extension (genderIdentity)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;url</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td>N/A</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;extension (patient-religion)</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;url</td><td>N/A</td> </tr>
@@ -997,7 +1017,7 @@
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.46.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, May 1, 2024 10:34+0000">2024-05-01</span>
+          IG &copy; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.47.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Sat, May 4, 2024 09:18+0000">2024-05-04</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

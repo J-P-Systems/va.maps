@@ -28,8 +28,10 @@ Mapping: cdw-to-ConditionEncounterDiagnosis
 Id: cdw
 Title: "Clinical Data Warehouse (CDW)"
 Source: ConditionEncounterDiagnosis
-* encounter -> "Outpat.VDiagnosis.VisitDateTime,Outpat.WorkloadVDiagnosis.VisitDateTime"
+* code -> "Outpat.VDiagnosis.ICDIEN,Outpat.WorkloadVDiagnosis.ICDIEN"
+* subject -> "Outpat.VDiagnosis.PatientIEN,Outpat.WorkloadVDiagnosis.PatientIEN"
+* encounter -> "Outpat.VDiagnosis.VisitDateTime,Outpat.VDiagnosis.VisitIEN,Outpat.WorkloadVDiagnosis.VisitDateTime,Outpat.WorkloadVDiagnosis.VisitIEN"
 * onsetDateTime -> "Outpat.VDiagnosis.InjuryDateTime,Outpat.WorkloadVDiagnosis.InjuryDateTime"
-* recordedDate -> "Outpat.VDiagnosis.VisitDateTime,Outpat.WorkloadVDiagnosis.VisitDateTime\nOutpat.Visit.VisitDateTime,Outpat.Workload.VisitDateTime"
+* recordedDate -> "Outpat.VDiagnosis.VisitDateTime,Outpat.VDiagnosis.VisitIEN,Outpat.WorkloadVDiagnosis.VisitDateTime,Outpat.WorkloadVDiagnosis.VisitIEN\nImmun.ImmunizationContraRefusalEvent.VisitDateTime,Outpat.Visit.VisitDateTime,Outpat.VisitLogic.VisitDateTime,Outpat.Workload.VisitDateTime"
 * clinicalStatus -> "Outpat.VDiagnosis.Modifier,Outpat.WorkloadVDiagnosis.Modifier"
 * verificationStatus -> "Outpat.VDiagnosis.Modifier,Outpat.WorkloadVDiagnosis.Modifier"

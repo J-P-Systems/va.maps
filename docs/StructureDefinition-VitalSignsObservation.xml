@@ -38,11 +38,11 @@
 <tr><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3goXBCwdPqAP0wAAAldJREFUOMuNk0tIlFEYhp9z/vE2jHkhxXA0zJCMitrUQlq4lnSltEqCFhFG2MJFhIvIFpkEWaTQqjaWZRkp0g26URZkTpbaaOJkDqk10szoODP//7XIMUe0elcfnPd9zsfLOYplGrpRwZaqTtw3K7PtGem7Q6FoidbGgqHVy/HRb669R+56zx7eRV1L31JGxYbBtjKK93cxeqfyQHbehkZbUkK20goELEuIzEd+dHS+qz/Y8PTSif0FnGkbiwcAjHaU1+QWOptFiyCLp/LnKptpqIuXHx6rbR26kJcBX3yLgBfnd7CxwJmflpP2wUg0HIAoUUpZBmKzELGWcN8nAr6Gpu7tLU/CkwAaoKTWRSQyt89Q8w6J+oVQkKnBoblH7V0PPvUOvDYXfopE/SJmALsxnVm6LbkotrUtNowMeIrVrBcBpaMmdS0j9df7abpSuy7HWehwJdt1lhVwi/J58U5beXGAF6c3UXLycw1wdFklArBn87xdh0ZsZtArghBdAA3+OEDVubG4UEzP6x1FOWneHh2VDAHBAt80IbdXDcesNoCvs3E5AFyNSU5nbrDPZpcUEQQTFZiEVx+51fxMhhyJEAgvlriadIJZZksRuwBYMOPBbO3hePVVqgEJhFeUuFLhIPkRP6BQLIBrmMenujm/3g4zc398awIe90Zb5A1vREALqneMcYgP/xVQWlG+Ncu5vgwwlaUNx+3799rfe96u9K0JSDXcOzOTJg4B6IgmXfsygc7/Bvg9g9E58/cDVmGIBOP/zT8Bz1zqWqpbXIsd0O9hajXfL6u4BaOS6SeWAAAAAElFTkSuQmCC" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr></table></div>
   </text>
   <url value="http://va.gov/fhir/StructureDefinition/VitalSignsObservation"/>
-  <version value="0.46.0"/>
+  <version value="0.47.0"/>
   <name value="VitalSignsObservation"/>
   <title value="Vital Signs Observation"/>
   <status value="draft"/>
-  <date value="2024-05-01T10:34:27+00:00"/>
+  <date value="2024-05-04T09:18:00+00:00"/>
   <publisher value="VA"/>
   <contact>
     <name value="VA"/>
@@ -1869,6 +1869,10 @@
         <map value="661: terminologyMaps using VF_VitalsCodes on GMRV VITAL MEASUREMENT - VITAL TYPE (120.5-.03)"/>
         <comment value="Pulse Oximetry has 2 values"/>
       </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Vital.VitalSign.VitalTypeIEN"/>
+      </mapping>
     </element>
     <element id="Observation.code.text">
       <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
@@ -1963,6 +1967,10 @@
       <mapping>
         <identity value="vista"/>
         <map value="659: reference from GMRV VITAL MEASUREMENT - PATIENT (120.5-.02)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Vital.VitalSign.PatientIEN"/>
       </mapping>
     </element>
     <element id="Observation.focus">
@@ -2283,6 +2291,10 @@
       <mapping>
         <identity value="vista"/>
         <map value="1653: reference from GMRV VITAL MEASUREMENT - HOSPITAL LOCATION (120.5-.05)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Vital.VitalSign.LocationIEN"/>
       </mapping>
     </element>
     <element id="Observation.value[x]">
@@ -2707,6 +2719,10 @@
         <identity value="vista"/>
         <map value="665: transform using VF_VitalsUnits on GMRV VITAL MEASUREMENT - VITAL TYPE (120.5-.03)"/>
         <comment value="VPR may transform"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Vital.VitalSign.VitalTypeIEN"/>
       </mapping>
     </element>
     <element id="Observation.value[x]:valueQuantity.code.id">
@@ -4461,12 +4477,20 @@
         <map value="661: terminologyMaps using VF_VitalsCodes on GMRV VITAL MEASUREMENT - VITAL TYPE (120.5-.03)"/>
         <comment value="Pulse Oximetry has 2 values"/>
       </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Vital.VitalSign.VitalTypeIEN"/>
+      </mapping>
     </element>
     <element id="Observation.subject">
       <path value="Observation.subject"/>
       <mapping>
         <identity value="vista"/>
         <map value="659: reference from GMRV VITAL MEASUREMENT - PATIENT (120.5-.02)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Vital.VitalSign.PatientIEN"/>
       </mapping>
     </element>
     <element id="Observation.effective[x]">
@@ -4524,6 +4548,10 @@
         <identity value="vista"/>
         <map value="1653: reference from GMRV VITAL MEASUREMENT - HOSPITAL LOCATION (120.5-.05)"/>
       </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Vital.VitalSign.LocationIEN"/>
+      </mapping>
     </element>
     <element id="Observation.value[x]">
       <path value="Observation.value[x]"/>
@@ -4567,6 +4595,10 @@
         <identity value="vista"/>
         <map value="665: transform using VF_VitalsUnits on GMRV VITAL MEASUREMENT - VITAL TYPE (120.5-.03)"/>
         <comment value="VPR may transform"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Vital.VitalSign.VitalTypeIEN"/>
       </mapping>
     </element>
     <element id="Observation.value[x]:valueQuantity.code.extension">

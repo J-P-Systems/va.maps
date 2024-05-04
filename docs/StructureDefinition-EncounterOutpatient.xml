@@ -30,11 +30,11 @@
 <tr><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3goXBCwdPqAP0wAAAldJREFUOMuNk0tIlFEYhp9z/vE2jHkhxXA0zJCMitrUQlq4lnSltEqCFhFG2MJFhIvIFpkEWaTQqjaWZRkp0g26URZkTpbaaOJkDqk10szoODP//7XIMUe0elcfnPd9zsfLOYplGrpRwZaqTtw3K7PtGem7Q6FoidbGgqHVy/HRb669R+56zx7eRV1L31JGxYbBtjKK93cxeqfyQHbehkZbUkK20goELEuIzEd+dHS+qz/Y8PTSif0FnGkbiwcAjHaU1+QWOptFiyCLp/LnKptpqIuXHx6rbR26kJcBX3yLgBfnd7CxwJmflpP2wUg0HIAoUUpZBmKzELGWcN8nAr6Gpu7tLU/CkwAaoKTWRSQyt89Q8w6J+oVQkKnBoblH7V0PPvUOvDYXfopE/SJmALsxnVm6LbkotrUtNowMeIrVrBcBpaMmdS0j9df7abpSuy7HWehwJdt1lhVwi/J58U5beXGAF6c3UXLycw1wdFklArBn87xdh0ZsZtArghBdAA3+OEDVubG4UEzP6x1FOWneHh2VDAHBAt80IbdXDcesNoCvs3E5AFyNSU5nbrDPZpcUEQQTFZiEVx+51fxMhhyJEAgvlriadIJZZksRuwBYMOPBbO3hePVVqgEJhFeUuFLhIPkRP6BQLIBrmMenujm/3g4zc398awIe90Zb5A1vREALqneMcYgP/xVQWlG+Ncu5vgwwlaUNx+3799rfe96u9K0JSDXcOzOTJg4B6IgmXfsygc7/Bvg9g9E58/cDVmGIBOP/zT8Bz1zqWqpbXIsd0O9hajXfL6u4BaOS6SeWAAAAAElFTkSuQmCC" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr></table></div>
   </text>
   <url value="http://va.gov/fhir/StructureDefinition/EncounterOutpatient"/>
-  <version value="0.46.0"/>
+  <version value="0.47.0"/>
   <name value="EncounterOutpatient"/>
   <title value="Encounter: Outpatient"/>
   <status value="draft"/>
-  <date value="2024-05-01T10:34:27+00:00"/>
+  <date value="2024-05-04T09:18:00+00:00"/>
   <publisher value="VA"/>
   <contact>
     <name value="VA"/>
@@ -852,7 +852,7 @@
       </mapping>
       <mapping>
         <identity value="cdw"/>
-        <map value="Outpat.Visit.VisitDateTime,Outpat.Workload.VisitDateTime"/>
+        <map value="Immun.ImmunizationContraRefusalEvent.VisitDateTime,Outpat.Visit.VisitDateTime,Outpat.VisitLogic.VisitDateTime,Outpat.Workload.VisitDateTime"/>
       </mapping>
       <mapping>
         <identity value="cdw"/>
@@ -1367,6 +1367,10 @@
       <mapping>
         <identity value="vista"/>
         <map value="1615: source value from V CPT - CPT &gt; CPT (9000010.18-.01 &gt; 81-)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Outpat.VProcedure.CPTIEN,Outpat.VProcedureCPTModifier.CPTIEN,Outpat.VProcedureDiagnosis.CPTIEN,Outpat.WorkloadVProcedure.CPTIEN,Outpat.WorkloadVProcedureCPTModifier.CPTIEN,Outpat.WorkloadVProcedureDiagnosis.CPTIEN"/>
       </mapping>
     </element>
     <element id="Encounter.serviceType">
@@ -1942,6 +1946,10 @@
         <identity value="vista"/>
         <map value="440: reference from VISIT - PATIENT NAME (9000010-.05)"/>
       </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Outpat.Visit.PatientIEN,Outpat.Workload.PatientIEN"/>
+      </mapping>
     </element>
     <element id="Encounter.episodeOfCare">
       <path value="Encounter.episodeOfCare"/>
@@ -2311,6 +2319,10 @@
         <identity value="vista"/>
         <map value="1614: reference from V PROVIDER - PROVIDER &gt; NEW PERSON (9000010.06-.01 &gt; 200-)"/>
       </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Outpat.VProvider.ProviderIEN,Outpat.WorkloadVProvider.ProviderIEN"/>
+      </mapping>
     </element>
     <element id="Encounter.appointment">
       <path value="Encounter.appointment"/>
@@ -2507,7 +2519,7 @@
       </mapping>
       <mapping>
         <identity value="cdw"/>
-        <map value="Outpat.Visit.VisitDateTime,Outpat.Workload.VisitDateTime"/>
+        <map value="Immun.ImmunizationContraRefusalEvent.VisitDateTime,Outpat.Visit.VisitDateTime,Outpat.VisitLogic.VisitDateTime,Outpat.Workload.VisitDateTime"/>
       </mapping>
     </element>
     <element id="Encounter.period.end">
@@ -2952,7 +2964,7 @@
       </mapping>
       <mapping>
         <identity value="cdw"/>
-        <map value="Dim.ICD10.ICD10Code,Dim.ICD9.ICD9Code"/>
+        <map value="Outpat.VDiagnosis.ICDIEN,Outpat.WorkloadVDiagnosis.ICDIEN&#xA;Dim.ICD10.ICD10Code,Dim.ICD9.ICD9Code"/>
       </mapping>
     </element>
     <element id="Encounter.reasonCode.coding.display">
@@ -3335,6 +3347,10 @@
         <identity value="vista"/>
         <map value="452: reference from V POV - PROBLEM LIST ENTRY (9000010.07-.16)"/>
         <comment value="added parameter"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Outpat.VDiagnosis.ProblemListIEN,Outpat.WorkloadVDiagnosis.ProblemListIEN"/>
       </mapping>
     </element>
     <element id="Encounter.diagnosis.use">
@@ -4107,6 +4123,14 @@
         <identity value="vista"/>
         <map value="459: reference from VISIT - HOSPITAL LOCATION (9000010-.22) case location"/>
       </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Outpat.Visit.PrimaryStopCodeIEN,Outpat.Visit.SecondaryStopCodeIEN,Outpat.Workload.PrimaryStopCodeIEN,Outpat.Workload.SecondaryStopCodeIEN"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Outpat.Visit.LocationIEN,Outpat.Workload.LocationIEN"/>
+      </mapping>
     </element>
     <element id="Encounter.location.status">
       <path value="Encounter.location.status"/>
@@ -4251,6 +4275,10 @@
         <identity value="vista"/>
         <map value="1599: reference from VISIT - LOC. OF ENCOUNTER &gt; LOCATION - NAME (9000010-.06 &gt; 9999999.06-.01)"/>
       </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Outpat.Visit.InstitutionIEN,Outpat.Workload.InstitutionIEN"/>
+      </mapping>
     </element>
     <element id="Encounter.partOf">
       <path value="Encounter.partOf"/>
@@ -4324,11 +4352,11 @@
       </mapping>
       <mapping>
         <identity value="cdw"/>
-        <map value="Outpat.Visit.VisitDateTime,Outpat.Workload.VisitDateTime"/>
+        <map value="Immun.ImmunizationContraRefusalEvent.VisitDateTime,Outpat.Visit.VisitDateTime,Outpat.VisitLogic.VisitDateTime,Outpat.Workload.VisitDateTime"/>
       </mapping>
       <mapping>
         <identity value="cdw"/>
-        <map value="Outpat.Visit.VisitDateTime,Outpat.Workload.VisitDateTime"/>
+        <map value="Immun.ImmunizationContraRefusalEvent.VisitDateTime,Outpat.Visit.VisitDateTime,Outpat.VisitLogic.VisitDateTime,Outpat.Workload.VisitDateTime"/>
       </mapping>
       <mapping>
         <identity value="cdw"/>
@@ -4357,6 +4385,10 @@
         <identity value="vista"/>
         <map value="1615: source value from V CPT - CPT &gt; CPT (9000010.18-.01 &gt; 81-)"/>
       </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Outpat.VProcedure.CPTIEN,Outpat.VProcedureCPTModifier.CPTIEN,Outpat.VProcedureDiagnosis.CPTIEN,Outpat.WorkloadVProcedure.CPTIEN,Outpat.WorkloadVProcedureCPTModifier.CPTIEN,Outpat.WorkloadVProcedureDiagnosis.CPTIEN"/>
+      </mapping>
     </element>
     <element id="Encounter.serviceType.coding.code">
       <path value="Encounter.serviceType.coding.code"/>
@@ -4376,6 +4408,10 @@
         <identity value="vista"/>
         <map value="440: reference from VISIT - PATIENT NAME (9000010-.05)"/>
       </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Outpat.Visit.PatientIEN,Outpat.Workload.PatientIEN"/>
+      </mapping>
     </element>
     <element id="Encounter.participant.period">
       <path value="Encounter.participant.period"/>
@@ -4390,6 +4426,10 @@
         <identity value="vista"/>
         <map value="1614: reference from V PROVIDER - PROVIDER &gt; NEW PERSON (9000010.06-.01 &gt; 200-)"/>
       </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Outpat.VProvider.ProviderIEN,Outpat.WorkloadVProvider.ProviderIEN"/>
+      </mapping>
     </element>
     <element id="Encounter.period.start">
       <path value="Encounter.period.start"/>
@@ -4400,7 +4440,7 @@
       </mapping>
       <mapping>
         <identity value="cdw"/>
-        <map value="Outpat.Visit.VisitDateTime,Outpat.Workload.VisitDateTime"/>
+        <map value="Immun.ImmunizationContraRefusalEvent.VisitDateTime,Outpat.Visit.VisitDateTime,Outpat.VisitLogic.VisitDateTime,Outpat.Workload.VisitDateTime"/>
       </mapping>
     </element>
     <element id="Encounter.period.end">
@@ -4424,7 +4464,7 @@
       </mapping>
       <mapping>
         <identity value="cdw"/>
-        <map value="Dim.ICD10.ICD10Code,Dim.ICD9.ICD9Code"/>
+        <map value="Outpat.VDiagnosis.ICDIEN,Outpat.WorkloadVDiagnosis.ICDIEN&#xA;Dim.ICD10.ICD10Code,Dim.ICD9.ICD9Code"/>
       </mapping>
     </element>
     <element id="Encounter.diagnosis.condition">
@@ -4434,6 +4474,10 @@
         <identity value="vista"/>
         <map value="452: reference from V POV - PROBLEM LIST ENTRY (9000010.07-.16)"/>
         <comment value="added parameter"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Outpat.VDiagnosis.ProblemListIEN,Outpat.WorkloadVDiagnosis.ProblemListIEN"/>
       </mapping>
     </element>
     <element id="Encounter.location.location">
@@ -4446,12 +4490,24 @@
         <identity value="vista"/>
         <map value="459: reference from VISIT - HOSPITAL LOCATION (9000010-.22) case location"/>
       </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Outpat.Visit.PrimaryStopCodeIEN,Outpat.Visit.SecondaryStopCodeIEN,Outpat.Workload.PrimaryStopCodeIEN,Outpat.Workload.SecondaryStopCodeIEN"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Outpat.Visit.LocationIEN,Outpat.Workload.LocationIEN"/>
+      </mapping>
     </element>
     <element id="Encounter.serviceProvider">
       <path value="Encounter.serviceProvider"/>
       <mapping>
         <identity value="vista"/>
         <map value="1599: reference from VISIT - LOC. OF ENCOUNTER &gt; LOCATION - NAME (9000010-.06 &gt; 9999999.06-.01)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Outpat.Visit.InstitutionIEN,Outpat.Workload.InstitutionIEN"/>
       </mapping>
     </element>
   </differential>

@@ -25,7 +25,12 @@ Mapping: cdw-to-ProcedureRadiology
 Id: cdw
 Title: "Clinical Data Warehouse (CDW)"
 Source: ProcedureRadiology
-* status -> "Dim.RadiologyExamStatus.RadiologyExamStatus"
-* statusReason.text -> "Dim.RadiologyHoldCancelReason.RadiologyHoldCancelReason"
-* category.text -> "Dim.ImagingType.ImagingType"
+* status -> "Rad.RadiologyExam.RadiologyExamStatusIEN\nDim.RadiologyExamStatus.RadiologyExamStatus"
+* statusReason.text -> "Rad.RadiologyExam.RadiologyHoldCancelReasonIEN\nDim.RadiologyHoldCancelReason.RadiologyHoldCancelReason"
+* category.text -> "Rad.RadiologyRegisteredExam.ImagingTypeIEN\nDim.ImagingType.ImagingType"
+* code.coding -> "Rad.RadiologyExam.RadiologyProcedureIEN"
+* subject -> "Patient.RadiologyPatient.PatientIEN,Rad.RadiologyExam.PatientIEN,Rad.RadiologyExamActivityLog.PatientIEN,Rad.RadiologyExamContrastMedia.PatientIEN,Rad.RadiologyExamCPTModifier.PatientIEN,Rad.RadiologyExamMedication.PatientIEN,Rad.RadiologyExamSecondaryDiagnosticCode.PatientIEN,Rad.RadiologyExamStatusList.PatientIEN,Rad.RadiologyFilmRegistry.PatientIEN,Rad.RadiologyRegisteredExam.PatientIEN"
+* encounter -> "Rad.RadiologyExam.VisitIEN"
 * performedDateTime -> "Rad.RadiologyExam.ExamDateTime,Rad.RadiologyExamActivityLog.ExamDateTime,Rad.RadiologyExamContrastMedia.ExamDateTime,Rad.RadiologyExamCPTModifier.ExamDateTime,Rad.RadiologyExamMedication.ExamDateTime,Rad.RadiologyExamSecondaryDiagnosticCode.ExamDateTime,Rad.RadiologyExamStatusList.ExamDateTime,Rad.RadiologyExamTechnologist.ExamDateTime,Rad.RadiologyRegisteredExam.ExamDateTime"
+* performer.actor -> "Rad.RadiologyExam.PrimaryInterpretingStaffIEN"
+* location -> "Rad.RadiologyRegisteredExam.RadiologyLocationIEN\nDim.RadiologyLocation.LocationIEN"

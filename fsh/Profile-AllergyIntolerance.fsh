@@ -34,7 +34,7 @@ Source: AllergyIntolerance
 * note.authorString -> "1503: source value from PATIENT ALLERGIES - COMMENTS > COMMENTS - USER ENTERING (120.8-26 > 120.826-1)"
 * note.text -> "1504: source value from PATIENT ALLERGIES - COMMENTS > COMMENTS - COMMENTS (120.8-26 > 120.826-2)"
 * code -> "1505: source value from PATIENT ALLERGIES - DRUG INGREDIENTS (120.8-2)" "CHAPI to rxn code; looking into"
-* reaction.onset -> "1652: source value from PATIENT ALLERGIES - REACTIONS > REACTIONS - DATE ENTERED (120.8-10 > 120.81-3)"
+* reaction.onset -> "1652: source value from PATIENT ALLERGIES - REACTIONS > REACTIONS - DATE ENTERED (120.8-10 > 120.81-3) case 6 OBSERVED/HISTORICAL = O"
 
 Mapping: cdw-to-AllergyIntolerance
 Id: cdw
@@ -42,13 +42,17 @@ Title: "Clinical Data Warehouse (CDW)"
 Source: AllergyIntolerance
 * identifier.value -> "1610: source value from CDW.cdwwork.allergy.allergy.AllergySID"
 * code.text -> "Allergy.Allergy.AllergicReactant"
+* patient -> "Allergy.AllergicReaction.PatientIEN,Allergy.Allergy.PatientIEN,Allergy.AllergyComment.PatientIEN,Allergy.AllergyDrugClass.PatientIEN,Allergy.AllergyDrugIngredient.PatientIEN"
 * recordedDate -> "Allergy.AllergicReaction.OriginationDateTime,Allergy.Allergy.OriginationDateTime,Allergy.AllergyComment.OriginationDateTime,Allergy.AllergyDrugClass.OriginationDateTime,Allergy.AllergyDrugIngredient.OriginationDateTime"
+* recorder -> "Allergy.Allergy.OriginatingStaffIEN"
+* reaction.manifestation -> "Allergy.AllergicReaction.ReactionIEN"
 * type -> "Allergy.Allergy.Mechanism"
 * verificationStatus -> "Allergy.Allergy.VerifiedFlag"
 * clinicalStatus -> "Allergy.Allergy.EnteredInErrorFlag"
 * verificationStatus -> "Allergy.Allergy.EnteredInErrorFlag"
 * category -> "Allergy.Allergy.AllergyType"
 * note.time -> "Allergy.AllergyComment.CommentEnteredDateTime"
+* note.authorString -> "Allergy.AllergyComment.EnteringStaffIEN"
 * reaction.onset -> "Allergy.AllergicReaction.EnteredDateTime"
 
 Mapping: vpr-to-AllergyIntolerance

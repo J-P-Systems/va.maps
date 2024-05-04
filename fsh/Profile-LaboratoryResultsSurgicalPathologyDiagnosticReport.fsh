@@ -4,9 +4,10 @@ Id: LaboratoryResultsSurgicalPathologyDiagnosticReport
 Title: "Laboratory Results: Surgical Pathology DiagnosticReport"
 Description: "This StructureDefinition contains the maps for VistA file SURGICAL PATHOLOGY (63.08) to us-core-diagnosticreport-lab"
 * ^status = #draft
-* identifier.value and basedOn and status and effectiveDateTime and issued and performer and resultsInterpreter and specimen and media.link and conclusion and presentedForm.data and category[LaboratorySlice] and category.text and code.coding and code.text and subject and result MS
+* identifier.value and basedOn and status and effectiveDateTime and issued and performer and resultsInterpreter and specimen and media.link and conclusion and presentedForm.data and code.text and code and code.coding.code and category[LaboratorySlice] and category.text and code.coding and subject and result MS
 * status from http://va.gov/fhir/ValueSet/VSVFDiagnosticReportLabStatus
 * specimen only Reference(LaboratoryResultsSurgicalPathologySpecimen)
+* code = http://loinc.org#27898-6 "Pathology studies (set)"
 * category[LaboratorySlice] = http://terminology.hl7.org/CodeSystem/v2-0074#LAB
 * result only Reference(LaboratoryResultsObservation)
 
@@ -26,6 +27,9 @@ Source: LaboratoryResultsSurgicalPathologyDiagnosticReport
 * media.link -> "1439: reference from SURGICAL PATHOLOGY - IMAGE (63.08-2005)"
 * conclusion -> "1447: source value from SURGICAL PATHOLOGY - SURGICAL PATH DIAGNOSIS (63.08-1.4)" "Vista field is word processing so CodeableConcept cannot be used"
 * presentedForm.data -> "1721: source value from SURGICAL PATHOLOGY - TIU REFERENCE DATE/TIME - SP > TIU REFERENCE DATE/TIME - SP - TIU ENTRY POINTER - SP > TIU DOCUMENT - REPORT TEXT (63.08-.16 > 63.19-1 > 8925-2)" "HDR may be used to get the report"
+* code.text -> "1809: source value from SURGICAL PATHOLOGY - TIU REFERENCE DATE/TIME - SP > TIU REFERENCE DATE/TIME - SP - TIU ENTRY POINTER - SP > TIU DOCUMENT - DOCUMENT TYPE > TIU DOCUMENT DEFINITION - NAME (63.08-.16 > 63.19-1 > 8925-.01 > 8925.1-.01)" "Local Title"
+* code -> "1810: fixed value = http://loinc.org#27898-6 Pathology studies (set)"
+* code.coding.code -> "1811: source value from SURGICAL PATHOLOGY - TIU REFERENCE DATE/TIME - SP > TIU REFERENCE DATE/TIME - SP - TIU ENTRY POINTER - SP > TIU DOCUMENT - DOCUMENT TYPE > TIU DOCUMENT DEFINITION - VHA ENTERPRISE STANDARD TITLE > TIU VHA ENTERPRISE STANDARD TITLE - CODING SYSTEM > CODING SYSTEM - CODE > CODE - CODE (63.08-.16 > 63.19-1 > 8925-.01 > 8925.1-1501 > 8926.1-2 > 8926.12-.02 > 8926.121-.01)"
 * category[LaboratorySlice] -> "1419: fixed value = http://terminology.hl7.org/CodeSystem/v2-0074#LAB"
 * category.text -> "1662: source value from LABORATORY TEST - NATIONAL VA LAB CODE > WKLD CODE - WKLD CODE LAB SECTION > WKLD CODE LAB SECT - NAME (60-64 > 64-13 > 64.21-.01)" "Lab Section"
 * code.coding -> "1420: source value from LABORATORY TEST - NATIONAL VA LAB CODE > WKLD CODE - DEFAULT LOINC CODE > LAB LOINC (60-64 > 64-25 > 95.3)" "Typically LOINC. \nChanged VistA mapping to support some coded values and add the lab test name (non-standardized)"
@@ -37,13 +41,15 @@ Mapping: cdw-to-LaboratoryResultsSurgicalPathologyDiagnosticReport
 Id: cdw
 Title: "Clinical Data Warehouse (CDW)"
 Source: LaboratoryResultsSurgicalPathologyDiagnosticReport
-* basedOn -> "Pathology.SurgPathOrderedTest.CPRSOrderIEN"
-* status -> "Pathology.SurgPathOrderedTest.DispositionLabCodeIEN"
-* effectiveDateTime -> "Pathology.SurgicalPathology.SpecimenTakenDateTime,Pathology.SurgPathComment.SpecimenTakenDateTime,Pathology.SurgPathDelayedComment.SpecimenTakenDateTime,Pathology.SurgPathDiagnosis.SpecimenTakenDateTime,Pathology.SurgPathFrozenSection.SpecimenTakenDateTime,Pathology.SurgPathGrossDescription.SpecimenTakenDateTime,Pathology.SurgPathMicroscopicExam.SpecimenTakenDateTime,Pathology.SurgPathOpFindings.SpecimenTakenDateTime,Pathology.SurgPathOrderedTest.SpecimenTakenDateTime,Pathology.SurgPathOrganTissueDisease.SpecimenTakenDateTime,Pathology.SurgPathOrganTissueFunction.SpecimenTakenDateTime,Pathology.SurgPathOrganTissueProcedure.SpecimenTakenDateTime,Pathology.SurgPathPostOpDiagnosis.SpecimenTakenDateTime,Pathology.SurgPathPreOpDiagnosis.SpecimenTakenDateTime,Pathology.SurgPathSpecimen.SpecimenTakenDateTime,Pathology.SurgPathSupplement.SpecimenTakenDateTime,Pathology.SurgPathSupplementDescript.SpecimenTakenDateTime,Pathology.SurgPathTIUReference.SpecimenTakenDateTime"
+* basedOn -> "Pathology.SurgPathOrderedTest.CPRSOrderIEN,Pathology.SurgPathOrderedTest.CPRSOrderSID"
+* status -> "Pathology.SurgPathOrderedTest.DispositionLabCodeIEN,Pathology.SurgPathOrderedTest.DispositionLabCodeSID"
+* effectiveDateTime -> "Pathology.SurgicalPathology.SpecimenTakenDateTime,Pathology.SurgPathComment.SpecimenTakenDateTime,Pathology.SurgPathDelayedComment.SpecimenTakenDateTime,Pathology.SurgPathDiagnosis.SpecimenTakenDateTime,Pathology.SurgPathFrozenSection.SpecimenTakenDateTime,Pathology.SurgPathGrossDescription.SpecimenTakenDateTime,Pathology.SurgPathMicroscopicExam.SpecimenTakenDateTime,Pathology.SurgPathOpFindings.SpecimenTakenDateTime,Pathology.SurgPathOrderedTest.SpecimenTakenDateTime,Pathology.SurgPathOrganTissueDisease.SpecimenTakenDateTime,Pathology.SurgPathOrganTissueEtiology.SpecimenTakenDateTime,Pathology.SurgPathOrganTissueFunction.SpecimenTakenDateTime,Pathology.SurgPathOrganTissueMorphology.SpecimenTakenDateTime,Pathology.SurgPathOrganTissueProcedure.SpecimenTakenDateTime,Pathology.SurgPathPostOpDiagnosis.SpecimenTakenDateTime,Pathology.SurgPathPreOpDiagnosis.SpecimenTakenDateTime,Pathology.SurgPathSpecimen.SpecimenTakenDateTime,Pathology.SurgPathSupplement.SpecimenTakenDateTime,Pathology.SurgPathSupplementDescript.SpecimenTakenDateTime,Pathology.SurgPathTIUReference.SpecimenTakenDateTime"
 * issued -> "Pathology.SurgicalPathology.ReportCompletedDateTime"
 * performer -> "Pathology.SurgicalPathology.ReleasedByStaffIEN"
 * performer -> "Pathology.SurgicalPathology.ReleasingInstitutionIEN"
 * resultsInterpreter -> "Pathology.SurgicalPathology.PathologistStaffIEN"
 * specimen -> "Pathology.SurgicalPathology.SurgicalPathologyShortAccessionNumber"
+* category.text -> "Dim.LabChemTest.NationalVALabCodeIEN"
+* code.coding -> "Dim.LabChemTest.NationalVALabCodeIEN"
 * code.text -> "Dim.LabChemTest.LabChemTestName"
-* subject -> "Micro.AntibioticSensitivity.LRDFN,Micro.AntibioticSensitivityComment.LRDFN,Pathology.Autopsy.LRDFN,Micro.BacteriologyReports.LRDFN,Pathology.CytoOrganTissueFunction.StaffIEN,Micro.MicroAntibioticLevel.LRDFN,Micro.MicroAudit.LRDFN,Micro.Microbiology.LRDFN,Micro.MicroOrderedTest.LRDFN,Micro.MicroSterilityResults.LRDFN,Micro.MycobacteriologyReports.LRDFN,Micro.Mycology.LRDFN,Micro.MycologyReports.LRDFN,Micro.Parasitology.LRDFN,Micro.ParasitologyReports.LRDFN,Micro.ParasitologyStage.LRDFN,SStaff.SMicroOrderedTest.LRDFN,Micro.Virology.LRDFN,Micro.VirologyReports.LRDFN"
+* subject -> "Micro.AntibioticSensitivity.LRDFN,Micro.AntibioticSensitivityComment.LRDFN,Micro.BacteriologyReports.LRDFN,Micro.MicroAntibioticLevel.LRDFN,Micro.MicroAudit.LRDFN,Micro.Microbiology.LRDFN,Micro.MicroOrderedTest.LRDFN,Micro.MicroSterilityResults.LRDFN,Micro.MycobacteriologyReports.LRDFN,Micro.Mycology.LRDFN,Micro.MycologyReports.LRDFN,Micro.Parasitology.LRDFN,Micro.ParasitologyReports.LRDFN,Micro.ParasitologyStage.LRDFN,Micro.Virology.LRDFN,Micro.VirologyReports.LRDFN,Pathology.Autopsy.LRDFN,Pathology.CytoOrganTissueFunction.StaffIEN,SStaff.SMicroOrderedTest.LRDFN"

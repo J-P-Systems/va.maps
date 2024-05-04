@@ -17,5 +17,5 @@ Mapping: cdw-to-VitalSignsCPMOrganization
 Id: cdw
 Title: "Clinical Data Warehouse (CDW)"
 Source: VitalSignsCPMOrganization
-* identifier -> "Dim.Institution.InstitutionCode"
-* name -> "Dim.AutoDiscontinuedRule.InstitutionName,Dim.Institution.InstitutionName,Dim.RequestService.IFCRoutingInstitution"
+* identifier -> "Vital.VitalSign.LocationIEN\nDim.Institution.InstitutionCode,Dim.Institution.InstitutionCode,Dim.InstitutionTimeZone.StationNumber,NDim.MVIInstitution.InstitutionCode"
+* name -> "Vital.VitalSign.LocationIEN\nDim.AutoDiscontinuedRule.InstitutionName,Dim.Institution.InstitutionName,Dim.Institution.InstitutionName,Dim.InstitutionTimeZone.Institution,Dim.RequestService.IFCRoutingInstitution,NDim.MVIInstitution.InstitutionName"

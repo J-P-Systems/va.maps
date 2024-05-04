@@ -21,11 +21,11 @@
 <tr><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3goXBCwdPqAP0wAAAldJREFUOMuNk0tIlFEYhp9z/vE2jHkhxXA0zJCMitrUQlq4lnSltEqCFhFG2MJFhIvIFpkEWaTQqjaWZRkp0g26URZkTpbaaOJkDqk10szoODP//7XIMUe0elcfnPd9zsfLOYplGrpRwZaqTtw3K7PtGem7Q6FoidbGgqHVy/HRb669R+56zx7eRV1L31JGxYbBtjKK93cxeqfyQHbehkZbUkK20goELEuIzEd+dHS+qz/Y8PTSif0FnGkbiwcAjHaU1+QWOptFiyCLp/LnKptpqIuXHx6rbR26kJcBX3yLgBfnd7CxwJmflpP2wUg0HIAoUUpZBmKzELGWcN8nAr6Gpu7tLU/CkwAaoKTWRSQyt89Q8w6J+oVQkKnBoblH7V0PPvUOvDYXfopE/SJmALsxnVm6LbkotrUtNowMeIrVrBcBpaMmdS0j9df7abpSuy7HWehwJdt1lhVwi/J58U5beXGAF6c3UXLycw1wdFklArBn87xdh0ZsZtArghBdAA3+OEDVubG4UEzP6x1FOWneHh2VDAHBAt80IbdXDcesNoCvs3E5AFyNSU5nbrDPZpcUEQQTFZiEVx+51fxMhhyJEAgvlriadIJZZksRuwBYMOPBbO3hePVVqgEJhFeUuFLhIPkRP6BQLIBrmMenujm/3g4zc398awIe90Zb5A1vREALqneMcYgP/xVQWlG+Ncu5vgwwlaUNx+3799rfe96u9K0JSDXcOzOTJg4B6IgmXfsygc7/Bvg9g9E58/cDVmGIBOP/zT8Bz1zqWqpbXIsd0O9hajXfL6u4BaOS6SeWAAAAAElFTkSuQmCC" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr></table></div>
   </text>
   <url value="http://va.gov/fhir/StructureDefinition/ProcedureRadiology"/>
-  <version value="0.46.0"/>
+  <version value="0.47.0"/>
   <name value="ProcedureRadiology"/>
   <title value="Procedure: Radiology"/>
   <status value="draft"/>
-  <date value="2024-05-01T10:34:27+00:00"/>
+  <date value="2024-05-04T09:18:00+00:00"/>
   <publisher value="VA"/>
   <contact>
     <name value="VA"/>
@@ -656,7 +656,7 @@
       </mapping>
       <mapping>
         <identity value="cdw"/>
-        <map value="Dim.RadiologyExamStatus.RadiologyExamStatus"/>
+        <map value="Rad.RadiologyExam.RadiologyExamStatusIEN&#xA;Dim.RadiologyExamStatus.RadiologyExamStatus"/>
       </mapping>
     </element>
     <element id="Procedure.statusReason">
@@ -863,7 +863,7 @@
       </mapping>
       <mapping>
         <identity value="cdw"/>
-        <map value="Dim.RadiologyHoldCancelReason.RadiologyHoldCancelReason"/>
+        <map value="Rad.RadiologyExam.RadiologyHoldCancelReasonIEN&#xA;Dim.RadiologyHoldCancelReason.RadiologyHoldCancelReason"/>
       </mapping>
     </element>
     <element id="Procedure.category">
@@ -1067,7 +1067,7 @@
       </mapping>
       <mapping>
         <identity value="cdw"/>
-        <map value="Dim.ImagingType.ImagingType"/>
+        <map value="Rad.RadiologyRegisteredExam.ImagingTypeIEN&#xA;Dim.ImagingType.ImagingType"/>
       </mapping>
     </element>
     <element id="Procedure.code">
@@ -1239,6 +1239,10 @@
         <identity value="vista"/>
         <map value="1509: source value from EXAMINATIONS - PROCEDURE &gt; RAD/NUC MED PROCEDURES - CPT CODE &gt; CPT (70.03-2 &gt; 71-9 &gt; 81-)"/>
       </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Rad.RadiologyExam.RadiologyProcedureIEN"/>
+      </mapping>
     </element>
     <element id="Procedure.code.text">
       <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
@@ -1337,6 +1341,10 @@
         <identity value="vista"/>
         <map value="1510: reference from RAD/NUC MED PATIENT - NAME (70-.01)"/>
       </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Patient.RadiologyPatient.PatientIEN,Rad.RadiologyExam.PatientIEN,Rad.RadiologyExamActivityLog.PatientIEN,Rad.RadiologyExamContrastMedia.PatientIEN,Rad.RadiologyExamCPTModifier.PatientIEN,Rad.RadiologyExamMedication.PatientIEN,Rad.RadiologyExamSecondaryDiagnosticCode.PatientIEN,Rad.RadiologyExamStatusList.PatientIEN,Rad.RadiologyFilmRegistry.PatientIEN,Rad.RadiologyRegisteredExam.PatientIEN"/>
+      </mapping>
     </element>
     <element id="Procedure.encounter">
       <path value="Procedure.encounter"/>
@@ -1384,6 +1392,10 @@
       <mapping>
         <identity value="vista"/>
         <map value="1511: reference from EXAMINATIONS - VISIT (70.03-27)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Rad.RadiologyExam.VisitIEN"/>
       </mapping>
     </element>
     <element id="Procedure.performed[x]">
@@ -1834,6 +1846,10 @@
         <identity value="vista"/>
         <map value="1513: reference from EXAMINATIONS - PRIMARY INTERPRETING STAFF (70.03-15)"/>
       </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Rad.RadiologyExam.PrimaryInterpretingStaffIEN"/>
+      </mapping>
     </element>
     <element id="Procedure.performer.onBehalfOf">
       <path value="Procedure.performer.onBehalfOf"/>
@@ -1904,6 +1920,10 @@
       <mapping>
         <identity value="vista"/>
         <map value="1514: reference from REGISTERED EXAMS - IMAGING LOCATION &gt; IMAGING LOCATIONS - LOCATION (70.02-4 &gt; 79.1-.01)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Rad.RadiologyRegisteredExam.RadiologyLocationIEN&#xA;Dim.RadiologyLocation.LocationIEN"/>
       </mapping>
     </element>
     <element id="Procedure.reasonCode">
@@ -2544,7 +2564,7 @@
       </mapping>
       <mapping>
         <identity value="cdw"/>
-        <map value="Dim.RadiologyExamStatus.RadiologyExamStatus"/>
+        <map value="Rad.RadiologyExam.RadiologyExamStatusIEN&#xA;Dim.RadiologyExamStatus.RadiologyExamStatus"/>
       </mapping>
     </element>
     <element id="Procedure.statusReason.text">
@@ -2556,7 +2576,7 @@
       </mapping>
       <mapping>
         <identity value="cdw"/>
-        <map value="Dim.RadiologyHoldCancelReason.RadiologyHoldCancelReason"/>
+        <map value="Rad.RadiologyExam.RadiologyHoldCancelReasonIEN&#xA;Dim.RadiologyHoldCancelReason.RadiologyHoldCancelReason"/>
       </mapping>
     </element>
     <element id="Procedure.category.text">
@@ -2568,7 +2588,7 @@
       </mapping>
       <mapping>
         <identity value="cdw"/>
-        <map value="Dim.ImagingType.ImagingType"/>
+        <map value="Rad.RadiologyRegisteredExam.ImagingTypeIEN&#xA;Dim.ImagingType.ImagingType"/>
       </mapping>
     </element>
     <element id="Procedure.code.coding">
@@ -2578,12 +2598,20 @@
         <identity value="vista"/>
         <map value="1509: source value from EXAMINATIONS - PROCEDURE &gt; RAD/NUC MED PROCEDURES - CPT CODE &gt; CPT (70.03-2 &gt; 71-9 &gt; 81-)"/>
       </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Rad.RadiologyExam.RadiologyProcedureIEN"/>
+      </mapping>
     </element>
     <element id="Procedure.subject">
       <path value="Procedure.subject"/>
       <mapping>
         <identity value="vista"/>
         <map value="1510: reference from RAD/NUC MED PATIENT - NAME (70-.01)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Patient.RadiologyPatient.PatientIEN,Rad.RadiologyExam.PatientIEN,Rad.RadiologyExamActivityLog.PatientIEN,Rad.RadiologyExamContrastMedia.PatientIEN,Rad.RadiologyExamCPTModifier.PatientIEN,Rad.RadiologyExamMedication.PatientIEN,Rad.RadiologyExamSecondaryDiagnosticCode.PatientIEN,Rad.RadiologyExamStatusList.PatientIEN,Rad.RadiologyFilmRegistry.PatientIEN,Rad.RadiologyRegisteredExam.PatientIEN"/>
       </mapping>
     </element>
     <element id="Procedure.encounter">
@@ -2592,6 +2620,10 @@
       <mapping>
         <identity value="vista"/>
         <map value="1511: reference from EXAMINATIONS - VISIT (70.03-27)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Rad.RadiologyExam.VisitIEN"/>
       </mapping>
     </element>
     <element id="Procedure.performed[x]">
@@ -2634,6 +2666,10 @@
         <identity value="vista"/>
         <map value="1513: reference from EXAMINATIONS - PRIMARY INTERPRETING STAFF (70.03-15)"/>
       </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Rad.RadiologyExam.PrimaryInterpretingStaffIEN"/>
+      </mapping>
     </element>
     <element id="Procedure.location">
       <path value="Procedure.location"/>
@@ -2641,6 +2677,10 @@
       <mapping>
         <identity value="vista"/>
         <map value="1514: reference from REGISTERED EXAMS - IMAGING LOCATION &gt; IMAGING LOCATIONS - LOCATION (70.02-4 &gt; 79.1-.01)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Rad.RadiologyRegisteredExam.RadiologyLocationIEN&#xA;Dim.RadiologyLocation.LocationIEN"/>
       </mapping>
     </element>
   </differential>

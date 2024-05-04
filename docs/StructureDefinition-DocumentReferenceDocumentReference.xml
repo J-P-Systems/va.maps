@@ -43,11 +43,11 @@
 <tr><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3goXBCwdPqAP0wAAAldJREFUOMuNk0tIlFEYhp9z/vE2jHkhxXA0zJCMitrUQlq4lnSltEqCFhFG2MJFhIvIFpkEWaTQqjaWZRkp0g26URZkTpbaaOJkDqk10szoODP//7XIMUe0elcfnPd9zsfLOYplGrpRwZaqTtw3K7PtGem7Q6FoidbGgqHVy/HRb669R+56zx7eRV1L31JGxYbBtjKK93cxeqfyQHbehkZbUkK20goELEuIzEd+dHS+qz/Y8PTSif0FnGkbiwcAjHaU1+QWOptFiyCLp/LnKptpqIuXHx6rbR26kJcBX3yLgBfnd7CxwJmflpP2wUg0HIAoUUpZBmKzELGWcN8nAr6Gpu7tLU/CkwAaoKTWRSQyt89Q8w6J+oVQkKnBoblH7V0PPvUOvDYXfopE/SJmALsxnVm6LbkotrUtNowMeIrVrBcBpaMmdS0j9df7abpSuy7HWehwJdt1lhVwi/J58U5beXGAF6c3UXLycw1wdFklArBn87xdh0ZsZtArghBdAA3+OEDVubG4UEzP6x1FOWneHh2VDAHBAt80IbdXDcesNoCvs3E5AFyNSU5nbrDPZpcUEQQTFZiEVx+51fxMhhyJEAgvlriadIJZZksRuwBYMOPBbO3hePVVqgEJhFeUuFLhIPkRP6BQLIBrmMenujm/3g4zc398awIe90Zb5A1vREALqneMcYgP/xVQWlG+Ncu5vgwwlaUNx+3799rfe96u9K0JSDXcOzOTJg4B6IgmXfsygc7/Bvg9g9E58/cDVmGIBOP/zT8Bz1zqWqpbXIsd0O9hajXfL6u4BaOS6SeWAAAAAElFTkSuQmCC" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr></table></div>
   </text>
   <url value="http://va.gov/fhir/StructureDefinition/DocumentReferenceDocumentReference"/>
-  <version value="0.46.0"/>
+  <version value="0.47.0"/>
   <name value="DocumentReferenceDocumentReference"/>
   <title value="Document Reference DocumentReference"/>
   <status value="draft"/>
-  <date value="2024-05-01T10:34:27+00:00"/>
+  <date value="2024-05-04T09:18:00+00:00"/>
   <publisher value="VA"/>
   <contact>
     <name value="VA"/>
@@ -730,6 +730,10 @@
         <map value="874: source value from TIU DOCUMENT - DOCUMENT TYPE &gt; TIU DOCUMENT DEFINITION - VHA ENTERPRISE STANDARD TITLE &gt; TIU VHA ENTERPRISE STANDARD TITLE - DOCUMENT TYPE (8925-.01 &gt; 8925.1-1501 &gt; 8926.1-.08)"/>
         <comment value="Get LOINC from VistA or use TIU_VHA_ENTERPRISE_STANDARD_TITLE_8926.1 file provided by KBS to look up LOINC mapping&#xA;CDW now has a view."/>
       </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="TIU.TIUDocument.TIUDocumentDefinitionIEN"/>
+      </mapping>
     </element>
     <element id="DocumentReference.category">
       <path value="DocumentReference.category"/>
@@ -921,6 +925,10 @@
         <map value="876: source value from TIU DOCUMENT - PATIENT (8925-.02)"/>
         <comment value="Pointer to PATIENT/HIS FILE (#9000001)"/>
       </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="TIU.TIUDocument.PatientIEN"/>
+      </mapping>
     </element>
     <element id="DocumentReference.date">
       <path value="DocumentReference.date"/>
@@ -1064,6 +1072,14 @@
         <map value="1663: source value from TIU DOCUMENT - SIGNED BY (8925-1502)"/>
         <comment value="Added signed by as an author since it allows more than one."/>
       </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="TIU.TIUDocument.AuthorDictatorStaffIEN"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="TIU.TIUDocument.SignedByStaffIEN"/>
+      </mapping>
     </element>
     <element id="DocumentReference.authenticator">
       <path value="DocumentReference.authenticator"/>
@@ -1126,6 +1142,10 @@
         <identity value="vista"/>
         <map value="879: source value from TIU DOCUMENT - VERIFIED BY (8925-1306)"/>
       </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="TIU.TIUDocument.VerifiedByStaffIEN"/>
+      </mapping>
     </element>
     <element id="DocumentReference.custodian">
       <path value="DocumentReference.custodian"/>
@@ -1170,6 +1190,10 @@
         <identity value="vista"/>
         <map value="880: source value from TIU DOCUMENT - DIVISION (8925-1212)"/>
         <comment value="who maintains the document = VA…. Or maybe a specific? Clinic&#xA;Per 03/02/2023 email from LH, changed the Vista field from 1205 (hospital location) to 1212 (division)."/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="TIU.TIUDocument.InstitutionIEN"/>
       </mapping>
     </element>
     <element id="DocumentReference.relatesTo">
@@ -2088,6 +2112,10 @@
         <comment value="03/06/23 added the secondary subfield based on LH feedback"/>
       </mapping>
       <mapping>
+        <identity value="cdw"/>
+        <map value="TIU.TIUDocument.TIUDocumentDefinitionIEN"/>
+      </mapping>
+      <mapping>
         <identity value="vpr"/>
         <map value="#ERROR_#REF!"/>
       </mapping>
@@ -2373,6 +2401,10 @@
       <mapping>
         <identity value="vista"/>
         <map value="899: reference from TIU DOCUMENT - VISIT (8925-.03)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="TIU.TIUDocument.VisitIEN"/>
       </mapping>
     </element>
     <element id="DocumentReference.context.event">
@@ -2690,7 +2722,7 @@
       </mapping>
       <mapping>
         <identity value="cdw"/>
-        <map value="Dim.Location.LocationType"/>
+        <map value="TIU.TIUDocument.DocumentLocationIEN&#xA;Dim.Location.LocationType,Dim.Location.LocationType"/>
       </mapping>
     </element>
     <element id="DocumentReference.context.practiceSetting">
@@ -2747,6 +2779,10 @@
       <mapping>
         <identity value="vista"/>
         <map value="904: source value from TIU DOCUMENT - TREATING SPECIALTY (8925-1402)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="TIU.TIUDocument.TreatingSpecialtyIEN"/>
       </mapping>
     </element>
     <element id="DocumentReference.context.sourcePatientInfo">
@@ -2871,6 +2907,10 @@
         <map value="874: source value from TIU DOCUMENT - DOCUMENT TYPE &gt; TIU DOCUMENT DEFINITION - VHA ENTERPRISE STANDARD TITLE &gt; TIU VHA ENTERPRISE STANDARD TITLE - DOCUMENT TYPE (8925-.01 &gt; 8925.1-1501 &gt; 8926.1-.08)"/>
         <comment value="Get LOINC from VistA or use TIU_VHA_ENTERPRISE_STANDARD_TITLE_8926.1 file provided by KBS to look up LOINC mapping&#xA;CDW now has a view."/>
       </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="TIU.TIUDocument.TIUDocumentDefinitionIEN"/>
+      </mapping>
     </element>
     <element id="DocumentReference.category:us-core">
       <path value="DocumentReference.category"/>
@@ -2892,6 +2932,10 @@
         <identity value="vista"/>
         <map value="876: source value from TIU DOCUMENT - PATIENT (8925-.02)"/>
         <comment value="Pointer to PATIENT/HIS FILE (#9000001)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="TIU.TIUDocument.PatientIEN"/>
       </mapping>
     </element>
     <element id="DocumentReference.date">
@@ -2917,6 +2961,14 @@
         <map value="1663: source value from TIU DOCUMENT - SIGNED BY (8925-1502)"/>
         <comment value="Added signed by as an author since it allows more than one."/>
       </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="TIU.TIUDocument.AuthorDictatorStaffIEN"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="TIU.TIUDocument.SignedByStaffIEN"/>
+      </mapping>
     </element>
     <element id="DocumentReference.authenticator">
       <path value="DocumentReference.authenticator"/>
@@ -2924,6 +2976,10 @@
       <mapping>
         <identity value="vista"/>
         <map value="879: source value from TIU DOCUMENT - VERIFIED BY (8925-1306)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="TIU.TIUDocument.VerifiedByStaffIEN"/>
       </mapping>
     </element>
     <element id="DocumentReference.custodian">
@@ -2933,6 +2989,10 @@
         <identity value="vista"/>
         <map value="880: source value from TIU DOCUMENT - DIVISION (8925-1212)"/>
         <comment value="who maintains the document = VA…. Or maybe a specific? Clinic&#xA;Per 03/02/2023 email from LH, changed the Vista field from 1205 (hospital location) to 1212 (division)."/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="TIU.TIUDocument.InstitutionIEN"/>
       </mapping>
     </element>
     <element id="DocumentReference.description">
@@ -3019,6 +3079,10 @@
         <comment value="03/06/23 added the secondary subfield based on LH feedback"/>
       </mapping>
       <mapping>
+        <identity value="cdw"/>
+        <map value="TIU.TIUDocument.TIUDocumentDefinitionIEN"/>
+      </mapping>
+      <mapping>
         <identity value="vpr"/>
         <map value="#ERROR_#REF!"/>
       </mapping>
@@ -3057,6 +3121,10 @@
       <mapping>
         <identity value="vista"/>
         <map value="899: reference from TIU DOCUMENT - VISIT (8925-.03)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="TIU.TIUDocument.VisitIEN"/>
       </mapping>
     </element>
     <element id="DocumentReference.context.event">
@@ -3105,7 +3173,7 @@
       </mapping>
       <mapping>
         <identity value="cdw"/>
-        <map value="Dim.Location.LocationType"/>
+        <map value="TIU.TIUDocument.DocumentLocationIEN&#xA;Dim.Location.LocationType,Dim.Location.LocationType"/>
       </mapping>
     </element>
     <element id="DocumentReference.context.practiceSetting">
@@ -3114,6 +3182,10 @@
       <mapping>
         <identity value="vista"/>
         <map value="904: source value from TIU DOCUMENT - TREATING SPECIALTY (8925-1402)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="TIU.TIUDocument.TreatingSpecialtyIEN"/>
       </mapping>
     </element>
     <element id="DocumentReference.context.sourcePatientInfo">

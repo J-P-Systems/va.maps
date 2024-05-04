@@ -34,7 +34,11 @@ Mapping: cdw-to-ProcedureOutpatient
 Id: cdw
 Title: "Clinical Data Warehouse (CDW)"
 Source: ProcedureOutpatient
-* encounter -> "Outpat.VProcedure.VisitDateTime,Outpat.VProcedureCPTModifier.VisitDateTime,Outpat.VProcedureDiagnosis.VisitDateTime,Outpat.WorkloadVProcedure.VisitDateTime,Outpat.WorkloadVProcedureCPTModifier.VisitDateTime,Outpat.WorkloadVProcedureDiagnosis.VisitDateTime"
-* code.text -> "Dim.ProviderNarrative.ProviderNarrative"
+* subject -> "Outpat.VProcedure.PatientIEN,Outpat.VProcedureCPTModifier.PatientIEN,Outpat.VProcedureDiagnosis.PatientIEN,Outpat.WorkloadVProcedure.PatientIEN,Outpat.WorkloadVProcedureCPTModifier.PatientIEN,Outpat.WorkloadVProcedureDiagnosis.PatientIEN"
+* encounter -> "Outpat.VProcedure.VisitDateTime,Outpat.VProcedure.VisitIEN,Outpat.VProcedureCPTModifier.VisitDateTime,Outpat.VProcedureCPTModifier.VisitIEN,Outpat.VProcedureDiagnosis.VisitDateTime,Outpat.VProcedureDiagnosis.VisitIEN,Outpat.WorkloadVProcedure.VisitDateTime,Outpat.WorkloadVProcedure.VisitIEN,Outpat.WorkloadVProcedureCPTModifier.VisitDateTime,Outpat.WorkloadVProcedureCPTModifier.VisitIEN,Outpat.WorkloadVProcedureDiagnosis.VisitDateTime,Outpat.WorkloadVProcedureDiagnosis.VisitIEN"
+* code.text -> "Outpat.VProcedure.ProviderNarrativeIEN,Outpat.WorkloadVProcedure.ProviderNarrativeIEN\nDim.ProviderNarrative.ProviderNarrative"
+* reasonCode -> "Outpat.VProcedureDiagnosis.ICDIEN,Outpat.WorkloadVProcedureDiagnosis.ICDIEN"
 * performedDateTime -> "Outpat.VProcedure.EventDateTime,Outpat.VProcedureDiagnosis.EventDateTime,Outpat.WorkloadVProcedure.EventDateTime,Outpat.WorkloadVProcedureDiagnosis.EventDateTime"
+* performer.actor -> "Outpat.VProcedure.EncounterProviderIEN,Outpat.WorkloadVProcedure.EncounterProviderIEN"
 * note.text -> "Outpat.VProcedure.Comments,Outpat.WorkloadVProcedure.Comments"
+* code.coding -> "Outpat.VProcedure.CPTIEN,Outpat.VProcedureCPTModifier.CPTIEN,Outpat.VProcedureDiagnosis.CPTIEN,Outpat.WorkloadVProcedure.CPTIEN,Outpat.WorkloadVProcedureCPTModifier.CPTIEN,Outpat.WorkloadVProcedureDiagnosis.CPTIEN"

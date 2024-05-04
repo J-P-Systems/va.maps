@@ -30,11 +30,11 @@
 <tr><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3goXBCwdPqAP0wAAAldJREFUOMuNk0tIlFEYhp9z/vE2jHkhxXA0zJCMitrUQlq4lnSltEqCFhFG2MJFhIvIFpkEWaTQqjaWZRkp0g26URZkTpbaaOJkDqk10szoODP//7XIMUe0elcfnPd9zsfLOYplGrpRwZaqTtw3K7PtGem7Q6FoidbGgqHVy/HRb669R+56zx7eRV1L31JGxYbBtjKK93cxeqfyQHbehkZbUkK20goELEuIzEd+dHS+qz/Y8PTSif0FnGkbiwcAjHaU1+QWOptFiyCLp/LnKptpqIuXHx6rbR26kJcBX3yLgBfnd7CxwJmflpP2wUg0HIAoUUpZBmKzELGWcN8nAr6Gpu7tLU/CkwAaoKTWRSQyt89Q8w6J+oVQkKnBoblH7V0PPvUOvDYXfopE/SJmALsxnVm6LbkotrUtNowMeIrVrBcBpaMmdS0j9df7abpSuy7HWehwJdt1lhVwi/J58U5beXGAF6c3UXLycw1wdFklArBn87xdh0ZsZtArghBdAA3+OEDVubG4UEzP6x1FOWneHh2VDAHBAt80IbdXDcesNoCvs3E5AFyNSU5nbrDPZpcUEQQTFZiEVx+51fxMhhyJEAgvlriadIJZZksRuwBYMOPBbO3hePVVqgEJhFeUuFLhIPkRP6BQLIBrmMenujm/3g4zc398awIe90Zb5A1vREALqneMcYgP/xVQWlG+Ncu5vgwwlaUNx+3799rfe96u9K0JSDXcOzOTJg4B6IgmXfsygc7/Bvg9g9E58/cDVmGIBOP/zT8Bz1zqWqpbXIsd0O9hajXfL6u4BaOS6SeWAAAAAElFTkSuQmCC" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr></table></div>
   </text>
   <url value="http://va.gov/fhir/StructureDefinition/Location"/>
-  <version value="0.46.0"/>
+  <version value="0.47.0"/>
   <name value="Location"/>
   <title value="Location"/>
   <status value="draft"/>
-  <date value="2024-05-01T10:34:27+00:00"/>
+  <date value="2024-05-04T09:18:00+00:00"/>
   <publisher value="VA"/>
   <contact>
     <name value="VA"/>
@@ -886,7 +886,7 @@
       </mapping>
       <mapping>
         <identity value="cdw"/>
-        <map value="Dim.Location.LocationName"/>
+        <map value="Dim.Location.LocationName,Dim.Location.LocationName"/>
       </mapping>
     </element>
     <element id="Location.alias">
@@ -930,7 +930,7 @@
       </mapping>
       <mapping>
         <identity value="cdw"/>
-        <map value="Dim.Location.LocationAbbreviation"/>
+        <map value="Dim.Location.LocationAbbreviation,Dim.Location.LocationAbbreviation"/>
       </mapping>
     </element>
     <element id="Location.description">
@@ -969,7 +969,7 @@
       </mapping>
       <mapping>
         <identity value="cdw"/>
-        <map value="Dim.Location.PatientFriendlyLocationName"/>
+        <map value="Dim.Location.PatientFriendlyLocationName,Dim.Location.PatientFriendlyLocationName"/>
       </mapping>
     </element>
     <element id="Location.mode">
@@ -1228,7 +1228,7 @@
       </mapping>
       <mapping>
         <identity value="cdw"/>
-        <map value="Dim.Location.MedicalService"/>
+        <map value="Dim.Location.MedicalService,Dim.Location.MedicalService"/>
       </mapping>
     </element>
     <element id="Location.telecom">
@@ -1425,7 +1425,7 @@
       </mapping>
       <mapping>
         <identity value="cdw"/>
-        <map value="Dim.Location.PhoneNumber"/>
+        <map value="Dim.Location.PhoneNumber,Dim.Location.PhoneNumber"/>
       </mapping>
     </element>
     <element id="Location.telecom.use">
@@ -1763,6 +1763,10 @@
         <identity value="vista"/>
         <map value="1322: fixed value = #physical when HOSPITAL LOCATION - INSTITUTION (44-3)"/>
       </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Dim.Location.InstitutionIEN"/>
+      </mapping>
     </element>
     <element id="Location.address.text">
       <path value="Location.address.text"/>
@@ -1863,11 +1867,11 @@
       </mapping>
       <mapping>
         <identity value="cdw"/>
-        <map value="Dim.Institution.StreetAddress1"/>
+        <map value="Dim.Location.InstitutionIEN&#xA;Dim.Institution.StreetAddress1,Dim.Institution.StreetAddress1,Dim.InstitutionTimeZone.StreetAddress1,NDim.MVIInstitution.StreetAddress1"/>
       </mapping>
       <mapping>
         <identity value="cdw"/>
-        <map value="Dim.Institution.StreetAddress2"/>
+        <map value="Dim.Location.InstitutionIEN&#xA;Dim.Institution.StreetAddress2,Dim.Institution.StreetAddress2,Dim.InstitutionTimeZone.StreetAddress2,NDim.MVIInstitution.StreetAddress2"/>
       </mapping>
     </element>
     <element id="Location.address.city">
@@ -1922,7 +1926,7 @@
       </mapping>
       <mapping>
         <identity value="cdw"/>
-        <map value="Dim.Institution.City"/>
+        <map value="Dim.Location.InstitutionIEN&#xA;Dim.Institution.City,Dim.Institution.City,Dim.InstitutionTimeZone.City,NDim.MVIInstitution.City"/>
       </mapping>
     </element>
     <element id="Location.address.district">
@@ -1970,7 +1974,7 @@
       </mapping>
       <mapping>
         <identity value="cdw"/>
-        <map value="Dim.Institution.MedicalDistrict"/>
+        <map value="Dim.Location.InstitutionIEN&#xA;Dim.Institution.MedicalDistrict,Dim.Institution.MedicalDistrict,NDim.MVIInstitution.MedicalDistrict"/>
       </mapping>
     </element>
     <element id="Location.address.state">
@@ -2029,6 +2033,10 @@
         <identity value="vista"/>
         <map value="1315: source value from HOSPITAL LOCATION - INSTITUTION &gt; INSTITUTION - STATE &gt; STATE - ABBREVIATION (44-3 &gt; 4-.02 &gt; 5-1)"/>
       </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Dim.Location.InstitutionIEN"/>
+      </mapping>
     </element>
     <element id="Location.address.postalCode">
       <path value="Location.address.postalCode"/>
@@ -2082,7 +2090,7 @@
       </mapping>
       <mapping>
         <identity value="cdw"/>
-        <map value="Dim.Institution.Zip"/>
+        <map value="Dim.Location.InstitutionIEN&#xA;Dim.Institution.Zip,Dim.Institution.Zip,Dim.InstitutionTimeZone.Zip,NDim.MVIInstitution.Zip"/>
       </mapping>
     </element>
     <element id="Location.address.country">
@@ -2130,6 +2138,10 @@
       <mapping>
         <identity value="vista"/>
         <map value="1405: source value from HOSPITAL LOCATION - INSTITUTION &gt; INSTITUTION - COUNTRY &gt; COUNTRY CODE - CODE (44-3 &gt; 4-801 &gt; 779.004-.01)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Dim.Location.InstitutionIEN"/>
       </mapping>
     </element>
     <element id="Location.address.period">
@@ -2379,7 +2391,7 @@
       </mapping>
       <mapping>
         <identity value="cdw"/>
-        <map value="Dim.Location.PhysicalLocation"/>
+        <map value="Dim.Location.PhysicalLocation,Dim.Location.PhysicalLocation"/>
       </mapping>
     </element>
     <element id="Location.position">
@@ -3240,7 +3252,7 @@
       </mapping>
       <mapping>
         <identity value="cdw"/>
-        <map value="Dim.Location.LocationName"/>
+        <map value="Dim.Location.LocationName,Dim.Location.LocationName"/>
       </mapping>
     </element>
     <element id="Location.alias">
@@ -3256,7 +3268,7 @@
       </mapping>
       <mapping>
         <identity value="cdw"/>
-        <map value="Dim.Location.LocationAbbreviation"/>
+        <map value="Dim.Location.LocationAbbreviation,Dim.Location.LocationAbbreviation"/>
       </mapping>
     </element>
     <element id="Location.description">
@@ -3268,13 +3280,18 @@
       </mapping>
       <mapping>
         <identity value="cdw"/>
-        <map value="Dim.Location.PatientFriendlyLocationName"/>
+        <map value="Dim.Location.PatientFriendlyLocationName,Dim.Location.PatientFriendlyLocationName"/>
       </mapping>
     </element>
     <element id="Location.mode">
       <path value="Location.mode"/>
       <patternCode value="instance"/>
       <mustSupport value="true"/>
+      <mapping>
+        <identity value="vista"/>
+        <map value="1806: fixed value = #instance"/>
+        <comment value="Added 4/5/24 to match LH PHAPI"/>
+      </mapping>
       <mapping>
         <identity value="vista"/>
         <map value="1806: fixed value = #instance"/>
@@ -3295,7 +3312,7 @@
       </mapping>
       <mapping>
         <identity value="cdw"/>
-        <map value="Dim.Location.MedicalService"/>
+        <map value="Dim.Location.MedicalService,Dim.Location.MedicalService"/>
       </mapping>
     </element>
     <element id="Location.telecom.value">
@@ -3307,7 +3324,7 @@
       </mapping>
       <mapping>
         <identity value="cdw"/>
-        <map value="Dim.Location.PhoneNumber"/>
+        <map value="Dim.Location.PhoneNumber,Dim.Location.PhoneNumber"/>
       </mapping>
     </element>
     <element id="Location.address.type">
@@ -3317,6 +3334,10 @@
       <mapping>
         <identity value="vista"/>
         <map value="1322: fixed value = #physical when HOSPITAL LOCATION - INSTITUTION (44-3)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Dim.Location.InstitutionIEN"/>
       </mapping>
     </element>
     <element id="Location.address.line">
@@ -3331,11 +3352,11 @@
       </mapping>
       <mapping>
         <identity value="cdw"/>
-        <map value="Dim.Institution.StreetAddress1"/>
+        <map value="Dim.Location.InstitutionIEN&#xA;Dim.Institution.StreetAddress1,Dim.Institution.StreetAddress1,Dim.InstitutionTimeZone.StreetAddress1,NDim.MVIInstitution.StreetAddress1"/>
       </mapping>
       <mapping>
         <identity value="cdw"/>
-        <map value="Dim.Institution.StreetAddress2"/>
+        <map value="Dim.Location.InstitutionIEN&#xA;Dim.Institution.StreetAddress2,Dim.Institution.StreetAddress2,Dim.InstitutionTimeZone.StreetAddress2,NDim.MVIInstitution.StreetAddress2"/>
       </mapping>
     </element>
     <element id="Location.address.city">
@@ -3346,7 +3367,7 @@
       </mapping>
       <mapping>
         <identity value="cdw"/>
-        <map value="Dim.Institution.City"/>
+        <map value="Dim.Location.InstitutionIEN&#xA;Dim.Institution.City,Dim.Institution.City,Dim.InstitutionTimeZone.City,NDim.MVIInstitution.City"/>
       </mapping>
     </element>
     <element id="Location.address.district">
@@ -3358,7 +3379,7 @@
       </mapping>
       <mapping>
         <identity value="cdw"/>
-        <map value="Dim.Institution.MedicalDistrict"/>
+        <map value="Dim.Location.InstitutionIEN&#xA;Dim.Institution.MedicalDistrict,Dim.Institution.MedicalDistrict,NDim.MVIInstitution.MedicalDistrict"/>
       </mapping>
     </element>
     <element id="Location.address.state">
@@ -3366,6 +3387,10 @@
       <mapping>
         <identity value="vista"/>
         <map value="1315: source value from HOSPITAL LOCATION - INSTITUTION &gt; INSTITUTION - STATE &gt; STATE - ABBREVIATION (44-3 &gt; 4-.02 &gt; 5-1)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Dim.Location.InstitutionIEN"/>
       </mapping>
     </element>
     <element id="Location.address.postalCode">
@@ -3376,7 +3401,7 @@
       </mapping>
       <mapping>
         <identity value="cdw"/>
-        <map value="Dim.Institution.Zip"/>
+        <map value="Dim.Location.InstitutionIEN&#xA;Dim.Institution.Zip,Dim.Institution.Zip,Dim.InstitutionTimeZone.Zip,NDim.MVIInstitution.Zip"/>
       </mapping>
     </element>
     <element id="Location.address.country">
@@ -3385,6 +3410,10 @@
       <mapping>
         <identity value="vista"/>
         <map value="1405: source value from HOSPITAL LOCATION - INSTITUTION &gt; INSTITUTION - COUNTRY &gt; COUNTRY CODE - CODE (44-3 &gt; 4-801 &gt; 779.004-.01)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Dim.Location.InstitutionIEN"/>
       </mapping>
     </element>
     <element id="Location.physicalType.text">
@@ -3396,7 +3425,7 @@
       </mapping>
       <mapping>
         <identity value="cdw"/>
-        <map value="Dim.Location.PhysicalLocation"/>
+        <map value="Dim.Location.PhysicalLocation,Dim.Location.PhysicalLocation"/>
       </mapping>
     </element>
     <element id="Location.managingOrganization.display">

@@ -6,11 +6,11 @@
     "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>VAMapsIG</h2><p>The official URL for this implementation guide is: </p><pre>http://va.gov/fhir/ImplementationGuide/va.maps</pre><div><p>This implementation guide is a FHIR IG rendering of the KBS Map Set from VA sources (primarily VistA) to FHIR. Where appropriate these maps conform to the us-core profiles.</p>\n</div></div>"
   },
   "url" : "http://va.gov/fhir/ImplementationGuide/va.maps",
-  "version" : "0.46.0",
+  "version" : "0.47.0",
   "name" : "VAMapsIG",
   "title" : "US Veterans Administration FHIR Map Set Implementation Guide",
   "status" : "draft",
-  "date" : "2024-05-01T10:34:27+00:00",
+  "date" : "2024-05-04T09:18:00+00:00",
   "publisher" : "VA",
   "contact" : [{
     "name" : "VA",
@@ -789,9 +789,42 @@
         "valueString" : "StructureDefinition:logical"
       }],
       "reference" : {
+        "reference" : "StructureDefinition/Code8926121"
+      },
+      "name" : "CODE (8926.121)",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:logical"
+      }],
+      "reference" : {
         "reference" : "StructureDefinition/CodeMappings999999918"
       },
       "name" : "CODE MAPPINGS (9999999.18)",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:logical"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/CodingSystem5065"
+      },
+      "name" : "CODING SYSTEM (50.65)",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:logical"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/CodingSystem892612"
+      },
+      "name" : "CODING SYSTEM (8926.12)",
       "exampleBoolean" : false
     },
     {
@@ -1396,6 +1429,42 @@
         "reference" : "StructureDefinition/LabLoinc953"
       },
       "name" : "LAB LOINC (95.3)",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/LabObservationCytopathology"
+      },
+      "name" : "Lab Observation: Cytopathology",
+      "description" : "This StructureDefinition contains the maps for VistA file CYTOPATHOLOGY (63.09) to us-core-diagnosticreport-lab",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/LabObservationElectronMicroscopy"
+      },
+      "name" : "Lab Observation: Electron Microscopy",
+      "description" : "This StructureDefinition contains the maps for VistA file EM (63.02) to us-core-diagnosticreport-lab",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/LabObservationSurgicalPathology"
+      },
+      "name" : "Lab Observation: Surgical Pathology",
+      "description" : "This StructureDefinition contains the maps for VistA file SURGICAL PATHOLOGY (63.08) to us-core-diagnosticreport-lab",
       "exampleBoolean" : false
     },
     {
@@ -2911,6 +2980,64 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:logical"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/VaGeneric506"
+      },
+      "name" : "VA GENERIC (50.6)",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:logical"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/VaProduct5068"
+      },
+      "name" : "VA PRODUCT (50.68)",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/VSVFadminGender"
+      },
+      "name" : "VF_adminGender",
+      "description" : "FHIR Target ValueSet for Terminology Maps VF_adminGender",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/CMVFadminGender"
+      },
+      "name" : "VF_adminGender",
+      "description" : "Terminology Maps VF_adminGender",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/VSVFadminGender-vista"
+      },
+      "name" : "VF_adminGender VistA",
+      "description" : "VistA Source ValueSet for Terminology Maps VF_adminGender",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
       }],
       "reference" : {
@@ -3158,6 +3285,42 @@
       },
       "name" : "VF_AntibioticSensitivityInterpretation VistA",
       "description" : "VistA Source ValueSet for Terminology Maps VF_AntibioticSensitivityInterpretation",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/VSVFAppointmentCancellationReason"
+      },
+      "name" : "VF_AppointmentCancellationReason",
+      "description" : "FHIR Target ValueSet for Terminology Maps VF_AppointmentCancellationReason",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/CMVFAppointmentCancellationReason"
+      },
+      "name" : "VF_AppointmentCancellationReason",
+      "description" : "Terminology Maps VF_AppointmentCancellationReason",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/VSVFAppointmentCancellationReason-vista"
+      },
+      "name" : "VF_AppointmentCancellationReason VistA",
+      "description" : "VistA Source ValueSet for Terminology Maps VF_AppointmentCancellationReason",
       "exampleBoolean" : false
     },
     {

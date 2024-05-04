@@ -4,7 +4,7 @@ Id: ImmunizationImmunization
 Title: "Immunization Immunization"
 Description: "This StructureDefinition contains the maps for VistA file V IMMUNIZATION (9000010.11) to us-core-immunization"
 * ^status = #draft
-* statusReason and vaccineCode and primarySource and status and patient and occurrenceDateTime and lotNumber and manufacturer and vaccineCode.coding.code and doseQuantity.value and performer.actor and note.text and protocolApplied.doseNumberString and doseQuantity and recorded and reaction.detail and encounter MS
+* statusReason and vaccineCode and primarySource and status and patient and occurrenceDateTime and lotNumber and manufacturer and vaccineCode.coding.code and doseQuantity.value and performer.actor and note.text and protocolApplied.doseNumberString and doseQuantity and recorded and reaction.detail and encounter and location MS
 * statusReason from http://va.gov/fhir/ValueSet/VSVFimmunizationStatusReason
 * vaccineCode from http://va.gov/fhir/ValueSet/VSVFinferredCVX
 * primarySource.extension contains http://hl7.org/fhir/StructureDefinition/11179-permitted-value-conceptmap named 11179-permitted-value-conceptmap 0..1
@@ -34,6 +34,7 @@ Source: ImmunizationImmunization
 * recorded -> "1593: source value from V IMMUNIZATION - DATE/TIME RECORDED (9000010.11-1205)" "identified byMHV"
 * reaction.detail -> "1673: reference"
 * encounter -> "1767: reference from V IMMUNIZATION - VISIT (9000010.11-.03)"
+* location -> "1801: reference from V IMMUNIZATION - VISIT > VISIT - HOSPITAL LOCATION (9000010.11-.03 > 9000010-.22)" "Added based on LH gap analysis; existed in PHAPI, not CoP maps"
 
 Mapping: cdw-to-ImmunizationImmunization
 Id: cdw
@@ -47,6 +48,9 @@ Source: ImmunizationImmunization
 * vaccineCode -> "Immun.Immunization.ImmunizationNameIEN\nDim.ImmunizationName.CVXCode"
 * patient -> "Immun.Immunization.PatientIEN"
 * occurrenceDateTime -> "Immun.Immunization.EventDateTime"
+* lotNumber -> "Dim.ImmunizationLot.ImmunizationLot"
+* manufacturer -> "Dim.ImmunizationLot.ImmunizationManufacturerIEN,Dim.ImmunizationLot.ImmunizationManufacturerSID"
+* vaccineCode.coding.code -> "Dim.ImmunizationLot.NDCCodeVAText"
 * doseQuantity.value -> "Immun.Immunization.Dosage"
 * performer.actor -> "Immun.Immunization.ImmunizingStaffIEN"
 * note.text -> "Immun.Immunization.ImmunizationComments"
@@ -54,3 +58,4 @@ Source: ImmunizationImmunization
 * doseQuantity -> "Immun.Immunization.DoseUnit"
 * recorded -> "Immun.Immunization.RecordedDateTime"
 * encounter -> "Immun.Immunization.OutsideLocation,Immun.Immunization.VisitDateTime,Immun.Immunization.VisitIEN"
+* location -> "Immun.Immunization.OutsideLocation,Immun.Immunization.VisitDateTime,Immun.Immunization.VisitIEN\nOutpat.Visit.LocationIEN,Outpat.Workload.LocationIEN"

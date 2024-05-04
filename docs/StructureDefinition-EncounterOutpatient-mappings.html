@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-    <title>Encounter: Outpatient - Mappings - US Veterans Administration FHIR Map Set Implementation Guide v0.46.0</title>
+    <title>Encounter: Outpatient - Mappings - US Veterans Administration FHIR Map Set Implementation Guide v0.47.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -57,7 +57,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">US Veterans Administration FHIR Map Set Implementation Guide</span>
             <br/>
-            <span style="display:inline-block;">0.46.0 - 240501
+            <span style="display:inline-block;">0.47.0 - 240501
 
 
 
@@ -143,7 +143,7 @@
           <div class="inner-wrapper">
 
 <div style="counter-reset: section 5" class="col-12">
-    <!-- ReleaseHeader --><p id="publish-box">US Veterans Administration FHIR Map Set Implementation Guide - Local Development build (v0.46.0) built by the FHIR (HL7&reg; FHIR&reg; Standard) Build Tools. See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
+    <!-- ReleaseHeader --><p id="publish-box">US Veterans Administration FHIR Map Set Implementation Guide - Local Development build (v0.47.0) built by the FHIR (HL7&reg; FHIR&reg; Standard) Build Tools. See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
   
 
 
@@ -216,7 +216,7 @@
         
           Draft
           
-            as of 2024-05-01
+            as of 2024-05-04
           
         
       </td>
@@ -525,17 +525,27 @@
  <tr><td>Encounter</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>Outpat.Visit.VisitIdentifier,Outpat.Workload.VisitIdentifier</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>Outpat.Visit.VisitDateTime,Outpat.Workload.VisitDateTime, Outpat.Visit.CheckOutDateTime,Outpat.Workload.CheckOutDateTime</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>Immun.ImmunizationContraRefusalEvent.VisitDateTime,Outpat.Visit.VisitDateTime,Outpat.VisitLogic.VisitDateTime,Outpat.Workload.VisitDateTime, Outpat.Visit.CheckOutDateTime,Outpat.Workload.CheckOutDateTime</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;class</td><td>Outpat.Visit.PatientStatusInOut,Outpat.Workload.PatientStatusInOut</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;type</td><td>Outpat.VProcedure.CPTIEN,Outpat.VProcedureCPTModifier.CPTIEN,Outpat.VProcedureDiagnosis.CPTIEN,Outpat.WorkloadVProcedure.CPTIEN,Outpat.WorkloadVProcedureCPTModifier.CPTIEN,Outpat.WorkloadVProcedureDiagnosis.CPTIEN</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;serviceType</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>Outpat.Visit.ServiceCategory,Outpat.Workload.ServiceCategory</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>Outpat.Visit.PatientIEN,Outpat.Workload.PatientIEN</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;participant</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;individual</td><td>Outpat.VProvider.ProviderIEN,Outpat.WorkloadVProvider.ProviderIEN</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;period</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;start</td><td>Outpat.Visit.VisitDateTime,Outpat.Workload.VisitDateTime</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;start</td><td>Immun.ImmunizationContraRefusalEvent.VisitDateTime,Outpat.Visit.VisitDateTime,Outpat.VisitLogic.VisitDateTime,Outpat.Workload.VisitDateTime</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end</td><td>Outpat.Visit.CheckOutDateTime,Outpat.Workload.CheckOutDateTime</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;reasonCode</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>Dim.ICD10.ICD10Code,Dim.ICD9.ICD9Code</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>Outpat.VDiagnosis.ICDIEN,Outpat.WorkloadVDiagnosis.ICDIEN
+Dim.ICD10.ICD10Code,Dim.ICD9.ICD9Code</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;diagnosis</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;condition</td><td>Outpat.VDiagnosis.ProblemListIEN,Outpat.WorkloadVDiagnosis.ProblemListIEN</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;location</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;location</td><td>Outpat.Visit.PrimaryStopCodeIEN,Outpat.Visit.SecondaryStopCodeIEN,Outpat.Workload.PrimaryStopCodeIEN,Outpat.Workload.SecondaryStopCodeIEN, Outpat.Visit.LocationIEN,Outpat.Workload.LocationIEN</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;serviceProvider</td><td>Outpat.Visit.InstitutionIEN,Outpat.Workload.InstitutionIEN</td> </tr>
 </table>
 <a name="workflow"> </a><h3>Mappings for Workflow Pattern (<a href="http://hl7.org/fhir/workflow.html">http://hl7.org/fhir/workflow</a>)</h3><table class="grid">
  <tr><td colspan="3"><b>EncounterOutpatient</b></td></tr>
@@ -770,7 +780,7 @@
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.46.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, May 1, 2024 10:34+0000">2024-05-01</span>
+          IG &copy; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.47.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Sat, May 4, 2024 09:18+0000">2024-05-04</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

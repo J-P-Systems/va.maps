@@ -1,0 +1,473 @@
+﻿<!-- get modelType --><?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <title>Lab Observation: Cytopathology - Mappings - US Veterans Administration FHIR Map Set Implementation Guide v0.47.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link rel="stylesheet" href="fhir.css"/>
+
+      <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap-fhir.css"/>
+
+      <!-- Project extras -->
+    <link rel="stylesheet" href="assets/css/project.css"/>
+    <link rel="stylesheet" href="assets/css/pygments-manni.css"/>
+    <link rel="stylesheet" href="assets/css/jquery-ui.css"/>
+  	<link rel="stylesheet" href="assets/css/prism.css"/>
+      <!-- Placeholder for child template CSS declarations -->
+    <link rel="stylesheet" href="assets/css/va-maps.css"/>
+
+    <script src="fhir-table-scripts.js" type="text/javascript"> </script>
+
+      <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+      <!-- [if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif] -->
+
+      <!-- Favicons -->
+    <link sizes="144x144" rel="fhir-logo" href="assets/ico/icon-fhir-144.png"/>
+    <link sizes="114x114" rel="fhir-logo" href="assets/ico/icon-fhir-114.png"/>
+    <link sizes="72x72" rel="fhir-logo" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+
+    <style type="text/css">h2{--heading-prefix:"9.203"}
+    h3,h4,h5,h6{--heading-prefix:"9.203"}</style>
+    <div id="segment-header" class="segment">    <!-- segment-header -->
+      <div class="container">    <!-- container -->
+          <!-- Placeholder for child template header declarations -->
+
+<div id="project-nav">
+    <a no-external="true" id="family-logo" href="https://va.gov"><img src="assets/images/va.png" alt="Visit the VA website" height="50"/> </a>
+</div>
+
+<div id="family-nav">
+    <a no-external="true" id="family-logo" href="http://hl7.org/fhir"><img src="assets/images/fhir-logo-www.png" alt="Visit the FHIR website" height="50"/> </a>
+</div>
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">US Veterans Administration FHIR Map Set Implementation Guide</span>
+            <br/>
+            <span style="display:inline-block;">0.47.0 - 240501
+
+
+
+  United States of America
+
+
+            </span>
+          </p>
+        </div>
+      </div>   <!-- /container -->
+    </div>    <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">    <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">    <!-- container -->
+          <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+            <!-- status-bar -->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" data-toggle="collapse" type="button" class="navbar-toggle">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a href="http://hl7.org/fhir/R4/index.html" class="navbar-brand hidden">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+                <!-- menu.xml -->
+
+<ul class="nav navbar-nav">
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li>
+    <a href="toc.html">Table of Content</a>
+  </li>
+  <li>
+    <a href="process.html">Process</a>
+  </li>
+  <li>
+    <a href="profileDesign.html">Profile Design</a>
+  </li>
+  <li>
+    <a href="guidance.html">Design Guidance</a>
+  </li>
+  <li>
+    <a href="mustSupport.html">Must Support</a>
+  </li>
+  <li>
+    <a href="classes.html">Classes</a>
+  </li>
+  <li>
+    <a href="artifacts.html">Artifacts</a>
+  </li>
+  <li>
+    <a href="changes.html">Changes</a>
+  </li>
+  <li>
+    <a href="mapset-qa.html">MapSet QA</a>
+  </li>
+</ul>
+            </div>    <!-- /.nav-collapse -->
+          </div>    <!-- /.container -->
+        </nav>    <!-- /.navbar -->
+        <!-- /HEADER CONTENT -->
+      </div>    <!-- /container -->
+    </div>    <!-- /segment-navbar -->
+      <!-- status-bar -->
+
+    <div id="segment-breadcrumb" class="segment">    <!-- segment-breadcrumb -->
+      <div class="container">    <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href="toc.html"><b>Table of Contents</b></a></li><li><a href="artifacts.html"><b>Artifacts Summary</b></a></li><li><b>Lab Observation: Cytopathology</b></li>
+
+        </ul>
+      </div>    <!-- /container -->
+    </div>    <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">    <!-- segment-content -->
+      <div class="container">    <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<div style="counter-reset: section 5" class="col-12">
+    <!-- ReleaseHeader --><p id="publish-box">US Veterans Administration FHIR Map Set Implementation Guide - Local Development build (v0.47.0) built by the FHIR (HL7&reg; FHIR&reg; Standard) Build Tools. See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
+  
+
+
+
+
+
+
+
+
+
+
+
+<ul class="nav nav-tabs">
+
+  <li>
+    <a href="StructureDefinition-LabObservationCytopathology.html">Content</a>
+  </li>
+
+
+
+  <li>
+    <a href="StructureDefinition-LabObservationCytopathology-definitions.html">Detailed Descriptions</a>
+  </li>
+
+
+
+  
+    <li class="active">
+      <a href="#">Mappings</a>
+    </li>
+  
+
+
+
+
+
+
+
+  
+    <li>
+      <a href="StructureDefinition-LabObservationCytopathology.profile.xml.html">XML</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="StructureDefinition-LabObservationCytopathology.profile.json.html">JSON</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="StructureDefinition-LabObservationCytopathology.profile.ttl.html">TTL</a>
+    </li>
+  
+
+
+</ul>
+
+
+<a name="root"> </a>
+<h2 id="root">Resource Profile: LabObservationCytopathology - Mappings</h2>
+
+  <table class="colsd">
+    <tr>
+
+      <td colspan="2">
+        
+          Draft
+          
+            as of 2024-05-04
+          
+        
+      </td>
+
+    </tr>
+  </table>
+
+
+<p>Mappings for the LabObservationCytopathology resource profile.</p>
+
+    <!-- insert intro if present -->
+  
+
+
+
+<div markdown="1" style="display:inline-block">
+
+<p><a name="l342">​</a>See also the <a href="fsh/Profile-LabObservationCytopathology.fsh">FHIR Shorthand</a>.</p>
+
+<p><a name="l348">​</a>Jump down to <a href="#mappings-for-veterans-health-information-systems-technology-and">VistA, CDW &amp; VPR mappings</a>.</p>
+
+<h3 id="vista">VistA</h3>
+  <!-- ?xml version="1.0" encoding="us-ascii" standalone="no"? -->
+<svg xmlns="http://www.w3.org/2000/svg" contentStyleType="text/css" viewBox="0 0 486 861" zoomAndPan="magnify" preserveAspectRatio="none" width="486px" xmlns:xlink="http://www.w3.org/1999/xlink" style="width:486px;height:861px;background:#FFFFFF;" version="1.1" height="861px"><defs></defs><g><text font-weight="bold" lengthAdjust="spacing" x="10" font-size="14" textLength="458" y="22.9951" font-family="sans-serif" fill="#000000">Use Case: Lab Observation: Cytopathology (VistA Source)</text><g id="elem_8925"><rect width="172" x="160" y="294.2969" style="stroke:#181818;stroke-width:0.5;" fill="#F1F1F1" height="40.5938"></rect><text lengthAdjust="spacing" x="167" font-size="14" textLength="158" y="309.292" font-family="sans-serif" fill="#000000">TIU DOCUMENT (8925)</text><line y1="314.5938" x1="160" y2="314.5938" style="stroke:#181818;stroke-width:1.0;" x2="332"></line><text lengthAdjust="spacing" x="165" font-size="14" textLength="22" y="329.5889" font-family="sans-serif" fill="#000000">.01</text><text lengthAdjust="spacing" x="197" font-size="14" textLength="122" y="329.5889" font-family="sans-serif" fill="#000000">DOCUMENT TYPE</text><line y1="314.5938" x1="192" y2="334.8906" style="stroke:#181818;stroke-width:1.0;" x2="192"></line></g><g id="elem_63_09"><rect width="264" x="114" y="44.2969" style="stroke:#181818;stroke-width:3.0;" fill="#F1F1F1" height="40.5938"></rect><text lengthAdjust="spacing" x="156.5" font-size="14" textLength="179" y="59.292" font-family="sans-serif" fill="#000000">CYTOPATHOLOGY (63.09)</text><line y1="64.5938" x1="114" y2="64.5938" style="stroke:#181818;stroke-width:1.0;" x2="378"></line><text lengthAdjust="spacing" x="119" font-size="14" textLength="22" y="79.5889" font-family="sans-serif" fill="#000000">.16</text><text lengthAdjust="spacing" x="151" font-size="14" textLength="222" y="79.5889" font-family="sans-serif" fill="#000000">TIU REFERENCE DATE/TIME - CY</text><line y1="64.5938" x1="146" y2="84.8906" style="stroke:#181818;stroke-width:1.0;" x2="146"></line></g><g id="elem_63_47"><rect width="258" x="117" y="169.2969" style="stroke:#181818;stroke-width:0.5;" fill="#F1F1F1" height="40.5938"></rect><text lengthAdjust="spacing" x="124" font-size="14" textLength="244" y="184.292" font-family="sans-serif" fill="#000000">TIU REFERENCE DATE/TIME (63.47)</text><line y1="189.5938" x1="117" y2="189.5938" style="stroke:#181818;stroke-width:1.0;" x2="375"></line><text lengthAdjust="spacing" x="122" font-size="14" textLength="9" y="204.5889" font-family="sans-serif" fill="#000000">1</text><text lengthAdjust="spacing" x="141" font-size="14" textLength="202" y="204.5889" font-family="sans-serif" fill="#000000">CY - TIU ENTRY POINTER - CY</text><line y1="189.5938" x1="136" y2="209.8906" style="stroke:#181818;stroke-width:1.0;" x2="136"></line></g><g id="elem_8925_1"><rect width="298" x="97" y="419.2969" style="stroke:#181818;stroke-width:0.5;" fill="#F1F1F1" height="60.8906"></rect><text lengthAdjust="spacing" x="120" font-size="14" textLength="252" y="434.292" font-family="sans-serif" fill="#000000">TIU DOCUMENT DEFINITION (8925.1)</text><line y1="439.5938" x1="97" y2="439.5938" style="stroke:#181818;stroke-width:1.0;" x2="395"></line><text lengthAdjust="spacing" x="109" font-size="14" textLength="22" y="454.5889" font-family="sans-serif" fill="#000000">.01</text><text lengthAdjust="spacing" x="148" font-size="14" textLength="40" y="454.5889" font-family="sans-serif" fill="#000000">NAME</text><line y1="439.5938" x1="143" y2="459.8906" style="stroke:#181818;stroke-width:1.0;" x2="143"></line><line y1="459.8906" x1="97" y2="459.8906" style="stroke:#181818;stroke-width:1.0;" x2="395"></line><text lengthAdjust="spacing" x="102" font-size="14" textLength="36" y="474.8857" font-family="sans-serif" fill="#000000">1501</text><text lengthAdjust="spacing" x="148" font-size="14" textLength="242" y="474.8857" font-family="sans-serif" fill="#000000">VHA ENTERPRISE STANDARD TITLE</text><line y1="459.8906" x1="143" y2="480.1875" style="stroke:#181818;stroke-width:1.0;" x2="143"></line></g><g id="elem_8926_1"><rect width="345" x="73.5" y="564.2969" style="stroke:#181818;stroke-width:0.5;" fill="#F1F1F1" height="40.5938"></rect><text lengthAdjust="spacing" x="80.5" font-size="14" textLength="331" y="579.292" font-family="sans-serif" fill="#000000">TIU VHA ENTERPRISE STANDARD TITLE (8926.1)</text><line y1="584.5938" x1="73.5" y2="584.5938" style="stroke:#181818;stroke-width:1.0;" x2="418.5"></line><text lengthAdjust="spacing" x="78.5" font-size="14" textLength="9" y="599.5889" font-family="sans-serif" fill="#000000">2</text><text lengthAdjust="spacing" x="97.5" font-size="14" textLength="117" y="599.5889" font-family="sans-serif" fill="#000000">CODING SYSTEM</text><line y1="584.5938" x1="92.5" y2="604.8906" style="stroke:#181818;stroke-width:1.0;" x2="92.5"></line></g><g id="elem_8926_12"><rect width="203" x="145.5" y="689.2969" style="stroke:#181818;stroke-width:0.5;" fill="#F1F1F1" height="40.5938"></rect><text lengthAdjust="spacing" x="152.5" font-size="14" textLength="189" y="704.292" font-family="sans-serif" fill="#000000">CODING SYSTEM (8926.12)</text><line y1="709.5938" x1="145.5" y2="709.5938" style="stroke:#181818;stroke-width:1.0;" x2="348.5"></line><text lengthAdjust="spacing" x="150.5" font-size="14" textLength="22" y="724.5889" font-family="sans-serif" fill="#000000">.02</text><text lengthAdjust="spacing" x="182.5" font-size="14" textLength="41" y="724.5889" font-family="sans-serif" fill="#000000">CODE</text><line y1="709.5938" x1="177.5" y2="729.8906" style="stroke:#181818;stroke-width:1.0;" x2="177.5"></line></g><g id="elem_8926_121"><rect width="136" x="180" y="814.2969" style="stroke:#181818;stroke-width:0.5;" fill="#F1F1F1" height="40.5938"></rect><text lengthAdjust="spacing" x="187" font-size="14" textLength="122" y="829.292" font-family="sans-serif" fill="#000000">CODE (8926.121)</text><line y1="834.5938" x1="180" y2="834.5938" style="stroke:#181818;stroke-width:1.0;" x2="316"></line><text lengthAdjust="spacing" x="185" font-size="14" textLength="22" y="849.5889" font-family="sans-serif" fill="#000000">.01</text><text lengthAdjust="spacing" x="217" font-size="14" textLength="41" y="849.5889" font-family="sans-serif" fill="#000000">CODE</text><line y1="834.5938" x1="212" y2="854.8906" style="stroke:#181818;stroke-width:1.0;" x2="212"></line></g>  <!-- link 63_09 to 63_47 --><g id="link_63_09_63_47"><path codeLine="28" d="M246,84.2969 C246,109.8405 246,138.8795 246,159.9344 " style="stroke:#181818;stroke-width:1.0;" id="63_09-to-63_47" fill="none"></path><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="246,165.1084,250,156.1084,246,160.1084,242,156.1084,246,165.1084"></polygon><text lengthAdjust="spacing" x="248" font-size="13" textLength="20" y="131.3638" font-family="sans-serif" fill="#000000">.16</text></g>  <!-- link 63_47 to 8925 --><g id="link_63_47_8925"><path codeLine="29" d="M246,209.2969 C246,234.8405 246,263.8795 246,284.9344 " style="stroke:#181818;stroke-width:1.0;" id="63_47-to-8925" fill="none"></path><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="246,290.1084,250,281.1084,246,285.1084,242,281.1084,246,290.1084"></polygon><text lengthAdjust="spacing" x="248" font-size="13" textLength="8" y="256.3638" font-family="sans-serif" fill="#000000">1</text></g>  <!-- link 8925 to 8925_1 --><g id="link_8925_8925_1"><path codeLine="30" d="M246,334.2969 C246,359.4344 246,387.6628 246,409.8612 " style="stroke:#181818;stroke-width:1.0;" id="8925-to-8925_1" fill="none"></path><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="246,415.0791,250,406.0791,246,410.0791,242,406.0791,246,415.0791"></polygon><text lengthAdjust="spacing" x="248" font-size="13" textLength="20" y="381.3638" font-family="sans-serif" fill="#000000">.01</text></g>  <!-- link 8925_1 to 8926_1 --><g id="link_8925_1_8926_1"><path codeLine="31" d="M246,479.2969 C246,504.8405 246,533.8795 246,554.9344 " style="stroke:#181818;stroke-width:1.0;" id="8925_1-to-8926_1" fill="none"></path><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="246,560.1084,250,551.1084,246,555.1084,242,551.1084,246,560.1084"></polygon><text lengthAdjust="spacing" x="248" font-size="13" textLength="32" y="526.3638" font-family="sans-serif" fill="#000000">1501</text></g>  <!-- link 8926_1 to 8926_12 --><g id="link_8926_1_8926_12"><path codeLine="32" d="M247,604.2969 C247,629.8405 247,658.8795 247,679.9344 " style="stroke:#181818;stroke-width:1.0;" id="8926_1-to-8926_12" fill="none"></path><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="247,685.1084,251,676.1084,247,680.1084,243,676.1084,247,685.1084"></polygon><text lengthAdjust="spacing" x="249" font-size="13" textLength="8" y="651.3638" font-family="sans-serif" fill="#000000">2</text></g>  <!-- link 8926_12 to 8926_121 --><g id="link_8926_12_8926_121"><path codeLine="33" d="M248,729.2969 C248,754.8405 248,783.8795 248,804.9344 " style="stroke:#181818;stroke-width:1.0;" id="8926_12-to-8926_121" fill="none"></path><polygon style="stroke:#181818;stroke-width:1.0;" fill="#181818" points="248,810.1084,252,801.1084,248,805.1084,244,801.1084,248,810.1084"></polygon><text lengthAdjust="spacing" x="249" font-size="13" textLength="20" y="776.3638" font-family="sans-serif" fill="#000000">.02</text></g></g></svg>
+
+<h3 id="raw-mappings">Raw mappings</h3>
+
+<table border="1" cellpadding="0" cellspacing="0" class="table-ta1"><tr class="row-ro1">
+<th class="cell-ce1">key</th>
+<th class="cell-ce1">status</th>
+<th class="cell-ce1">VistA File - Field</th>
+<th class="cell-ce1">mapApproach</th>
+<th class="cell-ce1">mapCase</th>
+<th class="cell-ce1">FHIR Path</th>
+<th class="cell-ce1">subPath</th>
+<th class="cell-ce1">mapValue</th>
+<th class="cell-ce1">mapParameter</th>
+<th class="cell-ce1">mapComment</th>
+<th class="cell-ce1">FHIR URL | Ver</th>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1815</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">CYTOPATHOLOGY - TIU REFERENCE DATE/TIME - CY &gt; TIU REFERENCE DATE/TIME - CY - TIU ENTRY POINTER - CY &gt; TIU DOCUMENT - DOCUMENT TYPE &gt; TIU DOCUMENT DEFINITION - NAME (63.09-.16 &gt; 63.47-1 &gt; 8925-.01 &gt; 8925.1-.01)</td>
+<td class="cell-ce1">source value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">DiagnosticReport.code</td>
+<td class="cell-ce1">.text</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Local Title</td>
+<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-lab | 5.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1816</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">fixed value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">DiagnosticReport.code</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://loinc.org#26438-2 "Cytology studies (set)"</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-lab | 5.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1817</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">SURGICAL PATHOLOGY - TIU REFERENCE DATE/TIME - CY &gt; TIU REFERENCE DATE/TIME - CY - TIU ENTRY POINTER - CY &gt; TIU DOCUMENT - DOCUMENT TYPE &gt; TIU DOCUMENT DEFINITION - VHA ENTERPRISE STANDARD TITLE &gt; TIU VHA ENTERPRISE STANDARD TITLE - CODING SYSTEM &gt; CODING SYSTEM - CODE &gt; CODE - CODE (63.09-.16 &gt; 63.47-1 &gt; 8925-.01 &gt; 8925.1-1501 &gt; 8926.1-2 &gt; 8926.12-.02 &gt; 8926.121-.01)</td>
+<td class="cell-ce1">source value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">DiagnosticReport.code.coding</td>
+<td class="cell-ce1">.code</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">.system=http://loinc.org</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-lab | 5.0.1</td>
+</tr>
+</table>
+
+</div>
+
+
+
+
+  <a name="vista"> </a><h3>Mappings for Veterans Health Information Systems Technology and Architecture (VistA) ()</h3><table class="grid">
+ <tr><td colspan="3"><b>LabObservationCytopathology</b></td></tr>
+ <tr><td>DiagnosticReport</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;code</td><td>1816: fixed value = http://loinc.org#26438-2 Cytology studies (set)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>1817: source value from SURGICAL PATHOLOGY - TIU REFERENCE DATE/TIME - CY &gt; TIU REFERENCE DATE/TIME - CY - TIU ENTRY POINTER - CY &gt; TIU DOCUMENT - DOCUMENT TYPE &gt; TIU DOCUMENT DEFINITION - VHA ENTERPRISE STANDARD TITLE &gt; TIU VHA ENTERPRISE STANDARD TITLE - CODING SYSTEM &gt; CODING SYSTEM - CODE &gt; CODE - CODE (63.09-.16 &gt; 63.47-1 &gt; 8925-.01 &gt; 8925.1-1501 &gt; 8926.1-2 &gt; 8926.12-.02 &gt; 8926.121-.01)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>1815: source value from CYTOPATHOLOGY - TIU REFERENCE DATE/TIME - CY &gt; TIU REFERENCE DATE/TIME - CY - TIU ENTRY POINTER - CY &gt; TIU DOCUMENT - DOCUMENT TYPE &gt; TIU DOCUMENT DEFINITION - NAME (63.09-.16 &gt; 63.47-1 &gt; 8925-.01 &gt; 8925.1-.01)</td><td><p>Local Title</p>
+</td> </tr>
+</table>
+<a name="workflow"> </a><h3>Mappings for Workflow Pattern (<a href="http://hl7.org/fhir/workflow.html">http://hl7.org/fhir/workflow</a>)</h3><table class="grid">
+ <tr><td colspan="3"><b>LabObservationCytopathology</b></td></tr>
+ <tr><td>DiagnosticReport</td><td>Event</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>Event.identifier</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;basedOn</td><td>Event.basedOn</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>Event.status</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;code</td><td>Event.code</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>Event.subject</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;encounter</td><td>Event.encounter</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;effective[x]</td><td>Event.occurrence[x]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;performer</td><td>Event.performer.actor</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;resultsInterpreter</td><td>Event.performer.actor</td> </tr>
+</table>
+<a name="v2"> </a><h3>Mappings for HL7 v2 Mapping (<a href="http://hl7.org/comparison-v2.html">http://hl7.org/v2</a>)</h3><table class="grid">
+ <tr><td colspan="3"><b>LabObservationCytopathology</b></td></tr>
+ <tr><td>DiagnosticReport</td><td>ORU -&gt; OBR</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>OBR-51/ for globally unique filler ID  - OBR-3 , For non-globally unique filler-id the flller/placer number must be combined with the universal service Id -  OBR-2(if present)+OBR-3+OBR-4</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;basedOn</td><td>ORC? OBR-2/3?</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>OBR-25 (not 1:1 mapping)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;category</td><td>OBR-24</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;category (LaboratorySlice)</td><td>OBR-24</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;code</td><td>OBR-4 (HL7 v2 doesn't provide an easy way to indicate both the ordered test and the performed panel)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>C*E.1-8, C*E.10-22</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;system</td><td>C*E.3</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;version</td><td>C*E.7</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>C*E.1</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display</td><td>C*E.2 - but note this is not well followed</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;userSelected</td><td>Sometimes implied by being first</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>C*E.9. But note many systems use C*E.2 for this</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>PID-3 (no HL7 v2 mapping for Group or Device)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;encounter</td><td>PV1-19</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;effective[x]</td><td>OBR-7</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;issued</td><td>OBR-22</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;performer</td><td>PRT-8 (where this PRT-4-Participation = "PO")</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;resultsInterpreter</td><td>OBR-32, PRT-8 (where this PRT-4-Participation = "PI")</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;specimen</td><td>SPM</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;result</td><td>OBXs</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;media</td><td>OBX?</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;conclusion</td><td>OBX</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;conclusionCode</td><td>OBX</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;presentedForm</td><td>OBX</td> </tr>
+</table>
+<a name="rim"> </a><h3>Mappings for RIM Mapping (<a href="http://hl7.org/comparison-v3.html">http://hl7.org/v3</a>)</h3><table class="grid">
+ <tr><td colspan="3"><b>LabObservationCytopathology</b></td></tr>
+ <tr><td>DiagnosticReport</td><td>Entity. Role, or Act, Observation[classCode=OBS, moodCode=EVN]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;text</td><td>Act.text?</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;contained</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;extension</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;modifierExtension</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>id</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;basedOn</td><td>outboundRelationship[typeCode=FLFS].target</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>statusCode  Note: final and amended are distinguished by whether observation is the subject of a ControlAct event of type "revise"</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;category</td><td>inboundRelationship[typeCode=COMP].source[classCode=LIST, moodCode=EVN, code &lt; LabService].code</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;category (LaboratorySlice)</td><td>inboundRelationship[typeCode=COMP].source[classCode=LIST, moodCode=EVN, code &lt; LabService].code</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;code</td><td>code</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>union(., ./translation)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;system</td><td>./codeSystem</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;version</td><td>./codeSystemVersion</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>./code</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display</td><td>CV.displayName</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;userSelected</td><td>CD.codingRationale</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>./originalText[mediaType/code="text/plain"]/data</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>participation[typeCode=SBJ]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;encounter</td><td>inboundRelationship[typeCode=COMP].source[classCode=ENC, moodCode=EVN]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;effective[x]</td><td>effectiveTime</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;issued</td><td>participation[typeCode=VRF or AUT].time</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;performer</td><td>.participation[typeCode=PRF]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;resultsInterpreter</td><td>.participation[typeCode=PRF]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;specimen</td><td>participation[typeCode=SBJ]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;result</td><td>outboundRelationship[typeCode=COMP].target</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;imagingStudy</td><td>outboundRelationship[typeCode=COMP].target[classsCode=DGIMG, moodCode=EVN]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;media</td><td>outboundRelationship[typeCode=COMP].target</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modifierExtension</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;comment</td><td>.inboundRelationship[typeCode=COMP].source[classCode=OBS, moodCode=EVN, code="annotation"].value</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;link</td><td>.value.reference</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;conclusion</td><td>inboundRelationship[typeCode="SPRT"].source[classCode=OBS, moodCode=EVN, code=LOINC:48767-8].value (type=ST)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;conclusionCode</td><td>inboundRelationship[typeCode=SPRT].source[classCode=OBS, moodCode=EVN, code=LOINC:54531-9].value (type=CD)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;presentedForm</td><td>text (type=ED)</td> </tr>
+</table>
+<a name="w5"> </a><h3>Mappings for FiveWs Pattern Mapping (http://hl7.org/fhir/fivews)</h3><table class="grid">
+ <tr><td colspan="3"><b>LabObservationCytopathology</b></td></tr>
+ <tr><td>DiagnosticReport</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>FiveWs.identifier</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>FiveWs.status</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;category</td><td>FiveWs.class</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;category (LaboratorySlice)</td><td>FiveWs.class</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;code</td><td>FiveWs.what[x]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>FiveWs.subject[x], FiveWs.subject</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;encounter</td><td>FiveWs.context</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;effective[x]</td><td>FiveWs.done[x]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;issued</td><td>FiveWs.recorded</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;performer</td><td>FiveWs.actor</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;resultsInterpreter</td><td>FiveWs.actor</td> </tr>
+</table>
+
+
+    <!-- insert notes if present -->
+  
+
+
+
+</div>
+
+        </div>    <!-- /inner-wrapper -->
+      </div>    <!-- /row -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-content -->
+
+  <script src="assets/js/jquery.js" type="text/javascript"> </script>       <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script src="assets/js/jquery-ui.min.js" type="text/javascript"> </script>
+
+  <script src="assets/js/tabs.js" type="text/javascript"> </script>
+
+  <script src="assets/js/window-hash.js" type="text/javascript"> </script>
+  <a name="bottom"> </a>
+  <div igtool="footer" id="segment-footer" class="segment">    <!-- segment-footer -->
+    <div class="container">    <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &copy; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.47.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Sat, May 4, 2024 09:18+0000">2024-05-04</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>    <!-- /inner-wrapper -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">    <!-- segment-post-footer -->
+    <div class="container">    <!-- container -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-post-footer -->
+  
+    <!-- JS and analytics only. -->
+    <!-- Bootstrap core JavaScript
+  ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+  <script src="assets/js/bootstrap.min.js" type="text/javascript"> </script>
+  <script src="assets/js/respond.min.js" type="text/javascript"> </script>
+  <script src="assets/js/anchor.min.js" type="text/javascript"> </script>
+  <script src="assets/js/clipboard.min.js" type="text/javascript"> </script>
+  <script src="assets/js/clipboard-btn.js" type="text/javascript"> </script>
+  <script src="assets/js/anchor-hover.js" type="text/javascript"> </script>
+  
+    <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>

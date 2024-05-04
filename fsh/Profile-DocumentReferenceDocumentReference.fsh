@@ -48,13 +48,22 @@ Mapping: cdw-to-DocumentReferenceDocumentReference
 Id: cdw
 Title: "Clinical Data Warehouse (CDW)"
 Source: DocumentReferenceDocumentReference
+* type -> "TIU.TIUDocument.TIUDocumentDefinitionIEN"
+* subject -> "TIU.TIUDocument.PatientIEN"
 * date -> "TIU.TIUDocument.EntryDateTime"
+* author -> "TIU.TIUDocument.AuthorDictatorStaffIEN"
+* author -> "TIU.TIUDocument.SignedByStaffIEN"
+* authenticator -> "TIU.TIUDocument.VerifiedByStaffIEN"
+* custodian -> "TIU.TIUDocument.InstitutionIEN"
 * description -> "TIU.TIUDocument.DocumentSubject"
+* content.attachment.title -> "TIU.TIUDocument.TIUDocumentDefinitionIEN"
 * content.attachment.creation -> "TIU.TIUDocument.EntryDateTime"
+* context.encounter -> "TIU.TIUDocument.VisitIEN"
 * context.event -> "TIU.TIUDocument.VisitType"
 * context.period.start -> "TIU.TIUDocument.EpisodeBeginDateTime"
 * context.period.end -> "TIU.TIUDocument.EpisodeEndDateTime"
-* context.facilityType -> "Dim.Location.LocationType"
+* context.facilityType -> "TIU.TIUDocument.DocumentLocationIEN\nDim.Location.LocationType,Dim.Location.LocationType"
+* context.practiceSetting -> "TIU.TIUDocument.TreatingSpecialtyIEN"
 
 Mapping: vpr-to-DocumentReferenceDocumentReference
 Id: vpr

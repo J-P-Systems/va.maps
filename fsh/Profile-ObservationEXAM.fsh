@@ -31,7 +31,11 @@ Mapping: cdw-to-ObservationEXAM
 Id: cdw
 Title: "Clinical Data Warehouse (CDW)"
 Source: ObservationEXAM
-* encounter -> "Outpat.VExam.VisitDateTime"
+* code.coding -> "Outpat.VExam.ExamIEN"
+* code.coding -> "Outpat.VExam.ExamIEN"
+* subject -> "Outpat.VExam.PatientIEN"
+* encounter -> "Outpat.VExam.VisitDateTime,Outpat.VExam.VisitIEN"
 * interpretation -> "Outpat.VExam.AbnormalNormal"
 * note.text -> "Outpat.VExam.Comments"
 * effectiveDateTime -> "Outpat.VExam.EventDateTime"
+* performer -> "Outpat.VExam.EncounterProviderIEN"

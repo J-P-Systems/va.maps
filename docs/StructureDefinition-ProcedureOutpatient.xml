@@ -25,11 +25,11 @@
 <tr><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3goXBCwdPqAP0wAAAldJREFUOMuNk0tIlFEYhp9z/vE2jHkhxXA0zJCMitrUQlq4lnSltEqCFhFG2MJFhIvIFpkEWaTQqjaWZRkp0g26URZkTpbaaOJkDqk10szoODP//7XIMUe0elcfnPd9zsfLOYplGrpRwZaqTtw3K7PtGem7Q6FoidbGgqHVy/HRb669R+56zx7eRV1L31JGxYbBtjKK93cxeqfyQHbehkZbUkK20goELEuIzEd+dHS+qz/Y8PTSif0FnGkbiwcAjHaU1+QWOptFiyCLp/LnKptpqIuXHx6rbR26kJcBX3yLgBfnd7CxwJmflpP2wUg0HIAoUUpZBmKzELGWcN8nAr6Gpu7tLU/CkwAaoKTWRSQyt89Q8w6J+oVQkKnBoblH7V0PPvUOvDYXfopE/SJmALsxnVm6LbkotrUtNowMeIrVrBcBpaMmdS0j9df7abpSuy7HWehwJdt1lhVwi/J58U5beXGAF6c3UXLycw1wdFklArBn87xdh0ZsZtArghBdAA3+OEDVubG4UEzP6x1FOWneHh2VDAHBAt80IbdXDcesNoCvs3E5AFyNSU5nbrDPZpcUEQQTFZiEVx+51fxMhhyJEAgvlriadIJZZksRuwBYMOPBbO3hePVVqgEJhFeUuFLhIPkRP6BQLIBrmMenujm/3g4zc398awIe90Zb5A1vREALqneMcYgP/xVQWlG+Ncu5vgwwlaUNx+3799rfe96u9K0JSDXcOzOTJg4B6IgmXfsygc7/Bvg9g9E58/cDVmGIBOP/zT8Bz1zqWqpbXIsd0O9hajXfL6u4BaOS6SeWAAAAAElFTkSuQmCC" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr></table></div>
   </text>
   <url value="http://va.gov/fhir/StructureDefinition/ProcedureOutpatient"/>
-  <version value="0.46.0"/>
+  <version value="0.47.0"/>
   <name value="ProcedureOutpatient"/>
   <title value="Procedure: Outpatient"/>
   <status value="draft"/>
-  <date value="2024-05-01T10:34:27+00:00"/>
+  <date value="2024-05-04T09:18:00+00:00"/>
   <publisher value="VA"/>
   <contact>
     <name value="VA"/>
@@ -927,6 +927,10 @@
         <identity value="vista"/>
         <map value="1413: source value from V CPT - CPT &gt; CPT (9000010.18-.01 &gt; 81-)"/>
       </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Outpat.VProcedure.CPTIEN,Outpat.VProcedureCPTModifier.CPTIEN,Outpat.VProcedureDiagnosis.CPTIEN,Outpat.WorkloadVProcedure.CPTIEN,Outpat.WorkloadVProcedureCPTModifier.CPTIEN,Outpat.WorkloadVProcedureDiagnosis.CPTIEN"/>
+      </mapping>
     </element>
     <element id="Procedure.code.text">
       <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
@@ -976,7 +980,7 @@
       </mapping>
       <mapping>
         <identity value="cdw"/>
-        <map value="Dim.ProviderNarrative.ProviderNarrative"/>
+        <map value="Outpat.VProcedure.ProviderNarrativeIEN,Outpat.WorkloadVProcedure.ProviderNarrativeIEN&#xA;Dim.ProviderNarrative.ProviderNarrative"/>
       </mapping>
     </element>
     <element id="Procedure.subject">
@@ -1035,6 +1039,10 @@
         <map value="1299: reference from V CPT - PATIENT NAME &gt; PATIENT/IHS - NAME (9000010.18-.02 &gt; 9000001-.01)"/>
         <comment value="is reference to file #2"/>
       </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Outpat.VProcedure.PatientIEN,Outpat.VProcedureCPTModifier.PatientIEN,Outpat.VProcedureDiagnosis.PatientIEN,Outpat.WorkloadVProcedure.PatientIEN,Outpat.WorkloadVProcedureCPTModifier.PatientIEN,Outpat.WorkloadVProcedureDiagnosis.PatientIEN"/>
+      </mapping>
     </element>
     <element id="Procedure.encounter">
       <path value="Procedure.encounter"/>
@@ -1085,7 +1093,7 @@
       </mapping>
       <mapping>
         <identity value="cdw"/>
-        <map value="Outpat.VProcedure.VisitDateTime,Outpat.VProcedureCPTModifier.VisitDateTime,Outpat.VProcedureDiagnosis.VisitDateTime,Outpat.WorkloadVProcedure.VisitDateTime,Outpat.WorkloadVProcedureCPTModifier.VisitDateTime,Outpat.WorkloadVProcedureDiagnosis.VisitDateTime"/>
+        <map value="Outpat.VProcedure.VisitDateTime,Outpat.VProcedure.VisitIEN,Outpat.VProcedureCPTModifier.VisitDateTime,Outpat.VProcedureCPTModifier.VisitIEN,Outpat.VProcedureDiagnosis.VisitDateTime,Outpat.VProcedureDiagnosis.VisitIEN,Outpat.WorkloadVProcedure.VisitDateTime,Outpat.WorkloadVProcedure.VisitIEN,Outpat.WorkloadVProcedureCPTModifier.VisitDateTime,Outpat.WorkloadVProcedureCPTModifier.VisitIEN,Outpat.WorkloadVProcedureDiagnosis.VisitDateTime,Outpat.WorkloadVProcedureDiagnosis.VisitIEN"/>
       </mapping>
     </element>
     <element id="Procedure.performed[x]">
@@ -1535,6 +1543,10 @@
         <identity value="vista"/>
         <map value="1311: reference from V CPT - ENCOUNTER PROVIDER (9000010.18-1204)"/>
       </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Outpat.VProcedure.EncounterProviderIEN,Outpat.WorkloadVProcedure.EncounterProviderIEN"/>
+      </mapping>
     </element>
     <element id="Procedure.performer.onBehalfOf">
       <path value="Procedure.performer.onBehalfOf"/>
@@ -1679,6 +1691,10 @@
       <mapping>
         <identity value="vista"/>
         <map value="1309: source value from V CPT - DIAGNOSIS 8 &gt; ICD DIAGNOSIS (9000010.18-.15 &gt; 80-)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Outpat.VProcedureDiagnosis.ICDIEN,Outpat.WorkloadVProcedureDiagnosis.ICDIEN"/>
       </mapping>
     </element>
     <element id="Procedure.reasonReference">
@@ -2481,6 +2497,10 @@
         <identity value="vista"/>
         <map value="1413: source value from V CPT - CPT &gt; CPT (9000010.18-.01 &gt; 81-)"/>
       </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Outpat.VProcedure.CPTIEN,Outpat.VProcedureCPTModifier.CPTIEN,Outpat.VProcedureDiagnosis.CPTIEN,Outpat.WorkloadVProcedure.CPTIEN,Outpat.WorkloadVProcedureCPTModifier.CPTIEN,Outpat.WorkloadVProcedureDiagnosis.CPTIEN"/>
+      </mapping>
     </element>
     <element id="Procedure.code.text">
       <path value="Procedure.code.text"/>
@@ -2491,7 +2511,7 @@
       </mapping>
       <mapping>
         <identity value="cdw"/>
-        <map value="Dim.ProviderNarrative.ProviderNarrative"/>
+        <map value="Outpat.VProcedure.ProviderNarrativeIEN,Outpat.WorkloadVProcedure.ProviderNarrativeIEN&#xA;Dim.ProviderNarrative.ProviderNarrative"/>
       </mapping>
     </element>
     <element id="Procedure.subject">
@@ -2500,6 +2520,10 @@
         <identity value="vista"/>
         <map value="1299: reference from V CPT - PATIENT NAME &gt; PATIENT/IHS - NAME (9000010.18-.02 &gt; 9000001-.01)"/>
         <comment value="is reference to file #2"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Outpat.VProcedure.PatientIEN,Outpat.VProcedureCPTModifier.PatientIEN,Outpat.VProcedureDiagnosis.PatientIEN,Outpat.WorkloadVProcedure.PatientIEN,Outpat.WorkloadVProcedureCPTModifier.PatientIEN,Outpat.WorkloadVProcedureDiagnosis.PatientIEN"/>
       </mapping>
     </element>
     <element id="Procedure.encounter">
@@ -2511,7 +2535,7 @@
       </mapping>
       <mapping>
         <identity value="cdw"/>
-        <map value="Outpat.VProcedure.VisitDateTime,Outpat.VProcedureCPTModifier.VisitDateTime,Outpat.VProcedureDiagnosis.VisitDateTime,Outpat.WorkloadVProcedure.VisitDateTime,Outpat.WorkloadVProcedureCPTModifier.VisitDateTime,Outpat.WorkloadVProcedureDiagnosis.VisitDateTime"/>
+        <map value="Outpat.VProcedure.VisitDateTime,Outpat.VProcedure.VisitIEN,Outpat.VProcedureCPTModifier.VisitDateTime,Outpat.VProcedureCPTModifier.VisitIEN,Outpat.VProcedureDiagnosis.VisitDateTime,Outpat.VProcedureDiagnosis.VisitIEN,Outpat.WorkloadVProcedure.VisitDateTime,Outpat.WorkloadVProcedure.VisitIEN,Outpat.WorkloadVProcedureCPTModifier.VisitDateTime,Outpat.WorkloadVProcedureCPTModifier.VisitIEN,Outpat.WorkloadVProcedureDiagnosis.VisitDateTime,Outpat.WorkloadVProcedureDiagnosis.VisitIEN"/>
       </mapping>
     </element>
     <element id="Procedure.performed[x]">
@@ -2553,6 +2577,10 @@
         <identity value="vista"/>
         <map value="1311: reference from V CPT - ENCOUNTER PROVIDER (9000010.18-1204)"/>
       </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Outpat.VProcedure.EncounterProviderIEN,Outpat.WorkloadVProcedure.EncounterProviderIEN"/>
+      </mapping>
     </element>
     <element id="Procedure.reasonCode">
       <path value="Procedure.reasonCode"/>
@@ -2588,6 +2616,10 @@
       <mapping>
         <identity value="vista"/>
         <map value="1309: source value from V CPT - DIAGNOSIS 8 &gt; ICD DIAGNOSIS (9000010.18-.15 &gt; 80-)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Outpat.VProcedureDiagnosis.ICDIEN,Outpat.WorkloadVProcedureDiagnosis.ICDIEN"/>
       </mapping>
     </element>
     <element id="Procedure.note.text">

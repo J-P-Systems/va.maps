@@ -1,0 +1,71 @@
+Instance: CMVFadminGender
+InstanceOf: ConceptMap
+Usage: #definition
+* url = "http://va.gov/fhir/ConceptMap/CMVFadminGender"
+* name = "VF_adminGender"
+* title = "VF_adminGender"
+* status = #draft
+* experimental = false
+* description = "Terminology Maps VF_adminGender"
+* sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFadminGender-vista"
+* targetCanonical = "http://va.gov/fhir/ValueSet/VSVFadminGender"
+* group[0].source = "http://va.gov/terminology/vistaDefinedTerms/2-.024"
+* group[=].target = "http://hl7.org/fhir/administrative-gender"
+* group[=].element[0].code = #N
+* group[=].element[=].display = "DOES NOT WISH TO DISCLOSE"
+* group[=].element[=].target.code = #unknown
+* group[=].element[=].target.display = "Unknown"
+* group[=].element[=].target.equivalence = #wider
+* group[=].element[+].code = #F
+* group[=].element[=].display = "FEMALE"
+* group[=].element[=].target.code = #female
+* group[=].element[=].target.display = "female"
+* group[=].element[=].target.equivalence = #equal
+* group[=].element[+].code = #M
+* group[=].element[=].display = "MALE"
+* group[=].element[=].target.code = #male
+* group[=].element[=].target.display = "male"
+* group[=].element[=].target.equivalence = #equal
+* group[=].element[+].code = #B
+* group[=].element[=].display = "NON-BINARY"
+* group[=].element[=].target.code = #other
+* group[=].element[=].target.display = "other"
+* group[=].element[=].target.equivalence = #wider
+* group[=].element[+].code = #O
+* group[=].element[=].display = "OTHER"
+* group[=].element[=].target.code = #other
+* group[=].element[=].target.display = "other"
+* group[=].element[=].target.equivalence = #equal
+* group[=].element[+].code = #TF
+* group[=].element[=].display = "TRANSGENDER FEMALE"
+* group[=].element[=].target.code = #other
+* group[=].element[=].target.display = "other"
+* group[=].element[=].target.equivalence = #wider
+* group[=].element[+].code = #TM
+* group[=].element[=].display = "TRANSGENDER MALE"
+* group[=].element[=].target.code = #other
+* group[=].element[=].target.display = "other"
+* group[=].element[=].target.equivalence = #wider
+
+ValueSet: VSVFadminGender
+Title: "VF_adminGender"
+Description: "FHIR Target ValueSet for Terminology Maps VF_adminGender"
+* ^experimental = false
+* ^name = "VF_adminGender"
+* include http://hl7.org/fhir/administrative-gender#unknown "Unknown"
+* include http://hl7.org/fhir/administrative-gender#female "female"
+* include http://hl7.org/fhir/administrative-gender#male "male"
+* include http://hl7.org/fhir/administrative-gender#other "other"
+
+ValueSet: VSVFadminGender-vista
+Title: "VF_adminGender VistA"
+Description: "VistA Source ValueSet for Terminology Maps VF_adminGender"
+* ^experimental = false
+* ^name = "VF_adminGender"
+* include http://va.gov/terminology/vistaDefinedTerms/2-.024#N "DOES NOT WISH TO DISCLOSE"
+* include http://va.gov/terminology/vistaDefinedTerms/2-.024#F "FEMALE"
+* include http://va.gov/terminology/vistaDefinedTerms/2-.024#M "MALE"
+* include http://va.gov/terminology/vistaDefinedTerms/2-.024#B "NON-BINARY"
+* include http://va.gov/terminology/vistaDefinedTerms/2-.024#O "OTHER"
+* include http://va.gov/terminology/vistaDefinedTerms/2-.024#TF "TRANSGENDER FEMALE"
+* include http://va.gov/terminology/vistaDefinedTerms/2-.024#TM "TRANSGENDER MALE"

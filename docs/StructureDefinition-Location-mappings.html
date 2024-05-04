@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-    <title>Location - Mappings - US Veterans Administration FHIR Map Set Implementation Guide v0.46.0</title>
+    <title>Location - Mappings - US Veterans Administration FHIR Map Set Implementation Guide v0.47.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -57,7 +57,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">US Veterans Administration FHIR Map Set Implementation Guide</span>
             <br/>
-            <span style="display:inline-block;">0.46.0 - 240501
+            <span style="display:inline-block;">0.47.0 - 240501
 
 
 
@@ -143,7 +143,7 @@
           <div class="inner-wrapper">
 
 <div style="counter-reset: section 5" class="col-12">
-    <!-- ReleaseHeader --><p id="publish-box">US Veterans Administration FHIR Map Set Implementation Guide - Local Development build (v0.46.0) built by the FHIR (HL7&reg; FHIR&reg; Standard) Build Tools. See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
+    <!-- ReleaseHeader --><p id="publish-box">US Veterans Administration FHIR Map Set Implementation Guide - Local Development build (v0.47.0) built by the FHIR (HL7&reg; FHIR&reg; Standard) Build Tools. See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
   
 
 
@@ -216,7 +216,7 @@
         
           Draft
           
-            as of 2024-05-01
+            as of 2024-05-04
           
         
       </td>
@@ -508,6 +508,19 @@ Or is this combination of TREATEMENT SPECIALTY (9.5) and SERVICE/SECTION? and ST
 <td class="cell-ce1">Added 4/5/24 to match LH PHAPI</td>
 <td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-location | 5.0.1</td>
 </tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1806</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">fixed value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Location.mode</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">#instance</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Added 4/5/24 to match LH PHAPI</td>
+<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-location | 5.0.1</td>
+</tr>
 </table>
 
 </div>
@@ -551,20 +564,28 @@ Or is this combination of TREATEMENT SPECIALTY (9.5) and SERVICE/SECTION? and ST
 <a name="cdw"> </a><h3>Mappings for Clinical Data Warehouse (CDW) ()</h3><table class="grid">
  <tr><td colspan="3"><b>Location</b></td></tr>
  <tr><td>Location</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;name</td><td>Dim.Location.LocationName</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;alias</td><td>Dim.Location.LocationAbbreviation</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;description</td><td>Dim.Location.PatientFriendlyLocationName</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;name</td><td>Dim.Location.LocationName,Dim.Location.LocationName</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;alias</td><td>Dim.Location.LocationAbbreviation,Dim.Location.LocationAbbreviation</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;description</td><td>Dim.Location.PatientFriendlyLocationName,Dim.Location.PatientFriendlyLocationName</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;type</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>Dim.Location.MedicalService</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>Dim.Location.MedicalService,Dim.Location.MedicalService</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;telecom</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>Dim.Location.PhoneNumber</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>Dim.Location.PhoneNumber,Dim.Location.PhoneNumber</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;address</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;line</td><td>Dim.Institution.StreetAddress1, Dim.Institution.StreetAddress2</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;city</td><td>Dim.Institution.City</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;district</td><td>Dim.Institution.MedicalDistrict</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;postalCode</td><td>Dim.Institution.Zip</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td>Dim.Location.InstitutionIEN</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;line</td><td>Dim.Location.InstitutionIEN
+Dim.Institution.StreetAddress1,Dim.Institution.StreetAddress1,Dim.InstitutionTimeZone.StreetAddress1,NDim.MVIInstitution.StreetAddress1, Dim.Location.InstitutionIEN
+Dim.Institution.StreetAddress2,Dim.Institution.StreetAddress2,Dim.InstitutionTimeZone.StreetAddress2,NDim.MVIInstitution.StreetAddress2</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;city</td><td>Dim.Location.InstitutionIEN
+Dim.Institution.City,Dim.Institution.City,Dim.InstitutionTimeZone.City,NDim.MVIInstitution.City</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;district</td><td>Dim.Location.InstitutionIEN
+Dim.Institution.MedicalDistrict,Dim.Institution.MedicalDistrict,NDim.MVIInstitution.MedicalDistrict</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;state</td><td>Dim.Location.InstitutionIEN</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;postalCode</td><td>Dim.Location.InstitutionIEN
+Dim.Institution.Zip,Dim.Institution.Zip,Dim.InstitutionTimeZone.Zip,NDim.MVIInstitution.Zip</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;country</td><td>Dim.Location.InstitutionIEN</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;physicalType</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>Dim.Location.PhysicalLocation</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>Dim.Location.PhysicalLocation,Dim.Location.PhysicalLocation</td> </tr>
 </table>
 <a name="rim"> </a><h3>Mappings for RIM Mapping (<a href="http://hl7.org/comparison-v3.html">http://hl7.org/v3</a>)</h3><table class="grid">
  <tr><td colspan="3"><b>Location</b></td></tr>
@@ -681,7 +702,7 @@ Or is this combination of TREATEMENT SPECIALTY (9.5) and SERVICE/SECTION? and ST
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.46.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, May 1, 2024 10:34+0000">2024-05-01</span>
+          IG &copy; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.47.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Sat, May 4, 2024 09:18+0000">2024-05-04</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

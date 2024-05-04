@@ -30,5 +30,7 @@ Id: cdw
 Title: "Clinical Data Warehouse (CDW)"
 Source: ObservationImagingResultRadNuc
 * status -> "SStaff.RadiologyNuclearMedicineReport.ReportStatus"
+* subject -> "SStaff.RadiologyNuclearMedicineReport.PatientIEN"
 * effectiveDateTime -> "SStaff.RadiologyNuclearMedicineReport.ExamDateTime"
 * issued -> "SStaff.RadiologyNuclearMedicineReport.VerifiedDateTime"
+* performer -> "SStaff.RadiologyNuclearMedicineReport.VerifyingPhysicianStaffIEN"

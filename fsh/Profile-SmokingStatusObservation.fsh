@@ -29,6 +29,9 @@ Id: cdw
 Title: "Clinical Data Warehouse (CDW)"
 Source: SmokingStatusObservation
 * code.coding -> "Dim.HealthFactorType.CategoryHealthFactorTypeIEN"
-* encounter -> "HF.HealthFactor.VisitDateTime"
+* subject -> "HF.HealthFactor.PatientIEN"
+* encounter -> "HF.HealthFactor.VisitDateTime,HF.HealthFactor.VisitIEN"
 * effectiveDateTime -> "HF.HealthFactor.EventDateTime"
+* performer -> "HF.HealthFactor.EncounterStaffIEN"
+* valueCodeableConcept -> "HF.HealthFactor.HealthFactorTypeIEN"
 * note.text -> "HF.HealthFactor.Comments"

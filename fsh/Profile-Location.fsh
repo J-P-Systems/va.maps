@@ -10,6 +10,7 @@ Description: "This StructureDefinition contains the maps for VistA file HOSPITAL
 * address.type = #physical
 * type.text from http://va.gov/fhir/ValueSet/VSVFLocationStatus
 * mode = #instance
+* mode = #instance
 
 Mapping: vista-to-Location
 Id: vista
@@ -34,19 +35,23 @@ Source: Location
 * address.type -> "1322: fixed value = #physical when HOSPITAL LOCATION - INSTITUTION (44-3)"
 * type.text -> "1412: terminologyMaps using VF_LocationStatus on HOSPITAL LOCATION - SERVICE (44-9)" "could map Medical Service text to FHIR type valueset, e.g.\n\"NEUROLOGY\" to \"NEUR Neurology clinic\"\nOr is this combination of TREATEMENT SPECIALTY (9.5) and SERVICE/SECTION? and STOP CODE?"
 * mode -> "1806: fixed value = #instance" "Added 4/5/24 to match LH PHAPI"
+* mode -> "1806: fixed value = #instance" "Added 4/5/24 to match LH PHAPI"
 
 Mapping: cdw-to-Location
 Id: cdw
 Title: "Clinical Data Warehouse (CDW)"
 Source: Location
-* name -> "Dim.Location.LocationName"
-* alias -> "Dim.Location.LocationAbbreviation"
-* description -> "Dim.Location.PatientFriendlyLocationName"
-* telecom.value -> "Dim.Location.PhoneNumber"
-* physicalType.text -> "Dim.Location.PhysicalLocation"
-* address.district -> "Dim.Institution.MedicalDistrict"
-* address.line -> "Dim.Institution.StreetAddress1"
-* address.line -> "Dim.Institution.StreetAddress2"
-* address.city -> "Dim.Institution.City"
-* address.postalCode -> "Dim.Institution.Zip"
-* type.text -> "Dim.Location.MedicalService"
+* name -> "Dim.Location.LocationName,Dim.Location.LocationName"
+* alias -> "Dim.Location.LocationAbbreviation,Dim.Location.LocationAbbreviation"
+* description -> "Dim.Location.PatientFriendlyLocationName,Dim.Location.PatientFriendlyLocationName"
+* telecom.value -> "Dim.Location.PhoneNumber,Dim.Location.PhoneNumber"
+* physicalType.text -> "Dim.Location.PhysicalLocation,Dim.Location.PhysicalLocation"
+* address.state -> "Dim.Location.InstitutionIEN"
+* address.district -> "Dim.Location.InstitutionIEN\nDim.Institution.MedicalDistrict,Dim.Institution.MedicalDistrict,NDim.MVIInstitution.MedicalDistrict"
+* address.line -> "Dim.Location.InstitutionIEN\nDim.Institution.StreetAddress1,Dim.Institution.StreetAddress1,Dim.InstitutionTimeZone.StreetAddress1,NDim.MVIInstitution.StreetAddress1"
+* address.line -> "Dim.Location.InstitutionIEN\nDim.Institution.StreetAddress2,Dim.Institution.StreetAddress2,Dim.InstitutionTimeZone.StreetAddress2,NDim.MVIInstitution.StreetAddress2"
+* address.city -> "Dim.Location.InstitutionIEN\nDim.Institution.City,Dim.Institution.City,Dim.InstitutionTimeZone.City,NDim.MVIInstitution.City"
+* address.postalCode -> "Dim.Location.InstitutionIEN\nDim.Institution.Zip,Dim.Institution.Zip,Dim.InstitutionTimeZone.Zip,NDim.MVIInstitution.Zip"
+* address.country -> "Dim.Location.InstitutionIEN"
+* address.type -> "Dim.Location.InstitutionIEN"
+* type.text -> "Dim.Location.MedicalService,Dim.Location.MedicalService"
