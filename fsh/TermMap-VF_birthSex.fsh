@@ -13,19 +13,19 @@ Usage: #definition
 * group[=].target = "http://terminology.hl7.org/CodeSystem/v3-AdministrativeGender"
 * group[=].element[0].code = #F
 * group[=].element[=].display = "FEMALE"
-* group[=].element[=].target.code = #female
+* group[=].element[=].target.code = #F
 * group[=].element[=].target.display = "female"
 * group[=].element[=].target.equivalence = #equal
 * group[=].element[+].code = #M
 * group[=].element[=].display = "MALE"
-* group[=].element[=].target.code = #male
+* group[=].element[=].target.code = #M
 * group[=].element[=].target.display = "male"
 * group[=].element[=].target.equivalence = #equal
 * group[+].source = "http://va.gov/terminology/vistaDefinedTerms/2-.02"
 * group[=].target = "http://terminology.hl7.org/CodeSystem/v3-NullFlavor"
 * group[=].element[0].code = #[NULL]
 * group[=].element[=].display = "[NULL]"
-* group[=].element[=].target.code = #unk
+* group[=].element[=].target.code = #UNK
 * group[=].element[=].target.display = "unknown"
 * group[=].element[=].target.equivalence = #equal
 
@@ -34,9 +34,9 @@ Title: "VF_birthSex"
 Description: "FHIR Target ValueSet for Terminology Maps VF_birthSex"
 * ^experimental = false
 * ^name = "VF_birthSex"
-* include http://terminology.hl7.org/CodeSystem/v3-AdministrativeGender#female "female"
-* include http://terminology.hl7.org/CodeSystem/v3-AdministrativeGender#male "male"
-* include http://terminology.hl7.org/CodeSystem/v3-NullFlavor#unk "unknown"
+* include http://terminology.hl7.org/CodeSystem/v3-AdministrativeGender#F "female"
+* include http://terminology.hl7.org/CodeSystem/v3-AdministrativeGender#M "male"
+* include http://terminology.hl7.org/CodeSystem/v3-NullFlavor#UNK "unknown"
 
 ValueSet: VSVFbirthSex-vista
 Title: "VF_birthSex VistA"

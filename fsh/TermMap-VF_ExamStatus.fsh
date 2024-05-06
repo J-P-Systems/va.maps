@@ -25,7 +25,7 @@ Usage: #definition
 * group[=].element[=].target.equivalence = #equal
 * group[=].element[+].code = #O
 * group[=].element[=].display = "OPEN"
-* group[=].element[=].target.code = #registred
+* group[=].element[=].target.code = #registered
 * group[=].element[=].target.equivalence = #equal
 * group[=].element[=].target.dependsOn[+].property = "condition"
 * group[=].element[=].target.dependsOn[=].value = "369.4-70 = NULL"
@@ -46,7 +46,7 @@ Description: "FHIR Target ValueSet for Terminology Maps VF_ExamStatus"
 * ^name = "VF_ExamStatus"
 * include http://hl7.org/fhir/observation-status#cancelled 
 * include http://hl7.org/fhir/observation-status#final 
-* include http://hl7.org/fhir/observation-status#registred 
+* include http://hl7.org/fhir/observation-status#registered 
 * include http://hl7.org/fhir/observation-status#preliminary 
 
 ValueSet: VSVFExamStatus-vista
