@@ -1,7 +1,7 @@
 Logical: Patient2
 Id: Patient2
 Title: "PATIENT (2)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file PATIENT (2)"
 Characteristics: #can-be-target
 * integrationControlNumber 0..1 Element "INTEGRATION CONTROL NUMBER (-991.01)"
 * name 0..1 Element "NAME (-.01)"
@@ -40,7 +40,7 @@ Characteristics: #can-be-target
 Logical: Institution4
 Id: Institution4
 Title: "INSTITUTION (4)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file INSTITUTION (4)"
 Characteristics: #can-be-target
 * stationNumber 0..1 Element "STATION NUMBER (-99)"
 * name 0..1 Element "NAME (-.01)"
@@ -66,20 +66,20 @@ Characteristics: #can-be-target
 Logical: State5
 Id: State5
 Title: "STATE (5)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file STATE (5)"
 Characteristics: #can-be-target
 * abbreviation 0..1 Element "ABBREVIATION (-1)"
 
 Logical: NameComponents20
 Id: NameComponents20
 Title: "NAME COMPONENTS (20)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file NAME COMPONENTS (20)"
 Characteristics: #can-be-target
 
 Logical: HospitalLocation44
 Id: HospitalLocation44
 Title: "HOSPITAL LOCATION (44)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file HOSPITAL LOCATION (44)"
 Characteristics: #can-be-target
 * service 0..1 Coding "SERVICE (-9)"
 * service from http://va.gov/fhir/ValueSet/VSVFLocationStatus-vista (example)
@@ -99,7 +99,7 @@ Characteristics: #can-be-target
 Logical: Ptf45
 Id: Ptf45
 Title: "PTF (45)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file PTF (45)"
 Characteristics: #can-be-target
 * number 0..1 Element "NUMBER (-.001)"
 * internalAdmission  0..1 Element "INTERNAL ADMISSION # (-2.1)"
@@ -121,14 +121,14 @@ Characteristics: #can-be-target
 Logical: InpatientCptCode46
 Id: InpatientCptCode46
 Title: "INPATIENT CPT CODE (46)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file INPATIENT CPT CODE (46)"
 Characteristics: #can-be-target
 * cptCode 0..1 Element "CPT CODE (-.01)"
 
 Logical: Drug50
 Id: Drug50
 Title: "DRUG (50)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file DRUG (50)"
 Characteristics: #can-be-target
 * drugPsndfVaProductNameEntry 0..1 Reference "DRUG - PSNDF VA PRODUCT NAME ENTRY (-22)"
 * nationalDrugFileEntry 0..1 Reference "NATIONAL DRUG FILE ENTRY (-20)"
@@ -140,7 +140,7 @@ Characteristics: #can-be-target
 Logical: Prescription52
 Id: Prescription52
 Title: "PRESCRIPTION (52)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file PRESCRIPTION (52)"
 Characteristics: #can-be-target
 * ien 0..1 Element "IEN (-.001)"
 * status 0..1 Coding "STATUS (-100)"
@@ -175,7 +175,7 @@ Characteristics: #can-be-target
 Logical: LaboratoryTest60
 Id: LaboratoryTest60
 Title: "LABORATORY TEST (60)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file LABORATORY TEST (60)"
 Characteristics: #can-be-target
 * nationalVaLabCode 0..1 Reference "NATIONAL VA LAB CODE (-64)"
 * name 0..1 Element "NAME (-.01)"
@@ -186,21 +186,21 @@ Characteristics: #can-be-target
 Logical: CollectionSample62
 Id: CollectionSample62
 Title: "COLLECTION SAMPLE (62)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file COLLECTION SAMPLE (62)"
 Characteristics: #can-be-target
 * name 0..1 Element "NAME (-.01)"
 
 Logical: LabData63
 Id: LabData63
 Title: "LAB DATA (63)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file LAB DATA (63)"
 Characteristics: #can-be-target
 * lrdfn 0..1 Element "LRDFN (-.01)"
 
 Logical: WkldCode64
 Id: WkldCode64
 Title: "WKLD CODE (64)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file WKLD CODE (64)"
 Characteristics: #can-be-target
 * wkldCodeLabSection 0..1 Reference "WKLD CODE LAB SECTION (-13)"
 * defaultLoincCode 0..1 Element "DEFAULT LOINC CODE (-25)"
@@ -209,21 +209,21 @@ Characteristics: #can-be-target
 Logical: RadnucMedPatient70
 Id: RadnucMedPatient70
 Title: "RAD/NUC MED PATIENT (70)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file RAD/NUC MED PATIENT (70)"
 Characteristics: #can-be-target
 * name 0..1 Element "NAME (-.01)"
 
 Logical: RadnucMedProcedures71
 Id: RadnucMedProcedures71
 Title: "RAD/NUC MED PROCEDURES (71)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file RAD/NUC MED PROCEDURES (71)"
 Characteristics: #can-be-target
 * cptCode 0..1 Element "CPT CODE (-9)"
 
 Logical: ExaminationStatus72
 Id: ExaminationStatus72
 Title: "EXAMINATION STATUS (72)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file EXAMINATION STATUS (72)"
 Characteristics: #can-be-target
 * status 0..1 Coding "STATUS (-.01)"
 * status from http://va.gov/fhir/ValueSet/VSVFRadiologyProcedureStatus-vista (example)
@@ -231,7 +231,7 @@ Characteristics: #can-be-target
 Logical: RadnucMedReports74
 Id: RadnucMedReports74
 Title: "RAD/NUC MED REPORTS (74)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file RAD/NUC MED REPORTS (74)"
 Characteristics: #can-be-target
 * ien 0..1 Element "IEN (-.001)"
 * reportStatus 0..1 Coding "REPORT STATUS (-5)"
@@ -245,20 +245,20 @@ Characteristics: #can-be-target
 Logical: IcdDiagnosis80
 Id: IcdDiagnosis80
 Title: "ICD DIAGNOSIS (80)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file ICD DIAGNOSIS (80)"
 Characteristics: #can-be-target
 * codeNumber 0..1 Element "CODE NUMBER (-.01)"
 
 Logical: Cpt81
 Id: Cpt81
 Title: "CPT (81)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file CPT (81)"
 Characteristics: #can-be-target
 
 Logical: Order100
 Id: Order100
 Title: "ORDER (100)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file ORDER (100)"
 Characteristics: #can-be-target
 * order  0..1 Element "ORDER # (-.01)"
 * objectOfOrder 0..1 Element "OBJECT OF ORDER (-.02)"
@@ -272,7 +272,7 @@ Characteristics: #can-be-target
 Logical: Surgery130
 Id: Surgery130
 Title: "SURGERY (130)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file SURGERY (130)"
 Characteristics: #can-be-target
 * patient 0..1 Element "PATIENT (-.01)"
 * division 0..1 Element "DIVISION (-50)"
@@ -308,7 +308,7 @@ Characteristics: #can-be-target
 Logical: NewPerson200
 Id: NewPerson200
 Title: "NEW PERSON (200)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file NEW PERSON (200)"
 Characteristics: #can-be-target
 * npi 0..1 Element "NPI (-41.99)"
 * dea 0..1 Element "DEA# (-53.2)"
@@ -356,7 +356,7 @@ Characteristics: #can-be-target
 Logical: Echo691
 Id: Echo691
 Title: "ECHO (691)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file ECHO (691)"
 Characteristics: #can-be-target
 * ien 0..1 Element "IEN (-.001)"
 * releaseCode 0..1 Coding "RELEASE CODE (-1506)"
@@ -374,7 +374,7 @@ Characteristics: #can-be-target
 Logical: GeneratorImplant698
 Id: GeneratorImplant698
 Title: "GENERATOR IMPLANT (698)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file GENERATOR IMPLANT (698)"
 Characteristics: #can-be-target
 * ien 0..1 Element "IEN (-.001)"
 * explantDate 0..1 Element "EXPLANT DATE (-96)"
@@ -392,7 +392,7 @@ Characteristics: #can-be-target
 Logical: TiuDocument8925
 Id: TiuDocument8925
 Title: "TIU DOCUMENT (8925)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file TIU DOCUMENT (8925)"
 Characteristics: #can-be-target
 * reportText 0..1 Element "REPORT TEXT (-2)"
 * documentType 0..1 Reference "DOCUMENT TYPE (-.01)"
@@ -416,14 +416,14 @@ Characteristics: #can-be-target
 Logical: Patientihs9000001
 Id: Patientihs9000001
 Title: "PATIENT/IHS (9000001)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file PATIENT/IHS (9000001)"
 Characteristics: #can-be-target
 * name 0..1 Element "NAME (-.01)"
 
 Logical: Visit9000010
 Id: Visit9000010
 Title: "VISIT (9000010)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file VISIT (9000010)"
 Characteristics: #can-be-target
 * visitadmitDatetime 0..1 Element "VISIT/ADMIT DATE&TIME (-.01)"
 * visitId 0..1 Element "VISIT ID (-15001)"
@@ -440,7 +440,7 @@ Characteristics: #can-be-target
 Logical: Problem9000011
 Id: Problem9000011
 Title: "PROBLEM (9000011)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file PROBLEM (9000011)"
 Characteristics: #can-be-target
 * ien 0..1 Element "IEN (-.001)"
 * dateResolved 0..1 Element "DATE RESOLVED (-1.07)"
@@ -459,7 +459,7 @@ Characteristics: #can-be-target
 Logical: PatientAllergies1208
 Id: PatientAllergies1208
 Title: "PATIENT ALLERGIES (120.8)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file PATIENT ALLERGIES (120.8)"
 Characteristics: #can-be-target
 * ien 0..1 Element "IEN (-.001)"
 * reactant 0..1 Element "REACTANT (-.02)"
@@ -484,7 +484,7 @@ Characteristics: #can-be-target
 Logical: Reactions12081
 Id: Reactions12081
 Title: "REACTIONS (120.81)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file REACTIONS (120.81)"
 Characteristics: #can-be-target
 * reaction 0..1 Element "REACTION (-.01)"
 * dateEntered 0..1 Element "DATE ENTERED (-3)"
@@ -492,13 +492,13 @@ Characteristics: #can-be-target
 Logical: Signsymptoms12083
 Id: Signsymptoms12083
 Title: "SIGN/SYMPTOMS (120.83)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file SIGN/SYMPTOMS (120.83)"
 Characteristics: #can-be-target
 
 Logical: AdverseReactionReporting12085
 Id: AdverseReactionReporting12085
 Title: "ADVERSE REACTION REPORTING (120.85)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file ADVERSE REACTION REPORTING (120.85)"
 Characteristics: #can-be-target
 * severity 0..1 Coding "SEVERITY (-14.5)"
 * severity from http://va.gov/fhir/ValueSet/VSVFallergySeverity-vista (example)
@@ -506,7 +506,7 @@ Characteristics: #can-be-target
 Logical: Comments120826
 Id: Comments120826
 Title: "COMMENTS (120.826)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file COMMENTS (120.826)"
 Characteristics: #can-be-target
 * datetimeCommentEntered 0..1 Element "DATE/TIME COMMENT ENTERED (-.01)"
 * userEntering 0..1 Element "USER ENTERING (-1)"
@@ -515,14 +515,14 @@ Characteristics: #can-be-target
 Logical: LanguageDatetime207
 Id: LanguageDatetime207
 Title: "LANGUAGE DATE/TIME (2.07)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file LANGUAGE DATE/TIME (2.07)"
 Characteristics: #can-be-target
 * preferredLanguage 0..1 Element "PREFERRED LANGUAGE (-.02)"
 
 Logical: Appointment298
 Id: Appointment298
 Title: "APPOINTMENT (2.98)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file APPOINTMENT (2.98)"
 Characteristics: #can-be-target
 * status 0..1 Coding "STATUS (-3)"
 * status from http://va.gov/fhir/ValueSet/VSVFAppointmentStatus-vista (example)
@@ -539,28 +539,28 @@ Characteristics: #can-be-target
 Logical: AppointmentType4091
 Id: AppointmentType4091
 Title: "APPOINTMENT TYPE (409.1)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file APPOINTMENT TYPE (409.1)"
 Characteristics: #can-be-target
 * name 0..1 Element "NAME (-.01)"
 
 Logical: OutpatientEncounter40968
 Id: OutpatientEncounter40968
 Title: "OUTPATIENT ENCOUNTER (409.68)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file OUTPATIENT ENCOUNTER (409.68)"
 Characteristics: #can-be-target
 * checkOutProcessCompletion 0..1 Element "CHECK OUT PROCESS COMPLETION (-.07)"
 
 Logical: Patient44003
 Id: Patient44003
 Title: "PATIENT (44.003)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file PATIENT (44.003)"
 Characteristics: #can-be-target
 * lengthOfAppt 0..1 Element "LENGTH OF APP'T (-1)"
 
 Logical: SdWaitList4093
 Id: SdWaitList4093
 Title: "SD WAIT LIST (409.3)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file SD WAIT LIST (409.3)"
 Characteristics: #can-be-target
 * patient 0..1 Element "PATIENT (-.01)"
 * apptStopCode 0..1 Element "APPT STOP CODE (-13.4)"
@@ -572,7 +572,7 @@ Characteristics: #can-be-target
 Logical: VPov900001007
 Id: VPov900001007
 Title: "V POV (9000010.07)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file V POV (9000010.07)"
 Characteristics: #can-be-target
 * ien 0..1 Element "IEN (-.001)"
 * pov 0..1 Reference "POV (-.01)"
@@ -588,7 +588,7 @@ Characteristics: #can-be-target
 Logical: GmrvVitalMeasurement1205
 Id: GmrvVitalMeasurement1205
 Title: "GMRV VITAL MEASUREMENT (120.5)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file GMRV VITAL MEASUREMENT (120.5)"
 Characteristics: #can-be-target
 * qualifier 0..1 Reference "QUALIFIER (-5)"
 * datetimeVitalsEntered 0..1 Element "DATE/TIME VITALS ENTERED (-.04)"
@@ -607,7 +607,7 @@ Characteristics: #can-be-target
 Logical: GmrvVitalQualifier12052
 Id: GmrvVitalQualifier12052
 Title: "GMRV VITAL QUALIFIER (120.52)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file GMRV VITAL QUALIFIER (120.52)"
 Characteristics: #can-be-target
 * vuid 0..1 Coding "VUID (-99.99)"
 * vuid from http://va.gov/fhir/ValueSet/VSVFVitalsDevice-vista (example)
@@ -615,20 +615,20 @@ Characteristics: #can-be-target
 Logical: WkldCodeLabSect6421
 Id: WkldCodeLabSect6421
 Title: "WKLD CODE LAB SECT (64.21)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file WKLD CODE LAB SECT (64.21)"
 Characteristics: #can-be-target
 * name 0..1 Element "NAME (-.01)"
 
 Logical: LabLoinc953
 Id: LabLoinc953
 Title: "LAB LOINC (95.3)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file LAB LOINC (95.3)"
 Characteristics: #can-be-target
 
 Logical: ChemHemToxRiaSerEtc6304
 Id: ChemHemToxRiaSerEtc6304
 Title: "CHEM, HEM, TOX, RIA, SER, etc. (63.04)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file CHEM, HEM, TOX, RIA, SER, etc. (63.04)"
 Characteristics: #can-be-target
 * orderedTest 0..1 Reference "ORDERED TEST (-.35)"
 * datetimeSpecimenTaken 0..1 Element "DATE/TIME SPECIMEN TAKEN (-.01)"
@@ -646,7 +646,7 @@ Characteristics: #can-be-target
 Logical: OrderedTest6307
 Id: OrderedTest6307
 Title: "ORDERED TEST (63.07)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file ORDERED TEST (63.07)"
 Characteristics: #can-be-target
 * ien 0..1 Element "IEN (-.001)"
 * cprsOrder  0..1 Element "CPRS ORDER # (-3)"
@@ -660,14 +660,14 @@ Characteristics: #can-be-target
 Logical: Comment63041
 Id: Comment63041
 Title: "COMMENT (63.041)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file COMMENT (63.041)"
 Characteristics: #can-be-target
 * comment 0..1 Element "COMMENT (-.01)"
 
 Logical: Sitespecimen6001
 Id: Sitespecimen6001
 Title: "SITE/SPECIMEN (60.01)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file SITE/SPECIMEN (60.01)"
 Characteristics: #can-be-target
 * referenceHigh 0..1 Element "REFERENCE HIGH (-2)"
 * referenceLow 0..1 Element "REFERENCE LOW (-1)"
@@ -677,7 +677,7 @@ Characteristics: #can-be-target
 Logical: Cytopathology6309
 Id: Cytopathology6309
 Title: "CYTOPATHOLOGY (63.09)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file CYTOPATHOLOGY (63.09)"
 Characteristics: #can-be-target
 * orderedTest 0..1 Reference "ORDERED TEST (-.35)"
 * datetimeSpecimenTaken 0..1 Element "DATE/TIME SPECIMEN TAKEN (-.01)"
@@ -697,7 +697,7 @@ Characteristics: #can-be-target
 Logical: OrderedTest6351
 Id: OrderedTest6351
 Title: "ORDERED TEST (63.51)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file ORDERED TEST (63.51)"
 Characteristics: #can-be-target
 * ien 0..1 Element "IEN (-.001)"
 * cprsOrder  0..1 Element "CPRS ORDER # (-3)"
@@ -707,7 +707,7 @@ Characteristics: #can-be-target
 Logical: TiuReferenceDatetime6347
 Id: TiuReferenceDatetime6347
 Title: "TIU REFERENCE DATE/TIME (63.47)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file TIU REFERENCE DATE/TIME (63.47)"
 Characteristics: #can-be-target
 * cyTiuEntryPointerCy 0..1 Reference "CY - TIU ENTRY POINTER - CY (-1)"
 * cyTiuEntryPointerCy only Reference(TiuDocument8925)
@@ -715,7 +715,7 @@ Characteristics: #can-be-target
 Logical: TiuDocumentDefinition89251
 Id: TiuDocumentDefinition89251
 Title: "TIU DOCUMENT DEFINITION (8925.1)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file TIU DOCUMENT DEFINITION (8925.1)"
 Characteristics: #can-be-target
 * name 0..1 Element "NAME (-.01)"
 * vhaEnterpriseStandardTitle 0..1 Reference "VHA ENTERPRISE STANDARD TITLE (-1501)"
@@ -724,7 +724,7 @@ Characteristics: #can-be-target
 Logical: TiuVhaEnterpriseStandardTitle89261
 Id: TiuVhaEnterpriseStandardTitle89261
 Title: "TIU VHA ENTERPRISE STANDARD TITLE (8926.1)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file TIU VHA ENTERPRISE STANDARD TITLE (8926.1)"
 Characteristics: #can-be-target
 * codingSystem 0..1 Reference "CODING SYSTEM (-2)"
 * documentType 0..1 Element "DOCUMENT TYPE (-.08)"
@@ -734,7 +734,7 @@ Characteristics: #can-be-target
 Logical: CodingSystem892612
 Id: CodingSystem892612
 Title: "CODING SYSTEM (8926.12)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file CODING SYSTEM (8926.12)"
 Characteristics: #can-be-target
 * code 0..1 Reference "CODE (-.02)"
 * code only Reference(Code8926121)
@@ -742,21 +742,21 @@ Characteristics: #can-be-target
 Logical: Code8926121
 Id: Code8926121
 Title: "CODE (8926.121)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file CODE (8926.121)"
 Characteristics: #can-be-target
 * code 0..1 Element "CODE (-.01)"
 
 Logical: Specimen63902
 Id: Specimen63902
 Title: "SPECIMEN (63.902)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file SPECIMEN (63.902)"
 Characteristics: #can-be-target
 * specimen 0..1 Element "SPECIMEN (-.01)"
 
 Logical: Em6302
 Id: Em6302
 Title: "EM (63.02)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file EM (63.02)"
 Characteristics: #can-be-target
 * orderedTest 0..1 Reference "ORDERED TEST (-.35)"
 * datetimeSpecimenTaken 0..1 Element "DATE/TIME SPECIMEN TAKEN (-.01)"
@@ -776,7 +776,7 @@ Characteristics: #can-be-target
 Logical: OrderedTest6352
 Id: OrderedTest6352
 Title: "ORDERED TEST (63.52)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file ORDERED TEST (63.52)"
 Characteristics: #can-be-target
 * ien 0..1 Element "IEN (-.001)"
 * cprsOrder  0..1 Element "CPRS ORDER # (-3)"
@@ -786,7 +786,7 @@ Characteristics: #can-be-target
 Logical: TiuReferenceDatetime6349
 Id: TiuReferenceDatetime6349
 Title: "TIU REFERENCE DATE/TIME (63.49)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file TIU REFERENCE DATE/TIME (63.49)"
 Characteristics: #can-be-target
 * emTiuEntryPointerEm 0..1 Reference "EM - TIU ENTRY POINTER - EM (-1)"
 * emTiuEntryPointerEm only Reference(TiuDocument8925)
@@ -794,14 +794,14 @@ Characteristics: #can-be-target
 Logical: Specimen63202
 Id: Specimen63202
 Title: "SPECIMEN (63.202)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file SPECIMEN (63.202)"
 Characteristics: #can-be-target
 * specimen 0..1 Element "SPECIMEN (-.01)"
 
 Logical: Microbiology6305
 Id: Microbiology6305
 Title: "MICROBIOLOGY (63.05)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file MICROBIOLOGY (63.05)"
 Characteristics: #can-be-target
 * orderedTest 0..1 Reference "ORDERED TEST (-.35)"
 * datetimeSpecimenTaken 0..1 Element "DATE/TIME SPECIMEN TAKEN (-.01)"
@@ -845,7 +845,7 @@ Characteristics: #can-be-target
 Logical: OrderedTest635
 Id: OrderedTest635
 Title: "ORDERED TEST (63.5)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file ORDERED TEST (63.5)"
 Characteristics: #can-be-target
 * ien 0..1 Element "IEN (-.001)"
 * cprsOrder  0..1 Element "CPRS ORDER # (-3)"
@@ -857,7 +857,7 @@ Characteristics: #can-be-target
 Logical: Organism633
 Id: Organism633
 Title: "ORGANISM (63.3)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file ORGANISM (63.3)"
 Characteristics: #can-be-target
 * comment 0..1 Reference "COMMENT (-2)"
 * organism 0..1 Element "ORGANISM (-5+to+160)"
@@ -866,56 +866,56 @@ Characteristics: #can-be-target
 Logical: Comment6331
 Id: Comment6331
 Title: "COMMENT (63.31)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file COMMENT (63.31)"
 Characteristics: #can-be-target
 * comment 0..1 Element "COMMENT (-.01)"
 
 Logical: BactRptRemark6333
 Id: BactRptRemark6333
 Title: "BACT RPT REMARK (63.33)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file BACT RPT REMARK (63.33)"
 Characteristics: #can-be-target
 * bactRptRemark 0..1 Element "BACT RPT REMARK (-.01)"
 
 Logical: GramStain6329
 Id: GramStain6329
 Title: "GRAM STAIN (63.29)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file GRAM STAIN (63.29)"
 Characteristics: #can-be-target
 * gramStain 0..1 Element "GRAM STAIN (-.01)"
 
 Logical: ParasiteRptRemark6336
 Id: ParasiteRptRemark6336
 Title: "PARASITE RPT REMARK (63.36)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file PARASITE RPT REMARK (63.36)"
 Characteristics: #can-be-target
 * parasiteRptRemark 0..1 Element "PARASITE RPT REMARK (-.01)"
 
 Logical: MycologyRptRemark6338
 Id: MycologyRptRemark6338
 Title: "MYCOLOGY RPT REMARK (63.38)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file MYCOLOGY RPT REMARK (63.38)"
 Characteristics: #can-be-target
 * mycologyRptRemark 0..1 Element "MYCOLOGY RPT REMARK (-.01)"
 
 Logical: TbRptRemark6341
 Id: TbRptRemark6341
 Title: "TB RPT REMARK (63.41)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file TB RPT REMARK (63.41)"
 Characteristics: #can-be-target
 * tbRptRemark 0..1 Element "TB RPT REMARK (-.01)"
 
 Logical: VirologyRptRemark6344
 Id: VirologyRptRemark6344
 Title: "VIROLOGY RPT REMARK (63.44)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file VIROLOGY RPT REMARK (63.44)"
 Characteristics: #can-be-target
 * virologyRptRemark 0..1 Element "VIROLOGY RPT REMARK (-.01)"
 
 Logical: SurgicalPathology6308
 Id: SurgicalPathology6308
 Title: "SURGICAL PATHOLOGY (63.08)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file SURGICAL PATHOLOGY (63.08)"
 Characteristics: #can-be-target
 * orderedTest 0..1 Reference "ORDERED TEST (-.35)"
 * datetimeSpecimenTaken 0..1 Element "DATE/TIME SPECIMEN TAKEN (-.01)"
@@ -935,7 +935,7 @@ Characteristics: #can-be-target
 Logical: OrderedTest6353
 Id: OrderedTest6353
 Title: "ORDERED TEST (63.53)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file ORDERED TEST (63.53)"
 Characteristics: #can-be-target
 * ien 0..1 Element "IEN (-.001)"
 * cprsOrder  0..1 Element "CPRS ORDER # (-3)"
@@ -945,7 +945,7 @@ Characteristics: #can-be-target
 Logical: TiuReferenceDatetime6319
 Id: TiuReferenceDatetime6319
 Title: "TIU REFERENCE DATE/TIME (63.19)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file TIU REFERENCE DATE/TIME (63.19)"
 Characteristics: #can-be-target
 * spTiuEntryPointerSp 0..1 Reference "SP - TIU ENTRY POINTER - SP (-1)"
 * spTiuEntryPointerSp only Reference(TiuDocument8925)
@@ -953,14 +953,14 @@ Characteristics: #can-be-target
 Logical: Specimen63812
 Id: Specimen63812
 Title: "SPECIMEN (63.812)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file SPECIMEN (63.812)"
 Characteristics: #can-be-target
 * specimen 0..1 Element "SPECIMEN (-.01)"
 
 Logical: SourceOfAdmission451
 Id: SourceOfAdmission451
 Title: "SOURCE OF ADMISSION (45.1)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file SOURCE OF ADMISSION (45.1)"
 Characteristics: #can-be-target
 * ptfCode 0..1 Coding "PTF CODE (-.01)"
 * ptfCode from http://va.gov/fhir/ValueSet/VSVFSourceOfAdmission-vista (example)
@@ -968,21 +968,21 @@ Characteristics: #can-be-target
 Logical: Location999999906
 Id: Location999999906
 Title: "LOCATION (9999999.06)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file LOCATION (9999999.06)"
 Characteristics: #can-be-target
 * name 0..1 Element "NAME (-.01)"
 
 Logical: VProvider900001006
 Id: VProvider900001006
 Title: "V PROVIDER (9000010.06)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file V PROVIDER (9000010.06)"
 Characteristics: #can-be-target
 * provider 0..1 Element "PROVIDER (-.01)"
 
 Logical: VCpt900001018
 Id: VCpt900001018
 Title: "V CPT (9000010.18)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file V CPT (9000010.18)"
 Characteristics: #can-be-target
 * cpt 0..1 Element "CPT (-.01)"
 * patientName 0..1 Reference "PATIENT NAME (-.02)"
@@ -1005,7 +1005,7 @@ Characteristics: #can-be-target
 Logical: VImmunization900001011
 Id: VImmunization900001011
 Title: "V IMMUNIZATION (9000010.11)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file V IMMUNIZATION (9000010.11)"
 Characteristics: #can-be-target
 * immunization 0..1 Reference "IMMUNIZATION (-.01)"
 * eventInformationSource 0..1 Element "EVENT INFORMATION SOURCE (-1301)"
@@ -1027,7 +1027,7 @@ Characteristics: #can-be-target
 Logical: Immunization999999914
 Id: Immunization999999914
 Title: "IMMUNIZATION (9999999.14)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file IMMUNIZATION (9999999.14)"
 Characteristics: #can-be-target
 * name 0..1 Coding "NAME (-.01)"
 * name from http://va.gov/fhir/ValueSet/VSVFinferredCVX-vista (example)
@@ -1036,7 +1036,7 @@ Characteristics: #can-be-target
 Logical: ImmunizationLot999999941
 Id: ImmunizationLot999999941
 Title: "IMMUNIZATION LOT (9999999.41)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file IMMUNIZATION LOT (9999999.41)"
 Characteristics: #can-be-target
 * lotNumber 0..1 Element "LOT NUMBER (-.01)"
 * manufacturer 0..1 Element "MANUFACTURER (-.02)"
@@ -1045,13 +1045,13 @@ Characteristics: #can-be-target
 Logical: UcumCodes7575
 Id: UcumCodes7575
 Title: "UCUM CODES (757.5)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file UCUM CODES (757.5)"
 Characteristics: #can-be-target
 
 Logical: ALeadImplant6982
 Id: ALeadImplant6982
 Title: "A LEAD IMPLANT (698.2)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file A LEAD IMPLANT (698.2)"
 Characteristics: #can-be-target
 * ien 0..1 Element "IEN (-.001)"
 * explantDate 0..1 Element "EXPLANT DATE (-56)"
@@ -1065,14 +1065,14 @@ Characteristics: #can-be-target
 Logical: PacemakerManufacturer6986
 Id: PacemakerManufacturer6986
 Title: "PACEMAKER MANUFACTURER (698.6)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file PACEMAKER MANUFACTURER (698.6)"
 Characteristics: #can-be-target
 * name 0..1 Element "NAME (-.01)"
 
 Logical: PacemakerEquipment6984
 Id: PacemakerEquipment6984
 Title: "PACEMAKER EQUIPMENT (698.4)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file PACEMAKER EQUIPMENT (698.4)"
 Characteristics: #can-be-target
 * modelNumbername 0..1 Element "MODEL NUMBER/NAME (-.01)"
 * typeOfEquipment 0..1 Coding "TYPE OF EQUIPMENT (-1)"
@@ -1081,7 +1081,7 @@ Characteristics: #can-be-target
 Logical: DentalDeviceTracking2289
 Id: DentalDeviceTracking2289
 Title: "DENTAL DEVICE TRACKING (228.9)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file DENTAL DEVICE TRACKING (228.9)"
 Characteristics: #can-be-target
 * ien 0..1 Element "IEN (-.001)"
 * udi 0..1 Element "UDI (-1)"
@@ -1100,7 +1100,7 @@ Characteristics: #can-be-target
 Logical: ProsthesisInstalled13001
 Id: ProsthesisInstalled13001
 Title: "PROSTHESIS INSTALLED (130.01)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file PROSTHESIS INSTALLED (130.01)"
 Characteristics: #can-be-target
 * ien 0..1 Element "IEN (-.001)"
 * vendor 0..1 Element "VENDOR (-1)"
@@ -1114,14 +1114,14 @@ Characteristics: #can-be-target
 Logical: Prosthesis1319
 Id: Prosthesis1319
 Title: "PROSTHESIS (131.9)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file PROSTHESIS (131.9)"
 Characteristics: #can-be-target
 * name 0..1 Element "NAME (-.01)"
 
 Logical: VLeadImplant6981
 Id: VLeadImplant6981
 Title: "V LEAD IMPLANT (698.1)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file V LEAD IMPLANT (698.1)"
 Characteristics: #can-be-target
 * ien 0..1 Element "IEN (-.001)"
 * explantDate 0..1 Element "EXPLANT DATE (-56)"
@@ -1135,14 +1135,14 @@ Characteristics: #can-be-target
 Logical: CountryCode779004
 Id: CountryCode779004
 Title: "COUNTRY CODE (779.004)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file COUNTRY CODE (779.004)"
 Characteristics: #can-be-target
 * code 0..1 Element "CODE (-.01)"
 
 Logical: NonvaMeds5505
 Id: NonvaMeds5505
 Title: "NON-VA MEDS (55.05)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file NON-VA MEDS (55.05)"
 Characteristics: #can-be-target
 * orderNumber 0..1 Element "ORDER NUMBER (-7)"
 * disclaimer 0..1 Element "DISCLAIMER (-10)"
@@ -1151,14 +1151,14 @@ Characteristics: #can-be-target
 Logical: VaProduct5068
 Id: VaProduct5068
 Title: "VA PRODUCT (50.68)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file VA PRODUCT (50.68)"
 Characteristics: #can-be-target
 * vaPrintName 0..1 Element "VA PRINT NAME (-5)"
 
 Logical: VaGeneric506
 Id: VaGeneric506
 Title: "VA GENERIC (50.6)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file VA GENERIC (50.6)"
 Characteristics: #can-be-target
 * codingSystem 0..1 Reference "CODING SYSTEM (-5)"
 * codingSystem only Reference(CodingSystem5065)
@@ -1166,14 +1166,14 @@ Characteristics: #can-be-target
 Logical: CodingSystem5065
 Id: CodingSystem5065
 Title: "CODING SYSTEM (50.65)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file CODING SYSTEM (50.65)"
 Characteristics: #can-be-target
 * code 0..1 Element "CODE (-.02)"
 
 Logical: MedicationInstructions520113
 Id: MedicationInstructions520113
 Title: "MEDICATION INSTRUCTIONS (52.0113)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file MEDICATION INSTRUCTIONS (52.0113)"
 Characteristics: #can-be-target
 * dosageOrdered 0..1 Element "DOSAGE ORDERED (-.01)"
 * units 0..1 Coding "UNITS (-2)"
@@ -1184,7 +1184,7 @@ Characteristics: #can-be-target
 Logical: Refill521
 Id: Refill521
 Title: "REFILL (52.1)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file REFILL (52.1)"
 Characteristics: #can-be-target
 * mailwindowpark 0..1 Element "MAIL/WINDOW/PARK (-.01)"
 * daysSupply 0..1 Element "DAYS SUPPLY (-1.1)"
@@ -1196,7 +1196,7 @@ Characteristics: #can-be-target
 Logical: PartialDate522
 Id: PartialDate522
 Title: "PARTIAL DATE (52.2)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file PARTIAL DATE (52.2)"
 Characteristics: #can-be-target
 * mailwindow 0..1 Element "MAIL/WINDOW (-.02)"
 * daysSupply 0..1 Element "DAYS SUPPLY (-.041)"
@@ -1208,7 +1208,7 @@ Characteristics: #can-be-target
 Logical: VExam900001013
 Id: VExam900001013
 Title: "V EXAM (9000010.13)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file V EXAM (9000010.13)"
 Characteristics: #can-be-target
 * exam 0..1 Reference "EXAM (-.01)"
 * patientName 0..1 Reference "PATIENT NAME (-.02)"
@@ -1225,20 +1225,20 @@ Characteristics: #can-be-target
 Logical: Exam999999915
 Id: Exam999999915
 Title: "EXAM (9999999.15)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file EXAM (9999999.15)"
 Characteristics: #can-be-target
 * codeMappings 0..1 Element "CODE MAPPINGS (-210)"
 
 Logical: CodeMappings999999918
 Id: CodeMappings999999918
 Title: "CODE MAPPINGS (9999999.18)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file CODE MAPPINGS (9999999.18)"
 Characteristics: #can-be-target
 
 Logical: Contact403
 Id: Contact403
 Title: "CONTACT (4.03)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file CONTACT (4.03)"
 Characteristics: #can-be-target
 * contact 0..1 Element "CONTACT (-.01)"
 * phone  0..1 Element "PHONE # (-.03)"
@@ -1246,7 +1246,7 @@ Characteristics: #can-be-target
 Logical: PersonClass20005
 Id: PersonClass20005
 Title: "PERSON CLASS (200.05)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file PERSON CLASS (200.05)"
 Characteristics: #can-be-target
 * expirationDate 0..1 Element "Expiration Date (-3)"
 * effectiveDate 0..1 Element "Effective Date (-2)"
@@ -1256,35 +1256,35 @@ Characteristics: #can-be-target
 Logical: Title31
 Id: Title31
 Title: "TITLE (3.1)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file TITLE (3.1)"
 Characteristics: #can-be-target
 * name 0..1 Element "NAME (-.01)"
 
 Logical: PersonClass89321
 Id: PersonClass89321
 Title: "PERSON CLASS (8932.1)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file PERSON CLASS (8932.1)"
 Characteristics: #can-be-target
 * x12Code 0..1 Element "X12 CODE (-6)"
 
 Logical: Provider441
 Id: Provider441
 Title: "PROVIDER (44.1)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file PROVIDER (44.1)"
 Characteristics: #can-be-target
 * provider 0..1 Element "PROVIDER (-.01)"
 
 Logical: ProviderNarrative999999927
 Id: ProviderNarrative999999927
 Title: "PROVIDER NARRATIVE (9999999.27)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file PROVIDER NARRATIVE (9999999.27)"
 Characteristics: #can-be-target
 * narrative 0..1 Element "NARRATIVE (-.01)"
 
 Logical: Examinations7003
 Id: Examinations7003
 Title: "EXAMINATIONS (70.03)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file EXAMINATIONS (70.03)"
 Characteristics: #can-be-target
 * examStatus 0..1 Reference "EXAM STATUS (-3)"
 * reasonForCancellation 0..1 Reference "REASON FOR CANCELLATION (-3.5)"
@@ -1298,14 +1298,14 @@ Characteristics: #can-be-target
 Logical: RadnucMedReason752
 Id: RadnucMedReason752
 Title: "RAD/NUC MED REASON (75.2)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file RAD/NUC MED REASON (75.2)"
 Characteristics: #can-be-target
 * reason 0..1 Element "REASON (-.01)"
 
 Logical: RegisteredExams7002
 Id: RegisteredExams7002
 Title: "REGISTERED EXAMS (70.02)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file REGISTERED EXAMS (70.02)"
 Characteristics: #can-be-target
 * typeOfImaging 0..1 Reference "TYPE OF IMAGING (-2)"
 * examDate 0..1 Element "EXAM DATE (-.01)"
@@ -1317,21 +1317,21 @@ Characteristics: #can-be-target
 Logical: ImagingType792
 Id: ImagingType792
 Title: "IMAGING TYPE (79.2)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file IMAGING TYPE (79.2)"
 Characteristics: #can-be-target
 * typeOfImaging 0..1 Element "TYPE OF IMAGING (-.01)"
 
 Logical: ImagingLocations791
 Id: ImagingLocations791
 Title: "IMAGING LOCATIONS (79.1)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file IMAGING LOCATIONS (79.1)"
 Characteristics: #can-be-target
 * location 0..1 Element "LOCATION (-.01)"
 
 Logical: VHealthFactors900001023
 Id: VHealthFactors900001023
 Title: "V HEALTH FACTORS (9000010.23)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file V HEALTH FACTORS (9000010.23)"
 Characteristics: #can-be-target
 * ien 0..1 Element "IEN (-.001)"
 * patientName 0..1 Element "PATIENT NAME (-.02)"
@@ -1345,21 +1345,21 @@ Characteristics: #can-be-target
 Logical: HealthFactors999999964
 Id: HealthFactors999999964
 Title: "HEALTH FACTORS (9999999.64)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file HEALTH FACTORS (9999999.64)"
 Characteristics: #can-be-target
 * category 0..1 Element "CATEGORY (-.03)"
 
 Logical: Findings69106
 Id: Findings69106
 Title: "FINDINGS (691.06)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file FINDINGS (691.06)"
 Characteristics: #can-be-target
 * findings 0..1 Element "FINDINGS (-.01)"
 
 Logical: ElectrocardiogramEkg6915
 Id: ElectrocardiogramEkg6915
 Title: "ELECTROCARDIOGRAM (EKG) (691.5)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file ELECTROCARDIOGRAM (EKG) (691.5)"
 Characteristics: #can-be-target
 * ien 0..1 Element "IEN (-.001)"
 * releaseStatus 0..1 Coding "RELEASE STATUS (-1506)"
@@ -1381,7 +1381,7 @@ Characteristics: #can-be-target
 Logical: InterpretationCodeRhythm69154
 Id: InterpretationCodeRhythm69154
 Title: "INTERPRETATION CODE (RHYTHM) (691.54)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file INTERPRETATION CODE (RHYTHM) (691.54)"
 Characteristics: #can-be-target
 * interpretationCodeRhythm 0..1 Reference "INTERPRETATION CODE (RHYTHM) (-.01)"
 * interpretationCodeRhythm only Reference(EcgInterpretation6933)
@@ -1389,14 +1389,14 @@ Characteristics: #can-be-target
 Logical: EcgInterpretation6933
 Id: EcgInterpretation6933
 Title: "ECG INTERPRETATION (693.3)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file ECG INTERPRETATION (693.3)"
 Characteristics: #can-be-target
 * interpretation 0..1 Element "INTERPRETATION (-.01)"
 
 Logical: InterpretationCodeConfig69155
 Id: InterpretationCodeConfig69155
 Title: "INTERPRETATION CODE (CONFIG) (691.55)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file INTERPRETATION CODE (CONFIG) (691.55)"
 Characteristics: #can-be-target
 * interpretationCodeConfig 0..1 Reference "INTERPRETATION CODE (CONFIG) (-.01)"
 * interpretationCodeConfig only Reference(EcgInterpretation6933)
@@ -1404,7 +1404,7 @@ Characteristics: #can-be-target
 Logical: InterpretationCodePacing69156
 Id: InterpretationCodePacing69156
 Title: "INTERPRETATION CODE (PACING) (691.56)"
-Description: "-"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file INTERPRETATION CODE (PACING) (691.56)"
 Characteristics: #can-be-target
 * interpretationCodePacing 0..1 Reference "INTERPRETATION CODE (PACING) (-.01)"
 * interpretationCodePacing only Reference(EcgInterpretation6933)
