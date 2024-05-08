@@ -26,7 +26,7 @@ Usage: #definition
 * group[=].element[+].code = #4500698
 * group[=].element[=].display = "DELETED"
 * group[=].element[=].target.code = #entered-in-error
-* group[=].element[=].target.equivalence = #narrower
+* group[=].element[=].target.equivalence = #wider
 * group[=].element[+].code = #4501128
 * group[=].element[=].display = "INACTIVE"
 * group[=].element[=].target.equivalence = #unmatched

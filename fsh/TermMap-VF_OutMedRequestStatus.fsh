@@ -24,7 +24,7 @@ Usage: #definition
 * group[=].element[+].code = #13
 * group[=].element[=].display = "DELETED"
 * group[=].element[=].target.code = #entered-in-error
-* group[=].element[=].target.display = "entered-in-error"
+* group[=].element[=].target.display = "Entered in Error"
 * group[=].element[=].target.equivalence = #equal
 * group[=].element[+].code = #12
 * group[=].element[=].display = "DISCONTINUED"
@@ -83,7 +83,7 @@ Description: "FHIR Target ValueSet for Terminology Maps VF_OutMedRequestStatus"
 * ^experimental = false
 * ^name = "VF_OutMedRequestStatus"
 * include http://hl7.org/fhir/CodeSystem/medicationrequest-status#active "active"
-* include http://hl7.org/fhir/CodeSystem/medicationrequest-status#entered-in-error "entered-in-error"
+* include http://hl7.org/fhir/CodeSystem/medicationrequest-status#entered-in-error "Entered in Error"
 * include http://hl7.org/fhir/CodeSystem/medicationrequest-status#stopped "stopped"
 * include http://hl7.org/fhir/CodeSystem/medicationrequest-status#draft "draft"
 * include http://hl7.org/fhir/CodeSystem/medicationrequest-status#completed "completed"

@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Changes - US Veterans Administration FHIR Map Set Implementation Guide v0.49.0</title>
+    <title>Changes - US Veterans Administration FHIR Map Set Implementation Guide v0.50.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -58,7 +58,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">US Veterans Administration FHIR Map Set Implementation Guide</span>
             <br/>
-            <span style="display:inline-block;">0.49.0 - 240501a
+            <span style="display:inline-block;">0.50.0 - 240601a
 
 
 
@@ -151,7 +151,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">US Veterans Administration FHIR Map Set Implementation Guide - Local Development build (v0.49.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">US Veterans Administration FHIR Map Set Implementation Guide - Local Development build (v0.50.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>Changes</h2>
   
 
@@ -196,8 +196,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <tr><td>734</td></tr>
 <tr><td></td><td>mapApproach</td><td>transform</td><td>fixed value</td></tr>
 <tr><td>735</td></tr>
-<tr><td></td><td>mapApproach</td><td>source value</td><td>transform</td></tr>
-<tr><td></td><td>fhirPath</td><td>Appointment.cancelationReason.coding</td><td>Appointment.cancelationReason.text</td></tr>
+<tr><td></td><td>mapApproach</td><td>source value</td><td>terminologyMaps</td></tr>
+<tr><td></td><td>fhirPath</td><td>Appointment.cancelationReason.coding</td><td>Appointment.cancelationReason</td></tr>
 <tr><td></td><td>fhirSubPath</td><td>.code</td><td></td></tr>
 <tr><td></td><td>mapValue</td><td></td><td>VF_AppointmentCancellationReason</td></tr>
 <tr><td></td><td>mapParameters</td><td>.system=http://va.gov/terminology/VistADefinedTerms/2.98-16</td><td></td></tr>
@@ -241,6 +241,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <tr><td>1608</td></tr>
 <tr><td></td><td>fhirPath</td><td>Condition.category</td><td>Condition.category[us-core]</td></tr>
 <tr><td colspan="2">1766 new maprow</td></tr>
+<tr><td colspan="2">1833 new maprow</td></tr>
 <tr><th colspan="4">use-case Vital Signs: CPM</th></tr>
 <tr><td colspan="4"><i>resource Observation</i></td></tr>
 <tr><td>866</td></tr>
@@ -477,14 +478,6 @@ value.coding.system=http://va.gov/terminology/vistaDefinedTerms/399.2</td><td>.v
 <tr><td></td><td>no changes</td></tr>
 <tr><th colspan="4">use-case MedicationRequest: NonVA</th></tr>
 <tr><td colspan="4"><i>resource MedicationRequest</i></td></tr>
-<tr><td>1540</td></tr>
-<tr><td></td><td>vistaFileFieldName</td><td></td><td>NON-VA MEDS - ORDER NUMBER</td></tr>
-<tr><td></td><td>vistaFileField</td><td></td><td>55.05-7</td></tr>
-<tr><td></td><td>mapCase</td><td></td><td>Not null</td></tr>
-<tr><td>1347</td></tr>
-<tr><td></td><td>vistaFileFieldName</td><td></td><td>NON-VA MEDS - ORDER NUMBER</td></tr>
-<tr><td></td><td>vistaFileField</td><td></td><td>55.05-7</td></tr>
-<tr><td></td><td>mapCase</td><td></td><td>Not null</td></tr>
 <tr><td colspan="2">1764 new maprow</td></tr>
 <tr><td colspan="2">1765 new maprow</td></tr>
 <tr><th colspan="4">use-case MedicationRequest: Outpatient</th></tr>
@@ -717,6 +710,7 @@ value.coding.system=http://va.gov/terminology/vistaDefinedTerms/399.2</td><td>.v
 <tr><td colspan="2">1796 new maprow</td></tr>
 <tr><td colspan="2">1797 new maprow</td></tr>
 <tr><td colspan="2">1798 new maprow</td></tr>
+<tr><th colspan="4">new use-case Debt Portal</th></tr>
 <tr><th colspan="4">new termmap VF_adminGender</th></tr>
 <tr><th colspan="4">termmap VF_allergyActive</th></tr>
 <tr><th colspan="4">termmap VF_allergyEnteredInError</th></tr>
@@ -815,7 +809,7 @@ value.coding.system=http://va.gov/terminology/vistaDefinedTerms/399.2</td><td>.v
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.49.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, May 6, 2024 11:38+0000">2024-05-06</span>
+          IG &#169; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.50.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, May 8, 2024 06:31+0000">2024-05-08</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -13,11 +13,11 @@
      fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>VAMapsIG</h2><p>The official URL for this implementation guide is: </p><pre>http://va.gov/fhir/ImplementationGuide/va.maps</pre><div><p>This implementation guide is a FHIR IG rendering of the KBS Map Set from VA sources (primarily VistA) to FHIR. Where appropriate these maps conform to the us-core profiles.</p>\n</div></div>"
   ] ; # 
   fhir:url [ fhir:v "http://va.gov/fhir/ImplementationGuide/va.maps"^^xsd:anyURI] ; # 
-  fhir:version [ fhir:v "0.49.0"] ; # 
+  fhir:version [ fhir:v "0.50.0"] ; # 
   fhir:name [ fhir:v "VAMapsIG"] ; # 
   fhir:title [ fhir:v "US Veterans Administration FHIR Map Set Implementation Guide"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2024-05-06T11:38:53+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2024-05-08T06:31:45+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "VA"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "VA" ] ;
@@ -86,7 +86,7 @@
          fhir:value [ fhir:v "releaselabel" ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "240501a" ]
+         fhir:value [ fhir:v "240601a" ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
@@ -314,7 +314,7 @@
          fhir:value [ fhir:v "releaselabel" ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "240501a" ]
+         fhir:value [ fhir:v "240601a" ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
@@ -535,6 +535,9 @@
        fhir:id [ fhir:v "group3" ] ;
        fhir:name [ fhir:v "Condition" ]
      ] [
+       fhir:id [ fhir:v "group20" ] ;
+       fhir:name [ fhir:v "Debt Portal" ]
+     ] [
        fhir:id [ fhir:v "group6" ] ;
        fhir:name [ fhir:v "Document Reference" ]
      ] [
@@ -659,6 +662,30 @@
        ] ;
        fhir:name [ fhir:v "APPOINTMENT TYPE (409.1)" ] ;
        fhir:description [ fhir:v "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file APPOINTMENT TYPE (409.1)" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:logical" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/StructureDefinition/ArCcpcStatements3492> ;
+         fhir:reference [ fhir:v "StructureDefinition/ArCcpcStatements3492" ]
+       ] ;
+       fhir:name [ fhir:v "AR CCPC STATEMENTS (349.2)" ] ;
+       fhir:description [ fhir:v "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file AR CCPC STATEMENTS (349.2)" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:logical" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/StructureDefinition/ArDebtor340> ;
+         fhir:reference [ fhir:v "StructureDefinition/ArDebtor340" ]
+       ] ;
+       fhir:name [ fhir:v "AR DEBTOR (340)" ] ;
+       fhir:description [ fhir:v "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file AR DEBTOR (340)" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -854,6 +881,45 @@
        fhir:name [ fhir:v "CYTOPATHOLOGY (63.09)" ] ;
        fhir:description [ fhir:v "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file CYTOPATHOLOGY (63.09)" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/StructureDefinition/DebtPortalChargeItem> ;
+         fhir:reference [ fhir:v "StructureDefinition/DebtPortalChargeItem" ]
+       ] ;
+       fhir:name [ fhir:v "Debt Portal ChargeItem" ] ;
+       fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA file AR CCPC STATEMENTS (349.2) to ChargeItem" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "group20" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/StructureDefinition/DebtPortalInvoice> ;
+         fhir:reference [ fhir:v "StructureDefinition/DebtPortalInvoice" ]
+       ] ;
+       fhir:name [ fhir:v "Debt Portal Invoice" ] ;
+       fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA file AR CCPC STATEMENTS (349.2) to Invoice" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "group20" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/StructureDefinition/DebtPortalPatient> ;
+         fhir:reference [ fhir:v "StructureDefinition/DebtPortalPatient" ]
+       ] ;
+       fhir:name [ fhir:v "Debt Portal Patient" ] ;
+       fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA file AR CCPC STATEMENTS (349.2) to Patient" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "group20" ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
@@ -2366,6 +2432,18 @@
        ] ;
        fhir:name [ fhir:v "PATIENT/IHS (9000001)" ] ;
        fhir:description [ fhir:v "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file PATIENT/IHS (9000001)" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:logical" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/StructureDefinition/PdLine34921> ;
+         fhir:reference [ fhir:v "StructureDefinition/PdLine34921" ]
+       ] ;
+       fhir:name [ fhir:v "PD LINE (349.21)" ] ;
+       fhir:description [ fhir:v "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file PD LINE (349.21)" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [

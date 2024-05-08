@@ -6,11 +6,11 @@
     "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>VAMapsIG</h2><p>The official URL for this implementation guide is: </p><pre>http://va.gov/fhir/ImplementationGuide/va.maps</pre><div><p>This implementation guide is a FHIR IG rendering of the KBS Map Set from VA sources (primarily VistA) to FHIR. Where appropriate these maps conform to the us-core profiles.</p>\n</div></div>"
   },
   "url" : "http://va.gov/fhir/ImplementationGuide/va.maps",
-  "version" : "0.49.0",
+  "version" : "0.50.0",
   "name" : "VAMapsIG",
   "title" : "US Veterans Administration FHIR Map Set Implementation Guide",
   "status" : "draft",
-  "date" : "2024-05-06T11:38:53+00:00",
+  "date" : "2024-05-08T06:31:45+00:00",
   "publisher" : "VA",
   "contact" : [{
     "name" : "VA",
@@ -75,7 +75,7 @@
       },
       {
         "url" : "value",
-        "valueString" : "240501a"
+        "valueString" : "240601a"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -354,7 +354,7 @@
       },
       {
         "url" : "value",
-        "valueString" : "240501a"
+        "valueString" : "240601a"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -624,6 +624,10 @@
       "name" : "Condition"
     },
     {
+      "id" : "group20",
+      "name" : "Debt Portal"
+    },
+    {
       "id" : "group6",
       "name" : "Document Reference"
     },
@@ -763,6 +767,30 @@
       },
       "name" : "APPOINTMENT TYPE (409.1)",
       "description" : "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file APPOINTMENT TYPE (409.1)",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:logical"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/ArCcpcStatements3492"
+      },
+      "name" : "AR CCPC STATEMENTS (349.2)",
+      "description" : "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file AR CCPC STATEMENTS (349.2)",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:logical"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/ArDebtor340"
+      },
+      "name" : "AR DEBTOR (340)",
+      "description" : "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file AR DEBTOR (340)",
       "exampleBoolean" : false
     },
     {
@@ -958,6 +986,45 @@
       "name" : "CYTOPATHOLOGY (63.09)",
       "description" : "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file CYTOPATHOLOGY (63.09)",
       "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/DebtPortalChargeItem"
+      },
+      "name" : "Debt Portal ChargeItem",
+      "description" : "This StructureDefinition contains the maps for VistA file AR CCPC STATEMENTS (349.2) to ChargeItem",
+      "exampleBoolean" : false,
+      "groupingId" : "group20"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/DebtPortalInvoice"
+      },
+      "name" : "Debt Portal Invoice",
+      "description" : "This StructureDefinition contains the maps for VistA file AR CCPC STATEMENTS (349.2) to Invoice",
+      "exampleBoolean" : false,
+      "groupingId" : "group20"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/DebtPortalPatient"
+      },
+      "name" : "Debt Portal Patient",
+      "description" : "This StructureDefinition contains the maps for VistA file AR CCPC STATEMENTS (349.2) to Patient",
+      "exampleBoolean" : false,
+      "groupingId" : "group20"
     },
     {
       "extension" : [{
@@ -2470,6 +2537,18 @@
       },
       "name" : "PATIENT/IHS (9000001)",
       "description" : "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file PATIENT/IHS (9000001)",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:logical"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/PdLine34921"
+      },
+      "name" : "PD LINE (349.21)",
+      "description" : "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file PD LINE (349.21)",
       "exampleBoolean" : false
     },
     {

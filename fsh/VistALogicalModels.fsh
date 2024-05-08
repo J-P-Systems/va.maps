@@ -353,6 +353,21 @@ Characteristics: #can-be-target
 * personClass only Reference(PersonClass20005)
 * title only Reference(Title31)
 
+Logical: ArDebtor340
+Id: ArDebtor340
+Title: "AR DEBTOR (340)"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file AR DEBTOR (340)"
+Characteristics: #can-be-target
+* debtor 0..1 Element "DEBTOR (-.01)"
+* streetAddress1 0..1 Element "STREET ADDRESS #1 (-1.01)"
+* streetAddress2 0..1 Element "STREET ADDRESS #2 (-1.02)"
+* streetAddress3 0..1 Element "STREET ADDRESS #3 (-1.03)"
+* city 0..1 Element "CITY (-1.04)"
+* state 0..1 Element "STATE (-1.05)"
+* zipCode 0..1 Element "ZIP CODE (-1.06)"
+* phoneNumber 0..1 Element "PHONE NUMBER (-1.07)"
+* foreignCountryCode 0..1 Element "FOREIGN COUNTRY CODE (-1.08)"
+
 Logical: Echo691
 Id: Echo691
 Title: "ECHO (691)"
@@ -526,7 +541,8 @@ Description: "This StructureDefinition contains the Logical Model for the mapped
 Characteristics: #can-be-target
 * status 0..1 Coding "STATUS (-3)"
 * status from http://va.gov/fhir/ValueSet/VSVFAppointmentStatus-vista (example)
-* cancellationReason 0..1 Element "CANCELLATION REASON (-16)"
+* cancellationReason 0..1 Coding "CANCELLATION REASON (-16)"
+* cancellationReason from http://va.gov/fhir/ValueSet/VSVFAppointmentCancellationReason-vista (example)
 * clinic 0..1 Reference "CLINIC (-.01)"
 * appointmentType 0..1 Reference "APPOINTMENT TYPE (-9.5)"
 * appointmentDatetime 0..1 Element "APPOINTMENT DATE/TIME (-.001)"
@@ -581,6 +597,7 @@ Characteristics: #can-be-target
 * dateOfInjury 0..1 Element "DATE OF INJURY (-.13)"
 * modifier 0..1 Coding "MODIFIER (-.06)"
 * modifier from http://va.gov/fhir/ValueSet/VSVFencounterProblemVerificationStatus-vista (example)
+* encounterProvider 0..1 Element "ENCOUNTER PROVIDER (-1204)"
 * problemListEntry 0..1 Element "PROBLEM LIST ENTRY (-.16)"
 * visit only Reference(Visit9000010)
 * pov only Reference(IcdDiagnosis80)
@@ -1144,7 +1161,6 @@ Id: NonvaMeds5505
 Title: "NON-VA MEDS (55.05)"
 Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file NON-VA MEDS (55.05)"
 Characteristics: #can-be-target
-* orderNumber 0..1 Element "ORDER NUMBER (-7)"
 * disclaimer 0..1 Element "DISCLAIMER (-10)"
 * clinic 0..1 Element "CLINIC (-13)"
 
@@ -1408,3 +1424,30 @@ Description: "This StructureDefinition contains the Logical Model for the mapped
 Characteristics: #can-be-target
 * interpretationCodePacing 0..1 Reference "INTERPRETATION CODE (PACING) (-.01)"
 * interpretationCodePacing only Reference(EcgInterpretation6933)
+
+Logical: ArCcpcStatements3492
+Id: ArCcpcStatements3492
+Title: "AR CCPC STATEMENTS (349.2)"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file AR CCPC STATEMENTS (349.2)"
+Characteristics: #can-be-target
+* patient 0..1 Reference "PATIENT (-.01)"
+* amountDue 0..1 Element "AMOUNT DUE (-.04)"
+* prevBal 0..1 Element "PREV BAL (-.05)"
+* totalCharges 0..1 Element "TOTAL CHARGES (-.06)"
+* totalCredits 0..1 Element "TOTAL CREDITS (-.07)"
+* newBalance 0..1 Element "NEW BALANCE (-.08)"
+* pdLine 0..1 Reference "PD LINE (-20)"
+* specialNotices 0..1 Element "SPECIAL NOTICES (-30)"
+* patientName 0..1 Element "PATIENT NAME (-.03)"
+* patient only Reference(ArDebtor340)
+* pdLine only Reference(PdLine34921)
+
+Logical: PdLine34921
+Id: PdLine34921
+Title: "PD LINE (349.21)"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file PD LINE (349.21)"
+Characteristics: #can-be-target
+* transactionAmount 0..1 Element "TRANSACTION AMOUNT (-2)"
+* datePosted 0..1 Element "DATE POSTED (-.01)"
+* transactionDescription 0..1 Element "TRANSACTION DESCRIPTION (-1)"
+* billRefNo 0..1 Element "BILL REF. NO. (-3)"

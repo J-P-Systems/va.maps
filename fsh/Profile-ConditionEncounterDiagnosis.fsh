@@ -4,7 +4,7 @@ Id: ConditionEncounterDiagnosis
 Title: "Condition: Encounter Diagnosis"
 Description: "This StructureDefinition contains the maps for VistA file V POV (9000010.07) to us-core-condition-encounter-diagnosis"
 * ^status = #draft
-* category[us-core] and identifier.value and code and subject and encounter and onsetDateTime and recordedDate and clinicalStatus and verificationStatus MS
+* category[us-core] and identifier.value and code and subject and encounter and onsetDateTime and recordedDate and clinicalStatus and verificationStatus and recorder MS
 * category[us-core] = http://terminology.hl7.org/CodeSystem/condition-category#encounter-diagnosis
 * clinicalStatus from http://va.gov/fhir/ValueSet/VSVFencounterProblemStatus
 * verificationStatus from http://va.gov/fhir/ValueSet/VSVFencounterProblemVerificationStatus
@@ -23,6 +23,7 @@ Source: ConditionEncounterDiagnosis
 * clinicalStatus -> "604: terminologyMaps using VF_encounterProblemStatus on V POV - MODIFIER (9000010.07-.06)"
 * verificationStatus -> "606: terminologyMaps using VF_encounterProblemVerificationStatus on V POV - MODIFIER (9000010.07-.06)"
 * abatementDateTime -> "1766: target not supported" "abatementDate is must support"
+* recorder -> "1833: reference from V POV - ENCOUNTER PROVIDER (9000010.07-1204)"
 
 Mapping: cdw-to-ConditionEncounterDiagnosis
 Id: cdw
@@ -35,3 +36,4 @@ Source: ConditionEncounterDiagnosis
 * recordedDate -> "Outpat.VDiagnosis.VisitDateTime,Outpat.VDiagnosis.VisitIEN,Outpat.WorkloadVDiagnosis.VisitDateTime,Outpat.WorkloadVDiagnosis.VisitIEN\nImmun.ImmunizationContraRefusalEvent.VisitDateTime,Outpat.Visit.VisitDateTime,Outpat.VisitLogic.VisitDateTime,Outpat.Workload.VisitDateTime"
 * clinicalStatus -> "Outpat.VDiagnosis.Modifier,Outpat.WorkloadVDiagnosis.Modifier"
 * verificationStatus -> "Outpat.VDiagnosis.Modifier,Outpat.WorkloadVDiagnosis.Modifier"
+* recorder -> "Outpat.VDiagnosis.EncounterProviderIEN,Outpat.WorkloadVDiagnosis.EncounterProviderIEN"

@@ -4,10 +4,9 @@ Id: Appointment
 Title: "Appointment"
 Description: "This StructureDefinition contains the maps for VistA file APPOINTMENT (2.98) to Appointment"
 * ^status = #draft
-* status and cancelationReason.text and serviceCategory.coding.code and serviceType.coding.code and appointmentType.text and start and end and minutesDuration and created and participant.actor and comment MS
+* status and cancelationReason and serviceCategory.coding.code and serviceType.coding.code and appointmentType.text and start and end and minutesDuration and created and participant.actor and comment MS
 * status from http://va.gov/fhir/ValueSet/VSVFAppointmentStatus
-* cancelationReason.text.extension contains http://hl7.org/fhir/StructureDefinition/11179-permitted-value-conceptmap named 11179-permitted-value-conceptmap 0..1
-* cancelationReason.text.extension[11179-permitted-value-conceptmap].valueCanonical = "http://va.gov/fhir/ConceptMap/CMVFAppointmentCancellationReason"
+* cancelationReason from http://va.gov/fhir/ValueSet/VSVFAppointmentCancellationReason
 * participant.actor only Reference(http://hl7.org/fhir/StructureDefinition/Location)
 * participant.actor only Reference(http://hl7.org/fhir/StructureDefinition/Location)
 
@@ -19,7 +18,7 @@ Source: Appointment
 * status -> "732: fixed value = #booked when APPOINTMENT - STATUS (2.98-3) case I, NT, Null; Null check-in date (44.003-309), null check-out date (44.003-303)" "simple maps in Terminology; complex defined here."
 * status -> "733: fixed value = #arrived when APPOINTMENT - STATUS (2.98-3) case I, NT, Null; Non-null check-in date (44.003-309), null check-out date (44.003-303)" "simple maps in Terminology; complex defined here."
 * status -> "734: fixed value = #fulfilled when APPOINTMENT - STATUS (2.98-3) case I, NT, Null; Non-null check-in date (44.003-309), non-null check-out date (44.003-303)" "simple maps in Terminology; complex defined here."
-* cancelationReason.text -> "735: transform using VF_AppointmentCancellationReason on APPOINTMENT - CANCELLATION REASON (2.98-16)"
+* cancelationReason -> "735: terminologyMaps using VF_AppointmentCancellationReason on APPOINTMENT - CANCELLATION REASON (2.98-16)"
 * serviceCategory.coding.code -> "736: source value from APPOINTMENT - CLINIC > HOSPITAL LOCATION - SERVICE (2.98-.01 > 44-9)"
 * serviceType.coding.code -> "737: source value from APPOINTMENT - CLINIC > HOSPITAL LOCATION - STOP CODE NUMBER (2.98-.01 > 44-8)"
 * serviceType.coding.code -> "738: source value from APPOINTMENT - CLINIC > HOSPITAL LOCATION - CREDIT STOP CODE (2.98-.01 > 44-2503)"
@@ -48,7 +47,7 @@ Source: Appointment
 * status -> "Appt.Appointment.AppointmentStatus"
 * status -> "Appt.Appointment.AppointmentStatus"
 * status -> "Appt.Appointment.AppointmentStatus"
-* cancelationReason.text -> "Appt.Appointment.CancellationReasonIEN"
+* cancelationReason -> "Appt.Appointment.CancellationReasonIEN"
 * serviceCategory.coding.code -> "Appt.Appointment.LocationIEN\nDim.Location.MedicalService,Dim.Location.MedicalService"
 * serviceType.coding.code -> "Appt.Appointment.LocationIEN\nDim.Location.PrimaryStopCodeIEN"
 * serviceType.coding.code -> "Appt.Appointment.LocationIEN\nDim.Location.SecondaryStopCodeIEN"
