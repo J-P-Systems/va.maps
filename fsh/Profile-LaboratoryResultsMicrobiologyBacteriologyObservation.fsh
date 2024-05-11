@@ -4,7 +4,11 @@ Id: LaboratoryResultsMicrobiologyBacteriologyObservation
 Title: "Laboratory Results: Microbiology Bacteriology Observation"
 Description: "This StructureDefinition contains the maps for VistA file MICROBIOLOGY (63.05) to us-core-observation-lab"
 * ^status = #draft
-* code and status and valueCodeableConcept.coding and valueString and component.code and component.valueString and component.interpretation and effectiveDateTime and note and performer and specimen and identifier.value and code.coding and issued and category and subject MS
+* component ^slicing.discriminator.type = #pattern
+* component ^slicing.discriminator.path = "code"
+* component ^slicing.rules = #open
+* component contains va-component 0..1
+* code and status and valueCodeableConcept.coding and valueString and component[va-component].code and component[va-component].valueString and component[va-component].interpretation and effectiveDateTime and note and performer and specimen and identifier.value and code.coding and issued and category and subject MS
 * status from http://va.gov/fhir/ValueSet/VSVFLabObservationStatus
 * category = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
 
@@ -17,9 +21,9 @@ Source: LaboratoryResultsMicrobiologyBacteriologyObservation
 * valueCodeableConcept.coding -> "1516: terminologyMaps using null on MICROBIOLOGY - URINE SCREEN (63.05-11.57)"
 * valueString -> "1517: source value from MICROBIOLOGY - SPUTUM SCREEN (63.05-11.58)"
 * valueString -> "1518: source value from MICROBIOLOGY - GRAM STAIN > GRAM STAIN - GRAM STAIN (63.05-11.6 > 63.29-.01)"
-* component.code -> "1522: transform using null on MICROBIOLOGY - ORGANISM > ORGANISM - ORGANISM (63.05-12 > 63.3-5+to+160)" "antibiotic sensitivity\nWhat is default if no LOINC? Use text or is there a default LOINC?\n48611-8 Antibiotic tested [Identifier] against isolate"
-* component.valueString -> "1523: source value from MICROBIOLOGY - ORGANISM > ORGANISM - ORGANISM (63.05-12 > 63.3-5+to+160)" "antibiotic sensitivity.AntibioticSensitivityValue"
-* component.interpretation -> "1524: terminologyMaps using null on MICROBIOLOGY - ORGANISM > ORGANISM - ORGANISM (63.05-12 > 63.3-5.1+to+160.1)" "antibiotic sensitivity.AntibioticSensitivityInterpretation"
+* component[va-component].code -> "1522: transform using null on MICROBIOLOGY - ORGANISM > ORGANISM - ORGANISM (63.05-12 > 63.3-5+to+160)" "antibiotic sensitivity\nWhat is default if no LOINC? Use text or is there a default LOINC?\n48611-8 Antibiotic tested [Identifier] against isolate"
+* component[va-component].valueString -> "1523: source value from MICROBIOLOGY - ORGANISM > ORGANISM - ORGANISM (63.05-12 > 63.3-5+to+160)" "antibiotic sensitivity.AntibioticSensitivityValue"
+* component[va-component].interpretation -> "1524: terminologyMaps using null on MICROBIOLOGY - ORGANISM > ORGANISM - ORGANISM (63.05-12 > 63.3-5.1+to+160.1)" "antibiotic sensitivity.AntibioticSensitivityInterpretation"
 * effectiveDateTime -> "1450: source value from MICROBIOLOGY - DATE/TIME SPECIMEN TAKEN (63.05-.01)"
 * note -> "1454: source value from MICROBIOLOGY - COMMENT ON SPECIMEN (63.05-.99)"
 * note -> "1455: source value from MICROBIOLOGY - ORGANISM > ORGANISM - COMMENT > COMMENT - COMMENT (63.05-12 > 63.3-2 > 63.31-.01)"

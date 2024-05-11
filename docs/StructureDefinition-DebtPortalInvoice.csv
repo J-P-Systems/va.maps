@@ -33,9 +33,9 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "Invoice.identifier","Invoice.identifier","","","",0,*,"","","Y","Identifier {[]} {[]}
 ","Business Identifier for item","Identifier of this Invoice, often used for reference in correspondence about this invoice or for tracking of payments.","","Allows Identification of this Invoice instance.","","","","","","","",,,,,"",,,,"Invoice.identifier",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","FT1.2",".identifier","FiveWs.identifier"
-"Invoice.status","Invoice.status","","","",1,1,"","Y","Y","code {[]} {[]}
-","draft | issued | balanced | cancelled | entered-in-error","The current state of the Invoice.","","","","","","","","","",,"required","Codes identifying the lifecycle stage of an Invoice.","http://hl7.org/fhir/ValueSet/invoice-status|4.0.1","",,,,"Invoice.status",1,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","Varies by domain",".status","FiveWs.status"
+"Invoice.status","Invoice.status","","","",1,1,"Y","Y","Y","code {[]} {[]}
+","draft | issued | balanced | cancelled | entered-in-error","The current state of the Invoice.","","","","","","<valueCode xmlns=""http://hl7.org/fhir"" value=""issued""/>","","","",,"required","Codes identifying the lifecycle stage of an Invoice.","http://hl7.org/fhir/ValueSet/invoice-status|4.0.1","",,,,"Invoice.status",1,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+","1843: fixed value = #issued","Varies by domain",".status","FiveWs.status"
 "Invoice.cancelledReason","Invoice.cancelledReason","","","",0,1,"","","","string {[]} {[]}
 ","Reason for cancellation of this Invoice","In case of Invoice cancellation a reason must be given (entered in error, superseded by corrected invoice etc.).","Derived Profiles may choose to add invariants requiring this field to be populated if either priceOverride or factorOverride have been filled.","","","","","","","","",,,,,"",,,,"Invoice.cancelledReason",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
@@ -167,7 +167,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","FT1.22"
 "Invoice.paymentTerms","Invoice.paymentTerms","","","",0,1,"Y","","","markdown {[]} {[]}
 ","Payment details","Payment details such as banking details, period of payment, deductibles, methods of payment.","Derived Profiles may chose to add invariants requiring this field to be populated if either priceOverride or factorOverride have been filled.","","","","","","","","",,,,,"",,,,"Invoice.paymentTerms",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","1842: source value from AR CCPC STATEMENTS - SPECIAL NOTICES (349.2-40)"
+","1842: source value from AR CCPC STATEMENTS - PARAGRAPH CODES (349.2-40)"
 "Invoice.note","Invoice.note","","","",0,*,"Y","","","Annotation {[]} {[]}
 ","Comments made about the invoice","Comments made about the invoice by the issuer, subject, or other participants.","","","","","","","","","",,,,,"",,,,"Invoice.note",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","1841: source value from AR CCPC STATEMENTS - SPECIAL NOTICES (349.2-30)","NTE",".inboundRelationship(typeCode=SUBJ].source[classCode=ANNGEN, moodCode=EVN].value[xsi:type=ST]","Event.note"

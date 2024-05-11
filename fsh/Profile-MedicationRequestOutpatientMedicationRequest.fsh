@@ -22,7 +22,7 @@ Source: MedicationRequestOutpatientMedicationRequest
 * status -> "799: terminologyMaps using VF_OutMedRequestStatus on PRESCRIPTION - STATUS (52-100)"
 * extension[http://va.gov/fhir/StructureDefinition/medicationrequest-pharmacyOrderStatus].valueCoding.code -> "800: source value from PRESCRIPTION - STATUS (52-100)"
 * intent -> "801: fixed value = #order" "All records from file 52 are orders"
-* medicationCodeableConcept.text -> "803: source value from PRESCRIPTION - DRUG > DRUG - DRUG - PSNDF VA PRODUCT NAME ENTRY > VA PRODUCT - VA PRINT NAME (52-6 > 50-22 > 50.68-5)"
+* medicationCodeableConcept.text -> "803: source value from PRESCRIPTION - DRUG > DRUG - PSNDF VA PRODUCT NAME ENTRY > VA PRODUCT - VA PRINT NAME (52-6 > 50-22 > 50.68-5)"
 * medicationCodeableConcept.coding.code -> "805: transform using null on PRESCRIPTION - DRUG > DRUG - NATIONAL DRUG FILE ENTRY > VA GENERIC - CODING SYSTEM > CODING SYSTEM - CODE (52-6 > 50-20 > 50.6-5 > 50.65-.02)" "Could add NDC as well"
 * subject -> "806: reference from PRESCRIPTION - PATIENT (52-2)"
 * authoredOn -> "807: source value from PRESCRIPTION - ISSUE DATE (52-1)" "issue: could be login date 21 rather than issue date"

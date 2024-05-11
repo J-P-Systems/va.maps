@@ -173,98 +173,98 @@ Territory","",0,1,"Y","","Y","string {[]} {[]}
   <end value=""2010-07-01""/>
 </valuePeriod>","","",,,,,"",,,,"Address.period",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","XAD.12 / XAD.13 + XAD.14","./usablePeriod[type=""IVL<TS>""]","./StartDate and ./EndDate"
-"Organization.address:physical","Organization.address","physical","","",0,1,"Y","","","Address {[]} {[]}
+"Organization.address:va-physical","Organization.address","va-physical","","",0,1,"Y","","","Address {[]} {[]}
 ","An address for the organization","An address for the organization.","Organization may have multiple addresses with different uses or applicable periods. The use code 'home' is not to be used.","May need to keep track of the organization's addresses for contacting, billing or reporting requirements.","","","","","","","",,,,,"",,,,"Organization.address",0,*,"org-2
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 org-2:An address of an organization can never be of use 'home' {where(use = 'home').empty()}","ORC-23?",".address","./PrimaryAddress and ./OtherAddresses"
-"Organization.address:physical.id","Organization.address.id","","","",0,1,"","","","string {[]} {[]}
+"Organization.address:va-physical.id","Organization.address.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"","","n/a"
-"Organization.address:physical.extension","Organization.address.extension","","extensions
+"Organization.address:va-physical.extension","Organization.address.extension","","extensions
 user content","",0,*,"","","","Extension {[]} {[]}
 ","Additional content defined by implementations","May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.","There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.","","","","","","","","",,,,,"","value:url}
 ","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}","n/a"
-"Organization.address:physical.use","Organization.address.use","","","",0,1,"","Y","Y","code {[]} {[]}
+"Organization.address:va-physical.use","Organization.address.use","","","",0,1,"","Y","Y","code {[]} {[]}
 ","home | work | temp | old | billing - purpose of this address","The purpose of this address.","Applications can assume that an address is current unless it explicitly says that it is temporary or old.","Allows an appropriate address to be chosen from a list of many.","","","","","<valueCode xmlns=""http://hl7.org/fhir"" value=""home""/>","","",,"required","The use of an address.","http://hl7.org/fhir/ValueSet/address-use|4.0.1","",,,,"Address.use",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","XAD.7","unique(./use)","./AddressPurpose"
-"Organization.address:physical.type","Organization.address.type","","","",0,1,"Y","","Y","code {[]} {[]}
+"Organization.address:va-physical.type","Organization.address.type","","","",0,1,"Y","","Y","code {[]} {[]}
 ","postal | physical | both","Distinguishes between physical addresses (those you can visit) and mailing addresses (e.g. PO Boxes and care-of addresses). Most addresses are both.","The definition of Address states that ""address is intended to describe postal addresses, not physical locations"". However, many applications track whether an address has a dual purpose of being a location that can be visited as well as being a valid delivery destination, and Postal addresses are often used as proxies for physical locations (also see the [Location](http://hl7.org/fhir/R4/location.html#) resource).","","","","","<valueCode xmlns=""http://hl7.org/fhir"" value=""physical""/>","<valueCode xmlns=""http://hl7.org/fhir"" value=""both""/>","","",,"required","The type of an address (physical / postal).","http://hl7.org/fhir/ValueSet/address-type|4.0.1","",,,,"Address.type",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","1257: fixed value = #physical","XAD.18","unique(./use)"
-"Organization.address:physical.text","Organization.address.text","","","",0,1,"","","Y","string {[]} {[]}
+"Organization.address:va-physical.text","Organization.address.text","","","",0,1,"","","Y","string {[]} {[]}
 ","Text representation of the address","Specifies the entire address as it should be displayed e.g. on a postal label. This may be provided instead of or as well as the specific parts.","Can provide both a text representation and parts. Applications updating an address SHALL ensure that  when both text and parts are present,  no content is included in the text that isn't found in a part.","A renderable, unencoded form.","","","","","<valueString xmlns=""http://hl7.org/fhir"" value=""137 Nowhere Street, Erewhon 9132""/>","","",,,,,"",,,,"Address.text",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","XAD.1 + XAD.2 + XAD.3 + XAD.4 + XAD.5 + XAD.6","./formatted"
-"Organization.address:physical.line","Organization.address.line","","","",0,4,"Y","","Y","string {[]} {[]}
+"Organization.address:va-physical.line","Organization.address.line","","","",0,4,"Y","","Y","string {[]} {[]}
 ","Street name, number, direction & P.O. Box etc.","This component contains the house number, apartment number, street name, street direction,  P.O. Box number, delivery hints, and similar address information.","","","","","","","<valueString xmlns=""http://hl7.org/fhir"" value=""137 Nowhere Street""/>","","",,,,,"",,,,"Address.line",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","1258: source value from INSTITUTION - STREET ADDR. 1 (4-1.01)","1259: source value from INSTITUTION - STREET ADDR. 2 (4-1.02)","Dim.Institution.StreetAddress1,Dim.Institution.StreetAddress1,Dim.InstitutionTimeZone.StreetAddress1,NDim.MVIInstitution.StreetAddress1","Dim.Institution.StreetAddress2,Dim.Institution.StreetAddress2,Dim.InstitutionTimeZone.StreetAddress2,NDim.MVIInstitution.StreetAddress2","XAD.1 + XAD.2 (note: XAD.1 and XAD.2 have different meanings for a company address than for a person address)","AD.part[parttype = AL]","./StreetAddress (newline delimitted)"
-"Organization.address:physical.city","Organization.address.city","","Municpality
+"Organization.address:va-physical.city","Organization.address.city","","Municpality
 ","",0,1,"Y","","Y","string {[]} {[]}
 ","Name of city, town etc.","The name of the city, town, suburb, village or other community or delivery center.","","","","","","","<valueString xmlns=""http://hl7.org/fhir"" value=""Erewhon""/>","","",,,,,"",,,,"Address.city",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","1260: source value from INSTITUTION - CITY (4-1.03)","Dim.Institution.City,Dim.Institution.City,Dim.InstitutionTimeZone.City,NDim.MVIInstitution.City","XAD.3","AD.part[parttype = CTY]","./Jurisdiction"
-"Organization.address:physical.district","Organization.address.district","","County
+"Organization.address:va-physical.district","Organization.address.district","","County
 ","",0,1,"Y","","Y","string {[]} {[]}
 ","District name (aka county)","The name of the administrative area (county).","District is sometimes known as county, but in some regions 'county' is used in place of city (municipality), so county name should be conveyed in city instead.","","","","","","<valueString xmlns=""http://hl7.org/fhir"" value=""Madison""/>","","",,,,,"",,,,"Address.district",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","1261: source value from INSTITUTION - DISTRICT (4-.03)","Dim.Institution.MedicalDistrict,Dim.Institution.MedicalDistrict,NDim.MVIInstitution.MedicalDistrict","XAD.9","AD.part[parttype = CNT | CPA]"
-"Organization.address:physical.state","Organization.address.state","","Province
+"Organization.address:va-physical.state","Organization.address.state","","Province
 Territory","",0,1,"Y","","Y","string {[]} {[]}
 ","Sub-unit of country (abbreviations ok)","Sub-unit of a country with limited sovereignty in a federally organized country. A code may be used if codes are in common use (e.g. US 2 letter state codes).","","","","","","","","","",,"extensible","Two letter USPS alphabetic codes.","http://hl7.org/fhir/us/core/ValueSet/us-core-usps-state","",,,,"Address.state",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","1262: source value from INSTITUTION - STATE > STATE - ABBREVIATION (4-.02 > 5-1)","Dim.Institution.StateIEN,Dim.InstitutionTimeZone.StateIEN,Dim.InstitutionTimeZone.StateSID,NDim.MVIInstitution.MVIStateIEN
 Dim.State.StateAbbrev,Dim.State.StateAbbrev,NDim.MVIState.StateAbbrev","XAD.4","AD.part[parttype = STA]","./Region"
-"Organization.address:physical.postalCode","Organization.address.postalCode","","Zip
+"Organization.address:va-physical.postalCode","Organization.address.postalCode","","Zip
 ","",0,1,"Y","","Y","string {[]} {[]}
 ","US Zip Codes","A postal code designating a region defined by the postal service.","","","","","","","<valueString xmlns=""http://hl7.org/fhir"" value=""9132""/>","","",,,,,"",,,,"Address.postalCode",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","1263: source value from INSTITUTION - ZIP (4-1.04)","Dim.Institution.Zip,Dim.Institution.Zip,Dim.InstitutionTimeZone.Zip,NDim.MVIInstitution.Zip","XAD.5","AD.part[parttype = ZIP]","./PostalIdentificationCode"
-"Organization.address:physical.country","Organization.address.country","","","",0,1,"Y","","Y","string {[]} {[]}
+"Organization.address:va-physical.country","Organization.address.country","","","",0,1,"Y","","Y","string {[]} {[]}
 ","Country (e.g. can be ISO 3166 2 or 3 letter code)","Country - a nation as commonly understood or generally accepted.","ISO 3166 3 letter codes can be used in place of a human readable country name.","","","","","","","","",,,,,"",,,,"Address.country",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","1264: source value from INSTITUTION - COUNTRY > COUNTRY CODE - CODE (4-801 > 779.004-.01)","Dim.Country.CountryCode,NDim.MVICountryCode.CountryCode","XAD.6","AD.part[parttype = CNT]","./Country"
-"Organization.address:physical.period","Organization.address.period","","","",0,1,"","","Y","Period {[]} {[]}
+"Organization.address:va-physical.period","Organization.address.period","","","",0,1,"","","Y","Period {[]} {[]}
 ","Time period when address was/is in use","Time period when address was/is in use.","","Allows addresses to be placed in historical context.","","","","","<valuePeriod xmlns=""http://hl7.org/fhir"">
   <start value=""2010-03-23""/>
   <end value=""2010-07-01""/>
 </valuePeriod>","","",,,,,"",,,,"Address.period",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","XAD.12 / XAD.13 + XAD.14","./usablePeriod[type=""IVL<TS>""]","./StartDate and ./EndDate"
-"Organization.address:postal","Organization.address","postal","","",0,1,"Y","","","Address {[]} {[]}
+"Organization.address:va-postal","Organization.address","va-postal","","",0,1,"Y","","","Address {[]} {[]}
 ","An address for the organization","An address for the organization.","Organization may have multiple addresses with different uses or applicable periods. The use code 'home' is not to be used.","May need to keep track of the organization's addresses for contacting, billing or reporting requirements.","","","","","","","",,,,,"",,,,"Organization.address",0,*,"org-2
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 org-2:An address of an organization can never be of use 'home' {where(use = 'home').empty()}","ORC-23?",".address","./PrimaryAddress and ./OtherAddresses"
-"Organization.address:postal.id","Organization.address.id","","","",0,1,"","","","string {[]} {[]}
+"Organization.address:va-postal.id","Organization.address.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"","","n/a"
-"Organization.address:postal.extension","Organization.address.extension","","extensions
+"Organization.address:va-postal.extension","Organization.address.extension","","extensions
 user content","",0,*,"","","","Extension {[]} {[]}
 ","Additional content defined by implementations","May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.","There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.","","","","","","","","",,,,,"","value:url}
 ","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}","n/a"
-"Organization.address:postal.use","Organization.address.use","","","",0,1,"","Y","Y","code {[]} {[]}
+"Organization.address:va-postal.use","Organization.address.use","","","",0,1,"","Y","Y","code {[]} {[]}
 ","home | work | temp | old | billing - purpose of this address","The purpose of this address.","Applications can assume that an address is current unless it explicitly says that it is temporary or old.","Allows an appropriate address to be chosen from a list of many.","","","","","<valueCode xmlns=""http://hl7.org/fhir"" value=""home""/>","","",,"required","The use of an address.","http://hl7.org/fhir/ValueSet/address-use|4.0.1","",,,,"Address.use",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","XAD.7","unique(./use)","./AddressPurpose"
-"Organization.address:postal.type","Organization.address.type","","","",0,1,"Y","","Y","code {[]} {[]}
+"Organization.address:va-postal.type","Organization.address.type","","","",0,1,"Y","","Y","code {[]} {[]}
 ","postal | physical | both","Distinguishes between physical addresses (those you can visit) and mailing addresses (e.g. PO Boxes and care-of addresses). Most addresses are both.","The definition of Address states that ""address is intended to describe postal addresses, not physical locations"". However, many applications track whether an address has a dual purpose of being a location that can be visited as well as being a valid delivery destination, and Postal addresses are often used as proxies for physical locations (also see the [Location](http://hl7.org/fhir/R4/location.html#) resource).","","","","","<valueCode xmlns=""http://hl7.org/fhir"" value=""postal""/>","<valueCode xmlns=""http://hl7.org/fhir"" value=""both""/>","","",,"required","The type of an address (physical / postal).","http://hl7.org/fhir/ValueSet/address-type|4.0.1","",,,,"Address.type",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","1268: fixed value = #postal","XAD.18","unique(./use)"
-"Organization.address:postal.text","Organization.address.text","","","",0,1,"","","Y","string {[]} {[]}
+"Organization.address:va-postal.text","Organization.address.text","","","",0,1,"","","Y","string {[]} {[]}
 ","Text representation of the address","Specifies the entire address as it should be displayed e.g. on a postal label. This may be provided instead of or as well as the specific parts.","Can provide both a text representation and parts. Applications updating an address SHALL ensure that  when both text and parts are present,  no content is included in the text that isn't found in a part.","A renderable, unencoded form.","","","","","<valueString xmlns=""http://hl7.org/fhir"" value=""137 Nowhere Street, Erewhon 9132""/>","","",,,,,"",,,,"Address.text",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","XAD.1 + XAD.2 + XAD.3 + XAD.4 + XAD.5 + XAD.6","./formatted"
-"Organization.address:postal.line","Organization.address.line","","","",0,4,"Y","","Y","string {[]} {[]}
+"Organization.address:va-postal.line","Organization.address.line","","","",0,4,"Y","","Y","string {[]} {[]}
 ","Street name, number, direction & P.O. Box etc.","This component contains the house number, apartment number, street name, street direction,  P.O. Box number, delivery hints, and similar address information.","","","","","","","<valueString xmlns=""http://hl7.org/fhir"" value=""137 Nowhere Street""/>","","",,,,,"",,,,"Address.line",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","1269: source value from INSTITUTION - ST. ADDR. 1 (MAILING) (4-4.01)","1270: source value from INSTITUTION - ST. ADDR. 2 (MAILING) (4-4.02)","Dim.InstitutionTimeZone.MailingStreetAddress1","Dim.InstitutionTimeZone.MailingStreetAddress2","XAD.1 + XAD.2 (note: XAD.1 and XAD.2 have different meanings for a company address than for a person address)","AD.part[parttype = AL]","./StreetAddress (newline delimitted)"
-"Organization.address:postal.city","Organization.address.city","","Municpality
+"Organization.address:va-postal.city","Organization.address.city","","Municpality
 ","",0,1,"Y","","Y","string {[]} {[]}
 ","Name of city, town etc.","The name of the city, town, suburb, village or other community or delivery center.","","","","","","","<valueString xmlns=""http://hl7.org/fhir"" value=""Erewhon""/>","","",,,,,"",,,,"Address.city",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","1271: source value from INSTITUTION - CITY (MAILING) (4-4.03)","Dim.InstitutionTimeZone.MailingCity","XAD.3","AD.part[parttype = CTY]","./Jurisdiction"
-"Organization.address:postal.district","Organization.address.district","","County
+"Organization.address:va-postal.district","Organization.address.district","","County
 ","",0,1,"","","Y","string {[]} {[]}
 ","District name (aka county)","The name of the administrative area (county).","District is sometimes known as county, but in some regions 'county' is used in place of city (municipality), so county name should be conveyed in city instead.","","","","","","<valueString xmlns=""http://hl7.org/fhir"" value=""Madison""/>","","",,,,,"",,,,"Address.district",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","XAD.9","AD.part[parttype = CNT | CPA]"
-"Organization.address:postal.state","Organization.address.state","","Province
+"Organization.address:va-postal.state","Organization.address.state","","Province
 Territory","",0,1,"Y","","Y","string {[]} {[]}
 ","Sub-unit of country (abbreviations ok)","Sub-unit of a country with limited sovereignty in a federally organized country. A code may be used if codes are in common use (e.g. US 2 letter state codes).","","","","","","","","","",,"extensible","Two letter USPS alphabetic codes.","http://hl7.org/fhir/us/core/ValueSet/us-core-usps-state","",,,,"Address.state",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","1272: source value from INSTITUTION - STATE (MAILING) (4-4.04)","Dim.InstitutionTimeZone.MailingStateIEN,Dim.InstitutionTimeZone.MailingStateSID","XAD.4","AD.part[parttype = STA]","./Region"
-"Organization.address:postal.postalCode","Organization.address.postalCode","","Zip
+"Organization.address:va-postal.postalCode","Organization.address.postalCode","","Zip
 ","",0,1,"Y","","Y","string {[]} {[]}
 ","US Zip Codes","A postal code designating a region defined by the postal service.","","","","","","","<valueString xmlns=""http://hl7.org/fhir"" value=""9132""/>","","",,,,,"",,,,"Address.postalCode",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","1273: source value from INSTITUTION - ZIP (MAILING) (4-4.05)","Dim.InstitutionTimeZone.MailingZip","XAD.5","AD.part[parttype = ZIP]","./PostalIdentificationCode"
-"Organization.address:postal.country","Organization.address.country","","","",0,1,"Y","","Y","string {[]} {[]}
+"Organization.address:va-postal.country","Organization.address.country","","","",0,1,"Y","","Y","string {[]} {[]}
 ","Country (e.g. can be ISO 3166 2 or 3 letter code)","Country - a nation as commonly understood or generally accepted.","ISO 3166 3 letter codes can be used in place of a human readable country name.","","","","","","","","",,,,,"",,,,"Address.country",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","1274: source value from INSTITUTION - COUNTRY > COUNTRY CODE - CODE (4-801 > 779.004-.01)","Dim.Country.CountryCode,NDim.MVICountryCode.CountryCode","XAD.6","AD.part[parttype = CNT]","./Country"
-"Organization.address:postal.period","Organization.address.period","","","",0,1,"","","Y","Period {[]} {[]}
+"Organization.address:va-postal.period","Organization.address.period","","","",0,1,"","","Y","Period {[]} {[]}
 ","Time period when address was/is in use","Time period when address was/is in use.","","Allows addresses to be placed in historical context.","","","","","<valuePeriod xmlns=""http://hl7.org/fhir"">
   <start value=""2010-03-23""/>
   <end value=""2010-07-01""/>

@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-    <title>Laboratory Results: Microbiology Bacteriology Observation - Mappings - US Veterans Administration FHIR Map Set Implementation Guide v0.50.0</title>
+    <title>Laboratory Results: Microbiology Bacteriology Observation - Mappings - US Veterans Administration FHIR Map Set Implementation Guide v0.51.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -57,7 +57,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">US Veterans Administration FHIR Map Set Implementation Guide</span>
             <br/>
-            <span style="display:inline-block;">0.50.0 - 240601a
+            <span style="display:inline-block;">0.51.0 - 240601a
 
 
 
@@ -143,7 +143,7 @@
           <div class="inner-wrapper">
 
 <div style="counter-reset: section 5" class="col-12">
-    <!-- ReleaseHeader --><p id="publish-box">US Veterans Administration FHIR Map Set Implementation Guide - Local Development build (v0.50.0) built by the FHIR (HL7&reg; FHIR&reg; Standard) Build Tools. See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
+    <!-- ReleaseHeader --><p id="publish-box">US Veterans Administration FHIR Map Set Implementation Guide - Local Development build (v0.51.0) built by the FHIR (HL7&reg; FHIR&reg; Standard) Build Tools. See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
   
 
 
@@ -216,7 +216,7 @@
         
           Draft
           
-            as of 2024-05-08
+            as of 2024-05-11
           
         
       </td>
@@ -328,7 +328,7 @@
 <td class="cell-ce1">MICROBIOLOGY - ORGANISM &gt; ORGANISM - ORGANISM (63.05-12 &gt; 63.3-5+to+160)</td>
 <td class="cell-ce1">transform</td>
 <td class="cell-ce1"></td>
-<td class="cell-ce1">Observation.component.code</td>
+<td class="cell-ce1">Observation.component[va-component].code</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">.coding.code  = 
@@ -344,7 +344,7 @@ What is default if no LOINC? Use text or is there a default LOINC?
 <td class="cell-ce1">MICROBIOLOGY - ORGANISM &gt; ORGANISM - ORGANISM (63.05-12 &gt; 63.3-5+to+160)</td>
 <td class="cell-ce1">source value</td>
 <td class="cell-ce1"></td>
-<td class="cell-ce1">Observation.component.valueString</td>
+<td class="cell-ce1">Observation.component[va-component].valueString</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1"></td>
@@ -357,7 +357,7 @@ What is default if no LOINC? Use text or is there a default LOINC?
 <td class="cell-ce1">MICROBIOLOGY - ORGANISM &gt; ORGANISM - ORGANISM (63.05-12 &gt; 63.3-5.1+to+160.1)</td>
 <td class="cell-ce1">terminologyMaps</td>
 <td class="cell-ce1"></td>
-<td class="cell-ce1">Observation.component.interpretation</td>
+<td class="cell-ce1">Observation.component[va-component].interpretation</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1"></td>
@@ -537,6 +537,7 @@ What is default if no LOINC? Use text or is there a default LOINC?
  <tr><td>&nbsp;&nbsp;&nbsp;note</td><td>1454: source value from MICROBIOLOGY - COMMENT ON SPECIMEN (63.05-.99), 1455: source value from MICROBIOLOGY - ORGANISM &gt; ORGANISM - COMMENT &gt; COMMENT - COMMENT (63.05-12 &gt; 63.3-2 &gt; 63.31-.01)</td><td>, </td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;specimen</td><td>1659: reference from MICROBIOLOGY - MICROBIOLOGY ACCESSION (63.05-.06)</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;component</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;component (va-component)</td><td></td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>1522: transform using null on MICROBIOLOGY - ORGANISM &gt; ORGANISM - ORGANISM (63.05-12 &gt; 63.3-5+to+160)</td><td><p>antibiotic sensitivity
 What is default if no LOINC? Use text or is there a default LOINC?
 48611-8 Antibiotic tested [Identifier] against isolate</p>
@@ -593,6 +594,10 @@ What is default if no LOINC? Use text or is there a default LOINC?
  <tr><td>&nbsp;&nbsp;&nbsp;component</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>&lt; 363787002 |Observable entity| OR &lt; 386053000 |Evaluation procedure|</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td>363714003 |Interprets| &lt; 441742003 |Evaluation finding|</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;interpretation</td><td>&lt; 260245000 |Findings values|</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;component (va-component)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>&lt; 363787002 |Observable entity| OR &lt; 386053000 |Evaluation procedure|</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td>363714003 |Interprets| &lt; 441742003 |Evaluation finding|</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x] (valueString)</td><td>363714003 |Interprets| &lt; 441742003 |Evaluation finding|</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;interpretation</td><td>&lt; 260245000 |Findings values|</td> </tr>
 </table>
@@ -640,6 +645,12 @@ What is default if no LOINC? Use text or is there a default LOINC?
  <tr><td>&nbsp;&nbsp;&nbsp;hasMember</td><td>Relationships established by OBX-4 usage</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;derivedFrom</td><td>Relationships established by OBX-4 usage</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;component</td><td>containment by OBX-4?</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>OBX-3</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td>OBX.2, OBX.5, OBX.6</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dataAbsentReason</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;interpretation</td><td>OBX-8</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;referenceRange</td><td>OBX.7</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;component (va-component)</td><td>containment by OBX-4?</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>OBX-3</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td>OBX.2, OBX.5, OBX.6</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x] (valueString)</td><td>OBX.2, OBX.5, OBX.6</td> </tr>
@@ -712,6 +723,15 @@ What is default if no LOINC? Use text or is there a default LOINC?
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modifierExtension</td><td>N/A</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>code</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td>value</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dataAbsentReason</td><td>value.nullFlavor</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;interpretation</td><td>interpretationCode</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;referenceRange</td><td>outboundRelationship[typeCode=REFV]/target[classCode=OBS, moodCode=EVN]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;component (va-component)</td><td>outBoundRelationship[typeCode=COMP]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modifierExtension</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>code</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td>value</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x] (valueString)</td><td>value</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dataAbsentReason</td><td>value.nullFlavor</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;interpretation</td><td>interpretationCode</td> </tr>
@@ -734,6 +754,8 @@ What is default if no LOINC? Use text or is there a default LOINC?
  <tr><td>&nbsp;&nbsp;&nbsp;performer</td><td>FiveWs.actor</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;component</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>FiveWs.what[x]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;component (va-component)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>FiveWs.what[x]</td> </tr>
 </table>
 <a name="sct-attr"> </a><h3>Mappings for SNOMED CT Attribute Binding (http://snomed.org/attributebinding)</h3><table class="grid">
  <tr><td colspan="3"><b>LaboratoryResultsMicrobiologyBacteriologyObservation</b></td></tr>
@@ -747,6 +769,9 @@ What is default if no LOINC? Use text or is there a default LOINC?
  <tr><td>&nbsp;&nbsp;&nbsp;specimen</td><td>704319004 |Inherent in|</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;device</td><td>424226004 |Using device|</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;component</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td>363714003 |Interprets|</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;interpretation</td><td>363713009 |Has interpretation|</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;component (va-component)</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td>363714003 |Interprets|</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x] (valueString)</td><td>363714003 |Interprets|</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;interpretation</td><td>363713009 |Has interpretation|</td> </tr>
@@ -777,7 +802,7 @@ What is default if no LOINC? Use text or is there a default LOINC?
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.50.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, May 8, 2024 06:31+0000">2024-05-08</span>
+          IG &copy; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.51.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Sat, May 11, 2024 08:27+0000">2024-05-11</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
