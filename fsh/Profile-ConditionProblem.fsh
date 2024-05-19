@@ -4,8 +4,10 @@ Id: ConditionProblem
 Title: "Condition: Problem"
 Description: "This StructureDefinition contains the maps for VistA file PROBLEM (9000011) to us-core-condition-problems-health-concerns"
 * ^status = #draft
-* category[us-core] and identifier.value and clinicalStatus and code and code.coding.code and code.text and subject and onsetDateTime and recordedDate and recorder and verificationStatus and abatementDateTime MS
+* category[us-core] and identifier.value and identifier.system and clinicalStatus and code and code.coding.system and code.coding.code and code.text and subject and onsetDateTime and recordedDate and recorder and verificationStatus and abatementDateTime MS
 * category[us-core] = http://terminology.hl7.org/CodeSystem/condition-category#problem-list-item
+* identifier.system = "http://va.gov/fhir/identifiers/Sta3n<stationNr>/<fileNr>"
+* code.coding.system = "http://snomed.info/sct"
 * clinicalStatus from http://va.gov/fhir/ValueSet/VSVFproblemStatus
 * verificationStatus from http://va.gov/fhir/ValueSet/VSVFproblemVerificationStatus
 
@@ -15,9 +17,13 @@ Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: ConditionProblem
 * category[us-core] -> "1607: fixed value = http://terminology.hl7.org/CodeSystem/condition-category#problem-list-item"
 * identifier.value -> "345: source value from PROBLEM - IEN (9000011-.001)"
+* identifier.system -> "345-1: fixed value = http://va.gov/fhir/identifiers/Sta3n<stationNr>/<fileNr>" "from mapParameter 1"
 * clinicalStatus -> "349: fixed value = #resolved when PROBLEM - DATE RESOLVED (9000011-1.07) case Not Null" "dependency on 605?"
 * code -> "365: source value from PROBLEM - DIAGNOSIS > ICD DIAGNOSIS (9000011-.01 > 80-)"
+* code.coding.system -> "365-1: undefined" "from mapParameter 1"
+* code.coding.code -> "365-2: source value from PROBLEM - DIAGNOSIS > ICD DIAGNOSIS - CODE NUMBER (9000011-.01 > 80-.01)" "from mapParameter 2"
 * code.coding.code -> "366: source value from PROBLEM - SNOMED CT CONCEPT CODE (9000011-80001)"
+* code.coding.system -> "366-1: fixed value = http://snomed.info/sct" "from mapParameter 1"
 * code.text -> "957: source value from PROBLEM - PROVIDER NARRATIVE (9000011-.05)"
 * subject -> "367: reference from PROBLEM - PATIENT NAME (9000011-.02)"
 * onsetDateTime -> "369: source value from PROBLEM - DATE OF ONSET (9000011-.13)"
@@ -33,6 +39,7 @@ Title: "Clinical Data Warehouse (CDW)"
 Source: ConditionProblem
 * clinicalStatus -> "Outpat.ProblemList.ResolvedDateTime"
 * code -> "Outpat.ProblemList.ICDIEN"
+* code.coding.code -> "Outpat.ProblemList.ICDIEN\nDim.ICD10.ICD10Code,Dim.ICD9.ICD9Code"
 * code.coding.code -> "Outpat.ProblemList.SNOMEDCTConceptCode"
 * code.text -> "Outpat.ProblemList.ProviderNarrativeIEN"
 * subject -> "Outpat.ProblemList.PatientIEN"

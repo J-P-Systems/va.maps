@@ -4,9 +4,10 @@ Id: MedicationDispenseOriginal
 Title: "MedicationDispense: Original"
 Description: "This StructureDefinition contains the maps for VistA file PRESCRIPTION (52) to MedicationDispense"
 * ^status = #draft
-* type and authorizingPrescription and daysSupply and destination.display and dosageInstruction.doseAndRate.doseQuantity.unit and dosageInstruction.doseAndRate.doseQuantity.code and dosageInstruction.doseAndRate.doseQuantity.value and dosageInstruction.patientInstruction and dosageInstruction.text and medicationCodeableConcept.coding.code and medicationCodeableConcept.text and quantity.value and status and subject and whenPrepared and category and location and note.text MS
+* type and authorizingPrescription and daysSupply and destination.display and dosageInstruction.doseAndRate.doseQuantity.unit and dosageInstruction.doseAndRate.doseQuantity.code and dosageInstruction.doseAndRate.doseQuantity.value and dosageInstruction.patientInstruction and dosageInstruction.text and medicationCodeableConcept.coding.code and medicationCodeableConcept.coding.system and medicationCodeableConcept.text and quantity.value and status and subject and whenPrepared and category and location and note.text MS
 * type = #FF
 * dosageInstruction.doseAndRate.doseQuantity.code from http://va.gov/fhir/ValueSet/VSVFDoseUnits
+* medicationCodeableConcept.coding.system = "urn:oid:2.16.840.1.113883.6.233"
 * category = #outpatient
 
 Mapping: vista-to-MedicationDispenseOriginal
@@ -23,6 +24,7 @@ Source: MedicationDispenseOriginal
 * dosageInstruction.patientInstruction -> "839: source value from PRESCRIPTION - PATIENT INSTRUCTIONS (52-114)"
 * dosageInstruction.text -> "838: source value from PRESCRIPTION - SIG (52-10)"
 * medicationCodeableConcept.coding.code -> "1545: source value from PRESCRIPTION - DRUG > DRUG - PSNDF VA PRODUCT NAME ENTRY (52-6 > 50-22)"
+* medicationCodeableConcept.coding.system -> "1545-1: fixed value = urn:oid:2.16.840.1.113883.6.233" "from mapParameter 1"
 * medicationCodeableConcept.text -> "1544: source value from PRESCRIPTION - DRUG > DRUG - GENERIC NAME (52-6 > 50-.01)" "This may not be necessary; we have the product."
 * quantity.value -> "823: source value from PRESCRIPTION - QTY (52-7)"
 * status -> "1541: fixed value = #completed when PRESCRIPTION - RELEASED DATE/TIME (52-31) case not null"

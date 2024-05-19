@@ -4,7 +4,14 @@ Id: AllergyIntolerance
 Title: "AllergyIntolerance"
 Description: "This StructureDefinition contains the maps for VistA file PATIENT ALLERGIES (120.8) to us-core-allergyintolerance"
 * ^status = #draft
-* identifier.value and code.text and code and patient and recordedDate and recorder and reaction.manifestation and type and verificationStatus and clinicalStatus and category and reaction.severity and note.time and note.authorString and note.text and reaction.onset MS
+* identifier ^slicing.discriminator.type = #pattern
+* identifier ^slicing.discriminator.path = "$this"
+* identifier ^slicing.rules = #open
+* identifier contains va-IEN 0..1 and va-CDW 0..1
+* identifier[va-IEN].value and identifier[va-IEN].system and identifier[va-CDW].value and identifier[va-CDW].system and code.text and code and patient and recordedDate and recorder and reaction.manifestation and reaction.manifestation.coding.system and reaction.manifestation.coding.code and reaction.manifestation.coding.display and reaction.manifestation.text and type and verificationStatus and clinicalStatus and category and reaction.severity and note.time and note.authorString and note.text and reaction.onset MS
+* identifier[va-IEN].system = "http://va.gov/identifiers/Sta3n<stationNr>/120.8"
+* identifier[va-CDW].system = "http://va.gov/identifiers/CDWSID/cdwwork.allergy.allergy"
+* reaction.manifestation.coding.system = "urn:oid:2.16.840.1.113883.6.233"
 * type from http://va.gov/fhir/ValueSet/VSVFallergyMechanism
 * verificationStatus from http://va.gov/fhir/ValueSet/VSVFallergyVerificationStatus
 * clinicalStatus from http://va.gov/fhir/ValueSet/VSVFallergyActive
@@ -16,14 +23,20 @@ Mapping: vista-to-AllergyIntolerance
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: AllergyIntolerance
-* identifier.value -> "233: source value from PATIENT ALLERGIES - IEN (120.8-.001)"
-* identifier.value -> "1610: source value from CDW.cdwwork.allergy.allergy.AllergySID" "Source is AllergySID from Allergy Table in CDW"
+* identifier[va-IEN].value -> "233: source value from PATIENT ALLERGIES - IEN (120.8-.001)"
+* identifier[va-IEN].system -> "233-1: fixed value = http://va.gov/identifiers/Sta3n<stationNr>/120.8" "from mapParameter 1"
+* identifier[va-CDW].value -> "1610: source value from CDW.cdwwork.allergy.allergy.AllergySID" "Source is AllergySID from Allergy Table in CDW"
+* identifier[va-CDW].system -> "1610-1: fixed value = http://va.gov/identifiers/CDWSID/cdwwork.allergy.allergy" "from mapParameter 1"
 * code.text -> "245: source value from PATIENT ALLERGIES - REACTANT (120.8-.02)" "text only"
 * code -> "246: source value from PATIENT ALLERGIES - GMR ALLERGY (120.8-1)"
 * patient -> "248: source value from PATIENT ALLERGIES - PATIENT (120.8-.01)" "Source is MVIPersonFullICN from SMVIPerson Table"
 * recordedDate -> "1224: source value from PATIENT ALLERGIES - ORIGINATION DATE/TIME (120.8-4)" "Lighthouse exposes this source object as RecordedDate FHIR field"
 * recorder -> "251: source value from PATIENT ALLERGIES - ORIGINATOR (120.8-5)"
 * reaction.manifestation -> "252: source value from REACTIONS - REACTION > SIGN/SYMPTOMS (120.81-.01 > 120.83-)"
+* reaction.manifestation.coding.system -> "252-1: fixed value = urn:oid:2.16.840.1.113883.6.233" "from mapParameter 1"
+* reaction.manifestation.coding.code -> "252-2: source value from REACTIONS - REACTION > SIGN/SYMPTOMS - VUID (120.81-.01 > 120.83-99.99)" "from mapParameter 2"
+* reaction.manifestation.coding.display -> "252-3: source value from REACTIONS - REACTION > SIGN/SYMPTOMS - NAME (120.81-.01 > 120.83-.01)" "from mapParameter 3"
+* reaction.manifestation.text -> "252-4: source value from REACTIONS - REACTION > SIGN/SYMPTOMS - NAME (120.81-.01 > 120.83-.01)" "from mapParameter 4"
 * type -> "531: terminologyMaps using VF_allergyMechanism on PATIENT ALLERGIES - MECHANISM (120.8-17)"
 * verificationStatus -> "535: terminologyMaps using VF_allergyVerificationStatus on PATIENT ALLERGIES - VERIFIED (120.8-19)"
 * clinicalStatus -> "536: terminologyMaps using VF_allergyActive on PATIENT ALLERGIES - ENTERED IN ERROR (120.8-22)" "confirm CHAPI"
@@ -40,12 +53,16 @@ Mapping: cdw-to-AllergyIntolerance
 Id: cdw
 Title: "Clinical Data Warehouse (CDW)"
 Source: AllergyIntolerance
-* identifier.value -> "1610: source value from CDW.cdwwork.allergy.allergy.AllergySID"
+* identifier[va-CDW].value -> "1610: source value from CDW.cdwwork.allergy.allergy.AllergySID"
+* identifier[va-CDW].system -> "1610-1: fixed value from undefined"
 * code.text -> "Allergy.Allergy.AllergicReactant"
 * patient -> "Allergy.AllergicReaction.PatientIEN,Allergy.Allergy.PatientIEN,Allergy.AllergyComment.PatientIEN,Allergy.AllergyDrugClass.PatientIEN,Allergy.AllergyDrugIngredient.PatientIEN"
 * recordedDate -> "Allergy.AllergicReaction.OriginationDateTime,Allergy.Allergy.OriginationDateTime,Allergy.AllergyComment.OriginationDateTime,Allergy.AllergyDrugClass.OriginationDateTime,Allergy.AllergyDrugIngredient.OriginationDateTime"
 * recorder -> "Allergy.Allergy.OriginatingStaffIEN"
 * reaction.manifestation -> "Allergy.AllergicReaction.ReactionIEN"
+* reaction.manifestation.coding.code -> "Allergy.AllergicReaction.ReactionIEN\nDim.Reaction.VUID"
+* reaction.manifestation.coding.display -> "Allergy.AllergicReaction.ReactionIEN\nDim.Reaction.Reaction"
+* reaction.manifestation.text -> "Allergy.AllergicReaction.ReactionIEN\nDim.Reaction.Reaction"
 * type -> "Allergy.Allergy.Mechanism"
 * verificationStatus -> "Allergy.Allergy.VerifiedFlag"
 * clinicalStatus -> "Allergy.Allergy.EnteredInErrorFlag"
@@ -59,7 +76,7 @@ Mapping: vpr-to-AllergyIntolerance
 Id: vpr
 Title: "Virtual Patient Record (VPR)"
 Source: AllergyIntolerance
-* identifier.value -> "GET PATIENT DATA-reaction.id"
+* identifier[va-IEN].value -> "GET PATIENT DATA-reaction.id"
 * code.text -> "GET PATIENT DATA-reaction.name"
 * code -> "GET PATIENT DATA-reaction.vuid"
 * recordedDate -> "GET PATIENT DATA-reaction.entered"

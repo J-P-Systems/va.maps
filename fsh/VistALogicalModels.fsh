@@ -42,8 +42,6 @@ Id: Institution4
 Title: "INSTITUTION (4)"
 Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file INSTITUTION (4)"
 Characteristics: #can-be-target
-* stationNumber 0..1 Element "STATION NUMBER (-99)"
-* name 0..1 Element "NAME (-.01)"
 * state 0..1 Reference "STATE (-.02)"
 * district 0..1 Element "DISTRICT (-.03)"
 * streetAddr1 0..1 Element "STREET ADDR. 1 (-1.01)"
@@ -51,6 +49,7 @@ Characteristics: #can-be-target
 * city 0..1 Element "CITY (-1.03)"
 * zip 0..1 Element "ZIP (-1.04)"
 * country 0..1 Reference "COUNTRY (-801)"
+* name 0..1 Element "NAME (-.01)"
 * npi 0..1 Element "NPI (-41.99)"
 * shortName 0..1 Element "SHORT NAME (-.05)"
 * contact 0..1 Reference "CONTACT (-4)"
@@ -59,6 +58,7 @@ Characteristics: #can-be-target
 * cityMailing 0..1 Element "CITY (MAILING) (-4.03)"
 * stateMailing 0..1 Element "STATE (MAILING) (-4.04)"
 * zipMailing 0..1 Element "ZIP (MAILING) (-4.05)"
+* stationNumber 0..1 Element "STATION NUMBER (-99)"
 * state only Reference(State5)
 * country only Reference(CountryCode779004)
 * contact only Reference(Contact403)
@@ -75,6 +75,10 @@ Id: NameComponents20
 Title: "NAME COMPONENTS (20)"
 Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file NAME COMPONENTS (20)"
 Characteristics: #can-be-target
+* familyLastName 0..1 Element "FAMILY (LAST) NAME (-1)"
+* givenFirstName 0..1 Element "GIVEN (FIRST) NAME (-2)"
+* prefix 0..1 Element "PREFIX (-4)"
+* suffix 0..1 Element "SUFFIX (-5)"
 
 Logical: HospitalLocation44
 Id: HospitalLocation44
@@ -123,7 +127,8 @@ Id: InpatientCptCode46
 Title: "INPATIENT CPT CODE (46)"
 Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file INPATIENT CPT CODE (46)"
 Characteristics: #can-be-target
-* cptCode 0..1 Element "CPT CODE (-.01)"
+* cptCode 0..1 Reference "CPT CODE (-.01)"
+* cptCode only Reference(Cpt81)
 
 Logical: Drug50
 Id: Drug50
@@ -202,8 +207,9 @@ Title: "WKLD CODE (64)"
 Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file WKLD CODE (64)"
 Characteristics: #can-be-target
 * wkldCodeLabSection 0..1 Reference "WKLD CODE LAB SECTION (-13)"
-* defaultLoincCode 0..1 Element "DEFAULT LOINC CODE (-25)"
+* defaultLoincCode 0..1 Reference "DEFAULT LOINC CODE (-25)"
 * wkldCodeLabSection only Reference(WkldCodeLabSect6421)
+* defaultLoincCode only Reference(LabLoinc953)
 
 Logical: RadnucMedPatient70
 Id: RadnucMedPatient70
@@ -217,7 +223,8 @@ Id: RadnucMedProcedures71
 Title: "RAD/NUC MED PROCEDURES (71)"
 Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file RAD/NUC MED PROCEDURES (71)"
 Characteristics: #can-be-target
-* cptCode 0..1 Element "CPT CODE (-9)"
+* cptCode 0..1 Reference "CPT CODE (-9)"
+* cptCode only Reference(Cpt81)
 
 Logical: ExaminationStatus72
 Id: ExaminationStatus72
@@ -253,6 +260,8 @@ Id: Cpt81
 Title: "CPT (81)"
 Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file CPT (81)"
 Characteristics: #can-be-target
+* cptCode 0..1 Element "CPT CODE (-.01)"
+* shortName 0..1 Element "SHORT NAME (-2)"
 
 Logical: Order100
 Id: Order100
@@ -302,7 +311,8 @@ Characteristics: #can-be-target
 * provider 0..1 Element "PROVIDER (-123)"
 * foleyCatheterInsertedBy 0..1 Element "FOLEY CATHETER INSERTED BY (-.57)"
 * principalProcedure 0..1 Element "PRINCIPAL PROCEDURE (-26)"
-* plannedPrinProcedureCode 0..1 Element "PLANNED PRIN PROCEDURE CODE (-27)"
+* plannedPrinProcedureCode 0..1 Reference "PLANNED PRIN PROCEDURE CODE (-27)"
+* plannedPrinProcedureCode only Reference(Cpt81)
 
 Logical: NewPerson200
 Id: NewPerson200
@@ -458,7 +468,7 @@ Description: "This StructureDefinition contains the Logical Model for the mapped
 Characteristics: #can-be-target
 * ien 0..1 Element "IEN (-.001)"
 * dateResolved 0..1 Element "DATE RESOLVED (-1.07)"
-* diagnosis 0..1 Element "DIAGNOSIS (-.01)"
+* diagnosis 0..1 Reference "DIAGNOSIS (-.01)"
 * snomedCtConceptCode 0..1 Element "SNOMED CT CONCEPT CODE (-80001)"
 * providerNarrative 0..1 Element "PROVIDER NARRATIVE (-.05)"
 * patientName 0..1 Element "PATIENT NAME (-.02)"
@@ -469,6 +479,7 @@ Characteristics: #can-be-target
 * status from http://va.gov/fhir/ValueSet/VSVFproblemStatus-vista (preferred)
 * condition 0..1 Coding "CONDITION (-1.02)"
 * condition from http://va.gov/fhir/ValueSet/VSVFproblemVerificationStatus-vista (preferred)
+* diagnosis only Reference(IcdDiagnosis80)
 
 Logical: PatientAllergies1208
 Id: PatientAllergies1208
@@ -500,14 +511,17 @@ Id: Reactions12081
 Title: "REACTIONS (120.81)"
 Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file REACTIONS (120.81)"
 Characteristics: #can-be-target
-* reaction 0..1 Element "REACTION (-.01)"
+* reaction 0..1 Reference "REACTION (-.01)"
 * dateEntered 0..1 Element "DATE ENTERED (-3)"
+* reaction only Reference(Signsymptoms12083)
 
 Logical: Signsymptoms12083
 Id: Signsymptoms12083
 Title: "SIGN/SYMPTOMS (120.83)"
 Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file SIGN/SYMPTOMS (120.83)"
 Characteristics: #can-be-target
+* vuid 0..1 Element "VUID (-99.99)"
+* name 0..1 Element "NAME (-.01)"
 
 Logical: AdverseReactionReporting12085
 Id: AdverseReactionReporting12085
@@ -597,36 +611,8 @@ Characteristics: #can-be-target
 * modifier 0..1 Coding "MODIFIER (-.06)"
 * modifier from http://va.gov/fhir/ValueSet/VSVFencounterProblemVerificationStatus-vista (preferred)
 * encounterProvider 0..1 Element "ENCOUNTER PROVIDER (-1204)"
-* problemListEntry 0..1 Element "PROBLEM LIST ENTRY (-.16)"
-* visit only Reference(Visit9000010)
 * pov only Reference(IcdDiagnosis80)
-
-Logical: GmrvVitalMeasurement1205
-Id: GmrvVitalMeasurement1205
-Title: "GMRV VITAL MEASUREMENT (120.5)"
-Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file GMRV VITAL MEASUREMENT (120.5)"
-Characteristics: #can-be-target
-* qualifier 0..1 Reference "QUALIFIER (-5)"
-* datetimeVitalsEntered 0..1 Element "DATE/TIME VITALS ENTERED (-.04)"
-* hospitalLocation 0..1 Reference "HOSPITAL LOCATION (-.05)"
-* reasonEnteredInError 0..1 Element "REASON ENTERED IN ERROR (-4)"
-* datetimeVitalsTaken 0..1 Element "DATE/TIME VITALS TAKEN (-.01)"
-* patient 0..1 Element "PATIENT (-.02)"
-* ien 0..1 Element "IEN (-.001)"
-* vitalType 0..1 Coding "VITAL TYPE (-.03)"
-* vitalType from http://va.gov/fhir/ValueSet/VSVFVitalsCodes-vista (preferred)
-* rate 0..1 Element "RATE (-1.2)"
-* supplementalO2 0..1 Element "SUPPLEMENTAL O2 (-1.4)"
-* qualifier only Reference(GmrvVitalQualifier12052)
-* hospitalLocation only Reference(Institution4)
-
-Logical: GmrvVitalQualifier12052
-Id: GmrvVitalQualifier12052
-Title: "GMRV VITAL QUALIFIER (120.52)"
-Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file GMRV VITAL QUALIFIER (120.52)"
-Characteristics: #can-be-target
-* vuid 0..1 Coding "VUID (-99.99)"
-* vuid from http://va.gov/fhir/ValueSet/VSVFVitalsMeasurementDevice-vista (preferred)
+* visit only Reference(Visit9000010)
 
 Logical: WkldCodeLabSect6421
 Id: WkldCodeLabSect6421
@@ -640,6 +626,8 @@ Id: LabLoinc953
 Title: "LAB LOINC (95.3)"
 Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file LAB LOINC (95.3)"
 Characteristics: #can-be-target
+* code 0..1 Element "CODE (-.01)"
+* component 0..1 Element "COMPONENT (-1)"
 
 Logical: ChemHemToxRiaSerEtc6304
 Id: ChemHemToxRiaSerEtc6304
@@ -687,8 +675,9 @@ Description: "This StructureDefinition contains the Logical Model for the mapped
 Characteristics: #can-be-target
 * referenceHigh 0..1 Element "REFERENCE HIGH (-2)"
 * referenceLow 0..1 Element "REFERENCE LOW (-1)"
-* loincCode 0..1 Element "LOINC CODE (-95.3)"
+* loincCode 0..1 Reference "LOINC CODE (-95.3)"
 * units 0..1 Element "UNITS (-6)"
+* loincCode only Reference(LabLoinc953)
 
 Logical: Cytopathology6309
 Id: Cytopathology6309
@@ -1000,23 +989,32 @@ Id: VCpt900001018
 Title: "V CPT (9000010.18)"
 Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file V CPT (9000010.18)"
 Characteristics: #can-be-target
-* cpt 0..1 Element "CPT (-.01)"
+* cpt 0..1 Reference "CPT (-.01)"
 * patientName 0..1 Reference "PATIENT NAME (-.02)"
 * visit 0..1 Element "VISIT (-.03)"
 * providerNarrative 0..1 Reference "PROVIDER NARRATIVE (-.04)"
-* diagnosis 0..1 Element "DIAGNOSIS (-.05)"
-* diagnosis2 0..1 Element "DIAGNOSIS 2 (-.09)"
-* diagnosis3 0..1 Element "DIAGNOSIS 3 (-.1)"
-* diagnosis4 0..1 Element "DIAGNOSIS 4 (-.11)"
-* diagnosis5 0..1 Element "DIAGNOSIS 5 (-.12)"
-* diagnosis6 0..1 Element "DIAGNOSIS 6 (-.13)"
-* diagnosis7 0..1 Element "DIAGNOSIS 7 (-.14)"
-* diagnosis8 0..1 Element "DIAGNOSIS 8 (-.15)"
+* diagnosis 0..1 Reference "DIAGNOSIS (-.05)"
+* diagnosis2 0..1 Reference "DIAGNOSIS 2 (-.09)"
+* diagnosis3 0..1 Reference "DIAGNOSIS 3 (-.1)"
+* diagnosis4 0..1 Reference "DIAGNOSIS 4 (-.11)"
+* diagnosis5 0..1 Reference "DIAGNOSIS 5 (-.12)"
+* diagnosis6 0..1 Reference "DIAGNOSIS 6 (-.13)"
+* diagnosis7 0..1 Reference "DIAGNOSIS 7 (-.14)"
+* diagnosis8 0..1 Reference "DIAGNOSIS 8 (-.15)"
 * eventDateAndTime 0..1 Element "EVENT DATE AND TIME (-1201)"
 * encounterProvider 0..1 Element "ENCOUNTER PROVIDER (-1204)"
 * comments 0..1 Element "COMMENTS (-81101)"
+* cpt only Reference(Cpt81)
 * patientName only Reference(Patientihs9000001)
 * providerNarrative only Reference(ProviderNarrative999999927)
+* diagnosis only Reference(IcdDiagnosis80)
+* diagnosis2 only Reference(IcdDiagnosis80)
+* diagnosis3 only Reference(IcdDiagnosis80)
+* diagnosis4 only Reference(IcdDiagnosis80)
+* diagnosis5 only Reference(IcdDiagnosis80)
+* diagnosis6 only Reference(IcdDiagnosis80)
+* diagnosis7 only Reference(IcdDiagnosis80)
+* diagnosis8 only Reference(IcdDiagnosis80)
 
 Logical: VImmunization900001011
 Id: VImmunization900001011
@@ -1028,7 +1026,6 @@ Characteristics: #can-be-target
 * patientName 0..1 Element "PATIENT NAME (-.02)"
 * eventDateAndTime 0..1 Element "EVENT DATE AND TIME (-1201)"
 * dose 0..1 Element "DOSE (-1312)"
-* encounterProvider 0..1 Element "ENCOUNTER PROVIDER (-1204)"
 * comments 0..1 Element "COMMENTS (-81101)"
 * series 0..1 Element "SERIES (-.04)"
 * doseUnits 0..1 Reference "DOSE UNITS (-1313)"
@@ -1063,6 +1060,9 @@ Id: UcumCodes7575
 Title: "UCUM CODES (757.5)"
 Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file UCUM CODES (757.5)"
 Characteristics: #can-be-target
+* display 0..1 Element "DISPLAY (-.01)"
+* ucumCode 0..1 Element "UCUM CODE (-1)"
+* description 0..1 Element "DESCRIPTION (-.01)"
 
 Logical: ALeadImplant6982
 Id: ALeadImplant6982
@@ -1230,25 +1230,30 @@ Characteristics: #can-be-target
 * visit 0..1 Element "VISIT (-.03)"
 * result 0..1 Element "RESULT (-.04)"
 * magnitude 0..1 Element "MAGNITUDE (-220)"
-* ucumCode 0..1 Element "UCUM CODE (-221)"
+* ucumCode 0..1 Reference "UCUM CODE (-221)"
 * comments 0..1 Element "COMMENTS (-81101)"
 * eventDateAndTime 0..1 Element "EVENT DATE AND TIME (-1201)"
 * encounterProvider 0..1 Element "ENCOUNTER PROVIDER (-1204)"
 * exam only Reference(Exam999999915)
 * patientName only Reference(Patientihs9000001)
+* ucumCode only Reference(UcumCodes7575)
 
 Logical: Exam999999915
 Id: Exam999999915
 Title: "EXAM (9999999.15)"
 Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file EXAM (9999999.15)"
 Characteristics: #can-be-target
-* codeMappings 0..1 Element "CODE MAPPINGS (-210)"
+* name 0..1 Element "NAME (-.01)"
+* printName 0..1 Element "PRINT NAME (-200)"
+* codeMappings 0..1 Reference "CODE MAPPINGS (-210)"
+* codeMappings only Reference(CodeMappings999999918)
 
 Logical: CodeMappings999999918
 Id: CodeMappings999999918
 Title: "CODE MAPPINGS (9999999.18)"
 Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file CODE MAPPINGS (9999999.18)"
 Characteristics: #can-be-target
+* code 0..1 Element "CODE (-1)"
 
 Logical: Contact403
 Id: Contact403
@@ -1281,6 +1286,7 @@ Title: "PERSON CLASS (8932.1)"
 Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file PERSON CLASS (8932.1)"
 Characteristics: #can-be-target
 * x12Code 0..1 Element "X12 CODE (-6)"
+* classification 0..1 Element "CLASSIFICATION (-1)"
 
 Logical: Provider441
 Id: Provider441
@@ -1363,6 +1369,33 @@ Title: "HEALTH FACTORS (9999999.64)"
 Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file HEALTH FACTORS (9999999.64)"
 Characteristics: #can-be-target
 * category 0..1 Element "CATEGORY (-.03)"
+
+Logical: GmrvVitalMeasurement1205
+Id: GmrvVitalMeasurement1205
+Title: "GMRV VITAL MEASUREMENT (120.5)"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file GMRV VITAL MEASUREMENT (120.5)"
+Characteristics: #can-be-target
+* datetimeVitalsEntered 0..1 Element "DATE/TIME VITALS ENTERED (-.04)"
+* hospitalLocation 0..1 Reference "HOSPITAL LOCATION (-.05)"
+* reasonEnteredInError 0..1 Element "REASON ENTERED IN ERROR (-4)"
+* datetimeVitalsTaken 0..1 Element "DATE/TIME VITALS TAKEN (-.01)"
+* patient 0..1 Element "PATIENT (-.02)"
+* ien 0..1 Element "IEN (-.001)"
+* vitalType 0..1 Coding "VITAL TYPE (-.03)"
+* vitalType from http://va.gov/fhir/ValueSet/VSVFVitalsCodes-vista (preferred)
+* qualifier 0..1 Reference "QUALIFIER (-5)"
+* rate 0..1 Element "RATE (-1.2)"
+* supplementalO2 0..1 Element "SUPPLEMENTAL O2 (-1.4)"
+* qualifier only Reference(GmrvVitalQualifier12052)
+* hospitalLocation only Reference(Institution4)
+
+Logical: GmrvVitalQualifier12052
+Id: GmrvVitalQualifier12052
+Title: "GMRV VITAL QUALIFIER (120.52)"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file GMRV VITAL QUALIFIER (120.52)"
+Characteristics: #can-be-target
+* vuid 0..1 Coding "VUID (-99.99)"
+* vuid from http://va.gov/fhir/ValueSet/VSVFVitalsMeasurementDevice-vista (preferred)
 
 Logical: Findings69106
 Id: Findings69106

@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Guidance - US Veterans Administration FHIR Map Set Implementation Guide v0.51.0</title>
+    <title>Guidance - US Veterans Administration FHIR Map Set Implementation Guide v0.52.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -58,7 +58,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">US Veterans Administration FHIR Map Set Implementation Guide</span>
             <br/>
-            <span style="display:inline-block;">0.51.0 - 240601a
+            <span style="display:inline-block;">0.52.0 - 240601a
 
 
 
@@ -151,7 +151,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">US Veterans Administration FHIR Map Set Implementation Guide - Local Development build (v0.51.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">US Veterans Administration FHIR Map Set Implementation Guide - Local Development build (v0.52.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>Guidance</h2>
   
 
@@ -222,7 +222,7 @@ There will be cases where required FHIR values will be included in addition to m
 
 <h3 id="version">Version</h3>
 
-<p>These maps follow FHIR US Core R4 (https://hl7.org/fhir/us/core/STU4/) where possible. Where profiles follow US Core guidance, they assert that conformance in the meta.profile element.</p>
+<p>These maps follow FHIR US Core R5 (https://hl7.org/fhir/us/core/STU5.0.1/) where possible. Where profiles follow US Core guidance, they assert that conformance in the meta.profile element.</p>
 
 <p>Migration to later versions will be undertaken per the specification of the enterprise FHIR version by the CIDMO Knowledge-Based Systems, Standards &amp; Terminology division.</p>
 
@@ -438,9 +438,16 @@ http://va.gov/identifiers
 <h4 id="valuesets-and-conceptmaps">ValueSets and ConceptMaps</h4>
 
 <ul>
-  <li>ValueSets are named “VS{termmapname}”</li>
-  <li>ValueSets contain both the (required) FHIR ValueSet values and the VistA values.</li>
+  <li>ValueSets are named “VS{termmapname}” for the (required) FHIR values</li>
+  <li>ValueSets are names “VS{termmapname}-vista” for the VistA values</li>
   <li>ConceptMaps are named “CM{termmapname}”</li>
+</ul>
+
+<h4 id="slices">Slices</h4>
+
+<ul>
+  <li>Use slicenames from the profiles</li>
+  <li>All slices defined by the mappings are prefixed with “va-“</li>
 </ul>
 
 <h4 id="structuredefinition-profiles">StructureDefinition (Profiles)</h4>
@@ -448,7 +455,7 @@ http://va.gov/identifiers
 <p>All elements with a VistA mapping …</p>
 
 <ul>
-  <li>… are marked must-support <span style="padding-left: 3px; padding-right: 3px; color: white; background-color: red" title="This element must be supported">S</span></li>
+  <li>… are marked <a href="mustSupport.html">must-support</a> <span style="padding-left: 3px; padding-right: 3px; color: white; background-color: red" title="This element must be supported">S</span></li>
   <li>… slices are added when used</li>
   <li>… extensions are added when used</li>
   <li>… optionally have 1 or more CDW mappings</li>
@@ -458,10 +465,6 @@ http://va.gov/identifiers
   <li>… reference types are constrained when defined as part of the mappings</li>
   <li>… fixed value unless there is a case</li>
 </ul>
-
-<h4 id="must-support">Must-support</h4>
-
-<p>… in this guide means …</p>
 
 <h4 id="structuredefinition-va-extensions">StructureDefinition (VA Extensions)</h4>
 
@@ -486,7 +489,7 @@ http://va.gov/identifiers
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.51.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Sat, May 11, 2024 08:27+0000">2024-05-11</span>
+          IG &#169; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.52.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Sun, May 19, 2024 08:28+0000">2024-05-19</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

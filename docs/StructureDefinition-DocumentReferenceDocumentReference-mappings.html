@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-    <title>Document Reference DocumentReference - Mappings - US Veterans Administration FHIR Map Set Implementation Guide v0.51.0</title>
+    <title>Document Reference DocumentReference - Mappings - US Veterans Administration FHIR Map Set Implementation Guide v0.52.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -57,7 +57,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">US Veterans Administration FHIR Map Set Implementation Guide</span>
             <br/>
-            <span style="display:inline-block;">0.51.0 - 240601a
+            <span style="display:inline-block;">0.52.0 - 240601a
 
 
 
@@ -143,7 +143,7 @@
           <div class="inner-wrapper">
 
 <div style="counter-reset: section 5" class="col-12">
-    <!-- ReleaseHeader --><p id="publish-box">US Veterans Administration FHIR Map Set Implementation Guide - Local Development build (v0.51.0) built by the FHIR (HL7&reg; FHIR&reg; Standard) Build Tools. See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
+    <!-- ReleaseHeader --><p id="publish-box">US Veterans Administration FHIR Map Set Implementation Guide - Local Development build (v0.52.0) built by the FHIR (HL7&reg; FHIR&reg; Standard) Build Tools. See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
   
 
 
@@ -216,7 +216,7 @@
         
           Draft
           
-            as of 2024-05-11
+            as of 2024-05-19
           
         
       </td>
@@ -279,10 +279,23 @@
 <td class="cell-ce1">DocumentReference.identifier</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1"></td>
-<td class="cell-ce1">.system = {station OID}</td>
+<td class="cell-ce1">.system = http://va.gov/fhir/identifiers/Sta3n<stationNr>/<fileNr>&lt;/td&gt;
 <td class="cell-ce1"></td>
 <td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference | 5.0.1</td>
-</tr>
+&lt;/tr&gt;
+<tr class="row-ro1">
+<td class="cell-ce1">871-1</td>
+<td class="cell-ce1">team-approved</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">fixed value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">DocumentReference.identifier</td>
+<td class="cell-ce1">.system</td>
+<td class="cell-ce1">http://va.gov/fhir/identifiers/Sta3n<stationNr>/<fileNr>&lt;/td&gt;
+<td class="cell-ce1"></td>
+<td class="cell-ce1">from mapParameter 1</td>
+<td class="cell-ce1"></td>
+&lt;/tr&gt;
 <tr class="row-ro1">
 <td class="cell-ce1">874</td>
 <td class="cell-ce1">team-approved</td>
@@ -439,7 +452,7 @@ Per 03/02/2023 email from LH, changed the Vista field from 1205 (hospital locati
 <td class="cell-ce1">DocumentReference.content.attachment.id</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1"></td>
-<td class="cell-ce1">.system = {station OID}</td>
+<td class="cell-ce1"></td>
 <td class="cell-ce1">keep. Using HDR to pull text; need this</td>
 <td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference | 5.0.1</td>
 </tr>
@@ -666,7 +679,8 @@ If this is TIU this probably is text/plain</td>
 <td class="cell-ce1">other related assets</td>
 <td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference | 5.0.1</td>
 </tr>
-</table>
+&lt;/table&gt;
+</fileNr></stationNr></td></tr></fileNr></stationNr></td></tr></table>
 
 </div>
 
@@ -679,6 +693,8 @@ If this is TIU this probably is text/plain</td>
  <tr><td>&nbsp;&nbsp;&nbsp;masterIdentifier</td><td>870: target not supported</td><td><p>Not Must Support</p>
 </td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>871: source value from TIU DOCUMENT - IEN (8925-.001)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;system</td><td>871-1: fixed value = http://va.gov/fhir/identifiers/Sta3n&lt;stationNr&gt;/&lt;fileNr&gt;</td><td><p>from mapParameter 1</p>
+</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;type</td><td>874: source value from TIU DOCUMENT - DOCUMENT TYPE &gt; TIU DOCUMENT DEFINITION - VHA ENTERPRISE STANDARD TITLE &gt; TIU VHA ENTERPRISE STANDARD TITLE - DOCUMENT TYPE (8925-.01 &gt; 8925.1-1501 &gt; 8926.1-.08)</td><td><p>Get LOINC from VistA or use TIU_VHA_ENTERPRISE_STANDARD_TITLE_8926.1 file provided by KBS to look up LOINC mapping
 CDW now has a view.</p>
 </td> </tr>
@@ -820,6 +836,14 @@ Composition.date</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;modifierExtension</td><td>N/A</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;masterIdentifier</td><td>.id</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>.id / .setId</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;use</td><td>Role.code or implied by context</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td>Role.code or implied by context</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;system</td><td>II.root or Role.id.root</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>II.extension or II.root if system indicates OID or GUID (Or Role.id.extension or root)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;period</td><td>Role.effectiveTime or implied by context</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assigner</td><td>II.assigningAuthorityName but note that this is an improper use by the definition of the field.  Also Role.scoper</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>interim: .completionCode="IN" &amp; ./statusCode[isNormalDatatype()]="active";  final: .completionCode="AU" &amp;&amp;  ./statusCode[isNormalDatatype()]="complete" and not(./inboundRelationship[typeCode="SUBJ" and isNormalActRelationship()]/source[subsumesCode("ActClass#CACT") and moodCode="EVN" and domainMember("ReviseDocument", code) and isNormalAct()]);  amended: .completionCode="AU" &amp;&amp;  ./statusCode[isNormalDatatype()]="complete" and ./inboundRelationship[typeCode="SUBJ" and isNormalActRelationship()]/source[subsumesCode("ActClass#CACT") and moodCode="EVN" and domainMember("ReviseDocument", code) and isNormalAct() and statusCode="completed"];  withdrawn : .completionCode=NI &amp;&amp;  ./statusCode[isNormalDatatype()]="obsolete"</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;docStatus</td><td>.statusCode</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;type</td><td>./code</td> </tr>
@@ -918,6 +942,12 @@ serviceEvent/effectiveTime/high/
  <tr><td>DocumentReference</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;masterIdentifier</td><td>TXA-12</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>TXA-16?</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;use</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td>CX.5</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;system</td><td>CX.4 / EI-2-4</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>CX.1 / EI.1</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;period</td><td>CX.7 + CX.8</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assigner</td><td>CX.4 / (CX.4,CX.9,CX.10)</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>TXA-19</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;docStatus</td><td>TXA-17</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;type</td><td>TXA-2</td> </tr>
@@ -990,7 +1020,7 @@ serviceEvent/effectiveTime/high/
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.51.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Sat, May 11, 2024 08:27+0000">2024-05-11</span>
+          IG &copy; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.52.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Sun, May 19, 2024 08:28+0000">2024-05-19</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

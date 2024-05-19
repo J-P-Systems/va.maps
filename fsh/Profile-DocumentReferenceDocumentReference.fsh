@@ -4,7 +4,8 @@ Id: DocumentReferenceDocumentReference
 Title: "Document Reference DocumentReference"
 Description: "This StructureDefinition contains the maps for VistA file TIU DOCUMENT (8925) to us-core-documentreference"
 * ^status = #draft
-* identifier and type and category[us-core] and subject and date and author and authenticator and custodian and description and content.attachment.id and content.attachment.contentType and content.attachment.data and content.attachment.size and content.attachment.hash and content.attachment.title and content.attachment.creation and context.encounter and context.event and context.period.start and context.period.end and context.facilityType and context.practiceSetting MS
+* identifier and identifier.system and type and category[us-core] and subject and date and author and authenticator and custodian and description and content.attachment.id and content.attachment.contentType and content.attachment.data and content.attachment.size and content.attachment.hash and content.attachment.title and content.attachment.creation and context.encounter and context.event and context.period.start and context.period.end and context.facilityType and context.practiceSetting MS
+* identifier.system = "http://va.gov/fhir/identifiers/Sta3n<stationNr>/<fileNr>"
 * category[us-core] = #clinical-note
 * content.attachment.contentType = #text/plain
 
@@ -14,6 +15,7 @@ Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: DocumentReferenceDocumentReference
 * masterIdentifier -> "870: target not supported" "Not Must Support"
 * identifier -> "871: source value from TIU DOCUMENT - IEN (8925-.001)"
+* identifier.system -> "871-1: fixed value = http://va.gov/fhir/identifiers/Sta3n<stationNr>/<fileNr>" "from mapParameter 1"
 * type -> "874: source value from TIU DOCUMENT - DOCUMENT TYPE > TIU DOCUMENT DEFINITION - VHA ENTERPRISE STANDARD TITLE > TIU VHA ENTERPRISE STANDARD TITLE - DOCUMENT TYPE (8925-.01 > 8925.1-1501 > 8926.1-.08)" "Get LOINC from VistA or use TIU_VHA_ENTERPRISE_STANDARD_TITLE_8926.1 file provided by KBS to look up LOINC mapping\nCDW now has a view."
 * category[us-core] -> "875: fixed value = #clinical-note" "(= NOTE, ADDENDUM, CONSULT, etc.?)\nUse TIU_VHA_ENTERPRISE_STANDARD_TITLE_8926.1 file provided by KBS to look up DocType\nIf the document has a type or parent value, use that for the category"
 * subject -> "876: source value from TIU DOCUMENT - PATIENT (8925-.02)" "Pointer to PATIENT/HIS FILE (#9000001)"

@@ -4,14 +4,16 @@ Id: Organization
 Title: "Organization"
 Description: "This StructureDefinition contains the maps for VistA file INSTITUTION (4) to us-core-organization"
 * ^status = #draft
-* address ^slicing.discriminator.type = #value
-* address ^slicing.discriminator.path = "use"
+* address ^slicing.discriminator.type = #pattern
+* address ^slicing.discriminator.path = "$this"
 * address ^slicing.rules = #open
 * address contains va-physical 0..1 and va-postal 0..1
-* name and identifier[NPI].value and active and type and alias and address[va-physical].type and address[va-physical].line and address[va-physical].city and address[va-physical].district and address[va-physical].state and address[va-physical].postalCode and address[va-physical].country and contact.name.text and contact.telecom.value and address[va-postal].type and address[va-postal].line and address[va-postal].city and address[va-postal].state and address[va-postal].postalCode and address[va-postal].country MS
+* name and identifier[NPI].value and identifier[NPI].system and active and type and alias and address[va-physical].type and address[va-physical].line and address[va-physical].city and address[va-physical].district and address[va-physical].state and address[va-physical].postalCode and address[va-physical].country and contact.name.text and contact.telecom.value and contact.telecom.system and address[va-postal].type and address[va-postal].line and address[va-postal].city and address[va-postal].state and address[va-postal].postalCode and address[va-postal].country MS
+* identifier[NPI].system = "http://hl7.org/fhir/sid/us-npi"
 * active = true
 * type = #prov
 * address[va-physical].type = #physical
+* contact.telecom.system = #phone
 * address[va-postal].type = #postal
 
 Mapping: vista-to-Organization
@@ -20,6 +22,7 @@ Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: Organization
 * name -> "1251: source value from INSTITUTION - NAME (4-.01)"
 * identifier[NPI].value -> "1252: source value from INSTITUTION - NPI (4-41.99)" "Is mapCase used to indicate slice?"
+* identifier[NPI].system -> "1252-1: fixed value = http://hl7.org/fhir/sid/us-npi" "from mapParameter 1"
 * active -> "1253: fixed value = true"
 * type -> "1254: fixed value = #prov"
 * alias -> "1255: source value from INSTITUTION - SHORT NAME (4-.05)"
@@ -33,6 +36,7 @@ Source: Organization
 * address[va-physical].country -> "1264: source value from INSTITUTION - COUNTRY > COUNTRY CODE - CODE (4-801 > 779.004-.01)"
 * contact.name.text -> "1265: source value from INSTITUTION - CONTACT > CONTACT - CONTACT (4-4 > 4.03-.01)"
 * contact.telecom.value -> "1266: source value from INSTITUTION - CONTACT > CONTACT - PHONE # (4-4 > 4.03-.03)"
+* contact.telecom.system -> "1266-1: fixed value = #phone" "from mapParameter 1"
 * address[va-postal].type -> "1268: fixed value = #postal"
 * address[va-postal].line -> "1269: source value from INSTITUTION - ST. ADDR. 1 (MAILING) (4-4.01)"
 * address[va-postal].line -> "1270: source value from INSTITUTION - ST. ADDR. 2 (MAILING) (4-4.02)"

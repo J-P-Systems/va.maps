@@ -4,8 +4,11 @@ Id: Location
 Title: "Location"
 Description: "This StructureDefinition contains the maps for VistA file HOSPITAL LOCATION (44) to us-core-location"
 * ^status = #draft
-* identifier.value and name and alias and status and description and telecom.value and managingOrganization.display and physicalType.text and address.state and address.district and address.line and address.city and address.postalCode and address.country and address.type and type.text and mode MS
+* identifier.value and identifier.system and name and alias and status and description and telecom.value and telecom.system and telecom.use and managingOrganization.display and physicalType.text and address.state and address.district and address.line and address.city and address.postalCode and address.country and address.type and type.text and mode MS
+* identifier.system = "http://va.gov/fhir/identifiers/Sta3n<stationNr>/44"
 * status from http://va.gov/fhir/ValueSet/VSVFLocationStatus
+* telecom.system = #phone
+* telecom.use = #work
 * managingOrganization.display = "Veterans Administration"
 * address.type = #physical
 * type.text from http://va.gov/fhir/ValueSet/VSVFLocationStatus
@@ -17,12 +20,15 @@ Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: Location
 * identifier.value -> "755: source value from HOSPITAL LOCATION - IEN (44-.001)"
+* identifier.system -> "755-1: fixed value = http://va.gov/fhir/identifiers/Sta3n<stationNr>/44" "from mapParameter 1"
 * name -> "756: source value from HOSPITAL LOCATION - NAME (44-.01)"
 * alias -> "1276: source value from HOSPITAL LOCATION - ABBREVIATION (44-1)"
 * alias -> "1277: source value from HOSPITAL LOCATION - SYNONYM (44-13)"
 * status -> "1278: terminologyMaps using VF_LocationStatus" "Derive somehow from 44-2505 INACTIVATE 44-2506 REACTIVATE  \nOr use VAST, not ViSTA."
 * description -> "1279: source value from HOSPITAL LOCATION - PATIENT FRIENDLY NAME (44-60)"
 * telecom.value -> "1280: transform using concat (44-99,\" ext. \",44-99.1) on HOSPITAL LOCATION - TELEPHONE (44-99)"
+* telecom.system -> "1280-1: fixed value = #phone" "from mapParameter 1"
+* telecom.use -> "1280-2: fixed value = #work" "from mapParameter 2"
 * managingOrganization.display -> "1283: fixed value = Veterans Administration"
 * physicalType.text -> "1284: source value from HOSPITAL LOCATION - PHYSICAL LOCATION (44-10)"
 * address.state -> "1315: source value from HOSPITAL LOCATION - INSTITUTION > INSTITUTION - STATE > STATE - ABBREVIATION (44-3 > 4-.02 > 5-1)"

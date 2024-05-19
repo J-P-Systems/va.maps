@@ -4,7 +4,8 @@ Id: ImplantableDeviceALead
 Title: "Implantable Device: A Lead"
 Description: "This StructureDefinition contains the maps for VistA file A LEAD IMPLANT (698.2) to us-core-implantable-device"
 * ^status = #draft
-* identifier.value and status and manufacturer and serialNumber and modelNumber and type and patient MS
+* identifier.value and identifier.system and status and manufacturer and serialNumber and modelNumber and type and patient MS
+* identifier.system = "http://va.gov/fhir/identifiers/Sta3n<stationNr>/<fileNr>"
 * type from http://va.gov/fhir/ValueSet/VSVFdeviceTypePacemaker
 
 Mapping: vista-to-ImplantableDeviceALead
@@ -12,6 +13,7 @@ Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: ImplantableDeviceALead
 * identifier.value -> "1350: source value from A LEAD IMPLANT - IEN (698.2-.001)"
+* identifier.system -> "1350-1: fixed value = http://va.gov/fhir/identifiers/Sta3n<stationNr>/<fileNr>" "from mapParameter 1"
 * status -> "1358: fixed value = #active when A LEAD IMPLANT - EXPLANT DATE (698.2-56) case is NULL" "If NULL, can it be assumed it is active?"
 * status -> "1359: fixed value = #inactive when A LEAD IMPLANT - EXPLANT DATE (698.2-56) case is not NULL"
 * manufacturer -> "1368: source value from A LEAD IMPLANT - A LEAD MANUFACTURER > PACEMAKER MANUFACTURER - NAME (698.2-3 > 698.6-.01)"

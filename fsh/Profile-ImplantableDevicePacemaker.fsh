@@ -4,7 +4,8 @@ Id: ImplantableDevicePacemaker
 Title: "Implantable Device: Pacemaker"
 Description: "This StructureDefinition contains the maps for VistA file GENERATOR IMPLANT (698) to us-core-implantable-device"
 * ^status = #draft
-* identifier.value and status and manufacturer and serialNumber and modelNumber and type and patient MS
+* identifier.value and identifier.system and status and manufacturer and serialNumber and modelNumber and type and patient MS
+* identifier.system = "http://va.gov/fhir/identifiers/Sta3n<stationNr>/<fileNr>"
 * type from http://va.gov/fhir/ValueSet/VSVFdeviceTypePacemaker
 
 Mapping: vista-to-ImplantableDevicePacemaker
@@ -12,6 +13,7 @@ Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: ImplantableDevicePacemaker
 * identifier.value -> "1349: source value from GENERATOR IMPLANT - IEN (698-.001)"
+* identifier.system -> "1349-1: fixed value = http://va.gov/fhir/identifiers/Sta3n<stationNr>/<fileNr>" "from mapParameter 1"
 * status -> "1356: fixed value = #active when GENERATOR IMPLANT - EXPLANT DATE (698-96) case is NULL" "If NULL, can it be assumed it is active?"
 * status -> "1357: fixed value = #inactive when GENERATOR IMPLANT - EXPLANT DATE (698-96) case is not NULL"
 * manufacturer -> "1366: source value from GENERATOR IMPLANT - PACEMAKER MANUFACTURER > PACEMAKER MANUFACTURER - NAME (698-3 > 698.6-.01)"
