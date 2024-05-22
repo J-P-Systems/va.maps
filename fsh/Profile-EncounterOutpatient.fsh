@@ -7,6 +7,7 @@ Description: "This StructureDefinition contains the maps for VistA file VISIT (9
 * identifier.value and identifier.system and status and serviceType.coding.code and serviceType.coding.system and subject and period.start and period.end and reasonCode.coding.code and reasonCode.coding.system and location.location and class and serviceProvider and participant.individual and participant.type.coding and type and type.coding.system and type.coding.code and type.coding.display and type.text MS
 * identifier.system = "http://va.gov/terminology/VistADefinedTerms/9000010-15001"
 * serviceType.coding.system = "http://va.gov/terminology/VistADefinedTerms/9000010-.07"
+* reasonCode.coding.system = "urn:see-termmap-in-mapParameter"
 * class from http://va.gov/fhir/ValueSet/VSVFencounterClass
 * serviceProvider only Reference(http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization)
 * participant.type.coding = http://terminology.hl7.org/CodeSystem/v3-ParticipationType#PPRF
@@ -27,7 +28,7 @@ Source: EncounterOutpatient
 * period.start -> "443: source value from VISIT - VISIT/ADMIT DATE&TIME (9000010-.01)"
 * period.end -> "444: source value from VISIT - CHECK OUT DATE&TIME (9000010-.18)"
 * reasonCode.coding.code -> "447: source value from V POV - POV > ICD DIAGNOSIS - CODE NUMBER (9000010.07-.01 > 80-.01)"
-* reasonCode.coding.system -> "447-1: undefined" "from mapParameter 1"
+* reasonCode.coding.system -> "447-1: fixed value = urn:see-termmap-in-mapParameter" "from mapParameter 1"
 * location.location -> "458: reference from VISIT - DSS ID (9000010-.08) case stop"
 * location.location -> "459: reference from VISIT - HOSPITAL LOCATION (9000010-.22) case location"
 * class -> "614: terminologyMaps using VF_encounterClass on VISIT - PATIENT STATUS IN/OUT (9000010-15002)" "84% are Outpatient (2024 Jan-Mar)"

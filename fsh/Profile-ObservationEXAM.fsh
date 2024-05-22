@@ -4,8 +4,13 @@ Id: ObservationEXAM
 Title: "Observation EXAM"
 Description: "This StructureDefinition contains the maps for VistA file V EXAM (9000010.13) to Observation"
 * ^status = #draft
-* code.coding and code.coding.system and code.coding.code and code.coding.display and subject and encounter and interpretation and valueQuantity.value and valueQuantity and valueQuantity.unit and valueQuantity.code and note.text and effectiveDateTime and status and performer and category MS
-* code.coding.system = "http://va.gov/terminology/vistaDefinedTerms/9999999.15"
+* code.coding ^slicing.discriminator.type = #pattern
+* code.coding ^slicing.discriminator.path = "$this"
+* code.coding ^slicing.rules = #open
+* code.coding contains va-code 0..1 and va-sct 0..1
+* code.coding[va-code] and code.coding[va-code].system and code.coding[va-code].code and code.coding[va-code].display and code.coding[va-sct] and code.coding[va-sct].system and code.coding[va-sct].code and subject and encounter and interpretation and valueQuantity.value and valueQuantity and valueQuantity.unit and valueQuantity.code and note.text and effectiveDateTime and status and performer and category MS
+* code.coding[va-code].system = "http://va.gov/terminology/vistaDefinedTerms/9999999.15"
+* code.coding[va-sct].system = "urn:see-termmap-in-mapParameter"
 * interpretation.extension contains http://hl7.org/fhir/StructureDefinition/11179-permitted-value-conceptmap named 11179-permitted-value-conceptmap 0..1
 * interpretation.extension[11179-permitted-value-conceptmap].valueCanonical = "http://va.gov/fhir/ConceptMap/CMVFExamResultInterpretation"
 * status = #final
@@ -15,19 +20,19 @@ Mapping: vista-to-ObservationEXAM
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: ObservationEXAM
-* code.coding -> "1580: source value from V EXAM - EXAM > EXAM (9000010.13-.01 > 9999999.15-)" "in CDW through ExamSID"
-* code.coding.system -> "1580-1: fixed value = http://va.gov/terminology/vistaDefinedTerms/9999999.15" "from mapParameter 1"
-* code.coding.code -> "1580-2: source value from V EXAM - EXAM > EXAM - NAME (9000010.13-.01 > 9999999.15-.01)" "from mapParameter 2"
-* code.coding.display -> "1580-3: source value from V EXAM - EXAM > EXAM - PRINT NAME (9000010.13-.01 > 9999999.15-200)" "from mapParameter 3"
-* code.coding -> "1581: source value from V EXAM - EXAM > EXAM - CODE MAPPINGS > CODE MAPPINGS (9000010.13-.01 > 9999999.15-210>9999999.18)" "in CDW through ExamSID"
-* code.coding.code -> "1581-1: undefined" "from mapParameter 1"
-* code.coding.code -> "1581-2: source value from V EXAM - EXAM > EXAM - CODE MAPPINGS > CODE MAPPINGS - CODE (9000010.13-.01 > 9999999.15-210>9999999.18-1)" "from mapParameter 2"
+* code.coding[va-code] -> "1580: source value from V EXAM - EXAM > EXAM (9000010.13-.01 > 9999999.15-)" "in CDW through ExamSID"
+* code.coding[va-code].system -> "1580-1: fixed value = http://va.gov/terminology/vistaDefinedTerms/9999999.15" "from mapParameter 1"
+* code.coding[va-code].code -> "1580-2: source value from V EXAM - EXAM > EXAM - NAME (9000010.13-.01 > 9999999.15-.01)" "from mapParameter 2"
+* code.coding[va-code].display -> "1580-3: source value from V EXAM - EXAM > EXAM - PRINT NAME (9000010.13-.01 > 9999999.15-200)" "from mapParameter 3"
+* code.coding[va-sct] -> "1581: source value from V EXAM - EXAM > EXAM - CODE MAPPINGS > CODE MAPPINGS (9000010.13-.01 > 9999999.15-210>9999999.18)" "in CDW through ExamSID"
+* code.coding[va-sct].system -> "1581-1: fixed value = urn:see-termmap-in-mapParameter" "from mapParameter 1"
+* code.coding[va-sct].code -> "1581-2: source value from V EXAM - EXAM > EXAM - CODE MAPPINGS > CODE MAPPINGS - CODE (9000010.13-.01 > 9999999.15-210>9999999.18-1)" "from mapParameter 2"
 * subject -> "1582: reference from V EXAM - PATIENT NAME > PATIENT/IHS - NAME (9000010.13-.02 > 9000001-.01)" "in CDW through PatientSID"
 * encounter -> "1583: reference from V EXAM - VISIT (9000010.13-.03)"
 * interpretation -> "1584: transform using VF_ExamResultInterpretation on V EXAM - RESULT (9000010.13-.04)"
 * valueQuantity.value -> "1585: source value from V EXAM - MAGNITUDE (9000010.13-220)"
 * valueQuantity -> "1586: source value from V EXAM - UCUM CODE > UCUM CODES (9000010.13-221 > 757.5-)"
-* valueQuantity.unit -> "1586-1: source value from V EXAM - UCUM CODE > UCUM CODES - DESCRIPTION (9000010.13-221 > 757.5-.01)" "from mapParameter 1"
+* valueQuantity.unit -> "1586-1: source value from V EXAM - UCUM CODE > UCUM CODES - DESCRIPTION OF THE UNIT (9000010.13-221 > 757.5-.01)" "from mapParameter 1"
 * valueQuantity.code -> "1586-2: source value from V EXAM - UCUM CODE > UCUM CODES - UCUM CODE (9000010.13-221 > 757.5-1)" "from mapParameter 2"
 * note.text -> "1587: source value from V EXAM - COMMENTS (9000010.13-81101)"
 * effectiveDateTime -> "1588: source value from V EXAM - EVENT DATE AND TIME (9000010.13-1201)"
@@ -39,11 +44,11 @@ Mapping: cdw-to-ObservationEXAM
 Id: cdw
 Title: "Clinical Data Warehouse (CDW)"
 Source: ObservationEXAM
-* code.coding -> "Outpat.VExam.ExamIEN"
-* code.coding.code -> "Outpat.VExam.ExamIEN\nDim.Exam.Exam"
-* code.coding.display -> "Outpat.VExam.ExamIEN"
-* code.coding -> "Outpat.VExam.ExamIEN"
-* code.coding.code -> "Outpat.VExam.ExamIEN"
+* code.coding[va-code] -> "Outpat.VExam.ExamIEN"
+* code.coding[va-code].code -> "Outpat.VExam.ExamIEN\nDim.Exam.Exam"
+* code.coding[va-code].display -> "Outpat.VExam.ExamIEN"
+* code.coding[va-sct] -> "Outpat.VExam.ExamIEN"
+* code.coding[va-sct].code -> "Outpat.VExam.ExamIEN"
 * subject -> "Outpat.VExam.PatientIEN"
 * encounter -> "Outpat.VExam.VisitDateTime,Outpat.VExam.VisitIEN"
 * interpretation -> "Outpat.VExam.AbnormalNormal"

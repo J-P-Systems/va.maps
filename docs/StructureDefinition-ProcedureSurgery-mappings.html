@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-    <title>Procedure: Surgery - Mappings - US Veterans Administration FHIR Map Set Implementation Guide v0.52.0</title>
+    <title>Procedure: Surgery - Mappings - US Veterans Administration FHIR Map Set Implementation Guide v0.53.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -57,7 +57,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">US Veterans Administration FHIR Map Set Implementation Guide</span>
             <br/>
-            <span style="display:inline-block;">0.52.0 - 240601a
+            <span style="display:inline-block;">0.53.0 - 240601a
 
 
 
@@ -143,7 +143,7 @@
           <div class="inner-wrapper">
 
 <div style="counter-reset: section 5" class="col-12">
-    <!-- ReleaseHeader --><p id="publish-box">US Veterans Administration FHIR Map Set Implementation Guide - Local Development build (v0.52.0) built by the FHIR (HL7&reg; FHIR&reg; Standard) Build Tools. See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
+    <!-- ReleaseHeader --><p id="publish-box">US Veterans Administration FHIR Map Set Implementation Guide - Local Development build (v0.53.0) built by the FHIR (HL7&reg; FHIR&reg; Standard) Build Tools. See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
   
 
 
@@ -216,7 +216,7 @@
         
           Draft
           
-            as of 2024-05-19
+            as of 2024-05-22
           
         
       </td>
@@ -458,7 +458,7 @@
 <td class="cell-ce1">SURGERY - PERFUSIONIST (130-.167)</td>
 <td class="cell-ce1">reference</td>
 <td class="cell-ce1"></td>
-<td class="cell-ce1">Procedure.performer</td>
+<td class="cell-ce1">Procedure.performer[va-0]</td>
 <td class="cell-ce1">.actor</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">.function.text=PERFUSIONIST
@@ -473,7 +473,7 @@
 <td class="cell-ce1"></td>
 <td class="cell-ce1">fixed value</td>
 <td class="cell-ce1"></td>
-<td class="cell-ce1">Procedure.performer</td>
+<td class="cell-ce1">Procedure.performer[va-0]</td>
 <td class="cell-ce1">.function.text</td>
 <td class="cell-ce1">PERFUSIONIST</td>
 <td class="cell-ce1"></td>
@@ -486,7 +486,7 @@
 <td class="cell-ce1"></td>
 <td class="cell-ce1">fixed value</td>
 <td class="cell-ce1"></td>
-<td class="cell-ce1">Procedure.performer</td>
+<td class="cell-ce1">Procedure.performer[va-0]</td>
 <td class="cell-ce1">.function.coding</td>
 <td class="cell-ce1">http://va.gov/terminology/vistaDefinedTerms/130#.167 "PERFUSIONIST"</td>
 <td class="cell-ce1"></td>
@@ -1144,6 +1144,8 @@
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end</td><td>1291: source value from SURGERY - TIME PROCEDURE ENDED (130-122) case 130-118 NON-OR PROCEDURE == ‘Y’, 1293: source value from SURGERY - TIME OPERATION ENDS (130-.23) case 130-118 NON-OR PROCEDURE != ‘Y’</td><td>, </td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;performer</td><td></td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;performer (va-0)</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function</td><td></td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>1298-2: fixed value = http://va.gov/terminology/vistaDefinedTerms/130#.167 PERFUSIONIST</td><td><p>from mapParameter 2</p>
 </td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>1298-1: fixed value = PERFUSIONIST</td><td><p>from mapParameter 1</p>
@@ -1265,6 +1267,7 @@
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;start</td><td>Surg.SurgeryINTRA.BeginNonORProcedureDateTime, Surg.SurgeryINTRA.BeginOperationDateTime,Surg.SurgeryPRE.BeginOperationDateTime</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end</td><td>Surg.SurgeryINTRA.EndNonORProcedureDateTime, Surg.SurgeryINTRA.EndOperationDateTime,Surg.SurgeryPRE.EndOperationDateTime</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;performer</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;performer (va-0)</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;actor</td><td>Surg.SurgeryINTRA.PerfusionistStaffIEN</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;performer (va-1)</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;actor</td><td>Surg.SurgeryINTRA.SurgeonStaffIEN</td> </tr>
@@ -1313,6 +1316,9 @@
  <tr><td>&nbsp;&nbsp;&nbsp;performed[x] (performedDateTime)</td><td>Event.occurrence[x]</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;performed[x] (performedPeriod)</td><td>Event.occurrence[x]</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;performer</td><td>Event.performer</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function</td><td>Event.performer.function</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;actor</td><td>Event.performer.actor</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;performer (va-0)</td><td>Event.performer</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function</td><td>Event.performer.function</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;actor</td><td>Event.performer.actor</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;performer (va-1)</td><td>Event.performer</td> </tr>
@@ -1401,6 +1407,13 @@
  <tr><td>&nbsp;&nbsp;&nbsp;recorder</td><td>.participation[typeCode=AUT].role</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;asserter</td><td>.participation[typeCode=INF].role</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;performer</td><td>.participation[typeCode=PRF]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modifierExtension</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function</td><td>.functionCode</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;actor</td><td>.role</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;onBehalfOf</td><td>.scoper</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;performer (va-0)</td><td>.participation[typeCode=PRF]</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modifierExtension</td><td>N/A</td> </tr>
@@ -1598,6 +1611,8 @@
  <tr><td>&nbsp;&nbsp;&nbsp;asserter</td><td>FiveWs.source</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;performer</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;actor</td><td>FiveWs.actor</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;performer (va-0)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;actor</td><td>FiveWs.actor</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;performer (va-1)</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;actor</td><td>FiveWs.actor</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;performer (va-2)</td><td></td> </tr>
@@ -1651,6 +1666,9 @@
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;start</td><td>DR.1</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end</td><td>DR.2</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;performer</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function</td><td>Some combination of STF-18 / PRA-3 / PRT-4 / ROL-3 / ORC-12 / OBR-16 / PV1-7 / PV1-8 / PV1-9 / PV1-17 / OBX-25</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;actor</td><td>ORC-19/PRT-5</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;performer (va-0)</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function</td><td>Some combination of STF-18 / PRA-3 / PRT-4 / ROL-3 / ORC-12 / OBR-16 / PV1-7 / PV1-8 / PV1-9 / PV1-17 / OBX-25</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>C*E.1-8, C*E.10-22</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>C*E.9. But note many systems use C*E.2 for this</td> </tr>
@@ -1755,13 +1773,14 @@
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.52.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Sun, May 19, 2024 08:28+0000">2024-05-19</span>
+          IG &copy; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.53.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, May 22, 2024 14:44+0000">2024-05-22</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
                  <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
                  
                 
+| <a style="color: #81BEF7" href="https://leaf.va.gov/NATIONAL/776/va_fhir_community_of_practice/" target="_blank">Propose a change</a>
           </span>
         </p>
       </div>    <!-- /inner-wrapper -->

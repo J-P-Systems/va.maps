@@ -167,7 +167,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","SN.1  / CQ.1","IVL properties"
 "Immunization.doseQuantity.unit","Immunization.doseQuantity.unit","","","",0,1,"Y","","Y","string {[]} {[]}
 ","Unit representation","A human-readable form of the unit.","","There are many representations for units of measure and in many contexts, particular representations are fixed and required. I.e. mcg for micrograms.","","","","","","","",,,,,"",,,,"Quantity.unit",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","464-1: source value from V IMMUNIZATION - DOSE UNITS > UCUM CODES - DISPLAY (9000010.11-1313 > 757.5-.01)","Immun.Immunization.DoseUnit
+","464-1: source value from V IMMUNIZATION - DOSE UNITS > UCUM CODES - DESCRIPTION OF THE UNIT (9000010.11-1313 > 757.5-.01)","Immun.Immunization.DoseUnit
 Dim.UCUMCode.DescriptionOfTheUnit","(see OBX.6 etc.) / CQ.2","PQ.unit"
 "Immunization.doseQuantity.system","Immunization.doseQuantity.system","","","",0,1,"","","Y","uri {[]} {[]}
 ","System that defines coded unit form","The identification of the system that provides the coded form of the unit.","","Need to know the system that defines the coded form of the unit.","","","","","","","",,,,,"",,,,"Quantity.system",0,1,"qty-3
@@ -192,12 +192,17 @@ user contentmodifiers","",0,*,"","Y","Y","Extension {[]} {[]}
 
 Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).","There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.","Modifier extensions allow for extensions that *cannot* be safely ignored to be clearly distinguished from the vast majority of extensions which can be safely ignored.  This promotes interoperability by eliminating the need for implementers to prohibit the presence of extensions. For further information, see the [definition of modifier extensions](http://hl7.org/fhir/R4/extensibility.html#modifierExtension).","","","","","","","",,,,,"",,,,"BackboneElement.modifierExtension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}","N/A"
-"Immunization.performer.function","Immunization.performer.function","","","",0,1,"","","Y","CodeableConcept {[]} {[]}
-","What type of performance was done","Describes the type of performance (e.g. ordering provider, administering provider, etc.).","","","","","","","","","",,"extensible","The role a practitioner or organization plays in the immunization event.","http://hl7.org/fhir/ValueSet/immunization-function","",,,,"Immunization.performer.function",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","Event.performer.function",".participation.functionCode"
-"Immunization.performer.actor","Immunization.performer.actor","","","",1,1,"","","Y","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/Practitioner], CanonicalType[http://hl7.org/fhir/StructureDefinition/PractitionerRole], CanonicalType[http://hl7.org/fhir/StructureDefinition/Organization]]}
+"Immunization.performer.function","Immunization.performer.function","","","",0,1,"Y","","Y","CodeableConcept {[]} {[]}
+","What type of performance was done","Describes the type of performance (e.g. ordering provider, administering provider, etc.).","","","","","","<valueCodeableConcept xmlns=""http://hl7.org/fhir"">
+  <coding>
+    <system value=""http://terminology.hl7.org/CodeSystem/v2-0443""/>
+    <code value=""AP""/>
+  </coding>
+</valueCodeableConcept>","","","",,"extensible","The role a practitioner or organization plays in the immunization event.","http://hl7.org/fhir/ValueSet/immunization-function","",,,,"Immunization.performer.function",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+","342-1: fixed value = http://terminology.hl7.org/CodeSystem/v2-0443#AP","Event.performer.function",".participation.functionCode"
+"Immunization.performer.actor","Immunization.performer.actor","","","",1,1,"Y","","Y","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/Practitioner]]}
 ","Individual or organization who was performing","The practitioner or organization who performed the action.","When the individual practitioner who performed the action is known, it is best to send.","","","","","","","","",,,,,"",,,,"Immunization.performer.actor",1,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","Event.performer.actor",".player","FiveWs.actor"
+","342: reference from V IMMUNIZATION - ENCOUNTER PROVIDER (9000010.11-1204)","Immun.Immunization.ImmunizingStaffIEN","Event.performer.actor",".player","FiveWs.actor"
 "Immunization.note","Immunization.note","","","",0,*,"","","Y","Annotation {[]} {[]}
 ","Additional immunization notes","Extra information about the immunization that is not conveyed by the other attributes.","","","","","","","","","",,,,,"",,,,"Immunization.note",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","Event.note","OBX-5 : OBX-3 = 48767-8","note"

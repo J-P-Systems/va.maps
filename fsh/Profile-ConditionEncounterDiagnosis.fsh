@@ -7,6 +7,7 @@ Description: "This StructureDefinition contains the maps for VistA file V POV (9
 * category[us-core] and identifier.value and identifier.system and code and code.coding.system and code.coding.code and subject and encounter and onsetDateTime and recordedDate and clinicalStatus and verificationStatus and recorder MS
 * category[us-core] = http://terminology.hl7.org/CodeSystem/condition-category#encounter-diagnosis
 * identifier.system = "http://va.gov/fhir/identifiers/Sta3n<stationNr>/<fileNr>"
+* code.coding.system = "urn:see-termmap-in-mapParameter"
 * clinicalStatus from http://va.gov/fhir/ValueSet/VSVFencounterProblemStatus
 * verificationStatus from http://va.gov/fhir/ValueSet/VSVFencounterProblemVerificationStatus
 
@@ -18,7 +19,7 @@ Source: ConditionEncounterDiagnosis
 * identifier.value -> "346: source value from V POV - IEN (9000010.07-.001)"
 * identifier.system -> "346-1: fixed value = http://va.gov/fhir/identifiers/Sta3n<stationNr>/<fileNr>" "from mapParameter 1"
 * code -> "1613: source value from V POV - POV > ICD DIAGNOSIS (9000010.07-.01 > 80-)"
-* code.coding.system -> "1613-1: undefined" "from mapParameter 1"
+* code.coding.system -> "1613-1: fixed value = urn:see-termmap-in-mapParameter" "from mapParameter 1"
 * code.coding.code -> "1613-2: source value from V POV - POV > ICD DIAGNOSIS - CODE NUMBER (9000010.07-.01 > 80-.01)" "from mapParameter 2"
 * subject -> "1611: reference from V POV - PATIENT NAME (9000010.07-.02)"
 * encounter -> "368: source value from V POV - VISIT (9000010.07-.03)"

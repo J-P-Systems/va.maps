@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-    <title>Encounter: Inpatient Encounter - Mappings - US Veterans Administration FHIR Map Set Implementation Guide v0.52.0</title>
+    <title>Encounter: Inpatient Encounter - Mappings - US Veterans Administration FHIR Map Set Implementation Guide v0.53.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -57,7 +57,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">US Veterans Administration FHIR Map Set Implementation Guide</span>
             <br/>
-            <span style="display:inline-block;">0.52.0 - 240601a
+            <span style="display:inline-block;">0.53.0 - 240601a
 
 
 
@@ -143,7 +143,7 @@
           <div class="inner-wrapper">
 
 <div style="counter-reset: section 5" class="col-12">
-    <!-- ReleaseHeader --><p id="publish-box">US Veterans Administration FHIR Map Set Implementation Guide - Local Development build (v0.52.0) built by the FHIR (HL7&reg; FHIR&reg; Standard) Build Tools. See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
+    <!-- ReleaseHeader --><p id="publish-box">US Veterans Administration FHIR Map Set Implementation Guide - Local Development build (v0.53.0) built by the FHIR (HL7&reg; FHIR&reg; Standard) Build Tools. See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
   
 
 
@@ -216,7 +216,7 @@
         
           Draft
           
-            as of 2024-05-19
+            as of 2024-05-22
           
         
       </td>
@@ -460,7 +460,7 @@
 <td class="cell-ce1">PTF - PRINCIPAL DIAGNOSIS (45-79)</td>
 <td class="cell-ce1">source value</td>
 <td class="cell-ce1"></td>
-<td class="cell-ce1">Encounter.reasonCode.coding</td>
+<td class="cell-ce1">Encounter.reasonCode[va-principle].coding</td>
 <td class="cell-ce1">.code</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">.system=termmap({VF_ICDCodingSystems,CODING SYSTEM(1.1)})</td>
@@ -471,11 +471,11 @@
 <td class="cell-ce1">448-1</td>
 <td class="cell-ce1">team-approved</td>
 <td class="cell-ce1"></td>
+<td class="cell-ce1">fixed value</td>
 <td class="cell-ce1"></td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1">Encounter.reasonCode.coding</td>
+<td class="cell-ce1">Encounter.reasonCode[va-principle].coding</td>
 <td class="cell-ce1">.system</td>
-<td class="cell-ce1">termmap({VF_ICDCodingSystems,CODING SYSTEM(1.1)})</td>
+<td class="cell-ce1">urn:see-termmap-in-mapParameter</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">from mapParameter 1</td>
 <td class="cell-ce1"></td>
@@ -499,7 +499,7 @@
 <td class="cell-ce1">PTF - SECONDARY DIAGNOSIS [#] (45-79.16)</td>
 <td class="cell-ce1">source value</td>
 <td class="cell-ce1"></td>
-<td class="cell-ce1">Encounter.reasonCode.coding</td>
+<td class="cell-ce1">Encounter.reasonCode[va-secundary].coding</td>
 <td class="cell-ce1">.code</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">.system=termmap({VF_ICDCodingSystems,CODING SYSTEM(1.1)})</td>
@@ -510,11 +510,11 @@
 <td class="cell-ce1">449-1</td>
 <td class="cell-ce1">team-approved</td>
 <td class="cell-ce1"></td>
+<td class="cell-ce1">fixed value</td>
 <td class="cell-ce1"></td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1">Encounter.reasonCode.coding</td>
+<td class="cell-ce1">Encounter.reasonCode[va-secundary].coding</td>
 <td class="cell-ce1">.system</td>
-<td class="cell-ce1">termmap({VF_ICDCodingSystems,CODING SYSTEM(1.1)})</td>
+<td class="cell-ce1">urn:see-termmap-in-mapParameter</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">from mapParameter 1</td>
 <td class="cell-ce1"></td>
@@ -525,10 +525,10 @@
 <td class="cell-ce1">PTF - PROCEDURE [#] (45-45.01)</td>
 <td class="cell-ce1">source value</td>
 <td class="cell-ce1"></td>
-<td class="cell-ce1">Encounter.reasonCode.coding</td>
+<td class="cell-ce1">Encounter.reasonCode[va-procedure].coding</td>
 <td class="cell-ce1">.code</td>
 <td class="cell-ce1"></td>
-<td class="cell-ce1">.system=http://hl7.org/fhir/sid/icd-10-pcs</td>
+<td class="cell-ce1">.system=http://www.cms.gov/Medicare/Coding/ICD10</td>
 <td class="cell-ce1">45.01 and following</td>
 <td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter | 5.0.1</td>
 </tr>
@@ -538,9 +538,9 @@
 <td class="cell-ce1"></td>
 <td class="cell-ce1">fixed value</td>
 <td class="cell-ce1"></td>
-<td class="cell-ce1">Encounter.reasonCode.coding</td>
+<td class="cell-ce1">Encounter.reasonCode[va-procedure].coding</td>
 <td class="cell-ce1">.system</td>
-<td class="cell-ce1">http://hl7.org/fhir/sid/icd-10-pcs</td>
+<td class="cell-ce1">http://www.cms.gov/Medicare/Coding/ICD10</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">from mapParameter 1</td>
 <td class="cell-ce1"></td>
@@ -807,13 +807,22 @@
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;start</td><td>445: source value from PTF - ADMISSION DATE (45-2)</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end</td><td>446: source value from PTF - DISCHARGE DATE (45-70)</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;reasonCode</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;reasonCode (va-principle)</td><td></td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td></td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;system</td><td>448-1: undefined, 449-1: undefined, 450-1: fixed value = http://hl7.org/fhir/sid/icd-10-pcs</td><td><p>from mapParameter 1</p>
-, <p>from mapParameter 1</p>
-, <p>from mapParameter 1</p>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;system</td><td>448-1: fixed value = urn:see-termmap-in-mapParameter</td><td><p>from mapParameter 1</p>
 </td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>448: source value from PTF - PRINCIPAL DIAGNOSIS (45-79), 449: source value from PTF - SECONDARY DIAGNOSIS [#] (45-79.16), 450: source value from PTF - PROCEDURE [#] (45-45.01)</td><td>, <p>79.16 and following</p>
-, <p>45.01 and following</p>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>448: source value from PTF - PRINCIPAL DIAGNOSIS (45-79)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;reasonCode (va-secundary)</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;system</td><td>449-1: fixed value = urn:see-termmap-in-mapParameter</td><td><p>from mapParameter 1</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>449: source value from PTF - SECONDARY DIAGNOSIS [#] (45-79.16)</td><td><p>79.16 and following</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;reasonCode (va-procedure)</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;system</td><td>450-1: fixed value = http://www.cms.gov/Medicare/Coding/ICD10</td><td><p>from mapParameter 1</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>450: source value from PTF - PROCEDURE [#] (45-45.01)</td><td><p>45.01 and following</p>
 </td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;diagnosis</td><td></td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;condition</td><td>1723: reference</td><td></td> </tr>
@@ -854,8 +863,12 @@ Dim.CPT.CPTName,Dim.CPT.CPTName</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;start</td><td>Inpat.Census.AdmitDateSID,Inpat.Census.AdmitDateTime,Inpat.Census501.AdmitDateTime,Inpat.Census501Diagnosis.AdmitDateTime,Inpat.Census535.AdmitDateTime,Inpat.CensusDiagnosis.AdmitDateTime,Inpat.CensusICDProcedure.AdmitDateTime,Inpat.CensusSurgicalProcedure.AdmitDateTime,Inpat.Inpatient.AdmitDateTime,Inpat.Inpatient501Multiple.AdmitDateTime,Inpat.Inpatient501Transaction.AdmitDateTime,Inpat.Inpatient535Multiple.AdmitDateTime,Inpat.Inpatient535Transaction.AdmitDateTime,Inpat.InpatientDischargeDiagnosis.AdmitDateTime,Inpat.InpatientFeeBasis.AdmitDateTime,Inpat.InpatientFeeDiagnosis.AdmitDateTime,Inpat.InpatientICDProcedure.AdmitDateTime,Inpat.InpatientSurgicalProcedure.AdmitDateTime</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end</td><td>Inpat.Census.CensusDateSID,Inpat.Census.CensusDateTime,Inpat.Census501.CensusDateTime,Inpat.Census501Diagnosis.CensusDateTime,Inpat.Census535.CensusDateTime,Inpat.CensusDiagnosis.CensusDateTime,Inpat.CensusICDProcedure.CensusDateTime,Inpat.CensusSurgicalProcedure.CensusDateTime,Inpat.Inpatient.DischargeDateTime,Inpat.Inpatient501Transaction.DischargeDateTime,Inpat.Inpatient501TransactionDiagnosis.DischargeDateTime,Inpat.Inpatient535Multiple.DischargeDateTime,Inpat.Inpatient535Transaction.DischargeDateTime,Inpat.InpatientDiagnosis.DischargeDateTime,Inpat.InpatientFeeBasis.DischargeDateTime,Inpat.InpatientFeeDiagnosis.DischargeDateTime,Inpat.InpatientICDProcedure.DischargeDateTime,Inpat.InpatientSurgicalProcedure.DischargeDateTime</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;reasonCode</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;reasonCode (va-principle)</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>Inpat.Inpatient.PrincipalDiagnosisICDIEN, Inpat.CensusDiagnosis.ICDIEN,Inpat.InpatientDiagnosis.ICDIEN</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>Inpat.Inpatient.PrincipalDiagnosisICDIEN</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;reasonCode (va-secundary)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>Inpat.CensusDiagnosis.ICDIEN,Inpat.InpatientDiagnosis.ICDIEN</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;hospitalization</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;origin</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display</td><td>Inpat.Census.TransferringFacility,Inpat.Inpatient.TransferFromFacility,Inpat.InpatientFeeBasis.TransferringFacility</td> </tr>
@@ -892,6 +905,9 @@ Dim.AdmitSource.AdmitSourceCode</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;period</td><td>Event.occurrence[x]</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;length</td><td>Event.occurrence[x]</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;reasonCode</td><td>Event.reasonCode</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;reasonCode (va-principle)</td><td>Event.reasonCode</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;reasonCode (va-secundary)</td><td>Event.reasonCode</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;reasonCode (va-procedure)</td><td>Event.reasonCode</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;reasonReference</td><td>Event.reasonCode</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;diagnosis</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;condition</td><td>Event.reasonReference</td> </tr>
@@ -992,6 +1008,31 @@ Dim.AdmitSource.AdmitSourceCode</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end</td><td>./high</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;length</td><td>.lengthOfStayQuantity</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;reasonCode</td><td>.reasonCode</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;reasonCode (va-principle)</td><td>.reasonCode</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>union(., ./translation)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;system</td><td>./codeSystem</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;version</td><td>./codeSystemVersion</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>./code</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display</td><td>CV.displayName</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;userSelected</td><td>CD.codingRationale</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>./originalText[mediaType/code="text/plain"]/data</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;reasonCode (va-secundary)</td><td>.reasonCode</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>union(., ./translation)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;system</td><td>./codeSystem</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;version</td><td>./codeSystemVersion</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>./code</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display</td><td>CV.displayName</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;userSelected</td><td>CD.codingRationale</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>./originalText[mediaType/code="text/plain"]/data</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;reasonCode (va-procedure)</td><td>.reasonCode</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>union(., ./translation)</td> </tr>
@@ -1085,6 +1126,9 @@ Dim.AdmitSource.AdmitSourceCode</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;individual</td><td>FiveWs.who</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;period</td><td>FiveWs.done[x]</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;reasonCode</td><td>FiveWs.why[x]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;reasonCode (va-principle)</td><td>FiveWs.why[x]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;reasonCode (va-secundary)</td><td>FiveWs.why[x]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;reasonCode (va-procedure)</td><td>FiveWs.why[x]</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;reasonReference</td><td>FiveWs.why[x]</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;diagnosis</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;condition</td><td>FiveWs.why[x]</td> </tr>
@@ -1145,6 +1189,23 @@ Dim.AdmitSource.AdmitSourceCode</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end</td><td>DR.2</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;length</td><td>(PV1-45 less PV1-44) iff ( (PV1-44 not empty) and (PV1-45 not empty) ); units in minutes</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;reasonCode</td><td>EVN-4 / PV2-3 (note: PV2-3 is nominally constrained to inpatient admissions; HL7 v2 makes no vocabulary suggestions for PV2-3; would not expect PV2 segment or PV2-3 to be in use in all implementations )</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;reasonCode (va-principle)</td><td>EVN-4 / PV2-3 (note: PV2-3 is nominally constrained to inpatient admissions; HL7 v2 makes no vocabulary suggestions for PV2-3; would not expect PV2 segment or PV2-3 to be in use in all implementations )</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>C*E.1-8, C*E.10-22</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;system</td><td>C*E.3</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;version</td><td>C*E.7</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>C*E.1</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display</td><td>C*E.2 - but note this is not well followed</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;userSelected</td><td>Sometimes implied by being first</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>C*E.9. But note many systems use C*E.2 for this</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;reasonCode (va-secundary)</td><td>EVN-4 / PV2-3 (note: PV2-3 is nominally constrained to inpatient admissions; HL7 v2 makes no vocabulary suggestions for PV2-3; would not expect PV2 segment or PV2-3 to be in use in all implementations )</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>C*E.1-8, C*E.10-22</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;system</td><td>C*E.3</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;version</td><td>C*E.7</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>C*E.1</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display</td><td>C*E.2 - but note this is not well followed</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;userSelected</td><td>Sometimes implied by being first</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>C*E.9. But note many systems use C*E.2 for this</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;reasonCode (va-procedure)</td><td>EVN-4 / PV2-3 (note: PV2-3 is nominally constrained to inpatient admissions; HL7 v2 makes no vocabulary suggestions for PV2-3; would not expect PV2 segment or PV2-3 to be in use in all implementations )</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>C*E.1-8, C*E.10-22</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;system</td><td>C*E.3</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;version</td><td>C*E.7</td> </tr>
@@ -1208,13 +1269,14 @@ Dim.AdmitSource.AdmitSourceCode</td> </tr>
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.52.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Sun, May 19, 2024 08:28+0000">2024-05-19</span>
+          IG &copy; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.53.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, May 22, 2024 14:44+0000">2024-05-22</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
                  <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
                  
                 
+| <a style="color: #81BEF7" href="https://leaf.va.gov/NATIONAL/776/va_fhir_community_of_practice/" target="_blank">Propose a change</a>
           </span>
         </p>
       </div>    <!-- /inner-wrapper -->

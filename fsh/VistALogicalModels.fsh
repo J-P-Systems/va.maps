@@ -1026,6 +1026,7 @@ Characteristics: #can-be-target
 * patientName 0..1 Element "PATIENT NAME (-.02)"
 * eventDateAndTime 0..1 Element "EVENT DATE AND TIME (-1201)"
 * dose 0..1 Element "DOSE (-1312)"
+* encounterProvider 0..1 Element "ENCOUNTER PROVIDER (-1204)"
 * comments 0..1 Element "COMMENTS (-81101)"
 * series 0..1 Element "SERIES (-.04)"
 * doseUnits 0..1 Reference "DOSE UNITS (-1313)"
@@ -1060,9 +1061,8 @@ Id: UcumCodes7575
 Title: "UCUM CODES (757.5)"
 Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file UCUM CODES (757.5)"
 Characteristics: #can-be-target
-* display 0..1 Element "DISPLAY (-.01)"
+* descriptionOfTheUnit 0..1 Element "DESCRIPTION OF THE UNIT (-.01)"
 * ucumCode 0..1 Element "UCUM CODE (-1)"
-* description 0..1 Element "DESCRIPTION (-.01)"
 
 Logical: ALeadImplant6982
 Id: ALeadImplant6982

@@ -4,12 +4,14 @@ Id: ImmunizationImmunization
 Title: "Immunization Immunization"
 Description: "This StructureDefinition contains the maps for VistA file V IMMUNIZATION (9000010.11) to us-core-immunization"
 * ^status = #draft
-* statusReason and vaccineCode and primarySource and status and vaccineCode.text and patient and occurrenceDateTime and lotNumber and manufacturer and vaccineCode.coding.code and vaccineCode.coding.system and doseQuantity.value and note.text and protocolApplied.doseNumberString and doseQuantity and doseQuantity.unit and doseQuantity.code and recorded and reaction.detail and encounter and location MS
+* statusReason and vaccineCode and primarySource and status and vaccineCode.text and patient and occurrenceDateTime and lotNumber and manufacturer and vaccineCode.coding.code and vaccineCode.coding.system and doseQuantity.value and performer.actor and performer.function and note.text and protocolApplied.doseNumberString and doseQuantity and doseQuantity.unit and doseQuantity.code and recorded and reaction.detail and encounter and location MS
 * statusReason from http://va.gov/fhir/ValueSet/VSVFimmunizationStatusReason
 * vaccineCode from http://va.gov/fhir/ValueSet/VSVFinferredCVX
 * primarySource.extension contains http://hl7.org/fhir/StructureDefinition/11179-permitted-value-conceptmap named 11179-permitted-value-conceptmap 0..1
 * primarySource.extension[11179-permitted-value-conceptmap].valueCanonical = "http://va.gov/fhir/ConceptMap/CMVFimmunizationPrimarySource"
 * vaccineCode.coding.system = "http://hl7.org/fhir/sid/ndc"
+* performer.actor only Reference(http://hl7.org/fhir/StructureDefinition/Practitioner)
+* performer.function = http://terminology.hl7.org/CodeSystem/v2-0443#AP
 * reaction.detail only Reference(ImmunizationObservation)
 
 Mapping: vista-to-ImmunizationImmunization
@@ -30,10 +32,12 @@ Source: ImmunizationImmunization
 * vaccineCode.coding.code -> "1609: source value from IMMUNIZATION LOT - NDC CODE (VA) (9999999.41-.18)"
 * vaccineCode.coding.system -> "1609-1: fixed value = http://hl7.org/fhir/sid/ndc" "from mapParameter 1"
 * doseQuantity.value -> "340: source value from V IMMUNIZATION - DOSE (9000010.11-1312)"
+* performer.actor -> "342: reference from V IMMUNIZATION - ENCOUNTER PROVIDER (9000010.11-1204)" "instantiate with function or reference.display?"
+* performer.function -> "342-1: fixed value = http://terminology.hl7.org/CodeSystem/v2-0443#AP" "from mapParameter 1"
 * note.text -> "343: source value from V IMMUNIZATION - COMMENTS (9000010.11-81101)"
 * protocolApplied.doseNumberString -> "344: source value from V IMMUNIZATION - SERIES (9000010.11-.04)" "Can be numeral or letter"
 * doseQuantity -> "464: source value from V IMMUNIZATION - DOSE UNITS > UCUM CODES - (9000010.11-1313 > 757.5-)"
-* doseQuantity.unit -> "464-1: source value from V IMMUNIZATION - DOSE UNITS > UCUM CODES - DISPLAY (9000010.11-1313 > 757.5-.01)" "from mapParameter 1"
+* doseQuantity.unit -> "464-1: source value from V IMMUNIZATION - DOSE UNITS > UCUM CODES - DESCRIPTION OF THE UNIT (9000010.11-1313 > 757.5-.01)" "from mapParameter 1"
 * doseQuantity.code -> "464-2: source value from V IMMUNIZATION - DOSE UNITS > UCUM CODES - UCUM CODE (9000010.11-1313 > 757.5-1)" "from mapParameter 2"
 * recorded -> "1593: source value from V IMMUNIZATION - DATE/TIME RECORDED (9000010.11-1205)" "identified byMHV"
 * reaction.detail -> "1673: reference"
@@ -56,6 +60,7 @@ Source: ImmunizationImmunization
 * manufacturer -> "Dim.ImmunizationLot.ImmunizationManufacturerIEN,Dim.ImmunizationLot.ImmunizationManufacturerSID"
 * vaccineCode.coding.code -> "Dim.ImmunizationLot.NDCCodeVAText"
 * doseQuantity.value -> "Immun.Immunization.Dosage"
+* performer.actor -> "Immun.Immunization.ImmunizingStaffIEN"
 * note.text -> "Immun.Immunization.ImmunizationComments"
 * protocolApplied.doseNumberString -> "Immun.Immunization.Series"
 * doseQuantity -> "Immun.Immunization.DoseUnit"

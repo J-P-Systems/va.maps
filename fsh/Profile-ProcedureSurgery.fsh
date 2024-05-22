@@ -7,10 +7,10 @@ Description: "This StructureDefinition contains the maps for VistA file SURGERY 
 * performer ^slicing.discriminator.type = #pattern
 * performer ^slicing.discriminator.path = "$this"
 * performer ^slicing.rules = #open
-* performer contains va-1 0..1 and va-2 0..1 and va-3 0..1 and va-4 0..1 and va-5 0..1 and va-6 0..1 and va-7 0..1 and va-8 0..1 and va-9 0..1 and va-10 0..1 and va-11 0..1 and va-12 0..1 and va-13 0..1
-* encounter and performedDateTime and subject and note and reasonCode.text and performedPeriod.start and performedPeriod.end and location and complication.coding and complication.text and performer.actor and performer.function.text and performer.function.coding and category.coding and performer[va-1].actor and performer[va-1].function.text and performer[va-1].function.coding and performer[va-2].actor and performer[va-2].function.text and performer[va-2].function.coding and performer[va-3].actor and performer[va-3].function.text and performer[va-3].function.coding and performer[va-4].actor and performer[va-4].function.text and performer[va-4].function.coding and performer[va-5].actor and performer[va-5].function.text and performer[va-5].function.coding and performer[va-6].actor and performer[va-6].function.text and performer[va-6].function.coding and performer[va-7].actor and performer[va-7].function.text and performer[va-7].function.coding and performer[va-8].actor and performer[va-8].function.text and performer[va-8].function.coding and performer[va-9].actor and performer[va-9].function.text and performer[va-9].function.coding and performer[va-10].actor and performer[va-10].function.text and performer[va-10].function.coding and performer[va-11].actor and performer[va-11].function.text and performer[va-11].function.coding and performer[va-12].actor and performer[va-12].function.text and performer[va-12].function.coding and performer[va-13].actor and performer[va-13].function.text and performer[va-13].function.coding and code.text and code.coding and code.coding.code and code.coding.system and code.coding.display and status MS
-* performer.function.text = "PERFUSIONIST"
-* performer.function.coding = http://va.gov/terminology/vistaDefinedTerms/130#.167 "PERFUSIONIST"
+* performer contains va-0 0..1 and va-1 0..1 and va-2 0..1 and va-3 0..1 and va-4 0..1 and va-5 0..1 and va-6 0..1 and va-7 0..1 and va-8 0..1 and va-9 0..1 and va-10 0..1 and va-11 0..1 and va-12 0..1 and va-13 0..1
+* encounter and performedDateTime and subject and note and reasonCode.text and performedPeriod.start and performedPeriod.end and location and complication.coding and complication.text and performer[va-0].actor and performer[va-0].function.text and performer[va-0].function.coding and category.coding and performer[va-1].actor and performer[va-1].function.text and performer[va-1].function.coding and performer[va-2].actor and performer[va-2].function.text and performer[va-2].function.coding and performer[va-3].actor and performer[va-3].function.text and performer[va-3].function.coding and performer[va-4].actor and performer[va-4].function.text and performer[va-4].function.coding and performer[va-5].actor and performer[va-5].function.text and performer[va-5].function.coding and performer[va-6].actor and performer[va-6].function.text and performer[va-6].function.coding and performer[va-7].actor and performer[va-7].function.text and performer[va-7].function.coding and performer[va-8].actor and performer[va-8].function.text and performer[va-8].function.coding and performer[va-9].actor and performer[va-9].function.text and performer[va-9].function.coding and performer[va-10].actor and performer[va-10].function.text and performer[va-10].function.coding and performer[va-11].actor and performer[va-11].function.text and performer[va-11].function.coding and performer[va-12].actor and performer[va-12].function.text and performer[va-12].function.coding and performer[va-13].actor and performer[va-13].function.text and performer[va-13].function.coding and code.text and code.coding and code.coding.code and code.coding.system and code.coding.display and status MS
+* performer[va-0].function.text = "PERFUSIONIST"
+* performer[va-0].function.coding = http://va.gov/terminology/vistaDefinedTerms/130#.167 "PERFUSIONIST"
 * category.coding = http://snomed.info/sct#387713003 "Surgical procedure"
 * performer[va-1].function.text = "PRIMARY SURGEON"
 * performer[va-1].function.coding = http://va.gov/terminology/vistaDefinedTerms/130#.14 "PRIMARY SURGEON"
@@ -59,9 +59,9 @@ Source: ProcedureSurgery
 * complication.text -> "1296-1: fixed value = STOMA COMPLICATIONS case == ‘Y’" "from mapParameter 1"
 * complication.coding -> "1297: fixed value = http://snomed.info/sct#22298006 Myocardial infarction (disorder) when SURGERY - MYOCARDIAL INFARCTION (130-258) case == ‘Y’"
 * complication.text -> "1297-1: fixed value = MYOCARDIAL INFARCTION case == ‘Y’" "from mapParameter 1"
-* performer.actor -> "1298: reference from SURGERY - PERFUSIONIST (130-.167)"
-* performer.function.text -> "1298-1: fixed value = PERFUSIONIST" "from mapParameter 1"
-* performer.function.coding -> "1298-2: fixed value = http://va.gov/terminology/vistaDefinedTerms/130#.167 PERFUSIONIST" "from mapParameter 2"
+* performer[va-0].actor -> "1298: reference from SURGERY - PERFUSIONIST (130-.167)"
+* performer[va-0].function.text -> "1298-1: fixed value = PERFUSIONIST" "from mapParameter 1"
+* performer[va-0].function.coding -> "1298-2: fixed value = http://va.gov/terminology/vistaDefinedTerms/130#.167 PERFUSIONIST" "from mapParameter 2"
 * category.coding -> "1313: fixed value = http://snomed.info/sct#387713003 Surgical procedure"
 * performer[va-1].actor -> "1330: reference from SURGERY - PRIMARY SURGEON (130-.14)"
 * performer[va-1].function.text -> "1330-1: fixed value = PRIMARY SURGEON" "from mapParameter 1"
@@ -122,7 +122,7 @@ Source: ProcedureSurgery
 * performedPeriod.end -> "Surg.SurgeryINTRA.EndOperationDateTime,Surg.SurgeryPRE.EndOperationDateTime"
 * location -> "Surg.SurgeryINTRA.NonORLocationIEN,Surg.SurgeryPOST.NonORLocationIEN"
 * location -> "Surg.SurgeryINTRA.OperatingRoomIEN,Surg.SurgeryPOST.OperatingRoomIEN"
-* performer.actor -> "Surg.SurgeryINTRA.PerfusionistStaffIEN"
+* performer[va-0].actor -> "Surg.SurgeryINTRA.PerfusionistStaffIEN"
 * performer[va-1].actor -> "Surg.SurgeryINTRA.SurgeonStaffIEN"
 * performer[va-2].actor -> "Surg.SurgeryINTRA.FirstAssistingStaffIEN"
 * performer[va-3].actor -> "Surg.SurgeryINTRA.SecondAssistingStaffIEN"
