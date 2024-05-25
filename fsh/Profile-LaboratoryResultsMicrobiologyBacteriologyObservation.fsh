@@ -11,7 +11,7 @@ Description: "This StructureDefinition contains the maps for VistA file MICROBIO
 * code and status and valueCodeableConcept.coding and valueString and component[va-component].code and component[va-component].code.coding.code and component[va-component].code.coding.system and component[va-component].valueString and component[va-component].interpretation and effectiveDateTime and note and performer and specimen and identifier.value and identifier.system and code.coding and code.coding.system and code.coding.code and code.coding.display and issued and category and subject MS
 * status from http://va.gov/fhir/ValueSet/VSVFLabObservationStatus
 * component[va-component].code.coding.system = "http://loinc.org"
-* identifier.system = "http://va.gov/fhir/identifiers/Sta3n<stationNr>/<fileNr>"
+* identifier.system = "http://va.gov/fhir/identifiers/Sta3n$stationNr/$fileNr"
 * category = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
 
 Mapping: vista-to-LaboratoryResultsMicrobiologyBacteriologyObservation
@@ -35,7 +35,7 @@ Source: LaboratoryResultsMicrobiologyBacteriologyObservation
 * performer -> "1679: reference from MICROBIOLOGY - VERIFY PERSON (63.05-.04)"
 * specimen -> "1659: reference from MICROBIOLOGY - MICROBIOLOGY ACCESSION (63.05-.06)"
 * identifier.value -> "1476: source value from MICROBIOLOGY - IEN (63.05-.001)"
-* identifier.system -> "1476-1: fixed value = http://va.gov/fhir/identifiers/Sta3n<stationNr>/<fileNr>" "from mapParameter 1"
+* identifier.system -> "1476-1: fixed value = http://va.gov/fhir/identifiers/Sta3n$stationNr/$fileNr" "from mapParameter 1"
 * code.coding -> "1480: source value from MICROBIOLOGY - ORDERED TEST > ORDERED TEST - LAB TEST ORDERED > LABORATORY TEST - SITE/SPECIMEN > SITE/SPECIMEN - LOINC CODE > LAB LOINC (63.05-.35 > 63.5-13 > 60-100 > 60.01-95.3 > 95.3-) case Not NULL"
 * code.coding.system -> "1480-1: fixed value = http://loinc.org case Not NULL" "from mapParameter 1"
 * code.coding.code -> "1480-2: source value from MICROBIOLOGY - ORDERED TEST > ORDERED TEST - LAB TEST ORDERED > LABORATORY TEST - SITE/SPECIMEN > SITE/SPECIMEN - LOINC CODE > LAB LOINC - CODE (63.05-.35 > 63.5-13 > 60-100 > 60.01-95.3 > 95.3-.01) case Not NULL" "from mapParameter 2"

@@ -5,7 +5,7 @@ Title: "Observation Imaging Result: Echo"
 Description: "This StructureDefinition contains the maps for VistA file ECHO (691) to us-core-observation-imaging"
 * ^status = #draft
 * identifier.value and identifier.system and status and subject and effectiveDateTime and issued and performer and valueString and interpretation and note and category MS
-* identifier.system = "http://va.gov/fhir/identifiers/Sta3n<stationNr>/<fileNr>"
+* identifier.system = "http://va.gov/fhir/identifiers/Sta3n$stationNr/691"
 * status from http://va.gov/fhir/ValueSet/VSVFImageStatus
 * interpretation from http://va.gov/fhir/ValueSet/VSVFImageInterpretation
 * category = http://terminology.hl7.org/CodeSystem/observation-category#imaging
@@ -15,7 +15,7 @@ Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: ObservationImagingResultEcho
 * identifier.value -> "1617: source value from ECHO - IEN (691-.001)"
-* identifier.system -> "1617-1: fixed value = http://va.gov/fhir/identifiers/Sta3n<stationNr>/<fileNr>" "from mapParameter 1"
+* identifier.system -> "1617-1: fixed value = http://va.gov/fhir/identifiers/Sta3n$stationNr/691" "from mapParameter 1"
 * status -> "1621: terminologyMaps using VF_ImageStatus on ECHO - RELEASE CODE (691-1506)"
 * subject -> "1631: reference from ECHO - MEDICAL PATIENT (691-1)"
 * effectiveDateTime -> "1634: source value from ECHO - DATE/TIME (691-.01)"

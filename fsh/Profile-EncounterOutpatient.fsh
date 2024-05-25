@@ -5,7 +5,7 @@ Title: "Encounter: Outpatient"
 Description: "This StructureDefinition contains the maps for VistA file VISIT (9000010) to us-core-encounter"
 * ^status = #draft
 * identifier.value and identifier.system and status and serviceType.coding.code and serviceType.coding.system and subject and period.start and period.end and reasonCode.coding.code and reasonCode.coding.system and location.location and class and serviceProvider and participant.individual and participant.type.coding and type and type.coding.system and type.coding.code and type.coding.display and type.text MS
-* identifier.system = "http://va.gov/terminology/VistADefinedTerms/9000010-15001"
+* identifier.system = "http://va.gov/fhir/identifiers/9000010-15001"
 * serviceType.coding.system = "http://va.gov/terminology/VistADefinedTerms/9000010-.07"
 * reasonCode.coding.system = "urn:see-termmap-in-mapParameter"
 * class from http://va.gov/fhir/ValueSet/VSVFencounterClass
@@ -18,7 +18,7 @@ Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: EncounterOutpatient
 * identifier.value -> "429: source value from VISIT - VISIT ID (9000010-15001)"
-* identifier.system -> "429-1: fixed value = http://va.gov/terminology/VistADefinedTerms/9000010-15001" "from mapParameter 1"
+* identifier.system -> "429-1: fixed value = http://va.gov/fhir/identifiers/9000010-15001" "from mapParameter 1"
 * status -> "430: fixed value = #planned when VISIT - VISIT/ADMIT DATE&TIME (9000010-.01) case null or > now"
 * status -> "431: fixed value = #in-progress when VISIT - VISIT/ADMIT DATE&TIME (9000010-.01) case not null, < now, .18 null" "tweaked case logic 9/21"
 * status -> "432: fixed value = #finished when VISIT - CHECK OUT DATE&TIME (9000010-.18) case not null, < now" "tweaked case logic 9/21"

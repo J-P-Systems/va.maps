@@ -11,17 +11,17 @@ Description: "This StructureDefinition contains the maps for VistA file PTF (45)
 * reasonCode ^slicing.discriminator.type = #pattern
 * reasonCode ^slicing.discriminator.path = "$this"
 * reasonCode ^slicing.rules = #open
-* reasonCode contains va-principle 0..1 and va-secundary 0..1 and va-procedure 0..1
-* identifier[va-IEN].value and identifier[va-IEN].system and identifier[va-IEN].type.text and class and identifier[va-IA].value and identifier[va-IA].system and identifier[va-IA].type.text and status and subject and participant.individual and participant.type.coding and period.start and period.end and reasonCode[va-principle].coding.code and reasonCode[va-principle].coding.system and diagnosis.condition and reasonCode[va-secundary].coding.code and reasonCode[va-secundary].coding.system and reasonCode[va-procedure].coding.code and reasonCode[va-procedure].coding.system and hospitalization.admitSource.coding.code and hospitalization.admitSource.coding.system and hospitalization.admitSource.coding and hospitalization.origin.display and hospitalization.destination.display and hospitalization.dischargeDisposition.coding.code and hospitalization.dischargeDisposition.coding.system and location.location and serviceProvider and type and type.coding.system and type.coding.code and type.coding.display and type.text MS
-* identifier[va-IEN].system = "http://va.gov/terminology/VistADefinedTerms/45-.001"
+* reasonCode contains va-principle 0..1 and va-secondary 0..1 and va-procedure 0..1
+* identifier[va-IEN].value and identifier[va-IEN].system and identifier[va-IEN].type.text and class and identifier[va-IA].value and identifier[va-IA].system and identifier[va-IA].type.text and status and subject and participant.individual and participant.type.coding and period.start and period.end and reasonCode[va-principle].coding.code and reasonCode[va-principle].coding.system and diagnosis.condition and reasonCode[va-secondary].coding.code and reasonCode[va-secondary].coding.system and reasonCode[va-procedure].coding.code and reasonCode[va-procedure].coding.system and hospitalization.admitSource.coding.code and hospitalization.admitSource.coding.system and hospitalization.admitSource.coding and hospitalization.origin.display and hospitalization.destination.display and hospitalization.dischargeDisposition.coding.code and hospitalization.dischargeDisposition.coding.system and location.location and serviceProvider and type and type.coding.system and type.coding.code and type.coding.display and type.text MS
+* identifier[va-IEN].system = "http://va.gov/fhir/identiiers/Sta3n$stationNr/45"
 * identifier[va-IEN].type.text = "IEN"
 * class = http://terminology.hl7.org/CodeSystem/v3-ActCode#IMP
-* identifier[va-IA].system = "http://va.gov/terminology/VistADefinedTerms/45-2.1"
+* identifier[va-IA].system = "http://va.gov/fhir/identifiers/Sta3n$stationNr/45-2.1"
 * identifier[va-IA].type.text = "Internal Admission #"
 * participant.type.coding = http://terminology.hl7.org/CodeSystem/v3-ParticipationType#PPRF
 * reasonCode[va-principle].coding.system = "urn:see-termmap-in-mapParameter"
 * diagnosis.condition only Reference(EncounterInpatientCondition)
-* reasonCode[va-secundary].coding.system = "urn:see-termmap-in-mapParameter"
+* reasonCode[va-secondary].coding.system = "urn:see-termmap-in-mapParameter"
 * reasonCode[va-procedure].coding.system = "http://www.cms.gov/Medicare/Coding/ICD10"
 * hospitalization.admitSource.coding.system = "http://va.gov/terminology/vistaDefinedTerms/45.1"
 * hospitalization.admitSource.coding from http://va.gov/fhir/ValueSet/VSVFSourceOfAdmission
@@ -34,11 +34,11 @@ Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: EncounterInpatientEncounter
 * identifier[va-IEN].value -> "427: source value from PTF - NUMBER (45-.001)" "removed use=IFN typo and split of class to new mapset row"
-* identifier[va-IEN].system -> "427-1: fixed value = http://va.gov/terminology/VistADefinedTerms/45-.001" "from mapParameter 1"
+* identifier[va-IEN].system -> "427-1: fixed value = http://va.gov/fhir/identiiers/Sta3n$stationNr/45" "from mapParameter 1"
 * identifier[va-IEN].type.text -> "427-2: fixed value = IEN" "from mapParameter 2"
 * class -> "1601: fixed value = http://terminology.hl7.org/CodeSystem/v3-ActCode#IMP"
 * identifier[va-IA].value -> "428: source value from PTF - INTERNAL ADMISSION # (45-2.1)"
-* identifier[va-IA].system -> "428-1: fixed value = http://va.gov/terminology/VistADefinedTerms/45-2.1" "from mapParameter 1"
+* identifier[va-IA].system -> "428-1: fixed value = http://va.gov/fhir/identifiers/Sta3n$stationNr/45-2.1" "from mapParameter 1"
 * identifier[va-IA].type.text -> "428-2: fixed value = Internal Admission #" "from mapParameter 2"
 * status -> "433: fixed value = #planned when PTF - ADMISSION DATE (45-2) case null or > now"
 * status -> "434: fixed value = #in-progress when PTF - ADMISSION DATE (45-2) case not null, < now, field 70 null" "tweaked case logic 9/21"
@@ -51,8 +51,8 @@ Source: EncounterInpatientEncounter
 * reasonCode[va-principle].coding.code -> "448: source value from PTF - PRINCIPAL DIAGNOSIS (45-79)"
 * reasonCode[va-principle].coding.system -> "448-1: fixed value = urn:see-termmap-in-mapParameter" "from mapParameter 1"
 * diagnosis.condition -> "1723: reference"
-* reasonCode[va-secundary].coding.code -> "449: source value from PTF - SECONDARY DIAGNOSIS [#] (45-79.16)" "79.16 and following"
-* reasonCode[va-secundary].coding.system -> "449-1: fixed value = urn:see-termmap-in-mapParameter" "from mapParameter 1"
+* reasonCode[va-secondary].coding.code -> "449: source value from PTF - SECONDARY DIAGNOSIS [#] (45-79.16)" "79.16 and following"
+* reasonCode[va-secondary].coding.system -> "449-1: fixed value = urn:see-termmap-in-mapParameter" "from mapParameter 1"
 * reasonCode[va-procedure].coding.code -> "450: source value from PTF - PROCEDURE [#] (45-45.01)" "45.01 and following"
 * reasonCode[va-procedure].coding.system -> "450-1: fixed value = http://www.cms.gov/Medicare/Coding/ICD10" "from mapParameter 1"
 * hospitalization.admitSource.coding.code -> "453: source value from PTF - SOURCE OF ADMISSION > SOURCE OF ADMISSION - PTF CODE (45-20 > 45.1-.01)"
@@ -83,7 +83,7 @@ Source: EncounterInpatientEncounter
 * period.start -> "Inpat.Census.AdmitDateSID,Inpat.Census.AdmitDateTime,Inpat.Census501.AdmitDateTime,Inpat.Census501Diagnosis.AdmitDateTime,Inpat.Census535.AdmitDateTime,Inpat.CensusDiagnosis.AdmitDateTime,Inpat.CensusICDProcedure.AdmitDateTime,Inpat.CensusSurgicalProcedure.AdmitDateTime,Inpat.Inpatient.AdmitDateTime,Inpat.Inpatient501Multiple.AdmitDateTime,Inpat.Inpatient501Transaction.AdmitDateTime,Inpat.Inpatient535Multiple.AdmitDateTime,Inpat.Inpatient535Transaction.AdmitDateTime,Inpat.InpatientDischargeDiagnosis.AdmitDateTime,Inpat.InpatientFeeBasis.AdmitDateTime,Inpat.InpatientFeeDiagnosis.AdmitDateTime,Inpat.InpatientICDProcedure.AdmitDateTime,Inpat.InpatientSurgicalProcedure.AdmitDateTime"
 * period.end -> "Inpat.Census.CensusDateSID,Inpat.Census.CensusDateTime,Inpat.Census501.CensusDateTime,Inpat.Census501Diagnosis.CensusDateTime,Inpat.Census535.CensusDateTime,Inpat.CensusDiagnosis.CensusDateTime,Inpat.CensusICDProcedure.CensusDateTime,Inpat.CensusSurgicalProcedure.CensusDateTime,Inpat.Inpatient.DischargeDateTime,Inpat.Inpatient501Transaction.DischargeDateTime,Inpat.Inpatient501TransactionDiagnosis.DischargeDateTime,Inpat.Inpatient535Multiple.DischargeDateTime,Inpat.Inpatient535Transaction.DischargeDateTime,Inpat.InpatientDiagnosis.DischargeDateTime,Inpat.InpatientFeeBasis.DischargeDateTime,Inpat.InpatientFeeDiagnosis.DischargeDateTime,Inpat.InpatientICDProcedure.DischargeDateTime,Inpat.InpatientSurgicalProcedure.DischargeDateTime"
 * reasonCode[va-principle].coding.code -> "Inpat.Inpatient.PrincipalDiagnosisICDIEN"
-* reasonCode[va-secundary].coding.code -> "Inpat.CensusDiagnosis.ICDIEN,Inpat.InpatientDiagnosis.ICDIEN"
+* reasonCode[va-secondary].coding.code -> "Inpat.CensusDiagnosis.ICDIEN,Inpat.InpatientDiagnosis.ICDIEN"
 * hospitalization.admitSource.coding.code -> "Inpat.Census.AdmitSourceIEN,Inpat.Inpatient.AdmitSourceIEN,Inpat.InpatientFeeBasis.AdmitSourceIEN\nDim.AdmitSource.AdmitSourceCode"
 * hospitalization.admitSource.coding -> "Inpat.Census.AdmitSourceIEN,Inpat.Inpatient.AdmitSourceIEN,Inpat.InpatientFeeBasis.AdmitSourceIEN\nDim.AdmitSource.AdmitSourceCode"
 * hospitalization.origin.display -> "Inpat.Census.TransferringFacility,Inpat.Inpatient.TransferFromFacility,Inpat.InpatientFeeBasis.TransferringFacility"

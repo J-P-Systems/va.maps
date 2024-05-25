@@ -5,7 +5,7 @@ Title: "Implantable Device: Prosthesis"
 Description: "This StructureDefinition contains the maps for VistA file PROSTHESIS INSTALLED (130.01) to us-core-implantable-device"
 * ^status = #draft
 * identifier.value and identifier.system and manufacturer and expirationDate and lotNumber and serialNumber and deviceName.name and deviceName.type and modelNumber and type and patient and owner MS
-* identifier.system = "http://va.gov/fhir/identifiers/Sta3n<stationNr>/<fileNr>"
+* identifier.system = "http://va.gov/fhir/identifiers/Sta3n$stationNr/130.01"
 * deviceName.type = #model-name
 * type = http://snomed.info/sct#63653004 "Biomedical device"
 
@@ -14,7 +14,7 @@ Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: ImplantableDeviceProsthesis
 * identifier.value -> "1348: source value from PROSTHESIS INSTALLED - IEN (130.01-.001)"
-* identifier.system -> "1348-1: fixed value = http://va.gov/fhir/identifiers/Sta3n<stationNr>/<fileNr>" "from mapParameter 1"
+* identifier.system -> "1348-1: fixed value = http://va.gov/fhir/identifiers/Sta3n$stationNr/130.01" "from mapParameter 1"
 * manufacturer -> "1365: source value from PROSTHESIS INSTALLED - VENDOR (130.01-1)"
 * expirationDate -> "1373: source value from PROSTHESIS INSTALLED - STERILITY EXPIRATION DATE (130.01-9)"
 * lotNumber -> "1376: source value from PROSTHESIS INSTALLED - LOT NUMBER (130.01-11)"

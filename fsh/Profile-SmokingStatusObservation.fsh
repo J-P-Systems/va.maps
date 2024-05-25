@@ -5,7 +5,7 @@ Title: "Smoking Status Observation"
 Description: "This StructureDefinition contains the maps for VistA file V HEALTH FACTORS (9000010.23) to us-core-smokingstatus"
 * ^status = #draft
 * identifier.value and identifier.system and status and category[SocialHistory] and code.coding and subject and encounter and effectiveDateTime and performer and valueCodeableConcept and valueCodeableConcept.text and note.text MS
-* identifier.system = "http://va.gov/fhir/identifiers/Sta3n<stationNr>/<fileNr>"
+* identifier.system = "http://va.gov/fhir/identifiers/Sta3n$stationNr/9000010.23"
 * status = #final
 * category[SocialHistory] = http://terminology.hl7.org/CodeSystem/observation-category#social-history
 * valueCodeableConcept from http://va.gov/fhir/ValueSet/VSVFSmokingStatus
@@ -16,7 +16,7 @@ Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: SmokingStatusObservation
 * identifier.value -> "1241: source value from V HEALTH FACTORS - IEN (9000010.23-.001)"
-* identifier.system -> "1241-1: fixed value = http://va.gov/fhir/identifiers/Sta3n<stationNr>/<fileNr>" "from mapParameter 1"
+* identifier.system -> "1241-1: fixed value = http://va.gov/fhir/identifiers/Sta3n$stationNr/9000010.23" "from mapParameter 1"
 * status -> "1242: fixed value = #final"
 * category[SocialHistory] -> "1243: fixed value = http://terminology.hl7.org/CodeSystem/observation-category#social-history"
 * code.coding -> "1244: fixed value = http://loinc.org#72166-2 when HEALTH FACTORS - CATEGORY (9999999.64-.03) case TOBACCO"

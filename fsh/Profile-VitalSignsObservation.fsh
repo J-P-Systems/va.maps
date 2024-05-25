@@ -13,7 +13,7 @@ Description: "This StructureDefinition contains the maps for VistA file GMRV VIT
 * issued and performer and status and effectiveDateTime and category and subject and identifier.value and identifier.system and code.coding and method and valueQuantity.value and valueQuantity.code and component[va-pre-condition].valueCodeableConcept.coding and component[va-pre-condition].code and component[va-pre-condition-device].valueCodeableConcept.coding and component[va-pre-condition-device].code and extension[http://hl7.org/fhir/StructureDefinition/observation-bodyPosition].valueCodeableConcept and component[va-cuff-size].valueCodeableConcept.coding and component[va-cuff-size].code MS
 * performer only Reference(VitalSignsOrganization)
 * category = http://terminology.hl7.org/CodeSystem/observation-category#vital-signs
-* identifier.system = "http://va.gov/fhir/identifiers/Sta3n<stationNr>/<fileNr>"
+* identifier.system = "http://va.gov/fhir/identifiers/Sta3n$stationNr/120.5"
 * code.coding from http://va.gov/fhir/ValueSet/VSVFVitalsCodes
 * method from http://va.gov/fhir/ValueSet/VSVFVitalsMethod
 * valueQuantity.code.extension contains http://hl7.org/fhir/StructureDefinition/11179-permitted-value-conceptmap named 11179-permitted-value-conceptmap 0..1
@@ -38,7 +38,7 @@ Source: VitalSignsObservation
 * category -> "658: fixed value = http://terminology.hl7.org/CodeSystem/observation-category#vital-signs"
 * subject -> "659: reference from GMRV VITAL MEASUREMENT - PATIENT (120.5-.02)"
 * identifier.value -> "660: source value from GMRV VITAL MEASUREMENT - IEN (120.5-.001)"
-* identifier.system -> "660-1: fixed value = http://va.gov/fhir/identifiers/Sta3n<stationNr>/<fileNr>" "from mapParameter 1"
+* identifier.system -> "660-1: fixed value = http://va.gov/fhir/identifiers/Sta3n$stationNr/120.5" "from mapParameter 1"
 * code.coding -> "661: terminologyMaps using VF_VitalsCodes on GMRV VITAL MEASUREMENT - VITAL TYPE (120.5-.03)" "Pulse Oximetry has 2 values"
 * method -> "867: terminologyMaps using VF_VitalsMethod on GMRV VITAL MEASUREMENT - QUALIFIER > GMRV VITAL QUALIFIER - VUID (120.5-5 > 120.52-99.99)"
 * valueQuantity.value -> "664: source value from GMRV VITAL MEASUREMENT - RATE (120.5-1.2) case VUID not = 4500634"

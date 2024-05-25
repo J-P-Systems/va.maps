@@ -25,7 +25,7 @@ Description: "This StructureDefinition contains the maps for VistA file NEW PERS
 * identifier[va-VPID].type = http://va.gov/terminology/vistaDefinedTerms/200-9000#VPID
 * telecom.system = #phone
 * telecom.use = #home
-* identifier[va-IEN].system = "http://va.gov/fhir/identifiers/Sta3n<stationNr>/200"
+* identifier[va-IEN].system = "http://va.gov/fhir/identifiers/Sta3n$stationNr/200"
 * identifier[va-IEN].type = http://va.gov/terminology/vistaDefinedTerms/200-.001#IEN
 * address[va-home].use = #home
 * address[va-home].country.extension contains http://hl7.org/fhir/StructureDefinition/11179-permitted-value-conceptmap named 11179-permitted-value-conceptmap 0..1
@@ -63,7 +63,7 @@ Source: Practitioner
 * birthDate -> "394: source value from NEW PERSON - DOB (200-5)"
 * qualification.code.text -> "395: source value from NEW PERSON - DEGREE (200-10.6)" "There is also 12.1 CURRENT DEGREE LEVEL; not in cdw"
 * identifier[va-IEN].value -> "415: source value from NEW PERSON - IEN (200-.001)"
-* identifier[va-IEN].system -> "415-1: fixed value = http://va.gov/fhir/identifiers/Sta3n<stationNr>/200" "from mapParameter 1"
+* identifier[va-IEN].system -> "415-1: fixed value = http://va.gov/fhir/identifiers/Sta3n$stationNr/200" "from mapParameter 1"
 * identifier[va-IEN].type -> "415-2: fixed value = http://va.gov/terminology/vistaDefinedTerms/200-.001#IEN" "from mapParameter 2"
 * address[va-home].line -> "396: source value from NEW PERSON - STREET ADDRESS 1 (200-.111)" "Changed use case and FHIR Path to Practitioner to align with US Core"
 * address[va-home].use -> "396-1: fixed value = #home" "from mapParameter 1"

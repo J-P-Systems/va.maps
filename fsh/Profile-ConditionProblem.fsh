@@ -10,7 +10,7 @@ Description: "This StructureDefinition contains the maps for VistA file PROBLEM 
 * code.coding contains va-icd 0..1 and va-sct 0..1
 * category[us-core] and identifier.value and identifier.system and clinicalStatus and code.coding[va-icd] and code.coding[va-icd].system and code.coding[va-icd].code and code.coding[va-sct].code and code.coding[va-sct].system and code.text and subject and onsetDateTime and recordedDate and recorder and verificationStatus and abatementDateTime MS
 * category[us-core] = http://terminology.hl7.org/CodeSystem/condition-category#problem-list-item
-* identifier.system = "http://va.gov/fhir/identifiers/Sta3n<stationNr>/<fileNr>"
+* identifier.system = "http://va.gov/fhir/identifiers/Sta3n$stationNr/$fileNr"
 * code.coding[va-icd].system = "urn:see-termmap-in-mapParameter"
 * code.coding[va-sct].system = "http://snomed.info/sct"
 * clinicalStatus from http://va.gov/fhir/ValueSet/VSVFproblemStatus
@@ -22,7 +22,7 @@ Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: ConditionProblem
 * category[us-core] -> "1607: fixed value = http://terminology.hl7.org/CodeSystem/condition-category#problem-list-item"
 * identifier.value -> "345: source value from PROBLEM - IEN (9000011-.001)"
-* identifier.system -> "345-1: fixed value = http://va.gov/fhir/identifiers/Sta3n<stationNr>/<fileNr>" "from mapParameter 1"
+* identifier.system -> "345-1: fixed value = http://va.gov/fhir/identifiers/Sta3n$stationNr/$fileNr" "from mapParameter 1"
 * clinicalStatus -> "349: fixed value = #resolved when PROBLEM - DATE RESOLVED (9000011-1.07) case Not Null" "dependency on 605?"
 * code.coding[va-icd] -> "365: source value from PROBLEM - DIAGNOSIS > ICD DIAGNOSIS (9000011-.01 > 80-)"
 * code.coding[va-icd].system -> "365-1: fixed value = urn:see-termmap-in-mapParameter" "from mapParameter 1"
