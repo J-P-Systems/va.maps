@@ -6,7 +6,7 @@ Description: "This StructureDefinition contains the maps for VistA file V POV (9
 * ^status = #draft
 * category[us-core] and identifier.value and identifier.system and code and code.coding.system and code.coding.code and subject and encounter and onsetDateTime and recordedDate and clinicalStatus and verificationStatus and recorder MS
 * category[us-core] = http://terminology.hl7.org/CodeSystem/condition-category#encounter-diagnosis
-* identifier.system = "http://va.gov/fhir/identifiers/Sta3n$stationNr/$fileNr"
+* identifier.system = "http://va.gov/identifiers/$Sta3n/9000010.07"
 * code.coding.system = "urn:see-termmap-in-mapParameter"
 * clinicalStatus from http://va.gov/fhir/ValueSet/VSVFencounterProblemStatus
 * verificationStatus from http://va.gov/fhir/ValueSet/VSVFencounterProblemVerificationStatus
@@ -17,7 +17,7 @@ Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: ConditionEncounterDiagnosis
 * category[us-core] -> "1608: fixed value = http://terminology.hl7.org/CodeSystem/condition-category#encounter-diagnosis"
 * identifier.value -> "346: source value from V POV - IEN (9000010.07-.001)"
-* identifier.system -> "346-1: fixed value = http://va.gov/fhir/identifiers/Sta3n$stationNr/$fileNr" "from mapParameter 1"
+* identifier.system -> "346-1: fixed value = http://va.gov/identifiers/$Sta3n/9000010.07" "from mapParameter 1"
 * code -> "1613: source value from V POV - POV > ICD DIAGNOSIS (9000010.07-.01 > 80-)"
 * code.coding.system -> "1613-1: fixed value = urn:see-termmap-in-mapParameter" "from mapParameter 1"
 * code.coding.code -> "1613-2: source value from V POV - POV > ICD DIAGNOSIS - CODE NUMBER (9000010.07-.01 > 80-.01)" "from mapParameter 2"

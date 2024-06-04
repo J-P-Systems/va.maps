@@ -9,7 +9,7 @@ Description: "This StructureDefinition contains the maps for VistA file PATIENT 
 * identifier ^slicing.rules = #open
 * identifier contains va-IEN 0..1 and va-CDW 0..1
 * identifier[va-IEN].value and identifier[va-IEN].system and identifier[va-CDW].value and identifier[va-CDW].system and code.text and code and patient and recordedDate and recorder and reaction.manifestation and reaction.manifestation.coding.system and reaction.manifestation.coding.code and reaction.manifestation.coding.display and reaction.manifestation.text and type and verificationStatus and clinicalStatus and category and reaction.severity and note.time and note.authorString and note.text and reaction.onset MS
-* identifier[va-IEN].system = "http://va.gov/identifiers/Sta3n$stationNr/120.8"
+* identifier[va-IEN].system = "http://va.gov/identifiers/$Sta3n/120.8"
 * identifier[va-CDW].system = "http://va.gov/identifiers/CDWSID/cdwwork.allergy.allergy"
 * reaction.manifestation.coding.system = "urn:oid:2.16.840.1.113883.6.233"
 * type from http://va.gov/fhir/ValueSet/VSVFallergyMechanism
@@ -24,7 +24,7 @@ Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: AllergyIntolerance
 * identifier[va-IEN].value -> "233: source value from PATIENT ALLERGIES - IEN (120.8-.001)"
-* identifier[va-IEN].system -> "233-1: fixed value = http://va.gov/identifiers/Sta3n$stationNr/120.8" "from mapParameter 1"
+* identifier[va-IEN].system -> "233-1: fixed value = http://va.gov/identifiers/$Sta3n/120.8" "from mapParameter 1"
 * identifier[va-CDW].value -> "1610: source value from CDW.cdwwork.allergy.allergy.AllergySID" "Source is AllergySID from Allergy Table in CDW"
 * identifier[va-CDW].system -> "1610-1: fixed value = http://va.gov/identifiers/CDWSID/cdwwork.allergy.allergy" "from mapParameter 1"
 * code.text -> "245: source value from PATIENT ALLERGIES - REACTANT (120.8-.02)" "text only"

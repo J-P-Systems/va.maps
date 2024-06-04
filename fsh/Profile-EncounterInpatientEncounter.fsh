@@ -13,10 +13,10 @@ Description: "This StructureDefinition contains the maps for VistA file PTF (45)
 * reasonCode ^slicing.rules = #open
 * reasonCode contains va-principle 0..1 and va-secondary 0..1 and va-procedure 0..1
 * identifier[va-IEN].value and identifier[va-IEN].system and identifier[va-IEN].type.text and class and identifier[va-IA].value and identifier[va-IA].system and identifier[va-IA].type.text and status and subject and participant.individual and participant.type.coding and period.start and period.end and reasonCode[va-principle].coding.code and reasonCode[va-principle].coding.system and diagnosis.condition and reasonCode[va-secondary].coding.code and reasonCode[va-secondary].coding.system and reasonCode[va-procedure].coding.code and reasonCode[va-procedure].coding.system and hospitalization.admitSource.coding.code and hospitalization.admitSource.coding.system and hospitalization.admitSource.coding and hospitalization.origin.display and hospitalization.destination.display and hospitalization.dischargeDisposition.coding.code and hospitalization.dischargeDisposition.coding.system and location.location and serviceProvider and type and type.coding.system and type.coding.code and type.coding.display and type.text MS
-* identifier[va-IEN].system = "http://va.gov/fhir/identiiers/Sta3n$stationNr/45"
+* identifier[va-IEN].system = "http://va.gov/fhir/identiiers/$Sta3n/45"
 * identifier[va-IEN].type.text = "IEN"
 * class = http://terminology.hl7.org/CodeSystem/v3-ActCode#IMP
-* identifier[va-IA].system = "http://va.gov/fhir/identifiers/Sta3n$stationNr/45-2.1"
+* identifier[va-IA].system = "http://va.gov/identifiers/$Sta3n/45-2.1"
 * identifier[va-IA].type.text = "Internal Admission #"
 * participant.type.coding = http://terminology.hl7.org/CodeSystem/v3-ParticipationType#PPRF
 * reasonCode[va-principle].coding.system = "urn:see-termmap-in-mapParameter"
@@ -34,11 +34,11 @@ Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: EncounterInpatientEncounter
 * identifier[va-IEN].value -> "427: source value from PTF - NUMBER (45-.001)" "removed use=IFN typo and split of class to new mapset row"
-* identifier[va-IEN].system -> "427-1: fixed value = http://va.gov/fhir/identiiers/Sta3n$stationNr/45" "from mapParameter 1"
+* identifier[va-IEN].system -> "427-1: fixed value = http://va.gov/fhir/identiiers/$Sta3n/45" "from mapParameter 1"
 * identifier[va-IEN].type.text -> "427-2: fixed value = IEN" "from mapParameter 2"
 * class -> "1601: fixed value = http://terminology.hl7.org/CodeSystem/v3-ActCode#IMP"
 * identifier[va-IA].value -> "428: source value from PTF - INTERNAL ADMISSION # (45-2.1)"
-* identifier[va-IA].system -> "428-1: fixed value = http://va.gov/fhir/identifiers/Sta3n$stationNr/45-2.1" "from mapParameter 1"
+* identifier[va-IA].system -> "428-1: fixed value = http://va.gov/identifiers/$Sta3n/45-2.1" "from mapParameter 1"
 * identifier[va-IA].type.text -> "428-2: fixed value = Internal Admission #" "from mapParameter 2"
 * status -> "433: fixed value = #planned when PTF - ADMISSION DATE (45-2) case null or > now"
 * status -> "434: fixed value = #in-progress when PTF - ADMISSION DATE (45-2) case not null, < now, field 70 null" "tweaked case logic 9/21"

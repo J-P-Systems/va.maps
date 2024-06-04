@@ -5,7 +5,7 @@ Title: "Location"
 Description: "This StructureDefinition contains the maps for VistA file HOSPITAL LOCATION (44) to us-core-location"
 * ^status = #draft
 * identifier.value and identifier.system and name and alias and status and description and telecom.value and telecom.system and telecom.use and managingOrganization.display and physicalType.text and address.state and address.district and address.line and address.city and address.postalCode and address.country and address.type and type.text and mode MS
-* identifier.system = "http://va.gov/fhir/identifiers/Sta3n$stationNr/44"
+* identifier.system = "http://va.gov/identifiers/$Sta3n/44"
 * status from http://va.gov/fhir/ValueSet/VSVFLocationStatus
 * telecom.system = #phone
 * telecom.use = #work
@@ -20,7 +20,7 @@ Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: Location
 * identifier.value -> "755: source value from HOSPITAL LOCATION - IEN (44-.001)"
-* identifier.system -> "755-1: fixed value = http://va.gov/fhir/identifiers/Sta3n$stationNr/44" "from mapParameter 1"
+* identifier.system -> "755-1: fixed value = http://va.gov/identifiers/$Sta3n/44" "from mapParameter 1"
 * name -> "756: source value from HOSPITAL LOCATION - NAME (44-.01)"
 * alias -> "1276: source value from HOSPITAL LOCATION - ABBREVIATION (44-1)"
 * alias -> "1277: source value from HOSPITAL LOCATION - SYNONYM (44-13)"

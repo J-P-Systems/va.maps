@@ -983,6 +983,8 @@ Title: "V PROVIDER (9000010.06)"
 Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file V PROVIDER (9000010.06)"
 Characteristics: #can-be-target
 * provider 0..1 Element "PROVIDER (-.01)"
+* primarysecondary 0..1 Coding "PRIMARY/SECONDARY (-.04)"
+* primarysecondary from http://va.gov/fhir/ValueSet/VSVFencounterParticipationType-vista (preferred)
 
 Logical: VCpt900001018
 Id: VCpt900001018

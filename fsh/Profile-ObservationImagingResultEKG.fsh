@@ -5,7 +5,7 @@ Title: "Observation Imaging Result: EKG"
 Description: "This StructureDefinition contains the maps for VistA file ELECTROCARDIOGRAM (EKG) (691.5) to us-core-observation-imaging"
 * ^status = #draft
 * identifier.value and identifier.system and status and subject and effectiveDateTime and issued and performer and valueString and interpretation and note and category MS
-* identifier.system = "http://va.gov/fhir/identifiers/Sta3n$stationNr/691.5"
+* identifier.system = "http://va.gov/identifiers/$Sta3n/691.5"
 * status from http://va.gov/fhir/ValueSet/VSVFImageStatus
 * interpretation from http://va.gov/fhir/ValueSet/VSVFImageInterpretation
 * category = http://terminology.hl7.org/CodeSystem/observation-category#imaging
@@ -15,7 +15,7 @@ Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: ObservationImagingResultEKG
 * identifier.value -> "1618: source value from ELECTROCARDIOGRAM (EKG) - IEN (691.5-.001)"
-* identifier.system -> "1618-1: fixed value = http://va.gov/fhir/identifiers/Sta3n$stationNr/691.5" "from mapParameter 1"
+* identifier.system -> "1618-1: fixed value = http://va.gov/identifiers/$Sta3n/691.5" "from mapParameter 1"
 * status -> "1622: terminologyMaps using VF_ImageStatus on ELECTROCARDIOGRAM (EKG) - RELEASE STATUS (691.5-1506)"
 * subject -> "1632: reference from ELECTROCARDIOGRAM (EKG) - MEDICAL PATIENT (691.5-1)"
 * effectiveDateTime -> "1635: source value from ELECTROCARDIOGRAM (EKG) - DATE/TIME (691.5-.01)"

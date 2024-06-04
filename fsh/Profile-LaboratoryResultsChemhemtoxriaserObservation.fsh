@@ -6,7 +6,7 @@ Description: "This StructureDefinition contains the maps for VistA file CHEM, HE
 * ^status = #draft
 * effectiveDateTime and note and performer and specimen and referenceRange.high and referenceRange.low and identifier.value and identifier.system and interpretation and code.coding and code.coding.system and code.coding.code and code.coding.display and issued and status and valueQuantity.value and valueQuantity.unit and category and subject MS
 * specimen only Reference(LaboratoryResultsChemhemtoxriaserSpecimen)
-* identifier.system = "http://va.gov/fhir/identifiers/Sta3n$stationNr/63.04"
+* identifier.system = "http://va.gov/identifiers/$Sta3n/63.04"
 * interpretation from http://va.gov/fhir/ValueSet/VSVFLabInterpretation
 * code.coding.system = "http://loinc.org"
 * status from http://va.gov/fhir/ValueSet/VSVFLabObservationStatus
@@ -24,7 +24,7 @@ Source: LaboratoryResultsChemhemtoxriaserObservation
 * referenceRange.high -> "850: source value from CHEM, HEM, TOX, RIA, SER, etc. - ORDERED TEST > ORDERED TEST - LAB TEST ORDERED > LABORATORY TEST - SITE/SPECIMEN > SITE/SPECIMEN - REFERENCE HIGH (63.04-.35 > 63.07-13 > 60-100 > 60.01-2)"
 * referenceRange.low -> "854: source value from CHEM, HEM, TOX, RIA, SER, etc. - ORDERED TEST > ORDERED TEST - LAB TEST ORDERED > LABORATORY TEST - SITE/SPECIMEN > SITE/SPECIMEN - REFERENCE LOW (63.04-.35 > 63.07-13 > 60-100 > 60.01-1)"
 * identifier.value -> "851: source value from CHEM, HEM, TOX, RIA, SER, etc. - IEN (63.04-.001)" "Changed from .id to .identifier, added subPath, removed id_generator from mapValue, added .system, and changed from transform to source value"
-* identifier.system -> "851-1: fixed value = http://va.gov/fhir/identifiers/Sta3n$stationNr/63.04" "from mapParameter 1"
+* identifier.system -> "851-1: fixed value = http://va.gov/identifiers/$Sta3n/63.04" "from mapParameter 1"
 * interpretation -> "852: terminologyMaps using VF_LabInterpretation on CHEM, HEM, TOX, RIA, SER, etc. - testnames (63.04-2+through+862)" "Service compares value to reference and infers flag"
 * code.coding -> "853: source value from CHEM, HEM, TOX, RIA, SER, etc. - ORDERED TEST > ORDERED TEST - LAB TEST ORDERED > LABORATORY TEST - SITE/SPECIMEN > SITE/SPECIMEN - LOINC CODE > LAB LOINC (63.04-.35 > 63.07-13 > 60-100 > 60.01-95.3 > 95.3-)"
 * code.coding.system -> "853-1: fixed value = http://loinc.org" "from mapParameter 1"

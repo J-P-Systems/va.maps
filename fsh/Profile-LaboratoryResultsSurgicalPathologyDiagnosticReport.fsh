@@ -9,7 +9,7 @@ Description: "This StructureDefinition contains the maps for VistA file SURGICAL
 * performer ^slicing.rules = #open
 * performer contains va-by 0..1 and va-at 0..1
 * identifier.value and identifier.system and basedOn and status and effectiveDateTime and issued and performer[va-by] and performer[va-at] and resultsInterpreter and specimen and media.link and conclusion and presentedForm.data and code.text and code and code.coding.code and code.coding.system and category[LaboratorySlice] and category.text and code.coding and code.coding.display and subject and result MS
-* identifier.system = "http://va.gov/fhir/identifiers/Sta3n$stationNr/63.53"
+* identifier.system = "http://va.gov/identifiers/$Sta3n/63.53"
 * status from http://va.gov/fhir/ValueSet/VSVFDiagnosticReportLabStatus
 * performer[va-by] only Reference(http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner)
 * performer[va-at] only Reference(http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization)
@@ -25,7 +25,7 @@ Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: LaboratoryResultsSurgicalPathologyDiagnosticReport
 * identifier.value -> "1606: source value from SURGICAL PATHOLOGY - ORDERED TEST > ORDERED TEST - IEN (63.08-.35 > 63.53-.001)"
-* identifier.system -> "1606-1: fixed value = http://va.gov/fhir/identifiers/Sta3n$stationNr/63.53" "from mapParameter 1"
+* identifier.system -> "1606-1: fixed value = http://va.gov/identifiers/$Sta3n/63.53" "from mapParameter 1"
 * basedOn -> "1691: reference from SURGICAL PATHOLOGY - ORDERED TEST > ORDERED TEST - CPRS ORDER # (63.08-.35 > 63.53-3)"
 * status -> "1417: terminologyMaps using VF_DiagnosticReportLabStatus on SURGICAL PATHOLOGY - ORDERED TEST > ORDERED TEST - DISPOSITION (63.08-.35 > 63.53-10)" "US Core 5 has new constraints: if status is partial, preliminary, final, ammended, corrected or appended effective[x] and issued are required"
 * effectiveDateTime -> "1425: source value from SURGICAL PATHOLOGY - DATE/TIME SPECIMEN TAKEN (63.08-.01)"
