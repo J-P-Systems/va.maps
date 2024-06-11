@@ -244,7 +244,7 @@ Abstract
         
           Draft
           
-            as of 2024-06-04
+            as of 2024-06-11
           
         
       </td>
@@ -272,6 +272,10 @@ Abstract
 
 
 <div style="display:inline-block" markdown="1">
+
+<p>This is an abstract use case that is copied by other, concrete use cases. Each descendant concrete use case inherits the maps from this more general case. This way, we don’t have to maintain multiple copies of maps for closely related cases.</p>
+
+<p>Sometimes, you will notice that an abstract case includes only “target not supported” maps, so it doesn’t look very useful. However, for every use case, we not only map the fields for which we find source data; we also stipulate “target not supported” for any unmapped fields that are tagged “must support” in the US Core. This way, implementers who might be concerned about these fields if they were not mentioned are fully informed about the reason they are not mapped. When there are several concrete use cases that require these clarifying maps, we collect them in an abstract parent, just as we would for cases where we have source element maps</p>
 
 <?xml version="1.0" encoding="us-ascii" standalone="no"?>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="234px" preserveAspectRatio="none" style="width:261px;height:234px;background:#FFFFFF;" version="1.1" viewBox="0 0 261 234" width="261px" zoomAndPan="magnify"><defs /><g><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="233" x="10" y="22.9951">Use Case: Implantable Device</text><!--cluster Base--><g id="cluster_Base"><rect fill="none" height="88" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:1.0;" width="224" x="22" y="44.2969" /><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="38" x="115" y="59.292">Base</text></g><!--cluster Use Case--><g id="cluster_Use Case"><rect fill="none" height="71" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:1.0;" width="162" x="53" y="157.2969" /><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="74" x="97" y="172.292">Use Case</text></g><!--entity b0--><g id="elem_b0"><rect fill="#F1F1F1" height="52.5938" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="207" x="30.5" y="71.2969" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="75" x="40.5" y="94.292">&#171;US-Core&#187;</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="187" x="40.5" y="110.5889">us-core-implantable-device</text></g><!--entity t0--><g id="elem_t0"><rect fill="#F1F1F1" height="36.2969" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="146" x="61" y="184.2969" /><a href="StructureDefinition-ImplantableDevice.html" target="_top" title="StructureDefinition-ImplantableDevice.html" xlink:actuate="onRequest" xlink:href="StructureDefinition-ImplantableDevice.html" xlink:show="new" xlink:title="StructureDefinition-ImplantableDevice.html" xlink:type="simple"><text fill="#0000FF" font-family="sans-serif" font-size="14" lengthAdjust="spacing" text-decoration="underline" textLength="126" x="71" y="207.292">ImplantableDevice</text></a></g><!--reverse link b0 to t0--><g id="link_b0_t0"><path d="M134,144.7787 C134,158.7887 134,173.3091 134,184.2556 " fill="none" id="b0-backto-t0" style="stroke:#181818;stroke-width:1.0;" /><polygon fill="none" points="127.0001,144.4371,134,124.437,141.0001,144.437,127.0001,144.4371" style="stroke:#181818;stroke-width:1.0;" /></g></g></svg>
@@ -604,7 +608,7 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
 <td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Language of the resource content<br/><span style="font-weight:bold">Binding: </span><a href="http://hl7.org/fhir/R4/valueset-languages.html" title="http://hl7.org/fhir/ValueSet/languages">CommonLanguages</a> (<a href="http://hl7.org/fhir/R4/terminologies.html#preferred" title="Instances are encouraged to draw from the specified codes for interoperability purposes but are not required to do so to be considered conformant.">preferred</a>): A human language.<br/><br/>
 <table class="grid"><tr><td style="font-size: 11px"><b>Additional Bindings</b></td><td style="font-size: 11px">Purpose</td></tr>
 <tr><td style="font-size: 11px"><a href="http://hl7.org/fhir/R5/valueset-all-languages.html" title="http://hl7.org/fhir/ValueSet/all-languages">AllLanguages</a></td>
-<td style="font-size: 11px"><a href="http://hl7.org/fhir/R4/extension-elementdefinition-maxvalueset.html" title="A required binding, for use when the binding strength is ''extensible'' or ''preferred''">Max Binding</a></td></tr></table></td></tr>
+<td style="font-size: 11px"><a href="http://hl7.org/fhir/R4/extension-elementdefinition-maxvalueset.html" title="A required binding, for use when the binding strength is 'extensible' or 'preferred'">Max Binding</a></td></tr></table></td></tr>
 
 <tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7" id="a4."><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_datatype.gif" alt="." style="background-color: #F7F7F7; background-color: inherit" title="Data Type" class="hierarchy"/> <a no-external="true" href="StructureDefinition-ImplantableDevice-definitions.html#Device.text" title="A human-readable narrative that contains a summary of the resource and can be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it &quot;clinically safe&quot; for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety.">text</a><a name="Device.text"> </a></td>
 <td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"></td>
@@ -1010,7 +1014,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
       <a href="http://hl7.org/fhir/R5/valueset-all-languages.html" title="http://hl7.org/fhir/ValueSet/all-languages">AllLanguages</a>
     </td>
     <td style="font-size: 11px">
-      <a href="http://hl7.org/fhir/R4/extension-elementdefinition-maxvalueset.html" title="A required binding, for use when the binding strength is ''extensible'' or ''preferred''">Max Binding</a>
+      <a href="http://hl7.org/fhir/R4/extension-elementdefinition-maxvalueset.html" title="A required binding, for use when the binding strength is 'extensible' or 'preferred'">Max Binding</a>
     </td>
   </tr>
 </table>
@@ -1449,7 +1453,7 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
 <td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy">Language of the resource content<br/><span style="font-weight:bold">Binding: </span><a href="http://hl7.org/fhir/R4/valueset-languages.html" title="http://hl7.org/fhir/ValueSet/languages">CommonLanguages</a> (<a href="http://hl7.org/fhir/R4/terminologies.html#preferred" title="Instances are encouraged to draw from the specified codes for interoperability purposes but are not required to do so to be considered conformant.">preferred</a>): A human language.<br/><br/>
 <table class="grid"><tr><td style="font-size: 11px"><b>Additional Bindings</b></td><td style="font-size: 11px">Purpose</td></tr>
 <tr><td style="font-size: 11px"><a href="http://hl7.org/fhir/R5/valueset-all-languages.html" title="http://hl7.org/fhir/ValueSet/all-languages">AllLanguages</a></td>
-<td style="font-size: 11px"><a href="http://hl7.org/fhir/R4/extension-elementdefinition-maxvalueset.html" title="A required binding, for use when the binding strength is ''extensible'' or ''preferred''">Max Binding</a></td></tr></table></td></tr>
+<td style="font-size: 11px"><a href="http://hl7.org/fhir/R4/extension-elementdefinition-maxvalueset.html" title="A required binding, for use when the binding strength is 'extensible' or 'preferred'">Max Binding</a></td></tr></table></td></tr>
 
 <tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7" id="a4."><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_datatype.gif" alt="." style="background-color: #F7F7F7; background-color: inherit" title="Data Type" class="hierarchy"/> <a no-external="true" href="StructureDefinition-ImplantableDevice-definitions.html#Device.text" title="A human-readable narrative that contains a summary of the resource and can be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it &quot;clinically safe&quot; for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety.">text</a><a name="Device.text"> </a></td>
 <td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"></td>
@@ -1855,7 +1859,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
       <a href="http://hl7.org/fhir/R5/valueset-all-languages.html" title="http://hl7.org/fhir/ValueSet/all-languages">AllLanguages</a>
     </td>
     <td style="font-size: 11px">
-      <a href="http://hl7.org/fhir/R4/extension-elementdefinition-maxvalueset.html" title="A required binding, for use when the binding strength is ''extensible'' or ''preferred''">Max Binding</a>
+      <a href="http://hl7.org/fhir/R4/extension-elementdefinition-maxvalueset.html" title="A required binding, for use when the binding strength is 'extensible' or 'preferred'">Max Binding</a>
     </td>
   </tr>
 </table>
@@ -2042,7 +2046,7 @@ Summary
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.57.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Jun 4, 2024 15:52+0000">2024-06-04</span>
+          IG &#169; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.57.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Jun 11, 2024 05:38+0000">2024-06-11</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
