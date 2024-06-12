@@ -1027,6 +1027,7 @@ Characteristics: #can-be-target
 * eventInformationSource 0..1 Element "EVENT INFORMATION SOURCE (-1301)"
 * patientName 0..1 Element "PATIENT NAME (-.02)"
 * eventDateAndTime 0..1 Element "EVENT DATE AND TIME (-1201)"
+* immunizationLot 0..1 Reference "IMMUNIZATION LOT (-.05)"
 * dose 0..1 Element "DOSE (-1312)"
 * encounterProvider 0..1 Element "ENCOUNTER PROVIDER (-1204)"
 * comments 0..1 Element "COMMENTS (-81101)"
@@ -1037,6 +1038,7 @@ Characteristics: #can-be-target
 * reaction 0..1 Coding "REACTION (-.06)"
 * reaction from http://va.gov/fhir/ValueSet/VSVFImmunizationReaction-vista (preferred)
 * immunization only Reference(Immunization999999914)
+* immunizationLot only Reference(ImmunizationLot999999941)
 * doseUnits only Reference(UcumCodes7575)
 * visit only Reference(Visit9000010)
 

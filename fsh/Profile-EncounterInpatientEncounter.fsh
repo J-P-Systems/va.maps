@@ -65,7 +65,7 @@ Source: EncounterInpatientEncounter
 * location.location -> "460: reference from PTF - WARD AT DISCHARGE (45-2.2)"
 * location.location -> "461: reference from PTF - FACILITY (45-3)"
 * serviceProvider -> "1600: reference from PTF - FACILITY (45-3)"
-* type -> "1616: source value from INPATIENT CPT CODE - CPT CODE > CPT (46-.01 > 81-)"
+* type -> "1616: source value from INPATIENT CPT CODE - CPT CODE > CPT (46-.01 > 81-)" "46-.16>45"
 * type.coding.system -> "1616-1: fixed value = http://www.ama-assn.org/go/cpt" "from mapParameter 1"
 * type.coding.code -> "1616-2: source value from INPATIENT CPT CODE - CPT CODE > CPT - CPT CODE (46-.01 > 81-.01)" "from mapParameter 2"
 * type.coding.display -> "1616-3: source value from INPATIENT CPT CODE - CPT CODE > CPT - SHORT NAME (46-.01 > 81-2)" "from mapParameter 3"
