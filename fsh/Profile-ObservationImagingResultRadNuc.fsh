@@ -15,7 +15,7 @@ Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: ObservationImagingResultRadNuc
 * identifier.value -> "1619: source value from RAD/NUC MED REPORTS - IEN (74-.001)"
 * identifier.system -> "1619-1: fixed value = http://va.gov/identifiers/$Sta3n/74" "from mapParameter 1"
-* partOf -> "1620: reference from REGISTERED EXAMS - EXAMINATIONS (70.02-50)" "See use case Procedure: Radiology for US Core FHIR Procedure mapped elements"
+* partOf -> "1620: reference from EXAMINATIONS - IEN (70.03-.001) case 70.03-17=this" "See use case Procedure: Radiology for US Core FHIR Procedure mapped elements"
 * status -> "1623: terminologyMaps using VF_ImageStatusRadNuc on RAD/NUC MED REPORTS - REPORT STATUS (74-5)"
 * subject -> "1633: reference from RAD/NUC MED REPORTS - PATIENT NAME (74-2)"
 * effectiveDateTime -> "1636: source value from RAD/NUC MED REPORTS - EXAM DATE/TIME (74-3)"

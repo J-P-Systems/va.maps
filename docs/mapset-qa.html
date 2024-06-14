@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Mapset Qa - US Veterans Administration FHIR Map Set Implementation Guide v0.57.0</title>
+    <title>Mapset Qa - US Veterans Administration FHIR Map Set Implementation Guide v0.58.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -58,7 +58,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">US Veterans Administration FHIR Map Set Implementation Guide</span>
             <br/>
-            <span style="display:inline-block;">0.57.0 - 240701a
+            <span style="display:inline-block;">0.58.0 - 240701a
 
 
 
@@ -151,7 +151,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">US Veterans Administration FHIR Map Set Implementation Guide - Local Development build (v0.57.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">US Veterans Administration FHIR Map Set Implementation Guide - Local Development build (v0.58.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>Mapset Qa</h2>
   
 
@@ -201,11 +201,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h3 id="use-cases">Use Cases</h3>
 <ol>
-  <li>ERROR: use-case Vital Signs: CPM not found</li>
-  <li>WARN: 252 profile AllergyIntolerance expected only vistaFile 120.8 but got 120.81</li>
-  <li>WARN: 252-2 profile AllergyIntolerance expected only vistaFile 120.8 but got 120.81</li>
-  <li>WARN: 252-3 profile AllergyIntolerance expected only vistaFile 120.8 but got 120.81</li>
-  <li>WARN: 252-4 profile AllergyIntolerance expected only vistaFile 120.8 but got 120.81</li>
+  <li>ERROR: use-case Vital Signs: CPM not found or inactive</li>
   <li>WARN: 557 profile AllergyIntolerance expected only vistaFile 120.8 but got 120.85</li>
   <li>WARN: 744 profile Appointment expected only vistaFile 2.98 but got 44.003</li>
   <li>WARN: 1722 profile Appointment expected only vistaFile 2.98 but got 2</li>
@@ -297,12 +293,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li>WARN: 1399 profile ImplantableDeviceProsthesis expected only vistaFile 130.01 but got 130</li>
   <li>WARN: 1807 profile ImplantableDeviceProsthesis expected only vistaFile 130.01 but got 130</li>
   <li>WARN: 422 profile PractitionerRole expected only vistaFile 200 but got 44.1</li>
-  <li>WARN: 1508 profile ProcedureRadiology expected only vistaFile 70.03 but got 70.02</li>
-  <li>WARN: 1510 profile ProcedureRadiology expected only vistaFile 70.03 but got 70</li>
-  <li>WARN: 1512 profile ProcedureRadiology expected only vistaFile 70.03 but got 70.02</li>
-  <li>WARN: 1514 profile ProcedureRadiology expected only vistaFile 70.03 but got 70.02</li>
-  <li>WARN: 1244 profile SmokingStatusObservation expected only vistaFile 9000010.23 but got 9999999.64</li>
-  <li>WARN: 1620 profile ObservationImagingResultRadNuc expected only vistaFile 74 but got 70.02</li>
+  <li>WARN: 1510 profile ProcedureRadiology expected only vistaFile 70.02 but got 70</li>
+  <li>WARN: 1620 profile ObservationImagingResultRadNuc expected only vistaFile 74 but got 70.03</li>
 </ol>
 
 <h3 id="termmaps">TermMaps</h3>
@@ -362,10 +354,15 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <ol>
   <li>ERROR: Logical Model ORGANISM (63.3) field has more than 1 fieldNum: “ORGANISM (-5+to+160)” and “ORGANISM (-5.1+to+160.1)”?</li>
   <li>ERROR: Logical Model REFILL (52.1) field has more than 1 fieldNum: “MAIL/WINDOW/PARK (-.01)” and “MAIL/WINDOW/PARK (-2)”?</li>
+  <li>WARN: VHealthFactors900001023.healthFactor has binding http://va.gov/fhir/ValueSet/VSVFSmokingStatus-vista and reference HealthFactors999999964?</li>
 </ol>
 
 <h3 id="vista-filefield-numnames">VistA File/Field Num/Names</h3>
 <ol>
+  <li>WARN: 252 file-field 120.8-10 expected “PATIENT ALLERGIES - REACTIONS” but got “PATIENT ALlERGIES - REACTIONS”</li>
+  <li>WARN: 252-2 file-field 120.8-10 expected “PATIENT ALLERGIES - REACTIONS” but got “PATIENT ALlERGIES - REACTIONS”</li>
+  <li>WARN: 252-3 file-field 120.8-10 expected “PATIENT ALLERGIES - REACTIONS” but got “PATIENT ALlERGIES - REACTIONS”</li>
+  <li>WARN: 252-4 file-field 120.8-10 expected “PATIENT ALLERGIES - REACTIONS” but got “PATIENT ALlERGIES - REACTIONS”</li>
   <li>WARN: 852 unknown file-field 63.04-2+through+862</li>
   <li>WARN: 857 unknown file-field 63.04-2+through+862</li>
   <li>WARN: 1817 file-field 63.09-.16 expected “CYTOPATHOLOGY - TIU REFERENCE DATE/TIME - CY” but got “SURGICAL PATHOLOGY - TIU REFERENCE DATE/TIME - CY”</li>
@@ -378,6 +375,13 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li>WARN: 339 file-field 9000010.11-.05 expected “V IMMUNIZATION - LOT” but got “V IMMUNIZATION - IMMUNIZATION LOT”</li>
   <li>WARN: 1609 file-field 9000010.11-.05 expected “V IMMUNIZATION - LOT” but got “V IMMUNIZATION - IMMUNIZATION LOT”</li>
   <li>WARN: 1712 subfile-field 52.1-.01 expected “REFILL - REFILL DATE” but got “REFILL - MAIL/WINDOW/PARK”</li>
+  <li>WARN: 1506 file-field 70.02-50 expected “REGISTERED EXAMS - EXAMINATIONS” but got “REGISTRED EXAMS - EXAMINATIONS”</li>
+  <li>WARN: 1507 file-field 70.02-50 expected “REGISTERED EXAMS - EXAMINATIONS” but got “REGISTRED EXAMS - EXAMINATIONS”</li>
+  <li>WARN: 1509 file-field 70.02-50 expected “REGISTERED EXAMS - EXAMINATIONS” but got “REGISTRED EXAMS - EXAMINATIONS”</li>
+  <li>WARN: 1509-2 file-field 70.02-50 expected “REGISTERED EXAMS - EXAMINATIONS” but got “REGISTRED EXAMS - EXAMINATIONS”</li>
+  <li>WARN: 1509-3 file-field 70.02-50 expected “REGISTERED EXAMS - EXAMINATIONS” but got “REGISTRED EXAMS - EXAMINATIONS”</li>
+  <li>WARN: 1511 file-field 70.02-50 expected “REGISTERED EXAMS - EXAMINATIONS” but got “REGISTRED EXAMS - EXAMINATIONS”</li>
+  <li>WARN: 1513 file-field 70.02-50 expected “REGISTERED EXAMS - EXAMINATIONS” but got “REGISTRED EXAMS - EXAMINATIONS”</li>
 </ol>
 
 <h1 id="mustsupport">MustSupport</h1>
@@ -513,7 +517,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.57.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Jun 12, 2024 18:51+0000">2024-06-12</span>
+          IG &#169; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.58.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Jun 14, 2024 11:56+0000">2024-06-14</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

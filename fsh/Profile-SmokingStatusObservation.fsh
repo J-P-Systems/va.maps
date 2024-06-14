@@ -19,7 +19,7 @@ Source: SmokingStatusObservation
 * identifier.system -> "1241-1: fixed value = http://va.gov/identifiers/$Sta3n/9000010.23" "from mapParameter 1"
 * status -> "1242: fixed value = #final"
 * category[SocialHistory] -> "1243: fixed value = http://terminology.hl7.org/CodeSystem/observation-category#social-history"
-* code.coding -> "1244: fixed value = http://loinc.org#72166-2 when HEALTH FACTORS - CATEGORY (9999999.64-.03) case TOBACCO"
+* code.coding -> "1244: fixed value = http://loinc.org#72166-2 when V HEALTH FACTORS - HEALTH FACTOR > HEALTH FACTORS - CATEGORY (9000010.23-.01 > 9999999.64-.03) case TOBACCO [C]"
 * subject -> "1245: reference from V HEALTH FACTORS - PATIENT NAME (9000010.23-.02)"
 * encounter -> "1246: reference from V HEALTH FACTORS - VISIT (9000010.23-.03)"
 * effectiveDateTime -> "1247: source value from V HEALTH FACTORS - EVENT DATE AND TIME (9000010.23-1201)"
@@ -32,7 +32,7 @@ Mapping: cdw-to-SmokingStatusObservation
 Id: cdw
 Title: "Clinical Data Warehouse (CDW)"
 Source: SmokingStatusObservation
-* code.coding -> "Dim.HealthFactorType.CategoryHealthFactorTypeIEN"
+* code.coding -> "HF.HealthFactor.HealthFactorTypeIEN\nDim.HealthFactorType.CategoryHealthFactorTypeIEN"
 * subject -> "HF.HealthFactor.PatientIEN"
 * encounter -> "HF.HealthFactor.VisitDateTime,HF.HealthFactor.VisitIEN"
 * effectiveDateTime -> "HF.HealthFactor.EventDateTime"

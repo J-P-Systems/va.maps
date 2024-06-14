@@ -492,6 +492,7 @@ Characteristics: #can-be-target
 * patient 0..1 Element "PATIENT (-.01)"
 * originationDatetime 0..1 Element "ORIGINATION DATE/TIME (-4)"
 * originator 0..1 Element "ORIGINATOR (-5)"
+* reactions 0..1 Reference "REACTIONS (-10)"
 * mechanism 0..1 Coding "MECHANISM (-17)"
 * mechanism from http://va.gov/fhir/ValueSet/VSVFallergyMechanism-vista (preferred)
 * verified 0..1 Coding "VERIFIED (-19)"
@@ -502,9 +503,8 @@ Characteristics: #can-be-target
 * allergyType from http://va.gov/fhir/ValueSet/VSVFallergySubstanceCategory-vista (preferred)
 * comments 0..1 Reference "COMMENTS (-26)"
 * drugIngredients 0..1 Element "DRUG INGREDIENTS (-2)"
-* reactions 0..1 Reference "REACTIONS (-10)"
-* comments only Reference(Comments120826)
 * reactions only Reference(Reactions12081)
+* comments only Reference(Comments120826)
 
 Logical: Reactions12081
 Id: Reactions12081
@@ -1306,6 +1306,19 @@ Description: "This StructureDefinition contains the Logical Model for the mapped
 Characteristics: #can-be-target
 * narrative 0..1 Element "NARRATIVE (-.01)"
 
+Logical: RegistredExams7002
+Id: RegistredExams7002
+Title: "REGISTRED EXAMS (70.02)"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file REGISTRED EXAMS (70.02)"
+Characteristics: #can-be-target
+* examinations 0..1 Reference "EXAMINATIONS (-50)"
+* typeOfImaging 0..1 Reference "TYPE OF IMAGING (-2)"
+* examDate 0..1 Element "EXAM DATE (-.01)"
+* imagingLocation 0..1 Reference "IMAGING LOCATION (-4)"
+* examinations only Reference(Examinations7003)
+* typeOfImaging only Reference(ImagingType792)
+* imagingLocation only Reference(ImagingLocations791)
+
 Logical: Examinations7003
 Id: Examinations7003
 Title: "EXAMINATIONS (70.03)"
@@ -1316,6 +1329,7 @@ Characteristics: #can-be-target
 * procedure 0..1 Reference "PROCEDURE (-2)"
 * visit 0..1 Element "VISIT (-27)"
 * primaryInterpretingStaff 0..1 Element "PRIMARY INTERPRETING STAFF (-15)"
+* ien 0..1 Element "IEN (-.001)"
 * examStatus only Reference(ExaminationStatus72)
 * reasonForCancellation only Reference(RadnucMedReason752)
 * procedure only Reference(RadnucMedProcedures71)
@@ -1326,18 +1340,6 @@ Title: "RAD/NUC MED REASON (75.2)"
 Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file RAD/NUC MED REASON (75.2)"
 Characteristics: #can-be-target
 * reason 0..1 Element "REASON (-.01)"
-
-Logical: RegisteredExams7002
-Id: RegisteredExams7002
-Title: "REGISTERED EXAMS (70.02)"
-Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file REGISTERED EXAMS (70.02)"
-Characteristics: #can-be-target
-* typeOfImaging 0..1 Reference "TYPE OF IMAGING (-2)"
-* examDate 0..1 Element "EXAM DATE (-.01)"
-* imagingLocation 0..1 Reference "IMAGING LOCATION (-4)"
-* examinations 0..1 Element "EXAMINATIONS (-50)"
-* typeOfImaging only Reference(ImagingType792)
-* imagingLocation only Reference(ImagingLocations791)
 
 Logical: ImagingType792
 Id: ImagingType792
@@ -1359,13 +1361,13 @@ Title: "V HEALTH FACTORS (9000010.23)"
 Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file V HEALTH FACTORS (9000010.23)"
 Characteristics: #can-be-target
 * ien 0..1 Element "IEN (-.001)"
+* healthFactor 0..1 Reference "HEALTH FACTOR (-.01) w/ binding http://va.gov/fhir/ValueSet/VSVFSmokingStatus-vista"
 * patientName 0..1 Element "PATIENT NAME (-.02)"
 * visit 0..1 Element "VISIT (-.03)"
 * eventDateAndTime 0..1 Element "EVENT DATE AND TIME (-1201)"
 * encounterProvider 0..1 Element "ENCOUNTER PROVIDER (-1204)"
-* healthFactor 0..1 Coding "HEALTH FACTOR (-.01)"
-* healthFactor from http://va.gov/fhir/ValueSet/VSVFSmokingStatus-vista (preferred)
 * comments 0..1 Element "COMMENTS (-81101)"
+* healthFactor only Reference(HealthFactors999999964)
 
 Logical: HealthFactors999999964
 Id: HealthFactors999999964
