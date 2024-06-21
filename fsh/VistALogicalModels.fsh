@@ -819,8 +819,6 @@ Characteristics: #can-be-target
 * ien 0..1 Element "IEN (-.001)"
 * collectionSample 0..1 Reference "COLLECTION SAMPLE (-.055)"
 * bactRptRemark 0..1 Reference "BACT RPT REMARK (-13)"
-* bactRptStatus 0..1 Coding "BACT RPT STATUS (-11.5)"
-* bactRptStatus from http://va.gov/fhir/ValueSet/VSVFLabObservationStatus-vista (preferred)
 * urineScreen 0..1 Element "URINE SCREEN (-11.57)"
 * sputumScreen 0..1 Element "SPUTUM SCREEN (-11.58)"
 * gramStain 0..1 Reference "GRAM STAIN (-11.6)"
@@ -1361,7 +1359,7 @@ Title: "V HEALTH FACTORS (9000010.23)"
 Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file V HEALTH FACTORS (9000010.23)"
 Characteristics: #can-be-target
 * ien 0..1 Element "IEN (-.001)"
-* healthFactor 0..1 Reference "HEALTH FACTOR (-.01) w/ binding http://va.gov/fhir/ValueSet/VSVFSmokingStatus-vista"
+* healthFactor 0..1 Reference "HEALTH FACTOR (-.01)"
 * patientName 0..1 Element "PATIENT NAME (-.02)"
 * visit 0..1 Element "VISIT (-.03)"
 * eventDateAndTime 0..1 Element "EVENT DATE AND TIME (-1201)"
@@ -1375,6 +1373,8 @@ Title: "HEALTH FACTORS (9999999.64)"
 Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file HEALTH FACTORS (9999999.64)"
 Characteristics: #can-be-target
 * category 0..1 Element "CATEGORY (-.03)"
+* factor 0..1 Coding "FACTOR (-.01)"
+* factor from http://va.gov/fhir/ValueSet/VSVFSmokingStatus-vista (preferred)
 
 Logical: GmrvVitalMeasurement1205
 Id: GmrvVitalMeasurement1205

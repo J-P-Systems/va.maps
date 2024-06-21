@@ -8,8 +8,7 @@ Description: "This StructureDefinition contains the maps for VistA file MICROBIO
 * component ^slicing.discriminator.path = "code"
 * component ^slicing.rules = #open
 * component contains va-component 0..1
-* code and status and valueCodeableConcept.coding and valueString and component[va-component].code and component[va-component].code.coding.code and component[va-component].code.coding.system and component[va-component].valueString and component[va-component].interpretation and effectiveDateTime and note and performer and specimen and identifier.value and identifier.system and code.coding and code.coding.system and code.coding.code and code.coding.display and issued and category and subject MS
-* status from http://va.gov/fhir/ValueSet/VSVFLabObservationStatus
+* code and valueCodeableConcept.coding and valueString and component[va-component].code and component[va-component].code.coding.code and component[va-component].code.coding.system and component[va-component].valueString and component[va-component].interpretation and effectiveDateTime and note and performer and specimen and identifier.value and identifier.system and code.coding and code.coding.system and code.coding.code and code.coding.display and issued and category and subject MS
 * component[va-component].code.coding.system = "http://loinc.org"
 * identifier.system = "http://va.gov/identifiers/$Sta3n/63.05"
 * category = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
@@ -19,7 +18,6 @@ Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: LaboratoryResultsMicrobiologyBacteriologyObservation
 * code -> "1525: fixed value = http://loinc.org#42803-7 Bacteria identified in Isolate when MICROBIOLOGY - ORDERED TEST > ORDERED TEST - LAB TEST ORDERED > LABORATORY TEST - SITE/SPECIMEN > SITE/SPECIMEN - LOINC CODE > LAB LOINC (63.05-.35 > 63.5-13 > 60-100 > 60.01-95.3 > 95.3-) case NULL"
-* status -> "1488: terminologyMaps using VF_LabObservationStatus on MICROBIOLOGY - BACT RPT STATUS (63.05-11.5)"
 * valueCodeableConcept.coding -> "1516: terminologyMaps using null on MICROBIOLOGY - URINE SCREEN (63.05-11.57)"
 * valueString -> "1517: source value from MICROBIOLOGY - SPUTUM SCREEN (63.05-11.58)"
 * valueString -> "1518: source value from MICROBIOLOGY - GRAM STAIN > GRAM STAIN - GRAM STAIN (63.05-11.6 > 63.29-.01)"
@@ -48,7 +46,6 @@ Mapping: cdw-to-LaboratoryResultsMicrobiologyBacteriologyObservation
 Id: cdw
 Title: "Clinical Data Warehouse (CDW)"
 Source: LaboratoryResultsMicrobiologyBacteriologyObservation
-* status -> "Micro.Microbiology.BacteriologyReportStatus"
 * valueCodeableConcept.coding -> "Micro.Microbiology.UrineScreen"
 * valueString -> "Micro.Microbiology.SputumScreen"
 * valueString -> "Micro.BacteriologyReports.GramStain"
