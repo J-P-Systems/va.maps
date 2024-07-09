@@ -157,7 +157,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","C*E.7","./codeSystemVersion"
 "PractitionerRole.specialty.coding.code","PractitionerRole.specialty.coding.code","","","",0,1,"Y","","Y","code {[]} {[]}
 ","Symbol in syntax defined by the system","A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination).","","Need to refer to a particular code in the system.","","","","","","","",,,,,"",,,,"Coding.code",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","419: source value from NEW PERSON - PERSON CLASS > PERSON CLASS - Person Class > PERSON CLASS - X12 CODE (200-8932.1 > 200.05-.01 > 8932.1-6)","C*E.1","./code"
+","419: source value from NEW PERSON - PERSON CLASS > PERSON CLASS - X12 CODE (200-8932.1 > 200.05-.01 > 8932.1-6)","C*E.1","./code"
 "PractitionerRole.specialty.coding.display","PractitionerRole.specialty.coding.display","","","",0,1,"Y","","Y","string {[]} {[]}
 ","Representation defined by the system","A representation of the meaning of the code in the system, following the rules of the system.","","Need to be able to carry a human-readable meaning of the code for readers that do not know  the system.","","","","","","","",,,,,"",,,,"Coding.display",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","419-2: undefined","C*E.2 - but note this is not well followed","CV.displayName"
@@ -170,7 +170,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "PractitionerRole.location","PractitionerRole.location","","","",0,*,"Y","","Y","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/Location]]}
 ","The location(s) at which this practitioner provides care","The location(s) at which this practitioner provides care.","","","","","","","","","",,,,,"",,,,"PractitionerRole.location",0,*,"us-core-13
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","422: reference from PROVIDER - PROVIDER (44.1-.01)","Dim.LocationProvider.StaffIEN",".performance.ActDefinitionOrEvent.ServiceDeliveryLocation[@classCode = 'SDLOC']","(ServD maps Practitioners and Organizations via another entity, so this concept is not available)<br/> However these are accessed via the Site.ServiceSite.ServiceSiteProvider record. (The Site has the location)","FiveWs.where[x]"
+","422: reference from HOSPITAL LOCATION - PROVIDER (44.1-.01)","Dim.LocationProvider.StaffIEN",".performance.ActDefinitionOrEvent.ServiceDeliveryLocation[@classCode = 'SDLOC']","(ServD maps Practitioners and Organizations via another entity, so this concept is not available)<br/> However these are accessed via the Site.ServiceSite.ServiceSiteProvider record. (The Site has the location)","FiveWs.where[x]"
 "PractitionerRole.healthcareService","PractitionerRole.healthcareService","","","",0,*,"","","","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/HealthcareService]]}
 ","The list of healthcare services that this worker provides for this role's Organization/Location(s)","The list of healthcare services that this worker provides for this role's Organization/Location(s).","","","","","","","","","",,,,,"",,,,"PractitionerRole.healthcareService",0,*,"us-core-13
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
@@ -365,58 +365,58 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "PractitionerRole.telecom:va-voice-pager.period","PractitionerRole.telecom.period","","","",0,1,"","","Y","Period {[]} {[]}
 ","Time period when the contact point was/is in use","Time period when the contact point was/is in use.","","","","","","","","","",,,,,"",,,,"ContactPoint.period",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","N/A","./usablePeriod[type=""IVL<TS>""]","./StartDate and ./EndDate"
-"PractitionerRole.telecom:va-digital-pager","PractitionerRole.telecom","va-digital-pager","","",0,1,"Y","","Y","ContactPoint {[]} {[]}
+"PractitionerRole.telecom:va-data-pager","PractitionerRole.telecom","va-data-pager","","",0,1,"Y","","Y","ContactPoint {[]} {[]}
 ","Contact details that are specific to the role/location/service","Contact details that are specific to the role/location/service.","","Often practitioners have a dedicated line for each location (or service) that they work at, and need to be able to define separate contact details for each of these.","","","","","","","",,,,,"",,,,"PractitionerRole.telecom",0,*,"pd-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".telecom"
-"PractitionerRole.telecom:va-digital-pager.id","PractitionerRole.telecom.id","","","",0,1,"","","","string {[]} {[]}
+"PractitionerRole.telecom:va-data-pager.id","PractitionerRole.telecom.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"","","n/a"
-"PractitionerRole.telecom:va-digital-pager.extension","PractitionerRole.telecom.extension","","extensions
+"PractitionerRole.telecom:va-data-pager.extension","PractitionerRole.telecom.extension","","extensions
 user content","",0,*,"","","","Extension {[]} {[]}
 ","Additional content defined by implementations","May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.","There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.","","","","","","","","",,,,,"","value:url}
 ","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}","n/a"
-"PractitionerRole.telecom:va-digital-pager.system","PractitionerRole.telecom.system","","","",1,1,"Y","","Y","code {[]} {[]}
+"PractitionerRole.telecom:va-data-pager.system","PractitionerRole.telecom.system","","","",1,1,"Y","","Y","code {[]} {[]}
 ","phone | fax | email | pager | url | sms | other","Telecommunications form for contact point - what communications system is required to make use of the contact.","","","","","","<valueCode xmlns=""http://hl7.org/fhir"" value=""pager""/>","","","",,"required","Telecommunications form for contact point.","http://hl7.org/fhir/ValueSet/contact-point-system|4.0.1","",,,,"ContactPoint.system",0,1,"cpt-2
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","390-1: fixed value = #pager","XTN.3","./scheme","./ContactPointType"
-"PractitionerRole.telecom:va-digital-pager.value","PractitionerRole.telecom.value","","","",1,1,"Y","","Y","string {[]} {[]}
+"PractitionerRole.telecom:va-data-pager.value","PractitionerRole.telecom.value","","","",1,1,"Y","","Y","string {[]} {[]}
 ","The actual contact point details","The actual contact point details, in a form that is meaningful to the designated communication system (i.e. phone number or email address).","Additional text data such as phone extension numbers, or notes about use of the contact are sometimes included in the value.","Need to support legacy numbers that are not in a tightly controlled format.","","","","","","","",,,,,"",,,,"ContactPoint.value",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","390: source value from NEW PERSON - DIGITAL PAGER (200-.138)","SStaff.PrescribingProvider.DigitalPager,SStaff.SStaff.DigitalPager","XTN.1 (or XTN.12)","./url","./Value"
-"PractitionerRole.telecom:va-digital-pager.use","PractitionerRole.telecom.use","","","",0,1,"","Y","Y","code {[]} {[]}
+"PractitionerRole.telecom:va-data-pager.use","PractitionerRole.telecom.use","","","",0,1,"","Y","Y","code {[]} {[]}
 ","home | work | temp | old | mobile - purpose of this contact point","Identifies the purpose for the contact point.","Applications can assume that a contact is current unless it explicitly says that it is temporary or old.","Need to track the way a person uses this contact, so a user can choose which is appropriate for their purpose.","","","","","","","",,"required","Use of contact point.","http://hl7.org/fhir/ValueSet/contact-point-use|4.0.1","",,,,"ContactPoint.use",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","XTN.2 - but often indicated by field","unique(./use)","./ContactPointPurpose"
-"PractitionerRole.telecom:va-digital-pager.rank","PractitionerRole.telecom.rank","","","",0,1,"","","Y","positiveInt {[]} {[]}
+"PractitionerRole.telecom:va-data-pager.rank","PractitionerRole.telecom.rank","","","",0,1,"","","Y","positiveInt {[]} {[]}
 ","Specify preferred order of use (1 = highest)","Specifies a preferred order in which to use a set of contacts. ContactPoints with lower rank values are more preferred than those with higher rank values.","Note that rank does not necessarily follow the order in which the contacts are represented in the instance.","","","","","","","","",,,,,"",,,,"ContactPoint.rank",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","n/a","n/a"
-"PractitionerRole.telecom:va-digital-pager.period","PractitionerRole.telecom.period","","","",0,1,"","","Y","Period {[]} {[]}
+"PractitionerRole.telecom:va-data-pager.period","PractitionerRole.telecom.period","","","",0,1,"","","Y","Period {[]} {[]}
 ","Time period when the contact point was/is in use","Time period when the contact point was/is in use.","","","","","","","","","",,,,,"",,,,"ContactPoint.period",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","N/A","./usablePeriod[type=""IVL<TS>""]","./StartDate and ./EndDate"
-"PractitionerRole.telecom:va-email","PractitionerRole.telecom","va-email","","",0,1,"Y","","Y","ContactPoint {[]} {[]}
+"PractitionerRole.telecom:va-mail","PractitionerRole.telecom","va-mail","","",0,1,"Y","","Y","ContactPoint {[]} {[]}
 ","Contact details that are specific to the role/location/service","Contact details that are specific to the role/location/service.","","Often practitioners have a dedicated line for each location (or service) that they work at, and need to be able to define separate contact details for each of these.","","","","","","","",,,,,"",,,,"PractitionerRole.telecom",0,*,"pd-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".telecom"
-"PractitionerRole.telecom:va-email.id","PractitionerRole.telecom.id","","","",0,1,"","","","string {[]} {[]}
+"PractitionerRole.telecom:va-mail.id","PractitionerRole.telecom.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"","","n/a"
-"PractitionerRole.telecom:va-email.extension","PractitionerRole.telecom.extension","","extensions
+"PractitionerRole.telecom:va-mail.extension","PractitionerRole.telecom.extension","","extensions
 user content","",0,*,"","","","Extension {[]} {[]}
 ","Additional content defined by implementations","May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.","There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.","","","","","","","","",,,,,"","value:url}
 ","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}","n/a"
-"PractitionerRole.telecom:va-email.system","PractitionerRole.telecom.system","","","",1,1,"Y","","Y","code {[]} {[]}
+"PractitionerRole.telecom:va-mail.system","PractitionerRole.telecom.system","","","",1,1,"Y","","Y","code {[]} {[]}
 ","phone | fax | email | pager | url | sms | other","Telecommunications form for contact point - what communications system is required to make use of the contact.","","","","","","<valueCode xmlns=""http://hl7.org/fhir"" value=""email""/>","","","",,"required","Telecommunications form for contact point.","http://hl7.org/fhir/ValueSet/contact-point-system|4.0.1","",,,,"ContactPoint.system",0,1,"cpt-2
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","391-1: fixed value = #email","XTN.3","./scheme","./ContactPointType"
-"PractitionerRole.telecom:va-email.value","PractitionerRole.telecom.value","","","",1,1,"Y","","Y","string {[]} {[]}
+"PractitionerRole.telecom:va-mail.value","PractitionerRole.telecom.value","","","",1,1,"Y","","Y","string {[]} {[]}
 ","The actual contact point details","The actual contact point details, in a form that is meaningful to the designated communication system (i.e. phone number or email address).","Additional text data such as phone extension numbers, or notes about use of the contact are sometimes included in the value.","Need to support legacy numbers that are not in a tightly controlled format.","","","","","","","",,,,,"",,,,"ContactPoint.value",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","391: source value from NEW PERSON - EMAIL ADDRESS (200-.151)","SStaff.PrescribingProvider.EmailAddress,SStaff.SStaff.EmailAddress","XTN.1 (or XTN.12)","./url","./Value"
-"PractitionerRole.telecom:va-email.use","PractitionerRole.telecom.use","","","",0,1,"","Y","Y","code {[]} {[]}
+"PractitionerRole.telecom:va-mail.use","PractitionerRole.telecom.use","","","",0,1,"","Y","Y","code {[]} {[]}
 ","home | work | temp | old | mobile - purpose of this contact point","Identifies the purpose for the contact point.","Applications can assume that a contact is current unless it explicitly says that it is temporary or old.","Need to track the way a person uses this contact, so a user can choose which is appropriate for their purpose.","","","","","","","",,"required","Use of contact point.","http://hl7.org/fhir/ValueSet/contact-point-use|4.0.1","",,,,"ContactPoint.use",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","XTN.2 - but often indicated by field","unique(./use)","./ContactPointPurpose"
-"PractitionerRole.telecom:va-email.rank","PractitionerRole.telecom.rank","","","",0,1,"","","Y","positiveInt {[]} {[]}
+"PractitionerRole.telecom:va-mail.rank","PractitionerRole.telecom.rank","","","",0,1,"","","Y","positiveInt {[]} {[]}
 ","Specify preferred order of use (1 = highest)","Specifies a preferred order in which to use a set of contacts. ContactPoints with lower rank values are more preferred than those with higher rank values.","Note that rank does not necessarily follow the order in which the contacts are represented in the instance.","","","","","","","","",,,,,"",,,,"ContactPoint.rank",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","n/a","n/a"
-"PractitionerRole.telecom:va-email.period","PractitionerRole.telecom.period","","","",0,1,"","","Y","Period {[]} {[]}
+"PractitionerRole.telecom:va-mail.period","PractitionerRole.telecom.period","","","",0,1,"","","Y","Period {[]} {[]}
 ","Time period when the contact point was/is in use","Time period when the contact point was/is in use.","","","","","","","","","",,,,,"",,,,"ContactPoint.period",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","N/A","./usablePeriod[type=""IVL<TS>""]","./StartDate and ./EndDate"
 "PractitionerRole.availableTime","PractitionerRole.availableTime","","","",0,*,"","","","BackboneElement {[]} {[]}

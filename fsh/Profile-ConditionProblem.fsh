@@ -7,12 +7,12 @@ Description: "This StructureDefinition contains the maps for VistA file PROBLEM 
 * code.coding ^slicing.discriminator.type = #pattern
 * code.coding ^slicing.discriminator.path = "$this"
 * code.coding ^slicing.rules = #open
-* code.coding contains va-icd 0..1 and va-sct 0..1
-* category[us-core] and identifier.value and identifier.system and clinicalStatus and code.coding[va-icd] and code.coding[va-icd].system and code.coding[va-icd].code and code.coding[va-sct].code and code.coding[va-sct].system and code.text and subject and onsetDateTime and recordedDate and recorder and verificationStatus and abatementDateTime MS
+* code.coding contains va-icd 0..1
+* category[us-core] and identifier.value and identifier.system and clinicalStatus and code.coding[va-icd] and code.coding[va-icd].system and code.coding[va-icd].code and code.coding.code and code.coding.system and code.text and subject and onsetDateTime and recordedDate and recorder and verificationStatus and abatementDateTime MS
 * category[us-core] = http://terminology.hl7.org/CodeSystem/condition-category#problem-list-item
 * identifier.system = "http://va.gov/identifiers/$Sta3n/9000011"
 * code.coding[va-icd].system = "urn:see-termmap-in-mapParameter"
-* code.coding[va-sct].system = "http://snomed.info/sct"
+* code.coding.system = "http://snomed.info/sct"
 * clinicalStatus from http://va.gov/fhir/ValueSet/VSVFproblemStatus
 * verificationStatus from http://va.gov/fhir/ValueSet/VSVFproblemVerificationStatus
 
@@ -27,8 +27,8 @@ Source: ConditionProblem
 * code.coding[va-icd] -> "365: source value from PROBLEM - DIAGNOSIS > ICD DIAGNOSIS (9000011-.01 > 80-)"
 * code.coding[va-icd].system -> "365-1: fixed value = urn:see-termmap-in-mapParameter" "from mapParameter 1"
 * code.coding[va-icd].code -> "365-2: source value from PROBLEM - DIAGNOSIS > ICD DIAGNOSIS - CODE NUMBER (9000011-.01 > 80-.01)" "from mapParameter 2"
-* code.coding[va-sct].code -> "366: source value from PROBLEM - SNOMED CT CONCEPT CODE (9000011-80001)"
-* code.coding[va-sct].system -> "366-1: fixed value = http://snomed.info/sct" "from mapParameter 1"
+* code.coding.code -> "366: source value from PROBLEM - SNOMED CT CONCEPT CODE (9000011-80001)"
+* code.coding.system -> "366-1: fixed value = http://snomed.info/sct" "from mapParameter 1"
 * code.text -> "957: source value from PROBLEM - PROVIDER NARRATIVE (9000011-.05)"
 * subject -> "367: reference from PROBLEM - PATIENT NAME (9000011-.02)"
 * onsetDateTime -> "369: source value from PROBLEM - DATE OF ONSET (9000011-.13)"
@@ -45,7 +45,7 @@ Source: ConditionProblem
 * clinicalStatus -> "Outpat.ProblemList.ResolvedDateTime"
 * code.coding[va-icd] -> "Outpat.ProblemList.ICDIEN"
 * code.coding[va-icd].code -> "Outpat.ProblemList.ICDIEN\nDim.ICD10.ICD10Code,Dim.ICD9.ICD9Code"
-* code.coding[va-sct].code -> "Outpat.ProblemList.SNOMEDCTConceptCode"
+* code.coding.code -> "Outpat.ProblemList.SNOMEDCTConceptCode"
 * code.text -> "Outpat.ProblemList.ProviderNarrativeIEN"
 * subject -> "Outpat.ProblemList.PatientIEN"
 * onsetDateTime -> "Outpat.ProblemList.OnsetDateTime"

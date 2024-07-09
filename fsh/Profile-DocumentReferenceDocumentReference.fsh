@@ -7,7 +7,7 @@ Description: "This StructureDefinition contains the maps for VistA file TIU DOCU
 * identifier and identifier.system and type and type.coding.system and type.coding.code and type.text and category[us-core] and subject and date and author and authenticator and custodian and description and content.attachment.id and content.attachment.contentType and content.attachment.data and content.attachment.size and content.attachment.hash and content.attachment.title and content.attachment.creation and context.encounter and context.event and context.period.start and context.period.end and context.facilityType and context.practiceSetting MS
 * identifier.system = "http://va.gov/identifiers/$Sta3n/8925"
 * type.coding.system = "http://loinc.org"
-* category[us-core] = http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category#clinical-note
+* category[us-core] = #clinical-note
 * content.attachment.contentType = #text/plain
 
 Mapping: vista-to-DocumentReferenceDocumentReference
@@ -21,7 +21,7 @@ Source: DocumentReferenceDocumentReference
 * type.coding.system -> "874-1: fixed value = http://loinc.org" "from mapParameter 1"
 * type.coding.code -> "874-2: source value from TIU DOCUMENT - DOCUMENT TYPE > TIU DOCUMENT DEFINITION - VHA ENTERPRISE STANDARD TITLE > TIU VHA ENTERPRISE STANDARD TITLE - CODING SYSTEM (8925-.01 > 8925.1-1501 > 8926.1-2)" "from mapParameter 2"
 * type.text -> "874-3: source value from TIU DOCUMENT - DOCUMENT TYPE > TIU DOCUMENT DEFINITION - VHA ENTERPRISE STANDARD TITLE > TIU VHA ENTERPRISE STANDARD TITLE - DOCUMENT TYPE (8925-.01 > 8925.1-1501 > 8926.1-.08)" "from mapParameter 3"
-* category[us-core] -> "875: fixed value = http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category#clinical-note" "(= NOTE, ADDENDUM, CONSULT, etc.?)\nUse TIU_VHA_ENTERPRISE_STANDARD_TITLE_8926.1 file provided by KBS to look up DocType\nIf the document has a type or parent value, use that for the category"
+* category[us-core] -> "875: fixed value = #clinical-note" "(= NOTE, ADDENDUM, CONSULT, etc.?)\nUse TIU_VHA_ENTERPRISE_STANDARD_TITLE_8926.1 file provided by KBS to look up DocType\nIf the document has a type or parent value, use that for the category"
 * subject -> "876: source value from TIU DOCUMENT - PATIENT (8925-.02)" "Pointer to PATIENT/HIS FILE (#9000001)"
 * date -> "877: source value from TIU DOCUMENT - ENTRY DATE/TIME (8925-1201)" "looking into façade pattern guidance on whether this is meaningful. 03/6/23 updated mapping based on LHV feedback"
 * author -> "878: source value from TIU DOCUMENT - AUTHOR/DICTATOR (8925-1202)"
@@ -34,7 +34,7 @@ Source: DocumentReferenceDocumentReference
 * content.attachment.id -> "888: source value from TIU DOCUMENT - IEN (8925-.001)" "keep. Using HDR to pull text; need this"
 * content.attachment.contentType -> "889: fixed value = #text/plain"
 * content.attachment.language -> "890: target not supported"
-* content.attachment.data -> "891: source value from TIU DOCUMENT - REPORT TEXT (8925-2)" "option 1: tbd\nUS Core: DocumentReference.content.attachment.url or DocumentReference.content.attachment.data or both SHALL be present.\nIf this is TIU this probably is text/plain"
+* content.attachment.data -> "891: source value from TIU DOCUMENT - REPORT TEXT (8925-2)" "option 1: tbd\nUS Core: DocumentReference.content.attachment.url or DocumentReference.content.attachment.data or both SHALL be present."
 * content.attachment.size -> "893: transform using calculate() on TIU DOCUMENT - REPORT TEXT (8925-2)"
 * content.attachment.hash -> "894: transform using calculate() on TIU DOCUMENT - REPORT TEXT (8925-2)"
 * content.attachment.title -> "895: source value from TIU DOCUMENT - DOCUMENT TYPE > TIU DOCUMENT DEFINITION - VHA ENTERPRISE STANDARD TITLE > TIU VHA ENTERPRISE STANDARD TITLE - STANDARD TITLE (8925-.01 > 8925.1-1501 > 8926.1-.01)" "03/06/23 added the secondary subfield based on LH feedback"
@@ -72,9 +72,3 @@ Source: DocumentReferenceDocumentReference
 * context.period.end -> "TIU.TIUDocument.EpisodeEndDateTime"
 * context.facilityType -> "TIU.TIUDocument.DocumentLocationIEN\nDim.Location.LocationType,Dim.Location.LocationType"
 * context.practiceSetting -> "TIU.TIUDocument.TreatingSpecialtyIEN"
-
-Mapping: vpr-to-DocumentReferenceDocumentReference
-Id: vpr
-Title: "Virtual Patient Record (VPR)"
-Source: DocumentReferenceDocumentReference
-* content.attachment.title -> "#ERROR_#REF!"

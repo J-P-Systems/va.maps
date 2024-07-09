@@ -57,7 +57,7 @@ Source: ProcedureSurgery
 * location -> "1295: reference from SURGERY - OP ROOM PROCEDURE PERFORMED (130-.02) case 130-118 NON-OR PROCEDURE == ‘Y’"
 * complication.coding -> "1296: fixed value = http://snomed.info/sct#88797001 Complication of surgical procedure (disorder) when SURGERY - STOMA COMPLICATIONS (130-688) case == ‘Y’"
 * complication.text -> "1296-1: fixed value = STOMA COMPLICATIONS case == ‘Y’" "from mapParameter 1"
-* complication.coding -> "1297: fixed value = http://snomed.info/sct#22298006 Myocardial infarction (disorder) when SURGERY - MYOCARDIAL INFARCTION (130-258) case == ‘Y’"
+* complication.coding -> "1297: fixed value = http://snomed.info/sct#22298006 Myocardial infarction (disorder) when SURGERY - MYOCARDIAL INFARCTION (130-258) case == ‘Y’" "Removed \"perioperative\" in the .text"
 * complication.text -> "1297-1: fixed value = MYOCARDIAL INFARCTION case == ‘Y’" "from mapParameter 1"
 * performer[va-0].actor -> "1298: reference from SURGERY - PERFUSIONIST (130-.167)"
 * performer[va-0].function.text -> "1298-1: fixed value = PERFUSIONIST" "from mapParameter 1"

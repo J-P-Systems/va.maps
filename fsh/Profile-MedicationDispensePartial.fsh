@@ -4,7 +4,7 @@ Id: MedicationDispensePartial
 Title: "MedicationDispense: Partial"
 Description: "This StructureDefinition contains the maps for VistA file PRESCRIPTION (52) to MedicationDispense"
 * ^status = #draft
-* type and destination.display and authorizingPrescription and daysSupply and dosageInstruction.doseAndRate.doseQuantity.unit and dosageInstruction.doseAndRate.doseQuantity.code and dosageInstruction.doseAndRate.doseQuantity.value and dosageInstruction.patientInstruction and dosageInstruction.text and medicationCodeableConcept.coding.code and medicationCodeableConcept.coding.system and medicationCodeableConcept.text and quantity.value and status and subject and whenPrepared and location and note.text MS
+* type and destination.display and authorizingPrescription and daysSupply and dosageInstruction.doseAndRate.doseQuantity.unit and dosageInstruction.doseAndRate.doseQuantity.code and dosageInstruction.doseAndRate.doseQuantity.value and dosageInstruction.patientInstruction and dosageInstruction.text and medicationCodeableConcept.coding.code and medicationCodeableConcept.coding.system and medicationCodeableConcept.text and quantity.value and status and subject and whenPrepared and location and note.text and performer MS
 * type = #PF
 * dosageInstruction.doseAndRate.doseQuantity.code from http://va.gov/fhir/ValueSet/VSVFDoseUnits
 * medicationCodeableConcept.coding.system = "urn:oid:2.16.840.1.113883.6.233"
@@ -16,7 +16,7 @@ Source: MedicationDispensePartial
 * type -> "1710: fixed value = #PF"
 * destination.display -> "1713: source value from PRESCRIPTION - PARTIAL DATE > PARTIAL DATE - MAIL/WINDOW (52-60 > 52.2-.02)"
 * authorizingPrescription -> "1565: source value from PRESCRIPTION - PLACER ORDER # (52-39.3)"
-* daysSupply -> "828: source value from PRESCRIPTION - PARTIAL DATE > PARTIAL DATE - DAYS SUPPLY (52-60 > 52.2-.041)"
+* daysSupply -> "828: source value from PRESCRIPTION - PARTIAL DATE > PARTIAL DATE- DAYS SUPPLY (52-60 > 52.2-.041)"
 * destination.display -> "837: source value from PRESCRIPTION - PARTIAL DATE > PARTIAL DATE - MAIL/WINDOW (52-60 > 52.2-.02)"
 * dosageInstruction.doseAndRate.doseQuantity.unit -> "1571: source value from PRESCRIPTION - MEDICATION INSTRUCTIONS > MEDICATION INSTRUCTIONS - UNITS (52-113 > 52.0113-2)"
 * dosageInstruction.doseAndRate.doseQuantity.code -> "1576: terminologyMaps using VF_DoseUnits on PRESCRIPTION - MEDICATION INSTRUCTIONS > MEDICATION INSTRUCTIONS - UNITS (52-113 > 52.0113-2)"
@@ -30,9 +30,10 @@ Source: MedicationDispensePartial
 * status -> "1577: fixed value = #completed when PRESCRIPTION - PARTIAL DATE > PARTIAL DATE - RELEASED DATE/TIME (52-60 > 52.2-8) case not null"
 * status -> "1578: fixed value = #in-progress when PRESCRIPTION - PARTIAL DATE > PARTIAL DATE - RELEASED DATE/TIME (52-60 > 52.2-8) case null"
 * subject -> "1563: reference from PRESCRIPTION - PATIENT (52-2)"
-* whenPrepared -> "834: source value from PRESCRIPTION - PARTIAL DATE > PARTIAL DATE - RELEASED DATE/TIME (52-60 > 52.2-8)"
-* location -> "1714: reference from PRESCRIPTION - PARTIAL DATE > PARTIAL DATE - DIVISION (52-60 > 52.2-.09)"
+* whenPrepared -> "834: source value from PRESCRIPTION - PARTIAL DATE > PARTIAL DATE - RELEASED DATE/TIME (52-60 > 52.2-8)" "see original fill note"
+* location -> "1714: reference from PRESCRIPTION - PARTIAL DATE > PARTIAL DATE - DIVISION (52-60 > 52.2-.09)" "not Clinic (written) but Division (filled)"
 * note.text -> "1717: source value from PRESCRIPTION - PARTIAL DATE > PARTIAL DATE - REMARKS (52-60 > 52.2-.03)"
+* performer -> "1728: reference from PRESCRIPTION - REFILL > REFILL - PHARMACIST NAME (52-52 > 52.1-4)"
 
 Mapping: cdw-to-MedicationDispensePartial
 Id: cdw
@@ -46,15 +47,3 @@ Source: MedicationDispensePartial
 * medicationCodeableConcept.coding.code -> "RxOut.RxOutpat.LocalDrugIEN,RxOut.RxOutpat.NationalDrugIEN,RxOut.RxOutpatFill.LocalDrugIEN,RxOut.RxOutpatFill.NationalDrugIEN\nDim.LocalDrug.DrugNameWithoutDoseIEN,Dim.LocalDrug.NationalDrugIEN,Dim.LocalDrug.NationalDrugIEN"
 * medicationCodeableConcept.text -> "RxOut.RxOutpat.LocalDrugIEN,RxOut.RxOutpat.NationalDrugIEN,RxOut.RxOutpatFill.LocalDrugIEN,RxOut.RxOutpatFill.NationalDrugIEN\nDim.LocalDrug.LocalDrugNameWithDose,Dim.LocalDrug.LocalDrugNameWithDose,RxOut.RxOutpatFill.LocalDrugNameWithDose"
 * subject -> "RxOut.ActivityLog.PatientIEN,RxOut.ActivityLogOtherComments.PatientIEN,RxOut.RxOutpat.PatientIEN,RxOut.RxOutpatExt.PatientIEN,RxOut.RxOutpatExt.PatientSID,RxOut.RxOutpatFill.PatientIEN,RxOut.RxOutpatMedInstructions.PatientIEN,RxOut.RxOutpatSig.PatientIEN"
-
-Mapping: vpr-to-MedicationDispensePartial
-Id: vpr
-Title: "Virtual Patient Record (VPR)"
-Source: MedicationDispensePartial
-* daysSupply -> "Pharmacy: daysSupply"
-* destination.display -> "Pharmacy: routing"
-* dosageInstruction.doseAndRate.doseQuantity.unit -> "Pharmacy: dose.units"
-* dosageInstruction.doseAndRate.doseQuantity.code -> "Pharmacy: dose.units"
-* dosageInstruction.doseAndRate.doseQuantity.value -> "Pharmacy: dose.dose"
-* dosageInstruction.text -> "Pharmacy: sig"
-* quantity.value -> "Pharmacy: quantity"

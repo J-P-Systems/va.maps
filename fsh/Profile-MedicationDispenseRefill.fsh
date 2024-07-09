@@ -4,7 +4,7 @@ Id: MedicationDispenseRefill
 Title: "MedicationDispense: Refill"
 Description: "This StructureDefinition contains the maps for VistA file PRESCRIPTION (52) to MedicationDispense"
 * ^status = #draft
-* type and destination.display and authorizingPrescription and daysSupply and dosageInstruction.doseAndRate.doseQuantity.unit and dosageInstruction.doseAndRate.doseQuantity.code and dosageInstruction.doseAndRate.doseQuantity.value and dosageInstruction.patientInstruction and dosageInstruction.text and medicationCodeableConcept.coding.code and medicationCodeableConcept.coding.system and medicationCodeableConcept.text and quantity.value and status and subject and whenPrepared and location and note.text MS
+* type and destination.display and authorizingPrescription and daysSupply and dosageInstruction.doseAndRate.doseQuantity.unit and dosageInstruction.doseAndRate.doseQuantity.code and dosageInstruction.doseAndRate.doseQuantity.value and dosageInstruction.patientInstruction and dosageInstruction.text and medicationCodeableConcept.coding.code and medicationCodeableConcept.coding.system and medicationCodeableConcept.text and quantity.value and status and subject and whenPrepared and location and note.text and performer MS
 * type = #RF
 * dosageInstruction.doseAndRate.doseQuantity.code from http://va.gov/fhir/ValueSet/VSVFDoseUnits
 * medicationCodeableConcept.coding.system = "urn:oid:2.16.840.1.113883.6.233"
@@ -31,9 +31,10 @@ Source: MedicationDispenseRefill
 * status -> "819: fixed value = #in-progress when PRESCRIPTION - REFILL > REFILL - RELEASED DATE/TIME (52-52 > 52.1-17) case null"
 * status -> "1555: fixed value = #in-progress when PRESCRIPTION - RELEASED DATE/TIME (52-31) case null"
 * subject -> "1551: reference from PRESCRIPTION - PATIENT (52-2)"
-* whenPrepared -> "833: source value from PRESCRIPTION - REFILL > REFILL - RELEASED DATE/TIME (52-52 > 52.1-17)"
-* location -> "1715: reference from PRESCRIPTION - REFILL > REFILL - DIVISION (52-52 > 52.1-8)"
+* whenPrepared -> "833: source value from PRESCRIPTION - REFILL > REFILL - RELEASED DATE/TIME (52-52 > 52.1-17)" "see original fill note"
+* location -> "1715: reference from PRESCRIPTION - REFILL > REFILL - DIVISION (52-52 > 52.1-8)" "not Clinic (written) but Division (filled)"
 * note.text -> "1718: source value from PRESCRIPTION - REFILL > REFILL - REMARKS (52-52 > 52.1-3)"
+* performer -> "1729: reference from PRESCRIPTION - PARTIAL DATE > PARTIAL DATE - PHARMACIST NAME (52-60 > 52.2-.05)"
 
 Mapping: cdw-to-MedicationDispenseRefill
 Id: cdw
@@ -47,15 +48,3 @@ Source: MedicationDispenseRefill
 * medicationCodeableConcept.coding.code -> "RxOut.RxOutpat.LocalDrugIEN,RxOut.RxOutpat.NationalDrugIEN,RxOut.RxOutpatFill.LocalDrugIEN,RxOut.RxOutpatFill.NationalDrugIEN\nDim.LocalDrug.DrugNameWithoutDoseIEN,Dim.LocalDrug.NationalDrugIEN,Dim.LocalDrug.NationalDrugIEN"
 * medicationCodeableConcept.text -> "RxOut.RxOutpat.LocalDrugIEN,RxOut.RxOutpat.NationalDrugIEN,RxOut.RxOutpatFill.LocalDrugIEN,RxOut.RxOutpatFill.NationalDrugIEN\nDim.LocalDrug.LocalDrugNameWithDose,Dim.LocalDrug.LocalDrugNameWithDose,RxOut.RxOutpatFill.LocalDrugNameWithDose"
 * subject -> "RxOut.ActivityLog.PatientIEN,RxOut.ActivityLogOtherComments.PatientIEN,RxOut.RxOutpat.PatientIEN,RxOut.RxOutpatExt.PatientIEN,RxOut.RxOutpatExt.PatientSID,RxOut.RxOutpatFill.PatientIEN,RxOut.RxOutpatMedInstructions.PatientIEN,RxOut.RxOutpatSig.PatientIEN"
-
-Mapping: vpr-to-MedicationDispenseRefill
-Id: vpr
-Title: "Virtual Patient Record (VPR)"
-Source: MedicationDispenseRefill
-* daysSupply -> "Pharmacy: daysSupply"
-* destination.display -> "Pharmacy: routing"
-* dosageInstruction.doseAndRate.doseQuantity.unit -> "Pharmacy: dose.units"
-* dosageInstruction.doseAndRate.doseQuantity.code -> "Pharmacy: dose.units"
-* dosageInstruction.doseAndRate.doseQuantity.value -> "Pharmacy: dose.dose"
-* dosageInstruction.text -> "Pharmacy: sig"
-* quantity.value -> "Pharmacy: quantity"

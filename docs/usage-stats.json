@@ -73,24 +73,6 @@
         "title": "Encounter: Inpatient Condition"
       }
     ],
-    "ChargeItem": [
-      {
-        "url": "http://va.gov/fhir/StructureDefinition/DebtPortalChargeItem",
-        "title": "Debt Portal ChargeItem"
-      }
-    ],
-    "Invoice": [
-      {
-        "url": "http://va.gov/fhir/StructureDefinition/DebtPortalInvoice",
-        "title": "Debt Portal Invoice"
-      }
-    ],
-    "Patient": [
-      {
-        "url": "http://va.gov/fhir/StructureDefinition/Patient",
-        "title": "Patient"
-      }
-    ],
     "Binary": [
       {
         "url": "http://va.gov/fhir/StructureDefinition/DocumentReferenceBinary",
@@ -105,8 +87,12 @@
     ],
     "Encounter": [
       {
-        "url": "http://va.gov/fhir/StructureDefinition/MedicationRequestOutpatientEncounter",
-        "title": "MedicationRequest: Outpatient Encounter"
+        "url": "http://va.gov/fhir/StructureDefinition/EncounterInpatientEncounter",
+        "title": "Encounter: Inpatient Encounter"
+      },
+      {
+        "url": "http://va.gov/fhir/StructureDefinition/EncounterOutpatient",
+        "title": "Encounter: Outpatient"
       }
     ],
     "Immunization": [
@@ -123,26 +109,56 @@
     ],
     "Device": [
       {
-        "url": "http://va.gov/fhir/StructureDefinition/VitalSignsSpO2Device",
-        "title": "Vital Signs: SpO2 Device"
-      }
-    ],
-    "DiagnosticReport": [
+        "url": "http://va.gov/fhir/StructureDefinition/ImplantableDevice",
+        "title": "Implantable Device"
+      },
       {
-        "url": "http://va.gov/fhir/StructureDefinition/LaboratoryResultsSurgicalPathologyDiagnosticReport",
-        "title": "Laboratory Results: Surgical Pathology DiagnosticReport"
+        "url": "http://va.gov/fhir/StructureDefinition/ImplantableDeviceALead",
+        "title": "Implantable Device: A Lead"
+      },
+      {
+        "url": "http://va.gov/fhir/StructureDefinition/ImplantableDeviceDental",
+        "title": "Implantable Device: Dental"
+      },
+      {
+        "url": "http://va.gov/fhir/StructureDefinition/ImplantableDevicePacemaker",
+        "title": "Implantable Device: Pacemaker"
+      },
+      {
+        "url": "http://va.gov/fhir/StructureDefinition/ImplantableDeviceProsthesis",
+        "title": "Implantable Device: Prosthesis"
+      },
+      {
+        "url": "http://va.gov/fhir/StructureDefinition/ImplantableDeviceTransmitter",
+        "title": "Implantable Device: Transmitter"
+      },
+      {
+        "url": "http://va.gov/fhir/StructureDefinition/ImplantableDeviceVLead",
+        "title": "Implantable Device: V Lead"
       }
     ],
     "Specimen": [
       {
-        "url": "http://va.gov/fhir/StructureDefinition/LaboratoryResultsSurgicalPathologySpecimen",
-        "title": "Laboratory Results: Surgical Pathology Specimen"
+        "url": "http://va.gov/fhir/StructureDefinition/LabObservationSurgicalPathologySpecimen",
+        "title": "Lab Observation: Surgical Pathology Specimen"
+      }
+    ],
+    "DiagnosticReport": [
+      {
+        "url": "http://va.gov/fhir/StructureDefinition/LabObservationSurgicalPathologyDiagnosticReport",
+        "title": "Lab Observation: Surgical Pathology DiagnosticReport"
       }
     ],
     "Location": [
       {
         "url": "http://va.gov/fhir/StructureDefinition/Location",
         "title": "Location"
+      }
+    ],
+    "Task": [
+      {
+        "url": "http://va.gov/fhir/StructureDefinition/MedRefillRequestMHV",
+        "title": "MedRefillRequestMHV"
       }
     ],
     "MedicationDispense": [
@@ -161,8 +177,16 @@
     ],
     "MedicationRequest": [
       {
-        "url": "http://va.gov/fhir/StructureDefinition/MedicationRequestOutpatientMedicationRequest",
-        "title": "MedicationRequest: Outpatient MedicationRequest"
+        "url": "http://va.gov/fhir/StructureDefinition/MedicationRequestNonVA",
+        "title": "MedicationRequest: NonVA"
+      },
+      {
+        "url": "http://va.gov/fhir/StructureDefinition/MedicationRequestOutpatient",
+        "title": "MedicationRequest: Outpatient"
+      },
+      {
+        "url": "http://va.gov/fhir/StructureDefinition/MedicationRequestPending",
+        "title": "MedicationRequest: Pending"
       },
       {
         "url": "http://va.gov/fhir/StructureDefinition/MedicationRequestUnsigned",
@@ -173,6 +197,12 @@
       {
         "url": "http://va.gov/fhir/StructureDefinition/VitalSignsSpO2Organization",
         "title": "Vital Signs: SpO2 Organization"
+      }
+    ],
+    "Patient": [
+      {
+        "url": "http://va.gov/fhir/StructureDefinition/Patient",
+        "title": "Patient"
       }
     ],
     "Practitioner": [
@@ -209,7 +239,6 @@
     "http://hl7.org/fhir/StructureDefinition/11179-permitted-value-conceptmap": [
       "Immunization.primarySource",
       "MedicationRequest.extension.value[x]",
-      "Observation.interpretation",
       "Observation.value[x].code",
       "Practitioner.address.country"
     ],
@@ -217,6 +246,8 @@
       "Condition"
     ],
     "http://hl7.org/fhir/StructureDefinition/data-absent-reason": [
+      "MedicationRequest.encounter",
+      "MedicationRequest.requester",
       "Practitioner.address.country"
     ],
     "http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice": [
@@ -244,6 +275,9 @@
       "StructureDefinition.snapshot.element.type.targetProfile"
     ],
     "http://hl7.org/fhir/StructureDefinition/observation-bodyPosition": [
+      "Observation"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/observation-deviceCode": [
       "Observation"
     ],
     "http://hl7.org/fhir/StructureDefinition/originalText": [

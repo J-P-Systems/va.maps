@@ -27,22 +27,10 @@ Usage: #definition
 * group[=].element[=].display = "DELETED"
 * group[=].element[=].target.code = #entered-in-error
 * group[=].element[=].target.equivalence = #wider
-* group[=].element[+].code = #4501128
-* group[=].element[=].display = "INACTIVE"
-* group[=].element[=].target.equivalence = #unmatched
-* group[=].element[=].target.comment = "<exclude record>"
-* group[=].element[+].code = #4501287
-* group[=].element[=].display = "PURGED"
-* group[=].element[=].target.equivalence = #unmatched
-* group[=].element[=].target.comment = "<exclude record>"
 * group[=].element[+].code = #4501288
 * group[=].element[=].display = "RETRACTED"
 * group[=].element[=].target.code = #entered-in-error
 * group[=].element[=].target.equivalence = #wider
-* group[=].element[+].code = #4501289
-* group[=].element[=].display = "TEST"
-* group[=].element[=].target.equivalence = #unmatched
-* group[=].element[=].target.comment = "<exclude record>"
 * group[=].element[+].code = #4501290
 * group[=].element[=].display = "UNCOSIGNED"
 * group[=].element[=].target.code = #preliminary
@@ -87,10 +75,7 @@ Description: "VistA Source ValueSet for Terminology Maps VF_documentReferencedoc
 * include http://terminology.hl7.org/CodeSystem/VHA#4501286 "AMENDED"
 * include http://terminology.hl7.org/CodeSystem/VHA#4501014 "COMPLETED"
 * include http://terminology.hl7.org/CodeSystem/VHA#4500698 "DELETED"
-* include http://terminology.hl7.org/CodeSystem/VHA#4501128 "INACTIVE"
-* include http://terminology.hl7.org/CodeSystem/VHA#4501287 "PURGED"
 * include http://terminology.hl7.org/CodeSystem/VHA#4501288 "RETRACTED"
-* include http://terminology.hl7.org/CodeSystem/VHA#4501289 "TEST"
 * include http://terminology.hl7.org/CodeSystem/VHA#4501290 "UNCOSIGNED"
 * include http://terminology.hl7.org/CodeSystem/VHA#4501291 "UNDICTATED"
 * include http://terminology.hl7.org/CodeSystem/VHA#4696299 "UNRELEASED"

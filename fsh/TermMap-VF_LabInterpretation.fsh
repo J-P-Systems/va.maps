@@ -27,6 +27,10 @@ Usage: #definition
 * group[=].element[=].target.code = #LL
 * group[=].element[=].target.display = "Critical low"
 * group[=].element[=].target.equivalence = #equal
+* group[=].element[+].code = #A
+* group[=].element[=].target.code = #A
+* group[=].element[=].target.display = "Abnormal"
+* group[=].element[=].target.equivalence = #equal
 
 ValueSet: VSVFLabInterpretation
 Title: "VF_LabInterpretation"
@@ -37,6 +41,7 @@ Description: "FHIR Target ValueSet for Terminology Maps VF_LabInterpretation"
 * include http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#L "Low"
 * include http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#HH "Critical high"
 * include http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#LL "Critical low"
+* include http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#A "Abnormal"
 
 ValueSet: VSVFLabInterpretation-vista
 Title: "VF_LabInterpretation VistA"
@@ -47,3 +52,4 @@ Description: "VistA Source ValueSet for Terminology Maps VF_LabInterpretation"
 * include http://va.gov/terminology/vistaDefinedTerms/63.04-2+through+862#L 
 * include http://va.gov/terminology/vistaDefinedTerms/63.04-2+through+862#H* 
 * include http://va.gov/terminology/vistaDefinedTerms/63.04-2+through+862#L* 
+* include http://va.gov/terminology/vistaDefinedTerms/63.04-2+through+862#A 

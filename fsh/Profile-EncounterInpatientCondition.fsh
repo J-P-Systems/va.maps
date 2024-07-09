@@ -4,15 +4,15 @@ Id: EncounterInpatientCondition
 Title: "Encounter: Inpatient Condition"
 Description: "This StructureDefinition contains the maps for VistA file PTF (45) to us-core-condition-problems-health-concerns"
 * ^status = #draft
-* code and category[us-core] MS
-* category[us-core] = http://terminology.hl7.org/CodeSystem/condition-category#problem-list-item
+* code and category MS
+* category = #problem-list-item
 
 Mapping: vista-to-EncounterInpatientCondition
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: EncounterInpatientCondition
-* code -> "956: source value from PTF - PRINCIPAL DIAGNOSIS (45-79)" "Infer contained Condition\nno clinical status"
-* category[us-core] -> "956-1: fixed value = http://terminology.hl7.org/CodeSystem/condition-category#problem-list-item" "from mapParameter 1"
+* code -> "956: source value from PTF - PRINCIPAL DIAGNOSIS (45-79)" "Infer contained Condition no clinical status"
+* category -> "956-1: fixed value = #problem-list-item" "from mapParameter 1"
 
 Mapping: cdw-to-EncounterInpatientCondition
 Id: cdw

@@ -9,7 +9,7 @@ Usage: #definition
 * description = "Terminology Maps VF_AntibioticSensitivityInterpretation"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFAntibioticSensitivityInterpretation-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/VSVFAntibioticSensitivityInterpretation"
-* group[0].source = "urn:undefined"
+* group[0].source = "http://va.gov/terminology/vistaDefinedTerms/63.3-5.1+to+160.1"
 * group[=].target = "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation"
 * group[=].element[0].code = #I
 * group[=].element[=].display = "Intermediate"
@@ -61,10 +61,10 @@ Title: "VF_AntibioticSensitivityInterpretation VistA"
 Description: "VistA Source ValueSet for Terminology Maps VF_AntibioticSensitivityInterpretation"
 * ^experimental = false
 * ^name = "VF_AntibioticSensitivityInterpretation"
-* include urn:undefined#I "Intermediate"
-* include urn:undefined#R "Resistant"
-* include urn:undefined#Resistant "Resistant"
-* include urn:undefined#S "Sensitive"
-* include urn:undefined#Sensitive "Sensitive"
-* include urn:undefined#SYN-S 
-* include urn:undefined#SYN-R 
+* include http://va.gov/terminology/vistaDefinedTerms/63.3-5.1+to+160.1#I "Intermediate"
+* include http://va.gov/terminology/vistaDefinedTerms/63.3-5.1+to+160.1#R "Resistant"
+* include http://va.gov/terminology/vistaDefinedTerms/63.3-5.1+to+160.1#Resistant "Resistant"
+* include http://va.gov/terminology/vistaDefinedTerms/63.3-5.1+to+160.1#S "Sensitive"
+* include http://va.gov/terminology/vistaDefinedTerms/63.3-5.1+to+160.1#Sensitive "Sensitive"
+* include http://va.gov/terminology/vistaDefinedTerms/63.3-5.1+to+160.1#SYN-S 
+* include http://va.gov/terminology/vistaDefinedTerms/63.3-5.1+to+160.1#SYN-R 

@@ -12,15 +12,14 @@ Description: "This StructureDefinition contains the maps for VistA file PTF (45)
 * reasonCode ^slicing.discriminator.path = "$this"
 * reasonCode ^slicing.rules = #open
 * reasonCode contains va-principle 0..1 and va-secondary 0..1 and va-procedure 0..1
-* identifier[va-IEN].value and identifier[va-IEN].system and identifier[va-IEN].type.text and class and identifier[va-IA].value and identifier[va-IA].system and identifier[va-IA].type.text and status and subject and participant.individual and participant.type.coding and period.start and period.end and reasonCode[va-principle].coding.code and reasonCode[va-principle].coding.system and diagnosis.condition and reasonCode[va-secondary].coding.code and reasonCode[va-secondary].coding.system and reasonCode[va-procedure].coding.code and reasonCode[va-procedure].coding.system and hospitalization.admitSource.coding.code and hospitalization.admitSource.coding.system and hospitalization.admitSource.coding and hospitalization.origin.display and hospitalization.destination.display and hospitalization.dischargeDisposition.coding.code and hospitalization.dischargeDisposition.coding.system and location.location and serviceProvider and type and type.coding.system and type.coding.code and type.coding.display and type.text MS
-* identifier[va-IEN].system = "http://va.gov/fhir/identiiers/$Sta3n/45"
+* identifier[va-IEN].value and identifier[va-IEN].system and identifier[va-IEN].type.text and class and identifier[va-IA].value and identifier[va-IA].system and identifier[va-IA].type.text and status and subject and participant.individual and participant.type.coding and period.start and period.end and reasonCode[va-principle].coding.code and reasonCode[va-principle].coding.system and reasonCode[va-secondary].coding.code and reasonCode[va-secondary].coding.system and reasonCode[va-procedure].coding.code and reasonCode[va-procedure].coding.system and hospitalization.admitSource.coding.code and hospitalization.admitSource.coding.system and hospitalization.admitSource.coding and hospitalization.origin.display and hospitalization.destination.display and hospitalization.dischargeDisposition.coding.code and hospitalization.dischargeDisposition.coding.system and location.location and serviceProvider and type and type.coding.system and type.coding.code and type.coding.display and type.text MS
+* identifier[va-IEN].system = "http://va.gov/identifiers/$Sta3n/45"
 * identifier[va-IEN].type.text = "IEN"
 * class = http://terminology.hl7.org/CodeSystem/v3-ActCode#IMP
 * identifier[va-IA].system = "http://va.gov/identifiers/$Sta3n/45-2.1"
 * identifier[va-IA].type.text = "Internal Admission #"
 * participant.type.coding = http://terminology.hl7.org/CodeSystem/v3-ParticipationType#PPRF
 * reasonCode[va-principle].coding.system = "urn:see-termmap-in-mapParameter"
-* diagnosis.condition only Reference(EncounterInpatientCondition)
 * reasonCode[va-secondary].coding.system = "urn:see-termmap-in-mapParameter"
 * reasonCode[va-procedure].coding.system = "http://www.cms.gov/Medicare/Coding/ICD10"
 * hospitalization.admitSource.coding.system = "http://va.gov/terminology/vistaDefinedTerms/45.1"
@@ -34,14 +33,14 @@ Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: EncounterInpatientEncounter
 * identifier[va-IEN].value -> "427: source value from PTF - NUMBER (45-.001)" "removed use=IFN typo and split of class to new mapset row"
-* identifier[va-IEN].system -> "427-1: fixed value = http://va.gov/fhir/identiiers/$Sta3n/45" "from mapParameter 1"
+* identifier[va-IEN].system -> "427-1: fixed value = http://va.gov/identifiers/$Sta3n/45" "from mapParameter 1"
 * identifier[va-IEN].type.text -> "427-2: fixed value = IEN" "from mapParameter 2"
 * class -> "1601: fixed value = http://terminology.hl7.org/CodeSystem/v3-ActCode#IMP"
 * identifier[va-IA].value -> "428: source value from PTF - INTERNAL ADMISSION # (45-2.1)"
 * identifier[va-IA].system -> "428-1: fixed value = http://va.gov/identifiers/$Sta3n/45-2.1" "from mapParameter 1"
 * identifier[va-IA].type.text -> "428-2: fixed value = Internal Admission #" "from mapParameter 2"
 * status -> "433: fixed value = #planned when PTF - ADMISSION DATE (45-2) case null or > now"
-* status -> "434: fixed value = #in-progress when PTF - ADMISSION DATE (45-2) case not null, < now, field 70 null" "tweaked case logic 9/21"
+* status -> "434: fixed value = #in-progress when PTF - ADMISSION DATE (45-2) case not null, < now, field 70 null"
 * status -> "435: fixed value = #finished when PTF - DISCHARGE DATE (45-70) case not null"
 * subject -> "441: reference from PTF - PATIENT (45-.01)"
 * participant.individual -> "442: reference from PTF - PROVIDER (45-79.1)"
@@ -50,7 +49,6 @@ Source: EncounterInpatientEncounter
 * period.end -> "446: source value from PTF - DISCHARGE DATE (45-70)"
 * reasonCode[va-principle].coding.code -> "448: source value from PTF - PRINCIPAL DIAGNOSIS (45-79)"
 * reasonCode[va-principle].coding.system -> "448-1: fixed value = urn:see-termmap-in-mapParameter" "from mapParameter 1"
-* diagnosis.condition -> "1723: reference"
 * reasonCode[va-secondary].coding.code -> "449: source value from PTF - SECONDARY DIAGNOSIS [#] (45-79.16)" "79.16 and following"
 * reasonCode[va-secondary].coding.system -> "449-1: fixed value = urn:see-termmap-in-mapParameter" "from mapParameter 1"
 * reasonCode[va-procedure].coding.code -> "450: source value from PTF - PROCEDURE [#] (45-45.01)" "45.01 and following"
@@ -63,9 +61,9 @@ Source: EncounterInpatientEncounter
 * hospitalization.dischargeDisposition.coding.code -> "456: source value from PTF - PLACE OF DISPOSITION (45-75)"
 * hospitalization.dischargeDisposition.coding.system -> "456-1: fixed value = http://va.gov/terminology/vistaDefinedTerms/45.6" "from mapParameter 1"
 * location.location -> "460: reference from PTF - WARD AT DISCHARGE (45-2.2)"
-* location.location -> "461: reference from PTF - FACILITY (45-3)"
+* location.location -> "461: reference from PTF - FACILITY (45-3)" "This is the Sta3n"
 * serviceProvider -> "1600: reference from PTF - FACILITY (45-3)"
-* type -> "1616: source value from INPATIENT CPT CODE - CPT CODE > CPT (46-.01 > 81-)" "46-.16>45"
+* type -> "1616: source value from INPATIENT CPT CODE - CPT CODE > CPT (46-.01 > 81-)"
 * type.coding.system -> "1616-1: fixed value = http://www.ama-assn.org/go/cpt" "from mapParameter 1"
 * type.coding.code -> "1616-2: source value from INPATIENT CPT CODE - CPT CODE > CPT - CPT CODE (46-.01 > 81-.01)" "from mapParameter 2"
 * type.coding.display -> "1616-3: source value from INPATIENT CPT CODE - CPT CODE > CPT - SHORT NAME (46-.01 > 81-2)" "from mapParameter 3"

@@ -13,7 +13,6 @@ Description: "This StructureDefinition contains the maps for VistA file HOSPITAL
 * address.type = #physical
 * type.text from http://va.gov/fhir/ValueSet/VSVFLocationStatus
 * mode = #instance
-* mode = #instance
 
 Mapping: vista-to-Location
 Id: vista
@@ -40,7 +39,6 @@ Source: Location
 * address.country -> "1405: source value from HOSPITAL LOCATION - INSTITUTION > INSTITUTION - COUNTRY > COUNTRY CODE - CODE (44-3 > 4-801 > 779.004-.01)"
 * address.type -> "1322: fixed value = #physical when HOSPITAL LOCATION - INSTITUTION (44-3)"
 * type.text -> "1412: terminologyMaps using VF_LocationStatus on HOSPITAL LOCATION - SERVICE (44-9)" "could map Medical Service text to FHIR type valueset, e.g.\n\"NEUROLOGY\" to \"NEUR Neurology clinic\"\nOr is this combination of TREATEMENT SPECIALTY (9.5) and SERVICE/SECTION? and STOP CODE?"
-* mode -> "1806: fixed value = #instance" "Added 4/5/24 to match LH PHAPI"
 * mode -> "1806: fixed value = #instance" "Added 4/5/24 to match LH PHAPI"
 
 Mapping: cdw-to-Location

@@ -25,6 +25,22 @@ anonymous resourcescontained resources","",0,*,"","","","Resource {[]} {[]}
 ","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
 ","",,"open","DomainResource.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"Observation.extension:observation-deviceCode","Observation.extension","observation-deviceCode","","",0,1,"","","","Extension {[CanonicalType[http://hl7.org/fhir/StructureDefinition/observation-deviceCode]]} {[]}
+","A code representing the the type of device used for this observation.  Should only be used if not implicit in the code found in `Observation.code`","A code representing the the type of device used for this observation.  Should only be used if not implicit in the code found in `Observation.code`.","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"Observation.extension:observation-deviceCode.id","Observation.extension.id","","","",0,1,"","","","id {[]} {[]}
+","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"ele-1
+","","n/a"
+"Observation.extension:observation-deviceCode.extension","Observation.extension.extension","","","",0,0,"","","","Extension {[]} {[]}
+","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
+","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"Observation.extension:observation-deviceCode.url","Observation.extension.url","","","",1,1,"","","","uri {[]} {[]}
+","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""http://hl7.org/fhir/StructureDefinition/observation-deviceCode""/>","","","","",,,,,"",,,,"Extension.url",1,1,"","","N/A"
+"Observation.extension:observation-deviceCode.value[x]","Observation.extension.value[x]","","","",1,1,"Y","","","CodeableConcept {[]} {[]}
+","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R5/extensibility.html) for a list).","","","","","","","","","",,"required","","http://va.gov/fhir/ValueSet/VSVFVitalsMeasurementDevice","",,,,"Extension.value[x]",0,1,"ext-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+","663: terminologyMaps using VF_VitalsMeasurementDevice on GMRV VITAL MEASUREMENT - QUALIFIER > GMRV VITAL QUALIFIER - VUID (120.5-5 > 120.52-99.99)","N/A"
 "Observation.extension:observation-bodyPosition","Observation.extension","observation-bodyPosition","","",0,1,"","","","Extension {[CanonicalType[http://hl7.org/fhir/StructureDefinition/observation-bodyPosition]]} {[]}
 ","The body position during the observation","The position of the body when the observation was done, e.g. standing, sitting. To be used only when the body position in not precoordinated in the observation code.","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
@@ -246,11 +262,11 @@ vs-2","ele-1:All FHIR elements must have a @value or children {hasValue() or (ch
 "Observation.note","Observation.note","","","",0,*,"","","","Annotation {[]} {[]}
 ","Comments about the observation","Comments about the observation or the results.","May include general statements about the observation, or statements about significant, unexpected or unreliable results values, or information about its source when relevant to its interpretation.","Need to be able to provide free text additional information.","","","","","","","",,,,,"",,,,"Observation.note",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","NTE.3 (partner NTE to OBX, or sometimes another (child?) OBX)","subjectOf.observationEvent[code=""annotation""].value"
-"Observation.bodySite","Observation.bodySite","","","",0,1,"","","","CodeableConcept {[]} {[]}
+"Observation.bodySite","Observation.bodySite","","","",0,1,"Y","","","CodeableConcept {[]} {[]}
 ","Observed body part","Indicates the site on the subject's body where the observation was made (i.e. the target site).","Only used if not implicit in code found in Observation.code.  In many systems, this may be represented as a related observation instead of an inline component.   
 
-If the use case requires BodySite to be handled as a separate resource (e.g. to identify and track separately) then use the standard extension[ bodySite](http://hl7.org/fhir/extension-bodysite.html).","","","","","","","","",,"example","Codes describing anatomical locations. May include laterality.","http://hl7.org/fhir/ValueSet/body-site","",,,,"Observation.bodySite",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","< 123037004 |Body structure|","OBX-20","targetSiteCode","718497002 |Inherent location|"
+If the use case requires BodySite to be handled as a separate resource (e.g. to identify and track separately) then use the standard extension[ bodySite](http://hl7.org/fhir/extension-bodysite.html).","","","","","","","","",,"required","","http://va.gov/fhir/ValueSet/VSVFVitalsBodySite","",,,,"Observation.bodySite",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+","662: terminologyMaps using VF_VitalsBodySite on GMRV VITAL MEASUREMENT - QUALIFIER > GMRV VITAL QUALIFIER - VUID (120.5-5 > 120.52-99.99)","< 123037004 |Body structure|","OBX-20","targetSiteCode","718497002 |Inherent location|"
 "Observation.method","Observation.method","","","",0,1,"Y","","","CodeableConcept {[]} {[]}
 ","How it was done","Indicates the mechanism used to perform the observation.","Only used if not implicit in code for Observation.code.","In some cases, method can impact results and is thus used for determining whether results can be compared or determining significance of results.","","","","","","","",,"required","","http://va.gov/fhir/ValueSet/VSVFVitalsMethod","",,,,"Observation.method",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","867: terminologyMaps using VF_VitalsMethod on GMRV VITAL MEASUREMENT - QUALIFIER > GMRV VITAL QUALIFIER - VUID (120.5-5 > 120.52-99.99)","OBX-17","methodCode"

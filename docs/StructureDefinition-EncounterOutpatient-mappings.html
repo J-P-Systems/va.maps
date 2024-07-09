@@ -40,8 +40,8 @@
 
 	  <script src="assets/js/prism.js"></script>
 
-    <style type="text/css">h2{--heading-prefix:"9.12"}
-    h3,h4,h5,h6{--heading-prefix:"9.12"}</style>
+    <style type="text/css">h2{--heading-prefix:"9.9"}
+    h3,h4,h5,h6{--heading-prefix:"9.9"}</style>
     <div id="segment-header" class="segment">    <!-- segment-header -->
       <div class="container">    <!-- container -->
           <!-- Placeholder for child template header declarations -->
@@ -57,7 +57,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">US Veterans Administration FHIR Map Set Implementation Guide</span>
             <br/>
-            <span style="display:inline-block;">0.59.0 - 240701a
+            <span style="display:inline-block;">0.59.0 - 240701b
 
 
 
@@ -216,7 +216,7 @@
         
           Draft
           
-            as of 2024-06-21
+            as of 2024-07-09
           
         
       </td>
@@ -306,7 +306,7 @@
 <td class="cell-ce1"></td>
 <td class="cell-ce1">#in-progress</td>
 <td class="cell-ce1"></td>
-<td class="cell-ce1">tweaked case logic 9/21</td>
+<td class="cell-ce1"></td>
 <td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
@@ -319,7 +319,7 @@
 <td class="cell-ce1"></td>
 <td class="cell-ce1">#finished</td>
 <td class="cell-ce1"></td>
-<td class="cell-ce1">tweaked case logic 9/21</td>
+<td class="cell-ce1"></td>
 <td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
@@ -474,22 +474,22 @@
 <td class="cell-ce1">Encounter.participant</td>
 <td class="cell-ce1">.individual</td>
 <td class="cell-ce1"></td>
-<td class="cell-ce1">.type.coding = http://terminology.hl7.org/CodeSystem/v3-ParticipationType#PPRF</td>
+<td class="cell-ce1"></td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
-<td class="cell-ce1">1614-1</td>
+<td class="cell-ce1">1854</td>
 <td class="cell-ce1">for review</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1">fixed value</td>
+<td class="cell-ce1">V PROVIDER - PRIMARY/SECONDARY (9000010.06-.04)</td>
+<td class="cell-ce1">terminologyMaps</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">Encounter.participant</td>
-<td class="cell-ce1">.type.coding</td>
-<td class="cell-ce1">http://terminology.hl7.org/CodeSystem/v3-ParticipationType#PPRF</td>
+<td class="cell-ce1">.type</td>
+<td class="cell-ce1">VF_encounterParticipationType</td>
 <td class="cell-ce1"></td>
-<td class="cell-ce1">from mapParameter 1</td>
 <td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
 <td class="cell-ce1">1615</td>
@@ -572,19 +572,6 @@
 <td class="cell-ce1"></td>
 <td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter | 5.0.1</td>
 </tr>
-<tr class="row-ro1">
-<td class="cell-ce1">1854</td>
-<td class="cell-ce1">for review</td>
-<td class="cell-ce1">V PROVIDER - PRIMARY/SECONDARY (9000010.06-.04)</td>
-<td class="cell-ce1">terminologyMaps</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1">Encounter.participant</td>
-<td class="cell-ce1">.type</td>
-<td class="cell-ce1">VF_encounterParticipationType</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter | 5.0.1</td>
-</tr>
 </table>
 
 </div>
@@ -599,9 +586,7 @@
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;system</td><td>429-1: fixed value = http://va.gov/identifiers/$Sta3n/9000010-15001</td><td><p>from mapParameter 1</p>
 </td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>429: source value from VISIT - VISIT ID (9000010-15001)</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>430: fixed value = #planned when VISIT - VISIT/ADMIT DATE&amp;TIME (9000010-.01) case null or &gt; now, 431: fixed value = #in-progress when VISIT - VISIT/ADMIT DATE&amp;TIME (9000010-.01) case not null, &lt; now, .18 null, 432: fixed value = #finished when VISIT - CHECK OUT DATE&amp;TIME (9000010-.18) case not null, &lt; now</td><td>, <p>tweaked case logic 9/21</p>
-, <p>tweaked case logic 9/21</p>
-</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>430: fixed value = #planned when VISIT - VISIT/ADMIT DATE&amp;TIME (9000010-.01) case null or &gt; now, 431: fixed value = #in-progress when VISIT - VISIT/ADMIT DATE&amp;TIME (9000010-.01) case not null, &lt; now, .18 null, 432: fixed value = #finished when VISIT - CHECK OUT DATE&amp;TIME (9000010-.18) case not null, &lt; now</td><td>, , </td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;class</td><td>614: terminologyMaps using VF_encounterClass on VISIT - PATIENT STATUS IN/OUT (9000010-15002)</td><td><p>84% are Outpatient (2024 Jan-Mar)</p>
 </td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;type</td><td>1615: source value from V CPT - CPT &gt; CPT (9000010.18-.01 &gt; 81-)</td><td></td> </tr>
@@ -622,8 +607,6 @@
  <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>440: reference from VISIT - PATIENT NAME (9000010-.05)</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;participant</td><td></td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td>1854: terminologyMaps using VF_encounterParticipationType on V PROVIDER - PRIMARY/SECONDARY (9000010.06-.04)</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>1614-1: fixed value = http://terminology.hl7.org/CodeSystem/v3-ParticipationType#PPRF</td><td><p>from mapParameter 1</p>
-</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;period</td><td>1799: target not supported</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;individual</td><td>1614: reference from V PROVIDER - PROVIDER &gt; NEW PERSON (9000010.06-.01 &gt; 200-)</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;period</td><td></td><td></td> </tr>
@@ -759,10 +742,6 @@ Dim.ICD10.ICD10Code,Dim.ICD9.ICD9Code</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modifierExtension</td><td>N/A</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td>.functionCode</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>union(., ./translation)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>./originalText[mediaType/code="text/plain"]/data</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;period</td><td>.time</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;individual</td><td>.role</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;appointment</td><td>.outboundRelationship[typeCode=FLFS].target[classCode=ENC, moodCode=APT]</td> </tr>
@@ -869,8 +848,6 @@ Dim.ICD10.ICD10Code,Dim.ICD9.ICD9Code</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;episodeOfCare</td><td>PV1-54, PV1-53</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;participant</td><td>ROL</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td>ROL-3 (or maybe PRT-4)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>C*E.1-8, C*E.10-22</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>C*E.9. But note many systems use C*E.2 for this</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;period</td><td>ROL-5, ROL-6 (or maybe PRT-5)</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;individual</td><td>ROL-4</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;appointment</td><td>SCH-1 / SCH-2</td> </tr>
@@ -928,7 +905,7 @@ Dim.ICD10.ICD10Code,Dim.ICD9.ICD9Code</td> </tr>
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.59.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Jun 21, 2024 15:05+0000">2024-06-21</span>
+          IG &copy; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.59.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Jul 9, 2024 16:26+0000">2024-07-09</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

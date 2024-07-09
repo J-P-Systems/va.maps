@@ -10,45 +10,55 @@ Usage: #definition
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFgenderIdentity-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/VSVFgenderIdentity"
 * group[0].source = "http://va.gov/terminology/vistaDefinedTerms/2-.024"
-* group[=].target = "http://hl7.org/fhir/administrative-gender"
+* group[=].target = "http://hl7.org/fhir/gender-identity"
 * group[=].element[0].code = #N
 * group[=].element[=].display = "DOES NOT WISH TO DISCLOSE"
-* group[=].element[=].target.code = #unknown
-* group[=].element[=].target.equivalence = #wider
+* group[=].element[=].target.code = #non-disclose
+* group[=].element[=].target.display = "does not wish to disclose"
+* group[=].element[=].target.equivalence = #equal
 * group[=].element[+].code = #F
 * group[=].element[=].display = "FEMALE"
 * group[=].element[=].target.code = #female
+* group[=].element[=].target.display = "female"
 * group[=].element[=].target.equivalence = #equal
 * group[=].element[+].code = #M
 * group[=].element[=].display = "MALE"
 * group[=].element[=].target.code = #male
+* group[=].element[=].target.display = "male"
 * group[=].element[=].target.equivalence = #equal
 * group[=].element[+].code = #B
 * group[=].element[=].display = "NON-BINARY"
-* group[=].element[=].target.code = #other
-* group[=].element[=].target.equivalence = #wider
+* group[=].element[=].target.code = #non-binary
+* group[=].element[=].target.display = "non-binary"
+* group[=].element[=].target.equivalence = #equal
 * group[=].element[+].code = #O
 * group[=].element[=].display = "OTHER"
 * group[=].element[=].target.code = #other
+* group[=].element[=].target.display = "other"
 * group[=].element[=].target.equivalence = #equal
 * group[=].element[+].code = #TF
 * group[=].element[=].display = "TRANSGENDER FEMALE"
-* group[=].element[=].target.code = #other
-* group[=].element[=].target.equivalence = #wider
+* group[=].element[=].target.code = #transgender-female
+* group[=].element[=].target.display = "transgender female"
+* group[=].element[=].target.equivalence = #equal
 * group[=].element[+].code = #TM
 * group[=].element[=].display = "TRANSGENDER MALE"
-* group[=].element[=].target.code = #other
-* group[=].element[=].target.equivalence = #wider
+* group[=].element[=].target.code = #transgender-male
+* group[=].element[=].target.display = "transgender male"
+* group[=].element[=].target.equivalence = #equal
 
 ValueSet: VSVFgenderIdentity
 Title: "VF_genderIdentity"
 Description: "FHIR Target ValueSet for Terminology Maps VF_genderIdentity"
 * ^experimental = false
 * ^name = "VF_genderIdentity"
-* include http://hl7.org/fhir/administrative-gender#unknown 
-* include http://hl7.org/fhir/administrative-gender#female 
-* include http://hl7.org/fhir/administrative-gender#male 
-* include http://hl7.org/fhir/administrative-gender#other 
+* include http://hl7.org/fhir/gender-identity#non-disclose "does not wish to disclose"
+* include http://hl7.org/fhir/gender-identity#female "female"
+* include http://hl7.org/fhir/gender-identity#male "male"
+* include http://hl7.org/fhir/gender-identity#non-binary "non-binary"
+* include http://hl7.org/fhir/gender-identity#other "other"
+* include http://hl7.org/fhir/gender-identity#transgender-female "transgender female"
+* include http://hl7.org/fhir/gender-identity#transgender-male "transgender male"
 
 ValueSet: VSVFgenderIdentity-vista
 Title: "VF_genderIdentity VistA"

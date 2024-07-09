@@ -58,7 +58,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">US Veterans Administration FHIR Map Set Implementation Guide</span>
             <br/>
-            <span style="display:inline-block;">0.59.0 - 240701a
+            <span style="display:inline-block;">0.59.0 - 240701b
 
 
 
@@ -221,7 +221,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       <td>Appointment</td>
     </tr>
     <tr>
-      <td>PROVIDER (44.1)</td>
+      <td>HOSPITAL LOCATION (44.1)</td>
       <td>us-core-practitionerrole</td>
     </tr>
     <tr>
@@ -246,7 +246,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     </tr>
     <tr>
       <td>PRESCRIPTION (52)</td>
-      <td>us-core-medicationrequest, us-core-encounter, MedicationDispense</td>
+      <td>us-core-medicationrequest, MedicationDispense</td>
     </tr>
     <tr>
       <td>MEDICATION INSTRUCTIONS (52.0113)</td>
@@ -261,12 +261,20 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       <td>MedicationDispense</td>
     </tr>
     <tr>
-      <td>NON-VA MEDS (55.05)</td>
+      <td>PENDING OUTPATIENT ORDERS (52.41)</td>
       <td>us-core-medicationrequest</td>
     </tr>
     <tr>
-      <td>LABORATORY TEST (60)</td>
-      <td>us-core-diagnosticreport-lab</td>
+      <td>PENDING OUTPATIENT ORDERS (52.41105)</td>
+      <td>us-core-medicationrequest</td>
+    </tr>
+    <tr>
+      <td>PRESCRIPTION REFILL REQUEST (52.43)</td>
+      <td>Task</td>
+    </tr>
+    <tr>
+      <td>NON-VA MEDS (55.05)</td>
+      <td>us-core-medicationrequest</td>
     </tr>
     <tr>
       <td>SITE/SPECIMEN (60.01)</td>
@@ -278,7 +286,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     </tr>
     <tr>
       <td>LAB DATA (63)</td>
-      <td>us-core-diagnosticreport-lab, us-core-observation-lab</td>
+      <td>us-core-observation-lab</td>
     </tr>
     <tr>
       <td>EM (63.02)</td>
@@ -286,7 +294,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     </tr>
     <tr>
       <td>CHEM, HEM, TOX, RIA, SER, etc. (63.04)</td>
-      <td>us-core-diagnosticreport-lab, us-core-observation-lab, Specimen</td>
+      <td>us-core-observation-lab, Specimen</td>
     </tr>
     <tr>
       <td>COMMENT (63.041)</td>
@@ -294,11 +302,11 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     </tr>
     <tr>
       <td>MICROBIOLOGY (63.05)</td>
-      <td>us-core-diagnosticreport-lab, us-core-observation-lab, Specimen</td>
+      <td>us-core-observation-lab, Specimen</td>
     </tr>
     <tr>
       <td>ORDERED TEST (63.07)</td>
-      <td>us-core-diagnosticreport-lab, us-core-observation-lab</td>
+      <td>us-core-observation-lab</td>
     </tr>
     <tr>
       <td>SURGICAL PATHOLOGY (63.08)</td>
@@ -311,42 +319,6 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <tr>
       <td>SPECIMEN (63.202)</td>
       <td>Specimen</td>
-    </tr>
-    <tr>
-      <td>GRAM STAIN (63.29)</td>
-      <td>us-core-observation-lab</td>
-    </tr>
-    <tr>
-      <td>ORGANISM (63.3)</td>
-      <td>us-core-observation-lab</td>
-    </tr>
-    <tr>
-      <td>COMMENT (63.31)</td>
-      <td>us-core-observation-lab</td>
-    </tr>
-    <tr>
-      <td>BACT RPT REMARK (63.33)</td>
-      <td>us-core-diagnosticreport-lab</td>
-    </tr>
-    <tr>
-      <td>PARASITE RPT REMARK (63.36)</td>
-      <td>us-core-diagnosticreport-lab</td>
-    </tr>
-    <tr>
-      <td>MYCOLOGY RPT REMARK (63.38)</td>
-      <td>us-core-diagnosticreport-lab</td>
-    </tr>
-    <tr>
-      <td>TB RPT REMARK (63.41)</td>
-      <td>us-core-diagnosticreport-lab</td>
-    </tr>
-    <tr>
-      <td>VIROLOGY RPT REMARK (63.44)</td>
-      <td>us-core-diagnosticreport-lab</td>
-    </tr>
-    <tr>
-      <td>ORDERED TEST (63.5)</td>
-      <td>us-core-diagnosticreport-lab</td>
     </tr>
     <tr>
       <td>ORDERED TEST (63.51)</td>
@@ -369,10 +341,6 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       <td>Specimen</td>
     </tr>
     <tr>
-      <td>WKLD CODE LAB SECT (64.21)</td>
-      <td>us-core-diagnosticreport-lab</td>
-    </tr>
-    <tr>
       <td>RAD/NUC MED PATIENT (70)</td>
       <td>us-core-procedure</td>
     </tr>
@@ -382,15 +350,11 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     </tr>
     <tr>
       <td>EXAMINATIONS (70.03)</td>
-      <td>us-core-procedure, us-core-observation-imaging</td>
+      <td>us-core-procedure</td>
     </tr>
     <tr>
       <td>EXAMINATION STATUS (72)</td>
       <td>us-core-procedure</td>
-    </tr>
-    <tr>
-      <td>RAD/NUC MED REPORTS (74)</td>
-      <td>us-core-observation-imaging</td>
     </tr>
     <tr>
       <td>RAD/NUC MED REASON (75.2)</td>
@@ -414,7 +378,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     </tr>
     <tr>
       <td>LAB LOINC (95.3)</td>
-      <td>us-core-diagnosticreport-lab, us-core-observation-lab</td>
+      <td>us-core-observation-lab</td>
     </tr>
     <tr>
       <td>ORDER (100)</td>
@@ -426,7 +390,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     </tr>
     <tr>
       <td>GMRV VITAL QUALIFIER (120.52)</td>
-      <td>us-core-vital-signs, Device, us-core-blood-pressure, us-core-pulse-oximetry</td>
+      <td>us-core-vital-signs, us-core-blood-pressure, us-core-pulse-oximetry</td>
     </tr>
     <tr>
       <td>PATIENT ALLERGIES (120.8)</td>
@@ -457,10 +421,6 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       <td>us-core-implantable-device</td>
     </tr>
     <tr>
-      <td>PROSTHESIS (131.9)</td>
-      <td>us-core-implantable-device</td>
-    </tr>
-    <tr>
       <td>NEW PERSON (200)</td>
       <td>us-core-encounter, us-core-practitioner, us-core-practitionerrole</td>
     </tr>
@@ -473,18 +433,6 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       <td>us-core-implantable-device</td>
     </tr>
     <tr>
-      <td>AR DEBTOR (340)</td>
-      <td>Invoice, Patient, ChargeItem</td>
-    </tr>
-    <tr>
-      <td>AR CCPC STATEMENTS (349.2)</td>
-      <td>Invoice, Patient</td>
-    </tr>
-    <tr>
-      <td>PD LINE (349.21)</td>
-      <td>Invoice, ChargeItem</td>
-    </tr>
-    <tr>
       <td>APPOINTMENT TYPE (409.1)</td>
       <td>Appointment</td>
     </tr>
@@ -495,22 +443,6 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <tr>
       <td>OUTPATIENT ENCOUNTER (409.68)</td>
       <td>Appointment</td>
-    </tr>
-    <tr>
-      <td>ECHO (691)</td>
-      <td>us-core-observation-imaging</td>
-    </tr>
-    <tr>
-      <td>FINDINGS (691.06)</td>
-      <td>us-core-observation-imaging</td>
-    </tr>
-    <tr>
-      <td>ELECTROCARDIOGRAM (EKG) (691.5)</td>
-      <td>us-core-observation-imaging</td>
-    </tr>
-    <tr>
-      <td>ECG INTERPRETATION (693.3)</td>
-      <td>us-core-observation-imaging</td>
     </tr>
     <tr>
       <td>GENERATOR IMPLANT (698)</td>
@@ -534,14 +466,14 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     </tr>
     <tr>
       <td>UCUM CODES (757.5)</td>
-      <td>us-core-immunization, Observation</td>
+      <td>us-core-immunization</td>
     </tr>
     <tr>
       <td>COUNTRY CODE (779.004)</td>
       <td>us-core-location, us-core-organization</td>
     </tr>
     <tr>
-      <td>TIU DOCUMENT (8925)</td>
+      <td>REPORT TEXT (8925)</td>
       <td>us-core-diagnosticreport-lab, us-core-documentreference, Binary</td>
     </tr>
     <tr>
@@ -562,7 +494,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     </tr>
     <tr>
       <td>PATIENT/IHS (9000001)</td>
-      <td>Observation, us-core-procedure</td>
+      <td>us-core-procedure</td>
     </tr>
     <tr>
       <td>VISIT (9000010)</td>
@@ -579,10 +511,6 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <tr>
       <td>V IMMUNIZATION (9000010.11)</td>
       <td>us-core-immunization, Observation</td>
-    </tr>
-    <tr>
-      <td>V EXAM (9000010.13)</td>
-      <td>Observation</td>
     </tr>
     <tr>
       <td>V CPT (9000010.18)</td>
@@ -603,14 +531,6 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <tr>
       <td>IMMUNIZATION (9999999.14)</td>
       <td>us-core-immunization</td>
-    </tr>
-    <tr>
-      <td>EXAM (9999999.15)</td>
-      <td>Observation</td>
-    </tr>
-    <tr>
-      <td>CODE MAPPINGS (9999999.18)</td>
-      <td>Observation</td>
     </tr>
     <tr>
       <td>PROVIDER NARRATIVE (9999999.27)</td>
@@ -645,7 +565,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.59.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Jun 21, 2024 15:05+0000">2024-06-21</span>
+          IG &#169; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.59.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Jul 9, 2024 16:26+0000">2024-07-09</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

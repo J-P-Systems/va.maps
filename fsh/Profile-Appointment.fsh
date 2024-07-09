@@ -16,7 +16,7 @@ Description: "This StructureDefinition contains the maps for VistA file APPOINTM
 * serviceCategory ^slicing.discriminator.path = "$this"
 * serviceCategory ^slicing.rules = #open
 * serviceCategory contains va-service 0..1 and va-stop-code 0..1
-* status and cancelationReason and serviceCategory[va-service].coding.code and serviceCategory[va-service].coding.system and serviceType[va-stop-code].coding.code and serviceType[va-stop-code].coding.system and serviceType[va-credit-stop-code].coding.code and serviceType[va-credit-stop-code].coding.system and appointmentType.text and start and end and minutesDuration and created and participant[va-clinic].actor and participant[va-clinic].type.coding.code and participant[va-clinic].status and participant[va-patient].actor and participant[va-patient].type.coding.code and participant[va-patient].status and serviceCategory[va-stop-code].coding.code and serviceCategory[va-stop-code].coding.system and comment and participant[va-appt-clinic].actor and participant[va-appt-clinic].type.coding.code and participant[va-appt-clinic].status MS
+* status and cancelationReason and serviceCategory[va-service].coding.code and serviceCategory[va-service].coding.system and serviceType[va-stop-code].coding.code and serviceType[va-stop-code].coding.system and serviceType[va-credit-stop-code].coding.code and serviceType[va-credit-stop-code].coding.system and appointmentType.text and start and end and minutesDuration and created and participant[va-clinic].actor and participant[va-clinic].type.coding.code and participant[va-clinic].status and participant[va-patient].actor and participant[va-patient].type.coding.code and participant[va-patient].status and serviceCategory[va-stop-code].coding.code and serviceCategory[va-stop-code].coding.system and comment and participant[va-appt-clinic].actor and participant[va-appt-clinic].type.coding.code and participant[va-appt-clinic].status and description MS
 * status from http://va.gov/fhir/ValueSet/VSVFAppointmentStatus
 * cancelationReason from http://va.gov/fhir/ValueSet/VSVFAppointmentCancellationReason
 * serviceCategory[va-service].coding.system = "http://va.gov/terminology/VistADefinedTerms/44-9"
@@ -53,24 +53,24 @@ Source: Appointment
 * reasonCode -> "741: target not supported"
 * reasonReference -> "742: target not supported"
 * start -> "743: source value from APPOINTMENT - APPOINTMENT DATE/TIME (2.98-.001)"
-* end -> "1612: source value from APPOINTMENT - OUTPATIENT ENCOUNTER > OUTPATIENT ENCOUNTER - CHECK OUT PROCESS COMPLETION (2.98-21 > 409.68-.07)"
+* end -> "1612: source value from APPOINTMENT - OUTPATIENT ENCOUNTER > OUTPATIENT ENCOUNTER - CHECK OUT PROCESS COMPLETION (2.98-21 > 409.68-.07)" "Added to meet FHIR Core constraint app-2"
 * minutesDuration -> "744: source value from PATIENT - LENGTH OF APP'T (44.003-1)"
 * created -> "745: source value from APPOINTMENT - DATE APPT. MADE (2.98-20)"
 * participant[va-clinic].actor -> "746: reference from APPOINTMENT - CLINIC (2.98-.01)"
 * participant[va-clinic].type.coding.code -> "746-1: fixed value = #PART" "from mapParameter 1"
 * participant[va-clinic].status -> "746-2: fixed value = #accepted" "from mapParameter 2"
-* participant[va-patient].actor -> "1722: reference from PATIENT - APPOINTMENT > APPOINTMENT (2-1900 > 2.98)" "Added patient to the appointment map so that it is not assumed\nN.B. this is a parent reference!"
+* participant[va-patient].actor -> "1722: reference from PATIENT - APPOINTMENT > APPOINTMENT (2-1900 > 2.98)" "Added patient to the appointment map so that it is not assumed"
 * participant[va-patient].type.coding.code -> "1722-1: fixed value = #PART" "from mapParameter 1"
 * participant[va-patient].status -> "1722-2: fixed value = #accepted" "from mapParameter 2"
 * status -> "748: fixed value = #waitlist when SD WAIT LIST - PATIENT (409.3-.01) case not null" "LVH returns \"Waitlisted\". \"Waitlisted\" is the display value and \"waitlist\" is the code. This is a required FHIR value set. 3/15/2023 LVH will fix"
 * serviceCategory[va-stop-code].coding.code -> "749: source value from SD WAIT LIST - APPT STOP CODE (409.3-13.4)"
 * serviceCategory[va-stop-code].coding.system -> "749-1: fixed value = http://va.gov/terminology/VistADefinedTerms/409.3-13.4" "from mapParameter 1"
-* start -> "750: source value from SD WAIT LIST - DESIRED DATE OF APPOINTMENT (409.3-22)"
 * created -> "751: source value from SD WAIT LIST - ORIGINATING DATE (409.3-1)"
 * comment -> "752: source value from SD WAIT LIST - COMMENTS (409.3-25)"
 * participant[va-appt-clinic].actor -> "754: reference from SD WAIT LIST - APPT CLINIC (409.3-13.2)"
 * participant[va-appt-clinic].type.coding.code -> "754-1: fixed value = #PART" "from mapParameter 1"
 * participant[va-appt-clinic].status -> "754-2: fixed value = #tentative" "from mapParameter 2"
+* description -> "1791: source value from APPOINTMENT - APPOINTMENT TYPE > APPOINTMENT TYPE - DESCRIPTION (2.98-9.5 > 409.1-10)" "Added after PHAPI gap analysis to match PHAPI fields"
 
 Mapping: cdw-to-Appointment
 Id: cdw
@@ -92,20 +92,7 @@ Source: Appointment
 * participant[va-clinic].actor -> "Appt.Appointment.LocationIEN"
 * status -> "Appt.WaitList.PatientIEN"
 * serviceCategory[va-stop-code].coding.code -> "Appt.WaitList.AppointmentPrimaryStopCodeIEN"
-* start -> "Appt.WaitList.AppointmentDesiredDate"
 * created -> "Appt.WaitList.OriginatingDate"
 * comment -> "Appt.WaitList.WaitListComments"
 * participant[va-appt-clinic].actor -> "Appt.WaitList.AppointmentLocationIEN"
-
-Mapping: vpr-to-Appointment
-Id: vpr
-Title: "Virtual Patient Record (VPR)"
-Source: Appointment
-* status -> "appointment.apptStatus\nappointment.patientClass"
-* status -> "appointment.apptStatus\nappointment.patientClass"
-* status -> "appointment.apptStatus\nappointment.patientClass"
-* status -> "appointment.apptStatus\nappointment.patientClass"
-* serviceCategory[va-service].coding.code -> "appointment.service"
-* serviceType[va-stop-code].coding.code -> "appointment.clinStop"
-* appointmentType.text -> "appointment.type"
-* start -> "appointment.dateTime"
+* description -> "Appt.Appointment.AppointmentTypeIEN"

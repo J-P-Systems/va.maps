@@ -130,7 +130,7 @@ Usage: #definition
 * group[=].element[=].display = "INDIANA"
 * group[=].element[=].target.code = #USA
 * group[=].element[=].target.display = "United States of America"
-* group[=].element[=].target.equivalence = #equal
+* group[=].element[=].target.equivalence = #wider
 * group[=].element[+].code = #IOWA
 * group[=].element[=].display = "IOWA"
 * group[=].element[=].target.code = #USA

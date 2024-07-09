@@ -21,7 +21,7 @@ Usage: #definition
 * group[=].element[=].target.code = #spouse
 * group[=].element[=].target.display = "Spouse"
 * group[=].element[=].target.equivalence = #equal
-* group[=].element[+].code = #003_–_999
+* group[=].element[+].code = #003_-_999
 * group[=].element[=].display = "Dependents and Others"
 * group[=].element[=].target.code = #other
 * group[=].element[=].target.display = "Other"
@@ -43,4 +43,4 @@ Description: "VistA Source ValueSet for Terminology Maps VF_PharmacyPersonType"
 * ^name = "VF_PharmacyPersonType"
 * include urn:undefined#001 "Cardholder"
 * include urn:undefined#002 "Spouse"
-* include urn:undefined#003_–_999 "Dependents and Others"
+* include urn:undefined#003_-_999 "Dependents and Others"

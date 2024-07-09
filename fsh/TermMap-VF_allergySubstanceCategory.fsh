@@ -22,6 +22,7 @@ Usage: #definition
 * group[=].element[+].code = #F
 * group[=].element[=].display = "FOOD"
 * group[=].element[=].target.code = #food
+* group[=].element[=].target.display = "food"
 * group[=].element[=].target.equivalence = #equal
 
 ValueSet: VSVFallergySubstanceCategory
@@ -30,7 +31,7 @@ Description: "FHIR Target ValueSet for Terminology Maps VF_allergySubstanceCateg
 * ^experimental = false
 * ^name = "VF_allergySubstanceCategory"
 * include http://hl7.org/fhir/allergy-intolerance-category#medication "medication"
-* include http://hl7.org/fhir/allergy-intolerance-category#food 
+* include http://hl7.org/fhir/allergy-intolerance-category#food "food"
 
 ValueSet: VSVFallergySubstanceCategory-vista
 Title: "VF_allergySubstanceCategory VistA"

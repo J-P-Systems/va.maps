@@ -4,7 +4,7 @@ Id: MedicationDispenseOriginal
 Title: "MedicationDispense: Original"
 Description: "This StructureDefinition contains the maps for VistA file PRESCRIPTION (52) to MedicationDispense"
 * ^status = #draft
-* type and authorizingPrescription and daysSupply and destination.display and dosageInstruction.doseAndRate.doseQuantity.unit and dosageInstruction.doseAndRate.doseQuantity.code and dosageInstruction.doseAndRate.doseQuantity.value and dosageInstruction.patientInstruction and dosageInstruction.text and medicationCodeableConcept.coding.code and medicationCodeableConcept.coding.system and medicationCodeableConcept.text and quantity.value and status and subject and whenPrepared and category and location and note.text MS
+* type and authorizingPrescription and daysSupply and destination.display and dosageInstruction.doseAndRate.doseQuantity.unit and dosageInstruction.doseAndRate.doseQuantity.code and dosageInstruction.doseAndRate.doseQuantity.value and dosageInstruction.patientInstruction and dosageInstruction.text and medicationCodeableConcept.coding.code and medicationCodeableConcept.coding.system and medicationCodeableConcept.text and quantity.value and status and subject and whenPrepared and category and location and note.text and performer MS
 * type = #FF
 * dosageInstruction.doseAndRate.doseQuantity.code from http://va.gov/fhir/ValueSet/VSVFDoseUnits
 * medicationCodeableConcept.coding.system = "urn:oid:2.16.840.1.113883.6.233"
@@ -29,10 +29,11 @@ Source: MedicationDispenseOriginal
 * quantity.value -> "823: source value from PRESCRIPTION - QTY (52-7)"
 * status -> "1541: fixed value = #completed when PRESCRIPTION - RELEASED DATE/TIME (52-31) case not null"
 * subject -> "820: reference from PRESCRIPTION - PATIENT (52-2)"
-* whenPrepared -> "832: source value from PRESCRIPTION - RELEASED DATE/TIME (52-31)" "Per discussion with Pharma: Josh Miller 5/27/22"
+* whenPrepared -> "832: source value from PRESCRIPTION - RELEASED DATE/TIME (52-31)" "WHO Per discussion with Pharma: Josh Miller 5/27/22\nupdated to WP per discussion with Eric Spahn 2/5/24"
 * category -> "1668: fixed value = #outpatient"
-* location -> "1711: reference from PRESCRIPTION - DIVISION (52-20)"
+* location -> "1711: reference from PRESCRIPTION - DIVISION (52-20)" "not Clinic (written) but Division (filled)"
 * note.text -> "1716: source value from PRESCRIPTION - REMARKS (52-12)"
+* performer -> "1727: reference from PRESCRIPTION - PHARMACIST (52-23)"
 
 Mapping: cdw-to-MedicationDispenseOriginal
 Id: cdw
@@ -46,15 +47,3 @@ Source: MedicationDispenseOriginal
 * medicationCodeableConcept.coding.code -> "RxOut.RxOutpat.LocalDrugIEN,RxOut.RxOutpat.NationalDrugIEN,RxOut.RxOutpatFill.LocalDrugIEN,RxOut.RxOutpatFill.NationalDrugIEN\nDim.LocalDrug.DrugNameWithoutDoseIEN,Dim.LocalDrug.NationalDrugIEN,Dim.LocalDrug.NationalDrugIEN"
 * medicationCodeableConcept.text -> "RxOut.RxOutpat.LocalDrugIEN,RxOut.RxOutpat.NationalDrugIEN,RxOut.RxOutpatFill.LocalDrugIEN,RxOut.RxOutpatFill.NationalDrugIEN\nDim.LocalDrug.LocalDrugNameWithDose,Dim.LocalDrug.LocalDrugNameWithDose,RxOut.RxOutpatFill.LocalDrugNameWithDose"
 * subject -> "RxOut.ActivityLog.PatientIEN,RxOut.ActivityLogOtherComments.PatientIEN,RxOut.RxOutpat.PatientIEN,RxOut.RxOutpatExt.PatientIEN,RxOut.RxOutpatExt.PatientSID,RxOut.RxOutpatFill.PatientIEN,RxOut.RxOutpatMedInstructions.PatientIEN,RxOut.RxOutpatSig.PatientIEN"
-
-Mapping: vpr-to-MedicationDispenseOriginal
-Id: vpr
-Title: "Virtual Patient Record (VPR)"
-Source: MedicationDispenseOriginal
-* daysSupply -> "Pharmacy: daysSupply"
-* destination.display -> "Pharmacy: routing"
-* dosageInstruction.doseAndRate.doseQuantity.unit -> "Pharmacy: dose.units"
-* dosageInstruction.doseAndRate.doseQuantity.code -> "Pharmacy: dose.units"
-* dosageInstruction.doseAndRate.doseQuantity.value -> "Pharmacy: dose.dose"
-* dosageInstruction.text -> "Pharmacy: sig"
-* quantity.value -> "Pharmacy: quantity"

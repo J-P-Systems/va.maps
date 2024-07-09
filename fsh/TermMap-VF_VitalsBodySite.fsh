@@ -50,7 +50,8 @@ Usage: #definition
 * group[=].element[+].code = #4688640
 * group[=].element[=].display = "AXILLARY"
 * group[=].element[=].target.code = #422543003
-* group[=].element[=].target.display = "Structure of axillary fossa (body structure)"
+* group[=].element[=].target.display = "Structure of axillary fossa (body structure)
+76261009 |Skin structure of axilla (body structure)|"
 * group[=].element[=].target.equivalence = #equal
 * group[=].element[=].target.dependsOn[+].property = "condition"
 * group[=].element[=].target.dependsOn[=].value = "No laterality"
@@ -70,11 +71,9 @@ Usage: #definition
 * group[=].element[=].target.dependsOn[=].value = "Laterality Right"
 * group[=].element[+].code = #4688642
 * group[=].element[=].display = "BILATERAL PERIPHERALS"
-* group[=].element[=].target.code = #54718008
-* group[=].element[=].target.display = "Peripheral pulse, function (observable entity)"
+* group[=].element[=].target.code = #840581000
+* group[=].element[=].target.display = "Structure of peripheral artery (body structure)"
 * group[=].element[=].target.equivalence = #equal
-* group[=].element[=].target.comment = "14414005 |Peripheral (qualifier value)|
-840581000 |Structure of peripheral artery (body structure)|"
 * group[=].element[+].code = #4688643
 * group[=].element[=].display = "BRACHIAL"
 * group[=].element[=].target.code = #17137000
@@ -143,7 +142,6 @@ Usage: #definition
 * group[=].element[=].target.code = #276885007
 * group[=].element[=].target.display = "Core body temperature (observable entity)"
 * group[=].element[=].target.equivalence = #equal
-* group[=].element[=].target.comment = "OE, not site"
 * group[=].element[+].code = #4688651
 * group[=].element[=].display = "DORSALIS PEDIS"
 * group[=].element[=].target.code = #86547008
@@ -279,7 +277,6 @@ Usage: #definition
 * group[=].element[=].target.code = #54718008
 * group[=].element[=].target.display = "Peripheral pulse, function (observable entity)"
 * group[=].element[=].target.equivalence = #equal
-* group[=].element[=].target.comment = "OE, not body structure"
 * group[=].element[+].code = #4688673
 * group[=].element[=].display = "POPLITEAL"
 * group[=].element[=].target.code = #43899006
@@ -368,28 +365,27 @@ Usage: #definition
 * group[=].element[=].target.code = #450721000
 * group[=].element[=].target.display = "Structure of temporal region (body structure)"
 * group[=].element[=].target.equivalence = #equal
-* group[=].element[=].target.comment = "Laterality not modeled in SNOMED CT"
 * group[=].element[+].code = #4688708
 * group[=].element[=].display = "THIGH"
 * group[=].element[=].target.code = #68367000
-* group[=].element[=].target.display = "Thigh structure (body structure)"
+* group[=].element[=].target.display = "Thigh structure (body structure`)"
 * group[=].element[=].target.equivalence = #equal
 * group[=].element[=].target.dependsOn[+].property = "condition"
-* group[=].element[=].target.dependsOn[=].value = "No laterality"
+* group[=].element[=].target.dependsOn[=].value = "Girth; No laterality"
 * group[=].element[+].code = #4688708
 * group[=].element[=].display = "THIGH"
 * group[=].element[=].target.code = #61396006
 * group[=].element[=].target.display = "Structure of left thigh (body structure)"
 * group[=].element[=].target.equivalence = #equal
 * group[=].element[=].target.dependsOn[+].property = "condition"
-* group[=].element[=].target.dependsOn[=].value = "Laterality Left"
+* group[=].element[=].target.dependsOn[=].value = "Girth; Laterality Left"
 * group[=].element[+].code = #4688708
 * group[=].element[=].display = "THIGH"
 * group[=].element[=].target.code = #11207009
 * group[=].element[=].target.display = "Structure of right thigh (body structure)"
 * group[=].element[=].target.equivalence = #equal
 * group[=].element[=].target.dependsOn[+].property = "condition"
-* group[=].element[=].target.dependsOn[=].value = "Laterality Right"
+* group[=].element[=].target.dependsOn[=].value = "Girth; Laterality Right"
 * group[=].element[+].code = #4688712
 * group[=].element[=].display = "TYMPANIC"
 * group[=].element[=].target.code = #42859004
@@ -486,8 +482,9 @@ Description: "FHIR Target ValueSet for Terminology Maps VF_VitalsBodySite"
 * include http://snomed.info/sct#6685009 "Structure of right ankle (body structure)"
 * include http://snomed.info/sct#46707002 "Structure of precordium (body structure)"
 * include http://snomed.info/sct#128617001 "Arteriovenous fistula (morphologic abnormality)"
-* include http://snomed.info/sct#422543003 "Structure of axillary fossa (body structure)"
-* include http://snomed.info/sct#54718008 "Peripheral pulse, function (observable entity)"
+* include http://snomed.info/sct#422543003 "Structure of axillary fossa (body structure)
+76261009 |Skin structure of axilla (body structure)|"
+* include http://snomed.info/sct#840581000 "Structure of peripheral artery (body structure)"
 * include http://snomed.info/sct#17137000 "Structure of brachial artery (body structure)"
 * include http://snomed.info/sct#723961002 "Structure of left brachial artery (body structure)"
 * include http://snomed.info/sct#723962009 "Structure of right brachial artery (body structure)"
@@ -518,6 +515,7 @@ Description: "FHIR Target ValueSet for Terminology Maps VF_VitalsBodySite"
 * include http://snomed.info/sct#64262003 "Structure of right forearm (body structure)"
 * include http://snomed.info/sct#45048000 "Neck structure (body structure)"
 * include http://snomed.info/sct#123851003 "Mouth region structure (body structure)"
+* include http://snomed.info/sct#54718008 "Peripheral pulse, function (observable entity)"
 * include http://snomed.info/sct#43899006 "Structure of popliteal artery (body structure)"
 * include http://snomed.info/sct#25885001 "Left popliteal artery structure (body structure)"
 * include http://snomed.info/sct#57832007 "Structure of right popliteal artery (body structure)"
@@ -532,7 +530,7 @@ Description: "FHIR Target ValueSet for Terminology Maps VF_VitalsBodySite"
 * include http://snomed.info/sct#34402009 "Rectum structure (body structure)"
 * include http://snomed.info/sct#39937001 "Skin structure (body structure)"
 * include http://snomed.info/sct#450721000 "Structure of temporal region (body structure)"
-* include http://snomed.info/sct#68367000 "Thigh structure (body structure)"
+* include http://snomed.info/sct#68367000 "Thigh structure (body structure`)"
 * include http://snomed.info/sct#61396006 "Structure of left thigh (body structure)"
 * include http://snomed.info/sct#11207009 "Structure of right thigh (body structure)"
 * include http://snomed.info/sct#42859004 "Tympanic membrane structure (body structure)"
