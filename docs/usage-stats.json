@@ -1,6 +1,6 @@
 {
   "package": "va.maps",
-  "version": "0.59.0",
+  "version": "0.61.0",
   "fhirVersion": "4.0.1",
   "jurisdiction": "US",
   "extensions": [
@@ -73,6 +73,24 @@
         "title": "Encounter: Inpatient Condition"
       }
     ],
+    "ChargeItem": [
+      {
+        "url": "http://va.gov/fhir/StructureDefinition/DebtPortalChargeItem",
+        "title": "Debt Portal ChargeItem"
+      }
+    ],
+    "Invoice": [
+      {
+        "url": "http://va.gov/fhir/StructureDefinition/DebtPortalInvoice",
+        "title": "Debt Portal Invoice"
+      }
+    ],
+    "Patient": [
+      {
+        "url": "http://va.gov/fhir/StructureDefinition/VAERS",
+        "title": "VAERS"
+      }
+    ],
     "Binary": [
       {
         "url": "http://va.gov/fhir/StructureDefinition/DocumentReferenceBinary",
@@ -137,16 +155,16 @@
         "title": "Implantable Device: V Lead"
       }
     ],
-    "Specimen": [
-      {
-        "url": "http://va.gov/fhir/StructureDefinition/LabObservationSurgicalPathologySpecimen",
-        "title": "Lab Observation: Surgical Pathology Specimen"
-      }
-    ],
     "DiagnosticReport": [
       {
         "url": "http://va.gov/fhir/StructureDefinition/LabObservationSurgicalPathologyDiagnosticReport",
         "title": "Lab Observation: Surgical Pathology DiagnosticReport"
+      }
+    ],
+    "Specimen": [
+      {
+        "url": "http://va.gov/fhir/StructureDefinition/LabObservationSurgicalPathologySpecimen",
+        "title": "Lab Observation: Surgical Pathology Specimen"
       }
     ],
     "Location": [
@@ -155,10 +173,20 @@
         "title": "Location"
       }
     ],
+    "Provenance": [
+      {
+        "url": "http://va.gov/fhir/StructureDefinition/MedRefillRequestMHVProvenance-org",
+        "title": "MedRefillRequestMHV Provenance-org"
+      },
+      {
+        "url": "http://va.gov/fhir/StructureDefinition/MedRefillRequestMHVProvenance-pat",
+        "title": "MedRefillRequestMHV Provenance-pat"
+      }
+    ],
     "Task": [
       {
-        "url": "http://va.gov/fhir/StructureDefinition/MedRefillRequestMHV",
-        "title": "MedRefillRequestMHV"
+        "url": "http://va.gov/fhir/StructureDefinition/MedRefillRequestMHVTask",
+        "title": "MedRefillRequestMHV Task"
       }
     ],
     "MedicationDispense": [
@@ -199,12 +227,6 @@
         "title": "Vital Signs: SpO2 Organization"
       }
     ],
-    "Patient": [
-      {
-        "url": "http://va.gov/fhir/StructureDefinition/Patient",
-        "title": "Patient"
-      }
-    ],
     "Practitioner": [
       {
         "url": "http://va.gov/fhir/StructureDefinition/Practitioner",
@@ -239,6 +261,7 @@
     "http://hl7.org/fhir/StructureDefinition/11179-permitted-value-conceptmap": [
       "Immunization.primarySource",
       "MedicationRequest.extension.value[x]",
+      "Observation.interpretation",
       "Observation.value[x].code",
       "Practitioner.address.country"
     ],
@@ -281,7 +304,8 @@
       "Observation"
     ],
     "http://hl7.org/fhir/StructureDefinition/originalText": [
-      "MedicationRequest.dosageInstruction.doseAndRate"
+      "MedicationRequest.dosageInstruction.doseAndRate",
+      "MedicationRequest.dosageInstruction.doseAndRate.dose[x]"
     ],
     "http://hl7.org/fhir/StructureDefinition/patient-religion": [
       "Patient"

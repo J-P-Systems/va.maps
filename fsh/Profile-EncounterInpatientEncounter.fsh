@@ -12,7 +12,7 @@ Description: "This StructureDefinition contains the maps for VistA file PTF (45)
 * reasonCode ^slicing.discriminator.path = "$this"
 * reasonCode ^slicing.rules = #open
 * reasonCode contains va-principle 0..1 and va-secondary 0..1 and va-procedure 0..1
-* identifier[va-IEN].value and identifier[va-IEN].system and identifier[va-IEN].type.text and class and identifier[va-IA].value and identifier[va-IA].system and identifier[va-IA].type.text and status and subject and participant.individual and participant.type.coding and period.start and period.end and reasonCode[va-principle].coding.code and reasonCode[va-principle].coding.system and reasonCode[va-secondary].coding.code and reasonCode[va-secondary].coding.system and reasonCode[va-procedure].coding.code and reasonCode[va-procedure].coding.system and hospitalization.admitSource.coding.code and hospitalization.admitSource.coding.system and hospitalization.admitSource.coding and hospitalization.origin.display and hospitalization.destination.display and hospitalization.dischargeDisposition.coding.code and hospitalization.dischargeDisposition.coding.system and location.location and serviceProvider and type and type.coding.system and type.coding.code and type.coding.display and type.text MS
+* identifier[va-IEN].value and identifier[va-IEN].system and identifier[va-IEN].type.text and class and identifier[va-IA].value and identifier[va-IA].system and identifier[va-IA].type.text and status and subject and participant.individual and participant.type.coding and period.start and period.end and reasonCode[va-principle].coding.code and reasonCode[va-principle].coding.system and diagnosis.condition and diagnosis.rank and reasonCode[va-secondary].coding.code and reasonCode[va-secondary].coding.system and reasonCode[va-procedure].coding.code and reasonCode[va-procedure].coding.system and hospitalization.admitSource.coding.code and hospitalization.admitSource.coding.system and hospitalization.admitSource.coding and hospitalization.origin.display and hospitalization.destination.display and hospitalization.dischargeDisposition.coding.code and hospitalization.dischargeDisposition.coding.system and location.location and serviceProvider and type and type.coding.system and type.coding.code and type.coding.display and type.text MS
 * identifier[va-IEN].system = "http://va.gov/identifiers/$Sta3n/45"
 * identifier[va-IEN].type.text = "IEN"
 * class = http://terminology.hl7.org/CodeSystem/v3-ActCode#IMP
@@ -20,6 +20,8 @@ Description: "This StructureDefinition contains the maps for VistA file PTF (45)
 * identifier[va-IA].type.text = "Internal Admission #"
 * participant.type.coding = http://terminology.hl7.org/CodeSystem/v3-ParticipationType#PPRF
 * reasonCode[va-principle].coding.system = "urn:see-termmap-in-mapParameter"
+* diagnosis.condition only Reference(EncounterInpatientCondition)
+* diagnosis.rank = 1
 * reasonCode[va-secondary].coding.system = "urn:see-termmap-in-mapParameter"
 * reasonCode[va-procedure].coding.system = "http://www.cms.gov/Medicare/Coding/ICD10"
 * hospitalization.admitSource.coding.system = "http://va.gov/terminology/vistaDefinedTerms/45.1"
@@ -49,6 +51,8 @@ Source: EncounterInpatientEncounter
 * period.end -> "446: source value from PTF - DISCHARGE DATE (45-70)"
 * reasonCode[va-principle].coding.code -> "448: source value from PTF - PRINCIPAL DIAGNOSIS (45-79)"
 * reasonCode[va-principle].coding.system -> "448-1: fixed value = urn:see-termmap-in-mapParameter" "from mapParameter 1"
+* diagnosis.condition -> "1723: reference" "This points to the Condition identified at #956"
+* diagnosis.rank -> "1723-1: fixed value = 1" "from mapParameter 1"
 * reasonCode[va-secondary].coding.code -> "449: source value from PTF - SECONDARY DIAGNOSIS [#] (45-79.16)" "79.16 and following"
 * reasonCode[va-secondary].coding.system -> "449-1: fixed value = urn:see-termmap-in-mapParameter" "from mapParameter 1"
 * reasonCode[va-procedure].coding.code -> "450: source value from PTF - PROCEDURE [#] (45-45.01)" "45.01 and following"

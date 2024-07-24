@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Classes - US Veterans Administration FHIR Map Set Implementation Guide v0.59.0</title>
+    <title>Classes - US Veterans Administration FHIR Map Set Implementation Guide v0.61.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -58,7 +58,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">US Veterans Administration FHIR Map Set Implementation Guide</span>
             <br/>
-            <span style="display:inline-block;">0.59.0 - 240701b
+            <span style="display:inline-block;">0.61.0 - 240801
 
 
 
@@ -101,8 +101,18 @@
   <li>
     <a href="profileDesign.html">Profile Design</a>
   </li>
-  <li>
-    <a href="guidance.html">Design Guidance</a>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Design Guidance
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="guidance.html">Design Guidance</a>
+      </li>
+      <li>
+        <a href="guidance-vitals.html">Design Guidance Vitals</a>
+      </li>
+    </ul>
   </li>
   <li>
     <a href="mustSupport.html">Must Support</a>
@@ -151,7 +161,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">US Veterans Administration FHIR Map Set Implementation Guide - Local Development build (v0.59.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">US Veterans Administration FHIR Map Set Implementation Guide - Local Development build (v0.61.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>Classes</h2>
   
 
@@ -270,14 +280,22 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     </tr>
     <tr>
       <td>PRESCRIPTION REFILL REQUEST (52.43)</td>
-      <td>Task</td>
+      <td>Task, Provenance</td>
     </tr>
     <tr>
       <td>NON-VA MEDS (55.05)</td>
       <td>us-core-medicationrequest</td>
     </tr>
     <tr>
+      <td>LABORATORY TEST (60)</td>
+      <td>us-core-diagnosticreport-lab</td>
+    </tr>
+    <tr>
       <td>SITE/SPECIMEN (60.01)</td>
+      <td>us-core-observation-lab</td>
+    </tr>
+    <tr>
+      <td>ETIOLOGY FIELD (61.2)</td>
       <td>us-core-observation-lab</td>
     </tr>
     <tr>
@@ -286,7 +304,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     </tr>
     <tr>
       <td>LAB DATA (63)</td>
-      <td>us-core-observation-lab</td>
+      <td>us-core-diagnosticreport-lab, us-core-observation-lab</td>
     </tr>
     <tr>
       <td>EM (63.02)</td>
@@ -302,11 +320,11 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     </tr>
     <tr>
       <td>MICROBIOLOGY (63.05)</td>
-      <td>us-core-observation-lab, Specimen</td>
+      <td>us-core-diagnosticreport-lab, us-core-observation-lab, Specimen</td>
     </tr>
     <tr>
       <td>ORDERED TEST (63.07)</td>
-      <td>us-core-observation-lab</td>
+      <td>us-core-diagnosticreport-lab, us-core-observation-lab</td>
     </tr>
     <tr>
       <td>SURGICAL PATHOLOGY (63.08)</td>
@@ -319,6 +337,22 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <tr>
       <td>SPECIMEN (63.202)</td>
       <td>Specimen</td>
+    </tr>
+    <tr>
+      <td>GRAM STAIN (63.29)</td>
+      <td>us-core-observation-lab</td>
+    </tr>
+    <tr>
+      <td>ORGANISM (63.3)</td>
+      <td>us-core-observation-lab</td>
+    </tr>
+    <tr>
+      <td>COMMENT (63.31)</td>
+      <td>us-core-observation-lab</td>
+    </tr>
+    <tr>
+      <td>ORDERED TEST (63.5)</td>
+      <td>us-core-diagnosticreport-lab</td>
     </tr>
     <tr>
       <td>ORDERED TEST (63.51)</td>
@@ -341,12 +375,16 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       <td>Specimen</td>
     </tr>
     <tr>
+      <td>WKLD CODE LAB SECT (64.21)</td>
+      <td>us-core-diagnosticreport-lab</td>
+    </tr>
+    <tr>
       <td>RAD/NUC MED PATIENT (70)</td>
       <td>us-core-procedure</td>
     </tr>
     <tr>
       <td>REGISTERED EXAMS (70.02)</td>
-      <td>us-core-procedure</td>
+      <td>us-core-procedure, us-core-observation-imaging</td>
     </tr>
     <tr>
       <td>EXAMINATIONS (70.03)</td>
@@ -355,6 +393,10 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <tr>
       <td>EXAMINATION STATUS (72)</td>
       <td>us-core-procedure</td>
+    </tr>
+    <tr>
+      <td>RAD/NUC MED REPORTS (74)</td>
+      <td>us-core-observation-imaging</td>
     </tr>
     <tr>
       <td>RAD/NUC MED REASON (75.2)</td>
@@ -378,7 +420,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     </tr>
     <tr>
       <td>LAB LOINC (95.3)</td>
-      <td>us-core-observation-lab</td>
+      <td>us-core-diagnosticreport-lab, us-core-observation-lab</td>
     </tr>
     <tr>
       <td>ORDER (100)</td>
@@ -421,6 +463,10 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       <td>us-core-implantable-device</td>
     </tr>
     <tr>
+      <td>PROSTHESIS (131.9)</td>
+      <td>us-core-implantable-device</td>
+    </tr>
+    <tr>
       <td>NEW PERSON (200)</td>
       <td>us-core-encounter, us-core-practitioner, us-core-practitionerrole</td>
     </tr>
@@ -433,6 +479,18 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       <td>us-core-implantable-device</td>
     </tr>
     <tr>
+      <td>AR DEBTOR (340)</td>
+      <td>Invoice, Patient, ChargeItem</td>
+    </tr>
+    <tr>
+      <td>AR CCPC STATEMENTS (349.2)</td>
+      <td>Invoice, Patient</td>
+    </tr>
+    <tr>
+      <td>PD LINE (349.21)</td>
+      <td>Invoice, ChargeItem</td>
+    </tr>
+    <tr>
       <td>APPOINTMENT TYPE (409.1)</td>
       <td>Appointment</td>
     </tr>
@@ -443,6 +501,22 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <tr>
       <td>OUTPATIENT ENCOUNTER (409.68)</td>
       <td>Appointment</td>
+    </tr>
+    <tr>
+      <td>ECHO (691)</td>
+      <td>us-core-observation-imaging</td>
+    </tr>
+    <tr>
+      <td>FINDINGS (691.06)</td>
+      <td>us-core-observation-imaging</td>
+    </tr>
+    <tr>
+      <td>ELECTROCARDIOGRAM (EKG) (691.5)</td>
+      <td>us-core-observation-imaging</td>
+    </tr>
+    <tr>
+      <td>ECG INTERPRETATION (693.3)</td>
+      <td>us-core-observation-imaging</td>
     </tr>
     <tr>
       <td>GENERATOR IMPLANT (698)</td>
@@ -466,7 +540,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     </tr>
     <tr>
       <td>UCUM CODES (757.5)</td>
-      <td>us-core-immunization</td>
+      <td>us-core-immunization, Observation</td>
     </tr>
     <tr>
       <td>COUNTRY CODE (779.004)</td>
@@ -494,7 +568,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     </tr>
     <tr>
       <td>PATIENT/IHS (9000001)</td>
-      <td>us-core-procedure</td>
+      <td>Observation, us-core-procedure</td>
     </tr>
     <tr>
       <td>VISIT (9000010)</td>
@@ -511,6 +585,10 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <tr>
       <td>V IMMUNIZATION (9000010.11)</td>
       <td>us-core-immunization, Observation</td>
+    </tr>
+    <tr>
+      <td>V EXAM (9000010.13)</td>
+      <td>Observation</td>
     </tr>
     <tr>
       <td>V CPT (9000010.18)</td>
@@ -531,6 +609,14 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <tr>
       <td>IMMUNIZATION (9999999.14)</td>
       <td>us-core-immunization</td>
+    </tr>
+    <tr>
+      <td>EXAM (9999999.15)</td>
+      <td>Observation</td>
+    </tr>
+    <tr>
+      <td>CODE MAPPINGS (9999999.18)</td>
+      <td>Observation</td>
     </tr>
     <tr>
       <td>PROVIDER NARRATIVE (9999999.27)</td>
@@ -565,7 +651,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2023+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.59.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Jul 9, 2024 16:26+0000">2024-07-09</span>
+          IG &#169; 2024 <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.61.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Jul 24, 2024 18:59+0000">2024-07-24</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
