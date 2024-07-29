@@ -817,6 +817,7 @@ Characteristics: #can-be-target
 * microbiologyAccession 0..1 Element "MICROBIOLOGY ACCESSION (-.06)"
 * ien 0..1 Element "IEN (-.001)"
 * collectionSample 0..1 Reference "COLLECTION SAMPLE (-.055)"
+* bactRptRemark 0..1 Reference "BACT RPT REMARK (-13)"
 * organism 0..1 Reference "ORGANISM (-12)"
 * bactRptStatus 0..1 Coding "BACT RPT STATUS (-11.5)"
 * bactRptStatus from http://va.gov/fhir/ValueSet/VSVFLabObservationStatus-vista (preferred)
@@ -824,26 +825,35 @@ Characteristics: #can-be-target
 * urineScreen from http://va.gov/fhir/ValueSet/VSVFMicrobiologyUrineScreenResult-vista (preferred)
 * sputumScreen 0..1 Element "SPUTUM SCREEN (-11.58)"
 * gramStain 0..1 Reference "GRAM STAIN (-11.6)"
+* parasiteRptRemark 0..1 Reference "PARASITE RPT REMARK (-17)"
+* parasiteRptStatus 0..1 Coding "PARASITE RPT STATUS (-15)"
+* parasiteRptStatus from http://va.gov/fhir/ValueSet/VSVFLabObservationStatus-vista (preferred)
+* parasite 0..1 Reference "PARASITE (-16)"
+* mycologyRptRemark 0..1 Reference "MYCOLOGY RPT REMARK (-21)"
+* mycologyRptStatus 0..1 Coding "MYCOLOGY RPT STATUS (-19)"
+* mycologyRptStatus from http://va.gov/fhir/ValueSet/VSVFLabObservationStatus-vista (preferred)
+* fungusyeast 0..1 Reference "FUNGUS/YEAST (-20)"
+* tbRptRemark 0..1 Reference "TB RPT REMARK (-27)"
 * tbRptStatus 0..1 Coding "TB RPT STATUS (-23)"
 * tbRptStatus from http://va.gov/fhir/ValueSet/VSVFLabObservationStatus-vista (preferred)
 * mycobacterium 0..1 Reference "MYCOBACTERIUM (-26)"
 * acidFastStain 0..1 Element "ACID FAST STAIN (-24)"
-* mycologyRptStatus 0..1 Coding "MYCOLOGY RPT STATUS (-19)"
-* mycologyRptStatus from http://va.gov/fhir/ValueSet/VSVFLabObservationStatus-vista (preferred)
-* fungusyeast 0..1 Reference "FUNGUS/YEAST (-20)"
-* parasiteRptStatus 0..1 Coding "PARASITE RPT STATUS (-15)"
-* parasiteRptStatus from http://va.gov/fhir/ValueSet/VSVFLabObservationStatus-vista (preferred)
-* parasite 0..1 Reference "PARASITE (-16)"
+* virologyRptRemark 0..1 Reference "VIROLOGY RPT REMARK (-37)"
 * virologyReportStatus 0..1 Coding "VIROLOGY REPORT STATUS (-34)"
 * virologyReportStatus from http://va.gov/fhir/ValueSet/VSVFLabObservationStatus-vista (preferred)
 * virus 0..1 Reference "VIRUS (-36)"
 * orderedTest only Reference(OrderedTest635)
 * collectionSample only Reference(CollectionSample62)
+* bactRptRemark only Reference(BactRptRemark6333)
 * organism only Reference(Organism633)
 * gramStain only Reference(GramStain6329)
-* mycobacterium only Reference(Mycobacterium6337)
-* fungusyeast only Reference(Mycobacterium6337)
+* parasiteRptRemark only Reference(ParasiteRptRemark6336)
 * parasite only Reference(Parasite6334)
+* mycologyRptRemark only Reference(MycologyRptRemark6338)
+* fungusyeast only Reference(Fungusyeast6337)
+* tbRptRemark only Reference(TbRptRemark6341)
+* mycobacterium only Reference(Fungusyeast6337)
+* virologyRptRemark only Reference(VirologyRptRemark6344)
 * virus only Reference(Virus6343)
 
 Logical: OrderedTest635
@@ -857,6 +867,100 @@ Characteristics: #can-be-target
 * disposition from http://va.gov/fhir/ValueSet/VSVFDiagnosticReportLabStatus-vista (preferred)
 * labTestOrdered 0..1 Reference "LAB TEST ORDERED (-13)"
 * labTestOrdered only Reference(LaboratoryTest60)
+
+Logical: BactRptRemark6333
+Id: BactRptRemark6333
+Title: "BACT RPT REMARK (63.33)"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file BACT RPT REMARK (63.33)"
+Characteristics: #can-be-target
+* bactRptRemark 0..1 Element "BACT RPT REMARK (-.01)"
+
+Logical: Organism633
+Id: Organism633
+Title: "ORGANISM (63.3)"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file ORGANISM (63.3)"
+Characteristics: #can-be-target
+* comment 0..1 Reference "COMMENT (-2)"
+* organism 0..1 Reference "ORGANISM (-5+to+160)"
+* interpr 0..1 Coding "* INTERPR (-5.1+to+160.1)"
+* interpr from http://va.gov/fhir/ValueSet/VSVFAntibioticSensitivityInterpretation-vista (preferred)
+* comment only Reference(Comment6331)
+* organism only Reference(EtiologyField612)
+
+Logical: Comment6331
+Id: Comment6331
+Title: "COMMENT (63.31)"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file COMMENT (63.31)"
+Characteristics: #can-be-target
+* comment 0..1 Element "COMMENT (-.01)"
+
+Logical: EtiologyField612
+Id: EtiologyField612
+Title: "ETIOLOGY FIELD (61.2)"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file ETIOLOGY FIELD (61.2)"
+Characteristics: #can-be-target
+* name 0..1 Element "NAME (-.01)"
+
+Logical: GramStain6329
+Id: GramStain6329
+Title: "GRAM STAIN (63.29)"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file GRAM STAIN (63.29)"
+Characteristics: #can-be-target
+* gramStain 0..1 Element "GRAM STAIN (-.01)"
+
+Logical: ParasiteRptRemark6336
+Id: ParasiteRptRemark6336
+Title: "PARASITE RPT REMARK (63.36)"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file PARASITE RPT REMARK (63.36)"
+Characteristics: #can-be-target
+* parasiteRptRemark 0..1 Element "PARASITE RPT REMARK (-.01)"
+
+Logical: Parasite6334
+Id: Parasite6334
+Title: "PARASITE (63.34)"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file PARASITE (63.34)"
+Characteristics: #can-be-target
+* parasite 0..1 Reference "PARASITE (-.01)"
+* parasite only Reference(EtiologyField612)
+
+Logical: MycologyRptRemark6338
+Id: MycologyRptRemark6338
+Title: "MYCOLOGY RPT REMARK (63.38)"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file MYCOLOGY RPT REMARK (63.38)"
+Characteristics: #can-be-target
+* mycologyRptRemark 0..1 Element "MYCOLOGY RPT REMARK (-.01)"
+
+Logical: Fungusyeast6337
+Id: Fungusyeast6337
+Title: "FUNGUS/YEAST (63.37)"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file FUNGUS/YEAST (63.37)"
+Characteristics: #can-be-target
+* fungusyeast 0..1 Reference "FUNGUS/YEAST (-.01)"
+* mycobacterium 0..1 Reference "MYCOBACTERIUM (-.01)"
+* fungusyeast only Reference(EtiologyField612)
+* mycobacterium only Reference(EtiologyField612)
+
+Logical: TbRptRemark6341
+Id: TbRptRemark6341
+Title: "TB RPT REMARK (63.41)"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file TB RPT REMARK (63.41)"
+Characteristics: #can-be-target
+* tbRptRemark 0..1 Element "TB RPT REMARK (-.01)"
+
+Logical: VirologyRptRemark6344
+Id: VirologyRptRemark6344
+Title: "VIROLOGY RPT REMARK (63.44)"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file VIROLOGY RPT REMARK (63.44)"
+Characteristics: #can-be-target
+* virologyRptRemark 0..1 Element "VIROLOGY RPT REMARK (-.01)"
+
+Logical: Virus6343
+Id: Virus6343
+Title: "VIRUS (63.43)"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file VIRUS (63.43)"
+Characteristics: #can-be-target
+* virus 0..1 Reference "VIRUS (-.01)"
+* virus only Reference(EtiologyField612)
 
 Logical: SourceOfAdmission451
 Id: SourceOfAdmission451
@@ -1091,65 +1195,6 @@ Title: "SPECIMEN (63.902)"
 Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file SPECIMEN (63.902)"
 Characteristics: #can-be-target
 * specimen 0..1 Element "SPECIMEN (-.01)"
-
-Logical: Organism633
-Id: Organism633
-Title: "ORGANISM (63.3)"
-Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file ORGANISM (63.3)"
-Characteristics: #can-be-target
-* comment 0..1 Reference "COMMENT (-2)"
-* organism 0..1 Reference "ORGANISM (-5+to+160)"
-* interpr 0..1 Coding "* INTERPR (-5.1+to+160.1)"
-* interpr from http://va.gov/fhir/ValueSet/VSVFAntibioticSensitivityInterpretation-vista (preferred)
-* comment only Reference(Comment6331)
-* organism only Reference(EtiologyField612)
-
-Logical: Comment6331
-Id: Comment6331
-Title: "COMMENT (63.31)"
-Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file COMMENT (63.31)"
-Characteristics: #can-be-target
-* comment 0..1 Element "COMMENT (-.01)"
-
-Logical: EtiologyField612
-Id: EtiologyField612
-Title: "ETIOLOGY FIELD (61.2)"
-Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file ETIOLOGY FIELD (61.2)"
-Characteristics: #can-be-target
-* name 0..1 Element "NAME (-.01)"
-
-Logical: GramStain6329
-Id: GramStain6329
-Title: "GRAM STAIN (63.29)"
-Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file GRAM STAIN (63.29)"
-Characteristics: #can-be-target
-* gramStain 0..1 Element "GRAM STAIN (-.01)"
-
-Logical: Mycobacterium6337
-Id: Mycobacterium6337
-Title: "MYCOBACTERIUM (63.37)"
-Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file MYCOBACTERIUM (63.37)"
-Characteristics: #can-be-target
-* mycobacterium 0..1 Reference "MYCOBACTERIUM (-.01)"
-* fungusyeast 0..1 Reference "FUNGUS/YEAST (-.01)"
-* mycobacterium only Reference(EtiologyField612)
-* fungusyeast only Reference(EtiologyField612)
-
-Logical: Parasite6334
-Id: Parasite6334
-Title: "PARASITE (63.34)"
-Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file PARASITE (63.34)"
-Characteristics: #can-be-target
-* parasite 0..1 Reference "PARASITE (-.01)"
-* parasite only Reference(EtiologyField612)
-
-Logical: Virus6343
-Id: Virus6343
-Title: "VIRUS (63.43)"
-Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file VIRUS (63.43)"
-Characteristics: #can-be-target
-* virus 0..1 Reference "VIRUS (-.01)"
-* virus only Reference(EtiologyField612)
 
 Logical: CountryCode779004
 Id: CountryCode779004

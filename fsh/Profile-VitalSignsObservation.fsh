@@ -4,7 +4,6 @@ Id: VitalSignsObservation
 Title: "Vital Signs Observation"
 Description: "This StructureDefinition contains the maps for VistA file GMRV VITAL MEASUREMENT (120.5) to us-core-vital-signs"
 * ^status = #draft
-* ^abstract = true
 * component ^slicing.discriminator.type = #pattern
 * component ^slicing.discriminator.path = "code"
 * component ^slicing.rules = #open
