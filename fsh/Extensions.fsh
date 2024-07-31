@@ -39,9 +39,3 @@ Id: medicationrequest-recordedLocation
 Description: "Extension medicationrequest-recordedLocation"
 Context: MedicationRequest
 * value[x] only Reference
-
-Extension: DiagnosticReportNote
-Id: extension-DiagnosticReport-note
-Description: "R5 pre-adopt for http://hl7.org/fhir/5.0/StructureDefinition/extension-DiagnosticReport.note"
-Context: DiagnosticReport
-* value[x] only string

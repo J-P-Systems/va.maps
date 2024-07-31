@@ -8,8 +8,8 @@ Description: "This StructureDefinition contains the maps for VistA file MICROBIO
 * performer ^slicing.discriminator.path = "$this"
 * performer ^slicing.rules = #open
 * performer contains va-by 0..1 and va-at 0..1
-* extension contains http://va.gov/fhir/StructureDefinition/extension-DiagnosticReport-note named extension-DiagnosticReport-note 0..1
-* extension[http://va.gov/fhir/StructureDefinition/extension-DiagnosticReport-note].valueString and identifier.value and identifier.system and basedOn and status and effectiveDateTime and issued and performer[va-by] and performer[va-at] and category[LaboratorySlice] and category.text and code.coding and code.coding.code and code.coding.system and code.coding.display and code.text and subject and result MS
+* extension contains http://hl7.org/fhir/5.0/StructureDefinition/extension-DiagnosticReport.note named extension-DiagnosticReport-note 0..1
+* extension[http://hl7.org/fhir/5.0/StructureDefinition/extension-DiagnosticReport.note].valueAnnotation and identifier.value and identifier.system and basedOn and status and effectiveDateTime and issued and performer[va-by] and performer[va-at] and category[LaboratorySlice] and category.text and code.coding and code.coding.code and code.coding.system and code.coding.display and code.text and subject and result MS
 * identifier.system = "http://va.gov/identifiers/$Sta3n/63.5"
 * status from http://va.gov/fhir/ValueSet/VSVFDiagnosticReportLabStatus
 * performer[va-by] only Reference(http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner)
@@ -22,7 +22,7 @@ Mapping: vista-to-LabObservationMicrobiologyBacteriologyDiagnosticReport
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: LabObservationMicrobiologyBacteriologyDiagnosticReport
-* extension[http://va.gov/fhir/StructureDefinition/extension-DiagnosticReport-note].valueString -> "1442: source value from MICROBIOLOGY - BACT RPT REMARK > BACT RPT REMARK - BACT RPT REMARK (63.05-13 > 63.33-.01)" "This is the correct mapping, however, .note was not added to DR until FHIR R5. Keeping the mapping here for future"
+* extension[http://hl7.org/fhir/5.0/StructureDefinition/extension-DiagnosticReport.note].valueAnnotation -> "1442: source value from MICROBIOLOGY - BACT RPT REMARK > BACT RPT REMARK - BACT RPT REMARK (63.05-13 > 63.33-.01)" "This is the correct mapping, however, .note was not added to DR until FHIR R5. Keeping the mapping here for future"
 * identifier.value -> "1605: source value from MICROBIOLOGY - ORDERED TEST > ORDERED TEST - IEN (63.05-.35 > 63.5-.001)"
 * identifier.system -> "1605-1: fixed value = http://va.gov/identifiers/$Sta3n/63.5" "from mapParameter 1"
 * basedOn -> "1690: reference from MICROBIOLOGY - ORDERED TEST > ORDERED TEST - CPRS ORDER # (63.05-.35 > 63.5-3)"
@@ -45,7 +45,7 @@ Mapping: cdw-to-LabObservationMicrobiologyBacteriologyDiagnosticReport
 Id: cdw
 Title: "Clinical Data Warehouse (CDW)"
 Source: LabObservationMicrobiologyBacteriologyDiagnosticReport
-* extension[http://va.gov/fhir/StructureDefinition/extension-DiagnosticReport-note].valueString -> "Micro.BacteriologyReports.BacteriologyReportRemark"
+* extension[http://hl7.org/fhir/5.0/StructureDefinition/extension-DiagnosticReport.note].valueAnnotation -> "Micro.BacteriologyReports.BacteriologyReportRemark"
 * basedOn -> "Micro.MicroOrderedTest.CPRSOrderIEN,SStaff.SMicroOrderedTest.CPRSOrderIEN"
 * status -> "Micro.MicroOrderedTest.DispositionLabCodeIEN,SStaff.SMicroOrderedTest.DispositionLabCodeIEN"
 * effectiveDateTime -> "Micro.AntibioticSensitivity.SpecimenTakenDateTime,Micro.AntibioticSensitivityComment.SpecimenTakenDateTime,Micro.BacteriologyReports.SpecimenTakenDateTime,Micro.MicroAntibioticLevel.SpecimenTakenDateTime,Micro.MicroAudit.SpecimenTakenDateTime,Micro.Microbiology.SpecimenTakenDateTime,Micro.MicroOrderedTest.SpecimenTakenDateTime,Micro.MicroSterilityResults.SpecimenTakenDateTime,Micro.MycobacteriologyReports.SpecimenTakenDateTime,Micro.Mycology.SpecimenTakenDateTime,Micro.MycologyReports.SpecimenTakenDateTime,Micro.Parasitology.SpecimenTakenDateTime,Micro.ParasitologyReports.SpecimenTakenDateTime,Micro.ParasitologyStage.SpecimenTakenDateTime,Micro.Virology.SpecimenTakenDateTime,Micro.VirologyReports.SpecimenTakenDateTime,SStaff.SMicroOrderedTest.SpecimenTakenDateTime"
