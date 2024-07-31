@@ -10,12 +10,14 @@ Usage: #definition
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFSourceOfAdmission-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/VSVFSourceOfAdmission"
 * group[0].source = "http://va.gov/terminology/vistaDefinedTerms/45.1-.01"
-* group[=].target = "http://terminology.hl7.org/CodeSystem/admit-source"
+* group[=].target = "http://terminology.hl7.org/CodeSystem/admit-source|4.0.1"
 * group[=].element[0].code = #1K
 * group[=].element[=].display = "ALL OTHER NON VA HOSP NOT UNDER VA AUSPICES"
 * group[=].element[=].target.code = #hosp-trans
 * group[=].element[=].target.equivalence = #wider
-* group[=].element[+].code = #4Y
+* group[+].source = "http://va.gov/terminology/vistaDefinedTerms/45.1-.01"
+* group[=].target = "http://terminology.hl7.org/CodeSystem/admit-source"
+* group[=].element[0].code = #4Y
 * group[=].element[=].display = "ALL OTHER SOURCES, UNKNOWN OR NO INFO"
 * group[=].element[=].target.code = #other
 * group[=].element[=].target.equivalence = #wider
@@ -229,9 +231,10 @@ Title: "VF_SourceOfAdmission"
 Description: "FHIR Target ValueSet for Terminology Maps VF_SourceOfAdmission"
 * ^experimental = false
 * ^name = "VF_SourceOfAdmission"
-* include http://terminology.hl7.org/CodeSystem/admit-source#hosp-trans 
+* include http://terminology.hl7.org/CodeSystem/admit-source|4.0.1#hosp-trans 
 * include http://terminology.hl7.org/CodeSystem/admit-source#other 
 * include http://terminology.hl7.org/CodeSystem/admit-source#nursing 
+* include http://terminology.hl7.org/CodeSystem/admit-source#hosp-trans 
 * include http://terminology.hl7.org/CodeSystem/admit-source#psych 
 * include http://terminology.hl7.org/CodeSystem/admit-source#outp 
 
