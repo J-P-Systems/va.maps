@@ -4,7 +4,7 @@ Id: LabObservationMicrobiologyParasitologyObservation
 Title: "Lab Observation: Microbiology Parasitology Observation"
 Description: "This StructureDefinition contains the maps for VistA file MICROBIOLOGY (63.05) to us-core-observation-lab"
 * ^status = #draft
-* code and status and effectiveDateTime and note and performer and specimen and identifier.value and identifier.system and code.coding and code.coding.system and code.coding.code and code.coding.display and issued and category and subject MS
+* status and effectiveDateTime and note and performer and specimen and identifier.value and identifier.system and code.coding and code.coding.system and code.coding.code and code.coding.display and issued and category and subject MS
 * status from http://va.gov/fhir/ValueSet/VSVFLabObservationStatus
 * identifier.system = "http://va.gov/identifiers/$Sta3n/63.05"
 * category = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
@@ -13,7 +13,6 @@ Mapping: vista-to-LabObservationMicrobiologyParasitologyObservation
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: LabObservationMicrobiologyParasitologyObservation
-* code -> "1528: fixed value = http://loinc.org#42807-8 Parasite identified in Isolate when MICROBIOLOGY - ORDERED TEST > ORDERED TEST - LAB TEST ORDERED > LABORATORY TEST - SITE/SPECIMEN > SITE/SPECIMEN - LOINC CODE > LAB LOINC (63.05-.35 > 63.5-13 > 60-100 > 60.01-95.3 > 95.3-) case NULL"
 * status -> "1489: terminologyMaps using VF_LabObservationStatus on MICROBIOLOGY - PARASITE RPT STATUS (63.05-15)"
 * effectiveDateTime -> "1450: source value from MICROBIOLOGY - DATE/TIME SPECIMEN TAKEN (63.05-.01)"
 * note -> "1454: source value from MICROBIOLOGY - COMMENT ON SPECIMEN (63.05-.99)"

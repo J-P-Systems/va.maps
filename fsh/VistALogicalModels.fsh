@@ -58,7 +58,6 @@ Characteristics: #can-be-target
 * cityMailing 0..1 Element "CITY (MAILING) (-4.03)"
 * stateMailing 0..1 Element "STATE (MAILING) (-4.04)"
 * zipMailing 0..1 Element "ZIP (MAILING) (-4.05)"
-* stationNumber 0..1 Element "STATION NUMBER (-99)"
 * state only Reference(State5)
 * country only Reference(CountryCode779004)
 * contact only Reference(Contact403)
@@ -826,22 +825,22 @@ Characteristics: #can-be-target
 * sputumScreen 0..1 Element "SPUTUM SCREEN (-11.58)"
 * gramStain 0..1 Reference "GRAM STAIN (-11.6)"
 * parasiteRptRemark 0..1 Reference "PARASITE RPT REMARK (-17)"
+* parasite 0..1 Reference "PARASITE (-16)"
 * parasiteRptStatus 0..1 Coding "PARASITE RPT STATUS (-15)"
 * parasiteRptStatus from http://va.gov/fhir/ValueSet/VSVFLabObservationStatus-vista (preferred)
-* parasite 0..1 Reference "PARASITE (-16)"
 * mycologyRptRemark 0..1 Reference "MYCOLOGY RPT REMARK (-21)"
+* fungusyeast 0..1 Reference "FUNGUS/YEAST (-20)"
 * mycologyRptStatus 0..1 Coding "MYCOLOGY RPT STATUS (-19)"
 * mycologyRptStatus from http://va.gov/fhir/ValueSet/VSVFLabObservationStatus-vista (preferred)
-* fungusyeast 0..1 Reference "FUNGUS/YEAST (-20)"
 * tbRptRemark 0..1 Reference "TB RPT REMARK (-27)"
+* mycobacterium 0..1 Reference "MYCOBACTERIUM (-26)"
 * tbRptStatus 0..1 Coding "TB RPT STATUS (-23)"
 * tbRptStatus from http://va.gov/fhir/ValueSet/VSVFLabObservationStatus-vista (preferred)
-* mycobacterium 0..1 Reference "MYCOBACTERIUM (-26)"
 * acidFastStain 0..1 Element "ACID FAST STAIN (-24)"
 * virologyRptRemark 0..1 Reference "VIROLOGY RPT REMARK (-37)"
+* virus 0..1 Reference "VIRUS (-36)"
 * virologyReportStatus 0..1 Coding "VIROLOGY REPORT STATUS (-34)"
 * virologyReportStatus from http://va.gov/fhir/ValueSet/VSVFLabObservationStatus-vista (preferred)
-* virus 0..1 Reference "VIRUS (-36)"
 * orderedTest only Reference(OrderedTest635)
 * collectionSample only Reference(CollectionSample62)
 * bactRptRemark only Reference(BactRptRemark6333)
@@ -1441,7 +1440,7 @@ Title: "GMRV VITAL MEASUREMENT (120.5)"
 Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file GMRV VITAL MEASUREMENT (120.5)"
 Characteristics: #can-be-target
 * datetimeVitalsEntered 0..1 Element "DATE/TIME VITALS ENTERED (-.04)"
-* hospitalLocation 0..1 Reference "HOSPITAL LOCATION (-.05)"
+* hospitalLocation 0..1 Element "HOSPITAL LOCATION (-.05)"
 * reasonEnteredInError 0..1 Element "REASON ENTERED IN ERROR (-4)"
 * datetimeVitalsTaken 0..1 Element "DATE/TIME VITALS TAKEN (-.01)"
 * patient 0..1 Element "PATIENT (-.02)"
@@ -1452,7 +1451,6 @@ Characteristics: #can-be-target
 * rate 0..1 Element "RATE (-1.2)"
 * supplementalO2 0..1 Element "SUPPLEMENTAL O2 (-1.4)"
 * qualifier only Reference(GmrvVitalQualifier12052)
-* hospitalLocation only Reference(Institution4)
 
 Logical: GmrvVitalQualifier12052
 Id: GmrvVitalQualifier12052

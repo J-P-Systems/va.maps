@@ -8,9 +8,8 @@ Description: "This StructureDefinition contains the maps for VistA file MICROBIO
 * component ^slicing.discriminator.path = "code"
 * component ^slicing.rules = #open
 * component contains va-component 0..1
-* note and status and valueCodeableConcept.coding and valueString and component[va-component].code and component[va-component].code.coding.code and component[va-component].code.coding.system and component[va-component].valueString and component[va-component].interpretation and effectiveDateTime and performer and specimen and identifier.value and identifier.system and code.coding and code.coding.system and code.coding.code and code.coding.display and issued and category and subject MS
+* note and status and component[va-component].code and component[va-component].code.coding.code and component[va-component].code.coding.system and component[va-component].valueString and component[va-component].interpretation and effectiveDateTime and performer and specimen and identifier.value and identifier.system and code.coding and code.coding.system and code.coding.code and code.coding.display and issued and category and subject MS
 * status from http://va.gov/fhir/ValueSet/VSVFLabObservationStatus
-* valueCodeableConcept.coding from http://va.gov/fhir/ValueSet/VSVFMicrobiologyUrineScreenResult
 * component[va-component].code.coding.system = "http://loinc.org"
 * component[va-component].interpretation from http://va.gov/fhir/ValueSet/VSVFAntibioticSensitivityInterpretation
 * identifier.system = "http://va.gov/identifiers/$Sta3n/63.05"
@@ -22,8 +21,6 @@ Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: LabObservationMicrobiologyBacteriologyObservation
 * note -> "1455: source value from MICROBIOLOGY - ORGANISM > ORGANISM - COMMENT > COMMENT - COMMENT (63.05-12 > 63.3-2 > 63.31-.01)"
 * status -> "1488: terminologyMaps using VF_LabObservationStatus on MICROBIOLOGY - BACT RPT STATUS (63.05-11.5)"
-* valueCodeableConcept.coding -> "1516: terminologyMaps using VF_MicrobiologyUrineScreenResult on MICROBIOLOGY - URINE SCREEN (63.05-11.57)"
-* valueString -> "1517: source value from MICROBIOLOGY - SPUTUM SCREEN (63.05-11.58)"
 * component[va-component].code -> "1522: transform using null on MICROBIOLOGY - ORGANISM > ORGANISM - ORGANISM (63.05-12 > 63.3-5+to+160)" "antibiotic sensitivity\nWhat is default if no LOINC? Use text or is there a default LOINC?\n48611-8 Antibiotic tested [Identifier] against isolate"
 * component[va-component].code.coding.code -> "1522-1: fixed value without value?" "from mapParameter 1"
 * component[va-component].code.coding.system -> "1522-2: fixed value = http://loinc.org" "from mapParameter 2"
@@ -49,8 +46,6 @@ Id: cdw
 Title: "Clinical Data Warehouse (CDW)"
 Source: LabObservationMicrobiologyBacteriologyObservation
 * status -> "Micro.Microbiology.BacteriologyReportStatus"
-* valueCodeableConcept.coding -> "Micro.Microbiology.UrineScreen"
-* valueString -> "Micro.Microbiology.SputumScreen"
 * effectiveDateTime -> "Micro.AntibioticSensitivity.SpecimenTakenDateTime,Micro.AntibioticSensitivityComment.SpecimenTakenDateTime,Micro.BacteriologyReports.SpecimenTakenDateTime,Micro.MicroAntibioticLevel.SpecimenTakenDateTime,Micro.MicroAudit.SpecimenTakenDateTime,Micro.Microbiology.SpecimenTakenDateTime,Micro.MicroOrderedTest.SpecimenTakenDateTime,Micro.MicroSterilityResults.SpecimenTakenDateTime,Micro.MycobacteriologyReports.SpecimenTakenDateTime,Micro.Mycology.SpecimenTakenDateTime,Micro.MycologyReports.SpecimenTakenDateTime,Micro.Parasitology.SpecimenTakenDateTime,Micro.ParasitologyReports.SpecimenTakenDateTime,Micro.ParasitologyStage.SpecimenTakenDateTime,Micro.Virology.SpecimenTakenDateTime,Micro.VirologyReports.SpecimenTakenDateTime,SStaff.SMicroOrderedTest.SpecimenTakenDateTime"
 * note -> "Micro.Microbiology.SpecimenComment"
 * performer -> "Micro.Microbiology.AccessioningInstitutionIEN"
