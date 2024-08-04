@@ -9,58 +9,68 @@ Usage: #definition
 * description = "Terminology Maps VF_DiagnosticReportLabStatus"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFDiagnosticReportLabStatus-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/VSVFDiagnosticReportLabStatus"
-* group[0].source = "http://terminology.hl7.org/CodeSystem/v2-0123"
+* group[0].source = "http://va.gov/Terminology/VistADefinedTerms/64.061"
 * group[=].target = "http://hl7.org/fhir/diagnostic-report-status"
 * group[=].element[0].code = #C
 * group[=].element[=].display = "CORRECTED RESULTS"
 * group[=].element[=].target.code = #corrected
 * group[=].element[=].target.display = "Corrected"
 * group[=].element[=].target.equivalence = #equal
+* group[=].element[=].target.comment = "This system is based on http://terminology.hl7.org/CodeSystem/v2-0123"
 * group[=].element[+].code = #F
 * group[=].element[=].display = "FINAL RESULTS"
 * group[=].element[=].target.code = #final
 * group[=].element[=].target.display = "Final"
 * group[=].element[=].target.equivalence = #equal
+* group[=].element[=].target.comment = "This system is based on http://terminology.hl7.org/CodeSystem/v2-0123"
 * group[=].element[+].code = #Y
 * group[=].element[=].display = "NO ORDER ON RECORD"
 * group[=].element[=].target.code = #unknown
 * group[=].element[=].target.display = "Unknown"
 * group[=].element[=].target.equivalence = #equal
+* group[=].element[=].target.comment = "This system is based on http://terminology.hl7.org/CodeSystem/v2-0123"
 * group[=].element[+].code = #R
 * group[=].element[=].display = "NOT VERIFIED"
 * group[=].element[=].target.code = #preliminary
 * group[=].element[=].target.display = "Preliminary"
 * group[=].element[=].target.equivalence = #equal
+* group[=].element[=].target.comment = "This system is based on http://terminology.hl7.org/CodeSystem/v2-0123"
 * group[=].element[+].code = #X
 * group[=].element[=].display = "ORDER CANCELED"
 * group[=].element[=].target.code = #cancelled
 * group[=].element[=].target.display = "Cancelled"
 * group[=].element[=].target.equivalence = #equal
+* group[=].element[=].target.comment = "This system is based on http://terminology.hl7.org/CodeSystem/v2-0123"
 * group[=].element[+].code = #O
 * group[=].element[=].display = "ORDER RECIEVED"
 * group[=].element[=].target.code = #registered
 * group[=].element[=].target.display = "Registered"
 * group[=].element[=].target.equivalence = #equal
+* group[=].element[=].target.comment = "This system is based on http://terminology.hl7.org/CodeSystem/v2-0123"
 * group[=].element[+].code = #P
 * group[=].element[=].display = "PRELIMINARY"
 * group[=].element[=].target.code = #preliminary
 * group[=].element[=].target.display = "Preliminary"
 * group[=].element[=].target.equivalence = #equal
+* group[=].element[=].target.comment = "This system is based on http://terminology.hl7.org/CodeSystem/v2-0123"
 * group[=].element[+].code = #S
 * group[=].element[=].display = "PROCEDURE SCHEDULED"
 * group[=].element[=].target.code = #registered
 * group[=].element[=].target.display = "Registered"
 * group[=].element[=].target.equivalence = #equal
+* group[=].element[=].target.comment = "This system is based on http://terminology.hl7.org/CodeSystem/v2-0123"
 * group[=].element[+].code = #A
 * group[=].element[=].display = "SOME RESULTS AVAILABLE"
 * group[=].element[=].target.code = #partial
 * group[=].element[=].target.display = "Partial"
 * group[=].element[=].target.equivalence = #equal
+* group[=].element[=].target.comment = "This system is based on http://terminology.hl7.org/CodeSystem/v2-0123"
 * group[=].element[+].code = #I
 * group[=].element[=].display = "SPECIMEN RECEIVED"
 * group[=].element[=].target.code = #registered
 * group[=].element[=].target.display = "Registered"
 * group[=].element[=].target.equivalence = #equal
+* group[=].element[=].target.comment = "This system is based on http://terminology.hl7.org/CodeSystem/v2-0123"
 
 ValueSet: VSVFDiagnosticReportLabStatus
 Title: "VF_DiagnosticReportLabStatus"
@@ -80,13 +90,13 @@ Title: "VF_DiagnosticReportLabStatus VistA"
 Description: "VistA Source ValueSet for Terminology Maps VF_DiagnosticReportLabStatus"
 * ^experimental = false
 * ^name = "VF_DiagnosticReportLabStatus"
-* include http://terminology.hl7.org/CodeSystem/v2-0123#C "CORRECTED RESULTS"
-* include http://terminology.hl7.org/CodeSystem/v2-0123#F "FINAL RESULTS"
-* include http://terminology.hl7.org/CodeSystem/v2-0123#Y "NO ORDER ON RECORD"
-* include http://terminology.hl7.org/CodeSystem/v2-0123#R "NOT VERIFIED"
-* include http://terminology.hl7.org/CodeSystem/v2-0123#X "ORDER CANCELED"
-* include http://terminology.hl7.org/CodeSystem/v2-0123#O "ORDER RECIEVED"
-* include http://terminology.hl7.org/CodeSystem/v2-0123#P "PRELIMINARY"
-* include http://terminology.hl7.org/CodeSystem/v2-0123#S "PROCEDURE SCHEDULED"
-* include http://terminology.hl7.org/CodeSystem/v2-0123#A "SOME RESULTS AVAILABLE"
-* include http://terminology.hl7.org/CodeSystem/v2-0123#I "SPECIMEN RECEIVED"
+* include http://va.gov/Terminology/VistADefinedTerms/64.061#C "CORRECTED RESULTS"
+* include http://va.gov/Terminology/VistADefinedTerms/64.061#F "FINAL RESULTS"
+* include http://va.gov/Terminology/VistADefinedTerms/64.061#Y "NO ORDER ON RECORD"
+* include http://va.gov/Terminology/VistADefinedTerms/64.061#R "NOT VERIFIED"
+* include http://va.gov/Terminology/VistADefinedTerms/64.061#X "ORDER CANCELED"
+* include http://va.gov/Terminology/VistADefinedTerms/64.061#O "ORDER RECIEVED"
+* include http://va.gov/Terminology/VistADefinedTerms/64.061#P "PRELIMINARY"
+* include http://va.gov/Terminology/VistADefinedTerms/64.061#S "PROCEDURE SCHEDULED"
+* include http://va.gov/Terminology/VistADefinedTerms/64.061#A "SOME RESULTS AVAILABLE"
+* include http://va.gov/Terminology/VistADefinedTerms/64.061#I "SPECIMEN RECEIVED"

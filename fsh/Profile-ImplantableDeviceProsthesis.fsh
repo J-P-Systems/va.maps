@@ -5,6 +5,7 @@ Title: "Implantable Device: Prosthesis"
 Description: "This StructureDefinition contains the maps for VistA file PROSTHESIS INSTALLED (130.01) to us-core-implantable-device"
 * ^status = #draft
 * identifier.value and identifier.system and manufacturer and expirationDate and lotNumber and serialNumber and deviceName.name and deviceName.type and modelNumber and type and patient and owner MS
+* patient only Reference(Patient)
 * identifier.system = "http://va.gov/identifiers/$Sta3n/131.01"
 * deviceName.type = #model-name
 * type = http://snomed.info/sct#63653004 "Biomedical device"

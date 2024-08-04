@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-    <title>MedicationRequest: Outpatient - Mappings - US Veterans Administration FHIR Map Set Implementation Guide v0.64.312</title>
+    <title>MedicationRequest: Outpatient - Mappings - US Veterans Administration FHIR Map Set Implementation Guide v0.64.316</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -58,7 +58,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">US Veterans Administration FHIR Map Set Implementation Guide</span>
             <br/>
-            <span style="display:inline-block;">0.64.312 - 240801
+            <span style="display:inline-block;">0.64.316 - 240801
 
 
 
@@ -154,7 +154,7 @@
           <div class="inner-wrapper">
 
 <div style="counter-reset: section 5" class="col-12">
-    <!-- ReleaseHeader --><p id="publish-box">US Veterans Administration FHIR Map Set Implementation Guide - Local Development build (v0.64.312) built by the FHIR (HL7&reg; FHIR&reg; Standard) Build Tools. See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
+    <!-- ReleaseHeader --><p id="publish-box">US Veterans Administration FHIR Map Set Implementation Guide - Local Development build (v0.64.316) built by the FHIR (HL7&reg; FHIR&reg; Standard) Build Tools. See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
   
 
 
@@ -227,7 +227,7 @@
         
           Draft
           
-            as of 2024-08-02
+            as of 2024-08-04
           
         
       </td>
@@ -380,7 +380,7 @@
 <td class="cell-ce1"></td>
 <td class="cell-ce1">MedicationRequest.subject</td>
 <td class="cell-ce1"></td>
-<td class="cell-ce1"></td>
+<td class="cell-ce1">/Patient</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest | 5.0.1</td>
@@ -407,7 +407,7 @@ SDA records Login Date (52-21) as Entered On because Entered On cannot be null. 
 <td class="cell-ce1"></td>
 <td class="cell-ce1">MedicationRequest.requester</td>
 <td class="cell-ce1"></td>
-<td class="cell-ce1">us-core-practitioner</td>
+<td class="cell-ce1">/Practitioner</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">retrieve via order</td>
 <td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest | 5.0.1</td>
@@ -647,6 +647,19 @@ Add a second value, or overwrite Active with Parked?</td>
 <td class="cell-ce1">from mapParameter 1</td>
 <td class="cell-ce1"></td>
 </tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1853</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">MedicationRequest.extension[http://va.gov/fhir/StructureDefinition/medicationrequest-remainingRefillCount].valueInteger</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">A value calculated by subtracting first fill (based on Released) and refills (52.1) from total fills (52-9 # OF REFILLS + 1)</td>
+<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest | 5.0.1</td>
+</tr>
 </table>
 
 </div>
@@ -671,6 +684,9 @@ Add a second value, or overwrite Active with Parked?</p>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td>1704: source value from PRESCRIPTION - CANCEL DATE (52-26.1)</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;extension (medicationrequest-includeIndicationInSig)</td><td></td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td>1706: transform using VF_Boolean on PRESCRIPTION - INDICATION FOR USE FLAG (52-129)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;extension (medicationrequest-remainingRefillCount)</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td>1853: null</td><td><p>A value calculated by subtracting first fill (based on Released) and refills (52.1) from total fills (52-9 # OF REFILLS + 1)</p>
+</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>1664: source value from PRESCRIPTION - RX # (52-.01)</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>799: terminologyMaps using VF_OutMedRequestStatus on PRESCRIPTION - STATUS (52-100)</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;intent</td><td>801: fixed value = #order</td><td><p>All records from file 52 are orders</p>
@@ -840,6 +856,10 @@ SDA records Login Date (52-21) as Entered On because Entered On cannot be null. 
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;url</td><td>N/A</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;extension (medicationrequest-remainingRefillCount)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;url</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td>N/A</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;modifierExtension</td><td>N/A</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>.id</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>.statusCode</td> </tr>
@@ -1084,7 +1104,7 @@ SDA records Login Date (52-21) as Entered On because Entered On cannot be null. 
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2024 <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.64.312 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Aug 2, 2024 13:01+0000">2024-08-02</span>
+          IG &copy; 2024 <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.64.316 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Sun, Aug 4, 2024 09:05+0000">2024-08-04</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

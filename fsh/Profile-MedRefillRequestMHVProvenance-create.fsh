@@ -5,9 +5,9 @@ Title: "MedRefillRequestMHV Provenance-create"
 Description: "This StructureDefinition contains the maps for VistA file PRESCRIPTION REFILL REQUEST (52.43) to Provenance"
 * ^status = #draft
 * recorded and activity and agent.who.type and target MS
+* target only Reference(MedRefillRequestMHVTask)
 * activity = http://terminology.hl7.org/CodeSystem/v3-DataOperation#CREATE
 * agent.who.type = "http://hl7.org/fhir/StructureDefinition/Patient"
-* target only Reference(MedRefillRequestMHVTask)
 
 Mapping: vista-to-MedRefillRequestMHVProvenance-create
 Id: vista

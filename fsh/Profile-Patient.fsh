@@ -12,12 +12,11 @@ Description: "This StructureDefinition contains the maps for VistA file PATIENT 
 * telecom ^slicing.discriminator.path = "$this"
 * telecom ^slicing.rules = #open
 * telecom contains va-home 0..1 and va-work 0..1 and va-mobile 0..1
-* extension contains http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex named us-core-birthsex 0..1
 * extension contains http://hl7.org/fhir/us/core/StructureDefinition/us-core-genderIdentity named us-core-genderIdentity 0..1
 * extension contains http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity named us-core-ethnicity 0..1
 * extension contains http://hl7.org/fhir/us/core/StructureDefinition/us-core-race named us-core-race 0..1
 * extension contains http://hl7.org/fhir/StructureDefinition/patient-religion named patient-religion 0..1
-* identifier.value and identifier.system and identifier.type.coding.code and identifier.type.coding.system and name.text and name.family and name.given and name.suffix and telecom[va-home].value and telecom[va-home].system and telecom[va-home].use and telecom[va-work].value and telecom[va-work].system and telecom[va-work].use and telecom[va-mobile].value and telecom[va-mobile].system and telecom[va-mobile].use and birthDate and deceasedDateTime and address[va-home].line and address[va-home].use and address[va-home].type and address[va-home].city and address[va-home].state and address[va-home].postalCode and address[va-home].country and address[va-home].period.start and address[va-home].period.end and communication.language and managingOrganization.display and extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex].valueCode and gender and extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-genderIdentity].valueCodeableConcept and extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity].extension[ombCategory].valueCoding.code and extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-race].extension[ombCategory].valueCoding.code and maritalStatus and extension[http://hl7.org/fhir/StructureDefinition/patient-religion].valueCodeableConcept MS
+* identifier.value and identifier.system and identifier.type.coding.code and identifier.type.coding.system and name.text and name.family and name.given and name.suffix and telecom[va-home].value and telecom[va-home].system and telecom[va-home].use and telecom[va-work].value and telecom[va-work].system and telecom[va-work].use and telecom[va-mobile].value and telecom[va-mobile].system and telecom[va-mobile].use and birthDate and deceasedDateTime and address[va-home].line and address[va-home].use and address[va-home].type and address[va-home].city and address[va-home].state and address[va-home].postalCode and address[va-home].country and address[va-home].period.start and address[va-home].period.end and communication.language and managingOrganization.display and gender and extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-genderIdentity].valueCodeableConcept and extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity].extension[ombCategory].valueCoding.code and extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-race].extension[ombCategory].valueCoding.code and maritalStatus and extension[http://hl7.org/fhir/StructureDefinition/patient-religion].valueCodeableConcept MS
 * identifier.system = "urn:oid:2.16.840.1.113883.4.349"
 * identifier.type.coding.code = #MR
 * identifier.type.coding.system = "http://terminology.hl7.org/CodeSystem/v2-0203"
@@ -33,7 +32,6 @@ Description: "This StructureDefinition contains the maps for VistA file PATIENT 
 * address[va-home].use = #home
 * address[va-home].type = #postal
 * managingOrganization.display = "Veterans Health Administration"
-* extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex].valueCode from http://va.gov/fhir/ValueSet/VSVFbirthSex
 * gender from http://va.gov/fhir/ValueSet/VSVFadminGender
 * extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-genderIdentity].valueCodeableConcept from http://va.gov/fhir/ValueSet/VSVFgenderIdentity
 * extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity].extension[ombCategory].valueCoding.code from http://va.gov/fhir/ValueSet/VSVFethnicityCategory
@@ -77,8 +75,7 @@ Source: Patient
 * address[va-home].period.end -> "294: source value from PATIENT - TEMPORARY ADDRESS END DATE (2-.1218)" "need other addresses, including temp; not just range"
 * communication.language -> "295: source value from PATIENT - LANGUAGE DATE/TIME > LANGUAGE DATE/TIME - PREFERRED LANGUAGE (2-7 > 2.07-.02)"
 * managingOrganization.display -> "296: fixed value = Veterans Health Administration"
-* extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex].valueCode -> "554: terminologyMaps using VF_birthSex on PATIENT - SEX (2-.02)" "added extension url"
-* gender -> "555: terminologyMaps using VF_adminGender on PATIENT - SELF IDENTIFIED GENDER (2-.024)"
+* gender -> "555: terminologyMaps using VF_adminGender on PATIENT - SEX (2-.02)"
 * extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-genderIdentity].valueCodeableConcept -> "1808: terminologyMaps using VF_genderIdentity on PATIENT - SELF IDENTIFIED GENDER (2-.024)"
 * extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity].extension[ombCategory].valueCoding.code -> "575: terminologyMaps using VF_ethnicityCategory on PATIENT - ETHNICITY INFORMATION (2-6)"
 * extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-race].extension[ombCategory].valueCoding.code -> "576: terminologyMaps using VF_raceCategory on PATIENT - RACE INFORMATION (2-2)" "Do we collect any detailed race data?"
@@ -99,8 +96,7 @@ Source: Patient
 * address[va-home].state -> "SPatient.SPatientGISAddress.StateIEN,SPatient.SPatientGISAddress.StateSID"
 * address[va-home].postalCode -> "SPatient.SPatientGISAddress.Zip4"
 * communication.language -> "Patient.PreferredLanguage.PreferredLanguage"
-* extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex].valueCode -> "Patient.Patient.Gender,Patient.PatientBirthSex.BirthSex,SPatient.SPatient.Gender,SPatient.SPatientBirthSex.BirthSex,SPatient.SPatientBirthSex.BirthSex"
-* gender -> "Patient.Patient.SelfIdentifiedGender,SPatient.SPatient.SelfIdentifiedGender"
+* gender -> "Patient.Patient.Gender,Patient.PatientBirthSex.BirthSex,SPatient.SPatient.Gender,SPatient.SPatientBirthSex.BirthSex,SPatient.SPatientBirthSex.BirthSex"
 * extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-genderIdentity].valueCodeableConcept -> "Patient.Patient.SelfIdentifiedGender,SPatient.SPatient.SelfIdentifiedGender"
 * maritalStatus -> "Outpat.Visit.PatientMaritalStatus,Outpat.Workload.PatientMaritalStatus,Patient.Patient.MaritalStatusIEN,SPatient.SPatient.MaritalStatusIEN"
 * extension[http://hl7.org/fhir/StructureDefinition/patient-religion].valueCodeableConcept -> "Outpat.Visit.PatientReligion,Outpat.Visit.PatientReligionCode,Outpat.Workload.PatientReligion,Outpat.Workload.PatientReligionCode,Patient.Patient.ReligionIEN,SPatient.SPatient.ReligionIEN"

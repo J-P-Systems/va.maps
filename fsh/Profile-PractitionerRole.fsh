@@ -10,6 +10,9 @@ Description: "This StructureDefinition contains the maps for VistA file NEW PERS
 * telecom contains va-work 0..1 and va-phone3 0..1 and va-phone4 0..1 and va-commercial 0..1 and va-fax 0..1 and va-voice-pager 0..1 and va-data-pager 0..1 and va-mail 0..1
 * extension contains http://hl7.org/fhir/StructureDefinition/practitioner-job-title named practitioner-job-title 0..1
 * telecom[va-work].value and telecom[va-work].system and telecom[va-work].use and telecom[va-phone3].value and telecom[va-phone3].system and telecom[va-phone4].value and telecom[va-phone4].system and telecom[va-commercial].value and telecom[va-commercial].system and telecom[va-commercial].use and telecom[va-fax].value and telecom[va-fax].system and telecom[va-fax].use and telecom[va-voice-pager].value and telecom[va-voice-pager].system and telecom[va-data-pager].value and telecom[va-data-pager].system and telecom[va-mail].value and telecom[va-mail].system and active and period.start and practitioner and period.end and extension[http://hl7.org/fhir/StructureDefinition/practitioner-job-title].valueCodeableConcept.text and specialty.coding.code and specialty.coding.system and specialty.coding.display and location and code.coding.code and code.coding.system and code.coding.display and organization MS
+* practitioner only Reference(Practitioner)
+* location only Reference(Location)
+* organization only Reference(Organization)
 * telecom[va-work].system = #phone
 * telecom[va-work].use = #work
 * telecom[va-phone3].system = #phone

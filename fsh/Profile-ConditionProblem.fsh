@@ -9,6 +9,7 @@ Description: "This StructureDefinition contains the maps for VistA file PROBLEM 
 * code.coding ^slicing.rules = #open
 * code.coding contains va-icd 0..1
 * category[us-core] and identifier.value and identifier.system and clinicalStatus and code.coding[va-icd] and code.coding[va-icd].system and code.coding[va-icd].code and code.coding.code and code.coding.system and code.text and subject and onsetDateTime and recordedDate and recorder and verificationStatus and abatementDateTime MS
+* subject only Reference(Patient)
 * category[us-core] = http://terminology.hl7.org/CodeSystem/condition-category#problem-list-item
 * identifier.system = "http://va.gov/identifiers/$Sta3n/9000011"
 * code.coding[va-icd].system = "urn:see-termmap-in-mapParameter"

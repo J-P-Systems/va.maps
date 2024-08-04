@@ -9,6 +9,8 @@ Description: "This StructureDefinition contains the maps for VistA file MICROBIO
 * component ^slicing.rules = #open
 * component contains va-component 0..1
 * note and status and component[va-component].code and component[va-component].code.coding.code and component[va-component].code.coding.system and component[va-component].valueString and component[va-component].interpretation and effectiveDateTime and performer and specimen and identifier.value and identifier.system and code.coding and code.coding.system and code.coding.code and code.coding.display and issued and category and subject MS
+* performer only Reference(Organization or Practitioner)
+* subject only Reference(Patient)
 * status from http://va.gov/fhir/ValueSet/VSVFLabObservationStatus
 * component[va-component].code.coding.system = "http://loinc.org"
 * component[va-component].interpretation from http://va.gov/fhir/ValueSet/VSVFAntibioticSensitivityInterpretation

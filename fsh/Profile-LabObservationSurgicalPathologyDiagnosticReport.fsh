@@ -9,16 +9,19 @@ Description: "This StructureDefinition contains the maps for VistA file SURGICAL
 * performer ^slicing.rules = #open
 * performer contains va-by 0..1 and va-at 0..1
 * identifier.value and identifier.system and basedOn and code.text and code and code.coding.code and code.coding.system and status and effectiveDateTime and issued and performer[va-by] and performer[va-at] and resultsInterpreter and specimen and media.link and conclusion and presentedForm.data and category[LaboratorySlice] and category.text and code.coding and code.coding.display and subject and result MS
+* basedOn only Reference(http://hl7.org/fhir/StructureDefinition/ServiceRequest)
+* performer[va-by] only Reference(Practitioner)
+* performer[va-at] only Reference(Organization)
+* resultsInterpreter only Reference(Practitioner)
+* specimen only Reference(LabObservationSurgicalPathologySpecimen)
+* subject only Reference(Patient)
+* result only Reference(LabObservationObservation)
 * identifier.system = "http://va.gov/identifiers/$Sta3n/63.53"
 * code = http://loinc.org#27898-6 "Pathology studies (set)"
 * code.coding.system = "http://loinc.org"
 * status from http://va.gov/fhir/ValueSet/VSVFDiagnosticReportLabStatus
-* performer[va-by] only Reference(http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner)
-* performer[va-at] only Reference(http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization)
-* specimen only Reference(LabObservationSurgicalPathologySpecimen)
 * category[LaboratorySlice] = http://terminology.hl7.org/CodeSystem/v2-0074#LAB
 * code.coding.system = "http://loinc.org"
-* result only Reference(LabObservationObservation)
 
 Mapping: vista-to-LabObservationSurgicalPathologyDiagnosticReport
 Id: vista

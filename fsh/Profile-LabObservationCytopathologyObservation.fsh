@@ -5,6 +5,7 @@ Title: "Lab Observation: Cytopathology Observation"
 Description: "This StructureDefinition contains the maps for VistA file PATIENT (2) to us-core-observation-lab"
 * ^status = #draft
 * category and subject MS
+* subject only Reference(Patient)
 * category = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
 
 Mapping: vista-to-LabObservationCytopathologyObservation

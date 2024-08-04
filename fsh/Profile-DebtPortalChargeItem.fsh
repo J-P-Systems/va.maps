@@ -5,8 +5,8 @@ Title: "Debt Portal ChargeItem"
 Description: "This StructureDefinition contains the maps for VistA file AR CCPC STATEMENTS (349.2) to ChargeItem"
 * ^status = #draft
 * enteredDate and code.text and identifier and status and subject MS
-* status = #billed
 * subject only Reference(DebtPortalPatient)
+* status = #billed
 
 Mapping: vista-to-DebtPortalChargeItem
 Id: vista

@@ -5,9 +5,11 @@ Title: "Lab Observation: Chem, hem, tox, ria, ser DiagnosticReport"
 Description: "This StructureDefinition contains the maps for VistA file CHEM, HEM, TOX, RIA, SER, etc. (63.04) to us-core-diagnosticreport-lab"
 * ^status = #draft
 * basedOn and category[LaboratorySlice] and category.text and code.coding and code.coding.code and code.coding.system and code.coding.display and code.text and subject and result MS
+* basedOn only Reference(http://hl7.org/fhir/StructureDefinition/ServiceRequest)
+* subject only Reference(Patient)
+* result only Reference(LabObservationObservation)
 * category[LaboratorySlice] = http://terminology.hl7.org/CodeSystem/v2-0074#LAB
 * code.coding.system = "http://loinc.org"
-* result only Reference(LabObservationObservation)
 
 Mapping: vista-to-LabObservationChemhemtoxriaserDiagnosticReport
 Id: vista

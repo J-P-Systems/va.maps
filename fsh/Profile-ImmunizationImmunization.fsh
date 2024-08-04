@@ -5,14 +5,14 @@ Title: "Immunization Immunization"
 Description: "This StructureDefinition contains the maps for VistA file V IMMUNIZATION (9000010.11) to us-core-immunization"
 * ^status = #draft
 * statusReason and vaccineCode and primarySource and status and vaccineCode.text and patient and occurrenceDateTime and lotNumber and manufacturer and vaccineCode.coding.code and vaccineCode.coding.system and doseQuantity.value and performer.actor and performer.function and note.text and protocolApplied.doseNumberString and doseQuantity and doseQuantity.unit and doseQuantity.code and recorded and reaction.detail and encounter and location MS
+* performer.actor only Reference(Practitioner)
+* reaction.detail only Reference(ImmunizationObservation)
 * statusReason from http://va.gov/fhir/ValueSet/VSVFimmunizationStatusReason
 * vaccineCode from http://va.gov/fhir/ValueSet/VSVFinferredCVX
 * primarySource.extension contains http://hl7.org/fhir/StructureDefinition/11179-permitted-value-conceptmap named 11179-permitted-value-conceptmap 0..1
 * primarySource.extension[11179-permitted-value-conceptmap].valueCanonical = "http://va.gov/fhir/ConceptMap/CMVFimmunizationPrimarySource"
 * vaccineCode.coding.system = "http://hl7.org/fhir/sid/ndc"
-* performer.actor only Reference(http://hl7.org/fhir/StructureDefinition/Practitioner)
 * performer.function = http://terminology.hl7.org/CodeSystem/v2-0443#AP
-* reaction.detail only Reference(ImmunizationObservation)
 
 Mapping: vista-to-ImmunizationImmunization
 Id: vista

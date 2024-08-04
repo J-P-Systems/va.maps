@@ -39,3 +39,9 @@ Id: medicationrequest-recordedLocation
 Description: "Extension medicationrequest-recordedLocation"
 Context: MedicationRequest
 * value[x] only Reference
+
+Extension: MedicationrequestRemainingRefillCount
+Id: medicationrequest-remainingRefillCount
+Description: "Extension medicationrequest-remainingRefillCount"
+Context: MedicationRequest
+* value[x] only integer

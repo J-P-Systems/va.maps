@@ -5,6 +5,7 @@ Title: "Smoking Status Observation"
 Description: "This StructureDefinition contains the maps for VistA file V HEALTH FACTORS (9000010.23) to us-core-smokingstatus"
 * ^status = #draft
 * identifier.value and identifier.system and status and category[SocialHistory] and code and subject and encounter and effectiveDateTime and performer and valueCodeableConcept and valueCodeableConcept.text and note.text MS
+* performer only Reference(Practitioner)
 * identifier.system = "http://va.gov/identifiers/$Sta3n/9000010.23"
 * status = #final
 * category[SocialHistory] = http://terminology.hl7.org/CodeSystem/observation-category#social-history

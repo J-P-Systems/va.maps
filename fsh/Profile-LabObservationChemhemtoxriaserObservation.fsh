@@ -5,7 +5,9 @@ Title: "Lab Observation: Chem, hem, tox, ria, ser Observation"
 Description: "This StructureDefinition contains the maps for VistA file CHEM, HEM, TOX, RIA, SER, etc. (63.04) to us-core-observation-lab"
 * ^status = #draft
 * effectiveDateTime and note and performer and specimen and referenceRange.high and referenceRange.low and identifier.value and identifier.system and interpretation and code.coding and code.coding.system and code.coding.code and code.coding.display and issued and status and valueQuantity.value and valueQuantity.unit and category and subject MS
+* performer only Reference(Organization or Practitioner)
 * specimen only Reference(LabObservationChemhemtoxriaserSpecimen)
+* subject only Reference(Patient)
 * identifier.system = "http://va.gov/identifiers/$Sta3n/63.04"
 * interpretation from http://va.gov/fhir/ValueSet/VSVFLabInterpretation
 * code.coding.system = "http://loinc.org"

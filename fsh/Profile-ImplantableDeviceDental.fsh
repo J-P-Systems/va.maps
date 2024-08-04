@@ -5,6 +5,7 @@ Title: "Implantable Device: Dental"
 Description: "This StructureDefinition contains the maps for VistA file DENTAL DEVICE TRACKING (228.9) to us-core-implantable-device"
 * ^status = #draft
 * identifier.value and identifier.system and udiCarrier.deviceIdentifier and status and distinctIdentifier and manufacturer and manufactureDate and expirationDate and lotNumber and serialNumber and modelNumber and type.text and type.coding.system and type.coding.code and type.coding.display and patient MS
+* patient only Reference(Patient)
 * identifier.system = "http://va.gov/identifiers/$Sta3n/228.9"
 * status from http://va.gov/fhir/ValueSet/VSVFDentalDeviceStatus
 * type.coding.system = "http://snomed.info/sct"

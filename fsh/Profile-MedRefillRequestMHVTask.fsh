@@ -5,9 +5,9 @@ Title: "MedRefillRequestMHV Task"
 Description: "This StructureDefinition contains the maps for VistA file PRESCRIPTION REFILL REQUEST (52.43) to Task"
 * ^status = #draft
 * for and focus and owner and status and note and intent and code MS
-* for only Reference(http://hl7.org/fhir/StructureDefinition/Patient)
+* for only Reference(Patient)
 * focus only Reference(http://hl7.org/fhir/StructureDefinition/MedicationRequest)
-* owner only Reference(http://hl7.org/fhir/StructureDefinition/Organization)
+* owner only Reference(Organization)
 * status from http://va.gov/fhir/ValueSet/VSVFRefillRequestStatus
 * intent = #proposal
 

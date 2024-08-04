@@ -10,13 +10,15 @@ Description: "This StructureDefinition contains the maps for VistA file MICROBIO
 * performer ^slicing.rules = #open
 * performer contains va-by 0..1 and va-at 0..1
 * identifier.value and identifier.system and basedOn and status and effectiveDateTime and issued and performer[va-by] and performer[va-at] and category[LaboratorySlice] and category.text and code.coding and code.coding.code and code.coding.system and code.coding.display and code.text and subject and result MS
+* basedOn only Reference(http://hl7.org/fhir/StructureDefinition/ServiceRequest)
+* performer[va-by] only Reference(Practitioner)
+* performer[va-at] only Reference(Organization)
+* subject only Reference(Patient)
+* result only Reference(LabObservationObservation)
 * identifier.system = "http://va.gov/identifiers/$Sta3n/63.5"
 * status from http://va.gov/fhir/ValueSet/VSVFDiagnosticReportLabStatus
-* performer[va-by] only Reference(http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner)
-* performer[va-at] only Reference(http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization)
 * category[LaboratorySlice] = http://terminology.hl7.org/CodeSystem/v2-0074#LAB
 * code.coding.system = "http://loinc.org"
-* result only Reference(LabObservationObservation)
 
 Mapping: vista-to-LabObservationMicrobiologyDiagnosticReport
 Id: vista

@@ -5,6 +5,7 @@ Title: "Condition: Encounter Diagnosis"
 Description: "This StructureDefinition contains the maps for VistA file V POV (9000010.07) to us-core-condition-encounter-diagnosis"
 * ^status = #draft
 * category[us-core] and identifier.value and identifier.system and code and code.coding.system and code.coding.code and subject and encounter and onsetDateTime and recordedDate and clinicalStatus and verificationStatus and recorder MS
+* subject only Reference(Patient)
 * category[us-core] = http://terminology.hl7.org/CodeSystem/condition-category#encounter-diagnosis
 * identifier.system = "http://va.gov/identifiers/$Sta3n/9000010.07"
 * code.coding.system = "urn:see-termmap-in-mapParameter"

@@ -5,6 +5,7 @@ Title: "Implantable Device: Transmitter"
 Description: "This StructureDefinition contains the maps for VistA file GENERATOR IMPLANT (698) to us-core-implantable-device"
 * ^status = #draft
 * manufacturer and modelNumber and type and identifier.value and identifier.system and status and serialNumber and patient MS
+* patient only Reference(Patient)
 * type from http://va.gov/fhir/ValueSet/VSVFdeviceTypePacemaker
 * identifier.system = "http://va.gov/identifiers/$Sta3n/698"
 * type from http://va.gov/fhir/ValueSet/VSVFdeviceTypePacemaker

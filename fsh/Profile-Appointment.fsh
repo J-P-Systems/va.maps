@@ -17,19 +17,19 @@ Description: "This StructureDefinition contains the maps for VistA file APPOINTM
 * serviceCategory ^slicing.rules = #open
 * serviceCategory contains va-service 0..1 and va-stop-code 0..1
 * status and cancelationReason and serviceCategory[va-service].coding.code and serviceCategory[va-service].coding.system and serviceType[va-stop-code].coding.code and serviceType[va-stop-code].coding.system and serviceType[va-credit-stop-code].coding.code and serviceType[va-credit-stop-code].coding.system and appointmentType.text and start and end and minutesDuration and created and participant[va-clinic].actor and participant[va-clinic].type.coding.code and participant[va-clinic].status and participant[va-patient].actor and participant[va-patient].type.coding.code and participant[va-patient].status and serviceCategory[va-stop-code].coding.code and serviceCategory[va-stop-code].coding.system and comment and participant[va-appt-clinic].actor and participant[va-appt-clinic].type.coding.code and participant[va-appt-clinic].status and description MS
+* participant[va-clinic].actor only Reference(Location)
+* participant[va-patient].actor only Reference(Patient)
+* participant[va-appt-clinic].actor only Reference(Location)
 * status from http://va.gov/fhir/ValueSet/VSVFAppointmentStatus
 * cancelationReason from http://va.gov/fhir/ValueSet/VSVFAppointmentCancellationReason
 * serviceCategory[va-service].coding.system = "http://va.gov/terminology/VistADefinedTerms/44-9"
 * serviceType[va-stop-code].coding.system = "http://va.gov/terminology/VistADefinedTerms/44-8"
 * serviceType[va-credit-stop-code].coding.system = "http://va.gov/terminology/VistADefinedTerms/44-2503"
-* participant[va-clinic].actor only Reference(http://hl7.org/fhir/StructureDefinition/Location)
 * participant[va-clinic].type.coding.code = #PART
 * participant[va-clinic].status = #accepted
-* participant[va-patient].actor only Reference(http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient)
 * participant[va-patient].type.coding.code = #PART
 * participant[va-patient].status = #accepted
 * serviceCategory[va-stop-code].coding.system = "http://va.gov/terminology/VistADefinedTerms/409.3-13.4"
-* participant[va-appt-clinic].actor only Reference(http://hl7.org/fhir/StructureDefinition/Location)
 * participant[va-appt-clinic].type.coding.code = #PART
 * participant[va-appt-clinic].status = #tentative
 

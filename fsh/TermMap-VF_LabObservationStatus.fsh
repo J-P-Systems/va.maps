@@ -21,10 +21,12 @@ Usage: #definition
 * group[=].element[=].target.code = #preliminary
 * group[=].element[=].target.display = "Preliminary"
 * group[=].element[=].target.equivalence = #equal
-* group[=].element[+].code = #<NULL>
+* group[=].element[+].code = #null
 * group[=].element[=].target.code = #unknown
 * group[=].element[=].target.display = "Unknown"
 * group[=].element[=].target.equivalence = #equal
+* group[=].element[=].target.dependsOn[+].property = "condition"
+* group[=].element[=].target.dependsOn[=].value = "NULL"
 
 ValueSet: VSVFLabObservationStatus
 Title: "VF_LabObservationStatus"
@@ -42,4 +44,4 @@ Description: "VistA Source ValueSet for Terminology Maps VF_LabObservationStatus
 * ^name = "VF_LabObservationStatus"
 * include http://terminology.hl7.org/CodeSystem/v2-0123#F "FINAL RESULTS"
 * include http://terminology.hl7.org/CodeSystem/v2-0123#P "PRELIMINARY"
-* include http://terminology.hl7.org/CodeSystem/v2-0123#<NULL> 
+* include http://terminology.hl7.org/CodeSystem/v2-0123#null 

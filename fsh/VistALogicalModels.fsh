@@ -21,7 +21,7 @@ Characteristics: #can-be-target
 * temporaryAddressEndDate 0..1 Element "TEMPORARY ADDRESS END DATE (-.1218)"
 * languageDatetime 0..1 Reference "LANGUAGE DATE/TIME (-7)"
 * sex 0..1 Coding "SEX (-.02)"
-* sex from http://va.gov/fhir/ValueSet/VSVFbirthSex-vista (preferred)
+* sex from http://va.gov/fhir/ValueSet/VSVFadminGender-vista (preferred)
 * selfIdentifiedGender 0..1 Coding "SELF IDENTIFIED GENDER (-.024)"
 * selfIdentifiedGender from http://va.gov/fhir/ValueSet/VSVFgenderIdentity-vista (preferred)
 * ethnicityInformation 0..1 Coding "ETHNICITY INFORMATION (-6)"
@@ -376,6 +376,20 @@ Characteristics: #can-be-target
 * zipCode 0..1 Element "ZIP CODE (-1.06)"
 * phoneNumber 0..1 Element "PHONE NUMBER (-1.07)"
 * foreignCountryCode 0..1 Element "FOREIGN COUNTRY CODE (-1.08)"
+
+Logical: AccountsReceivable430
+Id: AccountsReceivable430
+Title: "ACCOUNTS RECEIVABLE (430)"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file ACCOUNTS RECEIVABLE (430)"
+Characteristics: #can-be-target
+* administrativeCostBalance 0..1 Element "ADMINISTRATIVE COST BALANCE (-73)"
+* marshallFee 0..1 Element "MARSHALL FEE (-74)"
+* courtCost 0..1 Element "COURT COST (-75)"
+* totalPaidPrincipal 0..1 Element "TOTAL PAID PRINCIPAL (-77)"
+* totalPaidInterest 0..1 Element "TOTAL PAID INTEREST (-78)"
+* totalPaidAdministrativeCost 0..1 Element "TOTAL PAID ADMINISTRATIVE COST (-79)"
+* totalPaidMarshallFee 0..1 Element "TOTAL PAID MARSHALL FEE (-79.1)"
+* totalPaidCourtCost 0..1 Element "TOTAL PAID COURT COST (-79.2)"
 
 Logical: Echo691
 Id: Echo691
