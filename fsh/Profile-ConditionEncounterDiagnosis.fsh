@@ -22,7 +22,7 @@ Source: ConditionEncounterDiagnosis
 * code -> "1613: source value from V POV - POV > ICD DIAGNOSIS (9000010.07-.01 > 80-)"
 * code.coding.system -> "1613-1: fixed value = urn:see-termmap-in-mapParameter" "from mapParameter 1"
 * code.coding.code -> "1613-2: source value from V POV - POV > ICD DIAGNOSIS - CODE NUMBER (9000010.07-.01 > 80-.01)" "from mapParameter 2"
-* subject -> "1611: reference from V POV - PATIENT NAME (9000010.07-.02)"
+* subject -> "1611: reference from V POV - PATIENT NAME > PATIENT/IHS - NAME (9000010.07-.02 > 9000001-.01)"
 * encounter -> "368: source value from V POV - VISIT (9000010.07-.03)"
 * onsetDateTime -> "370: source value from V POV - DATE OF INJURY (9000010.07-.13)"
 * recordedDate -> "372: source value from V POV - VISIT > VISIT - VISIT/ADMIT DATE&TIME (9000010.07-.03 > 9000010-.01)" "Added the sub file and field"

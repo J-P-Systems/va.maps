@@ -7,6 +7,7 @@ Description: "This StructureDefinition contains the maps for VistA file MICROBIO
 * ^abstract = true
 * effectiveDateTime and note and performer and specimen and identifier.value and identifier.system and code.coding and code.coding.system and code.coding.code and code.coding.display and issued and category and subject MS
 * performer only Reference(Organization or Practitioner)
+* specimen only Reference(LabObservationMicrobiologySpecimen)
 * subject only Reference(Patient)
 * identifier.system = "http://va.gov/identifiers/$Sta3n/63.05"
 * category = http://terminology.hl7.org/CodeSystem/observation-category#laboratory

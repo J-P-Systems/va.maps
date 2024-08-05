@@ -71,11 +71,11 @@
 <tr><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3goXBCwdPqAP0wAAAldJREFUOMuNk0tIlFEYhp9z/vE2jHkhxXA0zJCMitrUQlq4lnSltEqCFhFG2MJFhIvIFpkEWaTQqjaWZRkp0g26URZkTpbaaOJkDqk10szoODP//7XIMUe0elcfnPd9zsfLOYplGrpRwZaqTtw3K7PtGem7Q6FoidbGgqHVy/HRb669R+56zx7eRV1L31JGxYbBtjKK93cxeqfyQHbehkZbUkK20goELEuIzEd+dHS+qz/Y8PTSif0FnGkbiwcAjHaU1+QWOptFiyCLp/LnKptpqIuXHx6rbR26kJcBX3yLgBfnd7CxwJmflpP2wUg0HIAoUUpZBmKzELGWcN8nAr6Gpu7tLU/CkwAaoKTWRSQyt89Q8w6J+oVQkKnBoblH7V0PPvUOvDYXfopE/SJmALsxnVm6LbkotrUtNowMeIrVrBcBpaMmdS0j9df7abpSuy7HWehwJdt1lhVwi/J58U5beXGAF6c3UXLycw1wdFklArBn87xdh0ZsZtArghBdAA3+OEDVubG4UEzP6x1FOWneHh2VDAHBAt80IbdXDcesNoCvs3E5AFyNSU5nbrDPZpcUEQQTFZiEVx+51fxMhhyJEAgvlriadIJZZksRuwBYMOPBbO3hePVVqgEJhFeUuFLhIPkRP6BQLIBrmMenujm/3g4zc398awIe90Zb5A1vREALqneMcYgP/xVQWlG+Ncu5vgwwlaUNx+3799rfe96u9K0JSDXcOzOTJg4B6IgmXfsygc7/Bvg9g9E58/cDVmGIBOP/zT8Bz1zqWqpbXIsd0O9hajXfL6u4BaOS6SeWAAAAAElFTkSuQmCC" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr></table></div>
   </text>
   <url value="http://va.gov/fhir/StructureDefinition/EncounterInpatientEncounter"/>
-  <version value="0.64.316"/>
+  <version value="0.64.318"/>
   <name value="EncounterInpatientEncounter"/>
   <title value="Encounter: Inpatient Encounter"/>
   <status value="draft"/>
-  <date value="2024-08-04T09:05:29+00:00"/>
+  <date value="2024-08-05T15:01:43+00:00"/>
   <publisher value="VA"/>
   <contact>
     <name value="VA"/>
@@ -4810,12 +4810,12 @@
       </mapping>
       <mapping>
         <identity value="vista"/>
-        <map value="449: source value from PTF - SECONDARY DIAGNOSIS [#] (45-79.16)"/>
-        <comment value="79.16 and following"/>
+        <map value="449: source value from PTF - SECONDARY DIAGNOSIS 1-24 &gt; ICD DIAGNOSIS - CODE NUMBER (45-79.* &gt; 80-.01)"/>
+        <comment value="*) 79.16-79.19,79.201,79.21-79.24,79.241-79.249,79.2491,79.24911-79.24915"/>
       </mapping>
       <mapping>
         <identity value="cdw"/>
-        <map value="Inpat.CensusDiagnosis.ICDIEN,Inpat.InpatientDiagnosis.ICDIEN"/>
+        <map value="Dim.ICD10.ICD10Code,Dim.ICD9.ICD9Code"/>
       </mapping>
     </element>
     <element id="Encounter.reasonCode:va-secondary.coding.display">
@@ -5303,8 +5303,12 @@
       </mapping>
       <mapping>
         <identity value="vista"/>
-        <map value="450: source value from PTF - PROCEDURE [#] (45-45.01)"/>
-        <comment value="45.01 and following"/>
+        <map value="450: source value from PTF - PROCEDURE 1-5 &gt; ICD OPERATION/PROCEDURE - CODE NUMBER (45-45.01+to+45.05 &gt; 80.1-.01)"/>
+        <comment value="45.01-45.05"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Dim.ICD10Procedure.ICD10ProcedureCode,Dim.ICD9Procedure.ICD9ProcedureCode"/>
       </mapping>
     </element>
     <element id="Encounter.reasonCode:va-procedure.coding.display">
@@ -8286,12 +8290,12 @@
       <mustSupport value="true"/>
       <mapping>
         <identity value="vista"/>
-        <map value="449: source value from PTF - SECONDARY DIAGNOSIS [#] (45-79.16)"/>
-        <comment value="79.16 and following"/>
+        <map value="449: source value from PTF - SECONDARY DIAGNOSIS 1-24 &gt; ICD DIAGNOSIS - CODE NUMBER (45-79.* &gt; 80-.01)"/>
+        <comment value="*) 79.16-79.19,79.201,79.21-79.24,79.241-79.249,79.2491,79.24911-79.24915"/>
       </mapping>
       <mapping>
         <identity value="cdw"/>
-        <map value="Inpat.CensusDiagnosis.ICDIEN,Inpat.InpatientDiagnosis.ICDIEN"/>
+        <map value="Dim.ICD10.ICD10Code,Dim.ICD9.ICD9Code"/>
       </mapping>
     </element>
     <element id="Encounter.reasonCode:va-procedure">
@@ -8315,8 +8319,12 @@
       <mustSupport value="true"/>
       <mapping>
         <identity value="vista"/>
-        <map value="450: source value from PTF - PROCEDURE [#] (45-45.01)"/>
-        <comment value="45.01 and following"/>
+        <map value="450: source value from PTF - PROCEDURE 1-5 &gt; ICD OPERATION/PROCEDURE - CODE NUMBER (45-45.01+to+45.05 &gt; 80.1-.01)"/>
+        <comment value="45.01-45.05"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Dim.ICD10Procedure.ICD10ProcedureCode,Dim.ICD9Procedure.ICD9ProcedureCode"/>
       </mapping>
     </element>
     <element id="Encounter.diagnosis.condition">

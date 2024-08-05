@@ -34,7 +34,7 @@ Source: ImmunizationImmunization
 * doseQuantity.value -> "340: source value from V IMMUNIZATION - DOSE (9000010.11-1312)"
 * performer.actor -> "342: reference from V IMMUNIZATION - ENCOUNTER PROVIDER (9000010.11-1204)" "instantiate with function or reference.display?"
 * performer.function -> "342-1: fixed value = http://terminology.hl7.org/CodeSystem/v2-0443#AP" "from mapParameter 1"
-* note.text -> "343: source value from null (9000010.11-81101)"
+* note.text -> "343: source value from V IMMUNIZATION - COMMENTS (9000010.11-81101)"
 * protocolApplied.doseNumberString -> "344: source value from V IMMUNIZATION - SERIES (9000010.11-.04)" "Can be numeral or letter"
 * doseQuantity -> "464: source value from V IMMUNIZATION - DOSE UNITS > UCUM CODES - (9000010.11-1313 > 757.5-)"
 * doseQuantity.unit -> "464-1: source value from V IMMUNIZATION - DOSE UNITS > UCUM CODES - DESCRIPTION OF THE UNIT (9000010.11-1313 > 757.5-.01)" "from mapParameter 1"

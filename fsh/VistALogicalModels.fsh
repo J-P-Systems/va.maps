@@ -111,14 +111,16 @@ Characteristics: #can-be-target
 * patient 0..1 Element "PATIENT (-.01)"
 * provider 0..1 Element "PROVIDER (-79.1)"
 * principalDiagnosis 0..1 Element "PRINCIPAL DIAGNOSIS (-79)"
-* secondaryDiagnosis  0..1 Element "SECONDARY DIAGNOSIS [#] (-79.16)"
-* procedure  0..1 Element "PROCEDURE [#] (-45.01)"
+* secondaryDiagnosis124 0..1 Reference "SECONDARY DIAGNOSIS 1-24 (-79.*)"
+* procedure15 0..1 Reference "PROCEDURE 1-5 (-45.01+to+45.05)"
 * sourceOfAdmission 0..1 Reference "SOURCE OF ADMISSION (-20)"
 * transferringFacility 0..1 Element "TRANSFERRING FACILITY (-21.1)"
 * receivingFacility 0..1 Element "RECEIVING FACILITY (-76.1)"
 * placeOfDisposition 0..1 Element "PLACE OF DISPOSITION (-75)"
 * wardAtDischarge 0..1 Element "WARD AT DISCHARGE (-2.2)"
 * facility 0..1 Element "FACILITY (-3)"
+* secondaryDiagnosis124 only Reference(IcdDiagnosis80)
+* procedure15 only Reference(IcdOperationprocedure801)
 * sourceOfAdmission only Reference(SourceOfAdmission451)
 
 Logical: InpatientCptCode46
@@ -391,6 +393,13 @@ Characteristics: #can-be-target
 * totalPaidMarshallFee 0..1 Element "TOTAL PAID MARSHALL FEE (-79.1)"
 * totalPaidCourtCost 0..1 Element "TOTAL PAID COURT COST (-79.2)"
 
+Logical: MedicalPatient690
+Id: MedicalPatient690
+Title: "MEDICAL PATIENT (690)"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file MEDICAL PATIENT (690)"
+Characteristics: #can-be-target
+* name 0..1 Element "NAME (-.01)"
+
 Logical: Echo691
 Id: Echo691
 Title: "ECHO (691)"
@@ -419,11 +428,12 @@ Characteristics: #can-be-target
 * pacemakerManufacturer 0..1 Reference "PACEMAKER MANUFACTURER (-3)"
 * pacemakerSerialNumber 0..1 Element "PACEMAKER SERIAL NUMBER (-4)"
 * pacemakerModel 0..1 Reference "PACEMAKER MODEL (-2)"
-* medicalPatient 0..1 Element "MEDICAL PATIENT (-1)"
+* medicalPatient 0..1 Reference "MEDICAL PATIENT (-1)"
 * transmitterManufacturer 0..1 Reference "TRANSMITTER MANUFACTURER (-13)"
 * transmitterModel 0..1 Reference "TRANSMITTER MODEL (-12)"
 * pacemakerManufacturer only Reference(PacemakerManufacturer6986)
 * pacemakerModel only Reference(PacemakerEquipment6984)
+* medicalPatient only Reference(MedicalPatient690)
 * transmitterManufacturer only Reference(PacemakerManufacturer6986)
 * transmitterModel only Reference(PacemakerEquipment6984)
 
@@ -467,12 +477,13 @@ Characteristics: #can-be-target
 * visitId 0..1 Element "VISIT ID (-15001)"
 * checkOutDatetime 0..1 Element "CHECK OUT DATE&TIME (-.18)"
 * serviceCategory 0..1 Element "SERVICE CATEGORY (-.07)"
-* patientName 0..1 Element "PATIENT NAME (-.05)"
+* patientName 0..1 Reference "PATIENT NAME (-.05)"
 * dssId 0..1 Element "DSS ID (-.08)"
 * hospitalLocation 0..1 Element "HOSPITAL LOCATION (-.22)"
 * patientStatusInout 0..1 Coding "PATIENT STATUS IN/OUT (-15002)"
 * patientStatusInout from http://va.gov/fhir/ValueSet/VSVFencounterClass-vista (preferred)
 * locOfEncounter 0..1 Reference "LOC. OF ENCOUNTER (-.06)"
+* patientName only Reference(Patientihs9000001)
 * locOfEncounter only Reference(Location999999906)
 
 Logical: Problem9000011
@@ -485,7 +496,7 @@ Characteristics: #can-be-target
 * diagnosis 0..1 Reference "DIAGNOSIS (-.01)"
 * snomedCtConceptCode 0..1 Element "SNOMED CT CONCEPT CODE (-80001)"
 * providerNarrative 0..1 Element "PROVIDER NARRATIVE (-.05)"
-* patientName 0..1 Element "PATIENT NAME (-.02)"
+* patientName 0..1 Reference "PATIENT NAME (-.02)"
 * dateOfOnset 0..1 Element "DATE OF ONSET (-.13)"
 * dateEntered 0..1 Element "DATE ENTERED (-.08)"
 * recordingProvider 0..1 Element "RECORDING PROVIDER (-1.04)"
@@ -494,6 +505,7 @@ Characteristics: #can-be-target
 * condition 0..1 Coding "CONDITION (-1.02)"
 * condition from http://va.gov/fhir/ValueSet/VSVFproblemVerificationStatus-vista (preferred)
 * diagnosis only Reference(IcdDiagnosis80)
+* patientName only Reference(Patientihs9000001)
 
 Logical: PatientAllergies1208
 Id: PatientAllergies1208
@@ -619,13 +631,14 @@ Description: "This StructureDefinition contains the Logical Model for the mapped
 Characteristics: #can-be-target
 * ien 0..1 Element "IEN (-.001)"
 * pov 0..1 Reference "POV (-.01)"
-* patientName 0..1 Element "PATIENT NAME (-.02)"
+* patientName 0..1 Reference "PATIENT NAME (-.02)"
 * visit 0..1 Reference "VISIT (-.03)"
 * dateOfInjury 0..1 Element "DATE OF INJURY (-.13)"
 * modifier 0..1 Coding "MODIFIER (-.06)"
 * modifier from http://va.gov/fhir/ValueSet/VSVFencounterProblemVerificationStatus-vista (preferred)
 * encounterProvider 0..1 Element "ENCOUNTER PROVIDER (-1204)"
 * pov only Reference(IcdDiagnosis80)
+* patientName only Reference(Patientihs9000001)
 * visit only Reference(Visit9000010)
 
 Logical: SurgicalPathology6308
@@ -975,6 +988,13 @@ Characteristics: #can-be-target
 * virus 0..1 Reference "VIRUS (-.01)"
 * virus only Reference(EtiologyField612)
 
+Logical: IcdOperationprocedure801
+Id: IcdOperationprocedure801
+Title: "ICD OPERATION/PROCEDURE (80.1)"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file ICD OPERATION/PROCEDURE (80.1)"
+Characteristics: #can-be-target
+* codeNumber 0..1 Element "CODE NUMBER (-.01)"
+
 Logical: SourceOfAdmission451
 Id: SourceOfAdmission451
 Title: "SOURCE OF ADMISSION (45.1)"
@@ -1043,6 +1063,7 @@ Characteristics: #can-be-target
 * immunizationLot 0..1 Reference "IMMUNIZATION LOT (-.05)"
 * dose 0..1 Element "DOSE (-1312)"
 * encounterProvider 0..1 Element "ENCOUNTER PROVIDER (-1204)"
+* comments 0..1 Element "COMMENTS (-81101)"
 * series 0..1 Element "SERIES (-.04)"
 * doseUnits 0..1 Reference "DOSE UNITS (-1313)"
 * datetimeRecorded 0..1 Element "DATE/TIME RECORDED (-1205)"
@@ -1090,9 +1111,10 @@ Characteristics: #can-be-target
 * aLeadManufacturer 0..1 Reference "A LEAD MANUFACTURER (-3)"
 * aLeadSerialNumber 0..1 Element "A LEAD SERIAL NUMBER (-4)"
 * aLeadModel 0..1 Reference "A LEAD MODEL (-2)"
-* medicalPatient 0..1 Element "MEDICAL PATIENT (-1)"
+* medicalPatient 0..1 Reference "MEDICAL PATIENT (-1)"
 * aLeadManufacturer only Reference(PacemakerManufacturer6986)
 * aLeadModel only Reference(PacemakerEquipment6984)
+* medicalPatient only Reference(MedicalPatient690)
 
 Logical: PacemakerManufacturer6986
 Id: PacemakerManufacturer6986
@@ -1160,9 +1182,10 @@ Characteristics: #can-be-target
 * vLeadManufacturer 0..1 Reference "V LEAD MANUFACTURER (-3)"
 * vLeadSerialNumber 0..1 Element "V LEAD SERIAL NUMBER (-4)"
 * vLeadModel 0..1 Reference "V LEAD MODEL (-2)"
-* medicalPatient 0..1 Element "MEDICAL PATIENT (-1)"
+* medicalPatient 0..1 Reference "MEDICAL PATIENT (-1)"
 * vLeadManufacturer only Reference(PacemakerManufacturer6986)
 * vLeadModel only Reference(PacemakerEquipment6984)
+* medicalPatient only Reference(MedicalPatient690)
 
 Logical: Cytopathology6309
 Id: Cytopathology6309

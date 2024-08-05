@@ -25,7 +25,7 @@ Source: EncounterOutpatient
 * status -> "432: fixed value = #finished when VISIT - CHECK OUT DATE&TIME (9000010-.18) case not null, < now"
 * serviceType.coding.code -> "439: source value from VISIT - SERVICE CATEGORY (9000010-.07)"
 * serviceType.coding.system -> "439-1: fixed value = http://va.gov/terminology/VistADefinedTerms/9000010-.07" "from mapParameter 1"
-* subject -> "440: reference from VISIT - PATIENT NAME (9000010-.05)"
+* subject -> "440: reference from VISIT - PATIENT NAME > PATIENT/IHS - NAME (9000010-.05 > 9000001-.01)"
 * period.start -> "443: source value from VISIT - VISIT/ADMIT DATE&TIME (9000010-.01)"
 * period.end -> "444: source value from VISIT - CHECK OUT DATE&TIME (9000010-.18)"
 * reasonCode.coding.code -> "447: source value from V POV - POV > ICD DIAGNOSIS - CODE NUMBER (9000010.07-.01 > 80-.01)"

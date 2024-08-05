@@ -31,7 +31,7 @@ Source: ConditionProblem
 * code.coding.code -> "366: source value from PROBLEM - SNOMED CT CONCEPT CODE (9000011-80001)"
 * code.coding.system -> "366-1: fixed value = http://snomed.info/sct" "from mapParameter 1"
 * code.text -> "957: source value from PROBLEM - PROVIDER NARRATIVE (9000011-.05)"
-* subject -> "367: reference from PROBLEM - PATIENT NAME (9000011-.02)"
+* subject -> "367: reference from PROBLEM - PATIENT NAME > PATIENT/IHS - NAME (9000011-.02 > 9000001-.01)"
 * onsetDateTime -> "369: source value from PROBLEM - DATE OF ONSET (9000011-.13)"
 * recordedDate -> "371: source value from PROBLEM - DATE ENTERED (9000011-.08)"
 * recorder -> "373: source value from PROBLEM - RECORDING PROVIDER (9000011-1.04)"
