@@ -84,8 +84,7 @@ Id: HospitalLocation44
 Title: "HOSPITAL LOCATION (44)"
 Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file HOSPITAL LOCATION (44)"
 Characteristics: #can-be-target
-* service 0..1 Coding "SERVICE (-9)"
-* service from http://va.gov/fhir/ValueSet/VSVFLocationStatus-vista (preferred)
+* service 0..1 Element "SERVICE (-9)"
 * stopCodeNumber 0..1 Element "STOP CODE NUMBER (-8)"
 * creditStopCode 0..1 Element "CREDIT STOP CODE (-2503)"
 * type 0..1 Element "TYPE (-2)"

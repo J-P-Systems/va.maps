@@ -1,12 +1,14 @@
 Instance: CHAPI
 InstanceOf: CapabilityStatement
+Title: "Lighthouse Clinical Health API"
 Usage: #definition
+* description = "This CapabilityStatement contains an example for Lighthouse Clinical Health API"
 * status = #draft
-* date = "2024-08-13T07:58:58.736Z"
-* kind = #instance
+* date = "2024-08-13T15:04:23.485Z"
+* kind = #requirements
 * fhirVersion = #4.0.1
-* format[+] = #xml
-* format[=] = #json
+* format[0] = #xml
+* format[1] = #json
 * rest.mode = #server
 * rest.resource[+].type = #Observation
 * rest.resource[=].profile = "http://va.gov/fhir/StructureDefinition/LabObservationMicrobiologyVirologyObservation"
