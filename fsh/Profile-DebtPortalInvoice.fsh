@@ -24,7 +24,7 @@ Description: "This StructureDefinition contains the maps for VistA file AR CCPC 
 * totalPriceComponent[va-admin-cost-bal].type = #surcharge
 * totalPriceComponent[va-admin-cost-bal].code.text = "Administrative Cost Balance"
 * totalPriceComponent[va-marsh-fee].type = #surcharge
-* totalPriceComponent[va-marsh-fee].code.text = "Marshall Fee"
+* totalPriceComponent[va-marsh-fee].code.text = "Marshal Fee"
 * totalPriceComponent[va-court-cost].type = #surcharge
 * totalPriceComponent[va-court-cost].code.text = "Court Cost"
 * totalPriceComponent[va-principal-paid].type = #base
@@ -34,7 +34,7 @@ Description: "This StructureDefinition contains the maps for VistA file AR CCPC 
 * totalPriceComponent[va-admin-cost-paid].type = #surcharge
 * totalPriceComponent[va-admin-cost-paid].code.text = "Administrative Cost Paid"
 * totalPriceComponent[va-marsh-fee-paid].type = #surcharge
-* totalPriceComponent[va-marsh-fee-paid].code.text = "Marshall Fee Paid"
+* totalPriceComponent[va-marsh-fee-paid].code.text = "Marshal Fee Paid"
 * totalPriceComponent[va-court-cost-paid].type = #surcharge
 * totalPriceComponent[va-court-cost-paid].code.text = "Court Cost Paid"
 
@@ -65,9 +65,9 @@ Source: DebtPortalInvoice
 * totalPriceComponent[va-admin-cost-bal].amount -> "1866: source value from ACCOUNTS RECEIVABLE - ADMINISTRATIVE COST BALANCE (430-73)"
 * totalPriceComponent[va-admin-cost-bal].type -> "1866-1: fixed value = #surcharge" "from mapParameter 1"
 * totalPriceComponent[va-admin-cost-bal].code.text -> "1866-2: fixed value = Administrative Cost Balance" "from mapParameter 2"
-* totalPriceComponent[va-marsh-fee].amount -> "1867: source value from ACCOUNTS RECEIVABLE - MARSHALL FEE (430-74)"
+* totalPriceComponent[va-marsh-fee].amount -> "1867: source value from ACCOUNTS RECEIVABLE - MARSHAL FEE (430-74)"
 * totalPriceComponent[va-marsh-fee].type -> "1867-1: fixed value = #surcharge" "from mapParameter 1"
-* totalPriceComponent[va-marsh-fee].code.text -> "1867-2: fixed value = Marshall Fee" "from mapParameter 2"
+* totalPriceComponent[va-marsh-fee].code.text -> "1867-2: fixed value = Marshal Fee" "from mapParameter 2"
 * totalPriceComponent[va-court-cost].amount -> "1868: source value from ACCOUNTS RECEIVABLE - COURT COST (430-75)"
 * totalPriceComponent[va-court-cost].type -> "1868-1: fixed value = #surcharge" "from mapParameter 1"
 * totalPriceComponent[va-court-cost].code.text -> "1868-2: fixed value = Court Cost" "from mapParameter 2"
@@ -80,9 +80,9 @@ Source: DebtPortalInvoice
 * totalPriceComponent[va-admin-cost-paid].amount -> "1871: source value from ACCOUNTS RECEIVABLE - TOTAL PAID ADMINISTRATIVE COST (430-79)"
 * totalPriceComponent[va-admin-cost-paid].type -> "1871-1: fixed value = #surcharge" "from mapParameter 1"
 * totalPriceComponent[va-admin-cost-paid].code.text -> "1871-2: fixed value = Administrative Cost Paid" "from mapParameter 2"
-* totalPriceComponent[va-marsh-fee-paid].amount -> "1872: source value from ACCOUNTS RECEIVABLE - TOTAL PAID MARSHALL FEE (430-79.1)"
+* totalPriceComponent[va-marsh-fee-paid].amount -> "1872: source value from ACCOUNTS RECEIVABLE - TOTAL PAID MARSHAL FEE (430-79.1)"
 * totalPriceComponent[va-marsh-fee-paid].type -> "1872-1: fixed value = #surcharge" "from mapParameter 1"
-* totalPriceComponent[va-marsh-fee-paid].code.text -> "1872-2: fixed value = Marshall Fee Paid" "from mapParameter 2"
+* totalPriceComponent[va-marsh-fee-paid].code.text -> "1872-2: fixed value = Marshal Fee Paid" "from mapParameter 2"
 * totalPriceComponent[va-court-cost-paid].amount -> "1873: source value from ACCOUNTS RECEIVABLE - TOTAL PAID COURT COST (430-79.2)"
 * totalPriceComponent[va-court-cost-paid].type -> "1873-1: fixed value = #surcharge" "from mapParameter 1"
 * totalPriceComponent[va-court-cost-paid].code.text -> "1873-2: fixed value = Court Cost Paid" "from mapParameter 2"

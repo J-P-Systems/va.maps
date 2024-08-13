@@ -4,20 +4,24 @@ Id: ImmunizationImmunization
 Title: "Immunization Immunization"
 Description: "This StructureDefinition contains the maps for VistA file V IMMUNIZATION (9000010.11) to us-core-immunization"
 * ^status = #draft
-* statusReason and vaccineCode and primarySource and status and vaccineCode.text and patient and occurrenceDateTime and lotNumber and manufacturer and vaccineCode.coding.code and vaccineCode.coding.system and doseQuantity.value and performer.actor and performer.function and note.text and protocolApplied.doseNumberString and doseQuantity and doseQuantity.unit and doseQuantity.code and recorded and reaction.detail and encounter and location MS
+* lotNumber and manufacturer and vaccineCode.coding.code and vaccineCode.coding.system and statusReason and vaccineCode and primarySource and status and vaccineCode.text and patient and occurrenceDateTime and doseQuantity.value and performer.actor and performer.function and note.text and protocolApplied.doseNumberString and doseQuantity and doseQuantity.unit and doseQuantity.code and recorded and reaction.detail and encounter and location MS
 * performer.actor only Reference(Practitioner)
 * reaction.detail only Reference(ImmunizationObservation)
+* vaccineCode.coding.system = "http://hl7.org/fhir/sid/ndc"
 * statusReason from http://va.gov/fhir/ValueSet/VSVFimmunizationStatusReason
 * vaccineCode from http://va.gov/fhir/ValueSet/VSVFinferredCVX
 * primarySource.extension contains http://hl7.org/fhir/StructureDefinition/11179-permitted-value-conceptmap named 11179-permitted-value-conceptmap 0..1
 * primarySource.extension[11179-permitted-value-conceptmap].valueCanonical = "http://va.gov/fhir/ConceptMap/CMVFimmunizationPrimarySource"
-* vaccineCode.coding.system = "http://hl7.org/fhir/sid/ndc"
 * performer.function = http://terminology.hl7.org/CodeSystem/v2-0443#AP
 
 Mapping: vista-to-ImmunizationImmunization
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: ImmunizationImmunization
+* lotNumber -> "338: source value from V IMMUNIZATION - LOT > IMMUNIZATION LOT - LOT NUMBER (9000010.11-.05 > 9999999.41-.01)" "pointer to subfile 9999999.04-.02 MVX code, 9999999.04-.01 lot"
+* manufacturer -> "339: source value from V IMMUNIZATION - LOT > IMMUNIZATION LOT - MANUFACTURER (9000010.11-.05 > 9999999.41-.02)"
+* vaccineCode.coding.code -> "1609: source value from V IMMUNIZATION - LOT > IMMUNIZATION LOT - NDC CODE (VA) (9000010.11-.05 > 9999999.41-.18)"
+* vaccineCode.coding.system -> "1609-1: fixed value = http://hl7.org/fhir/sid/ndc" "from mapParameter 1"
 * statusReason -> "527: terminologyMaps using VF_immunizationStatusReason on V IMMUNIZATION - IMMUNIZATION > IMMUNIZATION - NAME (9000010.11-.01 > 9999999.14-.01) case V IMMUNIZATION - IMMUNIZATION null"
 * vaccineCode -> "528: terminologyMaps using VF_inferredCVX on V IMMUNIZATION - IMMUNIZATION > IMMUNIZATION - NAME (9000010.11-.01 > 9999999.14-.01) case V IMMUNIZATION - IMMUNIZATION null" "This map is used to identify CVX codes for immunizations that were not given, and which therefore are not coded. The name can be used to determine what the CVX Group."
 * primarySource -> "607: transform using VF_immunizationPrimarySource on V IMMUNIZATION - EVENT INFORMATION SOURCE (9000010.11-1301)"
@@ -27,10 +31,6 @@ Source: ImmunizationImmunization
 * vaccineCode.text -> "332-1: undefined case not null" "from mapParameter 1"
 * patient -> "333: source value from V IMMUNIZATION - PATIENT NAME (9000010.11-.02)"
 * occurrenceDateTime -> "334: source value from V IMMUNIZATION - EVENT DATE AND TIME (9000010.11-1201)"
-* lotNumber -> "338: source value from V IMMUNIZATION - IMMUNIZATION LOT > IMMUNIZATION LOT - LOT NUMBER (9000010.11-.05 > 9999999.41-.01)" "pointer to subfile 9999999.04-.02 MVX code, 9999999.04-.01 lot"
-* manufacturer -> "339: source value from V IMMUNIZATION - IMMUNIZATION LOT > IMMUNIZATION LOT - MANUFACTURER (9000010.11-.05 > 9999999.41-.02)"
-* vaccineCode.coding.code -> "1609: source value from V IMMUNIZATION - IMMUNIZATION LOT > IMMUNIZATION LOT - NDC CODE (VA) (9000010.11-.05 > 9999999.41-.18)"
-* vaccineCode.coding.system -> "1609-1: fixed value = http://hl7.org/fhir/sid/ndc" "from mapParameter 1"
 * doseQuantity.value -> "340: source value from V IMMUNIZATION - DOSE (9000010.11-1312)"
 * performer.actor -> "342: reference from V IMMUNIZATION - ENCOUNTER PROVIDER (9000010.11-1204)" "instantiate with function or reference.display?"
 * performer.function -> "342-1: fixed value = http://terminology.hl7.org/CodeSystem/v2-0443#AP" "from mapParameter 1"
@@ -48,6 +48,9 @@ Mapping: cdw-to-ImmunizationImmunization
 Id: cdw
 Title: "Clinical Data Warehouse (CDW)"
 Source: ImmunizationImmunization
+* lotNumber -> "Dim.ImmunizationLot.ImmunizationLot"
+* manufacturer -> "Dim.ImmunizationLot.ImmunizationManufacturerIEN,Dim.ImmunizationLot.ImmunizationManufacturerSID"
+* vaccineCode.coding.code -> "Dim.ImmunizationLot.NDCCodeVAText"
 * statusReason -> "Immun.Immunization.ImmunizationNameIEN\nDim.ImmunizationName.ImmunizationName,Dim.PharmacyOrderableItem.ImmunizationName"
 * vaccineCode -> "Immun.Immunization.ImmunizationNameIEN\nDim.ImmunizationName.ImmunizationName,Dim.PharmacyOrderableItem.ImmunizationName"
 * primarySource -> "Immun.Immunization.ImmunizationInformationSourceIEN"
@@ -56,9 +59,6 @@ Source: ImmunizationImmunization
 * vaccineCode -> "Immun.Immunization.ImmunizationNameIEN\nDim.ImmunizationName.CVXCode"
 * patient -> "Immun.Immunization.PatientIEN"
 * occurrenceDateTime -> "Immun.Immunization.EventDateTime"
-* lotNumber -> "Dim.ImmunizationLot.ImmunizationLot"
-* manufacturer -> "Dim.ImmunizationLot.ImmunizationManufacturerIEN,Dim.ImmunizationLot.ImmunizationManufacturerSID"
-* vaccineCode.coding.code -> "Dim.ImmunizationLot.NDCCodeVAText"
 * doseQuantity.value -> "Immun.Immunization.Dosage"
 * performer.actor -> "Immun.Immunization.ImmunizingStaffIEN"
 * note.text -> "Immun.Immunization.ImmunizationComments"

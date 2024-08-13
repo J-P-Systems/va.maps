@@ -8,7 +8,7 @@ Description: "This StructureDefinition contains the maps for VistA file SURGICAL
 * performer ^slicing.discriminator.path = "$this"
 * performer ^slicing.rules = #open
 * performer contains va-by 0..1 and va-at 0..1
-* identifier.value and identifier.system and basedOn and code.text and code and code.coding.code and code.coding.system and status and effectiveDateTime and issued and performer[va-by] and performer[va-at] and resultsInterpreter and specimen and media.link and conclusion and presentedForm.data and category[LaboratorySlice] and category.text and code.coding and code.coding.display and subject and result MS
+* presentedForm.data and identifier.value and identifier.system and basedOn and code.text and code and code.coding.code and code.coding.system and status and effectiveDateTime and issued and performer[va-by] and performer[va-at] and resultsInterpreter and specimen and media.link and conclusion and subject and category[LaboratorySlice] and category.text and code.coding and code.coding.display and result MS
 * basedOn only Reference(http://hl7.org/fhir/StructureDefinition/ServiceRequest)
 * performer[va-by] only Reference(Practitioner)
 * performer[va-at] only Reference(Organization)
@@ -27,6 +27,7 @@ Mapping: vista-to-LabObservationSurgicalPathologyDiagnosticReport
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: LabObservationSurgicalPathologyDiagnosticReport
+* presentedForm.data -> "1721: source value from SURGICAL PATHOLOGY - TIU REFERENCE DATE/TIME - SP > TIU REFERENCE DATE/TIME - SP - TIU ENTRY POINTER - SP > TIU DOCUMENT - REPORT TEXT (63.08-.16 > 63.19-1 > 8925-2)" "HDR may be used to get the report"
 * identifier.value -> "1606: source value from SURGICAL PATHOLOGY - ORDERED TEST > ORDERED TEST - IEN (63.08-.35 > 63.53-.001)"
 * identifier.system -> "1606-1: fixed value = http://va.gov/identifiers/$Sta3n/63.53" "from mapParameter 1"
 * basedOn -> "1691: reference from SURGICAL PATHOLOGY - ORDERED TEST > ORDERED TEST - CPRS ORDER # (63.08-.35 > 63.53-3)"
@@ -43,7 +44,7 @@ Source: LabObservationSurgicalPathologyDiagnosticReport
 * specimen -> "1701: reference from SURGICAL PATHOLOGY - SURGICAL PATH ACC # (63.08-.06)"
 * media.link -> "1439: reference from SURGICAL PATHOLOGY - IMAGE (63.08-2005)"
 * conclusion -> "1447: source value from SURGICAL PATHOLOGY - SURGICAL PATH DIAGNOSIS (63.08-1.4)" "Vista field is word processing so CodeableConcept cannot be used"
-* presentedForm.data -> "1721: source value from SURGICAL PATHOLOGY - TIU REFERENCE DATE/TIME - SP > TIU REFERENCE DATE/TIME - SP - TIU ENTRY POINTER - SP > REPORT TEXT (63.08-.16 > 63.19-1 > 8925-2)" "HDR may be used to get the report"
+* subject -> "1421: reference from PATIENT - LABORATORY REFERENCE > LAB DATA - LRDFN (2-63 > 63-.01)" "Pointer from PATIENT (2)"
 * category[LaboratorySlice] -> "1419: fixed value = http://terminology.hl7.org/CodeSystem/v2-0074#LAB"
 * category.text -> "1662: source value from LABORATORY TEST - NATIONAL VA LAB CODE > WKLD CODE - WKLD CODE LAB SECTION > WKLD CODE LAB SECT - NAME (60-64 > 64-13 > 64.21-.01)" "Lab Section"
 * code.coding -> "1420: source value from LABORATORY TEST - NATIONAL VA LAB CODE > WKLD CODE - DEFAULT LOINC CODE > LAB LOINC (60-64 > 64-25 > 95.3)" "Typically LOINC. \nChanged VistA mapping to support some coded values and add the lab test name (non-standardized)"
@@ -51,7 +52,6 @@ Source: LabObservationSurgicalPathologyDiagnosticReport
 * code.coding.system -> "1420-2: fixed value = http://loinc.org" "from mapParameter 2"
 * code.coding.display -> "1420-3: source value from LABORATORY TEST - NATIONAL VA LAB CODE > WKLD CODE - DEFAULT LOINC CODE > LAB LOINC - COMPONENT (60-64 > 64-25 > 95.3-1)" "from mapParameter 3"
 * code.text -> "1661: source value from LABORATORY TEST - NAME (60-.01)" "Added the lab test name (non-standardized)"
-* subject -> "1421: reference from PATIENT - LABORATORY REFERENCE > LAB DATA - LRDFN (2-63 > 63-.01)" "Pointer from PATIENT (2)"
 * result -> "1437: reference from See mapping for Lab Observation"
 
 Mapping: cdw-to-LabObservationSurgicalPathologyDiagnosticReport
@@ -66,9 +66,9 @@ Source: LabObservationSurgicalPathologyDiagnosticReport
 * performer[va-at] -> "Pathology.SurgicalPathology.ReleasingInstitutionIEN"
 * resultsInterpreter -> "Pathology.SurgicalPathology.PathologistStaffIEN"
 * specimen -> "Pathology.SurgicalPathology.SurgicalPathologyShortAccessionNumber"
+* subject -> "Micro.AntibioticSensitivity.LRDFN,Micro.AntibioticSensitivityComment.LRDFN,Micro.BacteriologyReports.LRDFN,Micro.MicroAntibioticLevel.LRDFN,Micro.MicroAudit.LRDFN,Micro.Microbiology.LRDFN,Micro.MicroOrderedTest.LRDFN,Micro.MicroSterilityResults.LRDFN,Micro.MycobacteriologyReports.LRDFN,Micro.Mycology.LRDFN,Micro.MycologyReports.LRDFN,Micro.Parasitology.LRDFN,Micro.ParasitologyReports.LRDFN,Micro.ParasitologyStage.LRDFN,Micro.Virology.LRDFN,Micro.VirologyReports.LRDFN,Pathology.Autopsy.LRDFN,Pathology.CytoOrganTissueFunction.StaffIEN,SStaff.SMicroOrderedTest.LRDFN"
 * category.text -> "Dim.LabChemTest.NationalVALabCodeIEN"
 * code.coding -> "Dim.LabChemTest.NationalVALabCodeIEN"
 * code.coding.code -> "Dim.LabChemTest.NationalVALabCodeIEN"
 * code.coding.display -> "Dim.LabChemTest.NationalVALabCodeIEN"
 * code.text -> "Dim.LabChemTest.LabChemTestName"
-* subject -> "Micro.AntibioticSensitivity.LRDFN,Micro.AntibioticSensitivityComment.LRDFN,Micro.BacteriologyReports.LRDFN,Micro.MicroAntibioticLevel.LRDFN,Micro.MicroAudit.LRDFN,Micro.Microbiology.LRDFN,Micro.MicroOrderedTest.LRDFN,Micro.MicroSterilityResults.LRDFN,Micro.MycobacteriologyReports.LRDFN,Micro.Mycology.LRDFN,Micro.MycologyReports.LRDFN,Micro.Parasitology.LRDFN,Micro.ParasitologyReports.LRDFN,Micro.ParasitologyStage.LRDFN,Micro.Virology.LRDFN,Micro.VirologyReports.LRDFN,Pathology.Autopsy.LRDFN,Pathology.CytoOrganTissueFunction.StaffIEN,SStaff.SMicroOrderedTest.LRDFN"

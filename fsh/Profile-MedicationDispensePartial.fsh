@@ -4,7 +4,7 @@ Id: MedicationDispensePartial
 Title: "MedicationDispense: Partial"
 Description: "This StructureDefinition contains the maps for VistA file PRESCRIPTION (52) to MedicationDispense"
 * ^status = #draft
-* type and destination.display and authorizingPrescription and daysSupply and dosageInstruction.doseAndRate.doseQuantity.unit and dosageInstruction.doseAndRate.doseQuantity.code and dosageInstruction.doseAndRate.doseQuantity.value and dosageInstruction.patientInstruction and dosageInstruction.text and medicationCodeableConcept.coding.code and medicationCodeableConcept.coding.system and medicationCodeableConcept.text and quantity.value and status and subject and whenPrepared and location and note.text and performer MS
+* daysSupply and type and destination.display and authorizingPrescription and dosageInstruction.doseAndRate.doseQuantity.unit and dosageInstruction.doseAndRate.doseQuantity.code and dosageInstruction.doseAndRate.doseQuantity.value and dosageInstruction.patientInstruction and dosageInstruction.text and medicationCodeableConcept.coding.code and medicationCodeableConcept.coding.system and medicationCodeableConcept.text and quantity.value and status and subject and whenPrepared and location and note.text and performer MS
 * type = #PF
 * dosageInstruction.doseAndRate.doseQuantity.code from http://va.gov/fhir/ValueSet/VSVFDoseUnits
 * medicationCodeableConcept.coding.system = "urn:oid:2.16.840.1.113883.6.233"
@@ -13,10 +13,10 @@ Mapping: vista-to-MedicationDispensePartial
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: MedicationDispensePartial
+* daysSupply -> "828: source value from PRESCRIPTION - PARTIAL DATE > PARTIAL DATE - DAYS SUPPLY (52-60 > 52.2-.041)"
 * type -> "1710: fixed value = #PF"
 * destination.display -> "1713: source value from PRESCRIPTION - PARTIAL DATE > PARTIAL DATE - MAIL/WINDOW (52-60 > 52.2-.02)"
 * authorizingPrescription -> "1565: source value from PRESCRIPTION - PLACER ORDER # (52-39.3)"
-* daysSupply -> "828: source value from PRESCRIPTION - PARTIAL DATE > PARTIAL DATE- DAYS SUPPLY (52-60 > 52.2-.041)"
 * destination.display -> "837: source value from PRESCRIPTION - PARTIAL DATE > PARTIAL DATE - MAIL/WINDOW (52-60 > 52.2-.02)"
 * dosageInstruction.doseAndRate.doseQuantity.unit -> "1571: source value from PRESCRIPTION - MEDICATION INSTRUCTIONS > MEDICATION INSTRUCTIONS - UNITS (52-113 > 52.0113-2)"
 * dosageInstruction.doseAndRate.doseQuantity.code -> "1576: terminologyMaps using VF_DoseUnits on PRESCRIPTION - MEDICATION INSTRUCTIONS > MEDICATION INSTRUCTIONS - UNITS (52-113 > 52.0113-2)"

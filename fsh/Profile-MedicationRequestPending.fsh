@@ -6,7 +6,7 @@ Description: "This StructureDefinition contains the maps for VistA file PENDING 
 * ^status = #draft
 * extension contains http://va.gov/fhir/StructureDefinition/medicationrequest-pharmacyOrderStatus named medicationrequest-pharmacyOrderStatus 0..1
 * extension contains http://va.gov/fhir/StructureDefinition/medicationrequest-pharmacyOrderStatus named medicationrequest-pharmacyOrderStatus 0..1
-* identifier.value and identifier.system and status and extension[http://va.gov/fhir/StructureDefinition/medicationrequest-pharmacyOrderStatus].valueCoding.code and extension[http://va.gov/fhir/StructureDefinition/medicationrequest-pharmacyOrderStatus].valueCoding.system and recorder and requester and dosageInstruction.timing.repeat.boundsPeriod.start and medicationCodeableConcept and dispenseRequest.quantity and dispenseRequest.numberOfRepeatsAllowed and authoredOn and dispenseRequest.expectedSupplyDuration and note and dosageInstruction.patientInstruction MS
+* dosageInstruction.patientInstruction and identifier.value and identifier.system and status and extension[http://va.gov/fhir/StructureDefinition/medicationrequest-pharmacyOrderStatus].valueCoding.code and extension[http://va.gov/fhir/StructureDefinition/medicationrequest-pharmacyOrderStatus].valueCoding.system and recorder and requester and dosageInstruction.timing.repeat.boundsPeriod.start and medicationCodeableConcept and dispenseRequest.quantity and dispenseRequest.numberOfRepeatsAllowed and authoredOn and dispenseRequest.expectedSupplyDuration and note MS
 * identifier.system = "http://va.gov/identifiers/$Sta3n/52.41-.01"
 * status = #draft
 * extension[http://va.gov/fhir/StructureDefinition/medicationrequest-pharmacyOrderStatus].valueCoding.system = "http://va.gov/terminology/vistaDefinedTerms/52.41-2"
@@ -15,6 +15,7 @@ Mapping: vista-to-MedicationRequestPending
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: MedicationRequestPending
+* dosageInstruction.patientInstruction -> "1760: null"
 * identifier.value -> "1747: source value from PENDING OUTPATIENT ORDERS - PLACER NUMBER (52.41-.01)"
 * identifier.system -> "1747-1: fixed value = http://va.gov/identifiers/$Sta3n/52.41-.01" "from mapParameter 1"
 * status -> "1748: fixed value = #draft"
@@ -30,7 +31,6 @@ Source: MedicationRequestPending
 * authoredOn -> "1757: source value from PENDING OUTPATIENT ORDERS - LOGIN DATE (52.41-15)"
 * dispenseRequest.expectedSupplyDuration -> "1758: source value from PENDING OUTPATIENT ORDERS - DAYS SUPPLY (52.41-101)"
 * note -> "1759: source value from PENDING OUTPATIENT ORDERS - PROVIDER COMMENTS (52.41-9)"
-* dosageInstruction.patientInstruction -> "1760: null"
 
 Mapping: cdw-to-MedicationRequestPending
 Id: cdw

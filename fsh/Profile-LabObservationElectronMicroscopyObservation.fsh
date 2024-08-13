@@ -4,7 +4,7 @@ Id: LabObservationElectronMicroscopyObservation
 Title: "Lab Observation: Electron Microscopy Observation"
 Description: "This StructureDefinition contains the maps for VistA file PATIENT (2) to us-core-observation-lab"
 * ^status = #draft
-* category and subject MS
+* subject and category MS
 * subject only Reference(Patient)
 * category = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
 
@@ -12,8 +12,8 @@ Mapping: vista-to-LabObservationElectronMicroscopyObservation
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: LabObservationElectronMicroscopyObservation
-* category -> "843: fixed value = http://terminology.hl7.org/CodeSystem/observation-category#laboratory"
 * subject -> "844: reference from PATIENT - LABORATORY REFERENCE > LAB DATA - LRDFN (2-63 > 63-.01)" "Pointer from PATIENT (2)"
+* category -> "843: fixed value = http://terminology.hl7.org/CodeSystem/observation-category#laboratory"
 
 Mapping: cdw-to-LabObservationElectronMicroscopyObservation
 Id: cdw

@@ -2,12 +2,12 @@ Profile: Appointment
 Parent: http://hl7.org/fhir/StructureDefinition/Appointment
 Id: Appointment
 Title: "Appointment"
-Description: "This StructureDefinition contains the maps for VistA file APPOINTMENT (2.98) to Appointment"
+Description: "This StructureDefinition contains the maps for VistA file PATIENT (2) to Appointment"
 * ^status = #draft
 * participant ^slicing.discriminator.type = #pattern
 * participant ^slicing.discriminator.path = "$this"
 * participant ^slicing.rules = #open
-* participant contains va-clinic 0..1 and va-patient 0..1 and va-appt-clinic 0..1
+* participant contains va-patient 0..1 and va-clinic 0..1 and va-appt-clinic 0..1
 * serviceType ^slicing.discriminator.type = #pattern
 * serviceType ^slicing.discriminator.path = "$this"
 * serviceType ^slicing.rules = #open
@@ -16,10 +16,12 @@ Description: "This StructureDefinition contains the maps for VistA file APPOINTM
 * serviceCategory ^slicing.discriminator.path = "$this"
 * serviceCategory ^slicing.rules = #open
 * serviceCategory contains va-service 0..1 and va-stop-code 0..1
-* status and cancelationReason and serviceCategory[va-service].coding.code and serviceCategory[va-service].coding.system and serviceType[va-stop-code].coding.code and serviceType[va-stop-code].coding.system and serviceType[va-credit-stop-code].coding.code and serviceType[va-credit-stop-code].coding.system and appointmentType.text and start and end and minutesDuration and created and participant[va-clinic].actor and participant[va-clinic].type.coding.code and participant[va-clinic].status and participant[va-patient].actor and participant[va-patient].type.coding.code and participant[va-patient].status and serviceCategory[va-stop-code].coding.code and serviceCategory[va-stop-code].coding.system and comment and participant[va-appt-clinic].actor and participant[va-appt-clinic].type.coding.code and participant[va-appt-clinic].status and description MS
-* participant[va-clinic].actor only Reference(Location)
+* participant[va-patient].actor and participant[va-patient].type.coding.code and participant[va-patient].status and status and cancelationReason and serviceCategory[va-service].coding.code and serviceCategory[va-service].coding.system and serviceType[va-stop-code].coding.code and serviceType[va-stop-code].coding.system and serviceType[va-credit-stop-code].coding.code and serviceType[va-credit-stop-code].coding.system and appointmentType.text and start and end and minutesDuration and created and participant[va-clinic].actor and participant[va-clinic].type.coding.code and participant[va-clinic].status and serviceCategory[va-stop-code].coding.code and serviceCategory[va-stop-code].coding.system and comment and participant[va-appt-clinic].actor and participant[va-appt-clinic].type.coding.code and participant[va-appt-clinic].status and description MS
 * participant[va-patient].actor only Reference(Patient)
+* participant[va-clinic].actor only Reference(Location)
 * participant[va-appt-clinic].actor only Reference(Location)
+* participant[va-patient].type.coding.code = #PART
+* participant[va-patient].status = #accepted
 * status from http://va.gov/fhir/ValueSet/VSVFAppointmentStatus
 * cancelationReason from http://va.gov/fhir/ValueSet/VSVFAppointmentCancellationReason
 * serviceCategory[va-service].coding.system = "http://va.gov/terminology/VistADefinedTerms/44-9"
@@ -27,8 +29,6 @@ Description: "This StructureDefinition contains the maps for VistA file APPOINTM
 * serviceType[va-credit-stop-code].coding.system = "http://va.gov/terminology/VistADefinedTerms/44-2503"
 * participant[va-clinic].type.coding.code = #PART
 * participant[va-clinic].status = #accepted
-* participant[va-patient].type.coding.code = #PART
-* participant[va-patient].status = #accepted
 * serviceCategory[va-stop-code].coding.system = "http://va.gov/terminology/VistADefinedTerms/409.3-13.4"
 * participant[va-appt-clinic].type.coding.code = #PART
 * participant[va-appt-clinic].status = #tentative
@@ -37,6 +37,9 @@ Mapping: vista-to-Appointment
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: Appointment
+* participant[va-patient].actor -> "1722: reference from PATIENT - APPOINTMENT > APPOINTMENT (2-1900 > 2.98)" "Added patient to the appointment map so that it is not assumed"
+* participant[va-patient].type.coding.code -> "1722-1: fixed value = #PART" "from mapParameter 1"
+* participant[va-patient].status -> "1722-2: fixed value = #accepted" "from mapParameter 2"
 * status -> "731: terminologyMaps using VF_AppointmentStatus on APPOINTMENT - STATUS (2.98-3)" "simple maps in Terminology; complex defined here."
 * status -> "732: fixed value = #booked when APPOINTMENT - STATUS (2.98-3) case I, NT, Null; Null check-in date (44.003-309), null check-out date (44.003-303)" "simple maps in Terminology; complex defined here."
 * status -> "733: fixed value = #arrived when APPOINTMENT - STATUS (2.98-3) case I, NT, Null; Non-null check-in date (44.003-309), null check-out date (44.003-303)" "simple maps in Terminology; complex defined here."
@@ -59,9 +62,6 @@ Source: Appointment
 * participant[va-clinic].actor -> "746: reference from APPOINTMENT - CLINIC (2.98-.01)"
 * participant[va-clinic].type.coding.code -> "746-1: fixed value = #PART" "from mapParameter 1"
 * participant[va-clinic].status -> "746-2: fixed value = #accepted" "from mapParameter 2"
-* participant[va-patient].actor -> "1722: reference from PATIENT - APPOINTMENT > APPOINTMENT (2-1900 > 2.98)" "Added patient to the appointment map so that it is not assumed"
-* participant[va-patient].type.coding.code -> "1722-1: fixed value = #PART" "from mapParameter 1"
-* participant[va-patient].status -> "1722-2: fixed value = #accepted" "from mapParameter 2"
 * status -> "748: fixed value = #waitlist when SD WAIT LIST - PATIENT (409.3-.01) case not null" "LVH returns \"Waitlisted\". \"Waitlisted\" is the display value and \"waitlist\" is the code. This is a required FHIR value set. 3/15/2023 LVH will fix"
 * serviceCategory[va-stop-code].coding.code -> "749: source value from SD WAIT LIST - APPT STOP CODE (409.3-13.4)"
 * serviceCategory[va-stop-code].coding.system -> "749-1: fixed value = http://va.gov/terminology/VistADefinedTerms/409.3-13.4" "from mapParameter 1"

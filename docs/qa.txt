@@ -1,10 +1,11 @@
 VAMapsIG : Validation Results
 =========================================
 
-err = 4, warn = 38, info = 51
+err = 7, warn = 39, info = 51
 IG Publisher Version: 1.6.19
-Generated Mon Aug 05 15:14:53 UTC 2024. FHIR version 4.0.1 for va.maps#0.64.318 (canonical = http://va.gov/fhir)
- Build Errors : 0 / 2 / 0
+Generated Tue Aug 13 08:14:29 UTC 2024. FHIR version 4.0.1 for va.maps#0.65.329 (canonical = http://va.gov/fhir)
+ Build Errors : 0 / 3 / 0
+ /app/fsh-generated/resources/CapabilityStatement-CHAPI : 3 / 0 / 1
  /app/fsh-generated/resources/ConceptMap-CMVFAntibioticSensitivityInterpretation : 0 / 14 / 1
  /app/fsh-generated/resources/ConceptMap-CMVFAppointmentCancellationReason : 0 / 42 / 1
  /app/fsh-generated/resources/ConceptMap-CMVFAppointmentStatus : 0 / 18 / 1
@@ -209,6 +210,7 @@ Generated Mon Aug 05 15:14:53 UTC 2024. FHIR version 4.0.1 for va.maps#0.64.318 
  /app/fsh-generated/resources/StructureDefinition-MedicationRequestPending : 0 / 1 / 1
  /app/fsh-generated/resources/StructureDefinition-MedicationRequestUnsigned : 0 / 1 / 1
  /app/fsh-generated/resources/StructureDefinition-Microbiology6305 : 0 / 0 / 1
+ /app/fsh-generated/resources/StructureDefinition-Mycobacterium6339 : 0 / 0 / 1
  /app/fsh-generated/resources/StructureDefinition-MycologyRptRemark6338 : 0 / 0 / 1
  /app/fsh-generated/resources/StructureDefinition-NameComponents20 : 0 / 0 / 1
  /app/fsh-generated/resources/StructureDefinition-NewPerson200 : 0 / 0 / 1
@@ -239,7 +241,6 @@ Generated Mon Aug 05 15:14:53 UTC 2024. FHIR version 4.0.1 for va.maps#0.64.318 
  /app/fsh-generated/resources/StructureDefinition-Patientihs9000001 : 0 / 0 / 1
  /app/fsh-generated/resources/StructureDefinition-PdLine34921 : 0 / 0 / 1
  /app/fsh-generated/resources/StructureDefinition-PendingOutpatientOrders5241 : 0 / 0 / 1
- /app/fsh-generated/resources/StructureDefinition-PendingOutpatientOrders5241105 : 0 / 0 / 1
  /app/fsh-generated/resources/StructureDefinition-PersonClass20005 : 0 / 0 / 1
  /app/fsh-generated/resources/StructureDefinition-PersonClass89321 : 0 / 0 / 1
  /app/fsh-generated/resources/StructureDefinition-Practitioner : 0 / 1 / 7
@@ -260,7 +261,7 @@ Generated Mon Aug 05 15:14:53 UTC 2024. FHIR version 4.0.1 for va.maps#0.64.318 
  /app/fsh-generated/resources/StructureDefinition-RadnucMedReports74 : 0 / 0 / 1
  /app/fsh-generated/resources/StructureDefinition-Reactions12081 : 0 / 0 / 1
  /app/fsh-generated/resources/StructureDefinition-Refill521 : 0 / 0 / 1
- /app/fsh-generated/resources/StructureDefinition-RegistredExams7002 : 0 / 0 / 1
+ /app/fsh-generated/resources/StructureDefinition-RegisteredExams7002 : 0 / 0 / 1
  /app/fsh-generated/resources/StructureDefinition-SdWaitList4093 : 0 / 0 / 1
  /app/fsh-generated/resources/StructureDefinition-Signsymptoms12083 : 0 / 0 / 1
  /app/fsh-generated/resources/StructureDefinition-Sitespecimen6001 : 0 / 0 / 1
@@ -451,8 +452,13 @@ Generated Mon Aug 05 15:14:53 UTC 2024. FHIR version 4.0.1 for va.maps#0.64.318 
  /app/fsh-generated/resources/ValueSet-VSVistaNCPDPCoverageRelationship-vista : 0 / 2 / 1
 </table>
 == n/a ==
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource CapabilityStatement/CHAPI.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
 WARNING: 1: The HTML fragment 'ip-statements.xhtml' is not included anywhere in the produced implementation guide
 WARNING: 4: The HTML fragment 'globals-table.xhtml' is not included anywhere in the produced implementation guide
+== fsh-generated/resources/CapabilityStatement-CHAPI.json ==
+ERROR: CapabilityStatement/CHAPI: CapabilityStatement.rest[0]: Constraint failed: cpb-9: 'A given resource can only be described once per RESTful mode.'
+ERROR: CapabilityStatement/CHAPI: CapabilityStatement: Constraint failed: cpb-2: 'A Capability Statement SHALL have at least one of description, software, or implementation element.'
+ERROR: CapabilityStatement/CHAPI: CapabilityStatement: Constraint failed: cpb-14: 'If kind = instance, implementation must be present and software may be present'
 == fsh-generated/resources/ConceptMap-CMVFAntibioticSensitivityInterpretation.json ==
 == fsh-generated/resources/ConceptMap-CMVFAppointmentCancellationReason.json ==
 == fsh-generated/resources/ConceptMap-CMVFAppointmentStatus.json ==
@@ -701,6 +707,7 @@ INFORMATION: StructureDefinition/MedicationRequestOutpatient: StructureDefinitio
 == fsh-generated/resources/StructureDefinition-MedicationRequestPending.json ==
 == fsh-generated/resources/StructureDefinition-MedicationRequestUnsigned.json ==
 == fsh-generated/resources/StructureDefinition-Microbiology6305.json ==
+== fsh-generated/resources/StructureDefinition-Mycobacterium6339.json ==
 == fsh-generated/resources/StructureDefinition-MycologyRptRemark6338.json ==
 == fsh-generated/resources/StructureDefinition-NameComponents20.json ==
 == fsh-generated/resources/StructureDefinition-NewPerson200.json ==
@@ -743,7 +750,6 @@ WARNING: StructureDefinition/Patient: StructureDefinition.snapshot.element[106].
 == fsh-generated/resources/StructureDefinition-Patientihs9000001.json ==
 == fsh-generated/resources/StructureDefinition-PdLine34921.json ==
 == fsh-generated/resources/StructureDefinition-PendingOutpatientOrders5241.json ==
-== fsh-generated/resources/StructureDefinition-PendingOutpatientOrders5241105.json ==
 == fsh-generated/resources/StructureDefinition-PersonClass20005.json ==
 == fsh-generated/resources/StructureDefinition-PersonClass89321.json ==
 == fsh-generated/resources/StructureDefinition-Practitioner.json ==
@@ -779,7 +785,7 @@ INFORMATION: StructureDefinition/ProcedureSurgery: StructureDefinition.snapshot.
 == fsh-generated/resources/StructureDefinition-RadnucMedReports74.json ==
 == fsh-generated/resources/StructureDefinition-Reactions12081.json ==
 == fsh-generated/resources/StructureDefinition-Refill521.json ==
-== fsh-generated/resources/StructureDefinition-RegistredExams7002.json ==
+== fsh-generated/resources/StructureDefinition-RegisteredExams7002.json ==
 == fsh-generated/resources/StructureDefinition-SdWaitList4093.json ==
 == fsh-generated/resources/StructureDefinition-Signsymptoms12083.json ==
 == fsh-generated/resources/StructureDefinition-Sitespecimen6001.json ==

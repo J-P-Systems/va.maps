@@ -8,7 +8,7 @@ Description: "This StructureDefinition contains the maps for VistA file EM (63.0
 * performer ^slicing.discriminator.path = "$this"
 * performer ^slicing.rules = #open
 * performer contains va-by 0..1 and va-at 0..1
-* identifier.value and identifier.system and basedOn and code.text and code and code.coding.code and code.coding.system and status and effectiveDateTime and issued and performer[va-by] and performer[va-at] and resultsInterpreter and specimen and media.link and conclusion and presentedForm.data and category[LaboratorySlice] and category.text and code.coding and code.coding.display and subject and result MS
+* identifier.value and identifier.system and basedOn and code.text and code and code.coding.code and code.coding.system and status and effectiveDateTime and issued and performer[va-by] and performer[va-at] and resultsInterpreter and specimen and media.link and conclusion and presentedForm.data and subject and category[LaboratorySlice] and category.text and code.coding and code.coding.display and result MS
 * basedOn only Reference(http://hl7.org/fhir/StructureDefinition/ServiceRequest)
 * performer[va-by] only Reference(Practitioner)
 * performer[va-at] only Reference(Organization)
@@ -44,6 +44,7 @@ Source: LabObservationElectronMicroscopyDiagnosticReport
 * media.link -> "1438: reference from EM - IMAGE (63.02-2005)"
 * conclusion -> "1441: source value from EM - EM DIAGNOSIS (63.02-1.4)" "Vista field is word processing so CodeableConcept cannot be used"
 * presentedForm.data -> "1720: source value from EM - TIU REFERENCE DATE/TIME - EM > TIU REFERENCE DATE/TIME - EM - TIU ENTRY POINTER - EM > TIU DOCUMENT - REPORT TEXT (63.02-.16 > 63.49-1 > 8925-2)" "HDR may be used to get the report"
+* subject -> "1421: reference from PATIENT - LABORATORY REFERENCE > LAB DATA - LRDFN (2-63 > 63-.01)" "Pointer from PATIENT (2)"
 * category[LaboratorySlice] -> "1419: fixed value = http://terminology.hl7.org/CodeSystem/v2-0074#LAB"
 * category.text -> "1662: source value from LABORATORY TEST - NATIONAL VA LAB CODE > WKLD CODE - WKLD CODE LAB SECTION > WKLD CODE LAB SECT - NAME (60-64 > 64-13 > 64.21-.01)" "Lab Section"
 * code.coding -> "1420: source value from LABORATORY TEST - NATIONAL VA LAB CODE > WKLD CODE - DEFAULT LOINC CODE > LAB LOINC (60-64 > 64-25 > 95.3)" "Typically LOINC. \nChanged VistA mapping to support some coded values and add the lab test name (non-standardized)"
@@ -51,7 +52,6 @@ Source: LabObservationElectronMicroscopyDiagnosticReport
 * code.coding.system -> "1420-2: fixed value = http://loinc.org" "from mapParameter 2"
 * code.coding.display -> "1420-3: source value from LABORATORY TEST - NATIONAL VA LAB CODE > WKLD CODE - DEFAULT LOINC CODE > LAB LOINC - COMPONENT (60-64 > 64-25 > 95.3-1)" "from mapParameter 3"
 * code.text -> "1661: source value from LABORATORY TEST - NAME (60-.01)" "Added the lab test name (non-standardized)"
-* subject -> "1421: reference from PATIENT - LABORATORY REFERENCE > LAB DATA - LRDFN (2-63 > 63-.01)" "Pointer from PATIENT (2)"
 * result -> "1437: reference from See mapping for Lab Observation"
 
 Mapping: cdw-to-LabObservationElectronMicroscopyDiagnosticReport
@@ -66,9 +66,9 @@ Source: LabObservationElectronMicroscopyDiagnosticReport
 * performer[va-at] -> "Pathology.ElectronMicroscopy.ReleasingInstitutionIEN,Pathology.ElectronMicroscopy.ReleasingInstitutionSID"
 * resultsInterpreter -> "Pathology.ElectronMicroscopy.PathologistStaffIEN,Pathology.ElectronMicroscopy.PathologistStaffSID"
 * specimen -> "Pathology.ElectronMicroscopy.ElectronMicroscopyAccession"
+* subject -> "Micro.AntibioticSensitivity.LRDFN,Micro.AntibioticSensitivityComment.LRDFN,Micro.BacteriologyReports.LRDFN,Micro.MicroAntibioticLevel.LRDFN,Micro.MicroAudit.LRDFN,Micro.Microbiology.LRDFN,Micro.MicroOrderedTest.LRDFN,Micro.MicroSterilityResults.LRDFN,Micro.MycobacteriologyReports.LRDFN,Micro.Mycology.LRDFN,Micro.MycologyReports.LRDFN,Micro.Parasitology.LRDFN,Micro.ParasitologyReports.LRDFN,Micro.ParasitologyStage.LRDFN,Micro.Virology.LRDFN,Micro.VirologyReports.LRDFN,Pathology.Autopsy.LRDFN,Pathology.CytoOrganTissueFunction.StaffIEN,SStaff.SMicroOrderedTest.LRDFN"
 * category.text -> "Dim.LabChemTest.NationalVALabCodeIEN"
 * code.coding -> "Dim.LabChemTest.NationalVALabCodeIEN"
 * code.coding.code -> "Dim.LabChemTest.NationalVALabCodeIEN"
 * code.coding.display -> "Dim.LabChemTest.NationalVALabCodeIEN"
 * code.text -> "Dim.LabChemTest.LabChemTestName"
-* subject -> "Micro.AntibioticSensitivity.LRDFN,Micro.AntibioticSensitivityComment.LRDFN,Micro.BacteriologyReports.LRDFN,Micro.MicroAntibioticLevel.LRDFN,Micro.MicroAudit.LRDFN,Micro.Microbiology.LRDFN,Micro.MicroOrderedTest.LRDFN,Micro.MicroSterilityResults.LRDFN,Micro.MycobacteriologyReports.LRDFN,Micro.Mycology.LRDFN,Micro.MycologyReports.LRDFN,Micro.Parasitology.LRDFN,Micro.ParasitologyReports.LRDFN,Micro.ParasitologyStage.LRDFN,Micro.Virology.LRDFN,Micro.VirologyReports.LRDFN,Pathology.Autopsy.LRDFN,Pathology.CytoOrganTissueFunction.StaffIEN,SStaff.SMicroOrderedTest.LRDFN"

@@ -4,7 +4,7 @@ Id: ImplantableDeviceTransmitter
 Title: "Implantable Device: Transmitter"
 Description: "This StructureDefinition contains the maps for VistA file GENERATOR IMPLANT (698) to us-core-implantable-device"
 * ^status = #draft
-* manufacturer and modelNumber and type and identifier.value and identifier.system and status and serialNumber and patient MS
+* manufacturer and modelNumber and type and patient and identifier.value and identifier.system and status and serialNumber MS
 * patient only Reference(Patient)
 * type from http://va.gov/fhir/ValueSet/VSVFdeviceTypePacemaker
 * identifier.system = "http://va.gov/identifiers/$Sta3n/698"
@@ -17,6 +17,7 @@ Source: ImplantableDeviceTransmitter
 * manufacturer -> "1367: source value from GENERATOR IMPLANT - TRANSMITTER MANUFACTURER > PACEMAKER MANUFACTURER - NAME (698-13 > 698.6-.01)"
 * modelNumber -> "1389: source value from GENERATOR IMPLANT - TRANSMITTER MODEL > PACEMAKER EQUIPMENT - MODEL NUMBER/NAME (698-12 > 698.4-.01)"
 * type -> "1395: terminologyMaps using VF_deviceTypePacemaker on GENERATOR IMPLANT - TRANSMITTER MODEL > PACEMAKER EQUIPMENT - TYPE OF EQUIPMENT (698-12 > 698.4-1)" "A request for more specific SNOMED codes will be submitted (01/04/2023)"
+* patient -> "1400: reference from GENERATOR IMPLANT - MEDICAL PATIENT > MEDICAL PATIENT - NAME (698-1 > 690-.01)"
 * identifier.value -> "1349: source value from GENERATOR IMPLANT - IEN (698-.001)"
 * identifier.system -> "1349-1: fixed value = http://va.gov/identifiers/$Sta3n/698" "from mapParameter 1"
 * status -> "1356: fixed value = #active when GENERATOR IMPLANT - EXPLANT DATE (698-96) case is NULL" "If NULL, can it be assumed it is active?"
@@ -25,7 +26,6 @@ Source: ImplantableDeviceTransmitter
 * serialNumber -> "1380: source value from GENERATOR IMPLANT - PACEMAKER SERIAL NUMBER (698-4)" "Do not use with the Transmitter use case; use transmitter serial number if it has its own."
 * modelNumber -> "1388: source value from GENERATOR IMPLANT - PACEMAKER MODEL > PACEMAKER EQUIPMENT - MODEL NUMBER/NAME (698-2 > 698.4-.01)"
 * type -> "1394: terminologyMaps using VF_deviceTypePacemaker on GENERATOR IMPLANT - PACEMAKER MODEL > PACEMAKER EQUIPMENT - TYPE OF EQUIPMENT (698-2 > 698.4-1)" "A request for more specific SNOMED codes will be submitted (01/04/2023)"
-* patient -> "1400: reference from GENERATOR IMPLANT - MEDICAL PATIENT > MEDICAL PATIENT - NAME (698-1 > 690-.01)"
 * udiCarrier.deviceIdentifier -> "1353: target not supported"
 * status -> "1355: target not supported"
 * distinctIdentifier -> "1363: target not supported"

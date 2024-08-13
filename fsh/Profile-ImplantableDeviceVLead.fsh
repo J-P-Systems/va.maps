@@ -4,7 +4,7 @@ Id: ImplantableDeviceVLead
 Title: "Implantable Device: V Lead"
 Description: "This StructureDefinition contains the maps for VistA file V LEAD IMPLANT (698.1) to us-core-implantable-device"
 * ^status = #draft
-* identifier.value and identifier.system and status and manufacturer and serialNumber and modelNumber and type and patient MS
+* patient and identifier.value and identifier.system and status and manufacturer and serialNumber and modelNumber and type MS
 * patient only Reference(Patient)
 * identifier.system = "http://va.gov/identifiers/$Sta3n/698.1"
 * type from http://va.gov/fhir/ValueSet/VSVFdeviceTypePacemaker
@@ -13,6 +13,7 @@ Mapping: vista-to-ImplantableDeviceVLead
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: ImplantableDeviceVLead
+* patient -> "1402: reference from V LEAD IMPLANT - MEDICAL PATIENT > MEDICAL PATIENT - NAME (698.1-1 > 690-.01)"
 * identifier.value -> "1351: source value from V LEAD IMPLANT - IEN (698.1-.001)"
 * identifier.system -> "1351-1: fixed value = http://va.gov/identifiers/$Sta3n/698.1" "from mapParameter 1"
 * status -> "1360: fixed value = #active when V LEAD IMPLANT - EXPLANT DATE (698.1-56) case is NULL" "If NULL, can it be assumed it is active?"
@@ -21,7 +22,6 @@ Source: ImplantableDeviceVLead
 * serialNumber -> "1383: source value from V LEAD IMPLANT - V LEAD SERIAL NUMBER (698.1-4)"
 * modelNumber -> "1391: source value from V LEAD IMPLANT - V LEAD MODEL > PACEMAKER EQUIPMENT - MODEL NUMBER/NAME (698.1-2 > 698.4-.01)"
 * type -> "1397: terminologyMaps using VF_deviceTypePacemaker on V LEAD IMPLANT - V LEAD MODEL > PACEMAKER EQUIPMENT - TYPE OF EQUIPMENT (698.1-2 > 698.4-1)" "A request for more specific SNOMED codes will be submitted (01/04/2023)"
-* patient -> "1402: reference from V LEAD IMPLANT - MEDICAL PATIENT > MEDICAL PATIENT - NAME (698.1-1 > 690-.01)"
 * udiCarrier.deviceIdentifier -> "1353: target not supported"
 * status -> "1355: target not supported"
 * distinctIdentifier -> "1363: target not supported"

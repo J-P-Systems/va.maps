@@ -4,7 +4,7 @@ Id: MedicationDispenseRefill
 Title: "MedicationDispense: Refill"
 Description: "This StructureDefinition contains the maps for VistA file PRESCRIPTION (52) to MedicationDispense"
 * ^status = #draft
-* type and destination.display and authorizingPrescription and daysSupply and dosageInstruction.doseAndRate.doseQuantity.unit and dosageInstruction.doseAndRate.doseQuantity.code and dosageInstruction.doseAndRate.doseQuantity.value and dosageInstruction.patientInstruction and dosageInstruction.text and medicationCodeableConcept.coding.code and medicationCodeableConcept.coding.system and medicationCodeableConcept.text and quantity.value and status and subject and whenPrepared and location and note.text and performer MS
+* destination.display and type and authorizingPrescription and daysSupply and dosageInstruction.doseAndRate.doseQuantity.unit and dosageInstruction.doseAndRate.doseQuantity.code and dosageInstruction.doseAndRate.doseQuantity.value and dosageInstruction.patientInstruction and dosageInstruction.text and medicationCodeableConcept.coding.code and medicationCodeableConcept.coding.system and medicationCodeableConcept.text and quantity.value and status and subject and whenPrepared and location and note.text and performer MS
 * type = #RF
 * dosageInstruction.doseAndRate.doseQuantity.code from http://va.gov/fhir/ValueSet/VSVFDoseUnits
 * medicationCodeableConcept.coding.system = "urn:oid:2.16.840.1.113883.6.233"
@@ -13,8 +13,8 @@ Mapping: vista-to-MedicationDispenseRefill
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: MedicationDispenseRefill
+* destination.display -> "1712: source value from PRESCRIPTION - REFILL > REFILL - MAIL/WINDOW/PARK (52-52 > 52.1-2)"
 * type -> "1709: fixed value = #RF"
-* destination.display -> "1712: source value from PRESCRIPTION - REFILL > REFILL - MAIL/WINDOW/PARK (52-52 > 52.1-.01)"
 * authorizingPrescription -> "1553: source value from PRESCRIPTION - PLACER ORDER # (52-39.3)"
 * daysSupply -> "827: source value from PRESCRIPTION - REFILL > REFILL - DAYS SUPPLY (52-52 > 52.1-1.1)"
 * destination.display -> "836: source value from PRESCRIPTION - REFILL > REFILL - MAIL/WINDOW/PARK (52-52 > 52.1-2)"
