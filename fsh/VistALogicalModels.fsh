@@ -320,9 +320,9 @@ Id: NewPerson200
 Title: "NEW PERSON (200)"
 Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file NEW PERSON (200)"
 Characteristics: #can-be-target
+* personClass 0..1 Reference "PERSON CLASS (-8932.1)"
 * name 0..1 Element "NAME (-.01)"
 * division 0..1 Element "DIVISION (-16)"
-* personClass 0..1 Reference "PERSON CLASS (-8932.1)"
 * officePhone 0..1 Element "OFFICE PHONE (-.132)"
 * phone3 0..1 Element "PHONE #3 (-.133)"
 * phone4 0..1 Element "PHONE #4 (-.134)"
@@ -383,13 +383,13 @@ Id: AccountsReceivable430
 Title: "ACCOUNTS RECEIVABLE (430)"
 Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file ACCOUNTS RECEIVABLE (430)"
 Characteristics: #can-be-target
-* administrativeCostBalance 0..1 Element "ADMINISTRATIVE COST BALANCE (-73)"
+* totalPaidMarshalFee 0..1 Element "TOTAL PAID MARSHAL FEE (-79.1)"
 * marshalFee 0..1 Element "MARSHAL FEE (-74)"
+* administrativeCostBalance 0..1 Element "ADMINISTRATIVE COST BALANCE (-73)"
 * courtCost 0..1 Element "COURT COST (-75)"
 * totalPaidPrincipal 0..1 Element "TOTAL PAID PRINCIPAL (-77)"
 * totalPaidInterest 0..1 Element "TOTAL PAID INTEREST (-78)"
 * totalPaidAdministrativeCost 0..1 Element "TOTAL PAID ADMINISTRATIVE COST (-79)"
-* totalPaidMarshalFee 0..1 Element "TOTAL PAID MARSHAL FEE (-79.1)"
 * totalPaidCourtCost 0..1 Element "TOTAL PAID COURT COST (-79.2)"
 
 Logical: MedicalPatient690
@@ -506,6 +506,34 @@ Characteristics: #can-be-target
 * patientName only Reference(Patientihs9000001)
 * diagnosis only Reference(IcdDiagnosis80)
 
+Logical: ArCcpcStatements3492
+Id: ArCcpcStatements3492
+Title: "AR CCPC STATEMENTS (349.2)"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file AR CCPC STATEMENTS (349.2)"
+Characteristics: #can-be-target
+* patient 0..1 Reference "PATIENT (-.01)"
+* amountDue 0..1 Element "AMOUNT DUE (-.04)"
+* prevBal 0..1 Element "PREV BAL (-.05)"
+* totalCharges 0..1 Element "TOTAL CHARGES (-.06)"
+* totalCredits 0..1 Element "TOTAL CREDITS (-.07)"
+* newBalance 0..1 Element "NEW BALANCE (-.08)"
+* pdLine 0..1 Reference "PD LINE (-20)"
+* specialNotices 0..1 Element "SPECIAL NOTICES (-30)"
+* paragraphCodes 0..1 Element "PARAGRAPH CODES (-40)"
+* patientName 0..1 Element "PATIENT NAME (-.03)"
+* patient only Reference(ArDebtor340)
+* pdLine only Reference(PdLine34921)
+
+Logical: PdLine34921
+Id: PdLine34921
+Title: "PD LINE (349.21)"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file PD LINE (349.21)"
+Characteristics: #can-be-target
+* transactionAmount 0..1 Element "TRANSACTION AMOUNT (-2)"
+* datePosted 0..1 Element "DATE POSTED (-.01)"
+* transactionDescription 0..1 Element "TRANSACTION DESCRIPTION (-1)"
+* billRefNo 0..1 Element "BILL REF. NO. (-3)"
+
 Logical: Microbiology6305
 Id: Microbiology6305
 Title: "MICROBIOLOGY (63.05)"
@@ -524,6 +552,10 @@ Characteristics: #can-be-target
 * microbiologyAccession 0..1 Element "MICROBIOLOGY ACCESSION (-.06)"
 * ien 0..1 Element "IEN (-.001)"
 * collectionSample 0..1 Reference "COLLECTION SAMPLE (-.055)"
+* parasite 0..1 Reference "PARASITE (-16)"
+* parasiteRptRemark 0..1 Reference "PARASITE RPT REMARK (-17)"
+* parasiteRptStatus 0..1 Coding "PARASITE RPT STATUS (-15)"
+* parasiteRptStatus from http://va.gov/fhir/ValueSet/VSVFLabObservationStatus-vista (preferred)
 * mycobacterium 0..1 Reference "MYCOBACTERIUM (-26)"
 * tbRptRemark 0..1 Reference "TB RPT REMARK (-27)"
 * tbRptStatus 0..1 Coding "TB RPT STATUS (-23)"
@@ -533,10 +565,6 @@ Characteristics: #can-be-target
 * mycologyRptRemark 0..1 Reference "MYCOLOGY RPT REMARK (-21)"
 * mycologyRptStatus 0..1 Coding "MYCOLOGY RPT STATUS (-19)"
 * mycologyRptStatus from http://va.gov/fhir/ValueSet/VSVFLabObservationStatus-vista (preferred)
-* parasite 0..1 Reference "PARASITE (-16)"
-* parasiteRptRemark 0..1 Reference "PARASITE RPT REMARK (-17)"
-* parasiteRptStatus 0..1 Coding "PARASITE RPT STATUS (-15)"
-* parasiteRptStatus from http://va.gov/fhir/ValueSet/VSVFLabObservationStatus-vista (preferred)
 * bactRptRemark 0..1 Reference "BACT RPT REMARK (-13)"
 * organism 0..1 Reference "ORGANISM (-12)"
 * bactRptStatus 0..1 Coding "BACT RPT STATUS (-11.5)"
@@ -549,12 +577,12 @@ Characteristics: #can-be-target
 * orderedTest only Reference(OrderedTest635)
 * virologyRptRemark only Reference(VirologyRptRemark6344)
 * collectionSample only Reference(CollectionSample62)
+* parasite only Reference(Parasite6334)
+* parasiteRptRemark only Reference(ParasiteRptRemark6336)
 * mycobacterium only Reference(Mycobacterium6339)
 * tbRptRemark only Reference(TbRptRemark6341)
 * fungusyeast only Reference(Fungusyeast6337)
 * mycologyRptRemark only Reference(MycologyRptRemark6338)
-* parasite only Reference(Parasite6334)
-* parasiteRptRemark only Reference(ParasiteRptRemark6336)
 * bactRptRemark only Reference(BactRptRemark6333)
 * organism only Reference(Organism633)
 * gramStain only Reference(GramStain6329)
@@ -619,38 +647,6 @@ Description: "This StructureDefinition contains the Logical Model for the mapped
 Characteristics: #can-be-target
 * name 0..1 Element "NAME (-.01)"
 
-Logical: HospitalLocation441
-Id: HospitalLocation441
-Title: "HOSPITAL LOCATION (44.1)"
-Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file HOSPITAL LOCATION (44.1)"
-Characteristics: #can-be-target
-* provider 0..1 Element "PROVIDER (-.01)"
-
-Logical: PersonClass20005
-Id: PersonClass20005
-Title: "PERSON CLASS (200.05)"
-Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file PERSON CLASS (200.05)"
-Characteristics: #can-be-target
-* personClass 0..1 Reference "Person Class (-.01)"
-* expirationDate 0..1 Element "Expiration Date (-3)"
-* effectiveDate 0..1 Element "Effective Date (-2)"
-* personClass only Reference(PersonClass89321)
-
-Logical: PersonClass89321
-Id: PersonClass89321
-Title: "PERSON CLASS (8932.1)"
-Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file PERSON CLASS (8932.1)"
-Characteristics: #can-be-target
-* x12Code 0..1 Element "X12 CODE (-6)"
-* classification 0..1 Element "CLASSIFICATION (-1)"
-
-Logical: Title31
-Id: Title31
-Title: "TITLE (3.1)"
-Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file TITLE (3.1)"
-Characteristics: #can-be-target
-* name 0..1 Element "NAME (-.01)"
-
 Logical: ChemHemToxRiaSerEtc6304
 Id: ChemHemToxRiaSerEtc6304
 Title: "CHEM, HEM, TOX, RIA, SER, etc. (63.04)"
@@ -689,19 +685,85 @@ Description: "This StructureDefinition contains the Logical Model for the mapped
 Characteristics: #can-be-target
 * comment 0..1 Element "COMMENT (-.01)"
 
-Logical: PrescriptionRefillRequest5243
-Id: PrescriptionRefillRequest5243
-Title: "PRESCRIPTION REFILL REQUEST (52.43)"
-Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file PRESCRIPTION REFILL REQUEST (52.43)"
+Logical: VImmunization900001011
+Id: VImmunization900001011
+Title: "V IMMUNIZATION (9000010.11)"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file V IMMUNIZATION (9000010.11)"
 Characteristics: #can-be-target
-* rx  0..1 Element "RX # (-3)"
-* patient 0..1 Element "PATIENT (-9)"
-* institution 0..1 Element "INSTITUTION (-4)"
-* result 0..1 Coding "RESULT (-6)"
-* result from http://va.gov/fhir/ValueSet/VSVFRefillRequestStatus-vista (preferred)
-* remarks 0..1 Element "REMARKS (-10)"
-* dateProcessed 0..1 Element "DATE PROCESSED (-5)"
-* loginDate 0..1 Element "LOGIN DATE (-11)"
+* lot 0..1 Reference "LOT (-.05)"
+* immunization 0..1 Reference "IMMUNIZATION (-.01)"
+* eventInformationSource 0..1 Element "EVENT INFORMATION SOURCE (-1301)"
+* patientName 0..1 Element "PATIENT NAME (-.02)"
+* eventDateAndTime 0..1 Element "EVENT DATE AND TIME (-1201)"
+* dose 0..1 Element "DOSE (-1312)"
+* encounterProvider 0..1 Element "ENCOUNTER PROVIDER (-1204)"
+* comments 0..1 Element "COMMENTS (-81101)"
+* series 0..1 Element "SERIES (-.04)"
+* doseUnits 0..1 Reference "DOSE UNITS (-1313)"
+* datetimeRecorded 0..1 Element "DATE/TIME RECORDED (-1205)"
+* visit 0..1 Reference "VISIT (-.03)"
+* reaction 0..1 Coding "REACTION (-.06)"
+* reaction from http://va.gov/fhir/ValueSet/VSVFImmunizationReaction-vista (preferred)
+* lot only Reference(ImmunizationLot999999941)
+* immunization only Reference(Immunization999999914)
+* doseUnits only Reference(UcumCodes7575)
+* visit only Reference(Visit9000010)
+
+Logical: ImmunizationLot999999941
+Id: ImmunizationLot999999941
+Title: "IMMUNIZATION LOT (9999999.41)"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file IMMUNIZATION LOT (9999999.41)"
+Characteristics: #can-be-target
+* ndcCodeVa 0..1 Element "NDC CODE (VA) (-.18)"
+* lotNumber 0..1 Element "LOT NUMBER (-.01)"
+* manufacturer 0..1 Element "MANUFACTURER (-.02)"
+
+Logical: Immunization999999914
+Id: Immunization999999914
+Title: "IMMUNIZATION (9999999.14)"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file IMMUNIZATION (9999999.14)"
+Characteristics: #can-be-target
+* name 0..1 Coding "NAME (-.01)"
+* name from http://va.gov/fhir/ValueSet/VSVFinferredCVX-vista (preferred)
+* cvxCode 0..1 Element "CVX CODE (-.03)"
+
+Logical: UcumCodes7575
+Id: UcumCodes7575
+Title: "UCUM CODES (757.5)"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file UCUM CODES (757.5)"
+Characteristics: #can-be-target
+* descriptionOfTheUnit 0..1 Element "DESCRIPTION OF THE UNIT (-.01)"
+* ucumCode 0..1 Element "UCUM CODE (-1)"
+
+Logical: Parasite6334
+Id: Parasite6334
+Title: "PARASITE (63.34)"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file PARASITE (63.34)"
+Characteristics: #can-be-target
+* parasite 0..1 Reference "PARASITE (-.01)"
+* parasite only Reference(EtiologyField612)
+
+Logical: ParasiteRptRemark6336
+Id: ParasiteRptRemark6336
+Title: "PARASITE RPT REMARK (63.36)"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file PARASITE RPT REMARK (63.36)"
+Characteristics: #can-be-target
+* parasiteRptRemark 0..1 Element "PARASITE RPT REMARK (-.01)"
+
+Logical: Mycobacterium6339
+Id: Mycobacterium6339
+Title: "MYCOBACTERIUM (63.39)"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file MYCOBACTERIUM (63.39)"
+Characteristics: #can-be-target
+* mycobacterium 0..1 Reference "MYCOBACTERIUM (-.01)"
+* mycobacterium only Reference(EtiologyField612)
+
+Logical: TbRptRemark6341
+Id: TbRptRemark6341
+Title: "TB RPT REMARK (63.41)"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file TB RPT REMARK (63.41)"
+Characteristics: #can-be-target
+* tbRptRemark 0..1 Element "TB RPT REMARK (-.01)"
 
 Logical: RegisteredExams7002
 Id: RegisteredExams7002
@@ -721,11 +783,11 @@ Id: Examinations7003
 Title: "EXAMINATIONS (70.03)"
 Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file EXAMINATIONS (70.03)"
 Characteristics: #can-be-target
+* visit 0..1 Element "VISIT (-27)"
 * procedure 0..1 Reference "PROCEDURE (-2)"
 * examStatus 0..1 Reference "EXAM STATUS (-3)"
 * primaryInterpretingStaff 0..1 Element "PRIMARY INTERPRETING STAFF (-15)"
 * reasonForCancellation 0..1 Reference "REASON FOR CANCELLATION (-3.5)"
-* visit 0..1 Element "VISIT (-27)"
 * procedure only Reference(RadnucMedProcedures71)
 * examStatus only Reference(ExaminationStatus72)
 * reasonForCancellation only Reference(RadnucMedReason752)
@@ -810,71 +872,6 @@ Characteristics: #can-be-target
 * userEntering 0..1 Element "USER ENTERING (-1)"
 * comments 0..1 Element "COMMENTS (-2)"
 
-Logical: Mycobacterium6339
-Id: Mycobacterium6339
-Title: "MYCOBACTERIUM (63.39)"
-Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file MYCOBACTERIUM (63.39)"
-Characteristics: #can-be-target
-* mycobacterium 0..1 Reference "MYCOBACTERIUM (-.01)"
-* mycobacterium only Reference(EtiologyField612)
-
-Logical: TbRptRemark6341
-Id: TbRptRemark6341
-Title: "TB RPT REMARK (63.41)"
-Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file TB RPT REMARK (63.41)"
-Characteristics: #can-be-target
-* tbRptRemark 0..1 Element "TB RPT REMARK (-.01)"
-
-Logical: VImmunization900001011
-Id: VImmunization900001011
-Title: "V IMMUNIZATION (9000010.11)"
-Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file V IMMUNIZATION (9000010.11)"
-Characteristics: #can-be-target
-* lot 0..1 Reference "LOT (-.05)"
-* immunization 0..1 Reference "IMMUNIZATION (-.01)"
-* eventInformationSource 0..1 Element "EVENT INFORMATION SOURCE (-1301)"
-* patientName 0..1 Element "PATIENT NAME (-.02)"
-* eventDateAndTime 0..1 Element "EVENT DATE AND TIME (-1201)"
-* dose 0..1 Element "DOSE (-1312)"
-* encounterProvider 0..1 Element "ENCOUNTER PROVIDER (-1204)"
-* comments 0..1 Element "COMMENTS (-81101)"
-* series 0..1 Element "SERIES (-.04)"
-* doseUnits 0..1 Reference "DOSE UNITS (-1313)"
-* datetimeRecorded 0..1 Element "DATE/TIME RECORDED (-1205)"
-* visit 0..1 Reference "VISIT (-.03)"
-* reaction 0..1 Coding "REACTION (-.06)"
-* reaction from http://va.gov/fhir/ValueSet/VSVFImmunizationReaction-vista (preferred)
-* lot only Reference(ImmunizationLot999999941)
-* immunization only Reference(Immunization999999914)
-* doseUnits only Reference(UcumCodes7575)
-* visit only Reference(Visit9000010)
-
-Logical: ImmunizationLot999999941
-Id: ImmunizationLot999999941
-Title: "IMMUNIZATION LOT (9999999.41)"
-Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file IMMUNIZATION LOT (9999999.41)"
-Characteristics: #can-be-target
-* lotNumber 0..1 Element "LOT NUMBER (-.01)"
-* manufacturer 0..1 Element "MANUFACTURER (-.02)"
-* ndcCodeVa 0..1 Element "NDC CODE (VA) (-.18)"
-
-Logical: Immunization999999914
-Id: Immunization999999914
-Title: "IMMUNIZATION (9999999.14)"
-Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file IMMUNIZATION (9999999.14)"
-Characteristics: #can-be-target
-* name 0..1 Coding "NAME (-.01)"
-* name from http://va.gov/fhir/ValueSet/VSVFinferredCVX-vista (preferred)
-* cvxCode 0..1 Element "CVX CODE (-.03)"
-
-Logical: UcumCodes7575
-Id: UcumCodes7575
-Title: "UCUM CODES (757.5)"
-Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file UCUM CODES (757.5)"
-Characteristics: #can-be-target
-* descriptionOfTheUnit 0..1 Element "DESCRIPTION OF THE UNIT (-.01)"
-* ucumCode 0..1 Element "UCUM CODE (-1)"
-
 Logical: PendingOutpatientOrders5241
 Id: PendingOutpatientOrders5241
 Title: "PENDING OUTPATIENT ORDERS (52.41)"
@@ -893,42 +890,6 @@ Characteristics: #can-be-target
 * loginDate 0..1 Element "LOGIN DATE (-15)"
 * daysSupply 0..1 Element "DAYS SUPPLY (-101)"
 * providerComments 0..1 Element "PROVIDER COMMENTS (-9)"
-
-Logical: Refill521
-Id: Refill521
-Title: "REFILL (52.1)"
-Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file REFILL (52.1)"
-Characteristics: #can-be-target
-* mailwindowpark 0..1 Element "MAIL/WINDOW/PARK (-2)"
-* daysSupply 0..1 Element "DAYS SUPPLY (-1.1)"
-* qty 0..1 Element "QTY (-1)"
-* releasedDatetime 0..1 Element "RELEASED DATE/TIME (-17)"
-* division 0..1 Element "DIVISION (-8)"
-* remarks 0..1 Element "REMARKS (-3)"
-* pharmacistName 0..1 Element "PHARMACIST NAME (-4)"
-
-Logical: MedicationInstructions520113
-Id: MedicationInstructions520113
-Title: "MEDICATION INSTRUCTIONS (52.0113)"
-Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file MEDICATION INSTRUCTIONS (52.0113)"
-Characteristics: #can-be-target
-* units 0..1 Coding "UNITS (-2)"
-* units from http://va.gov/fhir/ValueSet/VSVFDoseUnits-vista (preferred)
-* dosageOrdered 0..1 Element "DOSAGE ORDERED (-.01)"
-* route 0..1 Element "ROUTE (-6)"
-
-Logical: PartialDate522
-Id: PartialDate522
-Title: "PARTIAL DATE (52.2)"
-Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file PARTIAL DATE (52.2)"
-Characteristics: #can-be-target
-* pharmacistName 0..1 Element "PHARMACIST NAME (-.05)"
-* daysSupply 0..1 Element "DAYS SUPPLY (-.041)"
-* mailwindow 0..1 Element "MAIL/WINDOW (-.02)"
-* qty 0..1 Element "QTY (-.04)"
-* releasedDatetime 0..1 Element "RELEASED DATE/TIME (-8)"
-* division 0..1 Element "DIVISION (-.09)"
-* remarks 0..1 Element "REMARKS (-.03)"
 
 Logical: SurgicalPathology6308
 Id: SurgicalPathology6308
@@ -1009,6 +970,42 @@ Description: "This StructureDefinition contains the Logical Model for the mapped
 Characteristics: #can-be-target
 * specimen 0..1 Element "SPECIMEN (-.01)"
 
+Logical: Refill521
+Id: Refill521
+Title: "REFILL (52.1)"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file REFILL (52.1)"
+Characteristics: #can-be-target
+* mailwindowpark 0..1 Element "MAIL/WINDOW/PARK (-2)"
+* daysSupply 0..1 Element "DAYS SUPPLY (-1.1)"
+* qty 0..1 Element "QTY (-1)"
+* releasedDatetime 0..1 Element "RELEASED DATE/TIME (-17)"
+* division 0..1 Element "DIVISION (-8)"
+* remarks 0..1 Element "REMARKS (-3)"
+* pharmacistName 0..1 Element "PHARMACIST NAME (-4)"
+
+Logical: MedicationInstructions520113
+Id: MedicationInstructions520113
+Title: "MEDICATION INSTRUCTIONS (52.0113)"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file MEDICATION INSTRUCTIONS (52.0113)"
+Characteristics: #can-be-target
+* units 0..1 Coding "UNITS (-2)"
+* units from http://va.gov/fhir/ValueSet/VSVFDoseUnits-vista (preferred)
+* dosageOrdered 0..1 Element "DOSAGE ORDERED (-.01)"
+* route 0..1 Element "ROUTE (-6)"
+
+Logical: PartialDate522
+Id: PartialDate522
+Title: "PARTIAL DATE (52.2)"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file PARTIAL DATE (52.2)"
+Characteristics: #can-be-target
+* pharmacistName 0..1 Element "PHARMACIST NAME (-.05)"
+* daysSupply 0..1 Element "DAYS SUPPLY (-.041)"
+* mailwindow 0..1 Element "MAIL/WINDOW (-.02)"
+* qty 0..1 Element "QTY (-.04)"
+* releasedDatetime 0..1 Element "RELEASED DATE/TIME (-8)"
+* division 0..1 Element "DIVISION (-.09)"
+* remarks 0..1 Element "REMARKS (-.03)"
+
 Logical: Fungusyeast6337
 Id: Fungusyeast6337
 Title: "FUNGUS/YEAST (63.37)"
@@ -1069,71 +1066,51 @@ Description: "This StructureDefinition contains the Logical Model for the mapped
 Characteristics: #can-be-target
 * specimen 0..1 Element "SPECIMEN (-.01)"
 
-Logical: Parasite6334
-Id: Parasite6334
-Title: "PARASITE (63.34)"
-Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file PARASITE (63.34)"
+Logical: PersonClass20005
+Id: PersonClass20005
+Title: "PERSON CLASS (200.05)"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file PERSON CLASS (200.05)"
 Characteristics: #can-be-target
-* parasite 0..1 Reference "PARASITE (-.01)"
-* parasite only Reference(EtiologyField612)
+* personClass 0..1 Reference "Person Class (-.01)"
+* expirationDate 0..1 Element "Expiration Date (-3)"
+* effectiveDate 0..1 Element "Effective Date (-2)"
+* personClass only Reference(PersonClass89321)
 
-Logical: ParasiteRptRemark6336
-Id: ParasiteRptRemark6336
-Title: "PARASITE RPT REMARK (63.36)"
-Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file PARASITE RPT REMARK (63.36)"
+Logical: PersonClass89321
+Id: PersonClass89321
+Title: "PERSON CLASS (8932.1)"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file PERSON CLASS (8932.1)"
 Characteristics: #can-be-target
-* parasiteRptRemark 0..1 Element "PARASITE RPT REMARK (-.01)"
+* x12Code 0..1 Element "X12 CODE (-6)"
+* classification 0..1 Element "CLASSIFICATION (-1)"
 
-Logical: Appointment298
-Id: Appointment298
-Title: "APPOINTMENT (2.98)"
-Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file APPOINTMENT (2.98)"
+Logical: HospitalLocation441
+Id: HospitalLocation441
+Title: "HOSPITAL LOCATION (44.1)"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file HOSPITAL LOCATION (44.1)"
 Characteristics: #can-be-target
-* status 0..1 Coding "STATUS (-3)"
-* status from http://va.gov/fhir/ValueSet/VSVFAppointmentStatus-vista (preferred)
-* cancellationReason 0..1 Coding "CANCELLATION REASON (-16)"
-* cancellationReason from http://va.gov/fhir/ValueSet/VSVFAppointmentCancellationReason-vista (preferred)
-* clinic 0..1 Reference "CLINIC (-.01)"
-* appointmentType 0..1 Reference "APPOINTMENT TYPE (-9.5)"
-* appointmentDatetime 0..1 Element "APPOINTMENT DATE/TIME (-.001)"
-* outpatientEncounter 0..1 Reference "OUTPATIENT ENCOUNTER (-21)"
-* dateApptMade 0..1 Element "DATE APPT. MADE (-20)"
-* clinic only Reference(HospitalLocation44)
-* appointmentType only Reference(AppointmentType4091)
-* outpatientEncounter only Reference(OutpatientEncounter40968)
+* provider 0..1 Element "PROVIDER (-.01)"
 
-Logical: AppointmentType4091
-Id: AppointmentType4091
-Title: "APPOINTMENT TYPE (409.1)"
-Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file APPOINTMENT TYPE (409.1)"
+Logical: Title31
+Id: Title31
+Title: "TITLE (3.1)"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file TITLE (3.1)"
 Characteristics: #can-be-target
 * name 0..1 Element "NAME (-.01)"
-* description 0..1 Element "DESCRIPTION (-10)"
 
-Logical: OutpatientEncounter40968
-Id: OutpatientEncounter40968
-Title: "OUTPATIENT ENCOUNTER (409.68)"
-Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file OUTPATIENT ENCOUNTER (409.68)"
+Logical: PrescriptionRefillRequest5243
+Id: PrescriptionRefillRequest5243
+Title: "PRESCRIPTION REFILL REQUEST (52.43)"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file PRESCRIPTION REFILL REQUEST (52.43)"
 Characteristics: #can-be-target
-* checkOutProcessCompletion 0..1 Element "CHECK OUT PROCESS COMPLETION (-.07)"
-
-Logical: Patient44003
-Id: Patient44003
-Title: "PATIENT (44.003)"
-Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file PATIENT (44.003)"
-Characteristics: #can-be-target
-* lengthOfAppt 0..1 Element "LENGTH OF APP'T (-1)"
-
-Logical: SdWaitList4093
-Id: SdWaitList4093
-Title: "SD WAIT LIST (409.3)"
-Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file SD WAIT LIST (409.3)"
-Characteristics: #can-be-target
-* patient 0..1 Element "PATIENT (-.01)"
-* apptStopCode 0..1 Element "APPT STOP CODE (-13.4)"
-* originatingDate 0..1 Element "ORIGINATING DATE (-1)"
-* comments 0..1 Element "COMMENTS (-25)"
-* apptClinic 0..1 Element "APPT CLINIC (-13.2)"
+* rx  0..1 Element "RX # (-3)"
+* patient 0..1 Element "PATIENT (-9)"
+* institution 0..1 Element "INSTITUTION (-4)"
+* result 0..1 Coding "RESULT (-6)"
+* result from http://va.gov/fhir/ValueSet/VSVFRefillRequestStatus-vista (preferred)
+* remarks 0..1 Element "REMARKS (-10)"
+* dateProcessed 0..1 Element "DATE PROCESSED (-5)"
+* loginDate 0..1 Element "LOGIN DATE (-11)"
 
 Logical: VPov900001007
 Id: VPov900001007
@@ -1287,6 +1264,57 @@ Title: "PROVIDER NARRATIVE (9999999.27)"
 Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file PROVIDER NARRATIVE (9999999.27)"
 Characteristics: #can-be-target
 * narrative 0..1 Element "NARRATIVE (-.01)"
+
+Logical: Appointment298
+Id: Appointment298
+Title: "APPOINTMENT (2.98)"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file APPOINTMENT (2.98)"
+Characteristics: #can-be-target
+* status 0..1 Coding "STATUS (-3)"
+* status from http://va.gov/fhir/ValueSet/VSVFAppointmentStatus-vista (preferred)
+* cancellationReason 0..1 Coding "CANCELLATION REASON (-16)"
+* cancellationReason from http://va.gov/fhir/ValueSet/VSVFAppointmentCancellationReason-vista (preferred)
+* clinic 0..1 Reference "CLINIC (-.01)"
+* appointmentType 0..1 Reference "APPOINTMENT TYPE (-9.5)"
+* appointmentDatetime 0..1 Element "APPOINTMENT DATE/TIME (-.001)"
+* outpatientEncounter 0..1 Reference "OUTPATIENT ENCOUNTER (-21)"
+* dateApptMade 0..1 Element "DATE APPT. MADE (-20)"
+* clinic only Reference(HospitalLocation44)
+* appointmentType only Reference(AppointmentType4091)
+* outpatientEncounter only Reference(OutpatientEncounter40968)
+
+Logical: AppointmentType4091
+Id: AppointmentType4091
+Title: "APPOINTMENT TYPE (409.1)"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file APPOINTMENT TYPE (409.1)"
+Characteristics: #can-be-target
+* name 0..1 Element "NAME (-.01)"
+* description 0..1 Element "DESCRIPTION (-10)"
+
+Logical: OutpatientEncounter40968
+Id: OutpatientEncounter40968
+Title: "OUTPATIENT ENCOUNTER (409.68)"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file OUTPATIENT ENCOUNTER (409.68)"
+Characteristics: #can-be-target
+* checkOutProcessCompletion 0..1 Element "CHECK OUT PROCESS COMPLETION (-.07)"
+
+Logical: Patient44003
+Id: Patient44003
+Title: "PATIENT (44.003)"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file PATIENT (44.003)"
+Characteristics: #can-be-target
+* lengthOfAppt 0..1 Element "LENGTH OF APP'T (-1)"
+
+Logical: SdWaitList4093
+Id: SdWaitList4093
+Title: "SD WAIT LIST (409.3)"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file SD WAIT LIST (409.3)"
+Characteristics: #can-be-target
+* patient 0..1 Element "PATIENT (-.01)"
+* apptStopCode 0..1 Element "APPT STOP CODE (-13.4)"
+* originatingDate 0..1 Element "ORIGINATING DATE (-1)"
+* comments 0..1 Element "COMMENTS (-25)"
+* apptClinic 0..1 Element "APPT CLINIC (-13.2)"
 
 Logical: LanguageDatetime207
 Id: LanguageDatetime207
@@ -1594,31 +1622,3 @@ Description: "This StructureDefinition contains the Logical Model for the mapped
 Characteristics: #can-be-target
 * interpretationCodePacing 0..1 Reference "INTERPRETATION CODE (PACING) (-.01)"
 * interpretationCodePacing only Reference(EcgInterpretation6933)
-
-Logical: ArCcpcStatements3492
-Id: ArCcpcStatements3492
-Title: "AR CCPC STATEMENTS (349.2)"
-Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file AR CCPC STATEMENTS (349.2)"
-Characteristics: #can-be-target
-* patient 0..1 Reference "PATIENT (-.01)"
-* amountDue 0..1 Element "AMOUNT DUE (-.04)"
-* prevBal 0..1 Element "PREV BAL (-.05)"
-* totalCharges 0..1 Element "TOTAL CHARGES (-.06)"
-* totalCredits 0..1 Element "TOTAL CREDITS (-.07)"
-* newBalance 0..1 Element "NEW BALANCE (-.08)"
-* pdLine 0..1 Reference "PD LINE (-20)"
-* specialNotices 0..1 Element "SPECIAL NOTICES (-30)"
-* paragraphCodes 0..1 Element "PARAGRAPH CODES (-40)"
-* patientName 0..1 Element "PATIENT NAME (-.03)"
-* patient only Reference(ArDebtor340)
-* pdLine only Reference(PdLine34921)
-
-Logical: PdLine34921
-Id: PdLine34921
-Title: "PD LINE (349.21)"
-Description: "This StructureDefinition contains the Logical Model for the mapped parts of the VistA file PD LINE (349.21)"
-Characteristics: #can-be-target
-* transactionAmount 0..1 Element "TRANSACTION AMOUNT (-2)"
-* datePosted 0..1 Element "DATE POSTED (-.01)"
-* transactionDescription 0..1 Element "TRANSACTION DESCRIPTION (-1)"
-* billRefNo 0..1 Element "BILL REF. NO. (-3)"

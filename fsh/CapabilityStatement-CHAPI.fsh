@@ -4,7 +4,7 @@ Title: "Lighthouse Clinical Health API"
 Usage: #definition
 * description = "This CapabilityStatement contains an example for Lighthouse Clinical Health API"
 * status = #draft
-* date = "2024-08-13T15:04:23.485Z"
+* date = "2024-08-14T15:14:10.917Z"
 * kind = #requirements
 * fhirVersion = #4.0.1
 * format[0] = #xml
@@ -16,18 +16,18 @@ Usage: #definition
 * rest.resource[=].profile = "http://va.gov/fhir/StructureDefinition/LabObservationChemhemtoxriaserObservation"
 * rest.resource[+].type = #Specimen
 * rest.resource[=].profile = "http://va.gov/fhir/StructureDefinition/LabObservationChemhemtoxriaserSpecimen"
-* rest.resource[+].type = #AllergyIntolerance
-* rest.resource[=].profile = "http://va.gov/fhir/StructureDefinition/AllergyIntolerance"
+* rest.resource[+].type = #Observation
+* rest.resource[=].profile = "http://va.gov/fhir/StructureDefinition/LabObservationMicrobiologyParasitologyObservation"
 * rest.resource[+].type = #Observation
 * rest.resource[=].profile = "http://va.gov/fhir/StructureDefinition/LabObservationMicrobiologyMycobacteriologyObservation"
+* rest.resource[+].type = #AllergyIntolerance
+* rest.resource[=].profile = "http://va.gov/fhir/StructureDefinition/AllergyIntolerance"
 * rest.resource[+].type = #Observation
 * rest.resource[=].profile = "http://va.gov/fhir/StructureDefinition/LabObservationSurgicalPathologyObservation"
 * rest.resource[+].type = #Observation
 * rest.resource[=].profile = "http://va.gov/fhir/StructureDefinition/LabObservationMicrobiologyMycologyObservation"
 * rest.resource[+].type = #Observation
 * rest.resource[=].profile = "http://va.gov/fhir/StructureDefinition/LabObservationCytopathologyObservation"
-* rest.resource[+].type = #Observation
-* rest.resource[=].profile = "http://va.gov/fhir/StructureDefinition/LabObservationMicrobiologyParasitologyObservation"
 * rest.resource[+].type = #Observation
 * rest.resource[=].profile = "http://va.gov/fhir/StructureDefinition/LabObservationObservation"
 * rest.resource[+].type = #Observation
