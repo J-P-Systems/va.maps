@@ -4,7 +4,7 @@ Title: "My HealtheVet"
 Usage: #definition
 * description = "This CapabilityStatement contains an example for My HealtheVet"
 * status = #draft
-* date = "2024-08-14T15:14:10.918Z"
+* date = "2024-08-17T06:28:20.072Z"
 * kind = #requirements
 * fhirVersion = #4.0.1
 * format[0] = #xml

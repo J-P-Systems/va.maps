@@ -45,3 +45,9 @@ Id: medicationrequest-remainingRefillCount
 Description: "Extension medicationrequest-remainingRefillCount"
 Context: MedicationRequest
 * value[x] only integer
+
+Extension: PatientAgeAtVaccination
+Id: patient-ageAtVaccination
+Description: "Extension patient-ageAtVaccination"
+Context: Patient
+* value[x] only string
