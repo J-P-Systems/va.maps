@@ -13,7 +13,7 @@ Description: "This StructureDefinition contains the maps for VistA file HOSPITAL
 * address.type = #physical
 * mode = #instance
 
-Mapping: vista-to-Location
+Mapping: source-to-Location
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: Location

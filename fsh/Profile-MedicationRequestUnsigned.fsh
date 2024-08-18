@@ -8,7 +8,7 @@ Description: "This StructureDefinition contains the maps for VistA file ORDER (1
 * subject only Reference(Patient)
 * requester only Reference(Practitioner)
 
-Mapping: vista-to-MedicationRequestUnsigned
+Mapping: source-to-MedicationRequestUnsigned
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: MedicationRequestUnsigned

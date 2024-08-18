@@ -9,7 +9,7 @@ Description: "This StructureDefinition contains the maps for VistA file PRESCRIP
 * dosageInstruction.doseAndRate.doseQuantity.code from http://va.gov/fhir/ValueSet/VSVFDoseUnits
 * medicationCodeableConcept.coding.system = "urn:oid:2.16.840.1.113883.6.233"
 
-Mapping: vista-to-MedicationDispensePartial
+Mapping: source-to-MedicationDispensePartial
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: MedicationDispensePartial

@@ -12,7 +12,7 @@ Description: "This StructureDefinition contains the maps for VistA file V POV (9
 * clinicalStatus from http://va.gov/fhir/ValueSet/VSVFencounterProblemStatus
 * verificationStatus from http://va.gov/fhir/ValueSet/VSVFencounterProblemVerificationStatus
 
-Mapping: vista-to-ConditionEncounterDiagnosis
+Mapping: source-to-ConditionEncounterDiagnosis
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: ConditionEncounterDiagnosis

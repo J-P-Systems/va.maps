@@ -35,7 +35,7 @@ Description: "This StructureDefinition contains the maps for VistA file NEW PERS
 * address[va-temp].country.extension[11179-permitted-value-conceptmap].valueCanonical = "http://va.gov/fhir/ConceptMap/CMVFPractitionerCountry"
 * gender from http://va.gov/fhir/ValueSet/VSVFproviderGender
 
-Mapping: vista-to-Practitioner
+Mapping: source-to-Practitioner
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: Practitioner

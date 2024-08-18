@@ -17,7 +17,7 @@ Description: "This StructureDefinition contains the maps for VistA file PROBLEM 
 * clinicalStatus from http://va.gov/fhir/ValueSet/VSVFproblemStatus
 * verificationStatus from http://va.gov/fhir/ValueSet/VSVFproblemVerificationStatus
 
-Mapping: vista-to-ConditionProblem
+Mapping: source-to-ConditionProblem
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: ConditionProblem

@@ -21,11 +21,11 @@
 <tr><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3goXBCwdPqAP0wAAAldJREFUOMuNk0tIlFEYhp9z/vE2jHkhxXA0zJCMitrUQlq4lnSltEqCFhFG2MJFhIvIFpkEWaTQqjaWZRkp0g26URZkTpbaaOJkDqk10szoODP//7XIMUe0elcfnPd9zsfLOYplGrpRwZaqTtw3K7PtGem7Q6FoidbGgqHVy/HRb669R+56zx7eRV1L31JGxYbBtjKK93cxeqfyQHbehkZbUkK20goELEuIzEd+dHS+qz/Y8PTSif0FnGkbiwcAjHaU1+QWOptFiyCLp/LnKptpqIuXHx6rbR26kJcBX3yLgBfnd7CxwJmflpP2wUg0HIAoUUpZBmKzELGWcN8nAr6Gpu7tLU/CkwAaoKTWRSQyt89Q8w6J+oVQkKnBoblH7V0PPvUOvDYXfopE/SJmALsxnVm6LbkotrUtNowMeIrVrBcBpaMmdS0j9df7abpSuy7HWehwJdt1lhVwi/J58U5beXGAF6c3UXLycw1wdFklArBn87xdh0ZsZtArghBdAA3+OEDVubG4UEzP6x1FOWneHh2VDAHBAt80IbdXDcesNoCvs3E5AFyNSU5nbrDPZpcUEQQTFZiEVx+51fxMhhyJEAgvlriadIJZZksRuwBYMOPBbO3hePVVqgEJhFeUuFLhIPkRP6BQLIBrmMenujm/3g4zc398awIe90Zb5A1vREALqneMcYgP/xVQWlG+Ncu5vgwwlaUNx+3799rfe96u9K0JSDXcOzOTJg4B6IgmXfsygc7/Bvg9g9E58/cDVmGIBOP/zT8Bz1zqWqpbXIsd0O9hajXfL6u4BaOS6SeWAAAAAElFTkSuQmCC" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr></table></div>
   </text>
   <url value="http://va.gov/fhir/StructureDefinition/VAERSImmunization-vac1"/>
-  <version value="0.65.334"/>
+  <version value="0.65.339"/>
   <name value="VAERSImmunization-vac1"/>
   <title value="VAERS Immunization-vac1"/>
   <status value="draft"/>
-  <date value="2024-08-17T06:29:49+00:00"/>
+  <date value="2024-08-18T10:15:47+00:00"/>
   <publisher value="VA"/>
   <contact>
     <name value="VA"/>
@@ -34,7 +34,7 @@
       <value value="https://www.va.gov"/>
     </telecom>
   </contact>
-  <description value="This StructureDefinition contains the maps for VistA file ADERS (undefined) to us-core-immunization"/>
+  <description value="This StructureDefinition contains the maps for ADERS to us-core-immunization"/>
   <jurisdiction>
     <coding>
       <system value="urn:iso:std:iso:3166"/>
@@ -44,8 +44,8 @@
   </jurisdiction>
   <fhirVersion value="4.0.1"/>
   <mapping>
-    <identity value="vista"/>
-    <name value="Veterans Health Information Systems Technology and Architecture (VistA)"/>
+    <identity value="aders"/>
+    <name value="VA Adverse Drug Event Reporting System (VA ADERS)"/>
   </mapping>
   <mapping>
     <identity value="cdw"/>
@@ -772,8 +772,8 @@
         <map value="fhir:CodeableConcept.text rdfs:subPropertyOf dt:CD.originalText"/>
       </mapping>
       <mapping>
-        <identity value="vista"/>
-        <map value="1878: source value from ADERS - 17_Vac1_TypeBrand"/>
+        <identity value="aders"/>
+        <map value="1878: source value from ADERS - 17_Vac1_TypeBrand (A-17.11)"/>
         <comment value="coding.display not really makes sense, since there is no code"/>
       </mapping>
     </element>
@@ -833,8 +833,8 @@
         <map value="Immunization.patient"/>
       </mapping>
       <mapping>
-        <identity value="vista"/>
-        <map value="1876: reference from ADERS - 0_Pt_ICN_Full"/>
+        <identity value="aders"/>
+        <map value="1876: reference from ADERS - 0_Pt_ICN_Full (A-0)"/>
       </mapping>
     </element>
     <element id="Immunization.encounter">
@@ -1010,8 +1010,8 @@
         <map value="Immunization.date"/>
       </mapping>
       <mapping>
-        <identity value="vista"/>
-        <map value="1875: transform using concat(4_VacDate, 4_VacTime)"/>
+        <identity value="aders"/>
+        <map value="1875: transform using concat(4_VacDate, 4_VacTime) on ADERS - (A-)"/>
       </mapping>
     </element>
     <element id="Immunization.recorded">
@@ -1426,8 +1426,8 @@
         <map value="N/A"/>
       </mapping>
       <mapping>
-        <identity value="vista"/>
-        <map value="1883: source value from ADERS - 17_Vac1_Mfgr"/>
+        <identity value="aders"/>
+        <map value="1883: source value from ADERS - 17_Vac1_Mfgr (A-17.13)"/>
       </mapping>
     </element>
     <element id="Immunization.lotNumber">
@@ -1468,8 +1468,8 @@
         <map value="ClinicalDocument/component/StructuredBody/component/section/entry/substanceAdministration/consumable/manfacturedProduct/manufacturedMaterial/lotNumberText"/>
       </mapping>
       <mapping>
-        <identity value="vista"/>
-        <map value="1884: source value from ADERS - 17_Vac1_Lot"/>
+        <identity value="aders"/>
+        <map value="1884: source value from ADERS - 17_Vac1_Lot (A-17.14)"/>
       </mapping>
     </element>
     <element id="Immunization.expirationDate">
@@ -1551,8 +1551,8 @@
         <map value="ClinicalDocument/component/StructuredBody/component/section/entry/substanceAdministration/approachSiteCode/code"/>
       </mapping>
       <mapping>
-        <identity value="vista"/>
-        <map value="1885: source value from ADERS - 17_Vac1_Site"/>
+        <identity value="aders"/>
+        <map value="1885: source value from ADERS - 17_Vac1_Site (A-17.15)"/>
       </mapping>
     </element>
     <element id="Immunization.route">
@@ -1755,8 +1755,8 @@
         <map value="fhir:CodeableConcept.text rdfs:subPropertyOf dt:CD.originalText"/>
       </mapping>
       <mapping>
-        <identity value="vista"/>
-        <map value="1879: source value from ADERS - 17_Vac1_Route"/>
+        <identity value="aders"/>
+        <map value="1879: source value from ADERS - 17_Vac1_Route (A-17.12)"/>
       </mapping>
     </element>
     <element id="Immunization.doseQuantity">
@@ -3106,8 +3106,8 @@
         <map value="N/A"/>
       </mapping>
       <mapping>
-        <identity value="vista"/>
-        <map value="1886: source value from ADERS - 17_Vac1_DoseInSeries"/>
+        <identity value="aders"/>
+        <map value="1886: source value from ADERS - 17_Vac1_DoseInSeries (A-17.16)"/>
       </mapping>
     </element>
     <element id="Immunization.protocolApplied.seriesDoses[x]">
@@ -3149,8 +3149,8 @@
       <path value="Immunization.vaccineCode.text"/>
       <mustSupport value="true"/>
       <mapping>
-        <identity value="vista"/>
-        <map value="1878: source value from ADERS - 17_Vac1_TypeBrand"/>
+        <identity value="aders"/>
+        <map value="1878: source value from ADERS - 17_Vac1_TypeBrand (A-17.11)"/>
         <comment value="coding.display not really makes sense, since there is no code"/>
       </mapping>
     </element>
@@ -3161,8 +3161,8 @@
         <targetProfile value="http://va.gov/fhir/StructureDefinition/VAERSPatient"/>
       </type>
       <mapping>
-        <identity value="vista"/>
-        <map value="1876: reference from ADERS - 0_Pt_ICN_Full"/>
+        <identity value="aders"/>
+        <map value="1876: reference from ADERS - 0_Pt_ICN_Full (A-0)"/>
       </mapping>
     </element>
     <element id="Immunization.occurrence[x]">
@@ -3189,40 +3189,40 @@
       </type>
       <mustSupport value="true"/>
       <mapping>
-        <identity value="vista"/>
-        <map value="1875: transform using concat(4_VacDate, 4_VacTime)"/>
+        <identity value="aders"/>
+        <map value="1875: transform using concat(4_VacDate, 4_VacTime) on ADERS - (A-)"/>
       </mapping>
     </element>
     <element id="Immunization.manufacturer.display">
       <path value="Immunization.manufacturer.display"/>
       <mustSupport value="true"/>
       <mapping>
-        <identity value="vista"/>
-        <map value="1883: source value from ADERS - 17_Vac1_Mfgr"/>
+        <identity value="aders"/>
+        <map value="1883: source value from ADERS - 17_Vac1_Mfgr (A-17.13)"/>
       </mapping>
     </element>
     <element id="Immunization.lotNumber">
       <path value="Immunization.lotNumber"/>
       <mustSupport value="true"/>
       <mapping>
-        <identity value="vista"/>
-        <map value="1884: source value from ADERS - 17_Vac1_Lot"/>
+        <identity value="aders"/>
+        <map value="1884: source value from ADERS - 17_Vac1_Lot (A-17.14)"/>
       </mapping>
     </element>
     <element id="Immunization.site">
       <path value="Immunization.site"/>
       <mustSupport value="true"/>
       <mapping>
-        <identity value="vista"/>
-        <map value="1885: source value from ADERS - 17_Vac1_Site"/>
+        <identity value="aders"/>
+        <map value="1885: source value from ADERS - 17_Vac1_Site (A-17.15)"/>
       </mapping>
     </element>
     <element id="Immunization.route.text">
       <path value="Immunization.route.text"/>
       <mustSupport value="true"/>
       <mapping>
-        <identity value="vista"/>
-        <map value="1879: source value from ADERS - 17_Vac1_Route"/>
+        <identity value="aders"/>
+        <map value="1879: source value from ADERS - 17_Vac1_Route (A-17.12)"/>
       </mapping>
     </element>
     <element id="Immunization.protocolApplied.doseNumber[x]">
@@ -3246,8 +3246,8 @@
       </type>
       <mustSupport value="true"/>
       <mapping>
-        <identity value="vista"/>
-        <map value="1886: source value from ADERS - 17_Vac1_DoseInSeries"/>
+        <identity value="aders"/>
+        <map value="1886: source value from ADERS - 17_Vac1_DoseInSeries (A-17.16)"/>
       </mapping>
     </element>
   </differential>

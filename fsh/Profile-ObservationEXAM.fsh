@@ -18,7 +18,7 @@ Description: "This StructureDefinition contains the maps for VistA file V EXAM (
 * status = #final
 * category = http://terminology.hl7.org/CodeSystem/observation-category#exam
 
-Mapping: vista-to-ObservationEXAM
+Mapping: source-to-ObservationEXAM
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: ObservationEXAM

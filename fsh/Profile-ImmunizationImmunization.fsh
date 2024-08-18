@@ -14,7 +14,7 @@ Description: "This StructureDefinition contains the maps for VistA file V IMMUNI
 * primarySource.extension[11179-permitted-value-conceptmap].valueCanonical = "http://va.gov/fhir/ConceptMap/CMVFimmunizationPrimarySource"
 * performer.function = http://terminology.hl7.org/CodeSystem/v2-0443#AP
 
-Mapping: vista-to-ImmunizationImmunization
+Mapping: source-to-ImmunizationImmunization
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: ImmunizationImmunization

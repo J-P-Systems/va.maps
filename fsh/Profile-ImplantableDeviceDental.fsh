@@ -12,7 +12,7 @@ Description: "This StructureDefinition contains the maps for VistA file DENTAL D
 * type.coding.code = #277986000
 * type.coding.display = "Dental equipment and devices"
 
-Mapping: vista-to-ImplantableDeviceDental
+Mapping: source-to-ImplantableDeviceDental
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: ImplantableDeviceDental

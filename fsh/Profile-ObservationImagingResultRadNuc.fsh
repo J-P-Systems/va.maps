@@ -10,7 +10,7 @@ Description: "This StructureDefinition contains the maps for VistA file RAD/NUC 
 * status from http://va.gov/fhir/ValueSet/VSVFImageStatusRadNuc
 * category = http://terminology.hl7.org/CodeSystem/observation-category#imaging
 
-Mapping: vista-to-ObservationImagingResultRadNuc
+Mapping: source-to-ObservationImagingResultRadNuc
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: ObservationImagingResultRadNuc

@@ -11,7 +11,7 @@ Description: "This StructureDefinition contains the maps for VistA file PRESCRIP
 * status from http://va.gov/fhir/ValueSet/VSVFRefillRequestStatus
 * intent = #proposal
 
-Mapping: vista-to-MedRefillRequestMHVTask
+Mapping: source-to-MedRefillRequestMHVTask
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: MedRefillRequestMHVTask

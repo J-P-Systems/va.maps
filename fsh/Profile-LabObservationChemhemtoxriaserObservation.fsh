@@ -14,7 +14,7 @@ Description: "This StructureDefinition contains the maps for VistA file CHEM, HE
 * status from http://va.gov/fhir/ValueSet/VSVFLabObservationStatus
 * category = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
 
-Mapping: vista-to-LabObservationChemhemtoxriaserObservation
+Mapping: source-to-LabObservationChemhemtoxriaserObservation
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: LabObservationChemhemtoxriaserObservation

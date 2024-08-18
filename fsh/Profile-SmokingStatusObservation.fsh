@@ -11,7 +11,7 @@ Description: "This StructureDefinition contains the maps for VistA file V HEALTH
 * category[SocialHistory] = http://terminology.hl7.org/CodeSystem/observation-category#social-history
 * valueCodeableConcept from http://va.gov/fhir/ValueSet/VSVFSmokingStatus
 
-Mapping: vista-to-SmokingStatusObservation
+Mapping: source-to-SmokingStatusObservation
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: SmokingStatusObservation

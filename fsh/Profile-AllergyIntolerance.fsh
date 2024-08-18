@@ -19,7 +19,7 @@ Description: "This StructureDefinition contains the maps for VistA file PATIENT 
 * category from http://va.gov/fhir/ValueSet/VSVFallergySubstanceCategory
 * reaction.severity from http://va.gov/fhir/ValueSet/VSVFallergySeverity
 
-Mapping: vista-to-AllergyIntolerance
+Mapping: source-to-AllergyIntolerance
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: AllergyIntolerance

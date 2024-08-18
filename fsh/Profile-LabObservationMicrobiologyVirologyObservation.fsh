@@ -12,7 +12,7 @@ Description: "This StructureDefinition contains the maps for VistA file MICROBIO
 * identifier.system = "http://va.gov/identifiers/$Sta3n/63.05"
 * category = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
 
-Mapping: vista-to-LabObservationMicrobiologyVirologyObservation
+Mapping: source-to-LabObservationMicrobiologyVirologyObservation
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: LabObservationMicrobiologyVirologyObservation

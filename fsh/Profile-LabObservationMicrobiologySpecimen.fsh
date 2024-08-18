@@ -7,7 +7,7 @@ Description: "This StructureDefinition contains the maps for VistA file MICROBIO
 * ^abstract = true
 * accessionIdentifier and type.text MS
 
-Mapping: vista-to-LabObservationMicrobiologySpecimen
+Mapping: source-to-LabObservationMicrobiologySpecimen
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: LabObservationMicrobiologySpecimen

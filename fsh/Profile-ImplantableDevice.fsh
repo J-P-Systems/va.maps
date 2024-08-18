@@ -6,7 +6,7 @@ Description: "This StructureDefinition contains the maps for VistA file undefine
 * ^status = #draft
 * ^abstract = true
 
-Mapping: vista-to-ImplantableDevice
+Mapping: source-to-ImplantableDevice
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: ImplantableDevice

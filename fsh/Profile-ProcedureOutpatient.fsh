@@ -18,7 +18,7 @@ Description: "This StructureDefinition contains the maps for VistA file V CPT (9
 * code.coding.system = "http://www.ama-assn.org/go/cpt"
 * status = #completed
 
-Mapping: vista-to-ProcedureOutpatient
+Mapping: source-to-ProcedureOutpatient
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: ProcedureOutpatient

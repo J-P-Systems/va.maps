@@ -8,7 +8,7 @@ Description: "This StructureDefinition contains the maps for VistA file AR CCPC 
 * subject only Reference(DebtPortalPatient)
 * status = #billed
 
-Mapping: vista-to-DebtPortalChargeItem
+Mapping: source-to-DebtPortalChargeItem
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: DebtPortalChargeItem

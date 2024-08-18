@@ -10,7 +10,7 @@ Description: "This StructureDefinition contains the maps for VistA file REGISTER
 * code.coding.system = "http://www.ama-assn.org/go/cpt"
 * status from http://va.gov/fhir/ValueSet/VSVFRadiologyProcedureStatus
 
-Mapping: vista-to-ProcedureRadiology
+Mapping: source-to-ProcedureRadiology
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: ProcedureRadiology

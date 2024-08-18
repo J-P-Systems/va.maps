@@ -8,7 +8,7 @@ Description: "This StructureDefinition contains the maps for VistA file undefine
 * category MS
 * category = http://terminology.hl7.org/CodeSystem/observation-category#imaging
 
-Mapping: vista-to-ObservationImagingResult
+Mapping: source-to-ObservationImagingResult
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: ObservationImagingResult

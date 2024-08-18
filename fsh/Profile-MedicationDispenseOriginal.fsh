@@ -10,7 +10,7 @@ Description: "This StructureDefinition contains the maps for VistA file PRESCRIP
 * medicationCodeableConcept.coding.system = "urn:oid:2.16.840.1.113883.6.233"
 * category = #outpatient
 
-Mapping: vista-to-MedicationDispenseOriginal
+Mapping: source-to-MedicationDispenseOriginal
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: MedicationDispenseOriginal

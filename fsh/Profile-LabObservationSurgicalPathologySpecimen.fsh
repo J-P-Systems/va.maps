@@ -6,7 +6,7 @@ Description: "This StructureDefinition contains the maps for VistA file SURGICAL
 * ^status = #draft
 * accessionIdentifier and type.text MS
 
-Mapping: vista-to-LabObservationSurgicalPathologySpecimen
+Mapping: source-to-LabObservationSurgicalPathologySpecimen
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: LabObservationSurgicalPathologySpecimen

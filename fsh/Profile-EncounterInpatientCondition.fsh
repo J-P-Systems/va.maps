@@ -7,7 +7,7 @@ Description: "This StructureDefinition contains the maps for VistA file PTF (45)
 * code and category MS
 * category = http://terminology.hl7.org/CodeSystem/condition-category#problem-list-item
 
-Mapping: vista-to-EncounterInpatientCondition
+Mapping: source-to-EncounterInpatientCondition
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: EncounterInpatientCondition

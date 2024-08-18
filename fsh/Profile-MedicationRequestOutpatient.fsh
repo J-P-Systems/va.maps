@@ -22,7 +22,7 @@ Description: "This StructureDefinition contains the maps for VistA file PRESCRIP
 * extension[http://va.gov/fhir/StructureDefinition/medicationrequest-includeIndicationInSig].valueBoolean.extension contains http://hl7.org/fhir/StructureDefinition/11179-permitted-value-conceptmap named 11179-permitted-value-conceptmap 0..1
 * extension[http://va.gov/fhir/StructureDefinition/medicationrequest-includeIndicationInSig].valueBoolean.extension[11179-permitted-value-conceptmap].valueCanonical = "http://va.gov/fhir/ConceptMap/CMVFBoolean"
 
-Mapping: vista-to-MedicationRequestOutpatient
+Mapping: source-to-MedicationRequestOutpatient
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: MedicationRequestOutpatient

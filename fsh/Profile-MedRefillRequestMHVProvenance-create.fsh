@@ -9,7 +9,7 @@ Description: "This StructureDefinition contains the maps for VistA file PRESCRIP
 * activity = http://terminology.hl7.org/CodeSystem/v3-DataOperation#CREATE
 * agent.who.type = "http://hl7.org/fhir/StructureDefinition/Patient"
 
-Mapping: vista-to-MedRefillRequestMHVProvenance-create
+Mapping: source-to-MedRefillRequestMHVProvenance-create
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: MedRefillRequestMHVProvenance-create

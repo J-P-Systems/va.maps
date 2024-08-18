@@ -10,7 +10,7 @@ Description: "This StructureDefinition contains the maps for VistA file PROSTHES
 * deviceName.type = #model-name
 * type = http://snomed.info/sct#63653004 "Biomedical device"
 
-Mapping: vista-to-ImplantableDeviceProsthesis
+Mapping: source-to-ImplantableDeviceProsthesis
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: ImplantableDeviceProsthesis

@@ -38,7 +38,7 @@ Description: "This StructureDefinition contains the maps for VistA file ACCOUNTS
 * totalPriceComponent[va-court-cost-paid].type = #surcharge
 * totalPriceComponent[va-court-cost-paid].code.text = "Court Cost Paid"
 
-Mapping: vista-to-DebtPortalInvoice
+Mapping: source-to-DebtPortalInvoice
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: DebtPortalInvoice

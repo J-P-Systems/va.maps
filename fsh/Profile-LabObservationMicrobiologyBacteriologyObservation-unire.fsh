@@ -7,7 +7,7 @@ Description: "This StructureDefinition contains the maps for VistA file MICROBIO
 * valueCodeableConcept.coding MS
 * valueCodeableConcept.coding from http://va.gov/fhir/ValueSet/VSVFMicrobiologyUrineScreenResult
 
-Mapping: vista-to-LabObservationMicrobiologyBacteriologyObservation-unire
+Mapping: source-to-LabObservationMicrobiologyBacteriologyObservation-unire
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: LabObservationMicrobiologyBacteriologyObservation-unire

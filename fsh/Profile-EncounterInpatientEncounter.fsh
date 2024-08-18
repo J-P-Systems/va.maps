@@ -32,7 +32,7 @@ Description: "This StructureDefinition contains the maps for VistA file PTF (45)
 * hospitalization.dischargeDisposition.coding.system = "http://va.gov/terminology/vistaDefinedTerms/45.6"
 * type.coding.system = "http://www.ama-assn.org/go/cpt"
 
-Mapping: vista-to-EncounterInpatientEncounter
+Mapping: source-to-EncounterInpatientEncounter
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: EncounterInpatientEncounter

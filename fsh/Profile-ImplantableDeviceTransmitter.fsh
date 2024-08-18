@@ -10,7 +10,7 @@ Description: "This StructureDefinition contains the maps for VistA file GENERATO
 * identifier.system = "http://va.gov/identifiers/$Sta3n/698"
 * type from http://va.gov/fhir/ValueSet/VSVFdeviceTypePacemaker
 
-Mapping: vista-to-ImplantableDeviceTransmitter
+Mapping: source-to-ImplantableDeviceTransmitter
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: ImplantableDeviceTransmitter

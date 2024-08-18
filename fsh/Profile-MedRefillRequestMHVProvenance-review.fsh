@@ -10,7 +10,7 @@ Description: "This StructureDefinition contains the maps for VistA file PRESCRIP
 * agent.who.display = "VA"
 * agent.who.type = "http://hl7.org/fhir/StructureDefinition/Organization"
 
-Mapping: vista-to-MedRefillRequestMHVProvenance-review
+Mapping: source-to-MedRefillRequestMHVProvenance-review
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: MedRefillRequestMHVProvenance-review

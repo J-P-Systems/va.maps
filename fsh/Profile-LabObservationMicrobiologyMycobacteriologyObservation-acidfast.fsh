@@ -7,7 +7,7 @@ Description: "This StructureDefinition contains the maps for VistA file MICROBIO
 * valueString and code MS
 * code = http://loinc.org#11545-1 "Microscopic observation [Identifier] in Specimen by Acid fast stain"
 
-Mapping: vista-to-LabObservationMicrobiologyMycobacteriologyObservation-acidfast
+Mapping: source-to-LabObservationMicrobiologyMycobacteriologyObservation-acidfast
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: LabObservationMicrobiologyMycobacteriologyObservation-acidfast

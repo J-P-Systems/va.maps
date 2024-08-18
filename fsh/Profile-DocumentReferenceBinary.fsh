@@ -7,7 +7,7 @@ Description: "This StructureDefinition contains the maps for VistA file TIU DOCU
 * data and contentType MS
 * contentType = #text/plain
 
-Mapping: vista-to-DocumentReferenceBinary
+Mapping: source-to-DocumentReferenceBinary
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: DocumentReferenceBinary

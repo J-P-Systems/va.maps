@@ -9,7 +9,7 @@ Description: "This StructureDefinition contains the maps for VistA file V LEAD I
 * identifier.system = "http://va.gov/identifiers/$Sta3n/698.1"
 * type from http://va.gov/fhir/ValueSet/VSVFdeviceTypePacemaker
 
-Mapping: vista-to-ImplantableDeviceVLead
+Mapping: source-to-ImplantableDeviceVLead
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: ImplantableDeviceVLead

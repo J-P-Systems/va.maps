@@ -23,7 +23,7 @@ Description: "This StructureDefinition contains the maps for VistA file EM (63.0
 * category[LaboratorySlice] = http://terminology.hl7.org/CodeSystem/v2-0074#LAB
 * code.coding.system = "http://loinc.org"
 
-Mapping: vista-to-LabObservationElectronMicroscopyDiagnosticReport
+Mapping: source-to-LabObservationElectronMicroscopyDiagnosticReport
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: LabObservationElectronMicroscopyDiagnosticReport

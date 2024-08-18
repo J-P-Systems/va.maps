@@ -10,7 +10,7 @@ Description: "This StructureDefinition contains the maps for VistA file V IMMUNI
 * valueCodeableConcept from http://va.gov/fhir/ValueSet/VSVFImmunizationReaction
 * valueCodeableConcept.coding.system = "http://va.gov/terminology/vistaDefinedTerms/9000010.11-.06"
 
-Mapping: vista-to-ImmunizationObservation
+Mapping: source-to-ImmunizationObservation
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: ImmunizationObservation

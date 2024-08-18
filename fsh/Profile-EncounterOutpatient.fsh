@@ -14,7 +14,7 @@ Description: "This StructureDefinition contains the maps for VistA file VISIT (9
 * participant.type from http://va.gov/fhir/ValueSet/VSVFencounterParticipationType
 * type.coding.system = "http://www.ama-assn.org/go/cpt"
 
-Mapping: vista-to-EncounterOutpatient
+Mapping: source-to-EncounterOutpatient
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: EncounterOutpatient

@@ -28,7 +28,7 @@ Description: "This StructureDefinition contains the maps for VistA file GMRV VIT
 * valueQuantity.code.extension contains http://hl7.org/fhir/StructureDefinition/11179-permitted-value-conceptmap named 11179-permitted-value-conceptmap 0..1
 * valueQuantity.code.extension[11179-permitted-value-conceptmap].valueCanonical = "http://va.gov/fhir/ConceptMap/CMVFVitalsUnits"
 
-Mapping: vista-to-VitalSigns
+Mapping: source-to-VitalSigns
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: VitalSigns

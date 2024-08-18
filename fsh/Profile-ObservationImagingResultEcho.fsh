@@ -11,7 +11,7 @@ Description: "This StructureDefinition contains the maps for VistA file ECHO (69
 * interpretation from http://va.gov/fhir/ValueSet/VSVFImageInterpretation
 * category = http://terminology.hl7.org/CodeSystem/observation-category#imaging
 
-Mapping: vista-to-ObservationImagingResultEcho
+Mapping: source-to-ObservationImagingResultEcho
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: ObservationImagingResultEcho

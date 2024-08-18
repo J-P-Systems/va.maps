@@ -11,7 +11,7 @@ Description: "This StructureDefinition contains the maps for VistA file PENDING 
 * status = #draft
 * extension[http://va.gov/fhir/StructureDefinition/medicationrequest-pharmacyOrderStatus].valueCoding.system = "http://va.gov/terminology/vistaDefinedTerms/52.41-2"
 
-Mapping: vista-to-MedicationRequestPending
+Mapping: source-to-MedicationRequestPending
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: MedicationRequestPending

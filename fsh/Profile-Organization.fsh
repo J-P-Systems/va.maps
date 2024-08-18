@@ -16,7 +16,7 @@ Description: "This StructureDefinition contains the maps for VistA file INSTITUT
 * contact.telecom.system = #phone
 * address[va-postal].type = #postal
 
-Mapping: vista-to-Organization
+Mapping: source-to-Organization
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: Organization

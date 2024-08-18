@@ -10,7 +10,7 @@ Description: "This StructureDefinition contains the maps for VistA file TIU DOCU
 * category[us-core] = http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category#clinical-note
 * content.attachment.contentType = #text/plain
 
-Mapping: vista-to-DocumentReferenceDocumentReference
+Mapping: source-to-DocumentReferenceDocumentReference
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: DocumentReferenceDocumentReference

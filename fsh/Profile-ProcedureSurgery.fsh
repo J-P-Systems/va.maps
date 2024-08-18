@@ -40,7 +40,7 @@ Description: "This StructureDefinition contains the maps for VistA file SURGERY 
 * performer[va-13].function.coding = http://va.gov/terminology/vistaDefinedTerms/130#.57 "FOLEY CATHETER INSERTED BY"
 * code.coding.system = "http://www.ama-assn.org/go/cpt"
 
-Mapping: vista-to-ProcedureSurgery
+Mapping: source-to-ProcedureSurgery
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: ProcedureSurgery

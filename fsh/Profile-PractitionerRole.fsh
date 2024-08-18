@@ -27,7 +27,7 @@ Description: "This StructureDefinition contains the maps for VistA file NEW PERS
 * telecom[va-mail].system = #email
 * code.coding.system = "http://nucc.org/provider-taxonomy"
 
-Mapping: vista-to-PractitionerRole
+Mapping: source-to-PractitionerRole
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: PractitionerRole

@@ -2,7 +2,7 @@ Profile: VAERSBundle
 Parent: http://hl7.org/fhir/StructureDefinition/Bundle
 Id: VAERSBundle
 Title: "VAERS Bundle"
-Description: "This StructureDefinition contains the maps for VistA file undefined (undefined) to Bundle"
+Description: "This StructureDefinition contains the maps for ADERS to Bundle"
 * ^status = #draft
 * entry ^slicing.discriminator.type = #pattern
 * entry ^slicing.discriminator.path = "$this"
@@ -21,9 +21,9 @@ Description: "This StructureDefinition contains the maps for VistA file undefine
 * entry[va-ae].resource only VAERSAdverseEvent
 * type = #transaction
 
-Mapping: vista-to-VAERSBundle
-Id: vista
-Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
+Mapping: source-to-VAERSBundle
+Id: aders
+Title: "VA Adverse Drug Event Reporting System (VA ADERS)"
 Source: VAERSBundle
 * type -> "1961: fixed value = #transaction"
 * entry[va-patient].resource -> "1962: reference"

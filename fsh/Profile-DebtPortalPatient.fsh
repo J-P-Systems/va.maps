@@ -13,7 +13,7 @@ Description: "This StructureDefinition contains the maps for VistA file AR CCPC 
 * contact.address.use = #billing
 * contact.address.use = #billing
 
-Mapping: vista-to-DebtPortalPatient
+Mapping: source-to-DebtPortalPatient
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: DebtPortalPatient

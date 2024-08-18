@@ -11,7 +11,7 @@ Description: "This StructureDefinition contains the maps for VistA file PATIENT 
 * category[LaboratorySlice] = http://terminology.hl7.org/CodeSystem/v2-0074#LAB
 * code.coding.system = "http://loinc.org"
 
-Mapping: vista-to-LabObservationDiagnosticReport
+Mapping: source-to-LabObservationDiagnosticReport
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: LabObservationDiagnosticReport

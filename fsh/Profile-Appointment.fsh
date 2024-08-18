@@ -33,7 +33,7 @@ Description: "This StructureDefinition contains the maps for VistA file PATIENT 
 * participant[va-appt-clinic].type.coding.code = #PART
 * participant[va-appt-clinic].status = #tentative
 
-Mapping: vista-to-Appointment
+Mapping: source-to-Appointment
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: Appointment

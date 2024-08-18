@@ -20,7 +20,7 @@ Description: "This StructureDefinition contains the maps for VistA file NON-VA M
 * requester.extension[http://hl7.org/fhir/StructureDefinition/data-absent-reason].valueCode = #unsupported
 * encounter.extension[http://hl7.org/fhir/StructureDefinition/data-absent-reason].valueCode = #unsupported
 
-Mapping: vista-to-MedicationRequestNonVA
+Mapping: source-to-MedicationRequestNonVA
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: MedicationRequestNonVA

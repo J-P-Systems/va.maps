@@ -8,7 +8,7 @@ Description: "This StructureDefinition contains the maps for VistA file PATIENT 
 * subject only Reference(Patient)
 * category = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
 
-Mapping: vista-to-LabObservationElectronMicroscopyObservation
+Mapping: source-to-LabObservationElectronMicroscopyObservation
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: LabObservationElectronMicroscopyObservation

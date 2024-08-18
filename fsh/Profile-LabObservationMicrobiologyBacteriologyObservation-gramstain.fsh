@@ -7,7 +7,7 @@ Description: "This StructureDefinition contains the maps for VistA file MICROBIO
 * valueString and code MS
 * code = http://loinc.org#664-3 "Microscopic observation [Identifier] in Specimen by Gram stain"
 
-Mapping: vista-to-LabObservationMicrobiologyBacteriologyObservation-gramstain
+Mapping: source-to-LabObservationMicrobiologyBacteriologyObservation-gramstain
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: LabObservationMicrobiologyBacteriologyObservation-gramstain

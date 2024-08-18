@@ -39,7 +39,7 @@ Description: "This StructureDefinition contains the maps for VistA file PATIENT 
 * maritalStatus from http://va.gov/fhir/ValueSet/VSVFMaritalStatus
 * extension[http://hl7.org/fhir/StructureDefinition/patient-religion].valueCodeableConcept from http://va.gov/fhir/ValueSet/VSVFReligion
 
-Mapping: vista-to-Patient
+Mapping: source-to-Patient
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: Patient
