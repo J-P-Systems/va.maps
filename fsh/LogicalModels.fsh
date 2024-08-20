@@ -444,7 +444,7 @@ Characteristics: #can-be-target
 * reportText 0..1 Element "REPORT TEXT (-2)"
 * documentType 0..1 Reference "DOCUMENT TYPE (-.01)"
 * ien 0..1 Element "IEN (-.001)"
-* patient 0..1 Element "PATIENT (-.02)"
+* patient 0..1 Reference "PATIENT (-.02)"
 * entryDatetime 0..1 Element "ENTRY DATE/TIME (-1201)"
 * authordictator 0..1 Element "AUTHOR/DICTATOR (-1202)"
 * signedBy 0..1 Element "SIGNED BY (-1502)"
@@ -459,6 +459,7 @@ Characteristics: #can-be-target
 * treatingSpecialty 0..1 Element "TREATING SPECIALTY (-1402)"
 * documentType only Reference(TiuDocumentDefinition89251)
 * hospitalLocation only Reference(HospitalLocation44)
+* patient only Reference(Patientihs9000001)
 
 Logical: Patientihs9000001
 Id: Patientihs9000001
@@ -1462,6 +1463,13 @@ Title: "COUNTRY CODE (779.004)"
 Description: "This StructureDefinition contains the Logical Model for the mapped parts of the source COUNTRY CODE (779.004)"
 Characteristics: #can-be-target
 * code 0..1 Element "CODE (-.01)"
+
+Logical: TiuDocument89259
+Id: TiuDocument89259
+Title: "TIU DOCUMENT (8925.9)"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the source TIU DOCUMENT (8925.9)"
+Characteristics: #can-be-target
+* problem 0..1 Element "PROBLEM (-.02)"
 
 Logical: NonvaMeds5505
 Id: NonvaMeds5505

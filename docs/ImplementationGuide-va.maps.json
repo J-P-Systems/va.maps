@@ -6,11 +6,11 @@
     "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ImplementationGuide va.maps</b></p><a name=\"va.maps\"> </a><a name=\"hcva.maps\"> </a><a name=\"va.maps-en-US\"> </a><h2>VAMapsIG</h2><p>The official URL for this implementation guide is: </p><pre>http://va.gov/fhir/ImplementationGuide/va.maps</pre><div><p>This implementation guide is a FHIR IG rendering of the KBS Map Set from VA sources (primarily VistA) to FHIR. Where appropriate these maps conform to the us-core profiles.</p>\n</div></div>"
   },
   "url" : "http://va.gov/fhir/ImplementationGuide/va.maps",
-  "version" : "0.65.339",
+  "version" : "0.65.341",
   "name" : "VAMapsIG",
   "title" : "US Veterans Administration FHIR Map Set Implementation Guide",
   "status" : "draft",
-  "date" : "2024-08-18T10:15:47+00:00",
+  "date" : "2024-08-20T15:42:57+00:00",
   "publisher" : "VA",
   "contact" : [{
     "name" : "VA",
@@ -652,6 +652,10 @@
       "name" : "Location"
     },
     {
+      "id" : "group17",
+      "name" : "Lung Cancer Screening"
+    },
+    {
       "id" : "group8",
       "name" : "MedRefillRequestMHV"
     },
@@ -668,11 +672,11 @@
       "name" : "Observation EXAM"
     },
     {
-      "id" : "group21",
+      "id" : "group22",
       "name" : "Observation Imaging Result"
     },
     {
-      "id" : "group17",
+      "id" : "group18",
       "name" : "Organization"
     },
     {
@@ -680,7 +684,7 @@
       "name" : "Patient"
     },
     {
-      "id" : "group18",
+      "id" : "group19",
       "name" : "Practitioner"
     },
     {
@@ -692,15 +696,15 @@
       "name" : "Procedure"
     },
     {
-      "id" : "group19",
+      "id" : "group20",
       "name" : "Smoking Status Observation"
     },
     {
-      "id" : "group22",
+      "id" : "group23",
       "name" : "VAERS"
     },
     {
-      "id" : "group20",
+      "id" : "group21",
       "name" : "Vital Signs"
     }],
     "resource" : [{
@@ -2233,6 +2237,45 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/LungCancerScreening"
+      },
+      "name" : "Lung Cancer Screening",
+      "description" : "This StructureDefinition contains the maps for VistA file TIU DOCUMENT (8925) to us-core-diagnosticreport-note",
+      "exampleBoolean" : false,
+      "groupingId" : "group17"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/LungCancerScreeningCRNA"
+      },
+      "name" : "Lung Cancer Screening: CRNA",
+      "description" : "This StructureDefinition contains the maps for VistA file undefined (undefined) to ServiceRequest",
+      "exampleBoolean" : false,
+      "groupingId" : "group17"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/LungCancerScreeningDRNA"
+      },
+      "name" : "Lung Cancer Screening: DRNA",
+      "description" : "This StructureDefinition contains the maps for VistA file undefined (undefined) to ServiceRequest",
+      "exampleBoolean" : false,
+      "groupingId" : "group17"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:logical"
       }],
       "reference" : {
@@ -2552,7 +2595,7 @@
       "name" : "Observation Imaging Result",
       "description" : "This StructureDefinition contains the maps for VistA file undefined (undefined) to us-core-observation-imaging",
       "exampleBoolean" : false,
-      "groupingId" : "group21"
+      "groupingId" : "group22"
     },
     {
       "extension" : [{
@@ -2565,7 +2608,7 @@
       "name" : "Observation Imaging Result: Echo",
       "description" : "This StructureDefinition contains the maps for VistA file ECHO (691) to us-core-observation-imaging",
       "exampleBoolean" : false,
-      "groupingId" : "group21"
+      "groupingId" : "group22"
     },
     {
       "extension" : [{
@@ -2578,7 +2621,7 @@
       "name" : "Observation Imaging Result: EKG",
       "description" : "This StructureDefinition contains the maps for VistA file ELECTROCARDIOGRAM (EKG) (691.5) to us-core-observation-imaging",
       "exampleBoolean" : false,
-      "groupingId" : "group21"
+      "groupingId" : "group22"
     },
     {
       "extension" : [{
@@ -2591,7 +2634,7 @@
       "name" : "Observation Imaging Result: Rad/Nuc",
       "description" : "This StructureDefinition contains the maps for VistA file RAD/NUC MED REPORTS (74) to us-core-observation-imaging",
       "exampleBoolean" : false,
-      "groupingId" : "group21"
+      "groupingId" : "group22"
     },
     {
       "extension" : [{
@@ -2688,7 +2731,7 @@
       "name" : "Organization",
       "description" : "This StructureDefinition contains the maps for VistA file INSTITUTION (4) to us-core-organization",
       "exampleBoolean" : false,
-      "groupingId" : "group17"
+      "groupingId" : "group18"
     },
     {
       "extension" : [{
@@ -2930,7 +2973,7 @@
       "name" : "Practitioner",
       "description" : "This StructureDefinition contains the maps for VistA file NEW PERSON (200) to us-core-practitioner",
       "exampleBoolean" : false,
-      "groupingId" : "group18"
+      "groupingId" : "group19"
     },
     {
       "extension" : [{
@@ -3199,7 +3242,7 @@
       "name" : "Smoking Status Observation",
       "description" : "This StructureDefinition contains the maps for VistA file V HEALTH FACTORS (9000010.23) to us-core-smokingstatus",
       "exampleBoolean" : false,
-      "groupingId" : "group19"
+      "groupingId" : "group20"
     },
     {
       "extension" : [{
@@ -3319,6 +3362,18 @@
       },
       "name" : "TIU DOCUMENT (8925)",
       "description" : "This StructureDefinition contains the Logical Model for the mapped parts of the source TIU DOCUMENT (8925)",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:logical"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/TiuDocument89259"
+      },
+      "name" : "TIU DOCUMENT (8925.9)",
+      "description" : "This StructureDefinition contains the Logical Model for the mapped parts of the source TIU DOCUMENT (8925.9)",
       "exampleBoolean" : false
     },
     {
@@ -3512,7 +3567,7 @@
       "name" : "VAERS AdverseEvent",
       "description" : "This StructureDefinition contains the maps for ADERS to AdverseEvent",
       "exampleBoolean" : false,
-      "groupingId" : "group22"
+      "groupingId" : "group23"
     },
     {
       "extension" : [{
@@ -3525,7 +3580,7 @@
       "name" : "VAERS Bundle",
       "description" : "This StructureDefinition contains the maps for ADERS to Bundle",
       "exampleBoolean" : false,
-      "groupingId" : "group22"
+      "groupingId" : "group23"
     },
     {
       "extension" : [{
@@ -3538,7 +3593,7 @@
       "name" : "VAERS Immunization-pvac1",
       "description" : "This StructureDefinition contains the maps for ADERS to us-core-immunization",
       "exampleBoolean" : false,
-      "groupingId" : "group22"
+      "groupingId" : "group23"
     },
     {
       "extension" : [{
@@ -3551,7 +3606,7 @@
       "name" : "VAERS Immunization-pvac2",
       "description" : "This StructureDefinition contains the maps for ADERS to us-core-immunization",
       "exampleBoolean" : false,
-      "groupingId" : "group22"
+      "groupingId" : "group23"
     },
     {
       "extension" : [{
@@ -3564,7 +3619,7 @@
       "name" : "VAERS Immunization-pvac3",
       "description" : "This StructureDefinition contains the maps for ADERS to us-core-immunization",
       "exampleBoolean" : false,
-      "groupingId" : "group22"
+      "groupingId" : "group23"
     },
     {
       "extension" : [{
@@ -3577,7 +3632,7 @@
       "name" : "VAERS Immunization-pvac4",
       "description" : "This StructureDefinition contains the maps for ADERS to us-core-immunization",
       "exampleBoolean" : false,
-      "groupingId" : "group22"
+      "groupingId" : "group23"
     },
     {
       "extension" : [{
@@ -3590,7 +3645,7 @@
       "name" : "VAERS Immunization-vac1",
       "description" : "This StructureDefinition contains the maps for ADERS to us-core-immunization",
       "exampleBoolean" : false,
-      "groupingId" : "group22"
+      "groupingId" : "group23"
     },
     {
       "extension" : [{
@@ -3603,7 +3658,7 @@
       "name" : "VAERS Immunization-vac2",
       "description" : "This StructureDefinition contains the maps for ADERS to us-core-immunization",
       "exampleBoolean" : false,
-      "groupingId" : "group22"
+      "groupingId" : "group23"
     },
     {
       "extension" : [{
@@ -3616,7 +3671,7 @@
       "name" : "VAERS Immunization-vac3",
       "description" : "This StructureDefinition contains the maps for ADERS to us-core-immunization",
       "exampleBoolean" : false,
-      "groupingId" : "group22"
+      "groupingId" : "group23"
     },
     {
       "extension" : [{
@@ -3629,7 +3684,7 @@
       "name" : "VAERS Immunization-vac4",
       "description" : "This StructureDefinition contains the maps for ADERS to us-core-immunization",
       "exampleBoolean" : false,
-      "groupingId" : "group22"
+      "groupingId" : "group23"
     },
     {
       "extension" : [{
@@ -3642,7 +3697,7 @@
       "name" : "VAERS Patient",
       "description" : "This StructureDefinition contains the maps for ADERS to us-core-patient",
       "exampleBoolean" : false,
-      "groupingId" : "group22"
+      "groupingId" : "group23"
     },
     {
       "extension" : [{
@@ -6247,7 +6302,7 @@
       "name" : "Vital Signs",
       "description" : "This StructureDefinition contains the maps for VistA file GMRV VITAL MEASUREMENT (120.5) to us-core-vital-signs",
       "exampleBoolean" : false,
-      "groupingId" : "group20"
+      "groupingId" : "group21"
     },
     {
       "extension" : [{
@@ -6260,7 +6315,7 @@
       "name" : "Vital Signs: BP",
       "description" : "This StructureDefinition contains the maps for VistA file GMRV VITAL MEASUREMENT (120.5) to us-core-blood-pressure",
       "exampleBoolean" : false,
-      "groupingId" : "group20"
+      "groupingId" : "group21"
     },
     {
       "extension" : [{
@@ -6273,7 +6328,7 @@
       "name" : "Vital Signs: SpO2",
       "description" : "This StructureDefinition contains the maps for VistA file GMRV VITAL MEASUREMENT (120.5) to us-core-pulse-oximetry",
       "exampleBoolean" : false,
-      "groupingId" : "group20"
+      "groupingId" : "group21"
     },
     {
       "extension" : [{
