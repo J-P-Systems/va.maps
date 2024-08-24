@@ -32,7 +32,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}","N/A"
 "ChargeItem.identifier","ChargeItem.identifier","","","",0,*,"Y","","Y","Identifier {[]} {[]}
 ","Business Identifier for item","Identifiers assigned to this event performer or other systems.","","Allows identification of the charge Item as it is known by various participating systems and in a way that remains consistent across servers.","","","","","","","",,,,,"",,,,"ChargeItem.identifier",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","1837: source value from AR CCPC STATEMENTS - PD LINE > PD LINE - BILL REF. NO. (349.2-20 > 349.21-3)","Event.identifier","FT1.2",".identifier","FiveWs.identifier"
+","1837: source value from INTEGRATED BILLING ACTION - AR BILL NUMBER (350-.11)","IB.IBAction.ARBillNumber","Event.identifier","FT1.2",".identifier","FiveWs.identifier"
 "ChargeItem.definitionUri","ChargeItem.definitionUri","","","",0,*,"","","","uri {[]} {[]}
 ","Defining information about the code of this charge item","References the (external) source of pricing information, rules of application for the code this ChargeItem uses.","","","","","","","","","",,,,,"",,,,"ChargeItem.definitionUri",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","Event.instantiates","Varies by domain",".outboundRelationship[typeCode=DEFN].target"
@@ -64,19 +64,40 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","C*E.1-8, C*E.10-22","union(., ./translation)"
 "ChargeItem.code.text","ChargeItem.code.text","","","",0,1,"Y","","Y","string {[]} {[]}
 ","Plain text representation of the concept","A human language representation of the concept as seen/selected/uttered by the user who entered the data and/or which represents the intended meaning of the user.","Very often the text is the same as a displayName of one of the codings.","The codes from the terminologies do not always capture the correct meaning with all the nuances of the human using them, or sometimes there is no appropriate code at all. In these cases, the text is used to capture the full meaning of the source.","","","","","","","",,,,,"",,,,"CodeableConcept.text",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","1836: source value from AR CCPC STATEMENTS - PD LINE > PD LINE - TRANSACTION DESCRIPTION (349.2-20 > 349.21-1)","C*E.9. But note many systems use C*E.2 for this","./originalText[mediaType/code=""text/plain""]/data"
+","1836: source value from INTEGRATED BILLING ACTION - ACTION TYPE > IB ACTION TYPES - NAME (350-.03 > 350.1-.01)","IB.IBAction.IBActionTypeIEN
+Dim.IBActionType.IBActionType","C*E.9. But note many systems use C*E.2 for this","./originalText[mediaType/code=""text/plain""]/data"
 "ChargeItem.subject","ChargeItem.subject","","patient
 ","",1,1,"Y","","Y","Reference {[]} {[CanonicalType[http://va.gov/fhir/StructureDefinition/DebtPortalPatient]]}
 ","Individual service was done for/to","The individual or set of individuals the action is being or was performed on.","","Links the event to the Patient context.","","","","","","","",,,,,"",,,,"ChargeItem.subject",1,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","1839: reference from AR CCPC STATEMENTS - PATIENT > AR DEBTOR - DEBTOR (349.2-.01 > 340-.01)","Dim.ARDebtor.InstitutionIEN,Dim.ARDebtor.InsuranceCompanyIEN,Dim.ARDebtor.PatientIEN,Dim.ARDebtor.StaffIEN,Dim.ARDebtor.VendorIEN","Event.subject","PAT in proximity to FT1 segment",".participation[typeCode=SBJ].role","FiveWs.subject[x]","FiveWs.subject"
+","1839: reference from INTEGRATED BILLING ACTION - PATIENT (350-.02)","IB.IBAction.PatientIEN","Event.subject","PAT in proximity to FT1 segment",".participation[typeCode=SBJ].role","FiveWs.subject[x]","FiveWs.subject"
 "ChargeItem.context","ChargeItem.context","","encounter
 ","",0,1,"","","Y","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/Encounter], CanonicalType[http://hl7.org/fhir/StructureDefinition/EpisodeOfCare]]}
 ","Encounter / Episode associated with event","The encounter or episode of care that establishes the context for this event.","","Links the request to the Encounter context.","","","","","","","",,,,,"",,,,"ChargeItem.context",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","Event.context","PV1 in proximity to FT1 segment",".inboundRelationship(typeCode=COMP].source[classCode<=PCPR, moodCode=EVN]","FiveWs.context"
 "ChargeItem.occurrence[x]","ChargeItem.occurrence[x]","","timing
 ","",0,1,"","","Y","dateTime {[]} {[]}
-Period {[]} {[]}Timing {[]} {[]}","When the charged service was applied","Date/time(s) or duration when the charged service was applied.","The list of types may be constrained as appropriate for the type of charge item.","","","","","","","","",,,,,"",,,,"ChargeItem.occurrence[x]",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+Period {[]} {[]}Timing {[]} {[]}","When the charged service was applied","Date/time(s) or duration when the charged service was applied.","The list of types may be constrained as appropriate for the type of charge item.","","","","","","","","",,,,,"","type:$this}
+","",,"open","ChargeItem.occurrence[x]",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","Event.occurrence[x]","Varies by domain",".effectiveTime","FiveWs.done[x]"
+"ChargeItem.occurrence[x]:occurrencePeriod","ChargeItem.occurrence[x]","occurrencePeriod","timing
+","",0,1,"","","Y","Period {[]} {[]}
+","When the charged service was applied","Date/time(s) or duration when the charged service was applied.","The list of types may be constrained as appropriate for the type of charge item.","","","","","","","","",,,,,"",,,,"ChargeItem.occurrence[x]",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+","Event.occurrence[x]","Varies by domain",".effectiveTime","FiveWs.done[x]"
+"ChargeItem.occurrence[x]:occurrencePeriod.id","ChargeItem.occurrence[x].id","","","",0,1,"","","","string {[]} {[]}
+","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"","","n/a"
+"ChargeItem.occurrence[x]:occurrencePeriod.extension","ChargeItem.occurrence[x].extension","","extensions
+user content","",0,*,"","","","Extension {[]} {[]}
+","Additional content defined by implementations","May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.","There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.","","","","","","","","",,,,,"","value:url}
+","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}","n/a"
+"ChargeItem.occurrence[x]:occurrencePeriod.start","ChargeItem.occurrence[x].start","","","",0,1,"Y","","Y","dateTime {[]} {[]}
+","Starting time with inclusive boundary","The start of the period. The boundary is inclusive.","If the low element is missing, the meaning is that the low boundary is not known.","","","","","","","","",,,,,"",,,,"Period.start",0,1,"per-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+","1840: source value from INTEGRATED BILLING ACTION - DATE BILLED FROM (350-.14)","IB.IBAction.BillFromDateTime","DR.1","./low"
+"ChargeItem.occurrence[x]:occurrencePeriod.end","ChargeItem.occurrence[x].end","","","",0,1,"Y","","Y","dateTime {[]} {[]}
+","End time with inclusive boundary, if not ongoing","The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.","The high value includes any matching date/time. i.e. 2012-02-03T10:00:00 is in a period that has an end value of 2012-02-03.","","","If the end of the period is missing, it means that the period is ongoing","","","","","",,,,,"",,,,"Period.end",0,1,"per-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+","1841: source value from INTEGRATED BILLING ACTION - DATE BILLED TO (350-.15)","IB.IBAction.BillToDateTime","DR.2","./high"
 "ChargeItem.performer","ChargeItem.performer","","","",0,*,"","","","BackboneElement {[]} {[]}
 ","Who performed charged service","Indicates who or what performed or participated in the charged service.","","","","","","","","","",,,,,"",,,,"ChargeItem.performer",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","Event.performer","EVN.5 or by domain",".participation[typeCode=PRF].role[scoper.determinerCode=INSTANCE]"
@@ -127,7 +148,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","EVN.5 or by domain",".player","FiveWs.actor"
 "ChargeItem.enteredDate","ChargeItem.enteredDate","","","",0,1,"Y","","Y","dateTime {[]} {[]}
 ","Date the charge item was entered","Date the charge item was entered.","The actual date when the service associated with the charge has been rendered is captured in occurrence[x].","","","","","","","","",,,,,"",,,,"ChargeItem.enteredDate",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","1835: source value from AR CCPC STATEMENTS - PD LINE > PD LINE - DATE POSTED (349.2-20 > 349.21-.01)"
+","1835: source value from INTEGRATED BILLING ACTION - DATE ENTRY ADDED (350-12)","IB.IBAction.EnteredDateTime"
 "ChargeItem.reason","ChargeItem.reason","","","",0,*,"","","","CodeableConcept {[]} {[]}
 ","Why was the charged  service rendered?","Describes why the event occurred in coded or textual form.","If the application of the charge item requires a reason to be given, it can be captured here. Textual reasons can be captured using reasonCode.text.","","","","","","","","",,"example","Example binding for reason.","http://hl7.org/fhir/ValueSet/icd-10","",,,,"ChargeItem.reason",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","Event.reasonCode","EVN.4 or by domain",".reasonCode","FiveWs.why[x]"

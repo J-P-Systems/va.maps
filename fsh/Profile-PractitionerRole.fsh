@@ -9,11 +9,12 @@ Description: "This StructureDefinition contains the maps for VistA file NEW PERS
 * telecom ^slicing.rules = #open
 * telecom contains va-work 0..1 and va-phone3 0..1 and va-phone4 0..1 and va-commercial 0..1 and va-fax 0..1 and va-voice-pager 0..1 and va-data-pager 0..1 and va-mail 0..1
 * extension contains http://hl7.org/fhir/StructureDefinition/practitioner-job-title named practitioner-job-title 0..1
-* specialty.coding.code and specialty.coding.system and specialty.coding.display and location and practitioner and organization and telecom[va-work].value and telecom[va-work].system and telecom[va-work].use and telecom[va-phone3].value and telecom[va-phone3].system and telecom[va-phone4].value and telecom[va-phone4].system and telecom[va-commercial].value and telecom[va-commercial].system and telecom[va-commercial].use and telecom[va-fax].value and telecom[va-fax].system and telecom[va-fax].use and telecom[va-voice-pager].value and telecom[va-voice-pager].system and telecom[va-data-pager].value and telecom[va-data-pager].system and telecom[va-mail].value and telecom[va-mail].system and active and period.start and period.end and extension[http://hl7.org/fhir/StructureDefinition/practitioner-job-title].valueCodeableConcept.text and code.coding.code and code.coding.system and code.coding.display MS
+* specialty.coding.code and specialty.coding.system and specialty.coding.display and location and location.display and practitioner and organization and telecom[va-work].value and telecom[va-work].system and telecom[va-work].use and telecom[va-phone3].value and telecom[va-phone3].system and telecom[va-phone4].value and telecom[va-phone4].system and telecom[va-commercial].value and telecom[va-commercial].system and telecom[va-commercial].use and telecom[va-fax].value and telecom[va-fax].system and telecom[va-fax].use and telecom[va-voice-pager].value and telecom[va-voice-pager].system and telecom[va-data-pager].value and telecom[va-data-pager].system and telecom[va-mail].value and telecom[va-mail].system and active and period.start and period.end and extension[http://hl7.org/fhir/StructureDefinition/practitioner-job-title].valueCodeableConcept.text and code.coding.code and code.coding.system and code.coding.display MS
 * location only Reference(Location)
 * practitioner only Reference(Practitioner)
 * organization only Reference(Organization)
 * specialty.coding.system = "http://nucc.org/provider-taxonomy"
+* location.display = "-"
 * telecom[va-work].system = #phone
 * telecom[va-work].use = #work
 * telecom[va-phone3].system = #phone
@@ -34,7 +35,8 @@ Source: PractitionerRole
 * specialty.coding.code -> "419: source value from NEW PERSON - PERSON CLASS > PERSON CLASS - Person Class > PERSON CLASS - X12 CODE (200-8932.1 > 200.05-.01 > 8932.1-6)" "Added paths"
 * specialty.coding.system -> "419-1: fixed value = http://nucc.org/provider-taxonomy" "from mapParameter 1"
 * specialty.coding.display -> "419-2: undefined" "from mapParameter 2"
-* location -> "422: reference from HOSPITAL LOCATION - PROVIDER (44.1-.01) case 44-2600=44.1-.01" "This is a reverse pointer. Location 44 contains 44.1, pointing at providers"
+* location -> "422: reference from HOSPITAL LOCATION - NAME (44-.01) case 44-2600>44.1-.01>200-.01" "This is a reverse pointer. Location 44 contains 44.1, pointing at providers"
+* location.display -> "1973: fixed value = - when HOSPITAL LOCATION - PROVIDER > PROVIDER - PROVIDER > NEW PERSON - NAME (44-2600 > 44.1-.01>200-.01)" "Just here to link 44, 44.2 and 200"
 * practitioner -> "414: reference from NEW PERSON - NAME (200-.01)" "Use US Core Practitioner Profile.\nChanged map to better align with US Core"
 * organization -> "1411: reference from NEW PERSON - DIVISION (200-16)" "Issue: VistA may have more than one record. Instantiate multiple Role resources."
 * telecom[va-work].value -> "384: source value from NEW PERSON - OFFICE PHONE (200-.132)" "Change from Practitioner to PractitionerRole (use case and FHIR Path) to support US Core"
@@ -70,7 +72,7 @@ Mapping: cdw-to-PractitionerRole
 Id: cdw
 Title: "Clinical Data Warehouse (CDW)"
 Source: PractitionerRole
-* location -> "Dim.LocationProvider.StaffIEN"
+* location -> "Dim.Location.LocationName,Dim.Location.LocationName"
 * practitioner -> "SStaff.PrescribingProvider.StaffName,SStaff.SStaff.StaffName"
 * telecom[va-work].value -> "SStaff.PrescribingProvider.OfficePhone,SStaff.SStaff.OfficePhone"
 * telecom[va-phone3].value -> "SStaff.SStaff.Phone3"

@@ -8,7 +8,7 @@ Description: "This StructureDefinition contains the maps for VistA file ACCOUNTS
 * totalPriceComponent ^slicing.discriminator.path = "$this"
 * totalPriceComponent ^slicing.rules = #open
 * totalPriceComponent contains va-marsh-fee-paid 0..1 and va-marsh-fee 0..1 and va-prev-bal 0..1 and va-total-charges 0..1 and va-total-credits 0..1 and va-new-balance 0..1 and va-admin-cost-bal 0..1 and va-court-cost 0..1 and va-principal-paid 0..1 and va-interest-paid 0..1 and va-admin-cost-paid 0..1 and va-court-cost-paid 0..1
-* totalPriceComponent[va-marsh-fee-paid].amount and totalPriceComponent[va-marsh-fee-paid].type and totalPriceComponent[va-marsh-fee-paid].code.text and totalPriceComponent[va-marsh-fee].amount and totalPriceComponent[va-marsh-fee].type and totalPriceComponent[va-marsh-fee].code.text and recipient and totalNet and totalPriceComponent[va-prev-bal].amount and totalPriceComponent[va-prev-bal].type and totalPriceComponent[va-prev-bal].code.text and totalPriceComponent[va-total-charges].amount and totalPriceComponent[va-total-charges].type and totalPriceComponent[va-total-charges].code.text and totalPriceComponent[va-total-credits].amount and totalPriceComponent[va-total-credits].type and totalPriceComponent[va-total-credits].code.text and totalPriceComponent[va-new-balance].amount and totalPriceComponent[va-new-balance].type and totalPriceComponent[va-new-balance].code.text and lineItem.chargeItemReference and lineItem.priceComponent.amount and lineItem.priceComponent.type and note and paymentTerms and status and totalPriceComponent[va-admin-cost-bal].amount and totalPriceComponent[va-admin-cost-bal].type and totalPriceComponent[va-admin-cost-bal].code.text and totalPriceComponent[va-court-cost].amount and totalPriceComponent[va-court-cost].type and totalPriceComponent[va-court-cost].code.text and totalPriceComponent[va-principal-paid].amount and totalPriceComponent[va-principal-paid].type and totalPriceComponent[va-principal-paid].code.text and totalPriceComponent[va-interest-paid].amount and totalPriceComponent[va-interest-paid].type and totalPriceComponent[va-interest-paid].code.text and totalPriceComponent[va-admin-cost-paid].amount and totalPriceComponent[va-admin-cost-paid].type and totalPriceComponent[va-admin-cost-paid].code.text and totalPriceComponent[va-court-cost-paid].amount and totalPriceComponent[va-court-cost-paid].type and totalPriceComponent[va-court-cost-paid].code.text MS
+* totalPriceComponent[va-marsh-fee-paid].amount and totalPriceComponent[va-marsh-fee-paid].type and totalPriceComponent[va-marsh-fee-paid].code.text and totalPriceComponent[va-marsh-fee].amount and totalPriceComponent[va-marsh-fee].type and totalPriceComponent[va-marsh-fee].code.text and recipient and totalNet and totalPriceComponent[va-prev-bal].amount and totalPriceComponent[va-prev-bal].type and totalPriceComponent[va-prev-bal].code.text and totalPriceComponent[va-total-charges].amount and totalPriceComponent[va-total-charges].type and totalPriceComponent[va-total-charges].code.text and totalPriceComponent[va-total-credits].amount and totalPriceComponent[va-total-credits].type and totalPriceComponent[va-total-credits].code.text and totalPriceComponent[va-new-balance].amount and totalPriceComponent[va-new-balance].type and totalPriceComponent[va-new-balance].code.text and lineItem.chargeItemReference and lineItem.priceComponent.amount and lineItem.priceComponent.type and lineItem.priceComponent.code.text and status and totalPriceComponent[va-admin-cost-bal].amount and totalPriceComponent[va-admin-cost-bal].type and totalPriceComponent[va-admin-cost-bal].code.text and totalPriceComponent[va-court-cost].amount and totalPriceComponent[va-court-cost].type and totalPriceComponent[va-court-cost].code.text and totalPriceComponent[va-principal-paid].amount and totalPriceComponent[va-principal-paid].type and totalPriceComponent[va-principal-paid].code.text and totalPriceComponent[va-interest-paid].amount and totalPriceComponent[va-interest-paid].type and totalPriceComponent[va-interest-paid].code.text and totalPriceComponent[va-admin-cost-paid].amount and totalPriceComponent[va-admin-cost-paid].type and totalPriceComponent[va-admin-cost-paid].code.text and totalPriceComponent[va-court-cost-paid].amount and totalPriceComponent[va-court-cost-paid].type and totalPriceComponent[va-court-cost-paid].code.text MS
 * recipient only Reference(DebtPortalPatient)
 * lineItem.chargeItemReference only Reference(DebtPortalChargeItem)
 * totalPriceComponent[va-marsh-fee-paid].type = #surcharge
@@ -24,6 +24,7 @@ Description: "This StructureDefinition contains the maps for VistA file ACCOUNTS
 * totalPriceComponent[va-new-balance].type = #base
 * totalPriceComponent[va-new-balance].code.text = "New Balance"
 * lineItem.priceComponent.type = #base
+* lineItem.priceComponent.code.text = "Total Charge"
 * status = #issued
 * totalPriceComponent[va-admin-cost-bal].type = #surcharge
 * totalPriceComponent[va-admin-cost-bal].code.text = "Administrative Cost Balance"
@@ -62,11 +63,10 @@ Source: DebtPortalInvoice
 * totalPriceComponent[va-new-balance].amount -> "1832: source value from AR CCPC STATEMENTS - NEW BALANCE (349.2-.08)"
 * totalPriceComponent[va-new-balance].type -> "1832-1: fixed value = #base" "from mapParameter 1"
 * totalPriceComponent[va-new-balance].code.text -> "1832-2: fixed value = New Balance" "from mapParameter 2"
-* lineItem.chargeItemReference -> "1834: reference from AR CCPC STATEMENTS - PD LINE (349.2-20)"
-* lineItem.priceComponent.amount -> "1840: source value from AR CCPC STATEMENTS - PD LINE > PD LINE - TRANSACTION AMOUNT (349.2-20 > 349.21-2)"
-* lineItem.priceComponent.type -> "1840-1: fixed value = #base" "from mapParameter 1"
-* note -> "1841: source value from AR CCPC STATEMENTS - SPECIAL NOTICES (349.2-30)"
-* paymentTerms -> "1842: source value from AR CCPC STATEMENTS - PARAGRAPH CODES (349.2-40)" "This might need to be an extension so the mapping is symantically correct"
+* lineItem.chargeItemReference -> "1834: reference" "INTEGRATED BILLING ACTION - AR BILL NUMBER (350-.11) = Accounts Receivable - Bill Number (430-.01)"
+* lineItem.priceComponent.amount -> "1842: source value from INTEGRATED BILLING ACTION - TOTAL CHARGE (350-.07)"
+* lineItem.priceComponent.type -> "1842-1: fixed value = #base" "from mapParameter 1"
+* lineItem.priceComponent.code.text -> "1842-2: fixed value = Total Charge" "from mapParameter 2"
 * status -> "1843: fixed value = #issued"
 * totalPriceComponent[va-admin-cost-bal].amount -> "1866: source value from ACCOUNTS RECEIVABLE - ADMINISTRATIVE COST BALANCE (430-73)"
 * totalPriceComponent[va-admin-cost-bal].type -> "1866-1: fixed value = #surcharge" "from mapParameter 1"
@@ -94,6 +94,7 @@ Source: DebtPortalInvoice
 * totalPriceComponent[va-marsh-fee-paid].amount -> "IB.AccountsReceivable.TotalMarshalFeePaid"
 * totalPriceComponent[va-marsh-fee].amount -> "IB.AccountsReceivable.MarshalFee"
 * recipient -> "Dim.ARDebtor.InstitutionIEN,Dim.ARDebtor.InsuranceCompanyIEN,Dim.ARDebtor.PatientIEN,Dim.ARDebtor.StaffIEN,Dim.ARDebtor.VendorIEN"
+* lineItem.priceComponent.amount -> "IB.IBAction.TotalCharge"
 * totalPriceComponent[va-admin-cost-bal].amount -> "IB.AccountsReceivable.AdministrativeCostBalance"
 * totalPriceComponent[va-court-cost].amount -> "IB.AccountsReceivable.CourtCost"
 * totalPriceComponent[va-principal-paid].amount -> "IB.AccountsReceivable.TotalPrincipalPaid"

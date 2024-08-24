@@ -6,11 +6,11 @@
     "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ImplementationGuide va.maps</b></p><a name=\"va.maps\"> </a><a name=\"hcva.maps\"> </a><a name=\"va.maps-en-US\"> </a><h2>VAMapsIG</h2><p>The official URL for this implementation guide is: </p><pre>http://va.gov/fhir/ImplementationGuide/va.maps</pre><div><p>This implementation guide is a FHIR IG rendering of the KBS Map Set from VA sources (primarily VistA) to FHIR. Where appropriate these maps conform to the us-core profiles.</p>\n</div></div>"
   },
   "url" : "http://va.gov/fhir/ImplementationGuide/va.maps",
-  "version" : "0.65.341",
+  "version" : "0.65.343",
   "name" : "VAMapsIG",
   "title" : "US Veterans Administration FHIR Map Set Implementation Guide",
   "status" : "draft",
-  "date" : "2024-08-20T15:42:57+00:00",
+  "date" : "2024-08-24T10:06:05+00:00",
   "publisher" : "VA",
   "contact" : [{
     "name" : "VA",
@@ -612,6 +612,11 @@
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     }],
     "grouping" : [{
+      "id" : "groupcs",
+      "name" : "Capability Statements",
+      "description" : "The following artifacts define example CapabilityStatements that group profiles by project."
+    },
+    {
       "id" : "group4",
       "name" : "AllergyIntolerance"
     },
@@ -1026,13 +1031,26 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CapabilityStatement"
+      }],
+      "reference" : {
+        "reference" : "CapabilityStatement/DP"
+      },
+      "name" : "Debt Portal",
+      "description" : "This CapabilityStatement contains an example for Debt Portal",
+      "exampleBoolean" : false,
+      "groupingId" : "groupcs"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
         "reference" : "StructureDefinition/DebtPortalChargeItem"
       },
       "name" : "Debt Portal ChargeItem",
-      "description" : "This StructureDefinition contains the maps for VistA file AR CCPC STATEMENTS (349.2) to ChargeItem",
+      "description" : "This StructureDefinition contains the maps for VistA file INTEGRATED BILLING ACTION (350) to ChargeItem",
       "exampleBoolean" : false,
       "groupingId" : "group0"
     },
@@ -1349,10 +1367,10 @@
         "valueString" : "StructureDefinition:logical"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/HospitalLocation441"
+        "reference" : "StructureDefinition/IbActionTypes3501"
       },
-      "name" : "HOSPITAL LOCATION (44.1)",
-      "description" : "This StructureDefinition contains the Logical Model for the mapped parts of the source HOSPITAL LOCATION (44.1)",
+      "name" : "IB ACTION TYPES (350.1)",
+      "description" : "This StructureDefinition contains the Logical Model for the mapped parts of the source IB ACTION TYPES (350.1)",
       "exampleBoolean" : false
     },
     {
@@ -1566,6 +1584,18 @@
       },
       "name" : "INSTITUTION (4)",
       "description" : "This StructureDefinition contains the Logical Model for the mapped parts of the source INSTITUTION (4)",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:logical"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/IntegratedBillingAction350"
+      },
+      "name" : "INTEGRATED BILLING ACTION (350)",
+      "description" : "This StructureDefinition contains the Logical Model for the mapped parts of the source INTEGRATED BILLING ACTION (350)",
       "exampleBoolean" : false
     },
     {
@@ -2195,7 +2225,8 @@
       },
       "name" : "Lighthouse Clinical Health API",
       "description" : "This CapabilityStatement contains an example for Lighthouse Clinical Health API",
-      "exampleBoolean" : false
+      "exampleBoolean" : false,
+      "groupingId" : "groupcs"
     },
     {
       "extension" : [{
@@ -2207,7 +2238,8 @@
       },
       "name" : "Lighthouse Patient Health API",
       "description" : "This CapabilityStatement contains an example for Lighthouse Patient Health API",
-      "exampleBoolean" : false
+      "exampleBoolean" : false,
+      "groupingId" : "groupcs"
     },
     {
       "extension" : [{
@@ -2250,6 +2282,19 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CapabilityStatement"
+      }],
+      "reference" : {
+        "reference" : "CapabilityStatement/LCS"
+      },
+      "name" : "Lung Cancer Screening",
+      "description" : "This CapabilityStatement contains an example for Lung Cancer Screening",
+      "exampleBoolean" : false,
+      "groupingId" : "groupcs"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
@@ -2272,6 +2317,19 @@
       "description" : "This StructureDefinition contains the maps for VistA file undefined (undefined) to ServiceRequest",
       "exampleBoolean" : false,
       "groupingId" : "group17"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CapabilityStatement"
+      }],
+      "reference" : {
+        "reference" : "CapabilityStatement/MDT"
+      },
+      "name" : "MDT",
+      "description" : "This CapabilityStatement contains an example for MDT",
+      "exampleBoolean" : false,
+      "groupingId" : "groupcs"
     },
     {
       "extension" : [{
@@ -2509,7 +2567,8 @@
       },
       "name" : "My HealtheVet",
       "description" : "This CapabilityStatement contains an example for My HealtheVet",
-      "exampleBoolean" : false
+      "exampleBoolean" : false,
+      "groupingId" : "groupcs"
     },
     {
       "extension" : [{
@@ -2920,18 +2979,6 @@
         "valueString" : "StructureDefinition:logical"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/PdLine34921"
-      },
-      "name" : "PD LINE (349.21)",
-      "description" : "This StructureDefinition contains the Logical Model for the mapped parts of the source PD LINE (349.21)",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:logical"
-      }],
-      "reference" : {
         "reference" : "StructureDefinition/PendingOutpatientOrders5241"
       },
       "name" : "PENDING OUTPATIENT ORDERS (52.41)",
@@ -3085,6 +3132,18 @@
       },
       "name" : "PROSTHESIS INSTALLED (130.01)",
       "description" : "This StructureDefinition contains the Logical Model for the mapped parts of the source PROSTHESIS INSTALLED (130.01)",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:logical"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/Provider441"
+      },
+      "name" : "PROVIDER (44.1)",
+      "description" : "This StructureDefinition contains the Logical Model for the mapped parts of the source PROVIDER (44.1)",
       "exampleBoolean" : false
     },
     {
@@ -3531,6 +3590,19 @@
       "name" : "V PROVIDER (9000010.06)",
       "description" : "This StructureDefinition contains the Logical Model for the mapped parts of the source V PROVIDER (9000010.06)",
       "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CapabilityStatement"
+      }],
+      "reference" : {
+        "reference" : "CapabilityStatement/ADERS"
+      },
+      "name" : "VA Adverse Drug Event Reporting System",
+      "description" : "This CapabilityStatement contains an example for VA Adverse Drug Event Reporting System",
+      "exampleBoolean" : false,
+      "groupingId" : "groupcs"
     },
     {
       "extension" : [{

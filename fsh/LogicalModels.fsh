@@ -84,18 +84,20 @@ Id: HospitalLocation44
 Title: "HOSPITAL LOCATION (44)"
 Description: "This StructureDefinition contains the Logical Model for the mapped parts of the source HOSPITAL LOCATION (44)"
 Characteristics: #can-be-target
+* name 0..1 Element "NAME (-.01)"
+* provider 0..1 Reference "PROVIDER (-2600)"
 * service 0..1 Element "SERVICE (-9)"
 * stopCodeNumber 0..1 Element "STOP CODE NUMBER (-8)"
 * creditStopCode 0..1 Element "CREDIT STOP CODE (-2503)"
 * type 0..1 Element "TYPE (-2)"
 * ien 0..1 Element "IEN (-.001)"
-* name 0..1 Element "NAME (-.01)"
 * abbreviation 0..1 Element "ABBREVIATION (-1)"
 * synonym 0..1 Element "SYNONYM (-13)"
 * patientFriendlyName 0..1 Element "PATIENT FRIENDLY NAME (-60)"
 * telephone 0..1 Element "TELEPHONE (-99)"
 * physicalLocation 0..1 Element "PHYSICAL LOCATION (-10)"
 * institution 0..1 Reference "INSTITUTION (-3)"
+* provider only Reference(Provider441)
 * institution only Reference(Institution4)
 
 Logical: Ptf45
@@ -378,6 +380,20 @@ Characteristics: #can-be-target
 * phoneNumber 0..1 Element "PHONE NUMBER (-1.07)"
 * foreignCountryCode 0..1 Element "FOREIGN COUNTRY CODE (-1.08)"
 
+Logical: IntegratedBillingAction350
+Id: IntegratedBillingAction350
+Title: "INTEGRATED BILLING ACTION (350)"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the source INTEGRATED BILLING ACTION (350)"
+Characteristics: #can-be-target
+* totalCharge 0..1 Element "TOTAL CHARGE (-.07)"
+* dateEntryAdded 0..1 Element "DATE ENTRY ADDED (-12)"
+* actionType 0..1 Reference "ACTION TYPE (-.03)"
+* arBillNumber 0..1 Element "AR BILL NUMBER (-.11)"
+* patient 0..1 Element "PATIENT (-.02)"
+* dateBilledFrom 0..1 Element "DATE BILLED FROM (-.14)"
+* dateBilledTo 0..1 Element "DATE BILLED TO (-.15)"
+* actionType only Reference(IbActionTypes3501)
+
 Logical: AccountsReceivable430
 Id: AccountsReceivable430
 Title: "ACCOUNTS RECEIVABLE (430)"
@@ -518,22 +534,15 @@ Characteristics: #can-be-target
 * totalCharges 0..1 Element "TOTAL CHARGES (-.06)"
 * totalCredits 0..1 Element "TOTAL CREDITS (-.07)"
 * newBalance 0..1 Element "NEW BALANCE (-.08)"
-* pdLine 0..1 Reference "PD LINE (-20)"
-* specialNotices 0..1 Element "SPECIAL NOTICES (-30)"
-* paragraphCodes 0..1 Element "PARAGRAPH CODES (-40)"
 * patientName 0..1 Element "PATIENT NAME (-.03)"
 * patient only Reference(ArDebtor340)
-* pdLine only Reference(PdLine34921)
 
-Logical: PdLine34921
-Id: PdLine34921
-Title: "PD LINE (349.21)"
-Description: "This StructureDefinition contains the Logical Model for the mapped parts of the source PD LINE (349.21)"
+Logical: IbActionTypes3501
+Id: IbActionTypes3501
+Title: "IB ACTION TYPES (350.1)"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the source IB ACTION TYPES (350.1)"
 Characteristics: #can-be-target
-* transactionAmount 0..1 Element "TRANSACTION AMOUNT (-2)"
-* datePosted 0..1 Element "DATE POSTED (-.01)"
-* transactionDescription 0..1 Element "TRANSACTION DESCRIPTION (-1)"
-* billRefNo 0..1 Element "BILL REF. NO. (-3)"
+* name 0..1 Element "NAME (-.01)"
 
 Logical: Microbiology6305
 Id: Microbiology6305
@@ -863,6 +872,8 @@ Description: "This StructureDefinition contains the Logical Model for the mapped
 Characteristics: #can-be-target
 * severity 0..1 Coding "SEVERITY (-14.5)"
 * severity from http://va.gov/fhir/ValueSet/VSVFallergySeverity-vista (preferred)
+* relatedReaction 0..1 Reference "RELATED REACTION (-.03)"
+* relatedReaction only Reference(PatientAllergies1208)
 
 Logical: Comments120826
 Id: Comments120826
@@ -1085,12 +1096,13 @@ Characteristics: #can-be-target
 * x12Code 0..1 Element "X12 CODE (-6)"
 * classification 0..1 Element "CLASSIFICATION (-1)"
 
-Logical: HospitalLocation441
-Id: HospitalLocation441
-Title: "HOSPITAL LOCATION (44.1)"
-Description: "This StructureDefinition contains the Logical Model for the mapped parts of the source HOSPITAL LOCATION (44.1)"
+Logical: Provider441
+Id: Provider441
+Title: "PROVIDER (44.1)"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the source PROVIDER (44.1)"
 Characteristics: #can-be-target
-* provider 0..1 Element "PROVIDER (-.01)"
+* provider 0..1 Reference "PROVIDER (-.01)"
+* provider only Reference(NewPerson200)
 
 Logical: Title31
 Id: Title31

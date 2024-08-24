@@ -47,3 +47,15 @@ Source: MedicationDispensePartial
 * medicationCodeableConcept.coding.code -> "RxOut.RxOutpat.LocalDrugIEN,RxOut.RxOutpat.NationalDrugIEN,RxOut.RxOutpatFill.LocalDrugIEN,RxOut.RxOutpatFill.NationalDrugIEN\nDim.LocalDrug.DrugNameWithoutDoseIEN,Dim.LocalDrug.NationalDrugIEN,Dim.LocalDrug.NationalDrugIEN"
 * medicationCodeableConcept.text -> "RxOut.RxOutpat.LocalDrugIEN,RxOut.RxOutpat.NationalDrugIEN,RxOut.RxOutpatFill.LocalDrugIEN,RxOut.RxOutpatFill.NationalDrugIEN\nDim.LocalDrug.LocalDrugNameWithDose,Dim.LocalDrug.LocalDrugNameWithDose,RxOut.RxOutpatFill.LocalDrugNameWithDose"
 * subject -> "RxOut.ActivityLog.PatientIEN,RxOut.ActivityLogOtherComments.PatientIEN,RxOut.RxOutpat.PatientIEN,RxOut.RxOutpatExt.PatientIEN,RxOut.RxOutpatExt.PatientSID,RxOut.RxOutpatFill.PatientIEN,RxOut.RxOutpatMedInstructions.PatientIEN,RxOut.RxOutpatSig.PatientIEN"
+
+Mapping: vpr-to-MedicationDispensePartial
+Id: vpr
+Title: "Virtual Patient Record (VPR)"
+Source: MedicationDispensePartial
+* daysSupply -> "Pharmacy: daysSupply"
+* destination.display -> "Pharmacy: routing"
+* dosageInstruction.doseAndRate.doseQuantity.unit -> "Pharmacy: dose.units"
+* dosageInstruction.doseAndRate.doseQuantity.code -> "Pharmacy: dose.units"
+* dosageInstruction.doseAndRate.doseQuantity.value -> "Pharmacy: dose.dose"
+* dosageInstruction.text -> "Pharmacy: sig"
+* quantity.value -> "Pharmacy: quantity"

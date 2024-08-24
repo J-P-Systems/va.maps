@@ -13,11 +13,11 @@
      fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ImplementationGuide va.maps</b></p><a name=\"va.maps\"> </a><a name=\"hcva.maps\"> </a><a name=\"va.maps-en-US\"> </a><h2>VAMapsIG</h2><p>The official URL for this implementation guide is: </p><pre>http://va.gov/fhir/ImplementationGuide/va.maps</pre><div><p>This implementation guide is a FHIR IG rendering of the KBS Map Set from VA sources (primarily VistA) to FHIR. Where appropriate these maps conform to the us-core profiles.</p>\n</div></div>"
   ] ; # 
   fhir:url [ fhir:v "http://va.gov/fhir/ImplementationGuide/va.maps"^^xsd:anyURI] ; # 
-  fhir:version [ fhir:v "0.65.341"] ; # 
+  fhir:version [ fhir:v "0.65.343"] ; # 
   fhir:name [ fhir:v "VAMapsIG"] ; # 
   fhir:title [ fhir:v "US Veterans Administration FHIR Map Set Implementation Guide"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2024-08-20T15:42:57+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2024-08-24T10:06:05+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "VA"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "VA" ] ;
@@ -526,6 +526,10 @@
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] ) ;
      fhir:grouping ( [
+       fhir:id [ fhir:v "groupcs" ] ;
+       fhir:name [ fhir:v "Capability Statements" ] ;
+       fhir:description [ fhir:v "The following artifacts define example CapabilityStatements that group profiles by project." ]
+     ] [
        fhir:id [ fhir:v "group4" ] ;
        fhir:name [ fhir:v "AllergyIntolerance" ]
      ] [
@@ -917,6 +921,19 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "CapabilityStatement" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/CapabilityStatement/DP> ;
+         fhir:reference [ fhir:v "CapabilityStatement/DP" ]
+       ] ;
+       fhir:name [ fhir:v "Debt Portal" ] ;
+       fhir:description [ fhir:v "This CapabilityStatement contains an example for Debt Portal" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "groupcs" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "StructureDefinition:resource" ]
        ] ) ;
        fhir:reference [
@@ -924,7 +941,7 @@
          fhir:reference [ fhir:v "StructureDefinition/DebtPortalChargeItem" ]
        ] ;
        fhir:name [ fhir:v "Debt Portal ChargeItem" ] ;
-       fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA file AR CCPC STATEMENTS (349.2) to ChargeItem" ] ;
+       fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA file INTEGRATED BILLING ACTION (350) to ChargeItem" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ] ;
        fhir:groupingId [ fhir:v "group0" ]
      ] [
@@ -1240,11 +1257,11 @@
          fhir:value [ fhir:v "StructureDefinition:logical" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://va.gov/fhir/StructureDefinition/HospitalLocation441> ;
-         fhir:reference [ fhir:v "StructureDefinition/HospitalLocation441" ]
+         fhir:link <http://va.gov/fhir/StructureDefinition/IbActionTypes3501> ;
+         fhir:reference [ fhir:v "StructureDefinition/IbActionTypes3501" ]
        ] ;
-       fhir:name [ fhir:v "HOSPITAL LOCATION (44.1)" ] ;
-       fhir:description [ fhir:v "This StructureDefinition contains the Logical Model for the mapped parts of the source HOSPITAL LOCATION (44.1)" ] ;
+       fhir:name [ fhir:v "IB ACTION TYPES (350.1)" ] ;
+       fhir:description [ fhir:v "This StructureDefinition contains the Logical Model for the mapped parts of the source IB ACTION TYPES (350.1)" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -1458,6 +1475,18 @@
        ] ;
        fhir:name [ fhir:v "INSTITUTION (4)" ] ;
        fhir:description [ fhir:v "This StructureDefinition contains the Logical Model for the mapped parts of the source INSTITUTION (4)" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:logical" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/StructureDefinition/IntegratedBillingAction350> ;
+         fhir:reference [ fhir:v "StructureDefinition/IntegratedBillingAction350" ]
+       ] ;
+       fhir:name [ fhir:v "INTEGRATED BILLING ACTION (350)" ] ;
+       fhir:description [ fhir:v "This StructureDefinition contains the Logical Model for the mapped parts of the source INTEGRATED BILLING ACTION (350)" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -2087,7 +2116,8 @@
        ] ;
        fhir:name [ fhir:v "Lighthouse Clinical Health API" ] ;
        fhir:description [ fhir:v "This CapabilityStatement contains an example for Lighthouse Clinical Health API" ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "groupcs" ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
@@ -2099,7 +2129,8 @@
        ] ;
        fhir:name [ fhir:v "Lighthouse Patient Health API" ] ;
        fhir:description [ fhir:v "This CapabilityStatement contains an example for Lighthouse Patient Health API" ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "groupcs" ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
@@ -2141,6 +2172,19 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "CapabilityStatement" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/CapabilityStatement/LCS> ;
+         fhir:reference [ fhir:v "CapabilityStatement/LCS" ]
+       ] ;
+       fhir:name [ fhir:v "Lung Cancer Screening" ] ;
+       fhir:description [ fhir:v "This CapabilityStatement contains an example for Lung Cancer Screening" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "groupcs" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "StructureDefinition:resource" ]
        ] ) ;
        fhir:reference [
@@ -2164,6 +2208,19 @@
        fhir:description [ fhir:v "This StructureDefinition contains the maps for VistA file undefined (undefined) to ServiceRequest" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ] ;
        fhir:groupingId [ fhir:v "group17" ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "CapabilityStatement" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/CapabilityStatement/MDT> ;
+         fhir:reference [ fhir:v "CapabilityStatement/MDT" ]
+       ] ;
+       fhir:name [ fhir:v "MDT" ] ;
+       fhir:description [ fhir:v "This CapabilityStatement contains an example for MDT" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "groupcs" ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
@@ -2401,7 +2458,8 @@
        ] ;
        fhir:name [ fhir:v "My HealtheVet" ] ;
        fhir:description [ fhir:v "This CapabilityStatement contains an example for My HealtheVet" ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "groupcs" ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
@@ -2811,18 +2869,6 @@
          fhir:value [ fhir:v "StructureDefinition:logical" ]
        ] ) ;
        fhir:reference [
-         fhir:link <http://va.gov/fhir/StructureDefinition/PdLine34921> ;
-         fhir:reference [ fhir:v "StructureDefinition/PdLine34921" ]
-       ] ;
-       fhir:name [ fhir:v "PD LINE (349.21)" ] ;
-       fhir:description [ fhir:v "This StructureDefinition contains the Logical Model for the mapped parts of the source PD LINE (349.21)" ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:logical" ]
-       ] ) ;
-       fhir:reference [
          fhir:link <http://va.gov/fhir/StructureDefinition/PendingOutpatientOrders5241> ;
          fhir:reference [ fhir:v "StructureDefinition/PendingOutpatientOrders5241" ]
        ] ;
@@ -2977,6 +3023,18 @@
        ] ;
        fhir:name [ fhir:v "PROSTHESIS INSTALLED (130.01)" ] ;
        fhir:description [ fhir:v "This StructureDefinition contains the Logical Model for the mapped parts of the source PROSTHESIS INSTALLED (130.01)" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:logical" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/StructureDefinition/Provider441> ;
+         fhir:reference [ fhir:v "StructureDefinition/Provider441" ]
+       ] ;
+       fhir:name [ fhir:v "PROVIDER (44.1)" ] ;
+       fhir:description [ fhir:v "This StructureDefinition contains the Logical Model for the mapped parts of the source PROVIDER (44.1)" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -3423,6 +3481,19 @@
        fhir:name [ fhir:v "V PROVIDER (9000010.06)" ] ;
        fhir:description [ fhir:v "This StructureDefinition contains the Logical Model for the mapped parts of the source V PROVIDER (9000010.06)" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "CapabilityStatement" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <http://va.gov/fhir/CapabilityStatement/ADERS> ;
+         fhir:reference [ fhir:v "CapabilityStatement/ADERS" ]
+       ] ;
+       fhir:name [ fhir:v "VA Adverse Drug Event Reporting System" ] ;
+       fhir:description [ fhir:v "This CapabilityStatement contains an example for VA Adverse Drug Event Reporting System" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:groupingId [ fhir:v "groupcs" ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;

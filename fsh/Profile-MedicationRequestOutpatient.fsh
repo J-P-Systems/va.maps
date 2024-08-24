@@ -78,3 +78,10 @@ Source: MedicationRequestOutpatient
 * dosageInstruction.route.coding.code -> "RxOut.RxOutpatMedInstructions.MedRoute"
 * reasonCode.text -> "RxOut.RxOutpatExt.IndicationForUse"
 * extension[http://va.gov/fhir/StructureDefinition/medicationrequest-includeIndicationInSig].valueBoolean -> "RxOut.RxOutpatExt.IndicationForUseFlag"
+
+Mapping: vpr-to-MedicationRequestOutpatient
+Id: vpr
+Title: "Virtual Patient Record (VPR)"
+Source: MedicationRequestOutpatient
+* dispenseRequest.quantity.value -> "Pharmacy: quantity"
+* dispenseRequest.expectedSupplyDuration -> "Pharmacy: daysSupply"

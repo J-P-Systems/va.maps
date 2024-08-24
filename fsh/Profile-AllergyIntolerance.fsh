@@ -8,7 +8,7 @@ Description: "This StructureDefinition contains the maps for VistA file PATIENT 
 * identifier ^slicing.discriminator.path = "$this"
 * identifier ^slicing.rules = #open
 * identifier contains va-IEN 0..1 and va-CDW 0..1
-* reaction.manifestation and reaction.manifestation.coding.system and reaction.manifestation.coding.code and reaction.manifestation.coding.display and reaction.manifestation.text and identifier[va-IEN].value and identifier[va-IEN].system and identifier[va-CDW].value and identifier[va-CDW].system and code.text and code and patient and recordedDate and recorder and type and verificationStatus and clinicalStatus and category and reaction.severity and note.time and note.authorString and note.text and reaction.onset MS
+* reaction.manifestation and reaction.manifestation.coding.system and reaction.manifestation.coding.code and reaction.manifestation.coding.display and reaction.manifestation.text and identifier[va-IEN].value and identifier[va-IEN].system and identifier[va-CDW].value and identifier[va-CDW].system and code.text and code and patient and recordedDate and recorder and type and verificationStatus and clinicalStatus and category and reaction.severity and reaction.id and note.time and note.authorString and note.text and reaction.onset MS
 * reaction.manifestation.coding.system = "urn:oid:2.16.840.1.113883.6.233"
 * identifier[va-IEN].system = "http://va.gov/identifiers/$Sta3n/120.8"
 * identifier[va-CDW].system = "http://va.gov/identifiers/CDWSID/cdwwork.allergy.allergy"
@@ -18,6 +18,7 @@ Description: "This StructureDefinition contains the maps for VistA file PATIENT 
 * verificationStatus from http://va.gov/fhir/ValueSet/VSVFallergyEnteredInError
 * category from http://va.gov/fhir/ValueSet/VSVFallergySubstanceCategory
 * reaction.severity from http://va.gov/fhir/ValueSet/VSVFallergySeverity
+* reaction.id = "-"
 
 Mapping: source-to-AllergyIntolerance
 Id: vista
@@ -42,7 +43,8 @@ Source: AllergyIntolerance
 * clinicalStatus -> "536: terminologyMaps using VF_allergyActive on PATIENT ALLERGIES - ENTERED IN ERROR (120.8-22)" "confirm CHAPI"
 * verificationStatus -> "537: terminologyMaps using VF_allergyEnteredInError on PATIENT ALLERGIES - ENTERED IN ERROR (120.8-22)"
 * category -> "556: terminologyMaps using VF_allergySubstanceCategory on PATIENT ALLERGIES - ALLERGY TYPE (120.8-3.1)"
-* reaction.severity -> "557: terminologyMaps using VF_allergySeverity on ADVERSE REACTION REPORTING - SEVERITY (120.85-14.5)" "This Data is not in CDW\nAssess for CHAPI via VPR"
+* reaction.severity -> "557: terminologyMaps using VF_allergySeverity on ADVERSE REACTION REPORTING - SEVERITY (120.85-14.5) case 120.85=120.8-.03" "This Data is not in CDW\nAssess for CHAPI via VPR"
+* reaction.id -> "1974: fixed value = - when ADVERSE REACTION REPORTING - RELATED REACTION > PATIENT ALLERGIES - (120.85-.03 > 120.8-)" "Just here to link 120.85 to 120.8"
 * note.time -> "1502: source value from PATIENT ALLERGIES - COMMENTS > COMMENTS - DATE/TIME COMMENT ENTERED (120.8-26 > 120.826-.01)"
 * note.authorString -> "1503: source value from PATIENT ALLERGIES - COMMENTS > COMMENTS - USER ENTERING (120.8-26 > 120.826-1)"
 * note.text -> "1504: source value from PATIENT ALLERGIES - COMMENTS > COMMENTS - COMMENTS (120.8-26 > 120.826-2)"
@@ -67,3 +69,21 @@ Source: AllergyIntolerance
 * note.time -> "Allergy.AllergyComment.CommentEnteredDateTime"
 * note.authorString -> "Allergy.AllergyComment.EnteringStaffIEN"
 * reaction.onset -> "Allergy.AllergicReaction.EnteredDateTime"
+
+Mapping: vpr-to-AllergyIntolerance
+Id: vpr
+Title: "Virtual Patient Record (VPR)"
+Source: AllergyIntolerance
+* reaction.manifestation -> "GET PATIENT DATA-reaction.reaction [m]"
+* identifier[va-IEN].value -> "GET PATIENT DATA-reaction.id"
+* code.text -> "GET PATIENT DATA-reaction.name"
+* code -> "GET PATIENT DATA-reaction.vuid"
+* recordedDate -> "GET PATIENT DATA-reaction.entered"
+* verificationStatus -> "GET PATIENT DATA-reaction.verified"
+* clinicalStatus -> "GET PATIENT DATA-reaction.removed"
+* verificationStatus -> "GET PATIENT DATA-reaction.type"
+* category -> "GET PATIENT DATA-reaction.severity"
+* reaction.severity -> "GET PATIENT DATA-reaction.comment [m].entered"
+* note.time -> "GET PATIENT DATA-reaction.comment [m].enteredBy"
+* note.authorString -> "GET PATIENT DATA-reaction.comment [m].commentText"
+* note.text -> "GET PATIENT DATA-reaction.drugIngredient [m]"

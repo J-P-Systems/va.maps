@@ -96,3 +96,16 @@ Source: Appointment
 * comment -> "Appt.WaitList.WaitListComments"
 * participant[va-appt-clinic].actor -> "Appt.WaitList.AppointmentLocationIEN"
 * description -> "Appt.Appointment.AppointmentTypeIEN"
+
+Mapping: vpr-to-Appointment
+Id: vpr
+Title: "Virtual Patient Record (VPR)"
+Source: Appointment
+* status -> "appointment.apptStatus\nappointment.patientClass"
+* status -> "appointment.apptStatus\nappointment.patientClass"
+* status -> "appointment.apptStatus\nappointment.patientClass"
+* status -> "appointment.apptStatus\nappointment.patientClass"
+* serviceCategory[va-service].coding.code -> "appointment.service"
+* serviceType[va-stop-code].coding.code -> "appointment.clinStop"
+* appointmentType.text -> "appointment.type"
+* start -> "appointment.dateTime"

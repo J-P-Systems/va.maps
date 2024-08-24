@@ -21,8 +21,8 @@ Source: MedRefillRequestMHVTask
 * status -> "1848: terminologyMaps using VF_RefillRequestStatus on PRESCRIPTION REFILL REQUEST - RESULT (52.43-6)"
 * note -> "1849: source value from PRESCRIPTION REFILL REQUEST - REMARKS (52.43-10)"
 * intent -> "1851: fixed value = #proposal"
-* code -> "1852: fixed value = RF case 31 RELEASED DATE/TIME not null (filled at least once)"
-* code -> "1861: fixed value = FF case 31 RELEASED DATE/TIME null (never filled)"
+* code -> "1852: fixed value = #RF case 31 RELEASED DATE/TIME not null (filled at least once)"
+* code -> "1861: fixed value = #FF case 31 RELEASED DATE/TIME null (never filled)"
 
 Mapping: cdw-to-MedRefillRequestMHVTask
 Id: cdw

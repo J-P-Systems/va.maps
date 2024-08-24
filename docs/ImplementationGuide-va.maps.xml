@@ -7,11 +7,11 @@
 </div></div>
   </text>
   <url value="http://va.gov/fhir/ImplementationGuide/va.maps"/>
-  <version value="0.65.341"/>
+  <version value="0.65.343"/>
   <name value="VAMapsIG"/>
   <title value="US Veterans Administration FHIR Map Set Implementation Guide"/>
   <status value="draft"/>
-  <date value="2024-08-20T15:42:57+00:00"/>
+  <date value="2024-08-24T10:06:05+00:00"/>
   <publisher value="VA"/>
   <contact>
     <name value="VA"/>
@@ -456,6 +456,10 @@
         <valueString value="true"/>
       </extension>
     </extension>
+    <grouping id="groupcs">
+      <name value="Capability Statements"/>
+      <description value="The following artifacts define example CapabilityStatements that group profiles by project."/>
+    </grouping>
     <grouping id="group4">
       <name value="AllergyIntolerance"/>
     </grouping>
@@ -820,13 +824,25 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CapabilityStatement"/>
+      </extension>
+      <reference>
+        <reference value="CapabilityStatement/DP"/>
+      </reference>
+      <name value="Debt Portal"/>
+      <description value="This CapabilityStatement contains an example for Debt Portal"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="groupcs"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
         <reference value="StructureDefinition/DebtPortalChargeItem"/>
       </reference>
       <name value="Debt Portal ChargeItem"/>
-      <description value="This StructureDefinition contains the maps for VistA file AR CCPC STATEMENTS (349.2) to ChargeItem"/>
+      <description value="This StructureDefinition contains the maps for VistA file INTEGRATED BILLING ACTION (350) to ChargeItem"/>
       <exampleBoolean value="false"/>
       <groupingId value="group0"/>
     </resource>
@@ -1117,10 +1133,10 @@
         <valueString value="StructureDefinition:logical"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/HospitalLocation441"/>
+        <reference value="StructureDefinition/IbActionTypes3501"/>
       </reference>
-      <name value="HOSPITAL LOCATION (44.1)"/>
-      <description value="This StructureDefinition contains the Logical Model for the mapped parts of the source HOSPITAL LOCATION (44.1)"/>
+      <name value="IB ACTION TYPES (350.1)"/>
+      <description value="This StructureDefinition contains the Logical Model for the mapped parts of the source IB ACTION TYPES (350.1)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1317,6 +1333,17 @@
       </reference>
       <name value="INSTITUTION (4)"/>
       <description value="This StructureDefinition contains the Logical Model for the mapped parts of the source INSTITUTION (4)"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:logical"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/IntegratedBillingAction350"/>
+      </reference>
+      <name value="INTEGRATED BILLING ACTION (350)"/>
+      <description value="This StructureDefinition contains the Logical Model for the mapped parts of the source INTEGRATED BILLING ACTION (350)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1898,6 +1925,7 @@
       <name value="Lighthouse Clinical Health API"/>
       <description value="This CapabilityStatement contains an example for Lighthouse Clinical Health API"/>
       <exampleBoolean value="false"/>
+      <groupingId value="groupcs"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1909,6 +1937,7 @@
       <name value="Lighthouse Patient Health API"/>
       <description value="This CapabilityStatement contains an example for Lighthouse Patient Health API"/>
       <exampleBoolean value="false"/>
+      <groupingId value="groupcs"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1947,6 +1976,18 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CapabilityStatement"/>
+      </extension>
+      <reference>
+        <reference value="CapabilityStatement/LCS"/>
+      </reference>
+      <name value="Lung Cancer Screening"/>
+      <description value="This CapabilityStatement contains an example for Lung Cancer Screening"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="groupcs"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
@@ -1968,6 +2009,18 @@
       <description value="This StructureDefinition contains the maps for VistA file undefined (undefined) to ServiceRequest"/>
       <exampleBoolean value="false"/>
       <groupingId value="group17"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CapabilityStatement"/>
+      </extension>
+      <reference>
+        <reference value="CapabilityStatement/MDT"/>
+      </reference>
+      <name value="MDT"/>
+      <description value="This CapabilityStatement contains an example for MDT"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="groupcs"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -2187,6 +2240,7 @@
       <name value="My HealtheVet"/>
       <description value="This CapabilityStatement contains an example for My HealtheVet"/>
       <exampleBoolean value="false"/>
+      <groupingId value="groupcs"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -2563,17 +2617,6 @@
         <valueString value="StructureDefinition:logical"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/PdLine34921"/>
-      </reference>
-      <name value="PD LINE (349.21)"/>
-      <description value="This StructureDefinition contains the Logical Model for the mapped parts of the source PD LINE (349.21)"/>
-      <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:logical"/>
-      </extension>
-      <reference>
         <reference value="StructureDefinition/PendingOutpatientOrders5241"/>
       </reference>
       <name value="PENDING OUTPATIENT ORDERS (52.41)"/>
@@ -2715,6 +2758,17 @@
       </reference>
       <name value="PROSTHESIS INSTALLED (130.01)"/>
       <description value="This StructureDefinition contains the Logical Model for the mapped parts of the source PROSTHESIS INSTALLED (130.01)"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:logical"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/Provider441"/>
+      </reference>
+      <name value="PROVIDER (44.1)"/>
+      <description value="This StructureDefinition contains the Logical Model for the mapped parts of the source PROVIDER (44.1)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -3124,6 +3178,18 @@
       <name value="V PROVIDER (9000010.06)"/>
       <description value="This StructureDefinition contains the Logical Model for the mapped parts of the source V PROVIDER (9000010.06)"/>
       <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CapabilityStatement"/>
+      </extension>
+      <reference>
+        <reference value="CapabilityStatement/ADERS"/>
+      </reference>
+      <name value="VA Adverse Drug Event Reporting System"/>
+      <description value="This CapabilityStatement contains an example for VA Adverse Drug Event Reporting System"/>
+      <exampleBoolean value="false"/>
+      <groupingId value="groupcs"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
