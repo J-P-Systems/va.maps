@@ -25,7 +25,6 @@ Source: DocumentReferenceDocumentReference
 * subject -> "876: source value from TIU DOCUMENT - PATIENT (8925-.02)" "Pointer to PATIENT/HIS FILE (#9000001)"
 * date -> "877: source value from TIU DOCUMENT - ENTRY DATE/TIME (8925-1201)" "looking into façade pattern guidance on whether this is meaningful. 03/6/23 updated mapping based on LHV feedback"
 * author -> "878: source value from TIU DOCUMENT - AUTHOR/DICTATOR (8925-1202)"
-* author -> "1663: source value from TIU DOCUMENT - SIGNED BY (8925-1502)" "Added signed by as an author since it allows more than one."
 * authenticator -> "879: source value from TIU DOCUMENT - VERIFIED BY (8925-1306)"
 * custodian -> "880: source value from TIU DOCUMENT - DIVISION (8925-1212)" "who maintains the document = VA…. Or maybe a specific? Clinic\nPer 03/02/2023 email from LH, changed the Vista field from 1205 (hospital location) to 1212 (division)."
 * description -> "885: source value from TIU DOCUMENT - SUBJECT (OPTIONAL description) (8925-1701)"
@@ -49,6 +48,7 @@ Source: DocumentReferenceDocumentReference
 * context.practiceSetting -> "904: source value from TIU DOCUMENT - TREATING SPECIALTY (8925-1402)"
 * context.sourcePatientInfo -> "905: target not supported" "a snapshot of patient at time of document"
 * context.related -> "906: target not supported" "other related assets"
+* author -> "1663: source value from TIU DOCUMENT - SIGNED BY (8925-1502)" "Added signed by as an author since it allows more than one."
 
 Mapping: cdw-to-DocumentReferenceDocumentReference
 Id: cdw
@@ -60,7 +60,6 @@ Source: DocumentReferenceDocumentReference
 * subject -> "TIU.TIUDocument.PatientIEN"
 * date -> "TIU.TIUDocument.EntryDateTime"
 * author -> "TIU.TIUDocument.AuthorDictatorStaffIEN"
-* author -> "TIU.TIUDocument.SignedByStaffIEN"
 * authenticator -> "TIU.TIUDocument.VerifiedByStaffIEN"
 * custodian -> "TIU.TIUDocument.InstitutionIEN"
 * description -> "TIU.TIUDocument.DocumentSubject"
@@ -72,6 +71,7 @@ Source: DocumentReferenceDocumentReference
 * context.period.end -> "TIU.TIUDocument.EpisodeEndDateTime"
 * context.facilityType -> "TIU.TIUDocument.DocumentLocationIEN\nDim.Location.LocationType,Dim.Location.LocationType"
 * context.practiceSetting -> "TIU.TIUDocument.TreatingSpecialtyIEN"
+* author -> "TIU.TIUDocument.SignedByStaffIEN"
 
 Mapping: vpr-to-DocumentReferenceDocumentReference
 Id: vpr

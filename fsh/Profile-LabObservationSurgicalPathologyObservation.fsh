@@ -4,7 +4,7 @@ Id: LabObservationSurgicalPathologyObservation
 Title: "Lab Observation: Surgical Pathology Observation"
 Description: "This StructureDefinition contains the maps for VistA file PATIENT (2) to us-core-observation-lab"
 * ^status = #draft
-* subject and category MS
+* category and subject MS
 * subject only Reference(Patient)
 * category = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
 
@@ -12,8 +12,8 @@ Mapping: source-to-LabObservationSurgicalPathologyObservation
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: LabObservationSurgicalPathologyObservation
-* subject -> "844: reference from PATIENT - LABORATORY REFERENCE > LAB DATA - LRDFN (2-63 > 63-.01)" "Pointer from PATIENT (2)"
 * category -> "843: fixed value = http://terminology.hl7.org/CodeSystem/observation-category#laboratory"
+* subject -> "844: reference from PATIENT - LABORATORY REFERENCE > LAB DATA - LRDFN (2-63 > 63-.01)" "Pointer from PATIENT (2)"
 
 Mapping: cdw-to-LabObservationSurgicalPathologyObservation
 Id: cdw

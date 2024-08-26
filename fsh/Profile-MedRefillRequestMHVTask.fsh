@@ -4,9 +4,9 @@ Id: MedRefillRequestMHVTask
 Title: "MedRefillRequestMHV Task"
 Description: "This StructureDefinition contains the maps for VistA file PRESCRIPTION REFILL REQUEST (52.43) to Task"
 * ^status = #draft
-* focus and for and owner and status and note and intent and code MS
-* focus only Reference(MedicationDispenseRefill)
+* for and focus and owner and status and note and intent and code MS
 * for only Reference(Patient)
+* focus only Reference(MedicationDispenseRefill)
 * owner only Reference(Organization)
 * status from http://va.gov/fhir/ValueSet/VSVFRefillRequestStatus
 * intent = #proposal
@@ -15,8 +15,8 @@ Mapping: source-to-MedRefillRequestMHVTask
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: MedRefillRequestMHVTask
-* focus -> "1845: reference from PRESCRIPTION REFILL REQUEST - RX # (52.43-3)"
 * for -> "1844: reference from PRESCRIPTION REFILL REQUEST - PATIENT (52.43-9)"
+* focus -> "1845: reference from PRESCRIPTION REFILL REQUEST - RX # (52.43-3)"
 * owner -> "1846: reference from PRESCRIPTION REFILL REQUEST - INSTITUTION (52.43-4)"
 * status -> "1848: terminologyMaps using VF_RefillRequestStatus on PRESCRIPTION REFILL REQUEST - RESULT (52.43-6)"
 * note -> "1849: source value from PRESCRIPTION REFILL REQUEST - REMARKS (52.43-10)"
@@ -28,8 +28,8 @@ Mapping: cdw-to-MedRefillRequestMHVTask
 Id: cdw
 Title: "Clinical Data Warehouse (CDW)"
 Source: MedRefillRequestMHVTask
-* focus -> "RxOut.RefillRequest.RxNumber"
 * for -> "RxOut.RefillRequest.PatientIEN"
+* focus -> "RxOut.RefillRequest.RxNumber"
 * owner -> "RxOut.RefillRequest.InstitutionCode"
 * status -> "RxOut.RefillRequest.RefillRequestResult"
 * note -> "RxOut.RefillRequest.RefillRequestRemarks"

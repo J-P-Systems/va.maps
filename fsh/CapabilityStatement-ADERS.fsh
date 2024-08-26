@@ -4,7 +4,7 @@ Title: "VA Adverse Drug Event Reporting System"
 Usage: #definition
 * description = "This CapabilityStatement contains an example for VA Adverse Drug Event Reporting System"
 * status = #draft
-* date = "2024-08-24T10:04:17.162Z"
+* date = "2024-08-26T15:23:59.259Z"
 * kind = #requirements
 * fhirVersion = #4.0.1
 * format[0] = #xml

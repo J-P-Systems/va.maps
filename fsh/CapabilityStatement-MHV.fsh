@@ -4,7 +4,7 @@ Title: "My HealtheVet"
 Usage: #definition
 * description = "This CapabilityStatement contains an example for My HealtheVet"
 * status = #draft
-* date = "2024-08-24T10:04:17.161Z"
+* date = "2024-08-26T15:23:59.258Z"
 * kind = #requirements
 * fhirVersion = #4.0.1
 * format[0] = #xml
@@ -15,10 +15,10 @@ Usage: #definition
 * rest.resource[+].type = #Observation
 * rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/ImmunizationObservation"
 * rest.resource[+].type = #MedicationDispense
-* rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/MedicationDispenseRefill"
-* rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/MedicationDispensePartial"
 * rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/MedicationDispenseOriginal"
-* rest.resource[+].type = #Patient
-* rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/Patient"
+* rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/MedicationDispensePartial"
+* rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/MedicationDispenseRefill"
 * rest.resource[+].type = #MedicationRequest
 * rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/MedicationRequestOutpatient"
+* rest.resource[+].type = #Patient
+* rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/Patient"

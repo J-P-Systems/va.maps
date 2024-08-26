@@ -14,7 +14,7 @@ Description: "This StructureDefinition contains the maps for VistA file NEW PERS
 * identifier contains va-DEA 0..1 and va-nr 0..1 and va-VPID 0..1 and va-IEN 0..1
 * address[va-home].country.extension contains http://hl7.org/fhir/StructureDefinition/data-absent-reason named data-absent-reason 0..1
 * address[va-temp].country.extension contains http://hl7.org/fhir/StructureDefinition/data-absent-reason named data-absent-reason 0..1
-* identifier[NPI].value and identifier[NPI].system and identifier[NPI].type and identifier[va-DEA].value and identifier[va-DEA].system and identifier[va-DEA].type and identifier[va-nr].value and identifier[va-nr].system and identifier[va-nr].type and identifier[va-VPID].value and identifier[va-VPID].system and identifier[va-VPID].type and identifier[NPI].period.start and name.text and name.family and name.given and name.prefix and name.suffix and telecom.value and telecom.system and telecom.use and birthDate and qualification.code.text and identifier[va-IEN].value and identifier[va-IEN].system and identifier[va-IEN].type and address[va-home].line and address[va-home].use and address[va-home].city and address[va-home].state and address[va-home].postalCode and address[va-home].country and address[va-home].country.extension[http://hl7.org/fhir/StructureDefinition/data-absent-reason].valueCode and address[va-temp].line and address[va-temp].use and address[va-temp].city and address[va-temp].state and address[va-temp].postalCode and address[va-temp].country and address[va-temp].country.extension[http://hl7.org/fhir/StructureDefinition/data-absent-reason].valueCode and address[va-temp].period.start and address[va-temp].period.end and gender MS
+* identifier[NPI].value and identifier[NPI].system and identifier[NPI].type and identifier[va-DEA].value and identifier[va-DEA].system and identifier[va-DEA].type and identifier[va-nr].value and identifier[va-nr].system and identifier[va-nr].type and identifier[va-VPID].value and identifier[va-VPID].system and identifier[va-VPID].type and identifier[NPI].period.start and name.text and name.family and name.given and name.prefix and name.suffix and telecom.value and telecom.system and telecom.use and birthDate and qualification.code.text and address[va-home].line and address[va-home].use and address[va-home].city and address[va-home].state and address[va-home].postalCode and address[va-temp].line and address[va-temp].use and address[va-temp].city and address[va-temp].state and address[va-temp].postalCode and address[va-temp].period.start and address[va-temp].period.end and identifier[va-IEN].value and identifier[va-IEN].system and identifier[va-IEN].type and address[va-home].country and address[va-home].country.extension[http://hl7.org/fhir/StructureDefinition/data-absent-reason].valueCode and address[va-temp].country and address[va-temp].country.extension[http://hl7.org/fhir/StructureDefinition/data-absent-reason].valueCode and gender MS
 * identifier[NPI].system = "http://hl7.org/fhir/sid/us-npi"
 * identifier[NPI].type = http://terminology.hl7.org/CodeSystem/v2-0203#NPI
 * identifier[va-DEA].system = "urn:oid:2.16.840.1.113883.4.814"
@@ -25,12 +25,12 @@ Description: "This StructureDefinition contains the maps for VistA file NEW PERS
 * identifier[va-VPID].type = http://va.gov/terminology/vistaDefinedTerms/200-9000#VPID
 * telecom.system = #phone
 * telecom.use = #home
+* address[va-home].use = #home
+* address[va-temp].use = #temp
 * identifier[va-IEN].system = "http://va.gov/identifiers/$Sta3n/200"
 * identifier[va-IEN].type = http://va.gov/terminology/vistaDefinedTerms/200-.001#IEN
-* address[va-home].use = #home
 * address[va-home].country.extension contains http://hl7.org/fhir/StructureDefinition/11179-permitted-value-conceptmap named 11179-permitted-value-conceptmap 0..1
 * address[va-home].country.extension[11179-permitted-value-conceptmap].valueCanonical = "http://va.gov/fhir/ConceptMap/CMVFPractitionerCountry"
-* address[va-temp].use = #temp
 * address[va-temp].country.extension contains http://hl7.org/fhir/StructureDefinition/11179-permitted-value-conceptmap named 11179-permitted-value-conceptmap 0..1
 * address[va-temp].country.extension[11179-permitted-value-conceptmap].valueCanonical = "http://va.gov/fhir/ConceptMap/CMVFPractitionerCountry"
 * gender from http://va.gov/fhir/ValueSet/VSVFproviderGender
@@ -62,9 +62,6 @@ Source: Practitioner
 * telecom.use -> "383-2: fixed value = #home" "from mapParameter 2"
 * birthDate -> "394: source value from NEW PERSON - DOB (200-5)"
 * qualification.code.text -> "395: source value from NEW PERSON - DEGREE (200-10.6)" "There is also 12.1 CURRENT DEGREE LEVEL; not in cdw"
-* identifier[va-IEN].value -> "415: source value from NEW PERSON - IEN (200-.001)"
-* identifier[va-IEN].system -> "415-1: fixed value = http://va.gov/identifiers/$Sta3n/200" "from mapParameter 1"
-* identifier[va-IEN].type -> "415-2: fixed value = http://va.gov/terminology/vistaDefinedTerms/200-.001#IEN" "from mapParameter 2"
 * address[va-home].line -> "396: source value from NEW PERSON - STREET ADDRESS 1 (200-.111)" "Changed use case and FHIR Path to Practitioner to align with US Core"
 * address[va-home].use -> "396-1: fixed value = #home" "from mapParameter 1"
 * address[va-home].line -> "397: source value from NEW PERSON - STREET ADDRESS 2 (200-.112)" "Changed use case and FHIR Path to Practitioner to align with US Core"
@@ -72,8 +69,6 @@ Source: Practitioner
 * address[va-home].city -> "399: source value from NEW PERSON - CITY (200-.114)" "Changed use case and FHIR Path to Practitioner to align with US Core"
 * address[va-home].state -> "400: source value from NEW PERSON - STATE (200-.115)" "Changed use case and FHIR Path to Practitioner to align with US Core"
 * address[va-home].postalCode -> "401: source value from NEW PERSON - ZIP CODE (200-.116)" "Changed use case and FHIR Path to Practitioner to align with US Core"
-* address[va-home].country -> "1530: transform using VF_PractitionerCountry on NEW PERSON - STATE (200-.115) case not NULL" "Added country to support Inferno testing (where country is required)"
-* address[va-home].country.extension[http://hl7.org/fhir/StructureDefinition/data-absent-reason].valueCode -> "1531: fixed value = #unknown when NEW PERSON - STATE (200-.115) case NULL" "If country is not known (i.e. \"Europe\"), use the Data Absent Reason field with \"unknown\"\n\nAdded country to support Inferno testing (where country is required)"
 * address[va-temp].line -> "402: source value from NEW PERSON - TEMPORARY ADDRESS 1 (200-.1211)" "Changed use case and FHIR Path to Practitioner to fix mapping and align with US Core"
 * address[va-temp].use -> "402-1: fixed value = #temp" "from mapParameter 1"
 * address[va-temp].line -> "403: source value from NEW PERSON - TEMPORARY ADDRESS 2 (200-.1212)"
@@ -81,10 +76,15 @@ Source: Practitioner
 * address[va-temp].city -> "405: source value from NEW PERSON - TEMPORARY CITY (200-.1214)"
 * address[va-temp].state -> "406: source value from NEW PERSON - TEMPORARY STATE (200-.1215)"
 * address[va-temp].postalCode -> "407: source value from NEW PERSON - TEMPORARY ZIP CODE (200-.1216)"
-* address[va-temp].country -> "1532: transform using VF_PractitionerCountry on NEW PERSON - TEMPORARY STATE (200-.1215) case not NULL" "Added country to support Inferno testing (where country is required)"
-* address[va-temp].country.extension[http://hl7.org/fhir/StructureDefinition/data-absent-reason].valueCode -> "1533: fixed value = #unknown when NEW PERSON - TEMPORARY STATE (200-.1215) case NULL" "If country is not known (i.e. \"Europe\"), use the Data Absent Reason field with \"unknown\"\n\nAdded country to support Inferno testing (where country is required)"
 * address[va-temp].period.start -> "408: source value from NEW PERSON - START DATE OF TEMP ADDRES (200-.1217)"
 * address[va-temp].period.end -> "409: source value from NEW PERSON - END DATE OF TEMP ADDRESS (200-.1218)"
+* identifier[va-IEN].value -> "415: source value from NEW PERSON - IEN (200-.001)"
+* identifier[va-IEN].system -> "415-1: fixed value = http://va.gov/identifiers/$Sta3n/200" "from mapParameter 1"
+* identifier[va-IEN].type -> "415-2: fixed value = http://va.gov/terminology/vistaDefinedTerms/200-.001#IEN" "from mapParameter 2"
+* address[va-home].country -> "1530: transform using VF_PractitionerCountry on NEW PERSON - STATE (200-.115) case not NULL" "Added country to support Inferno testing (where country is required)"
+* address[va-home].country.extension[http://hl7.org/fhir/StructureDefinition/data-absent-reason].valueCode -> "1531: fixed value = #unknown when NEW PERSON - STATE (200-.115) case NULL" "If country is not known (i.e. \"Europe\"), use the Data Absent Reason field with \"unknown\"\n\nAdded country to support Inferno testing (where country is required)"
+* address[va-temp].country -> "1532: transform using VF_PractitionerCountry on NEW PERSON - TEMPORARY STATE (200-.1215) case not NULL" "Added country to support Inferno testing (where country is required)"
+* address[va-temp].country.extension[http://hl7.org/fhir/StructureDefinition/data-absent-reason].valueCode -> "1533: fixed value = #unknown when NEW PERSON - TEMPORARY STATE (200-.1215) case NULL" "If country is not known (i.e. \"Europe\"), use the Data Absent Reason field with \"unknown\"\n\nAdded country to support Inferno testing (where country is required)"
 * gender -> "1790: terminologyMaps using VF_providerGender on NEW PERSON - SEX (200-4)" "Added per LH request to help support deduplication fingerprints"
 
 Mapping: cdw-to-Practitioner
@@ -109,16 +109,16 @@ Source: Practitioner
 * address[va-home].city -> "SStaff.PrescribingProvider.City,SStaff.SStaff.City"
 * address[va-home].state -> "SStaff.PrescribingProvider.StateIEN,SStaff.SStaff.StateName"
 * address[va-home].postalCode -> "SStaff.PrescribingProvider.ZipCode,SStaff.SStaff.ZipCode"
-* address[va-home].country -> "SStaff.PrescribingProvider.StateIEN,SStaff.SStaff.StateName"
-* address[va-home].country.extension[http://hl7.org/fhir/StructureDefinition/data-absent-reason].valueCode -> "SStaff.PrescribingProvider.StateIEN,SStaff.SStaff.StateName"
 * address[va-temp].line -> "SStaff.SStaff.TemporaryAddress1"
 * address[va-temp].line -> "SStaff.SStaff.TemporaryAddress2"
 * address[va-temp].line -> "SStaff.SStaff.TemporaryAddress3"
 * address[va-temp].city -> "SStaff.SStaff.TemporaryCity"
 * address[va-temp].state -> "SStaff.SStaff.TemporaryStateName"
 * address[va-temp].postalCode -> "SStaff.SStaff.TemporaryZipCode"
-* address[va-temp].country -> "SStaff.SStaff.TemporaryStateName"
-* address[va-temp].country.extension[http://hl7.org/fhir/StructureDefinition/data-absent-reason].valueCode -> "SStaff.SStaff.TemporaryStateName"
 * address[va-temp].period.start -> "SStaff.SStaff.TemporaryAddressStartDateTime"
 * address[va-temp].period.end -> "SStaff.SStaff.TemporaryAddressEndDateTime"
+* address[va-home].country -> "SStaff.PrescribingProvider.StateIEN,SStaff.SStaff.StateName"
+* address[va-home].country.extension[http://hl7.org/fhir/StructureDefinition/data-absent-reason].valueCode -> "SStaff.PrescribingProvider.StateIEN,SStaff.SStaff.StateName"
+* address[va-temp].country -> "SStaff.SStaff.TemporaryStateName"
+* address[va-temp].country.extension[http://hl7.org/fhir/StructureDefinition/data-absent-reason].valueCode -> "SStaff.SStaff.TemporaryStateName"
 * gender -> "SStaff.SStaff.Gender,Staff.Staff.Gender"
