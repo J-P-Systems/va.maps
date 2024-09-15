@@ -6,7 +6,6 @@ Description: "This StructureDefinition contains the maps for VistA file PATIENT 
 * ^status = #draft
 * ^abstract = true
 * category and subject MS
-* subject only Reference(Patient)
 * category = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
 
 Mapping: source-to-LabObservationObservation

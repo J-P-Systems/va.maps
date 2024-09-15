@@ -4,7 +4,7 @@ Title: "Lighthouse Clinical Health API"
 Usage: #definition
 * description = "This CapabilityStatement contains an example for Lighthouse Clinical Health API"
 * status = #draft
-* date = "2024-08-26T15:23:59.257Z"
+* date = "2024-09-15T08:21:55.574Z"
 * kind = #requirements
 * fhirVersion = #4.0.1
 * format[0] = #xml
@@ -13,17 +13,17 @@ Usage: #definition
 * rest.resource[+].type = #AllergyIntolerance
 * rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/AllergyIntolerance"
 * rest.resource[+].type = #Observation
-* rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/LabObservationObservation"
+* rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/LabObservationSurgicalPathologyObservation"
 * rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/LabObservationChemhemtoxriaserObservation"
-* rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/LabObservationCytopathologyObservation"
 * rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/LabObservationElectronMicroscopyObservation"
 * rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/LabObservationMicrobiologyObservation"
 * rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/LabObservationMicrobiologyBacteriologyObservation"
-* rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/LabObservationMicrobiologyMycobacteriologyObservation"
-* rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/LabObservationMicrobiologyMycologyObservation"
 * rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/LabObservationMicrobiologyParasitologyObservation"
+* rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/LabObservationMicrobiologyMycologyObservation"
+* rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/LabObservationMicrobiologyMycobacteriologyObservation"
 * rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/LabObservationMicrobiologyVirologyObservation"
-* rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/LabObservationSurgicalPathologyObservation"
+* rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/LabObservationCytopathologyObservation"
+* rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/LabObservationObservation"
 * rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/SmokingStatusObservation"
 * rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/VitalSigns"
 * rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/VitalSignsBP"

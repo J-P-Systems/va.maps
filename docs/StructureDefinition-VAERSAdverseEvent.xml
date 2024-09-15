@@ -14,11 +14,11 @@
 <tr><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3goXBCwdPqAP0wAAAldJREFUOMuNk0tIlFEYhp9z/vE2jHkhxXA0zJCMitrUQlq4lnSltEqCFhFG2MJFhIvIFpkEWaTQqjaWZRkp0g26URZkTpbaaOJkDqk10szoODP//7XIMUe0elcfnPd9zsfLOYplGrpRwZaqTtw3K7PtGem7Q6FoidbGgqHVy/HRb669R+56zx7eRV1L31JGxYbBtjKK93cxeqfyQHbehkZbUkK20goELEuIzEd+dHS+qz/Y8PTSif0FnGkbiwcAjHaU1+QWOptFiyCLp/LnKptpqIuXHx6rbR26kJcBX3yLgBfnd7CxwJmflpP2wUg0HIAoUUpZBmKzELGWcN8nAr6Gpu7tLU/CkwAaoKTWRSQyt89Q8w6J+oVQkKnBoblH7V0PPvUOvDYXfopE/SJmALsxnVm6LbkotrUtNowMeIrVrBcBpaMmdS0j9df7abpSuy7HWehwJdt1lhVwi/J58U5beXGAF6c3UXLycw1wdFklArBn87xdh0ZsZtArghBdAA3+OEDVubG4UEzP6x1FOWneHh2VDAHBAt80IbdXDcesNoCvs3E5AFyNSU5nbrDPZpcUEQQTFZiEVx+51fxMhhyJEAgvlriadIJZZksRuwBYMOPBbO3hePVVqgEJhFeUuFLhIPkRP6BQLIBrmMenujm/3g4zc398awIe90Zb5A1vREALqneMcYgP/xVQWlG+Ncu5vgwwlaUNx+3799rfe96u9K0JSDXcOzOTJg4B6IgmXfsygc7/Bvg9g9E58/cDVmGIBOP/zT8Bz1zqWqpbXIsd0O9hajXfL6u4BaOS6SeWAAAAAElFTkSuQmCC" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr></table></div>
   </text>
   <url value="http://va.gov/fhir/StructureDefinition/VAERSAdverseEvent"/>
-  <version value="0.65.345"/>
+  <version value="0.65.348"/>
   <name value="VAERSAdverseEvent"/>
   <title value="VAERS AdverseEvent"/>
   <status value="draft"/>
-  <date value="2024-08-26T15:27:18+00:00"/>
+  <date value="2024-09-15T08:33:43+00:00"/>
   <publisher value="VA"/>
   <contact>
     <name value="VA"/>
@@ -439,13 +439,13 @@
         <valueSet value="http://hl7.org/fhir/ValueSet/adverse-event-actuality|4.0.1"/>
       </binding>
       <mapping>
-        <identity value="w5"/>
-        <map value="FiveWs.class"/>
-      </mapping>
-      <mapping>
         <identity value="aders"/>
         <map value="1877-1: fixed value = #actual"/>
         <comment value="from mapParameter 1"/>
+      </mapping>
+      <mapping>
+        <identity value="w5"/>
+        <map value="FiveWs.class"/>
       </mapping>
     </element>
     <element id="AdverseEvent.category">
@@ -519,13 +519,12 @@
         <valueSet value="http://hl7.org/fhir/ValueSet/adverse-event-type"/>
       </binding>
       <mapping>
-        <identity value="w5"/>
-        <map value="FiveWs.what[x]"/>
+        <identity value="aders"/>
+        <map value="1905: source value from ADERS - 18_VAE_Desc"/>
       </mapping>
       <mapping>
-        <identity value="aders"/>
-        <map value="1905: source value from ADERS - VAE_Desc (A-18)"/>
-        <comment value="split the source value in event.codings → medra codes + displays&#xA;And put source in event.text"/>
+        <identity value="w5"/>
+        <map value="FiveWs.what[x]"/>
       </mapping>
     </element>
     <element id="AdverseEvent.subject">
@@ -558,12 +557,12 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
-        <identity value="w5"/>
-        <map value="FiveWs.who"/>
+        <identity value="aders"/>
+        <map value="1877: reference from ADERS - 0_Pt_ICN_Full"/>
       </mapping>
       <mapping>
-        <identity value="aders"/>
-        <map value="1877: reference from ADERS - Pt_ICN_Full (A-0)"/>
+        <identity value="w5"/>
+        <map value="FiveWs.who"/>
       </mapping>
     </element>
     <element id="AdverseEvent.encounter">
@@ -623,12 +622,12 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
-        <identity value="w5"/>
-        <map value="FiveWs.init"/>
+        <identity value="aders"/>
+        <map value="1881: transform using concat(4_VacDate, 4_VacTime)"/>
       </mapping>
       <mapping>
-        <identity value="aders"/>
-        <map value="1881: transform using concat(4_VacDate, 4_VacTime) on ADERS - (A-)"/>
+        <identity value="w5"/>
+        <map value="FiveWs.init"/>
       </mapping>
     </element>
     <element id="AdverseEvent.detected">
@@ -839,51 +838,51 @@
       </binding>
       <mapping>
         <identity value="aders"/>
-        <map value="1906: source value from ADERS - VAE_Outcome_DrVisit (A-21.11)"/>
+        <map value="1906: source value from ADERS - 21_VAE_Outcome_DrVisit"/>
       </mapping>
       <mapping>
         <identity value="aders"/>
-        <map value="1907: source value from ADERS - VAE_Outcome_ErED (A-21.12)"/>
+        <map value="1907: source value from ADERS - 21_VAE_Outcome_ErED"/>
       </mapping>
       <mapping>
         <identity value="aders"/>
-        <map value="1908: source value from ADERS - HospStay (A-21.21)"/>
+        <map value="1908: source value from ADERS - 21_HospStay"/>
       </mapping>
       <mapping>
         <identity value="aders"/>
-        <map value="1909: source value from ADERS - HospStay_NumDays (A-21.22)"/>
+        <map value="1909: source value from ADERS - 21_HospStay_NumDays"/>
       </mapping>
       <mapping>
         <identity value="aders"/>
-        <map value="1910: source value from ADERS - HospStay_Name (A-21.23)"/>
+        <map value="1910: source value from ADERS - 21_HospStay_Name"/>
       </mapping>
       <mapping>
         <identity value="aders"/>
-        <map value="1911: source value from ADERS - HospStay_City (A-21.24)"/>
+        <map value="1911: source value from ADERS - 21_HospStay_City"/>
       </mapping>
       <mapping>
         <identity value="aders"/>
-        <map value="1912: source value from ADERS - HospStay_State (A-21.25)"/>
+        <map value="1912: source value from ADERS - 21_HospStay_State"/>
       </mapping>
       <mapping>
         <identity value="aders"/>
-        <map value="1913: source value from ADERS - ProlongHospStay (A-21.3)"/>
+        <map value="1913: source value from ADERS - 21_ProlongHospStay"/>
       </mapping>
       <mapping>
         <identity value="aders"/>
-        <map value="1914: source value from ADERS - LTI (A-21.4)"/>
+        <map value="1914: source value from ADERS - 21_LTI"/>
       </mapping>
       <mapping>
         <identity value="aders"/>
-        <map value="1915: source value from ADERS - Dis (A-21.5)"/>
+        <map value="1915: source value from ADERS - 21_Dis"/>
       </mapping>
       <mapping>
         <identity value="aders"/>
-        <map value="1918: source value from ADERS - CA_BD (A-21.8)"/>
+        <map value="1918: source value from ADERS - 21_CA_BD"/>
       </mapping>
       <mapping>
         <identity value="aders"/>
-        <map value="1919: source value from ADERS - NOA (A-21.9)"/>
+        <map value="1919: source value from ADERS - 21_NOA"/>
       </mapping>
     </element>
     <element id="AdverseEvent.recorder">
@@ -1468,8 +1467,7 @@
       <mustSupport value="true"/>
       <mapping>
         <identity value="aders"/>
-        <map value="1905: source value from ADERS - VAE_Desc (A-18)"/>
-        <comment value="split the source value in event.codings → medra codes + displays&#xA;And put source in event.text"/>
+        <map value="1905: source value from ADERS - 18_VAE_Desc"/>
       </mapping>
     </element>
     <element id="AdverseEvent.subject">
@@ -1481,7 +1479,7 @@
       <mustSupport value="true"/>
       <mapping>
         <identity value="aders"/>
-        <map value="1877: reference from ADERS - Pt_ICN_Full (A-0)"/>
+        <map value="1877: reference from ADERS - 0_Pt_ICN_Full"/>
       </mapping>
     </element>
     <element id="AdverseEvent.date">
@@ -1489,7 +1487,7 @@
       <mustSupport value="true"/>
       <mapping>
         <identity value="aders"/>
-        <map value="1881: transform using concat(4_VacDate, 4_VacTime) on ADERS - (A-)"/>
+        <map value="1881: transform using concat(4_VacDate, 4_VacTime)"/>
       </mapping>
     </element>
     <element id="AdverseEvent.outcome">
@@ -1497,51 +1495,51 @@
       <mustSupport value="true"/>
       <mapping>
         <identity value="aders"/>
-        <map value="1906: source value from ADERS - VAE_Outcome_DrVisit (A-21.11)"/>
+        <map value="1906: source value from ADERS - 21_VAE_Outcome_DrVisit"/>
       </mapping>
       <mapping>
         <identity value="aders"/>
-        <map value="1907: source value from ADERS - VAE_Outcome_ErED (A-21.12)"/>
+        <map value="1907: source value from ADERS - 21_VAE_Outcome_ErED"/>
       </mapping>
       <mapping>
         <identity value="aders"/>
-        <map value="1908: source value from ADERS - HospStay (A-21.21)"/>
+        <map value="1908: source value from ADERS - 21_HospStay"/>
       </mapping>
       <mapping>
         <identity value="aders"/>
-        <map value="1909: source value from ADERS - HospStay_NumDays (A-21.22)"/>
+        <map value="1909: source value from ADERS - 21_HospStay_NumDays"/>
       </mapping>
       <mapping>
         <identity value="aders"/>
-        <map value="1910: source value from ADERS - HospStay_Name (A-21.23)"/>
+        <map value="1910: source value from ADERS - 21_HospStay_Name"/>
       </mapping>
       <mapping>
         <identity value="aders"/>
-        <map value="1911: source value from ADERS - HospStay_City (A-21.24)"/>
+        <map value="1911: source value from ADERS - 21_HospStay_City"/>
       </mapping>
       <mapping>
         <identity value="aders"/>
-        <map value="1912: source value from ADERS - HospStay_State (A-21.25)"/>
+        <map value="1912: source value from ADERS - 21_HospStay_State"/>
       </mapping>
       <mapping>
         <identity value="aders"/>
-        <map value="1913: source value from ADERS - ProlongHospStay (A-21.3)"/>
+        <map value="1913: source value from ADERS - 21_ProlongHospStay"/>
       </mapping>
       <mapping>
         <identity value="aders"/>
-        <map value="1914: source value from ADERS - LTI (A-21.4)"/>
+        <map value="1914: source value from ADERS - 21_LTI"/>
       </mapping>
       <mapping>
         <identity value="aders"/>
-        <map value="1915: source value from ADERS - Dis (A-21.5)"/>
+        <map value="1915: source value from ADERS - 21_Dis"/>
       </mapping>
       <mapping>
         <identity value="aders"/>
-        <map value="1918: source value from ADERS - CA_BD (A-21.8)"/>
+        <map value="1918: source value from ADERS - 21_CA_BD"/>
       </mapping>
       <mapping>
         <identity value="aders"/>
-        <map value="1919: source value from ADERS - NOA (A-21.9)"/>
+        <map value="1919: source value from ADERS - 21_NOA"/>
       </mapping>
     </element>
     <element id="AdverseEvent.suspectEntity.instance">

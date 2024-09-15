@@ -33,11 +33,11 @@
 <tr><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3goXBCwdPqAP0wAAAldJREFUOMuNk0tIlFEYhp9z/vE2jHkhxXA0zJCMitrUQlq4lnSltEqCFhFG2MJFhIvIFpkEWaTQqjaWZRkp0g26URZkTpbaaOJkDqk10szoODP//7XIMUe0elcfnPd9zsfLOYplGrpRwZaqTtw3K7PtGem7Q6FoidbGgqHVy/HRb669R+56zx7eRV1L31JGxYbBtjKK93cxeqfyQHbehkZbUkK20goELEuIzEd+dHS+qz/Y8PTSif0FnGkbiwcAjHaU1+QWOptFiyCLp/LnKptpqIuXHx6rbR26kJcBX3yLgBfnd7CxwJmflpP2wUg0HIAoUUpZBmKzELGWcN8nAr6Gpu7tLU/CkwAaoKTWRSQyt89Q8w6J+oVQkKnBoblH7V0PPvUOvDYXfopE/SJmALsxnVm6LbkotrUtNowMeIrVrBcBpaMmdS0j9df7abpSuy7HWehwJdt1lhVwi/J58U5beXGAF6c3UXLycw1wdFklArBn87xdh0ZsZtArghBdAA3+OEDVubG4UEzP6x1FOWneHh2VDAHBAt80IbdXDcesNoCvs3E5AFyNSU5nbrDPZpcUEQQTFZiEVx+51fxMhhyJEAgvlriadIJZZksRuwBYMOPBbO3hePVVqgEJhFeUuFLhIPkRP6BQLIBrmMenujm/3g4zc398awIe90Zb5A1vREALqneMcYgP/xVQWlG+Ncu5vgwwlaUNx+3799rfe96u9K0JSDXcOzOTJg4B6IgmXfsygc7/Bvg9g9E58/cDVmGIBOP/zT8Bz1zqWqpbXIsd0O9hajXfL6u4BaOS6SeWAAAAAElFTkSuQmCC" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr></table></div>
   </text>
   <url value="http://va.gov/fhir/StructureDefinition/Location"/>
-  <version value="0.65.345"/>
+  <version value="0.65.348"/>
   <name value="Location"/>
   <title value="Location"/>
   <status value="draft"/>
-  <date value="2024-08-26T15:27:18+00:00"/>
+  <date value="2024-09-15T08:33:43+00:00"/>
   <publisher value="VA"/>
   <contact>
     <name value="VA"/>
@@ -631,6 +631,11 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="755-1: fixed value = http://va.gov/identifiers/$Sta3n/44"/>
+        <comment value="from mapParameter 1"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="CX.4 / EI-2-4"/>
       </mapping>
@@ -641,11 +646,6 @@
       <mapping>
         <identity value="servd"/>
         <map value="./IdentifierType"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="755-1: fixed value = http://va.gov/identifiers/$Sta3n/44"/>
-        <comment value="from mapParameter 1"/>
       </mapping>
     </element>
     <element id="Location.identifier.value">
@@ -679,6 +679,10 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="755: source value from HOSPITAL LOCATION - IEN (44-.001)"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="CX.1 / EI.1"/>
       </mapping>
@@ -689,10 +693,6 @@
       <mapping>
         <identity value="servd"/>
         <map value="./Value"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="755: source value from HOSPITAL LOCATION - IEN (44-.001)"/>
       </mapping>
     </element>
     <element id="Location.identifier.period">
@@ -802,17 +802,17 @@
         <valueSet value="http://va.gov/fhir/ValueSet/VSVFLocationStatus"/>
       </binding>
       <mapping>
+        <identity value="vista"/>
+        <map value="1278: terminologyMaps using VF_LocationStatus"/>
+        <comment value="Derive somehow from 44-2505 INACTIVATE 44-2506 REACTIVATE  &#xA;Or use VAST, not ViSTA."/>
+      </mapping>
+      <mapping>
         <identity value="w5"/>
         <map value="FiveWs.status"/>
       </mapping>
       <mapping>
         <identity value="rim"/>
         <map value=".statusCode"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1278: terminologyMaps using VF_LocationStatus"/>
-        <comment value="Derive somehow from 44-2505 INACTIVATE 44-2506 REACTIVATE  &#xA;Or use VAST, not ViSTA."/>
       </mapping>
     </element>
     <element id="Location.operationalStatus">
@@ -883,20 +883,20 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
-        <identity value="rim"/>
-        <map value=".name"/>
-      </mapping>
-      <mapping>
-        <identity value="servd"/>
-        <map value="./PrimaryAddress and ./OtherAddresses"/>
-      </mapping>
-      <mapping>
         <identity value="vista"/>
         <map value="756: source value from HOSPITAL LOCATION - NAME (44-.01)"/>
       </mapping>
       <mapping>
         <identity value="cdw"/>
         <map value="Dim.Location.LocationName,Dim.Location.LocationName"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value=".name"/>
+      </mapping>
+      <mapping>
+        <identity value="servd"/>
+        <map value="./PrimaryAddress and ./OtherAddresses"/>
       </mapping>
     </element>
     <element id="Location.alias">
@@ -927,10 +927,6 @@
       <isModifier value="false"/>
       <isSummary value="false"/>
       <mapping>
-        <identity value="rim"/>
-        <map value=".name"/>
-      </mapping>
-      <mapping>
         <identity value="vista"/>
         <map value="1276: source value from HOSPITAL LOCATION - ABBREVIATION (44-1)"/>
       </mapping>
@@ -941,6 +937,10 @@
       <mapping>
         <identity value="cdw"/>
         <map value="Dim.Location.LocationAbbreviation,Dim.Location.LocationAbbreviation"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value=".name"/>
       </mapping>
     </element>
     <element id="Location.description">
@@ -970,16 +970,16 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
-        <identity value="rim"/>
-        <map value=".playingEntity[classCode=PLC determinerCode=INSTANCE].desc"/>
-      </mapping>
-      <mapping>
         <identity value="vista"/>
         <map value="1279: source value from HOSPITAL LOCATION - PATIENT FRIENDLY NAME (44-60)"/>
       </mapping>
       <mapping>
         <identity value="cdw"/>
         <map value="Dim.Location.PatientFriendlyLocationName,Dim.Location.PatientFriendlyLocationName"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value=".playingEntity[classCode=PLC determinerCode=INSTANCE].desc"/>
       </mapping>
     </element>
     <element id="Location.mode">
@@ -1019,17 +1019,17 @@
         <valueSet value="http://hl7.org/fhir/ValueSet/location-mode|4.0.1"/>
       </binding>
       <mapping>
+        <identity value="vista"/>
+        <map value="1806: fixed value = #instance"/>
+        <comment value="Added 4/5/24 to match LH PHAPI"/>
+      </mapping>
+      <mapping>
         <identity value="w5"/>
         <map value="FiveWs.class"/>
       </mapping>
       <mapping>
         <identity value="rim"/>
         <map value=".playingEntity[classCode=PLC].determinerCode"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1806: fixed value = #instance"/>
-        <comment value="Added 4/5/24 to match LH PHAPI"/>
       </mapping>
     </element>
     <element id="Location.type">
@@ -1216,6 +1216,15 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1412: source value from HOSPITAL LOCATION - SERVICE (44-9)"/>
+        <comment value="could map Medical Service text to FHIR type valueset, e.g.&#xA;&quot;NEUROLOGY&quot; to &quot;NEUR Neurology clinic&quot;&#xA;Or is this combination of TREATEMENT SPECIALTY (9.5) and SERVICE/SECTION? and STOP CODE?"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Dim.Location.MedicalService,Dim.Location.MedicalService"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="C*E.9. But note many systems use C*E.2 for this"/>
       </mapping>
@@ -1226,15 +1235,6 @@
       <mapping>
         <identity value="orim"/>
         <map value="fhir:CodeableConcept.text rdfs:subPropertyOf dt:CD.originalText"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1412: source value from HOSPITAL LOCATION - SERVICE (44-9)"/>
-        <comment value="could map Medical Service text to FHIR type valueset, e.g.&#xA;&quot;NEUROLOGY&quot; to &quot;NEUR Neurology clinic&quot;&#xA;Or is this combination of TREATEMENT SPECIALTY (9.5) and SERVICE/SECTION? and STOP CODE?"/>
-      </mapping>
-      <mapping>
-        <identity value="cdw"/>
-        <map value="Dim.Location.MedicalService,Dim.Location.MedicalService"/>
       </mapping>
     </element>
     <element id="Location.telecom">
@@ -1376,6 +1376,11 @@
         <valueSet value="http://hl7.org/fhir/ValueSet/contact-point-system|4.0.1"/>
       </binding>
       <mapping>
+        <identity value="vista"/>
+        <map value="1280-1: fixed value = #phone"/>
+        <comment value="from mapParameter 1"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="XTN.3"/>
       </mapping>
@@ -1386,11 +1391,6 @@
       <mapping>
         <identity value="servd"/>
         <map value="./ContactPointType"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1280-1: fixed value = #phone"/>
-        <comment value="from mapParameter 1"/>
       </mapping>
     </element>
     <element id="Location.telecom.value">
@@ -1421,6 +1421,14 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1280: transform using concat (44-99,&quot; ext. &quot;,44-99.1) on HOSPITAL LOCATION - TELEPHONE (44-99)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Dim.Location.PhoneNumber,Dim.Location.PhoneNumber"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="XTN.1 (or XTN.12)"/>
       </mapping>
@@ -1431,14 +1439,6 @@
       <mapping>
         <identity value="servd"/>
         <map value="./Value"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1280: transform using concat (44-99,&quot; ext. &quot;,44-99.1) on HOSPITAL LOCATION - TELEPHONE (44-99)"/>
-      </mapping>
-      <mapping>
-        <identity value="cdw"/>
-        <map value="Dim.Location.PhoneNumber,Dim.Location.PhoneNumber"/>
       </mapping>
     </element>
     <element id="Location.telecom.use">
@@ -1479,6 +1479,11 @@
         <valueSet value="http://hl7.org/fhir/ValueSet/contact-point-use|4.0.1"/>
       </binding>
       <mapping>
+        <identity value="vista"/>
+        <map value="1280-2: fixed value = #work"/>
+        <comment value="from mapParameter 2"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="XTN.2 - but often indicated by field"/>
       </mapping>
@@ -1489,11 +1494,6 @@
       <mapping>
         <identity value="servd"/>
         <map value="./ContactPointPurpose"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1280-2: fixed value = #work"/>
-        <comment value="from mapParameter 2"/>
       </mapping>
     </element>
     <element id="Location.telecom.rank">
@@ -1768,6 +1768,14 @@
         <valueSet value="http://hl7.org/fhir/ValueSet/address-type|4.0.1"/>
       </binding>
       <mapping>
+        <identity value="vista"/>
+        <map value="1322: fixed value = #physical when HOSPITAL LOCATION - INSTITUTION (44-3)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Dim.Location.InstitutionIEN"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="XAD.18"/>
       </mapping>
@@ -1778,14 +1786,6 @@
       <mapping>
         <identity value="vcard"/>
         <map value="address type parameter"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1322: fixed value = #physical when HOSPITAL LOCATION - INSTITUTION (44-3)"/>
-      </mapping>
-      <mapping>
-        <identity value="cdw"/>
-        <map value="Dim.Location.InstitutionIEN"/>
       </mapping>
     </element>
     <element id="Location.address.text">
@@ -1862,22 +1862,6 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
-        <identity value="v2"/>
-        <map value="XAD.1 + XAD.2 (note: XAD.1 and XAD.2 have different meanings for a company address than for a person address)"/>
-      </mapping>
-      <mapping>
-        <identity value="rim"/>
-        <map value="AD.part[parttype = AL]"/>
-      </mapping>
-      <mapping>
-        <identity value="vcard"/>
-        <map value="street"/>
-      </mapping>
-      <mapping>
-        <identity value="servd"/>
-        <map value="./StreetAddress (newline delimitted)"/>
-      </mapping>
-      <mapping>
         <identity value="vista"/>
         <map value="1317: source value from HOSPITAL LOCATION - INSTITUTION &gt; INSTITUTION - STREET ADDR. 1 (44-3 &gt; 4-1.01)"/>
       </mapping>
@@ -1892,6 +1876,22 @@
       <mapping>
         <identity value="cdw"/>
         <map value="Dim.Location.InstitutionIEN&#xA;Dim.Institution.StreetAddress2,Dim.Institution.StreetAddress2,Dim.InstitutionTimeZone.StreetAddress2,NDim.MVIInstitution.StreetAddress2"/>
+      </mapping>
+      <mapping>
+        <identity value="v2"/>
+        <map value="XAD.1 + XAD.2 (note: XAD.1 and XAD.2 have different meanings for a company address than for a person address)"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="AD.part[parttype = AL]"/>
+      </mapping>
+      <mapping>
+        <identity value="vcard"/>
+        <map value="street"/>
+      </mapping>
+      <mapping>
+        <identity value="servd"/>
+        <map value="./StreetAddress (newline delimitted)"/>
       </mapping>
     </element>
     <element id="Location.address.city">
@@ -1925,6 +1925,14 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1319: source value from HOSPITAL LOCATION - INSTITUTION &gt; INSTITUTION - CITY (44-3 &gt; 4-1.03)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Dim.Location.InstitutionIEN&#xA;Dim.Institution.City,Dim.Institution.City,Dim.InstitutionTimeZone.City,NDim.MVIInstitution.City"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="XAD.3"/>
       </mapping>
@@ -1939,14 +1947,6 @@
       <mapping>
         <identity value="servd"/>
         <map value="./Jurisdiction"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1319: source value from HOSPITAL LOCATION - INSTITUTION &gt; INSTITUTION - CITY (44-3 &gt; 4-1.03)"/>
-      </mapping>
-      <mapping>
-        <identity value="cdw"/>
-        <map value="Dim.Location.InstitutionIEN&#xA;Dim.Institution.City,Dim.Institution.City,Dim.InstitutionTimeZone.City,NDim.MVIInstitution.City"/>
       </mapping>
     </element>
     <element id="Location.address.district">
@@ -1981,20 +1981,20 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
-        <identity value="v2"/>
-        <map value="XAD.9"/>
-      </mapping>
-      <mapping>
-        <identity value="rim"/>
-        <map value="AD.part[parttype = CNT | CPA]"/>
-      </mapping>
-      <mapping>
         <identity value="vista"/>
         <map value="1316: source value from HOSPITAL LOCATION - INSTITUTION &gt; INSTITUTION - DISTRICT (44-3 &gt; 4-.03)"/>
       </mapping>
       <mapping>
         <identity value="cdw"/>
         <map value="Dim.Location.InstitutionIEN&#xA;Dim.Institution.MedicalDistrict,Dim.Institution.MedicalDistrict,NDim.MVIInstitution.MedicalDistrict"/>
+      </mapping>
+      <mapping>
+        <identity value="v2"/>
+        <map value="XAD.9"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="AD.part[parttype = CNT | CPA]"/>
       </mapping>
     </element>
     <element id="Location.address.state">
@@ -2030,6 +2030,14 @@
         <valueSet value="http://hl7.org/fhir/us/core/ValueSet/us-core-usps-state"/>
       </binding>
       <mapping>
+        <identity value="vista"/>
+        <map value="1315: source value from HOSPITAL LOCATION - INSTITUTION &gt; INSTITUTION - STATE &gt; STATE - ABBREVIATION (44-3 &gt; 4-.02 &gt; 5-1)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Dim.Location.InstitutionIEN"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="XAD.4"/>
       </mapping>
@@ -2048,14 +2056,6 @@
       <mapping>
         <identity value="servd"/>
         <map value="./Sites"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1315: source value from HOSPITAL LOCATION - INSTITUTION &gt; INSTITUTION - STATE &gt; STATE - ABBREVIATION (44-3 &gt; 4-.02 &gt; 5-1)"/>
-      </mapping>
-      <mapping>
-        <identity value="cdw"/>
-        <map value="Dim.Location.InstitutionIEN"/>
       </mapping>
     </element>
     <element id="Location.address.postalCode">
@@ -2089,6 +2089,14 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1320: source value from HOSPITAL LOCATION - INSTITUTION &gt; INSTITUTION - ZIP (44-3 &gt; 4-1.04)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Dim.Location.InstitutionIEN&#xA;Dim.Institution.Zip,Dim.Institution.Zip,Dim.InstitutionTimeZone.Zip,NDim.MVIInstitution.Zip"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="XAD.5"/>
       </mapping>
@@ -2103,14 +2111,6 @@
       <mapping>
         <identity value="servd"/>
         <map value="./PostalIdentificationCode"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1320: source value from HOSPITAL LOCATION - INSTITUTION &gt; INSTITUTION - ZIP (44-3 &gt; 4-1.04)"/>
-      </mapping>
-      <mapping>
-        <identity value="cdw"/>
-        <map value="Dim.Location.InstitutionIEN&#xA;Dim.Institution.Zip,Dim.Institution.Zip,Dim.InstitutionTimeZone.Zip,NDim.MVIInstitution.Zip"/>
       </mapping>
     </element>
     <element id="Location.address.country">
@@ -2140,6 +2140,14 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1405: source value from HOSPITAL LOCATION - INSTITUTION &gt; INSTITUTION - COUNTRY &gt; COUNTRY CODE - CODE (44-3 &gt; 4-801 &gt; 779.004-.01)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Dim.Location.InstitutionIEN"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="XAD.6"/>
       </mapping>
@@ -2154,14 +2162,6 @@
       <mapping>
         <identity value="servd"/>
         <map value="./Country"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1405: source value from HOSPITAL LOCATION - INSTITUTION &gt; INSTITUTION - COUNTRY &gt; COUNTRY CODE - CODE (44-3 &gt; 4-801 &gt; 779.004-.01)"/>
-      </mapping>
-      <mapping>
-        <identity value="cdw"/>
-        <map value="Dim.Location.InstitutionIEN"/>
       </mapping>
     </element>
     <element id="Location.address.period">
@@ -2394,6 +2394,14 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1284: source value from HOSPITAL LOCATION - PHYSICAL LOCATION (44-10)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Dim.Location.PhysicalLocation,Dim.Location.PhysicalLocation"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="C*E.9. But note many systems use C*E.2 for this"/>
       </mapping>
@@ -2404,14 +2412,6 @@
       <mapping>
         <identity value="orim"/>
         <map value="fhir:CodeableConcept.text rdfs:subPropertyOf dt:CD.originalText"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1284: source value from HOSPITAL LOCATION - PHYSICAL LOCATION (44-10)"/>
-      </mapping>
-      <mapping>
-        <identity value="cdw"/>
-        <map value="Dim.Location.PhysicalLocation,Dim.Location.PhysicalLocation"/>
       </mapping>
     </element>
     <element id="Location.position">
@@ -2875,12 +2875,12 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
-        <identity value="rim"/>
-        <map value="N/A"/>
-      </mapping>
-      <mapping>
         <identity value="vista"/>
         <map value="1283: fixed value = Veterans Administration"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="N/A"/>
       </mapping>
     </element>
     <element id="Location.partOf">

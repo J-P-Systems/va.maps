@@ -48,11 +48,11 @@
 <tr><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3goXBCwdPqAP0wAAAldJREFUOMuNk0tIlFEYhp9z/vE2jHkhxXA0zJCMitrUQlq4lnSltEqCFhFG2MJFhIvIFpkEWaTQqjaWZRkp0g26URZkTpbaaOJkDqk10szoODP//7XIMUe0elcfnPd9zsfLOYplGrpRwZaqTtw3K7PtGem7Q6FoidbGgqHVy/HRb669R+56zx7eRV1L31JGxYbBtjKK93cxeqfyQHbehkZbUkK20goELEuIzEd+dHS+qz/Y8PTSif0FnGkbiwcAjHaU1+QWOptFiyCLp/LnKptpqIuXHx6rbR26kJcBX3yLgBfnd7CxwJmflpP2wUg0HIAoUUpZBmKzELGWcN8nAr6Gpu7tLU/CkwAaoKTWRSQyt89Q8w6J+oVQkKnBoblH7V0PPvUOvDYXfopE/SJmALsxnVm6LbkotrUtNowMeIrVrBcBpaMmdS0j9df7abpSuy7HWehwJdt1lhVwi/J58U5beXGAF6c3UXLycw1wdFklArBn87xdh0ZsZtArghBdAA3+OEDVubG4UEzP6x1FOWneHh2VDAHBAt80IbdXDcesNoCvs3E5AFyNSU5nbrDPZpcUEQQTFZiEVx+51fxMhhyJEAgvlriadIJZZksRuwBYMOPBbO3hePVVqgEJhFeUuFLhIPkRP6BQLIBrmMenujm/3g4zc398awIe90Zb5A1vREALqneMcYgP/xVQWlG+Ncu5vgwwlaUNx+3799rfe96u9K0JSDXcOzOTJg4B6IgmXfsygc7/Bvg9g9E58/cDVmGIBOP/zT8Bz1zqWqpbXIsd0O9hajXfL6u4BaOS6SeWAAAAAElFTkSuQmCC" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr></table></div>
   </text>
   <url value="http://va.gov/fhir/StructureDefinition/MedicationRequestNonVA"/>
-  <version value="0.65.345"/>
+  <version value="0.65.348"/>
   <name value="MedicationRequestNonVA"/>
   <title value="MedicationRequest: NonVA"/>
   <status value="draft"/>
-  <date value="2024-08-26T15:27:18+00:00"/>
+  <date value="2024-09-15T08:33:43+00:00"/>
   <publisher value="VA"/>
   <contact>
     <name value="VA"/>
@@ -557,16 +557,16 @@
       <isModifier value="false"/>
       <isSummary value="false"/>
       <mapping>
-        <identity value="rim"/>
-        <map value="N/A"/>
-      </mapping>
-      <mapping>
         <identity value="vista"/>
         <map value="1765: reference from NON-VA MEDS - CLINIC (55.05-13)"/>
       </mapping>
       <mapping>
         <identity value="cdw"/>
         <map value="NonVAMed.NonVAMed.LocationIEN"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="N/A"/>
       </mapping>
     </element>
     <element id="MedicationRequest.modifierExtension">
@@ -904,6 +904,11 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1762-1: fixed value = http://va.gov/identifiers/$Sta3n/55.05-7"/>
+        <comment value="from mapParameter 1"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="CX.4 / EI-2-4"/>
       </mapping>
@@ -914,11 +919,6 @@
       <mapping>
         <identity value="servd"/>
         <map value="./IdentifierType"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1762-1: fixed value = http://va.gov/identifiers/$Sta3n/55.05-7"/>
-        <comment value="from mapParameter 1"/>
       </mapping>
     </element>
     <element id="MedicationRequest.identifier:va-order-number.value">
@@ -952,6 +952,15 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1762: source value from NON-VA MEDS - ORDER NUMBER (55.05-7)"/>
+        <comment value="Not required by US Core"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="NonVAMed.NonVAMed.CPRSOrderIEN"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="CX.1 / EI.1"/>
       </mapping>
@@ -962,15 +971,6 @@
       <mapping>
         <identity value="servd"/>
         <map value="./Value"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1762: source value from NON-VA MEDS - ORDER NUMBER (55.05-7)"/>
-        <comment value="Not required by US Core"/>
-      </mapping>
-      <mapping>
-        <identity value="cdw"/>
-        <map value="NonVAMed.NonVAMed.CPRSOrderIEN"/>
       </mapping>
     </element>
     <element id="MedicationRequest.identifier:va-order-number.period">
@@ -1289,6 +1289,11 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1763-1: fixed value = http://va.gov/identifiers/$Sta3n/55.05"/>
+        <comment value="from mapParameter 1"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="CX.4 / EI-2-4"/>
       </mapping>
@@ -1299,11 +1304,6 @@
       <mapping>
         <identity value="servd"/>
         <map value="./IdentifierType"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1763-1: fixed value = http://va.gov/identifiers/$Sta3n/55.05"/>
-        <comment value="from mapParameter 1"/>
       </mapping>
     </element>
     <element id="MedicationRequest.identifier:va-ien.value">
@@ -1337,6 +1337,11 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1763: source value from NON-VA MEDS - IEN (55.05-.001)"/>
+        <comment value="Not required by US Core"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="CX.1 / EI.1"/>
       </mapping>
@@ -1347,11 +1352,6 @@
       <mapping>
         <identity value="servd"/>
         <map value="./Value"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1763: source value from NON-VA MEDS - IEN (55.05-.001)"/>
-        <comment value="Not required by US Core"/>
       </mapping>
     </element>
     <element id="MedicationRequest.identifier:va-ien.period">
@@ -1463,6 +1463,20 @@
         <valueSet value="http://hl7.org/fhir/ValueSet/medicationrequest-status"/>
       </binding>
       <mapping>
+        <identity value="vista"/>
+        <map value="1737: fixed value = #active when NON-VA MEDS - STATUS (55.05-5) case NULL"/>
+        <comment value="use status, not discontinue date"/>
+      </mapping>
+      <mapping>
+        <identity value="vista"/>
+        <map value="1738: fixed value = #inactive when NON-VA MEDS - STATUS (55.05-5) case NOT NULL"/>
+        <comment value="use status, not discontinue date"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="NonVAMed.NonVAMed.NonVAMedStatus"/>
+      </mapping>
+      <mapping>
         <identity value="workflow"/>
         <map value="Request.status"/>
       </mapping>
@@ -1481,20 +1495,6 @@
       <mapping>
         <identity value="argonaut-dq-dstu2"/>
         <map value="MedicationOrder.status"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1737: fixed value = #active when NON-VA MEDS - STATUS (55.05-5) case NULL"/>
-        <comment value="use status, not discontinue date"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1738: fixed value = #inactive when NON-VA MEDS - STATUS (55.05-5) case NOT NULL"/>
-        <comment value="use status, not discontinue date"/>
-      </mapping>
-      <mapping>
-        <identity value="cdw"/>
-        <map value="NonVAMed.NonVAMed.NonVAMedStatus"/>
       </mapping>
     </element>
     <element id="MedicationRequest.statusReason">
@@ -1573,6 +1573,11 @@
         <valueSet value="http://hl7.org/fhir/ValueSet/medicationrequest-intent"/>
       </binding>
       <mapping>
+        <identity value="vista"/>
+        <map value="1540: fixed value = #plan"/>
+        <comment value="Revisit this if we can influence US Core"/>
+      </mapping>
+      <mapping>
         <identity value="workflow"/>
         <map value="Request.intent"/>
       </mapping>
@@ -1587,11 +1592,6 @@
       <mapping>
         <identity value="argonaut-dq-dstu2"/>
         <map value="MedicationOrder.status"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1540: fixed value = #plan"/>
-        <comment value="Revisit this if we can influence US Core"/>
       </mapping>
     </element>
     <element id="MedicationRequest.category">
@@ -1879,16 +1879,16 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1347: fixed value = true"/>
+      </mapping>
+      <mapping>
         <identity value="rim"/>
         <map value=".participation[typeCode=INF].role"/>
       </mapping>
       <mapping>
         <identity value="argonaut-dq-dstu2"/>
         <map value="MedicationOrder.status"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1347: fixed value = true"/>
       </mapping>
     </element>
     <element id="MedicationRequest.medication[x]">
@@ -1990,6 +1990,22 @@
         <valueSet value="http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1010.4"/>
       </binding>
       <mapping>
+        <identity value="vista"/>
+        <map value="1732: source value from NON-VA MEDS - ORDERABLE ITEM (55.05-.01) case 55.05-1 is null"/>
+      </mapping>
+      <mapping>
+        <identity value="vista"/>
+        <map value="1733: source value from NON-VA MEDS - DISPENSE DRUG (55.05-1)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="NonVAMed.NonVAMed.PharmacyOrderableItemIEN"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="NonVAMed.NonVAMed.LocalDrugIEN"/>
+      </mapping>
+      <mapping>
         <identity value="workflow"/>
         <map value="Request.code"/>
       </mapping>
@@ -2012,22 +2028,6 @@
       <mapping>
         <identity value="argonaut-dq-dstu2"/>
         <map value="MedicationOrder.medication[x]"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1732: source value from NON-VA MEDS - ORDERABLE ITEM (55.05-.01) case 55.05-1 is null"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1733: source value from NON-VA MEDS - DISPENSE DRUG (55.05-1)"/>
-      </mapping>
-      <mapping>
-        <identity value="cdw"/>
-        <map value="NonVAMed.NonVAMed.PharmacyOrderableItemIEN"/>
-      </mapping>
-      <mapping>
-        <identity value="cdw"/>
-        <map value="NonVAMed.NonVAMed.LocalDrugIEN"/>
       </mapping>
     </element>
     <element id="MedicationRequest.subject">
@@ -2376,12 +2376,12 @@
         <valueSet value="http://hl7.org/fhir/ValueSet/data-absent-reason"/>
       </binding>
       <mapping>
-        <identity value="rim"/>
-        <map value="N/A"/>
-      </mapping>
-      <mapping>
         <identity value="vista"/>
         <map value="1731: fixed value = #unsupported"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="N/A"/>
       </mapping>
     </element>
     <element id="MedicationRequest.encounter.reference">
@@ -2580,6 +2580,14 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1741: source value from NON-VA MEDS - DOCUMENTED DATE (55.05-11)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="NonVAMed.NonVAMed.DocumentedDateTime"/>
+      </mapping>
+      <mapping>
         <identity value="workflow"/>
         <map value="Request.authoredOn"/>
       </mapping>
@@ -2602,14 +2610,6 @@
       <mapping>
         <identity value="argonaut-dq-dstu2"/>
         <map value="MedicationOrder.dateWritten"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1741: source value from NON-VA MEDS - DOCUMENTED DATE (55.05-11)"/>
-      </mapping>
-      <mapping>
-        <identity value="cdw"/>
-        <map value="NonVAMed.NonVAMed.DocumentedDateTime"/>
       </mapping>
     </element>
     <element id="MedicationRequest.requester">
@@ -2922,12 +2922,12 @@
         <valueSet value="http://hl7.org/fhir/ValueSet/data-absent-reason"/>
       </binding>
       <mapping>
-        <identity value="rim"/>
-        <map value="N/A"/>
-      </mapping>
-      <mapping>
         <identity value="vista"/>
         <map value="1730: fixed value = #unsupported"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="N/A"/>
       </mapping>
     </element>
     <element id="MedicationRequest.requester.reference">
@@ -3176,20 +3176,20 @@
       <isModifier value="false"/>
       <isSummary value="false"/>
       <mapping>
-        <identity value="w5"/>
-        <map value="FiveWs.who"/>
-      </mapping>
-      <mapping>
-        <identity value="rim"/>
-        <map value=".participation[typeCode=TRANS].role[classCode=ASSIGNED].code (HealthcareProviderType)"/>
-      </mapping>
-      <mapping>
         <identity value="vista"/>
         <map value="1742: reference from NON-VA MEDS - DOCUMENTED BY (55.05-12)"/>
       </mapping>
       <mapping>
         <identity value="cdw"/>
         <map value="NonVAMed.NonVAMed.DocumentedByStaffIEN"/>
+      </mapping>
+      <mapping>
+        <identity value="w5"/>
+        <map value="FiveWs.who"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value=".participation[typeCode=TRANS].role[classCode=ASSIGNED].code (HealthcareProviderType)"/>
       </mapping>
     </element>
     <element id="MedicationRequest.reasonCode">
@@ -3389,6 +3389,10 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1744: source value from NON-VA MEDS - INDICATION FOR USE (55.05-15)"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="C*E.9. But note many systems use C*E.2 for this"/>
       </mapping>
@@ -3399,10 +3403,6 @@
       <mapping>
         <identity value="orim"/>
         <map value="fhir:CodeableConcept.text rdfs:subPropertyOf dt:CD.originalText"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1744: source value from NON-VA MEDS - INDICATION FOR USE (55.05-15)"/>
       </mapping>
     </element>
     <element id="MedicationRequest.reasonReference">
@@ -3681,6 +3681,16 @@
       <isModifier value="false"/>
       <isSummary value="false"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1743: source value from NON-VA MEDS - COMMENTS (55.05-14)"/>
+        <comment value="Concatenate Disclaimer to end."/>
+      </mapping>
+      <mapping>
+        <identity value="vista"/>
+        <map value="1764: source value from NON-VA MEDS - DISCLAIMER (55.05-10)"/>
+        <comment value="Concatenate to Comment. Delimit with a period."/>
+      </mapping>
+      <mapping>
         <identity value="workflow"/>
         <map value="Request.note"/>
       </mapping>
@@ -3691,16 +3701,6 @@
       <mapping>
         <identity value="rim"/>
         <map value=".inboundRelationship[typeCode=SUBJ]/source[classCode=OBS,moodCode=EVN,code=&quot;annotation&quot;].value"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1743: source value from NON-VA MEDS - COMMENTS (55.05-14)"/>
-        <comment value="Concatenate Disclaimer to end."/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1764: source value from NON-VA MEDS - DISCLAIMER (55.05-10)"/>
-        <comment value="Concatenate to Comment. Delimit with a period."/>
       </mapping>
     </element>
     <element id="MedicationRequest.dosageInstruction">
@@ -3915,16 +3915,16 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1745: source value from NON-VA MEDS - SIG (55.05-16)"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="RXO-6; RXE-21"/>
       </mapping>
       <mapping>
         <identity value="rim"/>
         <map value=".text"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1745: source value from NON-VA MEDS - SIG (55.05-16)"/>
       </mapping>
     </element>
     <element id="MedicationRequest.dosageInstruction.additionalInstruction">
@@ -5019,6 +5019,14 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1736: source value from NON-VA MEDS - SCHEDULE (55.05-4)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="NonVAMed.NonVAMed.Schedule"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="C*E.9. But note many systems use C*E.2 for this"/>
       </mapping>
@@ -5029,14 +5037,6 @@
       <mapping>
         <identity value="orim"/>
         <map value="fhir:CodeableConcept.text rdfs:subPropertyOf dt:CD.originalText"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1736: source value from NON-VA MEDS - SCHEDULE (55.05-4)"/>
-      </mapping>
-      <mapping>
-        <identity value="cdw"/>
-        <map value="NonVAMed.NonVAMed.Schedule"/>
       </mapping>
     </element>
     <element id="MedicationRequest.dosageInstruction.asNeeded[x]">
@@ -5312,6 +5312,14 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1735: source value from NON-VA MEDS - MEDICATION ROUTE (55.05-3)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="NonVAMed.NonVAMed.MedicationRoute"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="C*E.9. But note many systems use C*E.2 for this"/>
       </mapping>
@@ -5322,14 +5330,6 @@
       <mapping>
         <identity value="orim"/>
         <map value="fhir:CodeableConcept.text rdfs:subPropertyOf dt:CD.originalText"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1735: source value from NON-VA MEDS - MEDICATION ROUTE (55.05-3)"/>
-      </mapping>
-      <mapping>
-        <identity value="cdw"/>
-        <map value="NonVAMed.NonVAMed.MedicationRoute"/>
       </mapping>
     </element>
     <element id="MedicationRequest.dosageInstruction.method">

@@ -146,11 +146,11 @@
 <tr><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3goXBCwdPqAP0wAAAldJREFUOMuNk0tIlFEYhp9z/vE2jHkhxXA0zJCMitrUQlq4lnSltEqCFhFG2MJFhIvIFpkEWaTQqjaWZRkp0g26URZkTpbaaOJkDqk10szoODP//7XIMUe0elcfnPd9zsfLOYplGrpRwZaqTtw3K7PtGem7Q6FoidbGgqHVy/HRb669R+56zx7eRV1L31JGxYbBtjKK93cxeqfyQHbehkZbUkK20goELEuIzEd+dHS+qz/Y8PTSif0FnGkbiwcAjHaU1+QWOptFiyCLp/LnKptpqIuXHx6rbR26kJcBX3yLgBfnd7CxwJmflpP2wUg0HIAoUUpZBmKzELGWcN8nAr6Gpu7tLU/CkwAaoKTWRSQyt89Q8w6J+oVQkKnBoblH7V0PPvUOvDYXfopE/SJmALsxnVm6LbkotrUtNowMeIrVrBcBpaMmdS0j9df7abpSuy7HWehwJdt1lhVwi/J58U5beXGAF6c3UXLycw1wdFklArBn87xdh0ZsZtArghBdAA3+OEDVubG4UEzP6x1FOWneHh2VDAHBAt80IbdXDcesNoCvs3E5AFyNSU5nbrDPZpcUEQQTFZiEVx+51fxMhhyJEAgvlriadIJZZksRuwBYMOPBbO3hePVVqgEJhFeUuFLhIPkRP6BQLIBrmMenujm/3g4zc398awIe90Zb5A1vREALqneMcYgP/xVQWlG+Ncu5vgwwlaUNx+3799rfe96u9K0JSDXcOzOTJg4B6IgmXfsygc7/Bvg9g9E58/cDVmGIBOP/zT8Bz1zqWqpbXIsd0O9hajXfL6u4BaOS6SeWAAAAAElFTkSuQmCC" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr></table></div>
   </text>
   <url value="http://va.gov/fhir/StructureDefinition/ProcedureSurgery"/>
-  <version value="0.65.345"/>
+  <version value="0.65.348"/>
   <name value="ProcedureSurgery"/>
   <title value="Procedure: Surgery"/>
   <status value="draft"/>
-  <date value="2024-08-26T15:27:18+00:00"/>
+  <date value="2024-09-15T08:33:43+00:00"/>
   <publisher value="VA"/>
   <contact>
     <name value="VA"/>
@@ -760,6 +760,10 @@
         <valueSet value="http://hl7.org/fhir/ValueSet/event-status"/>
       </binding>
       <mapping>
+        <identity value="vista"/>
+        <map value="1520: transform using see VistaRulesForProcStat sheet"/>
+      </mapping>
+      <mapping>
         <identity value="workflow"/>
         <map value="Event.status"/>
       </mapping>
@@ -774,10 +778,6 @@
       <mapping>
         <identity value="argonaut-dq-dstu2"/>
         <map value="Procedure.status"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1520: transform using see VistaRulesForProcStat sheet"/>
       </mapping>
     </element>
     <element id="Procedure.statusReason">
@@ -971,6 +971,10 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1313: fixed value = http://snomed.info/sct#387713003 Surgical procedure"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="C*E.1-8, C*E.10-22"/>
       </mapping>
@@ -981,10 +985,6 @@
       <mapping>
         <identity value="orim"/>
         <map value="fhir:CodeableConcept.coding rdfs:subPropertyOf dt:CD.coding"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1313: fixed value = http://snomed.info/sct#387713003 Surgical procedure"/>
       </mapping>
     </element>
     <element id="Procedure.category.text">
@@ -1183,6 +1183,10 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1344: source value from SURGERY - PLANNED PRIN PROCEDURE CODE &gt; CPT (130-27 &gt; 81)"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="C*E.1-8, C*E.10-22"/>
       </mapping>
@@ -1193,10 +1197,6 @@
       <mapping>
         <identity value="orim"/>
         <map value="fhir:CodeableConcept.coding rdfs:subPropertyOf dt:CD.coding"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1344: source value from SURGERY - PLANNED PRIN PROCEDURE CODE &gt; CPT (130-27 &gt; 81)"/>
       </mapping>
     </element>
     <element id="Procedure.code.coding.id">
@@ -1301,6 +1301,11 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1344-2: fixed value = http://www.ama-assn.org/go/cpt"/>
+        <comment value="from mapParameter 2"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="C*E.3"/>
       </mapping>
@@ -1311,11 +1316,6 @@
       <mapping>
         <identity value="orim"/>
         <map value="fhir:Coding.system rdfs:subPropertyOf dt:CDCoding.codeSystem"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1344-2: fixed value = http://www.ama-assn.org/go/cpt"/>
-        <comment value="from mapParameter 2"/>
       </mapping>
     </element>
     <element id="Procedure.code.coding.version">
@@ -1383,6 +1383,15 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1344-1: source value from SURGERY - PLANNED PRIN PROCEDURE CODE &gt; CPT - CPT CODE (130-27 &gt; 81-.01)"/>
+        <comment value="from mapParameter 1"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Dim.CPT.CPTCode,Dim.CPT.CPTCode"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="C*E.1"/>
       </mapping>
@@ -1393,15 +1402,6 @@
       <mapping>
         <identity value="orim"/>
         <map value="fhir:Coding.code rdfs:subPropertyOf dt:CDCoding.code"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1344-1: source value from SURGERY - PLANNED PRIN PROCEDURE CODE &gt; CPT - CPT CODE (130-27 &gt; 81-.01)"/>
-        <comment value="from mapParameter 1"/>
-      </mapping>
-      <mapping>
-        <identity value="cdw"/>
-        <map value="Dim.CPT.CPTCode,Dim.CPT.CPTCode"/>
       </mapping>
     </element>
     <element id="Procedure.code.coding.display">
@@ -1434,6 +1434,15 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1344-3: source value from SURGERY - PLANNED PRIN PROCEDURE CODE &gt; CPT - SHORT NAME (130-27 &gt; 81-2)"/>
+        <comment value="from mapParameter 3"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Dim.CPT.CPTName,Dim.CPT.CPTName"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="C*E.2 - but note this is not well followed"/>
       </mapping>
@@ -1444,15 +1453,6 @@
       <mapping>
         <identity value="orim"/>
         <map value="fhir:Coding.display rdfs:subPropertyOf dt:CDCoding.displayName"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1344-3: source value from SURGERY - PLANNED PRIN PROCEDURE CODE &gt; CPT - SHORT NAME (130-27 &gt; 81-2)"/>
-        <comment value="from mapParameter 3"/>
-      </mapping>
-      <mapping>
-        <identity value="cdw"/>
-        <map value="Dim.CPT.CPTName,Dim.CPT.CPTName"/>
       </mapping>
     </element>
     <element id="Procedure.code.coding.userSelected">
@@ -1525,6 +1525,14 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1343: source value from SURGERY - PRINCIPAL PROCEDURE (130-26)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Surg.SurgeryPRE.PrincipalProcedureText"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="C*E.9. But note many systems use C*E.2 for this"/>
       </mapping>
@@ -1535,14 +1543,6 @@
       <mapping>
         <identity value="orim"/>
         <map value="fhir:CodeableConcept.text rdfs:subPropertyOf dt:CD.originalText"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1343: source value from SURGERY - PRINCIPAL PROCEDURE (130-26)"/>
-      </mapping>
-      <mapping>
-        <identity value="cdw"/>
-        <map value="Surg.SurgeryPRE.PrincipalProcedureText"/>
       </mapping>
     </element>
     <element id="Procedure.subject">
@@ -1573,6 +1573,14 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1287: reference from SURGERY - PATIENT (130-.01)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="SPatient.ImplantedProsthesis.PatientIEN,SPatient.OperationsIndication.PatientIEN,Surg.AnesthesiaAgent.PatientIEN,Surg.AnesthesiaBlockSite.PatientIEN,Surg.AnesthesiaTechnique.PatientIEN,Surg.AnesthesiaTestDose.PatientIEN,Surg.ReferringPhysician.PatientIEN,Surg.ReferringPhysician.PatientSID,Surg.ReplacementFluidType.PatientIEN,Surg.ReplacementFluidType.PatientSID,Surg.SurgeryAssistant.PatientIEN,Surg.SurgeryAssistantOther.PatientIEN,Surg.SurgeryDelay.PatientIEN,Surg.SurgeryINTRA.PatientIEN,Surg.SurgeryIrrigation.PatientIEN,Surg.SurgeryIrrigation.PatientSID,Surg.SurgeryMedication.PatientIEN,Surg.SurgeryOccurrenceNonOp.PatientIEN,Surg.SurgeryOccurrenceNonOp.PatientSID,Surg.SurgeryOtherPostOpDiagnosis.PatientIEN,Surg.SurgeryOtherProcedure.PatientIEN,Surg.SurgeryOtherProcedureCPTModifier.PatientIEN,Surg.SurgeryOtherProcedureCPTModifier.PatientSID,Surg.SurgeryOtherProcedureDiagnosis.PatientIEN,Surg.SurgeryPOST.PatientIEN,Surg.SurgeryPostOpDiagnosis.PatientIEN,Surg.SurgeryPreOpDiagnosis.PatientIEN,Surg.SurgeryPreOpDiagnosis.PatientSID,Surg.SurgeryPrincipalAssociatedDiagnosis.PatientIEN,Surg.SurgeryPrincipalAssociatedProcedure.PatientIEN,Surg.SurgeryPrincipalCPTModifier.PatientIEN,Surg.SurgeryPrincipalDiagnosis.PatientIEN,Surg.SurgeryProcedureCPTModifier.PatientIEN,Surg.SurgeryProcedureDiagnosisCode.PatientIEN,Surg.SurgeryProcedureOccurrence.PatientIEN,Surg.SurgeryProcedureOccurrence.PatientSID,Surg.SurgeryRequiredBloodProducts.PatientIEN,Surg.SurgeryReturnCase.PatientIEN,Surg.SurgORCircSupport.PatientIEN,Surg.SurgORCircSupportTime.PatientIEN,Surg.SurgORCircSupportTime.PatientSID,Surg.SurgORScrubSupport.PatientIEN,Surg.SurgORScrubSupportTime.PatientIEN,Surg.SurgORScrubSupportTime.PatientSID"/>
+      </mapping>
+      <mapping>
         <identity value="workflow"/>
         <map value="Event.subject"/>
       </mapping>
@@ -1595,14 +1603,6 @@
       <mapping>
         <identity value="argonaut-dq-dstu2"/>
         <map value="Procedure.subject"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1287: reference from SURGERY - PATIENT (130-.01)"/>
-      </mapping>
-      <mapping>
-        <identity value="cdw"/>
-        <map value="SPatient.ImplantedProsthesis.PatientIEN,SPatient.OperationsIndication.PatientIEN,Surg.AnesthesiaAgent.PatientIEN,Surg.AnesthesiaBlockSite.PatientIEN,Surg.AnesthesiaTechnique.PatientIEN,Surg.AnesthesiaTestDose.PatientIEN,Surg.ReferringPhysician.PatientIEN,Surg.ReferringPhysician.PatientSID,Surg.ReplacementFluidType.PatientIEN,Surg.ReplacementFluidType.PatientSID,Surg.SurgeryAssistant.PatientIEN,Surg.SurgeryAssistantOther.PatientIEN,Surg.SurgeryDelay.PatientIEN,Surg.SurgeryINTRA.PatientIEN,Surg.SurgeryIrrigation.PatientIEN,Surg.SurgeryIrrigation.PatientSID,Surg.SurgeryMedication.PatientIEN,Surg.SurgeryOccurrenceNonOp.PatientIEN,Surg.SurgeryOccurrenceNonOp.PatientSID,Surg.SurgeryOtherPostOpDiagnosis.PatientIEN,Surg.SurgeryOtherProcedure.PatientIEN,Surg.SurgeryOtherProcedureCPTModifier.PatientIEN,Surg.SurgeryOtherProcedureCPTModifier.PatientSID,Surg.SurgeryOtherProcedureDiagnosis.PatientIEN,Surg.SurgeryPOST.PatientIEN,Surg.SurgeryPostOpDiagnosis.PatientIEN,Surg.SurgeryPreOpDiagnosis.PatientIEN,Surg.SurgeryPreOpDiagnosis.PatientSID,Surg.SurgeryPrincipalAssociatedDiagnosis.PatientIEN,Surg.SurgeryPrincipalAssociatedProcedure.PatientIEN,Surg.SurgeryPrincipalCPTModifier.PatientIEN,Surg.SurgeryPrincipalDiagnosis.PatientIEN,Surg.SurgeryProcedureCPTModifier.PatientIEN,Surg.SurgeryProcedureDiagnosisCode.PatientIEN,Surg.SurgeryProcedureOccurrence.PatientIEN,Surg.SurgeryProcedureOccurrence.PatientSID,Surg.SurgeryRequiredBloodProducts.PatientIEN,Surg.SurgeryReturnCase.PatientIEN,Surg.SurgORCircSupport.PatientIEN,Surg.SurgORCircSupportTime.PatientIEN,Surg.SurgORCircSupportTime.PatientSID,Surg.SurgORScrubSupport.PatientIEN,Surg.SurgORScrubSupportTime.PatientIEN,Surg.SurgORScrubSupportTime.PatientSID"/>
       </mapping>
     </element>
     <element id="Procedure.encounter">
@@ -1633,6 +1633,10 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1285: reference from SURGERY - VISIT (130-.015)"/>
+      </mapping>
+      <mapping>
         <identity value="workflow"/>
         <map value="Event.context"/>
       </mapping>
@@ -1647,10 +1651,6 @@
       <mapping>
         <identity value="rim"/>
         <map value=".inboundRelationship[typeCode=COMP].source[classCode=ENC, moodCode=EVN]"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1285: reference from SURGERY - VISIT (130-.015)"/>
       </mapping>
     </element>
     <element id="Procedure.performed[x]">
@@ -1759,6 +1759,14 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1286: source value from SURGERY - DATE OF OPERATION (130-.09)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="SPatient.ImplantedProsthesis.SurgeryDateTime,SPatient.OperationsIndication.SurgeryDateTime,Surg.AnesthesiaAgent.SurgeryDateTime,Surg.AnesthesiaBlockSite.SurgeryDateTime,Surg.AnesthesiaTechnique.SurgeryDateTime,Surg.AnesthesiaTestDose.SurgeryDateTime,Surg.ReferringPhysician.SurgeryDateTime,Surg.ReplacementFluidType.SurgeryDateTime,Surg.SurgeryAssistant.SurgeryDateTime,Surg.SurgeryAssistantOther.SurgeryDateTime,Surg.SurgeryDelay.SurgeryDateTime,Surg.SurgeryINTRA.SurgeryDateTime,Surg.SurgeryIrrigation.SurgeryDateTime,Surg.SurgeryMedication.SurgeryDateTime,Surg.SurgeryOccurrenceNonOp.SurgeryDateTime,Surg.SurgeryOtherPostOpDiagnosis.SurgeryDateTime,Surg.SurgeryOtherProcedure.SurgeryDateTime,Surg.SurgeryOtherProcedureCPTModifier.SurgeryDateTime,Surg.SurgeryOtherProcedureDiagnosis.SurgeryDateTime,Surg.SurgeryPOST.SurgeryDateTime,Surg.SurgeryPostOpDiagnosis.SurgeryDateTime,Surg.SurgeryPRE.SurgeryDateTime,Surg.SurgeryPreOpDiagnosis.SurgeryDateTime,Surg.SurgeryPrincipalAssociatedDiagnosis.SurgeryDateTime,Surg.SurgeryPrincipalAssociatedProcedure.SurgeryDateTime,Surg.SurgeryPrincipalCPTModifier.SurgeryDateTime,Surg.SurgeryPrincipalDiagnosis.SurgeryDateTime,Surg.SurgeryProcedureCPTModifier.SurgeryDateTime,Surg.SurgeryProcedureDiagnosisCode.SurgeryDateTime,Surg.SurgeryProcedureOccurrence.SurgeryDateTime,Surg.SurgeryRequiredBloodProducts.SurgeryDateTime,Surg.SurgeryReturnCase.SurgeryDateTime,Surg.SurgORCircSupport.SurgeryDateTime,Surg.SurgORCircSupportTime.SurgeryDateTime,Surg.SurgORScrubSupport.SurgeryDateTime,Surg.SurgORScrubSupportTime.SurgeryDateTime"/>
+      </mapping>
+      <mapping>
         <identity value="workflow"/>
         <map value="Event.occurrence[x]"/>
       </mapping>
@@ -1777,14 +1785,6 @@
       <mapping>
         <identity value="argonaut-dq-dstu2"/>
         <map value="Procedure.performed[x]"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1286: source value from SURGERY - DATE OF OPERATION (130-.09)"/>
-      </mapping>
-      <mapping>
-        <identity value="cdw"/>
-        <map value="SPatient.ImplantedProsthesis.SurgeryDateTime,SPatient.OperationsIndication.SurgeryDateTime,Surg.AnesthesiaAgent.SurgeryDateTime,Surg.AnesthesiaBlockSite.SurgeryDateTime,Surg.AnesthesiaTechnique.SurgeryDateTime,Surg.AnesthesiaTestDose.SurgeryDateTime,Surg.ReferringPhysician.SurgeryDateTime,Surg.ReplacementFluidType.SurgeryDateTime,Surg.SurgeryAssistant.SurgeryDateTime,Surg.SurgeryAssistantOther.SurgeryDateTime,Surg.SurgeryDelay.SurgeryDateTime,Surg.SurgeryINTRA.SurgeryDateTime,Surg.SurgeryIrrigation.SurgeryDateTime,Surg.SurgeryMedication.SurgeryDateTime,Surg.SurgeryOccurrenceNonOp.SurgeryDateTime,Surg.SurgeryOtherPostOpDiagnosis.SurgeryDateTime,Surg.SurgeryOtherProcedure.SurgeryDateTime,Surg.SurgeryOtherProcedureCPTModifier.SurgeryDateTime,Surg.SurgeryOtherProcedureDiagnosis.SurgeryDateTime,Surg.SurgeryPOST.SurgeryDateTime,Surg.SurgeryPostOpDiagnosis.SurgeryDateTime,Surg.SurgeryPRE.SurgeryDateTime,Surg.SurgeryPreOpDiagnosis.SurgeryDateTime,Surg.SurgeryPrincipalAssociatedDiagnosis.SurgeryDateTime,Surg.SurgeryPrincipalAssociatedProcedure.SurgeryDateTime,Surg.SurgeryPrincipalCPTModifier.SurgeryDateTime,Surg.SurgeryPrincipalDiagnosis.SurgeryDateTime,Surg.SurgeryProcedureCPTModifier.SurgeryDateTime,Surg.SurgeryProcedureDiagnosisCode.SurgeryDateTime,Surg.SurgeryProcedureOccurrence.SurgeryDateTime,Surg.SurgeryRequiredBloodProducts.SurgeryDateTime,Surg.SurgeryReturnCase.SurgeryDateTime,Surg.SurgORCircSupport.SurgeryDateTime,Surg.SurgORCircSupportTime.SurgeryDateTime,Surg.SurgORScrubSupport.SurgeryDateTime,Surg.SurgORScrubSupportTime.SurgeryDateTime"/>
       </mapping>
     </element>
     <element id="Procedure.performed[x]:performedPeriod">
@@ -1937,14 +1937,6 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
-        <identity value="v2"/>
-        <map value="DR.1"/>
-      </mapping>
-      <mapping>
-        <identity value="rim"/>
-        <map value="./low"/>
-      </mapping>
-      <mapping>
         <identity value="vista"/>
         <map value="1290: source value from SURGERY - TIME PROCEDURE BEGAN (130-121) case 130-118 NON-OR PROCEDURE == ‘Y’"/>
       </mapping>
@@ -1959,6 +1951,14 @@
       <mapping>
         <identity value="cdw"/>
         <map value="Surg.SurgeryINTRA.BeginOperationDateTime,Surg.SurgeryPRE.BeginOperationDateTime"/>
+      </mapping>
+      <mapping>
+        <identity value="v2"/>
+        <map value="DR.1"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="./low"/>
       </mapping>
     </element>
     <element id="Procedure.performed[x]:performedPeriod.end">
@@ -1990,14 +1990,6 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
-        <identity value="v2"/>
-        <map value="DR.2"/>
-      </mapping>
-      <mapping>
-        <identity value="rim"/>
-        <map value="./high"/>
-      </mapping>
-      <mapping>
         <identity value="vista"/>
         <map value="1291: source value from SURGERY - TIME PROCEDURE ENDED (130-122) case 130-118 NON-OR PROCEDURE == ‘Y’"/>
       </mapping>
@@ -2012,6 +2004,14 @@
       <mapping>
         <identity value="cdw"/>
         <map value="Surg.SurgeryINTRA.EndOperationDateTime,Surg.SurgeryPRE.EndOperationDateTime"/>
+      </mapping>
+      <mapping>
+        <identity value="v2"/>
+        <map value="DR.2"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="./high"/>
       </mapping>
     </element>
     <element id="Procedure.recorder">
@@ -2655,6 +2655,11 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1298-2: fixed value = http://va.gov/terminology/vistaDefinedTerms/130#.167 PERFUSIONIST"/>
+        <comment value="from mapParameter 2"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="C*E.1-8, C*E.10-22"/>
       </mapping>
@@ -2665,11 +2670,6 @@
       <mapping>
         <identity value="orim"/>
         <map value="fhir:CodeableConcept.coding rdfs:subPropertyOf dt:CD.coding"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1298-2: fixed value = http://va.gov/terminology/vistaDefinedTerms/130#.167 PERFUSIONIST"/>
-        <comment value="from mapParameter 2"/>
       </mapping>
     </element>
     <element id="Procedure.performer:va-0.function.text">
@@ -2704,6 +2704,11 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1298-1: fixed value = PERFUSIONIST"/>
+        <comment value="from mapParameter 1"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="C*E.9. But note many systems use C*E.2 for this"/>
       </mapping>
@@ -2714,11 +2719,6 @@
       <mapping>
         <identity value="orim"/>
         <map value="fhir:CodeableConcept.text rdfs:subPropertyOf dt:CD.originalText"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1298-1: fixed value = PERFUSIONIST"/>
-        <comment value="from mapParameter 1"/>
       </mapping>
     </element>
     <element id="Procedure.performer:va-0.actor">
@@ -2754,6 +2754,14 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1298: reference from SURGERY - PERFUSIONIST (130-.167)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Surg.SurgeryINTRA.PerfusionistStaffIEN"/>
+      </mapping>
+      <mapping>
         <identity value="workflow"/>
         <map value="Event.performer.actor"/>
       </mapping>
@@ -2768,14 +2776,6 @@
       <mapping>
         <identity value="rim"/>
         <map value=".role"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1298: reference from SURGERY - PERFUSIONIST (130-.167)"/>
-      </mapping>
-      <mapping>
-        <identity value="cdw"/>
-        <map value="Surg.SurgeryINTRA.PerfusionistStaffIEN"/>
       </mapping>
     </element>
     <element id="Procedure.performer:va-0.onBehalfOf">
@@ -3103,6 +3103,11 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1330-2: fixed value = http://va.gov/terminology/vistaDefinedTerms/130#.14 PRIMARY SURGEON"/>
+        <comment value="from mapParameter 2"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="C*E.1-8, C*E.10-22"/>
       </mapping>
@@ -3113,11 +3118,6 @@
       <mapping>
         <identity value="orim"/>
         <map value="fhir:CodeableConcept.coding rdfs:subPropertyOf dt:CD.coding"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1330-2: fixed value = http://va.gov/terminology/vistaDefinedTerms/130#.14 PRIMARY SURGEON"/>
-        <comment value="from mapParameter 2"/>
       </mapping>
     </element>
     <element id="Procedure.performer:va-1.function.text">
@@ -3152,6 +3152,11 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1330-1: fixed value = PRIMARY SURGEON"/>
+        <comment value="from mapParameter 1"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="C*E.9. But note many systems use C*E.2 for this"/>
       </mapping>
@@ -3162,11 +3167,6 @@
       <mapping>
         <identity value="orim"/>
         <map value="fhir:CodeableConcept.text rdfs:subPropertyOf dt:CD.originalText"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1330-1: fixed value = PRIMARY SURGEON"/>
-        <comment value="from mapParameter 1"/>
       </mapping>
     </element>
     <element id="Procedure.performer:va-1.actor">
@@ -3202,6 +3202,14 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1330: reference from SURGERY - PRIMARY SURGEON (130-.14)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Surg.SurgeryINTRA.SurgeonStaffIEN"/>
+      </mapping>
+      <mapping>
         <identity value="workflow"/>
         <map value="Event.performer.actor"/>
       </mapping>
@@ -3216,14 +3224,6 @@
       <mapping>
         <identity value="rim"/>
         <map value=".role"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1330: reference from SURGERY - PRIMARY SURGEON (130-.14)"/>
-      </mapping>
-      <mapping>
-        <identity value="cdw"/>
-        <map value="Surg.SurgeryINTRA.SurgeonStaffIEN"/>
       </mapping>
     </element>
     <element id="Procedure.performer:va-1.onBehalfOf">
@@ -3551,6 +3551,11 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1331-2: fixed value = http://va.gov/terminology/vistaDefinedTerms/130#.15 FIRST ASST"/>
+        <comment value="from mapParameter 2"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="C*E.1-8, C*E.10-22"/>
       </mapping>
@@ -3561,11 +3566,6 @@
       <mapping>
         <identity value="orim"/>
         <map value="fhir:CodeableConcept.coding rdfs:subPropertyOf dt:CD.coding"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1331-2: fixed value = http://va.gov/terminology/vistaDefinedTerms/130#.15 FIRST ASST"/>
-        <comment value="from mapParameter 2"/>
       </mapping>
     </element>
     <element id="Procedure.performer:va-2.function.text">
@@ -3600,6 +3600,11 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1331-1: fixed value = FIRST ASST"/>
+        <comment value="from mapParameter 1"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="C*E.9. But note many systems use C*E.2 for this"/>
       </mapping>
@@ -3610,11 +3615,6 @@
       <mapping>
         <identity value="orim"/>
         <map value="fhir:CodeableConcept.text rdfs:subPropertyOf dt:CD.originalText"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1331-1: fixed value = FIRST ASST"/>
-        <comment value="from mapParameter 1"/>
       </mapping>
     </element>
     <element id="Procedure.performer:va-2.actor">
@@ -3650,6 +3650,14 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1331: reference from SURGERY - FIRST ASST (130-.15)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Surg.SurgeryINTRA.FirstAssistingStaffIEN"/>
+      </mapping>
+      <mapping>
         <identity value="workflow"/>
         <map value="Event.performer.actor"/>
       </mapping>
@@ -3664,14 +3672,6 @@
       <mapping>
         <identity value="rim"/>
         <map value=".role"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1331: reference from SURGERY - FIRST ASST (130-.15)"/>
-      </mapping>
-      <mapping>
-        <identity value="cdw"/>
-        <map value="Surg.SurgeryINTRA.FirstAssistingStaffIEN"/>
       </mapping>
     </element>
     <element id="Procedure.performer:va-2.onBehalfOf">
@@ -3999,6 +3999,11 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1332-2: fixed value = http://va.gov/terminology/vistaDefinedTerms/130#.16 SECOND ASST"/>
+        <comment value="from mapParameter 2"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="C*E.1-8, C*E.10-22"/>
       </mapping>
@@ -4009,11 +4014,6 @@
       <mapping>
         <identity value="orim"/>
         <map value="fhir:CodeableConcept.coding rdfs:subPropertyOf dt:CD.coding"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1332-2: fixed value = http://va.gov/terminology/vistaDefinedTerms/130#.16 SECOND ASST"/>
-        <comment value="from mapParameter 2"/>
       </mapping>
     </element>
     <element id="Procedure.performer:va-3.function.text">
@@ -4048,6 +4048,11 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1332-1: fixed value = SECOND ASST"/>
+        <comment value="from mapParameter 1"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="C*E.9. But note many systems use C*E.2 for this"/>
       </mapping>
@@ -4058,11 +4063,6 @@
       <mapping>
         <identity value="orim"/>
         <map value="fhir:CodeableConcept.text rdfs:subPropertyOf dt:CD.originalText"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1332-1: fixed value = SECOND ASST"/>
-        <comment value="from mapParameter 1"/>
       </mapping>
     </element>
     <element id="Procedure.performer:va-3.actor">
@@ -4098,6 +4098,14 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1332: reference from SURGERY - SECOND ASST (130-.16)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Surg.SurgeryINTRA.SecondAssistingStaffIEN"/>
+      </mapping>
+      <mapping>
         <identity value="workflow"/>
         <map value="Event.performer.actor"/>
       </mapping>
@@ -4112,14 +4120,6 @@
       <mapping>
         <identity value="rim"/>
         <map value=".role"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1332: reference from SURGERY - SECOND ASST (130-.16)"/>
-      </mapping>
-      <mapping>
-        <identity value="cdw"/>
-        <map value="Surg.SurgeryINTRA.SecondAssistingStaffIEN"/>
       </mapping>
     </element>
     <element id="Procedure.performer:va-3.onBehalfOf">
@@ -4447,6 +4447,11 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1333-2: fixed value = http://va.gov/terminology/vistaDefinedTerms/130#.164 ATTENDING SURGEON"/>
+        <comment value="from mapParameter 2"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="C*E.1-8, C*E.10-22"/>
       </mapping>
@@ -4457,11 +4462,6 @@
       <mapping>
         <identity value="orim"/>
         <map value="fhir:CodeableConcept.coding rdfs:subPropertyOf dt:CD.coding"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1333-2: fixed value = http://va.gov/terminology/vistaDefinedTerms/130#.164 ATTENDING SURGEON"/>
-        <comment value="from mapParameter 2"/>
       </mapping>
     </element>
     <element id="Procedure.performer:va-4.function.text">
@@ -4496,6 +4496,11 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1333-1: fixed value = ATTENDING SURGEON"/>
+        <comment value="from mapParameter 1"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="C*E.9. But note many systems use C*E.2 for this"/>
       </mapping>
@@ -4506,11 +4511,6 @@
       <mapping>
         <identity value="orim"/>
         <map value="fhir:CodeableConcept.text rdfs:subPropertyOf dt:CD.originalText"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1333-1: fixed value = ATTENDING SURGEON"/>
-        <comment value="from mapParameter 1"/>
       </mapping>
     </element>
     <element id="Procedure.performer:va-4.actor">
@@ -4546,6 +4546,14 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1333: reference from SURGERY - ATTENDING SURGEON (130-.164)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Surg.SurgeryINTRA.AttendingSurgeonStaffIEN"/>
+      </mapping>
+      <mapping>
         <identity value="workflow"/>
         <map value="Event.performer.actor"/>
       </mapping>
@@ -4560,14 +4568,6 @@
       <mapping>
         <identity value="rim"/>
         <map value=".role"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1333: reference from SURGERY - ATTENDING SURGEON (130-.164)"/>
-      </mapping>
-      <mapping>
-        <identity value="cdw"/>
-        <map value="Surg.SurgeryINTRA.AttendingSurgeonStaffIEN"/>
       </mapping>
     </element>
     <element id="Procedure.performer:va-4.onBehalfOf">
@@ -4895,6 +4895,11 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1334-2: fixed value = http://va.gov/terminology/vistaDefinedTerms/130#.168 ASST PERFUSIONIST"/>
+        <comment value="from mapParameter 2"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="C*E.1-8, C*E.10-22"/>
       </mapping>
@@ -4905,11 +4910,6 @@
       <mapping>
         <identity value="orim"/>
         <map value="fhir:CodeableConcept.coding rdfs:subPropertyOf dt:CD.coding"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1334-2: fixed value = http://va.gov/terminology/vistaDefinedTerms/130#.168 ASST PERFUSIONIST"/>
-        <comment value="from mapParameter 2"/>
       </mapping>
     </element>
     <element id="Procedure.performer:va-5.function.text">
@@ -4944,6 +4944,11 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1334-1: fixed value = ASST PERFUSIONIST"/>
+        <comment value="from mapParameter 1"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="C*E.9. But note many systems use C*E.2 for this"/>
       </mapping>
@@ -4954,11 +4959,6 @@
       <mapping>
         <identity value="orim"/>
         <map value="fhir:CodeableConcept.text rdfs:subPropertyOf dt:CD.originalText"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1334-1: fixed value = ASST PERFUSIONIST"/>
-        <comment value="from mapParameter 1"/>
       </mapping>
     </element>
     <element id="Procedure.performer:va-5.actor">
@@ -4994,6 +4994,14 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1334: reference from SURGERY - ASST PERFUSIONIST (130-.168)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Surg.SurgeryINTRA.AssistingPerfusionistStaffIEN"/>
+      </mapping>
+      <mapping>
         <identity value="workflow"/>
         <map value="Event.performer.actor"/>
       </mapping>
@@ -5008,14 +5016,6 @@
       <mapping>
         <identity value="rim"/>
         <map value=".role"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1334: reference from SURGERY - ASST PERFUSIONIST (130-.168)"/>
-      </mapping>
-      <mapping>
-        <identity value="cdw"/>
-        <map value="Surg.SurgeryINTRA.AssistingPerfusionistStaffIEN"/>
       </mapping>
     </element>
     <element id="Procedure.performer:va-5.onBehalfOf">
@@ -5343,6 +5343,11 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1335-2: fixed value = http://va.gov/terminology/vistaDefinedTerms/130#.18 SKIN PREPPED BY (1)"/>
+        <comment value="from mapParameter 2"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="C*E.1-8, C*E.10-22"/>
       </mapping>
@@ -5353,11 +5358,6 @@
       <mapping>
         <identity value="orim"/>
         <map value="fhir:CodeableConcept.coding rdfs:subPropertyOf dt:CD.coding"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1335-2: fixed value = http://va.gov/terminology/vistaDefinedTerms/130#.18 SKIN PREPPED BY (1)"/>
-        <comment value="from mapParameter 2"/>
       </mapping>
     </element>
     <element id="Procedure.performer:va-6.function.text">
@@ -5392,6 +5392,11 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1335-1: fixed value = SKIN PREPPED BY (1)"/>
+        <comment value="from mapParameter 1"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="C*E.9. But note many systems use C*E.2 for this"/>
       </mapping>
@@ -5402,11 +5407,6 @@
       <mapping>
         <identity value="orim"/>
         <map value="fhir:CodeableConcept.text rdfs:subPropertyOf dt:CD.originalText"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1335-1: fixed value = SKIN PREPPED BY (1)"/>
-        <comment value="from mapParameter 1"/>
       </mapping>
     </element>
     <element id="Procedure.performer:va-6.actor">
@@ -5442,6 +5442,14 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1335: reference from SURGERY - SKIN PREPPED BY (1) (130-.18)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Surg.SurgeryINTRA.SkinPreparationStaffIEN"/>
+      </mapping>
+      <mapping>
         <identity value="workflow"/>
         <map value="Event.performer.actor"/>
       </mapping>
@@ -5456,14 +5464,6 @@
       <mapping>
         <identity value="rim"/>
         <map value=".role"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1335: reference from SURGERY - SKIN PREPPED BY (1) (130-.18)"/>
-      </mapping>
-      <mapping>
-        <identity value="cdw"/>
-        <map value="Surg.SurgeryINTRA.SkinPreparationStaffIEN"/>
       </mapping>
     </element>
     <element id="Procedure.performer:va-6.onBehalfOf">
@@ -5791,6 +5791,11 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1336-2: fixed value = http://va.gov/terminology/vistaDefinedTerms/130#.31 PRINC ANESTHETIST"/>
+        <comment value="from mapParameter 2"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="C*E.1-8, C*E.10-22"/>
       </mapping>
@@ -5801,11 +5806,6 @@
       <mapping>
         <identity value="orim"/>
         <map value="fhir:CodeableConcept.coding rdfs:subPropertyOf dt:CD.coding"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1336-2: fixed value = http://va.gov/terminology/vistaDefinedTerms/130#.31 PRINC ANESTHETIST"/>
-        <comment value="from mapParameter 2"/>
       </mapping>
     </element>
     <element id="Procedure.performer:va-7.function.text">
@@ -5840,6 +5840,11 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1336-1: fixed value = PRINC ANESTHETIST"/>
+        <comment value="from mapParameter 1"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="C*E.9. But note many systems use C*E.2 for this"/>
       </mapping>
@@ -5850,11 +5855,6 @@
       <mapping>
         <identity value="orim"/>
         <map value="fhir:CodeableConcept.text rdfs:subPropertyOf dt:CD.originalText"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1336-1: fixed value = PRINC ANESTHETIST"/>
-        <comment value="from mapParameter 1"/>
       </mapping>
     </element>
     <element id="Procedure.performer:va-7.actor">
@@ -5890,6 +5890,14 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1336: reference from SURGERY - PRINC ANESTHETIST (130-.31)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Surg.SurgeryINTRA.PrincipalAnesthetistStaffIEN"/>
+      </mapping>
+      <mapping>
         <identity value="workflow"/>
         <map value="Event.performer.actor"/>
       </mapping>
@@ -5904,14 +5912,6 @@
       <mapping>
         <identity value="rim"/>
         <map value=".role"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1336: reference from SURGERY - PRINC ANESTHETIST (130-.31)"/>
-      </mapping>
-      <mapping>
-        <identity value="cdw"/>
-        <map value="Surg.SurgeryINTRA.PrincipalAnesthetistStaffIEN"/>
       </mapping>
     </element>
     <element id="Procedure.performer:va-7.onBehalfOf">
@@ -6239,6 +6239,11 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1337-2: fixed value = http://va.gov/terminology/vistaDefinedTerms/130#.32 RELIEF ANESTHETIST"/>
+        <comment value="from mapParameter 2"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="C*E.1-8, C*E.10-22"/>
       </mapping>
@@ -6249,11 +6254,6 @@
       <mapping>
         <identity value="orim"/>
         <map value="fhir:CodeableConcept.coding rdfs:subPropertyOf dt:CD.coding"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1337-2: fixed value = http://va.gov/terminology/vistaDefinedTerms/130#.32 RELIEF ANESTHETIST"/>
-        <comment value="from mapParameter 2"/>
       </mapping>
     </element>
     <element id="Procedure.performer:va-8.function.text">
@@ -6288,6 +6288,11 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1337-1: fixed value = RELIEF ANESTHETIST"/>
+        <comment value="from mapParameter 1"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="C*E.9. But note many systems use C*E.2 for this"/>
       </mapping>
@@ -6298,11 +6303,6 @@
       <mapping>
         <identity value="orim"/>
         <map value="fhir:CodeableConcept.text rdfs:subPropertyOf dt:CD.originalText"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1337-1: fixed value = RELIEF ANESTHETIST"/>
-        <comment value="from mapParameter 1"/>
       </mapping>
     </element>
     <element id="Procedure.performer:va-8.actor">
@@ -6338,6 +6338,14 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1337: reference from SURGERY - RELIEF ANESTHETIST (130-.32)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Surg.SurgeryINTRA.ReliefAnesthetistStaffIEN"/>
+      </mapping>
+      <mapping>
         <identity value="workflow"/>
         <map value="Event.performer.actor"/>
       </mapping>
@@ -6352,14 +6360,6 @@
       <mapping>
         <identity value="rim"/>
         <map value=".role"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1337: reference from SURGERY - RELIEF ANESTHETIST (130-.32)"/>
-      </mapping>
-      <mapping>
-        <identity value="cdw"/>
-        <map value="Surg.SurgeryINTRA.ReliefAnesthetistStaffIEN"/>
       </mapping>
     </element>
     <element id="Procedure.performer:va-8.onBehalfOf">
@@ -6687,6 +6687,11 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1338-2: fixed value = http://va.gov/terminology/vistaDefinedTerms/130#.33 ASST ANESTHETIST"/>
+        <comment value="from mapParameter 2"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="C*E.1-8, C*E.10-22"/>
       </mapping>
@@ -6697,11 +6702,6 @@
       <mapping>
         <identity value="orim"/>
         <map value="fhir:CodeableConcept.coding rdfs:subPropertyOf dt:CD.coding"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1338-2: fixed value = http://va.gov/terminology/vistaDefinedTerms/130#.33 ASST ANESTHETIST"/>
-        <comment value="from mapParameter 2"/>
       </mapping>
     </element>
     <element id="Procedure.performer:va-9.function.text">
@@ -6736,6 +6736,11 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1338-1: fixed value = ASST ANESTHETIST"/>
+        <comment value="from mapParameter 1"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="C*E.9. But note many systems use C*E.2 for this"/>
       </mapping>
@@ -6746,11 +6751,6 @@
       <mapping>
         <identity value="orim"/>
         <map value="fhir:CodeableConcept.text rdfs:subPropertyOf dt:CD.originalText"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1338-1: fixed value = ASST ANESTHETIST"/>
-        <comment value="from mapParameter 1"/>
       </mapping>
     </element>
     <element id="Procedure.performer:va-9.actor">
@@ -6786,6 +6786,14 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1338: reference from SURGERY - ASST ANESTHETIST (130-.33)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Surg.SurgeryINTRA.AssistingAnesthetistStaffIEN"/>
+      </mapping>
+      <mapping>
         <identity value="workflow"/>
         <map value="Event.performer.actor"/>
       </mapping>
@@ -6800,14 +6808,6 @@
       <mapping>
         <identity value="rim"/>
         <map value=".role"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1338: reference from SURGERY - ASST ANESTHETIST (130-.33)"/>
-      </mapping>
-      <mapping>
-        <identity value="cdw"/>
-        <map value="Surg.SurgeryINTRA.AssistingAnesthetistStaffIEN"/>
       </mapping>
     </element>
     <element id="Procedure.performer:va-9.onBehalfOf">
@@ -7135,6 +7135,11 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1339-2: fixed value = http://va.gov/terminology/vistaDefinedTerms/130#.34 ANESTHESIOLOGIST SUPVR"/>
+        <comment value="from mapParameter 2"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="C*E.1-8, C*E.10-22"/>
       </mapping>
@@ -7145,11 +7150,6 @@
       <mapping>
         <identity value="orim"/>
         <map value="fhir:CodeableConcept.coding rdfs:subPropertyOf dt:CD.coding"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1339-2: fixed value = http://va.gov/terminology/vistaDefinedTerms/130#.34 ANESTHESIOLOGIST SUPVR"/>
-        <comment value="from mapParameter 2"/>
       </mapping>
     </element>
     <element id="Procedure.performer:va-10.function.text">
@@ -7184,6 +7184,11 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1339-1: fixed value = ANESTHESIOLOGIST SUPVR"/>
+        <comment value="from mapParameter 1"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="C*E.9. But note many systems use C*E.2 for this"/>
       </mapping>
@@ -7194,11 +7199,6 @@
       <mapping>
         <identity value="orim"/>
         <map value="fhir:CodeableConcept.text rdfs:subPropertyOf dt:CD.originalText"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1339-1: fixed value = ANESTHESIOLOGIST SUPVR"/>
-        <comment value="from mapParameter 1"/>
       </mapping>
     </element>
     <element id="Procedure.performer:va-10.actor">
@@ -7234,6 +7234,14 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1339: reference from SURGERY - ANESTHESIOLOGIST SUPVR (130-.34)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Surg.SurgeryINTRA.AnesthesiologistSupervisorStaffIEN"/>
+      </mapping>
+      <mapping>
         <identity value="workflow"/>
         <map value="Event.performer.actor"/>
       </mapping>
@@ -7248,14 +7256,6 @@
       <mapping>
         <identity value="rim"/>
         <map value=".role"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1339: reference from SURGERY - ANESTHESIOLOGIST SUPVR (130-.34)"/>
-      </mapping>
-      <mapping>
-        <identity value="cdw"/>
-        <map value="Surg.SurgeryINTRA.AnesthesiologistSupervisorStaffIEN"/>
       </mapping>
     </element>
     <element id="Procedure.performer:va-10.onBehalfOf">
@@ -7583,6 +7583,11 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1340-2: fixed value = http://va.gov/terminology/vistaDefinedTerms/130#.522 VERIFIER"/>
+        <comment value="from mapParameter 2"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="C*E.1-8, C*E.10-22"/>
       </mapping>
@@ -7593,11 +7598,6 @@
       <mapping>
         <identity value="orim"/>
         <map value="fhir:CodeableConcept.coding rdfs:subPropertyOf dt:CD.coding"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1340-2: fixed value = http://va.gov/terminology/vistaDefinedTerms/130#.522 VERIFIER"/>
-        <comment value="from mapParameter 2"/>
       </mapping>
     </element>
     <element id="Procedure.performer:va-11.function.text">
@@ -7632,6 +7632,11 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1340-1: fixed value = VERIFIER"/>
+        <comment value="from mapParameter 1"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="C*E.9. But note many systems use C*E.2 for this"/>
       </mapping>
@@ -7642,11 +7647,6 @@
       <mapping>
         <identity value="orim"/>
         <map value="fhir:CodeableConcept.text rdfs:subPropertyOf dt:CD.originalText"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1340-1: fixed value = VERIFIER"/>
-        <comment value="from mapParameter 1"/>
       </mapping>
     </element>
     <element id="Procedure.performer:va-11.actor">
@@ -7682,6 +7682,14 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1340: reference from SURGERY - VERIFIER (130-.522)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Surg.SurgeryINTRA.VerifierStaffIEN"/>
+      </mapping>
+      <mapping>
         <identity value="workflow"/>
         <map value="Event.performer.actor"/>
       </mapping>
@@ -7696,14 +7704,6 @@
       <mapping>
         <identity value="rim"/>
         <map value=".role"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1340: reference from SURGERY - VERIFIER (130-.522)"/>
-      </mapping>
-      <mapping>
-        <identity value="cdw"/>
-        <map value="Surg.SurgeryINTRA.VerifierStaffIEN"/>
       </mapping>
     </element>
     <element id="Procedure.performer:va-11.onBehalfOf">
@@ -8031,6 +8031,11 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1341-2: fixed value = http://va.gov/terminology/vistaDefinedTerms/130#123 PROVIDER"/>
+        <comment value="from mapParameter 2"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="C*E.1-8, C*E.10-22"/>
       </mapping>
@@ -8041,11 +8046,6 @@
       <mapping>
         <identity value="orim"/>
         <map value="fhir:CodeableConcept.coding rdfs:subPropertyOf dt:CD.coding"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1341-2: fixed value = http://va.gov/terminology/vistaDefinedTerms/130#123 PROVIDER"/>
-        <comment value="from mapParameter 2"/>
       </mapping>
     </element>
     <element id="Procedure.performer:va-12.function.text">
@@ -8080,6 +8080,11 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1341-1: fixed value = PROVIDER"/>
+        <comment value="from mapParameter 1"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="C*E.9. But note many systems use C*E.2 for this"/>
       </mapping>
@@ -8090,11 +8095,6 @@
       <mapping>
         <identity value="orim"/>
         <map value="fhir:CodeableConcept.text rdfs:subPropertyOf dt:CD.originalText"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1341-1: fixed value = PROVIDER"/>
-        <comment value="from mapParameter 1"/>
       </mapping>
     </element>
     <element id="Procedure.performer:va-12.actor">
@@ -8130,6 +8130,14 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1341: reference from SURGERY - PROVIDER (130-123)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Surg.SurgeryINTRA.ProviderIEN"/>
+      </mapping>
+      <mapping>
         <identity value="workflow"/>
         <map value="Event.performer.actor"/>
       </mapping>
@@ -8144,14 +8152,6 @@
       <mapping>
         <identity value="rim"/>
         <map value=".role"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1341: reference from SURGERY - PROVIDER (130-123)"/>
-      </mapping>
-      <mapping>
-        <identity value="cdw"/>
-        <map value="Surg.SurgeryINTRA.ProviderIEN"/>
       </mapping>
     </element>
     <element id="Procedure.performer:va-12.onBehalfOf">
@@ -8479,6 +8479,11 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1342-2: fixed value = http://va.gov/terminology/vistaDefinedTerms/130#.57 FOLEY CATHETER INSERTED BY"/>
+        <comment value="from mapParameter 2"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="C*E.1-8, C*E.10-22"/>
       </mapping>
@@ -8489,11 +8494,6 @@
       <mapping>
         <identity value="orim"/>
         <map value="fhir:CodeableConcept.coding rdfs:subPropertyOf dt:CD.coding"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1342-2: fixed value = http://va.gov/terminology/vistaDefinedTerms/130#.57 FOLEY CATHETER INSERTED BY"/>
-        <comment value="from mapParameter 2"/>
       </mapping>
     </element>
     <element id="Procedure.performer:va-13.function.text">
@@ -8528,6 +8528,11 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1342-1: fixed value = FOLEY CATHETER INSERTED BY"/>
+        <comment value="from mapParameter 1"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="C*E.9. But note many systems use C*E.2 for this"/>
       </mapping>
@@ -8538,11 +8543,6 @@
       <mapping>
         <identity value="orim"/>
         <map value="fhir:CodeableConcept.text rdfs:subPropertyOf dt:CD.originalText"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1342-1: fixed value = FOLEY CATHETER INSERTED BY"/>
-        <comment value="from mapParameter 1"/>
       </mapping>
     </element>
     <element id="Procedure.performer:va-13.actor">
@@ -8578,6 +8578,14 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1342: reference from SURGERY - FOLEY CATHETER INSERTED BY (130-.57)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Surg.SurgeryINTRA.FoleyCatheterStaffIEN"/>
+      </mapping>
+      <mapping>
         <identity value="workflow"/>
         <map value="Event.performer.actor"/>
       </mapping>
@@ -8592,14 +8600,6 @@
       <mapping>
         <identity value="rim"/>
         <map value=".role"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1342: reference from SURGERY - FOLEY CATHETER INSERTED BY (130-.57)"/>
-      </mapping>
-      <mapping>
-        <identity value="cdw"/>
-        <map value="Surg.SurgeryINTRA.FoleyCatheterStaffIEN"/>
       </mapping>
     </element>
     <element id="Procedure.performer:va-13.onBehalfOf">
@@ -8661,14 +8661,6 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
-        <identity value="w5"/>
-        <map value="FiveWs.where[x]"/>
-      </mapping>
-      <mapping>
-        <identity value="rim"/>
-        <map value=".participation[typeCode=LOC].role[classCode=SDLOC]"/>
-      </mapping>
-      <mapping>
         <identity value="vista"/>
         <map value="1294: reference from SURGERY - NON-OR LOCATION (130-119) case 130-118 NON-OR PROCEDURE != ‘Y’"/>
       </mapping>
@@ -8683,6 +8675,14 @@
       <mapping>
         <identity value="cdw"/>
         <map value="Surg.SurgeryINTRA.OperatingRoomIEN,Surg.SurgeryPOST.OperatingRoomIEN"/>
+      </mapping>
+      <mapping>
+        <identity value="w5"/>
+        <map value="FiveWs.where[x]"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value=".participation[typeCode=LOC].role[classCode=SDLOC]"/>
       </mapping>
     </element>
     <element id="Procedure.reasonCode">
@@ -8874,6 +8874,14 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1289: source value from SURGERY - PRINCIPAL PRE-OP DIAGNOSIS (130-32)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Surg.SurgeryPRE.PrincipalPreOpDiagnosisText"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="C*E.9. But note many systems use C*E.2 for this"/>
       </mapping>
@@ -8884,14 +8892,6 @@
       <mapping>
         <identity value="orim"/>
         <map value="fhir:CodeableConcept.text rdfs:subPropertyOf dt:CD.originalText"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1289: source value from SURGERY - PRINCIPAL PRE-OP DIAGNOSIS (130-32)"/>
-      </mapping>
-      <mapping>
-        <identity value="cdw"/>
-        <map value="Surg.SurgeryPRE.PrincipalPreOpDiagnosisText"/>
       </mapping>
     </element>
     <element id="Procedure.reasonReference">
@@ -9189,6 +9189,15 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1296: fixed value = http://snomed.info/sct#88797001 Complication of surgical procedure (disorder) when SURGERY - STOMA COMPLICATIONS (130-688) case == ‘Y’"/>
+      </mapping>
+      <mapping>
+        <identity value="vista"/>
+        <map value="1297: fixed value = http://snomed.info/sct#22298006 Myocardial infarction (disorder) when SURGERY - MYOCARDIAL INFARCTION (130-258) case == ‘Y’"/>
+        <comment value="Removed &quot;perioperative&quot; in the .text"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="C*E.1-8, C*E.10-22"/>
       </mapping>
@@ -9199,15 +9208,6 @@
       <mapping>
         <identity value="orim"/>
         <map value="fhir:CodeableConcept.coding rdfs:subPropertyOf dt:CD.coding"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1296: fixed value = http://snomed.info/sct#88797001 Complication of surgical procedure (disorder) when SURGERY - STOMA COMPLICATIONS (130-688) case == ‘Y’"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1297: fixed value = http://snomed.info/sct#22298006 Myocardial infarction (disorder) when SURGERY - MYOCARDIAL INFARCTION (130-258) case == ‘Y’"/>
-        <comment value="Removed &quot;perioperative&quot; in the .text"/>
       </mapping>
     </element>
     <element id="Procedure.complication.text">
@@ -9241,6 +9241,16 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1296-1: fixed value = STOMA COMPLICATIONS case == ‘Y’"/>
+        <comment value="from mapParameter 1"/>
+      </mapping>
+      <mapping>
+        <identity value="vista"/>
+        <map value="1297-1: fixed value = MYOCARDIAL INFARCTION case == ‘Y’"/>
+        <comment value="from mapParameter 1"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="C*E.9. But note many systems use C*E.2 for this"/>
       </mapping>
@@ -9251,16 +9261,6 @@
       <mapping>
         <identity value="orim"/>
         <map value="fhir:CodeableConcept.text rdfs:subPropertyOf dt:CD.originalText"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1296-1: fixed value = STOMA COMPLICATIONS case == ‘Y’"/>
-        <comment value="from mapParameter 1"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1297-1: fixed value = MYOCARDIAL INFARCTION case == ‘Y’"/>
-        <comment value="from mapParameter 1"/>
       </mapping>
     </element>
     <element id="Procedure.complicationDetail">
@@ -9357,6 +9357,10 @@
       <isModifier value="false"/>
       <isSummary value="false"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1288: source value from SURGERY - GENERAL COMMENTS (130-.28)"/>
+      </mapping>
+      <mapping>
         <identity value="workflow"/>
         <map value="Event.note"/>
       </mapping>
@@ -9367,10 +9371,6 @@
       <mapping>
         <identity value="rim"/>
         <map value=".inboundRelationship[typeCode=SUBJ].source[classCode=OBS, moodCode=EVN, code=&quot;annotation&quot;].value"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1288: source value from SURGERY - GENERAL COMMENTS (130-.28)"/>
       </mapping>
     </element>
     <element id="Procedure.focalDevice">

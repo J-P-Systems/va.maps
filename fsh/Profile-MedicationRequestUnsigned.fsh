@@ -5,8 +5,6 @@ Title: "MedicationRequest: Unsigned"
 Description: "This StructureDefinition contains the maps for VistA file ORDER (100) to us-core-medicationrequest"
 * ^status = #draft
 * identifier and subject and requester and authoredOn and priorPrescription and dosageInstruction.timing.repeat.boundsPeriod.start and dosageInstruction.timing.repeat.boundsPeriod.end and medicationCodeableConcept MS
-* subject only Reference(Patient)
-* requester only Reference(Practitioner)
 
 Mapping: source-to-MedicationRequestUnsigned
 Id: vista

@@ -43,11 +43,11 @@
 <tr><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3goXBCwdPqAP0wAAAldJREFUOMuNk0tIlFEYhp9z/vE2jHkhxXA0zJCMitrUQlq4lnSltEqCFhFG2MJFhIvIFpkEWaTQqjaWZRkp0g26URZkTpbaaOJkDqk10szoODP//7XIMUe0elcfnPd9zsfLOYplGrpRwZaqTtw3K7PtGem7Q6FoidbGgqHVy/HRb669R+56zx7eRV1L31JGxYbBtjKK93cxeqfyQHbehkZbUkK20goELEuIzEd+dHS+qz/Y8PTSif0FnGkbiwcAjHaU1+QWOptFiyCLp/LnKptpqIuXHx6rbR26kJcBX3yLgBfnd7CxwJmflpP2wUg0HIAoUUpZBmKzELGWcN8nAr6Gpu7tLU/CkwAaoKTWRSQyt89Q8w6J+oVQkKnBoblH7V0PPvUOvDYXfopE/SJmALsxnVm6LbkotrUtNowMeIrVrBcBpaMmdS0j9df7abpSuy7HWehwJdt1lhVwi/J58U5beXGAF6c3UXLycw1wdFklArBn87xdh0ZsZtArghBdAA3+OEDVubG4UEzP6x1FOWneHh2VDAHBAt80IbdXDcesNoCvs3E5AFyNSU5nbrDPZpcUEQQTFZiEVx+51fxMhhyJEAgvlriadIJZZksRuwBYMOPBbO3hePVVqgEJhFeUuFLhIPkRP6BQLIBrmMenujm/3g4zc398awIe90Zb5A1vREALqneMcYgP/xVQWlG+Ncu5vgwwlaUNx+3799rfe96u9K0JSDXcOzOTJg4B6IgmXfsygc7/Bvg9g9E58/cDVmGIBOP/zT8Bz1zqWqpbXIsd0O9hajXfL6u4BaOS6SeWAAAAAElFTkSuQmCC" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr></table></div>
   </text>
   <url value="http://va.gov/fhir/StructureDefinition/ImmunizationImmunization"/>
-  <version value="0.65.345"/>
+  <version value="0.65.348"/>
   <name value="ImmunizationImmunization"/>
   <title value="Immunization Immunization"/>
   <status value="draft"/>
-  <date value="2024-08-26T15:27:18+00:00"/>
+  <date value="2024-09-15T08:33:43+00:00"/>
   <publisher value="VA"/>
   <contact>
     <name value="VA"/>
@@ -521,22 +521,6 @@
         <valueSet value="http://hl7.org/fhir/ValueSet/immunization-status"/>
       </binding>
       <mapping>
-        <identity value="workflow"/>
-        <map value="Event.status"/>
-      </mapping>
-      <mapping>
-        <identity value="w5"/>
-        <map value="FiveWs.status"/>
-      </mapping>
-      <mapping>
-        <identity value="rim"/>
-        <map value="statusCode"/>
-      </mapping>
-      <mapping>
-        <identity value="argonaut-dq-dstu2"/>
-        <map value="Immunization.status"/>
-      </mapping>
-      <mapping>
         <identity value="vista"/>
         <map value="297: fixed value = #completed when V IMMUNIZATION - IMMUNIZATION &gt; IMMUNIZATION - CVX CODE (9000010.11-.01 &gt; 9999999.14-.03) case CVX populated"/>
         <comment value="subfile: .03 is CVX"/>
@@ -553,6 +537,22 @@
       <mapping>
         <identity value="cdw"/>
         <map value="Immun.Immunization.ImmunizationNameIEN&#xA;Dim.ImmunizationName.ImmunizationName,Dim.PharmacyOrderableItem.ImmunizationName"/>
+      </mapping>
+      <mapping>
+        <identity value="workflow"/>
+        <map value="Event.status"/>
+      </mapping>
+      <mapping>
+        <identity value="w5"/>
+        <map value="FiveWs.status"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="statusCode"/>
+      </mapping>
+      <mapping>
+        <identity value="argonaut-dq-dstu2"/>
+        <map value="Immunization.status"/>
       </mapping>
     </element>
     <element id="Immunization.statusReason">
@@ -586,6 +586,14 @@
         <valueSet value="http://va.gov/fhir/ValueSet/VSVFimmunizationStatusReason"/>
       </binding>
       <mapping>
+        <identity value="vista"/>
+        <map value="527: terminologyMaps using VF_immunizationStatusReason on V IMMUNIZATION - IMMUNIZATION &gt; IMMUNIZATION - NAME (9000010.11-.01 &gt; 9999999.14-.01) case V IMMUNIZATION - IMMUNIZATION null"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Immun.Immunization.ImmunizationNameIEN&#xA;Dim.ImmunizationName.ImmunizationName,Dim.PharmacyOrderableItem.ImmunizationName"/>
+      </mapping>
+      <mapping>
         <identity value="workflow"/>
         <map value="Event.statusReason"/>
       </mapping>
@@ -596,14 +604,6 @@
       <mapping>
         <identity value="argonaut-dq-dstu2"/>
         <map value="Immunization.wasNotGiven"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="527: terminologyMaps using VF_immunizationStatusReason on V IMMUNIZATION - IMMUNIZATION &gt; IMMUNIZATION - NAME (9000010.11-.01 &gt; 9999999.14-.01) case V IMMUNIZATION - IMMUNIZATION null"/>
-      </mapping>
-      <mapping>
-        <identity value="cdw"/>
-        <map value="Immun.Immunization.ImmunizationNameIEN&#xA;Dim.ImmunizationName.ImmunizationName,Dim.PharmacyOrderableItem.ImmunizationName"/>
       </mapping>
     </element>
     <element id="Immunization.vaccineCode">
@@ -637,6 +637,24 @@
         <valueSet value="http://va.gov/fhir/ValueSet/VSVFinferredCVX"/>
       </binding>
       <mapping>
+        <identity value="vista"/>
+        <map value="528: terminologyMaps using VF_inferredCVX on V IMMUNIZATION - IMMUNIZATION &gt; IMMUNIZATION - NAME (9000010.11-.01 &gt; 9999999.14-.01) case V IMMUNIZATION - IMMUNIZATION null"/>
+        <comment value="This map is used to identify CVX codes for immunizations that were not given, and which therefore are not coded. The name can be used to determine what the CVX Group."/>
+      </mapping>
+      <mapping>
+        <identity value="vista"/>
+        <map value="332: source value from V IMMUNIZATION - IMMUNIZATION &gt; IMMUNIZATION - CVX CODE (9000010.11-.01 &gt; 9999999.14-.03) case not null"/>
+        <comment value="subfile: .03 is CVX"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Immun.Immunization.ImmunizationNameIEN&#xA;Dim.ImmunizationName.ImmunizationName,Dim.PharmacyOrderableItem.ImmunizationName"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Immun.Immunization.ImmunizationNameIEN&#xA;Dim.ImmunizationName.CVXCode"/>
+      </mapping>
+      <mapping>
         <identity value="workflow"/>
         <map value="Event.code"/>
       </mapping>
@@ -663,24 +681,6 @@
       <mapping>
         <identity value="argonaut-dq-dstu2"/>
         <map value="Immunization.vaccineCode"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="332: source value from V IMMUNIZATION - IMMUNIZATION &gt; IMMUNIZATION - CVX CODE (9000010.11-.01 &gt; 9999999.14-.03) case not null"/>
-        <comment value="subfile: .03 is CVX"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="528: terminologyMaps using VF_inferredCVX on V IMMUNIZATION - IMMUNIZATION &gt; IMMUNIZATION - NAME (9000010.11-.01 &gt; 9999999.14-.01) case V IMMUNIZATION - IMMUNIZATION null"/>
-        <comment value="This map is used to identify CVX codes for immunizations that were not given, and which therefore are not coded. The name can be used to determine what the CVX Group."/>
-      </mapping>
-      <mapping>
-        <identity value="cdw"/>
-        <map value="Immun.Immunization.ImmunizationNameIEN&#xA;Dim.ImmunizationName.CVXCode"/>
-      </mapping>
-      <mapping>
-        <identity value="cdw"/>
-        <map value="Immun.Immunization.ImmunizationNameIEN&#xA;Dim.ImmunizationName.ImmunizationName,Dim.PharmacyOrderableItem.ImmunizationName"/>
       </mapping>
     </element>
     <element id="Immunization.vaccineCode.id">
@@ -897,6 +897,11 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1609-1: fixed value = http://hl7.org/fhir/sid/ndc"/>
+        <comment value="from mapParameter 1"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="C*E.3"/>
       </mapping>
@@ -907,11 +912,6 @@
       <mapping>
         <identity value="orim"/>
         <map value="fhir:Coding.system rdfs:subPropertyOf dt:CDCoding.codeSystem"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1609-1: fixed value = http://hl7.org/fhir/sid/ndc"/>
-        <comment value="from mapParameter 1"/>
       </mapping>
     </element>
     <element id="Immunization.vaccineCode.coding.version">
@@ -979,6 +979,14 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1609: source value from V IMMUNIZATION - LOT &gt; IMMUNIZATION LOT - NDC CODE (VA) (9000010.11-.05 &gt; 9999999.41-.18)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Dim.ImmunizationLot.NDCCodeVAText"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="C*E.1"/>
       </mapping>
@@ -989,14 +997,6 @@
       <mapping>
         <identity value="orim"/>
         <map value="fhir:Coding.code rdfs:subPropertyOf dt:CDCoding.code"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1609: source value from V IMMUNIZATION - LOT &gt; IMMUNIZATION LOT - NDC CODE (VA) (9000010.11-.05 &gt; 9999999.41-.18)"/>
-      </mapping>
-      <mapping>
-        <identity value="cdw"/>
-        <map value="Dim.ImmunizationLot.NDCCodeVAText"/>
       </mapping>
     </element>
     <element id="Immunization.vaccineCode.coding.display">
@@ -1110,6 +1110,11 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="332-1: undefined case not null"/>
+        <comment value="from mapParameter 1"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="C*E.9. But note many systems use C*E.2 for this"/>
       </mapping>
@@ -1120,11 +1125,6 @@
       <mapping>
         <identity value="orim"/>
         <map value="fhir:CodeableConcept.text rdfs:subPropertyOf dt:CD.originalText"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="332-1: undefined case not null"/>
-        <comment value="from mapParameter 1"/>
       </mapping>
     </element>
     <element id="Immunization.patient">
@@ -1155,6 +1155,14 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="333: source value from V IMMUNIZATION - PATIENT NAME (9000010.11-.02)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Immun.Immunization.PatientIEN"/>
+      </mapping>
+      <mapping>
         <identity value="workflow"/>
         <map value="Event.subject"/>
       </mapping>
@@ -1181,14 +1189,6 @@
       <mapping>
         <identity value="argonaut-dq-dstu2"/>
         <map value="Immunization.patient"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="333: source value from V IMMUNIZATION - PATIENT NAME (9000010.11-.02)"/>
-      </mapping>
-      <mapping>
-        <identity value="cdw"/>
-        <map value="Immun.Immunization.PatientIEN"/>
       </mapping>
     </element>
     <element id="Immunization.encounter">
@@ -1218,6 +1218,14 @@
       <isModifier value="false"/>
       <isSummary value="false"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1767: reference from V IMMUNIZATION - VISIT (9000010.11-.03)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Immun.Immunization.OutsideLocation,Immun.Immunization.VisitDateTime,Immun.Immunization.VisitIEN"/>
+      </mapping>
+      <mapping>
         <identity value="workflow"/>
         <map value="Event.context"/>
       </mapping>
@@ -1232,14 +1240,6 @@
       <mapping>
         <identity value="rim"/>
         <map value="component-&gt;EncounterEvent"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1767: reference from V IMMUNIZATION - VISIT (9000010.11-.03)"/>
-      </mapping>
-      <mapping>
-        <identity value="cdw"/>
-        <map value="Immun.Immunization.OutsideLocation,Immun.Immunization.VisitDateTime,Immun.Immunization.VisitIEN"/>
       </mapping>
     </element>
     <element id="Immunization.occurrence[x]">
@@ -1345,6 +1345,14 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="334: source value from V IMMUNIZATION - EVENT DATE AND TIME (9000010.11-1201)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Immun.Immunization.EventDateTime"/>
+      </mapping>
+      <mapping>
         <identity value="workflow"/>
         <map value="Event.occurrence[x]"/>
       </mapping>
@@ -1371,14 +1379,6 @@
       <mapping>
         <identity value="argonaut-dq-dstu2"/>
         <map value="Immunization.date"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="334: source value from V IMMUNIZATION - EVENT DATE AND TIME (9000010.11-1201)"/>
-      </mapping>
-      <mapping>
-        <identity value="cdw"/>
-        <map value="Immun.Immunization.EventDateTime"/>
       </mapping>
     </element>
     <element id="Immunization.recorded">
@@ -1407,14 +1407,6 @@
       <isModifier value="false"/>
       <isSummary value="false"/>
       <mapping>
-        <identity value="w5"/>
-        <map value="FiveWs.recorded"/>
-      </mapping>
-      <mapping>
-        <identity value="rim"/>
-        <map value=".participation[typeCode=AUT].time"/>
-      </mapping>
-      <mapping>
         <identity value="vista"/>
         <map value="1593: source value from V IMMUNIZATION - DATE/TIME RECORDED (9000010.11-1205)"/>
         <comment value="identified byMHV"/>
@@ -1422,6 +1414,14 @@
       <mapping>
         <identity value="cdw"/>
         <map value="Immun.Immunization.RecordedDateTime"/>
+      </mapping>
+      <mapping>
+        <identity value="w5"/>
+        <map value="FiveWs.recorded"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value=".participation[typeCode=AUT].time"/>
       </mapping>
     </element>
     <element id="Immunization.primarySource">
@@ -1451,6 +1451,14 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="607: transform using VF_immunizationPrimarySource on V IMMUNIZATION - EVENT INFORMATION SOURCE (9000010.11-1301)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Immun.Immunization.ImmunizationInformationSourceIEN"/>
+      </mapping>
+      <mapping>
         <identity value="w5"/>
         <map value="FiveWs.source"/>
       </mapping>
@@ -1469,14 +1477,6 @@
       <mapping>
         <identity value="argonaut-dq-dstu2"/>
         <map value="Immunization.reported"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="607: transform using VF_immunizationPrimarySource on V IMMUNIZATION - EVENT INFORMATION SOURCE (9000010.11-1301)"/>
-      </mapping>
-      <mapping>
-        <identity value="cdw"/>
-        <map value="Immun.Immunization.ImmunizationInformationSourceIEN"/>
       </mapping>
     </element>
     <element id="Immunization.primarySource.id">
@@ -1806,6 +1806,15 @@
       <isModifier value="false"/>
       <isSummary value="false"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1801: reference from V IMMUNIZATION - VISIT &gt; VISIT - HOSPITAL LOCATION (9000010.11-.03 &gt; 9000010-.22)"/>
+        <comment value="Added based on LH gap analysis; existed in PHAPI, not CoP maps"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Immun.Immunization.OutsideLocation,Immun.Immunization.VisitDateTime,Immun.Immunization.VisitIEN&#xA;Outpat.Visit.LocationIEN,Outpat.Workload.LocationIEN"/>
+      </mapping>
+      <mapping>
         <identity value="workflow"/>
         <map value="Event.location"/>
       </mapping>
@@ -1820,15 +1829,6 @@
       <mapping>
         <identity value="rim"/>
         <map value=".participation[typeCode=LOC].COCT_MT240000UV"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1801: reference from V IMMUNIZATION - VISIT &gt; VISIT - HOSPITAL LOCATION (9000010.11-.03 &gt; 9000010-.22)"/>
-        <comment value="Added based on LH gap analysis; existed in PHAPI, not CoP maps"/>
-      </mapping>
-      <mapping>
-        <identity value="cdw"/>
-        <map value="Immun.Immunization.OutsideLocation,Immun.Immunization.VisitDateTime,Immun.Immunization.VisitIEN&#xA;Outpat.Visit.LocationIEN,Outpat.Workload.LocationIEN"/>
       </mapping>
     </element>
     <element id="Immunization.manufacturer">
@@ -1858,6 +1858,14 @@
       <isModifier value="false"/>
       <isSummary value="false"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="339: source value from V IMMUNIZATION - LOT &gt; IMMUNIZATION LOT - MANUFACTURER (9000010.11-.05 &gt; 9999999.41-.02)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Dim.ImmunizationLot.ImmunizationManufacturerIEN,Dim.ImmunizationLot.ImmunizationManufacturerSID"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="RXA-17"/>
       </mapping>
@@ -1868,14 +1876,6 @@
       <mapping>
         <identity value="cda"/>
         <map value="ClinicalDocument/component/StructuredBody/component/section/entry/substanceAdministration/consumable/manfacturedProduct/manufacuturerOrganization/name"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="339: source value from V IMMUNIZATION - LOT &gt; IMMUNIZATION LOT - MANUFACTURER (9000010.11-.05 &gt; 9999999.41-.02)"/>
-      </mapping>
-      <mapping>
-        <identity value="cdw"/>
-        <map value="Dim.ImmunizationLot.ImmunizationManufacturerIEN,Dim.ImmunizationLot.ImmunizationManufacturerSID"/>
       </mapping>
     </element>
     <element id="Immunization.lotNumber">
@@ -1904,6 +1904,15 @@
       <isModifier value="false"/>
       <isSummary value="false"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="338: source value from V IMMUNIZATION - LOT &gt; IMMUNIZATION LOT - LOT NUMBER (9000010.11-.05 &gt; 9999999.41-.01)"/>
+        <comment value="pointer to subfile 9999999.04-.02 MVX code, 9999999.04-.01 lot"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Dim.ImmunizationLot.ImmunizationLot"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="RXA-15"/>
       </mapping>
@@ -1914,15 +1923,6 @@
       <mapping>
         <identity value="cda"/>
         <map value="ClinicalDocument/component/StructuredBody/component/section/entry/substanceAdministration/consumable/manfacturedProduct/manufacturedMaterial/lotNumberText"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="338: source value from V IMMUNIZATION - LOT &gt; IMMUNIZATION LOT - LOT NUMBER (9000010.11-.05 &gt; 9999999.41-.01)"/>
-        <comment value="pointer to subfile 9999999.04-.02 MVX code, 9999999.04-.01 lot"/>
-      </mapping>
-      <mapping>
-        <identity value="cdw"/>
-        <map value="Dim.ImmunizationLot.ImmunizationLot"/>
       </mapping>
     </element>
     <element id="Immunization.expirationDate">
@@ -2075,20 +2075,20 @@
       <isModifier value="false"/>
       <isSummary value="false"/>
       <mapping>
-        <identity value="v2"/>
-        <map value="RXA-6 / RXA-7"/>
-      </mapping>
-      <mapping>
-        <identity value="rim"/>
-        <map value=".doseQuantity"/>
-      </mapping>
-      <mapping>
         <identity value="vista"/>
         <map value="464: source value from V IMMUNIZATION - DOSE UNITS &gt; UCUM CODES - (9000010.11-1313 &gt; 757.5-)"/>
       </mapping>
       <mapping>
         <identity value="cdw"/>
         <map value="Immun.Immunization.DoseUnit"/>
+      </mapping>
+      <mapping>
+        <identity value="v2"/>
+        <map value="RXA-6 / RXA-7"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value=".doseQuantity"/>
       </mapping>
     </element>
     <element id="Immunization.doseQuantity.id">
@@ -2192,20 +2192,20 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
-        <identity value="v2"/>
-        <map value="SN.2  / CQ - N/A"/>
-      </mapping>
-      <mapping>
-        <identity value="rim"/>
-        <map value="PQ.value, CO.value, MO.value, IVL.high or IVL.low depending on the value"/>
-      </mapping>
-      <mapping>
         <identity value="vista"/>
         <map value="340: source value from V IMMUNIZATION - DOSE (9000010.11-1312)"/>
       </mapping>
       <mapping>
         <identity value="cdw"/>
         <map value="Immun.Immunization.Dosage"/>
+      </mapping>
+      <mapping>
+        <identity value="v2"/>
+        <map value="SN.2  / CQ - N/A"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="PQ.value, CO.value, MO.value, IVL.high or IVL.low depending on the value"/>
       </mapping>
     </element>
     <element id="Immunization.doseQuantity.comparator">
@@ -2282,14 +2282,6 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
-        <identity value="v2"/>
-        <map value="(see OBX.6 etc.) / CQ.2"/>
-      </mapping>
-      <mapping>
-        <identity value="rim"/>
-        <map value="PQ.unit"/>
-      </mapping>
-      <mapping>
         <identity value="vista"/>
         <map value="464-1: source value from V IMMUNIZATION - DOSE UNITS &gt; UCUM CODES - DESCRIPTION OF THE UNIT (9000010.11-1313 &gt; 757.5-.01)"/>
         <comment value="from mapParameter 1"/>
@@ -2297,6 +2289,14 @@
       <mapping>
         <identity value="cdw"/>
         <map value="Immun.Immunization.DoseUnit&#xA;Dim.UCUMCode.DescriptionOfTheUnit"/>
+      </mapping>
+      <mapping>
+        <identity value="v2"/>
+        <map value="(see OBX.6 etc.) / CQ.2"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="PQ.unit"/>
       </mapping>
     </element>
     <element id="Immunization.doseQuantity.system">
@@ -2362,14 +2362,6 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
-        <identity value="v2"/>
-        <map value="(see OBX.6 etc.) / CQ.2"/>
-      </mapping>
-      <mapping>
-        <identity value="rim"/>
-        <map value="PQ.code, MO.currency, PQ.translation.code"/>
-      </mapping>
-      <mapping>
         <identity value="vista"/>
         <map value="464-2: source value from V IMMUNIZATION - DOSE UNITS &gt; UCUM CODES - UCUM CODE (9000010.11-1313 &gt; 757.5-1)"/>
         <comment value="from mapParameter 2"/>
@@ -2377,6 +2369,14 @@
       <mapping>
         <identity value="cdw"/>
         <map value="Immun.Immunization.DoseUnit&#xA;Dim.UCUMCode.UCUMCode"/>
+      </mapping>
+      <mapping>
+        <identity value="v2"/>
+        <map value="(see OBX.6 etc.) / CQ.2"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="PQ.code, MO.currency, PQ.translation.code"/>
       </mapping>
     </element>
     <element id="Immunization.performer">
@@ -2564,17 +2564,17 @@
         <valueSet value="http://hl7.org/fhir/ValueSet/immunization-function"/>
       </binding>
       <mapping>
+        <identity value="vista"/>
+        <map value="342-1: fixed value = http://terminology.hl7.org/CodeSystem/v2-0443#AP"/>
+        <comment value="from mapParameter 1"/>
+      </mapping>
+      <mapping>
         <identity value="workflow"/>
         <map value="Event.performer.function"/>
       </mapping>
       <mapping>
         <identity value="rim"/>
         <map value=".participation.functionCode"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="342-1: fixed value = http://terminology.hl7.org/CodeSystem/v2-0443#AP"/>
-        <comment value="from mapParameter 1"/>
       </mapping>
     </element>
     <element id="Immunization.performer.actor">
@@ -2605,6 +2605,15 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="342: reference from V IMMUNIZATION - ENCOUNTER PROVIDER (9000010.11-1204)"/>
+        <comment value="instantiate with function or reference.display?"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Immun.Immunization.ImmunizingStaffIEN"/>
+      </mapping>
+      <mapping>
         <identity value="workflow"/>
         <map value="Event.performer.actor"/>
       </mapping>
@@ -2615,15 +2624,6 @@
       <mapping>
         <identity value="rim"/>
         <map value=".player"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="342: reference from V IMMUNIZATION - ENCOUNTER PROVIDER (9000010.11-1204)"/>
-        <comment value="instantiate with function or reference.display?"/>
-      </mapping>
-      <mapping>
-        <identity value="cdw"/>
-        <map value="Immun.Immunization.ImmunizingStaffIEN"/>
       </mapping>
     </element>
     <element id="Immunization.note">
@@ -2836,20 +2836,20 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
-        <identity value="v2"/>
-        <map value="N/A"/>
-      </mapping>
-      <mapping>
-        <identity value="rim"/>
-        <map value="Act.text"/>
-      </mapping>
-      <mapping>
         <identity value="vista"/>
         <map value="343: source value from V IMMUNIZATION - COMMENTS (9000010.11-81101)"/>
       </mapping>
       <mapping>
         <identity value="cdw"/>
         <map value="Immun.Immunization.ImmunizationComments"/>
+      </mapping>
+      <mapping>
+        <identity value="v2"/>
+        <map value="N/A"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="Act.text"/>
       </mapping>
     </element>
     <element id="Immunization.reasonCode">
@@ -3555,16 +3555,16 @@
       <isModifier value="false"/>
       <isSummary value="false"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1673: reference"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="OBX-5"/>
       </mapping>
       <mapping>
         <identity value="rim"/>
         <map value=".value"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1673: reference"/>
       </mapping>
     </element>
     <element id="Immunization.reaction.reported">
@@ -3902,10 +3902,6 @@
       <isModifier value="false"/>
       <isSummary value="false"/>
       <mapping>
-        <identity value="rim"/>
-        <map value="N/A"/>
-      </mapping>
-      <mapping>
         <identity value="vista"/>
         <map value="344: source value from V IMMUNIZATION - SERIES (9000010.11-.04)"/>
         <comment value="Can be numeral or letter"/>
@@ -3913,6 +3909,10 @@
       <mapping>
         <identity value="cdw"/>
         <map value="Immun.Immunization.Series"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="N/A"/>
       </mapping>
     </element>
     <element id="Immunization.protocolApplied.seriesDoses[x]">
@@ -3997,21 +3997,21 @@
       </binding>
       <mapping>
         <identity value="vista"/>
-        <map value="332: source value from V IMMUNIZATION - IMMUNIZATION &gt; IMMUNIZATION - CVX CODE (9000010.11-.01 &gt; 9999999.14-.03) case not null"/>
-        <comment value="subfile: .03 is CVX"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
         <map value="528: terminologyMaps using VF_inferredCVX on V IMMUNIZATION - IMMUNIZATION &gt; IMMUNIZATION - NAME (9000010.11-.01 &gt; 9999999.14-.01) case V IMMUNIZATION - IMMUNIZATION null"/>
         <comment value="This map is used to identify CVX codes for immunizations that were not given, and which therefore are not coded. The name can be used to determine what the CVX Group."/>
       </mapping>
       <mapping>
-        <identity value="cdw"/>
-        <map value="Immun.Immunization.ImmunizationNameIEN&#xA;Dim.ImmunizationName.CVXCode"/>
+        <identity value="vista"/>
+        <map value="332: source value from V IMMUNIZATION - IMMUNIZATION &gt; IMMUNIZATION - CVX CODE (9000010.11-.01 &gt; 9999999.14-.03) case not null"/>
+        <comment value="subfile: .03 is CVX"/>
       </mapping>
       <mapping>
         <identity value="cdw"/>
         <map value="Immun.Immunization.ImmunizationNameIEN&#xA;Dim.ImmunizationName.ImmunizationName,Dim.PharmacyOrderableItem.ImmunizationName"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Immun.Immunization.ImmunizationNameIEN&#xA;Dim.ImmunizationName.CVXCode"/>
       </mapping>
     </element>
     <element id="Immunization.vaccineCode.coding.system">

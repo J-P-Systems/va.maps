@@ -6,12 +6,11 @@ Description: "This StructureDefinition contains the maps for VistA file PRESCRIP
 * ^status = #draft
 * extension contains http://va.gov/fhir/StructureDefinition/medicationrequest-pharmacyOrderStatus named medicationrequest-pharmacyOrderStatus 0..1
 * extension contains http://va.gov/fhir/StructureDefinition/medicationrequest-pharmacyOrderStatus named medicationrequest-pharmacyOrderStatus 0..1
-* dosageInstruction.doseAndRate.extension contains http://hl7.org/fhir/StructureDefinition/originalText named originalText 0..1
 * extension contains http://va.gov/fhir/StructureDefinition/medicationrequest-cancelDate named medicationrequest-cancelDate 0..1
+* dosageInstruction.doseAndRate.extension contains http://hl7.org/fhir/StructureDefinition/originalText named originalText 0..1
 * extension contains http://va.gov/fhir/StructureDefinition/medicationrequest-includeIndicationInSig named medicationrequest-includeIndicationInSig 0..1
 * extension contains http://va.gov/fhir/StructureDefinition/medicationrequest-remainingRefillCount named medicationrequest-remainingRefillCount 0..1
-* id and status and extension[http://va.gov/fhir/StructureDefinition/medicationrequest-pharmacyOrderStatus].valueCoding.code and extension[http://va.gov/fhir/StructureDefinition/medicationrequest-pharmacyOrderStatus].valueCoding.system and intent and medicationCodeableConcept.text and medicationCodeableConcept.coding.code and medicationCodeableConcept.coding.system and subject and authoredOn and requester and dosageInstruction.text and dosageInstruction.patientInstruction and dosageInstruction.doseAndRate.doseQuantity.value and dosageInstruction.doseAndRate.doseQuantity.unit and dispenseRequest.validityPeriod.end and dispenseRequest.numberOfRepeatsAllowed and dosageInstruction.doseAndRate.extension[http://hl7.org/fhir/StructureDefinition/originalText].valueString and identifier and dosageInstruction.route.coding.code and dosageInstruction.route.coding.system and category and dispenseRequest.quantity.value and dispenseRequest.expectedSupplyDuration and extension[http://va.gov/fhir/StructureDefinition/medicationrequest-cancelDate].valueDateTime and reasonCode.text and extension[http://va.gov/fhir/StructureDefinition/medicationrequest-includeIndicationInSig].valueBoolean and extension[http://va.gov/fhir/StructureDefinition/medicationrequest-remainingRefillCount].valueInteger MS
-* subject only Reference(Patient)
+* id and status and extension[http://va.gov/fhir/StructureDefinition/medicationrequest-pharmacyOrderStatus].valueCoding.code and extension[http://va.gov/fhir/StructureDefinition/medicationrequest-pharmacyOrderStatus].valueCoding.system and intent and medicationCodeableConcept.text and medicationCodeableConcept.coding.code and medicationCodeableConcept.coding.system and subject and authoredOn and requester and dosageInstruction.text and dosageInstruction.patientInstruction and dosageInstruction.doseAndRate.doseQuantity.value and dosageInstruction.doseAndRate.doseQuantity.unit and dispenseRequest.validityPeriod.end and extension[http://va.gov/fhir/StructureDefinition/medicationrequest-cancelDate].valueDateTime and dispenseRequest.numberOfRepeatsAllowed and dispenseRequest.quantity.value and dispenseRequest.expectedSupplyDuration and dosageInstruction.doseAndRate.extension[http://hl7.org/fhir/StructureDefinition/originalText].valueString and identifier and dosageInstruction.route.coding.code and dosageInstruction.route.coding.system and category and reasonCode.text and extension[http://va.gov/fhir/StructureDefinition/medicationrequest-includeIndicationInSig].valueBoolean and extension[http://va.gov/fhir/StructureDefinition/medicationrequest-remainingRefillCount].valueInteger MS
 * requester only Reference(Practitioner)
 * status from http://va.gov/fhir/ValueSet/VSVFOutMedRequestStatus
 * extension[http://va.gov/fhir/StructureDefinition/medicationrequest-pharmacyOrderStatus].valueCoding.system = "http://va.gov/terminology/vistaDefinedTerms/52-100"
@@ -42,15 +41,15 @@ Source: MedicationRequestOutpatient
 * dosageInstruction.doseAndRate.doseQuantity.value -> "811: source value from PRESCRIPTION - MEDICATION INSTRUCTIONS > MEDICATION INSTRUCTIONS - DOSAGE ORDERED (52-113 > 52.0113-.01) case number"
 * dosageInstruction.doseAndRate.doseQuantity.unit -> "812: source value from PRESCRIPTION - MEDICATION INSTRUCTIONS > MEDICATION INSTRUCTIONS - UNITS (52-113 > 52.0113-2)"
 * dispenseRequest.validityPeriod.end -> "815: source value from PRESCRIPTION - EXPIRATION DATE (52-26)" "confirm"
+* extension[http://va.gov/fhir/StructureDefinition/medicationrequest-cancelDate].valueDateTime -> "1704: source value from PRESCRIPTION - CANCEL DATE (52-26.1)"
 * dispenseRequest.numberOfRepeatsAllowed -> "816: source value from PRESCRIPTION - # OF REFILLS (52-9)" "confirm"
+* dispenseRequest.quantity.value -> "1669: source value from PRESCRIPTION - QTY (52-7)"
+* dispenseRequest.expectedSupplyDuration -> "1670: source value from PRESCRIPTION - DAYS SUPPLY (52-8)"
 * dosageInstruction.doseAndRate.extension[http://hl7.org/fhir/StructureDefinition/originalText].valueString -> "841: source value from PRESCRIPTION - MEDICATION INSTRUCTIONS > MEDICATION INSTRUCTIONS - DOSAGE ORDERED (52-113 > 52.0113-.01) case not a number"
 * identifier -> "1664: source value from PRESCRIPTION - RX # (52-.01)"
 * dosageInstruction.route.coding.code -> "1665: source value from PRESCRIPTION - MEDICATION INSTRUCTIONS > MEDICATION INSTRUCTIONS - ROUTE (52-113 > 52.0113-6)"
 * dosageInstruction.route.coding.system -> "1665-1: fixed value = http://va.gov/terminology/vistaDefinedTerms/53.1-3" "from mapParameter 1"
 * category -> "1666: fixed value = http://terminology.hl7.org/CodeSystem/medicationrequest-category#outpatient"
-* dispenseRequest.quantity.value -> "1669: source value from PRESCRIPTION - QTY (52-7)"
-* dispenseRequest.expectedSupplyDuration -> "1670: source value from PRESCRIPTION - DAYS SUPPLY (52-8)"
-* extension[http://va.gov/fhir/StructureDefinition/medicationrequest-cancelDate].valueDateTime -> "1704: source value from PRESCRIPTION - CANCEL DATE (52-26.1)"
 * reasonCode.text -> "1705: source value from PRESCRIPTION - INDICATION FOR USE (52-128)"
 * extension[http://va.gov/fhir/StructureDefinition/medicationrequest-includeIndicationInSig].valueBoolean -> "1706: transform using VF_Boolean on PRESCRIPTION - INDICATION FOR USE FLAG (52-129)"
 * extension[http://va.gov/fhir/StructureDefinition/medicationrequest-pharmacyOrderStatus].valueCoding.code -> "1746: fixed value = #active-parked when PRESCRIPTION - MAIL/WINDOW/PARK (52-11) case P" "This value is consistent with Active. \nAdd a second value, or overwrite Active with Parked?"
@@ -71,11 +70,11 @@ Source: MedicationRequestOutpatient
 * dosageInstruction.patientInstruction -> "RxOut.RxOutpatSig.PatientInstructions"
 * dosageInstruction.doseAndRate.doseQuantity.value -> "RxOut.RxOutpatMedInstructions.DoseOrdered"
 * dosageInstruction.doseAndRate.doseQuantity.unit -> "RxOut.RxOutpatMedInstructions.Unit"
+* extension[http://va.gov/fhir/StructureDefinition/medicationrequest-cancelDate].valueDateTime -> "RxOut.RxOutpat.CancelDate"
 * dispenseRequest.numberOfRepeatsAllowed -> "RxOut.RxOutpat.MaxRefills"
 * dosageInstruction.doseAndRate.extension[http://hl7.org/fhir/StructureDefinition/originalText].valueString -> "RxOut.RxOutpatMedInstructions.DoseOrdered"
 * identifier -> "RxOut.RxOutpat.RxNumber"
 * dosageInstruction.route.coding.code -> "RxOut.RxOutpatMedInstructions.MedRoute"
-* extension[http://va.gov/fhir/StructureDefinition/medicationrequest-cancelDate].valueDateTime -> "RxOut.RxOutpat.CancelDate"
 * reasonCode.text -> "RxOut.RxOutpatExt.IndicationForUse"
 * extension[http://va.gov/fhir/StructureDefinition/medicationrequest-includeIndicationInSig].valueBoolean -> "RxOut.RxOutpatExt.IndicationForUseFlag"
 

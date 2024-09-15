@@ -4,7 +4,7 @@ Id: Location
 Title: "Location"
 Description: "This StructureDefinition contains the maps for VistA file HOSPITAL LOCATION (44) to us-core-location"
 * ^status = #draft
-* identifier.value and identifier.system and name and alias and status and description and telecom.value and telecom.system and telecom.use and managingOrganization.display and physicalType.text and address.state and address.district and address.line and address.city and address.postalCode and address.type and address.country and type.text and mode MS
+* identifier.value and identifier.system and name and alias and status and description and telecom.value and telecom.system and telecom.use and managingOrganization.display and physicalType.text and address.state and address.district and address.line and address.city and address.postalCode and address.country and address.type and type.text and mode MS
 * identifier.system = "http://va.gov/identifiers/$Sta3n/44"
 * status from http://va.gov/fhir/ValueSet/VSVFLocationStatus
 * telecom.system = #phone
@@ -35,8 +35,8 @@ Source: Location
 * address.line -> "1318: source value from HOSPITAL LOCATION - INSTITUTION > INSTITUTION - STREET ADDR. 2 (44-3 > 4-1.02)"
 * address.city -> "1319: source value from HOSPITAL LOCATION - INSTITUTION > INSTITUTION - CITY (44-3 > 4-1.03)"
 * address.postalCode -> "1320: source value from HOSPITAL LOCATION - INSTITUTION > INSTITUTION - ZIP (44-3 > 4-1.04)"
-* address.type -> "1322: fixed value = #physical when HOSPITAL LOCATION - INSTITUTION (44-3)"
 * address.country -> "1405: source value from HOSPITAL LOCATION - INSTITUTION > INSTITUTION - COUNTRY > COUNTRY CODE - CODE (44-3 > 4-801 > 779.004-.01)"
+* address.type -> "1322: fixed value = #physical when HOSPITAL LOCATION - INSTITUTION (44-3)"
 * type.text -> "1412: source value from HOSPITAL LOCATION - SERVICE (44-9)" "could map Medical Service text to FHIR type valueset, e.g.\n\"NEUROLOGY\" to \"NEUR Neurology clinic\"\nOr is this combination of TREATEMENT SPECIALTY (9.5) and SERVICE/SECTION? and STOP CODE?"
 * mode -> "1806: fixed value = #instance" "Added 4/5/24 to match LH PHAPI"
 
@@ -55,6 +55,6 @@ Source: Location
 * address.line -> "Dim.Location.InstitutionIEN\nDim.Institution.StreetAddress2,Dim.Institution.StreetAddress2,Dim.InstitutionTimeZone.StreetAddress2,NDim.MVIInstitution.StreetAddress2"
 * address.city -> "Dim.Location.InstitutionIEN\nDim.Institution.City,Dim.Institution.City,Dim.InstitutionTimeZone.City,NDim.MVIInstitution.City"
 * address.postalCode -> "Dim.Location.InstitutionIEN\nDim.Institution.Zip,Dim.Institution.Zip,Dim.InstitutionTimeZone.Zip,NDim.MVIInstitution.Zip"
-* address.type -> "Dim.Location.InstitutionIEN"
 * address.country -> "Dim.Location.InstitutionIEN"
+* address.type -> "Dim.Location.InstitutionIEN"
 * type.text -> "Dim.Location.MedicalService,Dim.Location.MedicalService"

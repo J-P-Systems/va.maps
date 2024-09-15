@@ -24,11 +24,11 @@
 <tr><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3goXBCwdPqAP0wAAAldJREFUOMuNk0tIlFEYhp9z/vE2jHkhxXA0zJCMitrUQlq4lnSltEqCFhFG2MJFhIvIFpkEWaTQqjaWZRkp0g26URZkTpbaaOJkDqk10szoODP//7XIMUe0elcfnPd9zsfLOYplGrpRwZaqTtw3K7PtGem7Q6FoidbGgqHVy/HRb669R+56zx7eRV1L31JGxYbBtjKK93cxeqfyQHbehkZbUkK20goELEuIzEd+dHS+qz/Y8PTSif0FnGkbiwcAjHaU1+QWOptFiyCLp/LnKptpqIuXHx6rbR26kJcBX3yLgBfnd7CxwJmflpP2wUg0HIAoUUpZBmKzELGWcN8nAr6Gpu7tLU/CkwAaoKTWRSQyt89Q8w6J+oVQkKnBoblH7V0PPvUOvDYXfopE/SJmALsxnVm6LbkotrUtNowMeIrVrBcBpaMmdS0j9df7abpSuy7HWehwJdt1lhVwi/J58U5beXGAF6c3UXLycw1wdFklArBn87xdh0ZsZtArghBdAA3+OEDVubG4UEzP6x1FOWneHh2VDAHBAt80IbdXDcesNoCvs3E5AFyNSU5nbrDPZpcUEQQTFZiEVx+51fxMhhyJEAgvlriadIJZZksRuwBYMOPBbO3hePVVqgEJhFeUuFLhIPkRP6BQLIBrmMenujm/3g4zc398awIe90Zb5A1vREALqneMcYgP/xVQWlG+Ncu5vgwwlaUNx+3799rfe96u9K0JSDXcOzOTJg4B6IgmXfsygc7/Bvg9g9E58/cDVmGIBOP/zT8Bz1zqWqpbXIsd0O9hajXfL6u4BaOS6SeWAAAAAElFTkSuQmCC" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr></table></div>
   </text>
   <url value="http://va.gov/fhir/StructureDefinition/ImplantableDeviceTransmitter"/>
-  <version value="0.65.345"/>
+  <version value="0.65.348"/>
   <name value="ImplantableDeviceTransmitter"/>
   <title value="Implantable Device: Transmitter"/>
   <status value="draft"/>
-  <date value="2024-08-26T15:27:18+00:00"/>
+  <date value="2024-09-15T08:33:43+00:00"/>
   <publisher value="VA"/>
   <contact>
     <name value="VA"/>
@@ -631,6 +631,11 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1349-1: fixed value = http://va.gov/identifiers/$Sta3n/698"/>
+        <comment value="from mapParameter 1"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="CX.4 / EI-2-4"/>
       </mapping>
@@ -641,11 +646,6 @@
       <mapping>
         <identity value="servd"/>
         <map value="./IdentifierType"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1349-1: fixed value = http://va.gov/identifiers/$Sta3n/698"/>
-        <comment value="from mapParameter 1"/>
       </mapping>
     </element>
     <element id="Device.identifier.value">
@@ -679,6 +679,10 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1349: source value from GENERATOR IMPLANT - IEN (698-.001)"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="CX.1 / EI.1"/>
       </mapping>
@@ -689,10 +693,6 @@
       <mapping>
         <identity value="servd"/>
         <map value="./Value"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1349: source value from GENERATOR IMPLANT - IEN (698-.001)"/>
       </mapping>
     </element>
     <element id="Device.identifier.period">
@@ -971,6 +971,10 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1353: target not supported"/>
+      </mapping>
+      <mapping>
         <identity value="w5"/>
         <map value="FiveWs.what[x]"/>
       </mapping>
@@ -985,10 +989,6 @@
       <mapping>
         <identity value="argonaut-dq-dstu2"/>
         <map value="NA (not Supported)"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1353: target not supported"/>
       </mapping>
     </element>
     <element id="Device.udiCarrier.issuer">
@@ -1120,6 +1120,10 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1795: target not supported"/>
+      </mapping>
+      <mapping>
         <identity value="rim"/>
         <map value="Role.id.extension"/>
       </mapping>
@@ -1130,10 +1134,6 @@
       <mapping>
         <identity value="argonaut-dq-dstu2"/>
         <map value="Device.udi"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1795: target not supported"/>
       </mapping>
     </element>
     <element id="Device.udiCarrier.entryType">
@@ -1210,14 +1210,6 @@
         <valueSet value="http://hl7.org/fhir/ValueSet/device-status|4.0.1"/>
       </binding>
       <mapping>
-        <identity value="w5"/>
-        <map value="FiveWs.status"/>
-      </mapping>
-      <mapping>
-        <identity value="rim"/>
-        <map value=".statusCode"/>
-      </mapping>
-      <mapping>
         <identity value="vista"/>
         <map value="1356: fixed value = #active when GENERATOR IMPLANT - EXPLANT DATE (698-96) case is NULL"/>
         <comment value="If NULL, can it be assumed it is active?"/>
@@ -1229,6 +1221,14 @@
       <mapping>
         <identity value="vista"/>
         <map value="1355: target not supported"/>
+      </mapping>
+      <mapping>
+        <identity value="w5"/>
+        <map value="FiveWs.status"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value=".statusCode"/>
       </mapping>
     </element>
     <element id="Device.statusReason">
@@ -1296,6 +1296,10 @@
       <isModifier value="false"/>
       <isSummary value="false"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1363: target not supported"/>
+      </mapping>
+      <mapping>
         <identity value="w5"/>
         <map value="FiveWs.what[x]"/>
       </mapping>
@@ -1310,10 +1314,6 @@
       <mapping>
         <identity value="argonaut-dq-dstu2"/>
         <map value="NA (not Supported)"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1363: target not supported"/>
       </mapping>
     </element>
     <element id="Device.manufacturer">
@@ -1342,6 +1342,14 @@
       <isModifier value="false"/>
       <isSummary value="false"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1367: source value from GENERATOR IMPLANT - TRANSMITTER MANUFACTURER &gt; PACEMAKER MANUFACTURER - NAME (698-13 &gt; 698.6-.01)"/>
+      </mapping>
+      <mapping>
+        <identity value="vista"/>
+        <map value="1366: source value from GENERATOR IMPLANT - PACEMAKER MANUFACTURER &gt; PACEMAKER MANUFACTURER - NAME (698-3 &gt; 698.6-.01)"/>
+      </mapping>
+      <mapping>
         <identity value="w5"/>
         <map value="FiveWs.what[x]"/>
       </mapping>
@@ -1352,14 +1360,6 @@
       <mapping>
         <identity value="udi"/>
         <map value="N/A"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1367: source value from GENERATOR IMPLANT - TRANSMITTER MANUFACTURER &gt; PACEMAKER MANUFACTURER - NAME (698-13 &gt; 698.6-.01)"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1366: source value from GENERATOR IMPLANT - PACEMAKER MANUFACTURER &gt; PACEMAKER MANUFACTURER - NAME (698-3 &gt; 698.6-.01)"/>
       </mapping>
     </element>
     <element id="Device.manufactureDate">
@@ -1388,6 +1388,10 @@
       <isModifier value="false"/>
       <isSummary value="false"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1371: target not supported"/>
+      </mapping>
+      <mapping>
         <identity value="w5"/>
         <map value="FiveWs.what[x]"/>
       </mapping>
@@ -1402,10 +1406,6 @@
       <mapping>
         <identity value="argonaut-dq-dstu2"/>
         <map value="NA (not Supported)"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1371: target not supported"/>
       </mapping>
     </element>
     <element id="Device.expirationDate">
@@ -1434,6 +1434,10 @@
       <isModifier value="false"/>
       <isSummary value="false"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1374: target not supported"/>
+      </mapping>
+      <mapping>
         <identity value="w5"/>
         <map value="FiveWs.what[x]"/>
       </mapping>
@@ -1448,10 +1452,6 @@
       <mapping>
         <identity value="argonaut-dq-dstu2"/>
         <map value="NA (not Supported)"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1374: target not supported"/>
       </mapping>
     </element>
     <element id="Device.lotNumber">
@@ -1480,6 +1480,10 @@
       <isModifier value="false"/>
       <isSummary value="false"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1377: target not supported"/>
+      </mapping>
+      <mapping>
         <identity value="w5"/>
         <map value="FiveWs.what[x]"/>
       </mapping>
@@ -1494,10 +1498,6 @@
       <mapping>
         <identity value="argonaut-dq-dstu2"/>
         <map value="NA (not Supported)"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1377: target not supported"/>
       </mapping>
     </element>
     <element id="Device.serialNumber">
@@ -1527,6 +1527,15 @@
       <isModifier value="false"/>
       <isSummary value="false"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1380: source value from GENERATOR IMPLANT - PACEMAKER SERIAL NUMBER (698-4)"/>
+        <comment value="Do not use with the Transmitter use case; use transmitter serial number if it has its own."/>
+      </mapping>
+      <mapping>
+        <identity value="vista"/>
+        <map value="1381: target not supported"/>
+      </mapping>
+      <mapping>
         <identity value="w5"/>
         <map value="FiveWs.what[x]"/>
       </mapping>
@@ -1537,15 +1546,6 @@
       <mapping>
         <identity value="argonaut-dq-dstu2"/>
         <map value="NA (not Supported)"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1380: source value from GENERATOR IMPLANT - PACEMAKER SERIAL NUMBER (698-4)"/>
-        <comment value="Do not use with the Transmitter use case; use transmitter serial number if it has its own."/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1381: target not supported"/>
       </mapping>
     </element>
     <element id="Device.deviceName">
@@ -1778,20 +1778,20 @@
       <isModifier value="false"/>
       <isSummary value="false"/>
       <mapping>
-        <identity value="w5"/>
-        <map value="FiveWs.what[x]"/>
-      </mapping>
-      <mapping>
-        <identity value="rim"/>
-        <map value=".softwareName (included as part)"/>
-      </mapping>
-      <mapping>
         <identity value="vista"/>
         <map value="1389: source value from GENERATOR IMPLANT - TRANSMITTER MODEL &gt; PACEMAKER EQUIPMENT - MODEL NUMBER/NAME (698-12 &gt; 698.4-.01)"/>
       </mapping>
       <mapping>
         <identity value="vista"/>
         <map value="1388: source value from GENERATOR IMPLANT - PACEMAKER MODEL &gt; PACEMAKER EQUIPMENT - MODEL NUMBER/NAME (698-2 &gt; 698.4-.01)"/>
+      </mapping>
+      <mapping>
+        <identity value="w5"/>
+        <map value="FiveWs.what[x]"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value=".softwareName (included as part)"/>
       </mapping>
     </element>
     <element id="Device.partNumber">
@@ -1858,10 +1858,6 @@
         <valueSet value="http://va.gov/fhir/ValueSet/VSVFdeviceTypePacemaker"/>
       </binding>
       <mapping>
-        <identity value="argonaut-dq-dstu2"/>
-        <map value="Device.type"/>
-      </mapping>
-      <mapping>
         <identity value="vista"/>
         <map value="1395: terminologyMaps using VF_deviceTypePacemaker on GENERATOR IMPLANT - TRANSMITTER MODEL &gt; PACEMAKER EQUIPMENT - TYPE OF EQUIPMENT (698-12 &gt; 698.4-1)"/>
         <comment value="A request for more specific SNOMED codes will be submitted (01/04/2023)"/>
@@ -1870,6 +1866,10 @@
         <identity value="vista"/>
         <map value="1394: terminologyMaps using VF_deviceTypePacemaker on GENERATOR IMPLANT - PACEMAKER MODEL &gt; PACEMAKER EQUIPMENT - TYPE OF EQUIPMENT (698-2 &gt; 698.4-1)"/>
         <comment value="A request for more specific SNOMED codes will be submitted (01/04/2023)"/>
+      </mapping>
+      <mapping>
+        <identity value="argonaut-dq-dstu2"/>
+        <map value="Device.type"/>
       </mapping>
     </element>
     <element id="Device.specialization">
@@ -2509,6 +2509,10 @@
       <isModifier value="false"/>
       <isSummary value="false"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1400: reference from GENERATOR IMPLANT - MEDICAL PATIENT (698-1)"/>
+      </mapping>
+      <mapping>
         <identity value="w5"/>
         <map value="FiveWs.subject[x]"/>
       </mapping>
@@ -2523,10 +2527,6 @@
       <mapping>
         <identity value="argonaut-dq-dstu2"/>
         <map value="Device.patient"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1400: reference from GENERATOR IMPLANT - MEDICAL PATIENT &gt; MEDICAL PATIENT - NAME (698-1 &gt; 690-.01)"/>
       </mapping>
     </element>
     <element id="Device.owner">
@@ -2900,7 +2900,7 @@
       </type>
       <mapping>
         <identity value="vista"/>
-        <map value="1400: reference from GENERATOR IMPLANT - MEDICAL PATIENT &gt; MEDICAL PATIENT - NAME (698-1 &gt; 690-.01)"/>
+        <map value="1400: reference from GENERATOR IMPLANT - MEDICAL PATIENT (698-1)"/>
       </mapping>
     </element>
   </differential>

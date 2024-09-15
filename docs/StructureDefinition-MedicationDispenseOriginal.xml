@@ -41,11 +41,11 @@
 <tr><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3goXBCwdPqAP0wAAAldJREFUOMuNk0tIlFEYhp9z/vE2jHkhxXA0zJCMitrUQlq4lnSltEqCFhFG2MJFhIvIFpkEWaTQqjaWZRkp0g26URZkTpbaaOJkDqk10szoODP//7XIMUe0elcfnPd9zsfLOYplGrpRwZaqTtw3K7PtGem7Q6FoidbGgqHVy/HRb669R+56zx7eRV1L31JGxYbBtjKK93cxeqfyQHbehkZbUkK20goELEuIzEd+dHS+qz/Y8PTSif0FnGkbiwcAjHaU1+QWOptFiyCLp/LnKptpqIuXHx6rbR26kJcBX3yLgBfnd7CxwJmflpP2wUg0HIAoUUpZBmKzELGWcN8nAr6Gpu7tLU/CkwAaoKTWRSQyt89Q8w6J+oVQkKnBoblH7V0PPvUOvDYXfopE/SJmALsxnVm6LbkotrUtNowMeIrVrBcBpaMmdS0j9df7abpSuy7HWehwJdt1lhVwi/J58U5beXGAF6c3UXLycw1wdFklArBn87xdh0ZsZtArghBdAA3+OEDVubG4UEzP6x1FOWneHh2VDAHBAt80IbdXDcesNoCvs3E5AFyNSU5nbrDPZpcUEQQTFZiEVx+51fxMhhyJEAgvlriadIJZZksRuwBYMOPBbO3hePVVqgEJhFeUuFLhIPkRP6BQLIBrmMenujm/3g4zc398awIe90Zb5A1vREALqneMcYgP/xVQWlG+Ncu5vgwwlaUNx+3799rfe96u9K0JSDXcOzOTJg4B6IgmXfsygc7/Bvg9g9E58/cDVmGIBOP/zT8Bz1zqWqpbXIsd0O9hajXfL6u4BaOS6SeWAAAAAElFTkSuQmCC" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr></table></div>
   </text>
   <url value="http://va.gov/fhir/StructureDefinition/MedicationDispenseOriginal"/>
-  <version value="0.65.345"/>
+  <version value="0.65.348"/>
   <name value="MedicationDispenseOriginal"/>
   <title value="MedicationDispense: Original"/>
   <status value="draft"/>
-  <date value="2024-08-26T15:27:18+00:00"/>
+  <date value="2024-09-15T08:33:43+00:00"/>
   <publisher value="VA"/>
   <contact>
     <name value="VA"/>
@@ -549,6 +549,10 @@
         <valueSet value="http://hl7.org/fhir/ValueSet/medicationdispense-status|4.0.1"/>
       </binding>
       <mapping>
+        <identity value="vista"/>
+        <map value="1541: fixed value = #completed when PRESCRIPTION - RELEASED DATE/TIME (52-31) case not null"/>
+      </mapping>
+      <mapping>
         <identity value="workflow"/>
         <map value="Event.status"/>
       </mapping>
@@ -563,10 +567,6 @@
       <mapping>
         <identity value="rx-dispense-rmim"/>
         <map value="CombinedMedicationDispense.SupplyEvent.statusCode"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1541: fixed value = #completed when PRESCRIPTION - RELEASED DATE/TIME (52-31) case not null"/>
       </mapping>
     </element>
     <element id="MedicationDispense.statusReason[x]">
@@ -654,12 +654,12 @@
         <valueSet value="http://hl7.org/fhir/ValueSet/medicationdispense-category"/>
       </binding>
       <mapping>
-        <identity value="rim"/>
-        <map value=".inboundRelationship[typeCode=COMP].source[classCode=OBS, moodCode=EVN, code=&quot;type of medication dispense&quot;].value"/>
-      </mapping>
-      <mapping>
         <identity value="vista"/>
         <map value="1668: fixed value = #outpatient"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value=".inboundRelationship[typeCode=COMP].source[classCode=OBS, moodCode=EVN, code=&quot;type of medication dispense&quot;].value"/>
       </mapping>
     </element>
     <element id="MedicationDispense.medication[x]">
@@ -997,6 +997,11 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1545-1: fixed value = urn:oid:2.16.840.1.113883.6.233"/>
+        <comment value="from mapParameter 1"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="C*E.3"/>
       </mapping>
@@ -1007,11 +1012,6 @@
       <mapping>
         <identity value="orim"/>
         <map value="fhir:Coding.system rdfs:subPropertyOf dt:CDCoding.codeSystem"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1545-1: fixed value = urn:oid:2.16.840.1.113883.6.233"/>
-        <comment value="from mapParameter 1"/>
       </mapping>
     </element>
     <element id="MedicationDispense.medication[x]:medicationCodeableConcept.coding.version">
@@ -1079,6 +1079,14 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1545: source value from PRESCRIPTION - DRUG &gt; DRUG - PSNDF VA PRODUCT NAME ENTRY (52-6 &gt; 50-22)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="RxOut.RxOutpat.LocalDrugIEN,RxOut.RxOutpat.NationalDrugIEN,RxOut.RxOutpatFill.LocalDrugIEN,RxOut.RxOutpatFill.NationalDrugIEN&#xA;Dim.LocalDrug.DrugNameWithoutDoseIEN,Dim.LocalDrug.NationalDrugIEN,Dim.LocalDrug.NationalDrugIEN"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="C*E.1"/>
       </mapping>
@@ -1089,14 +1097,6 @@
       <mapping>
         <identity value="orim"/>
         <map value="fhir:Coding.code rdfs:subPropertyOf dt:CDCoding.code"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1545: source value from PRESCRIPTION - DRUG &gt; DRUG - PSNDF VA PRODUCT NAME ENTRY (52-6 &gt; 50-22)"/>
-      </mapping>
-      <mapping>
-        <identity value="cdw"/>
-        <map value="RxOut.RxOutpat.LocalDrugIEN,RxOut.RxOutpat.NationalDrugIEN,RxOut.RxOutpatFill.LocalDrugIEN,RxOut.RxOutpatFill.NationalDrugIEN&#xA;Dim.LocalDrug.DrugNameWithoutDoseIEN,Dim.LocalDrug.NationalDrugIEN,Dim.LocalDrug.NationalDrugIEN"/>
       </mapping>
     </element>
     <element id="MedicationDispense.medication[x]:medicationCodeableConcept.coding.display">
@@ -1210,6 +1210,15 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1544: source value from PRESCRIPTION - DRUG &gt; DRUG - GENERIC NAME (52-6 &gt; 50-.01)"/>
+        <comment value="This may not be necessary; we have the product."/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="RxOut.RxOutpat.LocalDrugIEN,RxOut.RxOutpat.NationalDrugIEN,RxOut.RxOutpatFill.LocalDrugIEN,RxOut.RxOutpatFill.NationalDrugIEN&#xA;Dim.LocalDrug.LocalDrugNameWithDose,Dim.LocalDrug.LocalDrugNameWithDose,RxOut.RxOutpatFill.LocalDrugNameWithDose"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="C*E.9. But note many systems use C*E.2 for this"/>
       </mapping>
@@ -1220,15 +1229,6 @@
       <mapping>
         <identity value="orim"/>
         <map value="fhir:CodeableConcept.text rdfs:subPropertyOf dt:CD.originalText"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1544: source value from PRESCRIPTION - DRUG &gt; DRUG - GENERIC NAME (52-6 &gt; 50-.01)"/>
-        <comment value="This may not be necessary; we have the product."/>
-      </mapping>
-      <mapping>
-        <identity value="cdw"/>
-        <map value="RxOut.RxOutpat.LocalDrugIEN,RxOut.RxOutpat.NationalDrugIEN,RxOut.RxOutpatFill.LocalDrugIEN,RxOut.RxOutpatFill.NationalDrugIEN&#xA;Dim.LocalDrug.LocalDrugNameWithDose,Dim.LocalDrug.LocalDrugNameWithDose,RxOut.RxOutpatFill.LocalDrugNameWithDose"/>
       </mapping>
     </element>
     <element id="MedicationDispense.subject">
@@ -1260,6 +1260,14 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="820: reference from PRESCRIPTION - PATIENT (52-2)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="RxOut.ActivityLog.PatientIEN,RxOut.ActivityLogOtherComments.PatientIEN,RxOut.RxOutpat.PatientIEN,RxOut.RxOutpatExt.PatientIEN,RxOut.RxOutpatExt.PatientSID,RxOut.RxOutpatFill.PatientIEN,RxOut.RxOutpatMedInstructions.PatientIEN,RxOut.RxOutpatSig.PatientIEN"/>
+      </mapping>
+      <mapping>
         <identity value="workflow"/>
         <map value="Event.subject"/>
       </mapping>
@@ -1278,14 +1286,6 @@
       <mapping>
         <identity value="w5"/>
         <map value="FiveWs.subject"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="820: reference from PRESCRIPTION - PATIENT (52-2)"/>
-      </mapping>
-      <mapping>
-        <identity value="cdw"/>
-        <map value="RxOut.ActivityLog.PatientIEN,RxOut.ActivityLogOtherComments.PatientIEN,RxOut.RxOutpat.PatientIEN,RxOut.RxOutpatExt.PatientIEN,RxOut.RxOutpatExt.PatientSID,RxOut.RxOutpatFill.PatientIEN,RxOut.RxOutpatMedInstructions.PatientIEN,RxOut.RxOutpatSig.PatientIEN"/>
       </mapping>
     </element>
     <element id="MedicationDispense.context">
@@ -1383,16 +1383,16 @@
       <isModifier value="false"/>
       <isSummary value="false"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1727: reference from PRESCRIPTION - PHARMACIST (52-23)"/>
+      </mapping>
+      <mapping>
         <identity value="workflow"/>
         <map value="Event.performer"/>
       </mapping>
       <mapping>
         <identity value="rim"/>
         <map value=".participation[typeCode=PRF]"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1727: reference from PRESCRIPTION - PHARMACIST (52-23)"/>
       </mapping>
     </element>
     <element id="MedicationDispense.performer.id">
@@ -1607,13 +1607,13 @@
       <isModifier value="false"/>
       <isSummary value="false"/>
       <mapping>
-        <identity value="rim"/>
-        <map value=".participation[typeCode=LOC].role"/>
-      </mapping>
-      <mapping>
         <identity value="vista"/>
         <map value="1711: reference from PRESCRIPTION - DIVISION (52-20)"/>
         <comment value="not Clinic (written) but Division (filled)"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value=".participation[typeCode=LOC].role"/>
       </mapping>
     </element>
     <element id="MedicationDispense.authorizingPrescription">
@@ -1644,6 +1644,14 @@
       <isModifier value="false"/>
       <isSummary value="false"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="822: source value from PRESCRIPTION - PLACER ORDER # (52-39.3)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="RxOut.RxOutpat.CPRSOrderEntryNumber"/>
+      </mapping>
+      <mapping>
         <identity value="workflow"/>
         <map value="Event.basedOn"/>
       </mapping>
@@ -1658,14 +1666,6 @@
       <mapping>
         <identity value="rx-dispense-rmim"/>
         <map value="CombinedMedicationDispense.inFulfillmentOf"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="822: source value from PRESCRIPTION - PLACER ORDER # (52-39.3)"/>
-      </mapping>
-      <mapping>
-        <identity value="cdw"/>
-        <map value="RxOut.RxOutpat.CPRSOrderEntryNumber"/>
       </mapping>
     </element>
     <element id="MedicationDispense.type">
@@ -1707,6 +1707,10 @@
         <valueSet value="http://terminology.hl7.org/ValueSet/v3-ActPharmacySupplyType"/>
       </binding>
       <mapping>
+        <identity value="vista"/>
+        <map value="1708: fixed value = #FF"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="RXD-33-Dispense Type"/>
       </mapping>
@@ -1717,10 +1721,6 @@
       <mapping>
         <identity value="rx-dispense-rmim"/>
         <map value="CombinedMedicationDispense.SupplyEvent.code"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1708: fixed value = #FF"/>
       </mapping>
     </element>
     <element id="MedicationDispense.quantity">
@@ -1862,20 +1862,20 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
-        <identity value="v2"/>
-        <map value="SN.2  / CQ - N/A"/>
-      </mapping>
-      <mapping>
-        <identity value="rim"/>
-        <map value="PQ.value, CO.value, MO.value, IVL.high or IVL.low depending on the value"/>
-      </mapping>
-      <mapping>
         <identity value="vista"/>
         <map value="823: source value from PRESCRIPTION - QTY (52-7)"/>
       </mapping>
       <mapping>
         <identity value="vpr"/>
         <map value="Pharmacy: quantity"/>
+      </mapping>
+      <mapping>
+        <identity value="v2"/>
+        <map value="SN.2  / CQ - N/A"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="PQ.value, CO.value, MO.value, IVL.high or IVL.low depending on the value"/>
       </mapping>
     </element>
     <element id="MedicationDispense.quantity.comparator">
@@ -2056,20 +2056,20 @@
       <isModifier value="false"/>
       <isSummary value="false"/>
       <mapping>
-        <identity value="v2"/>
-        <map value="TQ1.6 Timing/Quantity Segment Service Duration.&#xD;Prior to v2.5, ORC.7.3 Common Order Segment / Quantity/Timing / Duration component.  This is a formatted string, first character for the time unit (e.g., D=days), followed by the value.  For example, “D14” represents “14 days supply”&#xD;From v2.5 on, TQ1.6 Timing/Quantity Segment / Service Duration.  This is a CQ data type (&lt;Quantity (NM)&gt; ^ &lt;Units (CWE)&gt;), thus for days supply, assuming the unit of measure is “days”, the numeric value is TQ1.6.1 (…|14^&#xD;For backwards compatibility, ORC.7 was permitted through v2.6.  Both forms (field and segment) may be present in v2.5, v2.5.1, and v2.6"/>
-      </mapping>
-      <mapping>
-        <identity value="rim"/>
-        <map value="effectiveUseTime"/>
-      </mapping>
-      <mapping>
         <identity value="vista"/>
         <map value="826: source value from PRESCRIPTION - DAYS SUPPLY (52-8)"/>
       </mapping>
       <mapping>
         <identity value="vpr"/>
         <map value="Pharmacy: daysSupply"/>
+      </mapping>
+      <mapping>
+        <identity value="v2"/>
+        <map value="TQ1.6 Timing/Quantity Segment Service Duration.&#xD;Prior to v2.5, ORC.7.3 Common Order Segment / Quantity/Timing / Duration component.  This is a formatted string, first character for the time unit (e.g., D=days), followed by the value.  For example, “D14” represents “14 days supply”&#xD;From v2.5 on, TQ1.6 Timing/Quantity Segment / Service Duration.  This is a CQ data type (&lt;Quantity (NM)&gt; ^ &lt;Units (CWE)&gt;), thus for days supply, assuming the unit of measure is “days”, the numeric value is TQ1.6.1 (…|14^&#xD;For backwards compatibility, ORC.7 was permitted through v2.6.  Both forms (field and segment) may be present in v2.5, v2.5.1, and v2.6"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="effectiveUseTime"/>
       </mapping>
     </element>
     <element id="MedicationDispense.whenPrepared">
@@ -2098,6 +2098,11 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="832: source value from PRESCRIPTION - RELEASED DATE/TIME (52-31)"/>
+        <comment value="WHO Per discussion with Pharma: Josh Miller 5/27/22&#xA;updated to WP per discussion with Eric Spahn 2/5/24"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="RXD-3-Date/Time Dispensed"/>
       </mapping>
@@ -2108,11 +2113,6 @@
       <mapping>
         <identity value="rx-dispense-rmim"/>
         <map value="CombinedMedicationDispense.SupplyEvent.effectiveTime"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="832: source value from PRESCRIPTION - RELEASED DATE/TIME (52-31)"/>
-        <comment value="WHO Per discussion with Pharma: Josh Miller 5/27/22&#xA;updated to WP per discussion with Eric Spahn 2/5/24"/>
       </mapping>
     </element>
     <element id="MedicationDispense.whenHandedOver">
@@ -2396,16 +2396,16 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
-        <identity value="rim"/>
-        <map value="N/A"/>
-      </mapping>
-      <mapping>
         <identity value="vista"/>
         <map value="835: source value from PRESCRIPTION - MAIL/WINDOW/PARK (52-11)"/>
       </mapping>
       <mapping>
         <identity value="vpr"/>
         <map value="Pharmacy: routing"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="N/A"/>
       </mapping>
     </element>
     <element id="MedicationDispense.receiver">
@@ -2653,16 +2653,16 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1716: source value from PRESCRIPTION - REMARKS (52-12)"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="N/A"/>
       </mapping>
       <mapping>
         <identity value="rim"/>
         <map value="Act.text"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1716: source value from PRESCRIPTION - REMARKS (52-12)"/>
       </mapping>
     </element>
     <element id="MedicationDispense.dosageInstruction">
@@ -2872,20 +2872,20 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
-        <identity value="v2"/>
-        <map value="RXO-6; RXE-21"/>
-      </mapping>
-      <mapping>
-        <identity value="rim"/>
-        <map value=".text"/>
-      </mapping>
-      <mapping>
         <identity value="vista"/>
         <map value="838: source value from PRESCRIPTION - SIG (52-10)"/>
       </mapping>
       <mapping>
         <identity value="vpr"/>
         <map value="Pharmacy: sig"/>
+      </mapping>
+      <mapping>
+        <identity value="v2"/>
+        <map value="RXO-6; RXE-21"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value=".text"/>
       </mapping>
     </element>
     <element id="MedicationDispense.dosageInstruction.additionalInstruction">
@@ -2957,20 +2957,20 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
-        <identity value="v2"/>
-        <map value="RXO-7"/>
-      </mapping>
-      <mapping>
-        <identity value="rim"/>
-        <map value=".text"/>
-      </mapping>
-      <mapping>
         <identity value="vista"/>
         <map value="839: source value from PRESCRIPTION - PATIENT INSTRUCTIONS (52-114)"/>
       </mapping>
       <mapping>
         <identity value="cdw"/>
         <map value="RxOut.RxOutpatSig.PatientInstructions"/>
+      </mapping>
+      <mapping>
+        <identity value="v2"/>
+        <map value="RXO-7"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value=".text"/>
       </mapping>
     </element>
     <element id="MedicationDispense.dosageInstruction.timing">
@@ -3522,14 +3522,6 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
-        <identity value="v2"/>
-        <map value="SN.2  / CQ - N/A"/>
-      </mapping>
-      <mapping>
-        <identity value="rim"/>
-        <map value="PQ.value, CO.value, MO.value, IVL.high or IVL.low depending on the value"/>
-      </mapping>
-      <mapping>
         <identity value="vista"/>
         <map value="840: source value from PRESCRIPTION - MEDICATION INSTRUCTIONS &gt; MEDICATION INSTRUCTIONS - DOSAGE ORDERED (52-113 &gt; 52.0113-.01) case number"/>
       </mapping>
@@ -3540,6 +3532,14 @@
       <mapping>
         <identity value="vpr"/>
         <map value="Pharmacy: dose.dose"/>
+      </mapping>
+      <mapping>
+        <identity value="v2"/>
+        <map value="SN.2  / CQ - N/A"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="PQ.value, CO.value, MO.value, IVL.high or IVL.low depending on the value"/>
       </mapping>
     </element>
     <element id="MedicationDispense.dosageInstruction.doseAndRate.dose[x]:doseQuantity.comparator">
@@ -3616,14 +3616,6 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
-        <identity value="v2"/>
-        <map value="(see OBX.6 etc.) / CQ.2"/>
-      </mapping>
-      <mapping>
-        <identity value="rim"/>
-        <map value="PQ.unit"/>
-      </mapping>
-      <mapping>
         <identity value="vista"/>
         <map value="842: source value from PRESCRIPTION - MEDICATION INSTRUCTIONS &gt; MEDICATION INSTRUCTIONS - UNITS (52-113 &gt; 52.0113-2)"/>
       </mapping>
@@ -3634,6 +3626,14 @@
       <mapping>
         <identity value="vpr"/>
         <map value="Pharmacy: dose.units"/>
+      </mapping>
+      <mapping>
+        <identity value="v2"/>
+        <map value="(see OBX.6 etc.) / CQ.2"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="PQ.unit"/>
       </mapping>
     </element>
     <element id="MedicationDispense.dosageInstruction.doseAndRate.dose[x]:doseQuantity.system">
@@ -3703,14 +3703,6 @@
         <valueSet value="http://va.gov/fhir/ValueSet/VSVFDoseUnits"/>
       </binding>
       <mapping>
-        <identity value="v2"/>
-        <map value="(see OBX.6 etc.) / CQ.2"/>
-      </mapping>
-      <mapping>
-        <identity value="rim"/>
-        <map value="PQ.code, MO.currency, PQ.translation.code"/>
-      </mapping>
-      <mapping>
         <identity value="vista"/>
         <map value="1575: terminologyMaps using VF_DoseUnits on PRESCRIPTION - MEDICATION INSTRUCTIONS &gt; MEDICATION INSTRUCTIONS - UNITS (52-113 &gt; 52.0113-2)"/>
       </mapping>
@@ -3721,6 +3713,14 @@
       <mapping>
         <identity value="vpr"/>
         <map value="Pharmacy: dose.units"/>
+      </mapping>
+      <mapping>
+        <identity value="v2"/>
+        <map value="(see OBX.6 etc.) / CQ.2"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="PQ.code, MO.currency, PQ.translation.code"/>
       </mapping>
     </element>
     <element id="MedicationDispense.dosageInstruction.doseAndRate.rate[x]">

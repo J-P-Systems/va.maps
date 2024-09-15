@@ -5,7 +5,6 @@ Title: "Procedure: Radiology"
 Description: "This StructureDefinition contains the maps for VistA file REGISTERED EXAMS (70.02) to us-core-procedure"
 * ^status = #draft
 * status and statusReason.text and category.text and code.coding and code.coding.system and code.coding.code and code.coding.display and subject and encounter and performedDateTime and performer.actor and location MS
-* subject only Reference(Patient)
 * performer.actor only Reference(Practitioner)
 * status from http://va.gov/fhir/ValueSet/VSVFRadiologyProcedureStatus
 * code.coding.system = "http://www.ama-assn.org/go/cpt"

@@ -33,11 +33,11 @@
 <tr><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3goXBCwdPqAP0wAAAldJREFUOMuNk0tIlFEYhp9z/vE2jHkhxXA0zJCMitrUQlq4lnSltEqCFhFG2MJFhIvIFpkEWaTQqjaWZRkp0g26URZkTpbaaOJkDqk10szoODP//7XIMUe0elcfnPd9zsfLOYplGrpRwZaqTtw3K7PtGem7Q6FoidbGgqHVy/HRb669R+56zx7eRV1L31JGxYbBtjKK93cxeqfyQHbehkZbUkK20goELEuIzEd+dHS+qz/Y8PTSif0FnGkbiwcAjHaU1+QWOptFiyCLp/LnKptpqIuXHx6rbR26kJcBX3yLgBfnd7CxwJmflpP2wUg0HIAoUUpZBmKzELGWcN8nAr6Gpu7tLU/CkwAaoKTWRSQyt89Q8w6J+oVQkKnBoblH7V0PPvUOvDYXfopE/SJmALsxnVm6LbkotrUtNowMeIrVrBcBpaMmdS0j9df7abpSuy7HWehwJdt1lhVwi/J58U5beXGAF6c3UXLycw1wdFklArBn87xdh0ZsZtArghBdAA3+OEDVubG4UEzP6x1FOWneHh2VDAHBAt80IbdXDcesNoCvs3E5AFyNSU5nbrDPZpcUEQQTFZiEVx+51fxMhhyJEAgvlriadIJZZksRuwBYMOPBbO3hePVVqgEJhFeUuFLhIPkRP6BQLIBrmMenujm/3g4zc398awIe90Zb5A1vREALqneMcYgP/xVQWlG+Ncu5vgwwlaUNx+3799rfe96u9K0JSDXcOzOTJg4B6IgmXfsygc7/Bvg9g9E58/cDVmGIBOP/zT8Bz1zqWqpbXIsd0O9hajXfL6u4BaOS6SeWAAAAAElFTkSuQmCC" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr></table></div>
   </text>
   <url value="http://va.gov/fhir/StructureDefinition/LabObservationMicrobiologyVirologyDiagnosticReport"/>
-  <version value="0.65.345"/>
+  <version value="0.65.348"/>
   <name value="LabObservationMicrobiologyVirologyDiagnosticReport"/>
   <title value="Lab Observation: Microbiology Virology DiagnosticReport"/>
   <status value="draft"/>
-  <date value="2024-08-26T15:27:18+00:00"/>
+  <date value="2024-09-15T08:33:43+00:00"/>
   <publisher value="VA"/>
   <contact>
     <name value="VA"/>
@@ -561,17 +561,17 @@
       <isModifier value="false"/>
       <isSummary value="false"/>
       <mapping>
-        <identity value="rim"/>
-        <map value="N/A"/>
-      </mapping>
-      <mapping>
         <identity value="vista"/>
         <map value="1446: source value from MICROBIOLOGY - VIROLOGY RPT REMARK &gt; VIROLOGY RPT REMARK - VIROLOGY RPT REMARK (63.05-37 &gt; 63.44-.01)"/>
-        <comment value="This is the correct mapping, however, .note was not added to DR until FHIR R5. Keeping the mapping here for future"/>
+        <comment value="This is the correct mapping, however, .note was not added to DR until FHIR R5. Use pre-adopt extension."/>
       </mapping>
       <mapping>
         <identity value="cdw"/>
         <map value="Micro.VirologyReports.VirologyReportRemark"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="N/A"/>
       </mapping>
     </element>
     <element id="DiagnosticReport.modifierExtension">
@@ -855,6 +855,11 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1605-1: fixed value = http://va.gov/identifiers/$Sta3n/63.5"/>
+        <comment value="from mapParameter 1"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="CX.4 / EI-2-4"/>
       </mapping>
@@ -865,11 +870,6 @@
       <mapping>
         <identity value="servd"/>
         <map value="./IdentifierType"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1605-1: fixed value = http://va.gov/identifiers/$Sta3n/63.5"/>
-        <comment value="from mapParameter 1"/>
       </mapping>
     </element>
     <element id="DiagnosticReport.identifier.value">
@@ -903,6 +903,10 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1605: source value from MICROBIOLOGY - ORDERED TEST &gt; ORDERED TEST - IEN (63.05-.35 &gt; 63.5-.001)"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="CX.1 / EI.1"/>
       </mapping>
@@ -913,10 +917,6 @@
       <mapping>
         <identity value="servd"/>
         <map value="./Value"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1605: source value from MICROBIOLOGY - ORDERED TEST &gt; ORDERED TEST - IEN (63.05-.35 &gt; 63.5-.001)"/>
       </mapping>
     </element>
     <element id="DiagnosticReport.identifier.period">
@@ -1025,6 +1025,14 @@
       <isModifier value="false"/>
       <isSummary value="false"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1690: reference from MICROBIOLOGY - ORDERED TEST &gt; ORDERED TEST - CPRS ORDER # (63.05-.35 &gt; 63.5-3)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Micro.MicroOrderedTest.CPRSOrderIEN,SStaff.SMicroOrderedTest.CPRSOrderIEN"/>
+      </mapping>
+      <mapping>
         <identity value="workflow"/>
         <map value="Event.basedOn"/>
       </mapping>
@@ -1035,14 +1043,6 @@
       <mapping>
         <identity value="rim"/>
         <map value="outboundRelationship[typeCode=FLFS].target"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1690: reference from MICROBIOLOGY - ORDERED TEST &gt; ORDERED TEST - CPRS ORDER # (63.05-.35 &gt; 63.5-3)"/>
-      </mapping>
-      <mapping>
-        <identity value="cdw"/>
-        <map value="Micro.MicroOrderedTest.CPRSOrderIEN,SStaff.SMicroOrderedTest.CPRSOrderIEN"/>
       </mapping>
     </element>
     <element id="DiagnosticReport.status">
@@ -1079,6 +1079,15 @@
         <valueSet value="http://va.gov/fhir/ValueSet/VSVFDiagnosticReportLabStatus"/>
       </binding>
       <mapping>
+        <identity value="vista"/>
+        <map value="1416: terminologyMaps using VF_DiagnosticReportLabStatus on MICROBIOLOGY - ORDERED TEST &gt; ORDERED TEST - DISPOSITION (63.05-.35 &gt; 63.5-10)"/>
+        <comment value="disposition based on HL7 Table 0123 status codes&#xA;&#xA;US Core 5 has new constraints: if status is partial, preliminary, final, ammended, corrected or appended effective[x] and issued are required"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Micro.MicroOrderedTest.DispositionLabCodeIEN,SStaff.SMicroOrderedTest.DispositionLabCodeIEN"/>
+      </mapping>
+      <mapping>
         <identity value="workflow"/>
         <map value="Event.status"/>
       </mapping>
@@ -1093,15 +1102,6 @@
       <mapping>
         <identity value="rim"/>
         <map value="statusCode  Note: final and amended are distinguished by whether observation is the subject of a ControlAct event of type &quot;revise&quot;"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1416: terminologyMaps using VF_DiagnosticReportLabStatus on MICROBIOLOGY - ORDERED TEST &gt; ORDERED TEST - DISPOSITION (63.05-.35 &gt; 63.5-10)"/>
-        <comment value="disposition based on HL7 Table 0123 status codes&#xA;&#xA;US Core 5 has new constraints: if status is partial, preliminary, final, ammended, corrected or appended effective[x] and issued are required"/>
-      </mapping>
-      <mapping>
-        <identity value="cdw"/>
-        <map value="Micro.MicroOrderedTest.DispositionLabCodeIEN,SStaff.SMicroOrderedTest.DispositionLabCodeIEN"/>
       </mapping>
     </element>
     <element id="DiagnosticReport.category">
@@ -1305,6 +1305,15 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1662: source value from LABORATORY TEST - NATIONAL VA LAB CODE &gt; WKLD CODE - WKLD CODE LAB SECTION &gt; WKLD CODE LAB SECT - NAME (60-64 &gt; 64-13 &gt; 64.21-.01)"/>
+        <comment value="Lab Section"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Dim.LabChemTest.NationalVALabCodeIEN"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="C*E.9. But note many systems use C*E.2 for this"/>
       </mapping>
@@ -1315,15 +1324,6 @@
       <mapping>
         <identity value="orim"/>
         <map value="fhir:CodeableConcept.text rdfs:subPropertyOf dt:CD.originalText"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1662: source value from LABORATORY TEST - NATIONAL VA LAB CODE &gt; WKLD CODE - WKLD CODE LAB SECTION &gt; WKLD CODE LAB SECT - NAME (60-64 &gt; 64-13 &gt; 64.21-.01)"/>
-        <comment value="Lab Section"/>
-      </mapping>
-      <mapping>
-        <identity value="cdw"/>
-        <map value="Dim.LabChemTest.NationalVALabCodeIEN"/>
       </mapping>
     </element>
     <element id="DiagnosticReport.category:LaboratorySlice">
@@ -1372,6 +1372,10 @@
         <valueSet value="http://hl7.org/fhir/ValueSet/diagnostic-service-sections"/>
       </binding>
       <mapping>
+        <identity value="vista"/>
+        <map value="1419: fixed value = http://terminology.hl7.org/CodeSystem/v2-0074#LAB"/>
+      </mapping>
+      <mapping>
         <identity value="w5"/>
         <map value="FiveWs.class"/>
       </mapping>
@@ -1382,10 +1386,6 @@
       <mapping>
         <identity value="rim"/>
         <map value="inboundRelationship[typeCode=COMP].source[classCode=LIST, moodCode=EVN, code &lt; LabService].code"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1419: fixed value = http://terminology.hl7.org/CodeSystem/v2-0074#LAB"/>
       </mapping>
     </element>
     <element id="DiagnosticReport.code">
@@ -1538,6 +1538,15 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1420: source value from LABORATORY TEST - NATIONAL VA LAB CODE &gt; WKLD CODE - DEFAULT LOINC CODE &gt; LAB LOINC (60-64 &gt; 64-25 &gt; 95.3)"/>
+        <comment value="Typically LOINC. &#xA;Changed VistA mapping to support some coded values and add the lab test name (non-standardized)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Dim.LabChemTest.NationalVALabCodeIEN"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="C*E.1-8, C*E.10-22"/>
       </mapping>
@@ -1548,15 +1557,6 @@
       <mapping>
         <identity value="orim"/>
         <map value="fhir:CodeableConcept.coding rdfs:subPropertyOf dt:CD.coding"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1420: source value from LABORATORY TEST - NATIONAL VA LAB CODE &gt; WKLD CODE - DEFAULT LOINC CODE &gt; LAB LOINC (60-64 &gt; 64-25 &gt; 95.3)"/>
-        <comment value="Typically LOINC. &#xA;Changed VistA mapping to support some coded values and add the lab test name (non-standardized)"/>
-      </mapping>
-      <mapping>
-        <identity value="cdw"/>
-        <map value="Dim.LabChemTest.NationalVALabCodeIEN"/>
       </mapping>
     </element>
     <element id="DiagnosticReport.code.coding.id">
@@ -1661,6 +1661,11 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1420-2: fixed value = http://loinc.org"/>
+        <comment value="from mapParameter 2"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="C*E.3"/>
       </mapping>
@@ -1671,11 +1676,6 @@
       <mapping>
         <identity value="orim"/>
         <map value="fhir:Coding.system rdfs:subPropertyOf dt:CDCoding.codeSystem"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1420-2: fixed value = http://loinc.org"/>
-        <comment value="from mapParameter 2"/>
       </mapping>
     </element>
     <element id="DiagnosticReport.code.coding.version">
@@ -1743,6 +1743,15 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1420-1: source value from LABORATORY TEST - NATIONAL VA LAB CODE &gt; WKLD CODE - DEFAULT LOINC CODE &gt; LAB LOINC - CODE (60-64 &gt; 64-25 &gt; 95.3-.01)"/>
+        <comment value="from mapParameter 1"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Dim.LabChemTest.NationalVALabCodeIEN"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="C*E.1"/>
       </mapping>
@@ -1753,15 +1762,6 @@
       <mapping>
         <identity value="orim"/>
         <map value="fhir:Coding.code rdfs:subPropertyOf dt:CDCoding.code"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1420-1: source value from LABORATORY TEST - NATIONAL VA LAB CODE &gt; WKLD CODE - DEFAULT LOINC CODE &gt; LAB LOINC - CODE (60-64 &gt; 64-25 &gt; 95.3-.01)"/>
-        <comment value="from mapParameter 1"/>
-      </mapping>
-      <mapping>
-        <identity value="cdw"/>
-        <map value="Dim.LabChemTest.NationalVALabCodeIEN"/>
       </mapping>
     </element>
     <element id="DiagnosticReport.code.coding.display">
@@ -1794,6 +1794,15 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1420-3: source value from LABORATORY TEST - NATIONAL VA LAB CODE &gt; WKLD CODE - DEFAULT LOINC CODE &gt; LAB LOINC - COMPONENT (60-64 &gt; 64-25 &gt; 95.3-1)"/>
+        <comment value="from mapParameter 3"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Dim.LabChemTest.NationalVALabCodeIEN"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="C*E.2 - but note this is not well followed"/>
       </mapping>
@@ -1804,15 +1813,6 @@
       <mapping>
         <identity value="orim"/>
         <map value="fhir:Coding.display rdfs:subPropertyOf dt:CDCoding.displayName"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1420-3: source value from LABORATORY TEST - NATIONAL VA LAB CODE &gt; WKLD CODE - DEFAULT LOINC CODE &gt; LAB LOINC - COMPONENT (60-64 &gt; 64-25 &gt; 95.3-1)"/>
-        <comment value="from mapParameter 3"/>
-      </mapping>
-      <mapping>
-        <identity value="cdw"/>
-        <map value="Dim.LabChemTest.NationalVALabCodeIEN"/>
       </mapping>
     </element>
     <element id="DiagnosticReport.code.coding.userSelected">
@@ -1885,6 +1885,15 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1661: source value from LABORATORY TEST - NAME (60-.01)"/>
+        <comment value="Added the lab test name (non-standardized)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Dim.LabChemTest.LabChemTestName"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="C*E.9. But note many systems use C*E.2 for this"/>
       </mapping>
@@ -1895,15 +1904,6 @@
       <mapping>
         <identity value="orim"/>
         <map value="fhir:CodeableConcept.text rdfs:subPropertyOf dt:CD.originalText"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1661: source value from LABORATORY TEST - NAME (60-.01)"/>
-        <comment value="Added the lab test name (non-standardized)"/>
-      </mapping>
-      <mapping>
-        <identity value="cdw"/>
-        <map value="Dim.LabChemTest.LabChemTestName"/>
       </mapping>
     </element>
     <element id="DiagnosticReport.subject">
@@ -1935,6 +1935,15 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1421: reference from PATIENT - LABORATORY REFERENCE &gt; LAB DATA - LRDFN (2-63 &gt; 63-.01)"/>
+        <comment value="Pointer from PATIENT (2)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Micro.AntibioticSensitivity.LRDFN,Micro.AntibioticSensitivityComment.LRDFN,Micro.BacteriologyReports.LRDFN,Micro.MicroAntibioticLevel.LRDFN,Micro.MicroAudit.LRDFN,Micro.Microbiology.LRDFN,Micro.MicroOrderedTest.LRDFN,Micro.MicroSterilityResults.LRDFN,Micro.MycobacteriologyReports.LRDFN,Micro.Mycology.LRDFN,Micro.MycologyReports.LRDFN,Micro.Parasitology.LRDFN,Micro.ParasitologyReports.LRDFN,Micro.ParasitologyStage.LRDFN,Micro.Virology.LRDFN,Micro.VirologyReports.LRDFN,Pathology.Autopsy.LRDFN,Pathology.CytoOrganTissueFunction.StaffIEN,SStaff.SMicroOrderedTest.LRDFN"/>
+      </mapping>
+      <mapping>
         <identity value="workflow"/>
         <map value="Event.subject"/>
       </mapping>
@@ -1953,15 +1962,6 @@
       <mapping>
         <identity value="w5"/>
         <map value="FiveWs.subject"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1421: reference from PATIENT - LABORATORY REFERENCE &gt; LAB DATA - LRDFN (2-63 &gt; 63-.01)"/>
-        <comment value="Pointer from PATIENT (2)"/>
-      </mapping>
-      <mapping>
-        <identity value="cdw"/>
-        <map value="Micro.AntibioticSensitivity.LRDFN,Micro.AntibioticSensitivityComment.LRDFN,Micro.BacteriologyReports.LRDFN,Micro.MicroAntibioticLevel.LRDFN,Micro.MicroAudit.LRDFN,Micro.Microbiology.LRDFN,Micro.MicroOrderedTest.LRDFN,Micro.MicroSterilityResults.LRDFN,Micro.MycobacteriologyReports.LRDFN,Micro.Mycology.LRDFN,Micro.MycologyReports.LRDFN,Micro.Parasitology.LRDFN,Micro.ParasitologyReports.LRDFN,Micro.ParasitologyStage.LRDFN,Micro.Virology.LRDFN,Micro.VirologyReports.LRDFN,Pathology.Autopsy.LRDFN,Pathology.CytoOrganTissueFunction.StaffIEN,SStaff.SMicroOrderedTest.LRDFN"/>
       </mapping>
     </element>
     <element id="DiagnosticReport.encounter">
@@ -2110,6 +2110,14 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1424: source value from MICROBIOLOGY - DATE/TIME SPECIMEN TAKEN (63.05-.01)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Micro.AntibioticSensitivity.SpecimenTakenDateTime,Micro.AntibioticSensitivityComment.SpecimenTakenDateTime,Micro.BacteriologyReports.SpecimenTakenDateTime,Micro.MicroAntibioticLevel.SpecimenTakenDateTime,Micro.MicroAudit.SpecimenTakenDateTime,Micro.Microbiology.SpecimenTakenDateTime,Micro.MicroOrderedTest.SpecimenTakenDateTime,Micro.MicroSterilityResults.SpecimenTakenDateTime,Micro.MycobacteriologyReports.SpecimenTakenDateTime,Micro.Mycology.SpecimenTakenDateTime,Micro.MycologyReports.SpecimenTakenDateTime,Micro.Parasitology.SpecimenTakenDateTime,Micro.ParasitologyReports.SpecimenTakenDateTime,Micro.ParasitologyStage.SpecimenTakenDateTime,Micro.Virology.SpecimenTakenDateTime,Micro.VirologyReports.SpecimenTakenDateTime,SStaff.SMicroOrderedTest.SpecimenTakenDateTime"/>
+      </mapping>
+      <mapping>
         <identity value="workflow"/>
         <map value="Event.occurrence[x]"/>
       </mapping>
@@ -2124,14 +2132,6 @@
       <mapping>
         <identity value="rim"/>
         <map value="effectiveTime"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1424: source value from MICROBIOLOGY - DATE/TIME SPECIMEN TAKEN (63.05-.01)"/>
-      </mapping>
-      <mapping>
-        <identity value="cdw"/>
-        <map value="Micro.AntibioticSensitivity.SpecimenTakenDateTime,Micro.AntibioticSensitivityComment.SpecimenTakenDateTime,Micro.BacteriologyReports.SpecimenTakenDateTime,Micro.MicroAntibioticLevel.SpecimenTakenDateTime,Micro.MicroAudit.SpecimenTakenDateTime,Micro.Microbiology.SpecimenTakenDateTime,Micro.MicroOrderedTest.SpecimenTakenDateTime,Micro.MicroSterilityResults.SpecimenTakenDateTime,Micro.MycobacteriologyReports.SpecimenTakenDateTime,Micro.Mycology.SpecimenTakenDateTime,Micro.MycologyReports.SpecimenTakenDateTime,Micro.Parasitology.SpecimenTakenDateTime,Micro.ParasitologyReports.SpecimenTakenDateTime,Micro.ParasitologyStage.SpecimenTakenDateTime,Micro.Virology.SpecimenTakenDateTime,Micro.VirologyReports.SpecimenTakenDateTime,SStaff.SMicroOrderedTest.SpecimenTakenDateTime"/>
       </mapping>
     </element>
     <element id="DiagnosticReport.issued">
@@ -2166,6 +2166,14 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1429: source value from MICROBIOLOGY - DATE REPORT COMPLETED (63.05-.03)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Micro.Microbiology.ReportCompletedDateTime"/>
+      </mapping>
+      <mapping>
         <identity value="w5"/>
         <map value="FiveWs.recorded"/>
       </mapping>
@@ -2176,14 +2184,6 @@
       <mapping>
         <identity value="rim"/>
         <map value="participation[typeCode=VRF or AUT].time"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1429: source value from MICROBIOLOGY - DATE REPORT COMPLETED (63.05-.03)"/>
-      </mapping>
-      <mapping>
-        <identity value="cdw"/>
-        <map value="Micro.Microbiology.ReportCompletedDateTime"/>
       </mapping>
     </element>
     <element id="DiagnosticReport.performer">
@@ -2301,6 +2301,15 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1434: reference from MICROBIOLOGY - VERIFY PERSON (63.05-.04)"/>
+        <comment value="US Core Practitioner is must support resource"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Micro.Microbiology.VerifyingStaffIEN"/>
+      </mapping>
+      <mapping>
         <identity value="workflow"/>
         <map value="Event.performer.actor"/>
       </mapping>
@@ -2315,15 +2324,6 @@
       <mapping>
         <identity value="rim"/>
         <map value=".participation[typeCode=PRF]"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1434: reference from MICROBIOLOGY - VERIFY PERSON (63.05-.04)"/>
-        <comment value="US Core Practitioner is must support resource"/>
-      </mapping>
-      <mapping>
-        <identity value="cdw"/>
-        <map value="Micro.Microbiology.VerifyingStaffIEN"/>
       </mapping>
     </element>
     <element id="DiagnosticReport.performer:va-at">
@@ -2363,6 +2363,14 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1682: reference from MICROBIOLOGY - ACCESSIONING INSTITUTION (63.05-.112)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Micro.Microbiology.AccessioningInstitutionIEN"/>
+      </mapping>
+      <mapping>
         <identity value="workflow"/>
         <map value="Event.performer.actor"/>
       </mapping>
@@ -2377,14 +2385,6 @@
       <mapping>
         <identity value="rim"/>
         <map value=".participation[typeCode=PRF]"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1682: reference from MICROBIOLOGY - ACCESSIONING INSTITUTION (63.05-.112)"/>
-      </mapping>
-      <mapping>
-        <identity value="cdw"/>
-        <map value="Micro.Microbiology.AccessioningInstitutionIEN"/>
       </mapping>
     </element>
     <element id="DiagnosticReport.resultsInterpreter">
@@ -2510,16 +2510,16 @@
       <isModifier value="false"/>
       <isSummary value="false"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1437: reference from See mapping for Lab Observation"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="OBXs"/>
       </mapping>
       <mapping>
         <identity value="rim"/>
         <map value="outboundRelationship[typeCode=COMP].target"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1437: reference from See mapping for Lab Observation"/>
       </mapping>
     </element>
     <element id="DiagnosticReport.imagingStudy">
@@ -2902,7 +2902,7 @@
       <mapping>
         <identity value="vista"/>
         <map value="1446: source value from MICROBIOLOGY - VIROLOGY RPT REMARK &gt; VIROLOGY RPT REMARK - VIROLOGY RPT REMARK (63.05-37 &gt; 63.44-.01)"/>
-        <comment value="This is the correct mapping, however, .note was not added to DR until FHIR R5. Keeping the mapping here for future"/>
+        <comment value="This is the correct mapping, however, .note was not added to DR until FHIR R5. Use pre-adopt extension."/>
       </mapping>
       <mapping>
         <identity value="cdw"/>

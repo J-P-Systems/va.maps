@@ -9,7 +9,6 @@ Description: "This StructureDefinition contains the maps for VistA file V EXAM (
 * code.coding ^slicing.rules = #open
 * code.coding contains va-code 0..1 and va-sct 0..1
 * code.coding[va-code] and code.coding[va-code].system and code.coding[va-code].code and code.coding[va-code].display and code.coding[va-sct] and code.coding[va-sct].system and code.coding[va-sct].code and subject and encounter and interpretation and valueQuantity.value and valueQuantity and valueQuantity.unit and valueQuantity.code and note.text and effectiveDateTime and status and performer and category MS
-* subject only Reference(Patient)
 * performer only Reference(Practitioner)
 * code.coding[va-code].system = "http://va.gov/terminology/vistaDefinedTerms/9999999.15"
 * code.coding[va-sct].system = "urn:see-termmap-in-mapParameter"

@@ -26,11 +26,11 @@
 <tr><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3goXBCwdPqAP0wAAAldJREFUOMuNk0tIlFEYhp9z/vE2jHkhxXA0zJCMitrUQlq4lnSltEqCFhFG2MJFhIvIFpkEWaTQqjaWZRkp0g26URZkTpbaaOJkDqk10szoODP//7XIMUe0elcfnPd9zsfLOYplGrpRwZaqTtw3K7PtGem7Q6FoidbGgqHVy/HRb669R+56zx7eRV1L31JGxYbBtjKK93cxeqfyQHbehkZbUkK20goELEuIzEd+dHS+qz/Y8PTSif0FnGkbiwcAjHaU1+QWOptFiyCLp/LnKptpqIuXHx6rbR26kJcBX3yLgBfnd7CxwJmflpP2wUg0HIAoUUpZBmKzELGWcN8nAr6Gpu7tLU/CkwAaoKTWRSQyt89Q8w6J+oVQkKnBoblH7V0PPvUOvDYXfopE/SJmALsxnVm6LbkotrUtNowMeIrVrBcBpaMmdS0j9df7abpSuy7HWehwJdt1lhVwi/J58U5beXGAF6c3UXLycw1wdFklArBn87xdh0ZsZtArghBdAA3+OEDVubG4UEzP6x1FOWneHh2VDAHBAt80IbdXDcesNoCvs3E5AFyNSU5nbrDPZpcUEQQTFZiEVx+51fxMhhyJEAgvlriadIJZZksRuwBYMOPBbO3hePVVqgEJhFeUuFLhIPkRP6BQLIBrmMenujm/3g4zc398awIe90Zb5A1vREALqneMcYgP/xVQWlG+Ncu5vgwwlaUNx+3799rfe96u9K0JSDXcOzOTJg4B6IgmXfsygc7/Bvg9g9E58/cDVmGIBOP/zT8Bz1zqWqpbXIsd0O9hajXfL6u4BaOS6SeWAAAAAElFTkSuQmCC" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr></table></div>
   </text>
   <url value="http://va.gov/fhir/StructureDefinition/ObservationImagingResultRadNuc"/>
-  <version value="0.65.345"/>
+  <version value="0.65.348"/>
   <name value="ObservationImagingResultRadNuc"/>
   <title value="Observation Imaging Result: Rad/Nuc"/>
   <status value="draft"/>
-  <date value="2024-08-26T15:27:18+00:00"/>
+  <date value="2024-09-15T08:33:43+00:00"/>
   <publisher value="VA"/>
   <contact>
     <name value="VA"/>
@@ -688,6 +688,11 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1619-1: fixed value = http://va.gov/identifiers/$Sta3n/74"/>
+        <comment value="from mapParameter 1"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="CX.4 / EI-2-4"/>
       </mapping>
@@ -698,11 +703,6 @@
       <mapping>
         <identity value="servd"/>
         <map value="./IdentifierType"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1619-1: fixed value = http://va.gov/identifiers/$Sta3n/74"/>
-        <comment value="from mapParameter 1"/>
       </mapping>
     </element>
     <element id="Observation.identifier.value">
@@ -736,6 +736,10 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1619: source value from RAD/NUC MED REPORTS - IEN (74-.001)"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="CX.1 / EI.1"/>
       </mapping>
@@ -746,10 +750,6 @@
       <mapping>
         <identity value="servd"/>
         <map value="./Value"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1619: source value from RAD/NUC MED REPORTS - IEN (74-.001)"/>
       </mapping>
     </element>
     <element id="Observation.identifier.period">
@@ -902,6 +902,11 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1620: reference from REGISTERED EXAMS - EXAMINATIONS (70.02-50)"/>
+        <comment value="See use case Procedure: Radiology for US Core FHIR Procedure mapped elements"/>
+      </mapping>
+      <mapping>
         <identity value="workflow"/>
         <map value="Event.partOf"/>
       </mapping>
@@ -912,11 +917,6 @@
       <mapping>
         <identity value="rim"/>
         <map value=".outboundRelationship[typeCode=FLFS].target"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1620: reference from REGISTERED EXAMS - EXAMINATIONS (70.02-50)"/>
-        <comment value="See use case Procedure: Radiology for US Core FHIR Procedure mapped elements"/>
       </mapping>
     </element>
     <element id="Observation.status">
@@ -955,6 +955,14 @@
         <valueSet value="http://va.gov/fhir/ValueSet/VSVFImageStatusRadNuc"/>
       </binding>
       <mapping>
+        <identity value="vista"/>
+        <map value="1623: terminologyMaps using VF_ImageStatusRadNuc on RAD/NUC MED REPORTS - REPORT STATUS (74-5)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="SStaff.RadiologyNuclearMedicineReport.ReportStatus"/>
+      </mapping>
+      <mapping>
         <identity value="workflow"/>
         <map value="Event.status"/>
       </mapping>
@@ -973,14 +981,6 @@
       <mapping>
         <identity value="rim"/>
         <map value="status  Amended &amp; Final are differentiated by whether it is the subject of a ControlAct event with a type of &quot;revise&quot;"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1623: terminologyMaps using VF_ImageStatusRadNuc on RAD/NUC MED REPORTS - REPORT STATUS (74-5)"/>
-      </mapping>
-      <mapping>
-        <identity value="cdw"/>
-        <map value="SStaff.RadiologyNuclearMedicineReport.ReportStatus"/>
       </mapping>
     </element>
     <element id="Observation.category">
@@ -1032,16 +1032,16 @@
         <valueSet value="http://hl7.org/fhir/ValueSet/observation-category"/>
       </binding>
       <mapping>
+        <identity value="vista"/>
+        <map value="1624: fixed value = http://terminology.hl7.org/CodeSystem/observation-category#imaging"/>
+      </mapping>
+      <mapping>
         <identity value="w5"/>
         <map value="FiveWs.class"/>
       </mapping>
       <mapping>
         <identity value="rim"/>
         <map value=".outboundRelationship[typeCode=&quot;COMP].target[classCode=&quot;LIST&quot;, moodCode=&quot;EVN&quot;].code"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1624: fixed value = http://terminology.hl7.org/CodeSystem/observation-category#imaging"/>
       </mapping>
     </element>
     <element id="Observation.category:imaging">
@@ -1181,6 +1181,14 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1633: reference from RAD/NUC MED REPORTS - PATIENT NAME (74-2)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="SStaff.RadiologyNuclearMedicineReport.PatientIEN"/>
+      </mapping>
+      <mapping>
         <identity value="workflow"/>
         <map value="Event.subject"/>
       </mapping>
@@ -1199,14 +1207,6 @@
       <mapping>
         <identity value="w5"/>
         <map value="FiveWs.subject"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1633: reference from RAD/NUC MED REPORTS - PATIENT NAME (74-2)"/>
-      </mapping>
-      <mapping>
-        <identity value="cdw"/>
-        <map value="SStaff.RadiologyNuclearMedicineReport.PatientIEN"/>
       </mapping>
     </element>
     <element id="Observation.focus">
@@ -1416,6 +1416,14 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1636: source value from RAD/NUC MED REPORTS - EXAM DATE/TIME (74-3)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="SStaff.RadiologyNuclearMedicineReport.ExamDateTime"/>
+      </mapping>
+      <mapping>
         <identity value="workflow"/>
         <map value="Event.occurrence[x]"/>
       </mapping>
@@ -1430,14 +1438,6 @@
       <mapping>
         <identity value="rim"/>
         <map value="effectiveTime"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1636: source value from RAD/NUC MED REPORTS - EXAM DATE/TIME (74-3)"/>
-      </mapping>
-      <mapping>
-        <identity value="cdw"/>
-        <map value="SStaff.RadiologyNuclearMedicineReport.ExamDateTime"/>
       </mapping>
     </element>
     <element id="Observation.issued">
@@ -1467,6 +1467,14 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1639: source value from RAD/NUC MED REPORTS - VERIFIED DATE (74-7)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="SStaff.RadiologyNuclearMedicineReport.VerifiedDateTime"/>
+      </mapping>
+      <mapping>
         <identity value="w5"/>
         <map value="FiveWs.recorded"/>
       </mapping>
@@ -1477,14 +1485,6 @@
       <mapping>
         <identity value="rim"/>
         <map value="participation[typeCode=AUT].time"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1639: source value from RAD/NUC MED REPORTS - VERIFIED DATE (74-7)"/>
-      </mapping>
-      <mapping>
-        <identity value="cdw"/>
-        <map value="SStaff.RadiologyNuclearMedicineReport.VerifiedDateTime"/>
       </mapping>
     </element>
     <element id="Observation.performer">
@@ -1520,6 +1520,14 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1642: source value from RAD/NUC MED REPORTS - VERIFYING PHYSICIAN (74-9)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="SStaff.RadiologyNuclearMedicineReport.VerifyingPhysicianStaffIEN"/>
+      </mapping>
+      <mapping>
         <identity value="workflow"/>
         <map value="Event.performer.actor"/>
       </mapping>
@@ -1534,14 +1542,6 @@
       <mapping>
         <identity value="rim"/>
         <map value="participation[typeCode=PRF]"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1642: source value from RAD/NUC MED REPORTS - VERIFYING PHYSICIAN (74-9)"/>
-      </mapping>
-      <mapping>
-        <identity value="cdw"/>
-        <map value="SStaff.RadiologyNuclearMedicineReport.VerifyingPhysicianStaffIEN"/>
       </mapping>
     </element>
     <element id="Observation.value[x]">
@@ -1692,6 +1692,10 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1647: source value from RAD/NUC MED REPORTS - IMPRESSION TEXT (74-300)"/>
+      </mapping>
+      <mapping>
         <identity value="sct-concept"/>
         <map value="&lt; 441742003 |Evaluation finding|"/>
       </mapping>
@@ -1706,10 +1710,6 @@
       <mapping>
         <identity value="sct-attr"/>
         <map value="363714003 |Interprets|"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1647: source value from RAD/NUC MED REPORTS - IMPRESSION TEXT (74-300)"/>
       </mapping>
     </element>
     <element id="Observation.value[x]:valueQuantity">
@@ -1758,6 +1758,11 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1797: target not supported"/>
+        <comment value="value is string"/>
+      </mapping>
+      <mapping>
         <identity value="sct-concept"/>
         <map value="&lt; 441742003 |Evaluation finding|"/>
       </mapping>
@@ -1772,11 +1777,6 @@
       <mapping>
         <identity value="sct-attr"/>
         <map value="363714003 |Interprets|"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1797: target not supported"/>
-        <comment value="value is string"/>
       </mapping>
     </element>
     <element id="Observation.value[x]:valueCodeableConcept">
@@ -1825,6 +1825,11 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1798: target not supported"/>
+        <comment value="value is string"/>
+      </mapping>
+      <mapping>
         <identity value="sct-concept"/>
         <map value="&lt; 441742003 |Evaluation finding|"/>
       </mapping>
@@ -1839,11 +1844,6 @@
       <mapping>
         <identity value="sct-attr"/>
         <map value="363714003 |Interprets|"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1798: target not supported"/>
-        <comment value="value is string"/>
       </mapping>
     </element>
     <element id="Observation.dataAbsentReason">
@@ -1884,17 +1884,17 @@
         <valueSet value="http://hl7.org/fhir/ValueSet/data-absent-reason"/>
       </binding>
       <mapping>
+        <identity value="vista"/>
+        <map value="1796: target not supported"/>
+        <comment value="Always has data"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="N/A"/>
       </mapping>
       <mapping>
         <identity value="rim"/>
         <map value="value.nullFlavor"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1796: target not supported"/>
-        <comment value="Always has data"/>
       </mapping>
     </element>
     <element id="Observation.interpretation">

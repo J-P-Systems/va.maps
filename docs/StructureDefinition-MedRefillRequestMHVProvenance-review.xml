@@ -17,11 +17,11 @@
 <tr><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3goXBCwdPqAP0wAAAldJREFUOMuNk0tIlFEYhp9z/vE2jHkhxXA0zJCMitrUQlq4lnSltEqCFhFG2MJFhIvIFpkEWaTQqjaWZRkp0g26URZkTpbaaOJkDqk10szoODP//7XIMUe0elcfnPd9zsfLOYplGrpRwZaqTtw3K7PtGem7Q6FoidbGgqHVy/HRb669R+56zx7eRV1L31JGxYbBtjKK93cxeqfyQHbehkZbUkK20goELEuIzEd+dHS+qz/Y8PTSif0FnGkbiwcAjHaU1+QWOptFiyCLp/LnKptpqIuXHx6rbR26kJcBX3yLgBfnd7CxwJmflpP2wUg0HIAoUUpZBmKzELGWcN8nAr6Gpu7tLU/CkwAaoKTWRSQyt89Q8w6J+oVQkKnBoblH7V0PPvUOvDYXfopE/SJmALsxnVm6LbkotrUtNowMeIrVrBcBpaMmdS0j9df7abpSuy7HWehwJdt1lhVwi/J58U5beXGAF6c3UXLycw1wdFklArBn87xdh0ZsZtArghBdAA3+OEDVubG4UEzP6x1FOWneHh2VDAHBAt80IbdXDcesNoCvs3E5AFyNSU5nbrDPZpcUEQQTFZiEVx+51fxMhhyJEAgvlriadIJZZksRuwBYMOPBbO3hePVVqgEJhFeUuFLhIPkRP6BQLIBrmMenujm/3g4zc398awIe90Zb5A1vREALqneMcYgP/xVQWlG+Ncu5vgwwlaUNx+3799rfe96u9K0JSDXcOzOTJg4B6IgmXfsygc7/Bvg9g9E58/cDVmGIBOP/zT8Bz1zqWqpbXIsd0O9hajXfL6u4BaOS6SeWAAAAAElFTkSuQmCC" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr></table></div>
   </text>
   <url value="http://va.gov/fhir/StructureDefinition/MedRefillRequestMHVProvenance-review"/>
-  <version value="0.65.345"/>
+  <version value="0.65.348"/>
   <name value="MedRefillRequestMHVProvenance-review"/>
   <title value="MedRefillRequestMHV Provenance-review"/>
   <status value="draft"/>
-  <date value="2024-08-26T15:27:18+00:00"/>
+  <date value="2024-09-15T08:33:43+00:00"/>
   <publisher value="VA"/>
   <contact>
     <name value="VA"/>
@@ -437,6 +437,10 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1864: reference"/>
+      </mapping>
+      <mapping>
         <identity value="w5"/>
         <map value="FiveWs.what[x]"/>
       </mapping>
@@ -451,10 +455,6 @@
       <mapping>
         <identity value="w3c.prov"/>
         <map value="Entity Created/Updated"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1864: reference"/>
       </mapping>
     </element>
     <element id="Provenance.occurred[x]">
@@ -529,6 +529,14 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1847: source value from PRESCRIPTION REFILL REQUEST - DATE PROCESSED (52.43-5)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="RxOut.RefillRequest.ProcessedDateTime"/>
+      </mapping>
+      <mapping>
         <identity value="w5"/>
         <map value="FiveWs.recorded"/>
       </mapping>
@@ -543,14 +551,6 @@
       <mapping>
         <identity value="w3c.prov"/>
         <map value="Activity.when"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1847: source value from PRESCRIPTION REFILL REQUEST - DATE PROCESSED (52.43-5)"/>
-      </mapping>
-      <mapping>
-        <identity value="cdw"/>
-        <map value="RxOut.RefillRequest.ProcessedDateTime"/>
       </mapping>
     </element>
     <element id="Provenance.policy">
@@ -726,6 +726,11 @@
         <valueSet value="http://hl7.org/fhir/ValueSet/provenance-activity-type"/>
       </binding>
       <mapping>
+        <identity value="vista"/>
+        <map value="1847-1: fixed value = http://terminology.hl7.org/CodeSystem/v3-ActClass#REV"/>
+        <comment value="from mapParameter 1"/>
+      </mapping>
+      <mapping>
         <identity value="workflow"/>
         <map value="Event.code"/>
       </mapping>
@@ -740,11 +745,6 @@
       <mapping>
         <identity value="w3c.prov"/>
         <map value="Activity.Activity"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1847-1: fixed value = http://terminology.hl7.org/CodeSystem/v3-ActClass#REV"/>
-        <comment value="from mapParameter 1"/>
       </mapping>
     </element>
     <element id="Provenance.agent">
@@ -1178,13 +1178,13 @@
         <valueSet value="http://hl7.org/fhir/ValueSet/resource-types"/>
       </binding>
       <mapping>
-        <identity value="rim"/>
-        <map value="N/A"/>
-      </mapping>
-      <mapping>
         <identity value="vista"/>
         <map value="1847-3: fixed value = http://hl7.org/fhir/StructureDefinition/Organization"/>
         <comment value="from mapParameter 3"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="N/A"/>
       </mapping>
     </element>
     <element id="Provenance.agent.who.identifier">
@@ -1248,13 +1248,13 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
-        <identity value="rim"/>
-        <map value="N/A"/>
-      </mapping>
-      <mapping>
         <identity value="vista"/>
         <map value="1847-2: fixed value = VA"/>
         <comment value="from mapParameter 2"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="N/A"/>
       </mapping>
     </element>
     <element id="Provenance.agent.onBehalfOf">

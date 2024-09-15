@@ -9,11 +9,11 @@ Mapping: source-to-LungCancerScreeningCRNA
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: LungCancerScreeningCRNA
+* occurrencePeriod -> "1345: target not supported" "LCSCoordinatorRecommendedNextActionRequest Profile"
 * code -> "952: target not supported" "LCSCoordinatorRecommendedNextActionRequest Profile"
 * occurrencePeriod -> "953: target not supported" "LCSCoordinatorRecommendedNextActionRequest Profile"
-* note -> "954: target not supported" "LCSCoordinatorRecommendedNextActionRequest Profile"
 * priority -> "960: target not supported" "LCSCoordinatorRecommendedNextActionRequest Profile"
-* occurrencePeriod -> "1345: target not supported" "LCSCoordinatorRecommendedNextActionRequest Profile"
+* note -> "954: target not supported" "LCSCoordinatorRecommendedNextActionRequest Profile"
 
 Mapping: cdw-to-LungCancerScreeningCRNA
 Id: cdw

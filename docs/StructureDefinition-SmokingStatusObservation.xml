@@ -24,11 +24,11 @@
 <tr><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3goXBCwdPqAP0wAAAldJREFUOMuNk0tIlFEYhp9z/vE2jHkhxXA0zJCMitrUQlq4lnSltEqCFhFG2MJFhIvIFpkEWaTQqjaWZRkp0g26URZkTpbaaOJkDqk10szoODP//7XIMUe0elcfnPd9zsfLOYplGrpRwZaqTtw3K7PtGem7Q6FoidbGgqHVy/HRb669R+56zx7eRV1L31JGxYbBtjKK93cxeqfyQHbehkZbUkK20goELEuIzEd+dHS+qz/Y8PTSif0FnGkbiwcAjHaU1+QWOptFiyCLp/LnKptpqIuXHx6rbR26kJcBX3yLgBfnd7CxwJmflpP2wUg0HIAoUUpZBmKzELGWcN8nAr6Gpu7tLU/CkwAaoKTWRSQyt89Q8w6J+oVQkKnBoblH7V0PPvUOvDYXfopE/SJmALsxnVm6LbkotrUtNowMeIrVrBcBpaMmdS0j9df7abpSuy7HWehwJdt1lhVwi/J58U5beXGAF6c3UXLycw1wdFklArBn87xdh0ZsZtArghBdAA3+OEDVubG4UEzP6x1FOWneHh2VDAHBAt80IbdXDcesNoCvs3E5AFyNSU5nbrDPZpcUEQQTFZiEVx+51fxMhhyJEAgvlriadIJZZksRuwBYMOPBbO3hePVVqgEJhFeUuFLhIPkRP6BQLIBrmMenujm/3g4zc398awIe90Zb5A1vREALqneMcYgP/xVQWlG+Ncu5vgwwlaUNx+3799rfe96u9K0JSDXcOzOTJg4B6IgmXfsygc7/Bvg9g9E58/cDVmGIBOP/zT8Bz1zqWqpbXIsd0O9hajXfL6u4BaOS6SeWAAAAAElFTkSuQmCC" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr></table></div>
   </text>
   <url value="http://va.gov/fhir/StructureDefinition/SmokingStatusObservation"/>
-  <version value="0.65.345"/>
+  <version value="0.65.348"/>
   <name value="SmokingStatusObservation"/>
   <title value="Smoking Status Observation"/>
   <status value="draft"/>
-  <date value="2024-08-26T15:27:18+00:00"/>
+  <date value="2024-09-15T08:33:43+00:00"/>
   <publisher value="VA"/>
   <contact>
     <name value="VA"/>
@@ -683,6 +683,11 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1241-1: fixed value = http://va.gov/identifiers/$Sta3n/9000010.23"/>
+        <comment value="from mapParameter 1"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="CX.4 / EI-2-4"/>
       </mapping>
@@ -693,11 +698,6 @@
       <mapping>
         <identity value="servd"/>
         <map value="./IdentifierType"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1241-1: fixed value = http://va.gov/identifiers/$Sta3n/9000010.23"/>
-        <comment value="from mapParameter 1"/>
       </mapping>
     </element>
     <element id="Observation.identifier.value">
@@ -731,6 +731,10 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1241: source value from V HEALTH FACTORS - IEN (9000010.23-.001)"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="CX.1 / EI.1"/>
       </mapping>
@@ -741,10 +745,6 @@
       <mapping>
         <identity value="servd"/>
         <map value="./Value"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1241: source value from V HEALTH FACTORS - IEN (9000010.23-.001)"/>
       </mapping>
     </element>
     <element id="Observation.identifier.period">
@@ -950,6 +950,10 @@
         <valueSet value="http://hl7.org/fhir/us/core/ValueSet/us-core-observation-smoking-status-status"/>
       </binding>
       <mapping>
+        <identity value="vista"/>
+        <map value="1242: fixed value = #final"/>
+      </mapping>
+      <mapping>
         <identity value="workflow"/>
         <map value="Event.status"/>
       </mapping>
@@ -972,10 +976,6 @@
       <mapping>
         <identity value="argonaut-dq-dstu2"/>
         <map value="Observation.status"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1242: fixed value = #final"/>
       </mapping>
     </element>
     <element id="Observation.category">
@@ -1072,16 +1072,16 @@
         <valueSet value="http://hl7.org/fhir/ValueSet/observation-category"/>
       </binding>
       <mapping>
+        <identity value="vista"/>
+        <map value="1243: fixed value = http://terminology.hl7.org/CodeSystem/observation-category#social-history"/>
+      </mapping>
+      <mapping>
         <identity value="w5"/>
         <map value="FiveWs.class"/>
       </mapping>
       <mapping>
         <identity value="rim"/>
         <map value=".outboundRelationship[typeCode=&quot;COMP].target[classCode=&quot;LIST&quot;, moodCode=&quot;EVN&quot;].code"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1243: fixed value = http://terminology.hl7.org/CodeSystem/observation-category#social-history"/>
       </mapping>
     </element>
     <element id="Observation.code">
@@ -1117,6 +1117,14 @@
         <valueSet value="http://hl7.org/fhir/us/core/ValueSet/us-core-smoking-status-observation-codes"/>
       </binding>
       <mapping>
+        <identity value="vista"/>
+        <map value="1244: fixed value = http://loinc.org#72166-2 when V HEALTH FACTORS - HEALTH FACTOR &gt; HEALTH FACTORS - CATEGORY (9000010.23-.01 &gt; 9999999.64-.03) case TOBACCO [C]"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="HF.HealthFactor.HealthFactorTypeIEN&#xA;Dim.HealthFactorType.CategoryHealthFactorTypeIEN"/>
+      </mapping>
+      <mapping>
         <identity value="workflow"/>
         <map value="Event.code"/>
       </mapping>
@@ -1143,14 +1151,6 @@
       <mapping>
         <identity value="argonaut-dq-dstu2"/>
         <map value="Observation.code"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1244: fixed value = http://loinc.org#72166-2 when V HEALTH FACTORS - HEALTH FACTOR &gt; HEALTH FACTORS - CATEGORY (9000010.23-.01 &gt; 9999999.64-.03) case TOBACCO [C]"/>
-      </mapping>
-      <mapping>
-        <identity value="cdw"/>
-        <map value="HF.HealthFactor.HealthFactorTypeIEN&#xA;Dim.HealthFactorType.CategoryHealthFactorTypeIEN"/>
       </mapping>
     </element>
     <element id="Observation.subject">
@@ -1182,6 +1182,14 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1245: reference from V HEALTH FACTORS - PATIENT NAME (9000010.23-.02)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="HF.HealthFactor.PatientIEN"/>
+      </mapping>
+      <mapping>
         <identity value="workflow"/>
         <map value="Event.subject"/>
       </mapping>
@@ -1204,14 +1212,6 @@
       <mapping>
         <identity value="argonaut-dq-dstu2"/>
         <map value="Observation.subject"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1245: reference from V HEALTH FACTORS - PATIENT NAME (9000010.23-.02)"/>
-      </mapping>
-      <mapping>
-        <identity value="cdw"/>
-        <map value="HF.HealthFactor.PatientIEN"/>
       </mapping>
     </element>
     <element id="Observation.focus">
@@ -1287,6 +1287,14 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1246: reference from V HEALTH FACTORS - VISIT (9000010.23-.03)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="HF.HealthFactor.VisitDateTime,HF.HealthFactor.VisitIEN"/>
+      </mapping>
+      <mapping>
         <identity value="workflow"/>
         <map value="Event.context"/>
       </mapping>
@@ -1301,14 +1309,6 @@
       <mapping>
         <identity value="rim"/>
         <map value="inboundRelationship[typeCode=COMP].source[classCode=ENC, moodCode=EVN]"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1246: reference from V HEALTH FACTORS - VISIT (9000010.23-.03)"/>
-      </mapping>
-      <mapping>
-        <identity value="cdw"/>
-        <map value="HF.HealthFactor.VisitDateTime,HF.HealthFactor.VisitIEN"/>
       </mapping>
     </element>
     <element id="Observation.effective[x]">
@@ -1393,6 +1393,14 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1247: source value from V HEALTH FACTORS - EVENT DATE AND TIME (9000010.23-1201)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="HF.HealthFactor.EventDateTime"/>
+      </mapping>
+      <mapping>
         <identity value="workflow"/>
         <map value="Event.occurrence[x]"/>
       </mapping>
@@ -1411,14 +1419,6 @@
       <mapping>
         <identity value="argonaut-dq-dstu2"/>
         <map value="Observation.issued"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1247: source value from V HEALTH FACTORS - EVENT DATE AND TIME (9000010.23-1201)"/>
-      </mapping>
-      <mapping>
-        <identity value="cdw"/>
-        <map value="HF.HealthFactor.EventDateTime"/>
       </mapping>
     </element>
     <element id="Observation.issued">
@@ -1487,6 +1487,15 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1248: reference from V HEALTH FACTORS - ENCOUNTER PROVIDER (9000010.23-1204)"/>
+        <comment value="Only encounter provider is in CDW, so ordering provider was not included at this time. If ordering provider needs to be included in the future, will need to determine a way to distinguish ordering provider from encounter provider in the practitioner resource."/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="HF.HealthFactor.EncounterStaffIEN"/>
+      </mapping>
+      <mapping>
         <identity value="workflow"/>
         <map value="Event.performer.actor"/>
       </mapping>
@@ -1501,15 +1510,6 @@
       <mapping>
         <identity value="rim"/>
         <map value="participation[typeCode=PRF]"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1248: reference from V HEALTH FACTORS - ENCOUNTER PROVIDER (9000010.23-1204)"/>
-        <comment value="Only encounter provider is in CDW, so ordering provider was not included at this time. If ordering provider needs to be included in the future, will need to determine a way to distinguish ordering provider from encounter provider in the practitioner resource."/>
-      </mapping>
-      <mapping>
-        <identity value="cdw"/>
-        <map value="HF.HealthFactor.EncounterStaffIEN"/>
       </mapping>
     </element>
     <element id="Observation.value[x]">
@@ -1598,6 +1598,15 @@
         <valueSet value="http://va.gov/fhir/ValueSet/VSVFSmokingStatus"/>
       </binding>
       <mapping>
+        <identity value="vista"/>
+        <map value="1249: terminologyMaps using VF_SmokingStatus on V HEALTH FACTORS - HEALTH FACTOR &gt; HEALTH FACTORS - FACTOR (9000010.23-.01 &gt; 9999999.64-.01)"/>
+        <comment value="If duplicates occur, the latest instance only should be sent."/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="HF.HealthFactor.HealthFactorTypeIEN&#xA;Dim.HealthFactorType.HealthFactorCategory,Dim.HealthFactorType.HealthFactorType"/>
+      </mapping>
+      <mapping>
         <identity value="sct-concept"/>
         <map value="&lt; 441742003 |Evaluation finding|"/>
       </mapping>
@@ -1616,15 +1625,6 @@
       <mapping>
         <identity value="argonaut-dq-dstu2"/>
         <map value="Observation.valueCodeableConcept"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1249: terminologyMaps using VF_SmokingStatus on V HEALTH FACTORS - HEALTH FACTOR &gt; HEALTH FACTORS - FACTOR (9000010.23-.01 &gt; 9999999.64-.01)"/>
-        <comment value="If duplicates occur, the latest instance only should be sent."/>
-      </mapping>
-      <mapping>
-        <identity value="cdw"/>
-        <map value="HF.HealthFactor.HealthFactorTypeIEN&#xA;Dim.HealthFactorType.HealthFactorCategory,Dim.HealthFactorType.HealthFactorType"/>
       </mapping>
     </element>
     <element id="Observation.value[x]:valueCodeableConcept.id">
@@ -1770,6 +1770,11 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1249-1: undefined"/>
+        <comment value="from mapParameter 1"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="C*E.9. But note many systems use C*E.2 for this"/>
       </mapping>
@@ -1780,11 +1785,6 @@
       <mapping>
         <identity value="orim"/>
         <map value="fhir:CodeableConcept.text rdfs:subPropertyOf dt:CD.originalText"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1249-1: undefined"/>
-        <comment value="from mapParameter 1"/>
       </mapping>
     </element>
     <element id="Observation.dataAbsentReason">
@@ -2091,20 +2091,20 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
-        <identity value="v2"/>
-        <map value="N/A"/>
-      </mapping>
-      <mapping>
-        <identity value="rim"/>
-        <map value="Act.text"/>
-      </mapping>
-      <mapping>
         <identity value="vista"/>
         <map value="1250: source value from V HEALTH FACTORS - COMMENTS (9000010.23-81101)"/>
       </mapping>
       <mapping>
         <identity value="cdw"/>
         <map value="HF.HealthFactor.Comments"/>
+      </mapping>
+      <mapping>
+        <identity value="v2"/>
+        <map value="N/A"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="Act.text"/>
       </mapping>
     </element>
     <element id="Observation.bodySite">

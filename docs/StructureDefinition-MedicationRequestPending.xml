@@ -33,11 +33,11 @@
 <tr><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3goXBCwdPqAP0wAAAldJREFUOMuNk0tIlFEYhp9z/vE2jHkhxXA0zJCMitrUQlq4lnSltEqCFhFG2MJFhIvIFpkEWaTQqjaWZRkp0g26URZkTpbaaOJkDqk10szoODP//7XIMUe0elcfnPd9zsfLOYplGrpRwZaqTtw3K7PtGem7Q6FoidbGgqHVy/HRb669R+56zx7eRV1L31JGxYbBtjKK93cxeqfyQHbehkZbUkK20goELEuIzEd+dHS+qz/Y8PTSif0FnGkbiwcAjHaU1+QWOptFiyCLp/LnKptpqIuXHx6rbR26kJcBX3yLgBfnd7CxwJmflpP2wUg0HIAoUUpZBmKzELGWcN8nAr6Gpu7tLU/CkwAaoKTWRSQyt89Q8w6J+oVQkKnBoblH7V0PPvUOvDYXfopE/SJmALsxnVm6LbkotrUtNowMeIrVrBcBpaMmdS0j9df7abpSuy7HWehwJdt1lhVwi/J58U5beXGAF6c3UXLycw1wdFklArBn87xdh0ZsZtArghBdAA3+OEDVubG4UEzP6x1FOWneHh2VDAHBAt80IbdXDcesNoCvs3E5AFyNSU5nbrDPZpcUEQQTFZiEVx+51fxMhhyJEAgvlriadIJZZksRuwBYMOPBbO3hePVVqgEJhFeUuFLhIPkRP6BQLIBrmMenujm/3g4zc398awIe90Zb5A1vREALqneMcYgP/xVQWlG+Ncu5vgwwlaUNx+3799rfe96u9K0JSDXcOzOTJg4B6IgmXfsygc7/Bvg9g9E58/cDVmGIBOP/zT8Bz1zqWqpbXIsd0O9hajXfL6u4BaOS6SeWAAAAAElFTkSuQmCC" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr></table></div>
   </text>
   <url value="http://va.gov/fhir/StructureDefinition/MedicationRequestPending"/>
-  <version value="0.65.345"/>
+  <version value="0.65.348"/>
   <name value="MedicationRequestPending"/>
   <title value="MedicationRequest: Pending"/>
   <status value="draft"/>
-  <date value="2024-08-26T15:27:18+00:00"/>
+  <date value="2024-09-15T08:33:43+00:00"/>
   <publisher value="VA"/>
   <contact>
     <name value="VA"/>
@@ -647,6 +647,11 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1749-1: fixed value = http://va.gov/terminology/vistaDefinedTerms/52.41-2"/>
+        <comment value="from mapParameter 1"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="C*E.3"/>
       </mapping>
@@ -657,11 +662,6 @@
       <mapping>
         <identity value="orim"/>
         <map value="fhir:Coding.system rdfs:subPropertyOf dt:CDCoding.codeSystem"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1749-1: fixed value = http://va.gov/terminology/vistaDefinedTerms/52.41-2"/>
-        <comment value="from mapParameter 1"/>
       </mapping>
     </element>
     <element id="MedicationRequest.extension:medicationrequest-pharmacyOrderStatus.value[x].version">
@@ -729,6 +729,14 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1749: source value from PENDING OUTPATIENT ORDERS - ORDER TYPE (52.41-2)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="RxOut.PendingRxOrder.OrderType"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="C*E.1"/>
       </mapping>
@@ -739,14 +747,6 @@
       <mapping>
         <identity value="orim"/>
         <map value="fhir:Coding.code rdfs:subPropertyOf dt:CDCoding.code"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1749: source value from PENDING OUTPATIENT ORDERS - ORDER TYPE (52.41-2)"/>
-      </mapping>
-      <mapping>
-        <identity value="cdw"/>
-        <map value="RxOut.PendingRxOrder.OrderType"/>
       </mapping>
     </element>
     <element id="MedicationRequest.extension:medicationrequest-pharmacyOrderStatus.value[x].display">
@@ -1110,6 +1110,11 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1747-1: fixed value = http://va.gov/identifiers/$Sta3n/52.41-.01"/>
+        <comment value="from mapParameter 1"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="CX.4 / EI-2-4"/>
       </mapping>
@@ -1120,11 +1125,6 @@
       <mapping>
         <identity value="servd"/>
         <map value="./IdentifierType"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1747-1: fixed value = http://va.gov/identifiers/$Sta3n/52.41-.01"/>
-        <comment value="from mapParameter 1"/>
       </mapping>
     </element>
     <element id="MedicationRequest.identifier.value">
@@ -1158,6 +1158,14 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1747: source value from PENDING OUTPATIENT ORDERS - PLACER NUMBER (52.41-.01)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="RxOut.PendingRxOrder.PlacerCPRSOrderIEN,RxOut.PendingRxOrder.PlacerCPRSOrderSID"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="CX.1 / EI.1"/>
       </mapping>
@@ -1168,14 +1176,6 @@
       <mapping>
         <identity value="servd"/>
         <map value="./Value"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1747: source value from PENDING OUTPATIENT ORDERS - PLACER NUMBER (52.41-.01)"/>
-      </mapping>
-      <mapping>
-        <identity value="cdw"/>
-        <map value="RxOut.PendingRxOrder.PlacerCPRSOrderIEN,RxOut.PendingRxOrder.PlacerCPRSOrderSID"/>
       </mapping>
     </element>
     <element id="MedicationRequest.identifier.period">
@@ -1288,6 +1288,10 @@
         <valueSet value="http://hl7.org/fhir/ValueSet/medicationrequest-status"/>
       </binding>
       <mapping>
+        <identity value="vista"/>
+        <map value="1748: fixed value = #draft"/>
+      </mapping>
+      <mapping>
         <identity value="workflow"/>
         <map value="Request.status"/>
       </mapping>
@@ -1306,10 +1310,6 @@
       <mapping>
         <identity value="argonaut-dq-dstu2"/>
         <map value="MedicationOrder.status"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1748: fixed value = #draft"/>
       </mapping>
     </element>
     <element id="MedicationRequest.statusReason">
@@ -1745,6 +1745,22 @@
         <valueSet value="http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1010.4"/>
       </binding>
       <mapping>
+        <identity value="vista"/>
+        <map value="1753: source value from PENDING OUTPATIENT ORDERS - PHARMACY ORDERABLE ITEM (52.41-8) case drug null"/>
+      </mapping>
+      <mapping>
+        <identity value="vista"/>
+        <map value="1754: source value from PENDING OUTPATIENT ORDERS - DRUG (52.41-11)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="RxOut.PendingRxOrder.PharmacyOrderableItemIEN,RxOut.PendingRxOrder.PharmacyOrderableItemSID"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="RxOut.PendingRxOrder.LocalDrugIEN,RxOut.PendingRxOrder.LocalDrugSID"/>
+      </mapping>
+      <mapping>
         <identity value="workflow"/>
         <map value="Request.code"/>
       </mapping>
@@ -1767,22 +1783,6 @@
       <mapping>
         <identity value="argonaut-dq-dstu2"/>
         <map value="MedicationOrder.medication[x]"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1753: source value from PENDING OUTPATIENT ORDERS - PHARMACY ORDERABLE ITEM (52.41-8) case drug null"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1754: source value from PENDING OUTPATIENT ORDERS - DRUG (52.41-11)"/>
-      </mapping>
-      <mapping>
-        <identity value="cdw"/>
-        <map value="RxOut.PendingRxOrder.PharmacyOrderableItemIEN,RxOut.PendingRxOrder.PharmacyOrderableItemSID"/>
-      </mapping>
-      <mapping>
-        <identity value="cdw"/>
-        <map value="RxOut.PendingRxOrder.LocalDrugIEN,RxOut.PendingRxOrder.LocalDrugSID"/>
       </mapping>
     </element>
     <element id="MedicationRequest.subject">
@@ -1957,6 +1957,14 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1757: source value from PENDING OUTPATIENT ORDERS - LOGIN DATE (52.41-15)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="RxOut.PendingRxOrder.LoginDateTime"/>
+      </mapping>
+      <mapping>
         <identity value="workflow"/>
         <map value="Request.authoredOn"/>
       </mapping>
@@ -1979,14 +1987,6 @@
       <mapping>
         <identity value="argonaut-dq-dstu2"/>
         <map value="MedicationOrder.dateWritten"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1757: source value from PENDING OUTPATIENT ORDERS - LOGIN DATE (52.41-15)"/>
-      </mapping>
-      <mapping>
-        <identity value="cdw"/>
-        <map value="RxOut.PendingRxOrder.LoginDateTime"/>
       </mapping>
     </element>
     <element id="MedicationRequest.requester">
@@ -2045,6 +2045,14 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1751: reference from PENDING OUTPATIENT ORDERS - PROVIDER (52.41-5)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="RxOut.PendingRxOrder.ProviderIEN,RxOut.PendingRxOrder.ProviderSID"/>
+      </mapping>
+      <mapping>
         <identity value="workflow"/>
         <map value="Request.requester"/>
       </mapping>
@@ -2059,14 +2067,6 @@
       <mapping>
         <identity value="argonaut-dq-dstu2"/>
         <map value="MedicationOrder.prescriber"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1751: reference from PENDING OUTPATIENT ORDERS - PROVIDER (52.41-5)"/>
-      </mapping>
-      <mapping>
-        <identity value="cdw"/>
-        <map value="RxOut.PendingRxOrder.ProviderIEN,RxOut.PendingRxOrder.ProviderSID"/>
       </mapping>
     </element>
     <element id="MedicationRequest.performer">
@@ -2183,20 +2183,20 @@
       <isModifier value="false"/>
       <isSummary value="false"/>
       <mapping>
-        <identity value="w5"/>
-        <map value="FiveWs.who"/>
-      </mapping>
-      <mapping>
-        <identity value="rim"/>
-        <map value=".participation[typeCode=TRANS].role[classCode=ASSIGNED].code (HealthcareProviderType)"/>
-      </mapping>
-      <mapping>
         <identity value="vista"/>
         <map value="1750: reference from PENDING OUTPATIENT ORDERS - ENTERED BY (52.41-4)"/>
       </mapping>
       <mapping>
         <identity value="cdw"/>
         <map value="RxOut.PendingRxOrder.EnteredByStaffIEN,RxOut.PendingRxOrder.EnteredByStaffSID"/>
+      </mapping>
+      <mapping>
+        <identity value="w5"/>
+        <map value="FiveWs.who"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value=".participation[typeCode=TRANS].role[classCode=ASSIGNED].code (HealthcareProviderType)"/>
       </mapping>
     </element>
     <element id="MedicationRequest.reasonCode">
@@ -2529,6 +2529,10 @@
       <isModifier value="false"/>
       <isSummary value="false"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1759: source value from PENDING OUTPATIENT ORDERS - PROVIDER COMMENTS (52.41-9)"/>
+      </mapping>
+      <mapping>
         <identity value="workflow"/>
         <map value="Request.note"/>
       </mapping>
@@ -2539,10 +2543,6 @@
       <mapping>
         <identity value="rim"/>
         <map value=".inboundRelationship[typeCode=SUBJ]/source[classCode=OBS,moodCode=EVN,code=&quot;annotation&quot;].value"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1759: source value from PENDING OUTPATIENT ORDERS - PROVIDER COMMENTS (52.41-9)"/>
       </mapping>
     </element>
     <element id="MedicationRequest.dosageInstruction">
@@ -2834,16 +2834,16 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1760: null"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="RXO-7"/>
       </mapping>
       <mapping>
         <identity value="rim"/>
         <map value=".text"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1760: null"/>
       </mapping>
     </element>
     <element id="MedicationRequest.dosageInstruction.timing">
@@ -3372,20 +3372,20 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
-        <identity value="v2"/>
-        <map value="DR.1"/>
-      </mapping>
-      <mapping>
-        <identity value="rim"/>
-        <map value="./low"/>
-      </mapping>
-      <mapping>
         <identity value="vista"/>
         <map value="1752: source value from PENDING OUTPATIENT ORDERS - EFFECTIVE DATE (52.41-6)"/>
       </mapping>
       <mapping>
         <identity value="cdw"/>
         <map value="RxOut.PendingRxOrder.EffectiveDateTime,RxOut.PharmacyInstructions.EffectiveDateTime,RxOut.ProviderComments.EffectiveDateTime"/>
+      </mapping>
+      <mapping>
+        <identity value="v2"/>
+        <map value="DR.1"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="./low"/>
       </mapping>
     </element>
     <element id="MedicationRequest.dosageInstruction.timing.repeat.bounds[x]:boundsPeriod.end">
@@ -4831,6 +4831,14 @@
       <isModifier value="false"/>
       <isSummary value="false"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1756: source value from PENDING OUTPATIENT ORDERS - # OF REFILLS (52.41-13)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="RxOut.PendingRxOrder.NumberOfRefills"/>
+      </mapping>
+      <mapping>
         <identity value="script10.6"/>
         <map value="Message/Body/NewRx/MedicationPrescribed/Quantity"/>
       </mapping>
@@ -4841,14 +4849,6 @@
       <mapping>
         <identity value="rim"/>
         <map value="repeatNumber"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1756: source value from PENDING OUTPATIENT ORDERS - # OF REFILLS (52.41-13)"/>
-      </mapping>
-      <mapping>
-        <identity value="cdw"/>
-        <map value="RxOut.PendingRxOrder.NumberOfRefills"/>
       </mapping>
     </element>
     <element id="MedicationRequest.dispenseRequest.quantity">
@@ -4878,6 +4878,14 @@
       <isModifier value="false"/>
       <isSummary value="false"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1755: source value from PENDING OUTPATIENT ORDERS - QTY (52.41-12)"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="RxOut.PendingRxOrder.LocalQty"/>
+      </mapping>
+      <mapping>
         <identity value="script10.6"/>
         <map value="Message/Body/NewRx/MedicationPrescribed/DaysSupply"/>
       </mapping>
@@ -4888,14 +4896,6 @@
       <mapping>
         <identity value="rim"/>
         <map value="quantity"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1755: source value from PENDING OUTPATIENT ORDERS - QTY (52.41-12)"/>
-      </mapping>
-      <mapping>
-        <identity value="cdw"/>
-        <map value="RxOut.PendingRxOrder.LocalQty"/>
       </mapping>
     </element>
     <element id="MedicationRequest.dispenseRequest.expectedSupplyDuration">
@@ -4925,20 +4925,20 @@
       <isModifier value="false"/>
       <isSummary value="false"/>
       <mapping>
-        <identity value="script10.6"/>
-        <map value="Message/Body/NewRx/MedicationPrescribed/Substitutions"/>
-      </mapping>
-      <mapping>
-        <identity value="rim"/>
-        <map value="expectedUseTime"/>
-      </mapping>
-      <mapping>
         <identity value="vista"/>
         <map value="1758: source value from PENDING OUTPATIENT ORDERS - DAYS SUPPLY (52.41-101)"/>
       </mapping>
       <mapping>
         <identity value="cdw"/>
         <map value="RxOut.PendingRxOrder.DaysSupply"/>
+      </mapping>
+      <mapping>
+        <identity value="script10.6"/>
+        <map value="Message/Body/NewRx/MedicationPrescribed/Substitutions"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="expectedUseTime"/>
       </mapping>
     </element>
     <element id="MedicationRequest.dispenseRequest.performer">

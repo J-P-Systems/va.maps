@@ -27,11 +27,11 @@
 <tr><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3goXBCwdPqAP0wAAAldJREFUOMuNk0tIlFEYhp9z/vE2jHkhxXA0zJCMitrUQlq4lnSltEqCFhFG2MJFhIvIFpkEWaTQqjaWZRkp0g26URZkTpbaaOJkDqk10szoODP//7XIMUe0elcfnPd9zsfLOYplGrpRwZaqTtw3K7PtGem7Q6FoidbGgqHVy/HRb669R+56zx7eRV1L31JGxYbBtjKK93cxeqfyQHbehkZbUkK20goELEuIzEd+dHS+qz/Y8PTSif0FnGkbiwcAjHaU1+QWOptFiyCLp/LnKptpqIuXHx6rbR26kJcBX3yLgBfnd7CxwJmflpP2wUg0HIAoUUpZBmKzELGWcN8nAr6Gpu7tLU/CkwAaoKTWRSQyt89Q8w6J+oVQkKnBoblH7V0PPvUOvDYXfopE/SJmALsxnVm6LbkotrUtNowMeIrVrBcBpaMmdS0j9df7abpSuy7HWehwJdt1lhVwi/J58U5beXGAF6c3UXLycw1wdFklArBn87xdh0ZsZtArghBdAA3+OEDVubG4UEzP6x1FOWneHh2VDAHBAt80IbdXDcesNoCvs3E5AFyNSU5nbrDPZpcUEQQTFZiEVx+51fxMhhyJEAgvlriadIJZZksRuwBYMOPBbO3hePVVqgEJhFeUuFLhIPkRP6BQLIBrmMenujm/3g4zc398awIe90Zb5A1vREALqneMcYgP/xVQWlG+Ncu5vgwwlaUNx+3799rfe96u9K0JSDXcOzOTJg4B6IgmXfsygc7/Bvg9g9E58/cDVmGIBOP/zT8Bz1zqWqpbXIsd0O9hajXfL6u4BaOS6SeWAAAAAElFTkSuQmCC" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr></table></div>
   </text>
   <url value="http://va.gov/fhir/StructureDefinition/ObservationImagingResultEKG"/>
-  <version value="0.65.345"/>
+  <version value="0.65.348"/>
   <name value="ObservationImagingResultEKG"/>
   <title value="Observation Imaging Result: EKG"/>
   <status value="draft"/>
-  <date value="2024-08-26T15:27:18+00:00"/>
+  <date value="2024-09-15T08:33:43+00:00"/>
   <publisher value="VA"/>
   <contact>
     <name value="VA"/>
@@ -689,6 +689,11 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1618-1: fixed value = http://va.gov/identifiers/$Sta3n/691.5"/>
+        <comment value="from mapParameter 1"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="CX.4 / EI-2-4"/>
       </mapping>
@@ -699,11 +704,6 @@
       <mapping>
         <identity value="servd"/>
         <map value="./IdentifierType"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1618-1: fixed value = http://va.gov/identifiers/$Sta3n/691.5"/>
-        <comment value="from mapParameter 1"/>
       </mapping>
     </element>
     <element id="Observation.identifier.value">
@@ -737,6 +737,10 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1618: source value from ELECTROCARDIOGRAM (EKG) - IEN (691.5-.001)"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="CX.1 / EI.1"/>
       </mapping>
@@ -747,10 +751,6 @@
       <mapping>
         <identity value="servd"/>
         <map value="./Value"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1618: source value from ELECTROCARDIOGRAM (EKG) - IEN (691.5-.001)"/>
       </mapping>
     </element>
     <element id="Observation.identifier.period">
@@ -955,6 +955,10 @@
         <valueSet value="http://va.gov/fhir/ValueSet/VSVFImageStatus"/>
       </binding>
       <mapping>
+        <identity value="vista"/>
+        <map value="1622: terminologyMaps using VF_ImageStatus on ELECTROCARDIOGRAM (EKG) - RELEASE STATUS (691.5-1506)"/>
+      </mapping>
+      <mapping>
         <identity value="workflow"/>
         <map value="Event.status"/>
       </mapping>
@@ -973,10 +977,6 @@
       <mapping>
         <identity value="rim"/>
         <map value="status  Amended &amp; Final are differentiated by whether it is the subject of a ControlAct event with a type of &quot;revise&quot;"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1622: terminologyMaps using VF_ImageStatus on ELECTROCARDIOGRAM (EKG) - RELEASE STATUS (691.5-1506)"/>
       </mapping>
     </element>
     <element id="Observation.category">
@@ -1028,16 +1028,16 @@
         <valueSet value="http://hl7.org/fhir/ValueSet/observation-category"/>
       </binding>
       <mapping>
+        <identity value="vista"/>
+        <map value="1624: fixed value = http://terminology.hl7.org/CodeSystem/observation-category#imaging"/>
+      </mapping>
+      <mapping>
         <identity value="w5"/>
         <map value="FiveWs.class"/>
       </mapping>
       <mapping>
         <identity value="rim"/>
         <map value=".outboundRelationship[typeCode=&quot;COMP].target[classCode=&quot;LIST&quot;, moodCode=&quot;EVN&quot;].code"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1624: fixed value = http://terminology.hl7.org/CodeSystem/observation-category#imaging"/>
       </mapping>
     </element>
     <element id="Observation.category:imaging">
@@ -1177,6 +1177,10 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1632: reference from ELECTROCARDIOGRAM (EKG) - MEDICAL PATIENT (691.5-1)"/>
+      </mapping>
+      <mapping>
         <identity value="workflow"/>
         <map value="Event.subject"/>
       </mapping>
@@ -1195,10 +1199,6 @@
       <mapping>
         <identity value="w5"/>
         <map value="FiveWs.subject"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1632: reference from ELECTROCARDIOGRAM (EKG) - MEDICAL PATIENT (691.5-1)"/>
       </mapping>
     </element>
     <element id="Observation.focus">
@@ -1408,6 +1408,10 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1635: source value from ELECTROCARDIOGRAM (EKG) - DATE/TIME (691.5-.01)"/>
+      </mapping>
+      <mapping>
         <identity value="workflow"/>
         <map value="Event.occurrence[x]"/>
       </mapping>
@@ -1422,10 +1426,6 @@
       <mapping>
         <identity value="rim"/>
         <map value="effectiveTime"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1635: source value from ELECTROCARDIOGRAM (EKG) - DATE/TIME (691.5-.01)"/>
       </mapping>
     </element>
     <element id="Observation.issued">
@@ -1455,6 +1455,10 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1638: source value from ELECTROCARDIOGRAM (EKG) - DATE OF VERIFIED (691.5-1508)"/>
+      </mapping>
+      <mapping>
         <identity value="w5"/>
         <map value="FiveWs.recorded"/>
       </mapping>
@@ -1465,10 +1469,6 @@
       <mapping>
         <identity value="rim"/>
         <map value="participation[typeCode=AUT].time"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1638: source value from ELECTROCARDIOGRAM (EKG) - DATE OF VERIFIED (691.5-1508)"/>
       </mapping>
     </element>
     <element id="Observation.performer">
@@ -1499,6 +1499,10 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1641: reference from ELECTROCARDIOGRAM (EKG) - INTERPRETED BY (691.5-12)"/>
+      </mapping>
+      <mapping>
         <identity value="workflow"/>
         <map value="Event.performer.actor"/>
       </mapping>
@@ -1513,10 +1517,6 @@
       <mapping>
         <identity value="rim"/>
         <map value="participation[typeCode=PRF]"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1641: reference from ELECTROCARDIOGRAM (EKG) - INTERPRETED BY (691.5-12)"/>
       </mapping>
     </element>
     <element id="Observation.value[x]">
@@ -1667,6 +1667,18 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1644: source value from ELECTROCARDIOGRAM (EKG) - INTERPRETATION CODE (RHYTHM) &gt; INTERPRETATION CODE (RHYTHM) - INTERPRETATION CODE (RHYTHM) &gt; ECG INTERPRETATION - INTERPRETATION (691.5-14 &gt; 691.54-.01 &gt; 693.3-.01)"/>
+      </mapping>
+      <mapping>
+        <identity value="vista"/>
+        <map value="1645: source value from ELECTROCARDIOGRAM (EKG) - INTERPRETATION CODE (CONFIG) &gt; INTERPRETATION CODE (CONFIG) - INTERPRETATION CODE (CONFIG) &gt; ECG INTERPRETATION - INTERPRETATION (691.5-14.1 &gt; 691.55-.01 &gt; 693.3-.01)"/>
+      </mapping>
+      <mapping>
+        <identity value="vista"/>
+        <map value="1646: source value from ELECTROCARDIOGRAM (EKG) - INTERPRETATION CODE (PACING) &gt; INTERPRETATION CODE (PACING) - INTERPRETATION CODE (PACING) &gt; ECG INTERPRETATION - INTERPRETATION (691.5-14.2 &gt; 691.56-.01 &gt; 693.3-.01)"/>
+      </mapping>
+      <mapping>
         <identity value="sct-concept"/>
         <map value="&lt; 441742003 |Evaluation finding|"/>
       </mapping>
@@ -1681,18 +1693,6 @@
       <mapping>
         <identity value="sct-attr"/>
         <map value="363714003 |Interprets|"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1644: source value from ELECTROCARDIOGRAM (EKG) - INTERPRETATION CODE (RHYTHM) &gt; INTERPRETATION CODE (RHYTHM) - INTERPRETATION CODE (RHYTHM) &gt; ECG INTERPRETATION - INTERPRETATION (691.5-14 &gt; 691.54-.01 &gt; 693.3-.01)"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1645: source value from ELECTROCARDIOGRAM (EKG) - INTERPRETATION CODE (CONFIG) &gt; INTERPRETATION CODE (CONFIG) - INTERPRETATION CODE (CONFIG) &gt; ECG INTERPRETATION - INTERPRETATION (691.5-14.1 &gt; 691.55-.01 &gt; 693.3-.01)"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1646: source value from ELECTROCARDIOGRAM (EKG) - INTERPRETATION CODE (PACING) &gt; INTERPRETATION CODE (PACING) - INTERPRETATION CODE (PACING) &gt; ECG INTERPRETATION - INTERPRETATION (691.5-14.2 &gt; 691.56-.01 &gt; 693.3-.01)"/>
       </mapping>
     </element>
     <element id="Observation.value[x]:valueQuantity">
@@ -1741,6 +1741,11 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1797: target not supported"/>
+        <comment value="value is string"/>
+      </mapping>
+      <mapping>
         <identity value="sct-concept"/>
         <map value="&lt; 441742003 |Evaluation finding|"/>
       </mapping>
@@ -1755,11 +1760,6 @@
       <mapping>
         <identity value="sct-attr"/>
         <map value="363714003 |Interprets|"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1797: target not supported"/>
-        <comment value="value is string"/>
       </mapping>
     </element>
     <element id="Observation.value[x]:valueCodeableConcept">
@@ -1808,6 +1808,11 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1798: target not supported"/>
+        <comment value="value is string"/>
+      </mapping>
+      <mapping>
         <identity value="sct-concept"/>
         <map value="&lt; 441742003 |Evaluation finding|"/>
       </mapping>
@@ -1822,11 +1827,6 @@
       <mapping>
         <identity value="sct-attr"/>
         <map value="363714003 |Interprets|"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1798: target not supported"/>
-        <comment value="value is string"/>
       </mapping>
     </element>
     <element id="Observation.dataAbsentReason">
@@ -1867,17 +1867,17 @@
         <valueSet value="http://hl7.org/fhir/ValueSet/data-absent-reason"/>
       </binding>
       <mapping>
+        <identity value="vista"/>
+        <map value="1796: target not supported"/>
+        <comment value="Always has data"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="N/A"/>
       </mapping>
       <mapping>
         <identity value="rim"/>
         <map value="value.nullFlavor"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1796: target not supported"/>
-        <comment value="Always has data"/>
       </mapping>
     </element>
     <element id="Observation.interpretation">
@@ -1913,6 +1913,10 @@
         <valueSet value="http://va.gov/fhir/ValueSet/VSVFImageInterpretation"/>
       </binding>
       <mapping>
+        <identity value="vista"/>
+        <map value="1649: terminologyMaps using VF_ImageInterpretation on ELECTROCARDIOGRAM (EKG) - SUMMARY (691.5-.03)"/>
+      </mapping>
+      <mapping>
         <identity value="sct-concept"/>
         <map value="&lt; 260245000 |Findings values|"/>
       </mapping>
@@ -1927,10 +1931,6 @@
       <mapping>
         <identity value="sct-attr"/>
         <map value="363713009 |Has interpretation|"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1649: terminologyMaps using VF_ImageInterpretation on ELECTROCARDIOGRAM (EKG) - SUMMARY (691.5-.03)"/>
       </mapping>
     </element>
     <element id="Observation.note">
@@ -1961,16 +1961,16 @@
       <isModifier value="false"/>
       <isSummary value="false"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1651: source value from ELECTROCARDIOGRAM (EKG) - COMMENT (691.5-17)"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="NTE.3 (partner NTE to OBX, or sometimes another (child?) OBX)"/>
       </mapping>
       <mapping>
         <identity value="rim"/>
         <map value="subjectOf.observationEvent[code=&quot;annotation&quot;].value"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1651: source value from ELECTROCARDIOGRAM (EKG) - COMMENT (691.5-17)"/>
       </mapping>
     </element>
     <element id="Observation.bodySite">

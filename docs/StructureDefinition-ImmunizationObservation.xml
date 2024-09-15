@@ -18,11 +18,11 @@
 <tr><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3goXBCwdPqAP0wAAAldJREFUOMuNk0tIlFEYhp9z/vE2jHkhxXA0zJCMitrUQlq4lnSltEqCFhFG2MJFhIvIFpkEWaTQqjaWZRkp0g26URZkTpbaaOJkDqk10szoODP//7XIMUe0elcfnPd9zsfLOYplGrpRwZaqTtw3K7PtGem7Q6FoidbGgqHVy/HRb669R+56zx7eRV1L31JGxYbBtjKK93cxeqfyQHbehkZbUkK20goELEuIzEd+dHS+qz/Y8PTSif0FnGkbiwcAjHaU1+QWOptFiyCLp/LnKptpqIuXHx6rbR26kJcBX3yLgBfnd7CxwJmflpP2wUg0HIAoUUpZBmKzELGWcN8nAr6Gpu7tLU/CkwAaoKTWRSQyt89Q8w6J+oVQkKnBoblH7V0PPvUOvDYXfopE/SJmALsxnVm6LbkotrUtNowMeIrVrBcBpaMmdS0j9df7abpSuy7HWehwJdt1lhVwi/J58U5beXGAF6c3UXLycw1wdFklArBn87xdh0ZsZtArghBdAA3+OEDVubG4UEzP6x1FOWneHh2VDAHBAt80IbdXDcesNoCvs3E5AFyNSU5nbrDPZpcUEQQTFZiEVx+51fxMhhyJEAgvlriadIJZZksRuwBYMOPBbO3hePVVqgEJhFeUuFLhIPkRP6BQLIBrmMenujm/3g4zc398awIe90Zb5A1vREALqneMcYgP/xVQWlG+Ncu5vgwwlaUNx+3799rfe96u9K0JSDXcOzOTJg4B6IgmXfsygc7/Bvg9g9E58/cDVmGIBOP/zT8Bz1zqWqpbXIsd0O9hajXfL6u4BaOS6SeWAAAAAElFTkSuQmCC" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr></table></div>
   </text>
   <url value="http://va.gov/fhir/StructureDefinition/ImmunizationObservation"/>
-  <version value="0.65.345"/>
+  <version value="0.65.348"/>
   <name value="ImmunizationObservation"/>
   <title value="Immunization Observation"/>
   <status value="draft"/>
-  <date value="2024-08-26T15:27:18+00:00"/>
+  <date value="2024-09-15T08:33:43+00:00"/>
   <publisher value="VA"/>
   <contact>
     <name value="VA"/>
@@ -609,6 +609,10 @@
         <valueSet value="http://hl7.org/fhir/ValueSet/observation-status|4.0.1"/>
       </binding>
       <mapping>
+        <identity value="vista"/>
+        <map value="1674: fixed value = #completed"/>
+      </mapping>
+      <mapping>
         <identity value="workflow"/>
         <map value="Event.status"/>
       </mapping>
@@ -627,10 +631,6 @@
       <mapping>
         <identity value="rim"/>
         <map value="status  Amended &amp; Final are differentiated by whether it is the subject of a ControlAct event with a type of &quot;revise&quot;"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1674: fixed value = #completed"/>
       </mapping>
     </element>
     <element id="Observation.category">
@@ -719,6 +719,10 @@
         <valueSet value="http://hl7.org/fhir/ValueSet/observation-codes"/>
       </binding>
       <mapping>
+        <identity value="vista"/>
+        <map value="1675: fixed value = http://loinc.org#31044-1"/>
+      </mapping>
+      <mapping>
         <identity value="workflow"/>
         <map value="Event.code"/>
       </mapping>
@@ -741,10 +745,6 @@
       <mapping>
         <identity value="sct-attr"/>
         <map value="116680003 |Is a|"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1675: fixed value = http://loinc.org#31044-1"/>
       </mapping>
     </element>
     <element id="Observation.subject">
@@ -1141,6 +1141,15 @@
         <valueSet value="http://va.gov/fhir/ValueSet/VSVFImmunizationReaction"/>
       </binding>
       <mapping>
+        <identity value="vista"/>
+        <map value="1594: terminologyMaps using VF_ImmunizationReaction on V IMMUNIZATION - REACTION (9000010.11-.06)"/>
+        <comment value="identified byMHV"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Immun.Immunization.Reaction"/>
+      </mapping>
+      <mapping>
         <identity value="sct-concept"/>
         <map value="&lt; 441742003 |Evaluation finding|"/>
       </mapping>
@@ -1155,15 +1164,6 @@
       <mapping>
         <identity value="sct-attr"/>
         <map value="363714003 |Interprets|"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1594: terminologyMaps using VF_ImmunizationReaction on V IMMUNIZATION - REACTION (9000010.11-.06)"/>
-        <comment value="identified byMHV"/>
-      </mapping>
-      <mapping>
-        <identity value="cdw"/>
-        <map value="Immun.Immunization.Reaction"/>
       </mapping>
     </element>
     <element id="Observation.value[x]:valueCodeableConcept.id">
@@ -1380,6 +1380,11 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1595-1: fixed value = http://va.gov/terminology/vistaDefinedTerms/9000010.11-.06"/>
+        <comment value="from mapParameter 1"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="C*E.3"/>
       </mapping>
@@ -1390,11 +1395,6 @@
       <mapping>
         <identity value="orim"/>
         <map value="fhir:Coding.system rdfs:subPropertyOf dt:CDCoding.codeSystem"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1595-1: fixed value = http://va.gov/terminology/vistaDefinedTerms/9000010.11-.06"/>
-        <comment value="from mapParameter 1"/>
       </mapping>
     </element>
     <element id="Observation.value[x]:valueCodeableConcept.coding.version">
@@ -1462,6 +1462,15 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1595: source value from V IMMUNIZATION - REACTION (9000010.11-.06)"/>
+        <comment value="identified byMHV"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Immun.Immunization.Reaction"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="C*E.1"/>
       </mapping>
@@ -1472,15 +1481,6 @@
       <mapping>
         <identity value="orim"/>
         <map value="fhir:Coding.code rdfs:subPropertyOf dt:CDCoding.code"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1595: source value from V IMMUNIZATION - REACTION (9000010.11-.06)"/>
-        <comment value="identified byMHV"/>
-      </mapping>
-      <mapping>
-        <identity value="cdw"/>
-        <map value="Immun.Immunization.Reaction"/>
       </mapping>
     </element>
     <element id="Observation.value[x]:valueCodeableConcept.coding.display">
@@ -1594,6 +1594,15 @@
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
+        <identity value="vista"/>
+        <map value="1596: source value from V IMMUNIZATION - REACTION (9000010.11-.06)"/>
+        <comment value="identified byMHV"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Immun.Immunization.Reaction"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="C*E.9. But note many systems use C*E.2 for this"/>
       </mapping>
@@ -1604,15 +1613,6 @@
       <mapping>
         <identity value="orim"/>
         <map value="fhir:CodeableConcept.text rdfs:subPropertyOf dt:CD.originalText"/>
-      </mapping>
-      <mapping>
-        <identity value="vista"/>
-        <map value="1596: source value from V IMMUNIZATION - REACTION (9000010.11-.06)"/>
-        <comment value="identified byMHV"/>
-      </mapping>
-      <mapping>
-        <identity value="cdw"/>
-        <map value="Immun.Immunization.Reaction"/>
       </mapping>
     </element>
     <element id="Observation.dataAbsentReason">
