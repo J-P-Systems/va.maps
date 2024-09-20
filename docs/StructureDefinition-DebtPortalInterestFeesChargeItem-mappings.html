@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-    <title>Debt Portal: Interest/Fees ChargeItem - Mappings - US Veterans Administration FHIR Map Set Implementation Guide v0.65.348</title>
+    <title>Debt Portal: Interest/Fees ChargeItem - Mappings - US Veterans Administration FHIR Map Set Implementation Guide v0.66.354</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -58,7 +58,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">US Veterans Administration FHIR Map Set Implementation Guide</span>
             <br/>
-            <span style="display:inline-block;">0.65.348 - 240901
+            <span style="display:inline-block;">0.66.354 - 241001
 
 
 
@@ -154,7 +154,7 @@
           <div class="inner-wrapper">
 
 <div style="counter-reset: section 5" class="col-12">
-    <!-- ReleaseHeader --><p id="publish-box">US Veterans Administration FHIR Map Set Implementation Guide - Local Development build (v0.65.348) built by the FHIR (HL7&reg; FHIR&reg; Standard) Build Tools. See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
+    <!-- ReleaseHeader --><p id="publish-box">US Veterans Administration FHIR Map Set Implementation Guide - Local Development build (v0.66.354) built by the FHIR (HL7&reg; FHIR&reg; Standard) Build Tools. See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
   
 
 
@@ -227,7 +227,7 @@
         
           Draft
           
-            as of 2024-09-15
+            as of 2024-09-19
           
         
       </td>
@@ -305,7 +305,7 @@ Transaction type name = INTEREST/ADM. CHARGE when IEN = 13</td>
 <td class="cell-ce1">source value</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">ChargeItem.identifier[va-tn]</td>
-<td class="cell-ce1"></td>
+<td class="cell-ce1">.value</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">.type.text="Transaction Number"</td>
 <td class="cell-ce1"></td>
@@ -333,7 +333,7 @@ Transaction type name = INTEREST/ADM. CHARGE when IEN = 13</td>
 <td class="cell-ce1">source value</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">ChargeItem.identifier[va-bn]</td>
-<td class="cell-ce1"></td>
+<td class="cell-ce1">.value</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">.type.text="Bill Number"</td>
 <td class="cell-ce1"></td>
@@ -406,14 +406,16 @@ Transaction type name = INTEREST/ADM. CHARGE when IEN = 13</td>
  <tr><td colspan="3"><b>DebtPortalInterestFeesChargeItem</b></td></tr>
  <tr><td>ChargeItem</td><td></td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td></td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;identifier (va-tn)</td><td>1994: source value from AR TRANSACTION - TRANSACTION NUMBER (433-.01)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier (va-tn)</td><td></td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td></td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>1994-1: fixed value = Transaction Number</td><td><p>from mapParameter 1</p>
 </td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;identifier (va-bn)</td><td>1995: source value from AR TRANSACTION - TRANSACTION NUMBER (433-.03)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>1994: source value from AR TRANSACTION - TRANSACTION NUMBER (433-.01)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier (va-bn)</td><td></td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td></td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>1995-1: fixed value = Bill Number</td><td><p>from mapParameter 1</p>
 </td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>1995: source value from AR TRANSACTION - TRANSACTION NUMBER (433-.03)</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>1996: fixed value = #billed</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;code</td><td></td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>1993: source value from AR TRANSACTION - TRANSACTION TYPE &gt; ACCOUNTS RECEIVABLE TRANS.TYPE - NAME (433-12 &gt; 430.3-.01) case IEN = 12 OR 13</td><td><p>Transaction type name = ADMIN.COST CHARGE when IEN = 12
@@ -425,8 +427,11 @@ Transaction type name = INTEREST/ADM. CHARGE when IEN = 13</p>
 <a name="cdw"> </a><h3>Mappings for Clinical Data Warehouse (CDW) ()</h3><table class="grid">
  <tr><td colspan="3"><b>DebtPortalInterestFeesChargeItem</b></td></tr>
  <tr><td>ChargeItem</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;identifier (va-tn)</td><td>IB.ARTransaction.TransactionNumber</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;identifier (va-bn)</td><td>IB.ARTransaction.AccountsReceivableIEN,IB.ARTransaction.PatientIEN,IB.ARTransactionComment.PatientIEN,IB.ARTransactionDescription.PatientIEN,IB.ARTransactionFiscalYear.PatientIEN</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier (va-tn)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>IB.ARTransaction.TransactionNumber</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier (va-bn)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>IB.ARTransaction.AccountsReceivableIEN,IB.ARTransaction.PatientIEN,IB.ARTransactionComment.PatientIEN,IB.ARTransactionDescription.PatientIEN,IB.ARTransactionFiscalYear.PatientIEN</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;code</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>IB.ARTransaction.ARTransactionTypeIEN
 Dim.ARTransactionType.ARTransactionType</td> </tr>
@@ -610,7 +615,7 @@ Dim.ARTransactionType.ARTransactionType</td> </tr>
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2024 <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.65.348 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Sun, Sep 15, 2024 08:33+0000">2024-09-15</span>
+          IG &copy; 2024 <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.66.354 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Sep 19, 2024 08:45+0000">2024-09-19</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

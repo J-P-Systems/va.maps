@@ -4,7 +4,7 @@ Title: "MDT"
 Usage: #definition
 * description = "This CapabilityStatement contains an example for MDT"
 * status = #draft
-* date = "2024-09-15T08:21:55.575Z"
+* date = "2024-09-18T15:41:24.700Z"
 * kind = #requirements
 * fhirVersion = #4.0.1
 * format[0] = #xml

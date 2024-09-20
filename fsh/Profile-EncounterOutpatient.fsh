@@ -5,6 +5,7 @@ Title: "Encounter: Outpatient"
 Description: "This StructureDefinition contains the maps for VistA file VISIT (9000010) to us-core-encounter"
 * ^status = #draft
 * identifier.value and identifier.system and status and serviceType.coding.code and serviceType.coding.system and subject and period.start and period.end and reasonCode.coding.code and reasonCode.coding.system and location.location and class and serviceProvider and participant.individual and participant.type and type and type.coding.system and type.coding.code and type.coding.display and type.text MS
+* subject only Reference(Patient)
 * serviceProvider only Reference(Organization)
 * identifier.system = "http://va.gov/identifiers/$Sta3n/9000010-15001"
 * serviceType.coding.system = "http://va.gov/terminology/VistADefinedTerms/9000010-.07"

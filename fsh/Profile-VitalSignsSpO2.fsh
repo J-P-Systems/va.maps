@@ -10,11 +10,12 @@ Description: "This StructureDefinition contains the maps for VistA file GMRV VIT
 * component contains va-pre-condition 0..1 and va-pre-condition-device 0..1 and va-cuff-size 0..1
 * extension contains http://hl7.org/fhir/StructureDefinition/observation-deviceCode named observation-deviceCode 0..1
 * extension contains http://hl7.org/fhir/StructureDefinition/observation-bodyPosition named observation-bodyPosition 0..1
-* component[FlowRate].valueQuantity.value and component[FlowRate].valueQuantity.code and component[FlowRate].code.coding.system and component[FlowRate].code.coding.code and component[Concentration].valueQuantity.value and component[Concentration].valueQuantity.code and component[Concentration].code.coding.system and component[Concentration].code.coding.code and issued and performer and status and effectiveDateTime and category and subject and identifier.value and identifier.system and code.coding and bodySite and extension[http://hl7.org/fhir/StructureDefinition/observation-deviceCode].valueCodeableConcept and method and component[va-pre-condition].valueCodeableConcept.coding and component[va-pre-condition].code and component[va-pre-condition-device].valueCodeableConcept.coding and component[va-pre-condition-device].code and extension[http://hl7.org/fhir/StructureDefinition/observation-bodyPosition].valueCodeableConcept and component[va-cuff-size].valueCodeableConcept.coding and component[va-cuff-size].code and valueQuantity.value and valueQuantity.code MS
+* component[FlowRate].valueQuantity.value and component[FlowRate].valueQuantity.code and component[FlowRate].code and component[Concentration].valueQuantity.value and component[Concentration].valueQuantity.code and component[Concentration].code and issued and performer and status and effectiveDateTime and category and subject and identifier.value and identifier.system and code and bodySite and extension[http://hl7.org/fhir/StructureDefinition/observation-deviceCode].valueCodeableConcept and method and component[va-pre-condition].valueCodeableConcept.coding and component[va-pre-condition].code and component[va-pre-condition-device].valueCodeableConcept.coding and component[va-pre-condition-device].code and extension[http://hl7.org/fhir/StructureDefinition/observation-bodyPosition].valueCodeableConcept and component[va-cuff-size].valueCodeableConcept.coding and component[va-cuff-size].code and valueQuantity.value and valueQuantity.code MS
 * performer only Reference(Organization)
 * category = http://terminology.hl7.org/CodeSystem/observation-category#vital-signs
 * identifier.system = "http://va.gov/identifiers/$Sta3n/120.5"
-* code.coding from http://va.gov/fhir/ValueSet/VSVFVitalsCodes
+* code from http://va.gov/fhir/ValueSet/VSVFVitalsCodes
+* code.coding 2..*
 * bodySite from http://va.gov/fhir/ValueSet/VSVFVitalsBodySite
 * extension[http://hl7.org/fhir/StructureDefinition/observation-deviceCode].valueCodeableConcept from http://va.gov/fhir/ValueSet/VSVFVitalsMeasurementDevice
 * method from http://va.gov/fhir/ValueSet/VSVFVitalsMethod
@@ -34,12 +35,10 @@ Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: VitalSignsSpO2
 * component[FlowRate].valueQuantity.value -> "1239: transform using Split_SpO2_value.Flow() on GMRV VITAL MEASUREMENT - SUPPLEMENTAL O2 (120.5-1.4) case VUID = 4500637" "Value needs to be parsed from VistA"
 * component[FlowRate].valueQuantity.code -> "1239-1: fixed value = L/min case VUID = 4500637" "from mapParameter 1"
-* component[FlowRate].code.coding.system -> "1239-2: fixed value = http://loinc.org case VUID = 4500637" "from mapParameter 2"
-* component[FlowRate].code.coding.code -> "1239-3: fixed value = 3151-8 case VUID = 4500637" "from mapParameter 3"
+* component[FlowRate].code -> "1239-2: fixed value = http://loinc.org#3151-8 case VUID = 4500637" "from mapParameter 2"
 * component[Concentration].valueQuantity.value -> "1240: transform using Split_SpO2_value.Consentration() on GMRV VITAL MEASUREMENT - SUPPLEMENTAL O2 (120.5-1.4) case VUID = 4500637" "Value needs to be parsed from VistA"
 * component[Concentration].valueQuantity.code -> "1240-1: fixed value = % case VUID = 4500637" "from mapParameter 1"
-* component[Concentration].code.coding.system -> "1240-2: fixed value = http://loinc.org case VUID = 4500637" "from mapParameter 2"
-* component[Concentration].code.coding.code -> "1240-3: fixed value = 3150-0 case VUID = 4500637" "from mapParameter 3"
+* component[Concentration].code -> "1240-2: fixed value = http://loinc.org#3150-0 case VUID = 4500637" "from mapParameter 2"
 * issued -> "652: source value from GMRV VITAL MEASUREMENT - DATE/TIME VITALS ENTERED (120.5-.04)"
 * performer -> "1653: reference from GMRV VITAL MEASUREMENT - HOSPITAL LOCATION (120.5-.05)"
 * status -> "655: fixed value = #final when GMRV VITAL MEASUREMENT - REASON ENTERED IN ERROR (120.5-4) case null"
@@ -49,7 +48,7 @@ Source: VitalSignsSpO2
 * subject -> "659: reference from GMRV VITAL MEASUREMENT - PATIENT (120.5-.02)"
 * identifier.value -> "660: source value from GMRV VITAL MEASUREMENT - IEN (120.5-.001)"
 * identifier.system -> "660-1: fixed value = http://va.gov/identifiers/$Sta3n/120.5" "from mapParameter 1"
-* code.coding -> "661: terminologyMaps using VF_VitalsCodes on GMRV VITAL MEASUREMENT - VITAL TYPE (120.5-.03)" "Pulse Oximetry has 2 code values per US Core"
+* code -> "661: terminologyMaps using VF_VitalsCodes on GMRV VITAL MEASUREMENT - VITAL TYPE (120.5-.03)" "Pulse Oximetry has 2 code values per US Core"
 * bodySite -> "662: terminologyMaps using VF_VitalsBodySite on GMRV VITAL MEASUREMENT - QUALIFIER > GMRV VITAL QUALIFIER - VUID (120.5-5 > 120.52-99.99)"
 * extension[http://hl7.org/fhir/StructureDefinition/observation-deviceCode].valueCodeableConcept -> "663: terminologyMaps using VF_VitalsMeasurementDevice on GMRV VITAL MEASUREMENT - QUALIFIER > GMRV VITAL QUALIFIER - VUID (120.5-5 > 120.52-99.99)"
 * method -> "867: terminologyMaps using VF_VitalsMethod on GMRV VITAL MEASUREMENT - QUALIFIER > GMRV VITAL QUALIFIER - VUID (120.5-5 > 120.52-99.99)"
@@ -75,6 +74,6 @@ Source: VitalSignsSpO2
 * performer -> "Vital.VitalSign.LocationIEN"
 * effectiveDateTime -> "Vital.VitalSign.VitalSignTakenDateTime,Vital.VitalSignQualifier.VitalSignTakenDateTime"
 * subject -> "Vital.VitalSign.PatientIEN"
-* code.coding -> "Vital.VitalSign.VitalTypeIEN"
+* code -> "Vital.VitalSign.VitalTypeIEN"
 * valueQuantity.value -> "Vital.VitalSign.Diastolic,Vital.VitalSign.Systolic,Vital.VitalSign.VitalResult,Vital.VitalSign.VitalResultNumeric"
 * valueQuantity.code -> "Vital.VitalSign.VitalTypeIEN"

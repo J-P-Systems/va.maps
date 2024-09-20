@@ -12,7 +12,7 @@ Description: "This StructureDefinition contains the maps for VistA file AR TRANS
 * detail ^slicing.discriminator.path = "$this"
 * detail ^slicing.rules = #open
 * detail contains va-principal-collected 0..1 and va-interest-collected 0..1 and va-admin-collected 0..1 and va-marshal-collected 0..1 and va-courtcost-collected 0..1
-* identifier[va-tn] and identifier[va-tn].type.text and identifier[va-bn] and identifier[va-bn].type.text and status and created and disposition and paymentDate and paymentAmount and paymentIdentifier and detail[va-principal-collected].amount and detail[va-principal-collected].type.text and detail[va-interest-collected].amount and detail[va-interest-collected].type.text and detail[va-admin-collected].amount and detail[va-admin-collected].type.text and detail[va-marshal-collected].amount and detail[va-marshal-collected].type.text and detail[va-courtcost-collected].amount and detail[va-courtcost-collected].type.text MS
+* identifier[va-tn].value and identifier[va-tn].type.text and identifier[va-bn].value and identifier[va-bn].type.text and status and created and disposition and paymentDate and paymentAmount and paymentIdentifier and detail[va-principal-collected].amount and detail[va-principal-collected].type.text and detail[va-interest-collected].amount and detail[va-interest-collected].type.text and detail[va-admin-collected].amount and detail[va-admin-collected].type.text and detail[va-marshal-collected].amount and detail[va-marshal-collected].type.text and detail[va-courtcost-collected].amount and detail[va-courtcost-collected].type.text MS
 * identifier[va-tn].type.text = "Transaction Number"
 * identifier[va-bn].type.text = "Bill Number"
 * status = #active
@@ -26,9 +26,9 @@ Mapping: source-to-DebtPortalPayments
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: DebtPortalPayments
-* identifier[va-tn] -> "1978: source value from AR TRANSACTION - TRANSACTION NUMBER (433-.01)"
+* identifier[va-tn].value -> "1978: source value from AR TRANSACTION - TRANSACTION NUMBER (433-.01)"
 * identifier[va-tn].type.text -> "1978-1: fixed value = Transaction Number" "from mapParameter 1"
-* identifier[va-bn] -> "1979: source value from AR TRANSACTION - BILL NUMBER (433-.03)"
+* identifier[va-bn].value -> "1979: source value from AR TRANSACTION - BILL NUMBER (433-.03)"
 * identifier[va-bn].type.text -> "1979-1: fixed value = Bill Number" "from mapParameter 1"
 * status -> "1980: fixed value = #active"
 * created -> "1984: source value from AR TRANSACTION - DATE ENTERED (433-19)"
@@ -51,8 +51,8 @@ Mapping: cdw-to-DebtPortalPayments
 Id: cdw
 Title: "Clinical Data Warehouse (CDW)"
 Source: DebtPortalPayments
-* identifier[va-tn] -> "IB.ARTransaction.TransactionNumber"
-* identifier[va-bn] -> "IB.ARTransaction.AccountsReceivableIEN,IB.ARTransaction.PatientIEN,IB.ARTransactionComment.PatientIEN,IB.ARTransactionDescription.PatientIEN,IB.ARTransactionFiscalYear.PatientIEN"
+* identifier[va-tn].value -> "IB.ARTransaction.TransactionNumber"
+* identifier[va-bn].value -> "IB.ARTransaction.AccountsReceivableIEN,IB.ARTransaction.PatientIEN,IB.ARTransactionComment.PatientIEN,IB.ARTransactionDescription.PatientIEN,IB.ARTransactionFiscalYear.PatientIEN"
 * created -> "IB.ARTransaction.EnteredDateTime"
 * disposition -> "IB.ARTransaction.ARTransactionTypeIEN\nDim.ARTransactionType.ARTransactionType"
 * paymentDate -> "IB.ARTransaction.TransactionDateTime,IB.ARTransactionComment.TransactionDateTime,IB.ARTransactionDescription.TransactionDateTime,IB.ARTransactionFiscalYear.TransactionDateTime"
