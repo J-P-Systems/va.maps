@@ -85,3 +85,12 @@ Source: PractitionerRole
 * extension[http://hl7.org/fhir/StructureDefinition/practitioner-job-title].valueCodeableConcept.text -> "SStaff.SStaff.SignatureBlockTitle"
 * extension[http://hl7.org/fhir/StructureDefinition/practitioner-job-title].valueCodeableConcept.text -> "SStaff.SStaff.PositionTitle,Staff.Staff.PositionTitle"
 * location -> "Dim.LocationProvider.StaffIEN"
+
+Mapping: vpr-to-PractitionerRole
+Id: vpr
+Title: "Virtual Patient Record (VPR)"
+Source: PractitionerRole
+* active -> "StaffSub.ProviderTypeAssignment.ExpirationDateTime"
+* active -> "StaffSub.ProviderTypeAssignment.ExpirationDateTime"
+* period.start -> "StaffSub.ProviderTypeAssignment.EffectiveDateTime"
+* period.end -> "StaffSub.ProviderTypeAssignment.ExpirationDateTime"

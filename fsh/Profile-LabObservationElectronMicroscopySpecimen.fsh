@@ -19,3 +19,9 @@ Title: "Clinical Data Warehouse (CDW)"
 Source: LabObservationElectronMicroscopySpecimen
 * accessionIdentifier -> "Pathology.ElectronMicroscopy.ElectronMicroscopyAccession"
 * type.text -> "Pathology.EMSpecimen.ElectronMicroscopySpecimen"
+
+Mapping: vpr-to-LabObservationElectronMicroscopySpecimen
+Id: vpr
+Title: "Virtual Patient Record (VPR)"
+Source: LabObservationElectronMicroscopySpecimen
+* type.text -> "Pathology.EMSpecimen.ElectronMicroscopySpecimen"

@@ -35,3 +35,10 @@ Source: DebtPortalBillPatient
 * contact.telecom.value -> "IB.AccountsReceivable.ARDebtorIEN"
 * contact.address.country -> "IB.AccountsReceivable.ARDebtorIEN\nDim.ARDebtor.ForeignCountryCode"
 * name -> "IB.AccountsReceivable.ARDebtorIEN\nDim.ARDebtor.InstitutionIEN,Dim.ARDebtor.InsuranceCompanyIEN,Dim.ARDebtor.PatientIEN,Dim.ARDebtor.StaffIEN,Dim.ARDebtor.VendorIEN"
+
+Mapping: vpr-to-DebtPortalBillPatient
+Id: vpr
+Title: "Virtual Patient Record (VPR)"
+Source: DebtPortalBillPatient
+* contact.address.country -> "Dim.ARDebtor.ForeignCountryCode"
+* name -> "Dim.ARDebtor.InstitutionIEN\nDim.ARDebtor.InsuranceCompanyIEN\nDim.ARDebtor.PatientIEN\nDim.ARDebtor.StaffIEN\nDim.ARDebtor.VendorIEN"

@@ -4,12 +4,14 @@ Title: "Debt Portal"
 Usage: #definition
 * description = "This CapabilityStatement contains an example for Debt Portal"
 * status = #draft
-* date = "2024-09-18T15:41:24.700Z"
+* date = "2024-10-02T18:51:24.506Z"
 * kind = #requirements
 * fhirVersion = #4.0.1
 * format[0] = #xml
 * format[1] = #json
 * rest.mode = #server
+* rest.resource[+].type = #Account
+* rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/DebtPortalAccount"
 * rest.resource[+].type = #Invoice
 * rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/DebtPortalBillInvoice"
 * rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/DebtPortalChargesInvoice"

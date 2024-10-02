@@ -66,3 +66,11 @@ Source: Organization
 * address[va-postal].state -> "Dim.InstitutionTimeZone.MailingStateIEN,Dim.InstitutionTimeZone.MailingStateSID"
 * address[va-postal].postalCode -> "Dim.InstitutionTimeZone.MailingZip"
 * address[va-postal].country -> "Dim.Country.CountryCode,NDim.MVICountryCode.CountryCode"
+
+Mapping: vpr-to-Organization
+Id: vpr
+Title: "Virtual Patient Record (VPR)"
+Source: Organization
+* address[va-physical].state -> "Dim.State.StateAbbrev\nDim.State.StateAbbrev\nNDim.MVIState.StateAbbrev"
+* address[va-physical].country -> "Dim.Country.CountryCode\nNDim.MVICountryCode.CountryCode"
+* address[va-postal].country -> "Dim.Country.CountryCode\nNDim.MVICountryCode.CountryCode"

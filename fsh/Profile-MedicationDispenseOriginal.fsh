@@ -5,6 +5,7 @@ Title: "MedicationDispense: Original"
 Description: "This StructureDefinition contains the maps for VistA file PRESCRIPTION (52) to MedicationDispense"
 * ^status = #draft
 * type and authorizingPrescription and daysSupply and destination.display and dosageInstruction.doseAndRate.doseQuantity.unit and dosageInstruction.doseAndRate.doseQuantity.code and dosageInstruction.doseAndRate.doseQuantity.value and dosageInstruction.patientInstruction and dosageInstruction.text and medicationCodeableConcept.coding.code and medicationCodeableConcept.coding.system and medicationCodeableConcept.text and quantity.value and status and subject and whenPrepared and category and location and note.text and performer MS
+* authorizingPrescription only Reference(MedicationRequestOutpatient)
 * type = #FF
 * dosageInstruction.doseAndRate.doseQuantity.code from http://va.gov/fhir/ValueSet/VSVFDoseUnits
 * medicationCodeableConcept.coding.system = "urn:oid:2.16.840.1.113883.6.233"
@@ -15,7 +16,7 @@ Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: MedicationDispenseOriginal
 * type -> "1708: fixed value = #FF"
-* authorizingPrescription -> "822: source value from PRESCRIPTION - PLACER ORDER # (52-39.3)"
+* authorizingPrescription -> "822: reference from PRESCRIPTION - PLACER ORDER # (52-39.3)"
 * daysSupply -> "826: source value from PRESCRIPTION - DAYS SUPPLY (52-8)"
 * destination.display -> "835: source value from PRESCRIPTION - MAIL/WINDOW/PARK (52-11)"
 * dosageInstruction.doseAndRate.doseQuantity.unit -> "842: source value from PRESCRIPTION - MEDICATION INSTRUCTIONS > MEDICATION INSTRUCTIONS - UNITS (52-113 > 52.0113-2)"
@@ -52,10 +53,8 @@ Mapping: vpr-to-MedicationDispenseOriginal
 Id: vpr
 Title: "Virtual Patient Record (VPR)"
 Source: MedicationDispenseOriginal
-* daysSupply -> "Pharmacy: daysSupply"
-* destination.display -> "Pharmacy: routing"
-* dosageInstruction.doseAndRate.doseQuantity.unit -> "Pharmacy: dose.units"
-* dosageInstruction.doseAndRate.doseQuantity.code -> "Pharmacy: dose.units"
-* dosageInstruction.doseAndRate.doseQuantity.value -> "Pharmacy: dose.dose"
-* dosageInstruction.text -> "Pharmacy: sig"
-* quantity.value -> "Pharmacy: quantity"
+* dosageInstruction.doseAndRate.doseQuantity.unit -> "RxOut.RxOutpatMedInstructions.Unit"
+* dosageInstruction.doseAndRate.doseQuantity.code -> "RxOut.RxOutpatMedInstructions.Unit"
+* dosageInstruction.doseAndRate.doseQuantity.value -> "RxOut.RxOutpatMedInstructions.DoseOrdered"
+* medicationCodeableConcept.coding.code -> "Dim.LocalDrug.DrugNameWithoutDoseIEN\nDim.LocalDrug.NationalDrugIEN\nDim.LocalDrug.NationalDrugIEN"
+* medicationCodeableConcept.text -> "Dim.LocalDrug.LocalDrugNameWithDose\nDim.LocalDrug.LocalDrugNameWithDose\nRxOut.RxOutpatFill.LocalDrugNameWithDose"

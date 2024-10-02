@@ -1,4 +1,4 @@
-"Id","Path","Slice Name","Alias(s)","Label","Min","Max","Must Support?","Is Modifier?","Is Summary?","Type(s)","Short","Definition","Comments","Requirements","Default Value","Meaning When Missing","Fixed Value","Pattern","Example","Minimum Value","Maximum Value","Maximum Length","Binding Strength","Binding Description","Binding Value Set","Code","Slicing Discriminator","Slicing Description","Slicing Ordered","Slicing Rules","Base Path","Base Min","Base Max","Condition(s)","Constraint(s)","Mapping: Veterans Health Information Systems Technology and Architecture (VistA)","Mapping: Clinical Data Warehouse (CDW)","Mapping: RIM Mapping","Mapping: FiveWs Pattern Mapping"
+"Id","Path","Slice Name","Alias(s)","Label","Min","Max","Must Support?","Is Modifier?","Is Summary?","Type(s)","Short","Definition","Comments","Requirements","Default Value","Meaning When Missing","Fixed Value","Pattern","Example","Minimum Value","Maximum Value","Maximum Length","Binding Strength","Binding Description","Binding Value Set","Code","Slicing Discriminator","Slicing Description","Slicing Ordered","Slicing Rules","Base Path","Base Min","Base Max","Condition(s)","Constraint(s)","Mapping: Veterans Health Information Systems Technology and Architecture (VistA)","Mapping: Clinical Data Warehouse (CDW)","Mapping: Virtual Patient Record (VPR)","Mapping: RIM Mapping","Mapping: FiveWs Pattern Mapping"
 "Location","Location","","","",0,*,"","","","null {[]} {[]}
 ","Details and position information for a physical place","\-","\-","","","","","","","","",,,,,"",,,,"Location",0,*,"","dom-2:If the resource is contained in another resource, it SHALL NOT contain nested Resources {contained.contained.empty()}
 dom-3:If the resource is contained in another resource, it SHALL be referred to from elsewhere in the resource or SHALL refer to the containing resource {contained.where((('#'+id in (%resource.descendants().reference | %resource.descendants().as(canonical) | %resource.descendants().as(uri) | %resource.descendants().as(url))) or descendants().where(reference = '#').exists() or descendants().where(as(canonical) = '#').exists() or descendants().where(as(canonical) = '#').exists()).not()).trace('unmatched', id).empty()}dom-4:If a resource is contained in another resource, it SHALL NOT have a meta.versionId or a meta.lastUpdated {contained.meta.versionId.empty() and contained.meta.lastUpdated.empty()}dom-5:If a resource is contained in another resource, it SHALL NOT have a security label {contained.meta.security.empty()}dom-6:A resource should have narrative for robust management {text.`div`.exists()}","Entity. Role, or Act",".Role[classCode=SDLC]"
@@ -143,17 +143,28 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","Street name, number, direction & P.O. Box etc.","This component contains the house number, apartment number, street name, street direction,  P.O. Box number, delivery hints, and similar address information.","","","","","","","<valueString xmlns=""http://hl7.org/fhir"" value=""137 Nowhere Street""/>","","",,,,,"",,,,"Address.line",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","1317: source value from HOSPITAL LOCATION - INSTITUTION > INSTITUTION - STREET ADDR. 1 (44-3 > 4-1.01)","1318: source value from HOSPITAL LOCATION - INSTITUTION > INSTITUTION - STREET ADDR. 2 (44-3 > 4-1.02)","Dim.Location.InstitutionIEN
 Dim.Institution.StreetAddress1,Dim.Institution.StreetAddress1,Dim.InstitutionTimeZone.StreetAddress1,NDim.MVIInstitution.StreetAddress1","Dim.Location.InstitutionIEN
-Dim.Institution.StreetAddress2,Dim.Institution.StreetAddress2,Dim.InstitutionTimeZone.StreetAddress2,NDim.MVIInstitution.StreetAddress2","AD.part[parttype = AL]"
+Dim.Institution.StreetAddress2,Dim.Institution.StreetAddress2,Dim.InstitutionTimeZone.StreetAddress2,NDim.MVIInstitution.StreetAddress2","Dim.Institution.StreetAddress1
+Dim.Institution.StreetAddress1
+Dim.InstitutionTimeZone.StreetAddress1
+NDim.MVIInstitution.StreetAddress1","Dim.Institution.StreetAddress2
+Dim.Institution.StreetAddress2
+Dim.InstitutionTimeZone.StreetAddress2
+NDim.MVIInstitution.StreetAddress2","AD.part[parttype = AL]"
 "Location.address.city","Location.address.city","","Municpality
 ","",0,1,"Y","","Y","string {[]} {[]}
 ","Name of city, town etc.","The name of the city, town, suburb, village or other community or delivery center.","","","","","","","<valueString xmlns=""http://hl7.org/fhir"" value=""Erewhon""/>","","",,,,,"",,,,"Address.city",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","1319: source value from HOSPITAL LOCATION - INSTITUTION > INSTITUTION - CITY (44-3 > 4-1.03)","Dim.Location.InstitutionIEN
-Dim.Institution.City,Dim.Institution.City,Dim.InstitutionTimeZone.City,NDim.MVIInstitution.City","AD.part[parttype = CTY]"
+Dim.Institution.City,Dim.Institution.City,Dim.InstitutionTimeZone.City,NDim.MVIInstitution.City","Dim.Institution.City
+Dim.Institution.City
+Dim.InstitutionTimeZone.City
+NDim.MVIInstitution.City","AD.part[parttype = CTY]"
 "Location.address.district","Location.address.district","","County
 ","",0,1,"Y","","Y","string {[]} {[]}
 ","District name (aka county)","The name of the administrative area (county).","District is sometimes known as county, but in some regions 'county' is used in place of city (municipality), so county name should be conveyed in city instead.","","","","","","<valueString xmlns=""http://hl7.org/fhir"" value=""Madison""/>","","",,,,,"",,,,"Address.district",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","1316: source value from HOSPITAL LOCATION - INSTITUTION > INSTITUTION - DISTRICT (44-3 > 4-.03)","Dim.Location.InstitutionIEN
-Dim.Institution.MedicalDistrict,Dim.Institution.MedicalDistrict,NDim.MVIInstitution.MedicalDistrict","AD.part[parttype = CNT | CPA]"
+Dim.Institution.MedicalDistrict,Dim.Institution.MedicalDistrict,NDim.MVIInstitution.MedicalDistrict","Dim.Institution.MedicalDistrict
+Dim.Institution.MedicalDistrict
+NDim.MVIInstitution.MedicalDistrict","AD.part[parttype = CNT | CPA]"
 "Location.address.state","Location.address.state","","Province
 Territory","",0,1,"Y","","Y","string {[]} {[]}
 ","Sub-unit of country (abbreviations ok)","Sub-unit of a country with limited sovereignty in a federally organized country. A code may be used if codes are in common use (e.g. US 2 letter state codes).","","","","","","","","","",,"extensible","Two letter USPS alphabetic codes.","http://hl7.org/fhir/us/core/ValueSet/us-core-usps-state","",,,,"Address.state",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
@@ -162,7 +173,10 @@ Territory","",0,1,"Y","","Y","string {[]} {[]}
 ","",0,1,"Y","","Y","string {[]} {[]}
 ","US Zip Codes","A postal code designating a region defined by the postal service.","","","","","","","<valueString xmlns=""http://hl7.org/fhir"" value=""9132""/>","","",,,,,"",,,,"Address.postalCode",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","1320: source value from HOSPITAL LOCATION - INSTITUTION > INSTITUTION - ZIP (44-3 > 4-1.04)","Dim.Location.InstitutionIEN
-Dim.Institution.Zip,Dim.Institution.Zip,Dim.InstitutionTimeZone.Zip,NDim.MVIInstitution.Zip","AD.part[parttype = ZIP]"
+Dim.Institution.Zip,Dim.Institution.Zip,Dim.InstitutionTimeZone.Zip,NDim.MVIInstitution.Zip","Dim.Institution.Zip
+Dim.Institution.Zip
+Dim.InstitutionTimeZone.Zip
+NDim.MVIInstitution.Zip","AD.part[parttype = ZIP]"
 "Location.address.country","Location.address.country","","","",0,1,"Y","","Y","string {[]} {[]}
 ","Country (e.g. can be ISO 3166 2 or 3 letter code)","Country - a nation as commonly understood or generally accepted.","ISO 3166 3 letter codes can be used in place of a human readable country name.","","","","","","","","",,,,,"",,,,"Address.country",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","1405: source value from HOSPITAL LOCATION - INSTITUTION > INSTITUTION - COUNTRY > COUNTRY CODE - CODE (44-3 > 4-801 > 779.004-.01)","Dim.Location.InstitutionIEN","AD.part[parttype = CNT]"

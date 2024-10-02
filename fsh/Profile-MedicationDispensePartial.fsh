@@ -52,10 +52,8 @@ Mapping: vpr-to-MedicationDispensePartial
 Id: vpr
 Title: "Virtual Patient Record (VPR)"
 Source: MedicationDispensePartial
-* daysSupply -> "Pharmacy: daysSupply"
-* destination.display -> "Pharmacy: routing"
-* dosageInstruction.doseAndRate.doseQuantity.unit -> "Pharmacy: dose.units"
-* dosageInstruction.doseAndRate.doseQuantity.code -> "Pharmacy: dose.units"
-* dosageInstruction.doseAndRate.doseQuantity.value -> "Pharmacy: dose.dose"
-* dosageInstruction.text -> "Pharmacy: sig"
-* quantity.value -> "Pharmacy: quantity"
+* dosageInstruction.doseAndRate.doseQuantity.unit -> "RxOut.RxOutpatMedInstructions.Unit"
+* dosageInstruction.doseAndRate.doseQuantity.code -> "RxOut.RxOutpatMedInstructions.Unit"
+* dosageInstruction.doseAndRate.doseQuantity.value -> "RxOut.RxOutpatMedInstructions.DoseOrdered"
+* medicationCodeableConcept.coding.code -> "Dim.LocalDrug.DrugNameWithoutDoseIEN\nDim.LocalDrug.NationalDrugIEN\nDim.LocalDrug.NationalDrugIEN"
+* medicationCodeableConcept.text -> "Dim.LocalDrug.LocalDrugNameWithDose\nDim.LocalDrug.LocalDrugNameWithDose\nRxOut.RxOutpatFill.LocalDrugNameWithDose"

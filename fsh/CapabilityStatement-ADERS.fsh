@@ -4,7 +4,7 @@ Title: "VA Adverse Drug Event Reporting System"
 Usage: #definition
 * description = "This CapabilityStatement contains an example for VA Adverse Drug Event Reporting System"
 * status = #draft
-* date = "2024-09-18T15:41:24.700Z"
+* date = "2024-10-02T18:51:24.507Z"
 * kind = #requirements
 * fhirVersion = #4.0.1
 * format[0] = #xml
@@ -13,14 +13,14 @@ Usage: #definition
 * rest.resource[+].type = #Patient
 * rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/VAERSPatient"
 * rest.resource[+].type = #Immunization
-* rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/VAERSImmunization-vac1"
-* rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/VAERSImmunization-vac2"
-* rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/VAERSImmunization-vac3"
-* rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/VAERSImmunization-vac4"
-* rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/VAERSImmunization-pvac1"
-* rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/VAERSImmunization-pvac2"
-* rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/VAERSImmunization-pvac3"
-* rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/VAERSImmunization-pvac4"
+* rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/VAERSImmunizationvac1"
+* rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/VAERSImmunizationvac2"
+* rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/VAERSImmunizationvac3"
+* rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/VAERSImmunizationvac4"
+* rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/VAERSImmunizationpvac1"
+* rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/VAERSImmunizationpvac2"
+* rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/VAERSImmunizationpvac3"
+* rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/VAERSImmunizationpvac4"
 * rest.resource[+].type = #AdverseEvent
 * rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/VAERSAdverseEvent"
 * rest.resource[+].type = #Bundle

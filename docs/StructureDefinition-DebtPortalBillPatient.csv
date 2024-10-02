@@ -1,4 +1,4 @@
-"Id","Path","Slice Name","Alias(s)","Label","Min","Max","Must Support?","Is Modifier?","Is Summary?","Type(s)","Short","Definition","Comments","Requirements","Default Value","Meaning When Missing","Fixed Value","Pattern","Example","Minimum Value","Maximum Value","Maximum Length","Binding Strength","Binding Description","Binding Value Set","Code","Slicing Discriminator","Slicing Description","Slicing Ordered","Slicing Rules","Base Path","Base Min","Base Max","Condition(s)","Constraint(s)","Mapping: Veterans Health Information Systems Technology and Architecture (VistA)","Mapping: Clinical Data Warehouse (CDW)","Mapping: RIM Mapping","Mapping: CDA (R2)","Mapping: FiveWs Pattern Mapping","Mapping: HL7 v2 Mapping","Mapping: LOINC code for the element"
+"Id","Path","Slice Name","Alias(s)","Label","Min","Max","Must Support?","Is Modifier?","Is Summary?","Type(s)","Short","Definition","Comments","Requirements","Default Value","Meaning When Missing","Fixed Value","Pattern","Example","Minimum Value","Maximum Value","Maximum Length","Binding Strength","Binding Description","Binding Value Set","Code","Slicing Discriminator","Slicing Description","Slicing Ordered","Slicing Rules","Base Path","Base Min","Base Max","Condition(s)","Constraint(s)","Mapping: Veterans Health Information Systems Technology and Architecture (VistA)","Mapping: Clinical Data Warehouse (CDW)","Mapping: Virtual Patient Record (VPR)","Mapping: RIM Mapping","Mapping: CDA (R2)","Mapping: FiveWs Pattern Mapping","Mapping: HL7 v2 Mapping","Mapping: LOINC code for the element"
 "Patient","Patient","","SubjectOfCare Client Resident
 ","",0,*,"","","","null {[]} {[]}
 ","Information about an individual or animal receiving health care services","Demographics and other administrative information about an individual or animal receiving care or other health-related services.","","","","","","","","","",,,,,"",,,,"Patient",0,*,"","dom-2:If the resource is contained in another resource, it SHALL NOT contain nested Resources {contained.contained.empty()}
@@ -45,7 +45,11 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
 "Patient.name","Patient.name","","","",0,*,"Y","","Y","HumanName {[]} {[]}
 ","A name associated with the patient","A name associated with the individual.","A patient may have multiple names with different uses or applicable periods. For animals, the name is a ""HumanName"" in the sense that is assigned and used by humans and has the same patterns.","Need to be able to track the patient by multiple names. Examples are your official name and a partner name.","","","","","","","",,,,,"",,,,"Patient.name",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","1827: source value from ACCOUNTS RECEIVABLE - DEBTOR > AR DEBTOR - DEBTOR (430-9 > 340-.01) case patient","IB.AccountsReceivable.ARDebtorIEN
-Dim.ARDebtor.InstitutionIEN,Dim.ARDebtor.InsuranceCompanyIEN,Dim.ARDebtor.PatientIEN,Dim.ARDebtor.StaffIEN,Dim.ARDebtor.VendorIEN","name",".patient.name","PID-5, PID-9"
+Dim.ARDebtor.InstitutionIEN,Dim.ARDebtor.InsuranceCompanyIEN,Dim.ARDebtor.PatientIEN,Dim.ARDebtor.StaffIEN,Dim.ARDebtor.VendorIEN","Dim.ARDebtor.InstitutionIEN
+Dim.ARDebtor.InsuranceCompanyIEN
+Dim.ARDebtor.PatientIEN
+Dim.ARDebtor.StaffIEN
+Dim.ARDebtor.VendorIEN","name",".patient.name","PID-5, PID-9"
 "Patient.telecom","Patient.telecom","","","",0,*,"","","Y","ContactPoint {[]} {[]}
 ","A contact detail for the individual","A contact detail (e.g. a telephone number or an email address) by which the individual may be contacted.","A Patient may have multiple ways to be contacted with different uses or applicable periods.  May need to have options for contacting the person urgently and also to help with identification. The address might not go directly to the individual, but may reach another party that is able to proxy for the patient (i.e. home phone, or pet owner's phone).","People have (primary) ways to contact them in some way such as phone, email.","","","","","","","",,,,,"",,,,"Patient.telecom",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","telecom",".telecom","PID-13, PID-14, PID-40"
@@ -161,7 +165,7 @@ Territory","",0,1,"Y","","Y","string {[]} {[]}
 "Patient.contact.address.country","Patient.contact.address.country","","","",0,1,"Y","","Y","string {[]} {[]}
 ","Country (e.g. can be ISO 3166 2 or 3 letter code)","Country - a nation as commonly understood or generally accepted.","ISO 3166 3 letter codes can be used in place of a human readable country name.","","","","","","","","",,,,,"",,,,"Address.country",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","1826: source value from ACCOUNTS RECEIVABLE - DEBTOR > AR DEBTOR - FOREIGN COUNTRY CODE (430-9 > 340-1.08)","IB.AccountsReceivable.ARDebtorIEN
-Dim.ARDebtor.ForeignCountryCode","AD.part[parttype = CNT]","XAD.6"
+Dim.ARDebtor.ForeignCountryCode","Dim.ARDebtor.ForeignCountryCode","AD.part[parttype = CNT]","XAD.6"
 "Patient.contact.address.period","Patient.contact.address.period","","","",0,1,"","","Y","Period {[]} {[]}
 ","Time period when address was/is in use","Time period when address was/is in use.","","Allows addresses to be placed in historical context.","","","","","<valuePeriod xmlns=""http://hl7.org/fhir"">
   <start value=""2010-03-23""/>

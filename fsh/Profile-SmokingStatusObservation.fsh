@@ -39,3 +39,10 @@ Source: SmokingStatusObservation
 * performer -> "HF.HealthFactor.EncounterStaffIEN"
 * valueCodeableConcept -> "HF.HealthFactor.HealthFactorTypeIEN\nDim.HealthFactorType.HealthFactorCategory,Dim.HealthFactorType.HealthFactorType"
 * note.text -> "HF.HealthFactor.Comments"
+
+Mapping: vpr-to-SmokingStatusObservation
+Id: vpr
+Title: "Virtual Patient Record (VPR)"
+Source: SmokingStatusObservation
+* code -> "Dim.HealthFactorType.CategoryHealthFactorTypeIEN"
+* valueCodeableConcept -> "Dim.HealthFactorType.HealthFactorCategory\nDim.HealthFactorType.HealthFactorType"

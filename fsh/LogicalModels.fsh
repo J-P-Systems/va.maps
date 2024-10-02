@@ -172,6 +172,7 @@ Characteristics: #can-be-target
 * pharmacist 0..1 Element "PHARMACIST (-23)"
 * refill 0..1 Reference "REFILL (-52)"
 * partialDate 0..1 Reference "PARTIAL DATE (-60)"
+* ibNumber 0..1 Element "IB NUMBER (-106)"
 * drug only Reference(Drug50)
 * medicationInstructions only Reference(MedicationInstructions520113)
 * refill only Reference(Refill521)
@@ -330,20 +331,6 @@ Characteristics: #can-be-target
 * dob 0..1 Element "DOB (-5)"
 * degree 0..1 Element "DEGREE (-10.6)"
 * ien 0..1 Element "IEN (-.001)"
-* streetAddress1 0..1 Element "STREET ADDRESS 1 (-.111)"
-* streetAddress2 0..1 Element "STREET ADDRESS 2 (-.112)"
-* streetAddress3 0..1 Element "STREET ADDRESS 3 (-.113)"
-* city 0..1 Element "CITY (-.114)"
-* state 0..1 Element "STATE (-.115)"
-* zipCode 0..1 Element "ZIP CODE (-.116)"
-* temporaryAddress1 0..1 Element "TEMPORARY ADDRESS 1 (-.1211)"
-* temporaryAddress2 0..1 Element "TEMPORARY ADDRESS 2 (-.1212)"
-* temporaryAddress3 0..1 Element "TEMPORARY ADDRESS 3 (-.1213)"
-* temporaryCity 0..1 Element "TEMPORARY CITY (-.1214)"
-* temporaryState 0..1 Element "TEMPORARY STATE (-.1215)"
-* temporaryZipCode 0..1 Element "TEMPORARY ZIP CODE (-.1216)"
-* startDateOfTempAddres 0..1 Element "START DATE OF TEMP ADDRES (-.1217)"
-* endDateOfTempAddress 0..1 Element "END DATE OF TEMP ADDRESS (-.1218)"
 * sex 0..1 Coding "SEX (-4)"
 * sex from http://va.gov/fhir/ValueSet/VSVFproviderGender-vista (preferred)
 * officePhone 0..1 Element "OFFICE PHONE (-.132)"
@@ -368,6 +355,7 @@ Id: ArDebtor340
 Title: "AR DEBTOR (340)"
 Description: "This StructureDefinition contains the Logical Model for the mapped parts of the source AR DEBTOR (340)"
 Characteristics: #can-be-target
+* statementDay 0..1 Element "STATEMENT DAY (-.03)"
 * debtor 0..1 Element "DEBTOR (-.01)"
 * streetAddress1 0..1 Element "STREET ADDRESS #1 (-1.01)"
 * streetAddress2 0..1 Element "STREET ADDRESS #2 (-1.02)"
@@ -397,11 +385,12 @@ Id: AccountsReceivable430
 Title: "ACCOUNTS RECEIVABLE (430)"
 Description: "This StructureDefinition contains the Logical Model for the mapped parts of the source ACCOUNTS RECEIVABLE (430)"
 Characteristics: #can-be-target
+* patient 0..1 Element "PATIENT (-7)"
 * debtor 0..1 Reference "DEBTOR (-9)"
 * name 0..1 Element "NAME (-.01)"
 * currentStatus 0..1 Reference "CURRENT STATUS (-8)"
-* patient 0..1 Element "PATIENT (-7)"
 * dateBillPrepared 0..1 Element "DATE BILL PREPARED (-10)"
+* site 0..1 Element "SITE (-12)"
 * originalAmount 0..1 Element "ORIGINAL AMOUNT (-3)"
 * currentBalance 0..1 Element "CURRENT BALANCE (-11)"
 * amendedAmount 0..1 Element "AMENDED AMOUNT (-35)"
@@ -676,6 +665,7 @@ Characteristics: #can-be-target
 * modifier 0..1 Coding "MODIFIER (-.06)"
 * modifier from http://va.gov/fhir/ValueSet/VSVFencounterProblemVerificationStatus-vista (preferred)
 * encounterProvider 0..1 Element "ENCOUNTER PROVIDER (-1204)"
+* problemListEntry 0..1 Element "PROBLEM LIST ENTRY (-.16)"
 * pov only Reference(IcdDiagnosis80)
 * visit only Reference(Visit9000010)
 

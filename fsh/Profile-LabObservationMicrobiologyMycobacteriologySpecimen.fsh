@@ -19,3 +19,9 @@ Title: "Clinical Data Warehouse (CDW)"
 Source: LabObservationMicrobiologyMycobacteriologySpecimen
 * accessionIdentifier -> "Micro.Microbiology.MicrobiologyAccession"
 * type.text -> "Micro.Microbiology.CollectionSampleIEN\nDim.CollectionSample.CollectionSample,Dim.Topography.CollectionSample"
+
+Mapping: vpr-to-LabObservationMicrobiologyMycobacteriologySpecimen
+Id: vpr
+Title: "Virtual Patient Record (VPR)"
+Source: LabObservationMicrobiologyMycobacteriologySpecimen
+* type.text -> "Dim.CollectionSample.CollectionSample\nDim.Topography.CollectionSample"

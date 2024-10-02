@@ -105,4 +105,4 @@ Mapping: vpr-to-Patient
 Id: vpr
 Title: "Virtual Patient Record (VPR)"
 Source: Patient
-* identifier.value -> "GET PATIENT DATA-reaction.mechanism"
+* communication.language -> "Patient.PreferredLanguage.PreferredLanguage"

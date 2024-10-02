@@ -6,7 +6,7 @@ Description: "This StructureDefinition contains the maps for ADERS to AdverseEve
 * ^status = #draft
 * subject and actuality and date and event and outcome and suspectEntity.instance MS
 * subject only Reference(VAERSPatient)
-* suspectEntity.instance only Reference(VAERSImmunization-vac1)
+* suspectEntity.instance only Reference(VAERSImmunizationvac1)
 * actuality = #actual
 
 Mapping: source-to-VAERSAdverseEvent

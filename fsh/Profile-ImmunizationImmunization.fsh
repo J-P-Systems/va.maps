@@ -69,3 +69,17 @@ Source: ImmunizationImmunization
 * recorded -> "Immun.Immunization.RecordedDateTime"
 * encounter -> "Immun.Immunization.OutsideLocation,Immun.Immunization.VisitDateTime,Immun.Immunization.VisitIEN"
 * location -> "Immun.Immunization.OutsideLocation,Immun.Immunization.VisitDateTime,Immun.Immunization.VisitIEN\nOutpat.Visit.LocationIEN,Outpat.Workload.LocationIEN"
+
+Mapping: vpr-to-ImmunizationImmunization
+Id: vpr
+Title: "Virtual Patient Record (VPR)"
+Source: ImmunizationImmunization
+* statusReason -> "Dim.ImmunizationName.ImmunizationName\nDim.PharmacyOrderableItem.ImmunizationName"
+* vaccineCode -> "Dim.ImmunizationName.ImmunizationName\nDim.PharmacyOrderableItem.ImmunizationName"
+* status -> "Dim.ImmunizationName.CVXCode"
+* status -> "Dim.ImmunizationName.ImmunizationName\nDim.PharmacyOrderableItem.ImmunizationName"
+* vaccineCode -> "Dim.ImmunizationName.CVXCode"
+* lotNumber -> "Dim.ImmunizationLot.ImmunizationLot"
+* manufacturer -> "Dim.ImmunizationLot.ImmunizationManufacturerIEN\nDim.ImmunizationLot.ImmunizationManufacturerSID"
+* vaccineCode.coding.code -> "Dim.ImmunizationLot.NDCCodeVAText"
+* location -> "Outpat.Visit.LocationIEN\nOutpat.Workload.LocationIEN"

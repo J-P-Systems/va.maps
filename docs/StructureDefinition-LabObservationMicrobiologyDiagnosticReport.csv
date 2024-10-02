@@ -1,4 +1,4 @@
-"Id","Path","Slice Name","Alias(s)","Label","Min","Max","Must Support?","Is Modifier?","Is Summary?","Type(s)","Short","Definition","Comments","Requirements","Default Value","Meaning When Missing","Fixed Value","Pattern","Example","Minimum Value","Maximum Value","Maximum Length","Binding Strength","Binding Description","Binding Value Set","Code","Slicing Discriminator","Slicing Description","Slicing Ordered","Slicing Rules","Base Path","Base Min","Base Max","Condition(s)","Constraint(s)","Mapping: Veterans Health Information Systems Technology and Architecture (VistA)","Mapping: Clinical Data Warehouse (CDW)","Mapping: Workflow Pattern","Mapping: HL7 v2 Mapping","Mapping: RIM Mapping","Mapping: FiveWs Pattern Mapping"
+"Id","Path","Slice Name","Alias(s)","Label","Min","Max","Must Support?","Is Modifier?","Is Summary?","Type(s)","Short","Definition","Comments","Requirements","Default Value","Meaning When Missing","Fixed Value","Pattern","Example","Minimum Value","Maximum Value","Maximum Length","Binding Strength","Binding Description","Binding Value Set","Code","Slicing Discriminator","Slicing Description","Slicing Ordered","Slicing Rules","Base Path","Base Min","Base Max","Condition(s)","Constraint(s)","Mapping: Veterans Health Information Systems Technology and Architecture (VistA)","Mapping: Clinical Data Warehouse (CDW)","Mapping: Virtual Patient Record (VPR)","Mapping: Workflow Pattern","Mapping: HL7 v2 Mapping","Mapping: RIM Mapping","Mapping: FiveWs Pattern Mapping"
 "DiagnosticReport","DiagnosticReport","","Report
 TestResultResultsLabsLaboratoryLab ResultLab Report","",0,*,"","","","null {[]} {[]}
 ","A Diagnostic report - a combination of request information, atomic results, images, interpretation, as well as formatted reports","\-","\-","","","","","","","","",,,,,"",,,,"DiagnosticReport",0,*,"","dom-2:If the resource is contained in another resource, it SHALL NOT contain nested Resources {contained.contained.empty()}
@@ -63,11 +63,13 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "DiagnosticReport.basedOn","DiagnosticReport.basedOn","","Request
 ","",0,*,"Y","","","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/ServiceRequest]]}
 ","What was requested","Details concerning a service requested.","Note: Usually there is one test request for each result, however in some circumstances multiple test requests may be represented using a single test result resource. Note that there are also cases where one request leads to multiple reports.","This allows tracing of authorization for the report and tracking whether proposals/recommendations were acted upon.","","","","","","","",,,,,"",,,,"DiagnosticReport.basedOn",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","1690: reference from MICROBIOLOGY - ORDERED TEST > ORDERED TEST - CPRS ORDER # (63.05-.35 > 63.5-3)","Micro.MicroOrderedTest.CPRSOrderIEN,SStaff.SMicroOrderedTest.CPRSOrderIEN","Event.basedOn","ORC? OBR-2/3?","outboundRelationship[typeCode=FLFS].target"
+","1690: reference from MICROBIOLOGY - ORDERED TEST > ORDERED TEST - CPRS ORDER # (63.05-.35 > 63.5-3)","Micro.MicroOrderedTest.CPRSOrderIEN,SStaff.SMicroOrderedTest.CPRSOrderIEN","Micro.MicroOrderedTest.CPRSOrderIEN
+SStaff.SMicroOrderedTest.CPRSOrderIEN","Event.basedOn","ORC? OBR-2/3?","outboundRelationship[typeCode=FLFS].target"
 "DiagnosticReport.status","DiagnosticReport.status","","","",1,1,"Y","Y","Y","code {[]} {[]}
 ","registered | partial | preliminary | final +","The status of the diagnostic report.","","Diagnostic services routinely issue provisional/incomplete reports, and sometimes withdraw previously released reports.","","","","","","","",,"required","","http://va.gov/fhir/ValueSet/VSVFDiagnosticReportLabStatus","",,,,"DiagnosticReport.status",1,1,"us-core-8
 us-core-9","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","1416: terminologyMaps using VF_DiagnosticReportLabStatus on MICROBIOLOGY - ORDERED TEST > ORDERED TEST - DISPOSITION (63.05-.35 > 63.5-10)","Micro.MicroOrderedTest.DispositionLabCodeIEN,SStaff.SMicroOrderedTest.DispositionLabCodeIEN","Event.status","OBR-25 (not 1:1 mapping)","statusCode  Note: final and amended are distinguished by whether observation is the subject of a ControlAct event of type ""revise""","FiveWs.status"
+","1416: terminologyMaps using VF_DiagnosticReportLabStatus on MICROBIOLOGY - ORDERED TEST > ORDERED TEST - DISPOSITION (63.05-.35 > 63.5-10)","Micro.MicroOrderedTest.DispositionLabCodeIEN,SStaff.SMicroOrderedTest.DispositionLabCodeIEN","Micro.MicroOrderedTest.DispositionLabCodeIEN
+SStaff.SMicroOrderedTest.DispositionLabCodeIEN","Event.status","OBR-25 (not 1:1 mapping)","statusCode  Note: final and amended are distinguished by whether observation is the subject of a ControlAct event of type ""revise""","FiveWs.status"
 "DiagnosticReport.category","DiagnosticReport.category","","Department
 Sub-departmentServiceDiscipline","",1,*,"Y","","Y","CodeableConcept {[]} {[]}
 ","Service category","A code that classifies the clinical discipline, department or diagnostic service that created the report (e.g. cardiology, biochemistry, hematology, MRI). This is used for searching, sorting and display purposes.","Multiple categories are allowed using various categorization schemes.   The level of granularity is defined by the category concepts in the value set. More fine-grained filtering can be performed using the metadata and/or terminology hierarchy in DiagnosticReport.code.","","","","","","","","",,"example","Codes for diagnostic service sections.","http://hl7.org/fhir/ValueSet/diagnostic-service-sections","","pattern:$this}
@@ -137,7 +139,25 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "DiagnosticReport.subject","DiagnosticReport.subject","","Patient
 ","",1,1,"Y","","Y","Reference {[]} {[CanonicalType[http://va.gov/fhir/StructureDefinition/Patient]]}
 ","The subject of the report - usually, but not always, the patient","The subject of the report. Usually, but not always, this is a patient. However, diagnostic services also perform analyses on specimens collected from a variety of other sources.","","SHALL know the subject context.","","","","","","","",,,,,"",,,,"DiagnosticReport.subject",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","1421: reference from PATIENT - LABORATORY REFERENCE > LAB DATA - LRDFN (2-63 > 63-.01)","Micro.AntibioticSensitivity.LRDFN,Micro.AntibioticSensitivityComment.LRDFN,Micro.BacteriologyReports.LRDFN,Micro.MicroAntibioticLevel.LRDFN,Micro.MicroAudit.LRDFN,Micro.Microbiology.LRDFN,Micro.MicroOrderedTest.LRDFN,Micro.MicroSterilityResults.LRDFN,Micro.MycobacteriologyReports.LRDFN,Micro.Mycology.LRDFN,Micro.MycologyReports.LRDFN,Micro.Parasitology.LRDFN,Micro.ParasitologyReports.LRDFN,Micro.ParasitologyStage.LRDFN,Micro.Virology.LRDFN,Micro.VirologyReports.LRDFN,Pathology.Autopsy.LRDFN,Pathology.CytoOrganTissueFunction.StaffIEN,SStaff.SMicroOrderedTest.LRDFN","Event.subject","PID-3 (no HL7 v2 mapping for Group or Device)","participation[typeCode=SBJ]","FiveWs.subject[x]","FiveWs.subject"
+","1421: reference from PATIENT - LABORATORY REFERENCE > LAB DATA - LRDFN (2-63 > 63-.01)","Micro.AntibioticSensitivity.LRDFN,Micro.AntibioticSensitivityComment.LRDFN,Micro.BacteriologyReports.LRDFN,Micro.MicroAntibioticLevel.LRDFN,Micro.MicroAudit.LRDFN,Micro.Microbiology.LRDFN,Micro.MicroOrderedTest.LRDFN,Micro.MicroSterilityResults.LRDFN,Micro.MycobacteriologyReports.LRDFN,Micro.Mycology.LRDFN,Micro.MycologyReports.LRDFN,Micro.Parasitology.LRDFN,Micro.ParasitologyReports.LRDFN,Micro.ParasitologyStage.LRDFN,Micro.Virology.LRDFN,Micro.VirologyReports.LRDFN,Pathology.Autopsy.LRDFN,Pathology.CytoOrganTissueFunction.StaffIEN,SStaff.SMicroOrderedTest.LRDFN","Micro.AntibioticSensitivity.LRDFN
+Micro.AntibioticSensitivityComment.LRDFN
+Micro.BacteriologyReports.LRDFN
+Micro.MicroAntibioticLevel.LRDFN
+Micro.MicroAudit.LRDFN
+Micro.Microbiology.LRDFN
+Micro.MicroOrderedTest.LRDFN
+Micro.MicroSterilityResults.LRDFN
+Micro.MycobacteriologyReports.LRDFN
+Micro.Mycology.LRDFN
+Micro.MycologyReports.LRDFN
+Micro.Parasitology.LRDFN
+Micro.ParasitologyReports.LRDFN
+Micro.ParasitologyStage.LRDFN
+Micro.Virology.LRDFN
+Micro.VirologyReports.LRDFN
+Pathology.Autopsy.LRDFN
+Pathology.CytoOrganTissueFunction.StaffIEN
+SStaff.SMicroOrderedTest.LRDFN","Event.subject","PID-3 (no HL7 v2 mapping for Group or Device)","participation[typeCode=SBJ]","FiveWs.subject[x]","FiveWs.subject"
 "DiagnosticReport.encounter","DiagnosticReport.encounter","","Context
 ","",0,1,"","","Y","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/Encounter]]}
 ","Health care event when test ordered","The healthcare event  (e.g. a patient and healthcare provider interaction) which this DiagnosticReport is about.","This will typically be the encounter the event occurred within, but some events may be initiated prior to or after the official completion of an encounter  but still be tied to the context of the encounter  (e.g. pre-admission laboratory tests).","Links the request to the Encounter context.","","","","","","","",,,,,"",,,,"DiagnosticReport.encounter",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}

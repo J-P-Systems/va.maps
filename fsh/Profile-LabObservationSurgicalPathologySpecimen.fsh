@@ -19,3 +19,9 @@ Title: "Clinical Data Warehouse (CDW)"
 Source: LabObservationSurgicalPathologySpecimen
 * accessionIdentifier -> "Pathology.SurgicalPathology.SurgicalPathologyShortAccessionNumber"
 * type.text -> "Pathology.SurgPathSpecimen.Specimen"
+
+Mapping: vpr-to-LabObservationSurgicalPathologySpecimen
+Id: vpr
+Title: "Virtual Patient Record (VPR)"
+Source: LabObservationSurgicalPathologySpecimen
+* type.text -> "Pathology.SurgPathSpecimen.Specimen"

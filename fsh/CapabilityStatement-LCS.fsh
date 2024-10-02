@@ -4,7 +4,7 @@ Title: "Lung Cancer Screening"
 Usage: #definition
 * description = "This CapabilityStatement contains an example for Lung Cancer Screening"
 * status = #draft
-* date = "2024-09-18T15:41:24.699Z"
+* date = "2024-10-02T18:51:24.506Z"
 * kind = #requirements
 * fhirVersion = #4.0.1
 * format[0] = #xml

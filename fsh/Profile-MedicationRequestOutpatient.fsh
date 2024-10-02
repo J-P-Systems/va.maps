@@ -82,5 +82,7 @@ Mapping: vpr-to-MedicationRequestOutpatient
 Id: vpr
 Title: "Virtual Patient Record (VPR)"
 Source: MedicationRequestOutpatient
-* dispenseRequest.quantity.value -> "Pharmacy: quantity"
-* dispenseRequest.expectedSupplyDuration -> "Pharmacy: daysSupply"
+* dosageInstruction.doseAndRate.doseQuantity.value -> "RxOut.RxOutpatMedInstructions.DoseOrdered"
+* dosageInstruction.doseAndRate.doseQuantity.unit -> "RxOut.RxOutpatMedInstructions.Unit"
+* dosageInstruction.doseAndRate.extension[http://hl7.org/fhir/StructureDefinition/originalText].valueString -> "RxOut.RxOutpatMedInstructions.DoseOrdered"
+* dosageInstruction.route.coding.code -> "RxOut.RxOutpatMedInstructions.MedRoute"

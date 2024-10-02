@@ -8,9 +8,9 @@ Description: "This StructureDefinition contains the maps for VistA file ACCOUNTS
 * totalPriceComponent ^slicing.discriminator.path = "$this"
 * totalPriceComponent ^slicing.rules = #open
 * totalPriceComponent contains va-orig-amt 0..1 and va-curr-bal 0..1 and va-amend-amt 0..1 and va-principal-bal 0..1 and va-interest-bal 0..1 and va-admin-cost-bal 0..1 and va-marsh-fee 0..1 and va-court-cost 0..1 and va-principal-paid 0..1 and va-interest-paid 0..1 and va-admin-cost-paid 0..1 and va-marsh-fee-paid 0..1 and va-court-cost-paid 0..1
-* recipient and identifier and status and subject and date and totalPriceComponent[va-orig-amt].amount and totalPriceComponent[va-orig-amt].type and totalPriceComponent[va-orig-amt].code.text and totalPriceComponent[va-curr-bal].amount and totalPriceComponent[va-curr-bal].type and totalPriceComponent[va-curr-bal].code.text and totalPriceComponent[va-amend-amt].amount and totalPriceComponent[va-amend-amt].type and totalPriceComponent[va-amend-amt].code.text and totalPriceComponent[va-principal-bal].amount and totalPriceComponent[va-principal-bal].type and totalPriceComponent[va-principal-bal].code.text and totalPriceComponent[va-interest-bal].amount and totalPriceComponent[va-interest-bal].type and totalPriceComponent[va-interest-bal].code.text and totalPriceComponent[va-admin-cost-bal].amount and totalPriceComponent[va-admin-cost-bal].type and totalPriceComponent[va-admin-cost-bal].code.text and totalPriceComponent[va-marsh-fee].amount and totalPriceComponent[va-marsh-fee].type and totalPriceComponent[va-marsh-fee].code.text and totalPriceComponent[va-court-cost].amount and totalPriceComponent[va-court-cost].type and totalPriceComponent[va-court-cost].code.text and totalPriceComponent[va-principal-paid].amount and totalPriceComponent[va-principal-paid].type and totalPriceComponent[va-principal-paid].code.text and totalPriceComponent[va-interest-paid].amount and totalPriceComponent[va-interest-paid].type and totalPriceComponent[va-interest-paid].code.text and totalPriceComponent[va-admin-cost-paid].amount and totalPriceComponent[va-admin-cost-paid].type and totalPriceComponent[va-admin-cost-paid].code.text and totalPriceComponent[va-marsh-fee-paid].amount and totalPriceComponent[va-marsh-fee-paid].type and totalPriceComponent[va-marsh-fee-paid].code.text and totalPriceComponent[va-court-cost-paid].amount and totalPriceComponent[va-court-cost-paid].type and totalPriceComponent[va-court-cost-paid].code.text MS
+* recipient and identifier and status and subject and date and issuer and totalPriceComponent[va-orig-amt].amount and totalPriceComponent[va-orig-amt].type and totalPriceComponent[va-orig-amt].code.text and totalPriceComponent[va-curr-bal].amount and totalPriceComponent[va-curr-bal].type and totalPriceComponent[va-curr-bal].code.text and totalPriceComponent[va-amend-amt].amount and totalPriceComponent[va-amend-amt].type and totalPriceComponent[va-amend-amt].code.text and totalPriceComponent[va-principal-bal].amount and totalPriceComponent[va-principal-bal].type and totalPriceComponent[va-principal-bal].code.text and totalPriceComponent[va-interest-bal].amount and totalPriceComponent[va-interest-bal].type and totalPriceComponent[va-interest-bal].code.text and totalPriceComponent[va-admin-cost-bal].amount and totalPriceComponent[va-admin-cost-bal].type and totalPriceComponent[va-admin-cost-bal].code.text and totalPriceComponent[va-marsh-fee].amount and totalPriceComponent[va-marsh-fee].type and totalPriceComponent[va-marsh-fee].code.text and totalPriceComponent[va-court-cost].amount and totalPriceComponent[va-court-cost].type and totalPriceComponent[va-court-cost].code.text and totalPriceComponent[va-principal-paid].amount and totalPriceComponent[va-principal-paid].type and totalPriceComponent[va-principal-paid].code.text and totalPriceComponent[va-interest-paid].amount and totalPriceComponent[va-interest-paid].type and totalPriceComponent[va-interest-paid].code.text and totalPriceComponent[va-admin-cost-paid].amount and totalPriceComponent[va-admin-cost-paid].type and totalPriceComponent[va-admin-cost-paid].code.text and totalPriceComponent[va-marsh-fee-paid].amount and totalPriceComponent[va-marsh-fee-paid].type and totalPriceComponent[va-marsh-fee-paid].code.text and totalPriceComponent[va-court-cost-paid].amount and totalPriceComponent[va-court-cost-paid].type and totalPriceComponent[va-court-cost-paid].code.text MS
 * recipient only Reference(DebtPortalBillPatient)
-* subject only Reference(DebtPortalBillPatient)
+* subject only Reference(Patient)
 * status from http://va.gov/fhir/ValueSet/VSVFARBillStatus
 * totalPriceComponent[va-orig-amt].type = #informational
 * totalPriceComponent[va-orig-amt].code.text = "Original Amount"
@@ -48,6 +48,7 @@ Source: DebtPortalBillInvoice
 * status -> "1843: terminologyMaps using VF_ARBillStatus on ACCOUNTS RECEIVABLE - CURRENT STATUS > ACCOUNTS RECEIVABLE TRANS.TYPE - NAME (430-8 > 430.3-.01)"
 * subject -> "1976: reference from ACCOUNTS RECEIVABLE - PATIENT > PATIENT (430-7 > 2-)"
 * date -> "1977: source value from ACCOUNTS RECEIVABLE - DATE BILL PREPARED (430-10)"
+* issuer -> "2007: source value from ACCOUNTS RECEIVABLE - SITE (430-12)"
 * totalPriceComponent[va-orig-amt].amount -> "1828: source value from ACCOUNTS RECEIVABLE - ORIGINAL AMOUNT (430-3)"
 * totalPriceComponent[va-orig-amt].type -> "1828-1: fixed value = #informational" "from mapParameter 1"
 * totalPriceComponent[va-orig-amt].code.text -> "1828-2: fixed value = Original Amount" "from mapParameter 2"
@@ -97,6 +98,7 @@ Source: DebtPortalBillInvoice
 * status -> "IB.AccountsReceivable.ARTransactionTypeIEN\nDim.ARTransactionType.ARTransactionType"
 * subject -> "IB.AccountsReceivable.PatientIEN,IB.AccountsReceivableComment.PatientIEN,IB.AccountsReceivableDescription.PatientIEN,IB.AccountsReceivableFiscalYear.PatientIEN,IB.AccountsReceivableRepayDate.PatientIEN,IB.AccountsReceivableTCSP.PatientIEN,IB.AccountsReceivableTCSP.PatientSID"
 * date -> "IB.AccountsReceivable.BillPreparedDateTime,IB.AccountsReceivableComment.BillPreparedDateTime,IB.AccountsReceivableDescription.BillPreparedDateTime,IB.AccountsReceivableFiscalYear.BillPreparedDateTime,IB.AccountsReceivableRepayDate.BillPreparedDateTime,IB.AccountsReceivableTCSP.BillPreparedDateTime"
+* issuer -> "IB.AccountsReceivable.InstitutionIEN"
 * totalPriceComponent[va-orig-amt].amount -> "IB.AccountsReceivable.OriginalBillAmount"
 * totalPriceComponent[va-curr-bal].amount -> "IB.AccountsReceivable.CurrentBalance"
 * totalPriceComponent[va-amend-amt].amount -> "IB.AccountsReceivable.BillAmendAmount"
@@ -110,3 +112,10 @@ Source: DebtPortalBillInvoice
 * totalPriceComponent[va-admin-cost-paid].amount -> "IB.AccountsReceivable.TotalAdministrativeCostPaid"
 * totalPriceComponent[va-marsh-fee-paid].amount -> "IB.AccountsReceivable.TotalMarshalFeePaid"
 * totalPriceComponent[va-court-cost-paid].amount -> "IB.AccountsReceivable.TotalCourtCostPaid"
+
+Mapping: vpr-to-DebtPortalBillInvoice
+Id: vpr
+Title: "Virtual Patient Record (VPR)"
+Source: DebtPortalBillInvoice
+* recipient -> "Dim.ARDebtor.InstitutionIEN\nDim.ARDebtor.InsuranceCompanyIEN\nDim.ARDebtor.PatientIEN\nDim.ARDebtor.StaffIEN\nDim.ARDebtor.VendorIEN"
+* status -> "Dim.ARTransactionType.ARTransactionType"

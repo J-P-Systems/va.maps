@@ -10,14 +10,14 @@ Description: "This StructureDefinition contains the maps for ADERS to Bundle"
 * entry contains va-patient 0..1 and va-vac1 0..1 and va-vac2 0..1 and va-vac3 0..1 and va-vac4 0..1 and va-pvac1 0..1 and va-pvac2 0..1 and va-pvac3 0..1 and va-pvac4 0..1 and va-ae 0..1
 * type and entry[va-patient].resource and entry[va-vac1].resource and entry[va-vac2].resource and entry[va-vac3].resource and entry[va-vac4].resource and entry[va-pvac1].resource and entry[va-pvac2].resource and entry[va-pvac3].resource and entry[va-pvac4].resource and entry[va-ae].resource MS
 * entry[va-patient].resource only VAERSPatient
-* entry[va-vac1].resource only VAERSImmunization-vac1
-* entry[va-vac2].resource only VAERSImmunization-vac2
-* entry[va-vac3].resource only VAERSImmunization-vac3
-* entry[va-vac4].resource only VAERSImmunization-vac4
-* entry[va-pvac1].resource only VAERSImmunization-pvac1
-* entry[va-pvac2].resource only VAERSImmunization-pvac2
-* entry[va-pvac3].resource only VAERSImmunization-pvac3
-* entry[va-pvac4].resource only VAERSImmunization-pvac4
+* entry[va-vac1].resource only VAERSImmunizationvac1
+* entry[va-vac2].resource only VAERSImmunizationvac2
+* entry[va-vac3].resource only VAERSImmunizationvac3
+* entry[va-vac4].resource only VAERSImmunizationvac4
+* entry[va-pvac1].resource only VAERSImmunizationpvac1
+* entry[va-pvac2].resource only VAERSImmunizationpvac2
+* entry[va-pvac3].resource only VAERSImmunizationpvac3
+* entry[va-pvac4].resource only VAERSImmunizationpvac4
 * entry[va-ae].resource only VAERSAdverseEvent
 * type = #transaction
 

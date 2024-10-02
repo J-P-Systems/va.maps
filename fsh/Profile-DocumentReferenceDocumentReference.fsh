@@ -77,4 +77,4 @@ Mapping: vpr-to-DocumentReferenceDocumentReference
 Id: vpr
 Title: "Virtual Patient Record (VPR)"
 Source: DocumentReferenceDocumentReference
-* content.attachment.title -> "#ERROR_#REF!"
+* context.facilityType -> "Dim.Location.LocationType\nDim.Location.LocationType"
