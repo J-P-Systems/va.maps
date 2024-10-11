@@ -5,6 +5,7 @@ Title: "Observation Imaging Result: Echo"
 Description: "This StructureDefinition contains the maps for VistA file ECHO (691) to us-core-observation-imaging"
 * ^status = #draft
 * identifier.value and identifier.system and status and subject and effectiveDateTime and issued and performer and valueString and interpretation and note and category MS
+* subject only Reference(Patient)
 * performer only Reference(Practitioner)
 * identifier.system = "http://va.gov/identifiers/$Sta3n/691"
 * status from http://va.gov/fhir/ValueSet/VSVFImageStatus

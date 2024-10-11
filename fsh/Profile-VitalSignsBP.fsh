@@ -12,6 +12,7 @@ Description: "This StructureDefinition contains the maps for VistA file GMRV VIT
 * extension contains http://hl7.org/fhir/StructureDefinition/observation-bodyPosition named observation-bodyPosition 0..1
 * component[systolic].valueQuantity.value and component[systolic].valueQuantity.code and component[systolic].code.coding.system and component[systolic].code.coding.code and component[diastolic].valueQuantity.value and component[diastolic].valueQuantity.code and component[diastolic].code.coding.system and component[diastolic].code.coding.code and issued and performer and status and effectiveDateTime and category and subject and identifier.value and identifier.system and code.coding and bodySite and extension[http://hl7.org/fhir/StructureDefinition/observation-deviceCode].valueCodeableConcept and method and component[va-pre-condition].valueCodeableConcept.coding and component[va-pre-condition].code and component[va-pre-condition-device].valueCodeableConcept.coding and component[va-pre-condition-device].code and extension[http://hl7.org/fhir/StructureDefinition/observation-bodyPosition].valueCodeableConcept and component[va-cuff-size].valueCodeableConcept.coding and component[va-cuff-size].code and valueQuantity.value and valueQuantity.code MS
 * performer only Reference(Organization)
+* subject only Reference(Patient)
 * category = http://terminology.hl7.org/CodeSystem/observation-category#vital-signs
 * identifier.system = "http://va.gov/identifiers/$Sta3n/120.5"
 * code.coding from http://va.gov/fhir/ValueSet/VSVFVitalsCodes

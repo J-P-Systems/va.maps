@@ -11,6 +11,7 @@ Description: "This StructureDefinition contains the maps for VistA file MICROBIO
 * note and status and component[va-component].code and component[va-component].code.coding.code and component[va-component].code.coding.system and component[va-component].valueString and component[va-component].interpretation and effectiveDateTime and performer and specimen and identifier.value and identifier.system and code.coding and code.coding.system and code.coding.code and code.coding.display and issued and category and subject MS
 * performer only Reference(Organization or Practitioner)
 * specimen only Reference(LabObservationMicrobiologySpecimen)
+* subject only Reference(Patient)
 * status from http://va.gov/fhir/ValueSet/VSVFLabObservationStatus
 * component[va-component].code.coding.system = "http://loinc.org"
 * component[va-component].interpretation from http://va.gov/fhir/ValueSet/VSVFAntibioticSensitivityInterpretation
@@ -55,9 +56,3 @@ Source: LabObservationMicrobiologyBacteriologyObservation
 * specimen -> "Micro.Microbiology.MicrobiologyAccession"
 * issued -> "Micro.Microbiology.ReportCompletedDateTime"
 * subject -> "Micro.AntibioticSensitivity.LRDFN,Micro.AntibioticSensitivityComment.LRDFN,Micro.BacteriologyReports.LRDFN,Micro.MicroAntibioticLevel.LRDFN,Micro.MicroAudit.LRDFN,Micro.Microbiology.LRDFN,Micro.MicroOrderedTest.LRDFN,Micro.MicroSterilityResults.LRDFN,Micro.MycobacteriologyReports.LRDFN,Micro.Mycology.LRDFN,Micro.MycologyReports.LRDFN,Micro.Parasitology.LRDFN,Micro.ParasitologyReports.LRDFN,Micro.ParasitologyStage.LRDFN,Micro.Virology.LRDFN,Micro.VirologyReports.LRDFN,Pathology.Autopsy.LRDFN,Pathology.CytoOrganTissueFunction.StaffIEN,SStaff.SMicroOrderedTest.LRDFN"
-
-Mapping: vpr-to-LabObservationMicrobiologyBacteriologyObservation
-Id: vpr
-Title: "Virtual Patient Record (VPR)"
-Source: LabObservationMicrobiologyBacteriologyObservation
-* subject -> "Micro.AntibioticSensitivity.LRDFN\nMicro.AntibioticSensitivityComment.LRDFN\nMicro.BacteriologyReports.LRDFN\nMicro.MicroAntibioticLevel.LRDFN\nMicro.MicroAudit.LRDFN\nMicro.Microbiology.LRDFN\nMicro.MicroOrderedTest.LRDFN\nMicro.MicroSterilityResults.LRDFN\nMicro.MycobacteriologyReports.LRDFN\nMicro.Mycology.LRDFN\nMicro.MycologyReports.LRDFN\nMicro.Parasitology.LRDFN\nMicro.ParasitologyReports.LRDFN\nMicro.ParasitologyStage.LRDFN\nMicro.Virology.LRDFN\nMicro.VirologyReports.LRDFN\nPathology.Autopsy.LRDFN\nPathology.CytoOrganTissueFunction.StaffIEN\nSStaff.SMicroOrderedTest.LRDFN"

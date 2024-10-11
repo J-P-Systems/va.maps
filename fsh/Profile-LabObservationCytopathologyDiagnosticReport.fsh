@@ -41,7 +41,7 @@ Source: LabObservationCytopathologyDiagnosticReport
 * performer[va-at] -> "1684: reference from CYTOPATHOLOGY - RELEASING SITE (63.09-.345)"
 * resultsInterpreter -> "1694: reference from CYTOPATHOLOGY - PATHOLOGIST/CYTOTECHNOLOGIST (63.09-.02)"
 * specimen -> "1692: reference from CYTOPATHOLOGY - CYTOPATH ACC # (63.09-.06)"
-* media.link -> "1440: reference from CYTOPATHOLOGY - IMAGE (63.09-2005)"
+* media.link -> "1440: reference from CYTOPATHOLOGY - IMAGE (63.09-2005)" "IMAGE"
 * conclusion -> "1448: source value from CYTOPATHOLOGY - CYTOPATHOLOGY DIAGNOSIS (63.09-1.4)" "Vista field is word processing so CodeableConcept cannot be used"
 * presentedForm.data -> "1719: source value from CYTOPATHOLOGY - TIU REFERENCE DATE/TIME - CY > TIU REFERENCE DATE/TIME - CY - TIU ENTRY POINTER - CY > TIU DOCUMENT - REPORT TEXT (63.09-.16 > 63.47-1 > 8925-2)" "HDR may be used to get the report"
 * category[LaboratorySlice] -> "1419: fixed value = http://terminology.hl7.org/CodeSystem/v2-0074#LAB"
@@ -72,11 +72,3 @@ Source: LabObservationCytopathologyDiagnosticReport
 * code.coding.display -> "Dim.LabChemTest.NationalVALabCodeIEN"
 * code.text -> "Dim.LabChemTest.LabChemTestName"
 * subject -> "Micro.AntibioticSensitivity.LRDFN,Micro.AntibioticSensitivityComment.LRDFN,Micro.BacteriologyReports.LRDFN,Micro.MicroAntibioticLevel.LRDFN,Micro.MicroAudit.LRDFN,Micro.Microbiology.LRDFN,Micro.MicroOrderedTest.LRDFN,Micro.MicroSterilityResults.LRDFN,Micro.MycobacteriologyReports.LRDFN,Micro.Mycology.LRDFN,Micro.MycologyReports.LRDFN,Micro.Parasitology.LRDFN,Micro.ParasitologyReports.LRDFN,Micro.ParasitologyStage.LRDFN,Micro.Virology.LRDFN,Micro.VirologyReports.LRDFN,Pathology.Autopsy.LRDFN,Pathology.CytoOrganTissueFunction.StaffIEN,SStaff.SMicroOrderedTest.LRDFN"
-
-Mapping: vpr-to-LabObservationCytopathologyDiagnosticReport
-Id: vpr
-Title: "Virtual Patient Record (VPR)"
-Source: LabObservationCytopathologyDiagnosticReport
-* basedOn -> "Pathology.CytoOrderedTest.CPRSOrderIEN\nPathology.CytoOrderedTest.CPRSOrderSID"
-* status -> "Pathology.CytoOrderedTest.DispositionLabCodeIEN\nPathology.CytoOrderedTest.DispositionLabCodeSID"
-* subject -> "Micro.AntibioticSensitivity.LRDFN\nMicro.AntibioticSensitivityComment.LRDFN\nMicro.BacteriologyReports.LRDFN\nMicro.MicroAntibioticLevel.LRDFN\nMicro.MicroAudit.LRDFN\nMicro.Microbiology.LRDFN\nMicro.MicroOrderedTest.LRDFN\nMicro.MicroSterilityResults.LRDFN\nMicro.MycobacteriologyReports.LRDFN\nMicro.Mycology.LRDFN\nMicro.MycologyReports.LRDFN\nMicro.Parasitology.LRDFN\nMicro.ParasitologyReports.LRDFN\nMicro.ParasitologyStage.LRDFN\nMicro.Virology.LRDFN\nMicro.VirologyReports.LRDFN\nPathology.Autopsy.LRDFN\nPathology.CytoOrganTissueFunction.StaffIEN\nSStaff.SMicroOrderedTest.LRDFN"

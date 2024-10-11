@@ -7,6 +7,7 @@ Description: "This StructureDefinition contains the maps for VistA file CHEM, HE
 * effectiveDateTime and note and performer and specimen and referenceRange.high and referenceRange.low and identifier.value and identifier.system and interpretation and code.coding and code.coding.system and code.coding.code and code.coding.display and issued and status and valueQuantity.value and valueQuantity.unit and category and subject MS
 * performer only Reference(Organization or Practitioner)
 * specimen only Reference(LabObservationChemhemtoxriaserSpecimen)
+* subject only Reference(Patient)
 * identifier.system = "http://va.gov/identifiers/$Sta3n/63.04"
 * interpretation from http://va.gov/fhir/ValueSet/VSVFLabInterpretation
 * code.coding.system = "http://loinc.org"
@@ -48,10 +49,3 @@ Source: LabObservationChemhemtoxriaserObservation
 * specimen -> "Chem.LabChem.ShortAccessionNumber,Chem.PatientLabChem.ShortAccessionNumber"
 * issued -> "Chem.LabChem.LabChemCompleteDateTime,Chem.LabPanel.LabChemCompleteDateTime,Chem.OrderedLabPanel.LabChemCompleteDateTime,Chem.PatientLabChem.LabChemCompleteDateTime"
 * subject -> "Micro.AntibioticSensitivity.LRDFN,Micro.AntibioticSensitivityComment.LRDFN,Micro.BacteriologyReports.LRDFN,Micro.MicroAntibioticLevel.LRDFN,Micro.MicroAudit.LRDFN,Micro.Microbiology.LRDFN,Micro.MicroOrderedTest.LRDFN,Micro.MicroSterilityResults.LRDFN,Micro.MycobacteriologyReports.LRDFN,Micro.Mycology.LRDFN,Micro.MycologyReports.LRDFN,Micro.Parasitology.LRDFN,Micro.ParasitologyReports.LRDFN,Micro.ParasitologyStage.LRDFN,Micro.Virology.LRDFN,Micro.VirologyReports.LRDFN,Pathology.Autopsy.LRDFN,Pathology.CytoOrganTissueFunction.StaffIEN,SStaff.SMicroOrderedTest.LRDFN"
-
-Mapping: vpr-to-LabObservationChemhemtoxriaserObservation
-Id: vpr
-Title: "Virtual Patient Record (VPR)"
-Source: LabObservationChemhemtoxriaserObservation
-* note -> "Chem.LabPanel.LabPanelComment"
-* subject -> "Micro.AntibioticSensitivity.LRDFN\nMicro.AntibioticSensitivityComment.LRDFN\nMicro.BacteriologyReports.LRDFN\nMicro.MicroAntibioticLevel.LRDFN\nMicro.MicroAudit.LRDFN\nMicro.Microbiology.LRDFN\nMicro.MicroOrderedTest.LRDFN\nMicro.MicroSterilityResults.LRDFN\nMicro.MycobacteriologyReports.LRDFN\nMicro.Mycology.LRDFN\nMicro.MycologyReports.LRDFN\nMicro.Parasitology.LRDFN\nMicro.ParasitologyReports.LRDFN\nMicro.ParasitologyStage.LRDFN\nMicro.Virology.LRDFN\nMicro.VirologyReports.LRDFN\nPathology.Autopsy.LRDFN\nPathology.CytoOrganTissueFunction.StaffIEN\nSStaff.SMicroOrderedTest.LRDFN"

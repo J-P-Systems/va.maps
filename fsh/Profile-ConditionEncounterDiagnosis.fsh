@@ -29,7 +29,7 @@ Source: ConditionEncounterDiagnosis
 * clinicalStatus -> "604: terminologyMaps using VF_encounterProblemStatus on V POV - MODIFIER (9000010.07-.06)"
 * verificationStatus -> "606: terminologyMaps using VF_encounterProblemVerificationStatus on V POV - MODIFIER (9000010.07-.06)"
 * abatementDateTime -> "1766: target not supported" "abatementDate is must support"
-* recorder -> "1833: reference from V POV - ENCOUNTER PROVIDER (9000010.07-1204)"
+* recorder -> "1833: reference from V POV - ENCOUNTER PROVIDER (9000010.07-1204)" "/Practitioner | Role"
 
 Mapping: cdw-to-ConditionEncounterDiagnosis
 Id: cdw
@@ -44,9 +44,3 @@ Source: ConditionEncounterDiagnosis
 * clinicalStatus -> "Outpat.VDiagnosis.Modifier,Outpat.WorkloadVDiagnosis.Modifier"
 * verificationStatus -> "Outpat.VDiagnosis.Modifier,Outpat.WorkloadVDiagnosis.Modifier"
 * recorder -> "Outpat.VDiagnosis.EncounterProviderIEN,Outpat.WorkloadVDiagnosis.EncounterProviderIEN"
-
-Mapping: vpr-to-ConditionEncounterDiagnosis
-Id: vpr
-Title: "Virtual Patient Record (VPR)"
-Source: ConditionEncounterDiagnosis
-* recordedDate -> "Immun.ImmunizationContraRefusalEvent.VisitDateTime\nOutpat.Visit.VisitDateTime\nOutpat.VisitLogic.VisitDateTime\nOutpat.Workload.VisitDateTime"

@@ -5,6 +5,7 @@ Title: "Lab Observation: Electron Microscopy Observation"
 Description: "This StructureDefinition contains the maps for VistA file PATIENT (2) to us-core-observation-lab"
 * ^status = #draft
 * category and subject MS
+* subject only Reference(Patient)
 * category = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
 
 Mapping: source-to-LabObservationElectronMicroscopyObservation
@@ -19,9 +20,3 @@ Id: cdw
 Title: "Clinical Data Warehouse (CDW)"
 Source: LabObservationElectronMicroscopyObservation
 * subject -> "Micro.AntibioticSensitivity.LRDFN,Micro.AntibioticSensitivityComment.LRDFN,Micro.BacteriologyReports.LRDFN,Micro.MicroAntibioticLevel.LRDFN,Micro.MicroAudit.LRDFN,Micro.Microbiology.LRDFN,Micro.MicroOrderedTest.LRDFN,Micro.MicroSterilityResults.LRDFN,Micro.MycobacteriologyReports.LRDFN,Micro.Mycology.LRDFN,Micro.MycologyReports.LRDFN,Micro.Parasitology.LRDFN,Micro.ParasitologyReports.LRDFN,Micro.ParasitologyStage.LRDFN,Micro.Virology.LRDFN,Micro.VirologyReports.LRDFN,Pathology.Autopsy.LRDFN,Pathology.CytoOrganTissueFunction.StaffIEN,SStaff.SMicroOrderedTest.LRDFN"
-
-Mapping: vpr-to-LabObservationElectronMicroscopyObservation
-Id: vpr
-Title: "Virtual Patient Record (VPR)"
-Source: LabObservationElectronMicroscopyObservation
-* subject -> "Micro.AntibioticSensitivity.LRDFN\nMicro.AntibioticSensitivityComment.LRDFN\nMicro.BacteriologyReports.LRDFN\nMicro.MicroAntibioticLevel.LRDFN\nMicro.MicroAudit.LRDFN\nMicro.Microbiology.LRDFN\nMicro.MicroOrderedTest.LRDFN\nMicro.MicroSterilityResults.LRDFN\nMicro.MycobacteriologyReports.LRDFN\nMicro.Mycology.LRDFN\nMicro.MycologyReports.LRDFN\nMicro.Parasitology.LRDFN\nMicro.ParasitologyReports.LRDFN\nMicro.ParasitologyStage.LRDFN\nMicro.Virology.LRDFN\nMicro.VirologyReports.LRDFN\nPathology.Autopsy.LRDFN\nPathology.CytoOrganTissueFunction.StaffIEN\nSStaff.SMicroOrderedTest.LRDFN"

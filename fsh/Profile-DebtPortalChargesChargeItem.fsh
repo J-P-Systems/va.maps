@@ -43,9 +43,3 @@ Source: DebtPortalChargesChargeItem
 * subject -> "IB.IBAction.PatientIEN"
 * occurrencePeriod.start -> "IB.IBAction.BillFromDateTime"
 * occurrencePeriod.end -> "IB.IBAction.BillToDateTime"
-
-Mapping: vpr-to-DebtPortalChargesChargeItem
-Id: vpr
-Title: "Virtual Patient Record (VPR)"
-Source: DebtPortalChargesChargeItem
-* code.text -> "Dim.IBActionType.AccountsReceivableCategory\nDim.IBActionType.ARCategoryIEN"

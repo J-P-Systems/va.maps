@@ -112,10 +112,3 @@ Source: DebtPortalBillInvoice
 * totalPriceComponent[va-admin-cost-paid].amount -> "IB.AccountsReceivable.TotalAdministrativeCostPaid"
 * totalPriceComponent[va-marsh-fee-paid].amount -> "IB.AccountsReceivable.TotalMarshalFeePaid"
 * totalPriceComponent[va-court-cost-paid].amount -> "IB.AccountsReceivable.TotalCourtCostPaid"
-
-Mapping: vpr-to-DebtPortalBillInvoice
-Id: vpr
-Title: "Virtual Patient Record (VPR)"
-Source: DebtPortalBillInvoice
-* recipient -> "Dim.ARDebtor.InstitutionIEN\nDim.ARDebtor.InsuranceCompanyIEN\nDim.ARDebtor.PatientIEN\nDim.ARDebtor.StaffIEN\nDim.ARDebtor.VendorIEN"
-* status -> "Dim.ARTransactionType.ARTransactionType"

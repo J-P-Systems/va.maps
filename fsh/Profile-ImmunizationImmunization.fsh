@@ -7,6 +7,8 @@ Description: "This StructureDefinition contains the maps for VistA file V IMMUNI
 * statusReason and vaccineCode and primarySource and status and vaccineCode.text and patient and occurrenceDateTime and lotNumber and manufacturer and vaccineCode.coding.code and vaccineCode.coding.system and doseQuantity.value and performer.actor and performer.function and note.text and protocolApplied.doseNumberString and doseQuantity and doseQuantity.unit and doseQuantity.code and recorded and reaction.detail and encounter and location MS
 * performer.actor only Reference(Practitioner)
 * reaction.detail only Reference(ImmunizationObservation)
+* encounter only Reference(EncounterOutpatient)
+* location only Reference(Location)
 * statusReason from http://va.gov/fhir/ValueSet/VSVFimmunizationStatusReason
 * vaccineCode from http://va.gov/fhir/ValueSet/VSVFinferredCVX
 * primarySource.extension contains http://hl7.org/fhir/StructureDefinition/11179-permitted-value-conceptmap named 11179-permitted-value-conceptmap 0..1
@@ -69,17 +71,3 @@ Source: ImmunizationImmunization
 * recorded -> "Immun.Immunization.RecordedDateTime"
 * encounter -> "Immun.Immunization.OutsideLocation,Immun.Immunization.VisitDateTime,Immun.Immunization.VisitIEN"
 * location -> "Immun.Immunization.OutsideLocation,Immun.Immunization.VisitDateTime,Immun.Immunization.VisitIEN\nOutpat.Visit.LocationIEN,Outpat.Workload.LocationIEN"
-
-Mapping: vpr-to-ImmunizationImmunization
-Id: vpr
-Title: "Virtual Patient Record (VPR)"
-Source: ImmunizationImmunization
-* statusReason -> "Dim.ImmunizationName.ImmunizationName\nDim.PharmacyOrderableItem.ImmunizationName"
-* vaccineCode -> "Dim.ImmunizationName.ImmunizationName\nDim.PharmacyOrderableItem.ImmunizationName"
-* status -> "Dim.ImmunizationName.CVXCode"
-* status -> "Dim.ImmunizationName.ImmunizationName\nDim.PharmacyOrderableItem.ImmunizationName"
-* vaccineCode -> "Dim.ImmunizationName.CVXCode"
-* lotNumber -> "Dim.ImmunizationLot.ImmunizationLot"
-* manufacturer -> "Dim.ImmunizationLot.ImmunizationManufacturerIEN\nDim.ImmunizationLot.ImmunizationManufacturerSID"
-* vaccineCode.coding.code -> "Dim.ImmunizationLot.NDCCodeVAText"
-* location -> "Outpat.Visit.LocationIEN\nOutpat.Workload.LocationIEN"

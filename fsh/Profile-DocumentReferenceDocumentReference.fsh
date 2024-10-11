@@ -5,6 +5,7 @@ Title: "Document Reference DocumentReference"
 Description: "This StructureDefinition contains the maps for VistA file TIU DOCUMENT (8925) to us-core-documentreference"
 * ^status = #draft
 * identifier and identifier.system and type and type.coding.system and type.coding.code and type.text and category[us-core] and subject and date and author and authenticator and custodian and description and content.attachment.id and content.attachment.contentType and content.attachment.data and content.attachment.size and content.attachment.hash and content.attachment.title and content.attachment.creation and context.encounter and context.event and context.period.start and context.period.end and context.facilityType and context.practiceSetting MS
+* context.encounter only Reference(EncounterOutpatient)
 * identifier.system = "http://va.gov/identifiers/$Sta3n/8925"
 * type.coding.system = "http://loinc.org"
 * category[us-core] = http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category#clinical-note
@@ -77,4 +78,4 @@ Mapping: vpr-to-DocumentReferenceDocumentReference
 Id: vpr
 Title: "Virtual Patient Record (VPR)"
 Source: DocumentReferenceDocumentReference
-* context.facilityType -> "Dim.Location.LocationType\nDim.Location.LocationType"
+* content.attachment.title -> "#ERROR_#REF!"

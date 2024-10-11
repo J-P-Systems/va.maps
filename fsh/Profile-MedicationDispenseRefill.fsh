@@ -5,6 +5,7 @@ Title: "MedicationDispense: Refill"
 Description: "This StructureDefinition contains the maps for VistA file PRESCRIPTION (52) to MedicationDispense"
 * ^status = #draft
 * type and destination.display and authorizingPrescription and daysSupply and dosageInstruction.doseAndRate.doseQuantity.unit and dosageInstruction.doseAndRate.doseQuantity.code and dosageInstruction.doseAndRate.doseQuantity.value and dosageInstruction.patientInstruction and dosageInstruction.text and medicationCodeableConcept.coding.code and medicationCodeableConcept.coding.system and medicationCodeableConcept.text and quantity.value and status and subject and whenPrepared and location and note.text and performer MS
+* subject only Reference(Patient)
 * type = #RF
 * dosageInstruction.doseAndRate.doseQuantity.code from http://va.gov/fhir/ValueSet/VSVFDoseUnits
 * medicationCodeableConcept.coding.system = "urn:oid:2.16.840.1.113883.6.233"
@@ -32,9 +33,9 @@ Source: MedicationDispenseRefill
 * status -> "1555: fixed value = #in-progress when PRESCRIPTION - RELEASED DATE/TIME (52-31) case null"
 * subject -> "1551: reference from PRESCRIPTION - PATIENT (52-2)"
 * whenPrepared -> "833: source value from PRESCRIPTION - REFILL > REFILL - RELEASED DATE/TIME (52-52 > 52.1-17)" "see original fill note"
-* location -> "1715: reference from PRESCRIPTION - REFILL > REFILL - DIVISION (52-52 > 52.1-8)" "not Clinic (written) but Division (filled)"
+* location -> "1715: reference from PRESCRIPTION - REFILL > REFILL - DIVISION (52-52 > 52.1-8)" "not Clinic (written) but Division (filled)\nwhat location of OUTPATIENT SITE #59 is the Location?"
 * note.text -> "1718: source value from PRESCRIPTION - REFILL > REFILL - REMARKS (52-52 > 52.1-3)"
-* performer -> "1729: reference from PRESCRIPTION - PARTIAL DATE > PARTIAL DATE - PHARMACIST NAME (52-60 > 52.2-.05)"
+* performer -> "1729: reference from PRESCRIPTION - PARTIAL DATE > PARTIAL DATE - PHARMACIST NAME (52-60 > 52.2-.05)" "/Practitioner | Role"
 
 Mapping: cdw-to-MedicationDispenseRefill
 Id: cdw
@@ -53,8 +54,10 @@ Mapping: vpr-to-MedicationDispenseRefill
 Id: vpr
 Title: "Virtual Patient Record (VPR)"
 Source: MedicationDispenseRefill
-* dosageInstruction.doseAndRate.doseQuantity.unit -> "RxOut.RxOutpatMedInstructions.Unit"
-* dosageInstruction.doseAndRate.doseQuantity.code -> "RxOut.RxOutpatMedInstructions.Unit"
-* dosageInstruction.doseAndRate.doseQuantity.value -> "RxOut.RxOutpatMedInstructions.DoseOrdered"
-* medicationCodeableConcept.coding.code -> "Dim.LocalDrug.DrugNameWithoutDoseIEN\nDim.LocalDrug.NationalDrugIEN\nDim.LocalDrug.NationalDrugIEN"
-* medicationCodeableConcept.text -> "Dim.LocalDrug.LocalDrugNameWithDose\nDim.LocalDrug.LocalDrugNameWithDose\nRxOut.RxOutpatFill.LocalDrugNameWithDose"
+* daysSupply -> "Pharmacy: daysSupply"
+* destination.display -> "Pharmacy: routing"
+* dosageInstruction.doseAndRate.doseQuantity.unit -> "Pharmacy: dose.units"
+* dosageInstruction.doseAndRate.doseQuantity.code -> "Pharmacy: dose.units"
+* dosageInstruction.doseAndRate.doseQuantity.value -> "Pharmacy: dose.dose"
+* dosageInstruction.text -> "Pharmacy: sig"
+* quantity.value -> "Pharmacy: quantity"

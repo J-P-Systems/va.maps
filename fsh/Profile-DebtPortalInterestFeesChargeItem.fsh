@@ -37,9 +37,3 @@ Source: DebtPortalInterestFeesChargeItem
 * identifier[va-bn].value -> "IB.ARTransaction.AccountsReceivableIEN,IB.ARTransaction.PatientIEN,IB.ARTransactionComment.PatientIEN,IB.ARTransactionDescription.PatientIEN,IB.ARTransactionFiscalYear.PatientIEN"
 * occurrenceDateTime -> "IB.ARTransaction.TransactionDateTime,IB.ARTransactionComment.TransactionDateTime,IB.ARTransactionDescription.TransactionDateTime,IB.ARTransactionFiscalYear.TransactionDateTime"
 * enteredDate -> "IB.ARTransaction.EnteredDateTime"
-
-Mapping: vpr-to-DebtPortalInterestFeesChargeItem
-Id: vpr
-Title: "Virtual Patient Record (VPR)"
-Source: DebtPortalInterestFeesChargeItem
-* code.text -> "Dim.ARTransactionType.ARTransactionType"

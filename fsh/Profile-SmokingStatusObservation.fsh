@@ -5,6 +5,8 @@ Title: "Smoking Status Observation"
 Description: "This StructureDefinition contains the maps for VistA file V HEALTH FACTORS (9000010.23) to us-core-smokingstatus"
 * ^status = #draft
 * identifier.value and identifier.system and status and category[SocialHistory] and code and subject and encounter and effectiveDateTime and performer and valueCodeableConcept and valueCodeableConcept.text and note.text MS
+* subject only Reference(Patient)
+* encounter only Reference(EncounterOutpatient)
 * performer only Reference(Practitioner)
 * identifier.system = "http://va.gov/identifiers/$Sta3n/9000010.23"
 * status = #final
@@ -39,10 +41,3 @@ Source: SmokingStatusObservation
 * performer -> "HF.HealthFactor.EncounterStaffIEN"
 * valueCodeableConcept -> "HF.HealthFactor.HealthFactorTypeIEN\nDim.HealthFactorType.HealthFactorCategory,Dim.HealthFactorType.HealthFactorType"
 * note.text -> "HF.HealthFactor.Comments"
-
-Mapping: vpr-to-SmokingStatusObservation
-Id: vpr
-Title: "Virtual Patient Record (VPR)"
-Source: SmokingStatusObservation
-* code -> "Dim.HealthFactorType.CategoryHealthFactorTypeIEN"
-* valueCodeableConcept -> "Dim.HealthFactorType.HealthFactorCategory\nDim.HealthFactorType.HealthFactorType"

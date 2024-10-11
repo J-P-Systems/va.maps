@@ -1271,13 +1271,6 @@ Description: "This StructureDefinition contains the Logical Model for the mapped
 Characteristics: #can-be-target
 * code 0..1 Element "CODE (-.01)"
 
-Logical: TiuDocument89259
-Id: TiuDocument89259
-Title: "TIU DOCUMENT (8925.9)"
-Description: "This StructureDefinition contains the Logical Model for the mapped parts of the source TIU DOCUMENT (8925.9)"
-Characteristics: #can-be-target
-* problem 0..1 Element "PROBLEM (-.02)"
-
 Logical: NonvaMeds5505
 Id: NonvaMeds5505
 Title: "NON-VA MEDS (55.05)"

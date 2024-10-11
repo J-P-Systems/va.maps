@@ -101,8 +101,11 @@ Mapping: vpr-to-Appointment
 Id: vpr
 Title: "Virtual Patient Record (VPR)"
 Source: Appointment
-* serviceCategory[va-service].coding.code -> "Dim.Location.MedicalService\nDim.Location.MedicalService"
-* serviceType[va-stop-code].coding.code -> "Dim.Location.PrimaryStopCodeIEN"
-* serviceType[va-credit-stop-code].coding.code -> "Dim.Location.SecondaryStopCodeIEN"
-* appointmentType.text -> "Dim.AppointmentType.AppointmentType"
-* end -> "Outpat.Visit.COProcessCompleteDateTime\nOutpat.Workload.COProcessCompleteDateTime"
+* status -> "appointment.apptStatus\nappointment.patientClass"
+* status -> "appointment.apptStatus\nappointment.patientClass"
+* status -> "appointment.apptStatus\nappointment.patientClass"
+* status -> "appointment.apptStatus\nappointment.patientClass"
+* serviceCategory[va-service].coding.code -> "appointment.service"
+* serviceType[va-stop-code].coding.code -> "appointment.clinStop"
+* appointmentType.text -> "appointment.type"
+* start -> "appointment.dateTime"

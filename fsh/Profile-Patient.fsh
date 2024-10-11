@@ -12,9 +12,6 @@ Description: "This StructureDefinition contains the maps for VistA file PATIENT 
 * telecom ^slicing.discriminator.path = "$this"
 * telecom ^slicing.rules = #open
 * telecom contains va-home 0..1 and va-work 0..1 and va-mobile 0..1
-* extension contains http://hl7.org/fhir/us/core/StructureDefinition/us-core-genderIdentity named us-core-genderIdentity 0..1
-* extension contains http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity named us-core-ethnicity 0..1
-* extension contains http://hl7.org/fhir/us/core/StructureDefinition/us-core-race named us-core-race 0..1
 * extension contains http://hl7.org/fhir/StructureDefinition/patient-religion named patient-religion 0..1
 * identifier.value and identifier.system and identifier.type.coding.code and identifier.type.coding.system and name.text and name.family and name.given and name.suffix and telecom[va-home].value and telecom[va-home].system and telecom[va-home].use and telecom[va-work].value and telecom[va-work].system and telecom[va-work].use and telecom[va-mobile].value and telecom[va-mobile].system and telecom[va-mobile].use and birthDate and deceasedDateTime and address[va-home].line and address[va-home].use and address[va-home].type and address[va-home].city and address[va-home].state and address[va-home].postalCode and address[va-home].country and address[va-home].period.start and address[va-home].period.end and communication.language and managingOrganization.display and gender and extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-genderIdentity].valueCodeableConcept and extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity].extension[ombCategory].valueCoding.code and extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-race].extension[ombCategory].valueCoding.code and maritalStatus and extension[http://hl7.org/fhir/StructureDefinition/patient-religion].valueCodeableConcept MS
 * identifier.system = "urn:oid:2.16.840.1.113883.4.349"
@@ -105,4 +102,4 @@ Mapping: vpr-to-Patient
 Id: vpr
 Title: "Virtual Patient Record (VPR)"
 Source: Patient
-* communication.language -> "Patient.PreferredLanguage.PreferredLanguage"
+* identifier.value -> "GET PATIENT DATA-reaction.mechanism"

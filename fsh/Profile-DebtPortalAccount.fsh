@@ -25,9 +25,3 @@ Source: DebtPortalAccount
 * identifier -> "IB.AccountsReceivable.PatientIEN,IB.AccountsReceivableComment.PatientIEN,IB.AccountsReceivableDescription.PatientIEN,IB.AccountsReceivableFiscalYear.PatientIEN,IB.AccountsReceivableRepayDate.PatientIEN,IB.AccountsReceivableTCSP.PatientIEN,IB.AccountsReceivableTCSP.PatientSID"
 * subject -> "IB.AccountsReceivable.PatientIEN,IB.AccountsReceivableComment.PatientIEN,IB.AccountsReceivableDescription.PatientIEN,IB.AccountsReceivableFiscalYear.PatientIEN,IB.AccountsReceivableRepayDate.PatientIEN,IB.AccountsReceivableTCSP.PatientIEN,IB.AccountsReceivableTCSP.PatientSID"
 * extension[http://va.gov/fhir/StructureDefinition/account-statementGeneratedDay].valueInteger -> "IB.AccountsReceivable.ARDebtorIEN\nDim.ARDebtor.StatementGeneratedDay"
-
-Mapping: vpr-to-DebtPortalAccount
-Id: vpr
-Title: "Virtual Patient Record (VPR)"
-Source: DebtPortalAccount
-* extension[http://va.gov/fhir/StructureDefinition/account-statementGeneratedDay].valueInteger -> "Dim.ARDebtor.StatementGeneratedDay"

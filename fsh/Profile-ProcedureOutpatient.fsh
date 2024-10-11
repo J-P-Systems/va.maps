@@ -5,6 +5,8 @@ Title: "Procedure: Outpatient"
 Description: "This StructureDefinition contains the maps for VistA file V CPT (9000010.18) to us-core-procedure"
 * ^status = #draft
 * subject and encounter and code.text and reasonCode and reasonCode.coding.system and reasonCode.coding.code and performedDateTime and performer.actor and note.text and category and code.coding and code.coding.code and code.coding.display and code.coding.system and status MS
+* subject only Reference(Patient)
+* encounter only Reference(EncounterOutpatient)
 * reasonCode.coding.system = "urn:see-termmap-in-mapParameter"
 * reasonCode.coding.system = "urn:see-termmap-in-mapParameter"
 * reasonCode.coding.system = "urn:see-termmap-in-mapParameter"
@@ -49,7 +51,7 @@ Source: ProcedureOutpatient
 * reasonCode.coding.system -> "1309-1: fixed value = urn:see-termmap-in-mapParameter" "from mapParameter 1"
 * reasonCode.coding.code -> "1309-2: source value from V CPT - DIAGNOSIS 8 > ICD DIAGNOSIS - CODE NUMBER (9000010.18-.15 > 80-.01)" "from mapParameter 2"
 * performedDateTime -> "1310: source value from V CPT - EVENT DATE AND TIME (9000010.18-1201)"
-* performer.actor -> "1311: reference from V CPT - ENCOUNTER PROVIDER (9000010.18-1204)"
+* performer.actor -> "1311: reference from V CPT - ENCOUNTER PROVIDER (9000010.18-1204)" "/Practitioner or PractitionerRole (breaks plantuml)"
 * note.text -> "1312: source value from V CPT - COMMENTS (9000010.18-81101)"
 * category -> "1314: fixed value = http://snomed.info/sct#371883000 Outpatient procedure (procedure)"
 * code.coding -> "1413: source value from V CPT - CPT > CPT (9000010.18-.01 > 81-)"
@@ -80,9 +82,3 @@ Source: ProcedureOutpatient
 * code.coding -> "Outpat.VProcedure.CPTIEN,Outpat.VProcedureCPTModifier.CPTIEN,Outpat.VProcedureDiagnosis.CPTIEN,Outpat.WorkloadVProcedure.CPTIEN,Outpat.WorkloadVProcedureCPTModifier.CPTIEN,Outpat.WorkloadVProcedureDiagnosis.CPTIEN"
 * code.coding.code -> "Outpat.VProcedure.CPTIEN,Outpat.VProcedureCPTModifier.CPTIEN,Outpat.VProcedureDiagnosis.CPTIEN,Outpat.WorkloadVProcedure.CPTIEN,Outpat.WorkloadVProcedureCPTModifier.CPTIEN,Outpat.WorkloadVProcedureDiagnosis.CPTIEN\nDim.CPT.CPTCode,Dim.CPT.CPTCode"
 * code.coding.display -> "Outpat.VProcedure.CPTIEN,Outpat.VProcedureCPTModifier.CPTIEN,Outpat.VProcedureDiagnosis.CPTIEN,Outpat.WorkloadVProcedure.CPTIEN,Outpat.WorkloadVProcedureCPTModifier.CPTIEN,Outpat.WorkloadVProcedureDiagnosis.CPTIEN\nDim.CPT.CPTName,Dim.CPT.CPTName"
-
-Mapping: vpr-to-ProcedureOutpatient
-Id: vpr
-Title: "Virtual Patient Record (VPR)"
-Source: ProcedureOutpatient
-* code.text -> "Dim.ProviderNarrative.ProviderNarrative"

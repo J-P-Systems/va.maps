@@ -6,6 +6,7 @@ Description: "This StructureDefinition contains the maps for VistA file PROSTHES
 * ^status = #draft
 * identifier.value and identifier.system and manufacturer and expirationDate and lotNumber and serialNumber and deviceName.name and deviceName.type and modelNumber and type and patient and owner MS
 * patient only Reference(Patient)
+* owner only Reference(Organization)
 * identifier.system = "http://va.gov/identifiers/$Sta3n/131.01"
 * deviceName.type = #model-name
 * type = http://snomed.info/sct#63653004 "Biomedical device"
@@ -48,9 +49,3 @@ Source: ImplantableDeviceProsthesis
 * modelNumber -> "SPatient.ImplantedProsthesis.ProsthesisModel"
 * patient -> "SPatient.ImplantedProsthesis.PatientIEN,SPatient.OperationsIndication.PatientIEN,Surg.AnesthesiaAgent.PatientIEN,Surg.AnesthesiaBlockSite.PatientIEN,Surg.AnesthesiaTechnique.PatientIEN,Surg.AnesthesiaTestDose.PatientIEN,Surg.ReferringPhysician.PatientIEN,Surg.ReferringPhysician.PatientSID,Surg.ReplacementFluidType.PatientIEN,Surg.ReplacementFluidType.PatientSID,Surg.SurgeryAssistant.PatientIEN,Surg.SurgeryAssistantOther.PatientIEN,Surg.SurgeryDelay.PatientIEN,Surg.SurgeryINTRA.PatientIEN,Surg.SurgeryIrrigation.PatientIEN,Surg.SurgeryIrrigation.PatientSID,Surg.SurgeryMedication.PatientIEN,Surg.SurgeryOccurrenceNonOp.PatientIEN,Surg.SurgeryOccurrenceNonOp.PatientSID,Surg.SurgeryOtherPostOpDiagnosis.PatientIEN,Surg.SurgeryOtherProcedure.PatientIEN,Surg.SurgeryOtherProcedureCPTModifier.PatientIEN,Surg.SurgeryOtherProcedureCPTModifier.PatientSID,Surg.SurgeryOtherProcedureDiagnosis.PatientIEN,Surg.SurgeryPOST.PatientIEN,Surg.SurgeryPostOpDiagnosis.PatientIEN,Surg.SurgeryPreOpDiagnosis.PatientIEN,Surg.SurgeryPreOpDiagnosis.PatientSID,Surg.SurgeryPrincipalAssociatedDiagnosis.PatientIEN,Surg.SurgeryPrincipalAssociatedProcedure.PatientIEN,Surg.SurgeryPrincipalCPTModifier.PatientIEN,Surg.SurgeryPrincipalDiagnosis.PatientIEN,Surg.SurgeryProcedureCPTModifier.PatientIEN,Surg.SurgeryProcedureDiagnosisCode.PatientIEN,Surg.SurgeryProcedureOccurrence.PatientIEN,Surg.SurgeryProcedureOccurrence.PatientSID,Surg.SurgeryRequiredBloodProducts.PatientIEN,Surg.SurgeryReturnCase.PatientIEN,Surg.SurgORCircSupport.PatientIEN,Surg.SurgORCircSupportTime.PatientIEN,Surg.SurgORCircSupportTime.PatientSID,Surg.SurgORScrubSupport.PatientIEN,Surg.SurgORScrubSupportTime.PatientIEN,Surg.SurgORScrubSupportTime.PatientSID"
 * owner -> "Surg.SurgeryINTRA.InstitutionIEN,Surg.SurgeryPOST.InstitutionIEN"
-
-Mapping: vpr-to-ImplantableDeviceProsthesis
-Id: vpr
-Title: "Virtual Patient Record (VPR)"
-Source: ImplantableDeviceProsthesis
-* deviceName.name -> "Dim.Prosthesis.ProsthesisName"

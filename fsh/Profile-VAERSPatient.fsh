@@ -5,9 +5,6 @@ Title: "VAERS Patient"
 Description: "This StructureDefinition contains the maps for ADERS to us-core-patient"
 * ^status = #draft
 * extension contains http://va.gov/fhir/StructureDefinition/patient-ageAtVaccination named patient-ageAtVaccination 0..1
-* extension contains http://hl7.org/fhir/us/core/StructureDefinition/us-core-race named us-core-race 0..1
-* extension contains http://hl7.org/fhir/us/core/StructureDefinition/us-core-race named us-core-race 0..1
-* extension contains http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity named us-core-ethnicity 0..1
 * identifier and identifier.system and identifier.type.coding.code and identifier.type.coding.system and birthDate and gender and extension[http://va.gov/fhir/StructureDefinition/patient-ageAtVaccination].valueString and deceasedBoolean and deceasedDateTime and extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-race].extension[ombCategory] and extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-race].extension[ombCategory].valueCoding and extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity].extension[ombCategory].valueCoding MS
 * identifier.system = "urn:oid:2.16.840.1.113883.4.349"
 * identifier.type.coding.code = #MR

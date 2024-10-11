@@ -5,12 +5,12 @@ Title: "MedicationRequest: Outpatient"
 Description: "This StructureDefinition contains the maps for VistA file PRESCRIPTION (52) to us-core-medicationrequest"
 * ^status = #draft
 * extension contains http://va.gov/fhir/StructureDefinition/medicationrequest-pharmacyOrderStatus named medicationrequest-pharmacyOrderStatus 0..1
-* extension contains http://va.gov/fhir/StructureDefinition/medicationrequest-pharmacyOrderStatus named medicationrequest-pharmacyOrderStatus 0..1
 * extension contains http://va.gov/fhir/StructureDefinition/medicationrequest-cancelDate named medicationrequest-cancelDate 0..1
 * dosageInstruction.doseAndRate.extension contains http://hl7.org/fhir/StructureDefinition/originalText named originalText 0..1
 * extension contains http://va.gov/fhir/StructureDefinition/medicationrequest-includeIndicationInSig named medicationrequest-includeIndicationInSig 0..1
 * extension contains http://va.gov/fhir/StructureDefinition/medicationrequest-remainingRefillCount named medicationrequest-remainingRefillCount 0..1
 * id and status and extension[http://va.gov/fhir/StructureDefinition/medicationrequest-pharmacyOrderStatus].valueCoding.code and extension[http://va.gov/fhir/StructureDefinition/medicationrequest-pharmacyOrderStatus].valueCoding.system and intent and medicationCodeableConcept.text and medicationCodeableConcept.coding.code and medicationCodeableConcept.coding.system and subject and authoredOn and requester and dosageInstruction.text and dosageInstruction.patientInstruction and dosageInstruction.doseAndRate.doseQuantity.value and dosageInstruction.doseAndRate.doseQuantity.unit and dispenseRequest.validityPeriod.end and extension[http://va.gov/fhir/StructureDefinition/medicationrequest-cancelDate].valueDateTime and dispenseRequest.numberOfRepeatsAllowed and dispenseRequest.quantity.value and dispenseRequest.expectedSupplyDuration and dosageInstruction.doseAndRate.extension[http://hl7.org/fhir/StructureDefinition/originalText].valueString and identifier and dosageInstruction.route.coding.code and dosageInstruction.route.coding.system and category and reasonCode.text and extension[http://va.gov/fhir/StructureDefinition/medicationrequest-includeIndicationInSig].valueBoolean and extension[http://va.gov/fhir/StructureDefinition/medicationrequest-remainingRefillCount].valueInteger MS
+* subject only Reference(Patient)
 * requester only Reference(Practitioner)
 * status from http://va.gov/fhir/ValueSet/VSVFOutMedRequestStatus
 * extension[http://va.gov/fhir/StructureDefinition/medicationrequest-pharmacyOrderStatus].valueCoding.system = "http://va.gov/terminology/vistaDefinedTerms/52-100"
@@ -82,7 +82,5 @@ Mapping: vpr-to-MedicationRequestOutpatient
 Id: vpr
 Title: "Virtual Patient Record (VPR)"
 Source: MedicationRequestOutpatient
-* dosageInstruction.doseAndRate.doseQuantity.value -> "RxOut.RxOutpatMedInstructions.DoseOrdered"
-* dosageInstruction.doseAndRate.doseQuantity.unit -> "RxOut.RxOutpatMedInstructions.Unit"
-* dosageInstruction.doseAndRate.extension[http://hl7.org/fhir/StructureDefinition/originalText].valueString -> "RxOut.RxOutpatMedInstructions.DoseOrdered"
-* dosageInstruction.route.coding.code -> "RxOut.RxOutpatMedInstructions.MedRoute"
+* dispenseRequest.quantity.value -> "Pharmacy: quantity"
+* dispenseRequest.expectedSupplyDuration -> "Pharmacy: daysSupply"

@@ -59,7 +59,7 @@ Source: PractitionerRole
 * specialty.coding.code -> "419: source value from NEW PERSON - PERSON CLASS > PERSON CLASS - Person Class > PERSON CLASS - X12 CODE (200-8932.1 > 200.05-.01 > 8932.1-6)" "Added paths"
 * specialty.coding.system -> "419-1: fixed value = http://nucc.org/provider-taxonomy" "from mapParameter 1"
 * specialty.coding.display -> "419-2: undefined" "from mapParameter 2"
-* location -> "422: reference from HOSPITAL LOCATION - PROVIDER (44.1-.01)" "This is a reverse pointer. Location 44 contains 44.1, pointing at providers"
+* location -> "422: reference from HOSPITAL LOCATION - PROVIDER (44.1-.01)" "This is a reverse pointer. Location 44 contains 44.1, pointing at providers\nNEW PERSON #200"
 * code.coding.code -> "1408: source value from NEW PERSON - PERSON CLASS > PERSON CLASS - Person Class > PERSON CLASS - X12 CODE (200-8932.1 > 200.05-.01 > 8932.1-6)"
 * code.coding.system -> "1408-1: fixed value = http://nucc.org/provider-taxonomy" "from mapParameter 1"
 * code.coding.display -> "1408-2: source value from NEW PERSON - PERSON CLASS > PERSON CLASS - Person Class > PERSON CLASS - CLASSIFICATION (200-8932.1 > 200.05-.01 > 8932.1-1)" "from mapParameter 2"
@@ -85,12 +85,3 @@ Source: PractitionerRole
 * extension[http://hl7.org/fhir/StructureDefinition/practitioner-job-title].valueCodeableConcept.text -> "SStaff.SStaff.SignatureBlockTitle"
 * extension[http://hl7.org/fhir/StructureDefinition/practitioner-job-title].valueCodeableConcept.text -> "SStaff.SStaff.PositionTitle,Staff.Staff.PositionTitle"
 * location -> "Dim.LocationProvider.StaffIEN"
-
-Mapping: vpr-to-PractitionerRole
-Id: vpr
-Title: "Virtual Patient Record (VPR)"
-Source: PractitionerRole
-* active -> "StaffSub.ProviderTypeAssignment.ExpirationDateTime"
-* active -> "StaffSub.ProviderTypeAssignment.ExpirationDateTime"
-* period.start -> "StaffSub.ProviderTypeAssignment.EffectiveDateTime"
-* period.end -> "StaffSub.ProviderTypeAssignment.ExpirationDateTime"

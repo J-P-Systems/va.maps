@@ -6,6 +6,7 @@ Description: "This StructureDefinition contains the maps for VistA file RAD/NUC 
 * ^status = #draft
 * identifier.value and identifier.system and partOf and status and subject and effectiveDateTime and issued and performer and valueString and category MS
 * partOf only Reference(ProcedureSurgery)
+* subject only Reference(Patient)
 * identifier.system = "http://va.gov/identifiers/$Sta3n/74"
 * status from http://va.gov/fhir/ValueSet/VSVFImageStatusRadNuc
 * category = http://terminology.hl7.org/CodeSystem/observation-category#imaging

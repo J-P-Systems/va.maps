@@ -58,13 +58,3 @@ Source: Location
 * address.country -> "Dim.Location.InstitutionIEN"
 * address.type -> "Dim.Location.InstitutionIEN"
 * type.text -> "Dim.Location.MedicalService,Dim.Location.MedicalService"
-
-Mapping: vpr-to-Location
-Id: vpr
-Title: "Virtual Patient Record (VPR)"
-Source: Location
-* address.district -> "Dim.Institution.MedicalDistrict\nDim.Institution.MedicalDistrict\nNDim.MVIInstitution.MedicalDistrict"
-* address.line -> "Dim.Institution.StreetAddress1\nDim.Institution.StreetAddress1\nDim.InstitutionTimeZone.StreetAddress1\nNDim.MVIInstitution.StreetAddress1"
-* address.line -> "Dim.Institution.StreetAddress2\nDim.Institution.StreetAddress2\nDim.InstitutionTimeZone.StreetAddress2\nNDim.MVIInstitution.StreetAddress2"
-* address.city -> "Dim.Institution.City\nDim.Institution.City\nDim.InstitutionTimeZone.City\nNDim.MVIInstitution.City"
-* address.postalCode -> "Dim.Institution.Zip\nDim.Institution.Zip\nDim.InstitutionTimeZone.Zip\nNDim.MVIInstitution.Zip"

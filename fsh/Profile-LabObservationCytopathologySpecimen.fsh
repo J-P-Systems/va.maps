@@ -19,9 +19,3 @@ Title: "Clinical Data Warehouse (CDW)"
 Source: LabObservationCytopathologySpecimen
 * accessionIdentifier -> "Pathology.Cytopathology.CytopathAccessionNumber"
 * type.text -> "Pathology.CytoSpecimen.CytopathologySpecimen"
-
-Mapping: vpr-to-LabObservationCytopathologySpecimen
-Id: vpr
-Title: "Virtual Patient Record (VPR)"
-Source: LabObservationCytopathologySpecimen
-* type.text -> "Pathology.CytoSpecimen.CytopathologySpecimen"

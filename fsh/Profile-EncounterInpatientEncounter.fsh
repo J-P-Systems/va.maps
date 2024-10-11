@@ -13,6 +13,8 @@ Description: "This StructureDefinition contains the maps for VistA file PTF (45)
 * reasonCode ^slicing.rules = #open
 * reasonCode contains va-principle 0..1 and va-secondary 0..1 and va-procedure 0..1
 * identifier[va-IEN].value and identifier[va-IEN].system and identifier[va-IEN].type.text and class and identifier[va-IA].value and identifier[va-IA].system and identifier[va-IA].type.text and status and subject and participant.individual and participant.type.coding and period.start and period.end and reasonCode[va-principle].coding.code and reasonCode[va-principle].coding.system and diagnosis.condition and diagnosis.rank and reasonCode[va-secondary].coding.code and reasonCode[va-secondary].coding.system and reasonCode[va-procedure].coding.code and reasonCode[va-procedure].coding.system and hospitalization.admitSource.coding.code and hospitalization.admitSource.coding.system and hospitalization.admitSource.coding and hospitalization.origin.display and hospitalization.destination.display and hospitalization.dischargeDisposition.coding.code and hospitalization.dischargeDisposition.coding.system and location.location and serviceProvider and type and type.coding.system and type.coding.code and type.coding.display and type.text MS
+* subject only Reference(Patient)
+* participant.individual only Reference(Practitioner)
 * diagnosis.condition only Reference(EncounterInpatientCondition)
 * serviceProvider only Reference(Organization)
 * identifier[va-IEN].system = "http://va.gov/identifiers/$Sta3n/45"
@@ -64,8 +66,8 @@ Source: EncounterInpatientEncounter
 * hospitalization.destination.display -> "455: source value from PTF - RECEIVING FACILITY (45-76.1)"
 * hospitalization.dischargeDisposition.coding.code -> "456: source value from PTF - PLACE OF DISPOSITION (45-75)"
 * hospitalization.dischargeDisposition.coding.system -> "456-1: fixed value = http://va.gov/terminology/vistaDefinedTerms/45.6" "from mapParameter 1"
-* location.location -> "460: reference from PTF - WARD AT DISCHARGE (45-2.2)"
-* location.location -> "461: reference from PTF - FACILITY (45-3)" "This is the Sta3n"
+* location.location -> "460: reference from PTF - WARD AT DISCHARGE (45-2.2)" "computed?"
+* location.location -> "461: reference from PTF - FACILITY (45-3)" "This is the Sta3n\nhow to get from facility number to Location?"
 * serviceProvider -> "1600: reference from PTF - FACILITY (45-3)"
 * type -> "1616: source value from INPATIENT CPT CODE - CPT CODE > CPT (46-.01 > 81-)"
 * type.coding.system -> "1616-1: fixed value = http://www.ama-assn.org/go/cpt" "from mapParameter 1"
@@ -99,12 +101,3 @@ Source: EncounterInpatientEncounter
 * type.coding.code -> "Inpat.InpatientCPTProcedure.CPTIEN\nDim.CPT.CPTCode,Dim.CPT.CPTCode"
 * type.coding.display -> "Inpat.InpatientCPTProcedure.CPTIEN\nDim.CPT.CPTName,Dim.CPT.CPTName"
 * type.text -> "Inpat.InpatientCPTProcedure.CPTIEN\nDim.CPT.CPTName,Dim.CPT.CPTName"
-
-Mapping: vpr-to-EncounterInpatientEncounter
-Id: vpr
-Title: "Virtual Patient Record (VPR)"
-Source: EncounterInpatientEncounter
-* reasonCode[va-secondary].coding.code -> "Dim.ICD10.ICD10Code\nDim.ICD9.ICD9Code"
-* reasonCode[va-procedure].coding.code -> "Dim.ICD10Procedure.ICD10ProcedureCode\nDim.ICD9Procedure.ICD9ProcedureCode"
-* hospitalization.admitSource.coding.code -> "Dim.AdmitSource.AdmitSourceCode"
-* hospitalization.admitSource.coding -> "Dim.AdmitSource.AdmitSourceCode"
