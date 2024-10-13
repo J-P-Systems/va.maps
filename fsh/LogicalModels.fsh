@@ -880,9 +880,9 @@ Characteristics: #can-be-target
 * sputumScreen 0..1 Element "SPUTUM SCREEN (-11.58)"
 * gramStain 0..1 Reference "GRAM STAIN (-11.6)"
 * parasiteRptRemark 0..1 Reference "PARASITE RPT REMARK (-17)"
-* parasite 0..1 Reference "PARASITE (-16)"
 * parasiteRptStatus 0..1 Coding "PARASITE RPT STATUS (-15)"
 * parasiteRptStatus from http://va.gov/fhir/ValueSet/VSVFLabObservationStatus-vista (preferred)
+* parasite 0..1 Reference "PARASITE (-16)"
 * mycologyRptRemark 0..1 Reference "MYCOLOGY RPT REMARK (-21)"
 * fungusyeast 0..1 Reference "FUNGUS/YEAST (-20)"
 * mycologyRptStatus 0..1 Coding "MYCOLOGY RPT STATUS (-19)"

@@ -63,6 +63,7 @@ Source: PractitionerRole
 * code.coding.code -> "1408: source value from NEW PERSON - PERSON CLASS > PERSON CLASS - Person Class > PERSON CLASS - X12 CODE (200-8932.1 > 200.05-.01 > 8932.1-6)"
 * code.coding.system -> "1408-1: fixed value = http://nucc.org/provider-taxonomy" "from mapParameter 1"
 * code.coding.display -> "1408-2: source value from NEW PERSON - PERSON CLASS > PERSON CLASS - Person Class > PERSON CLASS - CLASSIFICATION (200-8932.1 > 200.05-.01 > 8932.1-1)" "from mapParameter 2"
+* endpoint -> "2013: target not supported" "See key 1410"
 * organization -> "1411: reference from NEW PERSON - DIVISION (200-16)" "Issue: VistA may have more than one record. Instantiate multiple Role resources."
 
 Mapping: cdw-to-PractitionerRole

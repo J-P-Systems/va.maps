@@ -4,7 +4,7 @@ Id: DocumentReferenceDocumentReference
 Title: "Document Reference DocumentReference"
 Description: "This StructureDefinition contains the maps for VistA file TIU DOCUMENT (8925) to us-core-documentreference"
 * ^status = #draft
-* identifier and identifier.system and type and type.coding.system and type.coding.code and type.text and category[us-core] and subject and date and author and authenticator and custodian and description and content.attachment.id and content.attachment.contentType and content.attachment.data and content.attachment.size and content.attachment.hash and content.attachment.title and content.attachment.creation and context.encounter and context.event and context.period.start and context.period.end and context.facilityType and context.practiceSetting MS
+* identifier and identifier.system and type and type.coding.system and type.coding.code and type.text and category[us-core] and subject and date and author and authenticator and custodian and description and content.attachment.id and content.attachment.contentType and content.attachment.data and content.attachment.url and content.attachment.size and content.attachment.hash and content.attachment.title and content.attachment.creation and context.encounter and context.event and context.period.start and context.period.end and context.facilityType and context.practiceSetting MS
 * context.encounter only Reference(EncounterOutpatient)
 * identifier.system = "http://va.gov/identifiers/$Sta3n/8925"
 * type.coding.system = "http://loinc.org"
@@ -36,6 +36,7 @@ Source: DocumentReferenceDocumentReference
 * content.attachment.contentType -> "889: fixed value = #text/plain"
 * content.attachment.language -> "890: target not supported"
 * content.attachment.data -> "891: source value from TIU DOCUMENT - REPORT TEXT (8925-2)" "option 1: tbd\nUS Core: DocumentReference.content.attachment.url or DocumentReference.content.attachment.data or both SHALL be present."
+* content.attachment.url -> "892: reference from TIU DOCUMENT - REPORT TEXT (8925-2)" "option 2: tbd\nUS Core: DocumentReference.content.attachment.url or DocumentReference.content.attachment.data or both SHALL be present."
 * content.attachment.size -> "893: transform using calculate() on TIU DOCUMENT - REPORT TEXT (8925-2)"
 * content.attachment.hash -> "894: transform using calculate() on TIU DOCUMENT - REPORT TEXT (8925-2)"
 * content.attachment.title -> "895: source value from TIU DOCUMENT - DOCUMENT TYPE > TIU DOCUMENT DEFINITION - VHA ENTERPRISE STANDARD TITLE > TIU VHA ENTERPRISE STANDARD TITLE - STANDARD TITLE (8925-.01 > 8925.1-1501 > 8926.1-.01)" "03/06/23 added the secondary subfield based on LH feedback"
@@ -78,4 +79,5 @@ Mapping: vpr-to-DocumentReferenceDocumentReference
 Id: vpr
 Title: "Virtual Patient Record (VPR)"
 Source: DocumentReferenceDocumentReference
+* content.attachment.url -> "#ERROR_#REF!"
 * content.attachment.title -> "#ERROR_#REF!"

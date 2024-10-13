@@ -35,6 +35,7 @@ Source: EncounterOutpatient
 * diagnosis.condition -> "452: reference from V POV - PROBLEM LIST ENTRY (9000010.07-.16)"
 * location.location -> "458: reference from VISIT - DSS ID (9000010-.08) case stop" "CLINICAL STOP #40.7"
 * location.location -> "459: reference from VISIT - HOSPITAL LOCATION (9000010-.22) case location"
+* hospitalization -> "null: target not supported" "Outpatient so no hospitalization"
 * class -> "614: terminologyMaps using VF_encounterClass on VISIT - PATIENT STATUS IN/OUT (9000010-15002)" "84% are Outpatient (2024 Jan-Mar)"
 * serviceProvider -> "1599: reference from VISIT - LOC. OF ENCOUNTER > LOCATION - NAME (9000010-.06 > 9999999.06-.01)"
 * participant.individual -> "1614: reference from V PROVIDER - PROVIDER > NEW PERSON (9000010.06-.01 > 200-)" "/Practitioner|Role"

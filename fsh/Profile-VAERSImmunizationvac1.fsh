@@ -4,15 +4,13 @@ Id: VAERSImmunizationvac1
 Title: "VAERS Immunizationvac1"
 Description: "This StructureDefinition contains the maps for ADERS to us-core-immunization"
 * ^status = #draft
-* occurrenceDateTime and patient and vaccineCode.text and route.text and manufacturer.display and lotNumber and site and protocolApplied.doseNumberString MS
-* patient only Reference(VAERSPatient)
+* occurrenceDateTime and vaccineCode.text and route.text and manufacturer.display and lotNumber and site and protocolApplied.doseNumberString MS
 
 Mapping: source-to-VAERSImmunizationvac1
 Id: aders
 Title: "VA Adverse Drug Event Reporting System (VA ADERS)"
 Source: VAERSImmunizationvac1
 * occurrenceDateTime -> "1875: transform using concat(4_VacDate, 4_VacTime)"
-* patient -> "1876: reference from ADERS - 0_Pt_ICN_Full"
 * vaccineCode.text -> "1878: source value from ADERS - 17_Vac1_TypeBrand" "coding.display not really makes sense, since there is no code"
 * route.text -> "1879: source value from ADERS - 17_Vac1_Route"
 * manufacturer.display -> "1883: source value from ADERS - 17_Vac1_Mfgr"

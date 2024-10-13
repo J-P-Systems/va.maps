@@ -4,7 +4,7 @@ Title: "Lighthouse Provider Directory"
 Usage: #definition
 * description = "This CapabilityStatement contains an example for Lighthouse Provider Directory"
 * status = #draft
-* date = "2024-10-11T07:48:17.679Z"
+* date = "2024-10-13T09:15:50.828Z"
 * kind = #requirements
 * fhirVersion = #4.0.1
 * format[0] = #xml
