@@ -16,6 +16,7 @@ Description: "This StructureDefinition contains the maps for VistA file PTF (45)
 * subject only Reference(Patient)
 * participant.individual only Reference(Practitioner)
 * diagnosis.condition only Reference(EncounterInpatientCondition)
+* location.location only Reference(Location)
 * serviceProvider only Reference(Organization)
 * identifier[va-IEN].system = "http://va.gov/identifiers/$Sta3n/45"
 * identifier[va-IEN].type.text = "IEN"
@@ -66,7 +67,7 @@ Source: EncounterInpatientEncounter
 * hospitalization.destination.display -> "455: source value from PTF - RECEIVING FACILITY (45-76.1)"
 * hospitalization.dischargeDisposition.coding.code -> "456: source value from PTF - PLACE OF DISPOSITION (45-75)"
 * hospitalization.dischargeDisposition.coding.system -> "456-1: fixed value = http://va.gov/terminology/vistaDefinedTerms/45.6" "from mapParameter 1"
-* location.location -> "460: reference from PTF - WARD AT DISCHARGE (45-2.2)" "computed?"
+* location.location -> "460: reference from PTF - WARD AT DISCHARGE > WARD LOCATION - HOSPITAL LOCATION FILE POINTER (45-2.2 > 42-44)" "computed\n45-2.2 is in CDW ; DIM WardLocation.SID 104.302 indirect pointer"
 * location.location -> "461: reference from PTF - FACILITY (45-3)" "This is the Sta3n\nhow to get from facility number to Location?"
 * serviceProvider -> "1600: reference from PTF - FACILITY (45-3)"
 * type -> "1616: source value from INPATIENT CPT CODE - CPT CODE > CPT (46-.01 > 81-)"
@@ -94,7 +95,7 @@ Source: EncounterInpatientEncounter
 * hospitalization.origin.display -> "Inpat.Census.TransferringFacility,Inpat.Inpatient.TransferFromFacility,Inpat.InpatientFeeBasis.TransferringFacility"
 * hospitalization.destination.display -> "Inpat.Census.ReceivingFacility,Inpat.Inpatient.TransferToFacility,Inpat.InpatientFeeBasis.ReceivingFacility"
 * hospitalization.dischargeDisposition.coding.code -> "Inpat.Census.PlaceOfDispositionIEN,Inpat.Inpatient.PlaceOfDispositionIEN,Inpat.InpatientFeeBasis.PlaceOfDispositionIEN"
-* location.location -> "Inpat.Inpatient.Discharge45WardLocationIEN"
+* location.location -> "Inpat.Inpatient.Discharge45WardLocationIEN\nDim.WardLocation.LocationIEN"
 * location.location -> "Inpat.Census.DischargeFacility,Inpat.Inpatient.DischargeFromFacility,Inpat.InpatientFeeBasis.DischargeFacility"
 * serviceProvider -> "Inpat.Census.DischargeFacility,Inpat.Inpatient.DischargeFromFacility,Inpat.InpatientFeeBasis.DischargeFacility"
 * type -> "Inpat.InpatientCPTProcedure.CPTIEN"

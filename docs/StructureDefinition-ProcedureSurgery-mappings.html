@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-    <title>Procedure: Surgery - Mappings - US Veterans Administration FHIR Map Set Implementation Guide v0.66.367</title>
+    <title>Procedure: Surgery - Mappings - US Veterans Administration FHIR Map Set Implementation Guide v0.67.369</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -58,7 +58,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">US Veterans Administration FHIR Map Set Implementation Guide</span>
             <br/>
-            <span style="display:inline-block;">0.66.367 - 241001
+            <span style="display:inline-block;">0.67.369 - 241101
 
 
 
@@ -154,7 +154,7 @@
           <div class="inner-wrapper">
 
 <div style="counter-reset: section 5" class="col-12">
-    <!-- ReleaseHeader --><p id="publish-box">US Veterans Administration FHIR Map Set Implementation Guide - Local Development build (v0.66.367) built by the FHIR (HL7&reg; FHIR&reg; Standard) Build Tools. See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
+    <!-- ReleaseHeader --><p id="publish-box">US Veterans Administration FHIR Map Set Implementation Guide - Local Development build (v0.67.369) built by the FHIR (HL7&reg; FHIR&reg; Standard) Build Tools. See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
   
 
 
@@ -227,7 +227,7 @@
         
           Draft
           
-            as of 2024-10-13
+            as of 2024-10-18
           
         
       </td>
@@ -400,7 +400,7 @@
 <td class="cell-ce1">V2F</td>
 <td class="cell-ce1">SURGERY - NON-OR LOCATION (130-119)</td>
 <td class="cell-ce1">reference</td>
-<td class="cell-ce1">130-118 NON-OR PROCEDURE != ‘Y’</td>
+<td class="cell-ce1">130-118 NON-OR PROCEDURE == ‘Y’</td>
 <td class="cell-ce1">Procedure.location</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">/Location</td>
@@ -414,12 +414,13 @@
 <td class="cell-ce1">V2F</td>
 <td class="cell-ce1">SURGERY - OP ROOM PROCEDURE PERFORMED (130-.02)</td>
 <td class="cell-ce1">reference</td>
-<td class="cell-ce1">130-118 NON-OR PROCEDURE == ‘Y’</td>
+<td class="cell-ce1">130-118 NON-OR PROCEDURE != ‘Y’</td>
 <td class="cell-ce1">Procedure.location</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1"></td>
-<td class="cell-ce1">OPERATING ROOM 131.7</td>
+<td class="cell-ce1">OPERATING ROOM 131.7
+131.7-.01 points to HOSPITAL LOCATION we could use that or add maps for 131.7 with a partOf to .01</td>
 <td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
@@ -487,11 +488,11 @@
 <td class="cell-ce1"></td>
 <td class="cell-ce1">Procedure.performer[va-0]</td>
 <td class="cell-ce1">.actor</td>
-<td class="cell-ce1"></td>
+<td class="cell-ce1">/Practitioner</td>
 <td class="cell-ce1">.function.text=PERFUSIONIST
 .function.coding=http://va.gov/terminology/vistaDefinedTerms/130#.167 “PERFUSIONIST"
 .function.coding=http://snomed.info/sct#721942007 ”Cardiovascular perfusionist (occupation)”</td>
-<td class="cell-ce1">/Practitioner|Role</td>
+<td class="cell-ce1"></td>
 <td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
@@ -545,11 +546,11 @@
 <td class="cell-ce1"></td>
 <td class="cell-ce1">Procedure.performer[va-1]</td>
 <td class="cell-ce1">.actor</td>
-<td class="cell-ce1"></td>
+<td class="cell-ce1">/Practitioner</td>
 <td class="cell-ce1">.function.text="PRIMARY SURGEON"
 .function.coding=http://va.gov/terminology/vistaDefinedTerms/130#.14 ”PRIMARY SURGEON”
 .function.coding=http://snomed.info/sct#304292004 ”Surgeon (occupation)”</td>
-<td class="cell-ce1">/Practitioner|Role</td>
+<td class="cell-ce1"></td>
 <td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
@@ -589,10 +590,10 @@
 <td class="cell-ce1"></td>
 <td class="cell-ce1">Procedure.performer[va-2]</td>
 <td class="cell-ce1">.actor</td>
-<td class="cell-ce1"></td>
+<td class="cell-ce1">/Practitioner</td>
 <td class="cell-ce1">.function.text="FIRST ASST"
 .function.coding=http://va.gov/terminology/vistaDefinedTerms/130#.15 "FIRST ASST"</td>
-<td class="cell-ce1">/Practitioner|Role</td>
+<td class="cell-ce1"></td>
 <td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
@@ -632,10 +633,10 @@
 <td class="cell-ce1"></td>
 <td class="cell-ce1">Procedure.performer[va-3]</td>
 <td class="cell-ce1">.actor</td>
-<td class="cell-ce1"></td>
+<td class="cell-ce1">/Practitioner</td>
 <td class="cell-ce1">.function.text="SECOND ASST"
 .function.coding=http://va.gov/terminology/vistaDefinedTerms/130#.16 ”SECOND ASST”</td>
-<td class="cell-ce1">/Practitioner|Role</td>
+<td class="cell-ce1"></td>
 <td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
@@ -675,11 +676,11 @@
 <td class="cell-ce1"></td>
 <td class="cell-ce1">Procedure.performer[va-4]</td>
 <td class="cell-ce1">.actor</td>
-<td class="cell-ce1"></td>
+<td class="cell-ce1">/Practitioner</td>
 <td class="cell-ce1">.function.text="ATTENDING SURGEON"
 .function.coding=http://va.gov/terminology/vistaDefinedTerms/130#.164 ”ATTENDING SURGEON”
 .function.coding=http://snomed.info/sct#304292004 ”Surgeon (occupation)”</td>
-<td class="cell-ce1">/Practitioner|Role</td>
+<td class="cell-ce1"></td>
 <td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
@@ -719,11 +720,11 @@
 <td class="cell-ce1"></td>
 <td class="cell-ce1">Procedure.performer[va-5]</td>
 <td class="cell-ce1">.actor</td>
-<td class="cell-ce1"></td>
+<td class="cell-ce1">/Practitioner</td>
 <td class="cell-ce1">.function.text="ASST PERFUSIONIST"
 .function.coding=http://va.gov/terminology/vistaDefinedTerms/130#.168 ”ASST PERFUSIONIST”
 .function.coding=http://snomed.info/sct#721942007 ”Cardiovascular perfusionist (occupation)”</td>
-<td class="cell-ce1">/Practitioner|Role</td>
+<td class="cell-ce1"></td>
 <td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
@@ -763,10 +764,10 @@
 <td class="cell-ce1"></td>
 <td class="cell-ce1">Procedure.performer[va-6]</td>
 <td class="cell-ce1">.actor</td>
-<td class="cell-ce1"></td>
+<td class="cell-ce1">/Practitioner</td>
 <td class="cell-ce1">.function.text="SKIN PREPPED BY (1)"
 .function.coding=http://va.gov/terminology/vistaDefinedTerms/130#.18 ”SKIN PREPPED BY (1)”</td>
-<td class="cell-ce1">/Practitioner|Role</td>
+<td class="cell-ce1"></td>
 <td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
@@ -806,11 +807,11 @@
 <td class="cell-ce1"></td>
 <td class="cell-ce1">Procedure.performer[va-7]</td>
 <td class="cell-ce1">.actor</td>
-<td class="cell-ce1"></td>
+<td class="cell-ce1">/Practitioner</td>
 <td class="cell-ce1">.function.text="PRINC ANESTHETIST"
 .function.coding=http://va.gov/terminology/vistaDefinedTerms/130#.31 “PRINC ANESTHETIST”
 .function.coding=http://snomed.info/sct#88189002 ”Anesthesiologist”</td>
-<td class="cell-ce1">/Practitioner|Role</td>
+<td class="cell-ce1"></td>
 <td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
@@ -850,11 +851,11 @@
 <td class="cell-ce1"></td>
 <td class="cell-ce1">Procedure.performer[va-8]</td>
 <td class="cell-ce1">.actor</td>
-<td class="cell-ce1"></td>
+<td class="cell-ce1">/Practitioner</td>
 <td class="cell-ce1">.function.text="RELIEF ANESTHETIST"
 .function.coding=http://va.gov/terminology/vistaDefinedTerms/130#.32 ”RELIEF ANESTHETIST”
 .function.coding=http://snomed.info/sct#88189002 ”Anesthesiologist”</td>
-<td class="cell-ce1">/Practitioner|Role</td>
+<td class="cell-ce1"></td>
 <td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
@@ -894,11 +895,11 @@
 <td class="cell-ce1"></td>
 <td class="cell-ce1">Procedure.performer[va-9]</td>
 <td class="cell-ce1">.actor</td>
-<td class="cell-ce1"></td>
+<td class="cell-ce1">/Practitioner</td>
 <td class="cell-ce1">.function.text="ASST ANESTHETIST"
 .function.coding=http://va.gov/terminology/vistaDefinedTerms/130#.33 “ASST ANESTHETIST”
 .function.coding=http://snomed.info/sct#88189002 ”Anesthesiologist”</td>
-<td class="cell-ce1">/Practitioner|Role</td>
+<td class="cell-ce1"></td>
 <td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
@@ -930,7 +931,7 @@
 <td class="cell-ce1"></td>
 </tr>
 <tr class="row-ro1">
-<td class="cell-ce1"></td>
+<td class="cell-ce1">1339</td>
 <td class="cell-ce1">for review</td>
 <td class="cell-ce1">V2F</td>
 <td class="cell-ce1">SURGERY - ANESTHESIOLOGIST SUPVR (130-.34)</td>
@@ -938,15 +939,15 @@
 <td class="cell-ce1"></td>
 <td class="cell-ce1">Procedure.performer[va-10]</td>
 <td class="cell-ce1">.actor</td>
-<td class="cell-ce1"></td>
+<td class="cell-ce1">/Practitioner</td>
 <td class="cell-ce1">.function.text="ANESTHESIOLOGIST SUPVR"
 .function.coding=http://va.gov/terminology/vistaDefinedTerms/130#.34 ”ANESTHESIOLOGIST SUPVR”
 .function.coding=http://snomed.info/sct#88189002 ”Anesthesiologist”</td>
-<td class="cell-ce1">/Practitioner|Role</td>
+<td class="cell-ce1"></td>
 <td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
-<td class="cell-ce1">null-1</td>
+<td class="cell-ce1">1339-1</td>
 <td class="cell-ce1">for review</td>
 <td class="cell-ce1">V2F</td>
 <td class="cell-ce1"></td>
@@ -960,7 +961,7 @@
 <td class="cell-ce1"></td>
 </tr>
 <tr class="row-ro1">
-<td class="cell-ce1">null-2</td>
+<td class="cell-ce1">1339-2</td>
 <td class="cell-ce1">for review</td>
 <td class="cell-ce1">V2F</td>
 <td class="cell-ce1"></td>
@@ -982,10 +983,10 @@
 <td class="cell-ce1"></td>
 <td class="cell-ce1">Procedure.performer[va-11]</td>
 <td class="cell-ce1">.actor</td>
-<td class="cell-ce1"></td>
+<td class="cell-ce1">/Practitioner</td>
 <td class="cell-ce1">.function.text="VERIFIER"
 .function.coding=http://va.gov/terminology/vistaDefinedTerms/130#.522 ”VERIFIER”</td>
-<td class="cell-ce1">/Practitioner|Role</td>
+<td class="cell-ce1"></td>
 <td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
@@ -1025,10 +1026,10 @@
 <td class="cell-ce1"></td>
 <td class="cell-ce1">Procedure.performer[va-12]</td>
 <td class="cell-ce1">.actor</td>
-<td class="cell-ce1"></td>
+<td class="cell-ce1">/Practitioner</td>
 <td class="cell-ce1">.function.text="PROVIDER"
 .function.coding=http://va.gov/terminology/vistaDefinedTerms/130#123 ”PROVIDER”</td>
-<td class="cell-ce1">/Practitioner|Role</td>
+<td class="cell-ce1"></td>
 <td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
@@ -1068,10 +1069,10 @@
 <td class="cell-ce1"></td>
 <td class="cell-ce1">Procedure.performer[va-13]</td>
 <td class="cell-ce1">.actor</td>
-<td class="cell-ce1"></td>
+<td class="cell-ce1">/Practitioner</td>
 <td class="cell-ce1">.function.text="FOLEY CATHETER INSERTED BY"
 .function.coding=http://va.gov/terminology/vistaDefinedTerms/130#.57 ”FOLEY CATHETER INSERTED BY”</td>
-<td class="cell-ce1">/Practitioner|Role</td>
+<td class="cell-ce1"></td>
 <td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
@@ -1225,113 +1226,100 @@
 </td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>1298-1: fixed value = PERFUSIONIST</td><td><p>from mapParameter 1</p>
 </td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;actor</td><td>1298: reference from SURGERY - PERFUSIONIST (130-.167)</td><td><p>/Practitioner|Role</p>
-</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;actor</td><td>1298: reference from SURGERY - PERFUSIONIST (130-.167)</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;performer (va-1)</td><td></td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function</td><td></td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>1330-2: fixed value = http://va.gov/terminology/vistaDefinedTerms/130#.14 PRIMARY SURGEON</td><td><p>from mapParameter 2</p>
 </td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>1330-1: fixed value = PRIMARY SURGEON</td><td><p>from mapParameter 1</p>
 </td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;actor</td><td>1330: reference from SURGERY - PRIMARY SURGEON (130-.14)</td><td><p>/Practitioner|Role</p>
-</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;actor</td><td>1330: reference from SURGERY - PRIMARY SURGEON (130-.14)</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;performer (va-2)</td><td></td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function</td><td></td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>1331-2: fixed value = http://va.gov/terminology/vistaDefinedTerms/130#.15 FIRST ASST</td><td><p>from mapParameter 2</p>
 </td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>1331-1: fixed value = FIRST ASST</td><td><p>from mapParameter 1</p>
 </td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;actor</td><td>1331: reference from SURGERY - FIRST ASST (130-.15)</td><td><p>/Practitioner|Role</p>
-</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;actor</td><td>1331: reference from SURGERY - FIRST ASST (130-.15)</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;performer (va-3)</td><td></td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function</td><td></td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>1332-2: fixed value = http://va.gov/terminology/vistaDefinedTerms/130#.16 SECOND ASST</td><td><p>from mapParameter 2</p>
 </td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>1332-1: fixed value = SECOND ASST</td><td><p>from mapParameter 1</p>
 </td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;actor</td><td>1332: reference from SURGERY - SECOND ASST (130-.16)</td><td><p>/Practitioner|Role</p>
-</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;actor</td><td>1332: reference from SURGERY - SECOND ASST (130-.16)</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;performer (va-4)</td><td></td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function</td><td></td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>1333-2: fixed value = http://va.gov/terminology/vistaDefinedTerms/130#.164 ATTENDING SURGEON</td><td><p>from mapParameter 2</p>
 </td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>1333-1: fixed value = ATTENDING SURGEON</td><td><p>from mapParameter 1</p>
 </td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;actor</td><td>1333: reference from SURGERY - ATTENDING SURGEON (130-.164)</td><td><p>/Practitioner|Role</p>
-</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;actor</td><td>1333: reference from SURGERY - ATTENDING SURGEON (130-.164)</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;performer (va-5)</td><td></td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function</td><td></td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>1334-2: fixed value = http://va.gov/terminology/vistaDefinedTerms/130#.168 ASST PERFUSIONIST</td><td><p>from mapParameter 2</p>
 </td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>1334-1: fixed value = ASST PERFUSIONIST</td><td><p>from mapParameter 1</p>
 </td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;actor</td><td>1334: reference from SURGERY - ASST PERFUSIONIST (130-.168)</td><td><p>/Practitioner|Role</p>
-</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;actor</td><td>1334: reference from SURGERY - ASST PERFUSIONIST (130-.168)</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;performer (va-6)</td><td></td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function</td><td></td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>1335-2: fixed value = http://va.gov/terminology/vistaDefinedTerms/130#.18 SKIN PREPPED BY (1)</td><td><p>from mapParameter 2</p>
 </td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>1335-1: fixed value = SKIN PREPPED BY (1)</td><td><p>from mapParameter 1</p>
 </td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;actor</td><td>1335: reference from SURGERY - SKIN PREPPED BY (1) (130-.18)</td><td><p>/Practitioner|Role</p>
-</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;actor</td><td>1335: reference from SURGERY - SKIN PREPPED BY (1) (130-.18)</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;performer (va-7)</td><td></td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function</td><td></td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>1336-2: fixed value = http://va.gov/terminology/vistaDefinedTerms/130#.31 PRINC ANESTHETIST</td><td><p>from mapParameter 2</p>
 </td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>1336-1: fixed value = PRINC ANESTHETIST</td><td><p>from mapParameter 1</p>
 </td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;actor</td><td>1336: reference from SURGERY - PRINC ANESTHETIST (130-.31)</td><td><p>/Practitioner|Role</p>
-</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;actor</td><td>1336: reference from SURGERY - PRINC ANESTHETIST (130-.31)</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;performer (va-8)</td><td></td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function</td><td></td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>1337-2: fixed value = http://va.gov/terminology/vistaDefinedTerms/130#.32 RELIEF ANESTHETIST</td><td><p>from mapParameter 2</p>
 </td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>1337-1: fixed value = RELIEF ANESTHETIST</td><td><p>from mapParameter 1</p>
 </td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;actor</td><td>1337: reference from SURGERY - RELIEF ANESTHETIST (130-.32)</td><td><p>/Practitioner|Role</p>
-</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;actor</td><td>1337: reference from SURGERY - RELIEF ANESTHETIST (130-.32)</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;performer (va-9)</td><td></td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function</td><td></td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>1338-2: fixed value = http://va.gov/terminology/vistaDefinedTerms/130#.33 ASST ANESTHETIST</td><td><p>from mapParameter 2</p>
 </td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>1338-1: fixed value = ASST ANESTHETIST</td><td><p>from mapParameter 1</p>
 </td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;actor</td><td>1338: reference from SURGERY - ASST ANESTHETIST (130-.33)</td><td><p>/Practitioner|Role</p>
-</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;actor</td><td>1338: reference from SURGERY - ASST ANESTHETIST (130-.33)</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;performer (va-10)</td><td></td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function</td><td></td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>null-2: fixed value = http://va.gov/terminology/vistaDefinedTerms/130#.34 ANESTHESIOLOGIST SUPVR</td><td><p>from mapParameter 2</p>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>1339-2: fixed value = http://va.gov/terminology/vistaDefinedTerms/130#.34 ANESTHESIOLOGIST SUPVR</td><td><p>from mapParameter 2</p>
 </td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>null-1: fixed value = ANESTHESIOLOGIST SUPVR</td><td><p>from mapParameter 1</p>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>1339-1: fixed value = ANESTHESIOLOGIST SUPVR</td><td><p>from mapParameter 1</p>
 </td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;actor</td><td>null: reference from SURGERY - ANESTHESIOLOGIST SUPVR (130-.34)</td><td><p>/Practitioner|Role</p>
-</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;actor</td><td>1339: reference from SURGERY - ANESTHESIOLOGIST SUPVR (130-.34)</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;performer (va-11)</td><td></td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function</td><td></td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>1340-2: fixed value = http://va.gov/terminology/vistaDefinedTerms/130#.522 VERIFIER</td><td><p>from mapParameter 2</p>
 </td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>1340-1: fixed value = VERIFIER</td><td><p>from mapParameter 1</p>
 </td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;actor</td><td>1340: reference from SURGERY - VERIFIER (130-.522)</td><td><p>/Practitioner|Role</p>
-</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;actor</td><td>1340: reference from SURGERY - VERIFIER (130-.522)</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;performer (va-12)</td><td></td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function</td><td></td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>1341-2: fixed value = http://va.gov/terminology/vistaDefinedTerms/130#123 PROVIDER</td><td><p>from mapParameter 2</p>
 </td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>1341-1: fixed value = PROVIDER</td><td><p>from mapParameter 1</p>
 </td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;actor</td><td>1341: reference from SURGERY - PROVIDER (130-123)</td><td><p>/Practitioner|Role</p>
-</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;actor</td><td>1341: reference from SURGERY - PROVIDER (130-123)</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;performer (va-13)</td><td></td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function</td><td></td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>1342-2: fixed value = http://va.gov/terminology/vistaDefinedTerms/130#.57 FOLEY CATHETER INSERTED BY</td><td><p>from mapParameter 2</p>
 </td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>1342-1: fixed value = FOLEY CATHETER INSERTED BY</td><td><p>from mapParameter 1</p>
 </td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;actor</td><td>1342: reference from SURGERY - FOLEY CATHETER INSERTED BY (130-.57)</td><td><p>/Practitioner|Role</p>
-</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;location</td><td>1294: reference from SURGERY - NON-OR LOCATION (130-119) case 130-118 NON-OR PROCEDURE != ‘Y’, 1295: reference from SURGERY - OP ROOM PROCEDURE PERFORMED (130-.02) case 130-118 NON-OR PROCEDURE == ‘Y’</td><td>, <p>OPERATING ROOM 131.7</p>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;actor</td><td>1342: reference from SURGERY - FOLEY CATHETER INSERTED BY (130-.57)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;location</td><td>1294: reference from SURGERY - NON-OR LOCATION (130-119) case 130-118 NON-OR PROCEDURE == ‘Y’, 1295: reference from SURGERY - OP ROOM PROCEDURE PERFORMED (130-.02) case 130-118 NON-OR PROCEDURE != ‘Y’</td><td>, <p>OPERATING ROOM 131.7
+131.7-.01 points to HOSPITAL LOCATION we could use that or add maps for 131.7 with a partOf to .01</p>
 </td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;reasonCode</td><td></td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>1289: source value from SURGERY - PRINCIPAL PRE-OP DIAGNOSIS (130-32)</td><td></td> </tr>
@@ -1864,7 +1852,7 @@
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2024 <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.66.367 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Sun, Oct 13, 2024 09:59+0000">2024-10-13</span>
+          IG &copy; 2024 <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.67.369 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Oct 18, 2024 16:05+0000">2024-10-18</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

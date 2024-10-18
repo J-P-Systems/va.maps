@@ -41,7 +41,7 @@ Source: LabObservationElectronMicroscopyDiagnosticReport
 * performer[va-at] -> "1685: reference from EM - RELEASING SITE (63.02-.345)"
 * resultsInterpreter -> "1696: reference from EM - PATHOLOGIST (63.02-.02)"
 * specimen -> "1697: reference from EM - EM ACC # (63.02-.06)"
-* media.link -> "1438: reference from EM - IMAGE (63.02-2005)"
+* media.link -> "1438: reference from EM - IMAGE (63.02-2005)" "More information about the image may be available if stakeholders identify requirements."
 * conclusion -> "1441: source value from EM - EM DIAGNOSIS (63.02-1.4)" "Vista field is word processing so CodeableConcept cannot be used"
 * presentedForm.data -> "1720: source value from EM - TIU REFERENCE DATE/TIME - EM > TIU REFERENCE DATE/TIME - EM - TIU ENTRY POINTER - EM > TIU DOCUMENT - REPORT TEXT (63.02-.16 > 63.49-1 > 8925-2)" "HDR may be used to get the report"
 * category[LaboratorySlice] -> "1419: fixed value = http://terminology.hl7.org/CodeSystem/v2-0074#LAB"

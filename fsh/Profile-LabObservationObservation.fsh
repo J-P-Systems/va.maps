@@ -14,7 +14,7 @@ Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: LabObservationObservation
 * category -> "843: fixed value = http://terminology.hl7.org/CodeSystem/observation-category#laboratory"
-* dataAbsentReason -> "null: target not supported"
+* dataAbsentReason -> "null: target not supported" "because of must-support"
 * subject -> "844: reference from PATIENT - LABORATORY REFERENCE > LAB DATA - LRDFN (2-63 > 63-.01)" "Pointer from PATIENT (2)"
 
 Mapping: cdw-to-LabObservationObservation

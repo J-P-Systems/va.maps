@@ -41,7 +41,7 @@ Source: LabObservationSurgicalPathologyDiagnosticReport
 * performer[va-at] -> "1686: reference from SURGICAL PATHOLOGY - RELEASING SITE (63.08-.345)"
 * resultsInterpreter -> "1700: reference from SURGICAL PATHOLOGY - PATHOLOGIST (63.08-.02)"
 * specimen -> "1701: reference from SURGICAL PATHOLOGY - SURGICAL PATH ACC # (63.08-.06)"
-* media.link -> "1439: reference from SURGICAL PATHOLOGY - IMAGE (63.08-2005)"
+* media.link -> "1439: reference from SURGICAL PATHOLOGY - IMAGE (63.08-2005)" "More information about the image may be available if stakeholders identify requirements."
 * conclusion -> "1447: source value from SURGICAL PATHOLOGY - SURGICAL PATH DIAGNOSIS (63.08-1.4)" "Vista field is word processing so CodeableConcept cannot be used"
 * presentedForm.data -> "1721: source value from SURGICAL PATHOLOGY - TIU REFERENCE DATE/TIME - SP > TIU REFERENCE DATE/TIME - SP - TIU ENTRY POINTER - SP > TIU DOCUMENT - REPORT TEXT (63.08-.16 > 63.19-1 > 8925-2)" "HDR may be used to get the report"
 * category[LaboratorySlice] -> "1419: fixed value = http://terminology.hl7.org/CodeSystem/v2-0074#LAB"

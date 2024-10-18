@@ -14,9 +14,9 @@ Id: aders
 Title: "VA Adverse Drug Event Reporting System (VA ADERS)"
 Source: VAERSImmunization
 * patient -> "1876: reference from ADERS - 0_Pt_ICN_Full"
-* status -> "null: fixed value = #completed"
-* statusReason -> "null: target not supported" "assume done"
-* primarySource -> "null: fixed value = false"
+* status -> "null: fixed value = #completed" "because of must-support"
+* statusReason -> "null: target not supported" "because of must-support: assume done"
+* primarySource -> "null: fixed value = false" "because of must-support"
 
 Mapping: cdw-to-VAERSImmunization
 Id: cdw

@@ -4,7 +4,7 @@ Title: "Lighthouse Clinical Health API"
 Usage: #definition
 * description = "This CapabilityStatement contains an example for Lighthouse Clinical Health API"
 * status = #draft
-* date = "2024-10-13T09:15:50.825Z"
+* date = "2024-10-18T16:02:17.815Z"
 * kind = #requirements
 * fhirVersion = #4.0.1
 * format[0] = #xml

@@ -79,6 +79,13 @@ Characteristics: #can-be-target
 * prefix 0..1 Element "PREFIX (-4)"
 * suffix 0..1 Element "SUFFIX (-5)"
 
+Logical: WardLocation42
+Id: WardLocation42
+Title: "WARD LOCATION (42)"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the source WARD LOCATION (42)"
+Characteristics: #can-be-target
+* hospitalLocationFilePointer 0..1 Element "HOSPITAL LOCATION FILE POINTER (-44)"
+
 Logical: HospitalLocation44
 Id: HospitalLocation44
 Title: "HOSPITAL LOCATION (44)"
@@ -116,11 +123,12 @@ Characteristics: #can-be-target
 * transferringFacility 0..1 Element "TRANSFERRING FACILITY (-21.1)"
 * receivingFacility 0..1 Element "RECEIVING FACILITY (-76.1)"
 * placeOfDisposition 0..1 Element "PLACE OF DISPOSITION (-75)"
-* wardAtDischarge 0..1 Element "WARD AT DISCHARGE (-2.2)"
+* wardAtDischarge 0..1 Reference "WARD AT DISCHARGE (-2.2)"
 * facility 0..1 Element "FACILITY (-3)"
 * secondaryDiagnosis124 only Reference(IcdDiagnosis80)
 * procedure15 only Reference(IcdOperationprocedure801)
 * sourceOfAdmission only Reference(SourceOfAdmission451)
+* wardAtDischarge only Reference(WardLocation42)
 
 Logical: InpatientCptCode46
 Id: InpatientCptCode46
@@ -167,7 +175,7 @@ Characteristics: #can-be-target
 * mailwindowpark 0..1 Element "MAIL/WINDOW/PARK (-11)"
 * placerOrder  0..1 Element "PLACER ORDER # (-39.3)"
 * releasedDatetime 0..1 Element "RELEASED DATE/TIME (-31)"
-* division 0..1 Element "DIVISION (-20)"
+* division 0..1 Reference "DIVISION (-20)"
 * remarks 0..1 Element "REMARKS (-12)"
 * pharmacist 0..1 Element "PHARMACIST (-23)"
 * refill 0..1 Reference "REFILL (-52)"
@@ -175,8 +183,16 @@ Characteristics: #can-be-target
 * ibNumber 0..1 Element "IB NUMBER (-106)"
 * drug only Reference(Drug50)
 * medicationInstructions only Reference(MedicationInstructions520113)
+* division only Reference(OutpatientSite59)
 * refill only Reference(Refill521)
 * partialDate only Reference(PartialDate522)
+
+Logical: OutpatientSite59
+Id: OutpatientSite59
+Title: "OUTPATIENT SITE (59)"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the source OUTPATIENT SITE (59)"
+Characteristics: #can-be-target
+* defaultErxClinic 0..1 Element "DEFAULT ERX CLINIC (-10)"
 
 Logical: LaboratoryTest60
 Id: LaboratoryTest60
@@ -1333,9 +1349,10 @@ Characteristics: #can-be-target
 * daysSupply 0..1 Element "DAYS SUPPLY (-1.1)"
 * qty 0..1 Element "QTY (-1)"
 * releasedDatetime 0..1 Element "RELEASED DATE/TIME (-17)"
-* division 0..1 Element "DIVISION (-8)"
+* division 0..1 Reference "DIVISION (-8)"
 * remarks 0..1 Element "REMARKS (-3)"
 * pharmacistName 0..1 Element "PHARMACIST NAME (-4)"
+* division only Reference(OutpatientSite59)
 
 Logical: PartialDate522
 Id: PartialDate522
@@ -1347,8 +1364,9 @@ Characteristics: #can-be-target
 * daysSupply 0..1 Element "DAYS SUPPLY (-.041)"
 * qty 0..1 Element "QTY (-.04)"
 * releasedDatetime 0..1 Element "RELEASED DATE/TIME (-8)"
-* division 0..1 Element "DIVISION (-.09)"
+* division 0..1 Reference "DIVISION (-.09)"
 * remarks 0..1 Element "REMARKS (-.03)"
+* division only Reference(OutpatientSite59)
 
 Logical: VExam900001013
 Id: VExam900001013

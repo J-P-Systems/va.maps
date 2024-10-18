@@ -6,6 +6,7 @@ Description: "This StructureDefinition contains the maps for VistA file V POV (9
 * ^status = #draft
 * category[us-core] and identifier.value and identifier.system and code and code.coding.system and code.coding.code and subject and encounter and onsetDateTime and recordedDate and clinicalStatus and verificationStatus and recorder MS
 * subject only Reference(Patient)
+* recorder only Reference(Practitioner)
 * category[us-core] = http://terminology.hl7.org/CodeSystem/condition-category#encounter-diagnosis
 * identifier.system = "http://va.gov/identifiers/$Sta3n/9000010.07"
 * code.coding.system = "urn:see-termmap-in-mapParameter"
@@ -29,7 +30,7 @@ Source: ConditionEncounterDiagnosis
 * clinicalStatus -> "604: terminologyMaps using VF_encounterProblemStatus on V POV - MODIFIER (9000010.07-.06)"
 * verificationStatus -> "606: terminologyMaps using VF_encounterProblemVerificationStatus on V POV - MODIFIER (9000010.07-.06)"
 * abatementDateTime -> "1766: target not supported" "abatementDate is must support"
-* recorder -> "1833: reference from V POV - ENCOUNTER PROVIDER (9000010.07-1204)" "/Practitioner | Role"
+* recorder -> "1833: reference from V POV - ENCOUNTER PROVIDER (9000010.07-1204)"
 
 Mapping: cdw-to-ConditionEncounterDiagnosis
 Id: cdw

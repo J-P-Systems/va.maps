@@ -4,9 +4,11 @@ Id: MedicationDispenseOriginal
 Title: "MedicationDispense: Original"
 Description: "This StructureDefinition contains the maps for VistA file PRESCRIPTION (52) to MedicationDispense"
 * ^status = #draft
-* type and authorizingPrescription and daysSupply and destination.display and dosageInstruction.doseAndRate.doseQuantity.unit and dosageInstruction.doseAndRate.doseQuantity.code and dosageInstruction.doseAndRate.doseQuantity.value and dosageInstruction.patientInstruction and dosageInstruction.text and medicationCodeableConcept.coding.code and medicationCodeableConcept.coding.system and medicationCodeableConcept.text and quantity.value and status and subject and whenPrepared and category and location and note.text and performer MS
+* type and authorizingPrescription and daysSupply and destination.display and dosageInstruction.doseAndRate.doseQuantity.unit and dosageInstruction.doseAndRate.doseQuantity.code and dosageInstruction.doseAndRate.doseQuantity.value and dosageInstruction.patientInstruction and dosageInstruction.text and medicationCodeableConcept.coding.code and medicationCodeableConcept.coding.system and medicationCodeableConcept.text and quantity.value and status and subject and whenPrepared and category and location and note.text and performer.actor MS
 * authorizingPrescription only Reference(MedicationRequestOutpatient)
 * subject only Reference(Patient)
+* location only Reference(Location)
+* performer.actor only Reference(Practitioner)
 * type = #FF
 * dosageInstruction.doseAndRate.doseQuantity.code from http://va.gov/fhir/ValueSet/VSVFDoseUnits
 * medicationCodeableConcept.coding.system = "urn:oid:2.16.840.1.113883.6.233"
@@ -33,9 +35,9 @@ Source: MedicationDispenseOriginal
 * subject -> "820: reference from PRESCRIPTION - PATIENT (52-2)"
 * whenPrepared -> "832: source value from PRESCRIPTION - RELEASED DATE/TIME (52-31)" "WHO Per discussion with Pharma: Josh Miller 5/27/22\nupdated to WP per discussion with Eric Spahn 2/5/24"
 * category -> "1668: fixed value = #outpatient"
-* location -> "1711: reference from PRESCRIPTION - DIVISION (52-20)" "not Clinic (written) but Division (filled)\nwhat location of OUTPATIENT SITE #59 is the Location?"
+* location -> "1711: reference from PRESCRIPTION - DIVISION > OUTPATIENT SITE - DEFAULT ERX CLINIC (52-20 > 59-10)" "not Clinic (written) but Division (filled)\nVistapath is reference to 59\nwhat location field of OUTPATIENT SITE #59 is the Location for here?\n* 59-10 DEFAULT ERX CLINIC → This one? Then the subPath should say that. YES!\n* 59-1007 CHARGE LOCATION"
 * note.text -> "1716: source value from PRESCRIPTION - REMARKS (52-12)"
-* performer -> "1727: reference from PRESCRIPTION - PHARMACIST (52-23)" "/Practitioner | Role"
+* performer.actor -> "1727: reference from PRESCRIPTION - PHARMACIST (52-23)"
 
 Mapping: cdw-to-MedicationDispenseOriginal
 Id: cdw

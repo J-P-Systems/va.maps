@@ -13,6 +13,7 @@ Description: "This StructureDefinition contains the maps for VistA file NON-VA M
 * dosageInstruction.doseAndRate.doseQuantity.extension contains http://hl7.org/fhir/StructureDefinition/originalText named originalText 0..1
 * extension contains http://va.gov/fhir/StructureDefinition/medicationrequest-recordedLocation named medicationrequest-recordedLocation 0..1
 * identifier[va-order-number].value and identifier[va-order-number].system and identifier[va-ien].value and identifier[va-ien].system and intent and reportedBoolean and requester.extension[http://hl7.org/fhir/StructureDefinition/data-absent-reason].valueCode and encounter.extension[http://hl7.org/fhir/StructureDefinition/data-absent-reason].valueCode and medicationCodeableConcept and dosageInstruction.doseAndRate.doseQuantity.extension[http://hl7.org/fhir/StructureDefinition/originalText] and dosageInstruction.route.text and dosageInstruction.timing.code.text and status and authoredOn and recorder and note and reasonCode.text and dosageInstruction.text and extension[http://va.gov/fhir/StructureDefinition/medicationrequest-recordedLocation].valueReference MS
+* recorder only Reference(Practitioner)
 * extension[http://va.gov/fhir/StructureDefinition/medicationrequest-recordedLocation].valueReference only Reference(Location)
 * identifier[va-order-number].system = "http://va.gov/identifiers/$Sta3n/55.05-7"
 * identifier[va-ien].system = "http://va.gov/identifiers/$Sta3n/55.05"
@@ -41,7 +42,7 @@ Source: MedicationRequestNonVA
 * status -> "1737: fixed value = #active when NON-VA MEDS - STATUS (55.05-5) case NULL" "use status, not discontinue date"
 * status -> "1738: fixed value = #inactive when NON-VA MEDS - STATUS (55.05-5) case NOT NULL" "use status, not discontinue date"
 * authoredOn -> "1741: source value from NON-VA MEDS - DOCUMENTED DATE (55.05-11)"
-* recorder -> "1742: reference from NON-VA MEDS - DOCUMENTED BY (55.05-12)" "/Practitioner | Role"
+* recorder -> "1742: reference from NON-VA MEDS - DOCUMENTED BY (55.05-12)"
 * note -> "1743: source value from NON-VA MEDS - COMMENTS (55.05-14)" "Concatenate Disclaimer to end."
 * reasonCode.text -> "1744: source value from NON-VA MEDS - INDICATION FOR USE (55.05-15)"
 * dosageInstruction.text -> "1745: source value from NON-VA MEDS - SIG (55.05-16)"

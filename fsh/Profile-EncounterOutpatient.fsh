@@ -9,6 +9,7 @@ Description: "This StructureDefinition contains the maps for VistA file VISIT (9
 * diagnosis.condition only Reference(ConditionEncounterDiagnosis)
 * location.location only Reference(Location)
 * serviceProvider only Reference(Organization)
+* participant.individual only Reference(Practitioner)
 * identifier.system = "http://va.gov/identifiers/$Sta3n/9000010-15001"
 * serviceType.coding.system = "http://va.gov/terminology/VistADefinedTerms/9000010-.07"
 * reasonCode.coding.system = "urn:see-termmap-in-mapParameter"
@@ -33,12 +34,12 @@ Source: EncounterOutpatient
 * reasonCode.coding.code -> "447: source value from V POV - POV > ICD DIAGNOSIS - CODE NUMBER (9000010.07-.01 > 80-.01)"
 * reasonCode.coding.system -> "447-1: fixed value = urn:see-termmap-in-mapParameter" "from mapParameter 1"
 * diagnosis.condition -> "452: reference from V POV - PROBLEM LIST ENTRY (9000010.07-.16)"
-* location.location -> "458: reference from VISIT - DSS ID (9000010-.08) case stop" "CLINICAL STOP #40.7"
+* location.location -> "458: reference from VISIT - DSS ID (9000010-.08) case stop" "CLINICAL STOP #40.7\nPartOf..."
 * location.location -> "459: reference from VISIT - HOSPITAL LOCATION (9000010-.22) case location"
-* hospitalization -> "null: target not supported" "Outpatient so no hospitalization"
+* hospitalization -> "null: target not supported" "because of must-support: Outpatient so no hospitalization"
 * class -> "614: terminologyMaps using VF_encounterClass on VISIT - PATIENT STATUS IN/OUT (9000010-15002)" "84% are Outpatient (2024 Jan-Mar)"
 * serviceProvider -> "1599: reference from VISIT - LOC. OF ENCOUNTER > LOCATION - NAME (9000010-.06 > 9999999.06-.01)"
-* participant.individual -> "1614: reference from V PROVIDER - PROVIDER > NEW PERSON (9000010.06-.01 > 200-)" "/Practitioner|Role"
+* participant.individual -> "1614: reference from V PROVIDER - PROVIDER > NEW PERSON (9000010.06-.01 > 200-)"
 * participant.type -> "1854: terminologyMaps using VF_encounterParticipationType on V PROVIDER - PRIMARY/SECONDARY (9000010.06-.04)"
 * type -> "1615: source value from V CPT - CPT > CPT (9000010.18-.01 > 81-)"
 * type.coding.system -> "1615-1: fixed value = http://www.ama-assn.org/go/cpt" "from mapParameter 1"
