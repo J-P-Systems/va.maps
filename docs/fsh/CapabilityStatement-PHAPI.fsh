@@ -2,9 +2,9 @@ Instance: PHAPI
 InstanceOf: CapabilityStatement
 Title: "Lighthouse Patient Health API"
 Usage: #definition
-* description = "This CapabilityStatement contains an example for Lighthouse Patient Health API"
+* description = "This CapabilityStatement enumerates the profiles that the API should address, in the estimation of the enterprise mapping team. Some elements may not be appropriate for those cases; consult the actual API specification published by the API provider"
 * status = #draft
-* date = "2024-10-20T09:00:25.737Z"
+* date = "2024-10-30T12:23:32.035Z"
 * kind = #requirements
 * fhirVersion = #4.0.1
 * format[0] = #xml
@@ -69,6 +69,8 @@ Usage: #definition
 * rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/VitalSignsSpO2"
 * rest.resource[+].type = #DocumentReference
 * rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/DocumentReferenceDocumentReference"
+* rest.resource[+].type = #Binary
+* rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/DocumentReferenceBinary"
 * rest.resource[+].type = #Encounter
 * rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/EncounterInpatientEncounter"
 * rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/EncounterOutpatient"

@@ -4,7 +4,10 @@ Id: VAERSImmunizationpvac2
 Title: "VAERS Immunization[pvac2]"
 Description: "This StructureDefinition contains the maps for ADERS to us-core-immunization"
 * ^status = #draft
-* vaccineCode.text and manufacturer.display and lotNumber and route and site and protocolApplied.doseNumberString and occurrenceDateTime MS
+* vaccineCode.text and manufacturer.display and lotNumber and route and site and protocolApplied.doseNumberString and occurrenceDateTime and patient and status and primarySource MS
+* patient only Reference(VAERSPatient)
+* status = #completed
+* primarySource = false
 
 Mapping: source-to-VAERSImmunizationpvac2
 Id: aders
@@ -17,6 +20,10 @@ Source: VAERSImmunizationpvac2
 * site -> "1931: source value from ADERS - 22_PVac2_Site"
 * protocolApplied.doseNumberString -> "1932: source value from ADERS - 22_PVac2_DoseInSeries"
 * occurrenceDateTime -> "1933: source value from ADERS - 22_PVac2_Date"
+* patient -> "1876: reference from ADERS - 0_Pt_ICN_Full"
+* status -> "2026: fixed value = #completed" "because of must-support"
+* statusReason -> "2027: target not supported" "because of must-support: assume done"
+* primarySource -> "2028: fixed value = false" "because of must-support"
 
 Mapping: cdw-to-VAERSImmunizationpvac2
 Id: cdw

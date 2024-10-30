@@ -35,7 +35,7 @@ Source: DocumentReferenceDocumentReference
 * content.attachment.id -> "888: source value from TIU DOCUMENT - IEN (8925-.001)" "keep. Using HDR to pull text; need this"
 * content.attachment.contentType -> "889: fixed value = #text/plain"
 * content.attachment.language -> "890: target not supported"
-* content.attachment.url -> "892: transform using create(Binary)" "option 2: tbd\nUS Core: DocumentReference.content.attachment.url or DocumentReference.content.attachment.data or both SHALL be present."
+* content.attachment.url -> "892: transform using create(Binary) on TIU DOCUMENT - REPORT TEXT (8925-2)" "option 2: tbd\nUS Core: DocumentReference.content.attachment.url or DocumentReference.content.attachment.data or both SHALL be present."
 * content.attachment.size -> "893: transform using calculate() on TIU DOCUMENT - REPORT TEXT (8925-2)"
 * content.attachment.hash -> "894: transform using calculate() on TIU DOCUMENT - REPORT TEXT (8925-2)"
 * content.attachment.title -> "895: source value from TIU DOCUMENT - DOCUMENT TYPE > TIU DOCUMENT DEFINITION - VHA ENTERPRISE STANDARD TITLE > TIU VHA ENTERPRISE STANDARD TITLE - STANDARD TITLE (8925-.01 > 8925.1-1501 > 8926.1-.01)" "03/06/23 added the secondary subfield based on LH feedback"

@@ -4,18 +4,18 @@ Id: Appointment
 Title: "Appointment"
 Description: "This StructureDefinition contains the maps for VistA file APPOINTMENT (2.98) to Appointment"
 * ^status = #draft
-* participant ^slicing.discriminator.type = #pattern
-* participant ^slicing.discriminator.path = "$this"
-* participant ^slicing.rules = #open
-* participant contains va-clinic 0..1 and va-patient 0..1 and va-appt-clinic 0..1
-* serviceType ^slicing.discriminator.type = #pattern
-* serviceType ^slicing.discriminator.path = "$this"
-* serviceType ^slicing.rules = #open
-* serviceType contains va-stop-code 0..1 and va-credit-stop-code 0..1
 * serviceCategory ^slicing.discriminator.type = #pattern
 * serviceCategory ^slicing.discriminator.path = "$this"
 * serviceCategory ^slicing.rules = #open
 * serviceCategory contains va-service 0..1 and va-stop-code 0..1
+* serviceType ^slicing.discriminator.type = #pattern
+* serviceType ^slicing.discriminator.path = "$this"
+* serviceType ^slicing.rules = #open
+* serviceType contains va-stop-code 0..1 and va-credit-stop-code 0..1
+* participant ^slicing.discriminator.type = #pattern
+* participant ^slicing.discriminator.path = "$this"
+* participant ^slicing.rules = #open
+* participant contains va-clinic 0..1 and va-patient 0..1 and va-appt-clinic 0..1
 * status and cancelationReason and serviceCategory[va-service].coding.code and serviceCategory[va-service].coding.system and serviceType[va-stop-code].coding.code and serviceType[va-stop-code].coding.system and serviceType[va-credit-stop-code].coding.code and serviceType[va-credit-stop-code].coding.system and appointmentType.text and start and end and minutesDuration and created and participant[va-clinic].actor and participant[va-clinic].type.coding.code and participant[va-clinic].status and participant[va-patient].actor and participant[va-patient].type.coding.code and participant[va-patient].status and serviceCategory[va-stop-code].coding.code and serviceCategory[va-stop-code].coding.system and comment and participant[va-appt-clinic].actor and participant[va-appt-clinic].type.coding.code and participant[va-appt-clinic].status and description MS
 * participant[va-clinic].actor only Reference(Location)
 * participant[va-patient].actor only Reference(Patient)

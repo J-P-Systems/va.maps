@@ -2,9 +2,9 @@ Instance: CHAPI
 InstanceOf: CapabilityStatement
 Title: "Lighthouse Clinical Health API"
 Usage: #definition
-* description = "This CapabilityStatement contains an example for Lighthouse Clinical Health API"
+* description = "This CapabilityStatement enumerates the profiles that the API should address, in the estimation of the enterprise mapping team. Some elements may not be appropriate for those cases; consult the actual API specification published by the API provider"
 * status = #draft
-* date = "2024-10-20T09:00:25.737Z"
+* date = "2024-10-30T12:23:32.035Z"
 * kind = #requirements
 * fhirVersion = #4.0.1
 * format[0] = #xml

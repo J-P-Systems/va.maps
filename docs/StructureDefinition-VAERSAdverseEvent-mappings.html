@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-    <title>VAERS AdverseEvent - Mappings - US Veterans Administration FHIR Map Set Implementation Guide v0.67.370</title>
+    <title>VAERS AdverseEvent - Mappings - US Veterans Administration FHIR Map Set Implementation Guide v0.67.378</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -58,7 +58,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">US Veterans Administration FHIR Map Set Implementation Guide</span>
             <br/>
-            <span style="display:inline-block;">0.67.370 - 241101
+            <span style="display:inline-block;">0.67.378 - 241101
 
 
 
@@ -154,7 +154,7 @@
           <div class="inner-wrapper">
 
 <div style="counter-reset: section 5" class="col-12">
-    <!-- ReleaseHeader --><p id="publish-box">US Veterans Administration FHIR Map Set Implementation Guide - Local Development build (v0.67.370) built by the FHIR (HL7&reg; FHIR&reg; Standard) Build Tools. See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
+    <!-- ReleaseHeader --><p id="publish-box">US Veterans Administration FHIR Map Set Implementation Guide - Local Development build (v0.67.378) built by the FHIR (HL7&reg; FHIR&reg; Standard) Build Tools. See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
   
 
 
@@ -227,7 +227,7 @@
         
           Draft
           
-            as of 2024-10-20
+            as of 2024-10-30
           
         
       </td>
@@ -315,13 +315,13 @@
 <td class="cell-ce1">in process</td>
 <td class="cell-ce1">A2F</td>
 <td class="cell-ce1">ADERS - 18_VAE_Desc</td>
-<td class="cell-ce1">source value</td>
+<td class="cell-ce1">transform</td>
 <td class="cell-ce1"></td>
-<td class="cell-ce1">AdverseEvent.event</td>
+<td class="cell-ce1">AdverseEvent.event.coding</td>
 <td class="cell-ce1"></td>
-<td class="cell-ce1">"10067923"</td>
+<td class="cell-ce1">parseText()</td>
 <td class="cell-ce1"></td>
-<td class="cell-ce1"></td>
+<td class="cell-ce1">Multiple event codes in coding</td>
 <td class="cell-ce1">http://hl7.org/fhir/StructureDefinition/AdverseEvent | 4.0.1</td>
 </tr>
 <tr class="row-ro1">
@@ -331,11 +331,11 @@
 <td class="cell-ce1">ADERS - 21_VAE_Outcome_DrVisit</td>
 <td class="cell-ce1">source value</td>
 <td class="cell-ce1"></td>
-<td class="cell-ce1">AdverseEvent.outcome</td>
+<td class="cell-ce1">AdverseEvent.outcome.coding[va-outcome1]</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1"></td>
-<td class="cell-ce1"></td>
+<td class="cell-ce1">Multiple outcome codes in coding don’t mean the same</td>
 <td class="cell-ce1">http://hl7.org/fhir/StructureDefinition/AdverseEvent | 4.0.1</td>
 </tr>
 <tr class="row-ro1">
@@ -345,7 +345,7 @@
 <td class="cell-ce1">ADERS - 21_VAE_Outcome_ErED</td>
 <td class="cell-ce1">source value</td>
 <td class="cell-ce1"></td>
-<td class="cell-ce1">AdverseEvent.outcome</td>
+<td class="cell-ce1">AdverseEvent.outcome.coding[va-outcome2]</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1"></td>
@@ -359,63 +359,7 @@
 <td class="cell-ce1">ADERS - 21_HospStay</td>
 <td class="cell-ce1">source value</td>
 <td class="cell-ce1"></td>
-<td class="cell-ce1">AdverseEvent.outcome</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1">http://hl7.org/fhir/StructureDefinition/AdverseEvent | 4.0.1</td>
-</tr>
-<tr class="row-ro1">
-<td class="cell-ce1">1909</td>
-<td class="cell-ce1">in process</td>
-<td class="cell-ce1">A2F</td>
-<td class="cell-ce1">ADERS - 21_HospStay_NumDays</td>
-<td class="cell-ce1">source value</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1">AdverseEvent.outcome</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1">http://hl7.org/fhir/StructureDefinition/AdverseEvent | 4.0.1</td>
-</tr>
-<tr class="row-ro1">
-<td class="cell-ce1">1910</td>
-<td class="cell-ce1">in process</td>
-<td class="cell-ce1">A2F</td>
-<td class="cell-ce1">ADERS - 21_HospStay_Name</td>
-<td class="cell-ce1">source value</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1">AdverseEvent.outcome</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1">http://hl7.org/fhir/StructureDefinition/AdverseEvent | 4.0.1</td>
-</tr>
-<tr class="row-ro1">
-<td class="cell-ce1">1911</td>
-<td class="cell-ce1">in process</td>
-<td class="cell-ce1">A2F</td>
-<td class="cell-ce1">ADERS - 21_HospStay_City</td>
-<td class="cell-ce1">source value</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1">AdverseEvent.outcome</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1">http://hl7.org/fhir/StructureDefinition/AdverseEvent | 4.0.1</td>
-</tr>
-<tr class="row-ro1">
-<td class="cell-ce1">1912</td>
-<td class="cell-ce1">in process</td>
-<td class="cell-ce1">A2F</td>
-<td class="cell-ce1">ADERS - 21_HospStay_State</td>
-<td class="cell-ce1">source value</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1">AdverseEvent.outcome</td>
+<td class="cell-ce1">AdverseEvent.outcome.coding[va-outcome3]</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1"></td>
@@ -429,7 +373,7 @@
 <td class="cell-ce1">ADERS - 21_ProlongHospStay</td>
 <td class="cell-ce1">source value</td>
 <td class="cell-ce1"></td>
-<td class="cell-ce1">AdverseEvent.outcome</td>
+<td class="cell-ce1">AdverseEvent.outcome.coding[va-outcome8]</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1"></td>
@@ -443,7 +387,7 @@
 <td class="cell-ce1">ADERS - 21_LTI</td>
 <td class="cell-ce1">source value</td>
 <td class="cell-ce1"></td>
-<td class="cell-ce1">AdverseEvent.outcome</td>
+<td class="cell-ce1">AdverseEvent.outcome.coding[va-outcome9]</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1"></td>
@@ -457,7 +401,7 @@
 <td class="cell-ce1">ADERS - 21_Dis</td>
 <td class="cell-ce1">source value</td>
 <td class="cell-ce1"></td>
-<td class="cell-ce1">AdverseEvent.outcome</td>
+<td class="cell-ce1">AdverseEvent.outcome.coding[va-outcome10]</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1"></td>
@@ -471,7 +415,7 @@
 <td class="cell-ce1">ADERS - 21_CA_BD</td>
 <td class="cell-ce1">source value</td>
 <td class="cell-ce1"></td>
-<td class="cell-ce1">AdverseEvent.outcome</td>
+<td class="cell-ce1">AdverseEvent.outcome.coding[va-outcome11]</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1"></td>
@@ -485,7 +429,7 @@
 <td class="cell-ce1">ADERS - 21_NOA</td>
 <td class="cell-ce1">source value</td>
 <td class="cell-ce1"></td>
-<td class="cell-ce1">AdverseEvent.outcome</td>
+<td class="cell-ce1">AdverseEvent.outcome.coding[va-outcome12]</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1"></td>
@@ -518,10 +462,21 @@
  <tr><td>AdverseEvent</td><td></td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;actuality</td><td>1877-1: fixed value = #actual</td><td><p>from mapParameter 1</p>
 </td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;event</td><td>1905: source value from ADERS - 18_VAE_Desc</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;event</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>1905: transform using parseText()</td><td><p>Multiple event codes in coding</p>
+</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>1877: reference from ADERS - 0_Pt_ICN_Full</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;date</td><td>1881: transform using concat(4_VacDate, 4_VacTime)</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;outcome</td><td>1906: source value from ADERS - 21_VAE_Outcome_DrVisit, 1907: source value from ADERS - 21_VAE_Outcome_ErED, 1908: source value from ADERS - 21_HospStay, 1909: source value from ADERS - 21_HospStay_NumDays, 1910: source value from ADERS - 21_HospStay_Name, 1911: source value from ADERS - 21_HospStay_City, 1912: source value from ADERS - 21_HospStay_State, 1913: source value from ADERS - 21_ProlongHospStay, 1914: source value from ADERS - 21_LTI, 1915: source value from ADERS - 21_Dis, 1918: source value from ADERS - 21_CA_BD, 1919: source value from ADERS - 21_NOA</td><td>, , , , , , , , , , , </td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;outcome</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding (va-outcome1)</td><td>1906: source value from ADERS - 21_VAE_Outcome_DrVisit</td><td><p>Multiple outcome codes in coding don’t mean the same</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding (va-outcome2)</td><td>1907: source value from ADERS - 21_VAE_Outcome_ErED</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding (va-outcome3)</td><td>1908: source value from ADERS - 21_HospStay</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding (va-outcome8)</td><td>1913: source value from ADERS - 21_ProlongHospStay</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding (va-outcome9)</td><td>1914: source value from ADERS - 21_LTI</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding (va-outcome10)</td><td>1915: source value from ADERS - 21_Dis</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding (va-outcome11)</td><td>1918: source value from ADERS - 21_CA_BD</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding (va-outcome12)</td><td>1919: source value from ADERS - 21_NOA</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;suspectEntity</td><td></td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;instance</td><td>1972: reference</td><td></td> </tr>
 </table>
@@ -544,6 +499,24 @@
  <tr><td>&nbsp;&nbsp;&nbsp;contained</td><td>N/A</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;extension</td><td>N/A</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;modifierExtension</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;event</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>union(., ./translation)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>./originalText[mediaType/code="text/plain"]/data</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;outcome</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>union(., ./translation)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding (va-outcome1)</td><td>union(., ./translation)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding (va-outcome2)</td><td>union(., ./translation)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding (va-outcome3)</td><td>union(., ./translation)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding (va-outcome8)</td><td>union(., ./translation)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding (va-outcome9)</td><td>union(., ./translation)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding (va-outcome10)</td><td>union(., ./translation)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding (va-outcome11)</td><td>union(., ./translation)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding (va-outcome12)</td><td>union(., ./translation)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>./originalText[mediaType/code="text/plain"]/data</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;suspectEntity</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
@@ -579,7 +552,7 @@
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2024 <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.67.370 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Sun, Oct 20, 2024 09:02+0000">2024-10-20</span>
+          IG &copy; 2024 <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.67.378 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Oct 30, 2024 12:26+0000">2024-10-30</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

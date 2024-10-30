@@ -8,7 +8,7 @@ Description: "This StructureDefinition contains the maps for VistA file PRESCRIP
 * subject only Reference(Patient)
 * location only Reference(Location)
 * performer.actor only Reference(Practitioner)
-* type = #RF
+* type = http://terminology.hl7.org/CodeSystem/v3-ActCode#RF
 * dosageInstruction.doseAndRate.doseQuantity.code from http://va.gov/fhir/ValueSet/VSVFDoseUnits
 * medicationCodeableConcept.coding.system = "urn:oid:2.16.840.1.113883.6.233"
 
@@ -16,7 +16,7 @@ Mapping: source-to-MedicationDispenseRefill
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: MedicationDispenseRefill
-* type -> "1709: fixed value = #RF"
+* type -> "1709: fixed value = http://terminology.hl7.org/CodeSystem/v3-ActCode#RF"
 * destination.display -> "1712: source value from PRESCRIPTION - REFILL > REFILL - MAIL/WINDOW/PARK (52-52 > 52.1-2)"
 * authorizingPrescription -> "1553: source value from PRESCRIPTION - PLACER ORDER # (52-39.3)"
 * daysSupply -> "827: source value from PRESCRIPTION - REFILL > REFILL - DAYS SUPPLY (52-52 > 52.1-1.1)"

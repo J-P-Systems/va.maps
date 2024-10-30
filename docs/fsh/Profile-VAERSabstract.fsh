@@ -1,24 +1,25 @@
-Profile: VAERSImmunization
+Profile: VAERSabstract
 Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-immunization
-Id: VAERSImmunization
-Title: "VAERS Immunization"
+Id: VAERSabstract
+Title: "VAERS: abstract"
 Description: "This StructureDefinition contains the maps for ADERS to us-core-immunization"
 * ^status = #draft
+* ^abstract = true
 * patient and status and primarySource MS
 * patient only Reference(VAERSPatient)
 * status = #completed
 * primarySource = false
 
-Mapping: source-to-VAERSImmunization
+Mapping: source-to-VAERSabstract
 Id: aders
 Title: "VA Adverse Drug Event Reporting System (VA ADERS)"
-Source: VAERSImmunization
+Source: VAERSabstract
 * patient -> "1876: reference from ADERS - 0_Pt_ICN_Full"
-* status -> "null: fixed value = #completed" "because of must-support"
-* statusReason -> "null: target not supported" "because of must-support: assume done"
-* primarySource -> "null: fixed value = false" "because of must-support"
+* status -> "2026: fixed value = #completed" "because of must-support"
+* statusReason -> "2027: target not supported" "because of must-support: assume done"
+* primarySource -> "2028: fixed value = false" "because of must-support"
 
-Mapping: cdw-to-VAERSImmunization
+Mapping: cdw-to-VAERSabstract
 Id: cdw
 Title: "Clinical Data Warehouse (CDW)"
-Source: VAERSImmunization
+Source: VAERSabstract

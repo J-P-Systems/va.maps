@@ -1,7 +1,7 @@
 VAMapsIG : Validation Results
 =========================================
 
-err = 3, warn = 31, info = 52
+err = 5, warn = 25, info = 52
 $--
 Generated $--. FHIR version $-- for va.maps#$-- (canonical = http://va.gov/fhir)
  Build Errors : 12 / 2 / 0
@@ -218,9 +218,9 @@ Generated $--. FHIR version $-- for va.maps#$-- (canonical = http://va.gov/fhir)
  /app/fsh-generated/resources/StructureDefinition-MedRefillRequestMHVProvenancecreate : 0 / 1 / 1
  /app/fsh-generated/resources/StructureDefinition-MedRefillRequestMHVProvenancereview : 0 / 1 / 1
  /app/fsh-generated/resources/StructureDefinition-MedRefillRequestMHVTask : 0 / 1 / 1
- /app/fsh-generated/resources/StructureDefinition-MedicationDispenseOriginal : 0 / 5 / 2
- /app/fsh-generated/resources/StructureDefinition-MedicationDispensePartial : 0 / 3 / 2
- /app/fsh-generated/resources/StructureDefinition-MedicationDispenseRefill : 0 / 3 / 2
+ /app/fsh-generated/resources/StructureDefinition-MedicationDispenseOriginal : 0 / 3 / 2
+ /app/fsh-generated/resources/StructureDefinition-MedicationDispensePartial : 2 / 1 / 2
+ /app/fsh-generated/resources/StructureDefinition-MedicationDispenseRefill : 0 / 1 / 2
  /app/fsh-generated/resources/StructureDefinition-MedicationInstructions520113 : 0 / 0 / 1
  /app/fsh-generated/resources/StructureDefinition-MedicationRequestNonVA : 0 / 1 / 1
  /app/fsh-generated/resources/StructureDefinition-MedicationRequestOutpatient : 0 / 1 / 4
@@ -303,7 +303,6 @@ Generated $--. FHIR version $-- for va.maps#$-- (canonical = http://va.gov/fhir)
  /app/fsh-generated/resources/StructureDefinition-UcumCodes7575 : 0 / 0 / 1
  /app/fsh-generated/resources/StructureDefinition-VAERSAdverseEvent : 0 / 1 / 1
  /app/fsh-generated/resources/StructureDefinition-VAERSBundle : 0 / 1 / 1
- /app/fsh-generated/resources/StructureDefinition-VAERSImmunization : 0 / 1 / 1
  /app/fsh-generated/resources/StructureDefinition-VAERSImmunizationpvac1 : 0 / 1 / 1
  /app/fsh-generated/resources/StructureDefinition-VAERSImmunizationpvac2 : 0 / 1 / 1
  /app/fsh-generated/resources/StructureDefinition-VAERSImmunizationpvac3 : 0 / 1 / 1
@@ -313,6 +312,7 @@ Generated $--. FHIR version $-- for va.maps#$-- (canonical = http://va.gov/fhir)
  /app/fsh-generated/resources/StructureDefinition-VAERSImmunizationvac3 : 0 / 1 / 1
  /app/fsh-generated/resources/StructureDefinition-VAERSImmunizationvac4 : 0 / 1 / 1
  /app/fsh-generated/resources/StructureDefinition-VAERSPatient : 0 / 1 / 1
+ /app/fsh-generated/resources/StructureDefinition-VAERSabstract : 0 / 0 / 1
  /app/fsh-generated/resources/StructureDefinition-VCpt900001018 : 0 / 0 / 1
  /app/fsh-generated/resources/StructureDefinition-VExam900001013 : 0 / 0 / 1
  /app/fsh-generated/resources/StructureDefinition-VHealthFactors900001023 : 0 / 0 / 1
@@ -736,18 +736,14 @@ INFORMATION: StructureDefinition/LabObservationSurgicalPathologyObservation: Str
 == fsh-generated/resources/StructureDefinition-MedRefillRequestMHVTask.json ==
 == fsh-generated/resources/StructureDefinition-MedicationDispenseOriginal.json ==
 WARNING: StructureDefinition/MedicationDispenseOriginal: StructureDefinition.snapshot.element[13].pattern.ofType(CodeableConcept).coding[0]: Coding has no system. A code with no system has no defined meaning, and it cannot be validated. A system should be provided
-WARNING: StructureDefinition/MedicationDispenseOriginal: StructureDefinition.snapshot.element[38].pattern.ofType(CodeableConcept).coding[0]: Coding has no system. A code with no system has no defined meaning, and it cannot be validated. A system should be provided
 INFORMATION: StructureDefinition/MedicationDispenseOriginal: StructureDefinition.snapshot.element[47].mapping[2].map: The string value contains text that looks like embedded HTML tags. If this content is rendered to HTML without appropriate post-processing, it may be a security risk
 WARNING: StructureDefinition/MedicationDispenseOriginal: StructureDefinition.differential.element[1].pattern.ofType(CodeableConcept).coding[0]: Coding has no system. A code with no system has no defined meaning, and it cannot be validated. A system should be provided
-WARNING: StructureDefinition/MedicationDispenseOriginal: StructureDefinition.differential.element[11].pattern.ofType(CodeableConcept).coding[0]: Coding has no system. A code with no system has no defined meaning, and it cannot be validated. A system should be provided
 == fsh-generated/resources/StructureDefinition-MedicationDispensePartial.json ==
-WARNING: StructureDefinition/MedicationDispensePartial: StructureDefinition.snapshot.element[38].pattern.ofType(CodeableConcept).coding[0]: Coding has no system. A code with no system has no defined meaning, and it cannot be validated. A system should be provided
+ERROR: StructureDefinition/MedicationDispensePartial: StructureDefinition.snapshot.element[38].pattern.ofType(CodeableConcept).coding[0].code: Unknown code 'PF' in the CodeSystem 'http://terminology.hl7.org/CodeSystem/v3-ActCode' version '9.0.0'
 INFORMATION: StructureDefinition/MedicationDispensePartial: StructureDefinition.snapshot.element[47].mapping[2].map: The string value contains text that looks like embedded HTML tags. If this content is rendered to HTML without appropriate post-processing, it may be a security risk
-WARNING: StructureDefinition/MedicationDispensePartial: StructureDefinition.differential.element[10].pattern.ofType(CodeableConcept).coding[0]: Coding has no system. A code with no system has no defined meaning, and it cannot be validated. A system should be provided
+ERROR: StructureDefinition/MedicationDispensePartial: StructureDefinition.differential.element[10].pattern.ofType(CodeableConcept).coding[0].code: Unknown code 'PF' in the CodeSystem 'http://terminology.hl7.org/CodeSystem/v3-ActCode' version '9.0.0'
 == fsh-generated/resources/StructureDefinition-MedicationDispenseRefill.json ==
-WARNING: StructureDefinition/MedicationDispenseRefill: StructureDefinition.snapshot.element[38].pattern.ofType(CodeableConcept).coding[0]: Coding has no system. A code with no system has no defined meaning, and it cannot be validated. A system should be provided
 INFORMATION: StructureDefinition/MedicationDispenseRefill: StructureDefinition.snapshot.element[47].mapping[2].map: The string value contains text that looks like embedded HTML tags. If this content is rendered to HTML without appropriate post-processing, it may be a security risk
-WARNING: StructureDefinition/MedicationDispenseRefill: StructureDefinition.differential.element[10].pattern.ofType(CodeableConcept).coding[0]: Coding has no system. A code with no system has no defined meaning, and it cannot be validated. A system should be provided
 == fsh-generated/resources/StructureDefinition-MedicationInstructions520113.json ==
 == fsh-generated/resources/StructureDefinition-MedicationRequestNonVA.json ==
 == fsh-generated/resources/StructureDefinition-MedicationRequestOutpatient.json ==
@@ -860,7 +856,6 @@ INFORMATION: StructureDefinition/ProcedureSurgeryProcedure: StructureDefinition.
 == fsh-generated/resources/StructureDefinition-UcumCodes7575.json ==
 == fsh-generated/resources/StructureDefinition-VAERSAdverseEvent.json ==
 == fsh-generated/resources/StructureDefinition-VAERSBundle.json ==
-== fsh-generated/resources/StructureDefinition-VAERSImmunization.json ==
 == fsh-generated/resources/StructureDefinition-VAERSImmunizationpvac1.json ==
 == fsh-generated/resources/StructureDefinition-VAERSImmunizationpvac2.json ==
 == fsh-generated/resources/StructureDefinition-VAERSImmunizationpvac3.json ==
@@ -870,6 +865,7 @@ INFORMATION: StructureDefinition/ProcedureSurgeryProcedure: StructureDefinition.
 == fsh-generated/resources/StructureDefinition-VAERSImmunizationvac3.json ==
 == fsh-generated/resources/StructureDefinition-VAERSImmunizationvac4.json ==
 == fsh-generated/resources/StructureDefinition-VAERSPatient.json ==
+== fsh-generated/resources/StructureDefinition-VAERSabstract.json ==
 == fsh-generated/resources/StructureDefinition-VCpt900001018.json ==
 == fsh-generated/resources/StructureDefinition-VExam900001013.json ==
 == fsh-generated/resources/StructureDefinition-VHealthFactors900001023.json ==

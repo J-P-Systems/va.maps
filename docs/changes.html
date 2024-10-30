@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Changes - US Veterans Administration FHIR Map Set Implementation Guide v0.67.370</title>
+    <title>Changes - US Veterans Administration FHIR Map Set Implementation Guide v0.67.378</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -59,7 +59,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">US Veterans Administration FHIR Map Set Implementation Guide</span>
             <br/>
-            <span style="display:inline-block;">0.67.370 - 241101
+            <span style="display:inline-block;">0.67.378 - 241101
 
 
 
@@ -162,7 +162,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">US Veterans Administration FHIR Map Set Implementation Guide - Local Development build (v0.67.370) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">US Veterans Administration FHIR Map Set Implementation Guide - Local Development build (v0.67.378) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>Changes</h2>
   
 
@@ -292,15 +292,19 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <tr><td></td><td>status</td><td>team-approved</td><td>inactive</td></tr>
 <tr><td>892</td></tr>
 <tr><td></td><td>status</td><td>issue</td><td>team-approved</td></tr>
-<tr><td></td><td>vistaFileFieldName</td><td>TIU DOCUMENT - REPORT TEXT</td><td></td></tr>
-<tr><td></td><td>vistaFileField</td><td>8925-2</td><td></td></tr>
 <tr><td></td><td>mapApproach</td><td>reference</td><td>transform</td></tr>
 <tr><td></td><td>fhirSubPath</td><td>Binary.data</td><td></td></tr>
 <tr><td></td><td>mapValue</td><td></td><td>create(Binary)</td></tr>
 <tr><td>899</td></tr>
 <tr><td></td><td>mapValue</td><td></td><td>/EncounterOutpatient</td></tr>
 <tr><td colspan="4"><i>resource Binary</i></td></tr>
-<tr><td></td><td>no changes</td></tr>
+<tr><td>1725</td></tr>
+<tr><td></td><td>status</td><td>for review</td><td>team-approved</td></tr>
+<tr><td></td><td>fhirPath</td><td>Binary.data</td><td>Binary</td></tr>
+<tr><td></td><td>fhirSubPath</td><td></td><td>.data</td></tr>
+<tr><td></td><td>mapParameters</td><td>contentType as param…</td><td>.contentType=#text/plain</td></tr>
+<tr><td>1726</td></tr>
+<tr><td></td><td>status</td><td>for review</td><td>inactive</td></tr>
 <tr><th colspan="4">use-case Encounter: Inpatient</th></tr>
 <tr><td colspan="4"><i>resource Encounter</i></td></tr>
 <tr><td>441</td></tr>
@@ -370,7 +374,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <tr><td></td><td>no changes</td></tr>
 <tr><th colspan="4">use-case Insurance Verification Write</th></tr>
 <tr><td colspan="4"><i>resource CoverageEligibilityResponse</i></td></tr>
-<tr><td></td><td>no changes</td></tr>
+<tr><td>1037</td></tr>
+<tr><td></td><td>vistaFileFieldName</td><td>- NOTES</td><td>??? - NOTES</td></tr>
 <tr><td colspan="4"><i>resource Coverage</i></td></tr>
 <tr><td></td><td>no changes</td></tr>
 <tr><td colspan="4"><i>resource Patient</i></td></tr>
@@ -455,6 +460,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <tr><td></td><td>mapValue</td><td></td><td>/Patient</td></tr>
 <tr><th colspan="4">use-case MedicationDispense: Original</th></tr>
 <tr><td colspan="4"><i>resource MedicationDispense</i></td></tr>
+<tr><td>1708</td></tr>
+<tr><td></td><td>mapValue</td><td>#FF</td><td>http://terminology.hl7.org/CodeSystem/v3-ActCode#FF</td></tr>
 <tr><td>820</td></tr>
 <tr><td></td><td>mapValue</td><td></td><td>/Patient</td></tr>
 <tr><td>1711</td></tr>
@@ -466,6 +473,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <tr><td></td><td>mapValue</td><td></td><td>/Practitioner</td></tr>
 <tr><th colspan="4">use-case MedicationDispense: Refill</th></tr>
 <tr><td colspan="4"><i>resource MedicationDispense</i></td></tr>
+<tr><td>1709</td></tr>
+<tr><td></td><td>mapValue</td><td>#RF</td><td>http://terminology.hl7.org/CodeSystem/v3-ActCode#RF</td></tr>
 <tr><td>1551</td></tr>
 <tr><td></td><td>mapValue</td><td></td><td>/Patient</td></tr>
 <tr><td>1715</td></tr>
@@ -477,6 +486,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <tr><td></td><td>mapValue</td><td></td><td>/Practitioner</td></tr>
 <tr><th colspan="4">use-case MedicationDispense: Partial</th></tr>
 <tr><td colspan="4"><i>resource MedicationDispense</i></td></tr>
+<tr><td>1710</td></tr>
+<tr><td></td><td>mapValue</td><td>#PF</td><td>http://terminology.hl7.org/CodeSystem/v3-ActCode#PF</td></tr>
 <tr><td>1563</td></tr>
 <tr><td></td><td>mapValue</td><td></td><td>/Patient</td></tr>
 <tr><td>1714</td></tr>
@@ -823,26 +834,16 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <tr><th colspan="4">use-case VAERS</th></tr>
 <tr><td colspan="4"><i>resource Patient</i></td></tr>
 <tr><td></td><td>maprow count</td><td>17</td><td>21</td></tr>
-<tr><td colspan="2">null new maprow</td></tr>
-<tr><td colspan="2">null new maprow</td></tr>
-<tr><td colspan="2">null new maprow</td></tr>
-<tr><td colspan="2">null new maprow</td></tr>
+<tr><td colspan="2">2022 new maprow</td></tr>
+<tr><td colspan="2">2023 new maprow</td></tr>
+<tr><td colspan="2">2024 new maprow</td></tr>
+<tr><td colspan="2">2025 new maprow</td></tr>
 <tr><td colspan="4"><i>resource Immunization</i></td></tr>
 <tr><td></td><td>maprow count</td><td>8</td><td>7</td></tr>
 <tr><td></td><td>no changes</td></tr>
 <tr><td colspan="4"><i>resource Immunization</i></td></tr>
-<tr><td></td><td>maprow count</td><td>8</td><td>5</td></tr>
-<tr><td>1876</td></tr>
-<tr><td></td><td>fhirPath</td><td>Immunization[vac1].patient</td><td>Immunization.patient</td></tr>
-<tr><td colspan="2">null new maprow</td></tr>
-<tr><td colspan="2">null new maprow</td></tr>
-<tr><td colspan="2">null new maprow</td></tr>
-<tr><td colspan="2">1959 new maprow</td></tr>
-<tr><td colspan="4"><i>resource AdverseEvent</i></td></tr>
-<tr><td>1972</td></tr>
-<tr><td></td><td>mapValue</td><td>Immunization-vac1</td><td>Immunizationvac1</td></tr>
-<tr><td colspan="4"><i>resource Immunization</i></td></tr>
-<tr><td></td><td>maprow count</td><td>8</td><td>6</td></tr>
+<tr><td></td><td>maprow count</td><td>8</td><td>7</td></tr>
+<tr><td colspan="2">2019 new maprow</td></tr>
 <tr><td colspan="2">1887 new maprow</td></tr>
 <tr><td colspan="2">1888 new maprow</td></tr>
 <tr><td colspan="2">1889 new maprow</td></tr>
@@ -850,7 +851,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <tr><td colspan="2">1891 new maprow</td></tr>
 <tr><td colspan="2">1892 new maprow</td></tr>
 <tr><td colspan="4"><i>resource Immunization</i></td></tr>
-<tr><td></td><td>maprow count</td><td>8</td><td>6</td></tr>
+<tr><td></td><td>maprow count</td><td>8</td><td>7</td></tr>
+<tr><td colspan="2">2020 new maprow</td></tr>
 <tr><td colspan="2">1893 new maprow</td></tr>
 <tr><td colspan="2">1894 new maprow</td></tr>
 <tr><td colspan="2">1895 new maprow</td></tr>
@@ -858,13 +860,38 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <tr><td colspan="2">1897 new maprow</td></tr>
 <tr><td colspan="2">1898 new maprow</td></tr>
 <tr><td colspan="4"><i>resource Immunization</i></td></tr>
-<tr><td></td><td>maprow count</td><td>8</td><td>6</td></tr>
+<tr><td></td><td>maprow count</td><td>8</td><td>7</td></tr>
+<tr><td colspan="2">2021 new maprow</td></tr>
 <tr><td colspan="2">1899 new maprow</td></tr>
 <tr><td colspan="2">1900 new maprow</td></tr>
 <tr><td colspan="2">1901 new maprow</td></tr>
 <tr><td colspan="2">1902 new maprow</td></tr>
 <tr><td colspan="2">1903 new maprow</td></tr>
 <tr><td colspan="2">1904 new maprow</td></tr>
+<tr><td colspan="4"><i>resource AdverseEvent</i></td></tr>
+<tr><td></td><td>maprow count</td><td>16</td><td>12</td></tr>
+<tr><td>1905</td></tr>
+<tr><td></td><td>mapApproach</td><td>source value</td><td>transform</td></tr>
+<tr><td></td><td>fhirPath</td><td>AdverseEvent.event</td><td>AdverseEvent.event.coding</td></tr>
+<tr><td></td><td>mapValue</td><td>"10067923"</td><td>parseText()</td></tr>
+<tr><td>1906</td></tr>
+<tr><td></td><td>fhirPath</td><td>AdverseEvent.outcome</td><td>AdverseEvent.outcome.coding[va-outcome1]</td></tr>
+<tr><td>1907</td></tr>
+<tr><td></td><td>fhirPath</td><td>AdverseEvent.outcome</td><td>AdverseEvent.outcome.coding[va-outcome2]</td></tr>
+<tr><td>1908</td></tr>
+<tr><td></td><td>fhirPath</td><td>AdverseEvent.outcome</td><td>AdverseEvent.outcome.coding[va-outcome3]</td></tr>
+<tr><td>1913</td></tr>
+<tr><td></td><td>fhirPath</td><td>AdverseEvent.outcome</td><td>AdverseEvent.outcome.coding[va-outcome8]</td></tr>
+<tr><td>1914</td></tr>
+<tr><td></td><td>fhirPath</td><td>AdverseEvent.outcome</td><td>AdverseEvent.outcome.coding[va-outcome9]</td></tr>
+<tr><td>1915</td></tr>
+<tr><td></td><td>fhirPath</td><td>AdverseEvent.outcome</td><td>AdverseEvent.outcome.coding[va-outcome10]</td></tr>
+<tr><td>1918</td></tr>
+<tr><td></td><td>fhirPath</td><td>AdverseEvent.outcome</td><td>AdverseEvent.outcome.coding[va-outcome11]</td></tr>
+<tr><td>1919</td></tr>
+<tr><td></td><td>fhirPath</td><td>AdverseEvent.outcome</td><td>AdverseEvent.outcome.coding[va-outcome12]</td></tr>
+<tr><td>1972</td></tr>
+<tr><td></td><td>mapValue</td><td>Immunization-vac1</td><td>Immunizationvac1</td></tr>
 <tr><td colspan="4"><i>resource Immunization</i></td></tr>
 <tr><td></td><td>maprow count</td><td>8</td><td>7</td></tr>
 <tr><td colspan="2">1920 new maprow</td></tr>
@@ -901,6 +928,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <tr><td colspan="2">1945 new maprow</td></tr>
 <tr><td colspan="2">1946 new maprow</td></tr>
 <tr><td colspan="2">1947 new maprow</td></tr>
+<tr><td colspan="4"><i>resource Immunization</i></td></tr>
+<tr><td></td><td>maprow count</td><td>8</td><td>1</td></tr>
+<tr><td colspan="2">1959 new maprow</td></tr>
 <tr><td colspan="4"><i>resource Bundle</i></td></tr>
 <tr><td>1963</td></tr>
 <tr><td></td><td>mapValue</td><td>Immunization-vac1</td><td>Immunizationvac1</td></tr>
@@ -918,6 +948,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <tr><td></td><td>mapValue</td><td>Immunization-pvac3</td><td>Immunizationpvac3</td></tr>
 <tr><td>1970</td></tr>
 <tr><td></td><td>mapValue</td><td>Immunization-pvac4</td><td>Immunizationpvac4</td></tr>
+<tr><th colspan="4">new use-case VAERS: abstract</th></tr>
 <tr><th colspan="4">termmap VF_adminGender</th></tr>
 <tr><th colspan="4">termmap VF_allergyActive</th></tr>
 <tr><th colspan="4">termmap VF_allergyEnteredInError</th></tr>
@@ -1010,7 +1041,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2024 <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.67.370 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Sun, Oct 20, 2024 09:02+0000">2024-10-20</span>
+          IG &#169; 2024 <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.67.378 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Oct 30, 2024 12:26+0000">2024-10-30</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

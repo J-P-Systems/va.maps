@@ -12,8 +12,7 @@ Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: DocumentReferenceBinary
 * data -> "1725: source value from TIU DOCUMENT - REPORT TEXT (8925-2)"
-* data -> "1725-1: fixed value without value?" "from mapParameter 1"
-* contentType -> "1726: fixed value = #text/plain"
+* contentType -> "1725-1: fixed value = #text/plain" "from mapParameter 1"
 
 Mapping: cdw-to-DocumentReferenceBinary
 Id: cdw
