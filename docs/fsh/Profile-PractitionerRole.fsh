@@ -11,6 +11,7 @@ Description: "This StructureDefinition contains the maps for VistA file NEW PERS
 * extension contains http://hl7.org/fhir/StructureDefinition/practitioner-job-title named practitioner-job-title 0..1
 * telecom[va-work].value and telecom[va-work].system and telecom[va-work].use and telecom[va-phone3].value and telecom[va-phone3].system and telecom[va-phone4].value and telecom[va-phone4].system and telecom[va-commercial].value and telecom[va-commercial].system and telecom[va-commercial].use and telecom[va-fax].value and telecom[va-fax].system and telecom[va-fax].use and telecom[va-voice-pager].value and telecom[va-voice-pager].system and telecom[va-data-pager].value and telecom[va-data-pager].system and telecom[va-mail].value and telecom[va-mail].system and active and period.start and practitioner and period.end and extension[http://hl7.org/fhir/StructureDefinition/practitioner-job-title].valueCodeableConcept.text and specialty.coding.code and specialty.coding.system and specialty.coding.display and location and code.coding.code and code.coding.system and code.coding.display and organization MS
 * practitioner only Reference(Practitioner)
+* location only Reference(Location)
 * organization only Reference(Organization)
 * telecom[va-work].system = #phone
 * telecom[va-work].use = #work
@@ -24,6 +25,7 @@ Description: "This StructureDefinition contains the maps for VistA file NEW PERS
 * telecom[va-data-pager].system = #pager
 * telecom[va-mail].system = #email
 * specialty.coding.system = "http://nucc.org/provider-taxonomy"
+* specialty.coding.display = "concat({PROVIDER TYPE (.01)}, {CLASSIFICATION (1)}, {AREA OF SPECIALIZATION (2)})"
 * code.coding.system = "http://nucc.org/provider-taxonomy"
 
 Mapping: source-to-PractitionerRole
@@ -58,8 +60,8 @@ Source: PractitionerRole
 * extension[http://hl7.org/fhir/StructureDefinition/practitioner-job-title].valueCodeableConcept.text -> "418: source value from NEW PERSON - TITLE > TITLE - NAME (200-8 > 3.1-.01)"
 * specialty.coding.code -> "419: source value from NEW PERSON - PERSON CLASS > PERSON CLASS - Person Class > PERSON CLASS - X12 CODE (200-8932.1 > 200.05-.01 > 8932.1-6)" "Added paths"
 * specialty.coding.system -> "419-1: fixed value = http://nucc.org/provider-taxonomy" "from mapParameter 1"
-* specialty.coding.display -> "419-2: undefined" "from mapParameter 2"
-* location -> "422: reference from HOSPITAL LOCATION - PROVIDER (44.1-.01)" "This is a reverse pointer. Location 44 contains 44.1, pointing at providers\nNEW PERSON #200"
+* specialty.coding.display -> "419-2: fixed value = concat({PROVIDER TYPE (.01)}, {CLASSIFICATION (1)}, {AREA OF SPECIALIZATION (2)})" "from mapParameter 2"
+* location -> "422: reference from HOSPITAL LOCATION - (44-) case 44-2600>44.1-.01>200" "This is a reverse pointer. Location 44 contains 44.1, pointing at providers NEW PERSON #200"
 * code.coding.code -> "1408: source value from NEW PERSON - PERSON CLASS > PERSON CLASS - Person Class > PERSON CLASS - X12 CODE (200-8932.1 > 200.05-.01 > 8932.1-6)"
 * code.coding.system -> "1408-1: fixed value = http://nucc.org/provider-taxonomy" "from mapParameter 1"
 * code.coding.display -> "1408-2: source value from NEW PERSON - PERSON CLASS > PERSON CLASS - Person Class > PERSON CLASS - CLASSIFICATION (200-8932.1 > 200.05-.01 > 8932.1-1)" "from mapParameter 2"
@@ -85,4 +87,3 @@ Source: PractitionerRole
 * period.end -> "StaffSub.ProviderTypeAssignment.ExpirationDateTime"
 * extension[http://hl7.org/fhir/StructureDefinition/practitioner-job-title].valueCodeableConcept.text -> "SStaff.SStaff.SignatureBlockTitle"
 * extension[http://hl7.org/fhir/StructureDefinition/practitioner-job-title].valueCodeableConcept.text -> "SStaff.SStaff.PositionTitle,Staff.Staff.PositionTitle"
-* location -> "Dim.LocationProvider.StaffIEN"

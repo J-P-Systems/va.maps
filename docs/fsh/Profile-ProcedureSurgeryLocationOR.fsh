@@ -13,10 +13,10 @@ Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: ProcedureSurgeryLocationOR
 * name -> "2014: source value from OPERATING ROOM - NAME > HOSPITAL LOCATION - NAME (131.7-.01 > 44-.01)"
-* telecom.value -> "2015: source value from OPERATING ROOM - TELEHONE (131.7-3)"
+* telecom.value -> "2015: source value from OPERATING ROOM - TELEPHONE (131.7-3)"
 * address -> "2016: target not supported"
 * status -> "2017: terminologyMaps using VF_OperatingRoomStatus on OPERATING ROOM - INACTIVE? (131.7-99)"
-* partOf -> "2018: reference from OPERATING ROOM - NAME > HOSPITAL LOCATION - PRINCIPAL CLINC (131.7-.01 > 44-1916)"
+* partOf -> "2018: reference from OPERATING ROOM - NAME > HOSPITAL LOCATION - PRINCIPAL CLINIC (131.7-.01 > 44-1916)"
 
 Mapping: cdw-to-ProcedureSurgeryLocationOR
 Id: cdw

@@ -43,11 +43,11 @@
 <tr><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3goXBCwdPqAP0wAAAldJREFUOMuNk0tIlFEYhp9z/vE2jHkhxXA0zJCMitrUQlq4lnSltEqCFhFG2MJFhIvIFpkEWaTQqjaWZRkp0g26URZkTpbaaOJkDqk10szoODP//7XIMUe0elcfnPd9zsfLOYplGrpRwZaqTtw3K7PtGem7Q6FoidbGgqHVy/HRb669R+56zx7eRV1L31JGxYbBtjKK93cxeqfyQHbehkZbUkK20goELEuIzEd+dHS+qz/Y8PTSif0FnGkbiwcAjHaU1+QWOptFiyCLp/LnKptpqIuXHx6rbR26kJcBX3yLgBfnd7CxwJmflpP2wUg0HIAoUUpZBmKzELGWcN8nAr6Gpu7tLU/CkwAaoKTWRSQyt89Q8w6J+oVQkKnBoblH7V0PPvUOvDYXfopE/SJmALsxnVm6LbkotrUtNowMeIrVrBcBpaMmdS0j9df7abpSuy7HWehwJdt1lhVwi/J58U5beXGAF6c3UXLycw1wdFklArBn87xdh0ZsZtArghBdAA3+OEDVubG4UEzP6x1FOWneHh2VDAHBAt80IbdXDcesNoCvs3E5AFyNSU5nbrDPZpcUEQQTFZiEVx+51fxMhhyJEAgvlriadIJZZksRuwBYMOPBbO3hePVVqgEJhFeUuFLhIPkRP6BQLIBrmMenujm/3g4zc398awIe90Zb5A1vREALqneMcYgP/xVQWlG+Ncu5vgwwlaUNx+3799rfe96u9K0JSDXcOzOTJg4B6IgmXfsygc7/Bvg9g9E58/cDVmGIBOP/zT8Bz1zqWqpbXIsd0O9hajXfL6u4BaOS6SeWAAAAAElFTkSuQmCC" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr></table></div>
   </text>
   <url value="http://va.gov/fhir/StructureDefinition/ImmunizationImmunization"/>
-  <version value="0.67.378"/>
+  <version value="0.67.381"/>
   <name value="ImmunizationImmunization"/>
   <title value="Immunization Immunization"/>
   <status value="draft"/>
-  <date value="2024-10-30T12:26:51+00:00"/>
+  <date value="2024-11-03T11:50:46+00:00"/>
   <publisher value="VA"/>
   <contact>
     <name value="VA"/>
@@ -643,7 +643,7 @@
       </mapping>
       <mapping>
         <identity value="vista"/>
-        <map value="332: source value from V IMMUNIZATION - IMMUNIZATION &gt; IMMUNIZATION - CVX CODE (9000010.11-.01 &gt; 9999999.14-.03) case not null"/>
+        <map value="332: source value from V IMMUNIZATION - IMMUNIZATION &gt; IMMUNIZATION - (9000010.11-.01 &gt; 9999999.14-) case 9999999.14-.03 not null"/>
         <comment value="subfile: .03 is CVX"/>
       </mapping>
       <mapping>
@@ -652,7 +652,7 @@
       </mapping>
       <mapping>
         <identity value="cdw"/>
-        <map value="Immun.Immunization.ImmunizationNameIEN&#xA;Dim.ImmunizationName.CVXCode"/>
+        <map value="Immun.Immunization.ImmunizationNameIEN"/>
       </mapping>
       <mapping>
         <identity value="workflow"/>
@@ -1111,8 +1111,12 @@
       <isSummary value="true"/>
       <mapping>
         <identity value="vista"/>
-        <map value="332-1: undefined case not null"/>
+        <map value="332-1: source value from V IMMUNIZATION - IMMUNIZATION &gt; IMMUNIZATION - NAME (9000010.11-.01 &gt; 9999999.14-.01) case 9999999.14-.03 not null"/>
         <comment value="from mapParameter 1"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Immun.Immunization.ImmunizationNameIEN&#xA;Dim.ImmunizationName.ImmunizationName,Dim.PharmacyOrderableItem.ImmunizationName"/>
       </mapping>
       <mapping>
         <identity value="v2"/>
@@ -4002,7 +4006,7 @@
       </mapping>
       <mapping>
         <identity value="vista"/>
-        <map value="332: source value from V IMMUNIZATION - IMMUNIZATION &gt; IMMUNIZATION - CVX CODE (9000010.11-.01 &gt; 9999999.14-.03) case not null"/>
+        <map value="332: source value from V IMMUNIZATION - IMMUNIZATION &gt; IMMUNIZATION - (9000010.11-.01 &gt; 9999999.14-) case 9999999.14-.03 not null"/>
         <comment value="subfile: .03 is CVX"/>
       </mapping>
       <mapping>
@@ -4011,7 +4015,7 @@
       </mapping>
       <mapping>
         <identity value="cdw"/>
-        <map value="Immun.Immunization.ImmunizationNameIEN&#xA;Dim.ImmunizationName.CVXCode"/>
+        <map value="Immun.Immunization.ImmunizationNameIEN"/>
       </mapping>
     </element>
     <element id="Immunization.vaccineCode.coding.system">
@@ -4041,8 +4045,12 @@
       <mustSupport value="true"/>
       <mapping>
         <identity value="vista"/>
-        <map value="332-1: undefined case not null"/>
+        <map value="332-1: source value from V IMMUNIZATION - IMMUNIZATION &gt; IMMUNIZATION - NAME (9000010.11-.01 &gt; 9999999.14-.01) case 9999999.14-.03 not null"/>
         <comment value="from mapParameter 1"/>
+      </mapping>
+      <mapping>
+        <identity value="cdw"/>
+        <map value="Immun.Immunization.ImmunizationNameIEN&#xA;Dim.ImmunizationName.ImmunizationName,Dim.PharmacyOrderableItem.ImmunizationName"/>
       </mapping>
     </element>
     <element id="Immunization.patient">

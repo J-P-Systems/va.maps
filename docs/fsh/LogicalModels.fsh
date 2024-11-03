@@ -103,7 +103,7 @@ Characteristics: #can-be-target
 * telephone 0..1 Element "TELEPHONE (-99)"
 * physicalLocation 0..1 Element "PHYSICAL LOCATION (-10)"
 * institution 0..1 Reference "INSTITUTION (-3)"
-* principalClinc 0..1 Element "PRINCIPAL CLINC (-1916)"
+* principalClinic 0..1 Element "PRINCIPAL CLINIC (-1916)"
 * institution only Reference(Institution4)
 
 Logical: Ptf45
@@ -392,11 +392,12 @@ Characteristics: #can-be-target
 * totalCharge 0..1 Element "TOTAL CHARGE (-.07)"
 * dateEntryAdded 0..1 Element "DATE ENTRY ADDED (-12)"
 * actionType 0..1 Reference "ACTION TYPE (-.03)"
+* cancellationReason 0..1 Element "CANCELLATION REASON (-.1)"
 * arBillNumber 0..1 Element "AR BILL NUMBER (-.11)"
 * patient 0..1 Element "PATIENT (-.02)"
 * dateBilledFrom 0..1 Element "DATE BILLED FROM (-.14)"
 * dateBilledTo 0..1 Element "DATE BILLED TO (-.15)"
-* actionType only Reference(IbActionTypes3501)
+* actionType only Reference(IbActionType3501)
 
 Logical: AccountsReceivable430
 Id: AccountsReceivable430
@@ -405,7 +406,7 @@ Description: "This StructureDefinition contains the Logical Model for the mapped
 Characteristics: #can-be-target
 * patient 0..1 Element "PATIENT (-7)"
 * debtor 0..1 Reference "DEBTOR (-9)"
-* name 0..1 Element "NAME (-.01)"
+* billNo 0..1 Element "BILL NO. (-.01)"
 * currentStatus 0..1 Reference "CURRENT STATUS (-8)"
 * dateBillPrepared 0..1 Element "DATE BILL PREPARED (-10)"
 * site 0..1 Element "SITE (-12)"
@@ -415,7 +416,7 @@ Characteristics: #can-be-target
 * principalBalance 0..1 Element "PRINCIPAL BALANCE (-71)"
 * interestBalance 0..1 Element "INTEREST BALANCE (-72)"
 * administrativeCostBalance 0..1 Element "ADMINISTRATIVE COST BALANCE (-73)"
-* marshallFee 0..1 Element "MARSHALL FEE (-74)"
+* marshalFee 0..1 Element "MARSHAL FEE (-74)"
 * courtCost 0..1 Element "COURT COST (-75)"
 * totalPaidPrincipal 0..1 Element "TOTAL PAID PRINCIPAL (-77)"
 * totalPaidInterest 0..1 Element "TOTAL PAID INTEREST (-78)"
@@ -432,18 +433,18 @@ Description: "This StructureDefinition contains the Logical Model for the mapped
 Characteristics: #can-be-target
 * marshalFee 0..1 Element "MARSHAL FEE (-25)"
 * courtCost 0..1 Element "COURT COST (-26)"
-* intcharge 0..1 Element "INT.CHARGE (-25)"
-* admcharge 0..1 Element "ADM.CHARGE (-25)"
+* intcharge 0..1 Element "INT.CHARGE (-27)"
+* admcharge 0..1 Element "ADM.CHARGE (-28)"
 * dateEntered 0..1 Element "DATE ENTERED (-19)"
 * transactionType 0..1 Reference "TRANSACTION TYPE (-12)"
 * transactionNumber 0..1 Element "TRANSACTION NUMBER (-.01)"
-* transactionDate 0..1 Element "TRANSACTION DATE (-11)"
 * billNumber 0..1 Element "BILL NUMBER (-.03)"
+* transactionDate 0..1 Element "TRANSACTION DATE (-11)"
 * transAmount 0..1 Element "TRANS. AMOUNT (-15)"
 * receipt  0..1 Element "RECEIPT # (-13)"
-* prinCollected 0..1 Element "PRIN. COLLECTED (-31)"
+* princollected 0..1 Element "PRIN.COLLECTED (-31)"
 * interestCollected 0..1 Element "INTEREST COLLECTED (-32)"
-* adminCollected 0..1 Element "ADMIN. COLLECTED (-33)"
+* admincollected 0..1 Element "ADMIN.COLLECTED (-33)"
 * marshalFeeCollected 0..1 Element "MARSHAL FEE COLLECTED (-34)"
 * courtCostCollected 0..1 Element "COURT COST COLLECTED (-35)"
 * transactionType only Reference(AccountsReceivableTranstype4303)
@@ -666,6 +667,7 @@ Description: "This StructureDefinition contains the Logical Model for the mapped
 Characteristics: #can-be-target
 * patient 0..1 Element "PATIENT (-.01)"
 * apptStopCode 0..1 Element "APPT STOP CODE (-13.4)"
+* desiredDateOfAppointment 0..1 Element "DESIRED DATE OF APPOINTMENT (-22)"
 * originatingDate 0..1 Element "ORIGINATING DATE (-1)"
 * comments 0..1 Element "COMMENTS (-25)"
 * apptClinic 0..1 Element "APPT CLINIC (-13.2)"
@@ -1438,13 +1440,6 @@ Characteristics: #can-be-target
 * x12Code 0..1 Element "X12 CODE (-6)"
 * classification 0..1 Element "CLASSIFICATION (-1)"
 
-Logical: HospitalLocation441
-Id: HospitalLocation441
-Title: "HOSPITAL LOCATION (44.1)"
-Description: "This StructureDefinition contains the Logical Model for the mapped parts of the source HOSPITAL LOCATION (44.1)"
-Characteristics: #can-be-target
-* provider 0..1 Element "PROVIDER (-.01)"
-
 Logical: ProviderNarrative999999927
 Id: ProviderNarrative999999927
 Title: "PROVIDER NARRATIVE (9999999.27)"
@@ -1506,7 +1501,7 @@ Title: "OPERATING ROOM (131.7)"
 Description: "This StructureDefinition contains the Logical Model for the mapped parts of the source OPERATING ROOM (131.7)"
 Characteristics: #can-be-target
 * name 0..1 Reference "NAME (-.01)"
-* telehone 0..1 Element "TELEHONE (-3)"
+* telephone 0..1 Element "TELEPHONE (-3)"
 * inactive 0..1 Coding "INACTIVE? (-99)"
 * inactive from http://va.gov/fhir/ValueSet/VSVFOperatingRoomStatus-vista (preferred)
 * name only Reference(HospitalLocation44)
@@ -1647,10 +1642,10 @@ Characteristics: #can-be-target
 * name 0..1 Coding "NAME (-.01)"
 * name from http://va.gov/fhir/ValueSet/VSVFARBillStatus-vista (preferred)
 
-Logical: IbActionTypes3501
-Id: IbActionTypes3501
-Title: "IB ACTION TYPES (350.1)"
-Description: "This StructureDefinition contains the Logical Model for the mapped parts of the source IB ACTION TYPES (350.1)"
+Logical: IbActionType3501
+Id: IbActionType3501
+Title: "IB ACTION TYPE (350.1)"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the source IB ACTION TYPE (350.1)"
 Characteristics: #can-be-target
 * chargeCategory 0..1 Element "CHARGE CATEGORY (-.03)"
 

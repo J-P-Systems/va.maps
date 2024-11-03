@@ -21,7 +21,7 @@ Source: DebtPortalInterestFeesChargeItem
 * code.text -> "1993: source value from AR TRANSACTION - TRANSACTION TYPE > ACCOUNTS RECEIVABLE TRANS.TYPE - NAME (433-12 > 430.3-.01) case IEN = 12 OR 13" "Transaction type name = ADMIN.COST CHARGE when IEN = 12\nTransaction type name = INTEREST/ADM. CHARGE when IEN = 13"
 * identifier[va-tn].value -> "1994: source value from AR TRANSACTION - TRANSACTION NUMBER (433-.01)"
 * identifier[va-tn].type.text -> "1994-1: fixed value = Transaction Number" "from mapParameter 1"
-* identifier[va-bn].value -> "1995: source value from AR TRANSACTION - TRANSACTION NUMBER (433-.03)"
+* identifier[va-bn].value -> "1995: source value from AR TRANSACTION - BILL NUMBER (433-.03)"
 * identifier[va-bn].type.text -> "1995-1: fixed value = Bill Number" "from mapParameter 1"
 * status -> "1996: fixed value = #billed"
 * occurrenceDateTime -> "1997: source value from AR TRANSACTION - TRANSACTION DATE (433-11)"

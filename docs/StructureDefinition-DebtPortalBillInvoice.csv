@@ -32,7 +32,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}","N/A"
 "Invoice.identifier","Invoice.identifier","","","",0,*,"Y","","Y","Identifier {[]} {[]}
 ","Business Identifier for item","Identifier of this Invoice, often used for reference in correspondence about this invoice or for tracking of payments.","","Allows Identification of this Invoice instance.","","","","","","","",,,,,"",,,,"Invoice.identifier",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","1975: source value from ACCOUNTS RECEIVABLE - NAME (430-.01)","IB.AccountsReceivable.BillNumber,IB.AccountsReceivableTCSP.BillNumber","FT1.2",".identifier","FiveWs.identifier"
+","1975: source value from ACCOUNTS RECEIVABLE - BILL NO. (430-.01)","IB.AccountsReceivable.BillNumber,IB.AccountsReceivableTCSP.BillNumber","FT1.2",".identifier","FiveWs.identifier"
 "Invoice.status","Invoice.status","","","",1,1,"Y","Y","Y","code {[]} {[]}
 ","draft | issued | balanced | cancelled | entered-in-error","The current state of the Invoice.","","","","","","","","","",,"required","","http://va.gov/fhir/ValueSet/VSVFARBillStatus","",,,,"Invoice.status",1,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","1843: terminologyMaps using VF_ARBillStatus on ACCOUNTS RECEIVABLE - CURRENT STATUS > ACCOUNTS RECEIVABLE TRANS.TYPE - NAME (430-8 > 430.3-.01)","IB.AccountsReceivable.ARTransactionTypeIEN
@@ -413,7 +413,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","FT1.22"
 "Invoice.totalPriceComponent:va-marsh-fee.amount","Invoice.totalPriceComponent.amount","","","",0,1,"Y","","","Money {[]} {[]}
 ","Monetary amount associated with this component","The amount calculated for this component.","There is no reason to carry the price in the instance of a ChargeItem unless circumstances require a manual override. The list prices or are usually defined in a back catalogue of the billing codes  (see ChargeItem.definition). Derived profiles may require a ChargeItem.overrideReason to be provided if either factor or price are manually overridden.","","","","","","","","",,,,,"",,,,"Invoice.lineItem.priceComponent.amount",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","1867: source value from ACCOUNTS RECEIVABLE - MARSHALL FEE (430-74)","IB.AccountsReceivable.MarshalFee","FT1.22"
+","1867: source value from ACCOUNTS RECEIVABLE - MARSHAL FEE (430-74)","IB.AccountsReceivable.MarshalFee","FT1.22"
 "Invoice.totalPriceComponent:va-court-cost","Invoice.totalPriceComponent","va-court-cost","","",0,1,"","","","BackboneElement {[]} {[]}
 ","Components of Invoice total","The total amount for the Invoice may be calculated as the sum of the line items with surcharges/deductions that apply in certain conditions.  The priceComponent element can be used to offer transparency to the recipient of the Invoice of how the total price was calculated.","","","","","","","","","",,,,,"",,,,"Invoice.totalPriceComponent",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","EVN.5 or by domain",".participation[typeCode=PRF].role[scoper.determinerCode=INSTANCE]"

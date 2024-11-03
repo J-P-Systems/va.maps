@@ -20,7 +20,7 @@ Source: VAERSAdverseEvent
 * subject -> "1877: reference from ADERS - 0_Pt_ICN_Full"
 * actuality -> "1877-1: fixed value = #actual" "from mapParameter 1"
 * date -> "1881: transform using concat(4_VacDate, 4_VacTime)"
-* event.coding -> "1905: transform using parseText()" "Multiple event codes in coding"
+* event.coding -> "1905: transform using parseCodesFromText()" "Multiple event codes in coding"
 * outcome.coding[va-outcome1] -> "1906: source value from ADERS - 21_VAE_Outcome_DrVisit" "Multiple outcome codes in coding don’t mean the same"
 * outcome.coding[va-outcome2] -> "1907: source value from ADERS - 21_VAE_Outcome_ErED"
 * outcome.coding[va-outcome3] -> "1908: source value from ADERS - 21_HospStay"

@@ -44,7 +44,7 @@ Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: DebtPortalBillInvoice
 * recipient -> "1818: reference from ACCOUNTS RECEIVABLE - DEBTOR > AR DEBTOR - DEBTOR (430-9 > 340-.01) case patient"
-* identifier -> "1975: source value from ACCOUNTS RECEIVABLE - NAME (430-.01)"
+* identifier -> "1975: source value from ACCOUNTS RECEIVABLE - BILL NO. (430-.01)"
 * status -> "1843: terminologyMaps using VF_ARBillStatus on ACCOUNTS RECEIVABLE - CURRENT STATUS > ACCOUNTS RECEIVABLE TRANS.TYPE - NAME (430-8 > 430.3-.01)"
 * subject -> "1976: reference from ACCOUNTS RECEIVABLE - PATIENT > PATIENT (430-7 > 2-)"
 * date -> "1977: source value from ACCOUNTS RECEIVABLE - DATE BILL PREPARED (430-10)"
@@ -67,7 +67,7 @@ Source: DebtPortalBillInvoice
 * totalPriceComponent[va-admin-cost-bal].amount -> "1866: source value from ACCOUNTS RECEIVABLE - ADMINISTRATIVE COST BALANCE (430-73)"
 * totalPriceComponent[va-admin-cost-bal].type -> "1866-1: fixed value = #surcharge" "from mapParameter 1"
 * totalPriceComponent[va-admin-cost-bal].code.text -> "1866-2: fixed value = Administrative Cost Balance" "from mapParameter 2"
-* totalPriceComponent[va-marsh-fee].amount -> "1867: source value from ACCOUNTS RECEIVABLE - MARSHALL FEE (430-74)"
+* totalPriceComponent[va-marsh-fee].amount -> "1867: source value from ACCOUNTS RECEIVABLE - MARSHAL FEE (430-74)"
 * totalPriceComponent[va-marsh-fee].type -> "1867-1: fixed value = #surcharge" "from mapParameter 1"
 * totalPriceComponent[va-marsh-fee].code.text -> "1867-2: fixed value = Marshal Fee" "from mapParameter 2"
 * totalPriceComponent[va-court-cost].amount -> "1868: source value from ACCOUNTS RECEIVABLE - COURT COST (430-75)"
