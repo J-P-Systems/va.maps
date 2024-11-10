@@ -3,7 +3,9 @@ Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-implantable-devi
 Id: ImplantableDeviceProsthesis
 Title: "Implantable Device: Prosthesis"
 Description: "This StructureDefinition contains the maps for VistA file PROSTHESIS INSTALLED (130.01) to us-core-implantable-device"
-* ^status = #draft
+* ^status = #active
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
+* ^extension.valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-implantable-device|6.1.0"
 * identifier.value and identifier.system and manufacturer and expirationDate and lotNumber and serialNumber and deviceName.name and deviceName.type and modelNumber and type and patient and owner MS
 * patient only Reference(Patient)
 * owner only Reference(Organization)

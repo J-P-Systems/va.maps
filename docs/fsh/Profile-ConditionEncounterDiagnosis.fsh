@@ -3,7 +3,9 @@ Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-encoun
 Id: ConditionEncounterDiagnosis
 Title: "Condition: Encounter Diagnosis"
 Description: "This StructureDefinition contains the maps for VistA file V POV (9000010.07) to us-core-condition-encounter-diagnosis"
-* ^status = #draft
+* ^status = #active
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
+* ^extension.valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-encounter-diagnosis|6.1.0"
 * category[us-core] and identifier.value and identifier.system and code and code.coding.system and code.coding.code and subject and encounter and onsetDateTime and recordedDate and clinicalStatus and verificationStatus and recorder MS
 * subject only Reference(Patient)
 * recorder only Reference(Practitioner)
@@ -23,7 +25,7 @@ Source: ConditionEncounterDiagnosis
 * code -> "1613: source value from V POV - POV > ICD DIAGNOSIS (9000010.07-.01 > 80-)"
 * code.coding.system -> "1613-1: fixed value = urn:see-termmap-in-mapParameter" "from mapParameter 1"
 * code.coding.code -> "1613-2: source value from V POV - POV > ICD DIAGNOSIS - CODE NUMBER (9000010.07-.01 > 80-.01)" "from mapParameter 2"
-* subject -> "1611: reference from V POV - PATIENT NAME (9000010.07-.02)"
+* subject -> "1611: reference from V POV - PATIENT NAME (9000010.07-.02)" "We have patient resource; unclear why name is repeated"
 * encounter -> "368: source value from V POV - VISIT (9000010.07-.03)"
 * onsetDateTime -> "370: source value from V POV - DATE OF INJURY (9000010.07-.13)"
 * recordedDate -> "372: source value from V POV - VISIT > VISIT - VISIT/ADMIT DATE&TIME (9000010.07-.03 > 9000010-.01)" "Added the sub file and field"

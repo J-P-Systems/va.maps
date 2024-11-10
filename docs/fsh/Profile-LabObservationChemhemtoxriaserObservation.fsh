@@ -37,7 +37,7 @@ Source: LabObservationChemhemtoxriaserObservation
 * valueQuantity.value -> "857: source value from CHEM, HEM, TOX, RIA, SER, etc. - testnames (63.04-2+through+862)"
 * valueQuantity.unit -> "864: source value from CHEM, HEM, TOX, RIA, SER, etc. - ORDERED TEST > ORDERED TEST - LAB TEST ORDERED > LABORATORY TEST - SITE/SPECIMEN > SITE/SPECIMEN - UNITS (63.04-.35 > 63.07-13 > 60-100 > 60.01-6)" "Use CTTDM map \"VistA Lab Chem Units to UCUM\" to convert VistA text units to UCUM, where possible"
 * category -> "843: fixed value = http://terminology.hl7.org/CodeSystem/observation-category#laboratory"
-* dataAbsentReason -> "null: target not supported" "because of must-support"
+* dataAbsentReason -> "2031: target not supported" "because of must-support"
 * subject -> "844: reference from PATIENT - LABORATORY REFERENCE > LAB DATA - LRDFN (2-63 > 63-.01)" "Pointer from PATIENT (2)"
 
 Mapping: cdw-to-LabObservationChemhemtoxriaserObservation

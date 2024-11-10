@@ -3,7 +3,9 @@ Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient
 Id: Patient
 Title: "Patient"
 Description: "This StructureDefinition contains the maps for VistA file PATIENT (2) to us-core-patient"
-* ^status = #draft
+* ^status = #active
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
+* ^extension.valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient|6.1.0"
 * telecom ^slicing.discriminator.type = #pattern
 * telecom ^slicing.discriminator.path = "$this"
 * telecom ^slicing.rules = #open

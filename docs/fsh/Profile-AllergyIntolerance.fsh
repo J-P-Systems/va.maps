@@ -3,7 +3,9 @@ Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-allergyintoleran
 Id: AllergyIntolerance
 Title: "AllergyIntolerance"
 Description: "This StructureDefinition contains the maps for VistA file PATIENT ALLERGIES (120.8) to us-core-allergyintolerance"
-* ^status = #draft
+* ^status = #active
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
+* ^extension.valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-allergyintolerance|6.1.0"
 * identifier ^slicing.discriminator.type = #pattern
 * identifier ^slicing.discriminator.path = "$this"
 * identifier ^slicing.rules = #open

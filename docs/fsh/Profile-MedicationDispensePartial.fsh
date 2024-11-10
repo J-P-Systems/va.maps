@@ -3,8 +3,9 @@ Parent: http://hl7.org/fhir/StructureDefinition/MedicationDispense
 Id: MedicationDispensePartial
 Title: "MedicationDispense: Partial"
 Description: "This StructureDefinition contains the maps for VistA file PRESCRIPTION (52) to MedicationDispense"
-* ^status = #draft
+* ^status = #active
 * type and destination.display and authorizingPrescription and daysSupply and dosageInstruction.doseAndRate.doseQuantity.unit and dosageInstruction.doseAndRate.doseQuantity.code and dosageInstruction.doseAndRate.doseQuantity.value and dosageInstruction.patientInstruction and dosageInstruction.text and medicationCodeableConcept.coding.code and medicationCodeableConcept.coding.system and medicationCodeableConcept.text and quantity.value and status and subject and whenPrepared and location and note.text and performer.actor MS
+* authorizingPrescription only Reference(MedicationRequestOutpatient)
 * subject only Reference(Patient)
 * location only Reference(Location)
 * performer.actor only Reference(Practitioner)
@@ -18,7 +19,7 @@ Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: MedicationDispensePartial
 * type -> "1710: fixed value = http://terminology.hl7.org/CodeSystem/v3-ActCode#PF"
 * destination.display -> "1713: source value from PRESCRIPTION - PARTIAL DATE > PARTIAL DATE - MAIL/WINDOW (52-60 > 52.2-.02)"
-* authorizingPrescription -> "1565: source value from PRESCRIPTION - PLACER ORDER # (52-39.3)"
+* authorizingPrescription -> "1565: reference from PRESCRIPTION - PLACER ORDER # (52-39.3)"
 * daysSupply -> "828: source value from PRESCRIPTION - PARTIAL DATE > PARTIAL DATE - DAYS SUPPLY (52-60 > 52.2-.041)"
 * destination.display -> "837: source value from PRESCRIPTION - PARTIAL DATE > PARTIAL DATE - MAIL/WINDOW (52-60 > 52.2-.02)"
 * dosageInstruction.doseAndRate.doseQuantity.unit -> "1571: source value from PRESCRIPTION - MEDICATION INSTRUCTIONS > MEDICATION INSTRUCTIONS - UNITS (52-113 > 52.0113-2)"
@@ -34,9 +35,9 @@ Source: MedicationDispensePartial
 * status -> "1578: fixed value = #in-progress when PRESCRIPTION - PARTIAL DATE > PARTIAL DATE - RELEASED DATE/TIME (52-60 > 52.2-8) case null"
 * subject -> "1563: reference from PRESCRIPTION - PATIENT (52-2)"
 * whenPrepared -> "834: source value from PRESCRIPTION - PARTIAL DATE > PARTIAL DATE - RELEASED DATE/TIME (52-60 > 52.2-8)" "see original fill note"
-* location -> "1714: reference from PRESCRIPTION - PARTIAL DATE > PARTIAL DATE - DIVISION > OUTPATIENT SITE - DEFAULT ERX CLINIC (52-60 > 52.2-.09 > 59-10)" "^^ see 1710"
+* location -> "1714: reference from PRESCRIPTION - PARTIAL DATE > PARTIAL DATE - DIVISION > OUTPATIENT SITE - DEFAULT ERX CLINIC (52-60 > 52.2-.09 > 59-10)" "not Clinic (written) but Division (filled)"
 * note.text -> "1717: source value from PRESCRIPTION - PARTIAL DATE > PARTIAL DATE - REMARKS (52-60 > 52.2-.03)"
-* performer.actor -> "1728: reference from PRESCRIPTION - REFILL > REFILL - PHARMACIST NAME (52-52 > 52.1-4)"
+* performer.actor -> "1729: reference from PRESCRIPTION - PARTIAL DATE > PARTIAL DATE - PHARMACIST NAME (52-60 > 52.2-.05)"
 
 Mapping: cdw-to-MedicationDispensePartial
 Id: cdw

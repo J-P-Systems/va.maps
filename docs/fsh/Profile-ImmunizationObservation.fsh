@@ -3,7 +3,7 @@ Parent: http://hl7.org/fhir/StructureDefinition/Observation
 Id: ImmunizationObservation
 Title: "Immunization Observation"
 Description: "This StructureDefinition contains the maps for VistA file V IMMUNIZATION (9000010.11) to Observation"
-* ^status = #draft
+* ^status = #active
 * status and code and valueCodeableConcept and valueCodeableConcept.coding.code and valueCodeableConcept.coding.system and valueCodeableConcept.text MS
 * status = #completed
 * code = http://loinc.org#31044-1

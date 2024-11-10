@@ -3,7 +3,9 @@ Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure
 Id: ProcedureSurgeryProcedure
 Title: "Procedure: Surgery Procedure"
 Description: "This StructureDefinition contains the maps for VistA file SURGERY (130) to us-core-procedure"
-* ^status = #draft
+* ^status = #active
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
+* ^extension.valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure|6.1.0"
 * performer ^slicing.discriminator.type = #pattern
 * performer ^slicing.discriminator.path = "$this"
 * performer ^slicing.rules = #open
@@ -70,8 +72,8 @@ Source: ProcedureSurgeryProcedure
 * performedPeriod.end -> "1291: source value from SURGERY - TIME PROCEDURE ENDED (130-122) case 130-118 NON-OR PROCEDURE == ‘Y’"
 * performedPeriod.start -> "1292: source value from SURGERY - TIME OPERATION BEGAN (130-.22) case 130-118 NON-OR PROCEDURE != ‘Y’"
 * performedPeriod.end -> "1293: source value from SURGERY - TIME OPERATION ENDS (130-.23) case 130-118 NON-OR PROCEDURE != ‘Y’"
-* location -> "1294: reference from SURGERY - NON-OR LOCATION (130-119) case 130-118 NON-OR PROCEDURE == ‘Y’"
-* location -> "1295: reference from SURGERY - OP ROOM PROCEDURE PERFORMED > OPERATING ROOM - (130-.02 > 131.7-) case 130-118 NON-OR PROCEDURE != ‘Y’" "OPERATING ROOM 131.7\n131.7-.01 points to HOSPITAL LOCATION we could use that or add maps for 131.7 with a partOf to .01"
+* location -> "1294: reference from SURGERY - NON-OR LOCATION > OPERATING ROOM - (130-119 > 131.7-) case 130-118 NON-OR PROCEDURE == ‘Y’"
+* location -> "1295: reference from SURGERY - OP ROOM PROCEDURE PERFORMED (130-.02) case 130-118 NON-OR PROCEDURE != ‘Y’"
 * complication.coding -> "1296: fixed value = http://snomed.info/sct#88797001 Complication of surgical procedure (disorder) when SURGERY - STOMA COMPLICATIONS (130-688) case == ‘Y’"
 * complication.text -> "1296-1: fixed value = STOMA COMPLICATIONS case == ‘Y’" "from mapParameter 1"
 * complication.coding -> "1297: fixed value = http://snomed.info/sct#22298006 Myocardial infarction (disorder) when SURGERY - MYOCARDIAL INFARCTION (130-258) case == ‘Y’" "Removed \"perioperative\" in the .text"

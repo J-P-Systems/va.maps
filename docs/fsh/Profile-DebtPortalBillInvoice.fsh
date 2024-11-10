@@ -3,7 +3,7 @@ Parent: http://hl7.org/fhir/StructureDefinition/Invoice
 Id: DebtPortalBillInvoice
 Title: "Debt Portal: Bill Invoice"
 Description: "This StructureDefinition contains the maps for VistA file ACCOUNTS RECEIVABLE (430) to Invoice"
-* ^status = #draft
+* ^status = #active
 * totalPriceComponent ^slicing.discriminator.type = #pattern
 * totalPriceComponent ^slicing.discriminator.path = "$this"
 * totalPriceComponent ^slicing.rules = #open

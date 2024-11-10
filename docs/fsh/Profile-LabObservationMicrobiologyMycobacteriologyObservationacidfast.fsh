@@ -4,6 +4,8 @@ Id: LabObservationMicrobiologyMycobacteriologyObservationacidfast
 Title: "Lab Observation: Microbiology Mycobacteriology Observation[acidfast]"
 Description: "This StructureDefinition contains the maps for VistA file MICROBIOLOGY (63.05) to us-core-observation-lab"
 * ^status = #draft
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
+* ^extension.valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab|6.1.0"
 * valueString and code MS
 * code = http://loinc.org#11545-1 "Microscopic observation [Identifier] in Specimen by Acid fast stain"
 

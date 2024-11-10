@@ -5,6 +5,8 @@ Title: "Lab Observation Observation"
 Description: "This StructureDefinition contains the maps for VistA file PATIENT (2) to us-core-observation-lab"
 * ^status = #draft
 * ^abstract = true
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
+* ^extension.valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab|6.1.0"
 * category and subject MS
 * subject only Reference(Patient)
 * category = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
@@ -14,7 +16,7 @@ Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: LabObservationObservation
 * category -> "843: fixed value = http://terminology.hl7.org/CodeSystem/observation-category#laboratory"
-* dataAbsentReason -> "null: target not supported" "because of must-support"
+* dataAbsentReason -> "2031: target not supported" "because of must-support"
 * subject -> "844: reference from PATIENT - LABORATORY REFERENCE > LAB DATA - LRDFN (2-63 > 63-.01)" "Pointer from PATIENT (2)"
 
 Mapping: cdw-to-LabObservationObservation

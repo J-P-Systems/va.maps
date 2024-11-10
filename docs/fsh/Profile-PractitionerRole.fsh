@@ -3,7 +3,9 @@ Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitionerrole
 Id: PractitionerRole
 Title: "Practitioner Role"
 Description: "This StructureDefinition contains the maps for VistA file NEW PERSON (200) to us-core-practitionerrole"
-* ^status = #draft
+* ^status = #active
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
+* ^extension.valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitionerrole|6.1.0"
 * telecom ^slicing.discriminator.type = #pattern
 * telecom ^slicing.discriminator.path = "$this"
 * telecom ^slicing.rules = #open
@@ -61,8 +63,8 @@ Source: PractitionerRole
 * specialty.coding.code -> "419: source value from NEW PERSON - PERSON CLASS > PERSON CLASS - Person Class > PERSON CLASS - X12 CODE (200-8932.1 > 200.05-.01 > 8932.1-6)" "Added paths"
 * specialty.coding.system -> "419-1: fixed value = http://nucc.org/provider-taxonomy" "from mapParameter 1"
 * specialty.coding.display -> "419-2: fixed value = concat({PROVIDER TYPE (.01)}, {CLASSIFICATION (1)}, {AREA OF SPECIALIZATION (2)})" "from mapParameter 2"
-* location -> "422: reference from HOSPITAL LOCATION - (44-) case 44-2600>44.1-.01>200" "This is a reverse pointer. Location 44 contains 44.1, pointing at providers NEW PERSON #200"
-* code.coding.code -> "1408: source value from NEW PERSON - PERSON CLASS > PERSON CLASS - Person Class > PERSON CLASS - X12 CODE (200-8932.1 > 200.05-.01 > 8932.1-6)"
+* location -> "422: reference from HOSPITAL LOCATION - (44-) case 44-2600>44.1-.01>200" "This is a reverse pointer. Location 44 contains 44.1, pointing at providers"
+* code.coding.code -> "1408: source value from NEW PERSON - PERSON CLASS > PERSON CLASS - Person Class > PERSON CLASS - X12 CODE (200-8932.1 > 200.05-.01 > 8932.1-6)" "NUCC and X12 codes are the same"
 * code.coding.system -> "1408-1: fixed value = http://nucc.org/provider-taxonomy" "from mapParameter 1"
 * code.coding.display -> "1408-2: source value from NEW PERSON - PERSON CLASS > PERSON CLASS - Person Class > PERSON CLASS - CLASSIFICATION (200-8932.1 > 200.05-.01 > 8932.1-1)" "from mapParameter 2"
 * endpoint -> "2013: target not supported" "See key 1410"

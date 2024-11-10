@@ -311,8 +311,8 @@ Characteristics: #can-be-target
 * timeProcedureEnded 0..1 Element "TIME PROCEDURE ENDED (-122)"
 * timeOperationBegan 0..1 Element "TIME OPERATION BEGAN (-.22)"
 * timeOperationEnds 0..1 Element "TIME OPERATION ENDS (-.23)"
-* nonorLocation 0..1 Element "NON-OR LOCATION (-119)"
-* opRoomProcedurePerformed 0..1 Reference "OP ROOM PROCEDURE PERFORMED (-.02)"
+* nonorLocation 0..1 Reference "NON-OR LOCATION (-119)"
+* opRoomProcedurePerformed 0..1 Element "OP ROOM PROCEDURE PERFORMED (-.02)"
 * stomaComplications 0..1 Element "STOMA COMPLICATIONS (-688)"
 * myocardialInfarction 0..1 Element "MYOCARDIAL INFARCTION (-258)"
 * perfusionist 0..1 Element "PERFUSIONIST (-.167)"
@@ -331,7 +331,7 @@ Characteristics: #can-be-target
 * foleyCatheterInsertedBy 0..1 Element "FOLEY CATHETER INSERTED BY (-.57)"
 * principalProcedure 0..1 Element "PRINCIPAL PROCEDURE (-26)"
 * plannedPrinProcedureCode 0..1 Reference "PLANNED PRIN PROCEDURE CODE (-27)"
-* opRoomProcedurePerformed only Reference(OperatingRoom1317)
+* nonorLocation only Reference(OperatingRoom1317)
 * plannedPrinProcedureCode only Reference(Cpt81)
 
 Logical: NewPerson200
@@ -1363,13 +1363,13 @@ Id: PartialDate522
 Title: "PARTIAL DATE (52.2)"
 Description: "This StructureDefinition contains the Logical Model for the mapped parts of the source PARTIAL DATE (52.2)"
 Characteristics: #can-be-target
-* pharmacistName 0..1 Element "PHARMACIST NAME (-.05)"
 * mailwindow 0..1 Element "MAIL/WINDOW (-.02)"
 * daysSupply 0..1 Element "DAYS SUPPLY (-.041)"
 * qty 0..1 Element "QTY (-.04)"
 * releasedDatetime 0..1 Element "RELEASED DATE/TIME (-8)"
 * division 0..1 Reference "DIVISION (-.09)"
 * remarks 0..1 Element "REMARKS (-.03)"
+* pharmacistName 0..1 Element "PHARMACIST NAME (-.05)"
 * division only Reference(OutpatientSite59)
 
 Logical: VExam900001013

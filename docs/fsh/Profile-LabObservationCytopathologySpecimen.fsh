@@ -3,7 +3,7 @@ Parent: http://hl7.org/fhir/StructureDefinition/Specimen
 Id: LabObservationCytopathologySpecimen
 Title: "Lab Observation: Cytopathology Specimen"
 Description: "This StructureDefinition contains the maps for VistA file CYTOPATHOLOGY (63.09) to Specimen"
-* ^status = #draft
+* ^status = #active
 * accessionIdentifier and type.text MS
 
 Mapping: source-to-LabObservationCytopathologySpecimen

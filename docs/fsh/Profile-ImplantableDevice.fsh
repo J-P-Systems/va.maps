@@ -3,8 +3,10 @@ Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-implantable-devi
 Id: ImplantableDevice
 Title: "Implantable Device"
 Description: "This StructureDefinition contains the maps for VistA file undefined (undefined) to us-core-implantable-device"
-* ^status = #draft
+* ^status = #active
 * ^abstract = true
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
+* ^extension.valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-implantable-device|6.1.0"
 
 Mapping: source-to-ImplantableDevice
 Id: vista

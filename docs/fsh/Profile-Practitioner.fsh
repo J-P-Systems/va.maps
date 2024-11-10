@@ -3,7 +3,9 @@ Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner
 Id: Practitioner
 Title: "Practitioner"
 Description: "This StructureDefinition contains the maps for VistA file NEW PERSON (200) to us-core-practitioner"
-* ^status = #draft
+* ^status = #active
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
+* ^extension.valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner|6.1.0"
 * identifier ^slicing.discriminator.type = #pattern
 * identifier ^slicing.discriminator.path = "$this"
 * identifier ^slicing.rules = #open
@@ -53,7 +55,6 @@ Source: Practitioner
 * identifier[va-IEN].value -> "415: source value from NEW PERSON - IEN (200-.001)"
 * identifier[va-IEN].system -> "415-1: fixed value = http://va.gov/identifiers/$Sta3n/200" "from mapParameter 1"
 * identifier[va-IEN].type -> "415-2: fixed value = http://va.gov/terminology/vistaDefinedTerms/200-.001#IEN" "from mapParameter 2"
-* address -> "2012: target not supported" "What was the reason to inactivate these maps?"
 * gender -> "1790: terminologyMaps using VF_providerGender on NEW PERSON - SEX (200-4)" "Added per LH request to help support deduplication fingerprints"
 
 Mapping: cdw-to-Practitioner

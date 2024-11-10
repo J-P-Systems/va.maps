@@ -5,6 +5,8 @@ Title: "VAERS: abstract"
 Description: "This StructureDefinition contains the maps for ADERS to us-core-immunization"
 * ^status = #draft
 * ^abstract = true
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
+* ^extension.valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-immunization|6.1.0"
 * patient and status and primarySource MS
 * patient only Reference(VAERSPatient)
 * status = #completed

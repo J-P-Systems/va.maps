@@ -3,7 +3,7 @@ Parent: http://hl7.org/fhir/StructureDefinition/MedicationDispense
 Id: MedicationDispenseOriginal
 Title: "MedicationDispense: Original"
 Description: "This StructureDefinition contains the maps for VistA file PRESCRIPTION (52) to MedicationDispense"
-* ^status = #draft
+* ^status = #active
 * type and authorizingPrescription and daysSupply and destination.display and dosageInstruction.doseAndRate.doseQuantity.unit and dosageInstruction.doseAndRate.doseQuantity.code and dosageInstruction.doseAndRate.doseQuantity.value and dosageInstruction.patientInstruction and dosageInstruction.text and medicationCodeableConcept.coding.code and medicationCodeableConcept.coding.system and medicationCodeableConcept.text and quantity.value and status and subject and whenPrepared and category and location and note.text and performer.actor MS
 * authorizingPrescription only Reference(MedicationRequestOutpatient)
 * subject only Reference(Patient)
@@ -12,7 +12,7 @@ Description: "This StructureDefinition contains the maps for VistA file PRESCRIP
 * type = http://terminology.hl7.org/CodeSystem/v3-ActCode#FF
 * dosageInstruction.doseAndRate.doseQuantity.code from http://va.gov/fhir/ValueSet/VSVFDoseUnits
 * medicationCodeableConcept.coding.system = "urn:oid:2.16.840.1.113883.6.233"
-* category = #outpatient
+* category = http://terminology.hl7.org/fhir/CodeSystem/medicationdispense-category#outpatient
 
 Mapping: source-to-MedicationDispenseOriginal
 Id: vista
@@ -34,8 +34,8 @@ Source: MedicationDispenseOriginal
 * status -> "1541: fixed value = #completed when PRESCRIPTION - RELEASED DATE/TIME (52-31) case not null"
 * subject -> "820: reference from PRESCRIPTION - PATIENT (52-2)"
 * whenPrepared -> "832: source value from PRESCRIPTION - RELEASED DATE/TIME (52-31)" "WHO Per discussion with Pharma: Josh Miller 5/27/22\nupdated to WP per discussion with Eric Spahn 2/5/24"
-* category -> "1668: fixed value = #outpatient"
-* location -> "1711: reference from PRESCRIPTION - DIVISION > OUTPATIENT SITE - DEFAULT ERX CLINIC (52-20 > 59-10)" "not Clinic (written) but Division (filled)\nVistapath is reference to 59\nwhat location field of OUTPATIENT SITE #59 is the Location for here?\n* 59-10 DEFAULT ERX CLINIC → This one? Then the subPath should say that. YES!\n* 59-1007 CHARGE LOCATION"
+* category -> "1668: fixed value = http://terminology.hl7.org/fhir/CodeSystem/medicationdispense-category#outpatient"
+* location -> "1711: reference from PRESCRIPTION - DIVISION > OUTPATIENT SITE - DEFAULT ERX CLINIC (52-20 > 59-10)" "not Clinic (written) but Division (filled)"
 * note.text -> "1716: source value from PRESCRIPTION - REMARKS (52-12)"
 * performer.actor -> "1727: reference from PRESCRIPTION - PHARMACIST (52-23)"
 

@@ -4,6 +4,8 @@ Id: LabObservationMicrobiologyMycobacteriologyDiagnosticReport
 Title: "Lab Observation: Microbiology Mycobacteriology DiagnosticReport"
 Description: "This StructureDefinition contains the maps for VistA file MICROBIOLOGY (63.05) to us-core-diagnosticreport-lab"
 * ^status = #draft
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
+* ^extension.valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-lab|6.1.0"
 * performer ^slicing.discriminator.type = #pattern
 * performer ^slicing.discriminator.path = "$this"
 * performer ^slicing.rules = #open

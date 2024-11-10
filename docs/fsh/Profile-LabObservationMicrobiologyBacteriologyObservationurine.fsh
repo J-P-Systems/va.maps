@@ -4,6 +4,8 @@ Id: LabObservationMicrobiologyBacteriologyObservationurine
 Title: "Lab Observation: Microbiology Bacteriology Observation[urine]"
 Description: "This StructureDefinition contains the maps for VistA file MICROBIOLOGY (63.05) to us-core-observation-lab"
 * ^status = #draft
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
+* ^extension.valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab|6.1.0"
 * valueCodeableConcept.coding MS
 * valueCodeableConcept.coding from http://va.gov/fhir/ValueSet/VSVFMicrobiologyUrineScreenResult
 

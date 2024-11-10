@@ -4,6 +4,8 @@ Id: EncounterInpatientEncounter
 Title: "Encounter: Inpatient Encounter"
 Description: "This StructureDefinition contains the maps for VistA file PTF (45) to us-core-encounter"
 * ^status = #draft
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
+* ^extension.valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter|6.1.0"
 * identifier ^slicing.discriminator.type = #pattern
 * identifier ^slicing.discriminator.path = "$this"
 * identifier ^slicing.rules = #open
@@ -68,7 +70,7 @@ Source: EncounterInpatientEncounter
 * hospitalization.dischargeDisposition.coding.code -> "456: source value from PTF - PLACE OF DISPOSITION (45-75)"
 * hospitalization.dischargeDisposition.coding.system -> "456-1: fixed value = http://va.gov/terminology/vistaDefinedTerms/45.6" "from mapParameter 1"
 * location.location -> "460: reference from PTF - WARD AT DISCHARGE > WARD LOCATION - HOSPITAL LOCATION FILE POINTER (45-2.2 > 42-44)" "computed\n45-2.2 is in CDW ; DIM WardLocation.SID 104.302 indirect pointer"
-* location.location -> "461: reference from PTF - FACILITY (45-3)" "This is the Sta3n\nhow to get from facility number to Location?"
+* location.location -> "461: reference from PTF - FACILITY (45-3)" "This is the Sta3n"
 * serviceProvider -> "1600: reference from PTF - FACILITY (45-3)"
 * type -> "1616: source value from INPATIENT CPT CODE - CPT CODE > CPT (46-.01 > 81-)"
 * type.coding.system -> "1616-1: fixed value = http://www.ama-assn.org/go/cpt" "from mapParameter 1"

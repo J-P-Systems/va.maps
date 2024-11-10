@@ -3,7 +3,7 @@ Parent: http://hl7.org/fhir/StructureDefinition/Specimen
 Id: LabObservationChemhemtoxriaserSpecimen
 Title: "Lab Observation: Chem, hem, tox, ria, ser Specimen"
 Description: "This StructureDefinition contains the maps for VistA file CHEM, HEM, TOX, RIA, SER, etc. (63.04) to Specimen"
-* ^status = #draft
+* ^status = #active
 * accessionIdentifier and type.text MS
 
 Mapping: source-to-LabObservationChemhemtoxriaserSpecimen

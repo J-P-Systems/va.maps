@@ -3,11 +3,11 @@ Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure
 Id: ProcedureOutpatient
 Title: "Procedure: Outpatient"
 Description: "This StructureDefinition contains the maps for VistA file V CPT (9000010.18) to us-core-procedure"
-* ^status = #draft
+* ^status = #active
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
+* ^extension.valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure|6.1.0"
 * subject and encounter and code.text and reasonCode and reasonCode.coding.system and reasonCode.coding.code and performedDateTime and performer.actor and note.text and category and code.coding and code.coding.code and code.coding.display and code.coding.system and status MS
 * subject only Reference(Patient)
-* encounter only Reference(EncounterOutpatient)
-* performer.actor only Reference(Practitioner)
 * reasonCode.coding.system = "urn:see-termmap-in-mapParameter"
 * reasonCode.coding.system = "urn:see-termmap-in-mapParameter"
 * reasonCode.coding.system = "urn:see-termmap-in-mapParameter"

@@ -3,7 +3,9 @@ Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-location
 Id: Location
 Title: "Location"
 Description: "This StructureDefinition contains the maps for VistA file HOSPITAL LOCATION (44) to us-core-location"
-* ^status = #draft
+* ^status = #active
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
+* ^extension.valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-location|6.1.0"
 * identifier.value and identifier.system and name and alias and status and description and telecom.value and telecom.system and telecom.use and managingOrganization.display and physicalType.text and address.state and address.district and address.line and address.city and address.postalCode and address.country and address.type and type.text and mode MS
 * identifier.system = "http://va.gov/identifiers/$Sta3n/44"
 * status from http://va.gov/fhir/ValueSet/VSVFLocationStatus

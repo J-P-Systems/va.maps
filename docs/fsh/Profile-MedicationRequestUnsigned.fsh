@@ -3,7 +3,9 @@ Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationreques
 Id: MedicationRequestUnsigned
 Title: "MedicationRequest: Unsigned"
 Description: "This StructureDefinition contains the maps for VistA file ORDER (100) to us-core-medicationrequest"
-* ^status = #draft
+* ^status = #active
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
+* ^extension.valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest|6.1.0"
 * identifier and subject and requester and authoredOn and priorPrescription and dosageInstruction.timing.repeat.boundsPeriod.start and dosageInstruction.timing.repeat.boundsPeriod.end and medicationCodeableConcept MS
 * subject only Reference(Patient)
 * requester only Reference(Practitioner)

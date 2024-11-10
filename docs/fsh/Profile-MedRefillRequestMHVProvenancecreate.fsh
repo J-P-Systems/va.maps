@@ -3,7 +3,7 @@ Parent: http://hl7.org/fhir/StructureDefinition/Provenance
 Id: MedRefillRequestMHVProvenancecreate
 Title: "MedRefillRequestMHV Provenance[create]"
 Description: "This StructureDefinition contains the maps for VistA file PRESCRIPTION REFILL REQUEST (52.43) to Provenance"
-* ^status = #draft
+* ^status = #active
 * recorded and activity and agent.who.type and target MS
 * target only Reference(MedRefillRequestMHVTask)
 * activity = http://terminology.hl7.org/CodeSystem/v3-DataOperation#CREATE

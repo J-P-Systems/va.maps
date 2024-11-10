@@ -3,9 +3,9 @@ Parent: http://hl7.org/fhir/StructureDefinition/MedicationDispense
 Id: MedicationDispenseRefill
 Title: "MedicationDispense: Refill"
 Description: "This StructureDefinition contains the maps for VistA file PRESCRIPTION (52) to MedicationDispense"
-* ^status = #draft
+* ^status = #active
 * type and destination.display and authorizingPrescription and daysSupply and dosageInstruction.doseAndRate.doseQuantity.unit and dosageInstruction.doseAndRate.doseQuantity.code and dosageInstruction.doseAndRate.doseQuantity.value and dosageInstruction.patientInstruction and dosageInstruction.text and medicationCodeableConcept.coding.code and medicationCodeableConcept.coding.system and medicationCodeableConcept.text and quantity.value and status and subject and whenPrepared and location and note.text and performer.actor MS
-* subject only Reference(Patient)
+* authorizingPrescription only Reference(MedicationRequestOutpatient)
 * location only Reference(Location)
 * performer.actor only Reference(Practitioner)
 * type = http://terminology.hl7.org/CodeSystem/v3-ActCode#RF
@@ -18,7 +18,7 @@ Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: MedicationDispenseRefill
 * type -> "1709: fixed value = http://terminology.hl7.org/CodeSystem/v3-ActCode#RF"
 * destination.display -> "1712: source value from PRESCRIPTION - REFILL > REFILL - MAIL/WINDOW/PARK (52-52 > 52.1-2)"
-* authorizingPrescription -> "1553: source value from PRESCRIPTION - PLACER ORDER # (52-39.3)"
+* authorizingPrescription -> "1553: reference from PRESCRIPTION - PLACER ORDER # (52-39.3)"
 * daysSupply -> "827: source value from PRESCRIPTION - REFILL > REFILL - DAYS SUPPLY (52-52 > 52.1-1.1)"
 * destination.display -> "836: source value from PRESCRIPTION - REFILL > REFILL - MAIL/WINDOW/PARK (52-52 > 52.1-2)"
 * dosageInstruction.doseAndRate.doseQuantity.unit -> "1559: source value from PRESCRIPTION - MEDICATION INSTRUCTIONS > MEDICATION INSTRUCTIONS - UNITS (52-113 > 52.0113-2)"
@@ -35,9 +35,9 @@ Source: MedicationDispenseRefill
 * status -> "1555: fixed value = #in-progress when PRESCRIPTION - RELEASED DATE/TIME (52-31) case null"
 * subject -> "1551: reference from PRESCRIPTION - PATIENT (52-2)"
 * whenPrepared -> "833: source value from PRESCRIPTION - REFILL > REFILL - RELEASED DATE/TIME (52-52 > 52.1-17)" "see original fill note"
-* location -> "1715: reference from PRESCRIPTION - REFILL > REFILL - DIVISION > OUTPATIENT SITE - DEFAULT ERX CLINIC (52-52 > 52.1-8 > 59-10)" "^^ see 1710"
+* location -> "1715: reference from PRESCRIPTION - REFILL > REFILL - DIVISION > OUTPATIENT SITE - DEFAULT ERX CLINIC (52-52 > 52.1-8 > 59-10)" "not Clinic (written) but Division (filled)"
 * note.text -> "1718: source value from PRESCRIPTION - REFILL > REFILL - REMARKS (52-52 > 52.1-3)"
-* performer.actor -> "1729: reference from PRESCRIPTION - PARTIAL DATE > PARTIAL DATE - PHARMACIST NAME (52-60 > 52.2-.05)"
+* performer.actor -> "1728: reference from PRESCRIPTION - REFILL > REFILL - PHARMACIST NAME (52-52 > 52.1-4)"
 
 Mapping: cdw-to-MedicationDispenseRefill
 Id: cdw

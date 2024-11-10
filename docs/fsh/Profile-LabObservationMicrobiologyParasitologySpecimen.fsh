@@ -3,7 +3,7 @@ Parent: http://hl7.org/fhir/StructureDefinition/Specimen
 Id: LabObservationMicrobiologyParasitologySpecimen
 Title: "Lab Observation: Microbiology Parasitology Specimen"
 Description: "This StructureDefinition contains the maps for VistA file MICROBIOLOGY (63.05) to Specimen"
-* ^status = #draft
+* ^status = #active
 * accessionIdentifier and type.text MS
 
 Mapping: source-to-LabObservationMicrobiologyParasitologySpecimen

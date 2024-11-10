@@ -3,7 +3,7 @@ Parent: http://hl7.org/fhir/StructureDefinition/Account
 Id: DebtPortalAccount
 Title: "Debt Portal: Account"
 Description: "This StructureDefinition contains the maps for VistA file ACCOUNTS RECEIVABLE (430) to Account"
-* ^status = #draft
+* ^status = #active
 * extension contains http://va.gov/fhir/StructureDefinition/account-statementGeneratedDay named account-statementGeneratedDay 0..1
 * identifier and status and subject and extension[http://va.gov/fhir/StructureDefinition/account-statementGeneratedDay].valueInteger MS
 * subject only Reference(Patient)

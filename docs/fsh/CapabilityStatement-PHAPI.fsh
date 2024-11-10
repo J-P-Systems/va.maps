@@ -4,7 +4,7 @@ Title: "Lighthouse Patient Health API"
 Usage: #definition
 * description = "This CapabilityStatement enumerates the profiles that the API should address, in the estimation of the enterprise mapping team. Some elements may not be appropriate for those cases; consult the actual API specification published by the API provider"
 * status = #draft
-* date = "2024-11-03T11:22:20.184Z"
+* date = "2024-11-10T09:44:10.203Z"
 * kind = #requirements
 * fhirVersion = #4.0.1
 * format[0] = #xml
@@ -86,6 +86,7 @@ Usage: #definition
 * rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/ImplantableDeviceVLead"
 * rest.resource[+].type = #Location
 * rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/Location"
+* rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/ProcedureSurgeryLocationOR"
 * rest.resource[+].type = #MedicationRequest
 * rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/MedicationRequestUnsigned"
 * rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/MedicationRequestNonVA"

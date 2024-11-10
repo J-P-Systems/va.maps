@@ -3,7 +3,7 @@ Parent: http://hl7.org/fhir/StructureDefinition/Appointment
 Id: Appointment
 Title: "Appointment"
 Description: "This StructureDefinition contains the maps for VistA file APPOINTMENT (2.98) to Appointment"
-* ^status = #draft
+* ^status = #active
 * serviceCategory ^slicing.discriminator.type = #pattern
 * serviceCategory ^slicing.discriminator.path = "$this"
 * serviceCategory ^slicing.rules = #open
