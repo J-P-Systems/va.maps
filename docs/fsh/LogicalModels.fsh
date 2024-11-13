@@ -1553,7 +1553,7 @@ Title: "GMRV VITAL QUALIFIER (120.52)"
 Description: "This StructureDefinition contains the Logical Model for the mapped parts of the source GMRV VITAL QUALIFIER (120.52)"
 Characteristics: #can-be-target
 * vuid 0..1 Coding "VUID (-99.99)"
-* vuid from http://va.gov/fhir/ValueSet/VSVFVitalsCuffSize-vista (preferred)
+* vuid from http://va.gov/fhir/ValueSet/VSVFVitalsBodyPosition-vista (preferred)
 
 Logical: Findings69106
 Id: Findings69106
