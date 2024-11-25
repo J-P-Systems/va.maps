@@ -1,14 +1,14 @@
-Instance: CMVFPersonIdentifierType
+Instance: PersonIdentifierType
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/CMVFPersonIdentifierType"
-* name = "VF_PersonIdentifierType"
-* title = "VF_PersonIdentifierType"
-* status = #draft
+* url = "http://va.gov/fhir/ConceptMap/PersonIdentifierType"
+* name = "PersonIdentifierType"
+* title = "PersonIdentifierType"
+* status = #active
 * experimental = false
-* description = "Terminology Maps VF_PersonIdentifierType"
-* sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFPersonIdentifierType-vista"
-* targetCanonical = "http://va.gov/fhir/ValueSet/VSVFPersonIdentifierType"
+* description = "Terminology Maps PersonIdentifierType "
+* sourceCanonical = "http://va.gov/fhir/ValueSet/PersonIdentifierType-vista"
+* targetCanonical = "http://va.gov/fhir/ValueSet/PersonIdentifierType"
 * group[0].source = "http://va.gov/terminology/vistaDefinedTerms/2.312-5.12"
 * group[=].target = "http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBIdentifierType"
 * group[=].element[0].code = #23
@@ -26,20 +26,22 @@ Usage: #definition
 * group[=].element[=].target.display = "Social Security Number"
 * group[=].element[=].target.equivalence = #equal
 
-ValueSet: VSVFPersonIdentifierType
-Title: "VF_PersonIdentifierType"
-Description: "FHIR Target ValueSet for Terminology Maps VF_PersonIdentifierType"
+ValueSet: PersonIdentifierType
+Title: "PersonIdentifierType FHIR"
+Description: "FHIR Target ValueSet for Terminology Maps PersonIdentifierType"
 * ^experimental = false
-* ^name = "VF_PersonIdentifierType"
+* ^status = #active
+* ^name = "PersonIdentifierType"
 * include http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBIdentifierType#pat "Account number"
 * include http://terminology.hl7.org/CodeSystem/v2-0203#MB "Member number"
 * include http://terminology.hl7.org/CodeSystem/v2-0203#SS "Social Security Number"
 
-ValueSet: VSVFPersonIdentifierType-vista
-Title: "VF_PersonIdentifierType VistA"
-Description: "VistA Source ValueSet for Terminology Maps VF_PersonIdentifierType"
+ValueSet: PersonIdentifierType-vista
+Title: "PersonIdentifierType VistA"
+Description: "VistA Source ValueSet for Terminology Maps PersonIdentifierType"
 * ^experimental = false
-* ^name = "VF_PersonIdentifierType"
+* ^status = #active
+* ^name = "PersonIdentifierType_VistA"
 * include http://va.gov/terminology/vistaDefinedTerms/2.312-5.12#23 
 * include http://va.gov/terminology/vistaDefinedTerms/2.312-5.12#IG 
 * include http://va.gov/terminology/vistaDefinedTerms/2.312-5.12#SY 

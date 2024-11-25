@@ -1,14 +1,14 @@
-Instance: CMVFproblemVerificationStatus
+Instance: problemVerificationStatus
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/CMVFproblemVerificationStatus"
-* name = "VF_problemVerificationStatus"
-* title = "VF_problemVerificationStatus"
-* status = #draft
+* url = "http://va.gov/fhir/ConceptMap/problemVerificationStatus"
+* name = "problemVerificationStatus"
+* title = "problemVerificationStatus"
+* status = #active
 * experimental = false
-* description = "Terminology Maps VF_problemVerificationStatus"
-* sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFproblemVerificationStatus-vista"
-* targetCanonical = "http://va.gov/fhir/ValueSet/VSVFproblemVerificationStatus"
+* description = "Terminology Maps problemVerificationStatus "
+* sourceCanonical = "http://va.gov/fhir/ValueSet/problemVerificationStatus-vista"
+* targetCanonical = "http://va.gov/fhir/ValueSet/problemVerificationStatus"
 * group[0].source = "http://va.gov/terminology/vistaDefinedTerms/9000011-1.02"
 * group[=].target = "http://terminology.hl7.org/CodeSystem/condition-ver-status"
 * group[=].element[0].code = #H
@@ -27,20 +27,22 @@ Usage: #definition
 * group[=].element[=].target.display = "provisional"
 * group[=].element[=].target.equivalence = #equal
 
-ValueSet: VSVFproblemVerificationStatus
-Title: "VF_problemVerificationStatus"
-Description: "FHIR Target ValueSet for Terminology Maps VF_problemVerificationStatus"
+ValueSet: problemVerificationStatus
+Title: "problemVerificationStatus FHIR"
+Description: "FHIR Target ValueSet for Terminology Maps problemVerificationStatus"
 * ^experimental = false
-* ^name = "VF_problemVerificationStatus"
+* ^status = #active
+* ^name = "problemVerificationStatus"
 * include http://terminology.hl7.org/CodeSystem/condition-ver-status#refuted "refuted"
 * include http://terminology.hl7.org/CodeSystem/condition-ver-status#confirmed "confirmed"
 * include http://terminology.hl7.org/CodeSystem/condition-ver-status#provisional "provisional"
 
-ValueSet: VSVFproblemVerificationStatus-vista
-Title: "VF_problemVerificationStatus VistA"
-Description: "VistA Source ValueSet for Terminology Maps VF_problemVerificationStatus"
+ValueSet: problemVerificationStatus-vista
+Title: "problemVerificationStatus VistA"
+Description: "VistA Source ValueSet for Terminology Maps problemVerificationStatus"
 * ^experimental = false
-* ^name = "VF_problemVerificationStatus"
+* ^status = #active
+* ^name = "problemVerificationStatus_VistA"
 * include http://va.gov/terminology/vistaDefinedTerms/9000011-1.02#H "HIDDEN"
 * include http://va.gov/terminology/vistaDefinedTerms/9000011-1.02#P "PERMANENT"
 * include http://va.gov/terminology/vistaDefinedTerms/9000011-1.02#T "TRANSCRIBED"

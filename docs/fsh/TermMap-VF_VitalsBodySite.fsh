@@ -1,14 +1,14 @@
-Instance: CMVFVitalsBodySite
+Instance: VitalsBodySite
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/CMVFVitalsBodySite"
-* name = "VF_VitalsBodySite"
-* title = "VF_VitalsBodySite"
-* status = #draft
+* url = "http://va.gov/fhir/ConceptMap/VitalsBodySite"
+* name = "VitalsBodySite"
+* title = "VitalsBodySite"
+* status = #active
 * experimental = false
-* description = "Terminology Maps VF_VitalsBodySite"
-* sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFVitalsBodySite-vista"
-* targetCanonical = "http://va.gov/fhir/ValueSet/VSVFVitalsBodySite"
+* description = "Terminology Maps VitalsBodySite "
+* sourceCanonical = "http://va.gov/fhir/ValueSet/VitalsBodySite-vista"
+* targetCanonical = "http://va.gov/fhir/ValueSet/VitalsBodySite"
 * group[0].source = "http://terminology.hl7.org/CodeSystem/VHA"
 * group[=].target = "http://snomed.info/sct"
 * group[=].element[0].code = #4688633
@@ -471,11 +471,12 @@ Usage: #definition
 * group[=].element[=].target.dependsOn[+].property = "condition"
 * group[=].element[=].target.dependsOn[=].value = "Laterality Right"
 
-ValueSet: VSVFVitalsBodySite
-Title: "VF_VitalsBodySite"
-Description: "FHIR Target ValueSet for Terminology Maps VF_VitalsBodySite"
+ValueSet: VitalsBodySite
+Title: "VitalsBodySite FHIR"
+Description: "FHIR Target ValueSet for Terminology Maps VitalsBodySite"
 * ^experimental = false
-* ^name = "VF_VitalsBodySite"
+* ^status = #active
+* ^name = "VitalsBodySite"
 * include http://snomed.info/sct#818983003 "Abdomen (body structure)"
 * include http://snomed.info/sct#344001 "Ankle region structure (body structure)"
 * include http://snomed.info/sct#51636004 "Structure of left ankle (body structure)"
@@ -546,11 +547,12 @@ Description: "FHIR Target ValueSet for Terminology Maps VF_VitalsBodySite"
 * include http://snomed.info/sct#5951000 "Structure of left wrist region (body structure)"
 * include http://snomed.info/sct#9736006 "Structure of right wrist region (body structure)"
 
-ValueSet: VSVFVitalsBodySite-vista
-Title: "VF_VitalsBodySite VistA"
-Description: "VistA Source ValueSet for Terminology Maps VF_VitalsBodySite"
+ValueSet: VitalsBodySite-vista
+Title: "VitalsBodySite VistA"
+Description: "VistA Source ValueSet for Terminology Maps VitalsBodySite"
 * ^experimental = false
-* ^name = "VF_VitalsBodySite"
+* ^status = #active
+* ^name = "VitalsBodySite_VistA"
 * include http://terminology.hl7.org/CodeSystem/VHA#4688633 "ABDOMINAL"
 * include http://terminology.hl7.org/CodeSystem/VHA#4688636 "ANKLE"
 * include http://terminology.hl7.org/CodeSystem/VHA#4688637 "APICAL"

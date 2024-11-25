@@ -1,14 +1,14 @@
-Instance: CMVFVitalsBodyPosition
+Instance: VitalsBodyPosition
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/CMVFVitalsBodyPosition"
-* name = "VF_VitalsBodyPosition"
-* title = "VF_VitalsBodyPosition"
-* status = #draft
+* url = "http://va.gov/fhir/ConceptMap/VitalsBodyPosition"
+* name = "VitalsBodyPosition"
+* title = "VitalsBodyPosition"
+* status = #active
 * experimental = false
-* description = "Terminology Maps VF_VitalsBodyPosition"
-* sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFVitalsBodyPosition-vista"
-* targetCanonical = "http://va.gov/fhir/ValueSet/VSVFVitalsBodyPosition"
+* description = "Terminology Maps VitalsBodyPosition "
+* sourceCanonical = "http://va.gov/fhir/ValueSet/VitalsBodyPosition-vista"
+* targetCanonical = "http://va.gov/fhir/ValueSet/VitalsBodyPosition"
 * group[0].source = "http://terminology.hl7.org/CodeSystem/VHA"
 * group[=].target = "http://snomed.info/sct"
 * group[=].element[0].code = #5335366
@@ -57,11 +57,12 @@ Usage: #definition
 * group[=].element[=].target.display = "Trendelenburg position (finding)"
 * group[=].element[=].target.equivalence = #equal
 
-ValueSet: VSVFVitalsBodyPosition
-Title: "VF_VitalsBodyPosition"
-Description: "FHIR Target ValueSet for Terminology Maps VF_VitalsBodyPosition"
+ValueSet: VitalsBodyPosition
+Title: "VitalsBodyPosition FHIR"
+Description: "FHIR Target ValueSet for Terminology Maps VitalsBodyPosition"
 * ^experimental = false
-* ^name = "VF_VitalsBodyPosition"
+* ^status = #active
+* ^name = "VitalsBodyPosition"
 * include http://snomed.info/sct#102536004 "Left lateral decubitus position (finding)"
 * include http://snomed.info/sct#102538003 "Recumbent body position (finding)"
 * include http://snomed.info/sct#1240000 "Prone body position (finding)"
@@ -71,11 +72,12 @@ Description: "FHIR Target ValueSet for Terminology Maps VF_VitalsBodyPosition"
 * include http://snomed.info/sct#10904000 "Orthostatic body position (finding)"
 * include http://snomed.info/sct#34106002 "Trendelenburg position (finding)"
 
-ValueSet: VSVFVitalsBodyPosition-vista
-Title: "VF_VitalsBodyPosition VistA"
-Description: "VistA Source ValueSet for Terminology Maps VF_VitalsBodyPosition"
+ValueSet: VitalsBodyPosition-vista
+Title: "VitalsBodyPosition VistA"
+Description: "VistA Source ValueSet for Terminology Maps VitalsBodyPosition"
 * ^experimental = false
-* ^name = "VF_VitalsBodyPosition"
+* ^status = #active
+* ^name = "VitalsBodyPosition_VistA"
 * include http://terminology.hl7.org/CodeSystem/VHA#5335366 "LEFT LATERAL RECUMBENT"
 * include http://terminology.hl7.org/CodeSystem/VHA#4688663 "LYING"
 * include http://terminology.hl7.org/CodeSystem/VHA#5335362 "PRONE"

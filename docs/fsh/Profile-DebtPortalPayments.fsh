@@ -12,7 +12,9 @@ Description: "This StructureDefinition contains the maps for VistA file AR TRANS
 * detail ^slicing.discriminator.path = "$this"
 * detail ^slicing.rules = #open
 * detail contains va-principal-collected 0..1 and va-interest-collected 0..1 and va-admin-collected 0..1 and va-marshal-collected 0..1 and va-courtcost-collected 0..1
-* identifier[va-tn].value and identifier[va-tn].type.text and identifier[va-bn].value and identifier[va-bn].type.text and status and created and disposition and paymentDate and paymentAmount and paymentIdentifier and detail[va-principal-collected].amount and detail[va-principal-collected].type.text and detail[va-interest-collected].amount and detail[va-interest-collected].type.text and detail[va-admin-collected].amount and detail[va-admin-collected].type.text and detail[va-marshal-collected].amount and detail[va-marshal-collected].type.text and detail[va-courtcost-collected].amount and detail[va-courtcost-collected].type.text MS
+* extension contains http://hl7.org/fhir/5.0/StructureDefinition/extension-PaymentReconciliation.paymentIssuer named extension-PaymentReconciliation-paymentIssuer 0..1
+* identifier[va-tn].value and identifier[va-tn].type.text and identifier[va-bn].value and identifier[va-bn].type.text and status and created and extension[http://hl7.org/fhir/5.0/StructureDefinition/extension-PaymentReconciliation.paymentIssuer].valueReference and disposition and paymentDate and paymentAmount and paymentIdentifier and detail[va-principal-collected].amount and detail[va-principal-collected].type.text and detail[va-interest-collected].amount and detail[va-interest-collected].type.text and detail[va-admin-collected].amount and detail[va-admin-collected].type.text and detail[va-marshal-collected].amount and detail[va-marshal-collected].type.text and detail[va-courtcost-collected].amount and detail[va-courtcost-collected].type.text MS
+* extension[http://hl7.org/fhir/5.0/StructureDefinition/extension-PaymentReconciliation.paymentIssuer].valueReference only Reference(Patient)
 * identifier[va-tn].type.text = "Transaction Number"
 * identifier[va-bn].type.text = "Bill Number"
 * status = #active
@@ -32,6 +34,7 @@ Source: DebtPortalPayments
 * identifier[va-bn].type.text -> "1979-1: fixed value = Bill Number" "from mapParameter 1"
 * status -> "1980: fixed value = #active"
 * created -> "1984: source value from AR TRANSACTION - DATE ENTERED (433-19)"
+* extension[http://hl7.org/fhir/5.0/StructureDefinition/extension-PaymentReconciliation.paymentIssuer].valueReference -> "2032: reference"
 * disposition -> "1982: source value from AR TRANSACTION - TRANSACTION TYPE > ACCOUNTS RECEIVABLE TRANS.TYPE - NAME (433-12 > 430.3-.01) case IEN = 34 OR 2" "Transaction type name = PAYMENT (IN FULL) when IEN = 34\nTransaction type name = PAYMENT (IN PART) when IEN = 2"
 * paymentDate -> "1981: source value from AR TRANSACTION - TRANSACTION DATE (433-11)"
 * paymentAmount -> "1983: source value from AR TRANSACTION - TRANS. AMOUNT (433-15)"

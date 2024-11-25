@@ -1,14 +1,14 @@
-Instance: CMVFVitalsCuffSize
+Instance: VitalsCuffSize
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/CMVFVitalsCuffSize"
-* name = "VF_VitalsCuffSize"
-* title = "VF_VitalsCuffSize"
-* status = #draft
+* url = "http://va.gov/fhir/ConceptMap/VitalsCuffSize"
+* name = "VitalsCuffSize"
+* title = "VitalsCuffSize"
+* status = #active
 * experimental = false
-* description = "Terminology Maps VF_VitalsCuffSize"
-* sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFVitalsCuffSize-vista"
-* targetCanonical = "http://va.gov/fhir/ValueSet/VSVFVitalsCuffSize"
+* description = "Terminology Maps VitalsCuffSize "
+* sourceCanonical = "http://va.gov/fhir/ValueSet/VitalsCuffSize-vista"
+* targetCanonical = "http://va.gov/fhir/ValueSet/VitalsCuffSize"
 * group[0].source = "http://va.gov/terminology/vistaDefinedTerms/120.52-99.99"
 * group[=].target = "http://snomed.info/sct"
 * group[=].element[0].code = #ADULT
@@ -49,22 +49,24 @@ Usage: #definition
 * group[=].element[=].target.display = "Blood pressure cuff, adult thigh type (physical object)"
 * group[=].element[=].target.equivalence = #equal
 
-ValueSet: VSVFVitalsCuffSize
-Title: "VF_VitalsCuffSize"
-Description: "FHIR Target ValueSet for Terminology Maps VF_VitalsCuffSize"
+ValueSet: VitalsCuffSize
+Title: "VitalsCuffSize FHIR"
+Description: "FHIR Target ValueSet for Terminology Maps VitalsCuffSize"
 * ^experimental = false
-* ^name = "VF_VitalsCuffSize"
+* ^status = #active
+* ^name = "VitalsCuffSize"
 * include http://snomed.info/sct#720737000 "Blood pressure cuff, adult size (physical object)"
 * include http://snomed.info/sct#255509001 "Large (qualifier value)"
 * include http://snomed.info/sct#720736009 "Blood pressure cuff, pediatric size (physical object)"
 * include http://snomed.info/sct#255507004 "Small (qualifier value)"
 * include http://snomed.info/sct#720740000 "Blood pressure cuff, adult thigh type (physical object)"
 
-ValueSet: VSVFVitalsCuffSize-vista
-Title: "VF_VitalsCuffSize VistA"
-Description: "VistA Source ValueSet for Terminology Maps VF_VitalsCuffSize"
+ValueSet: VitalsCuffSize-vista
+Title: "VitalsCuffSize VistA"
+Description: "VistA Source ValueSet for Terminology Maps VitalsCuffSize"
 * ^experimental = false
-* ^name = "VF_VitalsCuffSize"
+* ^status = #active
+* ^name = "VitalsCuffSize_VistA"
 * include http://va.gov/terminology/vistaDefinedTerms/120.52-99.99#ADULT "ADULT"
 * include http://va.gov/terminology/vistaDefinedTerms/120.52-99.99#4500641 "ADULT CUFF"
 * include http://va.gov/terminology/vistaDefinedTerms/120.52-99.99#4688661 "LG ADULT CUFF"

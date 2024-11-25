@@ -15,21 +15,21 @@ Description: "This StructureDefinition contains the maps for VistA file GMRV VIT
 * component[va-cuff-size].valueCodeableConcept.coding and component[va-cuff-size].code and component[systolic].valueQuantity.value and component[systolic].valueQuantity.code and component[systolic].code.coding.system and component[systolic].code.coding.code and component[diastolic].valueQuantity.value and component[diastolic].valueQuantity.code and component[diastolic].code.coding.system and component[diastolic].code.coding.code and issued and performer and status and effectiveDateTime and category and subject and identifier.value and identifier.system and code.coding and bodySite and extension[http://hl7.org/fhir/StructureDefinition/observation-deviceCode].valueCodeableConcept and method and component[va-pre-condition].valueCodeableConcept.coding and component[va-pre-condition].code and component[va-pre-condition-device].valueCodeableConcept.coding and component[va-pre-condition-device].code and extension[http://hl7.org/fhir/StructureDefinition/observation-bodyPosition].valueCodeableConcept and valueQuantity.value and valueQuantity.code MS
 * performer only Reference(Organization)
 * subject only Reference(Patient)
-* component[va-cuff-size].valueCodeableConcept.coding from http://va.gov/fhir/ValueSet/VSVFVitalsCuffSize
+* component[va-cuff-size].valueCodeableConcept.coding from http://va.gov/fhir/ValueSet/VitalsCuffSize
 * component[va-cuff-size].code = http://loinc.org#8358-4 "Blood pressure device cuff size"
 * category = http://terminology.hl7.org/CodeSystem/observation-category#vital-signs
 * identifier.system = "http://va.gov/identifiers/$Sta3n/120.5"
-* code.coding from http://va.gov/fhir/ValueSet/VSVFVitalsCodes
-* bodySite from http://va.gov/fhir/ValueSet/VSVFVitalsBodySite
-* extension[http://hl7.org/fhir/StructureDefinition/observation-deviceCode].valueCodeableConcept from http://va.gov/fhir/ValueSet/VSVFVitalsMeasurementDevice
-* method from http://va.gov/fhir/ValueSet/VSVFVitalsMethod
-* component[va-pre-condition].valueCodeableConcept.coding from http://va.gov/fhir/ValueSet/VSVFVitalsPrecondition
+* code.coding from http://va.gov/fhir/ValueSet/VitalsCodes
+* bodySite from http://va.gov/fhir/ValueSet/VitalsBodySite
+* extension[http://hl7.org/fhir/StructureDefinition/observation-deviceCode].valueCodeableConcept from http://va.gov/fhir/ValueSet/VitalsMeasurementDevice
+* method from http://va.gov/fhir/ValueSet/VitalsMethod
+* component[va-pre-condition].valueCodeableConcept.coding from http://va.gov/fhir/ValueSet/VitalsPrecondition
 * component[va-pre-condition].code = http://loinc.org#104158-1 "Associated precondition - Reported"
-* component[va-pre-condition-device].valueCodeableConcept.coding from http://va.gov/fhir/ValueSet/VSVFVitalsQualifyingDevice
+* component[va-pre-condition-device].valueCodeableConcept.coding from http://va.gov/fhir/ValueSet/VitalsQualifyingDevice
 * component[va-pre-condition-device].code = http://loinc.org#104158-1 "Associated precondition - Reported"
-* extension[http://hl7.org/fhir/StructureDefinition/observation-bodyPosition].valueCodeableConcept from http://va.gov/fhir/ValueSet/VSVFVitalsBodyPosition
+* extension[http://hl7.org/fhir/StructureDefinition/observation-bodyPosition].valueCodeableConcept from http://va.gov/fhir/ValueSet/VitalsBodyPosition
 * valueQuantity.code.extension contains http://hl7.org/fhir/StructureDefinition/11179-permitted-value-conceptmap named 11179-permitted-value-conceptmap 0..1
-* valueQuantity.code.extension[11179-permitted-value-conceptmap].valueCanonical = "http://va.gov/fhir/ConceptMap/CMVFVitalsUnits"
+* valueQuantity.code.extension[11179-permitted-value-conceptmap].valueCanonical = "http://va.gov/fhir/ConceptMap/VitalsUnits"
 
 Mapping: source-to-VitalSignsBP
 Id: vista

@@ -4,7 +4,7 @@ Title: "Medication Dispense Tracking"
 Usage: #definition
 * description = "This CapabilityStatement enumerates the profiles that the API should address, in the estimation of the enterprise mapping team. Some elements may not be appropriate for those cases; consult the actual API specification published by the API provider"
 * status = #draft
-* date = "2024-11-13T20:46:49.294Z"
+* date = "2024-11-25T07:48:12.137Z"
 * kind = #requirements
 * fhirVersion = #4.0.1
 * format[0] = #xml
@@ -12,16 +12,13 @@ Usage: #definition
 * rest.mode = #server
 * rest.resource[+].type = #Patient
 * rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/Patient"
+* rest.resource[+].type = #Location
+* rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/Location"
 * rest.resource[+].type = #MedicationRequest
 * rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/MedicationRequestOutpatient"
-* rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/Practitioner"
 * rest.resource[+].type = #MedicationDispense
 * rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/MedicationDispenseOriginal"
-* rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/Location"
-* rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/Practitioner"
 * rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/MedicationDispenseRefill"
-* rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/Location"
-* rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/Practitioner"
 * rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/MedicationDispensePartial"
-* rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/Location"
+* rest.resource[+].type = #Practitioner
 * rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/Practitioner"

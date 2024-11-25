@@ -1,14 +1,14 @@
-Instance: CMVFRefillRequestStatus
+Instance: RefillRequestStatus
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/CMVFRefillRequestStatus"
-* name = "VF_RefillRequestStatus"
-* title = "VF_RefillRequestStatus"
-* status = #draft
+* url = "http://va.gov/fhir/ConceptMap/RefillRequestStatus"
+* name = "RefillRequestStatus"
+* title = "RefillRequestStatus"
+* status = #active
 * experimental = false
-* description = "Terminology Maps VF_RefillRequestStatus"
-* sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFRefillRequestStatus-vista"
-* targetCanonical = "http://va.gov/fhir/ValueSet/VSVFRefillRequestStatus"
+* description = "Terminology Maps RefillRequestStatus "
+* sourceCanonical = "http://va.gov/fhir/ValueSet/RefillRequestStatus-vista"
+* targetCanonical = "http://va.gov/fhir/ValueSet/RefillRequestStatus"
 * group[0].source = "http://va.gov/terminology/vistaDefinedElements/52.43-5"
 * group[=].target = "http://hl7.org/fhir/task-status"
 * group[=].element[0].code = #0
@@ -24,20 +24,22 @@ Usage: #definition
 * group[=].element[=].target.code = #rejected
 * group[=].element[=].target.equivalence = #equal
 
-ValueSet: VSVFRefillRequestStatus
-Title: "VF_RefillRequestStatus"
-Description: "FHIR Target ValueSet for Terminology Maps VF_RefillRequestStatus"
+ValueSet: RefillRequestStatus
+Title: "RefillRequestStatus FHIR"
+Description: "FHIR Target ValueSet for Terminology Maps RefillRequestStatus"
 * ^experimental = false
-* ^name = "VF_RefillRequestStatus"
+* ^status = #active
+* ^name = "RefillRequestStatus"
 * include http://hl7.org/fhir/task-status#requested 
 * include http://hl7.org/fhir/task-status#accepted 
 * include http://hl7.org/fhir/task-status#rejected 
 
-ValueSet: VSVFRefillRequestStatus-vista
-Title: "VF_RefillRequestStatus VistA"
-Description: "VistA Source ValueSet for Terminology Maps VF_RefillRequestStatus"
+ValueSet: RefillRequestStatus-vista
+Title: "RefillRequestStatus VistA"
+Description: "VistA Source ValueSet for Terminology Maps RefillRequestStatus"
 * ^experimental = false
-* ^name = "VF_RefillRequestStatus"
+* ^status = #active
+* ^name = "RefillRequestStatus_VistA"
 * include http://va.gov/terminology/vistaDefinedElements/52.43-5#0 "FOR NOT PROCESSED"
 * include http://va.gov/terminology/vistaDefinedElements/52.43-5#1 "FOR FILLED"
 * include http://va.gov/terminology/vistaDefinedElements/52.43-5#2 "FOR NOT FILLED"

@@ -7,7 +7,7 @@ Description: "This StructureDefinition contains the maps for VistA file MICROBIO
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
 * ^extension.valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab|6.1.0"
 * valueCodeableConcept.coding MS
-* valueCodeableConcept.coding from http://va.gov/fhir/ValueSet/VSVFMicrobiologyUrineScreenResult
+* valueCodeableConcept.coding from http://va.gov/fhir/ValueSet/MicrobiologyUrineScreenResult
 
 Mapping: source-to-LabObservationMicrobiologyBacteriologyObservationurine
 Id: vista

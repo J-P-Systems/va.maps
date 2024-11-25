@@ -9,9 +9,9 @@ Description: "This StructureDefinition contains the maps for VistA file CHEM, HE
 * specimen only Reference(LabObservationChemhemtoxriaserSpecimen)
 * subject only Reference(Patient)
 * identifier.system = "http://va.gov/identifiers/$Sta3n/63.04"
-* interpretation from http://va.gov/fhir/ValueSet/VSVFLabInterpretation
+* interpretation from http://va.gov/fhir/ValueSet/LabInterpretation
 * code.coding.system = "http://loinc.org"
-* status from http://va.gov/fhir/ValueSet/VSVFLabObservationStatus
+* status from http://va.gov/fhir/ValueSet/LabObservationStatus
 * category = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
 
 Mapping: source-to-LabObservationChemhemtoxriaserObservation

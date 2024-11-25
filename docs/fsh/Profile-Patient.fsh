@@ -31,12 +31,12 @@ Description: "This StructureDefinition contains the maps for VistA file PATIENT 
 * address[va-home].use = #home
 * address[va-home].type = #postal
 * managingOrganization.display = "Veterans Health Administration"
-* gender from http://va.gov/fhir/ValueSet/VSVFadminGender
-* extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-genderIdentity].valueCodeableConcept from http://va.gov/fhir/ValueSet/VSVFgenderIdentity
-* extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity].extension[ombCategory].valueCoding.code from http://va.gov/fhir/ValueSet/VSVFethnicityCategory
-* extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-race].extension[ombCategory].valueCoding.code from http://va.gov/fhir/ValueSet/VSVFraceCategory
-* maritalStatus from http://va.gov/fhir/ValueSet/VSVFMaritalStatus
-* extension[http://hl7.org/fhir/StructureDefinition/patient-religion].valueCodeableConcept from http://va.gov/fhir/ValueSet/VSVFReligion
+* gender from http://va.gov/fhir/ValueSet/adminGender
+* extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-genderIdentity].valueCodeableConcept from http://va.gov/fhir/ValueSet/genderIdentity
+* extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity].extension[ombCategory].valueCoding.code from http://va.gov/fhir/ValueSet/ethnicityCategory
+* extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-race].extension[ombCategory].valueCoding.code from http://va.gov/fhir/ValueSet/raceCategory
+* maritalStatus from http://va.gov/fhir/ValueSet/MaritalStatus
+* extension[http://hl7.org/fhir/StructureDefinition/patient-religion].valueCodeableConcept from http://va.gov/fhir/ValueSet/Religion
 
 Mapping: source-to-Patient
 Id: vista

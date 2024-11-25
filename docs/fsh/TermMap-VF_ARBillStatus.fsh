@@ -1,14 +1,14 @@
-Instance: CMVFARBillStatus
+Instance: ARBillStatus
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/CMVFARBillStatus"
-* name = "VF_ARBillStatus"
-* title = "VF_ARBillStatus"
-* status = #draft
+* url = "http://va.gov/fhir/ConceptMap/ARBillStatus"
+* name = "ARBillStatus"
+* title = "ARBillStatus"
+* status = #active
 * experimental = false
-* description = "Terminology Maps VF_ARBillStatus"
-* sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFARBillStatus-vista"
-* targetCanonical = "http://va.gov/fhir/ValueSet/VSVFARBillStatus"
+* description = "Terminology Maps ARBillStatus "
+* sourceCanonical = "http://va.gov/fhir/ValueSet/ARBillStatus-vista"
+* targetCanonical = "http://va.gov/fhir/ValueSet/ARBillStatus"
 * group[0].source = "http://va.gov/terminology/vistaDefinedTerms/430.3-.01"
 * group[=].target = "http://hl7.org/fhir/invoice-status"
 * group[=].element[0].code = #ACTIVE
@@ -52,21 +52,23 @@ Usage: #definition
 * group[=].element[=].target.display = "issued"
 * group[=].element[=].target.equivalence = #equal
 
-ValueSet: VSVFARBillStatus
-Title: "VF_ARBillStatus"
-Description: "FHIR Target ValueSet for Terminology Maps VF_ARBillStatus"
+ValueSet: ARBillStatus
+Title: "ARBillStatus FHIR"
+Description: "FHIR Target ValueSet for Terminology Maps ARBillStatus"
 * ^experimental = false
-* ^name = "VF_ARBillStatus"
+* ^status = #active
+* ^name = "ARBillStatus"
 * include http://hl7.org/fhir/invoice-status#issued "issued"
 * include http://hl7.org/fhir/invoice-status#draft "draft"
 * include http://hl7.org/fhir/invoice-status#cancelled "cancelled"
 * include http://hl7.org/fhir/invoice-status#balanced "balanced"
 
-ValueSet: VSVFARBillStatus-vista
-Title: "VF_ARBillStatus VistA"
-Description: "VistA Source ValueSet for Terminology Maps VF_ARBillStatus"
+ValueSet: ARBillStatus-vista
+Title: "ARBillStatus VistA"
+Description: "VistA Source ValueSet for Terminology Maps ARBillStatus"
 * ^experimental = false
-* ^name = "VF_ARBillStatus"
+* ^status = #active
+* ^name = "ARBillStatus_VistA"
 * include http://va.gov/terminology/vistaDefinedTerms/430.3-.01#ACTIVE "ACTIVE"
 * include http://va.gov/terminology/vistaDefinedTerms/430.3-.01#BILL_INCOMPLETE "BILL INCOMPLETE"
 * include http://va.gov/terminology/vistaDefinedTerms/430.3-.01#CANCELLATION "CANCELLATION"

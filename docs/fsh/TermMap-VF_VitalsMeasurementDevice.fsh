@@ -1,14 +1,14 @@
-Instance: CMVFVitalsMeasurementDevice
+Instance: VitalsMeasurementDevice
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/CMVFVitalsMeasurementDevice"
-* name = "VF_VitalsMeasurementDevice"
-* title = "VF_VitalsMeasurementDevice"
-* status = #draft
+* url = "http://va.gov/fhir/ConceptMap/VitalsMeasurementDevice"
+* name = "VitalsMeasurementDevice"
+* title = "VitalsMeasurementDevice"
+* status = #active
 * experimental = false
-* description = "Terminology Maps VF_VitalsMeasurementDevice"
-* sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFVitalsMeasurementDevice-vista"
-* targetCanonical = "http://va.gov/fhir/ValueSet/VSVFVitalsMeasurementDevice"
+* description = "Terminology Maps VitalsMeasurementDevice "
+* sourceCanonical = "http://va.gov/fhir/ValueSet/VitalsMeasurementDevice-vista"
+* targetCanonical = "http://va.gov/fhir/ValueSet/VitalsMeasurementDevice"
 * group[0].source = "http://terminology.hl7.org/CodeSystem/VHA"
 * group[=].target = "http://snomed.info/sct"
 * group[=].element[0].code = #4688701
@@ -77,11 +77,12 @@ Usage: #definition
 * group[=].element[=].target.display = "Wheelchair scale (physical object)"
 * group[=].element[=].target.equivalence = #equal
 
-ValueSet: VSVFVitalsMeasurementDevice
-Title: "VF_VitalsMeasurementDevice"
-Description: "FHIR Target ValueSet for Terminology Maps VF_VitalsMeasurementDevice"
+ValueSet: VitalsMeasurementDevice
+Title: "VitalsMeasurementDevice FHIR"
+Description: "FHIR Target ValueSet for Terminology Maps VitalsMeasurementDevice"
 * ^experimental = false
-* ^name = "VF_VitalsMeasurementDevice"
+* ^status = #active
+* ^name = "VitalsMeasurementDevice"
 * include http://snomed.info/sct#261241001 "Arterial line (physical object)"
 * include http://snomed.info/sct#706172005 "Ventilator (physical object)"
 * include http://snomed.info/sct#466289007 "Bed scale (physical object)"
@@ -94,11 +95,12 @@ Description: "FHIR Target ValueSet for Terminology Maps VF_VitalsMeasurementDevi
 * include http://snomed.info/sct#706767009 "Patient data recorder (physical object)"
 * include http://snomed.info/sct#466532009 "Wheelchair scale (physical object)"
 
-ValueSet: VSVFVitalsMeasurementDevice-vista
-Title: "VF_VitalsMeasurementDevice VistA"
-Description: "VistA Source ValueSet for Terminology Maps VF_VitalsMeasurementDevice"
+ValueSet: VitalsMeasurementDevice-vista
+Title: "VitalsMeasurementDevice VistA"
+Description: "VistA Source ValueSet for Terminology Maps VitalsMeasurementDevice"
 * ^experimental = false
-* ^name = "VF_VitalsMeasurementDevice"
+* ^status = #active
+* ^name = "VitalsMeasurementDevice_VistA"
 * include http://terminology.hl7.org/CodeSystem/VHA#4688701 "ARTERIAL LINE"
 * include http://terminology.hl7.org/CodeSystem/VHA#4711312 "ASSISTED VENTILATOR"
 * include http://terminology.hl7.org/CodeSystem/VHA#4688641 "BED"

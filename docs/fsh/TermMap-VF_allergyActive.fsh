@@ -1,14 +1,14 @@
-Instance: CMVFallergyActive
+Instance: allergyActive
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/CMVFallergyActive"
-* name = "VF_allergyActive"
-* title = "VF_allergyActive"
-* status = #draft
+* url = "http://va.gov/fhir/ConceptMap/allergyActive"
+* name = "allergyActive"
+* title = "allergyActive"
+* status = #active
 * experimental = false
-* description = "Terminology Maps VF_allergyActive"
-* sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFallergyActive-vista"
-* targetCanonical = "http://va.gov/fhir/ValueSet/VSVFallergyActive"
+* description = "Terminology Maps allergyActive "
+* sourceCanonical = "http://va.gov/fhir/ValueSet/allergyActive-vista"
+* targetCanonical = "http://va.gov/fhir/ValueSet/allergyActive"
 * group[0].source = "http://va.gov/terminology/vistaDefinedTerms/120.8-22"
 * group[=].target = "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical"
 * group[=].element[0].code = #<null>
@@ -17,16 +17,18 @@ Usage: #definition
 * group[=].element[=].target.display = "active"
 * group[=].element[=].target.equivalence = #wider
 
-ValueSet: VSVFallergyActive
-Title: "VF_allergyActive"
-Description: "FHIR Target ValueSet for Terminology Maps VF_allergyActive"
+ValueSet: allergyActive
+Title: "allergyActive FHIR"
+Description: "FHIR Target ValueSet for Terminology Maps allergyActive"
 * ^experimental = false
-* ^name = "VF_allergyActive"
+* ^status = #active
+* ^name = "allergyActive"
 * include http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical#active "active"
 
-ValueSet: VSVFallergyActive-vista
-Title: "VF_allergyActive VistA"
-Description: "VistA Source ValueSet for Terminology Maps VF_allergyActive"
+ValueSet: allergyActive-vista
+Title: "allergyActive VistA"
+Description: "VistA Source ValueSet for Terminology Maps allergyActive"
 * ^experimental = false
-* ^name = "VF_allergyActive"
+* ^status = #active
+* ^name = "allergyActive_VistA"
 * include http://va.gov/terminology/vistaDefinedTerms/120.8-22#<null> "ENTERED IN ERROR - NULL"

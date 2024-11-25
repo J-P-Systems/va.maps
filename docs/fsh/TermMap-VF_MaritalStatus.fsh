@@ -1,14 +1,14 @@
-Instance: CMVFMaritalStatus
+Instance: MaritalStatus
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/CMVFMaritalStatus"
-* name = "VF_MaritalStatus"
-* title = "VF_MaritalStatus"
-* status = #draft
+* url = "http://va.gov/fhir/ConceptMap/MaritalStatus"
+* name = "MaritalStatus"
+* title = "MaritalStatus"
+* status = #active
 * experimental = false
-* description = "Terminology Maps VF_MaritalStatus"
-* sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFMaritalStatus-vista"
-* targetCanonical = "http://va.gov/fhir/ValueSet/VSVFMaritalStatus"
+* description = "Terminology Maps MaritalStatus "
+* sourceCanonical = "http://va.gov/fhir/ValueSet/MaritalStatus-vista"
+* targetCanonical = "http://va.gov/fhir/ValueSet/MaritalStatus"
 * group[0].source = "http://va.gov/terminology/vistaDefinedElements/2-.05"
 * group[=].target = "http://terminology.hl7.org/CodeSystem/v3-MaritalStatus"
 * group[=].element[0].code = #DIVORCED
@@ -44,11 +44,12 @@ Usage: #definition
 * group[=].element[=].target.display = "unknown"
 * group[=].element[=].target.equivalence = #equal
 
-ValueSet: VSVFMaritalStatus
-Title: "VF_MaritalStatus"
-Description: "FHIR Target ValueSet for Terminology Maps VF_MaritalStatus"
+ValueSet: MaritalStatus
+Title: "MaritalStatus FHIR"
+Description: "FHIR Target ValueSet for Terminology Maps MaritalStatus"
 * ^experimental = false
-* ^name = "VF_MaritalStatus"
+* ^status = #active
+* ^name = "MaritalStatus"
 * include http://terminology.hl7.org/CodeSystem/v3-MaritalStatus#D "Divorced"
 * include http://terminology.hl7.org/CodeSystem/v3-MaritalStatus#M "Married"
 * include http://terminology.hl7.org/CodeSystem/v3-MaritalStatus#S "Never Married"
@@ -56,11 +57,12 @@ Description: "FHIR Target ValueSet for Terminology Maps VF_MaritalStatus"
 * include http://terminology.hl7.org/CodeSystem/v3-MaritalStatus#W "Widowed"
 * include http://terminology.hl7.org/CodeSystem/v3-NullFlavor#UNK "unknown"
 
-ValueSet: VSVFMaritalStatus-vista
-Title: "VF_MaritalStatus VistA"
-Description: "VistA Source ValueSet for Terminology Maps VF_MaritalStatus"
+ValueSet: MaritalStatus-vista
+Title: "MaritalStatus VistA"
+Description: "VistA Source ValueSet for Terminology Maps MaritalStatus"
 * ^experimental = false
-* ^name = "VF_MaritalStatus"
+* ^status = #active
+* ^name = "MaritalStatus_VistA"
 * include http://va.gov/terminology/vistaDefinedElements/2-.05#DIVORCED "DIVORCED"
 * include http://va.gov/terminology/vistaDefinedElements/2-.05#MARRIED "MARRIED"
 * include http://va.gov/terminology/vistaDefinedElements/2-.05#NEVER_MARRIED "NEVER MARRIED"

@@ -6,17 +6,21 @@ Description: "This StructureDefinition contains the maps for VistA file VISIT (9
 * ^status = #draft
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
 * ^extension.valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter|6.1.0"
-* identifier.value and identifier.system and status and serviceType.coding.code and serviceType.coding.system and subject and period.start and period.end and reasonCode.coding.code and reasonCode.coding.system and diagnosis.condition and location.location and class and serviceProvider and participant.individual and participant.type and type and type.coding.system and type.coding.code and type.coding.display and type.text MS
+* location ^slicing.discriminator.type = #pattern
+* location ^slicing.discriminator.path = "$this"
+* location ^slicing.rules = #open
+* location contains va-loc 0..1
+* identifier.value and identifier.system and status and serviceType.coding.code and serviceType.coding.system and subject and period.start and period.end and reasonCode.coding.code and reasonCode.coding.system and diagnosis.condition and location[va-loc].location and class and serviceProvider and participant.individual and participant.type and type and type.coding.system and type.coding.code and type.coding.display and type.text MS
 * subject only Reference(Patient)
 * diagnosis.condition only Reference(ConditionEncounterDiagnosis)
-* location.location only Reference(Location)
+* location[va-loc].location only Reference(Location)
 * serviceProvider only Reference(Organization)
 * participant.individual only Reference(Practitioner)
 * identifier.system = "http://va.gov/identifiers/$Sta3n/9000010-15001"
 * serviceType.coding.system = "http://va.gov/terminology/VistADefinedTerms/9000010-.07"
 * reasonCode.coding.system = "urn:see-termmap-in-mapParameter"
-* class from http://va.gov/fhir/ValueSet/VSVFencounterClass
-* participant.type from http://va.gov/fhir/ValueSet/VSVFencounterParticipationType
+* class from http://va.gov/fhir/ValueSet/encounterClass
+* participant.type from http://va.gov/fhir/ValueSet/encounterParticipationType
 * type.coding.system = "http://www.ama-assn.org/go/cpt"
 
 Mapping: source-to-EncounterOutpatient
@@ -37,8 +41,7 @@ Source: EncounterOutpatient
 * reasonCode.coding.system -> "447-1: fixed value = urn:see-termmap-in-mapParameter" "from mapParameter 1"
 * diagnosis.condition -> "452: reference from V POV - PROBLEM LIST ENTRY (9000010.07-.16)"
 * hospitalization -> "2030: target not supported" "because of must-support: Outpatient so no hospitalization"
-* location.location -> "458: reference from VISIT - DSS ID (9000010-.08) case stop"
-* location.location -> "459: reference from VISIT - HOSPITAL LOCATION (9000010-.22) case location"
+* location[va-loc].location -> "459: reference from VISIT - HOSPITAL LOCATION (9000010-.22)"
 * class -> "614: terminologyMaps using VF_encounterClass on VISIT - PATIENT STATUS IN/OUT (9000010-15002)" "84% are Outpatient (2024 Jan-Mar)"
 * serviceProvider -> "1599: reference from VISIT - LOC. OF ENCOUNTER > LOCATION - NAME (9000010-.06 > 9999999.06-.01)"
 * participant.individual -> "1614: reference from V PROVIDER - PROVIDER > NEW PERSON (9000010.06-.01 > 200-)"
@@ -64,8 +67,7 @@ Source: EncounterOutpatient
 * period.end -> "Outpat.Visit.CheckOutDateTime,Outpat.Workload.CheckOutDateTime"
 * reasonCode.coding.code -> "Outpat.VDiagnosis.ICDIEN,Outpat.WorkloadVDiagnosis.ICDIEN\nDim.ICD10.ICD10Code,Dim.ICD9.ICD9Code"
 * diagnosis.condition -> "Outpat.VDiagnosis.ProblemListIEN,Outpat.WorkloadVDiagnosis.ProblemListIEN"
-* location.location -> "Outpat.Visit.PrimaryStopCodeIEN,Outpat.Visit.SecondaryStopCodeIEN,Outpat.Workload.PrimaryStopCodeIEN,Outpat.Workload.SecondaryStopCodeIEN"
-* location.location -> "Outpat.Visit.LocationIEN,Outpat.Workload.LocationIEN"
+* location[va-loc].location -> "Outpat.Visit.LocationIEN,Outpat.Workload.LocationIEN"
 * class -> "Outpat.Visit.PatientStatusInOut,Outpat.Workload.PatientStatusInOut"
 * serviceProvider -> "Outpat.Visit.InstitutionIEN,Outpat.Workload.InstitutionIEN"
 * participant.individual -> "Outpat.VProvider.ProviderIEN,Outpat.WorkloadVProvider.ProviderIEN"

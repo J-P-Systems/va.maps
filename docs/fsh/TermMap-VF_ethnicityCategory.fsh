@@ -1,14 +1,14 @@
-Instance: CMVFethnicityCategory
+Instance: ethnicityCategory
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/CMVFethnicityCategory"
-* name = "VF_ethnicityCategory"
-* title = "VF_ethnicityCategory"
-* status = #draft
+* url = "http://va.gov/fhir/ConceptMap/ethnicityCategory"
+* name = "ethnicityCategory"
+* title = "ethnicityCategory"
+* status = #active
 * experimental = false
-* description = "Terminology Maps VF_ethnicityCategory"
-* sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFethnicityCategory-vista"
-* targetCanonical = "http://va.gov/fhir/ValueSet/VSVFethnicityCategory"
+* description = "Terminology Maps ethnicityCategory "
+* sourceCanonical = "http://va.gov/fhir/ValueSet/ethnicityCategory-vista"
+* targetCanonical = "http://va.gov/fhir/ValueSet/ethnicityCategory"
 * group[0].source = "http://va.gov/terminology/vistaDefinedTerms/2-6"
 * group[=].target = "http://terminology.hl7.org/CodeSystem/v3-NullFlavor"
 * group[=].element[0].code = #_Unknown_at_this_time_
@@ -34,21 +34,23 @@ Usage: #definition
 * group[=].element[=].target.code = #2186-5
 * group[=].element[=].target.equivalence = #equal
 
-ValueSet: VSVFethnicityCategory
-Title: "VF_ethnicityCategory"
-Description: "FHIR Target ValueSet for Terminology Maps VF_ethnicityCategory"
+ValueSet: ethnicityCategory
+Title: "ethnicityCategory FHIR"
+Description: "FHIR Target ValueSet for Terminology Maps ethnicityCategory"
 * ^experimental = false
-* ^name = "VF_ethnicityCategory"
+* ^status = #active
+* ^name = "ethnicityCategory"
 * include http://terminology.hl7.org/CodeSystem/v3-NullFlavor#UNK 
 * include http://terminology.hl7.org/CodeSystem/v3-NullFlavor#ASKU 
 * include urn:oid:2.16.840.1.113883.6.238#2135-2 
 * include urn:oid:2.16.840.1.113883.6.238#2186-5 
 
-ValueSet: VSVFethnicityCategory-vista
-Title: "VF_ethnicityCategory VistA"
-Description: "VistA Source ValueSet for Terminology Maps VF_ethnicityCategory"
+ValueSet: ethnicityCategory-vista
+Title: "ethnicityCategory VistA"
+Description: "VistA Source ValueSet for Terminology Maps ethnicityCategory"
 * ^experimental = false
-* ^name = "VF_ethnicityCategory"
+* ^status = #active
+* ^name = "ethnicityCategory_VistA"
 * include http://va.gov/terminology/vistaDefinedTerms/2-6#_Unknown_at_this_time_ "*Unknown at this time*"
 * include http://va.gov/terminology/vistaDefinedTerms/2-6#D "DECLINED TO ANSWER"
 * include http://va.gov/terminology/vistaDefinedTerms/2-6#U "UNKNOWN BY PATIENT"

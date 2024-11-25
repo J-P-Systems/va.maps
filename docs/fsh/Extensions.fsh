@@ -57,3 +57,9 @@ Id: account-statementGeneratedDay
 Description: "Extension account-statementGeneratedDay"
 Context: Account
 * value[x] only integer
+
+Extension: MilitaryServiceConnection
+Id: resource-militaryServiceConnection
+Description: "Extension resource-militaryServiceConnection"
+Context: Resource
+* value[x] only Coding

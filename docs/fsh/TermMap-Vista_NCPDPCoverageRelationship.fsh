@@ -1,14 +1,14 @@
-Instance: CMVistaNCPDPCoverageRelationship
+Instance: VistaNCPDPCoverageRelationship
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/CMVistaNCPDPCoverageRelationship"
-* name = "Vista_NCPDPCoverageRelationship"
-* title = "Vista_NCPDPCoverageRelationship"
-* status = #draft
+* url = "http://va.gov/fhir/ConceptMap/VistaNCPDPCoverageRelationship"
+* name = "VistaNCPDPCoverageRelationship"
+* title = "VistaNCPDPCoverageRelationship"
+* status = #active
 * experimental = false
-* description = "Terminology Maps Vista_NCPDPCoverageRelationship"
-* sourceCanonical = "http://va.gov/fhir/ValueSet/VSVistaNCPDPCoverageRelationship-vista"
-* targetCanonical = "http://va.gov/fhir/ValueSet/VSVistaNCPDPCoverageRelationship"
+* description = "Terminology Maps VistaNCPDPCoverageRelationship "
+* sourceCanonical = "http://va.gov/fhir/ValueSet/VistaNCPDPCoverageRelationship-vista"
+* targetCanonical = "http://va.gov/fhir/ValueSet/VistaNCPDPCoverageRelationship"
 * group[0].source = "http://va.gov/terminology/vistaDefinedTerms/2.312-4.05"
 * group[=].element[0].code = #not_specified
 * group[=].element[=].target.equivalence = #unmatched
@@ -25,21 +25,23 @@ Usage: #definition
 * group[=].element[=].target.code = #other
 * group[=].element[=].target.equivalence = #equal
 
-ValueSet: VSVistaNCPDPCoverageRelationship
-Title: "Vista_NCPDPCoverageRelationship"
-Description: "FHIR Target ValueSet for Terminology Maps Vista_NCPDPCoverageRelationship"
+ValueSet: VistaNCPDPCoverageRelationship
+Title: "VistaNCPDPCoverageRelationship FHIR"
+Description: "FHIR Target ValueSet for Terminology Maps VistaNCPDPCoverageRelationship"
 * ^experimental = false
-* ^name = "Vista_NCPDPCoverageRelationship"
+* ^status = #active
+* ^name = "VistaNCPDPCoverageRelationship"
 * include urn:undefined#self 
 * include urn:undefined#spouse 
 * include urn:undefined#child 
 * include urn:undefined#other 
 
-ValueSet: VSVistaNCPDPCoverageRelationship-vista
-Title: "Vista_NCPDPCoverageRelationship VistA"
-Description: "VistA Source ValueSet for Terminology Maps Vista_NCPDPCoverageRelationship"
+ValueSet: VistaNCPDPCoverageRelationship-vista
+Title: "VistaNCPDPCoverageRelationship VistA"
+Description: "VistA Source ValueSet for Terminology Maps VistaNCPDPCoverageRelationship"
 * ^experimental = false
-* ^name = "Vista_NCPDPCoverageRelationship"
+* ^status = #active
+* ^name = "VistaNCPDPCoverageRelationship_VistA"
 * include http://va.gov/terminology/vistaDefinedTerms/2.312-4.05#not_specified 
 * include http://va.gov/terminology/vistaDefinedTerms/2.312-4.05#cardholder 
 * include http://va.gov/terminology/vistaDefinedTerms/2.312-4.05#spouse 

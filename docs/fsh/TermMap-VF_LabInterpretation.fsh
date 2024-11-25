@@ -1,14 +1,14 @@
-Instance: CMVFLabInterpretation
+Instance: LabInterpretation
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/CMVFLabInterpretation"
-* name = "VF_LabInterpretation"
-* title = "VF_LabInterpretation"
-* status = #draft
+* url = "http://va.gov/fhir/ConceptMap/LabInterpretation"
+* name = "LabInterpretation"
+* title = "LabInterpretation"
+* status = #active
 * experimental = false
-* description = "Terminology Maps VF_LabInterpretation"
-* sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFLabInterpretation-vista"
-* targetCanonical = "http://va.gov/fhir/ValueSet/VSVFLabInterpretation"
+* description = "Terminology Maps LabInterpretation "
+* sourceCanonical = "http://va.gov/fhir/ValueSet/LabInterpretation-vista"
+* targetCanonical = "http://va.gov/fhir/ValueSet/LabInterpretation"
 * group[0].source = "http://va.gov/terminology/vistaDefinedTerms/63.04-2+through+862"
 * group[=].target = "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation"
 * group[=].element[0].code = #H
@@ -32,22 +32,24 @@ Usage: #definition
 * group[=].element[=].target.display = "Abnormal"
 * group[=].element[=].target.equivalence = #equal
 
-ValueSet: VSVFLabInterpretation
-Title: "VF_LabInterpretation"
-Description: "FHIR Target ValueSet for Terminology Maps VF_LabInterpretation"
+ValueSet: LabInterpretation
+Title: "LabInterpretation FHIR"
+Description: "FHIR Target ValueSet for Terminology Maps LabInterpretation"
 * ^experimental = false
-* ^name = "VF_LabInterpretation"
+* ^status = #active
+* ^name = "LabInterpretation"
 * include http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#H "High"
 * include http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#L "Low"
 * include http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#HH "Critical high"
 * include http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#LL "Critical low"
 * include http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#A "Abnormal"
 
-ValueSet: VSVFLabInterpretation-vista
-Title: "VF_LabInterpretation VistA"
-Description: "VistA Source ValueSet for Terminology Maps VF_LabInterpretation"
+ValueSet: LabInterpretation-vista
+Title: "LabInterpretation VistA"
+Description: "VistA Source ValueSet for Terminology Maps LabInterpretation"
 * ^experimental = false
-* ^name = "VF_LabInterpretation"
+* ^status = #active
+* ^name = "LabInterpretation_VistA"
 * include http://va.gov/terminology/vistaDefinedTerms/63.04-2+through+862#H 
 * include http://va.gov/terminology/vistaDefinedTerms/63.04-2+through+862#L 
 * include http://va.gov/terminology/vistaDefinedTerms/63.04-2+through+862#H* 

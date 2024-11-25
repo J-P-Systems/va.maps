@@ -1,14 +1,14 @@
-Instance: CMVFVitalsMethod
+Instance: VitalsMethod
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/CMVFVitalsMethod"
-* name = "VF_VitalsMethod"
-* title = "VF_VitalsMethod"
-* status = #draft
+* url = "http://va.gov/fhir/ConceptMap/VitalsMethod"
+* name = "VitalsMethod"
+* title = "VitalsMethod"
+* status = #active
 * experimental = false
-* description = "Terminology Maps VF_VitalsMethod"
-* sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFVitalsMethod-vista"
-* targetCanonical = "http://va.gov/fhir/ValueSet/VSVFVitalsMethod"
+* description = "Terminology Maps VitalsMethod "
+* sourceCanonical = "http://va.gov/fhir/ValueSet/VitalsMethod-vista"
+* targetCanonical = "http://va.gov/fhir/ValueSet/VitalsMethod"
 * group[0].source = "http://terminology.hl7.org/CodeSystem/VHA"
 * group[=].target = "http://snomed.info/sct"
 * group[=].element[0].code = #4688634
@@ -97,11 +97,12 @@ Usage: #definition
 * group[=].element[=].target.display = "Walking (qualifier value)"
 * group[=].element[=].target.equivalence = #equal
 
-ValueSet: VSVFVitalsMethod
-Title: "VF_VitalsMethod"
-Description: "FHIR Target ValueSet for Terminology Maps VF_VitalsMethod"
+ValueSet: VitalsMethod
+Title: "VitalsMethod FHIR"
+Description: "FHIR Target ValueSet for Terminology Maps VitalsMethod"
 * ^experimental = false
-* ^name = "VF_VitalsMethod"
+* ^status = #active
+* ^name = "VitalsMethod"
 * include http://snomed.info/sct#258104002 "Measured (qualifier value)"
 * include http://snomed.info/sct#255214003 "After exercise (qualifier value)"
 * include http://snomed.info/sct#263678003 "At rest (qualifier value)"
@@ -119,11 +120,12 @@ Description: "FHIR Target ValueSet for Terminology Maps VF_VitalsMethod"
 * include http://snomed.info/sct#309604004 "During exercise (qualifier value)"
 * include http://snomed.info/sct#870595007 "Walking (qualifier value)"
 
-ValueSet: VSVFVitalsMethod-vista
-Title: "VF_VitalsMethod VistA"
-Description: "VistA Source ValueSet for Terminology Maps VF_VitalsMethod"
+ValueSet: VitalsMethod-vista
+Title: "VitalsMethod VistA"
+Description: "VistA Source ValueSet for Terminology Maps VitalsMethod"
 * ^experimental = false
-* ^name = "VF_VitalsMethod"
+* ^status = #active
+* ^name = "VitalsMethod_VistA"
 * include http://terminology.hl7.org/CodeSystem/VHA#4688634 "ACTUAL"
 * include http://terminology.hl7.org/CodeSystem/VHA#4688702 "AFTER EXERCISE"
 * include http://terminology.hl7.org/CodeSystem/VHA#4688697 "AT REST"

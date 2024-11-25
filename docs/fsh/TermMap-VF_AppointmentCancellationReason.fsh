@@ -1,14 +1,14 @@
-Instance: CMVFAppointmentCancellationReason
+Instance: AppointmentCancellationReason
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/CMVFAppointmentCancellationReason"
-* name = "VF_AppointmentCancellationReason"
-* title = "VF_AppointmentCancellationReason"
-* status = #draft
+* url = "http://va.gov/fhir/ConceptMap/AppointmentCancellationReason"
+* name = "AppointmentCancellationReason"
+* title = "AppointmentCancellationReason"
+* status = #active
 * experimental = false
-* description = "Terminology Maps VF_AppointmentCancellationReason"
-* sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFAppointmentCancellationReason-vista"
-* targetCanonical = "http://va.gov/fhir/ValueSet/VSVFAppointmentCancellationReason"
+* description = "Terminology Maps AppointmentCancellationReason "
+* sourceCanonical = "http://va.gov/fhir/ValueSet/AppointmentCancellationReason-vista"
+* targetCanonical = "http://va.gov/fhir/ValueSet/AppointmentCancellationReason"
 * group[0].source = "http://va.gov/terminology/vistaDefinedTerms/2.98-16"
 * group[=].target = "http://terminology.hl7.org/CodeSystem/appointment-cancellation-reason"
 * group[=].element[0].code = #APPOINTMENT_NO_LONGER_REQUIRED
@@ -117,11 +117,12 @@ Usage: #definition
 * group[=].element[=].target.display = "Other: Weather"
 * group[=].element[=].target.equivalence = #equal
 
-ValueSet: VSVFAppointmentCancellationReason
-Title: "VF_AppointmentCancellationReason"
-Description: "FHIR Target ValueSet for Terminology Maps VF_AppointmentCancellationReason"
+ValueSet: AppointmentCancellationReason
+Title: "AppointmentCancellationReason FHIR"
+Description: "FHIR Target ValueSet for Terminology Maps AppointmentCancellationReason"
 * ^experimental = false
-* ^name = "VF_AppointmentCancellationReason"
+* ^status = #active
+* ^name = "AppointmentCancellationReason"
 * include http://terminology.hl7.org/CodeSystem/appointment-cancellation-reason#prov "Provider"
 * include http://terminology.hl7.org/CodeSystem/appointment-cancellation-reason#pat "Patient"
 * include http://terminology.hl7.org/CodeSystem/appointment-cancellation-reason#prov-hosp "Provider: Hospitalized"
@@ -130,11 +131,12 @@ Description: "FHIR Target ValueSet for Terminology Maps VF_AppointmentCancellati
 * include http://terminology.hl7.org/CodeSystem/appointment-cancellation-reason#pat-lt "Patient: Lack of Transportation"
 * include http://terminology.hl7.org/CodeSystem/appointment-cancellation-reason#oth-weath "Other: Weather"
 
-ValueSet: VSVFAppointmentCancellationReason-vista
-Title: "VF_AppointmentCancellationReason VistA"
-Description: "VistA Source ValueSet for Terminology Maps VF_AppointmentCancellationReason"
+ValueSet: AppointmentCancellationReason-vista
+Title: "AppointmentCancellationReason VistA"
+Description: "VistA Source ValueSet for Terminology Maps AppointmentCancellationReason"
 * ^experimental = false
-* ^name = "VF_AppointmentCancellationReason"
+* ^status = #active
+* ^name = "AppointmentCancellationReason_VistA"
 * include http://va.gov/terminology/vistaDefinedTerms/2.98-16#APPOINTMENT_NO_LONGER_REQUIRED "APPOINTMENT NO LONGER REQUIRED"
 * include http://va.gov/terminology/vistaDefinedTerms/2.98-16#AUTOMATED_CANCELLATION "AUTOMATED CANCELLATION"
 * include http://va.gov/terminology/vistaDefinedTerms/2.98-16#BLOCK_AND_MOVE "BLOCK AND MOVE"

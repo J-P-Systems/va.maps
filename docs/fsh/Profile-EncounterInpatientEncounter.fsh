@@ -14,11 +14,16 @@ Description: "This StructureDefinition contains the maps for VistA file PTF (45)
 * reasonCode ^slicing.discriminator.path = "$this"
 * reasonCode ^slicing.rules = #open
 * reasonCode contains va-principle 0..1 and va-secondary 0..1 and va-procedure 0..1
-* identifier[va-IEN].value and identifier[va-IEN].system and identifier[va-IEN].type.text and class and identifier[va-IA].value and identifier[va-IA].system and identifier[va-IA].type.text and status and subject and participant.individual and participant.type.coding and period.start and period.end and reasonCode[va-principle].coding.code and reasonCode[va-principle].coding.system and diagnosis.condition and diagnosis.rank and reasonCode[va-secondary].coding.code and reasonCode[va-secondary].coding.system and reasonCode[va-procedure].coding.code and reasonCode[va-procedure].coding.system and hospitalization.admitSource.coding.code and hospitalization.admitSource.coding.system and hospitalization.admitSource.coding and hospitalization.origin.display and hospitalization.destination.display and hospitalization.dischargeDisposition.coding.code and hospitalization.dischargeDisposition.coding.system and location.location and serviceProvider and type and type.coding.system and type.coding.code and type.coding.display and type.text MS
+* location ^slicing.discriminator.type = #pattern
+* location ^slicing.discriminator.path = "$this"
+* location ^slicing.rules = #open
+* location contains va-ward 0..1 and va-facility 0..1
+* identifier[va-IEN].value and identifier[va-IEN].system and identifier[va-IEN].type.text and class and identifier[va-IA].value and identifier[va-IA].system and identifier[va-IA].type.text and status and subject and participant.individual and participant.type.coding and period.start and period.end and reasonCode[va-principle].coding.code and reasonCode[va-principle].coding.system and diagnosis.condition and diagnosis.rank and reasonCode[va-secondary].coding.code and reasonCode[va-secondary].coding.system and reasonCode[va-procedure].coding.code and reasonCode[va-procedure].coding.system and hospitalization.admitSource.coding.code and hospitalization.admitSource.coding.system and hospitalization.admitSource.coding and hospitalization.origin.display and hospitalization.destination.display and hospitalization.dischargeDisposition.coding.code and hospitalization.dischargeDisposition.coding.system and location[va-ward].location and location[va-facility].location and serviceProvider and type and type.coding.system and type.coding.code and type.coding.display and type.text MS
 * subject only Reference(Patient)
 * participant.individual only Reference(Practitioner)
 * diagnosis.condition only Reference(EncounterInpatientCondition)
-* location.location only Reference(Location)
+* location[va-ward].location only Reference(Location)
+* location[va-facility].location only Reference(Location)
 * serviceProvider only Reference(Organization)
 * identifier[va-IEN].system = "http://va.gov/identifiers/$Sta3n/45"
 * identifier[va-IEN].type.text = "IEN"
@@ -31,7 +36,7 @@ Description: "This StructureDefinition contains the maps for VistA file PTF (45)
 * reasonCode[va-secondary].coding.system = "urn:see-termmap-in-mapParameter"
 * reasonCode[va-procedure].coding.system = "http://www.cms.gov/Medicare/Coding/ICD10"
 * hospitalization.admitSource.coding.system = "http://va.gov/terminology/vistaDefinedTerms/45.1"
-* hospitalization.admitSource.coding from http://va.gov/fhir/ValueSet/VSVFSourceOfAdmission
+* hospitalization.admitSource.coding from http://va.gov/fhir/ValueSet/SourceOfAdmission
 * hospitalization.dischargeDisposition.coding.system = "http://va.gov/terminology/vistaDefinedTerms/45.6"
 * type.coding.system = "http://www.ama-assn.org/go/cpt"
 
@@ -69,8 +74,8 @@ Source: EncounterInpatientEncounter
 * hospitalization.destination.display -> "455: source value from PTF - RECEIVING FACILITY (45-76.1)"
 * hospitalization.dischargeDisposition.coding.code -> "456: source value from PTF - PLACE OF DISPOSITION (45-75)"
 * hospitalization.dischargeDisposition.coding.system -> "456-1: fixed value = http://va.gov/terminology/vistaDefinedTerms/45.6" "from mapParameter 1"
-* location.location -> "460: reference from PTF - WARD AT DISCHARGE > WARD LOCATION - HOSPITAL LOCATION FILE POINTER (45-2.2 > 42-44)" "computed\n45-2.2 is in CDW ; DIM WardLocation.SID 104.302 indirect pointer"
-* location.location -> "461: reference from PTF - FACILITY (45-3)" "This is the Sta3n"
+* location[va-ward].location -> "460: reference from PTF - WARD AT DISCHARGE > WARD LOCATION - HOSPITAL LOCATION FILE POINTER (45-2.2 > 42-44)" "computed\n45-2.2 is in CDW ; DIM WardLocation.SID 104.302 indirect pointer"
+* location[va-facility].location -> "461: reference from PTF - FACILITY (45-3)" "This is the Sta3n"
 * serviceProvider -> "1600: reference from PTF - FACILITY (45-3)"
 * type -> "1616: source value from INPATIENT CPT CODE - CPT CODE > CPT (46-.01 > 81-)"
 * type.coding.system -> "1616-1: fixed value = http://www.ama-assn.org/go/cpt" "from mapParameter 1"
@@ -97,8 +102,8 @@ Source: EncounterInpatientEncounter
 * hospitalization.origin.display -> "Inpat.Census.TransferringFacility,Inpat.Inpatient.TransferFromFacility,Inpat.InpatientFeeBasis.TransferringFacility"
 * hospitalization.destination.display -> "Inpat.Census.ReceivingFacility,Inpat.Inpatient.TransferToFacility,Inpat.InpatientFeeBasis.ReceivingFacility"
 * hospitalization.dischargeDisposition.coding.code -> "Inpat.Census.PlaceOfDispositionIEN,Inpat.Inpatient.PlaceOfDispositionIEN,Inpat.InpatientFeeBasis.PlaceOfDispositionIEN"
-* location.location -> "Inpat.Inpatient.Discharge45WardLocationIEN\nDim.WardLocation.LocationIEN"
-* location.location -> "Inpat.Census.DischargeFacility,Inpat.Inpatient.DischargeFromFacility,Inpat.InpatientFeeBasis.DischargeFacility"
+* location[va-ward].location -> "Inpat.Inpatient.Discharge45WardLocationIEN\nDim.WardLocation.LocationIEN"
+* location[va-facility].location -> "Inpat.Census.DischargeFacility,Inpat.Inpatient.DischargeFromFacility,Inpat.InpatientFeeBasis.DischargeFacility"
 * serviceProvider -> "Inpat.Census.DischargeFacility,Inpat.Inpatient.DischargeFromFacility,Inpat.InpatientFeeBasis.DischargeFacility"
 * type -> "Inpat.InpatientCPTProcedure.CPTIEN"
 * type.coding.code -> "Inpat.InpatientCPTProcedure.CPTIEN\nDim.CPT.CPTCode,Dim.CPT.CPTCode"

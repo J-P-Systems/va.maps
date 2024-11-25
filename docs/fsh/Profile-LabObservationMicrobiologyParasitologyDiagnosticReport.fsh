@@ -18,7 +18,7 @@ Description: "This StructureDefinition contains the maps for VistA file MICROBIO
 * subject only Reference(Patient)
 * result only Reference(LabObservationObservation)
 * identifier.system = "http://va.gov/identifiers/$Sta3n/63.5"
-* status from http://va.gov/fhir/ValueSet/VSVFDiagnosticReportLabStatus
+* status from http://va.gov/fhir/ValueSet/DiagnosticReportLabStatus
 * category[LaboratorySlice] = http://terminology.hl7.org/CodeSystem/v2-0074#LAB
 * code.coding.system = "http://loinc.org"
 

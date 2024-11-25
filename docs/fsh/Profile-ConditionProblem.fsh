@@ -16,8 +16,8 @@ Description: "This StructureDefinition contains the maps for VistA file PROBLEM 
 * identifier.system = "http://va.gov/identifiers/$Sta3n/9000011"
 * code.coding[va-icd].system = "urn:see-termmap-in-mapParameter"
 * code.coding.system = "http://snomed.info/sct"
-* clinicalStatus from http://va.gov/fhir/ValueSet/VSVFproblemStatus
-* verificationStatus from http://va.gov/fhir/ValueSet/VSVFproblemVerificationStatus
+* clinicalStatus from http://va.gov/fhir/ValueSet/problemStatus
+* verificationStatus from http://va.gov/fhir/ValueSet/problemVerificationStatus
 
 Mapping: source-to-ConditionProblem
 Id: vista

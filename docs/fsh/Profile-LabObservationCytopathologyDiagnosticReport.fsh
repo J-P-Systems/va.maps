@@ -21,7 +21,7 @@ Description: "This StructureDefinition contains the maps for VistA file CYTOPATH
 * identifier.system = "http://va.gov/identifiers/$Sta3n/63.51"
 * code = http://loinc.org#26438-2 "Cytology studies (set)"
 * code.coding.system = "http://loinc.org"
-* status from http://va.gov/fhir/ValueSet/VSVFDiagnosticReportLabStatus
+* status from http://va.gov/fhir/ValueSet/DiagnosticReportLabStatus
 * category[LaboratorySlice] = http://terminology.hl7.org/CodeSystem/v2-0074#LAB
 * code.coding.system = "http://loinc.org"
 

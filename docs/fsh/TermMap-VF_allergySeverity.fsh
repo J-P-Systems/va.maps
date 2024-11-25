@@ -1,14 +1,14 @@
-Instance: CMVFallergySeverity
+Instance: allergySeverity
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/CMVFallergySeverity"
-* name = "VF_allergySeverity"
-* title = "VF_allergySeverity"
-* status = #draft
+* url = "http://va.gov/fhir/ConceptMap/allergySeverity"
+* name = "allergySeverity"
+* title = "allergySeverity"
+* status = #active
 * experimental = false
-* description = "Terminology Maps VF_allergySeverity"
-* sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFallergySeverity-vista"
-* targetCanonical = "http://va.gov/fhir/ValueSet/VSVFallergySeverity"
+* description = "Terminology Maps allergySeverity "
+* sourceCanonical = "http://va.gov/fhir/ValueSet/allergySeverity-vista"
+* targetCanonical = "http://va.gov/fhir/ValueSet/allergySeverity"
 * group[0].source = "http://va.gov/terminology/vistaDefinedTerms/120.85-14.5"
 * group[=].target = "http://hl7.org/fhir/reaction-event-severity"
 * group[=].element[0].code = #1
@@ -24,20 +24,22 @@ Usage: #definition
 * group[=].element[=].target.code = #severe
 * group[=].element[=].target.equivalence = #equal
 
-ValueSet: VSVFallergySeverity
-Title: "VF_allergySeverity"
-Description: "FHIR Target ValueSet for Terminology Maps VF_allergySeverity"
+ValueSet: allergySeverity
+Title: "allergySeverity FHIR"
+Description: "FHIR Target ValueSet for Terminology Maps allergySeverity"
 * ^experimental = false
-* ^name = "VF_allergySeverity"
+* ^status = #active
+* ^name = "allergySeverity"
 * include http://hl7.org/fhir/reaction-event-severity#mild 
 * include http://hl7.org/fhir/reaction-event-severity#moderate 
 * include http://hl7.org/fhir/reaction-event-severity#severe 
 
-ValueSet: VSVFallergySeverity-vista
-Title: "VF_allergySeverity VistA"
-Description: "VistA Source ValueSet for Terminology Maps VF_allergySeverity"
+ValueSet: allergySeverity-vista
+Title: "allergySeverity VistA"
+Description: "VistA Source ValueSet for Terminology Maps allergySeverity"
 * ^experimental = false
-* ^name = "VF_allergySeverity"
+* ^status = #active
+* ^name = "allergySeverity_VistA"
 * include http://va.gov/terminology/vistaDefinedTerms/120.85-14.5#1 "MILD"
 * include http://va.gov/terminology/vistaDefinedTerms/120.85-14.5#2 "MODERATE"
 * include http://va.gov/terminology/vistaDefinedTerms/120.85-14.5#3 "SEVERE"

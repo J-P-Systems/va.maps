@@ -1,14 +1,14 @@
-Instance: CMVFencounterParticipationType
+Instance: encounterParticipationType
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/CMVFencounterParticipationType"
-* name = "VF_encounterParticipationType"
-* title = "VF_encounterParticipationType"
-* status = #draft
+* url = "http://va.gov/fhir/ConceptMap/encounterParticipationType"
+* name = "encounterParticipationType"
+* title = "encounterParticipationType"
+* status = #active
 * experimental = false
-* description = "Terminology Maps VF_encounterParticipationType"
-* sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFencounterParticipationType-vista"
-* targetCanonical = "http://va.gov/fhir/ValueSet/VSVFencounterParticipationType"
+* description = "Terminology Maps encounterParticipationType "
+* sourceCanonical = "http://va.gov/fhir/ValueSet/encounterParticipationType-vista"
+* targetCanonical = "http://va.gov/fhir/ValueSet/encounterParticipationType"
 * group[0].source = "http://va.gov/terminology/vistaDefinedElements/9000010.06-.04"
 * group[=].target = "http://terminology.hl7.org/CodeSystem/v3-ParticipationType"
 * group[=].element[0].code = #P
@@ -22,18 +22,20 @@ Usage: #definition
 * group[=].element[=].target.display = "secondary performer"
 * group[=].element[=].target.equivalence = #equal
 
-ValueSet: VSVFencounterParticipationType
-Title: "VF_encounterParticipationType"
-Description: "FHIR Target ValueSet for Terminology Maps VF_encounterParticipationType"
+ValueSet: encounterParticipationType
+Title: "encounterParticipationType FHIR"
+Description: "FHIR Target ValueSet for Terminology Maps encounterParticipationType"
 * ^experimental = false
-* ^name = "VF_encounterParticipationType"
+* ^status = #active
+* ^name = "encounterParticipationType"
 * include http://terminology.hl7.org/CodeSystem/v3-ParticipationType#PPRF "primary performer"
 * include http://terminology.hl7.org/CodeSystem/v3-ParticipationType#SPRF "secondary performer"
 
-ValueSet: VSVFencounterParticipationType-vista
-Title: "VF_encounterParticipationType VistA"
-Description: "VistA Source ValueSet for Terminology Maps VF_encounterParticipationType"
+ValueSet: encounterParticipationType-vista
+Title: "encounterParticipationType VistA"
+Description: "VistA Source ValueSet for Terminology Maps encounterParticipationType"
 * ^experimental = false
-* ^name = "VF_encounterParticipationType"
+* ^status = #active
+* ^name = "encounterParticipationType_VistA"
 * include http://va.gov/terminology/vistaDefinedElements/9000010.06-.04#P "PRIMARY"
 * include http://va.gov/terminology/vistaDefinedElements/9000010.06-.04#S "SECONDARY"

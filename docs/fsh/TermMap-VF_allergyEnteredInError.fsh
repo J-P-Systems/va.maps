@@ -1,14 +1,14 @@
-Instance: CMVFallergyEnteredInError
+Instance: allergyEnteredInError
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/CMVFallergyEnteredInError"
-* name = "VF_allergyEnteredInError"
-* title = "VF_allergyEnteredInError"
-* status = #draft
+* url = "http://va.gov/fhir/ConceptMap/allergyEnteredInError"
+* name = "allergyEnteredInError"
+* title = "allergyEnteredInError"
+* status = #active
 * experimental = false
-* description = "Terminology Maps VF_allergyEnteredInError"
-* sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFallergyEnteredInError-vista"
-* targetCanonical = "http://va.gov/fhir/ValueSet/VSVFallergyEnteredInError"
+* description = "Terminology Maps allergyEnteredInError "
+* sourceCanonical = "http://va.gov/fhir/ValueSet/allergyEnteredInError-vista"
+* targetCanonical = "http://va.gov/fhir/ValueSet/allergyEnteredInError"
 * group[0].source = "http://va.gov/terminology/vistaDefinedTerms/120.8-22"
 * group[=].target = "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification"
 * group[=].element[0].code = #1
@@ -17,16 +17,18 @@ Usage: #definition
 * group[=].element[=].target.display = "Entered In Error"
 * group[=].element[=].target.equivalence = #equal
 
-ValueSet: VSVFallergyEnteredInError
-Title: "VF_allergyEnteredInError"
-Description: "FHIR Target ValueSet for Terminology Maps VF_allergyEnteredInError"
+ValueSet: allergyEnteredInError
+Title: "allergyEnteredInError FHIR"
+Description: "FHIR Target ValueSet for Terminology Maps allergyEnteredInError"
 * ^experimental = false
-* ^name = "VF_allergyEnteredInError"
+* ^status = #active
+* ^name = "allergyEnteredInError"
 * include http://terminology.hl7.org/CodeSystem/allergyintolerance-verification#entered-in-error "Entered In Error"
 
-ValueSet: VSVFallergyEnteredInError-vista
-Title: "VF_allergyEnteredInError VistA"
-Description: "VistA Source ValueSet for Terminology Maps VF_allergyEnteredInError"
+ValueSet: allergyEnteredInError-vista
+Title: "allergyEnteredInError VistA"
+Description: "VistA Source ValueSet for Terminology Maps allergyEnteredInError"
 * ^experimental = false
-* ^name = "VF_allergyEnteredInError"
+* ^status = #active
+* ^name = "allergyEnteredInError_VistA"
 * include http://va.gov/terminology/vistaDefinedTerms/120.8-22#1 "ENTERED IN ERROR - YES"

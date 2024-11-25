@@ -1,14 +1,14 @@
-Instance: CMVFLocationStatus
+Instance: LocationStatus
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/CMVFLocationStatus"
-* name = "VF_LocationStatus"
-* title = "VF_LocationStatus"
-* status = #draft
+* url = "http://va.gov/fhir/ConceptMap/LocationStatus"
+* name = "LocationStatus"
+* title = "LocationStatus"
+* status = #active
 * experimental = false
-* description = "Terminology Maps VF_LocationStatus"
-* sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFLocationStatus-vista"
-* targetCanonical = "http://va.gov/fhir/ValueSet/VSVFLocationStatus"
+* description = "Terminology Maps LocationStatus "
+* sourceCanonical = "http://va.gov/fhir/ValueSet/LocationStatus-vista"
+* targetCanonical = "http://va.gov/fhir/ValueSet/LocationStatus"
 * group[0].source = "urn:VAST"
 * group[=].target = "http://hl7.org/fhir/location-status"
 * group[=].element[0].code = #A
@@ -31,20 +31,22 @@ Usage: #definition
 * group[=].element[=].target.display = "Suspended"
 * group[=].element[=].target.equivalence = #equal
 
-ValueSet: VSVFLocationStatus
-Title: "VF_LocationStatus"
-Description: "FHIR Target ValueSet for Terminology Maps VF_LocationStatus"
+ValueSet: LocationStatus
+Title: "LocationStatus FHIR"
+Description: "FHIR Target ValueSet for Terminology Maps LocationStatus"
 * ^experimental = false
-* ^name = "VF_LocationStatus"
+* ^status = #active
+* ^name = "LocationStatus"
 * include http://hl7.org/fhir/location-status#active "Active"
 * include http://hl7.org/fhir/location-status#inactive "Inactive"
 * include http://hl7.org/fhir/location-status#suspended "Suspended"
 
-ValueSet: VSVFLocationStatus-vista
-Title: "VF_LocationStatus VistA"
-Description: "VistA Source ValueSet for Terminology Maps VF_LocationStatus"
+ValueSet: LocationStatus-vista
+Title: "LocationStatus VistA"
+Description: "VistA Source ValueSet for Terminology Maps LocationStatus"
 * ^experimental = false
-* ^name = "VF_LocationStatus"
+* ^status = #active
+* ^name = "LocationStatus_VistA"
 * include urn:VAST#A "Active"
 * include urn:VAST#D "Permanently Deactivated"
 * include urn:VAST#P "Planned"

@@ -1,14 +1,14 @@
-Instance: CMVFReligion
+Instance: Religion
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/CMVFReligion"
-* name = "VF_Religion"
-* title = "VF_Religion"
-* status = #draft
+* url = "http://va.gov/fhir/ConceptMap/Religion"
+* name = "Religion"
+* title = "Religion"
+* status = #active
 * experimental = false
-* description = "Terminology Maps VF_Religion"
-* sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFReligion-vista"
-* targetCanonical = "http://va.gov/fhir/ValueSet/VSVFReligion"
+* description = "Terminology Maps Religion "
+* sourceCanonical = "http://va.gov/fhir/ValueSet/Religion-vista"
+* targetCanonical = "http://va.gov/fhir/ValueSet/Religion"
 * group[0].source = "http://va.gov/terminology/vistaDefinedElements/2-.08"
 * group[=].target = "http://terminology.hl7.org/CodeSystem/v3-ReligiousAffiliation"
 * group[=].element[0].code = #9
@@ -434,11 +434,12 @@ Usage: #definition
 * group[=].element[=].target.display = "unknown"
 * group[=].element[=].target.equivalence = #equal
 
-ValueSet: VSVFReligion
-Title: "VF_Religion"
-Description: "FHIR Target ValueSet for Terminology Maps VF_Religion"
+ValueSet: Religion
+Title: "Religion FHIR"
+Description: "FHIR Target ValueSet for Terminology Maps Religion"
 * ^experimental = false
-* ^name = "VF_Religion"
+* ^status = #active
+* ^name = "Religion"
 * include http://terminology.hl7.org/CodeSystem/v3-ReligiousAffiliation#1001 "Adventist"
 * include http://terminology.hl7.org/CodeSystem/v3-ReligiousAffiliation#1002 "African Religions"
 * include http://terminology.hl7.org/CodeSystem/v3-ReligiousAffiliation#1003 "Afro-Caribbean Religions"
@@ -524,11 +525,12 @@ Description: "FHIR Target ValueSet for Terminology Maps VF_Religion"
 * include http://terminology.hl7.org/CodeSystem/v3-NullFlavor#OTH "other"
 * include http://terminology.hl7.org/CodeSystem/v3-NullFlavor#UNK "unknown"
 
-ValueSet: VSVFReligion-vista
-Title: "VF_Religion VistA"
-Description: "VistA Source ValueSet for Terminology Maps VF_Religion"
+ValueSet: Religion-vista
+Title: "Religion VistA"
+Description: "VistA Source ValueSet for Terminology Maps Religion"
 * ^experimental = false
-* ^name = "VF_Religion"
+* ^status = #active
+* ^name = "Religion_VistA"
 * include http://va.gov/terminology/vistaDefinedElements/2-.08#9 "ADVENTIST"
 * include http://va.gov/terminology/vistaDefinedElements/2-.08#32 "AFRICAN RELIGIONS"
 * include http://va.gov/terminology/vistaDefinedElements/2-.08#33 "AFRO-CARIBBEAN RELIGIONS"

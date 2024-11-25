@@ -11,10 +11,10 @@ Description: "This StructureDefinition contains the maps for VistA file V IMMUNI
 * reaction.detail only Reference(ImmunizationObservation)
 * encounter only Reference(EncounterOutpatient)
 * location only Reference(Location)
-* statusReason from http://va.gov/fhir/ValueSet/VSVFimmunizationStatusReason
-* vaccineCode from http://va.gov/fhir/ValueSet/VSVFinferredCVX
+* statusReason from http://va.gov/fhir/ValueSet/immunizationStatusReason
+* vaccineCode from http://va.gov/fhir/ValueSet/inferredCVX
 * primarySource.extension contains http://hl7.org/fhir/StructureDefinition/11179-permitted-value-conceptmap named 11179-permitted-value-conceptmap 0..1
-* primarySource.extension[11179-permitted-value-conceptmap].valueCanonical = "http://va.gov/fhir/ConceptMap/CMVFimmunizationPrimarySource"
+* primarySource.extension[11179-permitted-value-conceptmap].valueCanonical = "http://va.gov/fhir/ConceptMap/immunizationPrimarySource"
 * vaccineCode.coding.system = "http://hl7.org/fhir/sid/ndc"
 * performer.function = http://terminology.hl7.org/CodeSystem/v2-0443#AP
 

@@ -23,7 +23,7 @@ Description: "This StructureDefinition contains the maps for VistA file NEW PERS
 * telecom.use = #home
 * identifier[va-IEN].system = "http://va.gov/identifiers/$Sta3n/200"
 * identifier[va-IEN].type = http://va.gov/terminology/vistaDefinedTerms/200-.001#IEN
-* gender from http://va.gov/fhir/ValueSet/VSVFproviderGender
+* gender from http://va.gov/fhir/ValueSet/providerGender
 
 Mapping: source-to-Practitioner
 Id: vista

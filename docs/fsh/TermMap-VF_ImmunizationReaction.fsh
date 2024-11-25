@@ -1,14 +1,14 @@
-Instance: CMVFImmunizationReaction
+Instance: ImmunizationReaction
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/CMVFImmunizationReaction"
-* name = "VF_ImmunizationReaction"
-* title = "VF_ImmunizationReaction"
-* status = #draft
+* url = "http://va.gov/fhir/ConceptMap/ImmunizationReaction"
+* name = "ImmunizationReaction"
+* title = "ImmunizationReaction"
+* status = #active
 * experimental = false
-* description = "Terminology Maps VF_ImmunizationReaction"
-* sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFImmunizationReaction-vista"
-* targetCanonical = "http://va.gov/fhir/ValueSet/VSVFImmunizationReaction"
+* description = "Terminology Maps ImmunizationReaction "
+* sourceCanonical = "http://va.gov/fhir/ValueSet/ImmunizationReaction-vista"
+* targetCanonical = "http://va.gov/fhir/ValueSet/ImmunizationReaction"
 * group[0].source = "http://va.gov/terminology/vistaDefinedElements/9000010.11-.06"
 * group[=].target = "http://snomed.info/sct"
 * group[=].element[0].code = #9
@@ -74,11 +74,12 @@ Usage: #definition
 * group[=].element[=].target.display = "None"
 * group[=].element[=].target.equivalence = #equal
 
-ValueSet: VSVFImmunizationReaction
-Title: "VF_ImmunizationReaction"
-Description: "FHIR Target ValueSet for Terminology Maps VF_ImmunizationReaction"
+ValueSet: ImmunizationReaction
+Title: "ImmunizationReaction FHIR"
+Description: "FHIR Target ValueSet for Terminology Maps ImmunizationReaction"
 * ^experimental = false
-* ^name = "VF_ImmunizationReaction"
+* ^status = #active
+* ^name = "ImmunizationReaction"
 * include http://snomed.info/sct#293104008 "Adverse reaction to component of vaccine product (disorder)"
 * include http://snomed.info/sct#91175000 "Seizure (finding)"
 * include http://snomed.info/sct#386661006 "Fever (finding)"
@@ -88,11 +89,12 @@ Description: "FHIR Target ValueSet for Terminology Maps VF_ImmunizationReaction"
 * include http://snomed.info/sct#422400008 "Vomiting (disorder)"
 * include http://loinc.org#LA137-2 "None"
 
-ValueSet: VSVFImmunizationReaction-vista
-Title: "VF_ImmunizationReaction VistA"
-Description: "VistA Source ValueSet for Terminology Maps VF_ImmunizationReaction"
+ValueSet: ImmunizationReaction-vista
+Title: "ImmunizationReaction VistA"
+Description: "VistA Source ValueSet for Terminology Maps ImmunizationReaction"
 * ^experimental = false
-* ^name = "VF_ImmunizationReaction"
+* ^status = #active
+* ^name = "ImmunizationReaction_VistA"
 * include http://va.gov/terminology/vistaDefinedElements/9000010.11-.06#9 "ANAPHYLAXIS OR COLLAPSE"
 * include http://va.gov/terminology/vistaDefinedElements/9000010.11-.06#8 "ARTHRITIS OR ARTHRALGIAS"
 * include http://va.gov/terminology/vistaDefinedElements/9000010.11-.06#7 "CONVULSIONS"

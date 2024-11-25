@@ -1,14 +1,14 @@
-Instance: CMVFinferredCVX
+Instance: inferredCVX
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/CMVFinferredCVX"
-* name = "VF_inferredCVX"
-* title = "VF_inferredCVX"
-* status = #draft
+* url = "http://va.gov/fhir/ConceptMap/inferredCVX"
+* name = "inferredCVX"
+* title = "inferredCVX"
+* status = #active
 * experimental = false
-* description = "Terminology Maps VF_inferredCVX"
-* sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFinferredCVX-vista"
-* targetCanonical = "http://va.gov/fhir/ValueSet/VSVFinferredCVX"
+* description = "Terminology Maps inferredCVX "
+* sourceCanonical = "http://va.gov/fhir/ValueSet/inferredCVX-vista"
+* targetCanonical = "http://va.gov/fhir/ValueSet/inferredCVX"
 * group[0].source = "http://va.gov/terminology/vistaDefinedTerms/9999999.14-.01"
 * group[=].target = "http://hl7.org/fhir/sid/cvx"
 * group[=].element[0].code = #DECLINED_FLU_IMM__HISTORICAL_
@@ -128,21 +128,23 @@ Usage: #definition
 * group[=].element[=].target.code = #109
 * group[=].element[=].target.equivalence = #equal
 
-ValueSet: VSVFinferredCVX
-Title: "VF_inferredCVX"
-Description: "FHIR Target ValueSet for Terminology Maps VF_inferredCVX"
+ValueSet: inferredCVX
+Title: "inferredCVX FHIR"
+Description: "FHIR Target ValueSet for Terminology Maps inferredCVX"
 * ^experimental = false
-* ^name = "VF_inferredCVX"
+* ^status = #active
+* ^name = "inferredCVX"
 * include http://hl7.org/fhir/sid/cvx#88 
 * include http://hl7.org/fhir/sid/cvx#109 
 * include http://hl7.org/fhir/sid/cvx#139 
 * include http://hl7.org/fhir/sid/cvx#137 
 
-ValueSet: VSVFinferredCVX-vista
-Title: "VF_inferredCVX VistA"
-Description: "VistA Source ValueSet for Terminology Maps VF_inferredCVX"
+ValueSet: inferredCVX-vista
+Title: "inferredCVX VistA"
+Description: "VistA Source ValueSet for Terminology Maps inferredCVX"
 * ^experimental = false
-* ^name = "VF_inferredCVX"
+* ^status = #active
+* ^name = "inferredCVX_VistA"
 * include http://va.gov/terminology/vistaDefinedTerms/9999999.14-.01#DECLINED_FLU_IMM__HISTORICAL_ "DECLINED FLU IMM (HISTORICAL)"
 * include http://va.gov/terminology/vistaDefinedTerms/9999999.14-.01#DECLINED_PNEUMOCOCCAL__HISTORICAL_ "DECLINED PNEUMOCOCCAL (HISTORICAL)"
 * include http://va.gov/terminology/vistaDefinedTerms/9999999.14-.01#DECLINED_TETANUS_DIPT__HISTORICAL_ "DECLINED TETANUS/DIPT (HISTORICAL)"

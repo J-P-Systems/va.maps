@@ -1,14 +1,14 @@
-Instance: CMVFImageStatusRadNuc
+Instance: ImageStatusRadNuc
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/CMVFImageStatusRadNuc"
-* name = "VF_ImageStatusRadNuc"
-* title = "VF_ImageStatusRadNuc"
-* status = #draft
+* url = "http://va.gov/fhir/ConceptMap/ImageStatusRadNuc"
+* name = "ImageStatusRadNuc"
+* title = "ImageStatusRadNuc"
+* status = #active
 * experimental = false
-* description = "Terminology Maps VF_ImageStatusRadNuc"
-* sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFImageStatusRadNuc-vista"
-* targetCanonical = "http://va.gov/fhir/ValueSet/VSVFImageStatusRadNuc"
+* description = "Terminology Maps ImageStatusRadNuc "
+* sourceCanonical = "http://va.gov/fhir/ValueSet/ImageStatusRadNuc-vista"
+* targetCanonical = "http://va.gov/fhir/ValueSet/ImageStatusRadNuc"
 * group[0].source = "http://va.gov/terminology/vistaDefinedTerms/74-5"
 * group[=].target = "http://hl7.org/fhir/observation-status"
 * group[=].element[0].code = #X
@@ -48,20 +48,22 @@ Usage: #definition
 * group[=].element[=].target.equivalence = #equal
 * group[=].element[=].target.comment = "V' (Verified) status refers to a report that is verified by the interpreting physician and is available for display outside the Rad/Nuc Med Department to appropriate users, such as ward clerks, nurses, and physicians."
 
-ValueSet: VSVFImageStatusRadNuc
-Title: "VF_ImageStatusRadNuc"
-Description: "FHIR Target ValueSet for Terminology Maps VF_ImageStatusRadNuc"
+ValueSet: ImageStatusRadNuc
+Title: "ImageStatusRadNuc FHIR"
+Description: "FHIR Target ValueSet for Terminology Maps ImageStatusRadNuc"
 * ^experimental = false
-* ^name = "VF_ImageStatusRadNuc"
+* ^status = #active
+* ^name = "ImageStatusRadNuc"
 * include http://hl7.org/fhir/observation-status#cancelled "Cancelled"
 * include http://hl7.org/fhir/observation-status#preliminary "Preliminary"
 * include http://hl7.org/fhir/observation-status#final "Final"
 
-ValueSet: VSVFImageStatusRadNuc-vista
-Title: "VF_ImageStatusRadNuc VistA"
-Description: "VistA Source ValueSet for Terminology Maps VF_ImageStatusRadNuc"
+ValueSet: ImageStatusRadNuc-vista
+Title: "ImageStatusRadNuc VistA"
+Description: "VistA Source ValueSet for Terminology Maps ImageStatusRadNuc"
 * ^experimental = false
-* ^name = "VF_ImageStatusRadNuc"
+* ^status = #active
+* ^name = "ImageStatusRadNuc_VistA"
 * include http://va.gov/terminology/vistaDefinedTerms/74-5#X "DELETED"
 * include http://va.gov/terminology/vistaDefinedTerms/74-5#D "DRAFT"
 * include http://va.gov/terminology/vistaDefinedTerms/74-5#EF "ELECTRONICALLY FILED"

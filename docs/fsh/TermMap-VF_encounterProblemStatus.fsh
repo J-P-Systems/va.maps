@@ -1,14 +1,14 @@
-Instance: CMVFencounterProblemStatus
+Instance: encounterProblemStatus
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/CMVFencounterProblemStatus"
-* name = "VF_encounterProblemStatus"
-* title = "VF_encounterProblemStatus"
-* status = #draft
+* url = "http://va.gov/fhir/ConceptMap/encounterProblemStatus"
+* name = "encounterProblemStatus"
+* title = "encounterProblemStatus"
+* status = #active
 * experimental = false
-* description = "Terminology Maps VF_encounterProblemStatus"
-* sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFencounterProblemStatus-vista"
-* targetCanonical = "http://va.gov/fhir/ValueSet/VSVFencounterProblemStatus"
+* description = "Terminology Maps encounterProblemStatus "
+* sourceCanonical = "http://va.gov/fhir/ValueSet/encounterProblemStatus-vista"
+* targetCanonical = "http://va.gov/fhir/ValueSet/encounterProblemStatus"
 * group[0].source = "http://va.gov/terminology/vistaDefinedTerms/9000010.07-.06"
 * group[=].target = "http://terminology.hl7.org/CodeSystem/condition-clinical"
 * group[=].element[0].code = #R
@@ -17,16 +17,18 @@ Usage: #definition
 * group[=].element[=].target.display = "resolved"
 * group[=].element[=].target.equivalence = #equal
 
-ValueSet: VSVFencounterProblemStatus
-Title: "VF_encounterProblemStatus"
-Description: "FHIR Target ValueSet for Terminology Maps VF_encounterProblemStatus"
+ValueSet: encounterProblemStatus
+Title: "encounterProblemStatus FHIR"
+Description: "FHIR Target ValueSet for Terminology Maps encounterProblemStatus"
 * ^experimental = false
-* ^name = "VF_encounterProblemStatus"
+* ^status = #active
+* ^name = "encounterProblemStatus"
 * include http://terminology.hl7.org/CodeSystem/condition-clinical#resolved "resolved"
 
-ValueSet: VSVFencounterProblemStatus-vista
-Title: "VF_encounterProblemStatus VistA"
-Description: "VistA Source ValueSet for Terminology Maps VF_encounterProblemStatus"
+ValueSet: encounterProblemStatus-vista
+Title: "encounterProblemStatus VistA"
+Description: "VistA Source ValueSet for Terminology Maps encounterProblemStatus"
 * ^experimental = false
-* ^name = "VF_encounterProblemStatus"
+* ^status = #active
+* ^name = "encounterProblemStatus_VistA"
 * include http://va.gov/terminology/vistaDefinedTerms/9000010.07-.06#R "RESOLVED"

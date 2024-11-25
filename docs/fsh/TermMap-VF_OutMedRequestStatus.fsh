@@ -1,14 +1,14 @@
-Instance: CMVFOutMedRequestStatus
+Instance: OutMedRequestStatus
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/CMVFOutMedRequestStatus"
-* name = "VF_OutMedRequestStatus"
-* title = "VF_OutMedRequestStatus"
-* status = #draft
+* url = "http://va.gov/fhir/ConceptMap/OutMedRequestStatus"
+* name = "OutMedRequestStatus"
+* title = "OutMedRequestStatus"
+* status = #active
 * experimental = false
-* description = "Terminology Maps VF_OutMedRequestStatus"
-* sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFOutMedRequestStatus-vista"
-* targetCanonical = "http://va.gov/fhir/ValueSet/VSVFOutMedRequestStatus"
+* description = "Terminology Maps OutMedRequestStatus "
+* sourceCanonical = "http://va.gov/fhir/ValueSet/OutMedRequestStatus-vista"
+* targetCanonical = "http://va.gov/fhir/ValueSet/OutMedRequestStatus"
 * group[0].source = "http://va.gov/terminology/vistaDefinedTerms/52-100"
 * group[=].target = "http://hl7.org/fhir/CodeSystem/medicationrequest-status"
 * group[=].element[0].code = #0
@@ -77,22 +77,24 @@ Usage: #definition
 * group[=].element[=].target.display = "active"
 * group[=].element[=].target.equivalence = #wider
 
-ValueSet: VSVFOutMedRequestStatus
-Title: "VF_OutMedRequestStatus"
-Description: "FHIR Target ValueSet for Terminology Maps VF_OutMedRequestStatus"
+ValueSet: OutMedRequestStatus
+Title: "OutMedRequestStatus FHIR"
+Description: "FHIR Target ValueSet for Terminology Maps OutMedRequestStatus"
 * ^experimental = false
-* ^name = "VF_OutMedRequestStatus"
+* ^status = #active
+* ^name = "OutMedRequestStatus"
 * include http://hl7.org/fhir/CodeSystem/medicationrequest-status#active "active"
 * include http://hl7.org/fhir/CodeSystem/medicationrequest-status#entered-in-error "Entered in Error"
 * include http://hl7.org/fhir/CodeSystem/medicationrequest-status#stopped "stopped"
 * include http://hl7.org/fhir/CodeSystem/medicationrequest-status#draft "draft"
 * include http://hl7.org/fhir/CodeSystem/medicationrequest-status#completed "completed"
 
-ValueSet: VSVFOutMedRequestStatus-vista
-Title: "VF_OutMedRequestStatus VistA"
-Description: "VistA Source ValueSet for Terminology Maps VF_OutMedRequestStatus"
+ValueSet: OutMedRequestStatus-vista
+Title: "OutMedRequestStatus VistA"
+Description: "VistA Source ValueSet for Terminology Maps OutMedRequestStatus"
 * ^experimental = false
-* ^name = "VF_OutMedRequestStatus"
+* ^status = #active
+* ^name = "OutMedRequestStatus_VistA"
 * include http://va.gov/terminology/vistaDefinedTerms/52-100#0 "ACTIVE"
 * include http://va.gov/terminology/vistaDefinedTerms/52-100#NULL "ACTIVE"
 * include http://va.gov/terminology/vistaDefinedTerms/52-100#13 "DELETED"

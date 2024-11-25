@@ -1,14 +1,14 @@
-Instance: CMVFCoverageRelationship
+Instance: CoverageRelationship
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/CMVFCoverageRelationship"
-* name = "VF_CoverageRelationship"
-* title = "VF_CoverageRelationship"
-* status = #draft
+* url = "http://va.gov/fhir/ConceptMap/CoverageRelationship"
+* name = "CoverageRelationship"
+* title = "CoverageRelationship"
+* status = #active
 * experimental = false
-* description = "Terminology Maps VF_CoverageRelationship"
-* sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFCoverageRelationship-vista"
-* targetCanonical = "http://va.gov/fhir/ValueSet/VSVFCoverageRelationship"
+* description = "Terminology Maps CoverageRelationship "
+* sourceCanonical = "http://va.gov/fhir/ValueSet/CoverageRelationship-vista"
+* targetCanonical = "http://va.gov/fhir/ValueSet/CoverageRelationship"
 * group[0].source = "http://va.gov/terminology/vistaDefinedTerms/365-8.01"
 * group[=].target = "http://terminology.hl7.org/CodeSystem/subscriber-relationship"
 * group[=].element[0].code = #HIPAA_18_SELF
@@ -56,11 +56,12 @@ Usage: #definition
 * group[=].element[=].target.display = "Other"
 * group[=].element[=].target.equivalence = #equal
 
-ValueSet: VSVFCoverageRelationship
-Title: "VF_CoverageRelationship"
-Description: "FHIR Target ValueSet for Terminology Maps VF_CoverageRelationship"
+ValueSet: CoverageRelationship
+Title: "CoverageRelationship FHIR"
+Description: "FHIR Target ValueSet for Terminology Maps CoverageRelationship"
 * ^experimental = false
-* ^name = "VF_CoverageRelationship"
+* ^status = #active
+* ^name = "CoverageRelationship"
 * include http://terminology.hl7.org/CodeSystem/subscriber-relationship#self "Self"
 * include http://terminology.hl7.org/CodeSystem/subscriber-relationship#spouse "Spouse"
 * include http://terminology.hl7.org/CodeSystem/subscriber-relationship#child "Child"
@@ -69,11 +70,12 @@ Description: "FHIR Target ValueSet for Terminology Maps VF_CoverageRelationship"
 * include http://terminology.hl7.org/CodeSystem/subscriber-relationship#parent "Parent"
 * include http://terminology.hl7.org/CodeSystem/subscriber-relationship#common "Common Law Spouse"
 
-ValueSet: VSVFCoverageRelationship-vista
-Title: "VF_CoverageRelationship VistA"
-Description: "VistA Source ValueSet for Terminology Maps VF_CoverageRelationship"
+ValueSet: CoverageRelationship-vista
+Title: "CoverageRelationship VistA"
+Description: "VistA Source ValueSet for Terminology Maps CoverageRelationship"
 * ^experimental = false
-* ^name = "VF_CoverageRelationship"
+* ^status = #active
+* ^name = "CoverageRelationship_VistA"
 * include http://va.gov/terminology/vistaDefinedTerms/365-8.01#HIPAA_18_SELF 
 * include http://va.gov/terminology/vistaDefinedTerms/365-8.01#HIPAA_01_SPOUSE 
 * include http://va.gov/terminology/vistaDefinedTerms/365-8.01#HIPAA_19_CHILD 

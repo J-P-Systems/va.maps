@@ -20,8 +20,8 @@ Description: "This StructureDefinition contains the maps for VistA file APPOINTM
 * participant[va-clinic].actor only Reference(Location)
 * participant[va-patient].actor only Reference(Patient)
 * participant[va-appt-clinic].actor only Reference(Location)
-* status from http://va.gov/fhir/ValueSet/VSVFAppointmentStatus
-* cancelationReason from http://va.gov/fhir/ValueSet/VSVFAppointmentCancellationReason
+* status from http://va.gov/fhir/ValueSet/AppointmentStatus
+* cancelationReason from http://va.gov/fhir/ValueSet/AppointmentCancellationReason
 * serviceCategory[va-service].coding.system = "http://va.gov/terminology/VistADefinedTerms/44-9"
 * serviceType[va-stop-code].coding.system = "http://va.gov/terminology/VistADefinedTerms/44-8"
 * serviceType[va-credit-stop-code].coding.system = "http://va.gov/terminology/VistADefinedTerms/44-2503"

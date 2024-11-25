@@ -21,7 +21,7 @@ Description: "This StructureDefinition contains the maps for VistA file EM (63.0
 * identifier.system = "http://va.gov/identifiers/$Sta3n/63.52"
 * code = http://loinc.org#50668-3 "Microscopic observation in Specimen by Electron microscopy Narrative"
 * code.coding.system = "http://loinc.org"
-* status from http://va.gov/fhir/ValueSet/VSVFDiagnosticReportLabStatus
+* status from http://va.gov/fhir/ValueSet/DiagnosticReportLabStatus
 * category[LaboratorySlice] = http://terminology.hl7.org/CodeSystem/v2-0074#LAB
 * code.coding.system = "http://loinc.org"
 

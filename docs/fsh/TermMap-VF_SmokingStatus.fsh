@@ -1,14 +1,14 @@
-Instance: CMVFSmokingStatus
+Instance: SmokingStatus
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/CMVFSmokingStatus"
-* name = "VF_SmokingStatus"
-* title = "VF_SmokingStatus"
-* status = #draft
+* url = "http://va.gov/fhir/ConceptMap/SmokingStatus"
+* name = "SmokingStatus"
+* title = "SmokingStatus"
+* status = #active
 * experimental = false
-* description = "Terminology Maps VF_SmokingStatus"
-* sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFSmokingStatus-vista"
-* targetCanonical = "http://va.gov/fhir/ValueSet/VSVFSmokingStatus"
+* description = "Terminology Maps SmokingStatus "
+* sourceCanonical = "http://va.gov/fhir/ValueSet/SmokingStatus-vista"
+* targetCanonical = "http://va.gov/fhir/ValueSet/SmokingStatus"
 * group[0].source = "http://va.gov/terminology/vistaDefinedTerms/9999999.64"
 * group[=].target = "http://snomed.info/sct"
 * group[=].element[0].code = #5316637
@@ -54,21 +54,23 @@ Usage: #definition
 * group[=].element[=].target.equivalence = #equal
 * group[=].element[=].target.comment = "Mapped values from VHIE Smoking Status effective 02/19/2019"
 
-ValueSet: VSVFSmokingStatus
-Title: "VF_SmokingStatus"
-Description: "FHIR Target ValueSet for Terminology Maps VF_SmokingStatus"
+ValueSet: SmokingStatus
+Title: "SmokingStatus FHIR"
+Description: "FHIR Target ValueSet for Terminology Maps SmokingStatus"
 * ^experimental = false
-* ^name = "VF_SmokingStatus"
+* ^status = #active
+* ^name = "SmokingStatus"
 * include http://snomed.info/sct#77176002 "Smoker (finding)"
 * include http://snomed.info/sct#110483000 "Tobacco user (finding)"
 * include http://snomed.info/sct#8517006 "Ex-smoker (finding)"
 * include http://snomed.info/sct#266919005 "Never smoked tobacco (finding)"
 
-ValueSet: VSVFSmokingStatus-vista
-Title: "VF_SmokingStatus VistA"
-Description: "VistA Source ValueSet for Terminology Maps VF_SmokingStatus"
+ValueSet: SmokingStatus-vista
+Title: "SmokingStatus VistA"
+Description: "VistA Source ValueSet for Terminology Maps SmokingStatus"
 * ^experimental = false
-* ^name = "VF_SmokingStatus"
+* ^status = #active
+* ^name = "SmokingStatus_VistA"
 * include http://va.gov/terminology/vistaDefinedTerms/9999999.64#5316637 "CURRENT SMOKER"
 * include http://va.gov/terminology/vistaDefinedTerms/9999999.64#5316643 "CURRENT TOBACCO USE"
 * include http://va.gov/terminology/vistaDefinedTerms/9999999.64#5316635 "FORMER SMOKER - <100 LIFETIME CIGARETTES"

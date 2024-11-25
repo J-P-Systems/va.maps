@@ -1,14 +1,14 @@
-Instance: CMVFLabObservationStatus
+Instance: LabObservationStatus
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/CMVFLabObservationStatus"
-* name = "VF_LabObservationStatus"
-* title = "VF_LabObservationStatus"
-* status = #draft
+* url = "http://va.gov/fhir/ConceptMap/LabObservationStatus"
+* name = "LabObservationStatus"
+* title = "LabObservationStatus"
+* status = #active
 * experimental = false
-* description = "Terminology Maps VF_LabObservationStatus"
-* sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFLabObservationStatus-vista"
-* targetCanonical = "http://va.gov/fhir/ValueSet/VSVFLabObservationStatus"
+* description = "Terminology Maps LabObservationStatus "
+* sourceCanonical = "http://va.gov/fhir/ValueSet/LabObservationStatus-vista"
+* targetCanonical = "http://va.gov/fhir/ValueSet/LabObservationStatus"
 * group[0].source = "http://terminology.hl7.org/CodeSystem/v2-0123"
 * group[=].target = "http://hl7.org/fhir/observation-status"
 * group[=].element[0].code = #F
@@ -28,20 +28,22 @@ Usage: #definition
 * group[=].element[=].target.dependsOn[+].property = "condition"
 * group[=].element[=].target.dependsOn[=].value = "NULL"
 
-ValueSet: VSVFLabObservationStatus
-Title: "VF_LabObservationStatus"
-Description: "FHIR Target ValueSet for Terminology Maps VF_LabObservationStatus"
+ValueSet: LabObservationStatus
+Title: "LabObservationStatus FHIR"
+Description: "FHIR Target ValueSet for Terminology Maps LabObservationStatus"
 * ^experimental = false
-* ^name = "VF_LabObservationStatus"
+* ^status = #active
+* ^name = "LabObservationStatus"
 * include http://hl7.org/fhir/observation-status#final "Final"
 * include http://hl7.org/fhir/observation-status#preliminary "Preliminary"
 * include http://hl7.org/fhir/observation-status#unknown "Unknown"
 
-ValueSet: VSVFLabObservationStatus-vista
-Title: "VF_LabObservationStatus VistA"
-Description: "VistA Source ValueSet for Terminology Maps VF_LabObservationStatus"
+ValueSet: LabObservationStatus-vista
+Title: "LabObservationStatus VistA"
+Description: "VistA Source ValueSet for Terminology Maps LabObservationStatus"
 * ^experimental = false
-* ^name = "VF_LabObservationStatus"
+* ^status = #active
+* ^name = "LabObservationStatus_VistA"
 * include http://terminology.hl7.org/CodeSystem/v2-0123#F "FINAL RESULTS"
 * include http://terminology.hl7.org/CodeSystem/v2-0123#P "PRELIMINARY"
 * include http://terminology.hl7.org/CodeSystem/v2-0123#null 

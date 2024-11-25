@@ -7,8 +7,8 @@ Description: "This StructureDefinition contains the maps for VistA file ECHO (69
 * identifier.value and identifier.system and status and subject and effectiveDateTime and issued and performer and valueString and interpretation and note and category MS
 * performer only Reference(Practitioner)
 * identifier.system = "http://va.gov/identifiers/$Sta3n/691"
-* status from http://va.gov/fhir/ValueSet/VSVFImageStatus
-* interpretation from http://va.gov/fhir/ValueSet/VSVFImageInterpretation
+* status from http://va.gov/fhir/ValueSet/ImageStatus
+* interpretation from http://va.gov/fhir/ValueSet/ImageInterpretation
 * category = http://terminology.hl7.org/CodeSystem/observation-category#imaging
 
 Mapping: source-to-ObservationImagingResultEcho

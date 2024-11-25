@@ -1,14 +1,14 @@
-Instance: CMVFICDVersion
+Instance: ICDVersion
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/CMVFICDVersion"
-* name = "VF_ICDVersion"
-* title = "VF_ICDVersion"
-* status = #draft
+* url = "http://va.gov/fhir/ConceptMap/ICDVersion"
+* name = "ICDVersion"
+* title = "ICDVersion"
+* status = #active
 * experimental = false
-* description = "Terminology Maps VF_ICDVersion"
-* sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFICDVersion-vista"
-* targetCanonical = "http://va.gov/fhir/ValueSet/VSVFICDVersion"
+* description = "Terminology Maps ICDVersion "
+* sourceCanonical = "http://va.gov/fhir/ValueSet/ICDVersion-vista"
+* targetCanonical = "http://va.gov/fhir/ValueSet/ICDVersion"
 * group[0].source = "urn:undefined"
 * group[=].target = "urn:ietf:rfc:3986"
 * group[=].element[0].code = #10D
@@ -28,21 +28,23 @@ Usage: #definition
 * group[=].element[=].target.code = #http://hl7.org/fhir/sid/icd-9-cm
 * group[=].element[=].target.equivalence = #equal
 
-ValueSet: VSVFICDVersion
-Title: "VF_ICDVersion"
-Description: "FHIR Target ValueSet for Terminology Maps VF_ICDVersion"
+ValueSet: ICDVersion
+Title: "ICDVersion FHIR"
+Description: "FHIR Target ValueSet for Terminology Maps ICDVersion"
 * ^experimental = false
-* ^name = "VF_ICDVersion"
+* ^status = #active
+* ^name = "ICDVersion"
 * include urn:ietf:rfc:3986#http://hl7.org/fhir/sid/icd-10-cm 
 * include urn:ietf:rfc:3986#http://hl7.org/fhir/sid/icd-10-pcs 
 * include urn:ietf:rfc:3986#http://hl7.org/fhir/sid/icd-9-pcs 
 * include urn:ietf:rfc:3986#http://hl7.org/fhir/sid/icd-9-cm 
 
-ValueSet: VSVFICDVersion-vista
-Title: "VF_ICDVersion VistA"
-Description: "VistA Source ValueSet for Terminology Maps VF_ICDVersion"
+ValueSet: ICDVersion-vista
+Title: "ICDVersion VistA"
+Description: "VistA Source ValueSet for Terminology Maps ICDVersion"
 * ^experimental = false
-* ^name = "VF_ICDVersion"
+* ^status = #active
+* ^name = "ICDVersion_VistA"
 * include urn:undefined#10D "ICD-10-CM"
 * include urn:undefined#10P "ICD-10-PCS"
 * include urn:undefined#ICP "ICD-9 Proc"

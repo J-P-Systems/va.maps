@@ -1,14 +1,14 @@
-Instance: CMVFPractitionerCountry
+Instance: PractitionerCountry
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/CMVFPractitionerCountry"
-* name = "VF_PractitionerCountry"
-* title = "VF_PractitionerCountry"
-* status = #draft
+* url = "http://va.gov/fhir/ConceptMap/PractitionerCountry"
+* name = "PractitionerCountry"
+* title = "PractitionerCountry"
+* status = #active
 * experimental = false
-* description = "Terminology Maps VF_PractitionerCountry"
-* sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFPractitionerCountry-vista"
-* targetCanonical = "http://va.gov/fhir/ValueSet/VSVFPractitionerCountry"
+* description = "Terminology Maps PractitionerCountry "
+* sourceCanonical = "http://va.gov/fhir/ValueSet/PractitionerCountry-vista"
+* targetCanonical = "http://va.gov/fhir/ValueSet/PractitionerCountry"
 * group[0].source = "http://va.gov/terminology/vistaDefinedTerms/200-.1215"
 * group[=].target = "http://hl7.org/fhir/StructureDefinition/string"
 * group[=].element[0].code = #ALABAMA
@@ -407,11 +407,12 @@ Usage: #definition
 * group[=].element[=].target.display = "Canada"
 * group[=].element[=].target.equivalence = #equal
 
-ValueSet: VSVFPractitionerCountry
-Title: "VF_PractitionerCountry"
-Description: "FHIR Target ValueSet for Terminology Maps VF_PractitionerCountry"
+ValueSet: PractitionerCountry
+Title: "PractitionerCountry FHIR"
+Description: "FHIR Target ValueSet for Terminology Maps PractitionerCountry"
 * ^experimental = false
-* ^name = "VF_PractitionerCountry"
+* ^status = #active
+* ^name = "PractitionerCountry"
 * include http://hl7.org/fhir/StructureDefinition/string#USA "United States of America"
 * include http://hl7.org/fhir/StructureDefinition/string#CAN "Canada"
 * include http://hl7.org/fhir/StructureDefinition/string#ASM "American Samoa"
@@ -425,11 +426,12 @@ Description: "FHIR Target ValueSet for Terminology Maps VF_PractitionerCountry"
 * include http://hl7.org/fhir/StructureDefinition/string#UMI "U.S. Minor Outlying Islands"
 * include http://hl7.org/fhir/StructureDefinition/string#VIR "Virgin Islands"
 
-ValueSet: VSVFPractitionerCountry-vista
-Title: "VF_PractitionerCountry VistA"
-Description: "VistA Source ValueSet for Terminology Maps VF_PractitionerCountry"
+ValueSet: PractitionerCountry-vista
+Title: "PractitionerCountry VistA"
+Description: "VistA Source ValueSet for Terminology Maps PractitionerCountry"
 * ^experimental = false
-* ^name = "VF_PractitionerCountry"
+* ^status = #active
+* ^name = "PractitionerCountry_VistA"
 * include http://va.gov/terminology/vistaDefinedTerms/200-.1215#ALABAMA "ALABAMA"
 * include http://va.gov/terminology/vistaDefinedTerms/200-.1215#ALASKA "ALASKA"
 * include http://va.gov/terminology/vistaDefinedTerms/200-.1215#ALBERTA "ALBERTA"

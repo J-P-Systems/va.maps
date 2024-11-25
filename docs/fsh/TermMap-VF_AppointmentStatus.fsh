@@ -1,14 +1,14 @@
-Instance: CMVFAppointmentStatus
+Instance: AppointmentStatus
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/CMVFAppointmentStatus"
-* name = "VF_AppointmentStatus"
-* title = "VF_AppointmentStatus"
-* status = #draft
+* url = "http://va.gov/fhir/ConceptMap/AppointmentStatus"
+* name = "AppointmentStatus"
+* title = "AppointmentStatus"
+* status = #active
 * experimental = false
-* description = "Terminology Maps VF_AppointmentStatus"
-* sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFAppointmentStatus-vista"
-* targetCanonical = "http://va.gov/fhir/ValueSet/VSVFAppointmentStatus"
+* description = "Terminology Maps AppointmentStatus "
+* sourceCanonical = "http://va.gov/fhir/ValueSet/AppointmentStatus-vista"
+* targetCanonical = "http://va.gov/fhir/ValueSet/AppointmentStatus"
 * group[0].source = "http://va.gov/terminology/vistaDefinedTerms/2.98-3"
 * group[=].target = "http://hl7.org/fhir/appointmentstatus"
 * group[=].element[0].code = #C
@@ -39,22 +39,24 @@ Usage: #definition
 * group[=].element[=].target.code = #fulfilled
 * group[=].element[=].target.equivalence = #equal
 
-ValueSet: VSVFAppointmentStatus
-Title: "VF_AppointmentStatus"
-Description: "FHIR Target ValueSet for Terminology Maps VF_AppointmentStatus"
+ValueSet: AppointmentStatus
+Title: "AppointmentStatus FHIR"
+Description: "FHIR Target ValueSet for Terminology Maps AppointmentStatus"
 * ^experimental = false
-* ^name = "VF_AppointmentStatus"
+* ^status = #active
+* ^name = "AppointmentStatus"
 * include http://hl7.org/fhir/appointmentstatus#cancelled 
 * include http://hl7.org/fhir/appointmentstatus#noshow 
 * include http://hl7.org/fhir/appointmentstatus#booked 
 * include http://hl7.org/fhir/appointmentstatus#arrived 
 * include http://hl7.org/fhir/appointmentstatus#fulfilled 
 
-ValueSet: VSVFAppointmentStatus-vista
-Title: "VF_AppointmentStatus VistA"
-Description: "VistA Source ValueSet for Terminology Maps VF_AppointmentStatus"
+ValueSet: AppointmentStatus-vista
+Title: "AppointmentStatus VistA"
+Description: "VistA Source ValueSet for Terminology Maps AppointmentStatus"
 * ^experimental = false
-* ^name = "VF_AppointmentStatus"
+* ^status = #active
+* ^name = "AppointmentStatus_VistA"
 * include http://va.gov/terminology/vistaDefinedTerms/2.98-3#C 
 * include http://va.gov/terminology/vistaDefinedTerms/2.98-3#CA 
 * include http://va.gov/terminology/vistaDefinedTerms/2.98-3#N 

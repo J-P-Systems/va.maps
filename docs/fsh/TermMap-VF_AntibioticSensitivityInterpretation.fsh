@@ -1,14 +1,14 @@
-Instance: CMVFAntibioticSensitivityInterpretation
+Instance: AntibioticSensitivityInterpretation
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/CMVFAntibioticSensitivityInterpretation"
-* name = "VF_AntibioticSensitivityInterpretation"
-* title = "VF_AntibioticSensitivityInterpretation"
-* status = #draft
+* url = "http://va.gov/fhir/ConceptMap/AntibioticSensitivityInterpretation"
+* name = "AntibioticSensitivityInterpretation"
+* title = "AntibioticSensitivityInterpretation"
+* status = #active
 * experimental = false
-* description = "Terminology Maps VF_AntibioticSensitivityInterpretation"
-* sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFAntibioticSensitivityInterpretation-vista"
-* targetCanonical = "http://va.gov/fhir/ValueSet/VSVFAntibioticSensitivityInterpretation"
+* description = "Terminology Maps AntibioticSensitivityInterpretation "
+* sourceCanonical = "http://va.gov/fhir/ValueSet/AntibioticSensitivityInterpretation-vista"
+* targetCanonical = "http://va.gov/fhir/ValueSet/AntibioticSensitivityInterpretation"
 * group[0].source = "http://va.gov/terminology/vistaDefinedTerms/63.3-5.1+to+160.1"
 * group[=].target = "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation"
 * group[=].element[0].code = #I
@@ -45,22 +45,24 @@ Usage: #definition
 * group[=].element[=].target.display = "Synergy - resistant"
 * group[=].element[=].target.equivalence = #equal
 
-ValueSet: VSVFAntibioticSensitivityInterpretation
-Title: "VF_AntibioticSensitivityInterpretation"
-Description: "FHIR Target ValueSet for Terminology Maps VF_AntibioticSensitivityInterpretation"
+ValueSet: AntibioticSensitivityInterpretation
+Title: "AntibioticSensitivityInterpretation FHIR"
+Description: "FHIR Target ValueSet for Terminology Maps AntibioticSensitivityInterpretation"
 * ^experimental = false
-* ^name = "VF_AntibioticSensitivityInterpretation"
+* ^status = #active
+* ^name = "AntibioticSensitivityInterpretation"
 * include http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#I "Intermediate"
 * include http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#R "Resistant"
 * include http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#S "Susceptible"
 * include http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#SYN-S "Synergy - susceptible"
 * include http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#SYN-R "Synergy - resistant"
 
-ValueSet: VSVFAntibioticSensitivityInterpretation-vista
-Title: "VF_AntibioticSensitivityInterpretation VistA"
-Description: "VistA Source ValueSet for Terminology Maps VF_AntibioticSensitivityInterpretation"
+ValueSet: AntibioticSensitivityInterpretation-vista
+Title: "AntibioticSensitivityInterpretation VistA"
+Description: "VistA Source ValueSet for Terminology Maps AntibioticSensitivityInterpretation"
 * ^experimental = false
-* ^name = "VF_AntibioticSensitivityInterpretation"
+* ^status = #active
+* ^name = "AntibioticSensitivityInterpretation_VistA"
 * include http://va.gov/terminology/vistaDefinedTerms/63.3-5.1+to+160.1#I "Intermediate"
 * include http://va.gov/terminology/vistaDefinedTerms/63.3-5.1+to+160.1#R "Resistant"
 * include http://va.gov/terminology/vistaDefinedTerms/63.3-5.1+to+160.1#Resistant "Resistant"

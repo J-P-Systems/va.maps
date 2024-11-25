@@ -1,14 +1,14 @@
-Instance: CMVFimmunizationStatusReason
+Instance: immunizationStatusReason
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/CMVFimmunizationStatusReason"
-* name = "VF_immunizationStatusReason"
-* title = "VF_immunizationStatusReason"
-* status = #draft
+* url = "http://va.gov/fhir/ConceptMap/immunizationStatusReason"
+* name = "immunizationStatusReason"
+* title = "immunizationStatusReason"
+* status = #active
 * experimental = false
-* description = "Terminology Maps VF_immunizationStatusReason"
-* sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFimmunizationStatusReason-vista"
-* targetCanonical = "http://va.gov/fhir/ValueSet/VSVFimmunizationStatusReason"
+* description = "Terminology Maps immunizationStatusReason "
+* sourceCanonical = "http://va.gov/fhir/ValueSet/immunizationStatusReason-vista"
+* targetCanonical = "http://va.gov/fhir/ValueSet/immunizationStatusReason"
 * group[0].source = "http://va.gov/terminology/vistaDefinedTerms/9999999.14-.01"
 * group[=].target = "http://terminology.hl7.org/CodeSystem/v3-ActReason"
 * group[=].element[0].code = #DECLINED_FLU_IMM__HISTORICAL_
@@ -167,20 +167,22 @@ Usage: #definition
 * group[=].element[=].target.display = "patient objection"
 * group[=].element[=].target.equivalence = #wider
 
-ValueSet: VSVFimmunizationStatusReason
-Title: "VF_immunizationStatusReason"
-Description: "FHIR Target ValueSet for Terminology Maps VF_immunizationStatusReason"
+ValueSet: immunizationStatusReason
+Title: "immunizationStatusReason FHIR"
+Description: "FHIR Target ValueSet for Terminology Maps immunizationStatusReason"
 * ^experimental = false
-* ^name = "VF_immunizationStatusReason"
+* ^status = #active
+* ^name = "immunizationStatusReason"
 * include http://terminology.hl7.org/CodeSystem/v3-ActReason#PATOBJ "patient objection"
 * include http://terminology.hl7.org/CodeSystem/v3-ActReason#MEDPREC "medical precaution"
 * include http://terminology.hl7.org/CodeSystem/v3-ActReason#OSTOCK "product out of stock"
 
-ValueSet: VSVFimmunizationStatusReason-vista
-Title: "VF_immunizationStatusReason VistA"
-Description: "VistA Source ValueSet for Terminology Maps VF_immunizationStatusReason"
+ValueSet: immunizationStatusReason-vista
+Title: "immunizationStatusReason VistA"
+Description: "VistA Source ValueSet for Terminology Maps immunizationStatusReason"
 * ^experimental = false
-* ^name = "VF_immunizationStatusReason"
+* ^status = #active
+* ^name = "immunizationStatusReason_VistA"
 * include http://va.gov/terminology/vistaDefinedTerms/9999999.14-.01#DECLINED_FLU_IMM__HISTORICAL_ "DECLINED FLU IMM (HISTORICAL)"
 * include http://va.gov/terminology/vistaDefinedTerms/9999999.14-.01#DECLINED_PNEUMOCOCCAL__HISTORICAL_ "DECLINED PNEUMOCOCCAL (HISTORICAL)"
 * include http://va.gov/terminology/vistaDefinedTerms/9999999.14-.01#DECLINED_TETANUS_DIPT__HISTORICAL_ "DECLINED TETANUS/DIPT (HISTORICAL)"

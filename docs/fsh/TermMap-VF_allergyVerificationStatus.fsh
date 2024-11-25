@@ -1,14 +1,14 @@
-Instance: CMVFallergyVerificationStatus
+Instance: allergyVerificationStatus
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/CMVFallergyVerificationStatus"
-* name = "VF_allergyVerificationStatus"
-* title = "VF_allergyVerificationStatus"
-* status = #draft
+* url = "http://va.gov/fhir/ConceptMap/allergyVerificationStatus"
+* name = "allergyVerificationStatus"
+* title = "allergyVerificationStatus"
+* status = #active
 * experimental = false
-* description = "Terminology Maps VF_allergyVerificationStatus"
-* sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFallergyVerificationStatus-vista"
-* targetCanonical = "http://va.gov/fhir/ValueSet/VSVFallergyVerificationStatus"
+* description = "Terminology Maps allergyVerificationStatus "
+* sourceCanonical = "http://va.gov/fhir/ValueSet/allergyVerificationStatus-vista"
+* targetCanonical = "http://va.gov/fhir/ValueSet/allergyVerificationStatus"
 * group[0].source = "http://va.gov/terminology/vistaDefinedTerms/120.8-19"
 * group[=].target = "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification"
 * group[=].element[0].code = #0
@@ -22,18 +22,20 @@ Usage: #definition
 * group[=].element[=].target.display = "confirmed"
 * group[=].element[=].target.equivalence = #equal
 
-ValueSet: VSVFallergyVerificationStatus
-Title: "VF_allergyVerificationStatus"
-Description: "FHIR Target ValueSet for Terminology Maps VF_allergyVerificationStatus"
+ValueSet: allergyVerificationStatus
+Title: "allergyVerificationStatus FHIR"
+Description: "FHIR Target ValueSet for Terminology Maps allergyVerificationStatus"
 * ^experimental = false
-* ^name = "VF_allergyVerificationStatus"
+* ^status = #active
+* ^name = "allergyVerificationStatus"
 * include http://terminology.hl7.org/CodeSystem/allergyintolerance-verification#unconfirmed "unconfirmed"
 * include http://terminology.hl7.org/CodeSystem/allergyintolerance-verification#confirmed "confirmed"
 
-ValueSet: VSVFallergyVerificationStatus-vista
-Title: "VF_allergyVerificationStatus VistA"
-Description: "VistA Source ValueSet for Terminology Maps VF_allergyVerificationStatus"
+ValueSet: allergyVerificationStatus-vista
+Title: "allergyVerificationStatus VistA"
+Description: "VistA Source ValueSet for Terminology Maps allergyVerificationStatus"
 * ^experimental = false
-* ^name = "VF_allergyVerificationStatus"
+* ^status = #active
+* ^name = "allergyVerificationStatus_VistA"
 * include http://va.gov/terminology/vistaDefinedTerms/120.8-19#0 "VERIFIED - NO"
 * include http://va.gov/terminology/vistaDefinedTerms/120.8-19#1 "VERIFIED - YES"

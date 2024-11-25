@@ -1,14 +1,14 @@
-Instance: CMVFExamResultInterpretation
+Instance: ExamResultInterpretation
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/CMVFExamResultInterpretation"
-* name = "VF_ExamResultInterpretation"
-* title = "VF_ExamResultInterpretation"
-* status = #draft
+* url = "http://va.gov/fhir/ConceptMap/ExamResultInterpretation"
+* name = "ExamResultInterpretation"
+* title = "ExamResultInterpretation"
+* status = #active
 * experimental = false
-* description = "Terminology Maps VF_ExamResultInterpretation"
-* sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFExamResultInterpretation-vista"
-* targetCanonical = "http://va.gov/fhir/ValueSet/VSVFExamResultInterpretation"
+* description = "Terminology Maps ExamResultInterpretation "
+* sourceCanonical = "http://va.gov/fhir/ValueSet/ExamResultInterpretation-vista"
+* targetCanonical = "http://va.gov/fhir/ValueSet/ExamResultInterpretation"
 * group[0].source = "http://va.gov/terminology/vistaDefinedElements/9000010.15-.04"
 * group[=].target = "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation"
 * group[=].element[0].code = #A
@@ -22,18 +22,20 @@ Usage: #definition
 * group[=].element[=].target.display = "Normal"
 * group[=].element[=].target.equivalence = #equal
 
-ValueSet: VSVFExamResultInterpretation
-Title: "VF_ExamResultInterpretation"
-Description: "FHIR Target ValueSet for Terminology Maps VF_ExamResultInterpretation"
+ValueSet: ExamResultInterpretation
+Title: "ExamResultInterpretation FHIR"
+Description: "FHIR Target ValueSet for Terminology Maps ExamResultInterpretation"
 * ^experimental = false
-* ^name = "VF_ExamResultInterpretation"
+* ^status = #active
+* ^name = "ExamResultInterpretation"
 * include http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#A "Abnormal"
 * include http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#N "Normal"
 
-ValueSet: VSVFExamResultInterpretation-vista
-Title: "VF_ExamResultInterpretation VistA"
-Description: "VistA Source ValueSet for Terminology Maps VF_ExamResultInterpretation"
+ValueSet: ExamResultInterpretation-vista
+Title: "ExamResultInterpretation VistA"
+Description: "VistA Source ValueSet for Terminology Maps ExamResultInterpretation"
 * ^experimental = false
-* ^name = "VF_ExamResultInterpretation"
+* ^status = #active
+* ^name = "ExamResultInterpretation_VistA"
 * include http://va.gov/terminology/vistaDefinedElements/9000010.15-.04#A "Abnormal"
 * include http://va.gov/terminology/vistaDefinedElements/9000010.15-.04#N "Normal"

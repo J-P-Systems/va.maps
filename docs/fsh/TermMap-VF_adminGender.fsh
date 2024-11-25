@@ -1,14 +1,14 @@
-Instance: CMVFadminGender
+Instance: adminGender
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/CMVFadminGender"
-* name = "VF_adminGender"
-* title = "VF_adminGender"
-* status = #draft
+* url = "http://va.gov/fhir/ConceptMap/adminGender"
+* name = "adminGender"
+* title = "adminGender"
+* status = #active
 * experimental = false
-* description = "Terminology Maps VF_adminGender"
-* sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFadminGender-vista"
-* targetCanonical = "http://va.gov/fhir/ValueSet/VSVFadminGender"
+* description = "Terminology Maps adminGender "
+* sourceCanonical = "http://va.gov/fhir/ValueSet/adminGender-vista"
+* targetCanonical = "http://va.gov/fhir/ValueSet/adminGender"
 * group[0].source = "http://va.gov/terminology/vistaDefinedTerms/2-.02"
 * group[=].target = "http://hl7.org/fhir/administrative-gender"
 * group[=].element[0].code = #N
@@ -47,21 +47,23 @@ Usage: #definition
 * group[=].element[=].target.display = "other"
 * group[=].element[=].target.equivalence = #wider
 
-ValueSet: VSVFadminGender
-Title: "VF_adminGender"
-Description: "FHIR Target ValueSet for Terminology Maps VF_adminGender"
+ValueSet: adminGender
+Title: "adminGender FHIR"
+Description: "FHIR Target ValueSet for Terminology Maps adminGender"
 * ^experimental = false
-* ^name = "VF_adminGender"
+* ^status = #active
+* ^name = "adminGender"
 * include http://hl7.org/fhir/administrative-gender#unknown "Unknown"
 * include http://hl7.org/fhir/administrative-gender#female "female"
 * include http://hl7.org/fhir/administrative-gender#male "male"
 * include http://hl7.org/fhir/administrative-gender#other "other"
 
-ValueSet: VSVFadminGender-vista
-Title: "VF_adminGender VistA"
-Description: "VistA Source ValueSet for Terminology Maps VF_adminGender"
+ValueSet: adminGender-vista
+Title: "adminGender VistA"
+Description: "VistA Source ValueSet for Terminology Maps adminGender"
 * ^experimental = false
-* ^name = "VF_adminGender"
+* ^status = #active
+* ^name = "adminGender_VistA"
 * include http://va.gov/terminology/vistaDefinedTerms/2-.02#N "DOES NOT WISH TO DISCLOSE"
 * include http://va.gov/terminology/vistaDefinedTerms/2-.02#F "FEMALE"
 * include http://va.gov/terminology/vistaDefinedTerms/2-.02#M "MALE"

@@ -9,7 +9,7 @@ Description: "This StructureDefinition contains the maps for VistA file GENERATO
 * identifier.value and identifier.system and status and manufacturer and serialNumber and modelNumber and type and patient MS
 * patient only Reference(Patient)
 * identifier.system = "http://va.gov/identifiers/$Sta3n/698"
-* type from http://va.gov/fhir/ValueSet/VSVFdeviceTypePacemaker
+* type from http://va.gov/fhir/ValueSet/deviceTypePacemaker
 
 Mapping: source-to-ImplantableDevicePacemaker
 Id: vista

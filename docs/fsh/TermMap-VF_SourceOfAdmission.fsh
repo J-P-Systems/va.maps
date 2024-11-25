@@ -1,14 +1,14 @@
-Instance: CMVFSourceOfAdmission
+Instance: SourceOfAdmission
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/CMVFSourceOfAdmission"
-* name = "VF_SourceOfAdmission"
-* title = "VF_SourceOfAdmission"
-* status = #draft
+* url = "http://va.gov/fhir/ConceptMap/SourceOfAdmission"
+* name = "SourceOfAdmission"
+* title = "SourceOfAdmission"
+* status = #active
 * experimental = false
-* description = "Terminology Maps VF_SourceOfAdmission"
-* sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFSourceOfAdmission-vista"
-* targetCanonical = "http://va.gov/fhir/ValueSet/VSVFSourceOfAdmission"
+* description = "Terminology Maps SourceOfAdmission "
+* sourceCanonical = "http://va.gov/fhir/ValueSet/SourceOfAdmission-vista"
+* targetCanonical = "http://va.gov/fhir/ValueSet/SourceOfAdmission"
 * group[0].source = "http://va.gov/terminology/vistaDefinedTerms/45.1-.01"
 * group[=].target = "http://terminology.hl7.org/CodeSystem/admit-source"
 * group[=].element[0].code = #1K
@@ -224,22 +224,24 @@ Usage: #definition
 * group[=].element[=].target.code = #nursing
 * group[=].element[=].target.equivalence = #wider
 
-ValueSet: VSVFSourceOfAdmission
-Title: "VF_SourceOfAdmission"
-Description: "FHIR Target ValueSet for Terminology Maps VF_SourceOfAdmission"
+ValueSet: SourceOfAdmission
+Title: "SourceOfAdmission FHIR"
+Description: "FHIR Target ValueSet for Terminology Maps SourceOfAdmission"
 * ^experimental = false
-* ^name = "VF_SourceOfAdmission"
+* ^status = #active
+* ^name = "SourceOfAdmission"
 * include http://terminology.hl7.org/CodeSystem/admit-source#hosp-trans 
 * include http://terminology.hl7.org/CodeSystem/admit-source#other 
 * include http://terminology.hl7.org/CodeSystem/admit-source#nursing 
 * include http://terminology.hl7.org/CodeSystem/admit-source#psych 
 * include http://terminology.hl7.org/CodeSystem/admit-source#outp 
 
-ValueSet: VSVFSourceOfAdmission-vista
-Title: "VF_SourceOfAdmission VistA"
-Description: "VistA Source ValueSet for Terminology Maps VF_SourceOfAdmission"
+ValueSet: SourceOfAdmission-vista
+Title: "SourceOfAdmission VistA"
+Description: "VistA Source ValueSet for Terminology Maps SourceOfAdmission"
 * ^experimental = false
-* ^name = "VF_SourceOfAdmission"
+* ^status = #active
+* ^name = "SourceOfAdmission_VistA"
 * include http://va.gov/terminology/vistaDefinedTerms/45.1-.01#1K "ALL OTHER NON VA HOSP NOT UNDER VA AUSPICES"
 * include http://va.gov/terminology/vistaDefinedTerms/45.1-.01#4Y "ALL OTHER SOURCES, UNKNOWN OR NO INFO"
 * include http://va.gov/terminology/vistaDefinedTerms/45.1-.01#1H "COMMUNITY NURSING HOME NOT UNDER VA AUSPICES"

@@ -1,14 +1,14 @@
-Instance: CMVFallergySubstanceCategory
+Instance: allergySubstanceCategory
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/CMVFallergySubstanceCategory"
-* name = "VF_allergySubstanceCategory"
-* title = "VF_allergySubstanceCategory"
-* status = #draft
+* url = "http://va.gov/fhir/ConceptMap/allergySubstanceCategory"
+* name = "allergySubstanceCategory"
+* title = "allergySubstanceCategory"
+* status = #active
 * experimental = false
-* description = "Terminology Maps VF_allergySubstanceCategory"
-* sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFallergySubstanceCategory-vista"
-* targetCanonical = "http://va.gov/fhir/ValueSet/VSVFallergySubstanceCategory"
+* description = "Terminology Maps allergySubstanceCategory "
+* sourceCanonical = "http://va.gov/fhir/ValueSet/allergySubstanceCategory-vista"
+* targetCanonical = "http://va.gov/fhir/ValueSet/allergySubstanceCategory"
 * group[0].source = "http://va.gov/terminology/vistaDefinedTerms/120.8-3.1"
 * group[=].target = "http://hl7.org/fhir/allergy-intolerance-category"
 * group[=].element[0].code = #D
@@ -25,19 +25,21 @@ Usage: #definition
 * group[=].element[=].target.display = "food"
 * group[=].element[=].target.equivalence = #equal
 
-ValueSet: VSVFallergySubstanceCategory
-Title: "VF_allergySubstanceCategory"
-Description: "FHIR Target ValueSet for Terminology Maps VF_allergySubstanceCategory"
+ValueSet: allergySubstanceCategory
+Title: "allergySubstanceCategory FHIR"
+Description: "FHIR Target ValueSet for Terminology Maps allergySubstanceCategory"
 * ^experimental = false
-* ^name = "VF_allergySubstanceCategory"
+* ^status = #active
+* ^name = "allergySubstanceCategory"
 * include http://hl7.org/fhir/allergy-intolerance-category#medication "medication"
 * include http://hl7.org/fhir/allergy-intolerance-category#food "food"
 
-ValueSet: VSVFallergySubstanceCategory-vista
-Title: "VF_allergySubstanceCategory VistA"
-Description: "VistA Source ValueSet for Terminology Maps VF_allergySubstanceCategory"
+ValueSet: allergySubstanceCategory-vista
+Title: "allergySubstanceCategory VistA"
+Description: "VistA Source ValueSet for Terminology Maps allergySubstanceCategory"
 * ^experimental = false
-* ^name = "VF_allergySubstanceCategory"
+* ^status = #active
+* ^name = "allergySubstanceCategory_VistA"
 * include http://va.gov/terminology/vistaDefinedTerms/120.8-3.1#D "DRUG"
 * include http://va.gov/terminology/vistaDefinedTerms/120.8-3.1#O "OTHER"
 * include http://va.gov/terminology/vistaDefinedTerms/120.8-3.1#F "FOOD"

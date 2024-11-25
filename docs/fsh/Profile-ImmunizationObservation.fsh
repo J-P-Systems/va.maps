@@ -7,7 +7,7 @@ Description: "This StructureDefinition contains the maps for VistA file V IMMUNI
 * status and code and valueCodeableConcept and valueCodeableConcept.coding.code and valueCodeableConcept.coding.system and valueCodeableConcept.text MS
 * status = #completed
 * code = http://loinc.org#31044-1
-* valueCodeableConcept from http://va.gov/fhir/ValueSet/VSVFImmunizationReaction
+* valueCodeableConcept from http://va.gov/fhir/ValueSet/ImmunizationReaction
 * valueCodeableConcept.coding.system = "http://va.gov/terminology/vistaDefinedTerms/9000010.11-.06"
 
 Mapping: source-to-ImmunizationObservation

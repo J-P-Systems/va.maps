@@ -1,14 +1,14 @@
-Instance: CMVFDiagnosticReportLabStatus
+Instance: DiagnosticReportLabStatus
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/CMVFDiagnosticReportLabStatus"
-* name = "VF_DiagnosticReportLabStatus"
-* title = "VF_DiagnosticReportLabStatus"
-* status = #draft
+* url = "http://va.gov/fhir/ConceptMap/DiagnosticReportLabStatus"
+* name = "DiagnosticReportLabStatus"
+* title = "DiagnosticReportLabStatus"
+* status = #active
 * experimental = false
-* description = "Terminology Maps VF_DiagnosticReportLabStatus"
-* sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFDiagnosticReportLabStatus-vista"
-* targetCanonical = "http://va.gov/fhir/ValueSet/VSVFDiagnosticReportLabStatus"
+* description = "Terminology Maps DiagnosticReportLabStatus "
+* sourceCanonical = "http://va.gov/fhir/ValueSet/DiagnosticReportLabStatus-vista"
+* targetCanonical = "http://va.gov/fhir/ValueSet/DiagnosticReportLabStatus"
 * group[0].source = "http://va.gov/Terminology/VistADefinedTerms/64.061"
 * group[=].target = "http://hl7.org/fhir/diagnostic-report-status"
 * group[=].element[0].code = #C
@@ -72,11 +72,12 @@ Usage: #definition
 * group[=].element[=].target.equivalence = #equal
 * group[=].element[=].target.comment = "This system is based on http://terminology.hl7.org/CodeSystem/v2-0123"
 
-ValueSet: VSVFDiagnosticReportLabStatus
-Title: "VF_DiagnosticReportLabStatus"
-Description: "FHIR Target ValueSet for Terminology Maps VF_DiagnosticReportLabStatus"
+ValueSet: DiagnosticReportLabStatus
+Title: "DiagnosticReportLabStatus FHIR"
+Description: "FHIR Target ValueSet for Terminology Maps DiagnosticReportLabStatus"
 * ^experimental = false
-* ^name = "VF_DiagnosticReportLabStatus"
+* ^status = #active
+* ^name = "DiagnosticReportLabStatus"
 * include http://hl7.org/fhir/diagnostic-report-status#corrected "Corrected"
 * include http://hl7.org/fhir/diagnostic-report-status#final "Final"
 * include http://hl7.org/fhir/diagnostic-report-status#unknown "Unknown"
@@ -85,11 +86,12 @@ Description: "FHIR Target ValueSet for Terminology Maps VF_DiagnosticReportLabSt
 * include http://hl7.org/fhir/diagnostic-report-status#registered "Registered"
 * include http://hl7.org/fhir/diagnostic-report-status#partial "Partial"
 
-ValueSet: VSVFDiagnosticReportLabStatus-vista
-Title: "VF_DiagnosticReportLabStatus VistA"
-Description: "VistA Source ValueSet for Terminology Maps VF_DiagnosticReportLabStatus"
+ValueSet: DiagnosticReportLabStatus-vista
+Title: "DiagnosticReportLabStatus VistA"
+Description: "VistA Source ValueSet for Terminology Maps DiagnosticReportLabStatus"
 * ^experimental = false
-* ^name = "VF_DiagnosticReportLabStatus"
+* ^status = #active
+* ^name = "DiagnosticReportLabStatus_VistA"
 * include http://va.gov/Terminology/VistADefinedTerms/64.061#C "CORRECTED RESULTS"
 * include http://va.gov/Terminology/VistADefinedTerms/64.061#F "FINAL RESULTS"
 * include http://va.gov/Terminology/VistADefinedTerms/64.061#Y "NO ORDER ON RECORD"

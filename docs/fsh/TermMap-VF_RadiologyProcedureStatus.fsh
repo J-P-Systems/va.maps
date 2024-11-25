@@ -1,14 +1,14 @@
-Instance: CMVFRadiologyProcedureStatus
+Instance: RadiologyProcedureStatus
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/CMVFRadiologyProcedureStatus"
-* name = "VF_RadiologyProcedureStatus"
-* title = "VF_RadiologyProcedureStatus"
-* status = #draft
+* url = "http://va.gov/fhir/ConceptMap/RadiologyProcedureStatus"
+* name = "RadiologyProcedureStatus"
+* title = "RadiologyProcedureStatus"
+* status = #active
 * experimental = false
-* description = "Terminology Maps VF_RadiologyProcedureStatus"
-* sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFRadiologyProcedureStatus-vista"
-* targetCanonical = "http://va.gov/fhir/ValueSet/VSVFRadiologyProcedureStatus"
+* description = "Terminology Maps RadiologyProcedureStatus "
+* sourceCanonical = "http://va.gov/fhir/ValueSet/RadiologyProcedureStatus-vista"
+* targetCanonical = "http://va.gov/fhir/ValueSet/RadiologyProcedureStatus"
 * group[0].source = "http://va.gov/terminology/vistaDefinedTerms/72-.01"
 * group[=].target = "http://hl7.org/fhir/event-status"
 * group[=].element[0].code = #CALLED_FOR_EXAM
@@ -42,21 +42,23 @@ Usage: #definition
 * group[=].element[=].target.display = "Preparation"
 * group[=].element[=].target.equivalence = #equal
 
-ValueSet: VSVFRadiologyProcedureStatus
-Title: "VF_RadiologyProcedureStatus"
-Description: "FHIR Target ValueSet for Terminology Maps VF_RadiologyProcedureStatus"
+ValueSet: RadiologyProcedureStatus
+Title: "RadiologyProcedureStatus FHIR"
+Description: "FHIR Target ValueSet for Terminology Maps RadiologyProcedureStatus"
 * ^experimental = false
-* ^name = "VF_RadiologyProcedureStatus"
+* ^status = #active
+* ^name = "RadiologyProcedureStatus"
 * include http://hl7.org/fhir/event-status#preparation "Preparation"
 * include http://hl7.org/fhir/event-status#not-done "Not Done"
 * include http://hl7.org/fhir/event-status#completed "Completed"
 * include http://hl7.org/fhir/event-status#in-progress "In Progress"
 
-ValueSet: VSVFRadiologyProcedureStatus-vista
-Title: "VF_RadiologyProcedureStatus VistA"
-Description: "VistA Source ValueSet for Terminology Maps VF_RadiologyProcedureStatus"
+ValueSet: RadiologyProcedureStatus-vista
+Title: "RadiologyProcedureStatus VistA"
+Description: "VistA Source ValueSet for Terminology Maps RadiologyProcedureStatus"
 * ^experimental = false
-* ^name = "VF_RadiologyProcedureStatus"
+* ^status = #active
+* ^name = "RadiologyProcedureStatus_VistA"
 * include http://va.gov/terminology/vistaDefinedTerms/72-.01#CALLED_FOR_EXAM "CALLED FOR EXAM"
 * include http://va.gov/terminology/vistaDefinedTerms/72-.01#CANCELLED "CANCELLED"
 * include http://va.gov/terminology/vistaDefinedTerms/72-.01#COMPLETE "COMPLETE"

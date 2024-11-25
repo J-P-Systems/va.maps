@@ -1,14 +1,14 @@
-Instance: CMVFDoseUnits
+Instance: DoseUnits
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/CMVFDoseUnits"
-* name = "VF_DoseUnits"
-* title = "VF_DoseUnits"
-* status = #draft
+* url = "http://va.gov/fhir/ConceptMap/DoseUnits"
+* name = "DoseUnits"
+* title = "DoseUnits"
+* status = #active
 * experimental = false
-* description = "Terminology Maps VF_DoseUnits"
-* sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFDoseUnits-vista"
-* targetCanonical = "http://va.gov/fhir/ValueSet/VSVFDoseUnits"
+* description = "Terminology Maps DoseUnits "
+* sourceCanonical = "http://va.gov/fhir/ValueSet/DoseUnits-vista"
+* targetCanonical = "http://va.gov/fhir/ValueSet/DoseUnits"
 * group[0].source = "http://va.gov/terminology/vistaDefinedTerms/52.0113-2"
 * group[=].target = "http://unitsofmeasure.org"
 * group[=].element[0].code = #MG
@@ -27,22 +27,24 @@ Usage: #definition
 * group[=].element[=].target.code = #g
 * group[=].element[=].target.equivalence = #equal
 
-ValueSet: VSVFDoseUnits
-Title: "VF_DoseUnits"
-Description: "FHIR Target ValueSet for Terminology Maps VF_DoseUnits"
+ValueSet: DoseUnits
+Title: "DoseUnits FHIR"
+Description: "FHIR Target ValueSet for Terminology Maps DoseUnits"
 * ^experimental = false
-* ^name = "VF_DoseUnits"
+* ^status = #active
+* ^name = "DoseUnits"
 * include http://unitsofmeasure.org#mg 
 * include http://unitsofmeasure.org#ug 
 * include http://unitsofmeasure.org#meq 
 * include http://unitsofmeasure.org#{unit} 
 * include http://unitsofmeasure.org#g 
 
-ValueSet: VSVFDoseUnits-vista
-Title: "VF_DoseUnits VistA"
-Description: "VistA Source ValueSet for Terminology Maps VF_DoseUnits"
+ValueSet: DoseUnits-vista
+Title: "DoseUnits VistA"
+Description: "VistA Source ValueSet for Terminology Maps DoseUnits"
 * ^experimental = false
-* ^name = "VF_DoseUnits"
+* ^status = #active
+* ^name = "DoseUnits_VistA"
 * include http://va.gov/terminology/vistaDefinedTerms/52.0113-2#MG 
 * include http://va.gov/terminology/vistaDefinedTerms/52.0113-2#MCG 
 * include http://va.gov/terminology/vistaDefinedTerms/52.0113-2#MEQ 

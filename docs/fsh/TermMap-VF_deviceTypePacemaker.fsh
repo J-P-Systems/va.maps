@@ -1,14 +1,14 @@
-Instance: CMVFdeviceTypePacemaker
+Instance: deviceTypePacemaker
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/CMVFdeviceTypePacemaker"
-* name = "VF_deviceTypePacemaker"
-* title = "VF_deviceTypePacemaker"
-* status = #draft
+* url = "http://va.gov/fhir/ConceptMap/deviceTypePacemaker"
+* name = "deviceTypePacemaker"
+* title = "deviceTypePacemaker"
+* status = #active
 * experimental = false
-* description = "Terminology Maps VF_deviceTypePacemaker"
-* sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFdeviceTypePacemaker-vista"
-* targetCanonical = "http://va.gov/fhir/ValueSet/VSVFdeviceTypePacemaker"
+* description = "Terminology Maps deviceTypePacemaker "
+* sourceCanonical = "http://va.gov/fhir/ValueSet/deviceTypePacemaker-vista"
+* targetCanonical = "http://va.gov/fhir/ValueSet/deviceTypePacemaker"
 * group[0].source = "http://va.gov/terminology/vistaDefinedTerms/698.4-1"
 * group[=].target = "http://snomed.info/sct"
 * group[=].element[0].code = #A
@@ -46,21 +46,23 @@ Usage: #definition
 * group[=].element[=].target.equivalence = #wider
 * group[=].element[=].target.comment = "A more specific SNOMED code will be requested for the VA Extension"
 
-ValueSet: VSVFdeviceTypePacemaker
-Title: "VF_deviceTypePacemaker"
-Description: "FHIR Target ValueSet for Terminology Maps VF_deviceTypePacemaker"
+ValueSet: deviceTypePacemaker
+Title: "deviceTypePacemaker FHIR"
+Description: "FHIR Target ValueSet for Terminology Maps deviceTypePacemaker"
 * ^experimental = false
-* ^name = "VF_deviceTypePacemaker"
+* ^status = #active
+* ^name = "deviceTypePacemaker"
 * include http://snomed.info/sct#360129009 "Cardiac pacemaker lead (physical object)"
 * include http://snomed.info/sct#118378005 "Pacemaker pulse generator, device (physical object)"
 * include http://snomed.info/sct#303476002 "Cardiovascular equipment (physical object)"
 * include http://snomed.info/sct#706635000 "Telephone transmitter/receiver system (physical object)"
 
-ValueSet: VSVFdeviceTypePacemaker-vista
-Title: "VF_deviceTypePacemaker VistA"
-Description: "VistA Source ValueSet for Terminology Maps VF_deviceTypePacemaker"
+ValueSet: deviceTypePacemaker-vista
+Title: "deviceTypePacemaker VistA"
+Description: "VistA Source ValueSet for Terminology Maps deviceTypePacemaker"
 * ^experimental = false
-* ^name = "VF_deviceTypePacemaker"
+* ^status = #active
+* ^name = "deviceTypePacemaker_VistA"
 * include http://va.gov/terminology/vistaDefinedTerms/698.4-1#A "'A' FOR A LEAD;"
 * include http://va.gov/terminology/vistaDefinedTerms/698.4-1#AV "'AV' FOR BOTH A LEAD AND V LEAD;"
 * include http://va.gov/terminology/vistaDefinedTerms/698.4-1#G "'G' FOR GENERATOR;"

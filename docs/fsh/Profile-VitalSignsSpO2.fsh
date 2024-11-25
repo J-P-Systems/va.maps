@@ -18,17 +18,17 @@ Description: "This StructureDefinition contains the maps for VistA file GMRV VIT
 * code.coding 2..*
 * category = http://terminology.hl7.org/CodeSystem/observation-category#vital-signs
 * identifier.system = "http://va.gov/identifiers/$Sta3n/120.5"
-* code.coding from http://va.gov/fhir/ValueSet/VSVFVitalsCodes
-* bodySite from http://va.gov/fhir/ValueSet/VSVFVitalsBodySite
-* extension[http://hl7.org/fhir/StructureDefinition/observation-deviceCode].valueCodeableConcept from http://va.gov/fhir/ValueSet/VSVFVitalsMeasurementDevice
-* method from http://va.gov/fhir/ValueSet/VSVFVitalsMethod
-* component[va-pre-condition].valueCodeableConcept.coding from http://va.gov/fhir/ValueSet/VSVFVitalsPrecondition
+* code.coding from http://va.gov/fhir/ValueSet/VitalsCodes
+* bodySite from http://va.gov/fhir/ValueSet/VitalsBodySite
+* extension[http://hl7.org/fhir/StructureDefinition/observation-deviceCode].valueCodeableConcept from http://va.gov/fhir/ValueSet/VitalsMeasurementDevice
+* method from http://va.gov/fhir/ValueSet/VitalsMethod
+* component[va-pre-condition].valueCodeableConcept.coding from http://va.gov/fhir/ValueSet/VitalsPrecondition
 * component[va-pre-condition].code = http://loinc.org#104158-1 "Associated precondition - Reported"
-* component[va-pre-condition-device].valueCodeableConcept.coding from http://va.gov/fhir/ValueSet/VSVFVitalsQualifyingDevice
+* component[va-pre-condition-device].valueCodeableConcept.coding from http://va.gov/fhir/ValueSet/VitalsQualifyingDevice
 * component[va-pre-condition-device].code = http://loinc.org#104158-1 "Associated precondition - Reported"
-* extension[http://hl7.org/fhir/StructureDefinition/observation-bodyPosition].valueCodeableConcept from http://va.gov/fhir/ValueSet/VSVFVitalsBodyPosition
+* extension[http://hl7.org/fhir/StructureDefinition/observation-bodyPosition].valueCodeableConcept from http://va.gov/fhir/ValueSet/VitalsBodyPosition
 * valueQuantity.code.extension contains http://hl7.org/fhir/StructureDefinition/11179-permitted-value-conceptmap named 11179-permitted-value-conceptmap 0..1
-* valueQuantity.code.extension[11179-permitted-value-conceptmap].valueCanonical = "http://va.gov/fhir/ConceptMap/CMVFVitalsUnits"
+* valueQuantity.code.extension[11179-permitted-value-conceptmap].valueCanonical = "http://va.gov/fhir/ConceptMap/VitalsUnits"
 
 Mapping: source-to-VitalSignsSpO2
 Id: vista

@@ -1,14 +1,14 @@
-Instance: CMVFVitalsCodes
+Instance: VitalsCodes
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/CMVFVitalsCodes"
-* name = "VF_VitalsCodes"
-* title = "VF_VitalsCodes"
-* status = #draft
+* url = "http://va.gov/fhir/ConceptMap/VitalsCodes"
+* name = "VitalsCodes"
+* title = "VitalsCodes"
+* status = #active
 * experimental = false
-* description = "Terminology Maps VF_VitalsCodes"
-* sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFVitalsCodes-vista"
-* targetCanonical = "http://va.gov/fhir/ValueSet/VSVFVitalsCodes"
+* description = "Terminology Maps VitalsCodes "
+* sourceCanonical = "http://va.gov/fhir/ValueSet/VitalsCodes-vista"
+* targetCanonical = "http://va.gov/fhir/ValueSet/VitalsCodes"
 * group[0].source = "http://terminology.hl7.org/CodeSystem/VHA"
 * group[=].target = "http://loinc.org"
 * group[=].element[0].code = #4688718
@@ -107,11 +107,12 @@ Usage: #definition
 * group[=].element[=].target.display = "Body weight"
 * group[=].element[=].target.equivalence = #equal
 
-ValueSet: VSVFVitalsCodes
-Title: "VF_VitalsCodes"
-Description: "FHIR Target ValueSet for Terminology Maps VF_VitalsCodes"
+ValueSet: VitalsCodes
+Title: "VitalsCodes FHIR"
+Description: "FHIR Target ValueSet for Terminology Maps VitalsCodes"
 * ^experimental = false
-* ^name = "VF_VitalsCodes"
+* ^status = #active
+* ^name = "VitalsCodes"
 * include http://loinc.org#28615-3 "Audiology study"
 * include http://loinc.org#85354-9 "Blood pressure panel with all children optional"
 * include http://loinc.org#39156-5 "Body mass index (BMI) [Ratio]"
@@ -131,11 +132,12 @@ Description: "FHIR Target ValueSet for Terminology Maps VF_VitalsCodes"
 * include http://loinc.org#70936-0 "Vision testing Narrative"
 * include http://loinc.org#29463-7 "Body weight"
 
-ValueSet: VSVFVitalsCodes-vista
-Title: "VF_VitalsCodes VistA"
-Description: "VistA Source ValueSet for Terminology Maps VF_VitalsCodes"
+ValueSet: VitalsCodes-vista
+Title: "VitalsCodes VistA"
+Description: "VistA Source ValueSet for Terminology Maps VitalsCodes"
 * ^experimental = false
-* ^name = "VF_VitalsCodes"
+* ^status = #active
+* ^name = "VitalsCodes_VistA"
 * include http://terminology.hl7.org/CodeSystem/VHA#4688718 "AUDIOMETRY"
 * include http://terminology.hl7.org/CodeSystem/VHA#4500634 "BLOOD PRESSURE"
 * include http://terminology.hl7.org/CodeSystem/VHA#4536993 "BODY MASS INDEX"

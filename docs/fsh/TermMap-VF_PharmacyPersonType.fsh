@@ -1,14 +1,14 @@
-Instance: CMVFPharmacyPersonType
+Instance: PharmacyPersonType
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/CMVFPharmacyPersonType"
-* name = "VF_PharmacyPersonType"
-* title = "VF_PharmacyPersonType"
-* status = #draft
+* url = "http://va.gov/fhir/ConceptMap/PharmacyPersonType"
+* name = "PharmacyPersonType"
+* title = "PharmacyPersonType"
+* status = #active
 * experimental = false
-* description = "Terminology Maps VF_PharmacyPersonType"
-* sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFPharmacyPersonType-vista"
-* targetCanonical = "http://va.gov/fhir/ValueSet/VSVFPharmacyPersonType"
+* description = "Terminology Maps PharmacyPersonType "
+* sourceCanonical = "http://va.gov/fhir/ValueSet/PharmacyPersonType-vista"
+* targetCanonical = "http://va.gov/fhir/ValueSet/PharmacyPersonType"
 * group[0].source = "urn:undefined"
 * group[=].target = "http://terminology.hl7.org/CodeSystem/subscriber-relationship"
 * group[=].element[0].code = #001
@@ -27,20 +27,22 @@ Usage: #definition
 * group[=].element[=].target.display = "Other"
 * group[=].element[=].target.equivalence = #equal
 
-ValueSet: VSVFPharmacyPersonType
-Title: "VF_PharmacyPersonType"
-Description: "FHIR Target ValueSet for Terminology Maps VF_PharmacyPersonType"
+ValueSet: PharmacyPersonType
+Title: "PharmacyPersonType FHIR"
+Description: "FHIR Target ValueSet for Terminology Maps PharmacyPersonType"
 * ^experimental = false
-* ^name = "VF_PharmacyPersonType"
+* ^status = #active
+* ^name = "PharmacyPersonType"
 * include http://terminology.hl7.org/CodeSystem/subscriber-relationship#self "Self"
 * include http://terminology.hl7.org/CodeSystem/subscriber-relationship#spouse "Spouse"
 * include http://terminology.hl7.org/CodeSystem/subscriber-relationship#other "Other"
 
-ValueSet: VSVFPharmacyPersonType-vista
-Title: "VF_PharmacyPersonType VistA"
-Description: "VistA Source ValueSet for Terminology Maps VF_PharmacyPersonType"
+ValueSet: PharmacyPersonType-vista
+Title: "PharmacyPersonType VistA"
+Description: "VistA Source ValueSet for Terminology Maps PharmacyPersonType"
 * ^experimental = false
-* ^name = "VF_PharmacyPersonType"
+* ^status = #active
+* ^name = "PharmacyPersonType_VistA"
 * include urn:undefined#001 "Cardholder"
 * include urn:undefined#002 "Spouse"
 * include urn:undefined#003_-_999 "Dependents and Others"

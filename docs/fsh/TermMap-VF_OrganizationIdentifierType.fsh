@@ -1,14 +1,14 @@
-Instance: CMVFOrganizationIdentifierType
+Instance: OrganizationIdentifierType
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/CMVFOrganizationIdentifierType"
-* name = "VF_OrganizationIdentifierType"
-* title = "VF_OrganizationIdentifierType"
-* status = #draft
+* url = "http://va.gov/fhir/ConceptMap/OrganizationIdentifierType"
+* name = "OrganizationIdentifierType"
+* title = "OrganizationIdentifierType"
+* status = #active
 * experimental = false
-* description = "Terminology Maps VF_OrganizationIdentifierType"
-* sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFOrganizationIdentifierType-vista"
-* targetCanonical = "http://va.gov/fhir/ValueSet/VSVFOrganizationIdentifierType"
+* description = "Terminology Maps OrganizationIdentifierType "
+* sourceCanonical = "http://va.gov/fhir/ValueSet/OrganizationIdentifierType-vista"
+* targetCanonical = "http://va.gov/fhir/ValueSet/OrganizationIdentifierType"
 * group[0].source = "http://va.gov/Terminology/VistADefinedTerms/36-6.01"
 * group[=].target = "urn:oid:2.16.840.1.113883.3.8901.3.1.36.68001"
 * group[=].element[0].code = #2U
@@ -44,11 +44,12 @@ Usage: #definition
 * group[=].element[=].target.code = #PROFTAXPAYER
 * group[=].element[=].target.equivalence = #equal
 
-ValueSet: VSVFOrganizationIdentifierType
-Title: "VF_OrganizationIdentifierType"
-Description: "FHIR Target ValueSet for Terminology Maps VF_OrganizationIdentifierType"
+ValueSet: OrganizationIdentifierType
+Title: "OrganizationIdentifierType FHIR"
+Description: "FHIR Target ValueSet for Terminology Maps OrganizationIdentifierType"
 * ^experimental = false
-* ^name = "VF_OrganizationIdentifierType"
+* ^status = #active
+* ^name = "OrganizationIdentifierType"
 * include urn:oid:2.16.840.1.113883.3.8901.3.1.36.68001#INSTPAYER 
 * include urn:oid:2.16.840.1.113883.3.8901.3.1.36.68001#INSTOFFICE 
 * include urn:oid:2.16.840.1.113883.3.8901.3.1.36.68001#INSTNAIC 
@@ -58,11 +59,12 @@ Description: "FHIR Target ValueSet for Terminology Maps VF_OrganizationIdentifie
 * include urn:oid:2.16.840.1.113883.3.8901.3.1.36.68001#PROFNAIC 
 * include urn:oid:2.16.840.1.113883.3.8901.3.1.36.68001#PROFTAXPAYER 
 
-ValueSet: VSVFOrganizationIdentifierType-vista
-Title: "VF_OrganizationIdentifierType VistA"
-Description: "VistA Source ValueSet for Terminology Maps VF_OrganizationIdentifierType"
+ValueSet: OrganizationIdentifierType-vista
+Title: "OrganizationIdentifierType VistA"
+Description: "VistA Source ValueSet for Terminology Maps OrganizationIdentifierType"
 * ^experimental = false
-* ^name = "VF_OrganizationIdentifierType"
+* ^status = #active
+* ^name = "OrganizationIdentifierType_VistA"
 * include http://va.gov/Terminology/VistADefinedTerms/36-6.01#2U "PAYER ID #"
 * include http://va.gov/Terminology/VistADefinedTerms/36-6.01#FY "CLAIM OFFICE #"
 * include http://va.gov/Terminology/VistADefinedTerms/36-6.01#NF "NAIC CODE"

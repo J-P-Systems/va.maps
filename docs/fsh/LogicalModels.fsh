@@ -21,17 +21,17 @@ Characteristics: #can-be-target
 * temporaryAddressEndDate 0..1 Element "TEMPORARY ADDRESS END DATE (-.1218)"
 * languageDatetime 0..1 Reference "LANGUAGE DATE/TIME (-7)"
 * sex 0..1 Coding "SEX (-.02)"
-* sex from http://va.gov/fhir/ValueSet/VSVFadminGender-vista (preferred)
+* sex from http://va.gov/fhir/ValueSet/adminGender-vista (preferred)
 * selfIdentifiedGender 0..1 Coding "SELF IDENTIFIED GENDER (-.024)"
-* selfIdentifiedGender from http://va.gov/fhir/ValueSet/VSVFgenderIdentity-vista (preferred)
+* selfIdentifiedGender from http://va.gov/fhir/ValueSet/genderIdentity-vista (preferred)
 * ethnicityInformation 0..1 Coding "ETHNICITY INFORMATION (-6)"
-* ethnicityInformation from http://va.gov/fhir/ValueSet/VSVFethnicityCategory-vista (preferred)
+* ethnicityInformation from http://va.gov/fhir/ValueSet/ethnicityCategory-vista (preferred)
 * raceInformation 0..1 Coding "RACE INFORMATION (-2)"
-* raceInformation from http://va.gov/fhir/ValueSet/VSVFraceCategory-vista (preferred)
+* raceInformation from http://va.gov/fhir/ValueSet/raceCategory-vista (preferred)
 * maritalStatus 0..1 Coding "MARITAL STATUS (-.05)"
-* maritalStatus from http://va.gov/fhir/ValueSet/VSVFMaritalStatus-vista (preferred)
+* maritalStatus from http://va.gov/fhir/ValueSet/MaritalStatus-vista (preferred)
 * religiousPreference 0..1 Coding "RELIGIOUS PREFERENCE (-.08)"
-* religiousPreference from http://va.gov/fhir/ValueSet/VSVFReligion-vista (preferred)
+* religiousPreference from http://va.gov/fhir/ValueSet/Religion-vista (preferred)
 * appointment 0..1 Element "APPOINTMENT (-1900)"
 * laboratoryReference 0..1 Reference "LABORATORY REFERENCE (-63)"
 * languageDatetime only Reference(LanguageDatetime207)
@@ -157,7 +157,7 @@ Description: "This StructureDefinition contains the Logical Model for the mapped
 Characteristics: #can-be-target
 * ien 0..1 Element "IEN (-.001)"
 * status 0..1 Coding "STATUS (-100)"
-* status from http://va.gov/fhir/ValueSet/VSVFOutMedRequestStatus-vista (preferred)
+* status from http://va.gov/fhir/ValueSet/OutMedRequestStatus-vista (preferred)
 * drug 0..1 Reference "DRUG (-6)"
 * patient 0..1 Element "PATIENT (-2)"
 * issueDate 0..1 Element "ISSUE DATE (-1)"
@@ -251,7 +251,7 @@ Title: "EXAMINATION STATUS (72)"
 Description: "This StructureDefinition contains the Logical Model for the mapped parts of the source EXAMINATION STATUS (72)"
 Characteristics: #can-be-target
 * status 0..1 Coding "STATUS (-.01)"
-* status from http://va.gov/fhir/ValueSet/VSVFRadiologyProcedureStatus-vista (preferred)
+* status from http://va.gov/fhir/ValueSet/RadiologyProcedureStatus-vista (preferred)
 
 Logical: RadnucMedReports74
 Id: RadnucMedReports74
@@ -260,7 +260,7 @@ Description: "This StructureDefinition contains the Logical Model for the mapped
 Characteristics: #can-be-target
 * ien 0..1 Element "IEN (-.001)"
 * reportStatus 0..1 Coding "REPORT STATUS (-5)"
-* reportStatus from http://va.gov/fhir/ValueSet/VSVFImageStatusRadNuc-vista (preferred)
+* reportStatus from http://va.gov/fhir/ValueSet/ImageStatusRadNuc-vista (preferred)
 * patientName 0..1 Element "PATIENT NAME (-2)"
 * examDatetime 0..1 Element "EXAM DATE/TIME (-3)"
 * verifiedDate 0..1 Element "VERIFIED DATE (-7)"
@@ -350,7 +350,7 @@ Characteristics: #can-be-target
 * degree 0..1 Element "DEGREE (-10.6)"
 * ien 0..1 Element "IEN (-.001)"
 * sex 0..1 Coding "SEX (-4)"
-* sex from http://va.gov/fhir/ValueSet/VSVFproviderGender-vista (preferred)
+* sex from http://va.gov/fhir/ValueSet/providerGender-vista (preferred)
 * officePhone 0..1 Element "OFFICE PHONE (-.132)"
 * phone3 0..1 Element "PHONE #3 (-.133)"
 * phone4 0..1 Element "PHONE #4 (-.134)"
@@ -456,14 +456,14 @@ Description: "This StructureDefinition contains the Logical Model for the mapped
 Characteristics: #can-be-target
 * ien 0..1 Element "IEN (-.001)"
 * releaseCode 0..1 Coding "RELEASE CODE (-1506)"
-* releaseCode from http://va.gov/fhir/ValueSet/VSVFImageStatus-vista (preferred)
+* releaseCode from http://va.gov/fhir/ValueSet/ImageStatus-vista (preferred)
 * medicalPatient 0..1 Element "MEDICAL PATIENT (-1)"
 * datetime 0..1 Element "DATE/TIME (-.01)"
 * dateOfVerified 0..1 Element "DATE OF VERIFIED (-1508)"
 * cardiologyAttending 0..1 Element "CARDIOLOGY ATTENDING (-39)"
 * findings 0..1 Reference "FINDINGS (-37)"
 * summary 0..1 Coding "SUMMARY (-.03)"
-* summary from http://va.gov/fhir/ValueSet/VSVFImageInterpretation-vista (preferred)
+* summary from http://va.gov/fhir/ValueSet/ImageInterpretation-vista (preferred)
 * otherConclusion 0..1 Element "OTHER CONCLUSION (-38)"
 * findings only Reference(Findings69106)
 
@@ -527,10 +527,9 @@ Characteristics: #can-be-target
 * checkOutDatetime 0..1 Element "CHECK OUT DATE&TIME (-.18)"
 * serviceCategory 0..1 Element "SERVICE CATEGORY (-.07)"
 * patientName 0..1 Element "PATIENT NAME (-.05)"
-* dssId 0..1 Element "DSS ID (-.08)"
 * hospitalLocation 0..1 Element "HOSPITAL LOCATION (-.22)"
 * patientStatusInout 0..1 Coding "PATIENT STATUS IN/OUT (-15002)"
-* patientStatusInout from http://va.gov/fhir/ValueSet/VSVFencounterClass-vista (preferred)
+* patientStatusInout from http://va.gov/fhir/ValueSet/encounterClass-vista (preferred)
 * locOfEncounter 0..1 Reference "LOC. OF ENCOUNTER (-.06)"
 * locOfEncounter only Reference(Location999999906)
 
@@ -549,9 +548,9 @@ Characteristics: #can-be-target
 * dateEntered 0..1 Element "DATE ENTERED (-.08)"
 * recordingProvider 0..1 Element "RECORDING PROVIDER (-1.04)"
 * status 0..1 Coding "STATUS (-.12)"
-* status from http://va.gov/fhir/ValueSet/VSVFproblemStatus-vista (preferred)
+* status from http://va.gov/fhir/ValueSet/problemStatus-vista (preferred)
 * condition 0..1 Coding "CONDITION (-1.02)"
-* condition from http://va.gov/fhir/ValueSet/VSVFproblemVerificationStatus-vista (preferred)
+* condition from http://va.gov/fhir/ValueSet/problemVerificationStatus-vista (preferred)
 * diagnosis only Reference(IcdDiagnosis80)
 
 Logical: PatientAllergies1208
@@ -567,13 +566,13 @@ Characteristics: #can-be-target
 * originator 0..1 Element "ORIGINATOR (-5)"
 * reactions 0..1 Reference "REACTIONS (-10)"
 * mechanism 0..1 Coding "MECHANISM (-17)"
-* mechanism from http://va.gov/fhir/ValueSet/VSVFallergyMechanism-vista (preferred)
+* mechanism from http://va.gov/fhir/ValueSet/allergyMechanism-vista (preferred)
 * verified 0..1 Coding "VERIFIED (-19)"
-* verified from http://va.gov/fhir/ValueSet/VSVFallergyVerificationStatus-vista (preferred)
+* verified from http://va.gov/fhir/ValueSet/allergyVerificationStatus-vista (preferred)
 * enteredInError 0..1 Coding "ENTERED IN ERROR (-22)"
-* enteredInError from http://va.gov/fhir/ValueSet/VSVFallergyEnteredInError-vista (preferred)
+* enteredInError from http://va.gov/fhir/ValueSet/allergyEnteredInError-vista (preferred)
 * allergyType 0..1 Coding "ALLERGY TYPE (-3.1)"
-* allergyType from http://va.gov/fhir/ValueSet/VSVFallergySubstanceCategory-vista (preferred)
+* allergyType from http://va.gov/fhir/ValueSet/allergySubstanceCategory-vista (preferred)
 * comments 0..1 Reference "COMMENTS (-26)"
 * drugIngredients 0..1 Element "DRUG INGREDIENTS (-2)"
 * reactions only Reference(Reactions12081)
@@ -602,7 +601,7 @@ Title: "ADVERSE REACTION REPORTING (120.85)"
 Description: "This StructureDefinition contains the Logical Model for the mapped parts of the source ADVERSE REACTION REPORTING (120.85)"
 Characteristics: #can-be-target
 * severity 0..1 Coding "SEVERITY (-14.5)"
-* severity from http://va.gov/fhir/ValueSet/VSVFallergySeverity-vista (preferred)
+* severity from http://va.gov/fhir/ValueSet/allergySeverity-vista (preferred)
 
 Logical: Comments120826
 Id: Comments120826
@@ -626,9 +625,9 @@ Title: "APPOINTMENT (2.98)"
 Description: "This StructureDefinition contains the Logical Model for the mapped parts of the source APPOINTMENT (2.98)"
 Characteristics: #can-be-target
 * status 0..1 Coding "STATUS (-3)"
-* status from http://va.gov/fhir/ValueSet/VSVFAppointmentStatus-vista (preferred)
+* status from http://va.gov/fhir/ValueSet/AppointmentStatus-vista (preferred)
 * cancellationReason 0..1 Coding "CANCELLATION REASON (-16)"
-* cancellationReason from http://va.gov/fhir/ValueSet/VSVFAppointmentCancellationReason-vista (preferred)
+* cancellationReason from http://va.gov/fhir/ValueSet/AppointmentCancellationReason-vista (preferred)
 * clinic 0..1 Reference "CLINIC (-.01)"
 * appointmentType 0..1 Reference "APPOINTMENT TYPE (-9.5)"
 * appointmentDatetime 0..1 Element "APPOINTMENT DATE/TIME (-.001)"
@@ -683,7 +682,7 @@ Characteristics: #can-be-target
 * visit 0..1 Reference "VISIT (-.03)"
 * dateOfInjury 0..1 Element "DATE OF INJURY (-.13)"
 * modifier 0..1 Coding "MODIFIER (-.06)"
-* modifier from http://va.gov/fhir/ValueSet/VSVFencounterProblemVerificationStatus-vista (preferred)
+* modifier from http://va.gov/fhir/ValueSet/encounterProblemVerificationStatus-vista (preferred)
 * encounterProvider 0..1 Element "ENCOUNTER PROVIDER (-1204)"
 * problemListEntry 0..1 Element "PROBLEM LIST ENTRY (-.16)"
 * pov only Reference(IcdDiagnosis80)
@@ -717,7 +716,7 @@ Characteristics: #can-be-target
 * ien 0..1 Element "IEN (-.001)"
 * cprsOrder  0..1 Element "CPRS ORDER # (-3)"
 * disposition 0..1 Coding "DISPOSITION (-10)"
-* disposition from http://va.gov/fhir/ValueSet/VSVFDiagnosticReportLabStatus-vista (preferred)
+* disposition from http://va.gov/fhir/ValueSet/DiagnosticReportLabStatus-vista (preferred)
 
 Logical: TiuReferenceDatetime6319
 Id: TiuReferenceDatetime6319
@@ -796,7 +795,7 @@ Characteristics: #can-be-target
 * accession 0..1 Element "ACCESSION (-.06)"
 * ien 0..1 Element "IEN (-.001)"
 * testnames 0..1 Coding "testnames (-2+through+862)"
-* testnames from http://va.gov/fhir/ValueSet/VSVFLabInterpretation-vista (preferred)
+* testnames from http://va.gov/fhir/ValueSet/LabInterpretation-vista (preferred)
 * dateReportCompleted 0..1 Element "DATE REPORT COMPLETED (-.03)"
 * orderedTest only Reference(OrderedTest6307)
 * comment only Reference(Comment63041)
@@ -809,7 +808,7 @@ Characteristics: #can-be-target
 * cprsOrder  0..1 Element "CPRS ORDER # (-3)"
 * labTestOrdered 0..1 Reference "LAB TEST ORDERED (-13)"
 * disposition 0..1 Coding "DISPOSITION (-10)"
-* disposition from http://va.gov/fhir/ValueSet/VSVFLabObservationStatus-vista (preferred)
+* disposition from http://va.gov/fhir/ValueSet/LabObservationStatus-vista (preferred)
 * collectionSample 0..1 Reference "COLLECTION SAMPLE (-9)"
 * labTestOrdered only Reference(LaboratoryTest60)
 * collectionSample only Reference(CollectionSample62)
@@ -860,7 +859,7 @@ Characteristics: #can-be-target
 * ien 0..1 Element "IEN (-.001)"
 * cprsOrder  0..1 Element "CPRS ORDER # (-3)"
 * disposition 0..1 Coding "DISPOSITION (-10)"
-* disposition from http://va.gov/fhir/ValueSet/VSVFDiagnosticReportLabStatus-vista (preferred)
+* disposition from http://va.gov/fhir/ValueSet/DiagnosticReportLabStatus-vista (preferred)
 
 Logical: TiuReferenceDatetime6349
 Id: TiuReferenceDatetime6349
@@ -894,28 +893,28 @@ Characteristics: #can-be-target
 * bactRptRemark 0..1 Reference "BACT RPT REMARK (-13)"
 * organism 0..1 Reference "ORGANISM (-12)"
 * bactRptStatus 0..1 Coding "BACT RPT STATUS (-11.5)"
-* bactRptStatus from http://va.gov/fhir/ValueSet/VSVFLabObservationStatus-vista (preferred)
+* bactRptStatus from http://va.gov/fhir/ValueSet/LabObservationStatus-vista (preferred)
 * urineScreen 0..1 Coding "URINE SCREEN (-11.57)"
-* urineScreen from http://va.gov/fhir/ValueSet/VSVFMicrobiologyUrineScreenResult-vista (preferred)
+* urineScreen from http://va.gov/fhir/ValueSet/MicrobiologyUrineScreenResult-vista (preferred)
 * sputumScreen 0..1 Element "SPUTUM SCREEN (-11.58)"
 * gramStain 0..1 Reference "GRAM STAIN (-11.6)"
 * parasiteRptRemark 0..1 Reference "PARASITE RPT REMARK (-17)"
 * parasiteRptStatus 0..1 Coding "PARASITE RPT STATUS (-15)"
-* parasiteRptStatus from http://va.gov/fhir/ValueSet/VSVFLabObservationStatus-vista (preferred)
+* parasiteRptStatus from http://va.gov/fhir/ValueSet/LabObservationStatus-vista (preferred)
 * parasite 0..1 Reference "PARASITE (-16)"
 * mycologyRptRemark 0..1 Reference "MYCOLOGY RPT REMARK (-21)"
 * fungusyeast 0..1 Reference "FUNGUS/YEAST (-20)"
 * mycologyRptStatus 0..1 Coding "MYCOLOGY RPT STATUS (-19)"
-* mycologyRptStatus from http://va.gov/fhir/ValueSet/VSVFLabObservationStatus-vista (preferred)
+* mycologyRptStatus from http://va.gov/fhir/ValueSet/LabObservationStatus-vista (preferred)
 * tbRptRemark 0..1 Reference "TB RPT REMARK (-27)"
 * mycobacterium 0..1 Reference "MYCOBACTERIUM (-26)"
 * tbRptStatus 0..1 Coding "TB RPT STATUS (-23)"
-* tbRptStatus from http://va.gov/fhir/ValueSet/VSVFLabObservationStatus-vista (preferred)
+* tbRptStatus from http://va.gov/fhir/ValueSet/LabObservationStatus-vista (preferred)
 * acidFastStain 0..1 Element "ACID FAST STAIN (-24)"
 * virologyRptRemark 0..1 Reference "VIROLOGY RPT REMARK (-37)"
 * virus 0..1 Reference "VIRUS (-36)"
 * virologyReportStatus 0..1 Coding "VIROLOGY REPORT STATUS (-34)"
-* virologyReportStatus from http://va.gov/fhir/ValueSet/VSVFLabObservationStatus-vista (preferred)
+* virologyReportStatus from http://va.gov/fhir/ValueSet/LabObservationStatus-vista (preferred)
 * orderedTest only Reference(OrderedTest635)
 * collectionSample only Reference(CollectionSample62)
 * bactRptRemark only Reference(BactRptRemark6333)
@@ -938,7 +937,7 @@ Characteristics: #can-be-target
 * ien 0..1 Element "IEN (-.001)"
 * cprsOrder  0..1 Element "CPRS ORDER # (-3)"
 * disposition 0..1 Coding "DISPOSITION (-10)"
-* disposition from http://va.gov/fhir/ValueSet/VSVFDiagnosticReportLabStatus-vista (preferred)
+* disposition from http://va.gov/fhir/ValueSet/DiagnosticReportLabStatus-vista (preferred)
 * labTestOrdered 0..1 Reference "LAB TEST ORDERED (-13)"
 * labTestOrdered only Reference(LaboratoryTest60)
 
@@ -957,7 +956,7 @@ Characteristics: #can-be-target
 * comment 0..1 Reference "COMMENT (-2)"
 * organism 0..1 Reference "ORGANISM (-5+to+160)"
 * interpr 0..1 Coding "* INTERPR (-5.1+to+160.1)"
-* interpr from http://va.gov/fhir/ValueSet/VSVFAntibioticSensitivityInterpretation-vista (preferred)
+* interpr from http://va.gov/fhir/ValueSet/AntibioticSensitivityInterpretation-vista (preferred)
 * comment only Reference(Comment6331)
 * organism only Reference(EtiologyField612)
 
@@ -1055,7 +1054,7 @@ Title: "SOURCE OF ADMISSION (45.1)"
 Description: "This StructureDefinition contains the Logical Model for the mapped parts of the source SOURCE OF ADMISSION (45.1)"
 Characteristics: #can-be-target
 * ptfCode 0..1 Coding "PTF CODE (-.01)"
-* ptfCode from http://va.gov/fhir/ValueSet/VSVFSourceOfAdmission-vista (preferred)
+* ptfCode from http://va.gov/fhir/ValueSet/SourceOfAdmission-vista (preferred)
 
 Logical: Location999999906
 Id: Location999999906
@@ -1071,7 +1070,7 @@ Description: "This StructureDefinition contains the Logical Model for the mapped
 Characteristics: #can-be-target
 * provider 0..1 Element "PROVIDER (-.01)"
 * primarysecondary 0..1 Coding "PRIMARY/SECONDARY (-.04)"
-* primarysecondary from http://va.gov/fhir/ValueSet/VSVFencounterParticipationType-vista (preferred)
+* primarysecondary from http://va.gov/fhir/ValueSet/encounterParticipationType-vista (preferred)
 
 Logical: VCpt900001018
 Id: VCpt900001018
@@ -1123,7 +1122,7 @@ Characteristics: #can-be-target
 * datetimeRecorded 0..1 Element "DATE/TIME RECORDED (-1205)"
 * visit 0..1 Reference "VISIT (-.03)"
 * reaction 0..1 Coding "REACTION (-.06)"
-* reaction from http://va.gov/fhir/ValueSet/VSVFImmunizationReaction-vista (preferred)
+* reaction from http://va.gov/fhir/ValueSet/ImmunizationReaction-vista (preferred)
 * immunization only Reference(Immunization999999914)
 * lot only Reference(ImmunizationLot999999941)
 * doseUnits only Reference(UcumCodes7575)
@@ -1135,7 +1134,7 @@ Title: "IMMUNIZATION (9999999.14)"
 Description: "This StructureDefinition contains the Logical Model for the mapped parts of the source IMMUNIZATION (9999999.14)"
 Characteristics: #can-be-target
 * name 0..1 Coding "NAME (-.01)"
-* name from http://va.gov/fhir/ValueSet/VSVFinferredCVX-vista (preferred)
+* name from http://va.gov/fhir/ValueSet/inferredCVX-vista (preferred)
 * cvxCode 0..1 Element "CVX CODE (-.03)"
 
 Logical: ImmunizationLot999999941
@@ -1183,7 +1182,7 @@ Description: "This StructureDefinition contains the Logical Model for the mapped
 Characteristics: #can-be-target
 * modelNumbername 0..1 Element "MODEL NUMBER/NAME (-.01)"
 * typeOfEquipment 0..1 Coding "TYPE OF EQUIPMENT (-1)"
-* typeOfEquipment from http://va.gov/fhir/ValueSet/VSVFdeviceTypePacemaker-vista (preferred)
+* typeOfEquipment from http://va.gov/fhir/ValueSet/deviceTypePacemaker-vista (preferred)
 
 Logical: DentalDeviceTracking2289
 Id: DentalDeviceTracking2289
@@ -1193,7 +1192,7 @@ Characteristics: #can-be-target
 * ien 0..1 Element "IEN (-.001)"
 * udi 0..1 Element "UDI (-1)"
 * status 0..1 Coding "STATUS (-.08)"
-* status from http://va.gov/fhir/ValueSet/VSVFDentalDeviceStatus-vista (preferred)
+* status from http://va.gov/fhir/ValueSet/DentalDeviceStatus-vista (preferred)
 * donationId 0..1 Element "DONATION ID (-4.8)"
 * manufacturer 0..1 Element "MANUFACTURER (-4.1)"
 * manufacturerDate 0..1 Element "MANUFACTURER DATE (-4.6)"
@@ -1267,7 +1266,7 @@ Characteristics: #can-be-target
 * ien 0..1 Element "IEN (-.001)"
 * cprsOrder  0..1 Element "CPRS ORDER # (-3)"
 * disposition 0..1 Coding "DISPOSITION (-10)"
-* disposition from http://va.gov/fhir/ValueSet/VSVFDiagnosticReportLabStatus-vista (preferred)
+* disposition from http://va.gov/fhir/ValueSet/DiagnosticReportLabStatus-vista (preferred)
 
 Logical: TiuReferenceDatetime6347
 Id: TiuReferenceDatetime6347
@@ -1341,7 +1340,7 @@ Description: "This StructureDefinition contains the Logical Model for the mapped
 Characteristics: #can-be-target
 * dosageOrdered 0..1 Element "DOSAGE ORDERED (-.01)"
 * units 0..1 Coding "UNITS (-2)"
-* units from http://va.gov/fhir/ValueSet/VSVFDoseUnits-vista (preferred)
+* units from http://va.gov/fhir/ValueSet/DoseUnits-vista (preferred)
 * route 0..1 Element "ROUTE (-6)"
 
 Logical: Refill521
@@ -1503,7 +1502,7 @@ Characteristics: #can-be-target
 * name 0..1 Reference "NAME (-.01)"
 * telephone 0..1 Element "TELEPHONE (-3)"
 * inactive 0..1 Coding "INACTIVE? (-99)"
-* inactive from http://va.gov/fhir/ValueSet/VSVFOperatingRoomStatus-vista (preferred)
+* inactive from http://va.gov/fhir/ValueSet/OperatingRoomStatus-vista (preferred)
 * name only Reference(HospitalLocation44)
 
 Logical: VHealthFactors900001023
@@ -1527,7 +1526,7 @@ Description: "This StructureDefinition contains the Logical Model for the mapped
 Characteristics: #can-be-target
 * category 0..1 Element "CATEGORY (-.03)"
 * factor 0..1 Coding "FACTOR (-.01)"
-* factor from http://va.gov/fhir/ValueSet/VSVFSmokingStatus-vista (preferred)
+* factor from http://va.gov/fhir/ValueSet/SmokingStatus-vista (preferred)
 
 Logical: GmrvVitalMeasurement1205
 Id: GmrvVitalMeasurement1205
@@ -1541,7 +1540,7 @@ Characteristics: #can-be-target
 * patient 0..1 Element "PATIENT (-.02)"
 * ien 0..1 Element "IEN (-.001)"
 * vitalType 0..1 Coding "VITAL TYPE (-.03)"
-* vitalType from http://va.gov/fhir/ValueSet/VSVFVitalsCodes-vista (preferred)
+* vitalType from http://va.gov/fhir/ValueSet/VitalsCodes-vista (preferred)
 * qualifier 0..1 Reference "QUALIFIER (-5)"
 * rate 0..1 Element "RATE (-1.2)"
 * supplementalO2 0..1 Element "SUPPLEMENTAL O2 (-1.4)"
@@ -1553,7 +1552,7 @@ Title: "GMRV VITAL QUALIFIER (120.52)"
 Description: "This StructureDefinition contains the Logical Model for the mapped parts of the source GMRV VITAL QUALIFIER (120.52)"
 Characteristics: #can-be-target
 * vuid 0..1 Coding "VUID (-99.99)"
-* vuid from http://va.gov/fhir/ValueSet/VSVFVitalsBodyPosition-vista (preferred)
+* vuid from http://va.gov/fhir/ValueSet/VitalsBodyPosition-vista (preferred)
 
 Logical: Findings69106
 Id: Findings69106
@@ -1569,7 +1568,7 @@ Description: "This StructureDefinition contains the Logical Model for the mapped
 Characteristics: #can-be-target
 * ien 0..1 Element "IEN (-.001)"
 * releaseStatus 0..1 Coding "RELEASE STATUS (-1506)"
-* releaseStatus from http://va.gov/fhir/ValueSet/VSVFImageStatus-vista (preferred)
+* releaseStatus from http://va.gov/fhir/ValueSet/ImageStatus-vista (preferred)
 * medicalPatient 0..1 Element "MEDICAL PATIENT (-1)"
 * datetime 0..1 Element "DATE/TIME (-.01)"
 * dateOfVerified 0..1 Element "DATE OF VERIFIED (-1508)"
@@ -1578,7 +1577,7 @@ Characteristics: #can-be-target
 * interpretationCodeConfig 0..1 Reference "INTERPRETATION CODE (CONFIG) (-14.1)"
 * interpretationCodePacing 0..1 Reference "INTERPRETATION CODE (PACING) (-14.2)"
 * summary 0..1 Coding "SUMMARY (-.03)"
-* summary from http://va.gov/fhir/ValueSet/VSVFImageInterpretation-vista (preferred)
+* summary from http://va.gov/fhir/ValueSet/ImageInterpretation-vista (preferred)
 * comment 0..1 Element "COMMENT (-17)"
 * interpretationCodeRhythm only Reference(InterpretationCodeRhythm69154)
 * interpretationCodeConfig only Reference(InterpretationCodeConfig69155)
@@ -1640,7 +1639,7 @@ Title: "ACCOUNTS RECEIVABLE TRANS.TYPE (430.3)"
 Description: "This StructureDefinition contains the Logical Model for the mapped parts of the source ACCOUNTS RECEIVABLE TRANS.TYPE (430.3)"
 Characteristics: #can-be-target
 * name 0..1 Coding "NAME (-.01)"
-* name from http://va.gov/fhir/ValueSet/VSVFARBillStatus-vista (preferred)
+* name from http://va.gov/fhir/ValueSet/ARBillStatus-vista (preferred)
 
 Logical: IbActionType3501
 Id: IbActionType3501
@@ -1658,7 +1657,7 @@ Characteristics: #can-be-target
 * rx  0..1 Element "RX # (-3)"
 * institution 0..1 Element "INSTITUTION (-4)"
 * result 0..1 Coding "RESULT (-6)"
-* result from http://va.gov/fhir/ValueSet/VSVFRefillRequestStatus-vista (preferred)
+* result from http://va.gov/fhir/ValueSet/RefillRequestStatus-vista (preferred)
 * remarks 0..1 Element "REMARKS (-10)"
 * dateProcessed 0..1 Element "DATE PROCESSED (-5)"
 * loginDate 0..1 Element "LOGIN DATE (-11)"

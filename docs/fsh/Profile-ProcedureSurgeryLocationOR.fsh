@@ -8,7 +8,7 @@ Description: "This StructureDefinition contains the maps for VistA file OPERATIN
 * ^extension.valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-location|6.1.0"
 * name and telecom.value and status and partOf MS
 * partOf only Reference(Location)
-* status from http://va.gov/fhir/ValueSet/VSVFOperatingRoomStatus
+* status from http://va.gov/fhir/ValueSet/OperatingRoomStatus
 
 Mapping: source-to-ProcedureSurgeryLocationOR
 Id: vista

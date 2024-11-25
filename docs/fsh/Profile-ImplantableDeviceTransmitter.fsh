@@ -8,9 +8,9 @@ Description: "This StructureDefinition contains the maps for VistA file GENERATO
 * ^extension.valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-implantable-device|6.1.0"
 * manufacturer and modelNumber and type and identifier.value and identifier.system and status and serialNumber and patient MS
 * patient only Reference(Patient)
-* type from http://va.gov/fhir/ValueSet/VSVFdeviceTypePacemaker
+* type from http://va.gov/fhir/ValueSet/deviceTypePacemaker
 * identifier.system = "http://va.gov/identifiers/$Sta3n/698"
-* type from http://va.gov/fhir/ValueSet/VSVFdeviceTypePacemaker
+* type from http://va.gov/fhir/ValueSet/deviceTypePacemaker
 
 Mapping: source-to-ImplantableDeviceTransmitter
 Id: vista

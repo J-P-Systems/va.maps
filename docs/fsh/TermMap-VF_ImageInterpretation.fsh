@@ -1,14 +1,14 @@
-Instance: CMVFImageInterpretation
+Instance: ImageInterpretation
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/CMVFImageInterpretation"
-* name = "VF_ImageInterpretation"
-* title = "VF_ImageInterpretation"
-* status = #draft
+* url = "http://va.gov/fhir/ConceptMap/ImageInterpretation"
+* name = "ImageInterpretation"
+* title = "ImageInterpretation"
+* status = #active
 * experimental = false
-* description = "Terminology Maps VF_ImageInterpretation"
-* sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFImageInterpretation-vista"
-* targetCanonical = "http://va.gov/fhir/ValueSet/VSVFImageInterpretation"
+* description = "Terminology Maps ImageInterpretation "
+* sourceCanonical = "http://va.gov/fhir/ValueSet/ImageInterpretation-vista"
+* targetCanonical = "http://va.gov/fhir/ValueSet/ImageInterpretation"
 * group[0].source = "http://va.gov/terminology/vistaDefinedTerms/691.5-.03"
 * group[=].target = "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation"
 * group[=].element[0].code = #A
@@ -33,21 +33,23 @@ Usage: #definition
 * group[=].element[=].target.equivalence = #equal
 * group[=].element[=].target.comment = "'Technically Unsatifactory' is used with EKG/ECG but not ECHO"
 
-ValueSet: VSVFImageInterpretation
-Title: "VF_ImageInterpretation"
-Description: "FHIR Target ValueSet for Terminology Maps VF_ImageInterpretation"
+ValueSet: ImageInterpretation
+Title: "ImageInterpretation FHIR"
+Description: "FHIR Target ValueSet for Terminology Maps ImageInterpretation"
 * ^experimental = false
-* ^name = "VF_ImageInterpretation"
+* ^status = #active
+* ^name = "ImageInterpretation"
 * include http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#A "Abnormal"
 * include http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#E "Equivocal"
 * include http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#N "Normal"
 * include http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#IND "Indeterminate"
 
-ValueSet: VSVFImageInterpretation-vista
-Title: "VF_ImageInterpretation VistA"
-Description: "VistA Source ValueSet for Terminology Maps VF_ImageInterpretation"
+ValueSet: ImageInterpretation-vista
+Title: "ImageInterpretation VistA"
+Description: "VistA Source ValueSet for Terminology Maps ImageInterpretation"
 * ^experimental = false
-* ^name = "VF_ImageInterpretation"
+* ^status = #active
+* ^name = "ImageInterpretation_VistA"
 * include http://va.gov/terminology/vistaDefinedTerms/691.5-.03#A "ABNORMAL"
 * include http://va.gov/terminology/vistaDefinedTerms/691.5-.03#B "BORDERLINE"
 * include http://va.gov/terminology/vistaDefinedTerms/691.5-.03#N "NORMAL"

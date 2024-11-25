@@ -1,14 +1,14 @@
-Instance: CMVFVitalsQualifyingDevice
+Instance: VitalsQualifyingDevice
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/CMVFVitalsQualifyingDevice"
-* name = "VF_VitalsQualifyingDevice"
-* title = "VF_VitalsQualifyingDevice"
-* status = #draft
+* url = "http://va.gov/fhir/ConceptMap/VitalsQualifyingDevice"
+* name = "VitalsQualifyingDevice"
+* title = "VitalsQualifyingDevice"
+* status = #active
 * experimental = false
-* description = "Terminology Maps VF_VitalsQualifyingDevice"
-* sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFVitalsQualifyingDevice-vista"
-* targetCanonical = "http://va.gov/fhir/ValueSet/VSVFVitalsQualifyingDevice"
+* description = "Terminology Maps VitalsQualifyingDevice "
+* sourceCanonical = "http://va.gov/fhir/ValueSet/VitalsQualifyingDevice-vista"
+* targetCanonical = "http://va.gov/fhir/ValueSet/VitalsQualifyingDevice"
 * group[0].source = "http://terminology.hl7.org/CodeSystem/VHA"
 * group[=].target = "http://snomed.info/sct"
 * group[=].element[0].code = #4688635
@@ -97,11 +97,12 @@ Usage: #definition
 * group[=].element[=].target.display = "Venturi oxygen face mask (physical object)"
 * group[=].element[=].target.equivalence = #equal
 
-ValueSet: VSVFVitalsQualifyingDevice
-Title: "VF_VitalsQualifyingDevice"
-Description: "FHIR Target ValueSet for Terminology Maps VF_VitalsQualifyingDevice"
+ValueSet: VitalsQualifyingDevice
+Title: "VitalsQualifyingDevice FHIR"
+Description: "FHIR Target ValueSet for Terminology Maps VitalsQualifyingDevice"
 * ^experimental = false
-* ^name = "VF_VitalsQualifyingDevice"
+* ^status = #active
+* ^name = "VitalsQualifyingDevice"
 * include http://snomed.info/sct#426851007 "Aerosol oxygen mask (physical object)"
 * include http://snomed.info/sct#371785003 "Ambu bag (physical object)"
 * include http://snomed.info/sct#243142003 "Dual pressure spontaneous ventilation support (regime/therapy)"
@@ -117,11 +118,12 @@ Description: "FHIR Target ValueSet for Terminology Maps VF_VitalsQualifyingDevic
 * include http://snomed.info/sct#465839001 "Tracheostomy mask, oxygen (physical object)"
 * include http://snomed.info/sct#465433006 "Venturi oxygen face mask (physical object)"
 
-ValueSet: VSVFVitalsQualifyingDevice-vista
-Title: "VF_VitalsQualifyingDevice VistA"
-Description: "VistA Source ValueSet for Terminology Maps VF_VitalsQualifyingDevice"
+ValueSet: VitalsQualifyingDevice-vista
+Title: "VitalsQualifyingDevice VistA"
+Description: "VistA Source ValueSet for Terminology Maps VitalsQualifyingDevice"
 * ^experimental = false
-* ^name = "VF_VitalsQualifyingDevice"
+* ^status = #active
+* ^name = "VitalsQualifyingDevice_VistA"
 * include http://terminology.hl7.org/CodeSystem/VHA#4688635 "AEROSOL/HUMIDIFIED MASK"
 * include http://terminology.hl7.org/CodeSystem/VHA#4688698 "AMBU BAG (BAG VALVE MASK)"
 * include http://terminology.hl7.org/CodeSystem/VHA#4688695 "BIPAP (BI-LEVEL POSITIVE AIRWAY PRESSURE)"

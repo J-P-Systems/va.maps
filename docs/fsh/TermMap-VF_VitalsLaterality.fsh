@@ -1,14 +1,14 @@
-Instance: CMVFVitalsLaterality
+Instance: VitalsLaterality
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/CMVFVitalsLaterality"
-* name = "VF_VitalsLaterality"
-* title = "VF_VitalsLaterality"
-* status = #draft
+* url = "http://va.gov/fhir/ConceptMap/VitalsLaterality"
+* name = "VitalsLaterality"
+* title = "VitalsLaterality"
+* status = #active
 * experimental = false
-* description = "Terminology Maps VF_VitalsLaterality"
-* sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFVitalsLaterality-vista"
-* targetCanonical = "http://va.gov/fhir/ValueSet/VSVFVitalsLaterality"
+* description = "Terminology Maps VitalsLaterality "
+* sourceCanonical = "http://va.gov/fhir/ValueSet/VitalsLaterality-vista"
+* targetCanonical = "http://va.gov/fhir/ValueSet/VitalsLaterality"
 * group[0].source = "http://terminology.hl7.org/CodeSystem/VHA"
 * group[=].target = "http://snomed.info/sct"
 * group[=].element[0].code = #4688660
@@ -22,18 +22,20 @@ Usage: #definition
 * group[=].element[=].target.display = "Structure of right half of body (body structure)"
 * group[=].element[=].target.equivalence = #equal
 
-ValueSet: VSVFVitalsLaterality
-Title: "VF_VitalsLaterality"
-Description: "FHIR Target ValueSet for Terminology Maps VF_VitalsLaterality"
+ValueSet: VitalsLaterality
+Title: "VitalsLaterality FHIR"
+Description: "FHIR Target ValueSet for Terminology Maps VitalsLaterality"
 * ^experimental = false
-* ^name = "VF_VitalsLaterality"
+* ^status = #active
+* ^name = "VitalsLaterality"
 * include http://snomed.info/sct#31156008 "Structure of left half of body (body structure)"
 * include http://snomed.info/sct#85421007 "Structure of right half of body (body structure)"
 
-ValueSet: VSVFVitalsLaterality-vista
-Title: "VF_VitalsLaterality VistA"
-Description: "VistA Source ValueSet for Terminology Maps VF_VitalsLaterality"
+ValueSet: VitalsLaterality-vista
+Title: "VitalsLaterality VistA"
+Description: "VistA Source ValueSet for Terminology Maps VitalsLaterality"
 * ^experimental = false
-* ^name = "VF_VitalsLaterality"
+* ^status = #active
+* ^name = "VitalsLaterality_VistA"
 * include http://terminology.hl7.org/CodeSystem/VHA#4688660 "LEFT"
 * include http://terminology.hl7.org/CodeSystem/VHA#4688680 "RIGHT"

@@ -10,7 +10,7 @@ Description: "This StructureDefinition contains the maps for VistA file PRESCRIP
 * location only Reference(Location)
 * performer.actor only Reference(Practitioner)
 * type = http://terminology.hl7.org/CodeSystem/v3-ActCode#FF
-* dosageInstruction.doseAndRate.doseQuantity.code from http://va.gov/fhir/ValueSet/VSVFDoseUnits
+* dosageInstruction.doseAndRate.doseQuantity.code from http://va.gov/fhir/ValueSet/DoseUnits
 * medicationCodeableConcept.coding.system = "urn:oid:2.16.840.1.113883.6.233"
 * category = http://terminology.hl7.org/fhir/CodeSystem/medicationdispense-category#outpatient
 

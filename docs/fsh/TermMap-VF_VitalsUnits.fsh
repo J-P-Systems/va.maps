@@ -1,14 +1,14 @@
-Instance: CMVFVitalsUnits
+Instance: VitalsUnits
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/CMVFVitalsUnits"
-* name = "VF_VitalsUnits"
-* title = "VF_VitalsUnits"
-* status = #draft
+* url = "http://va.gov/fhir/ConceptMap/VitalsUnits"
+* name = "VitalsUnits"
+* title = "VitalsUnits"
+* status = #active
 * experimental = false
-* description = "Terminology Maps VF_VitalsUnits"
-* sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFVitalsUnits-vista"
-* targetCanonical = "http://va.gov/fhir/ValueSet/VSVFVitalsUnits"
+* description = "Terminology Maps VitalsUnits "
+* sourceCanonical = "http://va.gov/fhir/ValueSet/VitalsUnits-vista"
+* targetCanonical = "http://va.gov/fhir/ValueSet/VitalsUnits"
 * group[0].source = "http://terminology.hl7.org/CodeSystem/VHA"
 * group[=].target = "http://unitsofmeasure.org"
 * group[=].element[0].code = #4688718
@@ -83,11 +83,12 @@ Usage: #definition
 * group[=].element[=].target.display = "[lb_av]"
 * group[=].element[=].target.equivalence = #equal
 
-ValueSet: VSVFVitalsUnits
-Title: "VF_VitalsUnits"
-Description: "FHIR Target ValueSet for Terminology Maps VF_VitalsUnits"
+ValueSet: VitalsUnits
+Title: "VitalsUnits FHIR"
+Description: "FHIR Target ValueSet for Terminology Maps VitalsUnits"
 * ^experimental = false
-* ^name = "VF_VitalsUnits"
+* ^status = #active
+* ^name = "VitalsUnits"
 * include http://unitsofmeasure.org#mm[Hg] 
 * include http://unitsofmeasure.org#kg/m2 
 * include http://unitsofmeasure.org#cm[H2O] 
@@ -97,11 +98,12 @@ Description: "FHIR Target ValueSet for Terminology Maps VF_VitalsUnits"
 * include http://unitsofmeasure.org#[degF] "[degF]"
 * include http://unitsofmeasure.org#[lb_av] "[lb_av]"
 
-ValueSet: VSVFVitalsUnits-vista
-Title: "VF_VitalsUnits VistA"
-Description: "VistA Source ValueSet for Terminology Maps VF_VitalsUnits"
+ValueSet: VitalsUnits-vista
+Title: "VitalsUnits VistA"
+Description: "VistA Source ValueSet for Terminology Maps VitalsUnits"
 * ^experimental = false
-* ^name = "VF_VitalsUnits"
+* ^status = #active
+* ^name = "VitalsUnits_VistA"
 * include http://terminology.hl7.org/CodeSystem/VHA#4688718 "AUDIOMETRY"
 * include http://terminology.hl7.org/CodeSystem/VHA#4500634 "BLOOD PRESSURE"
 * include http://terminology.hl7.org/CodeSystem/VHA#4536993 "BODY MASS INDEX"

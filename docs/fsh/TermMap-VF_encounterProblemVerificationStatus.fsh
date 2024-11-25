@@ -1,14 +1,14 @@
-Instance: CMVFencounterProblemVerificationStatus
+Instance: encounterProblemVerificationStatus
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/CMVFencounterProblemVerificationStatus"
-* name = "VF_encounterProblemVerificationStatus"
-* title = "VF_encounterProblemVerificationStatus"
-* status = #draft
+* url = "http://va.gov/fhir/ConceptMap/encounterProblemVerificationStatus"
+* name = "encounterProblemVerificationStatus"
+* title = "encounterProblemVerificationStatus"
+* status = #active
 * experimental = false
-* description = "Terminology Maps VF_encounterProblemVerificationStatus"
-* sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFencounterProblemVerificationStatus-vista"
-* targetCanonical = "http://va.gov/fhir/ValueSet/VSVFencounterProblemVerificationStatus"
+* description = "Terminology Maps encounterProblemVerificationStatus "
+* sourceCanonical = "http://va.gov/fhir/ValueSet/encounterProblemVerificationStatus-vista"
+* targetCanonical = "http://va.gov/fhir/ValueSet/encounterProblemVerificationStatus"
 * group[0].source = "http://va.gov/terminology/vistaDefinedTerms/9000010.07-.06"
 * group[=].target = "http://terminology.hl7.org/CodeSystem/condition-ver-status"
 * group[=].element[0].code = #C
@@ -40,20 +40,22 @@ Usage: #definition
 * group[=].element[=].target.code = #provisional
 * group[=].element[=].target.equivalence = #equal
 
-ValueSet: VSVFencounterProblemVerificationStatus
-Title: "VF_encounterProblemVerificationStatus"
-Description: "FHIR Target ValueSet for Terminology Maps VF_encounterProblemVerificationStatus"
+ValueSet: encounterProblemVerificationStatus
+Title: "encounterProblemVerificationStatus FHIR"
+Description: "FHIR Target ValueSet for Terminology Maps encounterProblemVerificationStatus"
 * ^experimental = false
-* ^name = "VF_encounterProblemVerificationStatus"
+* ^status = #active
+* ^name = "encounterProblemVerificationStatus"
 * include http://terminology.hl7.org/CodeSystem/condition-ver-status#provisional 
 * include http://terminology.hl7.org/CodeSystem/condition-ver-status#unconfirmed 
 * include http://terminology.hl7.org/CodeSystem/condition-ver-status#differential 
 
-ValueSet: VSVFencounterProblemVerificationStatus-vista
-Title: "VF_encounterProblemVerificationStatus VistA"
-Description: "VistA Source ValueSet for Terminology Maps VF_encounterProblemVerificationStatus"
+ValueSet: encounterProblemVerificationStatus-vista
+Title: "encounterProblemVerificationStatus VistA"
+Description: "VistA Source ValueSet for Terminology Maps encounterProblemVerificationStatus"
 * ^experimental = false
-* ^name = "VF_encounterProblemVerificationStatus"
+* ^status = #active
+* ^name = "encounterProblemVerificationStatus_VistA"
 * include http://va.gov/terminology/vistaDefinedTerms/9000010.07-.06#C "CONSIDER"
 * include http://va.gov/terminology/vistaDefinedTerms/9000010.07-.06#D "DOUBTFUL"
 * include http://va.gov/terminology/vistaDefinedTerms/9000010.07-.06#F "FOLLOW UP"

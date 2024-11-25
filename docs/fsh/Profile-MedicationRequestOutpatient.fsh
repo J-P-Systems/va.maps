@@ -14,14 +14,14 @@ Description: "This StructureDefinition contains the maps for VistA file PRESCRIP
 * id and status and extension[http://va.gov/fhir/StructureDefinition/medicationrequest-pharmacyOrderStatus].valueCoding.code and extension[http://va.gov/fhir/StructureDefinition/medicationrequest-pharmacyOrderStatus].valueCoding.system and intent and medicationCodeableConcept.text and medicationCodeableConcept.coding.code and medicationCodeableConcept.coding.system and subject and authoredOn and requester and dosageInstruction.text and dosageInstruction.patientInstruction and dosageInstruction.doseAndRate.doseQuantity.value and dosageInstruction.doseAndRate.doseQuantity.unit and dispenseRequest.validityPeriod.end and extension[http://va.gov/fhir/StructureDefinition/medicationrequest-cancelDate].valueDateTime and dispenseRequest.numberOfRepeatsAllowed and dispenseRequest.quantity.value and dispenseRequest.expectedSupplyDuration and dosageInstruction.doseAndRate.extension[http://hl7.org/fhir/StructureDefinition/originalText].valueString and identifier and dosageInstruction.route.coding.code and dosageInstruction.route.coding.system and category and reasonCode.text and extension[http://va.gov/fhir/StructureDefinition/medicationrequest-includeIndicationInSig].valueBoolean and extension[http://va.gov/fhir/StructureDefinition/medicationrequest-remainingRefillCount].valueInteger MS
 * subject only Reference(Patient)
 * requester only Reference(Practitioner)
-* status from http://va.gov/fhir/ValueSet/VSVFOutMedRequestStatus
+* status from http://va.gov/fhir/ValueSet/OutMedRequestStatus
 * extension[http://va.gov/fhir/StructureDefinition/medicationrequest-pharmacyOrderStatus].valueCoding.system = "http://va.gov/terminology/vistaDefinedTerms/52-100"
 * intent = #order
 * medicationCodeableConcept.coding.system = "http://www.nlm.nih.gov/research/umls/rxnorm"
 * dosageInstruction.route.coding.system = "http://va.gov/terminology/vistaDefinedTerms/53.1-3"
 * category = http://terminology.hl7.org/CodeSystem/medicationrequest-category#outpatient
 * extension[http://va.gov/fhir/StructureDefinition/medicationrequest-includeIndicationInSig].valueBoolean.extension contains http://hl7.org/fhir/StructureDefinition/11179-permitted-value-conceptmap named 11179-permitted-value-conceptmap 0..1
-* extension[http://va.gov/fhir/StructureDefinition/medicationrequest-includeIndicationInSig].valueBoolean.extension[11179-permitted-value-conceptmap].valueCanonical = "http://va.gov/fhir/ConceptMap/CMVFBoolean"
+* extension[http://va.gov/fhir/StructureDefinition/medicationrequest-includeIndicationInSig].valueBoolean.extension[11179-permitted-value-conceptmap].valueCanonical = "http://va.gov/fhir/ConceptMap/Boolean"
 
 Mapping: source-to-MedicationRequestOutpatient
 Id: vista

@@ -14,12 +14,12 @@ Description: "This StructureDefinition contains the maps for VistA file PATIENT 
 * identifier[va-IEN].system = "http://va.gov/identifiers/$Sta3n/120.8"
 * identifier[va-CDW].system = "http://va.gov/identifiers/CDWSID/cdwwork.allergy.allergy"
 * reaction.manifestation.coding.system = "urn:oid:2.16.840.1.113883.6.233"
-* type from http://va.gov/fhir/ValueSet/VSVFallergyMechanism
-* verificationStatus from http://va.gov/fhir/ValueSet/VSVFallergyVerificationStatus
-* clinicalStatus from http://va.gov/fhir/ValueSet/VSVFallergyActive
-* verificationStatus from http://va.gov/fhir/ValueSet/VSVFallergyEnteredInError
-* category from http://va.gov/fhir/ValueSet/VSVFallergySubstanceCategory
-* reaction.severity from http://va.gov/fhir/ValueSet/VSVFallergySeverity
+* type from http://va.gov/fhir/ValueSet/allergyMechanism
+* verificationStatus from http://va.gov/fhir/ValueSet/allergyVerificationStatus
+* clinicalStatus from http://va.gov/fhir/ValueSet/allergyActive
+* verificationStatus from http://va.gov/fhir/ValueSet/allergyEnteredInError
+* category from http://va.gov/fhir/ValueSet/allergySubstanceCategory
+* reaction.severity from http://va.gov/fhir/ValueSet/allergySeverity
 
 Mapping: source-to-AllergyIntolerance
 Id: vista

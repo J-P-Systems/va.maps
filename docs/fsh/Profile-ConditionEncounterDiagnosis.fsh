@@ -12,8 +12,8 @@ Description: "This StructureDefinition contains the maps for VistA file V POV (9
 * category[us-core] = http://terminology.hl7.org/CodeSystem/condition-category#encounter-diagnosis
 * identifier.system = "http://va.gov/identifiers/$Sta3n/9000010.07"
 * code.coding.system = "urn:see-termmap-in-mapParameter"
-* clinicalStatus from http://va.gov/fhir/ValueSet/VSVFencounterProblemStatus
-* verificationStatus from http://va.gov/fhir/ValueSet/VSVFencounterProblemVerificationStatus
+* clinicalStatus from http://va.gov/fhir/ValueSet/encounterProblemStatus
+* verificationStatus from http://va.gov/fhir/ValueSet/encounterProblemVerificationStatus
 
 Mapping: source-to-ConditionEncounterDiagnosis
 Id: vista

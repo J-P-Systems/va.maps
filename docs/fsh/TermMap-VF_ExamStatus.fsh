@@ -1,14 +1,14 @@
-Instance: CMVFExamStatus
+Instance: ExamStatus
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/CMVFExamStatus"
-* name = "VF_ExamStatus"
-* title = "VF_ExamStatus"
-* status = #draft
+* url = "http://va.gov/fhir/ConceptMap/ExamStatus"
+* name = "ExamStatus"
+* title = "ExamStatus"
+* status = #active
 * experimental = false
-* description = "Terminology Maps VF_ExamStatus"
-* sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFExamStatus-vista"
-* targetCanonical = "http://va.gov/fhir/ValueSet/VSVFExamStatus"
+* description = "Terminology Maps ExamStatus "
+* sourceCanonical = "http://va.gov/fhir/ValueSet/ExamStatus-vista"
+* targetCanonical = "http://va.gov/fhir/ValueSet/ExamStatus"
 * group[0].source = "http://va.gov/terminology/vistaDefinedTerms/396.4-.04"
 * group[=].target = "http://hl7.org/fhir/observation-status"
 * group[=].element[0].code = #X
@@ -39,21 +39,23 @@ Usage: #definition
 * group[=].element[=].display = "TRANSFERRED OUT"
 * group[=].element[=].target.equivalence = #unmatched
 
-ValueSet: VSVFExamStatus
-Title: "VF_ExamStatus"
-Description: "FHIR Target ValueSet for Terminology Maps VF_ExamStatus"
+ValueSet: ExamStatus
+Title: "ExamStatus FHIR"
+Description: "FHIR Target ValueSet for Terminology Maps ExamStatus"
 * ^experimental = false
-* ^name = "VF_ExamStatus"
+* ^status = #active
+* ^name = "ExamStatus"
 * include http://hl7.org/fhir/observation-status#cancelled 
 * include http://hl7.org/fhir/observation-status#final 
 * include http://hl7.org/fhir/observation-status#registered 
 * include http://hl7.org/fhir/observation-status#preliminary 
 
-ValueSet: VSVFExamStatus-vista
-Title: "VF_ExamStatus VistA"
-Description: "VistA Source ValueSet for Terminology Maps VF_ExamStatus"
+ValueSet: ExamStatus-vista
+Title: "ExamStatus VistA"
+Description: "VistA Source ValueSet for Terminology Maps ExamStatus"
 * ^experimental = false
-* ^name = "VF_ExamStatus"
+* ^status = #active
+* ^name = "ExamStatus_VistA"
 * include http://va.gov/terminology/vistaDefinedTerms/396.4-.04#X "CANCELLED BY MAS"
 * include http://va.gov/terminology/vistaDefinedTerms/396.4-.04#RX "CANCELLED BY RO"
 * include http://va.gov/terminology/vistaDefinedTerms/396.4-.04#C "COMPLETED"

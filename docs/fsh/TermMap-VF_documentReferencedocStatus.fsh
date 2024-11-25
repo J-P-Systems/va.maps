@@ -1,14 +1,14 @@
-Instance: CMVFdocumentReferencedocStatus
+Instance: documentReferencedocStatus
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/CMVFdocumentReferencedocStatus"
-* name = "VF_documentReferencedocStatus"
-* title = "VF_documentReferencedocStatus"
-* status = #draft
+* url = "http://va.gov/fhir/ConceptMap/documentReferencedocStatus"
+* name = "documentReferencedocStatus"
+* title = "documentReferencedocStatus"
+* status = #active
 * experimental = false
-* description = "Terminology Maps VF_documentReferencedocStatus"
-* sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFdocumentReferencedocStatus-vista"
-* targetCanonical = "http://va.gov/fhir/ValueSet/VSVFdocumentReferencedocStatus"
+* description = "Terminology Maps documentReferencedocStatus "
+* sourceCanonical = "http://va.gov/fhir/ValueSet/documentReferencedocStatus-vista"
+* targetCanonical = "http://va.gov/fhir/ValueSet/documentReferencedocStatus"
 * group[0].source = "http://terminology.hl7.org/CodeSystem/VHA"
 * group[=].target = "http://hl7.org/fhir/composition-status"
 * group[=].element[0].code = #4696298
@@ -56,21 +56,23 @@ Usage: #definition
 * group[=].element[=].target.code = #preliminary
 * group[=].element[=].target.equivalence = #wider
 
-ValueSet: VSVFdocumentReferencedocStatus
-Title: "VF_documentReferencedocStatus"
-Description: "FHIR Target ValueSet for Terminology Maps VF_documentReferencedocStatus"
+ValueSet: documentReferencedocStatus
+Title: "documentReferencedocStatus FHIR"
+Description: "FHIR Target ValueSet for Terminology Maps documentReferencedocStatus"
 * ^experimental = false
-* ^name = "VF_documentReferencedocStatus"
+* ^status = #active
+* ^name = "documentReferencedocStatus"
 * include http://hl7.org/fhir/composition-status#preliminary 
 * include http://hl7.org/fhir/composition-status#amended 
 * include http://hl7.org/fhir/composition-status#final 
 * include http://hl7.org/fhir/composition-status#entered-in-error 
 
-ValueSet: VSVFdocumentReferencedocStatus-vista
-Title: "VF_documentReferencedocStatus VistA"
-Description: "VistA Source ValueSet for Terminology Maps VF_documentReferencedocStatus"
+ValueSet: documentReferencedocStatus-vista
+Title: "documentReferencedocStatus VistA"
+Description: "VistA Source ValueSet for Terminology Maps documentReferencedocStatus"
 * ^experimental = false
-* ^name = "VF_documentReferencedocStatus"
+* ^status = #active
+* ^name = "documentReferencedocStatus_VistA"
 * include http://terminology.hl7.org/CodeSystem/VHA#4696298 "ACTIVE"
 * include http://terminology.hl7.org/CodeSystem/VHA#4501286 "AMENDED"
 * include http://terminology.hl7.org/CodeSystem/VHA#4501014 "COMPLETED"

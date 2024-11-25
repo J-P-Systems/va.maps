@@ -1,14 +1,14 @@
-Instance: CMVFVitalsPrecondition
+Instance: VitalsPrecondition
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/CMVFVitalsPrecondition"
-* name = "VF_VitalsPrecondition"
-* title = "VF_VitalsPrecondition"
-* status = #draft
+* url = "http://va.gov/fhir/ConceptMap/VitalsPrecondition"
+* name = "VitalsPrecondition"
+* title = "VitalsPrecondition"
+* status = #active
 * experimental = false
-* description = "Terminology Maps VF_VitalsPrecondition"
-* sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFVitalsPrecondition-vista"
-* targetCanonical = "http://va.gov/fhir/ValueSet/VSVFVitalsPrecondition"
+* description = "Terminology Maps VitalsPrecondition "
+* sourceCanonical = "http://va.gov/fhir/ValueSet/VitalsPrecondition-vista"
+* targetCanonical = "http://va.gov/fhir/ValueSet/VitalsPrecondition"
 * group[0].source = "http://terminology.hl7.org/CodeSystem/VHA"
 * group[=].target = "http://snomed.info/sct"
 * group[=].element[0].code = #4500992
@@ -27,19 +27,21 @@ Usage: #definition
 * group[=].element[=].target.display = "No prosthesis in situ (situation)"
 * group[=].element[=].target.equivalence = #equal
 
-ValueSet: VSVFVitalsPrecondition
-Title: "VF_VitalsPrecondition"
-Description: "FHIR Target ValueSet for Terminology Maps VF_VitalsPrecondition"
+ValueSet: VitalsPrecondition
+Title: "VitalsPrecondition FHIR"
+Description: "FHIR Target ValueSet for Terminology Maps VitalsPrecondition"
 * ^experimental = false
-* ^name = "VF_VitalsPrecondition"
+* ^status = #active
+* ^name = "VitalsPrecondition"
 * include http://snomed.info/sct#722810000 "Prosthesis in situ (finding)"
 * include http://snomed.info/sct#722811001 "No prosthesis in situ (situation)"
 
-ValueSet: VSVFVitalsPrecondition-vista
-Title: "VF_VitalsPrecondition VistA"
-Description: "VistA Source ValueSet for Terminology Maps VF_VitalsPrecondition"
+ValueSet: VitalsPrecondition-vista
+Title: "VitalsPrecondition VistA"
+Description: "VistA Source ValueSet for Terminology Maps VitalsPrecondition"
 * ^experimental = false
-* ^name = "VF_VitalsPrecondition"
+* ^status = #active
+* ^name = "VitalsPrecondition_VistA"
 * include http://terminology.hl7.org/CodeSystem/VHA#4500992 "WITH CAST OR BRACE"
 * include http://terminology.hl7.org/CodeSystem/VHA#4500993 "WITH PROSTHESIS"
 * include http://terminology.hl7.org/CodeSystem/VHA#4500994 "WITHOUT PROSTHESIS"

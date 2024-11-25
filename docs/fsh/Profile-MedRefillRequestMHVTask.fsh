@@ -8,7 +8,7 @@ Description: "This StructureDefinition contains the maps for VistA file PRESCRIP
 * for only Reference(Patient)
 * focus only Reference(MedicationDispenseRefill)
 * owner only Reference(Organization)
-* status from http://va.gov/fhir/ValueSet/VSVFRefillRequestStatus
+* status from http://va.gov/fhir/ValueSet/RefillRequestStatus
 * intent = #proposal
 
 Mapping: source-to-MedRefillRequestMHVTask

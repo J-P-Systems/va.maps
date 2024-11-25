@@ -10,7 +10,7 @@ Description: "This StructureDefinition contains the maps for VistA file REGISTER
 * encounter only Reference(EncounterOutpatient)
 * performer.actor only Reference(Practitioner)
 * location only Reference(Location)
-* status from http://va.gov/fhir/ValueSet/VSVFRadiologyProcedureStatus
+* status from http://va.gov/fhir/ValueSet/RadiologyProcedureStatus
 * code.coding.system = "http://www.ama-assn.org/go/cpt"
 
 Mapping: source-to-ProcedureRadiology

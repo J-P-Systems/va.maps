@@ -1,14 +1,14 @@
-Instance: CMVFCommunicationQualifier
+Instance: CommunicationQualifier
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/CMVFCommunicationQualifier"
-* name = "VF_CommunicationQualifier"
-* title = "VF_CommunicationQualifier"
-* status = #draft
+* url = "http://va.gov/fhir/ConceptMap/CommunicationQualifier"
+* name = "CommunicationQualifier"
+* title = "CommunicationQualifier"
+* status = #active
 * experimental = false
-* description = "Terminology Maps VF_CommunicationQualifier"
-* sourceCanonical = "http://va.gov/fhir/ValueSet/VSVFCommunicationQualifier-vista"
-* targetCanonical = "http://va.gov/fhir/ValueSet/VSVFCommunicationQualifier"
+* description = "Terminology Maps CommunicationQualifier "
+* sourceCanonical = "http://va.gov/fhir/ValueSet/CommunicationQualifier-vista"
+* targetCanonical = "http://va.gov/fhir/ValueSet/CommunicationQualifier"
 * group[0].source = "http://va.gov/Terminology/VistADefinedTerms/365.26-.04"
 * group[=].target = "urn:oid:2.16.840.1.113883.3.8901.3.1.3658026.8004"
 * group[=].element[0].code = #EM
@@ -36,22 +36,24 @@ Usage: #definition
 * group[=].element[=].target.code = #phone/work
 * group[=].element[=].target.equivalence = #equal
 
-ValueSet: VSVFCommunicationQualifier
-Title: "VF_CommunicationQualifier"
-Description: "FHIR Target ValueSet for Terminology Maps VF_CommunicationQualifier"
+ValueSet: CommunicationQualifier
+Title: "CommunicationQualifier FHIR"
+Description: "FHIR Target ValueSet for Terminology Maps CommunicationQualifier"
 * ^experimental = false
-* ^name = "VF_CommunicationQualifier"
+* ^status = #active
+* ^name = "CommunicationQualifier"
 * include urn:oid:2.16.840.1.113883.3.8901.3.1.3658026.8004#email 
 * include urn:oid:2.16.840.1.113883.3.8901.3.1.3658026.8004#fax 
 * include urn:oid:2.16.840.1.113883.3.8901.3.1.3658026.8004#phone 
 * include urn:oid:2.16.840.1.113883.3.8901.3.1.3658026.8004#phone/home 
 * include urn:oid:2.16.840.1.113883.3.8901.3.1.3658026.8004#phone/work 
 
-ValueSet: VSVFCommunicationQualifier-vista
-Title: "VF_CommunicationQualifier VistA"
-Description: "VistA Source ValueSet for Terminology Maps VF_CommunicationQualifier"
+ValueSet: CommunicationQualifier-vista
+Title: "CommunicationQualifier VistA"
+Description: "VistA Source ValueSet for Terminology Maps CommunicationQualifier"
 * ^experimental = false
-* ^name = "VF_CommunicationQualifier"
+* ^status = #active
+* ^name = "CommunicationQualifier_VistA"
 * include http://va.gov/Terminology/VistADefinedTerms/365.26-.04#EM "Electronic Mail"
 * include http://va.gov/Terminology/VistADefinedTerms/365.26-.04#FX "Facsimile"
 * include http://va.gov/Terminology/VistADefinedTerms/365.26-.04#TE "Telephone"

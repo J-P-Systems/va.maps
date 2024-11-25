@@ -8,7 +8,7 @@ Description: "This StructureDefinition contains the maps for VistA file MICROBIO
 * performer only Reference(Organization or Practitioner)
 * specimen only Reference(LabObservationMicrobiologySpecimen)
 * subject only Reference(Patient)
-* status from http://va.gov/fhir/ValueSet/VSVFLabObservationStatus
+* status from http://va.gov/fhir/ValueSet/LabObservationStatus
 * identifier.system = "http://va.gov/identifiers/$Sta3n/63.05"
 * category = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
 

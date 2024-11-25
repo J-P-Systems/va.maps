@@ -9,7 +9,7 @@ Description: "This StructureDefinition contains the maps for VistA file DENTAL D
 * identifier.value and identifier.system and udiCarrier.deviceIdentifier and status and distinctIdentifier and manufacturer and manufactureDate and expirationDate and lotNumber and serialNumber and modelNumber and type.text and type.coding.system and type.coding.code and type.coding.display and patient MS
 * patient only Reference(Patient)
 * identifier.system = "http://va.gov/identifiers/$Sta3n/228.9"
-* status from http://va.gov/fhir/ValueSet/VSVFDentalDeviceStatus
+* status from http://va.gov/fhir/ValueSet/DentalDeviceStatus
 * type.coding.system = "http://snomed.info/sct"
 * type.coding.code = #277986000
 * type.coding.display = "Dental equipment and devices"
