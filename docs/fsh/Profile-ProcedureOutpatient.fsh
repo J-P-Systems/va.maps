@@ -54,7 +54,7 @@ Source: ProcedureOutpatient
 * performedDateTime -> "1310: source value from V CPT - EVENT DATE AND TIME (9000010.18-1201)"
 * performer.actor -> "1311: reference from V CPT - ENCOUNTER PROVIDER (9000010.18-1204)"
 * note.text -> "1312: source value from V CPT - COMMENTS (9000010.18-81101)"
-* category -> "1314: fixed value = http://snomed.info/sct#371883000 Outpatient procedure (procedure)"
+* category -> "1314: fixed value = http://snomed.info/sct#371883000 \"Outpatient procedure (procedure)\""
 * code.coding -> "1413: source value from V CPT - CPT > CPT (9000010.18-.01 > 81-)"
 * code.coding.code -> "1413-1: source value from V CPT - CPT > CPT - CPT CODE (9000010.18-.01 > 81-.01)" "from mapParameter 1"
 * code.coding.display -> "1413-2: source value from V CPT - CPT > CPT - SHORT NAME (9000010.18-.01 > 81-2)" "from mapParameter 2"

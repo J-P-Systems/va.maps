@@ -33,7 +33,7 @@ Source: LabObservationElectronMicroscopyDiagnosticReport
 * identifier.system -> "1604-1: fixed value = http://va.gov/identifiers/$Sta3n/63.52" "from mapParameter 1"
 * basedOn -> "1689: reference from EM - ORDERED TEST > ORDERED TEST - CPRS ORDER # (63.02-.35 > 63.52-3)"
 * code.text -> "1812: source value from EM - TIU REFERENCE DATE/TIME - EM > TIU REFERENCE DATE/TIME - EM - TIU ENTRY POINTER - EM > TIU DOCUMENT - DOCUMENT TYPE > TIU DOCUMENT DEFINITION - NAME (63.02-.16 > 63.49-1 > 8925-.01 > 8925.1-.01)" "Per KBS discussion, this value should be Local Title + Specimen.type.text. The local title is this map row; Specimen.type.text is key 1699."
-* code -> "1813: fixed value = http://loinc.org#50668-3 Microscopic observation in Specimen by Electron microscopy Narrative"
+* code -> "1813: fixed value = http://loinc.org#50668-3 \"Microscopic observation in Specimen by Electron microscopy Narrative\""
 * code.coding.code -> "1814: source value from EM - TIU REFERENCE DATE/TIME - EM > TIU REFERENCE DATE/TIME - EM - TIU ENTRY POINTER - EM > TIU DOCUMENT - DOCUMENT TYPE > TIU DOCUMENT DEFINITION - VHA ENTERPRISE STANDARD TITLE > TIU VHA ENTERPRISE STANDARD TITLE - CODING SYSTEM > CODING SYSTEM - CODE > CODE - CODE (63.02-.16 > 63.49-1 > 8925-.01 > 8925.1-1501 > 8926.1-2 > 8926.12-.02 > 8926.121-.01)"
 * code.coding.system -> "1814-1: fixed value = http://loinc.org" "from mapParameter 1"
 * status -> "1414: terminologyMaps using VF_DiagnosticReportLabStatus on EM - ORDERED TEST > ORDERED TEST - DISPOSITION (63.02-.35 > 63.52-10)" "US Core 5 has new constraints: if status is partial, preliminary, final, ammended, corrected or appended effective[x] and issued are required"

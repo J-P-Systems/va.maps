@@ -6,7 +6,7 @@ Usage: #definition
 * title = "PharmacyPersonType"
 * status = #active
 * experimental = false
-* description = "Terminology Maps PharmacyPersonType "
+* description = "Terminology Maps PharmacyPersonType"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/PharmacyPersonType-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/PharmacyPersonType"
 * group[0].source = "urn:undefined"

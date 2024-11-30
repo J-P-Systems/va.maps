@@ -6,7 +6,7 @@ Usage: #definition
 * title = "VitalsCuffSize"
 * status = #active
 * experimental = false
-* description = "Terminology Maps VitalsCuffSize "
+* description = "Terminology Maps VitalsCuffSize"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VitalsCuffSize-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/VitalsCuffSize"
 * group[0].source = "http://va.gov/terminology/vistaDefinedTerms/120.52-99.99"

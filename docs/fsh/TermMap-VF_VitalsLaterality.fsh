@@ -6,7 +6,7 @@ Usage: #definition
 * title = "VitalsLaterality"
 * status = #active
 * experimental = false
-* description = "Terminology Maps VitalsLaterality "
+* description = "Terminology Maps VitalsLaterality"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VitalsLaterality-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/VitalsLaterality"
 * group[0].source = "http://terminology.hl7.org/CodeSystem/VHA"

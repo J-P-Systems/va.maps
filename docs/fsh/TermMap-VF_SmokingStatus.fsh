@@ -6,7 +6,7 @@ Usage: #definition
 * title = "SmokingStatus"
 * status = #active
 * experimental = false
-* description = "Terminology Maps SmokingStatus "
+* description = "Terminology Maps SmokingStatus"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/SmokingStatus-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/SmokingStatus"
 * group[0].source = "http://va.gov/terminology/vistaDefinedTerms/9999999.64"

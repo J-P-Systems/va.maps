@@ -6,7 +6,7 @@ Usage: #definition
 * title = "YesNo10"
 * status = #active
 * experimental = false
-* description = "Terminology Maps YesNo10 "
+* description = "Terminology Maps YesNo10"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/YesNo10-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/YesNo10"
 * group[0].source = "urn:undefined"

@@ -14,10 +14,15 @@ Description: "This StructureDefinition contains the maps for VistA file PROBLEM 
 * subject only Reference(Patient)
 * category[us-core] = http://terminology.hl7.org/CodeSystem/condition-category#problem-list-item
 * identifier.system = "http://va.gov/identifiers/$Sta3n/9000011"
+* clinicalStatus obeys ConditionProblem-349
 * code.coding[va-icd].system = "urn:see-termmap-in-mapParameter"
 * code.coding.system = "http://snomed.info/sct"
 * clinicalStatus from http://va.gov/fhir/ValueSet/problemStatus
 * verificationStatus from http://va.gov/fhir/ValueSet/problemVerificationStatus
+
+Invariant: ConditionProblem-349
+Description: "if Not Null then fixed value #resolved"
+Severity: #warning
 
 Mapping: source-to-ConditionProblem
 Id: vista

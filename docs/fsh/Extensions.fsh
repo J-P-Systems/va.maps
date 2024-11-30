@@ -58,8 +58,18 @@ Description: "Extension account-statementGeneratedDay"
 Context: Account
 * value[x] only integer
 
-Extension: MilitaryServiceConnection
-Id: resource-militaryServiceConnection
-Description: "Extension resource-militaryServiceConnection"
+ValueSet: ResourceServiceConnection
+Title: "ResourceServiceConnection"
+Description: "FHIR ValueSet for Extension ResourceServiceConnection"
+* ^experimental = false
+* ^status = #active
+* ^name = "ResourceServiceConnection"
+* include http://va.gov/fhir/vistaDefinedTerms/409.1#SC "Service Connected"
+* include http://va.gov/fhir/vistaDefinedTerms/409.1#NSC "Not Service Connected"
+
+Extension: ResourceServiceConnection
+Id: resource-serviceConnection
+Description: "Extension resource-serviceConnection"
 Context: Resource
 * value[x] only Coding
+* value[x] from http://va.gov/fhir/ValueSet/ResourceServiceConnection

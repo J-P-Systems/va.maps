@@ -6,7 +6,7 @@ Usage: #definition
 * title = "LocationStatus"
 * status = #active
 * experimental = false
-* description = "Terminology Maps LocationStatus "
+* description = "Terminology Maps LocationStatus"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/LocationStatus-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/LocationStatus"
 * group[0].source = "urn:VAST"

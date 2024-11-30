@@ -14,7 +14,7 @@ Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: LabObservationMicrobiologyBacteriologyObservationgramstain
 * valueString -> "1518: source value from MICROBIOLOGY - GRAM STAIN > GRAM STAIN - GRAM STAIN (63.05-11.6 > 63.29-.01)"
-* code -> "1855: fixed value = http://loinc.org#664-3 Microscopic observation [Identifier] in Specimen by Gram stain"
+* code -> "1855: fixed value = http://loinc.org#664-3 \"Microscopic observation [Identifier] in Specimen by Gram stain\""
 
 Mapping: cdw-to-LabObservationMicrobiologyBacteriologyObservationgramstain
 Id: cdw

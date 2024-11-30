@@ -6,7 +6,7 @@ Usage: #definition
 * title = "VitalsBodyPosition"
 * status = #active
 * experimental = false
-* description = "Terminology Maps VitalsBodyPosition "
+* description = "Terminology Maps VitalsBodyPosition"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VitalsBodyPosition-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/VitalsBodyPosition"
 * group[0].source = "http://terminology.hl7.org/CodeSystem/VHA"

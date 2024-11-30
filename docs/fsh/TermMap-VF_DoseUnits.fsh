@@ -6,7 +6,7 @@ Usage: #definition
 * title = "DoseUnits"
 * status = #active
 * experimental = false
-* description = "Terminology Maps DoseUnits "
+* description = "Terminology Maps DoseUnits"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/DoseUnits-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/DoseUnits"
 * group[0].source = "http://va.gov/terminology/vistaDefinedTerms/52.0113-2"

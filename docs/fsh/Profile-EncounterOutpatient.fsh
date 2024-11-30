@@ -10,18 +10,44 @@ Description: "This StructureDefinition contains the maps for VistA file VISIT (9
 * location ^slicing.discriminator.path = "$this"
 * location ^slicing.rules = #open
 * location contains va-loc 0..1
-* identifier.value and identifier.system and status and serviceType.coding.code and serviceType.coding.system and subject and period.start and period.end and reasonCode.coding.code and reasonCode.coding.system and diagnosis.condition and location[va-loc].location and class and serviceProvider and participant.individual and participant.type and type and type.coding.system and type.coding.code and type.coding.display and type.text MS
+* extension contains http://va.gov/fhir/StructureDefinition/resource-serviceConnection named resource-serviceConnection 0..1
+* identifier.value and identifier.system and status and extension[http://va.gov/fhir/StructureDefinition/resource-serviceConnection].valueCoding and serviceType.coding.code and serviceType.coding.system and subject and period.start and period.end and reasonCode.coding.code and reasonCode.coding.system and diagnosis.condition and location[va-loc].location and class and serviceProvider and participant.individual and participant.type and type and type.coding.system and type.coding.code and type.coding.display and type.text MS
 * subject only Reference(Patient)
 * diagnosis.condition only Reference(ConditionEncounterDiagnosis)
 * location[va-loc].location only Reference(Location)
 * serviceProvider only Reference(Organization)
 * participant.individual only Reference(Practitioner)
 * identifier.system = "http://va.gov/identifiers/$Sta3n/9000010-15001"
+* status obeys EncounterOutpatient-430
+* status obeys EncounterOutpatient-431
+* status obeys EncounterOutpatient-432
+* extension[http://va.gov/fhir/StructureDefinition/resource-serviceConnection].valueCoding obeys EncounterOutpatient-2035
+* extension[http://va.gov/fhir/StructureDefinition/resource-serviceConnection].valueCoding obeys EncounterOutpatient-2036
 * serviceType.coding.system = "http://va.gov/terminology/VistADefinedTerms/9000010-.07"
 * reasonCode.coding.system = "urn:see-termmap-in-mapParameter"
 * class from http://va.gov/fhir/ValueSet/encounterClass
 * participant.type from http://va.gov/fhir/ValueSet/encounterParticipationType
 * type.coding.system = "http://www.ama-assn.org/go/cpt"
+
+Invariant: EncounterOutpatient-430
+Description: "if null or > now then fixed value #planned"
+Severity: #warning
+
+Invariant: EncounterOutpatient-431
+Description: "if not null, < now, .18 null then fixed value #in-progress"
+Severity: #warning
+
+Invariant: EncounterOutpatient-432
+Description: "if not null, < now then fixed value #finished"
+Severity: #warning
+
+Invariant: EncounterOutpatient-2035
+Description: "if SERVICE CONNECTED then fixed value http://va.gov/fhir/vistaDefinedTerms/409.1#SC \"Service Connected\""
+Severity: #warning
+
+Invariant: EncounterOutpatient-2036
+Description: "if Not SERVICE CONNECTED then fixed value http://va.gov/fhir/vistaDefinedTerms/409.1#NSC \"Not Service Connected\""
+Severity: #warning
 
 Mapping: source-to-EncounterOutpatient
 Id: vista
@@ -32,6 +58,8 @@ Source: EncounterOutpatient
 * status -> "430: fixed value = #planned when VISIT - VISIT/ADMIT DATE&TIME (9000010-.01) case null or > now"
 * status -> "431: fixed value = #in-progress when VISIT - VISIT/ADMIT DATE&TIME (9000010-.01) case not null, < now, .18 null"
 * status -> "432: fixed value = #finished when VISIT - CHECK OUT DATE&TIME (9000010-.18) case not null, < now"
+* extension[http://va.gov/fhir/StructureDefinition/resource-serviceConnection].valueCoding -> "2035: fixed value = http://va.gov/fhir/vistaDefinedTerms/409.1#SC \"Service Connected\" when OUTPATIENT ENCOUNTER - APPOINTMENT TYPE > APPOINTMENT TYPE - NAME (409.68-.1 > 409.1-.01) case SERVICE CONNECTED" "Outpatient Encounter points to Visit (409.68-.05)"
+* extension[http://va.gov/fhir/StructureDefinition/resource-serviceConnection].valueCoding -> "2036: fixed value = http://va.gov/fhir/vistaDefinedTerms/409.1#NSC \"Not Service Connected\" when OUTPATIENT ENCOUNTER - APPOINTMENT TYPE > APPOINTMENT TYPE - NAME (409.68-.1 > 409.1-.01) case Not SERVICE CONNECTED" "Outpatient Encounter points to Visit (409.68-.05)"
 * serviceType.coding.code -> "439: source value from VISIT - SERVICE CATEGORY (9000010-.07)"
 * serviceType.coding.system -> "439-1: fixed value = http://va.gov/terminology/VistADefinedTerms/9000010-.07" "from mapParameter 1"
 * subject -> "440: reference from VISIT - PATIENT NAME (9000010-.05)"
@@ -61,6 +89,8 @@ Source: EncounterOutpatient
 * status -> "Immun.ImmunizationContraRefusalEvent.VisitDateTime,Outpat.Visit.VisitDateTime,Outpat.VisitLogic.VisitDateTime,Outpat.Workload.VisitDateTime"
 * status -> "Immun.ImmunizationContraRefusalEvent.VisitDateTime,Outpat.Visit.VisitDateTime,Outpat.VisitLogic.VisitDateTime,Outpat.Workload.VisitDateTime"
 * status -> "Outpat.Visit.CheckOutDateTime,Outpat.Workload.CheckOutDateTime"
+* extension[http://va.gov/fhir/StructureDefinition/resource-serviceConnection].valueCoding -> "Outpat.Visit.AppointmentTypeIEN,Outpat.Workload.AppointmentTypeIEN\nDim.AppointmentType.AppointmentType"
+* extension[http://va.gov/fhir/StructureDefinition/resource-serviceConnection].valueCoding -> "Outpat.Visit.AppointmentTypeIEN,Outpat.Workload.AppointmentTypeIEN\nDim.AppointmentType.AppointmentType"
 * serviceType.coding.code -> "Outpat.Visit.ServiceCategory,Outpat.Workload.ServiceCategory"
 * subject -> "Outpat.Visit.PatientIEN,Outpat.Workload.PatientIEN"
 * period.start -> "Immun.ImmunizationContraRefusalEvent.VisitDateTime,Outpat.Visit.VisitDateTime,Outpat.VisitLogic.VisitDateTime,Outpat.Workload.VisitDateTime"

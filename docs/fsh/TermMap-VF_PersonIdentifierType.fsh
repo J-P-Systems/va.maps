@@ -6,7 +6,7 @@ Usage: #definition
 * title = "PersonIdentifierType"
 * status = #active
 * experimental = false
-* description = "Terminology Maps PersonIdentifierType "
+* description = "Terminology Maps PersonIdentifierType"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/PersonIdentifierType-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/PersonIdentifierType"
 * group[0].source = "http://va.gov/terminology/vistaDefinedTerms/2.312-5.12"

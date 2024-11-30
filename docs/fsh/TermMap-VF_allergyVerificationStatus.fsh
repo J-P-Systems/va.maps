@@ -2,11 +2,11 @@ Instance: allergyVerificationStatus
 InstanceOf: ConceptMap
 Usage: #definition
 * url = "http://va.gov/fhir/ConceptMap/allergyVerificationStatus"
-* name = "allergyVerificationStatus"
+* name = "AllergyVerificationStatus"
 * title = "allergyVerificationStatus"
 * status = #active
 * experimental = false
-* description = "Terminology Maps allergyVerificationStatus "
+* description = "Terminology Maps allergyVerificationStatus"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/allergyVerificationStatus-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/allergyVerificationStatus"
 * group[0].source = "http://va.gov/terminology/vistaDefinedTerms/120.8-19"
@@ -27,7 +27,7 @@ Title: "allergyVerificationStatus FHIR"
 Description: "FHIR Target ValueSet for Terminology Maps allergyVerificationStatus"
 * ^experimental = false
 * ^status = #active
-* ^name = "allergyVerificationStatus"
+* ^name = "AllergyVerificationStatus"
 * include http://terminology.hl7.org/CodeSystem/allergyintolerance-verification#unconfirmed "unconfirmed"
 * include http://terminology.hl7.org/CodeSystem/allergyintolerance-verification#confirmed "confirmed"
 
@@ -36,6 +36,6 @@ Title: "allergyVerificationStatus VistA"
 Description: "VistA Source ValueSet for Terminology Maps allergyVerificationStatus"
 * ^experimental = false
 * ^status = #active
-* ^name = "allergyVerificationStatus_VistA"
+* ^name = "AllergyVerificationStatus_VistA"
 * include http://va.gov/terminology/vistaDefinedTerms/120.8-19#0 "VERIFIED - NO"
 * include http://va.gov/terminology/vistaDefinedTerms/120.8-19#1 "VERIFIED - YES"

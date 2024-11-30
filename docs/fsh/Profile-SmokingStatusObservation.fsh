@@ -13,7 +13,12 @@ Description: "This StructureDefinition contains the maps for VistA file V HEALTH
 * identifier.system = "http://va.gov/identifiers/$Sta3n/9000010.23"
 * status = #final
 * category[SocialHistory] = http://terminology.hl7.org/CodeSystem/observation-category#social-history
+* code obeys SmokingStatusObservation-1244
 * valueCodeableConcept from http://va.gov/fhir/ValueSet/SmokingStatus
+
+Invariant: SmokingStatusObservation-1244
+Description: "if TOBACCO [C] then fixed value http://loinc.org#72166-2"
+Severity: #warning
 
 Mapping: source-to-SmokingStatusObservation
 Id: vista

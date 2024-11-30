@@ -2,11 +2,11 @@ Instance: providerGender
 InstanceOf: ConceptMap
 Usage: #definition
 * url = "http://va.gov/fhir/ConceptMap/providerGender"
-* name = "providerGender"
+* name = "ProviderGender"
 * title = "providerGender"
 * status = #active
 * experimental = false
-* description = "Terminology Maps providerGender "
+* description = "Terminology Maps providerGender"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/providerGender-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/providerGender"
 * group[0].source = "http://va.gov/terminology/vistaDefinedTerms/200-4"
@@ -25,7 +25,7 @@ Title: "providerGender FHIR"
 Description: "FHIR Target ValueSet for Terminology Maps providerGender"
 * ^experimental = false
 * ^status = #active
-* ^name = "providerGender"
+* ^name = "ProviderGender"
 * include http://hl7.org/fhir/administrative-gender#female 
 * include http://hl7.org/fhir/administrative-gender#male 
 
@@ -34,6 +34,6 @@ Title: "providerGender VistA"
 Description: "VistA Source ValueSet for Terminology Maps providerGender"
 * ^experimental = false
 * ^status = #active
-* ^name = "providerGender_VistA"
+* ^name = "ProviderGender_VistA"
 * include http://va.gov/terminology/vistaDefinedTerms/200-4#F "FEMALE"
 * include http://va.gov/terminology/vistaDefinedTerms/200-4#M "MALE"

@@ -626,15 +626,15 @@ Description: "This StructureDefinition contains the Logical Model for the mapped
 Characteristics: #can-be-target
 * status 0..1 Coding "STATUS (-3)"
 * status from http://va.gov/fhir/ValueSet/AppointmentStatus-vista (preferred)
+* appointmentType 0..1 Reference "APPOINTMENT TYPE (-9.5)"
 * cancellationReason 0..1 Coding "CANCELLATION REASON (-16)"
 * cancellationReason from http://va.gov/fhir/ValueSet/AppointmentCancellationReason-vista (preferred)
 * clinic 0..1 Reference "CLINIC (-.01)"
-* appointmentType 0..1 Reference "APPOINTMENT TYPE (-9.5)"
 * appointmentDatetime 0..1 Element "APPOINTMENT DATE/TIME (-.001)"
 * outpatientEncounter 0..1 Reference "OUTPATIENT ENCOUNTER (-21)"
 * dateApptMade 0..1 Element "DATE APPT. MADE (-20)"
-* clinic only Reference(HospitalLocation44)
 * appointmentType only Reference(AppointmentType4091)
+* clinic only Reference(HospitalLocation44)
 * outpatientEncounter only Reference(OutpatientEncounter40968)
 
 Logical: AppointmentType4091
@@ -651,6 +651,8 @@ Title: "OUTPATIENT ENCOUNTER (409.68)"
 Description: "This StructureDefinition contains the Logical Model for the mapped parts of the source OUTPATIENT ENCOUNTER (409.68)"
 Characteristics: #can-be-target
 * checkOutProcessCompletion 0..1 Element "CHECK OUT PROCESS COMPLETION (-.07)"
+* appointmentType 0..1 Reference "APPOINTMENT TYPE (-.1)"
+* appointmentType only Reference(AppointmentType4091)
 
 Logical: Patient44003
 Id: Patient44003

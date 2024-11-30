@@ -6,7 +6,7 @@ Usage: #definition
 * title = "MaritalStatus"
 * status = #active
 * experimental = false
-* description = "Terminology Maps MaritalStatus "
+* description = "Terminology Maps MaritalStatus"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/MaritalStatus-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/MaritalStatus"
 * group[0].source = "http://va.gov/terminology/vistaDefinedElements/2-.05"

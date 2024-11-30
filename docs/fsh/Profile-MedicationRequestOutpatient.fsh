@@ -22,6 +22,16 @@ Description: "This StructureDefinition contains the maps for VistA file PRESCRIP
 * category = http://terminology.hl7.org/CodeSystem/medicationrequest-category#outpatient
 * extension[http://va.gov/fhir/StructureDefinition/medicationrequest-includeIndicationInSig].valueBoolean.extension contains http://hl7.org/fhir/StructureDefinition/11179-permitted-value-conceptmap named 11179-permitted-value-conceptmap 0..1
 * extension[http://va.gov/fhir/StructureDefinition/medicationrequest-includeIndicationInSig].valueBoolean.extension[11179-permitted-value-conceptmap].valueCanonical = "http://va.gov/fhir/ConceptMap/Boolean"
+* extension[http://va.gov/fhir/StructureDefinition/medicationrequest-pharmacyOrderStatus].valueCoding.code obeys MedicationRequestOutpatient-1746
+* extension[http://va.gov/fhir/StructureDefinition/medicationrequest-pharmacyOrderStatus].valueCoding.system obeys MedicationRequestOutpatient-1746-1
+
+Invariant: MedicationRequestOutpatient-1746
+Description: "if P then fixed value #active-parked"
+Severity: #warning
+
+Invariant: MedicationRequestOutpatient-1746-1
+Description: "if P then fixed value http://va.gov/terminology/vistaDefinedTerms/52-100"
+Severity: #warning
 
 Mapping: source-to-MedicationRequestOutpatient
 Id: vista

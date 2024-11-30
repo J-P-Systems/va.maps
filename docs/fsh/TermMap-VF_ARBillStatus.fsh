@@ -6,7 +6,7 @@ Usage: #definition
 * title = "ARBillStatus"
 * status = #active
 * experimental = false
-* description = "Terminology Maps ARBillStatus "
+* description = "Terminology Maps ARBillStatus"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/ARBillStatus-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/ARBillStatus"
 * group[0].source = "http://va.gov/terminology/vistaDefinedTerms/430.3-.01"

@@ -2,11 +2,11 @@ Instance: ethnicityCategory
 InstanceOf: ConceptMap
 Usage: #definition
 * url = "http://va.gov/fhir/ConceptMap/ethnicityCategory"
-* name = "ethnicityCategory"
+* name = "EthnicityCategory"
 * title = "ethnicityCategory"
 * status = #active
 * experimental = false
-* description = "Terminology Maps ethnicityCategory "
+* description = "Terminology Maps ethnicityCategory"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/ethnicityCategory-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/ethnicityCategory"
 * group[0].source = "http://va.gov/terminology/vistaDefinedTerms/2-6"
@@ -39,7 +39,7 @@ Title: "ethnicityCategory FHIR"
 Description: "FHIR Target ValueSet for Terminology Maps ethnicityCategory"
 * ^experimental = false
 * ^status = #active
-* ^name = "ethnicityCategory"
+* ^name = "EthnicityCategory"
 * include http://terminology.hl7.org/CodeSystem/v3-NullFlavor#UNK 
 * include http://terminology.hl7.org/CodeSystem/v3-NullFlavor#ASKU 
 * include urn:oid:2.16.840.1.113883.6.238#2135-2 
@@ -50,7 +50,7 @@ Title: "ethnicityCategory VistA"
 Description: "VistA Source ValueSet for Terminology Maps ethnicityCategory"
 * ^experimental = false
 * ^status = #active
-* ^name = "ethnicityCategory_VistA"
+* ^name = "EthnicityCategory_VistA"
 * include http://va.gov/terminology/vistaDefinedTerms/2-6#_Unknown_at_this_time_ "*Unknown at this time*"
 * include http://va.gov/terminology/vistaDefinedTerms/2-6#D "DECLINED TO ANSWER"
 * include http://va.gov/terminology/vistaDefinedTerms/2-6#U "UNKNOWN BY PATIENT"

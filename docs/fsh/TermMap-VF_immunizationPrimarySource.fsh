@@ -2,11 +2,11 @@ Instance: immunizationPrimarySource
 InstanceOf: ConceptMap
 Usage: #definition
 * url = "http://va.gov/fhir/ConceptMap/immunizationPrimarySource"
-* name = "immunizationPrimarySource"
+* name = "ImmunizationPrimarySource"
 * title = "immunizationPrimarySource"
 * status = #active
 * experimental = false
-* description = "Terminology Maps immunizationPrimarySource "
+* description = "Terminology Maps immunizationPrimarySource"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/immunizationPrimarySource-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/immunizationPrimarySource"
 * group[0].source = "http://terminology.hl7.org/CodeSystem/VHA"
@@ -53,7 +53,7 @@ Title: "immunizationPrimarySource FHIR"
 Description: "FHIR Target ValueSet for Terminology Maps immunizationPrimarySource"
 * ^experimental = false
 * ^status = #active
-* ^name = "immunizationPrimarySource"
+* ^name = "ImmunizationPrimarySource"
 * include http://hl7.org/fhir/StructureDefinition/boolean#false 
 * include http://hl7.org/fhir/StructureDefinition/boolean#true 
 
@@ -62,7 +62,7 @@ Title: "immunizationPrimarySource VistA"
 Description: "VistA Source ValueSet for Terminology Maps immunizationPrimarySource"
 * ^experimental = false
 * ^status = #active
-* ^name = "immunizationPrimarySource_VistA"
+* ^name = "ImmunizationPrimarySource_VistA"
 * include http://terminology.hl7.org/CodeSystem/VHA#5197425 "HISTORICAL INFORMATION - FROM BIRTH CERTIFICATE"
 * include http://terminology.hl7.org/CodeSystem/VHA#5197421 "HISTORICAL INFORMATION - FROM OTHER PROVIDER"
 * include http://terminology.hl7.org/CodeSystem/VHA#5197424 "HISTORICAL INFORMATION - FROM OTHER REGISTRY"

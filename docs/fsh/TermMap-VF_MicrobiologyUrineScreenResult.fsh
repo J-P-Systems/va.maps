@@ -6,7 +6,7 @@ Usage: #definition
 * title = "MicrobiologyUrineScreenResult"
 * status = #active
 * experimental = false
-* description = "Terminology Maps MicrobiologyUrineScreenResult "
+* description = "Terminology Maps MicrobiologyUrineScreenResult"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/MicrobiologyUrineScreenResult-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/MicrobiologyUrineScreenResult"
 * group[0].source = "http://va.gov/terminology/vistaDefinedTerms/63.05-11.57"

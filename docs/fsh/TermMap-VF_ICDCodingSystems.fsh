@@ -6,7 +6,7 @@ Usage: #definition
 * title = "ICDCodingSystems"
 * status = #active
 * experimental = false
-* description = "Terminology Maps ICDCodingSystems "
+* description = "Terminology Maps ICDCodingSystems"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/ICDCodingSystems-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/ICDCodingSystems"
 * group[0].source = "http://va.gov/terminology/vistaDefinedElements/80.4-.01"

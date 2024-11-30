@@ -12,6 +12,16 @@ Description: "This StructureDefinition contains the maps for VistA file PRESCRIP
 * type = http://terminology.hl7.org/CodeSystem/v3-ActCode#PF
 * dosageInstruction.doseAndRate.doseQuantity.code from http://va.gov/fhir/ValueSet/DoseUnits
 * medicationCodeableConcept.coding.system = "urn:oid:2.16.840.1.113883.6.233"
+* status obeys MedicationDispensePartial-1577
+* status obeys MedicationDispensePartial-1578
+
+Invariant: MedicationDispensePartial-1577
+Description: "if not null then fixed value #completed"
+Severity: #warning
+
+Invariant: MedicationDispensePartial-1578
+Description: "if null then fixed value #in-progress"
+Severity: #warning
 
 Mapping: source-to-MedicationDispensePartial
 Id: vista

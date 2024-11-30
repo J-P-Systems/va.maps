@@ -6,7 +6,7 @@ Usage: #definition
 * title = "OrderPatientClass"
 * status = #active
 * experimental = false
-* description = "Terminology Maps OrderPatientClass "
+* description = "Terminology Maps OrderPatientClass"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/OrderPatientClass-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/OrderPatientClass"
 * group[0].source = "http://va.gov/terminology/vistaDefinedElements/100-10"

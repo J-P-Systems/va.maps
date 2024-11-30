@@ -2,11 +2,11 @@ Instance: inferredCVX
 InstanceOf: ConceptMap
 Usage: #definition
 * url = "http://va.gov/fhir/ConceptMap/inferredCVX"
-* name = "inferredCVX"
+* name = "InferredCVX"
 * title = "inferredCVX"
 * status = #active
 * experimental = false
-* description = "Terminology Maps inferredCVX "
+* description = "Terminology Maps inferredCVX"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/inferredCVX-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/inferredCVX"
 * group[0].source = "http://va.gov/terminology/vistaDefinedTerms/9999999.14-.01"
@@ -133,7 +133,7 @@ Title: "inferredCVX FHIR"
 Description: "FHIR Target ValueSet for Terminology Maps inferredCVX"
 * ^experimental = false
 * ^status = #active
-* ^name = "inferredCVX"
+* ^name = "InferredCVX"
 * include http://hl7.org/fhir/sid/cvx#88 
 * include http://hl7.org/fhir/sid/cvx#109 
 * include http://hl7.org/fhir/sid/cvx#139 
@@ -144,7 +144,7 @@ Title: "inferredCVX VistA"
 Description: "VistA Source ValueSet for Terminology Maps inferredCVX"
 * ^experimental = false
 * ^status = #active
-* ^name = "inferredCVX_VistA"
+* ^name = "InferredCVX_VistA"
 * include http://va.gov/terminology/vistaDefinedTerms/9999999.14-.01#DECLINED_FLU_IMM__HISTORICAL_ "DECLINED FLU IMM (HISTORICAL)"
 * include http://va.gov/terminology/vistaDefinedTerms/9999999.14-.01#DECLINED_PNEUMOCOCCAL__HISTORICAL_ "DECLINED PNEUMOCOCCAL (HISTORICAL)"
 * include http://va.gov/terminology/vistaDefinedTerms/9999999.14-.01#DECLINED_TETANUS_DIPT__HISTORICAL_ "DECLINED TETANUS/DIPT (HISTORICAL)"

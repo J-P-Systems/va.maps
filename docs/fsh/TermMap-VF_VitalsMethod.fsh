@@ -6,7 +6,7 @@ Usage: #definition
 * title = "VitalsMethod"
 * status = #active
 * experimental = false
-* description = "Terminology Maps VitalsMethod "
+* description = "Terminology Maps VitalsMethod"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VitalsMethod-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/VitalsMethod"
 * group[0].source = "http://terminology.hl7.org/CodeSystem/VHA"

@@ -6,7 +6,7 @@ Usage: #definition
 * title = "PractitionerCountry"
 * status = #active
 * experimental = false
-* description = "Terminology Maps PractitionerCountry "
+* description = "Terminology Maps PractitionerCountry"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/PractitionerCountry-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/PractitionerCountry"
 * group[0].source = "http://va.gov/terminology/vistaDefinedTerms/200-.1215"

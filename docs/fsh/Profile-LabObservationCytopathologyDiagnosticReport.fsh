@@ -33,7 +33,7 @@ Source: LabObservationCytopathologyDiagnosticReport
 * identifier.system -> "1603-1: fixed value = http://va.gov/identifiers/$Sta3n/63.51" "from mapParameter 1"
 * basedOn -> "1688: reference from CYTOPATHOLOGY - ORDERED TEST > ORDERED TEST - CPRS ORDER # (63.09-.35 > 63.51-3)"
 * code.text -> "1815: source value from CYTOPATHOLOGY - TIU REFERENCE DATE/TIME - CY > TIU REFERENCE DATE/TIME - CY - TIU ENTRY POINTER - CY > TIU DOCUMENT - DOCUMENT TYPE > TIU DOCUMENT DEFINITION - NAME (63.09-.16 > 63.47-1 > 8925-.01 > 8925.1-.01)" "Per KBS discussion, this value should be Local Title + Specimen.type.text. The local title is this map row; Specimen.type.text is key 1695."
-* code -> "1816: fixed value = http://loinc.org#26438-2 Cytology studies (set)"
+* code -> "1816: fixed value = http://loinc.org#26438-2 \"Cytology studies (set)\""
 * code.coding.code -> "1817: source value from CYTOPATHOLOGY - TIU REFERENCE DATE/TIME - CY > TIU REFERENCE DATE/TIME - CY - TIU ENTRY POINTER - CY > TIU DOCUMENT - DOCUMENT TYPE > TIU DOCUMENT DEFINITION - VHA ENTERPRISE STANDARD TITLE > TIU VHA ENTERPRISE STANDARD TITLE - CODING SYSTEM > CODING SYSTEM - CODE > CODE - CODE (63.09-.16 > 63.47-1 > 8925-.01 > 8925.1-1501 > 8926.1-2 > 8926.12-.02 > 8926.121-.01)"
 * code.coding.system -> "1817-1: fixed value = http://loinc.org" "from mapParameter 1"
 * status -> "1418: terminologyMaps using VF_DiagnosticReportLabStatus on CYTOPATHOLOGY - ORDERED TEST > ORDERED TEST - DISPOSITION (63.09-.35 > 63.51-10)" "US Core 5 has new constraints: if status is partial, preliminary, final, ammended, corrected or appended effective[x] and issued are required"

@@ -6,7 +6,7 @@ Usage: #definition
 * title = "AppointmentCancellationReason"
 * status = #active
 * experimental = false
-* description = "Terminology Maps AppointmentCancellationReason "
+* description = "Terminology Maps AppointmentCancellationReason"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/AppointmentCancellationReason-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/AppointmentCancellationReason"
 * group[0].source = "http://va.gov/terminology/vistaDefinedTerms/2.98-16"

@@ -6,7 +6,7 @@ Usage: #definition
 * title = "ImmunizationReaction"
 * status = #active
 * experimental = false
-* description = "Terminology Maps ImmunizationReaction "
+* description = "Terminology Maps ImmunizationReaction"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/ImmunizationReaction-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/ImmunizationReaction"
 * group[0].source = "http://va.gov/terminology/vistaDefinedElements/9000010.11-.06"

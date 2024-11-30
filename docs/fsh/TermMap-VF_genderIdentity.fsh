@@ -2,11 +2,11 @@ Instance: genderIdentity
 InstanceOf: ConceptMap
 Usage: #definition
 * url = "http://va.gov/fhir/ConceptMap/genderIdentity"
-* name = "genderIdentity"
+* name = "GenderIdentity"
 * title = "genderIdentity"
 * status = #active
 * experimental = false
-* description = "Terminology Maps genderIdentity "
+* description = "Terminology Maps genderIdentity"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/genderIdentity-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/genderIdentity"
 * group[0].source = "http://va.gov/terminology/vistaDefinedTerms/2-.024"
@@ -52,7 +52,7 @@ Title: "genderIdentity FHIR"
 Description: "FHIR Target ValueSet for Terminology Maps genderIdentity"
 * ^experimental = false
 * ^status = #active
-* ^name = "genderIdentity"
+* ^name = "GenderIdentity"
 * include http://hl7.org/fhir/gender-identity#non-disclose "does not wish to disclose"
 * include http://hl7.org/fhir/gender-identity#female "female"
 * include http://hl7.org/fhir/gender-identity#male "male"
@@ -66,7 +66,7 @@ Title: "genderIdentity VistA"
 Description: "VistA Source ValueSet for Terminology Maps genderIdentity"
 * ^experimental = false
 * ^status = #active
-* ^name = "genderIdentity_VistA"
+* ^name = "GenderIdentity_VistA"
 * include http://va.gov/terminology/vistaDefinedTerms/2-.024#N "DOES NOT WISH TO DISCLOSE"
 * include http://va.gov/terminology/vistaDefinedTerms/2-.024#F "FEMALE"
 * include http://va.gov/terminology/vistaDefinedTerms/2-.024#M "MALE"

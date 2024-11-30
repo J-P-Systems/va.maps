@@ -2,11 +2,11 @@ Instance: deviceTypePacemaker
 InstanceOf: ConceptMap
 Usage: #definition
 * url = "http://va.gov/fhir/ConceptMap/deviceTypePacemaker"
-* name = "deviceTypePacemaker"
+* name = "DeviceTypePacemaker"
 * title = "deviceTypePacemaker"
 * status = #active
 * experimental = false
-* description = "Terminology Maps deviceTypePacemaker "
+* description = "Terminology Maps deviceTypePacemaker"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/deviceTypePacemaker-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/deviceTypePacemaker"
 * group[0].source = "http://va.gov/terminology/vistaDefinedTerms/698.4-1"
@@ -51,7 +51,7 @@ Title: "deviceTypePacemaker FHIR"
 Description: "FHIR Target ValueSet for Terminology Maps deviceTypePacemaker"
 * ^experimental = false
 * ^status = #active
-* ^name = "deviceTypePacemaker"
+* ^name = "DeviceTypePacemaker"
 * include http://snomed.info/sct#360129009 "Cardiac pacemaker lead (physical object)"
 * include http://snomed.info/sct#118378005 "Pacemaker pulse generator, device (physical object)"
 * include http://snomed.info/sct#303476002 "Cardiovascular equipment (physical object)"
@@ -62,7 +62,7 @@ Title: "deviceTypePacemaker VistA"
 Description: "VistA Source ValueSet for Terminology Maps deviceTypePacemaker"
 * ^experimental = false
 * ^status = #active
-* ^name = "deviceTypePacemaker_VistA"
+* ^name = "DeviceTypePacemaker_VistA"
 * include http://va.gov/terminology/vistaDefinedTerms/698.4-1#A "'A' FOR A LEAD;"
 * include http://va.gov/terminology/vistaDefinedTerms/698.4-1#AV "'AV' FOR BOTH A LEAD AND V LEAD;"
 * include http://va.gov/terminology/vistaDefinedTerms/698.4-1#G "'G' FOR GENERATOR;"

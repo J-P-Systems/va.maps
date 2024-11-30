@@ -6,7 +6,7 @@ Usage: #definition
 * title = "RefillRequestStatus"
 * status = #active
 * experimental = false
-* description = "Terminology Maps RefillRequestStatus "
+* description = "Terminology Maps RefillRequestStatus"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/RefillRequestStatus-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/RefillRequestStatus"
 * group[0].source = "http://va.gov/terminology/vistaDefinedElements/52.43-5"

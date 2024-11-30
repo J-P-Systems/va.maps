@@ -2,11 +2,11 @@ Instance: encounterProblemVerificationStatus
 InstanceOf: ConceptMap
 Usage: #definition
 * url = "http://va.gov/fhir/ConceptMap/encounterProblemVerificationStatus"
-* name = "encounterProblemVerificationStatus"
+* name = "EncounterProblemVerificationStatus"
 * title = "encounterProblemVerificationStatus"
 * status = #active
 * experimental = false
-* description = "Terminology Maps encounterProblemVerificationStatus "
+* description = "Terminology Maps encounterProblemVerificationStatus"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/encounterProblemVerificationStatus-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/encounterProblemVerificationStatus"
 * group[0].source = "http://va.gov/terminology/vistaDefinedTerms/9000010.07-.06"
@@ -45,7 +45,7 @@ Title: "encounterProblemVerificationStatus FHIR"
 Description: "FHIR Target ValueSet for Terminology Maps encounterProblemVerificationStatus"
 * ^experimental = false
 * ^status = #active
-* ^name = "encounterProblemVerificationStatus"
+* ^name = "EncounterProblemVerificationStatus"
 * include http://terminology.hl7.org/CodeSystem/condition-ver-status#provisional 
 * include http://terminology.hl7.org/CodeSystem/condition-ver-status#unconfirmed 
 * include http://terminology.hl7.org/CodeSystem/condition-ver-status#differential 
@@ -55,7 +55,7 @@ Title: "encounterProblemVerificationStatus VistA"
 Description: "VistA Source ValueSet for Terminology Maps encounterProblemVerificationStatus"
 * ^experimental = false
 * ^status = #active
-* ^name = "encounterProblemVerificationStatus_VistA"
+* ^name = "EncounterProblemVerificationStatus_VistA"
 * include http://va.gov/terminology/vistaDefinedTerms/9000010.07-.06#C "CONSIDER"
 * include http://va.gov/terminology/vistaDefinedTerms/9000010.07-.06#D "DOUBTFUL"
 * include http://va.gov/terminology/vistaDefinedTerms/9000010.07-.06#F "FOLLOW UP"

@@ -2,11 +2,11 @@ Instance: birthSex
 InstanceOf: ConceptMap
 Usage: #definition
 * url = "http://va.gov/fhir/ConceptMap/birthSex"
-* name = "birthSex"
+* name = "BirthSex"
 * title = "birthSex"
 * status = #active
 * experimental = false
-* description = "Terminology Maps birthSex "
+* description = "Terminology Maps birthSex"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/birthSex-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/birthSex"
 * group[0].source = "http://va.gov/terminology/vistaDefinedTerms/2-.02"
@@ -34,7 +34,7 @@ Title: "birthSex FHIR"
 Description: "FHIR Target ValueSet for Terminology Maps birthSex"
 * ^experimental = false
 * ^status = #active
-* ^name = "birthSex"
+* ^name = "BirthSex"
 * include http://terminology.hl7.org/CodeSystem/v3-AdministrativeGender#F "female"
 * include http://terminology.hl7.org/CodeSystem/v3-AdministrativeGender#M "male"
 * include http://terminology.hl7.org/CodeSystem/v3-NullFlavor#UNK "unknown"
@@ -44,7 +44,7 @@ Title: "birthSex VistA"
 Description: "VistA Source ValueSet for Terminology Maps birthSex"
 * ^experimental = false
 * ^status = #active
-* ^name = "birthSex_VistA"
+* ^name = "BirthSex_VistA"
 * include http://va.gov/terminology/vistaDefinedTerms/2-.02#F "FEMALE"
 * include http://va.gov/terminology/vistaDefinedTerms/2-.02#M "MALE"
 * include http://va.gov/terminology/vistaDefinedTerms/2-.02#[NULL] "[NULL]"

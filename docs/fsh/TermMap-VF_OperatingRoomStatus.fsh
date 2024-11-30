@@ -6,7 +6,7 @@ Usage: #definition
 * title = "OperatingRoomStatus"
 * status = #active
 * experimental = false
-* description = "Terminology Maps OperatingRoomStatus "
+* description = "Terminology Maps OperatingRoomStatus"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/OperatingRoomStatus-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/OperatingRoomStatus"
 * group[0].source = "http://va.gov/terminology/vistaDefinedTerms/131.7-99"

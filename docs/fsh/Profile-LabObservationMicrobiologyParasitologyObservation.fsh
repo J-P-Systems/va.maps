@@ -8,15 +8,25 @@ Description: "This StructureDefinition contains the maps for VistA file MICROBIO
 * performer only Reference(Organization or Practitioner)
 * specimen only Reference(LabObservationMicrobiologySpecimen)
 * subject only Reference(Patient)
+* code obeys LabObservationMicrobiologyParasitologyObservation-1528
 * status from http://va.gov/fhir/ValueSet/LabObservationStatus
 * identifier.system = "http://va.gov/identifiers/$Sta3n/63.05"
+* code.coding.system obeys LabObservationMicrobiologyParasitologyObservation-1480-1
 * category = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
+
+Invariant: LabObservationMicrobiologyParasitologyObservation-1528
+Description: "if NULL then fixed value http://loinc.org#42807-8 \"Parasite identified in Isolate\""
+Severity: #warning
+
+Invariant: LabObservationMicrobiologyParasitologyObservation-1480-1
+Description: "if Not NULL then fixed value http://loinc.org"
+Severity: #warning
 
 Mapping: source-to-LabObservationMicrobiologyParasitologyObservation
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: LabObservationMicrobiologyParasitologyObservation
-* code -> "1528: fixed value = http://loinc.org#42807-8 Parasite identified in Isolate when MICROBIOLOGY - ORDERED TEST > ORDERED TEST - LAB TEST ORDERED > LABORATORY TEST - SITE/SPECIMEN > SITE/SPECIMEN - LOINC CODE > LAB LOINC (63.05-.35 > 63.5-13 > 60-100 > 60.01-95.3 > 95.3-) case NULL"
+* code -> "1528: fixed value = http://loinc.org#42807-8 \"Parasite identified in Isolate\" when MICROBIOLOGY - ORDERED TEST > ORDERED TEST - LAB TEST ORDERED > LABORATORY TEST - SITE/SPECIMEN > SITE/SPECIMEN - LOINC CODE > LAB LOINC (63.05-.35 > 63.5-13 > 60-100 > 60.01-95.3 > 95.3-) case NULL"
 * status -> "1489: terminologyMaps using VF_LabObservationStatus on MICROBIOLOGY - PARASITE RPT STATUS (63.05-15)"
 * valueString -> "1857: source value from MICROBIOLOGY - PARASITE > PARASITE - PARASITE > ETIOLOGY FIELD - NAME (63.05-16 > 63.34-.01 > 61.2-.01)"
 * effectiveDateTime -> "1450: source value from MICROBIOLOGY - DATE/TIME SPECIMEN TAKEN (63.05-.01)"

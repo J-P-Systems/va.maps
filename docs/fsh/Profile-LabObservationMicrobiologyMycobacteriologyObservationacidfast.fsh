@@ -14,7 +14,7 @@ Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: LabObservationMicrobiologyMycobacteriologyObservationacidfast
 * valueString -> "1519: source value from MICROBIOLOGY - ACID FAST STAIN (63.05-24)"
-* code -> "1856: fixed value = http://loinc.org#11545-1 Microscopic observation [Identifier] in Specimen by Acid fast stain"
+* code -> "1856: fixed value = http://loinc.org#11545-1 \"Microscopic observation [Identifier] in Specimen by Acid fast stain\""
 
 Mapping: cdw-to-LabObservationMicrobiologyMycobacteriologyObservationacidfast
 Id: cdw

@@ -2,11 +2,11 @@ Instance: documentReferencedocStatus
 InstanceOf: ConceptMap
 Usage: #definition
 * url = "http://va.gov/fhir/ConceptMap/documentReferencedocStatus"
-* name = "documentReferencedocStatus"
+* name = "DocumentReferencedocStatus"
 * title = "documentReferencedocStatus"
 * status = #active
 * experimental = false
-* description = "Terminology Maps documentReferencedocStatus "
+* description = "Terminology Maps documentReferencedocStatus"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/documentReferencedocStatus-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/documentReferencedocStatus"
 * group[0].source = "http://terminology.hl7.org/CodeSystem/VHA"
@@ -61,7 +61,7 @@ Title: "documentReferencedocStatus FHIR"
 Description: "FHIR Target ValueSet for Terminology Maps documentReferencedocStatus"
 * ^experimental = false
 * ^status = #active
-* ^name = "documentReferencedocStatus"
+* ^name = "DocumentReferencedocStatus"
 * include http://hl7.org/fhir/composition-status#preliminary 
 * include http://hl7.org/fhir/composition-status#amended 
 * include http://hl7.org/fhir/composition-status#final 
@@ -72,7 +72,7 @@ Title: "documentReferencedocStatus VistA"
 Description: "VistA Source ValueSet for Terminology Maps documentReferencedocStatus"
 * ^experimental = false
 * ^status = #active
-* ^name = "documentReferencedocStatus_VistA"
+* ^name = "DocumentReferencedocStatus_VistA"
 * include http://terminology.hl7.org/CodeSystem/VHA#4696298 "ACTIVE"
 * include http://terminology.hl7.org/CodeSystem/VHA#4501286 "AMENDED"
 * include http://terminology.hl7.org/CodeSystem/VHA#4501014 "COMPLETED"

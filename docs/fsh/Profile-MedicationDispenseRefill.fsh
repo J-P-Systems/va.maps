@@ -11,6 +11,21 @@ Description: "This StructureDefinition contains the maps for VistA file PRESCRIP
 * type = http://terminology.hl7.org/CodeSystem/v3-ActCode#RF
 * dosageInstruction.doseAndRate.doseQuantity.code from http://va.gov/fhir/ValueSet/DoseUnits
 * medicationCodeableConcept.coding.system = "urn:oid:2.16.840.1.113883.6.233"
+* status obeys MedicationDispenseRefill-869
+* status obeys MedicationDispenseRefill-819
+* status obeys MedicationDispenseRefill-1555
+
+Invariant: MedicationDispenseRefill-869
+Description: "if not null then fixed value #completed"
+Severity: #warning
+
+Invariant: MedicationDispenseRefill-819
+Description: "if null then fixed value #in-progress"
+Severity: #warning
+
+Invariant: MedicationDispenseRefill-1555
+Description: "if null then fixed value #in-progress"
+Severity: #warning
 
 Mapping: source-to-MedicationDispenseRefill
 Id: vista

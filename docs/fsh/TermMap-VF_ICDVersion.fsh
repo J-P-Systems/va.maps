@@ -6,7 +6,7 @@ Usage: #definition
 * title = "ICDVersion"
 * status = #active
 * experimental = false
-* description = "Terminology Maps ICDVersion "
+* description = "Terminology Maps ICDVersion"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/ICDVersion-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/ICDVersion"
 * group[0].source = "urn:undefined"

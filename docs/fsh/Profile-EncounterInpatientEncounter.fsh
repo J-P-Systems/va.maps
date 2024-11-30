@@ -30,6 +30,9 @@ Description: "This StructureDefinition contains the maps for VistA file PTF (45)
 * class = http://terminology.hl7.org/CodeSystem/v3-ActCode#IMP
 * identifier[va-IA].system = "http://va.gov/identifiers/$Sta3n/45-2.1"
 * identifier[va-IA].type.text = "Internal Admission #"
+* status obeys EncounterInpatientEncounter-433
+* status obeys EncounterInpatientEncounter-434
+* status obeys EncounterInpatientEncounter-435
 * participant.type.coding = http://terminology.hl7.org/CodeSystem/v3-ParticipationType#PPRF
 * reasonCode[va-principle].coding.system = "urn:see-termmap-in-mapParameter"
 * diagnosis.rank = 1
@@ -39,6 +42,18 @@ Description: "This StructureDefinition contains the maps for VistA file PTF (45)
 * hospitalization.admitSource.coding from http://va.gov/fhir/ValueSet/SourceOfAdmission
 * hospitalization.dischargeDisposition.coding.system = "http://va.gov/terminology/vistaDefinedTerms/45.6"
 * type.coding.system = "http://www.ama-assn.org/go/cpt"
+
+Invariant: EncounterInpatientEncounter-433
+Description: "if null or > now then fixed value #planned"
+Severity: #warning
+
+Invariant: EncounterInpatientEncounter-434
+Description: "if not null, < now, field 70 null then fixed value #in-progress"
+Severity: #warning
+
+Invariant: EncounterInpatientEncounter-435
+Description: "if not null then fixed value #finished"
+Severity: #warning
 
 Mapping: source-to-EncounterInpatientEncounter
 Id: vista

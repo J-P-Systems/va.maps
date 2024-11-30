@@ -6,7 +6,7 @@ Usage: #definition
 * title = "Religion"
 * status = #active
 * experimental = false
-* description = "Terminology Maps Religion "
+* description = "Terminology Maps Religion"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/Religion-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/Religion"
 * group[0].source = "http://va.gov/terminology/vistaDefinedElements/2-.08"

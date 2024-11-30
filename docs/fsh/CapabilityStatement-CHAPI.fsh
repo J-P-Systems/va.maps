@@ -4,7 +4,7 @@ Title: "Lighthouse Clinical Health API"
 Usage: #definition
 * description = "This CapabilityStatement enumerates the profiles that the API should address, in the estimation of the enterprise mapping team. Some elements may not be appropriate for those cases; consult the actual API specification published by the API provider"
 * status = #draft
-* date = "2024-11-25T07:48:12.122Z"
+* date = "2024-11-30T14:00:37.699Z"
 * kind = #requirements
 * fhirVersion = #4.0.1
 * format[0] = #xml
@@ -14,6 +14,12 @@ Usage: #definition
 * rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/AllergyIntolerance"
 * rest.resource[+].type = #Patient
 * rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/Patient"
+* rest.resource[+].type = #Appointment
+* rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/Appointment"
+* rest.resource[+].type = #Location
+* rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/Location"
+* rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/Location"
+* rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/Location"
 * rest.resource[+].type = #Observation
 * rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/LabObservationSurgicalPathologyObservation"
 * rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/LabObservationChemhemtoxriaserObservation"
@@ -32,9 +38,11 @@ Usage: #definition
 * rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/VitalSignsSpO2"
 * rest.resource[+].type = #Specimen
 * rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/LabObservationChemhemtoxriaserSpecimen"
+* rest.resource[+].type = #Encounter
+* rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/EncounterOutpatient"
+* rest.resource[+].type = #Condition
+* rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/ConditionEncounterDiagnosis"
 * rest.resource[+].type = #Organization
 * rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/Organization"
 * rest.resource[+].type = #Practitioner
 * rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/Practitioner"
-* rest.resource[+].type = #Encounter
-* rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/EncounterOutpatient"

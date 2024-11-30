@@ -16,11 +16,17 @@ Description: "This StructureDefinition contains the maps for VistA file APPOINTM
 * participant ^slicing.discriminator.path = "$this"
 * participant ^slicing.rules = #open
 * participant contains va-clinic 0..1 and va-patient 0..1 and va-appt-clinic 0..1
-* status and cancelationReason and serviceCategory[va-service].coding.code and serviceCategory[va-service].coding.system and serviceType[va-stop-code].coding.code and serviceType[va-stop-code].coding.system and serviceType[va-credit-stop-code].coding.code and serviceType[va-credit-stop-code].coding.system and appointmentType.text and start and end and minutesDuration and created and participant[va-clinic].actor and participant[va-clinic].type.coding.code and participant[va-clinic].status and participant[va-patient].actor and participant[va-patient].type.coding.code and participant[va-patient].status and serviceCategory[va-stop-code].coding.code and serviceCategory[va-stop-code].coding.system and comment and participant[va-appt-clinic].actor and participant[va-appt-clinic].type.coding.code and participant[va-appt-clinic].status and description MS
+* extension contains http://va.gov/fhir/StructureDefinition/resource-serviceConnection named resource-serviceConnection 0..1
+* status and extension[http://va.gov/fhir/StructureDefinition/resource-serviceConnection].valueCoding and cancelationReason and serviceCategory[va-service].coding.code and serviceCategory[va-service].coding.system and serviceType[va-stop-code].coding.code and serviceType[va-stop-code].coding.system and serviceType[va-credit-stop-code].coding.code and serviceType[va-credit-stop-code].coding.system and appointmentType.text and start and end and minutesDuration and created and participant[va-clinic].actor and participant[va-clinic].type.coding.code and participant[va-clinic].status and participant[va-patient].actor and participant[va-patient].type.coding.code and participant[va-patient].status and serviceCategory[va-stop-code].coding.code and serviceCategory[va-stop-code].coding.system and comment and participant[va-appt-clinic].actor and participant[va-appt-clinic].type.coding.code and participant[va-appt-clinic].status and description MS
 * participant[va-clinic].actor only Reference(Location)
 * participant[va-patient].actor only Reference(Patient)
 * participant[va-appt-clinic].actor only Reference(Location)
 * status from http://va.gov/fhir/ValueSet/AppointmentStatus
+* status obeys Appointment-732
+* status obeys Appointment-733
+* status obeys Appointment-734
+* extension[http://va.gov/fhir/StructureDefinition/resource-serviceConnection].valueCoding obeys Appointment-2033
+* extension[http://va.gov/fhir/StructureDefinition/resource-serviceConnection].valueCoding obeys Appointment-2034
 * cancelationReason from http://va.gov/fhir/ValueSet/AppointmentCancellationReason
 * serviceCategory[va-service].coding.system = "http://va.gov/terminology/VistADefinedTerms/44-9"
 * serviceType[va-stop-code].coding.system = "http://va.gov/terminology/VistADefinedTerms/44-8"
@@ -29,9 +35,34 @@ Description: "This StructureDefinition contains the maps for VistA file APPOINTM
 * participant[va-clinic].status = #accepted
 * participant[va-patient].type.coding.code = #PART
 * participant[va-patient].status = #accepted
+* status obeys Appointment-748
 * serviceCategory[va-stop-code].coding.system = "http://va.gov/terminology/VistADefinedTerms/409.3-13.4"
 * participant[va-appt-clinic].type.coding.code = #PART
 * participant[va-appt-clinic].status = #tentative
+
+Invariant: Appointment-732
+Description: "if I, NT, Null; Null check-in date (44.003-309), null check-out date (44.003-303) then fixed value #booked"
+Severity: #warning
+
+Invariant: Appointment-733
+Description: "if I, NT, Null; Non-null check-in date (44.003-309), null check-out date (44.003-303) then fixed value #arrived"
+Severity: #warning
+
+Invariant: Appointment-734
+Description: "if I, NT, Null; Non-null check-in date (44.003-309), non-null check-out date (44.003-303) then fixed value #fulfilled"
+Severity: #warning
+
+Invariant: Appointment-2033
+Description: "if SERVICE CONNECTED then fixed value http://va.gov/fhir/vistaDefinedTerms/409.1#SC \"Service Connected\""
+Severity: #warning
+
+Invariant: Appointment-2034
+Description: "if Not SERVICE CONNECTED then fixed value http://va.gov/fhir/vistaDefinedTerms/409.1#NSC \"Not Service Connected\""
+Severity: #warning
+
+Invariant: Appointment-748
+Description: "if not null then fixed value #waitlist"
+Severity: #warning
 
 Mapping: source-to-Appointment
 Id: vista
@@ -41,6 +72,8 @@ Source: Appointment
 * status -> "732: fixed value = #booked when APPOINTMENT - STATUS (2.98-3) case I, NT, Null; Null check-in date (44.003-309), null check-out date (44.003-303)" "simple maps in Terminology; complex defined here."
 * status -> "733: fixed value = #arrived when APPOINTMENT - STATUS (2.98-3) case I, NT, Null; Non-null check-in date (44.003-309), null check-out date (44.003-303)" "simple maps in Terminology; complex defined here."
 * status -> "734: fixed value = #fulfilled when APPOINTMENT - STATUS (2.98-3) case I, NT, Null; Non-null check-in date (44.003-309), non-null check-out date (44.003-303)" "simple maps in Terminology; complex defined here."
+* extension[http://va.gov/fhir/StructureDefinition/resource-serviceConnection].valueCoding -> "2033: fixed value = http://va.gov/fhir/vistaDefinedTerms/409.1#SC \"Service Connected\" when APPOINTMENT - APPOINTMENT TYPE > APPOINTMENT TYPE - NAME (2.98-9.5 > 409.1-.01) case SERVICE CONNECTED"
+* extension[http://va.gov/fhir/StructureDefinition/resource-serviceConnection].valueCoding -> "2034: fixed value = http://va.gov/fhir/vistaDefinedTerms/409.1#NSC \"Not Service Connected\" when APPOINTMENT - APPOINTMENT TYPE > APPOINTMENT TYPE - NAME (2.98-9.5 > 409.1-.01) case Not SERVICE CONNECTED"
 * cancelationReason -> "735: terminologyMaps using VF_AppointmentCancellationReason on APPOINTMENT - CANCELLATION REASON (2.98-16)"
 * serviceCategory[va-service].coding.code -> "736: source value from APPOINTMENT - CLINIC > HOSPITAL LOCATION - SERVICE (2.98-.01 > 44-9)"
 * serviceCategory[va-service].coding.system -> "736-1: fixed value = http://va.gov/terminology/VistADefinedTerms/44-9" "from mapParameter 1"
@@ -81,6 +114,8 @@ Source: Appointment
 * status -> "Appt.Appointment.AppointmentStatus"
 * status -> "Appt.Appointment.AppointmentStatus"
 * status -> "Appt.Appointment.AppointmentStatus"
+* extension[http://va.gov/fhir/StructureDefinition/resource-serviceConnection].valueCoding -> "Appt.Appointment.AppointmentTypeIEN\nDim.AppointmentType.AppointmentType"
+* extension[http://va.gov/fhir/StructureDefinition/resource-serviceConnection].valueCoding -> "Appt.Appointment.AppointmentTypeIEN\nDim.AppointmentType.AppointmentType"
 * cancelationReason -> "Appt.Appointment.CancellationReasonIEN"
 * serviceCategory[va-service].coding.code -> "Appt.Appointment.LocationIEN\nDim.Location.MedicalService,Dim.Location.MedicalService"
 * serviceType[va-stop-code].coding.code -> "Appt.Appointment.LocationIEN\nDim.Location.PrimaryStopCodeIEN"

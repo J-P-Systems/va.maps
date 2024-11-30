@@ -6,7 +6,7 @@ Usage: #definition
 * title = "CoverageStatusForce"
 * status = #active
 * experimental = false
-* description = "Terminology Maps CoverageStatusForce "
+* description = "Terminology Maps CoverageStatusForce"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/CoverageStatusForce-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/CoverageStatusForce"
 * group[0].source = "http://va.gov/terminology/vistaDefinedTerms/355.32-.04"

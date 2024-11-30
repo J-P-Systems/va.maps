@@ -2,11 +2,11 @@ Instance: adminGender
 InstanceOf: ConceptMap
 Usage: #definition
 * url = "http://va.gov/fhir/ConceptMap/adminGender"
-* name = "adminGender"
+* name = "AdminGender"
 * title = "adminGender"
 * status = #active
 * experimental = false
-* description = "Terminology Maps adminGender "
+* description = "Terminology Maps adminGender"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/adminGender-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/adminGender"
 * group[0].source = "http://va.gov/terminology/vistaDefinedTerms/2-.02"
@@ -52,7 +52,7 @@ Title: "adminGender FHIR"
 Description: "FHIR Target ValueSet for Terminology Maps adminGender"
 * ^experimental = false
 * ^status = #active
-* ^name = "adminGender"
+* ^name = "AdminGender"
 * include http://hl7.org/fhir/administrative-gender#unknown "Unknown"
 * include http://hl7.org/fhir/administrative-gender#female "female"
 * include http://hl7.org/fhir/administrative-gender#male "male"
@@ -63,7 +63,7 @@ Title: "adminGender VistA"
 Description: "VistA Source ValueSet for Terminology Maps adminGender"
 * ^experimental = false
 * ^status = #active
-* ^name = "adminGender_VistA"
+* ^name = "AdminGender_VistA"
 * include http://va.gov/terminology/vistaDefinedTerms/2-.02#N "DOES NOT WISH TO DISCLOSE"
 * include http://va.gov/terminology/vistaDefinedTerms/2-.02#F "FEMALE"
 * include http://va.gov/terminology/vistaDefinedTerms/2-.02#M "MALE"

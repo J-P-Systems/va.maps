@@ -6,7 +6,7 @@ Usage: #definition
 * title = "DiagnosticReportLabStatus"
 * status = #active
 * experimental = false
-* description = "Terminology Maps DiagnosticReportLabStatus "
+* description = "Terminology Maps DiagnosticReportLabStatus"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/DiagnosticReportLabStatus-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/DiagnosticReportLabStatus"
 * group[0].source = "http://va.gov/Terminology/VistADefinedTerms/64.061"

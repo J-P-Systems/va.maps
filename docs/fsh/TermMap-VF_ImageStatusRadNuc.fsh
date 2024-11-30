@@ -6,7 +6,7 @@ Usage: #definition
 * title = "ImageStatusRadNuc"
 * status = #active
 * experimental = false
-* description = "Terminology Maps ImageStatusRadNuc "
+* description = "Terminology Maps ImageStatusRadNuc"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/ImageStatusRadNuc-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/ImageStatusRadNuc"
 * group[0].source = "http://va.gov/terminology/vistaDefinedTerms/74-5"

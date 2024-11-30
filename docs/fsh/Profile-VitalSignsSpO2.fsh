@@ -16,6 +16,14 @@ Description: "This StructureDefinition contains the maps for VistA file GMRV VIT
 * performer only Reference(Organization)
 * subject only Reference(Patient)
 * code.coding 2..*
+* component[FlowRate].valueQuantity.code obeys VitalSignsSpO2-1239-1
+* component[FlowRate].code.coding.system obeys VitalSignsSpO2-1239-2
+* component[FlowRate].code.coding.code obeys VitalSignsSpO2-1239-3
+* component[Concentration].valueQuantity.code obeys VitalSignsSpO2-1240-1
+* component[Concentration].code.coding.system obeys VitalSignsSpO2-1240-2
+* component[Concentration].code.coding.code obeys VitalSignsSpO2-1240-3
+* status obeys VitalSignsSpO2-655
+* status obeys VitalSignsSpO2-656
 * category = http://terminology.hl7.org/CodeSystem/observation-category#vital-signs
 * identifier.system = "http://va.gov/identifiers/$Sta3n/120.5"
 * code.coding from http://va.gov/fhir/ValueSet/VitalsCodes
@@ -29,6 +37,38 @@ Description: "This StructureDefinition contains the maps for VistA file GMRV VIT
 * extension[http://hl7.org/fhir/StructureDefinition/observation-bodyPosition].valueCodeableConcept from http://va.gov/fhir/ValueSet/VitalsBodyPosition
 * valueQuantity.code.extension contains http://hl7.org/fhir/StructureDefinition/11179-permitted-value-conceptmap named 11179-permitted-value-conceptmap 0..1
 * valueQuantity.code.extension[11179-permitted-value-conceptmap].valueCanonical = "http://va.gov/fhir/ConceptMap/VitalsUnits"
+
+Invariant: VitalSignsSpO2-1239-1
+Description: "if VUID = 4500637 then fixed value L/min"
+Severity: #warning
+
+Invariant: VitalSignsSpO2-1239-2
+Description: "if VUID = 4500637 then fixed value http://loinc.org"
+Severity: #warning
+
+Invariant: VitalSignsSpO2-1239-3
+Description: "if VUID = 4500637 then fixed value 3151-8"
+Severity: #warning
+
+Invariant: VitalSignsSpO2-1240-1
+Description: "if VUID = 4500637 then fixed value %"
+Severity: #warning
+
+Invariant: VitalSignsSpO2-1240-2
+Description: "if VUID = 4500637 then fixed value http://loinc.org"
+Severity: #warning
+
+Invariant: VitalSignsSpO2-1240-3
+Description: "if VUID = 4500637 then fixed value 3150-0"
+Severity: #warning
+
+Invariant: VitalSignsSpO2-655
+Description: "if null then fixed value #final"
+Severity: #warning
+
+Invariant: VitalSignsSpO2-656
+Description: "if not null then fixed value #entered-in-error"
+Severity: #warning
 
 Mapping: source-to-VitalSignsSpO2
 Id: vista
@@ -56,9 +96,9 @@ Source: VitalSignsSpO2
 * extension[http://hl7.org/fhir/StructureDefinition/observation-deviceCode].valueCodeableConcept -> "663: terminologyMaps using VF_VitalsMeasurementDevice on GMRV VITAL MEASUREMENT - QUALIFIER > GMRV VITAL QUALIFIER - VUID (120.5-5 > 120.52-99.99)"
 * method -> "867: terminologyMaps using VF_VitalsMethod on GMRV VITAL MEASUREMENT - QUALIFIER > GMRV VITAL QUALIFIER - VUID (120.5-5 > 120.52-99.99)"
 * component[va-pre-condition].valueCodeableConcept.coding -> "1802: terminologyMaps using VF_VitalsPrecondition on GMRV VITAL MEASUREMENT - QUALIFIER > GMRV VITAL QUALIFIER - VUID (120.5-5 > 120.52-99.99)"
-* component[va-pre-condition].code -> "1802-1: fixed value = http://loinc.org#104158-1 Associated precondition - Reported" "from mapParameter 1"
+* component[va-pre-condition].code -> "1802-1: fixed value = http://loinc.org#104158-1 \"Associated precondition - Reported\"" "from mapParameter 1"
 * component[va-pre-condition-device].valueCodeableConcept.coding -> "1803: terminologyMaps using VF_VitalsQualifyingDevice on GMRV VITAL MEASUREMENT - QUALIFIER > GMRV VITAL QUALIFIER - VUID (120.5-5 > 120.52-99.99)"
-* component[va-pre-condition-device].code -> "1803-1: fixed value = http://loinc.org#104158-1 Associated precondition - Reported" "from mapParameter 1"
+* component[va-pre-condition-device].code -> "1803-1: fixed value = http://loinc.org#104158-1 \"Associated precondition - Reported\"" "from mapParameter 1"
 * extension[http://hl7.org/fhir/StructureDefinition/observation-bodyPosition].valueCodeableConcept -> "1804: terminologyMaps using VF_VitalsBodyPosition on GMRV VITAL MEASUREMENT - QUALIFIER > GMRV VITAL QUALIFIER - VUID (120.5-5 > 120.52-99.99)"
 * valueQuantity.value -> "664: source value from GMRV VITAL MEASUREMENT - RATE (120.5-1.2) case VUID not = 4500634"
 * valueQuantity.code -> "665: transform using VF_VitalsUnits on GMRV VITAL MEASUREMENT - VITAL TYPE (120.5-.03)" "VPR may transform"

@@ -6,7 +6,7 @@ Usage: #definition
 * title = "AntibioticSensitivityInterpretation"
 * status = #active
 * experimental = false
-* description = "Terminology Maps AntibioticSensitivityInterpretation "
+* description = "Terminology Maps AntibioticSensitivityInterpretation"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/AntibioticSensitivityInterpretation-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/AntibioticSensitivityInterpretation"
 * group[0].source = "http://va.gov/terminology/vistaDefinedTerms/63.3-5.1+to+160.1"

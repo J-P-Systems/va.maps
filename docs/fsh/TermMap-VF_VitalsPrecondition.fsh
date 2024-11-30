@@ -6,7 +6,7 @@ Usage: #definition
 * title = "VitalsPrecondition"
 * status = #active
 * experimental = false
-* description = "Terminology Maps VitalsPrecondition "
+* description = "Terminology Maps VitalsPrecondition"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VitalsPrecondition-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/VitalsPrecondition"
 * group[0].source = "http://terminology.hl7.org/CodeSystem/VHA"

@@ -2,11 +2,11 @@ Instance: raceCategory
 InstanceOf: ConceptMap
 Usage: #definition
 * url = "http://va.gov/fhir/ConceptMap/raceCategory"
-* name = "raceCategory"
+* name = "RaceCategory"
 * title = "raceCategory"
 * status = #active
 * experimental = false
-* description = "Terminology Maps raceCategory "
+* description = "Terminology Maps raceCategory"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/raceCategory-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/raceCategory"
 * group[0].source = "http://va.gov/terminology/vistaDefinedTerms/2-2"
@@ -51,7 +51,7 @@ Title: "raceCategory FHIR"
 Description: "FHIR Target ValueSet for Terminology Maps raceCategory"
 * ^experimental = false
 * ^status = #active
-* ^name = "raceCategory"
+* ^name = "RaceCategory"
 * include http://terminology.hl7.org/CodeSystem/v3-NullFlavor#UNK 
 * include http://terminology.hl7.org/CodeSystem/v3-NullFlavor#ASKU 
 * include urn:oid:2.16.840.1.113883.6.238#1002-5 
@@ -64,7 +64,7 @@ Title: "raceCategory VistA"
 Description: "VistA Source ValueSet for Terminology Maps raceCategory"
 * ^experimental = false
 * ^status = #active
-* ^name = "raceCategory_VistA"
+* ^name = "RaceCategory_VistA"
 * include http://va.gov/terminology/vistaDefinedTerms/2-2#7 "*Unknown at this time*"
 * include http://va.gov/terminology/vistaDefinedTerms/2-2#D "DECLINED TO ANSWER"
 * include http://va.gov/terminology/vistaDefinedTerms/2-2#U "UNKNOWN BY PATIENT"

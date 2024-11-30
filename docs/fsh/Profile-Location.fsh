@@ -29,7 +29,7 @@ Source: Location
 * telecom.value -> "1280: transform using concat (44-99,\" ext. \",44-99.1) on HOSPITAL LOCATION - TELEPHONE (44-99)"
 * telecom.system -> "1280-1: fixed value = #phone" "from mapParameter 1"
 * telecom.use -> "1280-2: fixed value = #work" "from mapParameter 2"
-* managingOrganization.display -> "1283: fixed value = Veterans Administration"
+* managingOrganization.display -> "1283: fixed value = \"Veterans Administration\""
 * physicalType.text -> "1284: source value from HOSPITAL LOCATION - PHYSICAL LOCATION (44-10)"
 * address.state -> "1315: source value from HOSPITAL LOCATION - INSTITUTION > INSTITUTION - STATE > STATE - ABBREVIATION (44-3 > 4-.02 > 5-1)"
 * address.district -> "1316: source value from HOSPITAL LOCATION - INSTITUTION > INSTITUTION - DISTRICT (44-3 > 4-.03)"

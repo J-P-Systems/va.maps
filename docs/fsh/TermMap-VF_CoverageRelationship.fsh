@@ -6,7 +6,7 @@ Usage: #definition
 * title = "CoverageRelationship"
 * status = #active
 * experimental = false
-* description = "Terminology Maps CoverageRelationship "
+* description = "Terminology Maps CoverageRelationship"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/CoverageRelationship-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/CoverageRelationship"
 * group[0].source = "http://va.gov/terminology/vistaDefinedTerms/365-8.01"

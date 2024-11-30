@@ -6,7 +6,7 @@ Usage: #definition
 * title = "VitalsMeasurementDevice"
 * status = #active
 * experimental = false
-* description = "Terminology Maps VitalsMeasurementDevice "
+* description = "Terminology Maps VitalsMeasurementDevice"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VitalsMeasurementDevice-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/VitalsMeasurementDevice"
 * group[0].source = "http://terminology.hl7.org/CodeSystem/VHA"

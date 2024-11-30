@@ -2,11 +2,11 @@ Instance: encounterParticipationType
 InstanceOf: ConceptMap
 Usage: #definition
 * url = "http://va.gov/fhir/ConceptMap/encounterParticipationType"
-* name = "encounterParticipationType"
+* name = "EncounterParticipationType"
 * title = "encounterParticipationType"
 * status = #active
 * experimental = false
-* description = "Terminology Maps encounterParticipationType "
+* description = "Terminology Maps encounterParticipationType"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/encounterParticipationType-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/encounterParticipationType"
 * group[0].source = "http://va.gov/terminology/vistaDefinedElements/9000010.06-.04"
@@ -27,7 +27,7 @@ Title: "encounterParticipationType FHIR"
 Description: "FHIR Target ValueSet for Terminology Maps encounterParticipationType"
 * ^experimental = false
 * ^status = #active
-* ^name = "encounterParticipationType"
+* ^name = "EncounterParticipationType"
 * include http://terminology.hl7.org/CodeSystem/v3-ParticipationType#PPRF "primary performer"
 * include http://terminology.hl7.org/CodeSystem/v3-ParticipationType#SPRF "secondary performer"
 
@@ -36,6 +36,6 @@ Title: "encounterParticipationType VistA"
 Description: "VistA Source ValueSet for Terminology Maps encounterParticipationType"
 * ^experimental = false
 * ^status = #active
-* ^name = "encounterParticipationType_VistA"
+* ^name = "EncounterParticipationType_VistA"
 * include http://va.gov/terminology/vistaDefinedElements/9000010.06-.04#P "PRIMARY"
 * include http://va.gov/terminology/vistaDefinedElements/9000010.06-.04#S "SECONDARY"

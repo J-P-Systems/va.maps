@@ -6,7 +6,7 @@ Usage: #definition
 * title = "OutMedRequestStatus"
 * status = #active
 * experimental = false
-* description = "Terminology Maps OutMedRequestStatus "
+* description = "Terminology Maps OutMedRequestStatus"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/OutMedRequestStatus-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/OutMedRequestStatus"
 * group[0].source = "http://va.gov/terminology/vistaDefinedTerms/52-100"

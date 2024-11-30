@@ -6,7 +6,7 @@ Usage: #definition
 * title = "Boolean"
 * status = #active
 * experimental = false
-* description = "Terminology Maps Boolean "
+* description = "Terminology Maps Boolean"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/Boolean-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/Boolean"
 * group[0].source = "http://va.gov/terminology/vistaDefinedTerms/52-129"

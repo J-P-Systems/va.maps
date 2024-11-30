@@ -6,7 +6,7 @@ Usage: #definition
 * title = "DentalDeviceStatus"
 * status = #active
 * experimental = false
-* description = "Terminology Maps DentalDeviceStatus "
+* description = "Terminology Maps DentalDeviceStatus"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/DentalDeviceStatus-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/DentalDeviceStatus"
 * group[0].source = "http://va.gov/terminology/vistaDefinedTerms/228.9-.08"

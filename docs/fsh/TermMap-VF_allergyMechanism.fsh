@@ -2,11 +2,11 @@ Instance: allergyMechanism
 InstanceOf: ConceptMap
 Usage: #definition
 * url = "http://va.gov/fhir/ConceptMap/allergyMechanism"
-* name = "allergyMechanism"
+* name = "AllergyMechanism"
 * title = "allergyMechanism"
 * status = #active
 * experimental = false
-* description = "Terminology Maps allergyMechanism "
+* description = "Terminology Maps allergyMechanism"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/allergyMechanism-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/allergyMechanism"
 * group[0].source = "http://va.gov/terminology/vistaDefinedTerms/120.8-17"
@@ -27,7 +27,7 @@ Title: "allergyMechanism FHIR"
 Description: "FHIR Target ValueSet for Terminology Maps allergyMechanism"
 * ^experimental = false
 * ^status = #active
-* ^name = "allergyMechanism"
+* ^name = "AllergyMechanism"
 * include http://hl7.org/fhir/allergy-intolerance-type#allergy "allergy"
 * include http://hl7.org/fhir/allergy-intolerance-type#intolerance "intolerance"
 
@@ -36,6 +36,6 @@ Title: "allergyMechanism VistA"
 Description: "VistA Source ValueSet for Terminology Maps allergyMechanism"
 * ^experimental = false
 * ^status = #active
-* ^name = "allergyMechanism_VistA"
+* ^name = "AllergyMechanism_VistA"
 * include http://va.gov/terminology/vistaDefinedTerms/120.8-17#A "ALLERGY"
 * include http://va.gov/terminology/vistaDefinedTerms/120.8-17#P "PHARMACOLOGIC"

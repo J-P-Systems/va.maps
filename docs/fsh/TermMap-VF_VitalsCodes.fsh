@@ -6,7 +6,7 @@ Usage: #definition
 * title = "VitalsCodes"
 * status = #active
 * experimental = false
-* description = "Terminology Maps VitalsCodes "
+* description = "Terminology Maps VitalsCodes"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VitalsCodes-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/VitalsCodes"
 * group[0].source = "http://terminology.hl7.org/CodeSystem/VHA"

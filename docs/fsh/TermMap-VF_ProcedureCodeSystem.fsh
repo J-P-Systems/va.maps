@@ -6,7 +6,7 @@ Usage: #definition
 * title = "ProcedureCodeSystem"
 * status = #active
 * experimental = false
-* description = "Terminology Maps ProcedureCodeSystem "
+* description = "Terminology Maps ProcedureCodeSystem"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/ProcedureCodeSystem-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/ProcedureCodeSystem"
 * group[0].source = "urn:undefined"

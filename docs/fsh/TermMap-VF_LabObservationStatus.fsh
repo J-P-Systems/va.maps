@@ -6,7 +6,7 @@ Usage: #definition
 * title = "LabObservationStatus"
 * status = #active
 * experimental = false
-* description = "Terminology Maps LabObservationStatus "
+* description = "Terminology Maps LabObservationStatus"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/LabObservationStatus-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/LabObservationStatus"
 * group[0].source = "http://terminology.hl7.org/CodeSystem/v2-0123"

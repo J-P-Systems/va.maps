@@ -6,7 +6,7 @@ Usage: #definition
 * title = "CommunicationQualifier"
 * status = #active
 * experimental = false
-* description = "Terminology Maps CommunicationQualifier "
+* description = "Terminology Maps CommunicationQualifier"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/CommunicationQualifier-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/CommunicationQualifier"
 * group[0].source = "http://va.gov/Terminology/VistADefinedTerms/365.26-.04"

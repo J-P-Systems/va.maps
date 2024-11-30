@@ -6,7 +6,7 @@ Usage: #definition
 * title = "ExamStatus"
 * status = #active
 * experimental = false
-* description = "Terminology Maps ExamStatus "
+* description = "Terminology Maps ExamStatus"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/ExamStatus-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/ExamStatus"
 * group[0].source = "http://va.gov/terminology/vistaDefinedTerms/396.4-.04"

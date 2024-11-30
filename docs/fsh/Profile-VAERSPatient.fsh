@@ -11,6 +11,61 @@ Description: "This StructureDefinition contains the maps for ADERS to us-core-pa
 * identifier.system = "urn:oid:2.16.840.1.113883.4.349"
 * identifier.type.coding.code = #MR
 * identifier.type.coding.system = "http://terminology.hl7.org/CodeSystem/v2-0203"
+* extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-race].extension[ombCategory] obeys VAERSPatient-1948
+* extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-race].extension[ombCategory].valueCoding obeys VAERSPatient-1949
+* extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-race].extension[ombCategory].valueCoding obeys VAERSPatient-1950
+* extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-race].extension[ombCategory].valueCoding obeys VAERSPatient-1951
+* extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-race].extension[ombCategory].valueCoding obeys VAERSPatient-1952
+* extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-race].extension[ombCategory].valueCoding obeys VAERSPatient-1953
+* extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-race].extension[ombCategory].valueCoding obeys VAERSPatient-1954
+* extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity].extension[ombCategory].valueCoding obeys VAERSPatient-1955
+* extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity].extension[ombCategory].valueCoding obeys VAERSPatient-1956
+* extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity].extension[ombCategory].valueCoding obeys VAERSPatient-1957
+* extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity].extension[ombCategory].valueCoding obeys VAERSPatient-1958
+
+Invariant: VAERSPatient-1948
+Description: "if not xsi:nil then fixed value urn:oid:2.16.840.1.113883.6.238#1002-5 American Indian or Alaska Native"
+Severity: #warning
+
+Invariant: VAERSPatient-1949
+Description: "if not xsi:nil then fixed value urn:oid:2.16.840.1.113883.6.238#2028-9 \"Asian\""
+Severity: #warning
+
+Invariant: VAERSPatient-1950
+Description: "if not xsi:nil then fixed value urn:oid:2.16.840.1.113883.6.238#2054-5 \"Black or African American\""
+Severity: #warning
+
+Invariant: VAERSPatient-1951
+Description: "if not xsi:nil then fixed value urn:oid:2.16.840.1.113883.6.238#2076-8 \"Native Hawaiian or Other Pacific Islander\""
+Severity: #warning
+
+Invariant: VAERSPatient-1952
+Description: "if not xsi:nil then fixed value urn:oid:2.16.840.1.113883.6.238#2106-3 \"White\""
+Severity: #warning
+
+Invariant: VAERSPatient-1953
+Description: "if not xsi:nil then fixed value http://terminology.hl7.org/CodeSystem/v3-NullFlavor#UNK \"unknown\""
+Severity: #warning
+
+Invariant: VAERSPatient-1954
+Description: "if not xsi:nil then fixed value urn:oid:2.16.840.1.113883.6.238#2131-1 \"Other Race\""
+Severity: #warning
+
+Invariant: VAERSPatient-1955
+Description: "if not xsi:nil then fixed value urn:oid:2.16.840.1.113883.6.238#2135-2 \"Hispanic or Latino\""
+Severity: #warning
+
+Invariant: VAERSPatient-1956
+Description: "if not xsi:nil then fixed value urn:oid:2.16.840.1.113883.6.238#2186-5 \"Not Hispanic or Latino\""
+Severity: #warning
+
+Invariant: VAERSPatient-1957
+Description: "if not xsi:nil then fixed value http://terminology.hl7.org/CodeSystem/v3-NullFlavor#UNK \"unknown\""
+Severity: #warning
+
+Invariant: VAERSPatient-1958
+Description: "if not xsi:nil then fixed value http://terminology.hl7.org/CodeSystem/v3-NullFlavor#OTH \"other\""
+Severity: #warning
 
 Mapping: source-to-VAERSPatient
 Id: aders
@@ -30,16 +85,16 @@ Source: VAERSPatient
 * deceasedBoolean -> "1916: source value from ADERS - 21_Death case 21_DeathDt nil & 21_Death =1"
 * deceasedDateTime -> "1917: source value from ADERS - 21_DeathDt case 21_DeathDt NOT nil"
 * extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-race].extension[ombCategory] -> "1948: fixed value = urn:oid:2.16.840.1.113883.6.238#1002-5 American Indian or Alaska Native case not xsi:nil"
-* extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-race].extension[ombCategory].valueCoding -> "1949: fixed value = urn:oid:2.16.840.1.113883.6.238#2028-9 Asian case not xsi:nil"
-* extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-race].extension[ombCategory].valueCoding -> "1950: fixed value = urn:oid:2.16.840.1.113883.6.238#2054-5 Black or African American case not xsi:nil"
-* extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-race].extension[ombCategory].valueCoding -> "1951: fixed value = urn:oid:2.16.840.1.113883.6.238#2076-8 Native Hawaiian or Other Pacific Islander case not xsi:nil"
-* extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-race].extension[ombCategory].valueCoding -> "1952: fixed value = urn:oid:2.16.840.1.113883.6.238#2106-3 White case not xsi:nil"
-* extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-race].extension[ombCategory].valueCoding -> "1953: fixed value = http://terminology.hl7.org/CodeSystem/v3-NullFlavor#UNK unknown case not xsi:nil"
-* extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-race].extension[ombCategory].valueCoding -> "1954: fixed value = urn:oid:2.16.840.1.113883.6.238#2131-1 Other Race case not xsi:nil"
-* extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity].extension[ombCategory].valueCoding -> "1955: fixed value = urn:oid:2.16.840.1.113883.6.238#2135-2 Hispanic or Latino case not xsi:nil"
-* extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity].extension[ombCategory].valueCoding -> "1956: fixed value = urn:oid:2.16.840.1.113883.6.238#2186-5 Not Hispanic or Latino case not xsi:nil"
-* extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity].extension[ombCategory].valueCoding -> "1957: fixed value = http://terminology.hl7.org/CodeSystem/v3-NullFlavor#UNK unknown case not xsi:nil"
-* extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity].extension[ombCategory].valueCoding -> "1958: fixed value = http://terminology.hl7.org/CodeSystem/v3-NullFlavor#OTH other case not xsi:nil"
+* extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-race].extension[ombCategory].valueCoding -> "1949: fixed value = urn:oid:2.16.840.1.113883.6.238#2028-9 \"Asian\" case not xsi:nil"
+* extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-race].extension[ombCategory].valueCoding -> "1950: fixed value = urn:oid:2.16.840.1.113883.6.238#2054-5 \"Black or African American\" case not xsi:nil"
+* extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-race].extension[ombCategory].valueCoding -> "1951: fixed value = urn:oid:2.16.840.1.113883.6.238#2076-8 \"Native Hawaiian or Other Pacific Islander\" case not xsi:nil"
+* extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-race].extension[ombCategory].valueCoding -> "1952: fixed value = urn:oid:2.16.840.1.113883.6.238#2106-3 \"White\" case not xsi:nil"
+* extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-race].extension[ombCategory].valueCoding -> "1953: fixed value = http://terminology.hl7.org/CodeSystem/v3-NullFlavor#UNK \"unknown\" case not xsi:nil"
+* extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-race].extension[ombCategory].valueCoding -> "1954: fixed value = urn:oid:2.16.840.1.113883.6.238#2131-1 \"Other Race\" case not xsi:nil"
+* extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity].extension[ombCategory].valueCoding -> "1955: fixed value = urn:oid:2.16.840.1.113883.6.238#2135-2 \"Hispanic or Latino\" case not xsi:nil"
+* extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity].extension[ombCategory].valueCoding -> "1956: fixed value = urn:oid:2.16.840.1.113883.6.238#2186-5 \"Not Hispanic or Latino\" case not xsi:nil"
+* extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity].extension[ombCategory].valueCoding -> "1957: fixed value = http://terminology.hl7.org/CodeSystem/v3-NullFlavor#UNK \"unknown\" case not xsi:nil"
+* extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity].extension[ombCategory].valueCoding -> "1958: fixed value = http://terminology.hl7.org/CodeSystem/v3-NullFlavor#OTH \"other\" case not xsi:nil"
 
 Mapping: cdw-to-VAERSPatient
 Id: cdw

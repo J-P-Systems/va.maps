@@ -2,11 +2,11 @@ Instance: problemStatus
 InstanceOf: ConceptMap
 Usage: #definition
 * url = "http://va.gov/fhir/ConceptMap/problemStatus"
-* name = "problemStatus"
+* name = "ProblemStatus"
 * title = "problemStatus"
 * status = #active
 * experimental = false
-* description = "Terminology Maps problemStatus "
+* description = "Terminology Maps problemStatus"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/problemStatus-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/problemStatus"
 * group[0].source = "http://va.gov/terminology/vistaDefinedTerms/9000011-.12"
@@ -25,7 +25,7 @@ Title: "problemStatus FHIR"
 Description: "FHIR Target ValueSet for Terminology Maps problemStatus"
 * ^experimental = false
 * ^status = #active
-* ^name = "problemStatus"
+* ^name = "ProblemStatus"
 * include http://terminology.hl7.org/CodeSystem/condition-clinical#active 
 * include http://terminology.hl7.org/CodeSystem/condition-clinical#inactive 
 
@@ -34,6 +34,6 @@ Title: "problemStatus VistA"
 Description: "VistA Source ValueSet for Terminology Maps problemStatus"
 * ^experimental = false
 * ^status = #active
-* ^name = "problemStatus_VistA"
+* ^name = "ProblemStatus_VistA"
 * include http://va.gov/terminology/vistaDefinedTerms/9000011-.12#A "ACTIVE"
 * include http://va.gov/terminology/vistaDefinedTerms/9000011-.12#I "INACTIVE"

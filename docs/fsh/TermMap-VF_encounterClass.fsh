@@ -2,11 +2,11 @@ Instance: encounterClass
 InstanceOf: ConceptMap
 Usage: #definition
 * url = "http://va.gov/fhir/ConceptMap/encounterClass"
-* name = "encounterClass"
+* name = "EncounterClass"
 * title = "encounterClass"
 * status = #active
 * experimental = false
-* description = "Terminology Maps encounterClass "
+* description = "Terminology Maps encounterClass"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/encounterClass-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/encounterClass"
 * group[0].source = "http://va.gov/terminology/vistaDefinedTerms/9000010-15002"
@@ -27,7 +27,7 @@ Title: "encounterClass FHIR"
 Description: "FHIR Target ValueSet for Terminology Maps encounterClass"
 * ^experimental = false
 * ^status = #active
-* ^name = "encounterClass"
+* ^name = "EncounterClass"
 * include http://terminology.hl7.org/CodeSystem/v3-ActCode#IMP "inpatient encounter"
 * include http://terminology.hl7.org/CodeSystem/v3-ActCode#AMB "ambulatory"
 
@@ -36,6 +36,6 @@ Title: "encounterClass VistA"
 Description: "VistA Source ValueSet for Terminology Maps encounterClass"
 * ^experimental = false
 * ^status = #active
-* ^name = "encounterClass_VistA"
+* ^name = "EncounterClass_VistA"
 * include http://va.gov/terminology/vistaDefinedTerms/9000010-15002#1 "IN"
 * include http://va.gov/terminology/vistaDefinedTerms/9000010-15002#0 "OUT"

@@ -6,7 +6,7 @@ Usage: #definition
 * title = "VistaNCPDPCoverageRelationship"
 * status = #active
 * experimental = false
-* description = "Terminology Maps VistaNCPDPCoverageRelationship "
+* description = "Terminology Maps VistaNCPDPCoverageRelationship"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VistaNCPDPCoverageRelationship-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/VistaNCPDPCoverageRelationship"
 * group[0].source = "http://va.gov/terminology/vistaDefinedTerms/2.312-4.05"

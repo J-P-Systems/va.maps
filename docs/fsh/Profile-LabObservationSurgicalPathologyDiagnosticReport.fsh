@@ -33,7 +33,7 @@ Source: LabObservationSurgicalPathologyDiagnosticReport
 * identifier.system -> "1606-1: fixed value = http://va.gov/identifiers/$Sta3n/63.53" "from mapParameter 1"
 * basedOn -> "1691: reference from SURGICAL PATHOLOGY - ORDERED TEST > ORDERED TEST - CPRS ORDER # (63.08-.35 > 63.53-3)"
 * code.text -> "1809: source value from SURGICAL PATHOLOGY - TIU REFERENCE DATE/TIME - SP > TIU REFERENCE DATE/TIME - SP - TIU ENTRY POINTER - SP > TIU DOCUMENT - DOCUMENT TYPE > TIU DOCUMENT DEFINITION - NAME (63.08-.16 > 63.19-1 > 8925-.01 > 8925.1-.01)" "Per KBS discussion, this value should be Local Title + Specimen.type.text. The local title is this map row; Specimen.type.text is key 1703."
-* code -> "1810: fixed value = http://loinc.org#27898-6 Pathology studies (set)"
+* code -> "1810: fixed value = http://loinc.org#27898-6 \"Pathology studies (set)\""
 * code.coding.code -> "1811: source value from SURGICAL PATHOLOGY - TIU REFERENCE DATE/TIME - SP > TIU REFERENCE DATE/TIME - SP - TIU ENTRY POINTER - SP > TIU DOCUMENT - DOCUMENT TYPE > TIU DOCUMENT DEFINITION - VHA ENTERPRISE STANDARD TITLE > TIU VHA ENTERPRISE STANDARD TITLE - CODING SYSTEM > CODING SYSTEM - CODE > CODE - CODE (63.08-.16 > 63.19-1 > 8925-.01 > 8925.1-1501 > 8926.1-2 > 8926.12-.02 > 8926.121-.01)"
 * code.coding.system -> "1811-1: fixed value = http://loinc.org" "from mapParameter 1"
 * status -> "1417: terminologyMaps using VF_DiagnosticReportLabStatus on SURGICAL PATHOLOGY - ORDERED TEST > ORDERED TEST - DISPOSITION (63.08-.35 > 63.53-10)" "US Core 5 has new constraints: if status is partial, preliminary, final, ammended, corrected or appended effective[x] and issued are required"

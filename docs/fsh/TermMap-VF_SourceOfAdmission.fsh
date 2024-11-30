@@ -6,7 +6,7 @@ Usage: #definition
 * title = "SourceOfAdmission"
 * status = #active
 * experimental = false
-* description = "Terminology Maps SourceOfAdmission "
+* description = "Terminology Maps SourceOfAdmission"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/SourceOfAdmission-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/SourceOfAdmission"
 * group[0].source = "http://va.gov/terminology/vistaDefinedTerms/45.1-.01"

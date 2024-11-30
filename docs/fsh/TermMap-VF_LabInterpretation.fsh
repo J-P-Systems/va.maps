@@ -6,7 +6,7 @@ Usage: #definition
 * title = "LabInterpretation"
 * status = #active
 * experimental = false
-* description = "Terminology Maps LabInterpretation "
+* description = "Terminology Maps LabInterpretation"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/LabInterpretation-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/LabInterpretation"
 * group[0].source = "http://va.gov/terminology/vistaDefinedTerms/63.04-2+through+862"

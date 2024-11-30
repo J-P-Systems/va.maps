@@ -6,7 +6,7 @@ Usage: #definition
 * title = "OrganizationIdentifierType"
 * status = #active
 * experimental = false
-* description = "Terminology Maps OrganizationIdentifierType "
+* description = "Terminology Maps OrganizationIdentifierType"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/OrganizationIdentifierType-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/OrganizationIdentifierType"
 * group[0].source = "http://va.gov/Terminology/VistADefinedTerms/36-6.01"

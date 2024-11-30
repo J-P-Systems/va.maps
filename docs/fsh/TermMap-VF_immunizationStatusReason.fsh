@@ -2,11 +2,11 @@ Instance: immunizationStatusReason
 InstanceOf: ConceptMap
 Usage: #definition
 * url = "http://va.gov/fhir/ConceptMap/immunizationStatusReason"
-* name = "immunizationStatusReason"
+* name = "ImmunizationStatusReason"
 * title = "immunizationStatusReason"
 * status = #active
 * experimental = false
-* description = "Terminology Maps immunizationStatusReason "
+* description = "Terminology Maps immunizationStatusReason"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/immunizationStatusReason-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/immunizationStatusReason"
 * group[0].source = "http://va.gov/terminology/vistaDefinedTerms/9999999.14-.01"
@@ -172,7 +172,7 @@ Title: "immunizationStatusReason FHIR"
 Description: "FHIR Target ValueSet for Terminology Maps immunizationStatusReason"
 * ^experimental = false
 * ^status = #active
-* ^name = "immunizationStatusReason"
+* ^name = "ImmunizationStatusReason"
 * include http://terminology.hl7.org/CodeSystem/v3-ActReason#PATOBJ "patient objection"
 * include http://terminology.hl7.org/CodeSystem/v3-ActReason#MEDPREC "medical precaution"
 * include http://terminology.hl7.org/CodeSystem/v3-ActReason#OSTOCK "product out of stock"
@@ -182,7 +182,7 @@ Title: "immunizationStatusReason VistA"
 Description: "VistA Source ValueSet for Terminology Maps immunizationStatusReason"
 * ^experimental = false
 * ^status = #active
-* ^name = "immunizationStatusReason_VistA"
+* ^name = "ImmunizationStatusReason_VistA"
 * include http://va.gov/terminology/vistaDefinedTerms/9999999.14-.01#DECLINED_FLU_IMM__HISTORICAL_ "DECLINED FLU IMM (HISTORICAL)"
 * include http://va.gov/terminology/vistaDefinedTerms/9999999.14-.01#DECLINED_PNEUMOCOCCAL__HISTORICAL_ "DECLINED PNEUMOCOCCAL (HISTORICAL)"
 * include http://va.gov/terminology/vistaDefinedTerms/9999999.14-.01#DECLINED_TETANUS_DIPT__HISTORICAL_ "DECLINED TETANUS/DIPT (HISTORICAL)"
