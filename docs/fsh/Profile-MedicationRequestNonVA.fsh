@@ -23,15 +23,15 @@ Description: "This StructureDefinition contains the maps for VistA file NON-VA M
 * reportedBoolean = true
 * requester.extension[http://hl7.org/fhir/StructureDefinition/data-absent-reason].valueCode = #unsupported
 * encounter.extension[http://hl7.org/fhir/StructureDefinition/data-absent-reason].valueCode = #unsupported
-* status obeys MedicationRequestNonVA-1737
-* status obeys MedicationRequestNonVA-1738
+* status obeys mrnva-22-1737
+* status obeys mrnva-22-1738
 
-Invariant: MedicationRequestNonVA-1737
-Description: "if NULL then fixed value #active"
+Invariant: mrnva-22-1737
+Description: "55.05-5: if NULL then #active"
 Severity: #warning
 
-Invariant: MedicationRequestNonVA-1738
-Description: "if NOT NULL then fixed value #inactive"
+Invariant: mrnva-22-1738
+Description: "55.05-5: if NOT NULL then #inactive"
 Severity: #warning
 
 Mapping: source-to-MedicationRequestNonVA

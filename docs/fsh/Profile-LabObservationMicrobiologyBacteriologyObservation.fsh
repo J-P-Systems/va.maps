@@ -16,11 +16,11 @@ Description: "This StructureDefinition contains the maps for VistA file MICROBIO
 * component[va-component].code.coding.system = "http://loinc.org"
 * component[va-component].interpretation from http://va.gov/fhir/ValueSet/AntibioticSensitivityInterpretation
 * identifier.system = "http://va.gov/identifiers/$Sta3n/63.05"
-* code.coding.system obeys LabObservationMicrobiologyBacteriologyObservation-1480-1
+* code.coding.system obeys lombo-49-1480-1
 * category = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
 
-Invariant: LabObservationMicrobiologyBacteriologyObservation-1480-1
-Description: "if Not NULL then fixed value http://loinc.org"
+Invariant: lombo-49-1480-1
+Description: "undefined: if Not NULL then http://loinc.org"
 Severity: #warning
 
 Mapping: source-to-LabObservationMicrobiologyBacteriologyObservation

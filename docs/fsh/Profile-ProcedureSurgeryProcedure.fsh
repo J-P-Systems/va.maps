@@ -28,10 +28,10 @@ Description: "This StructureDefinition contains the maps for VistA file SURGERY 
 * performer[va-11].actor only Reference(Practitioner)
 * performer[va-12].actor only Reference(Practitioner)
 * performer[va-13].actor only Reference(Practitioner)
-* complication.coding obeys ProcedureSurgeryProcedure-1296
-* complication.text obeys ProcedureSurgeryProcedure-1296-1
-* complication.coding obeys ProcedureSurgeryProcedure-1297
-* complication.text obeys ProcedureSurgeryProcedure-1297-1
+* complication.coding obeys psp-25-1296
+* complication.text obeys psp-25-1296-1
+* complication.coding obeys psp-25-1297
+* complication.text obeys psp-25-1297-1
 * performer[va-0].function.text = "PERFUSIONIST"
 * performer[va-0].function.coding = http://va.gov/terminology/vistaDefinedTerms/130#.167 "PERFUSIONIST"
 * category.coding = http://snomed.info/sct#387713003 "Surgical procedure"
@@ -63,20 +63,20 @@ Description: "This StructureDefinition contains the maps for VistA file SURGERY 
 * performer[va-13].function.coding = http://va.gov/terminology/vistaDefinedTerms/130#.57 "FOLEY CATHETER INSERTED BY"
 * code.coding.system = "http://www.ama-assn.org/go/cpt"
 
-Invariant: ProcedureSurgeryProcedure-1296
-Description: "if == ‘Y’ then fixed value http://snomed.info/sct#88797001 \"Complication of surgical procedure (disorder)\""
+Invariant: psp-25-1296
+Description: "130-688: if == ‘Y’ then http://snomed.info/sct#88797001 \"Complication of surgical procedure (disorder)\""
 Severity: #warning
 
-Invariant: ProcedureSurgeryProcedure-1296-1
-Description: "if == ‘Y’ then fixed value STOMA COMPLICATIONS"
+Invariant: psp-25-1296-1
+Description: "undefined: if == ‘Y’ then STOMA COMPLICATIONS"
 Severity: #warning
 
-Invariant: ProcedureSurgeryProcedure-1297
-Description: "if == ‘Y’ then fixed value http://snomed.info/sct#22298006 \"Myocardial infarction (disorder)\""
+Invariant: psp-25-1297
+Description: "130-258: if == ‘Y’ then http://snomed.info/sct#22298006 \"Myocardial infarction (disorder)\""
 Severity: #warning
 
-Invariant: ProcedureSurgeryProcedure-1297-1
-Description: "if == ‘Y’ then fixed value MYOCARDIAL INFARCTION"
+Invariant: psp-25-1297-1
+Description: "undefined: if == ‘Y’ then MYOCARDIAL INFARCTION"
 Severity: #warning
 
 Mapping: source-to-ProcedureSurgeryProcedure

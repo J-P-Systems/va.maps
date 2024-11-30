@@ -17,14 +17,14 @@ Description: "This StructureDefinition contains the maps for VistA file GMRV VIT
 * subject only Reference(Patient)
 * component[va-cuff-size].valueCodeableConcept.coding from http://va.gov/fhir/ValueSet/VitalsCuffSize
 * component[va-cuff-size].code = http://loinc.org#8358-4 "Blood pressure device cuff size"
-* component[systolic].valueQuantity.code obeys VitalSignsBP-666-1
-* component[systolic].code.coding.system obeys VitalSignsBP-666-2
-* component[systolic].code.coding.code obeys VitalSignsBP-666-3
-* component[diastolic].valueQuantity.code obeys VitalSignsBP-667-1
-* component[diastolic].code.coding.system obeys VitalSignsBP-667-2
-* component[diastolic].code.coding.code obeys VitalSignsBP-667-3
-* status obeys VitalSignsBP-655
-* status obeys VitalSignsBP-656
+* component[systolic].valueQuantity.code obeys vsbp-12-666-1
+* component[systolic].code.coding.system obeys vsbp-12-666-2
+* component[systolic].code.coding.code obeys vsbp-12-666-3
+* component[diastolic].valueQuantity.code obeys vsbp-12-667-1
+* component[diastolic].code.coding.system obeys vsbp-12-667-2
+* component[diastolic].code.coding.code obeys vsbp-12-667-3
+* status obeys vsbp-12-655
+* status obeys vsbp-12-656
 * category = http://terminology.hl7.org/CodeSystem/observation-category#vital-signs
 * identifier.system = "http://va.gov/identifiers/$Sta3n/120.5"
 * code.coding from http://va.gov/fhir/ValueSet/VitalsCodes
@@ -39,36 +39,36 @@ Description: "This StructureDefinition contains the maps for VistA file GMRV VIT
 * valueQuantity.code.extension contains http://hl7.org/fhir/StructureDefinition/11179-permitted-value-conceptmap named 11179-permitted-value-conceptmap 0..1
 * valueQuantity.code.extension[11179-permitted-value-conceptmap].valueCanonical = "http://va.gov/fhir/ConceptMap/VitalsUnits"
 
-Invariant: VitalSignsBP-666-1
-Description: "if VUID = 4500634 then fixed value mm[Hg]"
+Invariant: vsbp-12-666-1
+Description: "undefined: if VUID = 4500634 then mm[Hg]"
 Severity: #warning
 
-Invariant: VitalSignsBP-666-2
-Description: "if VUID = 4500634 then fixed value http://loinc.org"
+Invariant: vsbp-12-666-2
+Description: "undefined: if VUID = 4500634 then http://loinc.org"
 Severity: #warning
 
-Invariant: VitalSignsBP-666-3
-Description: "if VUID = 4500634 then fixed value 8480-6"
+Invariant: vsbp-12-666-3
+Description: "undefined: if VUID = 4500634 then 8480-6"
 Severity: #warning
 
-Invariant: VitalSignsBP-667-1
-Description: "if VUID = 4500634 then fixed value mm[Hg]"
+Invariant: vsbp-12-667-1
+Description: "undefined: if VUID = 4500634 then mm[Hg]"
 Severity: #warning
 
-Invariant: VitalSignsBP-667-2
-Description: "if VUID = 4500634 then fixed value http://loinc.org"
+Invariant: vsbp-12-667-2
+Description: "undefined: if VUID = 4500634 then http://loinc.org"
 Severity: #warning
 
-Invariant: VitalSignsBP-667-3
-Description: "if VUID = 4500634 then fixed value 8462-4"
+Invariant: vsbp-12-667-3
+Description: "undefined: if VUID = 4500634 then 8462-4"
 Severity: #warning
 
-Invariant: VitalSignsBP-655
-Description: "if null then fixed value #final"
+Invariant: vsbp-12-655
+Description: "120.5-4: if null then #final"
 Severity: #warning
 
-Invariant: VitalSignsBP-656
-Description: "if not null then fixed value #entered-in-error"
+Invariant: vsbp-12-656
+Description: "120.5-4: if not null then #entered-in-error"
 Severity: #warning
 
 Mapping: source-to-VitalSignsBP

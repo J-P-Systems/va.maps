@@ -9,16 +9,16 @@ Description: "This StructureDefinition contains the maps for VistA file GENERATO
 * identifier.value and identifier.system and status and manufacturer and serialNumber and modelNumber and type and patient MS
 * patient only Reference(Patient)
 * identifier.system = "http://va.gov/identifiers/$Sta3n/698"
-* status obeys ImplantableDevicePacemaker-1356
-* status obeys ImplantableDevicePacemaker-1357
+* status obeys idp-26-1356
+* status obeys idp-26-1357
 * type from http://va.gov/fhir/ValueSet/deviceTypePacemaker
 
-Invariant: ImplantableDevicePacemaker-1356
-Description: "if is NULL then fixed value #active"
+Invariant: idp-26-1356
+Description: "698-96: if is NULL then #active"
 Severity: #warning
 
-Invariant: ImplantableDevicePacemaker-1357
-Description: "if is not NULL then fixed value #inactive"
+Invariant: idp-26-1357
+Description: "698-96: if is not NULL then #inactive"
 Severity: #warning
 
 Mapping: source-to-ImplantableDevicePacemaker

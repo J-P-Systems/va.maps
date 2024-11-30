@@ -18,35 +18,35 @@ Description: "This StructureDefinition contains the maps for VistA file VISIT (9
 * serviceProvider only Reference(Organization)
 * participant.individual only Reference(Practitioner)
 * identifier.system = "http://va.gov/identifiers/$Sta3n/9000010-15001"
-* status obeys EncounterOutpatient-430
-* status obeys EncounterOutpatient-431
-* status obeys EncounterOutpatient-432
-* extension[http://va.gov/fhir/StructureDefinition/resource-serviceConnection].valueCoding obeys EncounterOutpatient-2035
-* extension[http://va.gov/fhir/StructureDefinition/resource-serviceConnection].valueCoding obeys EncounterOutpatient-2036
+* status obeys eo-19-430
+* status obeys eo-19-431
+* status obeys eo-19-432
+* extension[http://va.gov/fhir/StructureDefinition/resource-serviceConnection].valueCoding obeys eo-19-2035
+* extension[http://va.gov/fhir/StructureDefinition/resource-serviceConnection].valueCoding obeys eo-19-2036
 * serviceType.coding.system = "http://va.gov/terminology/VistADefinedTerms/9000010-.07"
 * reasonCode.coding.system = "urn:see-termmap-in-mapParameter"
 * class from http://va.gov/fhir/ValueSet/encounterClass
 * participant.type from http://va.gov/fhir/ValueSet/encounterParticipationType
 * type.coding.system = "http://www.ama-assn.org/go/cpt"
 
-Invariant: EncounterOutpatient-430
-Description: "if null or > now then fixed value #planned"
+Invariant: eo-19-430
+Description: "9000010-.01: if null or > now then #planned"
 Severity: #warning
 
-Invariant: EncounterOutpatient-431
-Description: "if not null, < now, .18 null then fixed value #in-progress"
+Invariant: eo-19-431
+Description: "9000010-.01: if not null, < now, .18 null then #in-progress"
 Severity: #warning
 
-Invariant: EncounterOutpatient-432
-Description: "if not null, < now then fixed value #finished"
+Invariant: eo-19-432
+Description: "9000010-.18: if not null, < now then #finished"
 Severity: #warning
 
-Invariant: EncounterOutpatient-2035
-Description: "if SERVICE CONNECTED then fixed value http://va.gov/fhir/vistaDefinedTerms/409.1#SC \"Service Connected\""
+Invariant: eo-19-2035
+Description: "409.68-.1 > 409.1-.01: if SERVICE CONNECTED then http://va.gov/fhir/vistaDefinedTerms/409.1#SC \"Service Connected\""
 Severity: #warning
 
-Invariant: EncounterOutpatient-2036
-Description: "if Not SERVICE CONNECTED then fixed value http://va.gov/fhir/vistaDefinedTerms/409.1#NSC \"Not Service Connected\""
+Invariant: eo-19-2036
+Description: "409.68-.1 > 409.1-.01: if Not SERVICE CONNECTED then http://va.gov/fhir/vistaDefinedTerms/409.1#NSC \"Not Service Connected\""
 Severity: #warning
 
 Mapping: source-to-EncounterOutpatient

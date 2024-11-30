@@ -9,16 +9,16 @@ Description: "This StructureDefinition contains the maps for VistA file A LEAD I
 * identifier.value and identifier.system and status and manufacturer and serialNumber and modelNumber and type and patient MS
 * patient only Reference(Patient)
 * identifier.system = "http://va.gov/identifiers/$Sta3n/698.2"
-* status obeys ImplantableDeviceALead-1358
-* status obeys ImplantableDeviceALead-1359
+* status obeys idal-22-1358
+* status obeys idal-22-1359
 * type from http://va.gov/fhir/ValueSet/deviceTypePacemaker
 
-Invariant: ImplantableDeviceALead-1358
-Description: "if is NULL then fixed value #active"
+Invariant: idal-22-1358
+Description: "698.2-56: if is NULL then #active"
 Severity: #warning
 
-Invariant: ImplantableDeviceALead-1359
-Description: "if is not NULL then fixed value #inactive"
+Invariant: idal-22-1359
+Description: "698.2-56: if is not NULL then #inactive"
 Severity: #warning
 
 Mapping: source-to-ImplantableDeviceALead

@@ -22,11 +22,11 @@ Description: "This StructureDefinition contains the maps for VistA file APPOINTM
 * participant[va-patient].actor only Reference(Patient)
 * participant[va-appt-clinic].actor only Reference(Location)
 * status from http://va.gov/fhir/ValueSet/AppointmentStatus
-* status obeys Appointment-732
-* status obeys Appointment-733
-* status obeys Appointment-734
-* extension[http://va.gov/fhir/StructureDefinition/resource-serviceConnection].valueCoding obeys Appointment-2033
-* extension[http://va.gov/fhir/StructureDefinition/resource-serviceConnection].valueCoding obeys Appointment-2034
+* status obeys a-11-732
+* status obeys a-11-733
+* status obeys a-11-734
+* extension[http://va.gov/fhir/StructureDefinition/resource-serviceConnection].valueCoding obeys a-11-2033
+* extension[http://va.gov/fhir/StructureDefinition/resource-serviceConnection].valueCoding obeys a-11-2034
 * cancelationReason from http://va.gov/fhir/ValueSet/AppointmentCancellationReason
 * serviceCategory[va-service].coding.system = "http://va.gov/terminology/VistADefinedTerms/44-9"
 * serviceType[va-stop-code].coding.system = "http://va.gov/terminology/VistADefinedTerms/44-8"
@@ -35,33 +35,33 @@ Description: "This StructureDefinition contains the maps for VistA file APPOINTM
 * participant[va-clinic].status = #accepted
 * participant[va-patient].type.coding.code = #PART
 * participant[va-patient].status = #accepted
-* status obeys Appointment-748
+* status obeys a-11-748
 * serviceCategory[va-stop-code].coding.system = "http://va.gov/terminology/VistADefinedTerms/409.3-13.4"
 * participant[va-appt-clinic].type.coding.code = #PART
 * participant[va-appt-clinic].status = #tentative
 
-Invariant: Appointment-732
-Description: "if I, NT, Null; Null check-in date (44.003-309), null check-out date (44.003-303) then fixed value #booked"
+Invariant: a-11-732
+Description: "2.98-3: if I, NT, Null; Null check-in date (44.003-309), null check-out date (44.003-303) then #booked"
 Severity: #warning
 
-Invariant: Appointment-733
-Description: "if I, NT, Null; Non-null check-in date (44.003-309), null check-out date (44.003-303) then fixed value #arrived"
+Invariant: a-11-733
+Description: "2.98-3: if I, NT, Null; Non-null check-in date (44.003-309), null check-out date (44.003-303) then #arrived"
 Severity: #warning
 
-Invariant: Appointment-734
-Description: "if I, NT, Null; Non-null check-in date (44.003-309), non-null check-out date (44.003-303) then fixed value #fulfilled"
+Invariant: a-11-734
+Description: "2.98-3: if I, NT, Null; Non-null check-in date (44.003-309), non-null check-out date (44.003-303) then #fulfilled"
 Severity: #warning
 
-Invariant: Appointment-2033
-Description: "if SERVICE CONNECTED then fixed value http://va.gov/fhir/vistaDefinedTerms/409.1#SC \"Service Connected\""
+Invariant: a-11-2033
+Description: "2.98-9.5 > 409.1-.01: if SERVICE CONNECTED then http://va.gov/fhir/vistaDefinedTerms/409.1#SC \"Service Connected\""
 Severity: #warning
 
-Invariant: Appointment-2034
-Description: "if Not SERVICE CONNECTED then fixed value http://va.gov/fhir/vistaDefinedTerms/409.1#NSC \"Not Service Connected\""
+Invariant: a-11-2034
+Description: "2.98-9.5 > 409.1-.01: if Not SERVICE CONNECTED then http://va.gov/fhir/vistaDefinedTerms/409.1#NSC \"Not Service Connected\""
 Severity: #warning
 
-Invariant: Appointment-748
-Description: "if not null then fixed value #waitlist"
+Invariant: a-11-748
+Description: "409.3-.01: if not null then #waitlist"
 Severity: #warning
 
 Mapping: source-to-Appointment

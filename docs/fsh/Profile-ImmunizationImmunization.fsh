@@ -15,17 +15,17 @@ Description: "This StructureDefinition contains the maps for VistA file V IMMUNI
 * vaccineCode from http://va.gov/fhir/ValueSet/inferredCVX
 * primarySource.extension contains http://hl7.org/fhir/StructureDefinition/11179-permitted-value-conceptmap named 11179-permitted-value-conceptmap 0..1
 * primarySource.extension[11179-permitted-value-conceptmap].valueCanonical = "http://va.gov/fhir/ConceptMap/immunizationPrimarySource"
-* status obeys ImmunizationImmunization-297
-* status obeys ImmunizationImmunization-299
+* status obeys ii-24-297
+* status obeys ii-24-299
 * vaccineCode.coding.system = "http://hl7.org/fhir/sid/ndc"
 * performer.function = http://terminology.hl7.org/CodeSystem/v2-0443#AP
 
-Invariant: ImmunizationImmunization-297
-Description: "if CVX populated then fixed value #completed"
+Invariant: ii-24-297
+Description: "9000010.11-.01 > 9999999.14-.03: if CVX populated then #completed"
 Severity: #warning
 
-Invariant: ImmunizationImmunization-299
-Description: "if text like 'contraindicated', 'refused', 'decline', 'not avail' then fixed value #not-done"
+Invariant: ii-24-299
+Description: "9000010.11-.01 > 9999999.14-.01: if text like 'contraindicated', 'refused', 'decline', 'not avail' then #not-done"
 Severity: #warning
 
 Mapping: source-to-ImmunizationImmunization

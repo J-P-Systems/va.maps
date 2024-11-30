@@ -10,15 +10,15 @@ Description: "This StructureDefinition contains the maps for VistA file PRESCRIP
 * owner only Reference(Organization)
 * status from http://va.gov/fhir/ValueSet/RefillRequestStatus
 * intent = #proposal
-* code obeys MedRefillRequestMHVTask-1852
-* code obeys MedRefillRequestMHVTask-1861
+* code obeys mrrmhvt-23-1852
+* code obeys mrrmhvt-23-1861
 
-Invariant: MedRefillRequestMHVTask-1852
-Description: "if 31 RELEASED DATE/TIME not null (filled at least once) then fixed value #RF"
+Invariant: mrrmhvt-23-1852
+Description: "null: if 31 RELEASED DATE/TIME not null (filled at least once) then #RF"
 Severity: #warning
 
-Invariant: MedRefillRequestMHVTask-1861
-Description: "if 31 RELEASED DATE/TIME null (never filled) then fixed value #FF"
+Invariant: mrrmhvt-23-1861
+Description: "null: if 31 RELEASED DATE/TIME null (never filled) then #FF"
 Severity: #warning
 
 Mapping: source-to-MedRefillRequestMHVTask

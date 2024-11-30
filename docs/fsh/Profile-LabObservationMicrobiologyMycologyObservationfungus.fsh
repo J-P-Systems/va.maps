@@ -7,10 +7,10 @@ Description: "This StructureDefinition contains the maps for VistA file MICROBIO
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
 * ^extension.valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab|6.1.0"
 * code and valueString MS
-* code obeys LabObservationMicrobiologyMycologyObservationfungus-1527
+* code obeys lommo-51-1527
 
-Invariant: LabObservationMicrobiologyMycologyObservationfungus-1527
-Description: "if NULL then fixed value http://loinc.org#42804-5 \"Fungus identified in Isolate\""
+Invariant: lommo-51-1527
+Description: "63.05-.35 > 63.5-13 > 60-100 > 60.01-95.3 > 95.3-: if NULL then http://loinc.org#42804-5 \"Fungus identified in Isolate\""
 Severity: #warning
 
 Mapping: source-to-LabObservationMicrobiologyMycologyObservationfungus

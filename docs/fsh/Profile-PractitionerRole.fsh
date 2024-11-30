@@ -26,18 +26,18 @@ Description: "This StructureDefinition contains the maps for VistA file NEW PERS
 * telecom[va-voice-pager].system = #pager
 * telecom[va-data-pager].system = #pager
 * telecom[va-mail].system = #email
-* active obeys PractitionerRole-411
-* active obeys PractitionerRole-412
+* active obeys pr-16-411
+* active obeys pr-16-412
 * specialty.coding.system = "http://nucc.org/provider-taxonomy"
 * specialty.coding.display = "concat({PROVIDER TYPE (.01)}, {CLASSIFICATION (1)}, {AREA OF SPECIALIZATION (2)})"
 * code.coding.system = "http://nucc.org/provider-taxonomy"
 
-Invariant: PractitionerRole-411
-Description: "if date > now or = null then fixed value true"
+Invariant: pr-16-411
+Description: "200-8932.1 > 200.05-3: if date > now or = null then true"
 Severity: #warning
 
-Invariant: PractitionerRole-412
-Description: "if date < now then fixed value false"
+Invariant: pr-16-412
+Description: "200-8932.1 > 200.05-3: if date < now then false"
 Severity: #warning
 
 Mapping: source-to-PractitionerRole

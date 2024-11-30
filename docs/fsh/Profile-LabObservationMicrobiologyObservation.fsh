@@ -10,11 +10,11 @@ Description: "This StructureDefinition contains the maps for VistA file MICROBIO
 * specimen only Reference(LabObservationMicrobiologySpecimen)
 * subject only Reference(Patient)
 * identifier.system = "http://va.gov/identifiers/$Sta3n/63.05"
-* code.coding.system obeys LabObservationMicrobiologyObservation-1480-1
+* code.coding.system obeys lomo-37-1480-1
 * category = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
 
-Invariant: LabObservationMicrobiologyObservation-1480-1
-Description: "if Not NULL then fixed value http://loinc.org"
+Invariant: lomo-37-1480-1
+Description: "undefined: if Not NULL then http://loinc.org"
 Severity: #warning
 
 Mapping: source-to-LabObservationMicrobiologyObservation

@@ -16,14 +16,14 @@ Description: "This StructureDefinition contains the maps for VistA file GMRV VIT
 * performer only Reference(Organization)
 * subject only Reference(Patient)
 * code.coding 2..*
-* component[FlowRate].valueQuantity.code obeys VitalSignsSpO2-1239-1
-* component[FlowRate].code.coding.system obeys VitalSignsSpO2-1239-2
-* component[FlowRate].code.coding.code obeys VitalSignsSpO2-1239-3
-* component[Concentration].valueQuantity.code obeys VitalSignsSpO2-1240-1
-* component[Concentration].code.coding.system obeys VitalSignsSpO2-1240-2
-* component[Concentration].code.coding.code obeys VitalSignsSpO2-1240-3
-* status obeys VitalSignsSpO2-655
-* status obeys VitalSignsSpO2-656
+* component[FlowRate].valueQuantity.code obeys vsso-14-1239-1
+* component[FlowRate].code.coding.system obeys vsso-14-1239-2
+* component[FlowRate].code.coding.code obeys vsso-14-1239-3
+* component[Concentration].valueQuantity.code obeys vsso-14-1240-1
+* component[Concentration].code.coding.system obeys vsso-14-1240-2
+* component[Concentration].code.coding.code obeys vsso-14-1240-3
+* status obeys vsso-14-655
+* status obeys vsso-14-656
 * category = http://terminology.hl7.org/CodeSystem/observation-category#vital-signs
 * identifier.system = "http://va.gov/identifiers/$Sta3n/120.5"
 * code.coding from http://va.gov/fhir/ValueSet/VitalsCodes
@@ -38,36 +38,36 @@ Description: "This StructureDefinition contains the maps for VistA file GMRV VIT
 * valueQuantity.code.extension contains http://hl7.org/fhir/StructureDefinition/11179-permitted-value-conceptmap named 11179-permitted-value-conceptmap 0..1
 * valueQuantity.code.extension[11179-permitted-value-conceptmap].valueCanonical = "http://va.gov/fhir/ConceptMap/VitalsUnits"
 
-Invariant: VitalSignsSpO2-1239-1
-Description: "if VUID = 4500637 then fixed value L/min"
+Invariant: vsso-14-1239-1
+Description: "undefined: if VUID = 4500637 then L/min"
 Severity: #warning
 
-Invariant: VitalSignsSpO2-1239-2
-Description: "if VUID = 4500637 then fixed value http://loinc.org"
+Invariant: vsso-14-1239-2
+Description: "undefined: if VUID = 4500637 then http://loinc.org"
 Severity: #warning
 
-Invariant: VitalSignsSpO2-1239-3
-Description: "if VUID = 4500637 then fixed value 3151-8"
+Invariant: vsso-14-1239-3
+Description: "undefined: if VUID = 4500637 then 3151-8"
 Severity: #warning
 
-Invariant: VitalSignsSpO2-1240-1
-Description: "if VUID = 4500637 then fixed value %"
+Invariant: vsso-14-1240-1
+Description: "undefined: if VUID = 4500637 then %"
 Severity: #warning
 
-Invariant: VitalSignsSpO2-1240-2
-Description: "if VUID = 4500637 then fixed value http://loinc.org"
+Invariant: vsso-14-1240-2
+Description: "undefined: if VUID = 4500637 then http://loinc.org"
 Severity: #warning
 
-Invariant: VitalSignsSpO2-1240-3
-Description: "if VUID = 4500637 then fixed value 3150-0"
+Invariant: vsso-14-1240-3
+Description: "undefined: if VUID = 4500637 then 3150-0"
 Severity: #warning
 
-Invariant: VitalSignsSpO2-655
-Description: "if null then fixed value #final"
+Invariant: vsso-14-655
+Description: "120.5-4: if null then #final"
 Severity: #warning
 
-Invariant: VitalSignsSpO2-656
-Description: "if not null then fixed value #entered-in-error"
+Invariant: vsso-14-656
+Description: "120.5-4: if not null then #entered-in-error"
 Severity: #warning
 
 Mapping: source-to-VitalSignsSpO2
