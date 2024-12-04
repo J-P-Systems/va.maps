@@ -10,11 +10,11 @@
     "valueCanonical" : "http://hl7.org/fhir/us/core/StructureDefinition/us-core-smokingstatus|6.1.0"
   }],
   "url" : "http://va.gov/fhir/StructureDefinition/SmokingStatusObservation",
-  "version" : "0.69.436",
+  "version" : "0.69.437",
   "name" : "SmokingStatusObservation",
   "title" : "Smoking Status Observation",
   "status" : "active",
-  "date" : "2024-12-04T11:34:53+00:00",
+  "date" : "2024-12-04T16:25:11+00:00",
   "publisher" : "VA",
   "contact" : [{
     "name" : "VA",
@@ -39,6 +39,10 @@
   {
     "identity" : "cdw",
     "name" : "Clinical Data Warehouse (CDW)"
+  },
+  {
+    "identity" : "vpr",
+    "name" : "Virtual Patient Record (VPR)"
   },
   {
     "identity" : "workflow",
@@ -1152,6 +1156,10 @@
         "map" : "HF.HealthFactor.HealthFactorTypeIEN\nDim.HealthFactorType.CategoryHealthFactorTypeIEN"
       },
       {
+        "identity" : "vpr",
+        "map" : "healthFactor.category,healthFactor.name"
+      },
+      {
         "identity" : "workflow",
         "map" : "Event.code"
       },
@@ -1323,6 +1331,10 @@
       {
         "identity" : "cdw",
         "map" : "HF.HealthFactor.VisitDateTime,HF.HealthFactor.VisitIEN"
+      },
+      {
+        "identity" : "vpr",
+        "map" : "healthFactor.encounter,healthFactor.facility,healthFactor.recorded"
       },
       {
         "identity" : "workflow",
@@ -1641,6 +1653,10 @@
       {
         "identity" : "cdw",
         "map" : "HF.HealthFactor.HealthFactorTypeIEN\nDim.HealthFactorType.HealthFactorCategory,Dim.HealthFactorType.HealthFactorType"
+      },
+      {
+        "identity" : "vpr",
+        "map" : "healthFactor.category,healthFactor.name"
       },
       {
         "identity" : "sct-concept",
@@ -2150,6 +2166,10 @@
       {
         "identity" : "cdw",
         "map" : "HF.HealthFactor.Comments"
+      },
+      {
+        "identity" : "vpr",
+        "map" : "healthFactor.comment"
       },
       {
         "identity" : "v2",
@@ -3285,6 +3305,10 @@
       {
         "identity" : "cdw",
         "map" : "HF.HealthFactor.HealthFactorTypeIEN\nDim.HealthFactorType.CategoryHealthFactorTypeIEN"
+      },
+      {
+        "identity" : "vpr",
+        "map" : "healthFactor.category,healthFactor.name"
       }]
     },
     {
@@ -3318,6 +3342,10 @@
       {
         "identity" : "cdw",
         "map" : "HF.HealthFactor.VisitDateTime,HF.HealthFactor.VisitIEN"
+      },
+      {
+        "identity" : "vpr",
+        "map" : "healthFactor.encounter,healthFactor.facility,healthFactor.recorded"
       }]
     },
     {
@@ -3373,6 +3401,10 @@
       {
         "identity" : "cdw",
         "map" : "HF.HealthFactor.HealthFactorTypeIEN\nDim.HealthFactorType.HealthFactorCategory,Dim.HealthFactorType.HealthFactorType"
+      },
+      {
+        "identity" : "vpr",
+        "map" : "healthFactor.category,healthFactor.name"
       }]
     },
     {
@@ -3396,6 +3428,10 @@
       {
         "identity" : "cdw",
         "map" : "HF.HealthFactor.Comments"
+      },
+      {
+        "identity" : "vpr",
+        "map" : "healthFactor.comment"
       }]
     }]
   }

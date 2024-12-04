@@ -77,11 +77,11 @@
     <valueCanonical value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-pulse-oximetry|6.1.0"/>
   </extension>
   <url value="http://va.gov/fhir/StructureDefinition/VitalSignsSpO2"/>
-  <version value="0.69.436"/>
+  <version value="0.69.437"/>
   <name value="VitalSignsSpO2"/>
   <title value="Vital Signs: SpO2"/>
   <status value="active"/>
-  <date value="2024-12-04T11:34:53+00:00"/>
+  <date value="2024-12-04T16:25:11+00:00"/>
   <publisher value="VA"/>
   <contact>
     <name value="VA"/>
@@ -106,6 +106,10 @@
   <mapping>
     <identity value="cdw"/>
     <name value="Clinical Data Warehouse (CDW)"/>
+  </mapping>
+  <mapping>
+    <identity value="vpr"/>
+    <name value="Virtual Patient Record (VPR)"/>
   </mapping>
   <mapping>
     <identity value="workflow"/>
@@ -1353,6 +1357,10 @@
         <map value="656: fixed value = #entered-in-error when GMRV VITAL MEASUREMENT - REASON ENTERED IN ERROR (120.5-4) case not null"/>
       </mapping>
       <mapping>
+        <identity value="vpr"/>
+        <map value="vital.removed [m]"/>
+      </mapping>
+      <mapping>
         <identity value="workflow"/>
         <map value="Event.status"/>
       </mapping>
@@ -2090,6 +2098,10 @@
         <map value="Vital.VitalSign.VitalTypeIEN"/>
       </mapping>
       <mapping>
+        <identity value="vpr"/>
+        <map value="vital.vuid,vital.name,vital.high,vital.low,vital.bmi"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="C*E.1-8, C*E.10-22"/>
       </mapping>
@@ -2500,6 +2512,10 @@
         <map value="Vital.VitalSign.VitalSignTakenDateTime,Vital.VitalSignQualifier.VitalSignTakenDateTime"/>
       </mapping>
       <mapping>
+        <identity value="vpr"/>
+        <map value="vital.taken"/>
+      </mapping>
+      <mapping>
         <identity value="workflow"/>
         <map value="Event.occurrence[x]"/>
       </mapping>
@@ -2551,6 +2567,10 @@
         <map value="Vital.VitalSign.VitalSignEnteredDateTime"/>
       </mapping>
       <mapping>
+        <identity value="vpr"/>
+        <map value="vital.entered"/>
+      </mapping>
+      <mapping>
         <identity value="w5"/>
         <map value="FiveWs.recorded"/>
       </mapping>
@@ -2597,6 +2617,10 @@
       <mapping>
         <identity value="cdw"/>
         <map value="Vital.VitalSign.LocationIEN"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="vital.facility,vital.location"/>
       </mapping>
       <mapping>
         <identity value="workflow"/>
@@ -2874,6 +2898,10 @@
         <map value="Vital.VitalSign.Diastolic,Vital.VitalSign.Systolic,Vital.VitalSign.VitalResult,Vital.VitalSign.VitalResultNumeric"/>
       </mapping>
       <mapping>
+        <identity value="vpr"/>
+        <map value="vital.value,vital.units,vital.metricvalue,vital.metricUnits,vital.bmi"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="SN.2  / CQ - N/A"/>
       </mapping>
@@ -3033,6 +3061,10 @@
       <mapping>
         <identity value="cdw"/>
         <map value="Vital.VitalSign.VitalTypeIEN"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="vital.vuid,vital.name,vital.high,vital.low,vital.bmi"/>
       </mapping>
       <mapping>
         <identity value="v2"/>
@@ -8145,6 +8177,14 @@
         <identity value="vista"/>
         <map value="656: fixed value = #entered-in-error when GMRV VITAL MEASUREMENT - REASON ENTERED IN ERROR (120.5-4) case not null"/>
       </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="vital.removed [m]"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="vital.removed [m]"/>
+      </mapping>
     </element>
     <element id="Observation.category">
       <path value="Observation.category"/>
@@ -8174,6 +8214,10 @@
       <mapping>
         <identity value="cdw"/>
         <map value="Vital.VitalSign.VitalTypeIEN"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="vital.vuid,vital.name,vital.high,vital.low,vital.bmi"/>
       </mapping>
     </element>
     <element id="Observation.subject">
@@ -8222,6 +8266,10 @@
         <identity value="cdw"/>
         <map value="Vital.VitalSign.VitalSignTakenDateTime,Vital.VitalSignQualifier.VitalSignTakenDateTime"/>
       </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="vital.taken"/>
+      </mapping>
     </element>
     <element id="Observation.issued">
       <path value="Observation.issued"/>
@@ -8233,6 +8281,10 @@
       <mapping>
         <identity value="cdw"/>
         <map value="Vital.VitalSign.VitalSignEnteredDateTime"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="vital.entered"/>
       </mapping>
     </element>
     <element id="Observation.performer">
@@ -8249,6 +8301,10 @@
       <mapping>
         <identity value="cdw"/>
         <map value="Vital.VitalSign.LocationIEN"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="vital.facility,vital.location"/>
       </mapping>
     </element>
     <element id="Observation.value[x]">
@@ -8285,6 +8341,10 @@
         <identity value="cdw"/>
         <map value="Vital.VitalSign.Diastolic,Vital.VitalSign.Systolic,Vital.VitalSign.VitalResult,Vital.VitalSign.VitalResultNumeric"/>
       </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="vital.value,vital.units,vital.metricvalue,vital.metricUnits,vital.bmi"/>
+      </mapping>
     </element>
     <element id="Observation.value[x]:valueQuantity.code">
       <path value="Observation.value[x].code"/>
@@ -8297,6 +8357,10 @@
       <mapping>
         <identity value="cdw"/>
         <map value="Vital.VitalSign.VitalTypeIEN"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="vital.vuid,vital.name,vital.high,vital.low,vital.bmi"/>
       </mapping>
     </element>
     <element id="Observation.value[x]:valueQuantity.code.extension">

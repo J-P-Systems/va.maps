@@ -40,3 +40,9 @@ Source: ProcedureRadiology
 * performedDateTime -> "Rad.RadiologyExam.ExamDateTime,Rad.RadiologyExamActivityLog.ExamDateTime,Rad.RadiologyExamContrastMedia.ExamDateTime,Rad.RadiologyExamCPTModifier.ExamDateTime,Rad.RadiologyExamMedication.ExamDateTime,Rad.RadiologyExamSecondaryDiagnosticCode.ExamDateTime,Rad.RadiologyExamStatusList.ExamDateTime,Rad.RadiologyExamTechnologist.ExamDateTime,Rad.RadiologyRegisteredExam.ExamDateTime"
 * performer.actor -> "Rad.RadiologyExam.PrimaryInterpretingStaffIEN"
 * location -> "Rad.RadiologyRegisteredExam.RadiologyLocationIEN\nDim.RadiologyLocation.LocationIEN"
+
+Mapping: vpr-to-ProcedureRadiology
+Id: vpr
+Title: "Virtual Patient Record (VPR)"
+Source: ProcedureRadiology
+* subject -> "radiology.case,radiology.dateTime,radiology.modifier [m]"

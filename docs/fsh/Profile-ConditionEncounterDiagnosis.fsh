@@ -47,3 +47,9 @@ Source: ConditionEncounterDiagnosis
 * clinicalStatus -> "Outpat.VDiagnosis.Modifier,Outpat.WorkloadVDiagnosis.Modifier"
 * verificationStatus -> "Outpat.VDiagnosis.Modifier,Outpat.WorkloadVDiagnosis.Modifier"
 * recorder -> "Outpat.VDiagnosis.EncounterProviderIEN,Outpat.WorkloadVDiagnosis.EncounterProviderIEN"
+
+Mapping: vpr-to-ConditionEncounterDiagnosis
+Id: vpr
+Title: "Virtual Patient Record (VPR)"
+Source: ConditionEncounterDiagnosis
+* recordedDate -> "visit.dateTime,visit.visitString"

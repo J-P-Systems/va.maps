@@ -10,11 +10,11 @@
     "valueCanonical" : "http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure|6.1.0"
   }],
   "url" : "http://va.gov/fhir/StructureDefinition/ProcedureSurgeryProcedure",
-  "version" : "0.69.436",
+  "version" : "0.69.437",
   "name" : "ProcedureSurgeryProcedure",
   "title" : "Procedure: Surgery Procedure",
   "status" : "active",
-  "date" : "2024-12-04T11:34:53+00:00",
+  "date" : "2024-12-04T16:25:11+00:00",
   "publisher" : "VA",
   "contact" : [{
     "name" : "VA",
@@ -39,6 +39,10 @@
   {
     "identity" : "cdw",
     "name" : "Clinical Data Warehouse (CDW)"
+  },
+  {
+    "identity" : "vpr",
+    "name" : "Virtual Patient Record (VPR)"
   },
   {
     "identity" : "workflow",
@@ -1443,6 +1447,10 @@
         "map" : "Surg.SurgeryPRE.PrincipalProcedureText"
       },
       {
+        "identity" : "vpr",
+        "map" : "surgery.name"
+      },
+      {
         "identity" : "v2",
         "map" : "C*E.9. But note many systems use C*E.2 for this"
       },
@@ -1547,6 +1555,10 @@
       "mapping" : [{
         "identity" : "vista",
         "map" : "1285: reference from SURGERY - VISIT (130-.015)"
+      },
+      {
+        "identity" : "vpr",
+        "map" : "surgery.encounter"
       },
       {
         "identity" : "workflow",
@@ -1682,6 +1694,10 @@
       {
         "identity" : "cdw",
         "map" : "SPatient.ImplantedProsthesis.SurgeryDateTime,SPatient.OperationsIndication.SurgeryDateTime,Surg.AnesthesiaAgent.SurgeryDateTime,Surg.AnesthesiaBlockSite.SurgeryDateTime,Surg.AnesthesiaTechnique.SurgeryDateTime,Surg.AnesthesiaTestDose.SurgeryDateTime,Surg.ReferringPhysician.SurgeryDateTime,Surg.ReplacementFluidType.SurgeryDateTime,Surg.SurgeryAssistant.SurgeryDateTime,Surg.SurgeryAssistantOther.SurgeryDateTime,Surg.SurgeryDelay.SurgeryDateTime,Surg.SurgeryINTRA.SurgeryDateTime,Surg.SurgeryIrrigation.SurgeryDateTime,Surg.SurgeryMedication.SurgeryDateTime,Surg.SurgeryOccurrenceNonOp.SurgeryDateTime,Surg.SurgeryOtherPostOpDiagnosis.SurgeryDateTime,Surg.SurgeryOtherProcedure.SurgeryDateTime,Surg.SurgeryOtherProcedureCPTModifier.SurgeryDateTime,Surg.SurgeryOtherProcedureDiagnosis.SurgeryDateTime,Surg.SurgeryPOST.SurgeryDateTime,Surg.SurgeryPostOpDiagnosis.SurgeryDateTime,Surg.SurgeryPRE.SurgeryDateTime,Surg.SurgeryPreOpDiagnosis.SurgeryDateTime,Surg.SurgeryPrincipalAssociatedDiagnosis.SurgeryDateTime,Surg.SurgeryPrincipalAssociatedProcedure.SurgeryDateTime,Surg.SurgeryPrincipalCPTModifier.SurgeryDateTime,Surg.SurgeryPrincipalDiagnosis.SurgeryDateTime,Surg.SurgeryProcedureCPTModifier.SurgeryDateTime,Surg.SurgeryProcedureDiagnosisCode.SurgeryDateTime,Surg.SurgeryProcedureOccurrence.SurgeryDateTime,Surg.SurgeryRequiredBloodProducts.SurgeryDateTime,Surg.SurgeryReturnCase.SurgeryDateTime,Surg.SurgORCircSupport.SurgeryDateTime,Surg.SurgORCircSupportTime.SurgeryDateTime,Surg.SurgORScrubSupport.SurgeryDateTime,Surg.SurgORScrubSupportTime.SurgeryDateTime"
+      },
+      {
+        "identity" : "vpr",
+        "map" : "surgery.dateTime"
       },
       {
         "identity" : "workflow",
@@ -3161,6 +3177,10 @@
       {
         "identity" : "cdw",
         "map" : "Surg.SurgeryINTRA.SurgeonStaffIEN"
+      },
+      {
+        "identity" : "vpr",
+        "map" : "surgery.provider"
       },
       {
         "identity" : "workflow",
@@ -8201,6 +8221,10 @@
         "map" : "Surg.SurgeryINTRA.ProviderIEN"
       },
       {
+        "identity" : "vpr",
+        "map" : "surgery.provider"
+      },
+      {
         "identity" : "workflow",
         "map" : "Event.performer.actor"
       },
@@ -9869,6 +9893,10 @@
       {
         "identity" : "cdw",
         "map" : "Surg.SurgeryPRE.PrincipalProcedureText"
+      },
+      {
+        "identity" : "vpr",
+        "map" : "surgery.name"
       }]
     },
     {
@@ -9898,6 +9926,10 @@
       "mapping" : [{
         "identity" : "vista",
         "map" : "1285: reference from SURGERY - VISIT (130-.015)"
+      },
+      {
+        "identity" : "vpr",
+        "map" : "surgery.encounter"
       }]
     },
     {
@@ -9933,6 +9965,10 @@
       {
         "identity" : "cdw",
         "map" : "SPatient.ImplantedProsthesis.SurgeryDateTime,SPatient.OperationsIndication.SurgeryDateTime,Surg.AnesthesiaAgent.SurgeryDateTime,Surg.AnesthesiaBlockSite.SurgeryDateTime,Surg.AnesthesiaTechnique.SurgeryDateTime,Surg.AnesthesiaTestDose.SurgeryDateTime,Surg.ReferringPhysician.SurgeryDateTime,Surg.ReplacementFluidType.SurgeryDateTime,Surg.SurgeryAssistant.SurgeryDateTime,Surg.SurgeryAssistantOther.SurgeryDateTime,Surg.SurgeryDelay.SurgeryDateTime,Surg.SurgeryINTRA.SurgeryDateTime,Surg.SurgeryIrrigation.SurgeryDateTime,Surg.SurgeryMedication.SurgeryDateTime,Surg.SurgeryOccurrenceNonOp.SurgeryDateTime,Surg.SurgeryOtherPostOpDiagnosis.SurgeryDateTime,Surg.SurgeryOtherProcedure.SurgeryDateTime,Surg.SurgeryOtherProcedureCPTModifier.SurgeryDateTime,Surg.SurgeryOtherProcedureDiagnosis.SurgeryDateTime,Surg.SurgeryPOST.SurgeryDateTime,Surg.SurgeryPostOpDiagnosis.SurgeryDateTime,Surg.SurgeryPRE.SurgeryDateTime,Surg.SurgeryPreOpDiagnosis.SurgeryDateTime,Surg.SurgeryPrincipalAssociatedDiagnosis.SurgeryDateTime,Surg.SurgeryPrincipalAssociatedProcedure.SurgeryDateTime,Surg.SurgeryPrincipalCPTModifier.SurgeryDateTime,Surg.SurgeryPrincipalDiagnosis.SurgeryDateTime,Surg.SurgeryProcedureCPTModifier.SurgeryDateTime,Surg.SurgeryProcedureDiagnosisCode.SurgeryDateTime,Surg.SurgeryProcedureOccurrence.SurgeryDateTime,Surg.SurgeryRequiredBloodProducts.SurgeryDateTime,Surg.SurgeryReturnCase.SurgeryDateTime,Surg.SurgORCircSupport.SurgeryDateTime,Surg.SurgORCircSupportTime.SurgeryDateTime,Surg.SurgORScrubSupport.SurgeryDateTime,Surg.SurgORScrubSupportTime.SurgeryDateTime"
+      },
+      {
+        "identity" : "vpr",
+        "map" : "surgery.dateTime"
       }]
     },
     {
@@ -10096,6 +10132,10 @@
       {
         "identity" : "cdw",
         "map" : "Surg.SurgeryINTRA.SurgeonStaffIEN"
+      },
+      {
+        "identity" : "vpr",
+        "map" : "surgery.provider"
       }]
     },
     {
@@ -10646,6 +10686,10 @@
       {
         "identity" : "cdw",
         "map" : "Surg.SurgeryINTRA.ProviderIEN"
+      },
+      {
+        "identity" : "vpr",
+        "map" : "surgery.provider"
       }]
     },
     {

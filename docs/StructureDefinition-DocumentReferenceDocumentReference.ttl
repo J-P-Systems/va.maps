@@ -20,11 +20,11 @@
      ]
   ] ) ; # 
   fhir:url [ fhir:v "http://va.gov/fhir/StructureDefinition/DocumentReferenceDocumentReference"^^xsd:anyURI] ; # 
-  fhir:version [ fhir:v "0.69.436"] ; # 
+  fhir:version [ fhir:v "0.69.437"] ; # 
   fhir:name [ fhir:v "DocumentReferenceDocumentReference"] ; # 
   fhir:title [ fhir:v "Document Reference DocumentReference"] ; # 
   fhir:status [ fhir:v "active"] ; # 
-  fhir:date [ fhir:v "2024-12-04T11:34:53+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2024-12-04T16:25:11+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "VA"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "VA" ] ;
@@ -48,6 +48,9 @@
   ] [
      fhir:identity [ fhir:v "cdw" ] ;
      fhir:name [ fhir:v "Clinical Data Warehouse (CDW)" ]
+  ] [
+     fhir:identity [ fhir:v "vpr" ] ;
+     fhir:name [ fhir:v "Virtual Patient Record (VPR)" ]
   ] [
      fhir:identity [ fhir:v "workflow" ] ;
      fhir:uri [ fhir:v "http://hl7.org/fhir/workflow"^^xsd:anyURI ] ;
@@ -1066,6 +1069,9 @@
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "TIU.TIUDocument.TIUDocumentDefinitionIEN" ]
        ] [
+         fhir:identity [ fhir:v "vpr" ] ;
+         fhir:map [ fhir:v "document.category,document.localTitle,document.nationalTitle,document.nationalTitleRole,document.nationalTitleService,document.nationalTitleSetting,document.nationalTitleSubject,document.nationalTitleType,document.type" ]
+       ] [
          fhir:identity [ fhir:v "workflow" ] ;
          fhir:map [ fhir:v "Event.code" ]
        ] [
@@ -1406,6 +1412,9 @@
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "TIU.TIUDocument.TIUDocumentDefinitionIEN" ]
        ] [
+         fhir:identity [ fhir:v "vpr" ] ;
+         fhir:map [ fhir:v "document.category,document.localTitle,document.nationalTitle,document.nationalTitleRole,document.nationalTitleService,document.nationalTitleSetting,document.nationalTitleSubject,document.nationalTitleType,document.type" ]
+       ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "C*E.1" ]
        ] [
@@ -1540,6 +1549,9 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "TIU.TIUDocument.TIUDocumentDefinitionIEN" ]
+       ] [
+         fhir:identity [ fhir:v "vpr" ] ;
+         fhir:map [ fhir:v "document.category,document.localTitle,document.nationalTitle,document.nationalTitleRole,document.nationalTitleService,document.nationalTitleSetting,document.nationalTitleSubject,document.nationalTitleType,document.type" ]
        ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "C*E.9. But note many systems use C*E.2 for this" ]
@@ -1885,6 +1897,9 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "TIU.TIUDocument.SignedByStaffIEN" ]
+       ] [
+         fhir:identity [ fhir:v "vpr" ] ;
+         fhir:map [ fhir:v "document.clinician [m]" ]
        ] [
          fhir:identity [ fhir:v "workflow" ] ;
          fhir:map [ fhir:v "Event.performer.actor" ]
@@ -2308,6 +2323,9 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "TIU.TIUDocument.DocumentSubject" ]
+       ] [
+         fhir:identity [ fhir:v "vpr" ] ;
+         fhir:map [ fhir:v "document.subject" ]
        ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "TXA-25" ]
@@ -2868,6 +2886,9 @@
          fhir:map [ fhir:v "892: transform using create(Binary) on TIU DOCUMENT - REPORT TEXT (8925-2)" ] ;
          fhir:comment [ fhir:v "option 2: USED in PHAPI\nUS Core: DocumentReference.content.attachment.url or DocumentReference.content.attachment.data or both SHALL be present." ]
        ] [
+         fhir:identity [ fhir:v "vpr" ] ;
+         fhir:map [ fhir:v "document.content[n]" ]
+       ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "RP.1+RP.2 - if they refer to a URL (see v2.6)" ]
        ] [
@@ -2909,6 +2930,9 @@
          fhir:identity [ fhir:v "vista" ] ;
          fhir:map [ fhir:v "893: transform using calculate() on TIU DOCUMENT - REPORT TEXT (8925-2)" ]
        ] [
+         fhir:identity [ fhir:v "vpr" ] ;
+         fhir:map [ fhir:v "document.content[n]" ]
+       ] [
          fhir:identity [ fhir:v "rim" ] ;
          fhir:map [ fhir:v "N/A (needs data type R3 proposal)" ]
        ] )
@@ -2946,6 +2970,9 @@
        fhir:mapping ( [
          fhir:identity [ fhir:v "vista" ] ;
          fhir:map [ fhir:v "894: transform using calculate() on TIU DOCUMENT - REPORT TEXT (8925-2)" ]
+       ] [
+         fhir:identity [ fhir:v "vpr" ] ;
+         fhir:map [ fhir:v "document.content[n]" ]
        ] [
          fhir:identity [ fhir:v "rim" ] ;
          fhir:map [ fhir:v ".integrityCheck[parent::ED/integrityCheckAlgorithm=\"SHA-1\"]" ]
@@ -2995,6 +3022,9 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "TIU.TIUDocument.TIUDocumentDefinitionIEN" ]
+       ] [
+         fhir:identity [ fhir:v "vpr" ] ;
+         fhir:map [ fhir:v "document.category,document.localTitle,document.nationalTitle,document.nationalTitleRole,document.nationalTitleService,document.nationalTitleSetting,document.nationalTitleSubject,document.nationalTitleType,document.type" ]
        ] [
          fhir:identity [ fhir:v "rim" ] ;
          fhir:map [ fhir:v "./title/data" ]
@@ -3287,6 +3317,9 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "TIU.TIUDocument.VisitIEN" ]
+       ] [
+         fhir:identity [ fhir:v "vpr" ] ;
+         fhir:map [ fhir:v "document.encounter" ]
        ] [
          fhir:identity [ fhir:v "workflow" ] ;
          fhir:map [ fhir:v "Event.context" ]
@@ -3616,6 +3649,9 @@
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "TIU.TIUDocument.DocumentLocationIEN\nDim.Location.LocationType,Dim.Location.LocationType" ]
        ] [
+         fhir:identity [ fhir:v "vpr" ] ;
+         fhir:map [ fhir:v "document.facility" ]
+       ] [
          fhir:identity [ fhir:v "fhircomposition" ] ;
          fhir:map [ fhir:v "usually from a mapping to a local ValueSet" ]
        ] [
@@ -3830,6 +3866,9 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "TIU.TIUDocument.TIUDocumentDefinitionIEN" ]
+       ] [
+         fhir:identity [ fhir:v "vpr" ] ;
+         fhir:map [ fhir:v "document.category,document.localTitle,document.nationalTitle,document.nationalTitleRole,document.nationalTitleService,document.nationalTitleSetting,document.nationalTitleSubject,document.nationalTitleType,document.type" ]
        ] )
      ] [
        fhir:id [ fhir:v "DocumentReference.type.coding.system" ] ;
@@ -3852,6 +3891,9 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "TIU.TIUDocument.TIUDocumentDefinitionIEN" ]
+       ] [
+         fhir:identity [ fhir:v "vpr" ] ;
+         fhir:map [ fhir:v "document.category,document.localTitle,document.nationalTitle,document.nationalTitleRole,document.nationalTitleService,document.nationalTitleSetting,document.nationalTitleSubject,document.nationalTitleType,document.type" ]
        ] )
      ] [
        fhir:id [ fhir:v "DocumentReference.type.text" ] ;
@@ -3864,6 +3906,9 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "TIU.TIUDocument.TIUDocumentDefinitionIEN" ]
+       ] [
+         fhir:identity [ fhir:v "vpr" ] ;
+         fhir:map [ fhir:v "document.category,document.localTitle,document.nationalTitle,document.nationalTitleRole,document.nationalTitleService,document.nationalTitleSetting,document.nationalTitleSubject,document.nationalTitleType,document.type" ]
        ] )
      ] [
        fhir:id [ fhir:v "DocumentReference.category:us-core" ] ;
@@ -3919,6 +3964,12 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "TIU.TIUDocument.SignedByStaffIEN" ]
+       ] [
+         fhir:identity [ fhir:v "vpr" ] ;
+         fhir:map [ fhir:v "document.clinician [m]" ]
+       ] [
+         fhir:identity [ fhir:v "vpr" ] ;
+         fhir:map [ fhir:v "document.clinician [m]" ]
        ] )
      ] [
        fhir:id [ fhir:v "DocumentReference.authenticator" ] ;
@@ -3953,6 +4004,9 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "TIU.TIUDocument.DocumentSubject" ]
+       ] [
+         fhir:identity [ fhir:v "vpr" ] ;
+         fhir:map [ fhir:v "document.subject" ]
        ] )
      ] [
        fhir:id [ fhir:v "DocumentReference.securityLabel" ] ;
@@ -4000,6 +4054,9 @@
          fhir:identity [ fhir:v "vista" ] ;
          fhir:map [ fhir:v "892: transform using create(Binary) on TIU DOCUMENT - REPORT TEXT (8925-2)" ] ;
          fhir:comment [ fhir:v "option 2: USED in PHAPI\nUS Core: DocumentReference.content.attachment.url or DocumentReference.content.attachment.data or both SHALL be present." ]
+       ] [
+         fhir:identity [ fhir:v "vpr" ] ;
+         fhir:map [ fhir:v "document.content[n]" ]
        ] )
      ] [
        fhir:id [ fhir:v "DocumentReference.content.attachment.size" ] ;
@@ -4008,6 +4065,9 @@
        fhir:mapping ( [
          fhir:identity [ fhir:v "vista" ] ;
          fhir:map [ fhir:v "893: transform using calculate() on TIU DOCUMENT - REPORT TEXT (8925-2)" ]
+       ] [
+         fhir:identity [ fhir:v "vpr" ] ;
+         fhir:map [ fhir:v "document.content[n]" ]
        ] )
      ] [
        fhir:id [ fhir:v "DocumentReference.content.attachment.hash" ] ;
@@ -4016,6 +4076,9 @@
        fhir:mapping ( [
          fhir:identity [ fhir:v "vista" ] ;
          fhir:map [ fhir:v "894: transform using calculate() on TIU DOCUMENT - REPORT TEXT (8925-2)" ]
+       ] [
+         fhir:identity [ fhir:v "vpr" ] ;
+         fhir:map [ fhir:v "document.content[n]" ]
        ] )
      ] [
        fhir:id [ fhir:v "DocumentReference.content.attachment.title" ] ;
@@ -4028,6 +4091,9 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "TIU.TIUDocument.TIUDocumentDefinitionIEN" ]
+       ] [
+         fhir:identity [ fhir:v "vpr" ] ;
+         fhir:map [ fhir:v "document.category,document.localTitle,document.nationalTitle,document.nationalTitleRole,document.nationalTitleService,document.nationalTitleSetting,document.nationalTitleSubject,document.nationalTitleType,document.type" ]
        ] )
      ] [
        fhir:id [ fhir:v "DocumentReference.content.attachment.creation" ] ;
@@ -4066,6 +4132,9 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "TIU.TIUDocument.VisitIEN" ]
+       ] [
+         fhir:identity [ fhir:v "vpr" ] ;
+         fhir:map [ fhir:v "document.encounter" ]
        ] )
      ] [
        fhir:id [ fhir:v "DocumentReference.context.event" ] ;
@@ -4111,6 +4180,9 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "TIU.TIUDocument.DocumentLocationIEN\nDim.Location.LocationType,Dim.Location.LocationType" ]
+       ] [
+         fhir:identity [ fhir:v "vpr" ] ;
+         fhir:map [ fhir:v "document.facility" ]
        ] )
      ] [
        fhir:id [ fhir:v "DocumentReference.context.practiceSetting" ] ;

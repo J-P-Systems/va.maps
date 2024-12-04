@@ -43,4 +43,4 @@ Mapping: vpr-to-LabObservationChemhemtoxriaserDiagnosticReport
 Id: vpr
 Title: "Virtual Patient Record (VPR)"
 Source: LabObservationChemhemtoxriaserDiagnosticReport
-* subject -> "demographics.lrdfn"
+* subject -> "demographics.lrdfn\naccession.collected"

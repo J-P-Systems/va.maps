@@ -10,11 +10,11 @@
     "valueCanonical" : "http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-note|6.1.0"
   }],
   "url" : "http://va.gov/fhir/StructureDefinition/LungCancerScreening",
-  "version" : "0.69.436",
+  "version" : "0.69.437",
   "name" : "LungCancerScreening",
   "title" : "Lung Cancer Screening",
   "status" : "draft",
-  "date" : "2024-12-04T11:34:53+00:00",
+  "date" : "2024-12-04T16:25:11+00:00",
   "publisher" : "VA",
   "contact" : [{
     "name" : "VA",
@@ -39,6 +39,10 @@
   {
     "identity" : "cdw",
     "name" : "Clinical Data Warehouse (CDW)"
+  },
+  {
+    "identity" : "vpr",
+    "name" : "Virtual Patient Record (VPR)"
   },
   {
     "identity" : "workflow",
@@ -824,6 +828,10 @@
         "map" : "TIU.TIUDocument.VisitIEN"
       },
       {
+        "identity" : "vpr",
+        "map" : "document.encounter"
+      },
+      {
         "identity" : "workflow",
         "map" : "Event.encounter"
       },
@@ -983,6 +991,10 @@
       {
         "identity" : "cdw",
         "map" : "TIU.TIUDocument.AuthorDictatorStaffIEN"
+      },
+      {
+        "identity" : "vpr",
+        "map" : "document.clinician [m]"
       },
       {
         "identity" : "workflow",
@@ -1514,6 +1526,10 @@
         "map" : "932: source value from TIU DOCUMENT - REPORT TEXT (8925-2)"
       },
       {
+        "identity" : "vpr",
+        "map" : "document.content[n]"
+      },
+      {
         "identity" : "v2",
         "map" : "OBX"
       },
@@ -1558,6 +1574,10 @@
       {
         "identity" : "cdw",
         "map" : "TIU.TIUDocument.VisitIEN"
+      },
+      {
+        "identity" : "vpr",
+        "map" : "document.encounter"
       }]
     },
     {
@@ -1574,6 +1594,10 @@
       {
         "identity" : "cdw",
         "map" : "TIU.TIUDocument.AuthorDictatorStaffIEN"
+      },
+      {
+        "identity" : "vpr",
+        "map" : "document.clinician [m]"
       }]
     },
     {
@@ -1582,6 +1606,10 @@
       "mapping" : [{
         "identity" : "vista",
         "map" : "932: source value from TIU DOCUMENT - REPORT TEXT (8925-2)"
+      },
+      {
+        "identity" : "vpr",
+        "map" : "document.content[n]"
       }]
     }]
   }

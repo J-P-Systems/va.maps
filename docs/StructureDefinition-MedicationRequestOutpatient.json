@@ -10,11 +10,11 @@
     "valueCanonical" : "http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest|6.1.0"
   }],
   "url" : "http://va.gov/fhir/StructureDefinition/MedicationRequestOutpatient",
-  "version" : "0.69.436",
+  "version" : "0.69.437",
   "name" : "MedicationRequestOutpatient",
   "title" : "MedicationRequest: Outpatient",
   "status" : "active",
-  "date" : "2024-12-04T11:34:53+00:00",
+  "date" : "2024-12-04T16:25:11+00:00",
   "publisher" : "VA",
   "contact" : [{
     "name" : "VA",
@@ -771,14 +771,6 @@
         "map" : "RxOut.RxOutpat.RxStatus"
       },
       {
-        "identity" : "vpr",
-        "map" : "pharmacy.status,pharmacy.vaStatus"
-      },
-      {
-        "identity" : "vpr",
-        "map" : "pharmacy.routing"
-      },
-      {
         "identity" : "v2",
         "map" : "C*E.1"
       },
@@ -1041,10 +1033,6 @@
       {
         "identity" : "cdw",
         "map" : "RxOut.RxOutpat.CancelDate"
-      },
-      {
-        "identity" : "vpr",
-        "map" : "pharmacy.stop"
       },
       {
         "identity" : "rim",
@@ -1741,7 +1729,7 @@
       },
       {
         "identity" : "vpr",
-        "map" : "pharmacy.prescription"
+        "map" : "pharmacy (med).dose,med.dose"
       },
       {
         "identity" : "workflow",
@@ -1803,10 +1791,6 @@
       {
         "identity" : "cdw",
         "map" : "RxOut.RxOutpat.RxStatus"
-      },
-      {
-        "identity" : "vpr",
-        "map" : "pharmacy.status,pharmacy.vaStatus"
       },
       {
         "identity" : "workflow",
@@ -2642,7 +2626,7 @@
       },
       {
         "identity" : "vpr",
-        "map" : "pharmacy.product [m]"
+        "map" : "pharmacy (med).route,med.route"
       },
       {
         "identity" : "v2",
@@ -2782,7 +2766,7 @@
       },
       {
         "identity" : "vpr",
-        "map" : "pharmacy.product [m]"
+        "map" : "pharmacy (med).route,med.route"
       },
       {
         "identity" : "v2",
@@ -2832,6 +2816,10 @@
       {
         "identity" : "cdw",
         "map" : "RxOut.ActivityLog.PatientIEN,RxOut.ActivityLogOtherComments.PatientIEN,RxOut.RxOutpat.PatientIEN,RxOut.RxOutpatExt.PatientIEN,RxOut.RxOutpatExt.PatientSID,RxOut.RxOutpatFill.PatientIEN,RxOut.RxOutpatMedInstructions.PatientIEN,RxOut.RxOutpatSig.PatientIEN"
+      },
+      {
+        "identity" : "vpr",
+        "map" : "pharmacy (med).units,med.units"
       },
       {
         "identity" : "workflow",
@@ -2991,7 +2979,7 @@
       },
       {
         "identity" : "vpr",
-        "map" : "pharmacy.start"
+        "map" : "pharmacy (med).unitsPerDose,med.unitsPerDose"
       },
       {
         "identity" : "workflow",
@@ -3056,7 +3044,7 @@
       },
       {
         "identity" : "vpr",
-        "map" : "pharmacy.currentProvider,pharmacy.orderingProvider"
+        "map" : "pharmacy (med).currentProvider,pharmacy (med).doseStart,pharmacy (med).doseStop,pharmacy (med).duration,med.currentProvider,med.doseStart,med.doseStop,med.duration"
       },
       {
         "identity" : "workflow",
@@ -4032,10 +4020,6 @@
         "map" : "RxOut.RxOutpatSig.PatientInstructions"
       },
       {
-        "identity" : "vpr",
-        "map" : "pharmacy.ptInstructions"
-      },
-      {
         "identity" : "v2",
         "map" : "RXO-7"
       },
@@ -4527,7 +4511,7 @@
       },
       {
         "identity" : "vpr",
-        "map" : "pharmacy.dose [m]"
+        "map" : "pharmacy (med).dose [m],med.dose [m]"
       },
       {
         "identity" : "v2",
@@ -4993,7 +4977,7 @@
       },
       {
         "identity" : "vpr",
-        "map" : "pharmacy.dose [m]"
+        "map" : "pharmacy (med).dose [m],med.dose [m]"
       },
       {
         "identity" : "rim",
@@ -5260,7 +5244,7 @@
       },
       {
         "identity" : "vpr",
-        "map" : "pharmacy.dose [m]"
+        "map" : "pharmacy (med).dose [m],med.dose [m]"
       },
       {
         "identity" : "v2",
@@ -5358,7 +5342,7 @@
       },
       {
         "identity" : "vpr",
-        "map" : "pharmacy.dose [m]"
+        "map" : "pharmacy (med).dose [m],med.dose [m]"
       },
       {
         "identity" : "v2",
@@ -6149,7 +6133,7 @@
       },
       {
         "identity" : "vpr",
-        "map" : "pharmacy.expires"
+        "map" : "pharmacy (med).expires,med.expires"
       },
       {
         "identity" : "v2",
@@ -6195,10 +6179,6 @@
       {
         "identity" : "cdw",
         "map" : "RxOut.RxOutpat.MaxRefills"
-      },
-      {
-        "identity" : "vpr",
-        "map" : "pharmacy.fillsAllowed"
       },
       {
         "identity" : "script10.6",
@@ -6362,7 +6342,7 @@
       },
       {
         "identity" : "vpr",
-        "map" : "pharmacy.quantity"
+        "map" : "pharmacy (med).schedule,med.schedule"
       },
       {
         "identity" : "v2",
@@ -6563,7 +6543,7 @@
       },
       {
         "identity" : "vpr",
-        "map" : "pharmacy.daysSupply"
+        "map" : "pharmacy (med).daysSupply,med.daysSupply"
       },
       {
         "identity" : "script10.6",
@@ -7041,14 +7021,6 @@
       {
         "identity" : "cdw",
         "map" : "RxOut.RxOutpat.RxStatus"
-      },
-      {
-        "identity" : "vpr",
-        "map" : "pharmacy.status,pharmacy.vaStatus"
-      },
-      {
-        "identity" : "vpr",
-        "map" : "pharmacy.routing"
       }]
     },
     {
@@ -7073,10 +7045,6 @@
       {
         "identity" : "cdw",
         "map" : "RxOut.RxOutpat.CancelDate"
-      },
-      {
-        "identity" : "vpr",
-        "map" : "pharmacy.stop"
       }]
     },
     {
@@ -7166,7 +7134,7 @@
       },
       {
         "identity" : "vpr",
-        "map" : "pharmacy.prescription"
+        "map" : "pharmacy (med).dose,med.dose"
       }]
     },
     {
@@ -7183,10 +7151,6 @@
       {
         "identity" : "cdw",
         "map" : "RxOut.RxOutpat.RxStatus"
-      },
-      {
-        "identity" : "vpr",
-        "map" : "pharmacy.status,pharmacy.vaStatus"
       }]
     },
     {
@@ -7261,7 +7225,7 @@
       },
       {
         "identity" : "vpr",
-        "map" : "pharmacy.product [m]"
+        "map" : "pharmacy (med).route,med.route"
       }]
     },
     {
@@ -7278,7 +7242,7 @@
       },
       {
         "identity" : "vpr",
-        "map" : "pharmacy.product [m]"
+        "map" : "pharmacy (med).route,med.route"
       }]
     },
     {
@@ -7295,6 +7259,10 @@
       {
         "identity" : "cdw",
         "map" : "RxOut.ActivityLog.PatientIEN,RxOut.ActivityLogOtherComments.PatientIEN,RxOut.RxOutpat.PatientIEN,RxOut.RxOutpatExt.PatientIEN,RxOut.RxOutpatExt.PatientSID,RxOut.RxOutpatFill.PatientIEN,RxOut.RxOutpatMedInstructions.PatientIEN,RxOut.RxOutpatSig.PatientIEN"
+      },
+      {
+        "identity" : "vpr",
+        "map" : "pharmacy (med).units,med.units"
       }]
     },
     {
@@ -7311,7 +7279,7 @@
       },
       {
         "identity" : "vpr",
-        "map" : "pharmacy.start"
+        "map" : "pharmacy (med).unitsPerDose,med.unitsPerDose"
       }]
     },
     {
@@ -7332,7 +7300,7 @@
       },
       {
         "identity" : "vpr",
-        "map" : "pharmacy.currentProvider,pharmacy.orderingProvider"
+        "map" : "pharmacy (med).currentProvider,pharmacy (med).doseStart,pharmacy (med).doseStop,pharmacy (med).duration,med.currentProvider,med.doseStart,med.doseStop,med.duration"
       }]
     },
     {
@@ -7367,10 +7335,6 @@
       {
         "identity" : "cdw",
         "map" : "RxOut.RxOutpatSig.PatientInstructions"
-      },
-      {
-        "identity" : "vpr",
-        "map" : "pharmacy.ptInstructions"
       }]
     },
     {
@@ -7398,7 +7362,7 @@
       },
       {
         "identity" : "vpr",
-        "map" : "pharmacy.dose [m]"
+        "map" : "pharmacy (med).dose [m],med.dose [m]"
       }]
     },
     {
@@ -7426,7 +7390,7 @@
       },
       {
         "identity" : "vpr",
-        "map" : "pharmacy.dose [m]"
+        "map" : "pharmacy (med).dose [m],med.dose [m]"
       }]
     },
     {
@@ -7466,7 +7430,7 @@
       },
       {
         "identity" : "vpr",
-        "map" : "pharmacy.dose [m]"
+        "map" : "pharmacy (med).dose [m],med.dose [m]"
       }]
     },
     {
@@ -7483,7 +7447,7 @@
       },
       {
         "identity" : "vpr",
-        "map" : "pharmacy.dose [m]"
+        "map" : "pharmacy (med).dose [m],med.dose [m]"
       }]
     },
     {
@@ -7497,7 +7461,7 @@
       },
       {
         "identity" : "vpr",
-        "map" : "pharmacy.expires"
+        "map" : "pharmacy (med).expires,med.expires"
       }]
     },
     {
@@ -7512,10 +7476,6 @@
       {
         "identity" : "cdw",
         "map" : "RxOut.RxOutpat.MaxRefills"
-      },
-      {
-        "identity" : "vpr",
-        "map" : "pharmacy.fillsAllowed"
       }]
     },
     {
@@ -7528,7 +7488,7 @@
       },
       {
         "identity" : "vpr",
-        "map" : "pharmacy.quantity"
+        "map" : "pharmacy (med).schedule,med.schedule"
       }]
     },
     {
@@ -7541,7 +7501,7 @@
       },
       {
         "identity" : "vpr",
-        "map" : "pharmacy.daysSupply"
+        "map" : "pharmacy (med).daysSupply,med.daysSupply"
       }]
     }]
   }

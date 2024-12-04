@@ -67,4 +67,4 @@ Mapping: vpr-to-LabObservationMicrobiologyParasitologyDiagnosticReport
 Id: vpr
 Title: "Virtual Patient Record (VPR)"
 Source: LabObservationMicrobiologyParasitologyDiagnosticReport
-* subject -> "demographics.lrdfn"
+* subject -> "demographics.lrdfn\naccession.collected"

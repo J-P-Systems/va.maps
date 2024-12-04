@@ -99,4 +99,4 @@ Source: ImmunizationImmunization
 * note.text -> "immunization.comment"
 * protocolApplied.doseNumberString -> "immunization.series"
 * encounter -> "immunization.administered,immunization.encounter,immunization.facility,immunization.location"
-* location -> "immunization.administered,immunization.encounter,immunization.facility,immunization.location"
+* location -> "immunization.administered,immunization.encounter,immunization.facility,immunization.location\nvisit.creditStopCode,visit.location,visit.service,visit.visitString"

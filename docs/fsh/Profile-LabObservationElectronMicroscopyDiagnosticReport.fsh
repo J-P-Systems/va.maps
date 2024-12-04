@@ -79,4 +79,4 @@ Mapping: vpr-to-LabObservationElectronMicroscopyDiagnosticReport
 Id: vpr
 Title: "Virtual Patient Record (VPR)"
 Source: LabObservationElectronMicroscopyDiagnosticReport
-* subject -> "demographics.lrdfn"
+* subject -> "demographics.lrdfn\naccession.collected"

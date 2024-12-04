@@ -24,11 +24,11 @@
     <valueCanonical value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest|6.1.0"/>
   </extension>
   <url value="http://va.gov/fhir/StructureDefinition/MedicationRequestUnsigned"/>
-  <version value="0.69.436"/>
+  <version value="0.69.437"/>
   <name value="MedicationRequestUnsigned"/>
   <title value="MedicationRequest: Unsigned"/>
   <status value="active"/>
-  <date value="2024-12-04T11:34:53+00:00"/>
+  <date value="2024-12-04T16:25:11+00:00"/>
   <publisher value="VA"/>
   <contact>
     <name value="VA"/>
@@ -53,6 +53,10 @@
   <mapping>
     <identity value="cdw"/>
     <name value="Clinical Data Warehouse (CDW)"/>
+  </mapping>
+  <mapping>
+    <identity value="vpr"/>
+    <name value="Virtual Patient Record (VPR)"/>
   </mapping>
   <mapping>
     <identity value="workflow"/>
@@ -1177,6 +1181,10 @@
       <mapping>
         <identity value="cdw"/>
         <map value="CPRSOrder.CPRSOrder.EnteredDateTime,CPRSOrder.CPRSOrder.EnteredVistaDate,CPRSOrder.OrderedItem.EnteredDateTime,CPRSOrder.OrderedItem.EnteredVistaDate"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="order.entered"/>
       </mapping>
       <mapping>
         <identity value="workflow"/>
@@ -2542,6 +2550,10 @@
         <map value="CPRSOrder.CPRSOrder.OrderStartDateTime,CPRSOrder.CPRSOrder.OrderStartVistaDate,CPRSOrder.OrderAction.OrderStartDateTime,CPRSOrder.OrderedItem.OrderStartDateSID,CPRSOrder.OrderedItem.OrderStartDateTime,CPRSOrder.OrderedItem.OrderStartVistaDate"/>
       </mapping>
       <mapping>
+        <identity value="vpr"/>
+        <map value="order.start"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="DR.1"/>
       </mapping>
@@ -2585,6 +2597,10 @@
       <mapping>
         <identity value="cdw"/>
         <map value="CPRSOrder.CPRSOrder.OrderStopDateTime,CPRSOrder.CPRSOrder.OrderStopVistaDate,CPRSOrder.OrderedItem.OrderStopDateSID,CPRSOrder.OrderedItem.OrderStopDateTime,CPRSOrder.OrderedItem.OrderStopVistaDate"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="order.stop"/>
       </mapping>
       <mapping>
         <identity value="v2"/>
@@ -4536,6 +4552,10 @@
         <identity value="cdw"/>
         <map value="CPRSOrder.CPRSOrder.EnteredDateTime,CPRSOrder.CPRSOrder.EnteredVistaDate,CPRSOrder.OrderedItem.EnteredDateTime,CPRSOrder.OrderedItem.EnteredVistaDate"/>
       </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="order.entered"/>
+      </mapping>
     </element>
     <element id="MedicationRequest.requester">
       <path value="MedicationRequest.requester"/>
@@ -4579,6 +4599,10 @@
         <identity value="cdw"/>
         <map value="CPRSOrder.CPRSOrder.OrderStartDateTime,CPRSOrder.CPRSOrder.OrderStartVistaDate,CPRSOrder.OrderAction.OrderStartDateTime,CPRSOrder.OrderedItem.OrderStartDateSID,CPRSOrder.OrderedItem.OrderStartDateTime,CPRSOrder.OrderedItem.OrderStartVistaDate"/>
       </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="order.start"/>
+      </mapping>
     </element>
     <element id="MedicationRequest.dosageInstruction.timing.repeat.bounds[x]:boundsPeriod.end">
       <path value="MedicationRequest.dosageInstruction.timing.repeat.bounds[x].end"/>
@@ -4590,6 +4614,10 @@
       <mapping>
         <identity value="cdw"/>
         <map value="CPRSOrder.CPRSOrder.OrderStopDateTime,CPRSOrder.CPRSOrder.OrderStopVistaDate,CPRSOrder.OrderedItem.OrderStopDateSID,CPRSOrder.OrderedItem.OrderStopDateTime,CPRSOrder.OrderedItem.OrderStopVistaDate"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="order.stop"/>
       </mapping>
     </element>
     <element id="MedicationRequest.priorPrescription">

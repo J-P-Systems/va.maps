@@ -29,4 +29,4 @@ Mapping: vpr-to-LabObservationObservation
 Id: vpr
 Title: "Virtual Patient Record (VPR)"
 Source: LabObservationObservation
-* subject -> "demographics.lrdfn"
+* subject -> "demographics.lrdfn\naccession.collected"

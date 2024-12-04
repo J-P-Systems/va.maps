@@ -148,6 +148,6 @@ Source: Appointment
 * serviceType[va-stop-code].coding.code -> "appointment.clinicStop,appointment.facility,appointment.id,appointment.location,appointment.provider,appointment.service,appointment.visitString"
 * serviceType[va-credit-stop-code].coding.code -> "appointment.clinicStop,appointment.facility,appointment.id,appointment.location,appointment.provider,appointment.service,appointment.visitString"
 * appointmentType.text -> "appointment.type"
-* start -> "appointment.dateTime"
+* start -> "appointment.dateTime,appointment.id,appointment.visitString"
 * participant[va-clinic].actor -> "appointment.clinicStop,appointment.facility,appointment.id,appointment.location,appointment.provider,appointment.service,appointment.visitString"
 * description -> "appointment.type"

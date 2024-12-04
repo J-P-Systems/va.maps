@@ -18,3 +18,9 @@ Id: cdw
 Title: "Clinical Data Warehouse (CDW)"
 Source: LabObservationChemhemtoxriaserSpecimen
 * accessionIdentifier -> "Chem.LabChem.ShortAccessionNumber,Chem.PatientLabChem.ShortAccessionNumber"
+
+Mapping: vpr-to-LabObservationChemhemtoxriaserSpecimen
+Id: vpr
+Title: "Virtual Patient Record (VPR)"
+Source: LabObservationChemhemtoxriaserSpecimen
+* accessionIdentifier -> "lab.groupName"

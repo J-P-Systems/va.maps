@@ -20,11 +20,11 @@
      ]
   ] ) ; # 
   fhir:url [ fhir:v "http://va.gov/fhir/StructureDefinition/EncounterOutpatient"^^xsd:anyURI] ; # 
-  fhir:version [ fhir:v "0.69.436"] ; # 
+  fhir:version [ fhir:v "0.69.437"] ; # 
   fhir:name [ fhir:v "EncounterOutpatient"] ; # 
   fhir:title [ fhir:v "Encounter: Outpatient"] ; # 
   fhir:status [ fhir:v "active"] ; # 
-  fhir:date [ fhir:v "2024-12-04T11:34:53+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2024-12-04T16:25:11+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "VA"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "VA" ] ;
@@ -48,6 +48,9 @@
   ] [
      fhir:identity [ fhir:v "cdw" ] ;
      fhir:name [ fhir:v "Clinical Data Warehouse (CDW)" ]
+  ] [
+     fhir:identity [ fhir:v "vpr" ] ;
+     fhir:name [ fhir:v "Virtual Patient Record (VPR)" ]
   ] [
      fhir:identity [ fhir:v "workflow" ] ;
      fhir:uri [ fhir:v "http://hl7.org/fhir/workflow"^^xsd:anyURI ] ;
@@ -1128,6 +1131,9 @@
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "Outpat.Visit.CheckOutDateTime,Outpat.Workload.CheckOutDateTime" ]
        ] [
+         fhir:identity [ fhir:v "vpr" ] ;
+         fhir:map [ fhir:v "visit.dateTime,visit.visitString" ]
+       ] [
          fhir:identity [ fhir:v "workflow" ] ;
          fhir:map [ fhir:v "Event.status" ]
        ] [
@@ -1408,6 +1414,9 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "Outpat.Visit.PatientStatusInOut,Outpat.Workload.PatientStatusInOut" ]
+       ] [
+         fhir:identity [ fhir:v "vpr" ] ;
+         fhir:map [ fhir:v "visit.patientClass" ]
        ] [
          fhir:identity [ fhir:v "w5" ] ;
          fhir:map [ fhir:v "FiveWs.class" ]
@@ -2538,6 +2547,9 @@
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "Outpat.Visit.ServiceCategory,Outpat.Workload.ServiceCategory" ]
        ] [
+         fhir:identity [ fhir:v "vpr" ] ;
+         fhir:map [ fhir:v "visit.serviceCategory,visit.visitString" ]
+       ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "C*E.1" ]
        ] [
@@ -3365,6 +3377,9 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "Immun.ImmunizationContraRefusalEvent.VisitDateTime,Outpat.Visit.VisitDateTime,Outpat.VisitLogic.VisitDateTime,Outpat.Workload.VisitDateTime" ]
+       ] [
+         fhir:identity [ fhir:v "vpr" ] ;
+         fhir:map [ fhir:v "visit.dateTime,visit.visitString" ]
        ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "DR.1" ]
@@ -5425,6 +5440,9 @@
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "Outpat.Visit.PrimaryStopCodeIEN,Outpat.Visit.SecondaryStopCodeIEN,Outpat.Workload.PrimaryStopCodeIEN,Outpat.Workload.SecondaryStopCodeIEN" ]
        ] [
+         fhir:identity [ fhir:v "vpr" ] ;
+         fhir:map [ fhir:v "visit.stopCode" ]
+       ] [
          fhir:identity [ fhir:v "workflow" ] ;
          fhir:map [ fhir:v "Event.location" ]
        ] [
@@ -5746,6 +5764,9 @@
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "Outpat.Visit.LocationIEN,Outpat.Workload.LocationIEN" ]
        ] [
+         fhir:identity [ fhir:v "vpr" ] ;
+         fhir:map [ fhir:v "visit.creditStopCode,visit.location,visit.service,visit.visitString" ]
+       ] [
          fhir:identity [ fhir:v "workflow" ] ;
          fhir:map [ fhir:v "Event.location" ]
        ] [
@@ -5915,6 +5936,9 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "Outpat.Visit.InstitutionIEN,Outpat.Workload.InstitutionIEN" ]
+       ] [
+         fhir:identity [ fhir:v "vpr" ] ;
+         fhir:map [ fhir:v "visit.facility" ]
        ] [
          fhir:identity [ fhir:v "workflow" ] ;
          fhir:map [ fhir:v "Event.performer.actor" ]
@@ -6097,6 +6121,12 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "Outpat.Visit.CheckOutDateTime,Outpat.Workload.CheckOutDateTime" ]
+       ] [
+         fhir:identity [ fhir:v "vpr" ] ;
+         fhir:map [ fhir:v "visit.dateTime,visit.visitString" ]
+       ] [
+         fhir:identity [ fhir:v "vpr" ] ;
+         fhir:map [ fhir:v "visit.dateTime,visit.visitString" ]
        ] )
      ] [
        fhir:id [ fhir:v "Encounter.class" ] ;
@@ -6115,6 +6145,9 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "Outpat.Visit.PatientStatusInOut,Outpat.Workload.PatientStatusInOut" ]
+       ] [
+         fhir:identity [ fhir:v "vpr" ] ;
+         fhir:map [ fhir:v "visit.patientClass" ]
        ] )
      ] [
        fhir:id [ fhir:v "Encounter.type" ] ;
@@ -6192,6 +6225,9 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "Outpat.Visit.ServiceCategory,Outpat.Workload.ServiceCategory" ]
+       ] [
+         fhir:identity [ fhir:v "vpr" ] ;
+         fhir:map [ fhir:v "visit.serviceCategory,visit.visitString" ]
        ] )
      ] [
        fhir:id [ fhir:v "Encounter.subject" ] ;
@@ -6261,6 +6297,9 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "Immun.ImmunizationContraRefusalEvent.VisitDateTime,Outpat.Visit.VisitDateTime,Outpat.VisitLogic.VisitDateTime,Outpat.Workload.VisitDateTime" ]
+       ] [
+         fhir:identity [ fhir:v "vpr" ] ;
+         fhir:map [ fhir:v "visit.dateTime,visit.visitString" ]
        ] )
      ] [
        fhir:id [ fhir:v "Encounter.period.end" ] ;
@@ -6346,6 +6385,9 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "Outpat.Visit.PrimaryStopCodeIEN,Outpat.Visit.SecondaryStopCodeIEN,Outpat.Workload.PrimaryStopCodeIEN,Outpat.Workload.SecondaryStopCodeIEN" ]
+       ] [
+         fhir:identity [ fhir:v "vpr" ] ;
+         fhir:map [ fhir:v "visit.stopCode" ]
        ] )
      ] [
        fhir:id [ fhir:v "Encounter.location:va-loc" ] ;
@@ -6369,6 +6411,9 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "Outpat.Visit.LocationIEN,Outpat.Workload.LocationIEN" ]
+       ] [
+         fhir:identity [ fhir:v "vpr" ] ;
+         fhir:map [ fhir:v "visit.creditStopCode,visit.location,visit.service,visit.visitString" ]
        ] )
      ] [
        fhir:id [ fhir:v "Encounter.serviceProvider" ] ;
@@ -6386,6 +6431,9 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "Outpat.Visit.InstitutionIEN,Outpat.Workload.InstitutionIEN" ]
+       ] [
+         fhir:identity [ fhir:v "vpr" ] ;
+         fhir:map [ fhir:v "visit.facility" ]
        ] )
      ] )
   ] . # 

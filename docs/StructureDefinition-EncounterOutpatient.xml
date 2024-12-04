@@ -49,11 +49,11 @@
     <valueCanonical value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter|6.1.0"/>
   </extension>
   <url value="http://va.gov/fhir/StructureDefinition/EncounterOutpatient"/>
-  <version value="0.69.436"/>
+  <version value="0.69.437"/>
   <name value="EncounterOutpatient"/>
   <title value="Encounter: Outpatient"/>
   <status value="active"/>
-  <date value="2024-12-04T11:34:53+00:00"/>
+  <date value="2024-12-04T16:25:11+00:00"/>
   <publisher value="VA"/>
   <contact>
     <name value="VA"/>
@@ -78,6 +78,10 @@
   <mapping>
     <identity value="cdw"/>
     <name value="Clinical Data Warehouse (CDW)"/>
+  </mapping>
+  <mapping>
+    <identity value="vpr"/>
+    <name value="Virtual Patient Record (VPR)"/>
   </mapping>
   <mapping>
     <identity value="workflow"/>
@@ -1073,6 +1077,10 @@
         <map value="Outpat.Visit.CheckOutDateTime,Outpat.Workload.CheckOutDateTime"/>
       </mapping>
       <mapping>
+        <identity value="vpr"/>
+        <map value="visit.dateTime,visit.visitString"/>
+      </mapping>
+      <mapping>
         <identity value="workflow"/>
         <map value="Event.status"/>
       </mapping>
@@ -1330,6 +1338,10 @@
       <mapping>
         <identity value="cdw"/>
         <map value="Outpat.Visit.PatientStatusInOut,Outpat.Workload.PatientStatusInOut"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="visit.patientClass"/>
       </mapping>
       <mapping>
         <identity value="w5"/>
@@ -2411,6 +2423,10 @@
         <map value="Outpat.Visit.ServiceCategory,Outpat.Workload.ServiceCategory"/>
       </mapping>
       <mapping>
+        <identity value="vpr"/>
+        <map value="visit.serviceCategory,visit.visitString"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="C*E.1"/>
       </mapping>
@@ -3198,6 +3214,10 @@
       <mapping>
         <identity value="cdw"/>
         <map value="Immun.ImmunizationContraRefusalEvent.VisitDateTime,Outpat.Visit.VisitDateTime,Outpat.VisitLogic.VisitDateTime,Outpat.Workload.VisitDateTime"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="visit.dateTime,visit.visitString"/>
       </mapping>
       <mapping>
         <identity value="v2"/>
@@ -5096,6 +5116,10 @@
         <map value="Outpat.Visit.PrimaryStopCodeIEN,Outpat.Visit.SecondaryStopCodeIEN,Outpat.Workload.PrimaryStopCodeIEN,Outpat.Workload.SecondaryStopCodeIEN"/>
       </mapping>
       <mapping>
+        <identity value="vpr"/>
+        <map value="visit.stopCode"/>
+      </mapping>
+      <mapping>
         <identity value="workflow"/>
         <map value="Event.location"/>
       </mapping>
@@ -5388,6 +5412,10 @@
         <map value="Outpat.Visit.LocationIEN,Outpat.Workload.LocationIEN"/>
       </mapping>
       <mapping>
+        <identity value="vpr"/>
+        <map value="visit.creditStopCode,visit.location,visit.service,visit.visitString"/>
+      </mapping>
+      <mapping>
         <identity value="workflow"/>
         <map value="Event.location"/>
       </mapping>
@@ -5538,6 +5566,10 @@
       <mapping>
         <identity value="cdw"/>
         <map value="Outpat.Visit.InstitutionIEN,Outpat.Workload.InstitutionIEN"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="visit.facility"/>
       </mapping>
       <mapping>
         <identity value="workflow"/>
@@ -5711,6 +5743,14 @@
         <identity value="cdw"/>
         <map value="Outpat.Visit.CheckOutDateTime,Outpat.Workload.CheckOutDateTime"/>
       </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="visit.dateTime,visit.visitString"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="visit.dateTime,visit.visitString"/>
+      </mapping>
     </element>
     <element id="Encounter.class">
       <path value="Encounter.class"/>
@@ -5726,6 +5766,10 @@
       <mapping>
         <identity value="cdw"/>
         <map value="Outpat.Visit.PatientStatusInOut,Outpat.Workload.PatientStatusInOut"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="visit.patientClass"/>
       </mapping>
     </element>
     <element id="Encounter.type">
@@ -5809,6 +5853,10 @@
         <identity value="cdw"/>
         <map value="Outpat.Visit.ServiceCategory,Outpat.Workload.ServiceCategory"/>
       </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="visit.serviceCategory,visit.visitString"/>
+      </mapping>
     </element>
     <element id="Encounter.subject">
       <path value="Encounter.subject"/>
@@ -5872,6 +5920,10 @@
       <mapping>
         <identity value="cdw"/>
         <map value="Immun.ImmunizationContraRefusalEvent.VisitDateTime,Outpat.Visit.VisitDateTime,Outpat.VisitLogic.VisitDateTime,Outpat.Workload.VisitDateTime"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="visit.dateTime,visit.visitString"/>
       </mapping>
     </element>
     <element id="Encounter.period.end">
@@ -5959,6 +6011,10 @@
         <identity value="cdw"/>
         <map value="Outpat.Visit.PrimaryStopCodeIEN,Outpat.Visit.SecondaryStopCodeIEN,Outpat.Workload.PrimaryStopCodeIEN,Outpat.Workload.SecondaryStopCodeIEN"/>
       </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="visit.stopCode"/>
+      </mapping>
     </element>
     <element id="Encounter.location:va-loc">
       <path value="Encounter.location"/>
@@ -5980,6 +6036,10 @@
         <identity value="cdw"/>
         <map value="Outpat.Visit.LocationIEN,Outpat.Workload.LocationIEN"/>
       </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="visit.creditStopCode,visit.location,visit.service,visit.visitString"/>
+      </mapping>
     </element>
     <element id="Encounter.serviceProvider">
       <path value="Encounter.serviceProvider"/>
@@ -5994,6 +6054,10 @@
       <mapping>
         <identity value="cdw"/>
         <map value="Outpat.Visit.InstitutionIEN,Outpat.Workload.InstitutionIEN"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="visit.facility"/>
       </mapping>
     </element>
   </differential>

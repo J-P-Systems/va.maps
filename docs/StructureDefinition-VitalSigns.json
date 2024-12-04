@@ -10,11 +10,11 @@
     "valueCanonical" : "http://hl7.org/fhir/us/core/StructureDefinition/us-core-vital-signs|6.1.0"
   }],
   "url" : "http://va.gov/fhir/StructureDefinition/VitalSigns",
-  "version" : "0.69.436",
+  "version" : "0.69.437",
   "name" : "VitalSigns",
   "title" : "Vital Signs",
   "status" : "active",
-  "date" : "2024-12-04T11:34:53+00:00",
+  "date" : "2024-12-04T16:25:11+00:00",
   "publisher" : "VA",
   "contact" : [{
     "name" : "VA",
@@ -39,6 +39,10 @@
   {
     "identity" : "cdw",
     "name" : "Clinical Data Warehouse (CDW)"
+  },
+  {
+    "identity" : "vpr",
+    "name" : "Virtual Patient Record (VPR)"
   },
   {
     "identity" : "workflow",
@@ -1330,6 +1334,10 @@
         "map" : "656: fixed value = #entered-in-error when GMRV VITAL MEASUREMENT - REASON ENTERED IN ERROR (120.5-4) case not null"
       },
       {
+        "identity" : "vpr",
+        "map" : "vital.removed [m]"
+      },
+      {
         "identity" : "workflow",
         "map" : "Event.status"
       },
@@ -2084,6 +2092,10 @@
         "map" : "Vital.VitalSign.VitalTypeIEN"
       },
       {
+        "identity" : "vpr",
+        "map" : "vital.vuid,vital.name,vital.high,vital.low,vital.bmi"
+      },
+      {
         "identity" : "v2",
         "map" : "C*E.1-8, C*E.10-22"
       },
@@ -2414,6 +2426,10 @@
         "map" : "Vital.VitalSign.VitalSignTakenDateTime,Vital.VitalSignQualifier.VitalSignTakenDateTime"
       },
       {
+        "identity" : "vpr",
+        "map" : "vital.taken"
+      },
+      {
         "identity" : "workflow",
         "map" : "Event.occurrence[x]"
       },
@@ -2466,6 +2482,10 @@
         "map" : "Vital.VitalSign.VitalSignEnteredDateTime"
       },
       {
+        "identity" : "vpr",
+        "map" : "vital.entered"
+      },
+      {
         "identity" : "w5",
         "map" : "FiveWs.recorded"
       },
@@ -2513,6 +2533,10 @@
       {
         "identity" : "cdw",
         "map" : "Vital.VitalSign.LocationIEN"
+      },
+      {
+        "identity" : "vpr",
+        "map" : "vital.facility,vital.location"
       },
       {
         "identity" : "workflow",
@@ -2799,6 +2823,10 @@
         "map" : "Vital.VitalSign.Diastolic,Vital.VitalSign.Systolic,Vital.VitalSign.VitalResult,Vital.VitalSign.VitalResultNumeric"
       },
       {
+        "identity" : "vpr",
+        "map" : "vital.value,vital.units,vital.metricvalue,vital.metricUnits,vital.bmi"
+      },
+      {
         "identity" : "v2",
         "map" : "SN.2  / CQ - N/A"
       },
@@ -2964,6 +2992,10 @@
       {
         "identity" : "cdw",
         "map" : "Vital.VitalSign.VitalTypeIEN"
+      },
+      {
+        "identity" : "vpr",
+        "map" : "vital.vuid,vital.name,vital.high,vital.low,vital.bmi"
       },
       {
         "identity" : "v2",
@@ -5928,6 +5960,14 @@
       {
         "identity" : "vista",
         "map" : "656: fixed value = #entered-in-error when GMRV VITAL MEASUREMENT - REASON ENTERED IN ERROR (120.5-4) case not null"
+      },
+      {
+        "identity" : "vpr",
+        "map" : "vital.removed [m]"
+      },
+      {
+        "identity" : "vpr",
+        "map" : "vital.removed [m]"
       }]
     },
     {
@@ -5960,6 +6000,10 @@
       {
         "identity" : "cdw",
         "map" : "Vital.VitalSign.VitalTypeIEN"
+      },
+      {
+        "identity" : "vpr",
+        "map" : "vital.vuid,vital.name,vital.high,vital.low,vital.bmi"
       }]
     },
     {
@@ -6011,6 +6055,10 @@
       {
         "identity" : "cdw",
         "map" : "Vital.VitalSign.VitalSignTakenDateTime,Vital.VitalSignQualifier.VitalSignTakenDateTime"
+      },
+      {
+        "identity" : "vpr",
+        "map" : "vital.taken"
       }]
     },
     {
@@ -6024,6 +6072,10 @@
       {
         "identity" : "cdw",
         "map" : "Vital.VitalSign.VitalSignEnteredDateTime"
+      },
+      {
+        "identity" : "vpr",
+        "map" : "vital.entered"
       }]
     },
     {
@@ -6041,6 +6093,10 @@
       {
         "identity" : "cdw",
         "map" : "Vital.VitalSign.LocationIEN"
+      },
+      {
+        "identity" : "vpr",
+        "map" : "vital.facility,vital.location"
       }]
     },
     {
@@ -6080,6 +6136,10 @@
       {
         "identity" : "cdw",
         "map" : "Vital.VitalSign.Diastolic,Vital.VitalSign.Systolic,Vital.VitalSign.VitalResult,Vital.VitalSign.VitalResultNumeric"
+      },
+      {
+        "identity" : "vpr",
+        "map" : "vital.value,vital.units,vital.metricvalue,vital.metricUnits,vital.bmi"
       }]
     },
     {
@@ -6094,6 +6154,10 @@
       {
         "identity" : "cdw",
         "map" : "Vital.VitalSign.VitalTypeIEN"
+      },
+      {
+        "identity" : "vpr",
+        "map" : "vital.vuid,vital.name,vital.high,vital.low,vital.bmi"
       }]
     },
     {

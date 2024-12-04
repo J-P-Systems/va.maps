@@ -178,3 +178,13 @@ Source: ProcedureSurgeryProcedure
 * code.text -> "Surg.SurgeryPRE.PrincipalProcedureText"
 * code.coding.code -> "Dim.CPT.CPTCode,Dim.CPT.CPTCode"
 * code.coding.display -> "Dim.CPT.CPTName,Dim.CPT.CPTName"
+
+Mapping: vpr-to-ProcedureSurgeryProcedure
+Id: vpr
+Title: "Virtual Patient Record (VPR)"
+Source: ProcedureSurgeryProcedure
+* encounter -> "surgery.encounter"
+* performedDateTime -> "surgery.dateTime"
+* performer[va-1].actor -> "surgery.provider"
+* performer[va-12].actor -> "surgery.provider"
+* code.text -> "surgery.name"

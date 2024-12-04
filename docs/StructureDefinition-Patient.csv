@@ -385,7 +385,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","274-1: fixed value = #phone","./scheme","XTN.3"
 "Patient.telecom:va-home.value","Patient.telecom.value","","","",1,1,"Y","","Y","string {[]} {[]}
 ","The actual contact point details","The actual contact point details, in a form that is meaningful to the designated communication system (i.e. phone number or email address).","Additional text data such as phone extension numbers, or notes about use of the contact are sometimes included in the value.","Need to support legacy numbers that are not in a tightly controlled format.","","","","","","","",,,,,"",,,,"ContactPoint.value",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","274: source value from PATIENT - PHONE NUMBER [RESIDENCE] (2-.131)","./url","XTN.1 (or XTN.12)"
+","274: source value from PATIENT - PHONE NUMBER [RESIDENCE] (2-.131)","demographics.telecom","./url","XTN.1 (or XTN.12)"
 "Patient.telecom:va-home.use","Patient.telecom.use","","","",0,1,"Y","Y","Y","code {[]} {[]}
 ","home | work | temp | old | mobile - purpose of this contact point","Identifies the purpose for the contact point.","Applications can assume that a contact is current unless it explicitly says that it is temporary or old.","Need to track the way a person uses this contact, so a user can choose which is appropriate for their purpose.","","","","<valueCode xmlns=""http://hl7.org/fhir"" value=""home""/>","","","",,"required","","http://hl7.org/fhir/ValueSet/contact-point-use","",,,,"ContactPoint.use",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","274-2: fixed value = #home","unique(./use)","XTN.2 - but often indicated by field"
@@ -437,7 +437,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","276-1: fixed value = #phone","./scheme","XTN.3"
 "Patient.telecom:va-mobile.value","Patient.telecom.value","","","",1,1,"Y","","Y","string {[]} {[]}
 ","The actual contact point details","The actual contact point details, in a form that is meaningful to the designated communication system (i.e. phone number or email address).","Additional text data such as phone extension numbers, or notes about use of the contact are sometimes included in the value.","Need to support legacy numbers that are not in a tightly controlled format.","","","","","","","",,,,,"",,,,"ContactPoint.value",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","276: source value from PATIENT - PHONE NUMBER [CELLULAR] (2-.134)","./url","XTN.1 (or XTN.12)"
+","276: source value from PATIENT - PHONE NUMBER [CELLULAR] (2-.134)","demographics.telecom","./url","XTN.1 (or XTN.12)"
 "Patient.telecom:va-mobile.use","Patient.telecom.use","","","",0,1,"Y","Y","Y","code {[]} {[]}
 ","home | work | temp | old | mobile - purpose of this contact point","Identifies the purpose for the contact point.","Applications can assume that a contact is current unless it explicitly says that it is temporary or old.","Need to track the way a person uses this contact, so a user can choose which is appropriate for their purpose.","","","","<valueCode xmlns=""http://hl7.org/fhir"" value=""mobile""/>","","","",,"required","","http://hl7.org/fhir/ValueSet/contact-point-use","",,,,"ContactPoint.use",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","276-2: fixed value = #mobile","unique(./use)","XTN.2 - but often indicated by field"
@@ -529,11 +529,11 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","./formatted","XAD.1 + XAD.2 + XAD.3 + XAD.4 + XAD.5 + XAD.6"
 "Patient.address:va-home.line","Patient.address.line","","","",0,*,"Y","","Y","string {[]} {[]}
 ","Street name, number, direction & P.O. Box etc.","This component contains the house number, apartment number, street name, street direction,  P.O. Box number, delivery hints, and similar address information.","","","","","","","<valueString xmlns=""http://hl7.org/fhir"" value=""137 Nowhere Street""/>","","",,,,,"",,,,"Address.line",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","286: source value from PATIENT - STREET ADDRESS [LINE 1] (2-.111)","287: source value from PATIENT - STREET ADDRESS [LINE 2] (2-.112)","288: source value from PATIENT - STREET ADDRESS [LINE 3] (2-.113)","SPatient.SPatientGISAddress.StreetAddress1","SPatient.SPatientGISAddress.StreetAddress2","AD.part[parttype = AL]","XAD.1 + XAD.2 (note: XAD.1 and XAD.2 have different meanings for a company address than for a person address)"
+","286: source value from PATIENT - STREET ADDRESS [LINE 1] (2-.111)","287: source value from PATIENT - STREET ADDRESS [LINE 2] (2-.112)","288: source value from PATIENT - STREET ADDRESS [LINE 3] (2-.113)","SPatient.SPatientGISAddress.StreetAddress1","SPatient.SPatientGISAddress.StreetAddress2","demographics.address","AD.part[parttype = AL]","XAD.1 + XAD.2 (note: XAD.1 and XAD.2 have different meanings for a company address than for a person address)"
 "Patient.address:va-home.city","Patient.address.city","","Municpality
 ","",0,1,"Y","","Y","string {[]} {[]}
 ","Name of city, town etc.","The name of the city, town, suburb, village or other community or delivery center.","","","","","","","<valueString xmlns=""http://hl7.org/fhir"" value=""Erewhon""/>","","",,,,,"",,,,"Address.city",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","289: source value from PATIENT - CITY (2-.114)","SPatient.SPatientGISAddress.City","AD.part[parttype = CTY]","XAD.3"
+","289: source value from PATIENT - CITY (2-.114)","SPatient.SPatientGISAddress.City","demographics.address","AD.part[parttype = CTY]","XAD.3"
 "Patient.address:va-home.district","Patient.address.district","","County
 ","",0,1,"","","Y","string {[]} {[]}
 ","District name (aka county)","The name of the administrative area (county).","District is sometimes known as county, but in some regions 'county' is used in place of city (municipality), so county name should be conveyed in city instead.","","","","","","<valueString xmlns=""http://hl7.org/fhir"" value=""Madison""/>","","",,,,,"",,,,"Address.district",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
@@ -541,7 +541,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "Patient.address:va-home.state","Patient.address.state","","Province
 Territory","",0,1,"Y","","Y","string {[]} {[]}
 ","Sub-unit of country (abbreviations ok)","Sub-unit of a country with limited sovereignty in a federally organized country. A code may be used if codes are in common use (e.g. US 2 letter state codes).","","","","","","","","","",,"extensible","Two Letter USPS alphabetic codes.","http://hl7.org/fhir/us/core/ValueSet/us-core-usps-state","",,,,"Address.state",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","290: source value from PATIENT - STATE (2-.115)","SPatient.SPatientGISAddress.StateIEN,SPatient.SPatientGISAddress.StateSID","AD.part[parttype = STA]","XAD.4"
+","290: source value from PATIENT - STATE (2-.115)","SPatient.SPatientGISAddress.StateIEN,SPatient.SPatientGISAddress.StateSID","demographics.address","AD.part[parttype = STA]","XAD.4"
 "Patient.address:va-home.postalCode","Patient.address.postalCode","","Zip
 Zip Code","",0,1,"Y","","Y","string {[]} {[]}
 ","US Zip Codes","A postal code designating a region defined by the postal service.","","","","","","","<valueString xmlns=""http://hl7.org/fhir"" value=""9132""/>","","",,,,,"",,,,"Address.postalCode",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}

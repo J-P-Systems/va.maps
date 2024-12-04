@@ -20,11 +20,11 @@
      ]
   ] ) ; # 
   fhir:url [ fhir:v "http://va.gov/fhir/StructureDefinition/SmokingStatusObservation"^^xsd:anyURI] ; # 
-  fhir:version [ fhir:v "0.69.436"] ; # 
+  fhir:version [ fhir:v "0.69.437"] ; # 
   fhir:name [ fhir:v "SmokingStatusObservation"] ; # 
   fhir:title [ fhir:v "Smoking Status Observation"] ; # 
   fhir:status [ fhir:v "active"] ; # 
-  fhir:date [ fhir:v "2024-12-04T11:34:53+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2024-12-04T16:25:11+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "VA"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "VA" ] ;
@@ -48,6 +48,9 @@
   ] [
      fhir:identity [ fhir:v "cdw" ] ;
      fhir:name [ fhir:v "Clinical Data Warehouse (CDW)" ]
+  ] [
+     fhir:identity [ fhir:v "vpr" ] ;
+     fhir:name [ fhir:v "Virtual Patient Record (VPR)" ]
   ] [
      fhir:identity [ fhir:v "workflow" ] ;
      fhir:uri [ fhir:v "http://hl7.org/fhir/workflow"^^xsd:anyURI ] ;
@@ -1223,6 +1226,9 @@
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "HF.HealthFactor.HealthFactorTypeIEN\nDim.HealthFactorType.CategoryHealthFactorTypeIEN" ]
        ] [
+         fhir:identity [ fhir:v "vpr" ] ;
+         fhir:map [ fhir:v "healthFactor.category,healthFactor.name" ]
+       ] [
          fhir:identity [ fhir:v "workflow" ] ;
          fhir:map [ fhir:v "Event.code" ]
        ] [
@@ -1392,6 +1398,9 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "HF.HealthFactor.VisitDateTime,HF.HealthFactor.VisitIEN" ]
+       ] [
+         fhir:identity [ fhir:v "vpr" ] ;
+         fhir:map [ fhir:v "healthFactor.encounter,healthFactor.facility,healthFactor.recorded" ]
        ] [
          fhir:identity [ fhir:v "workflow" ] ;
          fhir:map [ fhir:v "Event.context" ]
@@ -1704,6 +1713,9 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "HF.HealthFactor.HealthFactorTypeIEN\nDim.HealthFactorType.HealthFactorCategory,Dim.HealthFactorType.HealthFactorType" ]
+       ] [
+         fhir:identity [ fhir:v "vpr" ] ;
+         fhir:map [ fhir:v "healthFactor.category,healthFactor.name" ]
        ] [
          fhir:identity [ fhir:v "sct-concept" ] ;
          fhir:map [ fhir:v "< 441742003 |Evaluation finding|" ]
@@ -2229,6 +2241,9 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "HF.HealthFactor.Comments" ]
+       ] [
+         fhir:identity [ fhir:v "vpr" ] ;
+         fhir:map [ fhir:v "healthFactor.comment" ]
        ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "N/A" ]
@@ -3420,6 +3435,9 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "HF.HealthFactor.HealthFactorTypeIEN\nDim.HealthFactorType.CategoryHealthFactorTypeIEN" ]
+       ] [
+         fhir:identity [ fhir:v "vpr" ] ;
+         fhir:map [ fhir:v "healthFactor.category,healthFactor.name" ]
        ] )
      ] [
        fhir:id [ fhir:v "Observation.subject" ] ;
@@ -3455,6 +3473,9 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "HF.HealthFactor.VisitDateTime,HF.HealthFactor.VisitIEN" ]
+       ] [
+         fhir:identity [ fhir:v "vpr" ] ;
+         fhir:map [ fhir:v "healthFactor.encounter,healthFactor.facility,healthFactor.recorded" ]
        ] )
      ] [
        fhir:id [ fhir:v "Observation.effective[x]:effectiveDateTime" ] ;
@@ -3510,6 +3531,9 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "HF.HealthFactor.HealthFactorTypeIEN\nDim.HealthFactorType.HealthFactorCategory,Dim.HealthFactorType.HealthFactorType" ]
+       ] [
+         fhir:identity [ fhir:v "vpr" ] ;
+         fhir:map [ fhir:v "healthFactor.category,healthFactor.name" ]
        ] )
      ] [
        fhir:id [ fhir:v "Observation.value[x]:valueCodeableConcept.text" ] ;
@@ -3530,6 +3554,9 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "HF.HealthFactor.Comments" ]
+       ] [
+         fhir:identity [ fhir:v "vpr" ] ;
+         fhir:map [ fhir:v "healthFactor.comment" ]
        ] )
      ] )
   ] . # 

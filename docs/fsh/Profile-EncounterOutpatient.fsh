@@ -108,3 +108,16 @@ Source: EncounterOutpatient
 * type.coding.code -> "Outpat.VProcedure.CPTIEN,Outpat.VProcedureCPTModifier.CPTIEN,Outpat.VProcedureDiagnosis.CPTIEN,Outpat.WorkloadVProcedure.CPTIEN,Outpat.WorkloadVProcedureCPTModifier.CPTIEN,Outpat.WorkloadVProcedureDiagnosis.CPTIEN\nDim.CPT.CPTCode,Dim.CPT.CPTCode"
 * type.coding.display -> "Outpat.VProcedure.CPTIEN,Outpat.VProcedureCPTModifier.CPTIEN,Outpat.VProcedureDiagnosis.CPTIEN,Outpat.WorkloadVProcedure.CPTIEN,Outpat.WorkloadVProcedureCPTModifier.CPTIEN,Outpat.WorkloadVProcedureDiagnosis.CPTIEN\nDim.CPT.CPTName,Dim.CPT.CPTName"
 * type.text -> "Outpat.VProcedure.CPTIEN,Outpat.VProcedureCPTModifier.CPTIEN,Outpat.VProcedureDiagnosis.CPTIEN,Outpat.WorkloadVProcedure.CPTIEN,Outpat.WorkloadVProcedureCPTModifier.CPTIEN,Outpat.WorkloadVProcedureDiagnosis.CPTIEN\nDim.CPT.CPTName,Dim.CPT.CPTName"
+
+Mapping: vpr-to-EncounterOutpatient
+Id: vpr
+Title: "Virtual Patient Record (VPR)"
+Source: EncounterOutpatient
+* status -> "visit.dateTime,visit.visitString"
+* status -> "visit.dateTime,visit.visitString"
+* serviceType.coding.code -> "visit.serviceCategory,visit.visitString"
+* period.start -> "visit.dateTime,visit.visitString"
+* location[va-stop].location -> "visit.stopCode"
+* location[va-loc].location -> "visit.creditStopCode,visit.location,visit.service,visit.visitString"
+* class -> "visit.patientClass"
+* serviceProvider -> "visit.facility"

@@ -21,11 +21,11 @@
      ]
   ] ) ; # 
   fhir:url [ fhir:v "http://va.gov/fhir/StructureDefinition/VitalSigns"^^xsd:anyURI] ; # 
-  fhir:version [ fhir:v "0.69.436"] ; # 
+  fhir:version [ fhir:v "0.69.437"] ; # 
   fhir:name [ fhir:v "VitalSigns"] ; # 
   fhir:title [ fhir:v "Vital Signs"] ; # 
   fhir:status [ fhir:v "active"] ; # 
-  fhir:date [ fhir:v "2024-12-04T11:34:53+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2024-12-04T16:25:11+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "VA"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "VA" ] ;
@@ -49,6 +49,9 @@
   ] [
      fhir:identity [ fhir:v "cdw" ] ;
      fhir:name [ fhir:v "Clinical Data Warehouse (CDW)" ]
+  ] [
+     fhir:identity [ fhir:v "vpr" ] ;
+     fhir:name [ fhir:v "Virtual Patient Record (VPR)" ]
   ] [
      fhir:identity [ fhir:v "workflow" ] ;
      fhir:uri [ fhir:v "http://hl7.org/fhir/workflow"^^xsd:anyURI ] ;
@@ -1428,6 +1431,9 @@
          fhir:identity [ fhir:v "vista" ] ;
          fhir:map [ fhir:v "656: fixed value = #entered-in-error when GMRV VITAL MEASUREMENT - REASON ENTERED IN ERROR (120.5-4) case not null" ]
        ] [
+         fhir:identity [ fhir:v "vpr" ] ;
+         fhir:map [ fhir:v "vital.removed [m]" ]
+       ] [
          fhir:identity [ fhir:v "workflow" ] ;
          fhir:map [ fhir:v "Event.status" ]
        ] [
@@ -2194,6 +2200,9 @@
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "Vital.VitalSign.VitalTypeIEN" ]
        ] [
+         fhir:identity [ fhir:v "vpr" ] ;
+         fhir:map [ fhir:v "vital.vuid,vital.name,vital.high,vital.low,vital.bmi" ]
+       ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "C*E.1-8, C*E.10-22" ]
        ] [
@@ -2526,6 +2535,9 @@
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "Vital.VitalSign.VitalSignTakenDateTime,Vital.VitalSignQualifier.VitalSignTakenDateTime" ]
        ] [
+         fhir:identity [ fhir:v "vpr" ] ;
+         fhir:map [ fhir:v "vital.taken" ]
+       ] [
          fhir:identity [ fhir:v "workflow" ] ;
          fhir:map [ fhir:v "Event.occurrence[x]" ]
        ] [
@@ -2574,6 +2586,9 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "Vital.VitalSign.VitalSignEnteredDateTime" ]
+       ] [
+         fhir:identity [ fhir:v "vpr" ] ;
+         fhir:map [ fhir:v "vital.entered" ]
        ] [
          fhir:identity [ fhir:v "w5" ] ;
          fhir:map [ fhir:v "FiveWs.recorded" ]
@@ -2624,6 +2639,9 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "Vital.VitalSign.LocationIEN" ]
+       ] [
+         fhir:identity [ fhir:v "vpr" ] ;
+         fhir:map [ fhir:v "vital.facility,vital.location" ]
        ] [
          fhir:identity [ fhir:v "workflow" ] ;
          fhir:map [ fhir:v "Event.performer.actor" ]
@@ -2899,6 +2917,9 @@
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "Vital.VitalSign.Diastolic,Vital.VitalSign.Systolic,Vital.VitalSign.VitalResult,Vital.VitalSign.VitalResultNumeric" ]
        ] [
+         fhir:identity [ fhir:v "vpr" ] ;
+         fhir:map [ fhir:v "vital.value,vital.units,vital.metricvalue,vital.metricUnits,vital.bmi" ]
+       ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "SN.2  / CQ - N/A" ]
        ] [
@@ -3070,6 +3091,9 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "Vital.VitalSign.VitalTypeIEN" ]
+       ] [
+         fhir:identity [ fhir:v "vpr" ] ;
+         fhir:map [ fhir:v "vital.vuid,vital.name,vital.high,vital.low,vital.bmi" ]
        ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "(see OBX.6 etc.) / CQ.2" ]
@@ -6151,6 +6175,12 @@
        ] [
          fhir:identity [ fhir:v "vista" ] ;
          fhir:map [ fhir:v "656: fixed value = #entered-in-error when GMRV VITAL MEASUREMENT - REASON ENTERED IN ERROR (120.5-4) case not null" ]
+       ] [
+         fhir:identity [ fhir:v "vpr" ] ;
+         fhir:map [ fhir:v "vital.removed [m]" ]
+       ] [
+         fhir:identity [ fhir:v "vpr" ] ;
+         fhir:map [ fhir:v "vital.removed [m]" ]
        ] )
      ] [
        fhir:id [ fhir:v "Observation.category" ] ;
@@ -6184,6 +6214,9 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "Vital.VitalSign.VitalTypeIEN" ]
+       ] [
+         fhir:identity [ fhir:v "vpr" ] ;
+         fhir:map [ fhir:v "vital.vuid,vital.name,vital.high,vital.low,vital.bmi" ]
        ] )
      ] [
        fhir:id [ fhir:v "Observation.subject" ] ;
@@ -6233,6 +6266,9 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "Vital.VitalSign.VitalSignTakenDateTime,Vital.VitalSignQualifier.VitalSignTakenDateTime" ]
+       ] [
+         fhir:identity [ fhir:v "vpr" ] ;
+         fhir:map [ fhir:v "vital.taken" ]
        ] )
      ] [
        fhir:id [ fhir:v "Observation.issued" ] ;
@@ -6244,6 +6280,9 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "Vital.VitalSign.VitalSignEnteredDateTime" ]
+       ] [
+         fhir:identity [ fhir:v "vpr" ] ;
+         fhir:map [ fhir:v "vital.entered" ]
        ] )
      ] [
        fhir:id [ fhir:v "Observation.performer" ] ;
@@ -6262,6 +6301,9 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "Vital.VitalSign.LocationIEN" ]
+       ] [
+         fhir:identity [ fhir:v "vpr" ] ;
+         fhir:map [ fhir:v "vital.facility,vital.location" ]
        ] )
      ] [
        fhir:id [ fhir:v "Observation.value[x]" ] ;
@@ -6297,6 +6339,9 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "Vital.VitalSign.Diastolic,Vital.VitalSign.Systolic,Vital.VitalSign.VitalResult,Vital.VitalSign.VitalResultNumeric" ]
+       ] [
+         fhir:identity [ fhir:v "vpr" ] ;
+         fhir:map [ fhir:v "vital.value,vital.units,vital.metricvalue,vital.metricUnits,vital.bmi" ]
        ] )
      ] [
        fhir:id [ fhir:v "Observation.value[x]:valueQuantity.code" ] ;
@@ -6309,6 +6354,9 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "Vital.VitalSign.VitalTypeIEN" ]
+       ] [
+         fhir:identity [ fhir:v "vpr" ] ;
+         fhir:map [ fhir:v "vital.vuid,vital.name,vital.high,vital.low,vital.bmi" ]
        ] )
      ] [
        fhir:id [ fhir:v "Observation.value[x]:valueQuantity.code.extension" ] ;

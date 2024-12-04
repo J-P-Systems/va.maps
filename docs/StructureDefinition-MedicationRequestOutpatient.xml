@@ -65,11 +65,11 @@
     <valueCanonical value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest|6.1.0"/>
   </extension>
   <url value="http://va.gov/fhir/StructureDefinition/MedicationRequestOutpatient"/>
-  <version value="0.69.436"/>
+  <version value="0.69.437"/>
   <name value="MedicationRequestOutpatient"/>
   <title value="MedicationRequest: Outpatient"/>
   <status value="active"/>
-  <date value="2024-12-04T11:34:53+00:00"/>
+  <date value="2024-12-04T16:25:11+00:00"/>
   <publisher value="VA"/>
   <contact>
     <name value="VA"/>
@@ -800,14 +800,6 @@
         <map value="RxOut.RxOutpat.RxStatus"/>
       </mapping>
       <mapping>
-        <identity value="vpr"/>
-        <map value="pharmacy.status,pharmacy.vaStatus"/>
-      </mapping>
-      <mapping>
-        <identity value="vpr"/>
-        <map value="pharmacy.routing"/>
-      </mapping>
-      <mapping>
         <identity value="v2"/>
         <map value="C*E.1"/>
       </mapping>
@@ -1060,10 +1052,6 @@
       <mapping>
         <identity value="cdw"/>
         <map value="RxOut.RxOutpat.CancelDate"/>
-      </mapping>
-      <mapping>
-        <identity value="vpr"/>
-        <map value="pharmacy.stop"/>
       </mapping>
       <mapping>
         <identity value="rim"/>
@@ -1731,7 +1719,7 @@
       </mapping>
       <mapping>
         <identity value="vpr"/>
-        <map value="pharmacy.prescription"/>
+        <map value="pharmacy (med).dose,med.dose"/>
       </mapping>
       <mapping>
         <identity value="workflow"/>
@@ -1792,10 +1780,6 @@
       <mapping>
         <identity value="cdw"/>
         <map value="RxOut.RxOutpat.RxStatus"/>
-      </mapping>
-      <mapping>
-        <identity value="vpr"/>
-        <map value="pharmacy.status,pharmacy.vaStatus"/>
       </mapping>
       <mapping>
         <identity value="workflow"/>
@@ -2597,7 +2581,7 @@
       </mapping>
       <mapping>
         <identity value="vpr"/>
-        <map value="pharmacy.product [m]"/>
+        <map value="pharmacy (med).route,med.route"/>
       </mapping>
       <mapping>
         <identity value="v2"/>
@@ -2732,7 +2716,7 @@
       </mapping>
       <mapping>
         <identity value="vpr"/>
-        <map value="pharmacy.product [m]"/>
+        <map value="pharmacy (med).route,med.route"/>
       </mapping>
       <mapping>
         <identity value="v2"/>
@@ -2781,6 +2765,10 @@
       <mapping>
         <identity value="cdw"/>
         <map value="RxOut.ActivityLog.PatientIEN,RxOut.ActivityLogOtherComments.PatientIEN,RxOut.RxOutpat.PatientIEN,RxOut.RxOutpatExt.PatientIEN,RxOut.RxOutpatExt.PatientSID,RxOut.RxOutpatFill.PatientIEN,RxOut.RxOutpatMedInstructions.PatientIEN,RxOut.RxOutpatSig.PatientIEN"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="pharmacy (med).units,med.units"/>
       </mapping>
       <mapping>
         <identity value="workflow"/>
@@ -2937,7 +2925,7 @@
       </mapping>
       <mapping>
         <identity value="vpr"/>
-        <map value="pharmacy.start"/>
+        <map value="pharmacy (med).unitsPerDose,med.unitsPerDose"/>
       </mapping>
       <mapping>
         <identity value="workflow"/>
@@ -3001,7 +2989,7 @@
       </mapping>
       <mapping>
         <identity value="vpr"/>
-        <map value="pharmacy.currentProvider,pharmacy.orderingProvider"/>
+        <map value="pharmacy (med).currentProvider,pharmacy (med).doseStart,pharmacy (med).doseStop,pharmacy (med).duration,med.currentProvider,med.doseStart,med.doseStop,med.duration"/>
       </mapping>
       <mapping>
         <identity value="workflow"/>
@@ -3946,10 +3934,6 @@
         <map value="RxOut.RxOutpatSig.PatientInstructions"/>
       </mapping>
       <mapping>
-        <identity value="vpr"/>
-        <map value="pharmacy.ptInstructions"/>
-      </mapping>
-      <mapping>
         <identity value="v2"/>
         <map value="RXO-7"/>
       </mapping>
@@ -4424,7 +4408,7 @@
       </mapping>
       <mapping>
         <identity value="vpr"/>
-        <map value="pharmacy.dose [m]"/>
+        <map value="pharmacy (med).dose [m],med.dose [m]"/>
       </mapping>
       <mapping>
         <identity value="v2"/>
@@ -4872,7 +4856,7 @@
       </mapping>
       <mapping>
         <identity value="vpr"/>
-        <map value="pharmacy.dose [m]"/>
+        <map value="pharmacy (med).dose [m],med.dose [m]"/>
       </mapping>
       <mapping>
         <identity value="rim"/>
@@ -5131,7 +5115,7 @@
       </mapping>
       <mapping>
         <identity value="vpr"/>
-        <map value="pharmacy.dose [m]"/>
+        <map value="pharmacy (med).dose [m],med.dose [m]"/>
       </mapping>
       <mapping>
         <identity value="v2"/>
@@ -5225,7 +5209,7 @@
       </mapping>
       <mapping>
         <identity value="vpr"/>
-        <map value="pharmacy.dose [m]"/>
+        <map value="pharmacy (med).dose [m],med.dose [m]"/>
       </mapping>
       <mapping>
         <identity value="v2"/>
@@ -5991,7 +5975,7 @@
       </mapping>
       <mapping>
         <identity value="vpr"/>
-        <map value="pharmacy.expires"/>
+        <map value="pharmacy (med).expires,med.expires"/>
       </mapping>
       <mapping>
         <identity value="v2"/>
@@ -6036,10 +6020,6 @@
       <mapping>
         <identity value="cdw"/>
         <map value="RxOut.RxOutpat.MaxRefills"/>
-      </mapping>
-      <mapping>
-        <identity value="vpr"/>
-        <map value="pharmacy.fillsAllowed"/>
       </mapping>
       <mapping>
         <identity value="script10.6"/>
@@ -6198,7 +6178,7 @@
       </mapping>
       <mapping>
         <identity value="vpr"/>
-        <map value="pharmacy.quantity"/>
+        <map value="pharmacy (med).schedule,med.schedule"/>
       </mapping>
       <mapping>
         <identity value="v2"/>
@@ -6392,7 +6372,7 @@
       </mapping>
       <mapping>
         <identity value="vpr"/>
-        <map value="pharmacy.daysSupply"/>
+        <map value="pharmacy (med).daysSupply,med.daysSupply"/>
       </mapping>
       <mapping>
         <identity value="script10.6"/>
@@ -6853,14 +6833,6 @@
         <identity value="cdw"/>
         <map value="RxOut.RxOutpat.RxStatus"/>
       </mapping>
-      <mapping>
-        <identity value="vpr"/>
-        <map value="pharmacy.status,pharmacy.vaStatus"/>
-      </mapping>
-      <mapping>
-        <identity value="vpr"/>
-        <map value="pharmacy.routing"/>
-      </mapping>
     </element>
     <element id="MedicationRequest.extension:medicationrequest-cancelDate">
       <path value="MedicationRequest.extension"/>
@@ -6882,10 +6854,6 @@
       <mapping>
         <identity value="cdw"/>
         <map value="RxOut.RxOutpat.CancelDate"/>
-      </mapping>
-      <mapping>
-        <identity value="vpr"/>
-        <map value="pharmacy.stop"/>
       </mapping>
     </element>
     <element id="MedicationRequest.extension:medicationrequest-includeIndicationInSig">
@@ -6967,7 +6935,7 @@
       </mapping>
       <mapping>
         <identity value="vpr"/>
-        <map value="pharmacy.prescription"/>
+        <map value="pharmacy (med).dose,med.dose"/>
       </mapping>
     </element>
     <element id="MedicationRequest.status">
@@ -6983,10 +6951,6 @@
       <mapping>
         <identity value="cdw"/>
         <map value="RxOut.RxOutpat.RxStatus"/>
-      </mapping>
-      <mapping>
-        <identity value="vpr"/>
-        <map value="pharmacy.status,pharmacy.vaStatus"/>
       </mapping>
     </element>
     <element id="MedicationRequest.intent">
@@ -7055,7 +7019,7 @@
       </mapping>
       <mapping>
         <identity value="vpr"/>
-        <map value="pharmacy.product [m]"/>
+        <map value="pharmacy (med).route,med.route"/>
       </mapping>
     </element>
     <element id="MedicationRequest.medication[x]:medicationCodeableConcept.text">
@@ -7071,7 +7035,7 @@
       </mapping>
       <mapping>
         <identity value="vpr"/>
-        <map value="pharmacy.product [m]"/>
+        <map value="pharmacy (med).route,med.route"/>
       </mapping>
     </element>
     <element id="MedicationRequest.subject">
@@ -7088,6 +7052,10 @@
         <identity value="cdw"/>
         <map value="RxOut.ActivityLog.PatientIEN,RxOut.ActivityLogOtherComments.PatientIEN,RxOut.RxOutpat.PatientIEN,RxOut.RxOutpatExt.PatientIEN,RxOut.RxOutpatExt.PatientSID,RxOut.RxOutpatFill.PatientIEN,RxOut.RxOutpatMedInstructions.PatientIEN,RxOut.RxOutpatSig.PatientIEN"/>
       </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="pharmacy (med).units,med.units"/>
+      </mapping>
     </element>
     <element id="MedicationRequest.authoredOn">
       <path value="MedicationRequest.authoredOn"/>
@@ -7102,7 +7070,7 @@
       </mapping>
       <mapping>
         <identity value="vpr"/>
-        <map value="pharmacy.start"/>
+        <map value="pharmacy (med).unitsPerDose,med.unitsPerDose"/>
       </mapping>
     </element>
     <element id="MedicationRequest.requester">
@@ -7122,7 +7090,7 @@
       </mapping>
       <mapping>
         <identity value="vpr"/>
-        <map value="pharmacy.currentProvider,pharmacy.orderingProvider"/>
+        <map value="pharmacy (med).currentProvider,pharmacy (med).doseStart,pharmacy (med).doseStop,pharmacy (med).duration,med.currentProvider,med.doseStart,med.doseStop,med.duration"/>
       </mapping>
     </element>
     <element id="MedicationRequest.reasonCode.text">
@@ -7155,10 +7123,6 @@
         <identity value="cdw"/>
         <map value="RxOut.RxOutpatSig.PatientInstructions"/>
       </mapping>
-      <mapping>
-        <identity value="vpr"/>
-        <map value="pharmacy.ptInstructions"/>
-      </mapping>
     </element>
     <element id="MedicationRequest.dosageInstruction.route.coding.system">
       <path value="MedicationRequest.dosageInstruction.route.coding.system"/>
@@ -7183,7 +7147,7 @@
       </mapping>
       <mapping>
         <identity value="vpr"/>
-        <map value="pharmacy.dose [m]"/>
+        <map value="pharmacy (med).dose [m],med.dose [m]"/>
       </mapping>
     </element>
     <element id="MedicationRequest.dosageInstruction.doseAndRate.extension:originalText">
@@ -7209,7 +7173,7 @@
       </mapping>
       <mapping>
         <identity value="vpr"/>
-        <map value="pharmacy.dose [m]"/>
+        <map value="pharmacy (med).dose [m],med.dose [m]"/>
       </mapping>
     </element>
     <element id="MedicationRequest.dosageInstruction.doseAndRate.dose[x]">
@@ -7246,7 +7210,7 @@
       </mapping>
       <mapping>
         <identity value="vpr"/>
-        <map value="pharmacy.dose [m]"/>
+        <map value="pharmacy (med).dose [m],med.dose [m]"/>
       </mapping>
     </element>
     <element id="MedicationRequest.dosageInstruction.doseAndRate.dose[x]:doseQuantity.unit">
@@ -7262,7 +7226,7 @@
       </mapping>
       <mapping>
         <identity value="vpr"/>
-        <map value="pharmacy.dose [m]"/>
+        <map value="pharmacy (med).dose [m],med.dose [m]"/>
       </mapping>
     </element>
     <element id="MedicationRequest.dispenseRequest.validityPeriod.end">
@@ -7275,7 +7239,7 @@
       </mapping>
       <mapping>
         <identity value="vpr"/>
-        <map value="pharmacy.expires"/>
+        <map value="pharmacy (med).expires,med.expires"/>
       </mapping>
     </element>
     <element id="MedicationRequest.dispenseRequest.numberOfRepeatsAllowed">
@@ -7290,10 +7254,6 @@
         <identity value="cdw"/>
         <map value="RxOut.RxOutpat.MaxRefills"/>
       </mapping>
-      <mapping>
-        <identity value="vpr"/>
-        <map value="pharmacy.fillsAllowed"/>
-      </mapping>
     </element>
     <element id="MedicationRequest.dispenseRequest.quantity.value">
       <path value="MedicationRequest.dispenseRequest.quantity.value"/>
@@ -7304,7 +7264,7 @@
       </mapping>
       <mapping>
         <identity value="vpr"/>
-        <map value="pharmacy.quantity"/>
+        <map value="pharmacy (med).schedule,med.schedule"/>
       </mapping>
     </element>
     <element id="MedicationRequest.dispenseRequest.expectedSupplyDuration">
@@ -7316,7 +7276,7 @@
       </mapping>
       <mapping>
         <identity value="vpr"/>
-        <map value="pharmacy.daysSupply"/>
+        <map value="pharmacy (med).daysSupply,med.daysSupply"/>
       </mapping>
     </element>
   </differential>

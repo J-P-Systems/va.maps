@@ -74,3 +74,20 @@ Source: DocumentReferenceDocumentReference
 * context.period.end -> "TIU.TIUDocument.EpisodeEndDateTime"
 * context.facilityType -> "TIU.TIUDocument.DocumentLocationIEN\nDim.Location.LocationType,Dim.Location.LocationType"
 * context.practiceSetting -> "TIU.TIUDocument.TreatingSpecialtyIEN"
+
+Mapping: vpr-to-DocumentReferenceDocumentReference
+Id: vpr
+Title: "Virtual Patient Record (VPR)"
+Source: DocumentReferenceDocumentReference
+* type -> "document.category,document.localTitle,document.nationalTitle,document.nationalTitleRole,document.nationalTitleService,document.nationalTitleSetting,document.nationalTitleSubject,document.nationalTitleType,document.type"
+* type.coding.code -> "document.category,document.localTitle,document.nationalTitle,document.nationalTitleRole,document.nationalTitleService,document.nationalTitleSetting,document.nationalTitleSubject,document.nationalTitleType,document.type"
+* type.text -> "document.category,document.localTitle,document.nationalTitle,document.nationalTitleRole,document.nationalTitleService,document.nationalTitleSetting,document.nationalTitleSubject,document.nationalTitleType,document.type"
+* author -> "document.clinician [m]"
+* author -> "document.clinician [m]"
+* description -> "document.subject"
+* content.attachment.url -> "document.content[n]"
+* content.attachment.size -> "document.content[n]"
+* content.attachment.hash -> "document.content[n]"
+* content.attachment.title -> "document.category,document.localTitle,document.nationalTitle,document.nationalTitleRole,document.nationalTitleService,document.nationalTitleSetting,document.nationalTitleSubject,document.nationalTitleType,document.type"
+* context.encounter -> "document.encounter"
+* context.facilityType -> "document.facility"

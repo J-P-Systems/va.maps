@@ -77,3 +77,16 @@ Source: VitalSigns
 * code.coding -> "Vital.VitalSign.VitalTypeIEN"
 * valueQuantity.value -> "Vital.VitalSign.Diastolic,Vital.VitalSign.Systolic,Vital.VitalSign.VitalResult,Vital.VitalSign.VitalResultNumeric"
 * valueQuantity.code -> "Vital.VitalSign.VitalTypeIEN"
+
+Mapping: vpr-to-VitalSigns
+Id: vpr
+Title: "Virtual Patient Record (VPR)"
+Source: VitalSigns
+* issued -> "vital.entered"
+* performer -> "vital.facility,vital.location"
+* status -> "vital.removed [m]"
+* status -> "vital.removed [m]"
+* effectiveDateTime -> "vital.taken"
+* code.coding -> "vital.vuid,vital.name,vital.high,vital.low,vital.bmi"
+* valueQuantity.value -> "vital.value,vital.units,vital.metricvalue,vital.metricUnits,vital.bmi"
+* valueQuantity.code -> "vital.vuid,vital.name,vital.high,vital.low,vital.bmi"

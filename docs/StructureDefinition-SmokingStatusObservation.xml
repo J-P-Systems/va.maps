@@ -27,11 +27,11 @@
     <valueCanonical value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-smokingstatus|6.1.0"/>
   </extension>
   <url value="http://va.gov/fhir/StructureDefinition/SmokingStatusObservation"/>
-  <version value="0.69.436"/>
+  <version value="0.69.437"/>
   <name value="SmokingStatusObservation"/>
   <title value="Smoking Status Observation"/>
   <status value="active"/>
-  <date value="2024-12-04T11:34:53+00:00"/>
+  <date value="2024-12-04T16:25:11+00:00"/>
   <publisher value="VA"/>
   <contact>
     <name value="VA"/>
@@ -56,6 +56,10 @@
   <mapping>
     <identity value="cdw"/>
     <name value="Clinical Data Warehouse (CDW)"/>
+  </mapping>
+  <mapping>
+    <identity value="vpr"/>
+    <name value="Virtual Patient Record (VPR)"/>
   </mapping>
   <mapping>
     <identity value="workflow"/>
@@ -1134,6 +1138,10 @@
         <map value="HF.HealthFactor.HealthFactorTypeIEN&#xA;Dim.HealthFactorType.CategoryHealthFactorTypeIEN"/>
       </mapping>
       <mapping>
+        <identity value="vpr"/>
+        <map value="healthFactor.category,healthFactor.name"/>
+      </mapping>
+      <mapping>
         <identity value="workflow"/>
         <map value="Event.code"/>
       </mapping>
@@ -1302,6 +1310,10 @@
       <mapping>
         <identity value="cdw"/>
         <map value="HF.HealthFactor.VisitDateTime,HF.HealthFactor.VisitIEN"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="healthFactor.encounter,healthFactor.facility,healthFactor.recorded"/>
       </mapping>
       <mapping>
         <identity value="workflow"/>
@@ -1614,6 +1626,10 @@
       <mapping>
         <identity value="cdw"/>
         <map value="HF.HealthFactor.HealthFactorTypeIEN&#xA;Dim.HealthFactorType.HealthFactorCategory,Dim.HealthFactorType.HealthFactorType"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="healthFactor.category,healthFactor.name"/>
       </mapping>
       <mapping>
         <identity value="sct-concept"/>
@@ -2106,6 +2122,10 @@
       <mapping>
         <identity value="cdw"/>
         <map value="HF.HealthFactor.Comments"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="healthFactor.comment"/>
       </mapping>
       <mapping>
         <identity value="v2"/>
@@ -3202,6 +3222,10 @@
         <identity value="cdw"/>
         <map value="HF.HealthFactor.HealthFactorTypeIEN&#xA;Dim.HealthFactorType.CategoryHealthFactorTypeIEN"/>
       </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="healthFactor.category,healthFactor.name"/>
+      </mapping>
     </element>
     <element id="Observation.subject">
       <path value="Observation.subject"/>
@@ -3232,6 +3256,10 @@
       <mapping>
         <identity value="cdw"/>
         <map value="HF.HealthFactor.VisitDateTime,HF.HealthFactor.VisitIEN"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="healthFactor.encounter,healthFactor.facility,healthFactor.recorded"/>
       </mapping>
     </element>
     <element id="Observation.effective[x]:effectiveDateTime">
@@ -3285,6 +3313,10 @@
         <identity value="cdw"/>
         <map value="HF.HealthFactor.HealthFactorTypeIEN&#xA;Dim.HealthFactorType.HealthFactorCategory,Dim.HealthFactorType.HealthFactorType"/>
       </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="healthFactor.category,healthFactor.name"/>
+      </mapping>
     </element>
     <element id="Observation.value[x]:valueCodeableConcept.text">
       <path value="Observation.value[x].text"/>
@@ -3305,6 +3337,10 @@
       <mapping>
         <identity value="cdw"/>
         <map value="HF.HealthFactor.Comments"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="healthFactor.comment"/>
       </mapping>
     </element>
   </differential>

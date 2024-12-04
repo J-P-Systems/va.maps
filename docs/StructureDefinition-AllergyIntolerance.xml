@@ -40,11 +40,11 @@
     <valueCanonical value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-allergyintolerance|6.1.0"/>
   </extension>
   <url value="http://va.gov/fhir/StructureDefinition/AllergyIntolerance"/>
-  <version value="0.69.436"/>
+  <version value="0.69.437"/>
   <name value="AllergyIntolerance"/>
   <title value="AllergyIntolerance"/>
   <status value="active"/>
-  <date value="2024-12-04T11:34:53+00:00"/>
+  <date value="2024-12-04T16:25:11+00:00"/>
   <publisher value="VA"/>
   <contact>
     <name value="VA"/>
@@ -1574,6 +1574,10 @@
       <mapping>
         <identity value="vpr"/>
         <map value="reaction.localCode,reaction.vuid"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="reaction.drugIngredient [m]"/>
       </mapping>
       <mapping>
         <identity value="w5"/>
@@ -3158,10 +3162,6 @@
         <comment value="This Data is not in CDW&#xA;Assess for CHAPI via VPR"/>
       </mapping>
       <mapping>
-        <identity value="vpr"/>
-        <map value="reaction.severity"/>
-      </mapping>
-      <mapping>
         <identity value="rim"/>
         <map value="inboundRelationship[typeCode=SUBJ].source[classCode=OBS, moodCode=EVN, code=SEV, value &lt;= SeverityObservation (Severity Level)]"/>
       </mapping>
@@ -3408,6 +3408,10 @@
         <identity value="vpr"/>
         <map value="reaction.localCode,reaction.vuid"/>
       </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="reaction.drugIngredient [m]"/>
+      </mapping>
     </element>
     <element id="AllergyIntolerance.code.text">
       <path value="AllergyIntolerance.code.text"/>
@@ -3619,10 +3623,6 @@
         <identity value="vista"/>
         <map value="557: terminologyMaps using VF_allergySeverity on ADVERSE REACTION REPORTING - SEVERITY (120.85-14.5)"/>
         <comment value="This Data is not in CDW&#xA;Assess for CHAPI via VPR"/>
-      </mapping>
-      <mapping>
-        <identity value="vpr"/>
-        <map value="reaction.severity"/>
       </mapping>
     </element>
   </differential>

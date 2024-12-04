@@ -55,4 +55,9 @@ Mapping: vpr-to-LabObservationChemhemtoxriaserObservation
 Id: vpr
 Title: "Virtual Patient Record (VPR)"
 Source: LabObservationChemhemtoxriaserObservation
-* subject -> "demographics.lrdfn"
+* effectiveDateTime -> "lab.collected"
+* note -> "lab.comment"
+* performer -> "lab.facility"
+* specimen -> "lab.groupName"
+* issued -> "lab.resulted,lab.status"
+* subject -> "demographics.lrdfn\naccession.collected"

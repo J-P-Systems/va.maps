@@ -21,11 +21,11 @@
      ]
   ] ) ; # 
   fhir:url [ fhir:v "http://va.gov/fhir/StructureDefinition/ProcedureSurgeryProcedure"^^xsd:anyURI] ; # 
-  fhir:version [ fhir:v "0.69.436"] ; # 
+  fhir:version [ fhir:v "0.69.437"] ; # 
   fhir:name [ fhir:v "ProcedureSurgeryProcedure"] ; # 
   fhir:title [ fhir:v "Procedure: Surgery Procedure"] ; # 
   fhir:status [ fhir:v "active"] ; # 
-  fhir:date [ fhir:v "2024-12-04T11:34:53+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2024-12-04T16:25:11+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "VA"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "VA" ] ;
@@ -49,6 +49,9 @@
   ] [
      fhir:identity [ fhir:v "cdw" ] ;
      fhir:name [ fhir:v "Clinical Data Warehouse (CDW)" ]
+  ] [
+     fhir:identity [ fhir:v "vpr" ] ;
+     fhir:name [ fhir:v "Virtual Patient Record (VPR)" ]
   ] [
      fhir:identity [ fhir:v "workflow" ] ;
      fhir:uri [ fhir:v "http://hl7.org/fhir/workflow"^^xsd:anyURI ] ;
@@ -1508,6 +1511,9 @@
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "Surg.SurgeryPRE.PrincipalProcedureText" ]
        ] [
+         fhir:identity [ fhir:v "vpr" ] ;
+         fhir:map [ fhir:v "surgery.name" ]
+       ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "C*E.9. But note many systems use C*E.2 for this" ]
        ] [
@@ -1613,6 +1619,9 @@
        fhir:mapping ( [
          fhir:identity [ fhir:v "vista" ] ;
          fhir:map [ fhir:v "1285: reference from SURGERY - VISIT (130-.015)" ]
+       ] [
+         fhir:identity [ fhir:v "vpr" ] ;
+         fhir:map [ fhir:v "surgery.encounter" ]
        ] [
          fhir:identity [ fhir:v "workflow" ] ;
          fhir:map [ fhir:v "Event.context" ]
@@ -1738,6 +1747,9 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "SPatient.ImplantedProsthesis.SurgeryDateTime,SPatient.OperationsIndication.SurgeryDateTime,Surg.AnesthesiaAgent.SurgeryDateTime,Surg.AnesthesiaBlockSite.SurgeryDateTime,Surg.AnesthesiaTechnique.SurgeryDateTime,Surg.AnesthesiaTestDose.SurgeryDateTime,Surg.ReferringPhysician.SurgeryDateTime,Surg.ReplacementFluidType.SurgeryDateTime,Surg.SurgeryAssistant.SurgeryDateTime,Surg.SurgeryAssistantOther.SurgeryDateTime,Surg.SurgeryDelay.SurgeryDateTime,Surg.SurgeryINTRA.SurgeryDateTime,Surg.SurgeryIrrigation.SurgeryDateTime,Surg.SurgeryMedication.SurgeryDateTime,Surg.SurgeryOccurrenceNonOp.SurgeryDateTime,Surg.SurgeryOtherPostOpDiagnosis.SurgeryDateTime,Surg.SurgeryOtherProcedure.SurgeryDateTime,Surg.SurgeryOtherProcedureCPTModifier.SurgeryDateTime,Surg.SurgeryOtherProcedureDiagnosis.SurgeryDateTime,Surg.SurgeryPOST.SurgeryDateTime,Surg.SurgeryPostOpDiagnosis.SurgeryDateTime,Surg.SurgeryPRE.SurgeryDateTime,Surg.SurgeryPreOpDiagnosis.SurgeryDateTime,Surg.SurgeryPrincipalAssociatedDiagnosis.SurgeryDateTime,Surg.SurgeryPrincipalAssociatedProcedure.SurgeryDateTime,Surg.SurgeryPrincipalCPTModifier.SurgeryDateTime,Surg.SurgeryPrincipalDiagnosis.SurgeryDateTime,Surg.SurgeryProcedureCPTModifier.SurgeryDateTime,Surg.SurgeryProcedureDiagnosisCode.SurgeryDateTime,Surg.SurgeryProcedureOccurrence.SurgeryDateTime,Surg.SurgeryRequiredBloodProducts.SurgeryDateTime,Surg.SurgeryReturnCase.SurgeryDateTime,Surg.SurgORCircSupport.SurgeryDateTime,Surg.SurgORCircSupportTime.SurgeryDateTime,Surg.SurgORScrubSupport.SurgeryDateTime,Surg.SurgORScrubSupportTime.SurgeryDateTime" ]
+       ] [
+         fhir:identity [ fhir:v "vpr" ] ;
+         fhir:map [ fhir:v "surgery.dateTime" ]
        ] [
          fhir:identity [ fhir:v "workflow" ] ;
          fhir:map [ fhir:v "Event.occurrence[x]" ]
@@ -3278,6 +3290,9 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "Surg.SurgeryINTRA.SurgeonStaffIEN" ]
+       ] [
+         fhir:identity [ fhir:v "vpr" ] ;
+         fhir:map [ fhir:v "surgery.provider" ]
        ] [
          fhir:identity [ fhir:v "workflow" ] ;
          fhir:map [ fhir:v "Event.performer.actor" ]
@@ -8471,6 +8486,9 @@
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "Surg.SurgeryINTRA.ProviderIEN" ]
        ] [
+         fhir:identity [ fhir:v "vpr" ] ;
+         fhir:map [ fhir:v "surgery.provider" ]
+       ] [
          fhir:identity [ fhir:v "workflow" ] ;
          fhir:map [ fhir:v "Event.performer.actor" ]
        ] [
@@ -10231,6 +10249,9 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "Surg.SurgeryPRE.PrincipalProcedureText" ]
+       ] [
+         fhir:identity [ fhir:v "vpr" ] ;
+         fhir:map [ fhir:v "surgery.name" ]
        ] )
      ] [
        fhir:id [ fhir:v "Procedure.subject" ] ;
@@ -10263,6 +10284,9 @@
        fhir:mapping ( [
          fhir:identity [ fhir:v "vista" ] ;
          fhir:map [ fhir:v "1285: reference from SURGERY - VISIT (130-.015)" ]
+       ] [
+         fhir:identity [ fhir:v "vpr" ] ;
+         fhir:map [ fhir:v "surgery.encounter" ]
        ] )
      ] [
        fhir:id [ fhir:v "Procedure.performed[x]" ] ;
@@ -10295,6 +10319,9 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "SPatient.ImplantedProsthesis.SurgeryDateTime,SPatient.OperationsIndication.SurgeryDateTime,Surg.AnesthesiaAgent.SurgeryDateTime,Surg.AnesthesiaBlockSite.SurgeryDateTime,Surg.AnesthesiaTechnique.SurgeryDateTime,Surg.AnesthesiaTestDose.SurgeryDateTime,Surg.ReferringPhysician.SurgeryDateTime,Surg.ReplacementFluidType.SurgeryDateTime,Surg.SurgeryAssistant.SurgeryDateTime,Surg.SurgeryAssistantOther.SurgeryDateTime,Surg.SurgeryDelay.SurgeryDateTime,Surg.SurgeryINTRA.SurgeryDateTime,Surg.SurgeryIrrigation.SurgeryDateTime,Surg.SurgeryMedication.SurgeryDateTime,Surg.SurgeryOccurrenceNonOp.SurgeryDateTime,Surg.SurgeryOtherPostOpDiagnosis.SurgeryDateTime,Surg.SurgeryOtherProcedure.SurgeryDateTime,Surg.SurgeryOtherProcedureCPTModifier.SurgeryDateTime,Surg.SurgeryOtherProcedureDiagnosis.SurgeryDateTime,Surg.SurgeryPOST.SurgeryDateTime,Surg.SurgeryPostOpDiagnosis.SurgeryDateTime,Surg.SurgeryPRE.SurgeryDateTime,Surg.SurgeryPreOpDiagnosis.SurgeryDateTime,Surg.SurgeryPrincipalAssociatedDiagnosis.SurgeryDateTime,Surg.SurgeryPrincipalAssociatedProcedure.SurgeryDateTime,Surg.SurgeryPrincipalCPTModifier.SurgeryDateTime,Surg.SurgeryPrincipalDiagnosis.SurgeryDateTime,Surg.SurgeryProcedureCPTModifier.SurgeryDateTime,Surg.SurgeryProcedureDiagnosisCode.SurgeryDateTime,Surg.SurgeryProcedureOccurrence.SurgeryDateTime,Surg.SurgeryRequiredBloodProducts.SurgeryDateTime,Surg.SurgeryReturnCase.SurgeryDateTime,Surg.SurgORCircSupport.SurgeryDateTime,Surg.SurgORCircSupportTime.SurgeryDateTime,Surg.SurgORScrubSupport.SurgeryDateTime,Surg.SurgORScrubSupportTime.SurgeryDateTime" ]
+       ] [
+         fhir:identity [ fhir:v "vpr" ] ;
+         fhir:map [ fhir:v "surgery.dateTime" ]
        ] )
      ] [
        fhir:id [ fhir:v "Procedure.performed[x]:performedPeriod" ] ;
@@ -10446,6 +10473,9 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "Surg.SurgeryINTRA.SurgeonStaffIEN" ]
+       ] [
+         fhir:identity [ fhir:v "vpr" ] ;
+         fhir:map [ fhir:v "surgery.provider" ]
        ] )
      ] [
        fhir:id [ fhir:v "Procedure.performer:va-2" ] ;
@@ -10985,6 +11015,9 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "Surg.SurgeryINTRA.ProviderIEN" ]
+       ] [
+         fhir:identity [ fhir:v "vpr" ] ;
+         fhir:map [ fhir:v "surgery.provider" ]
        ] )
      ] [
        fhir:id [ fhir:v "Procedure.performer:va-13" ] ;

@@ -32,3 +32,11 @@ Source: MedicationRequestUnsigned
 * dosageInstruction.timing.repeat.boundsPeriod.start -> "CPRSOrder.CPRSOrder.OrderStartDateTime,CPRSOrder.CPRSOrder.OrderStartVistaDate,CPRSOrder.OrderAction.OrderStartDateTime,CPRSOrder.OrderedItem.OrderStartDateSID,CPRSOrder.OrderedItem.OrderStartDateTime,CPRSOrder.OrderedItem.OrderStartVistaDate"
 * dosageInstruction.timing.repeat.boundsPeriod.end -> "CPRSOrder.CPRSOrder.OrderStopDateTime,CPRSOrder.CPRSOrder.OrderStopVistaDate,CPRSOrder.OrderedItem.OrderStopDateSID,CPRSOrder.OrderedItem.OrderStopDateTime,CPRSOrder.OrderedItem.OrderStopVistaDate"
 * medicationCodeableConcept -> "CPRSOrder.CPRSOrder.ItemOrderedParentFileIEN,CPRSOrder.CPRSOrder.ItemOrderedParentFileNumber"
+
+Mapping: vpr-to-MedicationRequestUnsigned
+Id: vpr
+Title: "Virtual Patient Record (VPR)"
+Source: MedicationRequestUnsigned
+* authoredOn -> "order.entered"
+* dosageInstruction.timing.repeat.boundsPeriod.start -> "order.start"
+* dosageInstruction.timing.repeat.boundsPeriod.end -> "order.stop"

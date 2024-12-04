@@ -10,11 +10,11 @@
     "valueCanonical" : "http://hl7.org/fhir/us/core/StructureDefinition/us-core-allergyintolerance|6.1.0"
   }],
   "url" : "http://va.gov/fhir/StructureDefinition/AllergyIntolerance",
-  "version" : "0.69.436",
+  "version" : "0.69.437",
   "name" : "AllergyIntolerance",
   "title" : "AllergyIntolerance",
   "status" : "active",
-  "date" : "2024-12-04T11:34:53+00:00",
+  "date" : "2024-12-04T16:25:11+00:00",
   "publisher" : "VA",
   "contact" : [{
     "name" : "VA",
@@ -1590,6 +1590,10 @@
       {
         "identity" : "vpr",
         "map" : "reaction.localCode,reaction.vuid"
+      },
+      {
+        "identity" : "vpr",
+        "map" : "reaction.drugIngredient [m]"
       },
       {
         "identity" : "w5",
@@ -3221,10 +3225,6 @@
         "comment" : "This Data is not in CDW\nAssess for CHAPI via VPR"
       },
       {
-        "identity" : "vpr",
-        "map" : "reaction.severity"
-      },
-      {
         "identity" : "rim",
         "map" : "inboundRelationship[typeCode=SUBJ].source[classCode=OBS, moodCode=EVN, code=SEV, value <= SeverityObservation (Severity Level)]"
       }]
@@ -3486,6 +3486,10 @@
       {
         "identity" : "vpr",
         "map" : "reaction.localCode,reaction.vuid"
+      },
+      {
+        "identity" : "vpr",
+        "map" : "reaction.drugIngredient [m]"
       }]
     },
     {
@@ -3713,10 +3717,6 @@
         "identity" : "vista",
         "map" : "557: terminologyMaps using VF_allergySeverity on ADVERSE REACTION REPORTING - SEVERITY (120.85-14.5)",
         "comment" : "This Data is not in CDW\nAssess for CHAPI via VPR"
-      },
-      {
-        "identity" : "vpr",
-        "map" : "reaction.severity"
       }]
     }]
   }

@@ -27,3 +27,11 @@ Source: LungCancerScreening
 * subject -> "TIU.TIUDocument.PatientIEN"
 * performer -> "TIU.TIUDocument.AuthorDictatorStaffIEN"
 * encounter -> "TIU.TIUDocument.VisitIEN"
+
+Mapping: vpr-to-LungCancerScreening
+Id: vpr
+Title: "Virtual Patient Record (VPR)"
+Source: LungCancerScreening
+* presentedForm -> "document.content[n]"
+* performer -> "document.clinician [m]"
+* encounter -> "document.encounter"

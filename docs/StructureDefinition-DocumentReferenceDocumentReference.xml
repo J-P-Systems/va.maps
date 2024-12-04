@@ -53,11 +53,11 @@
     <valueCanonical value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference|6.1.0"/>
   </extension>
   <url value="http://va.gov/fhir/StructureDefinition/DocumentReferenceDocumentReference"/>
-  <version value="0.69.436"/>
+  <version value="0.69.437"/>
   <name value="DocumentReferenceDocumentReference"/>
   <title value="Document Reference DocumentReference"/>
   <status value="active"/>
-  <date value="2024-12-04T11:34:53+00:00"/>
+  <date value="2024-12-04T16:25:11+00:00"/>
   <publisher value="VA"/>
   <contact>
     <name value="VA"/>
@@ -82,6 +82,10 @@
   <mapping>
     <identity value="cdw"/>
     <name value="Clinical Data Warehouse (CDW)"/>
+  </mapping>
+  <mapping>
+    <identity value="vpr"/>
+    <name value="Virtual Patient Record (VPR)"/>
   </mapping>
   <mapping>
     <identity value="workflow"/>
@@ -1041,6 +1045,10 @@
         <map value="TIU.TIUDocument.TIUDocumentDefinitionIEN"/>
       </mapping>
       <mapping>
+        <identity value="vpr"/>
+        <map value="document.category,document.localTitle,document.nationalTitle,document.nationalTitleRole,document.nationalTitleService,document.nationalTitleSetting,document.nationalTitleSubject,document.nationalTitleType,document.type"/>
+      </mapping>
+      <mapping>
         <identity value="workflow"/>
         <map value="Event.code"/>
       </mapping>
@@ -1374,6 +1382,10 @@
         <map value="TIU.TIUDocument.TIUDocumentDefinitionIEN"/>
       </mapping>
       <mapping>
+        <identity value="vpr"/>
+        <map value="document.category,document.localTitle,document.nationalTitle,document.nationalTitleRole,document.nationalTitleService,document.nationalTitleSetting,document.nationalTitleSubject,document.nationalTitleType,document.type"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="C*E.1"/>
       </mapping>
@@ -1504,6 +1516,10 @@
       <mapping>
         <identity value="cdw"/>
         <map value="TIU.TIUDocument.TIUDocumentDefinitionIEN"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="document.category,document.localTitle,document.nationalTitle,document.nationalTitleRole,document.nationalTitleService,document.nationalTitleSetting,document.nationalTitleSubject,document.nationalTitleType,document.type"/>
       </mapping>
       <mapping>
         <identity value="v2"/>
@@ -1839,6 +1855,10 @@
       <mapping>
         <identity value="cdw"/>
         <map value="TIU.TIUDocument.SignedByStaffIEN"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="document.clinician [m]"/>
       </mapping>
       <mapping>
         <identity value="workflow"/>
@@ -2244,6 +2264,10 @@
       <mapping>
         <identity value="cdw"/>
         <map value="TIU.TIUDocument.DocumentSubject"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="document.subject"/>
       </mapping>
       <mapping>
         <identity value="v2"/>
@@ -2773,6 +2797,10 @@
         <comment value="option 2: USED in PHAPI&#xA;US Core: DocumentReference.content.attachment.url or DocumentReference.content.attachment.data or both SHALL be present."/>
       </mapping>
       <mapping>
+        <identity value="vpr"/>
+        <map value="document.content[n]"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="RP.1+RP.2 - if they refer to a URL (see v2.6)"/>
       </mapping>
@@ -2813,6 +2841,10 @@
         <map value="893: transform using calculate() on TIU DOCUMENT - REPORT TEXT (8925-2)"/>
       </mapping>
       <mapping>
+        <identity value="vpr"/>
+        <map value="document.content[n]"/>
+      </mapping>
+      <mapping>
         <identity value="rim"/>
         <map value="N/A (needs data type R3 proposal)"/>
       </mapping>
@@ -2847,6 +2879,10 @@
       <mapping>
         <identity value="vista"/>
         <map value="894: transform using calculate() on TIU DOCUMENT - REPORT TEXT (8925-2)"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="document.content[n]"/>
       </mapping>
       <mapping>
         <identity value="rim"/>
@@ -2894,6 +2930,10 @@
       <mapping>
         <identity value="cdw"/>
         <map value="TIU.TIUDocument.TIUDocumentDefinitionIEN"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="document.category,document.localTitle,document.nationalTitle,document.nationalTitleRole,document.nationalTitleService,document.nationalTitleSetting,document.nationalTitleSubject,document.nationalTitleType,document.type"/>
       </mapping>
       <mapping>
         <identity value="rim"/>
@@ -3169,6 +3209,10 @@
       <mapping>
         <identity value="cdw"/>
         <map value="TIU.TIUDocument.VisitIEN"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="document.encounter"/>
       </mapping>
       <mapping>
         <identity value="workflow"/>
@@ -3489,6 +3533,10 @@
         <map value="TIU.TIUDocument.DocumentLocationIEN&#xA;Dim.Location.LocationType,Dim.Location.LocationType"/>
       </mapping>
       <mapping>
+        <identity value="vpr"/>
+        <map value="document.facility"/>
+      </mapping>
+      <mapping>
         <identity value="fhircomposition"/>
         <map value="usually from a mapping to a local ValueSet"/>
       </mapping>
@@ -3701,6 +3749,10 @@
         <identity value="cdw"/>
         <map value="TIU.TIUDocument.TIUDocumentDefinitionIEN"/>
       </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="document.category,document.localTitle,document.nationalTitle,document.nationalTitleRole,document.nationalTitleService,document.nationalTitleSetting,document.nationalTitleSubject,document.nationalTitleType,document.type"/>
+      </mapping>
     </element>
     <element id="DocumentReference.type.coding.system">
       <path value="DocumentReference.type.coding.system"/>
@@ -3724,6 +3776,10 @@
         <identity value="cdw"/>
         <map value="TIU.TIUDocument.TIUDocumentDefinitionIEN"/>
       </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="document.category,document.localTitle,document.nationalTitle,document.nationalTitleRole,document.nationalTitleService,document.nationalTitleSetting,document.nationalTitleSubject,document.nationalTitleType,document.type"/>
+      </mapping>
     </element>
     <element id="DocumentReference.type.text">
       <path value="DocumentReference.type.text"/>
@@ -3736,6 +3792,10 @@
       <mapping>
         <identity value="cdw"/>
         <map value="TIU.TIUDocument.TIUDocumentDefinitionIEN"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="document.category,document.localTitle,document.nationalTitle,document.nationalTitleRole,document.nationalTitleService,document.nationalTitleSetting,document.nationalTitleSubject,document.nationalTitleType,document.type"/>
       </mapping>
     </element>
     <element id="DocumentReference.category:us-core">
@@ -3796,6 +3856,14 @@
         <identity value="cdw"/>
         <map value="TIU.TIUDocument.SignedByStaffIEN"/>
       </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="document.clinician [m]"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="document.clinician [m]"/>
+      </mapping>
     </element>
     <element id="DocumentReference.authenticator">
       <path value="DocumentReference.authenticator"/>
@@ -3832,6 +3900,10 @@
       <mapping>
         <identity value="cdw"/>
         <map value="TIU.TIUDocument.DocumentSubject"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="document.subject"/>
       </mapping>
     </element>
     <element id="DocumentReference.securityLabel">
@@ -3880,6 +3952,10 @@
         <map value="892: transform using create(Binary) on TIU DOCUMENT - REPORT TEXT (8925-2)"/>
         <comment value="option 2: USED in PHAPI&#xA;US Core: DocumentReference.content.attachment.url or DocumentReference.content.attachment.data or both SHALL be present."/>
       </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="document.content[n]"/>
+      </mapping>
     </element>
     <element id="DocumentReference.content.attachment.size">
       <path value="DocumentReference.content.attachment.size"/>
@@ -3888,6 +3964,10 @@
         <identity value="vista"/>
         <map value="893: transform using calculate() on TIU DOCUMENT - REPORT TEXT (8925-2)"/>
       </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="document.content[n]"/>
+      </mapping>
     </element>
     <element id="DocumentReference.content.attachment.hash">
       <path value="DocumentReference.content.attachment.hash"/>
@@ -3895,6 +3975,10 @@
       <mapping>
         <identity value="vista"/>
         <map value="894: transform using calculate() on TIU DOCUMENT - REPORT TEXT (8925-2)"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="document.content[n]"/>
       </mapping>
     </element>
     <element id="DocumentReference.content.attachment.title">
@@ -3908,6 +3992,10 @@
       <mapping>
         <identity value="cdw"/>
         <map value="TIU.TIUDocument.TIUDocumentDefinitionIEN"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="document.category,document.localTitle,document.nationalTitle,document.nationalTitleRole,document.nationalTitleService,document.nationalTitleSetting,document.nationalTitleSubject,document.nationalTitleType,document.type"/>
       </mapping>
     </element>
     <element id="DocumentReference.content.attachment.creation">
@@ -3948,6 +4036,10 @@
       <mapping>
         <identity value="cdw"/>
         <map value="TIU.TIUDocument.VisitIEN"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="document.encounter"/>
       </mapping>
     </element>
     <element id="DocumentReference.context.event">
@@ -3997,6 +4089,10 @@
       <mapping>
         <identity value="cdw"/>
         <map value="TIU.TIUDocument.DocumentLocationIEN&#xA;Dim.Location.LocationType,Dim.Location.LocationType"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="document.facility"/>
       </mapping>
     </element>
     <element id="DocumentReference.context.practiceSetting">
