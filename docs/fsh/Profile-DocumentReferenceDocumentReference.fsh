@@ -74,10 +74,3 @@ Source: DocumentReferenceDocumentReference
 * context.period.end -> "TIU.TIUDocument.EpisodeEndDateTime"
 * context.facilityType -> "TIU.TIUDocument.DocumentLocationIEN\nDim.Location.LocationType,Dim.Location.LocationType"
 * context.practiceSetting -> "TIU.TIUDocument.TreatingSpecialtyIEN"
-
-Mapping: vpr-to-DocumentReferenceDocumentReference
-Id: vpr
-Title: "Virtual Patient Record (VPR)"
-Source: DocumentReferenceDocumentReference
-* content.attachment.url -> "#ERROR_#REF!"
-* content.attachment.title -> "#ERROR_#REF!"

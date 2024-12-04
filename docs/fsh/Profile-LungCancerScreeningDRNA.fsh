@@ -12,8 +12,3 @@ Source: LungCancerScreeningDRNA
 * code -> "950: target not supported" "LCSDefaultRecommendedNextActionRequest Profile"
 * priority -> "951: target not supported" "LCSDefaultRecommendedNextActionRequest Profile"
 * occurrencePeriod -> "959: target not supported" "LCSDefaultRecommendedNextActionRequest Profile"
-
-Mapping: cdw-to-LungCancerScreeningDRNA
-Id: cdw
-Title: "Clinical Data Warehouse (CDW)"
-Source: LungCancerScreeningDRNA

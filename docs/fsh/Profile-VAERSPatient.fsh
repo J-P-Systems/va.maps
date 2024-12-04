@@ -95,8 +95,3 @@ Source: VAERSPatient
 * extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity].extension[ombCategory].valueCoding -> "1956: fixed value = urn:oid:2.16.840.1.113883.6.238#2186-5 \"Not Hispanic or Latino\" case not xsi:nil"
 * extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity].extension[ombCategory].valueCoding -> "1957: fixed value = http://terminology.hl7.org/CodeSystem/v3-NullFlavor#UNK \"unknown\" case not xsi:nil"
 * extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity].extension[ombCategory].valueCoding -> "1958: fixed value = http://terminology.hl7.org/CodeSystem/v3-NullFlavor#OTH \"other\" case not xsi:nil"
-
-Mapping: cdw-to-VAERSPatient
-Id: cdw
-Title: "Clinical Data Warehouse (CDW)"
-Source: VAERSPatient

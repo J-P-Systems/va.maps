@@ -40,11 +40,11 @@
     <valueCanonical value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-allergyintolerance|6.1.0"/>
   </extension>
   <url value="http://va.gov/fhir/StructureDefinition/AllergyIntolerance"/>
-  <version value="0.68.425"/>
+  <version value="0.69.436"/>
   <name value="AllergyIntolerance"/>
   <title value="AllergyIntolerance"/>
   <status value="active"/>
-  <date value="2024-11-30T15:07:22+00:00"/>
+  <date value="2024-12-04T11:34:53+00:00"/>
   <publisher value="VA"/>
   <contact>
     <name value="VA"/>
@@ -770,10 +770,6 @@
         <map value="233: source value from PATIENT ALLERGIES - IEN (120.8-.001)"/>
       </mapping>
       <mapping>
-        <identity value="vpr"/>
-        <map value="GET PATIENT DATA-reaction.id"/>
-      </mapping>
-      <mapping>
         <identity value="v2"/>
         <map value="CX.1 / EI.1"/>
       </mapping>
@@ -1288,7 +1284,7 @@
       </mapping>
       <mapping>
         <identity value="vpr"/>
-        <map value="GET PATIENT DATA-reaction.removed"/>
+        <map value="reaction.removed"/>
       </mapping>
       <mapping>
         <identity value="w5"/>
@@ -1354,11 +1350,7 @@
       </mapping>
       <mapping>
         <identity value="vpr"/>
-        <map value="GET PATIENT DATA-reaction.verified"/>
-      </mapping>
-      <mapping>
-        <identity value="vpr"/>
-        <map value="GET PATIENT DATA-reaction.type"/>
+        <map value="reaction.removed"/>
       </mapping>
       <mapping>
         <identity value="w5"/>
@@ -1412,6 +1404,10 @@
       <mapping>
         <identity value="cdw"/>
         <map value="Allergy.Allergy.Mechanism"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="reaction.mechanism"/>
       </mapping>
       <mapping>
         <identity value="w5"/>
@@ -1470,7 +1466,7 @@
       </mapping>
       <mapping>
         <identity value="vpr"/>
-        <map value="GET PATIENT DATA-reaction.severity"/>
+        <map value="reaction.type"/>
       </mapping>
       <mapping>
         <identity value="w5"/>
@@ -1577,7 +1573,7 @@
       </mapping>
       <mapping>
         <identity value="vpr"/>
-        <map value="GET PATIENT DATA-reaction.vuid"/>
+        <map value="reaction.localCode,reaction.vuid"/>
       </mapping>
       <mapping>
         <identity value="w5"/>
@@ -1749,7 +1745,7 @@
       </mapping>
       <mapping>
         <identity value="vpr"/>
-        <map value="GET PATIENT DATA-reaction.name"/>
+        <map value="reaction.name"/>
       </mapping>
       <mapping>
         <identity value="v2"/>
@@ -1799,6 +1795,10 @@
       <mapping>
         <identity value="cdw"/>
         <map value="Allergy.AllergicReaction.PatientIEN,Allergy.Allergy.PatientIEN,Allergy.AllergyComment.PatientIEN,Allergy.AllergyDrugClass.PatientIEN,Allergy.AllergyDrugIngredient.PatientIEN"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="reaction.drugClass [m],reaction.drugIngredient [m],reaction.reaction [m]"/>
       </mapping>
       <mapping>
         <identity value="w5"/>
@@ -1936,7 +1936,7 @@
       </mapping>
       <mapping>
         <identity value="vpr"/>
-        <map value="GET PATIENT DATA-reaction.entered"/>
+        <map value="reaction.entered"/>
       </mapping>
       <mapping>
         <identity value="w5"/>
@@ -2261,7 +2261,7 @@
       </mapping>
       <mapping>
         <identity value="vpr"/>
-        <map value="GET PATIENT DATA-reaction.comment [m].commentText"/>
+        <map value="reaction.comment [m]"/>
       </mapping>
       <mapping>
         <identity value="v2"/>
@@ -2307,7 +2307,7 @@
       </mapping>
       <mapping>
         <identity value="vpr"/>
-        <map value="GET PATIENT DATA-reaction.comment [m].enteredBy"/>
+        <map value="reaction.comment [m]"/>
       </mapping>
       <mapping>
         <identity value="v2"/>
@@ -2349,7 +2349,7 @@
       </mapping>
       <mapping>
         <identity value="vpr"/>
-        <map value="GET PATIENT DATA-reaction.drugIngredient [m]"/>
+        <map value="reaction.comment [m]"/>
       </mapping>
       <mapping>
         <identity value="v2"/>
@@ -2574,7 +2574,7 @@
       </mapping>
       <mapping>
         <identity value="vpr"/>
-        <map value="GET PATIENT DATA-reaction.reaction [m]"/>
+        <map value="reaction.reaction [m]"/>
       </mapping>
       <mapping>
         <identity value="v2"/>
@@ -2886,6 +2886,10 @@
         <comment value="from mapParameter 2"/>
       </mapping>
       <mapping>
+        <identity value="vpr"/>
+        <map value="reaction.reaction [m]"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="C*E.1"/>
       </mapping>
@@ -2931,6 +2935,10 @@
         <identity value="vista"/>
         <map value="252-3: source value from PATIENT ALLERGIES - REACTIONS &gt; REACTIONS - REACTION &gt; SIGN/SYMPTOMS - NAME (120.8-10 &gt; 120.81-.01 &gt; 120.83-.01)"/>
         <comment value="from mapParameter 3"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="reaction.reaction [m]"/>
       </mapping>
       <mapping>
         <identity value="v2"/>
@@ -3020,6 +3028,10 @@
         <comment value="from mapParameter 4"/>
       </mapping>
       <mapping>
+        <identity value="vpr"/>
+        <map value="reaction.reaction [m]"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="C*E.9. But note many systems use C*E.2 for this"/>
       </mapping>
@@ -3098,6 +3110,10 @@
         <map value="Allergy.AllergicReaction.EnteredDateTime"/>
       </mapping>
       <mapping>
+        <identity value="vpr"/>
+        <map value="reaction.reaction [m]"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="AL1-6"/>
       </mapping>
@@ -3143,7 +3159,7 @@
       </mapping>
       <mapping>
         <identity value="vpr"/>
-        <map value="GET PATIENT DATA-reaction.comment [m].entered"/>
+        <map value="reaction.severity"/>
       </mapping>
       <mapping>
         <identity value="rim"/>
@@ -3256,10 +3272,6 @@
         <identity value="vista"/>
         <map value="233: source value from PATIENT ALLERGIES - IEN (120.8-.001)"/>
       </mapping>
-      <mapping>
-        <identity value="vpr"/>
-        <map value="GET PATIENT DATA-reaction.id"/>
-      </mapping>
     </element>
     <element id="AllergyIntolerance.identifier:va-CDW">
       <path value="AllergyIntolerance.identifier"/>
@@ -3311,7 +3323,7 @@
       </mapping>
       <mapping>
         <identity value="vpr"/>
-        <map value="GET PATIENT DATA-reaction.removed"/>
+        <map value="reaction.removed"/>
       </mapping>
     </element>
     <element id="AllergyIntolerance.verificationStatus">
@@ -3338,11 +3350,7 @@
       </mapping>
       <mapping>
         <identity value="vpr"/>
-        <map value="GET PATIENT DATA-reaction.verified"/>
-      </mapping>
-      <mapping>
-        <identity value="vpr"/>
-        <map value="GET PATIENT DATA-reaction.type"/>
+        <map value="reaction.removed"/>
       </mapping>
     </element>
     <element id="AllergyIntolerance.type">
@@ -3359,6 +3367,10 @@
       <mapping>
         <identity value="cdw"/>
         <map value="Allergy.Allergy.Mechanism"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="reaction.mechanism"/>
       </mapping>
     </element>
     <element id="AllergyIntolerance.category">
@@ -3378,7 +3390,7 @@
       </mapping>
       <mapping>
         <identity value="vpr"/>
-        <map value="GET PATIENT DATA-reaction.severity"/>
+        <map value="reaction.type"/>
       </mapping>
     </element>
     <element id="AllergyIntolerance.code">
@@ -3394,7 +3406,7 @@
       </mapping>
       <mapping>
         <identity value="vpr"/>
-        <map value="GET PATIENT DATA-reaction.vuid"/>
+        <map value="reaction.localCode,reaction.vuid"/>
       </mapping>
     </element>
     <element id="AllergyIntolerance.code.text">
@@ -3411,7 +3423,7 @@
       </mapping>
       <mapping>
         <identity value="vpr"/>
-        <map value="GET PATIENT DATA-reaction.name"/>
+        <map value="reaction.name"/>
       </mapping>
     </element>
     <element id="AllergyIntolerance.patient">
@@ -3424,6 +3436,10 @@
       <mapping>
         <identity value="cdw"/>
         <map value="Allergy.AllergicReaction.PatientIEN,Allergy.Allergy.PatientIEN,Allergy.AllergyComment.PatientIEN,Allergy.AllergyDrugClass.PatientIEN,Allergy.AllergyDrugIngredient.PatientIEN"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="reaction.drugClass [m],reaction.drugIngredient [m],reaction.reaction [m]"/>
       </mapping>
     </element>
     <element id="AllergyIntolerance.recordedDate">
@@ -3440,7 +3456,7 @@
       </mapping>
       <mapping>
         <identity value="vpr"/>
-        <map value="GET PATIENT DATA-reaction.entered"/>
+        <map value="reaction.entered"/>
       </mapping>
     </element>
     <element id="AllergyIntolerance.recorder">
@@ -3485,7 +3501,7 @@
       </mapping>
       <mapping>
         <identity value="vpr"/>
-        <map value="GET PATIENT DATA-reaction.comment [m].commentText"/>
+        <map value="reaction.comment [m]"/>
       </mapping>
     </element>
     <element id="AllergyIntolerance.note.time">
@@ -3501,7 +3517,7 @@
       </mapping>
       <mapping>
         <identity value="vpr"/>
-        <map value="GET PATIENT DATA-reaction.comment [m].enteredBy"/>
+        <map value="reaction.comment [m]"/>
       </mapping>
     </element>
     <element id="AllergyIntolerance.note.text">
@@ -3513,7 +3529,7 @@
       </mapping>
       <mapping>
         <identity value="vpr"/>
-        <map value="GET PATIENT DATA-reaction.drugIngredient [m]"/>
+        <map value="reaction.comment [m]"/>
       </mapping>
     </element>
     <element id="AllergyIntolerance.reaction.manifestation">
@@ -3524,7 +3540,7 @@
       </mapping>
       <mapping>
         <identity value="vpr"/>
-        <map value="GET PATIENT DATA-reaction.reaction [m]"/>
+        <map value="reaction.reaction [m]"/>
       </mapping>
     </element>
     <element id="AllergyIntolerance.reaction.manifestation.coding.system">
@@ -3545,6 +3561,10 @@
         <map value="252-2: source value from PATIENT ALLERGIES - REACTIONS &gt; REACTIONS - REACTION &gt; SIGN/SYMPTOMS - VUID (120.8-10 &gt; 120.81-.01 &gt; 120.83-99.99)"/>
         <comment value="from mapParameter 2"/>
       </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="reaction.reaction [m]"/>
+      </mapping>
     </element>
     <element id="AllergyIntolerance.reaction.manifestation.coding.display">
       <path value="AllergyIntolerance.reaction.manifestation.coding.display"/>
@@ -3554,6 +3574,10 @@
         <map value="252-3: source value from PATIENT ALLERGIES - REACTIONS &gt; REACTIONS - REACTION &gt; SIGN/SYMPTOMS - NAME (120.8-10 &gt; 120.81-.01 &gt; 120.83-.01)"/>
         <comment value="from mapParameter 3"/>
       </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="reaction.reaction [m]"/>
+      </mapping>
     </element>
     <element id="AllergyIntolerance.reaction.manifestation.text">
       <path value="AllergyIntolerance.reaction.manifestation.text"/>
@@ -3562,6 +3586,10 @@
         <identity value="vista"/>
         <map value="252-4: source value from PATIENT ALLERGIES - REACTIONS &gt; REACTIONS - REACTION &gt; SIGN/SYMPTOMS - NAME (120.8-10 &gt; 120.81-.01 &gt; 120.83-.01)"/>
         <comment value="from mapParameter 4"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="reaction.reaction [m]"/>
       </mapping>
     </element>
     <element id="AllergyIntolerance.reaction.onset">
@@ -3574,6 +3602,10 @@
       <mapping>
         <identity value="cdw"/>
         <map value="Allergy.AllergicReaction.EnteredDateTime"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="reaction.reaction [m]"/>
       </mapping>
     </element>
     <element id="AllergyIntolerance.reaction.severity">
@@ -3590,7 +3622,7 @@
       </mapping>
       <mapping>
         <identity value="vpr"/>
-        <map value="GET PATIENT DATA-reaction.comment [m].entered"/>
+        <map value="reaction.severity"/>
       </mapping>
     </element>
   </differential>

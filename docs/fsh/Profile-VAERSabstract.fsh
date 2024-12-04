@@ -20,8 +20,3 @@ Source: VAERSabstract
 * status -> "2026: fixed value = #completed" "because of must-support"
 * statusReason -> "2027: target not supported" "because of must-support: assume done"
 * primarySource -> "2028: fixed value = false" "because of must-support"
-
-Mapping: cdw-to-VAERSabstract
-Id: cdw
-Title: "Clinical Data Warehouse (CDW)"
-Source: VAERSabstract

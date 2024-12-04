@@ -36,8 +36,3 @@ Source: VAERSBundle
 * entry[va-pvac3].resource -> "1969: reference"
 * entry[va-pvac4].resource -> "1970: reference"
 * entry[va-ae].resource -> "1971: reference"
-
-Mapping: cdw-to-VAERSBundle
-Id: cdw
-Title: "Clinical Data Warehouse (CDW)"
-Source: VAERSBundle

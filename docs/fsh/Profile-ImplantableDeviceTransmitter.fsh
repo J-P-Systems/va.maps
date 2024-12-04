@@ -47,8 +47,3 @@ Source: ImplantableDeviceTransmitter
 * serialNumber -> "1381: target not supported"
 * deviceName -> "1386: target not supported"
 * udiCarrier.carrierHRF -> "1795: target not supported"
-
-Mapping: cdw-to-ImplantableDeviceTransmitter
-Id: cdw
-Title: "Clinical Data Warehouse (CDW)"
-Source: ImplantableDeviceTransmitter

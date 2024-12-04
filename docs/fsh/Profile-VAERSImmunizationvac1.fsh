@@ -26,8 +26,3 @@ Source: VAERSImmunizationvac1
 * status -> "2026: fixed value = #completed" "because of must-support"
 * statusReason -> "2027: target not supported" "because of must-support: assume done"
 * primarySource -> "2028: fixed value = false" "because of must-support"
-
-Mapping: cdw-to-VAERSImmunizationvac1
-Id: cdw
-Title: "Clinical Data Warehouse (CDW)"
-Source: VAERSImmunizationvac1

@@ -10,11 +10,11 @@
     "valueCanonical" : "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-problems-health-concerns|6.1.0"
   }],
   "url" : "http://va.gov/fhir/StructureDefinition/ConditionProblem",
-  "version" : "0.68.425",
+  "version" : "0.69.436",
   "name" : "ConditionProblem",
   "title" : "Condition: Problem",
   "status" : "active",
-  "date" : "2024-11-30T15:07:22+00:00",
+  "date" : "2024-12-04T11:34:53+00:00",
   "publisher" : "VA",
   "contact" : [{
     "name" : "VA",
@@ -39,6 +39,10 @@
   {
     "identity" : "cdw",
     "name" : "Clinical Data Warehouse (CDW)"
+  },
+  {
+    "identity" : "vpr",
+    "name" : "Virtual Patient Record (VPR)"
   },
   {
     "identity" : "workflow",
@@ -941,6 +945,14 @@
         "map" : "Outpat.ProblemList.ActiveFlag"
       },
       {
+        "identity" : "vpr",
+        "map" : "problem.resolved"
+      },
+      {
+        "identity" : "vpr",
+        "map" : "problem.status"
+      },
+      {
         "identity" : "workflow",
         "map" : "Event.status"
       },
@@ -1006,6 +1018,10 @@
       {
         "identity" : "cdw",
         "map" : "Outpat.ProblemList.ProblemListCondition"
+      },
+      {
+        "identity" : "vpr",
+        "map" : "problem.removed,problem.unverified"
       },
       {
         "identity" : "workflow",
@@ -1658,6 +1674,10 @@
         "map" : "Outpat.ProblemList.SNOMEDCTConceptCode"
       },
       {
+        "identity" : "vpr",
+        "map" : "problem.sctc,problem.sctt"
+      },
+      {
         "identity" : "v2",
         "map" : "C*E.1"
       },
@@ -1789,6 +1809,10 @@
       {
         "identity" : "cdw",
         "map" : "Outpat.ProblemList.ICDIEN"
+      },
+      {
+        "identity" : "vpr",
+        "map" : "problem.icd,problem.icdd"
       },
       {
         "identity" : "v2",
@@ -2002,6 +2026,10 @@
         "map" : "Outpat.ProblemList.ICDIEN\nDim.ICD10.ICD10Code,Dim.ICD9.ICD9Code"
       },
       {
+        "identity" : "vpr",
+        "map" : "problem.icd,problem.icdd"
+      },
+      {
         "identity" : "v2",
         "map" : "C*E.1"
       },
@@ -2136,6 +2164,10 @@
       {
         "identity" : "cdw",
         "map" : "Outpat.ProblemList.ProviderNarrativeIEN"
+      },
+      {
+        "identity" : "vpr",
+        "map" : "problem.name"
       },
       {
         "identity" : "v2",
@@ -2417,6 +2449,10 @@
         "map" : "Outpat.ProblemList.OnsetDateTime"
       },
       {
+        "identity" : "vpr",
+        "map" : "problem.onset"
+      },
+      {
         "identity" : "workflow",
         "map" : "Event.occurrence[x]"
       },
@@ -2540,6 +2576,10 @@
         "map" : "Outpat.ProblemList.ResolvedDateTime"
       },
       {
+        "identity" : "vpr",
+        "map" : "problem.resolved"
+      },
+      {
         "identity" : "w5",
         "map" : "FiveWs.done[x]"
       },
@@ -2581,6 +2621,10 @@
       {
         "identity" : "cdw",
         "map" : "Outpat.ProblemList.EnteredDateTime"
+      },
+      {
+        "identity" : "vpr",
+        "map" : "problem.entered"
       },
       {
         "identity" : "w5",
@@ -3287,6 +3331,14 @@
       {
         "identity" : "cdw",
         "map" : "Outpat.ProblemList.ActiveFlag"
+      },
+      {
+        "identity" : "vpr",
+        "map" : "problem.resolved"
+      },
+      {
+        "identity" : "vpr",
+        "map" : "problem.status"
       }]
     },
     {
@@ -3303,6 +3355,10 @@
       {
         "identity" : "cdw",
         "map" : "Outpat.ProblemList.ProblemListCondition"
+      },
+      {
+        "identity" : "vpr",
+        "map" : "problem.removed,problem.unverified"
       }]
     },
     {
@@ -3353,6 +3409,10 @@
       {
         "identity" : "cdw",
         "map" : "Outpat.ProblemList.SNOMEDCTConceptCode"
+      },
+      {
+        "identity" : "vpr",
+        "map" : "problem.sctc,problem.sctt"
       }]
     },
     {
@@ -3369,6 +3429,10 @@
       {
         "identity" : "cdw",
         "map" : "Outpat.ProblemList.ICDIEN"
+      },
+      {
+        "identity" : "vpr",
+        "map" : "problem.icd,problem.icdd"
       }]
     },
     {
@@ -3394,6 +3458,10 @@
       {
         "identity" : "cdw",
         "map" : "Outpat.ProblemList.ICDIEN\nDim.ICD10.ICD10Code,Dim.ICD9.ICD9Code"
+      },
+      {
+        "identity" : "vpr",
+        "map" : "problem.icd,problem.icdd"
       }]
     },
     {
@@ -3407,6 +3475,10 @@
       {
         "identity" : "cdw",
         "map" : "Outpat.ProblemList.ProviderNarrativeIEN"
+      },
+      {
+        "identity" : "vpr",
+        "map" : "problem.name"
       }]
     },
     {
@@ -3458,6 +3530,10 @@
       {
         "identity" : "cdw",
         "map" : "Outpat.ProblemList.OnsetDateTime"
+      },
+      {
+        "identity" : "vpr",
+        "map" : "problem.onset"
       }]
     },
     {
@@ -3493,6 +3569,10 @@
       {
         "identity" : "cdw",
         "map" : "Outpat.ProblemList.ResolvedDateTime"
+      },
+      {
+        "identity" : "vpr",
+        "map" : "problem.resolved"
       }]
     },
     {
@@ -3505,6 +3585,10 @@
       {
         "identity" : "cdw",
         "map" : "Outpat.ProblemList.EnteredDateTime"
+      },
+      {
+        "identity" : "vpr",
+        "map" : "problem.entered"
       }]
     },
     {

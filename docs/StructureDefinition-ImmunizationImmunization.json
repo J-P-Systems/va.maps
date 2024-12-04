@@ -10,11 +10,11 @@
     "valueCanonical" : "http://hl7.org/fhir/us/core/StructureDefinition/us-core-immunization|6.1.0"
   }],
   "url" : "http://va.gov/fhir/StructureDefinition/ImmunizationImmunization",
-  "version" : "0.68.425",
+  "version" : "0.69.436",
   "name" : "ImmunizationImmunization",
   "title" : "Immunization Immunization",
   "status" : "active",
-  "date" : "2024-11-30T15:07:22+00:00",
+  "date" : "2024-12-04T11:34:53+00:00",
   "publisher" : "VA",
   "contact" : [{
     "name" : "VA",
@@ -39,6 +39,10 @@
   {
     "identity" : "cdw",
     "name" : "Clinical Data Warehouse (CDW)"
+  },
+  {
+    "identity" : "vpr",
+    "name" : "Virtual Patient Record (VPR)"
   },
   {
     "identity" : "workflow",
@@ -535,6 +539,10 @@
         "map" : "Immun.Immunization.ImmunizationNameIEN\nDim.ImmunizationName.ImmunizationName,Dim.PharmacyOrderableItem.ImmunizationName"
       },
       {
+        "identity" : "vpr",
+        "map" : "immunization.cvx,immunization.name"
+      },
+      {
         "identity" : "workflow",
         "map" : "Event.status"
       },
@@ -589,6 +597,10 @@
       {
         "identity" : "cdw",
         "map" : "Immun.Immunization.ImmunizationNameIEN\nDim.ImmunizationName.ImmunizationName,Dim.PharmacyOrderableItem.ImmunizationName"
+      },
+      {
+        "identity" : "vpr",
+        "map" : "immunization.cvx,immunization.name"
       },
       {
         "identity" : "workflow",
@@ -651,6 +663,10 @@
       {
         "identity" : "cdw",
         "map" : "Immun.Immunization.ImmunizationNameIEN\nDim.ImmunizationName.CVXCode"
+      },
+      {
+        "identity" : "vpr",
+        "map" : "immunization.cvx,immunization.name"
       },
       {
         "identity" : "workflow",
@@ -1241,6 +1257,10 @@
         "map" : "Immun.Immunization.OutsideLocation,Immun.Immunization.VisitDateTime,Immun.Immunization.VisitIEN"
       },
       {
+        "identity" : "vpr",
+        "map" : "immunization.administered,immunization.encounter,immunization.facility,immunization.location"
+      },
+      {
         "identity" : "workflow",
         "map" : "Event.context"
       },
@@ -1479,6 +1499,10 @@
       {
         "identity" : "cdw",
         "map" : "Immun.Immunization.ImmunizationInformationSourceIEN"
+      },
+      {
+        "identity" : "vpr",
+        "map" : "immunization.source"
       },
       {
         "identity" : "w5",
@@ -1851,6 +1875,10 @@
       {
         "identity" : "cdw",
         "map" : "Immun.Immunization.OutsideLocation,Immun.Immunization.VisitDateTime,Immun.Immunization.VisitIEN\nOutpat.Visit.LocationIEN,Outpat.Workload.LocationIEN"
+      },
+      {
+        "identity" : "vpr",
+        "map" : "immunization.administered,immunization.encounter,immunization.facility,immunization.location"
       },
       {
         "identity" : "workflow",
@@ -2248,6 +2276,10 @@
       {
         "identity" : "cdw",
         "map" : "Immun.Immunization.Dosage"
+      },
+      {
+        "identity" : "vpr",
+        "map" : "immunization.dose"
       },
       {
         "identity" : "v2",
@@ -2678,6 +2710,10 @@
         "map" : "Immun.Immunization.ImmunizingStaffIEN"
       },
       {
+        "identity" : "vpr",
+        "map" : "immunization.provider"
+      },
+      {
         "identity" : "workflow",
         "map" : "Event.performer.actor"
       },
@@ -2913,6 +2949,10 @@
       {
         "identity" : "cdw",
         "map" : "Immun.Immunization.ImmunizationComments"
+      },
+      {
+        "identity" : "vpr",
+        "map" : "immunization.comment"
       },
       {
         "identity" : "v2",
@@ -4020,6 +4060,10 @@
         "map" : "Immun.Immunization.Series"
       },
       {
+        "identity" : "vpr",
+        "map" : "immunization.series"
+      },
+      {
         "identity" : "rim",
         "map" : "N/A"
       }]
@@ -4096,6 +4140,14 @@
       {
         "identity" : "cdw",
         "map" : "Immun.Immunization.ImmunizationNameIEN\nDim.ImmunizationName.ImmunizationName,Dim.PharmacyOrderableItem.ImmunizationName"
+      },
+      {
+        "identity" : "vpr",
+        "map" : "immunization.cvx,immunization.name"
+      },
+      {
+        "identity" : "vpr",
+        "map" : "immunization.cvx,immunization.name"
       }]
     },
     {
@@ -4112,6 +4164,10 @@
       {
         "identity" : "cdw",
         "map" : "Immun.Immunization.ImmunizationNameIEN\nDim.ImmunizationName.ImmunizationName,Dim.PharmacyOrderableItem.ImmunizationName"
+      },
+      {
+        "identity" : "vpr",
+        "map" : "immunization.cvx,immunization.name"
       }]
     },
     {
@@ -4138,6 +4194,14 @@
       {
         "identity" : "cdw",
         "map" : "Immun.Immunization.ImmunizationNameIEN\nDim.ImmunizationName.CVXCode"
+      },
+      {
+        "identity" : "vpr",
+        "map" : "immunization.cvx,immunization.name"
+      },
+      {
+        "identity" : "vpr",
+        "map" : "immunization.cvx,immunization.name"
       }]
     },
     {
@@ -4201,6 +4265,10 @@
       {
         "identity" : "cdw",
         "map" : "Immun.Immunization.OutsideLocation,Immun.Immunization.VisitDateTime,Immun.Immunization.VisitIEN"
+      },
+      {
+        "identity" : "vpr",
+        "map" : "immunization.administered,immunization.encounter,immunization.facility,immunization.location"
       }]
     },
     {
@@ -4262,6 +4330,10 @@
       {
         "identity" : "cdw",
         "map" : "Immun.Immunization.ImmunizationInformationSourceIEN"
+      },
+      {
+        "identity" : "vpr",
+        "map" : "immunization.source"
       }]
     },
     {
@@ -4308,6 +4380,10 @@
       {
         "identity" : "cdw",
         "map" : "Immun.Immunization.OutsideLocation,Immun.Immunization.VisitDateTime,Immun.Immunization.VisitIEN\nOutpat.Visit.LocationIEN,Outpat.Workload.LocationIEN"
+      },
+      {
+        "identity" : "vpr",
+        "map" : "immunization.administered,immunization.encounter,immunization.facility,immunization.location"
       }]
     },
     {
@@ -4361,6 +4437,10 @@
       {
         "identity" : "cdw",
         "map" : "Immun.Immunization.Dosage"
+      },
+      {
+        "identity" : "vpr",
+        "map" : "immunization.dose"
       }]
     },
     {
@@ -4423,6 +4503,10 @@
       {
         "identity" : "cdw",
         "map" : "Immun.Immunization.ImmunizingStaffIEN"
+      },
+      {
+        "identity" : "vpr",
+        "map" : "immunization.provider"
       }]
     },
     {
@@ -4436,6 +4520,10 @@
       {
         "identity" : "cdw",
         "map" : "Immun.Immunization.ImmunizationComments"
+      },
+      {
+        "identity" : "vpr",
+        "map" : "immunization.comment"
       }]
     },
     {
@@ -4481,6 +4569,10 @@
       {
         "identity" : "cdw",
         "map" : "Immun.Immunization.Series"
+      },
+      {
+        "identity" : "vpr",
+        "map" : "immunization.series"
       }]
     }]
   }

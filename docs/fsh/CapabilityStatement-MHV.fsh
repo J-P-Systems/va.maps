@@ -4,7 +4,7 @@ Title: "My HealtheVet"
 Usage: #definition
 * description = "This CapabilityStatement enumerates the profiles that the API should address, in the estimation of the enterprise mapping team. Some elements may not be appropriate for those cases; consult the actual API specification published by the API provider"
 * status = #draft
-* date = "2024-11-30T15:04:56.397Z"
+* date = "2024-12-04T11:27:17.397Z"
 * kind = #requirements
 * fhirVersion = #4.0.1
 * format[0] = #xml
@@ -16,10 +16,13 @@ Usage: #definition
 * rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/ImmunizationImmunization"
 * rest.resource[+].type = #Encounter
 * rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/EncounterOutpatient"
+* rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/EncounterOutpatient"
 * rest.resource[+].type = #Observation
 * rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/ImmunizationObservation"
 * rest.resource[+].type = #Location
 * rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/Location"
+* rest.resource[+].type = #DiagnosticReport
+* rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/LungCancerScreening"
 * rest.resource[+].type = #MedicationRequest
 * rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/MedicationRequestOutpatient"
 * rest.resource[+].type = #MedicationDispense

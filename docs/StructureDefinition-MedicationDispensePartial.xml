@@ -40,11 +40,11 @@
 <tr><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3goXBCwdPqAP0wAAAldJREFUOMuNk0tIlFEYhp9z/vE2jHkhxXA0zJCMitrUQlq4lnSltEqCFhFG2MJFhIvIFpkEWaTQqjaWZRkp0g26URZkTpbaaOJkDqk10szoODP//7XIMUe0elcfnPd9zsfLOYplGrpRwZaqTtw3K7PtGem7Q6FoidbGgqHVy/HRb669R+56zx7eRV1L31JGxYbBtjKK93cxeqfyQHbehkZbUkK20goELEuIzEd+dHS+qz/Y8PTSif0FnGkbiwcAjHaU1+QWOptFiyCLp/LnKptpqIuXHx6rbR26kJcBX3yLgBfnd7CxwJmflpP2wUg0HIAoUUpZBmKzELGWcN8nAr6Gpu7tLU/CkwAaoKTWRSQyt89Q8w6J+oVQkKnBoblH7V0PPvUOvDYXfopE/SJmALsxnVm6LbkotrUtNowMeIrVrBcBpaMmdS0j9df7abpSuy7HWehwJdt1lhVwi/J58U5beXGAF6c3UXLycw1wdFklArBn87xdh0ZsZtArghBdAA3+OEDVubG4UEzP6x1FOWneHh2VDAHBAt80IbdXDcesNoCvs3E5AFyNSU5nbrDPZpcUEQQTFZiEVx+51fxMhhyJEAgvlriadIJZZksRuwBYMOPBbO3hePVVqgEJhFeUuFLhIPkRP6BQLIBrmMenujm/3g4zc398awIe90Zb5A1vREALqneMcYgP/xVQWlG+Ncu5vgwwlaUNx+3799rfe96u9K0JSDXcOzOTJg4B6IgmXfsygc7/Bvg9g9E58/cDVmGIBOP/zT8Bz1zqWqpbXIsd0O9hajXfL6u4BaOS6SeWAAAAAElFTkSuQmCC" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr></table></div>
   </text>
   <url value="http://va.gov/fhir/StructureDefinition/MedicationDispensePartial"/>
-  <version value="0.68.425"/>
+  <version value="0.69.436"/>
   <name value="MedicationDispensePartial"/>
   <title value="MedicationDispense: Partial"/>
   <status value="active"/>
-  <date value="2024-11-30T15:07:22+00:00"/>
+  <date value="2024-12-04T11:34:53+00:00"/>
   <publisher value="VA"/>
   <contact>
     <name value="VA"/>
@@ -566,6 +566,10 @@
       <mapping>
         <identity value="vista"/>
         <map value="1578: fixed value = #in-progress when PRESCRIPTION - PARTIAL DATE &gt; PARTIAL DATE - RELEASED DATE/TIME (52-60 &gt; 52.2-8) case null"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="pharmacy.fill [m]"/>
       </mapping>
       <mapping>
         <identity value="workflow"/>
@@ -1092,6 +1096,10 @@
         <map value="RxOut.RxOutpat.LocalDrugIEN,RxOut.RxOutpat.NationalDrugIEN,RxOut.RxOutpatFill.LocalDrugIEN,RxOut.RxOutpatFill.NationalDrugIEN&#xA;Dim.LocalDrug.DrugNameWithoutDoseIEN,Dim.LocalDrug.NationalDrugIEN,Dim.LocalDrug.NationalDrugIEN"/>
       </mapping>
       <mapping>
+        <identity value="vpr"/>
+        <map value="pharmacy.product [m]"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="C*E.1"/>
       </mapping>
@@ -1222,6 +1230,10 @@
       <mapping>
         <identity value="cdw"/>
         <map value="RxOut.RxOutpat.LocalDrugIEN,RxOut.RxOutpat.NationalDrugIEN,RxOut.RxOutpatFill.LocalDrugIEN,RxOut.RxOutpatFill.NationalDrugIEN&#xA;Dim.LocalDrug.LocalDrugNameWithDose,Dim.LocalDrug.LocalDrugNameWithDose,RxOut.RxOutpatFill.LocalDrugNameWithDose"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="pharmacy.product [m]"/>
       </mapping>
       <mapping>
         <identity value="v2"/>
@@ -1571,6 +1583,10 @@
         <map value="1729: reference from PRESCRIPTION - PARTIAL DATE &gt; PARTIAL DATE - PHARMACIST NAME (52-60 &gt; 52.2-.05)"/>
       </mapping>
       <mapping>
+        <identity value="vpr"/>
+        <map value="pharmacy.fill [m]"/>
+      </mapping>
+      <mapping>
         <identity value="workflow"/>
         <map value="Event.performer.actor"/>
       </mapping>
@@ -1611,6 +1627,10 @@
         <comment value="not Clinic (written) but Division (filled)"/>
       </mapping>
       <mapping>
+        <identity value="vpr"/>
+        <map value="pharmacy.fill [m]"/>
+      </mapping>
+      <mapping>
         <identity value="rim"/>
         <map value=".participation[typeCode=LOC].role"/>
       </mapping>
@@ -1649,6 +1669,10 @@
       <mapping>
         <identity value="cdw"/>
         <map value="RxOut.RxOutpat.CPRSOrderEntryNumber"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="pharmacy.id,pharmacy.orderID,pharmacy.parent"/>
       </mapping>
       <mapping>
         <identity value="workflow"/>
@@ -1867,7 +1891,7 @@
       </mapping>
       <mapping>
         <identity value="vpr"/>
-        <map value="Pharmacy: quantity"/>
+        <map value="pharmacy.fill [m]"/>
       </mapping>
       <mapping>
         <identity value="v2"/>
@@ -2061,7 +2085,7 @@
       </mapping>
       <mapping>
         <identity value="vpr"/>
-        <map value="Pharmacy: daysSupply"/>
+        <map value="pharmacy.fill [m]"/>
       </mapping>
       <mapping>
         <identity value="v2"/>
@@ -2101,6 +2125,10 @@
         <identity value="vista"/>
         <map value="834: source value from PRESCRIPTION - PARTIAL DATE &gt; PARTIAL DATE - RELEASED DATE/TIME (52-60 &gt; 52.2-8)"/>
         <comment value="see original fill note"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="pharmacy.fill [m]"/>
       </mapping>
       <mapping>
         <identity value="v2"/>
@@ -2405,7 +2433,7 @@
       </mapping>
       <mapping>
         <identity value="vpr"/>
-        <map value="Pharmacy: routing"/>
+        <map value="pharmacy.fill [m]"/>
       </mapping>
       <mapping>
         <identity value="rim"/>
@@ -2661,6 +2689,10 @@
         <map value="1717: source value from PRESCRIPTION - PARTIAL DATE &gt; PARTIAL DATE - REMARKS (52-60 &gt; 52.2-.03)"/>
       </mapping>
       <mapping>
+        <identity value="vpr"/>
+        <map value="pharmacy.fill [m]"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="N/A"/>
       </mapping>
@@ -2880,10 +2912,6 @@
         <map value="1568: source value from PRESCRIPTION - SIG (52-10)"/>
       </mapping>
       <mapping>
-        <identity value="vpr"/>
-        <map value="Pharmacy: sig"/>
-      </mapping>
-      <mapping>
         <identity value="v2"/>
         <map value="RXO-6; RXE-21"/>
       </mapping>
@@ -2967,6 +2995,10 @@
       <mapping>
         <identity value="cdw"/>
         <map value="RxOut.RxOutpatSig.PatientInstructions"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="pharmacy.ptInstructions"/>
       </mapping>
       <mapping>
         <identity value="v2"/>
@@ -3535,7 +3567,7 @@
       </mapping>
       <mapping>
         <identity value="vpr"/>
-        <map value="Pharmacy: dose.dose"/>
+        <map value="pharmacy.dose [m]"/>
       </mapping>
       <mapping>
         <identity value="v2"/>
@@ -3629,7 +3661,7 @@
       </mapping>
       <mapping>
         <identity value="vpr"/>
-        <map value="Pharmacy: dose.units"/>
+        <map value="pharmacy.dose [m]"/>
       </mapping>
       <mapping>
         <identity value="v2"/>
@@ -3716,7 +3748,7 @@
       </mapping>
       <mapping>
         <identity value="vpr"/>
-        <map value="Pharmacy: dose.units"/>
+        <map value="pharmacy.dose [m]"/>
       </mapping>
       <mapping>
         <identity value="v2"/>
@@ -4248,6 +4280,14 @@
         <identity value="vista"/>
         <map value="1578: fixed value = #in-progress when PRESCRIPTION - PARTIAL DATE &gt; PARTIAL DATE - RELEASED DATE/TIME (52-60 &gt; 52.2-8) case null"/>
       </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="pharmacy.fill [m]"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="pharmacy.fill [m]"/>
+      </mapping>
     </element>
     <element id="MedicationDispense.medication[x]">
       <path value="MedicationDispense.medication[x]"/>
@@ -4290,6 +4330,10 @@
         <identity value="cdw"/>
         <map value="RxOut.RxOutpat.LocalDrugIEN,RxOut.RxOutpat.NationalDrugIEN,RxOut.RxOutpatFill.LocalDrugIEN,RxOut.RxOutpatFill.NationalDrugIEN&#xA;Dim.LocalDrug.DrugNameWithoutDoseIEN,Dim.LocalDrug.NationalDrugIEN,Dim.LocalDrug.NationalDrugIEN"/>
       </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="pharmacy.product [m]"/>
+      </mapping>
     </element>
     <element id="MedicationDispense.medication[x]:medicationCodeableConcept.text">
       <path value="MedicationDispense.medication[x].text"/>
@@ -4302,6 +4346,10 @@
       <mapping>
         <identity value="cdw"/>
         <map value="RxOut.RxOutpat.LocalDrugIEN,RxOut.RxOutpat.NationalDrugIEN,RxOut.RxOutpatFill.LocalDrugIEN,RxOut.RxOutpatFill.NationalDrugIEN&#xA;Dim.LocalDrug.LocalDrugNameWithDose,Dim.LocalDrug.LocalDrugNameWithDose,RxOut.RxOutpatFill.LocalDrugNameWithDose"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="pharmacy.product [m]"/>
       </mapping>
     </element>
     <element id="MedicationDispense.subject">
@@ -4331,6 +4379,10 @@
         <identity value="vista"/>
         <map value="1729: reference from PRESCRIPTION - PARTIAL DATE &gt; PARTIAL DATE - PHARMACIST NAME (52-60 &gt; 52.2-.05)"/>
       </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="pharmacy.fill [m]"/>
+      </mapping>
     </element>
     <element id="MedicationDispense.location">
       <path value="MedicationDispense.location"/>
@@ -4343,6 +4395,10 @@
         <identity value="vista"/>
         <map value="1714: reference from PRESCRIPTION - PARTIAL DATE &gt; PARTIAL DATE - DIVISION &gt; OUTPATIENT SITE - DEFAULT ERX CLINIC (52-60 &gt; 52.2-.09 &gt; 59-10)"/>
         <comment value="not Clinic (written) but Division (filled)"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="pharmacy.fill [m]"/>
       </mapping>
     </element>
     <element id="MedicationDispense.authorizingPrescription">
@@ -4359,6 +4415,10 @@
       <mapping>
         <identity value="cdw"/>
         <map value="RxOut.RxOutpat.CPRSOrderEntryNumber"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="pharmacy.id,pharmacy.orderID,pharmacy.parent"/>
       </mapping>
     </element>
     <element id="MedicationDispense.type">
@@ -4384,7 +4444,7 @@
       </mapping>
       <mapping>
         <identity value="vpr"/>
-        <map value="Pharmacy: quantity"/>
+        <map value="pharmacy.fill [m]"/>
       </mapping>
     </element>
     <element id="MedicationDispense.daysSupply">
@@ -4396,7 +4456,7 @@
       </mapping>
       <mapping>
         <identity value="vpr"/>
-        <map value="Pharmacy: daysSupply"/>
+        <map value="pharmacy.fill [m]"/>
       </mapping>
     </element>
     <element id="MedicationDispense.whenPrepared">
@@ -4406,6 +4466,10 @@
         <identity value="vista"/>
         <map value="834: source value from PRESCRIPTION - PARTIAL DATE &gt; PARTIAL DATE - RELEASED DATE/TIME (52-60 &gt; 52.2-8)"/>
         <comment value="see original fill note"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="pharmacy.fill [m]"/>
       </mapping>
     </element>
     <element id="MedicationDispense.destination.display">
@@ -4421,7 +4485,11 @@
       </mapping>
       <mapping>
         <identity value="vpr"/>
-        <map value="Pharmacy: routing"/>
+        <map value="pharmacy.fill [m]"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="pharmacy.fill [m]"/>
       </mapping>
     </element>
     <element id="MedicationDispense.note.text">
@@ -4431,6 +4499,10 @@
         <identity value="vista"/>
         <map value="1717: source value from PRESCRIPTION - PARTIAL DATE &gt; PARTIAL DATE - REMARKS (52-60 &gt; 52.2-.03)"/>
       </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="pharmacy.fill [m]"/>
+      </mapping>
     </element>
     <element id="MedicationDispense.dosageInstruction.text">
       <path value="MedicationDispense.dosageInstruction.text"/>
@@ -4438,10 +4510,6 @@
       <mapping>
         <identity value="vista"/>
         <map value="1568: source value from PRESCRIPTION - SIG (52-10)"/>
-      </mapping>
-      <mapping>
-        <identity value="vpr"/>
-        <map value="Pharmacy: sig"/>
       </mapping>
     </element>
     <element id="MedicationDispense.dosageInstruction.patientInstruction">
@@ -4454,6 +4522,10 @@
       <mapping>
         <identity value="cdw"/>
         <map value="RxOut.RxOutpatSig.PatientInstructions"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="pharmacy.ptInstructions"/>
       </mapping>
     </element>
     <element id="MedicationDispense.dosageInstruction.doseAndRate.dose[x]">
@@ -4490,7 +4562,7 @@
       </mapping>
       <mapping>
         <identity value="vpr"/>
-        <map value="Pharmacy: dose.dose"/>
+        <map value="pharmacy.dose [m]"/>
       </mapping>
     </element>
     <element id="MedicationDispense.dosageInstruction.doseAndRate.dose[x]:doseQuantity.unit">
@@ -4506,7 +4578,7 @@
       </mapping>
       <mapping>
         <identity value="vpr"/>
-        <map value="Pharmacy: dose.units"/>
+        <map value="pharmacy.dose [m]"/>
       </mapping>
     </element>
     <element id="MedicationDispense.dosageInstruction.doseAndRate.dose[x]:doseQuantity.code">
@@ -4526,7 +4598,7 @@
       </mapping>
       <mapping>
         <identity value="vpr"/>
-        <map value="Pharmacy: dose.units"/>
+        <map value="pharmacy.dose [m]"/>
       </mapping>
     </element>
   </differential>

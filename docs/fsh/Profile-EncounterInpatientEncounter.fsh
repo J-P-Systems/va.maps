@@ -3,7 +3,7 @@ Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter
 Id: EncounterInpatientEncounter
 Title: "Encounter: Inpatient Encounter"
 Description: "This StructureDefinition contains the maps for VistA file PTF (45) to us-core-encounter"
-* ^status = #draft
+* ^status = #active
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
 * ^extension.valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter|6.1.0"
 * identifier ^slicing.discriminator.type = #pattern

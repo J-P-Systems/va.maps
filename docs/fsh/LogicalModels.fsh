@@ -399,6 +399,23 @@ Characteristics: #can-be-target
 * dateBilledTo 0..1 Element "DATE BILLED TO (-.15)"
 * actionType only Reference(IbActionType3501)
 
+Logical: IbfbInterfaceTracking360
+Id: IbfbInterfaceTracking360
+Title: "IB-FB INTERFACE TRACKING (360)"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the source IB-FB INTERFACE TRACKING (360)"
+Characteristics: #can-be-target
+* billclaims 0..1 Reference "BILL/CLAIMS (-1.02)"
+* billclaims only Reference(Billclaims399)
+
+Logical: Billclaims399
+Id: Billclaims399
+Title: "BILL/CLAIMS (399)"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the source BILL/CLAIMS (399)"
+Characteristics: #can-be-target
+* procedures 0..1 Reference "PROCEDURES (-304)"
+* ptfEntryNumber 0..1 Element "PTF ENTRY NUMBER (-.08)"
+* procedures only Reference(Procedures3990304)
+
 Logical: AccountsReceivable430
 Id: AccountsReceivable430
 Title: "ACCOUNTS RECEIVABLE (430)"
@@ -527,6 +544,7 @@ Characteristics: #can-be-target
 * checkOutDatetime 0..1 Element "CHECK OUT DATE&TIME (-.18)"
 * serviceCategory 0..1 Element "SERVICE CATEGORY (-.07)"
 * patientName 0..1 Element "PATIENT NAME (-.05)"
+* dssId 0..1 Element "DSS ID (-.08)"
 * hospitalLocation 0..1 Element "HOSPITAL LOCATION (-.22)"
 * patientStatusInout 0..1 Coding "PATIENT STATUS IN/OUT (-15002)"
 * patientStatusInout from http://va.gov/fhir/ValueSet/encounterClass-vista (preferred)
@@ -652,6 +670,7 @@ Description: "This StructureDefinition contains the Logical Model for the mapped
 Characteristics: #can-be-target
 * checkOutProcessCompletion 0..1 Element "CHECK OUT PROCESS COMPLETION (-.07)"
 * appointmentType 0..1 Reference "APPOINTMENT TYPE (-.1)"
+* visitFileEntry 0..1 Element "VISIT FILE ENTRY (-.05)"
 * appointmentType only Reference(AppointmentType4091)
 
 Logical: Patient44003
@@ -667,7 +686,6 @@ Title: "SD WAIT LIST (409.3)"
 Description: "This StructureDefinition contains the Logical Model for the mapped parts of the source SD WAIT LIST (409.3)"
 Characteristics: #can-be-target
 * patient 0..1 Element "PATIENT (-.01)"
-* apptStopCode 0..1 Element "APPT STOP CODE (-13.4)"
 * desiredDateOfAppointment 0..1 Element "DESIRED DATE OF APPOINTMENT (-22)"
 * originatingDate 0..1 Element "ORIGINATING DATE (-1)"
 * comments 0..1 Element "COMMENTS (-25)"
@@ -1649,6 +1667,14 @@ Title: "IB ACTION TYPE (350.1)"
 Description: "This StructureDefinition contains the Logical Model for the mapped parts of the source IB ACTION TYPE (350.1)"
 Characteristics: #can-be-target
 * chargeCategory 0..1 Element "CHARGE CATEGORY (-.03)"
+
+Logical: Procedures3990304
+Id: Procedures3990304
+Title: "PROCEDURES (399.0304)"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the source PROCEDURES (399.0304)"
+Characteristics: #can-be-target
+* outpatientEncounter 0..1 Reference "OUTPATIENT ENCOUNTER (-20)"
+* outpatientEncounter only Reference(OutpatientEncounter40968)
 
 Logical: PrescriptionRefillRequest5243
 Id: PrescriptionRefillRequest5243

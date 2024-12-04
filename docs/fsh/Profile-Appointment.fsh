@@ -41,7 +41,7 @@ Description: "This StructureDefinition contains the maps for VistA file APPOINTM
 * participant[va-appt-clinic].status = #tentative
 
 Invariant: a-11-732
-Description: "2.98-3: if I, NT, Null; Null check-in date (44.003-309), null check-out date (44.003-303) then #booked"
+Description: "2.98-3: if I, NT, Null AND check-in date (44.003-309)=NULL AND check-out date (44.003-303)=NULL then #booked"
 Severity: #warning
 
 Invariant: a-11-733
@@ -69,7 +69,7 @@ Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: Appointment
 * status -> "731: terminologyMaps using VF_AppointmentStatus on APPOINTMENT - STATUS (2.98-3)" "simple maps in Terminology; complex defined here."
-* status -> "732: fixed value = #booked when APPOINTMENT - STATUS (2.98-3) case I, NT, Null; Null check-in date (44.003-309), null check-out date (44.003-303)" "simple maps in Terminology; complex defined here."
+* status -> "732: fixed value = #booked when APPOINTMENT - STATUS (2.98-3) case I, NT, Null AND check-in date (44.003-309)=NULL AND check-out date (44.003-303)=NULL" "simple maps in Terminology; complex defined here."
 * status -> "733: fixed value = #arrived when APPOINTMENT - STATUS (2.98-3) case I, NT, Null; Non-null check-in date (44.003-309), null check-out date (44.003-303)" "simple maps in Terminology; complex defined here."
 * status -> "734: fixed value = #fulfilled when APPOINTMENT - STATUS (2.98-3) case I, NT, Null; Non-null check-in date (44.003-309), non-null check-out date (44.003-303)" "simple maps in Terminology; complex defined here."
 * extension[http://va.gov/fhir/StructureDefinition/resource-serviceConnection].valueCoding -> "2033: fixed value = http://va.gov/fhir/vistaDefinedTerms/409.1#SC \"Service Connected\" when APPOINTMENT - APPOINTMENT TYPE > APPOINTMENT TYPE - NAME (2.98-9.5 > 409.1-.01) case SERVICE CONNECTED"
@@ -96,7 +96,7 @@ Source: Appointment
 * participant[va-patient].type.coding.code -> "1722-1: fixed value = #PART" "from mapParameter 1"
 * participant[va-patient].status -> "1722-2: fixed value = #accepted" "from mapParameter 2"
 * status -> "748: fixed value = #waitlist when SD WAIT LIST - PATIENT (409.3-.01) case not null" "LVH returns \"Waitlisted\". \"Waitlisted\" is the display value and \"waitlist\" is the code. This is a required FHIR value set. 3/15/2023 LVH will fix"
-* serviceCategory[va-stop-code].coding.code -> "749: source value from SD WAIT LIST - APPT STOP CODE (409.3-13.4)"
+* serviceCategory[va-stop-code].coding.code -> "749: source value from null (409.3-13.4)"
 * serviceCategory[va-stop-code].coding.system -> "749-1: fixed value = http://va.gov/terminology/VistADefinedTerms/409.3-13.4" "from mapParameter 1"
 * start -> "750: source value from SD WAIT LIST - DESIRED DATE OF APPOINTMENT (409.3-22)"
 * created -> "751: source value from SD WAIT LIST - ORIGINATING DATE (409.3-1)"
@@ -138,11 +138,16 @@ Mapping: vpr-to-Appointment
 Id: vpr
 Title: "Virtual Patient Record (VPR)"
 Source: Appointment
-* status -> "appointment.apptStatus\nappointment.patientClass"
-* status -> "appointment.apptStatus\nappointment.patientClass"
-* status -> "appointment.apptStatus\nappointment.patientClass"
-* status -> "appointment.apptStatus\nappointment.patientClass"
-* serviceCategory[va-service].coding.code -> "appointment.service"
-* serviceType[va-stop-code].coding.code -> "appointment.clinStop"
+* status -> "appointment.apptStatus,appointment.patientClass,appointment.serviceCategory"
+* status -> "appointment.apptStatus,appointment.patientClass,appointment.serviceCategory"
+* status -> "appointment.apptStatus,appointment.patientClass,appointment.serviceCategory"
+* status -> "appointment.apptStatus,appointment.patientClass,appointment.serviceCategory"
+* extension[http://va.gov/fhir/StructureDefinition/resource-serviceConnection].valueCoding -> "appointment.type"
+* extension[http://va.gov/fhir/StructureDefinition/resource-serviceConnection].valueCoding -> "appointment.type"
+* serviceCategory[va-service].coding.code -> "appointment.clinicStop,appointment.facility,appointment.id,appointment.location,appointment.provider,appointment.service,appointment.visitString"
+* serviceType[va-stop-code].coding.code -> "appointment.clinicStop,appointment.facility,appointment.id,appointment.location,appointment.provider,appointment.service,appointment.visitString"
+* serviceType[va-credit-stop-code].coding.code -> "appointment.clinicStop,appointment.facility,appointment.id,appointment.location,appointment.provider,appointment.service,appointment.visitString"
 * appointmentType.text -> "appointment.type"
 * start -> "appointment.dateTime"
+* participant[va-clinic].actor -> "appointment.clinicStop,appointment.facility,appointment.id,appointment.location,appointment.provider,appointment.service,appointment.visitString"
+* description -> "appointment.type"

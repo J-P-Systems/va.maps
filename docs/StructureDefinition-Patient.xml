@@ -73,11 +73,11 @@
     <valueCanonical value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient|6.1.0"/>
   </extension>
   <url value="http://va.gov/fhir/StructureDefinition/Patient"/>
-  <version value="0.68.425"/>
+  <version value="0.69.436"/>
   <name value="Patient"/>
   <title value="Patient"/>
   <status value="active"/>
-  <date value="2024-11-30T15:07:22+00:00"/>
+  <date value="2024-12-04T11:34:53+00:00"/>
   <publisher value="VA"/>
   <contact>
     <name value="VA"/>
@@ -887,6 +887,10 @@
         <identity value="vista"/>
         <map value="576: terminologyMaps using VF_raceCategory on PATIENT - RACE INFORMATION (2-2)"/>
         <comment value="Do we collect any detailed race data?"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="demographics.race [m-P:10]"/>
       </mapping>
       <mapping>
         <identity value="v2"/>
@@ -1965,6 +1969,10 @@
         <map value="575: terminologyMaps using VF_ethnicityCategory on PATIENT - ETHNICITY INFORMATION (2-6)"/>
       </mapping>
       <mapping>
+        <identity value="vpr"/>
+        <map value="demographics.ethnicity [m-P:10.2]"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="C*E.1"/>
       </mapping>
@@ -2974,6 +2982,10 @@
         <map value="Outpat.Visit.PatientReligion,Outpat.Visit.PatientReligionCode,Outpat.Workload.PatientReligion,Outpat.Workload.PatientReligionCode,Patient.Patient.ReligionIEN,SPatient.SPatient.ReligionIEN"/>
       </mapping>
       <mapping>
+        <identity value="vpr"/>
+        <map value="demographics.religion"/>
+      </mapping>
+      <mapping>
         <identity value="rim"/>
         <map value="N/A"/>
       </mapping>
@@ -3757,7 +3769,7 @@
       </mapping>
       <mapping>
         <identity value="vpr"/>
-        <map value="GET PATIENT DATA-reaction.mechanism"/>
+        <map value="demographics.icn"/>
       </mapping>
       <mapping>
         <identity value="v2"/>
@@ -4092,6 +4104,10 @@
       <mapping>
         <identity value="cdw"/>
         <map value="SPatient.SPatient.DestinationMergePatientIEN,SPatient.SPatient.PatientFirstName,SPatient.SPatient.PatientLastName,SPatient.SPatient.PatientName,SPatient.SPatientAlias.PatientName"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="demographics.familyName,demographics.fullName,demographics.givenNames"/>
       </mapping>
       <mapping>
         <identity value="v2"/>
@@ -5218,6 +5234,10 @@
         <map value="275: source value from PATIENT - PHONE NUMBER [WORK] (2-.132)"/>
       </mapping>
       <mapping>
+        <identity value="vpr"/>
+        <map value="demographics.telecom"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="XTN.1 (or XTN.12)"/>
       </mapping>
@@ -5747,6 +5767,10 @@
         <map value="Patient.Patient.Gender,Patient.PatientBirthSex.BirthSex,SPatient.SPatient.Gender,SPatient.SPatientBirthSex.BirthSex,SPatient.SPatientBirthSex.BirthSex"/>
       </mapping>
       <mapping>
+        <identity value="vpr"/>
+        <map value="demographics.gender"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="PID-8"/>
       </mapping>
@@ -5797,6 +5821,10 @@
       <mapping>
         <identity value="cdw"/>
         <map value="SPatient.PlaceOfBirth.BirthDateTime,SPatient.SPatient.BirthDateTime"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="demographics.dob"/>
       </mapping>
       <mapping>
         <identity value="v2"/>
@@ -5907,6 +5935,10 @@
       <mapping>
         <identity value="cdw"/>
         <map value="Patient.Patient.DeathDateTime,SPatient.SPatient.DeathDateTime"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="demographics.died"/>
       </mapping>
       <mapping>
         <identity value="v2"/>
@@ -7075,6 +7107,10 @@
         <map value="SPatient.SPatientGISAddress.Zip4"/>
       </mapping>
       <mapping>
+        <identity value="vpr"/>
+        <map value="demographics.address"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="XAD.5"/>
       </mapping>
@@ -7386,6 +7422,10 @@
       <mapping>
         <identity value="cdw"/>
         <map value="Outpat.Visit.PatientMaritalStatus,Outpat.Workload.PatientMaritalStatus,Patient.Patient.MaritalStatusIEN,SPatient.SPatient.MaritalStatusIEN"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="demographics.maritalStatus"/>
       </mapping>
       <mapping>
         <identity value="v2"/>
@@ -8100,6 +8140,10 @@
         <map value="Patient.PreferredLanguage.PreferredLanguage"/>
       </mapping>
       <mapping>
+        <identity value="vpr"/>
+        <map value="demographics.language"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="PID-15, LAN-2"/>
       </mapping>
@@ -8698,6 +8742,10 @@
         <map value="576: terminologyMaps using VF_raceCategory on PATIENT - RACE INFORMATION (2-2)"/>
         <comment value="Do we collect any detailed race data?"/>
       </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="demographics.race [m-P:10]"/>
+      </mapping>
     </element>
     <element id="Patient.extension:ethnicity">
       <path value="Patient.extension"/>
@@ -8721,6 +8769,10 @@
       <mapping>
         <identity value="vista"/>
         <map value="575: terminologyMaps using VF_ethnicityCategory on PATIENT - ETHNICITY INFORMATION (2-6)"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="demographics.ethnicity [m-P:10.2]"/>
       </mapping>
     </element>
     <element id="Patient.extension:genderIdentity">
@@ -8768,6 +8820,10 @@
         <identity value="cdw"/>
         <map value="Outpat.Visit.PatientReligion,Outpat.Visit.PatientReligionCode,Outpat.Workload.PatientReligion,Outpat.Workload.PatientReligionCode,Patient.Patient.ReligionIEN,SPatient.SPatient.ReligionIEN"/>
       </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="demographics.religion"/>
+      </mapping>
     </element>
     <element id="Patient.identifier.type.coding.system">
       <path value="Patient.identifier.type.coding.system"/>
@@ -8810,7 +8866,7 @@
       </mapping>
       <mapping>
         <identity value="vpr"/>
-        <map value="GET PATIENT DATA-reaction.mechanism"/>
+        <map value="demographics.icn"/>
       </mapping>
     </element>
     <element id="Patient.name.text">
@@ -8823,6 +8879,10 @@
       <mapping>
         <identity value="cdw"/>
         <map value="SPatient.SPatient.DestinationMergePatientIEN,SPatient.SPatient.PatientFirstName,SPatient.SPatient.PatientLastName,SPatient.SPatient.PatientName,SPatient.SPatientAlias.PatientName"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="demographics.familyName,demographics.fullName,demographics.givenNames"/>
       </mapping>
     </element>
     <element id="Patient.name.family">
@@ -8915,6 +8975,10 @@
         <identity value="vista"/>
         <map value="275: source value from PATIENT - PHONE NUMBER [WORK] (2-.132)"/>
       </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="demographics.telecom"/>
+      </mapping>
     </element>
     <element id="Patient.telecom:va-work.use">
       <path value="Patient.telecom.use"/>
@@ -8971,6 +9035,10 @@
         <identity value="cdw"/>
         <map value="Patient.Patient.Gender,Patient.PatientBirthSex.BirthSex,SPatient.SPatient.Gender,SPatient.SPatientBirthSex.BirthSex,SPatient.SPatientBirthSex.BirthSex"/>
       </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="demographics.gender"/>
+      </mapping>
     </element>
     <element id="Patient.birthDate">
       <path value="Patient.birthDate"/>
@@ -8981,6 +9049,10 @@
       <mapping>
         <identity value="cdw"/>
         <map value="SPatient.PlaceOfBirth.BirthDateTime,SPatient.SPatient.BirthDateTime"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="demographics.dob"/>
       </mapping>
     </element>
     <element id="Patient.deceased[x]">
@@ -9011,6 +9083,10 @@
       <mapping>
         <identity value="cdw"/>
         <map value="Patient.Patient.DeathDateTime,SPatient.SPatient.DeathDateTime"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="demographics.died"/>
       </mapping>
     </element>
     <element id="Patient.address">
@@ -9104,6 +9180,10 @@
         <identity value="cdw"/>
         <map value="SPatient.SPatientGISAddress.Zip4"/>
       </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="demographics.address"/>
+      </mapping>
     </element>
     <element id="Patient.address:va-home.country">
       <path value="Patient.address.country"/>
@@ -9147,6 +9227,10 @@
         <identity value="cdw"/>
         <map value="Outpat.Visit.PatientMaritalStatus,Outpat.Workload.PatientMaritalStatus,Patient.Patient.MaritalStatusIEN,SPatient.SPatient.MaritalStatusIEN"/>
       </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="demographics.maritalStatus"/>
+      </mapping>
     </element>
     <element id="Patient.communication.language">
       <path value="Patient.communication.language"/>
@@ -9157,6 +9241,10 @@
       <mapping>
         <identity value="cdw"/>
         <map value="Patient.PreferredLanguage.PreferredLanguage"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="demographics.language"/>
       </mapping>
     </element>
     <element id="Patient.managingOrganization.display">

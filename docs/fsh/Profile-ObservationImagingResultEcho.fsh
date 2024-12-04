@@ -29,8 +29,3 @@ Source: ObservationImagingResultEcho
 * dataAbsentReason -> "1796: target not supported" "Always has data"
 * valueQuantity -> "1797: target not supported" "value is string"
 * valueCodeableConcept -> "1798: target not supported" "value is string"
-
-Mapping: cdw-to-ObservationImagingResultEcho
-Id: cdw
-Title: "Clinical Data Warehouse (CDW)"
-Source: ObservationImagingResultEcho

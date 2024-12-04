@@ -14,8 +14,3 @@ Source: LungCancerScreeningCRNA
 * occurrencePeriod -> "953: target not supported" "LCSCoordinatorRecommendedNextActionRequest Profile"
 * priority -> "960: target not supported" "LCSCoordinatorRecommendedNextActionRequest Profile"
 * note -> "954: target not supported" "LCSCoordinatorRecommendedNextActionRequest Profile"
-
-Mapping: cdw-to-LungCancerScreeningCRNA
-Id: cdw
-Title: "Clinical Data Warehouse (CDW)"
-Source: LungCancerScreeningCRNA

@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Mapset Qa - US Veterans Administration FHIR Map Set Implementation Guide v0.68.425</title>
+    <title>Mapset Qa - US Veterans Administration FHIR Map Set Implementation Guide v0.69.436</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -18,6 +18,7 @@
     <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
     <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
   	<link href="assets/css/prism.css" rel="stylesheet" />
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
     <!-- Placeholder for child template CSS declarations -->
     <link href="assets/css/va-maps.css" rel="stylesheet"/>
 
@@ -59,7 +60,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">US Veterans Administration FHIR Map Set Implementation Guide</span>
             <br/>
-            <span style="display:inline-block;">0.68.425 - 241201
+            <span style="display:inline-block;">0.69.436 - 250101
 
 
 
@@ -165,7 +166,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">US Veterans Administration FHIR Map Set Implementation Guide - Local Development build (v0.68.425) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">US Veterans Administration FHIR Map Set Implementation Guide - Local Development build (v0.69.436) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>Mapset Qa</h2>
   
 
@@ -229,8 +230,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li>WARN: 883 issue, inactive or target not supported should have a mapComment</li>
   <li>WARN: 884 issue, inactive or target not supported should have a mapComment</li>
   <li>WARN: 1726 issue, inactive or target not supported should have a mapComment</li>
-  <li>WARN: 458 issue, inactive or target not supported should have a mapComment</li>
-  <li>WARN: 332 unsupported mapParameter format {NAME (9999999.14-.01)}</li>
+  <li>WARN: 332 not supported mapParameter format {NAME (9999999.14-.01)}</li>
   <li>ERROR: 1051 mapValue expected for transform</li>
   <li>WARN: 1483 issue, inactive or target not supported should have a mapComment</li>
   <li>WARN: 1487 issue, inactive or target not supported should have a mapComment</li>
@@ -273,7 +273,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li>WARN: 1337 TODO: handle multiple codings</li>
   <li>WARN: 1338 TODO: handle multiple codings</li>
   <li>WARN: 1339 TODO: handle multiple codings</li>
-  <li>WARN: 1249 unsupported mapParameter format {HEALTH FACTOR}</li>
+  <li>WARN: 1249 not supported mapParameter format {HEALTH FACTOR}</li>
   <li>WARN: 821 issue, inactive or target not supported should have a mapComment</li>
   <li>WARN: 1546 issue, inactive or target not supported should have a mapComment</li>
   <li>WARN: 1564 issue, inactive or target not supported should have a mapComment</li>
@@ -399,6 +399,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li>WARN: 422 profile PractitionerRole expected only vistaFile 200 but got 44</li>
   <li>WARN: 1510 profile ProcedureRadiology expected only vistaFile 70.02 but got 70</li>
   <li>WARN: 1620 profile ObservationImagingResultRadNuc expected only vistaFile 74 but got 70.02</li>
+  <li>WARN: 2008 profile DebtPortalChargesChargeItem expected only vistaFile 350 but got 360</li>
+  <li>WARN: 2009 profile DebtPortalChargesChargeItem expected only vistaFile 350 but got 360</li>
   <li>WARN: 2010 profile DebtPortalChargesChargeItem expected only vistaFile 350 but got 52</li>
   <li>WARN: 2011 profile DebtPortalChargesChargeItem expected only vistaFile 350 but got 52</li>
   <li>WARN: 2012 profile DebtPortalChargesChargeItem expected only vistaFile 350 but got 52</li>
@@ -411,16 +413,42 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li>WARN: 452 EncounterOutpatient references ConditionEncounterDiagnosis, missing in CHAPI API; auto-added</li>
   <li>WARN: 459 EncounterOutpatient references Location, missing in CHAPI API; auto-added</li>
   <li>WARN: 1767 ImmunizationImmunization references EncounterOutpatient, missing in MHV API; auto-added</li>
+  <li>WARN: 935 LungCancerScreening references EncounterOutpatient, missing in MHV API; auto-added</li>
   <li>WARN: 934 LungCancerScreening references Practitioner, missing in LCS API; auto-added</li>
   <li>WARN: 935 LungCancerScreening references EncounterOutpatient, missing in LCS API; auto-added</li>
+  <li>WARN: 441 EncounterInpatientEncounter references Patient, missing in DP API; auto-added</li>
+  <li>WARN: 442 EncounterInpatientEncounter references Practitioner, missing in DP API; auto-added</li>
+  <li>WARN: 460 EncounterInpatientEncounter references Location, missing in DP API; auto-added</li>
+  <li>WARN: 461 EncounterInpatientEncounter references Location, missing in DP API; auto-added</li>
+  <li>WARN: 1600 EncounterInpatientEncounter references Organization, missing in DP API; auto-added</li>
+  <li>WARN: 440 EncounterOutpatient references Patient, missing in DP API; auto-added</li>
+  <li>WARN: 452 EncounterOutpatient references ConditionEncounterDiagnosis, missing in DP API; auto-added</li>
+  <li>WARN: 459 EncounterOutpatient references Location, missing in DP API; auto-added</li>
+  <li>WARN: 1599 EncounterOutpatient references Organization, missing in DP API; auto-added</li>
+  <li>WARN: 1614 EncounterOutpatient references Practitioner, missing in DP API; auto-added</li>
+  <li>WARN: 806 MedicationRequestOutpatient references Patient, missing in DP API; auto-added</li>
+  <li>WARN: 808 MedicationRequestOutpatient references Practitioner, missing in DP API; auto-added</li>
+  <li>WARN: 820 MedicationDispenseOriginal references Patient, missing in DP API; auto-added</li>
+  <li>WARN: 1711 MedicationDispenseOriginal references Location, missing in DP API; auto-added</li>
+  <li>WARN: 1727 MedicationDispenseOriginal references Practitioner, missing in DP API; auto-added</li>
+  <li>WARN: 1715 MedicationDispenseRefill references Location, missing in DP API; auto-added</li>
+  <li>WARN: 1728 MedicationDispenseRefill references Practitioner, missing in DP API; auto-added</li>
+  <li>WARN: 1563 MedicationDispensePartial references Patient, missing in DP API; auto-added</li>
+  <li>WARN: 1714 MedicationDispensePartial references Location, missing in DP API; auto-added</li>
+  <li>WARN: 1729 MedicationDispensePartial references Practitioner, missing in DP API; auto-added</li>
   <li>WARN: 2005 DebtPortalAccount references Patient, missing in DP API; auto-added</li>
   <li>WARN: 1976 DebtPortalBillInvoice references Patient, missing in DP API; auto-added</li>
-  <li>WARN: 2008 DebtPortalChargesChargeItem references EncounterOutpatient, missing in DP API; auto-added</li>
-  <li>WARN: 2009 DebtPortalChargesChargeItem references EncounterInpatientEncounter, missing in DP API; auto-added</li>
-  <li>WARN: 2010 DebtPortalChargesChargeItem references MedicationDispenseOriginal, missing in DP API; auto-added</li>
-  <li>WARN: 2011 DebtPortalChargesChargeItem references MedicationDispenseRefill, missing in DP API; auto-added</li>
-  <li>WARN: 2012 DebtPortalChargesChargeItem references MedicationDispensePartial, missing in DP API; auto-added</li>
   <li>WARN: 2032 DebtPortalPayments references Patient, missing in DP API; auto-added</li>
+  <li>WARN: 808 MedicationRequestOutpatient references Practitioner, missing in AMPL API; auto-added</li>
+  <li>WARN: 1711 MedicationDispenseOriginal references Location, missing in AMPL API; auto-added</li>
+  <li>WARN: 1727 MedicationDispenseOriginal references Practitioner, missing in AMPL API; auto-added</li>
+  <li>WARN: 1715 MedicationDispenseRefill references Location, missing in AMPL API; auto-added</li>
+  <li>WARN: 1728 MedicationDispenseRefill references Practitioner, missing in AMPL API; auto-added</li>
+  <li>WARN: 1714 MedicationDispensePartial references Location, missing in AMPL API; auto-added</li>
+  <li>WARN: 1729 MedicationDispensePartial references Practitioner, missing in AMPL API; auto-added</li>
+  <li>WARN: 933 LungCancerScreening references Patient, missing in PD API; auto-added</li>
+  <li>WARN: 935 LungCancerScreening references EncounterOutpatient, missing in PD API; auto-added</li>
+  <li>WARN: 1411 PractitionerRole references Organization, missing in PD API; auto-added</li>
 </ol>
 
 <h3 id="termmaps">TermMaps</h3>
@@ -430,7 +458,6 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li>WARN: VF_ProcedureCodeSystem sourceSystem missing and not used; default to urn:undefined</li>
   <li>WARN: VF_YesNo10 sourceSystem missing and not used; default to urn:undefined</li>
   <li>ERROR: Vista_NCPDPCoverageRelationship targetSystem missing; manual lookup from FHIR resource!; using urn:undefined</li>
-  <li>WARN: VF_serviceConnected sourceSystem missing and not used; default to urn:undefined</li>
 </ol>
 
 <h3 id="plantuml-files">PlantUML files</h3>
@@ -443,6 +470,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h3 id="vista-filefield-numnames">VistA File/Field Num/Names</h3>
 <ol>
+  <li>WARN: 749 file-field 409.3-13.4 expected "SD WAIT LIST - APPT STOP CODE" but got ""</li>
   <li>WARN: 852 unknown file-field 63.04-2+through+862</li>
   <li>WARN: 857 unknown file-field 63.04-2+through+862</li>
   <li>WARN: 1522 unknown subfile-field 63.3-5+to+160</li>
@@ -2117,7 +2145,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2024 <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.68.425 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Sat, Nov 30, 2024 15:07+0000">2024-11-30</span>
+          IG &#169; 2024 <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.69.436 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Dec 4, 2024 11:34+0000">2024-12-04</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

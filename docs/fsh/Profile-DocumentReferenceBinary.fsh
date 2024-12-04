@@ -13,8 +13,3 @@ Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: DocumentReferenceBinary
 * data -> "1725: source value from TIU DOCUMENT - REPORT TEXT (8925-2)"
 * contentType -> "1725-1: fixed value = #text/plain" "from mapParameter 1"
-
-Mapping: cdw-to-DocumentReferenceBinary
-Id: cdw
-Title: "Clinical Data Warehouse (CDW)"
-Source: DocumentReferenceBinary

@@ -104,4 +104,15 @@ Mapping: vpr-to-Patient
 Id: vpr
 Title: "Virtual Patient Record (VPR)"
 Source: Patient
-* identifier.value -> "GET PATIENT DATA-reaction.mechanism"
+* identifier.value -> "demographics.icn"
+* name.text -> "demographics.familyName,demographics.fullName,demographics.givenNames"
+* telecom[va-work].value -> "demographics.telecom"
+* birthDate -> "demographics.dob"
+* deceasedDateTime -> "demographics.died"
+* address[va-home].postalCode -> "demographics.address"
+* communication.language -> "demographics.language"
+* gender -> "demographics.gender"
+* extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity].extension[ombCategory].valueCoding.code -> "demographics.ethnicity [m-P:10.2]"
+* extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-race].extension[ombCategory].valueCoding.code -> "demographics.race [m-P:10]"
+* maritalStatus -> "demographics.maritalStatus"
+* extension[http://hl7.org/fhir/StructureDefinition/patient-religion].valueCodeableConcept -> "demographics.religion"

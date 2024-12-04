@@ -36,11 +36,11 @@
     <valueCanonical value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-problems-health-concerns|6.1.0"/>
   </extension>
   <url value="http://va.gov/fhir/StructureDefinition/ConditionProblem"/>
-  <version value="0.68.425"/>
+  <version value="0.69.436"/>
   <name value="ConditionProblem"/>
   <title value="Condition: Problem"/>
   <status value="active"/>
-  <date value="2024-11-30T15:07:22+00:00"/>
+  <date value="2024-12-04T11:34:53+00:00"/>
   <publisher value="VA"/>
   <contact>
     <name value="VA"/>
@@ -65,6 +65,10 @@
   <mapping>
     <identity value="cdw"/>
     <name value="Clinical Data Warehouse (CDW)"/>
+  </mapping>
+  <mapping>
+    <identity value="vpr"/>
+    <name value="Virtual Patient Record (VPR)"/>
   </mapping>
   <mapping>
     <identity value="workflow"/>
@@ -937,6 +941,14 @@
         <map value="Outpat.ProblemList.ActiveFlag"/>
       </mapping>
       <mapping>
+        <identity value="vpr"/>
+        <map value="problem.resolved"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="problem.status"/>
+      </mapping>
+      <mapping>
         <identity value="workflow"/>
         <map value="Event.status"/>
       </mapping>
@@ -1001,6 +1013,10 @@
       <mapping>
         <identity value="cdw"/>
         <map value="Outpat.ProblemList.ProblemListCondition"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="problem.removed,problem.unverified"/>
       </mapping>
       <mapping>
         <identity value="workflow"/>
@@ -1635,6 +1651,10 @@
         <map value="Outpat.ProblemList.SNOMEDCTConceptCode"/>
       </mapping>
       <mapping>
+        <identity value="vpr"/>
+        <map value="problem.sctc,problem.sctt"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="C*E.1"/>
       </mapping>
@@ -1762,6 +1782,10 @@
       <mapping>
         <identity value="cdw"/>
         <map value="Outpat.ProblemList.ICDIEN"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="problem.icd,problem.icdd"/>
       </mapping>
       <mapping>
         <identity value="v2"/>
@@ -1969,6 +1993,10 @@
         <map value="Outpat.ProblemList.ICDIEN&#xA;Dim.ICD10.ICD10Code,Dim.ICD9.ICD9Code"/>
       </mapping>
       <mapping>
+        <identity value="vpr"/>
+        <map value="problem.icd,problem.icdd"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="C*E.1"/>
       </mapping>
@@ -2098,6 +2126,10 @@
       <mapping>
         <identity value="cdw"/>
         <map value="Outpat.ProblemList.ProviderNarrativeIEN"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="problem.name"/>
       </mapping>
       <mapping>
         <identity value="v2"/>
@@ -2370,6 +2402,10 @@
         <map value="Outpat.ProblemList.OnsetDateTime"/>
       </mapping>
       <mapping>
+        <identity value="vpr"/>
+        <map value="problem.onset"/>
+      </mapping>
+      <mapping>
         <identity value="workflow"/>
         <map value="Event.occurrence[x]"/>
       </mapping>
@@ -2488,6 +2524,10 @@
         <map value="Outpat.ProblemList.ResolvedDateTime"/>
       </mapping>
       <mapping>
+        <identity value="vpr"/>
+        <map value="problem.resolved"/>
+      </mapping>
+      <mapping>
         <identity value="w5"/>
         <map value="FiveWs.done[x]"/>
       </mapping>
@@ -2528,6 +2568,10 @@
       <mapping>
         <identity value="cdw"/>
         <map value="Outpat.ProblemList.EnteredDateTime"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="problem.entered"/>
       </mapping>
       <mapping>
         <identity value="w5"/>
@@ -3210,6 +3254,14 @@
         <identity value="cdw"/>
         <map value="Outpat.ProblemList.ActiveFlag"/>
       </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="problem.resolved"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="problem.status"/>
+      </mapping>
     </element>
     <element id="Condition.verificationStatus">
       <path value="Condition.verificationStatus"/>
@@ -3224,6 +3276,10 @@
       <mapping>
         <identity value="cdw"/>
         <map value="Outpat.ProblemList.ProblemListCondition"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="problem.removed,problem.unverified"/>
       </mapping>
     </element>
     <element id="Condition.category:us-core">
@@ -3271,6 +3327,10 @@
         <identity value="cdw"/>
         <map value="Outpat.ProblemList.SNOMEDCTConceptCode"/>
       </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="problem.sctc,problem.sctt"/>
+      </mapping>
     </element>
     <element id="Condition.code.coding:va-icd">
       <path value="Condition.code.coding"/>
@@ -3285,6 +3345,10 @@
       <mapping>
         <identity value="cdw"/>
         <map value="Outpat.ProblemList.ICDIEN"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="problem.icd,problem.icdd"/>
       </mapping>
     </element>
     <element id="Condition.code.coding:va-icd.system">
@@ -3309,6 +3373,10 @@
         <identity value="cdw"/>
         <map value="Outpat.ProblemList.ICDIEN&#xA;Dim.ICD10.ICD10Code,Dim.ICD9.ICD9Code"/>
       </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="problem.icd,problem.icdd"/>
+      </mapping>
     </element>
     <element id="Condition.code.text">
       <path value="Condition.code.text"/>
@@ -3320,6 +3388,10 @@
       <mapping>
         <identity value="cdw"/>
         <map value="Outpat.ProblemList.ProviderNarrativeIEN"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="problem.name"/>
       </mapping>
     </element>
     <element id="Condition.subject">
@@ -3368,6 +3440,10 @@
         <identity value="cdw"/>
         <map value="Outpat.ProblemList.OnsetDateTime"/>
       </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="problem.onset"/>
+      </mapping>
     </element>
     <element id="Condition.abatement[x]">
       <path value="Condition.abatement[x]"/>
@@ -3400,6 +3476,10 @@
         <identity value="cdw"/>
         <map value="Outpat.ProblemList.ResolvedDateTime"/>
       </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="problem.resolved"/>
+      </mapping>
     </element>
     <element id="Condition.recordedDate">
       <path value="Condition.recordedDate"/>
@@ -3410,6 +3490,10 @@
       <mapping>
         <identity value="cdw"/>
         <map value="Outpat.ProblemList.EnteredDateTime"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="problem.entered"/>
       </mapping>
     </element>
     <element id="Condition.recorder">

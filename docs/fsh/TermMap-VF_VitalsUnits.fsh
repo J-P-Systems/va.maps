@@ -17,14 +17,17 @@ Usage: #definition
 * group[=].element[+].code = #4500634
 * group[=].element[=].display = "BLOOD PRESSURE"
 * group[=].element[=].target.code = #mm[Hg]
+* group[=].element[=].target.display = "mm[Hg]"
 * group[=].element[=].target.equivalence = #equal
 * group[=].element[+].code = #4536993
 * group[=].element[=].display = "BODY MASS INDEX"
 * group[=].element[=].target.code = #kg/m2
+* group[=].element[=].target.display = "kg/m2"
 * group[=].element[=].target.equivalence = #equal
 * group[=].element[+].code = #4688719
 * group[=].element[=].display = "CENTRAL VENOUS PRESSURE"
 * group[=].element[=].target.code = #cm[H2O]
+* group[=].element[=].target.display = "cm[H2O]"
 * group[=].element[=].target.equivalence = #equal
 * group[=].element[+].code = #4688720
 * group[=].element[=].display = "CIRCUMFERENCE/GIRTH"
@@ -89,9 +92,9 @@ Description: "FHIR Target ValueSet for Terminology Maps VitalsUnits"
 * ^experimental = false
 * ^status = #active
 * ^name = "VitalsUnits"
-* include http://unitsofmeasure.org#mm[Hg] 
-* include http://unitsofmeasure.org#kg/m2 
-* include http://unitsofmeasure.org#cm[H2O] 
+* include http://unitsofmeasure.org#mm[Hg] "mm[Hg]"
+* include http://unitsofmeasure.org#kg/m2 "kg/m2"
+* include http://unitsofmeasure.org#cm[H2O] "cm[H2O]"
 * include http://unitsofmeasure.org#[in_i] "[in_i]"
 * include http://unitsofmeasure.org#/min "/min"
 * include http://unitsofmeasure.org#% "%"

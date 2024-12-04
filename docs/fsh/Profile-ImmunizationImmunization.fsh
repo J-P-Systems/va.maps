@@ -83,3 +83,20 @@ Source: ImmunizationImmunization
 * recorded -> "Immun.Immunization.RecordedDateTime"
 * encounter -> "Immun.Immunization.OutsideLocation,Immun.Immunization.VisitDateTime,Immun.Immunization.VisitIEN"
 * location -> "Immun.Immunization.OutsideLocation,Immun.Immunization.VisitDateTime,Immun.Immunization.VisitIEN\nOutpat.Visit.LocationIEN,Outpat.Workload.LocationIEN"
+
+Mapping: vpr-to-ImmunizationImmunization
+Id: vpr
+Title: "Virtual Patient Record (VPR)"
+Source: ImmunizationImmunization
+* statusReason -> "immunization.cvx,immunization.name"
+* vaccineCode -> "immunization.cvx,immunization.name"
+* primarySource -> "immunization.source"
+* status -> "immunization.cvx,immunization.name"
+* status -> "immunization.cvx,immunization.name"
+* vaccineCode -> "immunization.cvx,immunization.name"
+* doseQuantity.value -> "immunization.dose"
+* performer.actor -> "immunization.provider"
+* note.text -> "immunization.comment"
+* protocolApplied.doseNumberString -> "immunization.series"
+* encounter -> "immunization.administered,immunization.encounter,immunization.facility,immunization.location"
+* location -> "immunization.administered,immunization.encounter,immunization.facility,immunization.location"

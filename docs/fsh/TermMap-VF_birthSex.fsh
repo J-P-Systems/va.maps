@@ -23,11 +23,12 @@ Usage: #definition
 * group[=].element[=].target.equivalence = #equal
 * group[+].source = "http://va.gov/terminology/vistaDefinedTerms/2-.02"
 * group[=].target = "http://terminology.hl7.org/CodeSystem/v3-NullFlavor"
-* group[=].element[0].code = #[NULL]
-* group[=].element[=].display = "[NULL]"
+* group[=].element[0].code = #null
 * group[=].element[=].target.code = #UNK
 * group[=].element[=].target.display = "unknown"
 * group[=].element[=].target.equivalence = #equal
+* group[=].element[=].target.dependsOn[+].property = "condition"
+* group[=].element[=].target.dependsOn[=].value = "NULL"
 
 ValueSet: birthSex
 Title: "birthSex FHIR"
@@ -47,4 +48,4 @@ Description: "VistA Source ValueSet for Terminology Maps birthSex"
 * ^name = "BirthSex_VistA"
 * include http://va.gov/terminology/vistaDefinedTerms/2-.02#F "FEMALE"
 * include http://va.gov/terminology/vistaDefinedTerms/2-.02#M "MALE"
-* include http://va.gov/terminology/vistaDefinedTerms/2-.02#[NULL] "[NULL]"
+* include http://va.gov/terminology/vistaDefinedTerms/2-.02#null 

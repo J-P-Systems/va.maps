@@ -10,11 +10,11 @@
     "valueCanonical" : "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient|6.1.0"
   }],
   "url" : "http://va.gov/fhir/StructureDefinition/Patient",
-  "version" : "0.68.425",
+  "version" : "0.69.436",
   "name" : "Patient",
   "title" : "Patient",
   "status" : "active",
-  "date" : "2024-11-30T15:07:22+00:00",
+  "date" : "2024-12-04T11:34:53+00:00",
   "publisher" : "VA",
   "contact" : [{
     "name" : "VA",
@@ -853,6 +853,10 @@
         "identity" : "vista",
         "map" : "576: terminologyMaps using VF_raceCategory on PATIENT - RACE INFORMATION (2-2)",
         "comment" : "Do we collect any detailed race data?"
+      },
+      {
+        "identity" : "vpr",
+        "map" : "demographics.race [m-P:10]"
       },
       {
         "identity" : "v2",
@@ -1965,6 +1969,10 @@
         "map" : "575: terminologyMaps using VF_ethnicityCategory on PATIENT - ETHNICITY INFORMATION (2-6)"
       },
       {
+        "identity" : "vpr",
+        "map" : "demographics.ethnicity [m-P:10.2]"
+      },
+      {
         "identity" : "v2",
         "map" : "C*E.1"
       },
@@ -3007,6 +3015,10 @@
         "map" : "Outpat.Visit.PatientReligion,Outpat.Visit.PatientReligionCode,Outpat.Workload.PatientReligion,Outpat.Workload.PatientReligionCode,Patient.Patient.ReligionIEN,SPatient.SPatient.ReligionIEN"
       },
       {
+        "identity" : "vpr",
+        "map" : "demographics.religion"
+      },
+      {
         "identity" : "rim",
         "map" : "N/A"
       }]
@@ -3816,7 +3828,7 @@
       },
       {
         "identity" : "vpr",
-        "map" : "GET PATIENT DATA-reaction.mechanism"
+        "map" : "demographics.icn"
       },
       {
         "identity" : "v2",
@@ -4161,6 +4173,10 @@
       {
         "identity" : "cdw",
         "map" : "SPatient.SPatient.DestinationMergePatientIEN,SPatient.SPatient.PatientFirstName,SPatient.SPatient.PatientLastName,SPatient.SPatient.PatientName,SPatient.SPatientAlias.PatientName"
+      },
+      {
+        "identity" : "vpr",
+        "map" : "demographics.familyName,demographics.fullName,demographics.givenNames"
       },
       {
         "identity" : "v2",
@@ -5316,6 +5332,10 @@
         "map" : "275: source value from PATIENT - PHONE NUMBER [WORK] (2-.132)"
       },
       {
+        "identity" : "vpr",
+        "map" : "demographics.telecom"
+      },
+      {
         "identity" : "v2",
         "map" : "XTN.1 (or XTN.12)"
       },
@@ -5858,6 +5878,10 @@
         "map" : "Patient.Patient.Gender,Patient.PatientBirthSex.BirthSex,SPatient.SPatient.Gender,SPatient.SPatientBirthSex.BirthSex,SPatient.SPatientBirthSex.BirthSex"
       },
       {
+        "identity" : "vpr",
+        "map" : "demographics.gender"
+      },
+      {
         "identity" : "v2",
         "map" : "PID-8"
       },
@@ -5909,6 +5933,10 @@
       {
         "identity" : "cdw",
         "map" : "SPatient.PlaceOfBirth.BirthDateTime,SPatient.SPatient.BirthDateTime"
+      },
+      {
+        "identity" : "vpr",
+        "map" : "demographics.dob"
       },
       {
         "identity" : "v2",
@@ -6021,6 +6049,10 @@
       {
         "identity" : "cdw",
         "map" : "Patient.Patient.DeathDateTime,SPatient.SPatient.DeathDateTime"
+      },
+      {
+        "identity" : "vpr",
+        "map" : "demographics.died"
       },
       {
         "identity" : "v2",
@@ -7219,6 +7251,10 @@
         "map" : "SPatient.SPatientGISAddress.Zip4"
       },
       {
+        "identity" : "vpr",
+        "map" : "demographics.address"
+      },
+      {
         "identity" : "v2",
         "map" : "XAD.5"
       },
@@ -7538,6 +7574,10 @@
       {
         "identity" : "cdw",
         "map" : "Outpat.Visit.PatientMaritalStatus,Outpat.Workload.PatientMaritalStatus,Patient.Patient.MaritalStatusIEN,SPatient.SPatient.MaritalStatusIEN"
+      },
+      {
+        "identity" : "vpr",
+        "map" : "demographics.maritalStatus"
       },
       {
         "identity" : "v2",
@@ -8274,6 +8314,10 @@
         "map" : "Patient.PreferredLanguage.PreferredLanguage"
       },
       {
+        "identity" : "vpr",
+        "map" : "demographics.language"
+      },
+      {
         "identity" : "v2",
         "map" : "PID-15, LAN-2"
       },
@@ -8896,6 +8940,10 @@
         "identity" : "vista",
         "map" : "576: terminologyMaps using VF_raceCategory on PATIENT - RACE INFORMATION (2-2)",
         "comment" : "Do we collect any detailed race data?"
+      },
+      {
+        "identity" : "vpr",
+        "map" : "demographics.race [m-P:10]"
       }]
     },
     {
@@ -8924,6 +8972,10 @@
       "mapping" : [{
         "identity" : "vista",
         "map" : "575: terminologyMaps using VF_ethnicityCategory on PATIENT - ETHNICITY INFORMATION (2-6)"
+      },
+      {
+        "identity" : "vpr",
+        "map" : "demographics.ethnicity [m-P:10.2]"
       }]
     },
     {
@@ -8974,6 +9026,10 @@
       {
         "identity" : "cdw",
         "map" : "Outpat.Visit.PatientReligion,Outpat.Visit.PatientReligionCode,Outpat.Workload.PatientReligion,Outpat.Workload.PatientReligionCode,Patient.Patient.ReligionIEN,SPatient.SPatient.ReligionIEN"
+      },
+      {
+        "identity" : "vpr",
+        "map" : "demographics.religion"
       }]
     },
     {
@@ -9021,7 +9077,7 @@
       },
       {
         "identity" : "vpr",
-        "map" : "GET PATIENT DATA-reaction.mechanism"
+        "map" : "demographics.icn"
       }]
     },
     {
@@ -9035,6 +9091,10 @@
       {
         "identity" : "cdw",
         "map" : "SPatient.SPatient.DestinationMergePatientIEN,SPatient.SPatient.PatientFirstName,SPatient.SPatient.PatientLastName,SPatient.SPatient.PatientName,SPatient.SPatientAlias.PatientName"
+      },
+      {
+        "identity" : "vpr",
+        "map" : "demographics.familyName,demographics.fullName,demographics.givenNames"
       }]
     },
     {
@@ -9137,6 +9197,10 @@
       "mapping" : [{
         "identity" : "vista",
         "map" : "275: source value from PATIENT - PHONE NUMBER [WORK] (2-.132)"
+      },
+      {
+        "identity" : "vpr",
+        "map" : "demographics.telecom"
       }]
     },
     {
@@ -9199,6 +9263,10 @@
       {
         "identity" : "cdw",
         "map" : "Patient.Patient.Gender,Patient.PatientBirthSex.BirthSex,SPatient.SPatient.Gender,SPatient.SPatientBirthSex.BirthSex,SPatient.SPatientBirthSex.BirthSex"
+      },
+      {
+        "identity" : "vpr",
+        "map" : "demographics.gender"
       }]
     },
     {
@@ -9211,6 +9279,10 @@
       {
         "identity" : "cdw",
         "map" : "SPatient.PlaceOfBirth.BirthDateTime,SPatient.SPatient.BirthDateTime"
+      },
+      {
+        "identity" : "vpr",
+        "map" : "demographics.dob"
       }]
     },
     {
@@ -9243,6 +9315,10 @@
       {
         "identity" : "cdw",
         "map" : "Patient.Patient.DeathDateTime,SPatient.SPatient.DeathDateTime"
+      },
+      {
+        "identity" : "vpr",
+        "map" : "demographics.died"
       }]
     },
     {
@@ -9343,6 +9419,10 @@
       {
         "identity" : "cdw",
         "map" : "SPatient.SPatientGISAddress.Zip4"
+      },
+      {
+        "identity" : "vpr",
+        "map" : "demographics.address"
       }]
     },
     {
@@ -9390,6 +9470,10 @@
       {
         "identity" : "cdw",
         "map" : "Outpat.Visit.PatientMaritalStatus,Outpat.Workload.PatientMaritalStatus,Patient.Patient.MaritalStatusIEN,SPatient.SPatient.MaritalStatusIEN"
+      },
+      {
+        "identity" : "vpr",
+        "map" : "demographics.maritalStatus"
       }]
     },
     {
@@ -9402,6 +9486,10 @@
       {
         "identity" : "cdw",
         "map" : "Patient.PreferredLanguage.PreferredLanguage"
+      },
+      {
+        "identity" : "vpr",
+        "map" : "demographics.language"
       }]
     },
     {

@@ -30,8 +30,3 @@ Source: VAERSAdverseEvent
 * outcome.coding[va-outcome11] -> "1918: source value from ADERS - 21_CA_BD"
 * outcome.coding[va-outcome12] -> "1919: source value from ADERS - 21_NOA"
 * suspectEntity.instance -> "1972: reference"
-
-Mapping: cdw-to-VAERSAdverseEvent
-Id: cdw
-Title: "Clinical Data Warehouse (CDW)"
-Source: VAERSAdverseEvent

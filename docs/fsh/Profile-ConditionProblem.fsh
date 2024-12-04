@@ -62,3 +62,18 @@ Source: ConditionProblem
 * clinicalStatus -> "Outpat.ProblemList.ActiveFlag"
 * verificationStatus -> "Outpat.ProblemList.ProblemListCondition"
 * abatementDateTime -> "Outpat.ProblemList.ResolvedDateTime"
+
+Mapping: vpr-to-ConditionProblem
+Id: vpr
+Title: "Virtual Patient Record (VPR)"
+Source: ConditionProblem
+* clinicalStatus -> "problem.resolved"
+* code.coding[va-icd] -> "problem.icd,problem.icdd"
+* code.coding[va-icd].code -> "problem.icd,problem.icdd"
+* code.coding.code -> "problem.sctc,problem.sctt"
+* code.text -> "problem.name"
+* onsetDateTime -> "problem.onset"
+* recordedDate -> "problem.entered"
+* clinicalStatus -> "problem.status"
+* verificationStatus -> "problem.removed,problem.unverified"
+* abatementDateTime -> "problem.resolved"
