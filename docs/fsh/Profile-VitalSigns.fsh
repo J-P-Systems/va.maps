@@ -78,9 +78,9 @@ Source: VitalSigns
 * valueQuantity.value -> "Vital.VitalSign.Diastolic,Vital.VitalSign.Systolic,Vital.VitalSign.VitalResult,Vital.VitalSign.VitalResultNumeric"
 * valueQuantity.code -> "Vital.VitalSign.VitalTypeIEN"
 
-Mapping: vpr-to-VitalSigns
-Id: vpr
-Title: "Virtual Patient Record (VPR)"
+Mapping: sda-to-VitalSigns
+Id: sda
+Title: "Summary Document Architecure (SDA)"
 Source: VitalSigns
 * issued -> "vital.entered"
 * performer -> "vital.facility,vital.location"

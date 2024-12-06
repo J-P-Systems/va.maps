@@ -84,9 +84,9 @@ Source: ImmunizationImmunization
 * encounter -> "Immun.Immunization.OutsideLocation,Immun.Immunization.VisitDateTime,Immun.Immunization.VisitIEN"
 * location -> "Immun.Immunization.OutsideLocation,Immun.Immunization.VisitDateTime,Immun.Immunization.VisitIEN\nOutpat.Visit.LocationIEN,Outpat.Workload.LocationIEN"
 
-Mapping: vpr-to-ImmunizationImmunization
-Id: vpr
-Title: "Virtual Patient Record (VPR)"
+Mapping: sda-to-ImmunizationImmunization
+Id: sda
+Title: "Summary Document Architecure (SDA)"
 Source: ImmunizationImmunization
 * statusReason -> "immunization.cvx,immunization.name"
 * vaccineCode -> "immunization.cvx,immunization.name"

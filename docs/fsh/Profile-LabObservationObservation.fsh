@@ -25,8 +25,8 @@ Title: "Clinical Data Warehouse (CDW)"
 Source: LabObservationObservation
 * subject -> "Micro.AntibioticSensitivity.LRDFN,Micro.AntibioticSensitivityComment.LRDFN,Micro.BacteriologyReports.LRDFN,Micro.MicroAntibioticLevel.LRDFN,Micro.MicroAudit.LRDFN,Micro.Microbiology.LRDFN,Micro.MicroOrderedTest.LRDFN,Micro.MicroSterilityResults.LRDFN,Micro.MycobacteriologyReports.LRDFN,Micro.Mycology.LRDFN,Micro.MycologyReports.LRDFN,Micro.Parasitology.LRDFN,Micro.ParasitologyReports.LRDFN,Micro.ParasitologyStage.LRDFN,Micro.Virology.LRDFN,Micro.VirologyReports.LRDFN,Pathology.Autopsy.LRDFN,Pathology.CytoOrganTissueFunction.StaffIEN,SStaff.SMicroOrderedTest.LRDFN"
 
-Mapping: vpr-to-LabObservationObservation
-Id: vpr
-Title: "Virtual Patient Record (VPR)"
+Mapping: sda-to-LabObservationObservation
+Id: sda
+Title: "Summary Document Architecure (SDA)"
 Source: LabObservationObservation
 * subject -> "demographics.lrdfn\naccession.collected"

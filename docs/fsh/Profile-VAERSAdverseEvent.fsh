@@ -23,7 +23,7 @@ Source: VAERSAdverseEvent
 * event.coding -> "1905: transform using parseCodesFromText()" "Multiple event codes in coding"
 * outcome.coding[va-outcome1] -> "1906: source value from ADERS - 21_VAE_Outcome_DrVisit"
 * outcome.coding[va-outcome2] -> "1907: source value from ADERS - 21_VAE_Outcome_ErED"
-* outcome.coding[va-outcome3] -> "1908: source value from ADERS - 21_HospStay"
+* outcome.coding[va-outcome3] -> "1908: source value from ADERS - 21_HospStay" "See Encounter & Location for details"
 * outcome.coding[va-outcome8] -> "1913: source value from ADERS - 21_ProlongHospStay"
 * outcome.coding[va-outcome9] -> "1914: source value from ADERS - 21_LTI"
 * outcome.coding[va-outcome10] -> "1915: source value from ADERS - 21_Dis"

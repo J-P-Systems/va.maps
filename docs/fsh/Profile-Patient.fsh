@@ -100,9 +100,9 @@ Source: Patient
 * maritalStatus -> "Outpat.Visit.PatientMaritalStatus,Outpat.Workload.PatientMaritalStatus,Patient.Patient.MaritalStatusIEN,SPatient.SPatient.MaritalStatusIEN"
 * extension[http://hl7.org/fhir/StructureDefinition/patient-religion].valueCodeableConcept -> "Outpat.Visit.PatientReligion,Outpat.Visit.PatientReligionCode,Outpat.Workload.PatientReligion,Outpat.Workload.PatientReligionCode,Patient.Patient.ReligionIEN,SPatient.SPatient.ReligionIEN"
 
-Mapping: vpr-to-Patient
-Id: vpr
-Title: "Virtual Patient Record (VPR)"
+Mapping: sda-to-Patient
+Id: sda
+Title: "Summary Document Architecure (SDA)"
 Source: Patient
 * identifier.value -> "demographics.icn"
 * name.text -> "demographics.familyName,demographics.fullName,demographics.givenNames"

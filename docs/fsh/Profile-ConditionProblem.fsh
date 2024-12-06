@@ -63,9 +63,9 @@ Source: ConditionProblem
 * verificationStatus -> "Outpat.ProblemList.ProblemListCondition"
 * abatementDateTime -> "Outpat.ProblemList.ResolvedDateTime"
 
-Mapping: vpr-to-ConditionProblem
-Id: vpr
-Title: "Virtual Patient Record (VPR)"
+Mapping: sda-to-ConditionProblem
+Id: sda
+Title: "Summary Document Architecure (SDA)"
 Source: ConditionProblem
 * clinicalStatus -> "problem.resolved"
 * code.coding[va-icd] -> "problem.icd,problem.icdd"

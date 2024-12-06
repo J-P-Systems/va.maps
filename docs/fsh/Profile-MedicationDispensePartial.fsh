@@ -62,9 +62,9 @@ Source: MedicationDispensePartial
 * medicationCodeableConcept.text -> "RxOut.RxOutpat.LocalDrugIEN,RxOut.RxOutpat.NationalDrugIEN,RxOut.RxOutpatFill.LocalDrugIEN,RxOut.RxOutpatFill.NationalDrugIEN\nDim.LocalDrug.LocalDrugNameWithDose,Dim.LocalDrug.LocalDrugNameWithDose,RxOut.RxOutpatFill.LocalDrugNameWithDose"
 * subject -> "RxOut.ActivityLog.PatientIEN,RxOut.ActivityLogOtherComments.PatientIEN,RxOut.RxOutpat.PatientIEN,RxOut.RxOutpatExt.PatientIEN,RxOut.RxOutpatExt.PatientSID,RxOut.RxOutpatFill.PatientIEN,RxOut.RxOutpatMedInstructions.PatientIEN,RxOut.RxOutpatSig.PatientIEN"
 
-Mapping: vpr-to-MedicationDispensePartial
-Id: vpr
-Title: "Virtual Patient Record (VPR)"
+Mapping: sda-to-MedicationDispensePartial
+Id: sda
+Title: "Summary Document Architecure (SDA)"
 Source: MedicationDispensePartial
 * dosageInstruction.doseAndRate.doseQuantity.unit -> "pharmacy (med).dose [m],med.dose [m]"
 * dosageInstruction.doseAndRate.doseQuantity.code -> "pharmacy (med).dose [m],med.dose [m]"

@@ -49,9 +49,9 @@ Source: SmokingStatusObservation
 * valueCodeableConcept -> "HF.HealthFactor.HealthFactorTypeIEN\nDim.HealthFactorType.HealthFactorCategory,Dim.HealthFactorType.HealthFactorType"
 * note.text -> "HF.HealthFactor.Comments"
 
-Mapping: vpr-to-SmokingStatusObservation
-Id: vpr
-Title: "Virtual Patient Record (VPR)"
+Mapping: sda-to-SmokingStatusObservation
+Id: sda
+Title: "Summary Document Architecure (SDA)"
 Source: SmokingStatusObservation
 * code -> "healthFactor.category,healthFactor.name"
 * encounter -> "healthFactor.encounter,healthFactor.facility,healthFactor.recorded"

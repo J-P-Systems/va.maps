@@ -90,9 +90,9 @@ Source: MedicationRequestOutpatient
 * reasonCode.text -> "RxOut.RxOutpatExt.IndicationForUse"
 * extension[http://va.gov/fhir/StructureDefinition/medicationrequest-includeIndicationInSig].valueBoolean -> "RxOut.RxOutpatExt.IndicationForUseFlag"
 
-Mapping: vpr-to-MedicationRequestOutpatient
-Id: vpr
-Title: "Virtual Patient Record (VPR)"
+Mapping: sda-to-MedicationRequestOutpatient
+Id: sda
+Title: "Summary Document Architecure (SDA)"
 Source: MedicationRequestOutpatient
 * medicationCodeableConcept.text -> "pharmacy (med).route,med.route"
 * medicationCodeableConcept.coding.code -> "pharmacy (med).route,med.route"

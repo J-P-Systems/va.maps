@@ -109,9 +109,9 @@ Source: EncounterOutpatient
 * type.coding.display -> "Outpat.VProcedure.CPTIEN,Outpat.VProcedureCPTModifier.CPTIEN,Outpat.VProcedureDiagnosis.CPTIEN,Outpat.WorkloadVProcedure.CPTIEN,Outpat.WorkloadVProcedureCPTModifier.CPTIEN,Outpat.WorkloadVProcedureDiagnosis.CPTIEN\nDim.CPT.CPTName,Dim.CPT.CPTName"
 * type.text -> "Outpat.VProcedure.CPTIEN,Outpat.VProcedureCPTModifier.CPTIEN,Outpat.VProcedureDiagnosis.CPTIEN,Outpat.WorkloadVProcedure.CPTIEN,Outpat.WorkloadVProcedureCPTModifier.CPTIEN,Outpat.WorkloadVProcedureDiagnosis.CPTIEN\nDim.CPT.CPTName,Dim.CPT.CPTName"
 
-Mapping: vpr-to-EncounterOutpatient
-Id: vpr
-Title: "Virtual Patient Record (VPR)"
+Mapping: sda-to-EncounterOutpatient
+Id: sda
+Title: "Summary Document Architecure (SDA)"
 Source: EncounterOutpatient
 * status -> "visit.dateTime,visit.visitString"
 * status -> "visit.dateTime,visit.visitString"

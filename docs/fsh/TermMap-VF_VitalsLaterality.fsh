@@ -16,11 +16,13 @@ Usage: #definition
 * group[=].element[=].target.code = #31156008
 * group[=].element[=].target.display = "Structure of left half of body (body structure)"
 * group[=].element[=].target.equivalence = #equal
+* group[=].element[=].target.comment = "deprecated"
 * group[=].element[+].code = #4688680
 * group[=].element[=].display = "RIGHT"
 * group[=].element[=].target.code = #85421007
 * group[=].element[=].target.display = "Structure of right half of body (body structure)"
 * group[=].element[=].target.equivalence = #equal
+* group[=].element[=].target.comment = "deprecated"
 
 ValueSet: VitalsLaterality
 Title: "VitalsLaterality FHIR"

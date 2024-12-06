@@ -38,8 +38,8 @@ Source: LabObservationDiagnosticReport
 * code.text -> "Dim.LabChemTest.LabChemTestName"
 * subject -> "Micro.AntibioticSensitivity.LRDFN,Micro.AntibioticSensitivityComment.LRDFN,Micro.BacteriologyReports.LRDFN,Micro.MicroAntibioticLevel.LRDFN,Micro.MicroAudit.LRDFN,Micro.Microbiology.LRDFN,Micro.MicroOrderedTest.LRDFN,Micro.MicroSterilityResults.LRDFN,Micro.MycobacteriologyReports.LRDFN,Micro.Mycology.LRDFN,Micro.MycologyReports.LRDFN,Micro.Parasitology.LRDFN,Micro.ParasitologyReports.LRDFN,Micro.ParasitologyStage.LRDFN,Micro.Virology.LRDFN,Micro.VirologyReports.LRDFN,Pathology.Autopsy.LRDFN,Pathology.CytoOrganTissueFunction.StaffIEN,SStaff.SMicroOrderedTest.LRDFN"
 
-Mapping: vpr-to-LabObservationDiagnosticReport
-Id: vpr
-Title: "Virtual Patient Record (VPR)"
+Mapping: sda-to-LabObservationDiagnosticReport
+Id: sda
+Title: "Summary Document Architecure (SDA)"
 Source: LabObservationDiagnosticReport
 * subject -> "demographics.lrdfn\naccession.collected"

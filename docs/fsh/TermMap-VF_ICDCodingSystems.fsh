@@ -15,18 +15,22 @@ Usage: #definition
 * group[=].element[=].display = "10D"
 * group[=].element[=].target.code = #http://hl7.org/fhir/sid/icd-10-cm
 * group[=].element[=].target.equivalence = #equal
+* group[=].element[=].target.comment = "used in mapParameter"
 * group[=].element[+].code = #ICD-9-CM
 * group[=].element[=].display = "10P"
 * group[=].element[=].target.code = #http://hl7.org/fhir/sid/icd-9-cm
 * group[=].element[=].target.equivalence = #equal
+* group[=].element[=].target.comment = "used in mapParameter"
 * group[=].element[+].code = #ICD-9_Proc
 * group[=].element[=].display = "ICP"
 * group[=].element[=].target.code = #urn:undefined
 * group[=].element[=].target.equivalence = #equal
+* group[=].element[=].target.comment = "used in mapParameter"
 * group[=].element[+].code = #ICD-10-PCS
 * group[=].element[=].display = "ICD"
 * group[=].element[=].target.code = #http://www.cms.gov/Medicare/Coding/ICD10
 * group[=].element[=].target.equivalence = #equal
+* group[=].element[=].target.comment = "used in mapParameter"
 
 ValueSet: ICDCodingSystems
 Title: "ICDCodingSystems FHIR"

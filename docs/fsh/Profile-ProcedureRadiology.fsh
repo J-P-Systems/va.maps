@@ -41,8 +41,8 @@ Source: ProcedureRadiology
 * performer.actor -> "Rad.RadiologyExam.PrimaryInterpretingStaffIEN"
 * location -> "Rad.RadiologyRegisteredExam.RadiologyLocationIEN\nDim.RadiologyLocation.LocationIEN"
 
-Mapping: vpr-to-ProcedureRadiology
-Id: vpr
-Title: "Virtual Patient Record (VPR)"
+Mapping: sda-to-ProcedureRadiology
+Id: sda
+Title: "Summary Document Architecure (SDA)"
 Source: ProcedureRadiology
 * subject -> "radiology.case,radiology.dateTime,radiology.modifier [m]"

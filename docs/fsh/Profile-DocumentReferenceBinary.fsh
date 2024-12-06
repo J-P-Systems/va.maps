@@ -14,8 +14,8 @@ Source: DocumentReferenceBinary
 * data -> "1725: source value from TIU DOCUMENT - REPORT TEXT (8925-2)"
 * contentType -> "1725-1: fixed value = #text/plain" "from mapParameter 1"
 
-Mapping: vpr-to-DocumentReferenceBinary
-Id: vpr
-Title: "Virtual Patient Record (VPR)"
+Mapping: sda-to-DocumentReferenceBinary
+Id: sda
+Title: "Summary Document Architecure (SDA)"
 Source: DocumentReferenceBinary
 * data -> "document.content[n]"

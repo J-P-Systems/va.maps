@@ -134,9 +134,9 @@ Source: Appointment
 * participant[va-appt-clinic].actor -> "Appt.WaitList.AppointmentLocationIEN"
 * description -> "Appt.Appointment.AppointmentTypeIEN"
 
-Mapping: vpr-to-Appointment
-Id: vpr
-Title: "Virtual Patient Record (VPR)"
+Mapping: sda-to-Appointment
+Id: sda
+Title: "Summary Document Architecure (SDA)"
 Source: Appointment
 * status -> "appointment.apptStatus,appointment.patientClass,appointment.serviceCategory"
 * status -> "appointment.apptStatus,appointment.patientClass,appointment.serviceCategory"

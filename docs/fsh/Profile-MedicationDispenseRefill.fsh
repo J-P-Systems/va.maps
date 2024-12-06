@@ -67,9 +67,9 @@ Source: MedicationDispenseRefill
 * medicationCodeableConcept.text -> "RxOut.RxOutpat.LocalDrugIEN,RxOut.RxOutpat.NationalDrugIEN,RxOut.RxOutpatFill.LocalDrugIEN,RxOut.RxOutpatFill.NationalDrugIEN\nDim.LocalDrug.LocalDrugNameWithDose,Dim.LocalDrug.LocalDrugNameWithDose,RxOut.RxOutpatFill.LocalDrugNameWithDose"
 * subject -> "RxOut.ActivityLog.PatientIEN,RxOut.ActivityLogOtherComments.PatientIEN,RxOut.RxOutpat.PatientIEN,RxOut.RxOutpatExt.PatientIEN,RxOut.RxOutpatExt.PatientSID,RxOut.RxOutpatFill.PatientIEN,RxOut.RxOutpatMedInstructions.PatientIEN,RxOut.RxOutpatSig.PatientIEN"
 
-Mapping: vpr-to-MedicationDispenseRefill
-Id: vpr
-Title: "Virtual Patient Record (VPR)"
+Mapping: sda-to-MedicationDispenseRefill
+Id: sda
+Title: "Summary Document Architecure (SDA)"
 Source: MedicationDispenseRefill
 * destination.display -> "pharmacy (med).fill [m],med.fill [m]"
 * daysSupply -> "pharmacy (med).fill [m],med.fill [m]"

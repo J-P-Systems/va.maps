@@ -28,9 +28,9 @@ Source: LungCancerScreening
 * performer -> "TIU.TIUDocument.AuthorDictatorStaffIEN"
 * encounter -> "TIU.TIUDocument.VisitIEN"
 
-Mapping: vpr-to-LungCancerScreening
-Id: vpr
-Title: "Virtual Patient Record (VPR)"
+Mapping: sda-to-LungCancerScreening
+Id: sda
+Title: "Summary Document Architecure (SDA)"
 Source: LungCancerScreening
 * presentedForm -> "document.content[n]"
 * performer -> "document.clinician [m]"

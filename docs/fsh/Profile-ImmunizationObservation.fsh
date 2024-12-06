@@ -29,9 +29,9 @@ Source: ImmunizationObservation
 * valueCodeableConcept.coding.code -> "Immun.Immunization.Reaction"
 * valueCodeableConcept.text -> "Immun.Immunization.Reaction"
 
-Mapping: vpr-to-ImmunizationObservation
-Id: vpr
-Title: "Virtual Patient Record (VPR)"
+Mapping: sda-to-ImmunizationObservation
+Id: sda
+Title: "Summary Document Architecure (SDA)"
 Source: ImmunizationObservation
 * valueCodeableConcept -> "immunization.reaction"
 * valueCodeableConcept.coding.code -> "immunization.reaction"

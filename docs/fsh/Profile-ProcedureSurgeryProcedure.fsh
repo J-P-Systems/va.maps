@@ -179,9 +179,9 @@ Source: ProcedureSurgeryProcedure
 * code.coding.code -> "Dim.CPT.CPTCode,Dim.CPT.CPTCode"
 * code.coding.display -> "Dim.CPT.CPTName,Dim.CPT.CPTName"
 
-Mapping: vpr-to-ProcedureSurgeryProcedure
-Id: vpr
-Title: "Virtual Patient Record (VPR)"
+Mapping: sda-to-ProcedureSurgeryProcedure
+Id: sda
+Title: "Summary Document Architecure (SDA)"
 Source: ProcedureSurgeryProcedure
 * encounter -> "surgery.encounter"
 * performedDateTime -> "surgery.dateTime"

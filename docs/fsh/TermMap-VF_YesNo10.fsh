@@ -14,9 +14,11 @@ Usage: #definition
 * group[=].element[0].code = #1
 * group[=].element[=].target.code = #Y
 * group[=].element[=].target.equivalence = #equal
+* group[=].element[=].target.comment = "deprecated"
 * group[=].element[+].code = #0
 * group[=].element[=].target.code = #N
 * group[=].element[=].target.equivalence = #equal
+* group[=].element[=].target.comment = "deprecated"
 
 ValueSet: YesNo10
 Title: "YesNo10 FHIR"

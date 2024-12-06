@@ -16,16 +16,19 @@ Usage: #definition
 * group[=].element[=].target.code = #self
 * group[=].element[=].target.display = "Self"
 * group[=].element[=].target.equivalence = #equal
+* group[=].element[=].target.comment = "deprecated"
 * group[=].element[+].code = #002
 * group[=].element[=].display = "Spouse"
 * group[=].element[=].target.code = #spouse
 * group[=].element[=].target.display = "Spouse"
 * group[=].element[=].target.equivalence = #equal
+* group[=].element[=].target.comment = "deprecated"
 * group[=].element[+].code = #003_-_999
 * group[=].element[=].display = "Dependents and Others"
 * group[=].element[=].target.code = #other
 * group[=].element[=].target.display = "Other"
 * group[=].element[=].target.equivalence = #equal
+* group[=].element[=].target.comment = "deprecated"
 
 ValueSet: PharmacyPersonType
 Title: "PharmacyPersonType FHIR"

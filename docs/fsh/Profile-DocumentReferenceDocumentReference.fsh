@@ -75,9 +75,9 @@ Source: DocumentReferenceDocumentReference
 * context.facilityType -> "TIU.TIUDocument.DocumentLocationIEN\nDim.Location.LocationType,Dim.Location.LocationType"
 * context.practiceSetting -> "TIU.TIUDocument.TreatingSpecialtyIEN"
 
-Mapping: vpr-to-DocumentReferenceDocumentReference
-Id: vpr
-Title: "Virtual Patient Record (VPR)"
+Mapping: sda-to-DocumentReferenceDocumentReference
+Id: sda
+Title: "Summary Document Architecure (SDA)"
 Source: DocumentReferenceDocumentReference
 * type -> "document.category,document.localTitle,document.nationalTitle,document.nationalTitleRole,document.nationalTitleService,document.nationalTitleSetting,document.nationalTitleSubject,document.nationalTitleType,document.type"
 * type.coding.code -> "document.category,document.localTitle,document.nationalTitle,document.nationalTitleRole,document.nationalTitleService,document.nationalTitleSetting,document.nationalTitleSubject,document.nationalTitleType,document.type"

@@ -48,8 +48,8 @@ Source: ConditionEncounterDiagnosis
 * verificationStatus -> "Outpat.VDiagnosis.Modifier,Outpat.WorkloadVDiagnosis.Modifier"
 * recorder -> "Outpat.VDiagnosis.EncounterProviderIEN,Outpat.WorkloadVDiagnosis.EncounterProviderIEN"
 
-Mapping: vpr-to-ConditionEncounterDiagnosis
-Id: vpr
-Title: "Virtual Patient Record (VPR)"
+Mapping: sda-to-ConditionEncounterDiagnosis
+Id: sda
+Title: "Summary Document Architecure (SDA)"
 Source: ConditionEncounterDiagnosis
 * recordedDate -> "visit.dateTime,visit.visitString"

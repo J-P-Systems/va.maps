@@ -122,9 +122,9 @@ Source: VitalSignsBP
 * valueQuantity.value -> "Vital.VitalSign.Diastolic,Vital.VitalSign.Systolic,Vital.VitalSign.VitalResult,Vital.VitalSign.VitalResultNumeric"
 * valueQuantity.code -> "Vital.VitalSign.VitalTypeIEN"
 
-Mapping: vpr-to-VitalSignsBP
-Id: vpr
-Title: "Virtual Patient Record (VPR)"
+Mapping: sda-to-VitalSignsBP
+Id: sda
+Title: "Summary Document Architecure (SDA)"
 Source: VitalSignsBP
 * component[systolic].valueQuantity.value -> "vital.value,vital.units,vital.metricvalue,vital.metricUnits,vital.bmi"
 * component[diastolic].valueQuantity.value -> "vital.value,vital.units,vital.metricvalue,vital.metricUnits,vital.bmi"

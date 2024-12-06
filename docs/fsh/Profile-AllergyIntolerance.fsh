@@ -70,9 +70,9 @@ Source: AllergyIntolerance
 * note.authorString -> "Allergy.AllergyComment.EnteringStaffIEN"
 * reaction.onset -> "Allergy.AllergicReaction.EnteredDateTime"
 
-Mapping: vpr-to-AllergyIntolerance
-Id: vpr
-Title: "Virtual Patient Record (VPR)"
+Mapping: sda-to-AllergyIntolerance
+Id: sda
+Title: "Summary Document Architecure (SDA)"
 Source: AllergyIntolerance
 * code.text -> "reaction.name"
 * code -> "reaction.localCode,reaction.vuid"
