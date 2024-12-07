@@ -73,11 +73,11 @@
     <valueCanonical value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient|6.1.0"/>
   </extension>
   <url value="http://va.gov/fhir/StructureDefinition/Patient"/>
-  <version value="0.69.438"/>
+  <version value="0.69.439"/>
   <name value="Patient"/>
   <title value="Patient"/>
   <status value="active"/>
-  <date value="2024-12-06T17:18:58+00:00"/>
+  <date value="2024-12-07T11:18:15+00:00"/>
   <publisher value="VA"/>
   <contact>
     <name value="VA"/>
@@ -890,7 +890,7 @@
       </mapping>
       <mapping>
         <identity value="sda"/>
-        <map value="demographics.race [m-P:10]"/>
+        <map value="Patient.Races"/>
       </mapping>
       <mapping>
         <identity value="v2"/>
@@ -1970,7 +1970,7 @@
       </mapping>
       <mapping>
         <identity value="sda"/>
-        <map value="demographics.ethnicity [m-P:10.2]"/>
+        <map value="Patient.EthnicGroup"/>
       </mapping>
       <mapping>
         <identity value="v2"/>
@@ -2983,7 +2983,7 @@
       </mapping>
       <mapping>
         <identity value="sda"/>
-        <map value="demographics.religion"/>
+        <map value="Patient.Religion"/>
       </mapping>
       <mapping>
         <identity value="rim"/>
@@ -3768,10 +3768,6 @@
         <map value="Patient.Patient.PatientICN,Patient.PatientICN.PatientICN,SPatient.SPatient.PatientICN,SPatient.SPatientGISAddress.PatientICN"/>
       </mapping>
       <mapping>
-        <identity value="sda"/>
-        <map value="demographics.icn"/>
-      </mapping>
-      <mapping>
         <identity value="v2"/>
         <map value="CX.1 / EI.1"/>
       </mapping>
@@ -4107,7 +4103,7 @@
       </mapping>
       <mapping>
         <identity value="sda"/>
-        <map value="demographics.familyName,demographics.fullName,demographics.givenNames"/>
+        <map value="Patient.Name"/>
       </mapping>
       <mapping>
         <identity value="v2"/>
@@ -4889,7 +4885,7 @@
       </mapping>
       <mapping>
         <identity value="sda"/>
-        <map value="demographics.telecom"/>
+        <map value="Patient.HomePhoneNumber"/>
       </mapping>
       <mapping>
         <identity value="v2"/>
@@ -5239,7 +5235,7 @@
       </mapping>
       <mapping>
         <identity value="sda"/>
-        <map value="demographics.telecom"/>
+        <map value="Patient.WorkPhoneNumber"/>
       </mapping>
       <mapping>
         <identity value="v2"/>
@@ -5589,7 +5585,7 @@
       </mapping>
       <mapping>
         <identity value="sda"/>
-        <map value="demographics.telecom"/>
+        <map value="Patient.MobilePhoneNumber"/>
       </mapping>
       <mapping>
         <identity value="v2"/>
@@ -5776,7 +5772,7 @@
       </mapping>
       <mapping>
         <identity value="sda"/>
-        <map value="demographics.gender"/>
+        <map value="Patient.BirthGender,Patient.Gender"/>
       </mapping>
       <mapping>
         <identity value="v2"/>
@@ -5832,7 +5828,7 @@
       </mapping>
       <mapping>
         <identity value="sda"/>
-        <map value="demographics.dob"/>
+        <map value="Patient.BirthTime,Patient.PatientExtension.Dob"/>
       </mapping>
       <mapping>
         <identity value="v2"/>
@@ -5946,7 +5942,7 @@
       </mapping>
       <mapping>
         <identity value="sda"/>
-        <map value="demographics.died"/>
+        <map value="Patient.DeathTime,Patient.IsDead"/>
       </mapping>
       <mapping>
         <identity value="v2"/>
@@ -6897,7 +6893,7 @@
       </mapping>
       <mapping>
         <identity value="sda"/>
-        <map value="demographics.address"/>
+        <map value="Patient.Address.Street"/>
       </mapping>
       <mapping>
         <identity value="v2"/>
@@ -6960,7 +6956,7 @@
       </mapping>
       <mapping>
         <identity value="sda"/>
-        <map value="demographics.address"/>
+        <map value="Patient.Address.City"/>
       </mapping>
       <mapping>
         <identity value="v2"/>
@@ -7064,7 +7060,7 @@
       </mapping>
       <mapping>
         <identity value="sda"/>
-        <map value="demographics.address"/>
+        <map value="Patient.Address.State"/>
       </mapping>
       <mapping>
         <identity value="v2"/>
@@ -7127,10 +7123,6 @@
         <map value="SPatient.SPatientGISAddress.Zip4"/>
       </mapping>
       <mapping>
-        <identity value="sda"/>
-        <map value="demographics.address"/>
-      </mapping>
-      <mapping>
         <identity value="v2"/>
         <map value="XAD.5"/>
       </mapping>
@@ -7181,6 +7173,10 @@
         <identity value="vista"/>
         <map value="292: source value from PATIENT - COUNTRY (2-.1173)"/>
         <comment value="confirm association with .111 etc."/>
+      </mapping>
+      <mapping>
+        <identity value="sda"/>
+        <map value="Patient.Address.Country"/>
       </mapping>
       <mapping>
         <identity value="v2"/>
@@ -7355,6 +7351,10 @@
         <comment value="need other addresses, including temp; not just range"/>
       </mapping>
       <mapping>
+        <identity value="sda"/>
+        <map value="Patient.Address.FromTime"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="DR.1"/>
       </mapping>
@@ -7395,6 +7395,10 @@
         <identity value="vista"/>
         <map value="294: source value from PATIENT - TEMPORARY ADDRESS END DATE (2-.1218)"/>
         <comment value="need other addresses, including temp; not just range"/>
+      </mapping>
+      <mapping>
+        <identity value="sda"/>
+        <map value="Patient.Address.ToTime"/>
       </mapping>
       <mapping>
         <identity value="v2"/>
@@ -7445,7 +7449,7 @@
       </mapping>
       <mapping>
         <identity value="sda"/>
-        <map value="demographics.maritalStatus"/>
+        <map value="Patient.MaritalStatus"/>
       </mapping>
       <mapping>
         <identity value="v2"/>
@@ -8161,7 +8165,7 @@
       </mapping>
       <mapping>
         <identity value="sda"/>
-        <map value="demographics.language"/>
+        <map value="Patient.PatientLanguage.Preferred Language"/>
       </mapping>
       <mapping>
         <identity value="v2"/>
@@ -8764,7 +8768,7 @@
       </mapping>
       <mapping>
         <identity value="sda"/>
-        <map value="demographics.race [m-P:10]"/>
+        <map value="Patient.Races"/>
       </mapping>
     </element>
     <element id="Patient.extension:ethnicity">
@@ -8792,7 +8796,7 @@
       </mapping>
       <mapping>
         <identity value="sda"/>
-        <map value="demographics.ethnicity [m-P:10.2]"/>
+        <map value="Patient.EthnicGroup"/>
       </mapping>
     </element>
     <element id="Patient.extension:genderIdentity">
@@ -8842,7 +8846,7 @@
       </mapping>
       <mapping>
         <identity value="sda"/>
-        <map value="demographics.religion"/>
+        <map value="Patient.Religion"/>
       </mapping>
     </element>
     <element id="Patient.identifier.type.coding.system">
@@ -8884,10 +8888,6 @@
         <identity value="cdw"/>
         <map value="Patient.Patient.PatientICN,Patient.PatientICN.PatientICN,SPatient.SPatient.PatientICN,SPatient.SPatientGISAddress.PatientICN"/>
       </mapping>
-      <mapping>
-        <identity value="sda"/>
-        <map value="demographics.icn"/>
-      </mapping>
     </element>
     <element id="Patient.name.text">
       <path value="Patient.name.text"/>
@@ -8902,7 +8902,7 @@
       </mapping>
       <mapping>
         <identity value="sda"/>
-        <map value="demographics.familyName,demographics.fullName,demographics.givenNames"/>
+        <map value="Patient.Name"/>
       </mapping>
     </element>
     <element id="Patient.name.family">
@@ -8966,7 +8966,7 @@
       </mapping>
       <mapping>
         <identity value="sda"/>
-        <map value="demographics.telecom"/>
+        <map value="Patient.HomePhoneNumber"/>
       </mapping>
     </element>
     <element id="Patient.telecom:va-home.use">
@@ -9001,7 +9001,7 @@
       </mapping>
       <mapping>
         <identity value="sda"/>
-        <map value="demographics.telecom"/>
+        <map value="Patient.WorkPhoneNumber"/>
       </mapping>
     </element>
     <element id="Patient.telecom:va-work.use">
@@ -9036,7 +9036,7 @@
       </mapping>
       <mapping>
         <identity value="sda"/>
-        <map value="demographics.telecom"/>
+        <map value="Patient.MobilePhoneNumber"/>
       </mapping>
     </element>
     <element id="Patient.telecom:va-mobile.use">
@@ -9065,7 +9065,7 @@
       </mapping>
       <mapping>
         <identity value="sda"/>
-        <map value="demographics.gender"/>
+        <map value="Patient.BirthGender,Patient.Gender"/>
       </mapping>
     </element>
     <element id="Patient.birthDate">
@@ -9080,7 +9080,7 @@
       </mapping>
       <mapping>
         <identity value="sda"/>
-        <map value="demographics.dob"/>
+        <map value="Patient.BirthTime,Patient.PatientExtension.Dob"/>
       </mapping>
     </element>
     <element id="Patient.deceased[x]">
@@ -9114,7 +9114,7 @@
       </mapping>
       <mapping>
         <identity value="sda"/>
-        <map value="demographics.died"/>
+        <map value="Patient.DeathTime,Patient.IsDead"/>
       </mapping>
     </element>
     <element id="Patient.address">
@@ -9177,15 +9177,15 @@
       </mapping>
       <mapping>
         <identity value="sda"/>
-        <map value="demographics.address"/>
+        <map value="Patient.Address.Street"/>
       </mapping>
       <mapping>
         <identity value="sda"/>
-        <map value="demographics.address"/>
+        <map value="Patient.Address.Street"/>
       </mapping>
       <mapping>
         <identity value="sda"/>
-        <map value="demographics.address"/>
+        <map value="Patient.Address.Street"/>
       </mapping>
     </element>
     <element id="Patient.address:va-home.city">
@@ -9200,7 +9200,7 @@
       </mapping>
       <mapping>
         <identity value="sda"/>
-        <map value="demographics.address"/>
+        <map value="Patient.Address.City"/>
       </mapping>
     </element>
     <element id="Patient.address:va-home.state">
@@ -9215,7 +9215,7 @@
       </mapping>
       <mapping>
         <identity value="sda"/>
-        <map value="demographics.address"/>
+        <map value="Patient.Address.State"/>
       </mapping>
     </element>
     <element id="Patient.address:va-home.postalCode">
@@ -9228,10 +9228,6 @@
         <identity value="cdw"/>
         <map value="SPatient.SPatientGISAddress.Zip4"/>
       </mapping>
-      <mapping>
-        <identity value="sda"/>
-        <map value="demographics.address"/>
-      </mapping>
     </element>
     <element id="Patient.address:va-home.country">
       <path value="Patient.address.country"/>
@@ -9240,6 +9236,10 @@
         <identity value="vista"/>
         <map value="292: source value from PATIENT - COUNTRY (2-.1173)"/>
         <comment value="confirm association with .111 etc."/>
+      </mapping>
+      <mapping>
+        <identity value="sda"/>
+        <map value="Patient.Address.Country"/>
       </mapping>
     </element>
     <element id="Patient.address:va-home.period.start">
@@ -9250,6 +9250,10 @@
         <map value="293: source value from PATIENT - TEMPORARY ADDRESS START DATE (2-.1217)"/>
         <comment value="need other addresses, including temp; not just range"/>
       </mapping>
+      <mapping>
+        <identity value="sda"/>
+        <map value="Patient.Address.FromTime"/>
+      </mapping>
     </element>
     <element id="Patient.address:va-home.period.end">
       <path value="Patient.address.period.end"/>
@@ -9258,6 +9262,10 @@
         <identity value="vista"/>
         <map value="294: source value from PATIENT - TEMPORARY ADDRESS END DATE (2-.1218)"/>
         <comment value="need other addresses, including temp; not just range"/>
+      </mapping>
+      <mapping>
+        <identity value="sda"/>
+        <map value="Patient.Address.ToTime"/>
       </mapping>
     </element>
     <element id="Patient.maritalStatus">
@@ -9277,7 +9285,7 @@
       </mapping>
       <mapping>
         <identity value="sda"/>
-        <map value="demographics.maritalStatus"/>
+        <map value="Patient.MaritalStatus"/>
       </mapping>
     </element>
     <element id="Patient.communication.language">
@@ -9292,7 +9300,7 @@
       </mapping>
       <mapping>
         <identity value="sda"/>
-        <map value="demographics.language"/>
+        <map value="Patient.PatientLanguage.Preferred Language"/>
       </mapping>
     </element>
     <element id="Patient.managingOrganization.display">

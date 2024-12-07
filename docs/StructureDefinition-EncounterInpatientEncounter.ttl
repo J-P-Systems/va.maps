@@ -20,11 +20,11 @@
      ]
   ] ) ; # 
   fhir:url [ fhir:v "http://va.gov/fhir/StructureDefinition/EncounterInpatientEncounter"^^xsd:anyURI] ; # 
-  fhir:version [ fhir:v "0.69.438"] ; # 
+  fhir:version [ fhir:v "0.69.439"] ; # 
   fhir:name [ fhir:v "EncounterInpatientEncounter"] ; # 
   fhir:title [ fhir:v "Encounter: Inpatient Encounter"] ; # 
   fhir:status [ fhir:v "active"] ; # 
-  fhir:date [ fhir:v "2024-12-06T17:18:58+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2024-12-07T11:18:15+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "VA"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "VA" ] ;
@@ -48,6 +48,9 @@
   ] [
      fhir:identity [ fhir:v "cdw" ] ;
      fhir:name [ fhir:v "Clinical Data Warehouse (CDW)" ]
+  ] [
+     fhir:identity [ fhir:v "sda" ] ;
+     fhir:name [ fhir:v "Summary Document Architecure (SDA)" ]
   ] [
      fhir:identity [ fhir:v "workflow" ] ;
      fhir:uri [ fhir:v "http://hl7.org/fhir/workflow"^^xsd:anyURI ] ;
@@ -2045,6 +2048,12 @@
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "Inpat.Census.CensusDateSID,Inpat.Census.CensusDateTime,Inpat.Census501.CensusDateTime,Inpat.Census501Diagnosis.CensusDateTime,Inpat.Census535.CensusDateTime,Inpat.CensusDiagnosis.CensusDateTime,Inpat.CensusICDProcedure.CensusDateTime,Inpat.CensusSurgicalProcedure.CensusDateTime,Inpat.Inpatient.DischargeDateTime,Inpat.Inpatient501Transaction.DischargeDateTime,Inpat.Inpatient501TransactionDiagnosis.DischargeDateTime,Inpat.Inpatient535Multiple.DischargeDateTime,Inpat.Inpatient535Transaction.DischargeDateTime,Inpat.InpatientDiagnosis.DischargeDateTime,Inpat.InpatientFeeBasis.DischargeDateTime,Inpat.InpatientFeeDiagnosis.DischargeDateTime,Inpat.InpatientICDProcedure.DischargeDateTime,Inpat.InpatientSurgicalProcedure.DischargeDateTime" ]
        ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Diagnosis.FromTime" ]
+       ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Diagnosis.ToTime" ]
+       ] [
          fhir:identity [ fhir:v "workflow" ] ;
          fhir:map [ fhir:v "Event.status" ]
        ] [
@@ -3235,6 +3244,9 @@
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "Inpat.Census.PatientIEN,Inpat.Census501.PatientIEN,Inpat.Census501.PatientSID,Inpat.Census535.PatientIEN,Inpat.CensusDiagnosis.PatientIEN,Inpat.CensusICDProcedure.PatientIEN,Inpat.CensusSurgicalProcedure.PatientIEN,Inpat.Inpatient.PatientIEN,Inpat.Inpatient501Transaction.PatientIEN,Inpat.Inpatient535Transaction.PatientIEN,Inpat.InpatientDiagnosis.PatientIEN,Inpat.InpatientDischargeDiagnosis.PatientIEN,Inpat.InpatientFeeBasis.PatientIEN,Inpat.InpatientFeeDiagnosis.PatientIEN,Inpat.InpatientICDProcedure.PatientIEN,Inpat.InpatientSurgicalProcedure.PatientIEN,Inpat.PresentOnAdmission.PatientIEN" ]
        ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Diagnosis.CodeTableDetail.Diagnosis.Code" ]
+       ] [
          fhir:identity [ fhir:v "workflow" ] ;
          fhir:map [ fhir:v "Event.subject" ]
        ] [
@@ -3790,6 +3802,9 @@
          fhir:identity [ fhir:v "vista" ] ;
          fhir:map [ fhir:v "442: reference from PTF - PROVIDER (45-79.1)" ]
        ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Diagnosis.DiagnosingClinician" ]
+       ] [
          fhir:identity [ fhir:v "workflow" ] ;
          fhir:map [ fhir:v "Event.performer.actor" ]
        ] [
@@ -4003,6 +4018,9 @@
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "Inpat.Census.AdmitDateSID,Inpat.Census.AdmitDateTime,Inpat.Census501.AdmitDateTime,Inpat.Census501Diagnosis.AdmitDateTime,Inpat.Census535.AdmitDateTime,Inpat.CensusDiagnosis.AdmitDateTime,Inpat.CensusICDProcedure.AdmitDateTime,Inpat.CensusSurgicalProcedure.AdmitDateTime,Inpat.Inpatient.AdmitDateTime,Inpat.Inpatient501Multiple.AdmitDateTime,Inpat.Inpatient501Transaction.AdmitDateTime,Inpat.Inpatient535Multiple.AdmitDateTime,Inpat.Inpatient535Transaction.AdmitDateTime,Inpat.InpatientDischargeDiagnosis.AdmitDateTime,Inpat.InpatientFeeBasis.AdmitDateTime,Inpat.InpatientFeeDiagnosis.AdmitDateTime,Inpat.InpatientICDProcedure.AdmitDateTime,Inpat.InpatientSurgicalProcedure.AdmitDateTime" ]
        ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Diagnosis.FromTime" ]
+       ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "DR.1" ]
        ] [
@@ -4047,6 +4065,9 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "Inpat.Census.CensusDateSID,Inpat.Census.CensusDateTime,Inpat.Census501.CensusDateTime,Inpat.Census501Diagnosis.CensusDateTime,Inpat.Census535.CensusDateTime,Inpat.CensusDiagnosis.CensusDateTime,Inpat.CensusICDProcedure.CensusDateTime,Inpat.CensusSurgicalProcedure.CensusDateTime,Inpat.Inpatient.DischargeDateTime,Inpat.Inpatient501Transaction.DischargeDateTime,Inpat.Inpatient501TransactionDiagnosis.DischargeDateTime,Inpat.Inpatient535Multiple.DischargeDateTime,Inpat.Inpatient535Transaction.DischargeDateTime,Inpat.InpatientDiagnosis.DischargeDateTime,Inpat.InpatientFeeBasis.DischargeDateTime,Inpat.InpatientFeeDiagnosis.DischargeDateTime,Inpat.InpatientICDProcedure.DischargeDateTime,Inpat.InpatientSurgicalProcedure.DischargeDateTime" ]
+       ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Diagnosis.ToTime" ]
        ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "DR.2" ]
@@ -4530,6 +4551,9 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "Inpat.Inpatient.PrincipalDiagnosisICDIEN" ]
+       ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Diagnosis.Diagnosis,Diagnosis.DiagnosisType" ]
        ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "C*E.1" ]
@@ -8863,6 +8887,9 @@
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "Inpat.Census.DischargeFacility,Inpat.Inpatient.DischargeFromFacility,Inpat.InpatientFeeBasis.DischargeFacility" ]
        ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Diagnosis.EnteredAt,Procedure.EnteredAt" ]
+       ] [
          fhir:identity [ fhir:v "workflow" ] ;
          fhir:map [ fhir:v "Event.location" ]
        ] [
@@ -9032,6 +9059,9 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "Inpat.Census.DischargeFacility,Inpat.Inpatient.DischargeFromFacility,Inpat.InpatientFeeBasis.DischargeFacility" ]
+       ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Diagnosis.EnteredAt,Procedure.EnteredAt" ]
        ] [
          fhir:identity [ fhir:v "workflow" ] ;
          fhir:map [ fhir:v "Event.performer.actor" ]
@@ -9210,6 +9240,15 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "Inpat.Census.CensusDateSID,Inpat.Census.CensusDateTime,Inpat.Census501.CensusDateTime,Inpat.Census501Diagnosis.CensusDateTime,Inpat.Census535.CensusDateTime,Inpat.CensusDiagnosis.CensusDateTime,Inpat.CensusICDProcedure.CensusDateTime,Inpat.CensusSurgicalProcedure.CensusDateTime,Inpat.Inpatient.DischargeDateTime,Inpat.Inpatient501Transaction.DischargeDateTime,Inpat.Inpatient501TransactionDiagnosis.DischargeDateTime,Inpat.Inpatient535Multiple.DischargeDateTime,Inpat.Inpatient535Transaction.DischargeDateTime,Inpat.InpatientDiagnosis.DischargeDateTime,Inpat.InpatientFeeBasis.DischargeDateTime,Inpat.InpatientFeeDiagnosis.DischargeDateTime,Inpat.InpatientICDProcedure.DischargeDateTime,Inpat.InpatientSurgicalProcedure.DischargeDateTime" ]
+       ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Diagnosis.FromTime" ]
+       ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Diagnosis.FromTime" ]
+       ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Diagnosis.ToTime" ]
        ] )
      ] [
        fhir:id [ fhir:v "Encounter.class" ] ;
@@ -9295,6 +9334,9 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "Inpat.Census.PatientIEN,Inpat.Census501.PatientIEN,Inpat.Census501.PatientSID,Inpat.Census535.PatientIEN,Inpat.CensusDiagnosis.PatientIEN,Inpat.CensusICDProcedure.PatientIEN,Inpat.CensusSurgicalProcedure.PatientIEN,Inpat.Inpatient.PatientIEN,Inpat.Inpatient501Transaction.PatientIEN,Inpat.Inpatient535Transaction.PatientIEN,Inpat.InpatientDiagnosis.PatientIEN,Inpat.InpatientDischargeDiagnosis.PatientIEN,Inpat.InpatientFeeBasis.PatientIEN,Inpat.InpatientFeeDiagnosis.PatientIEN,Inpat.InpatientICDProcedure.PatientIEN,Inpat.InpatientSurgicalProcedure.PatientIEN,Inpat.PresentOnAdmission.PatientIEN" ]
+       ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Diagnosis.CodeTableDetail.Diagnosis.Code" ]
        ] )
      ] [
        fhir:id [ fhir:v "Encounter.participant.type.coding" ] ;
@@ -9330,6 +9372,9 @@
        fhir:mapping ( [
          fhir:identity [ fhir:v "vista" ] ;
          fhir:map [ fhir:v "442: reference from PTF - PROVIDER (45-79.1)" ]
+       ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Diagnosis.DiagnosingClinician" ]
        ] )
      ] [
        fhir:id [ fhir:v "Encounter.period.start" ] ;
@@ -9341,6 +9386,9 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "Inpat.Census.AdmitDateSID,Inpat.Census.AdmitDateTime,Inpat.Census501.AdmitDateTime,Inpat.Census501Diagnosis.AdmitDateTime,Inpat.Census535.AdmitDateTime,Inpat.CensusDiagnosis.AdmitDateTime,Inpat.CensusICDProcedure.AdmitDateTime,Inpat.CensusSurgicalProcedure.AdmitDateTime,Inpat.Inpatient.AdmitDateTime,Inpat.Inpatient501Multiple.AdmitDateTime,Inpat.Inpatient501Transaction.AdmitDateTime,Inpat.Inpatient535Multiple.AdmitDateTime,Inpat.Inpatient535Transaction.AdmitDateTime,Inpat.InpatientDischargeDiagnosis.AdmitDateTime,Inpat.InpatientFeeBasis.AdmitDateTime,Inpat.InpatientFeeDiagnosis.AdmitDateTime,Inpat.InpatientICDProcedure.AdmitDateTime,Inpat.InpatientSurgicalProcedure.AdmitDateTime" ]
+       ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Diagnosis.FromTime" ]
        ] )
      ] [
        fhir:id [ fhir:v "Encounter.period.end" ] ;
@@ -9352,6 +9400,9 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "Inpat.Census.CensusDateSID,Inpat.Census.CensusDateTime,Inpat.Census501.CensusDateTime,Inpat.Census501Diagnosis.CensusDateTime,Inpat.Census535.CensusDateTime,Inpat.CensusDiagnosis.CensusDateTime,Inpat.CensusICDProcedure.CensusDateTime,Inpat.CensusSurgicalProcedure.CensusDateTime,Inpat.Inpatient.DischargeDateTime,Inpat.Inpatient501Transaction.DischargeDateTime,Inpat.Inpatient501TransactionDiagnosis.DischargeDateTime,Inpat.Inpatient535Multiple.DischargeDateTime,Inpat.Inpatient535Transaction.DischargeDateTime,Inpat.InpatientDiagnosis.DischargeDateTime,Inpat.InpatientFeeBasis.DischargeDateTime,Inpat.InpatientFeeDiagnosis.DischargeDateTime,Inpat.InpatientICDProcedure.DischargeDateTime,Inpat.InpatientSurgicalProcedure.DischargeDateTime" ]
+       ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Diagnosis.ToTime" ]
        ] )
      ] [
        fhir:id [ fhir:v "Encounter.reasonCode" ] ;
@@ -9389,6 +9440,9 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "Inpat.Inpatient.PrincipalDiagnosisICDIEN" ]
+       ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Diagnosis.Diagnosis,Diagnosis.DiagnosisType" ]
        ] )
      ] [
        fhir:id [ fhir:v "Encounter.reasonCode:va-secondary" ] ;
@@ -9612,6 +9666,9 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "Inpat.Census.DischargeFacility,Inpat.Inpatient.DischargeFromFacility,Inpat.InpatientFeeBasis.DischargeFacility" ]
+       ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Diagnosis.EnteredAt,Procedure.EnteredAt" ]
        ] )
      ] [
        fhir:id [ fhir:v "Encounter.serviceProvider" ] ;
@@ -9629,6 +9686,9 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "Inpat.Census.DischargeFacility,Inpat.Inpatient.DischargeFromFacility,Inpat.InpatientFeeBasis.DischargeFacility" ]
+       ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Diagnosis.EnteredAt,Procedure.EnteredAt" ]
        ] )
      ] )
   ] . # 

@@ -10,11 +10,11 @@
     "valueCanonical" : "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient|6.1.0"
   }],
   "url" : "http://va.gov/fhir/StructureDefinition/Patient",
-  "version" : "0.69.438",
+  "version" : "0.69.439",
   "name" : "Patient",
   "title" : "Patient",
   "status" : "active",
-  "date" : "2024-12-06T17:18:58+00:00",
+  "date" : "2024-12-07T11:18:15+00:00",
   "publisher" : "VA",
   "contact" : [{
     "name" : "VA",
@@ -856,7 +856,7 @@
       },
       {
         "identity" : "sda",
-        "map" : "demographics.race [m-P:10]"
+        "map" : "Patient.Races"
       },
       {
         "identity" : "v2",
@@ -1970,7 +1970,7 @@
       },
       {
         "identity" : "sda",
-        "map" : "demographics.ethnicity [m-P:10.2]"
+        "map" : "Patient.EthnicGroup"
       },
       {
         "identity" : "v2",
@@ -3016,7 +3016,7 @@
       },
       {
         "identity" : "sda",
-        "map" : "demographics.religion"
+        "map" : "Patient.Religion"
       },
       {
         "identity" : "rim",
@@ -3827,10 +3827,6 @@
         "map" : "Patient.Patient.PatientICN,Patient.PatientICN.PatientICN,SPatient.SPatient.PatientICN,SPatient.SPatientGISAddress.PatientICN"
       },
       {
-        "identity" : "sda",
-        "map" : "demographics.icn"
-      },
-      {
         "identity" : "v2",
         "map" : "CX.1 / EI.1"
       },
@@ -4176,7 +4172,7 @@
       },
       {
         "identity" : "sda",
-        "map" : "demographics.familyName,demographics.fullName,demographics.givenNames"
+        "map" : "Patient.Name"
       },
       {
         "identity" : "v2",
@@ -4978,7 +4974,7 @@
       },
       {
         "identity" : "sda",
-        "map" : "demographics.telecom"
+        "map" : "Patient.HomePhoneNumber"
       },
       {
         "identity" : "v2",
@@ -5337,7 +5333,7 @@
       },
       {
         "identity" : "sda",
-        "map" : "demographics.telecom"
+        "map" : "Patient.WorkPhoneNumber"
       },
       {
         "identity" : "v2",
@@ -5696,7 +5692,7 @@
       },
       {
         "identity" : "sda",
-        "map" : "demographics.telecom"
+        "map" : "Patient.MobilePhoneNumber"
       },
       {
         "identity" : "v2",
@@ -5887,7 +5883,7 @@
       },
       {
         "identity" : "sda",
-        "map" : "demographics.gender"
+        "map" : "Patient.BirthGender,Patient.Gender"
       },
       {
         "identity" : "v2",
@@ -5944,7 +5940,7 @@
       },
       {
         "identity" : "sda",
-        "map" : "demographics.dob"
+        "map" : "Patient.BirthTime,Patient.PatientExtension.Dob"
       },
       {
         "identity" : "v2",
@@ -6060,7 +6056,7 @@
       },
       {
         "identity" : "sda",
-        "map" : "demographics.died"
+        "map" : "Patient.DeathTime,Patient.IsDead"
       },
       {
         "identity" : "v2",
@@ -7037,7 +7033,7 @@
       },
       {
         "identity" : "sda",
-        "map" : "demographics.address"
+        "map" : "Patient.Address.Street"
       },
       {
         "identity" : "v2",
@@ -7101,7 +7097,7 @@
       },
       {
         "identity" : "sda",
-        "map" : "demographics.address"
+        "map" : "Patient.Address.City"
       },
       {
         "identity" : "v2",
@@ -7207,7 +7203,7 @@
       },
       {
         "identity" : "sda",
-        "map" : "demographics.address"
+        "map" : "Patient.Address.State"
       },
       {
         "identity" : "v2",
@@ -7271,10 +7267,6 @@
         "map" : "SPatient.SPatientGISAddress.Zip4"
       },
       {
-        "identity" : "sda",
-        "map" : "demographics.address"
-      },
-      {
         "identity" : "v2",
         "map" : "XAD.5"
       },
@@ -7326,6 +7318,10 @@
         "identity" : "vista",
         "map" : "292: source value from PATIENT - COUNTRY (2-.1173)",
         "comment" : "confirm association with .111 etc."
+      },
+      {
+        "identity" : "sda",
+        "map" : "Patient.Address.Country"
       },
       {
         "identity" : "v2",
@@ -7505,6 +7501,10 @@
         "comment" : "need other addresses, including temp; not just range"
       },
       {
+        "identity" : "sda",
+        "map" : "Patient.Address.FromTime"
+      },
+      {
         "identity" : "v2",
         "map" : "DR.1"
       },
@@ -7546,6 +7546,10 @@
         "identity" : "vista",
         "map" : "294: source value from PATIENT - TEMPORARY ADDRESS END DATE (2-.1218)",
         "comment" : "need other addresses, including temp; not just range"
+      },
+      {
+        "identity" : "sda",
+        "map" : "Patient.Address.ToTime"
       },
       {
         "identity" : "v2",
@@ -7597,7 +7601,7 @@
       },
       {
         "identity" : "sda",
-        "map" : "demographics.maritalStatus"
+        "map" : "Patient.MaritalStatus"
       },
       {
         "identity" : "v2",
@@ -8335,7 +8339,7 @@
       },
       {
         "identity" : "sda",
-        "map" : "demographics.language"
+        "map" : "Patient.PatientLanguage.Preferred Language"
       },
       {
         "identity" : "v2",
@@ -8963,7 +8967,7 @@
       },
       {
         "identity" : "sda",
-        "map" : "demographics.race [m-P:10]"
+        "map" : "Patient.Races"
       }]
     },
     {
@@ -8995,7 +8999,7 @@
       },
       {
         "identity" : "sda",
-        "map" : "demographics.ethnicity [m-P:10.2]"
+        "map" : "Patient.EthnicGroup"
       }]
     },
     {
@@ -9049,7 +9053,7 @@
       },
       {
         "identity" : "sda",
-        "map" : "demographics.religion"
+        "map" : "Patient.Religion"
       }]
     },
     {
@@ -9094,10 +9098,6 @@
       {
         "identity" : "cdw",
         "map" : "Patient.Patient.PatientICN,Patient.PatientICN.PatientICN,SPatient.SPatient.PatientICN,SPatient.SPatientGISAddress.PatientICN"
-      },
-      {
-        "identity" : "sda",
-        "map" : "demographics.icn"
       }]
     },
     {
@@ -9114,7 +9114,7 @@
       },
       {
         "identity" : "sda",
-        "map" : "demographics.familyName,demographics.fullName,demographics.givenNames"
+        "map" : "Patient.Name"
       }]
     },
     {
@@ -9185,7 +9185,7 @@
       },
       {
         "identity" : "sda",
-        "map" : "demographics.telecom"
+        "map" : "Patient.HomePhoneNumber"
       }]
     },
     {
@@ -9224,7 +9224,7 @@
       },
       {
         "identity" : "sda",
-        "map" : "demographics.telecom"
+        "map" : "Patient.WorkPhoneNumber"
       }]
     },
     {
@@ -9263,7 +9263,7 @@
       },
       {
         "identity" : "sda",
-        "map" : "demographics.telecom"
+        "map" : "Patient.MobilePhoneNumber"
       }]
     },
     {
@@ -9294,7 +9294,7 @@
       },
       {
         "identity" : "sda",
-        "map" : "demographics.gender"
+        "map" : "Patient.BirthGender,Patient.Gender"
       }]
     },
     {
@@ -9310,7 +9310,7 @@
       },
       {
         "identity" : "sda",
-        "map" : "demographics.dob"
+        "map" : "Patient.BirthTime,Patient.PatientExtension.Dob"
       }]
     },
     {
@@ -9346,7 +9346,7 @@
       },
       {
         "identity" : "sda",
-        "map" : "demographics.died"
+        "map" : "Patient.DeathTime,Patient.IsDead"
       }]
     },
     {
@@ -9414,15 +9414,15 @@
       },
       {
         "identity" : "sda",
-        "map" : "demographics.address"
+        "map" : "Patient.Address.Street"
       },
       {
         "identity" : "sda",
-        "map" : "demographics.address"
+        "map" : "Patient.Address.Street"
       },
       {
         "identity" : "sda",
-        "map" : "demographics.address"
+        "map" : "Patient.Address.Street"
       }]
     },
     {
@@ -9438,7 +9438,7 @@
       },
       {
         "identity" : "sda",
-        "map" : "demographics.address"
+        "map" : "Patient.Address.City"
       }]
     },
     {
@@ -9454,7 +9454,7 @@
       },
       {
         "identity" : "sda",
-        "map" : "demographics.address"
+        "map" : "Patient.Address.State"
       }]
     },
     {
@@ -9467,10 +9467,6 @@
       {
         "identity" : "cdw",
         "map" : "SPatient.SPatientGISAddress.Zip4"
-      },
-      {
-        "identity" : "sda",
-        "map" : "demographics.address"
       }]
     },
     {
@@ -9481,6 +9477,10 @@
         "identity" : "vista",
         "map" : "292: source value from PATIENT - COUNTRY (2-.1173)",
         "comment" : "confirm association with .111 etc."
+      },
+      {
+        "identity" : "sda",
+        "map" : "Patient.Address.Country"
       }]
     },
     {
@@ -9491,6 +9491,10 @@
         "identity" : "vista",
         "map" : "293: source value from PATIENT - TEMPORARY ADDRESS START DATE (2-.1217)",
         "comment" : "need other addresses, including temp; not just range"
+      },
+      {
+        "identity" : "sda",
+        "map" : "Patient.Address.FromTime"
       }]
     },
     {
@@ -9501,6 +9505,10 @@
         "identity" : "vista",
         "map" : "294: source value from PATIENT - TEMPORARY ADDRESS END DATE (2-.1218)",
         "comment" : "need other addresses, including temp; not just range"
+      },
+      {
+        "identity" : "sda",
+        "map" : "Patient.Address.ToTime"
       }]
     },
     {
@@ -9521,7 +9529,7 @@
       },
       {
         "identity" : "sda",
-        "map" : "demographics.maritalStatus"
+        "map" : "Patient.MaritalStatus"
       }]
     },
     {
@@ -9537,7 +9545,7 @@
       },
       {
         "identity" : "sda",
-        "map" : "demographics.language"
+        "map" : "Patient.PatientLanguage.Preferred Language"
       }]
     },
     {

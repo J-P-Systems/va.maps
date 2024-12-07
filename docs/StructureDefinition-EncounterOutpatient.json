@@ -10,11 +10,11 @@
     "valueCanonical" : "http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter|6.1.0"
   }],
   "url" : "http://va.gov/fhir/StructureDefinition/EncounterOutpatient",
-  "version" : "0.69.438",
+  "version" : "0.69.439",
   "name" : "EncounterOutpatient",
   "title" : "Encounter: Outpatient",
   "status" : "active",
-  "date" : "2024-12-06T17:18:58+00:00",
+  "date" : "2024-12-07T11:18:15+00:00",
   "publisher" : "VA",
   "contact" : [{
     "name" : "VA",
@@ -907,6 +907,10 @@
         "map" : "Outpat.Visit.VisitIdentifier,Outpat.Workload.VisitIdentifier"
       },
       {
+        "identity" : "sda",
+        "map" : "Encounter.EncounterExtension.VisitID,Encounter.EncounterExtension.VisitID"
+      },
+      {
         "identity" : "v2",
         "map" : "CX.1 / EI.1"
       },
@@ -1074,7 +1078,11 @@
       },
       {
         "identity" : "sda",
-        "map" : "visit.dateTime,visit.visitString"
+        "map" : "Encounter.CareProvider.Description,Encounter.CareProvider.Name"
+      },
+      {
+        "identity" : "sda",
+        "map" : "Encounter.ToTime"
       },
       {
         "identity" : "workflow",
@@ -1345,10 +1353,6 @@
         "map" : "Outpat.Visit.PatientStatusInOut,Outpat.Workload.PatientStatusInOut"
       },
       {
-        "identity" : "sda",
-        "map" : "visit.patientClass"
-      },
-      {
         "identity" : "w5",
         "map" : "FiveWs.class"
       },
@@ -1611,6 +1615,10 @@
       {
         "identity" : "cdw",
         "map" : "Outpat.VProcedure.CPTIEN,Outpat.VProcedureCPTModifier.CPTIEN,Outpat.VProcedureDiagnosis.CPTIEN,Outpat.WorkloadVProcedure.CPTIEN,Outpat.WorkloadVProcedureCPTModifier.CPTIEN,Outpat.WorkloadVProcedureDiagnosis.CPTIEN"
+      },
+      {
+        "identity" : "sda",
+        "map" : "Encounter.EncounterExtension.Cpt,Encounter.EncounterExtension.Cpt,Procedure.Procedure,Procedure.CodeTableDetail.Procedure.Code"
       },
       {
         "identity" : "workflow",
@@ -1944,6 +1952,10 @@
         "map" : "Outpat.VProcedure.CPTIEN,Outpat.VProcedureCPTModifier.CPTIEN,Outpat.VProcedureDiagnosis.CPTIEN,Outpat.WorkloadVProcedure.CPTIEN,Outpat.WorkloadVProcedureCPTModifier.CPTIEN,Outpat.WorkloadVProcedureDiagnosis.CPTIEN\nDim.CPT.CPTCode,Dim.CPT.CPTCode"
       },
       {
+        "identity" : "sda",
+        "map" : "Encounter.EncounterExtension.Cpt,Encounter.EncounterExtension.Cpt,Procedure.Procedure,Procedure.CodeTableDetail.Procedure.Code"
+      },
+      {
         "identity" : "v2",
         "map" : "C*E.1"
       },
@@ -1995,6 +2007,10 @@
       {
         "identity" : "cdw",
         "map" : "Outpat.VProcedure.CPTIEN,Outpat.VProcedureCPTModifier.CPTIEN,Outpat.VProcedureDiagnosis.CPTIEN,Outpat.WorkloadVProcedure.CPTIEN,Outpat.WorkloadVProcedureCPTModifier.CPTIEN,Outpat.WorkloadVProcedureDiagnosis.CPTIEN\nDim.CPT.CPTName,Dim.CPT.CPTName"
+      },
+      {
+        "identity" : "sda",
+        "map" : "Encounter.EncounterExtension.Cpt,Encounter.EncounterExtension.Cpt,Procedure.Procedure,Procedure.CodeTableDetail.Procedure.Code"
       },
       {
         "identity" : "v2",
@@ -2089,6 +2105,10 @@
       {
         "identity" : "cdw",
         "map" : "Outpat.VProcedure.CPTIEN,Outpat.VProcedureCPTModifier.CPTIEN,Outpat.VProcedureDiagnosis.CPTIEN,Outpat.WorkloadVProcedure.CPTIEN,Outpat.WorkloadVProcedureCPTModifier.CPTIEN,Outpat.WorkloadVProcedureDiagnosis.CPTIEN\nDim.CPT.CPTName,Dim.CPT.CPTName"
+      },
+      {
+        "identity" : "sda",
+        "map" : "Encounter.EncounterExtension.Cpt,Encounter.EncounterExtension.Cpt,Procedure.Procedure,Procedure.CodeTableDetail.Procedure.Code"
       },
       {
         "identity" : "v2",
@@ -2465,7 +2485,7 @@
       },
       {
         "identity" : "sda",
-        "map" : "visit.serviceCategory,visit.visitString"
+        "map" : "Encounter.EncounterCodedType,Encounter.ExternalId,Encounter.ToTime"
       },
       {
         "identity" : "v2",
@@ -2690,6 +2710,10 @@
       {
         "identity" : "cdw",
         "map" : "Outpat.Visit.PatientIEN,Outpat.Workload.PatientIEN"
+      },
+      {
+        "identity" : "sda",
+        "map" : "Encounter.EncounterMRN"
       },
       {
         "identity" : "workflow",
@@ -3069,6 +3093,10 @@
         "map" : "Outpat.VProvider.ProviderIEN,Outpat.WorkloadVProvider.ProviderIEN"
       },
       {
+        "identity" : "sda",
+        "map" : "Encounter.ConsultingClinicians"
+      },
+      {
         "identity" : "workflow",
         "map" : "Event.performer.actor"
       },
@@ -3282,7 +3310,7 @@
       },
       {
         "identity" : "sda",
-        "map" : "visit.dateTime,visit.visitString"
+        "map" : "Encounter.CareProvider.Description,Encounter.CareProvider.Name"
       },
       {
         "identity" : "v2",
@@ -3329,6 +3357,10 @@
       {
         "identity" : "cdw",
         "map" : "Outpat.Visit.CheckOutDateTime,Outpat.Workload.CheckOutDateTime"
+      },
+      {
+        "identity" : "sda",
+        "map" : "Encounter.ToTime"
       },
       {
         "identity" : "v2",
@@ -3747,6 +3779,10 @@
         "map" : "Outpat.VDiagnosis.ICDIEN,Outpat.WorkloadVDiagnosis.ICDIEN\nDim.ICD10.ICD10Code,Dim.ICD9.ICD9Code"
       },
       {
+        "identity" : "sda",
+        "map" : "Diagnosis.Diagnosis,Diagnosis.CodeTableDetail.Diagnosis.Code"
+      },
+      {
         "identity" : "v2",
         "map" : "C*E.1"
       },
@@ -4147,6 +4183,10 @@
       {
         "identity" : "cdw",
         "map" : "Outpat.VDiagnosis.ProblemListIEN,Outpat.WorkloadVDiagnosis.ProblemListIEN"
+      },
+      {
+        "identity" : "sda",
+        "map" : "Diagnosis.DiagnosisExtension.ProblemId"
       },
       {
         "identity" : "workflow",
@@ -5258,7 +5298,7 @@
       },
       {
         "identity" : "sda",
-        "map" : "visit.stopCode"
+        "map" : "Encounter.EncounterExtension.StopCode"
       },
       {
         "identity" : "workflow",
@@ -5565,7 +5605,7 @@
       },
       {
         "identity" : "sda",
-        "map" : "visit.creditStopCode,visit.location,visit.service,visit.visitString"
+        "map" : "Encounter.ExternalId,Encounter.HealthCareFacility"
       },
       {
         "identity" : "workflow",
@@ -5727,7 +5767,7 @@
       },
       {
         "identity" : "sda",
-        "map" : "visit.facility"
+        "map" : "Encounter.EncounterMRNAA,Encounter.EncounterNumberAssigningAuthority,Encounter.EnteredAt"
       },
       {
         "identity" : "workflow",
@@ -5862,6 +5902,10 @@
       {
         "identity" : "cdw",
         "map" : "Outpat.Visit.VisitIdentifier,Outpat.Workload.VisitIdentifier"
+      },
+      {
+        "identity" : "sda",
+        "map" : "Encounter.EncounterExtension.VisitID,Encounter.EncounterExtension.VisitID"
       }]
     },
     {
@@ -5911,11 +5955,15 @@
       },
       {
         "identity" : "sda",
-        "map" : "visit.dateTime,visit.visitString"
+        "map" : "Encounter.CareProvider.Description,Encounter.CareProvider.Name"
       },
       {
         "identity" : "sda",
-        "map" : "visit.dateTime,visit.visitString"
+        "map" : "Encounter.CareProvider.Description,Encounter.CareProvider.Name"
+      },
+      {
+        "identity" : "sda",
+        "map" : "Encounter.ToTime"
       }]
     },
     {
@@ -5933,10 +5981,6 @@
       {
         "identity" : "cdw",
         "map" : "Outpat.Visit.PatientStatusInOut,Outpat.Workload.PatientStatusInOut"
-      },
-      {
-        "identity" : "sda",
-        "map" : "visit.patientClass"
       }]
     },
     {
@@ -5949,6 +5993,10 @@
       {
         "identity" : "cdw",
         "map" : "Outpat.VProcedure.CPTIEN,Outpat.VProcedureCPTModifier.CPTIEN,Outpat.VProcedureDiagnosis.CPTIEN,Outpat.WorkloadVProcedure.CPTIEN,Outpat.WorkloadVProcedureCPTModifier.CPTIEN,Outpat.WorkloadVProcedureDiagnosis.CPTIEN"
+      },
+      {
+        "identity" : "sda",
+        "map" : "Encounter.EncounterExtension.Cpt,Encounter.EncounterExtension.Cpt,Procedure.Procedure,Procedure.CodeTableDetail.Procedure.Code"
       }]
     },
     {
@@ -5974,6 +6022,10 @@
       {
         "identity" : "cdw",
         "map" : "Outpat.VProcedure.CPTIEN,Outpat.VProcedureCPTModifier.CPTIEN,Outpat.VProcedureDiagnosis.CPTIEN,Outpat.WorkloadVProcedure.CPTIEN,Outpat.WorkloadVProcedureCPTModifier.CPTIEN,Outpat.WorkloadVProcedureDiagnosis.CPTIEN\nDim.CPT.CPTCode,Dim.CPT.CPTCode"
+      },
+      {
+        "identity" : "sda",
+        "map" : "Encounter.EncounterExtension.Cpt,Encounter.EncounterExtension.Cpt,Procedure.Procedure,Procedure.CodeTableDetail.Procedure.Code"
       }]
     },
     {
@@ -5988,6 +6040,10 @@
       {
         "identity" : "cdw",
         "map" : "Outpat.VProcedure.CPTIEN,Outpat.VProcedureCPTModifier.CPTIEN,Outpat.VProcedureDiagnosis.CPTIEN,Outpat.WorkloadVProcedure.CPTIEN,Outpat.WorkloadVProcedureCPTModifier.CPTIEN,Outpat.WorkloadVProcedureDiagnosis.CPTIEN\nDim.CPT.CPTName,Dim.CPT.CPTName"
+      },
+      {
+        "identity" : "sda",
+        "map" : "Encounter.EncounterExtension.Cpt,Encounter.EncounterExtension.Cpt,Procedure.Procedure,Procedure.CodeTableDetail.Procedure.Code"
       }]
     },
     {
@@ -6002,6 +6058,10 @@
       {
         "identity" : "cdw",
         "map" : "Outpat.VProcedure.CPTIEN,Outpat.VProcedureCPTModifier.CPTIEN,Outpat.VProcedureDiagnosis.CPTIEN,Outpat.WorkloadVProcedure.CPTIEN,Outpat.WorkloadVProcedureCPTModifier.CPTIEN,Outpat.WorkloadVProcedureDiagnosis.CPTIEN\nDim.CPT.CPTName,Dim.CPT.CPTName"
+      },
+      {
+        "identity" : "sda",
+        "map" : "Encounter.EncounterExtension.Cpt,Encounter.EncounterExtension.Cpt,Procedure.Procedure,Procedure.CodeTableDetail.Procedure.Code"
       }]
     },
     {
@@ -6029,7 +6089,7 @@
       },
       {
         "identity" : "sda",
-        "map" : "visit.serviceCategory,visit.visitString"
+        "map" : "Encounter.EncounterCodedType,Encounter.ExternalId,Encounter.ToTime"
       }]
     },
     {
@@ -6046,6 +6106,10 @@
       {
         "identity" : "cdw",
         "map" : "Outpat.Visit.PatientIEN,Outpat.Workload.PatientIEN"
+      },
+      {
+        "identity" : "sda",
+        "map" : "Encounter.EncounterMRN"
       }]
     },
     {
@@ -6086,6 +6150,10 @@
       {
         "identity" : "cdw",
         "map" : "Outpat.VProvider.ProviderIEN,Outpat.WorkloadVProvider.ProviderIEN"
+      },
+      {
+        "identity" : "sda",
+        "map" : "Encounter.ConsultingClinicians"
       }]
     },
     {
@@ -6102,7 +6170,7 @@
       },
       {
         "identity" : "sda",
-        "map" : "visit.dateTime,visit.visitString"
+        "map" : "Encounter.CareProvider.Description,Encounter.CareProvider.Name"
       }]
     },
     {
@@ -6116,6 +6184,10 @@
       {
         "identity" : "cdw",
         "map" : "Outpat.Visit.CheckOutDateTime,Outpat.Workload.CheckOutDateTime"
+      },
+      {
+        "identity" : "sda",
+        "map" : "Encounter.ToTime"
       }]
     },
     {
@@ -6140,6 +6212,10 @@
       {
         "identity" : "cdw",
         "map" : "Outpat.VDiagnosis.ICDIEN,Outpat.WorkloadVDiagnosis.ICDIEN\nDim.ICD10.ICD10Code,Dim.ICD9.ICD9Code"
+      },
+      {
+        "identity" : "sda",
+        "map" : "Diagnosis.Diagnosis,Diagnosis.CodeTableDetail.Diagnosis.Code"
       }]
     },
     {
@@ -6157,6 +6233,10 @@
       {
         "identity" : "cdw",
         "map" : "Outpat.VDiagnosis.ProblemListIEN,Outpat.WorkloadVDiagnosis.ProblemListIEN"
+      },
+      {
+        "identity" : "sda",
+        "map" : "Diagnosis.DiagnosisExtension.ProblemId"
       }]
     },
     {
@@ -6200,7 +6280,7 @@
       },
       {
         "identity" : "sda",
-        "map" : "visit.stopCode"
+        "map" : "Encounter.EncounterExtension.StopCode"
       }]
     },
     {
@@ -6227,7 +6307,7 @@
       },
       {
         "identity" : "sda",
-        "map" : "visit.creditStopCode,visit.location,visit.service,visit.visitString"
+        "map" : "Encounter.ExternalId,Encounter.HealthCareFacility"
       }]
     },
     {
@@ -6247,7 +6327,7 @@
       },
       {
         "identity" : "sda",
-        "map" : "visit.facility"
+        "map" : "Encounter.EncounterMRNAA,Encounter.EncounterNumberAssigningAuthority,Encounter.EnteredAt"
       }]
     }]
   }

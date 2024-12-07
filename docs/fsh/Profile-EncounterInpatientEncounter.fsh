@@ -124,3 +124,18 @@ Source: EncounterInpatientEncounter
 * type.coding.code -> "Inpat.InpatientCPTProcedure.CPTIEN\nDim.CPT.CPTCode,Dim.CPT.CPTCode"
 * type.coding.display -> "Inpat.InpatientCPTProcedure.CPTIEN\nDim.CPT.CPTName,Dim.CPT.CPTName"
 * type.text -> "Inpat.InpatientCPTProcedure.CPTIEN\nDim.CPT.CPTName,Dim.CPT.CPTName"
+
+Mapping: sda-to-EncounterInpatientEncounter
+Id: sda
+Title: "Summary Document Architecure (SDA)"
+Source: EncounterInpatientEncounter
+* status -> "Diagnosis.FromTime"
+* status -> "Diagnosis.FromTime"
+* status -> "Diagnosis.ToTime"
+* subject -> "Diagnosis.CodeTableDetail.Diagnosis.Code"
+* participant.individual -> "Diagnosis.DiagnosingClinician"
+* period.start -> "Diagnosis.FromTime"
+* period.end -> "Diagnosis.ToTime"
+* reasonCode[va-principle].coding.code -> "Diagnosis.Diagnosis,Diagnosis.DiagnosisType"
+* location[va-facility].location -> "Diagnosis.EnteredAt,Procedure.EnteredAt"
+* serviceProvider -> "Diagnosis.EnteredAt,Procedure.EnteredAt"

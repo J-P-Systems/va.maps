@@ -53,7 +53,9 @@ Mapping: sda-to-SmokingStatusObservation
 Id: sda
 Title: "Summary Document Architecure (SDA)"
 Source: SmokingStatusObservation
-* code -> "healthFactor.category,healthFactor.name"
-* encounter -> "healthFactor.encounter,healthFactor.facility,healthFactor.recorded"
-* valueCodeableConcept -> "healthFactor.category,healthFactor.name"
-* note.text -> "healthFactor.comment"
+* code -> "Vaccination.OrderItem,SocialHistory.SocialHabit,SocialHistory.SocialHabitCategory,SocialHistory.SocialHistoryExtension.Category,SocialHistory.SocialHistoryExtension.QuantityLabel,SocialHistory.SocialHabitCategory.Description,FamilyHistory.Diagnosis,FamilyHistory.FamilyHistoryExtension.Category,FamilyHistory.Diagnosis.Description"
+* encounter -> "Vaccination.EncounterNumber,Vaccination.EnteredAt,Vaccination.EnteredBy,Vaccination.EnteredOn,Vaccination.Administration.AdministeredAtLocation,SocialHistory.EncounterNumber,SocialHistory.EnteredAt,SocialHistory.EnteredBy,SocialHistory.EnteredOn,FamilyHistory.EncounterNumber,FamilyHistory.EnteredAt,FamilyHistory.EnteredBy,FamilyHistory.EnteredOn"
+* effectiveDateTime -> "Vaccination.FromTime,Vaccination.ToTime,SocialHistory.FromTime,FamilyHistory.FromTime"
+* performer -> "Vaccination.Administration.AdministeringProvider"
+* valueCodeableConcept -> "Vaccination.OrderItem,SocialHistory.SocialHabit,SocialHistory.SocialHabitCategory,SocialHistory.SocialHistoryExtension.Category,SocialHistory.SocialHistoryExtension.QuantityLabel,SocialHistory.SocialHabitCategory.Description,FamilyHistory.Diagnosis,FamilyHistory.FamilyHistoryExtension.Category,FamilyHistory.Diagnosis.Description\nVaccination.Order.Description"
+* note.text -> "Vaccination.Administration.RefusalReason,SocialHistory.SocialHabitComments,FamilyHistory.NoteText"

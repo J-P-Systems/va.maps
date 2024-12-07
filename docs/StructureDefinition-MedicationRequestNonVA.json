@@ -10,11 +10,11 @@
     "valueCanonical" : "http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest|6.1.0"
   }],
   "url" : "http://va.gov/fhir/StructureDefinition/MedicationRequestNonVA",
-  "version" : "0.69.438",
+  "version" : "0.69.439",
   "name" : "MedicationRequestNonVA",
   "title" : "MedicationRequest: NonVA",
   "status" : "active",
-  "date" : "2024-12-06T17:18:58+00:00",
+  "date" : "2024-12-07T11:18:15+00:00",
   "publisher" : "VA",
   "contact" : [{
     "name" : "VA",
@@ -39,6 +39,10 @@
   {
     "identity" : "cdw",
     "name" : "Clinical Data Warehouse (CDW)"
+  },
+  {
+    "identity" : "sda",
+    "name" : "Summary Document Architecure (SDA)"
   },
   {
     "identity" : "workflow",
@@ -548,6 +552,10 @@
         "map" : "NonVAMed.NonVAMed.LocationIEN"
       },
       {
+        "identity" : "sda",
+        "map" : "Medication.EnteredAt,Medication.EnteringOrganization"
+      },
+      {
         "identity" : "rim",
         "map" : "N/A"
       }]
@@ -954,6 +962,10 @@
       {
         "identity" : "cdw",
         "map" : "NonVAMed.NonVAMed.CPRSOrderIEN"
+      },
+      {
+        "identity" : "sda",
+        "map" : "Medication.ExternalId,Medication.PlacerId"
       },
       {
         "identity" : "v2",
@@ -1497,6 +1509,10 @@
       {
         "identity" : "cdw",
         "map" : "NonVAMed.NonVAMed.NonVAMedStatus"
+      },
+      {
+        "identity" : "sda",
+        "map" : "Medication.PharmacyStatus,Medication.VAStatus"
       },
       {
         "identity" : "workflow",
@@ -2053,6 +2069,14 @@
       {
         "identity" : "cdw",
         "map" : "NonVAMed.NonVAMed.LocalDrugIEN"
+      },
+      {
+        "identity" : "sda",
+        "map" : "Medication.DosageForm,Medication.OrderItem,Medication.IsNonFormulary,Medication.PharmacyOrderItem"
+      },
+      {
+        "identity" : "sda",
+        "map" : "Medication.DrugProduct"
       },
       {
         "identity" : "workflow",
@@ -2656,6 +2680,10 @@
       {
         "identity" : "cdw",
         "map" : "NonVAMed.NonVAMed.DocumentedDateTime"
+      },
+      {
+        "identity" : "sda",
+        "map" : "Medication.EnteredOn"
       },
       {
         "identity" : "workflow",
@@ -3287,6 +3315,10 @@
         "map" : "NonVAMed.NonVAMed.DocumentedByStaffIEN"
       },
       {
+        "identity" : "sda",
+        "map" : "Medication.EnteredBy,Medication.OrderedBy"
+      },
+      {
         "identity" : "w5",
         "map" : "FiveWs.who"
       },
@@ -3809,6 +3841,14 @@
         "identity" : "vista",
         "map" : "1764: source value from NON-VA MEDS - DISCLAIMER (55.05-10)",
         "comment" : "Concatenate to Comment. Delimit with a period."
+      },
+      {
+        "identity" : "sda",
+        "map" : "Medication.Comments"
+      },
+      {
+        "identity" : "sda",
+        "map" : "Medication.Statement"
       },
       {
         "identity" : "workflow",
@@ -5194,6 +5234,10 @@
         "map" : "NonVAMed.NonVAMed.Schedule"
       },
       {
+        "identity" : "sda",
+        "map" : "Medication.Sig,Medication.Frequency"
+      },
+      {
         "identity" : "v2",
         "map" : "C*E.9. But note many systems use C*E.2 for this"
       },
@@ -5497,6 +5541,10 @@
       {
         "identity" : "cdw",
         "map" : "NonVAMed.NonVAMed.MedicationRoute"
+      },
+      {
+        "identity" : "sda",
+        "map" : "Medication.Route,Medication.Sig"
       },
       {
         "identity" : "v2",
@@ -5928,6 +5976,10 @@
       {
         "identity" : "cdw",
         "map" : "NonVAMed.NonVAMed.Dosage"
+      },
+      {
+        "identity" : "sda",
+        "map" : "Medication.Sig,Medication.DoseQuantity,Medication.TextInstruction"
       }]
     },
     {
@@ -7229,6 +7281,10 @@
       {
         "identity" : "cdw",
         "map" : "NonVAMed.NonVAMed.LocationIEN"
+      },
+      {
+        "identity" : "sda",
+        "map" : "Medication.EnteredAt,Medication.EnteringOrganization"
       }]
     },
     {
@@ -7272,6 +7328,10 @@
       {
         "identity" : "cdw",
         "map" : "NonVAMed.NonVAMed.CPRSOrderIEN"
+      },
+      {
+        "identity" : "sda",
+        "map" : "Medication.ExternalId,Medication.PlacerId"
       }]
     },
     {
@@ -7334,6 +7394,14 @@
       {
         "identity" : "cdw",
         "map" : "NonVAMed.NonVAMed.NonVAMedStatus"
+      },
+      {
+        "identity" : "sda",
+        "map" : "Medication.PharmacyStatus,Medication.VAStatus"
+      },
+      {
+        "identity" : "sda",
+        "map" : "Medication.PharmacyStatus,Medication.VAStatus"
       }]
     },
     {
@@ -7415,6 +7483,14 @@
       {
         "identity" : "cdw",
         "map" : "NonVAMed.NonVAMed.LocalDrugIEN"
+      },
+      {
+        "identity" : "sda",
+        "map" : "Medication.DosageForm,Medication.OrderItem,Medication.IsNonFormulary,Medication.PharmacyOrderItem"
+      },
+      {
+        "identity" : "sda",
+        "map" : "Medication.DrugProduct"
       }]
     },
     {
@@ -7448,6 +7524,10 @@
       {
         "identity" : "cdw",
         "map" : "NonVAMed.NonVAMed.DocumentedDateTime"
+      },
+      {
+        "identity" : "sda",
+        "map" : "Medication.EnteredOn"
       }]
     },
     {
@@ -7486,6 +7566,10 @@
       {
         "identity" : "cdw",
         "map" : "NonVAMed.NonVAMed.DocumentedByStaffIEN"
+      },
+      {
+        "identity" : "sda",
+        "map" : "Medication.EnteredBy,Medication.OrderedBy"
       }]
     },
     {
@@ -7510,6 +7594,14 @@
         "identity" : "vista",
         "map" : "1764: source value from NON-VA MEDS - DISCLAIMER (55.05-10)",
         "comment" : "Concatenate to Comment. Delimit with a period."
+      },
+      {
+        "identity" : "sda",
+        "map" : "Medication.Comments"
+      },
+      {
+        "identity" : "sda",
+        "map" : "Medication.Statement"
       }]
     },
     {
@@ -7531,6 +7623,10 @@
       {
         "identity" : "cdw",
         "map" : "NonVAMed.NonVAMed.Schedule"
+      },
+      {
+        "identity" : "sda",
+        "map" : "Medication.Sig,Medication.Frequency"
       }]
     },
     {
@@ -7544,6 +7640,10 @@
       {
         "identity" : "cdw",
         "map" : "NonVAMed.NonVAMed.MedicationRoute"
+      },
+      {
+        "identity" : "sda",
+        "map" : "Medication.Route,Medication.Sig"
       }]
     },
     {
@@ -7587,6 +7687,10 @@
       {
         "identity" : "cdw",
         "map" : "NonVAMed.NonVAMed.Dosage"
+      },
+      {
+        "identity" : "sda",
+        "map" : "Medication.Sig,Medication.DoseQuantity,Medication.TextInstruction"
       }]
     }]
   }

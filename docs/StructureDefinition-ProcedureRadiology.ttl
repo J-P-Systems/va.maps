@@ -20,11 +20,11 @@
      ]
   ] ) ; # 
   fhir:url [ fhir:v "http://va.gov/fhir/StructureDefinition/ProcedureRadiology"^^xsd:anyURI] ; # 
-  fhir:version [ fhir:v "0.69.438"] ; # 
+  fhir:version [ fhir:v "0.69.439"] ; # 
   fhir:name [ fhir:v "ProcedureRadiology"] ; # 
   fhir:title [ fhir:v "Procedure: Radiology"] ; # 
   fhir:status [ fhir:v "active"] ; # 
-  fhir:date [ fhir:v "2024-12-06T17:18:58+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2024-12-07T11:18:15+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "VA"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "VA" ] ;
@@ -1710,9 +1710,6 @@
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "Patient.RadiologyPatient.PatientIEN,Rad.RadiologyExam.PatientIEN,Rad.RadiologyExamActivityLog.PatientIEN,Rad.RadiologyExamContrastMedia.PatientIEN,Rad.RadiologyExamCPTModifier.PatientIEN,Rad.RadiologyExamMedication.PatientIEN,Rad.RadiologyExamSecondaryDiagnosticCode.PatientIEN,Rad.RadiologyExamStatusList.PatientIEN,Rad.RadiologyFilmRegistry.PatientIEN,Rad.RadiologyRegisteredExam.PatientIEN" ]
        ] [
-         fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "radiology.case,radiology.dateTime,radiology.modifier [m]" ]
-       ] [
          fhir:identity [ fhir:v "workflow" ] ;
          fhir:map [ fhir:v "Event.subject" ]
        ] [
@@ -1897,6 +1894,9 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "Rad.RadiologyExam.ExamDateTime,Rad.RadiologyExamActivityLog.ExamDateTime,Rad.RadiologyExamContrastMedia.ExamDateTime,Rad.RadiologyExamCPTModifier.ExamDateTime,Rad.RadiologyExamMedication.ExamDateTime,Rad.RadiologyExamSecondaryDiagnosticCode.ExamDateTime,Rad.RadiologyExamStatusList.ExamDateTime,Rad.RadiologyExamTechnologist.ExamDateTime,Rad.RadiologyRegisteredExam.ExamDateTime" ]
+       ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "RadOrder.Result.FromTime" ]
        ] [
          fhir:identity [ fhir:v "workflow" ] ;
          fhir:map [ fhir:v "Event.occurrence[x]" ]
@@ -2341,6 +2341,9 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "Rad.RadiologyRegisteredExam.RadiologyLocationIEN\nDim.RadiologyLocation.LocationIEN" ]
+       ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "RadOrder.Result.EnteredAt,RadOrder.Result.PerformedAt" ]
        ] [
          fhir:identity [ fhir:v "w5" ] ;
          fhir:map [ fhir:v "FiveWs.where[x]" ]
@@ -3155,9 +3158,6 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "Patient.RadiologyPatient.PatientIEN,Rad.RadiologyExam.PatientIEN,Rad.RadiologyExamActivityLog.PatientIEN,Rad.RadiologyExamContrastMedia.PatientIEN,Rad.RadiologyExamCPTModifier.PatientIEN,Rad.RadiologyExamMedication.PatientIEN,Rad.RadiologyExamSecondaryDiagnosticCode.PatientIEN,Rad.RadiologyExamStatusList.PatientIEN,Rad.RadiologyFilmRegistry.PatientIEN,Rad.RadiologyRegisteredExam.PatientIEN" ]
-       ] [
-         fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "radiology.case,radiology.dateTime,radiology.modifier [m]" ]
        ] )
      ] [
        fhir:id [ fhir:v "Procedure.encounter" ] ;
@@ -3209,6 +3209,9 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "Rad.RadiologyExam.ExamDateTime,Rad.RadiologyExamActivityLog.ExamDateTime,Rad.RadiologyExamContrastMedia.ExamDateTime,Rad.RadiologyExamCPTModifier.ExamDateTime,Rad.RadiologyExamMedication.ExamDateTime,Rad.RadiologyExamSecondaryDiagnosticCode.ExamDateTime,Rad.RadiologyExamStatusList.ExamDateTime,Rad.RadiologyExamTechnologist.ExamDateTime,Rad.RadiologyRegisteredExam.ExamDateTime" ]
+       ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "RadOrder.Result.FromTime" ]
        ] )
      ] [
        fhir:id [ fhir:v "Procedure.performer.actor" ] ;
@@ -3245,6 +3248,9 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "Rad.RadiologyRegisteredExam.RadiologyLocationIEN\nDim.RadiologyLocation.LocationIEN" ]
+       ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "RadOrder.Result.EnteredAt,RadOrder.Result.PerformedAt" ]
        ] )
      ] )
   ] . # 

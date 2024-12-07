@@ -20,11 +20,11 @@
      ]
   ] ) ; # 
   fhir:url [ fhir:v "http://va.gov/fhir/StructureDefinition/ImmunizationImmunization"^^xsd:anyURI] ; # 
-  fhir:version [ fhir:v "0.69.438"] ; # 
+  fhir:version [ fhir:v "0.69.439"] ; # 
   fhir:name [ fhir:v "ImmunizationImmunization"] ; # 
   fhir:title [ fhir:v "Immunization Immunization"] ; # 
   fhir:status [ fhir:v "active"] ; # 
-  fhir:date [ fhir:v "2024-12-06T17:18:58+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2024-12-07T11:18:15+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "VA"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "VA" ] ;
@@ -570,7 +570,10 @@
          fhir:map [ fhir:v "Immun.Immunization.ImmunizationNameIEN\nDim.ImmunizationName.ImmunizationName,Dim.PharmacyOrderableItem.ImmunizationName" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "immunization.cvx,immunization.name" ]
+         fhir:map [ fhir:v "Vaccination.MaxDoseQuantity,Vaccination.OrderItem,Vaccination.VaccinationExtension.CDCName,Vaccination.VaccinationExtension.Source,Vaccination.AdministrationSite.Description,Vaccination.VA.Manufacturer.Description\nVaccination.Order.Code,Vaccination.Route.Code,Vaccination.Order.Code" ]
+       ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Vaccination.MaxDoseQuantity,Vaccination.OrderItem,Vaccination.VaccinationExtension.CDCName,Vaccination.VaccinationExtension.Source,Vaccination.AdministrationSite.Description,Vaccination.VA.Manufacturer.Description\nVaccination.Order.Description,Vaccination.Route.Description,Vaccination.Order.Description,Vaccination.ObservationValueCode.Description" ]
        ] [
          fhir:identity [ fhir:v "workflow" ] ;
          fhir:map [ fhir:v "Event.status" ]
@@ -629,7 +632,7 @@
          fhir:map [ fhir:v "Immun.Immunization.ImmunizationNameIEN\nDim.ImmunizationName.ImmunizationName,Dim.PharmacyOrderableItem.ImmunizationName" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "immunization.cvx,immunization.name" ]
+         fhir:map [ fhir:v "Vaccination.MaxDoseQuantity,Vaccination.OrderItem,Vaccination.VaccinationExtension.CDCName,Vaccination.VaccinationExtension.Source,Vaccination.AdministrationSite.Description,Vaccination.VA.Manufacturer.Description\nVaccination.Order.Description,Vaccination.Route.Description,Vaccination.Order.Description,Vaccination.ObservationValueCode.Description" ]
        ] [
          fhir:identity [ fhir:v "workflow" ] ;
          fhir:map [ fhir:v "Event.statusReason" ]
@@ -693,7 +696,10 @@
          fhir:map [ fhir:v "Immun.Immunization.ImmunizationNameIEN\nDim.ImmunizationName.CVXCode" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "immunization.cvx,immunization.name" ]
+         fhir:map [ fhir:v "Vaccination.MaxDoseQuantity,Vaccination.OrderItem,Vaccination.VaccinationExtension.CDCName,Vaccination.VaccinationExtension.Source,Vaccination.AdministrationSite.Description,Vaccination.VA.Manufacturer.Description\nVaccination.Order.Description,Vaccination.Route.Description,Vaccination.Order.Description,Vaccination.ObservationValueCode.Description" ]
+       ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Vaccination.MaxDoseQuantity,Vaccination.OrderItem,Vaccination.VaccinationExtension.CDCName,Vaccination.VaccinationExtension.Source,Vaccination.AdministrationSite.Description,Vaccination.VA.Manufacturer.Description\nVaccination.Order.Code,Vaccination.Route.Code,Vaccination.Order.Code" ]
        ] [
          fhir:identity [ fhir:v "workflow" ] ;
          fhir:map [ fhir:v "Event.code" ]
@@ -1216,6 +1222,9 @@
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "Immun.Immunization.PatientIEN" ]
        ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Vaccination.AdministrationSite.Code,Vaccination.VA.Manufacturer.Code" ]
+       ] [
          fhir:identity [ fhir:v "workflow" ] ;
          fhir:map [ fhir:v "Event.subject" ]
        ] [
@@ -1278,7 +1287,7 @@
          fhir:map [ fhir:v "Immun.Immunization.OutsideLocation,Immun.Immunization.VisitDateTime,Immun.Immunization.VisitIEN" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "immunization.administered,immunization.encounter,immunization.facility,immunization.location" ]
+         fhir:map [ fhir:v "Vaccination.EncounterNumber,Vaccination.EnteredAt,Vaccination.Administration.AdministeredAtLocation" ]
        ] [
          fhir:identity [ fhir:v "workflow" ] ;
          fhir:map [ fhir:v "Event.context" ]
@@ -1403,6 +1412,9 @@
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "Immun.Immunization.EventDateTime" ]
        ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Vaccination.FromTime,Vaccination.ToTime" ]
+       ] [
          fhir:identity [ fhir:v "workflow" ] ;
          fhir:map [ fhir:v "Event.occurrence[x]" ]
        ] [
@@ -1505,7 +1517,7 @@
          fhir:map [ fhir:v "Immun.Immunization.ImmunizationInformationSourceIEN" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "immunization.source" ]
+         fhir:map [ fhir:v "Vaccination.VaccinationExtension.Source" ]
        ] [
          fhir:identity [ fhir:v "w5" ] ;
          fhir:map [ fhir:v "FiveWs.source" ]
@@ -1898,7 +1910,7 @@
          fhir:map [ fhir:v "Immun.Immunization.OutsideLocation,Immun.Immunization.VisitDateTime,Immun.Immunization.VisitIEN\nOutpat.Visit.LocationIEN,Outpat.Workload.LocationIEN" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "immunization.administered,immunization.encounter,immunization.facility,immunization.location\nvisit.creditStopCode,visit.location,visit.service,visit.visitString" ]
+         fhir:map [ fhir:v "Vaccination.EncounterNumber,Vaccination.EnteredAt,Vaccination.Administration.AdministeredAtLocation\nEncounter.ExternalId,Encounter.HealthCareFacility" ]
        ] [
          fhir:identity [ fhir:v "workflow" ] ;
          fhir:map [ fhir:v "Event.location" ]
@@ -2182,6 +2194,9 @@
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "Immun.Immunization.DoseUnit" ]
        ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Vaccination.Administration.AdministeredUnits" ]
+       ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "RXA-6 / RXA-7" ]
        ] [
@@ -2305,7 +2320,7 @@
          fhir:map [ fhir:v "Immun.Immunization.Dosage" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "immunization.dose" ]
+         fhir:map [ fhir:v "Vaccination.Administration.AdministeredAmount" ]
        ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "SN.2  / CQ - N/A" ]
@@ -2405,6 +2420,9 @@
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "Immun.Immunization.DoseUnit\nDim.UCUMCode.DescriptionOfTheUnit" ]
        ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Vaccination.Administration.AdministeredUnits" ]
+       ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "(see OBX.6 etc.) / CQ.2" ]
        ] [
@@ -2486,6 +2504,9 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "Immun.Immunization.DoseUnit\nDim.UCUMCode.UCUMCode" ]
+       ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Vaccination.Administration.AdministeredUnits" ]
        ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "(see OBX.6 etc.) / CQ.2" ]
@@ -2749,7 +2770,7 @@
          fhir:map [ fhir:v "Immun.Immunization.ImmunizingStaffIEN" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "immunization.provider" ]
+         fhir:map [ fhir:v "Vaccination.Administration.AdministeringProvider" ]
        ] [
          fhir:identity [ fhir:v "workflow" ] ;
          fhir:map [ fhir:v "Event.performer.actor" ]
@@ -2999,7 +3020,7 @@
          fhir:map [ fhir:v "Immun.Immunization.ImmunizationComments" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "immunization.comment" ]
+         fhir:map [ fhir:v "Vaccination.Comments" ]
        ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "N/A" ]
@@ -4175,7 +4196,7 @@
          fhir:map [ fhir:v "Immun.Immunization.Series" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "immunization.series" ]
+         fhir:map [ fhir:v "Vaccination.Administration.AdministrationStatus" ]
        ] [
          fhir:identity [ fhir:v "rim" ] ;
          fhir:map [ fhir:v "N/A" ]
@@ -4257,10 +4278,10 @@
          fhir:map [ fhir:v "Immun.Immunization.ImmunizationNameIEN\nDim.ImmunizationName.ImmunizationName,Dim.PharmacyOrderableItem.ImmunizationName" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "immunization.cvx,immunization.name" ]
+         fhir:map [ fhir:v "Vaccination.MaxDoseQuantity,Vaccination.OrderItem,Vaccination.VaccinationExtension.CDCName,Vaccination.VaccinationExtension.Source,Vaccination.AdministrationSite.Description,Vaccination.VA.Manufacturer.Description\nVaccination.Order.Code,Vaccination.Route.Code,Vaccination.Order.Code" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "immunization.cvx,immunization.name" ]
+         fhir:map [ fhir:v "Vaccination.MaxDoseQuantity,Vaccination.OrderItem,Vaccination.VaccinationExtension.CDCName,Vaccination.VaccinationExtension.Source,Vaccination.AdministrationSite.Description,Vaccination.VA.Manufacturer.Description\nVaccination.Order.Description,Vaccination.Route.Description,Vaccination.Order.Description,Vaccination.ObservationValueCode.Description" ]
        ] )
      ] [
        fhir:id [ fhir:v "Immunization.statusReason" ] ;
@@ -4280,7 +4301,7 @@
          fhir:map [ fhir:v "Immun.Immunization.ImmunizationNameIEN\nDim.ImmunizationName.ImmunizationName,Dim.PharmacyOrderableItem.ImmunizationName" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "immunization.cvx,immunization.name" ]
+         fhir:map [ fhir:v "Vaccination.MaxDoseQuantity,Vaccination.OrderItem,Vaccination.VaccinationExtension.CDCName,Vaccination.VaccinationExtension.Source,Vaccination.AdministrationSite.Description,Vaccination.VA.Manufacturer.Description\nVaccination.Order.Description,Vaccination.Route.Description,Vaccination.Order.Description,Vaccination.ObservationValueCode.Description" ]
        ] )
      ] [
        fhir:id [ fhir:v "Immunization.vaccineCode" ] ;
@@ -4308,10 +4329,10 @@
          fhir:map [ fhir:v "Immun.Immunization.ImmunizationNameIEN\nDim.ImmunizationName.CVXCode" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "immunization.cvx,immunization.name" ]
+         fhir:map [ fhir:v "Vaccination.MaxDoseQuantity,Vaccination.OrderItem,Vaccination.VaccinationExtension.CDCName,Vaccination.VaccinationExtension.Source,Vaccination.AdministrationSite.Description,Vaccination.VA.Manufacturer.Description\nVaccination.Order.Description,Vaccination.Route.Description,Vaccination.Order.Description,Vaccination.ObservationValueCode.Description" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "immunization.cvx,immunization.name" ]
+         fhir:map [ fhir:v "Vaccination.MaxDoseQuantity,Vaccination.OrderItem,Vaccination.VaccinationExtension.CDCName,Vaccination.VaccinationExtension.Source,Vaccination.AdministrationSite.Description,Vaccination.VA.Manufacturer.Description\nVaccination.Order.Code,Vaccination.Route.Code,Vaccination.Order.Code" ]
        ] )
      ] [
        fhir:id [ fhir:v "Immunization.vaccineCode.coding.system" ] ;
@@ -4352,6 +4373,9 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "Immun.Immunization.PatientIEN" ]
+       ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Vaccination.AdministrationSite.Code,Vaccination.VA.Manufacturer.Code" ]
        ] )
      ] [
        fhir:id [ fhir:v "Immunization.encounter" ] ;
@@ -4372,7 +4396,7 @@
          fhir:map [ fhir:v "Immun.Immunization.OutsideLocation,Immun.Immunization.VisitDateTime,Immun.Immunization.VisitIEN" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "immunization.administered,immunization.encounter,immunization.facility,immunization.location" ]
+         fhir:map [ fhir:v "Vaccination.EncounterNumber,Vaccination.EnteredAt,Vaccination.Administration.AdministeredAtLocation" ]
        ] )
      ] [
        fhir:id [ fhir:v "Immunization.occurrence[x]" ] ;
@@ -4405,6 +4429,9 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "Immun.Immunization.EventDateTime" ]
+       ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Vaccination.FromTime,Vaccination.ToTime" ]
        ] )
      ] [
        fhir:id [ fhir:v "Immunization.recorded" ] ;
@@ -4429,7 +4456,7 @@
          fhir:map [ fhir:v "Immun.Immunization.ImmunizationInformationSourceIEN" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "immunization.source" ]
+         fhir:map [ fhir:v "Vaccination.VaccinationExtension.Source" ]
        ] )
      ] [
        fhir:id [ fhir:v "Immunization.primarySource.extension" ] ;
@@ -4482,7 +4509,7 @@
          fhir:map [ fhir:v "Immun.Immunization.OutsideLocation,Immun.Immunization.VisitDateTime,Immun.Immunization.VisitIEN\nOutpat.Visit.LocationIEN,Outpat.Workload.LocationIEN" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "immunization.administered,immunization.encounter,immunization.facility,immunization.location\nvisit.creditStopCode,visit.location,visit.service,visit.visitString" ]
+         fhir:map [ fhir:v "Vaccination.EncounterNumber,Vaccination.EnteredAt,Vaccination.Administration.AdministeredAtLocation\nEncounter.ExternalId,Encounter.HealthCareFacility" ]
        ] )
      ] [
        fhir:id [ fhir:v "Immunization.manufacturer" ] ;
@@ -4517,6 +4544,9 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "Immun.Immunization.DoseUnit" ]
+       ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Vaccination.Administration.AdministeredUnits" ]
        ] )
      ] [
        fhir:id [ fhir:v "Immunization.doseQuantity.value" ] ;
@@ -4530,7 +4560,7 @@
          fhir:map [ fhir:v "Immun.Immunization.Dosage" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "immunization.dose" ]
+         fhir:map [ fhir:v "Vaccination.Administration.AdministeredAmount" ]
        ] )
      ] [
        fhir:id [ fhir:v "Immunization.doseQuantity.unit" ] ;
@@ -4543,6 +4573,9 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "Immun.Immunization.DoseUnit\nDim.UCUMCode.DescriptionOfTheUnit" ]
+       ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Vaccination.Administration.AdministeredUnits" ]
        ] )
      ] [
        fhir:id [ fhir:v "Immunization.doseQuantity.code" ] ;
@@ -4555,6 +4588,9 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "Immun.Immunization.DoseUnit\nDim.UCUMCode.UCUMCode" ]
+       ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Vaccination.Administration.AdministeredUnits" ]
        ] )
      ] [
        fhir:id [ fhir:v "Immunization.performer.function" ] ;
@@ -4592,7 +4628,7 @@
          fhir:map [ fhir:v "Immun.Immunization.ImmunizingStaffIEN" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "immunization.provider" ]
+         fhir:map [ fhir:v "Vaccination.Administration.AdministeringProvider" ]
        ] )
      ] [
        fhir:id [ fhir:v "Immunization.note.text" ] ;
@@ -4606,7 +4642,7 @@
          fhir:map [ fhir:v "Immun.Immunization.ImmunizationComments" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "immunization.comment" ]
+         fhir:map [ fhir:v "Vaccination.Comments" ]
        ] )
      ] [
        fhir:id [ fhir:v "Immunization.reaction.detail" ] ;
@@ -4653,7 +4689,7 @@
          fhir:map [ fhir:v "Immun.Immunization.Series" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "immunization.series" ]
+         fhir:map [ fhir:v "Vaccination.Administration.AdministrationStatus" ]
        ] )
      ] )
   ] . # 

@@ -20,11 +20,11 @@
      ]
   ] ) ; # 
   fhir:url [ fhir:v "http://va.gov/fhir/StructureDefinition/MedicationRequestOutpatient"^^xsd:anyURI] ; # 
-  fhir:version [ fhir:v "0.69.438"] ; # 
+  fhir:version [ fhir:v "0.69.439"] ; # 
   fhir:name [ fhir:v "MedicationRequestOutpatient"] ; # 
   fhir:title [ fhir:v "MedicationRequest: Outpatient"] ; # 
   fhir:status [ fhir:v "active"] ; # 
-  fhir:date [ fhir:v "2024-12-06T17:18:58+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2024-12-07T11:18:15+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "VA"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "VA" ] ;
@@ -806,6 +806,9 @@
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "RxOut.RxOutpat.RxStatus" ]
        ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Medication.PharmacyStatus,Medication.VAStatus" ]
+       ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "C*E.1" ]
        ] [
@@ -1076,6 +1079,9 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "RxOut.RxOutpat.CancelDate" ]
+       ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Medication.ToTime,Medication.DiscontinuedDateTime" ]
        ] [
          fhir:identity [ fhir:v "rim" ] ;
          fhir:map [ fhir:v "N/A" ]
@@ -1809,7 +1815,7 @@
          fhir:map [ fhir:v "RxOut.RxOutpat.RxNumber" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "pharmacy (med).dose,med.dose" ]
+         fhir:map [ fhir:v "Medication.PrescriptionNumber,Medication.FillDate" ]
        ] [
          fhir:identity [ fhir:v "workflow" ] ;
          fhir:map [ fhir:v "Request.identifier" ]
@@ -1870,6 +1876,9 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "RxOut.RxOutpat.RxStatus" ]
+       ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Medication.PharmacyStatus,Medication.VAStatus" ]
        ] [
          fhir:identity [ fhir:v "workflow" ] ;
          fhir:map [ fhir:v "Request.status" ]
@@ -2722,7 +2731,7 @@
          fhir:map [ fhir:v "RxOut.RxOutpat.LocalDrugIEN,RxOut.RxOutpat.NationalDrugIEN,RxOut.RxOutpatFill.LocalDrugIEN,RxOut.RxOutpatFill.NationalDrugIEN" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "pharmacy (med).route,med.route" ]
+         fhir:map [ fhir:v "Medication.DrugProduct,Medication.CMOP" ]
        ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "C*E.1" ]
@@ -2859,7 +2868,7 @@
          fhir:map [ fhir:v "RxOut.RxOutpat.LocalDrugIEN,RxOut.RxOutpat.NationalDrugIEN,RxOut.RxOutpatFill.LocalDrugIEN,RxOut.RxOutpatFill.NationalDrugIEN" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "pharmacy (med).route,med.route" ]
+         fhir:map [ fhir:v "Medication.DrugProduct,Medication.CMOP" ]
        ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "C*E.9. But note many systems use C*E.2 for this" ]
@@ -2910,9 +2919,6 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "RxOut.ActivityLog.PatientIEN,RxOut.ActivityLogOtherComments.PatientIEN,RxOut.RxOutpat.PatientIEN,RxOut.RxOutpatExt.PatientIEN,RxOut.RxOutpatExt.PatientSID,RxOut.RxOutpatFill.PatientIEN,RxOut.RxOutpatMedInstructions.PatientIEN,RxOut.RxOutpatSig.PatientIEN" ]
-       ] [
-         fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "pharmacy (med).units,med.units" ]
        ] [
          fhir:identity [ fhir:v "workflow" ] ;
          fhir:map [ fhir:v "Request.subject" ]
@@ -3068,7 +3074,7 @@
          fhir:map [ fhir:v "RxOut.ActivityLog.IssueDateTime,RxOut.RxOutpat.IssueDate,RxOut.RxOutpatExt.IssueDateTime,RxOut.RxOutpatFill.IssueDate,RxOut.RxOutpatMedInstructions.IssueDate,RxOut.RxOutpatSig.IssueDate" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "pharmacy (med).unitsPerDose,med.unitsPerDose" ]
+         fhir:map [ fhir:v "Medication.VAStartDate,Medication.FillQuantity" ]
        ] [
          fhir:identity [ fhir:v "workflow" ] ;
          fhir:map [ fhir:v "Request.authoredOn" ]
@@ -3130,7 +3136,7 @@
          fhir:map [ fhir:v "RxOut.RxOutpat.ProviderIEN" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "pharmacy (med).currentProvider,pharmacy (med).doseStart,pharmacy (med).doseStop,pharmacy (med).duration,med.currentProvider,med.doseStart,med.doseStop,med.duration" ]
+         fhir:map [ fhir:v "Medication.OrderedBy" ]
        ] [
          fhir:identity [ fhir:v "workflow" ] ;
          fhir:map [ fhir:v "Request.requester" ]
@@ -3510,6 +3516,9 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "RxOut.RxOutpatExt.IndicationForUse" ]
+       ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Medication.Indication" ]
        ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "C*E.9. But note many systems use C*E.2 for this" ]
@@ -4167,6 +4176,9 @@
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "RxOut.RxOutpatSig.PatientInstructions" ]
        ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Medication.TextInstruction" ]
+       ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "RXO-7" ]
        ] [
@@ -4673,7 +4685,7 @@
          fhir:map [ fhir:v "RxOut.RxOutpatMedInstructions.MedRoute" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "pharmacy (med).dose [m],med.dose [m]" ]
+         fhir:map [ fhir:v "Medication.DosageSteps,Medication.Route,Medication.DoseQuantity,Medication.DoseUoM,Medication.Duration,Medication.Frequency,Medication.TextInstruction,Medication.Conjunction,Medication.Noun,Medication.UnitsPerDose,Medication.Verb" ]
        ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "C*E.1" ]
@@ -5152,7 +5164,7 @@
          fhir:map [ fhir:v "RxOut.RxOutpatMedInstructions.DoseOrdered" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "pharmacy (med).dose [m],med.dose [m]" ]
+         fhir:map [ fhir:v "Medication.DosageSteps,Medication.Route,Medication.DoseQuantity,Medication.DoseUoM,Medication.Duration,Medication.Frequency,Medication.TextInstruction,Medication.Conjunction,Medication.Noun,Medication.UnitsPerDose,Medication.Verb" ]
        ] [
          fhir:identity [ fhir:v "rim" ] ;
          fhir:map [ fhir:v "N/A" ]
@@ -5435,7 +5447,7 @@
          fhir:map [ fhir:v "RxOut.RxOutpatMedInstructions.DoseOrdered" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "pharmacy (med).dose [m],med.dose [m]" ]
+         fhir:map [ fhir:v "Medication.DosageSteps,Medication.Route,Medication.DoseQuantity,Medication.DoseUoM,Medication.Duration,Medication.Frequency,Medication.TextInstruction,Medication.Conjunction,Medication.Noun,Medication.UnitsPerDose,Medication.Verb" ]
        ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "SN.2  / CQ - N/A" ]
@@ -5535,7 +5547,7 @@
          fhir:map [ fhir:v "RxOut.RxOutpatMedInstructions.Unit" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "pharmacy (med).dose [m],med.dose [m]" ]
+         fhir:map [ fhir:v "Medication.DosageSteps,Medication.Route,Medication.DoseQuantity,Medication.DoseUoM,Medication.Duration,Medication.Frequency,Medication.TextInstruction,Medication.Conjunction,Medication.Noun,Medication.UnitsPerDose,Medication.Verb" ]
        ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "(see OBX.6 etc.) / CQ.2" ]
@@ -6364,7 +6376,7 @@
          fhir:comment [ fhir:v "confirm" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "pharmacy (med).expires,med.expires" ]
+         fhir:map [ fhir:v "Medication.ToTime,Medication.Expires" ]
        ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "DR.2" ]
@@ -6409,6 +6421,9 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "RxOut.RxOutpat.MaxRefills" ]
+       ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Medication.NumberOfRefills" ]
        ] [
          fhir:identity [ fhir:v "script10.6" ] ;
          fhir:map [ fhir:v "Message/Body/NewRx/MedicationPrescribed/Quantity" ]
@@ -6575,7 +6590,7 @@
          fhir:map [ fhir:v "1669: source value from PRESCRIPTION - QTY (52-7)" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "pharmacy (med).schedule,med.schedule" ]
+         fhir:map [ fhir:v "Medication.OrderQuantity" ]
        ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "SN.2  / CQ - N/A" ]
@@ -6782,7 +6797,7 @@
          fhir:map [ fhir:v "1670: source value from PRESCRIPTION - DAYS SUPPLY (52-8)" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "pharmacy (med).daysSupply,med.daysSupply" ]
+         fhir:map [ fhir:v "Medication.DaysSupply" ]
        ] [
          fhir:identity [ fhir:v "script10.6" ] ;
          fhir:map [ fhir:v "Message/Body/NewRx/MedicationPrescribed/Substitutions" ]
@@ -7284,6 +7299,9 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "RxOut.RxOutpat.RxStatus" ]
+       ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Medication.PharmacyStatus,Medication.VAStatus" ]
        ] )
      ] [
        fhir:id [ fhir:v "MedicationRequest.extension:medicationrequest-cancelDate" ] ;
@@ -7308,6 +7326,9 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "RxOut.RxOutpat.CancelDate" ]
+       ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Medication.ToTime,Medication.DiscontinuedDateTime" ]
        ] )
      ] [
        fhir:id [ fhir:v "MedicationRequest.extension:medicationrequest-includeIndicationInSig" ] ;
@@ -7398,7 +7419,7 @@
          fhir:map [ fhir:v "RxOut.RxOutpat.RxNumber" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "pharmacy (med).dose,med.dose" ]
+         fhir:map [ fhir:v "Medication.PrescriptionNumber,Medication.FillDate" ]
        ] )
      ] [
        fhir:id [ fhir:v "MedicationRequest.status" ] ;
@@ -7416,6 +7437,9 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "RxOut.RxOutpat.RxStatus" ]
+       ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Medication.PharmacyStatus,Medication.VAStatus" ]
        ] )
      ] [
        fhir:id [ fhir:v "MedicationRequest.intent" ] ;
@@ -7483,7 +7507,7 @@
          fhir:map [ fhir:v "RxOut.RxOutpat.LocalDrugIEN,RxOut.RxOutpat.NationalDrugIEN,RxOut.RxOutpatFill.LocalDrugIEN,RxOut.RxOutpatFill.NationalDrugIEN" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "pharmacy (med).route,med.route" ]
+         fhir:map [ fhir:v "Medication.DrugProduct,Medication.CMOP" ]
        ] )
      ] [
        fhir:id [ fhir:v "MedicationRequest.medication[x]:medicationCodeableConcept.text" ] ;
@@ -7497,7 +7521,7 @@
          fhir:map [ fhir:v "RxOut.RxOutpat.LocalDrugIEN,RxOut.RxOutpat.NationalDrugIEN,RxOut.RxOutpatFill.LocalDrugIEN,RxOut.RxOutpatFill.NationalDrugIEN" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "pharmacy (med).route,med.route" ]
+         fhir:map [ fhir:v "Medication.DrugProduct,Medication.CMOP" ]
        ] )
      ] [
        fhir:id [ fhir:v "MedicationRequest.subject" ] ;
@@ -7515,9 +7539,6 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "RxOut.ActivityLog.PatientIEN,RxOut.ActivityLogOtherComments.PatientIEN,RxOut.RxOutpat.PatientIEN,RxOut.RxOutpatExt.PatientIEN,RxOut.RxOutpatExt.PatientSID,RxOut.RxOutpatFill.PatientIEN,RxOut.RxOutpatMedInstructions.PatientIEN,RxOut.RxOutpatSig.PatientIEN" ]
-       ] [
-         fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "pharmacy (med).units,med.units" ]
        ] )
      ] [
        fhir:id [ fhir:v "MedicationRequest.authoredOn" ] ;
@@ -7531,7 +7552,7 @@
          fhir:map [ fhir:v "RxOut.ActivityLog.IssueDateTime,RxOut.RxOutpat.IssueDate,RxOut.RxOutpatExt.IssueDateTime,RxOut.RxOutpatFill.IssueDate,RxOut.RxOutpatMedInstructions.IssueDate,RxOut.RxOutpatSig.IssueDate" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "pharmacy (med).unitsPerDose,med.unitsPerDose" ]
+         fhir:map [ fhir:v "Medication.VAStartDate,Medication.FillQuantity" ]
        ] )
      ] [
        fhir:id [ fhir:v "MedicationRequest.requester" ] ;
@@ -7552,7 +7573,7 @@
          fhir:map [ fhir:v "RxOut.RxOutpat.ProviderIEN" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "pharmacy (med).currentProvider,pharmacy (med).doseStart,pharmacy (med).doseStop,pharmacy (med).duration,med.currentProvider,med.doseStart,med.doseStop,med.duration" ]
+         fhir:map [ fhir:v "Medication.OrderedBy" ]
        ] )
      ] [
        fhir:id [ fhir:v "MedicationRequest.reasonCode.text" ] ;
@@ -7564,6 +7585,9 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "RxOut.RxOutpatExt.IndicationForUse" ]
+       ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Medication.Indication" ]
        ] )
      ] [
        fhir:id [ fhir:v "MedicationRequest.dosageInstruction.text" ] ;
@@ -7582,6 +7606,9 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "RxOut.RxOutpatSig.PatientInstructions" ]
+       ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Medication.TextInstruction" ]
        ] )
      ] [
        fhir:id [ fhir:v "MedicationRequest.dosageInstruction.route.coding.system" ] ;
@@ -7605,7 +7632,7 @@
          fhir:map [ fhir:v "RxOut.RxOutpatMedInstructions.MedRoute" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "pharmacy (med).dose [m],med.dose [m]" ]
+         fhir:map [ fhir:v "Medication.DosageSteps,Medication.Route,Medication.DoseQuantity,Medication.DoseUoM,Medication.Duration,Medication.Frequency,Medication.TextInstruction,Medication.Conjunction,Medication.Noun,Medication.UnitsPerDose,Medication.Verb" ]
        ] )
      ] [
        fhir:id [ fhir:v "MedicationRequest.dosageInstruction.doseAndRate.extension:originalText" ] ;
@@ -7632,7 +7659,7 @@
          fhir:map [ fhir:v "RxOut.RxOutpatMedInstructions.DoseOrdered" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "pharmacy (med).dose [m],med.dose [m]" ]
+         fhir:map [ fhir:v "Medication.DosageSteps,Medication.Route,Medication.DoseQuantity,Medication.DoseUoM,Medication.Duration,Medication.Frequency,Medication.TextInstruction,Medication.Conjunction,Medication.Noun,Medication.UnitsPerDose,Medication.Verb" ]
        ] )
      ] [
        fhir:id [ fhir:v "MedicationRequest.dosageInstruction.doseAndRate.dose[x]" ] ;
@@ -7670,7 +7697,7 @@
          fhir:map [ fhir:v "RxOut.RxOutpatMedInstructions.DoseOrdered" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "pharmacy (med).dose [m],med.dose [m]" ]
+         fhir:map [ fhir:v "Medication.DosageSteps,Medication.Route,Medication.DoseQuantity,Medication.DoseUoM,Medication.Duration,Medication.Frequency,Medication.TextInstruction,Medication.Conjunction,Medication.Noun,Medication.UnitsPerDose,Medication.Verb" ]
        ] )
      ] [
        fhir:id [ fhir:v "MedicationRequest.dosageInstruction.doseAndRate.dose[x]:doseQuantity.unit" ] ;
@@ -7684,7 +7711,7 @@
          fhir:map [ fhir:v "RxOut.RxOutpatMedInstructions.Unit" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "pharmacy (med).dose [m],med.dose [m]" ]
+         fhir:map [ fhir:v "Medication.DosageSteps,Medication.Route,Medication.DoseQuantity,Medication.DoseUoM,Medication.Duration,Medication.Frequency,Medication.TextInstruction,Medication.Conjunction,Medication.Noun,Medication.UnitsPerDose,Medication.Verb" ]
        ] )
      ] [
        fhir:id [ fhir:v "MedicationRequest.dispenseRequest.validityPeriod.end" ] ;
@@ -7696,7 +7723,7 @@
          fhir:comment [ fhir:v "confirm" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "pharmacy (med).expires,med.expires" ]
+         fhir:map [ fhir:v "Medication.ToTime,Medication.Expires" ]
        ] )
      ] [
        fhir:id [ fhir:v "MedicationRequest.dispenseRequest.numberOfRepeatsAllowed" ] ;
@@ -7709,6 +7736,9 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "RxOut.RxOutpat.MaxRefills" ]
+       ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Medication.NumberOfRefills" ]
        ] )
      ] [
        fhir:id [ fhir:v "MedicationRequest.dispenseRequest.quantity.value" ] ;
@@ -7719,7 +7749,7 @@
          fhir:map [ fhir:v "1669: source value from PRESCRIPTION - QTY (52-7)" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "pharmacy (med).schedule,med.schedule" ]
+         fhir:map [ fhir:v "Medication.OrderQuantity" ]
        ] )
      ] [
        fhir:id [ fhir:v "MedicationRequest.dispenseRequest.expectedSupplyDuration" ] ;
@@ -7730,7 +7760,7 @@
          fhir:map [ fhir:v "1670: source value from PRESCRIPTION - DAYS SUPPLY (52-8)" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "pharmacy (med).daysSupply,med.daysSupply" ]
+         fhir:map [ fhir:v "Medication.DaysSupply" ]
        ] )
      ] )
   ] . # 

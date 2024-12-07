@@ -53,4 +53,8 @@ Mapping: sda-to-LabObservationMicrobiologyObservation
 Id: sda
 Title: "Summary Document Architecure (SDA)"
 Source: LabObservationMicrobiologyObservation
-* subject -> "demographics.lrdfn\naccession.collected"
+* performer -> "Documents.EnteredAt,LabOrder.Result.EnteredAt"
+* performer -> "Documents.Clinician,Documents.DocumentExtension.CareProviders,LabOrder.Result.VerifiedBy"
+* specimen -> "LabOrder.ResultExtension.GroupName"
+* issued -> "Documents.ToTime,LabOrder.Result.ResultTime"
+* subject -> "Patient.PatientExtension.VeteranLrdfn"

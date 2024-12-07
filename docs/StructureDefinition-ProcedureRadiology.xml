@@ -27,11 +27,11 @@
     <valueCanonical value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure|6.1.0"/>
   </extension>
   <url value="http://va.gov/fhir/StructureDefinition/ProcedureRadiology"/>
-  <version value="0.69.438"/>
+  <version value="0.69.439"/>
   <name value="ProcedureRadiology"/>
   <title value="Procedure: Radiology"/>
   <status value="active"/>
-  <date value="2024-12-06T17:18:58+00:00"/>
+  <date value="2024-12-07T11:18:15+00:00"/>
   <publisher value="VA"/>
   <contact>
     <name value="VA"/>
@@ -1607,10 +1607,6 @@
         <map value="Patient.RadiologyPatient.PatientIEN,Rad.RadiologyExam.PatientIEN,Rad.RadiologyExamActivityLog.PatientIEN,Rad.RadiologyExamContrastMedia.PatientIEN,Rad.RadiologyExamCPTModifier.PatientIEN,Rad.RadiologyExamMedication.PatientIEN,Rad.RadiologyExamSecondaryDiagnosticCode.PatientIEN,Rad.RadiologyExamStatusList.PatientIEN,Rad.RadiologyFilmRegistry.PatientIEN,Rad.RadiologyRegisteredExam.PatientIEN"/>
       </mapping>
       <mapping>
-        <identity value="sda"/>
-        <map value="radiology.case,radiology.dateTime,radiology.modifier [m]"/>
-      </mapping>
-      <mapping>
         <identity value="workflow"/>
         <map value="Event.subject"/>
       </mapping>
@@ -1800,6 +1796,10 @@
       <mapping>
         <identity value="cdw"/>
         <map value="Rad.RadiologyExam.ExamDateTime,Rad.RadiologyExamActivityLog.ExamDateTime,Rad.RadiologyExamContrastMedia.ExamDateTime,Rad.RadiologyExamCPTModifier.ExamDateTime,Rad.RadiologyExamMedication.ExamDateTime,Rad.RadiologyExamSecondaryDiagnosticCode.ExamDateTime,Rad.RadiologyExamStatusList.ExamDateTime,Rad.RadiologyExamTechnologist.ExamDateTime,Rad.RadiologyRegisteredExam.ExamDateTime"/>
+      </mapping>
+      <mapping>
+        <identity value="sda"/>
+        <map value="RadOrder.Result.FromTime"/>
       </mapping>
       <mapping>
         <identity value="workflow"/>
@@ -2200,6 +2200,10 @@
       <mapping>
         <identity value="cdw"/>
         <map value="Rad.RadiologyRegisteredExam.RadiologyLocationIEN&#xA;Dim.RadiologyLocation.LocationIEN"/>
+      </mapping>
+      <mapping>
+        <identity value="sda"/>
+        <map value="RadOrder.Result.EnteredAt,RadOrder.Result.PerformedAt"/>
       </mapping>
       <mapping>
         <identity value="w5"/>
@@ -2913,10 +2917,6 @@
         <identity value="cdw"/>
         <map value="Patient.RadiologyPatient.PatientIEN,Rad.RadiologyExam.PatientIEN,Rad.RadiologyExamActivityLog.PatientIEN,Rad.RadiologyExamContrastMedia.PatientIEN,Rad.RadiologyExamCPTModifier.PatientIEN,Rad.RadiologyExamMedication.PatientIEN,Rad.RadiologyExamSecondaryDiagnosticCode.PatientIEN,Rad.RadiologyExamStatusList.PatientIEN,Rad.RadiologyFilmRegistry.PatientIEN,Rad.RadiologyRegisteredExam.PatientIEN"/>
       </mapping>
-      <mapping>
-        <identity value="sda"/>
-        <map value="radiology.case,radiology.dateTime,radiology.modifier [m]"/>
-      </mapping>
     </element>
     <element id="Procedure.encounter">
       <path value="Procedure.encounter"/>
@@ -2966,6 +2966,10 @@
         <identity value="cdw"/>
         <map value="Rad.RadiologyExam.ExamDateTime,Rad.RadiologyExamActivityLog.ExamDateTime,Rad.RadiologyExamContrastMedia.ExamDateTime,Rad.RadiologyExamCPTModifier.ExamDateTime,Rad.RadiologyExamMedication.ExamDateTime,Rad.RadiologyExamSecondaryDiagnosticCode.ExamDateTime,Rad.RadiologyExamStatusList.ExamDateTime,Rad.RadiologyExamTechnologist.ExamDateTime,Rad.RadiologyRegisteredExam.ExamDateTime"/>
       </mapping>
+      <mapping>
+        <identity value="sda"/>
+        <map value="RadOrder.Result.FromTime"/>
+      </mapping>
     </element>
     <element id="Procedure.performer.actor">
       <path value="Procedure.performer.actor"/>
@@ -2997,6 +3001,10 @@
       <mapping>
         <identity value="cdw"/>
         <map value="Rad.RadiologyRegisteredExam.RadiologyLocationIEN&#xA;Dim.RadiologyLocation.LocationIEN"/>
+      </mapping>
+      <mapping>
+        <identity value="sda"/>
+        <map value="RadOrder.Result.EnteredAt,RadOrder.Result.PerformedAt"/>
       </mapping>
     </element>
   </differential>

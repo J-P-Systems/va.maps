@@ -52,4 +52,11 @@ Mapping: sda-to-ConditionEncounterDiagnosis
 Id: sda
 Title: "Summary Document Architecure (SDA)"
 Source: ConditionEncounterDiagnosis
-* recordedDate -> "visit.dateTime,visit.visitString"
+* code -> "Diagnosis.Diagnosis,Diagnosis.CodeTableDetail.Diagnosis.Code"
+* code.coding.code -> "Diagnosis.Diagnosis,Diagnosis.CodeTableDetail.Diagnosis.Code"
+* encounter -> "Diagnosis.EncounterNumber,Diagnosis.EnteredAt,Diagnosis.EnteredBy,Diagnosis.EnteredOn,Diagnosis.FromTime,Diagnosis.ToTime"
+* onsetDateTime -> "Diagnosis.OnsetTime"
+* recordedDate -> "Diagnosis.EncounterNumber,Diagnosis.EnteredAt,Diagnosis.EnteredBy,Diagnosis.EnteredOn,Diagnosis.FromTime,Diagnosis.ToTime\nEncounter.CareProvider.Description,Encounter.CareProvider.Name"
+* clinicalStatus -> "Diagnosis.CodeTableDetail.Diagnosis.OriginalText"
+* verificationStatus -> "Diagnosis.CodeTableDetail.Diagnosis.OriginalText"
+* recorder -> "Diagnosis.DiagnosingClinician"

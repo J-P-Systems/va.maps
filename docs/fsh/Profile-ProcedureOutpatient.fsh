@@ -83,3 +83,16 @@ Source: ProcedureOutpatient
 * code.coding -> "Outpat.VProcedure.CPTIEN,Outpat.VProcedureCPTModifier.CPTIEN,Outpat.VProcedureDiagnosis.CPTIEN,Outpat.WorkloadVProcedure.CPTIEN,Outpat.WorkloadVProcedureCPTModifier.CPTIEN,Outpat.WorkloadVProcedureDiagnosis.CPTIEN"
 * code.coding.code -> "Outpat.VProcedure.CPTIEN,Outpat.VProcedureCPTModifier.CPTIEN,Outpat.VProcedureDiagnosis.CPTIEN,Outpat.WorkloadVProcedure.CPTIEN,Outpat.WorkloadVProcedureCPTModifier.CPTIEN,Outpat.WorkloadVProcedureDiagnosis.CPTIEN\nDim.CPT.CPTCode,Dim.CPT.CPTCode"
 * code.coding.display -> "Outpat.VProcedure.CPTIEN,Outpat.VProcedureCPTModifier.CPTIEN,Outpat.VProcedureDiagnosis.CPTIEN,Outpat.WorkloadVProcedure.CPTIEN,Outpat.WorkloadVProcedureCPTModifier.CPTIEN,Outpat.WorkloadVProcedureDiagnosis.CPTIEN\nDim.CPT.CPTName,Dim.CPT.CPTName"
+
+Mapping: sda-to-ProcedureOutpatient
+Id: sda
+Title: "Summary Document Architecure (SDA)"
+Source: ProcedureOutpatient
+* encounter -> "Procedure.EncounterNumber,Procedure.EnteredAt,Procedure.EnteredBy,Procedure.EnteredOn,Procedure.ProcedureExtension.Location"
+* code.text -> "Procedure.Procedure,Procedure.CodeTableDetail.Procedure.OriginalText"
+* performedDateTime -> "Procedure.FromTime,Procedure.ProcedureTime"
+* performer.actor -> "Procedure.Clinician"
+* note.text -> "Procedure.ProcedureExtension.Comments"
+* code.coding -> "Encounter.EncounterExtension.Cpt,Encounter.EncounterExtension.Cpt,Procedure.Procedure,Procedure.CodeTableDetail.Procedure.Code"
+* code.coding.code -> "Encounter.EncounterExtension.Cpt,Encounter.EncounterExtension.Cpt,Procedure.Procedure,Procedure.CodeTableDetail.Procedure.Code"
+* code.coding.display -> "Encounter.EncounterExtension.Cpt,Encounter.EncounterExtension.Cpt,Procedure.Procedure,Procedure.CodeTableDetail.Procedure.Code"

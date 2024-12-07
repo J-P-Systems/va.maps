@@ -67,4 +67,7 @@ Mapping: sda-to-LabObservationMicrobiologyVirologyDiagnosticReport
 Id: sda
 Title: "Summary Document Architecure (SDA)"
 Source: LabObservationMicrobiologyVirologyDiagnosticReport
-* subject -> "demographics.lrdfn\naccession.collected"
+* issued -> "Documents.ToTime,LabOrder.Result.ResultTime"
+* performer[va-by] -> "Documents.Clinician,Documents.DocumentExtension.CareProviders,LabOrder.Result.VerifiedBy"
+* performer[va-at] -> "Documents.EnteredAt,LabOrder.Result.EnteredAt"
+* subject -> "Patient.PatientExtension.VeteranLrdfn"

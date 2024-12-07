@@ -10,11 +10,11 @@
     "valueCanonical" : "http://hl7.org/fhir/us/core/StructureDefinition/us-core-allergyintolerance|6.1.0"
   }],
   "url" : "http://va.gov/fhir/StructureDefinition/AllergyIntolerance",
-  "version" : "0.69.438",
+  "version" : "0.69.439",
   "name" : "AllergyIntolerance",
   "title" : "AllergyIntolerance",
   "status" : "active",
-  "date" : "2024-12-06T17:18:58+00:00",
+  "date" : "2024-12-07T11:18:15+00:00",
   "publisher" : "VA",
   "contact" : [{
     "name" : "VA",
@@ -1294,7 +1294,7 @@
       },
       {
         "identity" : "sda",
-        "map" : "reaction.removed"
+        "map" : "Allergy.Status"
       },
       {
         "identity" : "w5",
@@ -1361,7 +1361,11 @@
       },
       {
         "identity" : "sda",
-        "map" : "reaction.removed"
+        "map" : "Allergy.Certainty"
+      },
+      {
+        "identity" : "sda",
+        "map" : "Allergy.Status"
       },
       {
         "identity" : "w5",
@@ -1419,7 +1423,7 @@
       },
       {
         "identity" : "sda",
-        "map" : "reaction.mechanism"
+        "map" : "Allergy.AllergyExtension.Mechanism"
       },
       {
         "identity" : "w5",
@@ -1479,7 +1483,7 @@
       },
       {
         "identity" : "sda",
-        "map" : "reaction.type"
+        "map" : "Allergy.AllergyCategory"
       },
       {
         "identity" : "w5",
@@ -1589,11 +1593,11 @@
       },
       {
         "identity" : "sda",
-        "map" : "reaction.localCode,reaction.vuid"
+        "map" : "Allergy.Allergy,Allergy.AllergyExtension.OriginalCode"
       },
       {
         "identity" : "sda",
-        "map" : "reaction.drugIngredient [m]"
+        "map" : "Allergy.AllergyExtension.DrugProducts"
       },
       {
         "identity" : "w5",
@@ -1771,7 +1775,7 @@
       },
       {
         "identity" : "sda",
-        "map" : "reaction.name"
+        "map" : "Allergy.FreeTextAllergy"
       },
       {
         "identity" : "v2",
@@ -1825,7 +1829,7 @@
       },
       {
         "identity" : "sda",
-        "map" : "reaction.drugClass [m],reaction.drugIngredient [m],reaction.reaction [m]"
+        "map" : "Allergy.ATCCode"
       },
       {
         "identity" : "w5",
@@ -1965,10 +1969,6 @@
         "map" : "Allergy.AllergicReaction.OriginationDateTime,Allergy.Allergy.OriginationDateTime,Allergy.AllergyComment.OriginationDateTime,Allergy.AllergyDrugClass.OriginationDateTime,Allergy.AllergyDrugIngredient.OriginationDateTime"
       },
       {
-        "identity" : "sda",
-        "map" : "reaction.entered"
-      },
-      {
         "identity" : "w5",
         "map" : "FiveWs.recorded"
       },
@@ -2019,6 +2019,10 @@
       {
         "identity" : "cdw",
         "map" : "Allergy.Allergy.OriginatingStaffIEN"
+      },
+      {
+        "identity" : "sda",
+        "map" : "Allergy.EnteredBy"
       },
       {
         "identity" : "w5",
@@ -2300,7 +2304,7 @@
       },
       {
         "identity" : "sda",
-        "map" : "reaction.comment [m]"
+        "map" : "Allergy.Comments,Allergy.InactiveComments,Allergy.AllergyExtension.Comments\nAllergy.VA.Comment.EnteredBy"
       },
       {
         "identity" : "v2",
@@ -2347,7 +2351,7 @@
       },
       {
         "identity" : "sda",
-        "map" : "reaction.comment [m]"
+        "map" : "Allergy.Comments,Allergy.InactiveComments,Allergy.AllergyExtension.Comments"
       },
       {
         "identity" : "v2",
@@ -2390,7 +2394,7 @@
       },
       {
         "identity" : "sda",
-        "map" : "reaction.comment [m]"
+        "map" : "Allergy.Comments,Allergy.InactiveComments,Allergy.AllergyExtension.Comments\nAllergy.VA.Comment.CommentText"
       },
       {
         "identity" : "v2",
@@ -2623,7 +2627,7 @@
       },
       {
         "identity" : "sda",
-        "map" : "reaction.reaction [m]"
+        "map" : "Allergy.Reaction,Allergy.AllergyExtension.Reactions"
       },
       {
         "identity" : "v2",
@@ -2946,7 +2950,7 @@
       },
       {
         "identity" : "sda",
-        "map" : "reaction.reaction [m]"
+        "map" : "Allergy.Reaction,Allergy.AllergyExtension.Reactions"
       },
       {
         "identity" : "v2",
@@ -2999,7 +3003,7 @@
       },
       {
         "identity" : "sda",
-        "map" : "reaction.reaction [m]"
+        "map" : "Allergy.Reaction,Allergy.AllergyExtension.Reactions"
       },
       {
         "identity" : "v2",
@@ -3093,7 +3097,7 @@
       },
       {
         "identity" : "sda",
-        "map" : "reaction.reaction [m]"
+        "map" : "Allergy.Reaction,Allergy.AllergyExtension.Reactions"
       },
       {
         "identity" : "v2",
@@ -3177,7 +3181,7 @@
       },
       {
         "identity" : "sda",
-        "map" : "reaction.reaction [m]"
+        "map" : "Allergy.Reaction,Allergy.AllergyExtension.Reactions\nAllergy.Reaction.Extension,Allergy.ReactionExtension.EnteredOn"
       },
       {
         "identity" : "v2",
@@ -3223,6 +3227,10 @@
         "identity" : "vista",
         "map" : "557: terminologyMaps using VF_allergySeverity on ADVERSE REACTION REPORTING - SEVERITY (120.85-14.5)",
         "comment" : "This Data is not in CDW\nAssess for CHAPI via VPR"
+      },
+      {
+        "identity" : "sda",
+        "map" : "Allergy.Severity,Allergy.VA.AllergyObservation.Severity"
       },
       {
         "identity" : "rim",
@@ -3398,7 +3406,7 @@
       },
       {
         "identity" : "sda",
-        "map" : "reaction.removed"
+        "map" : "Allergy.Status"
       }]
     },
     {
@@ -3426,7 +3434,11 @@
       },
       {
         "identity" : "sda",
-        "map" : "reaction.removed"
+        "map" : "Allergy.Certainty"
+      },
+      {
+        "identity" : "sda",
+        "map" : "Allergy.Status"
       }]
     },
     {
@@ -3447,7 +3459,7 @@
       },
       {
         "identity" : "sda",
-        "map" : "reaction.mechanism"
+        "map" : "Allergy.AllergyExtension.Mechanism"
       }]
     },
     {
@@ -3468,7 +3480,7 @@
       },
       {
         "identity" : "sda",
-        "map" : "reaction.type"
+        "map" : "Allergy.AllergyCategory"
       }]
     },
     {
@@ -3485,11 +3497,11 @@
       },
       {
         "identity" : "sda",
-        "map" : "reaction.localCode,reaction.vuid"
+        "map" : "Allergy.Allergy,Allergy.AllergyExtension.OriginalCode"
       },
       {
         "identity" : "sda",
-        "map" : "reaction.drugIngredient [m]"
+        "map" : "Allergy.AllergyExtension.DrugProducts"
       }]
     },
     {
@@ -3507,7 +3519,7 @@
       },
       {
         "identity" : "sda",
-        "map" : "reaction.name"
+        "map" : "Allergy.FreeTextAllergy"
       }]
     },
     {
@@ -3524,7 +3536,7 @@
       },
       {
         "identity" : "sda",
-        "map" : "reaction.drugClass [m],reaction.drugIngredient [m],reaction.reaction [m]"
+        "map" : "Allergy.ATCCode"
       }]
     },
     {
@@ -3539,10 +3551,6 @@
       {
         "identity" : "cdw",
         "map" : "Allergy.AllergicReaction.OriginationDateTime,Allergy.Allergy.OriginationDateTime,Allergy.AllergyComment.OriginationDateTime,Allergy.AllergyDrugClass.OriginationDateTime,Allergy.AllergyDrugIngredient.OriginationDateTime"
-      },
-      {
-        "identity" : "sda",
-        "map" : "reaction.entered"
       }]
     },
     {
@@ -3556,6 +3564,10 @@
       {
         "identity" : "cdw",
         "map" : "Allergy.Allergy.OriginatingStaffIEN"
+      },
+      {
+        "identity" : "sda",
+        "map" : "Allergy.EnteredBy"
       }]
     },
     {
@@ -3590,7 +3602,7 @@
       },
       {
         "identity" : "sda",
-        "map" : "reaction.comment [m]"
+        "map" : "Allergy.Comments,Allergy.InactiveComments,Allergy.AllergyExtension.Comments\nAllergy.VA.Comment.EnteredBy"
       }]
     },
     {
@@ -3607,7 +3619,7 @@
       },
       {
         "identity" : "sda",
-        "map" : "reaction.comment [m]"
+        "map" : "Allergy.Comments,Allergy.InactiveComments,Allergy.AllergyExtension.Comments"
       }]
     },
     {
@@ -3620,7 +3632,7 @@
       },
       {
         "identity" : "sda",
-        "map" : "reaction.comment [m]"
+        "map" : "Allergy.Comments,Allergy.InactiveComments,Allergy.AllergyExtension.Comments\nAllergy.VA.Comment.CommentText"
       }]
     },
     {
@@ -3632,7 +3644,7 @@
       },
       {
         "identity" : "sda",
-        "map" : "reaction.reaction [m]"
+        "map" : "Allergy.Reaction,Allergy.AllergyExtension.Reactions"
       }]
     },
     {
@@ -3657,7 +3669,7 @@
       },
       {
         "identity" : "sda",
-        "map" : "reaction.reaction [m]"
+        "map" : "Allergy.Reaction,Allergy.AllergyExtension.Reactions"
       }]
     },
     {
@@ -3671,7 +3683,7 @@
       },
       {
         "identity" : "sda",
-        "map" : "reaction.reaction [m]"
+        "map" : "Allergy.Reaction,Allergy.AllergyExtension.Reactions"
       }]
     },
     {
@@ -3685,7 +3697,7 @@
       },
       {
         "identity" : "sda",
-        "map" : "reaction.reaction [m]"
+        "map" : "Allergy.Reaction,Allergy.AllergyExtension.Reactions"
       }]
     },
     {
@@ -3702,7 +3714,7 @@
       },
       {
         "identity" : "sda",
-        "map" : "reaction.reaction [m]"
+        "map" : "Allergy.Reaction,Allergy.AllergyExtension.Reactions\nAllergy.Reaction.Extension,Allergy.ReactionExtension.EnteredOn"
       }]
     },
     {
@@ -3717,6 +3729,10 @@
         "identity" : "vista",
         "map" : "557: terminologyMaps using VF_allergySeverity on ADVERSE REACTION REPORTING - SEVERITY (120.85-14.5)",
         "comment" : "This Data is not in CDW\nAssess for CHAPI via VPR"
+      },
+      {
+        "identity" : "sda",
+        "map" : "Allergy.Severity,Allergy.VA.AllergyObservation.Severity"
       }]
     }]
   }

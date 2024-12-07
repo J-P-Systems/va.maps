@@ -10,11 +10,11 @@
     "valueCanonical" : "http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-note|6.1.0"
   }],
   "url" : "http://va.gov/fhir/StructureDefinition/LungCancerScreening",
-  "version" : "0.69.438",
+  "version" : "0.69.439",
   "name" : "LungCancerScreening",
   "title" : "Lung Cancer Screening",
   "status" : "draft",
-  "date" : "2024-12-06T17:18:58+00:00",
+  "date" : "2024-12-07T11:18:15+00:00",
   "publisher" : "VA",
   "contact" : [{
     "name" : "VA",
@@ -769,6 +769,10 @@
         "map" : "TIU.TIUDocument.PatientIEN"
       },
       {
+        "identity" : "sda",
+        "map" : "Documents.DocumentType"
+      },
+      {
         "identity" : "workflow",
         "map" : "Event.subject"
       },
@@ -829,7 +833,7 @@
       },
       {
         "identity" : "sda",
-        "map" : "document.encounter"
+        "map" : "Alert.EncounterNumber,Documents.EncounterNumber,AdvanceDirective.EncounterNumber"
       },
       {
         "identity" : "workflow",
@@ -994,7 +998,7 @@
       },
       {
         "identity" : "sda",
-        "map" : "document.clinician [m]"
+        "map" : "Alert.EnteredBy"
       },
       {
         "identity" : "workflow",
@@ -1527,7 +1531,7 @@
       },
       {
         "identity" : "sda",
-        "map" : "document.content[n]"
+        "map" : "Alert.Comments,Documents.NoteText,AdvanceDirective.Comments"
       },
       {
         "identity" : "v2",
@@ -1558,6 +1562,10 @@
       {
         "identity" : "cdw",
         "map" : "TIU.TIUDocument.PatientIEN"
+      },
+      {
+        "identity" : "sda",
+        "map" : "Documents.DocumentType"
       }]
     },
     {
@@ -1577,7 +1585,7 @@
       },
       {
         "identity" : "sda",
-        "map" : "document.encounter"
+        "map" : "Alert.EncounterNumber,Documents.EncounterNumber,AdvanceDirective.EncounterNumber"
       }]
     },
     {
@@ -1597,7 +1605,7 @@
       },
       {
         "identity" : "sda",
-        "map" : "document.clinician [m]"
+        "map" : "Alert.EnteredBy"
       }]
     },
     {
@@ -1609,7 +1617,7 @@
       },
       {
         "identity" : "sda",
-        "map" : "document.content[n]"
+        "map" : "Alert.Comments,Documents.NoteText,AdvanceDirective.Comments"
       }]
     }]
   }

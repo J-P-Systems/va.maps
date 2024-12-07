@@ -20,11 +20,11 @@
      ]
   ] ) ; # 
   fhir:url [ fhir:v "http://va.gov/fhir/StructureDefinition/LungCancerScreening"^^xsd:anyURI] ; # 
-  fhir:version [ fhir:v "0.69.438"] ; # 
+  fhir:version [ fhir:v "0.69.439"] ; # 
   fhir:name [ fhir:v "LungCancerScreening"] ; # 
   fhir:title [ fhir:v "Lung Cancer Screening"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2024-12-06T17:18:58+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2024-12-07T11:18:15+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "VA"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "VA" ] ;
@@ -804,6 +804,9 @@
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "TIU.TIUDocument.PatientIEN" ]
        ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Documents.DocumentType" ]
+       ] [
          fhir:identity [ fhir:v "workflow" ] ;
          fhir:map [ fhir:v "Event.subject" ]
        ] [
@@ -863,7 +866,7 @@
          fhir:map [ fhir:v "TIU.TIUDocument.VisitIEN" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "document.encounter" ]
+         fhir:map [ fhir:v "Alert.EncounterNumber,Documents.EncounterNumber,AdvanceDirective.EncounterNumber" ]
        ] [
          fhir:identity [ fhir:v "workflow" ] ;
          fhir:map [ fhir:v "Event.encounter" ]
@@ -1015,7 +1018,7 @@
          fhir:map [ fhir:v "TIU.TIUDocument.AuthorDictatorStaffIEN" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "document.clinician [m]" ]
+         fhir:map [ fhir:v "Alert.EnteredBy" ]
        ] [
          fhir:identity [ fhir:v "workflow" ] ;
          fhir:map [ fhir:v "Event.performer.actor" ]
@@ -1570,7 +1573,7 @@
          fhir:map [ fhir:v "932: source value from TIU DOCUMENT - REPORT TEXT (8925-2)" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "document.content[n]" ]
+         fhir:map [ fhir:v "Alert.Comments,Documents.NoteText,AdvanceDirective.Comments" ]
        ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "OBX" ]
@@ -1600,6 +1603,9 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "TIU.TIUDocument.PatientIEN" ]
+       ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Documents.DocumentType" ]
        ] )
      ] [
        fhir:id [ fhir:v "DiagnosticReport.encounter" ] ;
@@ -1619,7 +1625,7 @@
          fhir:map [ fhir:v "TIU.TIUDocument.VisitIEN" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "document.encounter" ]
+         fhir:map [ fhir:v "Alert.EncounterNumber,Documents.EncounterNumber,AdvanceDirective.EncounterNumber" ]
        ] )
      ] [
        fhir:id [ fhir:v "DiagnosticReport.performer" ] ;
@@ -1639,7 +1645,7 @@
          fhir:map [ fhir:v "TIU.TIUDocument.AuthorDictatorStaffIEN" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "document.clinician [m]" ]
+         fhir:map [ fhir:v "Alert.EnteredBy" ]
        ] )
      ] [
        fhir:id [ fhir:v "DiagnosticReport.presentedForm" ] ;
@@ -1649,7 +1655,7 @@
          fhir:map [ fhir:v "932: source value from TIU DOCUMENT - REPORT TEXT (8925-2)" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "document.content[n]" ]
+         fhir:map [ fhir:v "Alert.Comments,Documents.NoteText,AdvanceDirective.Comments" ]
        ] )
      ] )
   ] . # 

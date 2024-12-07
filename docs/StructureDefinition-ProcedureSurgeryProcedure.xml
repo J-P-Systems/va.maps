@@ -149,11 +149,11 @@
     <valueCanonical value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure|6.1.0"/>
   </extension>
   <url value="http://va.gov/fhir/StructureDefinition/ProcedureSurgeryProcedure"/>
-  <version value="0.69.438"/>
+  <version value="0.69.439"/>
   <name value="ProcedureSurgeryProcedure"/>
   <title value="Procedure: Surgery Procedure"/>
   <status value="active"/>
-  <date value="2024-12-06T17:18:58+00:00"/>
+  <date value="2024-12-07T11:18:15+00:00"/>
   <publisher value="VA"/>
   <contact>
     <name value="VA"/>
@@ -1540,10 +1540,6 @@
         <map value="Surg.SurgeryPRE.PrincipalProcedureText"/>
       </mapping>
       <mapping>
-        <identity value="sda"/>
-        <map value="surgery.name"/>
-      </mapping>
-      <mapping>
         <identity value="v2"/>
         <map value="C*E.9. But note many systems use C*E.2 for this"/>
       </mapping>
@@ -1590,6 +1586,10 @@
       <mapping>
         <identity value="cdw"/>
         <map value="SPatient.ImplantedProsthesis.PatientIEN,SPatient.OperationsIndication.PatientIEN,Surg.AnesthesiaAgent.PatientIEN,Surg.AnesthesiaBlockSite.PatientIEN,Surg.AnesthesiaTechnique.PatientIEN,Surg.AnesthesiaTestDose.PatientIEN,Surg.ReferringPhysician.PatientIEN,Surg.ReferringPhysician.PatientSID,Surg.ReplacementFluidType.PatientIEN,Surg.ReplacementFluidType.PatientSID,Surg.SurgeryAssistant.PatientIEN,Surg.SurgeryAssistantOther.PatientIEN,Surg.SurgeryDelay.PatientIEN,Surg.SurgeryINTRA.PatientIEN,Surg.SurgeryIrrigation.PatientIEN,Surg.SurgeryIrrigation.PatientSID,Surg.SurgeryMedication.PatientIEN,Surg.SurgeryOccurrenceNonOp.PatientIEN,Surg.SurgeryOccurrenceNonOp.PatientSID,Surg.SurgeryOtherPostOpDiagnosis.PatientIEN,Surg.SurgeryOtherProcedure.PatientIEN,Surg.SurgeryOtherProcedureCPTModifier.PatientIEN,Surg.SurgeryOtherProcedureCPTModifier.PatientSID,Surg.SurgeryOtherProcedureDiagnosis.PatientIEN,Surg.SurgeryPOST.PatientIEN,Surg.SurgeryPostOpDiagnosis.PatientIEN,Surg.SurgeryPreOpDiagnosis.PatientIEN,Surg.SurgeryPreOpDiagnosis.PatientSID,Surg.SurgeryPrincipalAssociatedDiagnosis.PatientIEN,Surg.SurgeryPrincipalAssociatedProcedure.PatientIEN,Surg.SurgeryPrincipalCPTModifier.PatientIEN,Surg.SurgeryPrincipalDiagnosis.PatientIEN,Surg.SurgeryProcedureCPTModifier.PatientIEN,Surg.SurgeryProcedureDiagnosisCode.PatientIEN,Surg.SurgeryProcedureOccurrence.PatientIEN,Surg.SurgeryProcedureOccurrence.PatientSID,Surg.SurgeryRequiredBloodProducts.PatientIEN,Surg.SurgeryReturnCase.PatientIEN,Surg.SurgORCircSupport.PatientIEN,Surg.SurgORCircSupportTime.PatientIEN,Surg.SurgORCircSupportTime.PatientSID,Surg.SurgORScrubSupport.PatientIEN,Surg.SurgORScrubSupportTime.PatientIEN,Surg.SurgORScrubSupportTime.PatientSID"/>
+      </mapping>
+      <mapping>
+        <identity value="sda"/>
+        <map value="Procedure.CodeTableDetail.Procedure.Code"/>
       </mapping>
       <mapping>
         <identity value="workflow"/>
@@ -1649,7 +1649,7 @@
       </mapping>
       <mapping>
         <identity value="sda"/>
-        <map value="surgery.encounter"/>
+        <map value="Procedure.ProcedureExtension.SecondaryVisit"/>
       </mapping>
       <mapping>
         <identity value="workflow"/>
@@ -1783,7 +1783,7 @@
       </mapping>
       <mapping>
         <identity value="sda"/>
-        <map value="surgery.dateTime"/>
+        <map value="Procedure.ProcedureTime"/>
       </mapping>
       <mapping>
         <identity value="workflow"/>
@@ -3220,7 +3220,7 @@
       </mapping>
       <mapping>
         <identity value="sda"/>
-        <map value="surgery.provider"/>
+        <map value="Procedure.Clinician"/>
       </mapping>
       <mapping>
         <identity value="workflow"/>
@@ -4550,6 +4550,10 @@
       <mapping>
         <identity value="cdw"/>
         <map value="Surg.SurgeryINTRA.AttendingSurgeonStaffIEN"/>
+      </mapping>
+      <mapping>
+        <identity value="sda"/>
+        <map value="Procedure.ProcedureExtension.AttendingClinician"/>
       </mapping>
       <mapping>
         <identity value="workflow"/>
@@ -8097,7 +8101,7 @@
       </mapping>
       <mapping>
         <identity value="sda"/>
-        <map value="surgery.provider"/>
+        <map value="Procedure.Clinician"/>
       </mapping>
       <mapping>
         <identity value="workflow"/>
@@ -9708,10 +9712,6 @@
         <identity value="cdw"/>
         <map value="Surg.SurgeryPRE.PrincipalProcedureText"/>
       </mapping>
-      <mapping>
-        <identity value="sda"/>
-        <map value="surgery.name"/>
-      </mapping>
     </element>
     <element id="Procedure.subject">
       <path value="Procedure.subject"/>
@@ -9727,6 +9727,10 @@
         <identity value="cdw"/>
         <map value="SPatient.ImplantedProsthesis.PatientIEN,SPatient.OperationsIndication.PatientIEN,Surg.AnesthesiaAgent.PatientIEN,Surg.AnesthesiaBlockSite.PatientIEN,Surg.AnesthesiaTechnique.PatientIEN,Surg.AnesthesiaTestDose.PatientIEN,Surg.ReferringPhysician.PatientIEN,Surg.ReferringPhysician.PatientSID,Surg.ReplacementFluidType.PatientIEN,Surg.ReplacementFluidType.PatientSID,Surg.SurgeryAssistant.PatientIEN,Surg.SurgeryAssistantOther.PatientIEN,Surg.SurgeryDelay.PatientIEN,Surg.SurgeryINTRA.PatientIEN,Surg.SurgeryIrrigation.PatientIEN,Surg.SurgeryIrrigation.PatientSID,Surg.SurgeryMedication.PatientIEN,Surg.SurgeryOccurrenceNonOp.PatientIEN,Surg.SurgeryOccurrenceNonOp.PatientSID,Surg.SurgeryOtherPostOpDiagnosis.PatientIEN,Surg.SurgeryOtherProcedure.PatientIEN,Surg.SurgeryOtherProcedureCPTModifier.PatientIEN,Surg.SurgeryOtherProcedureCPTModifier.PatientSID,Surg.SurgeryOtherProcedureDiagnosis.PatientIEN,Surg.SurgeryPOST.PatientIEN,Surg.SurgeryPostOpDiagnosis.PatientIEN,Surg.SurgeryPreOpDiagnosis.PatientIEN,Surg.SurgeryPreOpDiagnosis.PatientSID,Surg.SurgeryPrincipalAssociatedDiagnosis.PatientIEN,Surg.SurgeryPrincipalAssociatedProcedure.PatientIEN,Surg.SurgeryPrincipalCPTModifier.PatientIEN,Surg.SurgeryPrincipalDiagnosis.PatientIEN,Surg.SurgeryProcedureCPTModifier.PatientIEN,Surg.SurgeryProcedureDiagnosisCode.PatientIEN,Surg.SurgeryProcedureOccurrence.PatientIEN,Surg.SurgeryProcedureOccurrence.PatientSID,Surg.SurgeryRequiredBloodProducts.PatientIEN,Surg.SurgeryReturnCase.PatientIEN,Surg.SurgORCircSupport.PatientIEN,Surg.SurgORCircSupportTime.PatientIEN,Surg.SurgORCircSupportTime.PatientSID,Surg.SurgORScrubSupport.PatientIEN,Surg.SurgORScrubSupportTime.PatientIEN,Surg.SurgORScrubSupportTime.PatientSID"/>
       </mapping>
+      <mapping>
+        <identity value="sda"/>
+        <map value="Procedure.CodeTableDetail.Procedure.Code"/>
+      </mapping>
     </element>
     <element id="Procedure.encounter">
       <path value="Procedure.encounter"/>
@@ -9741,7 +9745,7 @@
       </mapping>
       <mapping>
         <identity value="sda"/>
-        <map value="surgery.encounter"/>
+        <map value="Procedure.ProcedureExtension.SecondaryVisit"/>
       </mapping>
     </element>
     <element id="Procedure.performed[x]">
@@ -9777,7 +9781,7 @@
       </mapping>
       <mapping>
         <identity value="sda"/>
-        <map value="surgery.dateTime"/>
+        <map value="Procedure.ProcedureTime"/>
       </mapping>
     </element>
     <element id="Procedure.performed[x]:performedPeriod">
@@ -9932,7 +9936,7 @@
       </mapping>
       <mapping>
         <identity value="sda"/>
-        <map value="surgery.provider"/>
+        <map value="Procedure.Clinician"/>
       </mapping>
     </element>
     <element id="Procedure.performer:va-2">
@@ -10071,6 +10075,10 @@
       <mapping>
         <identity value="cdw"/>
         <map value="Surg.SurgeryINTRA.AttendingSurgeonStaffIEN"/>
+      </mapping>
+      <mapping>
+        <identity value="sda"/>
+        <map value="Procedure.ProcedureExtension.AttendingClinician"/>
       </mapping>
     </element>
     <element id="Procedure.performer:va-5">
@@ -10442,7 +10450,7 @@
       </mapping>
       <mapping>
         <identity value="sda"/>
-        <map value="surgery.provider"/>
+        <map value="Procedure.Clinician"/>
       </mapping>
     </element>
     <element id="Procedure.performer:va-13">

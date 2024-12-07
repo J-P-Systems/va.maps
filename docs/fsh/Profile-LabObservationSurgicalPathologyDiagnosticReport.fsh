@@ -79,4 +79,4 @@ Mapping: sda-to-LabObservationSurgicalPathologyDiagnosticReport
 Id: sda
 Title: "Summary Document Architecure (SDA)"
 Source: LabObservationSurgicalPathologyDiagnosticReport
-* subject -> "demographics.lrdfn\naccession.collected"
+* subject -> "Patient.PatientExtension.VeteranLrdfn"

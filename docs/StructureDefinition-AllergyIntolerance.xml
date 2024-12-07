@@ -40,11 +40,11 @@
     <valueCanonical value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-allergyintolerance|6.1.0"/>
   </extension>
   <url value="http://va.gov/fhir/StructureDefinition/AllergyIntolerance"/>
-  <version value="0.69.438"/>
+  <version value="0.69.439"/>
   <name value="AllergyIntolerance"/>
   <title value="AllergyIntolerance"/>
   <status value="active"/>
-  <date value="2024-12-06T17:18:58+00:00"/>
+  <date value="2024-12-07T11:18:15+00:00"/>
   <publisher value="VA"/>
   <contact>
     <name value="VA"/>
@@ -1284,7 +1284,7 @@
       </mapping>
       <mapping>
         <identity value="sda"/>
-        <map value="reaction.removed"/>
+        <map value="Allergy.Status"/>
       </mapping>
       <mapping>
         <identity value="w5"/>
@@ -1350,7 +1350,11 @@
       </mapping>
       <mapping>
         <identity value="sda"/>
-        <map value="reaction.removed"/>
+        <map value="Allergy.Certainty"/>
+      </mapping>
+      <mapping>
+        <identity value="sda"/>
+        <map value="Allergy.Status"/>
       </mapping>
       <mapping>
         <identity value="w5"/>
@@ -1407,7 +1411,7 @@
       </mapping>
       <mapping>
         <identity value="sda"/>
-        <map value="reaction.mechanism"/>
+        <map value="Allergy.AllergyExtension.Mechanism"/>
       </mapping>
       <mapping>
         <identity value="w5"/>
@@ -1466,7 +1470,7 @@
       </mapping>
       <mapping>
         <identity value="sda"/>
-        <map value="reaction.type"/>
+        <map value="Allergy.AllergyCategory"/>
       </mapping>
       <mapping>
         <identity value="w5"/>
@@ -1573,11 +1577,11 @@
       </mapping>
       <mapping>
         <identity value="sda"/>
-        <map value="reaction.localCode,reaction.vuid"/>
+        <map value="Allergy.Allergy,Allergy.AllergyExtension.OriginalCode"/>
       </mapping>
       <mapping>
         <identity value="sda"/>
-        <map value="reaction.drugIngredient [m]"/>
+        <map value="Allergy.AllergyExtension.DrugProducts"/>
       </mapping>
       <mapping>
         <identity value="w5"/>
@@ -1749,7 +1753,7 @@
       </mapping>
       <mapping>
         <identity value="sda"/>
-        <map value="reaction.name"/>
+        <map value="Allergy.FreeTextAllergy"/>
       </mapping>
       <mapping>
         <identity value="v2"/>
@@ -1802,7 +1806,7 @@
       </mapping>
       <mapping>
         <identity value="sda"/>
-        <map value="reaction.drugClass [m],reaction.drugIngredient [m],reaction.reaction [m]"/>
+        <map value="Allergy.ATCCode"/>
       </mapping>
       <mapping>
         <identity value="w5"/>
@@ -1939,10 +1943,6 @@
         <map value="Allergy.AllergicReaction.OriginationDateTime,Allergy.Allergy.OriginationDateTime,Allergy.AllergyComment.OriginationDateTime,Allergy.AllergyDrugClass.OriginationDateTime,Allergy.AllergyDrugIngredient.OriginationDateTime"/>
       </mapping>
       <mapping>
-        <identity value="sda"/>
-        <map value="reaction.entered"/>
-      </mapping>
-      <mapping>
         <identity value="w5"/>
         <map value="FiveWs.recorded"/>
       </mapping>
@@ -1992,6 +1992,10 @@
       <mapping>
         <identity value="cdw"/>
         <map value="Allergy.Allergy.OriginatingStaffIEN"/>
+      </mapping>
+      <mapping>
+        <identity value="sda"/>
+        <map value="Allergy.EnteredBy"/>
       </mapping>
       <mapping>
         <identity value="w5"/>
@@ -2265,7 +2269,7 @@
       </mapping>
       <mapping>
         <identity value="sda"/>
-        <map value="reaction.comment [m]"/>
+        <map value="Allergy.Comments,Allergy.InactiveComments,Allergy.AllergyExtension.Comments&#xA;Allergy.VA.Comment.EnteredBy"/>
       </mapping>
       <mapping>
         <identity value="v2"/>
@@ -2311,7 +2315,7 @@
       </mapping>
       <mapping>
         <identity value="sda"/>
-        <map value="reaction.comment [m]"/>
+        <map value="Allergy.Comments,Allergy.InactiveComments,Allergy.AllergyExtension.Comments"/>
       </mapping>
       <mapping>
         <identity value="v2"/>
@@ -2353,7 +2357,7 @@
       </mapping>
       <mapping>
         <identity value="sda"/>
-        <map value="reaction.comment [m]"/>
+        <map value="Allergy.Comments,Allergy.InactiveComments,Allergy.AllergyExtension.Comments&#xA;Allergy.VA.Comment.CommentText"/>
       </mapping>
       <mapping>
         <identity value="v2"/>
@@ -2578,7 +2582,7 @@
       </mapping>
       <mapping>
         <identity value="sda"/>
-        <map value="reaction.reaction [m]"/>
+        <map value="Allergy.Reaction,Allergy.AllergyExtension.Reactions"/>
       </mapping>
       <mapping>
         <identity value="v2"/>
@@ -2891,7 +2895,7 @@
       </mapping>
       <mapping>
         <identity value="sda"/>
-        <map value="reaction.reaction [m]"/>
+        <map value="Allergy.Reaction,Allergy.AllergyExtension.Reactions"/>
       </mapping>
       <mapping>
         <identity value="v2"/>
@@ -2942,7 +2946,7 @@
       </mapping>
       <mapping>
         <identity value="sda"/>
-        <map value="reaction.reaction [m]"/>
+        <map value="Allergy.Reaction,Allergy.AllergyExtension.Reactions"/>
       </mapping>
       <mapping>
         <identity value="v2"/>
@@ -3033,7 +3037,7 @@
       </mapping>
       <mapping>
         <identity value="sda"/>
-        <map value="reaction.reaction [m]"/>
+        <map value="Allergy.Reaction,Allergy.AllergyExtension.Reactions"/>
       </mapping>
       <mapping>
         <identity value="v2"/>
@@ -3115,7 +3119,7 @@
       </mapping>
       <mapping>
         <identity value="sda"/>
-        <map value="reaction.reaction [m]"/>
+        <map value="Allergy.Reaction,Allergy.AllergyExtension.Reactions&#xA;Allergy.Reaction.Extension,Allergy.ReactionExtension.EnteredOn"/>
       </mapping>
       <mapping>
         <identity value="v2"/>
@@ -3160,6 +3164,10 @@
         <identity value="vista"/>
         <map value="557: terminologyMaps using VF_allergySeverity on ADVERSE REACTION REPORTING - SEVERITY (120.85-14.5)"/>
         <comment value="This Data is not in CDW&#xA;Assess for CHAPI via VPR"/>
+      </mapping>
+      <mapping>
+        <identity value="sda"/>
+        <map value="Allergy.Severity,Allergy.VA.AllergyObservation.Severity"/>
       </mapping>
       <mapping>
         <identity value="rim"/>
@@ -3323,7 +3331,7 @@
       </mapping>
       <mapping>
         <identity value="sda"/>
-        <map value="reaction.removed"/>
+        <map value="Allergy.Status"/>
       </mapping>
     </element>
     <element id="AllergyIntolerance.verificationStatus">
@@ -3350,7 +3358,11 @@
       </mapping>
       <mapping>
         <identity value="sda"/>
-        <map value="reaction.removed"/>
+        <map value="Allergy.Certainty"/>
+      </mapping>
+      <mapping>
+        <identity value="sda"/>
+        <map value="Allergy.Status"/>
       </mapping>
     </element>
     <element id="AllergyIntolerance.type">
@@ -3370,7 +3382,7 @@
       </mapping>
       <mapping>
         <identity value="sda"/>
-        <map value="reaction.mechanism"/>
+        <map value="Allergy.AllergyExtension.Mechanism"/>
       </mapping>
     </element>
     <element id="AllergyIntolerance.category">
@@ -3390,7 +3402,7 @@
       </mapping>
       <mapping>
         <identity value="sda"/>
-        <map value="reaction.type"/>
+        <map value="Allergy.AllergyCategory"/>
       </mapping>
     </element>
     <element id="AllergyIntolerance.code">
@@ -3406,11 +3418,11 @@
       </mapping>
       <mapping>
         <identity value="sda"/>
-        <map value="reaction.localCode,reaction.vuid"/>
+        <map value="Allergy.Allergy,Allergy.AllergyExtension.OriginalCode"/>
       </mapping>
       <mapping>
         <identity value="sda"/>
-        <map value="reaction.drugIngredient [m]"/>
+        <map value="Allergy.AllergyExtension.DrugProducts"/>
       </mapping>
     </element>
     <element id="AllergyIntolerance.code.text">
@@ -3427,7 +3439,7 @@
       </mapping>
       <mapping>
         <identity value="sda"/>
-        <map value="reaction.name"/>
+        <map value="Allergy.FreeTextAllergy"/>
       </mapping>
     </element>
     <element id="AllergyIntolerance.patient">
@@ -3443,7 +3455,7 @@
       </mapping>
       <mapping>
         <identity value="sda"/>
-        <map value="reaction.drugClass [m],reaction.drugIngredient [m],reaction.reaction [m]"/>
+        <map value="Allergy.ATCCode"/>
       </mapping>
     </element>
     <element id="AllergyIntolerance.recordedDate">
@@ -3458,10 +3470,6 @@
         <identity value="cdw"/>
         <map value="Allergy.AllergicReaction.OriginationDateTime,Allergy.Allergy.OriginationDateTime,Allergy.AllergyComment.OriginationDateTime,Allergy.AllergyDrugClass.OriginationDateTime,Allergy.AllergyDrugIngredient.OriginationDateTime"/>
       </mapping>
-      <mapping>
-        <identity value="sda"/>
-        <map value="reaction.entered"/>
-      </mapping>
     </element>
     <element id="AllergyIntolerance.recorder">
       <path value="AllergyIntolerance.recorder"/>
@@ -3473,6 +3481,10 @@
       <mapping>
         <identity value="cdw"/>
         <map value="Allergy.Allergy.OriginatingStaffIEN"/>
+      </mapping>
+      <mapping>
+        <identity value="sda"/>
+        <map value="Allergy.EnteredBy"/>
       </mapping>
     </element>
     <element id="AllergyIntolerance.note.author[x]">
@@ -3505,7 +3517,7 @@
       </mapping>
       <mapping>
         <identity value="sda"/>
-        <map value="reaction.comment [m]"/>
+        <map value="Allergy.Comments,Allergy.InactiveComments,Allergy.AllergyExtension.Comments&#xA;Allergy.VA.Comment.EnteredBy"/>
       </mapping>
     </element>
     <element id="AllergyIntolerance.note.time">
@@ -3521,7 +3533,7 @@
       </mapping>
       <mapping>
         <identity value="sda"/>
-        <map value="reaction.comment [m]"/>
+        <map value="Allergy.Comments,Allergy.InactiveComments,Allergy.AllergyExtension.Comments"/>
       </mapping>
     </element>
     <element id="AllergyIntolerance.note.text">
@@ -3533,7 +3545,7 @@
       </mapping>
       <mapping>
         <identity value="sda"/>
-        <map value="reaction.comment [m]"/>
+        <map value="Allergy.Comments,Allergy.InactiveComments,Allergy.AllergyExtension.Comments&#xA;Allergy.VA.Comment.CommentText"/>
       </mapping>
     </element>
     <element id="AllergyIntolerance.reaction.manifestation">
@@ -3544,7 +3556,7 @@
       </mapping>
       <mapping>
         <identity value="sda"/>
-        <map value="reaction.reaction [m]"/>
+        <map value="Allergy.Reaction,Allergy.AllergyExtension.Reactions"/>
       </mapping>
     </element>
     <element id="AllergyIntolerance.reaction.manifestation.coding.system">
@@ -3567,7 +3579,7 @@
       </mapping>
       <mapping>
         <identity value="sda"/>
-        <map value="reaction.reaction [m]"/>
+        <map value="Allergy.Reaction,Allergy.AllergyExtension.Reactions"/>
       </mapping>
     </element>
     <element id="AllergyIntolerance.reaction.manifestation.coding.display">
@@ -3580,7 +3592,7 @@
       </mapping>
       <mapping>
         <identity value="sda"/>
-        <map value="reaction.reaction [m]"/>
+        <map value="Allergy.Reaction,Allergy.AllergyExtension.Reactions"/>
       </mapping>
     </element>
     <element id="AllergyIntolerance.reaction.manifestation.text">
@@ -3593,7 +3605,7 @@
       </mapping>
       <mapping>
         <identity value="sda"/>
-        <map value="reaction.reaction [m]"/>
+        <map value="Allergy.Reaction,Allergy.AllergyExtension.Reactions"/>
       </mapping>
     </element>
     <element id="AllergyIntolerance.reaction.onset">
@@ -3609,7 +3621,7 @@
       </mapping>
       <mapping>
         <identity value="sda"/>
-        <map value="reaction.reaction [m]"/>
+        <map value="Allergy.Reaction,Allergy.AllergyExtension.Reactions&#xA;Allergy.Reaction.Extension,Allergy.ReactionExtension.EnteredOn"/>
       </mapping>
     </element>
     <element id="AllergyIntolerance.reaction.severity">
@@ -3623,6 +3635,10 @@
         <identity value="vista"/>
         <map value="557: terminologyMaps using VF_allergySeverity on ADVERSE REACTION REPORTING - SEVERITY (120.85-14.5)"/>
         <comment value="This Data is not in CDW&#xA;Assess for CHAPI via VPR"/>
+      </mapping>
+      <mapping>
+        <identity value="sda"/>
+        <map value="Allergy.Severity,Allergy.VA.AllergyObservation.Severity"/>
       </mapping>
     </element>
   </differential>

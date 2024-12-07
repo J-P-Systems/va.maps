@@ -10,11 +10,11 @@
     "valueCanonical" : "http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest|6.1.0"
   }],
   "url" : "http://va.gov/fhir/StructureDefinition/MedicationRequestUnsigned",
-  "version" : "0.69.438",
+  "version" : "0.69.439",
   "name" : "MedicationRequestUnsigned",
   "title" : "MedicationRequest: Unsigned",
   "status" : "active",
-  "date" : "2024-12-06T17:18:58+00:00",
+  "date" : "2024-12-07T11:18:15+00:00",
   "publisher" : "VA",
   "contact" : [{
     "name" : "VA",
@@ -455,6 +455,10 @@
         "identity" : "vista",
         "map" : "1225: source value from ORDER - ORDER # (100-.01) case package like 'PS%' & class 'I' & [exclude supply]",
         "comment" : "confirm case"
+      },
+      {
+        "identity" : "sda",
+        "map" : "LabOrder.Order.Description,LabOrder.Priority.Description,RadOrder.Order.Description,RadOrder.ResultExtension.null,OtherOrder.OrderCategory.Description,OtherOrder.Order.Description,OtherOrder.VA.VAStatus.Description,OtherOrder.Priority.Description,OtherOrder.Order.OriginalText"
       },
       {
         "identity" : "workflow",
@@ -1058,6 +1062,10 @@
         "map" : "CPRSOrder.OrderAction.ObjectOfOrderIEN,CPRSOrder.OrderAction.ObjectofOrderLabReferralPatientIEN,CPRSOrder.OrderAction.ObjectOfOrderPatientIEN,CPRSOrder.OrderAction.ParentFileNumber,CPRSOrder.OrderedItem.PatientIEN"
       },
       {
+        "identity" : "sda",
+        "map" : "RadOrder.ResultExtension.null"
+      },
+      {
         "identity" : "workflow",
         "map" : "Request.subject"
       },
@@ -1214,7 +1222,7 @@
       },
       {
         "identity" : "sda",
-        "map" : "order.entered"
+        "map" : "LabOrder.EnteredOn,LabOrder.CodeTable.SDACodingStandard,Medication.EnteredOn,RadOrder.EnteredOn,RadOrder.CodeTable.SDACodingStandard,RadOrder.ResultExtension.CaseNumber,OtherOrder.EnteredOn"
       },
       {
         "identity" : "workflow",
@@ -2623,7 +2631,7 @@
       },
       {
         "identity" : "sda",
-        "map" : "order.start"
+        "map" : "LabOrder.FromTime,LabOrder.SpecimenCollectedTime,Medication.FromTime,RadOrder.FromTime,OtherOrder.FromTime"
       },
       {
         "identity" : "v2",
@@ -2673,7 +2681,7 @@
       },
       {
         "identity" : "sda",
-        "map" : "order.stop"
+        "map" : "LabOrder.ToTime,Medication.ToTime,RadOrder.ToTime,OtherOrder.ToTime"
       },
       {
         "identity" : "v2",
@@ -4542,6 +4550,10 @@
         "comment" : "The specific MedicationRequestXxx profile to use depends on the source data"
       },
       {
+        "identity" : "sda",
+        "map" : "LabOrder.LabOrderExtension.ReplacedOrder,Medication.MedicationExtension.ReplacedOrder,RadOrder.OrderExtension.ReplacedOrder,OtherOrder.OrderExtension.ReplacedOrder"
+      },
+      {
         "identity" : "workflow",
         "map" : "Request.replaces"
       },
@@ -4639,6 +4651,10 @@
         "identity" : "vista",
         "map" : "1225: source value from ORDER - ORDER # (100-.01) case package like 'PS%' & class 'I' & [exclude supply]",
         "comment" : "confirm case"
+      },
+      {
+        "identity" : "sda",
+        "map" : "LabOrder.Order.Description,LabOrder.Priority.Description,RadOrder.Order.Description,RadOrder.ResultExtension.null,OtherOrder.OrderCategory.Description,OtherOrder.Order.Description,OtherOrder.VA.VAStatus.Description,OtherOrder.Priority.Description,OtherOrder.Order.OriginalText"
       }]
     },
     {
@@ -4687,6 +4703,10 @@
       {
         "identity" : "cdw",
         "map" : "CPRSOrder.OrderAction.ObjectOfOrderIEN,CPRSOrder.OrderAction.ObjectofOrderLabReferralPatientIEN,CPRSOrder.OrderAction.ObjectOfOrderPatientIEN,CPRSOrder.OrderAction.ParentFileNumber,CPRSOrder.OrderedItem.PatientIEN"
+      },
+      {
+        "identity" : "sda",
+        "map" : "RadOrder.ResultExtension.null"
       }]
     },
     {
@@ -4702,7 +4722,7 @@
       },
       {
         "identity" : "sda",
-        "map" : "order.entered"
+        "map" : "LabOrder.EnteredOn,LabOrder.CodeTable.SDACodingStandard,Medication.EnteredOn,RadOrder.EnteredOn,RadOrder.CodeTable.SDACodingStandard,RadOrder.ResultExtension.CaseNumber,OtherOrder.EnteredOn"
       }]
     },
     {
@@ -4753,7 +4773,7 @@
       },
       {
         "identity" : "sda",
-        "map" : "order.start"
+        "map" : "LabOrder.FromTime,LabOrder.SpecimenCollectedTime,Medication.FromTime,RadOrder.FromTime,OtherOrder.FromTime"
       }]
     },
     {
@@ -4770,7 +4790,7 @@
       },
       {
         "identity" : "sda",
-        "map" : "order.stop"
+        "map" : "LabOrder.ToTime,Medication.ToTime,RadOrder.ToTime,OtherOrder.ToTime"
       }]
     },
     {
@@ -4781,6 +4801,10 @@
         "identity" : "vista",
         "map" : "1232: reference from ORDER - REPLACED ORDER (100-9)",
         "comment" : "The specific MedicationRequestXxx profile to use depends on the source data"
+      },
+      {
+        "identity" : "sda",
+        "map" : "LabOrder.LabOrderExtension.ReplacedOrder,Medication.MedicationExtension.ReplacedOrder,RadOrder.OrderExtension.ReplacedOrder,OtherOrder.OrderExtension.ReplacedOrder"
       }]
     }]
   }

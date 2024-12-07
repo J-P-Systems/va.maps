@@ -20,11 +20,11 @@
      ]
   ] ) ; # 
   fhir:url [ fhir:v "http://va.gov/fhir/StructureDefinition/MedicationRequestNonVA"^^xsd:anyURI] ; # 
-  fhir:version [ fhir:v "0.69.438"] ; # 
+  fhir:version [ fhir:v "0.69.439"] ; # 
   fhir:name [ fhir:v "MedicationRequestNonVA"] ; # 
   fhir:title [ fhir:v "MedicationRequest: NonVA"] ; # 
   fhir:status [ fhir:v "active"] ; # 
-  fhir:date [ fhir:v "2024-12-06T17:18:58+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2024-12-07T11:18:15+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "VA"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "VA" ] ;
@@ -48,6 +48,9 @@
   ] [
      fhir:identity [ fhir:v "cdw" ] ;
      fhir:name [ fhir:v "Clinical Data Warehouse (CDW)" ]
+  ] [
+     fhir:identity [ fhir:v "sda" ] ;
+     fhir:name [ fhir:v "Summary Document Architecure (SDA)" ]
   ] [
      fhir:identity [ fhir:v "workflow" ] ;
      fhir:uri [ fhir:v "http://hl7.org/fhir/workflow"^^xsd:anyURI ] ;
@@ -582,6 +585,9 @@
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "NonVAMed.NonVAMed.LocationIEN" ]
        ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Medication.EnteredAt,Medication.EnteringOrganization" ]
+       ] [
          fhir:identity [ fhir:v "rim" ] ;
          fhir:map [ fhir:v "N/A" ]
        ] )
@@ -997,6 +1003,9 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "NonVAMed.NonVAMed.CPRSOrderIEN" ]
+       ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Medication.ExternalId,Medication.PlacerId" ]
        ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "CX.1 / EI.1" ]
@@ -1556,6 +1565,9 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "NonVAMed.NonVAMed.NonVAMedStatus" ]
+       ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Medication.PharmacyStatus,Medication.VAStatus" ]
        ] [
          fhir:identity [ fhir:v "workflow" ] ;
          fhir:map [ fhir:v "Request.status" ]
@@ -2127,6 +2139,12 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "NonVAMed.NonVAMed.LocalDrugIEN" ]
+       ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Medication.DosageForm,Medication.OrderItem,Medication.IsNonFormulary,Medication.PharmacyOrderItem" ]
+       ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Medication.DrugProduct" ]
        ] [
          fhir:identity [ fhir:v "workflow" ] ;
          fhir:map [ fhir:v "Request.code" ]
@@ -2753,6 +2771,9 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "NonVAMed.NonVAMed.DocumentedDateTime" ]
+       ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Medication.EnteredOn" ]
        ] [
          fhir:identity [ fhir:v "workflow" ] ;
          fhir:map [ fhir:v "Request.authoredOn" ]
@@ -3426,6 +3447,9 @@
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "NonVAMed.NonVAMed.DocumentedByStaffIEN" ]
        ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Medication.EnteredBy,Medication.OrderedBy" ]
+       ] [
          fhir:identity [ fhir:v "w5" ] ;
          fhir:map [ fhir:v "FiveWs.who" ]
        ] [
@@ -3979,6 +4003,12 @@
          fhir:identity [ fhir:v "vista" ] ;
          fhir:map [ fhir:v "1764: source value from NON-VA MEDS - DISCLAIMER (55.05-10)" ] ;
          fhir:comment [ fhir:v "Concatenate to Comment. Delimit with a period." ]
+       ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Medication.Comments" ]
+       ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Medication.Statement" ]
        ] [
          fhir:identity [ fhir:v "workflow" ] ;
          fhir:map [ fhir:v "Request.note" ]
@@ -5449,6 +5479,9 @@
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "NonVAMed.NonVAMed.Schedule" ]
        ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Medication.Sig,Medication.Frequency" ]
+       ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "C*E.9. But note many systems use C*E.2 for this" ]
        ] [
@@ -5764,6 +5797,9 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "NonVAMed.NonVAMed.MedicationRoute" ]
+       ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Medication.Route,Medication.Sig" ]
        ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "C*E.9. But note many systems use C*E.2 for this" ]
@@ -6223,6 +6259,9 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "NonVAMed.NonVAMed.Dosage" ]
+       ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Medication.Sig,Medication.DoseQuantity,Medication.TextInstruction" ]
        ] )
      ] [
        fhir:id [ fhir:v "MedicationRequest.dosageInstruction.doseAndRate.dose[x]:doseQuantity.value" ] ;
@@ -7596,6 +7635,9 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "NonVAMed.NonVAMed.LocationIEN" ]
+       ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Medication.EnteredAt,Medication.EnteringOrganization" ]
        ] )
      ] [
        fhir:id [ fhir:v "MedicationRequest.identifier" ] ;
@@ -7634,6 +7676,9 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "NonVAMed.NonVAMed.CPRSOrderIEN" ]
+       ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Medication.ExternalId,Medication.PlacerId" ]
        ] )
      ] [
        fhir:id [ fhir:v "MedicationRequest.identifier:va-ien" ] ;
@@ -7694,6 +7739,12 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "NonVAMed.NonVAMed.NonVAMedStatus" ]
+       ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Medication.PharmacyStatus,Medication.VAStatus" ]
+       ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Medication.PharmacyStatus,Medication.VAStatus" ]
        ] )
      ] [
        fhir:id [ fhir:v "MedicationRequest.intent" ] ;
@@ -7767,6 +7818,12 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "NonVAMed.NonVAMed.LocalDrugIEN" ]
+       ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Medication.DosageForm,Medication.OrderItem,Medication.IsNonFormulary,Medication.PharmacyOrderItem" ]
+       ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Medication.DrugProduct" ]
        ] )
      ] [
        fhir:id [ fhir:v "MedicationRequest.encounter.extension:data-absent-reason" ] ;
@@ -7799,6 +7856,9 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "NonVAMed.NonVAMed.DocumentedDateTime" ]
+       ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Medication.EnteredOn" ]
        ] )
      ] [
        fhir:id [ fhir:v "MedicationRequest.requester.extension:data-absent-reason" ] ;
@@ -7839,6 +7899,9 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "NonVAMed.NonVAMed.DocumentedByStaffIEN" ]
+       ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Medication.EnteredBy,Medication.OrderedBy" ]
        ] )
      ] [
        fhir:id [ fhir:v "MedicationRequest.reasonCode.text" ] ;
@@ -7860,6 +7923,12 @@
          fhir:identity [ fhir:v "vista" ] ;
          fhir:map [ fhir:v "1764: source value from NON-VA MEDS - DISCLAIMER (55.05-10)" ] ;
          fhir:comment [ fhir:v "Concatenate to Comment. Delimit with a period." ]
+       ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Medication.Comments" ]
+       ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Medication.Statement" ]
        ] )
      ] [
        fhir:id [ fhir:v "MedicationRequest.dosageInstruction.text" ] ;
@@ -7878,6 +7947,9 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "NonVAMed.NonVAMed.Schedule" ]
+       ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Medication.Sig,Medication.Frequency" ]
        ] )
      ] [
        fhir:id [ fhir:v "MedicationRequest.dosageInstruction.route.text" ] ;
@@ -7889,6 +7961,9 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "NonVAMed.NonVAMed.MedicationRoute" ]
+       ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Medication.Route,Medication.Sig" ]
        ] )
      ] [
        fhir:id [ fhir:v "MedicationRequest.dosageInstruction.doseAndRate.dose[x]" ] ;
@@ -7934,6 +8009,9 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "NonVAMed.NonVAMed.Dosage" ]
+       ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Medication.Sig,Medication.DoseQuantity,Medication.TextInstruction" ]
        ] )
      ] )
   ] . # 

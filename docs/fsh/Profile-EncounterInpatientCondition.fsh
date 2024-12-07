@@ -21,3 +21,9 @@ Id: cdw
 Title: "Clinical Data Warehouse (CDW)"
 Source: EncounterInpatientCondition
 * code -> "Inpat.Inpatient.PrincipalDiagnosisICDIEN"
+
+Mapping: sda-to-EncounterInpatientCondition
+Id: sda
+Title: "Summary Document Architecure (SDA)"
+Source: EncounterInpatientCondition
+* code -> "Diagnosis.Diagnosis,Diagnosis.DiagnosisType"

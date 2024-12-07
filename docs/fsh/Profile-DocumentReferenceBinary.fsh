@@ -18,4 +18,4 @@ Mapping: sda-to-DocumentReferenceBinary
 Id: sda
 Title: "Summary Document Architecure (SDA)"
 Source: DocumentReferenceBinary
-* data -> "document.content[n]"
+* data -> "Alert.Comments,Documents.NoteText,AdvanceDirective.Comments"

@@ -56,4 +56,5 @@ Mapping: sda-to-ImplantableDeviceProsthesis
 Id: sda
 Title: "Summary Document Architecure (SDA)"
 Source: ImplantableDeviceProsthesis
-* owner -> "surgery.facility"
+* patient -> "Procedure.CodeTableDetail.Procedure.Code"
+* owner -> "Procedure.EnteredAt"

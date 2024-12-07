@@ -10,11 +10,11 @@
     "valueCanonical" : "http://hl7.org/fhir/us/core/StructureDefinition/us-core-smokingstatus|6.1.0"
   }],
   "url" : "http://va.gov/fhir/StructureDefinition/SmokingStatusObservation",
-  "version" : "0.69.438",
+  "version" : "0.69.439",
   "name" : "SmokingStatusObservation",
   "title" : "Smoking Status Observation",
   "status" : "active",
-  "date" : "2024-12-06T17:18:58+00:00",
+  "date" : "2024-12-07T11:18:15+00:00",
   "publisher" : "VA",
   "contact" : [{
     "name" : "VA",
@@ -1157,7 +1157,7 @@
       },
       {
         "identity" : "sda",
-        "map" : "healthFactor.category,healthFactor.name"
+        "map" : "Vaccination.OrderItem,SocialHistory.SocialHabit,SocialHistory.SocialHabitCategory,SocialHistory.SocialHistoryExtension.Category,SocialHistory.SocialHistoryExtension.QuantityLabel,SocialHistory.SocialHabitCategory.Description,FamilyHistory.Diagnosis,FamilyHistory.FamilyHistoryExtension.Category,FamilyHistory.Diagnosis.Description"
       },
       {
         "identity" : "workflow",
@@ -1334,7 +1334,7 @@
       },
       {
         "identity" : "sda",
-        "map" : "healthFactor.encounter,healthFactor.facility,healthFactor.recorded"
+        "map" : "Vaccination.EncounterNumber,Vaccination.EnteredAt,Vaccination.EnteredBy,Vaccination.EnteredOn,Vaccination.Administration.AdministeredAtLocation,SocialHistory.EncounterNumber,SocialHistory.EnteredAt,SocialHistory.EnteredBy,SocialHistory.EnteredOn,FamilyHistory.EncounterNumber,FamilyHistory.EnteredAt,FamilyHistory.EnteredBy,FamilyHistory.EnteredOn"
       },
       {
         "identity" : "workflow",
@@ -1445,6 +1445,10 @@
         "map" : "HF.HealthFactor.EventDateTime"
       },
       {
+        "identity" : "sda",
+        "map" : "Vaccination.FromTime,Vaccination.ToTime,SocialHistory.FromTime,FamilyHistory.FromTime"
+      },
+      {
         "identity" : "workflow",
         "map" : "Event.occurrence[x]"
       },
@@ -1540,6 +1544,10 @@
       {
         "identity" : "cdw",
         "map" : "HF.HealthFactor.EncounterStaffIEN"
+      },
+      {
+        "identity" : "sda",
+        "map" : "Vaccination.Administration.AdministeringProvider"
       },
       {
         "identity" : "workflow",
@@ -1656,7 +1664,7 @@
       },
       {
         "identity" : "sda",
-        "map" : "healthFactor.category,healthFactor.name"
+        "map" : "Vaccination.OrderItem,SocialHistory.SocialHabit,SocialHistory.SocialHabitCategory,SocialHistory.SocialHistoryExtension.Category,SocialHistory.SocialHistoryExtension.QuantityLabel,SocialHistory.SocialHabitCategory.Description,FamilyHistory.Diagnosis,FamilyHistory.FamilyHistoryExtension.Category,FamilyHistory.Diagnosis.Description\nVaccination.Order.Description"
       },
       {
         "identity" : "sct-concept",
@@ -2169,7 +2177,7 @@
       },
       {
         "identity" : "sda",
-        "map" : "healthFactor.comment"
+        "map" : "Vaccination.Administration.RefusalReason,SocialHistory.SocialHabitComments,FamilyHistory.NoteText"
       },
       {
         "identity" : "v2",
@@ -3308,7 +3316,7 @@
       },
       {
         "identity" : "sda",
-        "map" : "healthFactor.category,healthFactor.name"
+        "map" : "Vaccination.OrderItem,SocialHistory.SocialHabit,SocialHistory.SocialHabitCategory,SocialHistory.SocialHistoryExtension.Category,SocialHistory.SocialHistoryExtension.QuantityLabel,SocialHistory.SocialHabitCategory.Description,FamilyHistory.Diagnosis,FamilyHistory.FamilyHistoryExtension.Category,FamilyHistory.Diagnosis.Description"
       }]
     },
     {
@@ -3345,7 +3353,7 @@
       },
       {
         "identity" : "sda",
-        "map" : "healthFactor.encounter,healthFactor.facility,healthFactor.recorded"
+        "map" : "Vaccination.EncounterNumber,Vaccination.EnteredAt,Vaccination.EnteredBy,Vaccination.EnteredOn,Vaccination.Administration.AdministeredAtLocation,SocialHistory.EncounterNumber,SocialHistory.EnteredAt,SocialHistory.EnteredBy,SocialHistory.EnteredOn,FamilyHistory.EncounterNumber,FamilyHistory.EnteredAt,FamilyHistory.EnteredBy,FamilyHistory.EnteredOn"
       }]
     },
     {
@@ -3362,6 +3370,10 @@
       {
         "identity" : "cdw",
         "map" : "HF.HealthFactor.EventDateTime"
+      },
+      {
+        "identity" : "sda",
+        "map" : "Vaccination.FromTime,Vaccination.ToTime,SocialHistory.FromTime,FamilyHistory.FromTime"
       }]
     },
     {
@@ -3380,6 +3392,10 @@
       {
         "identity" : "cdw",
         "map" : "HF.HealthFactor.EncounterStaffIEN"
+      },
+      {
+        "identity" : "sda",
+        "map" : "Vaccination.Administration.AdministeringProvider"
       }]
     },
     {
@@ -3404,7 +3420,7 @@
       },
       {
         "identity" : "sda",
-        "map" : "healthFactor.category,healthFactor.name"
+        "map" : "Vaccination.OrderItem,SocialHistory.SocialHabit,SocialHistory.SocialHabitCategory,SocialHistory.SocialHistoryExtension.Category,SocialHistory.SocialHistoryExtension.QuantityLabel,SocialHistory.SocialHabitCategory.Description,FamilyHistory.Diagnosis,FamilyHistory.FamilyHistoryExtension.Category,FamilyHistory.Diagnosis.Description\nVaccination.Order.Description"
       }]
     },
     {
@@ -3431,7 +3447,7 @@
       },
       {
         "identity" : "sda",
-        "map" : "healthFactor.comment"
+        "map" : "Vaccination.Administration.RefusalReason,SocialHistory.SocialHabitComments,FamilyHistory.NoteText"
       }]
     }]
   }

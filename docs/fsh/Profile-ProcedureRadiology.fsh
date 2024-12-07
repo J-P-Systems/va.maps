@@ -45,4 +45,5 @@ Mapping: sda-to-ProcedureRadiology
 Id: sda
 Title: "Summary Document Architecure (SDA)"
 Source: ProcedureRadiology
-* subject -> "radiology.case,radiology.dateTime,radiology.modifier [m]"
+* performedDateTime -> "RadOrder.Result.FromTime"
+* location -> "RadOrder.Result.EnteredAt,RadOrder.Result.PerformedAt"

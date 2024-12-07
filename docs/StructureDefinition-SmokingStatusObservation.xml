@@ -27,11 +27,11 @@
     <valueCanonical value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-smokingstatus|6.1.0"/>
   </extension>
   <url value="http://va.gov/fhir/StructureDefinition/SmokingStatusObservation"/>
-  <version value="0.69.438"/>
+  <version value="0.69.439"/>
   <name value="SmokingStatusObservation"/>
   <title value="Smoking Status Observation"/>
   <status value="active"/>
-  <date value="2024-12-06T17:18:58+00:00"/>
+  <date value="2024-12-07T11:18:15+00:00"/>
   <publisher value="VA"/>
   <contact>
     <name value="VA"/>
@@ -1139,7 +1139,7 @@
       </mapping>
       <mapping>
         <identity value="sda"/>
-        <map value="healthFactor.category,healthFactor.name"/>
+        <map value="Vaccination.OrderItem,SocialHistory.SocialHabit,SocialHistory.SocialHabitCategory,SocialHistory.SocialHistoryExtension.Category,SocialHistory.SocialHistoryExtension.QuantityLabel,SocialHistory.SocialHabitCategory.Description,FamilyHistory.Diagnosis,FamilyHistory.FamilyHistoryExtension.Category,FamilyHistory.Diagnosis.Description"/>
       </mapping>
       <mapping>
         <identity value="workflow"/>
@@ -1313,7 +1313,7 @@
       </mapping>
       <mapping>
         <identity value="sda"/>
-        <map value="healthFactor.encounter,healthFactor.facility,healthFactor.recorded"/>
+        <map value="Vaccination.EncounterNumber,Vaccination.EnteredAt,Vaccination.EnteredBy,Vaccination.EnteredOn,Vaccination.Administration.AdministeredAtLocation,SocialHistory.EncounterNumber,SocialHistory.EnteredAt,SocialHistory.EnteredBy,SocialHistory.EnteredOn,FamilyHistory.EncounterNumber,FamilyHistory.EnteredAt,FamilyHistory.EnteredBy,FamilyHistory.EnteredOn"/>
       </mapping>
       <mapping>
         <identity value="workflow"/>
@@ -1422,6 +1422,10 @@
         <map value="HF.HealthFactor.EventDateTime"/>
       </mapping>
       <mapping>
+        <identity value="sda"/>
+        <map value="Vaccination.FromTime,Vaccination.ToTime,SocialHistory.FromTime,FamilyHistory.FromTime"/>
+      </mapping>
+      <mapping>
         <identity value="workflow"/>
         <map value="Event.occurrence[x]"/>
       </mapping>
@@ -1515,6 +1519,10 @@
       <mapping>
         <identity value="cdw"/>
         <map value="HF.HealthFactor.EncounterStaffIEN"/>
+      </mapping>
+      <mapping>
+        <identity value="sda"/>
+        <map value="Vaccination.Administration.AdministeringProvider"/>
       </mapping>
       <mapping>
         <identity value="workflow"/>
@@ -1629,7 +1637,7 @@
       </mapping>
       <mapping>
         <identity value="sda"/>
-        <map value="healthFactor.category,healthFactor.name"/>
+        <map value="Vaccination.OrderItem,SocialHistory.SocialHabit,SocialHistory.SocialHabitCategory,SocialHistory.SocialHistoryExtension.Category,SocialHistory.SocialHistoryExtension.QuantityLabel,SocialHistory.SocialHabitCategory.Description,FamilyHistory.Diagnosis,FamilyHistory.FamilyHistoryExtension.Category,FamilyHistory.Diagnosis.Description&#xA;Vaccination.Order.Description"/>
       </mapping>
       <mapping>
         <identity value="sct-concept"/>
@@ -2125,7 +2133,7 @@
       </mapping>
       <mapping>
         <identity value="sda"/>
-        <map value="healthFactor.comment"/>
+        <map value="Vaccination.Administration.RefusalReason,SocialHistory.SocialHabitComments,FamilyHistory.NoteText"/>
       </mapping>
       <mapping>
         <identity value="v2"/>
@@ -3224,7 +3232,7 @@
       </mapping>
       <mapping>
         <identity value="sda"/>
-        <map value="healthFactor.category,healthFactor.name"/>
+        <map value="Vaccination.OrderItem,SocialHistory.SocialHabit,SocialHistory.SocialHabitCategory,SocialHistory.SocialHistoryExtension.Category,SocialHistory.SocialHistoryExtension.QuantityLabel,SocialHistory.SocialHabitCategory.Description,FamilyHistory.Diagnosis,FamilyHistory.FamilyHistoryExtension.Category,FamilyHistory.Diagnosis.Description"/>
       </mapping>
     </element>
     <element id="Observation.subject">
@@ -3259,7 +3267,7 @@
       </mapping>
       <mapping>
         <identity value="sda"/>
-        <map value="healthFactor.encounter,healthFactor.facility,healthFactor.recorded"/>
+        <map value="Vaccination.EncounterNumber,Vaccination.EnteredAt,Vaccination.EnteredBy,Vaccination.EnteredOn,Vaccination.Administration.AdministeredAtLocation,SocialHistory.EncounterNumber,SocialHistory.EnteredAt,SocialHistory.EnteredBy,SocialHistory.EnteredOn,FamilyHistory.EncounterNumber,FamilyHistory.EnteredAt,FamilyHistory.EnteredBy,FamilyHistory.EnteredOn"/>
       </mapping>
     </element>
     <element id="Observation.effective[x]:effectiveDateTime">
@@ -3275,6 +3283,10 @@
       <mapping>
         <identity value="cdw"/>
         <map value="HF.HealthFactor.EventDateTime"/>
+      </mapping>
+      <mapping>
+        <identity value="sda"/>
+        <map value="Vaccination.FromTime,Vaccination.ToTime,SocialHistory.FromTime,FamilyHistory.FromTime"/>
       </mapping>
     </element>
     <element id="Observation.performer">
@@ -3292,6 +3304,10 @@
       <mapping>
         <identity value="cdw"/>
         <map value="HF.HealthFactor.EncounterStaffIEN"/>
+      </mapping>
+      <mapping>
+        <identity value="sda"/>
+        <map value="Vaccination.Administration.AdministeringProvider"/>
       </mapping>
     </element>
     <element id="Observation.value[x]:valueCodeableConcept">
@@ -3315,7 +3331,7 @@
       </mapping>
       <mapping>
         <identity value="sda"/>
-        <map value="healthFactor.category,healthFactor.name"/>
+        <map value="Vaccination.OrderItem,SocialHistory.SocialHabit,SocialHistory.SocialHabitCategory,SocialHistory.SocialHistoryExtension.Category,SocialHistory.SocialHistoryExtension.QuantityLabel,SocialHistory.SocialHabitCategory.Description,FamilyHistory.Diagnosis,FamilyHistory.FamilyHistoryExtension.Category,FamilyHistory.Diagnosis.Description&#xA;Vaccination.Order.Description"/>
       </mapping>
     </element>
     <element id="Observation.value[x]:valueCodeableConcept.text">
@@ -3340,7 +3356,7 @@
       </mapping>
       <mapping>
         <identity value="sda"/>
-        <map value="healthFactor.comment"/>
+        <map value="Vaccination.Administration.RefusalReason,SocialHistory.SocialHabitComments,FamilyHistory.NoteText"/>
       </mapping>
     </element>
   </differential>

@@ -37,3 +37,12 @@ Source: ObservationImagingResultRadNuc
 * effectiveDateTime -> "SStaff.RadiologyNuclearMedicineReport.ExamDateTime"
 * issued -> "SStaff.RadiologyNuclearMedicineReport.VerifiedDateTime"
 * performer -> "SStaff.RadiologyNuclearMedicineReport.VerifyingPhysicianStaffIEN"
+
+Mapping: sda-to-ObservationImagingResultRadNuc
+Id: sda
+Title: "Summary Document Architecure (SDA)"
+Source: ObservationImagingResultRadNuc
+* status -> "Documents.DocumentCompletionStatus"
+* subject -> "Documents.DocumentName"
+* issued -> "Documents.AuthorizationTime,Documents.ToTime"
+* performer -> "Documents.DocumentExtension.CareProviders"

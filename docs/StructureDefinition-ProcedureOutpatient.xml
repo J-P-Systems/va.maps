@@ -34,11 +34,11 @@
     <valueCanonical value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure|6.1.0"/>
   </extension>
   <url value="http://va.gov/fhir/StructureDefinition/ProcedureOutpatient"/>
-  <version value="0.69.438"/>
+  <version value="0.69.439"/>
   <name value="ProcedureOutpatient"/>
   <title value="Procedure: Outpatient"/>
   <status value="active"/>
-  <date value="2024-12-06T17:18:58+00:00"/>
+  <date value="2024-12-07T11:18:15+00:00"/>
   <publisher value="VA"/>
   <contact>
     <name value="VA"/>
@@ -63,6 +63,10 @@
   <mapping>
     <identity value="cdw"/>
     <name value="Clinical Data Warehouse (CDW)"/>
+  </mapping>
+  <mapping>
+    <identity value="sda"/>
+    <name value="Summary Document Architecure (SDA)"/>
   </mapping>
   <mapping>
     <identity value="workflow"/>
@@ -929,6 +933,10 @@
         <map value="Outpat.VProcedure.CPTIEN,Outpat.VProcedureCPTModifier.CPTIEN,Outpat.VProcedureDiagnosis.CPTIEN,Outpat.WorkloadVProcedure.CPTIEN,Outpat.WorkloadVProcedureCPTModifier.CPTIEN,Outpat.WorkloadVProcedureDiagnosis.CPTIEN"/>
       </mapping>
       <mapping>
+        <identity value="sda"/>
+        <map value="Encounter.EncounterExtension.Cpt,Encounter.EncounterExtension.Cpt,Procedure.Procedure,Procedure.CodeTableDetail.Procedure.Code"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="C*E.1-8, C*E.10-22"/>
       </mapping>
@@ -1134,6 +1142,10 @@
         <map value="Outpat.VProcedure.CPTIEN,Outpat.VProcedureCPTModifier.CPTIEN,Outpat.VProcedureDiagnosis.CPTIEN,Outpat.WorkloadVProcedure.CPTIEN,Outpat.WorkloadVProcedureCPTModifier.CPTIEN,Outpat.WorkloadVProcedureDiagnosis.CPTIEN&#xA;Dim.CPT.CPTCode,Dim.CPT.CPTCode"/>
       </mapping>
       <mapping>
+        <identity value="sda"/>
+        <map value="Encounter.EncounterExtension.Cpt,Encounter.EncounterExtension.Cpt,Procedure.Procedure,Procedure.CodeTableDetail.Procedure.Code"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="C*E.1"/>
       </mapping>
@@ -1183,6 +1195,10 @@
       <mapping>
         <identity value="cdw"/>
         <map value="Outpat.VProcedure.CPTIEN,Outpat.VProcedureCPTModifier.CPTIEN,Outpat.VProcedureDiagnosis.CPTIEN,Outpat.WorkloadVProcedure.CPTIEN,Outpat.WorkloadVProcedureCPTModifier.CPTIEN,Outpat.WorkloadVProcedureDiagnosis.CPTIEN&#xA;Dim.CPT.CPTName,Dim.CPT.CPTName"/>
+      </mapping>
+      <mapping>
+        <identity value="sda"/>
+        <map value="Encounter.EncounterExtension.Cpt,Encounter.EncounterExtension.Cpt,Procedure.Procedure,Procedure.CodeTableDetail.Procedure.Code"/>
       </mapping>
       <mapping>
         <identity value="v2"/>
@@ -1273,6 +1289,10 @@
       <mapping>
         <identity value="cdw"/>
         <map value="Outpat.VProcedure.ProviderNarrativeIEN,Outpat.WorkloadVProcedure.ProviderNarrativeIEN&#xA;Dim.ProviderNarrative.ProviderNarrative"/>
+      </mapping>
+      <mapping>
+        <identity value="sda"/>
+        <map value="Procedure.Procedure,Procedure.CodeTableDetail.Procedure.OriginalText"/>
       </mapping>
       <mapping>
         <identity value="v2"/>
@@ -1382,6 +1402,10 @@
       <mapping>
         <identity value="cdw"/>
         <map value="Outpat.VProcedure.VisitDateTime,Outpat.VProcedure.VisitIEN,Outpat.VProcedureCPTModifier.VisitDateTime,Outpat.VProcedureCPTModifier.VisitIEN,Outpat.VProcedureDiagnosis.VisitDateTime,Outpat.VProcedureDiagnosis.VisitIEN,Outpat.WorkloadVProcedure.VisitDateTime,Outpat.WorkloadVProcedure.VisitIEN,Outpat.WorkloadVProcedureCPTModifier.VisitDateTime,Outpat.WorkloadVProcedureCPTModifier.VisitIEN,Outpat.WorkloadVProcedureDiagnosis.VisitDateTime,Outpat.WorkloadVProcedureDiagnosis.VisitIEN"/>
+      </mapping>
+      <mapping>
+        <identity value="sda"/>
+        <map value="Procedure.EncounterNumber,Procedure.EnteredAt,Procedure.EnteredBy,Procedure.EnteredOn,Procedure.ProcedureExtension.Location"/>
       </mapping>
       <mapping>
         <identity value="workflow"/>
@@ -1512,6 +1536,10 @@
       <mapping>
         <identity value="cdw"/>
         <map value="Outpat.VProcedure.EventDateTime,Outpat.VProcedureDiagnosis.EventDateTime,Outpat.WorkloadVProcedure.EventDateTime,Outpat.WorkloadVProcedureDiagnosis.EventDateTime"/>
+      </mapping>
+      <mapping>
+        <identity value="sda"/>
+        <map value="Procedure.FromTime,Procedure.ProcedureTime"/>
       </mapping>
       <mapping>
         <identity value="workflow"/>
@@ -1834,6 +1862,10 @@
       <mapping>
         <identity value="cdw"/>
         <map value="Outpat.VProcedure.EncounterProviderIEN,Outpat.WorkloadVProcedure.EncounterProviderIEN"/>
+      </mapping>
+      <mapping>
+        <identity value="sda"/>
+        <map value="Procedure.Clinician"/>
       </mapping>
       <mapping>
         <identity value="workflow"/>
@@ -2994,6 +3026,10 @@
         <map value="Outpat.VProcedure.Comments,Outpat.WorkloadVProcedure.Comments"/>
       </mapping>
       <mapping>
+        <identity value="sda"/>
+        <map value="Procedure.ProcedureExtension.Comments"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="N/A"/>
       </mapping>
@@ -3318,6 +3354,10 @@
         <identity value="cdw"/>
         <map value="Outpat.VProcedure.CPTIEN,Outpat.VProcedureCPTModifier.CPTIEN,Outpat.VProcedureDiagnosis.CPTIEN,Outpat.WorkloadVProcedure.CPTIEN,Outpat.WorkloadVProcedureCPTModifier.CPTIEN,Outpat.WorkloadVProcedureDiagnosis.CPTIEN"/>
       </mapping>
+      <mapping>
+        <identity value="sda"/>
+        <map value="Encounter.EncounterExtension.Cpt,Encounter.EncounterExtension.Cpt,Procedure.Procedure,Procedure.CodeTableDetail.Procedure.Code"/>
+      </mapping>
     </element>
     <element id="Procedure.code.coding.system">
       <path value="Procedure.code.coding.system"/>
@@ -3341,6 +3381,10 @@
         <identity value="cdw"/>
         <map value="Outpat.VProcedure.CPTIEN,Outpat.VProcedureCPTModifier.CPTIEN,Outpat.VProcedureDiagnosis.CPTIEN,Outpat.WorkloadVProcedure.CPTIEN,Outpat.WorkloadVProcedureCPTModifier.CPTIEN,Outpat.WorkloadVProcedureDiagnosis.CPTIEN&#xA;Dim.CPT.CPTCode,Dim.CPT.CPTCode"/>
       </mapping>
+      <mapping>
+        <identity value="sda"/>
+        <map value="Encounter.EncounterExtension.Cpt,Encounter.EncounterExtension.Cpt,Procedure.Procedure,Procedure.CodeTableDetail.Procedure.Code"/>
+      </mapping>
     </element>
     <element id="Procedure.code.coding.display">
       <path value="Procedure.code.coding.display"/>
@@ -3354,6 +3398,10 @@
         <identity value="cdw"/>
         <map value="Outpat.VProcedure.CPTIEN,Outpat.VProcedureCPTModifier.CPTIEN,Outpat.VProcedureDiagnosis.CPTIEN,Outpat.WorkloadVProcedure.CPTIEN,Outpat.WorkloadVProcedureCPTModifier.CPTIEN,Outpat.WorkloadVProcedureDiagnosis.CPTIEN&#xA;Dim.CPT.CPTName,Dim.CPT.CPTName"/>
       </mapping>
+      <mapping>
+        <identity value="sda"/>
+        <map value="Encounter.EncounterExtension.Cpt,Encounter.EncounterExtension.Cpt,Procedure.Procedure,Procedure.CodeTableDetail.Procedure.Code"/>
+      </mapping>
     </element>
     <element id="Procedure.code.text">
       <path value="Procedure.code.text"/>
@@ -3365,6 +3413,10 @@
       <mapping>
         <identity value="cdw"/>
         <map value="Outpat.VProcedure.ProviderNarrativeIEN,Outpat.WorkloadVProcedure.ProviderNarrativeIEN&#xA;Dim.ProviderNarrative.ProviderNarrative"/>
+      </mapping>
+      <mapping>
+        <identity value="sda"/>
+        <map value="Procedure.Procedure,Procedure.CodeTableDetail.Procedure.OriginalText"/>
       </mapping>
     </element>
     <element id="Procedure.subject">
@@ -3393,6 +3445,10 @@
       <mapping>
         <identity value="cdw"/>
         <map value="Outpat.VProcedure.VisitDateTime,Outpat.VProcedure.VisitIEN,Outpat.VProcedureCPTModifier.VisitDateTime,Outpat.VProcedureCPTModifier.VisitIEN,Outpat.VProcedureDiagnosis.VisitDateTime,Outpat.VProcedureDiagnosis.VisitIEN,Outpat.WorkloadVProcedure.VisitDateTime,Outpat.WorkloadVProcedure.VisitIEN,Outpat.WorkloadVProcedureCPTModifier.VisitDateTime,Outpat.WorkloadVProcedureCPTModifier.VisitIEN,Outpat.WorkloadVProcedureDiagnosis.VisitDateTime,Outpat.WorkloadVProcedureDiagnosis.VisitIEN"/>
+      </mapping>
+      <mapping>
+        <identity value="sda"/>
+        <map value="Procedure.EncounterNumber,Procedure.EnteredAt,Procedure.EnteredBy,Procedure.EnteredOn,Procedure.ProcedureExtension.Location"/>
       </mapping>
     </element>
     <element id="Procedure.performed[x]">
@@ -3426,6 +3482,10 @@
         <identity value="cdw"/>
         <map value="Outpat.VProcedure.EventDateTime,Outpat.VProcedureDiagnosis.EventDateTime,Outpat.WorkloadVProcedure.EventDateTime,Outpat.WorkloadVProcedureDiagnosis.EventDateTime"/>
       </mapping>
+      <mapping>
+        <identity value="sda"/>
+        <map value="Procedure.FromTime,Procedure.ProcedureTime"/>
+      </mapping>
     </element>
     <element id="Procedure.performer.actor">
       <path value="Procedure.performer.actor"/>
@@ -3437,6 +3497,10 @@
       <mapping>
         <identity value="cdw"/>
         <map value="Outpat.VProcedure.EncounterProviderIEN,Outpat.WorkloadVProcedure.EncounterProviderIEN"/>
+      </mapping>
+      <mapping>
+        <identity value="sda"/>
+        <map value="Procedure.Clinician"/>
       </mapping>
     </element>
     <element id="Procedure.reasonCode">
@@ -3610,6 +3674,10 @@
       <mapping>
         <identity value="cdw"/>
         <map value="Outpat.VProcedure.Comments,Outpat.WorkloadVProcedure.Comments"/>
+      </mapping>
+      <mapping>
+        <identity value="sda"/>
+        <map value="Procedure.ProcedureExtension.Comments"/>
       </mapping>
     </element>
   </differential>

@@ -37,6 +37,9 @@ Mapping: sda-to-MedicationRequestUnsigned
 Id: sda
 Title: "Summary Document Architecure (SDA)"
 Source: MedicationRequestUnsigned
-* authoredOn -> "order.entered"
-* dosageInstruction.timing.repeat.boundsPeriod.start -> "order.start"
-* dosageInstruction.timing.repeat.boundsPeriod.end -> "order.stop"
+* identifier -> "LabOrder.Order.Description,LabOrder.Priority.Description,RadOrder.Order.Description,RadOrder.ResultExtension.null,OtherOrder.OrderCategory.Description,OtherOrder.Order.Description,OtherOrder.VA.VAStatus.Description,OtherOrder.Priority.Description,OtherOrder.Order.OriginalText"
+* subject -> "RadOrder.ResultExtension.null"
+* authoredOn -> "LabOrder.EnteredOn,LabOrder.CodeTable.SDACodingStandard,Medication.EnteredOn,RadOrder.EnteredOn,RadOrder.CodeTable.SDACodingStandard,RadOrder.ResultExtension.CaseNumber,OtherOrder.EnteredOn"
+* priorPrescription -> "LabOrder.LabOrderExtension.ReplacedOrder,Medication.MedicationExtension.ReplacedOrder,RadOrder.OrderExtension.ReplacedOrder,OtherOrder.OrderExtension.ReplacedOrder"
+* dosageInstruction.timing.repeat.boundsPeriod.start -> "LabOrder.FromTime,LabOrder.SpecimenCollectedTime,Medication.FromTime,RadOrder.FromTime,OtherOrder.FromTime"
+* dosageInstruction.timing.repeat.boundsPeriod.end -> "LabOrder.ToTime,Medication.ToTime,RadOrder.ToTime,OtherOrder.ToTime"

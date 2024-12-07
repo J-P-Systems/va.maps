@@ -21,11 +21,11 @@
      ]
   ] ) ; # 
   fhir:url [ fhir:v "http://va.gov/fhir/StructureDefinition/ProcedureOutpatient"^^xsd:anyURI] ; # 
-  fhir:version [ fhir:v "0.69.438"] ; # 
+  fhir:version [ fhir:v "0.69.439"] ; # 
   fhir:name [ fhir:v "ProcedureOutpatient"] ; # 
   fhir:title [ fhir:v "Procedure: Outpatient"] ; # 
   fhir:status [ fhir:v "active"] ; # 
-  fhir:date [ fhir:v "2024-12-06T17:18:58+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2024-12-07T11:18:15+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "VA"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "VA" ] ;
@@ -49,6 +49,9 @@
   ] [
      fhir:identity [ fhir:v "cdw" ] ;
      fhir:name [ fhir:v "Clinical Data Warehouse (CDW)" ]
+  ] [
+     fhir:identity [ fhir:v "sda" ] ;
+     fhir:name [ fhir:v "Summary Document Architecure (SDA)" ]
   ] [
      fhir:identity [ fhir:v "workflow" ] ;
      fhir:uri [ fhir:v "http://hl7.org/fhir/workflow"^^xsd:anyURI ] ;
@@ -1002,6 +1005,9 @@
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "Outpat.VProcedure.CPTIEN,Outpat.VProcedureCPTModifier.CPTIEN,Outpat.VProcedureDiagnosis.CPTIEN,Outpat.WorkloadVProcedure.CPTIEN,Outpat.WorkloadVProcedureCPTModifier.CPTIEN,Outpat.WorkloadVProcedureDiagnosis.CPTIEN" ]
        ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Encounter.EncounterExtension.Cpt,Encounter.EncounterExtension.Cpt,Procedure.Procedure,Procedure.CodeTableDetail.Procedure.Code" ]
+       ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "C*E.1-8, C*E.10-22" ]
        ] [
@@ -1212,6 +1218,9 @@
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "Outpat.VProcedure.CPTIEN,Outpat.VProcedureCPTModifier.CPTIEN,Outpat.VProcedureDiagnosis.CPTIEN,Outpat.WorkloadVProcedure.CPTIEN,Outpat.WorkloadVProcedureCPTModifier.CPTIEN,Outpat.WorkloadVProcedureDiagnosis.CPTIEN\nDim.CPT.CPTCode,Dim.CPT.CPTCode" ]
        ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Encounter.EncounterExtension.Cpt,Encounter.EncounterExtension.Cpt,Procedure.Procedure,Procedure.CodeTableDetail.Procedure.Code" ]
+       ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "C*E.1" ]
        ] [
@@ -1262,6 +1271,9 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "Outpat.VProcedure.CPTIEN,Outpat.VProcedureCPTModifier.CPTIEN,Outpat.VProcedureDiagnosis.CPTIEN,Outpat.WorkloadVProcedure.CPTIEN,Outpat.WorkloadVProcedureCPTModifier.CPTIEN,Outpat.WorkloadVProcedureDiagnosis.CPTIEN\nDim.CPT.CPTName,Dim.CPT.CPTName" ]
+       ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Encounter.EncounterExtension.Cpt,Encounter.EncounterExtension.Cpt,Procedure.Procedure,Procedure.CodeTableDetail.Procedure.Code" ]
        ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "C*E.2 - but note this is not well followed" ]
@@ -1353,6 +1365,9 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "Outpat.VProcedure.ProviderNarrativeIEN,Outpat.WorkloadVProcedure.ProviderNarrativeIEN\nDim.ProviderNarrative.ProviderNarrative" ]
+       ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Procedure.Procedure,Procedure.CodeTableDetail.Procedure.OriginalText" ]
        ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "C*E.9. But note many systems use C*E.2 for this" ]
@@ -1463,6 +1478,9 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "Outpat.VProcedure.VisitDateTime,Outpat.VProcedure.VisitIEN,Outpat.VProcedureCPTModifier.VisitDateTime,Outpat.VProcedureCPTModifier.VisitIEN,Outpat.VProcedureDiagnosis.VisitDateTime,Outpat.VProcedureDiagnosis.VisitIEN,Outpat.WorkloadVProcedure.VisitDateTime,Outpat.WorkloadVProcedure.VisitIEN,Outpat.WorkloadVProcedureCPTModifier.VisitDateTime,Outpat.WorkloadVProcedureCPTModifier.VisitIEN,Outpat.WorkloadVProcedureDiagnosis.VisitDateTime,Outpat.WorkloadVProcedureDiagnosis.VisitIEN" ]
+       ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Procedure.EncounterNumber,Procedure.EnteredAt,Procedure.EnteredBy,Procedure.EnteredOn,Procedure.ProcedureExtension.Location" ]
        ] [
          fhir:identity [ fhir:v "workflow" ] ;
          fhir:map [ fhir:v "Event.context" ]
@@ -1588,6 +1606,9 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "Outpat.VProcedure.EventDateTime,Outpat.VProcedureDiagnosis.EventDateTime,Outpat.WorkloadVProcedure.EventDateTime,Outpat.WorkloadVProcedureDiagnosis.EventDateTime" ]
+       ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Procedure.FromTime,Procedure.ProcedureTime" ]
        ] [
          fhir:identity [ fhir:v "workflow" ] ;
          fhir:map [ fhir:v "Event.occurrence[x]" ]
@@ -1957,6 +1978,9 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "Outpat.VProcedure.EncounterProviderIEN,Outpat.WorkloadVProcedure.EncounterProviderIEN" ]
+       ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Procedure.Clinician" ]
        ] [
          fhir:identity [ fhir:v "workflow" ] ;
          fhir:map [ fhir:v "Event.performer.actor" ]
@@ -3195,6 +3219,9 @@
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "Outpat.VProcedure.Comments,Outpat.WorkloadVProcedure.Comments" ]
        ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Procedure.ProcedureExtension.Comments" ]
+       ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "N/A" ]
        ] [
@@ -3560,6 +3587,9 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "Outpat.VProcedure.CPTIEN,Outpat.VProcedureCPTModifier.CPTIEN,Outpat.VProcedureDiagnosis.CPTIEN,Outpat.WorkloadVProcedure.CPTIEN,Outpat.WorkloadVProcedureCPTModifier.CPTIEN,Outpat.WorkloadVProcedureDiagnosis.CPTIEN" ]
+       ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Encounter.EncounterExtension.Cpt,Encounter.EncounterExtension.Cpt,Procedure.Procedure,Procedure.CodeTableDetail.Procedure.Code" ]
        ] )
      ] [
        fhir:id [ fhir:v "Procedure.code.coding.system" ] ;
@@ -3582,6 +3612,9 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "Outpat.VProcedure.CPTIEN,Outpat.VProcedureCPTModifier.CPTIEN,Outpat.VProcedureDiagnosis.CPTIEN,Outpat.WorkloadVProcedure.CPTIEN,Outpat.WorkloadVProcedureCPTModifier.CPTIEN,Outpat.WorkloadVProcedureDiagnosis.CPTIEN\nDim.CPT.CPTCode,Dim.CPT.CPTCode" ]
+       ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Encounter.EncounterExtension.Cpt,Encounter.EncounterExtension.Cpt,Procedure.Procedure,Procedure.CodeTableDetail.Procedure.Code" ]
        ] )
      ] [
        fhir:id [ fhir:v "Procedure.code.coding.display" ] ;
@@ -3594,6 +3627,9 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "Outpat.VProcedure.CPTIEN,Outpat.VProcedureCPTModifier.CPTIEN,Outpat.VProcedureDiagnosis.CPTIEN,Outpat.WorkloadVProcedure.CPTIEN,Outpat.WorkloadVProcedureCPTModifier.CPTIEN,Outpat.WorkloadVProcedureDiagnosis.CPTIEN\nDim.CPT.CPTName,Dim.CPT.CPTName" ]
+       ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Encounter.EncounterExtension.Cpt,Encounter.EncounterExtension.Cpt,Procedure.Procedure,Procedure.CodeTableDetail.Procedure.Code" ]
        ] )
      ] [
        fhir:id [ fhir:v "Procedure.code.text" ] ;
@@ -3605,6 +3641,9 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "Outpat.VProcedure.ProviderNarrativeIEN,Outpat.WorkloadVProcedure.ProviderNarrativeIEN\nDim.ProviderNarrative.ProviderNarrative" ]
+       ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Procedure.Procedure,Procedure.CodeTableDetail.Procedure.OriginalText" ]
        ] )
      ] [
        fhir:id [ fhir:v "Procedure.subject" ] ;
@@ -3634,6 +3673,9 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "Outpat.VProcedure.VisitDateTime,Outpat.VProcedure.VisitIEN,Outpat.VProcedureCPTModifier.VisitDateTime,Outpat.VProcedureCPTModifier.VisitIEN,Outpat.VProcedureDiagnosis.VisitDateTime,Outpat.VProcedureDiagnosis.VisitIEN,Outpat.WorkloadVProcedure.VisitDateTime,Outpat.WorkloadVProcedure.VisitIEN,Outpat.WorkloadVProcedureCPTModifier.VisitDateTime,Outpat.WorkloadVProcedureCPTModifier.VisitIEN,Outpat.WorkloadVProcedureDiagnosis.VisitDateTime,Outpat.WorkloadVProcedureDiagnosis.VisitIEN" ]
+       ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Procedure.EncounterNumber,Procedure.EnteredAt,Procedure.EnteredBy,Procedure.EnteredOn,Procedure.ProcedureExtension.Location" ]
        ] )
      ] [
        fhir:id [ fhir:v "Procedure.performed[x]" ] ;
@@ -3666,6 +3708,9 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "Outpat.VProcedure.EventDateTime,Outpat.VProcedureDiagnosis.EventDateTime,Outpat.WorkloadVProcedure.EventDateTime,Outpat.WorkloadVProcedureDiagnosis.EventDateTime" ]
+       ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Procedure.FromTime,Procedure.ProcedureTime" ]
        ] )
      ] [
        fhir:id [ fhir:v "Procedure.performer.actor" ] ;
@@ -3677,6 +3722,9 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "Outpat.VProcedure.EncounterProviderIEN,Outpat.WorkloadVProcedure.EncounterProviderIEN" ]
+       ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Procedure.Clinician" ]
        ] )
      ] [
        fhir:id [ fhir:v "Procedure.reasonCode" ] ;
@@ -3819,6 +3867,9 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "Outpat.VProcedure.Comments,Outpat.WorkloadVProcedure.Comments" ]
+       ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Procedure.ProcedureExtension.Comments" ]
        ] )
      ] )
   ] . # 

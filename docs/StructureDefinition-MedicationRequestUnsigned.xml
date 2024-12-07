@@ -24,11 +24,11 @@
     <valueCanonical value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest|6.1.0"/>
   </extension>
   <url value="http://va.gov/fhir/StructureDefinition/MedicationRequestUnsigned"/>
-  <version value="0.69.438"/>
+  <version value="0.69.439"/>
   <name value="MedicationRequestUnsigned"/>
   <title value="MedicationRequest: Unsigned"/>
   <status value="active"/>
-  <date value="2024-12-06T17:18:58+00:00"/>
+  <date value="2024-12-07T11:18:15+00:00"/>
   <publisher value="VA"/>
   <contact>
     <name value="VA"/>
@@ -454,6 +454,10 @@
         <identity value="vista"/>
         <map value="1225: source value from ORDER - ORDER # (100-.01) case package like 'PS%' &amp; class 'I' &amp; [exclude supply]"/>
         <comment value="confirm case"/>
+      </mapping>
+      <mapping>
+        <identity value="sda"/>
+        <map value="LabOrder.Order.Description,LabOrder.Priority.Description,RadOrder.Order.Description,RadOrder.ResultExtension.null,OtherOrder.OrderCategory.Description,OtherOrder.Order.Description,OtherOrder.VA.VAStatus.Description,OtherOrder.Priority.Description,OtherOrder.Order.OriginalText"/>
       </mapping>
       <mapping>
         <identity value="workflow"/>
@@ -1031,6 +1035,10 @@
         <map value="CPRSOrder.OrderAction.ObjectOfOrderIEN,CPRSOrder.OrderAction.ObjectofOrderLabReferralPatientIEN,CPRSOrder.OrderAction.ObjectOfOrderPatientIEN,CPRSOrder.OrderAction.ParentFileNumber,CPRSOrder.OrderedItem.PatientIEN"/>
       </mapping>
       <mapping>
+        <identity value="sda"/>
+        <map value="RadOrder.ResultExtension.null"/>
+      </mapping>
+      <mapping>
         <identity value="workflow"/>
         <map value="Request.subject"/>
       </mapping>
@@ -1184,7 +1192,7 @@
       </mapping>
       <mapping>
         <identity value="sda"/>
-        <map value="order.entered"/>
+        <map value="LabOrder.EnteredOn,LabOrder.CodeTable.SDACodingStandard,Medication.EnteredOn,RadOrder.EnteredOn,RadOrder.CodeTable.SDACodingStandard,RadOrder.ResultExtension.CaseNumber,OtherOrder.EnteredOn"/>
       </mapping>
       <mapping>
         <identity value="workflow"/>
@@ -2551,7 +2559,7 @@
       </mapping>
       <mapping>
         <identity value="sda"/>
-        <map value="order.start"/>
+        <map value="LabOrder.FromTime,LabOrder.SpecimenCollectedTime,Medication.FromTime,RadOrder.FromTime,OtherOrder.FromTime"/>
       </mapping>
       <mapping>
         <identity value="v2"/>
@@ -2600,7 +2608,7 @@
       </mapping>
       <mapping>
         <identity value="sda"/>
-        <map value="order.stop"/>
+        <map value="LabOrder.ToTime,Medication.ToTime,RadOrder.ToTime,OtherOrder.ToTime"/>
       </mapping>
       <mapping>
         <identity value="v2"/>
@@ -4402,6 +4410,10 @@
         <comment value="The specific MedicationRequestXxx profile to use depends on the source data"/>
       </mapping>
       <mapping>
+        <identity value="sda"/>
+        <map value="LabOrder.LabOrderExtension.ReplacedOrder,Medication.MedicationExtension.ReplacedOrder,RadOrder.OrderExtension.ReplacedOrder,OtherOrder.OrderExtension.ReplacedOrder"/>
+      </mapping>
+      <mapping>
         <identity value="workflow"/>
         <map value="Request.replaces"/>
       </mapping>
@@ -4496,6 +4508,10 @@
         <map value="1225: source value from ORDER - ORDER # (100-.01) case package like 'PS%' &amp; class 'I' &amp; [exclude supply]"/>
         <comment value="confirm case"/>
       </mapping>
+      <mapping>
+        <identity value="sda"/>
+        <map value="LabOrder.Order.Description,LabOrder.Priority.Description,RadOrder.Order.Description,RadOrder.ResultExtension.null,OtherOrder.OrderCategory.Description,OtherOrder.Order.Description,OtherOrder.VA.VAStatus.Description,OtherOrder.Priority.Description,OtherOrder.Order.OriginalText"/>
+      </mapping>
     </element>
     <element id="MedicationRequest.medication[x]">
       <path value="MedicationRequest.medication[x]"/>
@@ -4541,6 +4557,10 @@
         <identity value="cdw"/>
         <map value="CPRSOrder.OrderAction.ObjectOfOrderIEN,CPRSOrder.OrderAction.ObjectofOrderLabReferralPatientIEN,CPRSOrder.OrderAction.ObjectOfOrderPatientIEN,CPRSOrder.OrderAction.ParentFileNumber,CPRSOrder.OrderedItem.PatientIEN"/>
       </mapping>
+      <mapping>
+        <identity value="sda"/>
+        <map value="RadOrder.ResultExtension.null"/>
+      </mapping>
     </element>
     <element id="MedicationRequest.authoredOn">
       <path value="MedicationRequest.authoredOn"/>
@@ -4554,7 +4574,7 @@
       </mapping>
       <mapping>
         <identity value="sda"/>
-        <map value="order.entered"/>
+        <map value="LabOrder.EnteredOn,LabOrder.CodeTable.SDACodingStandard,Medication.EnteredOn,RadOrder.EnteredOn,RadOrder.CodeTable.SDACodingStandard,RadOrder.ResultExtension.CaseNumber,OtherOrder.EnteredOn"/>
       </mapping>
     </element>
     <element id="MedicationRequest.requester">
@@ -4601,7 +4621,7 @@
       </mapping>
       <mapping>
         <identity value="sda"/>
-        <map value="order.start"/>
+        <map value="LabOrder.FromTime,LabOrder.SpecimenCollectedTime,Medication.FromTime,RadOrder.FromTime,OtherOrder.FromTime"/>
       </mapping>
     </element>
     <element id="MedicationRequest.dosageInstruction.timing.repeat.bounds[x]:boundsPeriod.end">
@@ -4617,7 +4637,7 @@
       </mapping>
       <mapping>
         <identity value="sda"/>
-        <map value="order.stop"/>
+        <map value="LabOrder.ToTime,Medication.ToTime,RadOrder.ToTime,OtherOrder.ToTime"/>
       </mapping>
     </element>
     <element id="MedicationRequest.priorPrescription">
@@ -4627,6 +4647,10 @@
         <identity value="vista"/>
         <map value="1232: reference from ORDER - REPLACED ORDER (100-9)"/>
         <comment value="The specific MedicationRequestXxx profile to use depends on the source data"/>
+      </mapping>
+      <mapping>
+        <identity value="sda"/>
+        <map value="LabOrder.LabOrderExtension.ReplacedOrder,Medication.MedicationExtension.ReplacedOrder,RadOrder.OrderExtension.ReplacedOrder,OtherOrder.OrderExtension.ReplacedOrder"/>
       </mapping>
     </element>
   </differential>

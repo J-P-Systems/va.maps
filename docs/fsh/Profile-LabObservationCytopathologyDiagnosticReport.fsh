@@ -79,4 +79,7 @@ Mapping: sda-to-LabObservationCytopathologyDiagnosticReport
 Id: sda
 Title: "Summary Document Architecure (SDA)"
 Source: LabObservationCytopathologyDiagnosticReport
-* subject -> "demographics.lrdfn\naccession.collected"
+* issued -> "Documents.ToTime"
+* performer[va-by] -> "Documents.DocumentExtension.CareProviders"
+* resultsInterpreter -> "Documents.Clinician,Documents.EnteredBy"
+* subject -> "Patient.PatientExtension.VeteranLrdfn"

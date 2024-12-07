@@ -10,11 +10,11 @@
     "valueCanonical" : "http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure|6.1.0"
   }],
   "url" : "http://va.gov/fhir/StructureDefinition/ProcedureSurgeryProcedure",
-  "version" : "0.69.438",
+  "version" : "0.69.439",
   "name" : "ProcedureSurgeryProcedure",
   "title" : "Procedure: Surgery Procedure",
   "status" : "active",
-  "date" : "2024-12-06T17:18:58+00:00",
+  "date" : "2024-12-07T11:18:15+00:00",
   "publisher" : "VA",
   "contact" : [{
     "name" : "VA",
@@ -1447,10 +1447,6 @@
         "map" : "Surg.SurgeryPRE.PrincipalProcedureText"
       },
       {
-        "identity" : "sda",
-        "map" : "surgery.name"
-      },
-      {
         "identity" : "v2",
         "map" : "C*E.9. But note many systems use C*E.2 for this"
       },
@@ -1498,6 +1494,10 @@
       {
         "identity" : "cdw",
         "map" : "SPatient.ImplantedProsthesis.PatientIEN,SPatient.OperationsIndication.PatientIEN,Surg.AnesthesiaAgent.PatientIEN,Surg.AnesthesiaBlockSite.PatientIEN,Surg.AnesthesiaTechnique.PatientIEN,Surg.AnesthesiaTestDose.PatientIEN,Surg.ReferringPhysician.PatientIEN,Surg.ReferringPhysician.PatientSID,Surg.ReplacementFluidType.PatientIEN,Surg.ReplacementFluidType.PatientSID,Surg.SurgeryAssistant.PatientIEN,Surg.SurgeryAssistantOther.PatientIEN,Surg.SurgeryDelay.PatientIEN,Surg.SurgeryINTRA.PatientIEN,Surg.SurgeryIrrigation.PatientIEN,Surg.SurgeryIrrigation.PatientSID,Surg.SurgeryMedication.PatientIEN,Surg.SurgeryOccurrenceNonOp.PatientIEN,Surg.SurgeryOccurrenceNonOp.PatientSID,Surg.SurgeryOtherPostOpDiagnosis.PatientIEN,Surg.SurgeryOtherProcedure.PatientIEN,Surg.SurgeryOtherProcedureCPTModifier.PatientIEN,Surg.SurgeryOtherProcedureCPTModifier.PatientSID,Surg.SurgeryOtherProcedureDiagnosis.PatientIEN,Surg.SurgeryPOST.PatientIEN,Surg.SurgeryPostOpDiagnosis.PatientIEN,Surg.SurgeryPreOpDiagnosis.PatientIEN,Surg.SurgeryPreOpDiagnosis.PatientSID,Surg.SurgeryPrincipalAssociatedDiagnosis.PatientIEN,Surg.SurgeryPrincipalAssociatedProcedure.PatientIEN,Surg.SurgeryPrincipalCPTModifier.PatientIEN,Surg.SurgeryPrincipalDiagnosis.PatientIEN,Surg.SurgeryProcedureCPTModifier.PatientIEN,Surg.SurgeryProcedureDiagnosisCode.PatientIEN,Surg.SurgeryProcedureOccurrence.PatientIEN,Surg.SurgeryProcedureOccurrence.PatientSID,Surg.SurgeryRequiredBloodProducts.PatientIEN,Surg.SurgeryReturnCase.PatientIEN,Surg.SurgORCircSupport.PatientIEN,Surg.SurgORCircSupportTime.PatientIEN,Surg.SurgORCircSupportTime.PatientSID,Surg.SurgORScrubSupport.PatientIEN,Surg.SurgORScrubSupportTime.PatientIEN,Surg.SurgORScrubSupportTime.PatientSID"
+      },
+      {
+        "identity" : "sda",
+        "map" : "Procedure.CodeTableDetail.Procedure.Code"
       },
       {
         "identity" : "workflow",
@@ -1558,7 +1558,7 @@
       },
       {
         "identity" : "sda",
-        "map" : "surgery.encounter"
+        "map" : "Procedure.ProcedureExtension.SecondaryVisit"
       },
       {
         "identity" : "workflow",
@@ -1697,7 +1697,7 @@
       },
       {
         "identity" : "sda",
-        "map" : "surgery.dateTime"
+        "map" : "Procedure.ProcedureTime"
       },
       {
         "identity" : "workflow",
@@ -3180,7 +3180,7 @@
       },
       {
         "identity" : "sda",
-        "map" : "surgery.provider"
+        "map" : "Procedure.Clinician"
       },
       {
         "identity" : "workflow",
@@ -4555,6 +4555,10 @@
       {
         "identity" : "cdw",
         "map" : "Surg.SurgeryINTRA.AttendingSurgeonStaffIEN"
+      },
+      {
+        "identity" : "sda",
+        "map" : "Procedure.ProcedureExtension.AttendingClinician"
       },
       {
         "identity" : "workflow",
@@ -8222,7 +8226,7 @@
       },
       {
         "identity" : "sda",
-        "map" : "surgery.provider"
+        "map" : "Procedure.Clinician"
       },
       {
         "identity" : "workflow",
@@ -9893,10 +9897,6 @@
       {
         "identity" : "cdw",
         "map" : "Surg.SurgeryPRE.PrincipalProcedureText"
-      },
-      {
-        "identity" : "sda",
-        "map" : "surgery.name"
       }]
     },
     {
@@ -9913,6 +9913,10 @@
       {
         "identity" : "cdw",
         "map" : "SPatient.ImplantedProsthesis.PatientIEN,SPatient.OperationsIndication.PatientIEN,Surg.AnesthesiaAgent.PatientIEN,Surg.AnesthesiaBlockSite.PatientIEN,Surg.AnesthesiaTechnique.PatientIEN,Surg.AnesthesiaTestDose.PatientIEN,Surg.ReferringPhysician.PatientIEN,Surg.ReferringPhysician.PatientSID,Surg.ReplacementFluidType.PatientIEN,Surg.ReplacementFluidType.PatientSID,Surg.SurgeryAssistant.PatientIEN,Surg.SurgeryAssistantOther.PatientIEN,Surg.SurgeryDelay.PatientIEN,Surg.SurgeryINTRA.PatientIEN,Surg.SurgeryIrrigation.PatientIEN,Surg.SurgeryIrrigation.PatientSID,Surg.SurgeryMedication.PatientIEN,Surg.SurgeryOccurrenceNonOp.PatientIEN,Surg.SurgeryOccurrenceNonOp.PatientSID,Surg.SurgeryOtherPostOpDiagnosis.PatientIEN,Surg.SurgeryOtherProcedure.PatientIEN,Surg.SurgeryOtherProcedureCPTModifier.PatientIEN,Surg.SurgeryOtherProcedureCPTModifier.PatientSID,Surg.SurgeryOtherProcedureDiagnosis.PatientIEN,Surg.SurgeryPOST.PatientIEN,Surg.SurgeryPostOpDiagnosis.PatientIEN,Surg.SurgeryPreOpDiagnosis.PatientIEN,Surg.SurgeryPreOpDiagnosis.PatientSID,Surg.SurgeryPrincipalAssociatedDiagnosis.PatientIEN,Surg.SurgeryPrincipalAssociatedProcedure.PatientIEN,Surg.SurgeryPrincipalCPTModifier.PatientIEN,Surg.SurgeryPrincipalDiagnosis.PatientIEN,Surg.SurgeryProcedureCPTModifier.PatientIEN,Surg.SurgeryProcedureDiagnosisCode.PatientIEN,Surg.SurgeryProcedureOccurrence.PatientIEN,Surg.SurgeryProcedureOccurrence.PatientSID,Surg.SurgeryRequiredBloodProducts.PatientIEN,Surg.SurgeryReturnCase.PatientIEN,Surg.SurgORCircSupport.PatientIEN,Surg.SurgORCircSupportTime.PatientIEN,Surg.SurgORCircSupportTime.PatientSID,Surg.SurgORScrubSupport.PatientIEN,Surg.SurgORScrubSupportTime.PatientIEN,Surg.SurgORScrubSupportTime.PatientSID"
+      },
+      {
+        "identity" : "sda",
+        "map" : "Procedure.CodeTableDetail.Procedure.Code"
       }]
     },
     {
@@ -9929,7 +9933,7 @@
       },
       {
         "identity" : "sda",
-        "map" : "surgery.encounter"
+        "map" : "Procedure.ProcedureExtension.SecondaryVisit"
       }]
     },
     {
@@ -9968,7 +9972,7 @@
       },
       {
         "identity" : "sda",
-        "map" : "surgery.dateTime"
+        "map" : "Procedure.ProcedureTime"
       }]
     },
     {
@@ -10135,7 +10139,7 @@
       },
       {
         "identity" : "sda",
-        "map" : "surgery.provider"
+        "map" : "Procedure.Clinician"
       }]
     },
     {
@@ -10286,6 +10290,10 @@
       {
         "identity" : "cdw",
         "map" : "Surg.SurgeryINTRA.AttendingSurgeonStaffIEN"
+      },
+      {
+        "identity" : "sda",
+        "map" : "Procedure.ProcedureExtension.AttendingClinician"
       }]
     },
     {
@@ -10689,7 +10697,7 @@
       },
       {
         "identity" : "sda",
-        "map" : "surgery.provider"
+        "map" : "Procedure.Clinician"
       }]
     },
     {

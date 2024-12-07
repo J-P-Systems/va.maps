@@ -10,11 +10,11 @@
     "valueCanonical" : "http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-lab|6.1.0"
   }],
   "url" : "http://va.gov/fhir/StructureDefinition/LabObservationMicrobiologyMycobacteriologyDiagnosticReport",
-  "version" : "0.69.438",
+  "version" : "0.69.439",
   "name" : "LabObservationMicrobiologyMycobacteriologyDiagnosticReport",
   "title" : "Lab Observation: Microbiology Mycobacteriology DiagnosticReport",
   "status" : "draft",
-  "date" : "2024-12-06T17:18:58+00:00",
+  "date" : "2024-12-07T11:18:15+00:00",
   "publisher" : "VA",
   "contact" : [{
     "name" : "VA",
@@ -1988,7 +1988,7 @@
       },
       {
         "identity" : "sda",
-        "map" : "demographics.lrdfn\naccession.collected"
+        "map" : "Patient.PatientExtension.VeteranLrdfn"
       },
       {
         "identity" : "workflow",
@@ -2228,6 +2228,10 @@
         "map" : "Micro.Microbiology.ReportCompletedDateTime"
       },
       {
+        "identity" : "sda",
+        "map" : "Documents.ToTime,LabOrder.Result.ResultTime"
+      },
+      {
         "identity" : "w5",
         "map" : "FiveWs.recorded"
       },
@@ -2374,6 +2378,10 @@
         "map" : "Micro.Microbiology.VerifyingStaffIEN"
       },
       {
+        "identity" : "sda",
+        "map" : "Documents.Clinician,Documents.DocumentExtension.CareProviders,LabOrder.Result.VerifiedBy"
+      },
+      {
         "identity" : "workflow",
         "map" : "Event.performer.actor"
       },
@@ -2434,6 +2442,10 @@
       {
         "identity" : "cdw",
         "map" : "Micro.Microbiology.AccessioningInstitutionIEN"
+      },
+      {
+        "identity" : "sda",
+        "map" : "Documents.EnteredAt,LabOrder.Result.EnteredAt"
       },
       {
         "identity" : "workflow",
@@ -3159,7 +3171,7 @@
       },
       {
         "identity" : "sda",
-        "map" : "demographics.lrdfn\naccession.collected"
+        "map" : "Patient.PatientExtension.VeteranLrdfn"
       }]
     },
     {
@@ -3207,6 +3219,10 @@
       {
         "identity" : "cdw",
         "map" : "Micro.Microbiology.ReportCompletedDateTime"
+      },
+      {
+        "identity" : "sda",
+        "map" : "Documents.ToTime,LabOrder.Result.ResultTime"
       }]
     },
     {
@@ -3239,6 +3255,10 @@
       {
         "identity" : "cdw",
         "map" : "Micro.Microbiology.VerifyingStaffIEN"
+      },
+      {
+        "identity" : "sda",
+        "map" : "Documents.Clinician,Documents.DocumentExtension.CareProviders,LabOrder.Result.VerifiedBy"
       }]
     },
     {
@@ -3259,6 +3279,10 @@
       {
         "identity" : "cdw",
         "map" : "Micro.Microbiology.AccessioningInstitutionIEN"
+      },
+      {
+        "identity" : "sda",
+        "map" : "Documents.EnteredAt,LabOrder.Result.EnteredAt"
       }]
     },
     {

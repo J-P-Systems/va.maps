@@ -20,11 +20,11 @@
      ]
   ] ) ; # 
   fhir:url [ fhir:v "http://va.gov/fhir/StructureDefinition/Patient"^^xsd:anyURI] ; # 
-  fhir:version [ fhir:v "0.69.438"] ; # 
+  fhir:version [ fhir:v "0.69.439"] ; # 
   fhir:name [ fhir:v "Patient"] ; # 
   fhir:title [ fhir:v "Patient"] ; # 
   fhir:status [ fhir:v "active"] ; # 
-  fhir:date [ fhir:v "2024-12-06T17:18:58+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2024-12-07T11:18:15+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "VA"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "VA" ] ;
@@ -907,7 +907,7 @@
          fhir:comment [ fhir:v "Do we collect any detailed race data?" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "demographics.race [m-P:10]" ]
+         fhir:map [ fhir:v "Patient.Races" ]
        ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "C*E.1" ]
@@ -2013,7 +2013,7 @@
          fhir:map [ fhir:v "575: terminologyMaps using VF_ethnicityCategory on PATIENT - ETHNICITY INFORMATION (2-6)" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "demographics.ethnicity [m-P:10.2]" ]
+         fhir:map [ fhir:v "Patient.EthnicGroup" ]
        ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "C*E.1" ]
@@ -3054,7 +3054,7 @@
          fhir:map [ fhir:v "Outpat.Visit.PatientReligion,Outpat.Visit.PatientReligionCode,Outpat.Workload.PatientReligion,Outpat.Workload.PatientReligionCode,Patient.Patient.ReligionIEN,SPatient.SPatient.ReligionIEN" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "demographics.religion" ]
+         fhir:map [ fhir:v "Patient.Religion" ]
        ] [
          fhir:identity [ fhir:v "rim" ] ;
          fhir:map [ fhir:v "N/A" ]
@@ -3875,9 +3875,6 @@
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "Patient.Patient.PatientICN,Patient.PatientICN.PatientICN,SPatient.SPatient.PatientICN,SPatient.SPatientGISAddress.PatientICN" ]
        ] [
-         fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "demographics.icn" ]
-       ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "CX.1 / EI.1" ]
        ] [
@@ -4227,7 +4224,7 @@
          fhir:map [ fhir:v "SPatient.SPatient.DestinationMergePatientIEN,SPatient.SPatient.PatientFirstName,SPatient.SPatient.PatientLastName,SPatient.SPatient.PatientName,SPatient.SPatientAlias.PatientName" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "demographics.familyName,demographics.fullName,demographics.givenNames" ]
+         fhir:map [ fhir:v "Patient.Name" ]
        ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "implied by XPN.11" ]
@@ -5028,7 +5025,7 @@
          fhir:map [ fhir:v "274: source value from PATIENT - PHONE NUMBER [RESIDENCE] (2-.131)" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "demographics.telecom" ]
+         fhir:map [ fhir:v "Patient.HomePhoneNumber" ]
        ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "XTN.1 (or XTN.12)" ]
@@ -5388,7 +5385,7 @@
          fhir:map [ fhir:v "275: source value from PATIENT - PHONE NUMBER [WORK] (2-.132)" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "demographics.telecom" ]
+         fhir:map [ fhir:v "Patient.WorkPhoneNumber" ]
        ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "XTN.1 (or XTN.12)" ]
@@ -5748,7 +5745,7 @@
          fhir:map [ fhir:v "276: source value from PATIENT - PHONE NUMBER [CELLULAR] (2-.134)" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "demographics.telecom" ]
+         fhir:map [ fhir:v "Patient.MobilePhoneNumber" ]
        ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "XTN.1 (or XTN.12)" ]
@@ -5940,7 +5937,7 @@
          fhir:map [ fhir:v "Patient.Patient.Gender,Patient.PatientBirthSex.BirthSex,SPatient.SPatient.Gender,SPatient.SPatientBirthSex.BirthSex,SPatient.SPatientBirthSex.BirthSex" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "demographics.gender" ]
+         fhir:map [ fhir:v "Patient.BirthGender,Patient.Gender" ]
        ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "PID-8" ]
@@ -5993,7 +5990,7 @@
          fhir:map [ fhir:v "SPatient.PlaceOfBirth.BirthDateTime,SPatient.SPatient.BirthDateTime" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "demographics.dob" ]
+         fhir:map [ fhir:v "Patient.BirthTime,Patient.PatientExtension.Dob" ]
        ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "PID-7" ]
@@ -6103,7 +6100,7 @@
          fhir:map [ fhir:v "Patient.Patient.DeathDateTime,SPatient.SPatient.DeathDateTime" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "demographics.died" ]
+         fhir:map [ fhir:v "Patient.DeathTime,Patient.IsDead" ]
        ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "PID-30  (bool) and PID-29 (datetime)" ]
@@ -7079,7 +7076,7 @@
          fhir:map [ fhir:v "SPatient.SPatientGISAddress.StreetAddress2" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "demographics.address" ]
+         fhir:map [ fhir:v "Patient.Address.Street" ]
        ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "XAD.1 + XAD.2 (note: XAD.1 and XAD.2 have different meanings for a company address than for a person address)" ]
@@ -7138,7 +7135,7 @@
          fhir:map [ fhir:v "SPatient.SPatientGISAddress.City" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "demographics.address" ]
+         fhir:map [ fhir:v "Patient.Address.City" ]
        ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "XAD.3" ]
@@ -7242,7 +7239,7 @@
          fhir:map [ fhir:v "SPatient.SPatientGISAddress.StateIEN,SPatient.SPatientGISAddress.StateSID" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "demographics.address" ]
+         fhir:map [ fhir:v "Patient.Address.State" ]
        ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "XAD.4" ]
@@ -7300,9 +7297,6 @@
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "SPatient.SPatientGISAddress.Zip4" ]
        ] [
-         fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "demographics.address" ]
-       ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "XAD.5" ]
        ] [
@@ -7352,6 +7346,9 @@
          fhir:identity [ fhir:v "vista" ] ;
          fhir:map [ fhir:v "292: source value from PATIENT - COUNTRY (2-.1173)" ] ;
          fhir:comment [ fhir:v "confirm association with .111 etc." ]
+       ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Patient.Address.Country" ]
        ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "XAD.6" ]
@@ -7530,6 +7527,9 @@
          fhir:map [ fhir:v "293: source value from PATIENT - TEMPORARY ADDRESS START DATE (2-.1217)" ] ;
          fhir:comment [ fhir:v "need other addresses, including temp; not just range" ]
        ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Patient.Address.FromTime" ]
+       ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "DR.1" ]
        ] [
@@ -7572,6 +7572,9 @@
          fhir:identity [ fhir:v "vista" ] ;
          fhir:map [ fhir:v "294: source value from PATIENT - TEMPORARY ADDRESS END DATE (2-.1218)" ] ;
          fhir:comment [ fhir:v "need other addresses, including temp; not just range" ]
+       ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Patient.Address.ToTime" ]
        ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "DR.2" ]
@@ -7624,7 +7627,7 @@
          fhir:map [ fhir:v "Outpat.Visit.PatientMaritalStatus,Outpat.Workload.PatientMaritalStatus,Patient.Patient.MaritalStatusIEN,SPatient.SPatient.MaritalStatusIEN" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "demographics.maritalStatus" ]
+         fhir:map [ fhir:v "Patient.MaritalStatus" ]
        ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "PID-16" ]
@@ -8382,7 +8385,7 @@
          fhir:map [ fhir:v "Patient.PreferredLanguage.PreferredLanguage" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "demographics.language" ]
+         fhir:map [ fhir:v "Patient.PatientLanguage.Preferred Language" ]
        ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "PID-15, LAN-2" ]
@@ -9042,7 +9045,7 @@
          fhir:comment [ fhir:v "Do we collect any detailed race data?" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "demographics.race [m-P:10]" ]
+         fhir:map [ fhir:v "Patient.Races" ]
        ] )
      ] [
        fhir:id [ fhir:v "Patient.extension:ethnicity" ] ;
@@ -9072,7 +9075,7 @@
          fhir:map [ fhir:v "575: terminologyMaps using VF_ethnicityCategory on PATIENT - ETHNICITY INFORMATION (2-6)" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "demographics.ethnicity [m-P:10.2]" ]
+         fhir:map [ fhir:v "Patient.EthnicGroup" ]
        ] )
      ] [
        fhir:id [ fhir:v "Patient.extension:genderIdentity" ] ;
@@ -9128,7 +9131,7 @@
          fhir:map [ fhir:v "Outpat.Visit.PatientReligion,Outpat.Visit.PatientReligionCode,Outpat.Workload.PatientReligion,Outpat.Workload.PatientReligionCode,Patient.Patient.ReligionIEN,SPatient.SPatient.ReligionIEN" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "demographics.religion" ]
+         fhir:map [ fhir:v "Patient.Religion" ]
        ] )
      ] [
        fhir:id [ fhir:v "Patient.identifier.type.coding.system" ] ;
@@ -9168,9 +9171,6 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "Patient.Patient.PatientICN,Patient.PatientICN.PatientICN,SPatient.SPatient.PatientICN,SPatient.SPatientGISAddress.PatientICN" ]
-       ] [
-         fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "demographics.icn" ]
        ] )
      ] [
        fhir:id [ fhir:v "Patient.name.text" ] ;
@@ -9184,7 +9184,7 @@
          fhir:map [ fhir:v "SPatient.SPatient.DestinationMergePatientIEN,SPatient.SPatient.PatientFirstName,SPatient.SPatient.PatientLastName,SPatient.SPatient.PatientName,SPatient.SPatientAlias.PatientName" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "demographics.familyName,demographics.fullName,demographics.givenNames" ]
+         fhir:map [ fhir:v "Patient.Name" ]
        ] )
      ] [
        fhir:id [ fhir:v "Patient.name.family" ] ;
@@ -9247,7 +9247,7 @@
          fhir:map [ fhir:v "274: source value from PATIENT - PHONE NUMBER [RESIDENCE] (2-.131)" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "demographics.telecom" ]
+         fhir:map [ fhir:v "Patient.HomePhoneNumber" ]
        ] )
      ] [
        fhir:id [ fhir:v "Patient.telecom:va-home.use" ] ;
@@ -9281,7 +9281,7 @@
          fhir:map [ fhir:v "275: source value from PATIENT - PHONE NUMBER [WORK] (2-.132)" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "demographics.telecom" ]
+         fhir:map [ fhir:v "Patient.WorkPhoneNumber" ]
        ] )
      ] [
        fhir:id [ fhir:v "Patient.telecom:va-work.use" ] ;
@@ -9315,7 +9315,7 @@
          fhir:map [ fhir:v "276: source value from PATIENT - PHONE NUMBER [CELLULAR] (2-.134)" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "demographics.telecom" ]
+         fhir:map [ fhir:v "Patient.MobilePhoneNumber" ]
        ] )
      ] [
        fhir:id [ fhir:v "Patient.telecom:va-mobile.use" ] ;
@@ -9345,7 +9345,7 @@
          fhir:map [ fhir:v "Patient.Patient.Gender,Patient.PatientBirthSex.BirthSex,SPatient.SPatient.Gender,SPatient.SPatientBirthSex.BirthSex,SPatient.SPatientBirthSex.BirthSex" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "demographics.gender" ]
+         fhir:map [ fhir:v "Patient.BirthGender,Patient.Gender" ]
        ] )
      ] [
        fhir:id [ fhir:v "Patient.birthDate" ] ;
@@ -9358,7 +9358,7 @@
          fhir:map [ fhir:v "SPatient.PlaceOfBirth.BirthDateTime,SPatient.SPatient.BirthDateTime" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "demographics.dob" ]
+         fhir:map [ fhir:v "Patient.BirthTime,Patient.PatientExtension.Dob" ]
        ] )
      ] [
        fhir:id [ fhir:v "Patient.deceased[x]" ] ;
@@ -9390,7 +9390,7 @@
          fhir:map [ fhir:v "Patient.Patient.DeathDateTime,SPatient.SPatient.DeathDateTime" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "demographics.died" ]
+         fhir:map [ fhir:v "Patient.DeathTime,Patient.IsDead" ]
        ] )
      ] [
        fhir:id [ fhir:v "Patient.address" ] ;
@@ -9448,13 +9448,13 @@
          fhir:map [ fhir:v "SPatient.SPatientGISAddress.StreetAddress2" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "demographics.address" ]
+         fhir:map [ fhir:v "Patient.Address.Street" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "demographics.address" ]
+         fhir:map [ fhir:v "Patient.Address.Street" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "demographics.address" ]
+         fhir:map [ fhir:v "Patient.Address.Street" ]
        ] )
      ] [
        fhir:id [ fhir:v "Patient.address:va-home.city" ] ;
@@ -9467,7 +9467,7 @@
          fhir:map [ fhir:v "SPatient.SPatientGISAddress.City" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "demographics.address" ]
+         fhir:map [ fhir:v "Patient.Address.City" ]
        ] )
      ] [
        fhir:id [ fhir:v "Patient.address:va-home.state" ] ;
@@ -9480,7 +9480,7 @@
          fhir:map [ fhir:v "SPatient.SPatientGISAddress.StateIEN,SPatient.SPatientGISAddress.StateSID" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "demographics.address" ]
+         fhir:map [ fhir:v "Patient.Address.State" ]
        ] )
      ] [
        fhir:id [ fhir:v "Patient.address:va-home.postalCode" ] ;
@@ -9491,9 +9491,6 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "SPatient.SPatientGISAddress.Zip4" ]
-       ] [
-         fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "demographics.address" ]
        ] )
      ] [
        fhir:id [ fhir:v "Patient.address:va-home.country" ] ;
@@ -9503,6 +9500,9 @@
          fhir:identity [ fhir:v "vista" ] ;
          fhir:map [ fhir:v "292: source value from PATIENT - COUNTRY (2-.1173)" ] ;
          fhir:comment [ fhir:v "confirm association with .111 etc." ]
+       ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Patient.Address.Country" ]
        ] )
      ] [
        fhir:id [ fhir:v "Patient.address:va-home.period.start" ] ;
@@ -9512,6 +9512,9 @@
          fhir:identity [ fhir:v "vista" ] ;
          fhir:map [ fhir:v "293: source value from PATIENT - TEMPORARY ADDRESS START DATE (2-.1217)" ] ;
          fhir:comment [ fhir:v "need other addresses, including temp; not just range" ]
+       ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Patient.Address.FromTime" ]
        ] )
      ] [
        fhir:id [ fhir:v "Patient.address:va-home.period.end" ] ;
@@ -9521,6 +9524,9 @@
          fhir:identity [ fhir:v "vista" ] ;
          fhir:map [ fhir:v "294: source value from PATIENT - TEMPORARY ADDRESS END DATE (2-.1218)" ] ;
          fhir:comment [ fhir:v "need other addresses, including temp; not just range" ]
+       ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Patient.Address.ToTime" ]
        ] )
      ] [
        fhir:id [ fhir:v "Patient.maritalStatus" ] ;
@@ -9541,7 +9547,7 @@
          fhir:map [ fhir:v "Outpat.Visit.PatientMaritalStatus,Outpat.Workload.PatientMaritalStatus,Patient.Patient.MaritalStatusIEN,SPatient.SPatient.MaritalStatusIEN" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "demographics.maritalStatus" ]
+         fhir:map [ fhir:v "Patient.MaritalStatus" ]
        ] )
      ] [
        fhir:id [ fhir:v "Patient.communication.language" ] ;
@@ -9554,7 +9560,7 @@
          fhir:map [ fhir:v "Patient.PreferredLanguage.PreferredLanguage" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "demographics.language" ]
+         fhir:map [ fhir:v "Patient.PatientLanguage.Preferred Language" ]
        ] )
      ] [
        fhir:id [ fhir:v "Patient.managingOrganization.display" ] ;

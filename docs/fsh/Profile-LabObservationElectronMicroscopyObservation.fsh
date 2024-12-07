@@ -28,4 +28,4 @@ Mapping: sda-to-LabObservationElectronMicroscopyObservation
 Id: sda
 Title: "Summary Document Architecure (SDA)"
 Source: LabObservationElectronMicroscopyObservation
-* subject -> "demographics.lrdfn\naccession.collected"
+* subject -> "Patient.PatientExtension.VeteranLrdfn"

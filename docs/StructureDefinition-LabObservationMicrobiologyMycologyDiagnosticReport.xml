@@ -36,11 +36,11 @@
     <valueCanonical value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-lab|6.1.0"/>
   </extension>
   <url value="http://va.gov/fhir/StructureDefinition/LabObservationMicrobiologyMycologyDiagnosticReport"/>
-  <version value="0.69.438"/>
+  <version value="0.69.439"/>
   <name value="LabObservationMicrobiologyMycologyDiagnosticReport"/>
   <title value="Lab Observation: Microbiology Mycology DiagnosticReport"/>
   <status value="draft"/>
-  <date value="2024-12-06T17:18:58+00:00"/>
+  <date value="2024-12-07T11:18:15+00:00"/>
   <publisher value="VA"/>
   <contact>
     <name value="VA"/>
@@ -1952,7 +1952,7 @@
       </mapping>
       <mapping>
         <identity value="sda"/>
-        <map value="demographics.lrdfn&#xA;accession.collected"/>
+        <map value="Patient.PatientExtension.VeteranLrdfn"/>
       </mapping>
       <mapping>
         <identity value="workflow"/>
@@ -2185,6 +2185,10 @@
         <map value="Micro.Microbiology.ReportCompletedDateTime"/>
       </mapping>
       <mapping>
+        <identity value="sda"/>
+        <map value="Documents.ToTime,LabOrder.Result.ResultTime"/>
+      </mapping>
+      <mapping>
         <identity value="w5"/>
         <map value="FiveWs.recorded"/>
       </mapping>
@@ -2321,6 +2325,10 @@
         <map value="Micro.Microbiology.VerifyingStaffIEN"/>
       </mapping>
       <mapping>
+        <identity value="sda"/>
+        <map value="Documents.Clinician,Documents.DocumentExtension.CareProviders,LabOrder.Result.VerifiedBy"/>
+      </mapping>
+      <mapping>
         <identity value="workflow"/>
         <map value="Event.performer.actor"/>
       </mapping>
@@ -2380,6 +2388,10 @@
       <mapping>
         <identity value="cdw"/>
         <map value="Micro.Microbiology.AccessioningInstitutionIEN"/>
+      </mapping>
+      <mapping>
+        <identity value="sda"/>
+        <map value="Documents.EnteredAt,LabOrder.Result.EnteredAt"/>
       </mapping>
       <mapping>
         <identity value="workflow"/>
@@ -3073,7 +3085,7 @@
       </mapping>
       <mapping>
         <identity value="sda"/>
-        <map value="demographics.lrdfn&#xA;accession.collected"/>
+        <map value="Patient.PatientExtension.VeteranLrdfn"/>
       </mapping>
     </element>
     <element id="DiagnosticReport.effective[x]">
@@ -3118,6 +3130,10 @@
         <identity value="cdw"/>
         <map value="Micro.Microbiology.ReportCompletedDateTime"/>
       </mapping>
+      <mapping>
+        <identity value="sda"/>
+        <map value="Documents.ToTime,LabOrder.Result.ResultTime"/>
+      </mapping>
     </element>
     <element id="DiagnosticReport.performer">
       <path value="DiagnosticReport.performer"/>
@@ -3148,6 +3164,10 @@
         <identity value="cdw"/>
         <map value="Micro.Microbiology.VerifyingStaffIEN"/>
       </mapping>
+      <mapping>
+        <identity value="sda"/>
+        <map value="Documents.Clinician,Documents.DocumentExtension.CareProviders,LabOrder.Result.VerifiedBy"/>
+      </mapping>
     </element>
     <element id="DiagnosticReport.performer:va-at">
       <path value="DiagnosticReport.performer"/>
@@ -3166,6 +3186,10 @@
       <mapping>
         <identity value="cdw"/>
         <map value="Micro.Microbiology.AccessioningInstitutionIEN"/>
+      </mapping>
+      <mapping>
+        <identity value="sda"/>
+        <map value="Documents.EnteredAt,LabOrder.Result.EnteredAt"/>
       </mapping>
     </element>
     <element id="DiagnosticReport.result">

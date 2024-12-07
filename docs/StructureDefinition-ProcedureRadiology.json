@@ -10,11 +10,11 @@
     "valueCanonical" : "http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure|6.1.0"
   }],
   "url" : "http://va.gov/fhir/StructureDefinition/ProcedureRadiology",
-  "version" : "0.69.438",
+  "version" : "0.69.439",
   "name" : "ProcedureRadiology",
   "title" : "Procedure: Radiology",
   "status" : "active",
-  "date" : "2024-12-06T17:18:58+00:00",
+  "date" : "2024-12-07T11:18:15+00:00",
   "publisher" : "VA",
   "contact" : [{
     "name" : "VA",
@@ -1643,10 +1643,6 @@
         "map" : "Patient.RadiologyPatient.PatientIEN,Rad.RadiologyExam.PatientIEN,Rad.RadiologyExamActivityLog.PatientIEN,Rad.RadiologyExamContrastMedia.PatientIEN,Rad.RadiologyExamCPTModifier.PatientIEN,Rad.RadiologyExamMedication.PatientIEN,Rad.RadiologyExamSecondaryDiagnosticCode.PatientIEN,Rad.RadiologyExamStatusList.PatientIEN,Rad.RadiologyFilmRegistry.PatientIEN,Rad.RadiologyRegisteredExam.PatientIEN"
       },
       {
-        "identity" : "sda",
-        "map" : "radiology.case,radiology.dateTime,radiology.modifier [m]"
-      },
-      {
         "identity" : "workflow",
         "map" : "Event.subject"
       },
@@ -1842,6 +1838,10 @@
       {
         "identity" : "cdw",
         "map" : "Rad.RadiologyExam.ExamDateTime,Rad.RadiologyExamActivityLog.ExamDateTime,Rad.RadiologyExamContrastMedia.ExamDateTime,Rad.RadiologyExamCPTModifier.ExamDateTime,Rad.RadiologyExamMedication.ExamDateTime,Rad.RadiologyExamSecondaryDiagnosticCode.ExamDateTime,Rad.RadiologyExamStatusList.ExamDateTime,Rad.RadiologyExamTechnologist.ExamDateTime,Rad.RadiologyRegisteredExam.ExamDateTime"
+      },
+      {
+        "identity" : "sda",
+        "map" : "RadOrder.Result.FromTime"
       },
       {
         "identity" : "workflow",
@@ -2254,6 +2254,10 @@
       {
         "identity" : "cdw",
         "map" : "Rad.RadiologyRegisteredExam.RadiologyLocationIEN\nDim.RadiologyLocation.LocationIEN"
+      },
+      {
+        "identity" : "sda",
+        "map" : "RadOrder.Result.EnteredAt,RadOrder.Result.PerformedAt"
       },
       {
         "identity" : "w5",
@@ -3000,10 +3004,6 @@
       {
         "identity" : "cdw",
         "map" : "Patient.RadiologyPatient.PatientIEN,Rad.RadiologyExam.PatientIEN,Rad.RadiologyExamActivityLog.PatientIEN,Rad.RadiologyExamContrastMedia.PatientIEN,Rad.RadiologyExamCPTModifier.PatientIEN,Rad.RadiologyExamMedication.PatientIEN,Rad.RadiologyExamSecondaryDiagnosticCode.PatientIEN,Rad.RadiologyExamStatusList.PatientIEN,Rad.RadiologyFilmRegistry.PatientIEN,Rad.RadiologyRegisteredExam.PatientIEN"
-      },
-      {
-        "identity" : "sda",
-        "map" : "radiology.case,radiology.dateTime,radiology.modifier [m]"
       }]
     },
     {
@@ -3057,6 +3057,10 @@
       {
         "identity" : "cdw",
         "map" : "Rad.RadiologyExam.ExamDateTime,Rad.RadiologyExamActivityLog.ExamDateTime,Rad.RadiologyExamContrastMedia.ExamDateTime,Rad.RadiologyExamCPTModifier.ExamDateTime,Rad.RadiologyExamMedication.ExamDateTime,Rad.RadiologyExamSecondaryDiagnosticCode.ExamDateTime,Rad.RadiologyExamStatusList.ExamDateTime,Rad.RadiologyExamTechnologist.ExamDateTime,Rad.RadiologyRegisteredExam.ExamDateTime"
+      },
+      {
+        "identity" : "sda",
+        "map" : "RadOrder.Result.FromTime"
       }]
     },
     {
@@ -3091,6 +3095,10 @@
       {
         "identity" : "cdw",
         "map" : "Rad.RadiologyRegisteredExam.RadiologyLocationIEN\nDim.RadiologyLocation.LocationIEN"
+      },
+      {
+        "identity" : "sda",
+        "map" : "RadOrder.Result.EnteredAt,RadOrder.Result.PerformedAt"
       }]
     }]
   }

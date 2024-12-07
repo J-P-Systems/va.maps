@@ -76,3 +76,21 @@ Source: MedicationRequestNonVA
 * authoredOn -> "NonVAMed.NonVAMed.DocumentedDateTime"
 * recorder -> "NonVAMed.NonVAMed.DocumentedByStaffIEN"
 * extension[http://va.gov/fhir/StructureDefinition/medicationrequest-recordedLocation].valueReference -> "NonVAMed.NonVAMed.LocationIEN"
+
+Mapping: sda-to-MedicationRequestNonVA
+Id: sda
+Title: "Summary Document Architecure (SDA)"
+Source: MedicationRequestNonVA
+* identifier[va-order-number].value -> "Medication.ExternalId,Medication.PlacerId"
+* medicationCodeableConcept -> "Medication.DosageForm,Medication.OrderItem,Medication.IsNonFormulary,Medication.PharmacyOrderItem"
+* medicationCodeableConcept -> "Medication.DrugProduct"
+* dosageInstruction.doseAndRate.doseQuantity.extension[http://hl7.org/fhir/StructureDefinition/originalText] -> "Medication.Sig,Medication.DoseQuantity,Medication.TextInstruction"
+* dosageInstruction.route.text -> "Medication.Route,Medication.Sig"
+* dosageInstruction.timing.code.text -> "Medication.Sig,Medication.Frequency"
+* status -> "Medication.PharmacyStatus,Medication.VAStatus"
+* status -> "Medication.PharmacyStatus,Medication.VAStatus"
+* authoredOn -> "Medication.EnteredOn"
+* recorder -> "Medication.EnteredBy,Medication.OrderedBy"
+* note -> "Medication.Comments"
+* note -> "Medication.Statement"
+* extension[http://va.gov/fhir/StructureDefinition/medicationrequest-recordedLocation].valueReference -> "Medication.EnteredAt,Medication.EnteringOrganization"

@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-    <title>MedicationRequest: Outpatient - Mappings - US Veterans Administration FHIR Map Set Implementation Guide v0.69.438</title>
+    <title>MedicationRequest: Outpatient - Mappings - US Veterans Administration FHIR Map Set Implementation Guide v0.69.439</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -59,7 +59,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">US Veterans Administration FHIR Map Set Implementation Guide</span>
             <br/>
-            <span style="display:inline-block;">0.69.438 - 250101
+            <span style="display:inline-block;">0.69.439 - 250101
 
 
 
@@ -158,7 +158,7 @@
           <div class="inner-wrapper">
 
 <div style="counter-reset: section 5" class="col-12">
-    <!-- ReleaseHeader --><p id="publish-box">US Veterans Administration FHIR Map Set Implementation Guide - Local Development build (v0.69.438) built by the FHIR (HL7&reg; FHIR&reg; Standard) Build Tools. See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
+    <!-- ReleaseHeader --><p id="publish-box">US Veterans Administration FHIR Map Set Implementation Guide - Local Development build (v0.69.439) built by the FHIR (HL7&reg; FHIR&reg; Standard) Build Tools. See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
   
 
 
@@ -231,7 +231,7 @@
         
           Active
           
-            as of 2024-12-06
+            as of 2024-12-07
           
         
       </td>
@@ -810,33 +810,43 @@ SDA records Login Date (52-21) as Entered On because Entered On cannot be null. 
 <a name="sda"> </a><h3>Mappings for Summary Document Architecure (SDA) ()</h3><table class="grid">
  <tr><td colspan="3"><b>MedicationRequestOutpatient</b></td></tr>
  <tr><td>MedicationRequest</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>pharmacy (med).dose,med.dose</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;extension</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;extension (medicationrequest-pharmacyOrderStatus)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>Medication.PharmacyStatus,Medication.VAStatus</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;extension (medicationrequest-cancelDate)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td>Medication.ToTime,Medication.DiscontinuedDateTime</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>Medication.PrescriptionNumber,Medication.FillDate</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>Medication.PharmacyStatus,Medication.VAStatus</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;medication[x]</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;medication[x] (medicationCodeableConcept)</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>pharmacy (med).route,med.route</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>pharmacy (med).route,med.route</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>pharmacy (med).units,med.units</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;authoredOn</td><td>pharmacy (med).unitsPerDose,med.unitsPerDose</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;requester</td><td>pharmacy (med).currentProvider,pharmacy (med).doseStart,pharmacy (med).doseStop,pharmacy (med).duration,med.currentProvider,med.doseStart,med.doseStop,med.duration</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>Medication.DrugProduct,Medication.CMOP</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>Medication.DrugProduct,Medication.CMOP</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;authoredOn</td><td>Medication.VAStartDate,Medication.FillQuantity</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;requester</td><td>Medication.OrderedBy</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;reasonCode</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>Medication.Indication</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;dosageInstruction</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;patientInstruction</td><td>Medication.TextInstruction</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;route</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>pharmacy (med).dose [m],med.dose [m]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>Medication.DosageSteps,Medication.Route,Medication.DoseQuantity,Medication.DoseUoM,Medication.Duration,Medication.Frequency,Medication.TextInstruction,Medication.Conjunction,Medication.Noun,Medication.UnitsPerDose,Medication.Verb</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;doseAndRate</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension (originalText)</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td>pharmacy (med).dose [m],med.dose [m]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td>Medication.DosageSteps,Medication.Route,Medication.DoseQuantity,Medication.DoseUoM,Medication.Duration,Medication.Frequency,Medication.TextInstruction,Medication.Conjunction,Medication.Noun,Medication.UnitsPerDose,Medication.Verb</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dose[x]</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dose[x] (doseQuantity)</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>pharmacy (med).dose [m],med.dose [m]</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;unit</td><td>pharmacy (med).dose [m],med.dose [m]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>Medication.DosageSteps,Medication.Route,Medication.DoseQuantity,Medication.DoseUoM,Medication.Duration,Medication.Frequency,Medication.TextInstruction,Medication.Conjunction,Medication.Noun,Medication.UnitsPerDose,Medication.Verb</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;unit</td><td>Medication.DosageSteps,Medication.Route,Medication.DoseQuantity,Medication.DoseUoM,Medication.Duration,Medication.Frequency,Medication.TextInstruction,Medication.Conjunction,Medication.Noun,Medication.UnitsPerDose,Medication.Verb</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;dispenseRequest</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;validityPeriod</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end</td><td>pharmacy (med).expires,med.expires</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end</td><td>Medication.ToTime,Medication.Expires</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;numberOfRepeatsAllowed</td><td>Medication.NumberOfRefills</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;quantity</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>pharmacy (med).schedule,med.schedule</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;expectedSupplyDuration</td><td>pharmacy (med).daysSupply,med.daysSupply</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>Medication.OrderQuantity</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;expectedSupplyDuration</td><td>Medication.DaysSupply</td> </tr>
 </table>
 <a name="workflow"> </a><h3>Mappings for Workflow Pattern (<a href="http://hl7.org/fhir/workflow.html">http://hl7.org/fhir/workflow</a>)</h3><table class="grid">
  <tr><td colspan="3"><b>MedicationRequestOutpatient</b></td></tr>
@@ -1169,7 +1179,7 @@ SDA records Login Date (52-21) as Entered On because Entered On cannot be null. 
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2024 <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.69.438 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Dec 6, 2024 17:18+0000">2024-12-06</span>
+          IG &copy; 2024 <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.69.439 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Sat, Dec 7, 2024 11:18+0000">2024-12-07</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

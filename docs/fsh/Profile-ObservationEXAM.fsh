@@ -60,3 +60,21 @@ Source: ObservationEXAM
 * note.text -> "Outpat.VExam.Comments"
 * effectiveDateTime -> "Outpat.VExam.EventDateTime"
 * performer -> "Outpat.VExam.EncounterProviderIEN"
+
+Mapping: sda-to-ObservationEXAM
+Id: sda
+Title: "Summary Document Architecure (SDA)"
+Source: ObservationEXAM
+* code.coding[va-code] -> "PhysicalExam.PhysExamCode,PhysicalExam.PhysExam.Description"
+* code.coding[va-code].code -> "PhysicalExam.PhysExamCode,PhysicalExam.PhysExam.Description"
+* code.coding[va-code].display -> "PhysicalExam.PhysExamCode,PhysicalExam.PhysExam.Description"
+* code.coding[va-sct] -> "PhysicalExam.PhysExamCode,PhysicalExam.PhysExam.Description"
+* code.coding[va-sct].code -> "PhysicalExam.PhysExamCode,PhysicalExam.PhysExam.Description"
+* encounter -> "PhysicalExam.EncounterNumber,PhysicalExam.EnteredAt,PhysicalExam.EnteredBy,PhysicalExam.EnteredOn"
+* interpretation -> "PhysicalExam.PhysExamObsValue"
+* valueQuantity.value -> "PhysicalExam.PhysicalExamExtension.ResultValue"
+* valueQuantity -> "PhysicalExam.PhysicalExamExtension.Units"
+* valueQuantity.unit -> "PhysicalExam.PhysicalExamExtension.Units"
+* valueQuantity.code -> "PhysicalExam.PhysicalExamExtension.Units"
+* note.text -> "PhysicalExam.NoteText"
+* effectiveDateTime -> "PhysicalExam.PhysExamTime"

@@ -51,11 +51,11 @@
     <valueCanonical value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest|6.1.0"/>
   </extension>
   <url value="http://va.gov/fhir/StructureDefinition/MedicationRequestNonVA"/>
-  <version value="0.69.438"/>
+  <version value="0.69.439"/>
   <name value="MedicationRequestNonVA"/>
   <title value="MedicationRequest: NonVA"/>
   <status value="active"/>
-  <date value="2024-12-06T17:18:58+00:00"/>
+  <date value="2024-12-07T11:18:15+00:00"/>
   <publisher value="VA"/>
   <contact>
     <name value="VA"/>
@@ -80,6 +80,10 @@
   <mapping>
     <identity value="cdw"/>
     <name value="Clinical Data Warehouse (CDW)"/>
+  </mapping>
+  <mapping>
+    <identity value="sda"/>
+    <name value="Summary Document Architecure (SDA)"/>
   </mapping>
   <mapping>
     <identity value="workflow"/>
@@ -569,6 +573,10 @@
         <map value="NonVAMed.NonVAMed.LocationIEN"/>
       </mapping>
       <mapping>
+        <identity value="sda"/>
+        <map value="Medication.EnteredAt,Medication.EnteringOrganization"/>
+      </mapping>
+      <mapping>
         <identity value="rim"/>
         <map value="N/A"/>
       </mapping>
@@ -963,6 +971,10 @@
       <mapping>
         <identity value="cdw"/>
         <map value="NonVAMed.NonVAMed.CPRSOrderIEN"/>
+      </mapping>
+      <mapping>
+        <identity value="sda"/>
+        <map value="Medication.ExternalId,Medication.PlacerId"/>
       </mapping>
       <mapping>
         <identity value="v2"/>
@@ -1493,6 +1505,10 @@
         <map value="NonVAMed.NonVAMed.NonVAMedStatus"/>
       </mapping>
       <mapping>
+        <identity value="sda"/>
+        <map value="Medication.PharmacyStatus,Medication.VAStatus"/>
+      </mapping>
+      <mapping>
         <identity value="workflow"/>
         <map value="Request.status"/>
       </mapping>
@@ -2020,6 +2036,14 @@
       <mapping>
         <identity value="cdw"/>
         <map value="NonVAMed.NonVAMed.LocalDrugIEN"/>
+      </mapping>
+      <mapping>
+        <identity value="sda"/>
+        <map value="Medication.DosageForm,Medication.OrderItem,Medication.IsNonFormulary,Medication.PharmacyOrderItem"/>
+      </mapping>
+      <mapping>
+        <identity value="sda"/>
+        <map value="Medication.DrugProduct"/>
       </mapping>
       <mapping>
         <identity value="workflow"/>
@@ -2602,6 +2626,10 @@
       <mapping>
         <identity value="cdw"/>
         <map value="NonVAMed.NonVAMed.DocumentedDateTime"/>
+      </mapping>
+      <mapping>
+        <identity value="sda"/>
+        <map value="Medication.EnteredOn"/>
       </mapping>
       <mapping>
         <identity value="workflow"/>
@@ -3199,6 +3227,10 @@
         <map value="NonVAMed.NonVAMed.DocumentedByStaffIEN"/>
       </mapping>
       <mapping>
+        <identity value="sda"/>
+        <map value="Medication.EnteredBy,Medication.OrderedBy"/>
+      </mapping>
+      <mapping>
         <identity value="w5"/>
         <map value="FiveWs.who"/>
       </mapping>
@@ -3704,6 +3736,14 @@
         <identity value="vista"/>
         <map value="1764: source value from NON-VA MEDS - DISCLAIMER (55.05-10)"/>
         <comment value="Concatenate to Comment. Delimit with a period."/>
+      </mapping>
+      <mapping>
+        <identity value="sda"/>
+        <map value="Medication.Comments"/>
+      </mapping>
+      <mapping>
+        <identity value="sda"/>
+        <map value="Medication.Statement"/>
       </mapping>
       <mapping>
         <identity value="workflow"/>
@@ -5042,6 +5082,10 @@
         <map value="NonVAMed.NonVAMed.Schedule"/>
       </mapping>
       <mapping>
+        <identity value="sda"/>
+        <map value="Medication.Sig,Medication.Frequency"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="C*E.9. But note many systems use C*E.2 for this"/>
       </mapping>
@@ -5333,6 +5377,10 @@
       <mapping>
         <identity value="cdw"/>
         <map value="NonVAMed.NonVAMed.MedicationRoute"/>
+      </mapping>
+      <mapping>
+        <identity value="sda"/>
+        <map value="Medication.Route,Medication.Sig"/>
       </mapping>
       <mapping>
         <identity value="v2"/>
@@ -5750,6 +5798,10 @@
       <mapping>
         <identity value="cdw"/>
         <map value="NonVAMed.NonVAMed.Dosage"/>
+      </mapping>
+      <mapping>
+        <identity value="sda"/>
+        <map value="Medication.Sig,Medication.DoseQuantity,Medication.TextInstruction"/>
       </mapping>
     </element>
     <element id="MedicationRequest.dosageInstruction.doseAndRate.dose[x]:doseQuantity.value">
@@ -7007,6 +7059,10 @@
         <identity value="cdw"/>
         <map value="NonVAMed.NonVAMed.LocationIEN"/>
       </mapping>
+      <mapping>
+        <identity value="sda"/>
+        <map value="Medication.EnteredAt,Medication.EnteringOrganization"/>
+      </mapping>
     </element>
     <element id="MedicationRequest.identifier">
       <path value="MedicationRequest.identifier"/>
@@ -7045,6 +7101,10 @@
       <mapping>
         <identity value="cdw"/>
         <map value="NonVAMed.NonVAMed.CPRSOrderIEN"/>
+      </mapping>
+      <mapping>
+        <identity value="sda"/>
+        <map value="Medication.ExternalId,Medication.PlacerId"/>
       </mapping>
     </element>
     <element id="MedicationRequest.identifier:va-ien">
@@ -7103,6 +7163,14 @@
       <mapping>
         <identity value="cdw"/>
         <map value="NonVAMed.NonVAMed.NonVAMedStatus"/>
+      </mapping>
+      <mapping>
+        <identity value="sda"/>
+        <map value="Medication.PharmacyStatus,Medication.VAStatus"/>
+      </mapping>
+      <mapping>
+        <identity value="sda"/>
+        <map value="Medication.PharmacyStatus,Medication.VAStatus"/>
       </mapping>
     </element>
     <element id="MedicationRequest.intent">
@@ -7179,6 +7247,14 @@
         <identity value="cdw"/>
         <map value="NonVAMed.NonVAMed.LocalDrugIEN"/>
       </mapping>
+      <mapping>
+        <identity value="sda"/>
+        <map value="Medication.DosageForm,Medication.OrderItem,Medication.IsNonFormulary,Medication.PharmacyOrderItem"/>
+      </mapping>
+      <mapping>
+        <identity value="sda"/>
+        <map value="Medication.DrugProduct"/>
+      </mapping>
     </element>
     <element id="MedicationRequest.encounter.extension:data-absent-reason">
       <path value="MedicationRequest.encounter.extension"/>
@@ -7208,6 +7284,10 @@
       <mapping>
         <identity value="cdw"/>
         <map value="NonVAMed.NonVAMed.DocumentedDateTime"/>
+      </mapping>
+      <mapping>
+        <identity value="sda"/>
+        <map value="Medication.EnteredOn"/>
       </mapping>
     </element>
     <element id="MedicationRequest.requester.extension:data-absent-reason">
@@ -7244,6 +7324,10 @@
         <identity value="cdw"/>
         <map value="NonVAMed.NonVAMed.DocumentedByStaffIEN"/>
       </mapping>
+      <mapping>
+        <identity value="sda"/>
+        <map value="Medication.EnteredBy,Medication.OrderedBy"/>
+      </mapping>
     </element>
     <element id="MedicationRequest.reasonCode.text">
       <path value="MedicationRequest.reasonCode.text"/>
@@ -7266,6 +7350,14 @@
         <map value="1764: source value from NON-VA MEDS - DISCLAIMER (55.05-10)"/>
         <comment value="Concatenate to Comment. Delimit with a period."/>
       </mapping>
+      <mapping>
+        <identity value="sda"/>
+        <map value="Medication.Comments"/>
+      </mapping>
+      <mapping>
+        <identity value="sda"/>
+        <map value="Medication.Statement"/>
+      </mapping>
     </element>
     <element id="MedicationRequest.dosageInstruction.text">
       <path value="MedicationRequest.dosageInstruction.text"/>
@@ -7285,6 +7377,10 @@
         <identity value="cdw"/>
         <map value="NonVAMed.NonVAMed.Schedule"/>
       </mapping>
+      <mapping>
+        <identity value="sda"/>
+        <map value="Medication.Sig,Medication.Frequency"/>
+      </mapping>
     </element>
     <element id="MedicationRequest.dosageInstruction.route.text">
       <path value="MedicationRequest.dosageInstruction.route.text"/>
@@ -7296,6 +7392,10 @@
       <mapping>
         <identity value="cdw"/>
         <map value="NonVAMed.NonVAMed.MedicationRoute"/>
+      </mapping>
+      <mapping>
+        <identity value="sda"/>
+        <map value="Medication.Route,Medication.Sig"/>
       </mapping>
     </element>
     <element id="MedicationRequest.dosageInstruction.doseAndRate.dose[x]">
@@ -7336,6 +7436,10 @@
       <mapping>
         <identity value="cdw"/>
         <map value="NonVAMed.NonVAMed.Dosage"/>
+      </mapping>
+      <mapping>
+        <identity value="sda"/>
+        <map value="Medication.Sig,Medication.DoseQuantity,Medication.TextInstruction"/>
       </mapping>
     </element>
   </differential>

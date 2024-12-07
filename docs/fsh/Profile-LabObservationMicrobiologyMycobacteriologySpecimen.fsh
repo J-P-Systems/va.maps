@@ -19,3 +19,9 @@ Title: "Clinical Data Warehouse (CDW)"
 Source: LabObservationMicrobiologyMycobacteriologySpecimen
 * accessionIdentifier -> "Micro.Microbiology.MicrobiologyAccession"
 * type.text -> "Micro.Microbiology.CollectionSampleIEN\nDim.CollectionSample.CollectionSample,Dim.Topography.CollectionSample"
+
+Mapping: sda-to-LabObservationMicrobiologyMycobacteriologySpecimen
+Id: sda
+Title: "Summary Document Architecure (SDA)"
+Source: LabObservationMicrobiologyMycobacteriologySpecimen
+* accessionIdentifier -> "LabOrder.ResultExtension.GroupName"

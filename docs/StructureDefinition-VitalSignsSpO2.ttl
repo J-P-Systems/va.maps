@@ -21,11 +21,11 @@
      ]
   ] ) ; # 
   fhir:url [ fhir:v "http://va.gov/fhir/StructureDefinition/VitalSignsSpO2"^^xsd:anyURI] ; # 
-  fhir:version [ fhir:v "0.69.438"] ; # 
+  fhir:version [ fhir:v "0.69.439"] ; # 
   fhir:name [ fhir:v "VitalSignsSpO2"] ; # 
   fhir:title [ fhir:v "Vital Signs: SpO2"] ; # 
   fhir:status [ fhir:v "active"] ; # 
-  fhir:date [ fhir:v "2024-12-06T17:18:58+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2024-12-07T11:18:15+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "VA"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "VA" ] ;
@@ -616,6 +616,9 @@
          fhir:identity [ fhir:v "vista" ] ;
          fhir:map [ fhir:v "663: terminologyMaps using VF_VitalsMeasurementDevice on GMRV VITAL MEASUREMENT - QUALIFIER > GMRV VITAL QUALIFIER - VUID (120.5-5 > 120.52-99.99)" ]
        ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Observation.ObservationMethods" ]
+       ] [
          fhir:identity [ fhir:v "rim" ] ;
          fhir:map [ fhir:v "N/A" ]
        ] )
@@ -797,6 +800,9 @@
        fhir:mapping ( [
          fhir:identity [ fhir:v "vista" ] ;
          fhir:map [ fhir:v "1804: terminologyMaps using VF_VitalsBodyPosition on GMRV VITAL MEASUREMENT - QUALIFIER > GMRV VITAL QUALIFIER - VUID (120.5-5 > 120.52-99.99)" ]
+       ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Observation.ObservationMethods" ]
        ] [
          fhir:identity [ fhir:v "rim" ] ;
          fhir:map [ fhir:v "N/A" ]
@@ -1433,7 +1439,7 @@
          fhir:map [ fhir:v "656: fixed value = #entered-in-error when GMRV VITAL MEASUREMENT - REASON ENTERED IN ERROR (120.5-4) case not null" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "vital.removed [m]" ]
+         fhir:map [ fhir:v "Observation.ObservationExtension.Removed" ]
        ] [
          fhir:identity [ fhir:v "workflow" ] ;
          fhir:map [ fhir:v "Event.status" ]
@@ -2209,7 +2215,7 @@
          fhir:map [ fhir:v "Vital.VitalSign.VitalTypeIEN" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "vital.vuid,vital.name,vital.high,vital.low,vital.bmi" ]
+         fhir:map [ fhir:v "Observation.ObservationCode,Observation.ObservationExtension.BMI" ]
        ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "C*E.1-8, C*E.10-22" ]
@@ -2638,7 +2644,7 @@
          fhir:map [ fhir:v "Vital.VitalSign.VitalSignTakenDateTime,Vital.VitalSignQualifier.VitalSignTakenDateTime" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "vital.taken" ]
+         fhir:map [ fhir:v "Observation.Observation.Description,Observation.ObservationMethod.Description" ]
        ] [
          fhir:identity [ fhir:v "workflow" ] ;
          fhir:map [ fhir:v "Event.occurrence[x]" ]
@@ -2688,9 +2694,6 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "Vital.VitalSign.VitalSignEnteredDateTime" ]
-       ] [
-         fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "vital.entered" ]
        ] [
          fhir:identity [ fhir:v "w5" ] ;
          fhir:map [ fhir:v "FiveWs.recorded" ]
@@ -2743,7 +2746,7 @@
          fhir:map [ fhir:v "Vital.VitalSign.LocationIEN" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "vital.facility,vital.location" ]
+         fhir:map [ fhir:v "Observation.EnteredAt,Observation.ObservationExtension.Location" ]
        ] [
          fhir:identity [ fhir:v "workflow" ] ;
          fhir:map [ fhir:v "Event.performer.actor" ]
@@ -3020,7 +3023,7 @@
          fhir:map [ fhir:v "Vital.VitalSign.Diastolic,Vital.VitalSign.Systolic,Vital.VitalSign.VitalResult,Vital.VitalSign.VitalResultNumeric" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "vital.value,vital.units,vital.metricvalue,vital.metricUnits,vital.bmi" ]
+         fhir:map [ fhir:v "Observation.ObservationValue,Observation.ObservationExtension.BMI" ]
        ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "SN.2  / CQ - N/A" ]
@@ -3195,7 +3198,7 @@
          fhir:map [ fhir:v "Vital.VitalSign.VitalTypeIEN" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "vital.vuid,vital.name,vital.high,vital.low,vital.bmi" ]
+         fhir:map [ fhir:v "Observation.ObservationCode,Observation.ObservationExtension.BMI" ]
        ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "(see OBX.6 etc.) / CQ.2" ]
@@ -3675,6 +3678,9 @@
          fhir:identity [ fhir:v "vista" ] ;
          fhir:map [ fhir:v "662: terminologyMaps using VF_VitalsBodySite on GMRV VITAL MEASUREMENT - QUALIFIER > GMRV VITAL QUALIFIER - VUID (120.5-5 > 120.52-99.99)" ]
        ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Observation.ObservationMethods" ]
+       ] [
          fhir:identity [ fhir:v "sct-concept" ] ;
          fhir:map [ fhir:v "< 123037004 |Body structure|" ]
        ] [
@@ -3728,6 +3734,9 @@
        fhir:mapping ( [
          fhir:identity [ fhir:v "vista" ] ;
          fhir:map [ fhir:v "867: terminologyMaps using VF_VitalsMethod on GMRV VITAL MEASUREMENT - QUALIFIER > GMRV VITAL QUALIFIER - VUID (120.5-5 > 120.52-99.99)" ]
+       ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Observation.ObservationMethods" ]
        ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "OBX-17" ]
@@ -5658,6 +5667,9 @@
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "Vital.VitalSign.SupplementalO2" ]
        ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Observation.ObservationExtension.SupplementalO2" ]
+       ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "SN.2  / CQ - N/A" ]
        ] [
@@ -6853,6 +6865,9 @@
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "Vital.VitalSign.SupplementalO2" ]
        ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Observation.ObservationExtension.SupplementalO2" ]
+       ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "SN.2  / CQ - N/A" ]
        ] [
@@ -7671,6 +7686,9 @@
          fhir:identity [ fhir:v "vista" ] ;
          fhir:map [ fhir:v "1802: terminologyMaps using VF_VitalsPrecondition on GMRV VITAL MEASUREMENT - QUALIFIER > GMRV VITAL QUALIFIER - VUID (120.5-5 > 120.52-99.99)" ]
        ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Observation.ObservationMethods" ]
+       ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "C*E.1-8, C*E.10-22" ]
        ] [
@@ -8355,6 +8373,9 @@
          fhir:identity [ fhir:v "vista" ] ;
          fhir:map [ fhir:v "1803: terminologyMaps using VF_VitalsQualifyingDevice on GMRV VITAL MEASUREMENT - QUALIFIER > GMRV VITAL QUALIFIER - VUID (120.5-5 > 120.52-99.99)" ]
        ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Observation.ObservationMethods" ]
+       ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "C*E.1-8, C*E.10-22" ]
        ] [
@@ -8594,6 +8615,9 @@
        fhir:mapping ( [
          fhir:identity [ fhir:v "vista" ] ;
          fhir:map [ fhir:v "663: terminologyMaps using VF_VitalsMeasurementDevice on GMRV VITAL MEASUREMENT - QUALIFIER > GMRV VITAL QUALIFIER - VUID (120.5-5 > 120.52-99.99)" ]
+       ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Observation.ObservationMethods" ]
        ] )
      ] [
        fhir:id [ fhir:v "Observation.extension:observation-bodyPosition" ] ;
@@ -8622,6 +8646,9 @@
        fhir:mapping ( [
          fhir:identity [ fhir:v "vista" ] ;
          fhir:map [ fhir:v "1804: terminologyMaps using VF_VitalsBodyPosition on GMRV VITAL MEASUREMENT - QUALIFIER > GMRV VITAL QUALIFIER - VUID (120.5-5 > 120.52-99.99)" ]
+       ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Observation.ObservationMethods" ]
        ] )
      ] [
        fhir:id [ fhir:v "Observation.identifier.system" ] ;
@@ -8669,10 +8696,10 @@
          fhir:map [ fhir:v "656: fixed value = #entered-in-error when GMRV VITAL MEASUREMENT - REASON ENTERED IN ERROR (120.5-4) case not null" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "vital.removed [m]" ]
+         fhir:map [ fhir:v "Observation.ObservationExtension.Removed" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "vital.removed [m]" ]
+         fhir:map [ fhir:v "Observation.ObservationExtension.Removed" ]
        ] )
      ] [
        fhir:id [ fhir:v "Observation.category" ] ;
@@ -8708,7 +8735,7 @@
          fhir:map [ fhir:v "Vital.VitalSign.VitalTypeIEN" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "vital.vuid,vital.name,vital.high,vital.low,vital.bmi" ]
+         fhir:map [ fhir:v "Observation.ObservationCode,Observation.ObservationExtension.BMI" ]
        ] )
      ] [
        fhir:id [ fhir:v "Observation.subject" ] ;
@@ -8760,7 +8787,7 @@
          fhir:map [ fhir:v "Vital.VitalSign.VitalSignTakenDateTime,Vital.VitalSignQualifier.VitalSignTakenDateTime" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "vital.taken" ]
+         fhir:map [ fhir:v "Observation.Observation.Description,Observation.ObservationMethod.Description" ]
        ] )
      ] [
        fhir:id [ fhir:v "Observation.issued" ] ;
@@ -8772,9 +8799,6 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "Vital.VitalSign.VitalSignEnteredDateTime" ]
-       ] [
-         fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "vital.entered" ]
        ] )
      ] [
        fhir:id [ fhir:v "Observation.performer" ] ;
@@ -8795,7 +8819,7 @@
          fhir:map [ fhir:v "Vital.VitalSign.LocationIEN" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "vital.facility,vital.location" ]
+         fhir:map [ fhir:v "Observation.EnteredAt,Observation.ObservationExtension.Location" ]
        ] )
      ] [
        fhir:id [ fhir:v "Observation.value[x]" ] ;
@@ -8833,7 +8857,7 @@
          fhir:map [ fhir:v "Vital.VitalSign.Diastolic,Vital.VitalSign.Systolic,Vital.VitalSign.VitalResult,Vital.VitalSign.VitalResultNumeric" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "vital.value,vital.units,vital.metricvalue,vital.metricUnits,vital.bmi" ]
+         fhir:map [ fhir:v "Observation.ObservationValue,Observation.ObservationExtension.BMI" ]
        ] )
      ] [
        fhir:id [ fhir:v "Observation.value[x]:valueQuantity.code" ] ;
@@ -8848,7 +8872,7 @@
          fhir:map [ fhir:v "Vital.VitalSign.VitalTypeIEN" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "vital.vuid,vital.name,vital.high,vital.low,vital.bmi" ]
+         fhir:map [ fhir:v "Observation.ObservationCode,Observation.ObservationExtension.BMI" ]
        ] )
      ] [
        fhir:id [ fhir:v "Observation.value[x]:valueQuantity.code.extension" ] ;
@@ -8903,6 +8927,9 @@
        fhir:mapping ( [
          fhir:identity [ fhir:v "vista" ] ;
          fhir:map [ fhir:v "662: terminologyMaps using VF_VitalsBodySite on GMRV VITAL MEASUREMENT - QUALIFIER > GMRV VITAL QUALIFIER - VUID (120.5-5 > 120.52-99.99)" ]
+       ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Observation.ObservationMethods" ]
        ] )
      ] [
        fhir:id [ fhir:v "Observation.method" ] ;
@@ -8918,6 +8945,9 @@
        fhir:mapping ( [
          fhir:identity [ fhir:v "vista" ] ;
          fhir:map [ fhir:v "867: terminologyMaps using VF_VitalsMethod on GMRV VITAL MEASUREMENT - QUALIFIER > GMRV VITAL QUALIFIER - VUID (120.5-5 > 120.52-99.99)" ]
+       ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Observation.ObservationMethods" ]
        ] )
      ] [
        fhir:id [ fhir:v "Observation.component" ] ;
@@ -8980,6 +9010,9 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "Vital.VitalSign.SupplementalO2" ]
+       ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Observation.ObservationExtension.SupplementalO2" ]
        ] )
      ] [
        fhir:id [ fhir:v "Observation.component:FlowRate.value[x].code" ] ;
@@ -9048,6 +9081,9 @@
        ] [
          fhir:identity [ fhir:v "cdw" ] ;
          fhir:map [ fhir:v "Vital.VitalSign.SupplementalO2" ]
+       ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Observation.ObservationExtension.SupplementalO2" ]
        ] )
      ] [
        fhir:id [ fhir:v "Observation.component:Concentration.value[x].code" ] ;
@@ -9123,6 +9159,9 @@
        fhir:mapping ( [
          fhir:identity [ fhir:v "vista" ] ;
          fhir:map [ fhir:v "1802: terminologyMaps using VF_VitalsPrecondition on GMRV VITAL MEASUREMENT - QUALIFIER > GMRV VITAL QUALIFIER - VUID (120.5-5 > 120.52-99.99)" ]
+       ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Observation.ObservationMethods" ]
        ] )
      ] [
        fhir:id [ fhir:v "Observation.component:va-pre-condition-device" ] ;
@@ -9181,6 +9220,9 @@
        fhir:mapping ( [
          fhir:identity [ fhir:v "vista" ] ;
          fhir:map [ fhir:v "1803: terminologyMaps using VF_VitalsQualifyingDevice on GMRV VITAL MEASUREMENT - QUALIFIER > GMRV VITAL QUALIFIER - VUID (120.5-5 > 120.52-99.99)" ]
+       ] [
+         fhir:identity [ fhir:v "sda" ] ;
+         fhir:map [ fhir:v "Observation.ObservationMethods" ]
        ] )
      ] )
   ] . # 
