@@ -42,4 +42,4 @@ Mapping: sda-to-LabObservationDiagnosticReport
 Id: sda
 Title: "Summary Document Architecure (SDA)"
 Source: LabObservationDiagnosticReport
-* subject -> "Patient.PatientExtension.VeteranLrdfn"
+* subject -> "Patient.Extension[PatientExtension].VeteranLrdfn"

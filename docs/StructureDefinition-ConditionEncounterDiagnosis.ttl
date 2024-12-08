@@ -20,11 +20,11 @@
      ]
   ] ) ; # 
   fhir:url [ fhir:v "http://va.gov/fhir/StructureDefinition/ConditionEncounterDiagnosis"^^xsd:anyURI] ; # 
-  fhir:version [ fhir:v "0.69.439"] ; # 
+  fhir:version [ fhir:v "0.69.440"] ; # 
   fhir:name [ fhir:v "ConditionEncounterDiagnosis"] ; # 
   fhir:title [ fhir:v "Condition: Encounter Diagnosis"] ; # 
   fhir:status [ fhir:v "active"] ; # 
-  fhir:date [ fhir:v "2024-12-07T11:18:15+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2024-12-08T09:28:43+00:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "VA"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "VA" ] ;
@@ -978,7 +978,7 @@
          fhir:map [ fhir:v "Outpat.VDiagnosis.Modifier,Outpat.WorkloadVDiagnosis.Modifier" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "Diagnosis.CodeTableDetail.Diagnosis.OriginalText" ]
+         fhir:map [ fhir:v "Diagnosis.Diagnosis[CodeTableDetail.Diagnosis].OriginalText" ]
        ] [
          fhir:identity [ fhir:v "workflow" ] ;
          fhir:map [ fhir:v "Event.status" ]
@@ -1045,7 +1045,7 @@
          fhir:map [ fhir:v "Outpat.VDiagnosis.Modifier,Outpat.WorkloadVDiagnosis.Modifier" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "Diagnosis.CodeTableDetail.Diagnosis.OriginalText" ]
+         fhir:map [ fhir:v "Diagnosis.Diagnosis[CodeTableDetail.Diagnosis].OriginalText" ]
        ] [
          fhir:identity [ fhir:v "workflow" ] ;
          fhir:map [ fhir:v "Event.status" ]
@@ -1303,7 +1303,7 @@
          fhir:map [ fhir:v "Outpat.VDiagnosis.ICDIEN,Outpat.WorkloadVDiagnosis.ICDIEN" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "Diagnosis.Diagnosis,Diagnosis.CodeTableDetail.Diagnosis.Code" ]
+         fhir:map [ fhir:v "Diagnosis.Diagnosis,Diagnosis.Diagnosis[CodeTableDetail.Diagnosis].Code" ]
        ] [
          fhir:identity [ fhir:v "workflow" ] ;
          fhir:map [ fhir:v "Event.code" ]
@@ -1646,7 +1646,7 @@
          fhir:map [ fhir:v "Outpat.VDiagnosis.ICDIEN,Outpat.WorkloadVDiagnosis.ICDIEN\nDim.ICD10.ICD10Code,Dim.ICD9.ICD9Code" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "Diagnosis.Diagnosis,Diagnosis.CodeTableDetail.Diagnosis.Code" ]
+         fhir:map [ fhir:v "Diagnosis.Diagnosis,Diagnosis.Diagnosis[CodeTableDetail.Diagnosis].Code" ]
        ] [
          fhir:identity [ fhir:v "v2" ] ;
          fhir:map [ fhir:v "C*E.1" ]
@@ -2221,7 +2221,7 @@
          fhir:map [ fhir:v "Outpat.VDiagnosis.VisitDateTime,Outpat.VDiagnosis.VisitIEN,Outpat.WorkloadVDiagnosis.VisitDateTime,Outpat.WorkloadVDiagnosis.VisitIEN\nImmun.ImmunizationContraRefusalEvent.VisitDateTime,Outpat.Visit.VisitDateTime,Outpat.VisitLogic.VisitDateTime,Outpat.Workload.VisitDateTime" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "Diagnosis.EncounterNumber,Diagnosis.EnteredAt,Diagnosis.EnteredBy,Diagnosis.EnteredOn,Diagnosis.FromTime,Diagnosis.ToTime\nEncounter.CareProvider.Description,Encounter.CareProvider.Name" ]
+         fhir:map [ fhir:v "Diagnosis.EncounterNumber,Diagnosis.EnteredAt,Diagnosis.EnteredBy,Diagnosis.EnteredOn,Diagnosis.FromTime,Diagnosis.ToTime\nEncounter.ConsultingClinician[CareProvider].Description,Encounter.ConsultingClinician[CareProvider].Name" ]
        ] [
          fhir:identity [ fhir:v "w5" ] ;
          fhir:map [ fhir:v "FiveWs.recorded" ]
@@ -2961,7 +2961,7 @@
          fhir:map [ fhir:v "Outpat.VDiagnosis.Modifier,Outpat.WorkloadVDiagnosis.Modifier" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "Diagnosis.CodeTableDetail.Diagnosis.OriginalText" ]
+         fhir:map [ fhir:v "Diagnosis.Diagnosis[CodeTableDetail.Diagnosis].OriginalText" ]
        ] )
      ] [
        fhir:id [ fhir:v "Condition.verificationStatus" ] ;
@@ -2981,7 +2981,7 @@
          fhir:map [ fhir:v "Outpat.VDiagnosis.Modifier,Outpat.WorkloadVDiagnosis.Modifier" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "Diagnosis.CodeTableDetail.Diagnosis.OriginalText" ]
+         fhir:map [ fhir:v "Diagnosis.Diagnosis[CodeTableDetail.Diagnosis].OriginalText" ]
        ] )
      ] [
        fhir:id [ fhir:v "Condition.category:us-core" ] ;
@@ -3002,7 +3002,7 @@
          fhir:map [ fhir:v "Outpat.VDiagnosis.ICDIEN,Outpat.WorkloadVDiagnosis.ICDIEN" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "Diagnosis.Diagnosis,Diagnosis.CodeTableDetail.Diagnosis.Code" ]
+         fhir:map [ fhir:v "Diagnosis.Diagnosis,Diagnosis.Diagnosis[CodeTableDetail.Diagnosis].Code" ]
        ] )
      ] [
        fhir:id [ fhir:v "Condition.code.coding.system" ] ;
@@ -3027,7 +3027,7 @@
          fhir:map [ fhir:v "Outpat.VDiagnosis.ICDIEN,Outpat.WorkloadVDiagnosis.ICDIEN\nDim.ICD10.ICD10Code,Dim.ICD9.ICD9Code" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "Diagnosis.Diagnosis,Diagnosis.CodeTableDetail.Diagnosis.Code" ]
+         fhir:map [ fhir:v "Diagnosis.Diagnosis,Diagnosis.Diagnosis[CodeTableDetail.Diagnosis].Code" ]
        ] )
      ] [
        fhir:id [ fhir:v "Condition.subject" ] ;
@@ -3136,7 +3136,7 @@
          fhir:map [ fhir:v "Outpat.VDiagnosis.VisitDateTime,Outpat.VDiagnosis.VisitIEN,Outpat.WorkloadVDiagnosis.VisitDateTime,Outpat.WorkloadVDiagnosis.VisitIEN\nImmun.ImmunizationContraRefusalEvent.VisitDateTime,Outpat.Visit.VisitDateTime,Outpat.VisitLogic.VisitDateTime,Outpat.Workload.VisitDateTime" ]
        ] [
          fhir:identity [ fhir:v "sda" ] ;
-         fhir:map [ fhir:v "Diagnosis.EncounterNumber,Diagnosis.EnteredAt,Diagnosis.EnteredBy,Diagnosis.EnteredOn,Diagnosis.FromTime,Diagnosis.ToTime\nEncounter.CareProvider.Description,Encounter.CareProvider.Name" ]
+         fhir:map [ fhir:v "Diagnosis.EncounterNumber,Diagnosis.EnteredAt,Diagnosis.EnteredBy,Diagnosis.EnteredOn,Diagnosis.FromTime,Diagnosis.ToTime\nEncounter.ConsultingClinician[CareProvider].Description,Encounter.ConsultingClinician[CareProvider].Name" ]
        ] )
      ] [
        fhir:id [ fhir:v "Condition.recorder" ] ;

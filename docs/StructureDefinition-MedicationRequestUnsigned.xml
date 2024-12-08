@@ -24,11 +24,11 @@
     <valueCanonical value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest|6.1.0"/>
   </extension>
   <url value="http://va.gov/fhir/StructureDefinition/MedicationRequestUnsigned"/>
-  <version value="0.69.439"/>
+  <version value="0.69.440"/>
   <name value="MedicationRequestUnsigned"/>
   <title value="MedicationRequest: Unsigned"/>
   <status value="active"/>
-  <date value="2024-12-07T11:18:15+00:00"/>
+  <date value="2024-12-08T09:28:43+00:00"/>
   <publisher value="VA"/>
   <contact>
     <name value="VA"/>
@@ -457,7 +457,7 @@
       </mapping>
       <mapping>
         <identity value="sda"/>
-        <map value="LabOrder.Order.Description,LabOrder.Priority.Description,RadOrder.Order.Description,RadOrder.ResultExtension.null,OtherOrder.OrderCategory.Description,OtherOrder.Order.Description,OtherOrder.VA.VAStatus.Description,OtherOrder.Priority.Description,OtherOrder.Order.OriginalText"/>
+        <map value="RadOrder.OrderItem[Order].Description,RadOrder.Extension[ResultExtension].null,LabOrder.OrderItem[Order].Description,LabOrder.Priority.Description,OtherOrder.OrderCategory.Description,OtherOrder.OrderItem[Order].Description,OtherOrder.OrderStatus[VA.VAStatus].Description,OtherOrder.Priority.Description,OtherOrder.OrderItem[Order].OriginalText"/>
       </mapping>
       <mapping>
         <identity value="workflow"/>
@@ -1036,7 +1036,7 @@
       </mapping>
       <mapping>
         <identity value="sda"/>
-        <map value="RadOrder.ResultExtension.null"/>
+        <map value="RadOrder.Extension[ResultExtension].null"/>
       </mapping>
       <mapping>
         <identity value="workflow"/>
@@ -1192,7 +1192,7 @@
       </mapping>
       <mapping>
         <identity value="sda"/>
-        <map value="LabOrder.EnteredOn,LabOrder.CodeTable.SDACodingStandard,Medication.EnteredOn,RadOrder.EnteredOn,RadOrder.CodeTable.SDACodingStandard,RadOrder.ResultExtension.CaseNumber,OtherOrder.EnteredOn"/>
+        <map value="RadOrder.EnteredOn,RadOrder.NationalItem[CodeTable].SDACodingStandard,RadOrder.Extension[ResultExtension].CaseNumber,LabOrder.EnteredOn,LabOrder.NationalItem[CodeTable].SDACodingStandard,OtherOrder.EnteredOn,Medication.EnteredOn"/>
       </mapping>
       <mapping>
         <identity value="workflow"/>
@@ -2559,7 +2559,7 @@
       </mapping>
       <mapping>
         <identity value="sda"/>
-        <map value="LabOrder.FromTime,LabOrder.SpecimenCollectedTime,Medication.FromTime,RadOrder.FromTime,OtherOrder.FromTime"/>
+        <map value="RadOrder.FromTime,LabOrder.FromTime,LabOrder.SpecimenCollectedTime,OtherOrder.FromTime,Medication.FromTime"/>
       </mapping>
       <mapping>
         <identity value="v2"/>
@@ -2608,7 +2608,7 @@
       </mapping>
       <mapping>
         <identity value="sda"/>
-        <map value="LabOrder.ToTime,Medication.ToTime,RadOrder.ToTime,OtherOrder.ToTime"/>
+        <map value="RadOrder.ToTime,LabOrder.ToTime,OtherOrder.ToTime,Medication.ToTime"/>
       </mapping>
       <mapping>
         <identity value="v2"/>
@@ -4411,7 +4411,7 @@
       </mapping>
       <mapping>
         <identity value="sda"/>
-        <map value="LabOrder.LabOrderExtension.ReplacedOrder,Medication.MedicationExtension.ReplacedOrder,RadOrder.OrderExtension.ReplacedOrder,OtherOrder.OrderExtension.ReplacedOrder"/>
+        <map value="RadOrder.Extension[OrderExtension].ReplacedOrder,LabOrder.Extension[LabOrderExtension].ReplacedOrder,OtherOrder.Extension[OrderExtension].ReplacedOrder,Medication.Extension[MedicationExtension].ReplacedOrder"/>
       </mapping>
       <mapping>
         <identity value="workflow"/>
@@ -4510,7 +4510,7 @@
       </mapping>
       <mapping>
         <identity value="sda"/>
-        <map value="LabOrder.Order.Description,LabOrder.Priority.Description,RadOrder.Order.Description,RadOrder.ResultExtension.null,OtherOrder.OrderCategory.Description,OtherOrder.Order.Description,OtherOrder.VA.VAStatus.Description,OtherOrder.Priority.Description,OtherOrder.Order.OriginalText"/>
+        <map value="RadOrder.OrderItem[Order].Description,RadOrder.Extension[ResultExtension].null,LabOrder.OrderItem[Order].Description,LabOrder.Priority.Description,OtherOrder.OrderCategory.Description,OtherOrder.OrderItem[Order].Description,OtherOrder.OrderStatus[VA.VAStatus].Description,OtherOrder.Priority.Description,OtherOrder.OrderItem[Order].OriginalText"/>
       </mapping>
     </element>
     <element id="MedicationRequest.medication[x]">
@@ -4559,7 +4559,7 @@
       </mapping>
       <mapping>
         <identity value="sda"/>
-        <map value="RadOrder.ResultExtension.null"/>
+        <map value="RadOrder.Extension[ResultExtension].null"/>
       </mapping>
     </element>
     <element id="MedicationRequest.authoredOn">
@@ -4574,7 +4574,7 @@
       </mapping>
       <mapping>
         <identity value="sda"/>
-        <map value="LabOrder.EnteredOn,LabOrder.CodeTable.SDACodingStandard,Medication.EnteredOn,RadOrder.EnteredOn,RadOrder.CodeTable.SDACodingStandard,RadOrder.ResultExtension.CaseNumber,OtherOrder.EnteredOn"/>
+        <map value="RadOrder.EnteredOn,RadOrder.NationalItem[CodeTable].SDACodingStandard,RadOrder.Extension[ResultExtension].CaseNumber,LabOrder.EnteredOn,LabOrder.NationalItem[CodeTable].SDACodingStandard,OtherOrder.EnteredOn,Medication.EnteredOn"/>
       </mapping>
     </element>
     <element id="MedicationRequest.requester">
@@ -4621,7 +4621,7 @@
       </mapping>
       <mapping>
         <identity value="sda"/>
-        <map value="LabOrder.FromTime,LabOrder.SpecimenCollectedTime,Medication.FromTime,RadOrder.FromTime,OtherOrder.FromTime"/>
+        <map value="RadOrder.FromTime,LabOrder.FromTime,LabOrder.SpecimenCollectedTime,OtherOrder.FromTime,Medication.FromTime"/>
       </mapping>
     </element>
     <element id="MedicationRequest.dosageInstruction.timing.repeat.bounds[x]:boundsPeriod.end">
@@ -4637,7 +4637,7 @@
       </mapping>
       <mapping>
         <identity value="sda"/>
-        <map value="LabOrder.ToTime,Medication.ToTime,RadOrder.ToTime,OtherOrder.ToTime"/>
+        <map value="RadOrder.ToTime,LabOrder.ToTime,OtherOrder.ToTime,Medication.ToTime"/>
       </mapping>
     </element>
     <element id="MedicationRequest.priorPrescription">
@@ -4650,7 +4650,7 @@
       </mapping>
       <mapping>
         <identity value="sda"/>
-        <map value="LabOrder.LabOrderExtension.ReplacedOrder,Medication.MedicationExtension.ReplacedOrder,RadOrder.OrderExtension.ReplacedOrder,OtherOrder.OrderExtension.ReplacedOrder"/>
+        <map value="RadOrder.Extension[OrderExtension].ReplacedOrder,LabOrder.Extension[LabOrderExtension].ReplacedOrder,OtherOrder.Extension[OrderExtension].ReplacedOrder,Medication.Extension[MedicationExtension].ReplacedOrder"/>
       </mapping>
     </element>
   </differential>

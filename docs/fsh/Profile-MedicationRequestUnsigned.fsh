@@ -37,9 +37,9 @@ Mapping: sda-to-MedicationRequestUnsigned
 Id: sda
 Title: "Summary Document Architecure (SDA)"
 Source: MedicationRequestUnsigned
-* identifier -> "LabOrder.Order.Description,LabOrder.Priority.Description,RadOrder.Order.Description,RadOrder.ResultExtension.null,OtherOrder.OrderCategory.Description,OtherOrder.Order.Description,OtherOrder.VA.VAStatus.Description,OtherOrder.Priority.Description,OtherOrder.Order.OriginalText"
-* subject -> "RadOrder.ResultExtension.null"
-* authoredOn -> "LabOrder.EnteredOn,LabOrder.CodeTable.SDACodingStandard,Medication.EnteredOn,RadOrder.EnteredOn,RadOrder.CodeTable.SDACodingStandard,RadOrder.ResultExtension.CaseNumber,OtherOrder.EnteredOn"
-* priorPrescription -> "LabOrder.LabOrderExtension.ReplacedOrder,Medication.MedicationExtension.ReplacedOrder,RadOrder.OrderExtension.ReplacedOrder,OtherOrder.OrderExtension.ReplacedOrder"
-* dosageInstruction.timing.repeat.boundsPeriod.start -> "LabOrder.FromTime,LabOrder.SpecimenCollectedTime,Medication.FromTime,RadOrder.FromTime,OtherOrder.FromTime"
-* dosageInstruction.timing.repeat.boundsPeriod.end -> "LabOrder.ToTime,Medication.ToTime,RadOrder.ToTime,OtherOrder.ToTime"
+* identifier -> "RadOrder.OrderItem[Order].Description,RadOrder.Extension[ResultExtension].null,LabOrder.OrderItem[Order].Description,LabOrder.Priority.Description,OtherOrder.OrderCategory.Description,OtherOrder.OrderItem[Order].Description,OtherOrder.OrderStatus[VA.VAStatus].Description,OtherOrder.Priority.Description,OtherOrder.OrderItem[Order].OriginalText"
+* subject -> "RadOrder.Extension[ResultExtension].null"
+* authoredOn -> "RadOrder.EnteredOn,RadOrder.NationalItem[CodeTable].SDACodingStandard,RadOrder.Extension[ResultExtension].CaseNumber,LabOrder.EnteredOn,LabOrder.NationalItem[CodeTable].SDACodingStandard,OtherOrder.EnteredOn,Medication.EnteredOn"
+* priorPrescription -> "RadOrder.Extension[OrderExtension].ReplacedOrder,LabOrder.Extension[LabOrderExtension].ReplacedOrder,OtherOrder.Extension[OrderExtension].ReplacedOrder,Medication.Extension[MedicationExtension].ReplacedOrder"
+* dosageInstruction.timing.repeat.boundsPeriod.start -> "RadOrder.FromTime,LabOrder.FromTime,LabOrder.SpecimenCollectedTime,OtherOrder.FromTime,Medication.FromTime"
+* dosageInstruction.timing.repeat.boundsPeriod.end -> "RadOrder.ToTime,LabOrder.ToTime,OtherOrder.ToTime,Medication.ToTime"

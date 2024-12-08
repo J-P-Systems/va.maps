@@ -65,13 +65,13 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "Condition.clinicalStatus","Condition.clinicalStatus","","","",0,1,"Y","Y","Y","CodeableConcept {[]} {[]}
 ","active | recurrence | relapse | inactive | remission | resolved","The clinical status of the condition.","The data type is CodeableConcept because clinicalStatus has some clinical judgment involved, such that there might need to be more specificity than the required FHIR value set allows. For example, a SNOMED coding might allow for additional specificity.","","","","","","","","",,"required","","http://va.gov/fhir/ValueSet/encounterProblemStatus","",,,,"Condition.clinicalStatus",0,1,"con-3
 con-4con-5","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","604: terminologyMaps using VF_encounterProblemStatus on V POV - MODIFIER (9000010.07-.06)","Outpat.VDiagnosis.Modifier,Outpat.WorkloadVDiagnosis.Modifier","Diagnosis.CodeTableDetail.Diagnosis.OriginalText","Event.status","< 303105007 |Disease phases|","PRB-14","Observation ACT
+","604: terminologyMaps using VF_encounterProblemStatus on V POV - MODIFIER (9000010.07-.06)","Outpat.VDiagnosis.Modifier,Outpat.WorkloadVDiagnosis.Modifier","Diagnosis.Diagnosis[CodeTableDetail.Diagnosis].OriginalText","Event.status","< 303105007 |Disease phases|","PRB-14","Observation ACT
 .inboundRelationship[typeCode=COMP].source[classCode=OBS, code=""clinicalStatus"", moodCode=EVN].value","FiveWs.status"
 "Condition.verificationStatus","Condition.verificationStatus","","","",0,1,"Y","Y","Y","CodeableConcept {[]} {[]}
 ","unconfirmed | provisional | differential | confirmed | refuted | entered-in-error","The verification status to support the clinical status of the condition.","verificationStatus is not required.  For example, when a patient has abdominal pain in the ED, there is not likely going to be a verification status.
 The data type is CodeableConcept because verificationStatus has some clinical judgment involved, such that there might need to be more specificity than the required FHIR value set allows. For example, a SNOMED coding might allow for additional specificity.","","","","","","","","",,"required","","http://va.gov/fhir/ValueSet/encounterProblemVerificationStatus","",,,,"Condition.verificationStatus",0,1,"con-3
 con-5","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","606: terminologyMaps using VF_encounterProblemVerificationStatus on V POV - MODIFIER (9000010.07-.06)","Outpat.VDiagnosis.Modifier,Outpat.WorkloadVDiagnosis.Modifier","Diagnosis.CodeTableDetail.Diagnosis.OriginalText","Event.status","< 410514004 |Finding context value|","PRB-13","Observation ACT
+","606: terminologyMaps using VF_encounterProblemVerificationStatus on V POV - MODIFIER (9000010.07-.06)","Outpat.VDiagnosis.Modifier,Outpat.WorkloadVDiagnosis.Modifier","Diagnosis.Diagnosis[CodeTableDetail.Diagnosis].OriginalText","Event.status","< 410514004 |Finding context value|","PRB-13","Observation ACT
 .inboundRelationship[typeCode=COMP].source[classCode=OBS, code=""verificationStatus"", moodCode=EVN].value","FiveWs.status","408729009"
 "Condition.category","Condition.category","","","",1,*,"Y","","","CodeableConcept {[]} {[]}
 ","category codes","A category assigned to the condition.","The categorization is often highly contextual and may appear poorly differentiated or not very useful in other contexts.","","","","","","","","",,"extensible","A category assigned to the condition.","http://hl7.org/fhir/ValueSet/condition-category","","pattern:$this}
@@ -91,7 +91,7 @@ con-5","ele-1:All FHIR elements must have a @value or children {hasValue() or (c
 "Condition.code","Condition.code","","type
 ","",1,1,"Y","","Y","CodeableConcept {[]} {[]}
 ","Identification of the condition, problem or diagnosis","Identification of the condition, problem or diagnosis.","","0..1 to account for primarily narrative only resources.","","","","","","","",,"extensible","Valueset to describe the actual problem experienced by the patient","http://hl7.org/fhir/us/core/ValueSet/us-core-condition-code","",,,,"Condition.code",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","1613: source value from V POV - POV > ICD DIAGNOSIS (9000010.07-.01 > 80-)","Outpat.VDiagnosis.ICDIEN,Outpat.WorkloadVDiagnosis.ICDIEN","Diagnosis.Diagnosis,Diagnosis.CodeTableDetail.Diagnosis.Code","Event.code","code 246090004 |Associated finding| (< 404684003 |Clinical finding| MINUS
+","1613: source value from V POV - POV > ICD DIAGNOSIS (9000010.07-.01 > 80-)","Outpat.VDiagnosis.ICDIEN,Outpat.WorkloadVDiagnosis.ICDIEN","Diagnosis.Diagnosis,Diagnosis.Diagnosis[CodeTableDetail.Diagnosis].Code","Event.code","code 246090004 |Associated finding| (< 404684003 |Clinical finding| MINUS
 << 420134006 |Propensity to adverse reactions| MINUS 
 << 473010000 |Hypersensitivity condition| MINUS 
 << 79899007 |Drug interaction| MINUS
@@ -127,7 +127,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "Condition.code.coding.code","Condition.code.coding.code","","","",0,1,"Y","","Y","code {[]} {[]}
 ","Symbol in syntax defined by the system","A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination).","","Need to refer to a particular code in the system.","","","","","","","",,,,,"",,,,"Coding.code",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","1613-2: source value from V POV - POV > ICD DIAGNOSIS - CODE NUMBER (9000010.07-.01 > 80-.01)","Outpat.VDiagnosis.ICDIEN,Outpat.WorkloadVDiagnosis.ICDIEN
-Dim.ICD10.ICD10Code,Dim.ICD9.ICD9Code","Diagnosis.Diagnosis,Diagnosis.CodeTableDetail.Diagnosis.Code","C*E.1","./code"
+Dim.ICD10.ICD10Code,Dim.ICD9.ICD9Code","Diagnosis.Diagnosis,Diagnosis.Diagnosis[CodeTableDetail.Diagnosis].Code","C*E.1","./code"
 "Condition.code.coding.display","Condition.code.coding.display","","","",0,1,"","","Y","string {[]} {[]}
 ","Representation defined by the system","A representation of the meaning of the code in the system, following the rules of the system.","","Need to be able to carry a human-readable meaning of the code for readers that do not know  the system.","","","","","","","",,,,,"",,,,"Coding.display",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","C*E.2 - but note this is not well followed","CV.displayName"
@@ -167,7 +167,7 @@ Age {[]} {[]}Period {[]} {[]}Range {[]} {[]}string {[]} {[]}","When in resolutio
 ","Date record was first recorded","The recordedDate represents when this particular Condition record was created in the system, which is often a system-generated date.","","","","","","","","","",,,,,"",,,,"Condition.recordedDate",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","372: source value from V POV - VISIT > VISIT - VISIT/ADMIT DATE&TIME (9000010.07-.03 > 9000010-.01)","Outpat.VDiagnosis.VisitDateTime,Outpat.VDiagnosis.VisitIEN,Outpat.WorkloadVDiagnosis.VisitDateTime,Outpat.WorkloadVDiagnosis.VisitIEN
 Immun.ImmunizationContraRefusalEvent.VisitDateTime,Outpat.Visit.VisitDateTime,Outpat.VisitLogic.VisitDateTime,Outpat.Workload.VisitDateTime","Diagnosis.EncounterNumber,Diagnosis.EnteredAt,Diagnosis.EnteredBy,Diagnosis.EnteredOn,Diagnosis.FromTime,Diagnosis.ToTime
-Encounter.CareProvider.Description,Encounter.CareProvider.Name","REL-11",".participation[typeCode=AUT].time","FiveWs.recorded"
+Encounter.ConsultingClinician[CareProvider].Description,Encounter.ConsultingClinician[CareProvider].Name","REL-11",".participation[typeCode=AUT].time","FiveWs.recorded"
 "Condition.recorder","Condition.recorder","","","",0,1,"Y","","Y","Reference {[]} {[CanonicalType[http://va.gov/fhir/StructureDefinition/Practitioner]]}
 ","Who recorded the condition","Individual who recorded the record and takes responsibility for its content.","","","","","","","","","",,,,,"",,,,"Condition.recorder",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","1833: reference from V POV - ENCOUNTER PROVIDER (9000010.07-1204)","Outpat.VDiagnosis.EncounterProviderIEN,Outpat.WorkloadVDiagnosis.EncounterProviderIEN","Diagnosis.DiagnosingClinician",".participation[typeCode=AUT].role","FiveWs.author"

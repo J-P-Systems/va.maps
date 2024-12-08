@@ -80,6 +80,6 @@ Id: sda
 Title: "Summary Document Architecure (SDA)"
 Source: LabObservationCytopathologyDiagnosticReport
 * issued -> "Documents.ToTime"
-* performer[va-by] -> "Documents.DocumentExtension.CareProviders"
+* performer[va-by] -> "Documents.Extension[DocumentExtension].CareProviders"
 * resultsInterpreter -> "Documents.Clinician,Documents.EnteredBy"
-* subject -> "Patient.PatientExtension.VeteranLrdfn"
+* subject -> "Patient.Extension[PatientExtension].VeteranLrdfn"

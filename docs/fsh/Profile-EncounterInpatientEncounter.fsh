@@ -132,7 +132,7 @@ Source: EncounterInpatientEncounter
 * status -> "Diagnosis.FromTime"
 * status -> "Diagnosis.FromTime"
 * status -> "Diagnosis.ToTime"
-* subject -> "Diagnosis.CodeTableDetail.Diagnosis.Code"
+* subject -> "Diagnosis.Diagnosis[CodeTableDetail.Diagnosis].Code"
 * participant.individual -> "Diagnosis.DiagnosingClinician"
 * period.start -> "Diagnosis.FromTime"
 * period.end -> "Diagnosis.ToTime"

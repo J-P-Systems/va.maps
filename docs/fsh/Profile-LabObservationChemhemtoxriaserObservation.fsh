@@ -55,10 +55,10 @@ Mapping: sda-to-LabObservationChemhemtoxriaserObservation
 Id: sda
 Title: "Summary Document Architecure (SDA)"
 Source: LabObservationChemhemtoxriaserObservation
-* effectiveDateTime -> "LabOrder.LabTestItem.Description,LabOrder.Organization.Description"
+* effectiveDateTime -> "LabOrder.TestItemCode[LabTestItem].Description,LabOrder.PerformedAt[Organization].Description"
 * note -> "LabOrder.Result.Comments"
 * performer -> "LabOrder.Result.EnteredAt"
 * performer -> "LabOrder.Result.VerifiedBy"
-* specimen -> "LabOrder.ResultExtension.GroupName"
-* issued -> "LabOrder.Result.ResultStatus,LabOrder.Result.ResultTime,LabOrder.LabResultItem.TestItemStatus"
-* subject -> "Patient.PatientExtension.VeteranLrdfn"
+* specimen -> "LabOrder.Extension[ResultExtension].GroupName"
+* issued -> "LabOrder.Result.ResultStatus,LabOrder.Result.ResultTime,LabOrder.ResultItem[LabResultItem].TestItemStatus"
+* subject -> "Patient.Extension[PatientExtension].VeteranLrdfn"

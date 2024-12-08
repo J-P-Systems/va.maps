@@ -88,11 +88,11 @@ Mapping: sda-to-ProcedureOutpatient
 Id: sda
 Title: "Summary Document Architecure (SDA)"
 Source: ProcedureOutpatient
-* encounter -> "Procedure.EncounterNumber,Procedure.EnteredAt,Procedure.EnteredBy,Procedure.EnteredOn,Procedure.ProcedureExtension.Location"
-* code.text -> "Procedure.Procedure,Procedure.CodeTableDetail.Procedure.OriginalText"
+* encounter -> "Procedure.EncounterNumber,Procedure.EnteredAt,Procedure.EnteredBy,Procedure.EnteredOn,Procedure.Extension[ProcedureExtension].Location"
+* code.text -> "Procedure.Procedure,Procedure.Procedure[CodeTableDetail.Procedure].OriginalText"
 * performedDateTime -> "Procedure.FromTime,Procedure.ProcedureTime"
 * performer.actor -> "Procedure.Clinician"
-* note.text -> "Procedure.ProcedureExtension.Comments"
-* code.coding -> "Encounter.EncounterExtension.Cpt,Encounter.EncounterExtension.Cpt,Procedure.Procedure,Procedure.CodeTableDetail.Procedure.Code"
-* code.coding.code -> "Encounter.EncounterExtension.Cpt,Encounter.EncounterExtension.Cpt,Procedure.Procedure,Procedure.CodeTableDetail.Procedure.Code"
-* code.coding.display -> "Encounter.EncounterExtension.Cpt,Encounter.EncounterExtension.Cpt,Procedure.Procedure,Procedure.CodeTableDetail.Procedure.Code"
+* note.text -> "Procedure.Extension[ProcedureExtension].Comments"
+* code.coding -> "Encounter.Extension[EncounterExtension].Cpt,Encounter.Extension[EncounterExtension].Cpt,Procedure.Procedure,Procedure.Procedure[CodeTableDetail.Procedure].Code"
+* code.coding.code -> "Encounter.Extension[EncounterExtension].Cpt,Encounter.Extension[EncounterExtension].Cpt,Procedure.Procedure,Procedure.Procedure[CodeTableDetail.Procedure].Code"
+* code.coding.display -> "Encounter.Extension[EncounterExtension].Cpt,Encounter.Extension[EncounterExtension].Cpt,Procedure.Procedure,Procedure.Procedure[CodeTableDetail.Procedure].Code"

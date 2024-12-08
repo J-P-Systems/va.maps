@@ -67,11 +67,11 @@ Mapping: sda-to-ConditionProblem
 Id: sda
 Title: "Summary Document Architecure (SDA)"
 Source: ConditionProblem
-* clinicalStatus -> "Problem.ProblemExtension.ToTime"
-* code.coding.code -> "Problem.ProblemExtension.Problem"
-* code.text -> "Problem.ProblemExtension.ProblemDetails"
-* onsetDateTime -> "Problem.ProblemExtension.FromTime,Problem.ProblemExtension.OnsetDate"
+* clinicalStatus -> "Problem.Extension[ProblemExtension].ToTime"
+* code.coding.code -> "Problem.Extension[ProblemExtension].Problem"
+* code.text -> "Problem.Extension[ProblemExtension].ProblemDetails"
+* onsetDateTime -> "Problem.Extension[ProblemExtension].FromTime,Problem.Extension[ProblemExtension].OnsetDate"
 * recordedDate -> "Problem.EnteredOn"
-* clinicalStatus -> "Problem.ProblemExtension.Status"
-* verificationStatus -> "Problem.ProblemExtension.IsRemoved,Problem.ProblemExtension.IsVerified,Problem.ProblemExtension.Removed"
-* abatementDateTime -> "Problem.ProblemExtension.ToTime"
+* clinicalStatus -> "Problem.Extension[ProblemExtension].Status"
+* verificationStatus -> "Problem.Extension[ProblemExtension].IsRemoved,Problem.Extension[ProblemExtension].IsVerified,Problem.Extension[ProblemExtension].Removed"
+* abatementDateTime -> "Problem.Extension[ProblemExtension].ToTime"

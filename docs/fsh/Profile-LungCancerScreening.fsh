@@ -32,7 +32,7 @@ Mapping: sda-to-LungCancerScreening
 Id: sda
 Title: "Summary Document Architecure (SDA)"
 Source: LungCancerScreening
-* presentedForm -> "Alert.Comments,Documents.NoteText,AdvanceDirective.Comments"
+* presentedForm -> "AdvanceDirective.Comments,Alert.Comments,Documents.NoteText"
 * subject -> "Documents.DocumentType"
 * performer -> "Alert.EnteredBy"
-* encounter -> "Alert.EncounterNumber,Documents.EncounterNumber,AdvanceDirective.EncounterNumber"
+* encounter -> "AdvanceDirective.EncounterNumber,Alert.EncounterNumber,Documents.EncounterNumber"

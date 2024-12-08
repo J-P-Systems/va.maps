@@ -45,4 +45,4 @@ Source: ObservationImagingResultRadNuc
 * status -> "Documents.DocumentCompletionStatus"
 * subject -> "Documents.DocumentName"
 * issued -> "Documents.AuthorizationTime,Documents.ToTime"
-* performer -> "Documents.DocumentExtension.CareProviders"
+* performer -> "Documents.Extension[DocumentExtension].CareProviders"

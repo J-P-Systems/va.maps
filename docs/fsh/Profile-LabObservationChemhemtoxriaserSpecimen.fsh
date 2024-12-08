@@ -23,4 +23,4 @@ Mapping: sda-to-LabObservationChemhemtoxriaserSpecimen
 Id: sda
 Title: "Summary Document Architecure (SDA)"
 Source: LabObservationChemhemtoxriaserSpecimen
-* accessionIdentifier -> "LabOrder.ResultExtension.GroupName"
+* accessionIdentifier -> "LabOrder.Extension[ResultExtension].GroupName"

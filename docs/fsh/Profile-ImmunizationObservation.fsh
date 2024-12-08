@@ -33,6 +33,6 @@ Mapping: sda-to-ImmunizationObservation
 Id: sda
 Title: "Summary Document Architecure (SDA)"
 Source: ImmunizationObservation
-* valueCodeableConcept -> "Vaccination.VaccinationExtension.Reaction"
-* valueCodeableConcept.coding.code -> "Vaccination.VaccinationExtension.Reaction"
-* valueCodeableConcept.text -> "Vaccination.VaccinationExtension.Reaction"
+* valueCodeableConcept -> "Vaccination.Extension[VaccinationExtension].Reaction"
+* valueCodeableConcept.coding.code -> "Vaccination.Extension[VaccinationExtension].Reaction"
+* valueCodeableConcept.text -> "Vaccination.Extension[VaccinationExtension].Reaction"

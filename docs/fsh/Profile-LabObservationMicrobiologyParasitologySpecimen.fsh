@@ -24,4 +24,4 @@ Mapping: sda-to-LabObservationMicrobiologyParasitologySpecimen
 Id: sda
 Title: "Summary Document Architecure (SDA)"
 Source: LabObservationMicrobiologyParasitologySpecimen
-* accessionIdentifier -> "LabOrder.ResultExtension.GroupName"
+* accessionIdentifier -> "LabOrder.Extension[ResultExtension].GroupName"

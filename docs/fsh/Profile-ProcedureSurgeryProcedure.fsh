@@ -183,9 +183,9 @@ Mapping: sda-to-ProcedureSurgeryProcedure
 Id: sda
 Title: "Summary Document Architecure (SDA)"
 Source: ProcedureSurgeryProcedure
-* encounter -> "Procedure.ProcedureExtension.SecondaryVisit"
+* encounter -> "Procedure.Extension[ProcedureExtension].SecondaryVisit"
 * performedDateTime -> "Procedure.ProcedureTime"
-* subject -> "Procedure.CodeTableDetail.Procedure.Code"
+* subject -> "Procedure.Procedure[CodeTableDetail.Procedure].Code"
 * performer[va-1].actor -> "Procedure.Clinician"
-* performer[va-4].actor -> "Procedure.ProcedureExtension.AttendingClinician"
+* performer[va-4].actor -> "Procedure.Extension[ProcedureExtension].AttendingClinician"
 * performer[va-12].actor -> "Procedure.Clinician"

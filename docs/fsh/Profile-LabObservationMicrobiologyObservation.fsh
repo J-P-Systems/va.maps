@@ -54,7 +54,7 @@ Id: sda
 Title: "Summary Document Architecure (SDA)"
 Source: LabObservationMicrobiologyObservation
 * performer -> "Documents.EnteredAt,LabOrder.Result.EnteredAt"
-* performer -> "Documents.Clinician,Documents.DocumentExtension.CareProviders,LabOrder.Result.VerifiedBy"
-* specimen -> "LabOrder.ResultExtension.GroupName"
+* performer -> "Documents.Clinician,Documents.Extension[DocumentExtension].CareProviders,LabOrder.Result.VerifiedBy"
+* specimen -> "LabOrder.Extension[ResultExtension].GroupName"
 * issued -> "Documents.ToTime,LabOrder.Result.ResultTime"
-* subject -> "Patient.PatientExtension.VeteranLrdfn"
+* subject -> "Patient.Extension[PatientExtension].VeteranLrdfn"
