@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-    <title>Debt Portal: Payments - Mappings - US Veterans Administration FHIR Map Set Implementation Guide v0.69.440</title>
+    <title>Debt Portal: Payments - Mappings - US Veterans Administration FHIR Map Set Implementation Guide v0.69.442</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -59,7 +59,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">US Veterans Administration FHIR Map Set Implementation Guide</span>
             <br/>
-            <span style="display:inline-block;">0.69.440 - 250101
+            <span style="display:inline-block;">0.69.442 - 250101
 
 
 
@@ -158,7 +158,7 @@
           <div class="inner-wrapper">
 
 <div style="counter-reset: section 5" class="col-12">
-    <!-- ReleaseHeader --><p id="publish-box">US Veterans Administration FHIR Map Set Implementation Guide - Local Development build (v0.69.440) built by the FHIR (HL7&reg; FHIR&reg; Standard) Build Tools. See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
+    <!-- ReleaseHeader --><p id="publish-box">US Veterans Administration FHIR Map Set Implementation Guide - Local Development build (v0.69.442) built by the FHIR (HL7&reg; FHIR&reg; Standard) Build Tools. See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
   
 
 
@@ -231,7 +231,7 @@
         
           Active
           
-            as of 2024-12-08
+            as of 2024-12-11
           
         
       </td>
@@ -307,7 +307,7 @@
 <td class="cell-ce1">AR TRANSACTION - BILL NUMBER (433-.03)</td>
 <td class="cell-ce1">source value</td>
 <td class="cell-ce1"></td>
-<td class="cell-ce1">PaymentReconciliation.identifier[va-bn]</td>
+<td class="cell-ce1">PaymentReconciliation.extension[http://hl7.org/fhir/5.0/StructureDefinition/extension-PaymentReconciliation.allocation.identifier].valueIdentifier</td>
 <td class="cell-ce1">.value</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">.type.text="Bill Number"</td>
@@ -321,12 +321,26 @@
 <td class="cell-ce1"></td>
 <td class="cell-ce1">fixed value</td>
 <td class="cell-ce1"></td>
-<td class="cell-ce1">PaymentReconciliation.identifier[va-bn]</td>
+<td class="cell-ce1">PaymentReconciliation.extension[http://hl7.org/fhir/5.0/StructureDefinition/extension-PaymentReconciliation.allocation.identifier].valueIdentifier</td>
 <td class="cell-ce1">.type.text</td>
 <td class="cell-ce1">Bill Number</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">from mapParameter 1</td>
 <td class="cell-ce1"></td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">2041</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">reference</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">PaymentReconciliation.extension[http://hl7.org/fhir/5.0/StructureDefinition/extension-PaymentReconciliation.allocation.target].valueReference</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">/DebtPortalBillInvoice</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/StructureDefinition/PaymentReconciliation | 4.0.1</td>
 </tr>
 <tr class="row-ro1">
 <td class="cell-ce1">1980</td>
@@ -578,6 +592,14 @@ Transaction type name = PAYMENT (IN PART) when IEN = 2</td>
  <tr><td colspan="3"><b>DebtPortalPayments</b></td></tr>
  <tr><td>PaymentReconciliation</td><td></td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;extension</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;extension (extension-PaymentReconciliation-allocation-identifier)</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>1979-1: fixed value = Bill Number</td><td><p>from mapParameter 1</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>1979: source value from AR TRANSACTION - BILL NUMBER (433-.03)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;extension (extension-PaymentReconciliation-allocation-target)</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td>2041: reference</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;extension (extension-PaymentReconciliation-paymentIssuer)</td><td></td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td>2032: reference</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td></td><td></td> </tr>
@@ -586,11 +608,6 @@ Transaction type name = PAYMENT (IN PART) when IEN = 2</td>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>1978-1: fixed value = Transaction Number</td><td><p>from mapParameter 1</p>
 </td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>1978: source value from AR TRANSACTION - TRANSACTION NUMBER (433-.01)</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;identifier (va-bn)</td><td></td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td></td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>1979-1: fixed value = Bill Number</td><td><p>from mapParameter 1</p>
-</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>1979: source value from AR TRANSACTION - BILL NUMBER (433-.03)</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>1980: fixed value = #active</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;created</td><td>1984: source value from AR TRANSACTION - DATE ENTERED (433-19)</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;disposition</td><td>1982: source value from AR TRANSACTION - TRANSACTION TYPE &gt; ACCOUNTS RECEIVABLE TRANS.TYPE - NAME (433-12 &gt; 430.3-.01) case IEN = 34 OR 2</td><td><p>Transaction type name = PAYMENT (IN FULL) when IEN = 34
@@ -630,11 +647,13 @@ Transaction type name = PAYMENT (IN PART) when IEN = 2</p>
 <a name="cdw"> </a><h3>Mappings for Clinical Data Warehouse (CDW) ()</h3><table class="grid">
  <tr><td colspan="3"><b>DebtPortalPayments</b></td></tr>
  <tr><td>PaymentReconciliation</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;extension</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;extension (extension-PaymentReconciliation-allocation-identifier)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>IB.ARTransaction.AccountsReceivableIEN,IB.ARTransaction.PatientIEN,IB.ARTransactionComment.PatientIEN,IB.ARTransactionDescription.PatientIEN,IB.ARTransactionFiscalYear.PatientIEN</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;identifier (va-tn)</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>IB.ARTransaction.TransactionNumber</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;identifier (va-bn)</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>IB.ARTransaction.AccountsReceivableIEN,IB.ARTransaction.PatientIEN,IB.ARTransactionComment.PatientIEN,IB.ARTransactionDescription.PatientIEN,IB.ARTransactionFiscalYear.PatientIEN</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;created</td><td>IB.ARTransaction.EnteredDateTime</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;disposition</td><td>IB.ARTransaction.ARTransactionTypeIEN
 Dim.ARTransactionType.ARTransactionType</td> </tr>
@@ -658,7 +677,6 @@ Dim.ARTransactionType.ARTransactionType</td> </tr>
  <tr><td>PaymentReconciliation</td><td>Event</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>Event.identifier</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;identifier (va-tn)</td><td>Event.identifier</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;identifier (va-bn)</td><td>Event.identifier</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>Event.status</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;created</td><td>Event.occurrence[x]</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;paymentIssuer</td><td>Event.performer.actor</td> </tr>
@@ -669,7 +687,6 @@ Dim.ARTransactionType.ARTransactionType</td> </tr>
  <tr><td>PaymentReconciliation</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>FiveWs.identifier</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;identifier (va-tn)</td><td>FiveWs.identifier</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;identifier (va-bn)</td><td>FiveWs.identifier</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>FiveWs.status</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;period</td><td>FiveWs.done[x]</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;created</td><td>FiveWs.recorded</td> </tr>
@@ -690,6 +707,26 @@ Dim.ARTransactionType.ARTransactionType</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;text</td><td>Act.text?</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;contained</td><td>N/A</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;extension</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;extension (extension-PaymentReconciliation-allocation-identifier)</td><td>n/a, N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;url</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;use</td><td>Role.code or implied by context</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td>Role.code or implied by context</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>union(., ./translation)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>./originalText[mediaType/code="text/plain"]/data</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;system</td><td>II.root or Role.id.root</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>II.extension or II.root if system indicates OID or GUID (Or Role.id.extension or root)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;period</td><td>Role.effectiveTime or implied by context</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assigner</td><td>II.assigningAuthorityName but note that this is an improper use by the definition of the field.  Also Role.scoper</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;extension (extension-PaymentReconciliation-allocation-target)</td><td>n/a, N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;url</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td>N/A</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;extension (extension-PaymentReconciliation-paymentIssuer)</td><td>n/a, N/A</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;url</td><td>N/A</td> </tr>
@@ -697,19 +734,6 @@ Dim.ARTransactionType.ARTransactionType</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;modifierExtension</td><td>N/A</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;identifier (va-tn)</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;use</td><td>Role.code or implied by context</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td>Role.code or implied by context</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>union(., ./translation)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>./originalText[mediaType/code="text/plain"]/data</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;system</td><td>II.root or Role.id.root</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>II.extension or II.root if system indicates OID or GUID (Or Role.id.extension or root)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;period</td><td>Role.effectiveTime or implied by context</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assigner</td><td>II.assigningAuthorityName but note that this is an improper use by the definition of the field.  Also Role.scoper</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;identifier (va-bn)</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;use</td><td>Role.code or implied by context</td> </tr>
@@ -803,7 +827,7 @@ Dim.ARTransactionType.ARTransactionType</td> </tr>
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2024 <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.69.440 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Sun, Dec 8, 2024 09:28+0000">2024-12-08</span>
+          IG &copy; 2024 <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.69.442 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Dec 11, 2024 20:06+0000">2024-12-11</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -7,16 +7,19 @@ Description: "This StructureDefinition contains the maps for VistA file AR TRANS
 * identifier ^slicing.discriminator.type = #pattern
 * identifier ^slicing.discriminator.path = "$this"
 * identifier ^slicing.rules = #open
-* identifier contains va-tn 0..1 and va-bn 0..1
+* identifier contains va-tn 0..1
 * detail ^slicing.discriminator.type = #pattern
 * detail ^slicing.discriminator.path = "$this"
 * detail ^slicing.rules = #open
 * detail contains va-principal-collected 0..1 and va-interest-collected 0..1 and va-admin-collected 0..1 and va-marshal-collected 0..1 and va-courtcost-collected 0..1
+* extension contains http://hl7.org/fhir/5.0/StructureDefinition/extension-PaymentReconciliation.allocation.identifier named extension-PaymentReconciliation-allocation-identifier 0..1
+* extension contains http://hl7.org/fhir/5.0/StructureDefinition/extension-PaymentReconciliation.allocation.target named extension-PaymentReconciliation-allocation-target 0..1
 * extension contains http://hl7.org/fhir/5.0/StructureDefinition/extension-PaymentReconciliation.paymentIssuer named extension-PaymentReconciliation-paymentIssuer 0..1
-* identifier[va-tn].value and identifier[va-tn].type.text and identifier[va-bn].value and identifier[va-bn].type.text and status and created and extension[http://hl7.org/fhir/5.0/StructureDefinition/extension-PaymentReconciliation.paymentIssuer].valueReference and disposition and paymentDate and paymentAmount and paymentIdentifier and detail[va-principal-collected].amount and detail[va-principal-collected].type.text and detail[va-interest-collected].amount and detail[va-interest-collected].type.text and detail[va-admin-collected].amount and detail[va-admin-collected].type.text and detail[va-marshal-collected].amount and detail[va-marshal-collected].type.text and detail[va-courtcost-collected].amount and detail[va-courtcost-collected].type.text MS
+* identifier[va-tn].value and identifier[va-tn].type.text and extension[http://hl7.org/fhir/5.0/StructureDefinition/extension-PaymentReconciliation.allocation.identifier].valueIdentifier.value and extension[http://hl7.org/fhir/5.0/StructureDefinition/extension-PaymentReconciliation.allocation.identifier].valueIdentifier.type.text and extension[http://hl7.org/fhir/5.0/StructureDefinition/extension-PaymentReconciliation.allocation.target].valueReference and status and created and extension[http://hl7.org/fhir/5.0/StructureDefinition/extension-PaymentReconciliation.paymentIssuer].valueReference and disposition and paymentDate and paymentAmount and paymentIdentifier and detail[va-principal-collected].amount and detail[va-principal-collected].type.text and detail[va-interest-collected].amount and detail[va-interest-collected].type.text and detail[va-admin-collected].amount and detail[va-admin-collected].type.text and detail[va-marshal-collected].amount and detail[va-marshal-collected].type.text and detail[va-courtcost-collected].amount and detail[va-courtcost-collected].type.text MS
+* extension[http://hl7.org/fhir/5.0/StructureDefinition/extension-PaymentReconciliation.allocation.target].valueReference only Reference(DebtPortalBillInvoice)
 * extension[http://hl7.org/fhir/5.0/StructureDefinition/extension-PaymentReconciliation.paymentIssuer].valueReference only Reference(Patient)
 * identifier[va-tn].type.text = "Transaction Number"
-* identifier[va-bn].type.text = "Bill Number"
+* extension[http://hl7.org/fhir/5.0/StructureDefinition/extension-PaymentReconciliation.allocation.identifier].valueIdentifier.type.text = "Bill Number"
 * status = #active
 * detail[va-principal-collected].type.text = "Principal Collected"
 * detail[va-interest-collected].type.text = "Interest Collected"
@@ -30,8 +33,9 @@ Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: DebtPortalPayments
 * identifier[va-tn].value -> "1978: source value from AR TRANSACTION - TRANSACTION NUMBER (433-.01)"
 * identifier[va-tn].type.text -> "1978-1: fixed value = Transaction Number" "from mapParameter 1"
-* identifier[va-bn].value -> "1979: source value from AR TRANSACTION - BILL NUMBER (433-.03)"
-* identifier[va-bn].type.text -> "1979-1: fixed value = Bill Number" "from mapParameter 1"
+* extension[http://hl7.org/fhir/5.0/StructureDefinition/extension-PaymentReconciliation.allocation.identifier].valueIdentifier.value -> "1979: source value from AR TRANSACTION - BILL NUMBER (433-.03)"
+* extension[http://hl7.org/fhir/5.0/StructureDefinition/extension-PaymentReconciliation.allocation.identifier].valueIdentifier.type.text -> "1979-1: fixed value = Bill Number" "from mapParameter 1"
+* extension[http://hl7.org/fhir/5.0/StructureDefinition/extension-PaymentReconciliation.allocation.target].valueReference -> "2041: reference"
 * status -> "1980: fixed value = #active"
 * created -> "1984: source value from AR TRANSACTION - DATE ENTERED (433-19)"
 * extension[http://hl7.org/fhir/5.0/StructureDefinition/extension-PaymentReconciliation.paymentIssuer].valueReference -> "2032: reference"
@@ -55,7 +59,7 @@ Id: cdw
 Title: "Clinical Data Warehouse (CDW)"
 Source: DebtPortalPayments
 * identifier[va-tn].value -> "IB.ARTransaction.TransactionNumber"
-* identifier[va-bn].value -> "IB.ARTransaction.AccountsReceivableIEN,IB.ARTransaction.PatientIEN,IB.ARTransactionComment.PatientIEN,IB.ARTransactionDescription.PatientIEN,IB.ARTransactionFiscalYear.PatientIEN"
+* extension[http://hl7.org/fhir/5.0/StructureDefinition/extension-PaymentReconciliation.allocation.identifier].valueIdentifier.value -> "IB.ARTransaction.AccountsReceivableIEN,IB.ARTransaction.PatientIEN,IB.ARTransactionComment.PatientIEN,IB.ARTransactionDescription.PatientIEN,IB.ARTransactionFiscalYear.PatientIEN"
 * created -> "IB.ARTransaction.EnteredDateTime"
 * disposition -> "IB.ARTransaction.ARTransactionTypeIEN\nDim.ARTransactionType.ARTransactionType"
 * paymentDate -> "IB.ARTransaction.TransactionDateTime,IB.ARTransactionComment.TransactionDateTime,IB.ARTransactionDescription.TransactionDateTime,IB.ARTransactionFiscalYear.TransactionDateTime"
