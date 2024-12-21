@@ -2,7 +2,7 @@ Profile: ConditionProblem
 Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-problems-health-concerns
 Id: ConditionProblem
 Title: "Condition: Problem"
-Description: "This StructureDefinition contains the maps for VistA file PROBLEM (9000011) to us-core-condition-problems-health-concerns"
+Description: "This StructureDefinition contains the maps for VistA file PROBLEM (9000011) to us-core-condition-problems-health-concerns."
 * ^status = #active
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
 * ^extension.valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-problems-health-concerns|6.1.0"

@@ -2,7 +2,7 @@ Profile: ObservationEXAM
 Parent: http://hl7.org/fhir/StructureDefinition/Observation
 Id: ObservationEXAM
 Title: "Observation EXAM"
-Description: "This StructureDefinition contains the maps for VistA file V EXAM (9000010.13) to Observation"
+Description: "This StructureDefinition contains the maps for VistA file V EXAM (9000010.13) to Observation."
 * ^status = #draft
 * code.coding ^slicing.discriminator.type = #pattern
 * code.coding ^slicing.discriminator.path = "$this"

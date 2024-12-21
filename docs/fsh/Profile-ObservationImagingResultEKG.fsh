@@ -2,7 +2,7 @@ Profile: ObservationImagingResultEKG
 Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-imaging
 Id: ObservationImagingResultEKG
 Title: "Observation Imaging Result: EKG"
-Description: "This StructureDefinition contains the maps for VistA file ELECTROCARDIOGRAM (EKG) (691.5) to us-core-observation-imaging"
+Description: "This StructureDefinition contains the maps for VistA file ELECTROCARDIOGRAM (EKG) (691.5) to us-core-observation-imaging."
 * ^status = #draft
 * identifier.value and identifier.system and status and subject and effectiveDateTime and issued and performer and valueString and interpretation and note and category MS
 * performer only Reference(Practitioner)

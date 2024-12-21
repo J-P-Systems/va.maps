@@ -2,7 +2,7 @@ Profile: MedicationRequestUnsigned
 Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest
 Id: MedicationRequestUnsigned
 Title: "MedicationRequest: Unsigned"
-Description: "This StructureDefinition contains the maps for VistA file ORDER (100) to us-core-medicationrequest"
+Description: "This StructureDefinition contains the maps for VistA file ORDER (100) to us-core-medicationrequest."
 * ^status = #active
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
 * ^extension.valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest|6.1.0"

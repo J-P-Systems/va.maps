@@ -2,7 +2,7 @@ Profile: VAERSabstract
 Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-immunization
 Id: VAERSabstract
 Title: "VAERS: abstract"
-Description: "This StructureDefinition contains the maps for ADERS to us-core-immunization"
+Description: "This StructureDefinition contains the maps for ADERS to us-core-immunization."
 * ^status = #draft
 * ^abstract = true
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"

@@ -2,7 +2,7 @@ Profile: SmokingStatusObservation
 Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-smokingstatus
 Id: SmokingStatusObservation
 Title: "Smoking Status Observation"
-Description: "This StructureDefinition contains the maps for VistA file V HEALTH FACTORS (9000010.23) to us-core-smokingstatus"
+Description: "This StructureDefinition contains the maps for VistA file V HEALTH FACTORS (9000010.23) to us-core-smokingstatus."
 * ^status = #active
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
 * ^extension.valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-smokingstatus|6.1.0"

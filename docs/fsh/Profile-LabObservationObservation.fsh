@@ -2,7 +2,7 @@ Profile: LabObservationObservation
 Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab
 Id: LabObservationObservation
 Title: "Lab Observation Observation"
-Description: "This StructureDefinition contains the maps for VistA file PATIENT (2) to us-core-observation-lab"
+Description: "This StructureDefinition contains the maps for VistA file PATIENT (2) to us-core-observation-lab."
 * ^status = #draft
 * ^abstract = true
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"

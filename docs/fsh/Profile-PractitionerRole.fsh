@@ -2,7 +2,7 @@ Profile: PractitionerRole
 Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitionerrole
 Id: PractitionerRole
 Title: "Practitioner Role"
-Description: "This StructureDefinition contains the maps for VistA file NEW PERSON (200) to us-core-practitionerrole"
+Description: "This StructureDefinition contains the maps for VistA file NEW PERSON (200) to us-core-practitionerrole."
 * ^status = #active
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
 * ^extension.valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitionerrole|6.1.0"

@@ -2,7 +2,7 @@ Profile: DebtPortalInterestFeesChargeItem
 Parent: http://hl7.org/fhir/StructureDefinition/ChargeItem
 Id: DebtPortalInterestFeesChargeItem
 Title: "Debt Portal: Interest/Fees ChargeItem"
-Description: "This StructureDefinition contains the maps for VistA file AR TRANSACTION (433) to ChargeItem"
+Description: "This StructureDefinition contains the maps for VistA file AR TRANSACTION (433) to ChargeItem."
 * ^status = #active
 * identifier ^slicing.discriminator.type = #pattern
 * identifier ^slicing.discriminator.path = "$this"

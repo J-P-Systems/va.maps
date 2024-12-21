@@ -2,7 +2,7 @@ Profile: DebtPortalChargesChargeItem
 Parent: http://hl7.org/fhir/StructureDefinition/ChargeItem
 Id: DebtPortalChargesChargeItem
 Title: "Debt Portal: Charges ChargeItem"
-Description: "This StructureDefinition contains the maps for VistA file INTEGRATED BILLING ACTION (350) to ChargeItem"
+Description: "This StructureDefinition contains the maps for VistA file INTEGRATED BILLING ACTION (350) to ChargeItem."
 * ^status = #active
 * service ^slicing.discriminator.type = #pattern
 * service ^slicing.discriminator.path = "$this"

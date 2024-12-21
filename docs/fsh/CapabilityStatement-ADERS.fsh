@@ -4,7 +4,7 @@ Title: "VA Adverse Drug Event Reporting System"
 Usage: #definition
 * description = "This CapabilityStatement enumerates the profiles that the API should address, in the estimation of the enterprise mapping team. Some elements may not be appropriate for those cases; consult the actual API specification published by the API provider"
 * status = #draft
-* date = "2024-12-11T20:02:48.476Z"
+* date = "2024-12-21T10:21:58.886Z"
 * kind = #requirements
 * fhirVersion = #4.0.1
 * format[0] = #xml
@@ -24,9 +24,5 @@ Usage: #definition
 * rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/VAERSabstract"
 * rest.resource[+].type = #AdverseEvent
 * rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/VAERSAdverseEvent"
-* rest.resource[+].type = #Encounter
-* rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/VAERSEncounter"
-* rest.resource[+].type = #Location
-* rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/VAERSLocation"
 * rest.resource[+].type = #Bundle
 * rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/VAERSBundle"

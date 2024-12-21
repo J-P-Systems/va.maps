@@ -2,7 +2,7 @@ Profile: ProcedureSurgeryLocationOR
 Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-location
 Id: ProcedureSurgeryLocationOR
 Title: "Procedure: Surgery Location[OR]"
-Description: "This StructureDefinition contains the maps for VistA file OPERATING ROOM (131.7) to us-core-location"
+Description: "This StructureDefinition contains the maps for VistA file OPERATING ROOM (131.7) to us-core-location."
 * ^status = #active
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
 * ^extension.valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-location|6.1.0"

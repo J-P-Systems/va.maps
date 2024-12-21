@@ -2,7 +2,7 @@ Profile: LabObservationMicrobiologyDiagnosticReport
 Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-lab
 Id: LabObservationMicrobiologyDiagnosticReport
 Title: "Lab Observation: Microbiology DiagnosticReport"
-Description: "This StructureDefinition contains the maps for VistA file MICROBIOLOGY (63.05) to us-core-diagnosticreport-lab"
+Description: "This StructureDefinition contains the maps for VistA file MICROBIOLOGY (63.05) to us-core-diagnosticreport-lab."
 * ^status = #draft
 * ^abstract = true
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"

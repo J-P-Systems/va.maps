@@ -2,7 +2,7 @@ Profile: ImplantableDeviceVLead
 Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-implantable-device
 Id: ImplantableDeviceVLead
 Title: "Implantable Device: V Lead"
-Description: "This StructureDefinition contains the maps for VistA file V LEAD IMPLANT (698.1) to us-core-implantable-device"
+Description: "This StructureDefinition contains the maps for VistA file V LEAD IMPLANT (698.1) to us-core-implantable-device."
 * ^status = #active
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
 * ^extension.valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-implantable-device|6.1.0"

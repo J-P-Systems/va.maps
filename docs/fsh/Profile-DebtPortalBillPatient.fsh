@@ -2,7 +2,7 @@ Profile: DebtPortalBillPatient
 Parent: http://hl7.org/fhir/StructureDefinition/Patient
 Id: DebtPortalBillPatient
 Title: "Debt Portal: Bill Patient"
-Description: "This StructureDefinition contains the maps for VistA file ACCOUNTS RECEIVABLE (430) to Patient"
+Description: "This StructureDefinition contains the maps for VistA file ACCOUNTS RECEIVABLE (430) to Patient."
 * ^status = #active
 * contact.address.line and contact.address.use and contact.address.city and contact.address.state and contact.address.postalCode and contact.telecom.value and contact.address.country and name MS
 * contact.address.use = #billing

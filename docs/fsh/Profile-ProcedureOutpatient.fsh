@@ -2,7 +2,7 @@ Profile: ProcedureOutpatient
 Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure
 Id: ProcedureOutpatient
 Title: "Procedure: Outpatient"
-Description: "This StructureDefinition contains the maps for VistA file V CPT (9000010.18) to us-core-procedure"
+Description: "This StructureDefinition contains the maps for VistA file V CPT (9000010.18) to us-core-procedure."
 * ^status = #active
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
 * ^extension.valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure|6.1.0"

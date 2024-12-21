@@ -2,7 +2,7 @@ Profile: MedicationRequestPending
 Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest
 Id: MedicationRequestPending
 Title: "MedicationRequest: Pending"
-Description: "This StructureDefinition contains the maps for VistA file PENDING OUTPATIENT ORDERS (52.41) to us-core-medicationrequest"
+Description: "This StructureDefinition contains the maps for VistA file PENDING OUTPATIENT ORDERS (52.41) to us-core-medicationrequest."
 * ^status = #active
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
 * ^extension.valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest|6.1.0"

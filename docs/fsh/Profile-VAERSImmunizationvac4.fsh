@@ -2,7 +2,7 @@ Profile: VAERSImmunizationvac4
 Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-immunization
 Id: VAERSImmunizationvac4
 Title: "VAERS Immunization[vac4]"
-Description: "This StructureDefinition contains the maps for ADERS to us-core-immunization"
+Description: "This StructureDefinition contains the maps for ADERS to us-core-immunization."
 * ^status = #draft
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
 * ^extension.valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-immunization|6.1.0"

@@ -2,7 +2,7 @@ Profile: EncounterOutpatient
 Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter
 Id: EncounterOutpatient
 Title: "Encounter: Outpatient"
-Description: "This StructureDefinition contains the maps for VistA file VISIT (9000010) to us-core-encounter"
+Description: "This StructureDefinition contains the maps for VistA file VISIT (9000010) to us-core-encounter."
 * ^status = #active
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
 * ^extension.valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter|6.1.0"

@@ -2,7 +2,7 @@ Profile: DebtPortalInterestFeesInvoice
 Parent: http://hl7.org/fhir/StructureDefinition/Invoice
 Id: DebtPortalInterestFeesInvoice
 Title: "Debt Portal: Interest/Fees Invoice"
-Description: "This StructureDefinition contains the maps for VistA file AR TRANSACTION (433) to Invoice"
+Description: "This StructureDefinition contains the maps for VistA file AR TRANSACTION (433) to Invoice."
 * ^status = #active
 * lineItem.priceComponent ^slicing.discriminator.type = #pattern
 * lineItem.priceComponent ^slicing.discriminator.path = "$this"

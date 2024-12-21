@@ -2,7 +2,7 @@ Profile: LabObservationElectronMicroscopyDiagnosticReport
 Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-lab
 Id: LabObservationElectronMicroscopyDiagnosticReport
 Title: "Lab Observation: Electron Microscopy DiagnosticReport"
-Description: "This StructureDefinition contains the maps for VistA file EM (63.02) to us-core-diagnosticreport-lab"
+Description: "This StructureDefinition contains the maps for VistA file EM (63.02) to us-core-diagnosticreport-lab."
 * ^status = #draft
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
 * ^extension.valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-lab|6.1.0"

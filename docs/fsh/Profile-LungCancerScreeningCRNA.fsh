@@ -2,7 +2,7 @@ Profile: LungCancerScreeningCRNA
 Parent: http://hl7.org/fhir/StructureDefinition/ServiceRequest
 Id: LungCancerScreeningCRNA
 Title: "Lung Cancer Screening: CRNA"
-Description: "This StructureDefinition contains the maps for VistA file undefined (undefined) to ServiceRequest"
+Description: "This StructureDefinition contains the maps for VistA file undefined (undefined) to ServiceRequest."
 * ^status = #draft
 
 Mapping: source-to-LungCancerScreeningCRNA

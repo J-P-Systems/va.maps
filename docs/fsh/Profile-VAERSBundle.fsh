@@ -2,7 +2,7 @@ Profile: VAERSBundle
 Parent: http://hl7.org/fhir/StructureDefinition/Bundle
 Id: VAERSBundle
 Title: "VAERS Bundle"
-Description: "This StructureDefinition contains the maps for ADERS to Bundle"
+Description: "This StructureDefinition contains the maps for ADERS to Bundle."
 * ^status = #draft
 * entry ^slicing.discriminator.type = #pattern
 * entry ^slicing.discriminator.path = "$this"

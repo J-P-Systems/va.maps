@@ -2,7 +2,7 @@ Profile: MedRefillRequestMHVProvenancereview
 Parent: http://hl7.org/fhir/StructureDefinition/Provenance
 Id: MedRefillRequestMHVProvenancereview
 Title: "MedRefillRequestMHV Provenance[review]"
-Description: "This StructureDefinition contains the maps for VistA file PRESCRIPTION REFILL REQUEST (52.43) to Provenance"
+Description: "This StructureDefinition contains the maps for VistA file PRESCRIPTION REFILL REQUEST (52.43) to Provenance."
 * ^status = #active
 * recorded and activity and agent.who.display and agent.who.type and target MS
 * target only Reference(MedRefillRequestMHVTask)

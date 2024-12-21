@@ -2,7 +2,7 @@ Profile: DebtPortalChargesInvoice
 Parent: http://hl7.org/fhir/StructureDefinition/Invoice
 Id: DebtPortalChargesInvoice
 Title: "Debt Portal: Charges Invoice"
-Description: "This StructureDefinition contains the maps for VistA file INTEGRATED BILLING ACTION (350) to Invoice"
+Description: "This StructureDefinition contains the maps for VistA file INTEGRATED BILLING ACTION (350) to Invoice."
 * ^status = #active
 * lineItem.chargeItemReference and lineItem.priceComponent.amount and lineItem.priceComponent.type and lineItem.priceComponent.code.text MS
 * lineItem.chargeItemReference only Reference(DebtPortalChargesChargeItem)

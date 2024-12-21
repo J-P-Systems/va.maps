@@ -2,7 +2,7 @@ Profile: DebtPortalPayments
 Parent: http://hl7.org/fhir/StructureDefinition/PaymentReconciliation
 Id: DebtPortalPayments
 Title: "Debt Portal: Payments"
-Description: "This StructureDefinition contains the maps for VistA file AR TRANSACTION (433) to PaymentReconciliation"
+Description: "This StructureDefinition contains the maps for VistA file AR TRANSACTION (433) to PaymentReconciliation."
 * ^status = #active
 * identifier ^slicing.discriminator.type = #pattern
 * identifier ^slicing.discriminator.path = "$this"

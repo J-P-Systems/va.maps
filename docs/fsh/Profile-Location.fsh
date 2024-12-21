@@ -2,7 +2,7 @@ Profile: Location
 Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-location
 Id: Location
 Title: "Location"
-Description: "This StructureDefinition contains the maps for VistA file HOSPITAL LOCATION (44) to us-core-location"
+Description: "This StructureDefinition contains the maps for VistA file HOSPITAL LOCATION (44) to us-core-location."
 * ^status = #active
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
 * ^extension.valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-location|6.1.0"

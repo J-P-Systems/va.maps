@@ -2,7 +2,7 @@ Profile: AllergyIntolerance
 Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-allergyintolerance
 Id: AllergyIntolerance
 Title: "AllergyIntolerance"
-Description: "This StructureDefinition contains the maps for VistA file PATIENT ALLERGIES (120.8) to us-core-allergyintolerance"
+Description: "This StructureDefinition contains the maps for VistA file PATIENT ALLERGIES (120.8) to us-core-allergyintolerance."
 * ^status = #active
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
 * ^extension.valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-allergyintolerance|6.1.0"
@@ -76,7 +76,6 @@ Title: "Summary Document Architecure (SDA)"
 Source: AllergyIntolerance
 * code.text -> "Allergy.FreeTextAllergy"
 * code -> "Allergy.Allergy,Allergy.Extension[AllergyExtension].OriginalCode"
-* patient -> "Allergy.ATCCode"
 * recorder -> "Allergy.EnteredBy"
 * reaction.manifestation -> "Allergy.Reaction,Allergy.Extension[AllergyExtension].Reactions"
 * reaction.manifestation.coding.code -> "Allergy.Reaction,Allergy.Extension[AllergyExtension].Reactions"

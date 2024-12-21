@@ -2,7 +2,7 @@ Profile: DocumentReferenceDocumentReference
 Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference
 Id: DocumentReferenceDocumentReference
 Title: "Document Reference DocumentReference"
-Description: "This StructureDefinition contains the maps for VistA file TIU DOCUMENT (8925) to us-core-documentreference"
+Description: "This StructureDefinition contains the maps for VistA file TIU DOCUMENT (8925) to us-core-documentreference."
 * ^status = #active
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
 * ^extension.valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference|6.1.0"

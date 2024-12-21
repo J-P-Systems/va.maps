@@ -2,7 +2,7 @@ Profile: MedicationDispenseRefill
 Parent: http://hl7.org/fhir/StructureDefinition/MedicationDispense
 Id: MedicationDispenseRefill
 Title: "MedicationDispense: Refill"
-Description: "This StructureDefinition contains the maps for VistA file PRESCRIPTION (52) to MedicationDispense"
+Description: "This StructureDefinition contains the maps for VistA file PRESCRIPTION (52) to MedicationDispense."
 * ^status = #active
 * type and destination.display and authorizingPrescription and daysSupply and dosageInstruction.doseAndRate.doseQuantity.unit and dosageInstruction.doseAndRate.doseQuantity.code and dosageInstruction.doseAndRate.doseQuantity.value and dosageInstruction.patientInstruction and dosageInstruction.text and medicationCodeableConcept.coding.code and medicationCodeableConcept.coding.system and medicationCodeableConcept.text and quantity.value and status and subject and whenPrepared and location and note.text and performer.actor MS
 * authorizingPrescription only Reference(MedicationRequestOutpatient)

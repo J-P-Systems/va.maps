@@ -2,7 +2,7 @@ Profile: VitalSignsBP
 Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-blood-pressure
 Id: VitalSignsBP
 Title: "Vital Signs: BP"
-Description: "This StructureDefinition contains the maps for VistA file GMRV VITAL MEASUREMENT (120.5) to us-core-blood-pressure"
+Description: "This StructureDefinition contains the maps for VistA file GMRV VITAL MEASUREMENT (120.5) to us-core-blood-pressure."
 * ^status = #active
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
 * ^extension.valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-blood-pressure|6.1.0"

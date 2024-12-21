@@ -2,7 +2,7 @@ Profile: MedRefillRequestMHVTask
 Parent: http://hl7.org/fhir/StructureDefinition/Task
 Id: MedRefillRequestMHVTask
 Title: "MedRefillRequestMHV Task"
-Description: "This StructureDefinition contains the maps for VistA file PRESCRIPTION REFILL REQUEST (52.43) to Task"
+Description: "This StructureDefinition contains the maps for VistA file PRESCRIPTION REFILL REQUEST (52.43) to Task."
 * ^status = #active
 * for and focus and owner and status and note and intent and code MS
 * for only Reference(Patient)

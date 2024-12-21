@@ -2,7 +2,7 @@ Profile: ImmunizationImmunization
 Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-immunization
 Id: ImmunizationImmunization
 Title: "Immunization Immunization"
-Description: "This StructureDefinition contains the maps for VistA file V IMMUNIZATION (9000010.11) to us-core-immunization"
+Description: "This StructureDefinition contains the maps for VistA file V IMMUNIZATION (9000010.11) to us-core-immunization."
 * ^status = #active
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
 * ^extension.valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-immunization|6.1.0"

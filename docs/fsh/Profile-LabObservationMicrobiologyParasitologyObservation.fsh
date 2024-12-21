@@ -2,10 +2,15 @@ Profile: LabObservationMicrobiologyParasitologyObservation
 Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab
 Id: LabObservationMicrobiologyParasitologyObservation
 Title: "Lab Observation: Microbiology Parasitology Observation"
-Description: "This StructureDefinition contains the maps for VistA file MICROBIOLOGY (63.05) to us-core-observation-lab"
+Description: "This StructureDefinition contains the maps for VistA file MICROBIOLOGY (63.05) to us-core-observation-lab."
 * ^status = #draft
-* code and status and valueString and effectiveDateTime and note and performer and specimen and identifier.value and identifier.system and code.coding and code.coding.system and code.coding.code and code.coding.display and issued and category and subject MS
-* performer only Reference(Organization or Practitioner)
+* performer ^slicing.discriminator.type = #pattern
+* performer ^slicing.discriminator.path = "$this"
+* performer ^slicing.rules = #open
+* performer contains va-at 0..1 and va-by 0..1
+* code and status and valueString and effectiveDateTime and note and performer[va-at] and performer[va-by] and specimen and identifier.value and identifier.system and code.coding and code.coding.system and code.coding.code and code.coding.display and issued and category and subject MS
+* performer[va-at] only Reference(Organization)
+* performer[va-by] only Reference(Practitioner)
 * specimen only Reference(LabObservationMicrobiologySpecimen)
 * subject only Reference(Patient)
 * code obeys lompo-49-1528
@@ -31,8 +36,8 @@ Source: LabObservationMicrobiologyParasitologyObservation
 * valueString -> "1857: source value from MICROBIOLOGY - PARASITE > PARASITE - PARASITE > ETIOLOGY FIELD - NAME (63.05-16 > 63.34-.01 > 61.2-.01)"
 * effectiveDateTime -> "1450: source value from MICROBIOLOGY - DATE/TIME SPECIMEN TAKEN (63.05-.01)"
 * note -> "1454: source value from MICROBIOLOGY - COMMENT ON SPECIMEN (63.05-.99)"
-* performer -> "1464: reference from MICROBIOLOGY - ACCESSIONING INSTITUTION (63.05-.112)"
-* performer -> "1679: reference from MICROBIOLOGY - VERIFY PERSON (63.05-.04)"
+* performer[va-at] -> "1464: reference from MICROBIOLOGY - ACCESSIONING INSTITUTION (63.05-.112)"
+* performer[va-by] -> "1679: reference from MICROBIOLOGY - VERIFY PERSON (63.05-.04)"
 * specimen -> "1659: reference from MICROBIOLOGY - MICROBIOLOGY ACCESSION (63.05-.06)"
 * identifier.value -> "1476: source value from MICROBIOLOGY - IEN (63.05-.001)"
 * identifier.system -> "1476-1: fixed value = http://va.gov/identifiers/$Sta3n/63.05" "from mapParameter 1"
@@ -52,8 +57,8 @@ Source: LabObservationMicrobiologyParasitologyObservation
 * status -> "Micro.Microbiology.ParasitologyReportStatus"
 * effectiveDateTime -> "Micro.AntibioticSensitivity.SpecimenTakenDateTime,Micro.AntibioticSensitivityComment.SpecimenTakenDateTime,Micro.BacteriologyReports.SpecimenTakenDateTime,Micro.MicroAntibioticLevel.SpecimenTakenDateTime,Micro.MicroAudit.SpecimenTakenDateTime,Micro.Microbiology.SpecimenTakenDateTime,Micro.MicroOrderedTest.SpecimenTakenDateTime,Micro.MicroSterilityResults.SpecimenTakenDateTime,Micro.MycobacteriologyReports.SpecimenTakenDateTime,Micro.Mycology.SpecimenTakenDateTime,Micro.MycologyReports.SpecimenTakenDateTime,Micro.Parasitology.SpecimenTakenDateTime,Micro.ParasitologyReports.SpecimenTakenDateTime,Micro.ParasitologyStage.SpecimenTakenDateTime,Micro.Virology.SpecimenTakenDateTime,Micro.VirologyReports.SpecimenTakenDateTime,SStaff.SMicroOrderedTest.SpecimenTakenDateTime"
 * note -> "Micro.Microbiology.SpecimenComment"
-* performer -> "Micro.Microbiology.AccessioningInstitutionIEN"
-* performer -> "Micro.Microbiology.VerifyingStaffIEN"
+* performer[va-at] -> "Micro.Microbiology.AccessioningInstitutionIEN"
+* performer[va-by] -> "Micro.Microbiology.VerifyingStaffIEN"
 * specimen -> "Micro.Microbiology.MicrobiologyAccession"
 * issued -> "Micro.Microbiology.ReportCompletedDateTime"
 * subject -> "Micro.AntibioticSensitivity.LRDFN,Micro.AntibioticSensitivityComment.LRDFN,Micro.BacteriologyReports.LRDFN,Micro.MicroAntibioticLevel.LRDFN,Micro.MicroAudit.LRDFN,Micro.Microbiology.LRDFN,Micro.MicroOrderedTest.LRDFN,Micro.MicroSterilityResults.LRDFN,Micro.MycobacteriologyReports.LRDFN,Micro.Mycology.LRDFN,Micro.MycologyReports.LRDFN,Micro.Parasitology.LRDFN,Micro.ParasitologyReports.LRDFN,Micro.ParasitologyStage.LRDFN,Micro.Virology.LRDFN,Micro.VirologyReports.LRDFN,Pathology.Autopsy.LRDFN,Pathology.CytoOrganTissueFunction.StaffIEN,SStaff.SMicroOrderedTest.LRDFN"
@@ -63,8 +68,8 @@ Id: sda
 Title: "Summary Document Architecure (SDA)"
 Source: LabObservationMicrobiologyParasitologyObservation
 * status -> "Documents.DocumentCompletionStatus,LabOrder.Result.ResultStatus"
-* performer -> "Documents.EnteredAt,LabOrder.Result.EnteredAt"
-* performer -> "Documents.Clinician,Documents.Extension[DocumentExtension].CareProviders,LabOrder.Result.VerifiedBy"
+* performer[va-at] -> "Documents.EnteredAt,LabOrder.Result.EnteredAt"
+* performer[va-by] -> "Documents.Clinician,Documents.Extension[DocumentExtension].CareProviders,LabOrder.Result.VerifiedBy"
 * specimen -> "LabOrder.Extension[ResultExtension].GroupName"
 * issued -> "Documents.ToTime,LabOrder.Result.ResultTime"
 * subject -> "Patient.Extension[PatientExtension].VeteranLrdfn"

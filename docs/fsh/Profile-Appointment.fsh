@@ -2,7 +2,7 @@ Profile: Appointment
 Parent: http://hl7.org/fhir/StructureDefinition/Appointment
 Id: Appointment
 Title: "Appointment"
-Description: "This StructureDefinition contains the maps for VistA file APPOINTMENT (2.98) to Appointment"
+Description: "This StructureDefinition contains the maps for VistA file APPOINTMENT (2.98) to Appointment."
 * ^status = #active
 * serviceCategory ^slicing.discriminator.type = #pattern
 * serviceCategory ^slicing.discriminator.path = "$this"
@@ -15,12 +15,12 @@ Description: "This StructureDefinition contains the maps for VistA file APPOINTM
 * participant ^slicing.discriminator.type = #pattern
 * participant ^slicing.discriminator.path = "$this"
 * participant ^slicing.rules = #open
-* participant contains va-clinic 0..1 and va-patient 0..1 and va-appt-clinic 0..1
+* participant contains va-clinic 0..1 and va-patient 0..1 and va-apptclinic 0..1
 * extension contains http://va.gov/fhir/StructureDefinition/resource-serviceConnection named resource-serviceConnection 0..1
-* status and extension[http://va.gov/fhir/StructureDefinition/resource-serviceConnection].valueCoding and cancelationReason and serviceCategory[va-service].coding.code and serviceCategory[va-service].coding.system and serviceType[va-stop-code].coding.code and serviceType[va-stop-code].coding.system and serviceType[va-credit-stop-code].coding.code and serviceType[va-credit-stop-code].coding.system and appointmentType.text and start and end and minutesDuration and created and participant[va-clinic].actor and participant[va-clinic].type.coding.code and participant[va-clinic].status and participant[va-patient].actor and participant[va-patient].type.coding.code and participant[va-patient].status and serviceCategory[va-stop-code].coding.code and serviceCategory[va-stop-code].coding.system and comment and participant[va-appt-clinic].actor and participant[va-appt-clinic].type.coding.code and participant[va-appt-clinic].status and description MS
+* status and extension[http://va.gov/fhir/StructureDefinition/resource-serviceConnection].valueCoding and cancelationReason and serviceCategory[va-service].coding.code and serviceCategory[va-service].coding.system and serviceType[va-stop-code].coding.code and serviceType[va-stop-code].coding.system and serviceType[va-credit-stop-code].coding.code and serviceType[va-credit-stop-code].coding.system and appointmentType.text and start and end and minutesDuration and created and participant[va-clinic].actor and participant[va-clinic].type.coding.code and participant[va-clinic].status and participant[va-patient].actor and participant[va-patient].type.coding.code and participant[va-patient].status and serviceCategory[va-stop-code].coding.code and serviceCategory[va-stop-code].coding.system and comment and participant[va-apptclinic].actor and participant[va-apptclinic].type.coding.code and participant[va-apptclinic].status and description MS
 * participant[va-clinic].actor only Reference(Location)
 * participant[va-patient].actor only Reference(Patient)
-* participant[va-appt-clinic].actor only Reference(Location)
+* participant[va-apptclinic].actor only Reference(Location)
 * status from http://va.gov/fhir/ValueSet/AppointmentStatus
 * status obeys a-11-732
 * status obeys a-11-733
@@ -37,8 +37,8 @@ Description: "This StructureDefinition contains the maps for VistA file APPOINTM
 * participant[va-patient].status = #accepted
 * status obeys a-11-748
 * serviceCategory[va-stop-code].coding.system = "http://va.gov/terminology/VistADefinedTerms/409.3-13.4"
-* participant[va-appt-clinic].type.coding.code = #PART
-* participant[va-appt-clinic].status = #tentative
+* participant[va-apptclinic].type.coding.code = #PART
+* participant[va-apptclinic].status = #tentative
 
 Invariant: a-11-732
 Description: "2.98-3: if I, NT, Null AND check-in date (44.003-309)=NULL AND check-out date (44.003-303)=NULL then #booked"
@@ -101,9 +101,9 @@ Source: Appointment
 * start -> "750: source value from SD WAIT LIST - DESIRED DATE OF APPOINTMENT (409.3-22)"
 * created -> "751: source value from SD WAIT LIST - ORIGINATING DATE (409.3-1)"
 * comment -> "752: source value from SD WAIT LIST - COMMENTS (409.3-25)"
-* participant[va-appt-clinic].actor -> "754: reference from SD WAIT LIST - APPT CLINIC (409.3-13.2)"
-* participant[va-appt-clinic].type.coding.code -> "754-1: fixed value = #PART" "from mapParameter 1"
-* participant[va-appt-clinic].status -> "754-2: fixed value = #tentative" "from mapParameter 2"
+* participant[va-apptclinic].actor -> "754: reference from SD WAIT LIST - APPT CLINIC (409.3-13.2)"
+* participant[va-apptclinic].type.coding.code -> "754-1: fixed value = #PART" "from mapParameter 1"
+* participant[va-apptclinic].status -> "754-2: fixed value = #tentative" "from mapParameter 2"
 * description -> "1791: source value from APPOINTMENT - APPOINTMENT TYPE > APPOINTMENT TYPE - DESCRIPTION (2.98-9.5 > 409.1-10)" "Added after PHAPI gap analysis to match PHAPI fields"
 
 Mapping: cdw-to-Appointment
@@ -131,7 +131,7 @@ Source: Appointment
 * start -> "Appt.WaitList.AppointmentDesiredDate"
 * created -> "Appt.WaitList.OriginatingDate"
 * comment -> "Appt.WaitList.WaitListComments"
-* participant[va-appt-clinic].actor -> "Appt.WaitList.AppointmentLocationIEN"
+* participant[va-apptclinic].actor -> "Appt.WaitList.AppointmentLocationIEN"
 * description -> "Appt.Appointment.AppointmentTypeIEN"
 
 Mapping: sda-to-Appointment
