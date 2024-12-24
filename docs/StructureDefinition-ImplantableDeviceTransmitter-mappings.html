@@ -1,0 +1,780 @@
+<!-- get modelType -->
+
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Implantable Device: Transmitter - Mappings - US Veterans Administration FHIR Map Set Implementation Guide v0.69.448</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+    <link href="assets/css/va-maps.css" rel="stylesheet"/>
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"11.34"}
+    h3,h4,h5,h6{--heading-prefix:"11.34"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <!-- Placeholder for child template header declarations -->
+
+<div id="project-nav">
+    <a id="family-logo" no-external="true" href="https://va.gov"><img height="50" alt="Visit the VA website"
+        src="assets/images/va.png" /> </a>
+</div>
+
+<div id="family-nav">
+    <a id="family-logo" no-external="true" href="http://hl7.org/fhir"><img height="50" alt="Visit the FHIR website" src="assets/images/fhir-logo-www.png"/> </a>
+</div>
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">US Veterans Administration FHIR Map Set Implementation Guide</span>
+            <br/>
+            <span style="display:inline-block;">0.69.448 - 250101
+
+
+
+  <img alt="United States of America flag" src="assets/images/usa.svg" height="16" title="United States of America"/>
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li>
+    <a href="toc.html">Table of Content</a>
+  </li>
+  <li>
+    <a href="process.html">Process</a>
+  </li>
+  <li>
+    <a href="profileDesign.html">Profile Design</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Design Guidance
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="guidance.html">General Guidance</a>
+      </li>
+      <li>
+        <a href="guidance-vitals.html">Vitals Guidance</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="mustSupport.html">Must Support</a>
+  </li>
+  <li>
+    <a href="classes.html">Classes</a>
+  </li>
+  <li>
+    <a href="artifacts.html">Artifacts</a>
+  </li>
+  <li>
+    <a href="changes.html">Changes</a>
+  </li>
+  <li>
+    <a href="history.html">History</a>
+  </li>
+  <li>
+    <a href="mapset-qa.html">MapSet QA</a>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='artifacts.html'><b>Artifacts Summary</b></a></li><li><b>Implantable Device: Transmitter</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<div style="counter-reset: section 5" class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">US Veterans Administration FHIR Map Set Implementation Guide - Local Development build (v0.69.448) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  
+
+
+
+
+
+
+
+
+
+
+
+<ul class="nav nav-tabs">
+
+  <li>
+    <a href="StructureDefinition-ImplantableDeviceTransmitter.html">Content</a>
+  </li>
+
+
+
+  <li>
+    <a href="StructureDefinition-ImplantableDeviceTransmitter-definitions.html">Detailed Descriptions</a>
+  </li>
+
+
+
+  
+    <li class="active">
+      <a href="#">Mappings</a>
+    </li>
+  
+
+
+
+
+
+
+
+  
+    <li>
+      <a href="StructureDefinition-ImplantableDeviceTransmitter.profile.xml.html">XML</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="StructureDefinition-ImplantableDeviceTransmitter.profile.json.html">JSON</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="StructureDefinition-ImplantableDeviceTransmitter.profile.ttl.html">TTL</a>
+    </li>
+  
+
+
+</ul>
+
+
+<a name="root"> </a>
+<h2 id="root">Resource Profile: ImplantableDeviceTransmitter - Mappings</h2>
+
+  <table class="colsi">
+    <tr>
+
+      <td colspan="2">
+        
+          Active
+          
+            as of 2024-12-21
+          
+        
+      </td>
+
+    </tr>
+  </table>
+
+
+<p>Mappings for the ImplantableDeviceTransmitter resource profile.</p>
+
+  <!-- insert intro if present -->
+  
+
+
+
+<div style="display:inline-block" markdown="1">
+
+<p>Scroll down for the Raw FHIR, CDW &amp; SDA mappings (if any).</p>
+
+<blockquote>
+  <p>Note that the CDW and SDA mappings are derived from a look-up based on the VistA source mappings in CDW and VPR SDA.</p>
+</blockquote>
+
+<?xml version="1.0" encoding="us-ascii" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="299px" preserveAspectRatio="none" style="width:918px;height:299px;background:#FFFFFF;" version="1.1" viewBox="0 0 918 299" width="918px" zoomAndPan="magnify"><defs /><g><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="409" x="247.5" y="22.9951">Use Case: Implantable Device: Transmitter (Source)</text><g id="elem_698"><rect fill="#F1F1F1" height="182.6719" style="stroke:#181818;stroke-width:3.0;" width="270" x="7" y="109.3794" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="192" x="46" y="124.3745">GENERATOR IMPLANT (698)</text><line style="stroke:#181818;stroke-width:1.0;" x1="7" x2="277" y1="129.6763" y2="129.6763" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="31" x="12" y="144.6714">.001</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="53" y="144.6714">IEN</text><line style="stroke:#181818;stroke-width:1.0;" x1="48" x2="48" y1="129.6763" y2="149.9731" /><line style="stroke:#181818;stroke-width:1.0;" x1="7" x2="277" y1="149.9731" y2="149.9731" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="9" x="23" y="164.9682">1</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="123" x="53" y="164.9682">MEDICAL PATIENT</text><line style="stroke:#181818;stroke-width:1.0;" x1="48" x2="48" y1="149.9731" y2="170.27" /><line style="stroke:#181818;stroke-width:1.0;" x1="7" x2="277" y1="170.27" y2="170.27" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="9" x="23" y="185.2651">2</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="140" x="53" y="185.2651">PACEMAKER MODEL</text><line style="stroke:#181818;stroke-width:1.0;" x1="48" x2="48" y1="170.27" y2="190.5669" /><line style="stroke:#181818;stroke-width:1.0;" x1="7" x2="277" y1="190.5669" y2="190.5669" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="9" x="23" y="205.562">3</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="206" x="53" y="205.562">PACEMAKER MANUFACTURER</text><line style="stroke:#181818;stroke-width:1.0;" x1="48" x2="48" y1="190.5669" y2="210.8638" /><line style="stroke:#181818;stroke-width:1.0;" x1="7" x2="277" y1="210.8638" y2="210.8638" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="9" x="23" y="225.8589">4</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="202" x="53" y="225.8589">PACEMAKER SERIAL NUMBER</text><line style="stroke:#181818;stroke-width:1.0;" x1="48" x2="48" y1="210.8638" y2="231.1606" /><line style="stroke:#181818;stroke-width:1.0;" x1="7" x2="277" y1="231.1606" y2="231.1606" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="18" x="18.5" y="246.1557">12</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="153" x="53" y="246.1557">TRANSMITTER MODEL</text><line style="stroke:#181818;stroke-width:1.0;" x1="48" x2="48" y1="231.1606" y2="251.4575" /><line style="stroke:#181818;stroke-width:1.0;" x1="7" x2="277" y1="251.4575" y2="251.4575" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="18" x="18.5" y="266.4526">13</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="219" x="53" y="266.4526">TRANSMITTER MANUFACTURER</text><line style="stroke:#181818;stroke-width:1.0;" x1="48" x2="48" y1="251.4575" y2="271.7544" /><line style="stroke:#181818;stroke-width:1.0;" x1="7" x2="277" y1="271.7544" y2="271.7544" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="18" x="18.5" y="286.7495">96</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="104" x="53" y="286.7495">EXPLANT DATE</text><line style="stroke:#181818;stroke-width:1.0;" x1="48" x2="48" y1="271.7544" y2="292.0513" /></g><g id="elem_698_6"><rect fill="#F1F1F1" height="40.5938" style="stroke:#181818;stroke-width:0.5;" width="274" x="637" y="180.3794" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="260" x="644" y="195.3745">PACEMAKER MANUFACTURER (698.6)</text><line style="stroke:#181818;stroke-width:1.0;" x1="637" x2="911" y1="200.6763" y2="200.6763" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="642" y="215.6714">.01</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="40" x="674" y="215.6714">NAME</text><line style="stroke:#181818;stroke-width:1.0;" x1="669" x2="669" y1="200.6763" y2="220.9731" /></g><g id="elem_698_4"><rect fill="#F1F1F1" height="60.8906" style="stroke:#181818;stroke-width:0.5;" width="240" x="346" y="170.3794" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="226" x="353" y="185.3745">PACEMAKER EQUIPMENT (698.4)</text><line style="stroke:#181818;stroke-width:1.0;" x1="346" x2="586" y1="190.6763" y2="190.6763" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="351" y="205.6714">.01</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="160" x="383" y="205.6714">MODEL NUMBER/NAME</text><line style="stroke:#181818;stroke-width:1.0;" x1="378" x2="378" y1="190.6763" y2="210.9731" /><line style="stroke:#181818;stroke-width:1.0;" x1="346" x2="586" y1="210.9731" y2="210.9731" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="9" x="357.5" y="225.9682">1</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="145" x="383" y="225.9682">TYPE OF EQUIPMENT</text><line style="stroke:#181818;stroke-width:1.0;" x1="378" x2="378" y1="210.9731" y2="231.27" /></g><!--link 698 to 698_6--><g id="link_698_698_6"><path codeLine="23" d="M277,261.3794 C348.919,261.3794 265.4282,152.2224 320,105.3794 C392.3257,43.2969 437.8461,85.9444 533,80.3794 C616.5663,75.4921 701.1598,136.1739 744.4439,173.074 " fill="none" id="698-to-698_6" style="stroke:#181818;stroke-width:1.0;" /><polygon fill="#181818" points="748.2489,176.3476,744.0351,167.4457,744.4586,173.0867,738.8176,173.5102,748.2489,176.3476" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="16" x="534" y="71.4463">13</text></g><!--link 698 to 698_6--><g id="link_698_698_6"><path codeLine="25" d="M277,200.3794 C323.346,200.3794 282.5866,132.7324 320,105.3794 C403.363,44.4326 449.6805,60.4227 551,80.3794 C623.773,94.7133 697.477,142.2699 739.2803,173.036 " fill="none" id="698-to-698_6-1" style="stroke:#181818;stroke-width:1.0;" /><polygon fill="#181818" points="743.4731,176.1444,738.6254,167.5712,739.4565,173.1666,733.861,173.9977,743.4731,176.1444" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="538" y="71.4463">3</text></g><!--link 698 to 698_4--><g id="link_698_698_4"><path codeLine="24" d="M277,240.3794 C296.1576,240.3794 301.0386,246.1136 320,243.3794 C332.6986,241.5483 345.8323,238.8649 358.7793,235.7184 " fill="none" id="698-to-698_4" style="stroke:#181818;stroke-width:1.0;" /><polygon fill="#181818" points="363.9239,234.4419,354.2254,232.7273,359.0711,235.6461,356.1523,240.4918,363.9239,234.4419" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="16" x="303" y="239.4463">12</text></g><!--link 698 to 698_4--><g id="link_698_698_4"><path codeLine="26" d="M277,179.3794 C295.0309,179.3794 313.9706,180.3352 332.6105,181.839 " fill="none" id="698-to-698_4-1" style="stroke:#181818;stroke-width:1.0;" /><polygon fill="#181818" points="337.859,182.2773,329.2231,177.5421,332.8763,181.8611,328.5573,185.5143,337.859,182.2773" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="307" y="175.4463">2</text></g></g></svg>
+
+<h3 id="raw-mappings">Raw mappings</h3>
+
+<table border="1" cellspacing="0" cellpadding="0" class="table-ta1"><tr class="row-ro1">
+<th class="cell-ce1">key</th>
+<th class="cell-ce1">status</th>
+<th class="cell-ce1">direction</th>
+<th class="cell-ce1">source</th>
+<th class="cell-ce1">mapApproach</th>
+<th class="cell-ce1">mapCase</th>
+<th class="cell-ce1">FHIR Path</th>
+<th class="cell-ce1">subPath</th>
+<th class="cell-ce1">mapValue</th>
+<th class="cell-ce1">mapParameter</th>
+<th class="cell-ce1">mapComment</th>
+<th class="cell-ce1">FHIR URL | Ver</th>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1367</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">GENERATOR IMPLANT - TRANSMITTER MANUFACTURER &gt; PACEMAKER MANUFACTURER - NAME (698-13 &gt; 698.6-.01)</td>
+<td class="cell-ce1">source value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Device.manufacturer</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-implantable-device | 5.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1389</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">GENERATOR IMPLANT - TRANSMITTER MODEL &gt; PACEMAKER EQUIPMENT - MODEL NUMBER/NAME (698-12 &gt; 698.4-.01)</td>
+<td class="cell-ce1">source value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Device.modelNumber</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-implantable-device | 5.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1395</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">GENERATOR IMPLANT - TRANSMITTER MODEL &gt; PACEMAKER EQUIPMENT - TYPE OF EQUIPMENT (698-12 &gt; 698.4-1)</td>
+<td class="cell-ce1">terminologyMaps</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Device.type</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">VF_deviceTypePacemaker</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">A request for more specific SNOMED codes will be submitted (01/04/2023)</td>
+<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-implantable-device | 5.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1349</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">GENERATOR IMPLANT - IEN (698-.001)</td>
+<td class="cell-ce1">source value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Device.identifier</td>
+<td class="cell-ce1">.value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">.system = http://va.gov/identifiers/$Sta3n/698</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-implantable-device | 5.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1349-1</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">fixed value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Device.identifier</td>
+<td class="cell-ce1">.system</td>
+<td class="cell-ce1">http://va.gov/identifiers/$Sta3n/698</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">from mapParameter 1</td>
+<td class="cell-ce1"></td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1356</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">GENERATOR IMPLANT - EXPLANT DATE (698-96)</td>
+<td class="cell-ce1">fixed value</td>
+<td class="cell-ce1">is NULL</td>
+<td class="cell-ce1">Device.status</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">#active</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">If NULL, can it be assumed it is active?</td>
+<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-implantable-device | 5.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1357</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">GENERATOR IMPLANT - EXPLANT DATE (698-96)</td>
+<td class="cell-ce1">fixed value</td>
+<td class="cell-ce1">is not NULL</td>
+<td class="cell-ce1">Device.status</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">#inactive</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-implantable-device | 5.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1366</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">GENERATOR IMPLANT - PACEMAKER MANUFACTURER &gt; PACEMAKER MANUFACTURER - NAME (698-3 &gt; 698.6-.01)</td>
+<td class="cell-ce1">source value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Device.manufacturer</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-implantable-device | 5.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1380</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">GENERATOR IMPLANT - PACEMAKER SERIAL NUMBER (698-4)</td>
+<td class="cell-ce1">source value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Device.serialNumber</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Do not use with the Transmitter use case; use transmitter serial number if it has its own.</td>
+<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-implantable-device | 5.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1388</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">GENERATOR IMPLANT - PACEMAKER MODEL &gt; PACEMAKER EQUIPMENT - MODEL NUMBER/NAME (698-2 &gt; 698.4-.01)</td>
+<td class="cell-ce1">source value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Device.modelNumber</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-implantable-device | 5.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1394</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">GENERATOR IMPLANT - PACEMAKER MODEL &gt; PACEMAKER EQUIPMENT - TYPE OF EQUIPMENT (698-2 &gt; 698.4-1)</td>
+<td class="cell-ce1">terminologyMaps</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Device.type</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">VF_deviceTypePacemaker</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">A request for more specific SNOMED codes will be submitted (01/04/2023)</td>
+<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-implantable-device | 5.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1400</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">GENERATOR IMPLANT - MEDICAL PATIENT (698-1)</td>
+<td class="cell-ce1">reference</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Device.patient</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">/Patient</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-implantable-device | 5.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1353</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">target not supported</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Device.udiCarrier</td>
+<td class="cell-ce1">.deviceIdentifier</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-implantable-device | 5.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1355</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">target not supported</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Device.status</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-implantable-device | 5.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1363</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">target not supported</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Device.distinctIdentifier</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-implantable-device | 5.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1371</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">target not supported</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Device.manufactureDate</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-implantable-device | 5.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1374</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">target not supported</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Device.expirationDate</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-implantable-device | 5.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1377</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">target not supported</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Device.lotNumber</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-implantable-device | 5.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1381</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">target not supported</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Device.serialNumber</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-implantable-device | 5.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1386</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">target not supported</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Device.deviceName</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-implantable-device | 5.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1795</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">target not supported</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Device.udiCarrier</td>
+<td class="cell-ce1">.carrierHRF</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-implantable-device | 5.0.1</td>
+</tr>
+</table>
+
+</div>
+
+
+
+
+  <a name="vista"> </a><h3>Mappings for Veterans Health Information Systems Technology and Architecture (VistA) ()</h3><table class="grid">
+ <tr><td colspan="3"><b>ImplantableDeviceTransmitter</b></td></tr>
+ <tr><td>Device</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;system</td><td>1349-1: fixed value = http://va.gov/identifiers/$Sta3n/698</td><td><p>from mapParameter 1</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>1349: source value from GENERATOR IMPLANT - IEN (698-.001)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;udiCarrier</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;deviceIdentifier</td><td>1353: target not supported</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;carrierHRF</td><td>1795: target not supported</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>1356: fixed value = #active when GENERATOR IMPLANT - EXPLANT DATE (698-96) case is NULL, 1357: fixed value = #inactive when GENERATOR IMPLANT - EXPLANT DATE (698-96) case is not NULL, 1355: target not supported</td><td><p>If NULL, can it be assumed it is active?</p>
+, , </td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;distinctIdentifier</td><td>1363: target not supported</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;manufacturer</td><td>1367: source value from GENERATOR IMPLANT - TRANSMITTER MANUFACTURER &gt; PACEMAKER MANUFACTURER - NAME (698-13 &gt; 698.6-.01), 1366: source value from GENERATOR IMPLANT - PACEMAKER MANUFACTURER &gt; PACEMAKER MANUFACTURER - NAME (698-3 &gt; 698.6-.01)</td><td>, </td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;manufactureDate</td><td>1371: target not supported</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;expirationDate</td><td>1374: target not supported</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;lotNumber</td><td>1377: target not supported</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;serialNumber</td><td>1380: source value from GENERATOR IMPLANT - PACEMAKER SERIAL NUMBER (698-4), 1381: target not supported</td><td><p>Do not use with the Transmitter use case; use transmitter serial number if it has its own.</p>
+, </td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;deviceName</td><td>1386: target not supported</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;modelNumber</td><td>1389: source value from GENERATOR IMPLANT - TRANSMITTER MODEL &gt; PACEMAKER EQUIPMENT - MODEL NUMBER/NAME (698-12 &gt; 698.4-.01), 1388: source value from GENERATOR IMPLANT - PACEMAKER MODEL &gt; PACEMAKER EQUIPMENT - MODEL NUMBER/NAME (698-2 &gt; 698.4-.01)</td><td>, </td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;type</td><td>1395: terminologyMaps using VF_deviceTypePacemaker on GENERATOR IMPLANT - TRANSMITTER MODEL &gt; PACEMAKER EQUIPMENT - TYPE OF EQUIPMENT (698-12 &gt; 698.4-1), 1394: terminologyMaps using VF_deviceTypePacemaker on GENERATOR IMPLANT - PACEMAKER MODEL &gt; PACEMAKER EQUIPMENT - TYPE OF EQUIPMENT (698-2 &gt; 698.4-1)</td><td><p>A request for more specific SNOMED codes will be submitted (01/04/2023)</p>
+, <p>A request for more specific SNOMED codes will be submitted (01/04/2023)</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;patient</td><td>1400: reference from GENERATOR IMPLANT - MEDICAL PATIENT (698-1)</td><td></td> </tr>
+</table>
+<a name="rim"> </a><h3>Mappings for RIM Mapping (<a href="http://hl7.org/comparison-v3.html">http://hl7.org/v3</a>)</h3><table class="grid">
+ <tr><td colspan="3"><b>ImplantableDeviceTransmitter</b></td></tr>
+ <tr><td>Device</td><td>Entity. Role, or Act, Device</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;text</td><td>Act.text?</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;contained</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;extension</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;modifierExtension</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>.id</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;use</td><td>Role.code or implied by context</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td>Role.code or implied by context</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;system</td><td>II.root or Role.id.root</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>II.extension or II.root if system indicates OID or GUID (Or Role.id.extension or root)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;period</td><td>Role.effectiveTime or implied by context</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assigner</td><td>II.assigningAuthorityName but note that this is an improper use by the definition of the field.  Also Role.scoper</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;udiCarrier</td><td>.id and .code</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modifierExtension</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;deviceIdentifier</td><td>Role.id.extension</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;issuer</td><td>Role.id.root</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;jurisdiction</td><td>Role.scoper</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;carrierAIDC</td><td>Role.id.extension</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;carrierHRF</td><td>Role.id.extension</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;entryType</td><td>NA</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>.statusCode</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;distinctIdentifier</td><td>.lotNumberText</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;manufacturer</td><td>.playedRole[typeCode=MANU].scoper.name</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;manufactureDate</td><td>.existenceTime.low</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;expirationDate</td><td>.expirationTime</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;lotNumber</td><td>.lotNumberText</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;serialNumber</td><td>.playedRole[typeCode=MANU].id</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;deviceName</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modifierExtension</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td>.playedRole[typeCode=MANU].code</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;modelNumber</td><td>.softwareName (included as part)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;partNumber</td><td>.playedRole[typeCode=MANU].id</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;specialization</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modifierExtension</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;version</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modifierExtension</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;property</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modifierExtension</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;patient</td><td>.playedRole[typeCode=USED].scoper.playedRole[typeCode=PAT]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;owner</td><td>.playedRole[typeCode=OWN].scoper</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;contact</td><td>.scopedRole[typeCode=CON].player</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;location</td><td>.playedRole[typeCode=LOCE].scoper</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;url</td><td>.telecom</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;note</td><td>.text</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;safety</td><td>NA</td> </tr>
+</table>
+<a name="w5"> </a><h3>Mappings for FiveWs Pattern Mapping (http://hl7.org/fhir/fivews)</h3><table class="grid">
+ <tr><td colspan="3"><b>ImplantableDeviceTransmitter</b></td></tr>
+ <tr><td>Device</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>FiveWs.identifier</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;udiCarrier</td><td>FiveWs.identifier</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;deviceIdentifier</td><td>FiveWs.what[x]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>FiveWs.status</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;statusReason</td><td>FiveWs.status</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;distinctIdentifier</td><td>FiveWs.what[x]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;manufacturer</td><td>FiveWs.what[x]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;manufactureDate</td><td>FiveWs.what[x]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;expirationDate</td><td>FiveWs.what[x]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;lotNumber</td><td>FiveWs.what[x]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;serialNumber</td><td>FiveWs.what[x]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;deviceName</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td>FiveWs.what[x]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;modelNumber</td><td>FiveWs.what[x]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;partNumber</td><td>FiveWs.what[x]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;specialization</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;version</td><td>FiveWs.what[x]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;version</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;component</td><td>FiveWs.what[x]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;patient</td><td>FiveWs.subject[x], FiveWs.subject</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;owner</td><td>FiveWs.source</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;contact</td><td>FiveWs.source</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;location</td><td>FiveWs.where[x]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;url</td><td>FiveWs.where[x]</td> </tr>
+</table>
+<a name="udi"> </a><h3>Mappings for UDI Mapping (http://fda.gov/UDI)</h3><table class="grid">
+ <tr><td colspan="3"><b>ImplantableDeviceTransmitter</b></td></tr>
+ <tr><td>Device</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>The serial number which is a component of the production identifier (PI), a conditional, variable portion of a UDI.   The identifier.type code should be set to “SNO”(Serial Number) and the system left empty.</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;udiCarrier</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;deviceIdentifier</td><td>The device identifier (DI), a mandatory, fixed portion of a UDI that identifies the labeler and the specific version or model of a device.</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;issuer</td><td>All UDIs are to be issued under a system operated by an Jurisdiction-accredited issuing agency.
+GS1 DIs: 
+ http://hl7.org/fhir/NamingSystem/gs1
+HIBCC DIs:
+ http://hl7.org/fhir/NamingSystem/hibcc
+ICCBBA DIs for blood containers:
+ http://hl7.org/fhir/NamingSystem/iccbba-blood
+ICCBA DIs for other devices:
+ http://hl7.org/fhir/NamingSystem/iccbba-other</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;carrierAIDC</td><td>A unique device identifier (UDI) on a device label a form that uses automatic identification and data capture (AIDC) technology.</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;carrierHRF</td><td>A unique device identifier (UDI) on a device label in plain text</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;distinctIdentifier</td><td>The lot or batch number within which a device was manufactured - which is a component of the production identifier (PI), a conditional, variable portion of a UDI.</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;manufacturer</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;manufactureDate</td><td>The date a specific device was manufactured - which is a component of the production identifier (PI), a conditional, variable portion of a UDI.  For FHIR, The datetime syntax must converted to YYYY-MM-DD[THH:MM:SS].  If hour is present, the minutes and seconds should both be set to “00”.</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;expirationDate</td><td>the expiration date of a specific device -  which is a component of the production identifier (PI), a conditional, variable portion of a UDI.  For FHIR, The datetime syntax must converted to YYYY-MM-DD[THH:MM:SS].  If hour is present, the minutes and seconds should both be set to “00”.</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;lotNumber</td><td>The lot or batch number within which a device was manufactured - which is a component of the production identifier (PI), a conditional, variable portion of a UDI.</td> </tr>
+</table>
+
+
+  <!-- insert notes if present -->
+  
+
+
+
+</div>
+
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript" src="assets/js/tabs.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2024 <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.69.448 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Sat, Dec 21, 2024 10:24+0000">2024-12-21</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+| <a style="color: #81BEF7" target="_blank" href="https://leaf.va.gov/NATIONAL/776/va_fhir_community_of_practice/?a=newform">Propose a change</a>
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

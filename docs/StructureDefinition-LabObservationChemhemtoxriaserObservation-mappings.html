@@ -1,0 +1,913 @@
+<!-- get modelType -->
+
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Lab Observation: Chem, hem, tox, ria, ser Observation - Mappings - US Veterans Administration FHIR Map Set Implementation Guide v0.69.448</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+    <link href="assets/css/va-maps.css" rel="stylesheet"/>
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"11.39"}
+    h3,h4,h5,h6{--heading-prefix:"11.39"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <!-- Placeholder for child template header declarations -->
+
+<div id="project-nav">
+    <a id="family-logo" no-external="true" href="https://va.gov"><img height="50" alt="Visit the VA website"
+        src="assets/images/va.png" /> </a>
+</div>
+
+<div id="family-nav">
+    <a id="family-logo" no-external="true" href="http://hl7.org/fhir"><img height="50" alt="Visit the FHIR website" src="assets/images/fhir-logo-www.png"/> </a>
+</div>
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">US Veterans Administration FHIR Map Set Implementation Guide</span>
+            <br/>
+            <span style="display:inline-block;">0.69.448 - 250101
+
+
+
+  <img alt="United States of America flag" src="assets/images/usa.svg" height="16" title="United States of America"/>
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li>
+    <a href="toc.html">Table of Content</a>
+  </li>
+  <li>
+    <a href="process.html">Process</a>
+  </li>
+  <li>
+    <a href="profileDesign.html">Profile Design</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Design Guidance
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="guidance.html">General Guidance</a>
+      </li>
+      <li>
+        <a href="guidance-vitals.html">Vitals Guidance</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="mustSupport.html">Must Support</a>
+  </li>
+  <li>
+    <a href="classes.html">Classes</a>
+  </li>
+  <li>
+    <a href="artifacts.html">Artifacts</a>
+  </li>
+  <li>
+    <a href="changes.html">Changes</a>
+  </li>
+  <li>
+    <a href="history.html">History</a>
+  </li>
+  <li>
+    <a href="mapset-qa.html">MapSet QA</a>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='artifacts.html'><b>Artifacts Summary</b></a></li><li><b>Lab Observation: Chem, hem, tox, ria, ser Observation</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<div style="counter-reset: section 5" class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">US Veterans Administration FHIR Map Set Implementation Guide - Local Development build (v0.69.448) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  
+
+
+
+
+
+
+
+
+
+
+
+<ul class="nav nav-tabs">
+
+  <li>
+    <a href="StructureDefinition-LabObservationChemhemtoxriaserObservation.html">Content</a>
+  </li>
+
+
+
+  <li>
+    <a href="StructureDefinition-LabObservationChemhemtoxriaserObservation-definitions.html">Detailed Descriptions</a>
+  </li>
+
+
+
+  
+    <li class="active">
+      <a href="#">Mappings</a>
+    </li>
+  
+
+
+
+
+
+
+
+  
+    <li>
+      <a href="StructureDefinition-LabObservationChemhemtoxriaserObservation.profile.xml.html">XML</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="StructureDefinition-LabObservationChemhemtoxriaserObservation.profile.json.html">JSON</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="StructureDefinition-LabObservationChemhemtoxriaserObservation.profile.ttl.html">TTL</a>
+    </li>
+  
+
+
+</ul>
+
+
+<a name="root"> </a>
+<h2 id="root">Resource Profile: LabObservationChemhemtoxriaserObservation - Mappings</h2>
+
+  <table class="colsd">
+    <tr>
+
+      <td colspan="2">
+        
+          Draft
+          
+            as of 2024-12-21
+          
+        
+      </td>
+
+    </tr>
+  </table>
+
+
+<p>Mappings for the LabObservationChemhemtoxriaserObservation resource profile.</p>
+
+  <!-- insert intro if present -->
+  
+
+
+
+<div style="display:inline-block" markdown="1">
+
+<p>Scroll down for the Raw FHIR, CDW &amp; SDA mappings (if any).</p>
+
+<blockquote>
+  <p>Note that the CDW and SDA mappings are derived from a look-up based on the VistA source mappings in CDW and VPR SDA.</p>
+</blockquote>
+
+<?xml version="1.0" encoding="us-ascii" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="304px" preserveAspectRatio="none" style="width:2775px;height:304px;background:#FFFFFF;" version="1.1" viewBox="0 0 2775 304" width="2775px" zoomAndPan="magnify"><defs /><g><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="488" x="1136.5" y="22.9951">Use Case: Lab Observation: Chem, hem, tox, ria, ser (Source)</text><g id="elem_2"><rect fill="#F1F1F1" height="40.5938" style="stroke:#181818;stroke-width:0.5;" width="221" x="2364.5" y="175.8628" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="81" x="2434.5" y="190.8579">PATIENT (2)</text><line style="stroke:#181818;stroke-width:1.0;" x1="2364.5" x2="2585.5" y1="196.1597" y2="196.1597" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="18" x="2369.5" y="211.1548">63</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="183" x="2397.5" y="211.1548">LABORATORY REFERENCE</text><line style="stroke:#181818;stroke-width:1.0;" x1="2392.5" x2="2392.5" y1="196.1597" y2="216.4565" /></g><g id="elem_60"><rect fill="#F1F1F1" height="81.1875" style="stroke:#181818;stroke-width:0.5;" width="212" x="1105" y="155.3628" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="167" x="1127.5" y="170.3579">LABORATORY TEST (60)</text><line style="stroke:#181818;stroke-width:1.0;" x1="1105" x2="1317" y1="175.6597" y2="175.6597" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="1112.5" y="190.6548">.01</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="40" x="1147" y="190.6548">NAME</text><line style="stroke:#181818;stroke-width:1.0;" x1="1142" x2="1142" y1="175.6597" y2="195.9565" /><line style="stroke:#181818;stroke-width:1.0;" x1="1105" x2="1317" y1="195.9565" y2="195.9565" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="18" x="1114.5" y="210.9517">64</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="165" x="1147" y="210.9517">NATIONAL VA LAB CODE</text><line style="stroke:#181818;stroke-width:1.0;" x1="1142" x2="1142" y1="195.9565" y2="216.2534" /><line style="stroke:#181818;stroke-width:1.0;" x1="1105" x2="1317" y1="216.2534" y2="216.2534" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="27" x="1110" y="231.2485">100</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="106" x="1147" y="231.2485">SITE/SPECIMEN</text><line style="stroke:#181818;stroke-width:1.0;" x1="1142" x2="1142" y1="216.2534" y2="236.5503" /></g><g id="elem_62"><rect fill="#F1F1F1" height="40.5938" style="stroke:#181818;stroke-width:0.5;" width="192" x="862" y="175.8628" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="178" x="869" y="190.8579">COLLECTION SAMPLE (62)</text><line style="stroke:#181818;stroke-width:1.0;" x1="862" x2="1054" y1="196.1597" y2="196.1597" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="867" y="211.1548">.01</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="40" x="899" y="211.1548">NAME</text><line style="stroke:#181818;stroke-width:1.0;" x1="894" x2="894" y1="196.1597" y2="216.4565" /></g><g id="elem_63"><rect fill="#F1F1F1" height="40.5938" style="stroke:#181818;stroke-width:0.5;" width="114" x="2654" y="175.8628" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="100" x="2661" y="190.8579">LAB DATA (63)</text><line style="stroke:#181818;stroke-width:1.0;" x1="2654" x2="2768" y1="196.1597" y2="196.1597" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="2659" y="211.1548">.01</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="46" x="2691" y="211.1548">LRDFN</text><line style="stroke:#181818;stroke-width:1.0;" x1="2686" x2="2686" y1="196.1597" y2="216.4565" /></g><g id="elem_64"><rect fill="#F1F1F1" height="60.8906" style="stroke:#181818;stroke-width:0.5;" width="218" x="1619" y="165.8628" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="117" x="1669.5" y="180.8579">WKLD CODE (64)</text><line style="stroke:#181818;stroke-width:1.0;" x1="1619" x2="1837" y1="186.1597" y2="186.1597" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="18" x="1624" y="201.1548">13</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="180" x="1652" y="201.1548">WKLD CODE LAB SECTION</text><line style="stroke:#181818;stroke-width:1.0;" x1="1647" x2="1647" y1="186.1597" y2="206.4565" /><line style="stroke:#181818;stroke-width:1.0;" x1="1619" x2="1837" y1="206.4565" y2="206.4565" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="18" x="1624" y="221.4517">25</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="153" x="1652" y="221.4517">DEFAULT LOINC CODE</text><line style="stroke:#181818;stroke-width:1.0;" x1="1647" x2="1647" y1="206.4565" y2="226.7534" /></g><g id="elem_63_04"><rect fill="#F1F1F1" height="202.9688" style="stroke:#181818;stroke-width:3.0;" width="336" x="7" y="94.8628" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="271" x="39.5" y="109.8579">CHEM, HEM, TOX, RIA, SER, etc. (63.04)</text><line style="stroke:#181818;stroke-width:1.0;" x1="7" x2="343" y1="115.1597" y2="115.1597" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="31" x="54" y="130.1548">.001</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="137" y="130.1548">IEN</text><line style="stroke:#181818;stroke-width:1.0;" x1="132" x2="132" y1="115.1597" y2="135.4565" /><line style="stroke:#181818;stroke-width:1.0;" x1="7" x2="343" y1="135.4565" y2="135.4565" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="58.5" y="150.4517">.01</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="201" x="137" y="150.4517">DATE/TIME SPECIMEN TAKEN</text><line style="stroke:#181818;stroke-width:1.0;" x1="132" x2="132" y1="135.4565" y2="155.7534" /><line style="stroke:#181818;stroke-width:1.0;" x1="7" x2="343" y1="155.7534" y2="155.7534" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="58.5" y="170.7485">.03</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="191" x="137" y="170.7485">DATE REPORT COMPLETED</text><line style="stroke:#181818;stroke-width:1.0;" x1="132" x2="132" y1="155.7534" y2="176.0503" /><line style="stroke:#181818;stroke-width:1.0;" x1="7" x2="343" y1="176.0503" y2="176.0503" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="58.5" y="191.0454">.04</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="110" x="137" y="191.0454">VERIFY PERSON</text><line style="stroke:#181818;stroke-width:1.0;" x1="132" x2="132" y1="176.0503" y2="196.3472" /><line style="stroke:#181818;stroke-width:1.0;" x1="7" x2="343" y1="196.3472" y2="196.3472" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="58.5" y="211.3423">.06</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="80" x="137" y="211.3423">ACCESSION</text><line style="stroke:#181818;stroke-width:1.0;" x1="132" x2="132" y1="196.3472" y2="216.644" /><line style="stroke:#181818;stroke-width:1.0;" x1="7" x2="343" y1="216.644" y2="216.644" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="31" x="54" y="231.6392">.112</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="194" x="137" y="231.6392">ACCESSIONING INSTITUTION</text><line style="stroke:#181818;stroke-width:1.0;" x1="132" x2="132" y1="216.644" y2="236.9409" /><line style="stroke:#181818;stroke-width:1.0;" x1="7" x2="343" y1="236.9409" y2="236.9409" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="58.5" y="251.936">.35</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="111" x="137" y="251.936">ORDERED TEST</text><line style="stroke:#181818;stroke-width:1.0;" x1="132" x2="132" y1="236.9409" y2="257.2378" /><line style="stroke:#181818;stroke-width:1.0;" x1="7" x2="343" y1="257.2378" y2="257.2378" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="58.5" y="272.2329">.99</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="73" x="137" y="272.2329">COMMENT</text><line style="stroke:#181818;stroke-width:1.0;" x1="132" x2="132" y1="257.2378" y2="277.5347" /><line style="stroke:#181818;stroke-width:1.0;" x1="7" x2="343" y1="277.5347" y2="277.5347" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="115" x="12" y="292.5298">2+through+862</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="74" x="137" y="292.5298">testnames</text><line style="stroke:#181818;stroke-width:1.0;" x1="132" x2="132" y1="277.5347" y2="297.8315" /></g><g id="elem_63_07"><rect fill="#F1F1F1" height="101.4844" style="stroke:#181818;stroke-width:0.5;" width="184" x="617" y="145.3628" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="165" x="626.5" y="160.3579">ORDERED TEST (63.07)</text><line style="stroke:#181818;stroke-width:1.0;" x1="617" x2="801" y1="165.6597" y2="165.6597" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="9" x="626.5" y="180.6548">3</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="109" x="650" y="180.6548">CPRS ORDER #</text><line style="stroke:#181818;stroke-width:1.0;" x1="645" x2="645" y1="165.6597" y2="185.9565" /><line style="stroke:#181818;stroke-width:1.0;" x1="617" x2="801" y1="185.9565" y2="185.9565" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="9" x="626.5" y="200.9517">9</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="146" x="650" y="200.9517">COLLECTION SAMPLE</text><line style="stroke:#181818;stroke-width:1.0;" x1="645" x2="645" y1="185.9565" y2="206.2534" /><line style="stroke:#181818;stroke-width:1.0;" x1="617" x2="801" y1="206.2534" y2="206.2534" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="18" x="622" y="221.2485">10</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="88" x="650" y="221.2485">DISPOSITION</text><line style="stroke:#181818;stroke-width:1.0;" x1="645" x2="645" y1="206.2534" y2="226.5503" /><line style="stroke:#181818;stroke-width:1.0;" x1="617" x2="801" y1="226.5503" y2="226.5503" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="18" x="622" y="241.5454">13</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="141" x="650" y="241.5454">LAB TEST ORDERED</text><line style="stroke:#181818;stroke-width:1.0;" x1="645" x2="645" y1="226.5503" y2="246.8472" /></g><g id="elem_64_21"><rect fill="#F1F1F1" height="40.5938" style="stroke:#181818;stroke-width:0.5;" width="224" x="2089" y="175.8628" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="210" x="2096" y="190.8579">WKLD CODE LAB SECT (64.21)</text><line style="stroke:#181818;stroke-width:1.0;" x1="2089" x2="2313" y1="196.1597" y2="196.1597" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="2094" y="211.1548">.01</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="40" x="2126" y="211.1548">NAME</text><line style="stroke:#181818;stroke-width:1.0;" x1="2121" x2="2121" y1="196.1597" y2="216.4565" /></g><g id="elem_95_3"><rect fill="#F1F1F1" height="60.8906" style="stroke:#181818;stroke-width:0.5;" width="133" x="1905.5" y="165.8628" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="116" x="1914" y="180.8579">LAB LOINC (95.3)</text><line style="stroke:#181818;stroke-width:1.0;" x1="1905.5" x2="2038.5" y1="186.1597" y2="186.1597" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="1910.5" y="201.1548">.01</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="41" x="1942.5" y="201.1548">CODE</text><line style="stroke:#181818;stroke-width:1.0;" x1="1937.5" x2="1937.5" y1="186.1597" y2="206.4565" /><line style="stroke:#181818;stroke-width:1.0;" x1="1905.5" x2="2038.5" y1="206.4565" y2="206.4565" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="9" x="1917" y="221.4517">1</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="91" x="1942.5" y="221.4517">COMPONENT</text><line style="stroke:#181818;stroke-width:1.0;" x1="1937.5" x2="1937.5" y1="206.4565" y2="226.7534" /></g><g id="elem_63_041"><rect fill="#F1F1F1" height="40.5938" style="stroke:#181818;stroke-width:0.5;" width="150" x="416" y="175.8628" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="136" x="423" y="190.8579">COMMENT (63.041)</text><line style="stroke:#181818;stroke-width:1.0;" x1="416" x2="566" y1="196.1597" y2="196.1597" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="421" y="211.1548">.01</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="73" x="453" y="211.1548">COMMENT</text><line style="stroke:#181818;stroke-width:1.0;" x1="448" x2="448" y1="196.1597" y2="216.4565" /></g><g id="elem_60_01"><rect fill="#F1F1F1" height="101.4844" style="stroke:#181818;stroke-width:0.5;" width="174" x="1394" y="145.3628" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="160" x="1401" y="160.3579">SITE/SPECIMEN (60.01)</text><line style="stroke:#181818;stroke-width:1.0;" x1="1394" x2="1568" y1="165.6597" y2="165.6597" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="9" x="1410" y="180.6548">1</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="119" x="1440" y="180.6548">REFERENCE LOW</text><line style="stroke:#181818;stroke-width:1.0;" x1="1435" x2="1435" y1="165.6597" y2="185.9565" /><line style="stroke:#181818;stroke-width:1.0;" x1="1394" x2="1568" y1="185.9565" y2="185.9565" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="9" x="1410" y="200.9517">2</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="122" x="1440" y="200.9517">REFERENCE HIGH</text><line style="stroke:#181818;stroke-width:1.0;" x1="1435" x2="1435" y1="185.9565" y2="206.2534" /><line style="stroke:#181818;stroke-width:1.0;" x1="1394" x2="1568" y1="206.2534" y2="206.2534" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="9" x="1410" y="221.2485">6</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="41" x="1440" y="221.2485">UNITS</text><line style="stroke:#181818;stroke-width:1.0;" x1="1435" x2="1435" y1="206.2534" y2="226.5503" /><line style="stroke:#181818;stroke-width:1.0;" x1="1394" x2="1568" y1="226.5503" y2="226.5503" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="31" x="1399" y="241.5454">95.3</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="86" x="1440" y="241.5454">LOINC CODE</text><line style="stroke:#181818;stroke-width:1.0;" x1="1435" x2="1435" y1="226.5503" y2="246.8472" /></g><!--link 63_04 to 63_07--><g id="link_63_04_63_07"><path codeLine="57" d="M343,246.8628 C415.5412,246.8628 339.7992,142.2506 391,90.8628 C416.3007,65.4697 432.5622,72.2576 468,66.8628 C523.4945,58.4147 542.2418,64.8794 592,90.8628 C615.0211,102.8842 637.0933,120.4761 655.7413,137.8363 " fill="none" id="63_04-to-63_07" style="stroke:#181818;stroke-width:1.0;" /><polygon fill="#181818" points="659.4246,141.3035,655.6132,132.222,655.784,137.8763,650.1297,138.047,659.4246,141.3035" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="20" x="469" y="56.9297">.35</text></g><!--link 60 to 64--><g id="link_60_64"><path codeLine="58" d="M1317,205.8628 C1373.0934,205.8628 1326.2194,127.1435 1369,90.8628 C1400.5727,64.0871 1417.9531,72.2417 1459,66.8628 C1508.3593,60.3946 1573.8824,81.5514 1594,90.8628 C1629.7707,107.4191 1664.6385,135.2219 1689.8362,158.0598 " fill="none" id="60-to-64" style="stroke:#181818;stroke-width:1.0;" /><polygon fill="#181818" points="1693.7959,161.6801,1689.8527,152.655,1690.1058,158.3062,1684.4546,158.5593,1693.7959,161.6801" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="16" x="1460" y="56.9297">64</text></g><!--link 64 to 64_21--><g id="link_64_64_21"><path codeLine="59" d="M1837,195.8628 C1887.4283,195.8628 1843.0288,125.1578 1880,90.8628 C1910.9807,62.1247 1930.0862,61.4858 1972,66.8628 C2013.9138,72.2398 2026.0337,72.3092 2064,90.8628 C2105.059,110.9278 2145.8162,144.3478 2172.0608,168.0912 " fill="none" id="64-to-64_21" style="stroke:#181818;stroke-width:1.0;" /><polygon fill="#181818" points="2175.826,171.5214,2171.8668,162.5034,2172.1299,168.1541,2166.4791,168.4172,2175.826,171.5214" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="16" x="1955" y="56.9297">13</text></g><!--link 64 to 95_3--><g id="link_64_95_3"><path codeLine="60" d="M1837,215.8628 C1852.428,215.8628 1848.5725,233.3972 1863,238.8628 C1870.4812,241.6969 1873.1941,240.6142 1881,238.8628 C1888.7656,237.1204 1896.6485,234.6369 1904.3612,231.7311 " fill="none" id="64-to-95_3" style="stroke:#181818;stroke-width:1.0;" /><polygon fill="#181818" points="1909.1388,229.8701,1899.3007,229.4096,1904.4798,231.685,1902.2045,236.864,1909.1388,229.8701" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="16" x="1864" y="234.9297">25</text></g><!--link 2 to 63--><g id="link_2_63"><path codeLine="61" d="M2586,205.8628 C2604.4002,205.8628 2594.5225,230.6738 2611,238.8628 C2618.164,242.4232 2621.2321,240.776 2629,238.8628 C2642.9012,235.4391 2657.0547,229.1931 2669.6025,222.503 " fill="none" id="2-to-63" style="stroke:#181818;stroke-width:1.0;" /><polygon fill="#181818" points="2674.1493,220.0225,2664.3329,220.8212,2669.76,222.417,2668.1641,227.8441,2674.1493,220.0225" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="16" x="2612" y="234.9297">63</text></g><!--link 63_04 to 63_041--><g id="link_63_04_63_041"><path codeLine="62" d="M343,266.8628 C385.3732,266.8628 428.4512,242.9116 457.1212,222.8314 " fill="none" id="63_04-to-63_041" style="stroke:#181818;stroke-width:1.0;" /><polygon fill="#181818" points="461.2448,219.9002,451.5917,221.8543,457.1695,222.7971,456.2267,228.3748,461.2448,219.9002" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="20" x="369" y="254.9297">.99</text></g><!--link 63_07 to 60--><g id="link_63_07_60"><path codeLine="63" d="M801,236.8628 C867.8324,236.8628 789.2463,137.6191 837,90.8628 C871.8241,56.766 895.5592,72.2288 944,66.8628 C995.3949,61.1696 1070.4135,86.3712 1080,90.8628 C1110.065,104.9494 1139.3112,127.289 1162.5148,147.7481 " fill="none" id="63_07-to-60" style="stroke:#181818;stroke-width:1.0;" /><polygon fill="#181818" points="1166.4802,151.278,1162.4174,142.3061,1162.7456,147.9535,1157.0982,148.2816,1166.4802,151.278" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="16" x="945" y="56.9297">13</text></g><!--link 60 to 60_01--><g id="link_60_60_01"><path codeLine="64" d="M1317,225.8628 C1329.9195,225.8628 1330.4261,235.8945 1343,238.8628 C1354.2464,241.5177 1357.638,240.969 1369,238.8628 C1372.8879,238.1421 1376.8151,237.2918 1380.7543,236.3352 " fill="none" id="60-to-60_01" style="stroke:#181818;stroke-width:1.0;" /><polygon fill="#181818" points="1385.7485,235.0682,1376.0413,233.404,1380.902,236.2976,1378.0084,241.1584,1385.7485,235.0682" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="24" x="1344" y="234.9297">100</text></g><!--link 60_01 to 95_3--><g id="link_60_01_95_3"><path codeLine="65" d="M1568,236.8628 C1600.9549,236.8628 1571.426,114.872 1594,90.8628 C1625.0128,57.8782 1648.0453,72.2341 1693,66.8628 C1753.8565,59.5916 1862.6548,90.6882 1863,90.8628 C1894.3636,106.7252 1922.7102,134.6775 1942.63,157.7551 " fill="none" id="60_01-to-95_3" style="stroke:#181818;stroke-width:1.0;" /><polygon fill="#181818" points="1946.0015,161.708,1943.2045,152.2647,1942.7568,157.9038,1937.1177,157.4561,1946.0015,161.708" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="28" x="1694" y="56.9297">95.3</text></g><!--link 63_07 to 62--><g id="link_63_07_62"><path codeLine="66" d="M801,195.8628 C815.3122,195.8628 813.3944,181.3043 827,176.8628 C837.4197,173.4613 848.504,171.9868 859.6436,171.8393 " fill="none" id="63_07-to-62" style="stroke:#181818;stroke-width:1.0;" /><polygon fill="#181818" points="864.7635,171.8628,855.782,167.8214,859.7636,171.8398,855.7452,175.8214,864.7635,171.8628" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="828" y="171.9297">9</text></g></g></svg>
+
+<h3 id="raw-mappings">Raw mappings</h3>
+
+<table border="1" cellspacing="0" cellpadding="0" class="table-ta1"><tr class="row-ro1">
+<th class="cell-ce1">key</th>
+<th class="cell-ce1">status</th>
+<th class="cell-ce1">direction</th>
+<th class="cell-ce1">source</th>
+<th class="cell-ce1">mapApproach</th>
+<th class="cell-ce1">mapCase</th>
+<th class="cell-ce1">FHIR Path</th>
+<th class="cell-ce1">subPath</th>
+<th class="cell-ce1">mapValue</th>
+<th class="cell-ce1">mapParameter</th>
+<th class="cell-ce1">mapComment</th>
+<th class="cell-ce1">FHIR URL | Ver</th>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">845</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">CHEM, HEM, TOX, RIA, SER, etc. - DATE/TIME SPECIMEN TAKEN (63.04-.01)</td>
+<td class="cell-ce1">source value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Observation.effectiveDateTime</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab | 5.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">846</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">CHEM, HEM, TOX, RIA, SER, etc. - COMMENT &gt; COMMENT - COMMENT (63.04-.99 &gt; 63.041-.01)</td>
+<td class="cell-ce1">source value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Observation.note</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab | 5.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">847</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">CHEM, HEM, TOX, RIA, SER, etc. - ACCESSIONING INSTITUTION (63.04-.112)</td>
+<td class="cell-ce1">reference</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Observation.performer[va-at]</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">/Organization</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab | 5.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1676</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">CHEM, HEM, TOX, RIA, SER, etc. - VERIFY PERSON (63.04-.04)</td>
+<td class="cell-ce1">reference</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Observation.performer[va-by]</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">/Practitioner</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab | 5.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1656</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">CHEM, HEM, TOX, RIA, SER, etc. - ACCESSION (63.04-.06)</td>
+<td class="cell-ce1">reference</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Observation.specimen</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Specimen</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab | 5.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">850</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">CHEM, HEM, TOX, RIA, SER, etc. - ORDERED TEST &gt; ORDERED TEST - LAB TEST ORDERED &gt; LABORATORY TEST - SITE/SPECIMEN &gt; SITE/SPECIMEN - REFERENCE HIGH (63.04-.35 &gt; 63.07-13 &gt; 60-100 &gt; 60.01-2)</td>
+<td class="cell-ce1">source value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Observation.referenceRange</td>
+<td class="cell-ce1">.high</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab | 5.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">854</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">CHEM, HEM, TOX, RIA, SER, etc. - ORDERED TEST &gt; ORDERED TEST - LAB TEST ORDERED &gt; LABORATORY TEST - SITE/SPECIMEN &gt; SITE/SPECIMEN - REFERENCE LOW (63.04-.35 &gt; 63.07-13 &gt; 60-100 &gt; 60.01-1)</td>
+<td class="cell-ce1">source value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Observation.referenceRange</td>
+<td class="cell-ce1">.low</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab | 5.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">851</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">CHEM, HEM, TOX, RIA, SER, etc. - IEN (63.04-.001)</td>
+<td class="cell-ce1">source value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Observation.identifier</td>
+<td class="cell-ce1">.value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">.system = http://va.gov/identifiers/$Sta3n/63.04</td>
+<td class="cell-ce1">Changed from .id to .identifier, added subPath, removed id_generator from mapValue, added .system, and changed from transform to source value</td>
+<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab | 5.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">851-1</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">fixed value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Observation.identifier</td>
+<td class="cell-ce1">.system</td>
+<td class="cell-ce1">http://va.gov/identifiers/$Sta3n/63.04</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">from mapParameter 1</td>
+<td class="cell-ce1"></td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">852</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">CHEM, HEM, TOX, RIA, SER, etc. - testnames (63.04-2+through+862)</td>
+<td class="cell-ce1">terminologyMaps</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Observation.interpretation</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">VF_LabInterpretation</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Service compares value to reference and infers flag</td>
+<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab | 5.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">853</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">CHEM, HEM, TOX, RIA, SER, etc. - ORDERED TEST &gt; ORDERED TEST - LAB TEST ORDERED &gt; LABORATORY TEST - SITE/SPECIMEN &gt; SITE/SPECIMEN - LOINC CODE &gt; LAB LOINC (63.04-.35 &gt; 63.07-13 &gt; 60-100 &gt; 60.01-95.3 &gt; 95.3-)</td>
+<td class="cell-ce1">source value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Observation.code.coding</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">.system = "http://loinc.org"
+.code = {CODE (.01)}
+.display = {COMPONENT (1)}</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab | 5.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">853-1</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">fixed value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Observation.code.coding</td>
+<td class="cell-ce1">.system</td>
+<td class="cell-ce1">http://loinc.org</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">from mapParameter 1</td>
+<td class="cell-ce1"></td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">853-2</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">CHEM, HEM, TOX, RIA, SER, etc. - ORDERED TEST &gt; ORDERED TEST - LAB TEST ORDERED &gt; LABORATORY TEST - SITE/SPECIMEN &gt; SITE/SPECIMEN - LOINC CODE &gt; LAB LOINC - CODE (63.04-.35 &gt; 63.07-13 &gt; 60-100 &gt; 60.01-95.3 &gt; 95.3-.01)</td>
+<td class="cell-ce1">source value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Observation.code.coding</td>
+<td class="cell-ce1">.code</td>
+<td class="cell-ce1">{CODE (.01)}</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">from mapParameter 2</td>
+<td class="cell-ce1"></td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">853-3</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">CHEM, HEM, TOX, RIA, SER, etc. - ORDERED TEST &gt; ORDERED TEST - LAB TEST ORDERED &gt; LABORATORY TEST - SITE/SPECIMEN &gt; SITE/SPECIMEN - LOINC CODE &gt; LAB LOINC - COMPONENT (63.04-.35 &gt; 63.07-13 &gt; 60-100 &gt; 60.01-95.3 &gt; 95.3-1)</td>
+<td class="cell-ce1">source value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Observation.code.coding</td>
+<td class="cell-ce1">.display</td>
+<td class="cell-ce1">{COMPONENT (1)}</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">from mapParameter 3</td>
+<td class="cell-ce1"></td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">858</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">CHEM, HEM, TOX, RIA, SER, etc. - DATE REPORT COMPLETED (63.04-.03)</td>
+<td class="cell-ce1">source value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Observation.issued</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab | 5.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">860</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">CHEM, HEM, TOX, RIA, SER, etc. - ORDERED TEST &gt; ORDERED TEST - DISPOSITION (63.04-.35 &gt; 63.07-10)</td>
+<td class="cell-ce1">terminologyMaps</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Observation.status</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">VF_LabObservationStatus</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab | 5.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">857</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">CHEM, HEM, TOX, RIA, SER, etc. - testnames (63.04-2+through+862)</td>
+<td class="cell-ce1">source value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Observation.valueQuantity</td>
+<td class="cell-ce1">.value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab | 5.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">864</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">CHEM, HEM, TOX, RIA, SER, etc. - ORDERED TEST &gt; ORDERED TEST - LAB TEST ORDERED &gt; LABORATORY TEST - SITE/SPECIMEN &gt; SITE/SPECIMEN - UNITS (63.04-.35 &gt; 63.07-13 &gt; 60-100 &gt; 60.01-6)</td>
+<td class="cell-ce1">source value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Observation.valueQuantity</td>
+<td class="cell-ce1">.unit</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Use CTTDM map "VistA Lab Chem Units to UCUM" to convert VistA text units to UCUM, where possible</td>
+<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab | 5.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">843</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">fixed value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Observation.category</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://terminology.hl7.org/CodeSystem/observation-category#laboratory</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab | 5.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">2031</td>
+<td class="cell-ce1">in process</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">target not supported</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Observation.dataAbsentReason</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">because of must-support</td>
+<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab | 5.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">844</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">PATIENT - LABORATORY REFERENCE &gt; LAB DATA - LRDFN (2-63 &gt; 63-.01)</td>
+<td class="cell-ce1">reference</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Observation.subject</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">/Patient</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Pointer from PATIENT (2)</td>
+<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab | 5.0.1</td>
+</tr>
+</table>
+
+</div>
+
+
+
+
+  <a name="vista"> </a><h3>Mappings for Veterans Health Information Systems Technology and Architecture (VistA) ()</h3><table class="grid">
+ <tr><td colspan="3"><b>LabObservationChemhemtoxriaserObservation</b></td></tr>
+ <tr><td>Observation</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;system</td><td>851-1: fixed value = http://va.gov/identifiers/$Sta3n/63.04</td><td><p>from mapParameter 1</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>851: source value from CHEM, HEM, TOX, RIA, SER, etc. - IEN (63.04-.001)</td><td><p>Changed from .id to .identifier, added subPath, removed id_generator from mapValue, added .system, and changed from transform to source value</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>860: terminologyMaps using VF_LabObservationStatus on CHEM, HEM, TOX, RIA, SER, etc. - ORDERED TEST &gt; ORDERED TEST - DISPOSITION (63.04-.35 &gt; 63.07-10)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;category</td><td>843: fixed value = http://terminology.hl7.org/CodeSystem/observation-category#laboratory</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;code</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>853: source value from CHEM, HEM, TOX, RIA, SER, etc. - ORDERED TEST &gt; ORDERED TEST - LAB TEST ORDERED &gt; LABORATORY TEST - SITE/SPECIMEN &gt; SITE/SPECIMEN - LOINC CODE &gt; LAB LOINC (63.04-.35 &gt; 63.07-13 &gt; 60-100 &gt; 60.01-95.3 &gt; 95.3-)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;system</td><td>853-1: fixed value = http://loinc.org</td><td><p>from mapParameter 1</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>853-2: source value from CHEM, HEM, TOX, RIA, SER, etc. - ORDERED TEST &gt; ORDERED TEST - LAB TEST ORDERED &gt; LABORATORY TEST - SITE/SPECIMEN &gt; SITE/SPECIMEN - LOINC CODE &gt; LAB LOINC - CODE (63.04-.35 &gt; 63.07-13 &gt; 60-100 &gt; 60.01-95.3 &gt; 95.3-.01)</td><td><p>from mapParameter 2</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display</td><td>853-3: source value from CHEM, HEM, TOX, RIA, SER, etc. - ORDERED TEST &gt; ORDERED TEST - LAB TEST ORDERED &gt; LABORATORY TEST - SITE/SPECIMEN &gt; SITE/SPECIMEN - LOINC CODE &gt; LAB LOINC - COMPONENT (63.04-.35 &gt; 63.07-13 &gt; 60-100 &gt; 60.01-95.3 &gt; 95.3-1)</td><td><p>from mapParameter 3</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>844: reference from PATIENT - LABORATORY REFERENCE &gt; LAB DATA - LRDFN (2-63 &gt; 63-.01)</td><td><p>Pointer from PATIENT (2)</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;effective[x] (effectiveDateTime)</td><td>845: source value from CHEM, HEM, TOX, RIA, SER, etc. - DATE/TIME SPECIMEN TAKEN (63.04-.01)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;issued</td><td>858: source value from CHEM, HEM, TOX, RIA, SER, etc. - DATE REPORT COMPLETED (63.04-.03)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;performer (va-at)</td><td>847: reference from CHEM, HEM, TOX, RIA, SER, etc. - ACCESSIONING INSTITUTION (63.04-.112)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;performer (va-by)</td><td>1676: reference from CHEM, HEM, TOX, RIA, SER, etc. - VERIFY PERSON (63.04-.04)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;value[x]</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;value[x] (valueQuantity)</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>857: source value from CHEM, HEM, TOX, RIA, SER, etc. - testnames (63.04-2+through+862)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;unit</td><td>864: source value from CHEM, HEM, TOX, RIA, SER, etc. - ORDERED TEST &gt; ORDERED TEST - LAB TEST ORDERED &gt; LABORATORY TEST - SITE/SPECIMEN &gt; SITE/SPECIMEN - UNITS (63.04-.35 &gt; 63.07-13 &gt; 60-100 &gt; 60.01-6)</td><td><p>Use CTTDM map &quot;VistA Lab Chem Units to UCUM&quot; to convert VistA text units to UCUM, where possible</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;dataAbsentReason</td><td>2031: target not supported</td><td><p>because of must-support</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;interpretation</td><td>852: terminologyMaps using VF_LabInterpretation on CHEM, HEM, TOX, RIA, SER, etc. - testnames (63.04-2+through+862)</td><td><p>Service compares value to reference and infers flag</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;note</td><td>846: source value from CHEM, HEM, TOX, RIA, SER, etc. - COMMENT &gt; COMMENT - COMMENT (63.04-.99 &gt; 63.041-.01)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;specimen</td><td>1656: reference from CHEM, HEM, TOX, RIA, SER, etc. - ACCESSION (63.04-.06)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;referenceRange</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;low</td><td>854: source value from CHEM, HEM, TOX, RIA, SER, etc. - ORDERED TEST &gt; ORDERED TEST - LAB TEST ORDERED &gt; LABORATORY TEST - SITE/SPECIMEN &gt; SITE/SPECIMEN - REFERENCE LOW (63.04-.35 &gt; 63.07-13 &gt; 60-100 &gt; 60.01-1)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;high</td><td>850: source value from CHEM, HEM, TOX, RIA, SER, etc. - ORDERED TEST &gt; ORDERED TEST - LAB TEST ORDERED &gt; LABORATORY TEST - SITE/SPECIMEN &gt; SITE/SPECIMEN - REFERENCE HIGH (63.04-.35 &gt; 63.07-13 &gt; 60-100 &gt; 60.01-2)</td><td></td> </tr>
+</table>
+<a name="cdw"> </a><h3>Mappings for Clinical Data Warehouse (CDW) ()</h3><table class="grid">
+ <tr><td colspan="3"><b>LabObservationChemhemtoxriaserObservation</b></td></tr>
+ <tr><td>Observation</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>Micro.AntibioticSensitivity.LRDFN,Micro.AntibioticSensitivityComment.LRDFN,Micro.BacteriologyReports.LRDFN,Micro.MicroAntibioticLevel.LRDFN,Micro.MicroAudit.LRDFN,Micro.Microbiology.LRDFN,Micro.MicroOrderedTest.LRDFN,Micro.MicroSterilityResults.LRDFN,Micro.MycobacteriologyReports.LRDFN,Micro.Mycology.LRDFN,Micro.MycologyReports.LRDFN,Micro.Parasitology.LRDFN,Micro.ParasitologyReports.LRDFN,Micro.ParasitologyStage.LRDFN,Micro.Virology.LRDFN,Micro.VirologyReports.LRDFN,Pathology.Autopsy.LRDFN,Pathology.CytoOrganTissueFunction.StaffIEN,SStaff.SMicroOrderedTest.LRDFN</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;effective[x] (effectiveDateTime)</td><td>Chem.LabChem.LabChemSpecimenDateTime,Chem.LabPanel.LabChemSpecimenDateTime,Chem.OrderedLabPanel.LabChemSpecimenDateTime,Chem.PatientLabChem.LabChemSpecimenDateTime</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;issued</td><td>Chem.LabChem.LabChemCompleteDateTime,Chem.LabPanel.LabChemCompleteDateTime,Chem.OrderedLabPanel.LabChemCompleteDateTime,Chem.PatientLabChem.LabChemCompleteDateTime</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;performer (va-at)</td><td>Chem.LabChem.AccessionInstitutionIEN,Chem.PatientLabChem.AccessionInstitutionIEN</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;note</td><td>Chem.LabPanel.LabPanelComment</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;specimen</td><td>Chem.LabChem.ShortAccessionNumber,Chem.PatientLabChem.ShortAccessionNumber</td> </tr>
+</table>
+<a name="sda"> </a><h3>Mappings for Summary Document Architecure (SDA) ()</h3><table class="grid">
+ <tr><td colspan="3"><b>LabObservationChemhemtoxriaserObservation</b></td></tr>
+ <tr><td>Observation</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>Patient.Extension[PatientExtension].VeteranLrdfn</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;effective[x] (effectiveDateTime)</td><td>LabOrder.TestItemCode[LabTestItem].Description,LabOrder.PerformedAt[Organization].Description</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;issued</td><td>LabOrder.Result.ResultStatus,LabOrder.Result.ResultTime,LabOrder.ResultItem[LabResultItem].TestItemStatus</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;performer (va-at)</td><td>LabOrder.Result.EnteredAt</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;performer (va-by)</td><td>LabOrder.Result.VerifiedBy</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;note</td><td>LabOrder.Result.Comments</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;specimen</td><td>LabOrder.Extension[ResultExtension].GroupName</td> </tr>
+</table>
+<a name="workflow"> </a><h3>Mappings for Workflow Pattern (<a href="http://hl7.org/fhir/workflow.html">http://hl7.org/fhir/workflow</a>)</h3><table class="grid">
+ <tr><td colspan="3"><b>LabObservationChemhemtoxriaserObservation</b></td></tr>
+ <tr><td>Observation</td><td>Event</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>Event.identifier</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;basedOn</td><td>Event.basedOn</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;partOf</td><td>Event.partOf</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>Event.status</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;code</td><td>Event.code</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>Event.subject</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;encounter</td><td>Event.context</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;effective[x]</td><td>Event.occurrence[x]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;effective[x] (effectiveDateTime)</td><td>Event.occurrence[x]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;performer</td><td>Event.performer.actor</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;performer (va-at)</td><td>Event.performer.actor</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;performer (va-by)</td><td>Event.performer.actor</td> </tr>
+</table>
+<a name="sct-concept"> </a><h3>Mappings for SNOMED CT Concept Domain Binding (http://snomed.info/conceptdomain)</h3><table class="grid">
+ <tr><td colspan="3"><b>LabObservationChemhemtoxriaserObservation</b></td></tr>
+ <tr><td>Observation</td><td>&lt; 363787002 |Observable entity|</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>&lt; 445584004 |Report by finality status|</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;code</td><td>&lt; 363787002 |Observable entity| OR &lt; 386053000 |Evaluation procedure|</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;value[x]</td><td>&lt; 441742003 |Evaluation finding|</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;value[x] (valueQuantity)</td><td>&lt; 441742003 |Evaluation finding|</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;interpretation</td><td>&lt; 260245000 |Findings values|</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;bodySite</td><td>&lt; 123037004 |Body structure|</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;specimen</td><td>&lt; 123038009 |Specimen|</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;device</td><td>&lt; 49062001 |Device|</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;referenceRange</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td>&lt; 260245000 |Findings values| OR  &lt; 365860008 |General clinical state finding| OR &lt; 250171008 |Clinical history or observation findings| OR  &lt; 415229000 |Racial group| OR &lt; 365400002 |Finding of puberty stage| OR&lt; 443938003 |Procedure carried out on subject|</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;appliesTo</td><td>&lt; 260245000 |Findings values| OR  &lt; 365860008 |General clinical state finding| OR &lt; 250171008 |Clinical history or observation findings| OR  &lt; 415229000 |Racial group| OR &lt; 365400002 |Finding of puberty stage| OR&lt; 443938003 |Procedure carried out on subject|</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;component</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>&lt; 363787002 |Observable entity| OR &lt; 386053000 |Evaluation procedure|</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td>363714003 |Interprets| &lt; 441742003 |Evaluation finding|</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;interpretation</td><td>&lt; 260245000 |Findings values|</td> </tr>
+</table>
+<a name="v2"> </a><h3>Mappings for HL7 v2 Mapping (<a href="http://hl7.org/comparison-v2.html">http://hl7.org/v2</a>)</h3><table class="grid">
+ <tr><td colspan="3"><b>LabObservationChemhemtoxriaserObservation</b></td></tr>
+ <tr><td>Observation</td><td>OBX</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>OBX.21  For OBX segments from systems without OBX-21 support a combination of ORC/OBR and OBX must be negotiated between trading partners to uniquely identify the OBX segment. Depending on how V2 has been implemented each of these may be an option: 1) OBR-3 + OBX-3 + OBX-4 or 2) OBR-3 + OBR-4 + OBX-3 + OBX-4 or 2) some other way to uniquely ID the OBR/ORC + OBX-3 + OBX-4.</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;use</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td>CX.5</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;system</td><td>CX.4 / EI-2-4</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>CX.1 / EI.1</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;period</td><td>CX.7 + CX.8</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assigner</td><td>CX.4 / (CX.4,CX.9,CX.10)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;basedOn</td><td>ORC</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;partOf</td><td>Varies by domain</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>OBX-11</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;code</td><td>OBX-3</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>C*E.1-8, C*E.10-22</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;system</td><td>C*E.3</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;version</td><td>C*E.7</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>C*E.1</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display</td><td>C*E.2 - but note this is not well followed</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;userSelected</td><td>Sometimes implied by being first</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>C*E.9. But note many systems use C*E.2 for this</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>PID-3</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;focus</td><td>OBX-3</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;encounter</td><td>PV1</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;effective[x]</td><td>OBX-14, and/or OBX-19 after v2.4  (depends on who observation made)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;effective[x] (effectiveDateTime)</td><td>OBX-14, and/or OBX-19 after v2.4  (depends on who observation made)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;issued</td><td>OBR.22 (or MSH.7), or perhaps OBX-19 (depends on who observation made)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;performer</td><td>OBX.15 / (Practitioner)  OBX-16,  PRT-5:PRT-4='RO' /  (Device)  OBX-18 , PRT-10:PRT-4='EQUIP' / (Organization)  OBX-23,  PRT-8:PRT-4='PO'</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;performer (va-at)</td><td>OBX.15 / (Practitioner)  OBX-16,  PRT-5:PRT-4='RO' /  (Device)  OBX-18 , PRT-10:PRT-4='EQUIP' / (Organization)  OBX-23,  PRT-8:PRT-4='PO'</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;performer (va-by)</td><td>OBX.15 / (Practitioner)  OBX-16,  PRT-5:PRT-4='RO' /  (Device)  OBX-18 , PRT-10:PRT-4='EQUIP' / (Organization)  OBX-23,  PRT-8:PRT-4='PO'</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;value[x]</td><td>OBX.2, OBX.5, OBX.6</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;value[x] (valueQuantity)</td><td>OBX.2, OBX.5, OBX.6</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>SN.2  / CQ - N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;comparator</td><td>SN.1  / CQ.1</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;unit</td><td>(see OBX.6 etc.) / CQ.2</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;system</td><td>(see OBX.6 etc.) / CQ.2</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>(see OBX.6 etc.) / CQ.2</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;dataAbsentReason</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;interpretation</td><td>OBX-8</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;note</td><td>NTE.3 (partner NTE to OBX, or sometimes another (child?) OBX)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;bodySite</td><td>OBX-20</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;method</td><td>OBX-17</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;specimen</td><td>SPM segment</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;device</td><td>OBX-17 / PRT -10</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;referenceRange</td><td>OBX.7</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;low</td><td>OBX-7</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;high</td><td>OBX-7</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td>OBX-10</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;appliesTo</td><td>OBX-10</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>OBX-7</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;hasMember</td><td>Relationships established by OBX-4 usage</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;derivedFrom</td><td>Relationships established by OBX-4 usage</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;component</td><td>containment by OBX-4?</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>OBX-3</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td>OBX.2, OBX.5, OBX.6</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dataAbsentReason</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;interpretation</td><td>OBX-8</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;referenceRange</td><td>OBX.7</td> </tr>
+</table>
+<a name="rim"> </a><h3>Mappings for RIM Mapping (<a href="http://hl7.org/comparison-v3.html">http://hl7.org/v3</a>)</h3><table class="grid">
+ <tr><td colspan="3"><b>LabObservationChemhemtoxriaserObservation</b></td></tr>
+ <tr><td>Observation</td><td>Entity. Role, or Act, Observation[classCode=OBS, moodCode=EVN]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;text</td><td>Act.text?</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;contained</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;extension</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;modifierExtension</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>id</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;use</td><td>Role.code or implied by context</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td>Role.code or implied by context</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;system</td><td>II.root or Role.id.root</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>II.extension or II.root if system indicates OID or GUID (Or Role.id.extension or root)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;period</td><td>Role.effectiveTime or implied by context</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assigner</td><td>II.assigningAuthorityName but note that this is an improper use by the definition of the field.  Also Role.scoper</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;basedOn</td><td>.inboundRelationship[typeCode=COMP].source[moodCode=EVN]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;partOf</td><td>.outboundRelationship[typeCode=FLFS].target</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>status  Amended &amp; Final are differentiated by whether it is the subject of a ControlAct event with a type of &quot;revise&quot;</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;category</td><td>.outboundRelationship[typeCode=&quot;COMP].target[classCode=&quot;LIST&quot;, moodCode=&quot;EVN&quot;].code</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;category (Laboratory)</td><td>.outboundRelationship[typeCode=&quot;COMP].target[classCode=&quot;LIST&quot;, moodCode=&quot;EVN&quot;].code</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;code</td><td>code</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>union(., ./translation)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;system</td><td>./codeSystem</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;version</td><td>./codeSystemVersion</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>./code</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display</td><td>CV.displayName</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;userSelected</td><td>CD.codingRationale</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>./originalText[mediaType/code=&quot;text/plain&quot;]/data</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>participation[typeCode=RTGT]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;focus</td><td>participation[typeCode=SBJ]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;encounter</td><td>inboundRelationship[typeCode=COMP].source[classCode=ENC, moodCode=EVN]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;effective[x]</td><td>effectiveTime</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;effective[x] (effectiveDateTime)</td><td>effectiveTime</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;issued</td><td>participation[typeCode=AUT].time</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;performer</td><td>participation[typeCode=PRF]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;performer (va-at)</td><td>participation[typeCode=PRF]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;performer (va-by)</td><td>participation[typeCode=PRF]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;value[x]</td><td>value</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;value[x] (valueQuantity)</td><td>value</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>PQ.value, CO.value, MO.value, IVL.high or IVL.low depending on the value</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;comparator</td><td>IVL properties</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;unit</td><td>PQ.unit</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;system</td><td>CO.codeSystem, PQ.translation.codeSystem</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>PQ.code, MO.currency, PQ.translation.code</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;dataAbsentReason</td><td>value.nullFlavor</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;interpretation</td><td>interpretationCode</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;note</td><td>subjectOf.observationEvent[code=&quot;annotation&quot;].value</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;bodySite</td><td>targetSiteCode</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;method</td><td>methodCode</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;specimen</td><td>participation[typeCode=SPC].specimen</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;device</td><td>participation[typeCode=DEV]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;referenceRange</td><td>outboundRelationship[typeCode=REFV]/target[classCode=OBS, moodCode=EVN]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modifierExtension</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;low</td><td>value:IVL_PQ.low</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;high</td><td>value:IVL_PQ.high</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td>interpretationCode</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;appliesTo</td><td>interpretationCode</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;age</td><td>outboundRelationship[typeCode=PRCN].targetObservationCriterion[code=&quot;age&quot;].value</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>value:ST</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;hasMember</td><td>outBoundRelationship</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;derivedFrom</td><td>.targetObservation</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;component</td><td>outBoundRelationship[typeCode=COMP]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modifierExtension</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>code</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td>value</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dataAbsentReason</td><td>value.nullFlavor</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;interpretation</td><td>interpretationCode</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;referenceRange</td><td>outboundRelationship[typeCode=REFV]/target[classCode=OBS, moodCode=EVN]</td> </tr>
+</table>
+<a name="w5"> </a><h3>Mappings for FiveWs Pattern Mapping (http://hl7.org/fhir/fivews)</h3><table class="grid">
+ <tr><td colspan="3"><b>LabObservationChemhemtoxriaserObservation</b></td></tr>
+ <tr><td>Observation</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>FiveWs.identifier</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>FiveWs.status</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;category</td><td>FiveWs.class</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;category (Laboratory)</td><td>FiveWs.class</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;code</td><td>FiveWs.what[x]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>FiveWs.subject[x], FiveWs.subject</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;focus</td><td>FiveWs.subject[x], FiveWs.subject</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;encounter</td><td>FiveWs.context</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;effective[x]</td><td>FiveWs.done[x]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;effective[x] (effectiveDateTime)</td><td>FiveWs.done[x]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;issued</td><td>FiveWs.recorded</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;performer</td><td>FiveWs.actor</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;performer (va-at)</td><td>FiveWs.actor</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;performer (va-by)</td><td>FiveWs.actor</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;component</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>FiveWs.what[x]</td> </tr>
+</table>
+<a name="sct-attr"> </a><h3>Mappings for SNOMED CT Attribute Binding (http://snomed.org/attributebinding)</h3><table class="grid">
+ <tr><td colspan="3"><b>LabObservationChemhemtoxriaserObservation</b></td></tr>
+ <tr><td>Observation</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;code</td><td>116680003 |Is a|</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;value[x]</td><td>363714003 |Interprets|</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;value[x] (valueQuantity)</td><td>363714003 |Interprets|</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;interpretation</td><td>363713009 |Has interpretation|</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;bodySite</td><td>718497002 |Inherent location|</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;specimen</td><td>704319004 |Inherent in|</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;device</td><td>424226004 |Using device|</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;component</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td>363714003 |Interprets|</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;interpretation</td><td>363713009 |Has interpretation|</td> </tr>
+</table>
+
+
+  <!-- insert notes if present -->
+  
+
+
+
+</div>
+
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript" src="assets/js/tabs.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2024 <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.69.448 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Sat, Dec 21, 2024 10:24+0000">2024-12-21</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+| <a style="color: #81BEF7" target="_blank" href="https://leaf.va.gov/NATIONAL/776/va_fhir_community_of_practice/?a=newform">Propose a change</a>
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

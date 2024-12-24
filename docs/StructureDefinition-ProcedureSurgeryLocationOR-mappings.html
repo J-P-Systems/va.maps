@@ -1,0 +1,507 @@
+<!-- get modelType -->
+
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Procedure: Surgery Location[OR] - Mappings - US Veterans Administration FHIR Map Set Implementation Guide v0.69.448</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+    <link href="assets/css/va-maps.css" rel="stylesheet"/>
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"11.101"}
+    h3,h4,h5,h6{--heading-prefix:"11.101"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <!-- Placeholder for child template header declarations -->
+
+<div id="project-nav">
+    <a id="family-logo" no-external="true" href="https://va.gov"><img height="50" alt="Visit the VA website"
+        src="assets/images/va.png" /> </a>
+</div>
+
+<div id="family-nav">
+    <a id="family-logo" no-external="true" href="http://hl7.org/fhir"><img height="50" alt="Visit the FHIR website" src="assets/images/fhir-logo-www.png"/> </a>
+</div>
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">US Veterans Administration FHIR Map Set Implementation Guide</span>
+            <br/>
+            <span style="display:inline-block;">0.69.448 - 250101
+
+
+
+  <img alt="United States of America flag" src="assets/images/usa.svg" height="16" title="United States of America"/>
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li>
+    <a href="toc.html">Table of Content</a>
+  </li>
+  <li>
+    <a href="process.html">Process</a>
+  </li>
+  <li>
+    <a href="profileDesign.html">Profile Design</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Design Guidance
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="guidance.html">General Guidance</a>
+      </li>
+      <li>
+        <a href="guidance-vitals.html">Vitals Guidance</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="mustSupport.html">Must Support</a>
+  </li>
+  <li>
+    <a href="classes.html">Classes</a>
+  </li>
+  <li>
+    <a href="artifacts.html">Artifacts</a>
+  </li>
+  <li>
+    <a href="changes.html">Changes</a>
+  </li>
+  <li>
+    <a href="history.html">History</a>
+  </li>
+  <li>
+    <a href="mapset-qa.html">MapSet QA</a>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='artifacts.html'><b>Artifacts Summary</b></a></li><li><b>Procedure: Surgery Location[OR]</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<div style="counter-reset: section 5" class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">US Veterans Administration FHIR Map Set Implementation Guide - Local Development build (v0.69.448) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  
+
+
+
+
+
+
+
+
+
+
+
+<ul class="nav nav-tabs">
+
+  <li>
+    <a href="StructureDefinition-ProcedureSurgeryLocationOR.html">Content</a>
+  </li>
+
+
+
+  <li>
+    <a href="StructureDefinition-ProcedureSurgeryLocationOR-definitions.html">Detailed Descriptions</a>
+  </li>
+
+
+
+  
+    <li class="active">
+      <a href="#">Mappings</a>
+    </li>
+  
+
+
+
+
+
+
+
+  
+    <li>
+      <a href="StructureDefinition-ProcedureSurgeryLocationOR.profile.xml.html">XML</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="StructureDefinition-ProcedureSurgeryLocationOR.profile.json.html">JSON</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="StructureDefinition-ProcedureSurgeryLocationOR.profile.ttl.html">TTL</a>
+    </li>
+  
+
+
+</ul>
+
+
+<a name="root"> </a>
+<h2 id="root">Resource Profile: ProcedureSurgeryLocationOR - Mappings</h2>
+
+  <table class="colsi">
+    <tr>
+
+      <td colspan="2">
+        
+          Active
+          
+            as of 2024-12-21
+          
+        
+      </td>
+
+    </tr>
+  </table>
+
+
+<p>Mappings for the ProcedureSurgeryLocationOR resource profile.</p>
+
+  <!-- insert intro if present -->
+  
+
+
+
+<div style="display:inline-block" markdown="1">
+
+<p>Scroll down for the Raw FHIR, CDW &amp; SDA mappings (if any).</p>
+
+<blockquote>
+  <p>Note that the CDW and SDA mappings are derived from a look-up based on the VistA source mappings in CDW and VPR SDA.</p>
+</blockquote>
+
+<?xml version="1.0" encoding="us-ascii" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="741px" preserveAspectRatio="none" style="width:1031px;height:741px;background:#FFFFFF;" version="1.1" viewBox="0 0 1031 741" width="1031px" zoomAndPan="magnify"><defs /><g><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="315" x="351" y="22.9951">Use Case: Procedure: Surgery (Source)</text><g id="elem_44"><rect fill="#F1F1F1" height="60.8906" style="stroke:#181818;stroke-width:0.5;" width="187" x="837" y="399.1961" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="173" x="844" y="414.1912">HOSPITAL LOCATION (44)</text><line style="stroke:#181818;stroke-width:1.0;" x1="837" x2="1024" y1="419.4929" y2="419.4929" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="849" y="434.4881">.01</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="40" x="888" y="434.4881">NAME</text><line style="stroke:#181818;stroke-width:1.0;" x1="883" x2="883" y1="419.4929" y2="439.7898" /><line style="stroke:#181818;stroke-width:1.0;" x1="837" x2="1024" y1="439.7898" y2="439.7898" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="36" x="842" y="454.7849">1916</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="117" x="888" y="454.7849">PRINCIPAL CLINIC</text><line style="stroke:#181818;stroke-width:1.0;" x1="883" x2="883" y1="439.7898" y2="460.0867" /></g><g id="elem_81"><rect fill="#F1F1F1" height="60.8906" style="stroke:#181818;stroke-width:0.5;" width="135" x="381" y="399.1961" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="60" x="418.5" y="414.1912">CPT (81)</text><line style="stroke:#181818;stroke-width:1.0;" x1="381" x2="516" y1="419.4929" y2="419.4929" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="386" y="434.4881">.01</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="73" x="418" y="434.4881">CPT CODE</text><line style="stroke:#181818;stroke-width:1.0;" x1="413" x2="413" y1="419.4929" y2="439.7898" /><line style="stroke:#181818;stroke-width:1.0;" x1="381" x2="516" y1="439.7898" y2="439.7898" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="9" x="392.5" y="454.7849">2</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="93" x="418" y="454.7849">SHORT NAME</text><line style="stroke:#181818;stroke-width:1.0;" x1="413" x2="413" y1="439.7898" y2="460.0867" /></g><g id="elem_130"><rect fill="#F1F1F1" height="608.9063" style="stroke:#181818;stroke-width:3.0;" width="305" x="7" y="125.1961" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="109" x="105" y="140.1912">SURGERY (130)</text><line style="stroke:#181818;stroke-width:1.0;" x1="7" x2="312" y1="145.4929" y2="145.4929" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="16.5" y="160.4881">.01</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="58" x="53" y="160.4881">PATIENT</text><line style="stroke:#181818;stroke-width:1.0;" x1="48" x2="48" y1="145.4929" y2="165.7898" /><line style="stroke:#181818;stroke-width:1.0;" x1="7" x2="312" y1="165.7898" y2="165.7898" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="31" x="12" y="180.7849">.015</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="33" x="53" y="180.7849">VISIT</text><line style="stroke:#181818;stroke-width:1.0;" x1="48" x2="48" y1="165.7898" y2="186.0867" /><line style="stroke:#181818;stroke-width:1.0;" x1="7" x2="312" y1="186.0867" y2="186.0867" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="16.5" y="201.0818">.02</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="254" x="53" y="201.0818">OP ROOM PROCEDURE PERFORMED</text><line style="stroke:#181818;stroke-width:1.0;" x1="48" x2="48" y1="186.0867" y2="206.3836" /><line style="stroke:#181818;stroke-width:1.0;" x1="7" x2="312" y1="206.3836" y2="206.3836" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="16.5" y="221.3787">.09</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="146" x="53" y="221.3787">DATE OF OPERATION</text><line style="stroke:#181818;stroke-width:1.0;" x1="48" x2="48" y1="206.3836" y2="226.6804" /><line style="stroke:#181818;stroke-width:1.0;" x1="7" x2="312" y1="226.6804" y2="226.6804" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="16.5" y="241.6756">.14</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="136" x="53" y="241.6756">PRIMARY SURGEON</text><line style="stroke:#181818;stroke-width:1.0;" x1="48" x2="48" y1="226.6804" y2="246.9773" /><line style="stroke:#181818;stroke-width:1.0;" x1="7" x2="312" y1="246.9773" y2="246.9773" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="16.5" y="261.9724">.15</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="79" x="53" y="261.9724">FIRST ASST</text><line style="stroke:#181818;stroke-width:1.0;" x1="48" x2="48" y1="246.9773" y2="267.2742" /><line style="stroke:#181818;stroke-width:1.0;" x1="7" x2="312" y1="267.2742" y2="267.2742" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="16.5" y="282.2693">.16</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="100" x="53" y="282.2693">SECOND ASST</text><line style="stroke:#181818;stroke-width:1.0;" x1="48" x2="48" y1="267.2742" y2="287.5711" /><line style="stroke:#181818;stroke-width:1.0;" x1="7" x2="312" y1="287.5711" y2="287.5711" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="31" x="12" y="302.5662">.164</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="155" x="53" y="302.5662">ATTENDING SURGEON</text><line style="stroke:#181818;stroke-width:1.0;" x1="48" x2="48" y1="287.5711" y2="307.8679" /><line style="stroke:#181818;stroke-width:1.0;" x1="7" x2="312" y1="307.8679" y2="307.8679" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="31" x="12" y="322.8631">.167</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="100" x="53" y="322.8631">PERFUSIONIST</text><line style="stroke:#181818;stroke-width:1.0;" x1="48" x2="48" y1="307.8679" y2="328.1648" /><line style="stroke:#181818;stroke-width:1.0;" x1="7" x2="312" y1="328.1648" y2="328.1648" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="31" x="12" y="343.1599">.168</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="140" x="53" y="343.1599">ASST PERFUSIONIST</text><line style="stroke:#181818;stroke-width:1.0;" x1="48" x2="48" y1="328.1648" y2="348.4617" /><line style="stroke:#181818;stroke-width:1.0;" x1="7" x2="312" y1="348.4617" y2="348.4617" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="16.5" y="363.4568">.18</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="147" x="53" y="363.4568">SKIN PREPPED BY (1)</text><line style="stroke:#181818;stroke-width:1.0;" x1="48" x2="48" y1="348.4617" y2="368.7586" /><line style="stroke:#181818;stroke-width:1.0;" x1="7" x2="312" y1="368.7586" y2="368.7586" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="16.5" y="383.7537">.22</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="171" x="53" y="383.7537">TIME OPERATION BEGAN</text><line style="stroke:#181818;stroke-width:1.0;" x1="48" x2="48" y1="368.7586" y2="389.0554" /><line style="stroke:#181818;stroke-width:1.0;" x1="7" x2="312" y1="389.0554" y2="389.0554" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="16.5" y="404.0506">.23</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="161" x="53" y="404.0506">TIME OPERATION ENDS</text><line style="stroke:#181818;stroke-width:1.0;" x1="48" x2="48" y1="389.0554" y2="409.3523" /><line style="stroke:#181818;stroke-width:1.0;" x1="7" x2="312" y1="409.3523" y2="409.3523" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="16.5" y="424.3474">.28</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="151" x="53" y="424.3474">GENERAL COMMENTS</text><line style="stroke:#181818;stroke-width:1.0;" x1="48" x2="48" y1="409.3523" y2="429.6492" /><line style="stroke:#181818;stroke-width:1.0;" x1="7" x2="312" y1="429.6492" y2="429.6492" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="16.5" y="444.6443">.31</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="141" x="53" y="444.6443">PRINC ANESTHETIST</text><line style="stroke:#181818;stroke-width:1.0;" x1="48" x2="48" y1="429.6492" y2="449.9461" /><line style="stroke:#181818;stroke-width:1.0;" x1="7" x2="312" y1="449.9461" y2="449.9461" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="16.5" y="464.9412">.32</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="145" x="53" y="464.9412">RELIEF ANESTHETIST</text><line style="stroke:#181818;stroke-width:1.0;" x1="48" x2="48" y1="449.9461" y2="470.2429" /><line style="stroke:#181818;stroke-width:1.0;" x1="7" x2="312" y1="470.2429" y2="470.2429" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="16.5" y="485.2381">.33</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="135" x="53" y="485.2381">ASST ANESTHETIST</text><line style="stroke:#181818;stroke-width:1.0;" x1="48" x2="48" y1="470.2429" y2="490.5398" /><line style="stroke:#181818;stroke-width:1.0;" x1="7" x2="312" y1="490.5398" y2="490.5398" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="16.5" y="505.5349">.34</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="189" x="53" y="505.5349">ANESTHESIOLOGIST SUPVR</text><line style="stroke:#181818;stroke-width:1.0;" x1="48" x2="48" y1="490.5398" y2="510.8367" /><line style="stroke:#181818;stroke-width:1.0;" x1="7" x2="312" y1="510.8367" y2="510.8367" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="31" x="12" y="525.8318">.522</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="61" x="53" y="525.8318">VERIFIER</text><line style="stroke:#181818;stroke-width:1.0;" x1="48" x2="48" y1="510.8367" y2="531.1336" /><line style="stroke:#181818;stroke-width:1.0;" x1="7" x2="312" y1="531.1336" y2="531.1336" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="16.5" y="546.1287">.57</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="220" x="53" y="546.1287">FOLEY CATHETER INSERTED BY</text><line style="stroke:#181818;stroke-width:1.0;" x1="48" x2="48" y1="531.1336" y2="551.4305" /><line style="stroke:#181818;stroke-width:1.0;" x1="7" x2="312" y1="551.4305" y2="551.4305" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="18" x="18.5" y="566.4256">26</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="163" x="53" y="566.4256">PRINCIPAL PROCEDURE</text><line style="stroke:#181818;stroke-width:1.0;" x1="48" x2="48" y1="551.4305" y2="571.7273" /><line style="stroke:#181818;stroke-width:1.0;" x1="7" x2="312" y1="571.7273" y2="571.7273" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="18" x="18.5" y="586.7224">27</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="239" x="53" y="586.7224">PLANNED PRIN PROCEDURE CODE</text><line style="stroke:#181818;stroke-width:1.0;" x1="48" x2="48" y1="571.7273" y2="592.0242" /><line style="stroke:#181818;stroke-width:1.0;" x1="7" x2="312" y1="592.0242" y2="592.0242" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="18" x="18.5" y="607.0193">32</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="207" x="53" y="607.0193">PRINCIPAL PRE-OP DIAGNOSIS</text><line style="stroke:#181818;stroke-width:1.0;" x1="48" x2="48" y1="592.0242" y2="612.3211" /><line style="stroke:#181818;stroke-width:1.0;" x1="7" x2="312" y1="612.3211" y2="612.3211" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="27" x="14" y="627.3162">119</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="131" x="53" y="627.3162">NON-OR LOCATION</text><line style="stroke:#181818;stroke-width:1.0;" x1="48" x2="48" y1="612.3211" y2="632.618" /><line style="stroke:#181818;stroke-width:1.0;" x1="7" x2="312" y1="632.618" y2="632.618" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="27" x="14" y="647.6131">121</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="179" x="53" y="647.6131">TIME PROCEDURE BEGAN</text><line style="stroke:#181818;stroke-width:1.0;" x1="48" x2="48" y1="632.618" y2="652.9148" /><line style="stroke:#181818;stroke-width:1.0;" x1="7" x2="312" y1="652.9148" y2="652.9148" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="27" x="14" y="667.9099">122</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="180" x="53" y="667.9099">TIME PROCEDURE ENDED</text><line style="stroke:#181818;stroke-width:1.0;" x1="48" x2="48" y1="652.9148" y2="673.2117" /><line style="stroke:#181818;stroke-width:1.0;" x1="7" x2="312" y1="673.2117" y2="673.2117" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="27" x="14" y="688.2068">123</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="72" x="53" y="688.2068">PROVIDER</text><line style="stroke:#181818;stroke-width:1.0;" x1="48" x2="48" y1="673.2117" y2="693.5086" /><line style="stroke:#181818;stroke-width:1.0;" x1="7" x2="312" y1="693.5086" y2="693.5086" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="27" x="14" y="708.5037">258</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="178" x="53" y="708.5037">MYOCARDIAL INFARCTION</text><line style="stroke:#181818;stroke-width:1.0;" x1="48" x2="48" y1="693.5086" y2="713.8055" /><line style="stroke:#181818;stroke-width:1.0;" x1="7" x2="312" y1="713.8055" y2="713.8055" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="27" x="14" y="728.8006">688</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="167" x="53" y="728.8006">STOMA COMPLICATIONS</text><line style="stroke:#181818;stroke-width:1.0;" x1="48" x2="48" y1="713.8055" y2="734.1023" /></g><g id="elem_131_7"><rect fill="#F1F1F1" height="101.4844" style="stroke:#181818;stroke-width:0.5;" width="197" x="567" y="378.6961" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="183" x="574" y="393.6912">OPERATING ROOM (131.7)</text><line style="stroke:#181818;stroke-width:1.0;" x1="567" x2="764" y1="398.9929" y2="398.9929" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="581" y="413.9881">&#160;</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="604" y="413.9881">&#160;</text><line style="stroke:#181818;stroke-width:1.0;" x1="599" x2="599" y1="398.9929" y2="419.2898" /><line style="stroke:#181818;stroke-width:1.0;" x1="567" x2="764" y1="419.2898" y2="419.2898" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="572" y="434.2849">.01</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="40" x="604" y="434.2849">NAME</text><line style="stroke:#181818;stroke-width:1.0;" x1="599" x2="599" y1="419.2898" y2="439.5867" /><line style="stroke:#181818;stroke-width:1.0;" x1="567" x2="764" y1="439.5867" y2="439.5867" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="9" x="578.5" y="454.5818">3</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="83" x="604" y="454.5818">TELEPHONE</text><line style="stroke:#181818;stroke-width:1.0;" x1="599" x2="599" y1="439.5867" y2="459.8836" /><line style="stroke:#181818;stroke-width:1.0;" x1="567" x2="764" y1="459.8836" y2="459.8836" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="18" x="574" y="474.8787">99</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="69" x="604" y="474.8787">INACTIVE?</text><line style="stroke:#181818;stroke-width:1.0;" x1="599" x2="599" y1="459.8836" y2="480.1804" /></g><!--link 130 to 131_7--><g id="link_130_131_7"><path codeLine="51" d="M312.5,622.1961 C340.5027,622.1961 299.5621,137.859 319.5,118.1961 C395.4466,43.2969 472.7579,56.1188 559.5,118.1961 C639.3424,175.3355 659.7386,296.2256 664.5328,369.3127 " fill="none" id="130-to-131_7" style="stroke:#181818;stroke-width:1.0;" /><polygon fill="#181818" points="664.8516,374.4908,668.2909,365.262,664.5443,369.5002,660.306,365.7536,664.8516,374.4908" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="238" x="320.5" y="72.263">130-118 NON-OR PROCEDURE == &#8216;Y&#8217;</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="4" x="437.5" y="87.3958">&#160;</text></g><!--link 130 to 81--><g id="link_130_81"><path codeLine="52" d="M312.5,581.1961 C342.9442,581.1961 393.8493,512.6183 423.9929,467.5889 " fill="none" id="130-to-81" style="stroke:#181818;stroke-width:1.0;" /><polygon fill="#181818" points="426.8438,463.3079,418.526,468.5817,424.0724,467.4695,425.1846,473.016,426.8438,463.3079" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="16" x="338.5" y="551.263">27</text></g><!--link 131_7 to 44--><g id="link_131_7_44"><path codeLine="53" d="M764.5,429.1961 C778.4558,429.1961 776.2745,414.6515 789.5,410.1961 C800.4578,406.5047 812.1229,404.7986 823.8702,404.4753 " fill="none" id="131_7-to-44" style="stroke:#181818;stroke-width:1.0;" /><polygon fill="#181818" points="828.9079,404.4196,819.8642,400.5193,823.9082,404.4749,819.9527,408.5188,828.9079,404.4196" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="20" x="790.5" y="402.263">.01</text></g></g></svg>
+
+<h3 id="raw-mappings">Raw mappings</h3>
+
+<table border="1" cellspacing="0" cellpadding="0" class="table-ta1"><tr class="row-ro1">
+<th class="cell-ce1">key</th>
+<th class="cell-ce1">status</th>
+<th class="cell-ce1">direction</th>
+<th class="cell-ce1">source</th>
+<th class="cell-ce1">mapApproach</th>
+<th class="cell-ce1">mapCase</th>
+<th class="cell-ce1">FHIR Path</th>
+<th class="cell-ce1">subPath</th>
+<th class="cell-ce1">mapValue</th>
+<th class="cell-ce1">mapParameter</th>
+<th class="cell-ce1">mapComment</th>
+<th class="cell-ce1">FHIR URL | Ver</th>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">2014</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">OPERATING ROOM - NAME &gt; HOSPITAL LOCATION - NAME (131.7-.01 &gt; 44-.01)</td>
+<td class="cell-ce1">source value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Location[OR].name</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-location | 5.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">2015</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">OPERATING ROOM - TELEPHONE (131.7-3)</td>
+<td class="cell-ce1">source value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Location[OR].telecom.value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-location | 5.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">2016</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">target not supported</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Location[OR].address</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-location | 5.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">2017</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">OPERATING ROOM - INACTIVE? (131.7-99)</td>
+<td class="cell-ce1">terminologyMaps</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Location[OR].status</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">VF_OperatingRoomStatus</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-location | 5.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">2018</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">OPERATING ROOM - NAME &gt; HOSPITAL LOCATION - PRINCIPAL CLINIC (131.7-.01 &gt; 44-1916)</td>
+<td class="cell-ce1">reference</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Location[OR].partOf</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">/Location</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-location | 5.0.1</td>
+</tr>
+</table>
+
+</div>
+
+
+
+
+  <a name="vista"> </a><h3>Mappings for Veterans Health Information Systems Technology and Architecture (VistA) ()</h3><table class="grid">
+ <tr><td colspan="3"><b>ProcedureSurgeryLocationOR</b></td></tr>
+ <tr><td>Location</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>2017: terminologyMaps using VF_OperatingRoomStatus on OPERATING ROOM - INACTIVE? (131.7-99)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;name</td><td>2014: source value from OPERATING ROOM - NAME &gt; HOSPITAL LOCATION - NAME (131.7-.01 &gt; 44-.01)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;telecom</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>2015: source value from OPERATING ROOM - TELEPHONE (131.7-3)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;address</td><td>2016: target not supported</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;partOf</td><td>2018: reference from OPERATING ROOM - NAME &gt; HOSPITAL LOCATION - PRINCIPAL CLINIC (131.7-.01 &gt; 44-1916)</td> </tr>
+</table>
+<a name="cdw"> </a><h3>Mappings for Clinical Data Warehouse (CDW) ()</h3><table class="grid">
+ <tr><td colspan="3"><b>ProcedureSurgeryLocationOR</b></td></tr>
+ <tr><td>Location</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>Dim.OperatingRoom.InactiveFlag</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;name</td><td>Dim.OperatingRoom.OperatingRoomLocationIEN
+Dim.Location.LocationName,Dim.Location.LocationName</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;telecom</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>Dim.OperatingRoom.Telephone</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;partOf</td><td>Dim.OperatingRoom.OperatingRoomLocationIEN
+Dim.Location.PrincipalLocationIEN</td> </tr>
+</table>
+<a name="rim"> </a><h3>Mappings for RIM Mapping (<a href="http://hl7.org/comparison-v3.html">http://hl7.org/v3</a>)</h3><table class="grid">
+ <tr><td colspan="3"><b>ProcedureSurgeryLocationOR</b></td></tr>
+ <tr><td>Location</td><td>Entity. Role, or Act, .Role[classCode=SDLC]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;text</td><td>Act.text?</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;contained</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;extension</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;modifierExtension</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>.id</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>.statusCode</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;operationalStatus</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;name</td><td>.name</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;alias</td><td>.name</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;description</td><td>.playingEntity[classCode=PLC determinerCode=INSTANCE].desc</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;mode</td><td>.playingEntity[classCode=PLC].determinerCode</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;type</td><td>.code</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;telecom</td><td>.telecom</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;system</td><td>./scheme</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>./url</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;use</td><td>unique(./use)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rank</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;period</td><td>./usablePeriod[type=&quot;IVL&lt;TS&gt;&quot;]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;address</td><td>.addr</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;use</td><td>unique(./use)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td>unique(./use)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>./formatted</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;line</td><td>AD.part[parttype = AL]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;city</td><td>AD.part[parttype = CTY]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;district</td><td>AD.part[parttype = CNT | CPA]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;state</td><td>AD.part[parttype = STA]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;postalCode</td><td>AD.part[parttype = ZIP]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;country</td><td>AD.part[parttype = CNT]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;period</td><td>./usablePeriod[type=&quot;IVL&lt;TS&gt;&quot;]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;physicalType</td><td>.playingEntity [classCode=PLC].code</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;position</td><td>.playingEntity [classCode=PLC determinerCode=INSTANCE].positionText</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modifierExtension</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;longitude</td><td>(RIM Opted not to map the sub-elements of GPS location, is now an OBS)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;latitude</td><td>(RIM Opted not to map the sub-elements of GPS location, is now an OBS)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;altitude</td><td>(RIM Opted not to map the sub-elements of GPS location, is now an OBS)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;managingOrganization</td><td>.scopingEntity[classCode=ORG determinerKind=INSTANCE]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;partOf</td><td>.inboundLink[typeCode=PART].source[classCode=SDLC]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;hoursOfOperation</td><td>.effectiveTime</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modifierExtension</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;daysOfWeek</td><td>.effectiveTime</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;allDay</td><td>.effectiveTime</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;openingTime</td><td>.effectiveTime</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;closingTime</td><td>.effectiveTime</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;availabilityExceptions</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;endpoint</td><td>n/a</td> </tr>
+</table>
+<a name="w5"> </a><h3>Mappings for FiveWs Pattern Mapping (http://hl7.org/fhir/fivews)</h3><table class="grid">
+ <tr><td colspan="3"><b>ProcedureSurgeryLocationOR</b></td></tr>
+ <tr><td>Location</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>FiveWs.identifier</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>FiveWs.status</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;operationalStatus</td><td>FiveWs.status</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;mode</td><td>FiveWs.class</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;type</td><td>FiveWs.class</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;physicalType</td><td>FiveWs.class</td> </tr>
+</table>
+
+
+  <!-- insert notes if present -->
+  
+
+
+
+</div>
+
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript" src="assets/js/tabs.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2024 <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.69.448 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Sat, Dec 21, 2024 10:24+0000">2024-12-21</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+| <a style="color: #81BEF7" target="_blank" href="https://leaf.va.gov/NATIONAL/776/va_fhir_community_of_practice/?a=newform">Propose a change</a>
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

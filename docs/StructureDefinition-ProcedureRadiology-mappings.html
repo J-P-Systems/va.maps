@@ -1,0 +1,700 @@
+<!-- get modelType -->
+
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Procedure: Radiology - Mappings - US Veterans Administration FHIR Map Set Implementation Guide v0.69.448</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+    <link href="assets/css/va-maps.css" rel="stylesheet"/>
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"11.100"}
+    h3,h4,h5,h6{--heading-prefix:"11.100"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <!-- Placeholder for child template header declarations -->
+
+<div id="project-nav">
+    <a id="family-logo" no-external="true" href="https://va.gov"><img height="50" alt="Visit the VA website"
+        src="assets/images/va.png" /> </a>
+</div>
+
+<div id="family-nav">
+    <a id="family-logo" no-external="true" href="http://hl7.org/fhir"><img height="50" alt="Visit the FHIR website" src="assets/images/fhir-logo-www.png"/> </a>
+</div>
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">US Veterans Administration FHIR Map Set Implementation Guide</span>
+            <br/>
+            <span style="display:inline-block;">0.69.448 - 250101
+
+
+
+  <img alt="United States of America flag" src="assets/images/usa.svg" height="16" title="United States of America"/>
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li>
+    <a href="toc.html">Table of Content</a>
+  </li>
+  <li>
+    <a href="process.html">Process</a>
+  </li>
+  <li>
+    <a href="profileDesign.html">Profile Design</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Design Guidance
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="guidance.html">General Guidance</a>
+      </li>
+      <li>
+        <a href="guidance-vitals.html">Vitals Guidance</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="mustSupport.html">Must Support</a>
+  </li>
+  <li>
+    <a href="classes.html">Classes</a>
+  </li>
+  <li>
+    <a href="artifacts.html">Artifacts</a>
+  </li>
+  <li>
+    <a href="changes.html">Changes</a>
+  </li>
+  <li>
+    <a href="history.html">History</a>
+  </li>
+  <li>
+    <a href="mapset-qa.html">MapSet QA</a>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='artifacts.html'><b>Artifacts Summary</b></a></li><li><b>Procedure: Radiology</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<div style="counter-reset: section 5" class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">US Veterans Administration FHIR Map Set Implementation Guide - Local Development build (v0.69.448) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  
+
+
+
+
+
+
+
+
+
+
+
+<ul class="nav nav-tabs">
+
+  <li>
+    <a href="StructureDefinition-ProcedureRadiology.html">Content</a>
+  </li>
+
+
+
+  <li>
+    <a href="StructureDefinition-ProcedureRadiology-definitions.html">Detailed Descriptions</a>
+  </li>
+
+
+
+  
+    <li class="active">
+      <a href="#">Mappings</a>
+    </li>
+  
+
+
+
+
+
+
+
+  
+    <li>
+      <a href="StructureDefinition-ProcedureRadiology.profile.xml.html">XML</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="StructureDefinition-ProcedureRadiology.profile.json.html">JSON</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="StructureDefinition-ProcedureRadiology.profile.ttl.html">TTL</a>
+    </li>
+  
+
+
+</ul>
+
+
+<a name="root"> </a>
+<h2 id="root">Resource Profile: ProcedureRadiology - Mappings</h2>
+
+  <table class="colsi">
+    <tr>
+
+      <td colspan="2">
+        
+          Active
+          
+            as of 2024-12-21
+          
+        
+      </td>
+
+    </tr>
+  </table>
+
+
+<p>Mappings for the ProcedureRadiology resource profile.</p>
+
+  <!-- insert intro if present -->
+  
+
+
+
+<div style="display:inline-block" markdown="1">
+
+<p>Scroll down for the Raw FHIR, CDW &amp; SDA mappings (if any).</p>
+
+<blockquote>
+  <p>Note that the CDW and SDA mappings are derived from a look-up based on the VistA source mappings in CDW and VPR SDA.</p>
+</blockquote>
+
+<?xml version="1.0" encoding="us-ascii" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="242px" preserveAspectRatio="none" style="width:2299px;height:242px;background:#FFFFFF;" version="1.1" viewBox="0 0 2299 242" width="2299px" zoomAndPan="magnify"><defs /><g><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="328" x="978.75" y="22.9951">Use Case: Procedure: Radiology (Source)</text><g id="elem_70"><rect fill="#F1F1F1" height="40.5938" style="stroke:#181818;stroke-width:0.5;" width="209" x="2083.5" y="154.0063" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="195" x="2090.5" y="169.0014">RAD/NUC MED PATIENT (70)</text><line style="stroke:#181818;stroke-width:1.0;" x1="2083.5" x2="2292.5" y1="174.3032" y2="174.3032" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="2088.5" y="189.2983">.01</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="40" x="2120.5" y="189.2983">NAME</text><line style="stroke:#181818;stroke-width:1.0;" x1="2115.5" x2="2115.5" y1="174.3032" y2="194.6" /></g><g id="elem_71"><rect fill="#F1F1F1" height="40.5938" style="stroke:#181818;stroke-width:0.5;" width="249" x="1063.5" y="154.0063" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="235" x="1070.5" y="169.0014">RAD/NUC MED PROCEDURES (71)</text><line style="stroke:#181818;stroke-width:1.0;" x1="1063.5" x2="1312.5" y1="174.3032" y2="174.3032" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="9" x="1068.5" y="189.2983">9</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="73" x="1087.5" y="189.2983">CPT CODE</text><line style="stroke:#181818;stroke-width:1.0;" x1="1082.5" x2="1082.5" y1="174.3032" y2="194.6" /></g><g id="elem_72"><rect fill="#F1F1F1" height="40.5938" style="stroke:#181818;stroke-width:0.5;" width="199" x="1833.5" y="154.0063" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="185" x="1840.5" y="169.0014">EXAMINATION STATUS (72)</text><line style="stroke:#181818;stroke-width:1.0;" x1="1833.5" x2="2032.5" y1="174.3032" y2="174.3032" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="1838.5" y="189.2983">.01</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="55" x="1870.5" y="189.2983">STATUS</text><line style="stroke:#181818;stroke-width:1.0;" x1="1865.5" x2="1865.5" y1="174.3032" y2="194.6" /></g><g id="elem_81"><rect fill="#F1F1F1" height="60.8906" style="stroke:#181818;stroke-width:0.5;" width="135" x="1373.5" y="144.0063" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="60" x="1411" y="159.0014">CPT (81)</text><line style="stroke:#181818;stroke-width:1.0;" x1="1373.5" x2="1508.5" y1="164.3032" y2="164.3032" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="1378.5" y="179.2983">.01</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="73" x="1410.5" y="179.2983">CPT CODE</text><line style="stroke:#181818;stroke-width:1.0;" x1="1405.5" x2="1405.5" y1="164.3032" y2="184.6" /><line style="stroke:#181818;stroke-width:1.0;" x1="1373.5" x2="1508.5" y1="184.6" y2="184.6" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="9" x="1385" y="199.5951">2</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="93" x="1410.5" y="199.5951">SHORT NAME</text><line style="stroke:#181818;stroke-width:1.0;" x1="1405.5" x2="1405.5" y1="184.6" y2="204.8969" /></g><g id="elem_70_02"><rect fill="#F1F1F1" height="101.4844" style="stroke:#181818;stroke-width:3.0;" width="210" x="7" y="123.5063" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="196" x="14" y="138.5014">REGISTERED EXAMS (70.02)</text><line style="stroke:#181818;stroke-width:1.0;" x1="7" x2="217" y1="143.8032" y2="143.8032" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="12" y="158.7983">.01</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="81" x="44" y="158.7983">EXAM DATE</text><line style="stroke:#181818;stroke-width:1.0;" x1="39" x2="39" y1="143.8032" y2="164.1" /><line style="stroke:#181818;stroke-width:1.0;" x1="7" x2="217" y1="164.1" y2="164.1" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="9" x="18.5" y="179.0951">2</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="122" x="44" y="179.0951">TYPE OF IMAGING</text><line style="stroke:#181818;stroke-width:1.0;" x1="39" x2="39" y1="164.1" y2="184.3969" /><line style="stroke:#181818;stroke-width:1.0;" x1="7" x2="217" y1="184.3969" y2="184.3969" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="9" x="18.5" y="199.392">4</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="133" x="44" y="199.392">IMAGING LOCATION</text><line style="stroke:#181818;stroke-width:1.0;" x1="39" x2="39" y1="184.3969" y2="204.6938" /><line style="stroke:#181818;stroke-width:1.0;" x1="7" x2="217" y1="204.6938" y2="204.6938" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="18" x="14" y="219.6889">50</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="103" x="44" y="219.6889">EXAMINATIONS</text><line style="stroke:#181818;stroke-width:1.0;" x1="39" x2="39" y1="204.6938" y2="224.9907" /></g><g id="elem_70_03"><rect fill="#F1F1F1" height="121.7813" style="stroke:#181818;stroke-width:0.5;" width="257" x="745.5" y="113.5063" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="157" x="795.5" y="128.5014">EXAMINATIONS (70.03)</text><line style="stroke:#181818;stroke-width:1.0;" x1="745.5" x2="1002.5" y1="133.8032" y2="133.8032" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="9" x="757" y="148.7983">2</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="89" x="782.5" y="148.7983">PROCEDURE</text><line style="stroke:#181818;stroke-width:1.0;" x1="777.5" x2="777.5" y1="133.8032" y2="154.1" /><line style="stroke:#181818;stroke-width:1.0;" x1="745.5" x2="1002.5" y1="154.1" y2="154.1" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="9" x="757" y="169.0951">3</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="98" x="782.5" y="169.0951">EXAM STATUS</text><line style="stroke:#181818;stroke-width:1.0;" x1="777.5" x2="777.5" y1="154.1" y2="174.3969" /><line style="stroke:#181818;stroke-width:1.0;" x1="745.5" x2="1002.5" y1="174.3969" y2="174.3969" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="750.5" y="189.392">3.5</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="199" x="782.5" y="189.392">REASON FOR CANCELLATION</text><line style="stroke:#181818;stroke-width:1.0;" x1="777.5" x2="777.5" y1="174.3969" y2="194.6938" /><line style="stroke:#181818;stroke-width:1.0;" x1="745.5" x2="1002.5" y1="194.6938" y2="194.6938" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="18" x="752.5" y="209.6889">15</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="215" x="782.5" y="209.6889">PRIMARY INTERPRETING STAFF</text><line style="stroke:#181818;stroke-width:1.0;" x1="777.5" x2="777.5" y1="194.6938" y2="214.9907" /><line style="stroke:#181818;stroke-width:1.0;" x1="745.5" x2="1002.5" y1="214.9907" y2="214.9907" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="18" x="752.5" y="229.9858">27</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="33" x="782.5" y="229.9858">VISIT</text><line style="stroke:#181818;stroke-width:1.0;" x1="777.5" x2="777.5" y1="214.9907" y2="235.2875" /></g><g id="elem_75_2"><rect fill="#F1F1F1" height="40.5938" style="stroke:#181818;stroke-width:0.5;" width="222" x="1560" y="154.0063" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="208" x="1567" y="169.0014">RAD/NUC MED REASON (75.2)</text><line style="stroke:#181818;stroke-width:1.0;" x1="1560" x2="1782" y1="174.3032" y2="174.3032" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="1565" y="189.2983">.01</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="58" x="1597" y="189.2983">REASON</text><line style="stroke:#181818;stroke-width:1.0;" x1="1592" x2="1592" y1="174.3032" y2="194.6" /></g><g id="elem_79_2"><rect fill="#F1F1F1" height="40.5938" style="stroke:#181818;stroke-width:0.5;" width="164" x="530" y="154.0063" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="144" x="540" y="169.0014">IMAGING TYPE (79.2)</text><line style="stroke:#181818;stroke-width:1.0;" x1="530" x2="694" y1="174.3032" y2="174.3032" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="535" y="189.2983">.01</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="122" x="567" y="189.2983">TYPE OF IMAGING</text><line style="stroke:#181818;stroke-width:1.0;" x1="562" x2="562" y1="174.3032" y2="194.6" /></g><g id="elem_79_1"><rect fill="#F1F1F1" height="40.5938" style="stroke:#181818;stroke-width:0.5;" width="201" x="277.5" y="154.0063" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="187" x="284.5" y="169.0014">IMAGING LOCATIONS (79.1)</text><line style="stroke:#181818;stroke-width:1.0;" x1="277.5" x2="478.5" y1="174.3032" y2="174.3032" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="282.5" y="189.2983">.01</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="70" x="314.5" y="189.2983">LOCATION</text><line style="stroke:#181818;stroke-width:1.0;" x1="309.5" x2="309.5" y1="174.3032" y2="194.6" /></g><!--link 70_02 to 70_03--><g id="link_70_02_70_03"><path codeLine="41" d="M217,215.0063 C266.4019,215.0063 213.4389,140.3864 252,109.5063 C307.2318,65.2761 498.5807,72.5787 569,79.5063 C637.0941,86.2051 654.5604,89.5229 720,109.5063 C724.0848,110.7537 728.2095,112.0711 732.356,113.4465 " fill="none" id="70_02-to-70_03" style="stroke:#181818;stroke-width:1.0;" /><polygon fill="#181818" points="737.2326,115.0868,729.9776,108.426,732.4935,113.4926,727.427,116.0085,737.2326,115.0868" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="16" x="552" y="75.5732">50</text></g><!--link 70_03 to 72--><g id="link_70_03_72"><path codeLine="42" d="M1003,164.0063 C1031.787,164.0063 1013.0996,123.9513 1038,109.5063 C1152.1321,43.2969 1499.5184,68.4427 1631,79.5063 C1710.5076,86.1965 1732.3155,84.2462 1808,109.5063 C1836.3398,118.9649 1866.1413,134.1142 1889.5347,147.3548 " fill="none" id="70_03-to-72" style="stroke:#181818;stroke-width:1.0;" /><polygon fill="#181818" points="1894.1257,149.9752,1888.2922,142.0398,1889.7833,147.4966,1884.3265,148.9877,1894.1257,149.9752" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="1622" y="75.5732">3</text></g><!--link 70_03 to 75_2--><g id="link_70_03_75_2"><path codeLine="43" d="M1003,184.0063 C1039.5831,184.0063 1008.9806,131.7817 1038,109.5063 C1105.467,57.7184 1142.0492,75.3655 1227,79.5063 C1363.9318,86.1809 1401.8255,73.1088 1534,109.5063 C1565.7462,118.2484 1599.2234,133.8765 1625.1382,147.5595 " fill="none" id="70_03-to-75_2" style="stroke:#181818;stroke-width:1.0;" /><polygon fill="#181818" points="1629.558,149.9131,1623.494,142.1524,1625.1447,147.5631,1619.734,149.2137,1629.558,149.9131" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="20" x="1206" y="75.5732">3.5</text></g><!--link 70_02 to 79_2--><g id="link_70_02_79_2"><path codeLine="44" d="M217,174.0063 C249.6152,174.0063 226.3014,129.5895 252,109.5063 C297.3577,74.0598 320.8273,72.7938 378,79.5063 C435.1727,86.2188 450.6714,87.8306 504,109.5063 C528.3661,119.41 553.7087,134.2704 573.7164,147.232 " fill="none" id="70_02-to-79_2" style="stroke:#181818;stroke-width:1.0;" /><polygon fill="#181818" points="577.9026,149.9665,572.5555,141.6955,573.7166,147.2319,568.1802,148.3931,577.9026,149.9665" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="369" y="75.5732">2</text></g><!--link 70_03 to 71--><g id="link_70_03_71"><path codeLine="45" d="M1003,144.0063 C1025.2336,144.0063 1048.7787,146.1437 1071.3511,149.2775 " fill="none" id="70_03-to-71" style="stroke:#181818;stroke-width:1.0;" /><polygon fill="#181818" points="1076.4548,150.0051,1068.1095,144.7748,1071.5049,149.2993,1066.9803,152.6947,1076.4548,150.0051" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="1029" y="141.0732">2</text></g><!--link 71 to 81--><g id="link_71_81"><path codeLine="46" d="M1313,184.0063 C1331.4002,184.0063 1321.5225,208.8173 1338,217.0063 C1341.98,218.9843 1343.6594,217.9612 1348,217.0063 C1355.9127,215.2655 1363.9537,212.7831 1371.8268,209.8779 " fill="none" id="71-to-81" style="stroke:#181818;stroke-width:1.0;" /><polygon fill="#181818" points="1376.7046,208.0172,1366.87,207.4877,1372.033,209.7993,1369.7214,214.9623,1376.7046,208.0172" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="1339" y="213.0732">9</text></g><!--link 70_02 to 79_1--><g id="link_70_02_79_1"><path codeLine="47" d="M217,194.0063 C232.098,194.0063 227.934,211.5202 242,217.0063 C246.1407,218.6213 247.6155,217.7338 252,217.0063 C273.2152,213.4859 295.6527,206.8446 315.6218,199.8159 " fill="none" id="70_02-to-79_1" style="stroke:#181818;stroke-width:1.0;" /><polygon fill="#181818" points="320.375,198.1194,310.5541,197.3776,315.666,199.8002,313.2434,204.9121,320.375,198.1194" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="243" y="213.0732">4</text></g></g></svg>
+
+<h3 id="raw-mappings">Raw mappings</h3>
+
+<table border="1" cellspacing="0" cellpadding="0" class="table-ta1"><tr class="row-ro1">
+<th class="cell-ce1">key</th>
+<th class="cell-ce1">status</th>
+<th class="cell-ce1">direction</th>
+<th class="cell-ce1">source</th>
+<th class="cell-ce1">mapApproach</th>
+<th class="cell-ce1">mapCase</th>
+<th class="cell-ce1">FHIR Path</th>
+<th class="cell-ce1">subPath</th>
+<th class="cell-ce1">mapValue</th>
+<th class="cell-ce1">mapParameter</th>
+<th class="cell-ce1">mapComment</th>
+<th class="cell-ce1">FHIR URL | Ver</th>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1506</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">REGISTERED EXAMS - EXAMINATIONS &gt; EXAMINATIONS - EXAM STATUS &gt; EXAMINATION STATUS - STATUS (70.02-50 &gt; 70.03-3 &gt; 72-.01)</td>
+<td class="cell-ce1">terminologyMaps</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Procedure.status</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">VF_RadiologyProcedureStatus</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure | 5.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1507</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">REGISTERED EXAMS - EXAMINATIONS &gt; EXAMINATIONS - REASON FOR CANCELLATION &gt; RAD/NUC MED REASON - REASON (70.02-50 &gt; 70.03-3.5 &gt; 75.2-.01)</td>
+<td class="cell-ce1">source value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Procedure.statusReason</td>
+<td class="cell-ce1">.text</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure | 5.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1508</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">REGISTERED EXAMS - TYPE OF IMAGING &gt; IMAGING TYPE - TYPE OF IMAGING (70.02-2 &gt; 79.2-.01)</td>
+<td class="cell-ce1">source value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Procedure.category</td>
+<td class="cell-ce1">.text</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure | 5.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1509</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">REGISTERED EXAMS - EXAMINATIONS &gt; EXAMINATIONS - PROCEDURE &gt; RAD/NUC MED PROCEDURES - CPT CODE &gt; CPT (70.02-50 &gt; 70.03-2 &gt; 71-9 &gt; 81-)</td>
+<td class="cell-ce1">source value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Procedure.code.coding</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">.system = "http://www.ama-assn.org/go/cpt"
+.code = {CPT CODE(.01)}
+.display = {SHORT NAME(2)}</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure | 5.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1509-1</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">fixed value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Procedure.code.coding</td>
+<td class="cell-ce1">.system</td>
+<td class="cell-ce1">http://www.ama-assn.org/go/cpt</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">from mapParameter 1</td>
+<td class="cell-ce1"></td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1509-2</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">REGISTERED EXAMS - EXAMINATIONS &gt; EXAMINATIONS - PROCEDURE &gt; RAD/NUC MED PROCEDURES - CPT CODE &gt; CPT - CPT CODE (70.02-50 &gt; 70.03-2 &gt; 71-9 &gt; 81-.01)</td>
+<td class="cell-ce1">source value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Procedure.code.coding</td>
+<td class="cell-ce1">.code</td>
+<td class="cell-ce1">{CPT CODE(.01)}</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">from mapParameter 2</td>
+<td class="cell-ce1"></td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1509-3</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">REGISTERED EXAMS - EXAMINATIONS &gt; EXAMINATIONS - PROCEDURE &gt; RAD/NUC MED PROCEDURES - CPT CODE &gt; CPT - SHORT NAME (70.02-50 &gt; 70.03-2 &gt; 71-9 &gt; 81-2)</td>
+<td class="cell-ce1">source value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Procedure.code.coding</td>
+<td class="cell-ce1">.display</td>
+<td class="cell-ce1">{SHORT NAME(2)}</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">from mapParameter 3</td>
+<td class="cell-ce1"></td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1510</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">RAD/NUC MED PATIENT - NAME (70-.01)</td>
+<td class="cell-ce1">reference</td>
+<td class="cell-ce1">70-2 &gt; 70.02</td>
+<td class="cell-ce1">Procedure.subject</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure | 5.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1511</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">REGISTERED EXAMS - EXAMINATIONS &gt; EXAMINATIONS - VISIT (70.02-50 &gt; 70.03-27)</td>
+<td class="cell-ce1">reference</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Procedure.encounter</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">/EncounterOutpatient</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure | 5.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1512</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">REGISTERED EXAMS - EXAM DATE (70.02-.01)</td>
+<td class="cell-ce1">source value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Procedure.performedDateTime</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">required if the status is 'completed' or 'in-progress'</td>
+<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure | 5.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1513</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">REGISTERED EXAMS - EXAMINATIONS &gt; EXAMINATIONS - PRIMARY INTERPRETING STAFF (70.02-50 &gt; 70.03-15)</td>
+<td class="cell-ce1">reference</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Procedure.performer.actor</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">/Practitioner</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure | 5.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1514</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">REGISTERED EXAMS - IMAGING LOCATION &gt; IMAGING LOCATIONS - LOCATION (70.02-4 &gt; 79.1-.01)</td>
+<td class="cell-ce1">reference</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Procedure.location</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">/Location</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure | 5.0.1</td>
+</tr>
+</table>
+
+</div>
+
+
+
+
+  <a name="vista"> </a><h3>Mappings for Veterans Health Information Systems Technology and Architecture (VistA) ()</h3><table class="grid">
+ <tr><td colspan="3"><b>ProcedureRadiology</b></td></tr>
+ <tr><td>Procedure</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>1506: terminologyMaps using VF_RadiologyProcedureStatus on REGISTERED EXAMS - EXAMINATIONS &gt; EXAMINATIONS - EXAM STATUS &gt; EXAMINATION STATUS - STATUS (70.02-50 &gt; 70.03-3 &gt; 72-.01)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;statusReason</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>1507: source value from REGISTERED EXAMS - EXAMINATIONS &gt; EXAMINATIONS - REASON FOR CANCELLATION &gt; RAD/NUC MED REASON - REASON (70.02-50 &gt; 70.03-3.5 &gt; 75.2-.01)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;category</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>1508: source value from REGISTERED EXAMS - TYPE OF IMAGING &gt; IMAGING TYPE - TYPE OF IMAGING (70.02-2 &gt; 79.2-.01)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;code</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>1509: source value from REGISTERED EXAMS - EXAMINATIONS &gt; EXAMINATIONS - PROCEDURE &gt; RAD/NUC MED PROCEDURES - CPT CODE &gt; CPT (70.02-50 &gt; 70.03-2 &gt; 71-9 &gt; 81-)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;system</td><td>1509-1: fixed value = http://www.ama-assn.org/go/cpt</td><td><p>from mapParameter 1</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>1509-2: source value from REGISTERED EXAMS - EXAMINATIONS &gt; EXAMINATIONS - PROCEDURE &gt; RAD/NUC MED PROCEDURES - CPT CODE &gt; CPT - CPT CODE (70.02-50 &gt; 70.03-2 &gt; 71-9 &gt; 81-.01)</td><td><p>from mapParameter 2</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display</td><td>1509-3: source value from REGISTERED EXAMS - EXAMINATIONS &gt; EXAMINATIONS - PROCEDURE &gt; RAD/NUC MED PROCEDURES - CPT CODE &gt; CPT - SHORT NAME (70.02-50 &gt; 70.03-2 &gt; 71-9 &gt; 81-2)</td><td><p>from mapParameter 3</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>1510: reference from RAD/NUC MED PATIENT - NAME (70-.01) case 70-2 &gt; 70.02</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;encounter</td><td>1511: reference from REGISTERED EXAMS - EXAMINATIONS &gt; EXAMINATIONS - VISIT (70.02-50 &gt; 70.03-27)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;performed[x] (performedDateTime)</td><td>1512: source value from REGISTERED EXAMS - EXAM DATE (70.02-.01)</td><td><p>required if the status is 'completed' or 'in-progress'</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;performer</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;actor</td><td>1513: reference from REGISTERED EXAMS - EXAMINATIONS &gt; EXAMINATIONS - PRIMARY INTERPRETING STAFF (70.02-50 &gt; 70.03-15)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;location</td><td>1514: reference from REGISTERED EXAMS - IMAGING LOCATION &gt; IMAGING LOCATIONS - LOCATION (70.02-4 &gt; 79.1-.01)</td><td></td> </tr>
+</table>
+<a name="cdw"> </a><h3>Mappings for Clinical Data Warehouse (CDW) ()</h3><table class="grid">
+ <tr><td colspan="3"><b>ProcedureRadiology</b></td></tr>
+ <tr><td>Procedure</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;category</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>Rad.RadiologyRegisteredExam.ImagingTypeIEN
+Dim.ImagingType.ImagingType</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>Patient.RadiologyPatient.PatientIEN,Rad.RadiologyExam.PatientIEN,Rad.RadiologyExamActivityLog.PatientIEN,Rad.RadiologyExamContrastMedia.PatientIEN,Rad.RadiologyExamCPTModifier.PatientIEN,Rad.RadiologyExamMedication.PatientIEN,Rad.RadiologyExamSecondaryDiagnosticCode.PatientIEN,Rad.RadiologyExamStatusList.PatientIEN,Rad.RadiologyFilmRegistry.PatientIEN,Rad.RadiologyRegisteredExam.PatientIEN</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;encounter</td><td>Rad.RadiologyExam.VisitIEN</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;performed[x] (performedDateTime)</td><td>Rad.RadiologyExam.ExamDateTime,Rad.RadiologyExamActivityLog.ExamDateTime,Rad.RadiologyExamContrastMedia.ExamDateTime,Rad.RadiologyExamCPTModifier.ExamDateTime,Rad.RadiologyExamMedication.ExamDateTime,Rad.RadiologyExamSecondaryDiagnosticCode.ExamDateTime,Rad.RadiologyExamStatusList.ExamDateTime,Rad.RadiologyExamTechnologist.ExamDateTime,Rad.RadiologyRegisteredExam.ExamDateTime</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;performer</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;actor</td><td>Rad.RadiologyExam.PrimaryInterpretingStaffIEN</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;location</td><td>Rad.RadiologyRegisteredExam.RadiologyLocationIEN
+Dim.RadiologyLocation.LocationIEN</td> </tr>
+</table>
+<a name="sda"> </a><h3>Mappings for Summary Document Architecure (SDA) ()</h3><table class="grid">
+ <tr><td colspan="3"><b>ProcedureRadiology</b></td></tr>
+ <tr><td>Procedure</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;performed[x] (performedDateTime)</td><td>RadOrder.Result.FromTime</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;location</td><td>RadOrder.Result.EnteredAt,RadOrder.Result.PerformedAt</td> </tr>
+</table>
+<a name="workflow"> </a><h3>Mappings for Workflow Pattern (<a href="http://hl7.org/fhir/workflow.html">http://hl7.org/fhir/workflow</a>)</h3><table class="grid">
+ <tr><td colspan="3"><b>ProcedureRadiology</b></td></tr>
+ <tr><td>Procedure</td><td>Event</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>Event.identifier</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;instantiatesCanonical</td><td>Event.instantiatesCanonical</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;instantiatesUri</td><td>Event.instantiatesUri</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;basedOn</td><td>Event.basedOn</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;partOf</td><td>Event.partOf</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>Event.status</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;statusReason</td><td>Event.statusReason</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;code</td><td>Event.code</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>Event.subject</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;encounter</td><td>Event.context</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;performed[x]</td><td>Event.occurrence[x]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;performed[x] (performedDateTime)</td><td>Event.occurrence[x]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;performer</td><td>Event.performer</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function</td><td>Event.performer.function</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;actor</td><td>Event.performer.actor</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;reasonCode</td><td>Event.reasonCode</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;reasonReference</td><td>Event.reasonReference</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;note</td><td>Event.note</td> </tr>
+</table>
+<a name="rim"> </a><h3>Mappings for RIM Mapping (<a href="http://hl7.org/comparison-v3.html">http://hl7.org/v3</a>)</h3><table class="grid">
+ <tr><td colspan="3"><b>ProcedureRadiology</b></td></tr>
+ <tr><td>Procedure</td><td>Entity. Role, or Act, Procedure[moodCode=EVN]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;text</td><td>Act.text?</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;contained</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;extension</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;modifierExtension</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>.id</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;instantiatesCanonical</td><td>.outboundRelationship[typeCode=DEFN].target</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;instantiatesUri</td><td>.outboundRelationship[typeCode=DEFN].target</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;basedOn</td><td>.outboundRelationship[typeCode=FLFS].target[classCode=(various e.g. PROC, OBS, PCPR, ACT,  moodCode=RQO].code</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;partOf</td><td>.inboundRelationship[typeCode=COMP].source[classCode=SBADM or PROC or OBS, moodCode=EVN]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>statusCode</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;statusReason</td><td>.reason.Observation.value</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>union(., ./translation)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>./originalText[mediaType/code=&quot;text/plain&quot;]/data</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;category</td><td>.outboundRelationship[typeCode=&quot;COMP].target[classCode=&quot;LIST&quot;, moodCode=&quot;EVN&quot;].code</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>union(., ./translation)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>./originalText[mediaType/code=&quot;text/plain&quot;]/data</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;code</td><td>.code</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>union(., ./translation)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;system</td><td>./codeSystem</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;version</td><td>./codeSystemVersion</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>./code</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display</td><td>CV.displayName</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;userSelected</td><td>CD.codingRationale</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>./originalText[mediaType/code=&quot;text/plain&quot;]/data</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>.participation[typeCode=SBJ].role</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;encounter</td><td>.inboundRelationship[typeCode=COMP].source[classCode=ENC, moodCode=EVN]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;performed[x]</td><td>.effectiveTime</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;performed[x] (performedDateTime)</td><td>.effectiveTime</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;recorder</td><td>.participation[typeCode=AUT].role</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;asserter</td><td>.participation[typeCode=INF].role</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;performer</td><td>.participation[typeCode=PRF]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modifierExtension</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function</td><td>.functionCode</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;actor</td><td>.role</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;onBehalfOf</td><td>.scoper</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;location</td><td>.participation[typeCode=LOC].role[classCode=SDLOC]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;reasonCode</td><td>.reasonCode</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;reasonReference</td><td>.reasonCode</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;bodySite</td><td>.targetSiteCode</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;outcome</td><td>.outboundRelationship[typeCode=OUT].target.text</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;report</td><td>.inboundRelationship[typeCode=SUBJ].source[classCode=OBS, moodCode=EVN]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;complication</td><td>.outboundRelationship[typeCode=OUTC].target[classCode=OBS, code=&quot;complication&quot;, moodCode=EVN].value</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;complicationDetail</td><td>.outboundRelationship[typeCode=OUTC].target[classCode=OBS, code=&quot;complication&quot;, moodCode=EVN].value</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;followUp</td><td>.outboundRelationship[typeCode=COMP].target[classCode=ACT, moodCode=INT].code</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;note</td><td>.inboundRelationship[typeCode=SUBJ].source[classCode=OBS, moodCode=EVN, code=&quot;annotation&quot;].value</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;focalDevice</td><td>.participation[typeCode=DEV].role[classCode=MANU]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modifierExtension</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;action</td><td>.inboundRelationship[typeCode=SUBJ].source[classCode=OBS, moodCode=EVN, code=&quot;procedure device action&quot;].value=:procedure device action codes</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;manipulated</td><td>.participation[typeCode=DEV].role[classCode=SDLOC]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;usedReference</td><td>.participation[typeCode=DEV].role[classCode=MANU] or
+.participation[typeCode=CSM].role[classCode=ADMM] (for Medication or Substance)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;usedCode</td><td>participation[typeCode=Dev].role[classCode=MANU]</td> </tr>
+</table>
+<a name="w5"> </a><h3>Mappings for FiveWs Pattern Mapping (http://hl7.org/fhir/fivews)</h3><table class="grid">
+ <tr><td colspan="3"><b>ProcedureRadiology</b></td></tr>
+ <tr><td>Procedure</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>FiveWs.identifier</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>FiveWs.status</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;category</td><td>FiveWs.class</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;code</td><td>FiveWs.what[x]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>FiveWs.subject[x], FiveWs.subject</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;encounter</td><td>FiveWs.context</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;performed[x]</td><td>FiveWs.done[x]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;performed[x] (performedDateTime)</td><td>FiveWs.done[x]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;recorder</td><td>FiveWs.author</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;asserter</td><td>FiveWs.source</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;performer</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;actor</td><td>FiveWs.actor</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;location</td><td>FiveWs.where[x]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;reasonCode</td><td>FiveWs.why[x]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;reasonReference</td><td>FiveWs.why[x]</td> </tr>
+</table>
+<a name="v2"> </a><h3>Mappings for HL7 v2 Mapping (<a href="http://hl7.org/comparison-v2.html">http://hl7.org/v2</a>)</h3><table class="grid">
+ <tr><td colspan="3"><b>ProcedureRadiology</b></td></tr>
+ <tr><td>Procedure</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>Some combination of ORC-2 / ORC-3 / OBR-2 / OBR-3 / IPC-1 / IPC-2 / IPC-3 / IPC-4</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;statusReason</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>C*E.1-8, C*E.10-22</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>C*E.9. But note many systems use C*E.2 for this</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;category</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>C*E.1-8, C*E.10-22</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>C*E.9. But note many systems use C*E.2 for this</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;code</td><td>OBR-44/OBR-45</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>C*E.1-8, C*E.10-22</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;system</td><td>C*E.3</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;version</td><td>C*E.7</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>C*E.1</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display</td><td>C*E.2 - but note this is not well followed</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;userSelected</td><td>Sometimes implied by being first</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>C*E.9. But note many systems use C*E.2 for this</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>PID-3</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;encounter</td><td>PV1-19</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;performed[x]</td><td>OBR-7</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;performed[x] (performedDateTime)</td><td>OBR-7</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;performer</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function</td><td>Some combination of STF-18 / PRA-3 / PRT-4 / ROL-3 / ORC-12 / OBR-16 / PV1-7 / PV1-8 / PV1-9 / PV1-17 / OBX-25</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;actor</td><td>ORC-19/PRT-5</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;bodySite</td><td>OBX-20</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;note</td><td>NTE</td> </tr>
+</table>
+
+
+  <!-- insert notes if present -->
+  
+
+
+
+</div>
+
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript" src="assets/js/tabs.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2024 <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.69.448 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Sat, Dec 21, 2024 10:24+0000">2024-12-21</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+| <a style="color: #81BEF7" target="_blank" href="https://leaf.va.gov/NATIONAL/776/va_fhir_community_of_practice/?a=newform">Propose a change</a>
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

@@ -1,0 +1,817 @@
+<!-- get modelType -->
+
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Lab Observation: Microbiology Mycology Observation - Mappings - US Veterans Administration FHIR Map Set Implementation Guide v0.69.448</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+    <link href="assets/css/va-maps.css" rel="stylesheet"/>
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"11.61"}
+    h3,h4,h5,h6{--heading-prefix:"11.61"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <!-- Placeholder for child template header declarations -->
+
+<div id="project-nav">
+    <a id="family-logo" no-external="true" href="https://va.gov"><img height="50" alt="Visit the VA website"
+        src="assets/images/va.png" /> </a>
+</div>
+
+<div id="family-nav">
+    <a id="family-logo" no-external="true" href="http://hl7.org/fhir"><img height="50" alt="Visit the FHIR website" src="assets/images/fhir-logo-www.png"/> </a>
+</div>
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">US Veterans Administration FHIR Map Set Implementation Guide</span>
+            <br/>
+            <span style="display:inline-block;">0.69.448 - 250101
+
+
+
+  <img alt="United States of America flag" src="assets/images/usa.svg" height="16" title="United States of America"/>
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li>
+    <a href="toc.html">Table of Content</a>
+  </li>
+  <li>
+    <a href="process.html">Process</a>
+  </li>
+  <li>
+    <a href="profileDesign.html">Profile Design</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Design Guidance
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="guidance.html">General Guidance</a>
+      </li>
+      <li>
+        <a href="guidance-vitals.html">Vitals Guidance</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="mustSupport.html">Must Support</a>
+  </li>
+  <li>
+    <a href="classes.html">Classes</a>
+  </li>
+  <li>
+    <a href="artifacts.html">Artifacts</a>
+  </li>
+  <li>
+    <a href="changes.html">Changes</a>
+  </li>
+  <li>
+    <a href="history.html">History</a>
+  </li>
+  <li>
+    <a href="mapset-qa.html">MapSet QA</a>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='artifacts.html'><b>Artifacts Summary</b></a></li><li><b>Lab Observation: Microbiology Mycology Observation</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<div style="counter-reset: section 5" class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">US Veterans Administration FHIR Map Set Implementation Guide - Local Development build (v0.69.448) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  
+
+
+
+
+
+
+
+
+
+
+
+<ul class="nav nav-tabs">
+
+  <li>
+    <a href="StructureDefinition-LabObservationMicrobiologyMycologyObservation.html">Content</a>
+  </li>
+
+
+
+  <li>
+    <a href="StructureDefinition-LabObservationMicrobiologyMycologyObservation-definitions.html">Detailed Descriptions</a>
+  </li>
+
+
+
+  
+    <li class="active">
+      <a href="#">Mappings</a>
+    </li>
+  
+
+
+
+
+
+
+
+  
+    <li>
+      <a href="StructureDefinition-LabObservationMicrobiologyMycologyObservation.profile.xml.html">XML</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="StructureDefinition-LabObservationMicrobiologyMycologyObservation.profile.json.html">JSON</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="StructureDefinition-LabObservationMicrobiologyMycologyObservation.profile.ttl.html">TTL</a>
+    </li>
+  
+
+
+</ul>
+
+
+<a name="root"> </a>
+<h2 id="root">Resource Profile: LabObservationMicrobiologyMycologyObservation - Mappings</h2>
+
+  <table class="colsd">
+    <tr>
+
+      <td colspan="2">
+        
+          Draft
+          
+            as of 2024-12-21
+          
+        
+      </td>
+
+    </tr>
+  </table>
+
+
+<p>Mappings for the LabObservationMicrobiologyMycologyObservation resource profile.</p>
+
+  <!-- insert intro if present -->
+  
+
+
+
+<div style="display:inline-block" markdown="1">
+
+<p>Scroll down for the Raw FHIR, CDW &amp; SDA mappings (if any).</p>
+
+<blockquote>
+  <p>Note that the CDW and SDA mappings are derived from a look-up based on the VistA source mappings in CDW and VPR SDA.</p>
+</blockquote>
+
+<?xml version="1.0" encoding="us-ascii" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="395px" preserveAspectRatio="none" style="width:3361px;height:395px;background:#FFFFFF;" version="1.1" viewBox="0 0 3361 395" width="3361px" zoomAndPan="magnify"><defs /><g><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="477" x="1435" y="22.9951">Use Case: Lab Observation: Microbiology Mycology (Source)</text><g id="elem_2"><rect fill="#F1F1F1" height="40.5938" style="stroke:#181818;stroke-width:0.5;" width="221" x="2950.5" y="235.8501" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="81" x="3020.5" y="250.8452">PATIENT (2)</text><line style="stroke:#181818;stroke-width:1.0;" x1="2950.5" x2="3171.5" y1="256.147" y2="256.147" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="18" x="2955.5" y="271.1421">63</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="183" x="2983.5" y="271.1421">LABORATORY REFERENCE</text><line style="stroke:#181818;stroke-width:1.0;" x1="2978.5" x2="2978.5" y1="256.147" y2="276.4438" /></g><g id="elem_60"><rect fill="#F1F1F1" height="81.1875" style="stroke:#181818;stroke-width:0.5;" width="212" x="1360" y="215.3501" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="167" x="1382.5" y="230.3452">LABORATORY TEST (60)</text><line style="stroke:#181818;stroke-width:1.0;" x1="1360" x2="1572" y1="235.647" y2="235.647" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="1367.5" y="250.6421">.01</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="40" x="1402" y="250.6421">NAME</text><line style="stroke:#181818;stroke-width:1.0;" x1="1397" x2="1397" y1="235.647" y2="255.9438" /><line style="stroke:#181818;stroke-width:1.0;" x1="1360" x2="1572" y1="255.9438" y2="255.9438" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="18" x="1369.5" y="270.9389">64</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="165" x="1402" y="270.9389">NATIONAL VA LAB CODE</text><line style="stroke:#181818;stroke-width:1.0;" x1="1397" x2="1397" y1="255.9438" y2="276.2407" /><line style="stroke:#181818;stroke-width:1.0;" x1="1360" x2="1572" y1="276.2407" y2="276.2407" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="27" x="1365" y="291.2358">100</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="106" x="1402" y="291.2358">SITE/SPECIMEN</text><line style="stroke:#181818;stroke-width:1.0;" x1="1397" x2="1397" y1="276.2407" y2="296.5376" /></g><g id="elem_62"><rect fill="#F1F1F1" height="40.5938" style="stroke:#181818;stroke-width:0.5;" width="192" x="340" y="235.8501" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="178" x="347" y="250.8452">COLLECTION SAMPLE (62)</text><line style="stroke:#181818;stroke-width:1.0;" x1="340" x2="532" y1="256.147" y2="256.147" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="345" y="271.1421">.01</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="40" x="377" y="271.1421">NAME</text><line style="stroke:#181818;stroke-width:1.0;" x1="372" x2="372" y1="256.147" y2="276.4438" /></g><g id="elem_63"><rect fill="#F1F1F1" height="40.5938" style="stroke:#181818;stroke-width:0.5;" width="114" x="3240" y="235.8501" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="100" x="3247" y="250.8452">LAB DATA (63)</text><line style="stroke:#181818;stroke-width:1.0;" x1="3240" x2="3354" y1="256.147" y2="256.147" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="3245" y="271.1421">.01</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="46" x="3277" y="271.1421">LRDFN</text><line style="stroke:#181818;stroke-width:1.0;" x1="3272" x2="3272" y1="256.147" y2="276.4438" /></g><g id="elem_64"><rect fill="#F1F1F1" height="60.8906" style="stroke:#181818;stroke-width:0.5;" width="218" x="1911" y="225.8501" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="117" x="1961.5" y="240.8452">WKLD CODE (64)</text><line style="stroke:#181818;stroke-width:1.0;" x1="1911" x2="2129" y1="246.147" y2="246.147" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="18" x="1916" y="261.1421">13</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="180" x="1944" y="261.1421">WKLD CODE LAB SECTION</text><line style="stroke:#181818;stroke-width:1.0;" x1="1939" x2="1939" y1="246.147" y2="266.4438" /><line style="stroke:#181818;stroke-width:1.0;" x1="1911" x2="2129" y1="266.4438" y2="266.4438" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="18" x="1916" y="281.4389">25</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="153" x="1944" y="281.4389">DEFAULT LOINC CODE</text><line style="stroke:#181818;stroke-width:1.0;" x1="1939" x2="1939" y1="266.4438" y2="286.7407" /></g><g id="elem_63_05"><rect fill="#F1F1F1" height="263.8594" style="stroke:#181818;stroke-width:3.0;" width="252" x="7" y="124.3501" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="162" x="52" y="139.3452">MICROBIOLOGY (63.05)</text><line style="stroke:#181818;stroke-width:1.0;" x1="7" x2="259" y1="144.647" y2="144.647" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="31" x="12" y="159.6421">.001</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="53" y="159.6421">IEN</text><line style="stroke:#181818;stroke-width:1.0;" x1="48" x2="48" y1="144.647" y2="164.9438" /><line style="stroke:#181818;stroke-width:1.0;" x1="7" x2="259" y1="164.9438" y2="164.9438" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="16.5" y="179.9389">.01</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="201" x="53" y="179.9389">DATE/TIME SPECIMEN TAKEN</text><line style="stroke:#181818;stroke-width:1.0;" x1="48" x2="48" y1="164.9438" y2="185.2407" /><line style="stroke:#181818;stroke-width:1.0;" x1="7" x2="259" y1="185.2407" y2="185.2407" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="16.5" y="200.2358">.03</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="191" x="53" y="200.2358">DATE REPORT COMPLETED</text><line style="stroke:#181818;stroke-width:1.0;" x1="48" x2="48" y1="185.2407" y2="205.5376" /><line style="stroke:#181818;stroke-width:1.0;" x1="7" x2="259" y1="205.5376" y2="205.5376" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="16.5" y="220.5327">.04</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="110" x="53" y="220.5327">VERIFY PERSON</text><line style="stroke:#181818;stroke-width:1.0;" x1="48" x2="48" y1="205.5376" y2="225.8345" /><line style="stroke:#181818;stroke-width:1.0;" x1="7" x2="259" y1="225.8345" y2="225.8345" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="31" x="12" y="240.8296">.055</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="146" x="53" y="240.8296">COLLECTION SAMPLE</text><line style="stroke:#181818;stroke-width:1.0;" x1="48" x2="48" y1="225.8345" y2="246.1313" /><line style="stroke:#181818;stroke-width:1.0;" x1="7" x2="259" y1="246.1313" y2="246.1313" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="16.5" y="261.1264">.06</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="192" x="53" y="261.1264">MICROBIOLOGY ACCESSION</text><line style="stroke:#181818;stroke-width:1.0;" x1="48" x2="48" y1="246.1313" y2="266.4282" /><line style="stroke:#181818;stroke-width:1.0;" x1="7" x2="259" y1="266.4282" y2="266.4282" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="31" x="12" y="281.4233">.112</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="194" x="53" y="281.4233">ACCESSIONING INSTITUTION</text><line style="stroke:#181818;stroke-width:1.0;" x1="48" x2="48" y1="266.4282" y2="286.7251" /><line style="stroke:#181818;stroke-width:1.0;" x1="7" x2="259" y1="286.7251" y2="286.7251" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="16.5" y="301.7202">.35</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="111" x="53" y="301.7202">ORDERED TEST</text><line style="stroke:#181818;stroke-width:1.0;" x1="48" x2="48" y1="286.7251" y2="307.022" /><line style="stroke:#181818;stroke-width:1.0;" x1="7" x2="259" y1="307.022" y2="307.022" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="16.5" y="322.0171">.99</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="173" x="53" y="322.0171">COMMENT ON SPECIMEN</text><line style="stroke:#181818;stroke-width:1.0;" x1="48" x2="48" y1="307.022" y2="327.3188" /><line style="stroke:#181818;stroke-width:1.0;" x1="7" x2="259" y1="327.3188" y2="327.3188" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="18" x="18.5" y="342.3139">19</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="171" x="53" y="342.3139">MYCOLOGY RPT STATUS</text><line style="stroke:#181818;stroke-width:1.0;" x1="48" x2="48" y1="327.3188" y2="347.6157" /><line style="stroke:#181818;stroke-width:1.0;" x1="7" x2="259" y1="347.6157" y2="347.6157" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="18" x="18.5" y="362.6108">20</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="108" x="53" y="362.6108">FUNGUS/YEAST</text><line style="stroke:#181818;stroke-width:1.0;" x1="48" x2="48" y1="347.6157" y2="367.9126" /><line style="stroke:#181818;stroke-width:1.0;" x1="7" x2="259" y1="367.9126" y2="367.9126" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="18" x="18.5" y="382.9077">21</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="175" x="53" y="382.9077">MYCOLOGY RPT REMARK</text><line style="stroke:#181818;stroke-width:1.0;" x1="48" x2="48" y1="367.9126" y2="388.2095" /></g><g id="elem_63_38"><rect fill="#F1F1F1" height="40.5938" style="stroke:#181818;stroke-width:0.5;" width="243" x="2656.5" y="235.8501" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="229" x="2663.5" y="250.8452">MYCOLOGY RPT REMARK (63.38)</text><line style="stroke:#181818;stroke-width:1.0;" x1="2656.5" x2="2899.5" y1="256.147" y2="256.147" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="2661.5" y="271.1421">.01</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="175" x="2693.5" y="271.1421">MYCOLOGY RPT REMARK</text><line style="stroke:#181818;stroke-width:1.0;" x1="2688.5" x2="2688.5" y1="256.147" y2="276.4438" /></g><g id="elem_63_5"><rect fill="#F1F1F1" height="101.4844" style="stroke:#181818;stroke-width:0.5;" width="192" x="1054" y="205.3501" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="156" x="1072" y="220.3452">ORDERED TEST (63.5)</text><line style="stroke:#181818;stroke-width:1.0;" x1="1054" x2="1246" y1="225.647" y2="225.647" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="31" x="1059" y="240.6421">.001</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="1100" y="240.6421">IEN</text><line style="stroke:#181818;stroke-width:1.0;" x1="1095" x2="1095" y1="225.647" y2="245.9438" /><line style="stroke:#181818;stroke-width:1.0;" x1="1054" x2="1246" y1="245.9438" y2="245.9438" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="9" x="1070" y="260.9389">3</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="109" x="1100" y="260.9389">CPRS ORDER #</text><line style="stroke:#181818;stroke-width:1.0;" x1="1095" x2="1095" y1="245.9438" y2="266.2407" /><line style="stroke:#181818;stroke-width:1.0;" x1="1054" x2="1246" y1="266.2407" y2="266.2407" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="18" x="1065.5" y="281.2358">10</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="88" x="1100" y="281.2358">DISPOSITION</text><line style="stroke:#181818;stroke-width:1.0;" x1="1095" x2="1095" y1="266.2407" y2="286.5376" /><line style="stroke:#181818;stroke-width:1.0;" x1="1054" x2="1246" y1="286.5376" y2="286.5376" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="18" x="1065.5" y="301.5327">13</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="141" x="1100" y="301.5327">LAB TEST ORDERED</text><line style="stroke:#181818;stroke-width:1.0;" x1="1095" x2="1095" y1="286.5376" y2="306.8345" /></g><g id="elem_64_21"><rect fill="#F1F1F1" height="40.5938" style="stroke:#181818;stroke-width:0.5;" width="224" x="2381" y="235.8501" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="210" x="2388" y="250.8452">WKLD CODE LAB SECT (64.21)</text><line style="stroke:#181818;stroke-width:1.0;" x1="2381" x2="2605" y1="256.147" y2="256.147" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="2386" y="271.1421">.01</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="40" x="2418" y="271.1421">NAME</text><line style="stroke:#181818;stroke-width:1.0;" x1="2413" x2="2413" y1="256.147" y2="276.4438" /></g><g id="elem_95_3"><rect fill="#F1F1F1" height="60.8906" style="stroke:#181818;stroke-width:0.5;" width="133" x="2197.5" y="225.8501" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="116" x="2206" y="240.8452">LAB LOINC (95.3)</text><line style="stroke:#181818;stroke-width:1.0;" x1="2197.5" x2="2330.5" y1="246.147" y2="246.147" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="2202.5" y="261.1421">.01</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="41" x="2234.5" y="261.1421">CODE</text><line style="stroke:#181818;stroke-width:1.0;" x1="2229.5" x2="2229.5" y1="246.147" y2="266.4438" /><line style="stroke:#181818;stroke-width:1.0;" x1="2197.5" x2="2330.5" y1="266.4438" y2="266.4438" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="9" x="2209" y="281.4389">1</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="91" x="2234.5" y="281.4389">COMPONENT</text><line style="stroke:#181818;stroke-width:1.0;" x1="2229.5" x2="2229.5" y1="266.4438" y2="286.7407" /></g><g id="elem_60_01"><rect fill="#F1F1F1" height="40.5938" style="stroke:#181818;stroke-width:0.5;" width="174" x="1686" y="235.8501" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="160" x="1693" y="250.8452">SITE/SPECIMEN (60.01)</text><line style="stroke:#181818;stroke-width:1.0;" x1="1686" x2="1860" y1="256.147" y2="256.147" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="31" x="1691" y="271.1421">95.3</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="86" x="1732" y="271.1421">LOINC CODE</text><line style="stroke:#181818;stroke-width:1.0;" x1="1727" x2="1727" y1="256.147" y2="276.4438" /></g><g id="elem_63_37"><rect fill="#F1F1F1" height="40.5938" style="stroke:#181818;stroke-width:0.5;" width="176" x="583" y="235.8501" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="162" x="590" y="250.8452">FUNGUS/YEAST (63.37)</text><line style="stroke:#181818;stroke-width:1.0;" x1="583" x2="759" y1="256.147" y2="256.147" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="588" y="271.1421">.01</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="108" x="620" y="271.1421">FUNGUS/YEAST</text><line style="stroke:#181818;stroke-width:1.0;" x1="615" x2="615" y1="256.147" y2="276.4438" /></g><g id="elem_61_2"><rect fill="#F1F1F1" height="40.5938" style="stroke:#181818;stroke-width:0.5;" width="171" x="831.5" y="235.8501" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="157" x="838.5" y="250.8452">ETIOLOGY FIELD (61.2)</text><line style="stroke:#181818;stroke-width:1.0;" x1="831.5" x2="1002.5" y1="256.147" y2="256.147" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="836.5" y="271.1421">.01</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="40" x="868.5" y="271.1421">NAME</text><line style="stroke:#181818;stroke-width:1.0;" x1="863.5" x2="863.5" y1="256.147" y2="276.4438" /></g><!--link 63_05 to 63_38--><g id="link_63_05_63_38"><path codeLine="63" d="M259,377.8501 C376.0259,377.8501 223.4304,194.4596 314,120.3501 C408.1671,43.2969 2382.3276,96.5307 2504,95.8501 C2561.4843,95.5286 2580.0883,93.6567 2631,120.3501 C2682.1892,147.189 2728.9827,196.4452 2755.4397,227.5983 " fill="none" id="63_05-to-63_38" style="stroke:#181818;stroke-width:1.0;" /><polygon fill="#181818" points="2758.8789,231.6813,2756.1401,222.2209,2755.6577,227.8571,2750.0215,227.3747,2758.8789,231.6813" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="16" x="2505" y="78.917">21</text></g><!--link 63_05 to 63_5--><g id="link_63_05_63_5"><path codeLine="64" d="M259,296.8501 C355.8206,296.8501 252.0741,129.1171 343,95.8501 C414.523,69.682 959.0088,88.0929 1028,120.3501 C1063.1202,136.7707 1092.5602,168.4939 1113.7165,197.1188 " fill="none" id="63_05-to-63_5" style="stroke:#181818;stroke-width:1.0;" /><polygon fill="#181818" points="1116.7775,201.3175,1114.7077,191.6886,1113.8319,197.2772,1108.2433,196.4014,1116.7775,201.3175" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="20" x="344" y="78.917">.35</text></g><!--link 63_05 to 63_5--><g id="link_63_05_63_5"><path codeLine="69" d="M259,296.8501 C355.8206,296.8501 252.0741,129.1171 343,95.8501 C414.523,69.682 959.0088,88.0929 1028,120.3501 C1063.1202,136.7707 1092.5602,168.4939 1113.7165,197.1188 " fill="none" id="63_05-to-63_5-1" style="stroke:#181818;stroke-width:1.0;" /><polygon fill="#181818" points="1116.7775,201.3175,1114.7077,191.6886,1113.8319,197.2772,1108.2433,196.4014,1116.7775,201.3175" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="34" x="337" y="71.417">NULL</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="4" x="352" y="86.5498">&#160;</text></g><!--link 63_05 to 63_5--><g id="link_63_05_63_5"><path codeLine="75" d="M259,296.8501 C355.8206,296.8501 252.0741,129.1171 343,95.8501 C414.523,69.682 959.0088,88.0929 1028,120.3501 C1063.1202,136.7707 1092.5602,168.4939 1113.7165,197.1188 " fill="none" id="63_05-to-63_5-2" style="stroke:#181818;stroke-width:1.0;" /><polygon fill="#181818" points="1116.7775,201.3175,1114.7077,191.6886,1113.8319,197.2772,1108.2433,196.4014,1116.7775,201.3175" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="61" x="323.5" y="71.417">Not NULL</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="4" x="352" y="86.5498">&#160;</text></g><!--link 60 to 64--><g id="link_60_64"><path codeLine="65" d="M1572,265.8501 C1647.8051,265.8501 1601.9158,167.8419 1661,120.3501 C1687.0182,99.4367 1699.0782,101.3706 1732,95.8501 C1784.4876,87.0488 1822.3986,86.8658 1886,120.3501 C1929.9875,143.5082 1968.501,186.1599 1992.8132,217.4447 " fill="none" id="60-to-64" style="stroke:#181818;stroke-width:1.0;" /><polygon fill="#181818" points="1996.0012,221.5871,1993.6819,212.0152,1992.9517,217.6247,1987.3422,216.8944,1996.0012,221.5871" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="16" x="1733" y="78.917">64</text></g><!--link 64 to 64_21--><g id="link_64_64_21"><path codeLine="66" d="M2129,255.8501 C2192.1819,255.8501 2127.6022,165.3033 2172,120.3501 C2196.3447,95.7009 2211.7972,101.3649 2246,95.8501 C2287.4536,89.1663 2354.9049,119.723 2356,120.3501 C2404.2026,147.9541 2447.5113,196.7542 2471.9958,227.6412 " fill="none" id="64-to-64_21" style="stroke:#181818;stroke-width:1.0;" /><polygon fill="#181818" points="2475.1786,231.6897,2472.7607,222.1422,2472.0883,227.759,2466.4716,227.0867,2475.1786,231.6897" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="16" x="2247" y="78.917">13</text></g><!--link 64 to 95_3--><g id="link_64_95_3"><path codeLine="67" d="M2129,275.8501 C2144.428,275.8501 2140.5725,293.3845 2155,298.8501 C2162.4812,301.6842 2165.1941,300.6015 2173,298.8501 C2180.7656,297.1077 2188.6485,294.6242 2196.3612,291.7184 " fill="none" id="64-to-95_3" style="stroke:#181818;stroke-width:1.0;" /><polygon fill="#181818" points="2201.1388,289.8574,2191.3007,289.3969,2196.4798,291.6722,2194.2045,296.8513,2201.1388,289.8574" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="16" x="2156" y="294.917">25</text></g><!--link 2 to 63--><g id="link_2_63"><path codeLine="68" d="M3172,265.8501 C3190.4002,265.8501 3180.5225,290.6611 3197,298.8501 C3204.164,302.4105 3207.2321,300.7633 3215,298.8501 C3228.9012,295.4264 3243.0547,289.1804 3255.6025,282.4903 " fill="none" id="2-to-63" style="stroke:#181818;stroke-width:1.0;" /><polygon fill="#181818" points="3260.1493,280.0098,3250.3329,280.8084,3255.76,282.4043,3254.1641,287.8314,3260.1493,280.0098" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="16" x="3198" y="294.917">63</text></g><!--link 63_5 to 60--><g id="link_63_5_60"><path codeLine="70" d="M1246,296.8501 C1259.621,296.8501 1258.4635,309.903 1271.5,313.8501 C1298.2986,321.9641 1307.1018,319.624 1334.5,313.8501 C1347.5471,311.1006 1360.8771,306.9717 1373.8033,302.1592 " fill="none" id="63_5-to-60" style="stroke:#181818;stroke-width:1.0;" /><polygon fill="#181818" points="1378.5461,300.3565,1368.7121,299.8153,1373.8724,302.1331,1371.5546,307.2933,1378.5461,300.3565" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="34" x="1286" y="294.917">NULL</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="4" x="1301" y="310.0498">&#160;</text></g><!--link 63_5 to 60--><g id="link_63_5_60"><path codeLine="76" d="M1246,296.8501 C1275.7952,296.8501 1246.7469,342.2659 1271.5,358.8501 C1294.7617,374.4351 1308.0311,367.9823 1334.5,358.8501 C1366.7668,347.7175 1397.161,325.0482 1420.5835,303.8042 " fill="none" id="63_5-to-60-1" style="stroke:#181818;stroke-width:1.0;" /><polygon fill="#181818" points="1424.282,300.4089,1414.947,303.5486,1420.5987,303.7902,1420.3571,309.4419,1424.282,300.4089" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="61" x="1272.5" y="339.917">Not NULL</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="4" x="1301" y="355.0498">&#160;</text></g><!--link 60 to 60_01--><g id="link_60_60_01"><path codeLine="71" d="M1572,285.8501 C1588.8318,285.8501 1582.1041,307.0476 1597.5,313.8501 C1623.1114,325.1662 1633.2893,320.4516 1660.5,313.8501 C1686.0189,307.6591 1712.2271,294.6098 1732.9207,282.4541 " fill="none" id="60-to-60_01" style="stroke:#181818;stroke-width:1.0;" /><polygon fill="#181818" points="1737.2505,279.8766,1727.471,281.0432,1732.9541,282.4342,1731.5632,287.9174,1737.2505,279.8766" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="34" x="1612" y="294.917">NULL</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="4" x="1627" y="310.0498">&#160;</text></g><!--link 60 to 60_01--><g id="link_60_60_01"><path codeLine="77" d="M1572,285.8501 C1606.7868,285.8501 1569.1771,339.6527 1597.5,359.8501 C1620.2972,376.1071 1634.4261,370.0557 1660.5,359.8501 C1699.2929,344.6662 1732.7276,309.1341 1752.8401,283.8352 " fill="none" id="60-to-60_01-1" style="stroke:#181818;stroke-width:1.0;" /><polygon fill="#181818" points="1755.9524,279.8675,1747.2504,284.4801,1752.8665,283.8015,1753.545,289.4176,1755.9524,279.8675" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="61" x="1598.5" y="340.917">Not NULL</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="4" x="1627" y="356.0498">&#160;</text></g><!--link 60_01 to 95_3--><g id="link_60_01_95_3"><path codeLine="72" d="M1860,265.8501 C1892.8455,265.8501 1871.2617,149.7033 1886,120.3501 C1892.7017,107.0029 1895.2936,101.7826 1909,95.8501 C1937.9997,83.2982 2020.7915,46.4814 2155,120.3501 C2194.831,142.2732 2225.5193,185.2927 2244.0381,217.002 " fill="none" id="60_01-to-95_3" style="stroke:#181818;stroke-width:1.0;" /><polygon fill="#181818" points="2246.6817,221.5945,2245.6585,211.7989,2244.1873,217.2611,2238.7251,215.7899,2246.6817,221.5945" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="28" x="1910" y="78.917">95.3</text></g><!--link 60_01 to 95_3--><g id="link_60_01_95_3"><path codeLine="78" d="M1860,265.8501 C1892.8455,265.8501 1871.2617,149.7033 1886,120.3501 C1892.7017,107.0029 1895.2936,101.7826 1909,95.8501 C1937.9997,83.2982 2020.7915,46.4814 2155,120.3501 C2194.831,142.2732 2225.5193,185.2927 2244.0381,217.002 " fill="none" id="60_01-to-95_3-1" style="stroke:#181818;stroke-width:1.0;" /><polygon fill="#181818" points="2246.6817,221.5945,2245.6585,211.7989,2244.1873,217.2611,2238.7251,215.7899,2246.6817,221.5945" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="61" x="1893.5" y="71.417">Not NULL</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="4" x="1922" y="86.5498">&#160;</text></g><!--link 63_05 to 63_37--><g id="link_63_05_63_37"><path codeLine="73" d="M259,357.8501 C367.349,357.8501 232.8288,192.1188 314,120.3501 C355.9853,83.2282 515.6267,69.3345 565,95.8501 C616.5523,123.5359 647.2579,188.5317 661.4582,226.6196 " fill="none" id="63_05-to-63_37" style="stroke:#181818;stroke-width:1.0;" /><polygon fill="#181818" points="663.2715,231.5813,663.9392,221.7551,661.5552,226.8851,656.4253,224.5011,663.2715,231.5813" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="16" x="548" y="78.917">20</text></g><!--link 63_37 to 61_2--><g id="link_63_37_61_2"><path codeLine="74" d="M759,265.8501 C777.672,265.8501 768.2011,290.6991 785,298.8501 C793.7969,303.1185 797.3915,300.6614 807,298.8501 C825.5101,295.3608 844.9002,288.8387 862.1552,281.9097 " fill="none" id="63_37-to-61_2" style="stroke:#181818;stroke-width:1.0;" /><polygon fill="#181818" points="866.9629,279.9468,857.1186,279.6458,862.3339,281.8369,860.1429,287.0522,866.9629,279.9468" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="20" x="786" y="294.917">.01</text></g><!--link 63_05 to 62--><g id="link_63_05_62"><path codeLine="79" d="M259,235.8501 C283.4485,235.8501 289.6426,234.7419 314,236.8501 C318.2212,237.2155 322.5178,237.6377 326.853,238.1058 " fill="none" id="63_05-to-62" style="stroke:#181818;stroke-width:1.0;" /><polygon fill="#181818" points="331.9577,238.6757,323.4572,233.7016,326.9886,238.1208,322.5694,241.6522,331.9577,238.6757" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="28" x="285" y="231.917">.055</text></g></g></svg>
+
+<h3 id="raw-mappings">Raw mappings</h3>
+
+<table border="1" cellspacing="0" cellpadding="0" class="table-ta1"><tr class="row-ro1">
+<th class="cell-ce1">key</th>
+<th class="cell-ce1">status</th>
+<th class="cell-ce1">direction</th>
+<th class="cell-ce1">source</th>
+<th class="cell-ce1">mapApproach</th>
+<th class="cell-ce1">mapCase</th>
+<th class="cell-ce1">FHIR Path</th>
+<th class="cell-ce1">subPath</th>
+<th class="cell-ce1">mapValue</th>
+<th class="cell-ce1">mapParameter</th>
+<th class="cell-ce1">mapComment</th>
+<th class="cell-ce1">FHIR URL | Ver</th>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1490</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">MICROBIOLOGY - MYCOLOGY RPT STATUS (63.05-19)</td>
+<td class="cell-ce1">terminologyMaps</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Observation.status</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">VF_LabObservationStatus</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab | 5.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1450</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">MICROBIOLOGY - DATE/TIME SPECIMEN TAKEN (63.05-.01)</td>
+<td class="cell-ce1">source value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Observation.effectiveDateTime</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab | 5.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1454</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">MICROBIOLOGY - COMMENT ON SPECIMEN (63.05-.99)</td>
+<td class="cell-ce1">source value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Observation.note</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab | 5.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1464</td>
+<td class="cell-ce1">in process</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">MICROBIOLOGY - ACCESSIONING INSTITUTION (63.05-.112)</td>
+<td class="cell-ce1">reference</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Observation.performer[va-at]</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">/Organization</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab | 5.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1679</td>
+<td class="cell-ce1">in process</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">MICROBIOLOGY - VERIFY PERSON (63.05-.04)</td>
+<td class="cell-ce1">reference</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Observation.performer[va-by]</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">/Practitioner</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab | 5.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1659</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">MICROBIOLOGY - MICROBIOLOGY ACCESSION (63.05-.06)</td>
+<td class="cell-ce1">reference</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Observation.specimen</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Specimen</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab | 5.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1476</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">MICROBIOLOGY - IEN (63.05-.001)</td>
+<td class="cell-ce1">source value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Observation.identifier</td>
+<td class="cell-ce1">.value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">.system = http://va.gov/identifiers/$Sta3n/63.05</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab | 5.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1476-1</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">fixed value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Observation.identifier</td>
+<td class="cell-ce1">.system</td>
+<td class="cell-ce1">http://va.gov/identifiers/$Sta3n/63.05</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">from mapParameter 1</td>
+<td class="cell-ce1"></td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1480</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">MICROBIOLOGY - ORDERED TEST &gt; ORDERED TEST - LAB TEST ORDERED &gt; LABORATORY TEST - SITE/SPECIMEN &gt; SITE/SPECIMEN - LOINC CODE &gt; LAB LOINC (63.05-.35 &gt; 63.5-13 &gt; 60-100 &gt; 60.01-95.3 &gt; 95.3-)</td>
+<td class="cell-ce1">source value</td>
+<td class="cell-ce1">Not NULL</td>
+<td class="cell-ce1">Observation.code.coding</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">.system = "http://loinc.org"
+.code = {CODE (.01)}
+.display = {COMPONENT (1)}</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab | 5.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1480-1</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">fixed value</td>
+<td class="cell-ce1">Not NULL</td>
+<td class="cell-ce1">Observation.code.coding</td>
+<td class="cell-ce1">.system</td>
+<td class="cell-ce1">http://loinc.org</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">from mapParameter 1</td>
+<td class="cell-ce1"></td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1480-2</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">MICROBIOLOGY - ORDERED TEST &gt; ORDERED TEST - LAB TEST ORDERED &gt; LABORATORY TEST - SITE/SPECIMEN &gt; SITE/SPECIMEN - LOINC CODE &gt; LAB LOINC - CODE (63.05-.35 &gt; 63.5-13 &gt; 60-100 &gt; 60.01-95.3 &gt; 95.3-.01)</td>
+<td class="cell-ce1">source value</td>
+<td class="cell-ce1">Not NULL</td>
+<td class="cell-ce1">Observation.code.coding</td>
+<td class="cell-ce1">.code</td>
+<td class="cell-ce1">{CODE (.01)}</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">from mapParameter 2</td>
+<td class="cell-ce1"></td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1480-3</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">MICROBIOLOGY - ORDERED TEST &gt; ORDERED TEST - LAB TEST ORDERED &gt; LABORATORY TEST - SITE/SPECIMEN &gt; SITE/SPECIMEN - LOINC CODE &gt; LAB LOINC - COMPONENT (63.05-.35 &gt; 63.5-13 &gt; 60-100 &gt; 60.01-95.3 &gt; 95.3-1)</td>
+<td class="cell-ce1">source value</td>
+<td class="cell-ce1">Not NULL</td>
+<td class="cell-ce1">Observation.code.coding</td>
+<td class="cell-ce1">.display</td>
+<td class="cell-ce1">{COMPONENT (1)}</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">from mapParameter 3</td>
+<td class="cell-ce1"></td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1484</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">MICROBIOLOGY - DATE REPORT COMPLETED (63.05-.03)</td>
+<td class="cell-ce1">source value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Observation.issued</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab | 5.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">843</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">fixed value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Observation.category</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://terminology.hl7.org/CodeSystem/observation-category#laboratory</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab | 5.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">2031</td>
+<td class="cell-ce1">in process</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">target not supported</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Observation.dataAbsentReason</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">because of must-support</td>
+<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab | 5.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">844</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">PATIENT - LABORATORY REFERENCE &gt; LAB DATA - LRDFN (2-63 &gt; 63-.01)</td>
+<td class="cell-ce1">reference</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Observation.subject</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">/Patient</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Pointer from PATIENT (2)</td>
+<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab | 5.0.1</td>
+</tr>
+</table>
+
+</div>
+
+
+
+
+  <a name="vista"> </a><h3>Mappings for Veterans Health Information Systems Technology and Architecture (VistA) ()</h3><table class="grid">
+ <tr><td colspan="3"><b>LabObservationMicrobiologyMycologyObservation</b></td></tr>
+ <tr><td>Observation</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;system</td><td>1476-1: fixed value = http://va.gov/identifiers/$Sta3n/63.05</td><td><p>from mapParameter 1</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>1476: source value from MICROBIOLOGY - IEN (63.05-.001)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>1490: terminologyMaps using VF_LabObservationStatus on MICROBIOLOGY - MYCOLOGY RPT STATUS (63.05-19)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;category</td><td>843: fixed value = http://terminology.hl7.org/CodeSystem/observation-category#laboratory</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;code</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>1480: source value from MICROBIOLOGY - ORDERED TEST &gt; ORDERED TEST - LAB TEST ORDERED &gt; LABORATORY TEST - SITE/SPECIMEN &gt; SITE/SPECIMEN - LOINC CODE &gt; LAB LOINC (63.05-.35 &gt; 63.5-13 &gt; 60-100 &gt; 60.01-95.3 &gt; 95.3-) case Not NULL</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;system</td><td>1480-1: fixed value = http://loinc.org case Not NULL</td><td><p>from mapParameter 1</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>1480-2: source value from MICROBIOLOGY - ORDERED TEST &gt; ORDERED TEST - LAB TEST ORDERED &gt; LABORATORY TEST - SITE/SPECIMEN &gt; SITE/SPECIMEN - LOINC CODE &gt; LAB LOINC - CODE (63.05-.35 &gt; 63.5-13 &gt; 60-100 &gt; 60.01-95.3 &gt; 95.3-.01) case Not NULL</td><td><p>from mapParameter 2</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display</td><td>1480-3: source value from MICROBIOLOGY - ORDERED TEST &gt; ORDERED TEST - LAB TEST ORDERED &gt; LABORATORY TEST - SITE/SPECIMEN &gt; SITE/SPECIMEN - LOINC CODE &gt; LAB LOINC - COMPONENT (63.05-.35 &gt; 63.5-13 &gt; 60-100 &gt; 60.01-95.3 &gt; 95.3-1) case Not NULL</td><td><p>from mapParameter 3</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>844: reference from PATIENT - LABORATORY REFERENCE &gt; LAB DATA - LRDFN (2-63 &gt; 63-.01)</td><td><p>Pointer from PATIENT (2)</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;effective[x] (effectiveDateTime)</td><td>1450: source value from MICROBIOLOGY - DATE/TIME SPECIMEN TAKEN (63.05-.01)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;issued</td><td>1484: source value from MICROBIOLOGY - DATE REPORT COMPLETED (63.05-.03)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;performer (va-at)</td><td>1464: reference from MICROBIOLOGY - ACCESSIONING INSTITUTION (63.05-.112)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;performer (va-by)</td><td>1679: reference from MICROBIOLOGY - VERIFY PERSON (63.05-.04)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;dataAbsentReason</td><td>2031: target not supported</td><td><p>because of must-support</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;note</td><td>1454: source value from MICROBIOLOGY - COMMENT ON SPECIMEN (63.05-.99)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;specimen</td><td>1659: reference from MICROBIOLOGY - MICROBIOLOGY ACCESSION (63.05-.06)</td><td></td> </tr>
+</table>
+<a name="cdw"> </a><h3>Mappings for Clinical Data Warehouse (CDW) ()</h3><table class="grid">
+ <tr><td colspan="3"><b>LabObservationMicrobiologyMycologyObservation</b></td></tr>
+ <tr><td>Observation</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>Micro.Microbiology.MycologyReportStatus</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>Micro.AntibioticSensitivity.LRDFN,Micro.AntibioticSensitivityComment.LRDFN,Micro.BacteriologyReports.LRDFN,Micro.MicroAntibioticLevel.LRDFN,Micro.MicroAudit.LRDFN,Micro.Microbiology.LRDFN,Micro.MicroOrderedTest.LRDFN,Micro.MicroSterilityResults.LRDFN,Micro.MycobacteriologyReports.LRDFN,Micro.Mycology.LRDFN,Micro.MycologyReports.LRDFN,Micro.Parasitology.LRDFN,Micro.ParasitologyReports.LRDFN,Micro.ParasitologyStage.LRDFN,Micro.Virology.LRDFN,Micro.VirologyReports.LRDFN,Pathology.Autopsy.LRDFN,Pathology.CytoOrganTissueFunction.StaffIEN,SStaff.SMicroOrderedTest.LRDFN</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;effective[x] (effectiveDateTime)</td><td>Micro.AntibioticSensitivity.SpecimenTakenDateTime,Micro.AntibioticSensitivityComment.SpecimenTakenDateTime,Micro.BacteriologyReports.SpecimenTakenDateTime,Micro.MicroAntibioticLevel.SpecimenTakenDateTime,Micro.MicroAudit.SpecimenTakenDateTime,Micro.Microbiology.SpecimenTakenDateTime,Micro.MicroOrderedTest.SpecimenTakenDateTime,Micro.MicroSterilityResults.SpecimenTakenDateTime,Micro.MycobacteriologyReports.SpecimenTakenDateTime,Micro.Mycology.SpecimenTakenDateTime,Micro.MycologyReports.SpecimenTakenDateTime,Micro.Parasitology.SpecimenTakenDateTime,Micro.ParasitologyReports.SpecimenTakenDateTime,Micro.ParasitologyStage.SpecimenTakenDateTime,Micro.Virology.SpecimenTakenDateTime,Micro.VirologyReports.SpecimenTakenDateTime,SStaff.SMicroOrderedTest.SpecimenTakenDateTime</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;issued</td><td>Micro.Microbiology.ReportCompletedDateTime</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;performer (va-at)</td><td>Micro.Microbiology.AccessioningInstitutionIEN</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;performer (va-by)</td><td>Micro.Microbiology.VerifyingStaffIEN</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;note</td><td>Micro.Microbiology.SpecimenComment</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;specimen</td><td>Micro.Microbiology.MicrobiologyAccession</td> </tr>
+</table>
+<a name="sda"> </a><h3>Mappings for Summary Document Architecure (SDA) ()</h3><table class="grid">
+ <tr><td colspan="3"><b>LabObservationMicrobiologyMycologyObservation</b></td></tr>
+ <tr><td>Observation</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>Documents.DocumentCompletionStatus,LabOrder.Result.ResultStatus</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>Patient.Extension[PatientExtension].VeteranLrdfn</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;issued</td><td>Documents.ToTime,LabOrder.Result.ResultTime</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;performer (va-at)</td><td>Documents.EnteredAt,LabOrder.Result.EnteredAt</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;performer (va-by)</td><td>Documents.Clinician,Documents.Extension[DocumentExtension].CareProviders,LabOrder.Result.VerifiedBy</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;specimen</td><td>LabOrder.Extension[ResultExtension].GroupName</td> </tr>
+</table>
+<a name="workflow"> </a><h3>Mappings for Workflow Pattern (<a href="http://hl7.org/fhir/workflow.html">http://hl7.org/fhir/workflow</a>)</h3><table class="grid">
+ <tr><td colspan="3"><b>LabObservationMicrobiologyMycologyObservation</b></td></tr>
+ <tr><td>Observation</td><td>Event</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>Event.identifier</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;basedOn</td><td>Event.basedOn</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;partOf</td><td>Event.partOf</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>Event.status</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;code</td><td>Event.code</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>Event.subject</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;encounter</td><td>Event.context</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;effective[x]</td><td>Event.occurrence[x]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;effective[x] (effectiveDateTime)</td><td>Event.occurrence[x]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;performer</td><td>Event.performer.actor</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;performer (va-at)</td><td>Event.performer.actor</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;performer (va-by)</td><td>Event.performer.actor</td> </tr>
+</table>
+<a name="sct-concept"> </a><h3>Mappings for SNOMED CT Concept Domain Binding (http://snomed.info/conceptdomain)</h3><table class="grid">
+ <tr><td colspan="3"><b>LabObservationMicrobiologyMycologyObservation</b></td></tr>
+ <tr><td>Observation</td><td>&lt; 363787002 |Observable entity|</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>&lt; 445584004 |Report by finality status|</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;code</td><td>&lt; 363787002 |Observable entity| OR &lt; 386053000 |Evaluation procedure|</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;value[x]</td><td>&lt; 441742003 |Evaluation finding|</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;interpretation</td><td>&lt; 260245000 |Findings values|</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;bodySite</td><td>&lt; 123037004 |Body structure|</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;specimen</td><td>&lt; 123038009 |Specimen|</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;device</td><td>&lt; 49062001 |Device|</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;referenceRange</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td>&lt; 260245000 |Findings values| OR  &lt; 365860008 |General clinical state finding| OR &lt; 250171008 |Clinical history or observation findings| OR  &lt; 415229000 |Racial group| OR &lt; 365400002 |Finding of puberty stage| OR&lt; 443938003 |Procedure carried out on subject|</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;appliesTo</td><td>&lt; 260245000 |Findings values| OR  &lt; 365860008 |General clinical state finding| OR &lt; 250171008 |Clinical history or observation findings| OR  &lt; 415229000 |Racial group| OR &lt; 365400002 |Finding of puberty stage| OR&lt; 443938003 |Procedure carried out on subject|</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;component</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>&lt; 363787002 |Observable entity| OR &lt; 386053000 |Evaluation procedure|</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td>363714003 |Interprets| &lt; 441742003 |Evaluation finding|</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;interpretation</td><td>&lt; 260245000 |Findings values|</td> </tr>
+</table>
+<a name="v2"> </a><h3>Mappings for HL7 v2 Mapping (<a href="http://hl7.org/comparison-v2.html">http://hl7.org/v2</a>)</h3><table class="grid">
+ <tr><td colspan="3"><b>LabObservationMicrobiologyMycologyObservation</b></td></tr>
+ <tr><td>Observation</td><td>OBX</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>OBX.21  For OBX segments from systems without OBX-21 support a combination of ORC/OBR and OBX must be negotiated between trading partners to uniquely identify the OBX segment. Depending on how V2 has been implemented each of these may be an option: 1) OBR-3 + OBX-3 + OBX-4 or 2) OBR-3 + OBR-4 + OBX-3 + OBX-4 or 2) some other way to uniquely ID the OBR/ORC + OBX-3 + OBX-4.</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;use</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td>CX.5</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;system</td><td>CX.4 / EI-2-4</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>CX.1 / EI.1</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;period</td><td>CX.7 + CX.8</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assigner</td><td>CX.4 / (CX.4,CX.9,CX.10)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;basedOn</td><td>ORC</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;partOf</td><td>Varies by domain</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>OBX-11</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;code</td><td>OBX-3</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>C*E.1-8, C*E.10-22</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;system</td><td>C*E.3</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;version</td><td>C*E.7</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>C*E.1</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display</td><td>C*E.2 - but note this is not well followed</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;userSelected</td><td>Sometimes implied by being first</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>C*E.9. But note many systems use C*E.2 for this</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>PID-3</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;focus</td><td>OBX-3</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;encounter</td><td>PV1</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;effective[x]</td><td>OBX-14, and/or OBX-19 after v2.4  (depends on who observation made)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;effective[x] (effectiveDateTime)</td><td>OBX-14, and/or OBX-19 after v2.4  (depends on who observation made)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;issued</td><td>OBR.22 (or MSH.7), or perhaps OBX-19 (depends on who observation made)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;performer</td><td>OBX.15 / (Practitioner)  OBX-16,  PRT-5:PRT-4='RO' /  (Device)  OBX-18 , PRT-10:PRT-4='EQUIP' / (Organization)  OBX-23,  PRT-8:PRT-4='PO'</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;performer (va-at)</td><td>OBX.15 / (Practitioner)  OBX-16,  PRT-5:PRT-4='RO' /  (Device)  OBX-18 , PRT-10:PRT-4='EQUIP' / (Organization)  OBX-23,  PRT-8:PRT-4='PO'</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;performer (va-by)</td><td>OBX.15 / (Practitioner)  OBX-16,  PRT-5:PRT-4='RO' /  (Device)  OBX-18 , PRT-10:PRT-4='EQUIP' / (Organization)  OBX-23,  PRT-8:PRT-4='PO'</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;value[x]</td><td>OBX.2, OBX.5, OBX.6</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;dataAbsentReason</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;interpretation</td><td>OBX-8</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;note</td><td>NTE.3 (partner NTE to OBX, or sometimes another (child?) OBX)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;bodySite</td><td>OBX-20</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;method</td><td>OBX-17</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;specimen</td><td>SPM segment</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;device</td><td>OBX-17 / PRT -10</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;referenceRange</td><td>OBX.7</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;low</td><td>OBX-7</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;high</td><td>OBX-7</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td>OBX-10</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;appliesTo</td><td>OBX-10</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>OBX-7</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;hasMember</td><td>Relationships established by OBX-4 usage</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;derivedFrom</td><td>Relationships established by OBX-4 usage</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;component</td><td>containment by OBX-4?</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>OBX-3</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td>OBX.2, OBX.5, OBX.6</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dataAbsentReason</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;interpretation</td><td>OBX-8</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;referenceRange</td><td>OBX.7</td> </tr>
+</table>
+<a name="rim"> </a><h3>Mappings for RIM Mapping (<a href="http://hl7.org/comparison-v3.html">http://hl7.org/v3</a>)</h3><table class="grid">
+ <tr><td colspan="3"><b>LabObservationMicrobiologyMycologyObservation</b></td></tr>
+ <tr><td>Observation</td><td>Entity. Role, or Act, Observation[classCode=OBS, moodCode=EVN]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;text</td><td>Act.text?</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;contained</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;extension</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;modifierExtension</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>id</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;use</td><td>Role.code or implied by context</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td>Role.code or implied by context</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;system</td><td>II.root or Role.id.root</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>II.extension or II.root if system indicates OID or GUID (Or Role.id.extension or root)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;period</td><td>Role.effectiveTime or implied by context</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assigner</td><td>II.assigningAuthorityName but note that this is an improper use by the definition of the field.  Also Role.scoper</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;basedOn</td><td>.inboundRelationship[typeCode=COMP].source[moodCode=EVN]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;partOf</td><td>.outboundRelationship[typeCode=FLFS].target</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>status  Amended &amp; Final are differentiated by whether it is the subject of a ControlAct event with a type of &quot;revise&quot;</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;category</td><td>.outboundRelationship[typeCode=&quot;COMP].target[classCode=&quot;LIST&quot;, moodCode=&quot;EVN&quot;].code</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;category (Laboratory)</td><td>.outboundRelationship[typeCode=&quot;COMP].target[classCode=&quot;LIST&quot;, moodCode=&quot;EVN&quot;].code</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;code</td><td>code</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>union(., ./translation)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;system</td><td>./codeSystem</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;version</td><td>./codeSystemVersion</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>./code</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display</td><td>CV.displayName</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;userSelected</td><td>CD.codingRationale</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>./originalText[mediaType/code=&quot;text/plain&quot;]/data</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>participation[typeCode=RTGT]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;focus</td><td>participation[typeCode=SBJ]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;encounter</td><td>inboundRelationship[typeCode=COMP].source[classCode=ENC, moodCode=EVN]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;effective[x]</td><td>effectiveTime</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;effective[x] (effectiveDateTime)</td><td>effectiveTime</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;issued</td><td>participation[typeCode=AUT].time</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;performer</td><td>participation[typeCode=PRF]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;performer (va-at)</td><td>participation[typeCode=PRF]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;performer (va-by)</td><td>participation[typeCode=PRF]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;value[x]</td><td>value</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;dataAbsentReason</td><td>value.nullFlavor</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;interpretation</td><td>interpretationCode</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;note</td><td>subjectOf.observationEvent[code=&quot;annotation&quot;].value</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;bodySite</td><td>targetSiteCode</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;method</td><td>methodCode</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;specimen</td><td>participation[typeCode=SPC].specimen</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;device</td><td>participation[typeCode=DEV]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;referenceRange</td><td>outboundRelationship[typeCode=REFV]/target[classCode=OBS, moodCode=EVN]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modifierExtension</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;low</td><td>value:IVL_PQ.low</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;high</td><td>value:IVL_PQ.high</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td>interpretationCode</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;appliesTo</td><td>interpretationCode</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;age</td><td>outboundRelationship[typeCode=PRCN].targetObservationCriterion[code=&quot;age&quot;].value</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>value:ST</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;hasMember</td><td>outBoundRelationship</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;derivedFrom</td><td>.targetObservation</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;component</td><td>outBoundRelationship[typeCode=COMP]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modifierExtension</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>code</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td>value</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dataAbsentReason</td><td>value.nullFlavor</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;interpretation</td><td>interpretationCode</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;referenceRange</td><td>outboundRelationship[typeCode=REFV]/target[classCode=OBS, moodCode=EVN]</td> </tr>
+</table>
+<a name="w5"> </a><h3>Mappings for FiveWs Pattern Mapping (http://hl7.org/fhir/fivews)</h3><table class="grid">
+ <tr><td colspan="3"><b>LabObservationMicrobiologyMycologyObservation</b></td></tr>
+ <tr><td>Observation</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>FiveWs.identifier</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>FiveWs.status</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;category</td><td>FiveWs.class</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;category (Laboratory)</td><td>FiveWs.class</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;code</td><td>FiveWs.what[x]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>FiveWs.subject[x], FiveWs.subject</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;focus</td><td>FiveWs.subject[x], FiveWs.subject</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;encounter</td><td>FiveWs.context</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;effective[x]</td><td>FiveWs.done[x]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;effective[x] (effectiveDateTime)</td><td>FiveWs.done[x]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;issued</td><td>FiveWs.recorded</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;performer</td><td>FiveWs.actor</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;performer (va-at)</td><td>FiveWs.actor</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;performer (va-by)</td><td>FiveWs.actor</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;component</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>FiveWs.what[x]</td> </tr>
+</table>
+<a name="sct-attr"> </a><h3>Mappings for SNOMED CT Attribute Binding (http://snomed.org/attributebinding)</h3><table class="grid">
+ <tr><td colspan="3"><b>LabObservationMicrobiologyMycologyObservation</b></td></tr>
+ <tr><td>Observation</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;code</td><td>116680003 |Is a|</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;value[x]</td><td>363714003 |Interprets|</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;interpretation</td><td>363713009 |Has interpretation|</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;bodySite</td><td>718497002 |Inherent location|</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;specimen</td><td>704319004 |Inherent in|</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;device</td><td>424226004 |Using device|</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;component</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td>363714003 |Interprets|</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;interpretation</td><td>363713009 |Has interpretation|</td> </tr>
+</table>
+
+
+  <!-- insert notes if present -->
+  
+
+
+
+</div>
+
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript" src="assets/js/tabs.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2024 <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.69.448 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Sat, Dec 21, 2024 10:24+0000">2024-12-21</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+| <a style="color: #81BEF7" target="_blank" href="https://leaf.va.gov/NATIONAL/776/va_fhir_community_of_practice/?a=newform">Propose a change</a>
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

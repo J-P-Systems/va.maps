@@ -1,0 +1,2191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Mapset Qa - US Veterans Administration FHIR Map Set Implementation Guide v0.69.448</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+    <link href="assets/css/va-maps.css" rel="stylesheet"/>
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"7"}
+    h3,h4,h5,h6{--heading-prefix:"7"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <!-- Placeholder for child template header declarations -->
+
+<div id="project-nav">
+    <a id="family-logo" no-external="true" href="https://va.gov"><img height="50" alt="Visit the VA website"
+        src="assets/images/va.png" /> </a>
+</div>
+
+<div id="family-nav">
+    <a id="family-logo" no-external="true" href="http://hl7.org/fhir"><img height="50" alt="Visit the FHIR website" src="assets/images/fhir-logo-www.png"/> </a>
+</div>
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">US Veterans Administration FHIR Map Set Implementation Guide</span>
+            <br/>
+            <span style="display:inline-block;">0.69.448 - 250101
+
+
+
+  <img alt="United States of America flag" src="assets/images/usa.svg" height="16" title="United States of America"/>
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li>
+    <a href="toc.html">Table of Content</a>
+  </li>
+  <li>
+    <a href="process.html">Process</a>
+  </li>
+  <li>
+    <a href="profileDesign.html">Profile Design</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Design Guidance
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="guidance.html">General Guidance</a>
+      </li>
+      <li>
+        <a href="guidance-vitals.html">Vitals Guidance</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="mustSupport.html">Must Support</a>
+  </li>
+  <li>
+    <a href="classes.html">Classes</a>
+  </li>
+  <li>
+    <a href="artifacts.html">Artifacts</a>
+  </li>
+  <li>
+    <a href="changes.html">Changes</a>
+  </li>
+  <li>
+    <a href="history.html">History</a>
+  </li>
+  <li>
+    <a href="mapset-qa.html">MapSet QA</a>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Mapset Qa</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">US Veterans Administration FHIR Map Set Implementation Guide - Local Development build (v0.69.448) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <h2>Mapset Qa</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#elementmaps" id="markdown-toc-elementmaps">ElementMaps</a></li>
+  <li><a href="#use-cases" id="markdown-toc-use-cases">Use Cases</a></li>
+  <li><a href="#capabilitystatements" id="markdown-toc-capabilitystatements">CapabilityStatements</a></li>
+  <li><a href="#termmaps" id="markdown-toc-termmaps">TermMaps</a></li>
+  <li><a href="#plantuml-files" id="markdown-toc-plantuml-files">PlantUML files</a></li>
+  <li><a href="#logical-models" id="markdown-toc-logical-models">Logical Models</a></li>
+  <li><a href="#vista-filefield-numnames" id="markdown-toc-vista-filefield-numnames">VistA File/Field Num/Names</a></li>
+  <li><a href="#fhir-path-vs-parent" id="markdown-toc-fhir-path-vs-parent">FHIR Path vs Parent</a></li>
+  <li><a href="#mustsupport" id="markdown-toc-mustsupport">MustSupport</a></li>
+</ul>
+
+</div>
+
+<h3 id="elementmaps">ElementMaps</h3>
+<ol>
+  <li>WARN: 753 issue, inactive or target not supported should have a mapComment</li>
+  <li>WARN: 1602 issue, inactive or target not supported should have a mapComment</li>
+  <li>WARN: 1423 issue, inactive or target not supported should have a mapComment</li>
+  <li>WARN: 1428 issue, inactive or target not supported should have a mapComment</li>
+  <li>WARN: 1683 issue, inactive or target not supported should have a mapComment</li>
+  <li>WARN: 1451 issue, inactive or target not supported should have a mapComment</li>
+  <li>WARN: 1465 issue, inactive or target not supported should have a mapComment</li>
+  <li>WARN: 1680 issue, inactive or target not supported should have a mapComment</li>
+  <li>WARN: 1660 issue, inactive or target not supported should have a mapComment</li>
+  <li>WARN: 1471 issue, inactive or target not supported should have a mapComment</li>
+  <li>WARN: 1472 issue, inactive or target not supported should have a mapComment</li>
+  <li>WARN: 1477 issue, inactive or target not supported should have a mapComment</li>
+  <li>WARN: 1485 issue, inactive or target not supported should have a mapComment</li>
+  <li>WARN: 1493 issue, inactive or target not supported should have a mapComment</li>
+  <li>WARN: 1498 issue, inactive or target not supported should have a mapComment</li>
+  <li>WARN: 1499 issue, inactive or target not supported should have a mapComment</li>
+  <li>WARN: 1449 issue, inactive or target not supported should have a mapComment</li>
+  <li>WARN: 1463 issue, inactive or target not supported should have a mapComment</li>
+  <li>WARN: 1678 issue, inactive or target not supported should have a mapComment</li>
+  <li>WARN: 1658 issue, inactive or target not supported should have a mapComment</li>
+  <li>WARN: 1468 issue, inactive or target not supported should have a mapComment</li>
+  <li>WARN: 1475 issue, inactive or target not supported should have a mapComment</li>
+  <li>WARN: 872 issue, inactive or target not supported should have a mapComment</li>
+  <li>WARN: 873 issue, inactive or target not supported should have a mapComment</li>
+  <li>WARN: 1787 issue, inactive or target not supported should have a mapComment</li>
+  <li>WARN: 1788 issue, inactive or target not supported should have a mapComment</li>
+  <li>WARN: 1789 issue, inactive or target not supported should have a mapComment</li>
+  <li>WARN: 882 issue, inactive or target not supported should have a mapComment</li>
+  <li>WARN: 883 issue, inactive or target not supported should have a mapComment</li>
+  <li>WARN: 884 issue, inactive or target not supported should have a mapComment</li>
+  <li>WARN: 1726 issue, inactive or target not supported should have a mapComment</li>
+  <li>WARN: 332 not supported mapParameter format {NAME (9999999.14-.01)}</li>
+  <li>ERROR: 1051 mapValue expected for transform</li>
+  <li>WARN: 1483 issue, inactive or target not supported should have a mapComment</li>
+  <li>WARN: 1487 issue, inactive or target not supported should have a mapComment</li>
+  <li>WARN: 1495 issue, inactive or target not supported should have a mapComment</li>
+  <li>WARN: 1496 issue, inactive or target not supported should have a mapComment</li>
+  <li>WARN: 1452 issue, inactive or target not supported should have a mapComment</li>
+  <li>WARN: 1466 issue, inactive or target not supported should have a mapComment</li>
+  <li>WARN: 1677 issue, inactive or target not supported should have a mapComment</li>
+  <li>WARN: 1657 issue, inactive or target not supported should have a mapComment</li>
+  <li>WARN: 1473 issue, inactive or target not supported should have a mapComment</li>
+  <li>WARN: 1474 issue, inactive or target not supported should have a mapComment</li>
+  <li>WARN: 1478 issue, inactive or target not supported should have a mapComment</li>
+  <li>WARN: 1456 issue, inactive or target not supported should have a mapComment</li>
+  <li>WARN: 1457 issue, inactive or target not supported should have a mapComment</li>
+  <li>WARN: 1458 issue, inactive or target not supported should have a mapComment</li>
+  <li>WARN: 1459 issue, inactive or target not supported should have a mapComment</li>
+  <li>WARN: 1460 issue, inactive or target not supported should have a mapComment</li>
+  <li>ERROR: 1522 mapValue expected for transform</li>
+  <li>WARN: 1486 issue, inactive or target not supported should have a mapComment</li>
+  <li>WARN: 1494 issue, inactive or target not supported should have a mapComment</li>
+  <li>WARN: 1500 issue, inactive or target not supported should have a mapComment</li>
+  <li>WARN: 1501 issue, inactive or target not supported should have a mapComment</li>
+  <li>WARN: 1437 vistaFileFieldName requires ' - ' and fieldname</li>
+  <li>WARN: 938 issue, inactive or target not supported should have a mapComment</li>
+  <li>WARN: 1233 issue, inactive or target not supported should have a mapComment</li>
+  <li>ERROR: 805 mapValue expected for transform</li>
+  <li>WARN: 403 issue, inactive or target not supported should have a mapComment</li>
+  <li>WARN: 404 issue, inactive or target not supported should have a mapComment</li>
+  <li>WARN: 405 issue, inactive or target not supported should have a mapComment</li>
+  <li>WARN: 406 issue, inactive or target not supported should have a mapComment</li>
+  <li>WARN: 407 issue, inactive or target not supported should have a mapComment</li>
+  <li>WARN: 408 issue, inactive or target not supported should have a mapComment</li>
+  <li>WARN: 409 issue, inactive or target not supported should have a mapComment</li>
+  <li>WARN: 422 vistaFileFieldName requires ' - ' and fieldname</li>
+  <li>WARN: 1298 TODO: handle multiple codings</li>
+  <li>WARN: 1330 TODO: handle multiple codings</li>
+  <li>WARN: 1333 TODO: handle multiple codings</li>
+  <li>WARN: 1334 TODO: handle multiple codings</li>
+  <li>WARN: 1336 TODO: handle multiple codings</li>
+  <li>WARN: 1337 TODO: handle multiple codings</li>
+  <li>WARN: 1338 TODO: handle multiple codings</li>
+  <li>WARN: 1339 TODO: handle multiple codings</li>
+  <li>WARN: 1249 not supported mapParameter format {HEALTH FACTOR}</li>
+  <li>WARN: 821 issue, inactive or target not supported should have a mapComment</li>
+  <li>WARN: 1546 issue, inactive or target not supported should have a mapComment</li>
+  <li>WARN: 1564 issue, inactive or target not supported should have a mapComment</li>
+  <li>WARN: 1574 issue, inactive or target not supported should have a mapComment</li>
+  <li>WARN: 825 issue, inactive or target not supported should have a mapComment</li>
+  <li>WARN: 1552 issue, inactive or target not supported should have a mapComment</li>
+  <li>WARN: 1562 issue, inactive or target not supported should have a mapComment</li>
+  <li>WARN: 1625 issue, inactive or target not supported should have a mapComment</li>
+  <li>WARN: 1626 issue, inactive or target not supported should have a mapComment</li>
+  <li>WARN: 1627 vistaFileFieldName requires ' - ' and fieldname</li>
+  <li>WARN: 1627 issue, inactive or target not supported should have a mapComment</li>
+  <li>WARN: 1630 issue, inactive or target not supported should have a mapComment</li>
+  <li>WARN: 1724 issue, inactive or target not supported should have a mapComment</li>
+  <li>WARN: 1739 issue, inactive or target not supported should have a mapComment</li>
+  <li>WARN: 1740 issue, inactive or target not supported should have a mapComment</li>
+  <li>WARN: 1875 vistaFileFieldName requires ' - ' and fieldname</li>
+  <li>WARN: 1881 vistaFileFieldName requires ' - ' and fieldname</li>
+  <li>WARN: 1882 vistaFileFieldName requires ' - ' and fieldname</li>
+  <li>WARN: 1909 issue, inactive or target not supported should have a mapComment</li>
+  <li>WARN: 1959 issue, inactive or target not supported should have a mapComment</li>
+  <li>WARN: 1960 issue, inactive or target not supported should have a mapComment</li>
+</ol>
+
+<h3 id="use-cases">Use Cases</h3>
+<ol>
+  <li>WARN: use-case Vital Signs: CPM not found or inactive</li>
+  <li>WARN: 557 profile AllergyIntolerance expected only vistaFile 120.8 but got 120.85</li>
+  <li>WARN: 744 profile Appointment expected only vistaFile 2.98 but got 44.003</li>
+  <li>WARN: 1722 profile Appointment expected only vistaFile 2.98 but got 2</li>
+  <li>WARN: 748 profile Appointment expected only vistaFile 2.98 but got 409.3</li>
+  <li>WARN: 749 profile Appointment expected only vistaFile 2.98 but got 409.3</li>
+  <li>WARN: 750 profile Appointment expected only vistaFile 2.98 but got 409.3</li>
+  <li>WARN: 751 profile Appointment expected only vistaFile 2.98 but got 409.3</li>
+  <li>WARN: 752 profile Appointment expected only vistaFile 2.98 but got 409.3</li>
+  <li>WARN: 754 profile Appointment expected only vistaFile 2.98 but got 409.3</li>
+  <li>WARN: 1662 profile LabObservationSurgicalPathologyDiagnosticReport expected only vistaFile 63.08 but got 60</li>
+  <li>WARN: 1420 profile LabObservationSurgicalPathologyDiagnosticReport expected only vistaFile 63.08 but got 60</li>
+  <li>WARN: 1420-1 profile LabObservationSurgicalPathologyDiagnosticReport expected only vistaFile 63.08 but got 60</li>
+  <li>WARN: 1420-3 profile LabObservationSurgicalPathologyDiagnosticReport expected only vistaFile 63.08 but got 60</li>
+  <li>WARN: 1661 profile LabObservationSurgicalPathologyDiagnosticReport expected only vistaFile 63.08 but got 60</li>
+  <li>WARN: 1421 profile LabObservationSurgicalPathologyDiagnosticReport expected only vistaFile 63.08 but got 2</li>
+  <li>WARN: 1662 profile LabObservationChemhemtoxriaserDiagnosticReport expected only vistaFile 63.04 but got 60</li>
+  <li>WARN: 1420 profile LabObservationChemhemtoxriaserDiagnosticReport expected only vistaFile 63.04 but got 60</li>
+  <li>WARN: 1420-1 profile LabObservationChemhemtoxriaserDiagnosticReport expected only vistaFile 63.04 but got 60</li>
+  <li>WARN: 1420-3 profile LabObservationChemhemtoxriaserDiagnosticReport expected only vistaFile 63.04 but got 60</li>
+  <li>WARN: 1661 profile LabObservationChemhemtoxriaserDiagnosticReport expected only vistaFile 63.04 but got 60</li>
+  <li>WARN: 1421 profile LabObservationChemhemtoxriaserDiagnosticReport expected only vistaFile 63.04 but got 2</li>
+  <li>WARN: 844 profile LabObservationChemhemtoxriaserObservation expected only vistaFile 63.04 but got 2</li>
+  <li>WARN: 1662 profile LabObservationElectronMicroscopyDiagnosticReport expected only vistaFile 63.02 but got 60</li>
+  <li>WARN: 1420 profile LabObservationElectronMicroscopyDiagnosticReport expected only vistaFile 63.02 but got 60</li>
+  <li>WARN: 1420-1 profile LabObservationElectronMicroscopyDiagnosticReport expected only vistaFile 63.02 but got 60</li>
+  <li>WARN: 1420-3 profile LabObservationElectronMicroscopyDiagnosticReport expected only vistaFile 63.02 but got 60</li>
+  <li>WARN: 1661 profile LabObservationElectronMicroscopyDiagnosticReport expected only vistaFile 63.02 but got 60</li>
+  <li>WARN: 1421 profile LabObservationElectronMicroscopyDiagnosticReport expected only vistaFile 63.02 but got 2</li>
+  <li>WARN: 1662 profile LabObservationMicrobiologyDiagnosticReport expected only vistaFile 63.05 but got 60</li>
+  <li>WARN: 1420 profile LabObservationMicrobiologyDiagnosticReport expected only vistaFile 63.05 but got 60</li>
+  <li>WARN: 1420-1 profile LabObservationMicrobiologyDiagnosticReport expected only vistaFile 63.05 but got 60</li>
+  <li>WARN: 1420-3 profile LabObservationMicrobiologyDiagnosticReport expected only vistaFile 63.05 but got 60</li>
+  <li>WARN: 1661 profile LabObservationMicrobiologyDiagnosticReport expected only vistaFile 63.05 but got 60</li>
+  <li>WARN: 1421 profile LabObservationMicrobiologyDiagnosticReport expected only vistaFile 63.05 but got 2</li>
+  <li>WARN: 844 profile LabObservationMicrobiologyObservation expected only vistaFile 63.05 but got 2</li>
+  <li>WARN: 1662 profile LabObservationMicrobiologyBacteriologyDiagnosticReport expected only vistaFile 63.05 but got 60</li>
+  <li>WARN: 1420 profile LabObservationMicrobiologyBacteriologyDiagnosticReport expected only vistaFile 63.05 but got 60</li>
+  <li>WARN: 1420-1 profile LabObservationMicrobiologyBacteriologyDiagnosticReport expected only vistaFile 63.05 but got 60</li>
+  <li>WARN: 1420-3 profile LabObservationMicrobiologyBacteriologyDiagnosticReport expected only vistaFile 63.05 but got 60</li>
+  <li>WARN: 1661 profile LabObservationMicrobiologyBacteriologyDiagnosticReport expected only vistaFile 63.05 but got 60</li>
+  <li>WARN: 1421 profile LabObservationMicrobiologyBacteriologyDiagnosticReport expected only vistaFile 63.05 but got 2</li>
+  <li>WARN: 844 profile LabObservationMicrobiologyBacteriologyObservation expected only vistaFile 63.05 but got 2</li>
+  <li>WARN: 1662 profile LabObservationMicrobiologyParasitologyDiagnosticReport expected only vistaFile 63.05 but got 60</li>
+  <li>WARN: 1420 profile LabObservationMicrobiologyParasitologyDiagnosticReport expected only vistaFile 63.05 but got 60</li>
+  <li>WARN: 1420-1 profile LabObservationMicrobiologyParasitologyDiagnosticReport expected only vistaFile 63.05 but got 60</li>
+  <li>WARN: 1420-3 profile LabObservationMicrobiologyParasitologyDiagnosticReport expected only vistaFile 63.05 but got 60</li>
+  <li>WARN: 1661 profile LabObservationMicrobiologyParasitologyDiagnosticReport expected only vistaFile 63.05 but got 60</li>
+  <li>WARN: 1421 profile LabObservationMicrobiologyParasitologyDiagnosticReport expected only vistaFile 63.05 but got 2</li>
+  <li>WARN: 844 profile LabObservationMicrobiologyParasitologyObservation expected only vistaFile 63.05 but got 2</li>
+  <li>WARN: 1662 profile LabObservationMicrobiologyMycologyDiagnosticReport expected only vistaFile 63.05 but got 60</li>
+  <li>WARN: 1420 profile LabObservationMicrobiologyMycologyDiagnosticReport expected only vistaFile 63.05 but got 60</li>
+  <li>WARN: 1420-1 profile LabObservationMicrobiologyMycologyDiagnosticReport expected only vistaFile 63.05 but got 60</li>
+  <li>WARN: 1420-3 profile LabObservationMicrobiologyMycologyDiagnosticReport expected only vistaFile 63.05 but got 60</li>
+  <li>WARN: 1661 profile LabObservationMicrobiologyMycologyDiagnosticReport expected only vistaFile 63.05 but got 60</li>
+  <li>WARN: 1421 profile LabObservationMicrobiologyMycologyDiagnosticReport expected only vistaFile 63.05 but got 2</li>
+  <li>WARN: 844 profile LabObservationMicrobiologyMycologyObservation expected only vistaFile 63.05 but got 2</li>
+  <li>WARN: 1662 profile LabObservationMicrobiologyMycobacteriologyDiagnosticReport expected only vistaFile 63.05 but got 60</li>
+  <li>WARN: 1420 profile LabObservationMicrobiologyMycobacteriologyDiagnosticReport expected only vistaFile 63.05 but got 60</li>
+  <li>WARN: 1420-1 profile LabObservationMicrobiologyMycobacteriologyDiagnosticReport expected only vistaFile 63.05 but got 60</li>
+  <li>WARN: 1420-3 profile LabObservationMicrobiologyMycobacteriologyDiagnosticReport expected only vistaFile 63.05 but got 60</li>
+  <li>WARN: 1661 profile LabObservationMicrobiologyMycobacteriologyDiagnosticReport expected only vistaFile 63.05 but got 60</li>
+  <li>WARN: 1421 profile LabObservationMicrobiologyMycobacteriologyDiagnosticReport expected only vistaFile 63.05 but got 2</li>
+  <li>WARN: 844 profile LabObservationMicrobiologyMycobacteriologyObservation expected only vistaFile 63.05 but got 2</li>
+  <li>WARN: 1662 profile LabObservationMicrobiologyVirologyDiagnosticReport expected only vistaFile 63.05 but got 60</li>
+  <li>WARN: 1420 profile LabObservationMicrobiologyVirologyDiagnosticReport expected only vistaFile 63.05 but got 60</li>
+  <li>WARN: 1420-1 profile LabObservationMicrobiologyVirologyDiagnosticReport expected only vistaFile 63.05 but got 60</li>
+  <li>WARN: 1420-3 profile LabObservationMicrobiologyVirologyDiagnosticReport expected only vistaFile 63.05 but got 60</li>
+  <li>WARN: 1661 profile LabObservationMicrobiologyVirologyDiagnosticReport expected only vistaFile 63.05 but got 60</li>
+  <li>WARN: 1421 profile LabObservationMicrobiologyVirologyDiagnosticReport expected only vistaFile 63.05 but got 2</li>
+  <li>WARN: 844 profile LabObservationMicrobiologyVirologyObservation expected only vistaFile 63.05 but got 2</li>
+  <li>WARN: 1616 profile EncounterInpatientEncounter expected only vistaFile 45 but got 46</li>
+  <li>WARN: 1616-2 profile EncounterInpatientEncounter expected only vistaFile 45 but got 46</li>
+  <li>WARN: 1616-3 profile EncounterInpatientEncounter expected only vistaFile 45 but got 46</li>
+  <li>WARN: 1616-4 profile EncounterInpatientEncounter expected only vistaFile 45 but got 46</li>
+  <li>WARN: 2035 profile EncounterOutpatient expected only vistaFile 9000010 but got 409.68</li>
+  <li>WARN: 2036 profile EncounterOutpatient expected only vistaFile 9000010 but got 409.68</li>
+  <li>WARN: 447 profile EncounterOutpatient expected only vistaFile 9000010 but got 9000010.07</li>
+  <li>WARN: 452 profile EncounterOutpatient expected only vistaFile 9000010 but got 9000010.07</li>
+  <li>WARN: 1614 profile EncounterOutpatient expected only vistaFile 9000010 but got 9000010.06</li>
+  <li>WARN: 1854 profile EncounterOutpatient expected only vistaFile 9000010 but got 9000010.06</li>
+  <li>WARN: 1615 profile EncounterOutpatient expected only vistaFile 9000010 but got 9000010.18</li>
+  <li>WARN: 1615-2 profile EncounterOutpatient expected only vistaFile 9000010 but got 9000010.18</li>
+  <li>WARN: 1615-3 profile EncounterOutpatient expected only vistaFile 9000010 but got 9000010.18</li>
+  <li>WARN: 1615-4 profile EncounterOutpatient expected only vistaFile 9000010 but got 9000010.18</li>
+  <li>WARN: 1399 profile ImplantableDeviceProsthesis expected only vistaFile 130.01 but got 130</li>
+  <li>WARN: 1807 profile ImplantableDeviceProsthesis expected only vistaFile 130.01 but got 130</li>
+  <li>WARN: 1662 profile LabObservationCytopathologyDiagnosticReport expected only vistaFile 63.09 but got 60</li>
+  <li>WARN: 1420 profile LabObservationCytopathologyDiagnosticReport expected only vistaFile 63.09 but got 60</li>
+  <li>WARN: 1420-1 profile LabObservationCytopathologyDiagnosticReport expected only vistaFile 63.09 but got 60</li>
+  <li>WARN: 1420-3 profile LabObservationCytopathologyDiagnosticReport expected only vistaFile 63.09 but got 60</li>
+  <li>WARN: 1661 profile LabObservationCytopathologyDiagnosticReport expected only vistaFile 63.09 but got 60</li>
+  <li>WARN: 1421 profile LabObservationCytopathologyDiagnosticReport expected only vistaFile 63.09 but got 2</li>
+  <li>WARN: 1421 profile LabObservationDiagnosticReport expected only vistaFile 60 but got 2</li>
+  <li>WARN: 422 profile PractitionerRole expected only vistaFile 200 but got 44</li>
+  <li>WARN: 1510 profile ProcedureRadiology expected only vistaFile 70.02 but got 70</li>
+  <li>WARN: 1620 profile ObservationImagingResultRadNuc expected only vistaFile 74 but got 70.02</li>
+  <li>WARN: 2008 profile DebtPortalChargesChargeItem expected only vistaFile 350 but got 360</li>
+  <li>WARN: 2009 profile DebtPortalChargesChargeItem expected only vistaFile 350 but got 360</li>
+  <li>WARN: 2010 profile DebtPortalChargesChargeItem expected only vistaFile 350 but got 52</li>
+  <li>WARN: 2011 profile DebtPortalChargesChargeItem expected only vistaFile 350 but got 52</li>
+  <li>WARN: 2012 profile DebtPortalChargesChargeItem expected only vistaFile 350 but got 52</li>
+</ol>
+
+<h3 id="capabilitystatements">CapabilityStatements</h3>
+<ol>
+  <li>WARN: 746 Appointment references Location, missing in CHAPI API; auto-added</li>
+  <li>WARN: 754 Appointment references Location, missing in CHAPI API; auto-added</li>
+  <li>WARN: 452 EncounterOutpatient references ConditionEncounterDiagnosis, missing in CHAPI API; auto-added</li>
+  <li>WARN: 459 EncounterOutpatient references Location, missing in CHAPI API; auto-added</li>
+  <li>WARN: 1767 ImmunizationImmunization references EncounterOutpatient, missing in MHV API; auto-added</li>
+  <li>WARN: 935 LungCancerScreening references EncounterOutpatient, missing in MHV API; auto-added</li>
+  <li>WARN: 934 LungCancerScreening references Practitioner, missing in LCS API; auto-added</li>
+  <li>WARN: 935 LungCancerScreening references EncounterOutpatient, missing in LCS API; auto-added</li>
+  <li>WARN: 441 EncounterInpatientEncounter references Patient, missing in DP API; auto-added</li>
+  <li>WARN: 442 EncounterInpatientEncounter references Practitioner, missing in DP API; auto-added</li>
+  <li>WARN: 460 EncounterInpatientEncounter references Location, missing in DP API; auto-added</li>
+  <li>WARN: 461 EncounterInpatientEncounter references Location, missing in DP API; auto-added</li>
+  <li>WARN: 1600 EncounterInpatientEncounter references Organization, missing in DP API; auto-added</li>
+  <li>WARN: 440 EncounterOutpatient references Patient, missing in DP API; auto-added</li>
+  <li>WARN: 452 EncounterOutpatient references ConditionEncounterDiagnosis, missing in DP API; auto-added</li>
+  <li>WARN: 459 EncounterOutpatient references Location, missing in DP API; auto-added</li>
+  <li>WARN: 1599 EncounterOutpatient references Organization, missing in DP API; auto-added</li>
+  <li>WARN: 1614 EncounterOutpatient references Practitioner, missing in DP API; auto-added</li>
+  <li>WARN: 806 MedicationRequestOutpatient references Patient, missing in DP API; auto-added</li>
+  <li>WARN: 808 MedicationRequestOutpatient references Practitioner, missing in DP API; auto-added</li>
+  <li>WARN: 820 MedicationDispenseOriginal references Patient, missing in DP API; auto-added</li>
+  <li>WARN: 1711 MedicationDispenseOriginal references Location, missing in DP API; auto-added</li>
+  <li>WARN: 1727 MedicationDispenseOriginal references Practitioner, missing in DP API; auto-added</li>
+  <li>WARN: 1715 MedicationDispenseRefill references Location, missing in DP API; auto-added</li>
+  <li>WARN: 1728 MedicationDispenseRefill references Practitioner, missing in DP API; auto-added</li>
+  <li>WARN: 1563 MedicationDispensePartial references Patient, missing in DP API; auto-added</li>
+  <li>WARN: 1714 MedicationDispensePartial references Location, missing in DP API; auto-added</li>
+  <li>WARN: 1729 MedicationDispensePartial references Practitioner, missing in DP API; auto-added</li>
+  <li>WARN: 2005 DebtPortalAccount references Patient, missing in DP API; auto-added</li>
+  <li>WARN: 1976 DebtPortalBillInvoice references Patient, missing in DP API; auto-added</li>
+  <li>WARN: 2032 DebtPortalPayments references Patient, missing in DP API; auto-added</li>
+  <li>WARN: 808 MedicationRequestOutpatient references Practitioner, missing in AMPL API; auto-added</li>
+  <li>WARN: 1711 MedicationDispenseOriginal references Location, missing in AMPL API; auto-added</li>
+  <li>WARN: 1727 MedicationDispenseOriginal references Practitioner, missing in AMPL API; auto-added</li>
+  <li>WARN: 1715 MedicationDispenseRefill references Location, missing in AMPL API; auto-added</li>
+  <li>WARN: 1728 MedicationDispenseRefill references Practitioner, missing in AMPL API; auto-added</li>
+  <li>WARN: 1714 MedicationDispensePartial references Location, missing in AMPL API; auto-added</li>
+  <li>WARN: 1729 MedicationDispensePartial references Practitioner, missing in AMPL API; auto-added</li>
+  <li>WARN: 933 LungCancerScreening references Patient, missing in PD API; auto-added</li>
+  <li>WARN: 935 LungCancerScreening references EncounterOutpatient, missing in PD API; auto-added</li>
+  <li>WARN: 1411 PractitionerRole references Organization, missing in PD API; auto-added</li>
+</ol>
+
+<h3 id="termmaps">TermMaps</h3>
+<ol>
+  <li>WARN: VF_ICDVersion sourceSystem missing and not used; default to urn:undefined</li>
+  <li>WARN: VF_PharmacyPersonType sourceSystem missing and not used; default to urn:undefined</li>
+  <li>WARN: VF_ProcedureCodeSystem sourceSystem missing and not used; default to urn:undefined</li>
+  <li>WARN: VF_YesNo10 sourceSystem missing and not used; default to urn:undefined</li>
+  <li>ERROR: Vista_NCPDPCoverageRelationship targetSystem missing; manual lookup from FHIR resource!; using urn:undefined</li>
+</ol>
+
+<h3 id="plantuml-files">PlantUML files</h3>
+
+<h3 id="logical-models">Logical Models</h3>
+<ol>
+  <li>ERROR: 1497 Logical Model ORGANISM (63.3) field has more than 1 fieldNum: "ORGANISM (-5+to+160)" and "ORGANISM (-.01)"?</li>
+  <li>WARN: 422 Logical Model HOSPITAL LOCATION (44) no fieldname; skipped</li>
+</ol>
+
+<h3 id="vista-filefield-numnames">VistA File/Field Num/Names</h3>
+<ol>
+  <li>WARN: 749 file-field 409.3-13.4 expected "SD WAIT LIST - APPT STOP CODE" but got ""</li>
+  <li>WARN: 852 unknown file-field 63.04-2+through+862</li>
+  <li>WARN: 857 unknown file-field 63.04-2+through+862</li>
+  <li>WARN: 1522 unknown subfile-field 63.3-5+to+160</li>
+  <li>WARN: 1523 unknown subfile-field 63.3-5+to+160</li>
+  <li>WARN: 1524 unknown subfile-field 63.3-5.1+to+160.1</li>
+  <li>WARN: 449 unknown file-field 45-79.*</li>
+  <li>WARN: 450 unknown file-field 45-45.01+to+45.05</li>
+</ol>
+
+<h3 id="fhir-path-vs-parent">FHIR Path vs Parent</h3>
+<ol>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>ERROR: 1916 FHIR Path not in parent: AdverseEvent http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient</td>
+          <td>5.0.1</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ol>
+
+<h3 id="mustsupport">MustSupport</h3>
+<ol>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Condition: Problem" missing map (or inactive</td>
+          <td>issue?) for MS Condition.extension[assertedDate]</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Condition: Encounter Diagnosis" missing map (or inactive</td>
+          <td>issue?) for MS Condition.extension[assertedDate]</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Surgical Pathology" missing map (or inactive</td>
+          <td>issue?) for MS Observation.status</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Surgical Pathology" missing map (or inactive</td>
+          <td>issue?) for MS Observation.code</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Surgical Pathology" missing map (or inactive</td>
+          <td>issue?) for MS Observation.effectiveDateTime</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Surgical Pathology" missing map (or inactive</td>
+          <td>issue?) for MS Observation.valueQuantity</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Surgical Pathology" missing map (or inactive</td>
+          <td>issue?) for MS Observation.valueCodeableConcept</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Surgical Pathology" missing map (or inactive</td>
+          <td>issue?) for MS Observation.valueString</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Chem, hem, tox, ria, ser" missing map (or inactive</td>
+          <td>issue?) for MS DiagnosticReport.status</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Chem, hem, tox, ria, ser" missing map (or inactive</td>
+          <td>issue?) for MS DiagnosticReport.effectiveDateTime</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Chem, hem, tox, ria, ser" missing map (or inactive</td>
+          <td>issue?) for MS DiagnosticReport.issued</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Chem, hem, tox, ria, ser" missing map (or inactive</td>
+          <td>issue?) for MS DiagnosticReport.performer</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Chem, hem, tox, ria, ser" missing map (or inactive</td>
+          <td>issue?) for MS Observation.valueCodeableConcept</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Chem, hem, tox, ria, ser" missing map (or inactive</td>
+          <td>issue?) for MS Observation.valueString</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Electron Microscopy" missing map (or inactive</td>
+          <td>issue?) for MS Observation.status</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Electron Microscopy" missing map (or inactive</td>
+          <td>issue?) for MS Observation.code</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Electron Microscopy" missing map (or inactive</td>
+          <td>issue?) for MS Observation.effectiveDateTime</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Electron Microscopy" missing map (or inactive</td>
+          <td>issue?) for MS Observation.valueQuantity</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Electron Microscopy" missing map (or inactive</td>
+          <td>issue?) for MS Observation.valueCodeableConcept</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Electron Microscopy" missing map (or inactive</td>
+          <td>issue?) for MS Observation.valueString</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Microbiology Bacteriology" missing map (or inactive</td>
+          <td>issue?) for MS Observation.valueQuantity</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Microbiology Bacteriology" missing map (or inactive</td>
+          <td>issue?) for MS Observation.valueCodeableConcept</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Microbiology Bacteriology" missing map (or inactive</td>
+          <td>issue?) for MS Observation.valueString</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Microbiology Bacteriology" missing map (or inactive</td>
+          <td>issue?) for MS Observation.status</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Microbiology Bacteriology" missing map (or inactive</td>
+          <td>issue?) for MS Observation.category</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Microbiology Bacteriology" missing map (or inactive</td>
+          <td>issue?) for MS Observation.category[Laboratory]</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Microbiology Bacteriology" missing map (or inactive</td>
+          <td>issue?) for MS Observation.subject</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Microbiology Bacteriology" missing map (or inactive</td>
+          <td>issue?) for MS Observation.effectiveDateTime</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Microbiology Bacteriology" missing map (or inactive</td>
+          <td>issue?) for MS Observation.valueQuantity</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Microbiology Bacteriology" missing map (or inactive</td>
+          <td>issue?) for MS Observation.valueCodeableConcept</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Microbiology Bacteriology" missing map (or inactive</td>
+          <td>issue?) for MS Observation.dataAbsentReason</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Microbiology Bacteriology" missing map (or inactive</td>
+          <td>issue?) for MS Observation.status</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Microbiology Bacteriology" missing map (or inactive</td>
+          <td>issue?) for MS Observation.category</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Microbiology Bacteriology" missing map (or inactive</td>
+          <td>issue?) for MS Observation.category[Laboratory]</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Microbiology Bacteriology" missing map (or inactive</td>
+          <td>issue?) for MS Observation.code</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Microbiology Bacteriology" missing map (or inactive</td>
+          <td>issue?) for MS Observation.subject</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Microbiology Bacteriology" missing map (or inactive</td>
+          <td>issue?) for MS Observation.effectiveDateTime</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Microbiology Bacteriology" missing map (or inactive</td>
+          <td>issue?) for MS Observation.valueQuantity</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Microbiology Bacteriology" missing map (or inactive</td>
+          <td>issue?) for MS Observation.valueString</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Microbiology Bacteriology" missing map (or inactive</td>
+          <td>issue?) for MS Observation.dataAbsentReason</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Microbiology Bacteriology" missing map (or inactive</td>
+          <td>issue?) for MS Observation.status</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Microbiology Bacteriology" missing map (or inactive</td>
+          <td>issue?) for MS Observation.category</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Microbiology Bacteriology" missing map (or inactive</td>
+          <td>issue?) for MS Observation.category[Laboratory]</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Microbiology Bacteriology" missing map (or inactive</td>
+          <td>issue?) for MS Observation.code</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Microbiology Bacteriology" missing map (or inactive</td>
+          <td>issue?) for MS Observation.subject</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Microbiology Bacteriology" missing map (or inactive</td>
+          <td>issue?) for MS Observation.effectiveDateTime</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Microbiology Bacteriology" missing map (or inactive</td>
+          <td>issue?) for MS Observation.valueQuantity</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Microbiology Bacteriology" missing map (or inactive</td>
+          <td>issue?) for MS Observation.valueCodeableConcept</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Microbiology Bacteriology" missing map (or inactive</td>
+          <td>issue?) for MS Observation.dataAbsentReason</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Microbiology Bacteriology" missing map (or inactive</td>
+          <td>issue?) for MS Observation.status</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Microbiology Bacteriology" missing map (or inactive</td>
+          <td>issue?) for MS Observation.category</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Microbiology Bacteriology" missing map (or inactive</td>
+          <td>issue?) for MS Observation.category[Laboratory]</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Microbiology Bacteriology" missing map (or inactive</td>
+          <td>issue?) for MS Observation.subject</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Microbiology Bacteriology" missing map (or inactive</td>
+          <td>issue?) for MS Observation.effectiveDateTime</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Microbiology Bacteriology" missing map (or inactive</td>
+          <td>issue?) for MS Observation.valueQuantity</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Microbiology Bacteriology" missing map (or inactive</td>
+          <td>issue?) for MS Observation.valueCodeableConcept</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Microbiology Bacteriology" missing map (or inactive</td>
+          <td>issue?) for MS Observation.dataAbsentReason</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Microbiology Parasitology" missing map (or inactive</td>
+          <td>issue?) for MS Observation.valueQuantity</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Microbiology Parasitology" missing map (or inactive</td>
+          <td>issue?) for MS Observation.valueCodeableConcept</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Microbiology Mycology" missing map (or inactive</td>
+          <td>issue?) for MS Observation.status</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Microbiology Mycology" missing map (or inactive</td>
+          <td>issue?) for MS Observation.category</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Microbiology Mycology" missing map (or inactive</td>
+          <td>issue?) for MS Observation.category[Laboratory]</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Microbiology Mycology" missing map (or inactive</td>
+          <td>issue?) for MS Observation.subject</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Microbiology Mycology" missing map (or inactive</td>
+          <td>issue?) for MS Observation.effectiveDateTime</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Microbiology Mycology" missing map (or inactive</td>
+          <td>issue?) for MS Observation.valueQuantity</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Microbiology Mycology" missing map (or inactive</td>
+          <td>issue?) for MS Observation.valueCodeableConcept</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Microbiology Mycology" missing map (or inactive</td>
+          <td>issue?) for MS Observation.dataAbsentReason</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Microbiology Mycology" missing map (or inactive</td>
+          <td>issue?) for MS Observation.valueQuantity</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Microbiology Mycology" missing map (or inactive</td>
+          <td>issue?) for MS Observation.valueCodeableConcept</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Microbiology Mycology" missing map (or inactive</td>
+          <td>issue?) for MS Observation.valueString</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Microbiology Mycobacteriology" missing map (or inactive</td>
+          <td>issue?) for MS Observation.status</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Microbiology Mycobacteriology" missing map (or inactive</td>
+          <td>issue?) for MS Observation.category</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Microbiology Mycobacteriology" missing map (or inactive</td>
+          <td>issue?) for MS Observation.category[Laboratory]</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Microbiology Mycobacteriology" missing map (or inactive</td>
+          <td>issue?) for MS Observation.subject</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Microbiology Mycobacteriology" missing map (or inactive</td>
+          <td>issue?) for MS Observation.effectiveDateTime</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Microbiology Mycobacteriology" missing map (or inactive</td>
+          <td>issue?) for MS Observation.valueQuantity</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Microbiology Mycobacteriology" missing map (or inactive</td>
+          <td>issue?) for MS Observation.valueCodeableConcept</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Microbiology Mycobacteriology" missing map (or inactive</td>
+          <td>issue?) for MS Observation.dataAbsentReason</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Microbiology Mycobacteriology" missing map (or inactive</td>
+          <td>issue?) for MS Observation.valueQuantity</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Microbiology Mycobacteriology" missing map (or inactive</td>
+          <td>issue?) for MS Observation.valueCodeableConcept</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Microbiology Mycobacteriology" missing map (or inactive</td>
+          <td>issue?) for MS Observation.valueString</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Microbiology Mycobacteriology" missing map (or inactive</td>
+          <td>issue?) for MS Observation.status</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Microbiology Mycobacteriology" missing map (or inactive</td>
+          <td>issue?) for MS Observation.category</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Microbiology Mycobacteriology" missing map (or inactive</td>
+          <td>issue?) for MS Observation.category[Laboratory]</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Microbiology Mycobacteriology" missing map (or inactive</td>
+          <td>issue?) for MS Observation.subject</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Microbiology Mycobacteriology" missing map (or inactive</td>
+          <td>issue?) for MS Observation.effectiveDateTime</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Microbiology Mycobacteriology" missing map (or inactive</td>
+          <td>issue?) for MS Observation.valueQuantity</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Microbiology Mycobacteriology" missing map (or inactive</td>
+          <td>issue?) for MS Observation.valueCodeableConcept</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Microbiology Mycobacteriology" missing map (or inactive</td>
+          <td>issue?) for MS Observation.dataAbsentReason</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Microbiology Virology" missing map (or inactive</td>
+          <td>issue?) for MS Observation.status</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Microbiology Virology" missing map (or inactive</td>
+          <td>issue?) for MS Observation.category</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Microbiology Virology" missing map (or inactive</td>
+          <td>issue?) for MS Observation.category[Laboratory]</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Microbiology Virology" missing map (or inactive</td>
+          <td>issue?) for MS Observation.subject</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Microbiology Virology" missing map (or inactive</td>
+          <td>issue?) for MS Observation.effectiveDateTime</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Microbiology Virology" missing map (or inactive</td>
+          <td>issue?) for MS Observation.valueQuantity</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Microbiology Virology" missing map (or inactive</td>
+          <td>issue?) for MS Observation.valueCodeableConcept</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Microbiology Virology" missing map (or inactive</td>
+          <td>issue?) for MS Observation.dataAbsentReason</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Microbiology Virology" missing map (or inactive</td>
+          <td>issue?) for MS Observation.valueQuantity</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Microbiology Virology" missing map (or inactive</td>
+          <td>issue?) for MS Observation.valueCodeableConcept</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Microbiology Virology" missing map (or inactive</td>
+          <td>issue?) for MS Observation.valueString</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Document Reference" missing map (or inactive</td>
+          <td>issue?) for MS DocumentReference.status</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Document Reference" missing map (or inactive</td>
+          <td>issue?) for MS DocumentReference.content.attachment.data</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Encounter: Inpatient" missing map (or inactive</td>
+          <td>issue?) for MS Encounter.reasonReference</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Encounter: Inpatient" missing map (or inactive</td>
+          <td>issue?) for MS Condition.extension[assertedDate]</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Encounter: Inpatient" missing map (or inactive</td>
+          <td>issue?) for MS Condition.clinicalStatus</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Encounter: Inpatient" missing map (or inactive</td>
+          <td>issue?) for MS Condition.verificationStatus</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Encounter: Inpatient" missing map (or inactive</td>
+          <td>issue?) for MS Condition.subject</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Encounter: Inpatient" missing map (or inactive</td>
+          <td>issue?) for MS Condition.onsetDateTime</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Encounter: Inpatient" missing map (or inactive</td>
+          <td>issue?) for MS Condition.abatementDateTime</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Encounter: Inpatient" missing map (or inactive</td>
+          <td>issue?) for MS Condition.recordedDate</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Encounter: Outpatient" missing map (or inactive</td>
+          <td>issue?) for MS Encounter.reasonReference</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Cytopathology" missing map (or inactive</td>
+          <td>issue?) for MS Observation.status</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Cytopathology" missing map (or inactive</td>
+          <td>issue?) for MS Observation.code</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Cytopathology" missing map (or inactive</td>
+          <td>issue?) for MS Observation.effectiveDateTime</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Cytopathology" missing map (or inactive</td>
+          <td>issue?) for MS Observation.valueQuantity</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Cytopathology" missing map (or inactive</td>
+          <td>issue?) for MS Observation.valueCodeableConcept</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Cytopathology" missing map (or inactive</td>
+          <td>issue?) for MS Observation.valueString</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lung Cancer Screening" missing map (or inactive</td>
+          <td>issue?) for MS DiagnosticReport.status</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lung Cancer Screening" missing map (or inactive</td>
+          <td>issue?) for MS DiagnosticReport.category</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lung Cancer Screening" missing map (or inactive</td>
+          <td>issue?) for MS DiagnosticReport.category[us-core]</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lung Cancer Screening" missing map (or inactive</td>
+          <td>issue?) for MS DiagnosticReport.code</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lung Cancer Screening" missing map (or inactive</td>
+          <td>issue?) for MS DiagnosticReport.effectiveDateTime</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lung Cancer Screening" missing map (or inactive</td>
+          <td>issue?) for MS DiagnosticReport.issued</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lung Cancer Screening" missing map (or inactive</td>
+          <td>issue?) for MS DiagnosticReport.result</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lung Cancer Screening" missing map (or inactive</td>
+          <td>issue?) for MS DiagnosticReport.media</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lung Cancer Screening" missing map (or inactive</td>
+          <td>issue?) for MS DiagnosticReport.media.link</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "MedicationRequest: Unsigned" missing map (or inactive</td>
+          <td>issue?) for MS MedicationRequest.status</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "MedicationRequest: Unsigned" missing map (or inactive</td>
+          <td>issue?) for MS MedicationRequest.intent</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "MedicationRequest: Unsigned" missing map (or inactive</td>
+          <td>issue?) for MS MedicationRequest.category</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "MedicationRequest: Unsigned" missing map (or inactive</td>
+          <td>issue?) for MS MedicationRequest.category[us-core]</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "MedicationRequest: Unsigned" missing map (or inactive</td>
+          <td>issue?) for MS MedicationRequest.reportedBoolean</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "MedicationRequest: Unsigned" missing map (or inactive</td>
+          <td>issue?) for MS MedicationRequest.reportedReference</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "MedicationRequest: Unsigned" missing map (or inactive</td>
+          <td>issue?) for MS MedicationRequest.medicationReference</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "MedicationRequest: Unsigned" missing map (or inactive</td>
+          <td>issue?) for MS MedicationRequest.encounter</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "MedicationRequest: Unsigned" missing map (or inactive</td>
+          <td>issue?) for MS MedicationRequest.dosageInstruction.text</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "MedicationRequest: NonVA" missing map (or inactive</td>
+          <td>issue?) for MS MedicationRequest.category</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "MedicationRequest: NonVA" missing map (or inactive</td>
+          <td>issue?) for MS MedicationRequest.category[us-core]</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "MedicationRequest: NonVA" missing map (or inactive</td>
+          <td>issue?) for MS MedicationRequest.reportedReference</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "MedicationRequest: NonVA" missing map (or inactive</td>
+          <td>issue?) for MS MedicationRequest.medicationReference</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "MedicationRequest: NonVA" missing map (or inactive</td>
+          <td>issue?) for MS MedicationRequest.subject</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "MedicationRequest: Outpatient" missing map (or inactive</td>
+          <td>issue?) for MS MedicationRequest.reportedBoolean</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "MedicationRequest: Outpatient" missing map (or inactive</td>
+          <td>issue?) for MS MedicationRequest.reportedReference</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "MedicationRequest: Outpatient" missing map (or inactive</td>
+          <td>issue?) for MS MedicationRequest.medicationReference</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "MedicationRequest: Outpatient" missing map (or inactive</td>
+          <td>issue?) for MS MedicationRequest.encounter</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Practitioner" missing map (or inactive</td>
+          <td>issue?) for MS Practitioner.address</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Practitioner" missing map (or inactive</td>
+          <td>issue?) for MS Practitioner.address.line</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Practitioner" missing map (or inactive</td>
+          <td>issue?) for MS Practitioner.address.city</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Practitioner" missing map (or inactive</td>
+          <td>issue?) for MS Practitioner.address.state</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Practitioner" missing map (or inactive</td>
+          <td>issue?) for MS Practitioner.address.postalCode</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Practitioner" missing map (or inactive</td>
+          <td>issue?) for MS Practitioner.address.country</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Procedure: Surgery" missing map (or inactive</td>
+          <td>issue?) for MS Location.managingOrganization</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Vital Signs" missing map (or inactive</td>
+          <td>issue?) for MS Observation.component.valueQuantity</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Observation Imaging Result: Echo" missing map (or inactive</td>
+          <td>issue?) for MS Observation.code</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Observation Imaging Result: EKG" missing map (or inactive</td>
+          <td>issue?) for MS Observation.code</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Observation Imaging Result: Rad/Nuc" missing map (or inactive</td>
+          <td>issue?) for MS Observation.code</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "MedicationRequest: Pending" missing map (or inactive</td>
+          <td>issue?) for MS MedicationRequest.intent</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "MedicationRequest: Pending" missing map (or inactive</td>
+          <td>issue?) for MS MedicationRequest.category</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "MedicationRequest: Pending" missing map (or inactive</td>
+          <td>issue?) for MS MedicationRequest.category[us-core]</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "MedicationRequest: Pending" missing map (or inactive</td>
+          <td>issue?) for MS MedicationRequest.reportedBoolean</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "MedicationRequest: Pending" missing map (or inactive</td>
+          <td>issue?) for MS MedicationRequest.reportedReference</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "MedicationRequest: Pending" missing map (or inactive</td>
+          <td>issue?) for MS MedicationRequest.medicationReference</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "MedicationRequest: Pending" missing map (or inactive</td>
+          <td>issue?) for MS MedicationRequest.subject</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "MedicationRequest: Pending" missing map (or inactive</td>
+          <td>issue?) for MS MedicationRequest.encounter</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "MedicationRequest: Pending" missing map (or inactive</td>
+          <td>issue?) for MS MedicationRequest.dosageInstruction.text</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ol>
+
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2024 <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.69.448 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Sat, Dec 21, 2024 10:24+0000">2024-12-21</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+| <a style="color: #81BEF7" target="_blank" href="https://leaf.va.gov/NATIONAL/776/va_fhir_community_of_practice/?a=newform">Propose a change</a>
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

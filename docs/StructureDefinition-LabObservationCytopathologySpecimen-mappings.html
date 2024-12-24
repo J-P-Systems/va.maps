@@ -1,0 +1,483 @@
+<!-- get modelType -->
+
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Lab Observation: Cytopathology Specimen - Mappings - US Veterans Administration FHIR Map Set Implementation Guide v0.69.448</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+    <link href="assets/css/va-maps.css" rel="stylesheet"/>
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"11.43"}
+    h3,h4,h5,h6{--heading-prefix:"11.43"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <!-- Placeholder for child template header declarations -->
+
+<div id="project-nav">
+    <a id="family-logo" no-external="true" href="https://va.gov"><img height="50" alt="Visit the VA website"
+        src="assets/images/va.png" /> </a>
+</div>
+
+<div id="family-nav">
+    <a id="family-logo" no-external="true" href="http://hl7.org/fhir"><img height="50" alt="Visit the FHIR website" src="assets/images/fhir-logo-www.png"/> </a>
+</div>
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">US Veterans Administration FHIR Map Set Implementation Guide</span>
+            <br/>
+            <span style="display:inline-block;">0.69.448 - 250101
+
+
+
+  <img alt="United States of America flag" src="assets/images/usa.svg" height="16" title="United States of America"/>
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li>
+    <a href="toc.html">Table of Content</a>
+  </li>
+  <li>
+    <a href="process.html">Process</a>
+  </li>
+  <li>
+    <a href="profileDesign.html">Profile Design</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Design Guidance
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="guidance.html">General Guidance</a>
+      </li>
+      <li>
+        <a href="guidance-vitals.html">Vitals Guidance</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="mustSupport.html">Must Support</a>
+  </li>
+  <li>
+    <a href="classes.html">Classes</a>
+  </li>
+  <li>
+    <a href="artifacts.html">Artifacts</a>
+  </li>
+  <li>
+    <a href="changes.html">Changes</a>
+  </li>
+  <li>
+    <a href="history.html">History</a>
+  </li>
+  <li>
+    <a href="mapset-qa.html">MapSet QA</a>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='artifacts.html'><b>Artifacts Summary</b></a></li><li><b>Lab Observation: Cytopathology Specimen</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<div style="counter-reset: section 5" class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">US Veterans Administration FHIR Map Set Implementation Guide - Local Development build (v0.69.448) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  
+
+
+
+
+
+
+
+
+
+
+
+<ul class="nav nav-tabs">
+
+  <li>
+    <a href="StructureDefinition-LabObservationCytopathologySpecimen.html">Content</a>
+  </li>
+
+
+
+  <li>
+    <a href="StructureDefinition-LabObservationCytopathologySpecimen-definitions.html">Detailed Descriptions</a>
+  </li>
+
+
+
+  
+    <li class="active">
+      <a href="#">Mappings</a>
+    </li>
+  
+
+
+
+
+
+
+
+  
+    <li>
+      <a href="StructureDefinition-LabObservationCytopathologySpecimen.profile.xml.html">XML</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="StructureDefinition-LabObservationCytopathologySpecimen.profile.json.html">JSON</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="StructureDefinition-LabObservationCytopathologySpecimen.profile.ttl.html">TTL</a>
+    </li>
+  
+
+
+</ul>
+
+
+<a name="root"> </a>
+<h2 id="root">Resource Profile: LabObservationCytopathologySpecimen - Mappings</h2>
+
+  <table class="colsi">
+    <tr>
+
+      <td colspan="2">
+        
+          Active
+          
+            as of 2024-12-21
+          
+        
+      </td>
+
+    </tr>
+  </table>
+
+
+<p>Mappings for the LabObservationCytopathologySpecimen resource profile.</p>
+
+  <!-- insert intro if present -->
+  
+
+
+
+<div style="display:inline-block" markdown="1">
+
+<p>Scroll down for the Raw FHIR, CDW &amp; SDA mappings (if any).</p>
+
+<blockquote>
+  <p>Note that the CDW and SDA mappings are derived from a look-up based on the VistA source mappings in CDW and VPR SDA.</p>
+</blockquote>
+
+<?xml version="1.0" encoding="us-ascii" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="383px" preserveAspectRatio="none" style="width:4070px;height:383px;background:#FFFFFF;" version="1.1" viewBox="0 0 4070 383" width="4070px" zoomAndPan="magnify"><defs /><g><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="412" x="1822.25" y="22.9951">Use Case: Lab Observation: Cytopathology (Source)</text><g id="elem_2"><rect fill="#F1F1F1" height="40.5938" style="stroke:#181818;stroke-width:0.5;" width="221" x="3660" y="234.706" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="81" x="3730" y="249.7011">PATIENT (2)</text><line style="stroke:#181818;stroke-width:1.0;" x1="3660" x2="3881" y1="255.0029" y2="255.0029" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="18" x="3665" y="269.998">63</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="183" x="3693" y="269.998">LABORATORY REFERENCE</text><line style="stroke:#181818;stroke-width:1.0;" x1="3688" x2="3688" y1="255.0029" y2="275.2997" /></g><g id="elem_60"><rect fill="#F1F1F1" height="60.8906" style="stroke:#181818;stroke-width:0.5;" width="207" x="2639" y="224.706" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="167" x="2659" y="239.7011">LABORATORY TEST (60)</text><line style="stroke:#181818;stroke-width:1.0;" x1="2639" x2="2846" y1="245.0029" y2="245.0029" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="2644" y="259.998">.01</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="40" x="2676" y="259.998">NAME</text><line style="stroke:#181818;stroke-width:1.0;" x1="2671" x2="2671" y1="245.0029" y2="265.2997" /><line style="stroke:#181818;stroke-width:1.0;" x1="2639" x2="2846" y1="265.2997" y2="265.2997" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="18" x="2646" y="280.2948">64</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="165" x="2676" y="280.2948">NATIONAL VA LAB CODE</text><line style="stroke:#181818;stroke-width:1.0;" x1="2671" x2="2671" y1="265.2997" y2="285.5966" /></g><g id="elem_63"><rect fill="#F1F1F1" height="40.5938" style="stroke:#181818;stroke-width:0.5;" width="114" x="3949.5" y="234.706" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="100" x="3956.5" y="249.7011">LAB DATA (63)</text><line style="stroke:#181818;stroke-width:1.0;" x1="3949.5" x2="4063.5" y1="255.0029" y2="255.0029" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="3954.5" y="269.998">.01</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="46" x="3986.5" y="269.998">LRDFN</text><line style="stroke:#181818;stroke-width:1.0;" x1="3981.5" x2="3981.5" y1="255.0029" y2="275.2997" /></g><g id="elem_64"><rect fill="#F1F1F1" height="60.8906" style="stroke:#181818;stroke-width:0.5;" width="218" x="2914.5" y="224.706" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="117" x="2965" y="239.7011">WKLD CODE (64)</text><line style="stroke:#181818;stroke-width:1.0;" x1="2914.5" x2="3132.5" y1="245.0029" y2="245.0029" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="18" x="2919.5" y="259.998">13</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="180" x="2947.5" y="259.998">WKLD CODE LAB SECTION</text><line style="stroke:#181818;stroke-width:1.0;" x1="2942.5" x2="2942.5" y1="245.0029" y2="265.2997" /><line style="stroke:#181818;stroke-width:1.0;" x1="2914.5" x2="3132.5" y1="265.2997" y2="265.2997" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="18" x="2919.5" y="280.2948">25</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="153" x="2947.5" y="280.2948">DEFAULT LOINC CODE</text><line style="stroke:#181818;stroke-width:1.0;" x1="2942.5" x2="2942.5" y1="265.2997" y2="285.5966" /></g><g id="elem_8925"><rect fill="#F1F1F1" height="60.8906" style="stroke:#181818;stroke-width:0.5;" width="172" x="912.5" y="224.706" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="158" x="919.5" y="239.7011">TIU DOCUMENT (8925)</text><line style="stroke:#181818;stroke-width:1.0;" x1="912.5" x2="1084.5" y1="245.0029" y2="245.0029" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="917.5" y="259.998">.01</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="122" x="949.5" y="259.998">DOCUMENT TYPE</text><line style="stroke:#181818;stroke-width:1.0;" x1="944.5" x2="944.5" y1="245.0029" y2="265.2997" /><line style="stroke:#181818;stroke-width:1.0;" x1="912.5" x2="1084.5" y1="265.2997" y2="265.2997" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="9" x="924" y="280.2948">2</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="98" x="949.5" y="280.2948">REPORT TEXT</text><line style="stroke:#181818;stroke-width:1.0;" x1="944.5" x2="944.5" y1="265.2997" y2="285.5966" /></g><g id="elem_63_09"><rect fill="#F1F1F1" height="243.5625" style="stroke:#181818;stroke-width:3.0;" width="307" x="7" y="133.206" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="179" x="71" y="148.2011">CYTOPATHOLOGY (63.09)</text><line style="stroke:#181818;stroke-width:1.0;" x1="7" x2="314" y1="153.5029" y2="153.5029" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="19" y="168.498">.01</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="201" x="58" y="168.498">DATE/TIME SPECIMEN TAKEN</text><line style="stroke:#181818;stroke-width:1.0;" x1="53" x2="53" y1="153.5029" y2="173.7997" /><line style="stroke:#181818;stroke-width:1.0;" x1="7" x2="314" y1="173.7997" y2="173.7997" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="31" x="14.5" y="188.7948">.012</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="71" x="58" y="188.7948">SPECIMEN</text><line style="stroke:#181818;stroke-width:1.0;" x1="53" x2="53" y1="173.7997" y2="194.0966" /><line style="stroke:#181818;stroke-width:1.0;" x1="7" x2="314" y1="194.0966" y2="194.0966" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="19" y="209.0917">.02</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="251" x="58" y="209.0917">PATHOLOGIST/CYTOTECHNOLOGIST</text><line style="stroke:#181818;stroke-width:1.0;" x1="53" x2="53" y1="194.0966" y2="214.3935" /><line style="stroke:#181818;stroke-width:1.0;" x1="7" x2="314" y1="214.3935" y2="214.3935" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="19" y="229.3886">.03</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="191" x="58" y="229.3886">DATE REPORT COMPLETED</text><line style="stroke:#181818;stroke-width:1.0;" x1="53" x2="53" y1="214.3935" y2="234.6904" /><line style="stroke:#181818;stroke-width:1.0;" x1="7" x2="314" y1="234.6904" y2="234.6904" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="19" y="249.6855">.06</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="125" x="58" y="249.6855">CYTOPATH ACC #</text><line style="stroke:#181818;stroke-width:1.0;" x1="53" x2="53" y1="234.6904" y2="254.9872" /><line style="stroke:#181818;stroke-width:1.0;" x1="7" x2="314" y1="254.9872" y2="254.9872" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="19" y="269.9823">.13</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="96" x="58" y="269.9823">RELEASED BY</text><line style="stroke:#181818;stroke-width:1.0;" x1="53" x2="53" y1="254.9872" y2="275.2841" /><line style="stroke:#181818;stroke-width:1.0;" x1="7" x2="314" y1="275.2841" y2="275.2841" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="19" y="290.2792">.16</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="222" x="58" y="290.2792">TIU REFERENCE DATE/TIME - CY</text><line style="stroke:#181818;stroke-width:1.0;" x1="53" x2="53" y1="275.2841" y2="295.581" /><line style="stroke:#181818;stroke-width:1.0;" x1="7" x2="314" y1="295.581" y2="295.581" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="31" x="14.5" y="310.5761">.345</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="111" x="58" y="310.5761">RELEASING SITE</text><line style="stroke:#181818;stroke-width:1.0;" x1="53" x2="53" y1="295.581" y2="315.8779" /><line style="stroke:#181818;stroke-width:1.0;" x1="7" x2="314" y1="315.8779" y2="315.8779" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="19" y="330.873">.35</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="111" x="58" y="330.873">ORDERED TEST</text><line style="stroke:#181818;stroke-width:1.0;" x1="53" x2="53" y1="315.8779" y2="336.1747" /><line style="stroke:#181818;stroke-width:1.0;" x1="7" x2="314" y1="336.1747" y2="336.1747" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="19" y="351.1698">1.4</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="205" x="58" y="351.1698">CYTOPATHOLOGY DIAGNOSIS</text><line style="stroke:#181818;stroke-width:1.0;" x1="53" x2="53" y1="336.1747" y2="356.4716" /><line style="stroke:#181818;stroke-width:1.0;" x1="7" x2="314" y1="356.4716" y2="356.4716" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="36" x="12" y="371.4667">2005</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="44" x="58" y="371.4667">IMAGE</text><line style="stroke:#181818;stroke-width:1.0;" x1="53" x2="53" y1="356.4716" y2="376.7685" /></g><g id="elem_63_51"><rect fill="#F1F1F1" height="81.1875" style="stroke:#181818;stroke-width:0.5;" width="179" x="2409" y="214.206" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="165" x="2416" y="229.2011">ORDERED TEST (63.51)</text><line style="stroke:#181818;stroke-width:1.0;" x1="2409" x2="2588" y1="234.5029" y2="234.5029" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="31" x="2414" y="249.498">.001</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="2455" y="249.498">IEN</text><line style="stroke:#181818;stroke-width:1.0;" x1="2450" x2="2450" y1="234.5029" y2="254.7997" /><line style="stroke:#181818;stroke-width:1.0;" x1="2409" x2="2588" y1="254.7997" y2="254.7997" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="9" x="2425" y="269.7948">3</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="109" x="2455" y="269.7948">CPRS ORDER #</text><line style="stroke:#181818;stroke-width:1.0;" x1="2450" x2="2450" y1="254.7997" y2="275.0966" /><line style="stroke:#181818;stroke-width:1.0;" x1="2409" x2="2588" y1="275.0966" y2="275.0966" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="18" x="2420.5" y="290.0917">10</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="88" x="2455" y="290.0917">DISPOSITION</text><line style="stroke:#181818;stroke-width:1.0;" x1="2450" x2="2450" y1="275.0966" y2="295.3935" /></g><g id="elem_63_47"><rect fill="#F1F1F1" height="40.5938" style="stroke:#181818;stroke-width:0.5;" width="258" x="593.5" y="234.706" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="244" x="600.5" y="249.7011">TIU REFERENCE DATE/TIME (63.47)</text><line style="stroke:#181818;stroke-width:1.0;" x1="593.5" x2="851.5" y1="255.0029" y2="255.0029" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="9" x="598.5" y="269.998">1</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="202" x="617.5" y="269.998">CY - TIU ENTRY POINTER - CY</text><line style="stroke:#181818;stroke-width:1.0;" x1="612.5" x2="612.5" y1="255.0029" y2="275.2997" /></g><g id="elem_8925_1"><rect fill="#F1F1F1" height="60.8906" style="stroke:#181818;stroke-width:0.5;" width="298" x="1157.5" y="224.706" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="252" x="1180.5" y="239.7011">TIU DOCUMENT DEFINITION (8925.1)</text><line style="stroke:#181818;stroke-width:1.0;" x1="1157.5" x2="1455.5" y1="245.0029" y2="245.0029" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="1169.5" y="259.998">.01</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="40" x="1208.5" y="259.998">NAME</text><line style="stroke:#181818;stroke-width:1.0;" x1="1203.5" x2="1203.5" y1="245.0029" y2="265.2997" /><line style="stroke:#181818;stroke-width:1.0;" x1="1157.5" x2="1455.5" y1="265.2997" y2="265.2997" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="36" x="1162.5" y="280.2948">1501</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="242" x="1208.5" y="280.2948">VHA ENTERPRISE STANDARD TITLE</text><line style="stroke:#181818;stroke-width:1.0;" x1="1203.5" x2="1203.5" y1="265.2997" y2="285.5966" /></g><g id="elem_8926_1"><rect fill="#F1F1F1" height="40.5938" style="stroke:#181818;stroke-width:0.5;" width="345" x="1540" y="234.706" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="331" x="1547" y="249.7011">TIU VHA ENTERPRISE STANDARD TITLE (8926.1)</text><line style="stroke:#181818;stroke-width:1.0;" x1="1540" x2="1885" y1="255.0029" y2="255.0029" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="9" x="1545" y="269.998">2</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="117" x="1564" y="269.998">CODING SYSTEM</text><line style="stroke:#181818;stroke-width:1.0;" x1="1559" x2="1559" y1="255.0029" y2="275.2997" /></g><g id="elem_8926_12"><rect fill="#F1F1F1" height="40.5938" style="stroke:#181818;stroke-width:0.5;" width="203" x="1946" y="234.706" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="189" x="1953" y="249.7011">CODING SYSTEM (8926.12)</text><line style="stroke:#181818;stroke-width:1.0;" x1="1946" x2="2149" y1="255.0029" y2="255.0029" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="1951" y="269.998">.02</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="41" x="1983" y="269.998">CODE</text><line style="stroke:#181818;stroke-width:1.0;" x1="1978" x2="1978" y1="255.0029" y2="275.2997" /></g><g id="elem_8926_121"><rect fill="#F1F1F1" height="40.5938" style="stroke:#181818;stroke-width:0.5;" width="136" x="2221.5" y="234.706" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="122" x="2228.5" y="249.7011">CODE (8926.121)</text><line style="stroke:#181818;stroke-width:1.0;" x1="2221.5" x2="2357.5" y1="255.0029" y2="255.0029" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="2226.5" y="269.998">.01</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="41" x="2258.5" y="269.998">CODE</text><line style="stroke:#181818;stroke-width:1.0;" x1="2253.5" x2="2253.5" y1="255.0029" y2="275.2997" /></g><g id="elem_64_21"><rect fill="#F1F1F1" height="40.5938" style="stroke:#181818;stroke-width:0.5;" width="224" x="3384.5" y="234.706" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="210" x="3391.5" y="249.7011">WKLD CODE LAB SECT (64.21)</text><line style="stroke:#181818;stroke-width:1.0;" x1="3384.5" x2="3608.5" y1="255.0029" y2="255.0029" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="3389.5" y="269.998">.01</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="40" x="3421.5" y="269.998">NAME</text><line style="stroke:#181818;stroke-width:1.0;" x1="3416.5" x2="3416.5" y1="255.0029" y2="275.2997" /></g><g id="elem_95_3"><rect fill="#F1F1F1" height="60.8906" style="stroke:#181818;stroke-width:0.5;" width="133" x="3201" y="224.706" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="116" x="3209.5" y="239.7011">LAB LOINC (95.3)</text><line style="stroke:#181818;stroke-width:1.0;" x1="3201" x2="3334" y1="245.0029" y2="245.0029" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="3206" y="259.998">.01</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="41" x="3238" y="259.998">CODE</text><line style="stroke:#181818;stroke-width:1.0;" x1="3233" x2="3233" y1="245.0029" y2="265.2997" /><line style="stroke:#181818;stroke-width:1.0;" x1="3201" x2="3334" y1="265.2997" y2="265.2997" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="9" x="3212.5" y="280.2948">1</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="91" x="3238" y="280.2948">COMPONENT</text><line style="stroke:#181818;stroke-width:1.0;" x1="3233" x2="3233" y1="265.2997" y2="285.5966" /></g><g id="elem_63_902"><rect fill="#F1F1F1" height="40.5938" style="stroke:#181818;stroke-width:0.5;" width="148" x="394.5" y="234.706" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="134" x="401.5" y="249.7011">SPECIMEN (63.902)</text><line style="stroke:#181818;stroke-width:1.0;" x1="394.5" x2="542.5" y1="255.0029" y2="255.0029" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="399.5" y="269.998">.01</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="71" x="431.5" y="269.998">SPECIMEN</text><line style="stroke:#181818;stroke-width:1.0;" x1="426.5" x2="426.5" y1="255.0029" y2="275.2997" /></g><!--link 63_09 to 63_51--><g id="link_63_09_63_51"><path codeLine="68" d="M314.5,325.706 C405.071,325.706 296.9925,184.7919 368.5,129.206 C463.083,55.6825 1326.7084,107.9277 1446.5,109.206 C1654.7578,111.4283 2193.7742,43.2969 2383.5,129.206 C2418.9096,145.2397 2448.2909,177.9274 2468.4909,205.923 " fill="none" id="63_09-to-63_51" style="stroke:#181818;stroke-width:1.0;" /><polygon fill="#181818" points="2471.4043,210.0169,2469.445,200.3649,2468.5053,205.9431,2462.927,205.0033,2471.4043,210.0169" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="20" x="1425.5" y="95.2729">.35</text></g><!--link 63_09 to 63_47--><g id="link_63_09_63_47"><path codeLine="69" d="M314.5,285.706 C388.0797,285.706 314.7254,179.4281 368.5,129.206 C393.3988,105.9521 408.7274,113.6894 442.5,109.206 C487.6368,103.2139 567.3985,129.1587 567.5,129.206 C618.858,153.1464 667.8957,197.7653 696.5916,226.841 " fill="none" id="63_09-to-63_47" style="stroke:#181818;stroke-width:1.0;" /><polygon fill="#181818" points="700.3321,230.6601,696.892,221.4315,696.8334,227.0881,691.1768,227.0295,700.3321,230.6601" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="20" x="443.5" y="95.2729">.16</text></g><!--link 63_47 to 8925--><g id="link_63_47_8925"><path codeLine="70" d="M851.5,264.706 C869.9002,264.706 860.0225,289.517 876.5,297.706 C880.48,299.684 882.13,298.5161 886.5,297.706 C896.1797,295.9117 906.103,293.3141 915.85,290.2711 " fill="none" id="63_47-to-8925" style="stroke:#181818;stroke-width:1.0;" /><polygon fill="#181818" points="920.6188,288.743,910.8275,287.68,915.8573,290.2687,913.2686,295.2985,920.6188,288.743" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="877.5" y="293.7729">1</text></g><!--link 8925 to 8925_1--><g id="link_8925_8925_1"><path codeLine="71" d="M1084.5,254.706 C1098.4558,254.706 1096.2745,240.1614 1109.5,235.706 C1118.7661,232.5845 1121.7365,235.1775 1131.5,235.706 C1135.6673,235.9316 1139.888,236.1871 1144.1445,236.4689 " fill="none" id="8925-to-8925_1" style="stroke:#181818;stroke-width:1.0;" /><polygon fill="#181818" points="1149.1567,236.8114,1140.4505,232.2069,1144.1683,236.4704,1139.9049,240.1883,1149.1567,236.8114" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="20" x="1110.5" y="230.7729">.01</text></g><!--link 8925_1 to 8926_1--><g id="link_8925_1_8926_1"><path codeLine="72" d="M1455.5,274.706 C1470.928,274.706 1467.0725,292.2404 1481.5,297.706 C1495.6311,303.0593 1500.476,299.3266 1515.5,297.706 C1548.8677,294.1067 1584.872,287.1726 1616.8584,279.9063 " fill="none" id="8925_1-to-8926_1" style="stroke:#181818;stroke-width:1.0;" /><polygon fill="#181818" points="1621.9565,278.7377,1612.2902,276.8499,1617.0829,279.855,1614.0779,284.6476,1621.9565,278.7377" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="32" x="1482.5" y="293.7729">1501</text></g><!--link 8926_1 to 8926_12--><g id="link_8926_1_8926_12"><path codeLine="73" d="M1885.5,264.706 C1903.9002,264.706 1894.0225,289.517 1910.5,297.706 C1914.48,299.684 1916.1146,298.4283 1920.5,297.706 C1941.8703,294.1863 1964.4823,287.5452 1984.6106,280.5164 " fill="none" id="8926_1-to-8926_12" style="stroke:#181818;stroke-width:1.0;" /><polygon fill="#181818" points="1989.4018,278.8199,1979.5828,278.0535,1984.6886,280.4889,1982.2532,285.5947,1989.4018,278.8199" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="1911.5" y="293.7729">2</text></g><!--link 8926_12 to 8926_121--><g id="link_8926_12_8926_121"><path codeLine="74" d="M2149.5,264.706 C2167.9002,264.706 2158.0225,289.517 2174.5,297.706 C2183.256,302.0576 2186.9506,299.8068 2196.5,297.706 C2212.1083,294.2723 2228.2156,287.9525 2242.5493,281.1953 " fill="none" id="8926_12-to-8926_121" style="stroke:#181818;stroke-width:1.0;" /><polygon fill="#181818" points="2247.339,278.8905,2237.4947,279.1885,2242.8335,281.0585,2240.9635,286.3974,2247.339,278.8905" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="20" x="2175.5" y="293.7729">.02</text></g><!--link 60 to 64--><g id="link_60_64"><path codeLine="75" d="M2846.5,274.706 C2861.598,274.706 2857.434,292.2199 2871.5,297.706 C2878.9532,300.6129 2881.5962,298.9431 2889.5,297.706 C2901.1166,295.8878 2913.1012,293.2336 2924.9048,290.122 " fill="none" id="60-to-64" style="stroke:#181818;stroke-width:1.0;" /><polygon fill="#181818" points="2929.9508,288.7615,2920.2198,287.2425,2925.1232,290.0632,2922.3025,294.9666,2929.9508,288.7615" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="16" x="2872.5" y="293.7729">64</text></g><!--link 64 to 64_21--><g id="link_64_64_21"><path codeLine="76" d="M3132.5,254.706 C3191.461,254.706 3132.4528,169.4966 3175.5,129.206 C3206.0501,100.6122 3225.8955,104.736 3267.5,109.206 C3309.1045,113.676 3322.343,109.9636 3359.5,129.206 C3406.2377,153.4099 3449.0542,197.7464 3473.9598,226.7171 " fill="none" id="64-to-64_21" style="stroke:#181818;stroke-width:1.0;" /><polygon fill="#181818" points="3477.2049,230.5231,3474.4096,221.0792,3473.9609,226.7183,3468.3219,226.2696,3477.2049,230.5231" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="16" x="3250.5" y="95.2729">13</text></g><!--link 64 to 95_3--><g id="link_64_95_3"><path codeLine="77" d="M3132.5,274.706 C3147.928,274.706 3144.0725,292.2404 3158.5,297.706 C3165.9812,300.5401 3168.6941,299.4574 3176.5,297.706 C3184.2656,295.9636 3192.1485,293.4801 3199.8612,290.5743 " fill="none" id="64-to-95_3" style="stroke:#181818;stroke-width:1.0;" /><polygon fill="#181818" points="3204.6388,288.7133,3194.8007,288.2528,3199.9798,290.5281,3197.7045,295.7072,3204.6388,288.7133" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="16" x="3159.5" y="293.7729">25</text></g><!--link 2 to 63--><g id="link_2_63"><path codeLine="78" d="M3881.5,264.706 C3899.9002,264.706 3890.0225,289.517 3906.5,297.706 C3913.664,301.2664 3916.7321,299.6192 3924.5,297.706 C3938.4012,294.2823 3952.5547,288.0363 3965.1025,281.3462 " fill="none" id="2-to-63" style="stroke:#181818;stroke-width:1.0;" /><polygon fill="#181818" points="3969.6493,278.8657,3959.8329,279.6643,3965.26,281.2602,3963.6641,286.6873,3969.6493,278.8657" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="16" x="3907.5" y="293.7729">63</text></g><!--link 63_09 to 63_902--><g id="link_63_09_63_902"><path codeLine="79" d="M314.5,183.706 C358.2748,183.706 403.1503,207.6572 433.081,227.7374 " fill="none" id="63_09-to-63_902" style="stroke:#181818;stroke-width:1.0;" /><polygon fill="#181818" points="437.3866,230.6686,432.1979,222.2974,433.2534,227.8549,427.6959,228.9104,437.3866,230.6686" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="28" x="339.5" y="182.7729">.012</text></g></g></svg>
+
+<h3 id="raw-mappings">Raw mappings</h3>
+
+<table border="1" cellspacing="0" cellpadding="0" class="table-ta1"><tr class="row-ro1">
+<th class="cell-ce1">key</th>
+<th class="cell-ce1">status</th>
+<th class="cell-ce1">direction</th>
+<th class="cell-ce1">source</th>
+<th class="cell-ce1">mapApproach</th>
+<th class="cell-ce1">mapCase</th>
+<th class="cell-ce1">FHIR Path</th>
+<th class="cell-ce1">subPath</th>
+<th class="cell-ce1">mapValue</th>
+<th class="cell-ce1">mapParameter</th>
+<th class="cell-ce1">mapComment</th>
+<th class="cell-ce1">FHIR URL | Ver</th>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1693</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">CYTOPATHOLOGY - CYTOPATH ACC # (63.09-.06)</td>
+<td class="cell-ce1">source value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Specimen.accessionIdentifier</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/StructureDefinition/Specimen | 4.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1695</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">CYTOPATHOLOGY - SPECIMEN &gt; SPECIMEN - SPECIMEN (63.09-.012 &gt; 63.902-.01)</td>
+<td class="cell-ce1">source value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Specimen.type.text</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/StructureDefinition/Specimen | 4.0.1</td>
+</tr>
+</table>
+
+</div>
+
+
+
+
+  <a name="vista"> </a><h3>Mappings for Veterans Health Information Systems Technology and Architecture (VistA) ()</h3><table class="grid">
+ <tr><td colspan="3"><b>LabObservationCytopathologySpecimen</b></td></tr>
+ <tr><td>Specimen</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;accessionIdentifier</td><td>1693: source value from CYTOPATHOLOGY - CYTOPATH ACC # (63.09-.06)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;type</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>1695: source value from CYTOPATHOLOGY - SPECIMEN &gt; SPECIMEN - SPECIMEN (63.09-.012 &gt; 63.902-.01)</td> </tr>
+</table>
+<a name="cdw"> </a><h3>Mappings for Clinical Data Warehouse (CDW) ()</h3><table class="grid">
+ <tr><td colspan="3"><b>LabObservationCytopathologySpecimen</b></td></tr>
+ <tr><td>Specimen</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;accessionIdentifier</td><td>Pathology.Cytopathology.CytopathAccessionNumber</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;type</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>Pathology.CytoSpecimen.CytopathologySpecimen</td> </tr>
+</table>
+<a name="rim"> </a><h3>Mappings for RIM Mapping (<a href="http://hl7.org/comparison-v3.html">http://hl7.org/v3</a>)</h3><table class="grid">
+ <tr><td colspan="3"><b>LabObservationCytopathologySpecimen</b></td></tr>
+ <tr><td>Specimen</td><td>Entity. Role, or Act, Role[classCode=SPEC]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;text</td><td>Act.text?</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;contained</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;extension</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;modifierExtension</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>.id</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;accessionIdentifier</td><td>.participation[typeCode=SBJ].act[classCode=ACSN, moodCode=EVN].id</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>status</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;type</td><td>.code</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>union(., ./translation)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>./originalText[mediaType/code=&quot;text/plain&quot;]/data</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>.scoper  or  .scoper.playsRole</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;receivedTime</td><td>.participation[typeCode=SBJ].act[code=SPCREC, moodCode=EVN].effectiveTime</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;parent</td><td>.scoper (if parent) .player.scopesRole[classCode=SPEC].player (if child)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;request</td><td>outboundRelationship[typeCode=FLFS].target</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;collection</td><td>.participation[typeCode=SBJ].act[classCode=SPECCOLLECT, moodCode=EVN]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modifierExtension</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;collector</td><td>.participation[typeCode=PFM].role</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;collected[x]</td><td>.effectiveTime</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;quantity</td><td>.participation[typeCode=SBJ].role[classCode=SPEC].player.quantity</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;method</td><td>.methodCode</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bodySite</td><td>.targetSiteCode</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;processing</td><td>.participation[typeCode=SBJ].act[code=SPCTRT, moodCode=EVN]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modifierExtension</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;description</td><td>.text</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;procedure</td><td>.code</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;additive</td><td>.participation[typeCode=CSM].role[classCode=ADTV].code</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;time[x]</td><td>.effectiveTime</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;container</td><td>.player.scopingRole[classCode=CONT].scoper</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modifierExtension</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;identifier</td><td>.id</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;description</td><td>.desc</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td>.code</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;capacity</td><td>.quantity</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;specimenQuantity</td><td>.playedRole[classCode=CONT].quantity</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;additive[x]</td><td>.scopesRole[classCode=ADTV].player</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;note</td><td>.inboundRelationship[typeCode=SUBJ].source[classCode=OBS, moodCode=EVN, code=&quot;annotation&quot;].value</td> </tr>
+</table>
+<a name="w5"> </a><h3>Mappings for FiveWs Pattern Mapping (http://hl7.org/fhir/fivews)</h3><table class="grid">
+ <tr><td colspan="3"><b>LabObservationCytopathologySpecimen</b></td></tr>
+ <tr><td>Specimen</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>FiveWs.identifier</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;accessionIdentifier</td><td>FiveWs.identifier</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>FiveWs.status</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;type</td><td>FiveWs.what[x]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>FiveWs.subject[x], FiveWs.subject</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;receivedTime</td><td>FiveWs.done[x]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;request</td><td>FiveWs.why[x]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;collection</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;collector</td><td>FiveWs.actor</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;collected[x]</td><td>FiveWs.init</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;duration</td><td>FiveWs.init</td> </tr>
+</table>
+<a name="v2"> </a><h3>Mappings for HL7 v2 Mapping (<a href="http://hl7.org/comparison-v2.html">http://hl7.org/v2</a>)</h3><table class="grid">
+ <tr><td colspan="3"><b>LabObservationCytopathologySpecimen</b></td></tr>
+ <tr><td>Specimen</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>SPM-2</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;accessionIdentifier</td><td>SPM-30 (v2.7+)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>SPM-20</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;type</td><td>SPM-4 and possibly SPM-5</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>C*E.1-8, C*E.10-22</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>C*E.9. But note many systems use C*E.2 for this</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;receivedTime</td><td>SPM-18</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;request</td><td>ORC? OBR-2/3?</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;collection</td><td>SPM-14</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;collector</td><td>PRT</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;collected[x]</td><td>SPM-17</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;quantity</td><td>SPM-12</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;method</td><td>SPM-7</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bodySite</td><td>SPM-8 and SPM-9</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fastingStatus[x]</td><td>OBR-</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;processing</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;additive</td><td>SPM-6</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;container</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;identifier</td><td>SAC-3</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td>SPM-27</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;capacity</td><td>one of: SAC 16, SAC17 and SAC 20, or SAC 21 and SAC 20</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;specimenQuantity</td><td>SAC-23 (value) SAC-24 (units</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;additive[x]</td><td>SAC-27</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;condition</td><td>SPM-24</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;note</td><td>OBX</td> </tr>
+</table>
+
+
+  <!-- insert notes if present -->
+  
+
+
+
+</div>
+
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript" src="assets/js/tabs.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2024 <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.69.448 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Sat, Dec 21, 2024 10:24+0000">2024-12-21</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+| <a style="color: #81BEF7" target="_blank" href="https://leaf.va.gov/NATIONAL/776/va_fhir_community_of_practice/?a=newform">Propose a change</a>
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

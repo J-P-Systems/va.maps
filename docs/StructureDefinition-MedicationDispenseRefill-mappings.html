@@ -1,0 +1,945 @@
+<!-- get modelType -->
+
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>MedicationDispense: Refill - Mappings - US Veterans Administration FHIR Map Set Implementation Guide v0.69.448</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+    <link href="assets/css/va-maps.css" rel="stylesheet"/>
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"11.85"}
+    h3,h4,h5,h6{--heading-prefix:"11.85"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <!-- Placeholder for child template header declarations -->
+
+<div id="project-nav">
+    <a id="family-logo" no-external="true" href="https://va.gov"><img height="50" alt="Visit the VA website"
+        src="assets/images/va.png" /> </a>
+</div>
+
+<div id="family-nav">
+    <a id="family-logo" no-external="true" href="http://hl7.org/fhir"><img height="50" alt="Visit the FHIR website" src="assets/images/fhir-logo-www.png"/> </a>
+</div>
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">US Veterans Administration FHIR Map Set Implementation Guide</span>
+            <br/>
+            <span style="display:inline-block;">0.69.448 - 250101
+
+
+
+  <img alt="United States of America flag" src="assets/images/usa.svg" height="16" title="United States of America"/>
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li>
+    <a href="toc.html">Table of Content</a>
+  </li>
+  <li>
+    <a href="process.html">Process</a>
+  </li>
+  <li>
+    <a href="profileDesign.html">Profile Design</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Design Guidance
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="guidance.html">General Guidance</a>
+      </li>
+      <li>
+        <a href="guidance-vitals.html">Vitals Guidance</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="mustSupport.html">Must Support</a>
+  </li>
+  <li>
+    <a href="classes.html">Classes</a>
+  </li>
+  <li>
+    <a href="artifacts.html">Artifacts</a>
+  </li>
+  <li>
+    <a href="changes.html">Changes</a>
+  </li>
+  <li>
+    <a href="history.html">History</a>
+  </li>
+  <li>
+    <a href="mapset-qa.html">MapSet QA</a>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='artifacts.html'><b>Artifacts Summary</b></a></li><li><b>MedicationDispense: Refill</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<div style="counter-reset: section 5" class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">US Veterans Administration FHIR Map Set Implementation Guide - Local Development build (v0.69.448) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  
+
+
+
+
+
+
+
+
+
+
+
+<ul class="nav nav-tabs">
+
+  <li>
+    <a href="StructureDefinition-MedicationDispenseRefill.html">Content</a>
+  </li>
+
+
+
+  <li>
+    <a href="StructureDefinition-MedicationDispenseRefill-definitions.html">Detailed Descriptions</a>
+  </li>
+
+
+
+  
+    <li class="active">
+      <a href="#">Mappings</a>
+    </li>
+  
+
+
+
+
+
+
+
+  
+    <li>
+      <a href="StructureDefinition-MedicationDispenseRefill.profile.xml.html">XML</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="StructureDefinition-MedicationDispenseRefill.profile.json.html">JSON</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="StructureDefinition-MedicationDispenseRefill.profile.ttl.html">TTL</a>
+    </li>
+  
+
+
+</ul>
+
+
+<a name="root"> </a>
+<h2 id="root">Resource Profile: MedicationDispenseRefill - Mappings</h2>
+
+  <table class="colsi">
+    <tr>
+
+      <td colspan="2">
+        
+          Active
+          
+            as of 2024-12-21
+          
+        
+      </td>
+
+    </tr>
+  </table>
+
+
+<p>Mappings for the MedicationDispenseRefill resource profile.</p>
+
+  <!-- insert intro if present -->
+  
+
+
+
+<div style="display:inline-block" markdown="1">
+
+<p>Scroll down for the Raw FHIR, CDW &amp; SDA mappings (if any).</p>
+
+<blockquote>
+  <p>Note that the CDW and SDA mappings are derived from a look-up based on the VistA source mappings in CDW and VPR SDA.</p>
+</blockquote>
+
+<?xml version="1.0" encoding="us-ascii" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="320px" preserveAspectRatio="none" style="width:1417px;height:320px;background:#FFFFFF;" version="1.1" viewBox="0 0 1417 320" width="1417px" zoomAndPan="magnify"><defs /><g><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="365" x="519.25" y="22.9951">Use Case: MedicationDispense: Refill (Source)</text><g id="elem_50"><rect fill="#F1F1F1" height="60.8906" style="stroke:#181818;stroke-width:0.5;" width="280" x="312.5" y="191.8783" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="74" x="415.5" y="206.8734">DRUG (50)</text><line style="stroke:#181818;stroke-width:1.0;" x1="312.5" x2="592.5" y1="212.1751" y2="212.1751" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="317.5" y="227.1703">.01</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="106" x="349.5" y="227.1703">GENERIC NAME</text><line style="stroke:#181818;stroke-width:1.0;" x1="344.5" x2="344.5" y1="212.1751" y2="232.472" /><line style="stroke:#181818;stroke-width:1.0;" x1="312.5" x2="592.5" y1="232.472" y2="232.472" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="18" x="319.5" y="247.4671">22</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="238" x="349.5" y="247.4671">PSNDF VA PRODUCT NAME ENTRY</text><line style="stroke:#181818;stroke-width:1.0;" x1="344.5" x2="344.5" y1="232.472" y2="252.7689" /></g><g id="elem_52"><rect fill="#F1F1F1" height="182.6719" style="stroke:#181818;stroke-width:3.0;" width="245" x="7" y="130.8783" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="134" x="62.5" y="145.8734">PRESCRIPTION (52)</text><line style="stroke:#181818;stroke-width:1.0;" x1="7" x2="252" y1="151.1751" y2="151.1751" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="9" x="23" y="166.1703">2</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="58" x="53" y="166.1703">PATIENT</text><line style="stroke:#181818;stroke-width:1.0;" x1="48" x2="48" y1="151.1751" y2="171.472" /><line style="stroke:#181818;stroke-width:1.0;" x1="7" x2="252" y1="171.472" y2="171.472" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="9" x="23" y="186.4671">6</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="42" x="53" y="186.4671">DRUG</text><line style="stroke:#181818;stroke-width:1.0;" x1="48" x2="48" y1="171.472" y2="191.7689" /><line style="stroke:#181818;stroke-width:1.0;" x1="7" x2="252" y1="191.7689" y2="191.7689" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="18" x="18.5" y="206.764">10</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="23" x="53" y="206.764">SIG</text><line style="stroke:#181818;stroke-width:1.0;" x1="48" x2="48" y1="191.7689" y2="212.0658" /><line style="stroke:#181818;stroke-width:1.0;" x1="7" x2="252" y1="212.0658" y2="212.0658" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="18" x="18.5" y="227.0609">31</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="153" x="53" y="227.0609">RELEASED DATE/TIME</text><line style="stroke:#181818;stroke-width:1.0;" x1="48" x2="48" y1="212.0658" y2="232.3626" /><line style="stroke:#181818;stroke-width:1.0;" x1="7" x2="252" y1="232.3626" y2="232.3626" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="31" x="12" y="247.3578">39.3</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="125" x="53" y="247.3578">PLACER ORDER #</text><line style="stroke:#181818;stroke-width:1.0;" x1="48" x2="48" y1="232.3626" y2="252.6595" /><line style="stroke:#181818;stroke-width:1.0;" x1="7" x2="252" y1="252.6595" y2="252.6595" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="18" x="18.5" y="267.6546">52</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="44" x="53" y="267.6546">REFILL</text><line style="stroke:#181818;stroke-width:1.0;" x1="48" x2="48" y1="252.6595" y2="272.9564" /><line style="stroke:#181818;stroke-width:1.0;" x1="7" x2="252" y1="272.9564" y2="272.9564" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="27" x="14" y="287.9515">113</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="194" x="53" y="287.9515">MEDICATION INSTRUCTIONS</text><line style="stroke:#181818;stroke-width:1.0;" x1="48" x2="48" y1="272.9564" y2="293.2533" /><line style="stroke:#181818;stroke-width:1.0;" x1="7" x2="252" y1="293.2533" y2="293.2533" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="27" x="14" y="308.2484">114</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="165" x="53" y="308.2484">PATIENT INSTRUCTIONS</text><line style="stroke:#181818;stroke-width:1.0;" x1="48" x2="48" y1="293.2533" y2="313.5502" /></g><g id="elem_59"><rect fill="#F1F1F1" height="40.5938" style="stroke:#181818;stroke-width:0.5;" width="180" x="1230.5" y="201.8783" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="154" x="1243.5" y="216.8734">OUTPATIENT SITE (59)</text><line style="stroke:#181818;stroke-width:1.0;" x1="1230.5" x2="1410.5" y1="222.1751" y2="222.1751" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="18" x="1235.5" y="237.1703">10</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="142" x="1263.5" y="237.1703">DEFAULT ERX CLINIC</text><line style="stroke:#181818;stroke-width:1.0;" x1="1258.5" x2="1258.5" y1="222.1751" y2="242.472" /></g><g id="elem_52_1"><rect fill="#F1F1F1" height="162.375" style="stroke:#181818;stroke-width:0.5;" width="195" x="975" y="140.8783" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="89" x="1028" y="155.8734">REFILL (52.1)</text><line style="stroke:#181818;stroke-width:1.0;" x1="975" x2="1170" y1="161.1751" y2="161.1751" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="9" x="986.5" y="176.1703">1</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="29" x="1012" y="176.1703">QTY</text><line style="stroke:#181818;stroke-width:1.0;" x1="1007" x2="1007" y1="161.1751" y2="181.472" /><line style="stroke:#181818;stroke-width:1.0;" x1="975" x2="1170" y1="181.472" y2="181.472" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="980" y="196.4671">1.1</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="95" x="1012" y="196.4671">DAYS SUPPLY</text><line style="stroke:#181818;stroke-width:1.0;" x1="1007" x2="1007" y1="181.472" y2="201.7689" /><line style="stroke:#181818;stroke-width:1.0;" x1="975" x2="1170" y1="201.7689" y2="201.7689" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="9" x="986.5" y="216.764">2</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="139" x="1012" y="216.764">MAIL/WINDOW/PARK</text><line style="stroke:#181818;stroke-width:1.0;" x1="1007" x2="1007" y1="201.7689" y2="222.0658" /><line style="stroke:#181818;stroke-width:1.0;" x1="975" x2="1170" y1="222.0658" y2="222.0658" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="9" x="986.5" y="237.0609">3</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="68" x="1012" y="237.0609">REMARKS</text><line style="stroke:#181818;stroke-width:1.0;" x1="1007" x2="1007" y1="222.0658" y2="242.3626" /><line style="stroke:#181818;stroke-width:1.0;" x1="975" x2="1170" y1="242.3626" y2="242.3626" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="9" x="986.5" y="257.3578">4</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="134" x="1012" y="257.3578">PHARMACIST NAME</text><line style="stroke:#181818;stroke-width:1.0;" x1="1007" x2="1007" y1="242.3626" y2="262.6595" /><line style="stroke:#181818;stroke-width:1.0;" x1="975" x2="1170" y1="262.6595" y2="262.6595" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="9" x="986.5" y="277.6546">8</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="59" x="1012" y="277.6546">DIVISION</text><line style="stroke:#181818;stroke-width:1.0;" x1="1007" x2="1007" y1="262.6595" y2="282.9564" /><line style="stroke:#181818;stroke-width:1.0;" x1="975" x2="1170" y1="282.9564" y2="282.9564" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="18" x="982" y="297.9515">17</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="153" x="1012" y="297.9515">RELEASED DATE/TIME</text><line style="stroke:#181818;stroke-width:1.0;" x1="1007" x2="1007" y1="282.9564" y2="303.2533" /></g><g id="elem_52_0113"><rect fill="#F1F1F1" height="60.8906" style="stroke:#181818;stroke-width:0.5;" width="280" x="643.5" y="191.8783" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="266" x="650.5" y="206.8734">MEDICATION INSTRUCTIONS (52.0113)</text><line style="stroke:#181818;stroke-width:1.0;" x1="643.5" x2="923.5" y1="212.1751" y2="212.1751" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="648.5" y="227.1703">.01</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="135" x="680.5" y="227.1703">DOSAGE ORDERED</text><line style="stroke:#181818;stroke-width:1.0;" x1="675.5" x2="675.5" y1="212.1751" y2="232.472" /><line style="stroke:#181818;stroke-width:1.0;" x1="643.5" x2="923.5" y1="232.472" y2="232.472" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="9" x="655" y="247.4671">2</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="41" x="680.5" y="247.4671">UNITS</text><line style="stroke:#181818;stroke-width:1.0;" x1="675.5" x2="675.5" y1="232.472" y2="252.7689" /></g><!--link 52 to 52_1--><g id="link_52_52_1"><path codeLine="36" d="M252.5,261.8783 C314.3736,261.8783 238.7276,166.1993 286.5,126.8783 C388.046,43.2969 746.0269,98.8795 877.5,95.3783 C885.4972,95.1653 887.7772,93.2905 895.5,95.3783 C923.591,102.9727 950.805,117.4532 975.1257,133.9872 " fill="none" id="52-to-52_1" style="stroke:#181818;stroke-width:1.0;" /><polygon fill="#181818" points="979.3172,136.8764,974.1773,128.4751,975.2005,134.0387,969.6369,135.0619,979.3172,136.8764" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="16" x="878.5" y="85.4452">52</text></g><!--link 52 to 52_1--><g id="link_52_52_1"><path codeLine="40" d="M252.5,261.8783 C314.3736,261.8783 238.7276,166.1993 286.5,126.8783 C388.046,43.2969 746.0269,98.8795 877.5,95.3783 C885.4972,95.1653 887.7772,93.2905 895.5,95.3783 C923.591,102.9727 950.805,117.4532 975.1257,133.9872 " fill="none" id="52-to-52_1-1" style="stroke:#181818;stroke-width:1.0;" /><polygon fill="#181818" points="979.3172,136.8764,974.1773,128.4751,975.2005,134.0387,969.6369,135.0619,979.3172,136.8764" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="47" x="863" y="77.9452">not null</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="4" x="884.5" y="93.078">&#160;</text></g><!--link 52 to 52_1--><g id="link_52_52_1"><path codeLine="41" d="M252.5,261.8783 C314.3736,261.8783 238.7276,166.1993 286.5,126.8783 C388.046,43.2969 746.0269,98.8795 877.5,95.3783 C885.4972,95.1653 887.7772,93.2905 895.5,95.3783 C923.591,102.9727 950.805,117.4532 975.1257,133.9872 " fill="none" id="52-to-52_1-2" style="stroke:#181818;stroke-width:1.0;" /><polygon fill="#181818" points="979.3172,136.8764,974.1773,128.4751,975.2005,134.0387,969.6369,135.0619,979.3172,136.8764" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="22" x="875.5" y="77.9452">null</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="4" x="884.5" y="93.078">&#160;</text></g><!--link 52 to 52_0113--><g id="link_52_52_0113"><path codeLine="37" d="M252.5,282.8783 C323.461,282.8783 238.288,178.9461 286.5,126.8783 C319.6021,91.1288 343.295,102.4533 391.5,95.3783 C465.8164,84.471 500.6035,85.3161 618.5,126.8783 C658.3152,140.9144 699.4716,164.591 730.7209,184.7951 " fill="none" id="52-to-52_0113" style="stroke:#181818;stroke-width:1.0;" /><polygon fill="#181818" points="735.2582,187.7493,729.8985,179.4865,731.0681,185.0211,725.5334,186.1907,735.2582,187.7493" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="24" x="392.5" y="85.4452">113</text></g><!--link 52 to 52_0113--><g id="link_52_52_0113"><path codeLine="38" d="M252.5,282.8783 C323.461,282.8783 238.288,178.9461 286.5,126.8783 C319.6021,91.1288 343.295,102.4533 391.5,95.3783 C465.8164,84.471 500.6035,85.3161 618.5,126.8783 C658.3152,140.9144 699.4716,164.591 730.7209,184.7951 " fill="none" id="52-to-52_0113-1" style="stroke:#181818;stroke-width:1.0;" /><polygon fill="#181818" points="735.2582,187.7493,729.8985,179.4865,731.0681,185.0211,725.5334,186.1907,735.2582,187.7493" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="50" x="379.5" y="77.9452">number</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="4" x="402.5" y="93.078">&#160;</text></g><!--link 52 to 50--><g id="link_52_50"><path codeLine="39" d="M252.5,180.8783 C274.5779,180.8783 297.7526,183.3056 320.1832,186.9791 " fill="none" id="52-to-50" style="stroke:#181818;stroke-width:1.0;" /><polygon fill="#181818" points="325.259,187.8334,317.0479,182.3949,320.3284,187.0034,315.7199,190.2839,325.259,187.8334" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="277.5" y="178.9452">6</text></g><!--link 52_1 to 59--><g id="link_52_1_59"><path codeLine="42" d="M1170.5,271.8783 C1204.4934,271.8783 1240.699,260.1784 1269.0223,248.0978 " fill="none" id="52_1-to-59" style="stroke:#181818;stroke-width:1.0;" /><polygon fill="#181818" points="1273.8568,245.9996,1264.0083,245.9136,1269.2702,247.9903,1267.1935,253.2522,1273.8568,245.9996" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="1196.5" y="263.9452">8</text></g></g></svg>
+
+<h3 id="raw-mappings">Raw mappings</h3>
+
+<table border="1" cellspacing="0" cellpadding="0" class="table-ta1"><tr class="row-ro1">
+<th class="cell-ce1">key</th>
+<th class="cell-ce1">status</th>
+<th class="cell-ce1">direction</th>
+<th class="cell-ce1">source</th>
+<th class="cell-ce1">mapApproach</th>
+<th class="cell-ce1">mapCase</th>
+<th class="cell-ce1">FHIR Path</th>
+<th class="cell-ce1">subPath</th>
+<th class="cell-ce1">mapValue</th>
+<th class="cell-ce1">mapParameter</th>
+<th class="cell-ce1">mapComment</th>
+<th class="cell-ce1">FHIR URL | Ver</th>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1709</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">fixed value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">MedicationDispense.type</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://terminology.hl7.org/CodeSystem/v3-ActCode#RF</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/StructureDefinition/MedicationDispense | 4.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1712</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">PRESCRIPTION - REFILL &gt; REFILL - MAIL/WINDOW/PARK (52-52 &gt; 52.1-2)</td>
+<td class="cell-ce1">source value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">MedicationDispense.destination</td>
+<td class="cell-ce1">.display</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/StructureDefinition/MedicationDispense | 4.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1553</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">PRESCRIPTION - PLACER ORDER # (52-39.3)</td>
+<td class="cell-ce1">reference</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">MedicationDispense.authorizingPrescription</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">/MedicationRequestOutpatient</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/StructureDefinition/MedicationDispense | 4.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">827</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">PRESCRIPTION - REFILL &gt; REFILL - DAYS SUPPLY (52-52 &gt; 52.1-1.1)</td>
+<td class="cell-ce1">source value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">MedicationDispense.daysSupply</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/StructureDefinition/MedicationDispense | 4.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">836</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">PRESCRIPTION - REFILL &gt; REFILL - MAIL/WINDOW/PARK (52-52 &gt; 52.1-2)</td>
+<td class="cell-ce1">source value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">MedicationDispense.destination</td>
+<td class="cell-ce1">.display</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/StructureDefinition/MedicationDispense | 4.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1559</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">PRESCRIPTION - MEDICATION INSTRUCTIONS &gt; MEDICATION INSTRUCTIONS - UNITS (52-113 &gt; 52.0113-2)</td>
+<td class="cell-ce1">source value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">MedicationDispense.dosageInstruction</td>
+<td class="cell-ce1">.doseAndRate.doseQuantity.unit</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/StructureDefinition/MedicationDispense | 4.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1579</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">PRESCRIPTION - MEDICATION INSTRUCTIONS &gt; MEDICATION INSTRUCTIONS - UNITS (52-113 &gt; 52.0113-2)</td>
+<td class="cell-ce1">terminologyMaps</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">MedicationDispense.dosageInstruction</td>
+<td class="cell-ce1">.doseAndRate.doseQuantity.code</td>
+<td class="cell-ce1">VF_DoseUnits</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/StructureDefinition/MedicationDispense | 4.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1558</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">PRESCRIPTION - MEDICATION INSTRUCTIONS &gt; MEDICATION INSTRUCTIONS - DOSAGE ORDERED (52-113 &gt; 52.0113-.01)</td>
+<td class="cell-ce1">source value</td>
+<td class="cell-ce1">number</td>
+<td class="cell-ce1">MedicationDispense.dosageInstruction</td>
+<td class="cell-ce1">.doseAndRate.doseQuantity.value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/StructureDefinition/MedicationDispense | 4.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1557</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">PRESCRIPTION - PATIENT INSTRUCTIONS (52-114)</td>
+<td class="cell-ce1">source value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">MedicationDispense.dosageInstruction</td>
+<td class="cell-ce1">.patientInstruction</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/StructureDefinition/MedicationDispense | 4.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1556</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">PRESCRIPTION - SIG (52-10)</td>
+<td class="cell-ce1">source value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">MedicationDispense.dosageInstruction</td>
+<td class="cell-ce1">.text</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/StructureDefinition/MedicationDispense | 4.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1561</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">PRESCRIPTION - DRUG &gt; DRUG - PSNDF VA PRODUCT NAME ENTRY (52-6 &gt; 50-22)</td>
+<td class="cell-ce1">source value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">MedicationDispense.medicationCodeableConcept.coding</td>
+<td class="cell-ce1">.code</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">.system = urn:oid:2.16.840.1.113883.6.233</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/StructureDefinition/MedicationDispense | 4.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1561-1</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">fixed value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">MedicationDispense.medicationCodeableConcept.coding</td>
+<td class="cell-ce1">.system</td>
+<td class="cell-ce1">urn:oid:2.16.840.1.113883.6.233</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">from mapParameter 1</td>
+<td class="cell-ce1"></td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1560</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">PRESCRIPTION - DRUG &gt; DRUG - GENERIC NAME (52-6 &gt; 50-.01)</td>
+<td class="cell-ce1">source value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">MedicationDispense.medicationCodeableConcept</td>
+<td class="cell-ce1">.text</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">This may not be necessary; we have the product.</td>
+<td class="cell-ce1">http://hl7.org/fhir/StructureDefinition/MedicationDispense | 4.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">824</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">PRESCRIPTION - REFILL &gt; REFILL - QTY (52-52 &gt; 52.1-1)</td>
+<td class="cell-ce1">source value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">MedicationDispense.quantity</td>
+<td class="cell-ce1">.value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/StructureDefinition/MedicationDispense | 4.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">869</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">PRESCRIPTION - REFILL &gt; REFILL - RELEASED DATE/TIME (52-52 &gt; 52.1-17)</td>
+<td class="cell-ce1">fixed value</td>
+<td class="cell-ce1">not null</td>
+<td class="cell-ce1">MedicationDispense.status</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">#completed</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">updated table id (was a dup)</td>
+<td class="cell-ce1">http://hl7.org/fhir/StructureDefinition/MedicationDispense | 4.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">819</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">PRESCRIPTION - REFILL &gt; REFILL - RELEASED DATE/TIME (52-52 &gt; 52.1-17)</td>
+<td class="cell-ce1">fixed value</td>
+<td class="cell-ce1">null</td>
+<td class="cell-ce1">MedicationDispense.status</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">#in-progress</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/StructureDefinition/MedicationDispense | 4.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1555</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">PRESCRIPTION - RELEASED DATE/TIME (52-31)</td>
+<td class="cell-ce1">fixed value</td>
+<td class="cell-ce1">null</td>
+<td class="cell-ce1">MedicationDispense.status</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">#in-progress</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/StructureDefinition/MedicationDispense | 4.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1551</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">PRESCRIPTION - PATIENT (52-2)</td>
+<td class="cell-ce1">reference</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">MedicationDispense.subject</td>
+<td class="cell-ce1">/Patient</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/StructureDefinition/MedicationDispense | 4.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">833</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">PRESCRIPTION - REFILL &gt; REFILL - RELEASED DATE/TIME (52-52 &gt; 52.1-17)</td>
+<td class="cell-ce1">source value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">MedicationDispense.whenPrepared</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">see original fill note</td>
+<td class="cell-ce1">http://hl7.org/fhir/StructureDefinition/MedicationDispense | 4.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1715</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">PRESCRIPTION - REFILL &gt; REFILL - DIVISION &gt; OUTPATIENT SITE - DEFAULT ERX CLINIC (52-52 &gt; 52.1-8 &gt; 59-10)</td>
+<td class="cell-ce1">reference</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">MedicationDispense.location</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">/Location</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">not Clinic (written) but Division (filled)</td>
+<td class="cell-ce1">http://hl7.org/fhir/StructureDefinition/MedicationDispense | 4.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1718</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">PRESCRIPTION - REFILL &gt; REFILL - REMARKS (52-52 &gt; 52.1-3)</td>
+<td class="cell-ce1">source value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">MedicationDispense.note</td>
+<td class="cell-ce1">.text</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/StructureDefinition/MedicationDispense | 4.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1728</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">PRESCRIPTION - REFILL &gt; REFILL - PHARMACIST NAME (52-52 &gt; 52.1-4)</td>
+<td class="cell-ce1">reference</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">MedicationDispense.performer.actor</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">/Practitioner</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/StructureDefinition/MedicationDispense | 4.0.1</td>
+</tr>
+</table>
+
+</div>
+
+
+
+
+  <a name="vista"> </a><h3>Mappings for Veterans Health Information Systems Technology and Architecture (VistA) ()</h3><table class="grid">
+ <tr><td colspan="3"><b>MedicationDispenseRefill</b></td></tr>
+ <tr><td>MedicationDispense</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>869: fixed value = #completed when PRESCRIPTION - REFILL &gt; REFILL - RELEASED DATE/TIME (52-52 &gt; 52.1-17) case not null, 819: fixed value = #in-progress when PRESCRIPTION - REFILL &gt; REFILL - RELEASED DATE/TIME (52-52 &gt; 52.1-17) case null, 1555: fixed value = #in-progress when PRESCRIPTION - RELEASED DATE/TIME (52-31) case null</td><td><p>updated table id (was a dup)</p>
+, , </td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;medication[x]</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;medication[x] (medicationCodeableConcept)</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;system</td><td>1561-1: fixed value = urn:oid:2.16.840.1.113883.6.233</td><td><p>from mapParameter 1</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>1561: source value from PRESCRIPTION - DRUG &gt; DRUG - PSNDF VA PRODUCT NAME ENTRY (52-6 &gt; 50-22)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>1560: source value from PRESCRIPTION - DRUG &gt; DRUG - GENERIC NAME (52-6 &gt; 50-.01)</td><td><p>This may not be necessary; we have the product.</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>1551: reference from PRESCRIPTION - PATIENT (52-2)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;performer</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;actor</td><td>1728: reference from PRESCRIPTION - REFILL &gt; REFILL - PHARMACIST NAME (52-52 &gt; 52.1-4)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;location</td><td>1715: reference from PRESCRIPTION - REFILL &gt; REFILL - DIVISION &gt; OUTPATIENT SITE - DEFAULT ERX CLINIC (52-52 &gt; 52.1-8 &gt; 59-10)</td><td><p>not Clinic (written) but Division (filled)</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;authorizingPrescription</td><td>1553: reference from PRESCRIPTION - PLACER ORDER # (52-39.3)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;type</td><td>1709: fixed value = http://terminology.hl7.org/CodeSystem/v3-ActCode#RF</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;quantity</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>824: source value from PRESCRIPTION - REFILL &gt; REFILL - QTY (52-52 &gt; 52.1-1)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;daysSupply</td><td>827: source value from PRESCRIPTION - REFILL &gt; REFILL - DAYS SUPPLY (52-52 &gt; 52.1-1.1)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;whenPrepared</td><td>833: source value from PRESCRIPTION - REFILL &gt; REFILL - RELEASED DATE/TIME (52-52 &gt; 52.1-17)</td><td><p>see original fill note</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;destination</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display</td><td>1712: source value from PRESCRIPTION - REFILL &gt; REFILL - MAIL/WINDOW/PARK (52-52 &gt; 52.1-2), 836: source value from PRESCRIPTION - REFILL &gt; REFILL - MAIL/WINDOW/PARK (52-52 &gt; 52.1-2)</td><td>, </td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;note</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>1718: source value from PRESCRIPTION - REFILL &gt; REFILL - REMARKS (52-52 &gt; 52.1-3)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;dosageInstruction</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>1556: source value from PRESCRIPTION - SIG (52-10)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;patientInstruction</td><td>1557: source value from PRESCRIPTION - PATIENT INSTRUCTIONS (52-114)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;doseAndRate</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dose[x]</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dose[x] (doseQuantity)</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>1558: source value from PRESCRIPTION - MEDICATION INSTRUCTIONS &gt; MEDICATION INSTRUCTIONS - DOSAGE ORDERED (52-113 &gt; 52.0113-.01) case number</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;unit</td><td>1559: source value from PRESCRIPTION - MEDICATION INSTRUCTIONS &gt; MEDICATION INSTRUCTIONS - UNITS (52-113 &gt; 52.0113-2)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>1579: terminologyMaps using VF_DoseUnits on PRESCRIPTION - MEDICATION INSTRUCTIONS &gt; MEDICATION INSTRUCTIONS - UNITS (52-113 &gt; 52.0113-2)</td><td></td> </tr>
+</table>
+<a name="cdw"> </a><h3>Mappings for Clinical Data Warehouse (CDW) ()</h3><table class="grid">
+ <tr><td colspan="3"><b>MedicationDispenseRefill</b></td></tr>
+ <tr><td>MedicationDispense</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;medication[x]</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;medication[x] (medicationCodeableConcept)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>RxOut.RxOutpat.LocalDrugIEN,RxOut.RxOutpat.NationalDrugIEN,RxOut.RxOutpatFill.LocalDrugIEN,RxOut.RxOutpatFill.NationalDrugIEN
+Dim.LocalDrug.DrugNameWithoutDoseIEN,Dim.LocalDrug.NationalDrugIEN,Dim.LocalDrug.NationalDrugIEN</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>RxOut.RxOutpat.LocalDrugIEN,RxOut.RxOutpat.NationalDrugIEN,RxOut.RxOutpatFill.LocalDrugIEN,RxOut.RxOutpatFill.NationalDrugIEN
+Dim.LocalDrug.LocalDrugNameWithDose,Dim.LocalDrug.LocalDrugNameWithDose,RxOut.RxOutpatFill.LocalDrugNameWithDose</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>RxOut.ActivityLog.PatientIEN,RxOut.ActivityLogOtherComments.PatientIEN,RxOut.RxOutpat.PatientIEN,RxOut.RxOutpatExt.PatientIEN,RxOut.RxOutpatExt.PatientSID,RxOut.RxOutpatFill.PatientIEN,RxOut.RxOutpatMedInstructions.PatientIEN,RxOut.RxOutpatSig.PatientIEN</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;authorizingPrescription</td><td>RxOut.RxOutpat.CPRSOrderEntryNumber</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;dosageInstruction</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;patientInstruction</td><td>RxOut.RxOutpatSig.PatientInstructions</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;doseAndRate</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dose[x]</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dose[x] (doseQuantity)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>RxOut.RxOutpatMedInstructions.DoseOrdered</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;unit</td><td>RxOut.RxOutpatMedInstructions.Unit</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>RxOut.RxOutpatMedInstructions.Unit</td> </tr>
+</table>
+<a name="sda"> </a><h3>Mappings for Summary Document Architecure (SDA) ()</h3><table class="grid">
+ <tr><td colspan="3"><b>MedicationDispenseRefill</b></td></tr>
+ <tr><td>MedicationDispense</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>Medication.RefillNumber,Medication.EBilling,Medication.Fills,Medication.LastFilled</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;medication[x]</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;medication[x] (medicationCodeableConcept)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>Medication.DrugProduct,Medication.CMOP
+Medication.DrugProduct.Identifier2,Medication.DrugProduct.ProductName,Medication.Extension[DrugProductExtension].FederalSchedule</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>Medication.DrugProduct,Medication.CMOP
+Medication.ComponentMeds[DrugProduct].Description,Medication.ComponentMeds[DrugProduct].OriginalText,Medication.DrugProduct.Description,Medication.DrugProduct.OriginalText,Medication.ATCCode.Code,Medication.Generic.Description,Medication.Route.Description,Medication.OrderCategory.Description,Medication.OriginalText,Medication.OriginalText</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;performer</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;actor</td><td>Medication.RefillNumber,Medication.EBilling,Medication.Fills,Medication.LastFilled</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;location</td><td>Medication.RefillNumber,Medication.EBilling,Medication.Fills,Medication.LastFilled</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;authorizingPrescription</td><td>Medication.ExternalId,Medication.PlacerId</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;quantity</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>Medication.RefillNumber,Medication.EBilling,Medication.Fills,Medication.LastFilled</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;daysSupply</td><td>Medication.RefillNumber,Medication.EBilling,Medication.Fills,Medication.LastFilled</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;whenPrepared</td><td>Medication.RefillNumber,Medication.EBilling,Medication.Fills,Medication.LastFilled</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;destination</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display</td><td>Medication.RefillNumber,Medication.EBilling,Medication.Fills,Medication.LastFilled</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;note</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>Medication.RefillNumber,Medication.EBilling,Medication.Fills,Medication.LastFilled</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;dosageInstruction</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;patientInstruction</td><td>Medication.TextInstruction</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;doseAndRate</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dose[x]</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dose[x] (doseQuantity)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>Medication.DosageSteps,Medication.Route,Medication.DoseQuantity,Medication.DoseUoM,Medication.Duration,Medication.Frequency,Medication.TextInstruction,Medication.Conjunction,Medication.Noun,Medication.UnitsPerDose,Medication.Verb</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;unit</td><td>Medication.DosageSteps,Medication.Route,Medication.DoseQuantity,Medication.DoseUoM,Medication.Duration,Medication.Frequency,Medication.TextInstruction,Medication.Conjunction,Medication.Noun,Medication.UnitsPerDose,Medication.Verb</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>Medication.DosageSteps,Medication.Route,Medication.DoseQuantity,Medication.DoseUoM,Medication.Duration,Medication.Frequency,Medication.TextInstruction,Medication.Conjunction,Medication.Noun,Medication.UnitsPerDose,Medication.Verb</td> </tr>
+</table>
+<a name="workflow"> </a><h3>Mappings for Workflow Pattern (<a href="http://hl7.org/fhir/workflow.html">http://hl7.org/fhir/workflow</a>)</h3><table class="grid">
+ <tr><td colspan="3"><b>MedicationDispenseRefill</b></td></tr>
+ <tr><td>MedicationDispense</td><td>Event</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>Event.identifier</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;partOf</td><td>Event.partOf</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>Event.status</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;statusReason[x]</td><td>Event.statusReason</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;medication[x]</td><td>Event.code</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;medication[x] (medicationCodeableConcept)</td><td>Event.code</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>Event.subject</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;context</td><td>Event.context</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;performer</td><td>Event.performer</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;actor</td><td>Event.performer.actor</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;authorizingPrescription</td><td>Event.basedOn</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;whenHandedOver</td><td>Event.occurrence[x]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;note</td><td>Event.note</td> </tr>
+</table>
+<a name="rim"> </a><h3>Mappings for RIM Mapping (<a href="http://hl7.org/comparison-v3.html">http://hl7.org/v3</a>)</h3><table class="grid">
+ <tr><td colspan="3"><b>MedicationDispenseRefill</b></td></tr>
+ <tr><td>MedicationDispense</td><td>Entity. Role, or Act, Supply[moodCode=EVN]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;text</td><td>Act.text?</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;contained</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;extension</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;modifierExtension</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>.id</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;partOf</td><td>.outboundRelationship[typeCode=COMP]/target[classCode=PROC,moodCode=EVN]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>.statusCode</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;statusReason[x]</td><td>.outboundRelationship[typeCode=RSON]/target[classCode=OBS,moodCode=EVN, code=&quot;not done reason&quot;].value</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;category</td><td>.inboundRelationship[typeCode=COMP].source[classCode=OBS, moodCode=EVN, code=&quot;type of medication dispense&quot;].value</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;medication[x]</td><td>.participation[typeCode=PRD].role</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;medication[x] (medicationCodeableConcept)</td><td>.participation[typeCode=PRD].role</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>union(., ./translation)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;system</td><td>./codeSystem</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;version</td><td>./codeSystemVersion</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>./code</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display</td><td>CV.displayName</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;userSelected</td><td>CD.codingRationale</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>./originalText[mediaType/code=&quot;text/plain&quot;]/data</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>.participation[typeCode=SBJ].role[classCode=PAT]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;context</td><td>.inboundRelationship[typeCode=COMP].source[classCode=ENC, moodCode=EVN, code=&quot;type of encounter or episode&quot;]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;supportingInformation</td><td>.outboundRelationship[typeCode=PERT].target[A_SupportingClinicalStatement CMET minimal with many different choices of classCodes(ORG, ENC, PROC, SPLY, SBADM, OBS) and each of the act class codes draws from one or more of the following moodCodes (EVN, DEF, INT PRMS, RQO, PRP, APT, ARQ, GOL)]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;performer</td><td>.participation[typeCode=PRF]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modifierExtension</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function</td><td>participation[typeCode=PRF].functionCode</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;actor</td><td>.role</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;location</td><td>.participation[typeCode=LOC].role</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;authorizingPrescription</td><td>.outboundRelationship[typeCode=FLFS].target[moodCode=RQO]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;type</td><td>.code</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;quantity</td><td>.quantity</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>PQ.value, CO.value, MO.value, IVL.high or IVL.low depending on the value</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;unit</td><td>PQ.unit</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;system</td><td>CO.codeSystem, PQ.translation.codeSystem</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>PQ.code, MO.currency, PQ.translation.code</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;daysSupply</td><td>effectiveUseTime</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;whenPrepared</td><td>.effectiveTime[xmi:type=IVL_TS].low</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;whenHandedOver</td><td>.effectiveTime[xmi:type=IVL_TS].high</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;destination</td><td>.participation[typeCode=DST].role</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;reference</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;identifier</td><td>.identifier</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;receiver</td><td>.participation[typeCode=RCV].role</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;note</td><td>.inboundRelationship[typeCode=SUBJ]/source[classCode=ACT,moodCode=EVN]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;author[x]</td><td>Act.participant[typeCode=AUT].role</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;time</td><td>Act.effectiveTime</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>Act.text</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;dosageInstruction</td><td>.outboundRelationship[typeCode=COMP].target[classCode=SBADM, moodCode=INT]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modifierExtension</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sequence</td><td>.text</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>.text</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;additionalInstruction</td><td>.text</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;patientInstruction</td><td>.text</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timing</td><td>.effectiveTime</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;asNeeded[x]</td><td>.outboundRelationship[typeCode=PRCN].target[classCode=OBS, moodCode=EVN, code=&quot;as needed&quot;].value=boolean or codable concept</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;site</td><td>.approachSiteCode</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;route</td><td>.routeCode</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;method</td><td>.doseQuantity</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;doseAndRate</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dose[x]</td><td>.doseQuantity</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dose[x] (doseQuantity)</td><td>n/a, PQ, IVL&lt;PQ&gt;, MO, CO, depending on the values</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>PQ.value, CO.value, MO.value, IVL.high or IVL.low depending on the value</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;unit</td><td>PQ.unit</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;system</td><td>CO.codeSystem, PQ.translation.codeSystem</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>PQ.code, MO.currency, PQ.translation.code</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rate[x]</td><td>.rateQuantity</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;maxDosePerPeriod</td><td>.maxDoseQuantity</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;maxDosePerAdministration</td><td>not supported</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;maxDosePerLifetime</td><td>not supported</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;substitution</td><td>.outboundRelationship[typeCode=COMP].target[classCode=SUBST, moodCode=EVN]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modifierExtension</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wasSubstituted</td><td>.actionNegationInd</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td>.code</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;reason</td><td>.reasonCode</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;responsibleParty</td><td>.participation[typeCode=PFM].role[classCode=ASSIGN]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;detectedIssue</td><td>.inboundRelationship[typeCode=SUBJ]/source[classCode=ALRT,moodCode=EVN].value</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;eventHistory</td><td>.inboundRelationship(typeCode=SUBJ].source[classCode=CACT, moodCode=EVN]</td> </tr>
+</table>
+<a name="w5"> </a><h3>Mappings for FiveWs Pattern Mapping (http://hl7.org/fhir/fivews)</h3><table class="grid">
+ <tr><td colspan="3"><b>MedicationDispenseRefill</b></td></tr>
+ <tr><td>MedicationDispense</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>FiveWs.identifier</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>FiveWs.status</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;medication[x]</td><td>FiveWs.what[x]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;medication[x] (medicationCodeableConcept)</td><td>FiveWs.what[x]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>FiveWs.subject[x], FiveWs.subject</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;supportingInformation</td><td>FiveWs.context</td> </tr>
+</table>
+<a name="rx-dispense-rmim"> </a><h3>Mappings for V3 Pharmacy Dispense RMIM (http://www.hl7.org/v3/PORX_RM020070UV)</h3><table class="grid">
+ <tr><td colspan="3"><b>MedicationDispenseRefill</b></td></tr>
+ <tr><td>MedicationDispense</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>CombinedMedicationDispense.id</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>CombinedMedicationDispense.SupplyEvent.statusCode</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;medication[x]</td><td>CombinedMedicationRequest.component1.AdministrationRequest.consumable</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;medication[x] (medicationCodeableConcept)</td><td>CombinedMedicationRequest.component1.AdministrationRequest.consumable</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;authorizingPrescription</td><td>CombinedMedicationDispense.inFulfillmentOf</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;type</td><td>CombinedMedicationDispense.SupplyEvent.code</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;quantity</td><td>CombinedMedicationDispense.SupplyEvent.quantity</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;whenPrepared</td><td>CombinedMedicationDispense.SupplyEvent.effectiveTime</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;whenHandedOver</td><td>CombinedMedicationDispense.SupplyEvent.effectiveTime</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;destination</td><td>CombinedMedicationDispense.SupplyEvent.destination</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;receiver</td><td>CombinedMedicationDispense.SupplyEvent.receiver</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;substitution</td><td>CombinedMedicationDispense.substitutionMade</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td>CombinedMedicationDispense.substitutionMade.code</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;reason</td><td>CombinedMedicationDispense.substitutionMade.reasonCode</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;responsibleParty</td><td>CombinedMedicationDispense.substitutionMade.ResponsibleParty</td> </tr>
+</table>
+<a name="v2"> </a><h3>Mappings for HL7 v2 Mapping (<a href="http://hl7.org/comparison-v2.html">http://hl7.org/v2</a>)</h3><table class="grid">
+ <tr><td colspan="3"><b>MedicationDispenseRefill</b></td></tr>
+ <tr><td>MedicationDispense</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;medication[x]</td><td>RXD-2-Dispense/Give Code</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;medication[x] (medicationCodeableConcept)</td><td>RXD-2-Dispense/Give Code</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>C*E.1-8, C*E.10-22</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;system</td><td>C*E.3</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;version</td><td>C*E.7</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>C*E.1</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display</td><td>C*E.2 - but note this is not well followed</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;userSelected</td><td>Sometimes implied by being first</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>C*E.9. But note many systems use C*E.2 for this</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>PID-3-Patient ID List</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;authorizingPrescription</td><td>ORC-2 Placer Order Number</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;type</td><td>RXD-33-Dispense Type</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;quantity</td><td>RXD-4-Actual Dispense Amount / RXD-5.1-Actual Dispense Units.code / RXD-5.3-Actual Dispense Units.name of coding system</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>SN.2  / CQ - N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;unit</td><td>(see OBX.6 etc.) / CQ.2</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;system</td><td>(see OBX.6 etc.) / CQ.2</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>(see OBX.6 etc.) / CQ.2</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;daysSupply</td><td>TQ1.6 Timing/Quantity Segment Service Duration.Prior to v2.5, ORC.7.3 Common Order Segment / Quantity/Timing / Duration component.  This is a formatted string, first character for the time unit (e.g., D=days), followed by the value.  For example, “D14” represents “14 days supply”From v2.5 on, TQ1.6 Timing/Quantity Segment / Service Duration.  This is a CQ data type (&lt;Quantity (NM)&gt; ^ &lt;Units (CWE)&gt;), thus for days supply, assuming the unit of measure is “days”, the numeric value is TQ1.6.1 (…|14^For backwards compatibility, ORC.7 was permitted through v2.6.  Both forms (field and segment) may be present in v2.5, v2.5.1, and v2.6</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;whenPrepared</td><td>RXD-3-Date/Time Dispensed</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;whenHandedOver</td><td>RXD-3-Date/Time Dispensed</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;destination</td><td>RXD-13 Dispense-to Location; RXD-30 Dispense to Pharmacy; RXD-31 Dispense to Pharmacy Address</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;note</td><td>RXD-9 Dispense Notes</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;author[x]</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;time</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;dosageInstruction</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sequence</td><td>TQ1-1</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>RXO-6; RXE-21</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;additionalInstruction</td><td>RXO-7</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;patientInstruction</td><td>RXO-7</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;asNeeded[x]</td><td>TQ1-9</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;site</td><td>RXR-2</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;route</td><td>RXR-1</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;method</td><td>RXR-4</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;doseAndRate</td><td>TQ1-2</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td>RXO-21; RXE-23</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dose[x]</td><td>RXO-2, RXE-3</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dose[x] (doseQuantity)</td><td>SN (see also Range) or CQ</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>SN.2  / CQ - N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;unit</td><td>(see OBX.6 etc.) / CQ.2</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;system</td><td>(see OBX.6 etc.) / CQ.2</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>(see OBX.6 etc.) / CQ.2</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rate[x]</td><td>RXE22, RXE23, RXE-24</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;maxDosePerPeriod</td><td>RXO-23, RXE-19</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;substitution</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td>RXO-9-Allow Substitutions / RXE-9-Substitution Status</td> </tr>
+</table>
+
+
+  <!-- insert notes if present -->
+  
+
+
+
+</div>
+
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript" src="assets/js/tabs.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2024 <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.69.448 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Sat, Dec 21, 2024 10:24+0000">2024-12-21</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+| <a style="color: #81BEF7" target="_blank" href="https://leaf.va.gov/NATIONAL/776/va_fhir_community_of_practice/?a=newform">Propose a change</a>
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

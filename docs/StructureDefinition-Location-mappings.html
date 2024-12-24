@@ -1,0 +1,815 @@
+<!-- get modelType -->
+
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Location - Mappings - US Veterans Administration FHIR Map Set Implementation Guide v0.69.448</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+    <link href="assets/css/va-maps.css" rel="stylesheet"/>
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"11.76"}
+    h3,h4,h5,h6{--heading-prefix:"11.76"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <!-- Placeholder for child template header declarations -->
+
+<div id="project-nav">
+    <a id="family-logo" no-external="true" href="https://va.gov"><img height="50" alt="Visit the VA website"
+        src="assets/images/va.png" /> </a>
+</div>
+
+<div id="family-nav">
+    <a id="family-logo" no-external="true" href="http://hl7.org/fhir"><img height="50" alt="Visit the FHIR website" src="assets/images/fhir-logo-www.png"/> </a>
+</div>
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">US Veterans Administration FHIR Map Set Implementation Guide</span>
+            <br/>
+            <span style="display:inline-block;">0.69.448 - 250101
+
+
+
+  <img alt="United States of America flag" src="assets/images/usa.svg" height="16" title="United States of America"/>
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li>
+    <a href="toc.html">Table of Content</a>
+  </li>
+  <li>
+    <a href="process.html">Process</a>
+  </li>
+  <li>
+    <a href="profileDesign.html">Profile Design</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Design Guidance
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="guidance.html">General Guidance</a>
+      </li>
+      <li>
+        <a href="guidance-vitals.html">Vitals Guidance</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="mustSupport.html">Must Support</a>
+  </li>
+  <li>
+    <a href="classes.html">Classes</a>
+  </li>
+  <li>
+    <a href="artifacts.html">Artifacts</a>
+  </li>
+  <li>
+    <a href="changes.html">Changes</a>
+  </li>
+  <li>
+    <a href="history.html">History</a>
+  </li>
+  <li>
+    <a href="mapset-qa.html">MapSet QA</a>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='artifacts.html'><b>Artifacts Summary</b></a></li><li><b>Location</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<div style="counter-reset: section 5" class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">US Veterans Administration FHIR Map Set Implementation Guide - Local Development build (v0.69.448) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  
+
+
+
+
+
+
+
+
+
+
+
+<ul class="nav nav-tabs">
+
+  <li>
+    <a href="StructureDefinition-Location.html">Content</a>
+  </li>
+
+
+
+  <li>
+    <a href="StructureDefinition-Location-definitions.html">Detailed Descriptions</a>
+  </li>
+
+
+
+  
+    <li class="active">
+      <a href="#">Mappings</a>
+    </li>
+  
+
+
+
+
+
+
+
+  
+    <li>
+      <a href="StructureDefinition-Location.profile.xml.html">XML</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="StructureDefinition-Location.profile.json.html">JSON</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="StructureDefinition-Location.profile.ttl.html">TTL</a>
+    </li>
+  
+
+
+</ul>
+
+
+<a name="root"> </a>
+<h2 id="root">Resource Profile: Location - Mappings</h2>
+
+  <table class="colsi">
+    <tr>
+
+      <td colspan="2">
+        
+          Active
+          
+            as of 2024-12-21
+          
+        
+      </td>
+
+    </tr>
+  </table>
+
+
+<p>Mappings for the Location resource profile.</p>
+
+  <!-- insert intro if present -->
+  
+
+
+
+<div style="display:inline-block" markdown="1">
+
+<p>Scroll down for the Raw FHIR, CDW &amp; SDA mappings (if any).</p>
+
+<blockquote>
+  <p>Note that the CDW and SDA mappings are derived from a look-up based on the VistA source mappings in CDW and VPR SDA.</p>
+</blockquote>
+
+<?xml version="1.0" encoding="us-ascii" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="304px" preserveAspectRatio="none" style="width:926px;height:304px;background:#FFFFFF;" version="1.1" viewBox="0 0 926 304" width="926px" zoomAndPan="magnify"><defs /><g><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="225" x="343.75" y="22.9951">Use Case: Location (Source)</text><g id="elem_4"><rect fill="#F1F1F1" height="162.375" style="stroke:#181818;stroke-width:0.5;" width="168" x="292" y="114.8628" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="109" x="321.5" y="129.8579">INSTITUTION (4)</text><line style="stroke:#181818;stroke-width:1.0;" x1="292" x2="460" y1="135.1597" y2="135.1597" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="301.5" y="150.1548">.02</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="45" x="338" y="150.1548">STATE</text><line style="stroke:#181818;stroke-width:1.0;" x1="333" x2="333" y1="135.1597" y2="155.4565" /><line style="stroke:#181818;stroke-width:1.0;" x1="292" x2="460" y1="155.4565" y2="155.4565" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="301.5" y="170.4517">.03</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="64" x="338" y="170.4517">DISTRICT</text><line style="stroke:#181818;stroke-width:1.0;" x1="333" x2="333" y1="155.4565" y2="175.7534" /><line style="stroke:#181818;stroke-width:1.0;" x1="292" x2="460" y1="175.7534" y2="175.7534" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="31" x="297" y="190.7485">1.01</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="117" x="338" y="190.7485">STREET ADDR. 1</text><line style="stroke:#181818;stroke-width:1.0;" x1="333" x2="333" y1="175.7534" y2="196.0503" /><line style="stroke:#181818;stroke-width:1.0;" x1="292" x2="460" y1="196.0503" y2="196.0503" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="31" x="297" y="211.0454">1.02</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="117" x="338" y="211.0454">STREET ADDR. 2</text><line style="stroke:#181818;stroke-width:1.0;" x1="333" x2="333" y1="196.0503" y2="216.3472" /><line style="stroke:#181818;stroke-width:1.0;" x1="292" x2="460" y1="216.3472" y2="216.3472" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="31" x="297" y="231.3423">1.03</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="31" x="338" y="231.3423">CITY</text><line style="stroke:#181818;stroke-width:1.0;" x1="333" x2="333" y1="216.3472" y2="236.644" /><line style="stroke:#181818;stroke-width:1.0;" x1="292" x2="460" y1="236.644" y2="236.644" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="31" x="297" y="251.6392">1.04</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="338" y="251.6392">ZIP</text><line style="stroke:#181818;stroke-width:1.0;" x1="333" x2="333" y1="236.644" y2="256.9409" /><line style="stroke:#181818;stroke-width:1.0;" x1="292" x2="460" y1="256.9409" y2="256.9409" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="27" x="299" y="271.936">801</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="69" x="338" y="271.936">COUNTRY</text><line style="stroke:#181818;stroke-width:1.0;" x1="333" x2="333" y1="256.9409" y2="277.2378" /></g><g id="elem_5"><rect fill="#F1F1F1" height="40.5938" style="stroke:#181818;stroke-width:0.5;" width="131" x="788.5" y="175.8628" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="68" x="820" y="190.8579">STATE (5)</text><line style="stroke:#181818;stroke-width:1.0;" x1="788.5" x2="919.5" y1="196.1597" y2="196.1597" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="9" x="793.5" y="211.1548">1</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="102" x="812.5" y="211.1548">ABBREVIATION</text><line style="stroke:#181818;stroke-width:1.0;" x1="807.5" x2="807.5" y1="196.1597" y2="216.4565" /></g><g id="elem_44"><rect fill="#F1F1F1" height="202.9688" style="stroke:#181818;stroke-width:3.0;" width="224" x="7" y="94.8628" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="173" x="32.5" y="109.8579">HOSPITAL LOCATION (44)</text><line style="stroke:#181818;stroke-width:1.0;" x1="7" x2="231" y1="115.1597" y2="115.1597" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="31" x="12" y="130.1548">.001</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="53" y="130.1548">IEN</text><line style="stroke:#181818;stroke-width:1.0;" x1="48" x2="48" y1="115.1597" y2="135.4565" /><line style="stroke:#181818;stroke-width:1.0;" x1="7" x2="231" y1="135.4565" y2="135.4565" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="16.5" y="150.4517">.01</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="40" x="53" y="150.4517">NAME</text><line style="stroke:#181818;stroke-width:1.0;" x1="48" x2="48" y1="135.4565" y2="155.7534" /><line style="stroke:#181818;stroke-width:1.0;" x1="7" x2="231" y1="155.7534" y2="155.7534" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="9" x="23" y="170.7485">1</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="102" x="53" y="170.7485">ABBREVIATION</text><line style="stroke:#181818;stroke-width:1.0;" x1="48" x2="48" y1="155.7534" y2="176.0503" /><line style="stroke:#181818;stroke-width:1.0;" x1="7" x2="231" y1="176.0503" y2="176.0503" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="9" x="23" y="191.0454">3</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="86" x="53" y="191.0454">INSTITUTION</text><line style="stroke:#181818;stroke-width:1.0;" x1="48" x2="48" y1="176.0503" y2="196.3472" /><line style="stroke:#181818;stroke-width:1.0;" x1="7" x2="231" y1="196.3472" y2="196.3472" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="9" x="23" y="211.3423">9</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="59" x="53" y="211.3423">SERVICE</text><line style="stroke:#181818;stroke-width:1.0;" x1="48" x2="48" y1="196.3472" y2="216.644" /><line style="stroke:#181818;stroke-width:1.0;" x1="7" x2="231" y1="216.644" y2="216.644" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="18" x="18.5" y="231.6392">10</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="140" x="53" y="231.6392">PHYSICAL LOCATION</text><line style="stroke:#181818;stroke-width:1.0;" x1="48" x2="48" y1="216.644" y2="236.9409" /><line style="stroke:#181818;stroke-width:1.0;" x1="7" x2="231" y1="236.9409" y2="236.9409" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="18" x="18.5" y="251.936">13</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="70" x="53" y="251.936">SYNONYM</text><line style="stroke:#181818;stroke-width:1.0;" x1="48" x2="48" y1="236.9409" y2="257.2378" /><line style="stroke:#181818;stroke-width:1.0;" x1="7" x2="231" y1="257.2378" y2="257.2378" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="18" x="18.5" y="272.2329">60</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="173" x="53" y="272.2329">PATIENT FRIENDLY NAME</text><line style="stroke:#181818;stroke-width:1.0;" x1="48" x2="48" y1="257.2378" y2="277.5347" /><line style="stroke:#181818;stroke-width:1.0;" x1="7" x2="231" y1="277.5347" y2="277.5347" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="18" x="18.5" y="292.5298">99</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="83" x="53" y="292.5298">TELEPHONE</text><line style="stroke:#181818;stroke-width:1.0;" x1="48" x2="48" y1="277.5347" y2="297.8315" /></g><g id="elem_779_004"><rect fill="#F1F1F1" height="40.5938" style="stroke:#181818;stroke-width:0.5;" width="200" x="537" y="175.8628" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="186" x="544" y="190.8579">COUNTRY CODE (779.004)</text><line style="stroke:#181818;stroke-width:1.0;" x1="537" x2="737" y1="196.1597" y2="196.1597" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="542" y="211.1548">.01</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="41" x="574" y="211.1548">CODE</text><line style="stroke:#181818;stroke-width:1.0;" x1="569" x2="569" y1="196.1597" y2="216.4565" /></g><!--link 44 to 4--><g id="link_44_4"><path codeLine="32" d="M231,185.8628 C242.8092,185.8628 244.3666,178.893 256,176.8628 C260.3783,176.0987 261.5718,176.4832 266,176.8628 C270.1635,177.2197 274.4061,177.6513 278.6848,178.1425 " fill="none" id="44-to-4" style="stroke:#181818;stroke-width:1.0;" /><polygon fill="#181818" points="283.7217,178.7455,275.2611,173.7039,278.7572,178.1511,274.31,181.6472,283.7217,178.7455" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="257" y="172.9297">3</text></g><!--link 4 to 5--><g id="link_4_5"><path codeLine="33" d="M460,144.8628 C493.0118,144.8628 482.3933,107.338 511,90.8628 C559.6434,62.848 579.107,61.6681 635,66.8628 C692.6319,72.2191 712.8,62.0517 763,90.8628 C794.9073,109.1752 821.0938,142.9333 837.0519,167.2351 " fill="none" id="4-to-5" style="stroke:#181818;stroke-width:1.0;" /><polygon fill="#181818" points="839.9116,171.6568,838.3828,161.9273,837.1963,167.4583,831.6653,166.2718,839.9116,171.6568" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="20" x="614" y="56.9297">.02</text></g><!--link 4 to 779_004--><g id="link_4_779_004"><path codeLine="34" d="M460,266.8628 C509.4311,266.8628 561.4064,242.7149 596.1463,222.5847 " fill="none" id="4-to-779_004" style="stroke:#181818;stroke-width:1.0;" /><polygon fill="#181818" points="600.7196,219.9002,590.9331,221.0069,596.4077,222.4314,594.9831,227.906,600.7196,219.9002" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="24" x="486" y="254.9297">801</text></g></g></svg>
+
+<h3 id="raw-mappings">Raw mappings</h3>
+
+<table border="1" cellspacing="0" cellpadding="0" class="table-ta1"><tr class="row-ro1">
+<th class="cell-ce1">key</th>
+<th class="cell-ce1">status</th>
+<th class="cell-ce1">direction</th>
+<th class="cell-ce1">source</th>
+<th class="cell-ce1">mapApproach</th>
+<th class="cell-ce1">mapCase</th>
+<th class="cell-ce1">FHIR Path</th>
+<th class="cell-ce1">subPath</th>
+<th class="cell-ce1">mapValue</th>
+<th class="cell-ce1">mapParameter</th>
+<th class="cell-ce1">mapComment</th>
+<th class="cell-ce1">FHIR URL | Ver</th>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">755</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">HOSPITAL LOCATION - IEN (44-.001)</td>
+<td class="cell-ce1">source value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Location.identifier</td>
+<td class="cell-ce1">.value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">.system=http://va.gov/identifiers/$Sta3n/44</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-location | 5.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">755-1</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">fixed value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Location.identifier</td>
+<td class="cell-ce1">.system</td>
+<td class="cell-ce1">http://va.gov/identifiers/$Sta3n/44</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">from mapParameter 1</td>
+<td class="cell-ce1"></td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">756</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">HOSPITAL LOCATION - NAME (44-.01)</td>
+<td class="cell-ce1">source value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Location.name</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-location | 5.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1276</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">HOSPITAL LOCATION - ABBREVIATION (44-1)</td>
+<td class="cell-ce1">source value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Location.alias</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-location | 5.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1277</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">HOSPITAL LOCATION - SYNONYM (44-13)</td>
+<td class="cell-ce1">source value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Location.alias</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-location | 5.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1278</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">VST2F</td>
+<td class="cell-ce1">Lookup from VAST system</td>
+<td class="cell-ce1">terminologyMaps</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Location.status</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">VF_LocationStatus</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Derive somehow from 44-2505 INACTIVATE 44-2506 REACTIVATE  
+Or use VAST, not ViSTA.</td>
+<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-location | 5.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1279</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">HOSPITAL LOCATION - PATIENT FRIENDLY NAME (44-60)</td>
+<td class="cell-ce1">source value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Location.description</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-location | 5.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1280</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">HOSPITAL LOCATION - TELEPHONE (44-99)</td>
+<td class="cell-ce1">transform</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Location.telecom</td>
+<td class="cell-ce1">.value</td>
+<td class="cell-ce1">concat (44-99," ext. ",44-99.1)</td>
+<td class="cell-ce1">.system=#phone
+.use=#work</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-location | 5.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1280-1</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">fixed value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Location.telecom</td>
+<td class="cell-ce1">.system</td>
+<td class="cell-ce1">#phone</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">from mapParameter 1</td>
+<td class="cell-ce1"></td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1280-2</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">fixed value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Location.telecom</td>
+<td class="cell-ce1">.use</td>
+<td class="cell-ce1">#work</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">from mapParameter 2</td>
+<td class="cell-ce1"></td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1283</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">fixed value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Location.managingOrganization</td>
+<td class="cell-ce1">.display</td>
+<td class="cell-ce1">"Veterans Administration"</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-location | 5.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1284</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">HOSPITAL LOCATION - PHYSICAL LOCATION (44-10)</td>
+<td class="cell-ce1">source value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Location.physicalType</td>
+<td class="cell-ce1">.text</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-location | 5.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1315</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">HOSPITAL LOCATION - INSTITUTION &gt; INSTITUTION - STATE &gt; STATE - ABBREVIATION (44-3 &gt; 4-.02 &gt; 5-1)</td>
+<td class="cell-ce1">source value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Location.address</td>
+<td class="cell-ce1">.state</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-location | 5.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1316</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">HOSPITAL LOCATION - INSTITUTION &gt; INSTITUTION - DISTRICT (44-3 &gt; 4-.03)</td>
+<td class="cell-ce1">source value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Location.address</td>
+<td class="cell-ce1">.district</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-location | 5.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1317</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">HOSPITAL LOCATION - INSTITUTION &gt; INSTITUTION - STREET ADDR. 1 (44-3 &gt; 4-1.01)</td>
+<td class="cell-ce1">source value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Location.address</td>
+<td class="cell-ce1">.line</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-location | 5.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1318</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">HOSPITAL LOCATION - INSTITUTION &gt; INSTITUTION - STREET ADDR. 2 (44-3 &gt; 4-1.02)</td>
+<td class="cell-ce1">source value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Location.address</td>
+<td class="cell-ce1">.line</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-location | 5.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1319</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">HOSPITAL LOCATION - INSTITUTION &gt; INSTITUTION - CITY (44-3 &gt; 4-1.03)</td>
+<td class="cell-ce1">source value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Location.address</td>
+<td class="cell-ce1">.city</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-location | 5.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1320</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">HOSPITAL LOCATION - INSTITUTION &gt; INSTITUTION - ZIP (44-3 &gt; 4-1.04)</td>
+<td class="cell-ce1">source value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Location.address</td>
+<td class="cell-ce1">.postalCode</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-location | 5.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1405</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">HOSPITAL LOCATION - INSTITUTION &gt; INSTITUTION - COUNTRY &gt; COUNTRY CODE - CODE (44-3 &gt; 4-801 &gt; 779.004-.01)</td>
+<td class="cell-ce1">source value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Location.address</td>
+<td class="cell-ce1">.country</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-location | 5.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1322</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">HOSPITAL LOCATION - INSTITUTION (44-3)</td>
+<td class="cell-ce1">fixed value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Location.address</td>
+<td class="cell-ce1">.type</td>
+<td class="cell-ce1">#physical</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-location | 5.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1412</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">HOSPITAL LOCATION - SERVICE (44-9)</td>
+<td class="cell-ce1">source value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Location.type</td>
+<td class="cell-ce1">.text</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">could map Medical Service text to FHIR type valueset, e.g.
+"NEUROLOGY" to "NEUR Neurology clinic"
+Or is this combination of TREATEMENT SPECIALTY (9.5) and SERVICE/SECTION? and STOP CODE?</td>
+<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-location | 5.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1806</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">fixed value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Location.mode</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">#instance</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Added 4/5/24 to match LH PHAPI</td>
+<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-location | 5.0.1</td>
+</tr>
+</table>
+
+</div>
+
+
+
+
+  <a name="vista"> </a><h3>Mappings for Veterans Health Information Systems Technology and Architecture (VistA) ()</h3><table class="grid">
+ <tr><td colspan="3"><b>Location</b></td></tr>
+ <tr><td>Location</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;system</td><td>755-1: fixed value = http://va.gov/identifiers/$Sta3n/44</td><td><p>from mapParameter 1</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>755: source value from HOSPITAL LOCATION - IEN (44-.001)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>1278: terminologyMaps using VF_LocationStatus</td><td><p>Derive somehow from 44-2505 INACTIVATE 44-2506 REACTIVATE<br />
+Or use VAST, not ViSTA.</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;name</td><td>756: source value from HOSPITAL LOCATION - NAME (44-.01)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;alias</td><td>1276: source value from HOSPITAL LOCATION - ABBREVIATION (44-1), 1277: source value from HOSPITAL LOCATION - SYNONYM (44-13)</td><td>, </td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;description</td><td>1279: source value from HOSPITAL LOCATION - PATIENT FRIENDLY NAME (44-60)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;mode</td><td>1806: fixed value = #instance</td><td><p>Added 4/5/24 to match LH PHAPI</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;type</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>1412: source value from HOSPITAL LOCATION - SERVICE (44-9)</td><td><p>could map Medical Service text to FHIR type valueset, e.g.
+&quot;NEUROLOGY&quot; to &quot;NEUR Neurology clinic&quot;
+Or is this combination of TREATEMENT SPECIALTY (9.5) and SERVICE/SECTION? and STOP CODE?</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;telecom</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;system</td><td>1280-1: fixed value = #phone</td><td><p>from mapParameter 1</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>1280: transform using concat (44-99,&quot; ext. &quot;,44-99.1) on HOSPITAL LOCATION - TELEPHONE (44-99)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;use</td><td>1280-2: fixed value = #work</td><td><p>from mapParameter 2</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;address</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td>1322: fixed value = #physical when HOSPITAL LOCATION - INSTITUTION (44-3)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;line</td><td>1317: source value from HOSPITAL LOCATION - INSTITUTION &gt; INSTITUTION - STREET ADDR. 1 (44-3 &gt; 4-1.01), 1318: source value from HOSPITAL LOCATION - INSTITUTION &gt; INSTITUTION - STREET ADDR. 2 (44-3 &gt; 4-1.02)</td><td>, </td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;city</td><td>1319: source value from HOSPITAL LOCATION - INSTITUTION &gt; INSTITUTION - CITY (44-3 &gt; 4-1.03)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;district</td><td>1316: source value from HOSPITAL LOCATION - INSTITUTION &gt; INSTITUTION - DISTRICT (44-3 &gt; 4-.03)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;state</td><td>1315: source value from HOSPITAL LOCATION - INSTITUTION &gt; INSTITUTION - STATE &gt; STATE - ABBREVIATION (44-3 &gt; 4-.02 &gt; 5-1)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;postalCode</td><td>1320: source value from HOSPITAL LOCATION - INSTITUTION &gt; INSTITUTION - ZIP (44-3 &gt; 4-1.04)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;country</td><td>1405: source value from HOSPITAL LOCATION - INSTITUTION &gt; INSTITUTION - COUNTRY &gt; COUNTRY CODE - CODE (44-3 &gt; 4-801 &gt; 779.004-.01)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;physicalType</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>1284: source value from HOSPITAL LOCATION - PHYSICAL LOCATION (44-10)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;managingOrganization</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display</td><td>1283: fixed value = &quot;Veterans Administration&quot;</td><td></td> </tr>
+</table>
+<a name="cdw"> </a><h3>Mappings for Clinical Data Warehouse (CDW) ()</h3><table class="grid">
+ <tr><td colspan="3"><b>Location</b></td></tr>
+ <tr><td>Location</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;name</td><td>Dim.Location.LocationName,Dim.Location.LocationName</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;alias</td><td>Dim.Location.LocationAbbreviation,Dim.Location.LocationAbbreviation</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;description</td><td>Dim.Location.PatientFriendlyLocationName,Dim.Location.PatientFriendlyLocationName</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;type</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>Dim.Location.MedicalService,Dim.Location.MedicalService</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;telecom</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>Dim.Location.PhoneNumber,Dim.Location.PhoneNumber</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;address</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td>Dim.Location.InstitutionIEN</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;line</td><td>Dim.Location.InstitutionIEN
+Dim.Institution.StreetAddress1,Dim.Institution.StreetAddress1,Dim.InstitutionTimeZone.StreetAddress1,NDim.MVIInstitution.StreetAddress1, Dim.Location.InstitutionIEN
+Dim.Institution.StreetAddress2,Dim.Institution.StreetAddress2,Dim.InstitutionTimeZone.StreetAddress2,NDim.MVIInstitution.StreetAddress2</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;city</td><td>Dim.Location.InstitutionIEN
+Dim.Institution.City,Dim.Institution.City,Dim.InstitutionTimeZone.City,NDim.MVIInstitution.City</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;district</td><td>Dim.Location.InstitutionIEN
+Dim.Institution.MedicalDistrict,Dim.Institution.MedicalDistrict,NDim.MVIInstitution.MedicalDistrict</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;state</td><td>Dim.Location.InstitutionIEN</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;postalCode</td><td>Dim.Location.InstitutionIEN
+Dim.Institution.Zip,Dim.Institution.Zip,Dim.InstitutionTimeZone.Zip,NDim.MVIInstitution.Zip</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;country</td><td>Dim.Location.InstitutionIEN</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;physicalType</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>Dim.Location.PhysicalLocation,Dim.Location.PhysicalLocation</td> </tr>
+</table>
+<a name="rim"> </a><h3>Mappings for RIM Mapping (<a href="http://hl7.org/comparison-v3.html">http://hl7.org/v3</a>)</h3><table class="grid">
+ <tr><td colspan="3"><b>Location</b></td></tr>
+ <tr><td>Location</td><td>Entity. Role, or Act, .Role[classCode=SDLC]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;text</td><td>Act.text?</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;contained</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;extension</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;modifierExtension</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>.id</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;use</td><td>Role.code or implied by context</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td>Role.code or implied by context</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;system</td><td>II.root or Role.id.root</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>II.extension or II.root if system indicates OID or GUID (Or Role.id.extension or root)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;period</td><td>Role.effectiveTime or implied by context</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assigner</td><td>II.assigningAuthorityName but note that this is an improper use by the definition of the field.  Also Role.scoper</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>.statusCode</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;operationalStatus</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;name</td><td>.name</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;alias</td><td>.name</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;description</td><td>.playingEntity[classCode=PLC determinerCode=INSTANCE].desc</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;mode</td><td>.playingEntity[classCode=PLC].determinerCode</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;type</td><td>.code</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>union(., ./translation)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>./originalText[mediaType/code=&quot;text/plain&quot;]/data</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;telecom</td><td>.telecom</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;system</td><td>./scheme</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>./url</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;use</td><td>unique(./use)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rank</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;period</td><td>./usablePeriod[type=&quot;IVL&lt;TS&gt;&quot;]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;address</td><td>.addr</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;use</td><td>unique(./use)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td>unique(./use)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>./formatted</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;line</td><td>AD.part[parttype = AL]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;city</td><td>AD.part[parttype = CTY]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;district</td><td>AD.part[parttype = CNT | CPA]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;state</td><td>AD.part[parttype = STA]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;postalCode</td><td>AD.part[parttype = ZIP]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;country</td><td>AD.part[parttype = CNT]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;period</td><td>./usablePeriod[type=&quot;IVL&lt;TS&gt;&quot;]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;physicalType</td><td>.playingEntity [classCode=PLC].code</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>union(., ./translation)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>./originalText[mediaType/code=&quot;text/plain&quot;]/data</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;position</td><td>.playingEntity [classCode=PLC determinerCode=INSTANCE].positionText</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modifierExtension</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;longitude</td><td>(RIM Opted not to map the sub-elements of GPS location, is now an OBS)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;latitude</td><td>(RIM Opted not to map the sub-elements of GPS location, is now an OBS)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;altitude</td><td>(RIM Opted not to map the sub-elements of GPS location, is now an OBS)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;managingOrganization</td><td>.scopingEntity[classCode=ORG determinerKind=INSTANCE]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;reference</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;identifier</td><td>.identifier</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;partOf</td><td>.inboundLink[typeCode=PART].source[classCode=SDLC]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;hoursOfOperation</td><td>.effectiveTime</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modifierExtension</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;daysOfWeek</td><td>.effectiveTime</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;allDay</td><td>.effectiveTime</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;openingTime</td><td>.effectiveTime</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;closingTime</td><td>.effectiveTime</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;availabilityExceptions</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;endpoint</td><td>n/a</td> </tr>
+</table>
+<a name="w5"> </a><h3>Mappings for FiveWs Pattern Mapping (http://hl7.org/fhir/fivews)</h3><table class="grid">
+ <tr><td colspan="3"><b>Location</b></td></tr>
+ <tr><td>Location</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>FiveWs.identifier</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>FiveWs.status</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;operationalStatus</td><td>FiveWs.status</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;mode</td><td>FiveWs.class</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;type</td><td>FiveWs.class</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;physicalType</td><td>FiveWs.class</td> </tr>
+</table>
+
+
+  <!-- insert notes if present -->
+  
+
+
+
+</div>
+
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript" src="assets/js/tabs.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2024 <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#0.69.448 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Sat, Dec 21, 2024 10:24+0000">2024-12-21</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+| <a style="color: #81BEF7" target="_blank" href="https://leaf.va.gov/NATIONAL/776/va_fhir_community_of_practice/?a=newform">Propose a change</a>
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+
