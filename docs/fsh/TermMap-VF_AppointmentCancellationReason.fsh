@@ -1,15 +1,15 @@
-Instance: AppointmentCancellationReason
+Instance: VF-AppointmentCancellationReason
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/AppointmentCancellationReason"
-* name = "AppointmentCancellationReason"
-* title = "AppointmentCancellationReason"
+* url = "http://va.gov/fhir/ConceptMap/VF-AppointmentCancellationReason"
+* name = "VF_AppointmentCancellationReason"
+* title = "VF_AppointmentCancellationReason"
 * status = #active
 * experimental = false
-* description = "Terminology Maps AppointmentCancellationReason"
+* description = "Terminology Maps VF_AppointmentCancellationReason"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/AppointmentCancellationReason-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/AppointmentCancellationReason"
-* group[0].source = "http://va.gov/terminology/vistaDefinedTerms/2.98-16"
+* group[0].source = "http://va.gov/terminology/vistaDefinedTerms/50.65-.02"
 * group[=].target = "http://terminology.hl7.org/CodeSystem/appointment-cancellation-reason"
 * group[=].element[0].code = #APPOINTMENT_NO_LONGER_REQUIRED
 * group[=].element[=].display = "APPOINTMENT NO LONGER REQUIRED"
@@ -119,7 +119,7 @@ Usage: #definition
 
 ValueSet: AppointmentCancellationReason
 Title: "AppointmentCancellationReason FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps AppointmentCancellationReason"
+Description: "FHIR Target ValueSet for Terminology Maps VF_AppointmentCancellationReason"
 * ^experimental = false
 * ^status = #active
 * ^name = "AppointmentCancellationReason"
@@ -133,28 +133,28 @@ Description: "FHIR Target ValueSet for Terminology Maps AppointmentCancellationR
 
 ValueSet: AppointmentCancellationReason-vista
 Title: "AppointmentCancellationReason VistA"
-Description: "VistA Source ValueSet for Terminology Maps AppointmentCancellationReason"
+Description: "VistA Source ValueSet for Terminology Maps VF_AppointmentCancellationReason"
 * ^experimental = false
 * ^status = #active
 * ^name = "AppointmentCancellationReason_VistA"
-* include http://va.gov/terminology/vistaDefinedTerms/2.98-16#APPOINTMENT_NO_LONGER_REQUIRED "APPOINTMENT NO LONGER REQUIRED"
-* include http://va.gov/terminology/vistaDefinedTerms/2.98-16#AUTOMATED_CANCELLATION "AUTOMATED CANCELLATION"
-* include http://va.gov/terminology/vistaDefinedTerms/2.98-16#BLOCK_AND_MOVE "BLOCK AND MOVE"
-* include http://va.gov/terminology/vistaDefinedTerms/2.98-16#CLINIC_CANCELLED "CLINIC CANCELLED"
-* include http://va.gov/terminology/vistaDefinedTerms/2.98-16#CLINIC_STAFFING "CLINIC STAFFING"
-* include http://va.gov/terminology/vistaDefinedTerms/2.98-16#DEATH_IN_FAMILY "DEATH IN FAMILY"
-* include http://va.gov/terminology/vistaDefinedTerms/2.98-16#DO_NOT_RESCHEDULE "DO NOT RESCHEDULE"
-* include http://va.gov/terminology/vistaDefinedTerms/2.98-16#INPATIENT_STATUS "INPATIENT STATUS"
-* include http://va.gov/terminology/vistaDefinedTerms/2.98-16#OTHER "OTHER"
-* include http://va.gov/terminology/vistaDefinedTerms/2.98-16#PANDEMIC "PANDEMIC"
-* include http://va.gov/terminology/vistaDefinedTerms/2.98-16#PATIENT_DEATH "PATIENT DEATH"
-* include http://va.gov/terminology/vistaDefinedTerms/2.98-16#PATIENT_NOT_ELIGIBLE "PATIENT NOT ELIGIBLE"
-* include http://va.gov/terminology/vistaDefinedTerms/2.98-16#RESCHEDULE___CALL_BACK "RESCHEDULE - CALL BACK"
-* include http://va.gov/terminology/vistaDefinedTerms/2.98-16#RESCHEDULE___VET_WILL_CALL "RESCHEDULE - VET WILL CALL"
-* include http://va.gov/terminology/vistaDefinedTerms/2.98-16#SCHEDULING_CONFLICT_ERROR "SCHEDULING CONFLICT/ERROR"
-* include http://va.gov/terminology/vistaDefinedTerms/2.98-16#TRANSFER_OPT_CARE_TO_OTHER_VA "TRANSFER OPT CARE TO OTHER VA"
-* include http://va.gov/terminology/vistaDefinedTerms/2.98-16#TRAVEL_DIFFICULTY "TRAVEL DIFFICULTY"
-* include http://va.gov/terminology/vistaDefinedTerms/2.98-16#UNABLE_TO_KEEP_APPOINTMENT "UNABLE TO KEEP APPOINTMENT"
-* include http://va.gov/terminology/vistaDefinedTerms/2.98-16#WALKIN_ENTERED_IN_ERROR "WALKIN ENTERED IN ERROR"
-* include http://va.gov/terminology/vistaDefinedTerms/2.98-16#WALKIN_NO_LONGER_NECESSARY "WALKIN NO LONGER NECESSARY"
-* include http://va.gov/terminology/vistaDefinedTerms/2.98-16#WEATHER "WEATHER"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#APPOINTMENT_NO_LONGER_REQUIRED "APPOINTMENT NO LONGER REQUIRED"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#AUTOMATED_CANCELLATION "AUTOMATED CANCELLATION"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#BLOCK_AND_MOVE "BLOCK AND MOVE"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#CLINIC_CANCELLED "CLINIC CANCELLED"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#CLINIC_STAFFING "CLINIC STAFFING"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#DEATH_IN_FAMILY "DEATH IN FAMILY"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#DO_NOT_RESCHEDULE "DO NOT RESCHEDULE"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#INPATIENT_STATUS "INPATIENT STATUS"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#OTHER "OTHER"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#PANDEMIC "PANDEMIC"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#PATIENT_DEATH "PATIENT DEATH"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#PATIENT_NOT_ELIGIBLE "PATIENT NOT ELIGIBLE"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#RESCHEDULE___CALL_BACK "RESCHEDULE - CALL BACK"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#RESCHEDULE___VET_WILL_CALL "RESCHEDULE - VET WILL CALL"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#SCHEDULING_CONFLICT_ERROR "SCHEDULING CONFLICT/ERROR"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#TRANSFER_OPT_CARE_TO_OTHER_VA "TRANSFER OPT CARE TO OTHER VA"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#TRAVEL_DIFFICULTY "TRAVEL DIFFICULTY"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#UNABLE_TO_KEEP_APPOINTMENT "UNABLE TO KEEP APPOINTMENT"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#WALKIN_ENTERED_IN_ERROR "WALKIN ENTERED IN ERROR"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#WALKIN_NO_LONGER_NECESSARY "WALKIN NO LONGER NECESSARY"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#WEATHER "WEATHER"

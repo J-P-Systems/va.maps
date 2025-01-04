@@ -1,12 +1,12 @@
-Instance: DentalDeviceStatus
+Instance: VF-DentalDeviceStatus
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/DentalDeviceStatus"
-* name = "DentalDeviceStatus"
-* title = "DentalDeviceStatus"
+* url = "http://va.gov/fhir/ConceptMap/VF-DentalDeviceStatus"
+* name = "VF_DentalDeviceStatus"
+* title = "VF_DentalDeviceStatus"
 * status = #active
 * experimental = false
-* description = "Terminology Maps DentalDeviceStatus"
+* description = "Terminology Maps VF_DentalDeviceStatus"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/DentalDeviceStatus-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/DentalDeviceStatus"
 * group[0].source = "http://va.gov/terminology/vistaDefinedTerms/228.9-.08"
@@ -29,7 +29,7 @@ Usage: #definition
 
 ValueSet: DentalDeviceStatus
 Title: "DentalDeviceStatus FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps DentalDeviceStatus"
+Description: "FHIR Target ValueSet for Terminology Maps VF_DentalDeviceStatus"
 * ^experimental = false
 * ^status = #active
 * ^name = "DentalDeviceStatus"
@@ -39,7 +39,7 @@ Description: "FHIR Target ValueSet for Terminology Maps DentalDeviceStatus"
 
 ValueSet: DentalDeviceStatus-vista
 Title: "DentalDeviceStatus VistA"
-Description: "VistA Source ValueSet for Terminology Maps DentalDeviceStatus"
+Description: "VistA Source ValueSet for Terminology Maps VF_DentalDeviceStatus"
 * ^experimental = false
 * ^status = #active
 * ^name = "DentalDeviceStatus_VistA"

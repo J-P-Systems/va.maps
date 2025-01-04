@@ -1,15 +1,15 @@
-Instance: ProcedureCodeSystem
+Instance: VF-ProcedureCodeSystem
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/ProcedureCodeSystem"
-* name = "ProcedureCodeSystem"
-* title = "ProcedureCodeSystem"
+* url = "http://va.gov/fhir/ConceptMap/VF-ProcedureCodeSystem"
+* name = "VF_ProcedureCodeSystem"
+* title = "VF_ProcedureCodeSystem"
 * status = #active
 * experimental = false
-* description = "Terminology Maps ProcedureCodeSystem"
+* description = "Terminology Maps VF_ProcedureCodeSystem"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/ProcedureCodeSystem-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/ProcedureCodeSystem"
-* group[0].source = "urn:undefined"
+* group[0].source = "http://va.gov/terminology/vistaDefinedTerms/50.65-.02"
 * group[=].target = "urn:ietf:rfc:3986"
 * group[=].element[0].code = #CPT
 * group[=].element[=].target.code = #http://www.ama-assn.org/go/cpt
@@ -29,7 +29,7 @@ Usage: #definition
 
 ValueSet: ProcedureCodeSystem
 Title: "ProcedureCodeSystem FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps ProcedureCodeSystem"
+Description: "FHIR Target ValueSet for Terminology Maps VF_ProcedureCodeSystem"
 * ^experimental = false
 * ^status = #active
 * ^name = "ProcedureCodeSystem"
@@ -41,12 +41,12 @@ Description: "FHIR Target ValueSet for Terminology Maps ProcedureCodeSystem"
 
 ValueSet: ProcedureCodeSystem-vista
 Title: "ProcedureCodeSystem VistA"
-Description: "VistA Source ValueSet for Terminology Maps ProcedureCodeSystem"
+Description: "VistA Source ValueSet for Terminology Maps VF_ProcedureCodeSystem"
 * ^experimental = false
 * ^status = #active
 * ^name = "ProcedureCodeSystem_VistA"
-* include urn:undefined#CPT 
-* include urn:undefined#HCPCS 
-* include urn:undefined#ICD-9-CM 
-* include urn:undefined#NATIONAL_DRUG_CODE 
-* include urn:undefined#MUTUALLY_DEFINED 
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#CPT 
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#HCPCS 
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#ICD-9-CM 
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#NATIONAL_DRUG_CODE 
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#MUTUALLY_DEFINED 

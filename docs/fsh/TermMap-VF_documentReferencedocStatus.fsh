@@ -1,12 +1,12 @@
-Instance: documentReferencedocStatus
+Instance: VF-documentReferencedocStatus
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/documentReferencedocStatus"
-* name = "DocumentReferencedocStatus"
-* title = "documentReferencedocStatus"
+* url = "http://va.gov/fhir/ConceptMap/VF-documentReferencedocStatus"
+* name = "VF_documentReferencedocStatus"
+* title = "VF_documentReferencedocStatus"
 * status = #active
 * experimental = false
-* description = "Terminology Maps documentReferencedocStatus"
+* description = "Terminology Maps VF_documentReferencedocStatus"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/documentReferencedocStatus-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/documentReferencedocStatus"
 * group[0].source = "http://terminology.hl7.org/CodeSystem/VHA"
@@ -58,7 +58,7 @@ Usage: #definition
 
 ValueSet: documentReferencedocStatus
 Title: "documentReferencedocStatus FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps documentReferencedocStatus"
+Description: "FHIR Target ValueSet for Terminology Maps VF_documentReferencedocStatus"
 * ^experimental = false
 * ^status = #active
 * ^name = "DocumentReferencedocStatus"
@@ -69,7 +69,7 @@ Description: "FHIR Target ValueSet for Terminology Maps documentReferencedocStat
 
 ValueSet: documentReferencedocStatus-vista
 Title: "documentReferencedocStatus VistA"
-Description: "VistA Source ValueSet for Terminology Maps documentReferencedocStatus"
+Description: "VistA Source ValueSet for Terminology Maps VF_documentReferencedocStatus"
 * ^experimental = false
 * ^status = #active
 * ^name = "DocumentReferencedocStatus_VistA"

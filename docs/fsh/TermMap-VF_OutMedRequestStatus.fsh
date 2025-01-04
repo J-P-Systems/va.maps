@@ -1,12 +1,12 @@
-Instance: OutMedRequestStatus
+Instance: VF-OutMedRequestStatus
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/OutMedRequestStatus"
-* name = "OutMedRequestStatus"
-* title = "OutMedRequestStatus"
+* url = "http://va.gov/fhir/ConceptMap/VF-OutMedRequestStatus"
+* name = "VF_OutMedRequestStatus"
+* title = "VF_OutMedRequestStatus"
 * status = #active
 * experimental = false
-* description = "Terminology Maps OutMedRequestStatus"
+* description = "Terminology Maps VF_OutMedRequestStatus"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/OutMedRequestStatus-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/OutMedRequestStatus"
 * group[0].source = "http://va.gov/terminology/vistaDefinedTerms/52-100"
@@ -79,7 +79,7 @@ Usage: #definition
 
 ValueSet: OutMedRequestStatus
 Title: "OutMedRequestStatus FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps OutMedRequestStatus"
+Description: "FHIR Target ValueSet for Terminology Maps VF_OutMedRequestStatus"
 * ^experimental = false
 * ^status = #active
 * ^name = "OutMedRequestStatus"
@@ -91,7 +91,7 @@ Description: "FHIR Target ValueSet for Terminology Maps OutMedRequestStatus"
 
 ValueSet: OutMedRequestStatus-vista
 Title: "OutMedRequestStatus VistA"
-Description: "VistA Source ValueSet for Terminology Maps OutMedRequestStatus"
+Description: "VistA Source ValueSet for Terminology Maps VF_OutMedRequestStatus"
 * ^experimental = false
 * ^status = #active
 * ^name = "OutMedRequestStatus_VistA"

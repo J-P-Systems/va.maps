@@ -1,15 +1,15 @@
-Instance: AntibioticSensitivityInterpretation
+Instance: VF-AntibioticSensitivityInterpretation
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/AntibioticSensitivityInterpretation"
-* name = "AntibioticSensitivityInterpretation"
-* title = "AntibioticSensitivityInterpretation"
+* url = "http://va.gov/fhir/ConceptMap/VF-AntibioticSensitivityInterpretation"
+* name = "VF_AntibioticSensitivityInterpretation"
+* title = "VF_AntibioticSensitivityInterpretation"
 * status = #active
 * experimental = false
-* description = "Terminology Maps AntibioticSensitivityInterpretation"
+* description = "Terminology Maps VF_AntibioticSensitivityInterpretation"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/AntibioticSensitivityInterpretation-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/AntibioticSensitivityInterpretation"
-* group[0].source = "http://va.gov/terminology/vistaDefinedTerms/63.3-5.1+to+160.1"
+* group[0].source = "http://va.gov/terminology/vistaDefinedTerms/50.65-.02"
 * group[=].target = "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation"
 * group[=].element[0].code = #I
 * group[=].element[=].display = "Intermediate"
@@ -47,7 +47,7 @@ Usage: #definition
 
 ValueSet: AntibioticSensitivityInterpretation
 Title: "AntibioticSensitivityInterpretation FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps AntibioticSensitivityInterpretation"
+Description: "FHIR Target ValueSet for Terminology Maps VF_AntibioticSensitivityInterpretation"
 * ^experimental = false
 * ^status = #active
 * ^name = "AntibioticSensitivityInterpretation"
@@ -59,14 +59,14 @@ Description: "FHIR Target ValueSet for Terminology Maps AntibioticSensitivityInt
 
 ValueSet: AntibioticSensitivityInterpretation-vista
 Title: "AntibioticSensitivityInterpretation VistA"
-Description: "VistA Source ValueSet for Terminology Maps AntibioticSensitivityInterpretation"
+Description: "VistA Source ValueSet for Terminology Maps VF_AntibioticSensitivityInterpretation"
 * ^experimental = false
 * ^status = #active
 * ^name = "AntibioticSensitivityInterpretation_VistA"
-* include http://va.gov/terminology/vistaDefinedTerms/63.3-5.1+to+160.1#I "Intermediate"
-* include http://va.gov/terminology/vistaDefinedTerms/63.3-5.1+to+160.1#R "Resistant"
-* include http://va.gov/terminology/vistaDefinedTerms/63.3-5.1+to+160.1#Resistant "Resistant"
-* include http://va.gov/terminology/vistaDefinedTerms/63.3-5.1+to+160.1#S "Sensitive"
-* include http://va.gov/terminology/vistaDefinedTerms/63.3-5.1+to+160.1#Sensitive "Sensitive"
-* include http://va.gov/terminology/vistaDefinedTerms/63.3-5.1+to+160.1#SYN-S 
-* include http://va.gov/terminology/vistaDefinedTerms/63.3-5.1+to+160.1#SYN-R 
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#I "Intermediate"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#R "Resistant"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#Resistant "Resistant"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#S "Sensitive"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#Sensitive "Sensitive"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#SYN-S 
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#SYN-R 

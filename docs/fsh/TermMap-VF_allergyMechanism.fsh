@@ -1,15 +1,15 @@
-Instance: allergyMechanism
+Instance: VF-allergyMechanism
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/allergyMechanism"
-* name = "AllergyMechanism"
-* title = "allergyMechanism"
+* url = "http://va.gov/fhir/ConceptMap/VF-allergyMechanism"
+* name = "VF_allergyMechanism"
+* title = "VF_allergyMechanism"
 * status = #active
 * experimental = false
-* description = "Terminology Maps allergyMechanism"
+* description = "Terminology Maps VF_allergyMechanism"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/allergyMechanism-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/allergyMechanism"
-* group[0].source = "http://va.gov/terminology/vistaDefinedTerms/120.8-17"
+* group[0].source = "http://va.gov/terminology/vistaDefinedTerms/50.65-.02"
 * group[=].target = "http://hl7.org/fhir/allergy-intolerance-type"
 * group[=].element[0].code = #A
 * group[=].element[=].display = "ALLERGY"
@@ -24,7 +24,7 @@ Usage: #definition
 
 ValueSet: allergyMechanism
 Title: "allergyMechanism FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps allergyMechanism"
+Description: "FHIR Target ValueSet for Terminology Maps VF_allergyMechanism"
 * ^experimental = false
 * ^status = #active
 * ^name = "AllergyMechanism"
@@ -33,9 +33,9 @@ Description: "FHIR Target ValueSet for Terminology Maps allergyMechanism"
 
 ValueSet: allergyMechanism-vista
 Title: "allergyMechanism VistA"
-Description: "VistA Source ValueSet for Terminology Maps allergyMechanism"
+Description: "VistA Source ValueSet for Terminology Maps VF_allergyMechanism"
 * ^experimental = false
 * ^status = #active
 * ^name = "AllergyMechanism_VistA"
-* include http://va.gov/terminology/vistaDefinedTerms/120.8-17#A "ALLERGY"
-* include http://va.gov/terminology/vistaDefinedTerms/120.8-17#P "PHARMACOLOGIC"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#A "ALLERGY"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#P "PHARMACOLOGIC"

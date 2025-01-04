@@ -1,15 +1,15 @@
-Instance: OperatingRoomStatus
+Instance: VF-OperatingRoomStatus
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/OperatingRoomStatus"
-* name = "OperatingRoomStatus"
-* title = "OperatingRoomStatus"
+* url = "http://va.gov/fhir/ConceptMap/VF-OperatingRoomStatus"
+* name = "VF_OperatingRoomStatus"
+* title = "VF_OperatingRoomStatus"
 * status = #active
 * experimental = false
-* description = "Terminology Maps OperatingRoomStatus"
+* description = "Terminology Maps VF_OperatingRoomStatus"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/OperatingRoomStatus-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/OperatingRoomStatus"
-* group[0].source = "http://va.gov/terminology/vistaDefinedTerms/131.7-99"
+* group[0].source = "http://va.gov/terminology/vistaDefinedTerms/50.65-.02"
 * group[=].target = "http://hl7.org/fhir/location-status"
 * group[=].element[0].code = #1
 * group[=].element[=].display = "YES"
@@ -25,7 +25,7 @@ Usage: #definition
 
 ValueSet: OperatingRoomStatus
 Title: "OperatingRoomStatus FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps OperatingRoomStatus"
+Description: "FHIR Target ValueSet for Terminology Maps VF_OperatingRoomStatus"
 * ^experimental = false
 * ^status = #active
 * ^name = "OperatingRoomStatus"
@@ -34,9 +34,9 @@ Description: "FHIR Target ValueSet for Terminology Maps OperatingRoomStatus"
 
 ValueSet: OperatingRoomStatus-vista
 Title: "OperatingRoomStatus VistA"
-Description: "VistA Source ValueSet for Terminology Maps OperatingRoomStatus"
+Description: "VistA Source ValueSet for Terminology Maps VF_OperatingRoomStatus"
 * ^experimental = false
 * ^status = #active
 * ^name = "OperatingRoomStatus_VistA"
-* include http://va.gov/terminology/vistaDefinedTerms/131.7-99#1 "YES"
-* include http://va.gov/terminology/vistaDefinedTerms/131.7-99#0 "NO"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#1 "YES"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#0 "NO"

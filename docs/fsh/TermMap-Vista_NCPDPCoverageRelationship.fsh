@@ -1,15 +1,15 @@
-Instance: VistaNCPDPCoverageRelationship
+Instance: Vista-NCPDPCoverageRelationship
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/VistaNCPDPCoverageRelationship"
-* name = "VistaNCPDPCoverageRelationship"
-* title = "VistaNCPDPCoverageRelationship"
+* url = "http://va.gov/fhir/ConceptMap/Vista-NCPDPCoverageRelationship"
+* name = "Vista_NCPDPCoverageRelationship"
+* title = "Vista_NCPDPCoverageRelationship"
 * status = #active
 * experimental = false
-* description = "Terminology Maps VistaNCPDPCoverageRelationship"
+* description = "Terminology Maps Vista_NCPDPCoverageRelationship"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VistaNCPDPCoverageRelationship-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/VistaNCPDPCoverageRelationship"
-* group[0].source = "http://va.gov/terminology/vistaDefinedTerms/2.312-4.05"
+* group[0].source = "http://va.gov/terminology/vistaDefinedTerms/50.65-.02"
 * group[=].element[0].code = #not_specified
 * group[=].element[=].target.equivalence = #unmatched
 * group[=].element[+].code = #cardholder
@@ -27,7 +27,7 @@ Usage: #definition
 
 ValueSet: VistaNCPDPCoverageRelationship
 Title: "VistaNCPDPCoverageRelationship FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps VistaNCPDPCoverageRelationship"
+Description: "FHIR Target ValueSet for Terminology Maps Vista_NCPDPCoverageRelationship"
 * ^experimental = false
 * ^status = #active
 * ^name = "VistaNCPDPCoverageRelationship"
@@ -38,12 +38,12 @@ Description: "FHIR Target ValueSet for Terminology Maps VistaNCPDPCoverageRelati
 
 ValueSet: VistaNCPDPCoverageRelationship-vista
 Title: "VistaNCPDPCoverageRelationship VistA"
-Description: "VistA Source ValueSet for Terminology Maps VistaNCPDPCoverageRelationship"
+Description: "VistA Source ValueSet for Terminology Maps Vista_NCPDPCoverageRelationship"
 * ^experimental = false
 * ^status = #active
 * ^name = "VistaNCPDPCoverageRelationship_VistA"
-* include http://va.gov/terminology/vistaDefinedTerms/2.312-4.05#not_specified 
-* include http://va.gov/terminology/vistaDefinedTerms/2.312-4.05#cardholder 
-* include http://va.gov/terminology/vistaDefinedTerms/2.312-4.05#spouse 
-* include http://va.gov/terminology/vistaDefinedTerms/2.312-4.05#child 
-* include http://va.gov/terminology/vistaDefinedTerms/2.312-4.05#other 
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#not_specified 
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#cardholder 
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#spouse 
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#child 
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#other 

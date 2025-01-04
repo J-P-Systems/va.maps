@@ -4,7 +4,7 @@ Id: LabObservationMicrobiologyVirologyObservation
 Title: "Lab Observation: Microbiology Virology Observation"
 Description: "This StructureDefinition contains the maps for VistA file MICROBIOLOGY (63.05) to us-core-observation-lab."
 * ^status = #draft
-* performer ^slicing.discriminator.type = #pattern
+* performer ^slicing.discriminator.type = #value
 * performer ^slicing.discriminator.path = "$this"
 * performer ^slicing.rules = #open
 * performer contains va-at 0..1 and va-by 0..1
@@ -27,6 +27,9 @@ Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: LabObservationMicrobiologyVirologyObservation
 * status -> "1492: terminologyMaps using VF_LabObservationStatus on MICROBIOLOGY - VIROLOGY REPORT STATUS (63.05-34)"
+* valueQuantity -> "2139: target not supported" "auto added because of must-support"
+* valueCodeableConcept -> "2140: target not supported" "auto added because of must-support"
+* valueString -> "2141: target not supported" "auto added because of must-support"
 * effectiveDateTime -> "1450: source value from MICROBIOLOGY - DATE/TIME SPECIMEN TAKEN (63.05-.01)"
 * note -> "1454: source value from MICROBIOLOGY - COMMENT ON SPECIMEN (63.05-.99)"
 * performer[va-at] -> "1464: reference from MICROBIOLOGY - ACCESSIONING INSTITUTION (63.05-.112)"

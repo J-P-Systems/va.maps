@@ -1,12 +1,12 @@
-Instance: VitalsMethod
+Instance: VF-VitalsMethod
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/VitalsMethod"
-* name = "VitalsMethod"
-* title = "VitalsMethod"
+* url = "http://va.gov/fhir/ConceptMap/VF-VitalsMethod"
+* name = "VF_VitalsMethod"
+* title = "VF_VitalsMethod"
 * status = #active
 * experimental = false
-* description = "Terminology Maps VitalsMethod"
+* description = "Terminology Maps VF_VitalsMethod"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VitalsMethod-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/VitalsMethod"
 * group[0].source = "http://terminology.hl7.org/CodeSystem/VHA"
@@ -99,7 +99,7 @@ Usage: #definition
 
 ValueSet: VitalsMethod
 Title: "VitalsMethod FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps VitalsMethod"
+Description: "FHIR Target ValueSet for Terminology Maps VF_VitalsMethod"
 * ^experimental = false
 * ^status = #active
 * ^name = "VitalsMethod"
@@ -122,7 +122,7 @@ Description: "FHIR Target ValueSet for Terminology Maps VitalsMethod"
 
 ValueSet: VitalsMethod-vista
 Title: "VitalsMethod VistA"
-Description: "VistA Source ValueSet for Terminology Maps VitalsMethod"
+Description: "VistA Source ValueSet for Terminology Maps VF_VitalsMethod"
 * ^experimental = false
 * ^status = #active
 * ^name = "VitalsMethod_VistA"

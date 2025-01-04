@@ -6,7 +6,7 @@ Description: "This StructureDefinition contains the maps for VistA file INSTITUT
 * ^status = #active
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
 * ^extension.valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization|6.1.0"
-* address ^slicing.discriminator.type = #pattern
+* address ^slicing.discriminator.type = #value
 * address ^slicing.discriminator.path = "$this"
 * address ^slicing.rules = #open
 * address contains va-physical 0..1 and va-postal 0..1

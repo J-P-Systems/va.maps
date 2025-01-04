@@ -1,15 +1,15 @@
-Instance: RadiologyProcedureStatus
+Instance: VF-RadiologyProcedureStatus
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/RadiologyProcedureStatus"
-* name = "RadiologyProcedureStatus"
-* title = "RadiologyProcedureStatus"
+* url = "http://va.gov/fhir/ConceptMap/VF-RadiologyProcedureStatus"
+* name = "VF_RadiologyProcedureStatus"
+* title = "VF_RadiologyProcedureStatus"
 * status = #active
 * experimental = false
-* description = "Terminology Maps RadiologyProcedureStatus"
+* description = "Terminology Maps VF_RadiologyProcedureStatus"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/RadiologyProcedureStatus-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/RadiologyProcedureStatus"
-* group[0].source = "http://va.gov/terminology/vistaDefinedTerms/72-.01"
+* group[0].source = "http://va.gov/terminology/vistaDefinedTerms/50.65-.02"
 * group[=].target = "http://hl7.org/fhir/event-status"
 * group[=].element[0].code = #CALLED_FOR_EXAM
 * group[=].element[=].display = "CALLED FOR EXAM"
@@ -44,7 +44,7 @@ Usage: #definition
 
 ValueSet: RadiologyProcedureStatus
 Title: "RadiologyProcedureStatus FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps RadiologyProcedureStatus"
+Description: "FHIR Target ValueSet for Terminology Maps VF_RadiologyProcedureStatus"
 * ^experimental = false
 * ^status = #active
 * ^name = "RadiologyProcedureStatus"
@@ -55,13 +55,13 @@ Description: "FHIR Target ValueSet for Terminology Maps RadiologyProcedureStatus
 
 ValueSet: RadiologyProcedureStatus-vista
 Title: "RadiologyProcedureStatus VistA"
-Description: "VistA Source ValueSet for Terminology Maps RadiologyProcedureStatus"
+Description: "VistA Source ValueSet for Terminology Maps VF_RadiologyProcedureStatus"
 * ^experimental = false
 * ^status = #active
 * ^name = "RadiologyProcedureStatus_VistA"
-* include http://va.gov/terminology/vistaDefinedTerms/72-.01#CALLED_FOR_EXAM "CALLED FOR EXAM"
-* include http://va.gov/terminology/vistaDefinedTerms/72-.01#CANCELLED "CANCELLED"
-* include http://va.gov/terminology/vistaDefinedTerms/72-.01#COMPLETE "COMPLETE"
-* include http://va.gov/terminology/vistaDefinedTerms/72-.01#EXAMINED "EXAMINED"
-* include http://va.gov/terminology/vistaDefinedTerms/72-.01#TRANSCRIBED "TRANSCRIBED"
-* include http://va.gov/terminology/vistaDefinedTerms/72-.01#WAITING_FOR_EXAM "WAITING FOR EXAM"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#CALLED_FOR_EXAM "CALLED FOR EXAM"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#CANCELLED "CANCELLED"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#COMPLETE "COMPLETE"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#EXAMINED "EXAMINED"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#TRANSCRIBED "TRANSCRIBED"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#WAITING_FOR_EXAM "WAITING FOR EXAM"

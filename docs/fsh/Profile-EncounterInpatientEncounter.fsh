@@ -3,18 +3,18 @@ Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter
 Id: EncounterInpatientEncounter
 Title: "Encounter: Inpatient Encounter"
 Description: "This StructureDefinition contains the maps for VistA file PTF (45) to us-core-encounter."
-* ^status = #active
+* ^status = #draft
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
 * ^extension.valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter|6.1.0"
-* identifier ^slicing.discriminator.type = #pattern
+* identifier ^slicing.discriminator.type = #value
 * identifier ^slicing.discriminator.path = "$this"
 * identifier ^slicing.rules = #open
 * identifier contains va-IEN 0..1 and va-IA 0..1
-* reasonCode ^slicing.discriminator.type = #pattern
+* reasonCode ^slicing.discriminator.type = #value
 * reasonCode ^slicing.discriminator.path = "$this"
 * reasonCode ^slicing.rules = #open
 * reasonCode contains va-principle 0..1 and va-secondary 0..1 and va-procedure 0..1
-* location ^slicing.discriminator.type = #pattern
+* location ^slicing.discriminator.type = #value
 * location ^slicing.discriminator.path = "$this"
 * location ^slicing.rules = #open
 * location contains va-ward 0..1 and va-facility 0..1
@@ -98,6 +98,7 @@ Source: EncounterInpatientEncounter
 * type.coding.display -> "1616-3: source value from INPATIENT CPT CODE - CPT CODE > CPT - SHORT NAME (46-.01 > 81-2)" "from mapParameter 3"
 * type.text -> "1616-4: source value from INPATIENT CPT CODE - CPT CODE > CPT - SHORT NAME (46-.01 > 81-2)" "from mapParameter 4"
 * participant.period -> "1800: target not supported"
+* reasonReference -> "2144: target not supported" "auto added because of must-support"
 
 Mapping: cdw-to-EncounterInpatientEncounter
 Id: cdw

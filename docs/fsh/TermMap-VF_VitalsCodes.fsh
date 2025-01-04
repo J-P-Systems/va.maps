@@ -1,12 +1,12 @@
-Instance: VitalsCodes
+Instance: VF-VitalsCodes
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/VitalsCodes"
-* name = "VitalsCodes"
-* title = "VitalsCodes"
+* url = "http://va.gov/fhir/ConceptMap/VF-VitalsCodes"
+* name = "VF_VitalsCodes"
+* title = "VF_VitalsCodes"
 * status = #active
 * experimental = false
-* description = "Terminology Maps VitalsCodes"
+* description = "Terminology Maps VF_VitalsCodes"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VitalsCodes-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/VitalsCodes"
 * group[0].source = "http://terminology.hl7.org/CodeSystem/VHA"
@@ -109,7 +109,7 @@ Usage: #definition
 
 ValueSet: VitalsCodes
 Title: "VitalsCodes FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps VitalsCodes"
+Description: "FHIR Target ValueSet for Terminology Maps VF_VitalsCodes"
 * ^experimental = false
 * ^status = #active
 * ^name = "VitalsCodes"
@@ -134,7 +134,7 @@ Description: "FHIR Target ValueSet for Terminology Maps VitalsCodes"
 
 ValueSet: VitalsCodes-vista
 Title: "VitalsCodes VistA"
-Description: "VistA Source ValueSet for Terminology Maps VitalsCodes"
+Description: "VistA Source ValueSet for Terminology Maps VF_VitalsCodes"
 * ^experimental = false
 * ^status = #active
 * ^name = "VitalsCodes_VistA"

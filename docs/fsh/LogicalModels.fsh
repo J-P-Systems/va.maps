@@ -91,9 +91,6 @@ Id: HospitalLocation44
 Title: "HOSPITAL LOCATION (44)"
 Description: "This StructureDefinition contains the Logical Model for the mapped parts of the source HOSPITAL LOCATION (44)"
 Characteristics: #can-be-target
-* service 0..1 Element "SERVICE (-9)"
-* stopCodeNumber 0..1 Element "STOP CODE NUMBER (-8)"
-* creditStopCode 0..1 Element "CREDIT STOP CODE (-2503)"
 * type 0..1 Element "TYPE (-2)"
 * ien 0..1 Element "IEN (-.001)"
 * name 0..1 Element "NAME (-.01)"
@@ -103,6 +100,9 @@ Characteristics: #can-be-target
 * telephone 0..1 Element "TELEPHONE (-99)"
 * physicalLocation 0..1 Element "PHYSICAL LOCATION (-10)"
 * institution 0..1 Reference "INSTITUTION (-3)"
+* service 0..1 Element "SERVICE (-9)"
+* stopCodeNumber 0..1 Element "STOP CODE NUMBER (-8)"
+* creditStopCode 0..1 Element "CREDIT STOP CODE (-2503)"
 * principalClinic 0..1 Element "PRINCIPAL CLINIC (-1916)"
 * institution only Reference(Institution4)
 
@@ -455,7 +455,7 @@ Characteristics: #can-be-target
 * dateEntered 0..1 Element "DATE ENTERED (-19)"
 * transactionType 0..1 Reference "TRANSACTION TYPE (-12)"
 * transactionNumber 0..1 Element "TRANSACTION NUMBER (-.01)"
-* billNumber 0..1 Element "BILL NUMBER (-.03)"
+* billNumber 0..1 Reference "BILL NUMBER (-.03)"
 * transactionDate 0..1 Element "TRANSACTION DATE (-11)"
 * transAmount 0..1 Element "TRANS. AMOUNT (-15)"
 * receipt  0..1 Element "RECEIPT # (-13)"
@@ -465,6 +465,7 @@ Characteristics: #can-be-target
 * marshalFeeCollected 0..1 Element "MARSHAL FEE COLLECTED (-34)"
 * courtCostCollected 0..1 Element "COURT COST COLLECTED (-35)"
 * transactionType only Reference(AccountsReceivableTranstype4303)
+* billNumber only Reference(AccountsReceivable430)
 
 Logical: Echo691
 Id: Echo691
@@ -647,12 +648,11 @@ Characteristics: #can-be-target
 * appointmentType 0..1 Reference "APPOINTMENT TYPE (-9.5)"
 * cancellationReason 0..1 Coding "CANCELLATION REASON (-16)"
 * cancellationReason from http://va.gov/fhir/ValueSet/AppointmentCancellationReason-vista (preferred)
-* clinic 0..1 Reference "CLINIC (-.01)"
 * appointmentDatetime 0..1 Element "APPOINTMENT DATE/TIME (-.001)"
 * outpatientEncounter 0..1 Reference "OUTPATIENT ENCOUNTER (-21)"
 * dateApptMade 0..1 Element "DATE APPT. MADE (-20)"
+* clinic 0..1 Element "CLINIC (-.01)"
 * appointmentType only Reference(AppointmentType4091)
-* clinic only Reference(HospitalLocation44)
 * outpatientEncounter only Reference(OutpatientEncounter40968)
 
 Logical: AppointmentType4091
@@ -754,31 +754,6 @@ Characteristics: #can-be-target
 * name 0..1 Element "NAME (-.01)"
 * vhaEnterpriseStandardTitle 0..1 Reference "VHA ENTERPRISE STANDARD TITLE (-1501)"
 * vhaEnterpriseStandardTitle only Reference(TiuVhaEnterpriseStandardTitle89261)
-
-Logical: TiuVhaEnterpriseStandardTitle89261
-Id: TiuVhaEnterpriseStandardTitle89261
-Title: "TIU VHA ENTERPRISE STANDARD TITLE (8926.1)"
-Description: "This StructureDefinition contains the Logical Model for the mapped parts of the source TIU VHA ENTERPRISE STANDARD TITLE (8926.1)"
-Characteristics: #can-be-target
-* codingSystem 0..1 Reference "CODING SYSTEM (-2)"
-* documentType 0..1 Element "DOCUMENT TYPE (-.08)"
-* standardTitle 0..1 Element "STANDARD TITLE (-.01)"
-* codingSystem only Reference(CodingSystem892612)
-
-Logical: CodingSystem892612
-Id: CodingSystem892612
-Title: "CODING SYSTEM (8926.12)"
-Description: "This StructureDefinition contains the Logical Model for the mapped parts of the source CODING SYSTEM (8926.12)"
-Characteristics: #can-be-target
-* code 0..1 Reference "CODE (-.02)"
-* code only Reference(Code8926121)
-
-Logical: Code8926121
-Id: Code8926121
-Title: "CODE (8926.121)"
-Description: "This StructureDefinition contains the Logical Model for the mapped parts of the source CODE (8926.121)"
-Characteristics: #can-be-target
-* code 0..1 Element "CODE (-.01)"
 
 Logical: WkldCodeLabSect6421
 Id: WkldCodeLabSect6421
@@ -1060,6 +1035,15 @@ Description: "This StructureDefinition contains the Logical Model for the mapped
 Characteristics: #can-be-target
 * virus 0..1 Reference "VIRUS (-.01)"
 * virus only Reference(EtiologyField612)
+
+Logical: TiuVhaEnterpriseStandardTitle89261
+Id: TiuVhaEnterpriseStandardTitle89261
+Title: "TIU VHA ENTERPRISE STANDARD TITLE (8926.1)"
+Description: "This StructureDefinition contains the Logical Model for the mapped parts of the source TIU VHA ENTERPRISE STANDARD TITLE (8926.1)"
+Characteristics: #can-be-target
+* codingSystem 0..1 Element "CODING SYSTEM (-2)"
+* documentType 0..1 Element "DOCUMENT TYPE (-.08)"
+* standardTitle 0..1 Element "STANDARD TITLE (-.01)"
 
 Logical: IcdOperationprocedure801
 Id: IcdOperationprocedure801

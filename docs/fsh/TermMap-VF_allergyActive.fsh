@@ -1,15 +1,15 @@
-Instance: allergyActive
+Instance: VF-allergyActive
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/allergyActive"
-* name = "AllergyActive"
-* title = "allergyActive"
+* url = "http://va.gov/fhir/ConceptMap/VF-allergyActive"
+* name = "VF_allergyActive"
+* title = "VF_allergyActive"
 * status = #active
 * experimental = false
-* description = "Terminology Maps allergyActive"
+* description = "Terminology Maps VF_allergyActive"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/allergyActive-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/allergyActive"
-* group[0].source = "http://va.gov/terminology/vistaDefinedTerms/120.8-22"
+* group[0].source = "http://va.gov/terminology/vistaDefinedTerms/50.65-.02"
 * group[=].target = "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical"
 * group[=].element[0].code = #<null>
 * group[=].element[=].display = "ENTERED IN ERROR - NULL"
@@ -19,7 +19,7 @@ Usage: #definition
 
 ValueSet: allergyActive
 Title: "allergyActive FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps allergyActive"
+Description: "FHIR Target ValueSet for Terminology Maps VF_allergyActive"
 * ^experimental = false
 * ^status = #active
 * ^name = "AllergyActive"
@@ -27,8 +27,8 @@ Description: "FHIR Target ValueSet for Terminology Maps allergyActive"
 
 ValueSet: allergyActive-vista
 Title: "allergyActive VistA"
-Description: "VistA Source ValueSet for Terminology Maps allergyActive"
+Description: "VistA Source ValueSet for Terminology Maps VF_allergyActive"
 * ^experimental = false
 * ^status = #active
 * ^name = "AllergyActive_VistA"
-* include http://va.gov/terminology/vistaDefinedTerms/120.8-22#<null> "ENTERED IN ERROR - NULL"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#<null> "ENTERED IN ERROR - NULL"

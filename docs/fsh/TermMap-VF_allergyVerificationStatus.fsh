@@ -1,15 +1,15 @@
-Instance: allergyVerificationStatus
+Instance: VF-allergyVerificationStatus
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/allergyVerificationStatus"
-* name = "AllergyVerificationStatus"
-* title = "allergyVerificationStatus"
+* url = "http://va.gov/fhir/ConceptMap/VF-allergyVerificationStatus"
+* name = "VF_allergyVerificationStatus"
+* title = "VF_allergyVerificationStatus"
 * status = #active
 * experimental = false
-* description = "Terminology Maps allergyVerificationStatus"
+* description = "Terminology Maps VF_allergyVerificationStatus"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/allergyVerificationStatus-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/allergyVerificationStatus"
-* group[0].source = "http://va.gov/terminology/vistaDefinedTerms/120.8-19"
+* group[0].source = "http://va.gov/terminology/vistaDefinedTerms/50.65-.02"
 * group[=].target = "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification"
 * group[=].element[0].code = #0
 * group[=].element[=].display = "VERIFIED - NO"
@@ -24,7 +24,7 @@ Usage: #definition
 
 ValueSet: allergyVerificationStatus
 Title: "allergyVerificationStatus FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps allergyVerificationStatus"
+Description: "FHIR Target ValueSet for Terminology Maps VF_allergyVerificationStatus"
 * ^experimental = false
 * ^status = #active
 * ^name = "AllergyVerificationStatus"
@@ -33,9 +33,9 @@ Description: "FHIR Target ValueSet for Terminology Maps allergyVerificationStatu
 
 ValueSet: allergyVerificationStatus-vista
 Title: "allergyVerificationStatus VistA"
-Description: "VistA Source ValueSet for Terminology Maps allergyVerificationStatus"
+Description: "VistA Source ValueSet for Terminology Maps VF_allergyVerificationStatus"
 * ^experimental = false
 * ^status = #active
 * ^name = "AllergyVerificationStatus_VistA"
-* include http://va.gov/terminology/vistaDefinedTerms/120.8-19#0 "VERIFIED - NO"
-* include http://va.gov/terminology/vistaDefinedTerms/120.8-19#1 "VERIFIED - YES"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#0 "VERIFIED - NO"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#1 "VERIFIED - YES"

@@ -1,15 +1,15 @@
-Instance: encounterClass
+Instance: VF-encounterClass
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/encounterClass"
-* name = "EncounterClass"
-* title = "encounterClass"
+* url = "http://va.gov/fhir/ConceptMap/VF-encounterClass"
+* name = "VF_encounterClass"
+* title = "VF_encounterClass"
 * status = #active
 * experimental = false
-* description = "Terminology Maps encounterClass"
+* description = "Terminology Maps VF_encounterClass"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/encounterClass-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/encounterClass"
-* group[0].source = "http://va.gov/terminology/vistaDefinedTerms/9000010-15002"
+* group[0].source = "http://va.gov/terminology/vistaDefinedTerms/50.65-.02"
 * group[=].target = "http://terminology.hl7.org/CodeSystem/v3-ActCode"
 * group[=].element[0].code = #1
 * group[=].element[=].display = "IN"
@@ -24,7 +24,7 @@ Usage: #definition
 
 ValueSet: encounterClass
 Title: "encounterClass FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps encounterClass"
+Description: "FHIR Target ValueSet for Terminology Maps VF_encounterClass"
 * ^experimental = false
 * ^status = #active
 * ^name = "EncounterClass"
@@ -33,9 +33,9 @@ Description: "FHIR Target ValueSet for Terminology Maps encounterClass"
 
 ValueSet: encounterClass-vista
 Title: "encounterClass VistA"
-Description: "VistA Source ValueSet for Terminology Maps encounterClass"
+Description: "VistA Source ValueSet for Terminology Maps VF_encounterClass"
 * ^experimental = false
 * ^status = #active
 * ^name = "EncounterClass_VistA"
-* include http://va.gov/terminology/vistaDefinedTerms/9000010-15002#1 "IN"
-* include http://va.gov/terminology/vistaDefinedTerms/9000010-15002#0 "OUT"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#1 "IN"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#0 "OUT"

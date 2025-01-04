@@ -1,12 +1,12 @@
-Instance: OrderPatientClass
+Instance: VF-OrderPatientClass
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/OrderPatientClass"
-* name = "OrderPatientClass"
-* title = "OrderPatientClass"
+* url = "http://va.gov/fhir/ConceptMap/VF-OrderPatientClass"
+* name = "VF_OrderPatientClass"
+* title = "VF_OrderPatientClass"
 * status = #active
 * experimental = false
-* description = "Terminology Maps OrderPatientClass"
+* description = "Terminology Maps VF_OrderPatientClass"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/OrderPatientClass-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/OrderPatientClass"
 * group[0].source = "http://va.gov/terminology/vistaDefinedElements/100-10"
@@ -24,7 +24,7 @@ Usage: #definition
 
 ValueSet: OrderPatientClass
 Title: "OrderPatientClass FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps OrderPatientClass"
+Description: "FHIR Target ValueSet for Terminology Maps VF_OrderPatientClass"
 * ^experimental = false
 * ^status = #active
 * ^name = "OrderPatientClass"
@@ -33,7 +33,7 @@ Description: "FHIR Target ValueSet for Terminology Maps OrderPatientClass"
 
 ValueSet: OrderPatientClass-vista
 Title: "OrderPatientClass VistA"
-Description: "VistA Source ValueSet for Terminology Maps OrderPatientClass"
+Description: "VistA Source ValueSet for Terminology Maps VF_OrderPatientClass"
 * ^experimental = false
 * ^status = #active
 * ^name = "OrderPatientClass_VistA"

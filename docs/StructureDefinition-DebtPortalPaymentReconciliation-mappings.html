@@ -1,0 +1,869 @@
+<!-- get modelType -->
+
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Debt Portal PaymentReconciliation - Mappings - US Veterans Administration FHIR Map Set Implementation Guide v1.1.467</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+    <link href="assets/css/va-maps.css" rel="stylesheet"/>
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"11.19"}
+    h3,h4,h5,h6{--heading-prefix:"11.19"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <!-- Placeholder for child template header declarations -->
+
+<div id="project-nav">
+    <a id="family-logo" no-external="true" href="https://va.gov"><img height="50" alt="Visit the VA website"
+        src="assets/images/va.png" /> </a>
+</div>
+
+<div id="family-nav">
+    <a id="family-logo" no-external="true" href="http://hl7.org/fhir"><img height="50" alt="Visit the FHIR website" src="assets/images/fhir-logo-www.png"/> </a>
+</div>
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">US Veterans Administration FHIR Map Set Implementation Guide</span>
+            <br/>
+            <span style="display:inline-block;">1.1.467 - 250201
+
+
+
+  <img alt="United States of America flag" src="assets/images/usa.svg" height="16" title="United States of America"/>
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li>
+    <a href="toc.html">Table of Content</a>
+  </li>
+  <li>
+    <a href="process.html">Process</a>
+  </li>
+  <li>
+    <a href="profileDesign.html">Profile Design</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Design Guidance
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="guidance.html">General Guidance</a>
+      </li>
+      <li>
+        <a href="guidance-vitals.html">Vitals Guidance</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="mustSupport.html">Must Support</a>
+  </li>
+  <li>
+    <a href="classes.html">Classes</a>
+  </li>
+  <li>
+    <a href="artifacts.html">Artifacts</a>
+  </li>
+  <li>
+    <a href="changes.html">Changes</a>
+  </li>
+  <li>
+    <a href="history.html">History</a>
+  </li>
+  <li>
+    <a href="mapset-qa.html">MapSet QA</a>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='artifacts.html'><b>Artifacts Summary</b></a></li><li><b>Debt Portal PaymentReconciliation</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<div style="counter-reset: section 5" class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">US Veterans Administration FHIR Map Set Implementation Guide - Local Development build (v1.1.467) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  
+
+
+
+
+
+
+
+
+
+
+
+<ul class="nav nav-tabs">
+
+  <li>
+    <a href="StructureDefinition-DebtPortalPaymentReconciliation.html">Content</a>
+  </li>
+
+
+
+  <li>
+    <a href="StructureDefinition-DebtPortalPaymentReconciliation-definitions.html">Detailed Descriptions</a>
+  </li>
+
+
+
+  
+    <li class="active">
+      <a href="#">Mappings</a>
+    </li>
+  
+
+
+
+
+
+
+
+  
+    <li>
+      <a href="StructureDefinition-DebtPortalPaymentReconciliation.profile.xml.html">XML</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="StructureDefinition-DebtPortalPaymentReconciliation.profile.json.html">JSON</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="StructureDefinition-DebtPortalPaymentReconciliation.profile.ttl.html">TTL</a>
+    </li>
+  
+
+
+</ul>
+
+
+<a name="root"> </a>
+<h2 id="root">Resource Profile: DebtPortalPaymentReconciliation - Mappings</h2>
+
+  <table class="colsi">
+    <tr>
+
+      <td colspan="2">
+        
+          Active
+          
+            as of 2025-01-04
+          
+        
+      </td>
+
+    </tr>
+  </table>
+
+
+<p>Mappings for the DebtPortalPaymentReconciliation resource profile.</p>
+
+  <!-- insert intro if present -->
+  
+
+
+
+<div style="display:inline-block" markdown="1">
+
+<p>Scroll down for the Raw FHIR, CDW &amp; SDA mappings (if any).</p>
+
+<blockquote>
+  <p>Note that the CDW and SDA mappings are derived from a look-up based on the VistA source mappings in CDW and VPR SDA.</p>
+</blockquote>
+
+<?xml version="1.0" encoding="us-ascii" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="514px" preserveAspectRatio="none" style="width:3484px;height:514px;background:#FFFFFF;" version="1.1" viewBox="0 0 3484 514" width="3484px" zoomAndPan="magnify"><defs /><g><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="246" x="1612.25" y="22.9951">Use Case: Debt Portal (Source)</text><g id="elem_2"><rect fill="#F1F1F1" height="20.2969" style="stroke:#181818;stroke-width:0.5;" width="95" x="2028.5" y="293.9504" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="81" x="2035.5" y="308.9455">PATIENT (2)</text></g><g id="elem_52"><rect fill="#F1F1F1" height="40.5938" style="stroke:#181818;stroke-width:0.5;" width="148" x="7" y="283.9504" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="134" x="14" y="298.9455">PRESCRIPTION (52)</text><line style="stroke:#181818;stroke-width:1.0;" x1="7" x2="155" y1="304.2473" y2="304.2473" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="27" x="12" y="319.2424">106</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="78" x="49" y="319.2424">IB NUMBER</text><line style="stroke:#181818;stroke-width:1.0;" x1="44" x2="44" y1="304.2473" y2="324.5441" /></g><g id="elem_340"><rect fill="#F1F1F1" height="223.2656" style="stroke:#181818;stroke-width:0.5;" width="231" x="1746.5" y="192.4504" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="124" x="1800" y="207.4455">AR DEBTOR (340)</text><line style="stroke:#181818;stroke-width:1.0;" x1="1746.5" x2="1977.5" y1="212.7473" y2="212.7473" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="1756" y="227.7424">.01</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="60" x="1792.5" y="227.7424">DEBTOR</text><line style="stroke:#181818;stroke-width:1.0;" x1="1787.5" x2="1787.5" y1="212.7473" y2="233.0441" /><line style="stroke:#181818;stroke-width:1.0;" x1="1746.5" x2="1977.5" y1="233.0441" y2="233.0441" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="1756" y="248.0392">.03</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="118" x="1792.5" y="248.0392">STATEMENT DAY</text><line style="stroke:#181818;stroke-width:1.0;" x1="1787.5" x2="1787.5" y1="233.0441" y2="253.341" /><line style="stroke:#181818;stroke-width:1.0;" x1="1746.5" x2="1977.5" y1="253.341" y2="253.341" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="31" x="1751.5" y="268.3361">1.01</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="152" x="1792.5" y="268.3361">STREET ADDRESS #1</text><line style="stroke:#181818;stroke-width:1.0;" x1="1787.5" x2="1787.5" y1="253.341" y2="273.6379" /><line style="stroke:#181818;stroke-width:1.0;" x1="1746.5" x2="1977.5" y1="273.6379" y2="273.6379" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="31" x="1751.5" y="288.633">1.02</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="152" x="1792.5" y="288.633">STREET ADDRESS #2</text><line style="stroke:#181818;stroke-width:1.0;" x1="1787.5" x2="1787.5" y1="273.6379" y2="293.9348" /><line style="stroke:#181818;stroke-width:1.0;" x1="1746.5" x2="1977.5" y1="293.9348" y2="293.9348" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="31" x="1751.5" y="308.9299">1.03</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="152" x="1792.5" y="308.9299">STREET ADDRESS #3</text><line style="stroke:#181818;stroke-width:1.0;" x1="1787.5" x2="1787.5" y1="293.9348" y2="314.2316" /><line style="stroke:#181818;stroke-width:1.0;" x1="1746.5" x2="1977.5" y1="314.2316" y2="314.2316" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="31" x="1751.5" y="329.2267">1.04</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="31" x="1792.5" y="329.2267">CITY</text><line style="stroke:#181818;stroke-width:1.0;" x1="1787.5" x2="1787.5" y1="314.2316" y2="334.5285" /><line style="stroke:#181818;stroke-width:1.0;" x1="1746.5" x2="1977.5" y1="334.5285" y2="334.5285" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="31" x="1751.5" y="349.5236">1.05</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="45" x="1792.5" y="349.5236">STATE</text><line style="stroke:#181818;stroke-width:1.0;" x1="1787.5" x2="1787.5" y1="334.5285" y2="354.8254" /><line style="stroke:#181818;stroke-width:1.0;" x1="1746.5" x2="1977.5" y1="354.8254" y2="354.8254" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="31" x="1751.5" y="369.8205">1.06</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="67" x="1792.5" y="369.8205">ZIP CODE</text><line style="stroke:#181818;stroke-width:1.0;" x1="1787.5" x2="1787.5" y1="354.8254" y2="375.1223" /><line style="stroke:#181818;stroke-width:1.0;" x1="1746.5" x2="1977.5" y1="375.1223" y2="375.1223" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="31" x="1751.5" y="390.1174">1.07</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="114" x="1792.5" y="390.1174">PHONE NUMBER</text><line style="stroke:#181818;stroke-width:1.0;" x1="1787.5" x2="1787.5" y1="375.1223" y2="395.4191" /><line style="stroke:#181818;stroke-width:1.0;" x1="1746.5" x2="1977.5" y1="395.4191" y2="395.4191" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="31" x="1751.5" y="410.4142">1.08</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="180" x="1792.5" y="410.4142">FOREIGN COUNTRY CODE</text><line style="stroke:#181818;stroke-width:1.0;" x1="1787.5" x2="1787.5" y1="395.4191" y2="415.716" /></g><g id="elem_350"><rect fill="#F1F1F1" height="182.6719" style="stroke:#181818;stroke-width:0.5;" width="256" x="206" y="212.9504" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="242" x="213" y="227.9455">INTEGRATED BILLING ACTION (350)</text><line style="stroke:#181818;stroke-width:1.0;" x1="206" x2="462" y1="233.2473" y2="233.2473" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="211" y="248.2424">.02</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="58" x="243" y="248.2424">PATIENT</text><line style="stroke:#181818;stroke-width:1.0;" x1="238" x2="238" y1="233.2473" y2="253.5441" /><line style="stroke:#181818;stroke-width:1.0;" x1="206" x2="462" y1="253.5441" y2="253.5441" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="211" y="268.5392">.03</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="92" x="243" y="268.5392">ACTION TYPE</text><line style="stroke:#181818;stroke-width:1.0;" x1="238" x2="238" y1="253.5441" y2="273.841" /><line style="stroke:#181818;stroke-width:1.0;" x1="206" x2="462" y1="273.841" y2="273.841" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="211" y="288.8361">.07</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="108" x="243" y="288.8361">TOTAL CHARGE</text><line style="stroke:#181818;stroke-width:1.0;" x1="238" x2="238" y1="273.841" y2="294.1379" /><line style="stroke:#181818;stroke-width:1.0;" x1="206" x2="462" y1="294.1379" y2="294.1379" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="13" x="215.5" y="309.133">.1</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="166" x="243" y="309.133">CANCELLATION REASON</text><line style="stroke:#181818;stroke-width:1.0;" x1="238" x2="238" y1="294.1379" y2="314.4348" /><line style="stroke:#181818;stroke-width:1.0;" x1="206" x2="462" y1="314.4348" y2="314.4348" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="211" y="329.4299">.11</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="115" x="243" y="329.4299">AR BILL NUMBER</text><line style="stroke:#181818;stroke-width:1.0;" x1="238" x2="238" y1="314.4348" y2="334.7316" /><line style="stroke:#181818;stroke-width:1.0;" x1="206" x2="462" y1="334.7316" y2="334.7316" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="211" y="349.7267">.14</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="134" x="243" y="349.7267">DATE BILLED FROM</text><line style="stroke:#181818;stroke-width:1.0;" x1="238" x2="238" y1="334.7316" y2="355.0285" /><line style="stroke:#181818;stroke-width:1.0;" x1="206" x2="462" y1="355.0285" y2="355.0285" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="211" y="370.0236">.15</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="113" x="243" y="370.0236">DATE BILLED TO</text><line style="stroke:#181818;stroke-width:1.0;" x1="238" x2="238" y1="355.0285" y2="375.3254" /><line style="stroke:#181818;stroke-width:1.0;" x1="206" x2="462" y1="375.3254" y2="375.3254" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="18" x="213" y="390.3205">12</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="144" x="243" y="390.3205">DATE ENTRY ADDED</text><line style="stroke:#181818;stroke-width:1.0;" x1="238" x2="238" y1="375.3254" y2="395.6223" /></g><g id="elem_360"><rect fill="#F1F1F1" height="40.5938" style="stroke:#181818;stroke-width:0.5;" width="247" x="2174.5" y="283.9504" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="233" x="2181.5" y="298.9455">IB-FB INTERFACE TRACKING (360)</text><line style="stroke:#181818;stroke-width:1.0;" x1="2174.5" x2="2421.5" y1="304.2473" y2="304.2473" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="31" x="2179.5" y="319.2424">1.02</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="82" x="2220.5" y="319.2424">BILL/CLAIMS</text><line style="stroke:#181818;stroke-width:1.0;" x1="2215.5" x2="2215.5" y1="304.2473" y2="324.5441" /></g><g id="elem_399"><rect fill="#F1F1F1" height="60.8906" style="stroke:#181818;stroke-width:0.5;" width="189" x="2552.5" y="273.9504" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="123" x="2585.5" y="288.9455">BILL/CLAIMS (399)</text><line style="stroke:#181818;stroke-width:1.0;" x1="2552.5" x2="2741.5" y1="294.2473" y2="294.2473" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="2560" y="309.2424">.08</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="142" x="2594.5" y="309.2424">PTF ENTRY NUMBER</text><line style="stroke:#181818;stroke-width:1.0;" x1="2589.5" x2="2589.5" y1="294.2473" y2="314.5441" /><line style="stroke:#181818;stroke-width:1.0;" x1="2552.5" x2="2741.5" y1="314.5441" y2="314.5441" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="27" x="2557.5" y="329.5392">304</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="98" x="2594.5" y="329.5392">PROCEDURES</text><line style="stroke:#181818;stroke-width:1.0;" x1="2589.5" x2="2589.5" y1="314.5441" y2="334.841" /></g><g id="elem_430"><rect fill="#F1F1F1" height="405.9375" style="stroke:#181818;stroke-width:3.0;" width="294" x="1024" y="101.4504" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="208" x="1067" y="116.4455">ACCOUNTS RECEIVABLE (430)</text><line style="stroke:#181818;stroke-width:1.0;" x1="1024" x2="1318" y1="121.7473" y2="121.7473" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="1033.5" y="136.7424">.01</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="56" x="1070" y="136.7424">BILL NO.</text><line style="stroke:#181818;stroke-width:1.0;" x1="1065" x2="1065" y1="121.7473" y2="142.0441" /><line style="stroke:#181818;stroke-width:1.0;" x1="1024" x2="1318" y1="142.0441" y2="142.0441" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="9" x="1040" y="157.0392">3</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="129" x="1070" y="157.0392">ORIGINAL AMOUNT</text><line style="stroke:#181818;stroke-width:1.0;" x1="1065" x2="1065" y1="142.0441" y2="162.341" /><line style="stroke:#181818;stroke-width:1.0;" x1="1024" x2="1318" y1="162.341" y2="162.341" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="9" x="1040" y="177.3361">7</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="58" x="1070" y="177.3361">PATIENT</text><line style="stroke:#181818;stroke-width:1.0;" x1="1065" x2="1065" y1="162.341" y2="182.6379" /><line style="stroke:#181818;stroke-width:1.0;" x1="1024" x2="1318" y1="182.6379" y2="182.6379" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="9" x="1040" y="197.633">8</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="127" x="1070" y="197.633">CURRENT STATUS</text><line style="stroke:#181818;stroke-width:1.0;" x1="1065" x2="1065" y1="182.6379" y2="202.9348" /><line style="stroke:#181818;stroke-width:1.0;" x1="1024" x2="1318" y1="202.9348" y2="202.9348" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="9" x="1040" y="217.9299">9</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="60" x="1070" y="217.9299">DEBTOR</text><line style="stroke:#181818;stroke-width:1.0;" x1="1065" x2="1065" y1="202.9348" y2="223.2316" /><line style="stroke:#181818;stroke-width:1.0;" x1="1024" x2="1318" y1="223.2316" y2="223.2316" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="18" x="1035.5" y="238.2267">10</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="149" x="1070" y="238.2267">DATE BILL PREPARED</text><line style="stroke:#181818;stroke-width:1.0;" x1="1065" x2="1065" y1="223.2316" y2="243.5285" /><line style="stroke:#181818;stroke-width:1.0;" x1="1024" x2="1318" y1="243.5285" y2="243.5285" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="18" x="1035.5" y="258.5236">11</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="136" x="1070" y="258.5236">CURRENT BALANCE</text><line style="stroke:#181818;stroke-width:1.0;" x1="1065" x2="1065" y1="243.5285" y2="263.8254" /><line style="stroke:#181818;stroke-width:1.0;" x1="1024" x2="1318" y1="263.8254" y2="263.8254" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="18" x="1035.5" y="278.8205">12</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="30" x="1070" y="278.8205">SITE</text><line style="stroke:#181818;stroke-width:1.0;" x1="1065" x2="1065" y1="263.8254" y2="284.1223" /><line style="stroke:#181818;stroke-width:1.0;" x1="1024" x2="1318" y1="284.1223" y2="284.1223" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="18" x="1035.5" y="299.1174">35</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="136" x="1070" y="299.1174">AMENDED AMOUNT</text><line style="stroke:#181818;stroke-width:1.0;" x1="1065" x2="1065" y1="284.1223" y2="304.4191" /><line style="stroke:#181818;stroke-width:1.0;" x1="1024" x2="1318" y1="304.4191" y2="304.4191" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="18" x="1035.5" y="319.4142">71</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="138" x="1070" y="319.4142">PRINCIPAL BALANCE</text><line style="stroke:#181818;stroke-width:1.0;" x1="1065" x2="1065" y1="304.4191" y2="324.716" /><line style="stroke:#181818;stroke-width:1.0;" x1="1024" x2="1318" y1="324.716" y2="324.716" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="18" x="1035.5" y="339.7111">72</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="136" x="1070" y="339.7111">INTEREST BALANCE</text><line style="stroke:#181818;stroke-width:1.0;" x1="1065" x2="1065" y1="324.716" y2="345.0129" /><line style="stroke:#181818;stroke-width:1.0;" x1="1024" x2="1318" y1="345.0129" y2="345.0129" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="18" x="1035.5" y="360.008">73</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="226" x="1070" y="360.008">ADMINISTRATIVE COST BALANCE</text><line style="stroke:#181818;stroke-width:1.0;" x1="1065" x2="1065" y1="345.0129" y2="365.3098" /><line style="stroke:#181818;stroke-width:1.0;" x1="1024" x2="1318" y1="365.3098" y2="365.3098" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="18" x="1035.5" y="380.3049">74</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="96" x="1070" y="380.3049">MARSHAL FEE</text><line style="stroke:#181818;stroke-width:1.0;" x1="1065" x2="1065" y1="365.3098" y2="385.6066" /><line style="stroke:#181818;stroke-width:1.0;" x1="1024" x2="1318" y1="385.6066" y2="385.6066" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="18" x="1035.5" y="400.6017">75</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="93" x="1070" y="400.6017">COURT COST</text><line style="stroke:#181818;stroke-width:1.0;" x1="1065" x2="1065" y1="385.6066" y2="405.9035" /><line style="stroke:#181818;stroke-width:1.0;" x1="1024" x2="1318" y1="405.9035" y2="405.9035" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="18" x="1035.5" y="420.8986">77</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="155" x="1070" y="420.8986">TOTAL PAID PRINCIPAL</text><line style="stroke:#181818;stroke-width:1.0;" x1="1065" x2="1065" y1="405.9035" y2="426.2004" /><line style="stroke:#181818;stroke-width:1.0;" x1="1024" x2="1318" y1="426.2004" y2="426.2004" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="18" x="1035.5" y="441.1955">78</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="153" x="1070" y="441.1955">TOTAL PAID INTEREST</text><line style="stroke:#181818;stroke-width:1.0;" x1="1065" x2="1065" y1="426.2004" y2="446.4973" /><line style="stroke:#181818;stroke-width:1.0;" x1="1024" x2="1318" y1="446.4973" y2="446.4973" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="18" x="1035.5" y="461.4924">79</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="243" x="1070" y="461.4924">TOTAL PAID ADMINISTRATIVE COST</text><line style="stroke:#181818;stroke-width:1.0;" x1="1065" x2="1065" y1="446.4973" y2="466.7941" /><line style="stroke:#181818;stroke-width:1.0;" x1="1024" x2="1318" y1="466.7941" y2="466.7941" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="31" x="1029" y="481.7892">79.1</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="181" x="1070" y="481.7892">TOTAL PAID MARSHAL FEE</text><line style="stroke:#181818;stroke-width:1.0;" x1="1065" x2="1065" y1="466.7941" y2="487.091" /><line style="stroke:#181818;stroke-width:1.0;" x1="1024" x2="1318" y1="487.091" y2="487.091" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="31" x="1029" y="502.0861">79.2</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="178" x="1070" y="502.0861">TOTAL PAID COURT COST</text><line style="stroke:#181818;stroke-width:1.0;" x1="1065" x2="1065" y1="487.091" y2="507.3879" /></g><g id="elem_433"><rect fill="#F1F1F1" height="345.0469" style="stroke:#181818;stroke-width:0.5;" width="225" x="747.5" y="131.4504" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="163" x="778.5" y="146.4455">AR TRANSACTION (433)</text><line style="stroke:#181818;stroke-width:1.0;" x1="747.5" x2="972.5" y1="151.7473" y2="151.7473" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="752.5" y="166.7424">.01</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="164" x="784.5" y="166.7424">TRANSACTION NUMBER</text><line style="stroke:#181818;stroke-width:1.0;" x1="779.5" x2="779.5" y1="151.7473" y2="172.0441" /><line style="stroke:#181818;stroke-width:1.0;" x1="747.5" x2="972.5" y1="172.0441" y2="172.0441" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="752.5" y="187.0392">.03</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="92" x="784.5" y="187.0392">BILL NUMBER</text><line style="stroke:#181818;stroke-width:1.0;" x1="779.5" x2="779.5" y1="172.0441" y2="192.341" /><line style="stroke:#181818;stroke-width:1.0;" x1="747.5" x2="972.5" y1="192.341" y2="192.341" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="18" x="754.5" y="207.3361">11</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="141" x="784.5" y="207.3361">TRANSACTION DATE</text><line style="stroke:#181818;stroke-width:1.0;" x1="779.5" x2="779.5" y1="192.341" y2="212.6379" /><line style="stroke:#181818;stroke-width:1.0;" x1="747.5" x2="972.5" y1="212.6379" y2="212.6379" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="18" x="754.5" y="227.633">12</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="139" x="784.5" y="227.633">TRANSACTION TYPE</text><line style="stroke:#181818;stroke-width:1.0;" x1="779.5" x2="779.5" y1="212.6379" y2="232.9348" /><line style="stroke:#181818;stroke-width:1.0;" x1="747.5" x2="972.5" y1="232.9348" y2="232.9348" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="18" x="754.5" y="247.9299">13</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="75" x="784.5" y="247.9299">RECEIPT #</text><line style="stroke:#181818;stroke-width:1.0;" x1="779.5" x2="779.5" y1="232.9348" y2="253.2316" /><line style="stroke:#181818;stroke-width:1.0;" x1="747.5" x2="972.5" y1="253.2316" y2="253.2316" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="18" x="754.5" y="268.2267">15</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="116" x="784.5" y="268.2267">TRANS. AMOUNT</text><line style="stroke:#181818;stroke-width:1.0;" x1="779.5" x2="779.5" y1="253.2316" y2="273.5285" /><line style="stroke:#181818;stroke-width:1.0;" x1="747.5" x2="972.5" y1="273.5285" y2="273.5285" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="18" x="754.5" y="288.5236">19</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="109" x="784.5" y="288.5236">DATE ENTERED</text><line style="stroke:#181818;stroke-width:1.0;" x1="779.5" x2="779.5" y1="273.5285" y2="293.8254" /><line style="stroke:#181818;stroke-width:1.0;" x1="747.5" x2="972.5" y1="293.8254" y2="293.8254" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="18" x="754.5" y="308.8205">25</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="96" x="784.5" y="308.8205">MARSHAL FEE</text><line style="stroke:#181818;stroke-width:1.0;" x1="779.5" x2="779.5" y1="293.8254" y2="314.1223" /><line style="stroke:#181818;stroke-width:1.0;" x1="747.5" x2="972.5" y1="314.1223" y2="314.1223" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="18" x="754.5" y="329.1174">26</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="93" x="784.5" y="329.1174">COURT COST</text><line style="stroke:#181818;stroke-width:1.0;" x1="779.5" x2="779.5" y1="314.1223" y2="334.4191" /><line style="stroke:#181818;stroke-width:1.0;" x1="747.5" x2="972.5" y1="334.4191" y2="334.4191" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="18" x="754.5" y="349.4142">27</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="85" x="784.5" y="349.4142">INT.CHARGE</text><line style="stroke:#181818;stroke-width:1.0;" x1="779.5" x2="779.5" y1="334.4191" y2="354.716" /><line style="stroke:#181818;stroke-width:1.0;" x1="747.5" x2="972.5" y1="354.716" y2="354.716" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="18" x="754.5" y="369.7111">28</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="95" x="784.5" y="369.7111">ADM.CHARGE</text><line style="stroke:#181818;stroke-width:1.0;" x1="779.5" x2="779.5" y1="354.716" y2="375.0129" /><line style="stroke:#181818;stroke-width:1.0;" x1="747.5" x2="972.5" y1="375.0129" y2="375.0129" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="18" x="754.5" y="390.008">31</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="119" x="784.5" y="390.008">PRIN.COLLECTED</text><line style="stroke:#181818;stroke-width:1.0;" x1="779.5" x2="779.5" y1="375.0129" y2="395.3098" /><line style="stroke:#181818;stroke-width:1.0;" x1="747.5" x2="972.5" y1="395.3098" y2="395.3098" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="18" x="754.5" y="410.3049">32</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="155" x="784.5" y="410.3049">INTEREST COLLECTED</text><line style="stroke:#181818;stroke-width:1.0;" x1="779.5" x2="779.5" y1="395.3098" y2="415.6066" /><line style="stroke:#181818;stroke-width:1.0;" x1="747.5" x2="972.5" y1="415.6066" y2="415.6066" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="18" x="754.5" y="430.6017">33</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="132" x="784.5" y="430.6017">ADMIN.COLLECTED</text><line style="stroke:#181818;stroke-width:1.0;" x1="779.5" x2="779.5" y1="415.6066" y2="435.9035" /><line style="stroke:#181818;stroke-width:1.0;" x1="747.5" x2="972.5" y1="435.9035" y2="435.9035" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="18" x="754.5" y="450.8986">34</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="183" x="784.5" y="450.8986">MARSHAL FEE COLLECTED</text><line style="stroke:#181818;stroke-width:1.0;" x1="779.5" x2="779.5" y1="435.9035" y2="456.2004" /><line style="stroke:#181818;stroke-width:1.0;" x1="747.5" x2="972.5" y1="456.2004" y2="456.2004" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="18" x="754.5" y="471.1955">35</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="180" x="784.5" y="471.1955">COURT COST COLLECTED</text><line style="stroke:#181818;stroke-width:1.0;" x1="779.5" x2="779.5" y1="456.2004" y2="476.4973" /></g><g id="elem_430_3"><rect fill="#F1F1F1" height="40.5938" style="stroke:#181818;stroke-width:0.5;" width="326" x="1369" y="283.9504" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="312" x="1376" y="298.9455">ACCOUNTS RECEIVABLE TRANS.TYPE (430.3)</text><line style="stroke:#181818;stroke-width:1.0;" x1="1369" x2="1695" y1="304.2473" y2="304.2473" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="1374" y="319.2424">.01</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="40" x="1406" y="319.2424">NAME</text><line style="stroke:#181818;stroke-width:1.0;" x1="1401" x2="1401" y1="304.2473" y2="324.5441" /></g><g id="elem_350_1"><rect fill="#F1F1F1" height="40.5938" style="stroke:#181818;stroke-width:0.5;" width="183" x="513.5" y="283.9504" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="163" x="523.5" y="298.9455">IB ACTION TYPE (350.1)</text><line style="stroke:#181818;stroke-width:1.0;" x1="513.5" x2="696.5" y1="304.2473" y2="304.2473" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="518.5" y="319.2424">.03</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="141" x="550.5" y="319.2424">CHARGE CATEGORY</text><line style="stroke:#181818;stroke-width:1.0;" x1="545.5" x2="545.5" y1="304.2473" y2="324.5441" /></g><g id="elem_399_0304"><rect fill="#F1F1F1" height="40.5938" style="stroke:#181818;stroke-width:0.5;" width="218" x="2872" y="283.9504" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="179" x="2891.5" y="298.9455">PROCEDURES (399.0304)</text><line style="stroke:#181818;stroke-width:1.0;" x1="2872" x2="3090" y1="304.2473" y2="304.2473" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="18" x="2877" y="319.2424">20</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="180" x="2905" y="319.2424">OUTPATIENT ENCOUNTER</text><line style="stroke:#181818;stroke-width:1.0;" x1="2900" x2="2900" y1="304.2473" y2="324.5441" /></g><g id="elem_409_68"><rect fill="#F1F1F1" height="40.5938" style="stroke:#181818;stroke-width:0.5;" width="257" x="3220.5" y="283.9504" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="243" x="3227.5" y="298.9455">OUTPATIENT ENCOUNTER (409.68)</text><line style="stroke:#181818;stroke-width:1.0;" x1="3220.5" x2="3477.5" y1="304.2473" y2="304.2473" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="3225.5" y="319.2424">.05</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="115" x="3257.5" y="319.2424">VISIT FILE ENTRY</text><line style="stroke:#181818;stroke-width:1.0;" x1="3252.5" x2="3252.5" y1="304.2473" y2="324.5441" /></g><!--link 430 to 2--><g id="link_430_2"><path codeLine="91" d="M1318,171.9504 C1352.9257,171.9504 1323.4827,126.4138 1343,97.4504 C1348.7246,88.9552 1350.8924,86.0045 1360.5,82.4504 C1393.0655,70.4037 1952.9345,70.4037 1985.5,82.4504 C2063.125,111.1657 2074.7396,229.3515 2076.074,280.3476 " fill="none" id="430-to-2" style="stroke:#181818;stroke-width:1.0;" /><polygon fill="#181818" points="2076.1816,285.6469,2079.9979,276.5675,2076.08,280.6479,2071.9996,276.73,2076.1816,285.6469" style="stroke:#181818;stroke-width:1.0;" /></g><!--link 430 to 340--><g id="link_430_340"><path codeLine="92" d="M1318,212.9504 C1370.5221,212.9504 1316.1017,142.5619 1343,97.4504 C1348.2463,88.6518 1350.8924,86.0045 1360.5,82.4504 C1396.2438,69.2279 1667.7562,69.2279 1703.5,82.4504 C1750.8785,99.9768 1786.3163,141.4489 1811.5285,183.8289 " fill="none" id="430-to-340" style="stroke:#181818;stroke-width:1.0;" /><polygon fill="#181818" points="1814.09,188.1977,1812.9882,178.4106,1811.5609,183.8845,1806.0871,182.4572,1814.09,188.1977" style="stroke:#181818;stroke-width:1.0;" /></g><!--link 430 to 340--><g id="link_430_340"><path codeLine="93" d="M1318,212.9504 C1370.5221,212.9504 1302.8496,131.3106 1343,97.4504 C1407.2137,43.2969 1647.593,56.6164 1721,97.4504 C1756.4894,117.1921 1784.87,150.0811 1806.5982,183.8723 " fill="none" id="430-to-340-1" style="stroke:#181818;stroke-width:1.0;" /><polygon fill="#181818" points="1809.4846,188.4281,1808.0468,178.6847,1806.8086,184.2044,1801.2889,182.9663,1809.4846,188.4281" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="55" x="1504.5" y="63.5173">[patient]</text></g><!--link 430 to 430_3--><g id="link_430_430_3"><path codeLine="94" d="M1318,192.9504 C1382.1348,203.1263 1446.1662,246.9826 1487.2383,276.9062 " fill="none" id="430-to-430_3" style="stroke:#181818;stroke-width:1.0;" /><polygon fill="#181818" points="1491.3878,279.938,1486.4805,271.3987,1487.3506,276.9883,1481.761,277.8583,1491.3878,279.938" style="stroke:#181818;stroke-width:1.0;" /></g><!--link 350 to 350_1--><g id="link_350_350_1"><path codeLine="95" d="M462,262.9504 C477.7987,267.0126 494.2121,272.4452 510.0445,278.1293 " fill="none" id="350-to-350_1" style="stroke:#181818;stroke-width:1.0;" /><polygon fill="#181818" points="514.938,279.9002,507.8363,273.0763,510.2364,278.1987,505.114,280.5989,514.938,279.9002" style="stroke:#181818;stroke-width:1.0;" /></g><!--link 350 to 2--><g id="link_350_2"><path codeLine="96" d="M462,242.9504 C494.8455,242.9504 471.694,125.9625 488,97.4504 C493.0856,88.558 495.8924,86.0045 505.5,82.4504 C544.0575,68.1871 1946.9425,68.1871 1985.5,82.4504 C2063.125,111.1657 2074.7396,229.3515 2076.074,280.3476 " fill="none" id="350-to-2" style="stroke:#181818;stroke-width:1.0;" /><polygon fill="#181818" points="2076.1816,285.6469,2079.9979,276.5675,2076.08,280.6479,2071.9996,276.73,2076.1816,285.6469" style="stroke:#181818;stroke-width:1.0;" /></g><!--link 360 to 399--><g id="link_360_399"><path codeLine="97" d="M2422,313.9504 C2440.4002,313.9504 2430.5225,338.7614 2447,346.9504 C2478.8402,362.7745 2491.9693,353.0372 2527,346.9504 C2537.3994,345.1434 2548.0891,342.5172 2558.6,339.4397 " fill="none" id="360-to-399" style="stroke:#181818;stroke-width:1.0;" /><polygon fill="#181818" points="2563.4151,337.9952,2553.6453,336.7499,2558.626,339.4319,2555.944,344.4126,2563.4151,337.9952" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="78" x="2448" y="343.0173">[Outpatient]</text></g><!--link 360 to 399--><g id="link_360_399"><path codeLine="100" d="M2422,313.9504 C2453.3672,313.9504 2421.1889,362.1266 2447,379.9504 C2476.2576,400.1542 2492.8517,389.8544 2527,379.9504 C2553.8667,372.1583 2580.4854,356.3491 2601.8006,341.1578 " fill="none" id="360-to-399-1" style="stroke:#181818;stroke-width:1.0;" /><polygon fill="#181818" points="2605.9915,338.1303,2596.3537,340.1581,2601.9385,341.0582,2601.0384,346.643,2605.9915,338.1303" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="66" x="2454" y="376.0173">[Inpatient]</text></g><!--link 399 to 399_0304--><g id="link_399_399_0304"><path codeLine="98" d="M2742,323.9504 C2757.098,323.9504 2752.934,341.4643 2767,346.9504 C2800.1252,359.8701 2811.8721,352.4485 2847,346.9504 C2869.6656,343.4028 2893.7319,336.6727 2915.1221,329.5719 " fill="none" id="399-to-399_0304" style="stroke:#181818;stroke-width:1.0;" /><polygon fill="#181818" points="2919.9276,327.9556,2910.122,327.0332,2915.1884,329.5494,2912.6722,334.6159,2919.9276,327.9556" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="78" x="2768" y="343.0173">[Outpatient]</text></g><!--link 399_0304 to 409_68--><g id="link_399_0304_409_68"><path codeLine="99" d="M3090,313.9504 C3108.672,313.9504 3099.2011,338.7994 3116,346.9504 C3147.9889,362.4717 3160.7775,351.8059 3196,346.9504 C3221.881,343.3826 3249.548,336.5714 3274.1391,329.4042 " fill="none" id="399_0304-to-409_68" style="stroke:#181818;stroke-width:1.0;" /><polygon fill="#181818" points="3279.0149,327.9669,3269.2511,326.675,3274.219,329.3807,3271.5133,334.3485,3279.0149,327.9669" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="78" x="3117" y="343.0173">[Outpatient]</text></g><!--link 52 to 350--><g id="link_52_350"><path codeLine="101" d="M155,313.9504 C167.2274,316.5592 179.9174,318.5321 192.64,319.9415 " fill="none" id="52-to-350" style="stroke:#181818;stroke-width:1.0;" /><polygon fill="#181818" points="197.7072,320.4732,189.1738,315.5557,192.7345,319.9513,188.3389,323.512,197.7072,320.4732" style="stroke:#181818;stroke-width:1.0;" /></g><!--link 433 to 430_3--><g id="link_433_430_3"><path codeLine="102" d="M973,222.9504 C1034.2628,222.9504 951.596,105.4272 1011,90.4504 C1066.7254,76.401 1304.9121,79.9563 1343,97.4504 C1425.5728,135.3769 1488.3458,228.0528 1516.1956,275.2758 " fill="none" id="433-to-430_3" style="stroke:#181818;stroke-width:1.0;" /><polygon fill="#181818" points="1518.7813,279.7005,1517.694,269.9118,1516.2586,275.3835,1510.7869,273.9481,1518.7813,279.7005" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="108" x="1012" y="63.5173">[IEN = 12 OR 13]</text></g><!--link 433 to 430_3--><g id="link_433_430_3"><path codeLine="104" d="M973,222.9504 C1034.2628,222.9504 951.596,105.4272 1011,90.4504 C1066.7254,76.401 1304.9121,79.9563 1343,97.4504 C1425.5728,135.3769 1488.3458,228.0528 1516.1956,275.2758 " fill="none" id="433-to-430_3-1" style="stroke:#181818;stroke-width:1.0;" /><polygon fill="#181818" points="1518.7813,279.7005,1517.694,269.9118,1516.2586,275.3835,1510.7869,273.9481,1518.7813,279.7005" style="stroke:#181818;stroke-width:1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="100" x="1016" y="63.5173">[IEN = 34 OR 2]</text></g><!--link 433 to 430--><g id="link_433_430"><path codeLine="103" d="M973,181.9504 C985.8321,184.0609 998.5298,187.7896 1010.9285,192.6698 " fill="none" id="433-to-430" style="stroke:#181818;stroke-width:1.0;" /><polygon fill="#181818" points="1015.8499,194.673,1009.0221,187.575,1011.2189,192.7879,1006.006,194.9846,1015.8499,194.673" style="stroke:#181818;stroke-width:1.0;" /></g></g></svg>
+
+<h3 id="raw-mappings">Raw mappings</h3>
+
+<table border="1" cellspacing="0" cellpadding="0" class="table-ta1"><tr class="row-ro1">
+<th class="cell-ce1">key</th>
+<th class="cell-ce1">status</th>
+<th class="cell-ce1">direction</th>
+<th class="cell-ce1">source</th>
+<th class="cell-ce1">mapApproach</th>
+<th class="cell-ce1">mapCase</th>
+<th class="cell-ce1">FHIR Path</th>
+<th class="cell-ce1">subPath</th>
+<th class="cell-ce1">mapValue</th>
+<th class="cell-ce1">mapParameter</th>
+<th class="cell-ce1">mapComment</th>
+<th class="cell-ce1">FHIR URL | Ver</th>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1978</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">AR TRANSACTION - TRANSACTION NUMBER (433-.01)</td>
+<td class="cell-ce1">source value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">PaymentReconciliation.identifier</td>
+<td class="cell-ce1">.value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">.type.text="Transaction Number"</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/StructureDefinition/PaymentReconciliation | 4.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1978-1</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">fixed value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">PaymentReconciliation.identifier</td>
+<td class="cell-ce1">.type.text</td>
+<td class="cell-ce1">Transaction Number</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">from mapParameter 1</td>
+<td class="cell-ce1"></td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1980</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">fixed value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">PaymentReconciliation.status</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">#active</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/StructureDefinition/PaymentReconciliation | 4.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1984</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">AR TRANSACTION - DATE ENTERED (433-19)</td>
+<td class="cell-ce1">source value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">PaymentReconciliation.created</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/StructureDefinition/PaymentReconciliation | 4.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">2032</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">AR TRANSACTION - BILL NUMBER &gt; ACCOUNTS RECEIVABLE - DEBTOR (433-.03 &gt; 430-9)</td>
+<td class="cell-ce1">reference</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">PaymentReconciliation.extension[http://hl7.org/fhir/5.0/StructureDefinition/extension-PaymentReconciliation.paymentIssuer].valueReference</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Patient</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/StructureDefinition/PaymentReconciliation | 5.0.0</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1982</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">AR TRANSACTION - TRANSACTION TYPE &gt; ACCOUNTS RECEIVABLE TRANS.TYPE - NAME (433-12 &gt; 430.3-.01)</td>
+<td class="cell-ce1">source value</td>
+<td class="cell-ce1">IEN = 34 OR 2</td>
+<td class="cell-ce1">PaymentReconciliation.disposition</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Transaction type name = PAYMENT (IN FULL) when IEN = 34
+Transaction type name = PAYMENT (IN PART) when IEN = 2</td>
+<td class="cell-ce1">http://hl7.org/fhir/StructureDefinition/PaymentReconciliation | 4.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1981</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">AR TRANSACTION - TRANSACTION DATE (433-11)</td>
+<td class="cell-ce1">source value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">PaymentReconciliation.paymentDate</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/StructureDefinition/PaymentReconciliation | 4.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1983</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">AR TRANSACTION - TRANS. AMOUNT (433-15)</td>
+<td class="cell-ce1">source value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">PaymentReconciliation.paymentAmount</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/StructureDefinition/PaymentReconciliation | 4.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1985</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">AR TRANSACTION - RECEIPT # (433-13)</td>
+<td class="cell-ce1">source value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">PaymentReconciliation.paymentIdentifier</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/StructureDefinition/PaymentReconciliation | 4.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1979</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">AR TRANSACTION - BILL NUMBER (433-.03)</td>
+<td class="cell-ce1">source value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">PaymentReconciliation.extension[http://hl7.org/fhir/5.0/StructureDefinition/extension-PaymentReconciliation.allocation.identifier].valueIdentifier</td>
+<td class="cell-ce1">.value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">.type.text="Bill Number"</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/StructureDefinition/PaymentReconciliation | 4.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1979-1</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">fixed value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">PaymentReconciliation.extension[http://hl7.org/fhir/5.0/StructureDefinition/extension-PaymentReconciliation.allocation.identifier].valueIdentifier</td>
+<td class="cell-ce1">.type.text</td>
+<td class="cell-ce1">Bill Number</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">from mapParameter 1</td>
+<td class="cell-ce1"></td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">2041</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">reference</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">PaymentReconciliation.extension[http://hl7.org/fhir/5.0/StructureDefinition/extension-PaymentReconciliation.allocation.target].valueReference</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">Invoice</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/StructureDefinition/PaymentReconciliation | 4.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1986</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">AR TRANSACTION - PRIN.COLLECTED (433-31)</td>
+<td class="cell-ce1">source value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">PaymentReconciliation.detail[va-principal-collected]</td>
+<td class="cell-ce1">.amount</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">.type.text="Principal Collected"</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/StructureDefinition/PaymentReconciliation | 4.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1986-1</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">fixed value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">PaymentReconciliation.detail[va-principal-collected]</td>
+<td class="cell-ce1">.type.text</td>
+<td class="cell-ce1">Principal Collected</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">from mapParameter 1</td>
+<td class="cell-ce1"></td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1987</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">AR TRANSACTION - INTEREST COLLECTED (433-32)</td>
+<td class="cell-ce1">source value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">PaymentReconciliation.detail[va-interest-collected]</td>
+<td class="cell-ce1">.amount</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">.type.text="Interest Collected"</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/StructureDefinition/PaymentReconciliation | 4.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1987-1</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">fixed value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">PaymentReconciliation.detail[va-interest-collected]</td>
+<td class="cell-ce1">.type.text</td>
+<td class="cell-ce1">Interest Collected</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">from mapParameter 1</td>
+<td class="cell-ce1"></td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1988</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">AR TRANSACTION - ADMIN.COLLECTED (433-33)</td>
+<td class="cell-ce1">source value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">PaymentReconciliation.detail[va-admin-collected]</td>
+<td class="cell-ce1">.amount</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">.type.text="Administrative Charge Collected"</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/StructureDefinition/PaymentReconciliation | 4.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1988-1</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">fixed value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">PaymentReconciliation.detail[va-admin-collected]</td>
+<td class="cell-ce1">.type.text</td>
+<td class="cell-ce1">Administrative Charge Collected</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">from mapParameter 1</td>
+<td class="cell-ce1"></td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1989</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">AR TRANSACTION - MARSHAL FEE COLLECTED (433-34)</td>
+<td class="cell-ce1">source value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">PaymentReconciliation.detail[va-marshal-collected]</td>
+<td class="cell-ce1">.amount</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">.type.text="Marshal Fee Collected"</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/StructureDefinition/PaymentReconciliation | 4.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1989-1</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">fixed value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">PaymentReconciliation.detail[va-marshal-collected]</td>
+<td class="cell-ce1">.type.text</td>
+<td class="cell-ce1">Marshal Fee Collected</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">from mapParameter 1</td>
+<td class="cell-ce1"></td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1990</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1">AR TRANSACTION - COURT COST COLLECTED (433-35)</td>
+<td class="cell-ce1">source value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">PaymentReconciliation.detail[va-courtcost-collected]</td>
+<td class="cell-ce1">.amount</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">.type.text="Court Cost Collected"</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">http://hl7.org/fhir/StructureDefinition/PaymentReconciliation | 4.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1990-1</td>
+<td class="cell-ce1">for review</td>
+<td class="cell-ce1">V2F</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">fixed value</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">PaymentReconciliation.detail[va-courtcost-collected]</td>
+<td class="cell-ce1">.type.text</td>
+<td class="cell-ce1">Court Cost Collected</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">from mapParameter 1</td>
+<td class="cell-ce1"></td>
+</tr>
+</table>
+
+</div>
+
+
+
+
+  <a name="vista"> </a><h3>Mappings for Veterans Health Information Systems Technology and Architecture (VistA) ()</h3><table class="grid">
+ <tr><td colspan="3"><b>DebtPortalPaymentReconciliation</b></td></tr>
+ <tr><td>PaymentReconciliation</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;extension</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;extension (extension-PaymentReconciliation-paymentIssuer)</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td>2032: reference from AR TRANSACTION - BILL NUMBER &gt; ACCOUNTS RECEIVABLE - DEBTOR (433-.03 &gt; 430-9)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;extension (extension-PaymentReconciliation-allocation-identifier)</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>1979-1: fixed value = Bill Number</td><td><p>from mapParameter 1</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>1979: source value from AR TRANSACTION - BILL NUMBER (433-.03)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;extension (extension-PaymentReconciliation-allocation-target)</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td>2041: reference</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>1978-1: fixed value = Transaction Number</td><td><p>from mapParameter 1</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>1978: source value from AR TRANSACTION - TRANSACTION NUMBER (433-.01)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>1980: fixed value = #active</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;created</td><td>1984: source value from AR TRANSACTION - DATE ENTERED (433-19)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;disposition</td><td>1982: source value from AR TRANSACTION - TRANSACTION TYPE &gt; ACCOUNTS RECEIVABLE TRANS.TYPE - NAME (433-12 &gt; 430.3-.01) case IEN = 34 OR 2</td><td><p>Transaction type name = PAYMENT (IN FULL) when IEN = 34
+Transaction type name = PAYMENT (IN PART) when IEN = 2</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;paymentDate</td><td>1981: source value from AR TRANSACTION - TRANSACTION DATE (433-11)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;paymentAmount</td><td>1983: source value from AR TRANSACTION - TRANS. AMOUNT (433-15)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;paymentIdentifier</td><td>1985: source value from AR TRANSACTION - RECEIPT # (433-13)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;detail</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;detail (va-principal-collected)</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>1986-1: fixed value = Principal Collected</td><td><p>from mapParameter 1</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;amount</td><td>1986: source value from AR TRANSACTION - PRIN.COLLECTED (433-31)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;detail (va-interest-collected)</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>1987-1: fixed value = Interest Collected</td><td><p>from mapParameter 1</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;amount</td><td>1987: source value from AR TRANSACTION - INTEREST COLLECTED (433-32)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;detail (va-admin-collected)</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>1988-1: fixed value = Administrative Charge Collected</td><td><p>from mapParameter 1</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;amount</td><td>1988: source value from AR TRANSACTION - ADMIN.COLLECTED (433-33)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;detail (va-marshal-collected)</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>1989-1: fixed value = Marshal Fee Collected</td><td><p>from mapParameter 1</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;amount</td><td>1989: source value from AR TRANSACTION - MARSHAL FEE COLLECTED (433-34)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;detail (va-courtcost-collected)</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>1990-1: fixed value = Court Cost Collected</td><td><p>from mapParameter 1</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;amount</td><td>1990: source value from AR TRANSACTION - COURT COST COLLECTED (433-35)</td><td></td> </tr>
+</table>
+<a name="cdw"> </a><h3>Mappings for Clinical Data Warehouse (CDW) ()</h3><table class="grid">
+ <tr><td colspan="3"><b>DebtPortalPaymentReconciliation</b></td></tr>
+ <tr><td>PaymentReconciliation</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;extension</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;extension (extension-PaymentReconciliation-paymentIssuer)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td>IB.ARTransaction.AccountsReceivableIEN,IB.ARTransaction.PatientIEN,IB.ARTransactionComment.PatientIEN,IB.ARTransactionDescription.PatientIEN,IB.ARTransactionFiscalYear.PatientIEN
+IB.AccountsReceivable.ARDebtorIEN</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;extension (extension-PaymentReconciliation-allocation-identifier)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>IB.ARTransaction.AccountsReceivableIEN,IB.ARTransaction.PatientIEN,IB.ARTransactionComment.PatientIEN,IB.ARTransactionDescription.PatientIEN,IB.ARTransactionFiscalYear.PatientIEN</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>IB.ARTransaction.TransactionNumber</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;created</td><td>IB.ARTransaction.EnteredDateTime</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;disposition</td><td>IB.ARTransaction.ARTransactionTypeIEN
+Dim.ARTransactionType.ARTransactionType</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;paymentDate</td><td>IB.ARTransaction.TransactionDateTime,IB.ARTransactionComment.TransactionDateTime,IB.ARTransactionDescription.TransactionDateTime,IB.ARTransactionFiscalYear.TransactionDateTime</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;paymentAmount</td><td>IB.ARTransaction.TransactionAmount</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;paymentIdentifier</td><td>IB.ARTransaction.ReceiptNumber</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;detail</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;detail (va-principal-collected)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;amount</td><td>IB.ARTransaction.PrincipaAmountCollected</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;detail (va-interest-collected)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;amount</td><td>IB.ARTransaction.InterestAmountCollected</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;detail (va-admin-collected)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;amount</td><td>IB.ARTransaction.AdministrativeAmountCollected</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;detail (va-marshal-collected)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;amount</td><td>IB.ARTransaction.MarshalFeeAmountCollected</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;detail (va-courtcost-collected)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;amount</td><td>IB.ARTransaction.CourtCostCollected</td> </tr>
+</table>
+<a name="workflow"> </a><h3>Mappings for Workflow Pattern (<a href="http://hl7.org/fhir/workflow.html">http://hl7.org/fhir/workflow</a>)</h3><table class="grid">
+ <tr><td colspan="3"><b>DebtPortalPaymentReconciliation</b></td></tr>
+ <tr><td>PaymentReconciliation</td><td>Event</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>Event.identifier</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>Event.status</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;created</td><td>Event.occurrence[x]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;paymentIssuer</td><td>Event.performer.actor</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;disposition</td><td>Event.note</td> </tr>
+</table>
+<a name="w5"> </a><h3>Mappings for FiveWs Pattern Mapping (http://hl7.org/fhir/fivews)</h3><table class="grid">
+ <tr><td colspan="3"><b>DebtPortalPaymentReconciliation</b></td></tr>
+ <tr><td>PaymentReconciliation</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>FiveWs.identifier</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>FiveWs.status</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;period</td><td>FiveWs.done[x]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;created</td><td>FiveWs.recorded</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;paymentIssuer</td><td>FiveWs.source</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;request</td><td>FiveWs.why[x]</td> </tr>
+</table>
+<a name="cdanetv4"> </a><h3>Mappings for Canadian Dental Association eclaims standard (<a href="http://www.cda-adc.ca/en/services/cdanet/">http://www.cda-adc.ca/en/services/cdanet/</a>)</h3><table class="grid">
+ <tr><td colspan="3"><b>DebtPortalPaymentReconciliation</b></td></tr>
+ <tr><td>PaymentReconciliation</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;request</td><td>A02|G01</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;requestor</td><td>B01</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;processNote</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>G32</td> </tr>
+</table>
+<a name="rim"> </a><h3>Mappings for RIM Mapping (<a href="http://hl7.org/comparison-v3.html">http://hl7.org/v3</a>)</h3><table class="grid">
+ <tr><td colspan="3"><b>DebtPortalPaymentReconciliation</b></td></tr>
+ <tr><td>PaymentReconciliation</td><td>Entity. Role, or Act</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;text</td><td>Act.text?</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;contained</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;extension</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;extension (extension-PaymentReconciliation-paymentIssuer)</td><td>n/a, N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;url</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;extension (extension-PaymentReconciliation-allocation-identifier)</td><td>n/a, N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;url</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;use</td><td>Role.code or implied by context</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td>Role.code or implied by context</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>union(., ./translation)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>./originalText[mediaType/code=&quot;text/plain&quot;]/data</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;system</td><td>II.root or Role.id.root</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>II.extension or II.root if system indicates OID or GUID (Or Role.id.extension or root)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;period</td><td>Role.effectiveTime or implied by context</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assigner</td><td>II.assigningAuthorityName but note that this is an improper use by the definition of the field.  Also Role.scoper</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;extension (extension-PaymentReconciliation-allocation-target)</td><td>n/a, N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;url</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;modifierExtension</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;use</td><td>Role.code or implied by context</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td>Role.code or implied by context</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>union(., ./translation)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>./originalText[mediaType/code=&quot;text/plain&quot;]/data</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;system</td><td>II.root or Role.id.root</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>II.extension or II.root if system indicates OID or GUID (Or Role.id.extension or root)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;period</td><td>Role.effectiveTime or implied by context</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assigner</td><td>II.assigningAuthorityName but note that this is an improper use by the definition of the field.  Also Role.scoper</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;detail</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modifierExtension</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;detail (va-principal-collected)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modifierExtension</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>union(., ./translation)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>./originalText[mediaType/code=&quot;text/plain&quot;]/data</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;detail (va-interest-collected)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modifierExtension</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>union(., ./translation)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>./originalText[mediaType/code=&quot;text/plain&quot;]/data</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;detail (va-admin-collected)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modifierExtension</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>union(., ./translation)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>./originalText[mediaType/code=&quot;text/plain&quot;]/data</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;detail (va-marshal-collected)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modifierExtension</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>union(., ./translation)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>./originalText[mediaType/code=&quot;text/plain&quot;]/data</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;detail (va-courtcost-collected)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modifierExtension</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>union(., ./translation)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>./originalText[mediaType/code=&quot;text/plain&quot;]/data</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;processNote</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modifierExtension</td><td>N/A</td> </tr>
+</table>
+
+
+  <!-- insert notes if present -->
+  
+
+
+
+</div>
+
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript" src="assets/js/tabs.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2025 <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#1.1.467 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Sat, Jan 4, 2025 09:38+0000">2025-01-04</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+| <a style="color: #81BEF7" target="_blank" href="https://leaf.va.gov/NATIONAL/776/va_fhir_community_of_practice/?a=newform">Propose a change</a>
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

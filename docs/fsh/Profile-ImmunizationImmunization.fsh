@@ -14,7 +14,7 @@ Description: "This StructureDefinition contains the maps for VistA file V IMMUNI
 * statusReason from http://va.gov/fhir/ValueSet/immunizationStatusReason
 * vaccineCode from http://va.gov/fhir/ValueSet/inferredCVX
 * primarySource.extension contains http://hl7.org/fhir/StructureDefinition/11179-permitted-value-conceptmap named 11179-permitted-value-conceptmap 0..1
-* primarySource.extension[11179-permitted-value-conceptmap].valueCanonical = "http://va.gov/fhir/ConceptMap/immunizationPrimarySource"
+* primarySource.extension[11179-permitted-value-conceptmap].valueCanonical = "http://va.gov/fhir/ConceptMap/VF-immunizationPrimarySource"
 * status obeys ii-24-297
 * status obeys ii-24-299
 * vaccineCode.coding.system = "http://hl7.org/fhir/sid/ndc"

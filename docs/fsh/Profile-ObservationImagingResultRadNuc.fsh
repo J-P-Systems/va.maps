@@ -23,6 +23,7 @@ Source: ObservationImagingResultRadNuc
 * issued -> "1639: source value from RAD/NUC MED REPORTS - VERIFIED DATE (74-7)"
 * performer -> "1642: source value from RAD/NUC MED REPORTS - VERIFYING PHYSICIAN (74-9)"
 * valueString -> "1647: source value from RAD/NUC MED REPORTS - IMPRESSION TEXT (74-300)"
+* code -> "2196: target not supported" "auto added because of must-support"
 * category -> "1624: fixed value = http://terminology.hl7.org/CodeSystem/observation-category#imaging"
 * dataAbsentReason -> "1796: target not supported" "Always has data"
 * valueQuantity -> "1797: target not supported" "value is string"

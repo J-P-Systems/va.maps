@@ -1,15 +1,15 @@
-Instance: LabInterpretation
+Instance: VF-LabInterpretation
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/LabInterpretation"
-* name = "LabInterpretation"
-* title = "LabInterpretation"
+* url = "http://va.gov/fhir/ConceptMap/VF-LabInterpretation"
+* name = "VF_LabInterpretation"
+* title = "VF_LabInterpretation"
 * status = #active
 * experimental = false
-* description = "Terminology Maps LabInterpretation"
+* description = "Terminology Maps VF_LabInterpretation"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/LabInterpretation-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/LabInterpretation"
-* group[0].source = "http://va.gov/terminology/vistaDefinedTerms/63.04-2+through+862"
+* group[0].source = "http://va.gov/terminology/vistaDefinedTerms/50.65-.02"
 * group[=].target = "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation"
 * group[=].element[0].code = #H
 * group[=].element[=].target.code = #H
@@ -34,7 +34,7 @@ Usage: #definition
 
 ValueSet: LabInterpretation
 Title: "LabInterpretation FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps LabInterpretation"
+Description: "FHIR Target ValueSet for Terminology Maps VF_LabInterpretation"
 * ^experimental = false
 * ^status = #active
 * ^name = "LabInterpretation"
@@ -46,12 +46,12 @@ Description: "FHIR Target ValueSet for Terminology Maps LabInterpretation"
 
 ValueSet: LabInterpretation-vista
 Title: "LabInterpretation VistA"
-Description: "VistA Source ValueSet for Terminology Maps LabInterpretation"
+Description: "VistA Source ValueSet for Terminology Maps VF_LabInterpretation"
 * ^experimental = false
 * ^status = #active
 * ^name = "LabInterpretation_VistA"
-* include http://va.gov/terminology/vistaDefinedTerms/63.04-2+through+862#H 
-* include http://va.gov/terminology/vistaDefinedTerms/63.04-2+through+862#L 
-* include http://va.gov/terminology/vistaDefinedTerms/63.04-2+through+862#H* 
-* include http://va.gov/terminology/vistaDefinedTerms/63.04-2+through+862#L* 
-* include http://va.gov/terminology/vistaDefinedTerms/63.04-2+through+862#A 
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#H 
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#L 
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#H* 
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#L* 
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#A 

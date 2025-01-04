@@ -1,12 +1,12 @@
-Instance: ImmunizationReaction
+Instance: VF-ImmunizationReaction
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/ImmunizationReaction"
-* name = "ImmunizationReaction"
-* title = "ImmunizationReaction"
+* url = "http://va.gov/fhir/ConceptMap/VF-ImmunizationReaction"
+* name = "VF_ImmunizationReaction"
+* title = "VF_ImmunizationReaction"
 * status = #active
 * experimental = false
-* description = "Terminology Maps ImmunizationReaction"
+* description = "Terminology Maps VF_ImmunizationReaction"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/ImmunizationReaction-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/ImmunizationReaction"
 * group[0].source = "http://va.gov/terminology/vistaDefinedElements/9000010.11-.06"
@@ -76,7 +76,7 @@ Usage: #definition
 
 ValueSet: ImmunizationReaction
 Title: "ImmunizationReaction FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps ImmunizationReaction"
+Description: "FHIR Target ValueSet for Terminology Maps VF_ImmunizationReaction"
 * ^experimental = false
 * ^status = #active
 * ^name = "ImmunizationReaction"
@@ -91,7 +91,7 @@ Description: "FHIR Target ValueSet for Terminology Maps ImmunizationReaction"
 
 ValueSet: ImmunizationReaction-vista
 Title: "ImmunizationReaction VistA"
-Description: "VistA Source ValueSet for Terminology Maps ImmunizationReaction"
+Description: "VistA Source ValueSet for Terminology Maps VF_ImmunizationReaction"
 * ^experimental = false
 * ^status = #active
 * ^name = "ImmunizationReaction_VistA"

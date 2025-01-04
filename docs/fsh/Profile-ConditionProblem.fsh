@@ -3,10 +3,10 @@ Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-proble
 Id: ConditionProblem
 Title: "Condition: Problem"
 Description: "This StructureDefinition contains the maps for VistA file PROBLEM (9000011) to us-core-condition-problems-health-concerns."
-* ^status = #active
+* ^status = #draft
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
 * ^extension.valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-problems-health-concerns|6.1.0"
-* code.coding ^slicing.discriminator.type = #pattern
+* code.coding ^slicing.discriminator.type = #value
 * code.coding ^slicing.discriminator.path = "$this"
 * code.coding ^slicing.rules = #open
 * code.coding contains va-icd 0..1
@@ -45,6 +45,7 @@ Source: ConditionProblem
 * clinicalStatus -> "605: terminologyMaps using VF_problemStatus on PROBLEM - STATUS (9000011-.12)"
 * verificationStatus -> "611: terminologyMaps using VF_problemVerificationStatus on PROBLEM - CONDITION (9000011-1.02)"
 * abatementDateTime -> "1761: source value from PROBLEM - DATE RESOLVED (9000011-1.07)"
+* extension[assertedDate] -> "2042: target not supported" "auto added because of must-support"
 
 Mapping: cdw-to-ConditionProblem
 Id: cdw

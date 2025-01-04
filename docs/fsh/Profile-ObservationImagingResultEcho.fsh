@@ -25,6 +25,7 @@ Source: ObservationImagingResultEcho
 * valueString -> "1643: source value from ECHO - FINDINGS > FINDINGS - FINDINGS (691-37 > 691.06-.01)" "Should Doppler findings be included? (691-34) Can have only 1 value in US Core."
 * interpretation -> "1648: terminologyMaps using VF_ImageInterpretation on ECHO - SUMMARY (691-.03)"
 * note -> "1650: source value from ECHO - OTHER CONCLUSION (691-38)"
+* code -> "2194: target not supported" "auto added because of must-support"
 * category -> "1624: fixed value = http://terminology.hl7.org/CodeSystem/observation-category#imaging"
 * dataAbsentReason -> "1796: target not supported" "Always has data"
 * valueQuantity -> "1797: target not supported" "value is string"

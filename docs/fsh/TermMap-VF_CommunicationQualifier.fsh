@@ -1,12 +1,12 @@
-Instance: CommunicationQualifier
+Instance: VF-CommunicationQualifier
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/CommunicationQualifier"
-* name = "CommunicationQualifier"
-* title = "CommunicationQualifier"
+* url = "http://va.gov/fhir/ConceptMap/VF-CommunicationQualifier"
+* name = "VF_CommunicationQualifier"
+* title = "VF_CommunicationQualifier"
 * status = #active
 * experimental = false
-* description = "Terminology Maps CommunicationQualifier"
+* description = "Terminology Maps VF_CommunicationQualifier"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/CommunicationQualifier-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/CommunicationQualifier"
 * group[0].source = "http://va.gov/Terminology/VistADefinedTerms/365.26-.04"
@@ -38,7 +38,7 @@ Usage: #definition
 
 ValueSet: CommunicationQualifier
 Title: "CommunicationQualifier FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps CommunicationQualifier"
+Description: "FHIR Target ValueSet for Terminology Maps VF_CommunicationQualifier"
 * ^experimental = false
 * ^status = #active
 * ^name = "CommunicationQualifier"
@@ -50,7 +50,7 @@ Description: "FHIR Target ValueSet for Terminology Maps CommunicationQualifier"
 
 ValueSet: CommunicationQualifier-vista
 Title: "CommunicationQualifier VistA"
-Description: "VistA Source ValueSet for Terminology Maps CommunicationQualifier"
+Description: "VistA Source ValueSet for Terminology Maps VF_CommunicationQualifier"
 * ^experimental = false
 * ^status = #active
 * ^name = "CommunicationQualifier_VistA"

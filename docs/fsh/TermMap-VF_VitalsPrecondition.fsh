@@ -1,12 +1,12 @@
-Instance: VitalsPrecondition
+Instance: VF-VitalsPrecondition
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/VitalsPrecondition"
-* name = "VitalsPrecondition"
-* title = "VitalsPrecondition"
+* url = "http://va.gov/fhir/ConceptMap/VF-VitalsPrecondition"
+* name = "VF_VitalsPrecondition"
+* title = "VF_VitalsPrecondition"
 * status = #active
 * experimental = false
-* description = "Terminology Maps VitalsPrecondition"
+* description = "Terminology Maps VF_VitalsPrecondition"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VitalsPrecondition-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/VitalsPrecondition"
 * group[0].source = "http://terminology.hl7.org/CodeSystem/VHA"
@@ -29,7 +29,7 @@ Usage: #definition
 
 ValueSet: VitalsPrecondition
 Title: "VitalsPrecondition FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps VitalsPrecondition"
+Description: "FHIR Target ValueSet for Terminology Maps VF_VitalsPrecondition"
 * ^experimental = false
 * ^status = #active
 * ^name = "VitalsPrecondition"
@@ -38,7 +38,7 @@ Description: "FHIR Target ValueSet for Terminology Maps VitalsPrecondition"
 
 ValueSet: VitalsPrecondition-vista
 Title: "VitalsPrecondition VistA"
-Description: "VistA Source ValueSet for Terminology Maps VitalsPrecondition"
+Description: "VistA Source ValueSet for Terminology Maps VF_VitalsPrecondition"
 * ^experimental = false
 * ^status = #active
 * ^name = "VitalsPrecondition_VistA"

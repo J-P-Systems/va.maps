@@ -12,6 +12,11 @@ Description: "This StructureDefinition contains the maps for VistA file REGISTER
 * location only Reference(Location)
 * status from http://va.gov/fhir/ValueSet/RadiologyProcedureStatus
 * code.coding.system = "http://www.ama-assn.org/go/cpt"
+* subject obeys pr-18-1510
+
+Invariant: pr-18-1510
+Description: "70-.01: if 70-2 > 70.02 then null"
+Severity: #warning
 
 Mapping: source-to-ProcedureRadiology
 Id: vista

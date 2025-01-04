@@ -3,7 +3,7 @@ Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-encoun
 Id: ConditionEncounterDiagnosis
 Title: "Condition: Encounter Diagnosis"
 Description: "This StructureDefinition contains the maps for VistA file V POV (9000010.07) to us-core-condition-encounter-diagnosis."
-* ^status = #active
+* ^status = #draft
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
 * ^extension.valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-encounter-diagnosis|6.1.0"
 * category[us-core] and identifier.value and identifier.system and code and code.coding.system and code.coding.code and subject and encounter and onsetDateTime and recordedDate and clinicalStatus and verificationStatus and recorder MS
@@ -33,6 +33,7 @@ Source: ConditionEncounterDiagnosis
 * verificationStatus -> "606: terminologyMaps using VF_encounterProblemVerificationStatus on V POV - MODIFIER (9000010.07-.06)"
 * abatementDateTime -> "1766: target not supported" "abatementDate is must support"
 * recorder -> "1833: reference from V POV - ENCOUNTER PROVIDER (9000010.07-1204)"
+* extension[assertedDate] -> "2043: target not supported" "auto added because of must-support"
 
 Mapping: cdw-to-ConditionEncounterDiagnosis
 Id: cdw

@@ -1,15 +1,15 @@
-Instance: deviceTypePacemaker
+Instance: VF-deviceTypePacemaker
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/deviceTypePacemaker"
-* name = "DeviceTypePacemaker"
-* title = "deviceTypePacemaker"
+* url = "http://va.gov/fhir/ConceptMap/VF-deviceTypePacemaker"
+* name = "VF_deviceTypePacemaker"
+* title = "VF_deviceTypePacemaker"
 * status = #active
 * experimental = false
-* description = "Terminology Maps deviceTypePacemaker"
+* description = "Terminology Maps VF_deviceTypePacemaker"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/deviceTypePacemaker-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/deviceTypePacemaker"
-* group[0].source = "http://va.gov/terminology/vistaDefinedTerms/698.4-1"
+* group[0].source = "http://va.gov/terminology/vistaDefinedTerms/50.65-.02"
 * group[=].target = "http://snomed.info/sct"
 * group[=].element[0].code = #A
 * group[=].element[=].display = "'A' FOR A LEAD;"
@@ -48,7 +48,7 @@ Usage: #definition
 
 ValueSet: deviceTypePacemaker
 Title: "deviceTypePacemaker FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps deviceTypePacemaker"
+Description: "FHIR Target ValueSet for Terminology Maps VF_deviceTypePacemaker"
 * ^experimental = false
 * ^status = #active
 * ^name = "DeviceTypePacemaker"
@@ -59,13 +59,13 @@ Description: "FHIR Target ValueSet for Terminology Maps deviceTypePacemaker"
 
 ValueSet: deviceTypePacemaker-vista
 Title: "deviceTypePacemaker VistA"
-Description: "VistA Source ValueSet for Terminology Maps deviceTypePacemaker"
+Description: "VistA Source ValueSet for Terminology Maps VF_deviceTypePacemaker"
 * ^experimental = false
 * ^status = #active
 * ^name = "DeviceTypePacemaker_VistA"
-* include http://va.gov/terminology/vistaDefinedTerms/698.4-1#A "'A' FOR A LEAD;"
-* include http://va.gov/terminology/vistaDefinedTerms/698.4-1#AV "'AV' FOR BOTH A LEAD AND V LEAD;"
-* include http://va.gov/terminology/vistaDefinedTerms/698.4-1#G "'G' FOR GENERATOR;"
-* include http://va.gov/terminology/vistaDefinedTerms/698.4-1#P "'P' FOR PSA ANALYZER;"
-* include http://va.gov/terminology/vistaDefinedTerms/698.4-1#T "'T' FOR TELEPHONE TRANSMITTER;"
-* include http://va.gov/terminology/vistaDefinedTerms/698.4-1#V "'V' FOR V LEAD;"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#A "'A' FOR A LEAD;"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#AV "'AV' FOR BOTH A LEAD AND V LEAD;"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#G "'G' FOR GENERATOR;"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#P "'P' FOR PSA ANALYZER;"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#T "'T' FOR TELEPHONE TRANSMITTER;"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#V "'V' FOR V LEAD;"

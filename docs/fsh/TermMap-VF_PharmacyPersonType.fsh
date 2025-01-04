@@ -1,15 +1,15 @@
-Instance: PharmacyPersonType
+Instance: VF-PharmacyPersonType
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/PharmacyPersonType"
-* name = "PharmacyPersonType"
-* title = "PharmacyPersonType"
+* url = "http://va.gov/fhir/ConceptMap/VF-PharmacyPersonType"
+* name = "VF_PharmacyPersonType"
+* title = "VF_PharmacyPersonType"
 * status = #active
 * experimental = false
-* description = "Terminology Maps PharmacyPersonType"
+* description = "Terminology Maps VF_PharmacyPersonType"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/PharmacyPersonType-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/PharmacyPersonType"
-* group[0].source = "urn:undefined"
+* group[0].source = "http://va.gov/terminology/vistaDefinedTerms/50.65-.02"
 * group[=].target = "http://terminology.hl7.org/CodeSystem/subscriber-relationship"
 * group[=].element[0].code = #001
 * group[=].element[=].display = "Cardholder"
@@ -32,7 +32,7 @@ Usage: #definition
 
 ValueSet: PharmacyPersonType
 Title: "PharmacyPersonType FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps PharmacyPersonType"
+Description: "FHIR Target ValueSet for Terminology Maps VF_PharmacyPersonType"
 * ^experimental = false
 * ^status = #active
 * ^name = "PharmacyPersonType"
@@ -42,10 +42,10 @@ Description: "FHIR Target ValueSet for Terminology Maps PharmacyPersonType"
 
 ValueSet: PharmacyPersonType-vista
 Title: "PharmacyPersonType VistA"
-Description: "VistA Source ValueSet for Terminology Maps PharmacyPersonType"
+Description: "VistA Source ValueSet for Terminology Maps VF_PharmacyPersonType"
 * ^experimental = false
 * ^status = #active
 * ^name = "PharmacyPersonType_VistA"
-* include urn:undefined#001 "Cardholder"
-* include urn:undefined#002 "Spouse"
-* include urn:undefined#003_-_999 "Dependents and Others"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#001 "Cardholder"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#002 "Spouse"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#003_-_999 "Dependents and Others"

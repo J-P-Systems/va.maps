@@ -1,12 +1,12 @@
-Instance: ICDCodingSystems
+Instance: VF-ICDCodingSystems
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/ICDCodingSystems"
-* name = "ICDCodingSystems"
-* title = "ICDCodingSystems"
+* url = "http://va.gov/fhir/ConceptMap/VF-ICDCodingSystems"
+* name = "VF_ICDCodingSystems"
+* title = "VF_ICDCodingSystems"
 * status = #active
 * experimental = false
-* description = "Terminology Maps ICDCodingSystems"
+* description = "Terminology Maps VF_ICDCodingSystems"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/ICDCodingSystems-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/ICDCodingSystems"
 * group[0].source = "http://va.gov/terminology/vistaDefinedElements/80.4-.01"
@@ -34,7 +34,7 @@ Usage: #definition
 
 ValueSet: ICDCodingSystems
 Title: "ICDCodingSystems FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps ICDCodingSystems"
+Description: "FHIR Target ValueSet for Terminology Maps VF_ICDCodingSystems"
 * ^experimental = false
 * ^status = #active
 * ^name = "ICDCodingSystems"
@@ -45,7 +45,7 @@ Description: "FHIR Target ValueSet for Terminology Maps ICDCodingSystems"
 
 ValueSet: ICDCodingSystems-vista
 Title: "ICDCodingSystems VistA"
-Description: "VistA Source ValueSet for Terminology Maps ICDCodingSystems"
+Description: "VistA Source ValueSet for Terminology Maps VF_ICDCodingSystems"
 * ^experimental = false
 * ^status = #active
 * ^name = "ICDCodingSystems_VistA"

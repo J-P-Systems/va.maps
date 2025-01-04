@@ -3,10 +3,10 @@ Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationreques
 Id: MedicationRequestNonVA
 Title: "MedicationRequest: NonVA"
 Description: "This StructureDefinition contains the maps for VistA file NON-VA MEDS (55.05) to us-core-medicationrequest."
-* ^status = #active
+* ^status = #draft
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
 * ^extension.valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest|6.1.0"
-* identifier ^slicing.discriminator.type = #pattern
+* identifier ^slicing.discriminator.type = #value
 * identifier ^slicing.discriminator.path = "$this"
 * identifier ^slicing.rules = #open
 * identifier contains va-order-number 0..1 and va-ien 0..1
@@ -60,6 +60,11 @@ Source: MedicationRequestNonVA
 * dosageInstruction.text -> "1745: source value from NON-VA MEDS - SIG (55.05-16)"
 * note -> "1764: source value from NON-VA MEDS - DISCLAIMER (55.05-10)" "Concatenate to Comment. Delimit with a period."
 * extension[http://va.gov/fhir/StructureDefinition/medicationrequest-recordedLocation].valueReference -> "1765: reference from NON-VA MEDS - CLINIC (55.05-13)"
+* category -> "2177: target not supported" "auto added because of must-support"
+* category[us-core] -> "2178: target not supported" "auto added because of must-support"
+* reportedReference -> "2179: target not supported" "auto added because of must-support"
+* medicationReference -> "2180: target not supported" "auto added because of must-support"
+* subject -> "2181: target not supported" "auto added because of must-support"
 
 Mapping: cdw-to-MedicationRequestNonVA
 Id: cdw

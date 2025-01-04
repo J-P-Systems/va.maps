@@ -3,7 +3,7 @@ Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner
 Id: Practitioner
 Title: "Practitioner"
 Description: "This StructureDefinition contains the maps for VistA file NEW PERSON (200) to us-core-practitioner."
-* ^status = #active
+* ^status = #draft
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
 * ^extension.valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner|6.1.0"
 * identifier ^slicing.discriminator.type = #pattern
@@ -56,6 +56,12 @@ Source: Practitioner
 * identifier[va-IEN].system -> "415-1: fixed value = http://va.gov/identifiers/$Sta3n/200" "from mapParameter 1"
 * identifier[va-IEN].type -> "415-2: fixed value = http://va.gov/terminology/vistaDefinedTerms/200-.001#IEN" "from mapParameter 2"
 * gender -> "1790: terminologyMaps using VF_providerGender on NEW PERSON - SEX (200-4)" "Added per LH request to help support deduplication fingerprints"
+* address -> "2186: target not supported" "auto added because of must-support"
+* address.line -> "2187: target not supported" "auto added because of must-support"
+* address.city -> "2188: target not supported" "auto added because of must-support"
+* address.state -> "2189: target not supported" "auto added because of must-support"
+* address.postalCode -> "2190: target not supported" "auto added because of must-support"
+* address.country -> "2191: target not supported" "auto added because of must-support"
 
 Mapping: cdw-to-Practitioner
 Id: cdw

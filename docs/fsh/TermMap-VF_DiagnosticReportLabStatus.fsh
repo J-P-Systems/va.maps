@@ -1,12 +1,12 @@
-Instance: DiagnosticReportLabStatus
+Instance: VF-DiagnosticReportLabStatus
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/DiagnosticReportLabStatus"
-* name = "DiagnosticReportLabStatus"
-* title = "DiagnosticReportLabStatus"
+* url = "http://va.gov/fhir/ConceptMap/VF-DiagnosticReportLabStatus"
+* name = "VF_DiagnosticReportLabStatus"
+* title = "VF_DiagnosticReportLabStatus"
 * status = #active
 * experimental = false
-* description = "Terminology Maps DiagnosticReportLabStatus"
+* description = "Terminology Maps VF_DiagnosticReportLabStatus"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/DiagnosticReportLabStatus-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/DiagnosticReportLabStatus"
 * group[0].source = "http://va.gov/Terminology/VistADefinedTerms/64.061"
@@ -74,7 +74,7 @@ Usage: #definition
 
 ValueSet: DiagnosticReportLabStatus
 Title: "DiagnosticReportLabStatus FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps DiagnosticReportLabStatus"
+Description: "FHIR Target ValueSet for Terminology Maps VF_DiagnosticReportLabStatus"
 * ^experimental = false
 * ^status = #active
 * ^name = "DiagnosticReportLabStatus"
@@ -88,7 +88,7 @@ Description: "FHIR Target ValueSet for Terminology Maps DiagnosticReportLabStatu
 
 ValueSet: DiagnosticReportLabStatus-vista
 Title: "DiagnosticReportLabStatus VistA"
-Description: "VistA Source ValueSet for Terminology Maps DiagnosticReportLabStatus"
+Description: "VistA Source ValueSet for Terminology Maps VF_DiagnosticReportLabStatus"
 * ^experimental = false
 * ^status = #active
 * ^name = "DiagnosticReportLabStatus_VistA"

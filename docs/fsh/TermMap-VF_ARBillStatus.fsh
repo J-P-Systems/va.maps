@@ -1,15 +1,15 @@
-Instance: ARBillStatus
+Instance: VF-ARBillStatus
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/ARBillStatus"
-* name = "ARBillStatus"
-* title = "ARBillStatus"
+* url = "http://va.gov/fhir/ConceptMap/VF-ARBillStatus"
+* name = "VF_ARBillStatus"
+* title = "VF_ARBillStatus"
 * status = #active
 * experimental = false
-* description = "Terminology Maps ARBillStatus"
+* description = "Terminology Maps VF_ARBillStatus"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/ARBillStatus-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/ARBillStatus"
-* group[0].source = "http://va.gov/terminology/vistaDefinedTerms/430.3-.01"
+* group[0].source = "http://va.gov/terminology/vistaDefinedTerms/50.65-.02"
 * group[=].target = "http://hl7.org/fhir/invoice-status"
 * group[=].element[0].code = #ACTIVE
 * group[=].element[=].display = "ACTIVE"
@@ -54,7 +54,7 @@ Usage: #definition
 
 ValueSet: ARBillStatus
 Title: "ARBillStatus FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps ARBillStatus"
+Description: "FHIR Target ValueSet for Terminology Maps VF_ARBillStatus"
 * ^experimental = false
 * ^status = #active
 * ^name = "ARBillStatus"
@@ -65,15 +65,15 @@ Description: "FHIR Target ValueSet for Terminology Maps ARBillStatus"
 
 ValueSet: ARBillStatus-vista
 Title: "ARBillStatus VistA"
-Description: "VistA Source ValueSet for Terminology Maps ARBillStatus"
+Description: "VistA Source ValueSet for Terminology Maps VF_ARBillStatus"
 * ^experimental = false
 * ^status = #active
 * ^name = "ARBillStatus_VistA"
-* include http://va.gov/terminology/vistaDefinedTerms/430.3-.01#ACTIVE "ACTIVE"
-* include http://va.gov/terminology/vistaDefinedTerms/430.3-.01#BILL_INCOMPLETE "BILL INCOMPLETE"
-* include http://va.gov/terminology/vistaDefinedTerms/430.3-.01#CANCELLATION "CANCELLATION"
-* include http://va.gov/terminology/vistaDefinedTerms/430.3-.01#CANCELLED_BILL "CANCELLED BILL"
-* include http://va.gov/terminology/vistaDefinedTerms/430.3-.01#COLLECTED/CLOSED "COLLECTED/CLOSED"
-* include http://va.gov/terminology/vistaDefinedTerms/430.3-.01#INCOMPLETE "INCOMPLETE"
-* include http://va.gov/terminology/vistaDefinedTerms/430.3-.01#NEW_BILL "NEW BILL"
-* include http://va.gov/terminology/vistaDefinedTerms/430.3-.01#OPEN "OPEN"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#ACTIVE "ACTIVE"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#BILL_INCOMPLETE "BILL INCOMPLETE"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#CANCELLATION "CANCELLATION"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#CANCELLED_BILL "CANCELLED BILL"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#COLLECTED/CLOSED "COLLECTED/CLOSED"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#INCOMPLETE "INCOMPLETE"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#NEW_BILL "NEW BILL"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#OPEN "OPEN"

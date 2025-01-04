@@ -1,12 +1,12 @@
-Instance: RefillRequestStatus
+Instance: VF-RefillRequestStatus
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/RefillRequestStatus"
-* name = "RefillRequestStatus"
-* title = "RefillRequestStatus"
+* url = "http://va.gov/fhir/ConceptMap/VF-RefillRequestStatus"
+* name = "VF_RefillRequestStatus"
+* title = "VF_RefillRequestStatus"
 * status = #active
 * experimental = false
-* description = "Terminology Maps RefillRequestStatus"
+* description = "Terminology Maps VF_RefillRequestStatus"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/RefillRequestStatus-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/RefillRequestStatus"
 * group[0].source = "http://va.gov/terminology/vistaDefinedElements/52.43-5"
@@ -26,7 +26,7 @@ Usage: #definition
 
 ValueSet: RefillRequestStatus
 Title: "RefillRequestStatus FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps RefillRequestStatus"
+Description: "FHIR Target ValueSet for Terminology Maps VF_RefillRequestStatus"
 * ^experimental = false
 * ^status = #active
 * ^name = "RefillRequestStatus"
@@ -36,7 +36,7 @@ Description: "FHIR Target ValueSet for Terminology Maps RefillRequestStatus"
 
 ValueSet: RefillRequestStatus-vista
 Title: "RefillRequestStatus VistA"
-Description: "VistA Source ValueSet for Terminology Maps RefillRequestStatus"
+Description: "VistA Source ValueSet for Terminology Maps VF_RefillRequestStatus"
 * ^experimental = false
 * ^status = #active
 * ^name = "RefillRequestStatus_VistA"

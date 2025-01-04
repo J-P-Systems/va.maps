@@ -6,7 +6,7 @@ Description: "This StructureDefinition contains the maps for VistA file SURGERY 
 * ^status = #active
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
 * ^extension.valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure|6.1.0"
-* performer ^slicing.discriminator.type = #pattern
+* performer ^slicing.discriminator.type = #value
 * performer ^slicing.discriminator.path = "$this"
 * performer ^slicing.rules = #open
 * performer contains va-0 0..1 and va-1 0..1 and va-2 0..1 and va-3 0..1 and va-4 0..1 and va-5 0..1 and va-6 0..1 and va-7 0..1 and va-8 0..1 and va-9 0..1 and va-10 0..1 and va-11 0..1 and va-12 0..1 and va-13 0..1
@@ -28,6 +28,8 @@ Description: "This StructureDefinition contains the maps for VistA file SURGERY 
 * performer[va-11].actor only Reference(Practitioner)
 * performer[va-12].actor only Reference(Practitioner)
 * performer[va-13].actor only Reference(Practitioner)
+* location obeys psp-25-1294
+* location obeys psp-25-1295
 * complication.coding obeys psp-25-1296
 * complication.text obeys psp-25-1296-1
 * complication.coding obeys psp-25-1297
@@ -62,6 +64,14 @@ Description: "This StructureDefinition contains the maps for VistA file SURGERY 
 * performer[va-13].function.text = "FOLEY CATHETER INSERTED BY"
 * performer[va-13].function.coding = http://va.gov/terminology/vistaDefinedTerms/130#.57 "FOLEY CATHETER INSERTED BY"
 * code.coding.system = "http://www.ama-assn.org/go/cpt"
+
+Invariant: psp-25-1294
+Description: "130-119 > 131.7-: if 130-118 NON-OR PROCEDURE == ‘Y’ then /Location"
+Severity: #warning
+
+Invariant: psp-25-1295
+Description: "130-.02: if 130-118 NON-OR PROCEDURE != ‘Y’ then LocationOR"
+Severity: #warning
 
 Invariant: psp-25-1296
 Description: "130-688: if == ‘Y’ then http://snomed.info/sct#88797001 \"Complication of surgical procedure (disorder)\""

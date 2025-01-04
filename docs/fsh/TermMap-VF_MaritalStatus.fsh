@@ -1,12 +1,12 @@
-Instance: MaritalStatus
+Instance: VF-MaritalStatus
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/MaritalStatus"
-* name = "MaritalStatus"
-* title = "MaritalStatus"
+* url = "http://va.gov/fhir/ConceptMap/VF-MaritalStatus"
+* name = "VF_MaritalStatus"
+* title = "VF_MaritalStatus"
 * status = #active
 * experimental = false
-* description = "Terminology Maps MaritalStatus"
+* description = "Terminology Maps VF_MaritalStatus"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/MaritalStatus-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/MaritalStatus"
 * group[0].source = "http://va.gov/terminology/vistaDefinedElements/2-.05"
@@ -46,7 +46,7 @@ Usage: #definition
 
 ValueSet: MaritalStatus
 Title: "MaritalStatus FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps MaritalStatus"
+Description: "FHIR Target ValueSet for Terminology Maps VF_MaritalStatus"
 * ^experimental = false
 * ^status = #active
 * ^name = "MaritalStatus"
@@ -59,7 +59,7 @@ Description: "FHIR Target ValueSet for Terminology Maps MaritalStatus"
 
 ValueSet: MaritalStatus-vista
 Title: "MaritalStatus VistA"
-Description: "VistA Source ValueSet for Terminology Maps MaritalStatus"
+Description: "VistA Source ValueSet for Terminology Maps VF_MaritalStatus"
 * ^experimental = false
 * ^status = #active
 * ^name = "MaritalStatus_VistA"

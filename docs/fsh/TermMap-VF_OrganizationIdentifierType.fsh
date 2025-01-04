@@ -1,12 +1,12 @@
-Instance: OrganizationIdentifierType
+Instance: VF-OrganizationIdentifierType
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/OrganizationIdentifierType"
-* name = "OrganizationIdentifierType"
-* title = "OrganizationIdentifierType"
+* url = "http://va.gov/fhir/ConceptMap/VF-OrganizationIdentifierType"
+* name = "VF_OrganizationIdentifierType"
+* title = "VF_OrganizationIdentifierType"
 * status = #active
 * experimental = false
-* description = "Terminology Maps OrganizationIdentifierType"
+* description = "Terminology Maps VF_OrganizationIdentifierType"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/OrganizationIdentifierType-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/OrganizationIdentifierType"
 * group[0].source = "http://va.gov/Terminology/VistADefinedTerms/36-6.01"
@@ -46,7 +46,7 @@ Usage: #definition
 
 ValueSet: OrganizationIdentifierType
 Title: "OrganizationIdentifierType FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps OrganizationIdentifierType"
+Description: "FHIR Target ValueSet for Terminology Maps VF_OrganizationIdentifierType"
 * ^experimental = false
 * ^status = #active
 * ^name = "OrganizationIdentifierType"
@@ -61,7 +61,7 @@ Description: "FHIR Target ValueSet for Terminology Maps OrganizationIdentifierTy
 
 ValueSet: OrganizationIdentifierType-vista
 Title: "OrganizationIdentifierType VistA"
-Description: "VistA Source ValueSet for Terminology Maps OrganizationIdentifierType"
+Description: "VistA Source ValueSet for Terminology Maps VF_OrganizationIdentifierType"
 * ^experimental = false
 * ^status = #active
 * ^name = "OrganizationIdentifierType_VistA"

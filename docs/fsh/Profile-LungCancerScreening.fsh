@@ -19,6 +19,15 @@ Source: LungCancerScreening
 * subject -> "933: reference from TIU DOCUMENT - PATIENT > PATIENT/IHS - NAME (8925-.02 > 9000001-.01)"
 * performer -> "934: reference from TIU DOCUMENT - AUTHOR/DICTATOR (8925-1202)"
 * encounter -> "935: reference from TIU DOCUMENT - VISIT (8925-.03)"
+* status -> "2159: target not supported" "auto added because of must-support"
+* category -> "2160: target not supported" "auto added because of must-support"
+* category[us-core] -> "2161: target not supported" "auto added because of must-support"
+* code -> "2162: target not supported" "auto added because of must-support"
+* effectiveDateTime -> "2163: target not supported" "auto added because of must-support"
+* issued -> "2164: target not supported" "auto added because of must-support"
+* result -> "2165: target not supported" "auto added because of must-support"
+* media -> "2166: target not supported" "auto added because of must-support"
+* media.link -> "2167: target not supported" "auto added because of must-support"
 
 Mapping: cdw-to-LungCancerScreening
 Id: cdw

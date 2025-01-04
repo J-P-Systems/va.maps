@@ -1,12 +1,12 @@
-Instance: Religion
+Instance: VF-Religion
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/Religion"
-* name = "Religion"
-* title = "Religion"
+* url = "http://va.gov/fhir/ConceptMap/VF-Religion"
+* name = "VF_Religion"
+* title = "VF_Religion"
 * status = #active
 * experimental = false
-* description = "Terminology Maps Religion"
+* description = "Terminology Maps VF_Religion"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/Religion-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/Religion"
 * group[0].source = "http://va.gov/terminology/vistaDefinedElements/2-.08"
@@ -436,7 +436,7 @@ Usage: #definition
 
 ValueSet: Religion
 Title: "Religion FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps Religion"
+Description: "FHIR Target ValueSet for Terminology Maps VF_Religion"
 * ^experimental = false
 * ^status = #active
 * ^name = "Religion"
@@ -527,7 +527,7 @@ Description: "FHIR Target ValueSet for Terminology Maps Religion"
 
 ValueSet: Religion-vista
 Title: "Religion VistA"
-Description: "VistA Source ValueSet for Terminology Maps Religion"
+Description: "VistA Source ValueSet for Terminology Maps VF_Religion"
 * ^experimental = false
 * ^status = #active
 * ^name = "Religion_VistA"

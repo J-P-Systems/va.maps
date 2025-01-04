@@ -1,15 +1,15 @@
-Instance: encounterProblemVerificationStatus
+Instance: VF-encounterProblemVerificationStatus
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/encounterProblemVerificationStatus"
-* name = "EncounterProblemVerificationStatus"
-* title = "encounterProblemVerificationStatus"
+* url = "http://va.gov/fhir/ConceptMap/VF-encounterProblemVerificationStatus"
+* name = "VF_encounterProblemVerificationStatus"
+* title = "VF_encounterProblemVerificationStatus"
 * status = #active
 * experimental = false
-* description = "Terminology Maps encounterProblemVerificationStatus"
+* description = "Terminology Maps VF_encounterProblemVerificationStatus"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/encounterProblemVerificationStatus-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/encounterProblemVerificationStatus"
-* group[0].source = "http://va.gov/terminology/vistaDefinedTerms/9000010.07-.06"
+* group[0].source = "http://va.gov/terminology/vistaDefinedTerms/50.65-.02"
 * group[=].target = "http://terminology.hl7.org/CodeSystem/condition-ver-status"
 * group[=].element[0].code = #C
 * group[=].element[=].display = "CONSIDER"
@@ -42,7 +42,7 @@ Usage: #definition
 
 ValueSet: encounterProblemVerificationStatus
 Title: "encounterProblemVerificationStatus FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps encounterProblemVerificationStatus"
+Description: "FHIR Target ValueSet for Terminology Maps VF_encounterProblemVerificationStatus"
 * ^experimental = false
 * ^status = #active
 * ^name = "EncounterProblemVerificationStatus"
@@ -52,14 +52,14 @@ Description: "FHIR Target ValueSet for Terminology Maps encounterProblemVerifica
 
 ValueSet: encounterProblemVerificationStatus-vista
 Title: "encounterProblemVerificationStatus VistA"
-Description: "VistA Source ValueSet for Terminology Maps encounterProblemVerificationStatus"
+Description: "VistA Source ValueSet for Terminology Maps VF_encounterProblemVerificationStatus"
 * ^experimental = false
 * ^status = #active
 * ^name = "EncounterProblemVerificationStatus_VistA"
-* include http://va.gov/terminology/vistaDefinedTerms/9000010.07-.06#C "CONSIDER"
-* include http://va.gov/terminology/vistaDefinedTerms/9000010.07-.06#D "DOUBTFUL"
-* include http://va.gov/terminology/vistaDefinedTerms/9000010.07-.06#F "FOLLOW UP"
-* include http://va.gov/terminology/vistaDefinedTerms/9000010.07-.06#M "MAYBE, POSSIBLE, PERHAPS"
-* include http://va.gov/terminology/vistaDefinedTerms/9000010.07-.06#P "PROBABLE"
-* include http://va.gov/terminology/vistaDefinedTerms/9000010.07-.06#O "RULE OUT"
-* include http://va.gov/terminology/vistaDefinedTerms/9000010.07-.06#S "SUSPECT, SUSPICIOUS"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#C "CONSIDER"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#D "DOUBTFUL"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#F "FOLLOW UP"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#M "MAYBE, POSSIBLE, PERHAPS"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#P "PROBABLE"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#O "RULE OUT"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#S "SUSPECT, SUSPICIOUS"

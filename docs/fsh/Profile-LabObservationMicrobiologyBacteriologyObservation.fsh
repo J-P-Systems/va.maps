@@ -4,23 +4,15 @@ Id: LabObservationMicrobiologyBacteriologyObservation
 Title: "Lab Observation: Microbiology Bacteriology Observation"
 Description: "This StructureDefinition contains the maps for VistA file MICROBIOLOGY (63.05) to us-core-observation-lab."
 * ^status = #draft
-* hasMember ^slicing.discriminator.type = #pattern
-* hasMember ^slicing.discriminator.path = "$this"
-* hasMember ^slicing.rules = #open
-* hasMember contains va-bacteria 0..1 and va-urine 0..1 and va-sputum 0..1 and va-gramstain 0..1
 * component ^slicing.discriminator.type = #pattern
 * component ^slicing.discriminator.path = "code"
 * component ^slicing.rules = #open
 * component contains va-component 0..1
-* performer ^slicing.discriminator.type = #pattern
+* performer ^slicing.discriminator.type = #value
 * performer ^slicing.discriminator.path = "$this"
 * performer ^slicing.rules = #open
 * performer contains va-at 0..1 and va-by 0..1
-* note and hasMember[va-bacteria] and hasMember[va-urine] and hasMember[va-sputum] and hasMember[va-gramstain] and status and component[va-component].code and component[va-component].code.coding.code and component[va-component].code.coding.system and component[va-component].valueString and component[va-component].interpretation and effectiveDateTime and performer[va-at] and performer[va-by] and specimen and identifier.value and identifier.system and code.coding and code.coding.system and code.coding.code and code.coding.display and issued and category and subject MS
-* hasMember[va-bacteria] only Reference(LabObservationMicrobiologyBacteriologyObservationbacteria)
-* hasMember[va-urine] only Reference(LabObservationMicrobiologyBacteriologyObservationurine)
-* hasMember[va-sputum] only Reference(LabObservationMicrobiologyBacteriologyObservationsputum)
-* hasMember[va-gramstain] only Reference(LabObservationMicrobiologyBacteriologyObservationgramstain)
+* note and status and component[va-component].code and component[va-component].code.coding.code and component[va-component].code.coding.system and component[va-component].valueString and component[va-component].interpretation and effectiveDateTime and performer[va-at] and performer[va-by] and specimen and identifier.value and identifier.system and code.coding and code.coding.system and code.coding.code and code.coding.display and issued and category and subject MS
 * performer[va-at] only Reference(Organization)
 * performer[va-by] only Reference(Practitioner)
 * specimen only Reference(LabObservationMicrobiologySpecimen)
@@ -41,16 +33,15 @@ Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: LabObservationMicrobiologyBacteriologyObservation
 * note -> "1455: source value from MICROBIOLOGY - ORGANISM > ORGANISM - COMMENT > COMMENT - COMMENT (63.05-12 > 63.3-2 > 63.31-.01)"
-* hasMember[va-bacteria] -> "null: reference"
-* hasMember[va-urine] -> "null: reference"
-* hasMember[va-sputum] -> "null: reference"
-* hasMember[va-gramstain] -> "null: reference"
 * status -> "1488: terminologyMaps using VF_LabObservationStatus on MICROBIOLOGY - BACT RPT STATUS (63.05-11.5)"
 * component[va-component].code -> "1522: transform using null on MICROBIOLOGY - ORGANISM > ORGANISM - ORGANISM (63.05-12 > 63.3-5+to+160)" "antibiotic sensitivity\nWhat is default if no LOINC? Use text or is there a default LOINC?\n48611-8 Antibiotic tested [Identifier] against isolate"
 * component[va-component].code.coding.code -> "1522-1: fixed value without value?" "from mapParameter 1"
 * component[va-component].code.coding.system -> "1522-2: fixed value = http://loinc.org" "from mapParameter 2"
 * component[va-component].valueString -> "1523: source value from MICROBIOLOGY - ORGANISM > ORGANISM - ORGANISM (63.05-12 > 63.3-5+to+160)" "antibiotic sensitivity.AntibioticSensitivityValue"
 * component[va-component].interpretation -> "1524: terminologyMaps using VF_AntibioticSensitivityInterpretation on MICROBIOLOGY - ORGANISM > ORGANISM - * INTERPR (63.05-12 > 63.3-5.1+to+160.1)" "antibiotic sensitivity.AntibioticSensitivityInterpretation"
+* valueQuantity -> "2062: target not supported" "auto added because of must-support"
+* valueCodeableConcept -> "2063: target not supported" "auto added because of must-support"
+* valueString -> "2064: target not supported" "auto added because of must-support"
 * effectiveDateTime -> "1450: source value from MICROBIOLOGY - DATE/TIME SPECIMEN TAKEN (63.05-.01)"
 * note -> "1454: source value from MICROBIOLOGY - COMMENT ON SPECIMEN (63.05-.99)"
 * performer[va-at] -> "1464: reference from MICROBIOLOGY - ACCESSIONING INSTITUTION (63.05-.112)"

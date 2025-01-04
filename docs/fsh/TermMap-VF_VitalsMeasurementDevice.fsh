@@ -1,12 +1,12 @@
-Instance: VitalsMeasurementDevice
+Instance: VF-VitalsMeasurementDevice
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/VitalsMeasurementDevice"
-* name = "VitalsMeasurementDevice"
-* title = "VitalsMeasurementDevice"
+* url = "http://va.gov/fhir/ConceptMap/VF-VitalsMeasurementDevice"
+* name = "VF_VitalsMeasurementDevice"
+* title = "VF_VitalsMeasurementDevice"
 * status = #active
 * experimental = false
-* description = "Terminology Maps VitalsMeasurementDevice"
+* description = "Terminology Maps VF_VitalsMeasurementDevice"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VitalsMeasurementDevice-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/VitalsMeasurementDevice"
 * group[0].source = "http://terminology.hl7.org/CodeSystem/VHA"
@@ -79,7 +79,7 @@ Usage: #definition
 
 ValueSet: VitalsMeasurementDevice
 Title: "VitalsMeasurementDevice FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps VitalsMeasurementDevice"
+Description: "FHIR Target ValueSet for Terminology Maps VF_VitalsMeasurementDevice"
 * ^experimental = false
 * ^status = #active
 * ^name = "VitalsMeasurementDevice"
@@ -97,7 +97,7 @@ Description: "FHIR Target ValueSet for Terminology Maps VitalsMeasurementDevice"
 
 ValueSet: VitalsMeasurementDevice-vista
 Title: "VitalsMeasurementDevice VistA"
-Description: "VistA Source ValueSet for Terminology Maps VitalsMeasurementDevice"
+Description: "VistA Source ValueSet for Terminology Maps VF_VitalsMeasurementDevice"
 * ^experimental = false
 * ^status = #active
 * ^name = "VitalsMeasurementDevice_VistA"

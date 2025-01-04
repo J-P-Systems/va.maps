@@ -6,11 +6,11 @@ Description: "This StructureDefinition contains the maps for VistA file SURGICAL
 * ^status = #draft
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
 * ^extension.valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-lab|6.1.0"
-* performer ^slicing.discriminator.type = #pattern
+* performer ^slicing.discriminator.type = #value
 * performer ^slicing.discriminator.path = "$this"
 * performer ^slicing.rules = #open
 * performer contains va-by 0..1 and va-at 0..1
-* identifier.value and identifier.system and basedOn and code.text and code and code.coding.code and code.coding.system and status and effectiveDateTime and issued and performer[va-by] and performer[va-at] and resultsInterpreter and specimen and media.link and conclusion and presentedForm.data and category[LaboratorySlice] and category.text and code.coding and code.coding.display and subject and result MS
+* identifier.value and identifier.system and basedOn and code.text and code and status and effectiveDateTime and issued and performer[va-by] and performer[va-at] and resultsInterpreter and specimen and media.link and conclusion and presentedForm.data and category[LaboratorySlice] and category.text and code.coding and code.coding.code and code.coding.system and code.coding.display and subject and result MS
 * basedOn only Reference(http://hl7.org/fhir/StructureDefinition/ServiceRequest)
 * performer[va-by] only Reference(Practitioner)
 * performer[va-at] only Reference(Organization)
@@ -20,7 +20,6 @@ Description: "This StructureDefinition contains the maps for VistA file SURGICAL
 * result only Reference(LabObservationObservation)
 * identifier.system = "http://va.gov/identifiers/$Sta3n/63.53"
 * code = http://loinc.org#27898-6 "Pathology studies (set)"
-* code.coding.system = "http://loinc.org"
 * status from http://va.gov/fhir/ValueSet/DiagnosticReportLabStatus
 * category[LaboratorySlice] = http://terminology.hl7.org/CodeSystem/v2-0074#LAB
 * code.coding.system = "http://loinc.org"
@@ -34,8 +33,6 @@ Source: LabObservationSurgicalPathologyDiagnosticReport
 * basedOn -> "1691: reference from SURGICAL PATHOLOGY - ORDERED TEST > ORDERED TEST - CPRS ORDER # (63.08-.35 > 63.53-3)"
 * code.text -> "1809: source value from SURGICAL PATHOLOGY - TIU REFERENCE DATE/TIME - SP > TIU REFERENCE DATE/TIME - SP - TIU ENTRY POINTER - SP > TIU DOCUMENT - DOCUMENT TYPE > TIU DOCUMENT DEFINITION - NAME (63.08-.16 > 63.19-1 > 8925-.01 > 8925.1-.01)" "Per KBS discussion, this value should be Local Title + Specimen.type.text. The local title is this map row; Specimen.type.text is key 1703."
 * code -> "1810: fixed value = http://loinc.org#27898-6 \"Pathology studies (set)\""
-* code.coding.code -> "1811: source value from SURGICAL PATHOLOGY - TIU REFERENCE DATE/TIME - SP > TIU REFERENCE DATE/TIME - SP - TIU ENTRY POINTER - SP > TIU DOCUMENT - DOCUMENT TYPE > TIU DOCUMENT DEFINITION - VHA ENTERPRISE STANDARD TITLE > TIU VHA ENTERPRISE STANDARD TITLE - CODING SYSTEM > CODING SYSTEM - CODE > CODE - CODE (63.08-.16 > 63.19-1 > 8925-.01 > 8925.1-1501 > 8926.1-2 > 8926.12-.02 > 8926.121-.01)"
-* code.coding.system -> "1811-1: fixed value = http://loinc.org" "from mapParameter 1"
 * status -> "1417: terminologyMaps using VF_DiagnosticReportLabStatus on SURGICAL PATHOLOGY - ORDERED TEST > ORDERED TEST - DISPOSITION (63.08-.35 > 63.53-10)" "US Core 5 has new constraints: if status is partial, preliminary, final, ammended, corrected or appended effective[x] and issued are required"
 * effectiveDateTime -> "1425: source value from SURGICAL PATHOLOGY - DATE/TIME SPECIMEN TAKEN (63.08-.01)"
 * issued -> "1430: source value from SURGICAL PATHOLOGY - DATE REPORT COMPLETED (63.08-.03)"

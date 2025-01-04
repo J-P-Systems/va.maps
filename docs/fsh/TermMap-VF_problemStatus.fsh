@@ -1,15 +1,15 @@
-Instance: problemStatus
+Instance: VF-problemStatus
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/problemStatus"
-* name = "ProblemStatus"
-* title = "problemStatus"
+* url = "http://va.gov/fhir/ConceptMap/VF-problemStatus"
+* name = "VF_problemStatus"
+* title = "VF_problemStatus"
 * status = #active
 * experimental = false
-* description = "Terminology Maps problemStatus"
+* description = "Terminology Maps VF_problemStatus"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/problemStatus-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/problemStatus"
-* group[0].source = "http://va.gov/terminology/vistaDefinedTerms/9000011-.12"
+* group[0].source = "http://va.gov/terminology/vistaDefinedTerms/50.65-.02"
 * group[=].target = "http://terminology.hl7.org/CodeSystem/condition-clinical"
 * group[=].element[0].code = #A
 * group[=].element[=].display = "ACTIVE"
@@ -22,7 +22,7 @@ Usage: #definition
 
 ValueSet: problemStatus
 Title: "problemStatus FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps problemStatus"
+Description: "FHIR Target ValueSet for Terminology Maps VF_problemStatus"
 * ^experimental = false
 * ^status = #active
 * ^name = "ProblemStatus"
@@ -31,9 +31,9 @@ Description: "FHIR Target ValueSet for Terminology Maps problemStatus"
 
 ValueSet: problemStatus-vista
 Title: "problemStatus VistA"
-Description: "VistA Source ValueSet for Terminology Maps problemStatus"
+Description: "VistA Source ValueSet for Terminology Maps VF_problemStatus"
 * ^experimental = false
 * ^status = #active
 * ^name = "ProblemStatus_VistA"
-* include http://va.gov/terminology/vistaDefinedTerms/9000011-.12#A "ACTIVE"
-* include http://va.gov/terminology/vistaDefinedTerms/9000011-.12#I "INACTIVE"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#A "ACTIVE"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#I "INACTIVE"

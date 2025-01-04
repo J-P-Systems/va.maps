@@ -6,11 +6,11 @@ Description: "This StructureDefinition contains the maps for VistA file PATIENT 
 * ^status = #active
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
 * ^extension.valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient|6.1.0"
-* telecom ^slicing.discriminator.type = #pattern
+* telecom ^slicing.discriminator.type = #value
 * telecom ^slicing.discriminator.path = "$this"
 * telecom ^slicing.rules = #open
 * telecom contains va-home 0..1 and va-work 0..1 and va-mobile 0..1
-* address ^slicing.discriminator.type = #pattern
+* address ^slicing.discriminator.type = #value
 * address ^slicing.discriminator.path = "$this"
 * address ^slicing.rules = #open
 * address contains va-home 0..1

@@ -1,12 +1,12 @@
-Instance: VitalsUnits
+Instance: VF-VitalsUnits
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/VitalsUnits"
-* name = "VitalsUnits"
-* title = "VitalsUnits"
+* url = "http://va.gov/fhir/ConceptMap/VF-VitalsUnits"
+* name = "VF_VitalsUnits"
+* title = "VF_VitalsUnits"
 * status = #active
 * experimental = false
-* description = "Terminology Maps VitalsUnits"
+* description = "Terminology Maps VF_VitalsUnits"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VitalsUnits-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/VitalsUnits"
 * group[0].source = "http://terminology.hl7.org/CodeSystem/VHA"
@@ -88,7 +88,7 @@ Usage: #definition
 
 ValueSet: VitalsUnits
 Title: "VitalsUnits FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps VitalsUnits"
+Description: "FHIR Target ValueSet for Terminology Maps VF_VitalsUnits"
 * ^experimental = false
 * ^status = #active
 * ^name = "VitalsUnits"
@@ -103,7 +103,7 @@ Description: "FHIR Target ValueSet for Terminology Maps VitalsUnits"
 
 ValueSet: VitalsUnits-vista
 Title: "VitalsUnits VistA"
-Description: "VistA Source ValueSet for Terminology Maps VitalsUnits"
+Description: "VistA Source ValueSet for Terminology Maps VF_VitalsUnits"
 * ^experimental = false
 * ^status = #active
 * ^name = "VitalsUnits_VistA"

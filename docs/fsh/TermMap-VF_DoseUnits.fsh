@@ -1,15 +1,15 @@
-Instance: DoseUnits
+Instance: VF-DoseUnits
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/DoseUnits"
-* name = "DoseUnits"
-* title = "DoseUnits"
+* url = "http://va.gov/fhir/ConceptMap/VF-DoseUnits"
+* name = "VF_DoseUnits"
+* title = "VF_DoseUnits"
 * status = #active
 * experimental = false
-* description = "Terminology Maps DoseUnits"
+* description = "Terminology Maps VF_DoseUnits"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/DoseUnits-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/DoseUnits"
-* group[0].source = "http://va.gov/terminology/vistaDefinedTerms/52.0113-2"
+* group[0].source = "http://va.gov/terminology/vistaDefinedTerms/50.65-.02"
 * group[=].target = "http://unitsofmeasure.org"
 * group[=].element[0].code = #MG
 * group[=].element[=].target.code = #mg
@@ -29,7 +29,7 @@ Usage: #definition
 
 ValueSet: DoseUnits
 Title: "DoseUnits FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps DoseUnits"
+Description: "FHIR Target ValueSet for Terminology Maps VF_DoseUnits"
 * ^experimental = false
 * ^status = #active
 * ^name = "DoseUnits"
@@ -41,12 +41,12 @@ Description: "FHIR Target ValueSet for Terminology Maps DoseUnits"
 
 ValueSet: DoseUnits-vista
 Title: "DoseUnits VistA"
-Description: "VistA Source ValueSet for Terminology Maps DoseUnits"
+Description: "VistA Source ValueSet for Terminology Maps VF_DoseUnits"
 * ^experimental = false
 * ^status = #active
 * ^name = "DoseUnits_VistA"
-* include http://va.gov/terminology/vistaDefinedTerms/52.0113-2#MG 
-* include http://va.gov/terminology/vistaDefinedTerms/52.0113-2#MCG 
-* include http://va.gov/terminology/vistaDefinedTerms/52.0113-2#MEQ 
-* include http://va.gov/terminology/vistaDefinedTerms/52.0113-2#UNIT 
-* include http://va.gov/terminology/vistaDefinedTerms/52.0113-2#GM 
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#MG 
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#MCG 
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#MEQ 
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#UNIT 
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#GM 

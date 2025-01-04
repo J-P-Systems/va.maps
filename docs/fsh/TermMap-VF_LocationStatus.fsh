@@ -1,12 +1,12 @@
-Instance: LocationStatus
+Instance: VF-LocationStatus
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/LocationStatus"
-* name = "LocationStatus"
-* title = "LocationStatus"
+* url = "http://va.gov/fhir/ConceptMap/VF-LocationStatus"
+* name = "VF_LocationStatus"
+* title = "VF_LocationStatus"
 * status = #active
 * experimental = false
-* description = "Terminology Maps LocationStatus"
+* description = "Terminology Maps VF_LocationStatus"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/LocationStatus-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/LocationStatus"
 * group[0].source = "urn:VAST"
@@ -33,7 +33,7 @@ Usage: #definition
 
 ValueSet: LocationStatus
 Title: "LocationStatus FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps LocationStatus"
+Description: "FHIR Target ValueSet for Terminology Maps VF_LocationStatus"
 * ^experimental = false
 * ^status = #active
 * ^name = "LocationStatus"
@@ -43,7 +43,7 @@ Description: "FHIR Target ValueSet for Terminology Maps LocationStatus"
 
 ValueSet: LocationStatus-vista
 Title: "LocationStatus VistA"
-Description: "VistA Source ValueSet for Terminology Maps LocationStatus"
+Description: "VistA Source ValueSet for Terminology Maps VF_LocationStatus"
 * ^experimental = false
 * ^status = #active
 * ^name = "LocationStatus_VistA"

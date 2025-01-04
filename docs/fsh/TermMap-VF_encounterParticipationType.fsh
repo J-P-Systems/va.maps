@@ -1,12 +1,12 @@
-Instance: encounterParticipationType
+Instance: VF-encounterParticipationType
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/encounterParticipationType"
-* name = "EncounterParticipationType"
-* title = "encounterParticipationType"
+* url = "http://va.gov/fhir/ConceptMap/VF-encounterParticipationType"
+* name = "VF_encounterParticipationType"
+* title = "VF_encounterParticipationType"
 * status = #active
 * experimental = false
-* description = "Terminology Maps encounterParticipationType"
+* description = "Terminology Maps VF_encounterParticipationType"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/encounterParticipationType-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/encounterParticipationType"
 * group[0].source = "http://va.gov/terminology/vistaDefinedElements/9000010.06-.04"
@@ -24,7 +24,7 @@ Usage: #definition
 
 ValueSet: encounterParticipationType
 Title: "encounterParticipationType FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps encounterParticipationType"
+Description: "FHIR Target ValueSet for Terminology Maps VF_encounterParticipationType"
 * ^experimental = false
 * ^status = #active
 * ^name = "EncounterParticipationType"
@@ -33,7 +33,7 @@ Description: "FHIR Target ValueSet for Terminology Maps encounterParticipationTy
 
 ValueSet: encounterParticipationType-vista
 Title: "encounterParticipationType VistA"
-Description: "VistA Source ValueSet for Terminology Maps encounterParticipationType"
+Description: "VistA Source ValueSet for Terminology Maps VF_encounterParticipationType"
 * ^experimental = false
 * ^status = #active
 * ^name = "EncounterParticipationType_VistA"

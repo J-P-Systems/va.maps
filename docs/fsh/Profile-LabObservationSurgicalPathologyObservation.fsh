@@ -14,6 +14,12 @@ Mapping: source-to-LabObservationSurgicalPathologyObservation
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: LabObservationSurgicalPathologyObservation
+* status -> "2044: target not supported" "auto added because of must-support"
+* code -> "2045: target not supported" "auto added because of must-support"
+* effectiveDateTime -> "2046: target not supported" "auto added because of must-support"
+* valueQuantity -> "2047: target not supported" "auto added because of must-support"
+* valueCodeableConcept -> "2048: target not supported" "auto added because of must-support"
+* valueString -> "2049: target not supported" "auto added because of must-support"
 * category -> "843: fixed value = http://terminology.hl7.org/CodeSystem/observation-category#laboratory"
 * dataAbsentReason -> "2031: target not supported" "because of must-support"
 * subject -> "844: reference from PATIENT - LABORATORY REFERENCE > LAB DATA - LRDFN (2-63 > 63-.01)" "Pointer from PATIENT (2)"

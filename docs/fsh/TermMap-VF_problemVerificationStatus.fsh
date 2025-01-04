@@ -1,15 +1,15 @@
-Instance: problemVerificationStatus
+Instance: VF-problemVerificationStatus
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/problemVerificationStatus"
-* name = "ProblemVerificationStatus"
-* title = "problemVerificationStatus"
+* url = "http://va.gov/fhir/ConceptMap/VF-problemVerificationStatus"
+* name = "VF_problemVerificationStatus"
+* title = "VF_problemVerificationStatus"
 * status = #active
 * experimental = false
-* description = "Terminology Maps problemVerificationStatus"
+* description = "Terminology Maps VF_problemVerificationStatus"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/problemVerificationStatus-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/problemVerificationStatus"
-* group[0].source = "http://va.gov/terminology/vistaDefinedTerms/9000011-1.02"
+* group[0].source = "http://va.gov/terminology/vistaDefinedTerms/50.65-.02"
 * group[=].target = "http://terminology.hl7.org/CodeSystem/condition-ver-status"
 * group[=].element[0].code = #H
 * group[=].element[=].display = "HIDDEN"
@@ -29,7 +29,7 @@ Usage: #definition
 
 ValueSet: problemVerificationStatus
 Title: "problemVerificationStatus FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps problemVerificationStatus"
+Description: "FHIR Target ValueSet for Terminology Maps VF_problemVerificationStatus"
 * ^experimental = false
 * ^status = #active
 * ^name = "ProblemVerificationStatus"
@@ -39,10 +39,10 @@ Description: "FHIR Target ValueSet for Terminology Maps problemVerificationStatu
 
 ValueSet: problemVerificationStatus-vista
 Title: "problemVerificationStatus VistA"
-Description: "VistA Source ValueSet for Terminology Maps problemVerificationStatus"
+Description: "VistA Source ValueSet for Terminology Maps VF_problemVerificationStatus"
 * ^experimental = false
 * ^status = #active
 * ^name = "ProblemVerificationStatus_VistA"
-* include http://va.gov/terminology/vistaDefinedTerms/9000011-1.02#H "HIDDEN"
-* include http://va.gov/terminology/vistaDefinedTerms/9000011-1.02#P "PERMANENT"
-* include http://va.gov/terminology/vistaDefinedTerms/9000011-1.02#T "TRANSCRIBED"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#H "HIDDEN"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#P "PERMANENT"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#T "TRANSCRIBED"

@@ -3,7 +3,7 @@ Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationreques
 Id: MedicationRequestOutpatient
 Title: "MedicationRequest: Outpatient"
 Description: "This StructureDefinition contains the maps for VistA file PRESCRIPTION (52) to us-core-medicationrequest."
-* ^status = #active
+* ^status = #draft
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
 * ^extension.valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest|6.1.0"
 * extension contains http://va.gov/fhir/StructureDefinition/medicationrequest-pharmacyOrderStatus named medicationrequest-pharmacyOrderStatus 0..1
@@ -21,7 +21,7 @@ Description: "This StructureDefinition contains the maps for VistA file PRESCRIP
 * dosageInstruction.route.coding.system = "http://va.gov/terminology/vistaDefinedTerms/53.1-3"
 * category = http://terminology.hl7.org/CodeSystem/medicationrequest-category#outpatient
 * extension[http://va.gov/fhir/StructureDefinition/medicationrequest-includeIndicationInSig].valueBoolean.extension contains http://hl7.org/fhir/StructureDefinition/11179-permitted-value-conceptmap named 11179-permitted-value-conceptmap 0..1
-* extension[http://va.gov/fhir/StructureDefinition/medicationrequest-includeIndicationInSig].valueBoolean.extension[11179-permitted-value-conceptmap].valueCanonical = "http://va.gov/fhir/ConceptMap/Boolean"
+* extension[http://va.gov/fhir/StructureDefinition/medicationrequest-includeIndicationInSig].valueBoolean.extension[11179-permitted-value-conceptmap].valueCanonical = "http://va.gov/fhir/ConceptMap/VF-Boolean"
 * extension[http://va.gov/fhir/StructureDefinition/medicationrequest-pharmacyOrderStatus].valueCoding.code obeys mro-27-1746
 * extension[http://va.gov/fhir/StructureDefinition/medicationrequest-pharmacyOrderStatus].valueCoding.system obeys mro-27-1746-1
 
@@ -67,6 +67,10 @@ Source: MedicationRequestOutpatient
 * extension[http://va.gov/fhir/StructureDefinition/medicationrequest-pharmacyOrderStatus].valueCoding.code -> "1746: fixed value = #active-parked when PRESCRIPTION - MAIL/WINDOW/PARK (52-11) case P" "This value is consistent with Active. \nAdd a second value, or overwrite Active with Parked?"
 * extension[http://va.gov/fhir/StructureDefinition/medicationrequest-pharmacyOrderStatus].valueCoding.system -> "1746-1: fixed value = http://va.gov/terminology/vistaDefinedTerms/52-100 case P" "from mapParameter 1"
 * extension[http://va.gov/fhir/StructureDefinition/medicationrequest-remainingRefillCount].valueInteger -> "1853: null" "A value calculated by subtracting first fill (based on Released) and refills (52.1) from total fills (52-9 # OF REFILLS + 1)"
+* reportedBoolean -> "2182: target not supported" "auto added because of must-support"
+* reportedReference -> "2183: target not supported" "auto added because of must-support"
+* medicationReference -> "2184: target not supported" "auto added because of must-support"
+* encounter -> "2185: target not supported" "auto added because of must-support"
 
 Mapping: cdw-to-MedicationRequestOutpatient
 Id: cdw

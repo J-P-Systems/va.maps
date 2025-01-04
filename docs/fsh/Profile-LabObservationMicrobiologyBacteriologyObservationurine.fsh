@@ -14,6 +14,15 @@ Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: LabObservationMicrobiologyBacteriologyObservationurine
 * valueCodeableConcept.coding -> "1516: terminologyMaps using VF_MicrobiologyUrineScreenResult on MICROBIOLOGY - URINE SCREEN (63.05-11.57)"
+* status -> "2073: target not supported" "auto added because of must-support"
+* category -> "2074: target not supported" "auto added because of must-support"
+* category[Laboratory] -> "2075: target not supported" "auto added because of must-support"
+* code -> "2076: target not supported" "auto added because of must-support"
+* subject -> "2077: target not supported" "auto added because of must-support"
+* effectiveDateTime -> "2078: target not supported" "auto added because of must-support"
+* valueQuantity -> "2079: target not supported" "auto added because of must-support"
+* valueString -> "2080: target not supported" "auto added because of must-support"
+* dataAbsentReason -> "2081: target not supported" "auto added because of must-support"
 
 Mapping: cdw-to-LabObservationMicrobiologyBacteriologyObservationurine
 Id: cdw

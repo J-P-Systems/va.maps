@@ -1,15 +1,15 @@
-Instance: allergySubstanceCategory
+Instance: VF-allergySubstanceCategory
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/allergySubstanceCategory"
-* name = "AllergySubstanceCategory"
-* title = "allergySubstanceCategory"
+* url = "http://va.gov/fhir/ConceptMap/VF-allergySubstanceCategory"
+* name = "VF_allergySubstanceCategory"
+* title = "VF_allergySubstanceCategory"
 * status = #active
 * experimental = false
-* description = "Terminology Maps allergySubstanceCategory"
+* description = "Terminology Maps VF_allergySubstanceCategory"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/allergySubstanceCategory-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/allergySubstanceCategory"
-* group[0].source = "http://va.gov/terminology/vistaDefinedTerms/120.8-3.1"
+* group[0].source = "http://va.gov/terminology/vistaDefinedTerms/50.65-.02"
 * group[=].target = "http://hl7.org/fhir/allergy-intolerance-category"
 * group[=].element[0].code = #D
 * group[=].element[=].display = "DRUG"
@@ -27,7 +27,7 @@ Usage: #definition
 
 ValueSet: allergySubstanceCategory
 Title: "allergySubstanceCategory FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps allergySubstanceCategory"
+Description: "FHIR Target ValueSet for Terminology Maps VF_allergySubstanceCategory"
 * ^experimental = false
 * ^status = #active
 * ^name = "AllergySubstanceCategory"
@@ -36,10 +36,10 @@ Description: "FHIR Target ValueSet for Terminology Maps allergySubstanceCategory
 
 ValueSet: allergySubstanceCategory-vista
 Title: "allergySubstanceCategory VistA"
-Description: "VistA Source ValueSet for Terminology Maps allergySubstanceCategory"
+Description: "VistA Source ValueSet for Terminology Maps VF_allergySubstanceCategory"
 * ^experimental = false
 * ^status = #active
 * ^name = "AllergySubstanceCategory_VistA"
-* include http://va.gov/terminology/vistaDefinedTerms/120.8-3.1#D "DRUG"
-* include http://va.gov/terminology/vistaDefinedTerms/120.8-3.1#O "OTHER"
-* include http://va.gov/terminology/vistaDefinedTerms/120.8-3.1#F "FOOD"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#D "DRUG"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#O "OTHER"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#F "FOOD"

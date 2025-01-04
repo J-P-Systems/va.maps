@@ -3,10 +3,10 @@ Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter
 Id: EncounterOutpatient
 Title: "Encounter: Outpatient"
 Description: "This StructureDefinition contains the maps for VistA file VISIT (9000010) to us-core-encounter."
-* ^status = #active
+* ^status = #draft
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
 * ^extension.valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter|6.1.0"
-* location ^slicing.discriminator.type = #pattern
+* location ^slicing.discriminator.type = #value
 * location ^slicing.discriminator.path = "$this"
 * location ^slicing.rules = #open
 * location contains va-stop 0..1 and va-loc 0..1
@@ -14,6 +14,7 @@ Description: "This StructureDefinition contains the maps for VistA file VISIT (9
 * identifier.value and identifier.system and status and extension[http://va.gov/fhir/StructureDefinition/resource-serviceConnection].valueCoding and serviceType.coding.code and serviceType.coding.system and subject and period.start and period.end and reasonCode.coding.code and reasonCode.coding.system and diagnosis.condition and location[va-stop].location and location[va-loc].location and class and serviceProvider and participant.individual and participant.type and type and type.coding.system and type.coding.code and type.coding.display and type.text MS
 * subject only Reference(Patient)
 * diagnosis.condition only Reference(ConditionEncounterDiagnosis)
+* location[va-stop].location only Reference(Location)
 * location[va-loc].location only Reference(Location)
 * serviceProvider only Reference(Organization)
 * participant.individual only Reference(Practitioner)
@@ -81,6 +82,7 @@ Source: EncounterOutpatient
 * type.coding.display -> "1615-3: source value from V CPT - CPT > CPT - SHORT NAME (9000010.18-.01 > 81-2)" "from mapParameter 3"
 * type.text -> "1615-4: source value from V CPT - CPT > CPT - SHORT NAME (9000010.18-.01 > 81-2)" "from mapParameter 4"
 * participant.period -> "1799: target not supported"
+* reasonReference -> "2152: target not supported" "auto added because of must-support"
 
 Mapping: cdw-to-EncounterOutpatient
 Id: cdw

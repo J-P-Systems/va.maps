@@ -3,7 +3,7 @@ Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-proble
 Id: EncounterInpatientCondition
 Title: "Encounter: Inpatient Condition"
 Description: "This StructureDefinition contains the maps for VistA file PTF (45) to us-core-condition-problems-health-concerns."
-* ^status = #active
+* ^status = #draft
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
 * ^extension.valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-problems-health-concerns|6.1.0"
 * code and category MS
@@ -15,6 +15,13 @@ Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: EncounterInpatientCondition
 * code -> "956: source value from PTF - PRINCIPAL DIAGNOSIS (45-79)" "Infer Condition; no clinical status ; updated category to encounter-diagnosis"
 * category -> "956-1: fixed value = http://terminology.hl7.org/CodeSystem/condition-category#encounter-diagnosis" "from mapParameter 1"
+* extension[assertedDate] -> "2145: target not supported" "auto added because of must-support"
+* clinicalStatus -> "2146: target not supported" "auto added because of must-support"
+* verificationStatus -> "2147: target not supported" "auto added because of must-support"
+* subject -> "2148: target not supported" "auto added because of must-support"
+* onsetDateTime -> "2149: target not supported" "auto added because of must-support"
+* abatementDateTime -> "2150: target not supported" "auto added because of must-support"
+* recordedDate -> "2151: target not supported" "auto added because of must-support"
 
 Mapping: cdw-to-EncounterInpatientCondition
 Id: cdw

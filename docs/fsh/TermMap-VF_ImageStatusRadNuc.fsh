@@ -1,15 +1,15 @@
-Instance: ImageStatusRadNuc
+Instance: VF-ImageStatusRadNuc
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/ImageStatusRadNuc"
-* name = "ImageStatusRadNuc"
-* title = "ImageStatusRadNuc"
+* url = "http://va.gov/fhir/ConceptMap/VF-ImageStatusRadNuc"
+* name = "VF_ImageStatusRadNuc"
+* title = "VF_ImageStatusRadNuc"
 * status = #active
 * experimental = false
-* description = "Terminology Maps ImageStatusRadNuc"
+* description = "Terminology Maps VF_ImageStatusRadNuc"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/ImageStatusRadNuc-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/ImageStatusRadNuc"
-* group[0].source = "http://va.gov/terminology/vistaDefinedTerms/74-5"
+* group[0].source = "http://va.gov/terminology/vistaDefinedTerms/50.65-.02"
 * group[=].target = "http://hl7.org/fhir/observation-status"
 * group[=].element[0].code = #X
 * group[=].element[=].display = "DELETED"
@@ -50,7 +50,7 @@ Usage: #definition
 
 ValueSet: ImageStatusRadNuc
 Title: "ImageStatusRadNuc FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps ImageStatusRadNuc"
+Description: "FHIR Target ValueSet for Terminology Maps VF_ImageStatusRadNuc"
 * ^experimental = false
 * ^status = #active
 * ^name = "ImageStatusRadNuc"
@@ -60,13 +60,13 @@ Description: "FHIR Target ValueSet for Terminology Maps ImageStatusRadNuc"
 
 ValueSet: ImageStatusRadNuc-vista
 Title: "ImageStatusRadNuc VistA"
-Description: "VistA Source ValueSet for Terminology Maps ImageStatusRadNuc"
+Description: "VistA Source ValueSet for Terminology Maps VF_ImageStatusRadNuc"
 * ^experimental = false
 * ^status = #active
 * ^name = "ImageStatusRadNuc_VistA"
-* include http://va.gov/terminology/vistaDefinedTerms/74-5#X "DELETED"
-* include http://va.gov/terminology/vistaDefinedTerms/74-5#D "DRAFT"
-* include http://va.gov/terminology/vistaDefinedTerms/74-5#EF "ELECTRONICALLY FILED"
-* include http://va.gov/terminology/vistaDefinedTerms/74-5#PD "PROBLEM DRAFT"
-* include http://va.gov/terminology/vistaDefinedTerms/74-5#R "RELEASED/NOT VERIFIED"
-* include http://va.gov/terminology/vistaDefinedTerms/74-5#V "VERIFIED"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#X "DELETED"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#D "DRAFT"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#EF "ELECTRONICALLY FILED"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#PD "PROBLEM DRAFT"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#R "RELEASED/NOT VERIFIED"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#V "VERIFIED"

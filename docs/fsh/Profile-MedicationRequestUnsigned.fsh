@@ -3,7 +3,7 @@ Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationreques
 Id: MedicationRequestUnsigned
 Title: "MedicationRequest: Unsigned"
 Description: "This StructureDefinition contains the maps for VistA file ORDER (100) to us-core-medicationrequest."
-* ^status = #active
+* ^status = #draft
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
 * ^extension.valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest|6.1.0"
 * identifier and subject and requester and authoredOn and priorPrescription and dosageInstruction.timing.repeat.boundsPeriod.start and dosageInstruction.timing.repeat.boundsPeriod.end and medicationCodeableConcept MS
@@ -22,6 +22,15 @@ Source: MedicationRequestUnsigned
 * dosageInstruction.timing.repeat.boundsPeriod.start -> "1234: source value from ORDER - START DATE (100-21)"
 * dosageInstruction.timing.repeat.boundsPeriod.end -> "1235: source value from ORDER - STOP DATE (100-22)"
 * medicationCodeableConcept -> "1549: source value from ORDER - ITEM ORDERED (100-7)" "confirm lookup"
+* status -> "2168: target not supported" "auto added because of must-support"
+* intent -> "2169: target not supported" "auto added because of must-support"
+* category -> "2170: target not supported" "auto added because of must-support"
+* category[us-core] -> "2171: target not supported" "auto added because of must-support"
+* reportedBoolean -> "2172: target not supported" "auto added because of must-support"
+* reportedReference -> "2173: target not supported" "auto added because of must-support"
+* medicationReference -> "2174: target not supported" "auto added because of must-support"
+* encounter -> "2175: target not supported" "auto added because of must-support"
+* dosageInstruction.text -> "2176: target not supported" "auto added because of must-support"
 
 Mapping: cdw-to-MedicationRequestUnsigned
 Id: cdw

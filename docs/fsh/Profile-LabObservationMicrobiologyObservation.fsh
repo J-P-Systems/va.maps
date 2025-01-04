@@ -5,7 +5,7 @@ Title: "Lab Observation: Microbiology Observation"
 Description: "This StructureDefinition contains the maps for VistA file MICROBIOLOGY (63.05) to us-core-observation-lab."
 * ^status = #draft
 * ^abstract = true
-* performer ^slicing.discriminator.type = #pattern
+* performer ^slicing.discriminator.type = #value
 * performer ^slicing.discriminator.path = "$this"
 * performer ^slicing.rules = #open
 * performer contains va-at 0..1 and va-by 0..1

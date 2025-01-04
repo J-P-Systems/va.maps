@@ -4,7 +4,7 @@ Title: "Debt Portal"
 Usage: #definition
 * description = "This CapabilityStatement enumerates the profiles that the API should address, in the estimation of the enterprise mapping team. Some elements may not be appropriate for those cases; consult the actual API specification published by the API provider"
 * status = #draft
-* date = "2024-12-21T10:21:58.883Z"
+* date = "2025-01-04T08:40:37.859Z"
 * kind = #requirements
 * fhirVersion = #4.0.1
 * format[0] = #xml
@@ -21,7 +21,7 @@ Usage: #definition
 * rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/Patient"
 * rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/Patient"
 * rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/Patient"
-* rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/DebtPortalBillPatient"
+* rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/DebtPortalPatient"
 * rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/Patient"
 * rest.resource[+].type = #Practitioner
 * rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/Practitioner"
@@ -31,6 +31,7 @@ Usage: #definition
 * rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/Practitioner"
 * rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/Practitioner"
 * rest.resource[+].type = #Location
+* rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/Location"
 * rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/Location"
 * rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/Location"
 * rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/Location"
@@ -52,11 +53,9 @@ Usage: #definition
 * rest.resource[+].type = #Account
 * rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/DebtPortalAccount"
 * rest.resource[+].type = #Invoice
-* rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/DebtPortalBillInvoice"
-* rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/DebtPortalChargesInvoice"
-* rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/DebtPortalInterestFeesInvoice"
+* rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/DebtPortalInvoice"
 * rest.resource[+].type = #ChargeItem
-* rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/DebtPortalChargesChargeItem"
-* rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/DebtPortalInterestFeesChargeItem"
+* rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/DebtPortalChargeItemcharges"
+* rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/DebtPortalChargeIteminterest"
 * rest.resource[+].type = #PaymentReconciliation
-* rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/DebtPortalPayments"
+* rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/DebtPortalPaymentReconciliation"

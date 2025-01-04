@@ -1,12 +1,12 @@
-Instance: LabObservationStatus
+Instance: VF-LabObservationStatus
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/LabObservationStatus"
-* name = "LabObservationStatus"
-* title = "LabObservationStatus"
+* url = "http://va.gov/fhir/ConceptMap/VF-LabObservationStatus"
+* name = "VF_LabObservationStatus"
+* title = "VF_LabObservationStatus"
 * status = #active
 * experimental = false
-* description = "Terminology Maps LabObservationStatus"
+* description = "Terminology Maps VF_LabObservationStatus"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/LabObservationStatus-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/LabObservationStatus"
 * group[0].source = "http://terminology.hl7.org/CodeSystem/v2-0123"
@@ -30,7 +30,7 @@ Usage: #definition
 
 ValueSet: LabObservationStatus
 Title: "LabObservationStatus FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps LabObservationStatus"
+Description: "FHIR Target ValueSet for Terminology Maps VF_LabObservationStatus"
 * ^experimental = false
 * ^status = #active
 * ^name = "LabObservationStatus"
@@ -40,7 +40,7 @@ Description: "FHIR Target ValueSet for Terminology Maps LabObservationStatus"
 
 ValueSet: LabObservationStatus-vista
 Title: "LabObservationStatus VistA"
-Description: "VistA Source ValueSet for Terminology Maps LabObservationStatus"
+Description: "VistA Source ValueSet for Terminology Maps VF_LabObservationStatus"
 * ^experimental = false
 * ^status = #active
 * ^name = "LabObservationStatus_VistA"

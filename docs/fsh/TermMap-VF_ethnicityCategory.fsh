@@ -1,15 +1,15 @@
-Instance: ethnicityCategory
+Instance: VF-ethnicityCategory
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/ethnicityCategory"
-* name = "EthnicityCategory"
-* title = "ethnicityCategory"
+* url = "http://va.gov/fhir/ConceptMap/VF-ethnicityCategory"
+* name = "VF_ethnicityCategory"
+* title = "VF_ethnicityCategory"
 * status = #active
 * experimental = false
-* description = "Terminology Maps ethnicityCategory"
+* description = "Terminology Maps VF_ethnicityCategory"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/ethnicityCategory-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/ethnicityCategory"
-* group[0].source = "http://va.gov/terminology/vistaDefinedTerms/2-6"
+* group[0].source = "http://va.gov/terminology/vistaDefinedTerms/50.65-.02"
 * group[=].target = "http://terminology.hl7.org/CodeSystem/v3-NullFlavor"
 * group[=].element[0].code = #_Unknown_at_this_time_
 * group[=].element[=].display = "*Unknown at this time*"
@@ -23,7 +23,7 @@ Usage: #definition
 * group[=].element[=].display = "UNKNOWN BY PATIENT"
 * group[=].element[=].target.code = #ASKU
 * group[=].element[=].target.equivalence = #wider
-* group[+].source = "http://va.gov/terminology/vistaDefinedTerms/2-6"
+* group[+].source = "http://va.gov/terminology/vistaDefinedTerms/50.65-.02"
 * group[=].target = "urn:oid:2.16.840.1.113883.6.238"
 * group[=].element[0].code = #H
 * group[=].element[=].display = "HISPANIC OR LATINO"
@@ -36,7 +36,7 @@ Usage: #definition
 
 ValueSet: ethnicityCategory
 Title: "ethnicityCategory FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps ethnicityCategory"
+Description: "FHIR Target ValueSet for Terminology Maps VF_ethnicityCategory"
 * ^experimental = false
 * ^status = #active
 * ^name = "EthnicityCategory"
@@ -47,12 +47,12 @@ Description: "FHIR Target ValueSet for Terminology Maps ethnicityCategory"
 
 ValueSet: ethnicityCategory-vista
 Title: "ethnicityCategory VistA"
-Description: "VistA Source ValueSet for Terminology Maps ethnicityCategory"
+Description: "VistA Source ValueSet for Terminology Maps VF_ethnicityCategory"
 * ^experimental = false
 * ^status = #active
 * ^name = "EthnicityCategory_VistA"
-* include http://va.gov/terminology/vistaDefinedTerms/2-6#_Unknown_at_this_time_ "*Unknown at this time*"
-* include http://va.gov/terminology/vistaDefinedTerms/2-6#D "DECLINED TO ANSWER"
-* include http://va.gov/terminology/vistaDefinedTerms/2-6#U "UNKNOWN BY PATIENT"
-* include http://va.gov/terminology/vistaDefinedTerms/2-6#H "HISPANIC OR LATINO"
-* include http://va.gov/terminology/vistaDefinedTerms/2-6#N "NOT HISPANIC OR LATINO"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#_Unknown_at_this_time_ "*Unknown at this time*"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#D "DECLINED TO ANSWER"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#U "UNKNOWN BY PATIENT"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#H "HISPANIC OR LATINO"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#N "NOT HISPANIC OR LATINO"

@@ -1,12 +1,12 @@
-Instance: VitalsLaterality
+Instance: VF-VitalsLaterality
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/VitalsLaterality"
-* name = "VitalsLaterality"
-* title = "VitalsLaterality"
+* url = "http://va.gov/fhir/ConceptMap/VF-VitalsLaterality"
+* name = "VF_VitalsLaterality"
+* title = "VF_VitalsLaterality"
 * status = #active
 * experimental = false
-* description = "Terminology Maps VitalsLaterality"
+* description = "Terminology Maps VF_VitalsLaterality"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VitalsLaterality-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/VitalsLaterality"
 * group[0].source = "http://terminology.hl7.org/CodeSystem/VHA"
@@ -26,7 +26,7 @@ Usage: #definition
 
 ValueSet: VitalsLaterality
 Title: "VitalsLaterality FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps VitalsLaterality"
+Description: "FHIR Target ValueSet for Terminology Maps VF_VitalsLaterality"
 * ^experimental = false
 * ^status = #active
 * ^name = "VitalsLaterality"
@@ -35,7 +35,7 @@ Description: "FHIR Target ValueSet for Terminology Maps VitalsLaterality"
 
 ValueSet: VitalsLaterality-vista
 Title: "VitalsLaterality VistA"
-Description: "VistA Source ValueSet for Terminology Maps VitalsLaterality"
+Description: "VistA Source ValueSet for Terminology Maps VF_VitalsLaterality"
 * ^experimental = false
 * ^status = #active
 * ^name = "VitalsLaterality_VistA"

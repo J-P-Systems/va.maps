@@ -6,7 +6,7 @@ Description: "This StructureDefinition contains the maps for VistA file NEW PERS
 * ^status = #active
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
 * ^extension.valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitionerrole|6.1.0"
-* telecom ^slicing.discriminator.type = #pattern
+* telecom ^slicing.discriminator.type = #value
 * telecom ^slicing.discriminator.path = "$this"
 * telecom ^slicing.rules = #open
 * telecom contains va-work 0..1 and va-phone3 0..1 and va-phone4 0..1 and va-commercial 0..1 and va-fax 0..1 and va-voice-pager 0..1 and va-data-pager 0..1 and va-mail 0..1
@@ -30,6 +30,7 @@ Description: "This StructureDefinition contains the maps for VistA file NEW PERS
 * active obeys pr-16-412
 * specialty.coding.system = "http://nucc.org/provider-taxonomy"
 * specialty.coding.display = "concat({PROVIDER TYPE (.01)}, {CLASSIFICATION (1)}, {AREA OF SPECIALIZATION (2)})"
+* location obeys pr-16-422
 * code.coding.system = "http://nucc.org/provider-taxonomy"
 
 Invariant: pr-16-411
@@ -38,6 +39,10 @@ Severity: #warning
 
 Invariant: pr-16-412
 Description: "200-8932.1 > 200.05-3: if date < now then false"
+Severity: #warning
+
+Invariant: pr-16-422
+Description: "44-: if 44-2600>44.1-.01>200 then /Location"
 Severity: #warning
 
 Mapping: source-to-PractitionerRole

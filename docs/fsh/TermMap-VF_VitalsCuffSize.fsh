@@ -1,15 +1,15 @@
-Instance: VitalsCuffSize
+Instance: VF-VitalsCuffSize
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/VitalsCuffSize"
-* name = "VitalsCuffSize"
-* title = "VitalsCuffSize"
+* url = "http://va.gov/fhir/ConceptMap/VF-VitalsCuffSize"
+* name = "VF_VitalsCuffSize"
+* title = "VF_VitalsCuffSize"
 * status = #active
 * experimental = false
-* description = "Terminology Maps VitalsCuffSize"
+* description = "Terminology Maps VF_VitalsCuffSize"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VitalsCuffSize-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/VitalsCuffSize"
-* group[0].source = "http://va.gov/terminology/vistaDefinedTerms/120.52-99.99"
+* group[0].source = "http://va.gov/terminology/vistaDefinedTerms/50.65-.02"
 * group[=].target = "http://snomed.info/sct"
 * group[=].element[0].code = #ADULT
 * group[=].element[=].display = "ADULT"
@@ -51,7 +51,7 @@ Usage: #definition
 
 ValueSet: VitalsCuffSize
 Title: "VitalsCuffSize FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps VitalsCuffSize"
+Description: "FHIR Target ValueSet for Terminology Maps VF_VitalsCuffSize"
 * ^experimental = false
 * ^status = #active
 * ^name = "VitalsCuffSize"
@@ -63,14 +63,14 @@ Description: "FHIR Target ValueSet for Terminology Maps VitalsCuffSize"
 
 ValueSet: VitalsCuffSize-vista
 Title: "VitalsCuffSize VistA"
-Description: "VistA Source ValueSet for Terminology Maps VitalsCuffSize"
+Description: "VistA Source ValueSet for Terminology Maps VF_VitalsCuffSize"
 * ^experimental = false
 * ^status = #active
 * ^name = "VitalsCuffSize_VistA"
-* include http://va.gov/terminology/vistaDefinedTerms/120.52-99.99#ADULT "ADULT"
-* include http://va.gov/terminology/vistaDefinedTerms/120.52-99.99#4500641 "ADULT CUFF"
-* include http://va.gov/terminology/vistaDefinedTerms/120.52-99.99#4688661 "LG ADULT CUFF"
-* include http://va.gov/terminology/vistaDefinedTerms/120.52-99.99#4711339 "PEDIATRIC CUFF"
-* include http://va.gov/terminology/vistaDefinedTerms/120.52-99.99#4688705 "SM ADULT CUFF"
-* include http://va.gov/terminology/vistaDefinedTerms/120.52-99.99#4688708 "THIGH"
-* include http://va.gov/terminology/vistaDefinedTerms/120.52-99.99#4688709 "THIGH CUFF"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#ADULT "ADULT"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#4500641 "ADULT CUFF"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#4688661 "LG ADULT CUFF"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#4711339 "PEDIATRIC CUFF"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#4688705 "SM ADULT CUFF"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#4688708 "THIGH"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#4688709 "THIGH CUFF"

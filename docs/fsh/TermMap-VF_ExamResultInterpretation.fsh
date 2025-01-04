@@ -1,12 +1,12 @@
-Instance: ExamResultInterpretation
+Instance: VF-ExamResultInterpretation
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/ExamResultInterpretation"
-* name = "ExamResultInterpretation"
-* title = "ExamResultInterpretation"
+* url = "http://va.gov/fhir/ConceptMap/VF-ExamResultInterpretation"
+* name = "VF_ExamResultInterpretation"
+* title = "VF_ExamResultInterpretation"
 * status = #active
 * experimental = false
-* description = "Terminology Maps ExamResultInterpretation"
+* description = "Terminology Maps VF_ExamResultInterpretation"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/ExamResultInterpretation-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/ExamResultInterpretation"
 * group[0].source = "http://va.gov/terminology/vistaDefinedElements/9000010.15-.04"
@@ -24,7 +24,7 @@ Usage: #definition
 
 ValueSet: ExamResultInterpretation
 Title: "ExamResultInterpretation FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps ExamResultInterpretation"
+Description: "FHIR Target ValueSet for Terminology Maps VF_ExamResultInterpretation"
 * ^experimental = false
 * ^status = #active
 * ^name = "ExamResultInterpretation"
@@ -33,7 +33,7 @@ Description: "FHIR Target ValueSet for Terminology Maps ExamResultInterpretation
 
 ValueSet: ExamResultInterpretation-vista
 Title: "ExamResultInterpretation VistA"
-Description: "VistA Source ValueSet for Terminology Maps ExamResultInterpretation"
+Description: "VistA Source ValueSet for Terminology Maps VF_ExamResultInterpretation"
 * ^experimental = false
 * ^status = #active
 * ^name = "ExamResultInterpretation_VistA"

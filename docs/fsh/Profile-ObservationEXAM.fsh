@@ -4,7 +4,7 @@ Id: ObservationEXAM
 Title: "Observation EXAM"
 Description: "This StructureDefinition contains the maps for VistA file V EXAM (9000010.13) to Observation."
 * ^status = #draft
-* code.coding ^slicing.discriminator.type = #pattern
+* code.coding ^slicing.discriminator.type = #value
 * code.coding ^slicing.discriminator.path = "$this"
 * code.coding ^slicing.rules = #open
 * code.coding contains va-code 0..1 and va-sct 0..1
@@ -15,7 +15,7 @@ Description: "This StructureDefinition contains the maps for VistA file V EXAM (
 * code.coding[va-code].system = "http://va.gov/terminology/vistaDefinedTerms/9999999.15"
 * code.coding[va-sct].system = "urn:see-termmap-in-mapParameter"
 * interpretation.extension contains http://hl7.org/fhir/StructureDefinition/11179-permitted-value-conceptmap named 11179-permitted-value-conceptmap 0..1
-* interpretation.extension[11179-permitted-value-conceptmap].valueCanonical = "http://va.gov/fhir/ConceptMap/ExamResultInterpretation"
+* interpretation.extension[11179-permitted-value-conceptmap].valueCanonical = "http://va.gov/fhir/ConceptMap/VF-ExamResultInterpretation"
 * status = #final
 * category = http://terminology.hl7.org/CodeSystem/observation-category#exam
 

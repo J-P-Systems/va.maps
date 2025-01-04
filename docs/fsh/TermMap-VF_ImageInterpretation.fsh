@@ -1,15 +1,15 @@
-Instance: ImageInterpretation
+Instance: VF-ImageInterpretation
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/ImageInterpretation"
-* name = "ImageInterpretation"
-* title = "ImageInterpretation"
+* url = "http://va.gov/fhir/ConceptMap/VF-ImageInterpretation"
+* name = "VF_ImageInterpretation"
+* title = "VF_ImageInterpretation"
 * status = #active
 * experimental = false
-* description = "Terminology Maps ImageInterpretation"
+* description = "Terminology Maps VF_ImageInterpretation"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/ImageInterpretation-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/ImageInterpretation"
-* group[0].source = "http://va.gov/terminology/vistaDefinedTerms/691.5-.03"
+* group[0].source = "http://va.gov/terminology/vistaDefinedTerms/50.65-.02"
 * group[=].target = "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation"
 * group[=].element[0].code = #A
 * group[=].element[=].display = "ABNORMAL"
@@ -35,7 +35,7 @@ Usage: #definition
 
 ValueSet: ImageInterpretation
 Title: "ImageInterpretation FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps ImageInterpretation"
+Description: "FHIR Target ValueSet for Terminology Maps VF_ImageInterpretation"
 * ^experimental = false
 * ^status = #active
 * ^name = "ImageInterpretation"
@@ -46,11 +46,11 @@ Description: "FHIR Target ValueSet for Terminology Maps ImageInterpretation"
 
 ValueSet: ImageInterpretation-vista
 Title: "ImageInterpretation VistA"
-Description: "VistA Source ValueSet for Terminology Maps ImageInterpretation"
+Description: "VistA Source ValueSet for Terminology Maps VF_ImageInterpretation"
 * ^experimental = false
 * ^status = #active
 * ^name = "ImageInterpretation_VistA"
-* include http://va.gov/terminology/vistaDefinedTerms/691.5-.03#A "ABNORMAL"
-* include http://va.gov/terminology/vistaDefinedTerms/691.5-.03#B "BORDERLINE"
-* include http://va.gov/terminology/vistaDefinedTerms/691.5-.03#N "NORMAL"
-* include http://va.gov/terminology/vistaDefinedTerms/691.5-.03#T "TECHNICALLY UNSATISFACTORY"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#A "ABNORMAL"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#B "BORDERLINE"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#N "NORMAL"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#T "TECHNICALLY UNSATISFACTORY"

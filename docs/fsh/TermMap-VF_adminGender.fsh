@@ -1,15 +1,15 @@
-Instance: adminGender
+Instance: VF-adminGender
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/adminGender"
-* name = "AdminGender"
-* title = "adminGender"
+* url = "http://va.gov/fhir/ConceptMap/VF-adminGender"
+* name = "VF_adminGender"
+* title = "VF_adminGender"
 * status = #active
 * experimental = false
-* description = "Terminology Maps adminGender"
+* description = "Terminology Maps VF_adminGender"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/adminGender-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/adminGender"
-* group[0].source = "http://va.gov/terminology/vistaDefinedTerms/2-.02"
+* group[0].source = "http://va.gov/terminology/vistaDefinedTerms/50.65-.02"
 * group[=].target = "http://hl7.org/fhir/administrative-gender"
 * group[=].element[0].code = #N
 * group[=].element[=].display = "DOES NOT WISH TO DISCLOSE"
@@ -49,7 +49,7 @@ Usage: #definition
 
 ValueSet: adminGender
 Title: "adminGender FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps adminGender"
+Description: "FHIR Target ValueSet for Terminology Maps VF_adminGender"
 * ^experimental = false
 * ^status = #active
 * ^name = "AdminGender"
@@ -60,14 +60,14 @@ Description: "FHIR Target ValueSet for Terminology Maps adminGender"
 
 ValueSet: adminGender-vista
 Title: "adminGender VistA"
-Description: "VistA Source ValueSet for Terminology Maps adminGender"
+Description: "VistA Source ValueSet for Terminology Maps VF_adminGender"
 * ^experimental = false
 * ^status = #active
 * ^name = "AdminGender_VistA"
-* include http://va.gov/terminology/vistaDefinedTerms/2-.02#N "DOES NOT WISH TO DISCLOSE"
-* include http://va.gov/terminology/vistaDefinedTerms/2-.02#F "FEMALE"
-* include http://va.gov/terminology/vistaDefinedTerms/2-.02#M "MALE"
-* include http://va.gov/terminology/vistaDefinedTerms/2-.02#B "NON-BINARY"
-* include http://va.gov/terminology/vistaDefinedTerms/2-.02#O "OTHER"
-* include http://va.gov/terminology/vistaDefinedTerms/2-.02#TF "TRANSGENDER FEMALE"
-* include http://va.gov/terminology/vistaDefinedTerms/2-.02#TM "TRANSGENDER MALE"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#N "DOES NOT WISH TO DISCLOSE"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#F "FEMALE"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#M "MALE"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#B "NON-BINARY"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#O "OTHER"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#TF "TRANSGENDER FEMALE"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#TM "TRANSGENDER MALE"

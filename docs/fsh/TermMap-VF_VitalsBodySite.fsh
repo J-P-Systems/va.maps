@@ -1,12 +1,12 @@
-Instance: VitalsBodySite
+Instance: VF-VitalsBodySite
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/VitalsBodySite"
-* name = "VitalsBodySite"
-* title = "VitalsBodySite"
+* url = "http://va.gov/fhir/ConceptMap/VF-VitalsBodySite"
+* name = "VF_VitalsBodySite"
+* title = "VF_VitalsBodySite"
 * status = #active
 * experimental = false
-* description = "Terminology Maps VitalsBodySite"
+* description = "Terminology Maps VF_VitalsBodySite"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VitalsBodySite-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/VitalsBodySite"
 * group[0].source = "http://terminology.hl7.org/CodeSystem/VHA"
@@ -473,7 +473,7 @@ Usage: #definition
 
 ValueSet: VitalsBodySite
 Title: "VitalsBodySite FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps VitalsBodySite"
+Description: "FHIR Target ValueSet for Terminology Maps VF_VitalsBodySite"
 * ^experimental = false
 * ^status = #active
 * ^name = "VitalsBodySite"
@@ -549,7 +549,7 @@ Description: "FHIR Target ValueSet for Terminology Maps VitalsBodySite"
 
 ValueSet: VitalsBodySite-vista
 Title: "VitalsBodySite VistA"
-Description: "VistA Source ValueSet for Terminology Maps VitalsBodySite"
+Description: "VistA Source ValueSet for Terminology Maps VF_VitalsBodySite"
 * ^experimental = false
 * ^status = #active
 * ^name = "VitalsBodySite_VistA"

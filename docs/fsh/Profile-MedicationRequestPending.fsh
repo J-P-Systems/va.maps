@@ -3,7 +3,7 @@ Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationreques
 Id: MedicationRequestPending
 Title: "MedicationRequest: Pending"
 Description: "This StructureDefinition contains the maps for VistA file PENDING OUTPATIENT ORDERS (52.41) to us-core-medicationrequest."
-* ^status = #active
+* ^status = #draft
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
 * ^extension.valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest|6.1.0"
 * extension contains http://va.gov/fhir/StructureDefinition/medicationrequest-pharmacyOrderStatus named medicationrequest-pharmacyOrderStatus 0..1
@@ -34,6 +34,15 @@ Source: MedicationRequestPending
 * dispenseRequest.expectedSupplyDuration -> "1758: source value from PENDING OUTPATIENT ORDERS - DAYS SUPPLY (52.41-101)"
 * note -> "1759: source value from PENDING OUTPATIENT ORDERS - PROVIDER COMMENTS (52.41-9)"
 * dosageInstruction.patientInstruction -> "1760: null"
+* intent -> "2197: target not supported" "auto added because of must-support"
+* category -> "2198: target not supported" "auto added because of must-support"
+* category[us-core] -> "2199: target not supported" "auto added because of must-support"
+* reportedBoolean -> "2200: target not supported" "auto added because of must-support"
+* reportedReference -> "2201: target not supported" "auto added because of must-support"
+* medicationReference -> "2202: target not supported" "auto added because of must-support"
+* subject -> "2203: target not supported" "auto added because of must-support"
+* encounter -> "2204: target not supported" "auto added because of must-support"
+* dosageInstruction.text -> "2205: target not supported" "auto added because of must-support"
 
 Mapping: cdw-to-MedicationRequestPending
 Id: cdw

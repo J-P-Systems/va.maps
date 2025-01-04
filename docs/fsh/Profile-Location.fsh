@@ -6,14 +6,21 @@ Description: "This StructureDefinition contains the maps for VistA file HOSPITAL
 * ^status = #active
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
 * ^extension.valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-location|6.1.0"
-* identifier.value and identifier.system and name and alias and status and description and telecom.value and telecom.system and telecom.use and managingOrganization.display and physicalType.text and address.state and address.district and address.line and address.city and address.postalCode and address.country and address.type and type.text and mode MS
+* type ^slicing.discriminator.type = #value
+* type ^slicing.discriminator.path = "$this"
+* type ^slicing.rules = #open
+* type contains va-stop-code 0..1 and va-credit-code 0..1
+* identifier.value and identifier.system and name and alias and status and description and telecom.value and telecom.system and telecom.use and managingOrganization.display and physicalType.text and address.state and address.district and address.line and address.city and address.postalCode and address.country and address.type and type.coding.code and type.coding.system and mode and type[va-stop-code].coding.code and type[va-stop-code].coding.system and type[va-credit-code].coding.code and type[va-credit-code].coding.system MS
 * identifier.system = "http://va.gov/identifiers/$Sta3n/44"
 * status from http://va.gov/fhir/ValueSet/LocationStatus
 * telecom.system = #phone
 * telecom.use = #work
 * managingOrganization.display = "Veterans Administration"
 * address.type = #physical
+* type.coding.system = "http://va.gov/terminology/VistADefinedTerms/44-9"
 * mode = #instance
+* type[va-stop-code].coding.system = "http://va.gov/terminology/VistADefinedTerms/44-8"
+* type[va-credit-code].coding.system = "http://va.gov/terminology/VistADefinedTerms/44-2503"
 
 Mapping: source-to-Location
 Id: vista
@@ -39,8 +46,13 @@ Source: Location
 * address.postalCode -> "1320: source value from HOSPITAL LOCATION - INSTITUTION > INSTITUTION - ZIP (44-3 > 4-1.04)"
 * address.country -> "1405: source value from HOSPITAL LOCATION - INSTITUTION > INSTITUTION - COUNTRY > COUNTRY CODE - CODE (44-3 > 4-801 > 779.004-.01)"
 * address.type -> "1322: fixed value = #physical when HOSPITAL LOCATION - INSTITUTION (44-3)"
-* type.text -> "1412: source value from HOSPITAL LOCATION - SERVICE (44-9)" "could map Medical Service text to FHIR type valueset, e.g.\n\"NEUROLOGY\" to \"NEUR Neurology clinic\"\nOr is this combination of TREATEMENT SPECIALTY (9.5) and SERVICE/SECTION? and STOP CODE?"
+* type.coding.code -> "1412: source value from HOSPITAL LOCATION - SERVICE (44-9)"
+* type.coding.system -> "1412-1: fixed value = http://va.gov/terminology/VistADefinedTerms/44-9" "from mapParameter 1"
 * mode -> "1806: fixed value = #instance" "Added 4/5/24 to match LH PHAPI"
+* type[va-stop-code].coding.code -> "2039: source value from HOSPITAL LOCATION - STOP CODE NUMBER (44-8)" "added stop codes to support BTSSS"
+* type[va-stop-code].coding.system -> "2039-1: fixed value = http://va.gov/terminology/VistADefinedTerms/44-8" "from mapParameter 1"
+* type[va-credit-code].coding.code -> "2040: source value from HOSPITAL LOCATION - CREDIT STOP CODE (44-2503)" "added stop codes to support BTSSS"
+* type[va-credit-code].coding.system -> "2040-1: fixed value = http://va.gov/terminology/VistADefinedTerms/44-2503" "from mapParameter 1"
 
 Mapping: cdw-to-Location
 Id: cdw
@@ -59,4 +71,6 @@ Source: Location
 * address.postalCode -> "Dim.Location.InstitutionIEN\nDim.Institution.Zip,Dim.Institution.Zip,Dim.InstitutionTimeZone.Zip,NDim.MVIInstitution.Zip"
 * address.country -> "Dim.Location.InstitutionIEN"
 * address.type -> "Dim.Location.InstitutionIEN"
-* type.text -> "Dim.Location.MedicalService,Dim.Location.MedicalService"
+* type.coding.code -> "Dim.Location.MedicalService,Dim.Location.MedicalService"
+* type[va-stop-code].coding.code -> "Dim.Location.PrimaryStopCodeIEN"
+* type[va-credit-code].coding.code -> "Dim.Location.SecondaryStopCodeIEN"

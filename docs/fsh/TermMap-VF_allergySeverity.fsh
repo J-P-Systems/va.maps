@@ -1,15 +1,15 @@
-Instance: allergySeverity
+Instance: VF-allergySeverity
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/allergySeverity"
-* name = "AllergySeverity"
-* title = "allergySeverity"
+* url = "http://va.gov/fhir/ConceptMap/VF-allergySeverity"
+* name = "VF_allergySeverity"
+* title = "VF_allergySeverity"
 * status = #active
 * experimental = false
-* description = "Terminology Maps allergySeverity"
+* description = "Terminology Maps VF_allergySeverity"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/allergySeverity-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/allergySeverity"
-* group[0].source = "http://va.gov/terminology/vistaDefinedTerms/120.85-14.5"
+* group[0].source = "http://va.gov/terminology/vistaDefinedTerms/50.65-.02"
 * group[=].target = "http://hl7.org/fhir/reaction-event-severity"
 * group[=].element[0].code = #1
 * group[=].element[=].display = "MILD"
@@ -26,7 +26,7 @@ Usage: #definition
 
 ValueSet: allergySeverity
 Title: "allergySeverity FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps allergySeverity"
+Description: "FHIR Target ValueSet for Terminology Maps VF_allergySeverity"
 * ^experimental = false
 * ^status = #active
 * ^name = "AllergySeverity"
@@ -36,10 +36,10 @@ Description: "FHIR Target ValueSet for Terminology Maps allergySeverity"
 
 ValueSet: allergySeverity-vista
 Title: "allergySeverity VistA"
-Description: "VistA Source ValueSet for Terminology Maps allergySeverity"
+Description: "VistA Source ValueSet for Terminology Maps VF_allergySeverity"
 * ^experimental = false
 * ^status = #active
 * ^name = "AllergySeverity_VistA"
-* include http://va.gov/terminology/vistaDefinedTerms/120.85-14.5#1 "MILD"
-* include http://va.gov/terminology/vistaDefinedTerms/120.85-14.5#2 "MODERATE"
-* include http://va.gov/terminology/vistaDefinedTerms/120.85-14.5#3 "SEVERE"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#1 "MILD"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#2 "MODERATE"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#3 "SEVERE"

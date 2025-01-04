@@ -4,7 +4,7 @@ Id: LabObservationMicrobiologyParasitologyObservation
 Title: "Lab Observation: Microbiology Parasitology Observation"
 Description: "This StructureDefinition contains the maps for VistA file MICROBIOLOGY (63.05) to us-core-observation-lab."
 * ^status = #draft
-* performer ^slicing.discriminator.type = #pattern
+* performer ^slicing.discriminator.type = #value
 * performer ^slicing.discriminator.path = "$this"
 * performer ^slicing.rules = #open
 * performer contains va-at 0..1 and va-by 0..1
@@ -34,6 +34,8 @@ Source: LabObservationMicrobiologyParasitologyObservation
 * code -> "1528: fixed value = http://loinc.org#42807-8 \"Parasite identified in Isolate\" when MICROBIOLOGY - ORDERED TEST > ORDERED TEST - LAB TEST ORDERED > LABORATORY TEST - SITE/SPECIMEN > SITE/SPECIMEN - LOINC CODE > LAB LOINC (63.05-.35 > 63.5-13 > 60-100 > 60.01-95.3 > 95.3-) case NULL"
 * status -> "1489: terminologyMaps using VF_LabObservationStatus on MICROBIOLOGY - PARASITE RPT STATUS (63.05-15)"
 * valueString -> "1857: source value from MICROBIOLOGY - PARASITE > PARASITE - PARASITE > ETIOLOGY FIELD - NAME (63.05-16 > 63.34-.01 > 61.2-.01)"
+* valueQuantity -> "2099: target not supported" "auto added because of must-support"
+* valueCodeableConcept -> "2100: target not supported" "auto added because of must-support"
 * effectiveDateTime -> "1450: source value from MICROBIOLOGY - DATE/TIME SPECIMEN TAKEN (63.05-.01)"
 * note -> "1454: source value from MICROBIOLOGY - COMMENT ON SPECIMEN (63.05-.99)"
 * performer[va-at] -> "1464: reference from MICROBIOLOGY - ACCESSIONING INSTITUTION (63.05-.112)"

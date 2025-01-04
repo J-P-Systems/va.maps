@@ -1,15 +1,15 @@
-Instance: Boolean
+Instance: VF-Boolean
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/Boolean"
-* name = "Boolean"
-* title = "Boolean"
+* url = "http://va.gov/fhir/ConceptMap/VF-Boolean"
+* name = "VF_Boolean"
+* title = "VF_Boolean"
 * status = #active
 * experimental = false
-* description = "Terminology Maps Boolean"
+* description = "Terminology Maps VF_Boolean"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/Boolean-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/Boolean"
-* group[0].source = "http://va.gov/terminology/vistaDefinedTerms/52-129"
+* group[0].source = "http://va.gov/terminology/vistaDefinedTerms/50.65-.02"
 * group[=].target = "http://hl7.org/fhir/StructureDefinition/boolean"
 * group[=].element[0].code = #0
 * group[=].element[=].display = "No"
@@ -22,7 +22,7 @@ Usage: #definition
 
 ValueSet: Boolean
 Title: "Boolean FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps Boolean"
+Description: "FHIR Target ValueSet for Terminology Maps VF_Boolean"
 * ^experimental = false
 * ^status = #active
 * ^name = "Boolean"
@@ -31,9 +31,9 @@ Description: "FHIR Target ValueSet for Terminology Maps Boolean"
 
 ValueSet: Boolean-vista
 Title: "Boolean VistA"
-Description: "VistA Source ValueSet for Terminology Maps Boolean"
+Description: "VistA Source ValueSet for Terminology Maps VF_Boolean"
 * ^experimental = false
 * ^status = #active
 * ^name = "Boolean_VistA"
-* include http://va.gov/terminology/vistaDefinedTerms/52-129#0 "No"
-* include http://va.gov/terminology/vistaDefinedTerms/52-129#1 "Yes"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#0 "No"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#1 "Yes"

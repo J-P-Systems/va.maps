@@ -1,15 +1,15 @@
-Instance: CoverageStatusForce
+Instance: VF-CoverageStatusForce
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/CoverageStatusForce"
-* name = "CoverageStatusForce"
-* title = "CoverageStatusForce"
+* url = "http://va.gov/fhir/ConceptMap/VF-CoverageStatusForce"
+* name = "VF_CoverageStatusForce"
+* title = "VF_CoverageStatusForce"
 * status = #active
 * experimental = false
-* description = "Terminology Maps CoverageStatusForce"
+* description = "Terminology Maps VF_CoverageStatusForce"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/CoverageStatusForce-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/CoverageStatusForce"
-* group[0].source = "http://va.gov/terminology/vistaDefinedTerms/355.32-.04"
+* group[0].source = "http://va.gov/terminology/vistaDefinedTerms/50.65-.02"
 * group[=].target = "http://hl7.org/fhir/StructureDefinition/boolean"
 * group[=].element[0].code = #0
 * group[=].element[=].display = "NOT COVERED"
@@ -26,7 +26,7 @@ Usage: #definition
 
 ValueSet: CoverageStatusForce
 Title: "CoverageStatusForce FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps CoverageStatusForce"
+Description: "FHIR Target ValueSet for Terminology Maps VF_CoverageStatusForce"
 * ^experimental = false
 * ^status = #active
 * ^name = "CoverageStatusForce"
@@ -35,10 +35,10 @@ Description: "FHIR Target ValueSet for Terminology Maps CoverageStatusForce"
 
 ValueSet: CoverageStatusForce-vista
 Title: "CoverageStatusForce VistA"
-Description: "VistA Source ValueSet for Terminology Maps CoverageStatusForce"
+Description: "VistA Source ValueSet for Terminology Maps VF_CoverageStatusForce"
 * ^experimental = false
 * ^status = #active
 * ^name = "CoverageStatusForce_VistA"
-* include http://va.gov/terminology/vistaDefinedTerms/355.32-.04#0 "NOT COVERED"
-* include http://va.gov/terminology/vistaDefinedTerms/355.32-.04#1 "COVERED"
-* include http://va.gov/terminology/vistaDefinedTerms/355.32-.04#2 "CONDITIONAL COVERAGE"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#0 "NOT COVERED"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#1 "COVERED"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#2 "CONDITIONAL COVERAGE"

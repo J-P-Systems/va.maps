@@ -1,15 +1,15 @@
-Instance: ImageStatus
+Instance: VF-ImageStatus
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/ImageStatus"
-* name = "ImageStatus"
-* title = "ImageStatus"
+* url = "http://va.gov/fhir/ConceptMap/VF-ImageStatus"
+* name = "VF_ImageStatus"
+* title = "VF_ImageStatus"
 * status = #active
 * experimental = false
-* description = "Terminology Maps ImageStatus"
+* description = "Terminology Maps VF_ImageStatus"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/ImageStatus-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/ImageStatus"
-* group[0].source = "http://va.gov/terminology/vistaDefinedTerms/691.5-1506"
+* group[0].source = "http://va.gov/terminology/vistaDefinedTerms/50.65-.02"
 * group[=].target = "http://hl7.org/fhir/observation-status"
 * group[=].element[0].code = #D
 * group[=].element[=].display = "DRAFT"
@@ -54,7 +54,7 @@ Usage: #definition
 
 ValueSet: ImageStatus
 Title: "ImageStatus FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps ImageStatus"
+Description: "FHIR Target ValueSet for Terminology Maps VF_ImageStatus"
 * ^experimental = false
 * ^status = #active
 * ^name = "ImageStatus"
@@ -64,15 +64,15 @@ Description: "FHIR Target ValueSet for Terminology Maps ImageStatus"
 
 ValueSet: ImageStatus-vista
 Title: "ImageStatus VistA"
-Description: "VistA Source ValueSet for Terminology Maps ImageStatus"
+Description: "VistA Source ValueSet for Terminology Maps VF_ImageStatus"
 * ^experimental = false
 * ^status = #active
 * ^name = "ImageStatus_VistA"
-* include http://va.gov/terminology/vistaDefinedTerms/691.5-1506#D "DRAFT"
-* include http://va.gov/terminology/vistaDefinedTerms/691.5-1506#PD "PROBLEM DRAFT"
-* include http://va.gov/terminology/vistaDefinedTerms/691.5-1506#RNV "RELEASED NOT VERIFIED"
-* include http://va.gov/terminology/vistaDefinedTerms/691.5-1506#ROV "RELEASED OFF-LINE VERIFIED"
-* include http://va.gov/terminology/vistaDefinedTerms/691.5-1506#SROV "RELEASED OFF-LINE VERIFIED OF SUPERSEDED"
-* include http://va.gov/terminology/vistaDefinedTerms/691.5-1506#RV "RELEASED ON-LINE VERIFIED"
-* include http://va.gov/terminology/vistaDefinedTerms/691.5-1506#SRV "RELEASED ON-LINE VERIFIED OF SUPERSEDED"
-* include http://va.gov/terminology/vistaDefinedTerms/691.5-1506#S "SUPERSEDED"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#D "DRAFT"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#PD "PROBLEM DRAFT"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#RNV "RELEASED NOT VERIFIED"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#ROV "RELEASED OFF-LINE VERIFIED"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#SROV "RELEASED OFF-LINE VERIFIED OF SUPERSEDED"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#RV "RELEASED ON-LINE VERIFIED"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#SRV "RELEASED ON-LINE VERIFIED OF SUPERSEDED"
+* include http://va.gov/terminology/vistaDefinedTerms/50.65-.02#S "SUPERSEDED"

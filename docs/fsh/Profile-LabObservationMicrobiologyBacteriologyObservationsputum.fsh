@@ -13,6 +13,15 @@ Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: LabObservationMicrobiologyBacteriologyObservationsputum
 * valueString -> "1517: source value from MICROBIOLOGY - SPUTUM SCREEN (63.05-11.58)"
+* status -> "2082: target not supported" "auto added because of must-support"
+* category -> "2083: target not supported" "auto added because of must-support"
+* category[Laboratory] -> "2084: target not supported" "auto added because of must-support"
+* code -> "2085: target not supported" "auto added because of must-support"
+* subject -> "2086: target not supported" "auto added because of must-support"
+* effectiveDateTime -> "2087: target not supported" "auto added because of must-support"
+* valueQuantity -> "2088: target not supported" "auto added because of must-support"
+* valueCodeableConcept -> "2089: target not supported" "auto added because of must-support"
+* dataAbsentReason -> "2090: target not supported" "auto added because of must-support"
 
 Mapping: cdw-to-LabObservationMicrobiologyBacteriologyObservationsputum
 Id: cdw

@@ -3,7 +3,7 @@ Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-vital-signs
 Id: VitalSigns
 Title: "Vital Signs"
 Description: "This StructureDefinition contains the maps for VistA file GMRV VITAL MEASUREMENT (120.5) to us-core-vital-signs."
-* ^status = #active
+* ^status = #draft
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
 * ^extension.valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-vital-signs|6.1.0"
 * component ^slicing.discriminator.type = #pattern
@@ -29,7 +29,7 @@ Description: "This StructureDefinition contains the maps for VistA file GMRV VIT
 * component[va-pre-condition-device].code = http://loinc.org#104158-1 "Associated precondition - Reported"
 * extension[http://hl7.org/fhir/StructureDefinition/observation-bodyPosition].valueCodeableConcept from http://va.gov/fhir/ValueSet/VitalsBodyPosition
 * valueQuantity.code.extension contains http://hl7.org/fhir/StructureDefinition/11179-permitted-value-conceptmap named 11179-permitted-value-conceptmap 0..1
-* valueQuantity.code.extension[11179-permitted-value-conceptmap].valueCanonical = "http://va.gov/fhir/ConceptMap/VitalsUnits"
+* valueQuantity.code.extension[11179-permitted-value-conceptmap].valueCanonical = "http://va.gov/fhir/ConceptMap/VF-VitalsUnits"
 
 Invariant: vs-10-655
 Description: "120.5-4: if null then #final"
@@ -65,6 +65,7 @@ Source: VitalSigns
 * valueQuantity.code -> "665: transform using VF_VitalsUnits on GMRV VITAL MEASUREMENT - VITAL TYPE (120.5-.03)" "VPR may transform"
 * dataAbsentReason -> "1793: target not supported" "Always has data"
 * component.dataAbsentReason -> "1794: target not supported" "Always has data"
+* component.valueQuantity -> "2193: target not supported" "auto added because of must-support"
 
 Mapping: cdw-to-VitalSigns
 Id: cdw

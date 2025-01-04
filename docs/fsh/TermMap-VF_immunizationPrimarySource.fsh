@@ -1,12 +1,12 @@
-Instance: immunizationPrimarySource
+Instance: VF-immunizationPrimarySource
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/immunizationPrimarySource"
-* name = "ImmunizationPrimarySource"
-* title = "immunizationPrimarySource"
+* url = "http://va.gov/fhir/ConceptMap/VF-immunizationPrimarySource"
+* name = "VF_immunizationPrimarySource"
+* title = "VF_immunizationPrimarySource"
 * status = #active
 * experimental = false
-* description = "Terminology Maps immunizationPrimarySource"
+* description = "Terminology Maps VF_immunizationPrimarySource"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/immunizationPrimarySource-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/immunizationPrimarySource"
 * group[0].source = "http://terminology.hl7.org/CodeSystem/VHA"
@@ -50,7 +50,7 @@ Usage: #definition
 
 ValueSet: immunizationPrimarySource
 Title: "immunizationPrimarySource FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps immunizationPrimarySource"
+Description: "FHIR Target ValueSet for Terminology Maps VF_immunizationPrimarySource"
 * ^experimental = false
 * ^status = #active
 * ^name = "ImmunizationPrimarySource"
@@ -59,7 +59,7 @@ Description: "FHIR Target ValueSet for Terminology Maps immunizationPrimarySourc
 
 ValueSet: immunizationPrimarySource-vista
 Title: "immunizationPrimarySource VistA"
-Description: "VistA Source ValueSet for Terminology Maps immunizationPrimarySource"
+Description: "VistA Source ValueSet for Terminology Maps VF_immunizationPrimarySource"
 * ^experimental = false
 * ^status = #active
 * ^name = "ImmunizationPrimarySource_VistA"

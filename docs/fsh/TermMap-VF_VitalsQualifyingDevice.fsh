@@ -1,12 +1,12 @@
-Instance: VitalsQualifyingDevice
+Instance: VF-VitalsQualifyingDevice
 InstanceOf: ConceptMap
 Usage: #definition
-* url = "http://va.gov/fhir/ConceptMap/VitalsQualifyingDevice"
-* name = "VitalsQualifyingDevice"
-* title = "VitalsQualifyingDevice"
+* url = "http://va.gov/fhir/ConceptMap/VF-VitalsQualifyingDevice"
+* name = "VF_VitalsQualifyingDevice"
+* title = "VF_VitalsQualifyingDevice"
 * status = #active
 * experimental = false
-* description = "Terminology Maps VitalsQualifyingDevice"
+* description = "Terminology Maps VF_VitalsQualifyingDevice"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/VitalsQualifyingDevice-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/VitalsQualifyingDevice"
 * group[0].source = "http://terminology.hl7.org/CodeSystem/VHA"
@@ -99,7 +99,7 @@ Usage: #definition
 
 ValueSet: VitalsQualifyingDevice
 Title: "VitalsQualifyingDevice FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps VitalsQualifyingDevice"
+Description: "FHIR Target ValueSet for Terminology Maps VF_VitalsQualifyingDevice"
 * ^experimental = false
 * ^status = #active
 * ^name = "VitalsQualifyingDevice"
@@ -120,7 +120,7 @@ Description: "FHIR Target ValueSet for Terminology Maps VitalsQualifyingDevice"
 
 ValueSet: VitalsQualifyingDevice-vista
 Title: "VitalsQualifyingDevice VistA"
-Description: "VistA Source ValueSet for Terminology Maps VitalsQualifyingDevice"
+Description: "VistA Source ValueSet for Terminology Maps VF_VitalsQualifyingDevice"
 * ^experimental = false
 * ^status = #active
 * ^name = "VitalsQualifyingDevice_VistA"

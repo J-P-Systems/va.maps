@@ -6,11 +6,11 @@ Description: "This StructureDefinition contains the maps for VistA file CYTOPATH
 * ^status = #draft
 * ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
 * ^extension.valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-lab|6.1.0"
-* performer ^slicing.discriminator.type = #pattern
+* performer ^slicing.discriminator.type = #value
 * performer ^slicing.discriminator.path = "$this"
 * performer ^slicing.rules = #open
 * performer contains va-by 0..1 and va-at 0..1
-* identifier.value and identifier.system and basedOn and code.text and code and code.coding.code and code.coding.system and status and effectiveDateTime and issued and performer[va-by] and performer[va-at] and resultsInterpreter and specimen and media.link and conclusion and presentedForm.data and category[LaboratorySlice] and category.text and code.coding and code.coding.display and subject and result MS
+* identifier.value and identifier.system and basedOn and code.text and code and status and effectiveDateTime and issued and performer[va-by] and performer[va-at] and resultsInterpreter and specimen and media.link and conclusion and presentedForm.data and category[LaboratorySlice] and category.text and code.coding and code.coding.code and code.coding.system and code.coding.display and subject and result MS
 * basedOn only Reference(http://hl7.org/fhir/StructureDefinition/ServiceRequest)
 * performer[va-by] only Reference(Practitioner)
 * performer[va-at] only Reference(Organization)
@@ -20,7 +20,6 @@ Description: "This StructureDefinition contains the maps for VistA file CYTOPATH
 * result only Reference(LabObservationObservation)
 * identifier.system = "http://va.gov/identifiers/$Sta3n/63.51"
 * code = http://loinc.org#26438-2 "Cytology studies (set)"
-* code.coding.system = "http://loinc.org"
 * status from http://va.gov/fhir/ValueSet/DiagnosticReportLabStatus
 * category[LaboratorySlice] = http://terminology.hl7.org/CodeSystem/v2-0074#LAB
 * code.coding.system = "http://loinc.org"
@@ -34,8 +33,6 @@ Source: LabObservationCytopathologyDiagnosticReport
 * basedOn -> "1688: reference from CYTOPATHOLOGY - ORDERED TEST > ORDERED TEST - CPRS ORDER # (63.09-.35 > 63.51-3)"
 * code.text -> "1815: source value from CYTOPATHOLOGY - TIU REFERENCE DATE/TIME - CY > TIU REFERENCE DATE/TIME - CY - TIU ENTRY POINTER - CY > TIU DOCUMENT - DOCUMENT TYPE > TIU DOCUMENT DEFINITION - NAME (63.09-.16 > 63.47-1 > 8925-.01 > 8925.1-.01)" "Per KBS discussion, this value should be Local Title + Specimen.type.text. The local title is this map row; Specimen.type.text is key 1695."
 * code -> "1816: fixed value = http://loinc.org#26438-2 \"Cytology studies (set)\""
-* code.coding.code -> "1817: source value from CYTOPATHOLOGY - TIU REFERENCE DATE/TIME - CY > TIU REFERENCE DATE/TIME - CY - TIU ENTRY POINTER - CY > TIU DOCUMENT - DOCUMENT TYPE > TIU DOCUMENT DEFINITION - VHA ENTERPRISE STANDARD TITLE > TIU VHA ENTERPRISE STANDARD TITLE - CODING SYSTEM > CODING SYSTEM - CODE > CODE - CODE (63.09-.16 > 63.47-1 > 8925-.01 > 8925.1-1501 > 8926.1-2 > 8926.12-.02 > 8926.121-.01)"
-* code.coding.system -> "1817-1: fixed value = http://loinc.org" "from mapParameter 1"
 * status -> "1418: terminologyMaps using VF_DiagnosticReportLabStatus on CYTOPATHOLOGY - ORDERED TEST > ORDERED TEST - DISPOSITION (63.09-.35 > 63.51-10)" "US Core 5 has new constraints: if status is partial, preliminary, final, ammended, corrected or appended effective[x] and issued are required"
 * effectiveDateTime -> "1426: source value from CYTOPATHOLOGY - DATE/TIME SPECIMEN TAKEN (63.09-.01)"
 * issued -> "1431: source value from CYTOPATHOLOGY - DATE REPORT COMPLETED (63.09-.03)"

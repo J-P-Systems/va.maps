@@ -6,11 +6,11 @@
     "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ImplementationGuide va.maps</b></p><a name=\"va.maps\"> </a><a name=\"hcva.maps\"> </a><a name=\"va.maps-en-US\"> </a><h2>VAMapsIG</h2><p>The official URL for this implementation guide is: </p><pre>http://va.gov/fhir/ImplementationGuide/va.maps</pre><div><p>This implementation guide is a FHIR IG rendering of the KBS Map Set from VA sources (primarily VistA) to FHIR. Where appropriate these maps conform to the us-core profiles.</p>\n</div></div>"
   },
   "url" : "http://va.gov/fhir/ImplementationGuide/va.maps",
-  "version" : "0.69.448",
+  "version" : "1.1.467",
   "name" : "VAMapsIG",
   "title" : "US Veterans Administration FHIR Map Set Implementation Guide",
   "status" : "draft",
-  "date" : "2024-12-21T10:24:25+00:00",
+  "date" : "2025-01-04T09:38:39+00:00",
   "publisher" : "VA",
   "contact" : [{
     "name" : "VA",
@@ -58,13 +58,17 @@
   }],
   "definition" : {
     "extension" : [{
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-link-dependency",
+      "valueCode" : "hl7.fhir.us.core#6.1.0"
+    },
+    {
       "extension" : [{
         "url" : "code",
         "valueString" : "copyrightyear"
       },
       {
         "url" : "value",
-        "valueString" : "2024"
+        "valueString" : "2025"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -75,7 +79,18 @@
       },
       {
         "url" : "value",
-        "valueString" : "250101"
+        "valueString" : "250201"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "path-expansion-params"
+      },
+      {
+        "url" : "value",
+        "valueString" : "../../exp-params.json"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -343,7 +358,7 @@
       },
       {
         "url" : "value",
-        "valueString" : "2024"
+        "valueString" : "2025"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -354,7 +369,18 @@
       },
       {
         "url" : "value",
-        "valueString" : "250101"
+        "valueString" : "250201"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "path-expansion-params"
+      },
+      {
+        "url" : "value",
+        "valueString" : "../../exp-params.json"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -763,25 +789,13 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ConceptMap"
-      }],
-      "reference" : {
-        "reference" : "ConceptMap/adminGender"
-      },
-      "name" : "adminGender",
-      "description" : "Terminology Maps adminGender",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
       }],
       "reference" : {
         "reference" : "ValueSet/adminGender"
       },
       "name" : "adminGender FHIR",
-      "description" : "FHIR Target ValueSet for Terminology Maps adminGender",
+      "description" : "FHIR Target ValueSet for Terminology Maps VF_adminGender",
       "exampleBoolean" : false
     },
     {
@@ -793,7 +807,7 @@
         "reference" : "ValueSet/adminGender-vista"
       },
       "name" : "adminGender VistA",
-      "description" : "VistA Source ValueSet for Terminology Maps adminGender",
+      "description" : "VistA Source ValueSet for Terminology Maps VF_adminGender",
       "exampleBoolean" : false
     },
     {
@@ -811,25 +825,13 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ConceptMap"
-      }],
-      "reference" : {
-        "reference" : "ConceptMap/allergyActive"
-      },
-      "name" : "allergyActive",
-      "description" : "Terminology Maps allergyActive",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
       }],
       "reference" : {
         "reference" : "ValueSet/allergyActive"
       },
       "name" : "allergyActive FHIR",
-      "description" : "FHIR Target ValueSet for Terminology Maps allergyActive",
+      "description" : "FHIR Target ValueSet for Terminology Maps VF_allergyActive",
       "exampleBoolean" : false
     },
     {
@@ -841,19 +843,7 @@
         "reference" : "ValueSet/allergyActive-vista"
       },
       "name" : "allergyActive VistA",
-      "description" : "VistA Source ValueSet for Terminology Maps allergyActive",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ConceptMap"
-      }],
-      "reference" : {
-        "reference" : "ConceptMap/allergyEnteredInError"
-      },
-      "name" : "allergyEnteredInError",
-      "description" : "Terminology Maps allergyEnteredInError",
+      "description" : "VistA Source ValueSet for Terminology Maps VF_allergyActive",
       "exampleBoolean" : false
     },
     {
@@ -865,7 +855,7 @@
         "reference" : "ValueSet/allergyEnteredInError"
       },
       "name" : "allergyEnteredInError FHIR",
-      "description" : "FHIR Target ValueSet for Terminology Maps allergyEnteredInError",
+      "description" : "FHIR Target ValueSet for Terminology Maps VF_allergyEnteredInError",
       "exampleBoolean" : false
     },
     {
@@ -877,7 +867,7 @@
         "reference" : "ValueSet/allergyEnteredInError-vista"
       },
       "name" : "allergyEnteredInError VistA",
-      "description" : "VistA Source ValueSet for Terminology Maps allergyEnteredInError",
+      "description" : "VistA Source ValueSet for Terminology Maps VF_allergyEnteredInError",
       "exampleBoolean" : false
     },
     {
@@ -896,25 +886,13 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ConceptMap"
-      }],
-      "reference" : {
-        "reference" : "ConceptMap/allergyMechanism"
-      },
-      "name" : "allergyMechanism",
-      "description" : "Terminology Maps allergyMechanism",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
       }],
       "reference" : {
         "reference" : "ValueSet/allergyMechanism"
       },
       "name" : "allergyMechanism FHIR",
-      "description" : "FHIR Target ValueSet for Terminology Maps allergyMechanism",
+      "description" : "FHIR Target ValueSet for Terminology Maps VF_allergyMechanism",
       "exampleBoolean" : false
     },
     {
@@ -926,19 +904,7 @@
         "reference" : "ValueSet/allergyMechanism-vista"
       },
       "name" : "allergyMechanism VistA",
-      "description" : "VistA Source ValueSet for Terminology Maps allergyMechanism",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ConceptMap"
-      }],
-      "reference" : {
-        "reference" : "ConceptMap/allergySeverity"
-      },
-      "name" : "allergySeverity",
-      "description" : "Terminology Maps allergySeverity",
+      "description" : "VistA Source ValueSet for Terminology Maps VF_allergyMechanism",
       "exampleBoolean" : false
     },
     {
@@ -950,7 +916,7 @@
         "reference" : "ValueSet/allergySeverity"
       },
       "name" : "allergySeverity FHIR",
-      "description" : "FHIR Target ValueSet for Terminology Maps allergySeverity",
+      "description" : "FHIR Target ValueSet for Terminology Maps VF_allergySeverity",
       "exampleBoolean" : false
     },
     {
@@ -962,19 +928,7 @@
         "reference" : "ValueSet/allergySeverity-vista"
       },
       "name" : "allergySeverity VistA",
-      "description" : "VistA Source ValueSet for Terminology Maps allergySeverity",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ConceptMap"
-      }],
-      "reference" : {
-        "reference" : "ConceptMap/allergySubstanceCategory"
-      },
-      "name" : "allergySubstanceCategory",
-      "description" : "Terminology Maps allergySubstanceCategory",
+      "description" : "VistA Source ValueSet for Terminology Maps VF_allergySeverity",
       "exampleBoolean" : false
     },
     {
@@ -986,7 +940,7 @@
         "reference" : "ValueSet/allergySubstanceCategory"
       },
       "name" : "allergySubstanceCategory FHIR",
-      "description" : "FHIR Target ValueSet for Terminology Maps allergySubstanceCategory",
+      "description" : "FHIR Target ValueSet for Terminology Maps VF_allergySubstanceCategory",
       "exampleBoolean" : false
     },
     {
@@ -998,19 +952,7 @@
         "reference" : "ValueSet/allergySubstanceCategory-vista"
       },
       "name" : "allergySubstanceCategory VistA",
-      "description" : "VistA Source ValueSet for Terminology Maps allergySubstanceCategory",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ConceptMap"
-      }],
-      "reference" : {
-        "reference" : "ConceptMap/allergyVerificationStatus"
-      },
-      "name" : "allergyVerificationStatus",
-      "description" : "Terminology Maps allergyVerificationStatus",
+      "description" : "VistA Source ValueSet for Terminology Maps VF_allergySubstanceCategory",
       "exampleBoolean" : false
     },
     {
@@ -1022,7 +964,7 @@
         "reference" : "ValueSet/allergyVerificationStatus"
       },
       "name" : "allergyVerificationStatus FHIR",
-      "description" : "FHIR Target ValueSet for Terminology Maps allergyVerificationStatus",
+      "description" : "FHIR Target ValueSet for Terminology Maps VF_allergyVerificationStatus",
       "exampleBoolean" : false
     },
     {
@@ -1034,7 +976,7 @@
         "reference" : "ValueSet/allergyVerificationStatus-vista"
       },
       "name" : "allergyVerificationStatus VistA",
-      "description" : "VistA Source ValueSet for Terminology Maps allergyVerificationStatus",
+      "description" : "VistA Source ValueSet for Terminology Maps VF_allergyVerificationStatus",
       "exampleBoolean" : false
     },
     {
@@ -1053,25 +995,13 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ConceptMap"
-      }],
-      "reference" : {
-        "reference" : "ConceptMap/AntibioticSensitivityInterpretation"
-      },
-      "name" : "AntibioticSensitivityInterpretation",
-      "description" : "Terminology Maps AntibioticSensitivityInterpretation",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
       }],
       "reference" : {
         "reference" : "ValueSet/AntibioticSensitivityInterpretation"
       },
       "name" : "AntibioticSensitivityInterpretation FHIR",
-      "description" : "FHIR Target ValueSet for Terminology Maps AntibioticSensitivityInterpretation",
+      "description" : "FHIR Target ValueSet for Terminology Maps VF_AntibioticSensitivityInterpretation",
       "exampleBoolean" : false
     },
     {
@@ -1083,7 +1013,7 @@
         "reference" : "ValueSet/AntibioticSensitivityInterpretation-vista"
       },
       "name" : "AntibioticSensitivityInterpretation VistA",
-      "description" : "VistA Source ValueSet for Terminology Maps AntibioticSensitivityInterpretation",
+      "description" : "VistA Source ValueSet for Terminology Maps VF_AntibioticSensitivityInterpretation",
       "exampleBoolean" : false
     },
     {
@@ -1126,25 +1056,13 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ConceptMap"
-      }],
-      "reference" : {
-        "reference" : "ConceptMap/AppointmentCancellationReason"
-      },
-      "name" : "AppointmentCancellationReason",
-      "description" : "Terminology Maps AppointmentCancellationReason",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
       }],
       "reference" : {
         "reference" : "ValueSet/AppointmentCancellationReason"
       },
       "name" : "AppointmentCancellationReason FHIR",
-      "description" : "FHIR Target ValueSet for Terminology Maps AppointmentCancellationReason",
+      "description" : "FHIR Target ValueSet for Terminology Maps VF_AppointmentCancellationReason",
       "exampleBoolean" : false
     },
     {
@@ -1156,19 +1074,7 @@
         "reference" : "ValueSet/AppointmentCancellationReason-vista"
       },
       "name" : "AppointmentCancellationReason VistA",
-      "description" : "VistA Source ValueSet for Terminology Maps AppointmentCancellationReason",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ConceptMap"
-      }],
-      "reference" : {
-        "reference" : "ConceptMap/AppointmentStatus"
-      },
-      "name" : "AppointmentStatus",
-      "description" : "Terminology Maps AppointmentStatus",
+      "description" : "VistA Source ValueSet for Terminology Maps VF_AppointmentCancellationReason",
       "exampleBoolean" : false
     },
     {
@@ -1180,7 +1086,7 @@
         "reference" : "ValueSet/AppointmentStatus"
       },
       "name" : "AppointmentStatus FHIR",
-      "description" : "FHIR Target ValueSet for Terminology Maps AppointmentStatus",
+      "description" : "FHIR Target ValueSet for Terminology Maps VF_AppointmentStatus",
       "exampleBoolean" : false
     },
     {
@@ -1192,7 +1098,7 @@
         "reference" : "ValueSet/AppointmentStatus-vista"
       },
       "name" : "AppointmentStatus VistA",
-      "description" : "VistA Source ValueSet for Terminology Maps AppointmentStatus",
+      "description" : "VistA Source ValueSet for Terminology Maps VF_AppointmentStatus",
       "exampleBoolean" : false
     },
     {
@@ -1222,25 +1128,13 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ConceptMap"
-      }],
-      "reference" : {
-        "reference" : "ConceptMap/ARBillStatus"
-      },
-      "name" : "ARBillStatus",
-      "description" : "Terminology Maps ARBillStatus",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
       }],
       "reference" : {
         "reference" : "ValueSet/ARBillStatus"
       },
       "name" : "ARBillStatus FHIR",
-      "description" : "FHIR Target ValueSet for Terminology Maps ARBillStatus",
+      "description" : "FHIR Target ValueSet for Terminology Maps VF_ARBillStatus",
       "exampleBoolean" : false
     },
     {
@@ -1252,7 +1146,7 @@
         "reference" : "ValueSet/ARBillStatus-vista"
       },
       "name" : "ARBillStatus VistA",
-      "description" : "VistA Source ValueSet for Terminology Maps ARBillStatus",
+      "description" : "VistA Source ValueSet for Terminology Maps VF_ARBillStatus",
       "exampleBoolean" : false
     },
     {
@@ -1282,25 +1176,13 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ConceptMap"
-      }],
-      "reference" : {
-        "reference" : "ConceptMap/birthSex"
-      },
-      "name" : "birthSex",
-      "description" : "Terminology Maps birthSex",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
       }],
       "reference" : {
         "reference" : "ValueSet/birthSex"
       },
       "name" : "birthSex FHIR",
-      "description" : "FHIR Target ValueSet for Terminology Maps birthSex",
+      "description" : "FHIR Target ValueSet for Terminology Maps VF_birthSex",
       "exampleBoolean" : false
     },
     {
@@ -1312,19 +1194,7 @@
         "reference" : "ValueSet/birthSex-vista"
       },
       "name" : "birthSex VistA",
-      "description" : "VistA Source ValueSet for Terminology Maps birthSex",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ConceptMap"
-      }],
-      "reference" : {
-        "reference" : "ConceptMap/Boolean"
-      },
-      "name" : "Boolean",
-      "description" : "Terminology Maps Boolean",
+      "description" : "VistA Source ValueSet for Terminology Maps VF_birthSex",
       "exampleBoolean" : false
     },
     {
@@ -1336,7 +1206,7 @@
         "reference" : "ValueSet/Boolean"
       },
       "name" : "Boolean FHIR",
-      "description" : "FHIR Target ValueSet for Terminology Maps Boolean",
+      "description" : "FHIR Target ValueSet for Terminology Maps VF_Boolean",
       "exampleBoolean" : false
     },
     {
@@ -1348,7 +1218,7 @@
         "reference" : "ValueSet/Boolean-vista"
       },
       "name" : "Boolean VistA",
-      "description" : "VistA Source ValueSet for Terminology Maps Boolean",
+      "description" : "VistA Source ValueSet for Terminology Maps VF_Boolean",
       "exampleBoolean" : false
     },
     {
@@ -1361,18 +1231,6 @@
       },
       "name" : "CHEM, HEM, TOX, RIA, SER, etc. (63.04)",
       "description" : "This StructureDefinition contains the Logical Model for the mapped parts of the source CHEM, HEM, TOX, RIA, SER, etc. (63.04)",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:logical"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/Code8926121"
-      },
-      "name" : "CODE (8926.121)",
-      "description" : "This StructureDefinition contains the Logical Model for the mapped parts of the source CODE (8926.121)",
       "exampleBoolean" : false
     },
     {
@@ -1397,18 +1255,6 @@
       },
       "name" : "CODING SYSTEM (50.65)",
       "description" : "This StructureDefinition contains the Logical Model for the mapped parts of the source CODING SYSTEM (50.65)",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:logical"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/CodingSystem892612"
-      },
-      "name" : "CODING SYSTEM (8926.12)",
-      "description" : "This StructureDefinition contains the Logical Model for the mapped parts of the source CODING SYSTEM (8926.12)",
       "exampleBoolean" : false
     },
     {
@@ -1462,25 +1308,13 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ConceptMap"
-      }],
-      "reference" : {
-        "reference" : "ConceptMap/CommunicationQualifier"
-      },
-      "name" : "CommunicationQualifier",
-      "description" : "Terminology Maps CommunicationQualifier",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
       }],
       "reference" : {
         "reference" : "ValueSet/CommunicationQualifier"
       },
       "name" : "CommunicationQualifier FHIR",
-      "description" : "FHIR Target ValueSet for Terminology Maps CommunicationQualifier",
+      "description" : "FHIR Target ValueSet for Terminology Maps VF_CommunicationQualifier",
       "exampleBoolean" : false
     },
     {
@@ -1492,7 +1326,7 @@
         "reference" : "ValueSet/CommunicationQualifier-vista"
       },
       "name" : "CommunicationQualifier VistA",
-      "description" : "VistA Source ValueSet for Terminology Maps CommunicationQualifier",
+      "description" : "VistA Source ValueSet for Terminology Maps VF_CommunicationQualifier",
       "exampleBoolean" : false
     },
     {
@@ -1548,25 +1382,13 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ConceptMap"
-      }],
-      "reference" : {
-        "reference" : "ConceptMap/CoverageRelationship"
-      },
-      "name" : "CoverageRelationship",
-      "description" : "Terminology Maps CoverageRelationship",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
       }],
       "reference" : {
         "reference" : "ValueSet/CoverageRelationship"
       },
       "name" : "CoverageRelationship FHIR",
-      "description" : "FHIR Target ValueSet for Terminology Maps CoverageRelationship",
+      "description" : "FHIR Target ValueSet for Terminology Maps VF_CoverageRelationship",
       "exampleBoolean" : false
     },
     {
@@ -1578,19 +1400,7 @@
         "reference" : "ValueSet/CoverageRelationship-vista"
       },
       "name" : "CoverageRelationship VistA",
-      "description" : "VistA Source ValueSet for Terminology Maps CoverageRelationship",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ConceptMap"
-      }],
-      "reference" : {
-        "reference" : "ConceptMap/CoverageStatusForce"
-      },
-      "name" : "CoverageStatusForce",
-      "description" : "Terminology Maps CoverageStatusForce",
+      "description" : "VistA Source ValueSet for Terminology Maps VF_CoverageRelationship",
       "exampleBoolean" : false
     },
     {
@@ -1602,7 +1412,7 @@
         "reference" : "ValueSet/CoverageStatusForce"
       },
       "name" : "CoverageStatusForce FHIR",
-      "description" : "FHIR Target ValueSet for Terminology Maps CoverageStatusForce",
+      "description" : "FHIR Target ValueSet for Terminology Maps VF_CoverageStatusForce",
       "exampleBoolean" : false
     },
     {
@@ -1614,7 +1424,7 @@
         "reference" : "ValueSet/CoverageStatusForce-vista"
       },
       "name" : "CoverageStatusForce VistA",
-      "description" : "VistA Source ValueSet for Terminology Maps CoverageStatusForce",
+      "description" : "VistA Source ValueSet for Terminology Maps VF_CoverageStatusForce",
       "exampleBoolean" : false
     },
     {
@@ -1662,7 +1472,7 @@
       "reference" : {
         "reference" : "StructureDefinition/DebtPortalAccount"
       },
-      "name" : "Debt Portal: Account",
+      "name" : "Debt Portal Account",
       "description" : "This StructureDefinition contains the maps for VistA file ACCOUNTS RECEIVABLE (430) to Account.",
       "exampleBoolean" : false,
       "groupingId" : "group21"
@@ -1673,35 +1483,9 @@
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/DebtPortalBillInvoice"
+        "reference" : "StructureDefinition/DebtPortalChargeItemcharges"
       },
-      "name" : "Debt Portal: Bill Invoice",
-      "description" : "This StructureDefinition contains the maps for VistA file ACCOUNTS RECEIVABLE (430) to Invoice.",
-      "exampleBoolean" : false,
-      "groupingId" : "group21"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:resource"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/DebtPortalBillPatient"
-      },
-      "name" : "Debt Portal: Bill Patient",
-      "description" : "This StructureDefinition contains the maps for VistA file ACCOUNTS RECEIVABLE (430) to Patient.",
-      "exampleBoolean" : false,
-      "groupingId" : "group21"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:resource"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/DebtPortalChargesChargeItem"
-      },
-      "name" : "Debt Portal: Charges ChargeItem",
+      "name" : "Debt Portal ChargeItem[charges]",
       "description" : "This StructureDefinition contains the maps for VistA file INTEGRATED BILLING ACTION (350) to ChargeItem.",
       "exampleBoolean" : false,
       "groupingId" : "group21"
@@ -1712,22 +1496,9 @@
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/DebtPortalChargesInvoice"
+        "reference" : "StructureDefinition/DebtPortalChargeIteminterest"
       },
-      "name" : "Debt Portal: Charges Invoice",
-      "description" : "This StructureDefinition contains the maps for VistA file INTEGRATED BILLING ACTION (350) to Invoice.",
-      "exampleBoolean" : false,
-      "groupingId" : "group21"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:resource"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/DebtPortalInterestFeesChargeItem"
-      },
-      "name" : "Debt Portal: Interest/Fees ChargeItem",
+      "name" : "Debt Portal ChargeItem[interest]",
       "description" : "This StructureDefinition contains the maps for VistA file AR TRANSACTION (433) to ChargeItem.",
       "exampleBoolean" : false,
       "groupingId" : "group21"
@@ -1738,10 +1509,10 @@
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/DebtPortalInterestFeesInvoice"
+        "reference" : "StructureDefinition/DebtPortalInvoice"
       },
-      "name" : "Debt Portal: Interest/Fees Invoice",
-      "description" : "This StructureDefinition contains the maps for VistA file AR TRANSACTION (433) to Invoice.",
+      "name" : "Debt Portal Invoice",
+      "description" : "This StructureDefinition contains the maps for VistA file ACCOUNTS RECEIVABLE (430) to Invoice.",
       "exampleBoolean" : false,
       "groupingId" : "group21"
     },
@@ -1751,9 +1522,22 @@
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/DebtPortalPayments"
+        "reference" : "StructureDefinition/DebtPortalPatient"
       },
-      "name" : "Debt Portal: Payments",
+      "name" : "Debt Portal Patient",
+      "description" : "This StructureDefinition contains the maps for VistA file ACCOUNTS RECEIVABLE (430) to Patient.",
+      "exampleBoolean" : false,
+      "groupingId" : "group21"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/DebtPortalPaymentReconciliation"
+      },
+      "name" : "Debt Portal PaymentReconciliation",
       "description" : "This StructureDefinition contains the maps for VistA file AR TRANSACTION (433) to PaymentReconciliation.",
       "exampleBoolean" : false,
       "groupingId" : "group21"
@@ -1773,25 +1557,13 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ConceptMap"
-      }],
-      "reference" : {
-        "reference" : "ConceptMap/DentalDeviceStatus"
-      },
-      "name" : "DentalDeviceStatus",
-      "description" : "Terminology Maps DentalDeviceStatus",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
       }],
       "reference" : {
         "reference" : "ValueSet/DentalDeviceStatus"
       },
       "name" : "DentalDeviceStatus FHIR",
-      "description" : "FHIR Target ValueSet for Terminology Maps DentalDeviceStatus",
+      "description" : "FHIR Target ValueSet for Terminology Maps VF_DentalDeviceStatus",
       "exampleBoolean" : false
     },
     {
@@ -1803,19 +1575,7 @@
         "reference" : "ValueSet/DentalDeviceStatus-vista"
       },
       "name" : "DentalDeviceStatus VistA",
-      "description" : "VistA Source ValueSet for Terminology Maps DentalDeviceStatus",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ConceptMap"
-      }],
-      "reference" : {
-        "reference" : "ConceptMap/deviceTypePacemaker"
-      },
-      "name" : "deviceTypePacemaker",
-      "description" : "Terminology Maps deviceTypePacemaker",
+      "description" : "VistA Source ValueSet for Terminology Maps VF_DentalDeviceStatus",
       "exampleBoolean" : false
     },
     {
@@ -1827,7 +1587,7 @@
         "reference" : "ValueSet/deviceTypePacemaker"
       },
       "name" : "deviceTypePacemaker FHIR",
-      "description" : "FHIR Target ValueSet for Terminology Maps deviceTypePacemaker",
+      "description" : "FHIR Target ValueSet for Terminology Maps VF_deviceTypePacemaker",
       "exampleBoolean" : false
     },
     {
@@ -1839,19 +1599,7 @@
         "reference" : "ValueSet/deviceTypePacemaker-vista"
       },
       "name" : "deviceTypePacemaker VistA",
-      "description" : "VistA Source ValueSet for Terminology Maps deviceTypePacemaker",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ConceptMap"
-      }],
-      "reference" : {
-        "reference" : "ConceptMap/DiagnosticReportLabStatus"
-      },
-      "name" : "DiagnosticReportLabStatus",
-      "description" : "Terminology Maps DiagnosticReportLabStatus",
+      "description" : "VistA Source ValueSet for Terminology Maps VF_deviceTypePacemaker",
       "exampleBoolean" : false
     },
     {
@@ -1863,7 +1611,7 @@
         "reference" : "ValueSet/DiagnosticReportLabStatus"
       },
       "name" : "DiagnosticReportLabStatus FHIR",
-      "description" : "FHIR Target ValueSet for Terminology Maps DiagnosticReportLabStatus",
+      "description" : "FHIR Target ValueSet for Terminology Maps VF_DiagnosticReportLabStatus",
       "exampleBoolean" : false
     },
     {
@@ -1875,7 +1623,7 @@
         "reference" : "ValueSet/DiagnosticReportLabStatus-vista"
       },
       "name" : "DiagnosticReportLabStatus VistA",
-      "description" : "VistA Source ValueSet for Terminology Maps DiagnosticReportLabStatus",
+      "description" : "VistA Source ValueSet for Terminology Maps VF_DiagnosticReportLabStatus",
       "exampleBoolean" : false
     },
     {
@@ -1907,25 +1655,13 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ConceptMap"
-      }],
-      "reference" : {
-        "reference" : "ConceptMap/documentReferencedocStatus"
-      },
-      "name" : "documentReferencedocStatus",
-      "description" : "Terminology Maps documentReferencedocStatus",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
       }],
       "reference" : {
         "reference" : "ValueSet/documentReferencedocStatus"
       },
       "name" : "documentReferencedocStatus FHIR",
-      "description" : "FHIR Target ValueSet for Terminology Maps documentReferencedocStatus",
+      "description" : "FHIR Target ValueSet for Terminology Maps VF_documentReferencedocStatus",
       "exampleBoolean" : false
     },
     {
@@ -1937,19 +1673,7 @@
         "reference" : "ValueSet/documentReferencedocStatus-vista"
       },
       "name" : "documentReferencedocStatus VistA",
-      "description" : "VistA Source ValueSet for Terminology Maps documentReferencedocStatus",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ConceptMap"
-      }],
-      "reference" : {
-        "reference" : "ConceptMap/DoseUnits"
-      },
-      "name" : "DoseUnits",
-      "description" : "Terminology Maps DoseUnits",
+      "description" : "VistA Source ValueSet for Terminology Maps VF_documentReferencedocStatus",
       "exampleBoolean" : false
     },
     {
@@ -1961,7 +1685,7 @@
         "reference" : "ValueSet/DoseUnits"
       },
       "name" : "DoseUnits FHIR",
-      "description" : "FHIR Target ValueSet for Terminology Maps DoseUnits",
+      "description" : "FHIR Target ValueSet for Terminology Maps VF_DoseUnits",
       "exampleBoolean" : false
     },
     {
@@ -1973,7 +1697,7 @@
         "reference" : "ValueSet/DoseUnits-vista"
       },
       "name" : "DoseUnits VistA",
-      "description" : "VistA Source ValueSet for Terminology Maps DoseUnits",
+      "description" : "VistA Source ValueSet for Terminology Maps VF_DoseUnits",
       "exampleBoolean" : false
     },
     {
@@ -2078,25 +1802,13 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ConceptMap"
-      }],
-      "reference" : {
-        "reference" : "ConceptMap/encounterClass"
-      },
-      "name" : "encounterClass",
-      "description" : "Terminology Maps encounterClass",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
       }],
       "reference" : {
         "reference" : "ValueSet/encounterClass"
       },
       "name" : "encounterClass FHIR",
-      "description" : "FHIR Target ValueSet for Terminology Maps encounterClass",
+      "description" : "FHIR Target ValueSet for Terminology Maps VF_encounterClass",
       "exampleBoolean" : false
     },
     {
@@ -2108,19 +1820,7 @@
         "reference" : "ValueSet/encounterClass-vista"
       },
       "name" : "encounterClass VistA",
-      "description" : "VistA Source ValueSet for Terminology Maps encounterClass",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ConceptMap"
-      }],
-      "reference" : {
-        "reference" : "ConceptMap/encounterParticipationType"
-      },
-      "name" : "encounterParticipationType",
-      "description" : "Terminology Maps encounterParticipationType",
+      "description" : "VistA Source ValueSet for Terminology Maps VF_encounterClass",
       "exampleBoolean" : false
     },
     {
@@ -2132,7 +1832,7 @@
         "reference" : "ValueSet/encounterParticipationType"
       },
       "name" : "encounterParticipationType FHIR",
-      "description" : "FHIR Target ValueSet for Terminology Maps encounterParticipationType",
+      "description" : "FHIR Target ValueSet for Terminology Maps VF_encounterParticipationType",
       "exampleBoolean" : false
     },
     {
@@ -2144,19 +1844,7 @@
         "reference" : "ValueSet/encounterParticipationType-vista"
       },
       "name" : "encounterParticipationType VistA",
-      "description" : "VistA Source ValueSet for Terminology Maps encounterParticipationType",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ConceptMap"
-      }],
-      "reference" : {
-        "reference" : "ConceptMap/encounterProblemStatus"
-      },
-      "name" : "encounterProblemStatus",
-      "description" : "Terminology Maps encounterProblemStatus",
+      "description" : "VistA Source ValueSet for Terminology Maps VF_encounterParticipationType",
       "exampleBoolean" : false
     },
     {
@@ -2168,7 +1856,7 @@
         "reference" : "ValueSet/encounterProblemStatus"
       },
       "name" : "encounterProblemStatus FHIR",
-      "description" : "FHIR Target ValueSet for Terminology Maps encounterProblemStatus",
+      "description" : "FHIR Target ValueSet for Terminology Maps VF_encounterProblemStatus",
       "exampleBoolean" : false
     },
     {
@@ -2180,19 +1868,7 @@
         "reference" : "ValueSet/encounterProblemStatus-vista"
       },
       "name" : "encounterProblemStatus VistA",
-      "description" : "VistA Source ValueSet for Terminology Maps encounterProblemStatus",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ConceptMap"
-      }],
-      "reference" : {
-        "reference" : "ConceptMap/encounterProblemVerificationStatus"
-      },
-      "name" : "encounterProblemVerificationStatus",
-      "description" : "Terminology Maps encounterProblemVerificationStatus",
+      "description" : "VistA Source ValueSet for Terminology Maps VF_encounterProblemStatus",
       "exampleBoolean" : false
     },
     {
@@ -2204,7 +1880,7 @@
         "reference" : "ValueSet/encounterProblemVerificationStatus"
       },
       "name" : "encounterProblemVerificationStatus FHIR",
-      "description" : "FHIR Target ValueSet for Terminology Maps encounterProblemVerificationStatus",
+      "description" : "FHIR Target ValueSet for Terminology Maps VF_encounterProblemVerificationStatus",
       "exampleBoolean" : false
     },
     {
@@ -2216,19 +1892,7 @@
         "reference" : "ValueSet/encounterProblemVerificationStatus-vista"
       },
       "name" : "encounterProblemVerificationStatus VistA",
-      "description" : "VistA Source ValueSet for Terminology Maps encounterProblemVerificationStatus",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ConceptMap"
-      }],
-      "reference" : {
-        "reference" : "ConceptMap/ethnicityCategory"
-      },
-      "name" : "ethnicityCategory",
-      "description" : "Terminology Maps ethnicityCategory",
+      "description" : "VistA Source ValueSet for Terminology Maps VF_encounterProblemVerificationStatus",
       "exampleBoolean" : false
     },
     {
@@ -2240,7 +1904,7 @@
         "reference" : "ValueSet/ethnicityCategory"
       },
       "name" : "ethnicityCategory FHIR",
-      "description" : "FHIR Target ValueSet for Terminology Maps ethnicityCategory",
+      "description" : "FHIR Target ValueSet for Terminology Maps VF_ethnicityCategory",
       "exampleBoolean" : false
     },
     {
@@ -2252,7 +1916,7 @@
         "reference" : "ValueSet/ethnicityCategory-vista"
       },
       "name" : "ethnicityCategory VistA",
-      "description" : "VistA Source ValueSet for Terminology Maps ethnicityCategory",
+      "description" : "VistA Source ValueSet for Terminology Maps VF_ethnicityCategory",
       "exampleBoolean" : false
     },
     {
@@ -2306,25 +1970,13 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ConceptMap"
-      }],
-      "reference" : {
-        "reference" : "ConceptMap/ExamResultInterpretation"
-      },
-      "name" : "ExamResultInterpretation",
-      "description" : "Terminology Maps ExamResultInterpretation",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
       }],
       "reference" : {
         "reference" : "ValueSet/ExamResultInterpretation"
       },
       "name" : "ExamResultInterpretation FHIR",
-      "description" : "FHIR Target ValueSet for Terminology Maps ExamResultInterpretation",
+      "description" : "FHIR Target ValueSet for Terminology Maps VF_ExamResultInterpretation",
       "exampleBoolean" : false
     },
     {
@@ -2336,19 +1988,7 @@
         "reference" : "ValueSet/ExamResultInterpretation-vista"
       },
       "name" : "ExamResultInterpretation VistA",
-      "description" : "VistA Source ValueSet for Terminology Maps ExamResultInterpretation",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ConceptMap"
-      }],
-      "reference" : {
-        "reference" : "ConceptMap/ExamStatus"
-      },
-      "name" : "ExamStatus",
-      "description" : "Terminology Maps ExamStatus",
+      "description" : "VistA Source ValueSet for Terminology Maps VF_ExamResultInterpretation",
       "exampleBoolean" : false
     },
     {
@@ -2360,7 +2000,7 @@
         "reference" : "ValueSet/ExamStatus"
       },
       "name" : "ExamStatus FHIR",
-      "description" : "FHIR Target ValueSet for Terminology Maps ExamStatus",
+      "description" : "FHIR Target ValueSet for Terminology Maps VF_ExamStatus",
       "exampleBoolean" : false
     },
     {
@@ -2372,7 +2012,7 @@
         "reference" : "ValueSet/ExamStatus-vista"
       },
       "name" : "ExamStatus VistA",
-      "description" : "VistA Source ValueSet for Terminology Maps ExamStatus",
+      "description" : "VistA Source ValueSet for Terminology Maps VF_ExamStatus",
       "exampleBoolean" : false
     },
     {
@@ -2402,25 +2042,13 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ConceptMap"
-      }],
-      "reference" : {
-        "reference" : "ConceptMap/genderIdentity"
-      },
-      "name" : "genderIdentity",
-      "description" : "Terminology Maps genderIdentity",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
       }],
       "reference" : {
         "reference" : "ValueSet/genderIdentity"
       },
       "name" : "genderIdentity FHIR",
-      "description" : "FHIR Target ValueSet for Terminology Maps genderIdentity",
+      "description" : "FHIR Target ValueSet for Terminology Maps VF_genderIdentity",
       "exampleBoolean" : false
     },
     {
@@ -2432,7 +2060,7 @@
         "reference" : "ValueSet/genderIdentity-vista"
       },
       "name" : "genderIdentity VistA",
-      "description" : "VistA Source ValueSet for Terminology Maps genderIdentity",
+      "description" : "VistA Source ValueSet for Terminology Maps VF_genderIdentity",
       "exampleBoolean" : false
     },
     {
@@ -2558,25 +2186,13 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ConceptMap"
-      }],
-      "reference" : {
-        "reference" : "ConceptMap/ICDCodingSystems"
-      },
-      "name" : "ICDCodingSystems",
-      "description" : "Terminology Maps ICDCodingSystems",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
       }],
       "reference" : {
         "reference" : "ValueSet/ICDCodingSystems"
       },
       "name" : "ICDCodingSystems FHIR",
-      "description" : "FHIR Target ValueSet for Terminology Maps ICDCodingSystems",
+      "description" : "FHIR Target ValueSet for Terminology Maps VF_ICDCodingSystems",
       "exampleBoolean" : false
     },
     {
@@ -2588,19 +2204,7 @@
         "reference" : "ValueSet/ICDCodingSystems-vista"
       },
       "name" : "ICDCodingSystems VistA",
-      "description" : "VistA Source ValueSet for Terminology Maps ICDCodingSystems",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ConceptMap"
-      }],
-      "reference" : {
-        "reference" : "ConceptMap/ICDVersion"
-      },
-      "name" : "ICDVersion",
-      "description" : "Terminology Maps ICDVersion",
+      "description" : "VistA Source ValueSet for Terminology Maps VF_ICDCodingSystems",
       "exampleBoolean" : false
     },
     {
@@ -2612,7 +2216,7 @@
         "reference" : "ValueSet/ICDVersion"
       },
       "name" : "ICDVersion FHIR",
-      "description" : "FHIR Target ValueSet for Terminology Maps ICDVersion",
+      "description" : "FHIR Target ValueSet for Terminology Maps VF_ICDVersion",
       "exampleBoolean" : false
     },
     {
@@ -2624,19 +2228,7 @@
         "reference" : "ValueSet/ICDVersion-vista"
       },
       "name" : "ICDVersion VistA",
-      "description" : "VistA Source ValueSet for Terminology Maps ICDVersion",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ConceptMap"
-      }],
-      "reference" : {
-        "reference" : "ConceptMap/ImageInterpretation"
-      },
-      "name" : "ImageInterpretation",
-      "description" : "Terminology Maps ImageInterpretation",
+      "description" : "VistA Source ValueSet for Terminology Maps VF_ICDVersion",
       "exampleBoolean" : false
     },
     {
@@ -2648,7 +2240,7 @@
         "reference" : "ValueSet/ImageInterpretation"
       },
       "name" : "ImageInterpretation FHIR",
-      "description" : "FHIR Target ValueSet for Terminology Maps ImageInterpretation",
+      "description" : "FHIR Target ValueSet for Terminology Maps VF_ImageInterpretation",
       "exampleBoolean" : false
     },
     {
@@ -2660,19 +2252,7 @@
         "reference" : "ValueSet/ImageInterpretation-vista"
       },
       "name" : "ImageInterpretation VistA",
-      "description" : "VistA Source ValueSet for Terminology Maps ImageInterpretation",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ConceptMap"
-      }],
-      "reference" : {
-        "reference" : "ConceptMap/ImageStatus"
-      },
-      "name" : "ImageStatus",
-      "description" : "Terminology Maps ImageStatus",
+      "description" : "VistA Source ValueSet for Terminology Maps VF_ImageInterpretation",
       "exampleBoolean" : false
     },
     {
@@ -2684,7 +2264,7 @@
         "reference" : "ValueSet/ImageStatus"
       },
       "name" : "ImageStatus FHIR",
-      "description" : "FHIR Target ValueSet for Terminology Maps ImageStatus",
+      "description" : "FHIR Target ValueSet for Terminology Maps VF_ImageStatus",
       "exampleBoolean" : false
     },
     {
@@ -2696,19 +2276,7 @@
         "reference" : "ValueSet/ImageStatus-vista"
       },
       "name" : "ImageStatus VistA",
-      "description" : "VistA Source ValueSet for Terminology Maps ImageStatus",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ConceptMap"
-      }],
-      "reference" : {
-        "reference" : "ConceptMap/ImageStatusRadNuc"
-      },
-      "name" : "ImageStatusRadNuc",
-      "description" : "Terminology Maps ImageStatusRadNuc",
+      "description" : "VistA Source ValueSet for Terminology Maps VF_ImageStatus",
       "exampleBoolean" : false
     },
     {
@@ -2720,7 +2288,7 @@
         "reference" : "ValueSet/ImageStatusRadNuc"
       },
       "name" : "ImageStatusRadNuc FHIR",
-      "description" : "FHIR Target ValueSet for Terminology Maps ImageStatusRadNuc",
+      "description" : "FHIR Target ValueSet for Terminology Maps VF_ImageStatusRadNuc",
       "exampleBoolean" : false
     },
     {
@@ -2732,7 +2300,7 @@
         "reference" : "ValueSet/ImageStatusRadNuc-vista"
       },
       "name" : "ImageStatusRadNuc VistA",
-      "description" : "VistA Source ValueSet for Terminology Maps ImageStatusRadNuc",
+      "description" : "VistA Source ValueSet for Terminology Maps VF_ImageStatusRadNuc",
       "exampleBoolean" : false
     },
     {
@@ -2812,25 +2380,13 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ConceptMap"
-      }],
-      "reference" : {
-        "reference" : "ConceptMap/immunizationPrimarySource"
-      },
-      "name" : "immunizationPrimarySource",
-      "description" : "Terminology Maps immunizationPrimarySource",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
       }],
       "reference" : {
         "reference" : "ValueSet/immunizationPrimarySource"
       },
       "name" : "immunizationPrimarySource FHIR",
-      "description" : "FHIR Target ValueSet for Terminology Maps immunizationPrimarySource",
+      "description" : "FHIR Target ValueSet for Terminology Maps VF_immunizationPrimarySource",
       "exampleBoolean" : false
     },
     {
@@ -2842,19 +2398,7 @@
         "reference" : "ValueSet/immunizationPrimarySource-vista"
       },
       "name" : "immunizationPrimarySource VistA",
-      "description" : "VistA Source ValueSet for Terminology Maps immunizationPrimarySource",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ConceptMap"
-      }],
-      "reference" : {
-        "reference" : "ConceptMap/ImmunizationReaction"
-      },
-      "name" : "ImmunizationReaction",
-      "description" : "Terminology Maps ImmunizationReaction",
+      "description" : "VistA Source ValueSet for Terminology Maps VF_immunizationPrimarySource",
       "exampleBoolean" : false
     },
     {
@@ -2866,7 +2410,7 @@
         "reference" : "ValueSet/ImmunizationReaction"
       },
       "name" : "ImmunizationReaction FHIR",
-      "description" : "FHIR Target ValueSet for Terminology Maps ImmunizationReaction",
+      "description" : "FHIR Target ValueSet for Terminology Maps VF_ImmunizationReaction",
       "exampleBoolean" : false
     },
     {
@@ -2878,19 +2422,7 @@
         "reference" : "ValueSet/ImmunizationReaction-vista"
       },
       "name" : "ImmunizationReaction VistA",
-      "description" : "VistA Source ValueSet for Terminology Maps ImmunizationReaction",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ConceptMap"
-      }],
-      "reference" : {
-        "reference" : "ConceptMap/immunizationStatusReason"
-      },
-      "name" : "immunizationStatusReason",
-      "description" : "Terminology Maps immunizationStatusReason",
+      "description" : "VistA Source ValueSet for Terminology Maps VF_ImmunizationReaction",
       "exampleBoolean" : false
     },
     {
@@ -2902,7 +2434,7 @@
         "reference" : "ValueSet/immunizationStatusReason"
       },
       "name" : "immunizationStatusReason FHIR",
-      "description" : "FHIR Target ValueSet for Terminology Maps immunizationStatusReason",
+      "description" : "FHIR Target ValueSet for Terminology Maps VF_immunizationStatusReason",
       "exampleBoolean" : false
     },
     {
@@ -2914,7 +2446,7 @@
         "reference" : "ValueSet/immunizationStatusReason-vista"
       },
       "name" : "immunizationStatusReason VistA",
-      "description" : "VistA Source ValueSet for Terminology Maps immunizationStatusReason",
+      "description" : "VistA Source ValueSet for Terminology Maps VF_immunizationStatusReason",
       "exampleBoolean" : false
     },
     {
@@ -3011,25 +2543,13 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ConceptMap"
-      }],
-      "reference" : {
-        "reference" : "ConceptMap/inferredCVX"
-      },
-      "name" : "inferredCVX",
-      "description" : "Terminology Maps inferredCVX",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
       }],
       "reference" : {
         "reference" : "ValueSet/inferredCVX"
       },
       "name" : "inferredCVX FHIR",
-      "description" : "FHIR Target ValueSet for Terminology Maps inferredCVX",
+      "description" : "FHIR Target ValueSet for Terminology Maps VF_inferredCVX",
       "exampleBoolean" : false
     },
     {
@@ -3041,7 +2561,7 @@
         "reference" : "ValueSet/inferredCVX-vista"
       },
       "name" : "inferredCVX VistA",
-      "description" : "VistA Source ValueSet for Terminology Maps inferredCVX",
+      "description" : "VistA Source ValueSet for Terminology Maps VF_inferredCVX",
       "exampleBoolean" : false
     },
     {
@@ -3663,25 +3183,13 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ConceptMap"
-      }],
-      "reference" : {
-        "reference" : "ConceptMap/LabInterpretation"
-      },
-      "name" : "LabInterpretation",
-      "description" : "Terminology Maps LabInterpretation",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
       }],
       "reference" : {
         "reference" : "ValueSet/LabInterpretation"
       },
       "name" : "LabInterpretation FHIR",
-      "description" : "FHIR Target ValueSet for Terminology Maps LabInterpretation",
+      "description" : "FHIR Target ValueSet for Terminology Maps VF_LabInterpretation",
       "exampleBoolean" : false
     },
     {
@@ -3693,19 +3201,7 @@
         "reference" : "ValueSet/LabInterpretation-vista"
       },
       "name" : "LabInterpretation VistA",
-      "description" : "VistA Source ValueSet for Terminology Maps LabInterpretation",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ConceptMap"
-      }],
-      "reference" : {
-        "reference" : "ConceptMap/LabObservationStatus"
-      },
-      "name" : "LabObservationStatus",
-      "description" : "Terminology Maps LabObservationStatus",
+      "description" : "VistA Source ValueSet for Terminology Maps VF_LabInterpretation",
       "exampleBoolean" : false
     },
     {
@@ -3717,7 +3213,7 @@
         "reference" : "ValueSet/LabObservationStatus"
       },
       "name" : "LabObservationStatus FHIR",
-      "description" : "FHIR Target ValueSet for Terminology Maps LabObservationStatus",
+      "description" : "FHIR Target ValueSet for Terminology Maps VF_LabObservationStatus",
       "exampleBoolean" : false
     },
     {
@@ -3729,7 +3225,7 @@
         "reference" : "ValueSet/LabObservationStatus-vista"
       },
       "name" : "LabObservationStatus VistA",
-      "description" : "VistA Source ValueSet for Terminology Maps LabObservationStatus",
+      "description" : "VistA Source ValueSet for Terminology Maps VF_LabObservationStatus",
       "exampleBoolean" : false
     },
     {
@@ -3823,25 +3319,13 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ConceptMap"
-      }],
-      "reference" : {
-        "reference" : "ConceptMap/LocationStatus"
-      },
-      "name" : "LocationStatus",
-      "description" : "Terminology Maps LocationStatus",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
       }],
       "reference" : {
         "reference" : "ValueSet/LocationStatus"
       },
       "name" : "LocationStatus FHIR",
-      "description" : "FHIR Target ValueSet for Terminology Maps LocationStatus",
+      "description" : "FHIR Target ValueSet for Terminology Maps VF_LocationStatus",
       "exampleBoolean" : false
     },
     {
@@ -3853,7 +3337,7 @@
         "reference" : "ValueSet/LocationStatus-vista"
       },
       "name" : "LocationStatus VistA",
-      "description" : "VistA Source ValueSet for Terminology Maps LocationStatus",
+      "description" : "VistA Source ValueSet for Terminology Maps VF_LocationStatus",
       "exampleBoolean" : false
     },
     {
@@ -3911,25 +3395,13 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ConceptMap"
-      }],
-      "reference" : {
-        "reference" : "ConceptMap/MaritalStatus"
-      },
-      "name" : "MaritalStatus",
-      "description" : "Terminology Maps MaritalStatus",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
       }],
       "reference" : {
         "reference" : "ValueSet/MaritalStatus"
       },
       "name" : "MaritalStatus FHIR",
-      "description" : "FHIR Target ValueSet for Terminology Maps MaritalStatus",
+      "description" : "FHIR Target ValueSet for Terminology Maps VF_MaritalStatus",
       "exampleBoolean" : false
     },
     {
@@ -3941,7 +3413,7 @@
         "reference" : "ValueSet/MaritalStatus-vista"
       },
       "name" : "MaritalStatus VistA",
-      "description" : "VistA Source ValueSet for Terminology Maps MaritalStatus",
+      "description" : "VistA Source ValueSet for Terminology Maps VF_MaritalStatus",
       "exampleBoolean" : false
     },
     {
@@ -4174,25 +3646,13 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ConceptMap"
-      }],
-      "reference" : {
-        "reference" : "ConceptMap/MicrobiologyUrineScreenResult"
-      },
-      "name" : "MicrobiologyUrineScreenResult",
-      "description" : "Terminology Maps MicrobiologyUrineScreenResult",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
       }],
       "reference" : {
         "reference" : "ValueSet/MicrobiologyUrineScreenResult"
       },
       "name" : "MicrobiologyUrineScreenResult FHIR",
-      "description" : "FHIR Target ValueSet for Terminology Maps MicrobiologyUrineScreenResult",
+      "description" : "FHIR Target ValueSet for Terminology Maps VF_MicrobiologyUrineScreenResult",
       "exampleBoolean" : false
     },
     {
@@ -4204,7 +3664,7 @@
         "reference" : "ValueSet/MicrobiologyUrineScreenResult-vista"
       },
       "name" : "MicrobiologyUrineScreenResult VistA",
-      "description" : "VistA Source ValueSet for Terminology Maps MicrobiologyUrineScreenResult",
+      "description" : "VistA Source ValueSet for Terminology Maps VF_MicrobiologyUrineScreenResult",
       "exampleBoolean" : false
     },
     {
@@ -4360,25 +3820,13 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ConceptMap"
-      }],
-      "reference" : {
-        "reference" : "ConceptMap/OperatingRoomStatus"
-      },
-      "name" : "OperatingRoomStatus",
-      "description" : "Terminology Maps OperatingRoomStatus",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
       }],
       "reference" : {
         "reference" : "ValueSet/OperatingRoomStatus"
       },
       "name" : "OperatingRoomStatus FHIR",
-      "description" : "FHIR Target ValueSet for Terminology Maps OperatingRoomStatus",
+      "description" : "FHIR Target ValueSet for Terminology Maps VF_OperatingRoomStatus",
       "exampleBoolean" : false
     },
     {
@@ -4390,7 +3838,7 @@
         "reference" : "ValueSet/OperatingRoomStatus-vista"
       },
       "name" : "OperatingRoomStatus VistA",
-      "description" : "VistA Source ValueSet for Terminology Maps OperatingRoomStatus",
+      "description" : "VistA Source ValueSet for Terminology Maps VF_OperatingRoomStatus",
       "exampleBoolean" : false
     },
     {
@@ -4468,25 +3916,13 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ConceptMap"
-      }],
-      "reference" : {
-        "reference" : "ConceptMap/OrderPatientClass"
-      },
-      "name" : "OrderPatientClass",
-      "description" : "Terminology Maps OrderPatientClass",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
       }],
       "reference" : {
         "reference" : "ValueSet/OrderPatientClass"
       },
       "name" : "OrderPatientClass FHIR",
-      "description" : "FHIR Target ValueSet for Terminology Maps OrderPatientClass",
+      "description" : "FHIR Target ValueSet for Terminology Maps VF_OrderPatientClass",
       "exampleBoolean" : false
     },
     {
@@ -4498,7 +3934,7 @@
         "reference" : "ValueSet/OrderPatientClass-vista"
       },
       "name" : "OrderPatientClass VistA",
-      "description" : "VistA Source ValueSet for Terminology Maps OrderPatientClass",
+      "description" : "VistA Source ValueSet for Terminology Maps VF_OrderPatientClass",
       "exampleBoolean" : false
     },
     {
@@ -4553,25 +3989,13 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ConceptMap"
-      }],
-      "reference" : {
-        "reference" : "ConceptMap/OrganizationIdentifierType"
-      },
-      "name" : "OrganizationIdentifierType",
-      "description" : "Terminology Maps OrganizationIdentifierType",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
       }],
       "reference" : {
         "reference" : "ValueSet/OrganizationIdentifierType"
       },
       "name" : "OrganizationIdentifierType FHIR",
-      "description" : "FHIR Target ValueSet for Terminology Maps OrganizationIdentifierType",
+      "description" : "FHIR Target ValueSet for Terminology Maps VF_OrganizationIdentifierType",
       "exampleBoolean" : false
     },
     {
@@ -4583,7 +4007,7 @@
         "reference" : "ValueSet/OrganizationIdentifierType-vista"
       },
       "name" : "OrganizationIdentifierType VistA",
-      "description" : "VistA Source ValueSet for Terminology Maps OrganizationIdentifierType",
+      "description" : "VistA Source ValueSet for Terminology Maps VF_OrganizationIdentifierType",
       "exampleBoolean" : false
     },
     {
@@ -4601,25 +4025,13 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ConceptMap"
-      }],
-      "reference" : {
-        "reference" : "ConceptMap/OutMedRequestStatus"
-      },
-      "name" : "OutMedRequestStatus",
-      "description" : "Terminology Maps OutMedRequestStatus",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
       }],
       "reference" : {
         "reference" : "ValueSet/OutMedRequestStatus"
       },
       "name" : "OutMedRequestStatus FHIR",
-      "description" : "FHIR Target ValueSet for Terminology Maps OutMedRequestStatus",
+      "description" : "FHIR Target ValueSet for Terminology Maps VF_OutMedRequestStatus",
       "exampleBoolean" : false
     },
     {
@@ -4631,7 +4043,7 @@
         "reference" : "ValueSet/OutMedRequestStatus-vista"
       },
       "name" : "OutMedRequestStatus VistA",
-      "description" : "VistA Source ValueSet for Terminology Maps OutMedRequestStatus",
+      "description" : "VistA Source ValueSet for Terminology Maps VF_OutMedRequestStatus",
       "exampleBoolean" : false
     },
     {
@@ -4830,25 +4242,13 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ConceptMap"
-      }],
-      "reference" : {
-        "reference" : "ConceptMap/PersonIdentifierType"
-      },
-      "name" : "PersonIdentifierType",
-      "description" : "Terminology Maps PersonIdentifierType",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
       }],
       "reference" : {
         "reference" : "ValueSet/PersonIdentifierType"
       },
       "name" : "PersonIdentifierType FHIR",
-      "description" : "FHIR Target ValueSet for Terminology Maps PersonIdentifierType",
+      "description" : "FHIR Target ValueSet for Terminology Maps VF_PersonIdentifierType",
       "exampleBoolean" : false
     },
     {
@@ -4860,19 +4260,7 @@
         "reference" : "ValueSet/PersonIdentifierType-vista"
       },
       "name" : "PersonIdentifierType VistA",
-      "description" : "VistA Source ValueSet for Terminology Maps PersonIdentifierType",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ConceptMap"
-      }],
-      "reference" : {
-        "reference" : "ConceptMap/PharmacyPersonType"
-      },
-      "name" : "PharmacyPersonType",
-      "description" : "Terminology Maps PharmacyPersonType",
+      "description" : "VistA Source ValueSet for Terminology Maps VF_PersonIdentifierType",
       "exampleBoolean" : false
     },
     {
@@ -4884,7 +4272,7 @@
         "reference" : "ValueSet/PharmacyPersonType"
       },
       "name" : "PharmacyPersonType FHIR",
-      "description" : "FHIR Target ValueSet for Terminology Maps PharmacyPersonType",
+      "description" : "FHIR Target ValueSet for Terminology Maps VF_PharmacyPersonType",
       "exampleBoolean" : false
     },
     {
@@ -4896,7 +4284,7 @@
         "reference" : "ValueSet/PharmacyPersonType-vista"
       },
       "name" : "PharmacyPersonType VistA",
-      "description" : "VistA Source ValueSet for Terminology Maps PharmacyPersonType",
+      "description" : "VistA Source ValueSet for Terminology Maps VF_PharmacyPersonType",
       "exampleBoolean" : false
     },
     {
@@ -4928,25 +4316,13 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ConceptMap"
-      }],
-      "reference" : {
-        "reference" : "ConceptMap/PractitionerCountry"
-      },
-      "name" : "PractitionerCountry",
-      "description" : "Terminology Maps PractitionerCountry",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
       }],
       "reference" : {
         "reference" : "ValueSet/PractitionerCountry"
       },
       "name" : "PractitionerCountry FHIR",
-      "description" : "FHIR Target ValueSet for Terminology Maps PractitionerCountry",
+      "description" : "FHIR Target ValueSet for Terminology Maps VF_PractitionerCountry",
       "exampleBoolean" : false
     },
     {
@@ -4958,7 +4334,7 @@
         "reference" : "ValueSet/PractitionerCountry-vista"
       },
       "name" : "PractitionerCountry VistA",
-      "description" : "VistA Source ValueSet for Terminology Maps PractitionerCountry",
+      "description" : "VistA Source ValueSet for Terminology Maps VF_PractitionerCountry",
       "exampleBoolean" : false
     },
     {
@@ -5000,25 +4376,13 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ConceptMap"
-      }],
-      "reference" : {
-        "reference" : "ConceptMap/problemStatus"
-      },
-      "name" : "problemStatus",
-      "description" : "Terminology Maps problemStatus",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
       }],
       "reference" : {
         "reference" : "ValueSet/problemStatus"
       },
       "name" : "problemStatus FHIR",
-      "description" : "FHIR Target ValueSet for Terminology Maps problemStatus",
+      "description" : "FHIR Target ValueSet for Terminology Maps VF_problemStatus",
       "exampleBoolean" : false
     },
     {
@@ -5030,19 +4394,7 @@
         "reference" : "ValueSet/problemStatus-vista"
       },
       "name" : "problemStatus VistA",
-      "description" : "VistA Source ValueSet for Terminology Maps problemStatus",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ConceptMap"
-      }],
-      "reference" : {
-        "reference" : "ConceptMap/problemVerificationStatus"
-      },
-      "name" : "problemVerificationStatus",
-      "description" : "Terminology Maps problemVerificationStatus",
+      "description" : "VistA Source ValueSet for Terminology Maps VF_problemStatus",
       "exampleBoolean" : false
     },
     {
@@ -5054,7 +4406,7 @@
         "reference" : "ValueSet/problemVerificationStatus"
       },
       "name" : "problemVerificationStatus FHIR",
-      "description" : "FHIR Target ValueSet for Terminology Maps problemVerificationStatus",
+      "description" : "FHIR Target ValueSet for Terminology Maps VF_problemVerificationStatus",
       "exampleBoolean" : false
     },
     {
@@ -5066,7 +4418,7 @@
         "reference" : "ValueSet/problemVerificationStatus-vista"
       },
       "name" : "problemVerificationStatus VistA",
-      "description" : "VistA Source ValueSet for Terminology Maps problemVerificationStatus",
+      "description" : "VistA Source ValueSet for Terminology Maps VF_problemVerificationStatus",
       "exampleBoolean" : false
     },
     {
@@ -5124,25 +4476,13 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ConceptMap"
-      }],
-      "reference" : {
-        "reference" : "ConceptMap/ProcedureCodeSystem"
-      },
-      "name" : "ProcedureCodeSystem",
-      "description" : "Terminology Maps ProcedureCodeSystem",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
       }],
       "reference" : {
         "reference" : "ValueSet/ProcedureCodeSystem"
       },
       "name" : "ProcedureCodeSystem FHIR",
-      "description" : "FHIR Target ValueSet for Terminology Maps ProcedureCodeSystem",
+      "description" : "FHIR Target ValueSet for Terminology Maps VF_ProcedureCodeSystem",
       "exampleBoolean" : false
     },
     {
@@ -5154,7 +4494,7 @@
         "reference" : "ValueSet/ProcedureCodeSystem-vista"
       },
       "name" : "ProcedureCodeSystem VistA",
-      "description" : "VistA Source ValueSet for Terminology Maps ProcedureCodeSystem",
+      "description" : "VistA Source ValueSet for Terminology Maps VF_ProcedureCodeSystem",
       "exampleBoolean" : false
     },
     {
@@ -5208,25 +4548,13 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ConceptMap"
-      }],
-      "reference" : {
-        "reference" : "ConceptMap/providerGender"
-      },
-      "name" : "providerGender",
-      "description" : "Terminology Maps providerGender",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
       }],
       "reference" : {
         "reference" : "ValueSet/providerGender"
       },
       "name" : "providerGender FHIR",
-      "description" : "FHIR Target ValueSet for Terminology Maps providerGender",
+      "description" : "FHIR Target ValueSet for Terminology Maps VF_providerGender",
       "exampleBoolean" : false
     },
     {
@@ -5238,7 +4566,7 @@
         "reference" : "ValueSet/providerGender-vista"
       },
       "name" : "providerGender VistA",
-      "description" : "VistA Source ValueSet for Terminology Maps providerGender",
+      "description" : "VistA Source ValueSet for Terminology Maps VF_providerGender",
       "exampleBoolean" : false
     },
     {
@@ -5256,25 +4584,13 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ConceptMap"
-      }],
-      "reference" : {
-        "reference" : "ConceptMap/raceCategory"
-      },
-      "name" : "raceCategory",
-      "description" : "Terminology Maps raceCategory",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
       }],
       "reference" : {
         "reference" : "ValueSet/raceCategory"
       },
       "name" : "raceCategory FHIR",
-      "description" : "FHIR Target ValueSet for Terminology Maps raceCategory",
+      "description" : "FHIR Target ValueSet for Terminology Maps VF_raceCategory",
       "exampleBoolean" : false
     },
     {
@@ -5286,7 +4602,7 @@
         "reference" : "ValueSet/raceCategory-vista"
       },
       "name" : "raceCategory VistA",
-      "description" : "VistA Source ValueSet for Terminology Maps raceCategory",
+      "description" : "VistA Source ValueSet for Terminology Maps VF_raceCategory",
       "exampleBoolean" : false
     },
     {
@@ -5340,25 +4656,13 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ConceptMap"
-      }],
-      "reference" : {
-        "reference" : "ConceptMap/RadiologyProcedureStatus"
-      },
-      "name" : "RadiologyProcedureStatus",
-      "description" : "Terminology Maps RadiologyProcedureStatus",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
       }],
       "reference" : {
         "reference" : "ValueSet/RadiologyProcedureStatus"
       },
       "name" : "RadiologyProcedureStatus FHIR",
-      "description" : "FHIR Target ValueSet for Terminology Maps RadiologyProcedureStatus",
+      "description" : "FHIR Target ValueSet for Terminology Maps VF_RadiologyProcedureStatus",
       "exampleBoolean" : false
     },
     {
@@ -5370,7 +4674,7 @@
         "reference" : "ValueSet/RadiologyProcedureStatus-vista"
       },
       "name" : "RadiologyProcedureStatus VistA",
-      "description" : "VistA Source ValueSet for Terminology Maps RadiologyProcedureStatus",
+      "description" : "VistA Source ValueSet for Terminology Maps VF_RadiologyProcedureStatus",
       "exampleBoolean" : false
     },
     {
@@ -5400,25 +4704,13 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ConceptMap"
-      }],
-      "reference" : {
-        "reference" : "ConceptMap/RefillRequestStatus"
-      },
-      "name" : "RefillRequestStatus",
-      "description" : "Terminology Maps RefillRequestStatus",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
       }],
       "reference" : {
         "reference" : "ValueSet/RefillRequestStatus"
       },
       "name" : "RefillRequestStatus FHIR",
-      "description" : "FHIR Target ValueSet for Terminology Maps RefillRequestStatus",
+      "description" : "FHIR Target ValueSet for Terminology Maps VF_RefillRequestStatus",
       "exampleBoolean" : false
     },
     {
@@ -5430,7 +4722,7 @@
         "reference" : "ValueSet/RefillRequestStatus-vista"
       },
       "name" : "RefillRequestStatus VistA",
-      "description" : "VistA Source ValueSet for Terminology Maps RefillRequestStatus",
+      "description" : "VistA Source ValueSet for Terminology Maps VF_RefillRequestStatus",
       "exampleBoolean" : false
     },
     {
@@ -5448,25 +4740,13 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ConceptMap"
-      }],
-      "reference" : {
-        "reference" : "ConceptMap/Religion"
-      },
-      "name" : "Religion",
-      "description" : "Terminology Maps Religion",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
       }],
       "reference" : {
         "reference" : "ValueSet/Religion"
       },
       "name" : "Religion FHIR",
-      "description" : "FHIR Target ValueSet for Terminology Maps Religion",
+      "description" : "FHIR Target ValueSet for Terminology Maps VF_Religion",
       "exampleBoolean" : false
     },
     {
@@ -5478,7 +4758,7 @@
         "reference" : "ValueSet/Religion-vista"
       },
       "name" : "Religion VistA",
-      "description" : "VistA Source ValueSet for Terminology Maps Religion",
+      "description" : "VistA Source ValueSet for Terminology Maps VF_Religion",
       "exampleBoolean" : false
     },
     {
@@ -5491,18 +4771,6 @@
       },
       "name" : "ResourceServiceConnection",
       "description" : "Extension resource-serviceConnection",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ValueSet"
-      }],
-      "reference" : {
-        "reference" : "ValueSet/ResourceServiceConnection"
-      },
-      "name" : "ResourceServiceConnection",
-      "description" : "FHIR ValueSet for Extension ResourceServiceConnection",
       "exampleBoolean" : false
     },
     {
@@ -5557,25 +4825,13 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ConceptMap"
-      }],
-      "reference" : {
-        "reference" : "ConceptMap/SmokingStatus"
-      },
-      "name" : "SmokingStatus",
-      "description" : "Terminology Maps SmokingStatus",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
       }],
       "reference" : {
         "reference" : "ValueSet/SmokingStatus"
       },
       "name" : "SmokingStatus FHIR",
-      "description" : "FHIR Target ValueSet for Terminology Maps SmokingStatus",
+      "description" : "FHIR Target ValueSet for Terminology Maps VF_SmokingStatus",
       "exampleBoolean" : false
     },
     {
@@ -5587,7 +4843,7 @@
         "reference" : "ValueSet/SmokingStatus-vista"
       },
       "name" : "SmokingStatus VistA",
-      "description" : "VistA Source ValueSet for Terminology Maps SmokingStatus",
+      "description" : "VistA Source ValueSet for Terminology Maps VF_SmokingStatus",
       "exampleBoolean" : false
     },
     {
@@ -5605,25 +4861,13 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ConceptMap"
-      }],
-      "reference" : {
-        "reference" : "ConceptMap/SourceOfAdmission"
-      },
-      "name" : "SourceOfAdmission",
-      "description" : "Terminology Maps SourceOfAdmission",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
       }],
       "reference" : {
         "reference" : "ValueSet/SourceOfAdmission"
       },
       "name" : "SourceOfAdmission FHIR",
-      "description" : "FHIR Target ValueSet for Terminology Maps SourceOfAdmission",
+      "description" : "FHIR Target ValueSet for Terminology Maps VF_SourceOfAdmission",
       "exampleBoolean" : false
     },
     {
@@ -5635,7 +4879,7 @@
         "reference" : "ValueSet/SourceOfAdmission-vista"
       },
       "name" : "SourceOfAdmission VistA",
-      "description" : "VistA Source ValueSet for Terminology Maps SourceOfAdmission",
+      "description" : "VistA Source ValueSet for Terminology Maps VF_SourceOfAdmission",
       "exampleBoolean" : false
     },
     {
@@ -6098,6 +5342,858 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VF-adminGender"
+      },
+      "name" : "VF_adminGender",
+      "description" : "Terminology Maps VF_adminGender",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VF-allergyActive"
+      },
+      "name" : "VF_allergyActive",
+      "description" : "Terminology Maps VF_allergyActive",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VF-allergyEnteredInError"
+      },
+      "name" : "VF_allergyEnteredInError",
+      "description" : "Terminology Maps VF_allergyEnteredInError",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VF-allergyMechanism"
+      },
+      "name" : "VF_allergyMechanism",
+      "description" : "Terminology Maps VF_allergyMechanism",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VF-allergySeverity"
+      },
+      "name" : "VF_allergySeverity",
+      "description" : "Terminology Maps VF_allergySeverity",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VF-allergySubstanceCategory"
+      },
+      "name" : "VF_allergySubstanceCategory",
+      "description" : "Terminology Maps VF_allergySubstanceCategory",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VF-allergyVerificationStatus"
+      },
+      "name" : "VF_allergyVerificationStatus",
+      "description" : "Terminology Maps VF_allergyVerificationStatus",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VF-AntibioticSensitivityInterpretation"
+      },
+      "name" : "VF_AntibioticSensitivityInterpretation",
+      "description" : "Terminology Maps VF_AntibioticSensitivityInterpretation",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VF-AppointmentCancellationReason"
+      },
+      "name" : "VF_AppointmentCancellationReason",
+      "description" : "Terminology Maps VF_AppointmentCancellationReason",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VF-AppointmentStatus"
+      },
+      "name" : "VF_AppointmentStatus",
+      "description" : "Terminology Maps VF_AppointmentStatus",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VF-ARBillStatus"
+      },
+      "name" : "VF_ARBillStatus",
+      "description" : "Terminology Maps VF_ARBillStatus",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VF-birthSex"
+      },
+      "name" : "VF_birthSex",
+      "description" : "Terminology Maps VF_birthSex",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VF-Boolean"
+      },
+      "name" : "VF_Boolean",
+      "description" : "Terminology Maps VF_Boolean",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VF-CommunicationQualifier"
+      },
+      "name" : "VF_CommunicationQualifier",
+      "description" : "Terminology Maps VF_CommunicationQualifier",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VF-CoverageRelationship"
+      },
+      "name" : "VF_CoverageRelationship",
+      "description" : "Terminology Maps VF_CoverageRelationship",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VF-CoverageStatusForce"
+      },
+      "name" : "VF_CoverageStatusForce",
+      "description" : "Terminology Maps VF_CoverageStatusForce",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VF-DentalDeviceStatus"
+      },
+      "name" : "VF_DentalDeviceStatus",
+      "description" : "Terminology Maps VF_DentalDeviceStatus",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VF-deviceTypePacemaker"
+      },
+      "name" : "VF_deviceTypePacemaker",
+      "description" : "Terminology Maps VF_deviceTypePacemaker",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VF-DiagnosticReportLabStatus"
+      },
+      "name" : "VF_DiagnosticReportLabStatus",
+      "description" : "Terminology Maps VF_DiagnosticReportLabStatus",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VF-documentReferencedocStatus"
+      },
+      "name" : "VF_documentReferencedocStatus",
+      "description" : "Terminology Maps VF_documentReferencedocStatus",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VF-DoseUnits"
+      },
+      "name" : "VF_DoseUnits",
+      "description" : "Terminology Maps VF_DoseUnits",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VF-encounterClass"
+      },
+      "name" : "VF_encounterClass",
+      "description" : "Terminology Maps VF_encounterClass",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VF-encounterParticipationType"
+      },
+      "name" : "VF_encounterParticipationType",
+      "description" : "Terminology Maps VF_encounterParticipationType",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VF-encounterProblemStatus"
+      },
+      "name" : "VF_encounterProblemStatus",
+      "description" : "Terminology Maps VF_encounterProblemStatus",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VF-encounterProblemVerificationStatus"
+      },
+      "name" : "VF_encounterProblemVerificationStatus",
+      "description" : "Terminology Maps VF_encounterProblemVerificationStatus",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VF-ethnicityCategory"
+      },
+      "name" : "VF_ethnicityCategory",
+      "description" : "Terminology Maps VF_ethnicityCategory",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VF-ExamResultInterpretation"
+      },
+      "name" : "VF_ExamResultInterpretation",
+      "description" : "Terminology Maps VF_ExamResultInterpretation",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VF-ExamStatus"
+      },
+      "name" : "VF_ExamStatus",
+      "description" : "Terminology Maps VF_ExamStatus",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VF-genderIdentity"
+      },
+      "name" : "VF_genderIdentity",
+      "description" : "Terminology Maps VF_genderIdentity",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VF-ICDCodingSystems"
+      },
+      "name" : "VF_ICDCodingSystems",
+      "description" : "Terminology Maps VF_ICDCodingSystems",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VF-ICDVersion"
+      },
+      "name" : "VF_ICDVersion",
+      "description" : "Terminology Maps VF_ICDVersion",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VF-ImageInterpretation"
+      },
+      "name" : "VF_ImageInterpretation",
+      "description" : "Terminology Maps VF_ImageInterpretation",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VF-ImageStatus"
+      },
+      "name" : "VF_ImageStatus",
+      "description" : "Terminology Maps VF_ImageStatus",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VF-ImageStatusRadNuc"
+      },
+      "name" : "VF_ImageStatusRadNuc",
+      "description" : "Terminology Maps VF_ImageStatusRadNuc",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VF-immunizationPrimarySource"
+      },
+      "name" : "VF_immunizationPrimarySource",
+      "description" : "Terminology Maps VF_immunizationPrimarySource",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VF-ImmunizationReaction"
+      },
+      "name" : "VF_ImmunizationReaction",
+      "description" : "Terminology Maps VF_ImmunizationReaction",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VF-immunizationStatusReason"
+      },
+      "name" : "VF_immunizationStatusReason",
+      "description" : "Terminology Maps VF_immunizationStatusReason",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VF-inferredCVX"
+      },
+      "name" : "VF_inferredCVX",
+      "description" : "Terminology Maps VF_inferredCVX",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VF-LabInterpretation"
+      },
+      "name" : "VF_LabInterpretation",
+      "description" : "Terminology Maps VF_LabInterpretation",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VF-LabObservationStatus"
+      },
+      "name" : "VF_LabObservationStatus",
+      "description" : "Terminology Maps VF_LabObservationStatus",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VF-LocationStatus"
+      },
+      "name" : "VF_LocationStatus",
+      "description" : "Terminology Maps VF_LocationStatus",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VF-MaritalStatus"
+      },
+      "name" : "VF_MaritalStatus",
+      "description" : "Terminology Maps VF_MaritalStatus",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VF-MicrobiologyUrineScreenResult"
+      },
+      "name" : "VF_MicrobiologyUrineScreenResult",
+      "description" : "Terminology Maps VF_MicrobiologyUrineScreenResult",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VF-OperatingRoomStatus"
+      },
+      "name" : "VF_OperatingRoomStatus",
+      "description" : "Terminology Maps VF_OperatingRoomStatus",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VF-OrderPatientClass"
+      },
+      "name" : "VF_OrderPatientClass",
+      "description" : "Terminology Maps VF_OrderPatientClass",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VF-OrganizationIdentifierType"
+      },
+      "name" : "VF_OrganizationIdentifierType",
+      "description" : "Terminology Maps VF_OrganizationIdentifierType",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VF-OutMedRequestStatus"
+      },
+      "name" : "VF_OutMedRequestStatus",
+      "description" : "Terminology Maps VF_OutMedRequestStatus",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VF-PersonIdentifierType"
+      },
+      "name" : "VF_PersonIdentifierType",
+      "description" : "Terminology Maps VF_PersonIdentifierType",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VF-PharmacyPersonType"
+      },
+      "name" : "VF_PharmacyPersonType",
+      "description" : "Terminology Maps VF_PharmacyPersonType",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VF-PractitionerCountry"
+      },
+      "name" : "VF_PractitionerCountry",
+      "description" : "Terminology Maps VF_PractitionerCountry",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VF-problemStatus"
+      },
+      "name" : "VF_problemStatus",
+      "description" : "Terminology Maps VF_problemStatus",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VF-problemVerificationStatus"
+      },
+      "name" : "VF_problemVerificationStatus",
+      "description" : "Terminology Maps VF_problemVerificationStatus",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VF-ProcedureCodeSystem"
+      },
+      "name" : "VF_ProcedureCodeSystem",
+      "description" : "Terminology Maps VF_ProcedureCodeSystem",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VF-providerGender"
+      },
+      "name" : "VF_providerGender",
+      "description" : "Terminology Maps VF_providerGender",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VF-raceCategory"
+      },
+      "name" : "VF_raceCategory",
+      "description" : "Terminology Maps VF_raceCategory",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VF-RadiologyProcedureStatus"
+      },
+      "name" : "VF_RadiologyProcedureStatus",
+      "description" : "Terminology Maps VF_RadiologyProcedureStatus",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VF-RefillRequestStatus"
+      },
+      "name" : "VF_RefillRequestStatus",
+      "description" : "Terminology Maps VF_RefillRequestStatus",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VF-Religion"
+      },
+      "name" : "VF_Religion",
+      "description" : "Terminology Maps VF_Religion",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VF-SmokingStatus"
+      },
+      "name" : "VF_SmokingStatus",
+      "description" : "Terminology Maps VF_SmokingStatus",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VF-SourceOfAdmission"
+      },
+      "name" : "VF_SourceOfAdmission",
+      "description" : "Terminology Maps VF_SourceOfAdmission",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VF-VitalsBodyPosition"
+      },
+      "name" : "VF_VitalsBodyPosition",
+      "description" : "Terminology Maps VF_VitalsBodyPosition",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VF-VitalsBodySite"
+      },
+      "name" : "VF_VitalsBodySite",
+      "description" : "Terminology Maps VF_VitalsBodySite",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VF-VitalsCodes"
+      },
+      "name" : "VF_VitalsCodes",
+      "description" : "Terminology Maps VF_VitalsCodes",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VF-VitalsCuffSize"
+      },
+      "name" : "VF_VitalsCuffSize",
+      "description" : "Terminology Maps VF_VitalsCuffSize",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VF-VitalsLaterality"
+      },
+      "name" : "VF_VitalsLaterality",
+      "description" : "Terminology Maps VF_VitalsLaterality",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VF-VitalsMeasurementDevice"
+      },
+      "name" : "VF_VitalsMeasurementDevice",
+      "description" : "Terminology Maps VF_VitalsMeasurementDevice",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VF-VitalsMethod"
+      },
+      "name" : "VF_VitalsMethod",
+      "description" : "Terminology Maps VF_VitalsMethod",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VF-VitalsPrecondition"
+      },
+      "name" : "VF_VitalsPrecondition",
+      "description" : "Terminology Maps VF_VitalsPrecondition",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VF-VitalsQualifyingDevice"
+      },
+      "name" : "VF_VitalsQualifyingDevice",
+      "description" : "Terminology Maps VF_VitalsQualifyingDevice",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VF-VitalsUnits"
+      },
+      "name" : "VF_VitalsUnits",
+      "description" : "Terminology Maps VF_VitalsUnits",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VF-YesNo10"
+      },
+      "name" : "VF_YesNo10",
+      "description" : "Terminology Maps VF_YesNo10",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:logical"
       }],
       "reference" : {
@@ -6134,25 +6230,13 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ConceptMap"
-      }],
-      "reference" : {
-        "reference" : "ConceptMap/VistaNCPDPCoverageRelationship"
-      },
-      "name" : "VistaNCPDPCoverageRelationship",
-      "description" : "Terminology Maps VistaNCPDPCoverageRelationship",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
       }],
       "reference" : {
         "reference" : "ValueSet/VistaNCPDPCoverageRelationship"
       },
       "name" : "VistaNCPDPCoverageRelationship FHIR",
-      "description" : "FHIR Target ValueSet for Terminology Maps VistaNCPDPCoverageRelationship",
+      "description" : "FHIR Target ValueSet for Terminology Maps Vista_NCPDPCoverageRelationship",
       "exampleBoolean" : false
     },
     {
@@ -6164,7 +6248,19 @@
         "reference" : "ValueSet/VistaNCPDPCoverageRelationship-vista"
       },
       "name" : "VistaNCPDPCoverageRelationship VistA",
-      "description" : "VistA Source ValueSet for Terminology Maps VistaNCPDPCoverageRelationship",
+      "description" : "VistA Source ValueSet for Terminology Maps Vista_NCPDPCoverageRelationship",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/Vista-NCPDPCoverageRelationship"
+      },
+      "name" : "Vista_NCPDPCoverageRelationship",
+      "description" : "Terminology Maps Vista_NCPDPCoverageRelationship",
       "exampleBoolean" : false
     },
     {
@@ -6209,25 +6305,13 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ConceptMap"
-      }],
-      "reference" : {
-        "reference" : "ConceptMap/VitalsBodyPosition"
-      },
-      "name" : "VitalsBodyPosition",
-      "description" : "Terminology Maps VitalsBodyPosition",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
       }],
       "reference" : {
         "reference" : "ValueSet/VitalsBodyPosition"
       },
       "name" : "VitalsBodyPosition FHIR",
-      "description" : "FHIR Target ValueSet for Terminology Maps VitalsBodyPosition",
+      "description" : "FHIR Target ValueSet for Terminology Maps VF_VitalsBodyPosition",
       "exampleBoolean" : false
     },
     {
@@ -6239,19 +6323,7 @@
         "reference" : "ValueSet/VitalsBodyPosition-vista"
       },
       "name" : "VitalsBodyPosition VistA",
-      "description" : "VistA Source ValueSet for Terminology Maps VitalsBodyPosition",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ConceptMap"
-      }],
-      "reference" : {
-        "reference" : "ConceptMap/VitalsBodySite"
-      },
-      "name" : "VitalsBodySite",
-      "description" : "Terminology Maps VitalsBodySite",
+      "description" : "VistA Source ValueSet for Terminology Maps VF_VitalsBodyPosition",
       "exampleBoolean" : false
     },
     {
@@ -6263,7 +6335,7 @@
         "reference" : "ValueSet/VitalsBodySite"
       },
       "name" : "VitalsBodySite FHIR",
-      "description" : "FHIR Target ValueSet for Terminology Maps VitalsBodySite",
+      "description" : "FHIR Target ValueSet for Terminology Maps VF_VitalsBodySite",
       "exampleBoolean" : false
     },
     {
@@ -6275,19 +6347,7 @@
         "reference" : "ValueSet/VitalsBodySite-vista"
       },
       "name" : "VitalsBodySite VistA",
-      "description" : "VistA Source ValueSet for Terminology Maps VitalsBodySite",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ConceptMap"
-      }],
-      "reference" : {
-        "reference" : "ConceptMap/VitalsCodes"
-      },
-      "name" : "VitalsCodes",
-      "description" : "Terminology Maps VitalsCodes",
+      "description" : "VistA Source ValueSet for Terminology Maps VF_VitalsBodySite",
       "exampleBoolean" : false
     },
     {
@@ -6299,7 +6359,7 @@
         "reference" : "ValueSet/VitalsCodes"
       },
       "name" : "VitalsCodes FHIR",
-      "description" : "FHIR Target ValueSet for Terminology Maps VitalsCodes",
+      "description" : "FHIR Target ValueSet for Terminology Maps VF_VitalsCodes",
       "exampleBoolean" : false
     },
     {
@@ -6311,19 +6371,7 @@
         "reference" : "ValueSet/VitalsCodes-vista"
       },
       "name" : "VitalsCodes VistA",
-      "description" : "VistA Source ValueSet for Terminology Maps VitalsCodes",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ConceptMap"
-      }],
-      "reference" : {
-        "reference" : "ConceptMap/VitalsCuffSize"
-      },
-      "name" : "VitalsCuffSize",
-      "description" : "Terminology Maps VitalsCuffSize",
+      "description" : "VistA Source ValueSet for Terminology Maps VF_VitalsCodes",
       "exampleBoolean" : false
     },
     {
@@ -6335,7 +6383,7 @@
         "reference" : "ValueSet/VitalsCuffSize"
       },
       "name" : "VitalsCuffSize FHIR",
-      "description" : "FHIR Target ValueSet for Terminology Maps VitalsCuffSize",
+      "description" : "FHIR Target ValueSet for Terminology Maps VF_VitalsCuffSize",
       "exampleBoolean" : false
     },
     {
@@ -6347,19 +6395,7 @@
         "reference" : "ValueSet/VitalsCuffSize-vista"
       },
       "name" : "VitalsCuffSize VistA",
-      "description" : "VistA Source ValueSet for Terminology Maps VitalsCuffSize",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ConceptMap"
-      }],
-      "reference" : {
-        "reference" : "ConceptMap/VitalsLaterality"
-      },
-      "name" : "VitalsLaterality",
-      "description" : "Terminology Maps VitalsLaterality",
+      "description" : "VistA Source ValueSet for Terminology Maps VF_VitalsCuffSize",
       "exampleBoolean" : false
     },
     {
@@ -6371,7 +6407,7 @@
         "reference" : "ValueSet/VitalsLaterality"
       },
       "name" : "VitalsLaterality FHIR",
-      "description" : "FHIR Target ValueSet for Terminology Maps VitalsLaterality",
+      "description" : "FHIR Target ValueSet for Terminology Maps VF_VitalsLaterality",
       "exampleBoolean" : false
     },
     {
@@ -6383,19 +6419,7 @@
         "reference" : "ValueSet/VitalsLaterality-vista"
       },
       "name" : "VitalsLaterality VistA",
-      "description" : "VistA Source ValueSet for Terminology Maps VitalsLaterality",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ConceptMap"
-      }],
-      "reference" : {
-        "reference" : "ConceptMap/VitalsMeasurementDevice"
-      },
-      "name" : "VitalsMeasurementDevice",
-      "description" : "Terminology Maps VitalsMeasurementDevice",
+      "description" : "VistA Source ValueSet for Terminology Maps VF_VitalsLaterality",
       "exampleBoolean" : false
     },
     {
@@ -6407,7 +6431,7 @@
         "reference" : "ValueSet/VitalsMeasurementDevice"
       },
       "name" : "VitalsMeasurementDevice FHIR",
-      "description" : "FHIR Target ValueSet for Terminology Maps VitalsMeasurementDevice",
+      "description" : "FHIR Target ValueSet for Terminology Maps VF_VitalsMeasurementDevice",
       "exampleBoolean" : false
     },
     {
@@ -6419,19 +6443,7 @@
         "reference" : "ValueSet/VitalsMeasurementDevice-vista"
       },
       "name" : "VitalsMeasurementDevice VistA",
-      "description" : "VistA Source ValueSet for Terminology Maps VitalsMeasurementDevice",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ConceptMap"
-      }],
-      "reference" : {
-        "reference" : "ConceptMap/VitalsMethod"
-      },
-      "name" : "VitalsMethod",
-      "description" : "Terminology Maps VitalsMethod",
+      "description" : "VistA Source ValueSet for Terminology Maps VF_VitalsMeasurementDevice",
       "exampleBoolean" : false
     },
     {
@@ -6443,7 +6455,7 @@
         "reference" : "ValueSet/VitalsMethod"
       },
       "name" : "VitalsMethod FHIR",
-      "description" : "FHIR Target ValueSet for Terminology Maps VitalsMethod",
+      "description" : "FHIR Target ValueSet for Terminology Maps VF_VitalsMethod",
       "exampleBoolean" : false
     },
     {
@@ -6455,19 +6467,7 @@
         "reference" : "ValueSet/VitalsMethod-vista"
       },
       "name" : "VitalsMethod VistA",
-      "description" : "VistA Source ValueSet for Terminology Maps VitalsMethod",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ConceptMap"
-      }],
-      "reference" : {
-        "reference" : "ConceptMap/VitalsPrecondition"
-      },
-      "name" : "VitalsPrecondition",
-      "description" : "Terminology Maps VitalsPrecondition",
+      "description" : "VistA Source ValueSet for Terminology Maps VF_VitalsMethod",
       "exampleBoolean" : false
     },
     {
@@ -6479,7 +6479,7 @@
         "reference" : "ValueSet/VitalsPrecondition"
       },
       "name" : "VitalsPrecondition FHIR",
-      "description" : "FHIR Target ValueSet for Terminology Maps VitalsPrecondition",
+      "description" : "FHIR Target ValueSet for Terminology Maps VF_VitalsPrecondition",
       "exampleBoolean" : false
     },
     {
@@ -6491,19 +6491,7 @@
         "reference" : "ValueSet/VitalsPrecondition-vista"
       },
       "name" : "VitalsPrecondition VistA",
-      "description" : "VistA Source ValueSet for Terminology Maps VitalsPrecondition",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ConceptMap"
-      }],
-      "reference" : {
-        "reference" : "ConceptMap/VitalsQualifyingDevice"
-      },
-      "name" : "VitalsQualifyingDevice",
-      "description" : "Terminology Maps VitalsQualifyingDevice",
+      "description" : "VistA Source ValueSet for Terminology Maps VF_VitalsPrecondition",
       "exampleBoolean" : false
     },
     {
@@ -6515,7 +6503,7 @@
         "reference" : "ValueSet/VitalsQualifyingDevice"
       },
       "name" : "VitalsQualifyingDevice FHIR",
-      "description" : "FHIR Target ValueSet for Terminology Maps VitalsQualifyingDevice",
+      "description" : "FHIR Target ValueSet for Terminology Maps VF_VitalsQualifyingDevice",
       "exampleBoolean" : false
     },
     {
@@ -6527,19 +6515,7 @@
         "reference" : "ValueSet/VitalsQualifyingDevice-vista"
       },
       "name" : "VitalsQualifyingDevice VistA",
-      "description" : "VistA Source ValueSet for Terminology Maps VitalsQualifyingDevice",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ConceptMap"
-      }],
-      "reference" : {
-        "reference" : "ConceptMap/VitalsUnits"
-      },
-      "name" : "VitalsUnits",
-      "description" : "Terminology Maps VitalsUnits",
+      "description" : "VistA Source ValueSet for Terminology Maps VF_VitalsQualifyingDevice",
       "exampleBoolean" : false
     },
     {
@@ -6551,7 +6527,7 @@
         "reference" : "ValueSet/VitalsUnits"
       },
       "name" : "VitalsUnits FHIR",
-      "description" : "FHIR Target ValueSet for Terminology Maps VitalsUnits",
+      "description" : "FHIR Target ValueSet for Terminology Maps VF_VitalsUnits",
       "exampleBoolean" : false
     },
     {
@@ -6563,7 +6539,19 @@
         "reference" : "ValueSet/VitalsUnits-vista"
       },
       "name" : "VitalsUnits VistA",
-      "description" : "VistA Source ValueSet for Terminology Maps VitalsUnits",
+      "description" : "VistA Source ValueSet for Terminology Maps VF_VitalsUnits",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/VSResourceServiceConnection"
+      },
+      "name" : "VSResourceServiceConnection",
+      "description" : "FHIR ValueSet for Extension ResourceServiceConnection",
       "exampleBoolean" : false
     },
     {
@@ -6605,25 +6593,13 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ConceptMap"
-      }],
-      "reference" : {
-        "reference" : "ConceptMap/YesNo10"
-      },
-      "name" : "YesNo10",
-      "description" : "Terminology Maps YesNo10",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
       }],
       "reference" : {
         "reference" : "ValueSet/YesNo10"
       },
       "name" : "YesNo10 FHIR",
-      "description" : "FHIR Target ValueSet for Terminology Maps YesNo10",
+      "description" : "FHIR Target ValueSet for Terminology Maps VF_YesNo10",
       "exampleBoolean" : false
     },
     {
@@ -6635,7 +6611,7 @@
         "reference" : "ValueSet/YesNo10-vista"
       },
       "name" : "YesNo10 VistA",
-      "description" : "VistA Source ValueSet for Terminology Maps YesNo10",
+      "description" : "VistA Source ValueSet for Terminology Maps VF_YesNo10",
       "exampleBoolean" : false
     }],
     "page" : {

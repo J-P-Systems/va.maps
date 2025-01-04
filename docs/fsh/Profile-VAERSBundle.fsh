@@ -4,7 +4,7 @@ Id: VAERSBundle
 Title: "VAERS Bundle"
 Description: "This StructureDefinition contains the maps for ADERS to Bundle."
 * ^status = #draft
-* entry ^slicing.discriminator.type = #pattern
+* entry ^slicing.discriminator.type = #value
 * entry ^slicing.discriminator.path = "$this"
 * entry ^slicing.rules = #open
 * entry contains va-patient 0..1 and va-vac1 0..1 and va-vac2 0..1 and va-vac3 0..1 and va-vac4 0..1 and va-pvac1 0..1 and va-pvac2 0..1 and va-pvac3 0..1 and va-pvac4 0..1 and va-ae 0..1
