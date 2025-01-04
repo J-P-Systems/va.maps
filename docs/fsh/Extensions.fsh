@@ -1,3 +1,11 @@
+Instance: exp-params
+InstanceOf: Parameters
+Title: "Parameters for Terminology selection of US SNOMED CT"
+Description: "This parameter resource is used to specify the system version of US SNOMED CT to be used in the terminology service."
+Usage: #definition
+* parameter[0].name = "system-version"
+* parameter[0].valueUri = "http://snomed.info/sct|http://snomed.info/sct/731000124108"
+
 Extension: MedicationRequestPharmacyOrderStatus
 Id: medicationrequest-pharmacyOrderStatus
 Description: "Extension medicationrequest-pharmacyOrderStatus"
