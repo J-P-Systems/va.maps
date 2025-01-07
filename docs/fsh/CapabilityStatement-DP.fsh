@@ -4,7 +4,7 @@ Title: "Debt Portal"
 Usage: #definition
 * description = "This CapabilityStatement enumerates the profiles that the API should address, in the estimation of the enterprise mapping team. Some elements may not be appropriate for those cases; consult the actual API specification published by the API provider"
 * status = #draft
-* date = "2025-01-04T14:57:03.874Z"
+* date = "2025-01-07T16:25:25.205Z"
 * kind = #requirements
 * fhirVersion = #4.0.1
 * format[0] = #xml

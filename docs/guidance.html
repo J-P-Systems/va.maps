@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Guidance - US Veterans Administration FHIR Map Set Implementation Guide v1.1.468</title>
+    <title>Guidance - US Veterans Administration FHIR Map Set Implementation Guide v1.1.477</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -61,7 +61,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">US Veterans Administration FHIR Map Set Implementation Guide</span>
             <br/>
-            <span style="display:inline-block;">1.1.468 - 250201
+            <span style="display:inline-block;">1.1.477 - 250201
 
 
 
@@ -123,8 +123,18 @@
   <li>
     <a href="classes.html">Classes</a>
   </li>
-  <li>
-    <a href="artifacts.html">Artifacts</a>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">FHIR Artifacts
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="artifacts.html">Artifacts</a>
+      </li>
+      <li>
+        <a href="extensions.html">Extensions</a>
+      </li>
+    </ul>
   </li>
   <li>
     <a href="changes.html">Changes</a>
@@ -167,7 +177,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">US Veterans Administration FHIR Map Set Implementation Guide - Local Development build (v1.1.468) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">US Veterans Administration FHIR Map Set Implementation Guide - Local Development build (v1.1.477) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>Guidance</h2>
   
 
@@ -344,32 +354,34 @@ Write capabilities</li>
       <td>A</td>
       <td>VA data not coded</td>
       <td>CodeableConcept.text</td>
-      <td>CodeableConcept.text<br /> Map to code</td>
+      <td>CodeableConcept.text<br /> Map to code if possible</td>
       <td>Map to code<br /> VA value in extension</td>
     </tr>
     <tr>
       <td>B</td>
       <td>VA codes are standard</td>
-      <td>Code &amp; value in element<br /> Include system</td>
-      <td>Code &amp; value in element<br /> Include system</td>
+      <td>Code &amp; value in element<br /> Include standard system</td>
+      <td>Code &amp; value in element<br /> Include standard system</td>
       <td>Code in element</td>
     </tr>
     <tr>
       <td>C</td>
       <td>VA codes with standard translations</td>
-      <td>Code &amp; value in element<br /> Include system &amp; ‘selected’<br /> Optional standard coding</td>
-      <td>Code &amp; value in element<br /> Include system &amp; ‘selected’<br /> Include standard coding</td>
+      <td>VA Code &amp; value in element<br /> Include VistA system URL &amp; ‘selected’<br /> Standard coding if available</td>
+      <td>VA Code &amp; value in element<br /> Include VistA system URL &amp; ‘selected’<br /> Include standard coding</td>
       <td>Mapped code<br /> VA value in extension</td>
     </tr>
     <tr>
       <td>D</td>
       <td>VA codes without standard translations</td>
-      <td>Code &amp; value in element<br /> If no system available,  use VistA system scheme URL</td>
+      <td>VA Code &amp; value in element<br /> VistA system URL</td>
       <td>Required: Not supported<br /> Extensible: use VA value</td>
       <td>Not supported<br /> VA value in extension</td>
     </tr>
   </tbody>
 </table>
+
+<p>Note: if there is no standard translation, then no separate .coding element should be instantiated.</p>
 
 <h4 id="terminology-design-in-vista">Terminology design in VistA</h4>
 <p>Note that in some cases, the VistA file structure is quite complex, and we do not reproduce it exhaustively. Ethnicity, for instance, is field 2-6 ETHNICITY INFORMATION, which points to file 2.06 ETHNICITY INFORMATION, which contains field .01 ETHNICITY INFORMATION, which points to file 10.2 ETHNICITY, which contains the values. If this guide is ever enhanced to support automated transformations, it will be necessary to articulate all of those steps, but for human readers it suffices to map 2-6 to the FHIR property – in this case, the complex extension property  Patient.extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity].extension[ombCategory].</p>
@@ -382,11 +394,13 @@ Write capabilities</li>
 <ol>
   <li>US Core, with extensions</li>
   <li>FHIR Core</li>
-  <li>FHIR Core extensions</li>
-  <li>VA extensions</li>
+  <li>FHIR Core extensions (including <a href="https://hl7.org/fhir/versions.html#extensions">preadopt R5 elements</a>)</li>
+  <li><a href="extensions.html">VA extensions</a></li>
 </ol>
 
 <p>VA extensions will be necessary for more specialized use cases where VA processes require data not anticipated by FHIR core to be in the 80% of most common elements.</p>
+
+<p>Where it is necessary to create new extensions to express VA-defined semantics, the extension name should represent the context of the requirement, rather than any particular implementation technology. E.g., the VA pharmacy-specific prescription status, which is more granular than the standard FHIR status, is named medicationrequest-pharmacyOrderStatus.</p>
 
 <h3 id="fhir-design-decisons">FHIR design decisons</h3>
 
@@ -484,8 +498,7 @@ http://va.gov/identifiers
 
 <h4 id="structuredefinition-va-extensions">StructureDefinition (VA Extensions)</h4>
 
-<p>Defined in <a href="artifacts.html#structures-extension-definitions">this IG</a> using namespace http://va.gov/fhir/StructureDefinition/</p>
-
+<p>Defined in <a href="extensions.html">this IG</a> using namespace http://va.gov/fhir/StructureDefinition/</p>
 
 
 
@@ -505,7 +518,7 @@ http://va.gov/identifiers
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025 <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#1.1.468 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Sat, Jan 4, 2025 15:04+0000">2025-01-04</span>
+          IG &#169; 2025 <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#1.1.477 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Jan 7, 2025 16:27+0000">2025-01-07</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
