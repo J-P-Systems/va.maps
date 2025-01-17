@@ -72,8 +72,8 @@ Description: "FHIR ValueSet for Extension ResourceServiceConnection"
 * ^experimental = false
 * ^status = #active
 * ^name = "VSResourceServiceConnection"
-* include http://va.gov/fhir/vistaDefinedTerms/409.1#SC "Service Connected"
-* include http://va.gov/fhir/vistaDefinedTerms/409.1#NSC "Not Service Connected"
+* include http://va.gov/terminology/vistaDefinedTerms/409.1#SC "Service Connected"
+* include http://va.gov/terminology/vistaDefinedTerms/409.1#NSC "Not Service Connected"
 
 Extension: ResourceServiceConnection
 Id: resource-serviceConnection

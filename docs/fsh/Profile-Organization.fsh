@@ -13,7 +13,7 @@ Description: "This StructureDefinition contains the maps for VistA file INSTITUT
 * name and identifier[NPI].value and identifier[NPI].system and active and type and alias and address[va-physical].type and address[va-physical].line and address[va-physical].city and address[va-physical].district and address[va-physical].state and address[va-physical].postalCode and address[va-physical].country and contact.name.text and contact.telecom.value and contact.telecom.system and address[va-postal].type and address[va-postal].line and address[va-postal].city and address[va-postal].state and address[va-postal].postalCode and address[va-postal].country MS
 * identifier[NPI].system = "http://hl7.org/fhir/sid/us-npi"
 * active = true
-* type = #prov
+* type = http://terminology.hl7.org/CodeSystem/organization-type#prov
 * address[va-physical].type = #physical
 * contact.telecom.system = #phone
 * address[va-postal].type = #postal
@@ -26,7 +26,7 @@ Source: Organization
 * identifier[NPI].value -> "1252: source value based on INSTITUTION - NPI (4-41.99)" "Is mapCase used to indicate slice?"
 * identifier[NPI].system -> "1252-1: fixed value = http://hl7.org/fhir/sid/us-npi" "mapParameter row 1"
 * active -> "1253: fixed value = true"
-* type -> "1254: fixed value = #prov"
+* type -> "1254: fixed value = http://terminology.hl7.org/CodeSystem/organization-type#prov"
 * alias -> "1255: source value based on INSTITUTION - SHORT NAME (4-.05)"
 * address[va-physical].type -> "1257: fixed value = #physical"
 * address[va-physical].line -> "1258: source value based on INSTITUTION - STREET ADDR. 1 (4-1.01)"
