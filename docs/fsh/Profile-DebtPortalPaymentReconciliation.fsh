@@ -16,6 +16,7 @@ Description: "This StructureDefinition contains the maps for VistA file AR TRANS
 * extension[http://hl7.org/fhir/5.0/StructureDefinition/extension-PaymentReconciliation.allocation.target].valueReference only Reference(DebtPortalInvoice)
 * identifier.type.text = "Transaction Number"
 * status = #active
+* disposition obeys dppr-31-1982
 * extension[http://hl7.org/fhir/5.0/StructureDefinition/extension-PaymentReconciliation.allocation.identifier].valueIdentifier.type.text = "Bill Number"
 * detail[va-principal-collected].type.text = "Principal Collected"
 * detail[va-interest-collected].type.text = "Interest Collected"
@@ -23,32 +24,36 @@ Description: "This StructureDefinition contains the maps for VistA file AR TRANS
 * detail[va-marshal-collected].type.text = "Marshal Fee Collected"
 * detail[va-courtcost-collected].type.text = "Court Cost Collected"
 
+Invariant: dppr-31-1982
+Description: "If IEN = 34 OR 2 then source value from (433-12 > 430.3-.01)"
+Severity: #warning
+
 Mapping: source-to-DebtPortalPaymentReconciliation
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: DebtPortalPaymentReconciliation
-* identifier.value -> "1978: source value from AR TRANSACTION - TRANSACTION NUMBER (433-.01)"
-* identifier.type.text -> "1978-1: fixed value = Transaction Number" "from mapParameter 1"
+* identifier.value -> "1978: source value based on AR TRANSACTION - TRANSACTION NUMBER (433-.01)"
+* identifier.type.text -> "1978-1: fixed value = Transaction Number" "mapParameter row 1"
 * status -> "1980: fixed value = #active"
-* created -> "1984: source value from AR TRANSACTION - DATE ENTERED (433-19)"
-* extension[http://hl7.org/fhir/5.0/StructureDefinition/extension-PaymentReconciliation.paymentIssuer].valueReference -> "2032: reference from AR TRANSACTION - BILL NUMBER > ACCOUNTS RECEIVABLE - DEBTOR (433-.03 > 430-9)"
-* disposition -> "1982: source value from AR TRANSACTION - TRANSACTION TYPE > ACCOUNTS RECEIVABLE TRANS.TYPE - NAME (433-12 > 430.3-.01) case IEN = 34 OR 2" "Transaction type name = PAYMENT (IN FULL) when IEN = 34\nTransaction type name = PAYMENT (IN PART) when IEN = 2"
-* paymentDate -> "1981: source value from AR TRANSACTION - TRANSACTION DATE (433-11)"
-* paymentAmount -> "1983: source value from AR TRANSACTION - TRANS. AMOUNT (433-15)"
-* paymentIdentifier -> "1985: source value from AR TRANSACTION - RECEIPT # (433-13)"
-* extension[http://hl7.org/fhir/5.0/StructureDefinition/extension-PaymentReconciliation.allocation.identifier].valueIdentifier.value -> "1979: source value from AR TRANSACTION - BILL NUMBER (433-.03)"
-* extension[http://hl7.org/fhir/5.0/StructureDefinition/extension-PaymentReconciliation.allocation.identifier].valueIdentifier.type.text -> "1979-1: fixed value = Bill Number" "from mapParameter 1"
+* created -> "1984: source value based on AR TRANSACTION - DATE ENTERED (433-19)"
+* extension[http://hl7.org/fhir/5.0/StructureDefinition/extension-PaymentReconciliation.paymentIssuer].valueReference -> "2032: reference based on AR TRANSACTION - BILL NUMBER > ACCOUNTS RECEIVABLE - DEBTOR (433-.03 > 430-9)"
+* disposition -> "1982: source value based on AR TRANSACTION - TRANSACTION TYPE > ACCOUNTS RECEIVABLE TRANS.TYPE - NAME (433-12 > 430.3-.01) if IEN = 34 OR 2" "Transaction type name = PAYMENT (IN FULL) when IEN = 34\nTransaction type name = PAYMENT (IN PART) when IEN = 2"
+* paymentDate -> "1981: source value based on AR TRANSACTION - TRANSACTION DATE (433-11)"
+* paymentAmount -> "1983: source value based on AR TRANSACTION - TRANS. AMOUNT (433-15)"
+* paymentIdentifier -> "1985: source value based on AR TRANSACTION - RECEIPT # (433-13)"
+* extension[http://hl7.org/fhir/5.0/StructureDefinition/extension-PaymentReconciliation.allocation.identifier].valueIdentifier.value -> "1979: source value based on AR TRANSACTION - BILL NUMBER (433-.03)"
+* extension[http://hl7.org/fhir/5.0/StructureDefinition/extension-PaymentReconciliation.allocation.identifier].valueIdentifier.type.text -> "1979-1: fixed value = Bill Number" "mapParameter row 1"
 * extension[http://hl7.org/fhir/5.0/StructureDefinition/extension-PaymentReconciliation.allocation.target].valueReference -> "2041: reference"
-* detail[va-principal-collected].amount -> "1986: source value from AR TRANSACTION - PRIN.COLLECTED (433-31)"
-* detail[va-principal-collected].type.text -> "1986-1: fixed value = Principal Collected" "from mapParameter 1"
-* detail[va-interest-collected].amount -> "1987: source value from AR TRANSACTION - INTEREST COLLECTED (433-32)"
-* detail[va-interest-collected].type.text -> "1987-1: fixed value = Interest Collected" "from mapParameter 1"
-* detail[va-admin-collected].amount -> "1988: source value from AR TRANSACTION - ADMIN.COLLECTED (433-33)"
-* detail[va-admin-collected].type.text -> "1988-1: fixed value = Administrative Charge Collected" "from mapParameter 1"
-* detail[va-marshal-collected].amount -> "1989: source value from AR TRANSACTION - MARSHAL FEE COLLECTED (433-34)"
-* detail[va-marshal-collected].type.text -> "1989-1: fixed value = Marshal Fee Collected" "from mapParameter 1"
-* detail[va-courtcost-collected].amount -> "1990: source value from AR TRANSACTION - COURT COST COLLECTED (433-35)"
-* detail[va-courtcost-collected].type.text -> "1990-1: fixed value = Court Cost Collected" "from mapParameter 1"
+* detail[va-principal-collected].amount -> "1986: source value based on AR TRANSACTION - PRIN.COLLECTED (433-31)"
+* detail[va-principal-collected].type.text -> "1986-1: fixed value = Principal Collected" "mapParameter row 1"
+* detail[va-interest-collected].amount -> "1987: source value based on AR TRANSACTION - INTEREST COLLECTED (433-32)"
+* detail[va-interest-collected].type.text -> "1987-1: fixed value = Interest Collected" "mapParameter row 1"
+* detail[va-admin-collected].amount -> "1988: source value based on AR TRANSACTION - ADMIN.COLLECTED (433-33)"
+* detail[va-admin-collected].type.text -> "1988-1: fixed value = Administrative Charge Collected" "mapParameter row 1"
+* detail[va-marshal-collected].amount -> "1989: source value based on AR TRANSACTION - MARSHAL FEE COLLECTED (433-34)"
+* detail[va-marshal-collected].type.text -> "1989-1: fixed value = Marshal Fee Collected" "mapParameter row 1"
+* detail[va-courtcost-collected].amount -> "1990: source value based on AR TRANSACTION - COURT COST COLLECTED (433-35)"
+* detail[va-courtcost-collected].type.text -> "1990-1: fixed value = Court Cost Collected" "mapParameter row 1"
 
 Mapping: cdw-to-DebtPortalPaymentReconciliation
 Id: cdw

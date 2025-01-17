@@ -16,7 +16,7 @@ Mapping: source-to-VAERSabstract
 Id: aders
 Title: "VA Adverse Drug Event Reporting System (VA ADERS)"
 Source: VAERSabstract
-* patient -> "1876: reference from ADERS - 0_Pt_ICN_Full"
+* patient -> "1876: reference based on ADERS - 0_Pt_ICN_Full"
 * status -> "2026: fixed value = #completed" "because of must-support"
 * statusReason -> "2027: target not supported" "because of must-support: assume done"
 * primarySource -> "2028: fixed value = false" "because of must-support"

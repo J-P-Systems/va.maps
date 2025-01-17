@@ -41,7 +41,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","n/a","FiveWs.status"
 "Location.name","Location.name","","","",1,1,"Y","","Y","string {[]} {[]}
 ","Name of the location as used by humans","Name of the location as used by humans. Does not need to be unique.","If the name of a location changes, consider putting the old name in the alias column so that it can still be located through searches.","","","","","","","","",,,,,"",,,,"Location.name",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","2014: source value from OPERATING ROOM - NAME > HOSPITAL LOCATION - NAME (131.7-.01 > 44-.01)","Dim.OperatingRoom.OperatingRoomLocationIEN
+","2014: source value based on OPERATING ROOM - NAME > HOSPITAL LOCATION - NAME (131.7-.01 > 44-.01)","Dim.OperatingRoom.OperatingRoomLocationIEN
 Dim.Location.LocationName,Dim.Location.LocationName",".name"
 "Location.alias","Location.alias","","","",0,*,"","","","string {[]} {[]}
 ","A list of alternate names that the location is known as, or was known as, in the past","A list of alternate names that the location is known as, or was known as, in the past.","There are no dates associated with the alias/historic names, as this is not intended to track when names were used, but to assist in searching so that older names can still result in identifying the location.","Over time locations and organizations go through many changes and can be known by different names.
@@ -73,7 +73,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","./scheme"
 "Location.telecom.value","Location.telecom.value","","","",0,1,"Y","","Y","string {[]} {[]}
 ","The actual contact point details","The actual contact point details, in a form that is meaningful to the designated communication system (i.e. phone number or email address).","Additional text data such as phone extension numbers, or notes about use of the contact are sometimes included in the value.","Need to support legacy numbers that are not in a tightly controlled format.","","","","","","","",,,,,"",,,,"ContactPoint.value",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","2015: source value from OPERATING ROOM - TELEPHONE (131.7-3)","Dim.OperatingRoom.Telephone","./url"
+","2015: source value based on OPERATING ROOM - TELEPHONE (131.7-3)","Dim.OperatingRoom.Telephone","./url"
 "Location.telecom.use","Location.telecom.use","","","",0,1,"","Y","Y","code {[]} {[]}
 ","home | work | temp | old | mobile - purpose of this contact point","Identifies the purpose for the contact point.","Applications can assume that a contact is current unless it explicitly says that it is temporary or old.","Need to track the way a person uses this contact, so a user can choose which is appropriate for their purpose.","","","","","","","",,"required","Use of contact point.","http://hl7.org/fhir/ValueSet/contact-point-use|4.0.1","",,,,"ContactPoint.use",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","unique(./use)"
@@ -162,7 +162,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","2192: target not supported",".scopingEntity[classCode=ORG determinerKind=INSTANCE]"
 "Location.partOf","Location.partOf","","","",0,1,"Y","","","Reference {[]} {[CanonicalType[http://va.gov/fhir/StructureDefinition/Location]]}
 ","Another Location this one is physically a part of","Another Location of which this Location is physically a part of.","","For purposes of location, display and identification, knowing which locations are located within other locations is important.","","","","","","","",,,,,"",,,,"Location.partOf",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","2018: reference from OPERATING ROOM - NAME > HOSPITAL LOCATION - PRINCIPAL CLINIC (131.7-.01 > 44-1916)","Dim.OperatingRoom.OperatingRoomLocationIEN
+","2018: reference based on OPERATING ROOM - NAME > HOSPITAL LOCATION - PRINCIPAL CLINIC (131.7-.01 > 44-1916)","Dim.OperatingRoom.OperatingRoomLocationIEN
 Dim.Location.PrincipalLocationIEN",".inboundLink[typeCode=PART].source[classCode=SDLC]"
 "Location.hoursOfOperation","Location.hoursOfOperation","","","",0,*,"","","","BackboneElement {[]} {[]}
 ","What days/times during a week is this location usually open","What days/times during a week is this location usually open.","This type of information is commonly found published in directories and on websites informing customers when the facility is available.

@@ -15,7 +15,7 @@ Description: "This StructureDefinition contains the maps for VistA file REGISTER
 * subject obeys pr-18-1510
 
 Invariant: pr-18-1510
-Description: "70-.01: if 70-2 > 70.02 then null"
+Description: "If 70-2 > 70.02 then reference null based on (70-.01)"
 Severity: #warning
 
 Mapping: source-to-ProcedureRadiology
@@ -23,17 +23,17 @@ Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: ProcedureRadiology
 * status -> "1506: terminologyMaps using VF_RadiologyProcedureStatus on REGISTERED EXAMS - EXAMINATIONS > EXAMINATIONS - EXAM STATUS > EXAMINATION STATUS - STATUS (70.02-50 > 70.03-3 > 72-.01)"
-* statusReason.text -> "1507: source value from REGISTERED EXAMS - EXAMINATIONS > EXAMINATIONS - REASON FOR CANCELLATION > RAD/NUC MED REASON - REASON (70.02-50 > 70.03-3.5 > 75.2-.01)"
-* category.text -> "1508: source value from REGISTERED EXAMS - TYPE OF IMAGING > IMAGING TYPE - TYPE OF IMAGING (70.02-2 > 79.2-.01)"
-* code.coding -> "1509: source value from REGISTERED EXAMS - EXAMINATIONS > EXAMINATIONS - PROCEDURE > RAD/NUC MED PROCEDURES - CPT CODE > CPT (70.02-50 > 70.03-2 > 71-9 > 81-)"
-* code.coding.system -> "1509-1: fixed value = http://www.ama-assn.org/go/cpt" "from mapParameter 1"
-* code.coding.code -> "1509-2: source value from REGISTERED EXAMS - EXAMINATIONS > EXAMINATIONS - PROCEDURE > RAD/NUC MED PROCEDURES - CPT CODE > CPT - CPT CODE (70.02-50 > 70.03-2 > 71-9 > 81-.01)" "from mapParameter 2"
-* code.coding.display -> "1509-3: source value from REGISTERED EXAMS - EXAMINATIONS > EXAMINATIONS - PROCEDURE > RAD/NUC MED PROCEDURES - CPT CODE > CPT - SHORT NAME (70.02-50 > 70.03-2 > 71-9 > 81-2)" "from mapParameter 3"
-* subject -> "1510: reference from RAD/NUC MED PATIENT - NAME (70-.01) case 70-2 > 70.02"
-* encounter -> "1511: reference from REGISTERED EXAMS - EXAMINATIONS > EXAMINATIONS - VISIT (70.02-50 > 70.03-27)"
-* performedDateTime -> "1512: source value from REGISTERED EXAMS - EXAM DATE (70.02-.01)" "required if the status is 'completed' or 'in-progress'"
-* performer.actor -> "1513: reference from REGISTERED EXAMS - EXAMINATIONS > EXAMINATIONS - PRIMARY INTERPRETING STAFF (70.02-50 > 70.03-15)"
-* location -> "1514: reference from REGISTERED EXAMS - IMAGING LOCATION > IMAGING LOCATIONS - LOCATION (70.02-4 > 79.1-.01)"
+* statusReason.text -> "1507: source value based on REGISTERED EXAMS - EXAMINATIONS > EXAMINATIONS - REASON FOR CANCELLATION > RAD/NUC MED REASON - REASON (70.02-50 > 70.03-3.5 > 75.2-.01)"
+* category.text -> "1508: source value based on REGISTERED EXAMS - TYPE OF IMAGING > IMAGING TYPE - TYPE OF IMAGING (70.02-2 > 79.2-.01)"
+* code.coding -> "1509: source value based on REGISTERED EXAMS - EXAMINATIONS > EXAMINATIONS - PROCEDURE > RAD/NUC MED PROCEDURES - CPT CODE > CPT (70.02-50 > 70.03-2 > 71-9 > 81-)"
+* code.coding.system -> "1509-1: fixed value = http://www.ama-assn.org/go/cpt" "mapParameter row 1"
+* code.coding.code -> "1509-2: source value based on REGISTERED EXAMS - EXAMINATIONS > EXAMINATIONS - PROCEDURE > RAD/NUC MED PROCEDURES - CPT CODE > CPT - CPT CODE (70.02-50 > 70.03-2 > 71-9 > 81-.01)" "mapParameter row 2"
+* code.coding.display -> "1509-3: source value based on REGISTERED EXAMS - EXAMINATIONS > EXAMINATIONS - PROCEDURE > RAD/NUC MED PROCEDURES - CPT CODE > CPT - SHORT NAME (70.02-50 > 70.03-2 > 71-9 > 81-2)" "mapParameter row 3"
+* subject -> "1510: reference based on RAD/NUC MED PATIENT - NAME (70-.01) if 70-2 > 70.02"
+* encounter -> "1511: reference based on REGISTERED EXAMS - EXAMINATIONS > EXAMINATIONS - VISIT (70.02-50 > 70.03-27)"
+* performedDateTime -> "1512: source value based on REGISTERED EXAMS - EXAM DATE (70.02-.01)" "required if the status is 'completed' or 'in-progress'"
+* performer.actor -> "1513: reference based on REGISTERED EXAMS - EXAMINATIONS > EXAMINATIONS - PRIMARY INTERPRETING STAFF (70.02-50 > 70.03-15)"
+* location -> "1514: reference based on REGISTERED EXAMS - IMAGING LOCATION > IMAGING LOCATIONS - LOCATION (70.02-4 > 79.1-.01)"
 
 Mapping: cdw-to-ProcedureRadiology
 Id: cdw

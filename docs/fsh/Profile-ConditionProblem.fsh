@@ -21,7 +21,7 @@ Description: "This StructureDefinition contains the maps for VistA file PROBLEM 
 * verificationStatus from http://va.gov/fhir/ValueSet/problemVerificationStatus
 
 Invariant: cp-16-349
-Description: "9000011-1.07: if Not Null then #resolved"
+Description: "If (9000011-1.07) is Not Null then fixed value #resolved"
 Severity: #warning
 
 Mapping: source-to-ConditionProblem
@@ -29,22 +29,22 @@ Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: ConditionProblem
 * category[us-core] -> "1607: fixed value = http://terminology.hl7.org/CodeSystem/condition-category#problem-list-item"
-* identifier.value -> "345: source value from PROBLEM - IEN (9000011-.001)"
-* identifier.system -> "345-1: fixed value = http://va.gov/identifiers/$Sta3n/9000011" "from mapParameter 1"
-* clinicalStatus -> "349: fixed value = #resolved when PROBLEM - DATE RESOLVED (9000011-1.07) case Not Null" "dependency on 605?"
-* code.coding[va-icd] -> "365: source value from PROBLEM - DIAGNOSIS > ICD DIAGNOSIS (9000011-.01 > 80-)"
-* code.coding[va-icd].system -> "365-1: fixed value = urn:see-termmap-in-mapParameter" "from mapParameter 1"
-* code.coding[va-icd].code -> "365-2: source value from PROBLEM - DIAGNOSIS > ICD DIAGNOSIS - CODE NUMBER (9000011-.01 > 80-.01)" "from mapParameter 2"
-* code.coding.code -> "366: source value from PROBLEM - SNOMED CT CONCEPT CODE (9000011-80001)"
-* code.coding.system -> "366-1: fixed value = http://snomed.info/sct" "from mapParameter 1"
-* code.text -> "957: source value from PROBLEM - PROVIDER NARRATIVE (9000011-.05)"
-* subject -> "367: reference from PROBLEM - PATIENT NAME (9000011-.02)"
-* onsetDateTime -> "369: source value from PROBLEM - DATE OF ONSET (9000011-.13)"
-* recordedDate -> "371: source value from PROBLEM - DATE ENTERED (9000011-.08)"
-* recorder -> "373: source value from PROBLEM - RECORDING PROVIDER (9000011-1.04)"
+* identifier.value -> "345: source value based on PROBLEM - IEN (9000011-.001)"
+* identifier.system -> "345-1: fixed value = http://va.gov/identifiers/$Sta3n/9000011" "mapParameter row 1"
+* clinicalStatus -> "349: fixed value = #resolved when PROBLEM - DATE RESOLVED (9000011-1.07) if Not Null" "dependency on 605?"
+* code.coding[va-icd] -> "365: source value based on PROBLEM - DIAGNOSIS > ICD DIAGNOSIS (9000011-.01 > 80-)"
+* code.coding[va-icd].system -> "365-1: fixed value = urn:see-termmap-in-mapParameter" "mapParameter row 1"
+* code.coding[va-icd].code -> "365-2: source value based on PROBLEM - DIAGNOSIS > ICD DIAGNOSIS - CODE NUMBER (9000011-.01 > 80-.01)" "mapParameter row 2"
+* code.coding.code -> "366: source value based on PROBLEM - SNOMED CT CONCEPT CODE (9000011-80001)"
+* code.coding.system -> "366-1: fixed value = http://snomed.info/sct" "mapParameter row 1"
+* code.text -> "957: source value based on PROBLEM - PROVIDER NARRATIVE (9000011-.05)"
+* subject -> "367: reference based on PROBLEM - PATIENT NAME (9000011-.02)"
+* onsetDateTime -> "369: source value based on PROBLEM - DATE OF ONSET (9000011-.13)"
+* recordedDate -> "371: source value based on PROBLEM - DATE ENTERED (9000011-.08)"
+* recorder -> "373: source value based on PROBLEM - RECORDING PROVIDER (9000011-1.04)"
 * clinicalStatus -> "605: terminologyMaps using VF_problemStatus on PROBLEM - STATUS (9000011-.12)"
 * verificationStatus -> "611: terminologyMaps using VF_problemVerificationStatus on PROBLEM - CONDITION (9000011-1.02)"
-* abatementDateTime -> "1761: source value from PROBLEM - DATE RESOLVED (9000011-1.07)"
+* abatementDateTime -> "1761: source value based on PROBLEM - DATE RESOLVED (9000011-1.07)"
 * extension[assertedDate] -> "2042: target not supported" "auto added because of must-support"
 
 Mapping: cdw-to-ConditionProblem

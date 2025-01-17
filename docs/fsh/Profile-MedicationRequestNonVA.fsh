@@ -23,43 +23,48 @@ Description: "This StructureDefinition contains the maps for VistA file NON-VA M
 * reportedBoolean = true
 * requester.extension[http://hl7.org/fhir/StructureDefinition/data-absent-reason].valueCode = #unsupported
 * encounter.extension[http://hl7.org/fhir/StructureDefinition/data-absent-reason].valueCode = #unsupported
+* medicationCodeableConcept obeys mrnva-22-1732
 * status obeys mrnva-22-1737
 * status obeys mrnva-22-1738
 
+Invariant: mrnva-22-1732
+Description: "If 55.05-1 is null then source value from (55.05-.01)"
+Severity: #warning
+
 Invariant: mrnva-22-1737
-Description: "55.05-5: if NULL then #active"
+Description: "If (55.05-5) is NULL then fixed value #active"
 Severity: #warning
 
 Invariant: mrnva-22-1738
-Description: "55.05-5: if NOT NULL then #inactive"
+Description: "If (55.05-5) is NOT NULL then fixed value #inactive"
 Severity: #warning
 
 Mapping: source-to-MedicationRequestNonVA
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: MedicationRequestNonVA
-* identifier[va-order-number].value -> "1762: source value from NON-VA MEDS - ORDER NUMBER (55.05-7)" "Not required by US Core"
-* identifier[va-order-number].system -> "1762-1: fixed value = http://va.gov/identifiers/$Sta3n/55.05-7" "from mapParameter 1"
-* identifier[va-ien].value -> "1763: source value from NON-VA MEDS - IEN (55.05-.001)" "Not required by US Core"
-* identifier[va-ien].system -> "1763-1: fixed value = http://va.gov/identifiers/$Sta3n/55.05" "from mapParameter 1"
+* identifier[va-order-number].value -> "1762: source value based on NON-VA MEDS - ORDER NUMBER (55.05-7)" "Not required by US Core"
+* identifier[va-order-number].system -> "1762-1: fixed value = http://va.gov/identifiers/$Sta3n/55.05-7" "mapParameter row 1"
+* identifier[va-ien].value -> "1763: source value based on NON-VA MEDS - IEN (55.05-.001)" "Not required by US Core"
+* identifier[va-ien].system -> "1763-1: fixed value = http://va.gov/identifiers/$Sta3n/55.05" "mapParameter row 1"
 * intent -> "1540: fixed value = #plan" "Revisit this if we can influence US Core"
 * reportedBoolean -> "1347: fixed value = true"
 * requester.extension[http://hl7.org/fhir/StructureDefinition/data-absent-reason].valueCode -> "1730: fixed value = #unsupported"
 * encounter.extension[http://hl7.org/fhir/StructureDefinition/data-absent-reason].valueCode -> "1731: fixed value = #unsupported"
-* medicationCodeableConcept -> "1732: source value from NON-VA MEDS - ORDERABLE ITEM (55.05-.01) case 55.05-1 is null"
-* medicationCodeableConcept -> "1733: source value from NON-VA MEDS - DISPENSE DRUG (55.05-1)"
-* dosageInstruction.doseAndRate.doseQuantity.extension[http://hl7.org/fhir/StructureDefinition/originalText] -> "1734: source value from NON-VA MEDS - DOSAGE (55.05-2)"
-* dosageInstruction.route.text -> "1735: source value from NON-VA MEDS - MEDICATION ROUTE (55.05-3)"
-* dosageInstruction.timing.code.text -> "1736: source value from NON-VA MEDS - SCHEDULE (55.05-4)"
-* status -> "1737: fixed value = #active when NON-VA MEDS - STATUS (55.05-5) case NULL" "use status, not discontinue date"
-* status -> "1738: fixed value = #inactive when NON-VA MEDS - STATUS (55.05-5) case NOT NULL" "use status, not discontinue date"
-* authoredOn -> "1741: source value from NON-VA MEDS - DOCUMENTED DATE (55.05-11)"
-* recorder -> "1742: reference from NON-VA MEDS - DOCUMENTED BY (55.05-12)"
-* note -> "1743: source value from NON-VA MEDS - COMMENTS (55.05-14)" "Concatenate Disclaimer to end."
-* reasonCode.text -> "1744: source value from NON-VA MEDS - INDICATION FOR USE (55.05-15)"
-* dosageInstruction.text -> "1745: source value from NON-VA MEDS - SIG (55.05-16)"
-* note -> "1764: source value from NON-VA MEDS - DISCLAIMER (55.05-10)" "Concatenate to Comment. Delimit with a period."
-* extension[http://va.gov/fhir/StructureDefinition/medicationrequest-recordedLocation].valueReference -> "1765: reference from NON-VA MEDS - CLINIC (55.05-13)"
+* medicationCodeableConcept -> "1732: source value based on NON-VA MEDS - ORDERABLE ITEM (55.05-.01) if 55.05-1 is null"
+* medicationCodeableConcept -> "1733: source value based on NON-VA MEDS - DISPENSE DRUG (55.05-1)"
+* dosageInstruction.doseAndRate.doseQuantity.extension[http://hl7.org/fhir/StructureDefinition/originalText] -> "1734: source value based on NON-VA MEDS - DOSAGE (55.05-2)"
+* dosageInstruction.route.text -> "1735: source value based on NON-VA MEDS - MEDICATION ROUTE (55.05-3)"
+* dosageInstruction.timing.code.text -> "1736: source value based on NON-VA MEDS - SCHEDULE (55.05-4)"
+* status -> "1737: fixed value = #active when NON-VA MEDS - STATUS (55.05-5) if NULL" "use status, not discontinue date"
+* status -> "1738: fixed value = #inactive when NON-VA MEDS - STATUS (55.05-5) if NOT NULL" "use status, not discontinue date"
+* authoredOn -> "1741: source value based on NON-VA MEDS - DOCUMENTED DATE (55.05-11)"
+* recorder -> "1742: reference based on NON-VA MEDS - DOCUMENTED BY (55.05-12)"
+* note -> "1743: source value based on NON-VA MEDS - COMMENTS (55.05-14)" "Concatenate Disclaimer to end."
+* reasonCode.text -> "1744: source value based on NON-VA MEDS - INDICATION FOR USE (55.05-15)"
+* dosageInstruction.text -> "1745: source value based on NON-VA MEDS - SIG (55.05-16)"
+* note -> "1764: source value based on NON-VA MEDS - DISCLAIMER (55.05-10)" "Concatenate to Comment. Delimit with a period."
+* extension[http://va.gov/fhir/StructureDefinition/medicationrequest-recordedLocation].valueReference -> "1765: reference based on NON-VA MEDS - CLINIC (55.05-13)"
 * category -> "2177: target not supported" "auto added because of must-support"
 * category[us-core] -> "2178: target not supported" "auto added because of must-support"
 * reportedReference -> "2179: target not supported" "auto added because of must-support"

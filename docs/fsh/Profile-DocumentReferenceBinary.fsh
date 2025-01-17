@@ -11,8 +11,8 @@ Mapping: source-to-DocumentReferenceBinary
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: DocumentReferenceBinary
-* data -> "1725: source value from TIU DOCUMENT - REPORT TEXT (8925-2)"
-* contentType -> "1725-1: fixed value = #text/plain" "from mapParameter 1"
+* data -> "1725: source value based on TIU DOCUMENT - REPORT TEXT (8925-2)"
+* contentType -> "1725-1: fixed value = #text/plain" "mapParameter row 1"
 
 Mapping: sda-to-DocumentReferenceBinary
 Id: sda

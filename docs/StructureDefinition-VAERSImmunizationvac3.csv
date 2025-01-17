@@ -42,11 +42,11 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "Immunization.vaccineCode","Immunization.vaccineCode","","","",1,1,"Y","","Y","CodeableConcept {[]} {[]}
 ","Vaccine Product Type (bind to CVX)","Vaccine that was administered or was to be administered.","","","","","","","","","",,"extensible","","http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1010.6","",,,,"Immunization.vaccineCode",1,1,"us-core-5
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","1893: source value from ADERS - 17_Vac3_TypeBrand","Event.code","RXA-5",".code","FiveWs.what[x]","ClinicalDocument/component/StructuredBody/component/section/entry/substanceAdministration/consumable/manfacturedProduct/manufacturedMaterial/realmCode/code"
+","1893: source value based on ADERS - 17_Vac3_TypeBrand","Event.code","RXA-5",".code","FiveWs.what[x]","ClinicalDocument/component/StructuredBody/component/section/entry/substanceAdministration/consumable/manfacturedProduct/manufacturedMaterial/realmCode/code"
 "Immunization.patient","Immunization.patient","","Patient
 ","",1,1,"Y","","Y","Reference {[]} {[CanonicalType[http://va.gov/fhir/StructureDefinition/VAERSPatient]]}
 ","Who was immunized","The patient who either received or did not receive the immunization.","","","","","","","","","",,,,,"",,,,"Immunization.patient",1,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","1876: reference from ADERS - 0_Pt_ICN_Full","Event.subject","PID-3",".partipication[ttypeCode=].role","FiveWs.subject[x]","FiveWs.subject"
+","1876: reference based on ADERS - 0_Pt_ICN_Full","Event.subject","PID-3",".partipication[ttypeCode=].role","FiveWs.subject[x]","FiveWs.subject"
 "Immunization.encounter","Immunization.encounter","","","",0,1,"","","","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/Encounter]]}
 ","Encounter immunization was part of","The visit or admission or other contact between patient and health care provider the immunization was performed as part of.","","","","","","","","","",,,,,"",,,,"Immunization.encounter",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","Event.context","PV1-19","component->EncounterEvent","FiveWs.context"
@@ -99,19 +99,19 @@ Reference is intended to point to a structure that can potentially be expressed 
 ",".identifier"
 "Immunization.manufacturer.display","Immunization.manufacturer.display","","","",0,1,"Y","","Y","string {[]} {[]}
 ","Text alternative for the resource","Plain text narrative that identifies the resource in addition to the resource reference.","This is generally not the same as the Resource.text of the referenced resource.  The purpose is to identify what's being referenced, not to fully describe it.","","","","","","","","",,,,,"",,,,"Reference.display",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","1894: source value from ADERS - 17_Vac3_Mfgr","N/A"
+","1894: source value based on ADERS - 17_Vac3_Mfgr","N/A"
 "Immunization.lotNumber","Immunization.lotNumber","","","",0,1,"Y","","","string {[]} {[]}
 ","Vaccine lot number","Lot number of the  vaccine product.","","","","","","","","","",,,,,"",,,,"Immunization.lotNumber",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","1895: source value from ADERS - 17_Vac3_Lot","RXA-15",".participation[typeCode=CSM].role[classCode=INST].scopedRole.scoper[classCode=MMAT].id","ClinicalDocument/component/StructuredBody/component/section/entry/substanceAdministration/consumable/manfacturedProduct/manufacturedMaterial/lotNumberText"
+","1895: source value based on ADERS - 17_Vac3_Lot","RXA-15",".participation[typeCode=CSM].role[classCode=INST].scopedRole.scoper[classCode=MMAT].id","ClinicalDocument/component/StructuredBody/component/section/entry/substanceAdministration/consumable/manfacturedProduct/manufacturedMaterial/lotNumberText"
 "Immunization.expirationDate","Immunization.expirationDate","","","",0,1,"","","","date {[]} {[]}
 ","Vaccine expiration date","Date vaccine batch expires.","","","","","","","","","",,,,,"",,,,"Immunization.expirationDate",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","RXA-16",".participation[typeCode=CSM].role[classCode=INST].scopedRole.scoper[classCode=MMAT].expirationTime"
 "Immunization.site","Immunization.site","","","",0,1,"Y","","","CodeableConcept {[]} {[]}
 ","Body site vaccine  was administered","Body site where vaccine was administered.","","","","","","","","","",,"example","The site at which the vaccine was administered.","http://hl7.org/fhir/ValueSet/immunization-site","",,,,"Immunization.site",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","1897: source value from ADERS - 17_Vac3_Site","RXR-2","observation.targetSiteCode","ClinicalDocument/component/StructuredBody/component/section/entry/substanceAdministration/approachSiteCode/code"
+","1897: source value based on ADERS - 17_Vac3_Site","RXR-2","observation.targetSiteCode","ClinicalDocument/component/StructuredBody/component/section/entry/substanceAdministration/approachSiteCode/code"
 "Immunization.route","Immunization.route","","","",0,1,"Y","","","CodeableConcept {[]} {[]}
 ","How vaccine entered body","The path by which the vaccine product is taken into the body.","","","","","","","","","",,"example","The route by which the vaccine was administered.","http://hl7.org/fhir/ValueSet/immunization-route","",,,,"Immunization.route",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","1896: source value from ADERS - 17_Vac3_Route","RXR-1",".routeCode","ClinicalDocument/component/StructuredBody/component/section/entry/substanceAdministration/routeCode/code"
+","1896: source value based on ADERS - 17_Vac3_Route","RXR-1",".routeCode","ClinicalDocument/component/StructuredBody/component/section/entry/substanceAdministration/routeCode/code"
 "Immunization.doseQuantity","Immunization.doseQuantity","","","",0,1,"","","","Quantity {[CanonicalType[http://hl7.org/fhir/StructureDefinition/SimpleQuantity]]} {[]}
 ","Amount of vaccine administered","The quantity of vaccine product that was administered.","","","","","","","","","",,,,,"",,,,"Immunization.doseQuantity",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","RXA-6 / RXA-7",".doseQuantity"
@@ -238,7 +238,7 @@ string {[]} {[]}","Dose number within series","Nominal position in a series.","T
 ","N/A"
 "Immunization.protocolApplied.doseNumber[x]:doseNumberString","Immunization.protocolApplied.doseNumber[x]","doseNumberString","","",0,1,"Y","","","string {[]} {[]}
 ","Dose number within series","Nominal position in a series.","The use of an integer is preferred if known. A string should only be used in cases where an integer is not available (such as when documenting a recurring booster dose).","","","","","","","","",,,,,"",,,,"Immunization.protocolApplied.doseNumber[x]",1,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","1898: source value from ADERS - 17_Vac3_DoseInSeries","N/A"
+","1898: source value based on ADERS - 17_Vac3_DoseInSeries","N/A"
 "Immunization.protocolApplied.seriesDoses[x]","Immunization.protocolApplied.seriesDoses[x]","","","",0,1,"","","","positiveInt {[]} {[]}
 string {[]} {[]}","Recommended number of doses for immunity","The recommended number of doses to achieve immunity.","The use of an integer is preferred if known. A string should only be used in cases where an integer is not available (such as when documenting a recurring booster dose).","","","","","","","","",,,,,"",,,,"Immunization.protocolApplied.seriesDoses[x]",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","N/A"

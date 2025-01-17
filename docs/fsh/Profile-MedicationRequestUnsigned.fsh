@@ -9,19 +9,24 @@ Description: "This StructureDefinition contains the maps for VistA file ORDER (1
 * identifier and subject and requester and authoredOn and priorPrescription and dosageInstruction.timing.repeat.boundsPeriod.start and dosageInstruction.timing.repeat.boundsPeriod.end and medicationCodeableConcept MS
 * subject only Reference(Patient)
 * requester only Reference(Practitioner)
+* identifier obeys mru-25-1225
+
+Invariant: mru-25-1225
+Description: "If package like 'PS%' & class 'I' & [exclude supply] then source value from (100-.01)"
+Severity: #warning
 
 Mapping: source-to-MedicationRequestUnsigned
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: MedicationRequestUnsigned
-* identifier -> "1225: source value from ORDER - ORDER # (100-.01) case package like 'PS%' & class 'I' & [exclude supply]" "confirm case"
-* subject -> "1226: reference from ORDER - OBJECT OF ORDER (100-.02)"
-* requester -> "1227: reference from ORDER - CURRENT AGENT/PROVIDER (100-1)"
-* authoredOn -> "1228: source value from ORDER - WHEN ENTERED (100-4)"
-* priorPrescription -> "1232: reference from ORDER - REPLACED ORDER (100-9)" "The specific MedicationRequestXxx profile to use depends on the source data"
-* dosageInstruction.timing.repeat.boundsPeriod.start -> "1234: source value from ORDER - START DATE (100-21)"
-* dosageInstruction.timing.repeat.boundsPeriod.end -> "1235: source value from ORDER - STOP DATE (100-22)"
-* medicationCodeableConcept -> "1549: source value from ORDER - ITEM ORDERED (100-7)" "confirm lookup"
+* identifier -> "1225: source value based on ORDER - ORDER # (100-.01) if package like 'PS%' & class 'I' & [exclude supply]" "confirm case"
+* subject -> "1226: reference based on ORDER - OBJECT OF ORDER (100-.02)"
+* requester -> "1227: reference based on ORDER - CURRENT AGENT/PROVIDER (100-1)"
+* authoredOn -> "1228: source value based on ORDER - WHEN ENTERED (100-4)"
+* priorPrescription -> "1232: reference based on ORDER - REPLACED ORDER (100-9)" "The specific MedicationRequestXxx profile to use depends on the source data"
+* dosageInstruction.timing.repeat.boundsPeriod.start -> "1234: source value based on ORDER - START DATE (100-21)"
+* dosageInstruction.timing.repeat.boundsPeriod.end -> "1235: source value based on ORDER - STOP DATE (100-22)"
+* medicationCodeableConcept -> "1549: source value based on ORDER - ITEM ORDERED (100-7)" "confirm lookup"
 * status -> "2168: target not supported" "auto added because of must-support"
 * intent -> "2169: target not supported" "auto added because of must-support"
 * category -> "2170: target not supported" "auto added because of must-support"

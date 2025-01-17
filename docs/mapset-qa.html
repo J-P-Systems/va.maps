@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Mapset Qa - US Veterans Administration FHIR Map Set Implementation Guide v1.1.478</title>
+    <title>Mapset Qa - US Veterans Administration FHIR Map Set Implementation Guide v1.1.487</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -61,7 +61,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">US Veterans Administration FHIR Map Set Implementation Guide</span>
             <br/>
-            <span style="display:inline-block;">1.1.478 - 250201
+            <span style="display:inline-block;">1.1.487 - 250201
 
 
 
@@ -177,7 +177,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">US Veterans Administration FHIR Map Set Implementation Guide - Local Development build (v1.1.478) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">US Veterans Administration FHIR Map Set Implementation Guide - Local Development build (v1.1.487) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>Mapset Qa</h2>
   
 
@@ -200,6 +200,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><a href="#vista-filefield-numnames" id="markdown-toc-vista-filefield-numnames">VistA File/Field Num/Names</a></li>
   <li><a href="#fhir-path-vs-parent" id="markdown-toc-fhir-path-vs-parent">FHIR Path vs Parent</a></li>
   <li><a href="#mustsupport" id="markdown-toc-mustsupport">MustSupport</a></li>
+  <li><a href="#generate-profile-files" id="markdown-toc-generate-profile-files">Generate Profile files</a></li>
   <li><a href="#capabilitystatements" id="markdown-toc-capabilitystatements">CapabilityStatements</a></li>
   <li><a href="#termmaps" id="markdown-toc-termmaps">TermMaps</a></li>
   <li><a href="#plantuml-files" id="markdown-toc-plantuml-files">PlantUML files</a></li>
@@ -241,7 +242,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li>WARN: 883 issue, inactive or target not supported should have a mapComment</li>
   <li>WARN: 884 issue, inactive or target not supported should have a mapComment</li>
   <li>WARN: 1726 issue, inactive or target not supported should have a mapComment</li>
-  <li>WARN: 332 not supported mapParameter format {NAME (9999999.14-.01)}</li>
+  <li>WARN: 332-1 not supported mapParameter format {NAME (9999999.14-.01)}</li>
   <li>ERROR: 1051 mapValue expected for transform</li>
   <li>WARN: 1483 issue, inactive or target not supported should have a mapComment</li>
   <li>WARN: 1487 issue, inactive or target not supported should have a mapComment</li>
@@ -276,15 +277,15 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li>WARN: 408 issue, inactive or target not supported should have a mapComment</li>
   <li>WARN: 409 issue, inactive or target not supported should have a mapComment</li>
   <li>WARN: 422 vistaFileFieldName requires ' - ' and fieldname</li>
-  <li>WARN: 1298 TODO: handle multiple codings</li>
-  <li>WARN: 1330 TODO: handle multiple codings</li>
-  <li>WARN: 1333 TODO: handle multiple codings</li>
-  <li>WARN: 1334 TODO: handle multiple codings</li>
-  <li>WARN: 1336 TODO: handle multiple codings</li>
-  <li>WARN: 1337 TODO: handle multiple codings</li>
-  <li>WARN: 1338 TODO: handle multiple codings</li>
-  <li>WARN: 1339 TODO: handle multiple codings</li>
-  <li>WARN: 1249 not supported mapParameter format {HEALTH FACTOR}</li>
+  <li>WARN: 1298-3 TODO: handle multiple codings</li>
+  <li>WARN: 1330-3 TODO: handle multiple codings</li>
+  <li>WARN: 1333-3 TODO: handle multiple codings</li>
+  <li>WARN: 1334-3 TODO: handle multiple codings</li>
+  <li>WARN: 1336-3 TODO: handle multiple codings</li>
+  <li>WARN: 1337-3 TODO: handle multiple codings</li>
+  <li>WARN: 1338-3 TODO: handle multiple codings</li>
+  <li>WARN: 1339-3 TODO: handle multiple codings</li>
+  <li>WARN: 1249-1 not supported mapParameter format {HEALTH FACTOR}</li>
   <li>WARN: 821 issue, inactive or target not supported should have a mapComment</li>
   <li>WARN: 1546 issue, inactive or target not supported should have a mapComment</li>
   <li>WARN: 1564 issue, inactive or target not supported should have a mapComment</li>
@@ -310,6 +311,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <h3 id="use-cases">Use Cases</h3>
 <ol>
   <li>WARN: use-case Vital Signs: CPM not found or inactive</li>
+  <li>WARN: profile Observation[virus] in use-case Lab Observation: Microbiology Virology not found or inactive</li>
 </ol>
 
 <h3 id="vista-filefield-numnames">VistA File/Field Num/Names</h3>
@@ -329,10 +331,54 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <h3 id="mustsupport">MustSupport</h3>
 <ol>
   <li>INFO: use-case "Lab Observation: Microbiology" is abstract skip MS check</li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Microbiology Mycology" missing map (or inactive</td>
+          <td>issue?) for MS Observation.valueQuantity</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Microbiology Mycology" missing map (or inactive</td>
+          <td>issue?) for MS Observation.valueCodeableConcept</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Microbiology Virology" missing map (or inactive</td>
+          <td>issue?) for MS Observation.valueQuantity</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>WARN: use-case "Lab Observation: Microbiology Virology" missing map (or inactive</td>
+          <td>issue?) for MS Observation.valueCodeableConcept</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
   <li>INFO: use-case "Implantable Device" is abstract skip MS check</li>
   <li>INFO: use-case "Lab Observation" is abstract skip MS check</li>
   <li>INFO: use-case "Observation Imaging Result" is abstract skip MS check</li>
   <li>INFO: use-case "VAERS: abstract" is abstract skip MS check</li>
+</ol>
+
+<h3 id="generate-profile-files">Generate Profile files</h3>
+<ol>
   <li>WARN: 557 profile AllergyIntolerance expected only vistaFile 120.8 but got 120.85</li>
   <li>WARN: 744 profile Appointment expected only vistaFile 2.98 but got 44.003</li>
   <li>WARN: 1722 profile Appointment expected only vistaFile 2.98 but got 2</li>
@@ -516,7 +562,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025 <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#1.1.478 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Jan 13, 2025 09:39+0000">2025-01-13</span>
+          IG &#169; 2025 <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#1.1.487 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Jan 17, 2025 12:09+0000">2025-01-17</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

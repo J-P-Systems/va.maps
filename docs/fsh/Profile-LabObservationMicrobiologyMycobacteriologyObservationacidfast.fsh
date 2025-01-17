@@ -13,7 +13,7 @@ Mapping: source-to-LabObservationMicrobiologyMycobacteriologyObservationacidfast
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: LabObservationMicrobiologyMycobacteriologyObservationacidfast
-* valueString -> "1519: source value from MICROBIOLOGY - ACID FAST STAIN (63.05-24)"
+* valueString -> "1519: source value based on MICROBIOLOGY - ACID FAST STAIN (63.05-24)"
 * code -> "1856: fixed value = http://loinc.org#11545-1 \"Microscopic observation [Identifier] in Specimen by Acid fast stain\""
 * status -> "2123: target not supported" "auto added because of must-support"
 * category -> "2124: target not supported" "auto added because of must-support"

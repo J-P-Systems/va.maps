@@ -9,23 +9,28 @@ Description: "This StructureDefinition contains the maps for VistA file AR TRANS
 * identifier ^slicing.rules = #open
 * identifier contains va-tn 0..1 and va-bn 0..1
 * enteredDate and code.text and identifier[va-tn].value and identifier[va-tn].type.text and identifier[va-bn].value and identifier[va-bn].type.text and status and occurrenceDateTime MS
+* code.text obeys dpci-28-1993
 * identifier[va-tn].type.text = "Transaction Number"
 * identifier[va-bn].type.text = "Bill Number"
 * status = #billed
+
+Invariant: dpci-28-1993
+Description: "If IEN = 12 OR 13 then source value from (433-12 > 430.3-.01)"
+Severity: #warning
 
 Mapping: source-to-DebtPortalChargeIteminterest
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: DebtPortalChargeIteminterest
-* enteredDate -> "1992: source value from AR TRANSACTION - DATE ENTERED (433-19)"
-* code.text -> "1993: source value from AR TRANSACTION - TRANSACTION TYPE > ACCOUNTS RECEIVABLE TRANS.TYPE - NAME (433-12 > 430.3-.01) case IEN = 12 OR 13" "Transaction type name = ADMIN.COST CHARGE when IEN = 12\nTransaction type name = INTEREST/ADM. CHARGE when IEN = 13"
-* identifier[va-tn].value -> "1994: source value from AR TRANSACTION - TRANSACTION NUMBER (433-.01)"
-* identifier[va-tn].type.text -> "1994-1: fixed value = Transaction Number" "from mapParameter 1"
-* identifier[va-bn].value -> "1995: source value from AR TRANSACTION - BILL NUMBER (433-.03)"
-* identifier[va-bn].type.text -> "1995-1: fixed value = Bill Number" "from mapParameter 1"
+* enteredDate -> "1992: source value based on AR TRANSACTION - DATE ENTERED (433-19)"
+* code.text -> "1993: source value based on AR TRANSACTION - TRANSACTION TYPE > ACCOUNTS RECEIVABLE TRANS.TYPE - NAME (433-12 > 430.3-.01) if IEN = 12 OR 13" "Transaction type name = ADMIN.COST CHARGE when IEN = 12\nTransaction type name = INTEREST/ADM. CHARGE when IEN = 13"
+* identifier[va-tn].value -> "1994: source value based on AR TRANSACTION - TRANSACTION NUMBER (433-.01)"
+* identifier[va-tn].type.text -> "1994-1: fixed value = Transaction Number" "mapParameter row 1"
+* identifier[va-bn].value -> "1995: source value based on AR TRANSACTION - BILL NUMBER (433-.03)"
+* identifier[va-bn].type.text -> "1995-1: fixed value = Bill Number" "mapParameter row 1"
 * status -> "1996: fixed value = #billed"
-* occurrenceDateTime -> "1997: source value from AR TRANSACTION - TRANSACTION DATE (433-11)"
-* enteredDate -> "1998: source value from AR TRANSACTION - DATE ENTERED (433-19)"
+* occurrenceDateTime -> "1997: source value based on AR TRANSACTION - TRANSACTION DATE (433-11)"
+* enteredDate -> "1998: source value based on AR TRANSACTION - DATE ENTERED (433-19)"
 
 Mapping: cdw-to-DebtPortalChargeIteminterest
 Id: cdw

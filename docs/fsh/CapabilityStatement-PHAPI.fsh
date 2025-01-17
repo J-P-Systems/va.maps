@@ -4,7 +4,7 @@ Title: "Lighthouse Patient Health API"
 Usage: #definition
 * description = "This CapabilityStatement enumerates the profiles that the API should address, in the estimation of the enterprise mapping team. Some elements may not be appropriate for those cases; consult the actual API specification published by the API provider"
 * status = #draft
-* date = "2025-01-13T09:34:00.842Z"
+* date = "2025-01-17T12:01:12.687Z"
 * kind = #requirements
 * fhirVersion = #4.0.1
 * format[0] = #xml
@@ -54,12 +54,10 @@ Usage: #definition
 * rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/LabObservationMicrobiologyBacteriologyObservationsputum"
 * rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/LabObservationMicrobiologyBacteriologyObservationgramstain"
 * rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/LabObservationMicrobiologyParasitologyObservation"
-* rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/LabObservationMicrobiologyMycologyObservationfungus"
 * rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/LabObservationMicrobiologyMycologyObservation"
 * rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/LabObservationMicrobiologyMycobacteriologyObservationmycobact"
 * rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/LabObservationMicrobiologyMycobacteriologyObservation"
 * rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/LabObservationMicrobiologyMycobacteriologyObservationacidfast"
-* rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/LabObservationMicrobiologyVirologyObservationvirus"
 * rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/LabObservationMicrobiologyVirologyObservation"
 * rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/LabObservationCytopathologyObservation"
 * rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/LabObservationObservation"

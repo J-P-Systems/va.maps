@@ -44,7 +44,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
 ","statusCode","n/a","FiveWs.status"
 "Patient.name","Patient.name","","","",0,*,"Y","","Y","HumanName {[]} {[]}
 ","A name associated with the patient","A name associated with the individual.","A patient may have multiple names with different uses or applicable periods. For animals, the name is a ""HumanName"" in the sense that is assigned and used by humans and has the same patterns.","Need to be able to track the patient by multiple names. Examples are your official name and a partner name.","","","","","","","",,,,,"",,,,"Patient.name",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","1827: source value from ACCOUNTS RECEIVABLE - DEBTOR > AR DEBTOR - DEBTOR (430-9 > 340-.01) case patient","IB.AccountsReceivable.ARDebtorIEN
+dpp-17-1827:If patient then source value from (430-9 > 340-.01) {null}","1827: source value based on ACCOUNTS RECEIVABLE - DEBTOR > AR DEBTOR - DEBTOR (430-9 > 340-.01) if patient","IB.AccountsReceivable.ARDebtorIEN
 Dim.ARDebtor.InstitutionIEN,Dim.ARDebtor.InsuranceCompanyIEN,Dim.ARDebtor.PatientIEN,Dim.ARDebtor.StaffIEN,Dim.ARDebtor.VendorIEN","name",".patient.name","PID-5, PID-9"
 "Patient.telecom","Patient.telecom","","","",0,*,"","","Y","ContactPoint {[]} {[]}
 ","A contact detail for the individual","A contact detail (e.g. a telephone number or an email address) by which the individual may be contacted.","A Patient may have multiple ways to be contacted with different uses or applicable periods.  May need to have options for contacting the person urgently and also to help with identification. The address might not go directly to the individual, but may reach another party that is able to proxy for the patient (i.e. home phone, or pet owner's phone).","People have (primary) ways to contact them in some way such as phone, email.","","","","","","","",,,,,"",,,,"Patient.telecom",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
@@ -110,7 +110,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","./scheme","XTN.3"
 "Patient.contact.telecom.value","Patient.contact.telecom.value","","","",0,1,"Y","","Y","string {[]} {[]}
 ","The actual contact point details","The actual contact point details, in a form that is meaningful to the designated communication system (i.e. phone number or email address).","Additional text data such as phone extension numbers, or notes about use of the contact are sometimes included in the value.","Need to support legacy numbers that are not in a tightly controlled format.","","","","","","","",,,,,"",,,,"ContactPoint.value",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","1825: source value from ACCOUNTS RECEIVABLE - DEBTOR > AR DEBTOR - PHONE NUMBER (430-9 > 340-1.07)","IB.AccountsReceivable.ARDebtorIEN","./url","XTN.1 (or XTN.12)"
+","1825: source value based on ACCOUNTS RECEIVABLE - DEBTOR > AR DEBTOR - PHONE NUMBER (430-9 > 340-1.07)","IB.AccountsReceivable.ARDebtorIEN","./url","XTN.1 (or XTN.12)"
 "Patient.contact.telecom.use","Patient.contact.telecom.use","","","",0,1,"","Y","Y","code {[]} {[]}
 ","home | work | temp | old | mobile - purpose of this contact point","Identifies the purpose for the contact point.","Applications can assume that a contact is current unless it explicitly says that it is temporary or old.","Need to track the way a person uses this contact, so a user can choose which is appropriate for their purpose.","","","","","","","",,"required","Use of contact point.","http://hl7.org/fhir/ValueSet/contact-point-use|4.0.1","",,,,"ContactPoint.use",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","unique(./use)","XTN.2 - but often indicated by field"
@@ -141,11 +141,11 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","./formatted","XAD.1 + XAD.2 + XAD.3 + XAD.4 + XAD.5 + XAD.6"
 "Patient.contact.address.line","Patient.contact.address.line","","","",0,*,"Y","","Y","string {[]} {[]}
 ","Street name, number, direction & P.O. Box etc.","This component contains the house number, apartment number, street name, street direction,  P.O. Box number, delivery hints, and similar address information.","","","","","","","<valueString xmlns=""http://hl7.org/fhir"" value=""137 Nowhere Street""/>","","",,,,,"",,,,"Address.line",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","1819: source value from ACCOUNTS RECEIVABLE - DEBTOR > AR DEBTOR - STREET ADDRESS #1 (430-9 > 340-1.01)","1820: source value from ACCOUNTS RECEIVABLE - DEBTOR > AR DEBTOR - STREET ADDRESS #2 (430-9 > 340-1.02)","1821: source value from ACCOUNTS RECEIVABLE - DEBTOR > AR DEBTOR - STREET ADDRESS #3 (430-9 > 340-1.03)","IB.AccountsReceivable.ARDebtorIEN","AD.part[parttype = AL]","XAD.1 + XAD.2 (note: XAD.1 and XAD.2 have different meanings for a company address than for a person address)"
+","1819: source value based on ACCOUNTS RECEIVABLE - DEBTOR > AR DEBTOR - STREET ADDRESS #1 (430-9 > 340-1.01)","1820: source value based on ACCOUNTS RECEIVABLE - DEBTOR > AR DEBTOR - STREET ADDRESS #2 (430-9 > 340-1.02)","1821: source value based on ACCOUNTS RECEIVABLE - DEBTOR > AR DEBTOR - STREET ADDRESS #3 (430-9 > 340-1.03)","IB.AccountsReceivable.ARDebtorIEN","AD.part[parttype = AL]","XAD.1 + XAD.2 (note: XAD.1 and XAD.2 have different meanings for a company address than for a person address)"
 "Patient.contact.address.city","Patient.contact.address.city","","Municpality
 ","",0,1,"Y","","Y","string {[]} {[]}
 ","Name of city, town etc.","The name of the city, town, suburb, village or other community or delivery center.","","","","","","","<valueString xmlns=""http://hl7.org/fhir"" value=""Erewhon""/>","","",,,,,"",,,,"Address.city",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","1822: source value from ACCOUNTS RECEIVABLE - DEBTOR > AR DEBTOR - CITY (430-9 > 340-1.04)","IB.AccountsReceivable.ARDebtorIEN","AD.part[parttype = CTY]","XAD.3"
+","1822: source value based on ACCOUNTS RECEIVABLE - DEBTOR > AR DEBTOR - CITY (430-9 > 340-1.04)","IB.AccountsReceivable.ARDebtorIEN","AD.part[parttype = CTY]","XAD.3"
 "Patient.contact.address.district","Patient.contact.address.district","","County
 ","",0,1,"","","Y","string {[]} {[]}
 ","District name (aka county)","The name of the administrative area (county).","District is sometimes known as county, but in some regions 'county' is used in place of city (municipality), so county name should be conveyed in city instead.","","","","","","<valueString xmlns=""http://hl7.org/fhir"" value=""Madison""/>","","",,,,,"",,,,"Address.district",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
@@ -153,14 +153,14 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "Patient.contact.address.state","Patient.contact.address.state","","Province
 Territory","",0,1,"Y","","Y","string {[]} {[]}
 ","Sub-unit of country (abbreviations ok)","Sub-unit of a country with limited sovereignty in a federally organized country. A code may be used if codes are in common use (e.g. US 2 letter state codes).","","","","","","","","","",,,,,"",,,,"Address.state",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","1823: source value from ACCOUNTS RECEIVABLE - DEBTOR > AR DEBTOR - STATE (430-9 > 340-1.05)","IB.AccountsReceivable.ARDebtorIEN","AD.part[parttype = STA]","XAD.4"
+","1823: source value based on ACCOUNTS RECEIVABLE - DEBTOR > AR DEBTOR - STATE (430-9 > 340-1.05)","IB.AccountsReceivable.ARDebtorIEN","AD.part[parttype = STA]","XAD.4"
 "Patient.contact.address.postalCode","Patient.contact.address.postalCode","","Zip
 ","",0,1,"Y","","Y","string {[]} {[]}
 ","Postal code for area","A postal code designating a region defined by the postal service.","","","","","","","<valueString xmlns=""http://hl7.org/fhir"" value=""9132""/>","","",,,,,"",,,,"Address.postalCode",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","1824: source value from ACCOUNTS RECEIVABLE - DEBTOR > AR DEBTOR - ZIP CODE (430-9 > 340-1.06)","IB.AccountsReceivable.ARDebtorIEN","AD.part[parttype = ZIP]","XAD.5"
+","1824: source value based on ACCOUNTS RECEIVABLE - DEBTOR > AR DEBTOR - ZIP CODE (430-9 > 340-1.06)","IB.AccountsReceivable.ARDebtorIEN","AD.part[parttype = ZIP]","XAD.5"
 "Patient.contact.address.country","Patient.contact.address.country","","","",0,1,"Y","","Y","string {[]} {[]}
 ","Country (e.g. can be ISO 3166 2 or 3 letter code)","Country - a nation as commonly understood or generally accepted.","ISO 3166 3 letter codes can be used in place of a human readable country name.","","","","","","","","",,,,,"",,,,"Address.country",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","1826: source value from ACCOUNTS RECEIVABLE - DEBTOR > AR DEBTOR - FOREIGN COUNTRY CODE (430-9 > 340-1.08)","IB.AccountsReceivable.ARDebtorIEN
+","1826: source value based on ACCOUNTS RECEIVABLE - DEBTOR > AR DEBTOR - FOREIGN COUNTRY CODE (430-9 > 340-1.08)","IB.AccountsReceivable.ARDebtorIEN
 Dim.ARDebtor.ForeignCountryCode","AD.part[parttype = CNT]","XAD.6"
 "Patient.contact.address.period","Patient.contact.address.period","","","",0,1,"","","Y","Period {[]} {[]}
 ","Time period when address was/is in use","Time period when address was/is in use.","","Allows addresses to be placed in historical context.","","","","","<valuePeriod xmlns=""http://hl7.org/fhir"">

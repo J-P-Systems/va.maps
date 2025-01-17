@@ -14,26 +14,26 @@ Description: "This StructureDefinition contains the maps for VistA file V LEAD I
 * type from http://va.gov/fhir/ValueSet/deviceTypePacemaker
 
 Invariant: idvl-22-1360
-Description: "698.1-56: if is NULL then #active"
+Description: "If (698.1-56) is is NULL then fixed value #active"
 Severity: #warning
 
 Invariant: idvl-22-1361
-Description: "698.1-56: if is not NULL then #inactive"
+Description: "If (698.1-56) is is not NULL then fixed value #inactive"
 Severity: #warning
 
 Mapping: source-to-ImplantableDeviceVLead
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: ImplantableDeviceVLead
-* identifier.value -> "1351: source value from V LEAD IMPLANT - IEN (698.1-.001)"
-* identifier.system -> "1351-1: fixed value = http://va.gov/identifiers/$Sta3n/698.1" "from mapParameter 1"
-* status -> "1360: fixed value = #active when V LEAD IMPLANT - EXPLANT DATE (698.1-56) case is NULL" "If NULL, can it be assumed it is active?"
-* status -> "1361: fixed value = #inactive when V LEAD IMPLANT - EXPLANT DATE (698.1-56) case is not NULL"
-* manufacturer -> "1369: source value from V LEAD IMPLANT - V LEAD MANUFACTURER > PACEMAKER MANUFACTURER - NAME (698.1-3 > 698.6-.01)"
-* serialNumber -> "1383: source value from V LEAD IMPLANT - V LEAD SERIAL NUMBER (698.1-4)"
-* modelNumber -> "1391: source value from V LEAD IMPLANT - V LEAD MODEL > PACEMAKER EQUIPMENT - MODEL NUMBER/NAME (698.1-2 > 698.4-.01)"
+* identifier.value -> "1351: source value based on V LEAD IMPLANT - IEN (698.1-.001)"
+* identifier.system -> "1351-1: fixed value = http://va.gov/identifiers/$Sta3n/698.1" "mapParameter row 1"
+* status -> "1360: fixed value = #active when V LEAD IMPLANT - EXPLANT DATE (698.1-56) if is NULL" "If NULL, can it be assumed it is active?"
+* status -> "1361: fixed value = #inactive when V LEAD IMPLANT - EXPLANT DATE (698.1-56) if is not NULL"
+* manufacturer -> "1369: source value based on V LEAD IMPLANT - V LEAD MANUFACTURER > PACEMAKER MANUFACTURER - NAME (698.1-3 > 698.6-.01)"
+* serialNumber -> "1383: source value based on V LEAD IMPLANT - V LEAD SERIAL NUMBER (698.1-4)"
+* modelNumber -> "1391: source value based on V LEAD IMPLANT - V LEAD MODEL > PACEMAKER EQUIPMENT - MODEL NUMBER/NAME (698.1-2 > 698.4-.01)"
 * type -> "1397: terminologyMaps using VF_deviceTypePacemaker on V LEAD IMPLANT - V LEAD MODEL > PACEMAKER EQUIPMENT - TYPE OF EQUIPMENT (698.1-2 > 698.4-1)" "A request for more specific SNOMED codes will be submitted (01/04/2023)"
-* patient -> "1402: reference from V LEAD IMPLANT - MEDICAL PATIENT (698.1-1)"
+* patient -> "1402: reference based on V LEAD IMPLANT - MEDICAL PATIENT (698.1-1)"
 * udiCarrier.deviceIdentifier -> "1353: target not supported"
 * status -> "1355: target not supported"
 * distinctIdentifier -> "1363: target not supported"

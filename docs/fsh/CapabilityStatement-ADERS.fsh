@@ -4,7 +4,7 @@ Title: "VA Adverse Drug Event Reporting System"
 Usage: #definition
 * description = "This CapabilityStatement enumerates the profiles that the API should address, in the estimation of the enterprise mapping team. Some elements may not be appropriate for those cases; consult the actual API specification published by the API provider"
 * status = #draft
-* date = "2025-01-13T09:34:00.860Z"
+* date = "2025-01-17T12:01:12.699Z"
 * kind = #requirements
 * fhirVersion = #4.0.1
 * format[0] = #xml

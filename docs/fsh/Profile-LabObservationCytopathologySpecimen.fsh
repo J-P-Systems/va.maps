@@ -10,8 +10,8 @@ Mapping: source-to-LabObservationCytopathologySpecimen
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: LabObservationCytopathologySpecimen
-* accessionIdentifier -> "1693: source value from CYTOPATHOLOGY - CYTOPATH ACC # (63.09-.06)"
-* type.text -> "1695: source value from CYTOPATHOLOGY - SPECIMEN > SPECIMEN - SPECIMEN (63.09-.012 > 63.902-.01)"
+* accessionIdentifier -> "1693: source value based on CYTOPATHOLOGY - CYTOPATH ACC # (63.09-.06)"
+* type.text -> "1695: source value based on CYTOPATHOLOGY - SPECIMEN > SPECIMEN - SPECIMEN (63.09-.012 > 63.902-.01)"
 
 Mapping: cdw-to-LabObservationCytopathologySpecimen
 Id: cdw

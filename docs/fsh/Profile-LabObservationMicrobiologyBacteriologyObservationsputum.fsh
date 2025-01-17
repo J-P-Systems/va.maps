@@ -12,7 +12,7 @@ Mapping: source-to-LabObservationMicrobiologyBacteriologyObservationsputum
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: LabObservationMicrobiologyBacteriologyObservationsputum
-* valueString -> "1517: source value from MICROBIOLOGY - SPUTUM SCREEN (63.05-11.58)"
+* valueString -> "1517: source value based on MICROBIOLOGY - SPUTUM SCREEN (63.05-11.58)"
 * status -> "2082: target not supported" "auto added because of must-support"
 * category -> "2083: target not supported" "auto added because of must-support"
 * category[Laboratory] -> "2084: target not supported" "auto added because of must-support"

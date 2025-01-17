@@ -10,15 +10,15 @@ Description: "This StructureDefinition contains the maps for VistA file MICROBIO
 * code obeys lommo-61-1526
 
 Invariant: lommo-61-1526
-Description: "63.05-.35 > 63.5-13 > 60-100 > 60.01-95.3 > 95.3-: if NULL then http://loinc.org#9825-1 \"Mycobacterium sp identified in Isolate\""
+Description: "If (63.05-.35 > 63.5-13 > 60-100 > 60.01-95.3 > 95.3-) is NULL then fixed value http://loinc.org#9825-1 \"Mycobacterium sp identified in Isolate\""
 Severity: #warning
 
 Mapping: source-to-LabObservationMicrobiologyMycobacteriologyObservationmycobact
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: LabObservationMicrobiologyMycobacteriologyObservationmycobact
-* code -> "1526: fixed value = http://loinc.org#9825-1 \"Mycobacterium sp identified in Isolate\" when MICROBIOLOGY - ORDERED TEST > ORDERED TEST - LAB TEST ORDERED > LABORATORY TEST - SITE/SPECIMEN > SITE/SPECIMEN - LOINC CODE > LAB LOINC (63.05-.35 > 63.5-13 > 60-100 > 60.01-95.3 > 95.3-) case NULL"
-* valueString -> "1859: source value from MICROBIOLOGY - MYCOBACTERIUM > MYCOBACTERIUM - MYCOBACTERIUM > ETIOLOGY FIELD - NAME (63.05-26 > 63.39-.01 > 61.2-.01)"
+* code -> "1526: fixed value = http://loinc.org#9825-1 \"Mycobacterium sp identified in Isolate\" when MICROBIOLOGY - ORDERED TEST > ORDERED TEST - LAB TEST ORDERED > LABORATORY TEST - SITE/SPECIMEN > SITE/SPECIMEN - LOINC CODE > LAB LOINC (63.05-.35 > 63.5-13 > 60-100 > 60.01-95.3 > 95.3-) if NULL"
+* valueString -> "1859: source value based on MICROBIOLOGY - MYCOBACTERIUM > MYCOBACTERIUM - MYCOBACTERIUM > ETIOLOGY FIELD - NAME (63.05-26 > 63.39-.01 > 61.2-.01)"
 * status -> "2112: target not supported" "auto added because of must-support"
 * category -> "2113: target not supported" "auto added because of must-support"
 * category[Laboratory] -> "2114: target not supported" "auto added because of must-support"

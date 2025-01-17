@@ -13,9 +13,9 @@ Mapping: source-to-MedRefillRequestMHVProvenancecreate
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: MedRefillRequestMHVProvenancecreate
-* recorded -> "1850: source value from PRESCRIPTION REFILL REQUEST - LOGIN DATE (52.43-11)"
-* activity -> "1850-1: fixed value = http://terminology.hl7.org/CodeSystem/v3-DataOperation#CREATE" "from mapParameter 1"
-* agent.who.type -> "1850-2: fixed value = http://hl7.org/fhir/StructureDefinition/Patient" "from mapParameter 2"
+* recorded -> "1850: source value based on PRESCRIPTION REFILL REQUEST - LOGIN DATE (52.43-11)"
+* activity -> "1850-1: fixed value = http://terminology.hl7.org/CodeSystem/v3-DataOperation#CREATE" "mapParameter row 1"
+* agent.who.type -> "1850-2: fixed value = http://hl7.org/fhir/StructureDefinition/Patient" "mapParameter row 2"
 * target -> "1865: reference"
 
 Mapping: cdw-to-MedRefillRequestMHVProvenancecreate

@@ -10,15 +10,15 @@ Description: "This StructureDefinition contains the maps for VistA file MICROBIO
 * code obeys lombo-57-1525
 
 Invariant: lombo-57-1525
-Description: "63.05-.35 > 63.5-13 > 60-100 > 60.01-95.3 > 95.3-: if NULL then http://loinc.org#42803-7 \"Bacteria identified in Isolate\""
+Description: "If (63.05-.35 > 63.5-13 > 60-100 > 60.01-95.3 > 95.3-) is NULL then fixed value http://loinc.org#42803-7 \"Bacteria identified in Isolate\""
 Severity: #warning
 
 Mapping: source-to-LabObservationMicrobiologyBacteriologyObservationbacteria
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: LabObservationMicrobiologyBacteriologyObservationbacteria
-* code -> "1525: fixed value = http://loinc.org#42803-7 \"Bacteria identified in Isolate\" when MICROBIOLOGY - ORDERED TEST > ORDERED TEST - LAB TEST ORDERED > LABORATORY TEST - SITE/SPECIMEN > SITE/SPECIMEN - LOINC CODE > LAB LOINC (63.05-.35 > 63.5-13 > 60-100 > 60.01-95.3 > 95.3-) case NULL"
-* valueString -> "1497: source value from MICROBIOLOGY - ORGANISM > ORGANISM - ORGANISM > ETIOLOGY FIELD - NAME (63.05-12 > 63.3-.01 > 61.2-.01)" "Where does organism quantity get mapped?\n\nPer LEAF 63, the values in the SNOMED field (61.2-2) are legacy versions of SNOMED with no URI; this will be maped to valueString rather than a codeable concept."
+* code -> "1525: fixed value = http://loinc.org#42803-7 \"Bacteria identified in Isolate\" when MICROBIOLOGY - ORDERED TEST > ORDERED TEST - LAB TEST ORDERED > LABORATORY TEST - SITE/SPECIMEN > SITE/SPECIMEN - LOINC CODE > LAB LOINC (63.05-.35 > 63.5-13 > 60-100 > 60.01-95.3 > 95.3-) if NULL"
+* valueString -> "1497: source value based on MICROBIOLOGY - ORGANISM > ORGANISM - ORGANISM > ETIOLOGY FIELD - NAME (63.05-12 > 63.3-.01 > 61.2-.01)" "Where does organism quantity get mapped?\n\nPer LEAF 63, the values in the SNOMED field (61.2-2) are legacy versions of SNOMED with no URI; this will be maped to valueString rather than a codeable concept."
 * status -> "2065: target not supported" "auto added because of must-support"
 * category -> "2066: target not supported" "auto added because of must-support"
 * category[Laboratory] -> "2067: target not supported" "auto added because of must-support"

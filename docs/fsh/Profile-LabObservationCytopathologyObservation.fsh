@@ -22,7 +22,7 @@ Source: LabObservationCytopathologyObservation
 * valueString -> "2158: target not supported" "auto added because of must-support"
 * category -> "843: fixed value = http://terminology.hl7.org/CodeSystem/observation-category#laboratory"
 * dataAbsentReason -> "2031: target not supported" "because of must-support"
-* subject -> "844: reference from PATIENT - LABORATORY REFERENCE > LAB DATA - LRDFN (2-63 > 63-.01)" "Pointer from PATIENT (2)"
+* subject -> "844: reference based on PATIENT - LABORATORY REFERENCE > LAB DATA - LRDFN (2-63 > 63-.01)" "Pointer from PATIENT (2)"
 
 Mapping: cdw-to-LabObservationCytopathologyObservation
 Id: cdw

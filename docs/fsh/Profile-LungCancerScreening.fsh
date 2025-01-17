@@ -15,10 +15,10 @@ Mapping: source-to-LungCancerScreening
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: LungCancerScreening
-* presentedForm -> "932: source value from TIU DOCUMENT - REPORT TEXT (8925-2)"
-* subject -> "933: reference from TIU DOCUMENT - PATIENT > PATIENT/IHS - NAME (8925-.02 > 9000001-.01)"
-* performer -> "934: reference from TIU DOCUMENT - AUTHOR/DICTATOR (8925-1202)"
-* encounter -> "935: reference from TIU DOCUMENT - VISIT (8925-.03)"
+* presentedForm -> "932: source value based on TIU DOCUMENT - REPORT TEXT (8925-2)"
+* subject -> "933: reference based on TIU DOCUMENT - PATIENT > PATIENT/IHS - NAME (8925-.02 > 9000001-.01)"
+* performer -> "934: reference based on TIU DOCUMENT - AUTHOR/DICTATOR (8925-1202)"
+* encounter -> "935: reference based on TIU DOCUMENT - VISIT (8925-.03)"
 * status -> "2159: target not supported" "auto added because of must-support"
 * category -> "2160: target not supported" "auto added because of must-support"
 * category[us-core] -> "2161: target not supported" "auto added because of must-support"

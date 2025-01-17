@@ -13,26 +13,31 @@ Description: "This StructureDefinition contains the maps for VistA file PENDING 
 * identifier.system = "http://va.gov/identifiers/$Sta3n/52.41-.01"
 * status = #draft
 * extension[http://va.gov/fhir/StructureDefinition/medicationrequest-pharmacyOrderStatus].valueCoding.system = "http://va.gov/terminology/vistaDefinedTerms/52.41-2"
+* medicationCodeableConcept obeys mrp-24-1753
+
+Invariant: mrp-24-1753
+Description: "If drug null then source value from (52.41-8)"
+Severity: #warning
 
 Mapping: source-to-MedicationRequestPending
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: MedicationRequestPending
-* identifier.value -> "1747: source value from PENDING OUTPATIENT ORDERS - PLACER NUMBER (52.41-.01)"
-* identifier.system -> "1747-1: fixed value = http://va.gov/identifiers/$Sta3n/52.41-.01" "from mapParameter 1"
+* identifier.value -> "1747: source value based on PENDING OUTPATIENT ORDERS - PLACER NUMBER (52.41-.01)"
+* identifier.system -> "1747-1: fixed value = http://va.gov/identifiers/$Sta3n/52.41-.01" "mapParameter row 1"
 * status -> "1748: fixed value = #draft"
-* extension[http://va.gov/fhir/StructureDefinition/medicationrequest-pharmacyOrderStatus].valueCoding.code -> "1749: source value from PENDING OUTPATIENT ORDERS - ORDER TYPE (52.41-2)"
-* extension[http://va.gov/fhir/StructureDefinition/medicationrequest-pharmacyOrderStatus].valueCoding.system -> "1749-1: fixed value = http://va.gov/terminology/vistaDefinedTerms/52.41-2" "from mapParameter 1"
-* recorder -> "1750: reference from PENDING OUTPATIENT ORDERS - ENTERED BY (52.41-4)"
-* requester -> "1751: reference from PENDING OUTPATIENT ORDERS - PROVIDER (52.41-5)"
-* dosageInstruction.timing.repeat.boundsPeriod.start -> "1752: source value from PENDING OUTPATIENT ORDERS - EFFECTIVE DATE (52.41-6)"
-* medicationCodeableConcept -> "1753: source value from PENDING OUTPATIENT ORDERS - PHARMACY ORDERABLE ITEM (52.41-8) case drug null"
-* medicationCodeableConcept -> "1754: source value from PENDING OUTPATIENT ORDERS - DRUG (52.41-11)"
-* dispenseRequest.quantity -> "1755: source value from PENDING OUTPATIENT ORDERS - QTY (52.41-12)"
-* dispenseRequest.numberOfRepeatsAllowed -> "1756: source value from PENDING OUTPATIENT ORDERS - # OF REFILLS (52.41-13)"
-* authoredOn -> "1757: source value from PENDING OUTPATIENT ORDERS - LOGIN DATE (52.41-15)"
-* dispenseRequest.expectedSupplyDuration -> "1758: source value from PENDING OUTPATIENT ORDERS - DAYS SUPPLY (52.41-101)"
-* note -> "1759: source value from PENDING OUTPATIENT ORDERS - PROVIDER COMMENTS (52.41-9)"
+* extension[http://va.gov/fhir/StructureDefinition/medicationrequest-pharmacyOrderStatus].valueCoding.code -> "1749: source value based on PENDING OUTPATIENT ORDERS - ORDER TYPE (52.41-2)"
+* extension[http://va.gov/fhir/StructureDefinition/medicationrequest-pharmacyOrderStatus].valueCoding.system -> "1749-1: fixed value = http://va.gov/terminology/vistaDefinedTerms/52.41-2" "mapParameter row 1"
+* recorder -> "1750: reference based on PENDING OUTPATIENT ORDERS - ENTERED BY (52.41-4)"
+* requester -> "1751: reference based on PENDING OUTPATIENT ORDERS - PROVIDER (52.41-5)"
+* dosageInstruction.timing.repeat.boundsPeriod.start -> "1752: source value based on PENDING OUTPATIENT ORDERS - EFFECTIVE DATE (52.41-6)"
+* medicationCodeableConcept -> "1753: source value based on PENDING OUTPATIENT ORDERS - PHARMACY ORDERABLE ITEM (52.41-8) if drug null"
+* medicationCodeableConcept -> "1754: source value based on PENDING OUTPATIENT ORDERS - DRUG (52.41-11)"
+* dispenseRequest.quantity -> "1755: source value based on PENDING OUTPATIENT ORDERS - QTY (52.41-12)"
+* dispenseRequest.numberOfRepeatsAllowed -> "1756: source value based on PENDING OUTPATIENT ORDERS - # OF REFILLS (52.41-13)"
+* authoredOn -> "1757: source value based on PENDING OUTPATIENT ORDERS - LOGIN DATE (52.41-15)"
+* dispenseRequest.expectedSupplyDuration -> "1758: source value based on PENDING OUTPATIENT ORDERS - DAYS SUPPLY (52.41-101)"
+* note -> "1759: source value based on PENDING OUTPATIENT ORDERS - PROVIDER COMMENTS (52.41-9)"
 * dosageInstruction.patientInstruction -> "1760: null"
 * intent -> "2197: target not supported" "auto added because of must-support"
 * category -> "2198: target not supported" "auto added because of must-support"

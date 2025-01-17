@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Guidance - US Veterans Administration FHIR Map Set Implementation Guide v1.1.478</title>
+    <title>Guidance - US Veterans Administration FHIR Map Set Implementation Guide v1.1.487</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -61,7 +61,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">US Veterans Administration FHIR Map Set Implementation Guide</span>
             <br/>
-            <span style="display:inline-block;">1.1.478 - 250201
+            <span style="display:inline-block;">1.1.487 - 250201
 
 
 
@@ -177,7 +177,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">US Veterans Administration FHIR Map Set Implementation Guide - Local Development build (v1.1.478) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">US Veterans Administration FHIR Map Set Implementation Guide - Local Development build (v1.1.487) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>Guidance</h2>
   
 
@@ -407,42 +407,42 @@ Write capabilities</li>
 <h4 id="uniform-resource-identifiers">Uniform Resource Identifiers</h4>
 
 <p>Different implementers may implement a variety of endpoints; these are subject to tactical constraints and are not addressed here. Definitional artifacts, however, require consistent definitional uris. For these artifacts, we define the VA FHIR definitional endpoint:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://va.gov/fhir/
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://va.gov/fhir/
 </code></pre></div></div>
 
 <p>This root supports definition of VA FHIR artifacts, e.g.,</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://va.gov/fhir/StructureDefinition/AllergyIntoleranc
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://va.gov/fhir/StructureDefinition/AllergyIntoleranc
 http://va.gov/fhir/ConceptMap/CMVFallergyActive
 http://va.gov/fhir/ValueSet/VSVFallergyActive
 </code></pre></div></div>
 
 <p>Value sets, field identification for question codes, and identifiers also require URIs. These hierarchies, however, are not specific to FHIR:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://va.gov/terminology/vistaDefinedTerms
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://va.gov/terminology/vistaDefinedTerms
 http://va.gov/terminology/vistaDefinedElements
 http://va.gov/identifiers
 </code></pre></div></div>
 
 <p>These subhierarchies support definition of artifacts specific to VistA fields. E.g., Patient religious preference is stored in VistA file 2, field .07, so the codes in that field have this system uri:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://va.gov/terminology/vistaDefinedTerms/2-.07
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://va.gov/terminology/vistaDefinedTerms/2-.07
 </code></pre></div></div>
 
 <h4 id="identifiers">Identifiers</h4>
 
 <p>Patient identifers are VA ICNs scoped by the VA OID:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"identifier" : [{
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"identifier" : [{
 	"system" : "urn:oid:2.16.840.1.113883.4.349",
 	"value" : "1015128742V345328"
 }],
 </code></pre></div></div>
 
 <p>This identifier can also describe the VA as an organization</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"identifier" : [{
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"identifier" : [{
 	"value" : "urn:oid:2.16.840.1.113883.4.349"
 }],
 </code></pre></div></div>
 
 <p>or scope its VAMCs:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"identifier" : [{
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"identifier" : [{
 	"system" : "urn:oid:2.16.840.1.113883.4.349",
 	"value" : "urn:oid:2.16.840.1.113883.4.349.7.508.430"
 }],
@@ -453,7 +453,7 @@ http://va.gov/identifiers
 <p>Other identifiers use the VistA file &amp; field concatenated to the VA root and the VAMC Sta3n. Because some interfaces do not provide maps to VistA files, we also provide a domain tag (practitioner, location, organization).</p>
 
 <p>E.g., for a Prescription (file 52) Rx# (field .01) under the Atlanta VAMC (508):</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"identifier" : [{
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"identifier" : [{
 	"system" : "http://va.gov/identifiers/prescription/508/52-.01",
 	"value" : "3603899"
 }],
@@ -518,7 +518,7 @@ http://va.gov/identifiers
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025 <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#1.1.478 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Jan 13, 2025 09:39+0000">2025-01-13</span>
+          IG &#169; 2025 <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#1.1.487 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Jan 17, 2025 12:09+0000">2025-01-17</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

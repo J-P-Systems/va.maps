@@ -13,8 +13,8 @@ Mapping: source-to-EncounterInpatientCondition
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: EncounterInpatientCondition
-* code -> "956: source value from PTF - PRINCIPAL DIAGNOSIS (45-79)" "Infer Condition; no clinical status ; updated category to encounter-diagnosis"
-* category -> "956-1: fixed value = http://terminology.hl7.org/CodeSystem/condition-category#encounter-diagnosis" "from mapParameter 1"
+* code -> "956: source value based on PTF - PRINCIPAL DIAGNOSIS (45-79)" "Infer Condition; no clinical status ; updated category to encounter-diagnosis"
+* category -> "956-1: fixed value = http://terminology.hl7.org/CodeSystem/condition-category#encounter-diagnosis" "mapParameter row 1"
 * extension[assertedDate] -> "2145: target not supported" "auto added because of must-support"
 * clinicalStatus -> "2146: target not supported" "auto added because of must-support"
 * verificationStatus -> "2147: target not supported" "auto added because of must-support"

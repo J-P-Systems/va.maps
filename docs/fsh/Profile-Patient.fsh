@@ -28,6 +28,7 @@ Description: "This StructureDefinition contains the maps for VistA file PATIENT 
 * telecom[va-work].use = #work
 * telecom[va-mobile].system = #phone
 * telecom[va-mobile].use = #mobile
+* deceasedDateTime obeys p-7-285
 * address[va-home].use = #home
 * address[va-home].type = #postal
 * managingOrganization.display = "Veterans Health Administration"
@@ -38,41 +39,45 @@ Description: "This StructureDefinition contains the maps for VistA file PATIENT 
 * maritalStatus from http://va.gov/fhir/ValueSet/MaritalStatus
 * extension[http://hl7.org/fhir/StructureDefinition/patient-religion].valueCodeableConcept from http://va.gov/fhir/ValueSet/Religion
 
+Invariant: p-7-285
+Description: "If not null then source value from (2-.351)"
+Severity: #warning
+
 Mapping: source-to-Patient
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: Patient
-* identifier.value -> "272: source value from PATIENT - INTEGRATION CONTROL NUMBER (2-991.01)"
-* identifier.system -> "272-1: fixed value = urn:oid:2.16.840.1.113883.4.349" "from mapParameter 1"
-* identifier.type.coding.code -> "272-2: fixed value = #MR" "from mapParameter 2"
-* identifier.type.coding.system -> "272-3: fixed value = http://terminology.hl7.org/CodeSystem/v2-0203" "from mapParameter 3"
-* name.text -> "273: source value from PATIENT - NAME (2-.01)"
-* name.family -> "273-1: fixed value = LAST" "from mapParameter 1"
-* name.given -> "273-2: fixed value = FIRST & MIDDLE" "from mapParameter 2"
-* name.suffix -> "273-3: fixed value = SUFFIX" "from mapParameter 3"
-* telecom[va-home].value -> "274: source value from PATIENT - PHONE NUMBER [RESIDENCE] (2-.131)"
-* telecom[va-home].system -> "274-1: fixed value = #phone" "from mapParameter 1"
-* telecom[va-home].use -> "274-2: fixed value = #home" "from mapParameter 2"
-* telecom[va-work].value -> "275: source value from PATIENT - PHONE NUMBER [WORK] (2-.132)"
-* telecom[va-work].system -> "275-1: fixed value = #phone" "from mapParameter 1"
-* telecom[va-work].use -> "275-2: fixed value = #work" "from mapParameter 2"
-* telecom[va-mobile].value -> "276: source value from PATIENT - PHONE NUMBER [CELLULAR] (2-.134)"
-* telecom[va-mobile].system -> "276-1: fixed value = #phone" "from mapParameter 1"
-* telecom[va-mobile].use -> "276-2: fixed value = #mobile" "from mapParameter 2"
-* birthDate -> "284: source value from PATIENT - DATE OF BIRTH (2-.03)"
-* deceasedDateTime -> "285: source value from PATIENT - DATE OF DEATH (2-.351) case not null" "removed \"true\" based on Validator testing 6/30/23"
-* address[va-home].line -> "286: source value from PATIENT - STREET ADDRESS [LINE 1] (2-.111)"
-* address[va-home].use -> "286-1: fixed value = #home" "from mapParameter 1"
-* address[va-home].type -> "286-2: fixed value = #postal" "from mapParameter 2"
-* address[va-home].line -> "287: source value from PATIENT - STREET ADDRESS [LINE 2] (2-.112)"
-* address[va-home].line -> "288: source value from PATIENT - STREET ADDRESS [LINE 3] (2-.113)"
-* address[va-home].city -> "289: source value from PATIENT - CITY (2-.114)"
-* address[va-home].state -> "290: source value from PATIENT - STATE (2-.115)"
-* address[va-home].postalCode -> "291: source value from PATIENT - ZIP+4 (2-.1112)"
-* address[va-home].country -> "292: source value from PATIENT - COUNTRY (2-.1173)" "confirm association with .111 etc."
-* address[va-home].period.start -> "293: source value from PATIENT - TEMPORARY ADDRESS START DATE (2-.1217)" "need other addresses, including temp; not just range"
-* address[va-home].period.end -> "294: source value from PATIENT - TEMPORARY ADDRESS END DATE (2-.1218)" "need other addresses, including temp; not just range"
-* communication.language -> "295: source value from PATIENT - LANGUAGE DATE/TIME > LANGUAGE DATE/TIME - PREFERRED LANGUAGE (2-7 > 2.07-.02)"
+* identifier.value -> "272: source value based on PATIENT - INTEGRATION CONTROL NUMBER (2-991.01)"
+* identifier.system -> "272-1: fixed value = urn:oid:2.16.840.1.113883.4.349" "mapParameter row 1"
+* identifier.type.coding.code -> "272-2: fixed value = #MR" "mapParameter row 2"
+* identifier.type.coding.system -> "272-3: fixed value = http://terminology.hl7.org/CodeSystem/v2-0203" "mapParameter row 3"
+* name.text -> "273: source value based on PATIENT - NAME (2-.01)"
+* name.family -> "273-1: fixed value = LAST" "mapParameter row 1"
+* name.given -> "273-2: fixed value = FIRST & MIDDLE" "mapParameter row 2"
+* name.suffix -> "273-3: fixed value = SUFFIX" "mapParameter row 3"
+* telecom[va-home].value -> "274: source value based on PATIENT - PHONE NUMBER [RESIDENCE] (2-.131)"
+* telecom[va-home].system -> "274-1: fixed value = #phone" "mapParameter row 1"
+* telecom[va-home].use -> "274-2: fixed value = #home" "mapParameter row 2"
+* telecom[va-work].value -> "275: source value based on PATIENT - PHONE NUMBER [WORK] (2-.132)"
+* telecom[va-work].system -> "275-1: fixed value = #phone" "mapParameter row 1"
+* telecom[va-work].use -> "275-2: fixed value = #work" "mapParameter row 2"
+* telecom[va-mobile].value -> "276: source value based on PATIENT - PHONE NUMBER [CELLULAR] (2-.134)"
+* telecom[va-mobile].system -> "276-1: fixed value = #phone" "mapParameter row 1"
+* telecom[va-mobile].use -> "276-2: fixed value = #mobile" "mapParameter row 2"
+* birthDate -> "284: source value based on PATIENT - DATE OF BIRTH (2-.03)"
+* deceasedDateTime -> "285: source value based on PATIENT - DATE OF DEATH (2-.351) if not null" "removed \"true\" based on Validator testing 6/30/23"
+* address[va-home].line -> "286: source value based on PATIENT - STREET ADDRESS [LINE 1] (2-.111)"
+* address[va-home].use -> "286-1: fixed value = #home" "mapParameter row 1"
+* address[va-home].type -> "286-2: fixed value = #postal" "mapParameter row 2"
+* address[va-home].line -> "287: source value based on PATIENT - STREET ADDRESS [LINE 2] (2-.112)"
+* address[va-home].line -> "288: source value based on PATIENT - STREET ADDRESS [LINE 3] (2-.113)"
+* address[va-home].city -> "289: source value based on PATIENT - CITY (2-.114)"
+* address[va-home].state -> "290: source value based on PATIENT - STATE (2-.115)"
+* address[va-home].postalCode -> "291: source value based on PATIENT - ZIP+4 (2-.1112)"
+* address[va-home].country -> "292: source value based on PATIENT - COUNTRY (2-.1173)" "confirm association with .111 etc."
+* address[va-home].period.start -> "293: source value based on PATIENT - TEMPORARY ADDRESS START DATE (2-.1217)" "need other addresses, including temp; not just range"
+* address[va-home].period.end -> "294: source value based on PATIENT - TEMPORARY ADDRESS END DATE (2-.1218)" "need other addresses, including temp; not just range"
+* communication.language -> "295: source value based on PATIENT - LANGUAGE DATE/TIME > LANGUAGE DATE/TIME - PREFERRED LANGUAGE (2-7 > 2.07-.02)"
 * managingOrganization.display -> "296: fixed value = Veterans Health Administration"
 * gender -> "555: terminologyMaps using VF_adminGender on PATIENT - SEX (2-.02)" "Map VA sex to FHIR gender; both are vague. For now."
 * extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-genderIdentity].valueCodeableConcept -> "1808: terminologyMaps using VF_genderIdentity on PATIENT - SELF IDENTIFIED GENDER (2-.024)"

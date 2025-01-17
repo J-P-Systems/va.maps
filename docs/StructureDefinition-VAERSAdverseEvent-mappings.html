@@ -7,7 +7,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>VAERS AdverseEvent - Mappings - US Veterans Administration FHIR Map Set Implementation Guide v1.1.478</title>
+    <title>VAERS AdverseEvent - Mappings - US Veterans Administration FHIR Map Set Implementation Guide v1.1.487</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -46,8 +46,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"12.102"}
-    h3,h4,h5,h6{--heading-prefix:"12.102"}</style>
+    <style type="text/css">h2{--heading-prefix:"12.100"}
+    h3,h4,h5,h6{--heading-prefix:"12.100"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -65,7 +65,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">US Veterans Administration FHIR Map Set Implementation Guide</span>
             <br/>
-            <span style="display:inline-block;">1.1.478 - 250201
+            <span style="display:inline-block;">1.1.487 - 250201
 
 
 
@@ -174,7 +174,7 @@
           <div class="inner-wrapper">
 
 <div style="counter-reset: section 5" class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">US Veterans Administration FHIR Map Set Implementation Guide - Local Development build (v1.1.478) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">US Veterans Administration FHIR Map Set Implementation Guide - Local Development build (v1.1.487) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   
 
 
@@ -247,7 +247,7 @@
         
           Draft
           
-            as of 2025-01-13
+            as of 2025-01-17
           
         
       </td>
@@ -271,8 +271,7 @@
   <p>Note that the CDW and SDA mappings are derived from a look-up based on the VistA source mappings in CDW and VPR SDA.</p>
 </blockquote>
 
-<?xml version="1.0" encoding="us-ascii" standalone="no"?>
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="44px" preserveAspectRatio="none" style="width:237px;height:44px;background:#FFFFFF;" version="1.1" viewBox="0 0 237 44" width="237px" zoomAndPan="magnify"><defs /><g><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="209" x="10" y="22.9951">Use Case: VAERS (Source)</text></g></svg>
+<p>&lt;?xml version="1.0" encoding="us-ascii" standalone="no"?&gt;<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="44px" preserveAspectRatio="none" style="width:237px;height:44px;background:#FFFFFF;" version="1.1" viewBox="0 0 237 44" width="237px" zoomAndPan="magnify"><defs></defs><g><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="209" x="10" y="22.9951">Use Case: VAERS (Source)</text></g></svg></p>
 
 <h3 id="raw-mappings">Raw mappings</h3>
 
@@ -315,7 +314,7 @@
 <td class="cell-ce1">.actuality</td>
 <td class="cell-ce1">#actual</td>
 <td class="cell-ce1"></td>
-<td class="cell-ce1">from mapParameter 1</td>
+<td class="cell-ce1">mapParameter row 1</td>
 <td class="cell-ce1"></td>
 </tr>
 <tr class="row-ro1">
@@ -496,24 +495,24 @@
   <a name="aders"> </a><h3>Mappings for VA Adverse Drug Event Reporting System (VA ADERS) ()</h3><table class="grid">
  <tr><td colspan="3"><b>VAERSAdverseEvent</b></td></tr>
  <tr><td>AdverseEvent</td><td></td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;actuality</td><td>1877-1: fixed value = #actual</td><td><p>from mapParameter 1</p>
+ <tr><td>&nbsp;&nbsp;&nbsp;actuality</td><td>1877-1: fixed value = #actual</td><td><p>mapParameter row 1</p>
 </td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;event</td><td></td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>1905: transform using parseCodesFromText()</td><td><p>Multiple event codes in coding</p>
 </td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>1877: reference from ADERS - 0_Pt_ICN_Full</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>1877: reference based on ADERS - 0_Pt_ICN_Full</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;date</td><td>1881: transform using concat(4_VacDate, 4_VacTime)</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;outcome</td><td></td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding (va-outcome1)</td><td>1906: source value from ADERS - 21_VAE_Outcome_DrVisit</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding (va-outcome2)</td><td>1907: source value from ADERS - 21_VAE_Outcome_ErED</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding (va-outcome3)</td><td>1908: source value from ADERS - 21_HospStay</td><td><p>See Encounter &amp; Location for details</p>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding (va-outcome1)</td><td>1906: source value based on ADERS - 21_VAE_Outcome_DrVisit</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding (va-outcome2)</td><td>1907: source value based on ADERS - 21_VAE_Outcome_ErED</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding (va-outcome3)</td><td>1908: source value based on ADERS - 21_HospStay</td><td><p>See Encounter &amp; Location for details</p>
 </td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding (va-outcome8)</td><td>1913: source value from ADERS - 21_ProlongHospStay</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding (va-outcome9)</td><td>1914: source value from ADERS - 21_LTI</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding (va-outcome10)</td><td>1915: source value from ADERS - 21_Dis</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding (va-outcome13)</td><td>1916: source value from ADERS - 21_Death</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding (va-outcome11)</td><td>1918: source value from ADERS - 21_CA_BD</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding (va-outcome12)</td><td>1919: source value from ADERS - 21_NOA</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding (va-outcome8)</td><td>1913: source value based on ADERS - 21_ProlongHospStay</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding (va-outcome9)</td><td>1914: source value based on ADERS - 21_LTI</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding (va-outcome10)</td><td>1915: source value based on ADERS - 21_Dis</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding (va-outcome13)</td><td>1916: source value based on ADERS - 21_Death</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding (va-outcome11)</td><td>1918: source value based on ADERS - 21_CA_BD</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding (va-outcome12)</td><td>1919: source value based on ADERS - 21_NOA</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;suspectEntity</td><td></td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;instance</td><td>1972: reference</td><td></td> </tr>
 </table>
@@ -590,7 +589,7 @@
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025 <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#1.1.478 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Jan 13, 2025 09:39+0000">2025-01-13</span>
+          IG &#169; 2025 <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#1.1.487 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Jan 17, 2025 12:09+0000">2025-01-17</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

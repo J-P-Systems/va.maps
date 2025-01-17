@@ -10,21 +10,26 @@ Description: "This StructureDefinition contains the maps for VistA file PRESCRIP
 * performer.actor only Reference(Practitioner)
 * type = http://terminology.hl7.org/CodeSystem/v3-ActCode#RF
 * dosageInstruction.doseAndRate.doseQuantity.code from http://va.gov/fhir/ValueSet/DoseUnits
+* dosageInstruction.doseAndRate.doseQuantity.value obeys mdr-24-1558
 * medicationCodeableConcept.coding.system = "urn:oid:2.16.840.1.113883.6.233"
 * status obeys mdr-24-869
 * status obeys mdr-24-819
 * status obeys mdr-24-1555
 
+Invariant: mdr-24-1558
+Description: "If number then source value from (52-113 > 52.0113-.01)"
+Severity: #warning
+
 Invariant: mdr-24-869
-Description: "52-52 > 52.1-17: if not null then #completed"
+Description: "If (52-52 > 52.1-17) is not null then fixed value #completed"
 Severity: #warning
 
 Invariant: mdr-24-819
-Description: "52-52 > 52.1-17: if null then #in-progress"
+Description: "If (52-52 > 52.1-17) is null then fixed value #in-progress"
 Severity: #warning
 
 Invariant: mdr-24-1555
-Description: "52-31: if null then #in-progress"
+Description: "If (52-31) is null then fixed value #in-progress"
 Severity: #warning
 
 Mapping: source-to-MedicationDispenseRefill
@@ -32,27 +37,27 @@ Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: MedicationDispenseRefill
 * type -> "1709: fixed value = http://terminology.hl7.org/CodeSystem/v3-ActCode#RF"
-* destination.display -> "1712: source value from PRESCRIPTION - REFILL > REFILL - MAIL/WINDOW/PARK (52-52 > 52.1-2)"
-* authorizingPrescription -> "1553: reference from PRESCRIPTION - PLACER ORDER # (52-39.3)"
-* daysSupply -> "827: source value from PRESCRIPTION - REFILL > REFILL - DAYS SUPPLY (52-52 > 52.1-1.1)"
-* destination.display -> "836: source value from PRESCRIPTION - REFILL > REFILL - MAIL/WINDOW/PARK (52-52 > 52.1-2)"
-* dosageInstruction.doseAndRate.doseQuantity.unit -> "1559: source value from PRESCRIPTION - MEDICATION INSTRUCTIONS > MEDICATION INSTRUCTIONS - UNITS (52-113 > 52.0113-2)"
+* destination.display -> "1712: source value based on PRESCRIPTION - REFILL > REFILL - MAIL/WINDOW/PARK (52-52 > 52.1-2)"
+* authorizingPrescription -> "1553: reference based on PRESCRIPTION - PLACER ORDER # (52-39.3)"
+* daysSupply -> "827: source value based on PRESCRIPTION - REFILL > REFILL - DAYS SUPPLY (52-52 > 52.1-1.1)"
+* destination.display -> "836: source value based on PRESCRIPTION - REFILL > REFILL - MAIL/WINDOW/PARK (52-52 > 52.1-2)"
+* dosageInstruction.doseAndRate.doseQuantity.unit -> "1559: source value based on PRESCRIPTION - MEDICATION INSTRUCTIONS > MEDICATION INSTRUCTIONS - UNITS (52-113 > 52.0113-2)"
 * dosageInstruction.doseAndRate.doseQuantity.code -> "1579: terminologyMaps using VF_DoseUnits on PRESCRIPTION - MEDICATION INSTRUCTIONS > MEDICATION INSTRUCTIONS - UNITS (52-113 > 52.0113-2)"
-* dosageInstruction.doseAndRate.doseQuantity.value -> "1558: source value from PRESCRIPTION - MEDICATION INSTRUCTIONS > MEDICATION INSTRUCTIONS - DOSAGE ORDERED (52-113 > 52.0113-.01) case number"
-* dosageInstruction.patientInstruction -> "1557: source value from PRESCRIPTION - PATIENT INSTRUCTIONS (52-114)"
-* dosageInstruction.text -> "1556: source value from PRESCRIPTION - SIG (52-10)"
-* medicationCodeableConcept.coding.code -> "1561: source value from PRESCRIPTION - DRUG > DRUG - PSNDF VA PRODUCT NAME ENTRY (52-6 > 50-22)"
-* medicationCodeableConcept.coding.system -> "1561-1: fixed value = urn:oid:2.16.840.1.113883.6.233" "from mapParameter 1"
-* medicationCodeableConcept.text -> "1560: source value from PRESCRIPTION - DRUG > DRUG - GENERIC NAME (52-6 > 50-.01)" "This may not be necessary; we have the product."
-* quantity.value -> "824: source value from PRESCRIPTION - REFILL > REFILL - QTY (52-52 > 52.1-1)"
-* status -> "869: fixed value = #completed when PRESCRIPTION - REFILL > REFILL - RELEASED DATE/TIME (52-52 > 52.1-17) case not null" "updated table id (was a dup)"
-* status -> "819: fixed value = #in-progress when PRESCRIPTION - REFILL > REFILL - RELEASED DATE/TIME (52-52 > 52.1-17) case null"
-* status -> "1555: fixed value = #in-progress when PRESCRIPTION - RELEASED DATE/TIME (52-31) case null"
-* subject -> "1551: reference from PRESCRIPTION - PATIENT (52-2)"
-* whenPrepared -> "833: source value from PRESCRIPTION - REFILL > REFILL - RELEASED DATE/TIME (52-52 > 52.1-17)" "see original fill note"
-* location -> "1715: reference from PRESCRIPTION - REFILL > REFILL - DIVISION > OUTPATIENT SITE - DEFAULT ERX CLINIC (52-52 > 52.1-8 > 59-10)" "not Clinic (written) but Division (filled)"
-* note.text -> "1718: source value from PRESCRIPTION - REFILL > REFILL - REMARKS (52-52 > 52.1-3)"
-* performer.actor -> "1728: reference from PRESCRIPTION - REFILL > REFILL - PHARMACIST NAME (52-52 > 52.1-4)"
+* dosageInstruction.doseAndRate.doseQuantity.value -> "1558: source value based on PRESCRIPTION - MEDICATION INSTRUCTIONS > MEDICATION INSTRUCTIONS - DOSAGE ORDERED (52-113 > 52.0113-.01) if number"
+* dosageInstruction.patientInstruction -> "1557: source value based on PRESCRIPTION - PATIENT INSTRUCTIONS (52-114)"
+* dosageInstruction.text -> "1556: source value based on PRESCRIPTION - SIG (52-10)"
+* medicationCodeableConcept.coding.code -> "1561: source value based on PRESCRIPTION - DRUG > DRUG - PSNDF VA PRODUCT NAME ENTRY (52-6 > 50-22)"
+* medicationCodeableConcept.coding.system -> "1561-1: fixed value = urn:oid:2.16.840.1.113883.6.233" "mapParameter row 1"
+* medicationCodeableConcept.text -> "1560: source value based on PRESCRIPTION - DRUG > DRUG - GENERIC NAME (52-6 > 50-.01)" "This may not be necessary; we have the product."
+* quantity.value -> "824: source value based on PRESCRIPTION - REFILL > REFILL - QTY (52-52 > 52.1-1)"
+* status -> "869: fixed value = #completed when PRESCRIPTION - REFILL > REFILL - RELEASED DATE/TIME (52-52 > 52.1-17) if not null" "updated table id (was a dup)"
+* status -> "819: fixed value = #in-progress when PRESCRIPTION - REFILL > REFILL - RELEASED DATE/TIME (52-52 > 52.1-17) if null"
+* status -> "1555: fixed value = #in-progress when PRESCRIPTION - RELEASED DATE/TIME (52-31) if null"
+* subject -> "1551: reference based on PRESCRIPTION - PATIENT (52-2)"
+* whenPrepared -> "833: source value based on PRESCRIPTION - REFILL > REFILL - RELEASED DATE/TIME (52-52 > 52.1-17)" "see original fill note"
+* location -> "1715: reference based on PRESCRIPTION - REFILL > REFILL - DIVISION > OUTPATIENT SITE - DEFAULT ERX CLINIC (52-52 > 52.1-8 > 59-10)" "not Clinic (written) but Division (filled)"
+* note.text -> "1718: source value based on PRESCRIPTION - REFILL > REFILL - REMARKS (52-52 > 52.1-3)"
+* performer.actor -> "1728: reference based on PRESCRIPTION - REFILL > REFILL - PHARMACIST NAME (52-52 > 52.1-4)"
 
 Mapping: cdw-to-MedicationDispenseRefill
 Id: cdw

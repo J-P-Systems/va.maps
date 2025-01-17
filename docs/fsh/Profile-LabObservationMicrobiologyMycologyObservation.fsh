@@ -8,43 +8,62 @@ Description: "This StructureDefinition contains the maps for VistA file MICROBIO
 * performer ^slicing.discriminator.path = "$this"
 * performer ^slicing.rules = #open
 * performer contains va-at 0..1 and va-by 0..1
-* status and effectiveDateTime and note and performer[va-at] and performer[va-by] and specimen and identifier.value and identifier.system and code.coding and code.coding.system and code.coding.code and code.coding.display and issued and category and subject MS
+* code and status and valueString and effectiveDateTime and note and performer[va-at] and performer[va-by] and specimen and identifier.value and identifier.system and code.coding and code.coding.system and code.coding.code and code.coding.display and issued and category and subject MS
 * performer[va-at] only Reference(Organization)
 * performer[va-by] only Reference(Practitioner)
 * specimen only Reference(LabObservationMicrobiologySpecimen)
 * subject only Reference(Patient)
+* code obeys lommo-45-1527
 * status from http://va.gov/fhir/ValueSet/LabObservationStatus
 * identifier.system = "http://va.gov/identifiers/$Sta3n/63.05"
+* code.coding obeys lommo-45-1480
 * code.coding.system obeys lommo-45-1480-1
+* code.coding.code obeys lommo-45-1480-2
+* code.coding.display obeys lommo-45-1480-3
 * category = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
 
+Invariant: lommo-45-1527
+Description: "If (63.05-.35 > 63.5-13 > 60-100 > 60.01-95.3 > 95.3-) is NULL then fixed value http://loinc.org#42804-5 \"Fungus identified in Isolate\""
+Severity: #warning
+
+Invariant: lommo-45-1480
+Description: "If Not NULL then source value from (63.05-.35 > 63.5-13 > 60-100 > 60.01-95.3 > 95.3-)"
+Severity: #warning
+
 Invariant: lommo-45-1480-1
-Description: "undefined: if Not NULL then http://loinc.org"
+Description: "If (undefined) is Not NULL then fixed value http://loinc.org"
+Severity: #warning
+
+Invariant: lommo-45-1480-2
+Description: "If Not NULL then source value from (63.05-.35 > 63.5-13 > 60-100 > 60.01-95.3 > 95.3-.01)"
+Severity: #warning
+
+Invariant: lommo-45-1480-3
+Description: "If Not NULL then source value from (63.05-.35 > 63.5-13 > 60-100 > 60.01-95.3 > 95.3-1)"
 Severity: #warning
 
 Mapping: source-to-LabObservationMicrobiologyMycologyObservation
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: LabObservationMicrobiologyMycologyObservation
+* code -> "1527: fixed value = http://loinc.org#42804-5 \"Fungus identified in Isolate\" when MICROBIOLOGY - ORDERED TEST > ORDERED TEST - LAB TEST ORDERED > LABORATORY TEST - SITE/SPECIMEN > SITE/SPECIMEN - LOINC CODE > LAB LOINC (63.05-.35 > 63.5-13 > 60-100 > 60.01-95.3 > 95.3-) if NULL"
 * status -> "1490: terminologyMaps using VF_LabObservationStatus on MICROBIOLOGY - MYCOLOGY RPT STATUS (63.05-19)"
-* valueQuantity -> "2109: target not supported" "auto added because of must-support"
-* valueCodeableConcept -> "2110: target not supported" "auto added because of must-support"
-* valueString -> "2111: target not supported" "auto added because of must-support"
-* effectiveDateTime -> "1450: source value from MICROBIOLOGY - DATE/TIME SPECIMEN TAKEN (63.05-.01)"
-* note -> "1454: source value from MICROBIOLOGY - COMMENT ON SPECIMEN (63.05-.99)"
-* performer[va-at] -> "1464: reference from MICROBIOLOGY - ACCESSIONING INSTITUTION (63.05-.112)"
-* performer[va-by] -> "1679: reference from MICROBIOLOGY - VERIFY PERSON (63.05-.04)"
-* specimen -> "1659: reference from MICROBIOLOGY - MICROBIOLOGY ACCESSION (63.05-.06)"
-* identifier.value -> "1476: source value from MICROBIOLOGY - IEN (63.05-.001)"
-* identifier.system -> "1476-1: fixed value = http://va.gov/identifiers/$Sta3n/63.05" "from mapParameter 1"
-* code.coding -> "1480: source value from MICROBIOLOGY - ORDERED TEST > ORDERED TEST - LAB TEST ORDERED > LABORATORY TEST - SITE/SPECIMEN > SITE/SPECIMEN - LOINC CODE > LAB LOINC (63.05-.35 > 63.5-13 > 60-100 > 60.01-95.3 > 95.3-) case Not NULL"
-* code.coding.system -> "1480-1: fixed value = http://loinc.org case Not NULL" "from mapParameter 1"
-* code.coding.code -> "1480-2: source value from MICROBIOLOGY - ORDERED TEST > ORDERED TEST - LAB TEST ORDERED > LABORATORY TEST - SITE/SPECIMEN > SITE/SPECIMEN - LOINC CODE > LAB LOINC - CODE (63.05-.35 > 63.5-13 > 60-100 > 60.01-95.3 > 95.3-.01) case Not NULL" "from mapParameter 2"
-* code.coding.display -> "1480-3: source value from MICROBIOLOGY - ORDERED TEST > ORDERED TEST - LAB TEST ORDERED > LABORATORY TEST - SITE/SPECIMEN > SITE/SPECIMEN - LOINC CODE > LAB LOINC - COMPONENT (63.05-.35 > 63.5-13 > 60-100 > 60.01-95.3 > 95.3-1) case Not NULL" "from mapParameter 3"
-* issued -> "1484: source value from MICROBIOLOGY - DATE REPORT COMPLETED (63.05-.03)"
+* valueString -> "1858: source value based on MICROBIOLOGY - FUNGUS/YEAST > FUNGUS/YEAST - FUNGUS/YEAST > ETIOLOGY FIELD - NAME (63.05-20 > 63.37-.01 > 61.2-.01)"
+* effectiveDateTime -> "1450: source value based on MICROBIOLOGY - DATE/TIME SPECIMEN TAKEN (63.05-.01)"
+* note -> "1454: source value based on MICROBIOLOGY - COMMENT ON SPECIMEN (63.05-.99)"
+* performer[va-at] -> "1464: reference based on MICROBIOLOGY - ACCESSIONING INSTITUTION (63.05-.112)"
+* performer[va-by] -> "1679: reference based on MICROBIOLOGY - VERIFY PERSON (63.05-.04)"
+* specimen -> "1659: reference based on MICROBIOLOGY - MICROBIOLOGY ACCESSION (63.05-.06)"
+* identifier.value -> "1476: source value based on MICROBIOLOGY - IEN (63.05-.001)"
+* identifier.system -> "1476-1: fixed value = http://va.gov/identifiers/$Sta3n/63.05" "mapParameter row 1"
+* code.coding -> "1480: source value based on MICROBIOLOGY - ORDERED TEST > ORDERED TEST - LAB TEST ORDERED > LABORATORY TEST - SITE/SPECIMEN > SITE/SPECIMEN - LOINC CODE > LAB LOINC (63.05-.35 > 63.5-13 > 60-100 > 60.01-95.3 > 95.3-) if Not NULL"
+* code.coding.system -> "1480-1: fixed value = http://loinc.org if Not NULL" "mapParameter row 1"
+* code.coding.code -> "1480-2: source value based on MICROBIOLOGY - ORDERED TEST > ORDERED TEST - LAB TEST ORDERED > LABORATORY TEST - SITE/SPECIMEN > SITE/SPECIMEN - LOINC CODE > LAB LOINC - CODE (63.05-.35 > 63.5-13 > 60-100 > 60.01-95.3 > 95.3-.01) if Not NULL" "mapParameter row 2"
+* code.coding.display -> "1480-3: source value based on MICROBIOLOGY - ORDERED TEST > ORDERED TEST - LAB TEST ORDERED > LABORATORY TEST - SITE/SPECIMEN > SITE/SPECIMEN - LOINC CODE > LAB LOINC - COMPONENT (63.05-.35 > 63.5-13 > 60-100 > 60.01-95.3 > 95.3-1) if Not NULL" "mapParameter row 3"
+* issued -> "1484: source value based on MICROBIOLOGY - DATE REPORT COMPLETED (63.05-.03)"
 * category -> "843: fixed value = http://terminology.hl7.org/CodeSystem/observation-category#laboratory"
 * dataAbsentReason -> "2031: target not supported" "because of must-support"
-* subject -> "844: reference from PATIENT - LABORATORY REFERENCE > LAB DATA - LRDFN (2-63 > 63-.01)" "Pointer from PATIENT (2)"
+* subject -> "844: reference based on PATIENT - LABORATORY REFERENCE > LAB DATA - LRDFN (2-63 > 63-.01)" "Pointer from PATIENT (2)"
 
 Mapping: cdw-to-LabObservationMicrobiologyMycologyObservation
 Id: cdw

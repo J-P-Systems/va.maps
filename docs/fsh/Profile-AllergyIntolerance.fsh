@@ -20,36 +20,41 @@ Description: "This StructureDefinition contains the maps for VistA file PATIENT 
 * verificationStatus from http://va.gov/fhir/ValueSet/allergyEnteredInError
 * category from http://va.gov/fhir/ValueSet/allergySubstanceCategory
 * reaction.severity from http://va.gov/fhir/ValueSet/allergySeverity
+* reaction.onset obeys ai-18-1652
+
+Invariant: ai-18-1652
+Description: "If 6 OBSERVED/HISTORICAL = O then source value from (120.8-10 > 120.81-3)"
+Severity: #warning
 
 Mapping: source-to-AllergyIntolerance
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: AllergyIntolerance
-* identifier[va-IEN].value -> "233: source value from PATIENT ALLERGIES - IEN (120.8-.001)"
-* identifier[va-IEN].system -> "233-1: fixed value = http://va.gov/identifiers/$Sta3n/120.8" "from mapParameter 1"
-* identifier[va-CDW].value -> "1610: source value from CDW.cdwwork.allergy.allergy.AllergySID" "Source is AllergySID from Allergy Table in CDW"
-* identifier[va-CDW].system -> "1610-1: fixed value = http://va.gov/identifiers/CDWSID/cdwwork.allergy.allergy" "from mapParameter 1"
-* code.text -> "245: source value from PATIENT ALLERGIES - REACTANT (120.8-.02)" "text only"
-* code -> "246: source value from PATIENT ALLERGIES - GMR ALLERGY (120.8-1)"
-* patient -> "248: source value from PATIENT ALLERGIES - PATIENT (120.8-.01)" "Source is MVIPersonFullICN from SMVIPerson Table"
-* recordedDate -> "1224: source value from PATIENT ALLERGIES - ORIGINATION DATE/TIME (120.8-4)" "Lighthouse exposes this source object as RecordedDate FHIR field"
-* recorder -> "251: source value from PATIENT ALLERGIES - ORIGINATOR (120.8-5)"
-* reaction.manifestation -> "252: source value from PATIENT ALLERGIES - REACTIONS > REACTIONS - REACTION > SIGN/SYMPTOMS (120.8-10 > 120.81-.01 > 120.83-)"
-* reaction.manifestation.coding.system -> "252-1: fixed value = urn:oid:2.16.840.1.113883.6.233" "from mapParameter 1"
-* reaction.manifestation.coding.code -> "252-2: source value from PATIENT ALLERGIES - REACTIONS > REACTIONS - REACTION > SIGN/SYMPTOMS - VUID (120.8-10 > 120.81-.01 > 120.83-99.99)" "from mapParameter 2"
-* reaction.manifestation.coding.display -> "252-3: source value from PATIENT ALLERGIES - REACTIONS > REACTIONS - REACTION > SIGN/SYMPTOMS - NAME (120.8-10 > 120.81-.01 > 120.83-.01)" "from mapParameter 3"
-* reaction.manifestation.text -> "252-4: source value from PATIENT ALLERGIES - REACTIONS > REACTIONS - REACTION > SIGN/SYMPTOMS - NAME (120.8-10 > 120.81-.01 > 120.83-.01)" "from mapParameter 4"
+* identifier[va-IEN].value -> "233: source value based on PATIENT ALLERGIES - IEN (120.8-.001)"
+* identifier[va-IEN].system -> "233-1: fixed value = http://va.gov/identifiers/$Sta3n/120.8" "mapParameter row 1"
+* identifier[va-CDW].value -> "1610: source value based on CDW.cdwwork.allergy.allergy.AllergySID" "Source is AllergySID from Allergy Table in CDW"
+* identifier[va-CDW].system -> "1610-1: fixed value = http://va.gov/identifiers/CDWSID/cdwwork.allergy.allergy" "mapParameter row 1"
+* code.text -> "245: source value based on PATIENT ALLERGIES - REACTANT (120.8-.02)" "text only"
+* code -> "246: source value based on PATIENT ALLERGIES - GMR ALLERGY (120.8-1)"
+* patient -> "248: source value based on PATIENT ALLERGIES - PATIENT (120.8-.01)" "Source is MVIPersonFullICN from SMVIPerson Table"
+* recordedDate -> "1224: source value based on PATIENT ALLERGIES - ORIGINATION DATE/TIME (120.8-4)" "Lighthouse exposes this source object as RecordedDate FHIR field"
+* recorder -> "251: source value based on PATIENT ALLERGIES - ORIGINATOR (120.8-5)"
+* reaction.manifestation -> "252: source value based on PATIENT ALLERGIES - REACTIONS > REACTIONS - REACTION > SIGN/SYMPTOMS (120.8-10 > 120.81-.01 > 120.83-)"
+* reaction.manifestation.coding.system -> "252-1: fixed value = urn:oid:2.16.840.1.113883.6.233" "mapParameter row 1"
+* reaction.manifestation.coding.code -> "252-2: source value based on PATIENT ALLERGIES - REACTIONS > REACTIONS - REACTION > SIGN/SYMPTOMS - VUID (120.8-10 > 120.81-.01 > 120.83-99.99)" "mapParameter row 2"
+* reaction.manifestation.coding.display -> "252-3: source value based on PATIENT ALLERGIES - REACTIONS > REACTIONS - REACTION > SIGN/SYMPTOMS - NAME (120.8-10 > 120.81-.01 > 120.83-.01)" "mapParameter row 3"
+* reaction.manifestation.text -> "252-4: source value based on PATIENT ALLERGIES - REACTIONS > REACTIONS - REACTION > SIGN/SYMPTOMS - NAME (120.8-10 > 120.81-.01 > 120.83-.01)" "mapParameter row 4"
 * type -> "531: terminologyMaps using VF_allergyMechanism on PATIENT ALLERGIES - MECHANISM (120.8-17)"
 * verificationStatus -> "535: terminologyMaps using VF_allergyVerificationStatus on PATIENT ALLERGIES - VERIFIED (120.8-19)"
 * clinicalStatus -> "536: terminologyMaps using VF_allergyActive on PATIENT ALLERGIES - ENTERED IN ERROR (120.8-22)" "confirm CHAPI"
 * verificationStatus -> "537: terminologyMaps using VF_allergyEnteredInError on PATIENT ALLERGIES - ENTERED IN ERROR (120.8-22)"
 * category -> "556: terminologyMaps using VF_allergySubstanceCategory on PATIENT ALLERGIES - ALLERGY TYPE (120.8-3.1)"
 * reaction.severity -> "557: terminologyMaps using VF_allergySeverity on ADVERSE REACTION REPORTING - SEVERITY (120.85-14.5)" "This Data is not in CDW\nAssess for CHAPI via VPR"
-* note.time -> "1502: source value from PATIENT ALLERGIES - COMMENTS > COMMENTS - DATE/TIME COMMENT ENTERED (120.8-26 > 120.826-.01)"
-* note.authorString -> "1503: source value from PATIENT ALLERGIES - COMMENTS > COMMENTS - USER ENTERING (120.8-26 > 120.826-1)"
-* note.text -> "1504: source value from PATIENT ALLERGIES - COMMENTS > COMMENTS - COMMENTS (120.8-26 > 120.826-2)"
-* code -> "1505: source value from PATIENT ALLERGIES - DRUG INGREDIENTS (120.8-2)" "CHAPI to rxn code; looking into"
-* reaction.onset -> "1652: source value from PATIENT ALLERGIES - REACTIONS > REACTIONS - DATE ENTERED (120.8-10 > 120.81-3) case 6 OBSERVED/HISTORICAL = O"
+* note.time -> "1502: source value based on PATIENT ALLERGIES - COMMENTS > COMMENTS - DATE/TIME COMMENT ENTERED (120.8-26 > 120.826-.01)"
+* note.authorString -> "1503: source value based on PATIENT ALLERGIES - COMMENTS > COMMENTS - USER ENTERING (120.8-26 > 120.826-1)"
+* note.text -> "1504: source value based on PATIENT ALLERGIES - COMMENTS > COMMENTS - COMMENTS (120.8-26 > 120.826-2)"
+* code -> "1505: source value based on PATIENT ALLERGIES - DRUG INGREDIENTS (120.8-2)" "CHAPI to rxn code; looking into"
+* reaction.onset -> "1652: source value based on PATIENT ALLERGIES - REACTIONS > REACTIONS - DATE ENTERED (120.8-10 > 120.81-3) if 6 OBSERVED/HISTORICAL = O"
 
 Mapping: cdw-to-AllergyIntolerance
 Id: cdw

@@ -697,12 +697,12 @@ Title: "V POV (9000010.07)"
 Description: "This StructureDefinition contains the Logical Model for the mapped parts of the source V POV (9000010.07)"
 Characteristics: #can-be-target
 * ien 0..1 Element "IEN (-.001)"
+* modifier 0..1 Coding "MODIFIER (-.06)"
+* modifier from http://va.gov/fhir/ValueSet/encounterProblemVerificationStatus-vista (preferred)
 * pov 0..1 Reference "POV (-.01)"
 * patientName 0..1 Element "PATIENT NAME (-.02)"
 * visit 0..1 Reference "VISIT (-.03)"
 * dateOfInjury 0..1 Element "DATE OF INJURY (-.13)"
-* modifier 0..1 Coding "MODIFIER (-.06)"
-* modifier from http://va.gov/fhir/ValueSet/encounterProblemVerificationStatus-vista (preferred)
 * encounterProvider 0..1 Element "ENCOUNTER PROVIDER (-1204)"
 * problemListEntry 0..1 Element "PROBLEM LIST ENTRY (-.16)"
 * pov only Reference(IcdDiagnosis80)
@@ -898,18 +898,18 @@ Characteristics: #can-be-target
 * parasiteRptStatus from http://va.gov/fhir/ValueSet/LabObservationStatus-vista (preferred)
 * parasite 0..1 Reference "PARASITE (-16)"
 * mycologyRptRemark 0..1 Reference "MYCOLOGY RPT REMARK (-21)"
-* fungusyeast 0..1 Reference "FUNGUS/YEAST (-20)"
 * mycologyRptStatus 0..1 Coding "MYCOLOGY RPT STATUS (-19)"
 * mycologyRptStatus from http://va.gov/fhir/ValueSet/LabObservationStatus-vista (preferred)
+* fungusyeast 0..1 Reference "FUNGUS/YEAST (-20)"
 * tbRptRemark 0..1 Reference "TB RPT REMARK (-27)"
 * mycobacterium 0..1 Reference "MYCOBACTERIUM (-26)"
 * tbRptStatus 0..1 Coding "TB RPT STATUS (-23)"
 * tbRptStatus from http://va.gov/fhir/ValueSet/LabObservationStatus-vista (preferred)
 * acidFastStain 0..1 Element "ACID FAST STAIN (-24)"
 * virologyRptRemark 0..1 Reference "VIROLOGY RPT REMARK (-37)"
-* virus 0..1 Reference "VIRUS (-36)"
 * virologyReportStatus 0..1 Coding "VIROLOGY REPORT STATUS (-34)"
 * virologyReportStatus from http://va.gov/fhir/ValueSet/LabObservationStatus-vista (preferred)
+* virus 0..1 Reference "VIRUS (-36)"
 * orderedTest only Reference(OrderedTest635)
 * collectionSample only Reference(CollectionSample62)
 * bactRptRemark only Reference(BactRptRemark6333)

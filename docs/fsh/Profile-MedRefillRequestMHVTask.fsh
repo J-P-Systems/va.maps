@@ -14,25 +14,25 @@ Description: "This StructureDefinition contains the maps for VistA file PRESCRIP
 * code obeys mrrmhvt-23-1861
 
 Invariant: mrrmhvt-23-1852
-Description: "null: if 31 RELEASED DATE/TIME not null (filled at least once) then #RF"
+Description: "If (null) is 31 RELEASED DATE/TIME not null (filled at least once) then fixed value #RF"
 Severity: #warning
 
 Invariant: mrrmhvt-23-1861
-Description: "null: if 31 RELEASED DATE/TIME null (never filled) then #FF"
+Description: "If (null) is 31 RELEASED DATE/TIME null (never filled) then fixed value #FF"
 Severity: #warning
 
 Mapping: source-to-MedRefillRequestMHVTask
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: MedRefillRequestMHVTask
-* for -> "1844: reference from PRESCRIPTION REFILL REQUEST - PATIENT (52.43-9)"
-* focus -> "1845: reference from PRESCRIPTION REFILL REQUEST - RX # (52.43-3)"
-* owner -> "1846: reference from PRESCRIPTION REFILL REQUEST - INSTITUTION (52.43-4)"
+* for -> "1844: reference based on PRESCRIPTION REFILL REQUEST - PATIENT (52.43-9)"
+* focus -> "1845: reference based on PRESCRIPTION REFILL REQUEST - RX # (52.43-3)"
+* owner -> "1846: reference based on PRESCRIPTION REFILL REQUEST - INSTITUTION (52.43-4)"
 * status -> "1848: terminologyMaps using VF_RefillRequestStatus on PRESCRIPTION REFILL REQUEST - RESULT (52.43-6)"
-* note -> "1849: source value from PRESCRIPTION REFILL REQUEST - REMARKS (52.43-10)"
+* note -> "1849: source value based on PRESCRIPTION REFILL REQUEST - REMARKS (52.43-10)"
 * intent -> "1851: fixed value = #proposal"
-* code -> "1852: fixed value = #RF case 31 RELEASED DATE/TIME not null (filled at least once)"
-* code -> "1861: fixed value = #FF case 31 RELEASED DATE/TIME null (never filled)"
+* code -> "1852: fixed value = #RF if 31 RELEASED DATE/TIME not null (filled at least once)"
+* code -> "1861: fixed value = #FF if 31 RELEASED DATE/TIME null (never filled)"
 
 Mapping: cdw-to-MedRefillRequestMHVTask
 Id: cdw

@@ -28,40 +28,45 @@ Description: "This StructureDefinition contains the maps for VistA file GMRV VIT
 * component[va-pre-condition-device].valueCodeableConcept.coding from http://va.gov/fhir/ValueSet/VitalsQualifyingDevice
 * component[va-pre-condition-device].code = http://loinc.org#104158-1 "Associated precondition - Reported"
 * extension[http://hl7.org/fhir/StructureDefinition/observation-bodyPosition].valueCodeableConcept from http://va.gov/fhir/ValueSet/VitalsBodyPosition
+* valueQuantity.value obeys vs-10-664
 * valueQuantity.code.extension contains http://hl7.org/fhir/StructureDefinition/11179-permitted-value-conceptmap named 11179-permitted-value-conceptmap 0..1
 * valueQuantity.code.extension[11179-permitted-value-conceptmap].valueCanonical = "http://va.gov/fhir/ConceptMap/VF-VitalsUnits"
 
 Invariant: vs-10-655
-Description: "120.5-4: if null then #final"
+Description: "If (120.5-4) is null then fixed value #final"
 Severity: #warning
 
 Invariant: vs-10-656
-Description: "120.5-4: if not null then #entered-in-error"
+Description: "If (120.5-4) is not null then fixed value #entered-in-error"
+Severity: #warning
+
+Invariant: vs-10-664
+Description: "If VUID not = 4500634 then source value from (120.5-1.2)"
 Severity: #warning
 
 Mapping: source-to-VitalSigns
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: VitalSigns
-* issued -> "652: source value from GMRV VITAL MEASUREMENT - DATE/TIME VITALS ENTERED (120.5-.04)"
-* performer -> "1653: reference from GMRV VITAL MEASUREMENT - HOSPITAL LOCATION (120.5-.05)"
-* status -> "655: fixed value = #final when GMRV VITAL MEASUREMENT - REASON ENTERED IN ERROR (120.5-4) case null"
-* status -> "656: fixed value = #entered-in-error when GMRV VITAL MEASUREMENT - REASON ENTERED IN ERROR (120.5-4) case not null"
-* effectiveDateTime -> "657: source value from GMRV VITAL MEASUREMENT - DATE/TIME VITALS TAKEN (120.5-.01)"
+* issued -> "652: source value based on GMRV VITAL MEASUREMENT - DATE/TIME VITALS ENTERED (120.5-.04)"
+* performer -> "1653: reference based on GMRV VITAL MEASUREMENT - HOSPITAL LOCATION (120.5-.05)"
+* status -> "655: fixed value = #final when GMRV VITAL MEASUREMENT - REASON ENTERED IN ERROR (120.5-4) if null"
+* status -> "656: fixed value = #entered-in-error when GMRV VITAL MEASUREMENT - REASON ENTERED IN ERROR (120.5-4) if not null"
+* effectiveDateTime -> "657: source value based on GMRV VITAL MEASUREMENT - DATE/TIME VITALS TAKEN (120.5-.01)"
 * category -> "658: fixed value = http://terminology.hl7.org/CodeSystem/observation-category#vital-signs"
-* subject -> "659: reference from GMRV VITAL MEASUREMENT - PATIENT (120.5-.02)"
-* identifier.value -> "660: source value from GMRV VITAL MEASUREMENT - IEN (120.5-.001)"
-* identifier.system -> "660-1: fixed value = http://va.gov/identifiers/$Sta3n/120.5" "from mapParameter 1"
+* subject -> "659: reference based on GMRV VITAL MEASUREMENT - PATIENT (120.5-.02)"
+* identifier.value -> "660: source value based on GMRV VITAL MEASUREMENT - IEN (120.5-.001)"
+* identifier.system -> "660-1: fixed value = http://va.gov/identifiers/$Sta3n/120.5" "mapParameter row 1"
 * code.coding -> "661: terminologyMaps using VF_VitalsCodes on GMRV VITAL MEASUREMENT - VITAL TYPE (120.5-.03)" "Pulse Oximetry has 2 code values per US Core"
 * bodySite -> "662: terminologyMaps using VF_VitalsBodySite on GMRV VITAL MEASUREMENT - QUALIFIER > GMRV VITAL QUALIFIER - VUID (120.5-5 > 120.52-99.99)"
 * extension[http://hl7.org/fhir/StructureDefinition/observation-deviceCode].valueCodeableConcept -> "663: terminologyMaps using VF_VitalsMeasurementDevice on GMRV VITAL MEASUREMENT - QUALIFIER > GMRV VITAL QUALIFIER - VUID (120.5-5 > 120.52-99.99)"
 * method -> "867: terminologyMaps using VF_VitalsMethod on GMRV VITAL MEASUREMENT - QUALIFIER > GMRV VITAL QUALIFIER - VUID (120.5-5 > 120.52-99.99)"
 * component[va-pre-condition].valueCodeableConcept.coding -> "1802: terminologyMaps using VF_VitalsPrecondition on GMRV VITAL MEASUREMENT - QUALIFIER > GMRV VITAL QUALIFIER - VUID (120.5-5 > 120.52-99.99)"
-* component[va-pre-condition].code -> "1802-1: fixed value = http://loinc.org#104158-1 \"Associated precondition - Reported\"" "from mapParameter 1"
+* component[va-pre-condition].code -> "1802-1: fixed value = http://loinc.org#104158-1 \"Associated precondition - Reported\"" "mapParameter row 1"
 * component[va-pre-condition-device].valueCodeableConcept.coding -> "1803: terminologyMaps using VF_VitalsQualifyingDevice on GMRV VITAL MEASUREMENT - QUALIFIER > GMRV VITAL QUALIFIER - VUID (120.5-5 > 120.52-99.99)"
-* component[va-pre-condition-device].code -> "1803-1: fixed value = http://loinc.org#104158-1 \"Associated precondition - Reported\"" "from mapParameter 1"
+* component[va-pre-condition-device].code -> "1803-1: fixed value = http://loinc.org#104158-1 \"Associated precondition - Reported\"" "mapParameter row 1"
 * extension[http://hl7.org/fhir/StructureDefinition/observation-bodyPosition].valueCodeableConcept -> "1804: terminologyMaps using VF_VitalsBodyPosition on GMRV VITAL MEASUREMENT - QUALIFIER > GMRV VITAL QUALIFIER - VUID (120.5-5 > 120.52-99.99)"
-* valueQuantity.value -> "664: source value from GMRV VITAL MEASUREMENT - RATE (120.5-1.2) case VUID not = 4500634"
+* valueQuantity.value -> "664: source value based on GMRV VITAL MEASUREMENT - RATE (120.5-1.2) if VUID not = 4500634"
 * valueQuantity.code -> "665: transform using VF_VitalsUnits on GMRV VITAL MEASUREMENT - VITAL TYPE (120.5-.03)" "VPR may transform"
 * dataAbsentReason -> "1793: target not supported" "Always has data"
 * component.dataAbsentReason -> "1794: target not supported" "Always has data"
