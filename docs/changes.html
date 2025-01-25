@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Changes - US Veterans Administration FHIR Map Set Implementation Guide v1.1.491</title>
+    <title>Changes - US Veterans Administration FHIR Map Set Implementation Guide v1.1.494</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -61,7 +61,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">US Veterans Administration FHIR Map Set Implementation Guide</span>
             <br/>
-            <span style="display:inline-block;">1.1.491 - 250201
+            <span style="display:inline-block;">1.1.494 - 250201
 
 
 
@@ -177,7 +177,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">US Veterans Administration FHIR Map Set Implementation Guide - Local Development build (v1.1.491) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">US Veterans Administration FHIR Map Set Implementation Guide - Local Development build (v1.1.494) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>Changes</h2>
   
 
@@ -198,7 +198,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </div>
 <style>th { border-bottom:solid; } td { border-bottom:solid; border-bottom-width: thin; }</style>
 
-<table><tr><td>key</td><td>column</td><td>old value (VA-FHIR-CoP-MapSet-ONLINE.xlsx)</td><td>new value (VA-FHIR-CoP-MapSet.xlsx)</td></tr><tr><th colspan="4">use-case Lab Observation: Microbiology Mycology</th></tr>
+<table><tr><td>key</td><td>column</td><td>old value (VA-FHIR-CoP-MapSet-ONLINE.xlsx)</td><td>new value (VA-FHIR-CoP-MapSet.xlsx)</td></tr><tr><th colspan="4">new use-case Lab Observation: Surgical Pathology</th></tr>
+<tr><th colspan="4">new use-case Lab Observation: Electron Microscopy</th></tr>
+<tr><th colspan="4">use-case Lab Observation: Microbiology Mycology</th></tr>
 <tr><td colspan="4"><i>resource Observation</i></td></tr>
 <tr><td></td><td>maprow count</td><td>5</td><td>4</td></tr>
 <tr><td>2109</td><td>deleted maprow</td></tr>
@@ -214,14 +216,27 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <tr><td>2141</td><td>deleted maprow</td></tr>
 <tr><td>1529</td><td>new maprow</td></tr>
 <tr><td>1860</td><td>new maprow</td></tr>
-<tr><th colspan="4">use-case Organization</th></tr>
-<tr><td colspan="4"><i>resource Organization</i></td></tr>
-<tr><td>1254</td></tr>
-<tr><td></td><td>mapValue</td><td>#prov</td><td>http://terminology.hl7.org/CodeSystem/organization-type#prov</td></tr>
-<tr><th colspan="4">use-case Debt Portal</th></tr>
-<tr><td colspan="4"><i>resource PaymentReconciliation</i></td></tr>
-<tr><td>2032</td></tr>
-<tr><td></td><td>mapValue</td><td>/DebtPortalBillPatient</td><td>Patient</td></tr></table>
+<tr><th colspan="4">new use-case Lab Observation: Cytopathology</th></tr>
+<tr><th colspan="4">use-case MedicationRequest: Unsigned</th></tr>
+<tr><td colspan="4"><i>resource MedicationRequest</i></td></tr>
+<tr><td></td><td>maprow count</td><td>24</td><td>25</td></tr>
+<tr><td>1225</td></tr>
+<tr><td></td><td>mapParameters</td><td>.type=http://hl7.org/fhir/ValueSet/identifier-type#PLAC</td><td></td></tr>
+<tr><td>802</td><td>new maprow</td></tr>
+<tr><th colspan="4">use-case MedicationRequest: NonVA</th></tr>
+<tr><td colspan="4"><i>resource MedicationRequest</i></td></tr>
+<tr><td>1762</td></tr>
+<tr><td></td><td>mapParameters</td><td>.system=http://va.gov/identifiers/$Sta3n/55.05-7
+.type=http://hl7.org/fhir/ValueSet/identifier-type#FILL</td><td>.system=http://va.gov/identifiers/$Sta3n/55.05-7</td></tr>
+<tr><th colspan="4">use-case MedicationRequest: Outpatient</th></tr>
+<tr><td colspan="4"><i>resource MedicationRequest</i></td></tr>
+<tr><td>1664</td></tr>
+<tr><td></td><td>mapParameters</td><td>.type=http://hl7.org/fhir/ValueSet/identifier-type#FILL</td><td></td></tr>
+<tr><th colspan="4">use-case MedicationRequest: Pending</th></tr>
+<tr><td colspan="4"><i>resource MedicationRequest</i></td></tr>
+<tr><td>1747</td></tr>
+<tr><td></td><td>mapParameters</td><td>.system = http://va.gov/identifiers/$Sta3n/52.41-.01
+.type=http://hl7.org/fhir/ValueSet/identifier-type#PLAC</td><td>.system = http://va.gov/identifiers/$Sta3n/52.41-.01</td></tr></table>
 
 
 
@@ -242,7 +257,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025 <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#1.1.491 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Jan 17, 2025 13:37+0000">2025-01-17</span>
+          IG &#169; 2025 <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#1.1.494 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Sat, Jan 25, 2025 09:28+0000">2025-01-25</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
