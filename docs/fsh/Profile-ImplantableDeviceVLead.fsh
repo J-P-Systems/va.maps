@@ -4,8 +4,10 @@ Id: ImplantableDeviceVLead
 Title: "Implantable Device: V Lead"
 Description: "This StructureDefinition contains the maps for VistA file V LEAD IMPLANT (698.1) to us-core-implantable-device."
 * ^status = #active
-* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
-* ^extension.valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-implantable-device|6.1.0"
+* ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
+* ^extension[=].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-implantable-device|6.1.0"
+* ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
+* ^extension[=].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-implantable-device|7.0.0"
 * identifier.value and identifier.system and status and manufacturer and serialNumber and modelNumber and type and patient MS
 * patient only Reference(Patient)
 * identifier.system = "http://va.gov/identifiers/$Sta3n/698.1"
@@ -26,7 +28,7 @@ Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: ImplantableDeviceVLead
 * identifier.value -> "1351: source value based on V LEAD IMPLANT - IEN (698.1-.001)"
-* identifier.system -> "1351-1: fixed value = http://va.gov/identifiers/$Sta3n/698.1" "mapParameter row 1"
+* identifier.system -> "1351-1: fixed value = http://va.gov/identifiers/$Sta3n/698.1" "generated from mapParameter row 1"
 * status -> "1360: fixed value = #active when V LEAD IMPLANT - EXPLANT DATE (698.1-56) if is NULL" "If NULL, can it be assumed it is active?"
 * status -> "1361: fixed value = #inactive when V LEAD IMPLANT - EXPLANT DATE (698.1-56) if is not NULL"
 * manufacturer -> "1369: source value based on V LEAD IMPLANT - V LEAD MANUFACTURER > PACEMAKER MANUFACTURER - NAME (698.1-3 > 698.6-.01)"

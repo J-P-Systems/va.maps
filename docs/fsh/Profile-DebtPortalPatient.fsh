@@ -17,7 +17,7 @@ Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: DebtPortalPatient
 * contact.address.line -> "1819: source value based on ACCOUNTS RECEIVABLE - DEBTOR > AR DEBTOR - STREET ADDRESS #1 (430-9 > 340-1.01)"
-* contact.address.use -> "1819-1: fixed value = #billing" "mapParameter row 1"
+* contact.address.use -> "1819-1: fixed value = #billing" "generated from mapParameter row 1"
 * contact.address.line -> "1820: source value based on ACCOUNTS RECEIVABLE - DEBTOR > AR DEBTOR - STREET ADDRESS #2 (430-9 > 340-1.02)"
 * contact.address.line -> "1821: source value based on ACCOUNTS RECEIVABLE - DEBTOR > AR DEBTOR - STREET ADDRESS #3 (430-9 > 340-1.03)"
 * contact.address.city -> "1822: source value based on ACCOUNTS RECEIVABLE - DEBTOR > AR DEBTOR - CITY (430-9 > 340-1.04)"

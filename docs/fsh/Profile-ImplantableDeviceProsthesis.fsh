@@ -4,8 +4,10 @@ Id: ImplantableDeviceProsthesis
 Title: "Implantable Device: Prosthesis"
 Description: "This StructureDefinition contains the maps for VistA file PROSTHESIS INSTALLED (130.01) to us-core-implantable-device."
 * ^status = #active
-* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
-* ^extension.valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-implantable-device|6.1.0"
+* ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
+* ^extension[=].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-implantable-device|6.1.0"
+* ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
+* ^extension[=].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-implantable-device|7.0.0"
 * identifier.value and identifier.system and manufacturer and expirationDate and lotNumber and serialNumber and deviceName.name and deviceName.type and modelNumber and type and patient and owner MS
 * patient only Reference(Patient)
 * owner only Reference(Organization)
@@ -18,13 +20,13 @@ Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: ImplantableDeviceProsthesis
 * identifier.value -> "1348: source value based on PROSTHESIS INSTALLED - IEN (130.01-.001)"
-* identifier.system -> "1348-1: fixed value = http://va.gov/identifiers/$Sta3n/131.01" "mapParameter row 1"
+* identifier.system -> "1348-1: fixed value = http://va.gov/identifiers/$Sta3n/131.01" "generated from mapParameter row 1"
 * manufacturer -> "1365: source value based on PROSTHESIS INSTALLED - VENDOR (130.01-1)"
 * expirationDate -> "1373: source value based on PROSTHESIS INSTALLED - STERILITY EXPIRATION DATE (130.01-9)"
 * lotNumber -> "1376: source value based on PROSTHESIS INSTALLED - LOT NUMBER (130.01-11)"
 * serialNumber -> "1379: source value based on PROSTHESIS INSTALLED - SERIAL NUMBER (130.01-12)"
 * deviceName.name -> "1385: source value based on PROSTHESIS INSTALLED - PROSTHESIS ITEM > PROSTHESIS - NAME (130.01-.01 > 131.9-.01)"
-* deviceName.type -> "1385-1: fixed value = #model-name" "mapParameter row 1"
+* deviceName.type -> "1385-1: fixed value = #model-name" "generated from mapParameter row 1"
 * modelNumber -> "1387: source value based on PROSTHESIS INSTALLED - MODEL (130.01-2)"
 * type -> "1393: fixed value = http://snomed.info/sct#63653004 \"Biomedical device\"" "required, must support. SCT codes under 49062001 (Device)"
 * patient -> "1399: reference based on SURGERY - PATIENT (130-.01)" "Surgery points to Prosthesis Installed in field .47"

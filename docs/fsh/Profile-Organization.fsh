@@ -4,8 +4,10 @@ Id: Organization
 Title: "Organization"
 Description: "This StructureDefinition contains the maps for VistA file INSTITUTION (4) to us-core-organization."
 * ^status = #active
-* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
-* ^extension.valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization|6.1.0"
+* ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
+* ^extension[=].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization|6.1.0"
+* ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
+* ^extension[=].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization|7.0.0"
 * address ^slicing.discriminator.type = #value
 * address ^slicing.discriminator.path = "$this"
 * address ^slicing.rules = #open
@@ -24,7 +26,7 @@ Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: Organization
 * name -> "1251: source value based on INSTITUTION - NAME (4-.01)"
 * identifier[NPI].value -> "1252: source value based on INSTITUTION - NPI (4-41.99)" "Is mapCase used to indicate slice?"
-* identifier[NPI].system -> "1252-1: fixed value = http://hl7.org/fhir/sid/us-npi" "mapParameter row 1"
+* identifier[NPI].system -> "1252-1: fixed value = http://hl7.org/fhir/sid/us-npi" "generated from mapParameter row 1"
 * active -> "1253: fixed value = true"
 * type -> "1254: fixed value = http://terminology.hl7.org/CodeSystem/organization-type#prov"
 * alias -> "1255: source value based on INSTITUTION - SHORT NAME (4-.05)"
@@ -38,7 +40,7 @@ Source: Organization
 * address[va-physical].country -> "1264: source value based on INSTITUTION - COUNTRY > COUNTRY CODE - CODE (4-801 > 779.004-.01)"
 * contact.name.text -> "1265: source value based on INSTITUTION - CONTACT > CONTACT - CONTACT (4-4 > 4.03-.01)"
 * contact.telecom.value -> "1266: source value based on INSTITUTION - CONTACT > CONTACT - PHONE # (4-4 > 4.03-.03)"
-* contact.telecom.system -> "1266-1: fixed value = #phone" "mapParameter row 1"
+* contact.telecom.system -> "1266-1: fixed value = #phone" "generated from mapParameter row 1"
 * address[va-postal].type -> "1268: fixed value = #postal"
 * address[va-postal].line -> "1269: source value based on INSTITUTION - ST. ADDR. 1 (MAILING) (4-4.01)"
 * address[va-postal].line -> "1270: source value based on INSTITUTION - ST. ADDR. 2 (MAILING) (4-4.02)"

@@ -4,8 +4,10 @@ Id: MedicationRequestNonVA
 Title: "MedicationRequest: NonVA"
 Description: "This StructureDefinition contains the maps for VistA file NON-VA MEDS (55.05) to us-core-medicationrequest."
 * ^status = #draft
-* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
-* ^extension.valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest|6.1.0"
+* ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
+* ^extension[=].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest|6.1.0"
+* ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
+* ^extension[=].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest|7.0.0"
 * identifier ^slicing.discriminator.type = #value
 * identifier ^slicing.discriminator.path = "$this"
 * identifier ^slicing.rules = #open
@@ -44,9 +46,9 @@ Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: MedicationRequestNonVA
 * identifier[va-order-number].value -> "1762: source value based on NON-VA MEDS - ORDER NUMBER (55.05-7)" "Not required by US Core"
-* identifier[va-order-number].system -> "1762-1: fixed value = http://va.gov/identifiers/$Sta3n/55.05-7" "mapParameter row 1"
+* identifier[va-order-number].system -> "1762-1: fixed value = http://va.gov/identifiers/$Sta3n/55.05-7" "generated from mapParameter row 1"
 * identifier[va-ien].value -> "1763: source value based on NON-VA MEDS - IEN (55.05-.001)" "Not required by US Core"
-* identifier[va-ien].system -> "1763-1: fixed value = http://va.gov/identifiers/$Sta3n/55.05" "mapParameter row 1"
+* identifier[va-ien].system -> "1763-1: fixed value = http://va.gov/identifiers/$Sta3n/55.05" "generated from mapParameter row 1"
 * intent -> "1540: fixed value = #plan" "Revisit this if we can influence US Core"
 * reportedBoolean -> "1347: fixed value = true"
 * requester.extension[http://hl7.org/fhir/StructureDefinition/data-absent-reason].valueCode -> "1730: fixed value = #unsupported"

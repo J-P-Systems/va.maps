@@ -4,8 +4,10 @@ Id: VAERSPatient
 Title: "VAERS Patient"
 Description: "This StructureDefinition contains the maps for ADERS to us-core-patient."
 * ^status = #draft
-* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
-* ^extension.valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient|6.1.0"
+* ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
+* ^extension[=].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient|6.1.0"
+* ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
+* ^extension[=].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient|7.0.0"
 * extension contains http://va.gov/fhir/StructureDefinition/patient-ageAtVaccination named patient-ageAtVaccination 0..1
 * identifier and identifier.system and identifier.type.coding.code and identifier.type.coding.system and birthDate and gender and extension[http://va.gov/fhir/StructureDefinition/patient-ageAtVaccination].valueString and deceasedDateTime and extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-race].extension[ombCategory] and extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-race].extension[ombCategory].valueCoding and extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity].extension[ombCategory].valueCoding MS
 * identifier.system = "urn:oid:2.16.840.1.113883.4.349"
@@ -72,9 +74,9 @@ Id: aders
 Title: "VA Adverse Drug Event Reporting System (VA ADERS)"
 Source: VAERSPatient
 * identifier -> "1863: source value based on ADERS - 0_Pt_ICN_Full"
-* identifier.system -> "1863-1: fixed value = urn:oid:2.16.840.1.113883.4.349" "mapParameter row 1"
-* identifier.type.coding.code -> "1863-2: fixed value = #MR" "mapParameter row 2"
-* identifier.type.coding.system -> "1863-3: fixed value = http://terminology.hl7.org/CodeSystem/v2-0203" "mapParameter row 3"
+* identifier.system -> "1863-1: fixed value = urn:oid:2.16.840.1.113883.4.349" "generated from mapParameter row 1"
+* identifier.type.coding.code -> "1863-2: fixed value = #MR" "generated from mapParameter row 2"
+* identifier.type.coding.system -> "1863-3: fixed value = http://terminology.hl7.org/CodeSystem/v2-0203" "generated from mapParameter row 3"
 * birthDate -> "1874: source value based on ADERS - 2_ptDOB"
 * gender -> "1880: source value based on ADERS - 3_ptSex"
 * name -> "2022: target not supported" "because of must-support; FDA receives minimal deidentified data"

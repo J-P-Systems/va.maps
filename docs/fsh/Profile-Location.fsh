@@ -4,8 +4,10 @@ Id: Location
 Title: "Location"
 Description: "This StructureDefinition contains the maps for VistA file HOSPITAL LOCATION (44) to us-core-location."
 * ^status = #active
-* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
-* ^extension.valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-location|6.1.0"
+* ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
+* ^extension[=].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-location|6.1.0"
+* ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
+* ^extension[=].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-location|7.0.0"
 * type ^slicing.discriminator.type = #value
 * type ^slicing.discriminator.path = "$this"
 * type ^slicing.rules = #open
@@ -27,15 +29,15 @@ Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: Location
 * identifier.value -> "755: source value based on HOSPITAL LOCATION - IEN (44-.001)"
-* identifier.system -> "755-1: fixed value = http://va.gov/identifiers/$Sta3n/44" "mapParameter row 1"
+* identifier.system -> "755-1: fixed value = http://va.gov/identifiers/$Sta3n/44" "generated from mapParameter row 1"
 * name -> "756: source value based on HOSPITAL LOCATION - NAME (44-.01)"
 * alias -> "1276: source value based on HOSPITAL LOCATION - ABBREVIATION (44-1)"
 * alias -> "1277: source value based on HOSPITAL LOCATION - SYNONYM (44-13)"
 * status -> "1278: terminologyMaps using VF_LocationStatus" "Derive somehow from 44-2505 INACTIVATE 44-2506 REACTIVATE  \nOr use VAST, not ViSTA."
 * description -> "1279: source value based on HOSPITAL LOCATION - PATIENT FRIENDLY NAME (44-60)"
 * telecom.value -> "1280: transform using concat (44-99,\" ext. \",44-99.1) on HOSPITAL LOCATION - TELEPHONE (44-99)"
-* telecom.system -> "1280-1: fixed value = #phone" "mapParameter row 1"
-* telecom.use -> "1280-2: fixed value = #work" "mapParameter row 2"
+* telecom.system -> "1280-1: fixed value = #phone" "generated from mapParameter row 1"
+* telecom.use -> "1280-2: fixed value = #work" "generated from mapParameter row 2"
 * managingOrganization.display -> "1283: fixed value = \"Veterans Administration\""
 * physicalType.text -> "1284: source value based on HOSPITAL LOCATION - PHYSICAL LOCATION (44-10)"
 * address.state -> "1315: source value based on HOSPITAL LOCATION - INSTITUTION > INSTITUTION - STATE > STATE - ABBREVIATION (44-3 > 4-.02 > 5-1)"
@@ -47,12 +49,12 @@ Source: Location
 * address.country -> "1405: source value based on HOSPITAL LOCATION - INSTITUTION > INSTITUTION - COUNTRY > COUNTRY CODE - CODE (44-3 > 4-801 > 779.004-.01)"
 * address.type -> "1322: fixed value = #physical when HOSPITAL LOCATION - INSTITUTION (44-3)"
 * type.coding.code -> "1412: source value based on HOSPITAL LOCATION - SERVICE (44-9)"
-* type.coding.system -> "1412-1: fixed value = http://va.gov/terminology/VistADefinedTerms/44-9" "mapParameter row 1"
+* type.coding.system -> "1412-1: fixed value = http://va.gov/terminology/VistADefinedTerms/44-9" "generated from mapParameter row 1"
 * mode -> "1806: fixed value = #instance" "Added 4/5/24 to match LH PHAPI"
 * type[va-stop-code].coding.code -> "2039: source value based on HOSPITAL LOCATION - STOP CODE NUMBER (44-8)" "added stop codes to support BTSSS"
-* type[va-stop-code].coding.system -> "2039-1: fixed value = http://va.gov/terminology/VistADefinedTerms/44-8" "mapParameter row 1"
+* type[va-stop-code].coding.system -> "2039-1: fixed value = http://va.gov/terminology/VistADefinedTerms/44-8" "generated from mapParameter row 1"
 * type[va-credit-code].coding.code -> "2040: source value based on HOSPITAL LOCATION - CREDIT STOP CODE (44-2503)" "added stop codes to support BTSSS"
-* type[va-credit-code].coding.system -> "2040-1: fixed value = http://va.gov/terminology/VistADefinedTerms/44-2503" "mapParameter row 1"
+* type[va-credit-code].coding.system -> "2040-1: fixed value = http://va.gov/terminology/VistADefinedTerms/44-2503" "generated from mapParameter row 1"
 
 Mapping: cdw-to-Location
 Id: cdw

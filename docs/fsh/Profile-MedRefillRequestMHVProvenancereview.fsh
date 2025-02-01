@@ -15,9 +15,9 @@ Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: MedRefillRequestMHVProvenancereview
 * recorded -> "1847: source value based on PRESCRIPTION REFILL REQUEST - DATE PROCESSED (52.43-5)"
-* activity -> "1847-1: fixed value = http://terminology.hl7.org/CodeSystem/v3-ActClass#REV" "mapParameter row 1"
-* agent.who.display -> "1847-2: fixed value = VA" "mapParameter row 2"
-* agent.who.type -> "1847-3: fixed value = http://hl7.org/fhir/StructureDefinition/Organization" "mapParameter row 3"
+* activity -> "1847-1: fixed value = http://terminology.hl7.org/CodeSystem/v3-ActClass#REV" "generated from mapParameter row 1"
+* agent.who.display -> "1847-2: fixed value = VA" "generated from mapParameter row 2"
+* agent.who.type -> "1847-3: fixed value = http://hl7.org/fhir/StructureDefinition/Organization" "generated from mapParameter row 3"
 * target -> "1864: reference"
 
 Mapping: cdw-to-MedRefillRequestMHVProvenancereview

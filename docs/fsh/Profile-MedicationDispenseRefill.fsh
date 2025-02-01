@@ -47,7 +47,7 @@ Source: MedicationDispenseRefill
 * dosageInstruction.patientInstruction -> "1557: source value based on PRESCRIPTION - PATIENT INSTRUCTIONS (52-114)"
 * dosageInstruction.text -> "1556: source value based on PRESCRIPTION - SIG (52-10)"
 * medicationCodeableConcept.coding.code -> "1561: source value based on PRESCRIPTION - DRUG > DRUG - PSNDF VA PRODUCT NAME ENTRY (52-6 > 50-22)"
-* medicationCodeableConcept.coding.system -> "1561-1: fixed value = urn:oid:2.16.840.1.113883.6.233" "mapParameter row 1"
+* medicationCodeableConcept.coding.system -> "1561-1: fixed value = urn:oid:2.16.840.1.113883.6.233" "generated from mapParameter row 1"
 * medicationCodeableConcept.text -> "1560: source value based on PRESCRIPTION - DRUG > DRUG - GENERIC NAME (52-6 > 50-.01)" "This may not be necessary; we have the product."
 * quantity.value -> "824: source value based on PRESCRIPTION - REFILL > REFILL - QTY (52-52 > 52.1-1)"
 * status -> "869: fixed value = #completed when PRESCRIPTION - REFILL > REFILL - RELEASED DATE/TIME (52-52 > 52.1-17) if not null" "updated table id (was a dup)"

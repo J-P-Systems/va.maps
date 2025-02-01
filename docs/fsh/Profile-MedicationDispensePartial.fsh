@@ -43,7 +43,7 @@ Source: MedicationDispensePartial
 * dosageInstruction.patientInstruction -> "1569: source value based on PRESCRIPTION - PATIENT INSTRUCTIONS (52-114)"
 * dosageInstruction.text -> "1568: source value based on PRESCRIPTION - SIG (52-10)"
 * medicationCodeableConcept.coding.code -> "1573: source value based on PRESCRIPTION - DRUG > DRUG - PSNDF VA PRODUCT NAME ENTRY (52-6 > 50-22)"
-* medicationCodeableConcept.coding.system -> "1573-1: fixed value = urn:oid:2.16.840.1.113883.6.233" "mapParameter row 1"
+* medicationCodeableConcept.coding.system -> "1573-1: fixed value = urn:oid:2.16.840.1.113883.6.233" "generated from mapParameter row 1"
 * medicationCodeableConcept.text -> "1572: source value based on PRESCRIPTION - DRUG > DRUG - GENERIC NAME (52-6 > 50-.01)" "This may not be necessary; we have the product."
 * quantity.value -> "1566: source value based on PRESCRIPTION - PARTIAL DATE > PARTIAL DATE - QTY (52-60 > 52.2-.04)"
 * status -> "1577: fixed value = #completed when PRESCRIPTION - PARTIAL DATE > PARTIAL DATE - RELEASED DATE/TIME (52-60 > 52.2-8) if not null"

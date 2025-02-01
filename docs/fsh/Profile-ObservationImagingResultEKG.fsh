@@ -16,7 +16,7 @@ Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: ObservationImagingResultEKG
 * identifier.value -> "1618: source value based on ELECTROCARDIOGRAM (EKG) - IEN (691.5-.001)"
-* identifier.system -> "1618-1: fixed value = http://va.gov/identifiers/$Sta3n/691.5" "mapParameter row 1"
+* identifier.system -> "1618-1: fixed value = http://va.gov/identifiers/$Sta3n/691.5" "generated from mapParameter row 1"
 * status -> "1622: terminologyMaps using VF_ImageStatus on ELECTROCARDIOGRAM (EKG) - RELEASE STATUS (691.5-1506)"
 * subject -> "1632: reference based on ELECTROCARDIOGRAM (EKG) - MEDICAL PATIENT (691.5-1)"
 * effectiveDateTime -> "1635: source value based on ELECTROCARDIOGRAM (EKG) - DATE/TIME (691.5-.01)"

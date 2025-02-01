@@ -4,8 +4,10 @@ Id: MedicationRequestPending
 Title: "MedicationRequest: Pending"
 Description: "This StructureDefinition contains the maps for VistA file PENDING OUTPATIENT ORDERS (52.41) to us-core-medicationrequest."
 * ^status = #draft
-* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
-* ^extension.valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest|6.1.0"
+* ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
+* ^extension[=].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest|6.1.0"
+* ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
+* ^extension[=].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest|7.0.0"
 * extension contains http://va.gov/fhir/StructureDefinition/medicationrequest-pharmacyOrderStatus named medicationrequest-pharmacyOrderStatus 0..1
 * identifier.value and identifier.system and status and extension[http://va.gov/fhir/StructureDefinition/medicationrequest-pharmacyOrderStatus].valueCoding.code and extension[http://va.gov/fhir/StructureDefinition/medicationrequest-pharmacyOrderStatus].valueCoding.system and recorder and requester and dosageInstruction.timing.repeat.boundsPeriod.start and medicationCodeableConcept and dispenseRequest.quantity and dispenseRequest.numberOfRepeatsAllowed and authoredOn and dispenseRequest.expectedSupplyDuration and note and dosageInstruction.patientInstruction MS
 * recorder only Reference(Practitioner)
@@ -24,10 +26,10 @@ Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: MedicationRequestPending
 * identifier.value -> "1747: source value based on PENDING OUTPATIENT ORDERS - PLACER NUMBER (52.41-.01)"
-* identifier.system -> "1747-1: fixed value = http://va.gov/identifiers/$Sta3n/52.41-.01" "mapParameter row 1"
+* identifier.system -> "1747-1: fixed value = http://va.gov/identifiers/$Sta3n/52.41-.01" "generated from mapParameter row 1"
 * status -> "1748: fixed value = #draft"
 * extension[http://va.gov/fhir/StructureDefinition/medicationrequest-pharmacyOrderStatus].valueCoding.code -> "1749: source value based on PENDING OUTPATIENT ORDERS - ORDER TYPE (52.41-2)"
-* extension[http://va.gov/fhir/StructureDefinition/medicationrequest-pharmacyOrderStatus].valueCoding.system -> "1749-1: fixed value = http://va.gov/terminology/vistaDefinedTerms/52.41-2" "mapParameter row 1"
+* extension[http://va.gov/fhir/StructureDefinition/medicationrequest-pharmacyOrderStatus].valueCoding.system -> "1749-1: fixed value = http://va.gov/terminology/vistaDefinedTerms/52.41-2" "generated from mapParameter row 1"
 * recorder -> "1750: reference based on PENDING OUTPATIENT ORDERS - ENTERED BY (52.41-4)"
 * requester -> "1751: reference based on PENDING OUTPATIENT ORDERS - PROVIDER (52.41-5)"
 * dosageInstruction.timing.repeat.boundsPeriod.start -> "1752: source value based on PENDING OUTPATIENT ORDERS - EFFECTIVE DATE (52.41-6)"

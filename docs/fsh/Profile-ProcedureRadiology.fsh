@@ -4,8 +4,10 @@ Id: ProcedureRadiology
 Title: "Procedure: Radiology"
 Description: "This StructureDefinition contains the maps for VistA file REGISTERED EXAMS (70.02) to us-core-procedure."
 * ^status = #active
-* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
-* ^extension.valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure|6.1.0"
+* ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
+* ^extension[=].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure|6.1.0"
+* ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
+* ^extension[=].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure|7.0.0"
 * status and statusReason.text and category.text and code.coding and code.coding.system and code.coding.code and code.coding.display and subject and encounter and performedDateTime and performer.actor and location MS
 * encounter only Reference(EncounterOutpatient)
 * performer.actor only Reference(Practitioner)
@@ -26,9 +28,9 @@ Source: ProcedureRadiology
 * statusReason.text -> "1507: source value based on REGISTERED EXAMS - EXAMINATIONS > EXAMINATIONS - REASON FOR CANCELLATION > RAD/NUC MED REASON - REASON (70.02-50 > 70.03-3.5 > 75.2-.01)"
 * category.text -> "1508: source value based on REGISTERED EXAMS - TYPE OF IMAGING > IMAGING TYPE - TYPE OF IMAGING (70.02-2 > 79.2-.01)"
 * code.coding -> "1509: source value based on REGISTERED EXAMS - EXAMINATIONS > EXAMINATIONS - PROCEDURE > RAD/NUC MED PROCEDURES - CPT CODE > CPT (70.02-50 > 70.03-2 > 71-9 > 81-)"
-* code.coding.system -> "1509-1: fixed value = http://www.ama-assn.org/go/cpt" "mapParameter row 1"
-* code.coding.code -> "1509-2: source value based on REGISTERED EXAMS - EXAMINATIONS > EXAMINATIONS - PROCEDURE > RAD/NUC MED PROCEDURES - CPT CODE > CPT - CPT CODE (70.02-50 > 70.03-2 > 71-9 > 81-.01)" "mapParameter row 2"
-* code.coding.display -> "1509-3: source value based on REGISTERED EXAMS - EXAMINATIONS > EXAMINATIONS - PROCEDURE > RAD/NUC MED PROCEDURES - CPT CODE > CPT - SHORT NAME (70.02-50 > 70.03-2 > 71-9 > 81-2)" "mapParameter row 3"
+* code.coding.system -> "1509-1: fixed value = http://www.ama-assn.org/go/cpt" "generated from mapParameter row 1"
+* code.coding.code -> "1509-2: source value based on REGISTERED EXAMS - EXAMINATIONS > EXAMINATIONS - PROCEDURE > RAD/NUC MED PROCEDURES - CPT CODE > CPT - CPT CODE (70.02-50 > 70.03-2 > 71-9 > 81-.01)" "generated from mapParameter row 2"
+* code.coding.display -> "1509-3: source value based on REGISTERED EXAMS - EXAMINATIONS > EXAMINATIONS - PROCEDURE > RAD/NUC MED PROCEDURES - CPT CODE > CPT - SHORT NAME (70.02-50 > 70.03-2 > 71-9 > 81-2)" "generated from mapParameter row 3"
 * subject -> "1510: reference based on RAD/NUC MED PATIENT - NAME (70-.01) if 70-2 > 70.02"
 * encounter -> "1511: reference based on REGISTERED EXAMS - EXAMINATIONS > EXAMINATIONS - VISIT (70.02-50 > 70.03-27)"
 * performedDateTime -> "1512: source value based on REGISTERED EXAMS - EXAM DATE (70.02-.01)" "required if the status is 'completed' or 'in-progress'"

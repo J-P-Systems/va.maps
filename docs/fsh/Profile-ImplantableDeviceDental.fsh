@@ -4,8 +4,10 @@ Id: ImplantableDeviceDental
 Title: "Implantable Device: Dental"
 Description: "This StructureDefinition contains the maps for VistA file DENTAL DEVICE TRACKING (228.9) to us-core-implantable-device."
 * ^status = #active
-* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
-* ^extension.valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-implantable-device|6.1.0"
+* ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
+* ^extension[=].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-implantable-device|6.1.0"
+* ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
+* ^extension[=].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-implantable-device|7.0.0"
 * identifier.value and identifier.system and udiCarrier.deviceIdentifier and status and distinctIdentifier and manufacturer and manufactureDate and expirationDate and lotNumber and serialNumber and modelNumber and type.text and type.coding.system and type.coding.code and type.coding.display and patient MS
 * patient only Reference(Patient)
 * identifier.system = "http://va.gov/identifiers/$Sta3n/228.9"
@@ -19,7 +21,7 @@ Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: ImplantableDeviceDental
 * identifier.value -> "1352: source value based on DENTAL DEVICE TRACKING - IEN (228.9-.001)"
-* identifier.system -> "1352-1: fixed value = http://va.gov/identifiers/$Sta3n/228.9" "mapParameter row 1"
+* identifier.system -> "1352-1: fixed value = http://va.gov/identifiers/$Sta3n/228.9" "generated from mapParameter row 1"
 * udiCarrier.deviceIdentifier -> "1354: source value based on DENTAL DEVICE TRACKING - UDI (228.9-1)"
 * status -> "1362: terminologyMaps using VF_DentalDeviceStatus on DENTAL DEVICE TRACKING - STATUS (228.9-.08)"
 * distinctIdentifier -> "1364: source value based on DENTAL DEVICE TRACKING - DONATION ID (228.9-4.8)"
@@ -30,9 +32,9 @@ Source: ImplantableDeviceDental
 * serialNumber -> "1384: source value based on DENTAL DEVICE TRACKING - S/N (228.9-4.3)"
 * modelNumber -> "1392: source value based on DENTAL DEVICE TRACKING - MODEL (228.9-4.2)"
 * type.text -> "1398: source value based on DENTAL DEVICE TRACKING - TYPE (228.9-2)"
-* type.coding.system -> "1398-1: fixed value = http://snomed.info/sct" "mapParameter row 1"
-* type.coding.code -> "1398-2: fixed value = #277986000" "mapParameter row 2"
-* type.coding.display -> "1398-3: fixed value = Dental equipment and devices" "mapParameter row 3"
+* type.coding.system -> "1398-1: fixed value = http://snomed.info/sct" "generated from mapParameter row 1"
+* type.coding.code -> "1398-2: fixed value = #277986000" "generated from mapParameter row 2"
+* type.coding.display -> "1398-3: fixed value = Dental equipment and devices" "generated from mapParameter row 3"
 * patient -> "1403: reference based on DENTAL DEVICE TRACKING - PATIENT (228.9-.03)"
 * udiCarrier.deviceIdentifier -> "1353: target not supported"
 * status -> "1355: target not supported"

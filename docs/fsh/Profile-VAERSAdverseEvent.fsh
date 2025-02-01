@@ -18,7 +18,7 @@ Id: aders
 Title: "VA Adverse Drug Event Reporting System (VA ADERS)"
 Source: VAERSAdverseEvent
 * subject -> "1877: reference based on ADERS - 0_Pt_ICN_Full"
-* actuality -> "1877-1: fixed value = #actual" "mapParameter row 1"
+* actuality -> "1877-1: fixed value = #actual" "generated from mapParameter row 1"
 * date -> "1881: transform using concat(4_VacDate, 4_VacTime)"
 * event.coding -> "1905: transform using parseCodesFromText()" "Multiple event codes in coding"
 * outcome.coding[va-outcome1] -> "1906: source value based on ADERS - 21_VAE_Outcome_DrVisit"
