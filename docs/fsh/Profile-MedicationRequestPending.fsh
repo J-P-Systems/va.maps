@@ -9,10 +9,11 @@ Description: "This StructureDefinition contains the maps for VistA file PENDING 
 * ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
 * ^extension[=].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest|7.0.0"
 * extension contains http://va.gov/fhir/StructureDefinition/medicationrequest-pharmacyOrderStatus named medicationrequest-pharmacyOrderStatus 0..1
-* identifier.value and identifier.system and status and extension[http://va.gov/fhir/StructureDefinition/medicationrequest-pharmacyOrderStatus].valueCoding.code and extension[http://va.gov/fhir/StructureDefinition/medicationrequest-pharmacyOrderStatus].valueCoding.system and recorder and requester and dosageInstruction.timing.repeat.boundsPeriod.start and medicationCodeableConcept and dispenseRequest.quantity and dispenseRequest.numberOfRepeatsAllowed and authoredOn and dispenseRequest.expectedSupplyDuration and note and dosageInstruction.patientInstruction MS
+* identifier.value and identifier.system and identifier.type and status and extension[http://va.gov/fhir/StructureDefinition/medicationrequest-pharmacyOrderStatus].valueCoding.code and extension[http://va.gov/fhir/StructureDefinition/medicationrequest-pharmacyOrderStatus].valueCoding.system and recorder and requester and dosageInstruction.timing.repeat.boundsPeriod.start and medicationCodeableConcept and dispenseRequest.quantity and dispenseRequest.numberOfRepeatsAllowed and authoredOn and dispenseRequest.expectedSupplyDuration and note and dosageInstruction.patientInstruction MS
 * recorder only Reference(Practitioner)
 * requester only Reference(Practitioner)
 * identifier.system = "http://va.gov/identifiers/$Sta3n/52.41-.01"
+* identifier.type = http://terminology.hl7.org/CodeSystem/v2-0203#PLAC
 * status = #draft
 * extension[http://va.gov/fhir/StructureDefinition/medicationrequest-pharmacyOrderStatus].valueCoding.system = "http://va.gov/terminology/vistaDefinedTerms/52.41-2"
 * medicationCodeableConcept obeys mrp-24-1753
@@ -27,6 +28,7 @@ Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: MedicationRequestPending
 * identifier.value -> "1747: source value based on PENDING OUTPATIENT ORDERS - PLACER NUMBER (52.41-.01)"
 * identifier.system -> "1747-1: fixed value = http://va.gov/identifiers/$Sta3n/52.41-.01" "generated from mapParameter row 1"
+* identifier.type -> "1747-2: fixed value = http://terminology.hl7.org/CodeSystem/v2-0203#PLAC" "generated from mapParameter row 2"
 * status -> "1748: fixed value = #draft"
 * extension[http://va.gov/fhir/StructureDefinition/medicationrequest-pharmacyOrderStatus].valueCoding.code -> "1749: source value based on PENDING OUTPATIENT ORDERS - ORDER TYPE (52.41-2)"
 * extension[http://va.gov/fhir/StructureDefinition/medicationrequest-pharmacyOrderStatus].valueCoding.system -> "1749-1: fixed value = http://va.gov/terminology/vistaDefinedTerms/52.41-2" "generated from mapParameter row 1"

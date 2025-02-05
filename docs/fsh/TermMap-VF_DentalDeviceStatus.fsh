@@ -29,7 +29,7 @@ Usage: #definition
 
 ValueSet: DentalDeviceStatus
 Title: "DentalDeviceStatus FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps VF_DentalDeviceStatus"
+Description: "FHIR Target ValueSet for Terminology Maps [VF_DentalDeviceStatus](ConceptMap-VF-DentalDeviceStatus)"
 * ^experimental = false
 * ^status = #active
 * ^name = "DentalDeviceStatus"
@@ -39,7 +39,7 @@ Description: "FHIR Target ValueSet for Terminology Maps VF_DentalDeviceStatus"
 
 ValueSet: DentalDeviceStatus-vista
 Title: "DentalDeviceStatus VistA"
-Description: "VistA Source ValueSet for Terminology Maps VF_DentalDeviceStatus"
+Description: "VistA Source ValueSet for Terminology Maps [VF_DentalDeviceStatus](ConceptMap-VF-DentalDeviceStatus)"
 * ^experimental = false
 * ^status = #active
 * ^name = "DentalDeviceStatus_VistA"

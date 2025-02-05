@@ -56,7 +56,7 @@ Usage: #definition
 
 ValueSet: SmokingStatus
 Title: "SmokingStatus FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps VF_SmokingStatus"
+Description: "FHIR Target ValueSet for Terminology Maps [VF_SmokingStatus](ConceptMap-VF-SmokingStatus)"
 * ^experimental = false
 * ^status = #active
 * ^name = "SmokingStatus"
@@ -67,7 +67,7 @@ Description: "FHIR Target ValueSet for Terminology Maps VF_SmokingStatus"
 
 ValueSet: SmokingStatus-vista
 Title: "SmokingStatus VistA"
-Description: "VistA Source ValueSet for Terminology Maps VF_SmokingStatus"
+Description: "VistA Source ValueSet for Terminology Maps [VF_SmokingStatus](ConceptMap-VF-SmokingStatus)"
 * ^experimental = false
 * ^status = #active
 * ^name = "SmokingStatus_VistA"

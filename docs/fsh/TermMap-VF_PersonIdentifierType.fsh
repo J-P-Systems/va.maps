@@ -28,7 +28,7 @@ Usage: #definition
 
 ValueSet: PersonIdentifierType
 Title: "PersonIdentifierType FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps VF_PersonIdentifierType"
+Description: "FHIR Target ValueSet for Terminology Maps [VF_PersonIdentifierType](ConceptMap-VF-PersonIdentifierType)"
 * ^experimental = false
 * ^status = #active
 * ^name = "PersonIdentifierType"
@@ -38,7 +38,7 @@ Description: "FHIR Target ValueSet for Terminology Maps VF_PersonIdentifierType"
 
 ValueSet: PersonIdentifierType-vista
 Title: "PersonIdentifierType VistA"
-Description: "VistA Source ValueSet for Terminology Maps VF_PersonIdentifierType"
+Description: "VistA Source ValueSet for Terminology Maps [VF_PersonIdentifierType](ConceptMap-VF-PersonIdentifierType)"
 * ^experimental = false
 * ^status = #active
 * ^name = "PersonIdentifierType_VistA"

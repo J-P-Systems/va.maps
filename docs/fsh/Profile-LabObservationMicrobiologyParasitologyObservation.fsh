@@ -15,6 +15,7 @@ Description: "This StructureDefinition contains the maps for VistA file MICROBIO
 * subject only Reference(Patient)
 * code obeys lompo-49-1528
 * status from http://va.gov/fhir/ValueSet/LabObservationStatus
+* status ^binding.description = "see mapping [VF_LabObservationStatus](ConceptMap-VF-LabObservationStatus.html)"
 * identifier.system = "http://va.gov/identifiers/$Sta3n/63.05"
 * code.coding obeys lompo-49-1480
 * code.coding.system obeys lompo-49-1480-1

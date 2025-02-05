@@ -109,7 +109,7 @@ Usage: #definition
 
 ValueSet: VitalsCodes
 Title: "VitalsCodes FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps VF_VitalsCodes"
+Description: "FHIR Target ValueSet for Terminology Maps [VF_VitalsCodes](ConceptMap-VF-VitalsCodes)"
 * ^experimental = false
 * ^status = #active
 * ^name = "VitalsCodes"
@@ -134,7 +134,7 @@ Description: "FHIR Target ValueSet for Terminology Maps VF_VitalsCodes"
 
 ValueSet: VitalsCodes-vista
 Title: "VitalsCodes VistA"
-Description: "VistA Source ValueSet for Terminology Maps VF_VitalsCodes"
+Description: "VistA Source ValueSet for Terminology Maps [VF_VitalsCodes](ConceptMap-VF-VitalsCodes)"
 * ^experimental = false
 * ^status = #active
 * ^name = "VitalsCodes_VistA"

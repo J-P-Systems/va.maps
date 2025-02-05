@@ -25,7 +25,7 @@ Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: Organization
 * name -> "1251: source value based on INSTITUTION - NAME (4-.01)"
-* identifier[NPI].value -> "1252: source value based on INSTITUTION - NPI (4-41.99)" "Is mapCase used to indicate slice?"
+* identifier[NPI].value -> "1252: source value based on INSTITUTION - NPI (4-41.99)"
 * identifier[NPI].system -> "1252-1: fixed value = http://hl7.org/fhir/sid/us-npi" "generated from mapParameter row 1"
 * active -> "1253: fixed value = true"
 * type -> "1254: fixed value = http://terminology.hl7.org/CodeSystem/organization-type#prov"

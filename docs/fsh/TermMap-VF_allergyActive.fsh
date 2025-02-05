@@ -19,7 +19,7 @@ Usage: #definition
 
 ValueSet: allergyActive
 Title: "allergyActive FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps VF_allergyActive"
+Description: "FHIR Target ValueSet for Terminology Maps [VF_allergyActive](ConceptMap-VF-allergyActive)"
 * ^experimental = false
 * ^status = #active
 * ^name = "AllergyActive"
@@ -27,7 +27,7 @@ Description: "FHIR Target ValueSet for Terminology Maps VF_allergyActive"
 
 ValueSet: allergyActive-vista
 Title: "allergyActive VistA"
-Description: "VistA Source ValueSet for Terminology Maps VF_allergyActive"
+Description: "VistA Source ValueSet for Terminology Maps [VF_allergyActive](ConceptMap-VF-allergyActive)"
 * ^experimental = false
 * ^status = #active
 * ^name = "AllergyActive_VistA"

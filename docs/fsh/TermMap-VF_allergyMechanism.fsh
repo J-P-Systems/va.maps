@@ -24,7 +24,7 @@ Usage: #definition
 
 ValueSet: allergyMechanism
 Title: "allergyMechanism FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps VF_allergyMechanism"
+Description: "FHIR Target ValueSet for Terminology Maps [VF_allergyMechanism](ConceptMap-VF-allergyMechanism)"
 * ^experimental = false
 * ^status = #active
 * ^name = "AllergyMechanism"
@@ -33,7 +33,7 @@ Description: "FHIR Target ValueSet for Terminology Maps VF_allergyMechanism"
 
 ValueSet: allergyMechanism-vista
 Title: "allergyMechanism VistA"
-Description: "VistA Source ValueSet for Terminology Maps VF_allergyMechanism"
+Description: "VistA Source ValueSet for Terminology Maps [VF_allergyMechanism](ConceptMap-VF-allergyMechanism)"
 * ^experimental = false
 * ^status = #active
 * ^name = "AllergyMechanism_VistA"

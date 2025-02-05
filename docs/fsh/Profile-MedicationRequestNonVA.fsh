@@ -16,10 +16,11 @@ Description: "This StructureDefinition contains the maps for VistA file NON-VA M
 * encounter.extension contains http://hl7.org/fhir/StructureDefinition/data-absent-reason named data-absent-reason 0..1
 * dosageInstruction.doseAndRate.doseQuantity.extension contains http://hl7.org/fhir/StructureDefinition/originalText named originalText 0..1
 * extension contains http://va.gov/fhir/StructureDefinition/medicationrequest-recordedLocation named medicationrequest-recordedLocation 0..1
-* identifier[va-order-number].value and identifier[va-order-number].system and identifier[va-ien].value and identifier[va-ien].system and intent and reportedBoolean and requester.extension[http://hl7.org/fhir/StructureDefinition/data-absent-reason].valueCode and encounter.extension[http://hl7.org/fhir/StructureDefinition/data-absent-reason].valueCode and medicationCodeableConcept and dosageInstruction.doseAndRate.doseQuantity.extension[http://hl7.org/fhir/StructureDefinition/originalText] and dosageInstruction.route.text and dosageInstruction.timing.code.text and status and authoredOn and recorder and note and reasonCode.text and dosageInstruction.text and extension[http://va.gov/fhir/StructureDefinition/medicationrequest-recordedLocation].valueReference MS
+* identifier[va-order-number].value and identifier[va-order-number].system and identifier[va-order-number].type and identifier[va-ien].value and identifier[va-ien].system and intent and reportedBoolean and requester.extension[http://hl7.org/fhir/StructureDefinition/data-absent-reason].valueCode and encounter.extension[http://hl7.org/fhir/StructureDefinition/data-absent-reason].valueCode and medicationCodeableConcept and dosageInstruction.doseAndRate.doseQuantity.extension[http://hl7.org/fhir/StructureDefinition/originalText] and dosageInstruction.route.text and dosageInstruction.timing.code.text and status and authoredOn and recorder and note and reasonCode.text and dosageInstruction.text and extension[http://va.gov/fhir/StructureDefinition/medicationrequest-recordedLocation].valueReference MS
 * recorder only Reference(Practitioner)
 * extension[http://va.gov/fhir/StructureDefinition/medicationrequest-recordedLocation].valueReference only Reference(Location)
 * identifier[va-order-number].system = "http://va.gov/identifiers/$Sta3n/55.05-7"
+* identifier[va-order-number].type = http://terminology.hl7.org/CodeSystem/v2-0203#FILL
 * identifier[va-ien].system = "http://va.gov/identifiers/$Sta3n/55.05"
 * intent = #plan
 * reportedBoolean = true
@@ -47,6 +48,7 @@ Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: MedicationRequestNonVA
 * identifier[va-order-number].value -> "1762: source value based on NON-VA MEDS - ORDER NUMBER (55.05-7)" "Not required by US Core"
 * identifier[va-order-number].system -> "1762-1: fixed value = http://va.gov/identifiers/$Sta3n/55.05-7" "generated from mapParameter row 1"
+* identifier[va-order-number].type -> "1762-2: fixed value = http://terminology.hl7.org/CodeSystem/v2-0203#FILL" "generated from mapParameter row 2"
 * identifier[va-ien].value -> "1763: source value based on NON-VA MEDS - IEN (55.05-.001)" "Not required by US Core"
 * identifier[va-ien].system -> "1763-1: fixed value = http://va.gov/identifiers/$Sta3n/55.05" "generated from mapParameter row 1"
 * intent -> "1540: fixed value = #plan" "Revisit this if we can influence US Core"

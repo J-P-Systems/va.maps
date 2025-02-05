@@ -26,7 +26,7 @@ Usage: #definition
 
 ValueSet: CoverageStatusForce
 Title: "CoverageStatusForce FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps VF_CoverageStatusForce"
+Description: "FHIR Target ValueSet for Terminology Maps [VF_CoverageStatusForce](ConceptMap-VF-CoverageStatusForce)"
 * ^experimental = false
 * ^status = #active
 * ^name = "CoverageStatusForce"
@@ -35,7 +35,7 @@ Description: "FHIR Target ValueSet for Terminology Maps VF_CoverageStatusForce"
 
 ValueSet: CoverageStatusForce-vista
 Title: "CoverageStatusForce VistA"
-Description: "VistA Source ValueSet for Terminology Maps VF_CoverageStatusForce"
+Description: "VistA Source ValueSet for Terminology Maps [VF_CoverageStatusForce](ConceptMap-VF-CoverageStatusForce)"
 * ^experimental = false
 * ^status = #active
 * ^name = "CoverageStatusForce_VistA"

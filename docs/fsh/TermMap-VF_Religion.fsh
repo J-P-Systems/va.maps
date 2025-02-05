@@ -436,7 +436,7 @@ Usage: #definition
 
 ValueSet: Religion
 Title: "Religion FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps VF_Religion"
+Description: "FHIR Target ValueSet for Terminology Maps [VF_Religion](ConceptMap-VF-Religion)"
 * ^experimental = false
 * ^status = #active
 * ^name = "Religion"
@@ -527,7 +527,7 @@ Description: "FHIR Target ValueSet for Terminology Maps VF_Religion"
 
 ValueSet: Religion-vista
 Title: "Religion VistA"
-Description: "VistA Source ValueSet for Terminology Maps VF_Religion"
+Description: "VistA Source ValueSet for Terminology Maps [VF_Religion](ConceptMap-VF-Religion)"
 * ^experimental = false
 * ^status = #active
 * ^name = "Religion_VistA"

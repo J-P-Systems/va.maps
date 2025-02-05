@@ -74,7 +74,7 @@ Usage: #definition
 
 ValueSet: DiagnosticReportLabStatus
 Title: "DiagnosticReportLabStatus FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps VF_DiagnosticReportLabStatus"
+Description: "FHIR Target ValueSet for Terminology Maps [VF_DiagnosticReportLabStatus](ConceptMap-VF-DiagnosticReportLabStatus)"
 * ^experimental = false
 * ^status = #active
 * ^name = "DiagnosticReportLabStatus"
@@ -88,7 +88,7 @@ Description: "FHIR Target ValueSet for Terminology Maps VF_DiagnosticReportLabSt
 
 ValueSet: DiagnosticReportLabStatus-vista
 Title: "DiagnosticReportLabStatus VistA"
-Description: "VistA Source ValueSet for Terminology Maps VF_DiagnosticReportLabStatus"
+Description: "VistA Source ValueSet for Terminology Maps [VF_DiagnosticReportLabStatus](ConceptMap-VF-DiagnosticReportLabStatus)"
 * ^experimental = false
 * ^status = #active
 * ^name = "DiagnosticReportLabStatus_VistA"

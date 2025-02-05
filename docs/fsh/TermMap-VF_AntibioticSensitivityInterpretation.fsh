@@ -47,7 +47,7 @@ Usage: #definition
 
 ValueSet: AntibioticSensitivityInterpretation
 Title: "AntibioticSensitivityInterpretation FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps VF_AntibioticSensitivityInterpretation"
+Description: "FHIR Target ValueSet for Terminology Maps [VF_AntibioticSensitivityInterpretation](ConceptMap-VF-AntibioticSensitivityInterpretation)"
 * ^experimental = false
 * ^status = #active
 * ^name = "AntibioticSensitivityInterpretation"
@@ -59,7 +59,7 @@ Description: "FHIR Target ValueSet for Terminology Maps VF_AntibioticSensitivity
 
 ValueSet: AntibioticSensitivityInterpretation-vista
 Title: "AntibioticSensitivityInterpretation VistA"
-Description: "VistA Source ValueSet for Terminology Maps VF_AntibioticSensitivityInterpretation"
+Description: "VistA Source ValueSet for Terminology Maps [VF_AntibioticSensitivityInterpretation](ConceptMap-VF-AntibioticSensitivityInterpretation)"
 * ^experimental = false
 * ^status = #active
 * ^name = "AntibioticSensitivityInterpretation_VistA"

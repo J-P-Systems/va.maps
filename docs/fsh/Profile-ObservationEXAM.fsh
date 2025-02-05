@@ -14,8 +14,7 @@ Description: "This StructureDefinition contains the maps for VistA file V EXAM (
 * performer only Reference(Practitioner)
 * code.coding[va-code].system = "http://va.gov/terminology/vistaDefinedTerms/9999999.15"
 * code.coding[va-sct].system = "urn:see-termmap-in-mapParameter"
-* interpretation.extension contains http://hl7.org/fhir/StructureDefinition/11179-permitted-value-conceptmap named 11179-permitted-value-conceptmap 0..1
-* interpretation.extension[11179-permitted-value-conceptmap].valueCanonical = "http://va.gov/fhir/ConceptMap/VF-ExamResultInterpretation"
+* interpretation ^comment = "see mapping [VF_ExamResultInterpretation](ConceptMap-VF-ExamResultInterpretation.html)"
 * status = #final
 * category = http://terminology.hl7.org/CodeSystem/observation-category#exam
 

@@ -13,19 +13,20 @@ Description: "This StructureDefinition contains the maps for VistA file PRESCRIP
 * dosageInstruction.doseAndRate.extension contains http://hl7.org/fhir/StructureDefinition/originalText named originalText 0..1
 * extension contains http://va.gov/fhir/StructureDefinition/medicationrequest-includeIndicationInSig named medicationrequest-includeIndicationInSig 0..1
 * extension contains http://va.gov/fhir/StructureDefinition/medicationrequest-remainingRefillCount named medicationrequest-remainingRefillCount 0..1
-* id and status and extension[http://va.gov/fhir/StructureDefinition/medicationrequest-pharmacyOrderStatus].valueCoding.code and extension[http://va.gov/fhir/StructureDefinition/medicationrequest-pharmacyOrderStatus].valueCoding.system and intent and medicationCodeableConcept.text and medicationCodeableConcept.coding.code and medicationCodeableConcept.coding.system and subject and authoredOn and requester and dosageInstruction.text and dosageInstruction.patientInstruction and dosageInstruction.doseAndRate.doseQuantity.value and dosageInstruction.doseAndRate.doseQuantity.unit and dispenseRequest.validityPeriod.end and extension[http://va.gov/fhir/StructureDefinition/medicationrequest-cancelDate].valueDateTime and dispenseRequest.numberOfRepeatsAllowed and dispenseRequest.quantity.value and dispenseRequest.expectedSupplyDuration and dosageInstruction.doseAndRate.extension[http://hl7.org/fhir/StructureDefinition/originalText].valueString and identifier and dosageInstruction.route.coding.code and dosageInstruction.route.coding.system and category and reasonCode.text and extension[http://va.gov/fhir/StructureDefinition/medicationrequest-includeIndicationInSig].valueBoolean and extension[http://va.gov/fhir/StructureDefinition/medicationrequest-remainingRefillCount].valueInteger MS
+* id and status and extension[http://va.gov/fhir/StructureDefinition/medicationrequest-pharmacyOrderStatus].valueCoding.code and extension[http://va.gov/fhir/StructureDefinition/medicationrequest-pharmacyOrderStatus].valueCoding.system and intent and medicationCodeableConcept.text and medicationCodeableConcept.coding.code and medicationCodeableConcept.coding.system and subject and authoredOn and requester and dosageInstruction.text and dosageInstruction.patientInstruction and dosageInstruction.doseAndRate.doseQuantity.value and dosageInstruction.doseAndRate.doseQuantity.unit and dispenseRequest.validityPeriod.end and extension[http://va.gov/fhir/StructureDefinition/medicationrequest-cancelDate].valueDateTime and dispenseRequest.numberOfRepeatsAllowed and dispenseRequest.quantity.value and dispenseRequest.expectedSupplyDuration and dosageInstruction.doseAndRate.extension[http://hl7.org/fhir/StructureDefinition/originalText].valueString and identifier.value and identifier.type and dosageInstruction.route.coding.code and dosageInstruction.route.coding.system and category and reasonCode.text and extension[http://va.gov/fhir/StructureDefinition/medicationrequest-includeIndicationInSig].valueBoolean and extension[http://va.gov/fhir/StructureDefinition/medicationrequest-remainingRefillCount].valueInteger MS
 * subject only Reference(Patient)
 * requester only Reference(Practitioner)
 * status from http://va.gov/fhir/ValueSet/OutMedRequestStatus
+* status ^binding.description = "see mapping [VF_OutMedRequestStatus](ConceptMap-VF-OutMedRequestStatus.html)"
 * extension[http://va.gov/fhir/StructureDefinition/medicationrequest-pharmacyOrderStatus].valueCoding.system = "http://va.gov/terminology/vistaDefinedTerms/52-100"
 * intent = #order
 * medicationCodeableConcept.coding.system = "http://www.nlm.nih.gov/research/umls/rxnorm"
 * dosageInstruction.doseAndRate.doseQuantity.value obeys mro-27-811
 * dosageInstruction.doseAndRate.extension[http://hl7.org/fhir/StructureDefinition/originalText].valueString obeys mro-27-841
+* identifier.type = http://terminology.hl7.org/CodeSystem/v2-0203#FILL
 * dosageInstruction.route.coding.system = "http://va.gov/terminology/vistaDefinedTerms/53.1-3"
 * category = http://terminology.hl7.org/CodeSystem/medicationrequest-category#outpatient
-* extension[http://va.gov/fhir/StructureDefinition/medicationrequest-includeIndicationInSig].valueBoolean.extension contains http://hl7.org/fhir/StructureDefinition/11179-permitted-value-conceptmap named 11179-permitted-value-conceptmap 0..1
-* extension[http://va.gov/fhir/StructureDefinition/medicationrequest-includeIndicationInSig].valueBoolean.extension[11179-permitted-value-conceptmap].valueCanonical = "http://va.gov/fhir/ConceptMap/VF-Boolean"
+* extension[http://va.gov/fhir/StructureDefinition/medicationrequest-includeIndicationInSig].valueBoolean ^comment = "see mapping [VF_Boolean](ConceptMap-VF-Boolean.html)"
 * extension[http://va.gov/fhir/StructureDefinition/medicationrequest-pharmacyOrderStatus].valueCoding.code obeys mro-27-1746
 * extension[http://va.gov/fhir/StructureDefinition/medicationrequest-pharmacyOrderStatus].valueCoding.system obeys mro-27-1746-1
 
@@ -70,7 +71,8 @@ Source: MedicationRequestOutpatient
 * dispenseRequest.quantity.value -> "1669: source value based on PRESCRIPTION - QTY (52-7)"
 * dispenseRequest.expectedSupplyDuration -> "1670: source value based on PRESCRIPTION - DAYS SUPPLY (52-8)"
 * dosageInstruction.doseAndRate.extension[http://hl7.org/fhir/StructureDefinition/originalText].valueString -> "841: source value based on PRESCRIPTION - MEDICATION INSTRUCTIONS > MEDICATION INSTRUCTIONS - DOSAGE ORDERED (52-113 > 52.0113-.01) if not a number"
-* identifier -> "1664: source value based on PRESCRIPTION - RX # (52-.01)"
+* identifier.value -> "1664: source value based on PRESCRIPTION - RX # (52-.01)"
+* identifier.type -> "1664-1: fixed value = http://terminology.hl7.org/CodeSystem/v2-0203#FILL" "generated from mapParameter row 1"
 * dosageInstruction.route.coding.code -> "1665: source value based on PRESCRIPTION - MEDICATION INSTRUCTIONS > MEDICATION INSTRUCTIONS - ROUTE (52-113 > 52.0113-6)"
 * dosageInstruction.route.coding.system -> "1665-1: fixed value = http://va.gov/terminology/vistaDefinedTerms/53.1-3" "generated from mapParameter row 1"
 * category -> "1666: fixed value = http://terminology.hl7.org/CodeSystem/medicationrequest-category#outpatient"
@@ -101,7 +103,7 @@ Source: MedicationRequestOutpatient
 * extension[http://va.gov/fhir/StructureDefinition/medicationrequest-cancelDate].valueDateTime -> "RxOut.RxOutpat.CancelDate"
 * dispenseRequest.numberOfRepeatsAllowed -> "RxOut.RxOutpat.MaxRefills"
 * dosageInstruction.doseAndRate.extension[http://hl7.org/fhir/StructureDefinition/originalText].valueString -> "RxOut.RxOutpatMedInstructions.DoseOrdered"
-* identifier -> "RxOut.RxOutpat.RxNumber"
+* identifier.value -> "RxOut.RxOutpat.RxNumber"
 * dosageInstruction.route.coding.code -> "RxOut.RxOutpatMedInstructions.MedRoute"
 * reasonCode.text -> "RxOut.RxOutpatExt.IndicationForUse"
 * extension[http://va.gov/fhir/StructureDefinition/medicationrequest-includeIndicationInSig].valueBoolean -> "RxOut.RxOutpatExt.IndicationForUseFlag"
@@ -125,6 +127,6 @@ Source: MedicationRequestOutpatient
 * dispenseRequest.quantity.value -> "Medication.OrderQuantity"
 * dispenseRequest.expectedSupplyDuration -> "Medication.DaysSupply"
 * dosageInstruction.doseAndRate.extension[http://hl7.org/fhir/StructureDefinition/originalText].valueString -> "Medication.DosageSteps,Medication.Route,Medication.DoseQuantity,Medication.DoseUoM,Medication.Duration,Medication.Frequency,Medication.TextInstruction,Medication.Conjunction,Medication.Noun,Medication.UnitsPerDose,Medication.Verb"
-* identifier -> "Medication.PrescriptionNumber,Medication.FillDate"
+* identifier.value -> "Medication.PrescriptionNumber,Medication.FillDate"
 * dosageInstruction.route.coding.code -> "Medication.DosageSteps,Medication.Route,Medication.DoseQuantity,Medication.DoseUoM,Medication.Duration,Medication.Frequency,Medication.TextInstruction,Medication.Conjunction,Medication.Noun,Medication.UnitsPerDose,Medication.Verb"
 * reasonCode.text -> "Medication.Indication"

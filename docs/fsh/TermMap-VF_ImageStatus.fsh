@@ -54,7 +54,7 @@ Usage: #definition
 
 ValueSet: ImageStatus
 Title: "ImageStatus FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps VF_ImageStatus"
+Description: "FHIR Target ValueSet for Terminology Maps [VF_ImageStatus](ConceptMap-VF-ImageStatus)"
 * ^experimental = false
 * ^status = #active
 * ^name = "ImageStatus"
@@ -64,7 +64,7 @@ Description: "FHIR Target ValueSet for Terminology Maps VF_ImageStatus"
 
 ValueSet: ImageStatus-vista
 Title: "ImageStatus VistA"
-Description: "VistA Source ValueSet for Terminology Maps VF_ImageStatus"
+Description: "VistA Source ValueSet for Terminology Maps [VF_ImageStatus](ConceptMap-VF-ImageStatus)"
 * ^experimental = false
 * ^status = #active
 * ^name = "ImageStatus_VistA"

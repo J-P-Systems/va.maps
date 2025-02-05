@@ -169,7 +169,7 @@ Usage: #definition
 
 ValueSet: immunizationStatusReason
 Title: "immunizationStatusReason FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps VF_immunizationStatusReason"
+Description: "FHIR Target ValueSet for Terminology Maps [VF_immunizationStatusReason](ConceptMap-VF-immunizationStatusReason)"
 * ^experimental = false
 * ^status = #active
 * ^name = "ImmunizationStatusReason"
@@ -179,7 +179,7 @@ Description: "FHIR Target ValueSet for Terminology Maps VF_immunizationStatusRea
 
 ValueSet: immunizationStatusReason-vista
 Title: "immunizationStatusReason VistA"
-Description: "VistA Source ValueSet for Terminology Maps VF_immunizationStatusReason"
+Description: "VistA Source ValueSet for Terminology Maps [VF_immunizationStatusReason](ConceptMap-VF-immunizationStatusReason)"
 * ^experimental = false
 * ^status = #active
 * ^name = "ImmunizationStatusReason_VistA"

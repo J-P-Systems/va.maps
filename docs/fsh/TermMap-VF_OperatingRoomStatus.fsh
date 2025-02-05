@@ -25,7 +25,7 @@ Usage: #definition
 
 ValueSet: OperatingRoomStatus
 Title: "OperatingRoomStatus FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps VF_OperatingRoomStatus"
+Description: "FHIR Target ValueSet for Terminology Maps [VF_OperatingRoomStatus](ConceptMap-VF-OperatingRoomStatus)"
 * ^experimental = false
 * ^status = #active
 * ^name = "OperatingRoomStatus"
@@ -34,7 +34,7 @@ Description: "FHIR Target ValueSet for Terminology Maps VF_OperatingRoomStatus"
 
 ValueSet: OperatingRoomStatus-vista
 Title: "OperatingRoomStatus VistA"
-Description: "VistA Source ValueSet for Terminology Maps VF_OperatingRoomStatus"
+Description: "VistA Source ValueSet for Terminology Maps [VF_OperatingRoomStatus](ConceptMap-VF-OperatingRoomStatus)"
 * ^experimental = false
 * ^status = #active
 * ^name = "OperatingRoomStatus_VistA"

@@ -26,7 +26,7 @@ Usage: #definition
 
 ValueSet: VitalsLaterality
 Title: "VitalsLaterality FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps VF_VitalsLaterality"
+Description: "FHIR Target ValueSet for Terminology Maps [VF_VitalsLaterality](ConceptMap-VF-VitalsLaterality)"
 * ^experimental = false
 * ^status = #active
 * ^name = "VitalsLaterality"
@@ -35,7 +35,7 @@ Description: "FHIR Target ValueSet for Terminology Maps VF_VitalsLaterality"
 
 ValueSet: VitalsLaterality-vista
 Title: "VitalsLaterality VistA"
-Description: "VistA Source ValueSet for Terminology Maps VF_VitalsLaterality"
+Description: "VistA Source ValueSet for Terminology Maps [VF_VitalsLaterality](ConceptMap-VF-VitalsLaterality)"
 * ^experimental = false
 * ^status = #active
 * ^name = "VitalsLaterality_VistA"

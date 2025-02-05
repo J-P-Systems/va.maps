@@ -226,7 +226,7 @@ Usage: #definition
 
 ValueSet: SourceOfAdmission
 Title: "SourceOfAdmission FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps VF_SourceOfAdmission"
+Description: "FHIR Target ValueSet for Terminology Maps [VF_SourceOfAdmission](ConceptMap-VF-SourceOfAdmission)"
 * ^experimental = false
 * ^status = #active
 * ^name = "SourceOfAdmission"
@@ -238,7 +238,7 @@ Description: "FHIR Target ValueSet for Terminology Maps VF_SourceOfAdmission"
 
 ValueSet: SourceOfAdmission-vista
 Title: "SourceOfAdmission VistA"
-Description: "VistA Source ValueSet for Terminology Maps VF_SourceOfAdmission"
+Description: "VistA Source ValueSet for Terminology Maps [VF_SourceOfAdmission](ConceptMap-VF-SourceOfAdmission)"
 * ^experimental = false
 * ^status = #active
 * ^name = "SourceOfAdmission_VistA"

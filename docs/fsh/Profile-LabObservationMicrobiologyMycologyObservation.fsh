@@ -8,23 +8,19 @@ Description: "This StructureDefinition contains the maps for VistA file MICROBIO
 * performer ^slicing.discriminator.path = "$this"
 * performer ^slicing.rules = #open
 * performer contains va-at 0..1 and va-by 0..1
-* code and status and valueString and effectiveDateTime and note and performer[va-at] and performer[va-by] and specimen and identifier.value and identifier.system and code.coding and code.coding.system and code.coding.code and code.coding.display and issued and category and subject MS
+* status and effectiveDateTime and note and performer[va-at] and performer[va-by] and specimen and identifier.value and identifier.system and code.coding and code.coding.system and code.coding.code and code.coding.display and issued and category and subject MS
 * performer[va-at] only Reference(Organization)
 * performer[va-by] only Reference(Practitioner)
 * specimen only Reference(LabObservationMicrobiologySpecimen)
 * subject only Reference(Patient)
-* code obeys lommo-45-1527
 * status from http://va.gov/fhir/ValueSet/LabObservationStatus
+* status ^binding.description = "see mapping [VF_LabObservationStatus](ConceptMap-VF-LabObservationStatus.html)"
 * identifier.system = "http://va.gov/identifiers/$Sta3n/63.05"
 * code.coding obeys lommo-45-1480
 * code.coding.system obeys lommo-45-1480-1
 * code.coding.code obeys lommo-45-1480-2
 * code.coding.display obeys lommo-45-1480-3
 * category = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
-
-Invariant: lommo-45-1527
-Description: "If (63.05-.35 > 63.5-13 > 60-100 > 60.01-95.3 > 95.3-) is NULL then fixed value http://loinc.org#42804-5 \"Fungus identified in Isolate\""
-Severity: #warning
 
 Invariant: lommo-45-1480
 Description: "If Not NULL then source value from (63.05-.35 > 63.5-13 > 60-100 > 60.01-95.3 > 95.3-)"
@@ -46,9 +42,10 @@ Mapping: source-to-LabObservationMicrobiologyMycologyObservation
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: LabObservationMicrobiologyMycologyObservation
-* code -> "1527: fixed value = http://loinc.org#42804-5 \"Fungus identified in Isolate\" when MICROBIOLOGY - ORDERED TEST > ORDERED TEST - LAB TEST ORDERED > LABORATORY TEST - SITE/SPECIMEN > SITE/SPECIMEN - LOINC CODE > LAB LOINC (63.05-.35 > 63.5-13 > 60-100 > 60.01-95.3 > 95.3-) if NULL"
 * status -> "1490: terminologyMaps using VF_LabObservationStatus on MICROBIOLOGY - MYCOLOGY RPT STATUS (63.05-19)"
-* valueString -> "1858: source value based on MICROBIOLOGY - FUNGUS/YEAST > FUNGUS/YEAST - FUNGUS/YEAST > ETIOLOGY FIELD - NAME (63.05-20 > 63.37-.01 > 61.2-.01)"
+* valueQuantity -> "2109: target not supported" "auto added because of must-support"
+* valueCodeableConcept -> "2110: target not supported" "auto added because of must-support"
+* valueString -> "2111: target not supported" "auto added because of must-support"
 * effectiveDateTime -> "1450: source value based on MICROBIOLOGY - DATE/TIME SPECIMEN TAKEN (63.05-.01)"
 * note -> "1454: source value based on MICROBIOLOGY - COMMENT ON SPECIMEN (63.05-.99)"
 * performer[va-at] -> "1464: reference based on MICROBIOLOGY - ACCESSIONING INSTITUTION (63.05-.112)"

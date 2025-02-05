@@ -42,6 +42,7 @@ Description: "This StructureDefinition contains the maps for VistA file PTF (45)
 * reasonCode[va-procedure].coding.system = "http://www.cms.gov/Medicare/Coding/ICD10"
 * hospitalization.admitSource.coding.system = "http://va.gov/terminology/vistaDefinedTerms/45.1"
 * hospitalization.admitSource.coding from http://va.gov/fhir/ValueSet/SourceOfAdmission
+* hospitalization.admitSource.coding ^binding.description = "see mapping [VF_SourceOfAdmission](ConceptMap-VF-SourceOfAdmission.html)"
 * hospitalization.dischargeDisposition.coding.system = "http://va.gov/terminology/vistaDefinedTerms/45.6"
 * type.coding.system = "http://www.ama-assn.org/go/cpt"
 

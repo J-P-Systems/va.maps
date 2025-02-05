@@ -11,6 +11,7 @@ Description: "This StructureDefinition contains the maps for VistA file PRESCRIP
 * performer.actor only Reference(Practitioner)
 * type = http://terminology.hl7.org/CodeSystem/v3-ActCode#PF
 * dosageInstruction.doseAndRate.doseQuantity.code from http://va.gov/fhir/ValueSet/DoseUnits
+* dosageInstruction.doseAndRate.doseQuantity.code ^binding.description = "see mapping [VF_DoseUnits](ConceptMap-VF-DoseUnits.html)"
 * dosageInstruction.doseAndRate.doseQuantity.value obeys mdp-25-1570
 * medicationCodeableConcept.coding.system = "urn:oid:2.16.840.1.113883.6.233"
 * status obeys mdp-25-1577

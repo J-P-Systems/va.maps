@@ -36,7 +36,7 @@ Usage: #definition
 
 ValueSet: ethnicityCategory
 Title: "ethnicityCategory FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps VF_ethnicityCategory"
+Description: "FHIR Target ValueSet for Terminology Maps [VF_ethnicityCategory](ConceptMap-VF-ethnicityCategory)"
 * ^experimental = false
 * ^status = #active
 * ^name = "EthnicityCategory"
@@ -47,7 +47,7 @@ Description: "FHIR Target ValueSet for Terminology Maps VF_ethnicityCategory"
 
 ValueSet: ethnicityCategory-vista
 Title: "ethnicityCategory VistA"
-Description: "VistA Source ValueSet for Terminology Maps VF_ethnicityCategory"
+Description: "VistA Source ValueSet for Terminology Maps [VF_ethnicityCategory](ConceptMap-VF-ethnicityCategory)"
 * ^experimental = false
 * ^status = #active
 * ^name = "EthnicityCategory_VistA"

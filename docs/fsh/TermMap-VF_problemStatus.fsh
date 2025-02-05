@@ -22,7 +22,7 @@ Usage: #definition
 
 ValueSet: problemStatus
 Title: "problemStatus FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps VF_problemStatus"
+Description: "FHIR Target ValueSet for Terminology Maps [VF_problemStatus](ConceptMap-VF-problemStatus)"
 * ^experimental = false
 * ^status = #active
 * ^name = "ProblemStatus"
@@ -31,7 +31,7 @@ Description: "FHIR Target ValueSet for Terminology Maps VF_problemStatus"
 
 ValueSet: problemStatus-vista
 Title: "problemStatus VistA"
-Description: "VistA Source ValueSet for Terminology Maps VF_problemStatus"
+Description: "VistA Source ValueSet for Terminology Maps [VF_problemStatus](ConceptMap-VF-problemStatus)"
 * ^experimental = false
 * ^status = #active
 * ^name = "ProblemStatus_VistA"

@@ -41,7 +41,7 @@ Usage: #definition
 
 ValueSet: AppointmentStatus
 Title: "AppointmentStatus FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps VF_AppointmentStatus"
+Description: "FHIR Target ValueSet for Terminology Maps [VF_AppointmentStatus](ConceptMap-VF-AppointmentStatus)"
 * ^experimental = false
 * ^status = #active
 * ^name = "AppointmentStatus"
@@ -53,7 +53,7 @@ Description: "FHIR Target ValueSet for Terminology Maps VF_AppointmentStatus"
 
 ValueSet: AppointmentStatus-vista
 Title: "AppointmentStatus VistA"
-Description: "VistA Source ValueSet for Terminology Maps VF_AppointmentStatus"
+Description: "VistA Source ValueSet for Terminology Maps [VF_AppointmentStatus](ConceptMap-VF-AppointmentStatus)"
 * ^experimental = false
 * ^status = #active
 * ^name = "AppointmentStatus_VistA"

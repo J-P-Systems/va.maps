@@ -18,8 +18,10 @@ Description: "This StructureDefinition contains the maps for VistA file MICROBIO
 * specimen only Reference(LabObservationMicrobiologySpecimen)
 * subject only Reference(Patient)
 * status from http://va.gov/fhir/ValueSet/LabObservationStatus
+* status ^binding.description = "see mapping [VF_LabObservationStatus](ConceptMap-VF-LabObservationStatus.html)"
 * component[va-component].code.coding.system = "http://loinc.org"
 * component[va-component].interpretation from http://va.gov/fhir/ValueSet/AntibioticSensitivityInterpretation
+* component[va-component].interpretation ^binding.description = "see mapping [VF_AntibioticSensitivityInterpretation](ConceptMap-VF-AntibioticSensitivityInterpretation.html)"
 * identifier.system = "http://va.gov/identifiers/$Sta3n/63.05"
 * code.coding obeys lombo-49-1480
 * code.coding.system obeys lombo-49-1480-1

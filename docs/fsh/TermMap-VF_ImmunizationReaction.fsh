@@ -76,7 +76,7 @@ Usage: #definition
 
 ValueSet: ImmunizationReaction
 Title: "ImmunizationReaction FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps VF_ImmunizationReaction"
+Description: "FHIR Target ValueSet for Terminology Maps [VF_ImmunizationReaction](ConceptMap-VF-ImmunizationReaction)"
 * ^experimental = false
 * ^status = #active
 * ^name = "ImmunizationReaction"
@@ -91,7 +91,7 @@ Description: "FHIR Target ValueSet for Terminology Maps VF_ImmunizationReaction"
 
 ValueSet: ImmunizationReaction-vista
 Title: "ImmunizationReaction VistA"
-Description: "VistA Source ValueSet for Terminology Maps VF_ImmunizationReaction"
+Description: "VistA Source ValueSet for Terminology Maps [VF_ImmunizationReaction](ConceptMap-VF-ImmunizationReaction)"
 * ^experimental = false
 * ^status = #active
 * ^name = "ImmunizationReaction_VistA"

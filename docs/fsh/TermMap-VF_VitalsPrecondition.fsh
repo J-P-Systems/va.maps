@@ -29,7 +29,7 @@ Usage: #definition
 
 ValueSet: VitalsPrecondition
 Title: "VitalsPrecondition FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps VF_VitalsPrecondition"
+Description: "FHIR Target ValueSet for Terminology Maps [VF_VitalsPrecondition](ConceptMap-VF-VitalsPrecondition)"
 * ^experimental = false
 * ^status = #active
 * ^name = "VitalsPrecondition"
@@ -38,7 +38,7 @@ Description: "FHIR Target ValueSet for Terminology Maps VF_VitalsPrecondition"
 
 ValueSet: VitalsPrecondition-vista
 Title: "VitalsPrecondition VistA"
-Description: "VistA Source ValueSet for Terminology Maps VF_VitalsPrecondition"
+Description: "VistA Source ValueSet for Terminology Maps [VF_VitalsPrecondition](ConceptMap-VF-VitalsPrecondition)"
 * ^experimental = false
 * ^status = #active
 * ^name = "VitalsPrecondition_VistA"

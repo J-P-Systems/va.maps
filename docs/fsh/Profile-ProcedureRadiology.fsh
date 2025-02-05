@@ -13,6 +13,7 @@ Description: "This StructureDefinition contains the maps for VistA file REGISTER
 * performer.actor only Reference(Practitioner)
 * location only Reference(Location)
 * status from http://va.gov/fhir/ValueSet/RadiologyProcedureStatus
+* status ^binding.description = "see mapping [VF_RadiologyProcedureStatus](ConceptMap-VF-RadiologyProcedureStatus.html)"
 * code.coding.system = "http://www.ama-assn.org/go/cpt"
 * subject obeys pr-18-1510
 

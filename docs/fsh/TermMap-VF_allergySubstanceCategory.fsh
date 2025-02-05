@@ -27,7 +27,7 @@ Usage: #definition
 
 ValueSet: allergySubstanceCategory
 Title: "allergySubstanceCategory FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps VF_allergySubstanceCategory"
+Description: "FHIR Target ValueSet for Terminology Maps [VF_allergySubstanceCategory](ConceptMap-VF-allergySubstanceCategory)"
 * ^experimental = false
 * ^status = #active
 * ^name = "AllergySubstanceCategory"
@@ -36,7 +36,7 @@ Description: "FHIR Target ValueSet for Terminology Maps VF_allergySubstanceCateg
 
 ValueSet: allergySubstanceCategory-vista
 Title: "allergySubstanceCategory VistA"
-Description: "VistA Source ValueSet for Terminology Maps VF_allergySubstanceCategory"
+Description: "VistA Source ValueSet for Terminology Maps [VF_allergySubstanceCategory](ConceptMap-VF-allergySubstanceCategory)"
 * ^experimental = false
 * ^status = #active
 * ^name = "AllergySubstanceCategory_VistA"

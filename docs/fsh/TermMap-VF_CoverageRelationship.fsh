@@ -58,7 +58,7 @@ Usage: #definition
 
 ValueSet: CoverageRelationship
 Title: "CoverageRelationship FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps VF_CoverageRelationship"
+Description: "FHIR Target ValueSet for Terminology Maps [VF_CoverageRelationship](ConceptMap-VF-CoverageRelationship)"
 * ^experimental = false
 * ^status = #active
 * ^name = "CoverageRelationship"
@@ -72,7 +72,7 @@ Description: "FHIR Target ValueSet for Terminology Maps VF_CoverageRelationship"
 
 ValueSet: CoverageRelationship-vista
 Title: "CoverageRelationship VistA"
-Description: "VistA Source ValueSet for Terminology Maps VF_CoverageRelationship"
+Description: "VistA Source ValueSet for Terminology Maps [VF_CoverageRelationship](ConceptMap-VF-CoverageRelationship)"
 * ^experimental = false
 * ^status = #active
 * ^name = "CoverageRelationship_VistA"

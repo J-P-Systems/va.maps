@@ -14,6 +14,7 @@ Description: "This StructureDefinition contains the maps for VistA file GENERATO
 * status obeys idp-26-1356
 * status obeys idp-26-1357
 * type from http://va.gov/fhir/ValueSet/deviceTypePacemaker
+* type ^binding.description = "see mapping [VF_deviceTypePacemaker](ConceptMap-VF-deviceTypePacemaker.html)"
 
 Invariant: idp-26-1356
 Description: "If (698-96) is is NULL then fixed value #active"

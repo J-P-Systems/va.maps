@@ -46,7 +46,7 @@ Usage: #definition
 
 ValueSet: MaritalStatus
 Title: "MaritalStatus FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps VF_MaritalStatus"
+Description: "FHIR Target ValueSet for Terminology Maps [VF_MaritalStatus](ConceptMap-VF-MaritalStatus)"
 * ^experimental = false
 * ^status = #active
 * ^name = "MaritalStatus"
@@ -59,7 +59,7 @@ Description: "FHIR Target ValueSet for Terminology Maps VF_MaritalStatus"
 
 ValueSet: MaritalStatus-vista
 Title: "MaritalStatus VistA"
-Description: "VistA Source ValueSet for Terminology Maps VF_MaritalStatus"
+Description: "VistA Source ValueSet for Terminology Maps [VF_MaritalStatus](ConceptMap-VF-MaritalStatus)"
 * ^experimental = false
 * ^status = #active
 * ^name = "MaritalStatus_VistA"

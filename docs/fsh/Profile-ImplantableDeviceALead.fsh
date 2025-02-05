@@ -14,6 +14,7 @@ Description: "This StructureDefinition contains the maps for VistA file A LEAD I
 * status obeys idal-22-1358
 * status obeys idal-22-1359
 * type from http://va.gov/fhir/ValueSet/deviceTypePacemaker
+* type ^binding.description = "see mapping [VF_deviceTypePacemaker](ConceptMap-VF-deviceTypePacemaker.html)"
 
 Invariant: idal-22-1358
 Description: "If (698.2-56) is is NULL then fixed value #active"

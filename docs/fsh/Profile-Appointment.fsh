@@ -19,12 +19,14 @@ Description: "This StructureDefinition contains the maps for VistA file APPOINTM
 * participant[va-apptclinic].actor only Reference(Location)
 * participant.actor only Reference(Location)
 * status from http://va.gov/fhir/ValueSet/AppointmentStatus
+* status ^binding.description = "see mapping [VF_AppointmentStatus](ConceptMap-VF-AppointmentStatus.html)"
 * status obeys a-11-732
 * status obeys a-11-733
 * status obeys a-11-734
 * extension[http://va.gov/fhir/StructureDefinition/resource-serviceConnection].valueCoding obeys a-11-2033
 * extension[http://va.gov/fhir/StructureDefinition/resource-serviceConnection].valueCoding obeys a-11-2034
 * cancelationReason from http://va.gov/fhir/ValueSet/AppointmentCancellationReason
+* cancelationReason ^binding.description = "see mapping [VF_AppointmentCancellationReason](ConceptMap-VF-AppointmentCancellationReason.html)"
 * participant[va-clinic].type.coding.code = #PART
 * participant[va-clinic].status = #accepted
 * participant[va-patient].type.coding.code = #PART
@@ -85,7 +87,7 @@ Source: Appointment
 * participant[va-patient].type.coding.code -> "1722-1: fixed value = #PART" "generated from mapParameter row 1"
 * participant[va-patient].status -> "1722-2: fixed value = #accepted" "generated from mapParameter row 2"
 * status -> "748: fixed value = #waitlist when SD WAIT LIST - PATIENT (409.3-.01) if not null" "LVH returns \"Waitlisted\". \"Waitlisted\" is the display value and \"waitlist\" is the code. This is a required FHIR value set. 3/15/2023 LVH will fix"
-* serviceCategory[va-stop-code].coding.code -> "749: source value based on null (409.3-13.4)"
+* serviceCategory[va-stop-code].coding.code -> "749: source value based on SD WAIT LIST - APPT STOP CODE (409.3-13.4)"
 * serviceCategory[va-stop-code].coding.system -> "749-1: fixed value = http://va.gov/terminology/VistADefinedTerms/409.3-13.4" "generated from mapParameter row 1"
 * start -> "750: source value based on SD WAIT LIST - DESIRED DATE OF APPOINTMENT (409.3-22)"
 * created -> "751: source value based on SD WAIT LIST - ORIGINATING DATE (409.3-1)"

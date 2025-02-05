@@ -26,6 +26,7 @@ Description: "This StructureDefinition contains the maps for VistA file NEW PERS
 * identifier[va-IEN].system = "http://va.gov/identifiers/$Sta3n/200"
 * identifier[va-IEN].type = http://va.gov/terminology/vistaDefinedTerms/200-.001#IEN
 * gender from http://va.gov/fhir/ValueSet/providerGender
+* gender ^binding.description = "see mapping [VF_providerGender](ConceptMap-VF-providerGender.html)"
 
 Mapping: source-to-Practitioner
 Id: vista

@@ -26,7 +26,7 @@ Usage: #definition
 
 ValueSet: allergySeverity
 Title: "allergySeverity FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps VF_allergySeverity"
+Description: "FHIR Target ValueSet for Terminology Maps [VF_allergySeverity](ConceptMap-VF-allergySeverity)"
 * ^experimental = false
 * ^status = #active
 * ^name = "AllergySeverity"
@@ -36,7 +36,7 @@ Description: "FHIR Target ValueSet for Terminology Maps VF_allergySeverity"
 
 ValueSet: allergySeverity-vista
 Title: "allergySeverity VistA"
-Description: "VistA Source ValueSet for Terminology Maps VF_allergySeverity"
+Description: "VistA Source ValueSet for Terminology Maps [VF_allergySeverity](ConceptMap-VF-allergySeverity)"
 * ^experimental = false
 * ^status = #active
 * ^name = "AllergySeverity_VistA"

@@ -20,7 +20,9 @@ Description: "This StructureDefinition contains the maps for VistA file PROBLEM 
 * code.coding[va-icd].system = "urn:see-termmap-in-mapParameter"
 * code.coding.system = "http://snomed.info/sct"
 * clinicalStatus from http://va.gov/fhir/ValueSet/problemStatus
+* clinicalStatus ^binding.description = "see mapping [VF_problemStatus](ConceptMap-VF-problemStatus.html)"
 * verificationStatus from http://va.gov/fhir/ValueSet/problemVerificationStatus
+* verificationStatus ^binding.description = "see mapping [VF_problemVerificationStatus](ConceptMap-VF-problemVerificationStatus.html)"
 
 Invariant: cp-16-349
 Description: "If (9000011-1.07) is Not Null then fixed value #resolved"

@@ -24,7 +24,7 @@ Usage: #definition
 
 ValueSet: encounterClass
 Title: "encounterClass FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps VF_encounterClass"
+Description: "FHIR Target ValueSet for Terminology Maps [VF_encounterClass](ConceptMap-VF-encounterClass)"
 * ^experimental = false
 * ^status = #active
 * ^name = "EncounterClass"
@@ -33,7 +33,7 @@ Description: "FHIR Target ValueSet for Terminology Maps VF_encounterClass"
 
 ValueSet: encounterClass-vista
 Title: "encounterClass VistA"
-Description: "VistA Source ValueSet for Terminology Maps VF_encounterClass"
+Description: "VistA Source ValueSet for Terminology Maps [VF_encounterClass](ConceptMap-VF-encounterClass)"
 * ^experimental = false
 * ^status = #active
 * ^name = "EncounterClass_VistA"

@@ -24,7 +24,7 @@ Usage: #definition
 
 ValueSet: encounterParticipationType
 Title: "encounterParticipationType FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps VF_encounterParticipationType"
+Description: "FHIR Target ValueSet for Terminology Maps [VF_encounterParticipationType](ConceptMap-VF-encounterParticipationType)"
 * ^experimental = false
 * ^status = #active
 * ^name = "EncounterParticipationType"
@@ -33,7 +33,7 @@ Description: "FHIR Target ValueSet for Terminology Maps VF_encounterParticipatio
 
 ValueSet: encounterParticipationType-vista
 Title: "encounterParticipationType VistA"
-Description: "VistA Source ValueSet for Terminology Maps VF_encounterParticipationType"
+Description: "VistA Source ValueSet for Terminology Maps [VF_encounterParticipationType](ConceptMap-VF-encounterParticipationType)"
 * ^experimental = false
 * ^status = #active
 * ^name = "EncounterParticipationType_VistA"

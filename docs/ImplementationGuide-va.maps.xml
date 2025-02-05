@@ -7,11 +7,11 @@
 </div></div>
   </text>
   <url value="http://va.gov/fhir/ImplementationGuide/va.maps"/>
-  <version value="1.1.500"/>
+  <version value="1.2.512"/>
   <name value="VAMapsIG"/>
   <title value="US Veterans Health Administration FHIR Map Set Implementation Guide"/>
   <status value="draft"/>
-  <date value="2025-02-01T09:13:38+00:00"/>
+  <date value="2025-02-05T16:47:13+00:00"/>
   <publisher value="VA"/>
   <contact>
     <name value="VA"/>
@@ -72,7 +72,7 @@
         <valueString value="releaselabel"/>
       </extension>
       <extension url="value">
-        <valueString value="250201"/>
+        <valueString value="250301"/>
       </extension>
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
@@ -81,6 +81,14 @@
       </extension>
       <extension url="value">
         <valueString value="../resources/Parameters-exp-params.json"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="excludexml"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
       </extension>
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
@@ -299,7 +307,7 @@
         <valueCode value="releaselabel"/>
       </extension>
       <extension url="value">
-        <valueString value="250201"/>
+        <valueString value="250301"/>
       </extension>
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
@@ -308,6 +316,14 @@
       </extension>
       <extension url="value">
         <valueString value="../resources/Parameters-exp-params.json"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="excludexml"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
       </extension>
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
@@ -523,67 +539,70 @@
     <grouping id="group3">
       <name value="Condition"/>
     </grouping>
-    <grouping id="group21">
+    <grouping id="group22">
       <name value="Debt Portal"/>
     </grouping>
-    <grouping id="group5">
-      <name value="Document Reference"/>
+    <grouping id="group4">
+      <name value="Diagnostic Report Note"/>
     </grouping>
     <grouping id="group6">
-      <name value="Encounter"/>
+      <name value="Document Reference"/>
     </grouping>
     <grouping id="group7">
-      <name value="Immunization"/>
+      <name value="Encounter"/>
     </grouping>
     <grouping id="group8">
-      <name value="Implantable Device"/>
-    </grouping>
-    <grouping id="group4">
-      <name value="Lab Observation"/>
+      <name value="Immunization"/>
     </grouping>
     <grouping id="group9">
-      <name value="Location"/>
+      <name value="Implantable Device"/>
+    </grouping>
+    <grouping id="group5">
+      <name value="Lab Observation"/>
     </grouping>
     <grouping id="group10">
-      <name value="Lung Cancer Screening"/>
-    </grouping>
-    <grouping id="group22">
-      <name value="MedRefillRequestMHV"/>
-    </grouping>
-    <grouping id="group12">
-      <name value="MedicationDispense"/>
+      <name value="Location"/>
     </grouping>
     <grouping id="group11">
-      <name value="MedicationRequest"/>
+      <name value="Lung Cancer Screening"/>
+    </grouping>
+    <grouping id="group23">
+      <name value="MedRefillRequestMHV"/>
     </grouping>
     <grouping id="group13">
-      <name value="Observation EXAM"/>
+      <name value="MedicationDispense"/>
     </grouping>
-    <grouping id="group20">
-      <name value="Observation Imaging Result"/>
+    <grouping id="group12">
+      <name value="MedicationRequest"/>
     </grouping>
     <grouping id="group14">
+      <name value="Observation EXAM"/>
+    </grouping>
+    <grouping id="group21">
+      <name value="Observation Imaging Result"/>
+    </grouping>
+    <grouping id="group15">
       <name value="Organization"/>
     </grouping>
     <grouping id="group1">
       <name value="Patient"/>
     </grouping>
-    <grouping id="group15">
+    <grouping id="group16">
       <name value="Practitioner"/>
     </grouping>
-    <grouping id="group16">
+    <grouping id="group17">
       <name value="Practitioner Role"/>
     </grouping>
-    <grouping id="group17">
+    <grouping id="group18">
       <name value="Procedure"/>
     </grouping>
-    <grouping id="group18">
+    <grouping id="group19">
       <name value="Smoking Status Observation"/>
     </grouping>
-    <grouping id="group23">
+    <grouping id="group24">
       <name value="VAERS"/>
     </grouping>
-    <grouping id="group19">
+    <grouping id="group20">
       <name value="Vital Signs"/>
     </grouping>
     <resource>
@@ -605,7 +624,7 @@
         <reference value="ValueSet/adminGender"/>
       </reference>
       <name value="adminGender FHIR"/>
-      <description value="FHIR Target ValueSet for Terminology Maps VF_adminGender"/>
+      <description value="FHIR Target ValueSet for Terminology Maps [VF_adminGender](ConceptMap-VF-adminGender)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -616,7 +635,7 @@
         <reference value="ValueSet/adminGender-vista"/>
       </reference>
       <name value="adminGender VistA"/>
-      <description value="VistA Source ValueSet for Terminology Maps VF_adminGender"/>
+      <description value="VistA Source ValueSet for Terminology Maps [VF_adminGender](ConceptMap-VF-adminGender)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -627,7 +646,7 @@
         <reference value="ValueSet/allergyActive"/>
       </reference>
       <name value="allergyActive FHIR"/>
-      <description value="FHIR Target ValueSet for Terminology Maps VF_allergyActive"/>
+      <description value="FHIR Target ValueSet for Terminology Maps [VF_allergyActive](ConceptMap-VF-allergyActive)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -638,7 +657,7 @@
         <reference value="ValueSet/allergyActive-vista"/>
       </reference>
       <name value="allergyActive VistA"/>
-      <description value="VistA Source ValueSet for Terminology Maps VF_allergyActive"/>
+      <description value="VistA Source ValueSet for Terminology Maps [VF_allergyActive](ConceptMap-VF-allergyActive)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -649,7 +668,7 @@
         <reference value="ValueSet/allergyEnteredInError"/>
       </reference>
       <name value="allergyEnteredInError FHIR"/>
-      <description value="FHIR Target ValueSet for Terminology Maps VF_allergyEnteredInError"/>
+      <description value="FHIR Target ValueSet for Terminology Maps [VF_allergyEnteredInError](ConceptMap-VF-allergyEnteredInError)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -660,7 +679,7 @@
         <reference value="ValueSet/allergyEnteredInError-vista"/>
       </reference>
       <name value="allergyEnteredInError VistA"/>
-      <description value="VistA Source ValueSet for Terminology Maps VF_allergyEnteredInError"/>
+      <description value="VistA Source ValueSet for Terminology Maps [VF_allergyEnteredInError](ConceptMap-VF-allergyEnteredInError)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -683,7 +702,7 @@
         <reference value="ValueSet/allergyMechanism"/>
       </reference>
       <name value="allergyMechanism FHIR"/>
-      <description value="FHIR Target ValueSet for Terminology Maps VF_allergyMechanism"/>
+      <description value="FHIR Target ValueSet for Terminology Maps [VF_allergyMechanism](ConceptMap-VF-allergyMechanism)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -694,7 +713,7 @@
         <reference value="ValueSet/allergyMechanism-vista"/>
       </reference>
       <name value="allergyMechanism VistA"/>
-      <description value="VistA Source ValueSet for Terminology Maps VF_allergyMechanism"/>
+      <description value="VistA Source ValueSet for Terminology Maps [VF_allergyMechanism](ConceptMap-VF-allergyMechanism)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -705,7 +724,7 @@
         <reference value="ValueSet/allergySeverity"/>
       </reference>
       <name value="allergySeverity FHIR"/>
-      <description value="FHIR Target ValueSet for Terminology Maps VF_allergySeverity"/>
+      <description value="FHIR Target ValueSet for Terminology Maps [VF_allergySeverity](ConceptMap-VF-allergySeverity)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -716,7 +735,7 @@
         <reference value="ValueSet/allergySeverity-vista"/>
       </reference>
       <name value="allergySeverity VistA"/>
-      <description value="VistA Source ValueSet for Terminology Maps VF_allergySeverity"/>
+      <description value="VistA Source ValueSet for Terminology Maps [VF_allergySeverity](ConceptMap-VF-allergySeverity)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -727,7 +746,7 @@
         <reference value="ValueSet/allergySubstanceCategory"/>
       </reference>
       <name value="allergySubstanceCategory FHIR"/>
-      <description value="FHIR Target ValueSet for Terminology Maps VF_allergySubstanceCategory"/>
+      <description value="FHIR Target ValueSet for Terminology Maps [VF_allergySubstanceCategory](ConceptMap-VF-allergySubstanceCategory)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -738,7 +757,7 @@
         <reference value="ValueSet/allergySubstanceCategory-vista"/>
       </reference>
       <name value="allergySubstanceCategory VistA"/>
-      <description value="VistA Source ValueSet for Terminology Maps VF_allergySubstanceCategory"/>
+      <description value="VistA Source ValueSet for Terminology Maps [VF_allergySubstanceCategory](ConceptMap-VF-allergySubstanceCategory)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -749,7 +768,7 @@
         <reference value="ValueSet/allergyVerificationStatus"/>
       </reference>
       <name value="allergyVerificationStatus FHIR"/>
-      <description value="FHIR Target ValueSet for Terminology Maps VF_allergyVerificationStatus"/>
+      <description value="FHIR Target ValueSet for Terminology Maps [VF_allergyVerificationStatus](ConceptMap-VF-allergyVerificationStatus)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -760,7 +779,7 @@
         <reference value="ValueSet/allergyVerificationStatus-vista"/>
       </reference>
       <name value="allergyVerificationStatus VistA"/>
-      <description value="VistA Source ValueSet for Terminology Maps VF_allergyVerificationStatus"/>
+      <description value="VistA Source ValueSet for Terminology Maps [VF_allergyVerificationStatus](ConceptMap-VF-allergyVerificationStatus)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -783,7 +802,7 @@
         <reference value="ValueSet/AntibioticSensitivityInterpretation"/>
       </reference>
       <name value="AntibioticSensitivityInterpretation FHIR"/>
-      <description value="FHIR Target ValueSet for Terminology Maps VF_AntibioticSensitivityInterpretation"/>
+      <description value="FHIR Target ValueSet for Terminology Maps [VF_AntibioticSensitivityInterpretation](ConceptMap-VF-AntibioticSensitivityInterpretation)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -794,7 +813,7 @@
         <reference value="ValueSet/AntibioticSensitivityInterpretation-vista"/>
       </reference>
       <name value="AntibioticSensitivityInterpretation VistA"/>
-      <description value="VistA Source ValueSet for Terminology Maps VF_AntibioticSensitivityInterpretation"/>
+      <description value="VistA Source ValueSet for Terminology Maps [VF_AntibioticSensitivityInterpretation](ConceptMap-VF-AntibioticSensitivityInterpretation)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -817,7 +836,7 @@
         <reference value="ValueSet/AppointmentCancellationReason"/>
       </reference>
       <name value="AppointmentCancellationReason FHIR"/>
-      <description value="FHIR Target ValueSet for Terminology Maps VF_AppointmentCancellationReason"/>
+      <description value="FHIR Target ValueSet for Terminology Maps [VF_AppointmentCancellationReason](ConceptMap-VF-AppointmentCancellationReason)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -828,7 +847,7 @@
         <reference value="ValueSet/AppointmentCancellationReason-vista"/>
       </reference>
       <name value="AppointmentCancellationReason VistA"/>
-      <description value="VistA Source ValueSet for Terminology Maps VF_AppointmentCancellationReason"/>
+      <description value="VistA Source ValueSet for Terminology Maps [VF_AppointmentCancellationReason](ConceptMap-VF-AppointmentCancellationReason)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -839,7 +858,7 @@
         <reference value="ValueSet/AppointmentStatus"/>
       </reference>
       <name value="AppointmentStatus FHIR"/>
-      <description value="FHIR Target ValueSet for Terminology Maps VF_AppointmentStatus"/>
+      <description value="FHIR Target ValueSet for Terminology Maps [VF_AppointmentStatus](ConceptMap-VF-AppointmentStatus)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -850,7 +869,7 @@
         <reference value="ValueSet/AppointmentStatus-vista"/>
       </reference>
       <name value="AppointmentStatus VistA"/>
-      <description value="VistA Source ValueSet for Terminology Maps VF_AppointmentStatus"/>
+      <description value="VistA Source ValueSet for Terminology Maps [VF_AppointmentStatus](ConceptMap-VF-AppointmentStatus)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -861,7 +880,7 @@
         <reference value="ValueSet/ARBillStatus"/>
       </reference>
       <name value="ARBillStatus FHIR"/>
-      <description value="FHIR Target ValueSet for Terminology Maps VF_ARBillStatus"/>
+      <description value="FHIR Target ValueSet for Terminology Maps [VF_ARBillStatus](ConceptMap-VF-ARBillStatus)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -872,7 +891,7 @@
         <reference value="ValueSet/ARBillStatus-vista"/>
       </reference>
       <name value="ARBillStatus VistA"/>
-      <description value="VistA Source ValueSet for Terminology Maps VF_ARBillStatus"/>
+      <description value="VistA Source ValueSet for Terminology Maps [VF_ARBillStatus](ConceptMap-VF-ARBillStatus)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -883,7 +902,7 @@
         <reference value="ValueSet/birthSex"/>
       </reference>
       <name value="birthSex FHIR"/>
-      <description value="FHIR Target ValueSet for Terminology Maps VF_birthSex"/>
+      <description value="FHIR Target ValueSet for Terminology Maps [VF_birthSex](ConceptMap-VF-birthSex)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -894,7 +913,7 @@
         <reference value="ValueSet/birthSex-vista"/>
       </reference>
       <name value="birthSex VistA"/>
-      <description value="VistA Source ValueSet for Terminology Maps VF_birthSex"/>
+      <description value="VistA Source ValueSet for Terminology Maps [VF_birthSex](ConceptMap-VF-birthSex)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -905,7 +924,7 @@
         <reference value="ValueSet/Boolean"/>
       </reference>
       <name value="Boolean FHIR"/>
-      <description value="FHIR Target ValueSet for Terminology Maps VF_Boolean"/>
+      <description value="FHIR Target ValueSet for Terminology Maps [VF_Boolean](ConceptMap-VF-Boolean)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -916,7 +935,7 @@
         <reference value="ValueSet/Boolean-vista"/>
       </reference>
       <name value="Boolean VistA"/>
-      <description value="VistA Source ValueSet for Terminology Maps VF_Boolean"/>
+      <description value="VistA Source ValueSet for Terminology Maps [VF_Boolean](ConceptMap-VF-Boolean)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -927,7 +946,7 @@
         <reference value="ValueSet/CommunicationQualifier"/>
       </reference>
       <name value="CommunicationQualifier FHIR"/>
-      <description value="FHIR Target ValueSet for Terminology Maps VF_CommunicationQualifier"/>
+      <description value="FHIR Target ValueSet for Terminology Maps [VF_CommunicationQualifier](ConceptMap-VF-CommunicationQualifier)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -938,7 +957,7 @@
         <reference value="ValueSet/CommunicationQualifier-vista"/>
       </reference>
       <name value="CommunicationQualifier VistA"/>
-      <description value="VistA Source ValueSet for Terminology Maps VF_CommunicationQualifier"/>
+      <description value="VistA Source ValueSet for Terminology Maps [VF_CommunicationQualifier](ConceptMap-VF-CommunicationQualifier)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -973,7 +992,7 @@
         <reference value="ValueSet/CoverageRelationship"/>
       </reference>
       <name value="CoverageRelationship FHIR"/>
-      <description value="FHIR Target ValueSet for Terminology Maps VF_CoverageRelationship"/>
+      <description value="FHIR Target ValueSet for Terminology Maps [VF_CoverageRelationship](ConceptMap-VF-CoverageRelationship)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -984,7 +1003,7 @@
         <reference value="ValueSet/CoverageRelationship-vista"/>
       </reference>
       <name value="CoverageRelationship VistA"/>
-      <description value="VistA Source ValueSet for Terminology Maps VF_CoverageRelationship"/>
+      <description value="VistA Source ValueSet for Terminology Maps [VF_CoverageRelationship](ConceptMap-VF-CoverageRelationship)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -995,7 +1014,7 @@
         <reference value="ValueSet/CoverageStatusForce"/>
       </reference>
       <name value="CoverageStatusForce FHIR"/>
-      <description value="FHIR Target ValueSet for Terminology Maps VF_CoverageStatusForce"/>
+      <description value="FHIR Target ValueSet for Terminology Maps [VF_CoverageStatusForce](ConceptMap-VF-CoverageStatusForce)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1006,7 +1025,7 @@
         <reference value="ValueSet/CoverageStatusForce-vista"/>
       </reference>
       <name value="CoverageStatusForce VistA"/>
-      <description value="VistA Source ValueSet for Terminology Maps VF_CoverageStatusForce"/>
+      <description value="VistA Source ValueSet for Terminology Maps [VF_CoverageStatusForce](ConceptMap-VF-CoverageStatusForce)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1031,7 +1050,7 @@
       <name value="Debt Portal Account"/>
       <description value="This StructureDefinition contains the maps for VistA file ACCOUNTS RECEIVABLE (430) to Account."/>
       <exampleBoolean value="false"/>
-      <groupingId value="group21"/>
+      <groupingId value="group22"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1043,7 +1062,7 @@
       <name value="Debt Portal ChargeItem[charges]"/>
       <description value="This StructureDefinition contains the maps for VistA file INTEGRATED BILLING ACTION (350) to ChargeItem."/>
       <exampleBoolean value="false"/>
-      <groupingId value="group21"/>
+      <groupingId value="group22"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1055,7 +1074,7 @@
       <name value="Debt Portal ChargeItem[interest]"/>
       <description value="This StructureDefinition contains the maps for VistA file AR TRANSACTION (433) to ChargeItem."/>
       <exampleBoolean value="false"/>
-      <groupingId value="group21"/>
+      <groupingId value="group22"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1067,7 +1086,7 @@
       <name value="Debt Portal Invoice"/>
       <description value="This StructureDefinition contains the maps for VistA file ACCOUNTS RECEIVABLE (430) to Invoice."/>
       <exampleBoolean value="false"/>
-      <groupingId value="group21"/>
+      <groupingId value="group22"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1079,7 +1098,7 @@
       <name value="Debt Portal Patient"/>
       <description value="This StructureDefinition contains the maps for VistA file ACCOUNTS RECEIVABLE (430) to Patient."/>
       <exampleBoolean value="false"/>
-      <groupingId value="group21"/>
+      <groupingId value="group22"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1091,7 +1110,7 @@
       <name value="Debt Portal PaymentReconciliation"/>
       <description value="This StructureDefinition contains the maps for VistA file AR TRANSACTION (433) to PaymentReconciliation."/>
       <exampleBoolean value="false"/>
-      <groupingId value="group21"/>
+      <groupingId value="group22"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1101,7 +1120,7 @@
         <reference value="ValueSet/DentalDeviceStatus"/>
       </reference>
       <name value="DentalDeviceStatus FHIR"/>
-      <description value="FHIR Target ValueSet for Terminology Maps VF_DentalDeviceStatus"/>
+      <description value="FHIR Target ValueSet for Terminology Maps [VF_DentalDeviceStatus](ConceptMap-VF-DentalDeviceStatus)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1112,7 +1131,7 @@
         <reference value="ValueSet/DentalDeviceStatus-vista"/>
       </reference>
       <name value="DentalDeviceStatus VistA"/>
-      <description value="VistA Source ValueSet for Terminology Maps VF_DentalDeviceStatus"/>
+      <description value="VistA Source ValueSet for Terminology Maps [VF_DentalDeviceStatus](ConceptMap-VF-DentalDeviceStatus)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1123,7 +1142,7 @@
         <reference value="ValueSet/deviceTypePacemaker"/>
       </reference>
       <name value="deviceTypePacemaker FHIR"/>
-      <description value="FHIR Target ValueSet for Terminology Maps VF_deviceTypePacemaker"/>
+      <description value="FHIR Target ValueSet for Terminology Maps [VF_deviceTypePacemaker](ConceptMap-VF-deviceTypePacemaker)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1134,8 +1153,80 @@
         <reference value="ValueSet/deviceTypePacemaker-vista"/>
       </reference>
       <name value="deviceTypePacemaker VistA"/>
-      <description value="VistA Source ValueSet for Terminology Maps VF_deviceTypePacemaker"/>
+      <description value="VistA Source ValueSet for Terminology Maps [VF_deviceTypePacemaker](ConceptMap-VF-deviceTypePacemaker)"/>
       <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/DiagnosticReportNoteCytopathologyDiagnosticReport"/>
+      </reference>
+      <name value="Diagnostic Report Note: Cytopathology DiagnosticReport"/>
+      <description value="This StructureDefinition contains the maps for VistA file CYTOPATHOLOGY (63.09) to us-core-diagnosticreport-note."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="group4"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/DiagnosticReportNoteCytopathologySpecimen"/>
+      </reference>
+      <name value="Diagnostic Report Note: Cytopathology Specimen"/>
+      <description value="This StructureDefinition contains the maps for VistA file CYTOPATHOLOGY (63.09) to Specimen."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="group4"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/DiagnosticReportNoteElectronMicroscopyDiagnosticReport"/>
+      </reference>
+      <name value="Diagnostic Report Note: Electron Microscopy DiagnosticReport"/>
+      <description value="This StructureDefinition contains the maps for VistA file EM (63.02) to us-core-diagnosticreport-note."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="group4"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/DiagnosticReportNoteElectronMicroscopySpecimen"/>
+      </reference>
+      <name value="Diagnostic Report Note: Electron Microscopy Specimen"/>
+      <description value="This StructureDefinition contains the maps for VistA file EM (63.02) to Specimen."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="group4"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/DiagnosticReportNoteSurgicalPathologyDiagnosticReport"/>
+      </reference>
+      <name value="Diagnostic Report Note: Surgical Pathology DiagnosticReport"/>
+      <description value="This StructureDefinition contains the maps for VistA file SURGICAL PATHOLOGY (63.08) to us-core-diagnosticreport-note."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="group4"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/DiagnosticReportNoteSurgicalPathologySpecimen"/>
+      </reference>
+      <name value="Diagnostic Report Note: Surgical Pathology Specimen"/>
+      <description value="This StructureDefinition contains the maps for VistA file SURGICAL PATHOLOGY (63.08) to Specimen."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="group4"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1145,7 +1236,7 @@
         <reference value="ValueSet/DiagnosticReportLabStatus"/>
       </reference>
       <name value="DiagnosticReportLabStatus FHIR"/>
-      <description value="FHIR Target ValueSet for Terminology Maps VF_DiagnosticReportLabStatus"/>
+      <description value="FHIR Target ValueSet for Terminology Maps [VF_DiagnosticReportLabStatus](ConceptMap-VF-DiagnosticReportLabStatus)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1156,7 +1247,7 @@
         <reference value="ValueSet/DiagnosticReportLabStatus-vista"/>
       </reference>
       <name value="DiagnosticReportLabStatus VistA"/>
-      <description value="VistA Source ValueSet for Terminology Maps VF_DiagnosticReportLabStatus"/>
+      <description value="VistA Source ValueSet for Terminology Maps [VF_DiagnosticReportLabStatus](ConceptMap-VF-DiagnosticReportLabStatus)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1169,7 +1260,7 @@
       <name value="Document Reference Binary"/>
       <description value="This StructureDefinition contains the maps for VistA file TIU DOCUMENT (8925) to Binary."/>
       <exampleBoolean value="false"/>
-      <groupingId value="group5"/>
+      <groupingId value="group6"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1181,7 +1272,7 @@
       <name value="Document Reference DocumentReference"/>
       <description value="This StructureDefinition contains the maps for VistA file TIU DOCUMENT (8925) to us-core-documentreference."/>
       <exampleBoolean value="false"/>
-      <groupingId value="group5"/>
+      <groupingId value="group6"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1191,7 +1282,7 @@
         <reference value="ValueSet/documentReferencedocStatus"/>
       </reference>
       <name value="documentReferencedocStatus FHIR"/>
-      <description value="FHIR Target ValueSet for Terminology Maps VF_documentReferencedocStatus"/>
+      <description value="FHIR Target ValueSet for Terminology Maps [VF_documentReferencedocStatus](ConceptMap-VF-documentReferencedocStatus)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1202,7 +1293,7 @@
         <reference value="ValueSet/documentReferencedocStatus-vista"/>
       </reference>
       <name value="documentReferencedocStatus VistA"/>
-      <description value="VistA Source ValueSet for Terminology Maps VF_documentReferencedocStatus"/>
+      <description value="VistA Source ValueSet for Terminology Maps [VF_documentReferencedocStatus](ConceptMap-VF-documentReferencedocStatus)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1213,7 +1304,7 @@
         <reference value="ValueSet/DoseUnits"/>
       </reference>
       <name value="DoseUnits FHIR"/>
-      <description value="FHIR Target ValueSet for Terminology Maps VF_DoseUnits"/>
+      <description value="FHIR Target ValueSet for Terminology Maps [VF_DoseUnits](ConceptMap-VF-DoseUnits)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1224,7 +1315,7 @@
         <reference value="ValueSet/DoseUnits-vista"/>
       </reference>
       <name value="DoseUnits VistA"/>
-      <description value="VistA Source ValueSet for Terminology Maps VF_DoseUnits"/>
+      <description value="VistA Source ValueSet for Terminology Maps [VF_DoseUnits](ConceptMap-VF-DoseUnits)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1237,7 +1328,7 @@
       <name value="Encounter: Inpatient Condition"/>
       <description value="This StructureDefinition contains the maps for VistA file PTF (45) to us-core-condition-problems-health-concerns."/>
       <exampleBoolean value="false"/>
-      <groupingId value="group6"/>
+      <groupingId value="group7"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1249,7 +1340,7 @@
       <name value="Encounter: Inpatient Encounter"/>
       <description value="This StructureDefinition contains the maps for VistA file PTF (45) to us-core-encounter."/>
       <exampleBoolean value="false"/>
-      <groupingId value="group6"/>
+      <groupingId value="group7"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1261,7 +1352,7 @@
       <name value="Encounter: Outpatient"/>
       <description value="This StructureDefinition contains the maps for VistA file VISIT (9000010) to us-core-encounter."/>
       <exampleBoolean value="false"/>
-      <groupingId value="group6"/>
+      <groupingId value="group7"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1271,7 +1362,7 @@
         <reference value="ValueSet/encounterClass"/>
       </reference>
       <name value="encounterClass FHIR"/>
-      <description value="FHIR Target ValueSet for Terminology Maps VF_encounterClass"/>
+      <description value="FHIR Target ValueSet for Terminology Maps [VF_encounterClass](ConceptMap-VF-encounterClass)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1282,7 +1373,7 @@
         <reference value="ValueSet/encounterClass-vista"/>
       </reference>
       <name value="encounterClass VistA"/>
-      <description value="VistA Source ValueSet for Terminology Maps VF_encounterClass"/>
+      <description value="VistA Source ValueSet for Terminology Maps [VF_encounterClass](ConceptMap-VF-encounterClass)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1293,7 +1384,7 @@
         <reference value="ValueSet/encounterParticipationType"/>
       </reference>
       <name value="encounterParticipationType FHIR"/>
-      <description value="FHIR Target ValueSet for Terminology Maps VF_encounterParticipationType"/>
+      <description value="FHIR Target ValueSet for Terminology Maps [VF_encounterParticipationType](ConceptMap-VF-encounterParticipationType)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1304,7 +1395,7 @@
         <reference value="ValueSet/encounterParticipationType-vista"/>
       </reference>
       <name value="encounterParticipationType VistA"/>
-      <description value="VistA Source ValueSet for Terminology Maps VF_encounterParticipationType"/>
+      <description value="VistA Source ValueSet for Terminology Maps [VF_encounterParticipationType](ConceptMap-VF-encounterParticipationType)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1315,7 +1406,7 @@
         <reference value="ValueSet/encounterProblemStatus"/>
       </reference>
       <name value="encounterProblemStatus FHIR"/>
-      <description value="FHIR Target ValueSet for Terminology Maps VF_encounterProblemStatus"/>
+      <description value="FHIR Target ValueSet for Terminology Maps [VF_encounterProblemStatus](ConceptMap-VF-encounterProblemStatus)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1326,7 +1417,7 @@
         <reference value="ValueSet/encounterProblemStatus-vista"/>
       </reference>
       <name value="encounterProblemStatus VistA"/>
-      <description value="VistA Source ValueSet for Terminology Maps VF_encounterProblemStatus"/>
+      <description value="VistA Source ValueSet for Terminology Maps [VF_encounterProblemStatus](ConceptMap-VF-encounterProblemStatus)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1337,7 +1428,7 @@
         <reference value="ValueSet/encounterProblemVerificationStatus"/>
       </reference>
       <name value="encounterProblemVerificationStatus FHIR"/>
-      <description value="FHIR Target ValueSet for Terminology Maps VF_encounterProblemVerificationStatus"/>
+      <description value="FHIR Target ValueSet for Terminology Maps [VF_encounterProblemVerificationStatus](ConceptMap-VF-encounterProblemVerificationStatus)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1348,7 +1439,7 @@
         <reference value="ValueSet/encounterProblemVerificationStatus-vista"/>
       </reference>
       <name value="encounterProblemVerificationStatus VistA"/>
-      <description value="VistA Source ValueSet for Terminology Maps VF_encounterProblemVerificationStatus"/>
+      <description value="VistA Source ValueSet for Terminology Maps [VF_encounterProblemVerificationStatus](ConceptMap-VF-encounterProblemVerificationStatus)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1359,7 +1450,7 @@
         <reference value="ValueSet/ethnicityCategory"/>
       </reference>
       <name value="ethnicityCategory FHIR"/>
-      <description value="FHIR Target ValueSet for Terminology Maps VF_ethnicityCategory"/>
+      <description value="FHIR Target ValueSet for Terminology Maps [VF_ethnicityCategory](ConceptMap-VF-ethnicityCategory)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1370,7 +1461,7 @@
         <reference value="ValueSet/ethnicityCategory-vista"/>
       </reference>
       <name value="ethnicityCategory VistA"/>
-      <description value="VistA Source ValueSet for Terminology Maps VF_ethnicityCategory"/>
+      <description value="VistA Source ValueSet for Terminology Maps [VF_ethnicityCategory](ConceptMap-VF-ethnicityCategory)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1381,7 +1472,7 @@
         <reference value="ValueSet/ExamResultInterpretation"/>
       </reference>
       <name value="ExamResultInterpretation FHIR"/>
-      <description value="FHIR Target ValueSet for Terminology Maps VF_ExamResultInterpretation"/>
+      <description value="FHIR Target ValueSet for Terminology Maps [VF_ExamResultInterpretation](ConceptMap-VF-ExamResultInterpretation)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1392,7 +1483,7 @@
         <reference value="ValueSet/ExamResultInterpretation-vista"/>
       </reference>
       <name value="ExamResultInterpretation VistA"/>
-      <description value="VistA Source ValueSet for Terminology Maps VF_ExamResultInterpretation"/>
+      <description value="VistA Source ValueSet for Terminology Maps [VF_ExamResultInterpretation](ConceptMap-VF-ExamResultInterpretation)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1403,7 +1494,7 @@
         <reference value="ValueSet/ExamStatus"/>
       </reference>
       <name value="ExamStatus FHIR"/>
-      <description value="FHIR Target ValueSet for Terminology Maps VF_ExamStatus"/>
+      <description value="FHIR Target ValueSet for Terminology Maps [VF_ExamStatus](ConceptMap-VF-ExamStatus)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1414,7 +1505,7 @@
         <reference value="ValueSet/ExamStatus-vista"/>
       </reference>
       <name value="ExamStatus VistA"/>
-      <description value="VistA Source ValueSet for Terminology Maps VF_ExamStatus"/>
+      <description value="VistA Source ValueSet for Terminology Maps [VF_ExamStatus](ConceptMap-VF-ExamStatus)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1425,7 +1516,7 @@
         <reference value="ValueSet/genderIdentity"/>
       </reference>
       <name value="genderIdentity FHIR"/>
-      <description value="FHIR Target ValueSet for Terminology Maps VF_genderIdentity"/>
+      <description value="FHIR Target ValueSet for Terminology Maps [VF_genderIdentity](ConceptMap-VF-genderIdentity)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1436,7 +1527,7 @@
         <reference value="ValueSet/genderIdentity-vista"/>
       </reference>
       <name value="genderIdentity VistA"/>
-      <description value="VistA Source ValueSet for Terminology Maps VF_genderIdentity"/>
+      <description value="VistA Source ValueSet for Terminology Maps [VF_genderIdentity](ConceptMap-VF-genderIdentity)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1457,7 +1548,7 @@
         <reference value="ValueSet/ICDCodingSystems"/>
       </reference>
       <name value="ICDCodingSystems FHIR"/>
-      <description value="FHIR Target ValueSet for Terminology Maps VF_ICDCodingSystems"/>
+      <description value="FHIR Target ValueSet for Terminology Maps [VF_ICDCodingSystems](ConceptMap-VF-ICDCodingSystems)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1468,7 +1559,7 @@
         <reference value="ValueSet/ICDCodingSystems-vista"/>
       </reference>
       <name value="ICDCodingSystems VistA"/>
-      <description value="VistA Source ValueSet for Terminology Maps VF_ICDCodingSystems"/>
+      <description value="VistA Source ValueSet for Terminology Maps [VF_ICDCodingSystems](ConceptMap-VF-ICDCodingSystems)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1479,7 +1570,7 @@
         <reference value="ValueSet/ICDVersion"/>
       </reference>
       <name value="ICDVersion FHIR"/>
-      <description value="FHIR Target ValueSet for Terminology Maps VF_ICDVersion"/>
+      <description value="FHIR Target ValueSet for Terminology Maps [VF_ICDVersion](ConceptMap-VF-ICDVersion)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1490,7 +1581,7 @@
         <reference value="ValueSet/ICDVersion-vista"/>
       </reference>
       <name value="ICDVersion VistA"/>
-      <description value="VistA Source ValueSet for Terminology Maps VF_ICDVersion"/>
+      <description value="VistA Source ValueSet for Terminology Maps [VF_ICDVersion](ConceptMap-VF-ICDVersion)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1501,7 +1592,7 @@
         <reference value="ValueSet/ImageInterpretation"/>
       </reference>
       <name value="ImageInterpretation FHIR"/>
-      <description value="FHIR Target ValueSet for Terminology Maps VF_ImageInterpretation"/>
+      <description value="FHIR Target ValueSet for Terminology Maps [VF_ImageInterpretation](ConceptMap-VF-ImageInterpretation)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1512,7 +1603,7 @@
         <reference value="ValueSet/ImageInterpretation-vista"/>
       </reference>
       <name value="ImageInterpretation VistA"/>
-      <description value="VistA Source ValueSet for Terminology Maps VF_ImageInterpretation"/>
+      <description value="VistA Source ValueSet for Terminology Maps [VF_ImageInterpretation](ConceptMap-VF-ImageInterpretation)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1523,7 +1614,7 @@
         <reference value="ValueSet/ImageStatus"/>
       </reference>
       <name value="ImageStatus FHIR"/>
-      <description value="FHIR Target ValueSet for Terminology Maps VF_ImageStatus"/>
+      <description value="FHIR Target ValueSet for Terminology Maps [VF_ImageStatus](ConceptMap-VF-ImageStatus)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1534,7 +1625,7 @@
         <reference value="ValueSet/ImageStatus-vista"/>
       </reference>
       <name value="ImageStatus VistA"/>
-      <description value="VistA Source ValueSet for Terminology Maps VF_ImageStatus"/>
+      <description value="VistA Source ValueSet for Terminology Maps [VF_ImageStatus](ConceptMap-VF-ImageStatus)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1545,7 +1636,7 @@
         <reference value="ValueSet/ImageStatusRadNuc"/>
       </reference>
       <name value="ImageStatusRadNuc FHIR"/>
-      <description value="FHIR Target ValueSet for Terminology Maps VF_ImageStatusRadNuc"/>
+      <description value="FHIR Target ValueSet for Terminology Maps [VF_ImageStatusRadNuc](ConceptMap-VF-ImageStatusRadNuc)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1556,7 +1647,7 @@
         <reference value="ValueSet/ImageStatusRadNuc-vista"/>
       </reference>
       <name value="ImageStatusRadNuc VistA"/>
-      <description value="VistA Source ValueSet for Terminology Maps VF_ImageStatusRadNuc"/>
+      <description value="VistA Source ValueSet for Terminology Maps [VF_ImageStatusRadNuc](ConceptMap-VF-ImageStatusRadNuc)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1569,7 +1660,7 @@
       <name value="Immunization Immunization"/>
       <description value="This StructureDefinition contains the maps for VistA file V IMMUNIZATION (9000010.11) to us-core-immunization."/>
       <exampleBoolean value="false"/>
-      <groupingId value="group7"/>
+      <groupingId value="group8"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1581,7 +1672,7 @@
       <name value="Immunization Observation"/>
       <description value="This StructureDefinition contains the maps for VistA file V IMMUNIZATION (9000010.11) to Observation."/>
       <exampleBoolean value="false"/>
-      <groupingId value="group7"/>
+      <groupingId value="group8"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1591,7 +1682,7 @@
         <reference value="ValueSet/immunizationPrimarySource"/>
       </reference>
       <name value="immunizationPrimarySource FHIR"/>
-      <description value="FHIR Target ValueSet for Terminology Maps VF_immunizationPrimarySource"/>
+      <description value="FHIR Target ValueSet for Terminology Maps [VF_immunizationPrimarySource](ConceptMap-VF-immunizationPrimarySource)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1602,7 +1693,7 @@
         <reference value="ValueSet/immunizationPrimarySource-vista"/>
       </reference>
       <name value="immunizationPrimarySource VistA"/>
-      <description value="VistA Source ValueSet for Terminology Maps VF_immunizationPrimarySource"/>
+      <description value="VistA Source ValueSet for Terminology Maps [VF_immunizationPrimarySource](ConceptMap-VF-immunizationPrimarySource)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1613,7 +1704,7 @@
         <reference value="ValueSet/ImmunizationReaction"/>
       </reference>
       <name value="ImmunizationReaction FHIR"/>
-      <description value="FHIR Target ValueSet for Terminology Maps VF_ImmunizationReaction"/>
+      <description value="FHIR Target ValueSet for Terminology Maps [VF_ImmunizationReaction](ConceptMap-VF-ImmunizationReaction)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1624,7 +1715,7 @@
         <reference value="ValueSet/ImmunizationReaction-vista"/>
       </reference>
       <name value="ImmunizationReaction VistA"/>
-      <description value="VistA Source ValueSet for Terminology Maps VF_ImmunizationReaction"/>
+      <description value="VistA Source ValueSet for Terminology Maps [VF_ImmunizationReaction](ConceptMap-VF-ImmunizationReaction)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1635,7 +1726,7 @@
         <reference value="ValueSet/immunizationStatusReason"/>
       </reference>
       <name value="immunizationStatusReason FHIR"/>
-      <description value="FHIR Target ValueSet for Terminology Maps VF_immunizationStatusReason"/>
+      <description value="FHIR Target ValueSet for Terminology Maps [VF_immunizationStatusReason](ConceptMap-VF-immunizationStatusReason)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1646,7 +1737,7 @@
         <reference value="ValueSet/immunizationStatusReason-vista"/>
       </reference>
       <name value="immunizationStatusReason VistA"/>
-      <description value="VistA Source ValueSet for Terminology Maps VF_immunizationStatusReason"/>
+      <description value="VistA Source ValueSet for Terminology Maps [VF_immunizationStatusReason](ConceptMap-VF-immunizationStatusReason)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1659,7 +1750,7 @@
       <name value="Implantable Device"/>
       <description value="This StructureDefinition contains the maps for VistA file undefined (undefined) to us-core-implantable-device."/>
       <exampleBoolean value="false"/>
-      <groupingId value="group8"/>
+      <groupingId value="group9"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1671,7 +1762,7 @@
       <name value="Implantable Device: A Lead"/>
       <description value="This StructureDefinition contains the maps for VistA file A LEAD IMPLANT (698.2) to us-core-implantable-device."/>
       <exampleBoolean value="false"/>
-      <groupingId value="group8"/>
+      <groupingId value="group9"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1683,7 +1774,7 @@
       <name value="Implantable Device: Dental"/>
       <description value="This StructureDefinition contains the maps for VistA file DENTAL DEVICE TRACKING (228.9) to us-core-implantable-device."/>
       <exampleBoolean value="false"/>
-      <groupingId value="group8"/>
+      <groupingId value="group9"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1695,7 +1786,7 @@
       <name value="Implantable Device: Pacemaker"/>
       <description value="This StructureDefinition contains the maps for VistA file GENERATOR IMPLANT (698) to us-core-implantable-device."/>
       <exampleBoolean value="false"/>
-      <groupingId value="group8"/>
+      <groupingId value="group9"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1707,7 +1798,7 @@
       <name value="Implantable Device: Prosthesis"/>
       <description value="This StructureDefinition contains the maps for VistA file PROSTHESIS INSTALLED (130.01) to us-core-implantable-device."/>
       <exampleBoolean value="false"/>
-      <groupingId value="group8"/>
+      <groupingId value="group9"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1719,7 +1810,7 @@
       <name value="Implantable Device: Transmitter"/>
       <description value="This StructureDefinition contains the maps for VistA file GENERATOR IMPLANT (698) to us-core-implantable-device."/>
       <exampleBoolean value="false"/>
-      <groupingId value="group8"/>
+      <groupingId value="group9"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1731,7 +1822,7 @@
       <name value="Implantable Device: V Lead"/>
       <description value="This StructureDefinition contains the maps for VistA file V LEAD IMPLANT (698.1) to us-core-implantable-device."/>
       <exampleBoolean value="false"/>
-      <groupingId value="group8"/>
+      <groupingId value="group9"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1741,7 +1832,7 @@
         <reference value="ValueSet/inferredCVX"/>
       </reference>
       <name value="inferredCVX FHIR"/>
-      <description value="FHIR Target ValueSet for Terminology Maps VF_inferredCVX"/>
+      <description value="FHIR Target ValueSet for Terminology Maps [VF_inferredCVX](ConceptMap-VF-inferredCVX)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1752,7 +1843,7 @@
         <reference value="ValueSet/inferredCVX-vista"/>
       </reference>
       <name value="inferredCVX VistA"/>
-      <description value="VistA Source ValueSet for Terminology Maps VF_inferredCVX"/>
+      <description value="VistA Source ValueSet for Terminology Maps [VF_inferredCVX](ConceptMap-VF-inferredCVX)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1765,7 +1856,7 @@
       <name value="Lab Observation DiagnosticReport"/>
       <description value="This StructureDefinition contains the maps for VistA file LABORATORY TEST (60) to us-core-diagnosticreport-lab."/>
       <exampleBoolean value="false"/>
-      <groupingId value="group4"/>
+      <groupingId value="group5"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1777,7 +1868,7 @@
       <name value="Lab Observation Observation"/>
       <description value="This StructureDefinition contains the maps for VistA file PATIENT (2) to us-core-observation-lab."/>
       <exampleBoolean value="false"/>
-      <groupingId value="group4"/>
+      <groupingId value="group5"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1789,7 +1880,7 @@
       <name value="Lab Observation: Chem, hem, tox, ria, ser DiagnosticReport"/>
       <description value="This StructureDefinition contains the maps for VistA file CHEM, HEM, TOX, RIA, SER, etc. (63.04) to us-core-diagnosticreport-lab."/>
       <exampleBoolean value="false"/>
-      <groupingId value="group4"/>
+      <groupingId value="group5"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1801,7 +1892,7 @@
       <name value="Lab Observation: Chem, hem, tox, ria, ser Observation"/>
       <description value="This StructureDefinition contains the maps for VistA file CHEM, HEM, TOX, RIA, SER, etc. (63.04) to us-core-observation-lab."/>
       <exampleBoolean value="false"/>
-      <groupingId value="group4"/>
+      <groupingId value="group5"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1813,79 +1904,7 @@
       <name value="Lab Observation: Chem, hem, tox, ria, ser Specimen"/>
       <description value="This StructureDefinition contains the maps for VistA file CHEM, HEM, TOX, RIA, SER, etc. (63.04) to Specimen."/>
       <exampleBoolean value="false"/>
-      <groupingId value="group4"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:resource"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/LabObservationCytopathologyDiagnosticReport"/>
-      </reference>
-      <name value="Lab Observation: Cytopathology DiagnosticReport"/>
-      <description value="This StructureDefinition contains the maps for VistA file CYTOPATHOLOGY (63.09) to us-core-diagnosticreport-lab."/>
-      <exampleBoolean value="false"/>
-      <groupingId value="group4"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:resource"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/LabObservationCytopathologyObservation"/>
-      </reference>
-      <name value="Lab Observation: Cytopathology Observation"/>
-      <description value="This StructureDefinition contains the maps for VistA file PATIENT (2) to us-core-observation-lab."/>
-      <exampleBoolean value="false"/>
-      <groupingId value="group4"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:resource"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/LabObservationCytopathologySpecimen"/>
-      </reference>
-      <name value="Lab Observation: Cytopathology Specimen"/>
-      <description value="This StructureDefinition contains the maps for VistA file CYTOPATHOLOGY (63.09) to Specimen."/>
-      <exampleBoolean value="false"/>
-      <groupingId value="group4"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:resource"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/LabObservationElectronMicroscopyDiagnosticReport"/>
-      </reference>
-      <name value="Lab Observation: Electron Microscopy DiagnosticReport"/>
-      <description value="This StructureDefinition contains the maps for VistA file EM (63.02) to us-core-diagnosticreport-lab."/>
-      <exampleBoolean value="false"/>
-      <groupingId value="group4"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:resource"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/LabObservationElectronMicroscopyObservation"/>
-      </reference>
-      <name value="Lab Observation: Electron Microscopy Observation"/>
-      <description value="This StructureDefinition contains the maps for VistA file PATIENT (2) to us-core-observation-lab."/>
-      <exampleBoolean value="false"/>
-      <groupingId value="group4"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:resource"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/LabObservationElectronMicroscopySpecimen"/>
-      </reference>
-      <name value="Lab Observation: Electron Microscopy Specimen"/>
-      <description value="This StructureDefinition contains the maps for VistA file EM (63.02) to Specimen."/>
-      <exampleBoolean value="false"/>
-      <groupingId value="group4"/>
+      <groupingId value="group5"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1897,7 +1916,7 @@
       <name value="Lab Observation: Microbiology Bacteriology DiagnosticReport"/>
       <description value="This StructureDefinition contains the maps for VistA file MICROBIOLOGY (63.05) to us-core-diagnosticreport-lab."/>
       <exampleBoolean value="false"/>
-      <groupingId value="group4"/>
+      <groupingId value="group5"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1909,7 +1928,7 @@
       <name value="Lab Observation: Microbiology Bacteriology Observation"/>
       <description value="This StructureDefinition contains the maps for VistA file MICROBIOLOGY (63.05) to us-core-observation-lab."/>
       <exampleBoolean value="false"/>
-      <groupingId value="group4"/>
+      <groupingId value="group5"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1921,7 +1940,7 @@
       <name value="Lab Observation: Microbiology Bacteriology Observation[bacteria]"/>
       <description value="This StructureDefinition contains the maps for VistA file MICROBIOLOGY (63.05) to us-core-observation-lab."/>
       <exampleBoolean value="false"/>
-      <groupingId value="group4"/>
+      <groupingId value="group5"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1933,7 +1952,7 @@
       <name value="Lab Observation: Microbiology Bacteriology Observation[gramstain]"/>
       <description value="This StructureDefinition contains the maps for VistA file MICROBIOLOGY (63.05) to us-core-observation-lab."/>
       <exampleBoolean value="false"/>
-      <groupingId value="group4"/>
+      <groupingId value="group5"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1945,7 +1964,7 @@
       <name value="Lab Observation: Microbiology Bacteriology Observation[sputum]"/>
       <description value="This StructureDefinition contains the maps for VistA file MICROBIOLOGY (63.05) to us-core-observation-lab."/>
       <exampleBoolean value="false"/>
-      <groupingId value="group4"/>
+      <groupingId value="group5"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1957,7 +1976,7 @@
       <name value="Lab Observation: Microbiology Bacteriology Observation[urine]"/>
       <description value="This StructureDefinition contains the maps for VistA file MICROBIOLOGY (63.05) to us-core-observation-lab."/>
       <exampleBoolean value="false"/>
-      <groupingId value="group4"/>
+      <groupingId value="group5"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1969,7 +1988,7 @@
       <name value="Lab Observation: Microbiology Bacteriology Specimen"/>
       <description value="This StructureDefinition contains the maps for VistA file MICROBIOLOGY (63.05) to Specimen."/>
       <exampleBoolean value="false"/>
-      <groupingId value="group4"/>
+      <groupingId value="group5"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1981,7 +2000,7 @@
       <name value="Lab Observation: Microbiology DiagnosticReport"/>
       <description value="This StructureDefinition contains the maps for VistA file MICROBIOLOGY (63.05) to us-core-diagnosticreport-lab."/>
       <exampleBoolean value="false"/>
-      <groupingId value="group4"/>
+      <groupingId value="group5"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1993,7 +2012,7 @@
       <name value="Lab Observation: Microbiology Mycobacteriology DiagnosticReport"/>
       <description value="This StructureDefinition contains the maps for VistA file MICROBIOLOGY (63.05) to us-core-diagnosticreport-lab."/>
       <exampleBoolean value="false"/>
-      <groupingId value="group4"/>
+      <groupingId value="group5"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -2005,7 +2024,7 @@
       <name value="Lab Observation: Microbiology Mycobacteriology Observation"/>
       <description value="This StructureDefinition contains the maps for VistA file MICROBIOLOGY (63.05) to us-core-observation-lab."/>
       <exampleBoolean value="false"/>
-      <groupingId value="group4"/>
+      <groupingId value="group5"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -2017,7 +2036,7 @@
       <name value="Lab Observation: Microbiology Mycobacteriology Observation[acidfast]"/>
       <description value="This StructureDefinition contains the maps for VistA file MICROBIOLOGY (63.05) to us-core-observation-lab."/>
       <exampleBoolean value="false"/>
-      <groupingId value="group4"/>
+      <groupingId value="group5"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -2029,7 +2048,7 @@
       <name value="Lab Observation: Microbiology Mycobacteriology Observation[mycobact]"/>
       <description value="This StructureDefinition contains the maps for VistA file MICROBIOLOGY (63.05) to us-core-observation-lab."/>
       <exampleBoolean value="false"/>
-      <groupingId value="group4"/>
+      <groupingId value="group5"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -2041,7 +2060,7 @@
       <name value="Lab Observation: Microbiology Mycobacteriology Specimen"/>
       <description value="This StructureDefinition contains the maps for VistA file MICROBIOLOGY (63.05) to Specimen."/>
       <exampleBoolean value="false"/>
-      <groupingId value="group4"/>
+      <groupingId value="group5"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -2053,7 +2072,7 @@
       <name value="Lab Observation: Microbiology Mycology DiagnosticReport"/>
       <description value="This StructureDefinition contains the maps for VistA file MICROBIOLOGY (63.05) to us-core-diagnosticreport-lab."/>
       <exampleBoolean value="false"/>
-      <groupingId value="group4"/>
+      <groupingId value="group5"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -2065,7 +2084,19 @@
       <name value="Lab Observation: Microbiology Mycology Observation"/>
       <description value="This StructureDefinition contains the maps for VistA file MICROBIOLOGY (63.05) to us-core-observation-lab."/>
       <exampleBoolean value="false"/>
-      <groupingId value="group4"/>
+      <groupingId value="group5"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/LabObservationMicrobiologyMycologyObservationfungus"/>
+      </reference>
+      <name value="Lab Observation: Microbiology Mycology Observation[fungus]"/>
+      <description value="This StructureDefinition contains the maps for VistA file MICROBIOLOGY (63.05) to us-core-observation-lab."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="group5"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -2077,7 +2108,7 @@
       <name value="Lab Observation: Microbiology Mycology Specimen"/>
       <description value="This StructureDefinition contains the maps for VistA file MICROBIOLOGY (63.05) to Specimen."/>
       <exampleBoolean value="false"/>
-      <groupingId value="group4"/>
+      <groupingId value="group5"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -2089,7 +2120,7 @@
       <name value="Lab Observation: Microbiology Observation"/>
       <description value="This StructureDefinition contains the maps for VistA file MICROBIOLOGY (63.05) to us-core-observation-lab."/>
       <exampleBoolean value="false"/>
-      <groupingId value="group4"/>
+      <groupingId value="group5"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -2101,7 +2132,7 @@
       <name value="Lab Observation: Microbiology Parasitology DiagnosticReport"/>
       <description value="This StructureDefinition contains the maps for VistA file MICROBIOLOGY (63.05) to us-core-diagnosticreport-lab."/>
       <exampleBoolean value="false"/>
-      <groupingId value="group4"/>
+      <groupingId value="group5"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -2113,7 +2144,7 @@
       <name value="Lab Observation: Microbiology Parasitology Observation"/>
       <description value="This StructureDefinition contains the maps for VistA file MICROBIOLOGY (63.05) to us-core-observation-lab."/>
       <exampleBoolean value="false"/>
-      <groupingId value="group4"/>
+      <groupingId value="group5"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -2125,7 +2156,7 @@
       <name value="Lab Observation: Microbiology Parasitology Specimen"/>
       <description value="This StructureDefinition contains the maps for VistA file MICROBIOLOGY (63.05) to Specimen."/>
       <exampleBoolean value="false"/>
-      <groupingId value="group4"/>
+      <groupingId value="group5"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -2137,7 +2168,7 @@
       <name value="Lab Observation: Microbiology Specimen"/>
       <description value="This StructureDefinition contains the maps for VistA file MICROBIOLOGY (63.05) to Specimen."/>
       <exampleBoolean value="false"/>
-      <groupingId value="group4"/>
+      <groupingId value="group5"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -2149,7 +2180,7 @@
       <name value="Lab Observation: Microbiology Virology DiagnosticReport"/>
       <description value="This StructureDefinition contains the maps for VistA file MICROBIOLOGY (63.05) to us-core-diagnosticreport-lab."/>
       <exampleBoolean value="false"/>
-      <groupingId value="group4"/>
+      <groupingId value="group5"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -2161,7 +2192,19 @@
       <name value="Lab Observation: Microbiology Virology Observation"/>
       <description value="This StructureDefinition contains the maps for VistA file MICROBIOLOGY (63.05) to us-core-observation-lab."/>
       <exampleBoolean value="false"/>
-      <groupingId value="group4"/>
+      <groupingId value="group5"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/LabObservationMicrobiologyVirologyObservationvirus"/>
+      </reference>
+      <name value="Lab Observation: Microbiology Virology Observation[virus]"/>
+      <description value="This StructureDefinition contains the maps for VistA file MICROBIOLOGY (63.05) to us-core-observation-lab."/>
+      <exampleBoolean value="false"/>
+      <groupingId value="group5"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -2173,43 +2216,7 @@
       <name value="Lab Observation: Microbiology Virology Specimen"/>
       <description value="This StructureDefinition contains the maps for VistA file MICROBIOLOGY (63.05) to Specimen."/>
       <exampleBoolean value="false"/>
-      <groupingId value="group4"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:resource"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/LabObservationSurgicalPathologyDiagnosticReport"/>
-      </reference>
-      <name value="Lab Observation: Surgical Pathology DiagnosticReport"/>
-      <description value="This StructureDefinition contains the maps for VistA file SURGICAL PATHOLOGY (63.08) to us-core-diagnosticreport-lab."/>
-      <exampleBoolean value="false"/>
-      <groupingId value="group4"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:resource"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/LabObservationSurgicalPathologyObservation"/>
-      </reference>
-      <name value="Lab Observation: Surgical Pathology Observation"/>
-      <description value="This StructureDefinition contains the maps for VistA file PATIENT (2) to us-core-observation-lab."/>
-      <exampleBoolean value="false"/>
-      <groupingId value="group4"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:resource"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/LabObservationSurgicalPathologySpecimen"/>
-      </reference>
-      <name value="Lab Observation: Surgical Pathology Specimen"/>
-      <description value="This StructureDefinition contains the maps for VistA file SURGICAL PATHOLOGY (63.08) to Specimen."/>
-      <exampleBoolean value="false"/>
-      <groupingId value="group4"/>
+      <groupingId value="group5"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -2219,7 +2226,7 @@
         <reference value="ValueSet/LabInterpretation"/>
       </reference>
       <name value="LabInterpretation FHIR"/>
-      <description value="FHIR Target ValueSet for Terminology Maps VF_LabInterpretation"/>
+      <description value="FHIR Target ValueSet for Terminology Maps [VF_LabInterpretation](ConceptMap-VF-LabInterpretation)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -2230,7 +2237,7 @@
         <reference value="ValueSet/LabInterpretation-vista"/>
       </reference>
       <name value="LabInterpretation VistA"/>
-      <description value="VistA Source ValueSet for Terminology Maps VF_LabInterpretation"/>
+      <description value="VistA Source ValueSet for Terminology Maps [VF_LabInterpretation](ConceptMap-VF-LabInterpretation)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -2241,7 +2248,7 @@
         <reference value="ValueSet/LabObservationStatus"/>
       </reference>
       <name value="LabObservationStatus FHIR"/>
-      <description value="FHIR Target ValueSet for Terminology Maps VF_LabObservationStatus"/>
+      <description value="FHIR Target ValueSet for Terminology Maps [VF_LabObservationStatus](ConceptMap-VF-LabObservationStatus)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -2252,7 +2259,7 @@
         <reference value="ValueSet/LabObservationStatus-vista"/>
       </reference>
       <name value="LabObservationStatus VistA"/>
-      <description value="VistA Source ValueSet for Terminology Maps VF_LabObservationStatus"/>
+      <description value="VistA Source ValueSet for Terminology Maps [VF_LabObservationStatus](ConceptMap-VF-LabObservationStatus)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -2281,18 +2288,6 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="CapabilityStatement"/>
-      </extension>
-      <reference>
-        <reference value="CapabilityStatement/PD"/>
-      </reference>
-      <name value="Lighthouse Provider Directory"/>
-      <description value="This CapabilityStatement enumerates the profiles that the API should address, in the estimation of the enterprise mapping team. Some elements may not be appropriate for those cases; consult the actual API specification published by the API provider"/>
-      <exampleBoolean value="false"/>
-      <groupingId value="groupcs"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
@@ -2301,7 +2296,7 @@
       <name value="Location"/>
       <description value="This StructureDefinition contains the maps for VistA file HOSPITAL LOCATION (44) to us-core-location."/>
       <exampleBoolean value="false"/>
-      <groupingId value="group9"/>
+      <groupingId value="group10"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -2311,7 +2306,7 @@
         <reference value="ValueSet/LocationStatus"/>
       </reference>
       <name value="LocationStatus FHIR"/>
-      <description value="FHIR Target ValueSet for Terminology Maps VF_LocationStatus"/>
+      <description value="FHIR Target ValueSet for Terminology Maps [VF_LocationStatus](ConceptMap-VF-LocationStatus)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -2322,7 +2317,7 @@
         <reference value="ValueSet/LocationStatus-vista"/>
       </reference>
       <name value="LocationStatus VistA"/>
-      <description value="VistA Source ValueSet for Terminology Maps VF_LocationStatus"/>
+      <description value="VistA Source ValueSet for Terminology Maps [VF_LocationStatus](ConceptMap-VF-LocationStatus)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -2335,7 +2330,7 @@
       <name value="Lung Cancer Screening"/>
       <description value="This StructureDefinition contains the maps for VistA file TIU DOCUMENT (8925) to us-core-diagnosticreport-note."/>
       <exampleBoolean value="false"/>
-      <groupingId value="group10"/>
+      <groupingId value="group11"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -2359,7 +2354,7 @@
       <name value="Lung Cancer Screening: CRNA"/>
       <description value="This StructureDefinition contains the maps for VistA file undefined (undefined) to ServiceRequest."/>
       <exampleBoolean value="false"/>
-      <groupingId value="group10"/>
+      <groupingId value="group11"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -2371,7 +2366,7 @@
       <name value="Lung Cancer Screening: DRNA"/>
       <description value="This StructureDefinition contains the maps for VistA file undefined (undefined) to ServiceRequest."/>
       <exampleBoolean value="false"/>
-      <groupingId value="group10"/>
+      <groupingId value="group11"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -2381,7 +2376,7 @@
         <reference value="ValueSet/MaritalStatus"/>
       </reference>
       <name value="MaritalStatus FHIR"/>
-      <description value="FHIR Target ValueSet for Terminology Maps VF_MaritalStatus"/>
+      <description value="FHIR Target ValueSet for Terminology Maps [VF_MaritalStatus](ConceptMap-VF-MaritalStatus)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -2392,7 +2387,7 @@
         <reference value="ValueSet/MaritalStatus-vista"/>
       </reference>
       <name value="MaritalStatus VistA"/>
-      <description value="VistA Source ValueSet for Terminology Maps VF_MaritalStatus"/>
+      <description value="VistA Source ValueSet for Terminology Maps [VF_MaritalStatus](ConceptMap-VF-MaritalStatus)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -2417,7 +2412,7 @@
       <name value="MedicationDispense: Original"/>
       <description value="This StructureDefinition contains the maps for VistA file PRESCRIPTION (52) to MedicationDispense."/>
       <exampleBoolean value="false"/>
-      <groupingId value="group12"/>
+      <groupingId value="group13"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -2429,7 +2424,7 @@
       <name value="MedicationDispense: Partial"/>
       <description value="This StructureDefinition contains the maps for VistA file PRESCRIPTION (52) to MedicationDispense."/>
       <exampleBoolean value="false"/>
-      <groupingId value="group12"/>
+      <groupingId value="group13"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -2441,7 +2436,7 @@
       <name value="MedicationDispense: Refill"/>
       <description value="This StructureDefinition contains the maps for VistA file PRESCRIPTION (52) to MedicationDispense."/>
       <exampleBoolean value="false"/>
-      <groupingId value="group12"/>
+      <groupingId value="group13"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -2453,7 +2448,7 @@
       <name value="MedicationRequest: NonVA"/>
       <description value="This StructureDefinition contains the maps for VistA file NON-VA MEDS (55.05) to us-core-medicationrequest."/>
       <exampleBoolean value="false"/>
-      <groupingId value="group11"/>
+      <groupingId value="group12"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -2465,7 +2460,7 @@
       <name value="MedicationRequest: Outpatient"/>
       <description value="This StructureDefinition contains the maps for VistA file PRESCRIPTION (52) to us-core-medicationrequest."/>
       <exampleBoolean value="false"/>
-      <groupingId value="group11"/>
+      <groupingId value="group12"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -2477,7 +2472,7 @@
       <name value="MedicationRequest: Pending"/>
       <description value="This StructureDefinition contains the maps for VistA file PENDING OUTPATIENT ORDERS (52.41) to us-core-medicationrequest."/>
       <exampleBoolean value="false"/>
-      <groupingId value="group11"/>
+      <groupingId value="group12"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -2489,7 +2484,7 @@
       <name value="MedicationRequest: Unsigned"/>
       <description value="This StructureDefinition contains the maps for VistA file ORDER (100) to us-core-medicationrequest."/>
       <exampleBoolean value="false"/>
-      <groupingId value="group11"/>
+      <groupingId value="group12"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -2556,7 +2551,7 @@
       <name value="MedRefillRequestMHV Provenance[create]"/>
       <description value="This StructureDefinition contains the maps for VistA file PRESCRIPTION REFILL REQUEST (52.43) to Provenance."/>
       <exampleBoolean value="false"/>
-      <groupingId value="group22"/>
+      <groupingId value="group23"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -2568,7 +2563,7 @@
       <name value="MedRefillRequestMHV Provenance[review]"/>
       <description value="This StructureDefinition contains the maps for VistA file PRESCRIPTION REFILL REQUEST (52.43) to Provenance."/>
       <exampleBoolean value="false"/>
-      <groupingId value="group22"/>
+      <groupingId value="group23"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -2580,7 +2575,7 @@
       <name value="MedRefillRequestMHV Task"/>
       <description value="This StructureDefinition contains the maps for VistA file PRESCRIPTION REFILL REQUEST (52.43) to Task."/>
       <exampleBoolean value="false"/>
-      <groupingId value="group22"/>
+      <groupingId value="group23"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -2590,7 +2585,7 @@
         <reference value="ValueSet/MicrobiologyUrineScreenResult"/>
       </reference>
       <name value="MicrobiologyUrineScreenResult FHIR"/>
-      <description value="FHIR Target ValueSet for Terminology Maps VF_MicrobiologyUrineScreenResult"/>
+      <description value="FHIR Target ValueSet for Terminology Maps [VF_MicrobiologyUrineScreenResult](ConceptMap-VF-MicrobiologyUrineScreenResult)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -2601,7 +2596,7 @@
         <reference value="ValueSet/MicrobiologyUrineScreenResult-vista"/>
       </reference>
       <name value="MicrobiologyUrineScreenResult VistA"/>
-      <description value="VistA Source ValueSet for Terminology Maps VF_MicrobiologyUrineScreenResult"/>
+      <description value="VistA Source ValueSet for Terminology Maps [VF_MicrobiologyUrineScreenResult](ConceptMap-VF-MicrobiologyUrineScreenResult)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -2626,7 +2621,7 @@
       <name value="Observation EXAM"/>
       <description value="This StructureDefinition contains the maps for VistA file V EXAM (9000010.13) to Observation."/>
       <exampleBoolean value="false"/>
-      <groupingId value="group13"/>
+      <groupingId value="group14"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -2638,7 +2633,7 @@
       <name value="Observation Imaging Result"/>
       <description value="This StructureDefinition contains the maps for VistA file undefined (undefined) to us-core-observation-imaging."/>
       <exampleBoolean value="false"/>
-      <groupingId value="group20"/>
+      <groupingId value="group21"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -2650,7 +2645,7 @@
       <name value="Observation Imaging Result: Echo"/>
       <description value="This StructureDefinition contains the maps for VistA file ECHO (691) to us-core-observation-imaging."/>
       <exampleBoolean value="false"/>
-      <groupingId value="group20"/>
+      <groupingId value="group21"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -2662,7 +2657,7 @@
       <name value="Observation Imaging Result: EKG"/>
       <description value="This StructureDefinition contains the maps for VistA file ELECTROCARDIOGRAM (EKG) (691.5) to us-core-observation-imaging."/>
       <exampleBoolean value="false"/>
-      <groupingId value="group20"/>
+      <groupingId value="group21"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -2674,7 +2669,7 @@
       <name value="Observation Imaging Result: Rad/Nuc"/>
       <description value="This StructureDefinition contains the maps for VistA file RAD/NUC MED REPORTS (74) to us-core-observation-imaging."/>
       <exampleBoolean value="false"/>
-      <groupingId value="group20"/>
+      <groupingId value="group21"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -2684,7 +2679,7 @@
         <reference value="ValueSet/OperatingRoomStatus"/>
       </reference>
       <name value="OperatingRoomStatus FHIR"/>
-      <description value="FHIR Target ValueSet for Terminology Maps VF_OperatingRoomStatus"/>
+      <description value="FHIR Target ValueSet for Terminology Maps [VF_OperatingRoomStatus](ConceptMap-VF-OperatingRoomStatus)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -2695,7 +2690,7 @@
         <reference value="ValueSet/OperatingRoomStatus-vista"/>
       </reference>
       <name value="OperatingRoomStatus VistA"/>
-      <description value="VistA Source ValueSet for Terminology Maps VF_OperatingRoomStatus"/>
+      <description value="VistA Source ValueSet for Terminology Maps [VF_OperatingRoomStatus](ConceptMap-VF-OperatingRoomStatus)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -2706,7 +2701,7 @@
         <reference value="ValueSet/OrderPatientClass"/>
       </reference>
       <name value="OrderPatientClass FHIR"/>
-      <description value="FHIR Target ValueSet for Terminology Maps VF_OrderPatientClass"/>
+      <description value="FHIR Target ValueSet for Terminology Maps [VF_OrderPatientClass](ConceptMap-VF-OrderPatientClass)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -2717,7 +2712,7 @@
         <reference value="ValueSet/OrderPatientClass-vista"/>
       </reference>
       <name value="OrderPatientClass VistA"/>
-      <description value="VistA Source ValueSet for Terminology Maps VF_OrderPatientClass"/>
+      <description value="VistA Source ValueSet for Terminology Maps [VF_OrderPatientClass](ConceptMap-VF-OrderPatientClass)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -2730,7 +2725,7 @@
       <name value="Organization"/>
       <description value="This StructureDefinition contains the maps for VistA file INSTITUTION (4) to us-core-organization."/>
       <exampleBoolean value="false"/>
-      <groupingId value="group14"/>
+      <groupingId value="group15"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -2762,7 +2757,7 @@
         <reference value="ValueSet/OrganizationIdentifierType"/>
       </reference>
       <name value="OrganizationIdentifierType FHIR"/>
-      <description value="FHIR Target ValueSet for Terminology Maps VF_OrganizationIdentifierType"/>
+      <description value="FHIR Target ValueSet for Terminology Maps [VF_OrganizationIdentifierType](ConceptMap-VF-OrganizationIdentifierType)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -2773,7 +2768,7 @@
         <reference value="ValueSet/OrganizationIdentifierType-vista"/>
       </reference>
       <name value="OrganizationIdentifierType VistA"/>
-      <description value="VistA Source ValueSet for Terminology Maps VF_OrganizationIdentifierType"/>
+      <description value="VistA Source ValueSet for Terminology Maps [VF_OrganizationIdentifierType](ConceptMap-VF-OrganizationIdentifierType)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -2795,7 +2790,7 @@
         <reference value="ValueSet/OutMedRequestStatus"/>
       </reference>
       <name value="OutMedRequestStatus FHIR"/>
-      <description value="FHIR Target ValueSet for Terminology Maps VF_OutMedRequestStatus"/>
+      <description value="FHIR Target ValueSet for Terminology Maps [VF_OutMedRequestStatus](ConceptMap-VF-OutMedRequestStatus)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -2806,7 +2801,7 @@
         <reference value="ValueSet/OutMedRequestStatus-vista"/>
       </reference>
       <name value="OutMedRequestStatus VistA"/>
-      <description value="VistA Source ValueSet for Terminology Maps VF_OutMedRequestStatus"/>
+      <description value="VistA Source ValueSet for Terminology Maps [VF_OutMedRequestStatus](ConceptMap-VF-OutMedRequestStatus)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -2851,7 +2846,7 @@
         <reference value="ValueSet/PersonIdentifierType"/>
       </reference>
       <name value="PersonIdentifierType FHIR"/>
-      <description value="FHIR Target ValueSet for Terminology Maps VF_PersonIdentifierType"/>
+      <description value="FHIR Target ValueSet for Terminology Maps [VF_PersonIdentifierType](ConceptMap-VF-PersonIdentifierType)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -2862,7 +2857,7 @@
         <reference value="ValueSet/PersonIdentifierType-vista"/>
       </reference>
       <name value="PersonIdentifierType VistA"/>
-      <description value="VistA Source ValueSet for Terminology Maps VF_PersonIdentifierType"/>
+      <description value="VistA Source ValueSet for Terminology Maps [VF_PersonIdentifierType](ConceptMap-VF-PersonIdentifierType)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -2873,7 +2868,7 @@
         <reference value="ValueSet/PharmacyPersonType"/>
       </reference>
       <name value="PharmacyPersonType FHIR"/>
-      <description value="FHIR Target ValueSet for Terminology Maps VF_PharmacyPersonType"/>
+      <description value="FHIR Target ValueSet for Terminology Maps [VF_PharmacyPersonType](ConceptMap-VF-PharmacyPersonType)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -2884,7 +2879,7 @@
         <reference value="ValueSet/PharmacyPersonType-vista"/>
       </reference>
       <name value="PharmacyPersonType VistA"/>
-      <description value="VistA Source ValueSet for Terminology Maps VF_PharmacyPersonType"/>
+      <description value="VistA Source ValueSet for Terminology Maps [VF_PharmacyPersonType](ConceptMap-VF-PharmacyPersonType)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -2897,7 +2892,7 @@
       <name value="Practitioner"/>
       <description value="This StructureDefinition contains the maps for VistA file NEW PERSON (200) to us-core-practitioner."/>
       <exampleBoolean value="false"/>
-      <groupingId value="group15"/>
+      <groupingId value="group16"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -2909,7 +2904,7 @@
       <name value="Practitioner Role"/>
       <description value="This StructureDefinition contains the maps for VistA file NEW PERSON (200) to us-core-practitionerrole."/>
       <exampleBoolean value="false"/>
-      <groupingId value="group16"/>
+      <groupingId value="group17"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -2919,7 +2914,7 @@
         <reference value="ValueSet/PractitionerCountry"/>
       </reference>
       <name value="PractitionerCountry FHIR"/>
-      <description value="FHIR Target ValueSet for Terminology Maps VF_PractitionerCountry"/>
+      <description value="FHIR Target ValueSet for Terminology Maps [VF_PractitionerCountry](ConceptMap-VF-PractitionerCountry)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -2930,7 +2925,7 @@
         <reference value="ValueSet/PractitionerCountry-vista"/>
       </reference>
       <name value="PractitionerCountry VistA"/>
-      <description value="VistA Source ValueSet for Terminology Maps VF_PractitionerCountry"/>
+      <description value="VistA Source ValueSet for Terminology Maps [VF_PractitionerCountry](ConceptMap-VF-PractitionerCountry)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -2941,7 +2936,7 @@
         <reference value="ValueSet/problemStatus"/>
       </reference>
       <name value="problemStatus FHIR"/>
-      <description value="FHIR Target ValueSet for Terminology Maps VF_problemStatus"/>
+      <description value="FHIR Target ValueSet for Terminology Maps [VF_problemStatus](ConceptMap-VF-problemStatus)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -2952,7 +2947,7 @@
         <reference value="ValueSet/problemStatus-vista"/>
       </reference>
       <name value="problemStatus VistA"/>
-      <description value="VistA Source ValueSet for Terminology Maps VF_problemStatus"/>
+      <description value="VistA Source ValueSet for Terminology Maps [VF_problemStatus](ConceptMap-VF-problemStatus)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -2963,7 +2958,7 @@
         <reference value="ValueSet/problemVerificationStatus"/>
       </reference>
       <name value="problemVerificationStatus FHIR"/>
-      <description value="FHIR Target ValueSet for Terminology Maps VF_problemVerificationStatus"/>
+      <description value="FHIR Target ValueSet for Terminology Maps [VF_problemVerificationStatus](ConceptMap-VF-problemVerificationStatus)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -2974,7 +2969,7 @@
         <reference value="ValueSet/problemVerificationStatus-vista"/>
       </reference>
       <name value="problemVerificationStatus VistA"/>
-      <description value="VistA Source ValueSet for Terminology Maps VF_problemVerificationStatus"/>
+      <description value="VistA Source ValueSet for Terminology Maps [VF_problemVerificationStatus](ConceptMap-VF-problemVerificationStatus)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -2987,7 +2982,7 @@
       <name value="Procedure: Outpatient"/>
       <description value="This StructureDefinition contains the maps for VistA file V CPT (9000010.18) to us-core-procedure."/>
       <exampleBoolean value="false"/>
-      <groupingId value="group17"/>
+      <groupingId value="group18"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -2999,7 +2994,7 @@
       <name value="Procedure: Radiology"/>
       <description value="This StructureDefinition contains the maps for VistA file REGISTERED EXAMS (70.02) to us-core-procedure."/>
       <exampleBoolean value="false"/>
-      <groupingId value="group17"/>
+      <groupingId value="group18"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -3011,7 +3006,7 @@
       <name value="Procedure: Surgery Location[OR]"/>
       <description value="This StructureDefinition contains the maps for VistA file OPERATING ROOM (131.7) to us-core-location."/>
       <exampleBoolean value="false"/>
-      <groupingId value="group17"/>
+      <groupingId value="group18"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -3023,7 +3018,7 @@
       <name value="Procedure: Surgery Procedure"/>
       <description value="This StructureDefinition contains the maps for VistA file SURGERY (130) to us-core-procedure."/>
       <exampleBoolean value="false"/>
-      <groupingId value="group17"/>
+      <groupingId value="group18"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -3033,7 +3028,7 @@
         <reference value="ValueSet/ProcedureCodeSystem"/>
       </reference>
       <name value="ProcedureCodeSystem FHIR"/>
-      <description value="FHIR Target ValueSet for Terminology Maps VF_ProcedureCodeSystem"/>
+      <description value="FHIR Target ValueSet for Terminology Maps [VF_ProcedureCodeSystem](ConceptMap-VF-ProcedureCodeSystem)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -3044,7 +3039,7 @@
         <reference value="ValueSet/ProcedureCodeSystem-vista"/>
       </reference>
       <name value="ProcedureCodeSystem VistA"/>
-      <description value="VistA Source ValueSet for Terminology Maps VF_ProcedureCodeSystem"/>
+      <description value="VistA Source ValueSet for Terminology Maps [VF_ProcedureCodeSystem](ConceptMap-VF-ProcedureCodeSystem)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -3055,7 +3050,7 @@
         <reference value="ValueSet/providerGender"/>
       </reference>
       <name value="providerGender FHIR"/>
-      <description value="FHIR Target ValueSet for Terminology Maps VF_providerGender"/>
+      <description value="FHIR Target ValueSet for Terminology Maps [VF_providerGender](ConceptMap-VF-providerGender)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -3066,7 +3061,7 @@
         <reference value="ValueSet/providerGender-vista"/>
       </reference>
       <name value="providerGender VistA"/>
-      <description value="VistA Source ValueSet for Terminology Maps VF_providerGender"/>
+      <description value="VistA Source ValueSet for Terminology Maps [VF_providerGender](ConceptMap-VF-providerGender)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -3077,7 +3072,7 @@
         <reference value="ValueSet/raceCategory"/>
       </reference>
       <name value="raceCategory FHIR"/>
-      <description value="FHIR Target ValueSet for Terminology Maps VF_raceCategory"/>
+      <description value="FHIR Target ValueSet for Terminology Maps [VF_raceCategory](ConceptMap-VF-raceCategory)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -3088,7 +3083,7 @@
         <reference value="ValueSet/raceCategory-vista"/>
       </reference>
       <name value="raceCategory VistA"/>
-      <description value="VistA Source ValueSet for Terminology Maps VF_raceCategory"/>
+      <description value="VistA Source ValueSet for Terminology Maps [VF_raceCategory](ConceptMap-VF-raceCategory)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -3099,7 +3094,7 @@
         <reference value="ValueSet/RadiologyProcedureStatus"/>
       </reference>
       <name value="RadiologyProcedureStatus FHIR"/>
-      <description value="FHIR Target ValueSet for Terminology Maps VF_RadiologyProcedureStatus"/>
+      <description value="FHIR Target ValueSet for Terminology Maps [VF_RadiologyProcedureStatus](ConceptMap-VF-RadiologyProcedureStatus)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -3110,7 +3105,7 @@
         <reference value="ValueSet/RadiologyProcedureStatus-vista"/>
       </reference>
       <name value="RadiologyProcedureStatus VistA"/>
-      <description value="VistA Source ValueSet for Terminology Maps VF_RadiologyProcedureStatus"/>
+      <description value="VistA Source ValueSet for Terminology Maps [VF_RadiologyProcedureStatus](ConceptMap-VF-RadiologyProcedureStatus)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -3121,7 +3116,7 @@
         <reference value="ValueSet/RefillRequestStatus"/>
       </reference>
       <name value="RefillRequestStatus FHIR"/>
-      <description value="FHIR Target ValueSet for Terminology Maps VF_RefillRequestStatus"/>
+      <description value="FHIR Target ValueSet for Terminology Maps [VF_RefillRequestStatus](ConceptMap-VF-RefillRequestStatus)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -3132,7 +3127,7 @@
         <reference value="ValueSet/RefillRequestStatus-vista"/>
       </reference>
       <name value="RefillRequestStatus VistA"/>
-      <description value="VistA Source ValueSet for Terminology Maps VF_RefillRequestStatus"/>
+      <description value="VistA Source ValueSet for Terminology Maps [VF_RefillRequestStatus](ConceptMap-VF-RefillRequestStatus)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -3143,7 +3138,7 @@
         <reference value="ValueSet/Religion"/>
       </reference>
       <name value="Religion FHIR"/>
-      <description value="FHIR Target ValueSet for Terminology Maps VF_Religion"/>
+      <description value="FHIR Target ValueSet for Terminology Maps [VF_Religion](ConceptMap-VF-Religion)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -3154,7 +3149,7 @@
         <reference value="ValueSet/Religion-vista"/>
       </reference>
       <name value="Religion VistA"/>
-      <description value="VistA Source ValueSet for Terminology Maps VF_Religion"/>
+      <description value="VistA Source ValueSet for Terminology Maps [VF_Religion](ConceptMap-VF-Religion)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -3178,7 +3173,7 @@
       <name value="Smoking Status Observation"/>
       <description value="This StructureDefinition contains the maps for VistA file V HEALTH FACTORS (9000010.23) to us-core-smokingstatus."/>
       <exampleBoolean value="false"/>
-      <groupingId value="group18"/>
+      <groupingId value="group19"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -3188,7 +3183,7 @@
         <reference value="ValueSet/SmokingStatus"/>
       </reference>
       <name value="SmokingStatus FHIR"/>
-      <description value="FHIR Target ValueSet for Terminology Maps VF_SmokingStatus"/>
+      <description value="FHIR Target ValueSet for Terminology Maps [VF_SmokingStatus](ConceptMap-VF-SmokingStatus)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -3199,7 +3194,7 @@
         <reference value="ValueSet/SmokingStatus-vista"/>
       </reference>
       <name value="SmokingStatus VistA"/>
-      <description value="VistA Source ValueSet for Terminology Maps VF_SmokingStatus"/>
+      <description value="VistA Source ValueSet for Terminology Maps [VF_SmokingStatus](ConceptMap-VF-SmokingStatus)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -3210,7 +3205,7 @@
         <reference value="ValueSet/SourceOfAdmission"/>
       </reference>
       <name value="SourceOfAdmission FHIR"/>
-      <description value="FHIR Target ValueSet for Terminology Maps VF_SourceOfAdmission"/>
+      <description value="FHIR Target ValueSet for Terminology Maps [VF_SourceOfAdmission](ConceptMap-VF-SourceOfAdmission)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -3221,20 +3216,8 @@
         <reference value="ValueSet/SourceOfAdmission-vista"/>
       </reference>
       <name value="SourceOfAdmission VistA"/>
-      <description value="VistA Source ValueSet for Terminology Maps VF_SourceOfAdmission"/>
+      <description value="VistA Source ValueSet for Terminology Maps [VF_SourceOfAdmission](ConceptMap-VF-SourceOfAdmission)"/>
       <exampleBoolean value="false"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="CapabilityStatement"/>
-      </extension>
-      <reference>
-        <reference value="CapabilityStatement/ADERS"/>
-      </reference>
-      <name value="VA Adverse Drug Event Reporting System"/>
-      <description value="This CapabilityStatement enumerates the profiles that the API should address, in the estimation of the enterprise mapping team. Some elements may not be appropriate for those cases; consult the actual API specification published by the API provider"/>
-      <exampleBoolean value="false"/>
-      <groupingId value="groupcs"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -3246,7 +3229,7 @@
       <name value="VAERS AdverseEvent"/>
       <description value="This StructureDefinition contains the maps for ADERS to AdverseEvent."/>
       <exampleBoolean value="false"/>
-      <groupingId value="group23"/>
+      <groupingId value="group24"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -3258,7 +3241,7 @@
       <name value="VAERS Bundle"/>
       <description value="This StructureDefinition contains the maps for ADERS to Bundle."/>
       <exampleBoolean value="false"/>
-      <groupingId value="group23"/>
+      <groupingId value="group24"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -3270,7 +3253,7 @@
       <name value="VAERS Immunization[pvac1]"/>
       <description value="This StructureDefinition contains the maps for ADERS to us-core-immunization."/>
       <exampleBoolean value="false"/>
-      <groupingId value="group23"/>
+      <groupingId value="group24"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -3282,7 +3265,7 @@
       <name value="VAERS Immunization[pvac2]"/>
       <description value="This StructureDefinition contains the maps for ADERS to us-core-immunization."/>
       <exampleBoolean value="false"/>
-      <groupingId value="group23"/>
+      <groupingId value="group24"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -3294,7 +3277,7 @@
       <name value="VAERS Immunization[pvac3]"/>
       <description value="This StructureDefinition contains the maps for ADERS to us-core-immunization."/>
       <exampleBoolean value="false"/>
-      <groupingId value="group23"/>
+      <groupingId value="group24"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -3306,7 +3289,7 @@
       <name value="VAERS Immunization[pvac4]"/>
       <description value="This StructureDefinition contains the maps for ADERS to us-core-immunization."/>
       <exampleBoolean value="false"/>
-      <groupingId value="group23"/>
+      <groupingId value="group24"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -3318,7 +3301,7 @@
       <name value="VAERS Immunization[vac1]"/>
       <description value="This StructureDefinition contains the maps for ADERS to us-core-immunization."/>
       <exampleBoolean value="false"/>
-      <groupingId value="group23"/>
+      <groupingId value="group24"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -3330,7 +3313,7 @@
       <name value="VAERS Immunization[vac2]"/>
       <description value="This StructureDefinition contains the maps for ADERS to us-core-immunization."/>
       <exampleBoolean value="false"/>
-      <groupingId value="group23"/>
+      <groupingId value="group24"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -3342,7 +3325,7 @@
       <name value="VAERS Immunization[vac3]"/>
       <description value="This StructureDefinition contains the maps for ADERS to us-core-immunization."/>
       <exampleBoolean value="false"/>
-      <groupingId value="group23"/>
+      <groupingId value="group24"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -3354,7 +3337,7 @@
       <name value="VAERS Immunization[vac4]"/>
       <description value="This StructureDefinition contains the maps for ADERS to us-core-immunization."/>
       <exampleBoolean value="false"/>
-      <groupingId value="group23"/>
+      <groupingId value="group24"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -3366,7 +3349,7 @@
       <name value="VAERS Patient"/>
       <description value="This StructureDefinition contains the maps for ADERS to us-core-patient."/>
       <exampleBoolean value="false"/>
-      <groupingId value="group23"/>
+      <groupingId value="group24"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -3378,7 +3361,7 @@
       <name value="VAERS: abstract"/>
       <description value="This StructureDefinition contains the maps for ADERS to us-core-immunization."/>
       <exampleBoolean value="false"/>
-      <groupingId value="group23"/>
+      <groupingId value="group24"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -4169,7 +4152,7 @@
         <reference value="ValueSet/VistaNCPDPCoverageRelationship"/>
       </reference>
       <name value="VistaNCPDPCoverageRelationship FHIR"/>
-      <description value="FHIR Target ValueSet for Terminology Maps Vista_NCPDPCoverageRelationship"/>
+      <description value="FHIR Target ValueSet for Terminology Maps [Vista_NCPDPCoverageRelationship](ConceptMap-Vista-NCPDPCoverageRelationship)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -4180,7 +4163,7 @@
         <reference value="ValueSet/VistaNCPDPCoverageRelationship-vista"/>
       </reference>
       <name value="VistaNCPDPCoverageRelationship VistA"/>
-      <description value="VistA Source ValueSet for Terminology Maps Vista_NCPDPCoverageRelationship"/>
+      <description value="VistA Source ValueSet for Terminology Maps [Vista_NCPDPCoverageRelationship](ConceptMap-Vista-NCPDPCoverageRelationship)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -4204,7 +4187,7 @@
       <name value="Vital Signs"/>
       <description value="This StructureDefinition contains the maps for VistA file GMRV VITAL MEASUREMENT (120.5) to us-core-vital-signs."/>
       <exampleBoolean value="false"/>
-      <groupingId value="group19"/>
+      <groupingId value="group20"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -4216,7 +4199,7 @@
       <name value="Vital Signs: BP"/>
       <description value="This StructureDefinition contains the maps for VistA file GMRV VITAL MEASUREMENT (120.5) to us-core-blood-pressure."/>
       <exampleBoolean value="false"/>
-      <groupingId value="group19"/>
+      <groupingId value="group20"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -4228,7 +4211,7 @@
       <name value="Vital Signs: SpO2"/>
       <description value="This StructureDefinition contains the maps for VistA file GMRV VITAL MEASUREMENT (120.5) to us-core-pulse-oximetry."/>
       <exampleBoolean value="false"/>
-      <groupingId value="group19"/>
+      <groupingId value="group20"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -4238,7 +4221,7 @@
         <reference value="ValueSet/VitalsBodyPosition"/>
       </reference>
       <name value="VitalsBodyPosition FHIR"/>
-      <description value="FHIR Target ValueSet for Terminology Maps VF_VitalsBodyPosition"/>
+      <description value="FHIR Target ValueSet for Terminology Maps [VF_VitalsBodyPosition](ConceptMap-VF-VitalsBodyPosition)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -4249,7 +4232,7 @@
         <reference value="ValueSet/VitalsBodyPosition-vista"/>
       </reference>
       <name value="VitalsBodyPosition VistA"/>
-      <description value="VistA Source ValueSet for Terminology Maps VF_VitalsBodyPosition"/>
+      <description value="VistA Source ValueSet for Terminology Maps [VF_VitalsBodyPosition](ConceptMap-VF-VitalsBodyPosition)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -4260,7 +4243,7 @@
         <reference value="ValueSet/VitalsBodySite"/>
       </reference>
       <name value="VitalsBodySite FHIR"/>
-      <description value="FHIR Target ValueSet for Terminology Maps VF_VitalsBodySite"/>
+      <description value="FHIR Target ValueSet for Terminology Maps [VF_VitalsBodySite](ConceptMap-VF-VitalsBodySite)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -4271,7 +4254,7 @@
         <reference value="ValueSet/VitalsBodySite-vista"/>
       </reference>
       <name value="VitalsBodySite VistA"/>
-      <description value="VistA Source ValueSet for Terminology Maps VF_VitalsBodySite"/>
+      <description value="VistA Source ValueSet for Terminology Maps [VF_VitalsBodySite](ConceptMap-VF-VitalsBodySite)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -4282,7 +4265,7 @@
         <reference value="ValueSet/VitalsCodes"/>
       </reference>
       <name value="VitalsCodes FHIR"/>
-      <description value="FHIR Target ValueSet for Terminology Maps VF_VitalsCodes"/>
+      <description value="FHIR Target ValueSet for Terminology Maps [VF_VitalsCodes](ConceptMap-VF-VitalsCodes)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -4293,7 +4276,7 @@
         <reference value="ValueSet/VitalsCodes-vista"/>
       </reference>
       <name value="VitalsCodes VistA"/>
-      <description value="VistA Source ValueSet for Terminology Maps VF_VitalsCodes"/>
+      <description value="VistA Source ValueSet for Terminology Maps [VF_VitalsCodes](ConceptMap-VF-VitalsCodes)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -4304,7 +4287,7 @@
         <reference value="ValueSet/VitalsCuffSize"/>
       </reference>
       <name value="VitalsCuffSize FHIR"/>
-      <description value="FHIR Target ValueSet for Terminology Maps VF_VitalsCuffSize"/>
+      <description value="FHIR Target ValueSet for Terminology Maps [VF_VitalsCuffSize](ConceptMap-VF-VitalsCuffSize)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -4315,7 +4298,7 @@
         <reference value="ValueSet/VitalsCuffSize-vista"/>
       </reference>
       <name value="VitalsCuffSize VistA"/>
-      <description value="VistA Source ValueSet for Terminology Maps VF_VitalsCuffSize"/>
+      <description value="VistA Source ValueSet for Terminology Maps [VF_VitalsCuffSize](ConceptMap-VF-VitalsCuffSize)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -4326,7 +4309,7 @@
         <reference value="ValueSet/VitalsLaterality"/>
       </reference>
       <name value="VitalsLaterality FHIR"/>
-      <description value="FHIR Target ValueSet for Terminology Maps VF_VitalsLaterality"/>
+      <description value="FHIR Target ValueSet for Terminology Maps [VF_VitalsLaterality](ConceptMap-VF-VitalsLaterality)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -4337,7 +4320,7 @@
         <reference value="ValueSet/VitalsLaterality-vista"/>
       </reference>
       <name value="VitalsLaterality VistA"/>
-      <description value="VistA Source ValueSet for Terminology Maps VF_VitalsLaterality"/>
+      <description value="VistA Source ValueSet for Terminology Maps [VF_VitalsLaterality](ConceptMap-VF-VitalsLaterality)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -4348,7 +4331,7 @@
         <reference value="ValueSet/VitalsMeasurementDevice"/>
       </reference>
       <name value="VitalsMeasurementDevice FHIR"/>
-      <description value="FHIR Target ValueSet for Terminology Maps VF_VitalsMeasurementDevice"/>
+      <description value="FHIR Target ValueSet for Terminology Maps [VF_VitalsMeasurementDevice](ConceptMap-VF-VitalsMeasurementDevice)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -4359,7 +4342,7 @@
         <reference value="ValueSet/VitalsMeasurementDevice-vista"/>
       </reference>
       <name value="VitalsMeasurementDevice VistA"/>
-      <description value="VistA Source ValueSet for Terminology Maps VF_VitalsMeasurementDevice"/>
+      <description value="VistA Source ValueSet for Terminology Maps [VF_VitalsMeasurementDevice](ConceptMap-VF-VitalsMeasurementDevice)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -4370,7 +4353,7 @@
         <reference value="ValueSet/VitalsMethod"/>
       </reference>
       <name value="VitalsMethod FHIR"/>
-      <description value="FHIR Target ValueSet for Terminology Maps VF_VitalsMethod"/>
+      <description value="FHIR Target ValueSet for Terminology Maps [VF_VitalsMethod](ConceptMap-VF-VitalsMethod)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -4381,7 +4364,7 @@
         <reference value="ValueSet/VitalsMethod-vista"/>
       </reference>
       <name value="VitalsMethod VistA"/>
-      <description value="VistA Source ValueSet for Terminology Maps VF_VitalsMethod"/>
+      <description value="VistA Source ValueSet for Terminology Maps [VF_VitalsMethod](ConceptMap-VF-VitalsMethod)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -4392,7 +4375,7 @@
         <reference value="ValueSet/VitalsPrecondition"/>
       </reference>
       <name value="VitalsPrecondition FHIR"/>
-      <description value="FHIR Target ValueSet for Terminology Maps VF_VitalsPrecondition"/>
+      <description value="FHIR Target ValueSet for Terminology Maps [VF_VitalsPrecondition](ConceptMap-VF-VitalsPrecondition)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -4403,7 +4386,7 @@
         <reference value="ValueSet/VitalsPrecondition-vista"/>
       </reference>
       <name value="VitalsPrecondition VistA"/>
-      <description value="VistA Source ValueSet for Terminology Maps VF_VitalsPrecondition"/>
+      <description value="VistA Source ValueSet for Terminology Maps [VF_VitalsPrecondition](ConceptMap-VF-VitalsPrecondition)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -4414,7 +4397,7 @@
         <reference value="ValueSet/VitalsQualifyingDevice"/>
       </reference>
       <name value="VitalsQualifyingDevice FHIR"/>
-      <description value="FHIR Target ValueSet for Terminology Maps VF_VitalsQualifyingDevice"/>
+      <description value="FHIR Target ValueSet for Terminology Maps [VF_VitalsQualifyingDevice](ConceptMap-VF-VitalsQualifyingDevice)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -4425,7 +4408,7 @@
         <reference value="ValueSet/VitalsQualifyingDevice-vista"/>
       </reference>
       <name value="VitalsQualifyingDevice VistA"/>
-      <description value="VistA Source ValueSet for Terminology Maps VF_VitalsQualifyingDevice"/>
+      <description value="VistA Source ValueSet for Terminology Maps [VF_VitalsQualifyingDevice](ConceptMap-VF-VitalsQualifyingDevice)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -4436,7 +4419,7 @@
         <reference value="ValueSet/VitalsUnits"/>
       </reference>
       <name value="VitalsUnits FHIR"/>
-      <description value="FHIR Target ValueSet for Terminology Maps VF_VitalsUnits"/>
+      <description value="FHIR Target ValueSet for Terminology Maps [VF_VitalsUnits](ConceptMap-VF-VitalsUnits)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -4447,7 +4430,7 @@
         <reference value="ValueSet/VitalsUnits-vista"/>
       </reference>
       <name value="VitalsUnits VistA"/>
-      <description value="VistA Source ValueSet for Terminology Maps VF_VitalsUnits"/>
+      <description value="VistA Source ValueSet for Terminology Maps [VF_VitalsUnits](ConceptMap-VF-VitalsUnits)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -4469,7 +4452,7 @@
         <reference value="ValueSet/YesNo10"/>
       </reference>
       <name value="YesNo10 FHIR"/>
-      <description value="FHIR Target ValueSet for Terminology Maps VF_YesNo10"/>
+      <description value="FHIR Target ValueSet for Terminology Maps [VF_YesNo10](ConceptMap-VF-YesNo10)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -4480,7 +4463,7 @@
         <reference value="ValueSet/YesNo10-vista"/>
       </reference>
       <name value="YesNo10 VistA"/>
-      <description value="VistA Source ValueSet for Terminology Maps VF_YesNo10"/>
+      <description value="VistA Source ValueSet for Terminology Maps [VF_YesNo10](ConceptMap-VF-YesNo10)"/>
       <exampleBoolean value="false"/>
     </resource>
     <page>

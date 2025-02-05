@@ -22,7 +22,7 @@ Usage: #definition
 
 ValueSet: YesNo10
 Title: "YesNo10 FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps VF_YesNo10"
+Description: "FHIR Target ValueSet for Terminology Maps [VF_YesNo10](ConceptMap-VF-YesNo10)"
 * ^experimental = false
 * ^status = #active
 * ^name = "YesNo10"
@@ -31,7 +31,7 @@ Description: "FHIR Target ValueSet for Terminology Maps VF_YesNo10"
 
 ValueSet: YesNo10-vista
 Title: "YesNo10 VistA"
-Description: "VistA Source ValueSet for Terminology Maps VF_YesNo10"
+Description: "VistA Source ValueSet for Terminology Maps [VF_YesNo10](ConceptMap-VF-YesNo10)"
 * ^experimental = false
 * ^status = #active
 * ^name = "YesNo10_VistA"

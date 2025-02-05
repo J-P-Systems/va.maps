@@ -16,7 +16,9 @@ Description: "This StructureDefinition contains the maps for VistA file V POV (9
 * clinicalStatus obeys ced-27-350
 * code.coding.system = "urn:see-termmap-in-mapParameter"
 * clinicalStatus from http://va.gov/fhir/ValueSet/encounterProblemStatus
+* clinicalStatus ^binding.description = "see mapping [VF_encounterProblemStatus](ConceptMap-VF-encounterProblemStatus.html)"
 * verificationStatus from http://va.gov/fhir/ValueSet/encounterProblemVerificationStatus
+* verificationStatus ^binding.description = "see mapping [VF_encounterProblemVerificationStatus](ConceptMap-VF-encounterProblemVerificationStatus.html)"
 
 Invariant: ced-27-350
 Description: "If (9000010.07-.06) is Null then exclude value"

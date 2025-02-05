@@ -8,7 +8,9 @@ Description: "This StructureDefinition contains the maps for VistA file ELECTROC
 * performer only Reference(Practitioner)
 * identifier.system = "http://va.gov/identifiers/$Sta3n/691.5"
 * status from http://va.gov/fhir/ValueSet/ImageStatus
+* status ^binding.description = "see mapping [VF_ImageStatus](ConceptMap-VF-ImageStatus.html)"
 * interpretation from http://va.gov/fhir/ValueSet/ImageInterpretation
+* interpretation ^binding.description = "see mapping [VF_ImageInterpretation](ConceptMap-VF-ImageInterpretation.html)"
 * category = http://terminology.hl7.org/CodeSystem/observation-category#imaging
 
 Mapping: source-to-ObservationImagingResultEKG

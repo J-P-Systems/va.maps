@@ -22,7 +22,7 @@ Usage: #definition
 
 ValueSet: Boolean
 Title: "Boolean FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps VF_Boolean"
+Description: "FHIR Target ValueSet for Terminology Maps [VF_Boolean](ConceptMap-VF-Boolean)"
 * ^experimental = false
 * ^status = #active
 * ^name = "Boolean"
@@ -31,7 +31,7 @@ Description: "FHIR Target ValueSet for Terminology Maps VF_Boolean"
 
 ValueSet: Boolean-vista
 Title: "Boolean VistA"
-Description: "VistA Source ValueSet for Terminology Maps VF_Boolean"
+Description: "VistA Source ValueSet for Terminology Maps [VF_Boolean](ConceptMap-VF-Boolean)"
 * ^experimental = false
 * ^status = #active
 * ^name = "Boolean_VistA"

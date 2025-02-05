@@ -8,20 +8,26 @@ Description: "This StructureDefinition contains the maps for VistA file ORDER (1
 * ^extension[=].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest|6.1.0"
 * ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
 * ^extension[=].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest|7.0.0"
-* identifier and subject and requester and authoredOn and priorPrescription and dosageInstruction.timing.repeat.boundsPeriod.start and dosageInstruction.timing.repeat.boundsPeriod.end and medicationCodeableConcept MS
+* identifier.value and identifier.type and subject and requester and authoredOn and priorPrescription and dosageInstruction.timing.repeat.boundsPeriod.start and dosageInstruction.timing.repeat.boundsPeriod.end and medicationCodeableConcept MS
 * subject only Reference(Patient)
 * requester only Reference(Practitioner)
-* identifier obeys mru-25-1225
+* identifier.value obeys mru-25-1225
+* identifier.type obeys mru-25-1225-1
 
 Invariant: mru-25-1225
 Description: "If package like 'PS%' & class 'I' & [exclude supply] then source value from (100-.01)"
+Severity: #warning
+
+Invariant: mru-25-1225-1
+Description: "If (undefined) is package like 'PS%' & class 'I' & [exclude supply] then fixed value http://terminology.hl7.org/CodeSystem/v2-0203/identifier-type#PLAC"
 Severity: #warning
 
 Mapping: source-to-MedicationRequestUnsigned
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: MedicationRequestUnsigned
-* identifier -> "1225: source value based on ORDER - ORDER # (100-.01) if package like 'PS%' & class 'I' & [exclude supply]" "confirm case"
+* identifier.value -> "1225: source value based on ORDER - ORDER # (100-.01) if package like 'PS%' & class 'I' & [exclude supply]" "confirm case"
+* identifier.type -> "1225-1: fixed value = http://terminology.hl7.org/CodeSystem/v2-0203/identifier-type#PLAC if package like 'PS%' & class 'I' & [exclude supply]" "generated from mapParameter row 1"
 * subject -> "1226: reference based on ORDER - OBJECT OF ORDER (100-.02)"
 * requester -> "1227: reference based on ORDER - CURRENT AGENT/PROVIDER (100-1)"
 * authoredOn -> "1228: source value based on ORDER - WHEN ENTERED (100-4)"
@@ -53,7 +59,7 @@ Mapping: sda-to-MedicationRequestUnsigned
 Id: sda
 Title: "Summary Document Architecure (SDA)"
 Source: MedicationRequestUnsigned
-* identifier -> "RadOrder.OrderItem[Order].Description,RadOrder.Extension[ResultExtension].null,LabOrder.OrderItem[Order].Description,LabOrder.Priority.Description,OtherOrder.OrderCategory.Description,OtherOrder.OrderItem[Order].Description,OtherOrder.OrderStatus[VA.VAStatus].Description,OtherOrder.Priority.Description,OtherOrder.OrderItem[Order].OriginalText"
+* identifier.value -> "RadOrder.OrderItem[Order].Description,RadOrder.Extension[ResultExtension].null,LabOrder.OrderItem[Order].Description,LabOrder.Priority.Description,OtherOrder.OrderCategory.Description,OtherOrder.OrderItem[Order].Description,OtherOrder.OrderStatus[VA.VAStatus].Description,OtherOrder.Priority.Description,OtherOrder.OrderItem[Order].OriginalText"
 * subject -> "RadOrder.Extension[ResultExtension].null"
 * authoredOn -> "RadOrder.EnteredOn,RadOrder.NationalItem[CodeTable].SDACodingStandard,RadOrder.Extension[ResultExtension].CaseNumber,LabOrder.EnteredOn,LabOrder.NationalItem[CodeTable].SDACodingStandard,OtherOrder.EnteredOn,Medication.EnteredOn"
 * priorPrescription -> "RadOrder.Extension[OrderExtension].ReplacedOrder,LabOrder.Extension[LabOrderExtension].ReplacedOrder,OtherOrder.Extension[OrderExtension].ReplacedOrder,Medication.Extension[MedicationExtension].ReplacedOrder"

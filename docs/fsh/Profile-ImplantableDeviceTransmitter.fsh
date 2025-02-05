@@ -11,10 +11,12 @@ Description: "This StructureDefinition contains the maps for VistA file GENERATO
 * manufacturer and modelNumber and type and identifier.value and identifier.system and status and serialNumber and patient MS
 * patient only Reference(Patient)
 * type from http://va.gov/fhir/ValueSet/deviceTypePacemaker
+* type ^binding.description = "see mapping [VF_deviceTypePacemaker](ConceptMap-VF-deviceTypePacemaker.html)"
 * identifier.system = "http://va.gov/identifiers/$Sta3n/698"
 * status obeys idt-28-1356
 * status obeys idt-28-1357
 * type from http://va.gov/fhir/ValueSet/deviceTypePacemaker
+* type ^binding.description = "see mapping [VF_deviceTypePacemaker](ConceptMap-VF-deviceTypePacemaker.html)"
 
 Invariant: idt-28-1356
 Description: "If (698-96) is is NULL then fixed value #active"

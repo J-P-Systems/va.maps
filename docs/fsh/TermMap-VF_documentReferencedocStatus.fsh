@@ -58,7 +58,7 @@ Usage: #definition
 
 ValueSet: documentReferencedocStatus
 Title: "documentReferencedocStatus FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps VF_documentReferencedocStatus"
+Description: "FHIR Target ValueSet for Terminology Maps [VF_documentReferencedocStatus](ConceptMap-VF-documentReferencedocStatus)"
 * ^experimental = false
 * ^status = #active
 * ^name = "DocumentReferencedocStatus"
@@ -69,7 +69,7 @@ Description: "FHIR Target ValueSet for Terminology Maps VF_documentReferencedocS
 
 ValueSet: documentReferencedocStatus-vista
 Title: "documentReferencedocStatus VistA"
-Description: "VistA Source ValueSet for Terminology Maps VF_documentReferencedocStatus"
+Description: "VistA Source ValueSet for Terminology Maps [VF_documentReferencedocStatus](ConceptMap-VF-documentReferencedocStatus)"
 * ^experimental = false
 * ^status = #active
 * ^name = "DocumentReferencedocStatus_VistA"

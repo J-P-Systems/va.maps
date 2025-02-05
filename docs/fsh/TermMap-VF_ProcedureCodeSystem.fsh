@@ -29,7 +29,7 @@ Usage: #definition
 
 ValueSet: ProcedureCodeSystem
 Title: "ProcedureCodeSystem FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps VF_ProcedureCodeSystem"
+Description: "FHIR Target ValueSet for Terminology Maps [VF_ProcedureCodeSystem](ConceptMap-VF-ProcedureCodeSystem)"
 * ^experimental = false
 * ^status = #active
 * ^name = "ProcedureCodeSystem"
@@ -41,7 +41,7 @@ Description: "FHIR Target ValueSet for Terminology Maps VF_ProcedureCodeSystem"
 
 ValueSet: ProcedureCodeSystem-vista
 Title: "ProcedureCodeSystem VistA"
-Description: "VistA Source ValueSet for Terminology Maps VF_ProcedureCodeSystem"
+Description: "VistA Source ValueSet for Terminology Maps [VF_ProcedureCodeSystem](ConceptMap-VF-ProcedureCodeSystem)"
 * ^experimental = false
 * ^status = #active
 * ^name = "ProcedureCodeSystem_VistA"

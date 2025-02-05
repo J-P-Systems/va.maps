@@ -8,6 +8,7 @@ Description: "This StructureDefinition contains the maps for VistA file RAD/NUC 
 * partOf only Reference(ProcedureSurgeryProcedure)
 * identifier.system = "http://va.gov/identifiers/$Sta3n/74"
 * status from http://va.gov/fhir/ValueSet/ImageStatusRadNuc
+* status ^binding.description = "see mapping [VF_ImageStatusRadNuc](ConceptMap-VF-ImageStatusRadNuc.html)"
 * category = http://terminology.hl7.org/CodeSystem/observation-category#imaging
 
 Mapping: source-to-ObservationImagingResultRadNuc

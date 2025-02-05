@@ -99,7 +99,7 @@ Usage: #definition
 
 ValueSet: VitalsQualifyingDevice
 Title: "VitalsQualifyingDevice FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps VF_VitalsQualifyingDevice"
+Description: "FHIR Target ValueSet for Terminology Maps [VF_VitalsQualifyingDevice](ConceptMap-VF-VitalsQualifyingDevice)"
 * ^experimental = false
 * ^status = #active
 * ^name = "VitalsQualifyingDevice"
@@ -120,7 +120,7 @@ Description: "FHIR Target ValueSet for Terminology Maps VF_VitalsQualifyingDevic
 
 ValueSet: VitalsQualifyingDevice-vista
 Title: "VitalsQualifyingDevice VistA"
-Description: "VistA Source ValueSet for Terminology Maps VF_VitalsQualifyingDevice"
+Description: "VistA Source ValueSet for Terminology Maps [VF_VitalsQualifyingDevice](ConceptMap-VF-VitalsQualifyingDevice)"
 * ^experimental = false
 * ^status = #active
 * ^name = "VitalsQualifyingDevice_VistA"

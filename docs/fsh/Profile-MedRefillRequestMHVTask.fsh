@@ -9,6 +9,7 @@ Description: "This StructureDefinition contains the maps for VistA file PRESCRIP
 * focus only Reference(MedicationDispenseRefill)
 * owner only Reference(Organization)
 * status from http://va.gov/fhir/ValueSet/RefillRequestStatus
+* status ^binding.description = "see mapping [VF_RefillRequestStatus](ConceptMap-VF-RefillRequestStatus.html)"
 * intent = #proposal
 * code obeys mrrmhvt-23-1852
 * code obeys mrrmhvt-23-1861

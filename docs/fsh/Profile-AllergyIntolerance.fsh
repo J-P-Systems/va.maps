@@ -17,11 +17,17 @@ Description: "This StructureDefinition contains the maps for VistA file PATIENT 
 * identifier[va-CDW].system = "http://va.gov/identifiers/CDWSID/cdwwork.allergy.allergy"
 * reaction.manifestation.coding.system = "urn:oid:2.16.840.1.113883.6.233"
 * type from http://va.gov/fhir/ValueSet/allergyMechanism
+* type ^binding.description = "see mapping [VF_allergyMechanism](ConceptMap-VF-allergyMechanism.html)"
 * verificationStatus from http://va.gov/fhir/ValueSet/allergyVerificationStatus
+* verificationStatus ^binding.description = "see mapping [VF_allergyVerificationStatus](ConceptMap-VF-allergyVerificationStatus.html)"
 * clinicalStatus from http://va.gov/fhir/ValueSet/allergyActive
+* clinicalStatus ^binding.description = "see mapping [VF_allergyActive](ConceptMap-VF-allergyActive.html)"
 * verificationStatus from http://va.gov/fhir/ValueSet/allergyEnteredInError
+* verificationStatus ^binding.description = "see mapping [VF_allergyEnteredInError](ConceptMap-VF-allergyEnteredInError.html)"
 * category from http://va.gov/fhir/ValueSet/allergySubstanceCategory
+* category ^binding.description = "see mapping [VF_allergySubstanceCategory](ConceptMap-VF-allergySubstanceCategory.html)"
 * reaction.severity from http://va.gov/fhir/ValueSet/allergySeverity
+* reaction.severity ^binding.description = "see mapping [VF_allergySeverity](ConceptMap-VF-allergySeverity.html)"
 * reaction.onset obeys ai-18-1652
 
 Invariant: ai-18-1652

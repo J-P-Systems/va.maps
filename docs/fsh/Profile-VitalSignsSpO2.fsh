@@ -31,17 +31,23 @@ Description: "This StructureDefinition contains the maps for VistA file GMRV VIT
 * category = http://terminology.hl7.org/CodeSystem/observation-category#vital-signs
 * identifier.system = "http://va.gov/identifiers/$Sta3n/120.5"
 * code.coding from http://va.gov/fhir/ValueSet/VitalsCodes
+* code.coding ^binding.description = "see mapping [VF_VitalsCodes](ConceptMap-VF-VitalsCodes.html)"
 * bodySite from http://va.gov/fhir/ValueSet/VitalsBodySite
+* bodySite ^binding.description = "see mapping [VF_VitalsBodySite](ConceptMap-VF-VitalsBodySite.html)"
 * extension[http://hl7.org/fhir/StructureDefinition/observation-deviceCode].valueCodeableConcept from http://va.gov/fhir/ValueSet/VitalsMeasurementDevice
+* extension[http://hl7.org/fhir/StructureDefinition/observation-deviceCode].valueCodeableConcept ^binding.description = "see mapping [VF_VitalsMeasurementDevice](ConceptMap-VF-VitalsMeasurementDevice.html)"
 * method from http://va.gov/fhir/ValueSet/VitalsMethod
+* method ^binding.description = "see mapping [VF_VitalsMethod](ConceptMap-VF-VitalsMethod.html)"
 * component[va-pre-condition].valueCodeableConcept.coding from http://va.gov/fhir/ValueSet/VitalsPrecondition
+* component[va-pre-condition].valueCodeableConcept.coding ^binding.description = "see mapping [VF_VitalsPrecondition](ConceptMap-VF-VitalsPrecondition.html)"
 * component[va-pre-condition].code = http://loinc.org#104158-1 "Associated precondition - Reported"
 * component[va-pre-condition-device].valueCodeableConcept.coding from http://va.gov/fhir/ValueSet/VitalsQualifyingDevice
+* component[va-pre-condition-device].valueCodeableConcept.coding ^binding.description = "see mapping [VF_VitalsQualifyingDevice](ConceptMap-VF-VitalsQualifyingDevice.html)"
 * component[va-pre-condition-device].code = http://loinc.org#104158-1 "Associated precondition - Reported"
 * extension[http://hl7.org/fhir/StructureDefinition/observation-bodyPosition].valueCodeableConcept from http://va.gov/fhir/ValueSet/VitalsBodyPosition
+* extension[http://hl7.org/fhir/StructureDefinition/observation-bodyPosition].valueCodeableConcept ^binding.description = "see mapping [VF_VitalsBodyPosition](ConceptMap-VF-VitalsBodyPosition.html)"
 * valueQuantity.value obeys vsso-14-664
-* valueQuantity.code.extension contains http://hl7.org/fhir/StructureDefinition/11179-permitted-value-conceptmap named 11179-permitted-value-conceptmap 0..1
-* valueQuantity.code.extension[11179-permitted-value-conceptmap].valueCanonical = "http://va.gov/fhir/ConceptMap/VF-VitalsUnits"
+* valueQuantity.code ^comment = "see mapping [VF_VitalsUnits](ConceptMap-VF-VitalsUnits.html)"
 
 Invariant: vsso-14-1239
 Description: "If VUID = 4500637 then transform (120.5-1.4) using Split_SpO2_value.Flow()"

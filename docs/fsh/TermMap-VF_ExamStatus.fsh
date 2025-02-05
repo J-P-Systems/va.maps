@@ -41,7 +41,7 @@ Usage: #definition
 
 ValueSet: ExamStatus
 Title: "ExamStatus FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps VF_ExamStatus"
+Description: "FHIR Target ValueSet for Terminology Maps [VF_ExamStatus](ConceptMap-VF-ExamStatus)"
 * ^experimental = false
 * ^status = #active
 * ^name = "ExamStatus"
@@ -52,7 +52,7 @@ Description: "FHIR Target ValueSet for Terminology Maps VF_ExamStatus"
 
 ValueSet: ExamStatus-vista
 Title: "ExamStatus VistA"
-Description: "VistA Source ValueSet for Terminology Maps VF_ExamStatus"
+Description: "VistA Source ValueSet for Terminology Maps [VF_ExamStatus](ConceptMap-VF-ExamStatus)"
 * ^experimental = false
 * ^status = #active
 * ^name = "ExamStatus_VistA"

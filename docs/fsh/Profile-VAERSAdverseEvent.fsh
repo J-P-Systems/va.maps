@@ -8,10 +8,55 @@ Description: "This StructureDefinition contains the maps for ADERS to AdverseEve
 * outcome.coding ^slicing.discriminator.path = "$this"
 * outcome.coding ^slicing.rules = #open
 * outcome.coding contains va-outcome1 0..1 and va-outcome2 0..1 and va-outcome3 0..1 and va-outcome8 0..1 and va-outcome9 0..1 and va-outcome10 0..1 and va-outcome13 0..1 and va-outcome11 0..1 and va-outcome12 0..1
-* subject and actuality and date and event.coding and outcome.coding[va-outcome1] and outcome.coding[va-outcome2] and outcome.coding[va-outcome3] and outcome.coding[va-outcome8] and outcome.coding[va-outcome9] and outcome.coding[va-outcome10] and outcome.coding[va-outcome13] and outcome.coding[va-outcome11] and outcome.coding[va-outcome12] and suspectEntity.instance MS
+* subject and actuality and date and event.coding and event.text and outcome.coding[va-outcome1] and outcome.coding[va-outcome2] and outcome.coding[va-outcome3] and outcome.coding[va-outcome8] and outcome.coding[va-outcome9] and outcome.coding[va-outcome10] and outcome.coding[va-outcome13] and outcome.coding[va-outcome11] and outcome.coding[va-outcome12] and suspectEntity.instance MS
 * subject only Reference(VAERSPatient)
 * suspectEntity.instance only Reference(VAERSImmunizationvac1)
 * actuality = #actual
+* outcome.coding[va-outcome1] obeys vaersae-17-1906
+* outcome.coding[va-outcome2] obeys vaersae-17-1907
+* outcome.coding[va-outcome3] obeys vaersae-17-1908
+* outcome.coding[va-outcome8] obeys vaersae-17-1913
+* outcome.coding[va-outcome9] obeys vaersae-17-1914
+* outcome.coding[va-outcome10] obeys vaersae-17-1915
+* outcome.coding[va-outcome13] obeys vaersae-17-1916
+* outcome.coding[va-outcome11] obeys vaersae-17-1918
+* outcome.coding[va-outcome12] obeys vaersae-17-1919
+
+Invariant: vaersae-17-1906
+Description: "If (null) is =1 then fixed value https://www.vaers.hhs.gov/data/datasets.html/Patientoutcomes#drvisit \"Doctor\""
+Severity: #warning
+
+Invariant: vaersae-17-1907
+Description: "If (null) is =1 then fixed value https://www.vaers.hhs.gov/data/datasets.html/Patientoutcomes#ered \"Emergency Room\""
+Severity: #warning
+
+Invariant: vaersae-17-1908
+Description: "If (null) is =1 then fixed value https://www.vaers.hhs.gov/data/datasets.html/Patientoutcomes#hospitalization \"Hospitalization\""
+Severity: #warning
+
+Invariant: vaersae-17-1913
+Description: "If (null) is =1 then fixed value https://www.vaers.hhs.gov/data/datasets.html/Patientoutcomes#hospitalization \"Hospitalization\""
+Severity: #warning
+
+Invariant: vaersae-17-1914
+Description: "If (null) is =1 then fixed value https://www.vaers.hhs.gov/data/datasets.html/Patientoutcomes#lti \"Life threatening illness\""
+Severity: #warning
+
+Invariant: vaersae-17-1915
+Description: "If (null) is =1 then fixed value https://www.vaers.hhs.gov/data/datasets.html/Patientoutcomes#dis \"Disability or permanent damage\""
+Severity: #warning
+
+Invariant: vaersae-17-1916
+Description: "If (null) is =1 then fixed value https://www.vaers.hhs.gov/data/datasets.html/Patientoutcomes#death \"Death\""
+Severity: #warning
+
+Invariant: vaersae-17-1918
+Description: "If (null) is =1 then fixed value https://www.vaers.hhs.gov/data/datasets.html/Patientoutcomes#ca_db \"Congenital anomaly or birth defect\""
+Severity: #warning
+
+Invariant: vaersae-17-1919
+Description: "If (null) is =1 then fixed value https://www.vaers.hhs.gov/data/datasets.html/Patientoutcomes#noa \"None of the above\""
+Severity: #warning
 
 Mapping: source-to-VAERSAdverseEvent
 Id: aders
@@ -21,13 +66,14 @@ Source: VAERSAdverseEvent
 * actuality -> "1877-1: fixed value = #actual" "generated from mapParameter row 1"
 * date -> "1881: transform using concat(4_VacDate, 4_VacTime)"
 * event.coding -> "1905: transform using parseCodesFromText()" "Multiple event codes in coding"
-* outcome.coding[va-outcome1] -> "1906: source value based on ADERS - 21_VAE_Outcome_DrVisit"
-* outcome.coding[va-outcome2] -> "1907: source value based on ADERS - 21_VAE_Outcome_ErED"
-* outcome.coding[va-outcome3] -> "1908: source value based on ADERS - 21_HospStay" "See Encounter & Location for details"
-* outcome.coding[va-outcome8] -> "1913: source value based on ADERS - 21_ProlongHospStay"
-* outcome.coding[va-outcome9] -> "1914: source value based on ADERS - 21_LTI"
-* outcome.coding[va-outcome10] -> "1915: source value based on ADERS - 21_Dis"
-* outcome.coding[va-outcome13] -> "1916: source value based on ADERS - 21_Death"
-* outcome.coding[va-outcome11] -> "1918: source value based on ADERS - 21_CA_BD"
-* outcome.coding[va-outcome12] -> "1919: source value based on ADERS - 21_NOA"
+* event.text -> "2217: source value based on ADERS - 18_VAE_Desc"
+* outcome.coding[va-outcome1] -> "1906: fixed value = https://www.vaers.hhs.gov/data/datasets.html/Patientoutcomes#drvisit \"Doctor\" if =1"
+* outcome.coding[va-outcome2] -> "1907: fixed value = https://www.vaers.hhs.gov/data/datasets.html/Patientoutcomes#ered \"Emergency Room\" if =1"
+* outcome.coding[va-outcome3] -> "1908: fixed value = https://www.vaers.hhs.gov/data/datasets.html/Patientoutcomes#hospitalization \"Hospitalization\" if =1" "See Encounter & Location for details"
+* outcome.coding[va-outcome8] -> "1913: fixed value = https://www.vaers.hhs.gov/data/datasets.html/Patientoutcomes#hospitalization \"Hospitalization\" if =1"
+* outcome.coding[va-outcome9] -> "1914: fixed value = https://www.vaers.hhs.gov/data/datasets.html/Patientoutcomes#lti \"Life threatening illness\" if =1"
+* outcome.coding[va-outcome10] -> "1915: fixed value = https://www.vaers.hhs.gov/data/datasets.html/Patientoutcomes#dis \"Disability or permanent damage\" if =1"
+* outcome.coding[va-outcome13] -> "1916: fixed value = https://www.vaers.hhs.gov/data/datasets.html/Patientoutcomes#death \"Death\" if =1"
+* outcome.coding[va-outcome11] -> "1918: fixed value = https://www.vaers.hhs.gov/data/datasets.html/Patientoutcomes#ca_db \"Congenital anomaly or birth defect\" if =1"
+* outcome.coding[va-outcome12] -> "1919: fixed value = https://www.vaers.hhs.gov/data/datasets.html/Patientoutcomes#noa \"None of the above\" if =1"
 * suspectEntity.instance -> "1972: reference"

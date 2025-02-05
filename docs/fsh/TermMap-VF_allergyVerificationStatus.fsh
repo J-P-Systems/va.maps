@@ -24,7 +24,7 @@ Usage: #definition
 
 ValueSet: allergyVerificationStatus
 Title: "allergyVerificationStatus FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps VF_allergyVerificationStatus"
+Description: "FHIR Target ValueSet for Terminology Maps [VF_allergyVerificationStatus](ConceptMap-VF-allergyVerificationStatus)"
 * ^experimental = false
 * ^status = #active
 * ^name = "AllergyVerificationStatus"
@@ -33,7 +33,7 @@ Description: "FHIR Target ValueSet for Terminology Maps VF_allergyVerificationSt
 
 ValueSet: allergyVerificationStatus-vista
 Title: "allergyVerificationStatus VistA"
-Description: "VistA Source ValueSet for Terminology Maps VF_allergyVerificationStatus"
+Description: "VistA Source ValueSet for Terminology Maps [VF_allergyVerificationStatus](ConceptMap-VF-allergyVerificationStatus)"
 * ^experimental = false
 * ^status = #active
 * ^name = "AllergyVerificationStatus_VistA"

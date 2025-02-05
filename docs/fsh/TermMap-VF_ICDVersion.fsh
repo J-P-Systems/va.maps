@@ -30,7 +30,7 @@ Usage: #definition
 
 ValueSet: ICDVersion
 Title: "ICDVersion FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps VF_ICDVersion"
+Description: "FHIR Target ValueSet for Terminology Maps [VF_ICDVersion](ConceptMap-VF-ICDVersion)"
 * ^experimental = false
 * ^status = #active
 * ^name = "ICDVersion"
@@ -41,7 +41,7 @@ Description: "FHIR Target ValueSet for Terminology Maps VF_ICDVersion"
 
 ValueSet: ICDVersion-vista
 Title: "ICDVersion VistA"
-Description: "VistA Source ValueSet for Terminology Maps VF_ICDVersion"
+Description: "VistA Source ValueSet for Terminology Maps [VF_ICDVersion](ConceptMap-VF-ICDVersion)"
 * ^experimental = false
 * ^status = #active
 * ^name = "ICDVersion_VistA"

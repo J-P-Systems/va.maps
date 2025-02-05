@@ -7,7 +7,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Debt Portal Invoice - Mappings - US Veterans Health Administration FHIR Map Set Implementation Guide v1.1.500</title>
+    <title>Debt Portal Invoice - Mappings - US Veterans Health Administration FHIR Map Set Implementation Guide v1.2.512</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -46,8 +46,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"12.17"}
-    h3,h4,h5,h6{--heading-prefix:"12.17"}</style>
+    <style type="text/css">h2{--heading-prefix:"12.15"}
+    h3,h4,h5,h6{--heading-prefix:"12.15"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -65,7 +65,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">US Veterans Health Administration FHIR Map Set Implementation Guide</span>
             <br/>
-            <span style="display:inline-block;">1.1.500 - 250201
+            <span style="display:inline-block;">1.2.512 - 250301
 
 
 
@@ -174,7 +174,7 @@
           <div class="inner-wrapper">
 
 <div style="counter-reset: section 5" class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">US Veterans Health Administration FHIR Map Set Implementation Guide - Local Development build (v1.1.500) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">US Veterans Health Administration FHIR Map Set Implementation Guide - Local Development build (v1.2.512) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   
 
 
@@ -213,12 +213,6 @@
 
 
 
-  
-    <li>
-      <a href="StructureDefinition-DebtPortalInvoice.profile.xml.html">XML</a>
-    </li>
-  
-
 
   
     <li>
@@ -247,7 +241,7 @@
         
           Active
           
-            as of 2025-02-01
+            as of 2025-02-05
           
         
       </td>
@@ -300,7 +294,7 @@
 <td class="cell-ce1"></td>
 <td class="cell-ce1">Patient</td>
 <td class="cell-ce1"></td>
-<td class="cell-ce1"></td>
+<td class="cell-ce1">The data in CDW does not support Invoice.recipient and Invoice.subject being different. It is assumed that the recipient will always be the subject and to avoid having duplicate patient references, it is recommended to use Invoice.recipient for the reference to the patient.</td>
 <td class="cell-ce1">http://hl7.org/fhir/StructureDefinition/Invoice | 4.0.1</td>
 </tr>
 <tr class="row-ro1">
@@ -342,7 +336,7 @@
 <td class="cell-ce1"></td>
 <td class="cell-ce1">/Patient</td>
 <td class="cell-ce1"></td>
-<td class="cell-ce1"></td>
+<td class="cell-ce1">The data in CDW does not support Invoice.recipient and Invoice.subject being different. It is assumed that the recipient will always be the subject and to avoid having duplicate patient references, it is recommended to use Invoice.recipient for the reference to the patient.</td>
 <td class="cell-ce1">http://hl7.org/fhir/StructureDefinition/Invoice | 4.0.1</td>
 </tr>
 <tr class="row-ro1">
@@ -364,11 +358,11 @@
 <td class="cell-ce1">for review</td>
 <td class="cell-ce1">V2F</td>
 <td class="cell-ce1">ACCOUNTS RECEIVABLE - SITE (430-12)</td>
-<td class="cell-ce1">source value</td>
+<td class="cell-ce1">reference</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">Invoice.issuer</td>
 <td class="cell-ce1"></td>
-<td class="cell-ce1"></td>
+<td class="cell-ce1">/Organization</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">http://hl7.org/fhir/StructureDefinition/Invoice | 4.0.1</td>
@@ -1187,10 +1181,12 @@
  <tr><td>Invoice</td><td></td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>1975: source value based on ACCOUNTS RECEIVABLE - BILL NO. (430-.01)</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>1843: terminologyMaps using VF_ARBillStatus on ACCOUNTS RECEIVABLE - CURRENT STATUS &gt; ACCOUNTS RECEIVABLE TRANS.TYPE - NAME (430-8 &gt; 430.3-.01)</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>1976: reference based on ACCOUNTS RECEIVABLE - PATIENT &gt; PATIENT (430-7 &gt; 2-)</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;recipient</td><td>1818: reference based on ACCOUNTS RECEIVABLE - DEBTOR &gt; AR DEBTOR - DEBTOR (430-9 &gt; 340-.01) if patient</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>1976: reference based on ACCOUNTS RECEIVABLE - PATIENT &gt; PATIENT (430-7 &gt; 2-)</td><td><p>The data in CDW does not support Invoice.recipient and Invoice.subject being different. It is assumed that the recipient will always be the subject and to avoid having duplicate patient references, it is recommended to use Invoice.recipient for the reference to the patient.</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;recipient</td><td>1818: reference based on ACCOUNTS RECEIVABLE - DEBTOR &gt; AR DEBTOR - DEBTOR (430-9 &gt; 340-.01) if patient</td><td><p>The data in CDW does not support Invoice.recipient and Invoice.subject being different. It is assumed that the recipient will always be the subject and to avoid having duplicate patient references, it is recommended to use Invoice.recipient for the reference to the patient.</p>
+</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;date</td><td>1977: source value based on ACCOUNTS RECEIVABLE - DATE BILL PREPARED (430-10)</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;issuer</td><td>2007: source value based on ACCOUNTS RECEIVABLE - SITE (430-12)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;issuer</td><td>2007: reference based on ACCOUNTS RECEIVABLE - SITE (430-12)</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;lineItem</td><td></td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;priceComponent</td><td></td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td></td><td></td> </tr>
@@ -1886,7 +1882,7 @@ Dim.ARDebtor.InstitutionIEN,Dim.ARDebtor.InsuranceCompanyIEN,Dim.ARDebtor.Patien
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025 <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#1.1.500 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Sat, Feb 1, 2025 09:13+0000">2025-02-01</span>
+          IG &#169; 2025 <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#1.2.512 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Feb 5, 2025 16:47+0000">2025-02-05</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

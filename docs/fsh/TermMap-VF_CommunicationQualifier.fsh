@@ -38,7 +38,7 @@ Usage: #definition
 
 ValueSet: CommunicationQualifier
 Title: "CommunicationQualifier FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps VF_CommunicationQualifier"
+Description: "FHIR Target ValueSet for Terminology Maps [VF_CommunicationQualifier](ConceptMap-VF-CommunicationQualifier)"
 * ^experimental = false
 * ^status = #active
 * ^name = "CommunicationQualifier"
@@ -50,7 +50,7 @@ Description: "FHIR Target ValueSet for Terminology Maps VF_CommunicationQualifie
 
 ValueSet: CommunicationQualifier-vista
 Title: "CommunicationQualifier VistA"
-Description: "VistA Source ValueSet for Terminology Maps VF_CommunicationQualifier"
+Description: "VistA Source ValueSet for Terminology Maps [VF_CommunicationQualifier](ConceptMap-VF-CommunicationQualifier)"
 * ^experimental = false
 * ^status = #active
 * ^name = "CommunicationQualifier_VistA"

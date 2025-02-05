@@ -11,6 +11,7 @@ Description: "This StructureDefinition contains the maps for VistA file OPERATIN
 * name and telecom.value and status and partOf MS
 * partOf only Reference(Location)
 * status from http://va.gov/fhir/ValueSet/OperatingRoomStatus
+* status ^binding.description = "see mapping [VF_OperatingRoomStatus](ConceptMap-VF-OperatingRoomStatus.html)"
 
 Mapping: source-to-ProcedureSurgeryLocationOR
 Id: vista

@@ -35,11 +35,17 @@ Description: "This StructureDefinition contains the maps for VistA file PATIENT 
 * address[va-home].type = #postal
 * managingOrganization.display = "Veterans Health Administration"
 * gender from http://va.gov/fhir/ValueSet/adminGender
+* gender ^binding.description = "see mapping [VF_adminGender](ConceptMap-VF-adminGender.html)"
 * extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-genderIdentity].valueCodeableConcept from http://va.gov/fhir/ValueSet/genderIdentity
+* extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-genderIdentity].valueCodeableConcept ^binding.description = "see mapping [VF_genderIdentity](ConceptMap-VF-genderIdentity.html)"
 * extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity].extension[ombCategory].valueCoding.code from http://va.gov/fhir/ValueSet/ethnicityCategory
+* extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity].extension[ombCategory].valueCoding.code ^binding.description = "see mapping [VF_ethnicityCategory](ConceptMap-VF-ethnicityCategory.html)"
 * extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-race].extension[ombCategory].valueCoding.code from http://va.gov/fhir/ValueSet/raceCategory
+* extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-race].extension[ombCategory].valueCoding.code ^binding.description = "see mapping [VF_raceCategory](ConceptMap-VF-raceCategory.html)"
 * maritalStatus from http://va.gov/fhir/ValueSet/MaritalStatus
+* maritalStatus ^binding.description = "see mapping [VF_MaritalStatus](ConceptMap-VF-MaritalStatus.html)"
 * extension[http://hl7.org/fhir/StructureDefinition/patient-religion].valueCodeableConcept from http://va.gov/fhir/ValueSet/Religion
+* extension[http://hl7.org/fhir/StructureDefinition/patient-religion].valueCodeableConcept ^binding.description = "see mapping [VF_Religion](ConceptMap-VF-Religion.html)"
 
 Invariant: p-7-285
 Description: "If not null then source value from (2-.351)"

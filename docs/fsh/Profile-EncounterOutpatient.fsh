@@ -29,7 +29,9 @@ Description: "This StructureDefinition contains the maps for VistA file VISIT (9
 * serviceType.coding.system = "http://va.gov/terminology/VistADefinedTerms/9000010-.07"
 * reasonCode.coding.system = "urn:see-termmap-in-mapParameter"
 * class from http://va.gov/fhir/ValueSet/encounterClass
+* class ^binding.description = "see mapping [VF_encounterClass](ConceptMap-VF-encounterClass.html)"
 * participant.type from http://va.gov/fhir/ValueSet/encounterParticipationType
+* participant.type ^binding.description = "see mapping [VF_encounterParticipationType](ConceptMap-VF-encounterParticipationType.html)"
 * type.coding.system = "http://www.ama-assn.org/go/cpt"
 
 Invariant: eo-19-430

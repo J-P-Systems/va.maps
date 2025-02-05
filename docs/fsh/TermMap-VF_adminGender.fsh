@@ -49,7 +49,7 @@ Usage: #definition
 
 ValueSet: adminGender
 Title: "adminGender FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps VF_adminGender"
+Description: "FHIR Target ValueSet for Terminology Maps [VF_adminGender](ConceptMap-VF-adminGender)"
 * ^experimental = false
 * ^status = #active
 * ^name = "AdminGender"
@@ -60,7 +60,7 @@ Description: "FHIR Target ValueSet for Terminology Maps VF_adminGender"
 
 ValueSet: adminGender-vista
 Title: "adminGender VistA"
-Description: "VistA Source ValueSet for Terminology Maps VF_adminGender"
+Description: "VistA Source ValueSet for Terminology Maps [VF_adminGender](ConceptMap-VF-adminGender)"
 * ^experimental = false
 * ^status = #active
 * ^name = "AdminGender_VistA"

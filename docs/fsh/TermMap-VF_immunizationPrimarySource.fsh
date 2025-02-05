@@ -50,7 +50,7 @@ Usage: #definition
 
 ValueSet: immunizationPrimarySource
 Title: "immunizationPrimarySource FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps VF_immunizationPrimarySource"
+Description: "FHIR Target ValueSet for Terminology Maps [VF_immunizationPrimarySource](ConceptMap-VF-immunizationPrimarySource)"
 * ^experimental = false
 * ^status = #active
 * ^name = "ImmunizationPrimarySource"
@@ -59,7 +59,7 @@ Description: "FHIR Target ValueSet for Terminology Maps VF_immunizationPrimarySo
 
 ValueSet: immunizationPrimarySource-vista
 Title: "immunizationPrimarySource VistA"
-Description: "VistA Source ValueSet for Terminology Maps VF_immunizationPrimarySource"
+Description: "VistA Source ValueSet for Terminology Maps [VF_immunizationPrimarySource](ConceptMap-VF-immunizationPrimarySource)"
 * ^experimental = false
 * ^status = #active
 * ^name = "ImmunizationPrimarySource_VistA"

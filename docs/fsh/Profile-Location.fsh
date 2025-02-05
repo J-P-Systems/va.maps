@@ -15,6 +15,7 @@ Description: "This StructureDefinition contains the maps for VistA file HOSPITAL
 * identifier.value and identifier.system and name and alias and status and description and telecom.value and telecom.system and telecom.use and managingOrganization.display and physicalType.text and address.state and address.district and address.line and address.city and address.postalCode and address.country and address.type and type.coding.code and type.coding.system and mode and type[va-stop-code].coding.code and type[va-stop-code].coding.system and type[va-credit-code].coding.code and type[va-credit-code].coding.system MS
 * identifier.system = "http://va.gov/identifiers/$Sta3n/44"
 * status from http://va.gov/fhir/ValueSet/LocationStatus
+* status ^binding.description = "see mapping [VF_LocationStatus](ConceptMap-VF-LocationStatus.html)"
 * telecom.system = #phone
 * telecom.use = #work
 * managingOrganization.display = "Veterans Administration"

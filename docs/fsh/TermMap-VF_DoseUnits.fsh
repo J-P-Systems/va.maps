@@ -29,7 +29,7 @@ Usage: #definition
 
 ValueSet: DoseUnits
 Title: "DoseUnits FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps VF_DoseUnits"
+Description: "FHIR Target ValueSet for Terminology Maps [VF_DoseUnits](ConceptMap-VF-DoseUnits)"
 * ^experimental = false
 * ^status = #active
 * ^name = "DoseUnits"
@@ -41,7 +41,7 @@ Description: "FHIR Target ValueSet for Terminology Maps VF_DoseUnits"
 
 ValueSet: DoseUnits-vista
 Title: "DoseUnits VistA"
-Description: "VistA Source ValueSet for Terminology Maps VF_DoseUnits"
+Description: "VistA Source ValueSet for Terminology Maps [VF_DoseUnits](ConceptMap-VF-DoseUnits)"
 * ^experimental = false
 * ^status = #active
 * ^name = "DoseUnits_VistA"
