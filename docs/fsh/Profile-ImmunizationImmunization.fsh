@@ -53,7 +53,7 @@ Description: "If not null then source value from (9000010.11-.01 > 9999999.14-.0
 Severity: #warning
 
 Invariant: ii-24-332-1
-Description: "If not null then source value from (9000010.11-.01 > 9999999.14-.03-.01)"
+Description: "If not null then source value from (9000010.11-.01 > 9999999.14-.01)"
 Severity: #warning
 
 Mapping: source-to-ImmunizationImmunization
@@ -67,7 +67,7 @@ Source: ImmunizationImmunization
 * status -> "298: exclude record if missing or unknown" "subfile: .01 is text\nfor review?"
 * status -> "299: fixed value = #not-done when V IMMUNIZATION - IMMUNIZATION > IMMUNIZATION - NAME (9000010.11-.01 > 9999999.14-.01) if text like 'contraindicated', 'refused', 'decline', 'not avail'" "subfile: .01 is text\nTransform because multiple sources\nuse map?"
 * vaccineCode -> "332: source value based on V IMMUNIZATION - IMMUNIZATION > IMMUNIZATION - CVX CODE (9000010.11-.01 > 9999999.14-.03) if not null" "subfile: .03 is CVX"
-* vaccineCode.text -> "332-1: source value based on V IMMUNIZATION - IMMUNIZATION > IMMUNIZATION - NAME (9000010.11-.01 > 9999999.14-.03-.01) if not null" "generated from mapParameter row 1"
+* vaccineCode.text -> "332-1: source value based on V IMMUNIZATION - IMMUNIZATION > IMMUNIZATION - NAME (9000010.11-.01 > 9999999.14-.01) if not null" "generated from mapParameter row 1"
 * patient -> "333: source value based on V IMMUNIZATION - PATIENT NAME (9000010.11-.02)"
 * occurrenceDateTime -> "334: source value based on V IMMUNIZATION - EVENT DATE AND TIME (9000010.11-1201)"
 * lotNumber -> "338: source value based on V IMMUNIZATION - LOT > IMMUNIZATION LOT - LOT NUMBER (9000010.11-.05 > 9999999.41-.01)" "pointer to subfile 9999999.04-.02 MVX code, 9999999.04-.01 lot"
@@ -98,7 +98,7 @@ Source: ImmunizationImmunization
 * status -> "Immun.Immunization.ImmunizationNameIEN\nDim.ImmunizationName.ImmunizationName,Dim.PharmacyOrderableItem.ImmunizationName"
 * status -> "Immun.Immunization.ImmunizationNameIEN\nDim.ImmunizationName.ImmunizationName,Dim.PharmacyOrderableItem.ImmunizationName"
 * vaccineCode -> "Immun.Immunization.ImmunizationNameIEN\nDim.ImmunizationName.CVXCode"
-* vaccineCode.text -> "Immun.Immunization.ImmunizationNameIEN"
+* vaccineCode.text -> "Immun.Immunization.ImmunizationNameIEN\nDim.ImmunizationName.ImmunizationName,Dim.PharmacyOrderableItem.ImmunizationName"
 * patient -> "Immun.Immunization.PatientIEN"
 * occurrenceDateTime -> "Immun.Immunization.EventDateTime"
 * lotNumber -> "Dim.ImmunizationLot.ImmunizationLot"
@@ -126,7 +126,7 @@ Source: ImmunizationImmunization
 * status -> "Vaccination.MaxDoseQuantity,Vaccination.OrderItem,Vaccination.Extension[VaccinationExtension].CDCName,Vaccination.Extension[VaccinationExtension].Source,Vaccination.AdministrationSite.Description,Vaccination.Manufacturer[VA.Manufacturer].Description\nVaccination.OrderItem[Order].Description,Vaccination.Route.Description,Vaccination.OrderItem[Order].Description,Vaccination.ObservationCodedValue[ObservationValueCode].Description"
 * status -> "Vaccination.MaxDoseQuantity,Vaccination.OrderItem,Vaccination.Extension[VaccinationExtension].CDCName,Vaccination.Extension[VaccinationExtension].Source,Vaccination.AdministrationSite.Description,Vaccination.Manufacturer[VA.Manufacturer].Description\nVaccination.OrderItem[Order].Description,Vaccination.Route.Description,Vaccination.OrderItem[Order].Description,Vaccination.ObservationCodedValue[ObservationValueCode].Description"
 * vaccineCode -> "Vaccination.MaxDoseQuantity,Vaccination.OrderItem,Vaccination.Extension[VaccinationExtension].CDCName,Vaccination.Extension[VaccinationExtension].Source,Vaccination.AdministrationSite.Description,Vaccination.Manufacturer[VA.Manufacturer].Description\nVaccination.OrderItem[Order].Code,Vaccination.Route.Code,Vaccination.OrderItem[Order].Code"
-* vaccineCode.text -> "Vaccination.MaxDoseQuantity,Vaccination.OrderItem,Vaccination.Extension[VaccinationExtension].CDCName,Vaccination.Extension[VaccinationExtension].Source,Vaccination.AdministrationSite.Description,Vaccination.Manufacturer[VA.Manufacturer].Description"
+* vaccineCode.text -> "Vaccination.MaxDoseQuantity,Vaccination.OrderItem,Vaccination.Extension[VaccinationExtension].CDCName,Vaccination.Extension[VaccinationExtension].Source,Vaccination.AdministrationSite.Description,Vaccination.Manufacturer[VA.Manufacturer].Description\nVaccination.OrderItem[Order].Description,Vaccination.Route.Description,Vaccination.OrderItem[Order].Description,Vaccination.ObservationCodedValue[ObservationValueCode].Description"
 * patient -> "Vaccination.AdministrationSite.Code,Vaccination.Manufacturer[VA.Manufacturer].Code"
 * occurrenceDateTime -> "Vaccination.FromTime,Vaccination.ToTime"
 * doseQuantity.value -> "Vaccination.Administration.AdministeredAmount"

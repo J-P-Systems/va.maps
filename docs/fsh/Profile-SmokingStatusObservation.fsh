@@ -43,7 +43,7 @@ Source: SmokingStatusObservation
 * effectiveDateTime -> "1247: source value based on V HEALTH FACTORS - EVENT DATE AND TIME (9000010.23-1201)"
 * performer -> "1248: reference based on V HEALTH FACTORS - ENCOUNTER PROVIDER (9000010.23-1204)" "Only encounter provider is in CDW, so ordering provider was not included at this time. If ordering provider needs to be included in the future, will need to determine a way to distinguish ordering provider from encounter provider in the practitioner resource."
 * valueCodeableConcept -> "1249: terminologyMaps using VF_SmokingStatus on V HEALTH FACTORS - HEALTH FACTOR > HEALTH FACTORS - FACTOR (9000010.23-.01 > 9999999.64-.01)" "If duplicates occur, the latest instance only should be sent."
-* valueCodeableConcept.text -> "1249-1: source value based on V HEALTH FACTORS - HEALTH FACTOR > HEALTH FACTORS - FACTOR (9000010.23-.01 > 9999999.64-.01-.01)" "generated from mapParameter row 1"
+* valueCodeableConcept.text -> "1249-1: source value based on V HEALTH FACTORS - HEALTH FACTOR > HEALTH FACTORS - FACTOR (9000010.23-.01 > 9999999.64-.01)" "generated from mapParameter row 1"
 * note.text -> "1250: source value based on V HEALTH FACTORS - COMMENTS (9000010.23-81101)"
 
 Mapping: cdw-to-SmokingStatusObservation
@@ -57,7 +57,7 @@ Source: SmokingStatusObservation
 * effectiveDateTime -> "HF.HealthFactor.EventDateTime"
 * performer -> "HF.HealthFactor.EncounterStaffIEN"
 * valueCodeableConcept -> "HF.HealthFactor.HealthFactorTypeIEN\nDim.HealthFactorType.HealthFactorCategory,Dim.HealthFactorType.HealthFactorType"
-* valueCodeableConcept.text -> "HF.HealthFactor.HealthFactorTypeIEN"
+* valueCodeableConcept.text -> "HF.HealthFactor.HealthFactorTypeIEN\nDim.HealthFactorType.HealthFactorCategory,Dim.HealthFactorType.HealthFactorType"
 * note.text -> "HF.HealthFactor.Comments"
 
 Mapping: sda-to-SmokingStatusObservation
@@ -70,5 +70,5 @@ Source: SmokingStatusObservation
 * effectiveDateTime -> "SocialHistory.FromTime,Vaccination.FromTime,Vaccination.ToTime,FamilyHistory.FromTime"
 * performer -> "Vaccination.Administration.AdministeringProvider"
 * valueCodeableConcept -> "SocialHistory.SocialHabit,SocialHistory.SocialHabitCategory,SocialHistory.Extension[SocialHistoryExtension].Category,SocialHistory.Extension[SocialHistoryExtension].QuantityLabel,SocialHistory.SocialHabitCategory.Description,Vaccination.OrderItem,FamilyHistory.Diagnosis,FamilyHistory.Extension[FamilyHistoryExtension].Category,FamilyHistory.Diagnosis.Description\nVaccination.OrderItem[Order].Description"
-* valueCodeableConcept.text -> "SocialHistory.SocialHabit,SocialHistory.SocialHabitCategory,SocialHistory.Extension[SocialHistoryExtension].Category,SocialHistory.Extension[SocialHistoryExtension].QuantityLabel,SocialHistory.SocialHabitCategory.Description,Vaccination.OrderItem,FamilyHistory.Diagnosis,FamilyHistory.Extension[FamilyHistoryExtension].Category,FamilyHistory.Diagnosis.Description"
+* valueCodeableConcept.text -> "SocialHistory.SocialHabit,SocialHistory.SocialHabitCategory,SocialHistory.Extension[SocialHistoryExtension].Category,SocialHistory.Extension[SocialHistoryExtension].QuantityLabel,SocialHistory.SocialHabitCategory.Description,Vaccination.OrderItem,FamilyHistory.Diagnosis,FamilyHistory.Extension[FamilyHistoryExtension].Category,FamilyHistory.Diagnosis.Description\nVaccination.OrderItem[Order].Description"
 * note.text -> "SocialHistory.SocialHabitComments,Vaccination.Administration.RefusalReason,FamilyHistory.NoteText"
