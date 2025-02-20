@@ -43,14 +43,17 @@ Description: "This StructureDefinition contains the maps for VistA file GMRV VIT
 Invariant: vs-10-655
 Description: "If (120.5-4) is null then fixed value #final"
 Severity: #warning
+Expression: "true"
 
 Invariant: vs-10-656
 Description: "If (120.5-4) is not null then fixed value #entered-in-error"
 Severity: #warning
+Expression: "true"
 
 Invariant: vs-10-664
 Description: "If VUID not = 4500634 then source value from (120.5-1.2)"
 Severity: #warning
+Expression: "true"
 
 Mapping: source-to-VitalSigns
 Id: vista
@@ -65,7 +68,7 @@ Source: VitalSigns
 * subject -> "659: reference based on GMRV VITAL MEASUREMENT - PATIENT (120.5-.02)"
 * identifier.value -> "660: source value based on GMRV VITAL MEASUREMENT - IEN (120.5-.001)"
 * identifier.system -> "660-1: fixed value = http://va.gov/identifiers/$Sta3n/120.5" "generated from mapParameter row 1"
-* code.coding -> "661: terminologyMaps using VF_VitalsCodes on GMRV VITAL MEASUREMENT - VITAL TYPE (120.5-.03)" "Pulse Oximetry has 2 code values per US Core"
+* code.coding -> "661: terminologyMaps using VF_VitalsCodes on GMRV VITAL MEASUREMENT - VITAL TYPE > GMRV VITAL TYPE - VUID (120.5-.03 > 120.51-99.99)" "Pulse Oximetry has 2 code values per US Core"
 * bodySite -> "662: terminologyMaps using VF_VitalsBodySite on GMRV VITAL MEASUREMENT - QUALIFIER > GMRV VITAL QUALIFIER - VUID (120.5-5 > 120.52-99.99)"
 * extension[http://hl7.org/fhir/StructureDefinition/observation-deviceCode].valueCodeableConcept -> "663: terminologyMaps using VF_VitalsMeasurementDevice on GMRV VITAL MEASUREMENT - QUALIFIER > GMRV VITAL QUALIFIER - VUID (120.5-5 > 120.52-99.99)"
 * method -> "867: terminologyMaps using VF_VitalsMethod on GMRV VITAL MEASUREMENT - QUALIFIER > GMRV VITAL QUALIFIER - VUID (120.5-5 > 120.52-99.99)"
@@ -88,7 +91,7 @@ Source: VitalSigns
 * performer -> "Vital.VitalSign.LocationIEN"
 * effectiveDateTime -> "Vital.VitalSign.VitalSignTakenDateTime,Vital.VitalSignQualifier.VitalSignTakenDateTime"
 * subject -> "Vital.VitalSign.PatientIEN"
-* code.coding -> "Vital.VitalSign.VitalTypeIEN"
+* code.coding -> "Vital.VitalSign.VitalTypeIEN\nDim.VitalType.VUID"
 * valueQuantity.value -> "Vital.VitalSign.Diastolic,Vital.VitalSign.Systolic,Vital.VitalSign.VitalResult,Vital.VitalSign.VitalResultNumeric"
 * valueQuantity.code -> "Vital.VitalSign.VitalTypeIEN"
 

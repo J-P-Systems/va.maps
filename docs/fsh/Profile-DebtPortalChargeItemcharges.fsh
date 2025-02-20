@@ -22,14 +22,17 @@ Description: "This StructureDefinition contains the maps for VistA file INTEGRAT
 Invariant: dpci-27-2029
 Description: "If NOT NULL then source value from (350-.1)"
 Severity: #warning
+Expression: "true"
 
 Invariant: dpci-27-2008
 Description: "If Outpatient then reference /EncounterOutpatient based on (360-1.02 > 399-304>399.0304-20>409.68-.05)"
 Severity: #warning
+Expression: "true"
 
 Invariant: dpci-27-2009
 Description: "If Inpatient then reference /EncounterInpatientEncounter based on (360-1.02 > 399-.08)"
 Severity: #warning
+Expression: "true"
 
 Mapping: source-to-DebtPortalChargeItemcharges
 Id: vista

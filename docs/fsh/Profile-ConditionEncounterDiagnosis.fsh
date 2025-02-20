@@ -23,6 +23,7 @@ Description: "This StructureDefinition contains the maps for VistA file V POV (9
 Invariant: ced-27-350
 Description: "If (9000010.07-.06) is Null then exclude value"
 Severity: #warning
+Expression: "true"
 
 Mapping: source-to-ConditionEncounterDiagnosis
 Id: vista

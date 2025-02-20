@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-    <title>Lab Observation: Microbiology Bacteriology Observation[bacteria] - US Veterans Health Administration FHIR Map Set Implementation Guide v1.2.520</title>
+    <title>Lab Observation: Microbiology Bacteriology Observation[bacteria] - US Veterans Health Administration FHIR Map Set Implementation Guide v1.2.529</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -60,11 +60,11 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">US Veterans Health Administration FHIR Map Set Implementation Guide</span>
             <br/>
-            <span style="display:inline-block;">1.2.520 - 250301
+            <span style="display:inline-block;">1.2.529 - 250301
 
 
 
-  <img src="assets/images/usa.svg" alt="United States of America flag" title="United States of America" height="16"/>
+  <img src="assets/images/zwe.svg" alt=" flag" title="null" height="16"/>
 
 
             </span>
@@ -169,7 +169,7 @@
           <div class="inner-wrapper">
 
 <div class="col-12">
-    <!-- ReleaseHeader --><p id="publish-box">US Veterans Health Administration FHIR Map Set Implementation Guide - Local Development build (v1.2.520) built by the FHIR (HL7&reg; FHIR&reg; Standard) Build Tools. See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
+    <!-- ReleaseHeader --><p id="publish-box">US Veterans Health Administration FHIR Map Set Implementation Guide - Local Development build (v1.2.529) built by the FHIR (HL7&reg; FHIR&reg; Standard) Build Tools. See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
   
 
 
@@ -243,7 +243,7 @@
       <td colspan="4"><i>Official URL</i>: <span class="copy-text">http://va.gov/fhir/StructureDefinition/LabObservationMicrobiologyBacteriologyObservationbacteria<button data-clipboard-text="http://va.gov/fhir/StructureDefinition/LabObservationMicrobiologyBacteriologyObservationbacteria" title="Click to copy URL" class="btn-copy"></button></span>
       </td>
       <td><i>Version</i>:
-      <span class="copy-text">1.2.520<button data-clipboard-text="http://va.gov/fhir/StructureDefinition/LabObservationMicrobiologyBacteriologyObservationbacteria|1.2.520" title="Click to copy versioned URL" class="btn-copy"></button></span>
+      <span class="copy-text">1.2.529<button data-clipboard-text="http://va.gov/fhir/StructureDefinition/LabObservationMicrobiologyBacteriologyObservationbacteria|1.2.529" title="Click to copy versioned URL" class="btn-copy"></button></span>
       </td>
     </tr>
 
@@ -259,7 +259,7 @@
         
           Draft
           
-            as of 2025-02-08
+            as of 2025-02-20
           
         
       </td>
@@ -501,7 +501,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 <tr><td>dom-6</td><td>best practice</td><td>Observation</td><td>A resource should have narrative for robust management<br/>: text.`div`.exists()</td><td></td></tr>
 <tr><td>ele-1</td><td>error</td><td>**ALL** elements</td><td>All FHIR elements must have a @value or children<br/>: hasValue() or (children().count() &gt; id.count())</td><td></td></tr>
 <tr><td>ext-1</td><td>error</td><td>**ALL** extensions</td><td>Must have either extensions or value[x], not both<br/>: extension.exists() != value.exists()</td><td></td></tr>
-<tr><td>lombo-57-1525</td><td>warning</td><td>Observation.code</td><td>If (63.05-.35 &gt; 63.5-13 &gt; 60-100 &gt; 60.01-95.3 &gt; 95.3-) is NULL then fixed value http://loinc.org#42803-7 "Bacteria identified in Isolate"<br/>: </td><td></td></tr>
+<tr><td>lombo-57-1525</td><td>warning</td><td>Observation.code</td><td>If (63.05-.35 &gt; 63.5-13 &gt; 60-100 &gt; 60.01-95.3 &gt; 95.3-) is NULL then fixed value http://loinc.org#42803-7 "Bacteria identified in Isolate"<br/>: true</td><td></td></tr>
 <tr><td>obs-6</td><td>error</td><td>Observation</td><td>dataAbsentReason SHALL only be present if Observation.value[x] is not present<br/>: dataAbsentReason.empty() or value.empty()</td><td></td></tr>
 <tr><td>obs-7</td><td>error</td><td>Observation</td><td>If Observation.code is the same as an Observation.component.code then the value element associated with the code SHALL NOT be present<br/>: value.empty() or component.code.where(coding.intersect(%resource.code.coding).exists()).empty()</td><td></td></tr>
 <tr><td>us-core-1</td><td>error</td><td>Observation.effective[x], Observation.effective[x]:effectiveDateTime</td><td>Datetime must be at least to day.<br/>: $this is DateTime implies $this.toString().length() &gt;= 10</td><td></td></tr>
@@ -618,7 +618,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
             <h4>Constraints</h4>
 <table class="list">
 <tr><td width="60"><b>Id</b></td><td><b>Grade</b></td><td><b>Path(s)</b></td><td><b>Details</b></td><td><b>Requirements</b></td></tr>
-<tr><td>lombo-57-1525</td><td>warning</td><td>Observation.code</td><td>If (63.05-.35 &gt; 63.5-13 &gt; 60-100 &gt; 60.01-95.3 &gt; 95.3-) is NULL then fixed value http://loinc.org#42803-7 "Bacteria identified in Isolate"<br/>: </td><td></td></tr>
+<tr><td>lombo-57-1525</td><td>warning</td><td>Observation.code</td><td>If (63.05-.35 &gt; 63.5-13 &gt; 60-100 &gt; 60.01-95.3 &gt; 95.3-) is NULL then fixed value http://loinc.org#42803-7 "Bacteria identified in Isolate"<br/>: true</td><td></td></tr>
 </table>
 
           
@@ -1244,7 +1244,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 <tr><td>dom-6</td><td>best practice</td><td>Observation</td><td>A resource should have narrative for robust management<br/>: text.`div`.exists()</td><td></td></tr>
 <tr><td>ele-1</td><td>error</td><td>**ALL** elements</td><td>All FHIR elements must have a @value or children<br/>: hasValue() or (children().count() &gt; id.count())</td><td></td></tr>
 <tr><td>ext-1</td><td>error</td><td>**ALL** extensions</td><td>Must have either extensions or value[x], not both<br/>: extension.exists() != value.exists()</td><td></td></tr>
-<tr><td>lombo-57-1525</td><td>warning</td><td>Observation.code</td><td>If (63.05-.35 &gt; 63.5-13 &gt; 60-100 &gt; 60.01-95.3 &gt; 95.3-) is NULL then fixed value http://loinc.org#42803-7 "Bacteria identified in Isolate"<br/>: </td><td></td></tr>
+<tr><td>lombo-57-1525</td><td>warning</td><td>Observation.code</td><td>If (63.05-.35 &gt; 63.5-13 &gt; 60-100 &gt; 60.01-95.3 &gt; 95.3-) is NULL then fixed value http://loinc.org#42803-7 "Bacteria identified in Isolate"<br/>: true</td><td></td></tr>
 <tr><td>obs-3</td><td>error</td><td>Observation.referenceRange</td><td>Must have at least a low or a high or text<br/>: low.exists() or high.exists() or text.exists()</td><td></td></tr>
 <tr><td>obs-6</td><td>error</td><td>Observation</td><td>dataAbsentReason SHALL only be present if Observation.value[x] is not present<br/>: dataAbsentReason.empty() or value.empty()</td><td></td></tr>
 <tr><td>obs-7</td><td>error</td><td>Observation</td><td>If Observation.code is the same as an Observation.component.code then the value element associated with the code SHALL NOT be present<br/>: value.empty() or component.code.where(coding.intersect(%resource.code.coding).exists()).empty()</td><td></td></tr>
@@ -1545,7 +1545,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 <tr><td>dom-6</td><td>best practice</td><td>Observation</td><td>A resource should have narrative for robust management<br/>: text.`div`.exists()</td><td></td></tr>
 <tr><td>ele-1</td><td>error</td><td>**ALL** elements</td><td>All FHIR elements must have a @value or children<br/>: hasValue() or (children().count() &gt; id.count())</td><td></td></tr>
 <tr><td>ext-1</td><td>error</td><td>**ALL** extensions</td><td>Must have either extensions or value[x], not both<br/>: extension.exists() != value.exists()</td><td></td></tr>
-<tr><td>lombo-57-1525</td><td>warning</td><td>Observation.code</td><td>If (63.05-.35 &gt; 63.5-13 &gt; 60-100 &gt; 60.01-95.3 &gt; 95.3-) is NULL then fixed value http://loinc.org#42803-7 "Bacteria identified in Isolate"<br/>: </td><td></td></tr>
+<tr><td>lombo-57-1525</td><td>warning</td><td>Observation.code</td><td>If (63.05-.35 &gt; 63.5-13 &gt; 60-100 &gt; 60.01-95.3 &gt; 95.3-) is NULL then fixed value http://loinc.org#42803-7 "Bacteria identified in Isolate"<br/>: true</td><td></td></tr>
 <tr><td>obs-6</td><td>error</td><td>Observation</td><td>dataAbsentReason SHALL only be present if Observation.value[x] is not present<br/>: dataAbsentReason.empty() or value.empty()</td><td></td></tr>
 <tr><td>obs-7</td><td>error</td><td>Observation</td><td>If Observation.code is the same as an Observation.component.code then the value element associated with the code SHALL NOT be present<br/>: value.empty() or component.code.where(coding.intersect(%resource.code.coding).exists()).empty()</td><td></td></tr>
 <tr><td>us-core-1</td><td>error</td><td>Observation.effective[x], Observation.effective[x]:effectiveDateTime</td><td>Datetime must be at least to day.<br/>: $this is DateTime implies $this.toString().length() &gt;= 10</td><td></td></tr>
@@ -1661,7 +1661,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
             <h4>Constraints</h4>
 <table class="list">
 <tr><td width="60"><b>Id</b></td><td><b>Grade</b></td><td><b>Path(s)</b></td><td><b>Details</b></td><td><b>Requirements</b></td></tr>
-<tr><td>lombo-57-1525</td><td>warning</td><td>Observation.code</td><td>If (63.05-.35 &gt; 63.5-13 &gt; 60-100 &gt; 60.01-95.3 &gt; 95.3-) is NULL then fixed value http://loinc.org#42803-7 "Bacteria identified in Isolate"<br/>: </td><td></td></tr>
+<tr><td>lombo-57-1525</td><td>warning</td><td>Observation.code</td><td>If (63.05-.35 &gt; 63.5-13 &gt; 60-100 &gt; 60.01-95.3 &gt; 95.3-) is NULL then fixed value http://loinc.org#42803-7 "Bacteria identified in Isolate"<br/>: true</td><td></td></tr>
 </table>
 
           
@@ -2287,7 +2287,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 <tr><td>dom-6</td><td>best practice</td><td>Observation</td><td>A resource should have narrative for robust management<br/>: text.`div`.exists()</td><td></td></tr>
 <tr><td>ele-1</td><td>error</td><td>**ALL** elements</td><td>All FHIR elements must have a @value or children<br/>: hasValue() or (children().count() &gt; id.count())</td><td></td></tr>
 <tr><td>ext-1</td><td>error</td><td>**ALL** extensions</td><td>Must have either extensions or value[x], not both<br/>: extension.exists() != value.exists()</td><td></td></tr>
-<tr><td>lombo-57-1525</td><td>warning</td><td>Observation.code</td><td>If (63.05-.35 &gt; 63.5-13 &gt; 60-100 &gt; 60.01-95.3 &gt; 95.3-) is NULL then fixed value http://loinc.org#42803-7 "Bacteria identified in Isolate"<br/>: </td><td></td></tr>
+<tr><td>lombo-57-1525</td><td>warning</td><td>Observation.code</td><td>If (63.05-.35 &gt; 63.5-13 &gt; 60-100 &gt; 60.01-95.3 &gt; 95.3-) is NULL then fixed value http://loinc.org#42803-7 "Bacteria identified in Isolate"<br/>: true</td><td></td></tr>
 <tr><td>obs-3</td><td>error</td><td>Observation.referenceRange</td><td>Must have at least a low or a high or text<br/>: low.exists() or high.exists() or text.exists()</td><td></td></tr>
 <tr><td>obs-6</td><td>error</td><td>Observation</td><td>dataAbsentReason SHALL only be present if Observation.value[x] is not present<br/>: dataAbsentReason.empty() or value.empty()</td><td></td></tr>
 <tr><td>obs-7</td><td>error</td><td>Observation</td><td>If Observation.code is the same as an Observation.component.code then the value element associated with the code SHALL NOT be present<br/>: value.empty() or component.code.where(coding.intersect(%resource.code.coding).exists()).empty()</td><td></td></tr>
@@ -2446,7 +2446,7 @@ Summary
 
       <div class="inner-wrapper">
         <p>
-          IG &copy; 2025 <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#1.2.520 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Sat, Feb 8, 2025 12:00+0000">2025-02-08</span>
+          IG &copy; 2025 <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#1.2.529 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Feb 20, 2025 14:57+0000">2025-02-20</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

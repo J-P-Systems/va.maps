@@ -13,6 +13,8 @@ Description: "This StructureDefinition contains the maps for VistA file PATIENT 
 * identifier ^slicing.rules = #open
 * identifier contains va-IEN 0..1 and va-CDW 0..1
 * identifier[va-IEN].value and identifier[va-IEN].system and identifier[va-CDW].value and identifier[va-CDW].system and code.text and code and patient and recordedDate and recorder and reaction.manifestation and reaction.manifestation.coding.system and reaction.manifestation.coding.code and reaction.manifestation.coding.display and reaction.manifestation.text and type and verificationStatus and clinicalStatus and category and reaction.severity and note.time and note.authorString and note.text and reaction.onset MS
+* patient only Reference(Patient)
+* recorder only Reference(Practitioner)
 * identifier[va-IEN].system = "http://va.gov/identifiers/$Sta3n/120.8"
 * identifier[va-CDW].system = "http://va.gov/identifiers/CDWSID/cdwwork.allergy.allergy"
 * reaction.manifestation.coding.system = "urn:oid:2.16.840.1.113883.6.233"
@@ -33,6 +35,7 @@ Description: "This StructureDefinition contains the maps for VistA file PATIENT 
 Invariant: ai-18-1652
 Description: "If 6 OBSERVED/HISTORICAL = O then source value from (120.8-10 > 120.81-3)"
 Severity: #warning
+Expression: "true"
 
 Mapping: source-to-AllergyIntolerance
 Id: vista
@@ -44,9 +47,9 @@ Source: AllergyIntolerance
 * identifier[va-CDW].system -> "1610-1: fixed value = http://va.gov/identifiers/CDWSID/cdwwork.allergy.allergy" "generated from mapParameter row 1"
 * code.text -> "245: source value based on PATIENT ALLERGIES - REACTANT (120.8-.02)" "text only"
 * code -> "246: source value based on PATIENT ALLERGIES - GMR ALLERGY (120.8-1)"
-* patient -> "248: source value based on PATIENT ALLERGIES - PATIENT (120.8-.01)" "Source is MVIPersonFullICN from SMVIPerson Table"
+* patient -> "248: reference based on PATIENT ALLERGIES - PATIENT (120.8-.01)" "Source is MVIPersonFullICN from SMVIPerson Table"
 * recordedDate -> "1224: source value based on PATIENT ALLERGIES - ORIGINATION DATE/TIME (120.8-4)" "Lighthouse exposes this source object as RecordedDate FHIR field"
-* recorder -> "251: source value based on PATIENT ALLERGIES - ORIGINATOR (120.8-5)"
+* recorder -> "251: reference based on PATIENT ALLERGIES - ORIGINATOR (120.8-5)"
 * reaction.manifestation -> "252: source value based on PATIENT ALLERGIES - REACTIONS > REACTIONS - REACTION > SIGN/SYMPTOMS (120.8-10 > 120.81-.01 > 120.83-)"
 * reaction.manifestation.coding.system -> "252-1: fixed value = urn:oid:2.16.840.1.113883.6.233" "generated from mapParameter row 1"
 * reaction.manifestation.coding.code -> "252-2: source value based on PATIENT ALLERGIES - REACTIONS > REACTIONS - REACTION > SIGN/SYMPTOMS - VUID (120.8-10 > 120.81-.01 > 120.83-99.99)" "generated from mapParameter row 2"

@@ -70,8 +70,8 @@ Instance: update-2
 InstanceOf: Provenance
 Usage: #inline
 * target = Reference(StructureDefinition/Appointment)
-* occurredDateTime = "2025-01-03"
-* recorded = "2025-01-03T00:00:00Z"
+* occurredDateTime = "2024-07-08"
+* recorded = "2024-07-08T00:00:00Z"
 * reason.text = "Last modified"
 * activity = $v3-DataOperation#UPDATE
 * agent[0].type = $provenance-participant-type#author

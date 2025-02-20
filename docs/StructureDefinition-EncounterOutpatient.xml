@@ -53,11 +53,11 @@
     <valueCanonical value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter|7.0.0"/>
   </extension>
   <url value="http://va.gov/fhir/StructureDefinition/EncounterOutpatient"/>
-  <version value="1.2.520"/>
+  <version value="1.2.529"/>
   <name value="EncounterOutpatient"/>
   <title value="Encounter: Outpatient"/>
   <status value="draft"/>
-  <date value="2025-02-08T12:00:09+00:00"/>
+  <date value="2025-02-20T14:56:35+00:00"/>
   <publisher value="VA"/>
   <contact>
     <name value="VA"/>
@@ -113,6 +113,9 @@
   <baseDefinition value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter"/>
   <derivation value="constraint"/>
   <snapshot>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/snapshot-base-version">
+      <valueString value="5.0.1"/>
+    </extension>
     <element id="Encounter">
       <path value="Encounter"/>
       <short value="An interaction during which services are provided to the patient"/>
@@ -552,12 +555,14 @@
         <key value="eo-19-2035"/>
         <severity value="warning"/>
         <human value="If (409.68-.1 &gt; 409.1-.01) is SERVICE CONNECTED then fixed value http://va.gov/fhir/vistaDefinedTerms/409.1#SC &quot;Service Connected&quot;"/>
+        <expression value="true"/>
         <source value="http://va.gov/fhir/StructureDefinition/EncounterOutpatient"/>
       </constraint>
       <constraint>
         <key value="eo-19-2036"/>
         <severity value="warning"/>
         <human value="If (409.68-.1 &gt; 409.1-.01) is Not SERVICE CONNECTED then fixed value http://va.gov/fhir/vistaDefinedTerms/409.1#NSC &quot;Not Service Connected&quot;"/>
+        <expression value="true"/>
         <source value="http://va.gov/fhir/StructureDefinition/EncounterOutpatient"/>
       </constraint>
       <mustSupport value="true"/>
@@ -1038,18 +1043,21 @@
         <key value="eo-19-430"/>
         <severity value="warning"/>
         <human value="If (9000010-.01) is null or &gt; now then fixed value #planned"/>
+        <expression value="true"/>
         <source value="http://va.gov/fhir/StructureDefinition/EncounterOutpatient"/>
       </constraint>
       <constraint>
         <key value="eo-19-431"/>
         <severity value="warning"/>
         <human value="If (9000010-.01) is not null, &lt; now, .18 null then fixed value #in-progress"/>
+        <expression value="true"/>
         <source value="http://va.gov/fhir/StructureDefinition/EncounterOutpatient"/>
       </constraint>
       <constraint>
         <key value="eo-19-432"/>
         <severity value="warning"/>
         <human value="If (9000010-.18) is not null, &lt; now then fixed value #finished"/>
+        <expression value="true"/>
         <source value="http://va.gov/fhir/StructureDefinition/EncounterOutpatient"/>
       </constraint>
       <mustSupport value="true"/>
@@ -5702,12 +5710,14 @@
         <key value="eo-19-2035"/>
         <severity value="warning"/>
         <human value="If (409.68-.1 &gt; 409.1-.01) is SERVICE CONNECTED then fixed value http://va.gov/fhir/vistaDefinedTerms/409.1#SC &quot;Service Connected&quot;"/>
+        <expression value="true"/>
         <source value="http://va.gov/fhir/StructureDefinition/EncounterOutpatient"/>
       </constraint>
       <constraint>
         <key value="eo-19-2036"/>
         <severity value="warning"/>
         <human value="If (409.68-.1 &gt; 409.1-.01) is Not SERVICE CONNECTED then fixed value http://va.gov/fhir/vistaDefinedTerms/409.1#NSC &quot;Not Service Connected&quot;"/>
+        <expression value="true"/>
         <source value="http://va.gov/fhir/StructureDefinition/EncounterOutpatient"/>
       </constraint>
       <mustSupport value="true"/>
@@ -5760,18 +5770,21 @@
         <key value="eo-19-430"/>
         <severity value="warning"/>
         <human value="If (9000010-.01) is null or &gt; now then fixed value #planned"/>
+        <expression value="true"/>
         <source value="http://va.gov/fhir/StructureDefinition/EncounterOutpatient"/>
       </constraint>
       <constraint>
         <key value="eo-19-431"/>
         <severity value="warning"/>
         <human value="If (9000010-.01) is not null, &lt; now, .18 null then fixed value #in-progress"/>
+        <expression value="true"/>
         <source value="http://va.gov/fhir/StructureDefinition/EncounterOutpatient"/>
       </constraint>
       <constraint>
         <key value="eo-19-432"/>
         <severity value="warning"/>
         <human value="If (9000010-.18) is not null, &lt; now then fixed value #finished"/>
+        <expression value="true"/>
         <source value="http://va.gov/fhir/StructureDefinition/EncounterOutpatient"/>
       </constraint>
       <mapping>

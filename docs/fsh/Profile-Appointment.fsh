@@ -13,11 +13,10 @@ Description: "This StructureDefinition contains the maps for VistA file APPOINTM
 * serviceCategory ^slicing.rules = #open
 * serviceCategory contains va-stop-code 0..1
 * extension contains http://va.gov/fhir/StructureDefinition/resource-serviceConnection named resource-serviceConnection 0..1
-* status and extension[http://va.gov/fhir/StructureDefinition/resource-serviceConnection].valueCoding and cancelationReason and appointmentType.text and start and end and minutesDuration and created and participant[va-clinic].actor and participant[va-clinic].type.coding.code and participant[va-clinic].status and participant[va-patient].actor and participant[va-patient].type.coding.code and participant[va-patient].status and serviceCategory[va-stop-code].coding.code and serviceCategory[va-stop-code].coding.system and comment and participant[va-apptclinic].actor and participant[va-apptclinic].type.coding.code and participant[va-apptclinic].status and description and participant.actor and participant.status MS
+* status and extension[http://va.gov/fhir/StructureDefinition/resource-serviceConnection].valueCoding and cancelationReason and appointmentType.text and start and end and minutesDuration and created and participant[va-clinic].actor and participant[va-clinic].type.coding.code and participant[va-clinic].status and participant[va-patient].actor and participant[va-patient].type.coding.code and participant[va-patient].status and serviceCategory[va-stop-code].coding.code and serviceCategory[va-stop-code].coding.system and comment and participant[va-apptclinic].actor and participant[va-apptclinic].type.coding.code and participant[va-apptclinic].status and description MS
 * participant[va-clinic].actor only Reference(Location)
 * participant[va-patient].actor only Reference(Patient)
 * participant[va-apptclinic].actor only Reference(Location)
-* participant.actor only Reference(Location)
 * status from http://va.gov/fhir/ValueSet/AppointmentStatus
 * status ^binding.description = "see mapping [VF_AppointmentStatus](ConceptMap-VF-AppointmentStatus.html)"
 * status obeys a-11-732
@@ -35,31 +34,36 @@ Description: "This StructureDefinition contains the maps for VistA file APPOINTM
 * serviceCategory[va-stop-code].coding.system = "http://va.gov/terminology/VistADefinedTerms/409.3-13.4"
 * participant[va-apptclinic].type.coding.code = #PART
 * participant[va-apptclinic].status = #tentative
-* participant.status = #tentative
 
 Invariant: a-11-732
 Description: "If (2.98-3) is I, NT, Null; Null check-in date (44.003-309), null check-out date (44.003-303) then fixed value #booked"
 Severity: #warning
+Expression: "true"
 
 Invariant: a-11-733
 Description: "If (2.98-3) is I, NT, Null; Non-null check-in date (44.003-309), null check-out date (44.003-303) then fixed value #arrived"
 Severity: #warning
+Expression: "true"
 
 Invariant: a-11-734
 Description: "If (2.98-3) is I, NT, Null; Non-null check-in date (44.003-309), non-null check-out date (44.003-303) then fixed value #fulfilled"
 Severity: #warning
+Expression: "true"
 
 Invariant: a-11-2033
 Description: "If (2.98-9.5 > 409.1-.01) is SERVICE CONNECTED then fixed value http://va.gov/fhir/vistaDefinedTerms/409.1#SC \"Service Connected\""
 Severity: #warning
+Expression: "true"
 
 Invariant: a-11-2034
 Description: "If (2.98-9.5 > 409.1-.01) is Not SERVICE CONNECTED then fixed value http://va.gov/fhir/vistaDefinedTerms/409.1#NSC \"Not Service Connected\""
 Severity: #warning
+Expression: "true"
 
 Invariant: a-11-748
 Description: "If (409.3-.01) is not null then fixed value #waitlist"
 Severity: #warning
+Expression: "true"
 
 Mapping: source-to-Appointment
 Id: vista
@@ -96,8 +100,6 @@ Source: Appointment
 * participant[va-apptclinic].type.coding.code -> "754-1: fixed value = #PART" "generated from mapParameter row 1"
 * participant[va-apptclinic].status -> "754-2: fixed value = #tentative" "generated from mapParameter row 2"
 * description -> "1791: source value based on APPOINTMENT - APPOINTMENT TYPE > APPOINTMENT TYPE - DESCRIPTION (2.98-9.5 > 409.1-10)" "Added after PHAPI gap analysis to match PHAPI fields"
-* participant.actor -> "2038: reference based on APPOINTMENT - CLINIC (2.98-.01)"
-* participant.status -> "2038-1: fixed value = #tentative" "generated from mapParameter row 1"
 
 Mapping: cdw-to-Appointment
 Id: cdw
@@ -123,7 +125,6 @@ Source: Appointment
 * comment -> "Appt.WaitList.WaitListComments"
 * participant[va-apptclinic].actor -> "Appt.WaitList.AppointmentLocationIEN"
 * description -> "Appt.Appointment.AppointmentTypeIEN"
-* participant.actor -> "Appt.Appointment.LocationIEN"
 
 Mapping: sda-to-Appointment
 Id: sda
@@ -142,4 +143,3 @@ Source: Appointment
 * created -> "Appointment.EnteredOn"
 * participant[va-clinic].actor -> "Appointment.CareProvider,Appointment.EnteredAt,Appointment.Location,Appointment.PlacerApptId,Appointment.Type"
 * description -> "Appointment.Type"
-* participant.actor -> "Appointment.CareProvider,Appointment.EnteredAt,Appointment.Location,Appointment.PlacerApptId,Appointment.Type"

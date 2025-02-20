@@ -17,6 +17,7 @@ Description: "This StructureDefinition contains the maps for VistA file AR TRANS
 Invariant: dpci-28-1993
 Description: "If IEN = 12 OR 13 then source value from (433-12 > 430.3-.01)"
 Severity: #warning
+Expression: "true"
 
 Mapping: source-to-DebtPortalChargeIteminterest
 Id: vista

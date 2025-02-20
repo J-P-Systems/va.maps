@@ -14,7 +14,7 @@ Description: "This StructureDefinition contains the maps for VistA file GMRV VIT
 * component contains va-cuff-size 0..1 and va-pre-condition 0..1 and va-pre-condition-device 0..1
 * extension contains http://hl7.org/fhir/StructureDefinition/observation-deviceCode named observation-deviceCode 0..1
 * extension contains http://hl7.org/fhir/StructureDefinition/observation-bodyPosition named observation-bodyPosition 0..1
-* component[va-cuff-size].valueCodeableConcept.coding and component[va-cuff-size].code and component[systolic].valueQuantity.value and component[systolic].valueQuantity.code and component[systolic].code.coding.system and component[systolic].code.coding.code and component[diastolic].valueQuantity.value and component[diastolic].valueQuantity.code and component[diastolic].code.coding.system and component[diastolic].code.coding.code and issued and performer and status and effectiveDateTime and category and subject and identifier.value and identifier.system and code.coding and bodySite and extension[http://hl7.org/fhir/StructureDefinition/observation-deviceCode].valueCodeableConcept and method and component[va-pre-condition].valueCodeableConcept.coding and component[va-pre-condition].code and component[va-pre-condition-device].valueCodeableConcept.coding and component[va-pre-condition-device].code and extension[http://hl7.org/fhir/StructureDefinition/observation-bodyPosition].valueCodeableConcept and valueQuantity.value and valueQuantity.code MS
+* component[va-cuff-size].valueCodeableConcept.coding and component[va-cuff-size].code and component[systolic].valueQuantity.value and component[systolic].valueQuantity.code and component[systolic].code and component[diastolic].valueQuantity.value and component[diastolic].valueQuantity.code and component[diastolic].code and issued and performer and status and effectiveDateTime and category and subject and identifier.value and identifier.system and code.coding and bodySite and extension[http://hl7.org/fhir/StructureDefinition/observation-deviceCode].valueCodeableConcept and method and component[va-pre-condition].valueCodeableConcept.coding and component[va-pre-condition].code and component[va-pre-condition-device].valueCodeableConcept.coding and component[va-pre-condition-device].code and extension[http://hl7.org/fhir/StructureDefinition/observation-bodyPosition].valueCodeableConcept and valueQuantity.value and valueQuantity.code MS
 * performer only Reference(Organization)
 * subject only Reference(Patient)
 * component[va-cuff-size].valueCodeableConcept.coding from http://va.gov/fhir/ValueSet/VitalsCuffSize
@@ -22,12 +22,10 @@ Description: "This StructureDefinition contains the maps for VistA file GMRV VIT
 * component[va-cuff-size].code = http://loinc.org#8358-4 "Blood pressure device cuff size"
 * component[systolic].valueQuantity.value obeys vsbp-12-666
 * component[systolic].valueQuantity.code obeys vsbp-12-666-1
-* component[systolic].code.coding.system obeys vsbp-12-666-2
-* component[systolic].code.coding.code obeys vsbp-12-666-3
+* component[systolic].code obeys vsbp-12-666-2
 * component[diastolic].valueQuantity.value obeys vsbp-12-667
 * component[diastolic].valueQuantity.code obeys vsbp-12-667-1
-* component[diastolic].code.coding.system obeys vsbp-12-667-2
-* component[diastolic].code.coding.code obeys vsbp-12-667-3
+* component[diastolic].code obeys vsbp-12-667-2
 * status obeys vsbp-12-655
 * status obeys vsbp-12-656
 * category = http://terminology.hl7.org/CodeSystem/observation-category#vital-signs
@@ -54,46 +52,47 @@ Description: "This StructureDefinition contains the maps for VistA file GMRV VIT
 Invariant: vsbp-12-666
 Description: "If VUID = 4500634 then transform (120.5-1.2) using Split_rate_value.Systolic()"
 Severity: #warning
+Expression: "true"
 
 Invariant: vsbp-12-666-1
-Description: "If (undefined) is VUID = 4500634 then fixed value mm[Hg]"
+Description: "If VUID = 4500634 then fixed value #mm[Hg]"
 Severity: #warning
+Expression: "true"
 
 Invariant: vsbp-12-666-2
-Description: "If (undefined) is VUID = 4500634 then fixed value http://loinc.org"
+Description: "If VUID = 4500634 then fixed value http://loinc.org#8480-6"
 Severity: #warning
-
-Invariant: vsbp-12-666-3
-Description: "If (undefined) is VUID = 4500634 then fixed value 8480-6"
-Severity: #warning
+Expression: "true"
 
 Invariant: vsbp-12-667
 Description: "If VUID = 4500634 then transform (120.5-1.2) using Split_rate_value.Diastolic()"
 Severity: #warning
+Expression: "true"
 
 Invariant: vsbp-12-667-1
-Description: "If (undefined) is VUID = 4500634 then fixed value mm[Hg]"
+Description: "If VUID = 4500634 then fixed value #mm[Hg]"
 Severity: #warning
+Expression: "true"
 
 Invariant: vsbp-12-667-2
-Description: "If (undefined) is VUID = 4500634 then fixed value http://loinc.org"
+Description: "If VUID = 4500634 then fixed value http://loinc.org#8462-4"
 Severity: #warning
-
-Invariant: vsbp-12-667-3
-Description: "If (undefined) is VUID = 4500634 then fixed value 8462-4"
-Severity: #warning
+Expression: "true"
 
 Invariant: vsbp-12-655
 Description: "If (120.5-4) is null then fixed value #final"
 Severity: #warning
+Expression: "true"
 
 Invariant: vsbp-12-656
 Description: "If (120.5-4) is not null then fixed value #entered-in-error"
 Severity: #warning
+Expression: "true"
 
 Invariant: vsbp-12-664
 Description: "If VUID not = 4500634 then source value from (120.5-1.2)"
 Severity: #warning
+Expression: "true"
 
 Mapping: source-to-VitalSignsBP
 Id: vista
@@ -102,13 +101,11 @@ Source: VitalSignsBP
 * component[va-cuff-size].valueCodeableConcept.coding -> "1805: terminologyMaps using VF_VitalsCuffSize on GMRV VITAL MEASUREMENT - QUALIFIER > GMRV VITAL QUALIFIER - VUID (120.5-5 > 120.52-99.99)"
 * component[va-cuff-size].code -> "1805-1: fixed value = http://loinc.org#8358-4 \"Blood pressure device cuff size\"" "generated from mapParameter row 1"
 * component[systolic].valueQuantity.value -> "666: transform using Split_rate_value.Systolic() on GMRV VITAL MEASUREMENT - RATE (120.5-1.2) if VUID = 4500634" "Value needs to be parsed from VistA"
-* component[systolic].valueQuantity.code -> "666-1: fixed value = mm[Hg] if VUID = 4500634" "generated from mapParameter row 1"
-* component[systolic].code.coding.system -> "666-2: fixed value = http://loinc.org if VUID = 4500634" "generated from mapParameter row 2"
-* component[systolic].code.coding.code -> "666-3: fixed value = 8480-6 if VUID = 4500634" "generated from mapParameter row 3"
+* component[systolic].valueQuantity.code -> "666-1: fixed value = #mm[Hg] if VUID = 4500634" "generated from mapParameter row 1"
+* component[systolic].code -> "666-2: fixed value = http://loinc.org#8480-6 if VUID = 4500634" "generated from mapParameter row 2"
 * component[diastolic].valueQuantity.value -> "667: transform using Split_rate_value.Diastolic() on GMRV VITAL MEASUREMENT - RATE (120.5-1.2) if VUID = 4500634" "Value needs to be parsed from VistA"
-* component[diastolic].valueQuantity.code -> "667-1: fixed value = mm[Hg] if VUID = 4500634" "generated from mapParameter row 1"
-* component[diastolic].code.coding.system -> "667-2: fixed value = http://loinc.org if VUID = 4500634" "generated from mapParameter row 2"
-* component[diastolic].code.coding.code -> "667-3: fixed value = 8462-4 if VUID = 4500634" "generated from mapParameter row 3"
+* component[diastolic].valueQuantity.code -> "667-1: fixed value = #mm[Hg] if VUID = 4500634" "generated from mapParameter row 1"
+* component[diastolic].code -> "667-2: fixed value = http://loinc.org#8462-4 if VUID = 4500634" "generated from mapParameter row 2"
 * issued -> "652: source value based on GMRV VITAL MEASUREMENT - DATE/TIME VITALS ENTERED (120.5-.04)"
 * performer -> "1653: reference based on GMRV VITAL MEASUREMENT - HOSPITAL LOCATION (120.5-.05)"
 * status -> "655: fixed value = #final when GMRV VITAL MEASUREMENT - REASON ENTERED IN ERROR (120.5-4) if null"
@@ -118,7 +115,7 @@ Source: VitalSignsBP
 * subject -> "659: reference based on GMRV VITAL MEASUREMENT - PATIENT (120.5-.02)"
 * identifier.value -> "660: source value based on GMRV VITAL MEASUREMENT - IEN (120.5-.001)"
 * identifier.system -> "660-1: fixed value = http://va.gov/identifiers/$Sta3n/120.5" "generated from mapParameter row 1"
-* code.coding -> "661: terminologyMaps using VF_VitalsCodes on GMRV VITAL MEASUREMENT - VITAL TYPE (120.5-.03)" "Pulse Oximetry has 2 code values per US Core"
+* code.coding -> "661: terminologyMaps using VF_VitalsCodes on GMRV VITAL MEASUREMENT - VITAL TYPE > GMRV VITAL TYPE - VUID (120.5-.03 > 120.51-99.99)" "Pulse Oximetry has 2 code values per US Core"
 * bodySite -> "662: terminologyMaps using VF_VitalsBodySite on GMRV VITAL MEASUREMENT - QUALIFIER > GMRV VITAL QUALIFIER - VUID (120.5-5 > 120.52-99.99)"
 * extension[http://hl7.org/fhir/StructureDefinition/observation-deviceCode].valueCodeableConcept -> "663: terminologyMaps using VF_VitalsMeasurementDevice on GMRV VITAL MEASUREMENT - QUALIFIER > GMRV VITAL QUALIFIER - VUID (120.5-5 > 120.52-99.99)"
 * method -> "867: terminologyMaps using VF_VitalsMethod on GMRV VITAL MEASUREMENT - QUALIFIER > GMRV VITAL QUALIFIER - VUID (120.5-5 > 120.52-99.99)"
@@ -143,7 +140,7 @@ Source: VitalSignsBP
 * performer -> "Vital.VitalSign.LocationIEN"
 * effectiveDateTime -> "Vital.VitalSign.VitalSignTakenDateTime,Vital.VitalSignQualifier.VitalSignTakenDateTime"
 * subject -> "Vital.VitalSign.PatientIEN"
-* code.coding -> "Vital.VitalSign.VitalTypeIEN"
+* code.coding -> "Vital.VitalSign.VitalTypeIEN\nDim.VitalType.VUID"
 * valueQuantity.value -> "Vital.VitalSign.Diastolic,Vital.VitalSign.Systolic,Vital.VitalSign.VitalResult,Vital.VitalSign.VitalResultNumeric"
 * valueQuantity.code -> "Vital.VitalSign.VitalTypeIEN"
 

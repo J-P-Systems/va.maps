@@ -20,10 +20,12 @@ Description: "This StructureDefinition contains the maps for VistA file PRESCRIP
 Invariant: mdo-26-840
 Description: "If number then source value from (52-113 > 52.0113-.01)"
 Severity: #warning
+Expression: "true"
 
 Invariant: mdo-26-1541
 Description: "If (52-31) is not null then fixed value #completed"
 Severity: #warning
+Expression: "true"
 
 Mapping: source-to-MedicationDispenseOriginal
 Id: vista

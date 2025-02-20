@@ -65,6 +65,7 @@ Description: "This StructureDefinition contains the maps for VistA file ACCOUNTS
 Invariant: dpi-17-1818
 Description: "If patient then reference Patient based on (430-9 > 340-.01)"
 Severity: #warning
+Expression: "true"
 
 Mapping: source-to-DebtPortalInvoice
 Id: vista

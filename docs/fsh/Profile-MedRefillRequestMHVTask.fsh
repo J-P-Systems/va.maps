@@ -15,12 +15,14 @@ Description: "This StructureDefinition contains the maps for VistA file PRESCRIP
 * code obeys mrrmhvt-23-1861
 
 Invariant: mrrmhvt-23-1852
-Description: "If (null) is 31 RELEASED DATE/TIME not null (filled at least once) then fixed value #RF"
+Description: "If 31 RELEASED DATE/TIME not null then fixed value #RF"
 Severity: #warning
+Expression: "true"
 
 Invariant: mrrmhvt-23-1861
-Description: "If (null) is 31 RELEASED DATE/TIME null (never filled) then fixed value #FF"
+Description: "If 31 RELEASED DATE/TIME null then fixed value #FF"
 Severity: #warning
+Expression: "true"
 
 Mapping: source-to-MedRefillRequestMHVTask
 Id: vista
@@ -32,8 +34,8 @@ Source: MedRefillRequestMHVTask
 * status -> "1848: terminologyMaps using VF_RefillRequestStatus on PRESCRIPTION REFILL REQUEST - RESULT (52.43-6)"
 * note -> "1849: source value based on PRESCRIPTION REFILL REQUEST - REMARKS (52.43-10)"
 * intent -> "1851: fixed value = #proposal"
-* code -> "1852: fixed value = #RF if 31 RELEASED DATE/TIME not null (filled at least once)"
-* code -> "1861: fixed value = #FF if 31 RELEASED DATE/TIME null (never filled)"
+* code -> "1852: fixed value = #RF if 31 RELEASED DATE/TIME not null" "(filled at least once)"
+* code -> "1861: fixed value = #FF if 31 RELEASED DATE/TIME null" "(never filled)"
 
 Mapping: cdw-to-MedRefillRequestMHVTask
 Id: cdw

@@ -14,18 +14,16 @@ Description: "This StructureDefinition contains the maps for VistA file GMRV VIT
 * component contains va-pre-condition 0..1 and va-pre-condition-device 0..1
 * extension contains http://hl7.org/fhir/StructureDefinition/observation-deviceCode named observation-deviceCode 0..1
 * extension contains http://hl7.org/fhir/StructureDefinition/observation-bodyPosition named observation-bodyPosition 0..1
-* component[FlowRate].valueQuantity.value and component[FlowRate].valueQuantity.code and component[FlowRate].code.coding.system and component[FlowRate].code.coding.code and component[Concentration].valueQuantity.value and component[Concentration].valueQuantity.code and component[Concentration].code.coding.system and component[Concentration].code.coding.code and issued and performer and status and effectiveDateTime and category and subject and identifier.value and identifier.system and code.coding and bodySite and extension[http://hl7.org/fhir/StructureDefinition/observation-deviceCode].valueCodeableConcept and method and component[va-pre-condition].valueCodeableConcept.coding and component[va-pre-condition].code and component[va-pre-condition-device].valueCodeableConcept.coding and component[va-pre-condition-device].code and extension[http://hl7.org/fhir/StructureDefinition/observation-bodyPosition].valueCodeableConcept and valueQuantity.value and valueQuantity.code MS
+* component[FlowRate].valueQuantity.value and component[FlowRate].valueQuantity.code and component[FlowRate].code and component[Concentration].valueQuantity.value and component[Concentration].valueQuantity.code and component[Concentration].code and issued and performer and status and effectiveDateTime and category and subject and identifier.value and identifier.system and code.coding and bodySite and extension[http://hl7.org/fhir/StructureDefinition/observation-deviceCode].valueCodeableConcept and method and component[va-pre-condition].valueCodeableConcept.coding and component[va-pre-condition].code and component[va-pre-condition-device].valueCodeableConcept.coding and component[va-pre-condition-device].code and extension[http://hl7.org/fhir/StructureDefinition/observation-bodyPosition].valueCodeableConcept and valueQuantity.value and valueQuantity.code MS
 * performer only Reference(Organization)
 * subject only Reference(Patient)
 * code.coding 2..*
 * component[FlowRate].valueQuantity.value obeys vsso-14-1239
 * component[FlowRate].valueQuantity.code obeys vsso-14-1239-1
-* component[FlowRate].code.coding.system obeys vsso-14-1239-2
-* component[FlowRate].code.coding.code obeys vsso-14-1239-3
+* component[FlowRate].code obeys vsso-14-1239-2
 * component[Concentration].valueQuantity.value obeys vsso-14-1240
 * component[Concentration].valueQuantity.code obeys vsso-14-1240-1
-* component[Concentration].code.coding.system obeys vsso-14-1240-2
-* component[Concentration].code.coding.code obeys vsso-14-1240-3
+* component[Concentration].code obeys vsso-14-1240-2
 * status obeys vsso-14-655
 * status obeys vsso-14-656
 * category = http://terminology.hl7.org/CodeSystem/observation-category#vital-signs
@@ -52,59 +50,58 @@ Description: "This StructureDefinition contains the maps for VistA file GMRV VIT
 Invariant: vsso-14-1239
 Description: "If VUID = 4500637 then transform (120.5-1.4) using Split_SpO2_value.Flow()"
 Severity: #warning
+Expression: "true"
 
 Invariant: vsso-14-1239-1
-Description: "If (undefined) is VUID = 4500637 then fixed value L/min"
+Description: "If VUID = 4500637 then fixed value #L/min"
 Severity: #warning
+Expression: "true"
 
 Invariant: vsso-14-1239-2
-Description: "If (undefined) is VUID = 4500637 then fixed value http://loinc.org"
+Description: "If VUID = 4500637 then fixed value http://loinc.org#3151-8"
 Severity: #warning
-
-Invariant: vsso-14-1239-3
-Description: "If (undefined) is VUID = 4500637 then fixed value 3151-8"
-Severity: #warning
+Expression: "true"
 
 Invariant: vsso-14-1240
 Description: "If VUID = 4500637 then transform (120.5-1.4) using Split_SpO2_value.Consentration()"
 Severity: #warning
+Expression: "true"
 
 Invariant: vsso-14-1240-1
-Description: "If (undefined) is VUID = 4500637 then fixed value %"
+Description: "If VUID = 4500637 then fixed value #%"
 Severity: #warning
+Expression: "true"
 
 Invariant: vsso-14-1240-2
-Description: "If (undefined) is VUID = 4500637 then fixed value http://loinc.org"
+Description: "If VUID = 4500637 then fixed value http://loinc.org#3150-0"
 Severity: #warning
-
-Invariant: vsso-14-1240-3
-Description: "If (undefined) is VUID = 4500637 then fixed value 3150-0"
-Severity: #warning
+Expression: "true"
 
 Invariant: vsso-14-655
 Description: "If (120.5-4) is null then fixed value #final"
 Severity: #warning
+Expression: "true"
 
 Invariant: vsso-14-656
 Description: "If (120.5-4) is not null then fixed value #entered-in-error"
 Severity: #warning
+Expression: "true"
 
 Invariant: vsso-14-664
 Description: "If VUID not = 4500634 then source value from (120.5-1.2)"
 Severity: #warning
+Expression: "true"
 
 Mapping: source-to-VitalSignsSpO2
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: VitalSignsSpO2
 * component[FlowRate].valueQuantity.value -> "1239: transform using Split_SpO2_value.Flow() on GMRV VITAL MEASUREMENT - SUPPLEMENTAL O2 (120.5-1.4) if VUID = 4500637" "Value needs to be parsed from VistA"
-* component[FlowRate].valueQuantity.code -> "1239-1: fixed value = L/min if VUID = 4500637" "generated from mapParameter row 1"
-* component[FlowRate].code.coding.system -> "1239-2: fixed value = http://loinc.org if VUID = 4500637" "generated from mapParameter row 2"
-* component[FlowRate].code.coding.code -> "1239-3: fixed value = 3151-8 if VUID = 4500637" "generated from mapParameter row 3"
+* component[FlowRate].valueQuantity.code -> "1239-1: fixed value = #L/min if VUID = 4500637" "generated from mapParameter row 1"
+* component[FlowRate].code -> "1239-2: fixed value = http://loinc.org#3151-8 if VUID = 4500637" "generated from mapParameter row 2"
 * component[Concentration].valueQuantity.value -> "1240: transform using Split_SpO2_value.Consentration() on GMRV VITAL MEASUREMENT - SUPPLEMENTAL O2 (120.5-1.4) if VUID = 4500637" "Value needs to be parsed from VistA"
-* component[Concentration].valueQuantity.code -> "1240-1: fixed value = % if VUID = 4500637" "generated from mapParameter row 1"
-* component[Concentration].code.coding.system -> "1240-2: fixed value = http://loinc.org if VUID = 4500637" "generated from mapParameter row 2"
-* component[Concentration].code.coding.code -> "1240-3: fixed value = 3150-0 if VUID = 4500637" "generated from mapParameter row 3"
+* component[Concentration].valueQuantity.code -> "1240-1: fixed value = #% if VUID = 4500637" "generated from mapParameter row 1"
+* component[Concentration].code -> "1240-2: fixed value = http://loinc.org#3150-0 if VUID = 4500637" "generated from mapParameter row 2"
 * issued -> "652: source value based on GMRV VITAL MEASUREMENT - DATE/TIME VITALS ENTERED (120.5-.04)"
 * performer -> "1653: reference based on GMRV VITAL MEASUREMENT - HOSPITAL LOCATION (120.5-.05)"
 * status -> "655: fixed value = #final when GMRV VITAL MEASUREMENT - REASON ENTERED IN ERROR (120.5-4) if null"
@@ -114,7 +111,7 @@ Source: VitalSignsSpO2
 * subject -> "659: reference based on GMRV VITAL MEASUREMENT - PATIENT (120.5-.02)"
 * identifier.value -> "660: source value based on GMRV VITAL MEASUREMENT - IEN (120.5-.001)"
 * identifier.system -> "660-1: fixed value = http://va.gov/identifiers/$Sta3n/120.5" "generated from mapParameter row 1"
-* code.coding -> "661: terminologyMaps using VF_VitalsCodes on GMRV VITAL MEASUREMENT - VITAL TYPE (120.5-.03)" "Pulse Oximetry has 2 code values per US Core"
+* code.coding -> "661: terminologyMaps using VF_VitalsCodes on GMRV VITAL MEASUREMENT - VITAL TYPE > GMRV VITAL TYPE - VUID (120.5-.03 > 120.51-99.99)" "Pulse Oximetry has 2 code values per US Core"
 * bodySite -> "662: terminologyMaps using VF_VitalsBodySite on GMRV VITAL MEASUREMENT - QUALIFIER > GMRV VITAL QUALIFIER - VUID (120.5-5 > 120.52-99.99)"
 * extension[http://hl7.org/fhir/StructureDefinition/observation-deviceCode].valueCodeableConcept -> "663: terminologyMaps using VF_VitalsMeasurementDevice on GMRV VITAL MEASUREMENT - QUALIFIER > GMRV VITAL QUALIFIER - VUID (120.5-5 > 120.52-99.99)"
 * method -> "867: terminologyMaps using VF_VitalsMethod on GMRV VITAL MEASUREMENT - QUALIFIER > GMRV VITAL QUALIFIER - VUID (120.5-5 > 120.52-99.99)"
@@ -139,7 +136,7 @@ Source: VitalSignsSpO2
 * performer -> "Vital.VitalSign.LocationIEN"
 * effectiveDateTime -> "Vital.VitalSign.VitalSignTakenDateTime,Vital.VitalSignQualifier.VitalSignTakenDateTime"
 * subject -> "Vital.VitalSign.PatientIEN"
-* code.coding -> "Vital.VitalSign.VitalTypeIEN"
+* code.coding -> "Vital.VitalSign.VitalTypeIEN\nDim.VitalType.VUID"
 * valueQuantity.value -> "Vital.VitalSign.Diastolic,Vital.VitalSign.Systolic,Vital.VitalSign.VitalResult,Vital.VitalSign.VitalResultNumeric"
 * valueQuantity.code -> "Vital.VitalSign.VitalTypeIEN"
 

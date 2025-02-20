@@ -27,6 +27,7 @@ Description: "This StructureDefinition contains the maps for VistA file AR TRANS
 Invariant: dppr-31-1982
 Description: "If IEN = 34 OR 2 then source value from (433-12 > 430.3-.01)"
 Severity: #warning
+Expression: "true"
 
 Mapping: source-to-DebtPortalPaymentReconciliation
 Id: vista

@@ -26,22 +26,27 @@ Description: "This StructureDefinition contains the maps for VistA file MICROBIO
 Invariant: lompo-49-1528
 Description: "If (63.05-.35 > 63.5-13 > 60-100 > 60.01-95.3 > 95.3-) is NULL then fixed value http://loinc.org#42807-8 \"Parasite identified in Isolate\""
 Severity: #warning
+Expression: "true"
 
 Invariant: lompo-49-1480
 Description: "If Not NULL then source value from (63.05-.35 > 63.5-13 > 60-100 > 60.01-95.3 > 95.3-)"
 Severity: #warning
+Expression: "true"
 
 Invariant: lompo-49-1480-1
-Description: "If (undefined) is Not NULL then fixed value http://loinc.org"
+Description: "If Not NULL then fixed value http://loinc.org"
 Severity: #warning
+Expression: "true"
 
 Invariant: lompo-49-1480-2
 Description: "If Not NULL then source value from (63.05-.35 > 63.5-13 > 60-100 > 60.01-95.3 > 95.3-.01)"
 Severity: #warning
+Expression: "true"
 
 Invariant: lompo-49-1480-3
 Description: "If Not NULL then source value from (63.05-.35 > 63.5-13 > 60-100 > 60.01-95.3 > 95.3-1)"
 Severity: #warning
+Expression: "true"
 
 Mapping: source-to-LabObservationMicrobiologyParasitologyObservation
 Id: vista

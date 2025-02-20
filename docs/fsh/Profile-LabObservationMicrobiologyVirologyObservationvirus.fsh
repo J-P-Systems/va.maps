@@ -14,6 +14,7 @@ Description: "This StructureDefinition contains the maps for VistA file MICROBIO
 Invariant: lomvo-50-1529
 Description: "If (63.05-.35 > 63.5-13 > 60-100 > 60.01-95.3 > 95.3-) is NULL then fixed value http://loinc.org#42808-6 \"Virus identified in Isolate\""
 Severity: #warning
+Expression: "true"
 
 Mapping: source-to-LabObservationMicrobiologyVirologyObservationvirus
 Id: vista

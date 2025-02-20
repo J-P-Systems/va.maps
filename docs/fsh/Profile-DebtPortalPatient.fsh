@@ -11,6 +11,7 @@ Description: "This StructureDefinition contains the maps for VistA file ACCOUNTS
 Invariant: dpp-17-1827
 Description: "If patient then source value from (430-9 > 340-.01)"
 Severity: #warning
+Expression: "true"
 
 Mapping: source-to-DebtPortalPatient
 Id: vista

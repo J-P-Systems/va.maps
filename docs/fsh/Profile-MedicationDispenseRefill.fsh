@@ -20,18 +20,22 @@ Description: "This StructureDefinition contains the maps for VistA file PRESCRIP
 Invariant: mdr-24-1558
 Description: "If number then source value from (52-113 > 52.0113-.01)"
 Severity: #warning
+Expression: "true"
 
 Invariant: mdr-24-869
 Description: "If (52-52 > 52.1-17) is not null then fixed value #completed"
 Severity: #warning
+Expression: "true"
 
 Invariant: mdr-24-819
 Description: "If (52-52 > 52.1-17) is null then fixed value #in-progress"
 Severity: #warning
+Expression: "true"
 
 Invariant: mdr-24-1555
 Description: "If (52-31) is null then fixed value #in-progress"
 Severity: #warning
+Expression: "true"
 
 Mapping: source-to-MedicationDispenseRefill
 Id: vista

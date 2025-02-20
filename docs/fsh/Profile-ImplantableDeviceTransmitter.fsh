@@ -21,10 +21,12 @@ Description: "This StructureDefinition contains the maps for VistA file GENERATO
 Invariant: idt-28-1356
 Description: "If (698-96) is is NULL then fixed value #active"
 Severity: #warning
+Expression: "true"
 
 Invariant: idt-28-1357
 Description: "If (698-96) is is not NULL then fixed value #inactive"
 Severity: #warning
+Expression: "true"
 
 Mapping: source-to-ImplantableDeviceTransmitter
 Id: vista

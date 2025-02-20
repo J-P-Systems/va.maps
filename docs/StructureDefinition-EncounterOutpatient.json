@@ -14,11 +14,11 @@
     "valueCanonical" : "http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter|7.0.0"
   }],
   "url" : "http://va.gov/fhir/StructureDefinition/EncounterOutpatient",
-  "version" : "1.2.520",
+  "version" : "1.2.529",
   "name" : "EncounterOutpatient",
   "title" : "Encounter: Outpatient",
   "status" : "draft",
-  "date" : "2025-02-08T12:00:09+00:00",
+  "date" : "2025-02-20T14:56:35+00:00",
   "publisher" : "VA",
   "contact" : [{
     "name" : "VA",
@@ -74,6 +74,10 @@
   "baseDefinition" : "http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter",
   "derivation" : "constraint",
   "snapshot" : {
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/snapshot-base-version",
+      "valueString" : "5.0.1"
+    }],
     "element" : [{
       "id" : "Encounter",
       "path" : "Encounter",
@@ -533,12 +537,14 @@
         "key" : "eo-19-2035",
         "severity" : "warning",
         "human" : "If (409.68-.1 > 409.1-.01) is SERVICE CONNECTED then fixed value http://va.gov/fhir/vistaDefinedTerms/409.1#SC \"Service Connected\"",
+        "expression" : "true",
         "source" : "http://va.gov/fhir/StructureDefinition/EncounterOutpatient"
       },
       {
         "key" : "eo-19-2036",
         "severity" : "warning",
         "human" : "If (409.68-.1 > 409.1-.01) is Not SERVICE CONNECTED then fixed value http://va.gov/fhir/vistaDefinedTerms/409.1#NSC \"Not Service Connected\"",
+        "expression" : "true",
         "source" : "http://va.gov/fhir/StructureDefinition/EncounterOutpatient"
       }],
       "mustSupport" : true,
@@ -1033,18 +1039,21 @@
         "key" : "eo-19-430",
         "severity" : "warning",
         "human" : "If (9000010-.01) is null or > now then fixed value #planned",
+        "expression" : "true",
         "source" : "http://va.gov/fhir/StructureDefinition/EncounterOutpatient"
       },
       {
         "key" : "eo-19-431",
         "severity" : "warning",
         "human" : "If (9000010-.01) is not null, < now, .18 null then fixed value #in-progress",
+        "expression" : "true",
         "source" : "http://va.gov/fhir/StructureDefinition/EncounterOutpatient"
       },
       {
         "key" : "eo-19-432",
         "severity" : "warning",
         "human" : "If (9000010-.18) is not null, < now then fixed value #finished",
+        "expression" : "true",
         "source" : "http://va.gov/fhir/StructureDefinition/EncounterOutpatient"
       }],
       "mustSupport" : true,
@@ -5865,12 +5874,14 @@
         "key" : "eo-19-2035",
         "severity" : "warning",
         "human" : "If (409.68-.1 > 409.1-.01) is SERVICE CONNECTED then fixed value http://va.gov/fhir/vistaDefinedTerms/409.1#SC \"Service Connected\"",
+        "expression" : "true",
         "source" : "http://va.gov/fhir/StructureDefinition/EncounterOutpatient"
       },
       {
         "key" : "eo-19-2036",
         "severity" : "warning",
         "human" : "If (409.68-.1 > 409.1-.01) is Not SERVICE CONNECTED then fixed value http://va.gov/fhir/vistaDefinedTerms/409.1#NSC \"Not Service Connected\"",
+        "expression" : "true",
         "source" : "http://va.gov/fhir/StructureDefinition/EncounterOutpatient"
       }],
       "mustSupport" : true,
@@ -5926,18 +5937,21 @@
         "key" : "eo-19-430",
         "severity" : "warning",
         "human" : "If (9000010-.01) is null or > now then fixed value #planned",
+        "expression" : "true",
         "source" : "http://va.gov/fhir/StructureDefinition/EncounterOutpatient"
       },
       {
         "key" : "eo-19-431",
         "severity" : "warning",
         "human" : "If (9000010-.01) is not null, < now, .18 null then fixed value #in-progress",
+        "expression" : "true",
         "source" : "http://va.gov/fhir/StructureDefinition/EncounterOutpatient"
       },
       {
         "key" : "eo-19-432",
         "severity" : "warning",
         "human" : "If (9000010-.18) is not null, < now then fixed value #finished",
+        "expression" : "true",
         "source" : "http://va.gov/fhir/StructureDefinition/EncounterOutpatient"
       }],
       "mapping" : [{

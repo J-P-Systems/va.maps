@@ -49,14 +49,17 @@ Description: "This StructureDefinition contains the maps for VistA file PTF (45)
 Invariant: eie-27-433
 Description: "If (45-2) is null or > now then fixed value #planned"
 Severity: #warning
+Expression: "true"
 
 Invariant: eie-27-434
 Description: "If (45-2) is not null, < now, field 70 null then fixed value #in-progress"
 Severity: #warning
+Expression: "true"
 
 Invariant: eie-27-435
 Description: "If (45-70) is not null then fixed value #finished"
 Severity: #warning
+Expression: "true"
 
 Mapping: source-to-EncounterInpatientEncounter
 Id: vista

@@ -20,6 +20,7 @@ Description: "This StructureDefinition contains the maps for VistA file REGISTER
 Invariant: pr-18-1510
 Description: "If 70-2 > 70.02 then reference null based on (70-.01)"
 Severity: #warning
+Expression: "true"
 
 Mapping: source-to-ProcedureRadiology
 Id: vista

@@ -19,10 +19,12 @@ Description: "This StructureDefinition contains the maps for VistA file V LEAD I
 Invariant: idvl-22-1360
 Description: "If (698.1-56) is is NULL then fixed value #active"
 Severity: #warning
+Expression: "true"
 
 Invariant: idvl-22-1361
 Description: "If (698.1-56) is is not NULL then fixed value #inactive"
 Severity: #warning
+Expression: "true"
 
 Mapping: source-to-ImplantableDeviceVLead
 Id: vista

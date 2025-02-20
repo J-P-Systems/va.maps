@@ -17,10 +17,12 @@ Description: "This StructureDefinition contains the maps for VistA file ORDER (1
 Invariant: mru-25-1225
 Description: "If package like 'PS%' & class 'I' & [exclude supply] then source value from (100-.01)"
 Severity: #warning
+Expression: "true"
 
 Invariant: mru-25-1225-1
-Description: "If (undefined) is package like 'PS%' & class 'I' & [exclude supply] then fixed value http://terminology.hl7.org/CodeSystem/v2-0203/identifier-type#PLAC"
+Description: "If package like 'PS%' & class 'I' & [exclude supply] then fixed value http://terminology.hl7.org/CodeSystem/v2-0203/identifier-type#PLAC"
 Severity: #warning
+Expression: "true"
 
 Mapping: source-to-MedicationRequestUnsigned
 Id: vista
@@ -37,8 +39,6 @@ Source: MedicationRequestUnsigned
 * medicationCodeableConcept -> "1549: source value based on ORDER - ITEM ORDERED (100-7)" "confirm lookup"
 * status -> "2168: target not supported" "auto added because of must-support"
 * intent -> "2169: target not supported" "auto added because of must-support"
-* category -> "2170: target not supported" "auto added because of must-support"
-* category[us-core] -> "2171: target not supported" "auto added because of must-support"
 * reportedBoolean -> "2172: target not supported" "auto added because of must-support"
 * reportedReference -> "2173: target not supported" "auto added because of must-support"
 * medicationReference -> "2174: target not supported" "auto added because of must-support"

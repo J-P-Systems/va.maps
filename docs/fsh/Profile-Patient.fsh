@@ -50,6 +50,7 @@ Description: "This StructureDefinition contains the maps for VistA file PATIENT 
 Invariant: p-7-285
 Description: "If not null then source value from (2-.351)"
 Severity: #warning
+Expression: "true"
 
 Mapping: source-to-Patient
 Id: vista

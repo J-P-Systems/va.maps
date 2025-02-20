@@ -14,6 +14,7 @@ Description: "This StructureDefinition contains the maps for VistA file MICROBIO
 Invariant: lommo-61-1526
 Description: "If (63.05-.35 > 63.5-13 > 60-100 > 60.01-95.3 > 95.3-) is NULL then fixed value http://loinc.org#9825-1 \"Mycobacterium sp identified in Isolate\""
 Severity: #warning
+Expression: "true"
 
 Mapping: source-to-LabObservationMicrobiologyMycobacteriologyObservationmycobact
 Id: vista

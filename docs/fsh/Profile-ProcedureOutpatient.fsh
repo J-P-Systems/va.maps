@@ -10,6 +10,7 @@ Description: "This StructureDefinition contains the maps for VistA file V CPT (9
 * ^extension[=].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure|7.0.0"
 * subject and encounter and code.text and reasonCode and reasonCode.coding.system and reasonCode.coding.code and performedDateTime and performer.actor and note.text and category and code.coding and code.coding.code and code.coding.display and code.coding.system and status MS
 * subject only Reference(Patient)
+* encounter only Reference(EncounterOutpatient)
 * reasonCode.coding.system = "urn:see-termmap-in-mapParameter"
 * reasonCode.coding.system = "urn:see-termmap-in-mapParameter"
 * reasonCode.coding.system = "urn:see-termmap-in-mapParameter"

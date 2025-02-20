@@ -21,6 +21,7 @@ Description: "This StructureDefinition contains the maps for VistA file PENDING 
 Invariant: mrp-24-1753
 Description: "If drug null then source value from (52.41-8)"
 Severity: #warning
+Expression: "true"
 
 Mapping: source-to-MedicationRequestPending
 Id: vista

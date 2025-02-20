@@ -27,6 +27,7 @@ Description: "This StructureDefinition contains the maps for VistA file PROBLEM 
 Invariant: cp-16-349
 Description: "If (9000011-1.07) is Not Null then fixed value #resolved"
 Severity: #warning
+Expression: "true"
 
 Mapping: source-to-ConditionProblem
 Id: vista

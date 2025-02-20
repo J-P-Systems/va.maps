@@ -23,10 +23,12 @@ Description: "This StructureDefinition contains the maps for VistA file V HEALTH
 Invariant: sso-24-1244
 Description: "If (9000010.23-.01 > 9999999.64-.03) is TOBACCO [C] then fixed value http://loinc.org#72166-2"
 Severity: #warning
+Expression: "true"
 
 Invariant: sso-24-1862
 Description: "If (9000010.23-.01 > 9999999.64-.03) is Not TOBACCO [C] then exclude record"
 Severity: #warning
+Expression: "true"
 
 Mapping: source-to-SmokingStatusObservation
 Id: vista
