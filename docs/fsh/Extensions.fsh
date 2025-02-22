@@ -66,6 +66,13 @@ Description: "Extension account-statementGeneratedDay"
 Context: Account
 * value[x] only integer
 
+Extension: ResourceServiceConnection
+Id: resource-serviceConnection
+Description: "Extension resource-serviceConnection"
+Context: Resource
+* value[x] only Coding
+* value[x] from http://va.gov/fhir/ValueSet/VSResourceServiceConnection
+
 ValueSet: VSResourceServiceConnection
 Title: "VSResourceServiceConnection"
 Description: "FHIR ValueSet for Extension ResourceServiceConnection"
@@ -74,10 +81,3 @@ Description: "FHIR ValueSet for Extension ResourceServiceConnection"
 * ^name = "VSResourceServiceConnection"
 * include http://va.gov/terminology/vistaDefinedTerms/409.1#SC "Service Connected"
 * include http://va.gov/terminology/vistaDefinedTerms/409.1#NSC "Not Service Connected"
-
-Extension: ResourceServiceConnection
-Id: resource-serviceConnection
-Description: "Extension resource-serviceConnection"
-Context: Resource
-* value[x] only Coding
-* value[x] from http://va.gov/fhir/ValueSet/VSResourceServiceConnection

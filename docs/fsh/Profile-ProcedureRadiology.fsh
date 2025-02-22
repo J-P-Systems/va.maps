@@ -9,6 +9,7 @@ Description: "This StructureDefinition contains the maps for VistA file REGISTER
 * ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
 * ^extension[=].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure|7.0.0"
 * status and statusReason.text and category.text and code.coding and code.coding.system and code.coding.code and code.coding.display and subject and encounter and performedDateTime and performer.actor and location MS
+* subject only Reference(Patient)
 * encounter only Reference(EncounterOutpatient)
 * performer.actor only Reference(Practitioner)
 * location only Reference(Location)
@@ -18,7 +19,7 @@ Description: "This StructureDefinition contains the maps for VistA file REGISTER
 * subject obeys pr-18-1510
 
 Invariant: pr-18-1510
-Description: "If 70-2 > 70.02 then reference null based on (70-.01)"
+Description: "If 70-2 > 70.02 then reference /Patient based on (70-.01)"
 Severity: #warning
 Expression: "true"
 

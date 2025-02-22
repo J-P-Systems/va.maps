@@ -18,12 +18,9 @@ Source: LabObservationMicrobiologyMycobacteriologyObservationacidfast
 * valueString -> "1519: source value based on MICROBIOLOGY - ACID FAST STAIN (63.05-24)"
 * code -> "1856: fixed value = http://loinc.org#11545-1 \"Microscopic observation [Identifier] in Specimen by Acid fast stain\""
 * status -> "2123: target not supported" "auto added because of must-support"
-* category -> "2124: target not supported" "auto added because of must-support"
 * category[Laboratory] -> "2125: target not supported" "auto added because of must-support"
 * subject -> "2126: target not supported" "auto added because of must-support"
 * effectiveDateTime -> "2127: target not supported" "auto added because of must-support"
-* valueQuantity -> "2128: target not supported" "auto added because of must-support"
-* valueCodeableConcept -> "2129: target not supported" "auto added because of must-support"
 * dataAbsentReason -> "2130: target not supported" "auto added because of must-support"
 
 Mapping: cdw-to-LabObservationMicrobiologyMycobacteriologyObservationacidfast

@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Changes - US Veterans Health Administration FHIR Map Set Implementation Guide v1.2.529</title>
+    <title>Changes - US Veterans Health Administration FHIR Map Set Implementation Guide v1.2.531</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -61,7 +61,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">US Veterans Health Administration FHIR Map Set Implementation Guide</span>
             <br/>
-            <span style="display:inline-block;">1.2.529 - 250301
+            <span style="display:inline-block;">1.2.531 - 250301
 
 
 
@@ -177,7 +177,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">US Veterans Health Administration FHIR Map Set Implementation Guide - Local Development build (v1.2.529) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">US Veterans Health Administration FHIR Map Set Implementation Guide - Local Development build (v1.2.531) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>Changes</h2>
   
 
@@ -206,6 +206,16 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <tr><td>251</td></tr>
 <tr><td></td><td>mapApproach</td><td>source value</td><td>reference</td></tr>
 <tr><td></td><td>mapValue</td><td></td><td>/Practitioner</td></tr>
+<tr><th colspan="4">use-case Patient</th></tr>
+<tr><td colspan="4"><i>resource Patient</i></td></tr>
+<tr><td>575</td></tr>
+<tr><td></td><td>fhirPath</td><td>Patient.extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity].extension[ombCategory]</td><td>Patient.extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity]</td></tr>
+<tr><td></td><td>fhirSubPath</td><td>.valueCoding.code</td><td>.extension[ombCategory].valueCoding.code</td></tr>
+<tr><td></td><td>mapParameters</td><td></td><td>.extension[text].valueString={ETHNICITY INFORMATION (6)}</td></tr>
+<tr><td>576</td></tr>
+<tr><td></td><td>fhirPath</td><td>Patient.extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-race].extension[ombCategory]</td><td>Patient.extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-race]</td></tr>
+<tr><td></td><td>fhirSubPath</td><td>.valueCoding.code</td><td>.extension[ombCategory].valueCoding.code</td></tr>
+<tr><td></td><td>mapParameters</td><td></td><td>.extension[text].valueString={ INFORMATION (2)}</td></tr>
 <tr><th colspan="4">use-case Appointment</th></tr>
 <tr><td colspan="4"><i>resource Appointment</i></td></tr>
 <tr><td>749</td></tr>
@@ -213,20 +223,161 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <tr><td>2038</td></tr>
 <tr><td></td><td>status</td><td>for review</td><td>issue</td></tr>
 <tr><td></td><td>fhirPath</td><td>Appointment.participant</td><td>Appointment.participant[va-clinic]</td></tr>
+<tr><th colspan="4">use-case Condition: Problem</th></tr>
+<tr><td colspan="4"><i>resource Condition</i></td></tr>
+<tr><td>2042</td></tr>
+<tr><td></td><td>fhirSubPath</td><td></td><td>.valueDateTime</td></tr>
+<tr><th colspan="4">use-case Condition: Encounter Diagnosis</th></tr>
+<tr><td colspan="4"><i>resource Condition</i></td></tr>
+<tr><td>1613</td></tr>
+<tr><td></td><td>vistaSubFileFieldName</td><td>ICD DIAGNOSIS</td><td>ICD DIAGNOSIS - CODE NUMBER</td></tr>
+<tr><td></td><td>vistaSubFileField</td><td>80-</td><td>80-.01</td></tr>
+<tr><td></td><td>fhirPath</td><td>Condition.code</td><td>Condition.code.coding</td></tr>
+<tr><td></td><td>fhirSubPath</td><td></td><td>.code</td></tr>
+<tr><td></td><td>mapParameters</td><td>.coding.system=termmap({VF_ICDCodingSystems,CODING SYSTEM(1.1)}
+.coding.code = {CODE NUMBER(.01)}</td><td>.system=termmap({VF_ICDCodingSystems,CODING SYSTEM(1.1)}</td></tr>
+<tr><td>2043</td></tr>
+<tr><td></td><td>fhirSubPath</td><td></td><td>.valueDateTime</td></tr>
+<tr><th colspan="4">use-case Lab Observation: Chem, hem, tox, ria, ser</th></tr>
+<tr><td colspan="4"><i>resource Observation</i></td></tr>
+<tr><td></td><td>maprow count</td><td>16</td><td>14</td></tr>
+<tr><td>2054</td><td>deleted maprow</td></tr>
+<tr><td>2055</td><td>deleted maprow</td></tr>
+<tr><th colspan="4">use-case Lab Observation: Microbiology Bacteriology</th></tr>
+<tr><td colspan="4"><i>resource Observation</i></td></tr>
+<tr><td></td><td>maprow count</td><td>9</td><td>6</td></tr>
+<tr><td>2062</td><td>deleted maprow</td></tr>
+<tr><td>2063</td><td>deleted maprow</td></tr>
+<tr><td>2064</td><td>deleted maprow</td></tr>
+<tr><td colspan="4"><i>resource Observation[bacteria]</i></td></tr>
+<tr><td></td><td>maprow count</td><td>10</td><td>7</td></tr>
+<tr><td>2066</td><td>deleted maprow</td></tr>
+<tr><td>2070</td><td>deleted maprow</td></tr>
+<tr><td>2071</td><td>deleted maprow</td></tr>
+<tr><td colspan="4"><i>resource Observation[urine]</i></td></tr>
+<tr><td></td><td>maprow count</td><td>10</td><td>7</td></tr>
+<tr><td>2074</td><td>deleted maprow</td></tr>
+<tr><td>2079</td><td>deleted maprow</td></tr>
+<tr><td>2080</td><td>deleted maprow</td></tr>
+<tr><td colspan="4"><i>resource Observation[sputum]</i></td></tr>
+<tr><td></td><td>maprow count</td><td>10</td><td>7</td></tr>
+<tr><td>2083</td><td>deleted maprow</td></tr>
+<tr><td>2088</td><td>deleted maprow</td></tr>
+<tr><td>2089</td><td>deleted maprow</td></tr>
+<tr><td colspan="4"><i>resource Observation[gramstain]</i></td></tr>
+<tr><td></td><td>maprow count</td><td>10</td><td>7</td></tr>
+<tr><td>2092</td><td>deleted maprow</td></tr>
+<tr><td>2096</td><td>deleted maprow</td></tr>
+<tr><td>2097</td><td>deleted maprow</td></tr>
+<tr><th colspan="4">use-case Lab Observation: Microbiology Parasitology</th></tr>
+<tr><td colspan="4"><i>resource Observation</i></td></tr>
+<tr><td></td><td>maprow count</td><td>6</td><td>4</td></tr>
+<tr><td>2099</td><td>deleted maprow</td></tr>
+<tr><td>2100</td><td>deleted maprow</td></tr>
+<tr><th colspan="4">use-case Lab Observation: Microbiology Mycology</th></tr>
+<tr><td colspan="4"><i>resource Observation</i></td></tr>
+<tr><td></td><td>maprow count</td><td>5</td><td>2</td></tr>
+<tr><td>2109</td><td>deleted maprow</td></tr>
+<tr><td>2110</td><td>deleted maprow</td></tr>
+<tr><td>2111</td><td>deleted maprow</td></tr>
+<tr><td colspan="4"><i>resource Observation[fungus]</i></td></tr>
+<tr><td></td><td>maprow count</td><td>10</td><td>7</td></tr>
+<tr><td>2102</td><td>deleted maprow</td></tr>
+<tr><td>2106</td><td>deleted maprow</td></tr>
+<tr><td>2107</td><td>deleted maprow</td></tr>
+<tr><th colspan="4">use-case Lab Observation: Microbiology Mycobacteriology</th></tr>
+<tr><td colspan="4"><i>resource Observation</i></td></tr>
+<tr><td></td><td>maprow count</td><td>5</td><td>2</td></tr>
+<tr><td>2120</td><td>deleted maprow</td></tr>
+<tr><td>2121</td><td>deleted maprow</td></tr>
+<tr><td>2122</td><td>deleted maprow</td></tr>
+<tr><td colspan="4"><i>resource Observation[mycobact]</i></td></tr>
+<tr><td></td><td>maprow count</td><td>10</td><td>7</td></tr>
+<tr><td>2113</td><td>deleted maprow</td></tr>
+<tr><td>2117</td><td>deleted maprow</td></tr>
+<tr><td>2118</td><td>deleted maprow</td></tr>
+<tr><td colspan="4"><i>resource Observation[acidfast]</i></td></tr>
+<tr><td></td><td>maprow count</td><td>10</td><td>7</td></tr>
+<tr><td>2124</td><td>deleted maprow</td></tr>
+<tr><td>2128</td><td>deleted maprow</td></tr>
+<tr><td>2129</td><td>deleted maprow</td></tr>
+<tr><th colspan="4">use-case Lab Observation: Microbiology Virology</th></tr>
+<tr><td colspan="4"><i>resource Observation</i></td></tr>
+<tr><td></td><td>maprow count</td><td>5</td><td>2</td></tr>
+<tr><td>2139</td><td>deleted maprow</td></tr>
+<tr><td>2140</td><td>deleted maprow</td></tr>
+<tr><td>2141</td><td>deleted maprow</td></tr>
+<tr><td colspan="4"><i>resource Observation[virus]</i></td></tr>
+<tr><td></td><td>maprow count</td><td>10</td><td>7</td></tr>
+<tr><td>2132</td><td>deleted maprow</td></tr>
+<tr><td>2136</td><td>deleted maprow</td></tr>
+<tr><td>2137</td><td>deleted maprow</td></tr>
+<tr><th colspan="4">use-case Document Reference</th></tr>
+<tr><td colspan="4"><i>resource DocumentReference</i></td></tr>
+<tr><td>876</td></tr>
+<tr><td></td><td>mapApproach</td><td>source value</td><td>reference</td></tr>
+<tr><td></td><td>mapValue</td><td></td><td>/Patient</td></tr>
+<tr><td>877</td></tr>
+<tr><td></td><td>vistaFileFieldName</td><td>TIU DOCUMENT - ENTRY DATE/TIME</td><td></td></tr>
+<tr><td></td><td>vistaFileField</td><td>8925-1201</td><td></td></tr>
+<tr><td></td><td>mapApproach</td><td>source value</td><td>transform</td></tr>
+<tr><td></td><td>mapValue</td><td>Resource_creation_time</td><td>Resource_creation_time()</td></tr>
+<tr><td>878</td></tr>
+<tr><td></td><td>mapApproach</td><td>source value</td><td>reference</td></tr>
+<tr><td></td><td>mapValue</td><td></td><td>/Practitioner</td></tr>
+<tr><td>1663</td></tr>
+<tr><td></td><td>mapApproach</td><td>source value</td><td>reference</td></tr>
+<tr><td></td><td>mapValue</td><td></td><td>/Practitioner</td></tr>
+<tr><td>879</td></tr>
+<tr><td></td><td>mapApproach</td><td>source value</td><td>reference</td></tr>
+<tr><td></td><td>mapValue</td><td></td><td>/Practitioner</td></tr>
+<tr><td>880</td></tr>
+<tr><td></td><td>mapApproach</td><td>source value</td><td>reference</td></tr>
+<tr><td></td><td>mapValue</td><td></td><td>/Organization</td></tr>
+<tr><th colspan="4">use-case Encounter: Inpatient</th></tr>
+<tr><td colspan="4"><i>resource Condition</i></td></tr>
+<tr><td>956</td></tr>
+<tr><td></td><td>mapParameters</td><td>.category = http://terminology.hl7.org/CodeSystem/condition-category#encounter-diagnosis</td><td>.category[us-core] = http://terminology.hl7.org/CodeSystem/condition-category#encounter-diagnosis</td></tr>
+<tr><td>2145</td></tr>
+<tr><td></td><td>fhirSubPath</td><td></td><td>.valueDateTime</td></tr>
 <tr><th colspan="4">use-case Immunization</th></tr>
 <tr><td colspan="4"><i>resource Immunization</i></td></tr>
 <tr><td>332</td></tr>
-<tr><td></td><td>mapParameters</td><td>.text={NAME (9999999.14-.01)}</td><td>.text={NAME (.01)}</td></tr>
+<tr><td></td><td>fhirSubPath</td><td></td><td>.coding[va-cvx].code</td></tr>
+<tr><td></td><td>mapParameters</td><td>.text={NAME (9999999.14-.01)}</td><td>.text={NAME (.01)}
+.coding[va-cvx].system = http://hl7.org/fhir/sid/cvx</td></tr>
+<tr><td>333</td></tr>
+<tr><td></td><td>mapApproach</td><td>source value</td><td>reference</td></tr>
+<tr><td></td><td>mapValue</td><td></td><td>/Patient</td></tr>
+<tr><td>1609</td></tr>
+<tr><td></td><td>fhirPath</td><td>Immunization.vaccineCode.coding</td><td>Immunization.vaccineCode.coding[va-ndc]</td></tr>
+<tr><th colspan="4">use-case Implantable Device</th></tr>
+<tr><td colspan="4"><i>resource Device</i></td></tr>
+<tr><td>1386</td></tr>
+<tr><td></td><td>status</td><td>for review</td><td>inactive</td></tr>
+<tr><th colspan="4">use-case Lab Observation</th></tr>
+<tr><td colspan="4"><i>resource Observation</i></td></tr>
+<tr><td>843</td></tr>
+<tr><td></td><td>fhirPath</td><td>Observation.category</td><td>Observation.category[Laboratory]</td></tr>
+<tr><th colspan="4">use-case Lung Cancer Screening</th></tr>
+<tr><td colspan="4"><i>resource DiagnosticReport</i></td></tr>
+<tr><td></td><td>maprow count</td><td>16</td><td>15</td></tr>
+<tr><td>2160</td><td>deleted maprow</td></tr>
+<tr><th colspan="4">use-case Lung Cancer Screening: CRNA</th></tr>
+<tr><td colspan="4"><i>resource ServiceRequest</i></td></tr>
+<tr><td>954</td></tr>
+<tr><td></td><td>status</td><td>in process</td><td>inactive</td></tr>
 <tr><th colspan="4">use-case MedicationRequest: Unsigned</th></tr>
 <tr><td colspan="4"><i>resource MedicationRequest</i></td></tr>
+<tr><td></td><td>maprow count</td><td>24</td><td>22</td></tr>
+<tr><td>2170</td><td>deleted maprow</td></tr>
+<tr><td>2171</td><td>deleted maprow</td></tr>
 <tr><td>1225</td></tr>
 <tr><td></td><td>mapParameters</td><td>.type=http://hl7.org/fhir/ValueSet/identifier-type#PLAC</td><td>.type=http://terminology.hl7.org/CodeSystem/v2-0203/identifier-type#PLAC</td></tr>
-<tr><td>2170</td></tr>
-<tr><td></td><td>status</td><td>in process</td><td>inactive</td></tr>
-<tr><td>2171</td></tr>
-<tr><td></td><td>status</td><td>in process</td><td>inactive</td></tr>
 <tr><th colspan="4">use-case MedicationRequest: NonVA</th></tr>
 <tr><td colspan="4"><i>resource MedicationRequest</i></td></tr>
+<tr><td></td><td>maprow count</td><td>27</td><td>26</td></tr>
+<tr><td>2177</td><td>deleted maprow</td></tr>
 <tr><td>1762</td></tr>
 <tr><td></td><td>mapParameters</td><td>.system=http://va.gov/identifiers/$Sta3n/55.05-7
 .type=http://hl7.org/fhir/ValueSet/identifier-type#FILL</td><td>.system=http://va.gov/identifiers/$Sta3n/55.05-7
@@ -239,26 +390,46 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <tr><td colspan="4"><i>resource Procedure</i></td></tr>
 <tr><td>1300</td></tr>
 <tr><td></td><td>mapValue</td><td></td><td>/EncounterOutpatient</td></tr>
+<tr><th colspan="4">use-case Procedure: Radiology</th></tr>
+<tr><td colspan="4"><i>resource Procedure</i></td></tr>
+<tr><td>1510</td></tr>
+<tr><td></td><td>mapValue</td><td></td><td>/Patient</td></tr>
 <tr><th colspan="4">use-case Smoking Status Observation</th></tr>
 <tr><td colspan="4"><i>resource Observation</i></td></tr>
 <tr><td>1249</td></tr>
 <tr><td></td><td>mapParameters</td><td>.text = {HEALTH FACTOR}</td><td>.text = {FACTOR (.01)}</td></tr>
 <tr><th colspan="4">use-case Vital Signs</th></tr>
 <tr><td colspan="4"><i>resource Observation</i></td></tr>
+<tr><td></td><td>maprow count</td><td>20</td><td>19</td></tr>
+<tr><td>2193</td><td>deleted maprow</td></tr>
+<tr><td>658</td></tr>
+<tr><td></td><td>fhirPath</td><td>Observation.category</td><td>Observation.category[VSCat]</td></tr>
 <tr><td>661</td></tr>
 <tr><td></td><td>vistaSubFileFieldName</td><td></td><td>GMRV VITAL TYPE - VUID</td></tr>
 <tr><td></td><td>vistaSubFileField</td><td></td><td>120.51-99.99</td></tr>
+<tr><td>1802</td></tr>
+<tr><td></td><td>fhirSubPath</td><td>.valueCodeableConcept.coding</td><td>.valueCodeableConcept</td></tr>
+<tr><td>1803</td></tr>
+<tr><td></td><td>fhirSubPath</td><td>.valueCodeableConcept.coding</td><td>.valueCodeableConcept</td></tr>
+<tr><td>1793</td></tr>
+<tr><td></td><td>status</td><td>for review</td><td>inactive</td></tr>
+<tr><td>1794</td></tr>
+<tr><td></td><td>status</td><td>for review</td><td>inactive</td></tr>
 <tr><th colspan="4">use-case Vital Signs: BP</th></tr>
 <tr><td colspan="4"><i>resource Observation</i></td></tr>
+<tr><td>1805</td></tr>
+<tr><td></td><td>fhirSubPath</td><td>.valueCodeableConcept.coding</td><td>.valueCodeableConcept</td></tr>
 <tr><td>666</td></tr>
 <tr><td></td><td>mapParameters</td><td>.valueQuantity.code = "mm[Hg]"
 .code.coding.system = "http://loinc.org"
 .code.coding.code = "8480-6"</td><td>.valueQuantity.code = #mm[Hg]
+.valueQuantity.unit = mm[Hg]
 .code = http://loinc.org#8480-6</td></tr>
 <tr><td>667</td></tr>
 <tr><td></td><td>mapParameters</td><td>.valueQuantity.code = "mm[Hg]"
 .code.coding.system = "http://loinc.org"
 .code.coding.code = "8462-4"</td><td>.valueQuantity.code = #mm[Hg]
+.valueQuantity.unit = mm[Hg]
 .code = http://loinc.org#8462-4</td></tr>
 <tr><th colspan="4">use-case Vital Signs: SpO2</th></tr>
 <tr><td colspan="4"><i>resource Observation</i></td></tr>
@@ -266,18 +437,57 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <tr><td></td><td>mapParameters</td><td>.valueQuantity.code = "L/min"
 .code.coding.system = "http://loinc.org"
 .code.coding.code = "3151-8"</td><td>.valueQuantity.code = #L/min
+.valueQuantity.unit = L/min
 .code = http://loinc.org#3151-8</td></tr>
 <tr><td>1240</td></tr>
 <tr><td></td><td>mapParameters</td><td>.valueQuantity.code = "%"
 .code.coding.system = "http://loinc.org"
 .code.coding.code = "3150-0"</td><td>.valueQuantity.code = #%
+.valueQuantity.unit = %
 .code = http://loinc.org#3150-0</td></tr>
+<tr><th colspan="4">use-case Observation Imaging Result: Echo</th></tr>
+<tr><td colspan="4"><i>resource Observation</i></td></tr>
+<tr><td>1631</td></tr>
+<tr><td></td><td>fhirSubPath</td><td>/Patient</td><td></td></tr>
+<tr><td></td><td>mapValue</td><td></td><td>/Patient</td></tr>
+<tr><th colspan="4">use-case Observation Imaging Result: EKG</th></tr>
+<tr><td colspan="4"><i>resource Observation</i></td></tr>
+<tr><td>1632</td></tr>
+<tr><td></td><td>fhirSubPath</td><td>/Patient</td><td></td></tr>
+<tr><td></td><td>mapValue</td><td></td><td>/Patient</td></tr>
+<tr><th colspan="4">use-case Observation Imaging Result: Rad/Nuc</th></tr>
+<tr><td colspan="4"><i>resource Observation</i></td></tr>
+<tr><td>1633</td></tr>
+<tr><td></td><td>fhirSubPath</td><td>/Patient</td><td></td></tr>
+<tr><td></td><td>mapValue</td><td></td><td>/Patient</td></tr>
+<tr><th colspan="4">use-case Observation Imaging Result</th></tr>
+<tr><td colspan="4"><i>resource Observation</i></td></tr>
+<tr><td>1624</td></tr>
+<tr><td></td><td>fhirPath</td><td>Observation.category</td><td>Observation.category[imaging]</td></tr>
+<tr><td>1797</td></tr>
+<tr><td></td><td>status</td><td>for review</td><td>inactive</td></tr>
+<tr><td>1798</td></tr>
+<tr><td></td><td>status</td><td>for review</td><td>inactive</td></tr>
 <tr><th colspan="4">use-case MedicationRequest: Pending</th></tr>
 <tr><td colspan="4"><i>resource MedicationRequest</i></td></tr>
+<tr><td></td><td>maprow count</td><td>23</td><td>22</td></tr>
+<tr><td>2198</td><td>deleted maprow</td></tr>
 <tr><td>1747</td></tr>
 <tr><td></td><td>mapParameters</td><td>.system = http://va.gov/identifiers/$Sta3n/52.41-.01
 .type=http://hl7.org/fhir/ValueSet/identifier-type#PLAC</td><td>.system = http://va.gov/identifiers/$Sta3n/52.41-.01
 .type=http://terminology.hl7.org/CodeSystem/v2-0203#PLAC</td></tr>
+<tr><th colspan="4">use-case Debt Portal</th></tr>
+<tr><td colspan="4"><i>resource Patient</i></td></tr>
+<tr><td>1827</td></tr>
+<tr><td></td><td>mapCase</td><td>patient</td><td>POINTER is PATIENT (#2)</td></tr>
+<tr><td></td><td>fhirSubPath</td><td></td><td>.text</td></tr>
+<tr><td></td><td>mapParameters</td><td></td><td>.family=LAST
+.given=FIRST &amp; MIDDLE
+.suffix=SUFFIX</td></tr>
+<tr><td colspan="4"><i>resource PaymentReconciliation</i></td></tr>
+<tr><td>1983</td></tr>
+<tr><td></td><td>fhirSubPath</td><td></td><td>.value</td></tr>
+<tr><td></td><td>mapParameters</td><td></td><td>.currency=#USD</td></tr>
 <tr><th colspan="4">use-case MedRefillRequestMHV</th></tr>
 <tr><td colspan="4"><i>resource Task</i></td></tr>
 <tr><td>1852</td></tr>
@@ -288,36 +498,71 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <tr><td colspan="4"><i>resource Patient</i></td></tr>
 <tr><td>1863</td></tr>
 <tr><td></td><td>vistaFileField</td><td></td><td>0</td></tr>
+<tr><td></td><td>fhirSubPath</td><td></td><td>.value</td></tr>
 <tr><td>1874</td></tr>
 <tr><td></td><td>vistaFileField</td><td></td><td>2</td></tr>
 <tr><td>1880</td></tr>
 <tr><td></td><td>vistaFileField</td><td></td><td>3</td></tr>
+<tr><td>2023</td></tr>
+<tr><td></td><td>status</td><td>in process</td><td>inactive</td></tr>
 <tr><td>1917</td></tr>
 <tr><td></td><td>vistaFileField</td><td></td><td>21-7.1</td></tr>
 <tr><td>1948</td></tr>
 <tr><td></td><td>vistaFileField</td><td></td><td>24-1</td></tr>
-<tr><td></td><td>fhirPath</td><td>Patient.extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-race].extension[ombCategory]</td><td>Patient.extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-race].extension[ombCategory].valueCoding</td></tr>
+<tr><td></td><td>fhirPath</td><td>Patient.extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-race].extension[ombCategory]</td><td>Patient.extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-race]</td></tr>
+<tr><td></td><td>fhirSubPath</td><td></td><td>.extension[ombCategory].valueCoding</td></tr>
 <tr><td></td><td>mapValue</td><td>urn:oid:2.16.840.1.113883.6.238#1002-5 American Indian or Alaska Native</td><td>urn:oid:2.16.840.1.113883.6.238#1002-5 "American Indian or Alaska Native"</td></tr>
+<tr><td></td><td>mapParameters</td><td></td><td>.extension[text].valueString=”AIAN”</td></tr>
 <tr><td>1949</td></tr>
 <tr><td></td><td>vistaFileField</td><td></td><td>24-2</td></tr>
+<tr><td></td><td>fhirPath</td><td>Patient.extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-race].extension[ombCategory].valueCoding</td><td>Patient.extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-race]</td></tr>
+<tr><td></td><td>fhirSubPath</td><td></td><td>.extension[ombCategory].valueCoding</td></tr>
+<tr><td></td><td>mapParameters</td><td></td><td>.extension[text].valueString=”Asian”</td></tr>
 <tr><td>1950</td></tr>
 <tr><td></td><td>vistaFileField</td><td></td><td>24-3</td></tr>
+<tr><td></td><td>fhirPath</td><td>Patient.extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-race].extension[ombCategory].valueCoding</td><td>Patient.extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-race]</td></tr>
+<tr><td></td><td>fhirSubPath</td><td></td><td>.extension[ombCategory].valueCoding</td></tr>
+<tr><td></td><td>mapParameters</td><td></td><td>.extension[text].valueString=”BlkAM”</td></tr>
 <tr><td>1951</td></tr>
 <tr><td></td><td>vistaFileField</td><td></td><td>24-4</td></tr>
+<tr><td></td><td>fhirPath</td><td>Patient.extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-race].extension[ombCategory].valueCoding</td><td>Patient.extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-race]</td></tr>
+<tr><td></td><td>fhirSubPath</td><td></td><td>.extension[ombCategory].valueCoding</td></tr>
+<tr><td></td><td>mapParameters</td><td></td><td>.extension[text].valueString=”NH_OPI”</td></tr>
 <tr><td>1952</td></tr>
 <tr><td></td><td>vistaFileField</td><td></td><td>24-5</td></tr>
+<tr><td></td><td>fhirPath</td><td>Patient.extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-race].extension[ombCategory].valueCoding</td><td>Patient.extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-race]</td></tr>
+<tr><td></td><td>fhirSubPath</td><td></td><td>.extension[ombCategory].valueCoding</td></tr>
+<tr><td></td><td>mapParameters</td><td></td><td>.extension[text].valueString=”White”</td></tr>
 <tr><td>1953</td></tr>
 <tr><td></td><td>vistaFileField</td><td></td><td>24-6</td></tr>
+<tr><td></td><td>fhirPath</td><td>Patient.extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-race].extension[ombCategory].valueCoding</td><td>Patient.extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-race]</td></tr>
+<tr><td></td><td>fhirSubPath</td><td></td><td>.extension[ombCategory].valueCoding</td></tr>
+<tr><td></td><td>mapParameters</td><td></td><td>.extension[text].valueString=”Unk”</td></tr>
 <tr><td>1954</td></tr>
 <tr><td></td><td>vistaFileField</td><td></td><td>24-7</td></tr>
+<tr><td></td><td>fhirPath</td><td>Patient.extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-race].extension[ombCategory].valueCoding</td><td>Patient.extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-race]</td></tr>
+<tr><td></td><td>fhirSubPath</td><td></td><td>.extension[ombCategory].valueCoding</td></tr>
+<tr><td></td><td>mapParameters</td><td></td><td>.extension[text].valueString=”Other”</td></tr>
 <tr><td>1955</td></tr>
 <tr><td></td><td>vistaFileField</td><td></td><td>25-1</td></tr>
+<tr><td></td><td>fhirPath</td><td>Patient.extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity].extension[ombCategory].valueCoding</td><td>Patient.extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity]</td></tr>
+<tr><td></td><td>fhirSubPath</td><td></td><td>.extension[ombCategory].valueCoding</td></tr>
+<tr><td></td><td>mapParameters</td><td></td><td>.extension[text].valueString=”HispLat”</td></tr>
 <tr><td>1956</td></tr>
 <tr><td></td><td>vistaFileField</td><td></td><td>25-2</td></tr>
+<tr><td></td><td>fhirPath</td><td>Patient.extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity].extension[ombCategory].valueCoding</td><td>Patient.extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity]</td></tr>
+<tr><td></td><td>fhirSubPath</td><td></td><td>.extension[ombCategory].valueCoding</td></tr>
+<tr><td></td><td>mapParameters</td><td></td><td>.extension[text].valueString=”NHL”</td></tr>
 <tr><td>1957</td></tr>
 <tr><td></td><td>vistaFileField</td><td></td><td>25-3</td></tr>
+<tr><td></td><td>fhirPath</td><td>Patient.extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity].extension[ombCategory].valueCoding</td><td>Patient.extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity]</td></tr>
+<tr><td></td><td>fhirSubPath</td><td></td><td>.extension[ombCategory].valueCoding</td></tr>
+<tr><td></td><td>mapParameters</td><td></td><td>.extension[text].valueString=”Unk”</td></tr>
 <tr><td>1958</td></tr>
 <tr><td></td><td>vistaFileField</td><td></td><td>25-4</td></tr>
+<tr><td></td><td>fhirPath</td><td>Patient.extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity].extension[ombCategory].valueCoding</td><td>Patient.extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity]</td></tr>
+<tr><td></td><td>fhirSubPath</td><td></td><td>.extension[ombCategory].valueCoding</td></tr>
+<tr><td></td><td>mapParameters</td><td></td><td>.extension[text].valueString=”Other”</td></tr>
 <tr><td colspan="4"><i>resource Immunization[vac1]</i></td></tr>
 <tr><td>1878</td></tr>
 <tr><td></td><td>vistaFileField</td><td></td><td>17-1.1</td></tr>
@@ -518,7 +763,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025 <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#1.2.529 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Feb 20, 2025 14:57+0000">2025-02-20</span>
+          IG &#169; 2025 <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#1.2.531 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Sat, Feb 22, 2025 09:56+0000">2025-02-22</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

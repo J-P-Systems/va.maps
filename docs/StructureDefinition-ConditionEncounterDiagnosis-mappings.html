@@ -7,7 +7,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Condition: Encounter Diagnosis - Mappings - US Veterans Health Administration FHIR Map Set Implementation Guide v1.2.529</title>
+    <title>Condition: Encounter Diagnosis - Mappings - US Veterans Health Administration FHIR Map Set Implementation Guide v1.2.531</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -65,7 +65,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">US Veterans Health Administration FHIR Map Set Implementation Guide</span>
             <br/>
-            <span style="display:inline-block;">1.2.529 - 250301
+            <span style="display:inline-block;">1.2.531 - 250301
 
 
 
@@ -174,7 +174,7 @@
           <div class="inner-wrapper">
 
 <div style="counter-reset: section 5" class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">US Veterans Health Administration FHIR Map Set Implementation Guide - Local Development build (v1.2.529) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">US Veterans Health Administration FHIR Map Set Implementation Guide - Local Development build (v1.2.531) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   
 
 
@@ -241,7 +241,7 @@
         
           Draft
           
-            as of 2025-02-20
+            as of 2025-02-22
           
         
       </td>
@@ -343,14 +343,13 @@
 <td class="cell-ce1">1613</td>
 <td class="cell-ce1">for review</td>
 <td class="cell-ce1">V2F</td>
-<td class="cell-ce1">V POV - POV &gt; ICD DIAGNOSIS (9000010.07-.01 &gt; 80-)</td>
+<td class="cell-ce1">V POV - POV &gt; ICD DIAGNOSIS - CODE NUMBER (9000010.07-.01 &gt; 80-.01)</td>
 <td class="cell-ce1">source value</td>
 <td class="cell-ce1"></td>
-<td class="cell-ce1">Condition.code</td>
+<td class="cell-ce1">Condition.code.coding</td>
+<td class="cell-ce1">.code</td>
 <td class="cell-ce1"></td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1">.coding.system=termmap({VF_ICDCodingSystems,CODING SYSTEM(1.1)}
-.coding.code = {CODE NUMBER(.01)}</td>
+<td class="cell-ce1">.system=termmap({VF_ICDCodingSystems,CODING SYSTEM(1.1)}</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-encounter-diagnosis | 5.0.1</td>
 </tr>
@@ -361,25 +360,11 @@
 <td class="cell-ce1"></td>
 <td class="cell-ce1">fixed value</td>
 <td class="cell-ce1"></td>
-<td class="cell-ce1">Condition.code</td>
-<td class="cell-ce1">.coding.system</td>
+<td class="cell-ce1">Condition.code.coding</td>
+<td class="cell-ce1">.system</td>
 <td class="cell-ce1">urn:see-termmap-in-mapParameter</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">generated from mapParameter row 1</td>
-<td class="cell-ce1"></td>
-</tr>
-<tr class="row-ro1">
-<td class="cell-ce1">1613-2</td>
-<td class="cell-ce1">for review</td>
-<td class="cell-ce1">V2F</td>
-<td class="cell-ce1">V POV - POV &gt; ICD DIAGNOSIS - CODE NUMBER (9000010.07-.01 &gt; 80-.01)</td>
-<td class="cell-ce1">source value</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1">Condition.code</td>
-<td class="cell-ce1">.coding.code</td>
-<td class="cell-ce1">{CODE NUMBER(.01)}</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1">generated from mapParameter row 2</td>
 <td class="cell-ce1"></td>
 </tr>
 <tr class="row-ro1">
@@ -502,7 +487,7 @@
 <td class="cell-ce1">target not supported</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">Condition.extension[assertedDate]</td>
-<td class="cell-ce1"></td>
+<td class="cell-ce1">.valueDateTime</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">auto added because of must-support</td>
@@ -518,7 +503,9 @@
   <a name="vista"> </a><h3>Mappings for Veterans Health Information Systems Technology and Architecture (VistA) ()</h3><table class="grid">
  <tr><td colspan="3"><b>ConditionEncounterDiagnosis</b></td></tr>
  <tr><td>Condition</td><td></td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;extension (assertedDate)</td><td>2043: target not supported</td><td><p>auto added because of must-support</p>
+ <tr><td>&nbsp;&nbsp;&nbsp;extension</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;extension (assertedDate)</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td>2043: target not supported</td><td><p>auto added because of must-support</p>
 </td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td></td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;system</td><td>346-1: fixed value = http://va.gov/identifiers/$Sta3n/9000010.07</td><td><p>generated from mapParameter row 1</p>
@@ -528,12 +515,11 @@
 , </td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;verificationStatus</td><td>606: terminologyMaps using VF_encounterProblemVerificationStatus on V POV - MODIFIER (9000010.07-.06)</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;category (us-core)</td><td>1608: fixed value = http://terminology.hl7.org/CodeSystem/condition-category#encounter-diagnosis</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;code</td><td>1613: source value based on V POV - POV &gt; ICD DIAGNOSIS (9000010.07-.01 &gt; 80-)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;code</td><td></td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td></td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;system</td><td>1613-1: fixed value = urn:see-termmap-in-mapParameter</td><td><p>generated from mapParameter row 1</p>
 </td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>1613-2: source value based on V POV - POV &gt; ICD DIAGNOSIS - CODE NUMBER (9000010.07-.01 &gt; 80-.01)</td><td><p>generated from mapParameter row 2</p>
-</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>1613: source value based on V POV - POV &gt; ICD DIAGNOSIS - CODE NUMBER (9000010.07-.01 &gt; 80-.01)</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>1611: reference based on V POV - PATIENT NAME (9000010.07-.02)</td><td><p>We have patient resource; unclear why name is repeated</p>
 </td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;encounter</td><td>368: source value based on V POV - VISIT (9000010.07-.03)</td><td></td> </tr>
@@ -549,7 +535,7 @@
  <tr><td>Condition</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;clinicalStatus</td><td>Outpat.VDiagnosis.Modifier,Outpat.WorkloadVDiagnosis.Modifier</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;verificationStatus</td><td>Outpat.VDiagnosis.Modifier,Outpat.WorkloadVDiagnosis.Modifier</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;code</td><td>Outpat.VDiagnosis.ICDIEN,Outpat.WorkloadVDiagnosis.ICDIEN</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;code</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>Outpat.VDiagnosis.ICDIEN,Outpat.WorkloadVDiagnosis.ICDIEN
 Dim.ICD10.ICD10Code,Dim.ICD9.ICD9Code</td> </tr>
@@ -565,7 +551,7 @@ Immun.ImmunizationContraRefusalEvent.VisitDateTime,Outpat.Visit.VisitDateTime,Ou
  <tr><td>Condition</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;clinicalStatus</td><td>Diagnosis.Diagnosis[CodeTableDetail.Diagnosis].OriginalText</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;verificationStatus</td><td>Diagnosis.Diagnosis[CodeTableDetail.Diagnosis].OriginalText</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;code</td><td>Diagnosis.Diagnosis,Diagnosis.Diagnosis[CodeTableDetail.Diagnosis].Code</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;code</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>Diagnosis.Diagnosis,Diagnosis.Diagnosis[CodeTableDetail.Diagnosis].Code</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;encounter</td><td>Diagnosis.EncounterNumber,Diagnosis.EnteredAt,Diagnosis.EnteredBy,Diagnosis.EnteredOn,Diagnosis.FromTime,Diagnosis.ToTime</td> </tr>
@@ -651,6 +637,11 @@ OR &lt; 272379006 |Event|</td> </tr>
  <tr><td>Condition</td><td>Entity. Role, or Act, Observation[classCode=OBS, moodCode=EVN, code=ASSERTION, value&lt;Diagnosis]</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;text</td><td>Act.text?</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;contained</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;extension</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;extension (assertedDate)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;url</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td>N/A</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;modifierExtension</td><td>N/A</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>.id</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
@@ -762,7 +753,7 @@ OR &lt; 272379006 |Event|</td> </tr>
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025 <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#1.2.529 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Feb 20, 2025 14:57+0000">2025-02-20</span>
+          IG &#169; 2025 <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#1.2.531 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Sat, Feb 22, 2025 09:56+0000">2025-02-22</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

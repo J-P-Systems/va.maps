@@ -7,7 +7,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Observation Imaging Result: EKG - Mappings - US Veterans Health Administration FHIR Map Set Implementation Guide v1.2.529</title>
+    <title>Observation Imaging Result: EKG - Mappings - US Veterans Health Administration FHIR Map Set Implementation Guide v1.2.531</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -65,7 +65,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">US Veterans Health Administration FHIR Map Set Implementation Guide</span>
             <br/>
-            <span style="display:inline-block;">1.2.529 - 250301
+            <span style="display:inline-block;">1.2.531 - 250301
 
 
 
@@ -174,7 +174,7 @@
           <div class="inner-wrapper">
 
 <div style="counter-reset: section 5" class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">US Veterans Health Administration FHIR Map Set Implementation Guide - Local Development build (v1.2.529) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">US Veterans Health Administration FHIR Map Set Implementation Guide - Local Development build (v1.2.531) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   
 
 
@@ -241,7 +241,7 @@
         
           Draft
           
-            as of 2025-02-20
+            as of 2025-02-22
           
         
       </td>
@@ -333,8 +333,8 @@
 <td class="cell-ce1">reference</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">Observation.subject</td>
-<td class="cell-ce1">/Patient</td>
 <td class="cell-ce1"></td>
+<td class="cell-ce1">/Patient</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-imaging | 5.0.1</td>
@@ -472,7 +472,7 @@
 <td class="cell-ce1"></td>
 <td class="cell-ce1">fixed value</td>
 <td class="cell-ce1"></td>
-<td class="cell-ce1">Observation.category</td>
+<td class="cell-ce1">Observation.category[imaging]</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">http://terminology.hl7.org/CodeSystem/observation-category#imaging</td>
 <td class="cell-ce1"></td>
@@ -493,34 +493,6 @@
 <td class="cell-ce1">Always has data</td>
 <td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-imaging | 5.0.1</td>
 </tr>
-<tr class="row-ro1">
-<td class="cell-ce1">1797</td>
-<td class="cell-ce1">for review</td>
-<td class="cell-ce1">V2F</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1">target not supported</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1">Observation.valueQuantity</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1">value is string</td>
-<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-imaging | 5.0.1</td>
-</tr>
-<tr class="row-ro1">
-<td class="cell-ce1">1798</td>
-<td class="cell-ce1">for review</td>
-<td class="cell-ce1">V2F</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1">target not supported</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1">Observation.valueCodeableConcept</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1">value is string</td>
-<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-imaging | 5.0.1</td>
-</tr>
 </table>
 
 </div>
@@ -536,7 +508,7 @@
 </td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>1618: source value based on ELECTROCARDIOGRAM (EKG) - IEN (691.5-.001)</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>1622: terminologyMaps using VF_ImageStatus on ELECTROCARDIOGRAM (EKG) - RELEASE STATUS (691.5-1506)</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;category</td><td>1624: fixed value = http://terminology.hl7.org/CodeSystem/observation-category#imaging</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;category (imaging)</td><td>1624: fixed value = http://terminology.hl7.org/CodeSystem/observation-category#imaging</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;code</td><td>2195: target not supported</td><td><p>auto added because of must-support</p>
 </td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>1632: reference based on ELECTROCARDIOGRAM (EKG) - MEDICAL PATIENT (691.5-1)</td><td></td> </tr>
@@ -544,10 +516,6 @@
  <tr><td>&nbsp;&nbsp;&nbsp;issued</td><td>1638: source value based on ELECTROCARDIOGRAM (EKG) - DATE OF VERIFIED (691.5-1508)</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;performer</td><td>1641: reference based on ELECTROCARDIOGRAM (EKG) - INTERPRETED BY (691.5-12)</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;value[x] (valueString)</td><td>1644: source value based on ELECTROCARDIOGRAM (EKG) - INTERPRETATION CODE (RHYTHM) &gt; INTERPRETATION CODE (RHYTHM) - INTERPRETATION CODE (RHYTHM) &gt; ECG INTERPRETATION - INTERPRETATION (691.5-14 &gt; 691.54-.01 &gt; 693.3-.01), 1645: source value based on ELECTROCARDIOGRAM (EKG) - INTERPRETATION CODE (CONFIG) &gt; INTERPRETATION CODE (CONFIG) - INTERPRETATION CODE (CONFIG) &gt; ECG INTERPRETATION - INTERPRETATION (691.5-14.1 &gt; 691.55-.01 &gt; 693.3-.01), 1646: source value based on ELECTROCARDIOGRAM (EKG) - INTERPRETATION CODE (PACING) &gt; INTERPRETATION CODE (PACING) - INTERPRETATION CODE (PACING) &gt; ECG INTERPRETATION - INTERPRETATION (691.5-14.2 &gt; 691.56-.01 &gt; 693.3-.01)</td><td>, , </td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;value[x] (valueQuantity)</td><td>1797: target not supported</td><td><p>value is string</p>
-</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;value[x] (valueCodeableConcept)</td><td>1798: target not supported</td><td><p>value is string</p>
-</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;dataAbsentReason</td><td>1796: target not supported</td><td><p>Always has data</p>
 </td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;interpretation</td><td>1649: terminologyMaps using VF_ImageInterpretation on ELECTROCARDIOGRAM (EKG) - SUMMARY (691.5-.03)</td><td></td> </tr>
@@ -574,8 +542,6 @@
  <tr><td>&nbsp;&nbsp;&nbsp;code</td><td>&lt; 363787002 |Observable entity| OR &lt; 386053000 |Evaluation procedure|</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;value[x]</td><td>&lt; 441742003 |Evaluation finding|</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;value[x] (valueString)</td><td>&lt; 441742003 |Evaluation finding|</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;value[x] (valueQuantity)</td><td>&lt; 441742003 |Evaluation finding|</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;value[x] (valueCodeableConcept)</td><td>&lt; 441742003 |Evaluation finding|</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;interpretation</td><td>&lt; 260245000 |Findings values|</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;bodySite</td><td>&lt; 123037004 |Body structure|</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;specimen</td><td>&lt; 123038009 |Specimen|</td> </tr>
@@ -611,8 +577,6 @@
  <tr><td>&nbsp;&nbsp;&nbsp;performer</td><td>OBX.15 / (Practitioner)  OBX-16,  PRT-5:PRT-4='RO' /  (Device)  OBX-18 , PRT-10:PRT-4='EQUIP' / (Organization)  OBX-23,  PRT-8:PRT-4='PO'</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;value[x]</td><td>OBX.2, OBX.5, OBX.6</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;value[x] (valueString)</td><td>OBX.2, OBX.5, OBX.6</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;value[x] (valueQuantity)</td><td>OBX.2, OBX.5, OBX.6</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;value[x] (valueCodeableConcept)</td><td>OBX.2, OBX.5, OBX.6</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;dataAbsentReason</td><td>N/A</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;interpretation</td><td>OBX-8</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;note</td><td>NTE.3 (partner NTE to OBX, or sometimes another (child?) OBX)</td> </tr>
@@ -666,8 +630,6 @@
  <tr><td>&nbsp;&nbsp;&nbsp;performer</td><td>participation[typeCode=PRF]</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;value[x]</td><td>value</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;value[x] (valueString)</td><td>value</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;value[x] (valueQuantity)</td><td>value</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;value[x] (valueCodeableConcept)</td><td>value</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;dataAbsentReason</td><td>value.nullFlavor</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;interpretation</td><td>interpretationCode</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;note</td><td>subjectOf.observationEvent[code=&quot;annotation&quot;].value</td> </tr>
@@ -721,8 +683,6 @@
  <tr><td>&nbsp;&nbsp;&nbsp;code</td><td>116680003 |Is a|</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;value[x]</td><td>363714003 |Interprets|</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;value[x] (valueString)</td><td>363714003 |Interprets|</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;value[x] (valueQuantity)</td><td>363714003 |Interprets|</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;value[x] (valueCodeableConcept)</td><td>363714003 |Interprets|</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;interpretation</td><td>363713009 |Has interpretation|</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;bodySite</td><td>718497002 |Inherent location|</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;specimen</td><td>704319004 |Inherent in|</td> </tr>
@@ -757,7 +717,7 @@
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025 <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#1.2.529 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Feb 20, 2025 14:57+0000">2025-02-20</span>
+          IG &#169; 2025 <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#1.2.531 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Sat, Feb 22, 2025 09:56+0000">2025-02-22</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

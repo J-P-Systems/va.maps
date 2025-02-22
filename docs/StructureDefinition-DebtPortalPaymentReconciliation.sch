@@ -76,6 +76,14 @@
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
+    <sch:title>f:PaymentReconciliation/f:paymentAmount</sch:title>
+    <sch:rule context="f:PaymentReconciliation/f:paymentAmount">
+      <sch:assert test="count(f:id) &lt;= 1">id: maximum cardinality of 'id' is 1</sch:assert>
+      <sch:assert test="count(f:value) &lt;= 1">value: maximum cardinality of 'value' is 1</sch:assert>
+      <sch:assert test="count(f:currency) &lt;= 1">currency: maximum cardinality of 'currency' is 1</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
     <sch:title>f:PaymentReconciliation/f:detail/f:type</sch:title>
     <sch:rule context="f:PaymentReconciliation/f:detail/f:type">
       <sch:assert test="count(f:id) &lt;= 1">id: maximum cardinality of 'id' is 1</sch:assert>

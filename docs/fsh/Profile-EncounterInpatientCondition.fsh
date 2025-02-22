@@ -8,16 +8,16 @@ Description: "This StructureDefinition contains the maps for VistA file PTF (45)
 * ^extension[=].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-problems-health-concerns|6.1.0"
 * ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
 * ^extension[=].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-problems-health-concerns|7.0.0"
-* code and category MS
-* category = http://terminology.hl7.org/CodeSystem/condition-category#encounter-diagnosis
+* code and category[us-core] MS
+* category[us-core] = http://terminology.hl7.org/CodeSystem/condition-category#encounter-diagnosis
 
 Mapping: source-to-EncounterInpatientCondition
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: EncounterInpatientCondition
 * code -> "956: source value based on PTF - PRINCIPAL DIAGNOSIS (45-79)" "Infer Condition; no clinical status ; updated category to encounter-diagnosis"
-* category -> "956-1: fixed value = http://terminology.hl7.org/CodeSystem/condition-category#encounter-diagnosis" "generated from mapParameter row 1"
-* extension[assertedDate] -> "2145: target not supported" "auto added because of must-support"
+* category[us-core] -> "956-1: fixed value = http://terminology.hl7.org/CodeSystem/condition-category#encounter-diagnosis" "generated from mapParameter row 1"
+* extension[assertedDate].valueDateTime -> "2145: target not supported" "auto added because of must-support"
 * clinicalStatus -> "2146: target not supported" "auto added because of must-support"
 * verificationStatus -> "2147: target not supported" "auto added because of must-support"
 * subject -> "2148: target not supported" "auto added because of must-support"

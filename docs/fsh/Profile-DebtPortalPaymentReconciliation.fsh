@@ -11,12 +11,13 @@ Description: "This StructureDefinition contains the maps for VistA file AR TRANS
 * extension contains http://hl7.org/fhir/5.0/StructureDefinition/extension-PaymentReconciliation.paymentIssuer named extension-PaymentReconciliation-paymentIssuer 0..1
 * extension contains http://hl7.org/fhir/5.0/StructureDefinition/extension-PaymentReconciliation.allocation.identifier named extension-PaymentReconciliation-allocation-identifier 0..1
 * extension contains http://hl7.org/fhir/5.0/StructureDefinition/extension-PaymentReconciliation.allocation.target named extension-PaymentReconciliation-allocation-target 0..1
-* identifier.value and identifier.type.text and status and created and extension[http://hl7.org/fhir/5.0/StructureDefinition/extension-PaymentReconciliation.paymentIssuer].valueReference and disposition and paymentDate and paymentAmount and paymentIdentifier and extension[http://hl7.org/fhir/5.0/StructureDefinition/extension-PaymentReconciliation.allocation.identifier].valueIdentifier.value and extension[http://hl7.org/fhir/5.0/StructureDefinition/extension-PaymentReconciliation.allocation.identifier].valueIdentifier.type.text and extension[http://hl7.org/fhir/5.0/StructureDefinition/extension-PaymentReconciliation.allocation.target].valueReference and detail[va-principal-collected].amount and detail[va-principal-collected].type.text and detail[va-interest-collected].amount and detail[va-interest-collected].type.text and detail[va-admin-collected].amount and detail[va-admin-collected].type.text and detail[va-marshal-collected].amount and detail[va-marshal-collected].type.text and detail[va-courtcost-collected].amount and detail[va-courtcost-collected].type.text MS
+* identifier.value and identifier.type.text and status and created and extension[http://hl7.org/fhir/5.0/StructureDefinition/extension-PaymentReconciliation.paymentIssuer].valueReference and disposition and paymentDate and paymentAmount.value and paymentAmount.currency and paymentIdentifier and extension[http://hl7.org/fhir/5.0/StructureDefinition/extension-PaymentReconciliation.allocation.identifier].valueIdentifier.value and extension[http://hl7.org/fhir/5.0/StructureDefinition/extension-PaymentReconciliation.allocation.identifier].valueIdentifier.type.text and extension[http://hl7.org/fhir/5.0/StructureDefinition/extension-PaymentReconciliation.allocation.target].valueReference and detail[va-principal-collected].amount and detail[va-principal-collected].type.text and detail[va-interest-collected].amount and detail[va-interest-collected].type.text and detail[va-admin-collected].amount and detail[va-admin-collected].type.text and detail[va-marshal-collected].amount and detail[va-marshal-collected].type.text and detail[va-courtcost-collected].amount and detail[va-courtcost-collected].type.text MS
 * extension[http://hl7.org/fhir/5.0/StructureDefinition/extension-PaymentReconciliation.paymentIssuer].valueReference only Reference(DebtPortalPatient)
 * extension[http://hl7.org/fhir/5.0/StructureDefinition/extension-PaymentReconciliation.allocation.target].valueReference only Reference(DebtPortalInvoice)
 * identifier.type.text = "Transaction Number"
 * status = #active
 * disposition obeys dppr-31-1982
+* paymentAmount.currency = #USD
 * extension[http://hl7.org/fhir/5.0/StructureDefinition/extension-PaymentReconciliation.allocation.identifier].valueIdentifier.type.text = "Bill Number"
 * detail[va-principal-collected].type.text = "Principal Collected"
 * detail[va-interest-collected].type.text = "Interest Collected"
@@ -40,7 +41,8 @@ Source: DebtPortalPaymentReconciliation
 * extension[http://hl7.org/fhir/5.0/StructureDefinition/extension-PaymentReconciliation.paymentIssuer].valueReference -> "2032: reference based on AR TRANSACTION - BILL NUMBER > ACCOUNTS RECEIVABLE - DEBTOR (433-.03 > 430-9)"
 * disposition -> "1982: source value based on AR TRANSACTION - TRANSACTION TYPE > ACCOUNTS RECEIVABLE TRANS.TYPE - NAME (433-12 > 430.3-.01) if IEN = 34 OR 2" "Transaction type name = PAYMENT (IN FULL) when IEN = 34\nTransaction type name = PAYMENT (IN PART) when IEN = 2"
 * paymentDate -> "1981: source value based on AR TRANSACTION - TRANSACTION DATE (433-11)"
-* paymentAmount -> "1983: source value based on AR TRANSACTION - TRANS. AMOUNT (433-15)"
+* paymentAmount.value -> "1983: source value based on AR TRANSACTION - TRANS. AMOUNT (433-15)"
+* paymentAmount.currency -> "1983-1: fixed value = #USD" "generated from mapParameter row 1"
 * paymentIdentifier -> "1985: source value based on AR TRANSACTION - RECEIPT # (433-13)"
 * extension[http://hl7.org/fhir/5.0/StructureDefinition/extension-PaymentReconciliation.allocation.identifier].valueIdentifier.value -> "1979: source value based on AR TRANSACTION - BILL NUMBER (433-.03)"
 * extension[http://hl7.org/fhir/5.0/StructureDefinition/extension-PaymentReconciliation.allocation.identifier].valueIdentifier.type.text -> "1979-1: fixed value = Bill Number" "generated from mapParameter row 1"
@@ -65,7 +67,7 @@ Source: DebtPortalPaymentReconciliation
 * extension[http://hl7.org/fhir/5.0/StructureDefinition/extension-PaymentReconciliation.paymentIssuer].valueReference -> "IB.ARTransaction.AccountsReceivableIEN,IB.ARTransaction.PatientIEN,IB.ARTransactionComment.PatientIEN,IB.ARTransactionDescription.PatientIEN,IB.ARTransactionFiscalYear.PatientIEN\nIB.AccountsReceivable.ARDebtorIEN"
 * disposition -> "IB.ARTransaction.ARTransactionTypeIEN\nDim.ARTransactionType.ARTransactionType"
 * paymentDate -> "IB.ARTransaction.TransactionDateTime,IB.ARTransactionComment.TransactionDateTime,IB.ARTransactionDescription.TransactionDateTime,IB.ARTransactionFiscalYear.TransactionDateTime"
-* paymentAmount -> "IB.ARTransaction.TransactionAmount"
+* paymentAmount.value -> "IB.ARTransaction.TransactionAmount"
 * paymentIdentifier -> "IB.ARTransaction.ReceiptNumber"
 * extension[http://hl7.org/fhir/5.0/StructureDefinition/extension-PaymentReconciliation.allocation.identifier].valueIdentifier.value -> "IB.ARTransaction.AccountsReceivableIEN,IB.ARTransaction.PatientIEN,IB.ARTransactionComment.PatientIEN,IB.ARTransactionDescription.PatientIEN,IB.ARTransactionFiscalYear.PatientIEN"
 * detail[va-principal-collected].amount -> "IB.ARTransaction.PrincipaAmountCollected"

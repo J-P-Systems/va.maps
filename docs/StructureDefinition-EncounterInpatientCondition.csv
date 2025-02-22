@@ -27,7 +27,20 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "Condition.extension:assertedDate","Condition.extension","assertedDate","","",0,1,"Y","","","Extension {[CanonicalType[http://hl7.org/fhir/StructureDefinition/condition-assertedDate]]} {[]}
 ","Date the condition was first asserted","The date on which the existence of the Condition was first asserted or acknowledged.","The assertedDate is in the context of the recording practitioner and might not be the same as the recordedDate.","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}","2145: target not supported"
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"Condition.extension:assertedDate.id","Condition.extension.id","","","",0,1,"","","","id {[]} {[]}
+","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"ele-1
+","","n/a"
+"Condition.extension:assertedDate.extension","Condition.extension.extension","","","",0,0,"","","","Extension {[]} {[]}
+","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
+","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"Condition.extension:assertedDate.url","Condition.extension.url","","","",1,1,"","","","uri {[]} {[]}
+","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""http://hl7.org/fhir/StructureDefinition/condition-assertedDate""/>","","","","",,,,,"",,,,"Extension.url",1,1,"","","N/A"
+"Condition.extension:assertedDate.value[x]","Condition.extension.value[x]","","","",1,1,"","","","dateTime {[]} {[]}
+","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R5/extensibility.html) for a list).","","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"ext-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+","2145: target not supported","N/A"
 "Condition.modifierExtension","Condition.modifierExtension","","extensions
 user content","",0,*,"","Y","","Extension {[]} {[]}
 ","Extensions that cannot be ignored","May be used to represent additional information that is not part of the basic definition of the resource and that modifies the understanding of the element that contains it and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.
@@ -49,17 +62,17 @@ con-5","ele-1:All FHIR elements must have a @value or children {hasValue() or (c
 ","2147: target not supported","Event.status","< 410514004 |Finding context value|","PRB-13","Observation ACT
 .inboundRelationship[typeCode=COMP].source[classCode=OBS, code=""verificationStatus"", moodCode=EVN].value","FiveWs.status","408729009"
 "Condition.category","Condition.category","","","",1,*,"Y","","","CodeableConcept {[]} {[]}
-","category codes","A category assigned to the condition.","The categorization is often highly contextual and may appear poorly differentiated or not very useful in other contexts.","","","","","<valueCodeableConcept xmlns=""http://hl7.org/fhir"">
+","category codes","A category assigned to the condition.","The categorization is often highly contextual and may appear poorly differentiated or not very useful in other contexts.","","","","","","","","",,"extensible","A category assigned to the condition.","http://hl7.org/fhir/ValueSet/condition-category","","pattern:$this}
+","",,"open","Condition.category",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+","< 404684003 |Clinical finding|","'problem' if from PRB-3. 'diagnosis' if from DG1 segment in PV1 message",".code","FiveWs.class"
+"Condition.category:us-core","Condition.category","us-core","","",1,*,"Y","","","CodeableConcept {[]} {[]}
+","problem-list-item | health-concern","A category assigned to the condition.","The categorization is often highly contextual and may appear poorly differentiated or not very useful in other contexts.","","","","","<valueCodeableConcept xmlns=""http://hl7.org/fhir"">
   <coding>
     <system value=""http://terminology.hl7.org/CodeSystem/condition-category""/>
     <code value=""encounter-diagnosis""/>
   </coding>
-</valueCodeableConcept>","","","",,"extensible","A category assigned to the condition.","http://hl7.org/fhir/ValueSet/condition-category","","pattern:$this}
-","",,"open","Condition.category",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+</valueCodeableConcept>","","","",,"required","","http://hl7.org/fhir/us/core/ValueSet/us-core-problem-or-health-concern","",,,,"Condition.category",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","956-1: fixed value = http://terminology.hl7.org/CodeSystem/condition-category#encounter-diagnosis","< 404684003 |Clinical finding|","'problem' if from PRB-3. 'diagnosis' if from DG1 segment in PV1 message",".code","FiveWs.class"
-"Condition.category:us-core","Condition.category","us-core","","",1,*,"Y","","","CodeableConcept {[]} {[]}
-","problem-list-item | health-concern","A category assigned to the condition.","The categorization is often highly contextual and may appear poorly differentiated or not very useful in other contexts.","","","","","","","","",,"required","","http://hl7.org/fhir/us/core/ValueSet/us-core-problem-or-health-concern","",,,,"Condition.category",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","< 404684003 |Clinical finding|","'problem' if from PRB-3. 'diagnosis' if from DG1 segment in PV1 message",".code","FiveWs.class"
 "Condition.category:sdoh","Condition.category","sdoh","","",0,1,"Y","","","CodeableConcept {[]} {[]}
 ","problem-list-item | encounter-diagnosis","A category assigned to the condition.","The categorization is often highly contextual and may appear poorly differentiated or not very useful in other contexts.","","","","","<valueCodeableConcept xmlns=""http://hl7.org/fhir"">
   <coding>

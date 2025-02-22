@@ -13,4 +13,3 @@ Source: LungCancerScreeningCRNA
 * code -> "952: target not supported" "LCSCoordinatorRecommendedNextActionRequest Profile"
 * occurrencePeriod -> "953: target not supported" "LCSCoordinatorRecommendedNextActionRequest Profile"
 * priority -> "960: target not supported" "LCSCoordinatorRecommendedNextActionRequest Profile"
-* note -> "954: target not supported" "LCSCoordinatorRecommendedNextActionRequest Profile"

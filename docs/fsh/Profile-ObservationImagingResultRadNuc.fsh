@@ -4,12 +4,13 @@ Id: ObservationImagingResultRadNuc
 Title: "Observation Imaging Result: Rad/Nuc"
 Description: "This StructureDefinition contains the maps for VistA file RAD/NUC MED REPORTS (74) to us-core-observation-imaging."
 * ^status = #draft
-* identifier.value and identifier.system and partOf and status and subject and effectiveDateTime and issued and performer and valueString and category MS
+* identifier.value and identifier.system and partOf and status and subject and effectiveDateTime and issued and performer and valueString and category[imaging] MS
 * partOf only Reference(ProcedureSurgeryProcedure)
+* subject only Reference(Patient)
 * identifier.system = "http://va.gov/identifiers/$Sta3n/74"
 * status from http://va.gov/fhir/ValueSet/ImageStatusRadNuc
 * status ^binding.description = "see mapping [VF_ImageStatusRadNuc](ConceptMap-VF-ImageStatusRadNuc.html)"
-* category = http://terminology.hl7.org/CodeSystem/observation-category#imaging
+* category[imaging] = http://terminology.hl7.org/CodeSystem/observation-category#imaging
 
 Mapping: source-to-ObservationImagingResultRadNuc
 Id: vista
@@ -25,10 +26,8 @@ Source: ObservationImagingResultRadNuc
 * performer -> "1642: source value based on RAD/NUC MED REPORTS - VERIFYING PHYSICIAN (74-9)"
 * valueString -> "1647: source value based on RAD/NUC MED REPORTS - IMPRESSION TEXT (74-300)"
 * code -> "2196: target not supported" "auto added because of must-support"
-* category -> "1624: fixed value = http://terminology.hl7.org/CodeSystem/observation-category#imaging"
+* category[imaging] -> "1624: fixed value = http://terminology.hl7.org/CodeSystem/observation-category#imaging"
 * dataAbsentReason -> "1796: target not supported" "Always has data"
-* valueQuantity -> "1797: target not supported" "value is string"
-* valueCodeableConcept -> "1798: target not supported" "value is string"
 
 Mapping: cdw-to-ObservationImagingResultRadNuc
 Id: cdw

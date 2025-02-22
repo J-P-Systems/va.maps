@@ -50,7 +50,7 @@ Source: ConditionProblem
 * clinicalStatus -> "605: terminologyMaps using VF_problemStatus on PROBLEM - STATUS (9000011-.12)"
 * verificationStatus -> "611: terminologyMaps using VF_problemVerificationStatus on PROBLEM - CONDITION (9000011-1.02)"
 * abatementDateTime -> "1761: source value based on PROBLEM - DATE RESOLVED (9000011-1.07)"
-* extension[assertedDate] -> "2042: target not supported" "auto added because of must-support"
+* extension[assertedDate].valueDateTime -> "2042: target not supported" "auto added because of must-support"
 
 Mapping: cdw-to-ConditionProblem
 Id: cdw

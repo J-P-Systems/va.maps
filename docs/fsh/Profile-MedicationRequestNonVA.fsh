@@ -72,7 +72,6 @@ Source: MedicationRequestNonVA
 * dosageInstruction.text -> "1745: source value based on NON-VA MEDS - SIG (55.05-16)"
 * note -> "1764: source value based on NON-VA MEDS - DISCLAIMER (55.05-10)" "Concatenate to Comment. Delimit with a period."
 * extension[http://va.gov/fhir/StructureDefinition/medicationrequest-recordedLocation].valueReference -> "1765: reference based on NON-VA MEDS - CLINIC (55.05-13)"
-* category -> "2177: target not supported" "auto added because of must-support"
 * category[us-core] -> "2178: target not supported" "auto added because of must-support"
 * reportedReference -> "2179: target not supported" "auto added because of must-support"
 * medicationReference -> "2180: target not supported" "auto added because of must-support"

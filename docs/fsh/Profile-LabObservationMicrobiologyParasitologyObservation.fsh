@@ -8,10 +8,10 @@ Description: "This StructureDefinition contains the maps for VistA file MICROBIO
 * performer ^slicing.discriminator.path = "$this"
 * performer ^slicing.rules = #open
 * performer contains va-at 0..1 and va-by 0..1
-* code and status and valueString and effectiveDateTime and note and performer[va-at] and performer[va-by] and specimen and identifier.value and identifier.system and code.coding and code.coding.system and code.coding.code and code.coding.display and issued and category and subject MS
+* code and status and valueString and effectiveDateTime and note and performer[va-at] and performer[va-by] and specimen and identifier.value and identifier.system and code.coding and code.coding.system and code.coding.code and code.coding.display and issued and category[Laboratory] and subject MS
 * performer[va-at] only Reference(Organization)
 * performer[va-by] only Reference(Practitioner)
-* specimen only Reference(LabObservationMicrobiologySpecimen)
+* specimen only Reference(LabObservationMicrobiologyParasitologySpecimen)
 * subject only Reference(Patient)
 * code obeys lompo-49-1528
 * status from http://va.gov/fhir/ValueSet/LabObservationStatus
@@ -21,7 +21,7 @@ Description: "This StructureDefinition contains the maps for VistA file MICROBIO
 * code.coding.system obeys lompo-49-1480-1
 * code.coding.code obeys lompo-49-1480-2
 * code.coding.display obeys lompo-49-1480-3
-* category = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
+* category[Laboratory] = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
 
 Invariant: lompo-49-1528
 Description: "If (63.05-.35 > 63.5-13 > 60-100 > 60.01-95.3 > 95.3-) is NULL then fixed value http://loinc.org#42807-8 \"Parasite identified in Isolate\""
@@ -55,8 +55,6 @@ Source: LabObservationMicrobiologyParasitologyObservation
 * code -> "1528: fixed value = http://loinc.org#42807-8 \"Parasite identified in Isolate\" when MICROBIOLOGY - ORDERED TEST > ORDERED TEST - LAB TEST ORDERED > LABORATORY TEST - SITE/SPECIMEN > SITE/SPECIMEN - LOINC CODE > LAB LOINC (63.05-.35 > 63.5-13 > 60-100 > 60.01-95.3 > 95.3-) if NULL"
 * status -> "1489: terminologyMaps using VF_LabObservationStatus on MICROBIOLOGY - PARASITE RPT STATUS (63.05-15)"
 * valueString -> "1857: source value based on MICROBIOLOGY - PARASITE > PARASITE - PARASITE > ETIOLOGY FIELD - NAME (63.05-16 > 63.34-.01 > 61.2-.01)"
-* valueQuantity -> "2099: target not supported" "auto added because of must-support"
-* valueCodeableConcept -> "2100: target not supported" "auto added because of must-support"
 * effectiveDateTime -> "1450: source value based on MICROBIOLOGY - DATE/TIME SPECIMEN TAKEN (63.05-.01)"
 * note -> "1454: source value based on MICROBIOLOGY - COMMENT ON SPECIMEN (63.05-.99)"
 * performer[va-at] -> "1464: reference based on MICROBIOLOGY - ACCESSIONING INSTITUTION (63.05-.112)"
@@ -69,7 +67,7 @@ Source: LabObservationMicrobiologyParasitologyObservation
 * code.coding.code -> "1480-2: source value based on MICROBIOLOGY - ORDERED TEST > ORDERED TEST - LAB TEST ORDERED > LABORATORY TEST - SITE/SPECIMEN > SITE/SPECIMEN - LOINC CODE > LAB LOINC - CODE (63.05-.35 > 63.5-13 > 60-100 > 60.01-95.3 > 95.3-.01) if Not NULL" "generated from mapParameter row 2"
 * code.coding.display -> "1480-3: source value based on MICROBIOLOGY - ORDERED TEST > ORDERED TEST - LAB TEST ORDERED > LABORATORY TEST - SITE/SPECIMEN > SITE/SPECIMEN - LOINC CODE > LAB LOINC - COMPONENT (63.05-.35 > 63.5-13 > 60-100 > 60.01-95.3 > 95.3-1) if Not NULL" "generated from mapParameter row 3"
 * issued -> "1484: source value based on MICROBIOLOGY - DATE REPORT COMPLETED (63.05-.03)"
-* category -> "843: fixed value = http://terminology.hl7.org/CodeSystem/observation-category#laboratory"
+* category[Laboratory] -> "843: fixed value = http://terminology.hl7.org/CodeSystem/observation-category#laboratory"
 * dataAbsentReason -> "2031: target not supported" "because of must-support"
 * subject -> "844: reference based on PATIENT - LABORATORY REFERENCE > LAB DATA - LRDFN (2-63 > 63-.01)" "Pointer from PATIENT (2)"
 

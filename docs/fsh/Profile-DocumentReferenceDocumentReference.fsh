@@ -9,6 +9,10 @@ Description: "This StructureDefinition contains the maps for VistA file TIU DOCU
 * ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
 * ^extension[=].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference|7.0.0"
 * identifier and identifier.system and type and type.coding.system and type.coding.code and type.text and category[us-core] and subject and date and author and authenticator and custodian and description and content.attachment.id and content.attachment.contentType and content.attachment.url and content.attachment.size and content.attachment.hash and content.attachment.title and content.attachment.creation and context.encounter and context.event and context.period.start and context.period.end and context.facilityType and context.practiceSetting MS
+* subject only Reference(Patient)
+* author only Reference(Practitioner)
+* authenticator only Reference(Practitioner)
+* custodian only Reference(Organization)
 * identifier.system = "http://va.gov/identifiers/$Sta3n/8925"
 * type.coding.system = "http://loinc.org"
 * category[us-core] = http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category#clinical-note
@@ -26,12 +30,12 @@ Source: DocumentReferenceDocumentReference
 * type.coding.code -> "874-2: source value based on TIU DOCUMENT - DOCUMENT TYPE > TIU DOCUMENT DEFINITION - VHA ENTERPRISE STANDARD TITLE > TIU VHA ENTERPRISE STANDARD TITLE - CODING SYSTEM (8925-.01 > 8925.1-1501 > 8926.1-2)" "generated from mapParameter row 2"
 * type.text -> "874-3: source value based on TIU DOCUMENT - DOCUMENT TYPE > TIU DOCUMENT DEFINITION - VHA ENTERPRISE STANDARD TITLE > TIU VHA ENTERPRISE STANDARD TITLE - DOCUMENT TYPE (8925-.01 > 8925.1-1501 > 8926.1-.08)" "generated from mapParameter row 3"
 * category[us-core] -> "875: fixed value = http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category#clinical-note" "(= NOTE, ADDENDUM, CONSULT, etc.?)\nUse TIU_VHA_ENTERPRISE_STANDARD_TITLE_8926.1 file provided by KBS to look up DocType\nIf the document has a type or parent value, use that for the category"
-* subject -> "876: source value based on TIU DOCUMENT - PATIENT (8925-.02)" "Pointer to PATIENT/HIS FILE (#9000001)"
-* date -> "877: source value based on TIU DOCUMENT - ENTRY DATE/TIME (8925-1201)" "looking into façade pattern guidance on whether this is meaningful. 03/6/23 updated mapping based on LHV feedback"
-* author -> "878: source value based on TIU DOCUMENT - AUTHOR/DICTATOR (8925-1202)"
-* author -> "1663: source value based on TIU DOCUMENT - SIGNED BY (8925-1502)" "Added signed by as an author since it allows more than one."
-* authenticator -> "879: source value based on TIU DOCUMENT - VERIFIED BY (8925-1306)"
-* custodian -> "880: source value based on TIU DOCUMENT - DIVISION (8925-1212)" "who maintains the document = VA…. Or maybe a specific? Clinic\nPer 03/02/2023 email from LH, changed the Vista field from 1205 (hospital location) to 1212 (division)."
+* subject -> "876: reference based on TIU DOCUMENT - PATIENT (8925-.02)" "Pointer to PATIENT/HIS FILE (#9000001)"
+* date -> "877: transform using Resource_creation_time()" "looking into façade pattern guidance on whether this is meaningful. 03/6/23 updated mapping based on LHV feedback"
+* author -> "878: reference based on TIU DOCUMENT - AUTHOR/DICTATOR (8925-1202)"
+* author -> "1663: reference based on TIU DOCUMENT - SIGNED BY (8925-1502)" "Added signed by as an author since it allows more than one."
+* authenticator -> "879: reference based on TIU DOCUMENT - VERIFIED BY (8925-1306)"
+* custodian -> "880: reference based on TIU DOCUMENT - DIVISION (8925-1212)" "who maintains the document = VA…. Or maybe a specific? Clinic\nPer 03/02/2023 email from LH, changed the Vista field from 1205 (hospital location) to 1212 (division)."
 * description -> "885: source value based on TIU DOCUMENT - SUBJECT (OPTIONAL description) (8925-1701)"
 * securityLabel -> "886: target not supported"
 * content.id -> "887: target not supported" "remove"
@@ -64,7 +68,6 @@ Source: DocumentReferenceDocumentReference
 * type.coding.code -> "TIU.TIUDocument.TIUDocumentDefinitionIEN"
 * type.text -> "TIU.TIUDocument.TIUDocumentDefinitionIEN"
 * subject -> "TIU.TIUDocument.PatientIEN"
-* date -> "TIU.TIUDocument.EntryDateTime"
 * author -> "TIU.TIUDocument.AuthorDictatorStaffIEN"
 * author -> "TIU.TIUDocument.SignedByStaffIEN"
 * authenticator -> "TIU.TIUDocument.VerifiedByStaffIEN"

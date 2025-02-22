@@ -8,7 +8,7 @@ Description: "This StructureDefinition contains the maps for VistA file V POV (9
 * ^extension[=].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-encounter-diagnosis|6.1.0"
 * ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
 * ^extension[=].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-encounter-diagnosis|7.0.0"
-* category[us-core] and identifier.value and identifier.system and clinicalStatus and code and code.coding.system and code.coding.code and subject and encounter and onsetDateTime and recordedDate and verificationStatus and recorder MS
+* category[us-core] and identifier.value and identifier.system and clinicalStatus and code.coding.code and code.coding.system and subject and encounter and onsetDateTime and recordedDate and verificationStatus and recorder MS
 * subject only Reference(Patient)
 * recorder only Reference(Practitioner)
 * category[us-core] = http://terminology.hl7.org/CodeSystem/condition-category#encounter-diagnosis
@@ -33,9 +33,8 @@ Source: ConditionEncounterDiagnosis
 * identifier.value -> "346: source value based on V POV - IEN (9000010.07-.001)"
 * identifier.system -> "346-1: fixed value = http://va.gov/identifiers/$Sta3n/9000010.07" "generated from mapParameter row 1"
 * clinicalStatus -> "350: exclude value if Null" "should this be active or null?"
-* code -> "1613: source value based on V POV - POV > ICD DIAGNOSIS (9000010.07-.01 > 80-)"
+* code.coding.code -> "1613: source value based on V POV - POV > ICD DIAGNOSIS - CODE NUMBER (9000010.07-.01 > 80-.01)"
 * code.coding.system -> "1613-1: fixed value = urn:see-termmap-in-mapParameter" "generated from mapParameter row 1"
-* code.coding.code -> "1613-2: source value based on V POV - POV > ICD DIAGNOSIS - CODE NUMBER (9000010.07-.01 > 80-.01)" "generated from mapParameter row 2"
 * subject -> "1611: reference based on V POV - PATIENT NAME (9000010.07-.02)" "We have patient resource; unclear why name is repeated"
 * encounter -> "368: source value based on V POV - VISIT (9000010.07-.03)"
 * onsetDateTime -> "370: source value based on V POV - DATE OF INJURY (9000010.07-.13)"
@@ -44,14 +43,13 @@ Source: ConditionEncounterDiagnosis
 * verificationStatus -> "606: terminologyMaps using VF_encounterProblemVerificationStatus on V POV - MODIFIER (9000010.07-.06)"
 * abatementDateTime -> "1766: target not supported" "abatementDate is must support"
 * recorder -> "1833: reference based on V POV - ENCOUNTER PROVIDER (9000010.07-1204)"
-* extension[assertedDate] -> "2043: target not supported" "auto added because of must-support"
+* extension[assertedDate].valueDateTime -> "2043: target not supported" "auto added because of must-support"
 
 Mapping: cdw-to-ConditionEncounterDiagnosis
 Id: cdw
 Title: "Clinical Data Warehouse (CDW)"
 Source: ConditionEncounterDiagnosis
 * clinicalStatus -> "Outpat.VDiagnosis.Modifier,Outpat.WorkloadVDiagnosis.Modifier"
-* code -> "Outpat.VDiagnosis.ICDIEN,Outpat.WorkloadVDiagnosis.ICDIEN"
 * code.coding.code -> "Outpat.VDiagnosis.ICDIEN,Outpat.WorkloadVDiagnosis.ICDIEN\nDim.ICD10.ICD10Code,Dim.ICD9.ICD9Code"
 * subject -> "Outpat.VDiagnosis.PatientIEN,Outpat.WorkloadVDiagnosis.PatientIEN"
 * encounter -> "Outpat.VDiagnosis.VisitDateTime,Outpat.VDiagnosis.VisitIEN,Outpat.WorkloadVDiagnosis.VisitDateTime,Outpat.WorkloadVDiagnosis.VisitIEN"
@@ -66,7 +64,6 @@ Id: sda
 Title: "Summary Document Architecure (SDA)"
 Source: ConditionEncounterDiagnosis
 * clinicalStatus -> "Diagnosis.Diagnosis[CodeTableDetail.Diagnosis].OriginalText"
-* code -> "Diagnosis.Diagnosis,Diagnosis.Diagnosis[CodeTableDetail.Diagnosis].Code"
 * code.coding.code -> "Diagnosis.Diagnosis,Diagnosis.Diagnosis[CodeTableDetail.Diagnosis].Code"
 * encounter -> "Diagnosis.EncounterNumber,Diagnosis.EnteredAt,Diagnosis.EnteredBy,Diagnosis.EnteredOn,Diagnosis.FromTime,Diagnosis.ToTime"
 * onsetDateTime -> "Diagnosis.OnsetTime"

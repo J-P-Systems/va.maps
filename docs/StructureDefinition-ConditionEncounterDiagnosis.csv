@@ -27,7 +27,20 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "Condition.extension:assertedDate","Condition.extension","assertedDate","","",0,1,"Y","","","Extension {[CanonicalType[http://hl7.org/fhir/StructureDefinition/condition-assertedDate]]} {[]}
 ","Date the condition was first asserted","The date on which the existence of the Condition was first asserted or acknowledged.","The assertedDate is in the context of the recording practitioner and might not be the same as the recordedDate.","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}","2043: target not supported"
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"Condition.extension:assertedDate.id","Condition.extension.id","","","",0,1,"","","","id {[]} {[]}
+","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"ele-1
+","","n/a"
+"Condition.extension:assertedDate.extension","Condition.extension.extension","","","",0,0,"","","","Extension {[]} {[]}
+","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
+","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"Condition.extension:assertedDate.url","Condition.extension.url","","","",1,1,"","","","uri {[]} {[]}
+","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""http://hl7.org/fhir/StructureDefinition/condition-assertedDate""/>","","","","",,,,,"",,,,"Extension.url",1,1,"","","N/A"
+"Condition.extension:assertedDate.value[x]","Condition.extension.value[x]","","","",1,1,"","","","dateTime {[]} {[]}
+","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R5/extensibility.html) for a list).","","","","","","","","","",,,,,"",,,,"Extension.value[x]",0,1,"ext-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+","2043: target not supported","N/A"
 "Condition.modifierExtension","Condition.modifierExtension","","extensions
 user content","",0,*,"","Y","","Extension {[]} {[]}
 ","Extensions that cannot be ignored","May be used to represent additional information that is not part of the basic definition of the resource and that modifies the understanding of the element that contains it and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.
@@ -91,7 +104,7 @@ con-5","ele-1:All FHIR elements must have a @value or children {hasValue() or (c
 "Condition.code","Condition.code","","type
 ","",1,1,"Y","","Y","CodeableConcept {[]} {[]}
 ","Identification of the condition, problem or diagnosis","Identification of the condition, problem or diagnosis.","","0..1 to account for primarily narrative only resources.","","","","","","","",,"extensible","Valueset to describe the actual problem experienced by the patient","http://hl7.org/fhir/us/core/ValueSet/us-core-condition-code","",,,,"Condition.code",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","1613: source value based on V POV - POV > ICD DIAGNOSIS (9000010.07-.01 > 80-)","Outpat.VDiagnosis.ICDIEN,Outpat.WorkloadVDiagnosis.ICDIEN","Diagnosis.Diagnosis,Diagnosis.Diagnosis[CodeTableDetail.Diagnosis].Code","Event.code","code 246090004 |Associated finding| (< 404684003 |Clinical finding| MINUS
+","Event.code","code 246090004 |Associated finding| (< 404684003 |Clinical finding| MINUS
 << 420134006 |Propensity to adverse reactions| MINUS 
 << 473010000 |Hypersensitivity condition| MINUS 
 << 79899007 |Drug interaction| MINUS
@@ -126,7 +139,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","C*E.7","./codeSystemVersion"
 "Condition.code.coding.code","Condition.code.coding.code","","","",0,1,"Y","","Y","code {[]} {[]}
 ","Symbol in syntax defined by the system","A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination).","","Need to refer to a particular code in the system.","","","","","","","",,,,,"",,,,"Coding.code",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","1613-2: source value based on V POV - POV > ICD DIAGNOSIS - CODE NUMBER (9000010.07-.01 > 80-.01)","Outpat.VDiagnosis.ICDIEN,Outpat.WorkloadVDiagnosis.ICDIEN
+","1613: source value based on V POV - POV > ICD DIAGNOSIS - CODE NUMBER (9000010.07-.01 > 80-.01)","Outpat.VDiagnosis.ICDIEN,Outpat.WorkloadVDiagnosis.ICDIEN
 Dim.ICD10.ICD10Code,Dim.ICD9.ICD9Code","Diagnosis.Diagnosis,Diagnosis.Diagnosis[CodeTableDetail.Diagnosis].Code","C*E.1","./code"
 "Condition.code.coding.display","Condition.code.coding.display","","","",0,1,"","","Y","string {[]} {[]}
 ","Representation defined by the system","A representation of the meaning of the code in the system, following the rules of the system.","","Need to be able to carry a human-readable meaning of the code for readers that do not know  the system.","","","","","","","",,,,,"",,,,"Coding.display",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}

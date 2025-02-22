@@ -3,7 +3,7 @@ Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-pulse-oximetry
 Id: VitalSignsSpO2
 Title: "Vital Signs: SpO2"
 Description: "This StructureDefinition contains the maps for VistA file GMRV VITAL MEASUREMENT (120.5) to us-core-pulse-oximetry."
-* ^status = #draft
+* ^status = #active
 * ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
 * ^extension[=].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-pulse-oximetry|6.1.0"
 * ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
@@ -14,19 +14,21 @@ Description: "This StructureDefinition contains the maps for VistA file GMRV VIT
 * component contains va-pre-condition 0..1 and va-pre-condition-device 0..1
 * extension contains http://hl7.org/fhir/StructureDefinition/observation-deviceCode named observation-deviceCode 0..1
 * extension contains http://hl7.org/fhir/StructureDefinition/observation-bodyPosition named observation-bodyPosition 0..1
-* component[FlowRate].valueQuantity.value and component[FlowRate].valueQuantity.code and component[FlowRate].code and component[Concentration].valueQuantity.value and component[Concentration].valueQuantity.code and component[Concentration].code and issued and performer and status and effectiveDateTime and category and subject and identifier.value and identifier.system and code.coding and bodySite and extension[http://hl7.org/fhir/StructureDefinition/observation-deviceCode].valueCodeableConcept and method and component[va-pre-condition].valueCodeableConcept.coding and component[va-pre-condition].code and component[va-pre-condition-device].valueCodeableConcept.coding and component[va-pre-condition-device].code and extension[http://hl7.org/fhir/StructureDefinition/observation-bodyPosition].valueCodeableConcept and valueQuantity.value and valueQuantity.code MS
+* component[FlowRate].valueQuantity.value and component[FlowRate].valueQuantity.code and component[FlowRate].valueQuantity.unit and component[FlowRate].code and component[Concentration].valueQuantity.value and component[Concentration].valueQuantity.code and component[Concentration].valueQuantity.unit and component[Concentration].code and issued and performer and status and effectiveDateTime and category[VSCat] and subject and identifier.value and identifier.system and code.coding and bodySite and extension[http://hl7.org/fhir/StructureDefinition/observation-deviceCode].valueCodeableConcept and method and component[va-pre-condition].valueCodeableConcept and component[va-pre-condition].code and component[va-pre-condition-device].valueCodeableConcept and component[va-pre-condition-device].code and extension[http://hl7.org/fhir/StructureDefinition/observation-bodyPosition].valueCodeableConcept and valueQuantity.value and valueQuantity.code MS
 * performer only Reference(Organization)
 * subject only Reference(Patient)
 * code.coding 2..*
 * component[FlowRate].valueQuantity.value obeys vsso-14-1239
 * component[FlowRate].valueQuantity.code obeys vsso-14-1239-1
-* component[FlowRate].code obeys vsso-14-1239-2
+* component[FlowRate].valueQuantity.unit obeys vsso-14-1239-2
+* component[FlowRate].code obeys vsso-14-1239-3
 * component[Concentration].valueQuantity.value obeys vsso-14-1240
 * component[Concentration].valueQuantity.code obeys vsso-14-1240-1
-* component[Concentration].code obeys vsso-14-1240-2
+* component[Concentration].valueQuantity.unit obeys vsso-14-1240-2
+* component[Concentration].code obeys vsso-14-1240-3
 * status obeys vsso-14-655
 * status obeys vsso-14-656
-* category = http://terminology.hl7.org/CodeSystem/observation-category#vital-signs
+* category[VSCat] = http://terminology.hl7.org/CodeSystem/observation-category#vital-signs
 * identifier.system = "http://va.gov/identifiers/$Sta3n/120.5"
 * code.coding from http://va.gov/fhir/ValueSet/VitalsCodes
 * code.coding ^binding.description = "see mapping [VF_VitalsCodes](ConceptMap-VF-VitalsCodes.html)"
@@ -36,11 +38,11 @@ Description: "This StructureDefinition contains the maps for VistA file GMRV VIT
 * extension[http://hl7.org/fhir/StructureDefinition/observation-deviceCode].valueCodeableConcept ^binding.description = "see mapping [VF_VitalsMeasurementDevice](ConceptMap-VF-VitalsMeasurementDevice.html)"
 * method from http://va.gov/fhir/ValueSet/VitalsMethod
 * method ^binding.description = "see mapping [VF_VitalsMethod](ConceptMap-VF-VitalsMethod.html)"
-* component[va-pre-condition].valueCodeableConcept.coding from http://va.gov/fhir/ValueSet/VitalsPrecondition
-* component[va-pre-condition].valueCodeableConcept.coding ^binding.description = "see mapping [VF_VitalsPrecondition](ConceptMap-VF-VitalsPrecondition.html)"
+* component[va-pre-condition].valueCodeableConcept from http://va.gov/fhir/ValueSet/VitalsPrecondition
+* component[va-pre-condition].valueCodeableConcept ^binding.description = "see mapping [VF_VitalsPrecondition](ConceptMap-VF-VitalsPrecondition.html)"
 * component[va-pre-condition].code = http://loinc.org#104158-1 "Associated precondition - Reported"
-* component[va-pre-condition-device].valueCodeableConcept.coding from http://va.gov/fhir/ValueSet/VitalsQualifyingDevice
-* component[va-pre-condition-device].valueCodeableConcept.coding ^binding.description = "see mapping [VF_VitalsQualifyingDevice](ConceptMap-VF-VitalsQualifyingDevice.html)"
+* component[va-pre-condition-device].valueCodeableConcept from http://va.gov/fhir/ValueSet/VitalsQualifyingDevice
+* component[va-pre-condition-device].valueCodeableConcept ^binding.description = "see mapping [VF_VitalsQualifyingDevice](ConceptMap-VF-VitalsQualifyingDevice.html)"
 * component[va-pre-condition-device].code = http://loinc.org#104158-1 "Associated precondition - Reported"
 * extension[http://hl7.org/fhir/StructureDefinition/observation-bodyPosition].valueCodeableConcept from http://va.gov/fhir/ValueSet/VitalsBodyPosition
 * extension[http://hl7.org/fhir/StructureDefinition/observation-bodyPosition].valueCodeableConcept ^binding.description = "see mapping [VF_VitalsBodyPosition](ConceptMap-VF-VitalsBodyPosition.html)"
@@ -58,6 +60,11 @@ Severity: #warning
 Expression: "true"
 
 Invariant: vsso-14-1239-2
+Description: "If VUID = 4500637 then fixed value L/min"
+Severity: #warning
+Expression: "true"
+
+Invariant: vsso-14-1239-3
 Description: "If VUID = 4500637 then fixed value http://loinc.org#3151-8"
 Severity: #warning
 Expression: "true"
@@ -73,6 +80,11 @@ Severity: #warning
 Expression: "true"
 
 Invariant: vsso-14-1240-2
+Description: "If VUID = 4500637 then fixed value %"
+Severity: #warning
+Expression: "true"
+
+Invariant: vsso-14-1240-3
 Description: "If VUID = 4500637 then fixed value http://loinc.org#3150-0"
 Severity: #warning
 Expression: "true"
@@ -98,16 +110,18 @@ Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: VitalSignsSpO2
 * component[FlowRate].valueQuantity.value -> "1239: transform using Split_SpO2_value.Flow() on GMRV VITAL MEASUREMENT - SUPPLEMENTAL O2 (120.5-1.4) if VUID = 4500637" "Value needs to be parsed from VistA"
 * component[FlowRate].valueQuantity.code -> "1239-1: fixed value = #L/min if VUID = 4500637" "generated from mapParameter row 1"
-* component[FlowRate].code -> "1239-2: fixed value = http://loinc.org#3151-8 if VUID = 4500637" "generated from mapParameter row 2"
+* component[FlowRate].valueQuantity.unit -> "1239-2: fixed value = L/min if VUID = 4500637" "generated from mapParameter row 2"
+* component[FlowRate].code -> "1239-3: fixed value = http://loinc.org#3151-8 if VUID = 4500637" "generated from mapParameter row 3"
 * component[Concentration].valueQuantity.value -> "1240: transform using Split_SpO2_value.Consentration() on GMRV VITAL MEASUREMENT - SUPPLEMENTAL O2 (120.5-1.4) if VUID = 4500637" "Value needs to be parsed from VistA"
 * component[Concentration].valueQuantity.code -> "1240-1: fixed value = #% if VUID = 4500637" "generated from mapParameter row 1"
-* component[Concentration].code -> "1240-2: fixed value = http://loinc.org#3150-0 if VUID = 4500637" "generated from mapParameter row 2"
+* component[Concentration].valueQuantity.unit -> "1240-2: fixed value = % if VUID = 4500637" "generated from mapParameter row 2"
+* component[Concentration].code -> "1240-3: fixed value = http://loinc.org#3150-0 if VUID = 4500637" "generated from mapParameter row 3"
 * issued -> "652: source value based on GMRV VITAL MEASUREMENT - DATE/TIME VITALS ENTERED (120.5-.04)"
 * performer -> "1653: reference based on GMRV VITAL MEASUREMENT - HOSPITAL LOCATION (120.5-.05)"
 * status -> "655: fixed value = #final when GMRV VITAL MEASUREMENT - REASON ENTERED IN ERROR (120.5-4) if null"
 * status -> "656: fixed value = #entered-in-error when GMRV VITAL MEASUREMENT - REASON ENTERED IN ERROR (120.5-4) if not null"
 * effectiveDateTime -> "657: source value based on GMRV VITAL MEASUREMENT - DATE/TIME VITALS TAKEN (120.5-.01)"
-* category -> "658: fixed value = http://terminology.hl7.org/CodeSystem/observation-category#vital-signs"
+* category[VSCat] -> "658: fixed value = http://terminology.hl7.org/CodeSystem/observation-category#vital-signs"
 * subject -> "659: reference based on GMRV VITAL MEASUREMENT - PATIENT (120.5-.02)"
 * identifier.value -> "660: source value based on GMRV VITAL MEASUREMENT - IEN (120.5-.001)"
 * identifier.system -> "660-1: fixed value = http://va.gov/identifiers/$Sta3n/120.5" "generated from mapParameter row 1"
@@ -115,16 +129,13 @@ Source: VitalSignsSpO2
 * bodySite -> "662: terminologyMaps using VF_VitalsBodySite on GMRV VITAL MEASUREMENT - QUALIFIER > GMRV VITAL QUALIFIER - VUID (120.5-5 > 120.52-99.99)"
 * extension[http://hl7.org/fhir/StructureDefinition/observation-deviceCode].valueCodeableConcept -> "663: terminologyMaps using VF_VitalsMeasurementDevice on GMRV VITAL MEASUREMENT - QUALIFIER > GMRV VITAL QUALIFIER - VUID (120.5-5 > 120.52-99.99)"
 * method -> "867: terminologyMaps using VF_VitalsMethod on GMRV VITAL MEASUREMENT - QUALIFIER > GMRV VITAL QUALIFIER - VUID (120.5-5 > 120.52-99.99)"
-* component[va-pre-condition].valueCodeableConcept.coding -> "1802: terminologyMaps using VF_VitalsPrecondition on GMRV VITAL MEASUREMENT - QUALIFIER > GMRV VITAL QUALIFIER - VUID (120.5-5 > 120.52-99.99)"
+* component[va-pre-condition].valueCodeableConcept -> "1802: terminologyMaps using VF_VitalsPrecondition on GMRV VITAL MEASUREMENT - QUALIFIER > GMRV VITAL QUALIFIER - VUID (120.5-5 > 120.52-99.99)"
 * component[va-pre-condition].code -> "1802-1: fixed value = http://loinc.org#104158-1 \"Associated precondition - Reported\"" "generated from mapParameter row 1"
-* component[va-pre-condition-device].valueCodeableConcept.coding -> "1803: terminologyMaps using VF_VitalsQualifyingDevice on GMRV VITAL MEASUREMENT - QUALIFIER > GMRV VITAL QUALIFIER - VUID (120.5-5 > 120.52-99.99)"
+* component[va-pre-condition-device].valueCodeableConcept -> "1803: terminologyMaps using VF_VitalsQualifyingDevice on GMRV VITAL MEASUREMENT - QUALIFIER > GMRV VITAL QUALIFIER - VUID (120.5-5 > 120.52-99.99)"
 * component[va-pre-condition-device].code -> "1803-1: fixed value = http://loinc.org#104158-1 \"Associated precondition - Reported\"" "generated from mapParameter row 1"
 * extension[http://hl7.org/fhir/StructureDefinition/observation-bodyPosition].valueCodeableConcept -> "1804: terminologyMaps using VF_VitalsBodyPosition on GMRV VITAL MEASUREMENT - QUALIFIER > GMRV VITAL QUALIFIER - VUID (120.5-5 > 120.52-99.99)"
 * valueQuantity.value -> "664: source value based on GMRV VITAL MEASUREMENT - RATE (120.5-1.2) if VUID not = 4500634"
 * valueQuantity.code -> "665: transform using VF_VitalsUnits on GMRV VITAL MEASUREMENT - VITAL TYPE (120.5-.03)" "VPR may transform"
-* dataAbsentReason -> "1793: target not supported" "Always has data"
-* component.dataAbsentReason -> "1794: target not supported" "Always has data"
-* component.valueQuantity -> "2193: target not supported" "auto added because of must-support"
 
 Mapping: cdw-to-VitalSignsSpO2
 Id: cdw
@@ -154,8 +165,8 @@ Source: VitalSignsSpO2
 * bodySite -> "Observation.ObservationMethods"
 * extension[http://hl7.org/fhir/StructureDefinition/observation-deviceCode].valueCodeableConcept -> "Observation.ObservationMethods"
 * method -> "Observation.ObservationMethods"
-* component[va-pre-condition].valueCodeableConcept.coding -> "Observation.ObservationMethods"
-* component[va-pre-condition-device].valueCodeableConcept.coding -> "Observation.ObservationMethods"
+* component[va-pre-condition].valueCodeableConcept -> "Observation.ObservationMethods"
+* component[va-pre-condition-device].valueCodeableConcept -> "Observation.ObservationMethods"
 * extension[http://hl7.org/fhir/StructureDefinition/observation-bodyPosition].valueCodeableConcept -> "Observation.ObservationMethods"
 * valueQuantity.value -> "Observation.ObservationValue,Observation.Extension[ObservationExtension].BMI"
 * valueQuantity.code -> "Observation.ObservationCode,Observation.Extension[ObservationExtension].BMI"

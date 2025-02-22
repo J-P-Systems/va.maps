@@ -8,7 +8,7 @@ Description: "This StructureDefinition contains the maps for VistA file CHEM, HE
 * performer ^slicing.discriminator.path = "$this"
 * performer ^slicing.rules = #open
 * performer contains va-at 0..1 and va-by 0..1
-* effectiveDateTime and note and performer[va-at] and performer[va-by] and specimen and referenceRange.high and referenceRange.low and identifier.value and identifier.system and interpretation and code.coding and code.coding.system and code.coding.code and code.coding.display and issued and status and valueQuantity.value and valueQuantity.unit and category and subject MS
+* effectiveDateTime and note and performer[va-at] and performer[va-by] and specimen and referenceRange.high and referenceRange.low and identifier.value and identifier.system and interpretation and code.coding and code.coding.system and code.coding.code and code.coding.display and issued and status and valueQuantity.value and valueQuantity.unit and category[Laboratory] and subject MS
 * performer[va-at] only Reference(Organization)
 * performer[va-by] only Reference(Practitioner)
 * specimen only Reference(LabObservationChemhemtoxriaserSpecimen)
@@ -19,7 +19,7 @@ Description: "This StructureDefinition contains the maps for VistA file CHEM, HE
 * code.coding.system = "http://loinc.org"
 * status from http://va.gov/fhir/ValueSet/LabObservationStatus
 * status ^binding.description = "see mapping [VF_LabObservationStatus](ConceptMap-VF-LabObservationStatus.html)"
-* category = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
+* category[Laboratory] = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
 
 Mapping: source-to-LabObservationChemhemtoxriaserObservation
 Id: vista
@@ -43,9 +43,7 @@ Source: LabObservationChemhemtoxriaserObservation
 * status -> "860: terminologyMaps using VF_LabObservationStatus on CHEM, HEM, TOX, RIA, SER, etc. - ORDERED TEST > ORDERED TEST - DISPOSITION (63.04-.35 > 63.07-10)"
 * valueQuantity.value -> "857: source value based on CHEM, HEM, TOX, RIA, SER, etc. - testnames (63.04-2+through+862)"
 * valueQuantity.unit -> "864: source value based on CHEM, HEM, TOX, RIA, SER, etc. - ORDERED TEST > ORDERED TEST - LAB TEST ORDERED > LABORATORY TEST - SITE/SPECIMEN > SITE/SPECIMEN - UNITS (63.04-.35 > 63.07-13 > 60-100 > 60.01-6)" "Use CTTDM map \"VistA Lab Chem Units to UCUM\" to convert VistA text units to UCUM, where possible"
-* valueCodeableConcept -> "2054: target not supported" "auto added because of must-support"
-* valueString -> "2055: target not supported" "auto added because of must-support"
-* category -> "843: fixed value = http://terminology.hl7.org/CodeSystem/observation-category#laboratory"
+* category[Laboratory] -> "843: fixed value = http://terminology.hl7.org/CodeSystem/observation-category#laboratory"
 * dataAbsentReason -> "2031: target not supported" "because of must-support"
 * subject -> "844: reference based on PATIENT - LABORATORY REFERENCE > LAB DATA - LRDFN (2-63 > 63-.01)" "Pointer from PATIENT (2)"
 

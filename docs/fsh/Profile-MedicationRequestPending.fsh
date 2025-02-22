@@ -45,7 +45,6 @@ Source: MedicationRequestPending
 * note -> "1759: source value based on PENDING OUTPATIENT ORDERS - PROVIDER COMMENTS (52.41-9)"
 * dosageInstruction.patientInstruction -> "1760: null"
 * intent -> "2197: target not supported" "auto added because of must-support"
-* category -> "2198: target not supported" "auto added because of must-support"
 * category[us-core] -> "2199: target not supported" "auto added because of must-support"
 * reportedBoolean -> "2200: target not supported" "auto added because of must-support"
 * reportedReference -> "2201: target not supported" "auto added because of must-support"

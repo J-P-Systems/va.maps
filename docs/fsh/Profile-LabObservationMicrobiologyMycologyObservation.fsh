@@ -8,10 +8,10 @@ Description: "This StructureDefinition contains the maps for VistA file MICROBIO
 * performer ^slicing.discriminator.path = "$this"
 * performer ^slicing.rules = #open
 * performer contains va-at 0..1 and va-by 0..1
-* status and effectiveDateTime and note and performer[va-at] and performer[va-by] and specimen and identifier.value and identifier.system and code.coding and code.coding.system and code.coding.code and code.coding.display and issued and category and subject MS
+* status and effectiveDateTime and note and performer[va-at] and performer[va-by] and specimen and identifier.value and identifier.system and code.coding and code.coding.system and code.coding.code and code.coding.display and issued and category[Laboratory] and subject MS
 * performer[va-at] only Reference(Organization)
 * performer[va-by] only Reference(Practitioner)
-* specimen only Reference(LabObservationMicrobiologySpecimen)
+* specimen only Reference(LabObservationMicrobiologyMycologySpecimen)
 * subject only Reference(Patient)
 * status from http://va.gov/fhir/ValueSet/LabObservationStatus
 * status ^binding.description = "see mapping [VF_LabObservationStatus](ConceptMap-VF-LabObservationStatus.html)"
@@ -20,7 +20,7 @@ Description: "This StructureDefinition contains the maps for VistA file MICROBIO
 * code.coding.system obeys lommo-45-1480-1
 * code.coding.code obeys lommo-45-1480-2
 * code.coding.display obeys lommo-45-1480-3
-* category = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
+* category[Laboratory] = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
 
 Invariant: lommo-45-1480
 Description: "If Not NULL then source value from (63.05-.35 > 63.5-13 > 60-100 > 60.01-95.3 > 95.3-)"
@@ -47,9 +47,6 @@ Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: LabObservationMicrobiologyMycologyObservation
 * status -> "1490: terminologyMaps using VF_LabObservationStatus on MICROBIOLOGY - MYCOLOGY RPT STATUS (63.05-19)"
-* valueQuantity -> "2109: target not supported" "auto added because of must-support"
-* valueCodeableConcept -> "2110: target not supported" "auto added because of must-support"
-* valueString -> "2111: target not supported" "auto added because of must-support"
 * effectiveDateTime -> "1450: source value based on MICROBIOLOGY - DATE/TIME SPECIMEN TAKEN (63.05-.01)"
 * note -> "1454: source value based on MICROBIOLOGY - COMMENT ON SPECIMEN (63.05-.99)"
 * performer[va-at] -> "1464: reference based on MICROBIOLOGY - ACCESSIONING INSTITUTION (63.05-.112)"
@@ -62,7 +59,7 @@ Source: LabObservationMicrobiologyMycologyObservation
 * code.coding.code -> "1480-2: source value based on MICROBIOLOGY - ORDERED TEST > ORDERED TEST - LAB TEST ORDERED > LABORATORY TEST - SITE/SPECIMEN > SITE/SPECIMEN - LOINC CODE > LAB LOINC - CODE (63.05-.35 > 63.5-13 > 60-100 > 60.01-95.3 > 95.3-.01) if Not NULL" "generated from mapParameter row 2"
 * code.coding.display -> "1480-3: source value based on MICROBIOLOGY - ORDERED TEST > ORDERED TEST - LAB TEST ORDERED > LABORATORY TEST - SITE/SPECIMEN > SITE/SPECIMEN - LOINC CODE > LAB LOINC - COMPONENT (63.05-.35 > 63.5-13 > 60-100 > 60.01-95.3 > 95.3-1) if Not NULL" "generated from mapParameter row 3"
 * issued -> "1484: source value based on MICROBIOLOGY - DATE REPORT COMPLETED (63.05-.03)"
-* category -> "843: fixed value = http://terminology.hl7.org/CodeSystem/observation-category#laboratory"
+* category[Laboratory] -> "843: fixed value = http://terminology.hl7.org/CodeSystem/observation-category#laboratory"
 * dataAbsentReason -> "2031: target not supported" "because of must-support"
 * subject -> "844: reference based on PATIENT - LABORATORY REFERENCE > LAB DATA - LRDFN (2-63 > 63-.01)" "Pointer from PATIENT (2)"
 

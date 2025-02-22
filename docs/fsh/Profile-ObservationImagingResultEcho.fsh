@@ -4,14 +4,15 @@ Id: ObservationImagingResultEcho
 Title: "Observation Imaging Result: Echo"
 Description: "This StructureDefinition contains the maps for VistA file ECHO (691) to us-core-observation-imaging."
 * ^status = #draft
-* identifier.value and identifier.system and status and subject and effectiveDateTime and issued and performer and valueString and interpretation and note and category MS
+* identifier.value and identifier.system and status and subject and effectiveDateTime and issued and performer and valueString and interpretation and note and category[imaging] MS
+* subject only Reference(Patient)
 * performer only Reference(Practitioner)
 * identifier.system = "http://va.gov/identifiers/$Sta3n/691"
 * status from http://va.gov/fhir/ValueSet/ImageStatus
 * status ^binding.description = "see mapping [VF_ImageStatus](ConceptMap-VF-ImageStatus.html)"
 * interpretation from http://va.gov/fhir/ValueSet/ImageInterpretation
 * interpretation ^binding.description = "see mapping [VF_ImageInterpretation](ConceptMap-VF-ImageInterpretation.html)"
-* category = http://terminology.hl7.org/CodeSystem/observation-category#imaging
+* category[imaging] = http://terminology.hl7.org/CodeSystem/observation-category#imaging
 
 Mapping: source-to-ObservationImagingResultEcho
 Id: vista
@@ -28,7 +29,5 @@ Source: ObservationImagingResultEcho
 * interpretation -> "1648: terminologyMaps using VF_ImageInterpretation on ECHO - SUMMARY (691-.03)"
 * note -> "1650: source value based on ECHO - OTHER CONCLUSION (691-38)"
 * code -> "2194: target not supported" "auto added because of must-support"
-* category -> "1624: fixed value = http://terminology.hl7.org/CodeSystem/observation-category#imaging"
+* category[imaging] -> "1624: fixed value = http://terminology.hl7.org/CodeSystem/observation-category#imaging"
 * dataAbsentReason -> "1796: target not supported" "Always has data"
-* valueQuantity -> "1797: target not supported" "value is string"
-* valueCodeableConcept -> "1798: target not supported" "value is string"

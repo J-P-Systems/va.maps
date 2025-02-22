@@ -7,7 +7,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>VAERS Patient - Mappings - US Veterans Health Administration FHIR Map Set Implementation Guide v1.2.529</title>
+    <title>VAERS Patient - Mappings - US Veterans Health Administration FHIR Map Set Implementation Guide v1.2.531</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -65,7 +65,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">US Veterans Health Administration FHIR Map Set Implementation Guide</span>
             <br/>
-            <span style="display:inline-block;">1.2.529 - 250301
+            <span style="display:inline-block;">1.2.531 - 250301
 
 
 
@@ -174,7 +174,7 @@
           <div class="inner-wrapper">
 
 <div style="counter-reset: section 5" class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">US Veterans Health Administration FHIR Map Set Implementation Guide - Local Development build (v1.2.529) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">US Veterans Health Administration FHIR Map Set Implementation Guide - Local Development build (v1.2.531) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="http://va.gov/fhir/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   
 
 
@@ -241,7 +241,7 @@
         
           Draft
           
-            as of 2025-02-20
+            as of 2025-02-22
           
         
       </td>
@@ -291,7 +291,7 @@
 <td class="cell-ce1">source value</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">Patient.identifier</td>
-<td class="cell-ce1"></td>
+<td class="cell-ce1">.value</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">.system=urn:oid:2.16.840.1.113883.4.349
 .type.coding.code=#MR
@@ -384,20 +384,6 @@
 <td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
-<td class="cell-ce1">2023</td>
-<td class="cell-ce1">in process</td>
-<td class="cell-ce1">A2F</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1">target not supported</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1">Patient.telecom</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1">because of must-support; FDA receives minimal deidentified data</td>
-<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient | 5.0.1</td>
-</tr>
-<tr class="row-ro1">
 <td class="cell-ce1">2024</td>
 <td class="cell-ce1">in process</td>
 <td class="cell-ce1">A2F</td>
@@ -460,12 +446,26 @@
 <td class="cell-ce1">ADERS - 24_PtRace_AIAN (24-1)</td>
 <td class="cell-ce1">fixed value</td>
 <td class="cell-ce1">not xsi:nil</td>
-<td class="cell-ce1">Patient.extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-race].extension[ombCategory].valueCoding</td>
-<td class="cell-ce1"></td>
+<td class="cell-ce1">Patient.extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-race]</td>
+<td class="cell-ce1">.extension[ombCategory].valueCoding</td>
 <td class="cell-ce1">urn:oid:2.16.840.1.113883.6.238#1002-5 "American Indian or Alaska Native"</td>
-<td class="cell-ce1"></td>
+<td class="cell-ce1">.extension[text].valueString=”AIAN”</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient | 5.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1948-1</td>
+<td class="cell-ce1">in process</td>
+<td class="cell-ce1">A2F</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">fixed value</td>
+<td class="cell-ce1">not xsi:nil</td>
+<td class="cell-ce1">Patient.extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-race]</td>
+<td class="cell-ce1">.extension[text].valueString</td>
+<td class="cell-ce1">AIAN</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">generated from mapParameter row 1</td>
+<td class="cell-ce1"></td>
 </tr>
 <tr class="row-ro1">
 <td class="cell-ce1">1949</td>
@@ -474,12 +474,26 @@
 <td class="cell-ce1">ADERS - 24_PtRace_Asian (24-2)</td>
 <td class="cell-ce1">fixed value</td>
 <td class="cell-ce1">not xsi:nil</td>
-<td class="cell-ce1">Patient.extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-race].extension[ombCategory].valueCoding</td>
-<td class="cell-ce1"></td>
+<td class="cell-ce1">Patient.extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-race]</td>
+<td class="cell-ce1">.extension[ombCategory].valueCoding</td>
 <td class="cell-ce1">urn:oid:2.16.840.1.113883.6.238#2028-9 "Asian"</td>
-<td class="cell-ce1"></td>
+<td class="cell-ce1">.extension[text].valueString=”Asian”</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient | 5.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1949-1</td>
+<td class="cell-ce1">in process</td>
+<td class="cell-ce1">A2F</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">fixed value</td>
+<td class="cell-ce1">not xsi:nil</td>
+<td class="cell-ce1">Patient.extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-race]</td>
+<td class="cell-ce1">.extension[text].valueString</td>
+<td class="cell-ce1">Asian</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">generated from mapParameter row 1</td>
+<td class="cell-ce1"></td>
 </tr>
 <tr class="row-ro1">
 <td class="cell-ce1">1950</td>
@@ -488,12 +502,26 @@
 <td class="cell-ce1">ADERS - 24_PtRace_BlkAM (24-3)</td>
 <td class="cell-ce1">fixed value</td>
 <td class="cell-ce1">not xsi:nil</td>
-<td class="cell-ce1">Patient.extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-race].extension[ombCategory].valueCoding</td>
-<td class="cell-ce1"></td>
+<td class="cell-ce1">Patient.extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-race]</td>
+<td class="cell-ce1">.extension[ombCategory].valueCoding</td>
 <td class="cell-ce1">urn:oid:2.16.840.1.113883.6.238#2054-5 "Black or African American"</td>
-<td class="cell-ce1"></td>
+<td class="cell-ce1">.extension[text].valueString=”BlkAM”</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient | 5.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1950-1</td>
+<td class="cell-ce1">in process</td>
+<td class="cell-ce1">A2F</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">fixed value</td>
+<td class="cell-ce1">not xsi:nil</td>
+<td class="cell-ce1">Patient.extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-race]</td>
+<td class="cell-ce1">.extension[text].valueString</td>
+<td class="cell-ce1">BlkAM</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">generated from mapParameter row 1</td>
+<td class="cell-ce1"></td>
 </tr>
 <tr class="row-ro1">
 <td class="cell-ce1">1951</td>
@@ -502,12 +530,26 @@
 <td class="cell-ce1">ADERS - 24_PtRace_NH_OPI (24-4)</td>
 <td class="cell-ce1">fixed value</td>
 <td class="cell-ce1">not xsi:nil</td>
-<td class="cell-ce1">Patient.extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-race].extension[ombCategory].valueCoding</td>
-<td class="cell-ce1"></td>
+<td class="cell-ce1">Patient.extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-race]</td>
+<td class="cell-ce1">.extension[ombCategory].valueCoding</td>
 <td class="cell-ce1">urn:oid:2.16.840.1.113883.6.238#2076-8 "Native Hawaiian or Other Pacific Islander"</td>
-<td class="cell-ce1"></td>
+<td class="cell-ce1">.extension[text].valueString=”NH_OPI”</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient | 5.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1951-1</td>
+<td class="cell-ce1">in process</td>
+<td class="cell-ce1">A2F</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">fixed value</td>
+<td class="cell-ce1">not xsi:nil</td>
+<td class="cell-ce1">Patient.extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-race]</td>
+<td class="cell-ce1">.extension[text].valueString</td>
+<td class="cell-ce1">NH_OPI</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">generated from mapParameter row 1</td>
+<td class="cell-ce1"></td>
 </tr>
 <tr class="row-ro1">
 <td class="cell-ce1">1952</td>
@@ -516,12 +558,26 @@
 <td class="cell-ce1">ADERS - 24_PtRace_White (24-5)</td>
 <td class="cell-ce1">fixed value</td>
 <td class="cell-ce1">not xsi:nil</td>
-<td class="cell-ce1">Patient.extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-race].extension[ombCategory].valueCoding</td>
-<td class="cell-ce1"></td>
+<td class="cell-ce1">Patient.extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-race]</td>
+<td class="cell-ce1">.extension[ombCategory].valueCoding</td>
 <td class="cell-ce1">urn:oid:2.16.840.1.113883.6.238#2106-3 "White"</td>
-<td class="cell-ce1"></td>
+<td class="cell-ce1">.extension[text].valueString=”White”</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient | 5.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1952-1</td>
+<td class="cell-ce1">in process</td>
+<td class="cell-ce1">A2F</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">fixed value</td>
+<td class="cell-ce1">not xsi:nil</td>
+<td class="cell-ce1">Patient.extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-race]</td>
+<td class="cell-ce1">.extension[text].valueString</td>
+<td class="cell-ce1">White</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">generated from mapParameter row 1</td>
+<td class="cell-ce1"></td>
 </tr>
 <tr class="row-ro1">
 <td class="cell-ce1">1953</td>
@@ -530,12 +586,26 @@
 <td class="cell-ce1">ADERS - 24_PtRace_Unk (24-6)</td>
 <td class="cell-ce1">fixed value</td>
 <td class="cell-ce1">not xsi:nil</td>
-<td class="cell-ce1">Patient.extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-race].extension[ombCategory].valueCoding</td>
-<td class="cell-ce1"></td>
+<td class="cell-ce1">Patient.extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-race]</td>
+<td class="cell-ce1">.extension[ombCategory].valueCoding</td>
 <td class="cell-ce1">http://terminology.hl7.org/CodeSystem/v3-NullFlavor#UNK "unknown"</td>
-<td class="cell-ce1"></td>
+<td class="cell-ce1">.extension[text].valueString=”Unk”</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient | 5.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1953-1</td>
+<td class="cell-ce1">in process</td>
+<td class="cell-ce1">A2F</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">fixed value</td>
+<td class="cell-ce1">not xsi:nil</td>
+<td class="cell-ce1">Patient.extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-race]</td>
+<td class="cell-ce1">.extension[text].valueString</td>
+<td class="cell-ce1">Unk</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">generated from mapParameter row 1</td>
+<td class="cell-ce1"></td>
 </tr>
 <tr class="row-ro1">
 <td class="cell-ce1">1954</td>
@@ -544,12 +614,26 @@
 <td class="cell-ce1">ADERS - 24_PtRace_Other (24-7)</td>
 <td class="cell-ce1">fixed value</td>
 <td class="cell-ce1">not xsi:nil</td>
-<td class="cell-ce1">Patient.extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-race].extension[ombCategory].valueCoding</td>
-<td class="cell-ce1"></td>
+<td class="cell-ce1">Patient.extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-race]</td>
+<td class="cell-ce1">.extension[ombCategory].valueCoding</td>
 <td class="cell-ce1">urn:oid:2.16.840.1.113883.6.238#2131-1 "Other Race"</td>
-<td class="cell-ce1"></td>
+<td class="cell-ce1">.extension[text].valueString=”Other”</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient | 5.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1954-1</td>
+<td class="cell-ce1">in process</td>
+<td class="cell-ce1">A2F</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">fixed value</td>
+<td class="cell-ce1">not xsi:nil</td>
+<td class="cell-ce1">Patient.extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-race]</td>
+<td class="cell-ce1">.extension[text].valueString</td>
+<td class="cell-ce1">Other</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">generated from mapParameter row 1</td>
+<td class="cell-ce1"></td>
 </tr>
 <tr class="row-ro1">
 <td class="cell-ce1">1955</td>
@@ -558,12 +642,26 @@
 <td class="cell-ce1">ADERS - 25_PtEthnicity_HispLat (25-1)</td>
 <td class="cell-ce1">fixed value</td>
 <td class="cell-ce1">not xsi:nil</td>
-<td class="cell-ce1">Patient.extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity].extension[ombCategory].valueCoding</td>
-<td class="cell-ce1"></td>
+<td class="cell-ce1">Patient.extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity]</td>
+<td class="cell-ce1">.extension[ombCategory].valueCoding</td>
 <td class="cell-ce1">urn:oid:2.16.840.1.113883.6.238#2135-2 "Hispanic or Latino"</td>
-<td class="cell-ce1"></td>
+<td class="cell-ce1">.extension[text].valueString=”HispLat”</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient | 5.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1955-1</td>
+<td class="cell-ce1">in process</td>
+<td class="cell-ce1">A2F</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">fixed value</td>
+<td class="cell-ce1">not xsi:nil</td>
+<td class="cell-ce1">Patient.extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity]</td>
+<td class="cell-ce1">.extension[text].valueString</td>
+<td class="cell-ce1">HispLat</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">generated from mapParameter row 1</td>
+<td class="cell-ce1"></td>
 </tr>
 <tr class="row-ro1">
 <td class="cell-ce1">1956</td>
@@ -572,12 +670,26 @@
 <td class="cell-ce1">ADERS - 25_PtEthnicity_NHL (25-2)</td>
 <td class="cell-ce1">fixed value</td>
 <td class="cell-ce1">not xsi:nil</td>
-<td class="cell-ce1">Patient.extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity].extension[ombCategory].valueCoding</td>
-<td class="cell-ce1"></td>
+<td class="cell-ce1">Patient.extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity]</td>
+<td class="cell-ce1">.extension[ombCategory].valueCoding</td>
 <td class="cell-ce1">urn:oid:2.16.840.1.113883.6.238#2186-5 "Not Hispanic or Latino"</td>
-<td class="cell-ce1"></td>
+<td class="cell-ce1">.extension[text].valueString=”NHL”</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient | 5.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1956-1</td>
+<td class="cell-ce1">in process</td>
+<td class="cell-ce1">A2F</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">fixed value</td>
+<td class="cell-ce1">not xsi:nil</td>
+<td class="cell-ce1">Patient.extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity]</td>
+<td class="cell-ce1">.extension[text].valueString</td>
+<td class="cell-ce1">NHL</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">generated from mapParameter row 1</td>
+<td class="cell-ce1"></td>
 </tr>
 <tr class="row-ro1">
 <td class="cell-ce1">1957</td>
@@ -586,12 +698,26 @@
 <td class="cell-ce1">ADERS - 25_PtEthnicity_Unk (25-3)</td>
 <td class="cell-ce1">fixed value</td>
 <td class="cell-ce1">not xsi:nil</td>
-<td class="cell-ce1">Patient.extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity].extension[ombCategory].valueCoding</td>
-<td class="cell-ce1"></td>
+<td class="cell-ce1">Patient.extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity]</td>
+<td class="cell-ce1">.extension[ombCategory].valueCoding</td>
 <td class="cell-ce1">http://terminology.hl7.org/CodeSystem/v3-NullFlavor#UNK "unknown"</td>
-<td class="cell-ce1"></td>
+<td class="cell-ce1">.extension[text].valueString=”Unk”</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient | 5.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1957-1</td>
+<td class="cell-ce1">in process</td>
+<td class="cell-ce1">A2F</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">fixed value</td>
+<td class="cell-ce1">not xsi:nil</td>
+<td class="cell-ce1">Patient.extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity]</td>
+<td class="cell-ce1">.extension[text].valueString</td>
+<td class="cell-ce1">Unk</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">generated from mapParameter row 1</td>
+<td class="cell-ce1"></td>
 </tr>
 <tr class="row-ro1">
 <td class="cell-ce1">1958</td>
@@ -600,12 +726,26 @@
 <td class="cell-ce1">ADERS - 25_PtEthnicity_Other (25-4)</td>
 <td class="cell-ce1">fixed value</td>
 <td class="cell-ce1">not xsi:nil</td>
-<td class="cell-ce1">Patient.extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity].extension[ombCategory].valueCoding</td>
-<td class="cell-ce1"></td>
+<td class="cell-ce1">Patient.extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity]</td>
+<td class="cell-ce1">.extension[ombCategory].valueCoding</td>
 <td class="cell-ce1">http://terminology.hl7.org/CodeSystem/v3-NullFlavor#OTH "other"</td>
-<td class="cell-ce1"></td>
+<td class="cell-ce1">.extension[text].valueString=”Other”</td>
 <td class="cell-ce1"></td>
 <td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient | 5.0.1</td>
+</tr>
+<tr class="row-ro1">
+<td class="cell-ce1">1958-1</td>
+<td class="cell-ce1">in process</td>
+<td class="cell-ce1">A2F</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">fixed value</td>
+<td class="cell-ce1">not xsi:nil</td>
+<td class="cell-ce1">Patient.extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity]</td>
+<td class="cell-ce1">.extension[text].valueString</td>
+<td class="cell-ce1">Other</td>
+<td class="cell-ce1"></td>
+<td class="cell-ce1">generated from mapParameter row 1</td>
+<td class="cell-ce1"></td>
 </tr>
 </table>
 
@@ -624,15 +764,30 @@
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td>1948: fixed value = urn:oid:2.16.840.1.113883.6.238#1002-5 &quot;American Indian or Alaska Native&quot; when ADERS - 24_PtRace_AIAN (24-1) if not xsi:nil, 1949: fixed value = urn:oid:2.16.840.1.113883.6.238#2028-9 &quot;Asian&quot; when ADERS - 24_PtRace_Asian (24-2) if not xsi:nil, 1950: fixed value = urn:oid:2.16.840.1.113883.6.238#2054-5 &quot;Black or African American&quot; when ADERS - 24_PtRace_BlkAM (24-3) if not xsi:nil, 1951: fixed value = urn:oid:2.16.840.1.113883.6.238#2076-8 &quot;Native Hawaiian or Other Pacific Islander&quot; when ADERS - 24_PtRace_NH_OPI (24-4) if not xsi:nil, 1952: fixed value = urn:oid:2.16.840.1.113883.6.238#2106-3 &quot;White&quot; when ADERS - 24_PtRace_White (24-5) if not xsi:nil, 1953: fixed value = http://terminology.hl7.org/CodeSystem/v3-NullFlavor#UNK &quot;unknown&quot; when ADERS - 24_PtRace_Unk (24-6) if not xsi:nil, 1954: fixed value = urn:oid:2.16.840.1.113883.6.238#2131-1 &quot;Other Race&quot; when ADERS - 24_PtRace_Other (24-7) if not xsi:nil</td><td>, , , , , , </td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension (detailed)</td><td></td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension (text)</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td>1948-1: fixed value = AIAN if not xsi:nil, 1949-1: fixed value = Asian if not xsi:nil, 1950-1: fixed value = BlkAM if not xsi:nil, 1951-1: fixed value = NH_OPI if not xsi:nil, 1952-1: fixed value = White if not xsi:nil, 1953-1: fixed value = Unk if not xsi:nil, 1954-1: fixed value = Other if not xsi:nil</td><td><p>generated from mapParameter row 1</p>
+, <p>generated from mapParameter row 1</p>
+, <p>generated from mapParameter row 1</p>
+, <p>generated from mapParameter row 1</p>
+, <p>generated from mapParameter row 1</p>
+, <p>generated from mapParameter row 1</p>
+, <p>generated from mapParameter row 1</p>
+</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;extension (ethnicity)</td><td></td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td></td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension (ombCategory)</td><td></td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td>1955: fixed value = urn:oid:2.16.840.1.113883.6.238#2135-2 &quot;Hispanic or Latino&quot; when ADERS - 25_PtEthnicity_HispLat (25-1) if not xsi:nil, 1956: fixed value = urn:oid:2.16.840.1.113883.6.238#2186-5 &quot;Not Hispanic or Latino&quot; when ADERS - 25_PtEthnicity_NHL (25-2) if not xsi:nil, 1957: fixed value = http://terminology.hl7.org/CodeSystem/v3-NullFlavor#UNK &quot;unknown&quot; when ADERS - 25_PtEthnicity_Unk (25-3) if not xsi:nil, 1958: fixed value = http://terminology.hl7.org/CodeSystem/v3-NullFlavor#OTH &quot;other&quot; when ADERS - 25_PtEthnicity_Other (25-4) if not xsi:nil</td><td>, , , </td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension (detailed)</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension (text)</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td>1955-1: fixed value = HispLat if not xsi:nil, 1956-1: fixed value = NHL if not xsi:nil, 1957-1: fixed value = Unk if not xsi:nil, 1958-1: fixed value = Other if not xsi:nil</td><td><p>generated from mapParameter row 1</p>
+, <p>generated from mapParameter row 1</p>
+, <p>generated from mapParameter row 1</p>
+, <p>generated from mapParameter row 1</p>
+</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;extension (birthsex)</td><td></td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;extension (genderIdentity)</td><td></td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;extension (patient-ageAtVaccination)</td><td></td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td>1882: transform using concat(6_PtAgeVacYears, 6_PtAgeVacMonths)</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>1863: source value based on ADERS - 0_Pt_ICN_Full (0)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td></td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td></td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td></td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;system</td><td>1863-3: fixed value = http://terminology.hl7.org/CodeSystem/v2-0203</td><td><p>generated from mapParameter row 3</p>
@@ -641,9 +796,8 @@
 </td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;system</td><td>1863-1: fixed value = urn:oid:2.16.840.1.113883.4.349</td><td><p>generated from mapParameter row 1</p>
 </td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>1863: source value based on ADERS - 0_Pt_ICN_Full (0)</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;name</td><td>2022: target not supported</td><td><p>because of must-support; FDA receives minimal deidentified data</p>
-</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;telecom</td><td>2023: target not supported</td><td><p>because of must-support; FDA receives minimal deidentified data</p>
 </td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;gender</td><td>1880: source value based on ADERS - 3_ptSex (3)</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;birthDate</td><td>1874: source value based on ADERS - 2_ptDOB (2)</td><td></td> </tr>
@@ -688,7 +842,6 @@
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td>N/A</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension (text)</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;url</td><td>N/A</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td>N/A</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;url</td><td>N/A</td> </tr>
@@ -706,7 +859,6 @@
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td>N/A</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension (text)</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;url</td><td>N/A</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td>N/A</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;url</td><td>N/A</td> </tr>
@@ -934,7 +1086,7 @@
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025 <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#1.2.529 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Feb 20, 2025 14:57+0000">2025-02-20</span>
+          IG &#169; 2025 <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#1.2.531 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Sat, Feb 22, 2025 09:56+0000">2025-02-22</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

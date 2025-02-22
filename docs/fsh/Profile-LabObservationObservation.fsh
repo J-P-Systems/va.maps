@@ -9,15 +9,15 @@ Description: "This StructureDefinition contains the maps for VistA file PATIENT 
 * ^extension[=].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab|6.1.0"
 * ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
 * ^extension[=].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab|7.0.0"
-* category and subject MS
+* category[Laboratory] and subject MS
 * subject only Reference(Patient)
-* category = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
+* category[Laboratory] = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
 
 Mapping: source-to-LabObservationObservation
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: LabObservationObservation
-* category -> "843: fixed value = http://terminology.hl7.org/CodeSystem/observation-category#laboratory"
+* category[Laboratory] -> "843: fixed value = http://terminology.hl7.org/CodeSystem/observation-category#laboratory"
 * dataAbsentReason -> "2031: target not supported" "because of must-support"
 * subject -> "844: reference based on PATIENT - LABORATORY REFERENCE > LAB DATA - LRDFN (2-63 > 63-.01)" "Pointer from PATIENT (2)"
 

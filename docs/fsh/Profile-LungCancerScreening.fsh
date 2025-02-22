@@ -22,7 +22,6 @@ Source: LungCancerScreening
 * performer -> "934: reference based on TIU DOCUMENT - AUTHOR/DICTATOR (8925-1202)"
 * encounter -> "935: reference based on TIU DOCUMENT - VISIT (8925-.03)"
 * status -> "2159: target not supported" "auto added because of must-support"
-* category -> "2160: target not supported" "auto added because of must-support"
 * category[us-core] -> "2161: target not supported" "auto added because of must-support"
 * code -> "2162: target not supported" "auto added because of must-support"
 * effectiveDateTime -> "2163: target not supported" "auto added because of must-support"

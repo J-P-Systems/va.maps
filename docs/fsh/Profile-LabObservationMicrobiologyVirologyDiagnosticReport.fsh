@@ -18,7 +18,7 @@ Description: "This StructureDefinition contains the maps for VistA file MICROBIO
 * performer[va-by] only Reference(Practitioner)
 * performer[va-at] only Reference(Organization)
 * subject only Reference(Patient)
-* result only Reference(LabObservationObservation)
+* result only Reference(LabObservationMicrobiologyVirologyObservation)
 * identifier.system = "http://va.gov/identifiers/$Sta3n/63.5"
 * status from http://va.gov/fhir/ValueSet/DiagnosticReportLabStatus
 * status ^binding.description = "see mapping [VF_DiagnosticReportLabStatus](ConceptMap-VF-DiagnosticReportLabStatus.html)"
