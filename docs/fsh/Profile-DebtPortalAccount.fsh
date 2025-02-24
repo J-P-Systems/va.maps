@@ -8,12 +8,6 @@ Description: "This StructureDefinition contains the maps for VistA file ACCOUNTS
 * identifier and status and subject and extension[http://va.gov/fhir/StructureDefinition/account-statementGeneratedDay].valueInteger MS
 * subject only Reference(Patient)
 * status = #active
-* subject obeys dpa-17-2005
-
-Invariant: dpa-17-2005
-Description: "If patient then reference /Patient based on (430-7 > 2-)"
-Severity: #warning
-Expression: "true"
 
 Mapping: source-to-DebtPortalAccount
 Id: vista
@@ -21,7 +15,7 @@ Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: DebtPortalAccount
 * identifier -> "2003: transform using concat(Sta3n, text({IEN (.001)},\"0000000000000\", left({NAME (.01)}), 5) on ACCOUNTS RECEIVABLE - PATIENT > PATIENT (430-7 > 2-)" "concatenated from Sta3n, Patient.IEN (paded with leading 0's to make 13 digits), LEFT(LastName, 5)"
 * status -> "2004: fixed value = #active"
-* subject -> "2005: reference based on ACCOUNTS RECEIVABLE - PATIENT > PATIENT (430-7 > 2-) if patient"
+* subject -> "2005: reference based on ACCOUNTS RECEIVABLE - PATIENT (430-7)"
 * extension[http://va.gov/fhir/StructureDefinition/account-statementGeneratedDay].valueInteger -> "2006: source value based on ACCOUNTS RECEIVABLE - DEBTOR > AR DEBTOR - STATEMENT DAY (430-9 > 340-.03)"
 
 Mapping: cdw-to-DebtPortalAccount

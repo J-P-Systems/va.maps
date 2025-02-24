@@ -74,7 +74,7 @@ Source: DebtPortalInvoice
 * recipient -> "1818: reference based on ACCOUNTS RECEIVABLE - DEBTOR > AR DEBTOR - DEBTOR (430-9 > 340-.01) if patient" "The data in CDW does not support Invoice.recipient and Invoice.subject being different. It is assumed that the recipient will always be the subject and to avoid having duplicate patient references, it is recommended to use Invoice.recipient for the reference to the patient."
 * identifier -> "1975: source value based on ACCOUNTS RECEIVABLE - BILL NO. (430-.01)"
 * status -> "1843: terminologyMaps using VF_ARBillStatus on ACCOUNTS RECEIVABLE - CURRENT STATUS > ACCOUNTS RECEIVABLE TRANS.TYPE - NAME (430-8 > 430.3-.01)"
-* subject -> "1976: reference based on ACCOUNTS RECEIVABLE - PATIENT > PATIENT (430-7 > 2-)" "The data in CDW does not support Invoice.recipient and Invoice.subject being different. It is assumed that the recipient will always be the subject and to avoid having duplicate patient references, it is recommended to use Invoice.recipient for the reference to the patient."
+* subject -> "1976: reference based on ACCOUNTS RECEIVABLE - PATIENT (430-7)" "The data in CDW does not support Invoice.recipient and Invoice.subject being different. It is assumed that the recipient will always be the subject and to avoid having duplicate patient references, it is recommended to use Invoice.recipient for the reference to the patient."
 * date -> "1977: source value based on ACCOUNTS RECEIVABLE - DATE BILL PREPARED (430-10)"
 * issuer -> "2007: reference based on ACCOUNTS RECEIVABLE - SITE (430-12)"
 * totalPriceComponent[va-orig-amt].amount -> "1828: source value based on ACCOUNTS RECEIVABLE - ORIGINAL AMOUNT (430-3)"

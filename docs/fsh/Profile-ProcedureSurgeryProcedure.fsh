@@ -92,7 +92,7 @@ Severity: #warning
 Expression: "true"
 
 Invariant: psp-25-1294
-Description: "If 130-118 NON-OR PROCEDURE == ‘Y’ then reference /Location based on (130-119 > 131.7-)"
+Description: "If 130-118 NON-OR PROCEDURE == ‘Y’ then reference /Location based on (130-119)"
 Severity: #warning
 Expression: "true"
 
@@ -134,7 +134,7 @@ Source: ProcedureSurgeryProcedure
 * performedPeriod.end -> "1291: source value based on SURGERY - TIME PROCEDURE ENDED (130-122) if 130-118 NON-OR PROCEDURE == ‘Y’"
 * performedPeriod.start -> "1292: source value based on SURGERY - TIME OPERATION BEGAN (130-.22) if 130-118 NON-OR PROCEDURE != ‘Y’"
 * performedPeriod.end -> "1293: source value based on SURGERY - TIME OPERATION ENDS (130-.23) if 130-118 NON-OR PROCEDURE != ‘Y’"
-* location -> "1294: reference based on SURGERY - NON-OR LOCATION > OPERATING ROOM - (130-119 > 131.7-) if 130-118 NON-OR PROCEDURE == ‘Y’"
+* location -> "1294: reference based on SURGERY - NON-OR LOCATION (130-119) if 130-118 NON-OR PROCEDURE == ‘Y’"
 * location -> "1295: reference based on SURGERY - OP ROOM PROCEDURE PERFORMED (130-.02) if 130-118 NON-OR PROCEDURE != ‘Y’"
 * complication.coding -> "1296: fixed value = http://snomed.info/sct#88797001 \"Complication of surgical procedure (disorder)\" when SURGERY - STOMA COMPLICATIONS (130-688) if == ‘Y’"
 * complication.text -> "1296-1: fixed value = STOMA COMPLICATIONS if == ‘Y’" "generated from mapParameter row 1"

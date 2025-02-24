@@ -43,7 +43,7 @@ Source: DebtPortalChargeItemcharges
 * code.text -> "2029: source value based on INTEGRATED BILLING ACTION - CANCELLATION REASON (350-.1) if NOT NULL"
 * identifier -> "1837: source value based on INTEGRATED BILLING ACTION - AR BILL NUMBER (350-.11)"
 * status -> "1838: fixed value = #billed" "Status values passed to AR include 'Billed', 'Cancelled', Co-Pay Exemption Cancellation', and 'Updated' (350-.05>350.21). For now hard code status as billed."
-* subject -> "1839: reference based on INTEGRATED BILLING ACTION - PATIENT > PATIENT (350-.02 > 2-)"
+* subject -> "1839: reference based on INTEGRATED BILLING ACTION - PATIENT (350-.02)"
 * context -> "2008: reference based on IB-FB INTERFACE TRACKING - BILL/CLAIMS > BILL/CLAIMS - PROCEDURES > PROCEDURES - OUTPATIENT ENCOUNTER > OUTPATIENT ENCOUNTER - VISIT FILE ENTRY (360-1.02 > 399-304>399.0304-20>409.68-.05) if Outpatient" "Map path: 350 < 360-1.04 |360| 360-1.02 > 399-304 > 399.304-20 > 409.68-.05 > 9000010"
 * context -> "2009: reference based on IB-FB INTERFACE TRACKING - BILL/CLAIMS > BILL/CLAIMS - PTF ENTRY NUMBER (360-1.02 > 399-.08) if Inpatient" "Map path: 350 < 360-1.04 |360| 360-1.02 > 399-08 > 45"
 * occurrencePeriod.start -> "1973: source value based on INTEGRATED BILLING ACTION - DATE BILLED FROM (350-.14)"
