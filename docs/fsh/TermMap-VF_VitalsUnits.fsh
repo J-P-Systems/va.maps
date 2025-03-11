@@ -88,7 +88,7 @@ Usage: #definition
 
 ValueSet: VitalsUnits
 Title: "VitalsUnits FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps [VF_VitalsUnits](ConceptMap-VF-VitalsUnits)"
+Description: "FHIR Target ValueSet for Terminology Maps [VF_VitalsUnits](ConceptMap-VF-VitalsUnits.html)"
 * ^experimental = false
 * ^status = #active
 * ^name = "VitalsUnits"
@@ -103,7 +103,7 @@ Description: "FHIR Target ValueSet for Terminology Maps [VF_VitalsUnits](Concept
 
 ValueSet: VitalsUnits-vista
 Title: "VitalsUnits VistA"
-Description: "VistA Source ValueSet for Terminology Maps [VF_VitalsUnits](ConceptMap-VF-VitalsUnits)"
+Description: "VistA Source ValueSet for Terminology Maps [VF_VitalsUnits](ConceptMap-VF-VitalsUnits.html)"
 * ^experimental = false
 * ^status = #active
 * ^name = "VitalsUnits_VistA"

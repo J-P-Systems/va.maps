@@ -49,7 +49,7 @@ Usage: #definition
 
 ValueSet: genderIdentity
 Title: "genderIdentity FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps [VF_genderIdentity](ConceptMap-VF-genderIdentity)"
+Description: "FHIR Target ValueSet for Terminology Maps [VF_genderIdentity](ConceptMap-VF-genderIdentity.html)"
 * ^experimental = false
 * ^status = #active
 * ^name = "GenderIdentity"
@@ -63,7 +63,7 @@ Description: "FHIR Target ValueSet for Terminology Maps [VF_genderIdentity](Conc
 
 ValueSet: genderIdentity-vista
 Title: "genderIdentity VistA"
-Description: "VistA Source ValueSet for Terminology Maps [VF_genderIdentity](ConceptMap-VF-genderIdentity)"
+Description: "VistA Source ValueSet for Terminology Maps [VF_genderIdentity](ConceptMap-VF-genderIdentity.html)"
 * ^experimental = false
 * ^status = #active
 * ^name = "GenderIdentity_VistA"

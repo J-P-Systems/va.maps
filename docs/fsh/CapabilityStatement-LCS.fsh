@@ -4,7 +4,7 @@ Title: "Lung Cancer Screening"
 Usage: #definition
 * description = "This CapabilityStatement enumerates the profiles that the API should address, in the estimation of the enterprise mapping team. Some elements may not be appropriate for those cases; consult the actual API specification published by the API provider"
 * status = #draft
-* date = "2025-02-23T10:00:30.716Z"
+* date = "2025-03-11T10:07:40.948Z"
 * kind = #requirements
 * fhirVersion = #4.0.1
 * format[0] = #xml

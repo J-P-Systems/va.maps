@@ -32,7 +32,7 @@ Usage: #definition
 
 ValueSet: birthSex
 Title: "birthSex FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps [VF_birthSex](ConceptMap-VF-birthSex)"
+Description: "FHIR Target ValueSet for Terminology Maps [VF_birthSex](ConceptMap-VF-birthSex.html)"
 * ^experimental = false
 * ^status = #active
 * ^name = "BirthSex"
@@ -42,7 +42,7 @@ Description: "FHIR Target ValueSet for Terminology Maps [VF_birthSex](ConceptMap
 
 ValueSet: birthSex-vista
 Title: "birthSex VistA"
-Description: "VistA Source ValueSet for Terminology Maps [VF_birthSex](ConceptMap-VF-birthSex)"
+Description: "VistA Source ValueSet for Terminology Maps [VF_birthSex](ConceptMap-VF-birthSex.html)"
 * ^experimental = false
 * ^status = #active
 * ^name = "BirthSex_VistA"

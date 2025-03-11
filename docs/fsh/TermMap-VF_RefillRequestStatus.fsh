@@ -26,7 +26,7 @@ Usage: #definition
 
 ValueSet: RefillRequestStatus
 Title: "RefillRequestStatus FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps [VF_RefillRequestStatus](ConceptMap-VF-RefillRequestStatus)"
+Description: "FHIR Target ValueSet for Terminology Maps [VF_RefillRequestStatus](ConceptMap-VF-RefillRequestStatus.html)"
 * ^experimental = false
 * ^status = #active
 * ^name = "RefillRequestStatus"
@@ -36,7 +36,7 @@ Description: "FHIR Target ValueSet for Terminology Maps [VF_RefillRequestStatus]
 
 ValueSet: RefillRequestStatus-vista
 Title: "RefillRequestStatus VistA"
-Description: "VistA Source ValueSet for Terminology Maps [VF_RefillRequestStatus](ConceptMap-VF-RefillRequestStatus)"
+Description: "VistA Source ValueSet for Terminology Maps [VF_RefillRequestStatus](ConceptMap-VF-RefillRequestStatus.html)"
 * ^experimental = false
 * ^status = #active
 * ^name = "RefillRequestStatus_VistA"

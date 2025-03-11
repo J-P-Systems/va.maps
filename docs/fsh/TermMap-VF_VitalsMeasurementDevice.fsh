@@ -79,7 +79,7 @@ Usage: #definition
 
 ValueSet: VitalsMeasurementDevice
 Title: "VitalsMeasurementDevice FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps [VF_VitalsMeasurementDevice](ConceptMap-VF-VitalsMeasurementDevice)"
+Description: "FHIR Target ValueSet for Terminology Maps [VF_VitalsMeasurementDevice](ConceptMap-VF-VitalsMeasurementDevice.html)"
 * ^experimental = false
 * ^status = #active
 * ^name = "VitalsMeasurementDevice"
@@ -97,7 +97,7 @@ Description: "FHIR Target ValueSet for Terminology Maps [VF_VitalsMeasurementDev
 
 ValueSet: VitalsMeasurementDevice-vista
 Title: "VitalsMeasurementDevice VistA"
-Description: "VistA Source ValueSet for Terminology Maps [VF_VitalsMeasurementDevice](ConceptMap-VF-VitalsMeasurementDevice)"
+Description: "VistA Source ValueSet for Terminology Maps [VF_VitalsMeasurementDevice](ConceptMap-VF-VitalsMeasurementDevice.html)"
 * ^experimental = false
 * ^status = #active
 * ^name = "VitalsMeasurementDevice_VistA"

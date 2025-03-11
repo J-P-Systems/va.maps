@@ -33,7 +33,7 @@ Usage: #definition
 
 ValueSet: LocationStatus
 Title: "LocationStatus FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps [VF_LocationStatus](ConceptMap-VF-LocationStatus)"
+Description: "FHIR Target ValueSet for Terminology Maps [VF_LocationStatus](ConceptMap-VF-LocationStatus.html)"
 * ^experimental = false
 * ^status = #active
 * ^name = "LocationStatus"
@@ -43,7 +43,7 @@ Description: "FHIR Target ValueSet for Terminology Maps [VF_LocationStatus](Conc
 
 ValueSet: LocationStatus-vista
 Title: "LocationStatus VistA"
-Description: "VistA Source ValueSet for Terminology Maps [VF_LocationStatus](ConceptMap-VF-LocationStatus)"
+Description: "VistA Source ValueSet for Terminology Maps [VF_LocationStatus](ConceptMap-VF-LocationStatus.html)"
 * ^experimental = false
 * ^status = #active
 * ^name = "LocationStatus_VistA"

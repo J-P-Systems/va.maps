@@ -19,7 +19,7 @@ Usage: #definition
 
 ValueSet: encounterProblemStatus
 Title: "encounterProblemStatus FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps [VF_encounterProblemStatus](ConceptMap-VF-encounterProblemStatus)"
+Description: "FHIR Target ValueSet for Terminology Maps [VF_encounterProblemStatus](ConceptMap-VF-encounterProblemStatus.html)"
 * ^experimental = false
 * ^status = #active
 * ^name = "EncounterProblemStatus"
@@ -27,7 +27,7 @@ Description: "FHIR Target ValueSet for Terminology Maps [VF_encounterProblemStat
 
 ValueSet: encounterProblemStatus-vista
 Title: "encounterProblemStatus VistA"
-Description: "VistA Source ValueSet for Terminology Maps [VF_encounterProblemStatus](ConceptMap-VF-encounterProblemStatus)"
+Description: "VistA Source ValueSet for Terminology Maps [VF_encounterProblemStatus](ConceptMap-VF-encounterProblemStatus.html)"
 * ^experimental = false
 * ^status = #active
 * ^name = "EncounterProblemStatus_VistA"

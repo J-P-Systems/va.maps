@@ -32,7 +32,7 @@ Usage: #definition
 
 ValueSet: MicrobiologyUrineScreenResult
 Title: "MicrobiologyUrineScreenResult FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps [VF_MicrobiologyUrineScreenResult](ConceptMap-VF-MicrobiologyUrineScreenResult)"
+Description: "FHIR Target ValueSet for Terminology Maps [VF_MicrobiologyUrineScreenResult](ConceptMap-VF-MicrobiologyUrineScreenResult.html)"
 * ^experimental = false
 * ^status = #active
 * ^name = "MicrobiologyUrineScreenResult"
@@ -41,7 +41,7 @@ Description: "FHIR Target ValueSet for Terminology Maps [VF_MicrobiologyUrineScr
 
 ValueSet: MicrobiologyUrineScreenResult-vista
 Title: "MicrobiologyUrineScreenResult VistA"
-Description: "VistA Source ValueSet for Terminology Maps [VF_MicrobiologyUrineScreenResult](ConceptMap-VF-MicrobiologyUrineScreenResult)"
+Description: "VistA Source ValueSet for Terminology Maps [VF_MicrobiologyUrineScreenResult](ConceptMap-VF-MicrobiologyUrineScreenResult.html)"
 * ^experimental = false
 * ^status = #active
 * ^name = "MicrobiologyUrineScreenResult_VistA"

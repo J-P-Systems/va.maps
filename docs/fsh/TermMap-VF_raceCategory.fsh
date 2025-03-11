@@ -48,7 +48,7 @@ Usage: #definition
 
 ValueSet: raceCategory
 Title: "raceCategory FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps [VF_raceCategory](ConceptMap-VF-raceCategory)"
+Description: "FHIR Target ValueSet for Terminology Maps [VF_raceCategory](ConceptMap-VF-raceCategory.html)"
 * ^experimental = false
 * ^status = #active
 * ^name = "RaceCategory"
@@ -61,7 +61,7 @@ Description: "FHIR Target ValueSet for Terminology Maps [VF_raceCategory](Concep
 
 ValueSet: raceCategory-vista
 Title: "raceCategory VistA"
-Description: "VistA Source ValueSet for Terminology Maps [VF_raceCategory](ConceptMap-VF-raceCategory)"
+Description: "VistA Source ValueSet for Terminology Maps [VF_raceCategory](ConceptMap-VF-raceCategory.html)"
 * ^experimental = false
 * ^status = #active
 * ^name = "RaceCategory_VistA"

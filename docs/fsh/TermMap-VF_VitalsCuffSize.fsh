@@ -51,7 +51,7 @@ Usage: #definition
 
 ValueSet: VitalsCuffSize
 Title: "VitalsCuffSize FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps [VF_VitalsCuffSize](ConceptMap-VF-VitalsCuffSize)"
+Description: "FHIR Target ValueSet for Terminology Maps [VF_VitalsCuffSize](ConceptMap-VF-VitalsCuffSize.html)"
 * ^experimental = false
 * ^status = #active
 * ^name = "VitalsCuffSize"
@@ -63,7 +63,7 @@ Description: "FHIR Target ValueSet for Terminology Maps [VF_VitalsCuffSize](Conc
 
 ValueSet: VitalsCuffSize-vista
 Title: "VitalsCuffSize VistA"
-Description: "VistA Source ValueSet for Terminology Maps [VF_VitalsCuffSize](ConceptMap-VF-VitalsCuffSize)"
+Description: "VistA Source ValueSet for Terminology Maps [VF_VitalsCuffSize](ConceptMap-VF-VitalsCuffSize.html)"
 * ^experimental = false
 * ^status = #active
 * ^name = "VitalsCuffSize_VistA"

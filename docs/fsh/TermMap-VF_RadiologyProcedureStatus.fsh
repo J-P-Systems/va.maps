@@ -44,7 +44,7 @@ Usage: #definition
 
 ValueSet: RadiologyProcedureStatus
 Title: "RadiologyProcedureStatus FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps [VF_RadiologyProcedureStatus](ConceptMap-VF-RadiologyProcedureStatus)"
+Description: "FHIR Target ValueSet for Terminology Maps [VF_RadiologyProcedureStatus](ConceptMap-VF-RadiologyProcedureStatus.html)"
 * ^experimental = false
 * ^status = #active
 * ^name = "RadiologyProcedureStatus"
@@ -55,7 +55,7 @@ Description: "FHIR Target ValueSet for Terminology Maps [VF_RadiologyProcedureSt
 
 ValueSet: RadiologyProcedureStatus-vista
 Title: "RadiologyProcedureStatus VistA"
-Description: "VistA Source ValueSet for Terminology Maps [VF_RadiologyProcedureStatus](ConceptMap-VF-RadiologyProcedureStatus)"
+Description: "VistA Source ValueSet for Terminology Maps [VF_RadiologyProcedureStatus](ConceptMap-VF-RadiologyProcedureStatus.html)"
 * ^experimental = false
 * ^status = #active
 * ^name = "RadiologyProcedureStatus_VistA"

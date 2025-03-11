@@ -19,7 +19,7 @@ Usage: #definition
 
 ValueSet: allergyEnteredInError
 Title: "allergyEnteredInError FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps [VF_allergyEnteredInError](ConceptMap-VF-allergyEnteredInError)"
+Description: "FHIR Target ValueSet for Terminology Maps [VF_allergyEnteredInError](ConceptMap-VF-allergyEnteredInError.html)"
 * ^experimental = false
 * ^status = #active
 * ^name = "AllergyEnteredInError"
@@ -27,7 +27,7 @@ Description: "FHIR Target ValueSet for Terminology Maps [VF_allergyEnteredInErro
 
 ValueSet: allergyEnteredInError-vista
 Title: "allergyEnteredInError VistA"
-Description: "VistA Source ValueSet for Terminology Maps [VF_allergyEnteredInError](ConceptMap-VF-allergyEnteredInError)"
+Description: "VistA Source ValueSet for Terminology Maps [VF_allergyEnteredInError](ConceptMap-VF-allergyEnteredInError.html)"
 * ^experimental = false
 * ^status = #active
 * ^name = "AllergyEnteredInError_VistA"

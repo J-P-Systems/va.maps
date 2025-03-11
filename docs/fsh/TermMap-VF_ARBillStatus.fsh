@@ -54,7 +54,7 @@ Usage: #definition
 
 ValueSet: ARBillStatus
 Title: "ARBillStatus FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps [VF_ARBillStatus](ConceptMap-VF-ARBillStatus)"
+Description: "FHIR Target ValueSet for Terminology Maps [VF_ARBillStatus](ConceptMap-VF-ARBillStatus.html)"
 * ^experimental = false
 * ^status = #active
 * ^name = "ARBillStatus"
@@ -65,7 +65,7 @@ Description: "FHIR Target ValueSet for Terminology Maps [VF_ARBillStatus](Concep
 
 ValueSet: ARBillStatus-vista
 Title: "ARBillStatus VistA"
-Description: "VistA Source ValueSet for Terminology Maps [VF_ARBillStatus](ConceptMap-VF-ARBillStatus)"
+Description: "VistA Source ValueSet for Terminology Maps [VF_ARBillStatus](ConceptMap-VF-ARBillStatus.html)"
 * ^experimental = false
 * ^status = #active
 * ^name = "ARBillStatus_VistA"

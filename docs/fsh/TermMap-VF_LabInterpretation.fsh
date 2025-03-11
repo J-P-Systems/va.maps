@@ -34,7 +34,7 @@ Usage: #definition
 
 ValueSet: LabInterpretation
 Title: "LabInterpretation FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps [VF_LabInterpretation](ConceptMap-VF-LabInterpretation)"
+Description: "FHIR Target ValueSet for Terminology Maps [VF_LabInterpretation](ConceptMap-VF-LabInterpretation.html)"
 * ^experimental = false
 * ^status = #active
 * ^name = "LabInterpretation"
@@ -46,7 +46,7 @@ Description: "FHIR Target ValueSet for Terminology Maps [VF_LabInterpretation](C
 
 ValueSet: LabInterpretation-vista
 Title: "LabInterpretation VistA"
-Description: "VistA Source ValueSet for Terminology Maps [VF_LabInterpretation](ConceptMap-VF-LabInterpretation)"
+Description: "VistA Source ValueSet for Terminology Maps [VF_LabInterpretation](ConceptMap-VF-LabInterpretation.html)"
 * ^experimental = false
 * ^status = #active
 * ^name = "LabInterpretation_VistA"

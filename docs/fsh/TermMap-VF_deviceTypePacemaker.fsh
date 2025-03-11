@@ -48,7 +48,7 @@ Usage: #definition
 
 ValueSet: deviceTypePacemaker
 Title: "deviceTypePacemaker FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps [VF_deviceTypePacemaker](ConceptMap-VF-deviceTypePacemaker)"
+Description: "FHIR Target ValueSet for Terminology Maps [VF_deviceTypePacemaker](ConceptMap-VF-deviceTypePacemaker.html)"
 * ^experimental = false
 * ^status = #active
 * ^name = "DeviceTypePacemaker"
@@ -59,7 +59,7 @@ Description: "FHIR Target ValueSet for Terminology Maps [VF_deviceTypePacemaker]
 
 ValueSet: deviceTypePacemaker-vista
 Title: "deviceTypePacemaker VistA"
-Description: "VistA Source ValueSet for Terminology Maps [VF_deviceTypePacemaker](ConceptMap-VF-deviceTypePacemaker)"
+Description: "VistA Source ValueSet for Terminology Maps [VF_deviceTypePacemaker](ConceptMap-VF-deviceTypePacemaker.html)"
 * ^experimental = false
 * ^status = #active
 * ^name = "DeviceTypePacemaker_VistA"

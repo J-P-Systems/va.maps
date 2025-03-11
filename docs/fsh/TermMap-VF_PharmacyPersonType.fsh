@@ -32,7 +32,7 @@ Usage: #definition
 
 ValueSet: PharmacyPersonType
 Title: "PharmacyPersonType FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps [VF_PharmacyPersonType](ConceptMap-VF-PharmacyPersonType)"
+Description: "FHIR Target ValueSet for Terminology Maps [VF_PharmacyPersonType](ConceptMap-VF-PharmacyPersonType.html)"
 * ^experimental = false
 * ^status = #active
 * ^name = "PharmacyPersonType"
@@ -42,7 +42,7 @@ Description: "FHIR Target ValueSet for Terminology Maps [VF_PharmacyPersonType](
 
 ValueSet: PharmacyPersonType-vista
 Title: "PharmacyPersonType VistA"
-Description: "VistA Source ValueSet for Terminology Maps [VF_PharmacyPersonType](ConceptMap-VF-PharmacyPersonType)"
+Description: "VistA Source ValueSet for Terminology Maps [VF_PharmacyPersonType](ConceptMap-VF-PharmacyPersonType.html)"
 * ^experimental = false
 * ^status = #active
 * ^name = "PharmacyPersonType_VistA"

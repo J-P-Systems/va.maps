@@ -473,7 +473,7 @@ Usage: #definition
 
 ValueSet: VitalsBodySite
 Title: "VitalsBodySite FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps [VF_VitalsBodySite](ConceptMap-VF-VitalsBodySite)"
+Description: "FHIR Target ValueSet for Terminology Maps [VF_VitalsBodySite](ConceptMap-VF-VitalsBodySite.html)"
 * ^experimental = false
 * ^status = #active
 * ^name = "VitalsBodySite"
@@ -549,7 +549,7 @@ Description: "FHIR Target ValueSet for Terminology Maps [VF_VitalsBodySite](Conc
 
 ValueSet: VitalsBodySite-vista
 Title: "VitalsBodySite VistA"
-Description: "VistA Source ValueSet for Terminology Maps [VF_VitalsBodySite](ConceptMap-VF-VitalsBodySite)"
+Description: "VistA Source ValueSet for Terminology Maps [VF_VitalsBodySite](ConceptMap-VF-VitalsBodySite.html)"
 * ^experimental = false
 * ^status = #active
 * ^name = "VitalsBodySite_VistA"

@@ -59,7 +59,7 @@ Usage: #definition
 
 ValueSet: VitalsBodyPosition
 Title: "VitalsBodyPosition FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps [VF_VitalsBodyPosition](ConceptMap-VF-VitalsBodyPosition)"
+Description: "FHIR Target ValueSet for Terminology Maps [VF_VitalsBodyPosition](ConceptMap-VF-VitalsBodyPosition.html)"
 * ^experimental = false
 * ^status = #active
 * ^name = "VitalsBodyPosition"
@@ -74,7 +74,7 @@ Description: "FHIR Target ValueSet for Terminology Maps [VF_VitalsBodyPosition](
 
 ValueSet: VitalsBodyPosition-vista
 Title: "VitalsBodyPosition VistA"
-Description: "VistA Source ValueSet for Terminology Maps [VF_VitalsBodyPosition](ConceptMap-VF-VitalsBodyPosition)"
+Description: "VistA Source ValueSet for Terminology Maps [VF_VitalsBodyPosition](ConceptMap-VF-VitalsBodyPosition.html)"
 * ^experimental = false
 * ^status = #active
 * ^name = "VitalsBodyPosition_VistA"

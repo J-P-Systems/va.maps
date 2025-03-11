@@ -130,7 +130,7 @@ Usage: #definition
 
 ValueSet: inferredCVX
 Title: "inferredCVX FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps [VF_inferredCVX](ConceptMap-VF-inferredCVX)"
+Description: "FHIR Target ValueSet for Terminology Maps [VF_inferredCVX](ConceptMap-VF-inferredCVX.html)"
 * ^experimental = false
 * ^status = #active
 * ^name = "InferredCVX"
@@ -141,7 +141,7 @@ Description: "FHIR Target ValueSet for Terminology Maps [VF_inferredCVX](Concept
 
 ValueSet: inferredCVX-vista
 Title: "inferredCVX VistA"
-Description: "VistA Source ValueSet for Terminology Maps [VF_inferredCVX](ConceptMap-VF-inferredCVX)"
+Description: "VistA Source ValueSet for Terminology Maps [VF_inferredCVX](ConceptMap-VF-inferredCVX.html)"
 * ^experimental = false
 * ^status = #active
 * ^name = "InferredCVX_VistA"

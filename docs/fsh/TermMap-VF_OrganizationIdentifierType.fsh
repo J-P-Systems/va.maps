@@ -46,7 +46,7 @@ Usage: #definition
 
 ValueSet: OrganizationIdentifierType
 Title: "OrganizationIdentifierType FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps [VF_OrganizationIdentifierType](ConceptMap-VF-OrganizationIdentifierType)"
+Description: "FHIR Target ValueSet for Terminology Maps [VF_OrganizationIdentifierType](ConceptMap-VF-OrganizationIdentifierType.html)"
 * ^experimental = false
 * ^status = #active
 * ^name = "OrganizationIdentifierType"
@@ -61,7 +61,7 @@ Description: "FHIR Target ValueSet for Terminology Maps [VF_OrganizationIdentifi
 
 ValueSet: OrganizationIdentifierType-vista
 Title: "OrganizationIdentifierType VistA"
-Description: "VistA Source ValueSet for Terminology Maps [VF_OrganizationIdentifierType](ConceptMap-VF-OrganizationIdentifierType)"
+Description: "VistA Source ValueSet for Terminology Maps [VF_OrganizationIdentifierType](ConceptMap-VF-OrganizationIdentifierType.html)"
 * ^experimental = false
 * ^status = #active
 * ^name = "OrganizationIdentifierType_VistA"

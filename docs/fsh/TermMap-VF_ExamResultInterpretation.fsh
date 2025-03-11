@@ -24,7 +24,7 @@ Usage: #definition
 
 ValueSet: ExamResultInterpretation
 Title: "ExamResultInterpretation FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps [VF_ExamResultInterpretation](ConceptMap-VF-ExamResultInterpretation)"
+Description: "FHIR Target ValueSet for Terminology Maps [VF_ExamResultInterpretation](ConceptMap-VF-ExamResultInterpretation.html)"
 * ^experimental = false
 * ^status = #active
 * ^name = "ExamResultInterpretation"
@@ -33,7 +33,7 @@ Description: "FHIR Target ValueSet for Terminology Maps [VF_ExamResultInterpreta
 
 ValueSet: ExamResultInterpretation-vista
 Title: "ExamResultInterpretation VistA"
-Description: "VistA Source ValueSet for Terminology Maps [VF_ExamResultInterpretation](ConceptMap-VF-ExamResultInterpretation)"
+Description: "VistA Source ValueSet for Terminology Maps [VF_ExamResultInterpretation](ConceptMap-VF-ExamResultInterpretation.html)"
 * ^experimental = false
 * ^status = #active
 * ^name = "ExamResultInterpretation_VistA"

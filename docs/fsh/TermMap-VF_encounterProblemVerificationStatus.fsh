@@ -42,7 +42,7 @@ Usage: #definition
 
 ValueSet: encounterProblemVerificationStatus
 Title: "encounterProblemVerificationStatus FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps [VF_encounterProblemVerificationStatus](ConceptMap-VF-encounterProblemVerificationStatus)"
+Description: "FHIR Target ValueSet for Terminology Maps [VF_encounterProblemVerificationStatus](ConceptMap-VF-encounterProblemVerificationStatus.html)"
 * ^experimental = false
 * ^status = #active
 * ^name = "EncounterProblemVerificationStatus"
@@ -52,7 +52,7 @@ Description: "FHIR Target ValueSet for Terminology Maps [VF_encounterProblemVeri
 
 ValueSet: encounterProblemVerificationStatus-vista
 Title: "encounterProblemVerificationStatus VistA"
-Description: "VistA Source ValueSet for Terminology Maps [VF_encounterProblemVerificationStatus](ConceptMap-VF-encounterProblemVerificationStatus)"
+Description: "VistA Source ValueSet for Terminology Maps [VF_encounterProblemVerificationStatus](ConceptMap-VF-encounterProblemVerificationStatus.html)"
 * ^experimental = false
 * ^status = #active
 * ^name = "EncounterProblemVerificationStatus_VistA"

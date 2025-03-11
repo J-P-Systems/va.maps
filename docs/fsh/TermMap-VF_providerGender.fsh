@@ -22,7 +22,7 @@ Usage: #definition
 
 ValueSet: providerGender
 Title: "providerGender FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps [VF_providerGender](ConceptMap-VF-providerGender)"
+Description: "FHIR Target ValueSet for Terminology Maps [VF_providerGender](ConceptMap-VF-providerGender.html)"
 * ^experimental = false
 * ^status = #active
 * ^name = "ProviderGender"
@@ -31,7 +31,7 @@ Description: "FHIR Target ValueSet for Terminology Maps [VF_providerGender](Conc
 
 ValueSet: providerGender-vista
 Title: "providerGender VistA"
-Description: "VistA Source ValueSet for Terminology Maps [VF_providerGender](ConceptMap-VF-providerGender)"
+Description: "VistA Source ValueSet for Terminology Maps [VF_providerGender](ConceptMap-VF-providerGender.html)"
 * ^experimental = false
 * ^status = #active
 * ^name = "ProviderGender_VistA"

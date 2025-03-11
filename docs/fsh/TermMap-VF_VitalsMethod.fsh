@@ -99,7 +99,7 @@ Usage: #definition
 
 ValueSet: VitalsMethod
 Title: "VitalsMethod FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps [VF_VitalsMethod](ConceptMap-VF-VitalsMethod)"
+Description: "FHIR Target ValueSet for Terminology Maps [VF_VitalsMethod](ConceptMap-VF-VitalsMethod.html)"
 * ^experimental = false
 * ^status = #active
 * ^name = "VitalsMethod"
@@ -122,7 +122,7 @@ Description: "FHIR Target ValueSet for Terminology Maps [VF_VitalsMethod](Concep
 
 ValueSet: VitalsMethod-vista
 Title: "VitalsMethod VistA"
-Description: "VistA Source ValueSet for Terminology Maps [VF_VitalsMethod](ConceptMap-VF-VitalsMethod)"
+Description: "VistA Source ValueSet for Terminology Maps [VF_VitalsMethod](ConceptMap-VF-VitalsMethod.html)"
 * ^experimental = false
 * ^status = #active
 * ^name = "VitalsMethod_VistA"

@@ -24,7 +24,7 @@ Usage: #definition
 
 ValueSet: OrderPatientClass
 Title: "OrderPatientClass FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps [VF_OrderPatientClass](ConceptMap-VF-OrderPatientClass)"
+Description: "FHIR Target ValueSet for Terminology Maps [VF_OrderPatientClass](ConceptMap-VF-OrderPatientClass.html)"
 * ^experimental = false
 * ^status = #active
 * ^name = "OrderPatientClass"
@@ -33,7 +33,7 @@ Description: "FHIR Target ValueSet for Terminology Maps [VF_OrderPatientClass](C
 
 ValueSet: OrderPatientClass-vista
 Title: "OrderPatientClass VistA"
-Description: "VistA Source ValueSet for Terminology Maps [VF_OrderPatientClass](ConceptMap-VF-OrderPatientClass)"
+Description: "VistA Source ValueSet for Terminology Maps [VF_OrderPatientClass](ConceptMap-VF-OrderPatientClass.html)"
 * ^experimental = false
 * ^status = #active
 * ^name = "OrderPatientClass_VistA"

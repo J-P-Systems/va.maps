@@ -34,7 +34,7 @@ Usage: #definition
 
 ValueSet: ICDCodingSystems
 Title: "ICDCodingSystems FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps [VF_ICDCodingSystems](ConceptMap-VF-ICDCodingSystems)"
+Description: "FHIR Target ValueSet for Terminology Maps [VF_ICDCodingSystems](ConceptMap-VF-ICDCodingSystems.html)"
 * ^experimental = false
 * ^status = #active
 * ^name = "ICDCodingSystems"
@@ -45,7 +45,7 @@ Description: "FHIR Target ValueSet for Terminology Maps [VF_ICDCodingSystems](Co
 
 ValueSet: ICDCodingSystems-vista
 Title: "ICDCodingSystems VistA"
-Description: "VistA Source ValueSet for Terminology Maps [VF_ICDCodingSystems](ConceptMap-VF-ICDCodingSystems)"
+Description: "VistA Source ValueSet for Terminology Maps [VF_ICDCodingSystems](ConceptMap-VF-ICDCodingSystems.html)"
 * ^experimental = false
 * ^status = #active
 * ^name = "ICDCodingSystems_VistA"

@@ -409,7 +409,7 @@ Usage: #definition
 
 ValueSet: PractitionerCountry
 Title: "PractitionerCountry FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps [VF_PractitionerCountry](ConceptMap-VF-PractitionerCountry)"
+Description: "FHIR Target ValueSet for Terminology Maps [VF_PractitionerCountry](ConceptMap-VF-PractitionerCountry.html)"
 * ^experimental = false
 * ^status = #active
 * ^name = "PractitionerCountry"
@@ -428,7 +428,7 @@ Description: "FHIR Target ValueSet for Terminology Maps [VF_PractitionerCountry]
 
 ValueSet: PractitionerCountry-vista
 Title: "PractitionerCountry VistA"
-Description: "VistA Source ValueSet for Terminology Maps [VF_PractitionerCountry](ConceptMap-VF-PractitionerCountry)"
+Description: "VistA Source ValueSet for Terminology Maps [VF_PractitionerCountry](ConceptMap-VF-PractitionerCountry.html)"
 * ^experimental = false
 * ^status = #active
 * ^name = "PractitionerCountry_VistA"

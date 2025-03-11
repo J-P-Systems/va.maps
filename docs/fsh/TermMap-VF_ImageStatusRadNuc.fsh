@@ -50,7 +50,7 @@ Usage: #definition
 
 ValueSet: ImageStatusRadNuc
 Title: "ImageStatusRadNuc FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps [VF_ImageStatusRadNuc](ConceptMap-VF-ImageStatusRadNuc)"
+Description: "FHIR Target ValueSet for Terminology Maps [VF_ImageStatusRadNuc](ConceptMap-VF-ImageStatusRadNuc.html)"
 * ^experimental = false
 * ^status = #active
 * ^name = "ImageStatusRadNuc"
@@ -60,7 +60,7 @@ Description: "FHIR Target ValueSet for Terminology Maps [VF_ImageStatusRadNuc](C
 
 ValueSet: ImageStatusRadNuc-vista
 Title: "ImageStatusRadNuc VistA"
-Description: "VistA Source ValueSet for Terminology Maps [VF_ImageStatusRadNuc](ConceptMap-VF-ImageStatusRadNuc)"
+Description: "VistA Source ValueSet for Terminology Maps [VF_ImageStatusRadNuc](ConceptMap-VF-ImageStatusRadNuc.html)"
 * ^experimental = false
 * ^status = #active
 * ^name = "ImageStatusRadNuc_VistA"

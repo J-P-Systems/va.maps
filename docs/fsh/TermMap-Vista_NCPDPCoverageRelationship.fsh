@@ -27,7 +27,7 @@ Usage: #definition
 
 ValueSet: VistaNCPDPCoverageRelationship
 Title: "VistaNCPDPCoverageRelationship FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps [Vista_NCPDPCoverageRelationship](ConceptMap-Vista-NCPDPCoverageRelationship)"
+Description: "FHIR Target ValueSet for Terminology Maps [Vista_NCPDPCoverageRelationship](ConceptMap-Vista-NCPDPCoverageRelationship.html)"
 * ^experimental = false
 * ^status = #active
 * ^name = "VistaNCPDPCoverageRelationship"
@@ -38,7 +38,7 @@ Description: "FHIR Target ValueSet for Terminology Maps [Vista_NCPDPCoverageRela
 
 ValueSet: VistaNCPDPCoverageRelationship-vista
 Title: "VistaNCPDPCoverageRelationship VistA"
-Description: "VistA Source ValueSet for Terminology Maps [Vista_NCPDPCoverageRelationship](ConceptMap-Vista-NCPDPCoverageRelationship)"
+Description: "VistA Source ValueSet for Terminology Maps [Vista_NCPDPCoverageRelationship](ConceptMap-Vista-NCPDPCoverageRelationship.html)"
 * ^experimental = false
 * ^status = #active
 * ^name = "VistaNCPDPCoverageRelationship_VistA"

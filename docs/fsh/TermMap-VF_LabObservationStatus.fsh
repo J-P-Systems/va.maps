@@ -30,7 +30,7 @@ Usage: #definition
 
 ValueSet: LabObservationStatus
 Title: "LabObservationStatus FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps [VF_LabObservationStatus](ConceptMap-VF-LabObservationStatus)"
+Description: "FHIR Target ValueSet for Terminology Maps [VF_LabObservationStatus](ConceptMap-VF-LabObservationStatus.html)"
 * ^experimental = false
 * ^status = #active
 * ^name = "LabObservationStatus"
@@ -40,7 +40,7 @@ Description: "FHIR Target ValueSet for Terminology Maps [VF_LabObservationStatus
 
 ValueSet: LabObservationStatus-vista
 Title: "LabObservationStatus VistA"
-Description: "VistA Source ValueSet for Terminology Maps [VF_LabObservationStatus](ConceptMap-VF-LabObservationStatus)"
+Description: "VistA Source ValueSet for Terminology Maps [VF_LabObservationStatus](ConceptMap-VF-LabObservationStatus.html)"
 * ^experimental = false
 * ^status = #active
 * ^name = "LabObservationStatus_VistA"

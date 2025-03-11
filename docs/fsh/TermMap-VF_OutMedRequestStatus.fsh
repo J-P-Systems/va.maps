@@ -79,7 +79,7 @@ Usage: #definition
 
 ValueSet: OutMedRequestStatus
 Title: "OutMedRequestStatus FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps [VF_OutMedRequestStatus](ConceptMap-VF-OutMedRequestStatus)"
+Description: "FHIR Target ValueSet for Terminology Maps [VF_OutMedRequestStatus](ConceptMap-VF-OutMedRequestStatus.html)"
 * ^experimental = false
 * ^status = #active
 * ^name = "OutMedRequestStatus"
@@ -91,7 +91,7 @@ Description: "FHIR Target ValueSet for Terminology Maps [VF_OutMedRequestStatus]
 
 ValueSet: OutMedRequestStatus-vista
 Title: "OutMedRequestStatus VistA"
-Description: "VistA Source ValueSet for Terminology Maps [VF_OutMedRequestStatus](ConceptMap-VF-OutMedRequestStatus)"
+Description: "VistA Source ValueSet for Terminology Maps [VF_OutMedRequestStatus](ConceptMap-VF-OutMedRequestStatus.html)"
 * ^experimental = false
 * ^status = #active
 * ^name = "OutMedRequestStatus_VistA"

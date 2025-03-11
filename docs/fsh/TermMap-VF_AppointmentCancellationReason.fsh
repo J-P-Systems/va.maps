@@ -119,7 +119,7 @@ Usage: #definition
 
 ValueSet: AppointmentCancellationReason
 Title: "AppointmentCancellationReason FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps [VF_AppointmentCancellationReason](ConceptMap-VF-AppointmentCancellationReason)"
+Description: "FHIR Target ValueSet for Terminology Maps [VF_AppointmentCancellationReason](ConceptMap-VF-AppointmentCancellationReason.html)"
 * ^experimental = false
 * ^status = #active
 * ^name = "AppointmentCancellationReason"
@@ -133,7 +133,7 @@ Description: "FHIR Target ValueSet for Terminology Maps [VF_AppointmentCancellat
 
 ValueSet: AppointmentCancellationReason-vista
 Title: "AppointmentCancellationReason VistA"
-Description: "VistA Source ValueSet for Terminology Maps [VF_AppointmentCancellationReason](ConceptMap-VF-AppointmentCancellationReason)"
+Description: "VistA Source ValueSet for Terminology Maps [VF_AppointmentCancellationReason](ConceptMap-VF-AppointmentCancellationReason.html)"
 * ^experimental = false
 * ^status = #active
 * ^name = "AppointmentCancellationReason_VistA"

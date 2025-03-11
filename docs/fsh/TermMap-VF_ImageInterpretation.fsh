@@ -35,7 +35,7 @@ Usage: #definition
 
 ValueSet: ImageInterpretation
 Title: "ImageInterpretation FHIR"
-Description: "FHIR Target ValueSet for Terminology Maps [VF_ImageInterpretation](ConceptMap-VF-ImageInterpretation)"
+Description: "FHIR Target ValueSet for Terminology Maps [VF_ImageInterpretation](ConceptMap-VF-ImageInterpretation.html)"
 * ^experimental = false
 * ^status = #active
 * ^name = "ImageInterpretation"
@@ -46,7 +46,7 @@ Description: "FHIR Target ValueSet for Terminology Maps [VF_ImageInterpretation]
 
 ValueSet: ImageInterpretation-vista
 Title: "ImageInterpretation VistA"
-Description: "VistA Source ValueSet for Terminology Maps [VF_ImageInterpretation](ConceptMap-VF-ImageInterpretation)"
+Description: "VistA Source ValueSet for Terminology Maps [VF_ImageInterpretation](ConceptMap-VF-ImageInterpretation.html)"
 * ^experimental = false
 * ^status = #active
 * ^name = "ImageInterpretation_VistA"
