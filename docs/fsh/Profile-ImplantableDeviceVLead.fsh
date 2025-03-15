@@ -31,7 +31,7 @@ Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: ImplantableDeviceVLead
 * identifier.value -> "1351: source value based on V LEAD IMPLANT - IEN (698.1-.001)"
-* identifier.system -> "1351-1: fixed value = http://va.gov/identifiers/$Sta3n/698.1" "generated from mapParameter row 1"
+* identifier.system -> "1351-1: fixed value = http://va.gov/identifiers/$Sta3n/698.1" "generated from mapParameter line 1"
 * status -> "1360: fixed value = #active when V LEAD IMPLANT - EXPLANT DATE (698.1-56) if is NULL" "If NULL, can it be assumed it is active?"
 * status -> "1361: fixed value = #inactive when V LEAD IMPLANT - EXPLANT DATE (698.1-56) if is not NULL"
 * manufacturer -> "1369: source value based on V LEAD IMPLANT - V LEAD MANUFACTURER > PACEMAKER MANUFACTURER - NAME (698.1-3 > 698.6-.01)"

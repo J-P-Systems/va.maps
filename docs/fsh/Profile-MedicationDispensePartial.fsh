@@ -4,7 +4,7 @@ Id: MedicationDispensePartial
 Title: "MedicationDispense: Partial"
 Description: "This StructureDefinition contains the maps for VistA file PRESCRIPTION (52) to MedicationDispense."
 * ^status = #active
-* type and destination.display and authorizingPrescription and daysSupply and dosageInstruction.doseAndRate.doseQuantity.unit and dosageInstruction.doseAndRate.doseQuantity.code and dosageInstruction.doseAndRate.doseQuantity.value and dosageInstruction.patientInstruction and dosageInstruction.text and medicationCodeableConcept.coding.code and medicationCodeableConcept.coding.system and medicationCodeableConcept.text and quantity.value and status and subject and whenPrepared and location and note.text and performer.actor MS
+* type and destination.display and authorizingPrescription and daysSupply and dosageInstruction.doseAndRate.doseQuantity.unit and dosageInstruction.doseAndRate.doseQuantity.code and dosageInstruction.doseAndRate.doseQuantity.value and dosageInstruction.patientInstruction and dosageInstruction.text and medicationCodeableConcept.coding.code and medicationCodeableConcept.coding.system and medicationCodeableConcept.text and quantity.value and status and subject and whenPrepared and location and note.text and performer.actor and category MS
 * authorizingPrescription only Reference(MedicationRequestOutpatient)
 * subject only Reference(Patient)
 * location only Reference(Location)
@@ -16,6 +16,7 @@ Description: "This StructureDefinition contains the maps for VistA file PRESCRIP
 * medicationCodeableConcept.coding.system = "urn:oid:2.16.840.1.113883.6.233"
 * status obeys mdp-25-1577
 * status obeys mdp-25-1578
+* category = http://terminology.hl7.org/fhir/CodeSystem/medicationdispense-category#outpatient
 
 Invariant: mdp-25-1570
 Description: "If number then source value from (52-113 > 52.0113-.01)"
@@ -47,7 +48,7 @@ Source: MedicationDispensePartial
 * dosageInstruction.patientInstruction -> "1569: source value based on PRESCRIPTION - PATIENT INSTRUCTIONS (52-114)"
 * dosageInstruction.text -> "1568: source value based on PRESCRIPTION - SIG (52-10)"
 * medicationCodeableConcept.coding.code -> "1573: source value based on PRESCRIPTION - DRUG > DRUG - PSNDF VA PRODUCT NAME ENTRY (52-6 > 50-22)"
-* medicationCodeableConcept.coding.system -> "1573-1: fixed value = urn:oid:2.16.840.1.113883.6.233" "generated from mapParameter row 1"
+* medicationCodeableConcept.coding.system -> "1573-1: fixed value = urn:oid:2.16.840.1.113883.6.233" "generated from mapParameter line 1"
 * medicationCodeableConcept.text -> "1572: source value based on PRESCRIPTION - DRUG > DRUG - GENERIC NAME (52-6 > 50-.01)" "This may not be necessary; we have the product."
 * quantity.value -> "1566: source value based on PRESCRIPTION - PARTIAL DATE > PARTIAL DATE - QTY (52-60 > 52.2-.04)"
 * status -> "1577: fixed value = #completed when PRESCRIPTION - PARTIAL DATE > PARTIAL DATE - RELEASED DATE/TIME (52-60 > 52.2-8) if not null"
@@ -57,6 +58,7 @@ Source: MedicationDispensePartial
 * location -> "1714: reference based on PRESCRIPTION - PARTIAL DATE > PARTIAL DATE - DIVISION > OUTPATIENT SITE - DEFAULT ERX CLINIC (52-60 > 52.2-.09 > 59-10)" "not Clinic (written) but Division (filled)"
 * note.text -> "1717: source value based on PRESCRIPTION - PARTIAL DATE > PARTIAL DATE - REMARKS (52-60 > 52.2-.03)"
 * performer.actor -> "1729: reference based on PRESCRIPTION - PARTIAL DATE > PARTIAL DATE - PHARMACIST NAME (52-60 > 52.2-.05)"
+* category -> "2216: fixed value = http://terminology.hl7.org/fhir/CodeSystem/medicationdispense-category#outpatient"
 
 Mapping: cdw-to-MedicationDispensePartial
 Id: cdw

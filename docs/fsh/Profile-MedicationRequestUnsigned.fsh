@@ -20,7 +20,7 @@ Severity: #warning
 Expression: "true"
 
 Invariant: mru-25-1225-1
-Description: "If package like 'PS%' & class 'I' & [exclude supply] then fixed value http://terminology.hl7.org/CodeSystem/v2-0203/identifier-type#PLAC"
+Description: "If package like 'PS%' & class 'I' & [exclude supply] then fixed value http://terminology.hl7.org/CodeSystem/v2-0203#PLAC"
 Severity: #warning
 Expression: "true"
 
@@ -29,7 +29,7 @@ Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: MedicationRequestUnsigned
 * identifier.value -> "1225: source value based on ORDER - ORDER # (100-.01) if package like 'PS%' & class 'I' & [exclude supply]" "confirm case"
-* identifier.type -> "1225-1: fixed value = http://terminology.hl7.org/CodeSystem/v2-0203/identifier-type#PLAC if package like 'PS%' & class 'I' & [exclude supply]" "generated from mapParameter row 1"
+* identifier.type -> "1225-1: fixed value = http://terminology.hl7.org/CodeSystem/v2-0203#PLAC if package like 'PS%' & class 'I' & [exclude supply]" "generated from mapParameter line 1"
 * subject -> "1226: reference based on ORDER - OBJECT OF ORDER (100-.02)"
 * requester -> "1227: reference based on ORDER - CURRENT AGENT/PROVIDER (100-1)"
 * authoredOn -> "1228: source value based on ORDER - WHEN ENTERED (100-4)"

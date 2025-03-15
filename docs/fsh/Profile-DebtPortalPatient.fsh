@@ -36,7 +36,7 @@ Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: DebtPortalPatient
 * contact.address.line -> "1819: source value based on ACCOUNTS RECEIVABLE - DEBTOR > AR DEBTOR - STREET ADDRESS #1 (430-9 > 340-1.01)"
-* contact.address.use -> "1819-1: fixed value = #billing" "generated from mapParameter row 1"
+* contact.address.use -> "1819-1: fixed value = #billing" "generated from mapParameter line 1"
 * contact.address.line -> "1820: source value based on ACCOUNTS RECEIVABLE - DEBTOR > AR DEBTOR - STREET ADDRESS #2 (430-9 > 340-1.02)"
 * contact.address.line -> "1821: source value based on ACCOUNTS RECEIVABLE - DEBTOR > AR DEBTOR - STREET ADDRESS #3 (430-9 > 340-1.03)"
 * contact.address.city -> "1822: source value based on ACCOUNTS RECEIVABLE - DEBTOR > AR DEBTOR - CITY (430-9 > 340-1.04)"
@@ -45,9 +45,9 @@ Source: DebtPortalPatient
 * contact.telecom.value -> "1825: source value based on ACCOUNTS RECEIVABLE - DEBTOR > AR DEBTOR - PHONE NUMBER (430-9 > 340-1.07)"
 * contact.address.country -> "1826: source value based on ACCOUNTS RECEIVABLE - DEBTOR > AR DEBTOR - FOREIGN COUNTRY CODE (430-9 > 340-1.08)"
 * name.text -> "1827: source value based on ACCOUNTS RECEIVABLE - DEBTOR > AR DEBTOR - DEBTOR (430-9 > 340-.01) if POINTER is PATIENT (#2)"
-* name.family -> "1827-1: fixed value = LAST if POINTER is PATIENT (#2)" "generated from mapParameter row 1"
-* name.given -> "1827-2: fixed value = FIRST & MIDDLE if POINTER is PATIENT (#2)" "generated from mapParameter row 2"
-* name.suffix -> "1827-3: fixed value = SUFFIX if POINTER is PATIENT (#2)" "generated from mapParameter row 3"
+* name.family -> "1827-1: fixed value = LAST if POINTER is PATIENT (#2)" "generated from mapParameter line 1"
+* name.given -> "1827-2: fixed value = FIRST & MIDDLE if POINTER is PATIENT (#2)" "generated from mapParameter line 2"
+* name.suffix -> "1827-3: fixed value = SUFFIX if POINTER is PATIENT (#2)" "generated from mapParameter line 3"
 
 Mapping: cdw-to-DebtPortalPatient
 Id: cdw

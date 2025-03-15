@@ -16,7 +16,7 @@ Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: EncounterInpatientCondition
 * code -> "956: source value based on PTF - PRINCIPAL DIAGNOSIS (45-79)" "Infer Condition; no clinical status ; updated category to encounter-diagnosis"
-* category[us-core] -> "956-1: fixed value = http://terminology.hl7.org/CodeSystem/condition-category#encounter-diagnosis" "generated from mapParameter row 1"
+* category[us-core] -> "956-1: fixed value = http://terminology.hl7.org/CodeSystem/condition-category#encounter-diagnosis" "generated from mapParameter line 1"
 * extension[assertedDate].valueDateTime -> "2145: target not supported" "auto added because of must-support"
 * clinicalStatus -> "2146: target not supported" "auto added because of must-support"
 * verificationStatus -> "2147: target not supported" "auto added because of must-support"

@@ -26,12 +26,11 @@ Source: DebtPortalChargeIteminterest
 * enteredDate -> "1992: source value based on AR TRANSACTION - DATE ENTERED (433-19)"
 * code.text -> "1993: source value based on AR TRANSACTION - TRANSACTION TYPE > ACCOUNTS RECEIVABLE TRANS.TYPE - NAME (433-12 > 430.3-.01) if IEN = 12 OR 13" "Transaction type name = ADMIN.COST CHARGE when IEN = 12\nTransaction type name = INTEREST/ADM. CHARGE when IEN = 13"
 * identifier[va-tn].value -> "1994: source value based on AR TRANSACTION - TRANSACTION NUMBER (433-.01)"
-* identifier[va-tn].type.text -> "1994-1: fixed value = Transaction Number" "generated from mapParameter row 1"
+* identifier[va-tn].type.text -> "1994-1: fixed value = Transaction Number" "generated from mapParameter line 1"
 * identifier[va-bn].value -> "1995: source value based on AR TRANSACTION - BILL NUMBER (433-.03)"
-* identifier[va-bn].type.text -> "1995-1: fixed value = Bill Number" "generated from mapParameter row 1"
+* identifier[va-bn].type.text -> "1995-1: fixed value = Bill Number" "generated from mapParameter line 1"
 * status -> "1996: fixed value = #billed"
 * occurrenceDateTime -> "1997: source value based on AR TRANSACTION - TRANSACTION DATE (433-11)"
-* enteredDate -> "1998: source value based on AR TRANSACTION - DATE ENTERED (433-19)"
 
 Mapping: cdw-to-DebtPortalChargeIteminterest
 Id: cdw
@@ -42,4 +41,3 @@ Source: DebtPortalChargeIteminterest
 * identifier[va-tn].value -> "IB.ARTransaction.TransactionNumber"
 * identifier[va-bn].value -> "IB.ARTransaction.AccountsReceivableIEN,IB.ARTransaction.PatientIEN,IB.ARTransactionComment.PatientIEN,IB.ARTransactionDescription.PatientIEN,IB.ARTransactionFiscalYear.PatientIEN"
 * occurrenceDateTime -> "IB.ARTransaction.TransactionDateTime,IB.ARTransactionComment.TransactionDateTime,IB.ARTransactionDescription.TransactionDateTime,IB.ARTransactionFiscalYear.TransactionDateTime"
-* enteredDate -> "IB.ARTransaction.EnteredDateTime"

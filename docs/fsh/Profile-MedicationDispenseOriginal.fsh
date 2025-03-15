@@ -41,7 +41,7 @@ Source: MedicationDispenseOriginal
 * dosageInstruction.patientInstruction -> "839: source value based on PRESCRIPTION - PATIENT INSTRUCTIONS (52-114)"
 * dosageInstruction.text -> "838: source value based on PRESCRIPTION - SIG (52-10)"
 * medicationCodeableConcept.coding.code -> "1545: source value based on PRESCRIPTION - DRUG > DRUG - PSNDF VA PRODUCT NAME ENTRY (52-6 > 50-22)"
-* medicationCodeableConcept.coding.system -> "1545-1: fixed value = urn:oid:2.16.840.1.113883.6.233" "generated from mapParameter row 1"
+* medicationCodeableConcept.coding.system -> "1545-1: fixed value = urn:oid:2.16.840.1.113883.6.233" "generated from mapParameter line 1"
 * medicationCodeableConcept.text -> "1544: source value based on PRESCRIPTION - DRUG > DRUG - GENERIC NAME (52-6 > 50-.01)" "This may not be necessary; we have the product."
 * quantity.value -> "823: source value based on PRESCRIPTION - QTY (52-7)"
 * status -> "1541: fixed value = #completed when PRESCRIPTION - RELEASED DATE/TIME (52-31) if not null"

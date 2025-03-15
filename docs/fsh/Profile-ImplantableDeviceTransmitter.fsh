@@ -36,7 +36,7 @@ Source: ImplantableDeviceTransmitter
 * modelNumber -> "1389: source value based on GENERATOR IMPLANT - TRANSMITTER MODEL > PACEMAKER EQUIPMENT - MODEL NUMBER/NAME (698-12 > 698.4-.01)"
 * type -> "1395: terminologyMaps using VF_deviceTypePacemaker on GENERATOR IMPLANT - TRANSMITTER MODEL > PACEMAKER EQUIPMENT - TYPE OF EQUIPMENT (698-12 > 698.4-1)" "A request for more specific SNOMED codes will be submitted (01/04/2023)"
 * identifier.value -> "1349: source value based on GENERATOR IMPLANT - IEN (698-.001)"
-* identifier.system -> "1349-1: fixed value = http://va.gov/identifiers/$Sta3n/698" "generated from mapParameter row 1"
+* identifier.system -> "1349-1: fixed value = http://va.gov/identifiers/$Sta3n/698" "generated from mapParameter line 1"
 * status -> "1356: fixed value = #active when GENERATOR IMPLANT - EXPLANT DATE (698-96) if is NULL" "If NULL, can it be assumed it is active?"
 * status -> "1357: fixed value = #inactive when GENERATOR IMPLANT - EXPLANT DATE (698-96) if is not NULL"
 * manufacturer -> "1366: source value based on GENERATOR IMPLANT - PACEMAKER MANUFACTURER > PACEMAKER MANUFACTURER - NAME (698-3 > 698.6-.01)"

@@ -4,7 +4,7 @@ Title: "Lighthouse Clinical Health API"
 Usage: #definition
 * description = "This CapabilityStatement enumerates the profiles that the API should address, in the estimation of the enterprise mapping team. Some elements may not be appropriate for those cases; consult the actual API specification published by the API provider"
 * status = #draft
-* date = "2025-03-11T10:07:40.941Z"
+* date = "2025-03-15T09:47:34.166Z"
 * kind = #requirements
 * fhirVersion = #4.0.1
 * format[0] = #xml
@@ -37,6 +37,12 @@ Usage: #definition
 * rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/ConditionEncounterDiagnosis"
 * rest.resource[+].type = #Location
 * rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/Location"
+* rest.resource[+].type = #MedicationDispense
+* rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/MedicationDispenseRefill"
+* rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/MedicationDispensePartial"
+* rest.resource[+].type = #MedicationRequest
+* rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/MedicationRequestOutpatient"
+* rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/MedicationRequestOutpatient"
 * rest.resource[+].type = #Organization
 * rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/Organization"
 * rest.resource[+].type = #Practitioner

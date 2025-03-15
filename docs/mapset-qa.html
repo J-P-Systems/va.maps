@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Mapset Qa - US Veterans Health Administration FHIR Map Set Implementation Guide v1.2.540</title>
+    <title>Mapset Qa - US Veterans Health Administration FHIR Map Set Implementation Guide v1.3.557</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -61,7 +61,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">US Veterans Health Administration FHIR Map Set Implementation Guide</span>
             <br/>
-            <span style="display:inline-block;">1.2.540 - 250301
+            <span style="display:inline-block;">1.3.557 - 250401
 
 
 
@@ -253,6 +253,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li>1724 issue, inactive or target not supported should have a mapComment</li>
   <li>1739 issue, inactive or target not supported should have a mapComment</li>
   <li>1740 issue, inactive or target not supported should have a mapComment</li>
+  <li>2029 issue, inactive or target not supported should have a mapComment</li>
+  <li>1998 issue, inactive or target not supported should have a mapComment</li>
   <li>1863 vistaFileField requires '-' and field#</li>
   <li>1874 vistaFileField requires '-' and field#</li>
   <li>1875 vistaFileFieldName requires ' - ' and fieldname</li>
@@ -279,6 +281,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <h3 id="capabilitystatements">CapabilityStatements</h3>
 <ol>
   <li>452 EncounterOutpatient references ConditionEncounterDiagnosis, missing in CHAPI API; auto-added</li>
+  <li>1553 MedicationDispenseRefill references MedicationRequestOutpatient, missing in CHAPI API; auto-added</li>
+  <li>1565 MedicationDispensePartial references MedicationRequestOutpatient, missing in CHAPI API; auto-added</li>
   <li>441 EncounterInpatientEncounter references Patient, missing in LCS API; auto-added</li>
   <li>442 EncounterInpatientEncounter references Practitioner, missing in LCS API; auto-added</li>
   <li>460 EncounterInpatientEncounter references Location, missing in LCS API; auto-added</li>
@@ -323,24 +327,19 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h4 id="allergyintolerance">AllergyIntolerance</h4>
 <ol>
-  <li>CHECK maps to <code class="language-plaintext highlighter-rouge">AllergyIntolerance.code</code> in AllergyIntolerance; maps=2 max=1</li>
-  <li>CHECK maps to <code class="language-plaintext highlighter-rouge">AllergyIntolerance.verificationStatus</code> in AllergyIntolerance; maps=2 max=1</li>
+  <li>check maps to <code class="language-plaintext highlighter-rouge">AllergyIntolerance.code</code> in AllergyIntolerance; maps=2 max=1</li>
+  <li>check maps to <code class="language-plaintext highlighter-rouge">AllergyIntolerance.verificationStatus</code> in AllergyIntolerance; maps=2 max=1</li>
   <li>557 expected only vistaFile <code class="language-plaintext highlighter-rouge">120.8</code> but got <code class="language-plaintext highlighter-rouge">120.85</code></li>
 </ol>
 
 <h4 id="patient">Patient</h4>
-<ol>
-  <li>575-1 unknown file-field <code class="language-plaintext highlighter-rouge">undefined6</code></li>
-  <li>576-1 unknown file-field <code class="language-plaintext highlighter-rouge">undefined2</code></li>
-  <li>CHECK maps to <code class="language-plaintext highlighter-rouge">Patient.extension</code> in Patient; maps=2 max=1</li>
-  <li>CHECK maps to <code class="language-plaintext highlighter-rouge">Patient.extension</code> in Patient; maps=2 max=1</li>
-</ol>
+<p><em>no QA findings</em></p>
 
 <h4 id="appointment">Appointment</h4>
 <ol>
-  <li>CHECK maps to <code class="language-plaintext highlighter-rouge">Appointment.status</code> in Appointment; maps=5 max=1</li>
-  <li>CHECK maps to <code class="language-plaintext highlighter-rouge">Appointment.start</code> in Appointment; maps=2 max=1</li>
-  <li>CHECK maps to <code class="language-plaintext highlighter-rouge">Appointment.created</code> in Appointment; maps=2 max=1</li>
+  <li>check maps to <code class="language-plaintext highlighter-rouge">Appointment.status</code> in Appointment; maps=5 max=1</li>
+  <li>check maps to <code class="language-plaintext highlighter-rouge">Appointment.start</code> in Appointment; maps=2 max=1</li>
+  <li>check maps to <code class="language-plaintext highlighter-rouge">Appointment.created</code> in Appointment; maps=2 max=1</li>
   <li>744 expected only vistaFile <code class="language-plaintext highlighter-rouge">2.98</code> but got <code class="language-plaintext highlighter-rouge">44.003</code></li>
   <li>1722 expected only vistaFile <code class="language-plaintext highlighter-rouge">2.98</code> but got <code class="language-plaintext highlighter-rouge">2</code></li>
   <li>748 expected only vistaFile <code class="language-plaintext highlighter-rouge">2.98</code> but got <code class="language-plaintext highlighter-rouge">409.3</code></li>
@@ -354,26 +353,32 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <h4 id="condition-problem">Condition: Problem</h4>
 <ol>
   <li>missing must-support <code class="language-plaintext highlighter-rouge">Condition.category[sdoh]</code> from <a href="http://hl7.org/fhir/us/core/STU5.0.1/StructureDefinition-us-core-condition-problems-health-concerns.html">US Core Condition Problems and Health Concerns Profile (5.0.1)</a></li>
-  <li>367 expected reference POINTER TO PATIENT/IHS FILE (#9000001) but got PATIENT (2)</li>
-  <li>CHECK maps to <code class="language-plaintext highlighter-rouge">Condition.clinicalStatus</code> in Condition; maps=2 max=1</li>
+  <li>check maps to <code class="language-plaintext highlighter-rouge">Condition.clinicalStatus</code> in Condition; maps=2 max=1</li>
+  <li>check maps to <code class="language-plaintext highlighter-rouge">Condition.code</code> in Condition; maps=2 max=1</li>
+  <li>check maps to <code class="language-plaintext highlighter-rouge">Condition.code</code> in Condition; maps=2 max=1</li>
 </ol>
 
 <h4 id="condition-encounter-diagnosis">Condition: Encounter Diagnosis</h4>
 <ol>
-  <li>1611 expected reference POINTER TO PATIENT/IHS FILE (#9000001) but got PATIENT (2)</li>
-  <li>CHECK maps to <code class="language-plaintext highlighter-rouge">Condition.clinicalStatus</code> in Condition; maps=2 max=1</li>
+  <li>1611 reference source path has type POINTER TO PATIENT/IHS FILE (#9000001) and expected PATIENT (2) from profile</li>
+  <li>check maps to <code class="language-plaintext highlighter-rouge">Condition.clinicalStatus</code> in Condition; maps=2 max=1</li>
 </ol>
 
 <h4 id="diagnostic-report-note-surgical-pathology">Diagnostic Report Note: Surgical Pathology</h4>
 <ol>
+  <li>2212 reference source path has type NUMBER and expected PATIENT (2) from profile</li>
   <li>2207 unknown file-field <code class="language-plaintext highlighter-rouge">100-.01&lt;69.03-12</code></li>
+  <li>1701 reference source path has type FREE TEXT and expected SURGICAL PATHOLOGY (63.08) from profile</li>
   <li>2212 expected only vistaFile <code class="language-plaintext highlighter-rouge">63.08</code> but got <code class="language-plaintext highlighter-rouge">2</code></li>
 </ol>
 
 <h4 id="lab-observation-chem-hem-tox-ria-ser">Lab Observation: Chem, hem, tox, ria, ser</h4>
 <ol>
+  <li>1421 reference source path has type NUMBER and expected PATIENT (2) from profile</li>
+  <li>1656 reference source path has type FREE TEXT and expected CHEM, HEM, TOX, RIA, SER, etc. (63.04) from profile</li>
   <li>852 unknown file-field <code class="language-plaintext highlighter-rouge">63.04-2+through+862</code></li>
   <li>857 unknown file-field <code class="language-plaintext highlighter-rouge">63.04-2+through+862</code></li>
+  <li>844 reference source path has type NUMBER and expected PATIENT (2) from profile</li>
   <li>1662 expected only vistaFile <code class="language-plaintext highlighter-rouge">63.04</code> but got <code class="language-plaintext highlighter-rouge">60</code></li>
   <li>1420 expected only vistaFile <code class="language-plaintext highlighter-rouge">63.04</code> but got <code class="language-plaintext highlighter-rouge">60</code></li>
   <li>1420-1 expected only vistaFile <code class="language-plaintext highlighter-rouge">63.04</code> but got <code class="language-plaintext highlighter-rouge">60</code></li>
@@ -385,12 +390,17 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h4 id="diagnostic-report-note-electron-microscopy">Diagnostic Report Note: Electron Microscopy</h4>
 <ol>
+  <li>2213 reference source path has type NUMBER and expected PATIENT (2) from profile</li>
   <li>2209 unknown file-field <code class="language-plaintext highlighter-rouge">100-.01&lt;69.03-12</code></li>
+  <li>1697 reference source path has type FREE TEXT and expected EM (63.02) from profile</li>
   <li>2213 expected only vistaFile <code class="language-plaintext highlighter-rouge">63.02</code> but got <code class="language-plaintext highlighter-rouge">2</code></li>
 </ol>
 
 <h4 id="lab-observation-microbiology">Lab Observation: Microbiology</h4>
 <ol>
+  <li>1421 reference source path has type NUMBER and expected PATIENT (2) from profile</li>
+  <li>1659 reference source path has type FREE TEXT and expected MICROBIOLOGY (63.05) from profile</li>
+  <li>844 reference source path has type NUMBER and expected PATIENT (2) from profile</li>
   <li>1662 expected only vistaFile <code class="language-plaintext highlighter-rouge">63.05</code> but got <code class="language-plaintext highlighter-rouge">60</code></li>
   <li>1420 expected only vistaFile <code class="language-plaintext highlighter-rouge">63.05</code> but got <code class="language-plaintext highlighter-rouge">60</code></li>
   <li>1420-1 expected only vistaFile <code class="language-plaintext highlighter-rouge">63.05</code> but got <code class="language-plaintext highlighter-rouge">60</code></li>
@@ -402,9 +412,12 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h4 id="lab-observation-microbiology-bacteriology">Lab Observation: Microbiology Bacteriology</h4>
 <ol>
+  <li>1421 reference source path has type NUMBER and expected PATIENT (2) from profile</li>
   <li>1522 unknown file-field <code class="language-plaintext highlighter-rouge">63.3-5+to+160</code></li>
   <li>1523 unknown file-field <code class="language-plaintext highlighter-rouge">63.3-5+to+160</code></li>
   <li>1524 unknown file-field <code class="language-plaintext highlighter-rouge">63.3-5.1+to+160.1</code></li>
+  <li>1659 reference source path has type FREE TEXT and expected MICROBIOLOGY (63.05) from profile</li>
+  <li>844 reference source path has type NUMBER and expected PATIENT (2) from profile</li>
   <li>1662 expected only vistaFile <code class="language-plaintext highlighter-rouge">63.05</code> but got <code class="language-plaintext highlighter-rouge">60</code></li>
   <li>1420 expected only vistaFile <code class="language-plaintext highlighter-rouge">63.05</code> but got <code class="language-plaintext highlighter-rouge">60</code></li>
   <li>1420-1 expected only vistaFile <code class="language-plaintext highlighter-rouge">63.05</code> but got <code class="language-plaintext highlighter-rouge">60</code></li>
@@ -416,6 +429,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h4 id="lab-observation-microbiology-parasitology">Lab Observation: Microbiology Parasitology</h4>
 <ol>
+  <li>1421 reference source path has type NUMBER and expected PATIENT (2) from profile</li>
+  <li>1659 reference source path has type FREE TEXT and expected MICROBIOLOGY (63.05) from profile</li>
+  <li>844 reference source path has type NUMBER and expected PATIENT (2) from profile</li>
   <li>1662 expected only vistaFile <code class="language-plaintext highlighter-rouge">63.05</code> but got <code class="language-plaintext highlighter-rouge">60</code></li>
   <li>1420 expected only vistaFile <code class="language-plaintext highlighter-rouge">63.05</code> but got <code class="language-plaintext highlighter-rouge">60</code></li>
   <li>1420-1 expected only vistaFile <code class="language-plaintext highlighter-rouge">63.05</code> but got <code class="language-plaintext highlighter-rouge">60</code></li>
@@ -427,6 +443,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h4 id="lab-observation-microbiology-mycology">Lab Observation: Microbiology Mycology</h4>
 <ol>
+  <li>1421 reference source path has type NUMBER and expected PATIENT (2) from profile</li>
+  <li>1659 reference source path has type FREE TEXT and expected MICROBIOLOGY (63.05) from profile</li>
+  <li>844 reference source path has type NUMBER and expected PATIENT (2) from profile</li>
   <li>1662 expected only vistaFile <code class="language-plaintext highlighter-rouge">63.05</code> but got <code class="language-plaintext highlighter-rouge">60</code></li>
   <li>1420 expected only vistaFile <code class="language-plaintext highlighter-rouge">63.05</code> but got <code class="language-plaintext highlighter-rouge">60</code></li>
   <li>1420-1 expected only vistaFile <code class="language-plaintext highlighter-rouge">63.05</code> but got <code class="language-plaintext highlighter-rouge">60</code></li>
@@ -438,6 +457,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h4 id="lab-observation-microbiology-mycobacteriology">Lab Observation: Microbiology Mycobacteriology</h4>
 <ol>
+  <li>1421 reference source path has type NUMBER and expected PATIENT (2) from profile</li>
+  <li>1659 reference source path has type FREE TEXT and expected MICROBIOLOGY (63.05) from profile</li>
+  <li>844 reference source path has type NUMBER and expected PATIENT (2) from profile</li>
   <li>1662 expected only vistaFile <code class="language-plaintext highlighter-rouge">63.05</code> but got <code class="language-plaintext highlighter-rouge">60</code></li>
   <li>1420 expected only vistaFile <code class="language-plaintext highlighter-rouge">63.05</code> but got <code class="language-plaintext highlighter-rouge">60</code></li>
   <li>1420-1 expected only vistaFile <code class="language-plaintext highlighter-rouge">63.05</code> but got <code class="language-plaintext highlighter-rouge">60</code></li>
@@ -449,6 +471,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h4 id="lab-observation-microbiology-virology">Lab Observation: Microbiology Virology</h4>
 <ol>
+  <li>1421 reference source path has type NUMBER and expected PATIENT (2) from profile</li>
+  <li>1659 reference source path has type FREE TEXT and expected MICROBIOLOGY (63.05) from profile</li>
+  <li>844 reference source path has type NUMBER and expected PATIENT (2) from profile</li>
   <li>1662 expected only vistaFile <code class="language-plaintext highlighter-rouge">63.05</code> but got <code class="language-plaintext highlighter-rouge">60</code></li>
   <li>1420 expected only vistaFile <code class="language-plaintext highlighter-rouge">63.05</code> but got <code class="language-plaintext highlighter-rouge">60</code></li>
   <li>1420-1 expected only vistaFile <code class="language-plaintext highlighter-rouge">63.05</code> but got <code class="language-plaintext highlighter-rouge">60</code></li>
@@ -460,7 +485,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h4 id="document-reference">Document Reference</h4>
 <ol>
-  <li>876 expected reference POINTER TO PATIENT/IHS FILE (#9000001) but got PATIENT (2)</li>
+  <li>876 reference source path has type POINTER TO PATIENT/IHS FILE (#9000001) and expected PATIENT (2) from profile</li>
 </ol>
 
 <h4 id="encounter-inpatient">Encounter: Inpatient</h4>
@@ -468,11 +493,13 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li>missing must-support <code class="language-plaintext highlighter-rouge">Condition.category[sdoh]</code> from <a href="http://hl7.org/fhir/us/core/STU5.0.1/StructureDefinition-us-core-condition-problems-health-concerns.html">US Core Condition Problems and Health Concerns Profile (5.0.1)</a></li>
   <li>449 unknown file-field <code class="language-plaintext highlighter-rouge">45-79.*</code></li>
   <li>450 unknown file-field <code class="language-plaintext highlighter-rouge">45-45.01+to+45.05</code></li>
+  <li>461 reference source path has type NUMBER and expected HOSPITAL LOCATION (44) from profile</li>
+  <li>1600 reference source path has type NUMBER and expected INSTITUTION (4) from profile</li>
   <li>1616 expected only vistaFile <code class="language-plaintext highlighter-rouge">45</code> but got <code class="language-plaintext highlighter-rouge">46</code></li>
   <li>1616-2 expected only vistaFile <code class="language-plaintext highlighter-rouge">45</code> but got <code class="language-plaintext highlighter-rouge">46</code></li>
   <li>1616-3 expected only vistaFile <code class="language-plaintext highlighter-rouge">45</code> but got <code class="language-plaintext highlighter-rouge">46</code></li>
   <li>1616-4 expected only vistaFile <code class="language-plaintext highlighter-rouge">45</code> but got <code class="language-plaintext highlighter-rouge">46</code></li>
-  <li>CHECK maps to <code class="language-plaintext highlighter-rouge">Encounter.status</code> in Encounter; maps=3 max=1</li>
+  <li>check maps to <code class="language-plaintext highlighter-rouge">Encounter.status</code> in Encounter; maps=3 max=1</li>
 </ol>
 
 <h4 id="encounter-outpatient">Encounter: Outpatient</h4>
@@ -487,16 +514,18 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li>1615-2 expected only vistaFile <code class="language-plaintext highlighter-rouge">9000010</code> but got <code class="language-plaintext highlighter-rouge">9000010.18</code></li>
   <li>1615-3 expected only vistaFile <code class="language-plaintext highlighter-rouge">9000010</code> but got <code class="language-plaintext highlighter-rouge">9000010.18</code></li>
   <li>1615-4 expected only vistaFile <code class="language-plaintext highlighter-rouge">9000010</code> but got <code class="language-plaintext highlighter-rouge">9000010.18</code></li>
-  <li>440 expected reference POINTER TO PATIENT/IHS FILE (#9000001) but got PATIENT (2)</li>
-  <li>452 expected reference POINTER TO PROBLEM FILE (#9000011) but got V POV (9000010.07)</li>
-  <li>CHECK maps to <code class="language-plaintext highlighter-rouge">Encounter.status</code> in Encounter; maps=3 max=1</li>
+  <li>440 reference source path has type POINTER TO PATIENT/IHS FILE (#9000001) and expected PATIENT (2) from profile</li>
+  <li>452 reference source path has type POINTER TO PROBLEM FILE (#9000011) and expected V POV (9000010.07) from profile</li>
+  <li>458 reference source path has type POINTER TO CLINIC STOP FILE (#40.7) and expected HOSPITAL LOCATION (44) from profile</li>
+  <li>check maps to <code class="language-plaintext highlighter-rouge">Encounter.status</code> in Encounter; maps=3 max=1</li>
 </ol>
 
 <h4 id="immunization">Immunization</h4>
 <ol>
-  <li>333 expected reference POINTER TO PATIENT/IHS FILE (#9000001) but got PATIENT (2)</li>
-  <li>CHECK maps to <code class="language-plaintext highlighter-rouge">Immunization.status</code> in Immunization; maps=3 max=1</li>
-  <li>CHECK maps to <code class="language-plaintext highlighter-rouge">Immunization.vaccineCode</code> in Immunization; maps=2 max=1</li>
+  <li>333 reference source path has type POINTER TO PATIENT/IHS FILE (#9000001) and expected PATIENT (2) from profile</li>
+  <li>check maps to <code class="language-plaintext highlighter-rouge">Immunization.status</code> in Immunization; maps=3 max=1</li>
+  <li>check maps to <code class="language-plaintext highlighter-rouge">Immunization.vaccineCode</code> in Immunization; maps=2 max=1</li>
+  <li>check maps to <code class="language-plaintext highlighter-rouge">Immunization.vaccineCode</code> in Immunization; maps=2 max=1</li>
 </ol>
 
 <h4 id="implantable-device">Implantable Device</h4>
@@ -504,63 +533,68 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h4 id="implantable-device-a-lead">Implantable Device: A Lead</h4>
 <ol>
-  <li>1401 expected reference POINTER TO MEDICAL PATIENT FILE (#690) but got PATIENT (2)</li>
-  <li>CHECK maps to <code class="language-plaintext highlighter-rouge">Device.status</code> in Device; maps=3 max=1</li>
-  <li>CHECK maps to <code class="language-plaintext highlighter-rouge">Device.serialNumber</code> in Device; maps=2 max=1</li>
+  <li>1401 reference source path has type POINTER TO MEDICAL PATIENT FILE (#690) and expected PATIENT (2) from profile</li>
+  <li>check maps to <code class="language-plaintext highlighter-rouge">Device.status</code> in Device; maps=3 max=1</li>
+  <li>check maps to <code class="language-plaintext highlighter-rouge">Device.serialNumber</code> in Device; maps=2 max=1</li>
 </ol>
 
 <h4 id="implantable-device-dental">Implantable Device: Dental</h4>
 <ol>
-  <li>CHECK maps to <code class="language-plaintext highlighter-rouge">Device.udiCarrier</code> in Device; maps=2 max=1</li>
-  <li>CHECK maps to <code class="language-plaintext highlighter-rouge">Device.status</code> in Device; maps=2 max=1</li>
-  <li>CHECK maps to <code class="language-plaintext highlighter-rouge">Device.distinctIdentifier</code> in Device; maps=2 max=1</li>
-  <li>CHECK maps to <code class="language-plaintext highlighter-rouge">Device.manufactureDate</code> in Device; maps=2 max=1</li>
-  <li>CHECK maps to <code class="language-plaintext highlighter-rouge">Device.expirationDate</code> in Device; maps=2 max=1</li>
-  <li>CHECK maps to <code class="language-plaintext highlighter-rouge">Device.lotNumber</code> in Device; maps=2 max=1</li>
-  <li>CHECK maps to <code class="language-plaintext highlighter-rouge">Device.serialNumber</code> in Device; maps=2 max=1</li>
+  <li>1403 reference source path has type DPT( and expected PATIENT (2) from profile</li>
+  <li>check maps to <code class="language-plaintext highlighter-rouge">Device.udiCarrier</code> in Device; maps=2 max=1</li>
+  <li>check maps to <code class="language-plaintext highlighter-rouge">Device.status</code> in Device; maps=2 max=1</li>
+  <li>check maps to <code class="language-plaintext highlighter-rouge">Device.distinctIdentifier</code> in Device; maps=2 max=1</li>
+  <li>check maps to <code class="language-plaintext highlighter-rouge">Device.manufactureDate</code> in Device; maps=2 max=1</li>
+  <li>check maps to <code class="language-plaintext highlighter-rouge">Device.expirationDate</code> in Device; maps=2 max=1</li>
+  <li>check maps to <code class="language-plaintext highlighter-rouge">Device.lotNumber</code> in Device; maps=2 max=1</li>
+  <li>check maps to <code class="language-plaintext highlighter-rouge">Device.serialNumber</code> in Device; maps=2 max=1</li>
 </ol>
 
 <h4 id="implantable-device-pacemaker">Implantable Device: Pacemaker</h4>
 <ol>
-  <li>1400 expected reference POINTER TO MEDICAL PATIENT FILE (#690) but got PATIENT (2)</li>
-  <li>CHECK maps to <code class="language-plaintext highlighter-rouge">Device.status</code> in Device; maps=3 max=1</li>
-  <li>CHECK maps to <code class="language-plaintext highlighter-rouge">Device.serialNumber</code> in Device; maps=2 max=1</li>
+  <li>1400 reference source path has type POINTER TO MEDICAL PATIENT FILE (#690) and expected PATIENT (2) from profile</li>
+  <li>check maps to <code class="language-plaintext highlighter-rouge">Device.status</code> in Device; maps=3 max=1</li>
+  <li>check maps to <code class="language-plaintext highlighter-rouge">Device.serialNumber</code> in Device; maps=2 max=1</li>
 </ol>
 
 <h4 id="implantable-device-prosthesis">Implantable Device: Prosthesis</h4>
 <ol>
-  <li>CHECK maps to <code class="language-plaintext highlighter-rouge">Device.expirationDate</code> in Device; maps=2 max=1</li>
-  <li>CHECK maps to <code class="language-plaintext highlighter-rouge">Device.lotNumber</code> in Device; maps=2 max=1</li>
-  <li>CHECK maps to <code class="language-plaintext highlighter-rouge">Device.serialNumber</code> in Device; maps=2 max=1</li>
+  <li>check maps to <code class="language-plaintext highlighter-rouge">Device.expirationDate</code> in Device; maps=2 max=1</li>
+  <li>check maps to <code class="language-plaintext highlighter-rouge">Device.lotNumber</code> in Device; maps=2 max=1</li>
+  <li>check maps to <code class="language-plaintext highlighter-rouge">Device.serialNumber</code> in Device; maps=2 max=1</li>
   <li>1399 expected only vistaFile <code class="language-plaintext highlighter-rouge">130.01</code> but got <code class="language-plaintext highlighter-rouge">130</code></li>
   <li>1807 expected only vistaFile <code class="language-plaintext highlighter-rouge">130.01</code> but got <code class="language-plaintext highlighter-rouge">130</code></li>
 </ol>
 
 <h4 id="implantable-device-transmitter">Implantable Device: Transmitter</h4>
 <ol>
-  <li>1400 expected reference POINTER TO MEDICAL PATIENT FILE (#690) but got PATIENT (2)</li>
-  <li>CHECK maps to <code class="language-plaintext highlighter-rouge">Device.manufacturer</code> in Device; maps=2 max=1</li>
-  <li>CHECK maps to <code class="language-plaintext highlighter-rouge">Device.modelNumber</code> in Device; maps=2 max=1</li>
-  <li>CHECK maps to <code class="language-plaintext highlighter-rouge">Device.type</code> in Device; maps=2 max=1</li>
-  <li>CHECK maps to <code class="language-plaintext highlighter-rouge">Device.status</code> in Device; maps=3 max=1</li>
-  <li>CHECK maps to <code class="language-plaintext highlighter-rouge">Device.serialNumber</code> in Device; maps=2 max=1</li>
+  <li>1400 reference source path has type POINTER TO MEDICAL PATIENT FILE (#690) and expected PATIENT (2) from profile</li>
+  <li>check maps to <code class="language-plaintext highlighter-rouge">Device.manufacturer</code> in Device; maps=2 max=1</li>
+  <li>check maps to <code class="language-plaintext highlighter-rouge">Device.modelNumber</code> in Device; maps=2 max=1</li>
+  <li>check maps to <code class="language-plaintext highlighter-rouge">Device.type</code> in Device; maps=2 max=1</li>
+  <li>check maps to <code class="language-plaintext highlighter-rouge">Device.status</code> in Device; maps=3 max=1</li>
+  <li>check maps to <code class="language-plaintext highlighter-rouge">Device.serialNumber</code> in Device; maps=2 max=1</li>
 </ol>
 
 <h4 id="implantable-device-v-lead">Implantable Device: V Lead</h4>
 <ol>
-  <li>1402 expected reference POINTER TO MEDICAL PATIENT FILE (#690) but got PATIENT (2)</li>
-  <li>CHECK maps to <code class="language-plaintext highlighter-rouge">Device.status</code> in Device; maps=3 max=1</li>
-  <li>CHECK maps to <code class="language-plaintext highlighter-rouge">Device.serialNumber</code> in Device; maps=2 max=1</li>
+  <li>1402 reference source path has type POINTER TO MEDICAL PATIENT FILE (#690) and expected PATIENT (2) from profile</li>
+  <li>check maps to <code class="language-plaintext highlighter-rouge">Device.status</code> in Device; maps=3 max=1</li>
+  <li>check maps to <code class="language-plaintext highlighter-rouge">Device.serialNumber</code> in Device; maps=2 max=1</li>
 </ol>
 
 <h4 id="diagnostic-report-note-cytopathology">Diagnostic Report Note: Cytopathology</h4>
 <ol>
+  <li>2214 reference source path has type NUMBER and expected PATIENT (2) from profile</li>
   <li>2211 unknown file-field <code class="language-plaintext highlighter-rouge">100-.01&lt;69.03-12</code></li>
+  <li>1692 reference source path has type FREE TEXT and expected CYTOPATHOLOGY (63.09) from profile</li>
   <li>2214 expected only vistaFile <code class="language-plaintext highlighter-rouge">63.09</code> but got <code class="language-plaintext highlighter-rouge">2</code></li>
 </ol>
 
 <h4 id="lab-observation">Lab Observation</h4>
 <ol>
+  <li>1421 reference source path has type NUMBER and expected PATIENT (2) from profile</li>
+  <li>844 reference source path has type NUMBER and expected PATIENT (2) from profile</li>
   <li>1421 expected only vistaFile <code class="language-plaintext highlighter-rouge">60</code> but got <code class="language-plaintext highlighter-rouge">2</code></li>
 </ol>
 
@@ -581,7 +615,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li>missing must-support <code class="language-plaintext highlighter-rouge">Location.hoursOfOperation.closingTime</code> from <a href="http://hl7.org/fhir/us/davinci-pdex-plan-net/STU1.1/StructureDefinition-plannet-Location.html">Plan-Net Location (1.1.0)</a></li>
   <li>missing must-support <code class="language-plaintext highlighter-rouge">Location.availabilityExceptions</code> from <a href="http://hl7.org/fhir/us/davinci-pdex-plan-net/STU1.1/StructureDefinition-plannet-Location.html">Plan-Net Location (1.1.0)</a></li>
   <li>missing must-support <code class="language-plaintext highlighter-rouge">Location.endpoint</code> from <a href="http://hl7.org/fhir/us/davinci-pdex-plan-net/STU1.1/StructureDefinition-plannet-Location.html">Plan-Net Location (1.1.0)</a></li>
-  <li>CHECK maps to <code class="language-plaintext highlighter-rouge">Location.address</code> in Location; maps=2 max=1</li>
+  <li>check maps to <code class="language-plaintext highlighter-rouge">Location.address</code> in Location; maps=2 max=1</li>
 </ol>
 
 <h4 id="lung-cancer-screening">Lung Cancer Screening</h4>
@@ -592,42 +626,49 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h4 id="lung-cancer-screening-crna">Lung Cancer Screening: CRNA</h4>
 <ol>
-  <li>CHECK maps to <code class="language-plaintext highlighter-rouge">ServiceRequest.occurrencePeriod</code> in ServiceRequest; maps=2 max=1</li>
+  <li>check maps to <code class="language-plaintext highlighter-rouge">ServiceRequest.occurrencePeriod</code> in ServiceRequest; maps=2 max=1</li>
 </ol>
 
 <h4 id="medicationrequest-unsigned">MedicationRequest: Unsigned</h4>
 <ol>
   <li>missing must-support <code class="language-plaintext highlighter-rouge">MedicationRequest.category</code> from <a href="http://hl7.org/fhir/us/core/STU5.0.1/StructureDefinition-us-core-medicationrequest.html">US Core MedicationRequest Profile (5.0.1)</a></li>
   <li>missing must-support <code class="language-plaintext highlighter-rouge">MedicationRequest.category[us-core]</code> from <a href="http://hl7.org/fhir/us/core/STU5.0.1/StructureDefinition-us-core-medicationrequest.html">US Core MedicationRequest Profile (5.0.1)</a></li>
+  <li>1226 reference source path has type VARIABLE POINTER and expected PATIENT (2) from profile</li>
 </ol>
 
 <h4 id="medicationrequest-nonva">MedicationRequest: NonVA</h4>
 <ol>
-  <li>CHECK maps to <code class="language-plaintext highlighter-rouge">MedicationRequest.medicationCodeableConcept</code> in MedicationRequest; maps=2 max=1</li>
-  <li>CHECK maps to <code class="language-plaintext highlighter-rouge">MedicationRequest.status</code> in MedicationRequest; maps=2 max=1</li>
+  <li>check maps to <code class="language-plaintext highlighter-rouge">MedicationRequest.medicationCodeableConcept</code> in MedicationRequest; maps=2 max=1</li>
+  <li>check maps to <code class="language-plaintext highlighter-rouge">MedicationRequest.status</code> in MedicationRequest; maps=2 max=1</li>
 </ol>
 
 <h4 id="medicationrequest-outpatient">MedicationRequest: Outpatient</h4>
 <p><em>no QA findings</em></p>
 
 <h4 id="medicationdispense-original">MedicationDispense: Original</h4>
-<p><em>no QA findings</em></p>
+<ol>
+  <li>822 reference source path has type NUMBER and expected PRESCRIPTION (52) from profile</li>
+</ol>
 
 <h4 id="medicationdispense-refill">MedicationDispense: Refill</h4>
 <ol>
-  <li>CHECK maps to <code class="language-plaintext highlighter-rouge">MedicationDispense.destination</code> in MedicationDispense; maps=2 max=1</li>
-  <li>CHECK maps to <code class="language-plaintext highlighter-rouge">MedicationDispense.status</code> in MedicationDispense; maps=3 max=1</li>
+  <li>1553 reference source path has type NUMBER and expected PRESCRIPTION (52) from profile</li>
+  <li>check maps to <code class="language-plaintext highlighter-rouge">MedicationDispense.destination</code> in MedicationDispense; maps=2 max=1</li>
+  <li>check maps to <code class="language-plaintext highlighter-rouge">MedicationDispense.status</code> in MedicationDispense; maps=3 max=1</li>
 </ol>
 
 <h4 id="medicationdispense-partial">MedicationDispense: Partial</h4>
 <ol>
-  <li>CHECK maps to <code class="language-plaintext highlighter-rouge">MedicationDispense.destination</code> in MedicationDispense; maps=2 max=1</li>
-  <li>CHECK maps to <code class="language-plaintext highlighter-rouge">MedicationDispense.status</code> in MedicationDispense; maps=2 max=1</li>
+  <li>1565 reference source path has type NUMBER and expected PRESCRIPTION (52) from profile</li>
+  <li>check maps to <code class="language-plaintext highlighter-rouge">MedicationDispense.destination</code> in MedicationDispense; maps=2 max=1</li>
+  <li>check maps to <code class="language-plaintext highlighter-rouge">MedicationDispense.status</code> in MedicationDispense; maps=2 max=1</li>
 </ol>
 
 <h4 id="observation-exam">Observation EXAM</h4>
 <ol>
-  <li>CHECK maps to <code class="language-plaintext highlighter-rouge">Observation.code</code> in Observation; maps=2 max=1</li>
+  <li>check maps to <code class="language-plaintext highlighter-rouge">Observation.code</code> in Observation; maps=2 max=1</li>
+  <li>check maps to <code class="language-plaintext highlighter-rouge">Observation.code</code> in Observation; maps=2 max=1</li>
+  <li>check maps to <code class="language-plaintext highlighter-rouge">Observation.code</code> in Observation; maps=2 max=1</li>
 </ol>
 
 <h4 id="organization">Organization</h4>
@@ -661,7 +702,6 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li>missing must-support <code class="language-plaintext highlighter-rouge">Practitioner.qualification.issuer</code> from <a href="http://hl7.org/fhir/us/davinci-pdex-plan-net/STU1.1/StructureDefinition-plannet-Practitioner.html">Plan-Net Practitioner (1.1.0)</a></li>
   <li>missing must-support <code class="language-plaintext highlighter-rouge">Practitioner.communication</code> from <a href="http://hl7.org/fhir/us/davinci-pdex-plan-net/STU1.1/StructureDefinition-plannet-Practitioner.html">Plan-Net Practitioner (1.1.0)</a></li>
   <li>missing must-support <code class="language-plaintext highlighter-rouge">Practitioner.communication.extension[communication-proficiency]</code> from <a href="http://hl7.org/fhir/us/davinci-pdex-plan-net/STU1.1/StructureDefinition-plannet-Practitioner.html">Plan-Net Practitioner (1.1.0)</a></li>
-  <li>CHECK maps to <code class="language-plaintext highlighter-rouge">Practitioner.identifier</code> in Practitioner; maps=5 max=1</li>
 </ol>
 
 <h4 id="practitioner-role">Practitioner Role</h4>
@@ -689,7 +729,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li>missing must-support <code class="language-plaintext highlighter-rouge">PractitionerRole.notAvailable</code> from <a href="http://hl7.org/fhir/us/davinci-pdex-plan-net/STU1.1/StructureDefinition-plannet-PractitionerRole.html">Plan-Net PractitionerRole (1.1.0)</a></li>
   <li>missing must-support <code class="language-plaintext highlighter-rouge">PractitionerRole.notAvailable.description</code> from <a href="http://hl7.org/fhir/us/davinci-pdex-plan-net/STU1.1/StructureDefinition-plannet-PractitionerRole.html">Plan-Net PractitionerRole (1.1.0)</a></li>
   <li>missing must-support <code class="language-plaintext highlighter-rouge">PractitionerRole.notAvailable.during</code> from <a href="http://hl7.org/fhir/us/davinci-pdex-plan-net/STU1.1/StructureDefinition-plannet-PractitionerRole.html">Plan-Net PractitionerRole (1.1.0)</a></li>
-  <li>CHECK maps to <code class="language-plaintext highlighter-rouge">PractitionerRole.active</code> in PractitionerRole; maps=2 max=1</li>
+  <li>414 reference source path has type FREE TEXT and expected NEW PERSON (200) from profile</li>
+  <li>1411 reference source path has type POINTER Multiple #200.02 and expected INSTITUTION (4) from profile</li>
+  <li>check maps to <code class="language-plaintext highlighter-rouge">PractitionerRole.active</code> in PractitionerRole; maps=2 max=1</li>
   <li>422 expected only vistaFile <code class="language-plaintext highlighter-rouge">200</code> but got <code class="language-plaintext highlighter-rouge">44</code></li>
 </ol>
 
@@ -730,15 +772,15 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li>missing must-support <code class="language-plaintext highlighter-rouge">Location.hoursOfOperation.closingTime</code> from <a href="http://hl7.org/fhir/us/davinci-pdex-plan-net/STU1.1/StructureDefinition-plannet-Location.html">Plan-Net Location (1.1.0)</a></li>
   <li>missing must-support <code class="language-plaintext highlighter-rouge">Location.availabilityExceptions</code> from <a href="http://hl7.org/fhir/us/davinci-pdex-plan-net/STU1.1/StructureDefinition-plannet-Location.html">Plan-Net Location (1.1.0)</a></li>
   <li>missing must-support <code class="language-plaintext highlighter-rouge">Location.endpoint</code> from <a href="http://hl7.org/fhir/us/davinci-pdex-plan-net/STU1.1/StructureDefinition-plannet-Location.html">Plan-Net Location (1.1.0)</a></li>
-  <li>CHECK maps to <code class="language-plaintext highlighter-rouge">Procedure.performedPeriod</code> in Procedure; maps=2 max=1</li>
-  <li>CHECK maps to <code class="language-plaintext highlighter-rouge">Procedure.performedPeriod</code> in Procedure; maps=2 max=1</li>
-  <li>CHECK maps to <code class="language-plaintext highlighter-rouge">Procedure.location</code> in Procedure; maps=2 max=1</li>
+  <li>check maps to <code class="language-plaintext highlighter-rouge">Procedure.performedPeriod</code> in Procedure; maps=2 max=1</li>
+  <li>check maps to <code class="language-plaintext highlighter-rouge">Procedure.performedPeriod</code> in Procedure; maps=2 max=1</li>
+  <li>check maps to <code class="language-plaintext highlighter-rouge">Procedure.location</code> in Procedure; maps=2 max=1</li>
 </ol>
 
 <h4 id="smoking-status-observation">Smoking Status Observation</h4>
 <ol>
-  <li>1245 expected reference POINTER TO PATIENT/IHS FILE (#9000001) but got PATIENT (2)</li>
-  <li>CHECK maps to <code class="language-plaintext highlighter-rouge">Observation.code</code> in Observation; maps=2 max=1</li>
+  <li>1245 reference source path has type POINTER TO PATIENT/IHS FILE (#9000001) and expected PATIENT (2) from profile</li>
+  <li>check maps to <code class="language-plaintext highlighter-rouge">Observation.code</code> in Observation; maps=2 max=1</li>
 </ol>
 
 <h4 id="vital-signs">Vital Signs</h4>
@@ -748,8 +790,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li>missing must-support <code class="language-plaintext highlighter-rouge">Observation.category.coding.code</code> from <a href="http://hl7.org/fhir/us/core/STU5.0.1/StructureDefinition-us-core-vital-signs.html">US Core Vital Signs Profile (5.0.1)</a></li>
   <li>missing must-support <code class="language-plaintext highlighter-rouge">Observation.dataAbsentReason</code> from <a href="http://hl7.org/fhir/us/core/STU5.0.1/StructureDefinition-us-core-vital-signs.html">US Core Vital Signs Profile (5.0.1)</a></li>
   <li>missing must-support <code class="language-plaintext highlighter-rouge">Observation.component.dataAbsentReason</code> from <a href="http://hl7.org/fhir/us/core/STU5.0.1/StructureDefinition-us-core-vital-signs.html">US Core Vital Signs Profile (5.0.1)</a></li>
-  <li>1653 expected reference POINTER TO HOSPITAL LOCATION FILE (#44) but got INSTITUTION (4)</li>
-  <li>CHECK maps to <code class="language-plaintext highlighter-rouge">Observation.status</code> in Observation; maps=2 max=1</li>
+  <li>1653 reference source path has type POINTER TO HOSPITAL LOCATION FILE (#44) and expected INSTITUTION (4) from profile</li>
+  <li>check maps to <code class="language-plaintext highlighter-rouge">Observation.status</code> in Observation; maps=2 max=1</li>
 </ol>
 
 <h4 id="vital-signs-bp">Vital Signs: BP</h4>
@@ -761,10 +803,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li>missing must-support <code class="language-plaintext highlighter-rouge">Observation.component.dataAbsentReason</code> from <a href="http://hl7.org/fhir/us/core/STU5.0.1/StructureDefinition-us-core-blood-pressure.html">US Core Blood Pressure Profile (5.0.1)</a></li>
   <li>missing must-support <code class="language-plaintext highlighter-rouge">Observation.component.dataAbsentReason</code> from <a href="http://hl7.org/fhir/us/core/STU5.0.1/StructureDefinition-us-core-blood-pressure.html">US Core Blood Pressure Profile (5.0.1)</a></li>
   <li>missing must-support <code class="language-plaintext highlighter-rouge">Observation.component.dataAbsentReason</code> from <a href="http://hl7.org/fhir/us/core/STU5.0.1/StructureDefinition-us-core-blood-pressure.html">US Core Blood Pressure Profile (5.0.1)</a></li>
-  <li>1653 expected reference POINTER TO HOSPITAL LOCATION FILE (#44) but got INSTITUTION (4)</li>
-  <li>CHECK maps to <code class="language-plaintext highlighter-rouge">Observation.component</code> in Observation; maps=3 max=1</li>
-  <li>CHECK maps to <code class="language-plaintext highlighter-rouge">Observation.component</code> in Observation; maps=2 max=1</li>
-  <li>CHECK maps to <code class="language-plaintext highlighter-rouge">Observation.status</code> in Observation; maps=2 max=1</li>
+  <li>1653 reference source path has type POINTER TO HOSPITAL LOCATION FILE (#44) and expected INSTITUTION (4) from profile</li>
+  <li>check maps to <code class="language-plaintext highlighter-rouge">Observation.status</code> in Observation; maps=2 max=1</li>
 </ol>
 
 <h4 id="vital-signs-spo2">Vital Signs: SpO2</h4>
@@ -776,25 +816,24 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li>missing must-support <code class="language-plaintext highlighter-rouge">Observation.component.dataAbsentReason</code> from <a href="http://hl7.org/fhir/us/core/STU5.0.1/StructureDefinition-us-core-pulse-oximetry.html">US Core Pulse Oximetry Profile (5.0.1)</a></li>
   <li>missing must-support <code class="language-plaintext highlighter-rouge">Observation.component.dataAbsentReason</code> from <a href="http://hl7.org/fhir/us/core/STU5.0.1/StructureDefinition-us-core-pulse-oximetry.html">US Core Pulse Oximetry Profile (5.0.1)</a></li>
   <li>missing must-support <code class="language-plaintext highlighter-rouge">Observation.component.dataAbsentReason</code> from <a href="http://hl7.org/fhir/us/core/STU5.0.1/StructureDefinition-us-core-pulse-oximetry.html">US Core Pulse Oximetry Profile (5.0.1)</a></li>
-  <li>1653 expected reference POINTER TO HOSPITAL LOCATION FILE (#44) but got INSTITUTION (4)</li>
-  <li>CHECK maps to <code class="language-plaintext highlighter-rouge">Observation.component</code> in Observation; maps=2 max=1</li>
-  <li>CHECK maps to <code class="language-plaintext highlighter-rouge">Observation.status</code> in Observation; maps=2 max=1</li>
-  <li>CHECK maps to <code class="language-plaintext highlighter-rouge">Observation.component</code> in Observation; maps=2 max=1</li>
+  <li>1653 reference source path has type POINTER TO HOSPITAL LOCATION FILE (#44) and expected INSTITUTION (4) from profile</li>
+  <li>check maps to <code class="language-plaintext highlighter-rouge">Observation.status</code> in Observation; maps=2 max=1</li>
 </ol>
 
 <h4 id="observation-imaging-result-echo">Observation Imaging Result: Echo</h4>
 <ol>
-  <li>1631 expected reference POINTER TO MEDICAL PATIENT FILE (#690) but got PATIENT (2)</li>
+  <li>1631 reference source path has type POINTER TO MEDICAL PATIENT FILE (#690) and expected PATIENT (2) from profile</li>
 </ol>
 
 <h4 id="observation-imaging-result-ekg">Observation Imaging Result: EKG</h4>
 <ol>
-  <li>1632 expected reference POINTER TO MEDICAL PATIENT FILE (#690) but got PATIENT (2)</li>
-  <li>CHECK maps to <code class="language-plaintext highlighter-rouge">Observation.valueString</code> in Observation; maps=3 max=1</li>
+  <li>1632 reference source path has type POINTER TO MEDICAL PATIENT FILE (#690) and expected PATIENT (2) from profile</li>
+  <li>check maps to <code class="language-plaintext highlighter-rouge">Observation.valueString</code> in Observation; maps=3 max=1</li>
 </ol>
 
 <h4 id="observation-imaging-result-radnuc">Observation Imaging Result: Rad/Nuc</h4>
 <ol>
+  <li>1620 reference source path has type Multiple #70.03 and expected SURGERY (130) from profile</li>
   <li>1620 expected only vistaFile <code class="language-plaintext highlighter-rouge">74</code> but got <code class="language-plaintext highlighter-rouge">70.02</code></li>
 </ol>
 
@@ -803,15 +842,14 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h4 id="medicationrequest-pending">MedicationRequest: Pending</h4>
 <ol>
-  <li>CHECK maps to <code class="language-plaintext highlighter-rouge">MedicationRequest.medicationCodeableConcept</code> in MedicationRequest; maps=2 max=1</li>
+  <li>check maps to <code class="language-plaintext highlighter-rouge">MedicationRequest.medicationCodeableConcept</code> in MedicationRequest; maps=2 max=1</li>
 </ol>
 
 <h4 id="debt-portal">Debt Portal</h4>
 <ol>
-  <li>2032 expected reference POINTER TO AR DEBTOR FILE (#340) but got ACCOUNTS RECEIVABLE (430)</li>
-  <li>CHECK maps to <code class="language-plaintext highlighter-rouge">ChargeItem.code</code> in ChargeItem[charges]; maps=2 max=1</li>
-  <li>CHECK maps to <code class="language-plaintext highlighter-rouge">ChargeItem.context</code> in ChargeItem[charges]; maps=2 max=1</li>
-  <li>CHECK maps to <code class="language-plaintext highlighter-rouge">ChargeItem.enteredDate</code> in ChargeItem[interest]; maps=2 max=1</li>
+  <li>1818 reference source path has type VARIABLE POINTER and expected ACCOUNTS RECEIVABLE (430) from profile</li>
+  <li>2032 reference source path has type POINTER TO AR DEBTOR FILE (#340) and expected ACCOUNTS RECEIVABLE (430) from profile</li>
+  <li>check maps to <code class="language-plaintext highlighter-rouge">ChargeItem.context</code> in ChargeItem[charges]; maps=2 max=1</li>
   <li>1840 expected only vistaFile <code class="language-plaintext highlighter-rouge">430</code> but got <code class="language-plaintext highlighter-rouge">350</code></li>
   <li>1999 expected only vistaFile <code class="language-plaintext highlighter-rouge">430</code> but got <code class="language-plaintext highlighter-rouge">433</code></li>
   <li>2000 expected only vistaFile <code class="language-plaintext highlighter-rouge">430</code> but got <code class="language-plaintext highlighter-rouge">433</code></li>
@@ -826,7 +864,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h4 id="medrefillrequestmhv">MedRefillRequestMHV</h4>
 <ol>
-  <li>CHECK maps to <code class="language-plaintext highlighter-rouge">Task.code</code> in Task; maps=2 max=1</li>
+  <li>1845 reference source path has type FREE TEXT and expected PRESCRIPTION (52) from profile</li>
+  <li>1846 reference source path has type FREE TEXT and expected INSTITUTION (4) from profile</li>
+  <li>check maps to <code class="language-plaintext highlighter-rouge">Task.code</code> in Task; maps=2 max=1</li>
 </ol>
 
 <h4 id="vaers">VAERS</h4>
@@ -834,8 +874,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li>missing must-support <code class="language-plaintext highlighter-rouge">Patient.telecom.system</code> from <a href="http://hl7.org/fhir/us/core/STU5.0.1/StructureDefinition-us-core-patient.html">US Core Patient Profile (5.0.1)</a></li>
   <li>missing must-support <code class="language-plaintext highlighter-rouge">Patient.telecom.value</code> from <a href="http://hl7.org/fhir/us/core/STU5.0.1/StructureDefinition-us-core-patient.html">US Core Patient Profile (5.0.1)</a></li>
   <li>missing must-support <code class="language-plaintext highlighter-rouge">Patient.telecom.use</code> from <a href="http://hl7.org/fhir/us/core/STU5.0.1/StructureDefinition-us-core-patient.html">US Core Patient Profile (5.0.1)</a></li>
-  <li>CHECK maps to <code class="language-plaintext highlighter-rouge">Patient.extension</code> in Patient; maps=11 max=1</li>
-  <li>CHECK maps to <code class="language-plaintext highlighter-rouge">AdverseEvent.outcome</code> in AdverseEvent; maps=9 max=1</li>
+  <li>check maps to <code class="language-plaintext highlighter-rouge">AdverseEvent.outcome</code> in AdverseEvent; maps=9 max=1</li>
 </ol>
 
 <h4 id="vaers-abstract">VAERS: abstract</h4>
@@ -860,7 +899,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025 <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#1.2.540 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Mar 11, 2025 10:10+0000">2025-03-11</span>
+          IG &#169; 2025 <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#1.3.557 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Sat, Mar 15, 2025 09:49+0000">2025-03-15</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -7,7 +7,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Vital Signs: BP - Mappings - US Veterans Health Administration FHIR Map Set Implementation Guide v1.2.540</title>
+    <title>Vital Signs: BP - Mappings - US Veterans Health Administration FHIR Map Set Implementation Guide v1.3.557</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -65,7 +65,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">US Veterans Health Administration FHIR Map Set Implementation Guide</span>
             <br/>
-            <span style="display:inline-block;">1.2.540 - 250301
+            <span style="display:inline-block;">1.3.557 - 250401
 
 
 
@@ -241,7 +241,7 @@
         
           Active
           
-            as of 2025-03-11
+            as of 2025-03-15
           
         
       </td>
@@ -269,443 +269,439 @@
 
 <h3 id="raw-mappings">Raw mappings</h3>
 
-<table border="1" cellspacing="0" cellpadding="0" class="table-ta1"><tr class="row-ro1">
-<th class="cell-ce1">key</th>
-<th class="cell-ce1">status</th>
-<th class="cell-ce1">direction</th>
-<th class="cell-ce1">source</th>
-<th class="cell-ce1">mapApproach</th>
-<th class="cell-ce1">mapCase</th>
-<th class="cell-ce1">FHIR Path</th>
-<th class="cell-ce1">subPath</th>
-<th class="cell-ce1">mapValue</th>
-<th class="cell-ce1">mapParameter</th>
-<th class="cell-ce1">mapComment</th>
-<th class="cell-ce1">FHIR URL | Ver</th>
+<table border="1" cellspacing="0" cellpadding="0" class="grid"><tr>
+<th>key</th>
+<th>status</th>
+<th>direction</th>
+<th>source</th>
+<th>mapApproach</th>
+<th>mapCase</th>
+<th>FHIR Path</th>
+<th>subPath</th>
+<th>mapValue</th>
+<th>mapParameter</th>
+<th>mapComment</th>
+<th>FHIR URL | Ver</th>
 </tr>
 <tr class="row-ro1">
-<td class="cell-ce1">1805</td>
-<td class="cell-ce1">for review</td>
-<td class="cell-ce1">V2F</td>
-<td class="cell-ce1">GMRV VITAL MEASUREMENT - QUALIFIER &gt; GMRV VITAL QUALIFIER - VUID (120.5-5 &gt; 120.52-99.99)</td>
-<td class="cell-ce1">terminologyMaps</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1">Observation.component[va-cuff-size]</td>
-<td class="cell-ce1">.valueCodeableConcept</td>
-<td class="cell-ce1">VF_VitalsCuffSize</td>
-<td class="cell-ce1">.code = http://loinc.org#8358-4 "Blood pressure device cuff size"</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-blood-pressure | 5.0.1</td>
+<td>1805</td>
+<td>for review</td>
+<td>V2F</td>
+<td>GMRV VITAL MEASUREMENT - QUALIFIER &gt; GMRV VITAL QUALIFIER - VUID (120.5-5 &gt; 120.52-99.99)</td>
+<td>terminologyMaps</td>
+<td></td>
+<td>Observation.component[va-cuff-size]</td>
+<td>.valueCodeableConcept</td>
+<td>VF_VitalsCuffSize</td>
+<td>.code = http://loinc.org#8358-4 "Blood pressure device cuff size"</td>
+<td></td>
+<td>http://hl7.org/fhir/us/core/StructureDefinition/us-core-blood-pressure | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
-<td class="cell-ce1">1805-1</td>
-<td class="cell-ce1">for review</td>
-<td class="cell-ce1">V2F</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1">fixed value</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1">Observation.component[va-cuff-size]</td>
-<td class="cell-ce1">.code</td>
-<td class="cell-ce1">http://loinc.org#8358-4 "Blood pressure device cuff size"</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1">generated from mapParameter row 1</td>
-<td class="cell-ce1"></td>
+<td>1805-1</td>
+<td>for review</td>
+<td>V2F</td>
+<td></td>
+<td>fixed value</td>
+<td></td>
+<td>Observation.component[va-cuff-size]</td>
+<td>.code</td>
+<td>http://loinc.org#8358-4 "Blood pressure device cuff size"</td>
+<td></td>
+<td>generated from mapParameter line 1</td>
+<td>http://hl7.org/fhir/us/core/StructureDefinition/us-core-blood-pressure | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
-<td class="cell-ce1">666</td>
-<td class="cell-ce1">for review</td>
-<td class="cell-ce1">V2F</td>
-<td class="cell-ce1">GMRV VITAL MEASUREMENT - RATE (120.5-1.2)</td>
-<td class="cell-ce1">transform</td>
-<td class="cell-ce1">VUID = 4500634</td>
-<td class="cell-ce1">Observation.component[systolic]</td>
-<td class="cell-ce1">.valueQuantity.value</td>
-<td class="cell-ce1">Split_rate_value.Systolic()</td>
-<td class="cell-ce1">.valueQuantity.code = #mm[Hg]
-.valueQuantity.unit = mm[Hg]
-.code = http://loinc.org#8480-6</td>
-<td class="cell-ce1">Value needs to be parsed from VistA</td>
-<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-blood-pressure | 5.0.1</td>
+<td>666</td>
+<td>for review</td>
+<td>V2F</td>
+<td>GMRV VITAL MEASUREMENT - RATE (120.5-1.2)</td>
+<td>transform</td>
+<td>VUID = 4500634</td>
+<td>Observation.component[systolic]</td>
+<td>.valueQuantity.value</td>
+<td>Split_rate_value.Systolic()</td>
+<td>.valueQuantity.code = #mm[Hg]<br />.valueQuantity.unit = mm[Hg]<br />.code = http://loinc.org#8480-6</td>
+<td>Value needs to be parsed from VistA</td>
+<td>http://hl7.org/fhir/us/core/StructureDefinition/us-core-blood-pressure | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
-<td class="cell-ce1">666-1</td>
-<td class="cell-ce1">for review</td>
-<td class="cell-ce1">V2F</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1">fixed value</td>
-<td class="cell-ce1">VUID = 4500634</td>
-<td class="cell-ce1">Observation.component[systolic]</td>
-<td class="cell-ce1">.valueQuantity.code</td>
-<td class="cell-ce1">#mm[Hg]</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1">generated from mapParameter row 1</td>
-<td class="cell-ce1"></td>
+<td>666-1</td>
+<td>for review</td>
+<td>V2F</td>
+<td></td>
+<td>fixed value</td>
+<td>VUID = 4500634</td>
+<td>Observation.component[systolic]</td>
+<td>.valueQuantity.code</td>
+<td>#mm[Hg]</td>
+<td></td>
+<td>generated from mapParameter line 1</td>
+<td>http://hl7.org/fhir/us/core/StructureDefinition/us-core-blood-pressure | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
-<td class="cell-ce1">666-2</td>
-<td class="cell-ce1">for review</td>
-<td class="cell-ce1">V2F</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1">fixed value</td>
-<td class="cell-ce1">VUID = 4500634</td>
-<td class="cell-ce1">Observation.component[systolic]</td>
-<td class="cell-ce1">.valueQuantity.unit</td>
-<td class="cell-ce1">mm[Hg]</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1">generated from mapParameter row 2</td>
-<td class="cell-ce1"></td>
+<td>666-2</td>
+<td>for review</td>
+<td>V2F</td>
+<td></td>
+<td>fixed value</td>
+<td>VUID = 4500634</td>
+<td>Observation.component[systolic]</td>
+<td>.valueQuantity.unit</td>
+<td>mm[Hg]</td>
+<td></td>
+<td>generated from mapParameter line 2</td>
+<td>http://hl7.org/fhir/us/core/StructureDefinition/us-core-blood-pressure | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
-<td class="cell-ce1">666-3</td>
-<td class="cell-ce1">for review</td>
-<td class="cell-ce1">V2F</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1">fixed value</td>
-<td class="cell-ce1">VUID = 4500634</td>
-<td class="cell-ce1">Observation.component[systolic]</td>
-<td class="cell-ce1">.code</td>
-<td class="cell-ce1">http://loinc.org#8480-6</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1">generated from mapParameter row 3</td>
-<td class="cell-ce1"></td>
+<td>666-3</td>
+<td>for review</td>
+<td>V2F</td>
+<td></td>
+<td>fixed value</td>
+<td>VUID = 4500634</td>
+<td>Observation.component[systolic]</td>
+<td>.code</td>
+<td>http://loinc.org#8480-6</td>
+<td></td>
+<td>generated from mapParameter line 3</td>
+<td>http://hl7.org/fhir/us/core/StructureDefinition/us-core-blood-pressure | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
-<td class="cell-ce1">667</td>
-<td class="cell-ce1">for review</td>
-<td class="cell-ce1">V2F</td>
-<td class="cell-ce1">GMRV VITAL MEASUREMENT - RATE (120.5-1.2)</td>
-<td class="cell-ce1">transform</td>
-<td class="cell-ce1">VUID = 4500634</td>
-<td class="cell-ce1">Observation.component[diastolic]</td>
-<td class="cell-ce1">.valueQuantity.value</td>
-<td class="cell-ce1">Split_rate_value.Diastolic()</td>
-<td class="cell-ce1">.valueQuantity.code = #mm[Hg]
-.valueQuantity.unit = mm[Hg]
-.code = http://loinc.org#8462-4</td>
-<td class="cell-ce1">Value needs to be parsed from VistA</td>
-<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-blood-pressure | 5.0.1</td>
+<td>667</td>
+<td>for review</td>
+<td>V2F</td>
+<td>GMRV VITAL MEASUREMENT - RATE (120.5-1.2)</td>
+<td>transform</td>
+<td>VUID = 4500634</td>
+<td>Observation.component[diastolic]</td>
+<td>.valueQuantity.value</td>
+<td>Split_rate_value.Diastolic()</td>
+<td>.valueQuantity.code = #mm[Hg]<br />.valueQuantity.unit = mm[Hg]<br />.code = http://loinc.org#8462-4</td>
+<td>Value needs to be parsed from VistA</td>
+<td>http://hl7.org/fhir/us/core/StructureDefinition/us-core-blood-pressure | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
-<td class="cell-ce1">667-1</td>
-<td class="cell-ce1">for review</td>
-<td class="cell-ce1">V2F</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1">fixed value</td>
-<td class="cell-ce1">VUID = 4500634</td>
-<td class="cell-ce1">Observation.component[diastolic]</td>
-<td class="cell-ce1">.valueQuantity.code</td>
-<td class="cell-ce1">#mm[Hg]</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1">generated from mapParameter row 1</td>
-<td class="cell-ce1"></td>
+<td>667-1</td>
+<td>for review</td>
+<td>V2F</td>
+<td></td>
+<td>fixed value</td>
+<td>VUID = 4500634</td>
+<td>Observation.component[diastolic]</td>
+<td>.valueQuantity.code</td>
+<td>#mm[Hg]</td>
+<td></td>
+<td>generated from mapParameter line 1</td>
+<td>http://hl7.org/fhir/us/core/StructureDefinition/us-core-blood-pressure | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
-<td class="cell-ce1">667-2</td>
-<td class="cell-ce1">for review</td>
-<td class="cell-ce1">V2F</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1">fixed value</td>
-<td class="cell-ce1">VUID = 4500634</td>
-<td class="cell-ce1">Observation.component[diastolic]</td>
-<td class="cell-ce1">.valueQuantity.unit</td>
-<td class="cell-ce1">mm[Hg]</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1">generated from mapParameter row 2</td>
-<td class="cell-ce1"></td>
+<td>667-2</td>
+<td>for review</td>
+<td>V2F</td>
+<td></td>
+<td>fixed value</td>
+<td>VUID = 4500634</td>
+<td>Observation.component[diastolic]</td>
+<td>.valueQuantity.unit</td>
+<td>mm[Hg]</td>
+<td></td>
+<td>generated from mapParameter line 2</td>
+<td>http://hl7.org/fhir/us/core/StructureDefinition/us-core-blood-pressure | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
-<td class="cell-ce1">667-3</td>
-<td class="cell-ce1">for review</td>
-<td class="cell-ce1">V2F</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1">fixed value</td>
-<td class="cell-ce1">VUID = 4500634</td>
-<td class="cell-ce1">Observation.component[diastolic]</td>
-<td class="cell-ce1">.code</td>
-<td class="cell-ce1">http://loinc.org#8462-4</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1">generated from mapParameter row 3</td>
-<td class="cell-ce1"></td>
+<td>667-3</td>
+<td>for review</td>
+<td>V2F</td>
+<td></td>
+<td>fixed value</td>
+<td>VUID = 4500634</td>
+<td>Observation.component[diastolic]</td>
+<td>.code</td>
+<td>http://loinc.org#8462-4</td>
+<td></td>
+<td>generated from mapParameter line 3</td>
+<td>http://hl7.org/fhir/us/core/StructureDefinition/us-core-blood-pressure | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
-<td class="cell-ce1">652</td>
-<td class="cell-ce1">for review</td>
-<td class="cell-ce1">V2F</td>
-<td class="cell-ce1">GMRV VITAL MEASUREMENT - DATE/TIME VITALS ENTERED (120.5-.04)</td>
-<td class="cell-ce1">source value</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1">Observation.issued</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-vital-signs | 5.0.1</td>
+<td>652</td>
+<td>for review</td>
+<td>V2F</td>
+<td>GMRV VITAL MEASUREMENT - DATE/TIME VITALS ENTERED (120.5-.04)</td>
+<td>source value</td>
+<td></td>
+<td>Observation.issued</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>http://hl7.org/fhir/us/core/StructureDefinition/us-core-vital-signs | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
-<td class="cell-ce1">1653</td>
-<td class="cell-ce1">for review</td>
-<td class="cell-ce1">V2F</td>
-<td class="cell-ce1">GMRV VITAL MEASUREMENT - HOSPITAL LOCATION (120.5-.05)</td>
-<td class="cell-ce1">reference</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1">Observation.performer</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1">/Organization</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-vital-signs | 5.0.1</td>
+<td>1653</td>
+<td>for review</td>
+<td>V2F</td>
+<td>GMRV VITAL MEASUREMENT - HOSPITAL LOCATION (120.5-.05)</td>
+<td>reference</td>
+<td></td>
+<td>Observation.performer</td>
+<td></td>
+<td>/Organization</td>
+<td></td>
+<td></td>
+<td>http://hl7.org/fhir/us/core/StructureDefinition/us-core-vital-signs | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
-<td class="cell-ce1">655</td>
-<td class="cell-ce1">for review</td>
-<td class="cell-ce1">V2F</td>
-<td class="cell-ce1">GMRV VITAL MEASUREMENT - REASON ENTERED IN ERROR (120.5-4)</td>
-<td class="cell-ce1">fixed value</td>
-<td class="cell-ce1">null</td>
-<td class="cell-ce1">Observation.status</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1">#final</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-vital-signs | 5.0.1</td>
+<td>655</td>
+<td>for review</td>
+<td>V2F</td>
+<td>GMRV VITAL MEASUREMENT - REASON ENTERED IN ERROR (120.5-4)</td>
+<td>fixed value</td>
+<td>null</td>
+<td>Observation.status</td>
+<td></td>
+<td>#final</td>
+<td></td>
+<td></td>
+<td>http://hl7.org/fhir/us/core/StructureDefinition/us-core-vital-signs | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
-<td class="cell-ce1">656</td>
-<td class="cell-ce1">for review</td>
-<td class="cell-ce1">V2F</td>
-<td class="cell-ce1">GMRV VITAL MEASUREMENT - REASON ENTERED IN ERROR (120.5-4)</td>
-<td class="cell-ce1">fixed value</td>
-<td class="cell-ce1">not null</td>
-<td class="cell-ce1">Observation.status</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1">#entered-in-error</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-vital-signs | 5.0.1</td>
+<td>656</td>
+<td>for review</td>
+<td>V2F</td>
+<td>GMRV VITAL MEASUREMENT - REASON ENTERED IN ERROR (120.5-4)</td>
+<td>fixed value</td>
+<td>not null</td>
+<td>Observation.status</td>
+<td></td>
+<td>#entered-in-error</td>
+<td></td>
+<td></td>
+<td>http://hl7.org/fhir/us/core/StructureDefinition/us-core-vital-signs | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
-<td class="cell-ce1">657</td>
-<td class="cell-ce1">for review</td>
-<td class="cell-ce1">V2F</td>
-<td class="cell-ce1">GMRV VITAL MEASUREMENT - DATE/TIME VITALS TAKEN (120.5-.01)</td>
-<td class="cell-ce1">source value</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1">Observation.effectiveDateTime</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-vital-signs | 5.0.1</td>
+<td>657</td>
+<td>for review</td>
+<td>V2F</td>
+<td>GMRV VITAL MEASUREMENT - DATE/TIME VITALS TAKEN (120.5-.01)</td>
+<td>source value</td>
+<td></td>
+<td>Observation.effectiveDateTime</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>http://hl7.org/fhir/us/core/StructureDefinition/us-core-vital-signs | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
-<td class="cell-ce1">658</td>
-<td class="cell-ce1">for review</td>
-<td class="cell-ce1">V2F</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1">fixed value</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1">Observation.category[VSCat]</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1">http://terminology.hl7.org/CodeSystem/observation-category#vital-signs</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-vital-signs | 5.0.1</td>
+<td>658</td>
+<td>for review</td>
+<td>V2F</td>
+<td></td>
+<td>fixed value</td>
+<td></td>
+<td>Observation.category[VSCat]</td>
+<td></td>
+<td>http://terminology.hl7.org/CodeSystem/observation-category#vital-signs</td>
+<td></td>
+<td></td>
+<td>http://hl7.org/fhir/us/core/StructureDefinition/us-core-vital-signs | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
-<td class="cell-ce1">659</td>
-<td class="cell-ce1">for review</td>
-<td class="cell-ce1">V2F</td>
-<td class="cell-ce1">GMRV VITAL MEASUREMENT - PATIENT (120.5-.02)</td>
-<td class="cell-ce1">reference</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1">Observation.subject</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1">/Patient</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-vital-signs | 5.0.1</td>
+<td>659</td>
+<td>for review</td>
+<td>V2F</td>
+<td>GMRV VITAL MEASUREMENT - PATIENT (120.5-.02)</td>
+<td>reference</td>
+<td></td>
+<td>Observation.subject</td>
+<td></td>
+<td>/Patient</td>
+<td></td>
+<td></td>
+<td>http://hl7.org/fhir/us/core/StructureDefinition/us-core-vital-signs | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
-<td class="cell-ce1">660</td>
-<td class="cell-ce1">for review</td>
-<td class="cell-ce1">V2F</td>
-<td class="cell-ce1">GMRV VITAL MEASUREMENT - IEN (120.5-.001)</td>
-<td class="cell-ce1">source value</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1">Observation.identifier</td>
-<td class="cell-ce1">.value</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1">.system = http://va.gov/identifiers/$Sta3n/120.5</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-vital-signs | 5.0.1</td>
+<td>660</td>
+<td>for review</td>
+<td>V2F</td>
+<td>GMRV VITAL MEASUREMENT - IEN (120.5-.001)</td>
+<td>source value</td>
+<td></td>
+<td>Observation.identifier</td>
+<td>.value</td>
+<td></td>
+<td>.system = http://va.gov/identifiers/$Sta3n/120.5</td>
+<td></td>
+<td>http://hl7.org/fhir/us/core/StructureDefinition/us-core-vital-signs | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
-<td class="cell-ce1">660-1</td>
-<td class="cell-ce1">for review</td>
-<td class="cell-ce1">V2F</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1">fixed value</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1">Observation.identifier</td>
-<td class="cell-ce1">.system</td>
-<td class="cell-ce1">http://va.gov/identifiers/$Sta3n/120.5</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1">generated from mapParameter row 1</td>
-<td class="cell-ce1"></td>
+<td>660-1</td>
+<td>for review</td>
+<td>V2F</td>
+<td></td>
+<td>fixed value</td>
+<td></td>
+<td>Observation.identifier</td>
+<td>.system</td>
+<td>http://va.gov/identifiers/$Sta3n/120.5</td>
+<td></td>
+<td>generated from mapParameter line 1</td>
+<td>http://hl7.org/fhir/us/core/StructureDefinition/us-core-vital-signs | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
-<td class="cell-ce1">661</td>
-<td class="cell-ce1">for review</td>
-<td class="cell-ce1">V2F</td>
-<td class="cell-ce1">GMRV VITAL MEASUREMENT - VITAL TYPE &gt; GMRV VITAL TYPE - VUID (120.5-.03 &gt; 120.51-99.99)</td>
-<td class="cell-ce1">terminologyMaps</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1">Observation.code</td>
-<td class="cell-ce1">.coding</td>
-<td class="cell-ce1">VF_VitalsCodes</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1">Pulse Oximetry has 2 code values per US Core</td>
-<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-vital-signs | 5.0.1</td>
+<td>661</td>
+<td>for review</td>
+<td>V2F</td>
+<td>GMRV VITAL MEASUREMENT - VITAL TYPE &gt; GMRV VITAL TYPE - VUID (120.5-.03 &gt; 120.51-99.99)</td>
+<td>terminologyMaps</td>
+<td></td>
+<td>Observation.code</td>
+<td>.coding</td>
+<td>VF_VitalsCodes</td>
+<td></td>
+<td>Pulse Oximetry has 2 code values per US Core</td>
+<td>http://hl7.org/fhir/us/core/StructureDefinition/us-core-vital-signs | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
-<td class="cell-ce1">662</td>
-<td class="cell-ce1">for review</td>
-<td class="cell-ce1">V2F</td>
-<td class="cell-ce1">GMRV VITAL MEASUREMENT - QUALIFIER &gt; GMRV VITAL QUALIFIER - VUID (120.5-5 &gt; 120.52-99.99)</td>
-<td class="cell-ce1">terminologyMaps</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1">Observation.bodySite</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1">VF_VitalsBodySite</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-vital-signs | 5.0.1</td>
+<td>662</td>
+<td>for review</td>
+<td>V2F</td>
+<td>GMRV VITAL MEASUREMENT - QUALIFIER &gt; GMRV VITAL QUALIFIER - VUID (120.5-5 &gt; 120.52-99.99)</td>
+<td>terminologyMaps</td>
+<td></td>
+<td>Observation.bodySite</td>
+<td></td>
+<td>VF_VitalsBodySite</td>
+<td></td>
+<td></td>
+<td>http://hl7.org/fhir/us/core/StructureDefinition/us-core-vital-signs | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
-<td class="cell-ce1">663</td>
-<td class="cell-ce1">for review</td>
-<td class="cell-ce1">V2F</td>
-<td class="cell-ce1">GMRV VITAL MEASUREMENT - QUALIFIER &gt; GMRV VITAL QUALIFIER - VUID (120.5-5 &gt; 120.52-99.99)</td>
-<td class="cell-ce1">terminologyMaps</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1">Observation.extension[http://hl7.org/fhir/StructureDefinition/observation-deviceCode].valueCodeableConcept</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1">VF_VitalsMeasurementDevice</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-vital-signs | 5.0.1</td>
+<td>663</td>
+<td>for review</td>
+<td>V2F</td>
+<td>GMRV VITAL MEASUREMENT - QUALIFIER &gt; GMRV VITAL QUALIFIER - VUID (120.5-5 &gt; 120.52-99.99)</td>
+<td>terminologyMaps</td>
+<td></td>
+<td>Observation.extension[http://hl7.org/fhir/StructureDefinition/observation-deviceCode].valueCodeableConcept</td>
+<td></td>
+<td>VF_VitalsMeasurementDevice</td>
+<td></td>
+<td></td>
+<td>http://hl7.org/fhir/us/core/StructureDefinition/us-core-vital-signs | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
-<td class="cell-ce1">867</td>
-<td class="cell-ce1">for review</td>
-<td class="cell-ce1">V2F</td>
-<td class="cell-ce1">GMRV VITAL MEASUREMENT - QUALIFIER &gt; GMRV VITAL QUALIFIER - VUID (120.5-5 &gt; 120.52-99.99)</td>
-<td class="cell-ce1">terminologyMaps</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1">Observation.method</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1">VF_VitalsMethod</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-vital-signs | 5.0.1</td>
+<td>867</td>
+<td>for review</td>
+<td>V2F</td>
+<td>GMRV VITAL MEASUREMENT - QUALIFIER &gt; GMRV VITAL QUALIFIER - VUID (120.5-5 &gt; 120.52-99.99)</td>
+<td>terminologyMaps</td>
+<td></td>
+<td>Observation.method</td>
+<td></td>
+<td>VF_VitalsMethod</td>
+<td></td>
+<td></td>
+<td>http://hl7.org/fhir/us/core/StructureDefinition/us-core-vital-signs | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
-<td class="cell-ce1">1802</td>
-<td class="cell-ce1">for review</td>
-<td class="cell-ce1">V2F</td>
-<td class="cell-ce1">GMRV VITAL MEASUREMENT - QUALIFIER &gt; GMRV VITAL QUALIFIER - VUID (120.5-5 &gt; 120.52-99.99)</td>
-<td class="cell-ce1">terminologyMaps</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1">Observation.component[va-pre-condition]</td>
-<td class="cell-ce1">.valueCodeableConcept</td>
-<td class="cell-ce1">VF_VitalsPrecondition</td>
-<td class="cell-ce1">.code = http://loinc.org#104158-1 "Associated precondition - Reported"</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-vital-signs | 5.0.1</td>
+<td>1802</td>
+<td>for review</td>
+<td>V2F</td>
+<td>GMRV VITAL MEASUREMENT - QUALIFIER &gt; GMRV VITAL QUALIFIER - VUID (120.5-5 &gt; 120.52-99.99)</td>
+<td>terminologyMaps</td>
+<td></td>
+<td>Observation.component[va-pre-condition]</td>
+<td>.valueCodeableConcept</td>
+<td>VF_VitalsPrecondition</td>
+<td>.code = http://loinc.org#104158-1 "Associated precondition - Reported"</td>
+<td></td>
+<td>http://hl7.org/fhir/us/core/StructureDefinition/us-core-vital-signs | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
-<td class="cell-ce1">1802-1</td>
-<td class="cell-ce1">for review</td>
-<td class="cell-ce1">V2F</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1">fixed value</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1">Observation.component[va-pre-condition]</td>
-<td class="cell-ce1">.code</td>
-<td class="cell-ce1">http://loinc.org#104158-1 "Associated precondition - Reported"</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1">generated from mapParameter row 1</td>
-<td class="cell-ce1"></td>
+<td>1802-1</td>
+<td>for review</td>
+<td>V2F</td>
+<td></td>
+<td>fixed value</td>
+<td></td>
+<td>Observation.component[va-pre-condition]</td>
+<td>.code</td>
+<td>http://loinc.org#104158-1 "Associated precondition - Reported"</td>
+<td></td>
+<td>generated from mapParameter line 1</td>
+<td>http://hl7.org/fhir/us/core/StructureDefinition/us-core-vital-signs | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
-<td class="cell-ce1">1803</td>
-<td class="cell-ce1">for review</td>
-<td class="cell-ce1">V2F</td>
-<td class="cell-ce1">GMRV VITAL MEASUREMENT - QUALIFIER &gt; GMRV VITAL QUALIFIER - VUID (120.5-5 &gt; 120.52-99.99)</td>
-<td class="cell-ce1">terminologyMaps</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1">Observation.component[va-pre-condition-device]</td>
-<td class="cell-ce1">.valueCodeableConcept</td>
-<td class="cell-ce1">VF_VitalsQualifyingDevice</td>
-<td class="cell-ce1">.code = http://loinc.org#104158-1 "Associated precondition - Reported"</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-vital-signs | 5.0.1</td>
+<td>1803</td>
+<td>for review</td>
+<td>V2F</td>
+<td>GMRV VITAL MEASUREMENT - QUALIFIER &gt; GMRV VITAL QUALIFIER - VUID (120.5-5 &gt; 120.52-99.99)</td>
+<td>terminologyMaps</td>
+<td></td>
+<td>Observation.component[va-pre-condition-device]</td>
+<td>.valueCodeableConcept</td>
+<td>VF_VitalsQualifyingDevice</td>
+<td>.code = http://loinc.org#104158-1 "Associated precondition - Reported"</td>
+<td></td>
+<td>http://hl7.org/fhir/us/core/StructureDefinition/us-core-vital-signs | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
-<td class="cell-ce1">1803-1</td>
-<td class="cell-ce1">for review</td>
-<td class="cell-ce1">V2F</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1">fixed value</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1">Observation.component[va-pre-condition-device]</td>
-<td class="cell-ce1">.code</td>
-<td class="cell-ce1">http://loinc.org#104158-1 "Associated precondition - Reported"</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1">generated from mapParameter row 1</td>
-<td class="cell-ce1"></td>
+<td>1803-1</td>
+<td>for review</td>
+<td>V2F</td>
+<td></td>
+<td>fixed value</td>
+<td></td>
+<td>Observation.component[va-pre-condition-device]</td>
+<td>.code</td>
+<td>http://loinc.org#104158-1 "Associated precondition - Reported"</td>
+<td></td>
+<td>generated from mapParameter line 1</td>
+<td>http://hl7.org/fhir/us/core/StructureDefinition/us-core-vital-signs | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
-<td class="cell-ce1">1804</td>
-<td class="cell-ce1">for review</td>
-<td class="cell-ce1">V2F</td>
-<td class="cell-ce1">GMRV VITAL MEASUREMENT - QUALIFIER &gt; GMRV VITAL QUALIFIER - VUID (120.5-5 &gt; 120.52-99.99)</td>
-<td class="cell-ce1">terminologyMaps</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1">Observation.extension[http://hl7.org/fhir/StructureDefinition/observation-bodyPosition]</td>
-<td class="cell-ce1">.valueCodeableConcept</td>
-<td class="cell-ce1">VF_VitalsBodyPosition</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-vital-signs | 5.0.1</td>
+<td>1804</td>
+<td>for review</td>
+<td>V2F</td>
+<td>GMRV VITAL MEASUREMENT - QUALIFIER &gt; GMRV VITAL QUALIFIER - VUID (120.5-5 &gt; 120.52-99.99)</td>
+<td>terminologyMaps</td>
+<td></td>
+<td>Observation.extension[http://hl7.org/fhir/StructureDefinition/observation-bodyPosition]</td>
+<td>.valueCodeableConcept</td>
+<td>VF_VitalsBodyPosition</td>
+<td></td>
+<td></td>
+<td>http://hl7.org/fhir/us/core/StructureDefinition/us-core-vital-signs | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
-<td class="cell-ce1">664</td>
-<td class="cell-ce1">for review</td>
-<td class="cell-ce1">V2F</td>
-<td class="cell-ce1">GMRV VITAL MEASUREMENT - RATE (120.5-1.2)</td>
-<td class="cell-ce1">source value</td>
-<td class="cell-ce1">VUID not = 4500634</td>
-<td class="cell-ce1">Observation.valueQuantity</td>
-<td class="cell-ce1">.value</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-vital-signs | 5.0.1</td>
+<td>664</td>
+<td>for review</td>
+<td>V2F</td>
+<td>GMRV VITAL MEASUREMENT - RATE (120.5-1.2)</td>
+<td>source value</td>
+<td>VUID not = 4500634</td>
+<td>Observation.valueQuantity</td>
+<td>.value</td>
+<td></td>
+<td></td>
+<td></td>
+<td>http://hl7.org/fhir/us/core/StructureDefinition/us-core-vital-signs | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
-<td class="cell-ce1">665</td>
-<td class="cell-ce1">for review</td>
-<td class="cell-ce1">V2F</td>
-<td class="cell-ce1">GMRV VITAL MEASUREMENT - VITAL TYPE (120.5-.03)</td>
-<td class="cell-ce1">transform</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1">Observation.valueQuantity</td>
-<td class="cell-ce1">.code</td>
-<td class="cell-ce1">VF_VitalsUnits</td>
-<td class="cell-ce1"></td>
-<td class="cell-ce1">VPR may transform</td>
-<td class="cell-ce1">http://hl7.org/fhir/us/core/StructureDefinition/us-core-vital-signs | 5.0.1</td>
+<td>665</td>
+<td>for review</td>
+<td>V2F</td>
+<td>GMRV VITAL MEASUREMENT - VITAL TYPE (120.5-.03)</td>
+<td>transform</td>
+<td></td>
+<td>Observation.valueQuantity</td>
+<td>.code</td>
+<td>VF_VitalsUnits</td>
+<td></td>
+<td>VPR may transform</td>
+<td>http://hl7.org/fhir/us/core/StructureDefinition/us-core-vital-signs | 5.0.1</td>
 </tr>
 </table>
 
@@ -723,7 +719,7 @@
  <tr><td>&nbsp;&nbsp;&nbsp;extension (observation-bodyPosition)</td><td></td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td>1804: terminologyMaps using VF_VitalsBodyPosition on GMRV VITAL MEASUREMENT - QUALIFIER &gt; GMRV VITAL QUALIFIER - VUID (120.5-5 &gt; 120.52-99.99)</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td></td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;system</td><td>660-1: fixed value = http://va.gov/identifiers/$Sta3n/120.5</td><td><p>generated from mapParameter row 1</p>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;system</td><td>660-1: fixed value = http://va.gov/identifiers/$Sta3n/120.5</td><td><p>generated from mapParameter line 1</p>
 </td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>660: source value based on GMRV VITAL MEASUREMENT - IEN (120.5-.001)</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>655: fixed value = #final when GMRV VITAL MEASUREMENT - REASON ENTERED IN ERROR (120.5-4) if null, 656: fixed value = #entered-in-error when GMRV VITAL MEASUREMENT - REASON ENTERED IN ERROR (120.5-4) if not null</td><td>, </td> </tr>
@@ -745,35 +741,35 @@
  <tr><td>&nbsp;&nbsp;&nbsp;component</td><td></td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td></td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;component (systolic)</td><td></td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>666-3: fixed value = http://loinc.org#8480-6 if VUID = 4500634</td><td><p>generated from mapParameter row 3</p>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>666-3: fixed value = http://loinc.org#8480-6 if VUID = 4500634</td><td><p>generated from mapParameter line 3</p>
 </td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td></td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>666: transform using Split_rate_value.Systolic() on GMRV VITAL MEASUREMENT - RATE (120.5-1.2) if VUID = 4500634</td><td><p>Value needs to be parsed from VistA</p>
 </td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;unit</td><td>666-2: fixed value = mm[Hg] if VUID = 4500634</td><td><p>generated from mapParameter row 2</p>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;unit</td><td>666-2: fixed value = mm[Hg] if VUID = 4500634</td><td><p>generated from mapParameter line 2</p>
 </td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>666-1: fixed value = #mm[Hg] if VUID = 4500634</td><td><p>generated from mapParameter row 1</p>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>666-1: fixed value = #mm[Hg] if VUID = 4500634</td><td><p>generated from mapParameter line 1</p>
 </td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;component (diastolic)</td><td></td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>667-3: fixed value = http://loinc.org#8462-4 if VUID = 4500634</td><td><p>generated from mapParameter row 3</p>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>667-3: fixed value = http://loinc.org#8462-4 if VUID = 4500634</td><td><p>generated from mapParameter line 3</p>
 </td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td></td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>667: transform using Split_rate_value.Diastolic() on GMRV VITAL MEASUREMENT - RATE (120.5-1.2) if VUID = 4500634</td><td><p>Value needs to be parsed from VistA</p>
 </td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;unit</td><td>667-2: fixed value = mm[Hg] if VUID = 4500634</td><td><p>generated from mapParameter row 2</p>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;unit</td><td>667-2: fixed value = mm[Hg] if VUID = 4500634</td><td><p>generated from mapParameter line 2</p>
 </td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>667-1: fixed value = #mm[Hg] if VUID = 4500634</td><td><p>generated from mapParameter row 1</p>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>667-1: fixed value = #mm[Hg] if VUID = 4500634</td><td><p>generated from mapParameter line 1</p>
 </td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;component (va-cuff-size)</td><td></td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>1805-1: fixed value = http://loinc.org#8358-4 &quot;Blood pressure device cuff size&quot;</td><td><p>generated from mapParameter row 1</p>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>1805-1: fixed value = http://loinc.org#8358-4 &quot;Blood pressure device cuff size&quot;</td><td><p>generated from mapParameter line 1</p>
 </td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x] (valueCodeableConcept)</td><td>1805: terminologyMaps using VF_VitalsCuffSize on GMRV VITAL MEASUREMENT - QUALIFIER &gt; GMRV VITAL QUALIFIER - VUID (120.5-5 &gt; 120.52-99.99)</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;component (va-pre-condition)</td><td></td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>1802-1: fixed value = http://loinc.org#104158-1 &quot;Associated precondition - Reported&quot;</td><td><p>generated from mapParameter row 1</p>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>1802-1: fixed value = http://loinc.org#104158-1 &quot;Associated precondition - Reported&quot;</td><td><p>generated from mapParameter line 1</p>
 </td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x] (valueCodeableConcept)</td><td>1802: terminologyMaps using VF_VitalsPrecondition on GMRV VITAL MEASUREMENT - QUALIFIER &gt; GMRV VITAL QUALIFIER - VUID (120.5-5 &gt; 120.52-99.99)</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;component (va-pre-condition-device)</td><td></td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>1803-1: fixed value = http://loinc.org#104158-1 &quot;Associated precondition - Reported&quot;</td><td><p>generated from mapParameter row 1</p>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>1803-1: fixed value = http://loinc.org#104158-1 &quot;Associated precondition - Reported&quot;</td><td><p>generated from mapParameter line 1</p>
 </td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x] (valueCodeableConcept)</td><td>1803: terminologyMaps using VF_VitalsQualifyingDevice on GMRV VITAL MEASUREMENT - QUALIFIER &gt; GMRV VITAL QUALIFIER - VUID (120.5-5 &gt; 120.52-99.99)</td><td></td> </tr>
 </table>
@@ -1232,7 +1228,7 @@ Dim.VitalType.VUID</td> </tr>
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025 <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#1.2.540 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Mar 11, 2025 10:10+0000">2025-03-11</span>
+          IG &#169; 2025 <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#1.3.557 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Sat, Mar 15, 2025 09:49+0000">2025-03-15</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
