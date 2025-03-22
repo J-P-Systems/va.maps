@@ -35,7 +35,7 @@ Source: ConditionEncounterDiagnosis
 * clinicalStatus -> "350: exclude value if Null" "should this be active or null?"
 * code.coding.code -> "1613: source value based on V POV - POV > ICD DIAGNOSIS - CODE NUMBER (9000010.07-.01 > 80-.01)"
 * code.coding.system -> "1613-1: fixed value = urn:see-termmap-in-mapParameter" "generated from mapParameter line 1"
-* subject -> "1611: reference based on V POV - PATIENT NAME (9000010.07-.02)" "We have patient resource; unclear why name is repeated"
+* subject -> "1611: reference based on V POV - PATIENT NAME > PATIENT/IHS - NAME (9000010.07-.02 > 9000001-.01)" "We have patient resource; unclear why name is repeated"
 * encounter -> "368: source value based on V POV - VISIT (9000010.07-.03)"
 * onsetDateTime -> "370: source value based on V POV - DATE OF INJURY (9000010.07-.13)"
 * recordedDate -> "372: source value based on V POV - VISIT > VISIT - VISIT/ADMIT DATE&TIME (9000010.07-.03 > 9000010-.01)" "Added the sub file and field"

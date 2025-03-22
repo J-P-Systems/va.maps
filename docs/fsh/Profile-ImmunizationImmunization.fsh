@@ -87,7 +87,7 @@ Source: ImmunizationImmunization
 * vaccineCode.coding[va-cvx].code -> "332: source value based on V IMMUNIZATION - IMMUNIZATION > IMMUNIZATION - CVX CODE (9000010.11-.01 > 9999999.14-.03) if not null" "subfile: .03 is CVX ← ?? .03 is a field"
 * vaccineCode.text -> "332-1: source value based on V IMMUNIZATION - IMMUNIZATION > IMMUNIZATION - NAME (9000010.11-.01 > 9999999.14-.01) if not null" "generated from mapParameter line 1"
 * vaccineCode.coding[va-cvx].system -> "332-2: fixed value = http://hl7.org/fhir/sid/cvx if not null" "generated from mapParameter line 2"
-* patient -> "333: reference based on V IMMUNIZATION - PATIENT NAME (9000010.11-.02)"
+* patient -> "333: reference based on V IMMUNIZATION - PATIENT NAME > PATIENT/IHS - NAME (9000010.11-.02 > 9000001-.01)"
 * occurrenceDateTime -> "334: source value based on V IMMUNIZATION - EVENT DATE AND TIME (9000010.11-1201)"
 * lotNumber -> "338: source value based on V IMMUNIZATION - LOT > IMMUNIZATION LOT - LOT NUMBER (9000010.11-.05 > 9999999.41-.01)" "pointer to subfile 9999999.04-.02 MVX code, 9999999.04-.01 lot"
 * manufacturer -> "339: source value based on V IMMUNIZATION - LOT > IMMUNIZATION LOT - MANUFACTURER (9000010.11-.05 > 9999999.41-.02)"

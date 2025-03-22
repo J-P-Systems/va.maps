@@ -72,7 +72,7 @@ Source: EncounterOutpatient
 * extension[http://va.gov/fhir/StructureDefinition/resource-serviceConnection].valueCoding -> "2036: fixed value = http://va.gov/fhir/vistaDefinedTerms/409.1#NSC \"Not Service Connected\" when OUTPATIENT ENCOUNTER - APPOINTMENT TYPE > APPOINTMENT TYPE - NAME (409.68-.1 > 409.1-.01) if Not SERVICE CONNECTED" "Outpatient Encounter points to Visit (409.68-.05)"
 * serviceType.coding.code -> "439: source value based on VISIT - SERVICE CATEGORY (9000010-.07)"
 * serviceType.coding.system -> "439-1: fixed value = http://va.gov/terminology/VistADefinedTerms/9000010-.07" "generated from mapParameter line 1"
-* subject -> "440: reference based on VISIT - PATIENT NAME (9000010-.05)"
+* subject -> "440: reference based on VISIT - PATIENT NAME > PATIENT/IHS - NAME (9000010-.05 > 9000001-.01)"
 * period.start -> "443: source value based on VISIT - VISIT/ADMIT DATE&TIME (9000010-.01)"
 * period.end -> "444: source value based on VISIT - CHECK OUT DATE&TIME (9000010-.18)"
 * reasonCode.coding.code -> "447: source value based on V POV - POV > ICD DIAGNOSIS - CODE NUMBER (9000010.07-.01 > 80-.01)"

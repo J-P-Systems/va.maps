@@ -38,7 +38,7 @@ Source: ImplantableDeviceVLead
 * serialNumber -> "1383: source value based on V LEAD IMPLANT - V LEAD SERIAL NUMBER (698.1-4)"
 * modelNumber -> "1391: source value based on V LEAD IMPLANT - V LEAD MODEL > PACEMAKER EQUIPMENT - MODEL NUMBER/NAME (698.1-2 > 698.4-.01)"
 * type -> "1397: terminologyMaps using VF_deviceTypePacemaker on V LEAD IMPLANT - V LEAD MODEL > PACEMAKER EQUIPMENT - TYPE OF EQUIPMENT (698.1-2 > 698.4-1)" "A request for more specific SNOMED codes will be submitted (01/04/2023)"
-* patient -> "1402: reference based on V LEAD IMPLANT - MEDICAL PATIENT (698.1-1)"
+* patient -> "1402: reference based on V LEAD IMPLANT - MEDICAL PATIENT > MEDICAL PATIENT - NAME (698.1-1 > 690-.01)"
 * udiCarrier.deviceIdentifier -> "1353: target not supported"
 * status -> "1355: target not supported"
 * distinctIdentifier -> "1363: target not supported"

@@ -20,7 +20,7 @@ Description: "This StructureDefinition contains the maps for VistA file ACCOUNTS
 * recipient only Reference(DebtPortalPatient)
 * subject only Reference(Patient)
 * issuer only Reference(Organization)
-* lineItem[va-charges].chargeItemReference only Reference(DebtPortalChargeItemcharges)
+* lineItem[va-charges].chargeItemReference only Reference(DebtPortalChargeItemcharges or DebtPortalChargeItemremoved)
 * lineItem[va-interest].chargeItemReference only Reference(DebtPortalChargeIteminterest)
 * recipient obeys dpi-17-1818
 * status from http://va.gov/fhir/ValueSet/ARBillStatus
@@ -51,6 +51,8 @@ Description: "This StructureDefinition contains the maps for VistA file ACCOUNTS
 * totalPriceComponent[va-marsh-fee-paid].code.text = "Marshal Fee Paid"
 * totalPriceComponent[va-court-cost-paid].type = #surcharge
 * totalPriceComponent[va-court-cost-paid].code.text = "Court Cost Paid"
+* lineItem[va-charges].chargeItemReference obeys dpi-17-1834
+* lineItem[va-charges].chargeItemReference obeys dpi-17-2220
 * lineItem[va-charges].priceComponent.type = #base
 * lineItem[va-charges].priceComponent.code.text = "Total Charge"
 * lineItem[va-interest].priceComponent[va-marshal-fee-charged].type = #surcharge
@@ -64,6 +66,16 @@ Description: "This StructureDefinition contains the maps for VistA file ACCOUNTS
 
 Invariant: dpi-17-1818
 Description: "If patient then reference Patient based on (430-9 > 340-.01)"
+Severity: #warning
+Expression: "true"
+
+Invariant: dpi-17-1834
+Description: "If INTEGRATED BILLING ACTION - PARENT CHARGE = INTEGRATED BILLING ACTION - IEN then reference ChargeItemcharges based on (null)"
+Severity: #warning
+Expression: "true"
+
+Invariant: dpi-17-2220
+Description: "If INTEGRATED BILLING ACTION - PARENT CHARGE <> INTEGRATED BILLING ACTION - IEN then reference ChargeItemremoved based on (null)"
 Severity: #warning
 Expression: "true"
 
@@ -116,7 +128,8 @@ Source: DebtPortalInvoice
 * totalPriceComponent[va-court-cost-paid].amount -> "1873: source value based on ACCOUNTS RECEIVABLE - TOTAL PAID COURT COST (430-79.2)"
 * totalPriceComponent[va-court-cost-paid].type -> "1873-1: fixed value = #surcharge" "generated from mapParameter line 1"
 * totalPriceComponent[va-court-cost-paid].code.text -> "1873-2: fixed value = Court Cost Paid" "generated from mapParameter line 2"
-* lineItem[va-charges].chargeItemReference -> "1834: reference" "INTEGRATED BILLING ACTION - AR BILL NUMBER (350-.11) = Accounts Receivable - Bill Number (430-.01)"
+* lineItem[va-charges].chargeItemReference -> "1834: reference if INTEGRATED BILLING ACTION - PARENT CHARGE = INTEGRATED BILLING ACTION - IEN" "INTEGRATED BILLING ACTION - AR BILL NUMBER (350-.11) = Accounts Receivable - Bill Number (430-.01)"
+* lineItem[va-charges].chargeItemReference -> "2220: reference if INTEGRATED BILLING ACTION - PARENT CHARGE <> INTEGRATED BILLING ACTION - IEN"
 * lineItem[va-charges].priceComponent.amount -> "1840: source value based on INTEGRATED BILLING ACTION - TOTAL CHARGE (350-.07)"
 * lineItem[va-charges].priceComponent.type -> "1840-1: fixed value = #base" "generated from mapParameter line 1"
 * lineItem[va-charges].priceComponent.code.text -> "1840-2: fixed value = Total Charge" "generated from mapParameter line 2"

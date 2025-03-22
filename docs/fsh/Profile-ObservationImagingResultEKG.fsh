@@ -21,7 +21,7 @@ Source: ObservationImagingResultEKG
 * identifier.value -> "1618: source value based on ELECTROCARDIOGRAM (EKG) - IEN (691.5-.001)"
 * identifier.system -> "1618-1: fixed value = http://va.gov/identifiers/$Sta3n/691.5" "generated from mapParameter line 1"
 * status -> "1622: terminologyMaps using VF_ImageStatus on ELECTROCARDIOGRAM (EKG) - RELEASE STATUS (691.5-1506)"
-* subject -> "1632: reference based on ELECTROCARDIOGRAM (EKG) - MEDICAL PATIENT (691.5-1)"
+* subject -> "1632: reference based on ELECTROCARDIOGRAM (EKG) - MEDICAL PATIENT > MEDICAL PATIENT - NAME (691.5-1 > 690-.01)"
 * effectiveDateTime -> "1635: source value based on ELECTROCARDIOGRAM (EKG) - DATE/TIME (691.5-.01)"
 * issued -> "1638: source value based on ELECTROCARDIOGRAM (EKG) - DATE OF VERIFIED (691.5-1508)"
 * performer -> "1641: reference based on ELECTROCARDIOGRAM (EKG) - INTERPRETED BY (691.5-12)"

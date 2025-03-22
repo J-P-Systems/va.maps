@@ -30,7 +30,7 @@ Source: DocumentReferenceDocumentReference
 * type.coding.code -> "874-2: source value based on TIU DOCUMENT - DOCUMENT TYPE > TIU DOCUMENT DEFINITION - VHA ENTERPRISE STANDARD TITLE > TIU VHA ENTERPRISE STANDARD TITLE - CODING SYSTEM (8925-.01 > 8925.1-1501 > 8926.1-2)" "generated from mapParameter line 2"
 * type.text -> "874-3: source value based on TIU DOCUMENT - DOCUMENT TYPE > TIU DOCUMENT DEFINITION - VHA ENTERPRISE STANDARD TITLE > TIU VHA ENTERPRISE STANDARD TITLE - DOCUMENT TYPE (8925-.01 > 8925.1-1501 > 8926.1-.08)" "generated from mapParameter line 3"
 * category[us-core] -> "875: fixed value = http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category#clinical-note" "(= NOTE, ADDENDUM, CONSULT, etc.?)\nUse TIU_VHA_ENTERPRISE_STANDARD_TITLE_8926.1 file provided by KBS to look up DocType\nIf the document has a type or parent value, use that for the category"
-* subject -> "876: reference based on TIU DOCUMENT - PATIENT (8925-.02)" "Pointer to PATIENT/HIS FILE (#9000001)"
+* subject -> "876: reference based on TIU DOCUMENT - PATIENT > PATIENT/IHS - NAME (8925-.02 > 9000001-.01)" "Pointer to PATIENT/HIS FILE (#9000001)"
 * date -> "877: transform using Resource_creation_time()" "looking into façade pattern guidance on whether this is meaningful. 03/6/23 updated mapping based on LHV feedback"
 * author -> "878: reference based on TIU DOCUMENT - AUTHOR/DICTATOR (8925-1202)"
 * author -> "1663: reference based on TIU DOCUMENT - SIGNED BY (8925-1502)" "Added signed by as an author since it allows more than one."

@@ -40,7 +40,7 @@ Source: SmokingStatusObservation
 * category[SocialHistory] -> "1243: fixed value = http://terminology.hl7.org/CodeSystem/observation-category#social-history"
 * code -> "1244: fixed value = http://loinc.org#72166-2 when V HEALTH FACTORS - HEALTH FACTOR > HEALTH FACTORS - CATEGORY (9000010.23-.01 > 9999999.64-.03) if TOBACCO [C]"
 * code -> "1862: exclude record if Not TOBACCO [C]"
-* subject -> "1245: reference based on V HEALTH FACTORS - PATIENT NAME (9000010.23-.02)"
+* subject -> "1245: reference based on V HEALTH FACTORS - PATIENT NAME > PATIENT/IHS - NAME (9000010.23-.02 > 9000001-.01)"
 * encounter -> "1246: reference based on V HEALTH FACTORS - VISIT (9000010.23-.03)"
 * effectiveDateTime -> "1247: source value based on V HEALTH FACTORS - EVENT DATE AND TIME (9000010.23-1201)"
 * performer -> "1248: reference based on V HEALTH FACTORS - ENCOUNTER PROVIDER (9000010.23-1204)" "Only encounter provider is in CDW, so ordering provider was not included at this time. If ordering provider needs to be included in the future, will need to determine a way to distinguish ordering provider from encounter provider in the practitioner resource."

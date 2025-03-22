@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Guidance - US Veterans Health Administration FHIR Map Set Implementation Guide v1.3.557</title>
+    <title>Guidance - US Veterans Health Administration FHIR Map Set Implementation Guide v1.3.574</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -61,7 +61,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">US Veterans Health Administration FHIR Map Set Implementation Guide</span>
             <br/>
-            <span style="display:inline-block;">1.3.557 - 250401
+            <span style="display:inline-block;">1.3.574 - 250401
 
 
 
@@ -410,19 +410,23 @@ Write capabilities</li>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://va.gov/fhir/
 </code></pre></div></div>
 
-<p>This root supports definition of VA FHIR artifacts, e.g.,</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://va.gov/fhir/StructureDefinition/AllergyIntoleranc
+<p>This root supports definition canonical URIs for VA FHIR artifacts, e.g.,</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://va.gov/fhir/StructureDefinition/allergyintolerance
 http://va.gov/fhir/ConceptMap/CMVFallergyActive
-http://va.gov/fhir/ValueSet/VSVFallergyActive
+http://va.gov/fhir/ValueSet/VSVallergyActive
 </code></pre></div></div>
+<p>These terms use the CM and VS abbreviations for ConceptMap and ValueSet, and the VF abbreviation for VistA-to-FHIR.</p>
 
-<p>Value sets, field identification for question codes, and identifiers also require URIs. These hierarchies, however, are not specific to FHIR:</p>
+<p>Their status as "canonical" (or their form) may vary as the VA standards hosting architecture evolves.</p>
+
+<h4 id="terminology-system-identifiers">Terminology System Identifiers</h4>
+
+<p>Codes used in VistA must assert code systems, which also require URIs. These hierarchies, however, are not specific to FHIR:</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://va.gov/terminology/vistaDefinedTerms
 http://va.gov/terminology/vistaDefinedElements
-http://va.gov/identifiers
 </code></pre></div></div>
 
-<p>These subhierarchies support definition of artifacts specific to VistA fields. E.g., vaccines not given are recorded in VistA file 9000010.11, field .01, so the codes in that field have this system uri:</p>
+<p>These subhierarchies support definition of artifacts specific to VistA fields. E.g., vaccines not given are recorded in VistA file 9000010.11, field .01, so the codes in that field have this generated system uri:</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> "vaccineCode": {
     "coding": [
       {
@@ -438,9 +442,19 @@ http://va.gov/identifiers
     "text": "REFUSED FLU (HISTORICAL)"
   },
 </code></pre></div></div>
+<p>Similarly, elements in VistA that are to be represented as coded Observations need a code and system for the question. In these cases, we use VistA itself as the system, the field number as the code:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> "code": {
+     {
+        "system": "http://va.gov/terminology/vistaDefinedElements",
+        "code": "2-.301",
+		"display": "SERVICE CONNECTED?"
+      }
+  },
+</code></pre></div></div>
 
 <h4 id="identifiers">Identifiers</h4>
-
+<h5 id="patients">Patients</h5>
 <p>Patient identifers are VA ICNs scoped by the VA OID:</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"identifier" : [{
 	"system" : "urn:oid:2.16.840.1.113883.4.349",
@@ -451,26 +465,63 @@ http://va.gov/identifiers
 
 <p>(We do not at this time have access to Oracle Health or DoD EDI-PI identifiers.)</p>
 
-<p>This OID can also describe the VA as an organization</p>
+<h5 id="organizations">Organizations</h5>
+<p>This OID can describe the VA as an organization</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"identifier" : [{
 	"value" : "urn:oid:2.16.840.1.113883.4.349"
 }],
 </code></pre></div></div>
 
-<p>or scope its VAMCs or other organizations or locations:</p>
+<p>It can also be used as a root to scope system boundaries, such as VistA implementations.</p>
+
+<p>Each VistA implementation has an assigned facility code, corresponding to the "Sta3n" of its primary medical center. Interfaces that consolidate data from across VAMCs use these codes to distinguish records that may have non-unique local identifiers in their respective VistA implementations,</p>
+<ul>
+  <li>VIA as the <code class="language-plaintext highlighter-rouge">&lt;assigningFacility&gt;</code> element</li>
+  <li>VPR as the code attribute within <code class="language-plaintext highlighter-rouge">&lt;facility&gt;</code> element</li>
+  <li>CDW as the 'Sta3n' column</li>
+</ul>
+
+<p>The simplest way these codes can be used to define namespaces within the VA namespace is by adding a node to the base OID, which can then scope the (otherwise not reliably unique) identifier:</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"identifier" : [{
-	"system" : "urn:oid:2.16.840.1.113883.4.349",
-	"value" : "urn:oid:2.16.840.1.113883.4.349.7.508.430"
+	"system" : "urn:oid:2.16.840.1.113883.4.349.508",
+	"value" : "12345"
 }],
 </code></pre></div></div>
+<p>Note that the VAST (VHA Site Tracking) department, charged by <a href="https://www.va.gov/vhapublications/ViewPublication.asp?pub_ID=3185">VHA DIRECTIVE 1044</a>, maintains a list of OIDs for VA locations, and the OIDs for VAMCs can be used to identify VistA instances. These OIDs are usually produced by concatenating the base OID with the VISN, the Sta3n, and the index of the row of the spreadsheet in which they appear, but in 62 of 1737 rows of  that spreadsheet, values are hard-coded, presumably due to prior assignment.</p>
 
-<p>Note that the facility OID in this example is not generated as a pattern, but is taken from the VAST system list. This list contains OIDs for over 1700 locations.</p>
+<p>Example: VAMC 508 is in VISN 7, and it appears in row 430 of the spreadsheet:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"identifier" : [{
+	"system" : "urn:oid:2.16.840.1.113883.4.349.7.508.430",
+	"value" : "12345"
+}],
+</code></pre></div></div>
+<p>We do not currently know of a service that can provide up-to-date VAST assignments based on facility code. We also observe that we need these OIDs to identify systems, whereas the VAST OIDs are defined as locations of care. For these reasons, we recommend using the first approach rather than the VAST approach, at least in the interim.</p>
 
-<p>Other identifiers use the VistA file &amp; field concatenated to the VA root and the VAMC Sta3n. Because some interfaces do not provide maps to VistA files, we also provide a domain tag (practitioner, location, organization).</p>
+<h5 id="organizational-parts">Organizational Parts</h5>
+<p>Plan-Net lists partOf as a must-support property for organizations and locations. It does not specify whether this relationship is intended to represent a global container (e.g., the VA), a proximal container (e.g., the building in which a clinic is located), or some intermediate value (e.g., VAMC or VISN). Until we have business owners with specific requirements, we adopt the service (the Department of Veterans Affairs) as the target of Organization.partOf and the VAMC Sta3n as the target of Location.partOf. We have no requirement at this time to instantiate target resources for these references.</p>
+
+<p>Organizations are part of the VA:</p>
+
+<p>'''
+  "partOf": {
+    "identifier": "urn:oid:2.16.840.1.113883.4.349",
+    "display": "Department of Veterans Affairs"
+  }
+'''
+And Locations are part of their VAMC:
+'''
+  "partOf": {
+    "identifier": "urn:oid:2.16.840.1.113883.4.349.508",
+    "display": "Atlanta VA Health Care System"
+  }
+'''</p>
+
+<h5 id="other-identifiers">Other identifiers</h5>
+<p>For other VistA-assigned identifiers, the system must specify both the scope of the system assigning the identifier (the VAMC, identified by Sta3n) and the semantic scope of the thing identified. Following the terminology system approach assigned below, the file and field numbers are sufficient to provide this scope.</p>
 
 <p>E.g., for a Prescription (file 52) Rx# (field .01) under the Atlanta VAMC (508):</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"identifier" : [{
-	"system" : "http://va.gov/identifiers/prescription/508/52-.01",
+	"system" : "http://va.gov/identifiers/508/52-.01",
 	"value" : "3603899"
 }],
 </code></pre></div></div>
@@ -534,7 +585,7 @@ http://va.gov/identifiers
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025 <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#1.3.557 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Sat, Mar 15, 2025 09:49+0000">2025-03-15</span>
+          IG &#169; 2025 <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#1.3.574 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Sat, Mar 22, 2025 10:34+0000">2025-03-22</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

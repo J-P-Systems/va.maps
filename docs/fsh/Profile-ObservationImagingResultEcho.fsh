@@ -21,7 +21,7 @@ Source: ObservationImagingResultEcho
 * identifier.value -> "1617: source value based on ECHO - IEN (691-.001)"
 * identifier.system -> "1617-1: fixed value = http://va.gov/identifiers/$Sta3n/691" "generated from mapParameter line 1"
 * status -> "1621: terminologyMaps using VF_ImageStatus on ECHO - RELEASE CODE (691-1506)"
-* subject -> "1631: reference based on ECHO - MEDICAL PATIENT (691-1)"
+* subject -> "1631: reference based on ECHO - MEDICAL PATIENT > MEDICAL PATIENT - NAME (691-1 > 690-.01)"
 * effectiveDateTime -> "1634: source value based on ECHO - DATE/TIME (691-.01)"
 * issued -> "1637: source value based on ECHO - DATE OF VERIFIED (691-1508)"
 * performer -> "1640: reference based on ECHO - CARDIOLOGY ATTENDING (691-39)"
