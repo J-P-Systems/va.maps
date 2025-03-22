@@ -4,7 +4,7 @@ Title: "AMPL GUI"
 Usage: #definition
 * description = "This CapabilityStatement enumerates the profiles that the API should address, in the estimation of the enterprise mapping team. Some elements may not be appropriate for those cases; consult the actual API specification published by the API provider"
 * status = #draft
-* date = "2025-03-22T10:33:02.813Z"
+* date = "2025-03-22T10:55:54.483Z"
 * kind = #requirements
 * fhirVersion = #4.0.1
 * format[0] = #xml
