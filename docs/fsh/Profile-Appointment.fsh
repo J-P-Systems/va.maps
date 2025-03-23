@@ -28,8 +28,9 @@ Description: "This StructureDefinition contains the maps for VistA file APPOINTM
 * cancelationReason ^binding.description = "see mapping [VF_AppointmentCancellationReason](ConceptMap-VF-AppointmentCancellationReason.html)"
 * participant[va-clinic].type.coding.code = #PART
 * participant[va-clinic].status = #accepted
-* participant[va-patient].type.coding.code = #PART
-* participant[va-patient].status = #accepted
+* participant[va-patient].actor obeys a-11-1722
+* participant[va-patient].type.coding.code obeys a-11-1722-1
+* participant[va-patient].status obeys a-11-1722-2
 * status obeys a-11-748
 * serviceCategory[va-stop-code].coding.system = "http://va.gov/terminology/VistADefinedTerms/409.3-13.4"
 * participant[va-apptclinic].type.coding.code = #PART
@@ -60,6 +61,21 @@ Description: "If (2.98-9.5 > 409.1-.01) is Not SERVICE CONNECTED then fixed valu
 Severity: #warning
 Expression: "true"
 
+Invariant: a-11-1722
+Description: "If PATIENT – APPOINTMENT (2-1900) == APPOINTMENT (2.98) then reference /Patient based on (2-)"
+Severity: #warning
+Expression: "true"
+
+Invariant: a-11-1722-1
+Description: "If PATIENT – APPOINTMENT (2-1900) == APPOINTMENT (2.98) then fixed value #PART"
+Severity: #warning
+Expression: "true"
+
+Invariant: a-11-1722-2
+Description: "If PATIENT – APPOINTMENT (2-1900) == APPOINTMENT (2.98) then fixed value #accepted"
+Severity: #warning
+Expression: "true"
+
 Invariant: a-11-748
 Description: "If (409.3-.01) is not null then fixed value #waitlist"
 Severity: #warning
@@ -87,9 +103,9 @@ Source: Appointment
 * participant[va-clinic].actor -> "746: reference based on APPOINTMENT - CLINIC (2.98-.01)"
 * participant[va-clinic].type.coding.code -> "746-1: fixed value = #PART" "generated from mapParameter line 1"
 * participant[va-clinic].status -> "746-2: fixed value = #accepted" "generated from mapParameter line 2"
-* participant[va-patient].actor -> "1722: reference based on PATIENT - APPOINTMENT > APPOINTMENT (2-1900 > 2.98)" "Added patient to the appointment map so that it is not assumed"
-* participant[va-patient].type.coding.code -> "1722-1: fixed value = #PART" "generated from mapParameter line 1"
-* participant[va-patient].status -> "1722-2: fixed value = #accepted" "generated from mapParameter line 2"
+* participant[va-patient].actor -> "1722: reference based on PATIENT - (2-) if PATIENT – APPOINTMENT (2-1900) == APPOINTMENT (2.98)" "Added patient to the appointment map so that it is not assumed"
+* participant[va-patient].type.coding.code -> "1722-1: fixed value = #PART if PATIENT – APPOINTMENT (2-1900) == APPOINTMENT (2.98)" "generated from mapParameter line 1"
+* participant[va-patient].status -> "1722-2: fixed value = #accepted if PATIENT – APPOINTMENT (2-1900) == APPOINTMENT (2.98)" "generated from mapParameter line 2"
 * status -> "748: fixed value = #waitlist when SD WAIT LIST - PATIENT (409.3-.01) if not null" "LVH returns \"Waitlisted\". \"Waitlisted\" is the display value and \"waitlist\" is the code. This is a required FHIR value set. 3/15/2023 LVH will fix"
 * serviceCategory[va-stop-code].coding.code -> "749: source value based on SD WAIT LIST - APPT STOP CODE (409.3-13.4)"
 * serviceCategory[va-stop-code].coding.system -> "749-1: fixed value = http://va.gov/terminology/VistADefinedTerms/409.3-13.4" "generated from mapParameter line 1"

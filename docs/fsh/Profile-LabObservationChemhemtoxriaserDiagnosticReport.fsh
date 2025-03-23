@@ -14,6 +14,12 @@ Description: "This StructureDefinition contains the maps for VistA file CHEM, HE
 * result only Reference(LabObservationChemhemtoxriaserObservation)
 * category[LaboratorySlice] = http://terminology.hl7.org/CodeSystem/v2-0074#LAB
 * code.coding.system = "http://loinc.org"
+* subject obeys locdr-46-1421
+
+Invariant: locdr-46-1421
+Description: "If PATIENT - LABORATORY REFERENCE (2-63) == LAB DATA – LRDFN (63-.01) then reference /Patient based on (2-)"
+Severity: #warning
+Expression: "true"
 
 Mapping: source-to-LabObservationChemhemtoxriaserDiagnosticReport
 Id: vista
@@ -31,7 +37,7 @@ Source: LabObservationChemhemtoxriaserDiagnosticReport
 * code.coding.system -> "1420-2: fixed value = http://loinc.org" "generated from mapParameter line 2"
 * code.coding.display -> "1420-3: source value based on LABORATORY TEST - NATIONAL VA LAB CODE > WKLD CODE - DEFAULT LOINC CODE > LAB LOINC - COMPONENT (60-64 > 64-25 > 95.3-1)" "generated from mapParameter line 3"
 * code.text -> "1661: source value based on LABORATORY TEST - NAME (60-.01)" "Added the lab test name (non-standardized)"
-* subject -> "1421: reference based on PATIENT - LABORATORY REFERENCE > LAB DATA - LRDFN (2-63 > 63-.01)" "Pointer from PATIENT (2)"
+* subject -> "1421: reference based on PATIENT - (2-) if PATIENT - LABORATORY REFERENCE (2-63) == LAB DATA – LRDFN (63-.01)" "Pointer from PATIENT (2)"
 * result -> "1437: reference based on See mapping for Lab Observation"
 
 Mapping: cdw-to-LabObservationChemhemtoxriaserDiagnosticReport
@@ -43,10 +49,3 @@ Source: LabObservationChemhemtoxriaserDiagnosticReport
 * code.coding.code -> "Dim.LabChemTest.NationalVALabCodeIEN"
 * code.coding.display -> "Dim.LabChemTest.NationalVALabCodeIEN"
 * code.text -> "Dim.LabChemTest.LabChemTestName"
-* subject -> "Micro.AntibioticSensitivity.LRDFN,Micro.AntibioticSensitivityComment.LRDFN,Micro.BacteriologyReports.LRDFN,Micro.MicroAntibioticLevel.LRDFN,Micro.MicroAudit.LRDFN,Micro.Microbiology.LRDFN,Micro.MicroOrderedTest.LRDFN,Micro.MicroSterilityResults.LRDFN,Micro.MycobacteriologyReports.LRDFN,Micro.Mycology.LRDFN,Micro.MycologyReports.LRDFN,Micro.Parasitology.LRDFN,Micro.ParasitologyReports.LRDFN,Micro.ParasitologyStage.LRDFN,Micro.Virology.LRDFN,Micro.VirologyReports.LRDFN,Pathology.Autopsy.LRDFN,Pathology.CytoOrganTissueFunction.StaffIEN,SStaff.SMicroOrderedTest.LRDFN"
-
-Mapping: sda-to-LabObservationChemhemtoxriaserDiagnosticReport
-Id: sda
-Title: "Summary Document Architecure (SDA)"
-Source: LabObservationChemhemtoxriaserDiagnosticReport
-* subject -> "Patient.Extension[PatientExtension].VeteranLrdfn"
