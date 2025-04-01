@@ -15,7 +15,7 @@ Severity: #warning
 Expression: "true"
 
 Invariant: dpci-27-2029
-Description: "If NOT NULL and INTEGRATED BILLING ACTION - PARENT CHARGE (350-.09) <> INTEGRATED BILLING ACTION - IEN (350-.001) then source value from (350-.1 > 350.3-.01)"
+Description: "If NOT NULL and  INTEGRATED BILLING ACTION - PARENT CHARGE (350-.09) <> INTEGRATED BILLING ACTION - IEN (350-.001) then source value from (350-.1 > 350.3-.01)"
 Severity: #warning
 Expression: "true"
 
@@ -24,7 +24,7 @@ Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: DebtPortalChargeItemremoved
 * partOf -> "2219: reference based on INTEGRATED BILLING ACTION - PARENT CHARGE (350-.09) if INTEGRATED BILLING ACTION - PARENT CHARGE <> INTEGRATED BILLING ACTION - IEN"
-* code.text -> "2029: source value based on INTEGRATED BILLING ACTION - CANCELLATION REASON > IB CHARGE REMOVE REASONS - NAME (350-.1 > 350.3-.01) if NOT NULL and INTEGRATED BILLING ACTION - PARENT CHARGE (350-.09) <> INTEGRATED BILLING ACTION - IEN (350-.001)"
+* code.text -> "2029: source value based on INTEGRATED BILLING ACTION - CANCELLATION REASON > IB CHARGE REMOVE REASONS - NAME (350-.1 > 350.3-.01) if NOT NULL and  INTEGRATED BILLING ACTION - PARENT CHARGE (350-.09) <> INTEGRATED BILLING ACTION - IEN (350-.001)"
 
 Mapping: cdw-to-DebtPortalChargeItemremoved
 Id: cdw

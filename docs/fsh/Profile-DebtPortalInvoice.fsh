@@ -16,10 +16,11 @@ Description: "This StructureDefinition contains the maps for VistA file ACCOUNTS
 * lineItem[va-interest].priceComponent ^slicing.discriminator.path = "$this"
 * lineItem[va-interest].priceComponent ^slicing.rules = #open
 * lineItem[va-interest].priceComponent contains va-marshal-fee-charged 0..1 and va-court-cost-charged 0..1 and va-interest-charged 0..1 and va-admin-charged 0..1
-* recipient and identifier and status and subject and date and issuer and totalPriceComponent[va-orig-amt].amount and totalPriceComponent[va-orig-amt].type and totalPriceComponent[va-orig-amt].code.text and totalPriceComponent[va-curr-bal].amount and totalPriceComponent[va-curr-bal].type and totalPriceComponent[va-curr-bal].code.text and totalPriceComponent[va-amend-amt].amount and totalPriceComponent[va-amend-amt].type and totalPriceComponent[va-amend-amt].code.text and totalPriceComponent[va-principal-bal].amount and totalPriceComponent[va-principal-bal].type and totalPriceComponent[va-principal-bal].code.text and totalPriceComponent[va-interest-bal].amount and totalPriceComponent[va-interest-bal].type and totalPriceComponent[va-interest-bal].code.text and totalPriceComponent[va-admin-cost-bal].amount and totalPriceComponent[va-admin-cost-bal].type and totalPriceComponent[va-admin-cost-bal].code.text and totalPriceComponent[va-marsh-fee].amount and totalPriceComponent[va-marsh-fee].type and totalPriceComponent[va-marsh-fee].code.text and totalPriceComponent[va-court-cost].amount and totalPriceComponent[va-court-cost].type and totalPriceComponent[va-court-cost].code.text and totalPriceComponent[va-principal-paid].amount and totalPriceComponent[va-principal-paid].type and totalPriceComponent[va-principal-paid].code.text and totalPriceComponent[va-interest-paid].amount and totalPriceComponent[va-interest-paid].type and totalPriceComponent[va-interest-paid].code.text and totalPriceComponent[va-admin-cost-paid].amount and totalPriceComponent[va-admin-cost-paid].type and totalPriceComponent[va-admin-cost-paid].code.text and totalPriceComponent[va-marsh-fee-paid].amount and totalPriceComponent[va-marsh-fee-paid].type and totalPriceComponent[va-marsh-fee-paid].code.text and totalPriceComponent[va-court-cost-paid].amount and totalPriceComponent[va-court-cost-paid].type and totalPriceComponent[va-court-cost-paid].code.text and lineItem[va-charges].chargeItemReference and lineItem[va-charges].priceComponent.amount and lineItem[va-charges].priceComponent.type and lineItem[va-charges].priceComponent.code.text and lineItem[va-interest].chargeItemReference and lineItem[va-interest].priceComponent[va-marshal-fee-charged].amount and lineItem[va-interest].priceComponent[va-marshal-fee-charged].type and lineItem[va-interest].priceComponent[va-marshal-fee-charged].code.text and lineItem[va-interest].priceComponent[va-court-cost-charged].amount and lineItem[va-interest].priceComponent[va-court-cost-charged].type and lineItem[va-interest].priceComponent[va-court-cost-charged].code.text and lineItem[va-interest].priceComponent[va-interest-charged].amount and lineItem[va-interest].priceComponent[va-interest-charged].type and lineItem[va-interest].priceComponent[va-interest-charged].code.text and lineItem[va-interest].priceComponent[va-admin-charged].amount and lineItem[va-interest].priceComponent[va-admin-charged].type and lineItem[va-interest].priceComponent[va-admin-charged].code.text MS
+* recipient and identifier and status and subject and date and issuer and account and totalPriceComponent[va-orig-amt].amount and totalPriceComponent[va-orig-amt].type and totalPriceComponent[va-orig-amt].code.text and totalPriceComponent[va-curr-bal].amount and totalPriceComponent[va-curr-bal].type and totalPriceComponent[va-curr-bal].code.text and totalPriceComponent[va-amend-amt].amount and totalPriceComponent[va-amend-amt].type and totalPriceComponent[va-amend-amt].code.text and totalPriceComponent[va-principal-bal].amount and totalPriceComponent[va-principal-bal].type and totalPriceComponent[va-principal-bal].code.text and totalPriceComponent[va-interest-bal].amount and totalPriceComponent[va-interest-bal].type and totalPriceComponent[va-interest-bal].code.text and totalPriceComponent[va-admin-cost-bal].amount and totalPriceComponent[va-admin-cost-bal].type and totalPriceComponent[va-admin-cost-bal].code.text and totalPriceComponent[va-marsh-fee].amount and totalPriceComponent[va-marsh-fee].type and totalPriceComponent[va-marsh-fee].code.text and totalPriceComponent[va-court-cost].amount and totalPriceComponent[va-court-cost].type and totalPriceComponent[va-court-cost].code.text and totalPriceComponent[va-principal-paid].amount and totalPriceComponent[va-principal-paid].type and totalPriceComponent[va-principal-paid].code.text and totalPriceComponent[va-interest-paid].amount and totalPriceComponent[va-interest-paid].type and totalPriceComponent[va-interest-paid].code.text and totalPriceComponent[va-admin-cost-paid].amount and totalPriceComponent[va-admin-cost-paid].type and totalPriceComponent[va-admin-cost-paid].code.text and totalPriceComponent[va-marsh-fee-paid].amount and totalPriceComponent[va-marsh-fee-paid].type and totalPriceComponent[va-marsh-fee-paid].code.text and totalPriceComponent[va-court-cost-paid].amount and totalPriceComponent[va-court-cost-paid].type and totalPriceComponent[va-court-cost-paid].code.text and lineItem[va-charges].chargeItemReference and lineItem[va-charges].priceComponent.amount and lineItem[va-charges].priceComponent.type and lineItem[va-charges].priceComponent.code.text and lineItem[va-interest].chargeItemReference and lineItem[va-interest].priceComponent[va-marshal-fee-charged].amount and lineItem[va-interest].priceComponent[va-marshal-fee-charged].type and lineItem[va-interest].priceComponent[va-marshal-fee-charged].code.text and lineItem[va-interest].priceComponent[va-court-cost-charged].amount and lineItem[va-interest].priceComponent[va-court-cost-charged].type and lineItem[va-interest].priceComponent[va-court-cost-charged].code.text and lineItem[va-interest].priceComponent[va-interest-charged].amount and lineItem[va-interest].priceComponent[va-interest-charged].type and lineItem[va-interest].priceComponent[va-interest-charged].code.text and lineItem[va-interest].priceComponent[va-admin-charged].amount and lineItem[va-interest].priceComponent[va-admin-charged].type and lineItem[va-interest].priceComponent[va-admin-charged].code.text MS
 * recipient only Reference(DebtPortalPatient)
 * subject only Reference(Patient)
 * issuer only Reference(Organization)
+* account only Reference(DebtPortalAccount)
 * lineItem[va-charges].chargeItemReference only Reference(DebtPortalChargeItemcharges or DebtPortalChargeItemremoved)
 * lineItem[va-interest].chargeItemReference only Reference(DebtPortalChargeIteminterest)
 * recipient obeys dpi-17-1818
@@ -55,17 +56,21 @@ Description: "This StructureDefinition contains the maps for VistA file ACCOUNTS
 * lineItem[va-charges].chargeItemReference obeys dpi-17-2220
 * lineItem[va-charges].priceComponent.type = #base
 * lineItem[va-charges].priceComponent.code.text = "Total Charge"
-* lineItem[va-interest].priceComponent[va-marshal-fee-charged].type = #surcharge
-* lineItem[va-interest].priceComponent[va-marshal-fee-charged].code.text = "Marshal Fee Charged"
-* lineItem[va-interest].priceComponent[va-court-cost-charged].type = #surcharge
-* lineItem[va-interest].priceComponent[va-court-cost-charged].code.text = "Court Cost Charged"
-* lineItem[va-interest].priceComponent[va-interest-charged].type = #surcharge
-* lineItem[va-interest].priceComponent[va-interest-charged].code.text = "Interest Charged"
-* lineItem[va-interest].priceComponent[va-admin-charged].type = #surcharge
-* lineItem[va-interest].priceComponent[va-admin-charged].code.text = "Administrative Charged"
+* lineItem[va-interest].priceComponent[va-marshal-fee-charged].amount obeys dpi-17-1999
+* lineItem[va-interest].priceComponent[va-marshal-fee-charged].type obeys dpi-17-1999-1
+* lineItem[va-interest].priceComponent[va-marshal-fee-charged].code.text obeys dpi-17-1999-2
+* lineItem[va-interest].priceComponent[va-court-cost-charged].amount obeys dpi-17-2000
+* lineItem[va-interest].priceComponent[va-court-cost-charged].type obeys dpi-17-2000-1
+* lineItem[va-interest].priceComponent[va-court-cost-charged].code.text obeys dpi-17-2000-2
+* lineItem[va-interest].priceComponent[va-interest-charged].amount obeys dpi-17-2001
+* lineItem[va-interest].priceComponent[va-interest-charged].type obeys dpi-17-2001-1
+* lineItem[va-interest].priceComponent[va-interest-charged].code.text obeys dpi-17-2001-2
+* lineItem[va-interest].priceComponent[va-admin-charged].amount obeys dpi-17-2002
+* lineItem[va-interest].priceComponent[va-admin-charged].type obeys dpi-17-2002-1
+* lineItem[va-interest].priceComponent[va-admin-charged].code.text obeys dpi-17-2002-2
 
 Invariant: dpi-17-1818
-Description: "If patient then reference Patient based on (430-9 > 340-.01)"
+Description: "If type is PATIENT (#2) then reference Patient based on (430-9 > 340-.01)"
 Severity: #warning
 Expression: "true"
 
@@ -79,16 +84,77 @@ Description: "If INTEGRATED BILLING ACTION - PARENT CHARGE <> INTEGRATED BILLING
 Severity: #warning
 Expression: "true"
 
+Invariant: dpi-17-1999
+Description: "If 433-.03 == 430 then source value from (433-25)"
+Severity: #warning
+Expression: "true"
+
+Invariant: dpi-17-1999-1
+Description: "If 433-.03 == 430 then fixed value #surcharge"
+Severity: #warning
+Expression: "true"
+
+Invariant: dpi-17-1999-2
+Description: "If 433-.03 == 430 then fixed value Marshal Fee Charged"
+Severity: #warning
+Expression: "true"
+
+Invariant: dpi-17-2000
+Description: "If 433-.03 == 430 then source value from (433-26)"
+Severity: #warning
+Expression: "true"
+
+Invariant: dpi-17-2000-1
+Description: "If 433-.03 == 430 then fixed value #surcharge"
+Severity: #warning
+Expression: "true"
+
+Invariant: dpi-17-2000-2
+Description: "If 433-.03 == 430 then fixed value Court Cost Charged"
+Severity: #warning
+Expression: "true"
+
+Invariant: dpi-17-2001
+Description: "If 433-.03 == 430 then source value from (433-27)"
+Severity: #warning
+Expression: "true"
+
+Invariant: dpi-17-2001-1
+Description: "If 433-.03 == 430 then fixed value #surcharge"
+Severity: #warning
+Expression: "true"
+
+Invariant: dpi-17-2001-2
+Description: "If 433-.03 == 430 then fixed value Interest Charged"
+Severity: #warning
+Expression: "true"
+
+Invariant: dpi-17-2002
+Description: "If 433-.03 == 430 then source value from (433-28)"
+Severity: #warning
+Expression: "true"
+
+Invariant: dpi-17-2002-1
+Description: "If 433-.03 == 430 then fixed value #surcharge"
+Severity: #warning
+Expression: "true"
+
+Invariant: dpi-17-2002-2
+Description: "If 433-.03 == 430 then fixed value Administrative Charged"
+Severity: #warning
+Expression: "true"
+
 Mapping: source-to-DebtPortalInvoice
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: DebtPortalInvoice
-* recipient -> "1818: reference based on ACCOUNTS RECEIVABLE - DEBTOR > AR DEBTOR - DEBTOR (430-9 > 340-.01) if patient" "The data in CDW does not support Invoice.recipient and Invoice.subject being different. It is assumed that the recipient will always be the subject and to avoid having duplicate patient references, it is recommended to use Invoice.recipient for the reference to the patient."
+* recipient -> "1818: reference based on ACCOUNTS RECEIVABLE - DEBTOR > AR DEBTOR - DEBTOR (430-9 > 340-.01) if type is PATIENT (#2)" "The data in CDW does not support Invoice.recipient and Invoice.subject being different. It is assumed that the recipient will always be the subject and to avoid having duplicate patient references, it is recommended to use Invoice.recipient for the reference to the patient."
 * identifier -> "1975: source value based on ACCOUNTS RECEIVABLE - BILL NO. (430-.01)"
 * status -> "1843: terminologyMaps using VF_ARBillStatus on ACCOUNTS RECEIVABLE - CURRENT STATUS > ACCOUNTS RECEIVABLE TRANS.TYPE - NAME (430-8 > 430.3-.01)"
 * subject -> "1976: reference based on ACCOUNTS RECEIVABLE - PATIENT (430-7)" "The data in CDW does not support Invoice.recipient and Invoice.subject being different. It is assumed that the recipient will always be the subject and to avoid having duplicate patient references, it is recommended to use Invoice.recipient for the reference to the patient."
 * date -> "1977: source value based on ACCOUNTS RECEIVABLE - DATE BILL PREPARED (430-10)"
 * issuer -> "2007: reference based on ACCOUNTS RECEIVABLE - SITE (430-12)"
+* account -> "2221: reference"
 * totalPriceComponent[va-orig-amt].amount -> "1828: source value based on ACCOUNTS RECEIVABLE - ORIGINAL AMOUNT (430-3)"
 * totalPriceComponent[va-orig-amt].type -> "1828-1: fixed value = #informational" "generated from mapParameter line 1"
 * totalPriceComponent[va-orig-amt].code.text -> "1828-2: fixed value = Original Amount" "generated from mapParameter line 2"
@@ -134,18 +200,18 @@ Source: DebtPortalInvoice
 * lineItem[va-charges].priceComponent.type -> "1840-1: fixed value = #base" "generated from mapParameter line 1"
 * lineItem[va-charges].priceComponent.code.text -> "1840-2: fixed value = Total Charge" "generated from mapParameter line 2"
 * lineItem[va-interest].chargeItemReference -> "1991: reference"
-* lineItem[va-interest].priceComponent[va-marshal-fee-charged].amount -> "1999: source value based on AR TRANSACTION - MARSHAL FEE (433-25)"
-* lineItem[va-interest].priceComponent[va-marshal-fee-charged].type -> "1999-1: fixed value = #surcharge" "generated from mapParameter line 1"
-* lineItem[va-interest].priceComponent[va-marshal-fee-charged].code.text -> "1999-2: fixed value = Marshal Fee Charged" "generated from mapParameter line 2"
-* lineItem[va-interest].priceComponent[va-court-cost-charged].amount -> "2000: source value based on AR TRANSACTION - COURT COST (433-26)"
-* lineItem[va-interest].priceComponent[va-court-cost-charged].type -> "2000-1: fixed value = #surcharge" "generated from mapParameter line 1"
-* lineItem[va-interest].priceComponent[va-court-cost-charged].code.text -> "2000-2: fixed value = Court Cost Charged" "generated from mapParameter line 2"
-* lineItem[va-interest].priceComponent[va-interest-charged].amount -> "2001: source value based on AR TRANSACTION - INT.CHARGE (433-27)"
-* lineItem[va-interest].priceComponent[va-interest-charged].type -> "2001-1: fixed value = #surcharge" "generated from mapParameter line 1"
-* lineItem[va-interest].priceComponent[va-interest-charged].code.text -> "2001-2: fixed value = Interest Charged" "generated from mapParameter line 2"
-* lineItem[va-interest].priceComponent[va-admin-charged].amount -> "2002: source value based on AR TRANSACTION - ADM.CHARGE (433-28)"
-* lineItem[va-interest].priceComponent[va-admin-charged].type -> "2002-1: fixed value = #surcharge" "generated from mapParameter line 1"
-* lineItem[va-interest].priceComponent[va-admin-charged].code.text -> "2002-2: fixed value = Administrative Charged" "generated from mapParameter line 2"
+* lineItem[va-interest].priceComponent[va-marshal-fee-charged].amount -> "1999: source value based on AR TRANSACTION - MARSHAL FEE (433-25) if 433-.03 == 430"
+* lineItem[va-interest].priceComponent[va-marshal-fee-charged].type -> "1999-1: fixed value = #surcharge if 433-.03 == 430" "generated from mapParameter line 1"
+* lineItem[va-interest].priceComponent[va-marshal-fee-charged].code.text -> "1999-2: fixed value = Marshal Fee Charged if 433-.03 == 430" "generated from mapParameter line 2"
+* lineItem[va-interest].priceComponent[va-court-cost-charged].amount -> "2000: source value based on AR TRANSACTION - COURT COST (433-26) if 433-.03 == 430"
+* lineItem[va-interest].priceComponent[va-court-cost-charged].type -> "2000-1: fixed value = #surcharge if 433-.03 == 430" "generated from mapParameter line 1"
+* lineItem[va-interest].priceComponent[va-court-cost-charged].code.text -> "2000-2: fixed value = Court Cost Charged if 433-.03 == 430" "generated from mapParameter line 2"
+* lineItem[va-interest].priceComponent[va-interest-charged].amount -> "2001: source value based on AR TRANSACTION - INT.CHARGE (433-27) if 433-.03 == 430"
+* lineItem[va-interest].priceComponent[va-interest-charged].type -> "2001-1: fixed value = #surcharge if 433-.03 == 430" "generated from mapParameter line 1"
+* lineItem[va-interest].priceComponent[va-interest-charged].code.text -> "2001-2: fixed value = Interest Charged if 433-.03 == 430" "generated from mapParameter line 2"
+* lineItem[va-interest].priceComponent[va-admin-charged].amount -> "2002: source value based on AR TRANSACTION - ADM.CHARGE (433-28) if 433-.03 == 430"
+* lineItem[va-interest].priceComponent[va-admin-charged].type -> "2002-1: fixed value = #surcharge if 433-.03 == 430" "generated from mapParameter line 1"
+* lineItem[va-interest].priceComponent[va-admin-charged].code.text -> "2002-2: fixed value = Administrative Charged if 433-.03 == 430" "generated from mapParameter line 2"
 
 Mapping: cdw-to-DebtPortalInvoice
 Id: cdw

@@ -4,7 +4,7 @@ Title: "My HealtheVet"
 Usage: #definition
 * description = "This CapabilityStatement enumerates the profiles that the API should address, in the estimation of the enterprise mapping team. Some elements may not be appropriate for those cases; consult the actual API specification published by the API provider"
 * status = #draft
-* date = "2025-03-23T13:18:24.146Z"
+* date = "2025-04-01T14:43:33.364Z"
 * kind = #requirements
 * fhirVersion = #4.0.1
 * format[0] = #xml

@@ -12,22 +12,22 @@ Description: "This StructureDefinition contains the maps for VistA file ACCOUNTS
 * name.suffix obeys dpp-17-1827-3
 
 Invariant: dpp-17-1827
-Description: "If POINTER is PATIENT (#2) then source value from (430-9 > 340-.01)"
+Description: "If type is PATIENT (#2) then source value from (430-9 > 340-.01)"
 Severity: #warning
 Expression: "true"
 
 Invariant: dpp-17-1827-1
-Description: "If POINTER is PATIENT (#2) then fixed value LAST"
+Description: "If type is PATIENT (#2) then fixed value LAST"
 Severity: #warning
 Expression: "true"
 
 Invariant: dpp-17-1827-2
-Description: "If POINTER is PATIENT (#2) then fixed value FIRST & MIDDLE"
+Description: "If type is PATIENT (#2) then fixed value FIRST & MIDDLE"
 Severity: #warning
 Expression: "true"
 
 Invariant: dpp-17-1827-3
-Description: "If POINTER is PATIENT (#2) then fixed value SUFFIX"
+Description: "If type is PATIENT (#2) then fixed value SUFFIX"
 Severity: #warning
 Expression: "true"
 
@@ -44,10 +44,10 @@ Source: DebtPortalPatient
 * contact.address.postalCode -> "1824: source value based on ACCOUNTS RECEIVABLE - DEBTOR > AR DEBTOR - ZIP CODE (430-9 > 340-1.06)"
 * contact.telecom.value -> "1825: source value based on ACCOUNTS RECEIVABLE - DEBTOR > AR DEBTOR - PHONE NUMBER (430-9 > 340-1.07)"
 * contact.address.country -> "1826: source value based on ACCOUNTS RECEIVABLE - DEBTOR > AR DEBTOR - FOREIGN COUNTRY CODE (430-9 > 340-1.08)"
-* name.text -> "1827: source value based on ACCOUNTS RECEIVABLE - DEBTOR > AR DEBTOR - DEBTOR (430-9 > 340-.01) if POINTER is PATIENT (#2)"
-* name.family -> "1827-1: fixed value = LAST if POINTER is PATIENT (#2)" "generated from mapParameter line 1"
-* name.given -> "1827-2: fixed value = FIRST & MIDDLE if POINTER is PATIENT (#2)" "generated from mapParameter line 2"
-* name.suffix -> "1827-3: fixed value = SUFFIX if POINTER is PATIENT (#2)" "generated from mapParameter line 3"
+* name.text -> "1827: source value based on ACCOUNTS RECEIVABLE - DEBTOR > AR DEBTOR - DEBTOR (430-9 > 340-.01) if type is PATIENT (#2)"
+* name.family -> "1827-1: fixed value = LAST if type is PATIENT (#2)" "generated from mapParameter line 1"
+* name.given -> "1827-2: fixed value = FIRST & MIDDLE if type is PATIENT (#2)" "generated from mapParameter line 2"
+* name.suffix -> "1827-3: fixed value = SUFFIX if type is PATIENT (#2)" "generated from mapParameter line 3"
 
 Mapping: cdw-to-DebtPortalPatient
 Id: cdw

@@ -57,22 +57,22 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","unique(./use)","XPN.7, but often indicated by which field contains the name"
 "Patient.name.text","Patient.name.text","","","",0,1,"Y","","Y","string {[]} {[]}
 ","Text representation of the full name","Specifies the entire name as it should be displayed e.g. on an application UI. This may be provided instead of or as well as the specific parts.","Can provide both a text representation and parts. Applications updating a name SHALL ensure that when both text and parts are present,  no content is included in the text that isn't found in a part.","A renderable, unencoded form.","","","","","","","",,,,,"",,,,"HumanName.text",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-dpp-17-1827:If POINTER is PATIENT (#2) then source value from (430-9 > 340-.01) {true}","1827: source value based on ACCOUNTS RECEIVABLE - DEBTOR > AR DEBTOR - DEBTOR (430-9 > 340-.01) if POINTER is PATIENT (#2)","IB.AccountsReceivable.ARDebtorIEN
+dpp-17-1827:If type is PATIENT (#2) then source value from (430-9 > 340-.01) {true}","1827: source value based on ACCOUNTS RECEIVABLE - DEBTOR > AR DEBTOR - DEBTOR (430-9 > 340-.01) if type is PATIENT (#2)","IB.AccountsReceivable.ARDebtorIEN
 Dim.ARDebtor.InstitutionIEN,Dim.ARDebtor.InsuranceCompanyIEN,Dim.ARDebtor.PatientIEN,Dim.ARDebtor.StaffIEN,Dim.ARDebtor.VendorIEN","./formatted","implied by XPN.11"
 "Patient.name.family","Patient.name.family","","surname
 ","",0,1,"Y","","Y","string {[]} {[]}
 ","Family name (often called 'Surname')","The part of a name that links to the genealogy. In some cultures (e.g. Eritrea) the family name of a son is the first name of his father.","Family Name may be decomposed into specific parts using extensions (de, nl, es related cultures).","","","","","","","","",,,,,"",,,,"HumanName.family",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-dpp-17-1827-1:If POINTER is PATIENT (#2) then fixed value LAST {true}","1827-1: fixed value = LAST if POINTER is PATIENT (#2)","./part[partType = FAM]","XPN.1/FN.1"
+dpp-17-1827-1:If type is PATIENT (#2) then fixed value LAST {true}","1827-1: fixed value = LAST if type is PATIENT (#2)","./part[partType = FAM]","XPN.1/FN.1"
 "Patient.name.given","Patient.name.given","","first name
 middle name","",0,*,"Y","","Y","string {[]} {[]}
 ","Given names (not always 'first'). Includes middle names","Given name.","If only initials are recorded, they may be used in place of the full name parts. Initials may be separated into multiple given names but often aren't due to paractical limitations.  This element is not called ""first name"" since given names do not always come first.","","","","","","","","",,,,,"",,,,"HumanName.given",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-dpp-17-1827-2:If POINTER is PATIENT (#2) then fixed value FIRST & MIDDLE {true}","1827-2: fixed value = FIRST & MIDDLE if POINTER is PATIENT (#2)","./part[partType = GIV]","XPN.2 + XPN.3"
+dpp-17-1827-2:If type is PATIENT (#2) then fixed value FIRST & MIDDLE {true}","1827-2: fixed value = FIRST & MIDDLE if type is PATIENT (#2)","./part[partType = GIV]","XPN.2 + XPN.3"
 "Patient.name.prefix","Patient.name.prefix","","","",0,*,"","","Y","string {[]} {[]}
 ","Parts that come before the name","Part of the name that is acquired as a title due to academic, legal, employment or nobility status, etc. and that appears at the start of the name.","","","","","","","","","",,,,,"",,,,"HumanName.prefix",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","./part[partType = PFX]","XPN.5"
 "Patient.name.suffix","Patient.name.suffix","","","",0,*,"Y","","Y","string {[]} {[]}
 ","Parts that come after the name","Part of the name that is acquired as a title due to academic, legal, employment or nobility status, etc. and that appears at the end of the name.","","","","","","","","","",,,,,"",,,,"HumanName.suffix",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-dpp-17-1827-3:If POINTER is PATIENT (#2) then fixed value SUFFIX {true}","1827-3: fixed value = SUFFIX if POINTER is PATIENT (#2)","./part[partType = SFX]","XPN/4"
+dpp-17-1827-3:If type is PATIENT (#2) then fixed value SUFFIX {true}","1827-3: fixed value = SUFFIX if type is PATIENT (#2)","./part[partType = SFX]","XPN/4"
 "Patient.name.period","Patient.name.period","","","",0,1,"","","Y","Period {[]} {[]}
 ","Time period when name was/is in use","Indicates the period of time when this name was valid for the named person.","","Allows names to be placed in historical context.","","","","","","","",,,,,"",,,,"HumanName.period",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","./usablePeriod[type=""IVL<TS>""]","XPN.13 + XPN.14"

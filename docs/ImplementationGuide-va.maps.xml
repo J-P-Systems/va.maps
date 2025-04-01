@@ -7,11 +7,11 @@
 </div></div>
   </text>
   <url value="http://va.gov/fhir/ImplementationGuide/va.maps"/>
-  <version value="1.3.580"/>
+  <version value="1.4.588"/>
   <name value="VAMapsIG"/>
   <title value="US Veterans Health Administration FHIR Map Set Implementation Guide"/>
   <status value="draft"/>
-  <date value="2025-03-23T13:19:29+00:00"/>
+  <date value="2025-04-01T14:43:46+00:00"/>
   <publisher value="VA"/>
   <contact>
     <name value="VA"/>
@@ -52,6 +52,11 @@
     <packageId value="hl7.fhir.us.core"/>
     <version value="5.0.1"/>
   </dependsOn>
+  <dependsOn id="pdex">
+    <uri value="http://hl7.org/fhir/us/davinci-pdex-plan-net/ImplementationGuide/hl7.fhir.us.davinci-pdex-plan-net"/>
+    <packageId value="hl7.fhir.us.davinci-pdex-plan-net"/>
+    <version value="1.1.0"/>
+  </dependsOn>
   <definition>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-link-dependency">
       <valueCode value="hl7.fhir.us.core#6.1.0"/>
@@ -72,7 +77,7 @@
         <valueString value="releaselabel"/>
       </extension>
       <extension url="value">
-        <valueString value="250401"/>
+        <valueString value="250501"/>
       </extension>
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
@@ -102,6 +107,14 @@
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
       <extension url="code">
         <valueString value="usage-stats-opt-out"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="shownav"/>
       </extension>
       <extension url="value">
         <valueString value="true"/>
@@ -307,7 +320,7 @@
         <valueCode value="releaselabel"/>
       </extension>
       <extension url="value">
-        <valueString value="250401"/>
+        <valueString value="250501"/>
       </extension>
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
@@ -337,6 +350,14 @@
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
       <extension url="code">
         <valueCode value="usage-stats-opt-out"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="shownav"/>
       </extension>
       <extension url="value">
         <valueString value="true"/>
@@ -4490,31 +4511,23 @@
           <valueUrl value="index.html"/>
         </extension>
         <nameUrl value="index.html"/>
-        <title value="Home"/>
+        <title value="Index"/>
         <generation value="markdown"/>
       </page>
       <page>
         <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-          <valueUrl value="changes.html"/>
+          <valueUrl value="process.html"/>
         </extension>
-        <nameUrl value="changes.html"/>
-        <title value="Changes"/>
+        <nameUrl value="process.html"/>
+        <title value="Process"/>
         <generation value="markdown"/>
       </page>
       <page>
         <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-          <valueUrl value="classes.html"/>
+          <valueUrl value="profileDesign.html"/>
         </extension>
-        <nameUrl value="classes.html"/>
-        <title value="Classes"/>
-        <generation value="markdown"/>
-      </page>
-      <page>
-        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-          <valueUrl value="extensions.html"/>
-        </extension>
-        <nameUrl value="extensions.html"/>
-        <title value="Extensions"/>
+        <nameUrl value="profileDesign.html"/>
+        <title value="Profile Design"/>
         <generation value="markdown"/>
       </page>
       <page>
@@ -4535,6 +4548,38 @@
       </page>
       <page>
         <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="mustSupport.html"/>
+        </extension>
+        <nameUrl value="mustSupport.html"/>
+        <title value="Must Support"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="classes.html"/>
+        </extension>
+        <nameUrl value="classes.html"/>
+        <title value="Classes"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="extensions.html"/>
+        </extension>
+        <nameUrl value="extensions.html"/>
+        <title value="Extensions"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="changes.html"/>
+        </extension>
+        <nameUrl value="changes.html"/>
+        <title value="Changes"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
           <valueUrl value="history.html"/>
         </extension>
         <nameUrl value="history.html"/>
@@ -4547,30 +4592,6 @@
         </extension>
         <nameUrl value="mapset-qa.html"/>
         <title value="Mapset Qa"/>
-        <generation value="markdown"/>
-      </page>
-      <page>
-        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-          <valueUrl value="mustSupport.html"/>
-        </extension>
-        <nameUrl value="mustSupport.html"/>
-        <title value="Must Support"/>
-        <generation value="markdown"/>
-      </page>
-      <page>
-        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-          <valueUrl value="process.html"/>
-        </extension>
-        <nameUrl value="process.html"/>
-        <title value="Process"/>
-        <generation value="markdown"/>
-      </page>
-      <page>
-        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-          <valueUrl value="profileDesign.html"/>
-        </extension>
-        <nameUrl value="profileDesign.html"/>
-        <title value="Profile Design"/>
         <generation value="markdown"/>
       </page>
     </page>
