@@ -4,10 +4,6 @@ Id: Organization
 Title: "Organization"
 Description: "This StructureDefinition contains the maps for VistA file INSTITUTION (4) to us-core-organization."
 * ^status = #active
-* ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
-* ^extension[=].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization|6.1.0"
-* ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
-* ^extension[=].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization|7.0.0"
 * address ^slicing.discriminator.type = #value
 * address ^slicing.discriminator.path = "$this"
 * address ^slicing.rules = #open

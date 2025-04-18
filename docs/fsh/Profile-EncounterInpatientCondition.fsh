@@ -4,10 +4,6 @@ Id: EncounterInpatientCondition
 Title: "Encounter: Inpatient Condition"
 Description: "This StructureDefinition contains the maps for VistA file PTF (45) to us-core-condition-problems-health-concerns."
 * ^status = #draft
-* ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
-* ^extension[=].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-problems-health-concerns|6.1.0"
-* ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
-* ^extension[=].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-problems-health-concerns|7.0.0"
 * code and category[us-core] MS
 * category[us-core] = http://terminology.hl7.org/CodeSystem/condition-category#encounter-diagnosis
 

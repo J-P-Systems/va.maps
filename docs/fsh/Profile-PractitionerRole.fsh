@@ -4,10 +4,6 @@ Id: PractitionerRole
 Title: "Practitioner Role"
 Description: "This StructureDefinition contains the maps for VistA file NEW PERSON (200) to us-core-practitionerrole."
 * ^status = #active
-* ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
-* ^extension[=].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitionerrole|6.1.0"
-* ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
-* ^extension[=].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitionerrole|7.0.0"
 * telecom ^slicing.discriminator.type = #value
 * telecom ^slicing.discriminator.path = "$this"
 * telecom ^slicing.rules = #open

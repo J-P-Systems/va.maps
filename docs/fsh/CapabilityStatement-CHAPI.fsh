@@ -4,7 +4,7 @@ Title: "Lighthouse Clinical Health API"
 Usage: #definition
 * description = "This CapabilityStatement enumerates the profiles that the API should address, in the estimation of the enterprise mapping team. Some elements may not be appropriate for those cases; consult the actual API specification published by the API provider"
 * status = #draft
-* date = "2025-04-18T11:21:55.583Z"
+* date = "2025-04-18T16:41:38.827Z"
 * kind = #requirements
 * fhirVersion = #4.0.1
 * format[0] = #xml
@@ -29,7 +29,10 @@ Usage: #definition
 * rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/VitalSigns"
 * rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/VitalSignsBP"
 * rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/VitalSignsSpO2"
-* rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/DecisionPrecisionPlus"
+* rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/DecisionPrecisionPlusObservationsmoking"
+* rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/DecisionPrecisionPlusObservationsocial"
+* rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/DecisionPrecisionPlusObservation"
+* rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/DecisionPrecisionPlusabstract"
 * rest.resource[+].type = #Specimen
 * rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/LabObservationChemhemtoxriaserSpecimen"
 * rest.resource[+].type = #Encounter
@@ -42,7 +45,6 @@ Usage: #definition
 * rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/MedicationDispenseRefill"
 * rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/MedicationDispensePartial"
 * rest.resource[+].type = #MedicationRequest
-* rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/MedicationRequestOutpatient"
 * rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/MedicationRequestOutpatient"
 * rest.resource[+].type = #Organization
 * rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/Organization"

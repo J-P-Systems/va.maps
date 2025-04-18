@@ -4,10 +4,6 @@ Id: DiagnosticReportNoteElectronMicroscopyDiagnosticReport
 Title: "Diagnostic Report Note: Electron Microscopy DiagnosticReport"
 Description: "This StructureDefinition contains the maps for VistA file EM (63.02) to us-core-diagnosticreport-note."
 * ^status = #active
-* ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
-* ^extension[=].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-note|6.1.0"
-* ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
-* ^extension[=].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-note|7.0.0"
 * performer ^slicing.discriminator.type = #value
 * performer ^slicing.discriminator.path = "$this"
 * performer ^slicing.rules = #open

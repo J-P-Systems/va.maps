@@ -4,7 +4,7 @@ Title: "Lung Cancer Screening"
 Usage: #definition
 * description = "This CapabilityStatement enumerates the profiles that the API should address, in the estimation of the enterprise mapping team. Some elements may not be appropriate for those cases; consult the actual API specification published by the API provider"
 * status = #draft
-* date = "2025-04-18T11:21:55.590Z"
+* date = "2025-04-18T16:41:38.837Z"
 * kind = #requirements
 * fhirVersion = #4.0.1
 * format[0] = #xml
@@ -15,32 +15,12 @@ Usage: #definition
 * rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/EncounterOutpatient"
 * rest.resource[+].type = #Patient
 * rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/Patient"
-* rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/Patient"
-* rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/Patient"
-* rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/Patient"
-* rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/Patient"
-* rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/Patient"
-* rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/Patient"
 * rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/DebtPortalPatient"
-* rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/Patient"
 * rest.resource[+].type = #Practitioner
-* rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/Practitioner"
-* rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/Practitioner"
-* rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/Practitioner"
-* rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/Practitioner"
-* rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/Practitioner"
 * rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/Practitioner"
 * rest.resource[+].type = #Location
 * rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/Location"
-* rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/Location"
-* rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/Location"
-* rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/Location"
-* rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/Location"
-* rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/Location"
-* rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/Location"
 * rest.resource[+].type = #Organization
-* rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/Organization"
-* rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/Organization"
 * rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/Organization"
 * rest.resource[+].type = #Condition
 * rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/EncounterInpatientCondition"

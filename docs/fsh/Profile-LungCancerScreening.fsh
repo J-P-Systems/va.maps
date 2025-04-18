@@ -4,10 +4,6 @@ Id: LungCancerScreening
 Title: "Lung Cancer Screening"
 Description: "This StructureDefinition contains the maps for VistA file TIU DOCUMENT (8925) to us-core-diagnosticreport-note."
 * ^status = #draft
-* ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
-* ^extension[=].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-note|6.1.0"
-* ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
-* ^extension[=].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-note|7.0.0"
 * presentedForm and subject and performer and encounter MS
 * subject only Reference(Patient)
 * performer only Reference(Practitioner)

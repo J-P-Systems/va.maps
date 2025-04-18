@@ -4,10 +4,6 @@ Id: VAERSImmunizationpvac1
 Title: "VAERS Immunization[pvac1]"
 Description: "This StructureDefinition contains the maps for ADERS to us-core-immunization."
 * ^status = #draft
-* ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
-* ^extension[=].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-immunization|6.1.0"
-* ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
-* ^extension[=].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-immunization|7.0.0"
 * vaccineCode.text and manufacturer.display and lotNumber and route.text and site and protocolApplied.doseNumberString and occurrenceDateTime and patient and status and primarySource MS
 * patient only Reference(VAERSPatient)
 * status = #completed

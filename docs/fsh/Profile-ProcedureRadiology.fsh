@@ -4,10 +4,6 @@ Id: ProcedureRadiology
 Title: "Procedure: Radiology"
 Description: "This StructureDefinition contains the maps for VistA file REGISTERED EXAMS (70.02) to us-core-procedure."
 * ^status = #active
-* ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
-* ^extension[=].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure|6.1.0"
-* ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
-* ^extension[=].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure|7.0.0"
 * status and statusReason.text and category.text and code.coding and code.coding.system and code.coding.code and code.coding.display and subject and encounter and performedDateTime and performer.actor and location MS
 * subject only Reference(Patient)
 * encounter only Reference(EncounterOutpatient)

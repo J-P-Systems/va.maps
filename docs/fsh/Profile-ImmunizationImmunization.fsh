@@ -4,10 +4,6 @@ Id: ImmunizationImmunization
 Title: "Immunization Immunization"
 Description: "This StructureDefinition contains the maps for VistA file V IMMUNIZATION (9000010.11) to us-core-immunization."
 * ^status = #active
-* ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
-* ^extension[=].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-immunization|6.1.0"
-* ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
-* ^extension[=].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-immunization|7.0.0"
 * vaccineCode.coding ^slicing.discriminator.type = #value
 * vaccineCode.coding ^slicing.discriminator.path = "$this"
 * vaccineCode.coding ^slicing.rules = #open

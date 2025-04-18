@@ -4,10 +4,6 @@ Id: DocumentReferenceDocumentReference
 Title: "Document Reference DocumentReference"
 Description: "This StructureDefinition contains the maps for VistA file TIU DOCUMENT (8925) to us-core-documentreference."
 * ^status = #draft
-* ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
-* ^extension[=].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference|6.1.0"
-* ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
-* ^extension[=].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference|7.0.0"
 * identifier and identifier.system and type and type.coding.system and type.coding.code and type.text and category[us-core] and subject and date and author and authenticator and custodian and description and content.attachment.id and content.attachment.contentType and content.attachment.url and content.attachment.size and content.attachment.hash and content.attachment.title and content.attachment.creation and context.encounter and context.event and context.period.start and context.period.end and context.facilityType and context.practiceSetting MS
 * subject only Reference(Patient)
 * author only Reference(Practitioner)

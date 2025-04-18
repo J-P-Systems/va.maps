@@ -4,10 +4,6 @@ Id: MedicationRequestOutpatient
 Title: "MedicationRequest: Outpatient"
 Description: "This StructureDefinition contains the maps for VistA file PRESCRIPTION (52) to us-core-medicationrequest."
 * ^status = #draft
-* ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
-* ^extension[=].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest|6.1.0"
-* ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
-* ^extension[=].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest|7.0.0"
 * extension contains http://va.gov/fhir/StructureDefinition/medicationrequest-pharmacyOrderStatus named medicationrequest-pharmacyOrderStatus 0..1
 * extension contains http://va.gov/fhir/StructureDefinition/medicationrequest-cancelDate named medicationrequest-cancelDate 0..1
 * dosageInstruction.doseAndRate.extension contains http://hl7.org/fhir/StructureDefinition/originalText named originalText 0..1

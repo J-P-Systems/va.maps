@@ -2565,7 +2565,46 @@ Usage: #inline
 Instance: create-105
 InstanceOf: Provenance
 Usage: #inline
-* target = Reference(StructureDefinition/DecisionPrecisionPlus)
+* target = Reference(StructureDefinition/DecisionPrecisionPlusObservationsmoking)
+* occurredDateTime = "2025-04-15"
+* recorded = "2025-04-15T00:00:00Z"
+* reason.text = "Created"
+* activity = $v3-DataOperation#CREATE
+* agent[0].type = $provenance-participant-type#author
+* agent[=].who.display = "JL"
+* agent[+].type = $provenance-participant-type#custodian
+* agent[=].who.display = "KBS"
+
+Instance: create-106
+InstanceOf: Provenance
+Usage: #inline
+* target = Reference(StructureDefinition/DecisionPrecisionPlusObservationsocial)
+* occurredDateTime = "2025-04-15"
+* recorded = "2025-04-15T00:00:00Z"
+* reason.text = "Created"
+* activity = $v3-DataOperation#CREATE
+* agent[0].type = $provenance-participant-type#author
+* agent[=].who.display = "JL"
+* agent[+].type = $provenance-participant-type#custodian
+* agent[=].who.display = "KBS"
+
+Instance: create-107
+InstanceOf: Provenance
+Usage: #inline
+* target = Reference(StructureDefinition/DecisionPrecisionPlusObservation)
+* occurredDateTime = "2025-04-15"
+* recorded = "2025-04-15T00:00:00Z"
+* reason.text = "Created"
+* activity = $v3-DataOperation#CREATE
+* agent[0].type = $provenance-participant-type#author
+* agent[=].who.display = "JL"
+* agent[+].type = $provenance-participant-type#custodian
+* agent[=].who.display = "KBS"
+
+Instance: create-108
+InstanceOf: Provenance
+Usage: #inline
+* target = Reference(StructureDefinition/DecisionPrecisionPlusabstract)
 * occurredDateTime = "2025-04-15"
 * recorded = "2025-04-15T00:00:00Z"
 * reason.text = "Created"
@@ -2975,3 +3014,9 @@ Usage: #definition
 * entry[=].resource = update-104
 * entry[+].fullUrl = "http://va.gov/fhir/Provenance/create-105"
 * entry[=].resource = create-105
+* entry[+].fullUrl = "http://va.gov/fhir/Provenance/create-106"
+* entry[=].resource = create-106
+* entry[+].fullUrl = "http://va.gov/fhir/Provenance/create-107"
+* entry[=].resource = create-107
+* entry[+].fullUrl = "http://va.gov/fhir/Provenance/create-108"
+* entry[=].resource = create-108

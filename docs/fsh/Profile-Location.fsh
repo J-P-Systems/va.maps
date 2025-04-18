@@ -4,10 +4,6 @@ Id: Location
 Title: "Location"
 Description: "This StructureDefinition contains the maps for VistA file HOSPITAL LOCATION (44) to us-core-location."
 * ^status = #active
-* ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
-* ^extension[=].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-location|6.1.0"
-* ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
-* ^extension[=].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-location|7.0.0"
 * type ^slicing.discriminator.type = #value
 * type ^slicing.discriminator.path = "$this"
 * type ^slicing.rules = #open

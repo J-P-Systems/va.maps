@@ -4,10 +4,6 @@ Id: MedicationRequestPending
 Title: "MedicationRequest: Pending"
 Description: "This StructureDefinition contains the maps for VistA file PENDING OUTPATIENT ORDERS (52.41) to us-core-medicationrequest."
 * ^status = #draft
-* ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
-* ^extension[=].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest|6.1.0"
-* ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
-* ^extension[=].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest|7.0.0"
 * extension contains http://va.gov/fhir/StructureDefinition/medicationrequest-pharmacyOrderStatus named medicationrequest-pharmacyOrderStatus 0..1
 * identifier.value and identifier.system and identifier.type and status and extension[http://va.gov/fhir/StructureDefinition/medicationrequest-pharmacyOrderStatus].valueCoding.code and extension[http://va.gov/fhir/StructureDefinition/medicationrequest-pharmacyOrderStatus].valueCoding.system and recorder and requester and dosageInstruction.timing.repeat.boundsPeriod.start and medicationCodeableConcept and dispenseRequest.quantity and dispenseRequest.numberOfRepeatsAllowed and authoredOn and dispenseRequest.expectedSupplyDuration and note and dosageInstruction.patientInstruction MS
 * recorder only Reference(Practitioner)

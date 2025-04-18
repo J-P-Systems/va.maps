@@ -4,10 +4,6 @@ Id: ProcedureSurgeryProcedure
 Title: "Procedure: Surgery Procedure"
 Description: "This StructureDefinition contains the maps for VistA file SURGERY (130) to us-core-procedure."
 * ^status = #active
-* ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
-* ^extension[=].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure|6.1.0"
-* ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
-* ^extension[=].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure|7.0.0"
 * performer ^slicing.discriminator.type = #value
 * performer ^slicing.discriminator.path = "$this"
 * performer ^slicing.rules = #open

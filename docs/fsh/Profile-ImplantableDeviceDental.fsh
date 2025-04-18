@@ -4,10 +4,6 @@ Id: ImplantableDeviceDental
 Title: "Implantable Device: Dental"
 Description: "This StructureDefinition contains the maps for VistA file DENTAL DEVICE TRACKING (228.9) to us-core-implantable-device."
 * ^status = #active
-* ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
-* ^extension[=].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-implantable-device|6.1.0"
-* ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
-* ^extension[=].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-implantable-device|7.0.0"
 * identifier.value and identifier.system and udiCarrier.deviceIdentifier and status and distinctIdentifier and manufacturer and manufactureDate and expirationDate and lotNumber and serialNumber and modelNumber and type.text and type.coding.system and type.coding.code and type.coding.display and patient MS
 * patient only Reference(Patient)
 * identifier.system = "http://va.gov/identifiers/$Sta3n/228.9"

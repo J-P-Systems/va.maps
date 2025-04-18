@@ -4,7 +4,7 @@ Title: "AMPL GUI"
 Usage: #definition
 * description = "This CapabilityStatement enumerates the profiles that the API should address, in the estimation of the enterprise mapping team. Some elements may not be appropriate for those cases; consult the actual API specification published by the API provider"
 * status = #draft
-* date = "2025-04-18T11:21:55.593Z"
+* date = "2025-04-18T16:41:38.839Z"
 * kind = #requirements
 * fhirVersion = #4.0.1
 * format[0] = #xml
@@ -15,7 +15,6 @@ Usage: #definition
 * rest.resource[+].type = #Immunization
 * rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/ImmunizationImmunization"
 * rest.resource[+].type = #Encounter
-* rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/EncounterOutpatient"
 * rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/EncounterOutpatient"
 * rest.resource[+].type = #Observation
 * rest.resource[=].supportedProfile[+] = "http://va.gov/fhir/StructureDefinition/ImmunizationObservation"

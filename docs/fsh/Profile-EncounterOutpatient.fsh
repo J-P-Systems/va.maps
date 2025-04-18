@@ -4,10 +4,6 @@ Id: EncounterOutpatient
 Title: "Encounter: Outpatient"
 Description: "This StructureDefinition contains the maps for VistA file VISIT (9000010) to us-core-encounter."
 * ^status = #draft
-* ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
-* ^extension[=].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter|6.1.0"
-* ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
-* ^extension[=].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter|7.0.0"
 * location ^slicing.discriminator.type = #value
 * location ^slicing.discriminator.path = "$this"
 * location ^slicing.rules = #open

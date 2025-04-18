@@ -4,10 +4,6 @@ Id: ConditionEncounterDiagnosis
 Title: "Condition: Encounter Diagnosis"
 Description: "This StructureDefinition contains the maps for VistA file V POV (9000010.07) to us-core-condition-encounter-diagnosis."
 * ^status = #draft
-* ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
-* ^extension[=].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-encounter-diagnosis|6.1.0"
-* ^extension[+].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-compliesWithProfile"
-* ^extension[=].valueCanonical = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-encounter-diagnosis|7.0.0"
 * category[us-core] and identifier.value and identifier.system and clinicalStatus and code.coding.code and code.coding.system and subject and encounter and onsetDateTime and recordedDate and verificationStatus and recorder MS
 * subject only Reference(Patient)
 * recorder only Reference(Practitioner)
