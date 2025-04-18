@@ -1,0 +1,108 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://va.gov/fhir/ConceptMap/VF-MaritalStatus> a fhir:ConceptMap ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "VF-MaritalStatus"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ConceptMap VF-MaritalStatus</b></p><a name=\"VF-MaritalStatus\"> </a><a name=\"hcVF-MaritalStatus\"> </a><a name=\"VF-MaritalStatus-en-US\"> </a><p>Mapping from <a href=\"ValueSet-MaritalStatus-vista.html\">MaritalStatus VistA</a> to <a href=\"ValueSet-MaritalStatus.html\">MaritalStatus FHIR</a></p><br/><p><b>Group 1 </b>Mapping from <code>http://va.gov/terminology/vistaDefinedElements/2-.05</code> to <a href=\"http://terminology.hl7.org/6.2.0/CodeSystem-v3-MaritalStatus.html\">MaritalStatus</a></p><table class=\"grid\"><tr><td><b>Source Code</b></td><td><b>Relationship</b></td><td><b>Target Code</b></td></tr><tr><td>DIVORCED</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equal\" title=\"equal\">is equal to</a></td><td>D (Divorced)</td></tr><tr><td>MARRIED</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equal\" title=\"equal\">is equal to</a></td><td>M (Married)</td></tr><tr><td>NEVER_MARRIED (NEVER MARRIED)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equal\" title=\"equal\">is equal to</a></td><td>S (Never Married)</td></tr><tr><td>SEPARATED</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equal\" title=\"equal\">is equal to</a></td><td>L (Legally Separated)</td></tr><tr><td>WIDOWED</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equal\" title=\"equal\">is equal to</a></td><td>W (Widowed)</td></tr></table><hr/><p><b>Group 2 </b>Mapping from <code>http://va.gov/terminology/vistaDefinedElements/2-.05</code> to <a href=\"http://terminology.hl7.org/6.2.0/CodeSystem-v3-NullFlavor.html\">NullFlavor</a></p><table class=\"grid\"><tr><td><b>Source Code</b></td><td><b>Relationship</b></td><td><b>Target Code</b></td></tr><tr><td>UNKNOWN</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equal\" title=\"equal\">is equal to</a></td><td>UNK (unknown)</td></tr></table></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:url [ fhir:v "http://va.gov/fhir/ConceptMap/VF-MaritalStatus"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "1.4.6"] ; # 
+  fhir:name [ fhir:v "VF_MaritalStatus"] ; # 
+  fhir:title [ fhir:v "VF_MaritalStatus"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2025-04-18T11:22:00+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "VA"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "VA" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://www.va.gov" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Terminology Maps VF_MaritalStatus"] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "US" ] ;
+       fhir:display [ fhir:v "United States of America" ]
+     ] )
+  ] ) ; # 
+  fhir:source [
+     a fhir:canonical ;
+     fhir:v "http://va.gov/fhir/ValueSet/MaritalStatus-vista"^^xsd:anyURI ;
+     fhir:link <http://va.gov/fhir/ValueSet/MaritalStatus-vista>
+  ] ; # 
+  fhir:target [
+     a fhir:canonical ;
+     fhir:v "http://va.gov/fhir/ValueSet/MaritalStatus"^^xsd:anyURI ;
+     fhir:link <http://va.gov/fhir/ValueSet/MaritalStatus>
+  ] ; # 
+  fhir:group ( [
+     fhir:source [ fhir:v "http://va.gov/terminology/vistaDefinedElements/2-.05"^^xsd:anyURI ] ;
+     fhir:target [ fhir:v "http://terminology.hl7.org/CodeSystem/v3-MaritalStatus"^^xsd:anyURI ] ;
+     fhir:element ( [
+       fhir:code [ fhir:v "DIVORCED" ] ;
+       fhir:display [ fhir:v "DIVORCED" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "D" ] ;
+         fhir:display [ fhir:v "Divorced" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "MARRIED" ] ;
+       fhir:display [ fhir:v "MARRIED" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "M" ] ;
+         fhir:display [ fhir:v "Married" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "NEVER_MARRIED" ] ;
+       fhir:display [ fhir:v "NEVER MARRIED" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "S" ] ;
+         fhir:display [ fhir:v "Never Married" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "SEPARATED" ] ;
+       fhir:display [ fhir:v "SEPARATED" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "L" ] ;
+         fhir:display [ fhir:v "Legally Separated" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "WIDOWED" ] ;
+       fhir:display [ fhir:v "WIDOWED" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "W" ] ;
+         fhir:display [ fhir:v "Widowed" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] )
+  ] [
+     fhir:source [ fhir:v "http://va.gov/terminology/vistaDefinedElements/2-.05"^^xsd:anyURI ] ;
+     fhir:target [ fhir:v "http://terminology.hl7.org/CodeSystem/v3-NullFlavor"^^xsd:anyURI ] ;
+     fhir:element ( [
+       fhir:code [ fhir:v "UNKNOWN" ] ;
+       fhir:display [ fhir:v "UNKNOWN" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "UNK" ] ;
+         fhir:display [ fhir:v "unknown" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

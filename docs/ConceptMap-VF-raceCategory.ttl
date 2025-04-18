@@ -1,0 +1,116 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://va.gov/fhir/ConceptMap/VF-raceCategory> a fhir:ConceptMap ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "VF-raceCategory"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ConceptMap VF-raceCategory</b></p><a name=\"VF-raceCategory\"> </a><a name=\"hcVF-raceCategory\"> </a><a name=\"VF-raceCategory-en-US\"> </a><p>Mapping from <a href=\"ValueSet-raceCategory-vista.html\">raceCategory VistA</a> to <a href=\"ValueSet-raceCategory.html\">raceCategory FHIR</a></p><br/><p><b>Group 1 </b>Mapping from <code>http://va.gov/terminology/vistaDefinedTerms/50.65-.02</code> to <a href=\"http://terminology.hl7.org/6.2.0/CodeSystem-v3-NullFlavor.html\">NullFlavor</a></p><table class=\"grid\"><tr><td><b>Source Code</b></td><td><b>Relationship</b></td><td><b>Target Code</b></td></tr><tr><td>7 (*Unknown at this time*)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equal\" title=\"equal\">is equal to</a></td><td>UNK (unknown)</td></tr><tr><td>D (DECLINED TO ANSWER)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#wider\" title=\"wider\">maps to wider concept</a></td><td>ASKU (asked but unknown)</td></tr><tr><td>U (UNKNOWN BY PATIENT)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#wider\" title=\"wider\">maps to wider concept</a></td><td>ASKU (asked but unknown)</td></tr></table><hr/><p><b>Group 2 </b>Mapping from <code>http://va.gov/terminology/vistaDefinedTerms/50.65-.02</code> to <a href=\"http://hl7.org/fhir/us/core/STU3.1.1/CodeSystem-cdcrec.html\">Race &amp; Ethnicity - CDC</a></p><table class=\"grid\"><tr><td><b>Source Code</b></td><td><b>Relationship</b></td><td><b>Target Code</b></td></tr><tr><td>3 (AMERICAN INDIAN OR ALASKA NATIVE)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equal\" title=\"equal\">is equal to</a></td><td>1002-5 (American Indian or Alaska Native)</td></tr><tr><td>B (BLACK OR AFRICAN AMERICAN)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equal\" title=\"equal\">is equal to</a></td><td>2054-5 (Black or African American)</td></tr><tr><td>H (NATIVE HAWAIIAN OR OTHER PACIFIC ISLANDER)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equal\" title=\"equal\">is equal to</a></td><td>2076-8 (Native Hawaiian or Other Pacific Islander)</td></tr><tr><td>W (WHITE)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equal\" title=\"equal\">is equal to</a></td><td>2106-3 (White)</td></tr><tr><td>6 (WHITE NOT OF HISP ORIG)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equal\" title=\"equal\">is equal to</a></td><td>2106-3 (White)</td></tr></table></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:url [ fhir:v "http://va.gov/fhir/ConceptMap/VF-raceCategory"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "1.4.6"] ; # 
+  fhir:name [ fhir:v "VF_raceCategory"] ; # 
+  fhir:title [ fhir:v "VF_raceCategory"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2025-04-18T11:22:00+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "VA"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "VA" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://www.va.gov" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Terminology Maps VF_raceCategory"] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "US" ] ;
+       fhir:display [ fhir:v "United States of America" ]
+     ] )
+  ] ) ; # 
+  fhir:source [
+     a fhir:canonical ;
+     fhir:v "http://va.gov/fhir/ValueSet/raceCategory-vista"^^xsd:anyURI ;
+     fhir:link <http://va.gov/fhir/ValueSet/raceCategory-vista>
+  ] ; # 
+  fhir:target [
+     a fhir:canonical ;
+     fhir:v "http://va.gov/fhir/ValueSet/raceCategory"^^xsd:anyURI ;
+     fhir:link <http://va.gov/fhir/ValueSet/raceCategory>
+  ] ; # 
+  fhir:group ( [
+     fhir:source [ fhir:v "http://va.gov/terminology/vistaDefinedTerms/50.65-.02"^^xsd:anyURI ] ;
+     fhir:target [ fhir:v "http://terminology.hl7.org/CodeSystem/v3-NullFlavor"^^xsd:anyURI ] ;
+     fhir:element ( [
+       fhir:code [ fhir:v "7" ] ;
+       fhir:display [ fhir:v "*Unknown at this time*" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "UNK" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "D" ] ;
+       fhir:display [ fhir:v "DECLINED TO ANSWER" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "ASKU" ] ;
+         fhir:equivalence [ fhir:v "wider" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "U" ] ;
+       fhir:display [ fhir:v "UNKNOWN BY PATIENT" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "ASKU" ] ;
+         fhir:equivalence [ fhir:v "wider" ]
+       ] )
+     ] )
+  ] [
+     fhir:source [ fhir:v "http://va.gov/terminology/vistaDefinedTerms/50.65-.02"^^xsd:anyURI ] ;
+     fhir:target [ fhir:v "urn:oid:2.16.840.1.113883.6.238"^^xsd:anyURI ] ;
+     fhir:element ( [
+       fhir:code [ fhir:v "3" ] ;
+       fhir:display [ fhir:v "AMERICAN INDIAN OR ALASKA NATIVE" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "1002-5" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "B" ] ;
+       fhir:display [ fhir:v "BLACK OR AFRICAN AMERICAN" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "2054-5" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "H" ] ;
+       fhir:display [ fhir:v "NATIVE HAWAIIAN OR OTHER PACIFIC ISLANDER" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "2076-8" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "W" ] ;
+       fhir:display [ fhir:v "WHITE" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "2106-3" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "6" ] ;
+       fhir:display [ fhir:v "WHITE NOT OF HISP ORIG" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "2106-3" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

@@ -1,0 +1,120 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://va.gov/fhir/ConceptMap/VF-ARBillStatus> a fhir:ConceptMap ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "VF-ARBillStatus"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ConceptMap VF-ARBillStatus</b></p><a name=\"VF-ARBillStatus\"> </a><a name=\"hcVF-ARBillStatus\"> </a><a name=\"VF-ARBillStatus-en-US\"> </a><p>Mapping from <a href=\"ValueSet-ARBillStatus-vista.html\">ARBillStatus VistA</a> to <a href=\"ValueSet-ARBillStatus.html\">ARBillStatus FHIR</a></p><br/><p><b>Group 1 </b>Mapping from <code>http://va.gov/terminology/vistaDefinedTerms/50.65-.02</code> to <a href=\"http://hl7.org/fhir/R4/codesystem-invoice-status.html\">InvoiceStatus</a></p><table class=\"grid\"><tr><td><b>Source Code</b></td><td><b>Relationship</b></td><td><b>Target Code</b></td></tr><tr><td>ACTIVE</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equal\" title=\"equal\">is equal to</a></td><td>issued</td></tr><tr><td>BILL_INCOMPLETE (BILL INCOMPLETE)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equal\" title=\"equal\">is equal to</a></td><td>draft</td></tr><tr><td>CANCELLATION</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equal\" title=\"equal\">is equal to</a></td><td>cancelled</td></tr><tr><td>CANCELLED_BILL (CANCELLED BILL)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equal\" title=\"equal\">is equal to</a></td><td>cancelled</td></tr><tr><td>COLLECTED/CLOSED</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equal\" title=\"equal\">is equal to</a></td><td>balanced</td></tr><tr><td>INCOMPLETE</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equal\" title=\"equal\">is equal to</a></td><td>draft</td></tr><tr><td>NEW_BILL (NEW BILL)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equal\" title=\"equal\">is equal to</a></td><td>issued</td></tr><tr><td>OPEN</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equal\" title=\"equal\">is equal to</a></td><td>issued</td></tr></table></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:url [ fhir:v "http://va.gov/fhir/ConceptMap/VF-ARBillStatus"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "1.4.6"] ; # 
+  fhir:name [ fhir:v "VF_ARBillStatus"] ; # 
+  fhir:title [ fhir:v "VF_ARBillStatus"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2025-04-18T11:22:00+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "VA"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "VA" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://www.va.gov" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Terminology Maps VF_ARBillStatus"] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "US" ] ;
+       fhir:display [ fhir:v "United States of America" ]
+     ] )
+  ] ) ; # 
+  fhir:source [
+     a fhir:canonical ;
+     fhir:v "http://va.gov/fhir/ValueSet/ARBillStatus-vista"^^xsd:anyURI ;
+     fhir:link <http://va.gov/fhir/ValueSet/ARBillStatus-vista>
+  ] ; # 
+  fhir:target [
+     a fhir:canonical ;
+     fhir:v "http://va.gov/fhir/ValueSet/ARBillStatus"^^xsd:anyURI ;
+     fhir:link <http://va.gov/fhir/ValueSet/ARBillStatus>
+  ] ; # 
+  fhir:group ( [
+     fhir:source [ fhir:v "http://va.gov/terminology/vistaDefinedTerms/50.65-.02"^^xsd:anyURI ] ;
+     fhir:target [ fhir:v "http://hl7.org/fhir/invoice-status"^^xsd:anyURI ] ;
+     fhir:element ( [
+       fhir:code [ fhir:v "ACTIVE" ] ;
+       fhir:display [ fhir:v "ACTIVE" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "issued" ] ;
+         fhir:display [ fhir:v "issued" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "BILL_INCOMPLETE" ] ;
+       fhir:display [ fhir:v "BILL INCOMPLETE" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "draft" ] ;
+         fhir:display [ fhir:v "draft" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "CANCELLATION" ] ;
+       fhir:display [ fhir:v "CANCELLATION" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "cancelled" ] ;
+         fhir:display [ fhir:v "cancelled" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "CANCELLED_BILL" ] ;
+       fhir:display [ fhir:v "CANCELLED BILL" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "cancelled" ] ;
+         fhir:display [ fhir:v "cancelled" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "COLLECTED/CLOSED" ] ;
+       fhir:display [ fhir:v "COLLECTED/CLOSED" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "balanced" ] ;
+         fhir:display [ fhir:v "balanced" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "INCOMPLETE" ] ;
+       fhir:display [ fhir:v "INCOMPLETE" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "draft" ] ;
+         fhir:display [ fhir:v "draft" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "NEW_BILL" ] ;
+       fhir:display [ fhir:v "NEW BILL" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "issued" ] ;
+         fhir:display [ fhir:v "issued" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "OPEN" ] ;
+       fhir:display [ fhir:v "OPEN" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "issued" ] ;
+         fhir:display [ fhir:v "issued" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

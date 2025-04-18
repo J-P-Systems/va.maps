@@ -1,0 +1,105 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://va.gov/fhir/ConceptMap/VF-ExamStatus> a fhir:ConceptMap ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "VF-ExamStatus"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ConceptMap VF-ExamStatus</b></p><a name=\"VF-ExamStatus\"> </a><a name=\"hcVF-ExamStatus\"> </a><a name=\"VF-ExamStatus-en-US\"> </a><p>Mapping from <a href=\"ValueSet-ExamStatus-vista.html\">ExamStatus VistA</a> to <a href=\"ValueSet-ExamStatus.html\">ExamStatus FHIR</a></p><br/><p><b>Group 1 </b>Mapping from <code>http://va.gov/terminology/vistaDefinedTerms/50.65-.02</code> to <a href=\"http://hl7.org/fhir/R4/codesystem-observation-status.html\">ObservationStatus</a></p><table class=\"grid\"><tr><td colspan=\"3\"><b>Source Concept Details</b></td><td><b>Relationship</b></td><td colspan=\"2\"><b>Target Concept Details</b></td><td colspan=\"2\"><b>Properties</b></td></tr><tr><td colspan=\"2\"><b>Codes</b> from http://va.gov/terminology/vistaDefinedTerms/50.65-.02</td><td><b>condition</b></td><td/><td colspan=\"2\"><b>Codes</b> from <a href=\"http://hl7.org/fhir/R4/codesystem-observation-status.html\" title=\"http://hl7.org/fhir/observation-status\">ObservationStatus</a></td></tr><tr><td style=\"border-right-width: 0px\">X</td><td style=\"border-left-width: 0px\">CANCELLED BY MAS</td><td/><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equal\" title=\"equal\">is equal to</a></td><td style=\"border-right-width: 0px\">cancelled</td><td style=\"border-left-width: 0px\"></td></tr><tr><td style=\"border-right-width: 0px\">RX</td><td style=\"border-left-width: 0px\">CANCELLED BY RO</td><td/><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equal\" title=\"equal\">is equal to</a></td><td style=\"border-right-width: 0px\">cancelled</td><td style=\"border-left-width: 0px\"></td></tr><tr><td style=\"border-right-width: 0px\">C</td><td style=\"border-left-width: 0px\">COMPLETED</td><td/><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equal\" title=\"equal\">is equal to</a></td><td style=\"border-right-width: 0px\">final</td><td style=\"border-left-width: 0px\"></td></tr><tr><td style=\"border-right-width: 0px\">O</td><td style=\"border-left-width: 0px\">OPEN</td><td>369.4-70 = NULL</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equal\" title=\"equal\">is equal to</a></td><td style=\"border-right-width: 0px\">registered</td><td style=\"border-left-width: 0px\"></td></tr><tr><td style=\"border-right-width: 0px\">O</td><td style=\"border-left-width: 0px\">OPEN</td><td>396.4-70 != NULL</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equal\" title=\"equal\">is equal to</a></td><td style=\"border-right-width: 0px\">preliminary</td><td style=\"border-left-width: 0px\"></td></tr><tr><td style=\"border-right-width: 0px; border-bottom-style: none\">T</td><td style=\"border-left-width: 0px\">TRANSFERRED OUT</td><td colspan=\"4\" style=\"background-color: #efefef\">(not mapped)</td></tr></table></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:url [ fhir:v "http://va.gov/fhir/ConceptMap/VF-ExamStatus"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "1.4.6"] ; # 
+  fhir:name [ fhir:v "VF_ExamStatus"] ; # 
+  fhir:title [ fhir:v "VF_ExamStatus"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2025-04-18T11:22:00+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "VA"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "VA" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://www.va.gov" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Terminology Maps VF_ExamStatus"] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "US" ] ;
+       fhir:display [ fhir:v "United States of America" ]
+     ] )
+  ] ) ; # 
+  fhir:source [
+     a fhir:canonical ;
+     fhir:v "http://va.gov/fhir/ValueSet/ExamStatus-vista"^^xsd:anyURI ;
+     fhir:link <http://va.gov/fhir/ValueSet/ExamStatus-vista>
+  ] ; # 
+  fhir:target [
+     a fhir:canonical ;
+     fhir:v "http://va.gov/fhir/ValueSet/ExamStatus"^^xsd:anyURI ;
+     fhir:link <http://va.gov/fhir/ValueSet/ExamStatus>
+  ] ; # 
+  fhir:group ( [
+     fhir:source [ fhir:v "http://va.gov/terminology/vistaDefinedTerms/50.65-.02"^^xsd:anyURI ] ;
+     fhir:target [ fhir:v "http://hl7.org/fhir/observation-status"^^xsd:anyURI ] ;
+     fhir:element ( [
+       fhir:code [ fhir:v "X" ] ;
+       fhir:display [ fhir:v "CANCELLED BY MAS" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "cancelled" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "RX" ] ;
+       fhir:display [ fhir:v "CANCELLED BY RO" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "cancelled" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "C" ] ;
+       fhir:display [ fhir:v "COMPLETED" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "final" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "O" ] ;
+       fhir:display [ fhir:v "OPEN" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "registered" ] ;
+         fhir:equivalence [ fhir:v "equal" ] ;
+         fhir:dependsOn ( [
+           fhir:property [ fhir:v "condition"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "369.4-70 = NULL" ]
+         ] )
+       ] )
+     ] [
+       fhir:code [ fhir:v "O" ] ;
+       fhir:display [ fhir:v "OPEN" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "preliminary" ] ;
+         fhir:equivalence [ fhir:v "equal" ] ;
+         fhir:dependsOn ( [
+           fhir:property [ fhir:v "condition"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "396.4-70 != NULL" ]
+         ] )
+       ] )
+     ] [
+       fhir:code [ fhir:v "T" ] ;
+       fhir:display [ fhir:v "TRANSFERRED OUT" ] ;
+       fhir:target ( [
+         fhir:equivalence [ fhir:v "unmatched" ]
+       ] )
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

@@ -1,0 +1,50 @@
+on:
+#  push:
+#    branches:
+#      - master
+  workflow_dispatch:
+
+jobs:
+  Run-IG-Builder:
+    name: Run MapSet script and IG builder on master and publish on GitHub Pages
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup JDK version
+        uses: actions/setup-java@v4.0.0
+        with:
+          java-version: 21
+          distribution: microsoft
+
+      - name: Install GraphViz and Jekyll
+        run: sudo apt update -qq ; sudo apt install -qq graphviz jekyll
+
+      - name: Install Sushi
+        run: npm install -g fsh-sushi
+
+      - name: Checkout IG files
+        uses: actions/checkout@v4
+        with:
+          repository: J-P-Systems/jpsys-maps-ig-sushi
+          token: ${{ secrets.GH_PAT }}
+          ref: main
+
+      - name: Generate IG files from mapset spreadsheet
+        run: cd script ; npm install ; ./run-wip.sh
+
+      - name: Get IG Publisher jar
+        run: curl -L https://github.com/HL7/fhir-ig-publisher/releases/latest/download/publisher.jar -o publisher.jar
+#        run: curl -L https://vdzel.home.xs4all.nl/publisher.jar -o publisher.jar
+
+      - name: Run the IG Builder
+        run: java -Xmx8G -jar publisher.jar -ig ig.ini
+
+      - name: Copy fsh to output
+        run: mkdir output/fsh; cp input/fsh/* output/fsh
+
+      - name: Deploy
+        uses: s0/git-publish-subdir-action@develop
+        env:
+          REPO: self
+          BRANCH: gh-pages
+          FOLDER: output
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

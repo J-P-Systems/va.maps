@@ -1,0 +1,59 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://va.gov/fhir/ValueSet/PersonIdentifierType> a fhir:ValueSet ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "PersonIdentifierType"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet PersonIdentifierType</b></p><a name=\"PersonIdentifierType\"> </a><a name=\"hcPersonIdentifierType\"> </a><a name=\"PersonIdentifierType-en-US\"> </a><p>This value set includes codes based on the following rules:</p><ul><li>Include these codes as defined in <code>http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBIdentifierType</code><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td>pat</td><td>Account number</td></tr></table></li><li>Include these codes as defined in <a href=\"http://terminology.hl7.org/6.2.0/CodeSystem-v2-0203.html\"><code>http://terminology.hl7.org/CodeSystem/v2-0203</code></a><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td><a href=\"http://terminology.hl7.org/6.2.0/CodeSystem-v2-0203.html#v2-0203-MB\">MB</a></td><td>Member number</td><td>An identifier for the insured of an insurance policy (this insured always has a subscriber), usually assigned by the insurance carrier.</td></tr><tr><td><a href=\"http://terminology.hl7.org/6.2.0/CodeSystem-v2-0203.html#v2-0203-SS\">SS</a></td><td>Social Security Number</td><td>Social Security number</td></tr></table></li></ul></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:url [ fhir:v "http://va.gov/fhir/ValueSet/PersonIdentifierType"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "1.4.6"] ; # 
+  fhir:name [ fhir:v "PersonIdentifierType"] ; # 
+  fhir:title [ fhir:v "PersonIdentifierType FHIR"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2025-04-18T11:22:00+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "VA"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "VA" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://www.va.gov" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "FHIR Target ValueSet for Terminology Maps [VF_PersonIdentifierType](ConceptMap-VF-PersonIdentifierType.html)"] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "US" ] ;
+       fhir:display [ fhir:v "United States of America" ]
+     ] )
+  ] ) ; # 
+  fhir:compose [
+     fhir:include ( [
+       fhir:system [ fhir:v "http://hl7.org/fhir/us/carin-bb/CodeSystem/C4BBIdentifierType"^^xsd:anyURI ] ;
+       fhir:concept ( [
+         fhir:code [ fhir:v "pat" ] ;
+         fhir:display [ fhir:v "Account number" ]
+       ] )
+     ] [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/v2-0203"^^xsd:anyURI ] ;
+       fhir:concept ( [
+         fhir:code [ fhir:v "MB" ] ;
+         fhir:display [ fhir:v "Member number" ]
+       ] [
+         fhir:code [ fhir:v "SS" ] ;
+         fhir:display [ fhir:v "Social Security Number" ]
+       ] )
+     ] )
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

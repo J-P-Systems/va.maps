@@ -1,0 +1,104 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://va.gov/fhir/ConceptMap/VF-RadiologyProcedureStatus> a fhir:ConceptMap ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "VF-RadiologyProcedureStatus"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ConceptMap VF-RadiologyProcedureStatus</b></p><a name=\"VF-RadiologyProcedureStatus\"> </a><a name=\"hcVF-RadiologyProcedureStatus\"> </a><a name=\"VF-RadiologyProcedureStatus-en-US\"> </a><p>Mapping from <a href=\"ValueSet-RadiologyProcedureStatus-vista.html\">RadiologyProcedureStatus VistA</a> to <a href=\"ValueSet-RadiologyProcedureStatus.html\">RadiologyProcedureStatus FHIR</a></p><br/><p><b>Group 1 </b>Mapping from <code>http://va.gov/terminology/vistaDefinedTerms/50.65-.02</code> to <a href=\"http://hl7.org/fhir/R4/codesystem-event-status.html\">EventStatus</a></p><table class=\"grid\"><tr><td><b>Source Code</b></td><td><b>Relationship</b></td><td><b>Target Code</b></td></tr><tr><td>CALLED_FOR_EXAM (CALLED FOR EXAM)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equal\" title=\"equal\">is equal to</a></td><td>preparation</td></tr><tr><td>CANCELLED</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equal\" title=\"equal\">is equal to</a></td><td>not-done</td></tr><tr><td>COMPLETE</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equal\" title=\"equal\">is equal to</a></td><td>completed</td></tr><tr><td>EXAMINED</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equal\" title=\"equal\">is equal to</a></td><td>in-progress</td></tr><tr><td>TRANSCRIBED</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equal\" title=\"equal\">is equal to</a></td><td>in-progress</td></tr><tr><td>WAITING_FOR_EXAM (WAITING FOR EXAM)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equal\" title=\"equal\">is equal to</a></td><td>preparation</td></tr></table></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:url [ fhir:v "http://va.gov/fhir/ConceptMap/VF-RadiologyProcedureStatus"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "1.4.6"] ; # 
+  fhir:name [ fhir:v "VF_RadiologyProcedureStatus"] ; # 
+  fhir:title [ fhir:v "VF_RadiologyProcedureStatus"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2025-04-18T11:22:00+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "VA"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "VA" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://www.va.gov" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Terminology Maps VF_RadiologyProcedureStatus"] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "US" ] ;
+       fhir:display [ fhir:v "United States of America" ]
+     ] )
+  ] ) ; # 
+  fhir:source [
+     a fhir:canonical ;
+     fhir:v "http://va.gov/fhir/ValueSet/RadiologyProcedureStatus-vista"^^xsd:anyURI ;
+     fhir:link <http://va.gov/fhir/ValueSet/RadiologyProcedureStatus-vista>
+  ] ; # 
+  fhir:target [
+     a fhir:canonical ;
+     fhir:v "http://va.gov/fhir/ValueSet/RadiologyProcedureStatus"^^xsd:anyURI ;
+     fhir:link <http://va.gov/fhir/ValueSet/RadiologyProcedureStatus>
+  ] ; # 
+  fhir:group ( [
+     fhir:source [ fhir:v "http://va.gov/terminology/vistaDefinedTerms/50.65-.02"^^xsd:anyURI ] ;
+     fhir:target [ fhir:v "http://hl7.org/fhir/event-status"^^xsd:anyURI ] ;
+     fhir:element ( [
+       fhir:code [ fhir:v "CALLED_FOR_EXAM" ] ;
+       fhir:display [ fhir:v "CALLED FOR EXAM" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "preparation" ] ;
+         fhir:display [ fhir:v "Preparation" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "CANCELLED" ] ;
+       fhir:display [ fhir:v "CANCELLED" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "not-done" ] ;
+         fhir:display [ fhir:v "Not Done" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "COMPLETE" ] ;
+       fhir:display [ fhir:v "COMPLETE" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "completed" ] ;
+         fhir:display [ fhir:v "Completed" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "EXAMINED" ] ;
+       fhir:display [ fhir:v "EXAMINED" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "in-progress" ] ;
+         fhir:display [ fhir:v "In Progress" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "TRANSCRIBED" ] ;
+       fhir:display [ fhir:v "TRANSCRIBED" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "in-progress" ] ;
+         fhir:display [ fhir:v "In Progress" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "WAITING_FOR_EXAM" ] ;
+       fhir:display [ fhir:v "WAITING FOR EXAM" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "preparation" ] ;
+         fhir:display [ fhir:v "Preparation" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

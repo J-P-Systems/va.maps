@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ConceptMap xmlns="http://hl7.org/fhir">
+  <id value="VF-LabObservationStatus"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: ConceptMap VF-LabObservationStatus</b></p><a name="VF-LabObservationStatus"> </a><a name="hcVF-LabObservationStatus"> </a><a name="VF-LabObservationStatus-en-US"> </a><p>Mapping from <a href="ValueSet-LabObservationStatus-vista.html">LabObservationStatus VistA</a> to <a href="ValueSet-LabObservationStatus.html">LabObservationStatus FHIR</a></p><br/><p><b>Group 1 </b>Mapping from <a href="http://terminology.hl7.org/3.1.0/CodeSystem-v2-0123.html">resultStatus</a> to <a href="http://hl7.org/fhir/R4/codesystem-observation-status.html">ObservationStatus</a></p><table class="grid"><tr><td colspan="3"><b>Source Concept Details</b></td><td><b>Relationship</b></td><td colspan="2"><b>Target Concept Details</b></td><td colspan="2"><b>Properties</b></td></tr><tr><td colspan="2"><b>Codes</b> from <a href="http://terminology.hl7.org/3.1.0/CodeSystem-v2-0123.html" title="http://terminology.hl7.org/CodeSystem/v2-0123">resultStatus</a></td><td><b>condition</b></td><td/><td colspan="2"><b>Codes</b> from <a href="http://hl7.org/fhir/R4/codesystem-observation-status.html" title="http://hl7.org/fhir/observation-status">ObservationStatus</a></td></tr><tr><td style="border-right-width: 0px">F</td><td style="border-left-width: 0px">FINAL RESULTS</td><td/><td><a href="http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equal" title="equal">is equal to</a></td><td style="border-right-width: 0px">final</td><td style="border-left-width: 0px">Final</td></tr><tr><td style="border-right-width: 0px">P</td><td style="border-left-width: 0px">PRELIMINARY</td><td/><td><a href="http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equal" title="equal">is equal to</a></td><td style="border-right-width: 0px">preliminary</td><td style="border-left-width: 0px">Preliminary</td></tr><tr><td style="border-right-width: 0px">null</td><td style="border-left-width: 0px"></td><td>NULL</td><td><a href="http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equal" title="equal">is equal to</a></td><td style="border-right-width: 0px">unknown</td><td style="border-left-width: 0px">Unknown</td></tr></table></div>
+  </text>
+  <url value="http://va.gov/fhir/ConceptMap/VF-LabObservationStatus"/>
+  <version value="1.4.6"/>
+  <name value="VF_LabObservationStatus"/>
+  <title value="VF_LabObservationStatus"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2025-04-18T11:22:00+00:00"/>
+  <publisher value="VA"/>
+  <contact>
+    <name value="VA"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.va.gov"/>
+    </telecom>
+  </contact>
+  <description value="Terminology Maps VF_LabObservationStatus"/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="US"/>
+      <display value="United States of America"/>
+    </coding>
+  </jurisdiction>
+  <sourceCanonical value="http://va.gov/fhir/ValueSet/LabObservationStatus-vista"/>
+  <targetCanonical value="http://va.gov/fhir/ValueSet/LabObservationStatus"/>
+  <group>
+    <source value="http://terminology.hl7.org/CodeSystem/v2-0123"/>
+    <target value="http://hl7.org/fhir/observation-status"/>
+    <element>
+      <code value="F"/>
+      <display value="FINAL RESULTS"/>
+      <target>
+        <code value="final"/>
+        <display value="Final"/>
+        <equivalence value="equal"/>
+      </target>
+    </element>
+    <element>
+      <code value="P"/>
+      <display value="PRELIMINARY"/>
+      <target>
+        <code value="preliminary"/>
+        <display value="Preliminary"/>
+        <equivalence value="equal"/>
+      </target>
+    </element>
+    <element>
+      <code value="null"/>
+      <target>
+        <code value="unknown"/>
+        <display value="Unknown"/>
+        <equivalence value="equal"/>
+        <dependsOn>
+          <property value="condition"/>
+          <value value="NULL"/>
+        </dependsOn>
+      </target>
+    </element>
+  </group>
+</ConceptMap>

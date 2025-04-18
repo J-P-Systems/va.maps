@@ -1,0 +1,110 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://va.gov/fhir/ConceptMap/VF-ImageStatusRadNuc> a fhir:ConceptMap ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "VF-ImageStatusRadNuc"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ConceptMap VF-ImageStatusRadNuc</b></p><a name=\"VF-ImageStatusRadNuc\"> </a><a name=\"hcVF-ImageStatusRadNuc\"> </a><a name=\"VF-ImageStatusRadNuc-en-US\"> </a><p>Mapping from <a href=\"ValueSet-ImageStatusRadNuc-vista.html\">ImageStatusRadNuc VistA</a> to <a href=\"ValueSet-ImageStatusRadNuc.html\">ImageStatusRadNuc FHIR</a></p><br/><p><b>Group 1 </b>Mapping from <code>http://va.gov/terminology/vistaDefinedTerms/50.65-.02</code> to <a href=\"http://hl7.org/fhir/R4/codesystem-observation-status.html\">ObservationStatus</a></p><table class=\"grid\"><tr><td><b>Source Code</b></td><td><b>Relationship</b></td><td><b>Target Code</b></td><td><b>Comment</b></td></tr><tr><td>X (DELETED)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equal\" title=\"equal\">is equal to</a></td><td>cancelled</td><td>X' (Deleted) status refers to a report that is deleted from a case, but remains in the database though not selectable from any Radiology options.</td></tr><tr><td>D (DRAFT)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equal\" title=\"equal\">is equal to</a></td><td>preliminary</td><td>D' (Draft) status or 'PD' (Problem Draft) status refers to a report that is available only for display in the Rad/Nuc Med Department. A statement describing the problem to the interpreting physician is printed at the end of reports with the 'PD' status.</td></tr><tr><td>EF (ELECTRONICALLY FILED)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equal\" title=\"equal\">is equal to</a></td><td>preliminary</td><td>EF' (Electronically Filed) status refers to a report that is interpreted outside the Rad/Nuc Med Department. The content is not the actual interpreted report, but canned text referring to the outside interpreted report.</td></tr><tr><td>PD (PROBLEM DRAFT)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equal\" title=\"equal\">is equal to</a></td><td>preliminary</td><td>D' (Draft) status or 'PD' (Problem Draft) status refers to a report that is available only for display in the Rad/Nuc Med Department. A statement describing the problem to the interpreting physician is printed at the end of reports with the 'PD' status.</td></tr><tr><td>R (RELEASED/NOT VERIFIED)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equal\" title=\"equal\">is equal to</a></td><td>preliminary</td><td>R' (Released/Not Verified) status refers to a report that is not verified by the interpreting physician and is available for display outside the Rad/Nuc Med Department. The 'R' status is allowed only when the parameter that controls this feature, 'Allow Released/Unverified' of the 'RAD/NUC MED DIVISION' file (#79), is set to 'Yes'.</td></tr><tr><td>V (VERIFIED)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equal\" title=\"equal\">is equal to</a></td><td>final</td><td>V' (Verified) status refers to a report that is verified by the interpreting physician and is available for display outside the Rad/Nuc Med Department to appropriate users, such as ward clerks, nurses, and physicians.</td></tr></table></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:url [ fhir:v "http://va.gov/fhir/ConceptMap/VF-ImageStatusRadNuc"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "1.4.6"] ; # 
+  fhir:name [ fhir:v "VF_ImageStatusRadNuc"] ; # 
+  fhir:title [ fhir:v "VF_ImageStatusRadNuc"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2025-04-18T11:22:00+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "VA"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "VA" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://www.va.gov" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Terminology Maps VF_ImageStatusRadNuc"] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "US" ] ;
+       fhir:display [ fhir:v "United States of America" ]
+     ] )
+  ] ) ; # 
+  fhir:source [
+     a fhir:canonical ;
+     fhir:v "http://va.gov/fhir/ValueSet/ImageStatusRadNuc-vista"^^xsd:anyURI ;
+     fhir:link <http://va.gov/fhir/ValueSet/ImageStatusRadNuc-vista>
+  ] ; # 
+  fhir:target [
+     a fhir:canonical ;
+     fhir:v "http://va.gov/fhir/ValueSet/ImageStatusRadNuc"^^xsd:anyURI ;
+     fhir:link <http://va.gov/fhir/ValueSet/ImageStatusRadNuc>
+  ] ; # 
+  fhir:group ( [
+     fhir:source [ fhir:v "http://va.gov/terminology/vistaDefinedTerms/50.65-.02"^^xsd:anyURI ] ;
+     fhir:target [ fhir:v "http://hl7.org/fhir/observation-status"^^xsd:anyURI ] ;
+     fhir:element ( [
+       fhir:code [ fhir:v "X" ] ;
+       fhir:display [ fhir:v "DELETED" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "cancelled" ] ;
+         fhir:display [ fhir:v "Cancelled" ] ;
+         fhir:equivalence [ fhir:v "equal" ] ;
+         fhir:comment [ fhir:v "X' (Deleted) status refers to a report that is deleted from a case, but remains in the database though not selectable from any Radiology options." ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "D" ] ;
+       fhir:display [ fhir:v "DRAFT" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "preliminary" ] ;
+         fhir:display [ fhir:v "Preliminary" ] ;
+         fhir:equivalence [ fhir:v "equal" ] ;
+         fhir:comment [ fhir:v "D' (Draft) status or 'PD' (Problem Draft) status refers to a report that is available only for display in the Rad/Nuc Med Department. A statement describing the problem to the interpreting physician is printed at the end of reports with the 'PD' status." ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "EF" ] ;
+       fhir:display [ fhir:v "ELECTRONICALLY FILED" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "preliminary" ] ;
+         fhir:display [ fhir:v "Preliminary" ] ;
+         fhir:equivalence [ fhir:v "equal" ] ;
+         fhir:comment [ fhir:v "EF' (Electronically Filed) status refers to a report that is interpreted outside the Rad/Nuc Med Department. The content is not the actual interpreted report, but canned text referring to the outside interpreted report." ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "PD" ] ;
+       fhir:display [ fhir:v "PROBLEM DRAFT" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "preliminary" ] ;
+         fhir:display [ fhir:v "Preliminary" ] ;
+         fhir:equivalence [ fhir:v "equal" ] ;
+         fhir:comment [ fhir:v "D' (Draft) status or 'PD' (Problem Draft) status refers to a report that is available only for display in the Rad/Nuc Med Department. A statement describing the problem to the interpreting physician is printed at the end of reports with the 'PD' status." ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "R" ] ;
+       fhir:display [ fhir:v "RELEASED/NOT VERIFIED" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "preliminary" ] ;
+         fhir:display [ fhir:v "Preliminary" ] ;
+         fhir:equivalence [ fhir:v "equal" ] ;
+         fhir:comment [ fhir:v "R' (Released/Not Verified) status refers to a report that is not verified by the interpreting physician and is available for display outside the Rad/Nuc Med Department. The 'R' status is allowed only when the parameter that controls this feature, 'Allow Released/Unverified' of the 'RAD/NUC MED DIVISION' file (#79), is set to 'Yes'." ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "V" ] ;
+       fhir:display [ fhir:v "VERIFIED" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "final" ] ;
+         fhir:display [ fhir:v "Final" ] ;
+         fhir:equivalence [ fhir:v "equal" ] ;
+         fhir:comment [ fhir:v "V' (Verified) status refers to a report that is verified by the interpreting physician and is available for display outside the Rad/Nuc Med Department to appropriate users, such as ward clerks, nurses, and physicians." ]
+       ] )
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

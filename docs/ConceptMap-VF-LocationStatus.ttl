@@ -1,0 +1,87 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://va.gov/fhir/ConceptMap/VF-LocationStatus> a fhir:ConceptMap ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "VF-LocationStatus"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ConceptMap VF-LocationStatus</b></p><a name=\"VF-LocationStatus\"> </a><a name=\"hcVF-LocationStatus\"> </a><a name=\"VF-LocationStatus-en-US\"> </a><p>Mapping from <a href=\"ValueSet-LocationStatus-vista.html\">LocationStatus VistA</a> to <a href=\"ValueSet-LocationStatus.html\">LocationStatus FHIR</a></p><br/><p><b>Group 1 </b>Mapping from <code>urn:VAST</code> to <a href=\"http://hl7.org/fhir/R4/codesystem-location-status.html\">LocationStatus</a></p><table class=\"grid\"><tr><td><b>Source Code</b></td><td><b>Relationship</b></td><td><b>Target Code</b></td></tr><tr><td>A (Active)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equal\" title=\"equal\">is equal to</a></td><td>active</td></tr><tr><td>D (Permanently Deactivated)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equal\" title=\"equal\">is equal to</a></td><td>inactive</td></tr><tr><td>P (Planned)</td><td colspan=\"2\" style=\"background-color: #efefef\">(not mapped)</td></tr><tr><td>T (Temporarily Deactivated)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equal\" title=\"equal\">is equal to</a></td><td>suspended</td></tr></table></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:url [ fhir:v "http://va.gov/fhir/ConceptMap/VF-LocationStatus"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "1.4.6"] ; # 
+  fhir:name [ fhir:v "VF_LocationStatus"] ; # 
+  fhir:title [ fhir:v "VF_LocationStatus"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2025-04-18T11:22:00+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "VA"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "VA" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://www.va.gov" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Terminology Maps VF_LocationStatus"] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "US" ] ;
+       fhir:display [ fhir:v "United States of America" ]
+     ] )
+  ] ) ; # 
+  fhir:source [
+     a fhir:canonical ;
+     fhir:v "http://va.gov/fhir/ValueSet/LocationStatus-vista"^^xsd:anyURI ;
+     fhir:link <http://va.gov/fhir/ValueSet/LocationStatus-vista>
+  ] ; # 
+  fhir:target [
+     a fhir:canonical ;
+     fhir:v "http://va.gov/fhir/ValueSet/LocationStatus"^^xsd:anyURI ;
+     fhir:link <http://va.gov/fhir/ValueSet/LocationStatus>
+  ] ; # 
+  fhir:group ( [
+     fhir:source [ fhir:v "urn:VAST"^^xsd:anyURI ] ;
+     fhir:target [ fhir:v "http://hl7.org/fhir/location-status"^^xsd:anyURI ] ;
+     fhir:element ( [
+       fhir:code [ fhir:v "A" ] ;
+       fhir:display [ fhir:v "Active" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "active" ] ;
+         fhir:display [ fhir:v "Active" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "D" ] ;
+       fhir:display [ fhir:v "Permanently Deactivated" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "inactive" ] ;
+         fhir:display [ fhir:v "Inactive" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "P" ] ;
+       fhir:display [ fhir:v "Planned" ] ;
+       fhir:target ( [
+         fhir:equivalence [ fhir:v "unmatched" ] ;
+         fhir:comment [ fhir:v "There is no code for planned in FHIR" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "T" ] ;
+       fhir:display [ fhir:v "Temporarily Deactivated" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "suspended" ] ;
+         fhir:display [ fhir:v "Suspended" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

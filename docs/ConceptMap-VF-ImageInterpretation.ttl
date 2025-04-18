@@ -1,0 +1,89 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://va.gov/fhir/ConceptMap/VF-ImageInterpretation> a fhir:ConceptMap ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "VF-ImageInterpretation"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ConceptMap VF-ImageInterpretation</b></p><a name=\"VF-ImageInterpretation\"> </a><a name=\"hcVF-ImageInterpretation\"> </a><a name=\"VF-ImageInterpretation-en-US\"> </a><p>Mapping from <a href=\"ValueSet-ImageInterpretation-vista.html\">ImageInterpretation VistA</a> to <a href=\"ValueSet-ImageInterpretation.html\">ImageInterpretation FHIR</a></p><br/><p><b>Group 1 </b>Mapping from <code>http://va.gov/terminology/vistaDefinedTerms/50.65-.02</code> to <a href=\"http://terminology.hl7.org/6.2.0/CodeSystem-v3-ObservationInterpretation.html\">ObservationInterpretation</a></p><table class=\"grid\"><tr><td><b>Source Code</b></td><td><b>Relationship</b></td><td><b>Target Code</b></td><td><b>Comment</b></td></tr><tr><td>A (ABNORMAL)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equal\" title=\"equal\">is equal to</a></td><td>A (Abnormal)</td><td/></tr><tr><td>B (BORDERLINE)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equal\" title=\"equal\">is equal to</a></td><td>E (Equivocal)</td><td/></tr><tr><td>N (NORMAL)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equal\" title=\"equal\">is equal to</a></td><td>N (Normal)</td><td/></tr><tr><td>T (TECHNICALLY UNSATISFACTORY)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equal\" title=\"equal\">is equal to</a></td><td>IND (Indeterminate)</td><td>'Technically Unsatifactory' is used with EKG/ECG but not ECHO</td></tr></table></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:url [ fhir:v "http://va.gov/fhir/ConceptMap/VF-ImageInterpretation"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "1.4.6"] ; # 
+  fhir:name [ fhir:v "VF_ImageInterpretation"] ; # 
+  fhir:title [ fhir:v "VF_ImageInterpretation"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2025-04-18T11:22:00+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "VA"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "VA" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://www.va.gov" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Terminology Maps VF_ImageInterpretation"] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "US" ] ;
+       fhir:display [ fhir:v "United States of America" ]
+     ] )
+  ] ) ; # 
+  fhir:source [
+     a fhir:canonical ;
+     fhir:v "http://va.gov/fhir/ValueSet/ImageInterpretation-vista"^^xsd:anyURI ;
+     fhir:link <http://va.gov/fhir/ValueSet/ImageInterpretation-vista>
+  ] ; # 
+  fhir:target [
+     a fhir:canonical ;
+     fhir:v "http://va.gov/fhir/ValueSet/ImageInterpretation"^^xsd:anyURI ;
+     fhir:link <http://va.gov/fhir/ValueSet/ImageInterpretation>
+  ] ; # 
+  fhir:group ( [
+     fhir:source [ fhir:v "http://va.gov/terminology/vistaDefinedTerms/50.65-.02"^^xsd:anyURI ] ;
+     fhir:target [ fhir:v "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation"^^xsd:anyURI ] ;
+     fhir:element ( [
+       fhir:code [ fhir:v "A" ] ;
+       fhir:display [ fhir:v "ABNORMAL" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "A" ] ;
+         fhir:display [ fhir:v "Abnormal" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "B" ] ;
+       fhir:display [ fhir:v "BORDERLINE" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "E" ] ;
+         fhir:display [ fhir:v "Equivocal" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "N" ] ;
+       fhir:display [ fhir:v "NORMAL" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "N" ] ;
+         fhir:display [ fhir:v "Normal" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "T" ] ;
+       fhir:display [ fhir:v "TECHNICALLY UNSATISFACTORY" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "IND" ] ;
+         fhir:display [ fhir:v "Indeterminate" ] ;
+         fhir:equivalence [ fhir:v "equal" ] ;
+         fhir:comment [ fhir:v "'Technically Unsatifactory' is used with EKG/ECG but not ECHO" ]
+       ] )
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+
