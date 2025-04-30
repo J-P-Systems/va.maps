@@ -25,3 +25,9 @@ Id: cdw
 Title: "Clinical Data Warehouse (CDW)"
 Source: LabObservationMicrobiologyBacteriologyObservationurine
 * valueCodeableConcept.coding -> "Micro.Microbiology.UrineScreen"
+
+Mapping: vpr-to-LabObservationMicrobiologyBacteriologyObservationurine
+Id: vpr
+Title: "Virtual Patient Record XML (VPR)"
+Source: LabObservationMicrobiologyBacteriologyObservationurine
+* valueCodeableConcept.coding -> "accession.value [m]"

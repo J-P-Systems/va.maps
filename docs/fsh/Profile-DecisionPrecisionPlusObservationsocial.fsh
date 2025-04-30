@@ -1,7 +1,7 @@
 Profile: DecisionPrecisionPlusObservationsocial
 Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-social-history
 Id: DecisionPrecisionPlusObservationsocial
-Title: "DecisionPrecisionPlus Observation[social]"
+Title: "Decision Precision Plus Observation[social]"
 Description: "This StructureDefinition contains the maps for VistA file V HEALTH FACTORS (9000010.23) to us-core-observation-social-history."
 * ^status = #draft
 * code and valueQuantity.value and valueQuantity.code and valueDateTime and effectiveDateTime and note and encounter and category and status MS
@@ -71,3 +71,11 @@ Source: DecisionPrecisionPlusObservationsocial
 * effectiveDateTime -> "SocialHistory.FromTime,Vaccination.FromTime,Vaccination.ToTime,FamilyHistory.FromTime"
 * note -> "SocialHistory.SocialHabitComments,Vaccination.Administration.RefusalReason,FamilyHistory.NoteText"
 * encounter -> "SocialHistory.EncounterNumber,SocialHistory.EnteredAt,SocialHistory.EnteredBy,SocialHistory.EnteredOn,Vaccination.EncounterNumber,Vaccination.EnteredAt,Vaccination.EnteredBy,Vaccination.EnteredOn,Vaccination.Administration.AdministeredAtLocation,FamilyHistory.EncounterNumber,FamilyHistory.EnteredAt,FamilyHistory.EnteredBy,FamilyHistory.EnteredOn"
+
+Mapping: vpr-to-DecisionPrecisionPlusObservationsocial
+Id: vpr
+Title: "Virtual Patient Record XML (VPR)"
+Source: DecisionPrecisionPlusObservationsocial
+* code -> "healthFactor.category (>9999999.64-.03),healthFactor.name (>9999999.64-.01)"
+* note -> "healthFactor.comment"
+* encounter -> "healthFactor.encounter,healthFactor.facility (>9000010-.06),healthFactor.recorded (>9000010-.01)"

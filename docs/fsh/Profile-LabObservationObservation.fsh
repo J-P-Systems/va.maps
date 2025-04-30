@@ -28,3 +28,9 @@ Id: sda
 Title: "Summary Document Architecure (SDA)"
 Source: LabObservationObservation
 * subject -> "Patient.Extension[PatientExtension].VeteranLrdfn"
+
+Mapping: vpr-to-LabObservationObservation
+Id: vpr
+Title: "Virtual Patient Record XML (VPR)"
+Source: LabObservationObservation
+* subject -> "demographics.lrdfn"

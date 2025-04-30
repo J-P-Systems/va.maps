@@ -70,3 +70,12 @@ Source: DiagnosticReportNoteCytopathologyDiagnosticReport
 * issued -> "Documents.ToTime"
 * performer[va-by] -> "Documents.Extension[DocumentExtension].CareProviders"
 * resultsInterpreter -> "Documents.Clinician,Documents.EnteredBy"
+
+Mapping: vpr-to-DiagnosticReportNoteCytopathologyDiagnosticReport
+Id: vpr
+Title: "Virtual Patient Record XML (VPR)"
+Source: DiagnosticReportNoteCytopathologyDiagnosticReport
+* subject -> "demographics.lrdfn"
+* effectiveDateTime -> "document.encounter,document.referenceDateTime"
+* performer[va-by] -> "document.clinician [m]"
+* resultsInterpreter -> "document.clinician [m] (>200-.01),document.clinician [m] (>200-20.2),document.clinician [m] (>200-8932.1)"

@@ -227,3 +227,13 @@ Source: ProcedureSurgeryProcedure
 * performer[va-p1].actor -> "Procedure.Clinician"
 * performer[va-p4].actor -> "Procedure.Extension[ProcedureExtension].AttendingClinician"
 * performer[va-p12].actor -> "Procedure.Clinician"
+
+Mapping: vpr-to-ProcedureSurgeryProcedure
+Id: vpr
+Title: "Virtual Patient Record XML (VPR)"
+Source: ProcedureSurgeryProcedure
+* encounter -> "surgery.encounter"
+* performedDateTime -> "surgery.dateTime"
+* performer[va-p1].actor -> "surgery.provider (>200-.01)"
+* performer[va-p12].actor -> "surgery.provider"
+* code.text -> "surgery.name"

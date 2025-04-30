@@ -55,3 +55,9 @@ Title: "Summary Document Architecure (SDA)"
 Source: ImplantableDeviceProsthesis
 * patient -> "Procedure.Procedure[CodeTableDetail.Procedure].Code"
 * owner -> "Procedure.EnteredAt"
+
+Mapping: vpr-to-ImplantableDeviceProsthesis
+Id: vpr
+Title: "Virtual Patient Record XML (VPR)"
+Source: ImplantableDeviceProsthesis
+* owner -> "surgery.facility (>4-.01),surgery.facility (>4-99)"

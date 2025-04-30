@@ -42,3 +42,11 @@ Source: LungCancerScreening
 * subject -> "Documents.DocumentType"
 * performer -> "Alert.EnteredBy"
 * encounter -> "AdvanceDirective.EncounterNumber,Alert.EncounterNumber,Documents.EncounterNumber"
+
+Mapping: vpr-to-LungCancerScreening
+Id: vpr
+Title: "Virtual Patient Record XML (VPR)"
+Source: LungCancerScreening
+* presentedForm -> "document.content[n]"
+* performer -> "document.clinician [m] (>200-.01),document.clinician [m] (>200-20.2),document.clinician [m] (>200-8932.1)"
+* encounter -> "document.encounter"

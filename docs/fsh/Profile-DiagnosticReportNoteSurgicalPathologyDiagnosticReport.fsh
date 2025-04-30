@@ -67,3 +67,9 @@ Id: sda
 Title: "Summary Document Architecure (SDA)"
 Source: DiagnosticReportNoteSurgicalPathologyDiagnosticReport
 * subject -> "Patient.Extension[PatientExtension].VeteranLrdfn"
+
+Mapping: vpr-to-DiagnosticReportNoteSurgicalPathologyDiagnosticReport
+Id: vpr
+Title: "Virtual Patient Record XML (VPR)"
+Source: DiagnosticReportNoteSurgicalPathologyDiagnosticReport
+* subject -> "demographics.lrdfn"

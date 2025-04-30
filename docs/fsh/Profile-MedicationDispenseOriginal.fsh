@@ -80,3 +80,16 @@ Source: MedicationDispenseOriginal
 * quantity.value -> "Medication.OrderQuantity"
 * location -> "Medication.OutpatientSite"
 * note.text -> "Medication.Remarks"
+
+Mapping: vpr-to-MedicationDispenseOriginal
+Id: vpr
+Title: "Virtual Patient Record XML (VPR)"
+Source: MedicationDispenseOriginal
+* daysSupply -> "med.daysSupply,pharmacy (med).daysSupply"
+* dosageInstruction.doseAndRate.doseQuantity.unit -> "med.dose [m],pharmacy (med).dose [m]"
+* dosageInstruction.doseAndRate.doseQuantity.code -> "med.dose [m],pharmacy (med).dose [m]"
+* dosageInstruction.doseAndRate.doseQuantity.value -> "med.dose [m],pharmacy (med).dose [m]"
+* medicationCodeableConcept.coding.code -> "med.route (>51.2-1),pharmacy (med).route (>51.2-1)"
+* medicationCodeableConcept.text -> "med.route (>51.2-1),pharmacy (med).route (>51.2-1)"
+* quantity.value -> "med.schedule,pharmacy (med).schedule"
+* subject -> "med.units (>50.607-.01),pharmacy (med).units (>50.607-.01)"

@@ -95,3 +95,11 @@ Source: ProcedureOutpatient
 * code.coding -> "Encounter.Extension[EncounterExtension].Cpt,Encounter.Extension[EncounterExtension].Cpt,Procedure.Procedure,Procedure.Procedure[CodeTableDetail.Procedure].Code"
 * code.coding.code -> "Encounter.Extension[EncounterExtension].Cpt,Encounter.Extension[EncounterExtension].Cpt,Procedure.Procedure,Procedure.Procedure[CodeTableDetail.Procedure].Code"
 * code.coding.display -> "Encounter.Extension[EncounterExtension].Cpt,Encounter.Extension[EncounterExtension].Cpt,Procedure.Procedure,Procedure.Procedure[CodeTableDetail.Procedure].Code"
+
+Mapping: vpr-to-ProcedureOutpatient
+Id: vpr
+Title: "Virtual Patient Record XML (VPR)"
+Source: ProcedureOutpatient
+* code.coding -> "visit.cpt [m] (>81-.01),visit.cpt [m] (>81-2),visit.type (>81-.01),visit.type (>81-2)"
+* code.coding.code -> "visit.cpt [m] (>81-.01),visit.cpt [m] (>81-2),visit.type (>81-.01),visit.type (>81-2)"
+* code.coding.display -> "visit.cpt [m] (>81-.01),visit.cpt [m] (>81-2),visit.type (>81-.01),visit.type (>81-2)"

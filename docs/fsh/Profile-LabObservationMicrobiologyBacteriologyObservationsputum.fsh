@@ -23,3 +23,9 @@ Id: cdw
 Title: "Clinical Data Warehouse (CDW)"
 Source: LabObservationMicrobiologyBacteriologyObservationsputum
 * valueString -> "Micro.Microbiology.SputumScreen"
+
+Mapping: vpr-to-LabObservationMicrobiologyBacteriologyObservationsputum
+Id: vpr
+Title: "Virtual Patient Record XML (VPR)"
+Source: LabObservationMicrobiologyBacteriologyObservationsputum
+* valueString -> "accession.value [m]"

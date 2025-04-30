@@ -130,3 +130,21 @@ Source: MedicationRequestOutpatient
 * identifier.value -> "Medication.PrescriptionNumber,Medication.FillDate"
 * dosageInstruction.route.coding.code -> "Medication.DosageSteps,Medication.Route,Medication.DoseQuantity,Medication.DoseUoM,Medication.Duration,Medication.Frequency,Medication.TextInstruction,Medication.Conjunction,Medication.Noun,Medication.UnitsPerDose,Medication.Verb"
 * reasonCode.text -> "Medication.Indication"
+
+Mapping: vpr-to-MedicationRequestOutpatient
+Id: vpr
+Title: "Virtual Patient Record XML (VPR)"
+Source: MedicationRequestOutpatient
+* medicationCodeableConcept.text -> "med.route (>51.2-1),pharmacy (med).route (>51.2-1)"
+* medicationCodeableConcept.coding.code -> "med.route (>51.2-1),pharmacy (med).route (>51.2-1)"
+* subject -> "med.units (>50.607-.01),pharmacy (med).units (>50.607-.01)"
+* authoredOn -> "med.unitsPerDose,pharmacy (med).unitsPerDose"
+* requester -> "med.currentProvider (>200-.01),med.currentProvider (>200-8932.1),med.doseStart,med.doseStop,med.duration,pharmacy (med).currentProvider (>200-.01),pharmacy (med).currentProvider (>200-8932.1),pharmacy (med).doseStart,pharmacy (med).doseStop,pharmacy (med).duration"
+* dosageInstruction.doseAndRate.doseQuantity.value -> "med.dose [m],pharmacy (med).dose [m]"
+* dosageInstruction.doseAndRate.doseQuantity.unit -> "med.dose [m],pharmacy (med).dose [m]"
+* dispenseRequest.validityPeriod.end -> "med.expires,pharmacy (med).expires"
+* dispenseRequest.quantity.value -> "med.schedule,pharmacy (med).schedule"
+* dispenseRequest.expectedSupplyDuration -> "med.daysSupply,pharmacy (med).daysSupply"
+* dosageInstruction.doseAndRate.extension[http://hl7.org/fhir/StructureDefinition/originalText].valueString -> "med.dose [m],pharmacy (med).dose [m]"
+* identifier.value -> "med.dose,pharmacy (med).dose"
+* dosageInstruction.route.coding.code -> "med.dose [m],pharmacy (med).dose [m]"

@@ -47,11 +47,11 @@
 <tr><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3goXBCwdPqAP0wAAAldJREFUOMuNk0tIlFEYhp9z/vE2jHkhxXA0zJCMitrUQlq4lnSltEqCFhFG2MJFhIvIFpkEWaTQqjaWZRkp0g26URZkTpbaaOJkDqk10szoODP//7XIMUe0elcfnPd9zsfLOYplGrpRwZaqTtw3K7PtGem7Q6FoidbGgqHVy/HRb669R+56zx7eRV1L31JGxYbBtjKK93cxeqfyQHbehkZbUkK20goELEuIzEd+dHS+qz/Y8PTSif0FnGkbiwcAjHaU1+QWOptFiyCLp/LnKptpqIuXHx6rbR26kJcBX3yLgBfnd7CxwJmflpP2wUg0HIAoUUpZBmKzELGWcN8nAr6Gpu7tLU/CkwAaoKTWRSQyt89Q8w6J+oVQkKnBoblH7V0PPvUOvDYXfopE/SJmALsxnVm6LbkotrUtNowMeIrVrBcBpaMmdS0j9df7abpSuy7HWehwJdt1lhVwi/J58U5beXGAF6c3UXLycw1wdFklArBn87xdh0ZsZtArghBdAA3+OEDVubG4UEzP6x1FOWneHh2VDAHBAt80IbdXDcesNoCvs3E5AFyNSU5nbrDPZpcUEQQTFZiEVx+51fxMhhyJEAgvlriadIJZZksRuwBYMOPBbO3hePVVqgEJhFeUuFLhIPkRP6BQLIBrmMenujm/3g4zc398awIe90Zb5A1vREALqneMcYgP/xVQWlG+Ncu5vgwwlaUNx+3799rfe96u9K0JSDXcOzOTJg4B6IgmXfsygc7/Bvg9g9E58/cDVmGIBOP/zT8Bz1zqWqpbXIsd0O9hajXfL6u4BaOS6SeWAAAAAElFTkSuQmCC" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr></table></div>
   </text>
   <url value="http://va.gov/fhir/StructureDefinition/Appointment"/>
-  <version value="1.4.10"/>
+  <version value="1.4.15"/>
   <name value="Appointment"/>
   <title value="Appointment"/>
   <status value="active"/>
-  <date value="2025-04-18T16:44:16+00:00"/>
+  <date value="2025-04-30T18:27:21+00:00"/>
   <publisher value="VA"/>
   <contact>
     <name value="VA"/>
@@ -80,6 +80,10 @@
   <mapping>
     <identity value="sda"/>
     <name value="Summary Document Architecure (SDA)"/>
+  </mapping>
+  <mapping>
+    <identity value="vpr"/>
+    <name value="Virtual Patient Record XML (VPR)"/>
   </mapping>
   <mapping>
     <identity value="workflow"/>
@@ -614,6 +618,10 @@
         <map value="Appointment.Type"/>
       </mapping>
       <mapping>
+        <identity value="vpr"/>
+        <map value="appointment.type (&gt;409.1-.01)"/>
+      </mapping>
+      <mapping>
         <identity value="rim"/>
         <map value="N/A"/>
       </mapping>
@@ -801,6 +809,10 @@
       <mapping>
         <identity value="sda"/>
         <map value="Appointment.NoShow,Appointment.Extension[AppointmentExtension].PatientStatus,Appointment.Extension[AppointmentExtension].ServiceStatus"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="appointment.apptStatus,appointment.patientClass,appointment.serviceCategory"/>
       </mapping>
       <mapping>
         <identity value="workflow"/>
@@ -1680,6 +1692,10 @@
         <map value="Appointment.Type"/>
       </mapping>
       <mapping>
+        <identity value="vpr"/>
+        <map value="appointment.type (&gt;409.1-.01)"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="C*E.9. But note many systems use C*E.2 for this"/>
       </mapping>
@@ -1867,6 +1883,10 @@
         <map value="Appointment.Type"/>
       </mapping>
       <mapping>
+        <identity value="vpr"/>
+        <map value="appointment.type (&gt;409.1-.01)"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="NTE-3"/>
       </mapping>
@@ -1961,6 +1981,10 @@
       <mapping>
         <identity value="cdw"/>
         <map value="Appt.WaitList.AppointmentDesiredDate"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="appointment.dateTime,appointment.id,appointment.visitString"/>
       </mapping>
       <mapping>
         <identity value="workflow"/>
@@ -3347,6 +3371,10 @@
       <mapping>
         <identity value="sda"/>
         <map value="Appointment.CareProvider,Appointment.EnteredAt,Appointment.Location,Appointment.PlacerApptId,Appointment.Type"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="appointment.clinicStop (&gt;44-8),appointment.facility (&gt;44-3),appointment.id,appointment.provider (&gt;44-2600),appointment.service (&gt;44-9),appointment.visitString"/>
       </mapping>
       <mapping>
         <identity value="w5"/>
@@ -5220,6 +5248,14 @@
         <identity value="sda"/>
         <map value="Appointment.Type"/>
       </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="appointment.type (&gt;409.1-.01)"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="appointment.type (&gt;409.1-.01)"/>
+      </mapping>
     </element>
     <element id="Appointment.status">
       <path value="Appointment.status"/>
@@ -5318,6 +5354,22 @@
         <identity value="sda"/>
         <map value="Appointment.NoShow,Appointment.Extension[AppointmentExtension].PatientStatus,Appointment.Extension[AppointmentExtension].ServiceStatus"/>
       </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="appointment.apptStatus,appointment.patientClass,appointment.serviceCategory"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="appointment.apptStatus,appointment.patientClass,appointment.serviceCategory"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="appointment.apptStatus,appointment.patientClass,appointment.serviceCategory"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="appointment.apptStatus,appointment.patientClass,appointment.serviceCategory"/>
+      </mapping>
     </element>
     <element id="Appointment.cancelationReason">
       <path value="Appointment.cancelationReason"/>
@@ -5400,6 +5452,10 @@
         <identity value="sda"/>
         <map value="Appointment.Type"/>
       </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="appointment.type (&gt;409.1-.01)"/>
+      </mapping>
     </element>
     <element id="Appointment.reasonCode">
       <path value="Appointment.reasonCode"/>
@@ -5431,6 +5487,10 @@
         <identity value="sda"/>
         <map value="Appointment.Type"/>
       </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="appointment.type (&gt;409.1-.01)"/>
+      </mapping>
     </element>
     <element id="Appointment.start">
       <path value="Appointment.start"/>
@@ -5450,6 +5510,10 @@
       <mapping>
         <identity value="cdw"/>
         <map value="Appt.WaitList.AppointmentDesiredDate"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="appointment.dateTime,appointment.id,appointment.visitString"/>
       </mapping>
     </element>
     <element id="Appointment.end">
@@ -5565,6 +5629,10 @@
       <mapping>
         <identity value="sda"/>
         <map value="Appointment.CareProvider,Appointment.EnteredAt,Appointment.Location,Appointment.PlacerApptId,Appointment.Type"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="appointment.clinicStop (&gt;44-8),appointment.facility (&gt;44-3),appointment.id,appointment.provider (&gt;44-2600),appointment.service (&gt;44-9),appointment.visitString"/>
       </mapping>
     </element>
     <element id="Appointment.participant:va-clinic.status">

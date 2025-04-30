@@ -106,3 +106,19 @@ Source: MedicationRequestNonVA
 * note -> "Medication.Comments"
 * note -> "Medication.Statement"
 * extension[http://va.gov/fhir/StructureDefinition/medicationrequest-recordedLocation].valueReference -> "Medication.EnteredAt,Medication.EnteringOrganization"
+
+Mapping: vpr-to-MedicationRequestNonVA
+Id: vpr
+Title: "Virtual Patient Record XML (VPR)"
+Source: MedicationRequestNonVA
+* identifier[va-order-number].value -> "med.id,med.orderID,pharmacy (med).id,pharmacy (med).orderID"
+* medicationCodeableConcept -> "med.form (>50.7-.01),med.name (>50.7-.01),med.name (>50.7-.02),pharmacy (med).form (>50.7-.01),pharmacy (med).name (>50.7-.01),pharmacy (med).name (>50.7-.02)"
+* medicationCodeableConcept -> "med.product [m] (>50-.01),pharmacy (med).product [m] (>50-.01)"
+* dosageInstruction.doseAndRate.doseQuantity.extension[http://hl7.org/fhir/StructureDefinition/originalText] -> "med.dose,med.sig,pharmacy (med).dose,pharmacy (med).sig"
+* dosageInstruction.route.text -> "med.route,med.sig,pharmacy (med).route,pharmacy (med).sig"
+* dosageInstruction.timing.code.text -> "med.schedule,med.sig,pharmacy (med).schedule,pharmacy (med).sig"
+* status -> "med.status,med.vaStatus,pharmacy (med).status,pharmacy (med).vaStatus"
+* status -> "med.status,med.vaStatus,pharmacy (med).status,pharmacy (med).vaStatus"
+* authoredOn -> "med.ordered,pharmacy (med).ordered"
+* recorder -> "med.currentProvider (>200-.01),med.orderingProvider (>200-.01),pharmacy (med).currentProvider (>200-.01),pharmacy (med).orderingProvider (>200-.01)"
+* extension[http://va.gov/fhir/StructureDefinition/medicationrequest-recordedLocation].valueReference -> "med.facility (>44-3),med.location (>44-.01),pharmacy (med).facility (>44-3),pharmacy (med).location (>44-.01)"

@@ -24,3 +24,9 @@ Id: sda
 Title: "Summary Document Architecure (SDA)"
 Source: LabObservationChemhemtoxriaserSpecimen
 * accessionIdentifier -> "LabOrder.Extension[ResultExtension].GroupName"
+
+Mapping: vpr-to-LabObservationChemhemtoxriaserSpecimen
+Id: vpr
+Title: "Virtual Patient Record XML (VPR)"
+Source: LabObservationChemhemtoxriaserSpecimen
+* accessionIdentifier -> "panel.groupName,accession.groupName,accession.name (>68-.01),lab.groupName"

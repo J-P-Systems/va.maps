@@ -1,10 +1,9 @@
 Profile: DecisionPrecisionPlusabstract
 Parent: http://hl7.org/fhir/StructureDefinition/Observation
 Id: DecisionPrecisionPlusabstract
-Title: "DecisionPrecisionPlus: abstract"
+Title: "Decision Precision Plus: abstract"
 Description: "This StructureDefinition contains the maps for VistA file V HEALTH FACTORS (9000010.23) to Observation."
 * ^status = #draft
-* ^abstract = true
 * effectiveDateTime and note and encounter and category and status MS
 * encounter only Reference(EncounterOutpatient)
 * category = #social-history
@@ -35,3 +34,10 @@ Source: DecisionPrecisionPlusabstract
 * effectiveDateTime -> "SocialHistory.FromTime,Vaccination.FromTime,Vaccination.ToTime,FamilyHistory.FromTime"
 * note -> "SocialHistory.SocialHabitComments,Vaccination.Administration.RefusalReason,FamilyHistory.NoteText"
 * encounter -> "SocialHistory.EncounterNumber,SocialHistory.EnteredAt,SocialHistory.EnteredBy,SocialHistory.EnteredOn,Vaccination.EncounterNumber,Vaccination.EnteredAt,Vaccination.EnteredBy,Vaccination.EnteredOn,Vaccination.Administration.AdministeredAtLocation,FamilyHistory.EncounterNumber,FamilyHistory.EnteredAt,FamilyHistory.EnteredBy,FamilyHistory.EnteredOn"
+
+Mapping: vpr-to-DecisionPrecisionPlusabstract
+Id: vpr
+Title: "Virtual Patient Record XML (VPR)"
+Source: DecisionPrecisionPlusabstract
+* note -> "healthFactor.comment"
+* encounter -> "healthFactor.encounter,healthFactor.facility (>9000010-.06),healthFactor.recorded (>9000010-.01)"

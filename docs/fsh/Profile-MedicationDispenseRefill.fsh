@@ -100,3 +100,14 @@ Source: MedicationDispenseRefill
 * location -> "Medication.RefillNumber,Medication.EBilling,Medication.Fills,Medication.LastFilled"
 * note.text -> "Medication.RefillNumber,Medication.EBilling,Medication.Fills,Medication.LastFilled"
 * performer.actor -> "Medication.RefillNumber,Medication.EBilling,Medication.Fills,Medication.LastFilled"
+
+Mapping: vpr-to-MedicationDispenseRefill
+Id: vpr
+Title: "Virtual Patient Record XML (VPR)"
+Source: MedicationDispenseRefill
+* dosageInstruction.doseAndRate.doseQuantity.unit -> "med.dose [m],pharmacy (med).dose [m]"
+* dosageInstruction.doseAndRate.doseQuantity.code -> "med.dose [m],pharmacy (med).dose [m]"
+* dosageInstruction.doseAndRate.doseQuantity.value -> "med.dose [m],pharmacy (med).dose [m]"
+* medicationCodeableConcept.coding.code -> "med.route (>51.2-1),pharmacy (med).route (>51.2-1)"
+* medicationCodeableConcept.text -> "med.route (>51.2-1),pharmacy (med).route (>51.2-1)"
+* subject -> "med.units (>50.607-.01),pharmacy (med).units (>50.607-.01)"

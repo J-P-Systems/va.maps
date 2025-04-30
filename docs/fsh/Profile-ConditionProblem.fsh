@@ -7,14 +7,14 @@ Description: "This StructureDefinition contains the maps for VistA file PROBLEM 
 * code.coding ^slicing.discriminator.type = #value
 * code.coding ^slicing.discriminator.path = "$this"
 * code.coding ^slicing.rules = #open
-* code.coding contains va-icd 0..1
-* category[us-core] and identifier.value and identifier.system and clinicalStatus and code.coding[va-icd] and code.coding[va-icd].system and code.coding[va-icd].code and code.coding.code and code.coding.system and code.text and subject and onsetDateTime and recordedDate and recorder and verificationStatus and abatementDateTime MS
+* code.coding contains va-icd 0..1 and va-sct 0..1
+* category[us-core] and identifier.value and identifier.system and clinicalStatus and code.coding[va-icd] and code.coding[va-icd].system and code.coding[va-icd].code and code.coding[va-sct].code and code.coding[va-sct].system and code.text and subject and onsetDateTime and recordedDate and recorder and verificationStatus and abatementDateTime MS
 * subject only Reference(Patient)
 * category[us-core] = http://terminology.hl7.org/CodeSystem/condition-category#problem-list-item
 * identifier.system = "http://va.gov/identifiers/$Sta3n/9000011"
 * clinicalStatus obeys cp-16-349
 * code.coding[va-icd].system = "urn:see-termmap-in-mapParameter"
-* code.coding.system = "http://snomed.info/sct"
+* code.coding[va-sct].system = "http://snomed.info/sct"
 * clinicalStatus from http://va.gov/fhir/ValueSet/problemStatus
 * clinicalStatus ^binding.description = "see mapping [VF_problemStatus](ConceptMap-VF-problemStatus.html)"
 * verificationStatus from http://va.gov/fhir/ValueSet/problemVerificationStatus
@@ -36,8 +36,8 @@ Source: ConditionProblem
 * code.coding[va-icd] -> "365: source value based on PROBLEM - DIAGNOSIS > ICD DIAGNOSIS (9000011-.01 > 80-)"
 * code.coding[va-icd].system -> "365-1: fixed value = urn:see-termmap-in-mapParameter" "generated from mapParameter line 1"
 * code.coding[va-icd].code -> "365-2: source value based on PROBLEM - DIAGNOSIS > ICD DIAGNOSIS - CODE NUMBER (9000011-.01 > 80-.01)" "generated from mapParameter line 2"
-* code.coding.code -> "366: source value based on PROBLEM - SNOMED CT CONCEPT CODE (9000011-80001)"
-* code.coding.system -> "366-1: fixed value = http://snomed.info/sct" "generated from mapParameter line 1"
+* code.coding[va-sct].code -> "366: source value based on PROBLEM - SNOMED CT CONCEPT CODE (9000011-80001)"
+* code.coding[va-sct].system -> "366-1: fixed value = http://snomed.info/sct" "generated from mapParameter line 1"
 * code.text -> "957: source value based on PROBLEM - PROVIDER NARRATIVE (9000011-.05)"
 * subject -> "367: reference based on PROBLEM - PATIENT NAME > PATIENT/IHS - NAME (9000011-.02 > 9000001-.01)"
 * onsetDateTime -> "369: source value based on PROBLEM - DATE OF ONSET (9000011-.13)"
@@ -55,7 +55,7 @@ Source: ConditionProblem
 * clinicalStatus -> "Outpat.ProblemList.ResolvedDateTime"
 * code.coding[va-icd] -> "Outpat.ProblemList.ICDIEN"
 * code.coding[va-icd].code -> "Outpat.ProblemList.ICDIEN\nDim.ICD10.ICD10Code,Dim.ICD9.ICD9Code"
-* code.coding.code -> "Outpat.ProblemList.SNOMEDCTConceptCode"
+* code.coding[va-sct].code -> "Outpat.ProblemList.SNOMEDCTConceptCode"
 * code.text -> "Outpat.ProblemList.ProviderNarrativeIEN"
 * subject -> "Outpat.ProblemList.PatientIEN"
 * onsetDateTime -> "Outpat.ProblemList.OnsetDateTime"
@@ -70,10 +70,25 @@ Id: sda
 Title: "Summary Document Architecure (SDA)"
 Source: ConditionProblem
 * clinicalStatus -> "Problem.Extension[ProblemExtension].ToTime"
-* code.coding.code -> "Problem.Extension[ProblemExtension].Problem"
+* code.coding[va-sct].code -> "Problem.Extension[ProblemExtension].Problem"
 * code.text -> "Problem.Extension[ProblemExtension].ProblemDetails"
 * onsetDateTime -> "Problem.Extension[ProblemExtension].FromTime,Problem.Extension[ProblemExtension].OnsetDate"
 * recordedDate -> "Problem.EnteredOn"
 * clinicalStatus -> "Problem.Extension[ProblemExtension].Status"
 * verificationStatus -> "Problem.Extension[ProblemExtension].IsRemoved,Problem.Extension[ProblemExtension].IsVerified,Problem.Extension[ProblemExtension].Removed"
 * abatementDateTime -> "Problem.Extension[ProblemExtension].ToTime"
+
+Mapping: vpr-to-ConditionProblem
+Id: vpr
+Title: "Virtual Patient Record XML (VPR)"
+Source: ConditionProblem
+* clinicalStatus -> "problem.resolved"
+* code.coding[va-icd] -> "problem.icd (>80-.01),problem.icdd (>80-68)"
+* code.coding[va-icd].code -> "problem.icd (>80-.01),problem.icdd (>80-68)"
+* code.coding[va-sct].code -> "problem.sctc,problem.sctt"
+* code.text -> "problem.name (>9999999.27-.01)"
+* onsetDateTime -> "problem.onset"
+* recordedDate -> "problem.entered"
+* clinicalStatus -> "problem.status"
+* verificationStatus -> "problem.removed,problem.unverified"
+* abatementDateTime -> "problem.resolved"

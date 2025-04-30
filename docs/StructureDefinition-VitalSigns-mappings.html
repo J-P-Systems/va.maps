@@ -7,7 +7,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Vital Signs - Mappings - US Veterans Health Administration FHIR Map Set Implementation Guide v1.4.10</title>
+    <title>Vital Signs - Mappings - US Veterans Health Administration FHIR Map Set Implementation Guide v1.4.15</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -65,7 +65,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">US Veterans Health Administration FHIR Map Set Implementation Guide</span>
             <br/>
-            <span style="display:inline-block;">1.4.10 - 250501
+            <span style="display:inline-block;">1.4.15 - 250501
 
 
 
@@ -258,7 +258,7 @@
         
           Active
           
-            as of 2025-04-18
+            as of 2025-04-30
           
         
       </td>
@@ -279,7 +279,7 @@
 <p>Scroll down for the Raw FHIR, CDW &amp; SDA mappings (if any).</p>
 
 <blockquote>
-  <p>Note that the CDW and SDA mappings are derived from a look-up based on the VistA source mappings in CDW and VPR SDA.</p>
+  <p>Note that the CDW, SDA and VPR XML mappings are derived from a look-up based on the VistA source mappings in CDW and VPR.</p>
 </blockquote>
 
 <h3 id="mapping-sources">Mapping Sources</h3>
@@ -666,6 +666,20 @@ Dim.VitalType.VUID</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;component (va-pre-condition-device)</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x] (valueCodeableConcept)</td><td>Observation.ObservationMethods</td> </tr>
 </table>
+<a name="vpr"> </a><h3>Mappings for Virtual Patient Record XML (VPR) ()</h3><table class="grid">
+ <tr><td colspan="3"><b>VitalSigns</b></td></tr>
+ <tr><td>Observation</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>vital.removed [m]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;code</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>vital.vuid (&gt;120.51-99.99),vital.name (&gt;120.51-.01)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;effective[x] (effectiveDateTime)</td><td>vital.taken</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;issued</td><td>vital.entered</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;performer</td><td>vital.facility (&gt;44-3),vital.facility (&gt;44-.07),vital.location (&gt;44-.01)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;value[x]</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;value[x] (valueQuantity)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>vital.value,vital.units,vital.metricvalue,vital.metricUnits,vital.bmi</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>vital.vuid (&gt;120.51-99.99),vital.name (&gt;120.51-.01)</td> </tr>
+</table>
 <a name="workflow"> </a><h3>Mappings for Workflow Pattern (<a href="http://hl7.org/fhir/workflow.html">http://hl7.org/fhir/workflow</a>)</h3><table class="grid">
  <tr><td colspan="3"><b>VitalSigns</b></td></tr>
  <tr><td>Observation</td><td>Event</td> </tr>
@@ -986,7 +1000,7 @@ Dim.VitalType.VUID</td> </tr>
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025 <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#1.4.10 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Apr 18, 2025 16:45+0000">2025-04-18</span>
+          IG &#169; 2025 <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#1.4.15 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Apr 30, 2025 18:29+0000">2025-04-30</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

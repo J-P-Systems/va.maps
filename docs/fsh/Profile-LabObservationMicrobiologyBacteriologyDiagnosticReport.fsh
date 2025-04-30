@@ -74,3 +74,10 @@ Source: LabObservationMicrobiologyBacteriologyDiagnosticReport
 * issued -> "Documents.ToTime,LabOrder.Result.ResultTime"
 * performer[va-by] -> "Documents.Clinician,Documents.Extension[DocumentExtension].CareProviders,LabOrder.Result.VerifiedBy"
 * performer[va-at] -> "Documents.EnteredAt,LabOrder.Result.EnteredAt"
+
+Mapping: vpr-to-LabObservationMicrobiologyBacteriologyDiagnosticReport
+Id: vpr
+Title: "Virtual Patient Record XML (VPR)"
+Source: LabObservationMicrobiologyBacteriologyDiagnosticReport
+* extension[http://hl7.org/fhir/5.0/StructureDefinition/extension-DiagnosticReport.note].valueAnnotation -> "accession.value [m]"
+* code.text -> "panel.test,med.prescription,lab.test,pharmacy (med).prescription"

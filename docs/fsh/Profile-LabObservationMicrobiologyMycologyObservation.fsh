@@ -86,3 +86,9 @@ Source: LabObservationMicrobiologyMycologyObservation
 * specimen -> "LabOrder.Extension[ResultExtension].GroupName"
 * issued -> "Documents.ToTime,LabOrder.Result.ResultTime"
 * subject -> "Patient.Extension[PatientExtension].VeteranLrdfn"
+
+Mapping: vpr-to-LabObservationMicrobiologyMycologyObservation
+Id: vpr
+Title: "Virtual Patient Record XML (VPR)"
+Source: LabObservationMicrobiologyMycologyObservation
+* subject -> "demographics.lrdfn"

@@ -99,3 +99,13 @@ Source: LabObservationMicrobiologyBacteriologyObservation
 * specimen -> "LabOrder.Extension[ResultExtension].GroupName"
 * issued -> "Documents.ToTime,LabOrder.Result.ResultTime"
 * subject -> "Patient.Extension[PatientExtension].VeteranLrdfn"
+
+Mapping: vpr-to-LabObservationMicrobiologyBacteriologyObservation
+Id: vpr
+Title: "Virtual Patient Record XML (VPR)"
+Source: LabObservationMicrobiologyBacteriologyObservation
+* note -> "accession.value [m]"
+* component[va-component].code -> "accession.value [m]"
+* component[va-component].valueString -> "accession.value [m]"
+* component[va-component].interpretation -> "accession.value [m]"
+* subject -> "demographics.lrdfn"

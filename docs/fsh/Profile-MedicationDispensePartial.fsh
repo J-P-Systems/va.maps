@@ -94,3 +94,14 @@ Source: MedicationDispensePartial
 * location -> "Medication.Fills"
 * note.text -> "Medication.Fills"
 * performer.actor -> "Medication.Fills"
+
+Mapping: vpr-to-MedicationDispensePartial
+Id: vpr
+Title: "Virtual Patient Record XML (VPR)"
+Source: MedicationDispensePartial
+* dosageInstruction.doseAndRate.doseQuantity.unit -> "med.dose [m],pharmacy (med).dose [m]"
+* dosageInstruction.doseAndRate.doseQuantity.code -> "med.dose [m],pharmacy (med).dose [m]"
+* dosageInstruction.doseAndRate.doseQuantity.value -> "med.dose [m],pharmacy (med).dose [m]"
+* medicationCodeableConcept.coding.code -> "med.route (>51.2-1),pharmacy (med).route (>51.2-1)"
+* medicationCodeableConcept.text -> "med.route (>51.2-1),pharmacy (med).route (>51.2-1)"
+* subject -> "med.units (>50.607-.01),pharmacy (med).units (>50.607-.01)"

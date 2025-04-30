@@ -138,3 +138,23 @@ Source: EncounterOutpatient
 * type.coding.code -> "Encounter.Extension[EncounterExtension].Cpt,Encounter.Extension[EncounterExtension].Cpt,Procedure.Procedure,Procedure.Procedure[CodeTableDetail.Procedure].Code"
 * type.coding.display -> "Encounter.Extension[EncounterExtension].Cpt,Encounter.Extension[EncounterExtension].Cpt,Procedure.Procedure,Procedure.Procedure[CodeTableDetail.Procedure].Code"
 * type.text -> "Encounter.Extension[EncounterExtension].Cpt,Encounter.Extension[EncounterExtension].Cpt,Procedure.Procedure,Procedure.Procedure[CodeTableDetail.Procedure].Code"
+
+Mapping: vpr-to-EncounterOutpatient
+Id: vpr
+Title: "Virtual Patient Record XML (VPR)"
+Source: EncounterOutpatient
+* status -> "visit.dateTime,visit.visitString"
+* status -> "visit.dateTime,visit.visitString"
+* serviceType.coding.code -> "visit.serviceCategory,visit.visitString"
+* period.start -> "visit.dateTime,visit.visitString"
+* reasonCode.coding.code -> "visit.icd [m] (>80-.01),visit.icd [m] (>80-1.1),visit.icd [m] (>80-10),visit.reason (>80-.01),visit.reason (>80-1.1),visit.reason (>80-10)"
+* location[va-stop].location -> "visit.stopCode (>40.7-.01)"
+* location[va-loc].location -> "visit.creditStopCode (>44-2503),visit.location (>44-.01),visit.visitString"
+* class -> "visit.patientClass"
+* serviceProvider -> "visit.facility (>4-.01),visit.facility (>4-99)"
+* participant.individual -> "visit.provider [m] (>200-.01),visit.provider [m] (>200-8932.1)"
+* participant.type -> "visit.provider [m]"
+* type -> "visit.cpt [m] (>81-.01),visit.cpt [m] (>81-2),visit.type (>81-.01),visit.type (>81-2)"
+* type.coding.code -> "visit.cpt [m] (>81-.01),visit.cpt [m] (>81-2),visit.type (>81-.01),visit.type (>81-2)"
+* type.coding.display -> "visit.cpt [m] (>81-.01),visit.cpt [m] (>81-2),visit.type (>81-.01),visit.type (>81-2)"
+* type.text -> "visit.cpt [m] (>81-.01),visit.cpt [m] (>81-2),visit.type (>81-.01),visit.type (>81-2)"

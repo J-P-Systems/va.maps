@@ -19,3 +19,9 @@ Id: sda
 Title: "Summary Document Architecure (SDA)"
 Source: DocumentReferenceBinary
 * data -> "AdvanceDirective.Comments,Alert.Comments,Documents.NoteText"
+
+Mapping: vpr-to-DocumentReferenceBinary
+Id: vpr
+Title: "Virtual Patient Record XML (VPR)"
+Source: DocumentReferenceBinary
+* data -> "document.content[n]"

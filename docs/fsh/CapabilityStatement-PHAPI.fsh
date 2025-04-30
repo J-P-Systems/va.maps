@@ -4,7 +4,7 @@ Title: "Lighthouse Patient Health API"
 Usage: #definition
 * description = "This CapabilityStatement enumerates the profiles that the API should address, in the estimation of the enterprise mapping team. Some elements may not be appropriate for those cases; consult the actual API specification published by the API provider"
 * status = #draft
-* date = "2025-04-18T16:41:38.829Z"
+* date = "2025-04-30T18:27:13.239Z"
 * kind = #requirements
 * fhirVersion = #4.0.1
 * format[0] = #xml

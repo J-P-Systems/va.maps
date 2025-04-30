@@ -138,3 +138,28 @@ Source: Patient
 * extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-race].extension[text].valueString -> "Patient.Races"
 * maritalStatus -> "Patient.MaritalStatus"
 * extension[http://hl7.org/fhir/StructureDefinition/patient-religion].valueCodeableConcept -> "Patient.Religion"
+
+Mapping: vpr-to-Patient
+Id: vpr
+Title: "Virtual Patient Record XML (VPR)"
+Source: Patient
+* identifier.value -> "demographics.icn"
+* name.text -> "demographics.familyName,demographics.fullName,demographics.givenNames"
+* telecom[va-home].value -> "demographics.telecom"
+* telecom[va-work].value -> "demographics.telecom"
+* telecom[va-mobile].value -> "demographics.telecom"
+* birthDate -> "demographics.dob"
+* deceasedDateTime -> "demographics.died"
+* address[va-home].line -> "demographics.address (>5-.01)"
+* address[va-home].line -> "demographics.address"
+* address[va-home].line -> "demographics.address"
+* address[va-home].city -> "demographics.address"
+* address[va-home].state -> "demographics.address"
+* address[va-home].postalCode -> "demographics.address"
+* gender -> "demographics.gender"
+* extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity].extension[ombCategory].valueCoding.code -> "demographics.ethnicity [m-P:10.2] (>10.2-3)"
+* extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity].extension[text].valueString -> "demographics.ethnicity [m-P:10.2] (>10.2-3)"
+* extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-race].extension[ombCategory].valueCoding.code -> "demographics.race [m-P:10] (>10-3)"
+* extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-race].extension[text].valueString -> "demographics.race [m-P:10] (>10-3)"
+* maritalStatus -> "demographics.maritalStatus"
+* extension[http://hl7.org/fhir/StructureDefinition/patient-religion].valueCodeableConcept -> "demographics.religion"

@@ -153,3 +153,22 @@ Source: ImmunizationImmunization
 * doseQuantity.code -> "Vaccination.Administration.AdministeredUnits"
 * encounter -> "Vaccination.EncounterNumber,Vaccination.EnteredAt,Vaccination.Administration.AdministeredAtLocation"
 * location -> "Vaccination.EncounterNumber,Vaccination.EnteredAt,Vaccination.Administration.AdministeredAtLocation\nEncounter.ExternalId,Encounter.HealthCareFacility"
+
+Mapping: vpr-to-ImmunizationImmunization
+Id: vpr
+Title: "Virtual Patient Record XML (VPR)"
+Source: ImmunizationImmunization
+* statusReason -> "immunization.cvx (>9999999.14-.03),immunization.name (>9999999.14-.01)"
+* vaccineCode -> "immunization.cvx (>9999999.14-.03),immunization.name (>9999999.14-.01)"
+* primarySource -> "immunization.source (>920.1-.01),immunization.source (>920.1-.02)"
+* status -> "immunization.cvx (>9999999.14-.03),immunization.name (>9999999.14-.01)"
+* status -> "immunization.cvx (>9999999.14-.03),immunization.name (>9999999.14-.01)"
+* status -> "immunization.cvx (>9999999.14-.03),immunization.name (>9999999.14-.01)"
+* vaccineCode.coding[va-cvx].code -> "immunization.cvx (>9999999.14-.03),immunization.name (>9999999.14-.01)"
+* vaccineCode.text -> "immunization.cvx (>9999999.14-.03),immunization.name (>9999999.14-.01)"
+* doseQuantity.value -> "immunization.dose"
+* performer.actor -> "immunization.provider (>200-.01)"
+* note.text -> "immunization.comment"
+* protocolApplied.doseNumberString -> "immunization.series"
+* encounter -> "immunization.administered,immunization.encounter,immunization.facility (>9000010-.06),immunization.location (>9000010-.22)"
+* location -> "immunization.administered,immunization.encounter,immunization.facility (>9000010-.06),immunization.location (>9000010-.22)\nvisit.creditStopCode (>44-2503),visit.location (>44-.01),visit.visitString"

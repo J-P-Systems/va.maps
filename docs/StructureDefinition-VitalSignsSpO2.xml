@@ -63,11 +63,11 @@
 <tr><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3goXBCwdPqAP0wAAAldJREFUOMuNk0tIlFEYhp9z/vE2jHkhxXA0zJCMitrUQlq4lnSltEqCFhFG2MJFhIvIFpkEWaTQqjaWZRkp0g26URZkTpbaaOJkDqk10szoODP//7XIMUe0elcfnPd9zsfLOYplGrpRwZaqTtw3K7PtGem7Q6FoidbGgqHVy/HRb669R+56zx7eRV1L31JGxYbBtjKK93cxeqfyQHbehkZbUkK20goELEuIzEd+dHS+qz/Y8PTSif0FnGkbiwcAjHaU1+QWOptFiyCLp/LnKptpqIuXHx6rbR26kJcBX3yLgBfnd7CxwJmflpP2wUg0HIAoUUpZBmKzELGWcN8nAr6Gpu7tLU/CkwAaoKTWRSQyt89Q8w6J+oVQkKnBoblH7V0PPvUOvDYXfopE/SJmALsxnVm6LbkotrUtNowMeIrVrBcBpaMmdS0j9df7abpSuy7HWehwJdt1lhVwi/J58U5beXGAF6c3UXLycw1wdFklArBn87xdh0ZsZtArghBdAA3+OEDVubG4UEzP6x1FOWneHh2VDAHBAt80IbdXDcesNoCvs3E5AFyNSU5nbrDPZpcUEQQTFZiEVx+51fxMhhyJEAgvlriadIJZZksRuwBYMOPBbO3hePVVqgEJhFeUuFLhIPkRP6BQLIBrmMenujm/3g4zc398awIe90Zb5A1vREALqneMcYgP/xVQWlG+Ncu5vgwwlaUNx+3799rfe96u9K0JSDXcOzOTJg4B6IgmXfsygc7/Bvg9g9E58/cDVmGIBOP/zT8Bz1zqWqpbXIsd0O9hajXfL6u4BaOS6SeWAAAAAElFTkSuQmCC" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr></table></div>
   </text>
   <url value="http://va.gov/fhir/StructureDefinition/VitalSignsSpO2"/>
-  <version value="1.4.10"/>
+  <version value="1.4.15"/>
   <name value="VitalSignsSpO2"/>
   <title value="Vital Signs: SpO2"/>
   <status value="active"/>
-  <date value="2025-04-18T16:44:16+00:00"/>
+  <date value="2025-04-30T18:27:21+00:00"/>
   <publisher value="VA"/>
   <contact>
     <name value="VA"/>
@@ -96,6 +96,10 @@
   <mapping>
     <identity value="sda"/>
     <name value="Summary Document Architecure (SDA)"/>
+  </mapping>
+  <mapping>
+    <identity value="vpr"/>
+    <name value="Virtual Patient Record XML (VPR)"/>
   </mapping>
   <mapping>
     <identity value="workflow"/>
@@ -1364,6 +1368,10 @@
         <map value="Observation.Extension[ObservationExtension].Removed"/>
       </mapping>
       <mapping>
+        <identity value="vpr"/>
+        <map value="vital.removed [m]"/>
+      </mapping>
+      <mapping>
         <identity value="workflow"/>
         <map value="Event.status"/>
       </mapping>
@@ -2106,6 +2114,10 @@
         <map value="Observation.ObservationCode,Observation.Extension[ObservationExtension].BMI"/>
       </mapping>
       <mapping>
+        <identity value="vpr"/>
+        <map value="vital.vuid (&gt;120.51-99.99),vital.name (&gt;120.51-.01)"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="C*E.1-8, C*E.10-22"/>
       </mapping>
@@ -2520,6 +2532,10 @@
         <map value="Observation.ObservationCode[Observation].Description,Observation.ObservationMethods[ObservationMethod].Description"/>
       </mapping>
       <mapping>
+        <identity value="vpr"/>
+        <map value="vital.taken"/>
+      </mapping>
+      <mapping>
         <identity value="workflow"/>
         <map value="Event.occurrence[x]"/>
       </mapping>
@@ -2569,6 +2585,10 @@
       <mapping>
         <identity value="cdw"/>
         <map value="Vital.VitalSign.VitalSignEnteredDateTime"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="vital.entered"/>
       </mapping>
       <mapping>
         <identity value="w5"/>
@@ -2621,6 +2641,10 @@
       <mapping>
         <identity value="sda"/>
         <map value="Observation.EnteredAt,Observation.Extension[ObservationExtension].Location"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="vital.facility (&gt;44-3),vital.facility (&gt;44-.07),vital.location (&gt;44-.01)"/>
       </mapping>
       <mapping>
         <identity value="workflow"/>
@@ -2909,6 +2933,10 @@
         <map value="Observation.ObservationValue,Observation.Extension[ObservationExtension].BMI"/>
       </mapping>
       <mapping>
+        <identity value="vpr"/>
+        <map value="vital.value,vital.units,vital.metricvalue,vital.metricUnits,vital.bmi"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="SN.2  / CQ - N/A"/>
       </mapping>
@@ -3072,6 +3100,10 @@
       <mapping>
         <identity value="sda"/>
         <map value="Observation.ObservationCode,Observation.Extension[ObservationExtension].BMI"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="vital.vuid (&gt;120.51-99.99),vital.name (&gt;120.51-.01)"/>
       </mapping>
       <mapping>
         <identity value="v2"/>
@@ -6820,6 +6852,14 @@
         <identity value="sda"/>
         <map value="Observation.Extension[ObservationExtension].Removed"/>
       </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="vital.removed [m]"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="vital.removed [m]"/>
+      </mapping>
     </element>
     <element id="Observation.category:VSCat">
       <path value="Observation.category"/>
@@ -6855,6 +6895,10 @@
       <mapping>
         <identity value="sda"/>
         <map value="Observation.ObservationCode,Observation.Extension[ObservationExtension].BMI"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="vital.vuid (&gt;120.51-99.99),vital.name (&gt;120.51-.01)"/>
       </mapping>
     </element>
     <element id="Observation.subject">
@@ -6907,6 +6951,10 @@
         <identity value="sda"/>
         <map value="Observation.ObservationCode[Observation].Description,Observation.ObservationMethods[ObservationMethod].Description"/>
       </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="vital.taken"/>
+      </mapping>
     </element>
     <element id="Observation.issued">
       <path value="Observation.issued"/>
@@ -6918,6 +6966,10 @@
       <mapping>
         <identity value="cdw"/>
         <map value="Vital.VitalSign.VitalSignEnteredDateTime"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="vital.entered"/>
       </mapping>
     </element>
     <element id="Observation.performer">
@@ -6938,6 +6990,10 @@
       <mapping>
         <identity value="sda"/>
         <map value="Observation.EnteredAt,Observation.Extension[ObservationExtension].Location"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="vital.facility (&gt;44-3),vital.facility (&gt;44-.07),vital.location (&gt;44-.01)"/>
       </mapping>
     </element>
     <element id="Observation.value[x]">
@@ -6985,6 +7041,10 @@
         <identity value="sda"/>
         <map value="Observation.ObservationValue,Observation.Extension[ObservationExtension].BMI"/>
       </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="vital.value,vital.units,vital.metricvalue,vital.metricUnits,vital.bmi"/>
+      </mapping>
     </element>
     <element id="Observation.value[x]:valueQuantity.code">
       <path value="Observation.value[x].code"/>
@@ -7002,6 +7062,10 @@
       <mapping>
         <identity value="sda"/>
         <map value="Observation.ObservationCode,Observation.Extension[ObservationExtension].BMI"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="vital.vuid (&gt;120.51-99.99),vital.name (&gt;120.51-.01)"/>
       </mapping>
     </element>
     <element id="Observation.bodySite">

@@ -37,3 +37,11 @@ Source: ImmunizationObservation
 * valueCodeableConcept -> "Vaccination.Extension[VaccinationExtension].Reaction"
 * valueCodeableConcept.coding.code -> "Vaccination.Extension[VaccinationExtension].Reaction"
 * valueCodeableConcept.text -> "Vaccination.Extension[VaccinationExtension].Reaction"
+
+Mapping: vpr-to-ImmunizationObservation
+Id: vpr
+Title: "Virtual Patient Record XML (VPR)"
+Source: ImmunizationObservation
+* valueCodeableConcept -> "immunization.reaction"
+* valueCodeableConcept.coding.code -> "immunization.reaction"
+* valueCodeableConcept.text -> "immunization.reaction"

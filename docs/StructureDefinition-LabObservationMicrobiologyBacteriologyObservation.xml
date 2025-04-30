@@ -37,11 +37,11 @@
 <tr><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3goXBCwdPqAP0wAAAldJREFUOMuNk0tIlFEYhp9z/vE2jHkhxXA0zJCMitrUQlq4lnSltEqCFhFG2MJFhIvIFpkEWaTQqjaWZRkp0g26URZkTpbaaOJkDqk10szoODP//7XIMUe0elcfnPd9zsfLOYplGrpRwZaqTtw3K7PtGem7Q6FoidbGgqHVy/HRb669R+56zx7eRV1L31JGxYbBtjKK93cxeqfyQHbehkZbUkK20goELEuIzEd+dHS+qz/Y8PTSif0FnGkbiwcAjHaU1+QWOptFiyCLp/LnKptpqIuXHx6rbR26kJcBX3yLgBfnd7CxwJmflpP2wUg0HIAoUUpZBmKzELGWcN8nAr6Gpu7tLU/CkwAaoKTWRSQyt89Q8w6J+oVQkKnBoblH7V0PPvUOvDYXfopE/SJmALsxnVm6LbkotrUtNowMeIrVrBcBpaMmdS0j9df7abpSuy7HWehwJdt1lhVwi/J58U5beXGAF6c3UXLycw1wdFklArBn87xdh0ZsZtArghBdAA3+OEDVubG4UEzP6x1FOWneHh2VDAHBAt80IbdXDcesNoCvs3E5AFyNSU5nbrDPZpcUEQQTFZiEVx+51fxMhhyJEAgvlriadIJZZksRuwBYMOPBbO3hePVVqgEJhFeUuFLhIPkRP6BQLIBrmMenujm/3g4zc398awIe90Zb5A1vREALqneMcYgP/xVQWlG+Ncu5vgwwlaUNx+3799rfe96u9K0JSDXcOzOTJg4B6IgmXfsygc7/Bvg9g9E58/cDVmGIBOP/zT8Bz1zqWqpbXIsd0O9hajXfL6u4BaOS6SeWAAAAAElFTkSuQmCC" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr></table></div>
   </text>
   <url value="http://va.gov/fhir/StructureDefinition/LabObservationMicrobiologyBacteriologyObservation"/>
-  <version value="1.4.10"/>
+  <version value="1.4.15"/>
   <name value="LabObservationMicrobiologyBacteriologyObservation"/>
   <title value="Lab Observation: Microbiology Bacteriology Observation"/>
   <status value="draft"/>
-  <date value="2025-04-18T16:44:16+00:00"/>
+  <date value="2025-04-30T18:27:21+00:00"/>
   <publisher value="VA"/>
   <contact>
     <name value="VA"/>
@@ -70,6 +70,10 @@
   <mapping>
     <identity value="sda"/>
     <name value="Summary Document Architecure (SDA)"/>
+  </mapping>
+  <mapping>
+    <identity value="vpr"/>
+    <name value="Virtual Patient Record XML (VPR)"/>
   </mapping>
   <mapping>
     <identity value="workflow"/>
@@ -1706,6 +1710,10 @@
         <map value="Patient.Extension[PatientExtension].VeteranLrdfn"/>
       </mapping>
       <mapping>
+        <identity value="vpr"/>
+        <map value="demographics.lrdfn"/>
+      </mapping>
+      <mapping>
         <identity value="workflow"/>
         <map value="Event.subject"/>
       </mapping>
@@ -2440,6 +2448,10 @@
       <mapping>
         <identity value="cdw"/>
         <map value="Micro.Microbiology.SpecimenComment"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="accession.value [m]"/>
       </mapping>
       <mapping>
         <identity value="v2"/>
@@ -3686,6 +3698,10 @@
         <comment value="antibiotic sensitivity&#xA;What is default if no LOINC? Use text or is there a default LOINC?&#xA;48611-8 Antibiotic tested [Identifier] against isolate"/>
       </mapping>
       <mapping>
+        <identity value="vpr"/>
+        <map value="accession.value [m]"/>
+      </mapping>
+      <mapping>
         <identity value="w5"/>
         <map value="FiveWs.what[x]"/>
       </mapping>
@@ -4252,6 +4268,10 @@
         <comment value="antibiotic sensitivity.AntibioticSensitivityValue"/>
       </mapping>
       <mapping>
+        <identity value="vpr"/>
+        <map value="accession.value [m]"/>
+      </mapping>
+      <mapping>
         <identity value="sct-concept"/>
         <map value="363714003 |Interprets| &lt; 441742003 |Evaluation finding|"/>
       </mapping>
@@ -4349,6 +4369,10 @@
         <identity value="vista"/>
         <map value="1524: terminologyMaps using VF_AntibioticSensitivityInterpretation on MICROBIOLOGY - ORGANISM &gt; ORGANISM - * INTERPR (63.05-12 &gt; 63.3-5.1+to+160.1)"/>
         <comment value="antibiotic sensitivity.AntibioticSensitivityInterpretation"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="accession.value [m]"/>
       </mapping>
       <mapping>
         <identity value="sct-concept"/>
@@ -4530,6 +4554,10 @@
         <identity value="sda"/>
         <map value="Patient.Extension[PatientExtension].VeteranLrdfn"/>
       </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="demographics.lrdfn"/>
+      </mapping>
     </element>
     <element id="Observation.effective[x]">
       <path value="Observation.effective[x]"/>
@@ -4658,6 +4686,10 @@
         <identity value="cdw"/>
         <map value="Micro.Microbiology.SpecimenComment"/>
       </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="accession.value [m]"/>
+      </mapping>
     </element>
     <element id="Observation.specimen">
       <path value="Observation.specimen"/>
@@ -4702,6 +4734,10 @@
         <identity value="vista"/>
         <map value="1522: transform using null on MICROBIOLOGY - ORGANISM &gt; ORGANISM - ORGANISM (63.05-12 &gt; 63.3-5+to+160)"/>
         <comment value="antibiotic sensitivity&#xA;What is default if no LOINC? Use text or is there a default LOINC?&#xA;48611-8 Antibiotic tested [Identifier] against isolate"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="accession.value [m]"/>
       </mapping>
     </element>
     <element id="Observation.component:va-component.code.coding.system">
@@ -4748,6 +4784,10 @@
         <map value="1523: source value based on MICROBIOLOGY - ORGANISM &gt; ORGANISM - ORGANISM (63.05-12 &gt; 63.3-5+to+160)"/>
         <comment value="antibiotic sensitivity.AntibioticSensitivityValue"/>
       </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="accession.value [m]"/>
+      </mapping>
     </element>
     <element id="Observation.component:va-component.interpretation">
       <path value="Observation.component.interpretation"/>
@@ -4761,6 +4801,10 @@
         <identity value="vista"/>
         <map value="1524: terminologyMaps using VF_AntibioticSensitivityInterpretation on MICROBIOLOGY - ORGANISM &gt; ORGANISM - * INTERPR (63.05-12 &gt; 63.3-5.1+to+160.1)"/>
         <comment value="antibiotic sensitivity.AntibioticSensitivityInterpretation"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="accession.value [m]"/>
       </mapping>
     </element>
   </differential>

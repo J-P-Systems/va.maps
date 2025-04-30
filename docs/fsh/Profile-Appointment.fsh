@@ -159,3 +159,18 @@ Source: Appointment
 * created -> "Appointment.EnteredOn"
 * participant[va-clinic].actor -> "Appointment.CareProvider,Appointment.EnteredAt,Appointment.Location,Appointment.PlacerApptId,Appointment.Type"
 * description -> "Appointment.Type"
+
+Mapping: vpr-to-Appointment
+Id: vpr
+Title: "Virtual Patient Record XML (VPR)"
+Source: Appointment
+* status -> "appointment.apptStatus,appointment.patientClass,appointment.serviceCategory"
+* status -> "appointment.apptStatus,appointment.patientClass,appointment.serviceCategory"
+* status -> "appointment.apptStatus,appointment.patientClass,appointment.serviceCategory"
+* status -> "appointment.apptStatus,appointment.patientClass,appointment.serviceCategory"
+* extension[http://va.gov/fhir/StructureDefinition/resource-serviceConnection].valueCoding -> "appointment.type (>409.1-.01)"
+* extension[http://va.gov/fhir/StructureDefinition/resource-serviceConnection].valueCoding -> "appointment.type (>409.1-.01)"
+* appointmentType.text -> "appointment.type (>409.1-.01)"
+* start -> "appointment.dateTime,appointment.id,appointment.visitString"
+* participant[va-clinic].actor -> "appointment.clinicStop (>44-8),appointment.facility (>44-3),appointment.id,appointment.provider (>44-2600),appointment.service (>44-9),appointment.visitString"
+* description -> "appointment.type (>409.1-.01)"

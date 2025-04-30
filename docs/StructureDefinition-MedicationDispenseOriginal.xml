@@ -44,11 +44,11 @@
 <tr><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3goXBCwdPqAP0wAAAldJREFUOMuNk0tIlFEYhp9z/vE2jHkhxXA0zJCMitrUQlq4lnSltEqCFhFG2MJFhIvIFpkEWaTQqjaWZRkp0g26URZkTpbaaOJkDqk10szoODP//7XIMUe0elcfnPd9zsfLOYplGrpRwZaqTtw3K7PtGem7Q6FoidbGgqHVy/HRb669R+56zx7eRV1L31JGxYbBtjKK93cxeqfyQHbehkZbUkK20goELEuIzEd+dHS+qz/Y8PTSif0FnGkbiwcAjHaU1+QWOptFiyCLp/LnKptpqIuXHx6rbR26kJcBX3yLgBfnd7CxwJmflpP2wUg0HIAoUUpZBmKzELGWcN8nAr6Gpu7tLU/CkwAaoKTWRSQyt89Q8w6J+oVQkKnBoblH7V0PPvUOvDYXfopE/SJmALsxnVm6LbkotrUtNowMeIrVrBcBpaMmdS0j9df7abpSuy7HWehwJdt1lhVwi/J58U5beXGAF6c3UXLycw1wdFklArBn87xdh0ZsZtArghBdAA3+OEDVubG4UEzP6x1FOWneHh2VDAHBAt80IbdXDcesNoCvs3E5AFyNSU5nbrDPZpcUEQQTFZiEVx+51fxMhhyJEAgvlriadIJZZksRuwBYMOPBbO3hePVVqgEJhFeUuFLhIPkRP6BQLIBrmMenujm/3g4zc398awIe90Zb5A1vREALqneMcYgP/xVQWlG+Ncu5vgwwlaUNx+3799rfe96u9K0JSDXcOzOTJg4B6IgmXfsygc7/Bvg9g9E58/cDVmGIBOP/zT8Bz1zqWqpbXIsd0O9hajXfL6u4BaOS6SeWAAAAAElFTkSuQmCC" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr></table></div>
   </text>
   <url value="http://va.gov/fhir/StructureDefinition/MedicationDispenseOriginal"/>
-  <version value="1.4.10"/>
+  <version value="1.4.15"/>
   <name value="MedicationDispenseOriginal"/>
   <title value="MedicationDispense: Original"/>
   <status value="active"/>
-  <date value="2025-04-18T16:44:16+00:00"/>
+  <date value="2025-04-30T18:27:21+00:00"/>
   <publisher value="VA"/>
   <contact>
     <name value="VA"/>
@@ -77,6 +77,10 @@
   <mapping>
     <identity value="sda"/>
     <name value="Summary Document Architecure (SDA)"/>
+  </mapping>
+  <mapping>
+    <identity value="vpr"/>
+    <name value="Virtual Patient Record XML (VPR)"/>
   </mapping>
   <mapping>
     <identity value="workflow"/>
@@ -1105,6 +1109,10 @@
         <map value="Medication.DrugProduct,Medication.CMOP&#xA;Medication.DrugProduct.Identifier2,Medication.DrugProduct.ProductName,Medication.Extension[DrugProductExtension].FederalSchedule"/>
       </mapping>
       <mapping>
+        <identity value="vpr"/>
+        <map value="med.route (&gt;51.2-1),pharmacy (med).route (&gt;51.2-1)"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="C*E.1"/>
       </mapping>
@@ -1241,6 +1249,10 @@
         <map value="Medication.DrugProduct,Medication.CMOP&#xA;Medication.ComponentMeds[DrugProduct].Description,Medication.ComponentMeds[DrugProduct].OriginalText,Medication.DrugProduct.Description,Medication.DrugProduct.OriginalText,Medication.ATCCode.Code,Medication.Generic.Description,Medication.Route.Description,Medication.OrderCategory.Description,Medication.OriginalText,Medication.OriginalText"/>
       </mapping>
       <mapping>
+        <identity value="vpr"/>
+        <map value="med.route (&gt;51.2-1),pharmacy (med).route (&gt;51.2-1)"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="C*E.9. But note many systems use C*E.2 for this"/>
       </mapping>
@@ -1287,6 +1299,10 @@
       <mapping>
         <identity value="cdw"/>
         <map value="RxOut.ActivityLog.PatientIEN,RxOut.ActivityLogOtherComments.PatientIEN,RxOut.RxOutpat.PatientIEN,RxOut.RxOutpatExt.PatientIEN,RxOut.RxOutpatExt.PatientSID,RxOut.RxOutpatFill.PatientIEN,RxOut.RxOutpatMedInstructions.PatientIEN,RxOut.RxOutpatSig.PatientIEN"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="med.units (&gt;50.607-.01),pharmacy (med).units (&gt;50.607-.01)"/>
       </mapping>
       <mapping>
         <identity value="workflow"/>
@@ -1895,6 +1911,10 @@
         <map value="Medication.OrderQuantity"/>
       </mapping>
       <mapping>
+        <identity value="vpr"/>
+        <map value="med.schedule,pharmacy (med).schedule"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="SN.2  / CQ - N/A"/>
       </mapping>
@@ -2087,6 +2107,10 @@
       <mapping>
         <identity value="sda"/>
         <map value="Medication.DaysSupply"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="med.daysSupply,pharmacy (med).daysSupply"/>
       </mapping>
       <mapping>
         <identity value="v2"/>
@@ -3546,6 +3570,10 @@
         <map value="Medication.DosageSteps,Medication.Route,Medication.DoseQuantity,Medication.DoseUoM,Medication.Duration,Medication.Frequency,Medication.TextInstruction,Medication.Conjunction,Medication.Noun,Medication.UnitsPerDose,Medication.Verb"/>
       </mapping>
       <mapping>
+        <identity value="vpr"/>
+        <map value="med.dose [m],pharmacy (med).dose [m]"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="SN.2  / CQ - N/A"/>
       </mapping>
@@ -3640,6 +3668,10 @@
         <map value="Medication.DosageSteps,Medication.Route,Medication.DoseQuantity,Medication.DoseUoM,Medication.Duration,Medication.Frequency,Medication.TextInstruction,Medication.Conjunction,Medication.Noun,Medication.UnitsPerDose,Medication.Verb"/>
       </mapping>
       <mapping>
+        <identity value="vpr"/>
+        <map value="med.dose [m],pharmacy (med).dose [m]"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="(see OBX.6 etc.) / CQ.2"/>
       </mapping>
@@ -3726,6 +3758,10 @@
       <mapping>
         <identity value="sda"/>
         <map value="Medication.DosageSteps,Medication.Route,Medication.DoseQuantity,Medication.DoseUoM,Medication.Duration,Medication.Frequency,Medication.TextInstruction,Medication.Conjunction,Medication.Noun,Medication.UnitsPerDose,Medication.Verb"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="med.dose [m],pharmacy (med).dose [m]"/>
       </mapping>
       <mapping>
         <identity value="v2"/>
@@ -4308,6 +4344,10 @@
         <identity value="sda"/>
         <map value="Medication.DrugProduct,Medication.CMOP&#xA;Medication.DrugProduct.Identifier2,Medication.DrugProduct.ProductName,Medication.Extension[DrugProductExtension].FederalSchedule"/>
       </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="med.route (&gt;51.2-1),pharmacy (med).route (&gt;51.2-1)"/>
+      </mapping>
     </element>
     <element id="MedicationDispense.medication[x]:medicationCodeableConcept.text">
       <path value="MedicationDispense.medication[x].text"/>
@@ -4325,6 +4365,10 @@
         <identity value="sda"/>
         <map value="Medication.DrugProduct,Medication.CMOP&#xA;Medication.ComponentMeds[DrugProduct].Description,Medication.ComponentMeds[DrugProduct].OriginalText,Medication.DrugProduct.Description,Medication.DrugProduct.OriginalText,Medication.ATCCode.Code,Medication.Generic.Description,Medication.Route.Description,Medication.OrderCategory.Description,Medication.OriginalText,Medication.OriginalText"/>
       </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="med.route (&gt;51.2-1),pharmacy (med).route (&gt;51.2-1)"/>
+      </mapping>
     </element>
     <element id="MedicationDispense.subject">
       <path value="MedicationDispense.subject"/>
@@ -4340,6 +4384,10 @@
       <mapping>
         <identity value="cdw"/>
         <map value="RxOut.ActivityLog.PatientIEN,RxOut.ActivityLogOtherComments.PatientIEN,RxOut.RxOutpat.PatientIEN,RxOut.RxOutpatExt.PatientIEN,RxOut.RxOutpatExt.PatientSID,RxOut.RxOutpatFill.PatientIEN,RxOut.RxOutpatMedInstructions.PatientIEN,RxOut.RxOutpatSig.PatientIEN"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="med.units (&gt;50.607-.01),pharmacy (med).units (&gt;50.607-.01)"/>
       </mapping>
     </element>
     <element id="MedicationDispense.performer.actor">
@@ -4416,6 +4464,10 @@
         <identity value="sda"/>
         <map value="Medication.OrderQuantity"/>
       </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="med.schedule,pharmacy (med).schedule"/>
+      </mapping>
     </element>
     <element id="MedicationDispense.daysSupply">
       <path value="MedicationDispense.daysSupply"/>
@@ -4427,6 +4479,10 @@
       <mapping>
         <identity value="sda"/>
         <map value="Medication.DaysSupply"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="med.daysSupply,pharmacy (med).daysSupply"/>
       </mapping>
     </element>
     <element id="MedicationDispense.whenPrepared">
@@ -4525,6 +4581,10 @@
         <identity value="sda"/>
         <map value="Medication.DosageSteps,Medication.Route,Medication.DoseQuantity,Medication.DoseUoM,Medication.Duration,Medication.Frequency,Medication.TextInstruction,Medication.Conjunction,Medication.Noun,Medication.UnitsPerDose,Medication.Verb"/>
       </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="med.dose [m],pharmacy (med).dose [m]"/>
+      </mapping>
     </element>
     <element id="MedicationDispense.dosageInstruction.doseAndRate.dose[x]:doseQuantity.unit">
       <path value="MedicationDispense.dosageInstruction.doseAndRate.dose[x].unit"/>
@@ -4540,6 +4600,10 @@
       <mapping>
         <identity value="sda"/>
         <map value="Medication.DosageSteps,Medication.Route,Medication.DoseQuantity,Medication.DoseUoM,Medication.Duration,Medication.Frequency,Medication.TextInstruction,Medication.Conjunction,Medication.Noun,Medication.UnitsPerDose,Medication.Verb"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="med.dose [m],pharmacy (med).dose [m]"/>
       </mapping>
     </element>
     <element id="MedicationDispense.dosageInstruction.doseAndRate.dose[x]:doseQuantity.code">
@@ -4561,6 +4625,10 @@
       <mapping>
         <identity value="sda"/>
         <map value="Medication.DosageSteps,Medication.Route,Medication.DoseQuantity,Medication.DoseUoM,Medication.Duration,Medication.Frequency,Medication.TextInstruction,Medication.Conjunction,Medication.Noun,Medication.UnitsPerDose,Medication.Verb"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="med.dose [m],pharmacy (med).dose [m]"/>
       </mapping>
     </element>
   </differential>

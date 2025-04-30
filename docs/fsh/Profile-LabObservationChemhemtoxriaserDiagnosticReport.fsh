@@ -45,3 +45,9 @@ Source: LabObservationChemhemtoxriaserDiagnosticReport
 * code.coding.code -> "Dim.LabChemTest.NationalVALabCodeIEN"
 * code.coding.display -> "Dim.LabChemTest.NationalVALabCodeIEN"
 * code.text -> "Dim.LabChemTest.LabChemTestName"
+
+Mapping: vpr-to-LabObservationChemhemtoxriaserDiagnosticReport
+Id: vpr
+Title: "Virtual Patient Record XML (VPR)"
+Source: LabObservationChemhemtoxriaserDiagnosticReport
+* code.text -> "panel.test,med.prescription,lab.test,pharmacy (med).prescription"

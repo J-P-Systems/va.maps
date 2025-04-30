@@ -110,3 +110,23 @@ Source: AllergyIntolerance
 * note.text -> "Allergy.Comments,Allergy.InactiveComments,Allergy.Extension[AllergyExtension].Comments\nAllergy.Comment[VA.Comment].CommentText"
 * code -> "Allergy.Extension[AllergyExtension].DrugProducts"
 * reaction.onset -> "Allergy.Reaction,Allergy.Extension[AllergyExtension].Reactions\nAllergy.Reaction.Extension,Allergy.Extension[ReactionExtension].EnteredOn"
+
+Mapping: vpr-to-AllergyIntolerance
+Id: vpr
+Title: "Virtual Patient Record XML (VPR)"
+Source: AllergyIntolerance
+* code.text -> "reaction.name"
+* code -> "reaction.localCode,reaction.vuid (>50.605-99.99)"
+* patient -> "reaction.drugClass [m],reaction.drugIngredient [m],reaction.reaction [m]"
+* recordedDate -> "reaction.entered"
+* reaction.manifestation -> "reaction.reaction [m] (>120.83-.01),reaction.reaction [m] (>120.83-99.99)"
+* reaction.manifestation.coding.code -> "reaction.reaction [m] (>120.83-.01),reaction.reaction [m] (>120.83-99.99)"
+* reaction.manifestation.coding.display -> "reaction.reaction [m] (>120.83-.01),reaction.reaction [m] (>120.83-99.99)"
+* reaction.manifestation.text -> "reaction.reaction [m] (>120.83-.01),reaction.reaction [m] (>120.83-99.99)"
+* type -> "reaction.mechanism"
+* clinicalStatus -> "reaction.removed"
+* verificationStatus -> "reaction.removed"
+* category -> "reaction.type"
+* reaction.severity -> "reaction.severity"
+* code -> "reaction.drugIngredient [m] (>50.416-.01),reaction.drugIngredient [m] (>50.416-99.99)"
+* reaction.onset -> "reaction.reaction [m] (>120.83-.01),reaction.reaction [m] (>120.83-99.99)"

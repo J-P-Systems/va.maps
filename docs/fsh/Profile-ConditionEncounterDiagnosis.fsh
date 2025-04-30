@@ -67,3 +67,10 @@ Source: ConditionEncounterDiagnosis
 * clinicalStatus -> "Diagnosis.Diagnosis[CodeTableDetail.Diagnosis].OriginalText"
 * verificationStatus -> "Diagnosis.Diagnosis[CodeTableDetail.Diagnosis].OriginalText"
 * recorder -> "Diagnosis.DiagnosingClinician"
+
+Mapping: vpr-to-ConditionEncounterDiagnosis
+Id: vpr
+Title: "Virtual Patient Record XML (VPR)"
+Source: ConditionEncounterDiagnosis
+* code.coding.code -> "visit.icd [m] (>80-.01),visit.icd [m] (>80-1.1),visit.icd [m] (>80-10),visit.reason (>80-.01),visit.reason (>80-1.1),visit.reason (>80-10)"
+* recordedDate -> "visit.dateTime,visit.visitString"

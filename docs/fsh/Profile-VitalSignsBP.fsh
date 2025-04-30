@@ -171,3 +171,18 @@ Source: VitalSignsBP
 * extension[http://hl7.org/fhir/StructureDefinition/observation-bodyPosition].valueCodeableConcept -> "Observation.ObservationMethods"
 * valueQuantity.value -> "Observation.ObservationValue,Observation.Extension[ObservationExtension].BMI"
 * valueQuantity.code -> "Observation.ObservationCode,Observation.Extension[ObservationExtension].BMI"
+
+Mapping: vpr-to-VitalSignsBP
+Id: vpr
+Title: "Virtual Patient Record XML (VPR)"
+Source: VitalSignsBP
+* component[systolic].valueQuantity.value -> "vital.value,vital.units,vital.metricvalue,vital.metricUnits,vital.bmi"
+* component[diastolic].valueQuantity.value -> "vital.value,vital.units,vital.metricvalue,vital.metricUnits,vital.bmi"
+* issued -> "vital.entered"
+* performer -> "vital.facility (>44-3),vital.facility (>44-.07),vital.location (>44-.01)"
+* status -> "vital.removed [m]"
+* status -> "vital.removed [m]"
+* effectiveDateTime -> "vital.taken"
+* code.coding -> "vital.vuid (>120.51-99.99),vital.name (>120.51-.01)"
+* valueQuantity.value -> "vital.value,vital.units,vital.metricvalue,vital.metricUnits,vital.bmi"
+* valueQuantity.code -> "vital.vuid (>120.51-99.99),vital.name (>120.51-.01)"

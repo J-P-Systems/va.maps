@@ -70,3 +70,14 @@ Source: SmokingStatusObservation
 * valueCodeableConcept -> "SocialHistory.SocialHabit,SocialHistory.SocialHabitCategory,SocialHistory.Extension[SocialHistoryExtension].Category,SocialHistory.Extension[SocialHistoryExtension].QuantityLabel,SocialHistory.SocialHabitCategory.Description,Vaccination.OrderItem,FamilyHistory.Diagnosis,FamilyHistory.Extension[FamilyHistoryExtension].Category,FamilyHistory.Diagnosis.Description\nVaccination.OrderItem[Order].Description"
 * valueCodeableConcept.text -> "SocialHistory.SocialHabit,SocialHistory.SocialHabitCategory,SocialHistory.Extension[SocialHistoryExtension].Category,SocialHistory.Extension[SocialHistoryExtension].QuantityLabel,SocialHistory.SocialHabitCategory.Description,Vaccination.OrderItem,FamilyHistory.Diagnosis,FamilyHistory.Extension[FamilyHistoryExtension].Category,FamilyHistory.Diagnosis.Description\nVaccination.OrderItem[Order].Description"
 * note.text -> "SocialHistory.SocialHabitComments,Vaccination.Administration.RefusalReason,FamilyHistory.NoteText"
+
+Mapping: vpr-to-SmokingStatusObservation
+Id: vpr
+Title: "Virtual Patient Record XML (VPR)"
+Source: SmokingStatusObservation
+* code -> "healthFactor.category (>9999999.64-.03),healthFactor.name (>9999999.64-.01)"
+* code -> "healthFactor.category (>9999999.64-.03),healthFactor.name (>9999999.64-.01)"
+* encounter -> "healthFactor.encounter,healthFactor.facility (>9000010-.06),healthFactor.recorded (>9000010-.01)"
+* valueCodeableConcept -> "healthFactor.category (>9999999.64-.03),healthFactor.name (>9999999.64-.01)"
+* valueCodeableConcept.text -> "healthFactor.category (>9999999.64-.03),healthFactor.name (>9999999.64-.01)"
+* note.text -> "healthFactor.comment"

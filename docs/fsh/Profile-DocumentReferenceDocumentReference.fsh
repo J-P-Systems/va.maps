@@ -96,3 +96,16 @@ Source: DocumentReferenceDocumentReference
 * content.attachment.title -> "AdvanceDirective.Alert,AdvanceDirective.Status,Alert.Alert,Alert.AlertType,Documents.DocumentName,Documents.DocumentType,Documents.Extension[DocumentExtension].NationalTitle,Documents.Extension[DocumentExtension].NationalTitleRole,Documents.Extension[DocumentExtension].NationalTitleService,Documents.Extension[DocumentExtension].NationalTitleSetting,Documents.Extension[DocumentExtension].NationalTitleSubject,Documents.Extension[DocumentExtension].NationalTitleType,Documents.DocumentCompletionStatus.Description,Documents.DocumentClass[VA.DocumentClass].Description,Documents.NationalTitle[VA.NationalTitle].Description,Documents.NationalTitleRole[VA.NationalTitleRole].Description,Documents.NationalTitleService[VA.NationalTitleService].Description,Documents.NationalTitleSetting[VA.NationalTitleSetting].Description,Documents.NationalTitleSubject[VA.NationalTitleSubject].Description,Documents.NationalTitleType[VA.NationalTitleType].Description,Documents.CareProvider.Description,Documents.CareProvider.Name"
 * context.encounter -> "AdvanceDirective.EncounterNumber,Alert.EncounterNumber,Documents.EncounterNumber"
 * context.facilityType -> "Alert.EnteredAt,Documents.Extension[DocumentExtension].PatientLocation"
+
+Mapping: vpr-to-DocumentReferenceDocumentReference
+Id: vpr
+Title: "Virtual Patient Record XML (VPR)"
+Source: DocumentReferenceDocumentReference
+* author -> "document.clinician [m] (>200-.01),document.clinician [m] (>200-20.2),document.clinician [m] (>200-8932.1)"
+* author -> "document.clinician [m]"
+* description -> "document.subject"
+* content.attachment.url -> "document.content[n]"
+* content.attachment.size -> "document.content[n]"
+* content.attachment.hash -> "document.content[n]"
+* context.encounter -> "document.encounter"
+* context.facilityType -> "document.facility (>4-.01),document.facility (>4-99)"

@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Mapset Qa - US Veterans Health Administration FHIR Map Set Implementation Guide v1.4.10</title>
+    <title>Mapset Qa - US Veterans Health Administration FHIR Map Set Implementation Guide v1.4.15</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -61,7 +61,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">US Veterans Health Administration FHIR Map Set Implementation Guide</span>
             <br/>
-            <span style="display:inline-block;">1.4.10 - 250501
+            <span style="display:inline-block;">1.4.15 - 250501
 
 
 
@@ -279,6 +279,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <h3 id="use-cases">Use Cases</h3>
 <ol>
   <li>use-case Vital Signs: CPM not found or inactive</li>
+  <li>use-case DPP: abstract not found or inactive</li>
 </ol>
 
 <h3 id="capabilitystatements">CapabilityStatements</h3>
@@ -380,8 +381,11 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><del><em>1437 vistaFileFieldName expected ' - ' and fieldname</em></del> special case</li>
   <li>1656 reference source path has type <code class="language-plaintext highlighter-rouge">FREE TEXT</code> and expected <code class="language-plaintext highlighter-rouge">CHEM, HEM, TOX, RIA, SER, etc. (63.04)</code> from profile</li>
   <li><del><em>852 unknown file-field <code class="language-plaintext highlighter-rouge">63.04-2+through+862</code></em></del> field pattern not yet handled by script; see mapComment</li>
+  <li>2234 file-field <code class="language-plaintext highlighter-rouge">63.04-.03</code> expected <code class="language-plaintext highlighter-rouge">CHEM, HEM, TOX, RIA, SER, etc. - DATE REPORT COMPLETED</code> but got <code class="language-plaintext highlighter-rouge">CHEM, HEM, TOX, RIA, SER, etc. - ORDERED TEST</code></li>
+  <li>2235 file-field <code class="language-plaintext highlighter-rouge">63.04-.03</code> expected <code class="language-plaintext highlighter-rouge">CHEM, HEM, TOX, RIA, SER, etc. - DATE REPORT COMPLETED</code> but got <code class="language-plaintext highlighter-rouge">CHEM, HEM, TOX, RIA, SER, etc. - ORDERED TEST</code></li>
   <li><del><em>857 unknown file-field <code class="language-plaintext highlighter-rouge">63.04-2+through+862</code></em></del> field pattern not yet handled by script; see mapComment</li>
   <li><del><em>844 reference source path has type <code class="language-plaintext highlighter-rouge">NUMBER</code> and expected <code class="language-plaintext highlighter-rouge">PATIENT (2)</code> from profile</em></del> TODO: reverse pointer PATIENT - LABORATORY REFERENCE (2-63) == LAB DATA – LRDFN (63-.01)</li>
+  <li>check maps to <code class="language-plaintext highlighter-rouge">Observation.status</code> in Observation; maps=3 max=1</li>
   <li>1662 expected only vistaFile <code class="language-plaintext highlighter-rouge">63.04</code> but got <code class="language-plaintext highlighter-rouge">60</code></li>
   <li>1420 expected only vistaFile <code class="language-plaintext highlighter-rouge">63.04</code> but got <code class="language-plaintext highlighter-rouge">60</code></li>
   <li>1420-1 expected only vistaFile <code class="language-plaintext highlighter-rouge">63.04</code> but got <code class="language-plaintext highlighter-rouge">60</code></li>
@@ -865,14 +869,14 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><del><em>1876 vistaFileField expected '-' and field#</em></del> transform completes path</li>
 </ol>
 
-<h4 id="decisionprecisionplus">DecisionPrecisionPlus</h4>
+<h4 id="decision-precision-plus">Decision Precision Plus</h4>
 <ol>
   <li>missing must-support <code class="language-plaintext highlighter-rouge">Observation.subject</code> from <a href="http://hl7.org/fhir/us/core/STU5.0.1/StructureDefinition-us-core-smokingstatus.html">US Core Smoking Status Observation Profile (5.0.1)</a></li>
   <li>missing must-support <code class="language-plaintext highlighter-rouge">Observation.subject</code> from <a href="http://hl7.org/fhir/us/core/STU5.0.1/StructureDefinition-us-core-observation-social-history.html">US Core Observation Social History Profile (5.0.1)</a></li>
   <li>missing must-support <code class="language-plaintext highlighter-rouge">Observation.performer</code> from <a href="http://hl7.org/fhir/us/core/STU5.0.1/StructureDefinition-us-core-observation-social-history.html">US Core Observation Social History Profile (5.0.1)</a></li>
 </ol>
 
-<h4 id="decisionprecisionplus-abstract">DecisionPrecisionPlus: abstract</h4>
+<h4 id="decision-precision-plus-abstract">Decision Precision Plus: abstract</h4>
 <p><em>no QA findings</em></p>
 
 
@@ -916,7 +920,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025 <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#1.4.10 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Apr 18, 2025 16:45+0000">2025-04-18</span>
+          IG &#169; 2025 <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#1.4.15 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Apr 30, 2025 18:29+0000">2025-04-30</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

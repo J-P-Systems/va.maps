@@ -47,11 +47,11 @@
 <tr><td colspan="5" class="hierarchy"><br/><a href="https://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#table-views" title="Legend for this format"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3goXBCwdPqAP0wAAAldJREFUOMuNk0tIlFEYhp9z/vE2jHkhxXA0zJCMitrUQlq4lnSltEqCFhFG2MJFhIvIFpkEWaTQqjaWZRkp0g26URZkTpbaaOJkDqk10szoODP//7XIMUe0elcfnPd9zsfLOYplGrpRwZaqTtw3K7PtGem7Q6FoidbGgqHVy/HRb669R+56zx7eRV1L31JGxYbBtjKK93cxeqfyQHbehkZbUkK20goELEuIzEd+dHS+qz/Y8PTSif0FnGkbiwcAjHaU1+QWOptFiyCLp/LnKptpqIuXHx6rbR26kJcBX3yLgBfnd7CxwJmflpP2wUg0HIAoUUpZBmKzELGWcN8nAr6Gpu7tLU/CkwAaoKTWRSQyt89Q8w6J+oVQkKnBoblH7V0PPvUOvDYXfopE/SJmALsxnVm6LbkotrUtNowMeIrVrBcBpaMmdS0j9df7abpSuy7HWehwJdt1lhVwi/J58U5beXGAF6c3UXLycw1wdFklArBn87xdh0ZsZtArghBdAA3+OEDVubG4UEzP6x1FOWneHh2VDAHBAt80IbdXDcesNoCvs3E5AFyNSU5nbrDPZpcUEQQTFZiEVx+51fxMhhyJEAgvlriadIJZZksRuwBYMOPBbO3hePVVqgEJhFeUuFLhIPkRP6BQLIBrmMenujm/3g4zc398awIe90Zb5A1vREALqneMcYgP/xVQWlG+Ncu5vgwwlaUNx+3799rfe96u9K0JSDXcOzOTJg4B6IgmXfsygc7/Bvg9g9E58/cDVmGIBOP/zT8Bz1zqWqpbXIsd0O9hajXfL6u4BaOS6SeWAAAAAElFTkSuQmCC" alt="doco" style="background-color: inherit"/> Documentation for this format</a></td></tr></table></div>
   </text>
   <url value="http://va.gov/fhir/StructureDefinition/EncounterOutpatient"/>
-  <version value="1.4.10"/>
+  <version value="1.4.15"/>
   <name value="EncounterOutpatient"/>
   <title value="Encounter: Outpatient"/>
   <status value="draft"/>
-  <date value="2025-04-18T16:44:16+00:00"/>
+  <date value="2025-04-30T18:27:21+00:00"/>
   <publisher value="VA"/>
   <contact>
     <name value="VA"/>
@@ -80,6 +80,10 @@
   <mapping>
     <identity value="sda"/>
     <name value="Summary Document Architecure (SDA)"/>
+  </mapping>
+  <mapping>
+    <identity value="vpr"/>
+    <name value="Virtual Patient Record XML (VPR)"/>
   </mapping>
   <mapping>
     <identity value="workflow"/>
@@ -1096,6 +1100,10 @@
         <map value="Encounter.ToTime"/>
       </mapping>
       <mapping>
+        <identity value="vpr"/>
+        <map value="visit.dateTime,visit.visitString"/>
+      </mapping>
+      <mapping>
         <identity value="workflow"/>
         <map value="Event.status"/>
       </mapping>
@@ -1356,6 +1364,10 @@
         <map value="Outpat.Visit.PatientStatusInOut,Outpat.Workload.PatientStatusInOut"/>
       </mapping>
       <mapping>
+        <identity value="vpr"/>
+        <map value="visit.patientClass"/>
+      </mapping>
+      <mapping>
         <identity value="w5"/>
         <map value="FiveWs.class"/>
       </mapping>
@@ -1613,6 +1625,10 @@
       <mapping>
         <identity value="sda"/>
         <map value="Encounter.Extension[EncounterExtension].Cpt,Encounter.Extension[EncounterExtension].Cpt,Procedure.Procedure,Procedure.Procedure[CodeTableDetail.Procedure].Code"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="visit.cpt [m] (&gt;81-.01),visit.cpt [m] (&gt;81-2),visit.type (&gt;81-.01),visit.type (&gt;81-2)"/>
       </mapping>
       <mapping>
         <identity value="workflow"/>
@@ -1940,6 +1956,10 @@
         <map value="Encounter.Extension[EncounterExtension].Cpt,Encounter.Extension[EncounterExtension].Cpt,Procedure.Procedure,Procedure.Procedure[CodeTableDetail.Procedure].Code"/>
       </mapping>
       <mapping>
+        <identity value="vpr"/>
+        <map value="visit.cpt [m] (&gt;81-.01),visit.cpt [m] (&gt;81-2),visit.type (&gt;81-.01),visit.type (&gt;81-2)"/>
+      </mapping>
+      <mapping>
         <identity value="v2"/>
         <map value="C*E.1"/>
       </mapping>
@@ -1993,6 +2013,10 @@
       <mapping>
         <identity value="sda"/>
         <map value="Encounter.Extension[EncounterExtension].Cpt,Encounter.Extension[EncounterExtension].Cpt,Procedure.Procedure,Procedure.Procedure[CodeTableDetail.Procedure].Code"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="visit.cpt [m] (&gt;81-.01),visit.cpt [m] (&gt;81-2),visit.type (&gt;81-.01),visit.type (&gt;81-2)"/>
       </mapping>
       <mapping>
         <identity value="v2"/>
@@ -2088,6 +2112,10 @@
       <mapping>
         <identity value="sda"/>
         <map value="Encounter.Extension[EncounterExtension].Cpt,Encounter.Extension[EncounterExtension].Cpt,Procedure.Procedure,Procedure.Procedure[CodeTableDetail.Procedure].Code"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="visit.cpt [m] (&gt;81-.01),visit.cpt [m] (&gt;81-2),visit.type (&gt;81-.01),visit.type (&gt;81-2)"/>
       </mapping>
       <mapping>
         <identity value="v2"/>
@@ -2453,6 +2481,10 @@
       <mapping>
         <identity value="sda"/>
         <map value="Encounter.EncounterCodedType,Encounter.ExternalId,Encounter.ToTime"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="visit.serviceCategory,visit.visitString"/>
       </mapping>
       <mapping>
         <identity value="v2"/>
@@ -2958,6 +2990,10 @@
         <map value="Outpat.VProvider.PrimarySecondary,Outpat.WorkloadVProvider.PrimarySecondary"/>
       </mapping>
       <mapping>
+        <identity value="vpr"/>
+        <map value="visit.provider [m]"/>
+      </mapping>
+      <mapping>
         <identity value="workflow"/>
         <map value="Event.performer.function"/>
       </mapping>
@@ -3045,6 +3081,10 @@
       <mapping>
         <identity value="sda"/>
         <map value="Encounter.ConsultingClinicians"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="visit.provider [m] (&gt;200-.01),visit.provider [m] (&gt;200-8932.1)"/>
       </mapping>
       <mapping>
         <identity value="workflow"/>
@@ -3255,6 +3295,10 @@
       <mapping>
         <identity value="sda"/>
         <map value="Encounter.ConsultingClinician[CareProvider].Description,Encounter.ConsultingClinician[CareProvider].Name"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="visit.dateTime,visit.visitString"/>
       </mapping>
       <mapping>
         <identity value="v2"/>
@@ -3711,6 +3755,10 @@
       <mapping>
         <identity value="sda"/>
         <map value="Diagnosis.Diagnosis,Diagnosis.Diagnosis[CodeTableDetail.Diagnosis].Code"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="visit.icd [m] (&gt;80-.01),visit.icd [m] (&gt;80-1.1),visit.icd [m] (&gt;80-10),visit.reason (&gt;80-.01),visit.reason (&gt;80-1.1),visit.reason (&gt;80-10)"/>
       </mapping>
       <mapping>
         <identity value="v2"/>
@@ -5174,6 +5222,10 @@
         <map value="Encounter.Extension[EncounterExtension].StopCode"/>
       </mapping>
       <mapping>
+        <identity value="vpr"/>
+        <map value="visit.stopCode (&gt;40.7-.01)"/>
+      </mapping>
+      <mapping>
         <identity value="workflow"/>
         <map value="Event.location"/>
       </mapping>
@@ -5470,6 +5522,10 @@
         <map value="Encounter.ExternalId,Encounter.HealthCareFacility"/>
       </mapping>
       <mapping>
+        <identity value="vpr"/>
+        <map value="visit.creditStopCode (&gt;44-2503),visit.location (&gt;44-.01),visit.visitString"/>
+      </mapping>
+      <mapping>
         <identity value="workflow"/>
         <map value="Event.location"/>
       </mapping>
@@ -5624,6 +5680,10 @@
       <mapping>
         <identity value="sda"/>
         <map value="Encounter.EncounterMRNAA,Encounter.EncounterNumberAssigningAuthority,Encounter.EnteredAt"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="visit.facility (&gt;4-.01),visit.facility (&gt;4-99)"/>
       </mapping>
       <mapping>
         <identity value="workflow"/>
@@ -5818,6 +5878,14 @@
         <identity value="sda"/>
         <map value="Encounter.ToTime"/>
       </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="visit.dateTime,visit.visitString"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="visit.dateTime,visit.visitString"/>
+      </mapping>
     </element>
     <element id="Encounter.class">
       <path value="Encounter.class"/>
@@ -5835,6 +5903,10 @@
         <identity value="cdw"/>
         <map value="Outpat.Visit.PatientStatusInOut,Outpat.Workload.PatientStatusInOut"/>
       </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="visit.patientClass"/>
+      </mapping>
     </element>
     <element id="Encounter.type">
       <path value="Encounter.type"/>
@@ -5849,6 +5921,10 @@
       <mapping>
         <identity value="sda"/>
         <map value="Encounter.Extension[EncounterExtension].Cpt,Encounter.Extension[EncounterExtension].Cpt,Procedure.Procedure,Procedure.Procedure[CodeTableDetail.Procedure].Code"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="visit.cpt [m] (&gt;81-.01),visit.cpt [m] (&gt;81-2),visit.type (&gt;81-.01),visit.type (&gt;81-2)"/>
       </mapping>
     </element>
     <element id="Encounter.type.coding.system">
@@ -5877,6 +5953,10 @@
         <identity value="sda"/>
         <map value="Encounter.Extension[EncounterExtension].Cpt,Encounter.Extension[EncounterExtension].Cpt,Procedure.Procedure,Procedure.Procedure[CodeTableDetail.Procedure].Code"/>
       </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="visit.cpt [m] (&gt;81-.01),visit.cpt [m] (&gt;81-2),visit.type (&gt;81-.01),visit.type (&gt;81-2)"/>
+      </mapping>
     </element>
     <element id="Encounter.type.coding.display">
       <path value="Encounter.type.coding.display"/>
@@ -5894,6 +5974,10 @@
         <identity value="sda"/>
         <map value="Encounter.Extension[EncounterExtension].Cpt,Encounter.Extension[EncounterExtension].Cpt,Procedure.Procedure,Procedure.Procedure[CodeTableDetail.Procedure].Code"/>
       </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="visit.cpt [m] (&gt;81-.01),visit.cpt [m] (&gt;81-2),visit.type (&gt;81-.01),visit.type (&gt;81-2)"/>
+      </mapping>
     </element>
     <element id="Encounter.type.text">
       <path value="Encounter.type.text"/>
@@ -5910,6 +5994,10 @@
       <mapping>
         <identity value="sda"/>
         <map value="Encounter.Extension[EncounterExtension].Cpt,Encounter.Extension[EncounterExtension].Cpt,Procedure.Procedure,Procedure.Procedure[CodeTableDetail.Procedure].Code"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="visit.cpt [m] (&gt;81-.01),visit.cpt [m] (&gt;81-2),visit.type (&gt;81-.01),visit.type (&gt;81-2)"/>
       </mapping>
     </element>
     <element id="Encounter.serviceType.coding.system">
@@ -5936,6 +6024,10 @@
       <mapping>
         <identity value="sda"/>
         <map value="Encounter.EncounterCodedType,Encounter.ExternalId,Encounter.ToTime"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="visit.serviceCategory,visit.visitString"/>
       </mapping>
     </element>
     <element id="Encounter.subject">
@@ -5972,6 +6064,10 @@
         <identity value="cdw"/>
         <map value="Outpat.VProvider.PrimarySecondary,Outpat.WorkloadVProvider.PrimarySecondary"/>
       </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="visit.provider [m]"/>
+      </mapping>
     </element>
     <element id="Encounter.participant.period">
       <path value="Encounter.participant.period"/>
@@ -5998,6 +6094,10 @@
         <identity value="sda"/>
         <map value="Encounter.ConsultingClinicians"/>
       </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="visit.provider [m] (&gt;200-.01),visit.provider [m] (&gt;200-8932.1)"/>
+      </mapping>
     </element>
     <element id="Encounter.period.start">
       <path value="Encounter.period.start"/>
@@ -6013,6 +6113,10 @@
       <mapping>
         <identity value="sda"/>
         <map value="Encounter.ConsultingClinician[CareProvider].Description,Encounter.ConsultingClinician[CareProvider].Name"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="visit.dateTime,visit.visitString"/>
       </mapping>
     </element>
     <element id="Encounter.period.end">
@@ -6055,6 +6159,10 @@
       <mapping>
         <identity value="sda"/>
         <map value="Diagnosis.Diagnosis,Diagnosis.Diagnosis[CodeTableDetail.Diagnosis].Code"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="visit.icd [m] (&gt;80-.01),visit.icd [m] (&gt;80-1.1),visit.icd [m] (&gt;80-10),visit.reason (&gt;80-.01),visit.reason (&gt;80-1.1),visit.reason (&gt;80-10)"/>
       </mapping>
     </element>
     <element id="Encounter.reasonReference">
@@ -6128,6 +6236,10 @@
         <identity value="sda"/>
         <map value="Encounter.Extension[EncounterExtension].StopCode"/>
       </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="visit.stopCode (&gt;40.7-.01)"/>
+      </mapping>
     </element>
     <element id="Encounter.location:va-loc">
       <path value="Encounter.location"/>
@@ -6153,6 +6265,10 @@
         <identity value="sda"/>
         <map value="Encounter.ExternalId,Encounter.HealthCareFacility"/>
       </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="visit.creditStopCode (&gt;44-2503),visit.location (&gt;44-.01),visit.visitString"/>
+      </mapping>
     </element>
     <element id="Encounter.serviceProvider">
       <path value="Encounter.serviceProvider"/>
@@ -6171,6 +6287,10 @@
       <mapping>
         <identity value="sda"/>
         <map value="Encounter.EncounterMRNAA,Encounter.EncounterNumberAssigningAuthority,Encounter.EnteredAt"/>
+      </mapping>
+      <mapping>
+        <identity value="vpr"/>
+        <map value="visit.facility (&gt;4-.01),visit.facility (&gt;4-99)"/>
       </mapping>
     </element>
   </differential>

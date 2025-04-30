@@ -23,3 +23,9 @@ Source: LabObservationMicrobiologyBacteriologyObservationbacteria
 * subject -> "2068: target not supported" "auto added because of must-support"
 * effectiveDateTime -> "2069: target not supported" "auto added because of must-support"
 * dataAbsentReason -> "2072: target not supported" "auto added because of must-support"
+
+Mapping: vpr-to-LabObservationMicrobiologyBacteriologyObservationbacteria
+Id: vpr
+Title: "Virtual Patient Record XML (VPR)"
+Source: LabObservationMicrobiologyBacteriologyObservationbacteria
+* valueString -> "accession.value [m]"

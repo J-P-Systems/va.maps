@@ -61,3 +61,12 @@ Source: MedicationRequestUnsigned
 * priorPrescription -> "RadOrder.Extension[OrderExtension].ReplacedOrder,LabOrder.Extension[LabOrderExtension].ReplacedOrder,OtherOrder.Extension[OrderExtension].ReplacedOrder,Medication.Extension[MedicationExtension].ReplacedOrder"
 * dosageInstruction.timing.repeat.boundsPeriod.start -> "RadOrder.FromTime,LabOrder.FromTime,LabOrder.SpecimenCollectedTime,OtherOrder.FromTime,Medication.FromTime"
 * dosageInstruction.timing.repeat.boundsPeriod.end -> "RadOrder.ToTime,LabOrder.ToTime,OtherOrder.ToTime,Medication.ToTime"
+
+Mapping: vpr-to-MedicationRequestUnsigned
+Id: vpr
+Title: "Virtual Patient Record XML (VPR)"
+Source: MedicationRequestUnsigned
+* requester -> "med.orderingProvider (>200-.01),pharmacy (med).orderingProvider (>200-.01)"
+* authoredOn -> "med.ordered,order.entered,pharmacy (med).ordered"
+* dosageInstruction.timing.repeat.boundsPeriod.start -> "med.start,order.start,pharmacy (med).start"
+* dosageInstruction.timing.repeat.boundsPeriod.end -> "med.stop,order.stop,pharmacy (med).stop"

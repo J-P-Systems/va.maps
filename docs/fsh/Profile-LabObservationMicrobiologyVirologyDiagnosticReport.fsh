@@ -74,3 +74,9 @@ Source: LabObservationMicrobiologyVirologyDiagnosticReport
 * issued -> "Documents.ToTime,LabOrder.Result.ResultTime"
 * performer[va-by] -> "Documents.Clinician,Documents.Extension[DocumentExtension].CareProviders,LabOrder.Result.VerifiedBy"
 * performer[va-at] -> "Documents.EnteredAt,LabOrder.Result.EnteredAt"
+
+Mapping: vpr-to-LabObservationMicrobiologyVirologyDiagnosticReport
+Id: vpr
+Title: "Virtual Patient Record XML (VPR)"
+Source: LabObservationMicrobiologyVirologyDiagnosticReport
+* code.text -> "panel.test,med.prescription,lab.test,pharmacy (med).prescription"

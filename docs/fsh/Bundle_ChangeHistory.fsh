@@ -2591,7 +2591,7 @@ Usage: #inline
 Instance: create-107
 InstanceOf: Provenance
 Usage: #inline
-* target = Reference(StructureDefinition/DecisionPrecisionPlusObservation)
+* target = Reference(StructureDefinition/DecisionPrecisionPlusObservationsituation)
 * occurredDateTime = "2025-04-15"
 * recorded = "2025-04-15T00:00:00Z"
 * reason.text = "Created"
