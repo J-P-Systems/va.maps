@@ -167,7 +167,7 @@
     <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
       <div class="container">  <!-- container -->
         <ul class="breadcrumb">
-          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='0uc.html'><b>0 Uc</b></a></li><li><b>Use Case Debt Portal</b></li>
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='0uc.html'><b>Use Cases</b></a></li><li><b>Use Case Debt Portal</b></li>
 
           <span style="float:right;">
 
@@ -226,21 +226,21 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>As a veteran incurs co-pay charges, they have a monthly statement generated on a pre-defined day of the month (<a href="https://vivian.worldvista.org/dox/Global_XlJDRCgzNDA=.html">AR DEBTOR</a> – STATEMENT DAY, 340-.03). Each veteran is assigned a day that does not change; this varied day is to prevent the Consolidated Copayment Processing Center (CCPC), location where statement printing happens, from being overwhelmed if they were to have to print all the statements at beginning or the end of the month.</p>
 
-<p>The statement data is gathered in the CCPC file can be found in VistA file 349.2, however the data is pulled from the Accounts Receivable (VistA file 430) and supporting VistA files.</p>
+<p>The statement data in the <a href="https://vivian.worldvista.org/dox/Routine_RCCPCPS_source.html">CCPC file</a> can be found in <a href="https://vivian.worldvista.org/dox/Global_XlJDUFMoMzQ5LjI=.html">VistA file 349.2</a>, however the data is pulled from the <a href="https://vivian.worldvista.org/dox/Global_XlBSQ0EoNDMw.html">Accounts Receivable</a> (VistA file 430) and supporting VistA files through legacy Mumps code.</p>
 
 <p>The co-pay charges include prescriptions, outpatient visits, and inpatient stays. These charges are “billed” as they happen, meaning they will appear in the Accounts Receivable file with a billing reference number, but are not billed to the veteran until the monthly statement runs. There are times that more than one charge can be part of a billing reference; however, these specific details are unknown as to why or when they happen.</p>
 
-<p>The Financial Management team (formerly known as VODA (Veteran Online Debt Access) team) maintains a portal where veterans can view their debt and copays online. They receive a copy of the CCPC file and use that to display debt information to veterans. The challenge with this is if a veteran makes a payment before the next statement period, they cannot see up-to-date information in the portal. This causes confusion and extra work to determine if the account is up to date.</p>
+<p>The Financial Management team (formerly known as VODA (Veteran Online Debt Access) team) maintains a <a href="https://www.va.gov/manage-va-debt/">portal</a> where veterans can view their debt and copays online. They receive a copy of the CCPC file and use that to display debt information to veterans. The challenge with this is if a veteran makes a payment before the next statement period, they cannot see up-to-date information in the portal. This causes confusion and extra work to determine if the account is up to date.</p>
 
-<p>Because a veteran can visit more than one VAMC (or STA3N), the Financial Management team is using the (Integration Control Number) ICN to get the data for a given veteran.</p>
+<p>Because a veteran can visit more than one VAMC (or STA3N), the Financial Management team is using the (Integration Control Number) ICN to get all the data across VAMCs for a given veteran.</p>
 
 <h3 id="technical-understanding">Technical Understanding</h3>
 
-<p>When a charge happens, it is first recorded in Integrated Billing Action (VistA file 350). This file has links to (or is pointed to) from the files that caused the charge–Prescriptions, Outpatient, and Inpatient.</p>
+<p>When a charge happens, it is first recorded in <a href="https://vivian.worldvista.org/dox/Global_XklC.html">Integrated Billing Action</a> (VistA file 350). This file has links to (or is pointed to) from the files that caused the charge–Prescriptions, Outpatient, and Inpatient.</p>
 
-<p>At some point, a billing record is added to Accounts Receivable and AR Transaction (VistA file 433). Accounts Receivable has a single row for a given billing record, being updated with each transaction, while AR Transaction shows the various transactions. The charge from Integrated Billing Action appears in the AR Transaction file with an Accounts Receivable Trans. Type (VistA file 430.3) of “Increase Adjustment” (IEN = 1).</p>
+<p>At some point, a billing record is added to Accounts Receivable and <a href="https://vivian.worldvista.org/dox/Global_XlBSQ0EoNDMz.html">AR Transaction</a> (VistA file 433). Accounts Receivable has a single row for a given billing record, being updated with each transaction, while AR Transaction shows the various transactions. The charge from Integrated Billing Action appears in the AR Transaction file with an <a href="https://vivian.worldvista.org/dox/Global_XlBSQ0EoNDMwLjM=.html">Accounts Receivable Trans. Type</a> (VistA file 430.3) of “Increase Adjustment” (IEN = 1).</p>
 
-<p>AR Transaction links to the Integrated Billing Action file with the field “Transaction Number” (433-.01). Not all rows in Integrated Billing Action may have a Transaction Number; this appears to be cancellations (or removed charges) as they link to their original transaction.</p>
+<p>AR Transaction links to the Integrated Billing Action file with the field “Transaction Number” (433-.01). Not all rows in Integrated Billing Action may have a Transaction Number; this appears to be cancellations (or removed charges) as they link to their original transaction. VistA does not show Transaction Number as a pointer between files, however, this linkage has been confirmed through analysis of the data in CDW.</p>
 
 <p>When payments are made, they can be either partial (AR Transaction Type of “PAYMENT (IN PART)”, IEN=2) or full (AR Transaction Type of “PAYMENT (IN FULL)”, IEN=34). If a partial payment is made, it is applied to any interest and admin fees first before being applied to the principal. These transactions will show as line items in the AR Transaction file while the Accounts Receivable row will be updated, including any balances for that given bill.</p>
 
@@ -252,21 +252,21 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h3 id="fhir-analysis-and-design">FHIR Analysis and Design</h3>
 
-<p>A Lighthouse team member who was familiar with Mumps code reviewed the CCPC file source code and constructed it into a SQL statement (“Load AR_CCPC_Statements.sql”) to pull data to be used in a new FHIR API.</p>
+<p>A Lighthouse team member who was familiar with Mumps code reviewed the legacy <a href="https://vivian.worldvista.org/dox/Routine_RCCPCPS1_source.html">CCPC file source code</a> and constructed it into a SQL statement (“Load AR_CCPC_Statements.sql”) to pull data to be used in a new FHIR API.</p>
 
-<p>Using this SQL in conjunction with the data in the CCPC file, the data was mapped to FHIR. FHIR R4 was used as the base for the mapping, with some fields pre-adopted from FHIR R5.</p>
+<p>Using this SQL in conjunction with the data in the CCPC file, the data was mapped to FHIR. <a href="https://hl7.org/fhir/R4/services.html">FHIR R4</a> was used as the base for the mapping, with some fields pre-adopted from <a href="https://hl7.org/fhir/R5/index.html">FHIR R5</a>.</p>
 
-<p>Statement is not a concept that exists in FHIR R4 but is being considered for FHIR R6. However, the “statement” for the veteran does not exist in VistA or CDW; it is programmatically created on the Statement Day assigned to the veteran, thus the data has been mapped to other FHIR resources that represent the data.</p>
+<p>Statement is not a concept that exists in FHIR R4 but is being considered for FHIR R6. However, the “statement” for the veteran does not exist in VistA or CDW. A statement is programmatically created through legacy Mumps code on the Statement Day assigned to the veteran. Because of this, the billing related data has been mapped to other FHIR resources that represent the data and does not include a concept of "statement".</p>
 
 <h4 id="account-resource">Account Resource</h4>
 
-<p>Any data that related to the patient and not a specific bill was mapped to the account resource. This includes Statement Day (as an extension named <a href="StructureDefinition-account-statementGenerationDay.html">StatementGenerationDay</a>), patient billing address (not yet in CDW), and account number. StatementGenerationDay can be used by the consuming app to display bills grouped as monthly “statements”.</p>
+<p>Any data that related to the patient and not a specific bill was mapped to the <a href="StructureDefinition-DebtPortalAccount.html">Account</a> resource. This includes Statement Day (as an extension named <a href="StructureDefinition-account-statementGenerationDay.html">StatementGenerationDay</a>), patient billing address (not yet in CDW), and account number. StatementGenerationDay can be used by the consuming app to display bills grouped as monthly “statements”.</p>
 
-<p>Account number is made up of 3 fields concatenated together: the Sta3n, the Patient.IEN (paded with leading 0's to make 13 digits), and the first 5 characters of the LastName. The Patient IEN was confirmed with the Financial Management team for VistA. This format aligns with what is necessary for the veteran to make a payment on pay.va.gov. Oracle uses a different value than the IEN, however, this was not mapped. Data for display on the portal will only come from VistA at the present.</p>
+<p>Account number is made up of 3 fields concatenated together: the Sta3n, the <a href="https://vivian.worldvista.org/dox/Global_XkRQVA==.html">Patient.IEN</a> (paded with leading 0's to make 13 digits), and the first 5 characters of the LastName. The Patient IEN was confirmed with the Financial Management team for VistA. This format aligns with what is necessary for the veteran to make a payment on pay.va.gov. Oracle uses a different value than the IEN, however, this was not mapped. Data for display on the portal will only come from VistA at the present.</p>
 
 <h4 id="invoice-resource">Invoice Resource</h4>
 
-<p>The data that is assigned to a billing reference (also called bill number) has been mapped to the Invoice resource. Invoice seems to align with the concept of a bill. Invoice is the container for the items on the bill, including charges, charge cancellations, interest, and admin fees; payments are tied to invoice through PaymentReconciliation using a FHIR R5 extension to link to the bill from allocation.</p>
+<p>The data that is assigned to a billing reference (also called bill number) has been mapped to the <a href="StructureDefinition-DebtPortalInvoice.html">Invoice</a> resource. Invoice seems to align with the concept of a bill. Invoice is the container for the items on the bill, including <a href="StructureDefinition-DebtPortalChargeItemcharges.html">charges</a>, <a href="StructureDefinition-DebtPortalChargeItemremoved.html">charge cancellations</a>, <a href="StructureDefinition-DebtPortalChargeIteminterest.html">interest, and admin fees</a>; payments are tied to invoice through <a href="StructureDefinition-DebtPortalPaymentReconciliation.html">PaymentReconciliation</a> using a FHIR R5 extension to link to the bill from allocation.</p>
 
 <h4 id="chargeitem-resource">ChargeItem Resource</h4>
 
@@ -280,7 +280,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h3 id="debt-portal-conceptual-diagram">Debt Portal Conceptual Diagram</h3>
 <p><img src="debtportal.png" alt="debt portal" />
-<br clear="both" /></p>
+<br clear="both" />
+This diagram illustrates corresponding information artifacts in three different systems. The VistA Patient (file 2) is used to create the FHIR Patient Resource, which is used to identify the Veteran in the Debt Portal. The VistA AR Debtor (file 340) also contains information used in FHIR Patient, as well as information used to create a FHIR Account. There is no Account object in Debt Portal, but there is an implicit distinction between Statements from different VAMCs. There is no Statement object in VistA or FHIR, but previously, Mumps code was used to generate one. This will not be used for the FHIR-supported portal. VistA Accounts Receivable (file 430) is used to create the FHIR Invoice, which is used to generate the Bill (or "co-pay") in Debt Portal. VistA AR Transactions (file 422) and Integrated Billing Action (file 350) are used to generate FHIR PaymentReconciliation and ChargeItem resources, which appear as Items within Bill rows in the Debt Portal.</p>
 
 
 
@@ -322,7 +323,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025 <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#1.5.11 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, May 8, 2025 08:25+0000">2025-05-08</span>
+          IG &#169; 2025 <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#1.5.11 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, May 8, 2025 08:57+0000">2025-05-08</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
