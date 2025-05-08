@@ -19,19 +19,28 @@ Description: "This StructureDefinition contains the maps for VistA file CHEM, HE
 * code.coding.system = "http://loinc.org"
 * status from http://va.gov/fhir/ValueSet/LabObservationStatus
 * status ^binding.description = "see mapping [VF_LabObservationStatus](ConceptMap-VF-LabObservationStatus.html)"
+* status obeys loco-41-860
 * status obeys loco-41-2234
 * status obeys loco-41-2235
 * category[Laboratory] = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
 
-Invariant: loco-41-2234
-Description: "If (63.04-.03) is is not NULL and 63.07-10 is not available then fixed value #completed"
+Invariant: loco-41-860
+Description: "If not NULL then terminologyMaps (63.04-.35 > 63.07-10) using VF_LabObservationStatus"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
+
+Invariant: loco-41-2234
+Description: "If (63.04-.03) is not NULL and 63.07-10 is not available then fixed value #completed"
+Severity: #warning
+Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: loco-41-2235
-Description: "If (63.04-.03) is is NULL and 63.07-10 is not available then fixed value #preliminary"
+Description: "If (63.04-.03) is NULL and 63.07-10 is not available then fixed value #preliminary"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Mapping: source-to-LabObservationChemhemtoxriaserObservation
 Id: vista
@@ -52,9 +61,9 @@ Source: LabObservationChemhemtoxriaserObservation
 * code.coding.code -> "853-2: source value based on CHEM, HEM, TOX, RIA, SER, etc. - ORDERED TEST > ORDERED TEST - LAB TEST ORDERED > LABORATORY TEST - SITE/SPECIMEN > SITE/SPECIMEN - LOINC CODE > LAB LOINC - CODE (63.04-.35 > 63.07-13 > 60-100 > 60.01-95.3 > 95.3-.01)" "generated from mapParameter line 2"
 * code.coding.display -> "853-3: source value based on CHEM, HEM, TOX, RIA, SER, etc. - ORDERED TEST > ORDERED TEST - LAB TEST ORDERED > LABORATORY TEST - SITE/SPECIMEN > SITE/SPECIMEN - LOINC CODE > LAB LOINC - COMPONENT (63.04-.35 > 63.07-13 > 60-100 > 60.01-95.3 > 95.3-1)" "generated from mapParameter line 3"
 * issued -> "858: source value based on CHEM, HEM, TOX, RIA, SER, etc. - DATE REPORT COMPLETED (63.04-.03)"
-* status -> "860: terminologyMaps using VF_LabObservationStatus on CHEM, HEM, TOX, RIA, SER, etc. - ORDERED TEST > ORDERED TEST - DISPOSITION (63.04-.35 > 63.07-10)"
-* status -> "2234: fixed value = #completed when CHEM, HEM, TOX, RIA, SER, etc. - ORDERED TEST (63.04-.03) if is not NULL and 63.07-10 is not available"
-* status -> "2235: fixed value = #preliminary when CHEM, HEM, TOX, RIA, SER, etc. - ORDERED TEST (63.04-.03) if is NULL and 63.07-10 is not available"
+* status -> "860: terminologyMaps using VF_LabObservationStatus on CHEM, HEM, TOX, RIA, SER, etc. - ORDERED TEST > ORDERED TEST - DISPOSITION (63.04-.35 > 63.07-10) if not NULL" "Available in interface, use this first for status"
+* status -> "2234: fixed value = #completed when CHEM, HEM, TOX, RIA, SER, etc. - ORDERED TEST (63.04-.03) if not NULL and 63.07-10 is not available"
+* status -> "2235: fixed value = #preliminary when CHEM, HEM, TOX, RIA, SER, etc. - ORDERED TEST (63.04-.03) if NULL and 63.07-10 is not available"
 * valueQuantity.value -> "857: source value based on CHEM, HEM, TOX, RIA, SER, etc. - testnames (63.04-2+through+862)"
 * valueQuantity.unit -> "864: source value based on CHEM, HEM, TOX, RIA, SER, etc. - ORDERED TEST > ORDERED TEST - LAB TEST ORDERED > LABORATORY TEST - SITE/SPECIMEN > SITE/SPECIMEN - UNITS (63.04-.35 > 63.07-13 > 60-100 > 60.01-6)" "Use CTTDM map \"VistA Lab Chem Units to UCUM\" to convert VistA text units to UCUM, where possible"
 * category[Laboratory] -> "843: fixed value = http://terminology.hl7.org/CodeSystem/observation-category#laboratory"

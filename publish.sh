@@ -3,9 +3,9 @@ echo "Clean..."
 rm -r docs/*
 mkdir docs/fsh
 echo "Copy new content FSH input files..."
-cp -r ../jpsys-maps-ig-sushi/input/fsh/* docs/fsh
+cp -r ../va-fhir-cop-mapset-ig/input/fsh/* docs/fsh
 echo "Copy new content IG publisher output..."
-cp -r ../jpsys-maps-ig-sushi/output/* docs
+cp -r ../va-fhir-cop-mapset-ig/output/* docs
 for i in `find docs  -size +25M`; do rm $i; done
 echo "Commit to git repo..."
 git add docs

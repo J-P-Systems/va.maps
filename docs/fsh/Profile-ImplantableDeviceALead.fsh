@@ -16,11 +16,13 @@ Invariant: idal-22-1358
 Description: "If (698.2-56) is is NULL then fixed value #active"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: idal-22-1359
 Description: "If (698.2-56) is is not NULL then fixed value #inactive"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Mapping: source-to-ImplantableDeviceALead
 Id: vista

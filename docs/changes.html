@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Changes - US Veterans Health Administration FHIR Map Set Implementation Guide v1.4.15</title>
+    <title>Changes - US Veterans Health Administration FHIR Map Set Implementation Guide v1.5.11</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -42,8 +42,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"10"}
-    h3,h4,h5,h6{--heading-prefix:"10"}</style>
+    <style type="text/css">h2{--heading-prefix:"7"}
+    h3,h4,h5,h6{--heading-prefix:"7"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -61,7 +61,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">US Veterans Health Administration FHIR Map Set Implementation Guide</span>
             <br/>
-            <span style="display:inline-block;">1.4.15 - 250501
+            <span style="display:inline-block;">1.5.11 - 250601
 
 
 
@@ -104,10 +104,10 @@
         <a href="process.html">Process</a>
       </li>
       <li>
-        <a href="profileDesign.html">Profile Design</a>
+        <a href="profileHierarchy.html">Profile Hierarchy</a>
       </li>
       <li>
-        <a href="guidance.html">General Guidance</a>
+        <a href="designPatterns.html">FHIR Design Patterns</a>
       </li>
       <li>
         <a href="classes.html">Classes</a>
@@ -123,7 +123,10 @@
         <a href="overview.html">Overview</a>
       </li>
       <li>
-        <a href="guidance-vitals.html">Vitals Guidance</a>
+        <a href="debtPortal.html">Debt Portal</a>
+      </li>
+      <li>
+        <a href="vitals.html">Vitals</a>
       </li>
     </ul>
   </li>
@@ -225,17 +228,6 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <tr><td></td><td>vistaSubFileFieldName</td><td><code>APPOINTMENT</code></td><td><code></code></td></tr>
 <tr><td></td><td>vistaSubFileField</td><td><code>2.98</code></td><td><code></code></td></tr>
 <tr><td></td><td>mapCase</td><td><code></code></td><td><code>PATIENT – APPOINTMENT (2-1900) = APPOINTMENT (2.98)</code></td></tr>
-<tr><th style="background-color: lightgray" colspan="4">use-case Condition: Problem</th></tr>
-<tr><td style="background-color: #eeeeee" colspan="4"><i>resource Condition</i></td></tr>
-<tr><td colspan="4">366</td></tr>
-<tr><td></td><td>fhirPath</td><td><code>Condition.code</code></td><td><code>Condition.code.coding[va-sct]</code></td></tr>
-<tr><td></td><td>fhirSubPath</td><td><code>.coding.code</code></td><td><code>.code</code></td></tr>
-<tr><td></td><td>mapParameters</td><td><code>.coding.system = http://snomed.info/sct</code></td><td><code>.system = http://snomed.info/sct</code></td></tr>
-<tr><th style="background-color: lightgray" colspan="4">use-case Lab Observation: Chem, hem, tox, ria, ser</th></tr>
-<tr><td style="background-color: #eeeeee" colspan="4"><i>resource Observation</i></td></tr>
-<tr><td></td><td>maprow count</td><td>14</td><td>16</td></tr>
-<tr><td>2234</td><td>new maprow</td><td></td><td>NEW</td></tr>
-<tr><td>2235</td><td>new maprow</td><td></td><td>NEW</td></tr>
 <tr><th style="background-color: lightgray" colspan="4">use-case Lab Observation</th></tr>
 <tr><td style="background-color: #eeeeee" colspan="4"><i>resource DiagnosticReport</i></td></tr>
 <tr><td colspan="4">1421</td></tr>
@@ -244,8 +236,18 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <tr><td></td><td>vistaSubFileFieldName</td><td><code>LAB DATA - LRDFN</code></td><td><code></code></td></tr>
 <tr><td></td><td>vistaSubFileField</td><td><code>63-.01</code></td><td><code></code></td></tr>
 <tr><td></td><td>mapCase</td><td><code></code></td><td><code>PATIENT - LABORATORY REFERENCE (2-63) == LAB DATA – LRDFN (63-.01)</code></td></tr>
+<tr><th style="background-color: lightgray" colspan="4">use-case MedicationDispense: Partial</th></tr>
+<tr><td style="background-color: #eeeeee" colspan="4"><i>resource MedicationDispense</i></td></tr>
+<tr><td colspan="4">1710</td></tr>
+<tr><td></td><td>mapValue</td><td><code>http://terminology.hl7.org/CodeSystem/v3-ActCode#PF</code></td><td><code>http://terminology.hl7.org/CodeSystem/v3-ActCode#SIS</code></td></tr>
 <tr><th style="background-color: lightgray" colspan="4">use-case Debt Portal</th></tr>
+<tr><td style="background-color: #eeeeee" colspan="4"><i>resource Account</i></td></tr>
+<tr><td colspan="4">2006</td></tr>
+<tr><td></td><td>fhirPath</td><td><code>Account.extension[http://va.gov/fhir/StructureDefinition/account-statementGeneratedDay].valueInteger</code></td><td><code>Account.extension[http://va.gov/fhir/StructureDefinition/account-statementGenerationDay].valueInteger</code></td></tr>
 <tr><td style="background-color: #eeeeee" colspan="4"><i>resource Invoice</i></td></tr>
+<tr><td colspan="4">2236</td></tr>
+<tr><td></td><td>status</td><td><code>for review</code></td><td><code>in process</code></td></tr>
+<tr><td></td><td>fhirPath</td><td><code>Invoice.status.extension[http://hl7.org/fhir/StructureDefinition/alternate-codes].valueCodeableConcept</code></td><td><code>Invoice.status.extension[http://hl7.org/fhir/StructureDefinition/alternate-codes].valueCodeableConcept.coding</code></td></tr>
 <tr><td colspan="4">1999</td></tr>
 <tr><td></td><td>mapCase</td><td><code></code></td><td><code>433-.03 == 430</code></td></tr>
 <tr><td colspan="4">2000</td></tr>
@@ -255,6 +257,10 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <tr><td colspan="4">2002</td></tr>
 <tr><td></td><td>mapCase</td><td><code></code></td><td><code>433-.03 == 430</code></td></tr>
 <tr><td style="background-color: #eeeeee" colspan="4"><i>resource ChargeItem[charges]</i></td></tr>
+<tr><td></td><td>maprow count</td><td>12</td><td>13</td></tr>
+<tr><td>1837</td><td>new maprow</td><td></td><td>NEW</td></tr>
+<tr><td colspan="4">2218</td></tr>
+<tr><td></td><td>fhirSubPath</td><td><code></code></td><td><code>.value</code></td></tr>
 <tr><td colspan="4">2008</td></tr>
 <tr><td></td><td>mapCase</td><td><code>Outpatient</code></td><td><code>360-1.04 == 350  &amp;&amp; Outpatient</code></td></tr>
 <tr><td colspan="4">2009</td></tr>
@@ -277,11 +283,17 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <tr><td></td><td>vistaSubFileFieldName</td><td><code>INTEGRATED BILLING ACTION</code></td><td><code></code></td></tr>
 <tr><td></td><td>vistaSubFileField</td><td><code>350-</code></td><td><code></code></td></tr>
 <tr><td></td><td>mapCase</td><td><code></code></td><td><code>52-106 == 350</code></td></tr>
-<tr><th colspan="4">new use-case Decision Precision Plus</th></tr>
-<tr><th colspan="4">new use-case Decision Precision Plus: abstract</th></tr>
-<tr><th colspan="4">new termmap VF_DPPLungCancerScreening</th></tr>
-<tr><th colspan="4">new termmap VF_DPPLungCancerScreeningDec</th></tr>
-<tr><th colspan="4">new termmap VF_DPPLungCancerScreeningOE</th></tr></table>
+<tr><td style="background-color: #eeeeee" colspan="4"><i>resource ChargeItem[interest]</i></td></tr>
+<tr><td></td><td>maprow count</td><td>6</td><td>7</td></tr>
+<tr><td>1995</td><td>new maprow</td><td></td><td>NEW</td></tr>
+<tr><th style="background-color: lightgray" colspan="4">use-case Decision Precision Plus</th></tr>
+<tr><td style="background-color: #eeeeee" colspan="4"><i>resource Observation[smoking]</i></td></tr>
+<tr><td colspan="4">2232</td></tr>
+<tr><td></td><td>mapParameters</td><td><code>.code = http://loinc.org#72166-2 "Tobacco smoking status NHIS"</code></td><td><code></code></td></tr>
+<tr><th colspan="4">termmap VF_ARBillStatus</th></tr>
+<tr><td></td><td>group http://hl7.org/fhir/invoice-status maps</td><td>8</td><td>15</td></tr>
+<tr><th colspan="4">termmap VF_DPPLungCancerScreeningFind</th></tr>
+<tr><td></td><td>new group</td><td>http://va.gov/terminology/vistADefinedTerms/9999999.64</td><td></td></tr></table>
 
 
 
@@ -324,7 +336,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025 <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#1.4.15 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Apr 30, 2025 18:29+0000">2025-04-30</span>
+          IG &#169; 2025 <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#1.5.11 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, May 8, 2025 08:25+0000">2025-05-08</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

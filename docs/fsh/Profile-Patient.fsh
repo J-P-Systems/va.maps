@@ -47,6 +47,7 @@ Invariant: p-7-285
 Description: "If not null then source value from (2-.351)"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Mapping: source-to-Patient
 Id: vista

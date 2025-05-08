@@ -46,16 +46,19 @@ Invariant: eie-27-433
 Description: "If (45-2) is null or > now then fixed value #planned"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: eie-27-434
 Description: "If (45-2) is not null, < now, field 70 null then fixed value #in-progress"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: eie-27-435
 Description: "If (45-70) is not null then fixed value #finished"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Mapping: source-to-EncounterInpatientEncounter
 Id: vista

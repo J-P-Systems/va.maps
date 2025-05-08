@@ -15,21 +15,25 @@ Invariant: dpp-17-1827
 Description: "If type is PATIENT (#2) then source value from (430-9 > 340-.01)"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: dpp-17-1827-1
 Description: "If type is PATIENT (#2) then fixed value LAST"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: dpp-17-1827-2
 Description: "If type is PATIENT (#2) then fixed value FIRST & MIDDLE"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: dpp-17-1827-3
 Description: "If type is PATIENT (#2) then fixed value SUFFIX"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Mapping: source-to-DebtPortalPatient
 Id: vista

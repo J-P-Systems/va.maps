@@ -35,16 +35,19 @@ Invariant: pr-16-411
 Description: "If (200-8932.1 > 200.05-3) is date > now or = null then fixed value true"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: pr-16-412
 Description: "If (200-8932.1 > 200.05-3) is date < now then fixed value false"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: pr-16-422
 Description: "If 44-2600>44.1-.01>200 then reference /Location based on (44-)"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Mapping: source-to-PractitionerRole
 Id: vista

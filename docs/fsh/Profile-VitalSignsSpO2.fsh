@@ -49,56 +49,67 @@ Invariant: vsso-14-1239
 Description: "If VUID = 4500637 then transform (120.5-1.4) using Split_SpO2_value.Flow()"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: vsso-14-1239-1
 Description: "If VUID = 4500637 then fixed value #L/min"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: vsso-14-1239-2
 Description: "If VUID = 4500637 then fixed value L/min"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: vsso-14-1239-3
 Description: "If VUID = 4500637 then fixed value http://loinc.org#3151-8"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: vsso-14-1240
 Description: "If VUID = 4500637 then transform (120.5-1.4) using Split_SpO2_value.Consentration()"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: vsso-14-1240-1
 Description: "If VUID = 4500637 then fixed value #%"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: vsso-14-1240-2
 Description: "If VUID = 4500637 then fixed value %"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: vsso-14-1240-3
 Description: "If VUID = 4500637 then fixed value http://loinc.org#3150-0"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: vsso-14-655
 Description: "If (120.5-4) is null then fixed value #final"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: vsso-14-656
 Description: "If (120.5-4) is not null then fixed value #entered-in-error"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: vsso-14-664
 Description: "If VUID not = 4500634 then source value from (120.5-1.2)"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Mapping: source-to-VitalSignsSpO2
 Id: vista

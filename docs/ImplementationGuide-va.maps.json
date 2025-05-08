@@ -7,11 +7,11 @@
     "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en-US\" lang=\"en-US\"><p class=\"res-header-id\"><b>Generated Narrative: ImplementationGuide va.maps</b></p><a name=\"va.maps\"> </a><a name=\"hcva.maps\"> </a><a name=\"va.maps-en-US\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Language: en-US</p></div><h2>VAMapsIG</h2><p>The official URL for this implementation guide is: </p><pre>http://va.gov/fhir/ImplementationGuide/va.maps</pre><div><p>This implementation guide is a FHIR IG rendering of the KBS Map Set from VA sources (primarily VistA) to FHIR. Where appropriate these maps conform to the us-core profiles.</p>\n</div></div>"
   },
   "url" : "http://va.gov/fhir/ImplementationGuide/va.maps",
-  "version" : "1.4.15",
+  "version" : "1.5.11",
   "name" : "VAMapsIG",
   "title" : "US Veterans Health Administration FHIR Map Set Implementation Guide",
   "status" : "draft",
-  "date" : "2025-04-30T18:27:21+00:00",
+  "date" : "2025-05-08T08:24:02+00:00",
   "publisher" : "VA",
   "contact" : [{
     "name" : "VA",
@@ -39,7 +39,7 @@
     }],
     "uri" : "http://terminology.hl7.org/ImplementationGuide/hl7.terminology",
     "packageId" : "hl7.terminology.r4",
-    "version" : "6.2.0"
+    "version" : "6.3.0"
   },
   {
     "id" : "hl7ext",
@@ -90,7 +90,7 @@
       },
       {
         "url" : "value",
-        "valueString" : "250501"
+        "valueString" : "250601"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -424,7 +424,7 @@
       },
       {
         "url" : "value",
-        "valueString" : "250501"
+        "valueString" : "250601"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -851,10 +851,10 @@
         "valueString" : "StructureDefinition:extension"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/account-statementGeneratedDay"
+        "reference" : "StructureDefinition/account-statementGenerationDay"
       },
-      "name" : "AccountStatementGeneratedDay",
-      "description" : "Extension account-statementGeneratedDay",
+      "name" : "AccountStatementGenerationDay",
+      "description" : "Extension account-statementGenerationDay",
       "exampleBoolean" : false
     },
     {
@@ -1416,19 +1416,6 @@
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/DecisionPrecisionPlusObservationsituation"
-      },
-      "name" : "Decision Precision Plus Observation[situation]",
-      "description" : "This StructureDefinition contains the maps for VistA file V HEALTH FACTORS (9000010.23) to Observation.",
-      "exampleBoolean" : false,
-      "groupingId" : "group25"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:resource"
-      }],
-      "reference" : {
         "reference" : "StructureDefinition/DecisionPrecisionPlusObservationsmoking"
       },
       "name" : "Decision Precision Plus Observation[smoking]",
@@ -1692,30 +1679,6 @@
         "valueString" : "ValueSet"
       }],
       "reference" : {
-        "reference" : "ValueSet/DPPLungCancerScreening"
-      },
-      "name" : "DPPLungCancerScreening FHIR",
-      "description" : "FHIR Target ValueSet for Terminology Maps [VF_DPPLungCancerScreening](ConceptMap-VF-DPPLungCancerScreening.html)",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ValueSet"
-      }],
-      "reference" : {
-        "reference" : "ValueSet/DPPLungCancerScreening-vista"
-      },
-      "name" : "DPPLungCancerScreening VistA",
-      "description" : "VistA Source ValueSet for Terminology Maps [VF_DPPLungCancerScreening](ConceptMap-VF-DPPLungCancerScreening.html)",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ValueSet"
-      }],
-      "reference" : {
         "reference" : "ValueSet/DPPLungCancerScreeningDec"
       },
       "name" : "DPPLungCancerScreeningDec FHIR",
@@ -1740,10 +1703,10 @@
         "valueString" : "ValueSet"
       }],
       "reference" : {
-        "reference" : "ValueSet/DPPLungCancerScreeningOE"
+        "reference" : "ValueSet/DPPLungCancerScreeningFind"
       },
-      "name" : "DPPLungCancerScreeningOE FHIR",
-      "description" : "FHIR Target ValueSet for Terminology Maps [VF_DPPLungCancerScreeningOE](ConceptMap-VF-DPPLungCancerScreeningOE.html)",
+      "name" : "DPPLungCancerScreeningFind FHIR",
+      "description" : "FHIR Target ValueSet for Terminology Maps [VF_DPPLungCancerScreeningFind](ConceptMap-VF-DPPLungCancerScreeningFind.html)",
       "exampleBoolean" : false
     },
     {
@@ -1752,10 +1715,58 @@
         "valueString" : "ValueSet"
       }],
       "reference" : {
-        "reference" : "ValueSet/DPPLungCancerScreeningOE-vista"
+        "reference" : "ValueSet/DPPLungCancerScreeningFind-vista"
       },
-      "name" : "DPPLungCancerScreeningOE VistA",
-      "description" : "VistA Source ValueSet for Terminology Maps [VF_DPPLungCancerScreeningOE](ConceptMap-VF-DPPLungCancerScreeningOE.html)",
+      "name" : "DPPLungCancerScreeningFind VistA",
+      "description" : "VistA Source ValueSet for Terminology Maps [VF_DPPLungCancerScreeningFind](ConceptMap-VF-DPPLungCancerScreeningFind.html)",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/DPPLungCancerScreeningOED"
+      },
+      "name" : "DPPLungCancerScreeningOED FHIR",
+      "description" : "FHIR Target ValueSet for Terminology Maps [VF_DPPLungCancerScreeningOED](ConceptMap-VF-DPPLungCancerScreeningOED.html)",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/DPPLungCancerScreeningOED-vista"
+      },
+      "name" : "DPPLungCancerScreeningOED VistA",
+      "description" : "VistA Source ValueSet for Terminology Maps [VF_DPPLungCancerScreeningOED](ConceptMap-VF-DPPLungCancerScreeningOED.html)",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/DPPLungCancerScreeningOEQ"
+      },
+      "name" : "DPPLungCancerScreeningOEQ FHIR",
+      "description" : "FHIR Target ValueSet for Terminology Maps [VF_DPPLungCancerScreeningOEQ](ConceptMap-VF-DPPLungCancerScreeningOEQ.html)",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/DPPLungCancerScreeningOEQ-vista"
+      },
+      "name" : "DPPLungCancerScreeningOEQ VistA",
+      "description" : "VistA Source ValueSet for Terminology Maps [VF_DPPLungCancerScreeningOEQ](ConceptMap-VF-DPPLungCancerScreeningOEQ.html)",
       "exampleBoolean" : false
     },
     {
@@ -4239,18 +4250,6 @@
         "valueString" : "ConceptMap"
       }],
       "reference" : {
-        "reference" : "ConceptMap/VF-DPPLungCancerScreening"
-      },
-      "name" : "VF_DPPLungCancerScreening",
-      "description" : "Terminology Maps VF_DPPLungCancerScreening",
-      "exampleBoolean" : false
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "ConceptMap"
-      }],
-      "reference" : {
         "reference" : "ConceptMap/VF-DPPLungCancerScreeningDec"
       },
       "name" : "VF_DPPLungCancerScreeningDec",
@@ -4263,10 +4262,34 @@
         "valueString" : "ConceptMap"
       }],
       "reference" : {
-        "reference" : "ConceptMap/VF-DPPLungCancerScreeningOE"
+        "reference" : "ConceptMap/VF-DPPLungCancerScreeningFind"
       },
-      "name" : "VF_DPPLungCancerScreeningOE",
-      "description" : "Terminology Maps VF_DPPLungCancerScreeningOE",
+      "name" : "VF_DPPLungCancerScreeningFind",
+      "description" : "Terminology Maps VF_DPPLungCancerScreeningFind",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VF-DPPLungCancerScreeningOED"
+      },
+      "name" : "VF_DPPLungCancerScreeningOED",
+      "description" : "Terminology Maps VF_DPPLungCancerScreeningOED",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VF-DPPLungCancerScreeningOEQ"
+      },
+      "name" : "VF_DPPLungCancerScreeningOEQ",
+      "description" : "Terminology Maps VF_DPPLungCancerScreeningOEQ",
       "exampleBoolean" : false
     },
     {
@@ -5240,29 +5263,38 @@
       {
         "extension" : [{
           "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "process.html"
+          "valueUrl" : "0bg.html"
         }],
-        "nameUrl" : "process.html",
-        "title" : "Process",
-        "generation" : "markdown"
-      },
-      {
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "profileDesign.html"
-        }],
-        "nameUrl" : "profileDesign.html",
-        "title" : "Profile Design",
-        "generation" : "markdown"
-      },
-      {
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "guidance.html"
-        }],
-        "nameUrl" : "guidance.html",
-        "title" : "Guidance",
-        "generation" : "markdown"
+        "nameUrl" : "0bg.html",
+        "title" : "0 Bg",
+        "generation" : "markdown",
+        "page" : [{
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "process.html"
+          }],
+          "nameUrl" : "process.html",
+          "title" : "Process",
+          "generation" : "markdown"
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "profileHierarchy.html"
+          }],
+          "nameUrl" : "profileHierarchy.html",
+          "title" : "Profile Hierarchy",
+          "generation" : "markdown"
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "designPatterns.html"
+          }],
+          "nameUrl" : "designPatterns.html",
+          "title" : "FHIR Design Patterns",
+          "generation" : "markdown"
+        }]
       },
       {
         "extension" : [{
@@ -5276,20 +5308,38 @@
       {
         "extension" : [{
           "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "overview.html"
+          "valueUrl" : "0uc.html"
         }],
-        "nameUrl" : "overview.html",
-        "title" : "Overview",
-        "generation" : "markdown"
-      },
-      {
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "guidance-vitals.html"
-        }],
-        "nameUrl" : "guidance-vitals.html",
-        "title" : "Guidance Vitals",
-        "generation" : "markdown"
+        "nameUrl" : "0uc.html",
+        "title" : "0 Uc",
+        "generation" : "markdown",
+        "page" : [{
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "overview.html"
+          }],
+          "nameUrl" : "overview.html",
+          "title" : "Use Case Overview",
+          "generation" : "markdown"
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "debtPortal.html"
+          }],
+          "nameUrl" : "debtPortal.html",
+          "title" : "Use Case Debt Portal",
+          "generation" : "markdown"
+        },
+        {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+            "valueUrl" : "vitals.html"
+          }],
+          "nameUrl" : "vitals.html",
+          "title" : "Use Case Vitals",
+          "generation" : "markdown"
+        }]
       },
       {
         "extension" : [{

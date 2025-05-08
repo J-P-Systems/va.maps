@@ -7,7 +7,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Decision Precision Plus Observation[smoking] - Mappings - US Veterans Health Administration FHIR Map Set Implementation Guide v1.4.15</title>
+    <title>Decision Precision Plus Observation[smoking] - Mappings - US Veterans Health Administration FHIR Map Set Implementation Guide v1.5.11</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -46,8 +46,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"13.20"}
-    h3,h4,h5,h6{--heading-prefix:"13.20"}</style>
+    <style type="text/css">h2{--heading-prefix:"10.19"}
+    h3,h4,h5,h6{--heading-prefix:"10.19"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -65,7 +65,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">US Veterans Health Administration FHIR Map Set Implementation Guide</span>
             <br/>
-            <span style="display:inline-block;">1.4.15 - 250501
+            <span style="display:inline-block;">1.5.11 - 250601
 
 
 
@@ -108,10 +108,10 @@
         <a href="process.html">Process</a>
       </li>
       <li>
-        <a href="profileDesign.html">Profile Design</a>
+        <a href="profileHierarchy.html">Profile Hierarchy</a>
       </li>
       <li>
-        <a href="guidance.html">General Guidance</a>
+        <a href="designPatterns.html">FHIR Design Patterns</a>
       </li>
       <li>
         <a href="classes.html">Classes</a>
@@ -127,7 +127,10 @@
         <a href="overview.html">Overview</a>
       </li>
       <li>
-        <a href="guidance-vitals.html">Vitals Guidance</a>
+        <a href="debtPortal.html">Debt Portal</a>
+      </li>
+      <li>
+        <a href="vitals.html">Vitals</a>
       </li>
     </ul>
   </li>
@@ -258,7 +261,7 @@
         
           Draft
           
-            as of 2025-04-30
+            as of 2025-05-08
           
         
       </td>
@@ -307,10 +310,10 @@
 <td>V2F</td>
 <td>V HEALTH FACTORS - HEALTH FACTOR (9000010.23-.01)</td>
 <td>terminologyMaps</td>
-<td>In VF_DPPLungCancerScreeningF</td>
+<td>VF_DPPLungCancerScreeningFind</td>
 <td>Observation[smoking]</td>
 <td>.valueCodeableConcept</td>
-<td>VF_DPPLungCancerScreening</td>
+<td>VF_DPPLungCancerScreeningFind</td>
 <td>.code = http://loinc.org#72166-2 "Tobacco smoking status NHIS"</td>
 <td></td>
 <td>http://hl7.org/fhir/us/core/StructureDefinition/us-core-smokingstatus</td>
@@ -321,12 +324,26 @@
 <td>V2F</td>
 <td></td>
 <td>fixed value</td>
-<td>In VF_DPPLungCancerScreeningF</td>
+<td>VF_DPPLungCancerScreeningFind</td>
 <td>Observation[smoking]</td>
 <td>.code</td>
 <td>http://loinc.org#72166-2 "Tobacco smoking status NHIS"</td>
 <td></td>
 <td>generated from mapParameter line 1</td>
+<td>http://hl7.org/fhir/us/core/StructureDefinition/us-core-smokingstatus</td>
+</tr>
+<tr class="row-ro1">
+<td>2232</td>
+<td>in process</td>
+<td>V2F</td>
+<td>V HEALTH FACTORS - HEALTH FACTOR (9000010.23-.01)</td>
+<td>terminologyMaps</td>
+<td>In VF_DPPLungCancerScreeningDec</td>
+<td>Observation[smoking].dataAbsentReason</td>
+<td></td>
+<td>VF_DPPLungCancerScreeningDec</td>
+<td></td>
+<td>Open: what's the question that is not answered?</td>
 <td>http://hl7.org/fhir/us/core/StructureDefinition/us-core-smokingstatus</td>
 </tr>
 <tr class="row-ro1">
@@ -411,11 +428,13 @@
  <tr><td>Observation</td><td></td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>2231: fixed value = #final</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;category</td><td>2230: fixed value = #social-history</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;code</td><td>2222-1: fixed value = http://loinc.org#72166-2 &quot;Tobacco smoking status NHIS&quot; if In VF_DPPLungCancerScreeningF</td><td><p>generated from mapParameter line 1</p>
+ <tr><td>&nbsp;&nbsp;&nbsp;code</td><td>2222-1: fixed value = http://loinc.org#72166-2 &quot;Tobacco smoking status NHIS&quot; if VF_DPPLungCancerScreeningFind</td><td><p>generated from mapParameter line 1</p>
 </td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;encounter</td><td>2229: reference based on V HEALTH FACTORS - VISIT (9000010.23-.03)</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;effective[x] (effectiveDateTime)</td><td>2227: source value based on V HEALTH FACTORS - EVENT DATE AND TIME (9000010.23-1201)</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;value[x] (valueCodeableConcept)</td><td>2222: terminologyMaps using VF_DPPLungCancerScreening on V HEALTH FACTORS - HEALTH FACTOR (9000010.23-.01) if In VF_DPPLungCancerScreeningF</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;value[x] (valueCodeableConcept)</td><td>2222: terminologyMaps using VF_DPPLungCancerScreeningFind on V HEALTH FACTORS - HEALTH FACTOR (9000010.23-.01) if VF_DPPLungCancerScreeningFind</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;dataAbsentReason</td><td>2232: terminologyMaps using VF_DPPLungCancerScreeningDec on V HEALTH FACTORS - HEALTH FACTOR (9000010.23-.01) if In VF_DPPLungCancerScreeningDec</td><td><p>Open: what's the question that is not answered?</p>
+</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;note</td><td>2228: source value based on V HEALTH FACTORS - COMMENTS (9000010.23-81101)</td><td></td> </tr>
 </table>
 <a name="cdw"> </a><h3>Mappings for Clinical Data Warehouse (CDW) ()</h3><table class="grid">
@@ -424,6 +443,7 @@
  <tr><td>&nbsp;&nbsp;&nbsp;encounter</td><td>HF.HealthFactor.VisitDateTime,HF.HealthFactor.VisitIEN</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;effective[x] (effectiveDateTime)</td><td>HF.HealthFactor.EventDateTime</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;value[x] (valueCodeableConcept)</td><td>HF.HealthFactor.HealthFactorTypeIEN</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;dataAbsentReason</td><td>HF.HealthFactor.HealthFactorTypeIEN</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;note</td><td>HF.HealthFactor.Comments</td> </tr>
 </table>
 <a name="sda"> </a><h3>Mappings for Summary Document Architecure (SDA) ()</h3><table class="grid">
@@ -432,6 +452,7 @@
  <tr><td>&nbsp;&nbsp;&nbsp;encounter</td><td>SocialHistory.EncounterNumber,SocialHistory.EnteredAt,SocialHistory.EnteredBy,SocialHistory.EnteredOn,Vaccination.EncounterNumber,Vaccination.EnteredAt,Vaccination.EnteredBy,Vaccination.EnteredOn,Vaccination.Administration.AdministeredAtLocation,FamilyHistory.EncounterNumber,FamilyHistory.EnteredAt,FamilyHistory.EnteredBy,FamilyHistory.EnteredOn</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;effective[x] (effectiveDateTime)</td><td>SocialHistory.FromTime,Vaccination.FromTime,Vaccination.ToTime,FamilyHistory.FromTime</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;value[x] (valueCodeableConcept)</td><td>SocialHistory.SocialHabit,SocialHistory.SocialHabitCategory,SocialHistory.Extension[SocialHistoryExtension].Category,SocialHistory.Extension[SocialHistoryExtension].QuantityLabel,SocialHistory.SocialHabitCategory.Description,Vaccination.OrderItem,FamilyHistory.Diagnosis,FamilyHistory.Extension[FamilyHistoryExtension].Category,FamilyHistory.Diagnosis.Description</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;dataAbsentReason</td><td>SocialHistory.SocialHabit,SocialHistory.SocialHabitCategory,SocialHistory.Extension[SocialHistoryExtension].Category,SocialHistory.Extension[SocialHistoryExtension].QuantityLabel,SocialHistory.SocialHabitCategory.Description,Vaccination.OrderItem,FamilyHistory.Diagnosis,FamilyHistory.Extension[FamilyHistoryExtension].Category,FamilyHistory.Diagnosis.Description</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;note</td><td>SocialHistory.SocialHabitComments,Vaccination.Administration.RefusalReason,FamilyHistory.NoteText</td> </tr>
 </table>
 <a name="vpr"> </a><h3>Mappings for Virtual Patient Record XML (VPR) ()</h3><table class="grid">
@@ -439,6 +460,7 @@
  <tr><td>Observation</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;encounter</td><td>healthFactor.encounter,healthFactor.facility (&gt;9000010-.06),healthFactor.recorded (&gt;9000010-.01)</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;value[x] (valueCodeableConcept)</td><td>healthFactor.category (&gt;9999999.64-.03),healthFactor.name (&gt;9999999.64-.01)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;dataAbsentReason</td><td>healthFactor.category (&gt;9999999.64-.03),healthFactor.name (&gt;9999999.64-.01)</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;note</td><td>healthFactor.comment</td> </tr>
 </table>
 <a name="workflow"> </a><h3>Mappings for Workflow Pattern (<a href="http://hl7.org/fhir/workflow.html">http://hl7.org/fhir/workflow</a>)</h3><table class="grid">
@@ -645,7 +667,7 @@
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025 <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#1.4.15 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Apr 30, 2025 18:29+0000">2025-04-30</span>
+          IG &#169; 2025 <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#1.5.11 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, May 8, 2025 08:25+0000">2025-05-08</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

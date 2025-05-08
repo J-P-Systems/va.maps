@@ -18,11 +18,13 @@ Invariant: idt-28-1356
 Description: "If (698-96) is is NULL then fixed value #active"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: idt-28-1357
 Description: "If (698-96) is is not NULL then fixed value #inactive"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Mapping: source-to-ImplantableDeviceTransmitter
 Id: vista

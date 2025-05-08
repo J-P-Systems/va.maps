@@ -16,11 +16,13 @@ Invariant: idp-26-1356
 Description: "If (698-96) is is NULL then fixed value #active"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: idp-26-1357
 Description: "If (698-96) is is not NULL then fixed value #inactive"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Mapping: source-to-ImplantableDevicePacemaker
 Id: vista

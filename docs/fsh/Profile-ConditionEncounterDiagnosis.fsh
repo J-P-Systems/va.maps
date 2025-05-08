@@ -20,6 +20,7 @@ Invariant: ced-27-350
 Description: "If (9000010.07-.06) is Null then exclude value"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Mapping: source-to-ConditionEncounterDiagnosis
 Id: vista

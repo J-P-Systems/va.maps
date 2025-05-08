@@ -34,41 +34,49 @@ Invariant: ii-24-527
 Description: "If V IMMUNIZATION - IMMUNIZATION null then terminologyMaps (9000010.11-.01 > 9999999.14-.01) using VF_immunizationStatusReason"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: ii-24-528
 Description: "If V IMMUNIZATION - IMMUNIZATION null then terminologyMaps (9000010.11-.01 > 9999999.14-.01) using VF_inferredCVX"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: ii-24-297
 Description: "If (9000010.11-.01 > 9999999.14-.03) is CVX populated then fixed value #completed"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: ii-24-298
 Description: "If (9000010.11-.01 > 9999999.14-.01) is missing or unknown then exclude record"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: ii-24-299
 Description: "If (9000010.11-.01 > 9999999.14-.01) is text like 'contraindicated', 'refused', 'decline', 'not avail' then fixed value #not-done"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: ii-24-332
 Description: "If not null then source value from (9000010.11-.01 > 9999999.14-.03)"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: ii-24-332-1
 Description: "If not null then source value from (9000010.11-.01 > 9999999.14-.01)"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: ii-24-332-2
 Description: "If not null then fixed value http://hl7.org/fhir/sid/cvx"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Mapping: source-to-ImmunizationImmunization
 Id: vista

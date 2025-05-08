@@ -4,8 +4,8 @@ Id: DebtPortalAccount
 Title: "Debt Portal Account"
 Description: "This StructureDefinition contains the maps for VistA file ACCOUNTS RECEIVABLE (430) to Account."
 * ^status = #active
-* extension contains http://va.gov/fhir/StructureDefinition/account-statementGeneratedDay named account-statementGeneratedDay 0..1
-* identifier.value and identifier.system and identifier.type and status and subject and extension[http://va.gov/fhir/StructureDefinition/account-statementGeneratedDay].valueInteger MS
+* extension contains http://va.gov/fhir/StructureDefinition/account-statementGenerationDay named account-statementGenerationDay 0..1
+* identifier.value and identifier.system and identifier.type and status and subject and extension[http://va.gov/fhir/StructureDefinition/account-statementGenerationDay].valueInteger MS
 * subject only Reference(Patient)
 * identifier.system = "urn:oid:2.16.840.1.113883.4.349"
 * identifier.type = http://terminology.hl7.org/CodeSystem/v2-0203#AN "Account number"
@@ -20,7 +20,7 @@ Source: DebtPortalAccount
 * identifier.type -> "2003-2: fixed value = http://terminology.hl7.org/CodeSystem/v2-0203#AN \"Account number\"" "generated from mapParameter line 2"
 * status -> "2004: fixed value = #active"
 * subject -> "2005: reference based on ACCOUNTS RECEIVABLE - PATIENT (430-7)"
-* extension[http://va.gov/fhir/StructureDefinition/account-statementGeneratedDay].valueInteger -> "2006: source value based on ACCOUNTS RECEIVABLE - DEBTOR > AR DEBTOR - STATEMENT DAY (430-9 > 340-.03)"
+* extension[http://va.gov/fhir/StructureDefinition/account-statementGenerationDay].valueInteger -> "2006: source value based on ACCOUNTS RECEIVABLE - DEBTOR > AR DEBTOR - STATEMENT DAY (430-9 > 340-.03)"
 
 Mapping: cdw-to-DebtPortalAccount
 Id: cdw
@@ -28,4 +28,4 @@ Title: "Clinical Data Warehouse (CDW)"
 Source: DebtPortalAccount
 * identifier.value -> "IB.AccountsReceivable.PatientIEN,IB.AccountsReceivableComment.PatientIEN,IB.AccountsReceivableDescription.PatientIEN,IB.AccountsReceivableFiscalYear.PatientIEN,IB.AccountsReceivableRepayDate.PatientIEN,IB.AccountsReceivableTCSP.PatientIEN,IB.AccountsReceivableTCSP.PatientSID"
 * subject -> "IB.AccountsReceivable.PatientIEN,IB.AccountsReceivableComment.PatientIEN,IB.AccountsReceivableDescription.PatientIEN,IB.AccountsReceivableFiscalYear.PatientIEN,IB.AccountsReceivableRepayDate.PatientIEN,IB.AccountsReceivableTCSP.PatientIEN,IB.AccountsReceivableTCSP.PatientSID"
-* extension[http://va.gov/fhir/StructureDefinition/account-statementGeneratedDay].valueInteger -> "IB.AccountsReceivable.ARDebtorIEN\nDim.ARDebtor.StatementGeneratedDay"
+* extension[http://va.gov/fhir/StructureDefinition/account-statementGenerationDay].valueInteger -> "IB.AccountsReceivable.ARDebtorIEN\nDim.ARDebtor.StatementGeneratedDay"

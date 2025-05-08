@@ -36,111 +36,133 @@ Invariant: vaersp-12-1948
 Description: "If (24-1) is not xsi:nil then fixed value urn:oid:2.16.840.1.113883.6.238#1002-5 \"American Indian or Alaska Native\""
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: vaersp-12-1948-1
 Description: "If not xsi:nil then fixed value AIAN"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: vaersp-12-1949
 Description: "If (24-2) is not xsi:nil then fixed value urn:oid:2.16.840.1.113883.6.238#2028-9 \"Asian\""
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: vaersp-12-1949-1
 Description: "If not xsi:nil then fixed value Asian"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: vaersp-12-1950
 Description: "If (24-3) is not xsi:nil then fixed value urn:oid:2.16.840.1.113883.6.238#2054-5 \"Black or African American\""
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: vaersp-12-1950-1
 Description: "If not xsi:nil then fixed value BlkAM"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: vaersp-12-1951
 Description: "If (24-4) is not xsi:nil then fixed value urn:oid:2.16.840.1.113883.6.238#2076-8 \"Native Hawaiian or Other Pacific Islander\""
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: vaersp-12-1951-1
 Description: "If not xsi:nil then fixed value NH_OPI"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: vaersp-12-1952
 Description: "If (24-5) is not xsi:nil then fixed value urn:oid:2.16.840.1.113883.6.238#2106-3 \"White\""
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: vaersp-12-1952-1
 Description: "If not xsi:nil then fixed value White"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: vaersp-12-1953
 Description: "If (24-6) is not xsi:nil then fixed value http://terminology.hl7.org/CodeSystem/v3-NullFlavor#UNK \"unknown\""
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: vaersp-12-1953-1
 Description: "If not xsi:nil then fixed value Unk"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: vaersp-12-1954
 Description: "If (24-7) is not xsi:nil then fixed value urn:oid:2.16.840.1.113883.6.238#2131-1 \"Other Race\""
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: vaersp-12-1954-1
 Description: "If not xsi:nil then fixed value Other"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: vaersp-12-1955
 Description: "If (25-1) is not xsi:nil then fixed value urn:oid:2.16.840.1.113883.6.238#2135-2 \"Hispanic or Latino\""
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: vaersp-12-1955-1
 Description: "If not xsi:nil then fixed value HispLat"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: vaersp-12-1956
 Description: "If (25-2) is not xsi:nil then fixed value urn:oid:2.16.840.1.113883.6.238#2186-5 \"Not Hispanic or Latino\""
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: vaersp-12-1956-1
 Description: "If not xsi:nil then fixed value NHL"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: vaersp-12-1957
 Description: "If (25-3) is not xsi:nil then fixed value http://terminology.hl7.org/CodeSystem/v3-NullFlavor#UNK \"unknown\""
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: vaersp-12-1957-1
 Description: "If not xsi:nil then fixed value Unk"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: vaersp-12-1958
 Description: "If (25-4) is not xsi:nil then fixed value http://terminology.hl7.org/CodeSystem/v3-NullFlavor#OTH \"other\""
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: vaersp-12-1958-1
 Description: "If not xsi:nil then fixed value Other"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Mapping: source-to-VAERSPatient
 Id: aders

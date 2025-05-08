@@ -9,7 +9,7 @@ Usage: #definition
 * description = "Terminology Maps VF_CommunicationQualifier"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/CommunicationQualifier-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/CommunicationQualifier"
-* group[0].source = "http://va.gov/Terminology/VistADefinedTerms/365.26-.04"
+* group[0].source = "http://va.gov/terminology/vistADefinedTerms/365.26-.04"
 * group[=].target = "urn:oid:2.16.840.1.113883.3.8901.3.1.3658026.8004"
 * group[=].element[0].code = #EM
 * group[=].element[=].display = "Electronic Mail"
@@ -54,9 +54,9 @@ Description: "VistA Source ValueSet for Terminology Maps [VF_CommunicationQualif
 * ^experimental = false
 * ^status = #active
 * ^name = "CommunicationQualifier_VistA"
-* include http://va.gov/Terminology/VistADefinedTerms/365.26-.04#EM "Electronic Mail"
-* include http://va.gov/Terminology/VistADefinedTerms/365.26-.04#FX "Facsimile"
-* include http://va.gov/Terminology/VistADefinedTerms/365.26-.04#TE "Telephone"
-* include http://va.gov/Terminology/VistADefinedTerms/365.26-.04#EX "Telephone Extension"
-* include http://va.gov/Terminology/VistADefinedTerms/365.26-.04#HP "Home Phone Number"
-* include http://va.gov/Terminology/VistADefinedTerms/365.26-.04#WP "Work Phone Number"
+* include http://va.gov/terminology/vistADefinedTerms/365.26-.04#EM "Electronic Mail"
+* include http://va.gov/terminology/vistADefinedTerms/365.26-.04#FX "Facsimile"
+* include http://va.gov/terminology/vistADefinedTerms/365.26-.04#TE "Telephone"
+* include http://va.gov/terminology/vistADefinedTerms/365.26-.04#EX "Telephone Extension"
+* include http://va.gov/terminology/vistADefinedTerms/365.26-.04#HP "Home Phone Number"
+* include http://va.gov/terminology/vistADefinedTerms/365.26-.04#WP "Work Phone Number"

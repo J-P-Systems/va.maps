@@ -18,6 +18,7 @@ Invariant: pr-18-1510
 Description: "If 70-2 > 70.02 then reference /Patient based on (70-.01)"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Mapping: source-to-ProcedureRadiology
 Id: vista

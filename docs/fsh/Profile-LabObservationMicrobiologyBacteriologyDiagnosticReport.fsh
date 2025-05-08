@@ -26,6 +26,7 @@ Invariant: lombdr-54-1421
 Description: "If PATIENT - LABORATORY REFERENCE (2-63) == LAB DATA – LRDFN (63-.01) then reference /Patient based on (2-)"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Mapping: source-to-LabObservationMicrobiologyBacteriologyDiagnosticReport
 Id: vista

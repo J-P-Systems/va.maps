@@ -24,6 +24,7 @@ Invariant: cp-16-349
 Description: "If (9000011-1.07) is Not Null then fixed value #resolved"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Mapping: source-to-ConditionProblem
 Id: vista

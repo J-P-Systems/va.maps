@@ -9,7 +9,7 @@ Usage: #definition
 * description = "Terminology Maps VF_OrganizationIdentifierType"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/OrganizationIdentifierType-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/OrganizationIdentifierType"
-* group[0].source = "http://va.gov/Terminology/VistADefinedTerms/36-6.01"
+* group[0].source = "http://va.gov/terminology/vistADefinedTerms/36-6.01"
 * group[=].target = "urn:oid:2.16.840.1.113883.3.8901.3.1.36.68001"
 * group[=].element[0].code = #2U
 * group[=].element[=].display = "PAYER ID #"
@@ -65,7 +65,7 @@ Description: "VistA Source ValueSet for Terminology Maps [VF_OrganizationIdentif
 * ^experimental = false
 * ^status = #active
 * ^name = "OrganizationIdentifierType_VistA"
-* include http://va.gov/Terminology/VistADefinedTerms/36-6.01#2U "PAYER ID #"
-* include http://va.gov/Terminology/VistADefinedTerms/36-6.01#FY "CLAIM OFFICE #"
-* include http://va.gov/Terminology/VistADefinedTerms/36-6.01#NF "NAIC CODE"
-* include http://va.gov/Terminology/VistADefinedTerms/36-6.01#TJ "FED TAXPAYER #;"
+* include http://va.gov/terminology/vistADefinedTerms/36-6.01#2U "PAYER ID #"
+* include http://va.gov/terminology/vistADefinedTerms/36-6.01#FY "CLAIM OFFICE #"
+* include http://va.gov/terminology/vistADefinedTerms/36-6.01#NF "NAIC CODE"
+* include http://va.gov/terminology/vistADefinedTerms/36-6.01#TJ "FED TAXPAYER #;"

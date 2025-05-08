@@ -30,21 +30,25 @@ Invariant: mro-27-811
 Description: "If number then source value from (52-113 > 52.0113-.01)"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: mro-27-841
 Description: "If not a number then source value from (52-113 > 52.0113-.01)"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: mro-27-1746
 Description: "If (52-11) is P then fixed value #active-parked"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: mro-27-1746-1
 Description: "If P then fixed value http://va.gov/terminology/vistaDefinedTerms/52-100"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Mapping: source-to-MedicationRequestOutpatient
 Id: vista

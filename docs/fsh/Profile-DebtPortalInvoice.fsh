@@ -3,7 +3,7 @@ Parent: http://hl7.org/fhir/StructureDefinition/Invoice
 Id: DebtPortalInvoice
 Title: "Debt Portal Invoice"
 Description: "This StructureDefinition contains the maps for VistA file ACCOUNTS RECEIVABLE (430) to Invoice."
-* ^status = #active
+* ^status = #draft
 * totalPriceComponent ^slicing.discriminator.type = #value
 * totalPriceComponent ^slicing.discriminator.path = "$this"
 * totalPriceComponent ^slicing.rules = #open
@@ -16,7 +16,8 @@ Description: "This StructureDefinition contains the maps for VistA file ACCOUNTS
 * lineItem[va-interest].priceComponent ^slicing.discriminator.path = "$this"
 * lineItem[va-interest].priceComponent ^slicing.rules = #open
 * lineItem[va-interest].priceComponent contains va-marshal-fee-charged 0..1 and va-court-cost-charged 0..1 and va-interest-charged 0..1 and va-admin-charged 0..1
-* recipient and identifier and status and subject and date and issuer and account and totalPriceComponent[va-orig-amt].amount and totalPriceComponent[va-orig-amt].type and totalPriceComponent[va-orig-amt].code.text and totalPriceComponent[va-curr-bal].amount and totalPriceComponent[va-curr-bal].type and totalPriceComponent[va-curr-bal].code.text and totalPriceComponent[va-amend-amt].amount and totalPriceComponent[va-amend-amt].type and totalPriceComponent[va-amend-amt].code.text and totalPriceComponent[va-principal-bal].amount and totalPriceComponent[va-principal-bal].type and totalPriceComponent[va-principal-bal].code.text and totalPriceComponent[va-interest-bal].amount and totalPriceComponent[va-interest-bal].type and totalPriceComponent[va-interest-bal].code.text and totalPriceComponent[va-admin-cost-bal].amount and totalPriceComponent[va-admin-cost-bal].type and totalPriceComponent[va-admin-cost-bal].code.text and totalPriceComponent[va-marsh-fee].amount and totalPriceComponent[va-marsh-fee].type and totalPriceComponent[va-marsh-fee].code.text and totalPriceComponent[va-court-cost].amount and totalPriceComponent[va-court-cost].type and totalPriceComponent[va-court-cost].code.text and totalPriceComponent[va-principal-paid].amount and totalPriceComponent[va-principal-paid].type and totalPriceComponent[va-principal-paid].code.text and totalPriceComponent[va-interest-paid].amount and totalPriceComponent[va-interest-paid].type and totalPriceComponent[va-interest-paid].code.text and totalPriceComponent[va-admin-cost-paid].amount and totalPriceComponent[va-admin-cost-paid].type and totalPriceComponent[va-admin-cost-paid].code.text and totalPriceComponent[va-marsh-fee-paid].amount and totalPriceComponent[va-marsh-fee-paid].type and totalPriceComponent[va-marsh-fee-paid].code.text and totalPriceComponent[va-court-cost-paid].amount and totalPriceComponent[va-court-cost-paid].type and totalPriceComponent[va-court-cost-paid].code.text and lineItem[va-charges].chargeItemReference and lineItem[va-charges].priceComponent.amount and lineItem[va-charges].priceComponent.type and lineItem[va-charges].priceComponent.code.text and lineItem[va-interest].chargeItemReference and lineItem[va-interest].priceComponent[va-marshal-fee-charged].amount and lineItem[va-interest].priceComponent[va-marshal-fee-charged].type and lineItem[va-interest].priceComponent[va-marshal-fee-charged].code.text and lineItem[va-interest].priceComponent[va-court-cost-charged].amount and lineItem[va-interest].priceComponent[va-court-cost-charged].type and lineItem[va-interest].priceComponent[va-court-cost-charged].code.text and lineItem[va-interest].priceComponent[va-interest-charged].amount and lineItem[va-interest].priceComponent[va-interest-charged].type and lineItem[va-interest].priceComponent[va-interest-charged].code.text and lineItem[va-interest].priceComponent[va-admin-charged].amount and lineItem[va-interest].priceComponent[va-admin-charged].type and lineItem[va-interest].priceComponent[va-admin-charged].code.text MS
+* status.extension contains http://hl7.org/fhir/StructureDefinition/alternate-codes named alternate-codes 0..1
+* recipient and identifier and status and status.extension[http://hl7.org/fhir/StructureDefinition/alternate-codes].valueCodeableConcept.coding and status.extension[http://hl7.org/fhir/StructureDefinition/alternate-codes].valueCodeableConcept.coding.code and status.extension[http://hl7.org/fhir/StructureDefinition/alternate-codes].valueCodeableConcept.coding.display and status.extension[http://hl7.org/fhir/StructureDefinition/alternate-codes].valueCodeableConcept.coding.system and subject and date and issuer and account and totalPriceComponent[va-orig-amt].amount and totalPriceComponent[va-orig-amt].type and totalPriceComponent[va-orig-amt].code.text and totalPriceComponent[va-curr-bal].amount and totalPriceComponent[va-curr-bal].type and totalPriceComponent[va-curr-bal].code.text and totalPriceComponent[va-amend-amt].amount and totalPriceComponent[va-amend-amt].type and totalPriceComponent[va-amend-amt].code.text and totalPriceComponent[va-principal-bal].amount and totalPriceComponent[va-principal-bal].type and totalPriceComponent[va-principal-bal].code.text and totalPriceComponent[va-interest-bal].amount and totalPriceComponent[va-interest-bal].type and totalPriceComponent[va-interest-bal].code.text and totalPriceComponent[va-admin-cost-bal].amount and totalPriceComponent[va-admin-cost-bal].type and totalPriceComponent[va-admin-cost-bal].code.text and totalPriceComponent[va-marsh-fee].amount and totalPriceComponent[va-marsh-fee].type and totalPriceComponent[va-marsh-fee].code.text and totalPriceComponent[va-court-cost].amount and totalPriceComponent[va-court-cost].type and totalPriceComponent[va-court-cost].code.text and totalPriceComponent[va-principal-paid].amount and totalPriceComponent[va-principal-paid].type and totalPriceComponent[va-principal-paid].code.text and totalPriceComponent[va-interest-paid].amount and totalPriceComponent[va-interest-paid].type and totalPriceComponent[va-interest-paid].code.text and totalPriceComponent[va-admin-cost-paid].amount and totalPriceComponent[va-admin-cost-paid].type and totalPriceComponent[va-admin-cost-paid].code.text and totalPriceComponent[va-marsh-fee-paid].amount and totalPriceComponent[va-marsh-fee-paid].type and totalPriceComponent[va-marsh-fee-paid].code.text and totalPriceComponent[va-court-cost-paid].amount and totalPriceComponent[va-court-cost-paid].type and totalPriceComponent[va-court-cost-paid].code.text and lineItem[va-charges].chargeItemReference and lineItem[va-charges].priceComponent.amount and lineItem[va-charges].priceComponent.type and lineItem[va-charges].priceComponent.code.text and lineItem[va-interest].chargeItemReference and lineItem[va-interest].priceComponent[va-marshal-fee-charged].amount and lineItem[va-interest].priceComponent[va-marshal-fee-charged].type and lineItem[va-interest].priceComponent[va-marshal-fee-charged].code.text and lineItem[va-interest].priceComponent[va-court-cost-charged].amount and lineItem[va-interest].priceComponent[va-court-cost-charged].type and lineItem[va-interest].priceComponent[va-court-cost-charged].code.text and lineItem[va-interest].priceComponent[va-interest-charged].amount and lineItem[va-interest].priceComponent[va-interest-charged].type and lineItem[va-interest].priceComponent[va-interest-charged].code.text and lineItem[va-interest].priceComponent[va-admin-charged].amount and lineItem[va-interest].priceComponent[va-admin-charged].type and lineItem[va-interest].priceComponent[va-admin-charged].code.text MS
 * recipient only Reference(DebtPortalPatient)
 * subject only Reference(Patient)
 * issuer only Reference(Organization)
@@ -26,6 +27,7 @@ Description: "This StructureDefinition contains the maps for VistA file ACCOUNTS
 * recipient obeys dpi-17-1818
 * status from http://va.gov/fhir/ValueSet/ARBillStatus
 * status ^binding.description = "see mapping [VF_ARBillStatus](ConceptMap-VF-ARBillStatus.html)"
+* status.extension[http://hl7.org/fhir/StructureDefinition/alternate-codes].valueCodeableConcept.coding.system = "http://va.gov/terminology/vistaDefinedTerms/430.3"
 * totalPriceComponent[va-orig-amt].type = #informational
 * totalPriceComponent[va-orig-amt].code.text = "Original Amount"
 * totalPriceComponent[va-curr-bal].type = #base
@@ -73,76 +75,91 @@ Invariant: dpi-17-1818
 Description: "If type is PATIENT (#2) then reference Patient based on (430-9 > 340-.01)"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: dpi-17-1834
 Description: "If INTEGRATED BILLING ACTION - PARENT CHARGE = INTEGRATED BILLING ACTION - IEN then reference ChargeItemcharges based on (null)"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: dpi-17-2220
 Description: "If INTEGRATED BILLING ACTION - PARENT CHARGE <> INTEGRATED BILLING ACTION - IEN then reference ChargeItemremoved based on (null)"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: dpi-17-1999
 Description: "If 433-.03 == 430 then source value from (433-25)"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: dpi-17-1999-1
 Description: "If 433-.03 == 430 then fixed value #surcharge"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: dpi-17-1999-2
 Description: "If 433-.03 == 430 then fixed value Marshal Fee Charged"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: dpi-17-2000
 Description: "If 433-.03 == 430 then source value from (433-26)"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: dpi-17-2000-1
 Description: "If 433-.03 == 430 then fixed value #surcharge"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: dpi-17-2000-2
 Description: "If 433-.03 == 430 then fixed value Court Cost Charged"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: dpi-17-2001
 Description: "If 433-.03 == 430 then source value from (433-27)"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: dpi-17-2001-1
 Description: "If 433-.03 == 430 then fixed value #surcharge"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: dpi-17-2001-2
 Description: "If 433-.03 == 430 then fixed value Interest Charged"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: dpi-17-2002
 Description: "If 433-.03 == 430 then source value from (433-28)"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: dpi-17-2002-1
 Description: "If 433-.03 == 430 then fixed value #surcharge"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: dpi-17-2002-2
 Description: "If 433-.03 == 430 then fixed value Administrative Charged"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Mapping: source-to-DebtPortalInvoice
 Id: vista
@@ -151,6 +168,10 @@ Source: DebtPortalInvoice
 * recipient -> "1818: reference based on ACCOUNTS RECEIVABLE - DEBTOR > AR DEBTOR - DEBTOR (430-9 > 340-.01) if type is PATIENT (#2)" "The data in CDW does not support Invoice.recipient and Invoice.subject being different. It is assumed that the recipient will always be the subject and to avoid having duplicate patient references, it is recommended to use Invoice.recipient for the reference to the patient."
 * identifier -> "1975: source value based on ACCOUNTS RECEIVABLE - BILL NO. (430-.01)"
 * status -> "1843: terminologyMaps using VF_ARBillStatus on ACCOUNTS RECEIVABLE - CURRENT STATUS > ACCOUNTS RECEIVABLE TRANS.TYPE - NAME (430-8 > 430.3-.01)"
+* status.extension[http://hl7.org/fhir/StructureDefinition/alternate-codes].valueCodeableConcept.coding -> "2236: source value based on ACCOUNTS RECEIVABLE - CURRENT STATUS > ACCOUNTS RECEIVABLE TRANS.TYPE - (430-8 > 430.3-)"
+* status.extension[http://hl7.org/fhir/StructureDefinition/alternate-codes].valueCodeableConcept.coding.code -> "2236-1: source value based on ACCOUNTS RECEIVABLE - CURRENT STATUS > ACCOUNTS RECEIVABLE TRANS.TYPE - TRANSACTION TYPE IEN (430-8 > 430.3-.001)" "generated from mapParameter line 1"
+* status.extension[http://hl7.org/fhir/StructureDefinition/alternate-codes].valueCodeableConcept.coding.display -> "2236-2: source value based on ACCOUNTS RECEIVABLE - CURRENT STATUS > ACCOUNTS RECEIVABLE TRANS.TYPE - NAME (430-8 > 430.3-.01)" "generated from mapParameter line 2"
+* status.extension[http://hl7.org/fhir/StructureDefinition/alternate-codes].valueCodeableConcept.coding.system -> "2236-3: fixed value = http://va.gov/terminology/vistaDefinedTerms/430.3" "generated from mapParameter line 3"
 * subject -> "1976: reference based on ACCOUNTS RECEIVABLE - PATIENT (430-7)" "The data in CDW does not support Invoice.recipient and Invoice.subject being different. It is assumed that the recipient will always be the subject and to avoid having duplicate patient references, it is recommended to use Invoice.recipient for the reference to the patient."
 * date -> "1977: source value based on ACCOUNTS RECEIVABLE - DATE BILL PREPARED (430-10)"
 * issuer -> "2007: reference based on ACCOUNTS RECEIVABLE - SITE (430-12)"
@@ -220,6 +241,9 @@ Source: DebtPortalInvoice
 * recipient -> "IB.AccountsReceivable.ARDebtorIEN\nDim.ARDebtor.InstitutionIEN,Dim.ARDebtor.InsuranceCompanyIEN,Dim.ARDebtor.PatientIEN,Dim.ARDebtor.StaffIEN,Dim.ARDebtor.VendorIEN"
 * identifier -> "IB.AccountsReceivable.BillNumber,IB.AccountsReceivableTCSP.BillNumber"
 * status -> "IB.AccountsReceivable.ARTransactionTypeIEN\nDim.ARTransactionType.ARTransactionType"
+* status.extension[http://hl7.org/fhir/StructureDefinition/alternate-codes].valueCodeableConcept.coding -> "IB.AccountsReceivable.ARTransactionTypeIEN"
+* status.extension[http://hl7.org/fhir/StructureDefinition/alternate-codes].valueCodeableConcept.coding.code -> "IB.AccountsReceivable.ARTransactionTypeIEN"
+* status.extension[http://hl7.org/fhir/StructureDefinition/alternate-codes].valueCodeableConcept.coding.display -> "IB.AccountsReceivable.ARTransactionTypeIEN\nDim.ARTransactionType.ARTransactionType"
 * subject -> "IB.AccountsReceivable.PatientIEN,IB.AccountsReceivableComment.PatientIEN,IB.AccountsReceivableDescription.PatientIEN,IB.AccountsReceivableFiscalYear.PatientIEN,IB.AccountsReceivableRepayDate.PatientIEN,IB.AccountsReceivableTCSP.PatientIEN,IB.AccountsReceivableTCSP.PatientSID"
 * date -> "IB.AccountsReceivable.BillPreparedDateTime,IB.AccountsReceivableComment.BillPreparedDateTime,IB.AccountsReceivableDescription.BillPreparedDateTime,IB.AccountsReceivableFiscalYear.BillPreparedDateTime,IB.AccountsReceivableRepayDate.BillPreparedDateTime,IB.AccountsReceivableTCSP.BillPreparedDateTime"
 * issuer -> "IB.AccountsReceivable.InstitutionIEN"

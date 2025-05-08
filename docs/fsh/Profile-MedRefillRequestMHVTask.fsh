@@ -18,11 +18,13 @@ Invariant: mrrmhvt-23-1852
 Description: "If 31 RELEASED DATE/TIME not null then fixed value #RF"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: mrrmhvt-23-1861
 Description: "If 31 RELEASED DATE/TIME null then fixed value #FF"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Mapping: source-to-MedRefillRequestMHVTask
 Id: vista

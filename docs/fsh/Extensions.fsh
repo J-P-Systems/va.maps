@@ -60,9 +60,9 @@ Description: "Extension patient-ageAtVaccination"
 Context: Patient
 * value[x] only string
 
-Extension: AccountStatementGeneratedDay
-Id: account-statementGeneratedDay
-Description: "Extension account-statementGeneratedDay"
+Extension: AccountStatementGenerationDay
+Id: account-statementGenerationDay
+Description: "Extension account-statementGenerationDay"
 Context: Account
 * value[x] only integer
 

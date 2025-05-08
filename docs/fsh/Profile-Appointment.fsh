@@ -40,46 +40,55 @@ Invariant: a-11-732
 Description: "If (2.98-3) is I, NT, Null; Null check-in date (44.003-309), null check-out date (44.003-303) then fixed value #booked"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: a-11-733
 Description: "If (2.98-3) is I, NT, Null; Non-null check-in date (44.003-309), null check-out date (44.003-303) then fixed value #arrived"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: a-11-734
 Description: "If (2.98-3) is I, NT, Null; Non-null check-in date (44.003-309), non-null check-out date (44.003-303) then fixed value #fulfilled"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: a-11-2033
 Description: "If (2.98-9.5 > 409.1-.01) is SERVICE CONNECTED then fixed value http://va.gov/fhir/vistaDefinedTerms/409.1#SC \"Service Connected\""
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: a-11-2034
 Description: "If (2.98-9.5 > 409.1-.01) is Not SERVICE CONNECTED then fixed value http://va.gov/fhir/vistaDefinedTerms/409.1#NSC \"Not Service Connected\""
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: a-11-1722
 Description: "If PATIENT – APPOINTMENT (2-1900) = APPOINTMENT (2.98) then reference /Patient based on (2-)"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: a-11-1722-1
 Description: "If PATIENT – APPOINTMENT (2-1900) = APPOINTMENT (2.98) then fixed value #PART"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: a-11-1722-2
 Description: "If PATIENT – APPOINTMENT (2-1900) = APPOINTMENT (2.98) then fixed value #accepted"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: a-11-748
 Description: "If (409.3-.01) is not null then fixed value #waitlist"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Mapping: source-to-Appointment
 Id: vista

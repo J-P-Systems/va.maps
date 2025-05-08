@@ -51,56 +51,67 @@ Invariant: vsbp-12-666
 Description: "If VUID = 4500634 then transform (120.5-1.2) using Split_rate_value.Systolic()"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: vsbp-12-666-1
 Description: "If VUID = 4500634 then fixed value #mm[Hg]"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: vsbp-12-666-2
 Description: "If VUID = 4500634 then fixed value mm[Hg]"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: vsbp-12-666-3
 Description: "If VUID = 4500634 then fixed value http://loinc.org#8480-6"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: vsbp-12-667
 Description: "If VUID = 4500634 then transform (120.5-1.2) using Split_rate_value.Diastolic()"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: vsbp-12-667-1
 Description: "If VUID = 4500634 then fixed value #mm[Hg]"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: vsbp-12-667-2
 Description: "If VUID = 4500634 then fixed value mm[Hg]"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: vsbp-12-667-3
 Description: "If VUID = 4500634 then fixed value http://loinc.org#8462-4"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: vsbp-12-655
 Description: "If (120.5-4) is null then fixed value #final"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: vsbp-12-656
 Description: "If (120.5-4) is not null then fixed value #entered-in-error"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: vsbp-12-664
 Description: "If VUID not = 4500634 then source value from (120.5-1.2)"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Mapping: source-to-VitalSignsBP
 Id: vista

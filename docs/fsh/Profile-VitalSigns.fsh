@@ -40,16 +40,19 @@ Invariant: vs-10-655
 Description: "If (120.5-4) is null then fixed value #final"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: vs-10-656
 Description: "If (120.5-4) is not null then fixed value #entered-in-error"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: vs-10-664
 Description: "If VUID not = 4500634 then source value from (120.5-1.2)"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Mapping: source-to-VitalSigns
 Id: vista

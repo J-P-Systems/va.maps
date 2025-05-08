@@ -33,11 +33,13 @@ Invariant: ai-18-557
 Description: "If ADVERSE REACTION REPORTING – RELATED REACTION (120.85-.03) == PATIENT ALLERGIES (120.8) then terminologyMaps (120.85-14.5) using VF_allergySeverity"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: ai-18-1652
 Description: "If 6 OBSERVED/HISTORICAL = O then source value from (120.8-10 > 120.81-3)"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Mapping: source-to-AllergyIntolerance
 Id: vista

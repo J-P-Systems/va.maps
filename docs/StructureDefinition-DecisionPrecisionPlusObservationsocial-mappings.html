@@ -7,7 +7,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Decision Precision Plus Observation[social] - Mappings - US Veterans Health Administration FHIR Map Set Implementation Guide v1.4.15</title>
+    <title>Decision Precision Plus Observation[social] - Mappings - US Veterans Health Administration FHIR Map Set Implementation Guide v1.5.11</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -46,8 +46,8 @@
 	  <script src="assets/js/prism.js"></script>
     <script type="text/javascript" src="assets/js/mermaid.js"></script>
     <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
-    <style type="text/css">h2{--heading-prefix:"13.21"}
-    h3,h4,h5,h6{--heading-prefix:"13.21"}</style>
+    <style type="text/css">h2{--heading-prefix:"10.20"}
+    h3,h4,h5,h6{--heading-prefix:"10.20"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
 
@@ -65,7 +65,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">US Veterans Health Administration FHIR Map Set Implementation Guide</span>
             <br/>
-            <span style="display:inline-block;">1.4.15 - 250501
+            <span style="display:inline-block;">1.5.11 - 250601
 
 
 
@@ -108,10 +108,10 @@
         <a href="process.html">Process</a>
       </li>
       <li>
-        <a href="profileDesign.html">Profile Design</a>
+        <a href="profileHierarchy.html">Profile Hierarchy</a>
       </li>
       <li>
-        <a href="guidance.html">General Guidance</a>
+        <a href="designPatterns.html">FHIR Design Patterns</a>
       </li>
       <li>
         <a href="classes.html">Classes</a>
@@ -127,7 +127,10 @@
         <a href="overview.html">Overview</a>
       </li>
       <li>
-        <a href="guidance-vitals.html">Vitals Guidance</a>
+        <a href="debtPortal.html">Debt Portal</a>
+      </li>
+      <li>
+        <a href="vitals.html">Vitals</a>
       </li>
     </ul>
   </li>
@@ -258,7 +261,7 @@
         
           Draft
           
-            as of 2025-04-30
+            as of 2025-05-08
           
         
       </td>
@@ -307,10 +310,24 @@
 <td>V2F</td>
 <td>V HEALTH FACTORS - HEALTH FACTOR (9000010.23-.01)</td>
 <td>terminologyMaps</td>
-<td>In VF_DPPLungCancerScreeningOE</td>
+<td>In VF_DPPLungCancerScreeningOEQ</td>
 <td>Observation[social].code</td>
 <td></td>
-<td>VF_DPPLungCancerScreeningOE</td>
+<td>VF_DPPLungCancerScreeningOEQ</td>
+<td></td>
+<td></td>
+<td>http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-social-history</td>
+</tr>
+<tr class="row-ro1">
+<td>2233</td>
+<td>in process</td>
+<td>V2F</td>
+<td>V HEALTH FACTORS - HEALTH FACTOR (9000010.23-.01)</td>
+<td>terminologyMaps</td>
+<td>In VF_DPPLungCancerScreeningOED</td>
+<td>Observation[social].code</td>
+<td></td>
+<td>VF_DPPLungCancerScreeningOED</td>
 <td></td>
 <td></td>
 <td>http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-social-history</td>
@@ -349,7 +366,7 @@
 <td>V2F</td>
 <td>V HEALTH FACTORS - MAGNITUDE (9000010.23-220)</td>
 <td>source value</td>
-<td>In VF_DPPLungCancerScreeningOET</td>
+<td>In VF_DPPLungCancerScreeningOED</td>
 <td>Observation[social].valueDateTime</td>
 <td></td>
 <td></td>
@@ -439,14 +456,14 @@
  <tr><td>Observation</td><td></td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>2231: fixed value = #final</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;category</td><td>2230: fixed value = #social-history</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;code</td><td>2223: terminologyMaps using VF_DPPLungCancerScreeningOE on V HEALTH FACTORS - HEALTH FACTOR (9000010.23-.01) if In VF_DPPLungCancerScreeningOE</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;code</td><td>2223: terminologyMaps using VF_DPPLungCancerScreeningOEQ on V HEALTH FACTORS - HEALTH FACTOR (9000010.23-.01) if In VF_DPPLungCancerScreeningOEQ, 2233: terminologyMaps using VF_DPPLungCancerScreeningOED on V HEALTH FACTORS - HEALTH FACTOR (9000010.23-.01) if In VF_DPPLungCancerScreeningOED</td><td>, </td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;encounter</td><td>2229: reference based on V HEALTH FACTORS - VISIT (9000010.23-.03)</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;effective[x] (effectiveDateTime)</td><td>2227: source value based on V HEALTH FACTORS - EVENT DATE AND TIME (9000010.23-1201)</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;value[x]</td><td></td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;value[x] (valueQuantity)</td><td></td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>2224: source value based on V HEALTH FACTORS - MAGNITUDE (9000010.23-220) if In VF_DPPLungCancerScreeningOEQ</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>2225: source value based on V HEALTH FACTORS - UCUM CODE (9000010.23-221) if In VF_DPPLungCancerScreeningOEQ</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;value[x] (valueDateTime)</td><td>2226: source value based on V HEALTH FACTORS - MAGNITUDE (9000010.23-220) if In VF_DPPLungCancerScreeningOET</td><td><p>I don't see magnitude values in CDW for the Year HF</p>
+ <tr><td>&nbsp;&nbsp;&nbsp;value[x] (valueDateTime)</td><td>2226: source value based on V HEALTH FACTORS - MAGNITUDE (9000010.23-220) if In VF_DPPLungCancerScreeningOED</td><td><p>I don't see magnitude values in CDW for the Year HF</p>
 </td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;note</td><td>2228: source value based on V HEALTH FACTORS - COMMENTS (9000010.23-81101)</td><td></td> </tr>
 </table>
@@ -704,7 +721,7 @@
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025 <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#1.4.15 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Apr 30, 2025 18:29+0000">2025-04-30</span>
+          IG &#169; 2025 <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#1.5.11 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, May 8, 2025 08:25+0000">2025-05-08</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

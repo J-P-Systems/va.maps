@@ -9,7 +9,7 @@ Description: "This StructureDefinition contains the maps for VistA file PRESCRIP
 * subject only Reference(Patient)
 * location only Reference(Location)
 * performer.actor only Reference(Practitioner)
-* type = http://terminology.hl7.org/CodeSystem/v3-ActCode#PF
+* type = http://terminology.hl7.org/CodeSystem/v3-ActCode#SIS
 * dosageInstruction.doseAndRate.doseQuantity.code from http://va.gov/fhir/ValueSet/DoseUnits
 * dosageInstruction.doseAndRate.doseQuantity.code ^binding.description = "see mapping [VF_DoseUnits](ConceptMap-VF-DoseUnits.html)"
 * dosageInstruction.doseAndRate.doseQuantity.value obeys mdp-25-1570
@@ -22,22 +22,25 @@ Invariant: mdp-25-1570
 Description: "If number then source value from (52-113 > 52.0113-.01)"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: mdp-25-1577
 Description: "If (52-60 > 52.2-8) is not null then fixed value #completed"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: mdp-25-1578
 Description: "If (52-60 > 52.2-8) is null then fixed value #in-progress"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Mapping: source-to-MedicationDispensePartial
 Id: vista
 Title: "Veterans Health Information Systems Technology and Architecture (VistA)"
 Source: MedicationDispensePartial
-* type -> "1710: fixed value = http://terminology.hl7.org/CodeSystem/v3-ActCode#PF"
+* type -> "1710: fixed value = http://terminology.hl7.org/CodeSystem/v3-ActCode#SIS" "https://jira.hl7.org/browse/UP-641"
 * destination.display -> "1713: source value based on PRESCRIPTION - PARTIAL DATE > PARTIAL DATE - MAIL/WINDOW (52-60 > 52.2-.02)"
 * authorizingPrescription -> "1565: reference based on PRESCRIPTION - PLACER ORDER # (52-39.3)"
 * daysSupply -> "828: source value based on PRESCRIPTION - PARTIAL DATE > PARTIAL DATE - DAYS SUPPLY (52-60 > 52.2-.041)"

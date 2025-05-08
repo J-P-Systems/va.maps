@@ -9,7 +9,7 @@ Usage: #definition
 * description = "Terminology Maps VF_DentalDeviceStatus"
 * sourceCanonical = "http://va.gov/fhir/ValueSet/DentalDeviceStatus-vista"
 * targetCanonical = "http://va.gov/fhir/ValueSet/DentalDeviceStatus"
-* group[0].source = "http://va.gov/terminology/vistaDefinedTerms/228.9-.08"
+* group[0].source = "http://va.gov/terminology/vistADefinedTerms/228.9-.08"
 * group[=].target = "http://hl7.org/fhir/device-status"
 * group[=].element[0].code = #2
 * group[=].element[=].display = "Deleted"
@@ -43,6 +43,6 @@ Description: "VistA Source ValueSet for Terminology Maps [VF_DentalDeviceStatus]
 * ^experimental = false
 * ^status = #active
 * ^name = "DentalDeviceStatus_VistA"
-* include http://va.gov/terminology/vistaDefinedTerms/228.9-.08#2 "Deleted"
-* include http://va.gov/terminology/vistaDefinedTerms/228.9-.08#0 "Existing"
-* include http://va.gov/terminology/vistaDefinedTerms/228.9-.08#1 "Removed"
+* include http://va.gov/terminology/vistADefinedTerms/228.9-.08#2 "Deleted"
+* include http://va.gov/terminology/vistADefinedTerms/228.9-.08#0 "Existing"
+* include http://va.gov/terminology/vistADefinedTerms/228.9-.08#1 "Removed"

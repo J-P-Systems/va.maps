@@ -29,6 +29,7 @@ Invariant: dppr-31-1982
 Description: "If IEN = 34 OR 2 then source value from (433-12 > 430.3-.01)"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Mapping: source-to-DebtPortalPaymentReconciliation
 Id: vista

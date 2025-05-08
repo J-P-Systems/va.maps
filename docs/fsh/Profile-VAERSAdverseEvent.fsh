@@ -26,46 +26,55 @@ Invariant: vaersae-17-1906
 Description: "If (21-1) is =1 then fixed value https://www.vaers.hhs.gov/data/datasets.html/Patientoutcomes#drvisit \"Doctor\""
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: vaersae-17-1907
 Description: "If (21-2) is =1 then fixed value https://www.vaers.hhs.gov/data/datasets.html/Patientoutcomes#ered \"Emergency Room\""
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: vaersae-17-1908
 Description: "If (21-3) is =1 then fixed value https://www.vaers.hhs.gov/data/datasets.html/Patientoutcomes#hospitalization \"Hospitalization\""
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: vaersae-17-1913
 Description: "If (21-4) is =1 then fixed value https://www.vaers.hhs.gov/data/datasets.html/Patientoutcomes#hospitalization \"Hospitalization\""
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: vaersae-17-1914
 Description: "If (21-5) is =1 then fixed value https://www.vaers.hhs.gov/data/datasets.html/Patientoutcomes#lti \"Life threatening illness\""
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: vaersae-17-1915
 Description: "If (21-6) is =1 then fixed value https://www.vaers.hhs.gov/data/datasets.html/Patientoutcomes#dis \"Disability or permanent damage\""
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: vaersae-17-1916
 Description: "If (21-7) is =1 then fixed value https://www.vaers.hhs.gov/data/datasets.html/Patientoutcomes#death \"Death\""
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: vaersae-17-1918
 Description: "If (21-8) is =1 then fixed value https://www.vaers.hhs.gov/data/datasets.html/Patientoutcomes#ca_db \"Congenital anomaly or birth defect\""
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: vaersae-17-1919
 Description: "If (21-9) is =1 then fixed value https://www.vaers.hhs.gov/data/datasets.html/Patientoutcomes#noa \"None of the above\""
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Mapping: source-to-VAERSAdverseEvent
 Id: aders

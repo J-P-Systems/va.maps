@@ -18,6 +18,7 @@ Invariant: mrp-24-1753
 Description: "If drug null then source value from (52.41-8)"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Mapping: source-to-MedicationRequestPending
 Id: vista

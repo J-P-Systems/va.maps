@@ -30,16 +30,19 @@ Invariant: mrnva-22-1732
 Description: "If 55.05-1 is null then source value from (55.05-.01)"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: mrnva-22-1737
 Description: "If (55.05-5) is NULL then fixed value #active"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: mrnva-22-1738
 Description: "If (55.05-5) is NOT NULL then fixed value #inactive"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Mapping: source-to-MedicationRequestNonVA
 Id: vista

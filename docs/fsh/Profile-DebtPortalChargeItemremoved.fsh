@@ -13,11 +13,13 @@ Invariant: dpci-27-2219
 Description: "If INTEGRATED BILLING ACTION - PARENT CHARGE <> INTEGRATED BILLING ACTION - IEN then reference ChargeItemcharges based on (350-.09)"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: dpci-27-2029
 Description: "If NOT NULL and  INTEGRATED BILLING ACTION - PARENT CHARGE (350-.09) <> INTEGRATED BILLING ACTION - IEN (350-.001) then source value from (350-.1 > 350.3-.01)"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Mapping: source-to-DebtPortalChargeItemremoved
 Id: vista

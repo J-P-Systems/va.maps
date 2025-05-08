@@ -71,51 +71,61 @@ Invariant: psp-25-1290
 Description: "If 130-118 NON-OR PROCEDURE == ‘Y’ then source value from (130-121)"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: psp-25-1291
 Description: "If 130-118 NON-OR PROCEDURE == ‘Y’ then source value from (130-122)"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: psp-25-1292
 Description: "If 130-118 NON-OR PROCEDURE != ‘Y’ then source value from (130-.22)"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: psp-25-1293
 Description: "If 130-118 NON-OR PROCEDURE != ‘Y’ then source value from (130-.23)"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: psp-25-1294
 Description: "If 130-118 NON-OR PROCEDURE == ‘Y’ then reference /Location based on (130-119)"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: psp-25-1295
 Description: "If 130-118 NON-OR PROCEDURE != ‘Y’ then reference LocationOR based on (130-.02)"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: psp-25-1296
 Description: "If (130-688) is == ‘Y’ then fixed value http://snomed.info/sct#88797001 \"Complication of surgical procedure (disorder)\""
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: psp-25-1296-1
 Description: "If == ‘Y’ then fixed value STOMA COMPLICATIONS"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: psp-25-1297
 Description: "If (130-258) is == ‘Y’ then fixed value http://snomed.info/sct#22298006 \"Myocardial infarction (disorder)\""
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: psp-25-1297-1
 Description: "If == ‘Y’ then fixed value MYOCARDIAL INFARCTION"
 Severity: #warning
 Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Mapping: source-to-ProcedureSurgeryProcedure
 Id: vista
