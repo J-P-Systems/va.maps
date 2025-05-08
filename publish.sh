@@ -1,4 +1,5 @@
 #!/bin/bash
+# Update gh-pages
 echo "Clean..."
 rm -r docs/*
 mkdir docs/fsh
