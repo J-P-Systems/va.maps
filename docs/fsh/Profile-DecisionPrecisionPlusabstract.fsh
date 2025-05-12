@@ -4,6 +4,7 @@ Id: DecisionPrecisionPlusabstract
 Title: "Decision Precision Plus: abstract"
 Description: "This StructureDefinition contains the maps for VistA file V HEALTH FACTORS (9000010.23) to Observation."
 * ^status = #draft
+* ^abstract = true
 * effectiveDateTime and note and encounter and category and status MS
 * encounter only Reference(EncounterOutpatient)
 * category = #social-history
