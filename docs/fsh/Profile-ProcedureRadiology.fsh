@@ -42,9 +42,9 @@ Id: cdw
 Title: "Clinical Data Warehouse (CDW)"
 Source: ProcedureRadiology
 * category.text -> "Rad.RadiologyRegisteredExam.ImagingTypeIEN\nDim.ImagingType.ImagingType"
-* subject -> "Patient.RadiologyPatient.PatientIEN,Rad.RadiologyExam.PatientIEN,Rad.RadiologyExamActivityLog.PatientIEN,Rad.RadiologyExamContrastMedia.PatientIEN,Rad.RadiologyExamCPTModifier.PatientIEN,Rad.RadiologyExamMedication.PatientIEN,Rad.RadiologyExamSecondaryDiagnosticCode.PatientIEN,Rad.RadiologyExamStatusList.PatientIEN,Rad.RadiologyFilmRegistry.PatientIEN,Rad.RadiologyRegisteredExam.PatientIEN"
+* subject -> "Patient.RadiologyPatient.PatientIEN\nRad.RadiologyExam.PatientIEN\nRad.RadiologyExamActivityLog.PatientIEN\nRad.RadiologyExamContrastMedia.PatientIEN\nRad.RadiologyExamCPTModifier.PatientIEN\nRad.RadiologyExamMedication.PatientIEN\nRad.RadiologyExamSecondaryDiagnosticCode.PatientIEN\nRad.RadiologyExamStatusList.PatientIEN\nRad.RadiologyFilmRegistry.PatientIEN\nRad.RadiologyRegisteredExam.PatientIEN"
 * encounter -> "Rad.RadiologyExam.VisitIEN"
-* performedDateTime -> "Rad.RadiologyExam.ExamDateTime,Rad.RadiologyExamActivityLog.ExamDateTime,Rad.RadiologyExamContrastMedia.ExamDateTime,Rad.RadiologyExamCPTModifier.ExamDateTime,Rad.RadiologyExamMedication.ExamDateTime,Rad.RadiologyExamSecondaryDiagnosticCode.ExamDateTime,Rad.RadiologyExamStatusList.ExamDateTime,Rad.RadiologyExamTechnologist.ExamDateTime,Rad.RadiologyRegisteredExam.ExamDateTime"
+* performedDateTime -> "Rad.RadiologyExam.ExamDateTime\nRad.RadiologyExamActivityLog.ExamDateTime\nRad.RadiologyExamContrastMedia.ExamDateTime\nRad.RadiologyExamCPTModifier.ExamDateTime\nRad.RadiologyExamMedication.ExamDateTime\nRad.RadiologyExamSecondaryDiagnosticCode.ExamDateTime\nRad.RadiologyExamStatusList.ExamDateTime\nRad.RadiologyExamTechnologist.ExamDateTime\nRad.RadiologyRegisteredExam.ExamDateTime"
 * performer.actor -> "Rad.RadiologyExam.PrimaryInterpretingStaffIEN"
 * location -> "Rad.RadiologyRegisteredExam.RadiologyLocationIEN\nDim.RadiologyLocation.LocationIEN"
 
@@ -53,4 +53,4 @@ Id: sda
 Title: "Summary Document Architecure (SDA)"
 Source: ProcedureRadiology
 * performedDateTime -> "RadOrder.Result.FromTime"
-* location -> "RadOrder.Result.EnteredAt,RadOrder.Result.PerformedAt"
+* location -> "RadOrder.Result.EnteredAt\nRadOrder.Result.PerformedAt"

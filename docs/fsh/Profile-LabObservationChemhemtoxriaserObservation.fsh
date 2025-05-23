@@ -74,38 +74,38 @@ Mapping: cdw-to-LabObservationChemhemtoxriaserObservation
 Id: cdw
 Title: "Clinical Data Warehouse (CDW)"
 Source: LabObservationChemhemtoxriaserObservation
-* effectiveDateTime -> "Chem.LabChem.LabChemSpecimenDateTime,Chem.LabPanel.LabChemSpecimenDateTime,Chem.OrderedLabPanel.LabChemSpecimenDateTime,Chem.PatientLabChem.LabChemSpecimenDateTime"
+* effectiveDateTime -> "Chem.LabChem.LabChemSpecimenDateTime\nChem.LabPanel.LabChemSpecimenDateTime\nChem.OrderedLabPanel.LabChemSpecimenDateTime\nChem.PatientLabChem.LabChemSpecimenDateTime"
 * note -> "Chem.LabPanel.LabPanelComment"
-* performer[va-at] -> "Chem.LabChem.AccessionInstitutionIEN,Chem.PatientLabChem.AccessionInstitutionIEN"
-* specimen -> "Chem.LabChem.ShortAccessionNumber,Chem.PatientLabChem.ShortAccessionNumber"
-* issued -> "Chem.LabChem.LabChemCompleteDateTime,Chem.LabPanel.LabChemCompleteDateTime,Chem.OrderedLabPanel.LabChemCompleteDateTime,Chem.PatientLabChem.LabChemCompleteDateTime"
-* status -> "Chem.LabChem.LabChemCompleteDateTime,Chem.LabPanel.LabChemCompleteDateTime,Chem.OrderedLabPanel.LabChemCompleteDateTime,Chem.PatientLabChem.LabChemCompleteDateTime"
-* status -> "Chem.LabChem.LabChemCompleteDateTime,Chem.LabPanel.LabChemCompleteDateTime,Chem.OrderedLabPanel.LabChemCompleteDateTime,Chem.PatientLabChem.LabChemCompleteDateTime"
-* subject -> "Micro.AntibioticSensitivity.LRDFN,Micro.AntibioticSensitivityComment.LRDFN,Micro.BacteriologyReports.LRDFN,Micro.MicroAntibioticLevel.LRDFN,Micro.MicroAudit.LRDFN,Micro.Microbiology.LRDFN,Micro.MicroOrderedTest.LRDFN,Micro.MicroSterilityResults.LRDFN,Micro.MycobacteriologyReports.LRDFN,Micro.Mycology.LRDFN,Micro.MycologyReports.LRDFN,Micro.Parasitology.LRDFN,Micro.ParasitologyReports.LRDFN,Micro.ParasitologyStage.LRDFN,Micro.Virology.LRDFN,Micro.VirologyReports.LRDFN,Pathology.Autopsy.LRDFN,Pathology.CytoOrganTissueFunction.StaffIEN,SStaff.SMicroOrderedTest.LRDFN"
+* performer[va-at] -> "Chem.LabChem.AccessionInstitutionIEN\nChem.PatientLabChem.AccessionInstitutionIEN"
+* specimen -> "Chem.LabChem.ShortAccessionNumber\nChem.PatientLabChem.ShortAccessionNumber"
+* issued -> "Chem.LabChem.LabChemCompleteDateTime\nChem.LabPanel.LabChemCompleteDateTime\nChem.OrderedLabPanel.LabChemCompleteDateTime\nChem.PatientLabChem.LabChemCompleteDateTime"
+* status -> "Chem.LabChem.LabChemCompleteDateTime\nChem.LabPanel.LabChemCompleteDateTime\nChem.OrderedLabPanel.LabChemCompleteDateTime\nChem.PatientLabChem.LabChemCompleteDateTime"
+* status -> "Chem.LabChem.LabChemCompleteDateTime\nChem.LabPanel.LabChemCompleteDateTime\nChem.OrderedLabPanel.LabChemCompleteDateTime\nChem.PatientLabChem.LabChemCompleteDateTime"
+* subject -> "Micro.AntibioticSensitivity.LRDFN\nMicro.AntibioticSensitivityComment.LRDFN\nMicro.BacteriologyReports.LRDFN\nMicro.MicroAntibioticLevel.LRDFN\nMicro.MicroAudit.LRDFN\nMicro.Microbiology.LRDFN\nMicro.MicroOrderedTest.LRDFN\nMicro.MicroSterilityResults.LRDFN\nMicro.MycobacteriologyReports.LRDFN\nMicro.Mycology.LRDFN\nMicro.MycologyReports.LRDFN\nMicro.Parasitology.LRDFN\nMicro.ParasitologyReports.LRDFN\nMicro.ParasitologyStage.LRDFN\nMicro.Virology.LRDFN\nMicro.VirologyReports.LRDFN\nPathology.Autopsy.LRDFN\nPathology.CytoOrganTissueFunction.StaffIEN\nSStaff.SMicroOrderedTest.LRDFN"
 
 Mapping: sda-to-LabObservationChemhemtoxriaserObservation
 Id: sda
 Title: "Summary Document Architecure (SDA)"
 Source: LabObservationChemhemtoxriaserObservation
-* effectiveDateTime -> "LabOrder.TestItemCode[LabTestItem].Description,LabOrder.PerformedAt[Organization].Description"
+* effectiveDateTime -> "LabOrder.TestItemCode[LabTestItem].Description\nLabOrder.PerformedAt[Organization].Description"
 * note -> "LabOrder.Result.Comments"
 * performer[va-at] -> "LabOrder.Result.EnteredAt"
 * performer[va-by] -> "LabOrder.Result.VerifiedBy"
 * specimen -> "LabOrder.Extension[ResultExtension].GroupName"
-* issued -> "LabOrder.Result.ResultStatus,LabOrder.Result.ResultTime,LabOrder.ResultItem[LabResultItem].TestItemStatus"
-* status -> "LabOrder.Result.ResultStatus,LabOrder.Result.ResultTime,LabOrder.ResultItem[LabResultItem].TestItemStatus"
-* status -> "LabOrder.Result.ResultStatus,LabOrder.Result.ResultTime,LabOrder.ResultItem[LabResultItem].TestItemStatus"
+* issued -> "LabOrder.Result.ResultStatus\nLabOrder.Result.ResultTime\nLabOrder.ResultItem[LabResultItem].TestItemStatus"
+* status -> "LabOrder.Result.ResultStatus\nLabOrder.Result.ResultTime\nLabOrder.ResultItem[LabResultItem].TestItemStatus"
+* status -> "LabOrder.Result.ResultStatus\nLabOrder.Result.ResultTime\nLabOrder.ResultItem[LabResultItem].TestItemStatus"
 * subject -> "Patient.Extension[PatientExtension].VeteranLrdfn"
 
 Mapping: vpr-to-LabObservationChemhemtoxriaserObservation
 Id: vpr
 Title: "Virtual Patient Record XML (VPR)"
 Source: LabObservationChemhemtoxriaserObservation
-* effectiveDateTime -> "panel.collected,accession.collected,accession.test,lab.collected"
-* note -> "panel.comment,accession.comment,lab.comment"
-* performer[va-at] -> "panel.facility (>4-.01),panel.facility (>4-99),accession.facility (>4-.01),accession.facility (>4-99),lab.facility (>4-.01),lab.facility (>4-99)"
-* specimen -> "panel.groupName,accession.groupName,accession.name (>68-.01),lab.groupName"
-* issued -> "panel.resulted,panel.status,accession.resulted,accession.status,lab.resulted,lab.status"
-* status -> "panel.resulted,panel.status,accession.resulted,accession.status,lab.resulted,lab.status"
-* status -> "panel.resulted,panel.status,accession.resulted,accession.status,lab.resulted,lab.status"
+* effectiveDateTime -> "panel.collected\naccession.collected\naccession.test\nlab.collected"
+* note -> "panel.comment\naccession.comment\nlab.comment"
+* performer[va-at] -> "panel.facility (>4-.01)\npanel.facility (>4-99)\naccession.facility (>4-.01)\naccession.facility (>4-99)\nlab.facility (>4-.01)\nlab.facility (>4-99)"
+* specimen -> "panel.groupName\naccession.groupName\naccession.name (>68-.01)\nlab.groupName"
+* issued -> "panel.resulted\npanel.status\naccession.resulted\naccession.status\nlab.resulted\nlab.status"
+* status -> "panel.resulted\npanel.status\naccession.resulted\naccession.status\nlab.resulted\nlab.status"
+* status -> "panel.resulted\npanel.status\naccession.resulted\naccession.status\nlab.resulted\nlab.status"
 * subject -> "demographics.lrdfn"

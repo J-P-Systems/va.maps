@@ -45,5 +45,5 @@ Title: "Summary Document Architecure (SDA)"
 Source: ObservationImagingResultRadNuc
 * status -> "Documents.DocumentCompletionStatus"
 * subject -> "Documents.DocumentName"
-* issued -> "Documents.AuthorizationTime,Documents.ToTime"
+* issued -> "Documents.AuthorizationTime\nDocuments.ToTime"
 * performer -> "Documents.Extension[DocumentExtension].CareProviders"

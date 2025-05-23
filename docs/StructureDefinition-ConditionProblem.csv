@@ -84,7 +84,10 @@ cp-16-349:If (9000011-1.07) is Not Null then fixed value #resolved {true}","349:
 ","unconfirmed | provisional | differential | confirmed | refuted | entered-in-error","The verification status to support the clinical status of the condition.","verificationStatus is not required.  For example, when a patient has abdominal pain in the ED, there is not likely going to be a verification status.
 The data type is CodeableConcept because verificationStatus has some clinical judgment involved, such that there might need to be more specificity than the required FHIR value set allows. For example, a SNOMED coding might allow for additional specificity.","","","","","","","","",,"required","see mapping [VF_problemVerificationStatus](ConceptMap-VF-problemVerificationStatus.html)","http://va.gov/fhir/ValueSet/problemVerificationStatus","",,,,"Condition.verificationStatus",0,1,"con-3
 con-5","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","611: terminologyMaps using VF_problemVerificationStatus on PROBLEM - CONDITION (9000011-1.02)","Outpat.ProblemList.ProblemListCondition","Problem.Extension[ProblemExtension].IsRemoved,Problem.Extension[ProblemExtension].IsVerified,Problem.Extension[ProblemExtension].Removed","problem.removed,problem.unverified","Event.status","< 410514004 |Finding context value|","PRB-13","Observation ACT
+","611: terminologyMaps using VF_problemVerificationStatus on PROBLEM - CONDITION (9000011-1.02)","Outpat.ProblemList.ProblemListCondition","Problem.Extension[ProblemExtension].IsRemoved
+Problem.Extension[ProblemExtension].IsVerified
+Problem.Extension[ProblemExtension].Removed","problem.removed
+problem.unverified","Event.status","< 410514004 |Finding context value|","PRB-13","Observation ACT
 .inboundRelationship[typeCode=COMP].source[classCode=OBS, code=""verificationStatus"", moodCode=EVN].value","FiveWs.status","408729009"
 "Condition.category","Condition.category","","","",1,*,"Y","","","CodeableConcept {[]} {[]}
 ","category codes","A category assigned to the condition.","The categorization is often highly contextual and may appear poorly differentiated or not very useful in other contexts.","","","","","","","","",,"extensible","A category assigned to the condition.","http://hl7.org/fhir/ValueSet/condition-category","","pattern:$this}
@@ -135,7 +138,8 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","C*E.1-8, C*E.10-22","union(., ./translation)"
 "Condition.code.coding:va-icd","Condition.code.coding","va-icd","","",0,1,"Y","","Y","Coding {[]} {[]}
 ","Code defined by a terminology system","A reference to a code defined by a terminology system.","Codes may be defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the HL7 v3 Core Principles for more information.  Ordering of codings is undefined and SHALL NOT be used to infer meaning. Generally, at most only one of the coding values will be labeled as UserSelected = true.","Allows for alternative encodings within a code system, and translations to other code systems.","","","","","","","",,,,,"",,,,"CodeableConcept.coding",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","365: source value based on PROBLEM - DIAGNOSIS > ICD DIAGNOSIS (9000011-.01 > 80-)","Outpat.ProblemList.ICDIEN","problem.icd (>80-.01),problem.icdd (>80-68)","C*E.1-8, C*E.10-22","union(., ./translation)"
+","365: source value based on PROBLEM - DIAGNOSIS > ICD DIAGNOSIS (9000011-.01 > 80-)","Outpat.ProblemList.ICDIEN","problem.icd (>80-.01)
+problem.icdd (>80-68)","C*E.1-8, C*E.10-22","union(., ./translation)"
 "Condition.code.coding:va-icd.id","Condition.code.coding.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"","","n/a"
 "Condition.code.coding:va-icd.extension","Condition.code.coding.extension","","extensions
@@ -152,7 +156,9 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "Condition.code.coding:va-icd.code","Condition.code.coding.code","","","",0,1,"Y","","Y","code {[]} {[]}
 ","Symbol in syntax defined by the system","A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination).","","Need to refer to a particular code in the system.","","","","","","","",,,,,"",,,,"Coding.code",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","365-2: source value based on PROBLEM - DIAGNOSIS > ICD DIAGNOSIS - CODE NUMBER (9000011-.01 > 80-.01)","Outpat.ProblemList.ICDIEN
-Dim.ICD10.ICD10Code,Dim.ICD9.ICD9Code","problem.icd (>80-.01),problem.icdd (>80-68)","C*E.1","./code"
+Dim.ICD10.ICD10Code
+Dim.ICD9.ICD9Code","problem.icd (>80-.01)
+problem.icdd (>80-68)","C*E.1","./code"
 "Condition.code.coding:va-icd.display","Condition.code.coding.display","","","",0,1,"","","Y","string {[]} {[]}
 ","Representation defined by the system","A representation of the meaning of the code in the system, following the rules of the system.","","Need to be able to carry a human-readable meaning of the code for readers that do not know  the system.","","","","","","","",,,,,"",,,,"Coding.display",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","C*E.2 - but note this is not well followed","CV.displayName"
@@ -177,7 +183,8 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","C*E.7","./codeSystemVersion"
 "Condition.code.coding:va-sct.code","Condition.code.coding.code","","","",0,1,"Y","","Y","code {[]} {[]}
 ","Symbol in syntax defined by the system","A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination).","","Need to refer to a particular code in the system.","","","","","","","",,,,,"",,,,"Coding.code",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","366: source value based on PROBLEM - SNOMED CT CONCEPT CODE (9000011-80001)","Outpat.ProblemList.SNOMEDCTConceptCode","Problem.Extension[ProblemExtension].Problem","problem.sctc,problem.sctt","C*E.1","./code"
+","366: source value based on PROBLEM - SNOMED CT CONCEPT CODE (9000011-80001)","Outpat.ProblemList.SNOMEDCTConceptCode","Problem.Extension[ProblemExtension].Problem","problem.sctc
+problem.sctt","C*E.1","./code"
 "Condition.code.coding:va-sct.display","Condition.code.coding.display","","","",0,1,"","","Y","string {[]} {[]}
 ","Representation defined by the system","A representation of the meaning of the code in the system, following the rules of the system.","","Need to be able to carry a human-readable meaning of the code for readers that do not know  the system.","","","","","","","",,,,,"",,,,"Coding.display",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","C*E.2 - but note this is not well followed","CV.displayName"
@@ -203,7 +210,8 @@ Age {[]} {[]}Period {[]} {[]}Range {[]} {[]}string {[]} {[]}","Estimated or actu
 ","Event.occurrence[x]","PRB-16",".effectiveTime.low or .inboundRelationship[typeCode=SUBJ].source[classCode=OBS, moodCode=EVN, code=""age at onset""].value","FiveWs.init"
 "Condition.onset[x]:onsetDateTime","Condition.onset[x]","onsetDateTime","","",0,1,"Y","","Y","dateTime {[]} {[]}
 ","Estimated or actual date,  date-time, or age","Estimated or actual date or date-time  the condition began, in the opinion of the clinician.","Age is generally used when the patient reports an age at which the Condition began to occur.","","","","","","","","",,,,,"",,,,"Condition.onset[x]",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","369: source value based on PROBLEM - DATE OF ONSET (9000011-.13)","Outpat.ProblemList.OnsetDateTime","Problem.Extension[ProblemExtension].FromTime,Problem.Extension[ProblemExtension].OnsetDate","problem.onset","Event.occurrence[x]","PRB-16",".effectiveTime.low or .inboundRelationship[typeCode=SUBJ].source[classCode=OBS, moodCode=EVN, code=""age at onset""].value","FiveWs.init"
+","369: source value based on PROBLEM - DATE OF ONSET (9000011-.13)","Outpat.ProblemList.OnsetDateTime","Problem.Extension[ProblemExtension].FromTime
+Problem.Extension[ProblemExtension].OnsetDate","problem.onset","Event.occurrence[x]","PRB-16",".effectiveTime.low or .inboundRelationship[typeCode=SUBJ].source[classCode=OBS, moodCode=EVN, code=""age at onset""].value","FiveWs.init"
 "Condition.abatement[x]","Condition.abatement[x]","","","",0,1,"Y","","","dateTime {[]} {[]}
 Age {[]} {[]}Period {[]} {[]}Range {[]} {[]}string {[]} {[]}","When in resolution/remission","The date or estimated date that the condition resolved or went into remission. This is called ""abatement"" because of the many overloaded connotations associated with ""remission"" or ""resolution"" - Conditions are never really resolved, but they can abate.","There is no explicit distinction between resolution and remission because in many cases the distinction is not clear. Age is generally used when the patient reports an age at which the Condition abated.  If there is no abatement element, it is unknown whether the condition has resolved or entered remission; applications and users should generally assume that the condition is still valid.  When abatementString exists, it implies the condition is abated.","","","","","","","","",,,,,"","type:$this}
 ","",,"open","Condition.abatement[x]",0,1,"con-4

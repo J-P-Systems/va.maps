@@ -53,33 +53,33 @@ Source: SmokingStatusObservation
 * code -> "HF.HealthFactor.HealthFactorTypeIEN\nDim.HealthFactorType.CategoryHealthFactorTypeIEN"
 * code -> "HF.HealthFactor.HealthFactorTypeIEN\nDim.HealthFactorType.CategoryHealthFactorTypeIEN"
 * subject -> "HF.HealthFactor.PatientIEN"
-* encounter -> "HF.HealthFactor.VisitDateTime,HF.HealthFactor.VisitIEN"
+* encounter -> "HF.HealthFactor.VisitDateTime\nHF.HealthFactor.VisitIEN"
 * effectiveDateTime -> "HF.HealthFactor.EventDateTime"
 * performer -> "HF.HealthFactor.EncounterStaffIEN"
-* valueCodeableConcept -> "HF.HealthFactor.HealthFactorTypeIEN\nDim.HealthFactorType.HealthFactorCategory,Dim.HealthFactorType.HealthFactorType"
-* valueCodeableConcept.text -> "HF.HealthFactor.HealthFactorTypeIEN\nDim.HealthFactorType.HealthFactorCategory,Dim.HealthFactorType.HealthFactorType"
+* valueCodeableConcept -> "HF.HealthFactor.HealthFactorTypeIEN\nDim.HealthFactorType.HealthFactorCategory\nDim.HealthFactorType.HealthFactorType"
+* valueCodeableConcept.text -> "HF.HealthFactor.HealthFactorTypeIEN\nDim.HealthFactorType.HealthFactorCategory\nDim.HealthFactorType.HealthFactorType"
 * note.text -> "HF.HealthFactor.Comments"
 
 Mapping: sda-to-SmokingStatusObservation
 Id: sda
 Title: "Summary Document Architecure (SDA)"
 Source: SmokingStatusObservation
-* code -> "SocialHistory.SocialHabit,SocialHistory.SocialHabitCategory,SocialHistory.Extension[SocialHistoryExtension].Category,SocialHistory.Extension[SocialHistoryExtension].QuantityLabel,SocialHistory.SocialHabitCategory.Description,Vaccination.OrderItem,FamilyHistory.Diagnosis,FamilyHistory.Extension[FamilyHistoryExtension].Category,FamilyHistory.Diagnosis.Description"
-* code -> "SocialHistory.SocialHabit,SocialHistory.SocialHabitCategory,SocialHistory.Extension[SocialHistoryExtension].Category,SocialHistory.Extension[SocialHistoryExtension].QuantityLabel,SocialHistory.SocialHabitCategory.Description,Vaccination.OrderItem,FamilyHistory.Diagnosis,FamilyHistory.Extension[FamilyHistoryExtension].Category,FamilyHistory.Diagnosis.Description"
-* encounter -> "SocialHistory.EncounterNumber,SocialHistory.EnteredAt,SocialHistory.EnteredBy,SocialHistory.EnteredOn,Vaccination.EncounterNumber,Vaccination.EnteredAt,Vaccination.EnteredBy,Vaccination.EnteredOn,Vaccination.Administration.AdministeredAtLocation,FamilyHistory.EncounterNumber,FamilyHistory.EnteredAt,FamilyHistory.EnteredBy,FamilyHistory.EnteredOn"
-* effectiveDateTime -> "SocialHistory.FromTime,Vaccination.FromTime,Vaccination.ToTime,FamilyHistory.FromTime"
+* code -> "SocialHistory.SocialHabit\nSocialHistory.SocialHabitCategory\nSocialHistory.Extension[SocialHistoryExtension].Category\nSocialHistory.Extension[SocialHistoryExtension].QuantityLabel\nSocialHistory.SocialHabitCategory.Description\nVaccination.OrderItem\nFamilyHistory.Diagnosis\nFamilyHistory.Extension[FamilyHistoryExtension].Category\nFamilyHistory.Diagnosis.Description"
+* code -> "SocialHistory.SocialHabit\nSocialHistory.SocialHabitCategory\nSocialHistory.Extension[SocialHistoryExtension].Category\nSocialHistory.Extension[SocialHistoryExtension].QuantityLabel\nSocialHistory.SocialHabitCategory.Description\nVaccination.OrderItem\nFamilyHistory.Diagnosis\nFamilyHistory.Extension[FamilyHistoryExtension].Category\nFamilyHistory.Diagnosis.Description"
+* encounter -> "SocialHistory.EncounterNumber\nSocialHistory.EnteredAt\nSocialHistory.EnteredBy\nSocialHistory.EnteredOn\nVaccination.EncounterNumber\nVaccination.EnteredAt\nVaccination.EnteredBy\nVaccination.EnteredOn\nVaccination.Administration.AdministeredAtLocation\nFamilyHistory.EncounterNumber\nFamilyHistory.EnteredAt\nFamilyHistory.EnteredBy\nFamilyHistory.EnteredOn"
+* effectiveDateTime -> "SocialHistory.FromTime\nVaccination.FromTime\nVaccination.ToTime\nFamilyHistory.FromTime"
 * performer -> "Vaccination.Administration.AdministeringProvider"
-* valueCodeableConcept -> "SocialHistory.SocialHabit,SocialHistory.SocialHabitCategory,SocialHistory.Extension[SocialHistoryExtension].Category,SocialHistory.Extension[SocialHistoryExtension].QuantityLabel,SocialHistory.SocialHabitCategory.Description,Vaccination.OrderItem,FamilyHistory.Diagnosis,FamilyHistory.Extension[FamilyHistoryExtension].Category,FamilyHistory.Diagnosis.Description\nVaccination.OrderItem[Order].Description"
-* valueCodeableConcept.text -> "SocialHistory.SocialHabit,SocialHistory.SocialHabitCategory,SocialHistory.Extension[SocialHistoryExtension].Category,SocialHistory.Extension[SocialHistoryExtension].QuantityLabel,SocialHistory.SocialHabitCategory.Description,Vaccination.OrderItem,FamilyHistory.Diagnosis,FamilyHistory.Extension[FamilyHistoryExtension].Category,FamilyHistory.Diagnosis.Description\nVaccination.OrderItem[Order].Description"
-* note.text -> "SocialHistory.SocialHabitComments,Vaccination.Administration.RefusalReason,FamilyHistory.NoteText"
+* valueCodeableConcept -> "SocialHistory.SocialHabit\nSocialHistory.SocialHabitCategory\nSocialHistory.Extension[SocialHistoryExtension].Category\nSocialHistory.Extension[SocialHistoryExtension].QuantityLabel\nSocialHistory.SocialHabitCategory.Description\nVaccination.OrderItem\nFamilyHistory.Diagnosis\nFamilyHistory.Extension[FamilyHistoryExtension].Category\nFamilyHistory.Diagnosis.Description\nVaccination.OrderItem[Order].Description"
+* valueCodeableConcept.text -> "SocialHistory.SocialHabit\nSocialHistory.SocialHabitCategory\nSocialHistory.Extension[SocialHistoryExtension].Category\nSocialHistory.Extension[SocialHistoryExtension].QuantityLabel\nSocialHistory.SocialHabitCategory.Description\nVaccination.OrderItem\nFamilyHistory.Diagnosis\nFamilyHistory.Extension[FamilyHistoryExtension].Category\nFamilyHistory.Diagnosis.Description\nVaccination.OrderItem[Order].Description"
+* note.text -> "SocialHistory.SocialHabitComments\nVaccination.Administration.RefusalReason\nFamilyHistory.NoteText"
 
 Mapping: vpr-to-SmokingStatusObservation
 Id: vpr
 Title: "Virtual Patient Record XML (VPR)"
 Source: SmokingStatusObservation
-* code -> "healthFactor.category (>9999999.64-.03),healthFactor.name (>9999999.64-.01)"
-* code -> "healthFactor.category (>9999999.64-.03),healthFactor.name (>9999999.64-.01)"
-* encounter -> "healthFactor.encounter,healthFactor.facility (>9000010-.06),healthFactor.recorded (>9000010-.01)"
-* valueCodeableConcept -> "healthFactor.category (>9999999.64-.03),healthFactor.name (>9999999.64-.01)"
-* valueCodeableConcept.text -> "healthFactor.category (>9999999.64-.03),healthFactor.name (>9999999.64-.01)"
+* code -> "healthFactor.category (>9999999.64-.03)\nhealthFactor.name (>9999999.64-.01)"
+* code -> "healthFactor.category (>9999999.64-.03)\nhealthFactor.name (>9999999.64-.01)"
+* encounter -> "healthFactor.encounter\nhealthFactor.facility (>9000010-.06)\nhealthFactor.recorded (>9000010-.01)"
+* valueCodeableConcept -> "healthFactor.category (>9999999.64-.03)\nhealthFactor.name (>9999999.64-.01)"
+* valueCodeableConcept.text -> "healthFactor.category (>9999999.64-.03)\nhealthFactor.name (>9999999.64-.01)"
 * note.text -> "healthFactor.comment"

@@ -24,7 +24,7 @@ Mapping: cdw-to-ProcedureSurgeryLocationOR
 Id: cdw
 Title: "Clinical Data Warehouse (CDW)"
 Source: ProcedureSurgeryLocationOR
-* name -> "Dim.OperatingRoom.OperatingRoomLocationIEN\nDim.Location.LocationName,Dim.Location.LocationName"
+* name -> "Dim.OperatingRoom.OperatingRoomLocationIEN\nDim.Location.LocationName\nDim.Location.LocationName"
 * telecom.value -> "Dim.OperatingRoom.Telephone"
 * status -> "Dim.OperatingRoom.InactiveFlag"
 * partOf -> "Dim.OperatingRoom.OperatingRoomLocationIEN\nDim.Location.PrincipalLocationIEN"

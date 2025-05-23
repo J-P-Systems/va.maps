@@ -26,6 +26,6 @@ Mapping: cdw-to-DebtPortalAccount
 Id: cdw
 Title: "Clinical Data Warehouse (CDW)"
 Source: DebtPortalAccount
-* identifier.value -> "IB.AccountsReceivable.PatientIEN,IB.AccountsReceivableComment.PatientIEN,IB.AccountsReceivableDescription.PatientIEN,IB.AccountsReceivableFiscalYear.PatientIEN,IB.AccountsReceivableRepayDate.PatientIEN,IB.AccountsReceivableTCSP.PatientIEN,IB.AccountsReceivableTCSP.PatientSID"
-* subject -> "IB.AccountsReceivable.PatientIEN,IB.AccountsReceivableComment.PatientIEN,IB.AccountsReceivableDescription.PatientIEN,IB.AccountsReceivableFiscalYear.PatientIEN,IB.AccountsReceivableRepayDate.PatientIEN,IB.AccountsReceivableTCSP.PatientIEN,IB.AccountsReceivableTCSP.PatientSID"
+* identifier.value -> "IB.AccountsReceivable.PatientIEN\nIB.AccountsReceivableComment.PatientIEN\nIB.AccountsReceivableDescription.PatientIEN\nIB.AccountsReceivableFiscalYear.PatientIEN\nIB.AccountsReceivableRepayDate.PatientIEN\nIB.AccountsReceivableTCSP.PatientIEN\nIB.AccountsReceivableTCSP.PatientSID"
+* subject -> "IB.AccountsReceivable.PatientIEN\nIB.AccountsReceivableComment.PatientIEN\nIB.AccountsReceivableDescription.PatientIEN\nIB.AccountsReceivableFiscalYear.PatientIEN\nIB.AccountsReceivableRepayDate.PatientIEN\nIB.AccountsReceivableTCSP.PatientIEN\nIB.AccountsReceivableTCSP.PatientSID"
 * extension[http://va.gov/fhir/StructureDefinition/account-statementGenerationDay].valueInteger -> "IB.AccountsReceivable.ARDebtorIEN\nDim.ARDebtor.StatementGeneratedDay"

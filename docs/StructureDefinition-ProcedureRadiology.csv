@@ -129,7 +129,16 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "Procedure.subject","Procedure.subject","","patient
 ","",1,1,"Y","","Y","Reference {[]} {[CanonicalType[http://va.gov/fhir/StructureDefinition/Patient]]}
 ","Who the procedure was performed on","The person, animal or group on which the procedure was performed.","","","","","","","","","",,,,,"",,,,"Procedure.subject",1,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-pr-18-1510:If 70-2 > 70.02 then reference /Patient based on (70-.01) {true}","1510: reference based on RAD/NUC MED PATIENT - NAME (70-.01) if 70-2 > 70.02","Patient.RadiologyPatient.PatientIEN,Rad.RadiologyExam.PatientIEN,Rad.RadiologyExamActivityLog.PatientIEN,Rad.RadiologyExamContrastMedia.PatientIEN,Rad.RadiologyExamCPTModifier.PatientIEN,Rad.RadiologyExamMedication.PatientIEN,Rad.RadiologyExamSecondaryDiagnosticCode.PatientIEN,Rad.RadiologyExamStatusList.PatientIEN,Rad.RadiologyFilmRegistry.PatientIEN,Rad.RadiologyRegisteredExam.PatientIEN","Event.subject",".participation[typeCode=SBJ].role","FiveWs.subject[x]","FiveWs.subject","PID-3"
+pr-18-1510:If 70-2 > 70.02 then reference /Patient based on (70-.01) {true}","1510: reference based on RAD/NUC MED PATIENT - NAME (70-.01) if 70-2 > 70.02","Patient.RadiologyPatient.PatientIEN
+Rad.RadiologyExam.PatientIEN
+Rad.RadiologyExamActivityLog.PatientIEN
+Rad.RadiologyExamContrastMedia.PatientIEN
+Rad.RadiologyExamCPTModifier.PatientIEN
+Rad.RadiologyExamMedication.PatientIEN
+Rad.RadiologyExamSecondaryDiagnosticCode.PatientIEN
+Rad.RadiologyExamStatusList.PatientIEN
+Rad.RadiologyFilmRegistry.PatientIEN
+Rad.RadiologyRegisteredExam.PatientIEN","Event.subject",".participation[typeCode=SBJ].role","FiveWs.subject[x]","FiveWs.subject","PID-3"
 "Procedure.encounter","Procedure.encounter","","","",0,1,"Y","","Y","Reference {[]} {[CanonicalType[http://va.gov/fhir/StructureDefinition/EncounterOutpatient]]}
 ","Encounter created as part of","The Encounter during which this Procedure was created or performed or to which the creation of this record is tightly associated.","This will typically be the encounter the event occurred within, but some activities may be initiated prior to or after the official completion of an encounter but still be tied to the context of the encounter.","","","","","","","","",,,,,"",,,,"Procedure.encounter",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","1511: reference based on REGISTERED EXAMS - EXAMINATIONS > EXAMINATIONS - VISIT (70.02-50 > 70.03-27)","Rad.RadiologyExam.VisitIEN","Event.context",".inboundRelationship[typeCode=COMP].source[classCode=ENC, moodCode=EVN]","FiveWs.context","PV1-19"
@@ -141,7 +150,15 @@ Period {[]} {[]}string {[]} {[]}Age {[]} {[]}Range {[]} {[]}","When the procedur
 "Procedure.performed[x]:performedDateTime","Procedure.performed[x]","performedDateTime","","",0,1,"Y","","Y","dateTime {[]} {[]}
 ","When the procedure was performed","Estimated or actual date, date-time, period, or age when the procedure was performed.  Allows a period to support complex procedures that span more than one date, and also allows for the length of the procedure to be captured.","Age is generally used when the patient reports an age at which the procedure was performed. Range is generally used when the patient reports an age range when the procedure was performed, such as sometime between 20-25 years old.  dateTime supports a range of precision due to some procedures being reported as past procedures that might not have millisecond precision while other procedures performed and documented during the encounter might have more precise UTC timestamps with timezone.","","","","","","","","",,,,,"",,,,"Procedure.performed[x]",0,1,"us-core-7
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","1512: source value based on REGISTERED EXAMS - EXAM DATE (70.02-.01)","Rad.RadiologyExam.ExamDateTime,Rad.RadiologyExamActivityLog.ExamDateTime,Rad.RadiologyExamContrastMedia.ExamDateTime,Rad.RadiologyExamCPTModifier.ExamDateTime,Rad.RadiologyExamMedication.ExamDateTime,Rad.RadiologyExamSecondaryDiagnosticCode.ExamDateTime,Rad.RadiologyExamStatusList.ExamDateTime,Rad.RadiologyExamTechnologist.ExamDateTime,Rad.RadiologyRegisteredExam.ExamDateTime","RadOrder.Result.FromTime","Event.occurrence[x]",".effectiveTime","FiveWs.done[x]","OBR-7"
+","1512: source value based on REGISTERED EXAMS - EXAM DATE (70.02-.01)","Rad.RadiologyExam.ExamDateTime
+Rad.RadiologyExamActivityLog.ExamDateTime
+Rad.RadiologyExamContrastMedia.ExamDateTime
+Rad.RadiologyExamCPTModifier.ExamDateTime
+Rad.RadiologyExamMedication.ExamDateTime
+Rad.RadiologyExamSecondaryDiagnosticCode.ExamDateTime
+Rad.RadiologyExamStatusList.ExamDateTime
+Rad.RadiologyExamTechnologist.ExamDateTime
+Rad.RadiologyRegisteredExam.ExamDateTime","RadOrder.Result.FromTime","Event.occurrence[x]",".effectiveTime","FiveWs.done[x]","OBR-7"
 "Procedure.recorder","Procedure.recorder","","","",0,1,"","","Y","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/Patient], CanonicalType[http://hl7.org/fhir/StructureDefinition/RelatedPerson], CanonicalType[http://hl7.org/fhir/StructureDefinition/Practitioner], CanonicalType[http://hl7.org/fhir/StructureDefinition/PractitionerRole]]}
 ","Who recorded the procedure","Individual who recorded the record and takes responsibility for its content.","","","","","","","","","",,,,,"",,,,"Procedure.recorder",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".participation[typeCode=AUT].role","FiveWs.author"
@@ -175,7 +192,8 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "Procedure.location","Procedure.location","","","",0,1,"Y","","Y","Reference {[]} {[CanonicalType[http://va.gov/fhir/StructureDefinition/Location]]}
 ","Where the procedure happened","The location where the procedure actually happened.  E.g. a newborn at home, a tracheostomy at a restaurant.","","Ties a procedure to where the records are likely kept.","","","","","","","",,,,,"",,,,"Procedure.location",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","1514: reference based on REGISTERED EXAMS - IMAGING LOCATION > IMAGING LOCATIONS - LOCATION (70.02-4 > 79.1-.01)","Rad.RadiologyRegisteredExam.RadiologyLocationIEN
-Dim.RadiologyLocation.LocationIEN","RadOrder.Result.EnteredAt,RadOrder.Result.PerformedAt",".participation[typeCode=LOC].role[classCode=SDLOC]","FiveWs.where[x]"
+Dim.RadiologyLocation.LocationIEN","RadOrder.Result.EnteredAt
+RadOrder.Result.PerformedAt",".participation[typeCode=LOC].role[classCode=SDLOC]","FiveWs.where[x]"
 "Procedure.reasonCode","Procedure.reasonCode","","","",0,*,"","","Y","CodeableConcept {[]} {[]}
 ","Coded reason procedure performed","The coded reason why the procedure was performed. This may be a coded entity of some type, or may simply be present as text.","Use Procedure.reasonCode when a code sufficiently describes the reason.  Use Procedure.reasonReference when referencing a resource, which allows more information to be conveyed, such as onset date. Procedure.reasonCode and Procedure.reasonReference are not meant to be duplicative.  For a single reason, either Procedure.reasonCode or Procedure.reasonReference can be used.  Procedure.reasonCode may be a summary code, or Procedure.reasonReference may be used to reference a very precise definition of the reason using Condition | Observation | Procedure | DiagnosticReport | DocumentReference.  Both Procedure.reasonCode and Procedure.reasonReference can be used if they are describing different reasons for the procedure.","","","","","","","","",,"example","A code that identifies the reason a procedure is  required.","http://hl7.org/fhir/ValueSet/procedure-reason","",,,,"Procedure.reasonCode",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","Event.reasonCode",".reasonCode","FiveWs.why[x]"

@@ -65,4 +65,4 @@ Source: DebtPortalPatient
 * contact.address.postalCode -> "IB.AccountsReceivable.ARDebtorIEN"
 * contact.telecom.value -> "IB.AccountsReceivable.ARDebtorIEN"
 * contact.address.country -> "IB.AccountsReceivable.ARDebtorIEN\nDim.ARDebtor.ForeignCountryCode"
-* name.text -> "IB.AccountsReceivable.ARDebtorIEN\nDim.ARDebtor.InstitutionIEN,Dim.ARDebtor.InsuranceCompanyIEN,Dim.ARDebtor.PatientIEN,Dim.ARDebtor.StaffIEN,Dim.ARDebtor.VendorIEN"
+* name.text -> "IB.AccountsReceivable.ARDebtorIEN\nDim.ARDebtor.InstitutionIEN\nDim.ARDebtor.InsuranceCompanyIEN\nDim.ARDebtor.PatientIEN\nDim.ARDebtor.StaffIEN\nDim.ARDebtor.VendorIEN"

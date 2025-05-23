@@ -66,15 +66,18 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","n/a","FiveWs.status"
 "Location.name","Location.name","","","",1,1,"Y","","Y","string {[]} {[]}
 ","Name of the location as used by humans","Name of the location as used by humans. Does not need to be unique.","If the name of a location changes, consider putting the old name in the alias column so that it can still be located through searches.","","","","","","","","",,,,,"",,,,"Location.name",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","756: source value based on HOSPITAL LOCATION - NAME (44-.01)","Dim.Location.LocationName,Dim.Location.LocationName",".name"
+","756: source value based on HOSPITAL LOCATION - NAME (44-.01)","Dim.Location.LocationName
+Dim.Location.LocationName",".name"
 "Location.alias","Location.alias","","","",0,*,"Y","","","string {[]} {[]}
 ","A list of alternate names that the location is known as, or was known as, in the past","A list of alternate names that the location is known as, or was known as, in the past.","There are no dates associated with the alias/historic names, as this is not intended to track when names were used, but to assist in searching so that older names can still result in identifying the location.","Over time locations and organizations go through many changes and can be known by different names.
 
 For searching knowing previous names that the location was known by can be very useful.","","","","","","","",,,,,"",,,,"Location.alias",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","1276: source value based on HOSPITAL LOCATION - ABBREVIATION (44-1)","1277: source value based on HOSPITAL LOCATION - SYNONYM (44-13)","Dim.Location.LocationAbbreviation,Dim.Location.LocationAbbreviation",".name"
+","1276: source value based on HOSPITAL LOCATION - ABBREVIATION (44-1)","1277: source value based on HOSPITAL LOCATION - SYNONYM (44-13)","Dim.Location.LocationAbbreviation
+Dim.Location.LocationAbbreviation",".name"
 "Location.description","Location.description","","","",0,1,"Y","","Y","string {[]} {[]}
 ","Additional details about the location that could be displayed as further information to identify the location beyond its name","Description of the Location, which helps in finding or referencing the place.","","Humans need additional information to verify a correct location has been identified.","","","","","","","",,,,,"",,,,"Location.description",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","1279: source value based on HOSPITAL LOCATION - PATIENT FRIENDLY NAME (44-60)","Dim.Location.PatientFriendlyLocationName,Dim.Location.PatientFriendlyLocationName",".playingEntity[classCode=PLC determinerCode=INSTANCE].desc"
+","1279: source value based on HOSPITAL LOCATION - PATIENT FRIENDLY NAME (44-60)","Dim.Location.PatientFriendlyLocationName
+Dim.Location.PatientFriendlyLocationName",".playingEntity[classCode=PLC determinerCode=INSTANCE].desc"
 "Location.mode","Location.mode","","","",0,1,"Y","","Y","code {[]} {[]}
 ","instance | kind","Indicates whether a resource instance represents a specific location or a class of locations.","This is labeled as a modifier because whether or not the location is a class of locations changes how it can be used and understood.","When using a Location resource for scheduling or orders, we need to be able to refer to a class of Locations instead of a specific Location.","","","","<valueCode xmlns=""http://hl7.org/fhir"" value=""instance""/>","","","",,"required","Indicates whether a resource instance represents a specific location or a class of locations.","http://hl7.org/fhir/ValueSet/location-mode|4.0.1","",,,,"Location.mode",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","1806: fixed value = #instance",".playingEntity[classCode=PLC].determinerCode","FiveWs.class"
@@ -107,7 +110,8 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","./codeSystemVersion"
 "Location.type.coding.code","Location.type.coding.code","","","",0,1,"Y","","Y","code {[]} {[]}
 ","Symbol in syntax defined by the system","A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination).","","Need to refer to a particular code in the system.","","","","","","","",,,,,"",,,,"Coding.code",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","1412: source value based on HOSPITAL LOCATION - SERVICE (44-9)","Dim.Location.MedicalService,Dim.Location.MedicalService","./code"
+","1412: source value based on HOSPITAL LOCATION - SERVICE (44-9)","Dim.Location.MedicalService
+Dim.Location.MedicalService","./code"
 "Location.type.coding.display","Location.type.coding.display","","","",0,1,"","","Y","string {[]} {[]}
 ","Representation defined by the system","A representation of the meaning of the code in the system, following the rules of the system.","","Need to be able to carry a human-readable meaning of the code for readers that do not know  the system.","","","","","","","",,,,,"",,,,"Coding.display",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","CV.displayName"
@@ -209,7 +213,8 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","1280-1: fixed value = #phone","./scheme"
 "Location.telecom.value","Location.telecom.value","","","",0,1,"Y","","Y","string {[]} {[]}
 ","The actual contact point details","The actual contact point details, in a form that is meaningful to the designated communication system (i.e. phone number or email address).","Additional text data such as phone extension numbers, or notes about use of the contact are sometimes included in the value.","Need to support legacy numbers that are not in a tightly controlled format.","","","","","","","",,,,,"",,,,"ContactPoint.value",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","1280: transform using concat (44-99,"" ext. "",44-99.1) on HOSPITAL LOCATION - TELEPHONE (44-99)","Dim.Location.PhoneNumber,Dim.Location.PhoneNumber","./url"
+","1280: transform using concat (44-99,"" ext. "",44-99.1) on HOSPITAL LOCATION - TELEPHONE (44-99)","Dim.Location.PhoneNumber
+Dim.Location.PhoneNumber","./url"
 "Location.telecom.use","Location.telecom.use","","","",0,1,"Y","Y","Y","code {[]} {[]}
 ","home | work | temp | old | mobile - purpose of this contact point","Identifies the purpose for the contact point.","Applications can assume that a contact is current unless it explicitly says that it is temporary or old.","Need to track the way a person uses this contact, so a user can choose which is appropriate for their purpose.","","","","<valueCode xmlns=""http://hl7.org/fhir"" value=""work""/>","","","",,"required","Use of contact point.","http://hl7.org/fhir/ValueSet/contact-point-use|4.0.1","",,,,"ContactPoint.use",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","1280-2: fixed value = #work","unique(./use)"
@@ -241,18 +246,29 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "Location.address.line","Location.address.line","","","",0,*,"Y","","Y","string {[]} {[]}
 ","Street name, number, direction & P.O. Box etc.","This component contains the house number, apartment number, street name, street direction,  P.O. Box number, delivery hints, and similar address information.","","","","","","","<valueString xmlns=""http://hl7.org/fhir"" value=""137 Nowhere Street""/>","","",,,,,"",,,,"Address.line",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","1317: source value based on HOSPITAL LOCATION - INSTITUTION > INSTITUTION - STREET ADDR. 1 (44-3 > 4-1.01)","1318: source value based on HOSPITAL LOCATION - INSTITUTION > INSTITUTION - STREET ADDR. 2 (44-3 > 4-1.02)","Dim.Location.InstitutionIEN
-Dim.Institution.StreetAddress1,Dim.Institution.StreetAddress1,Dim.InstitutionTimeZone.StreetAddress1,NDim.MVIInstitution.StreetAddress1","Dim.Location.InstitutionIEN
-Dim.Institution.StreetAddress2,Dim.Institution.StreetAddress2,Dim.InstitutionTimeZone.StreetAddress2,NDim.MVIInstitution.StreetAddress2","AD.part[parttype = AL]"
+Dim.Institution.StreetAddress1
+Dim.Institution.StreetAddress1
+Dim.InstitutionTimeZone.StreetAddress1
+NDim.MVIInstitution.StreetAddress1","Dim.Location.InstitutionIEN
+Dim.Institution.StreetAddress2
+Dim.Institution.StreetAddress2
+Dim.InstitutionTimeZone.StreetAddress2
+NDim.MVIInstitution.StreetAddress2","AD.part[parttype = AL]"
 "Location.address.city","Location.address.city","","Municpality
 ","",0,1,"Y","","Y","string {[]} {[]}
 ","Name of city, town etc.","The name of the city, town, suburb, village or other community or delivery center.","","","","","","","<valueString xmlns=""http://hl7.org/fhir"" value=""Erewhon""/>","","",,,,,"",,,,"Address.city",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","1319: source value based on HOSPITAL LOCATION - INSTITUTION > INSTITUTION - CITY (44-3 > 4-1.03)","Dim.Location.InstitutionIEN
-Dim.Institution.City,Dim.Institution.City,Dim.InstitutionTimeZone.City,NDim.MVIInstitution.City","AD.part[parttype = CTY]"
+Dim.Institution.City
+Dim.Institution.City
+Dim.InstitutionTimeZone.City
+NDim.MVIInstitution.City","AD.part[parttype = CTY]"
 "Location.address.district","Location.address.district","","County
 ","",0,1,"Y","","Y","string {[]} {[]}
 ","District name (aka county)","The name of the administrative area (county).","District is sometimes known as county, but in some regions 'county' is used in place of city (municipality), so county name should be conveyed in city instead.","","","","","","<valueString xmlns=""http://hl7.org/fhir"" value=""Madison""/>","","",,,,,"",,,,"Address.district",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","1316: source value based on HOSPITAL LOCATION - INSTITUTION > INSTITUTION - DISTRICT (44-3 > 4-.03)","Dim.Location.InstitutionIEN
-Dim.Institution.MedicalDistrict,Dim.Institution.MedicalDistrict,NDim.MVIInstitution.MedicalDistrict","AD.part[parttype = CNT | CPA]"
+Dim.Institution.MedicalDistrict
+Dim.Institution.MedicalDistrict
+NDim.MVIInstitution.MedicalDistrict","AD.part[parttype = CNT | CPA]"
 "Location.address.state","Location.address.state","","Province
 Territory","",0,1,"Y","","Y","string {[]} {[]}
 ","Sub-unit of country (abbreviations ok)","Sub-unit of a country with limited sovereignty in a federally organized country. A code may be used if codes are in common use (e.g. US 2 letter state codes).","","","","","","","","","",,"extensible","Two letter USPS alphabetic codes.","http://hl7.org/fhir/us/core/ValueSet/us-core-usps-state","",,,,"Address.state",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
@@ -261,7 +277,10 @@ Territory","",0,1,"Y","","Y","string {[]} {[]}
 ","",0,1,"Y","","Y","string {[]} {[]}
 ","US Zip Codes","A postal code designating a region defined by the postal service.","","","","","","","<valueString xmlns=""http://hl7.org/fhir"" value=""9132""/>","","",,,,,"",,,,"Address.postalCode",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","1320: source value based on HOSPITAL LOCATION - INSTITUTION > INSTITUTION - ZIP (44-3 > 4-1.04)","Dim.Location.InstitutionIEN
-Dim.Institution.Zip,Dim.Institution.Zip,Dim.InstitutionTimeZone.Zip,NDim.MVIInstitution.Zip","AD.part[parttype = ZIP]"
+Dim.Institution.Zip
+Dim.Institution.Zip
+Dim.InstitutionTimeZone.Zip
+NDim.MVIInstitution.Zip","AD.part[parttype = ZIP]"
 "Location.address.country","Location.address.country","","","",0,1,"Y","","Y","string {[]} {[]}
 ","Country (e.g. can be ISO 3166 2 or 3 letter code)","Country - a nation as commonly understood or generally accepted.","ISO 3166 3 letter codes can be used in place of a human readable country name.","","","","","","","","",,,,,"",,,,"Address.country",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","1405: source value based on HOSPITAL LOCATION - INSTITUTION > INSTITUTION - COUNTRY > COUNTRY CODE - CODE (44-3 > 4-801 > 779.004-.01)","Dim.Location.InstitutionIEN","AD.part[parttype = CNT]"
@@ -286,7 +305,8 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","union(., ./translation)"
 "Location.physicalType.text","Location.physicalType.text","","","",0,1,"Y","","Y","string {[]} {[]}
 ","Plain text representation of the concept","A human language representation of the concept as seen/selected/uttered by the user who entered the data and/or which represents the intended meaning of the user.","Very often the text is the same as a displayName of one of the codings.","The codes from the terminologies do not always capture the correct meaning with all the nuances of the human using them, or sometimes there is no appropriate code at all. In these cases, the text is used to capture the full meaning of the source.","","","","","","","",,,,,"",,,,"CodeableConcept.text",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","1284: source value based on HOSPITAL LOCATION - PHYSICAL LOCATION (44-10)","Dim.Location.PhysicalLocation,Dim.Location.PhysicalLocation","./originalText[mediaType/code=""text/plain""]/data"
+","1284: source value based on HOSPITAL LOCATION - PHYSICAL LOCATION (44-10)","Dim.Location.PhysicalLocation
+Dim.Location.PhysicalLocation","./originalText[mediaType/code=""text/plain""]/data"
 "Location.position","Location.position","","","",0,1,"","","","BackboneElement {[]} {[]}
 ","The absolute geographic location","The absolute geographic location of the Location, expressed using the WGS84 datum (This is the same co-ordinate system used in KML).","","For mobile applications and automated route-finding knowing the exact location of the Location is required.","","","","","","","",,,,,"",,,,"Location.position",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".playingEntity [classCode=PLC determinerCode=INSTANCE].positionText"

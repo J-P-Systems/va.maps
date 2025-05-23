@@ -55,23 +55,23 @@ Source: DecisionPrecisionPlusObservationsmoking
 * dataAbsentReason -> "HF.HealthFactor.HealthFactorTypeIEN"
 * effectiveDateTime -> "HF.HealthFactor.EventDateTime"
 * note -> "HF.HealthFactor.Comments"
-* encounter -> "HF.HealthFactor.VisitDateTime,HF.HealthFactor.VisitIEN"
+* encounter -> "HF.HealthFactor.VisitDateTime\nHF.HealthFactor.VisitIEN"
 
 Mapping: sda-to-DecisionPrecisionPlusObservationsmoking
 Id: sda
 Title: "Summary Document Architecure (SDA)"
 Source: DecisionPrecisionPlusObservationsmoking
-* valueCodeableConcept -> "SocialHistory.SocialHabit,SocialHistory.SocialHabitCategory,SocialHistory.Extension[SocialHistoryExtension].Category,SocialHistory.Extension[SocialHistoryExtension].QuantityLabel,SocialHistory.SocialHabitCategory.Description,Vaccination.OrderItem,FamilyHistory.Diagnosis,FamilyHistory.Extension[FamilyHistoryExtension].Category,FamilyHistory.Diagnosis.Description"
-* dataAbsentReason -> "SocialHistory.SocialHabit,SocialHistory.SocialHabitCategory,SocialHistory.Extension[SocialHistoryExtension].Category,SocialHistory.Extension[SocialHistoryExtension].QuantityLabel,SocialHistory.SocialHabitCategory.Description,Vaccination.OrderItem,FamilyHistory.Diagnosis,FamilyHistory.Extension[FamilyHistoryExtension].Category,FamilyHistory.Diagnosis.Description"
-* effectiveDateTime -> "SocialHistory.FromTime,Vaccination.FromTime,Vaccination.ToTime,FamilyHistory.FromTime"
-* note -> "SocialHistory.SocialHabitComments,Vaccination.Administration.RefusalReason,FamilyHistory.NoteText"
-* encounter -> "SocialHistory.EncounterNumber,SocialHistory.EnteredAt,SocialHistory.EnteredBy,SocialHistory.EnteredOn,Vaccination.EncounterNumber,Vaccination.EnteredAt,Vaccination.EnteredBy,Vaccination.EnteredOn,Vaccination.Administration.AdministeredAtLocation,FamilyHistory.EncounterNumber,FamilyHistory.EnteredAt,FamilyHistory.EnteredBy,FamilyHistory.EnteredOn"
+* valueCodeableConcept -> "SocialHistory.SocialHabit\nSocialHistory.SocialHabitCategory\nSocialHistory.Extension[SocialHistoryExtension].Category\nSocialHistory.Extension[SocialHistoryExtension].QuantityLabel\nSocialHistory.SocialHabitCategory.Description\nVaccination.OrderItem\nFamilyHistory.Diagnosis\nFamilyHistory.Extension[FamilyHistoryExtension].Category\nFamilyHistory.Diagnosis.Description"
+* dataAbsentReason -> "SocialHistory.SocialHabit\nSocialHistory.SocialHabitCategory\nSocialHistory.Extension[SocialHistoryExtension].Category\nSocialHistory.Extension[SocialHistoryExtension].QuantityLabel\nSocialHistory.SocialHabitCategory.Description\nVaccination.OrderItem\nFamilyHistory.Diagnosis\nFamilyHistory.Extension[FamilyHistoryExtension].Category\nFamilyHistory.Diagnosis.Description"
+* effectiveDateTime -> "SocialHistory.FromTime\nVaccination.FromTime\nVaccination.ToTime\nFamilyHistory.FromTime"
+* note -> "SocialHistory.SocialHabitComments\nVaccination.Administration.RefusalReason\nFamilyHistory.NoteText"
+* encounter -> "SocialHistory.EncounterNumber\nSocialHistory.EnteredAt\nSocialHistory.EnteredBy\nSocialHistory.EnteredOn\nVaccination.EncounterNumber\nVaccination.EnteredAt\nVaccination.EnteredBy\nVaccination.EnteredOn\nVaccination.Administration.AdministeredAtLocation\nFamilyHistory.EncounterNumber\nFamilyHistory.EnteredAt\nFamilyHistory.EnteredBy\nFamilyHistory.EnteredOn"
 
 Mapping: vpr-to-DecisionPrecisionPlusObservationsmoking
 Id: vpr
 Title: "Virtual Patient Record XML (VPR)"
 Source: DecisionPrecisionPlusObservationsmoking
-* valueCodeableConcept -> "healthFactor.category (>9999999.64-.03),healthFactor.name (>9999999.64-.01)"
-* dataAbsentReason -> "healthFactor.category (>9999999.64-.03),healthFactor.name (>9999999.64-.01)"
+* valueCodeableConcept -> "healthFactor.category (>9999999.64-.03)\nhealthFactor.name (>9999999.64-.01)"
+* dataAbsentReason -> "healthFactor.category (>9999999.64-.03)\nhealthFactor.name (>9999999.64-.01)"
 * note -> "healthFactor.comment"
-* encounter -> "healthFactor.encounter,healthFactor.facility (>9000010-.06),healthFactor.recorded (>9000010-.01)"
+* encounter -> "healthFactor.encounter\nhealthFactor.facility (>9000010-.06)\nhealthFactor.recorded (>9000010-.01)"

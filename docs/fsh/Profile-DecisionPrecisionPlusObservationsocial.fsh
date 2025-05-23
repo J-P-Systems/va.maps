@@ -74,25 +74,25 @@ Source: DecisionPrecisionPlusObservationsocial
 * valueDateTime -> "HF.HealthFactor.Magnitude"
 * effectiveDateTime -> "HF.HealthFactor.EventDateTime"
 * note -> "HF.HealthFactor.Comments"
-* encounter -> "HF.HealthFactor.VisitDateTime,HF.HealthFactor.VisitIEN"
+* encounter -> "HF.HealthFactor.VisitDateTime\nHF.HealthFactor.VisitIEN"
 
 Mapping: sda-to-DecisionPrecisionPlusObservationsocial
 Id: sda
 Title: "Summary Document Architecure (SDA)"
 Source: DecisionPrecisionPlusObservationsocial
-* code -> "SocialHistory.SocialHabit,SocialHistory.SocialHabitCategory,SocialHistory.Extension[SocialHistoryExtension].Category,SocialHistory.Extension[SocialHistoryExtension].QuantityLabel,SocialHistory.SocialHabitCategory.Description,Vaccination.OrderItem,FamilyHistory.Diagnosis,FamilyHistory.Extension[FamilyHistoryExtension].Category,FamilyHistory.Diagnosis.Description"
-* code -> "SocialHistory.SocialHabit,SocialHistory.SocialHabitCategory,SocialHistory.Extension[SocialHistoryExtension].Category,SocialHistory.Extension[SocialHistoryExtension].QuantityLabel,SocialHistory.SocialHabitCategory.Description,Vaccination.OrderItem,FamilyHistory.Diagnosis,FamilyHistory.Extension[FamilyHistoryExtension].Category,FamilyHistory.Diagnosis.Description"
+* code -> "SocialHistory.SocialHabit\nSocialHistory.SocialHabitCategory\nSocialHistory.Extension[SocialHistoryExtension].Category\nSocialHistory.Extension[SocialHistoryExtension].QuantityLabel\nSocialHistory.SocialHabitCategory.Description\nVaccination.OrderItem\nFamilyHistory.Diagnosis\nFamilyHistory.Extension[FamilyHistoryExtension].Category\nFamilyHistory.Diagnosis.Description"
+* code -> "SocialHistory.SocialHabit\nSocialHistory.SocialHabitCategory\nSocialHistory.Extension[SocialHistoryExtension].Category\nSocialHistory.Extension[SocialHistoryExtension].QuantityLabel\nSocialHistory.SocialHabitCategory.Description\nVaccination.OrderItem\nFamilyHistory.Diagnosis\nFamilyHistory.Extension[FamilyHistoryExtension].Category\nFamilyHistory.Diagnosis.Description"
 * valueQuantity.value -> "SocialHistory.Extension[SocialHistoryExtension].Quantity"
 * valueDateTime -> "SocialHistory.Extension[SocialHistoryExtension].Quantity"
-* effectiveDateTime -> "SocialHistory.FromTime,Vaccination.FromTime,Vaccination.ToTime,FamilyHistory.FromTime"
-* note -> "SocialHistory.SocialHabitComments,Vaccination.Administration.RefusalReason,FamilyHistory.NoteText"
-* encounter -> "SocialHistory.EncounterNumber,SocialHistory.EnteredAt,SocialHistory.EnteredBy,SocialHistory.EnteredOn,Vaccination.EncounterNumber,Vaccination.EnteredAt,Vaccination.EnteredBy,Vaccination.EnteredOn,Vaccination.Administration.AdministeredAtLocation,FamilyHistory.EncounterNumber,FamilyHistory.EnteredAt,FamilyHistory.EnteredBy,FamilyHistory.EnteredOn"
+* effectiveDateTime -> "SocialHistory.FromTime\nVaccination.FromTime\nVaccination.ToTime\nFamilyHistory.FromTime"
+* note -> "SocialHistory.SocialHabitComments\nVaccination.Administration.RefusalReason\nFamilyHistory.NoteText"
+* encounter -> "SocialHistory.EncounterNumber\nSocialHistory.EnteredAt\nSocialHistory.EnteredBy\nSocialHistory.EnteredOn\nVaccination.EncounterNumber\nVaccination.EnteredAt\nVaccination.EnteredBy\nVaccination.EnteredOn\nVaccination.Administration.AdministeredAtLocation\nFamilyHistory.EncounterNumber\nFamilyHistory.EnteredAt\nFamilyHistory.EnteredBy\nFamilyHistory.EnteredOn"
 
 Mapping: vpr-to-DecisionPrecisionPlusObservationsocial
 Id: vpr
 Title: "Virtual Patient Record XML (VPR)"
 Source: DecisionPrecisionPlusObservationsocial
-* code -> "healthFactor.category (>9999999.64-.03),healthFactor.name (>9999999.64-.01)"
-* code -> "healthFactor.category (>9999999.64-.03),healthFactor.name (>9999999.64-.01)"
+* code -> "healthFactor.category (>9999999.64-.03)\nhealthFactor.name (>9999999.64-.01)"
+* code -> "healthFactor.category (>9999999.64-.03)\nhealthFactor.name (>9999999.64-.01)"
 * note -> "healthFactor.comment"
-* encounter -> "healthFactor.encounter,healthFactor.facility (>9000010-.06),healthFactor.recorded (>9000010-.01)"
+* encounter -> "healthFactor.encounter\nhealthFactor.facility (>9000010-.06)\nhealthFactor.recorded (>9000010-.01)"

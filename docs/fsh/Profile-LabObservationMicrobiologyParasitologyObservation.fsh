@@ -81,23 +81,23 @@ Id: cdw
 Title: "Clinical Data Warehouse (CDW)"
 Source: LabObservationMicrobiologyParasitologyObservation
 * status -> "Micro.Microbiology.ParasitologyReportStatus"
-* effectiveDateTime -> "Micro.AntibioticSensitivity.SpecimenTakenDateTime,Micro.AntibioticSensitivityComment.SpecimenTakenDateTime,Micro.BacteriologyReports.SpecimenTakenDateTime,Micro.MicroAntibioticLevel.SpecimenTakenDateTime,Micro.MicroAudit.SpecimenTakenDateTime,Micro.Microbiology.SpecimenTakenDateTime,Micro.MicroOrderedTest.SpecimenTakenDateTime,Micro.MicroSterilityResults.SpecimenTakenDateTime,Micro.MycobacteriologyReports.SpecimenTakenDateTime,Micro.Mycology.SpecimenTakenDateTime,Micro.MycologyReports.SpecimenTakenDateTime,Micro.Parasitology.SpecimenTakenDateTime,Micro.ParasitologyReports.SpecimenTakenDateTime,Micro.ParasitologyStage.SpecimenTakenDateTime,Micro.Virology.SpecimenTakenDateTime,Micro.VirologyReports.SpecimenTakenDateTime,SStaff.SMicroOrderedTest.SpecimenTakenDateTime"
+* effectiveDateTime -> "Micro.AntibioticSensitivity.SpecimenTakenDateTime\nMicro.AntibioticSensitivityComment.SpecimenTakenDateTime\nMicro.BacteriologyReports.SpecimenTakenDateTime\nMicro.MicroAntibioticLevel.SpecimenTakenDateTime\nMicro.MicroAudit.SpecimenTakenDateTime\nMicro.Microbiology.SpecimenTakenDateTime\nMicro.MicroOrderedTest.SpecimenTakenDateTime\nMicro.MicroSterilityResults.SpecimenTakenDateTime\nMicro.MycobacteriologyReports.SpecimenTakenDateTime\nMicro.Mycology.SpecimenTakenDateTime\nMicro.MycologyReports.SpecimenTakenDateTime\nMicro.Parasitology.SpecimenTakenDateTime\nMicro.ParasitologyReports.SpecimenTakenDateTime\nMicro.ParasitologyStage.SpecimenTakenDateTime\nMicro.Virology.SpecimenTakenDateTime\nMicro.VirologyReports.SpecimenTakenDateTime\nSStaff.SMicroOrderedTest.SpecimenTakenDateTime"
 * note -> "Micro.Microbiology.SpecimenComment"
 * performer[va-at] -> "Micro.Microbiology.AccessioningInstitutionIEN"
 * performer[va-by] -> "Micro.Microbiology.VerifyingStaffIEN"
 * specimen -> "Micro.Microbiology.MicrobiologyAccession"
 * issued -> "Micro.Microbiology.ReportCompletedDateTime"
-* subject -> "Micro.AntibioticSensitivity.LRDFN,Micro.AntibioticSensitivityComment.LRDFN,Micro.BacteriologyReports.LRDFN,Micro.MicroAntibioticLevel.LRDFN,Micro.MicroAudit.LRDFN,Micro.Microbiology.LRDFN,Micro.MicroOrderedTest.LRDFN,Micro.MicroSterilityResults.LRDFN,Micro.MycobacteriologyReports.LRDFN,Micro.Mycology.LRDFN,Micro.MycologyReports.LRDFN,Micro.Parasitology.LRDFN,Micro.ParasitologyReports.LRDFN,Micro.ParasitologyStage.LRDFN,Micro.Virology.LRDFN,Micro.VirologyReports.LRDFN,Pathology.Autopsy.LRDFN,Pathology.CytoOrganTissueFunction.StaffIEN,SStaff.SMicroOrderedTest.LRDFN"
+* subject -> "Micro.AntibioticSensitivity.LRDFN\nMicro.AntibioticSensitivityComment.LRDFN\nMicro.BacteriologyReports.LRDFN\nMicro.MicroAntibioticLevel.LRDFN\nMicro.MicroAudit.LRDFN\nMicro.Microbiology.LRDFN\nMicro.MicroOrderedTest.LRDFN\nMicro.MicroSterilityResults.LRDFN\nMicro.MycobacteriologyReports.LRDFN\nMicro.Mycology.LRDFN\nMicro.MycologyReports.LRDFN\nMicro.Parasitology.LRDFN\nMicro.ParasitologyReports.LRDFN\nMicro.ParasitologyStage.LRDFN\nMicro.Virology.LRDFN\nMicro.VirologyReports.LRDFN\nPathology.Autopsy.LRDFN\nPathology.CytoOrganTissueFunction.StaffIEN\nSStaff.SMicroOrderedTest.LRDFN"
 
 Mapping: sda-to-LabObservationMicrobiologyParasitologyObservation
 Id: sda
 Title: "Summary Document Architecure (SDA)"
 Source: LabObservationMicrobiologyParasitologyObservation
-* status -> "Documents.DocumentCompletionStatus,LabOrder.Result.ResultStatus"
-* performer[va-at] -> "Documents.EnteredAt,LabOrder.Result.EnteredAt"
-* performer[va-by] -> "Documents.Clinician,Documents.Extension[DocumentExtension].CareProviders,LabOrder.Result.VerifiedBy"
+* status -> "Documents.DocumentCompletionStatus\nLabOrder.Result.ResultStatus"
+* performer[va-at] -> "Documents.EnteredAt\nLabOrder.Result.EnteredAt"
+* performer[va-by] -> "Documents.Clinician\nDocuments.Extension[DocumentExtension].CareProviders\nLabOrder.Result.VerifiedBy"
 * specimen -> "LabOrder.Extension[ResultExtension].GroupName"
-* issued -> "Documents.ToTime,LabOrder.Result.ResultTime"
+* issued -> "Documents.ToTime\nLabOrder.Result.ResultTime"
 * subject -> "Patient.Extension[PatientExtension].VeteranLrdfn"
 
 Mapping: vpr-to-LabObservationMicrobiologyParasitologyObservation

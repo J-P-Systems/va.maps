@@ -238,14 +238,14 @@ Mapping: cdw-to-DebtPortalInvoice
 Id: cdw
 Title: "Clinical Data Warehouse (CDW)"
 Source: DebtPortalInvoice
-* recipient -> "IB.AccountsReceivable.ARDebtorIEN\nDim.ARDebtor.InstitutionIEN,Dim.ARDebtor.InsuranceCompanyIEN,Dim.ARDebtor.PatientIEN,Dim.ARDebtor.StaffIEN,Dim.ARDebtor.VendorIEN"
-* identifier -> "IB.AccountsReceivable.BillNumber,IB.AccountsReceivableTCSP.BillNumber"
+* recipient -> "IB.AccountsReceivable.ARDebtorIEN\nDim.ARDebtor.InstitutionIEN\nDim.ARDebtor.InsuranceCompanyIEN\nDim.ARDebtor.PatientIEN\nDim.ARDebtor.StaffIEN\nDim.ARDebtor.VendorIEN"
+* identifier -> "IB.AccountsReceivable.BillNumber\nIB.AccountsReceivableTCSP.BillNumber"
 * status -> "IB.AccountsReceivable.ARTransactionTypeIEN\nDim.ARTransactionType.ARTransactionType"
 * status.extension[http://hl7.org/fhir/StructureDefinition/alternate-codes].valueCodeableConcept.coding -> "IB.AccountsReceivable.ARTransactionTypeIEN"
 * status.extension[http://hl7.org/fhir/StructureDefinition/alternate-codes].valueCodeableConcept.coding.code -> "IB.AccountsReceivable.ARTransactionTypeIEN"
 * status.extension[http://hl7.org/fhir/StructureDefinition/alternate-codes].valueCodeableConcept.coding.display -> "IB.AccountsReceivable.ARTransactionTypeIEN\nDim.ARTransactionType.ARTransactionType"
-* subject -> "IB.AccountsReceivable.PatientIEN,IB.AccountsReceivableComment.PatientIEN,IB.AccountsReceivableDescription.PatientIEN,IB.AccountsReceivableFiscalYear.PatientIEN,IB.AccountsReceivableRepayDate.PatientIEN,IB.AccountsReceivableTCSP.PatientIEN,IB.AccountsReceivableTCSP.PatientSID"
-* date -> "IB.AccountsReceivable.BillPreparedDateTime,IB.AccountsReceivableComment.BillPreparedDateTime,IB.AccountsReceivableDescription.BillPreparedDateTime,IB.AccountsReceivableFiscalYear.BillPreparedDateTime,IB.AccountsReceivableRepayDate.BillPreparedDateTime,IB.AccountsReceivableTCSP.BillPreparedDateTime"
+* subject -> "IB.AccountsReceivable.PatientIEN\nIB.AccountsReceivableComment.PatientIEN\nIB.AccountsReceivableDescription.PatientIEN\nIB.AccountsReceivableFiscalYear.PatientIEN\nIB.AccountsReceivableRepayDate.PatientIEN\nIB.AccountsReceivableTCSP.PatientIEN\nIB.AccountsReceivableTCSP.PatientSID"
+* date -> "IB.AccountsReceivable.BillPreparedDateTime\nIB.AccountsReceivableComment.BillPreparedDateTime\nIB.AccountsReceivableDescription.BillPreparedDateTime\nIB.AccountsReceivableFiscalYear.BillPreparedDateTime\nIB.AccountsReceivableRepayDate.BillPreparedDateTime\nIB.AccountsReceivableTCSP.BillPreparedDateTime"
 * issuer -> "IB.AccountsReceivable.InstitutionIEN"
 * totalPriceComponent[va-orig-amt].amount -> "IB.AccountsReceivable.OriginalBillAmount"
 * totalPriceComponent[va-curr-bal].amount -> "IB.AccountsReceivable.CurrentBalance"

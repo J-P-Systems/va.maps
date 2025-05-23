@@ -36,5 +36,5 @@ Source: DebtPortalChargeIteminterest
 * enteredDate -> "IB.ARTransaction.EnteredDateTime"
 * code.text -> "IB.ARTransaction.ARTransactionTypeIEN\nDim.ARTransactionType.ARTransactionType"
 * identifier.value -> "IB.ARTransaction.TransactionNumber"
-* supportingInformation.identifier.value -> "IB.ARTransaction.AccountsReceivableIEN,IB.ARTransaction.PatientIEN,IB.ARTransactionComment.PatientIEN,IB.ARTransactionDescription.PatientIEN,IB.ARTransactionFiscalYear.PatientIEN"
-* occurrenceDateTime -> "IB.ARTransaction.TransactionDateTime,IB.ARTransactionComment.TransactionDateTime,IB.ARTransactionDescription.TransactionDateTime,IB.ARTransactionFiscalYear.TransactionDateTime"
+* supportingInformation.identifier.value -> "IB.ARTransaction.AccountsReceivableIEN\nIB.ARTransaction.PatientIEN\nIB.ARTransactionComment.PatientIEN\nIB.ARTransactionDescription.PatientIEN\nIB.ARTransactionFiscalYear.PatientIEN"
+* occurrenceDateTime -> "IB.ARTransaction.TransactionDateTime\nIB.ARTransactionComment.TransactionDateTime\nIB.ARTransactionDescription.TransactionDateTime\nIB.ARTransactionFiscalYear.TransactionDateTime"

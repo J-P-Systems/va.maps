@@ -11,7 +11,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Immunization Immunization - XML Representation - US Veterans Health Administration FHIR Map Set Implementation Guide v1.5.16</title>
+    <title>Immunization Immunization - XML Representation - US Veterans Health Administration FHIR Map Set Implementation Guide v1.5.23</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -69,7 +69,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">US Veterans Health Administration FHIR Map Set Implementation Guide</span>
             <br/>
-            <span style="display:inline-block;">1.5.16 - 250601
+            <span style="display:inline-block;">1.5.23 - 250601
 
 
 
@@ -135,6 +135,9 @@
       </li>
       <li>
         <a href="vitals.html">Vitals</a>
+      </li>
+      <li>
+        <a href="practitioner.html">Practitioner and PracitionerRole</a>
       </li>
     </ul>
   </li>
@@ -265,7 +268,7 @@
         
           Active
           
-            as of 2025-05-12
+            as of 2025-05-23
           
         
       </td>
@@ -330,11 +333,11 @@
   &lt;/text&gt;
   &lt;<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.url">url</a>
        <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://va.gov/fhir/StructureDefinition/ImmunizationImmunization&quot;/&gt;
-  &lt;<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.version">version</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;1.5.16&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.version">version</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;1.5.23&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;ImmunizationImmunization&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.title">title</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Immunization Immunization&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.status">status</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;active&quot;/&gt;
-  &lt;<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.date">date</a> <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">value</a>=&quot;2025-05-12T19:54:30+00:00&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.date">date</a> <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">value</a>=&quot;2025-05-23T16:28:56+00:00&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.publisher">publisher</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;VA&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.contact">contact</a>&gt;
     &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#ContactDetail#ContactDetail.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;VA&quot;/&gt;
@@ -951,24 +954,41 @@ Dim.ImmunizationName.CVXCode&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;cdw&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>
              <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Immun.Immunization.ImmunizationNameIEN
-Dim.ImmunizationName.ImmunizationName,Dim.PharmacyOrderableItem.ImmunizationName&quot;/&gt;
+Dim.ImmunizationName.ImmunizationName
+Dim.PharmacyOrderableItem.ImmunizationName&quot;/&gt;
       &lt;/mapping&gt;
       &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping">mapping</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;sda&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>
-             <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Vaccination.MaxDoseQuantity,Vaccination.OrderItem,Vaccination.Extension[VaccinationExtension].CDCName,Vaccination.Extension[VaccinationExtension].Source,Vaccination.AdministrationSite.Description,Vaccination.Manufacturer[VA.Manufacturer].Description
-Vaccination.OrderItem[Order].Code,Vaccination.Route.Code,Vaccination.OrderItem[Order].Code&quot;/&gt;
+             <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Vaccination.MaxDoseQuantity
+Vaccination.OrderItem
+Vaccination.Extension[VaccinationExtension].CDCName
+Vaccination.Extension[VaccinationExtension].Source
+Vaccination.AdministrationSite.Description
+Vaccination.Manufacturer[VA.Manufacturer].Description
+Vaccination.OrderItem[Order].Code
+Vaccination.Route.Code
+Vaccination.OrderItem[Order].Code&quot;/&gt;
       &lt;/mapping&gt;
       &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping">mapping</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;sda&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>
-             <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Vaccination.MaxDoseQuantity,Vaccination.OrderItem,Vaccination.Extension[VaccinationExtension].CDCName,Vaccination.Extension[VaccinationExtension].Source,Vaccination.AdministrationSite.Description,Vaccination.Manufacturer[VA.Manufacturer].Description
-Vaccination.OrderItem[Order].Description,Vaccination.Route.Description,Vaccination.OrderItem[Order].Description,Vaccination.ObservationCodedValue[ObservationValueCode].Description&quot;/&gt;
+             <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Vaccination.MaxDoseQuantity
+Vaccination.OrderItem
+Vaccination.Extension[VaccinationExtension].CDCName
+Vaccination.Extension[VaccinationExtension].Source
+Vaccination.AdministrationSite.Description
+Vaccination.Manufacturer[VA.Manufacturer].Description
+Vaccination.OrderItem[Order].Description
+Vaccination.Route.Description
+Vaccination.OrderItem[Order].Description
+Vaccination.ObservationCodedValue[ObservationValueCode].Description&quot;/&gt;
       &lt;/mapping&gt;
       &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping">mapping</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;vpr&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>
-             <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;immunization.cvx (&amp;gt;9999999.14-.03),immunization.name (&amp;gt;9999999.14-.01)&quot;/&gt;
+             <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;immunization.cvx (&amp;gt;9999999.14-.03)
+immunization.name (&amp;gt;9999999.14-.01)&quot;/&gt;
       &lt;/mapping&gt;
       &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping">mapping</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;workflow&quot;/&gt;
@@ -1045,18 +1065,28 @@ Vaccination.OrderItem[Order].Description,Vaccination.Route.Description,Vaccinati
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;cdw&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>
              <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Immun.Immunization.ImmunizationNameIEN
-Dim.ImmunizationName.ImmunizationName,Dim.PharmacyOrderableItem.ImmunizationName&quot;/&gt;
+Dim.ImmunizationName.ImmunizationName
+Dim.PharmacyOrderableItem.ImmunizationName&quot;/&gt;
       &lt;/mapping&gt;
       &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping">mapping</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;sda&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>
-             <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Vaccination.MaxDoseQuantity,Vaccination.OrderItem,Vaccination.Extension[VaccinationExtension].CDCName,Vaccination.Extension[VaccinationExtension].Source,Vaccination.AdministrationSite.Description,Vaccination.Manufacturer[VA.Manufacturer].Description
-Vaccination.OrderItem[Order].Description,Vaccination.Route.Description,Vaccination.OrderItem[Order].Description,Vaccination.ObservationCodedValue[ObservationValueCode].Description&quot;/&gt;
+             <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Vaccination.MaxDoseQuantity
+Vaccination.OrderItem
+Vaccination.Extension[VaccinationExtension].CDCName
+Vaccination.Extension[VaccinationExtension].Source
+Vaccination.AdministrationSite.Description
+Vaccination.Manufacturer[VA.Manufacturer].Description
+Vaccination.OrderItem[Order].Description
+Vaccination.Route.Description
+Vaccination.OrderItem[Order].Description
+Vaccination.ObservationCodedValue[ObservationValueCode].Description&quot;/&gt;
       &lt;/mapping&gt;
       &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping">mapping</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;vpr&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>
-             <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;immunization.cvx (&amp;gt;9999999.14-.03),immunization.name (&amp;gt;9999999.14-.01)&quot;/&gt;
+             <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;immunization.cvx (&amp;gt;9999999.14-.03)
+immunization.name (&amp;gt;9999999.14-.01)&quot;/&gt;
       &lt;/mapping&gt;
       &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping">mapping</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;workflow&quot;/&gt;
@@ -1130,18 +1160,28 @@ Vaccination.OrderItem[Order].Description,Vaccination.Route.Description,Vaccinati
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;cdw&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>
              <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Immun.Immunization.ImmunizationNameIEN
-Dim.ImmunizationName.ImmunizationName,Dim.PharmacyOrderableItem.ImmunizationName&quot;/&gt;
+Dim.ImmunizationName.ImmunizationName
+Dim.PharmacyOrderableItem.ImmunizationName&quot;/&gt;
       &lt;/mapping&gt;
       &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping">mapping</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;sda&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>
-             <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Vaccination.MaxDoseQuantity,Vaccination.OrderItem,Vaccination.Extension[VaccinationExtension].CDCName,Vaccination.Extension[VaccinationExtension].Source,Vaccination.AdministrationSite.Description,Vaccination.Manufacturer[VA.Manufacturer].Description
-Vaccination.OrderItem[Order].Description,Vaccination.Route.Description,Vaccination.OrderItem[Order].Description,Vaccination.ObservationCodedValue[ObservationValueCode].Description&quot;/&gt;
+             <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Vaccination.MaxDoseQuantity
+Vaccination.OrderItem
+Vaccination.Extension[VaccinationExtension].CDCName
+Vaccination.Extension[VaccinationExtension].Source
+Vaccination.AdministrationSite.Description
+Vaccination.Manufacturer[VA.Manufacturer].Description
+Vaccination.OrderItem[Order].Description
+Vaccination.Route.Description
+Vaccination.OrderItem[Order].Description
+Vaccination.ObservationCodedValue[ObservationValueCode].Description&quot;/&gt;
       &lt;/mapping&gt;
       &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping">mapping</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;vpr&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>
-             <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;immunization.cvx (&amp;gt;9999999.14-.03),immunization.name (&amp;gt;9999999.14-.01)&quot;/&gt;
+             <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;immunization.cvx (&amp;gt;9999999.14-.03)
+immunization.name (&amp;gt;9999999.14-.01)&quot;/&gt;
       &lt;/mapping&gt;
       &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping">mapping</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;workflow&quot;/&gt;
@@ -1590,13 +1630,21 @@ Dim.ImmunizationName.CVXCode&quot;/&gt;
       &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping">mapping</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;sda&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>
-             <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Vaccination.MaxDoseQuantity,Vaccination.OrderItem,Vaccination.Extension[VaccinationExtension].CDCName,Vaccination.Extension[VaccinationExtension].Source,Vaccination.AdministrationSite.Description,Vaccination.Manufacturer[VA.Manufacturer].Description
-Vaccination.OrderItem[Order].Code,Vaccination.Route.Code,Vaccination.OrderItem[Order].Code&quot;/&gt;
+             <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Vaccination.MaxDoseQuantity
+Vaccination.OrderItem
+Vaccination.Extension[VaccinationExtension].CDCName
+Vaccination.Extension[VaccinationExtension].Source
+Vaccination.AdministrationSite.Description
+Vaccination.Manufacturer[VA.Manufacturer].Description
+Vaccination.OrderItem[Order].Code
+Vaccination.Route.Code
+Vaccination.OrderItem[Order].Code&quot;/&gt;
       &lt;/mapping&gt;
       &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping">mapping</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;vpr&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>
-             <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;immunization.cvx (&amp;gt;9999999.14-.03),immunization.name (&amp;gt;9999999.14-.01)&quot;/&gt;
+             <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;immunization.cvx (&amp;gt;9999999.14-.03)
+immunization.name (&amp;gt;9999999.14-.01)&quot;/&gt;
       &lt;/mapping&gt;
       &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping">mapping</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;v2&quot;/&gt;
@@ -2119,18 +2167,28 @@ Vaccination.OrderItem[Order].Code,Vaccination.Route.Code,Vaccination.OrderItem[O
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;cdw&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>
              <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Immun.Immunization.ImmunizationNameIEN
-Dim.ImmunizationName.ImmunizationName,Dim.PharmacyOrderableItem.ImmunizationName&quot;/&gt;
+Dim.ImmunizationName.ImmunizationName
+Dim.PharmacyOrderableItem.ImmunizationName&quot;/&gt;
       &lt;/mapping&gt;
       &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping">mapping</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;sda&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>
-             <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Vaccination.MaxDoseQuantity,Vaccination.OrderItem,Vaccination.Extension[VaccinationExtension].CDCName,Vaccination.Extension[VaccinationExtension].Source,Vaccination.AdministrationSite.Description,Vaccination.Manufacturer[VA.Manufacturer].Description
-Vaccination.OrderItem[Order].Description,Vaccination.Route.Description,Vaccination.OrderItem[Order].Description,Vaccination.ObservationCodedValue[ObservationValueCode].Description&quot;/&gt;
+             <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Vaccination.MaxDoseQuantity
+Vaccination.OrderItem
+Vaccination.Extension[VaccinationExtension].CDCName
+Vaccination.Extension[VaccinationExtension].Source
+Vaccination.AdministrationSite.Description
+Vaccination.Manufacturer[VA.Manufacturer].Description
+Vaccination.OrderItem[Order].Description
+Vaccination.Route.Description
+Vaccination.OrderItem[Order].Description
+Vaccination.ObservationCodedValue[ObservationValueCode].Description&quot;/&gt;
       &lt;/mapping&gt;
       &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping">mapping</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;vpr&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>
-             <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;immunization.cvx (&amp;gt;9999999.14-.03),immunization.name (&amp;gt;9999999.14-.01)&quot;/&gt;
+             <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;immunization.cvx (&amp;gt;9999999.14-.03)
+immunization.name (&amp;gt;9999999.14-.01)&quot;/&gt;
       &lt;/mapping&gt;
       &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping">mapping</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;v2&quot;/&gt;
@@ -2189,7 +2247,8 @@ Vaccination.OrderItem[Order].Description,Vaccination.Route.Description,Vaccinati
       &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping">mapping</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;sda&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>
-             <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Vaccination.AdministrationSite.Code,Vaccination.Manufacturer[VA.Manufacturer].Code&quot;/&gt;
+             <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Vaccination.AdministrationSite.Code
+Vaccination.Manufacturer[VA.Manufacturer].Code&quot;/&gt;
       &lt;/mapping&gt;
       &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping">mapping</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;workflow&quot;/&gt;
@@ -2257,17 +2316,24 @@ Vaccination.OrderItem[Order].Description,Vaccination.Route.Description,Vaccinati
       &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping">mapping</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;cdw&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>
-             <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Immun.Immunization.OutsideLocation,Immun.Immunization.VisitDateTime,Immun.Immunization.VisitIEN&quot;/&gt;
+             <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Immun.Immunization.OutsideLocation
+Immun.Immunization.VisitDateTime
+Immun.Immunization.VisitIEN&quot;/&gt;
       &lt;/mapping&gt;
       &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping">mapping</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;sda&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>
-             <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Vaccination.EncounterNumber,Vaccination.EnteredAt,Vaccination.Administration.AdministeredAtLocation&quot;/&gt;
+             <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Vaccination.EncounterNumber
+Vaccination.EnteredAt
+Vaccination.Administration.AdministeredAtLocation&quot;/&gt;
       &lt;/mapping&gt;
       &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping">mapping</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;vpr&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>
-             <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;immunization.administered,immunization.encounter,immunization.facility (&amp;gt;9000010-.06),immunization.location (&amp;gt;9000010-.22)&quot;/&gt;
+             <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;immunization.administered
+immunization.encounter
+immunization.facility (&amp;gt;9000010-.06)
+immunization.location (&amp;gt;9000010-.22)&quot;/&gt;
       &lt;/mapping&gt;
       &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping">mapping</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;workflow&quot;/&gt;
@@ -2409,7 +2475,8 @@ Vaccination.OrderItem[Order].Description,Vaccination.Route.Description,Vaccinati
       &lt;/mapping&gt;
       &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping">mapping</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;sda&quot;/&gt;
-        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Vaccination.FromTime,Vaccination.ToTime&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Vaccination.FromTime
+Vaccination.ToTime&quot;/&gt;
       &lt;/mapping&gt;
       &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping">mapping</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;workflow&quot;/&gt;
@@ -2533,7 +2600,8 @@ Vaccination.OrderItem[Order].Description,Vaccination.Route.Description,Vaccinati
       &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping">mapping</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;vpr&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>
-             <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;immunization.source (&amp;gt;920.1-.01),immunization.source (&amp;gt;920.1-.02)&quot;/&gt;
+             <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;immunization.source (&amp;gt;920.1-.01)
+immunization.source (&amp;gt;920.1-.02)&quot;/&gt;
       &lt;/mapping&gt;
       &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping">mapping</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;w5&quot;/&gt;
@@ -2648,20 +2716,31 @@ Vaccination.OrderItem[Order].Description,Vaccination.Route.Description,Vaccinati
       &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping">mapping</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;cdw&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>
-             <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Immun.Immunization.OutsideLocation,Immun.Immunization.VisitDateTime,Immun.Immunization.VisitIEN
-Outpat.Visit.LocationIEN,Outpat.Workload.LocationIEN&quot;/&gt;
+             <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Immun.Immunization.OutsideLocation
+Immun.Immunization.VisitDateTime
+Immun.Immunization.VisitIEN
+Outpat.Visit.LocationIEN
+Outpat.Workload.LocationIEN&quot;/&gt;
       &lt;/mapping&gt;
       &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping">mapping</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;sda&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>
-             <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Vaccination.EncounterNumber,Vaccination.EnteredAt,Vaccination.Administration.AdministeredAtLocation
-Encounter.ExternalId,Encounter.HealthCareFacility&quot;/&gt;
+             <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Vaccination.EncounterNumber
+Vaccination.EnteredAt
+Vaccination.Administration.AdministeredAtLocation
+Encounter.ExternalId
+Encounter.HealthCareFacility&quot;/&gt;
       &lt;/mapping&gt;
       &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping">mapping</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;vpr&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>
-             <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;immunization.administered,immunization.encounter,immunization.facility (&amp;gt;9000010-.06),immunization.location (&amp;gt;9000010-.22)
-visit.creditStopCode (&amp;gt;44-2503),visit.location (&amp;gt;44-.01),visit.visitString&quot;/&gt;
+             <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;immunization.administered
+immunization.encounter
+immunization.facility (&amp;gt;9000010-.06)
+immunization.location (&amp;gt;9000010-.22)
+visit.creditStopCode (&amp;gt;44-2503)
+visit.location (&amp;gt;44-.01)
+visit.visitString&quot;/&gt;
       &lt;/mapping&gt;
       &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping">mapping</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;workflow&quot;/&gt;
@@ -2716,7 +2795,8 @@ visit.creditStopCode (&amp;gt;44-2503),visit.location (&amp;gt;44-.01),visit.vis
       &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping">mapping</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;cdw&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>
-             <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Dim.ImmunizationLot.ImmunizationManufacturerIEN,Dim.ImmunizationLot.ImmunizationManufacturerSID&quot;/&gt;
+             <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Dim.ImmunizationLot.ImmunizationManufacturerIEN
+Dim.ImmunizationLot.ImmunizationManufacturerSID&quot;/&gt;
       &lt;/mapping&gt;
       &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping">mapping</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;v2&quot;/&gt;
@@ -5130,46 +5210,74 @@ Dim.ImmunizationName.CVXCode&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;cdw&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>
              <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Immun.Immunization.ImmunizationNameIEN
-Dim.ImmunizationName.ImmunizationName,Dim.PharmacyOrderableItem.ImmunizationName&quot;/&gt;
+Dim.ImmunizationName.ImmunizationName
+Dim.PharmacyOrderableItem.ImmunizationName&quot;/&gt;
       &lt;/mapping&gt;
       &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping">mapping</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;cdw&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>
              <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Immun.Immunization.ImmunizationNameIEN
-Dim.ImmunizationName.ImmunizationName,Dim.PharmacyOrderableItem.ImmunizationName&quot;/&gt;
+Dim.ImmunizationName.ImmunizationName
+Dim.PharmacyOrderableItem.ImmunizationName&quot;/&gt;
       &lt;/mapping&gt;
       &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping">mapping</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;sda&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>
-             <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Vaccination.MaxDoseQuantity,Vaccination.OrderItem,Vaccination.Extension[VaccinationExtension].CDCName,Vaccination.Extension[VaccinationExtension].Source,Vaccination.AdministrationSite.Description,Vaccination.Manufacturer[VA.Manufacturer].Description
-Vaccination.OrderItem[Order].Code,Vaccination.Route.Code,Vaccination.OrderItem[Order].Code&quot;/&gt;
+             <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Vaccination.MaxDoseQuantity
+Vaccination.OrderItem
+Vaccination.Extension[VaccinationExtension].CDCName
+Vaccination.Extension[VaccinationExtension].Source
+Vaccination.AdministrationSite.Description
+Vaccination.Manufacturer[VA.Manufacturer].Description
+Vaccination.OrderItem[Order].Code
+Vaccination.Route.Code
+Vaccination.OrderItem[Order].Code&quot;/&gt;
       &lt;/mapping&gt;
       &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping">mapping</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;sda&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>
-             <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Vaccination.MaxDoseQuantity,Vaccination.OrderItem,Vaccination.Extension[VaccinationExtension].CDCName,Vaccination.Extension[VaccinationExtension].Source,Vaccination.AdministrationSite.Description,Vaccination.Manufacturer[VA.Manufacturer].Description
-Vaccination.OrderItem[Order].Description,Vaccination.Route.Description,Vaccination.OrderItem[Order].Description,Vaccination.ObservationCodedValue[ObservationValueCode].Description&quot;/&gt;
+             <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Vaccination.MaxDoseQuantity
+Vaccination.OrderItem
+Vaccination.Extension[VaccinationExtension].CDCName
+Vaccination.Extension[VaccinationExtension].Source
+Vaccination.AdministrationSite.Description
+Vaccination.Manufacturer[VA.Manufacturer].Description
+Vaccination.OrderItem[Order].Description
+Vaccination.Route.Description
+Vaccination.OrderItem[Order].Description
+Vaccination.ObservationCodedValue[ObservationValueCode].Description&quot;/&gt;
       &lt;/mapping&gt;
       &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping">mapping</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;sda&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>
-             <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Vaccination.MaxDoseQuantity,Vaccination.OrderItem,Vaccination.Extension[VaccinationExtension].CDCName,Vaccination.Extension[VaccinationExtension].Source,Vaccination.AdministrationSite.Description,Vaccination.Manufacturer[VA.Manufacturer].Description
-Vaccination.OrderItem[Order].Description,Vaccination.Route.Description,Vaccination.OrderItem[Order].Description,Vaccination.ObservationCodedValue[ObservationValueCode].Description&quot;/&gt;
+             <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Vaccination.MaxDoseQuantity
+Vaccination.OrderItem
+Vaccination.Extension[VaccinationExtension].CDCName
+Vaccination.Extension[VaccinationExtension].Source
+Vaccination.AdministrationSite.Description
+Vaccination.Manufacturer[VA.Manufacturer].Description
+Vaccination.OrderItem[Order].Description
+Vaccination.Route.Description
+Vaccination.OrderItem[Order].Description
+Vaccination.ObservationCodedValue[ObservationValueCode].Description&quot;/&gt;
       &lt;/mapping&gt;
       &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping">mapping</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;vpr&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>
-             <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;immunization.cvx (&amp;gt;9999999.14-.03),immunization.name (&amp;gt;9999999.14-.01)&quot;/&gt;
+             <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;immunization.cvx (&amp;gt;9999999.14-.03)
+immunization.name (&amp;gt;9999999.14-.01)&quot;/&gt;
       &lt;/mapping&gt;
       &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping">mapping</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;vpr&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>
-             <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;immunization.cvx (&amp;gt;9999999.14-.03),immunization.name (&amp;gt;9999999.14-.01)&quot;/&gt;
+             <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;immunization.cvx (&amp;gt;9999999.14-.03)
+immunization.name (&amp;gt;9999999.14-.01)&quot;/&gt;
       &lt;/mapping&gt;
       &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping">mapping</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;vpr&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>
-             <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;immunization.cvx (&amp;gt;9999999.14-.03),immunization.name (&amp;gt;9999999.14-.01)&quot;/&gt;
+             <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;immunization.cvx (&amp;gt;9999999.14-.03)
+immunization.name (&amp;gt;9999999.14-.01)&quot;/&gt;
       &lt;/mapping&gt;
     &lt;/element&gt;
     &lt;<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.differential.element">element</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">id</a>=&quot;Immunization.statusReason&quot;&gt;
@@ -5203,18 +5311,28 @@ Vaccination.OrderItem[Order].Description,Vaccination.Route.Description,Vaccinati
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;cdw&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>
              <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Immun.Immunization.ImmunizationNameIEN
-Dim.ImmunizationName.ImmunizationName,Dim.PharmacyOrderableItem.ImmunizationName&quot;/&gt;
+Dim.ImmunizationName.ImmunizationName
+Dim.PharmacyOrderableItem.ImmunizationName&quot;/&gt;
       &lt;/mapping&gt;
       &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping">mapping</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;sda&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>
-             <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Vaccination.MaxDoseQuantity,Vaccination.OrderItem,Vaccination.Extension[VaccinationExtension].CDCName,Vaccination.Extension[VaccinationExtension].Source,Vaccination.AdministrationSite.Description,Vaccination.Manufacturer[VA.Manufacturer].Description
-Vaccination.OrderItem[Order].Description,Vaccination.Route.Description,Vaccination.OrderItem[Order].Description,Vaccination.ObservationCodedValue[ObservationValueCode].Description&quot;/&gt;
+             <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Vaccination.MaxDoseQuantity
+Vaccination.OrderItem
+Vaccination.Extension[VaccinationExtension].CDCName
+Vaccination.Extension[VaccinationExtension].Source
+Vaccination.AdministrationSite.Description
+Vaccination.Manufacturer[VA.Manufacturer].Description
+Vaccination.OrderItem[Order].Description
+Vaccination.Route.Description
+Vaccination.OrderItem[Order].Description
+Vaccination.ObservationCodedValue[ObservationValueCode].Description&quot;/&gt;
       &lt;/mapping&gt;
       &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping">mapping</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;vpr&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>
-             <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;immunization.cvx (&amp;gt;9999999.14-.03),immunization.name (&amp;gt;9999999.14-.01)&quot;/&gt;
+             <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;immunization.cvx (&amp;gt;9999999.14-.03)
+immunization.name (&amp;gt;9999999.14-.01)&quot;/&gt;
       &lt;/mapping&gt;
     &lt;/element&gt;
     &lt;<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.differential.element">element</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">id</a>=&quot;Immunization.vaccineCode&quot;&gt;
@@ -5249,18 +5367,28 @@ Vaccination.OrderItem[Order].Description,Vaccination.Route.Description,Vaccinati
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;cdw&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>
              <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Immun.Immunization.ImmunizationNameIEN
-Dim.ImmunizationName.ImmunizationName,Dim.PharmacyOrderableItem.ImmunizationName&quot;/&gt;
+Dim.ImmunizationName.ImmunizationName
+Dim.PharmacyOrderableItem.ImmunizationName&quot;/&gt;
       &lt;/mapping&gt;
       &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping">mapping</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;sda&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>
-             <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Vaccination.MaxDoseQuantity,Vaccination.OrderItem,Vaccination.Extension[VaccinationExtension].CDCName,Vaccination.Extension[VaccinationExtension].Source,Vaccination.AdministrationSite.Description,Vaccination.Manufacturer[VA.Manufacturer].Description
-Vaccination.OrderItem[Order].Description,Vaccination.Route.Description,Vaccination.OrderItem[Order].Description,Vaccination.ObservationCodedValue[ObservationValueCode].Description&quot;/&gt;
+             <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Vaccination.MaxDoseQuantity
+Vaccination.OrderItem
+Vaccination.Extension[VaccinationExtension].CDCName
+Vaccination.Extension[VaccinationExtension].Source
+Vaccination.AdministrationSite.Description
+Vaccination.Manufacturer[VA.Manufacturer].Description
+Vaccination.OrderItem[Order].Description
+Vaccination.Route.Description
+Vaccination.OrderItem[Order].Description
+Vaccination.ObservationCodedValue[ObservationValueCode].Description&quot;/&gt;
       &lt;/mapping&gt;
       &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping">mapping</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;vpr&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>
-             <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;immunization.cvx (&amp;gt;9999999.14-.03),immunization.name (&amp;gt;9999999.14-.01)&quot;/&gt;
+             <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;immunization.cvx (&amp;gt;9999999.14-.03)
+immunization.name (&amp;gt;9999999.14-.01)&quot;/&gt;
       &lt;/mapping&gt;
     &lt;/element&gt;
     &lt;<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.differential.element">element</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">id</a>=&quot;Immunization.vaccineCode.coding&quot;&gt;
@@ -5333,13 +5461,21 @@ Dim.ImmunizationName.CVXCode&quot;/&gt;
       &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping">mapping</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;sda&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>
-             <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Vaccination.MaxDoseQuantity,Vaccination.OrderItem,Vaccination.Extension[VaccinationExtension].CDCName,Vaccination.Extension[VaccinationExtension].Source,Vaccination.AdministrationSite.Description,Vaccination.Manufacturer[VA.Manufacturer].Description
-Vaccination.OrderItem[Order].Code,Vaccination.Route.Code,Vaccination.OrderItem[Order].Code&quot;/&gt;
+             <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Vaccination.MaxDoseQuantity
+Vaccination.OrderItem
+Vaccination.Extension[VaccinationExtension].CDCName
+Vaccination.Extension[VaccinationExtension].Source
+Vaccination.AdministrationSite.Description
+Vaccination.Manufacturer[VA.Manufacturer].Description
+Vaccination.OrderItem[Order].Code
+Vaccination.Route.Code
+Vaccination.OrderItem[Order].Code&quot;/&gt;
       &lt;/mapping&gt;
       &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping">mapping</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;vpr&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>
-             <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;immunization.cvx (&amp;gt;9999999.14-.03),immunization.name (&amp;gt;9999999.14-.01)&quot;/&gt;
+             <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;immunization.cvx (&amp;gt;9999999.14-.03)
+immunization.name (&amp;gt;9999999.14-.01)&quot;/&gt;
       &lt;/mapping&gt;
     &lt;/element&gt;
     &lt;<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.differential.element">element</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">id</a>=&quot;Immunization.vaccineCode.coding:va-ndc&quot;&gt;
@@ -5399,18 +5535,28 @@ Vaccination.OrderItem[Order].Code,Vaccination.Route.Code,Vaccination.OrderItem[O
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;cdw&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>
              <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Immun.Immunization.ImmunizationNameIEN
-Dim.ImmunizationName.ImmunizationName,Dim.PharmacyOrderableItem.ImmunizationName&quot;/&gt;
+Dim.ImmunizationName.ImmunizationName
+Dim.PharmacyOrderableItem.ImmunizationName&quot;/&gt;
       &lt;/mapping&gt;
       &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping">mapping</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;sda&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>
-             <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Vaccination.MaxDoseQuantity,Vaccination.OrderItem,Vaccination.Extension[VaccinationExtension].CDCName,Vaccination.Extension[VaccinationExtension].Source,Vaccination.AdministrationSite.Description,Vaccination.Manufacturer[VA.Manufacturer].Description
-Vaccination.OrderItem[Order].Description,Vaccination.Route.Description,Vaccination.OrderItem[Order].Description,Vaccination.ObservationCodedValue[ObservationValueCode].Description&quot;/&gt;
+             <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Vaccination.MaxDoseQuantity
+Vaccination.OrderItem
+Vaccination.Extension[VaccinationExtension].CDCName
+Vaccination.Extension[VaccinationExtension].Source
+Vaccination.AdministrationSite.Description
+Vaccination.Manufacturer[VA.Manufacturer].Description
+Vaccination.OrderItem[Order].Description
+Vaccination.Route.Description
+Vaccination.OrderItem[Order].Description
+Vaccination.ObservationCodedValue[ObservationValueCode].Description&quot;/&gt;
       &lt;/mapping&gt;
       &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping">mapping</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;vpr&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>
-             <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;immunization.cvx (&amp;gt;9999999.14-.03),immunization.name (&amp;gt;9999999.14-.01)&quot;/&gt;
+             <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;immunization.cvx (&amp;gt;9999999.14-.03)
+immunization.name (&amp;gt;9999999.14-.01)&quot;/&gt;
       &lt;/mapping&gt;
     &lt;/element&gt;
     &lt;<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.differential.element">element</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">id</a>=&quot;Immunization.patient&quot;&gt;
@@ -5432,7 +5578,8 @@ Vaccination.OrderItem[Order].Description,Vaccination.Route.Description,Vaccinati
       &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping">mapping</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;sda&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>
-             <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Vaccination.AdministrationSite.Code,Vaccination.Manufacturer[VA.Manufacturer].Code&quot;/&gt;
+             <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Vaccination.AdministrationSite.Code
+Vaccination.Manufacturer[VA.Manufacturer].Code&quot;/&gt;
       &lt;/mapping&gt;
     &lt;/element&gt;
     &lt;<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.differential.element">element</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">id</a>=&quot;Immunization.encounter&quot;&gt;
@@ -5451,17 +5598,24 @@ Vaccination.OrderItem[Order].Description,Vaccination.Route.Description,Vaccinati
       &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping">mapping</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;cdw&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>
-             <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Immun.Immunization.OutsideLocation,Immun.Immunization.VisitDateTime,Immun.Immunization.VisitIEN&quot;/&gt;
+             <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Immun.Immunization.OutsideLocation
+Immun.Immunization.VisitDateTime
+Immun.Immunization.VisitIEN&quot;/&gt;
       &lt;/mapping&gt;
       &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping">mapping</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;sda&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>
-             <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Vaccination.EncounterNumber,Vaccination.EnteredAt,Vaccination.Administration.AdministeredAtLocation&quot;/&gt;
+             <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Vaccination.EncounterNumber
+Vaccination.EnteredAt
+Vaccination.Administration.AdministeredAtLocation&quot;/&gt;
       &lt;/mapping&gt;
       &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping">mapping</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;vpr&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>
-             <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;immunization.administered,immunization.encounter,immunization.facility (&amp;gt;9000010-.06),immunization.location (&amp;gt;9000010-.22)&quot;/&gt;
+             <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;immunization.administered
+immunization.encounter
+immunization.facility (&amp;gt;9000010-.06)
+immunization.location (&amp;gt;9000010-.22)&quot;/&gt;
       &lt;/mapping&gt;
     &lt;/element&gt;
     &lt;<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.differential.element">element</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">id</a>=&quot;Immunization.occurrence[x]&quot;&gt;
@@ -5499,7 +5653,8 @@ Vaccination.OrderItem[Order].Description,Vaccination.Route.Description,Vaccinati
       &lt;/mapping&gt;
       &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping">mapping</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;sda&quot;/&gt;
-        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Vaccination.FromTime,Vaccination.ToTime&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Vaccination.FromTime
+Vaccination.ToTime&quot;/&gt;
       &lt;/mapping&gt;
     &lt;/element&gt;
     &lt;<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.differential.element">element</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">id</a>=&quot;Immunization.recorded&quot;&gt;
@@ -5536,7 +5691,8 @@ Vaccination.OrderItem[Order].Description,Vaccination.Route.Description,Vaccinati
       &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping">mapping</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;vpr&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>
-             <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;immunization.source (&amp;gt;920.1-.01),immunization.source (&amp;gt;920.1-.02)&quot;/&gt;
+             <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;immunization.source (&amp;gt;920.1-.01)
+immunization.source (&amp;gt;920.1-.02)&quot;/&gt;
       &lt;/mapping&gt;
     &lt;/element&gt;
     &lt;<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.differential.element">element</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">id</a>=&quot;Immunization.location&quot;&gt;
@@ -5557,20 +5713,31 @@ Vaccination.OrderItem[Order].Description,Vaccination.Route.Description,Vaccinati
       &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping">mapping</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;cdw&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>
-             <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Immun.Immunization.OutsideLocation,Immun.Immunization.VisitDateTime,Immun.Immunization.VisitIEN
-Outpat.Visit.LocationIEN,Outpat.Workload.LocationIEN&quot;/&gt;
+             <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Immun.Immunization.OutsideLocation
+Immun.Immunization.VisitDateTime
+Immun.Immunization.VisitIEN
+Outpat.Visit.LocationIEN
+Outpat.Workload.LocationIEN&quot;/&gt;
       &lt;/mapping&gt;
       &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping">mapping</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;sda&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>
-             <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Vaccination.EncounterNumber,Vaccination.EnteredAt,Vaccination.Administration.AdministeredAtLocation
-Encounter.ExternalId,Encounter.HealthCareFacility&quot;/&gt;
+             <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Vaccination.EncounterNumber
+Vaccination.EnteredAt
+Vaccination.Administration.AdministeredAtLocation
+Encounter.ExternalId
+Encounter.HealthCareFacility&quot;/&gt;
       &lt;/mapping&gt;
       &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping">mapping</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;vpr&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>
-             <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;immunization.administered,immunization.encounter,immunization.facility (&amp;gt;9000010-.06),immunization.location (&amp;gt;9000010-.22)
-visit.creditStopCode (&amp;gt;44-2503),visit.location (&amp;gt;44-.01),visit.visitString&quot;/&gt;
+             <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;immunization.administered
+immunization.encounter
+immunization.facility (&amp;gt;9000010-.06)
+immunization.location (&amp;gt;9000010-.22)
+visit.creditStopCode (&amp;gt;44-2503)
+visit.location (&amp;gt;44-.01)
+visit.visitString&quot;/&gt;
       &lt;/mapping&gt;
     &lt;/element&gt;
     &lt;<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.differential.element">element</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">id</a>=&quot;Immunization.manufacturer&quot;&gt;
@@ -5584,7 +5751,8 @@ visit.creditStopCode (&amp;gt;44-2503),visit.location (&amp;gt;44-.01),visit.vis
       &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping">mapping</a>&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.identity">identity</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;cdw&quot;/&gt;
         &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ElementDefinition#ElementDefinition.mapping.map">map</a>
-             <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Dim.ImmunizationLot.ImmunizationManufacturerIEN,Dim.ImmunizationLot.ImmunizationManufacturerSID&quot;/&gt;
+             <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Dim.ImmunizationLot.ImmunizationManufacturerIEN
+Dim.ImmunizationLot.ImmunizationManufacturerSID&quot;/&gt;
       &lt;/mapping&gt;
     &lt;/element&gt;
     &lt;<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.differential.element">element</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">id</a>=&quot;Immunization.lotNumber&quot;&gt;
@@ -5846,7 +6014,7 @@ Dim.UCUMCode.UCUMCode&quot;/&gt;
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025 <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#1.5.16 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, May 12, 2025 19:56+0000">2025-05-12</span>
+          IG &#169; 2025 <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#1.5.23 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, May 23, 2025 16:30+0000">2025-05-23</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -38,15 +38,15 @@ Mapping: sda-to-LungCancerScreening
 Id: sda
 Title: "Summary Document Architecure (SDA)"
 Source: LungCancerScreening
-* presentedForm -> "AdvanceDirective.Comments,Alert.Comments,Documents.NoteText"
+* presentedForm -> "AdvanceDirective.Comments\nAlert.Comments\nDocuments.NoteText"
 * subject -> "Documents.DocumentType"
 * performer -> "Alert.EnteredBy"
-* encounter -> "AdvanceDirective.EncounterNumber,Alert.EncounterNumber,Documents.EncounterNumber"
+* encounter -> "AdvanceDirective.EncounterNumber\nAlert.EncounterNumber\nDocuments.EncounterNumber"
 
 Mapping: vpr-to-LungCancerScreening
 Id: vpr
 Title: "Virtual Patient Record XML (VPR)"
 Source: LungCancerScreening
 * presentedForm -> "document.content[n]"
-* performer -> "document.clinician [m] (>200-.01),document.clinician [m] (>200-20.2),document.clinician [m] (>200-8932.1)"
+* performer -> "document.clinician [m] (>200-.01)\ndocument.clinician [m] (>200-20.2)\ndocument.clinician [m] (>200-8932.1)"
 * encounter -> "document.encounter"

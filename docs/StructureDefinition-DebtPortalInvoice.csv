@@ -32,7 +32,8 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}","N/A"
 "Invoice.identifier","Invoice.identifier","","","",0,*,"Y","","Y","Identifier {[]} {[]}
 ","Business Identifier for item","Identifier of this Invoice, often used for reference in correspondence about this invoice or for tracking of payments.","","Allows Identification of this Invoice instance.","","","","","","","",,,,,"",,,,"Invoice.identifier",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","1975: source value based on ACCOUNTS RECEIVABLE - BILL NO. (430-.01)","IB.AccountsReceivable.BillNumber,IB.AccountsReceivableTCSP.BillNumber","FT1.2",".identifier","FiveWs.identifier"
+","1975: source value based on ACCOUNTS RECEIVABLE - BILL NO. (430-.01)","IB.AccountsReceivable.BillNumber
+IB.AccountsReceivableTCSP.BillNumber","FT1.2",".identifier","FiveWs.identifier"
 "Invoice.status","Invoice.status","","","",1,1,"Y","Y","Y","code {[]} {[]}
 ","draft | issued | balanced | cancelled | entered-in-error","The current state of the Invoice.","","","","","","","","","",,"required","see mapping [VF_ARBillStatus](ConceptMap-VF-ARBillStatus.html)","http://va.gov/fhir/ValueSet/ARBillStatus","",,,,"Invoice.status",1,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","1843: terminologyMaps using VF_ARBillStatus on ACCOUNTS RECEIVABLE - CURRENT STATUS > ACCOUNTS RECEIVABLE TRANS.TYPE - NAME (430-8 > 430.3-.01)","IB.AccountsReceivable.ARTransactionTypeIEN
@@ -107,14 +108,29 @@ Dim.ARTransactionType.ARTransactionType","C*E.2 - but note this is not well foll
 "Invoice.subject","Invoice.subject","","patient
 ","",0,1,"Y","","Y","Reference {[]} {[CanonicalType[http://va.gov/fhir/StructureDefinition/Patient]]}
 ","Recipient(s) of goods and services","The individual or set of individuals receiving the goods and services billed in this invoice.","","Links the event to the Patient context.","","","","","","","",,,,,"",,,,"Invoice.subject",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","1976: reference based on ACCOUNTS RECEIVABLE - PATIENT (430-7)","IB.AccountsReceivable.PatientIEN,IB.AccountsReceivableComment.PatientIEN,IB.AccountsReceivableDescription.PatientIEN,IB.AccountsReceivableFiscalYear.PatientIEN,IB.AccountsReceivableRepayDate.PatientIEN,IB.AccountsReceivableTCSP.PatientIEN,IB.AccountsReceivableTCSP.PatientSID","PAT in proximity to FT1 segment",".participation[typeCode=SBJ].role","FiveWs.subject[x]","FiveWs.subject","Event.subject"
+","1976: reference based on ACCOUNTS RECEIVABLE - PATIENT (430-7)","IB.AccountsReceivable.PatientIEN
+IB.AccountsReceivableComment.PatientIEN
+IB.AccountsReceivableDescription.PatientIEN
+IB.AccountsReceivableFiscalYear.PatientIEN
+IB.AccountsReceivableRepayDate.PatientIEN
+IB.AccountsReceivableTCSP.PatientIEN
+IB.AccountsReceivableTCSP.PatientSID","PAT in proximity to FT1 segment",".participation[typeCode=SBJ].role","FiveWs.subject[x]","FiveWs.subject","Event.subject"
 "Invoice.recipient","Invoice.recipient","","","",0,1,"Y","","Y","Reference {[]} {[CanonicalType[http://va.gov/fhir/StructureDefinition/DebtPortalPatient]]}
 ","Recipient of this invoice","The individual or Organization responsible for balancing of this invoice.","","","","","","","","","",,,,,"",,,,"Invoice.recipient",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 dpi-17-1818:If type is PATIENT (#2) then reference Patient based on (430-9 > 340-.01) {true}","1818: reference based on ACCOUNTS RECEIVABLE - DEBTOR > AR DEBTOR - DEBTOR (430-9 > 340-.01) if type is PATIENT (#2)","IB.AccountsReceivable.ARDebtorIEN
-Dim.ARDebtor.InstitutionIEN,Dim.ARDebtor.InsuranceCompanyIEN,Dim.ARDebtor.PatientIEN,Dim.ARDebtor.StaffIEN,Dim.ARDebtor.VendorIEN","PV1 in proximity to FT1 segment",".inboundRelationship(typeCode=COMP].source[classCode<=PCPR, moodCode=EVN]","Event.context"
+Dim.ARDebtor.InstitutionIEN
+Dim.ARDebtor.InsuranceCompanyIEN
+Dim.ARDebtor.PatientIEN
+Dim.ARDebtor.StaffIEN
+Dim.ARDebtor.VendorIEN","PV1 in proximity to FT1 segment",".inboundRelationship(typeCode=COMP].source[classCode<=PCPR, moodCode=EVN]","Event.context"
 "Invoice.date","Invoice.date","","","",0,1,"Y","","Y","dateTime {[]} {[]}
 ","Invoice date / posting date","Date/time(s) of when this Invoice was posted.","The list of types may be constrained as appropriate for the type of charge item.","","","","","","","","",,,,,"",,,,"Invoice.date",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","1977: source value based on ACCOUNTS RECEIVABLE - DATE BILL PREPARED (430-10)","IB.AccountsReceivable.BillPreparedDateTime,IB.AccountsReceivableComment.BillPreparedDateTime,IB.AccountsReceivableDescription.BillPreparedDateTime,IB.AccountsReceivableFiscalYear.BillPreparedDateTime,IB.AccountsReceivableRepayDate.BillPreparedDateTime,IB.AccountsReceivableTCSP.BillPreparedDateTime","Varies by domain",".effectiveTime","FiveWs.done[x]"
+","1977: source value based on ACCOUNTS RECEIVABLE - DATE BILL PREPARED (430-10)","IB.AccountsReceivable.BillPreparedDateTime
+IB.AccountsReceivableComment.BillPreparedDateTime
+IB.AccountsReceivableDescription.BillPreparedDateTime
+IB.AccountsReceivableFiscalYear.BillPreparedDateTime
+IB.AccountsReceivableRepayDate.BillPreparedDateTime
+IB.AccountsReceivableTCSP.BillPreparedDateTime","Varies by domain",".effectiveTime","FiveWs.done[x]"
 "Invoice.participant","Invoice.participant","","","",0,*,"","","","BackboneElement {[]} {[]}
 ","Participant in creation of this Invoice","Indicates who or what performed or participated in the charged service.","","","","","","","","","",,,,,"",,,,"Invoice.participant",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","EVN.5 or by domain",".participation[typeCode=PRF].role[scoper.determinerCode=INSTANCE]"

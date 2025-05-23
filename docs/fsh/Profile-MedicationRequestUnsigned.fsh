@@ -47,28 +47,28 @@ Mapping: cdw-to-MedicationRequestUnsigned
 Id: cdw
 Title: "Clinical Data Warehouse (CDW)"
 Source: MedicationRequestUnsigned
-* subject -> "CPRSOrder.OrderAction.ObjectOfOrderIEN,CPRSOrder.OrderAction.ObjectofOrderLabReferralPatientIEN,CPRSOrder.OrderAction.ObjectOfOrderPatientIEN,CPRSOrder.OrderAction.ParentFileNumber,CPRSOrder.OrderedItem.PatientIEN"
-* authoredOn -> "CPRSOrder.CPRSOrder.EnteredDateTime,CPRSOrder.CPRSOrder.EnteredVistaDate,CPRSOrder.OrderedItem.EnteredDateTime,CPRSOrder.OrderedItem.EnteredVistaDate"
-* dosageInstruction.timing.repeat.boundsPeriod.start -> "CPRSOrder.CPRSOrder.OrderStartDateTime,CPRSOrder.CPRSOrder.OrderStartVistaDate,CPRSOrder.OrderAction.OrderStartDateTime,CPRSOrder.OrderedItem.OrderStartDateSID,CPRSOrder.OrderedItem.OrderStartDateTime,CPRSOrder.OrderedItem.OrderStartVistaDate"
-* dosageInstruction.timing.repeat.boundsPeriod.end -> "CPRSOrder.CPRSOrder.OrderStopDateTime,CPRSOrder.CPRSOrder.OrderStopVistaDate,CPRSOrder.OrderedItem.OrderStopDateSID,CPRSOrder.OrderedItem.OrderStopDateTime,CPRSOrder.OrderedItem.OrderStopVistaDate"
-* medicationCodeableConcept -> "CPRSOrder.CPRSOrder.ItemOrderedParentFileIEN,CPRSOrder.CPRSOrder.ItemOrderedParentFileNumber"
+* subject -> "CPRSOrder.OrderAction.ObjectOfOrderIEN\nCPRSOrder.OrderAction.ObjectofOrderLabReferralPatientIEN\nCPRSOrder.OrderAction.ObjectOfOrderPatientIEN\nCPRSOrder.OrderAction.ParentFileNumber\nCPRSOrder.OrderedItem.PatientIEN"
+* authoredOn -> "CPRSOrder.CPRSOrder.EnteredDateTime\nCPRSOrder.CPRSOrder.EnteredVistaDate\nCPRSOrder.OrderedItem.EnteredDateTime\nCPRSOrder.OrderedItem.EnteredVistaDate"
+* dosageInstruction.timing.repeat.boundsPeriod.start -> "CPRSOrder.CPRSOrder.OrderStartDateTime\nCPRSOrder.CPRSOrder.OrderStartVistaDate\nCPRSOrder.OrderAction.OrderStartDateTime\nCPRSOrder.OrderedItem.OrderStartDateSID\nCPRSOrder.OrderedItem.OrderStartDateTime\nCPRSOrder.OrderedItem.OrderStartVistaDate"
+* dosageInstruction.timing.repeat.boundsPeriod.end -> "CPRSOrder.CPRSOrder.OrderStopDateTime\nCPRSOrder.CPRSOrder.OrderStopVistaDate\nCPRSOrder.OrderedItem.OrderStopDateSID\nCPRSOrder.OrderedItem.OrderStopDateTime\nCPRSOrder.OrderedItem.OrderStopVistaDate"
+* medicationCodeableConcept -> "CPRSOrder.CPRSOrder.ItemOrderedParentFileIEN\nCPRSOrder.CPRSOrder.ItemOrderedParentFileNumber"
 
 Mapping: sda-to-MedicationRequestUnsigned
 Id: sda
 Title: "Summary Document Architecure (SDA)"
 Source: MedicationRequestUnsigned
-* identifier.value -> "RadOrder.OrderItem[Order].Description,RadOrder.Extension[ResultExtension].null,LabOrder.OrderItem[Order].Description,LabOrder.Priority.Description,OtherOrder.OrderCategory.Description,OtherOrder.OrderItem[Order].Description,OtherOrder.OrderStatus[VA.VAStatus].Description,OtherOrder.Priority.Description,OtherOrder.OrderItem[Order].OriginalText"
+* identifier.value -> "RadOrder.OrderItem[Order].Description\nRadOrder.Extension[ResultExtension].null\nLabOrder.OrderItem[Order].Description\nLabOrder.Priority.Description\nOtherOrder.OrderCategory.Description\nOtherOrder.OrderItem[Order].Description\nOtherOrder.OrderStatus[VA.VAStatus].Description\nOtherOrder.Priority.Description\nOtherOrder.OrderItem[Order].OriginalText"
 * subject -> "RadOrder.Extension[ResultExtension].null"
-* authoredOn -> "RadOrder.EnteredOn,RadOrder.NationalItem[CodeTable].SDACodingStandard,RadOrder.Extension[ResultExtension].CaseNumber,LabOrder.EnteredOn,LabOrder.NationalItem[CodeTable].SDACodingStandard,OtherOrder.EnteredOn,Medication.EnteredOn"
-* priorPrescription -> "RadOrder.Extension[OrderExtension].ReplacedOrder,LabOrder.Extension[LabOrderExtension].ReplacedOrder,OtherOrder.Extension[OrderExtension].ReplacedOrder,Medication.Extension[MedicationExtension].ReplacedOrder"
-* dosageInstruction.timing.repeat.boundsPeriod.start -> "RadOrder.FromTime,LabOrder.FromTime,LabOrder.SpecimenCollectedTime,OtherOrder.FromTime,Medication.FromTime"
-* dosageInstruction.timing.repeat.boundsPeriod.end -> "RadOrder.ToTime,LabOrder.ToTime,OtherOrder.ToTime,Medication.ToTime"
+* authoredOn -> "RadOrder.EnteredOn\nRadOrder.NationalItem[CodeTable].SDACodingStandard\nRadOrder.Extension[ResultExtension].CaseNumber\nLabOrder.EnteredOn\nLabOrder.NationalItem[CodeTable].SDACodingStandard\nOtherOrder.EnteredOn\nMedication.EnteredOn"
+* priorPrescription -> "RadOrder.Extension[OrderExtension].ReplacedOrder\nLabOrder.Extension[LabOrderExtension].ReplacedOrder\nOtherOrder.Extension[OrderExtension].ReplacedOrder\nMedication.Extension[MedicationExtension].ReplacedOrder"
+* dosageInstruction.timing.repeat.boundsPeriod.start -> "RadOrder.FromTime\nLabOrder.FromTime\nLabOrder.SpecimenCollectedTime\nOtherOrder.FromTime\nMedication.FromTime"
+* dosageInstruction.timing.repeat.boundsPeriod.end -> "RadOrder.ToTime\nLabOrder.ToTime\nOtherOrder.ToTime\nMedication.ToTime"
 
 Mapping: vpr-to-MedicationRequestUnsigned
 Id: vpr
 Title: "Virtual Patient Record XML (VPR)"
 Source: MedicationRequestUnsigned
-* requester -> "med.orderingProvider (>200-.01),pharmacy (med).orderingProvider (>200-.01)"
-* authoredOn -> "med.ordered,order.entered,pharmacy (med).ordered"
-* dosageInstruction.timing.repeat.boundsPeriod.start -> "med.start,order.start,pharmacy (med).start"
-* dosageInstruction.timing.repeat.boundsPeriod.end -> "med.stop,order.stop,pharmacy (med).stop"
+* requester -> "med.orderingProvider (>200-.01)\npharmacy (med).orderingProvider (>200-.01)"
+* authoredOn -> "med.ordered\norder.entered\npharmacy (med).ordered"
+* dosageInstruction.timing.repeat.boundsPeriod.start -> "med.start\norder.start\npharmacy (med).start"
+* dosageInstruction.timing.repeat.boundsPeriod.end -> "med.stop\norder.stop\npharmacy (med).stop"

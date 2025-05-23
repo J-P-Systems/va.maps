@@ -18,7 +18,7 @@ Id: cdw
 Title: "Clinical Data Warehouse (CDW)"
 Source: LabObservationMicrobiologyMycobacteriologySpecimen
 * accessionIdentifier -> "Micro.Microbiology.MicrobiologyAccession"
-* type.text -> "Micro.Microbiology.CollectionSampleIEN\nDim.CollectionSample.CollectionSample,Dim.Topography.CollectionSample"
+* type.text -> "Micro.Microbiology.CollectionSampleIEN\nDim.CollectionSample.CollectionSample\nDim.Topography.CollectionSample"
 
 Mapping: sda-to-LabObservationMicrobiologyMycobacteriologySpecimen
 Id: sda

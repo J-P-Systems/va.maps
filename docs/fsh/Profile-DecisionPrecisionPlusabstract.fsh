@@ -26,19 +26,19 @@ Title: "Clinical Data Warehouse (CDW)"
 Source: DecisionPrecisionPlusabstract
 * effectiveDateTime -> "HF.HealthFactor.EventDateTime"
 * note -> "HF.HealthFactor.Comments"
-* encounter -> "HF.HealthFactor.VisitDateTime,HF.HealthFactor.VisitIEN"
+* encounter -> "HF.HealthFactor.VisitDateTime\nHF.HealthFactor.VisitIEN"
 
 Mapping: sda-to-DecisionPrecisionPlusabstract
 Id: sda
 Title: "Summary Document Architecure (SDA)"
 Source: DecisionPrecisionPlusabstract
-* effectiveDateTime -> "SocialHistory.FromTime,Vaccination.FromTime,Vaccination.ToTime,FamilyHistory.FromTime"
-* note -> "SocialHistory.SocialHabitComments,Vaccination.Administration.RefusalReason,FamilyHistory.NoteText"
-* encounter -> "SocialHistory.EncounterNumber,SocialHistory.EnteredAt,SocialHistory.EnteredBy,SocialHistory.EnteredOn,Vaccination.EncounterNumber,Vaccination.EnteredAt,Vaccination.EnteredBy,Vaccination.EnteredOn,Vaccination.Administration.AdministeredAtLocation,FamilyHistory.EncounterNumber,FamilyHistory.EnteredAt,FamilyHistory.EnteredBy,FamilyHistory.EnteredOn"
+* effectiveDateTime -> "SocialHistory.FromTime\nVaccination.FromTime\nVaccination.ToTime\nFamilyHistory.FromTime"
+* note -> "SocialHistory.SocialHabitComments\nVaccination.Administration.RefusalReason\nFamilyHistory.NoteText"
+* encounter -> "SocialHistory.EncounterNumber\nSocialHistory.EnteredAt\nSocialHistory.EnteredBy\nSocialHistory.EnteredOn\nVaccination.EncounterNumber\nVaccination.EnteredAt\nVaccination.EnteredBy\nVaccination.EnteredOn\nVaccination.Administration.AdministeredAtLocation\nFamilyHistory.EncounterNumber\nFamilyHistory.EnteredAt\nFamilyHistory.EnteredBy\nFamilyHistory.EnteredOn"
 
 Mapping: vpr-to-DecisionPrecisionPlusabstract
 Id: vpr
 Title: "Virtual Patient Record XML (VPR)"
 Source: DecisionPrecisionPlusabstract
 * note -> "healthFactor.comment"
-* encounter -> "healthFactor.encounter,healthFactor.facility (>9000010-.06),healthFactor.recorded (>9000010-.01)"
+* encounter -> "healthFactor.encounter\nhealthFactor.facility (>9000010-.06)\nhealthFactor.recorded (>9000010-.01)"

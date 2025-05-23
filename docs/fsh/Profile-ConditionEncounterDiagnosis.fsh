@@ -46,25 +46,25 @@ Mapping: cdw-to-ConditionEncounterDiagnosis
 Id: cdw
 Title: "Clinical Data Warehouse (CDW)"
 Source: ConditionEncounterDiagnosis
-* clinicalStatus -> "Outpat.VDiagnosis.Modifier,Outpat.WorkloadVDiagnosis.Modifier"
-* code.coding.code -> "Outpat.VDiagnosis.ICDIEN,Outpat.WorkloadVDiagnosis.ICDIEN\nDim.ICD10.ICD10Code,Dim.ICD9.ICD9Code"
-* subject -> "Outpat.VDiagnosis.PatientIEN,Outpat.WorkloadVDiagnosis.PatientIEN"
-* encounter -> "Outpat.VDiagnosis.VisitDateTime,Outpat.VDiagnosis.VisitIEN,Outpat.WorkloadVDiagnosis.VisitDateTime,Outpat.WorkloadVDiagnosis.VisitIEN"
-* onsetDateTime -> "Outpat.VDiagnosis.InjuryDateTime,Outpat.WorkloadVDiagnosis.InjuryDateTime"
-* recordedDate -> "Outpat.VDiagnosis.VisitDateTime,Outpat.VDiagnosis.VisitIEN,Outpat.WorkloadVDiagnosis.VisitDateTime,Outpat.WorkloadVDiagnosis.VisitIEN\nImmun.ImmunizationContraRefusalEvent.VisitDateTime,Outpat.Visit.VisitDateTime,Outpat.VisitLogic.VisitDateTime,Outpat.Workload.VisitDateTime"
-* clinicalStatus -> "Outpat.VDiagnosis.Modifier,Outpat.WorkloadVDiagnosis.Modifier"
-* verificationStatus -> "Outpat.VDiagnosis.Modifier,Outpat.WorkloadVDiagnosis.Modifier"
-* recorder -> "Outpat.VDiagnosis.EncounterProviderIEN,Outpat.WorkloadVDiagnosis.EncounterProviderIEN"
+* clinicalStatus -> "Outpat.VDiagnosis.Modifier\nOutpat.WorkloadVDiagnosis.Modifier"
+* code.coding.code -> "Outpat.VDiagnosis.ICDIEN\nOutpat.WorkloadVDiagnosis.ICDIEN\nDim.ICD10.ICD10Code\nDim.ICD9.ICD9Code"
+* subject -> "Outpat.VDiagnosis.PatientIEN\nOutpat.WorkloadVDiagnosis.PatientIEN"
+* encounter -> "Outpat.VDiagnosis.VisitDateTime\nOutpat.VDiagnosis.VisitIEN\nOutpat.WorkloadVDiagnosis.VisitDateTime\nOutpat.WorkloadVDiagnosis.VisitIEN"
+* onsetDateTime -> "Outpat.VDiagnosis.InjuryDateTime\nOutpat.WorkloadVDiagnosis.InjuryDateTime"
+* recordedDate -> "Outpat.VDiagnosis.VisitDateTime\nOutpat.VDiagnosis.VisitIEN\nOutpat.WorkloadVDiagnosis.VisitDateTime\nOutpat.WorkloadVDiagnosis.VisitIEN\nImmun.ImmunizationContraRefusalEvent.VisitDateTime\nOutpat.Visit.VisitDateTime\nOutpat.VisitLogic.VisitDateTime\nOutpat.Workload.VisitDateTime"
+* clinicalStatus -> "Outpat.VDiagnosis.Modifier\nOutpat.WorkloadVDiagnosis.Modifier"
+* verificationStatus -> "Outpat.VDiagnosis.Modifier\nOutpat.WorkloadVDiagnosis.Modifier"
+* recorder -> "Outpat.VDiagnosis.EncounterProviderIEN\nOutpat.WorkloadVDiagnosis.EncounterProviderIEN"
 
 Mapping: sda-to-ConditionEncounterDiagnosis
 Id: sda
 Title: "Summary Document Architecure (SDA)"
 Source: ConditionEncounterDiagnosis
 * clinicalStatus -> "Diagnosis.Diagnosis[CodeTableDetail.Diagnosis].OriginalText"
-* code.coding.code -> "Diagnosis.Diagnosis,Diagnosis.Diagnosis[CodeTableDetail.Diagnosis].Code"
-* encounter -> "Diagnosis.EncounterNumber,Diagnosis.EnteredAt,Diagnosis.EnteredBy,Diagnosis.EnteredOn,Diagnosis.FromTime,Diagnosis.ToTime"
+* code.coding.code -> "Diagnosis.Diagnosis\nDiagnosis.Diagnosis[CodeTableDetail.Diagnosis].Code"
+* encounter -> "Diagnosis.EncounterNumber\nDiagnosis.EnteredAt\nDiagnosis.EnteredBy\nDiagnosis.EnteredOn\nDiagnosis.FromTime\nDiagnosis.ToTime"
 * onsetDateTime -> "Diagnosis.OnsetTime"
-* recordedDate -> "Diagnosis.EncounterNumber,Diagnosis.EnteredAt,Diagnosis.EnteredBy,Diagnosis.EnteredOn,Diagnosis.FromTime,Diagnosis.ToTime\nEncounter.ConsultingClinician[CareProvider].Description,Encounter.ConsultingClinician[CareProvider].Name"
+* recordedDate -> "Diagnosis.EncounterNumber\nDiagnosis.EnteredAt\nDiagnosis.EnteredBy\nDiagnosis.EnteredOn\nDiagnosis.FromTime\nDiagnosis.ToTime\nEncounter.ConsultingClinician[CareProvider].Description\nEncounter.ConsultingClinician[CareProvider].Name"
 * clinicalStatus -> "Diagnosis.Diagnosis[CodeTableDetail.Diagnosis].OriginalText"
 * verificationStatus -> "Diagnosis.Diagnosis[CodeTableDetail.Diagnosis].OriginalText"
 * recorder -> "Diagnosis.DiagnosingClinician"
@@ -73,5 +73,5 @@ Mapping: vpr-to-ConditionEncounterDiagnosis
 Id: vpr
 Title: "Virtual Patient Record XML (VPR)"
 Source: ConditionEncounterDiagnosis
-* code.coding.code -> "visit.icd [m] (>80-.01),visit.icd [m] (>80-1.1),visit.icd [m] (>80-10),visit.reason (>80-.01),visit.reason (>80-1.1),visit.reason (>80-10)"
-* recordedDate -> "visit.dateTime,visit.visitString"
+* code.coding.code -> "visit.icd [m] (>80-.01)\nvisit.icd [m] (>80-1.1)\nvisit.icd [m] (>80-10)\nvisit.reason (>80-.01)\nvisit.reason (>80-1.1)\nvisit.reason (>80-10)"
+* recordedDate -> "visit.dateTime\nvisit.visitString"

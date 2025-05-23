@@ -17,7 +17,7 @@ Mapping: cdw-to-LabObservationChemhemtoxriaserSpecimen
 Id: cdw
 Title: "Clinical Data Warehouse (CDW)"
 Source: LabObservationChemhemtoxriaserSpecimen
-* accessionIdentifier -> "Chem.LabChem.ShortAccessionNumber,Chem.PatientLabChem.ShortAccessionNumber"
+* accessionIdentifier -> "Chem.LabChem.ShortAccessionNumber\nChem.PatientLabChem.ShortAccessionNumber"
 
 Mapping: sda-to-LabObservationChemhemtoxriaserSpecimen
 Id: sda
@@ -29,4 +29,4 @@ Mapping: vpr-to-LabObservationChemhemtoxriaserSpecimen
 Id: vpr
 Title: "Virtual Patient Record XML (VPR)"
 Source: LabObservationChemhemtoxriaserSpecimen
-* accessionIdentifier -> "panel.groupName,accession.groupName,accession.name (>68-.01),lab.groupName"
+* accessionIdentifier -> "panel.groupName\naccession.groupName\naccession.name (>68-.01)\nlab.groupName"

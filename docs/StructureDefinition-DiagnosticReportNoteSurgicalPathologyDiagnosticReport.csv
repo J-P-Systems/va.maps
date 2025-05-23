@@ -63,11 +63,13 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "DiagnosticReport.basedOn","DiagnosticReport.basedOn","","Request
 ","",0,*,"Y","","","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/ServiceRequest]]}
 ","What was requested","Details concerning a service requested.","Note: Usually there is one test request for each result, however in some circumstances multiple test requests may be represented using a single test result resource. Note that there are also cases where one request leads to multiple reports.","This allows tracing of authorization for the report and tracking whether proposals/recommendations were acted upon.","","","","","","","",,,,,"",,,,"DiagnosticReport.basedOn",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","1691: reference based on SURGICAL PATHOLOGY - ORDERED TEST > ORDERED TEST - CPRS ORDER # (63.08-.35 > 63.53-3)","Pathology.SurgPathOrderedTest.CPRSOrderIEN,Pathology.SurgPathOrderedTest.CPRSOrderSID","Event.basedOn","ORC? OBR-2/3?","outboundRelationship[typeCode=FLFS].target"
+","1691: reference based on SURGICAL PATHOLOGY - ORDERED TEST > ORDERED TEST - CPRS ORDER # (63.08-.35 > 63.53-3)","Pathology.SurgPathOrderedTest.CPRSOrderIEN
+Pathology.SurgPathOrderedTest.CPRSOrderSID","Event.basedOn","ORC? OBR-2/3?","outboundRelationship[typeCode=FLFS].target"
 "DiagnosticReport.status","DiagnosticReport.status","","","",1,1,"Y","Y","Y","code {[]} {[]}
 ","registered | partial | preliminary | final +","The status of the diagnostic report.","","Diagnostic services routinely issue provisional/incomplete reports, and sometimes withdraw previously released reports.","","","","","","","",,"required","see mapping [VF_DiagnosticReportLabStatus](ConceptMap-VF-DiagnosticReportLabStatus.html)","http://va.gov/fhir/ValueSet/DiagnosticReportLabStatus","",,,,"DiagnosticReport.status",1,1,"us-core-10
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","1417: terminologyMaps using VF_DiagnosticReportLabStatus on SURGICAL PATHOLOGY - ORDERED TEST > ORDERED TEST - DISPOSITION (63.08-.35 > 63.53-10)","Pathology.SurgPathOrderedTest.DispositionLabCodeIEN,Pathology.SurgPathOrderedTest.DispositionLabCodeSID","Event.status","OBR-25 (not 1:1 mapping)","statusCode  Note: final and amended are distinguished by whether observation is the subject of a ControlAct event of type ""revise""","FiveWs.status"
+","1417: terminologyMaps using VF_DiagnosticReportLabStatus on SURGICAL PATHOLOGY - ORDERED TEST > ORDERED TEST - DISPOSITION (63.08-.35 > 63.53-10)","Pathology.SurgPathOrderedTest.DispositionLabCodeIEN
+Pathology.SurgPathOrderedTest.DispositionLabCodeSID","Event.status","OBR-25 (not 1:1 mapping)","statusCode  Note: final and amended are distinguished by whether observation is the subject of a ControlAct event of type ""revise""","FiveWs.status"
 "DiagnosticReport.category","DiagnosticReport.category","","Department
 Sub-departmentServiceDiscipline","",1,*,"Y","","Y","CodeableConcept {[]} {[]}
 ","Service category","A code that classifies the clinical discipline, department or diagnostic service that created the report (e.g. cardiology, biochemistry, hematology, MRI). This is used for searching, sorting and display purposes.","Multiple categories are allowed using various categorization schemes.   The level of granularity is defined by the category concepts in the value set. More fine-grained filtering can be performed using the metadata and/or terminology hierarchy in DiagnosticReport.code.","","","","","<valueCodeableConcept xmlns=""http://hl7.org/fhir"">
@@ -131,7 +133,25 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "DiagnosticReport.subject","DiagnosticReport.subject","","Patient
 ","",1,1,"Y","","Y","Reference {[]} {[CanonicalType[http://va.gov/fhir/StructureDefinition/Patient]]}
 ","The subject of the report - usually, but not always, the patient","The subject of the report. Usually, but not always, this is a patient. However, diagnostic services also perform analyses on specimens collected from a variety of other sources.","","SHALL know the subject context.","","","","","","","",,,,,"",,,,"DiagnosticReport.subject",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","2212: reference based on PATIENT - LABORATORY REFERENCE > LAB DATA - LRDFN (2-63 > 63-.01)","Micro.AntibioticSensitivity.LRDFN,Micro.AntibioticSensitivityComment.LRDFN,Micro.BacteriologyReports.LRDFN,Micro.MicroAntibioticLevel.LRDFN,Micro.MicroAudit.LRDFN,Micro.Microbiology.LRDFN,Micro.MicroOrderedTest.LRDFN,Micro.MicroSterilityResults.LRDFN,Micro.MycobacteriologyReports.LRDFN,Micro.Mycology.LRDFN,Micro.MycologyReports.LRDFN,Micro.Parasitology.LRDFN,Micro.ParasitologyReports.LRDFN,Micro.ParasitologyStage.LRDFN,Micro.Virology.LRDFN,Micro.VirologyReports.LRDFN,Pathology.Autopsy.LRDFN,Pathology.CytoOrganTissueFunction.StaffIEN,SStaff.SMicroOrderedTest.LRDFN","Patient.Extension[PatientExtension].VeteranLrdfn","demographics.lrdfn","Event.subject","PID-3 (no HL7 v2 mapping for Group or Device)","participation[typeCode=SBJ]","FiveWs.subject[x]","FiveWs.subject"
+","2212: reference based on PATIENT - LABORATORY REFERENCE > LAB DATA - LRDFN (2-63 > 63-.01)","Micro.AntibioticSensitivity.LRDFN
+Micro.AntibioticSensitivityComment.LRDFN
+Micro.BacteriologyReports.LRDFN
+Micro.MicroAntibioticLevel.LRDFN
+Micro.MicroAudit.LRDFN
+Micro.Microbiology.LRDFN
+Micro.MicroOrderedTest.LRDFN
+Micro.MicroSterilityResults.LRDFN
+Micro.MycobacteriologyReports.LRDFN
+Micro.Mycology.LRDFN
+Micro.MycologyReports.LRDFN
+Micro.Parasitology.LRDFN
+Micro.ParasitologyReports.LRDFN
+Micro.ParasitologyStage.LRDFN
+Micro.Virology.LRDFN
+Micro.VirologyReports.LRDFN
+Pathology.Autopsy.LRDFN
+Pathology.CytoOrganTissueFunction.StaffIEN
+SStaff.SMicroOrderedTest.LRDFN","Patient.Extension[PatientExtension].VeteranLrdfn","demographics.lrdfn","Event.subject","PID-3 (no HL7 v2 mapping for Group or Device)","participation[typeCode=SBJ]","FiveWs.subject[x]","FiveWs.subject"
 "DiagnosticReport.encounter","DiagnosticReport.encounter","","Context
 ","",0,1,"Y","","Y","Reference {[]} {[CanonicalType[http://va.gov/fhir/StructureDefinition/EncounterOutpatient]]}
 ","Health care event when test ordered","The healthcare event  (e.g. a patient and healthcare provider interaction) which this DiagnosticReport is about.","This will typically be the encounter the event occurred within, but some events may be initiated prior to or after the official completion of an encounter  but still be tied to the context of the encounter  (e.g. pre-admission laboratory tests).","Links the request to the Encounter context.","","","","","","","",,,,,"",,,,"DiagnosticReport.encounter",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
@@ -146,7 +166,26 @@ Period {[]} {[]}","Diagnostically relevant time (typically the time of the proce
 Effective TimeOccurrence","",0,1,"Y","","Y","dateTime {[]} {[]}
 ","Diagnostically relevant time (typically the time of the procedure)","The time or time-period the observed values are related to. When the subject of the report is a patient, this is usually either the time of the procedure or of specimen collection(s), but very often the source of the date/time is not known, only the date/time itself.","If the diagnostic procedure was performed on the patient, this is the time it was performed. If there are specimens, the diagnostically relevant time can be derived from the specimen collection times, but the specimen information is not always available, and the exact relationship between the specimens and the diagnostically relevant time is not always automatic.","Need to know where in the patient history to file/present this report.","","","","","","","",,,,,"",,,,"DiagnosticReport.effective[x]",0,1,"us-core-10
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","1425: source value based on SURGICAL PATHOLOGY - DATE/TIME SPECIMEN TAKEN (63.08-.01)","Pathology.SurgicalPathology.SpecimenTakenDateTime,Pathology.SurgPathComment.SpecimenTakenDateTime,Pathology.SurgPathDelayedComment.SpecimenTakenDateTime,Pathology.SurgPathDiagnosis.SpecimenTakenDateTime,Pathology.SurgPathFrozenSection.SpecimenTakenDateTime,Pathology.SurgPathGrossDescription.SpecimenTakenDateTime,Pathology.SurgPathMicroscopicExam.SpecimenTakenDateTime,Pathology.SurgPathOpFindings.SpecimenTakenDateTime,Pathology.SurgPathOrderedTest.SpecimenTakenDateTime,Pathology.SurgPathOrganTissueDisease.SpecimenTakenDateTime,Pathology.SurgPathOrganTissueEtiology.SpecimenTakenDateTime,Pathology.SurgPathOrganTissueFunction.SpecimenTakenDateTime,Pathology.SurgPathOrganTissueMorphology.SpecimenTakenDateTime,Pathology.SurgPathOrganTissueProcedure.SpecimenTakenDateTime,Pathology.SurgPathPostOpDiagnosis.SpecimenTakenDateTime,Pathology.SurgPathPreOpDiagnosis.SpecimenTakenDateTime,Pathology.SurgPathSpecimen.SpecimenTakenDateTime,Pathology.SurgPathSupplement.SpecimenTakenDateTime,Pathology.SurgPathSupplementDescript.SpecimenTakenDateTime,Pathology.SurgPathTIUReference.SpecimenTakenDateTime","Event.occurrence[x]","OBR-7","effectiveTime","FiveWs.done[x]"
+","1425: source value based on SURGICAL PATHOLOGY - DATE/TIME SPECIMEN TAKEN (63.08-.01)","Pathology.SurgicalPathology.SpecimenTakenDateTime
+Pathology.SurgPathComment.SpecimenTakenDateTime
+Pathology.SurgPathDelayedComment.SpecimenTakenDateTime
+Pathology.SurgPathDiagnosis.SpecimenTakenDateTime
+Pathology.SurgPathFrozenSection.SpecimenTakenDateTime
+Pathology.SurgPathGrossDescription.SpecimenTakenDateTime
+Pathology.SurgPathMicroscopicExam.SpecimenTakenDateTime
+Pathology.SurgPathOpFindings.SpecimenTakenDateTime
+Pathology.SurgPathOrderedTest.SpecimenTakenDateTime
+Pathology.SurgPathOrganTissueDisease.SpecimenTakenDateTime
+Pathology.SurgPathOrganTissueEtiology.SpecimenTakenDateTime
+Pathology.SurgPathOrganTissueFunction.SpecimenTakenDateTime
+Pathology.SurgPathOrganTissueMorphology.SpecimenTakenDateTime
+Pathology.SurgPathOrganTissueProcedure.SpecimenTakenDateTime
+Pathology.SurgPathPostOpDiagnosis.SpecimenTakenDateTime
+Pathology.SurgPathPreOpDiagnosis.SpecimenTakenDateTime
+Pathology.SurgPathSpecimen.SpecimenTakenDateTime
+Pathology.SurgPathSupplement.SpecimenTakenDateTime
+Pathology.SurgPathSupplementDescript.SpecimenTakenDateTime
+Pathology.SurgPathTIUReference.SpecimenTakenDateTime","Event.occurrence[x]","OBR-7","effectiveTime","FiveWs.done[x]"
 "DiagnosticReport.issued","DiagnosticReport.issued","","Date published
 Date IssuedDate Verified","",0,1,"Y","","Y","instant {[]} {[]}
 ","DateTime this version was made","The date and time that this version of the report was made available to providers, typically after the report was reviewed and verified.","May be different from the update time of the resource itself, because that is the status of the record (potentially a secondary copy), not the actual release time of the report.","Clinicians need to be able to check the date that the report was released.","","","","","","","",,,,,"",,,,"DiagnosticReport.issued",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}

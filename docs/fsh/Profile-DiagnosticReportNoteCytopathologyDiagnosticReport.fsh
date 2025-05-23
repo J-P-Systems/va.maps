@@ -52,14 +52,14 @@ Mapping: cdw-to-DiagnosticReportNoteCytopathologyDiagnosticReport
 Id: cdw
 Title: "Clinical Data Warehouse (CDW)"
 Source: DiagnosticReportNoteCytopathologyDiagnosticReport
-* basedOn -> "Pathology.CytoOrderedTest.CPRSOrderIEN,Pathology.CytoOrderedTest.CPRSOrderSID"
-* status -> "Pathology.CytoOrderedTest.DispositionLabCodeIEN,Pathology.CytoOrderedTest.DispositionLabCodeSID"
-* subject -> "Micro.AntibioticSensitivity.LRDFN,Micro.AntibioticSensitivityComment.LRDFN,Micro.BacteriologyReports.LRDFN,Micro.MicroAntibioticLevel.LRDFN,Micro.MicroAudit.LRDFN,Micro.Microbiology.LRDFN,Micro.MicroOrderedTest.LRDFN,Micro.MicroSterilityResults.LRDFN,Micro.MycobacteriologyReports.LRDFN,Micro.Mycology.LRDFN,Micro.MycologyReports.LRDFN,Micro.Parasitology.LRDFN,Micro.ParasitologyReports.LRDFN,Micro.ParasitologyStage.LRDFN,Micro.Virology.LRDFN,Micro.VirologyReports.LRDFN,Pathology.Autopsy.LRDFN,Pathology.CytoOrganTissueFunction.StaffIEN,SStaff.SMicroOrderedTest.LRDFN"
-* effectiveDateTime -> "Pathology.CytoDelayedReportComment.SpecimenTakenDateTime,Pathology.CytoDiagnosis.SpecimenTakenDateTime,Pathology.CytoGrossDescription.SpecimenTakenDateTime,Pathology.CytoMicroscopicExam.SpecimenTakenDateTime,Pathology.CytoOpFinding.SpecimenTakenDateTime,Pathology.CytoOrderedTest.SpecimenTakenDateTime,Pathology.CytoOrganTissueDisease.SpecimenTakenDateTime,Pathology.CytoOrganTissueEtiology.SpecimenTakenDateTime,Pathology.CytoOrganTissueFunction.SpecimenTakenDateTime,Pathology.CytoOrganTissueMorphology.SpecimenTakenDateTime,Pathology.CytoOrganTissueProcedure.SpecimenTakenDateTime,Pathology.Cytopathology.SpecimenTakenDateTime,Pathology.CytoPostOpDiagnosis.SpecimenTakenDateTime,Pathology.CytoPreOpDiagnosis.SpecimenTakenDateTime,Pathology.CytoReportComment.SpecimenTakenDateTime,Pathology.CytoSpecimen.SpecimenTakenDateTime,Pathology.CytoStainBlock.SpecimenTakenDateTime,Pathology.CytoStainCytospin.SpecimenTakenDateTime,Pathology.CytoStainMembrane.SpecimenTakenDateTime,Pathology.CytoStainProcedure.SpecimenTakenDateTime,Pathology.CytoStainSlide.SpecimenTakenDateTime,Pathology.CytoSupplement.SpecimenTakenDateTime,Pathology.CytoSupplementDescript.SpecimenTakenDateTime,Pathology.CytoTIUReference.SpecimenTakenDateTime"
+* basedOn -> "Pathology.CytoOrderedTest.CPRSOrderIEN\nPathology.CytoOrderedTest.CPRSOrderSID"
+* status -> "Pathology.CytoOrderedTest.DispositionLabCodeIEN\nPathology.CytoOrderedTest.DispositionLabCodeSID"
+* subject -> "Micro.AntibioticSensitivity.LRDFN\nMicro.AntibioticSensitivityComment.LRDFN\nMicro.BacteriologyReports.LRDFN\nMicro.MicroAntibioticLevel.LRDFN\nMicro.MicroAudit.LRDFN\nMicro.Microbiology.LRDFN\nMicro.MicroOrderedTest.LRDFN\nMicro.MicroSterilityResults.LRDFN\nMicro.MycobacteriologyReports.LRDFN\nMicro.Mycology.LRDFN\nMicro.MycologyReports.LRDFN\nMicro.Parasitology.LRDFN\nMicro.ParasitologyReports.LRDFN\nMicro.ParasitologyStage.LRDFN\nMicro.Virology.LRDFN\nMicro.VirologyReports.LRDFN\nPathology.Autopsy.LRDFN\nPathology.CytoOrganTissueFunction.StaffIEN\nSStaff.SMicroOrderedTest.LRDFN"
+* effectiveDateTime -> "Pathology.CytoDelayedReportComment.SpecimenTakenDateTime\nPathology.CytoDiagnosis.SpecimenTakenDateTime\nPathology.CytoGrossDescription.SpecimenTakenDateTime\nPathology.CytoMicroscopicExam.SpecimenTakenDateTime\nPathology.CytoOpFinding.SpecimenTakenDateTime\nPathology.CytoOrderedTest.SpecimenTakenDateTime\nPathology.CytoOrganTissueDisease.SpecimenTakenDateTime\nPathology.CytoOrganTissueEtiology.SpecimenTakenDateTime\nPathology.CytoOrganTissueFunction.SpecimenTakenDateTime\nPathology.CytoOrganTissueMorphology.SpecimenTakenDateTime\nPathology.CytoOrganTissueProcedure.SpecimenTakenDateTime\nPathology.Cytopathology.SpecimenTakenDateTime\nPathology.CytoPostOpDiagnosis.SpecimenTakenDateTime\nPathology.CytoPreOpDiagnosis.SpecimenTakenDateTime\nPathology.CytoReportComment.SpecimenTakenDateTime\nPathology.CytoSpecimen.SpecimenTakenDateTime\nPathology.CytoStainBlock.SpecimenTakenDateTime\nPathology.CytoStainCytospin.SpecimenTakenDateTime\nPathology.CytoStainMembrane.SpecimenTakenDateTime\nPathology.CytoStainProcedure.SpecimenTakenDateTime\nPathology.CytoStainSlide.SpecimenTakenDateTime\nPathology.CytoSupplement.SpecimenTakenDateTime\nPathology.CytoSupplementDescript.SpecimenTakenDateTime\nPathology.CytoTIUReference.SpecimenTakenDateTime"
 * issued -> "Pathology.Cytopathology.ReportCompletedDateTime"
-* performer[va-by] -> "Pathology.Cytopathology.ReleasedByStaffIEN,Pathology.Cytopathology.ReleasedByStaffSID"
-* performer[va-at] -> "Pathology.Cytopathology.ReleasingInstitutionIEN,Pathology.Cytopathology.ReleasingInstitutionSID"
-* resultsInterpreter -> "Pathology.Cytopathology.PathologistStaffIEN,Pathology.Cytopathology.PathologistStaffSID"
+* performer[va-by] -> "Pathology.Cytopathology.ReleasedByStaffIEN\nPathology.Cytopathology.ReleasedByStaffSID"
+* performer[va-at] -> "Pathology.Cytopathology.ReleasingInstitutionIEN\nPathology.Cytopathology.ReleasingInstitutionSID"
+* resultsInterpreter -> "Pathology.Cytopathology.PathologistStaffIEN\nPathology.Cytopathology.PathologistStaffSID"
 * specimen -> "Pathology.Cytopathology.CytopathAccessionNumber"
 
 Mapping: sda-to-DiagnosticReportNoteCytopathologyDiagnosticReport
@@ -69,13 +69,13 @@ Source: DiagnosticReportNoteCytopathologyDiagnosticReport
 * subject -> "Patient.Extension[PatientExtension].VeteranLrdfn"
 * issued -> "Documents.ToTime"
 * performer[va-by] -> "Documents.Extension[DocumentExtension].CareProviders"
-* resultsInterpreter -> "Documents.Clinician,Documents.EnteredBy"
+* resultsInterpreter -> "Documents.Clinician\nDocuments.EnteredBy"
 
 Mapping: vpr-to-DiagnosticReportNoteCytopathologyDiagnosticReport
 Id: vpr
 Title: "Virtual Patient Record XML (VPR)"
 Source: DiagnosticReportNoteCytopathologyDiagnosticReport
 * subject -> "demographics.lrdfn"
-* effectiveDateTime -> "document.encounter,document.referenceDateTime"
+* effectiveDateTime -> "document.encounter\ndocument.referenceDateTime"
 * performer[va-by] -> "document.clinician [m]"
-* resultsInterpreter -> "document.clinician [m] (>200-.01),document.clinician [m] (>200-20.2),document.clinician [m] (>200-8932.1)"
+* resultsInterpreter -> "document.clinician [m] (>200-.01)\ndocument.clinician [m] (>200-20.2)\ndocument.clinician [m] (>200-8932.1)"

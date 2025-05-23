@@ -91,7 +91,7 @@ Id: cdw
 Title: "Clinical Data Warehouse (CDW)"
 Source: DebtPortalChargeItemcharges
 * enteredDate -> "IB.IBAction.EnteredDateTime"
-* code.text -> "IB.IBAction.IBActionTypeIEN\nDim.IBActionType.AccountsReceivableCategory,Dim.IBActionType.ARCategoryIEN"
+* code.text -> "IB.IBAction.IBActionTypeIEN\nDim.IBActionType.AccountsReceivableCategory\nDim.IBActionType.ARCategoryIEN"
 * supportingInformation.identifier.value -> "IB.IBAction.ARBillNumber"
 * subject -> "IB.IBAction.PatientIEN"
 * identifier.value -> "IB.IBAction.ARTransactionNumber"

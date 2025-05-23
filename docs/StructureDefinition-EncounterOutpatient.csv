@@ -39,7 +39,8 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""http://va.gov/fhir/StructureDefinition/resource-serviceConnection""/>","","","","",,,,,"",,,,"Extension.url",1,1,"","","N/A"
 "Encounter.extension:resource-serviceConnection.value[x]","Encounter.extension.value[x]","","","",0,1,"Y","","","Coding {[]} {[]}
 ","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,"required","","http://va.gov/fhir/ValueSet/VSResourceServiceConnection","",,,,"Extension.value[x]",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-eo-19-2035:If (409.68-.1 > 409.1-.01) is SERVICE CONNECTED then fixed value http://va.gov/fhir/vistaDefinedTerms/409.1#SC ""Service Connected"" {true}eo-19-2036:If (409.68-.1 > 409.1-.01) is Not SERVICE CONNECTED then fixed value http://va.gov/fhir/vistaDefinedTerms/409.1#NSC ""Not Service Connected"" {true}","2035: fixed value = http://va.gov/fhir/vistaDefinedTerms/409.1#SC ""Service Connected"" when OUTPATIENT ENCOUNTER - APPOINTMENT TYPE > APPOINTMENT TYPE - NAME (409.68-.1 > 409.1-.01) if SERVICE CONNECTED","2036: fixed value = http://va.gov/fhir/vistaDefinedTerms/409.1#NSC ""Not Service Connected"" when OUTPATIENT ENCOUNTER - APPOINTMENT TYPE > APPOINTMENT TYPE - NAME (409.68-.1 > 409.1-.01) if Not SERVICE CONNECTED","Outpat.Visit.AppointmentTypeIEN,Outpat.Workload.AppointmentTypeIEN
+eo-19-2035:If (409.68-.1 > 409.1-.01) is SERVICE CONNECTED then fixed value http://va.gov/fhir/vistaDefinedTerms/409.1#SC ""Service Connected"" {true}eo-19-2036:If (409.68-.1 > 409.1-.01) is Not SERVICE CONNECTED then fixed value http://va.gov/fhir/vistaDefinedTerms/409.1#NSC ""Not Service Connected"" {true}","2035: fixed value = http://va.gov/fhir/vistaDefinedTerms/409.1#SC ""Service Connected"" when OUTPATIENT ENCOUNTER - APPOINTMENT TYPE > APPOINTMENT TYPE - NAME (409.68-.1 > 409.1-.01) if SERVICE CONNECTED","2036: fixed value = http://va.gov/fhir/vistaDefinedTerms/409.1#NSC ""Not Service Connected"" when OUTPATIENT ENCOUNTER - APPOINTMENT TYPE > APPOINTMENT TYPE - NAME (409.68-.1 > 409.1-.01) if Not SERVICE CONNECTED","Outpat.Visit.AppointmentTypeIEN
+Outpat.Workload.AppointmentTypeIEN
 Dim.AppointmentType.AppointmentType","N/A"
 "Encounter.modifierExtension","Encounter.modifierExtension","","extensions
 user content","",0,*,"","Y","","Extension {[]} {[]}
@@ -68,7 +69,9 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","429-1: fixed value = http://va.gov/identifiers/$Sta3n/9000010-15001","II.root or Role.id.root","CX.4 / EI-2-4"
 "Encounter.identifier.value","Encounter.identifier.value","","","",1,1,"Y","","Y","string {[]} {[]}
 ","The value that is unique","The portion of the identifier typically relevant to the user and which is unique within the context of the system.","If the value is a full URI, then the system SHALL be urn:ietf:rfc:3986.  The value's primary purpose is computational mapping.  As a result, it may be normalized for comparison purposes (e.g. removing non-significant whitespace, dashes, etc.)  A value formatted for human display can be conveyed using the [Rendered Value extension](http://hl7.org/fhir/R4/extension-rendered-value.html). Identifier.value is to be treated as case sensitive unless knowledge of the Identifier.system allows the processer to be confident that non-case-sensitive processing is safe.","","","","","","<valueString xmlns=""http://hl7.org/fhir"" value=""123456""/>","","",,,,,"",,,,"Identifier.value",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","429: source value based on VISIT - VISIT ID (9000010-15001)","Outpat.Visit.VisitIdentifier,Outpat.Workload.VisitIdentifier","Encounter.Extension[EncounterExtension].VisitID,Encounter.Extension[EncounterExtension].VisitID","II.extension or II.root if system indicates OID or GUID (Or Role.id.extension or root)","CX.1 / EI.1"
+","429: source value based on VISIT - VISIT ID (9000010-15001)","Outpat.Visit.VisitIdentifier
+Outpat.Workload.VisitIdentifier","Encounter.Extension[EncounterExtension].VisitID
+Encounter.Extension[EncounterExtension].VisitID","II.extension or II.root if system indicates OID or GUID (Or Role.id.extension or root)","CX.1 / EI.1"
 "Encounter.identifier.period","Encounter.identifier.period","","","",0,1,"","","Y","Period {[]} {[]}
 ","Time period when id is/was valid for use","Time period during which identifier is/was valid for use.","","","","","","","","","",,,,,"",,,,"Identifier.period",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","Role.effectiveTime or implied by context","CX.7 + CX.8"
@@ -77,7 +80,13 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","II.assigningAuthorityName but note that this is an improper use by the definition of the field.  Also Role.scoper","CX.4 / (CX.4,CX.9,CX.10)"
 "Encounter.status","Encounter.status","","","",1,1,"Y","Y","Y","code {[]} {[]}
 ","planned | arrived | triaged | in-progress | onleave | finished | cancelled +","planned | arrived | triaged | in-progress | onleave | finished | cancelled +.","Note that internal business rules will determine the appropriate transitions that may occur between statuses (and also classes).","","","","","","","","",,"required","Current state of the encounter.","http://hl7.org/fhir/ValueSet/encounter-status|4.0.1","",,,,"Encounter.status",1,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-eo-19-430:If (9000010-.01) is null or > now then fixed value #planned {true}eo-19-431:If (9000010-.01) is not null, < now, .18 null then fixed value #in-progress {true}eo-19-432:If (9000010-.18) is not null, < now then fixed value #finished {true}","430: fixed value = #planned when VISIT - VISIT/ADMIT DATE&TIME (9000010-.01) if null or > now","431: fixed value = #in-progress when VISIT - VISIT/ADMIT DATE&TIME (9000010-.01) if not null, < now, .18 null","432: fixed value = #finished when VISIT - CHECK OUT DATE&TIME (9000010-.18) if not null, < now","Immun.ImmunizationContraRefusalEvent.VisitDateTime,Outpat.Visit.VisitDateTime,Outpat.VisitLogic.VisitDateTime,Outpat.Workload.VisitDateTime","Outpat.Visit.CheckOutDateTime,Outpat.Workload.CheckOutDateTime","Encounter.ConsultingClinician[CareProvider].Description,Encounter.ConsultingClinician[CareProvider].Name","Encounter.ToTime","visit.dateTime,visit.visitString","Event.status",".statusCode","FiveWs.status","No clear equivalent in HL7 v2; active/finished could be inferred from PV1-44, PV1-45, PV2-24; inactive could be inferred from PV2-16"
+eo-19-430:If (9000010-.01) is null or > now then fixed value #planned {true}eo-19-431:If (9000010-.01) is not null, < now, .18 null then fixed value #in-progress {true}eo-19-432:If (9000010-.18) is not null, < now then fixed value #finished {true}","430: fixed value = #planned when VISIT - VISIT/ADMIT DATE&TIME (9000010-.01) if null or > now","431: fixed value = #in-progress when VISIT - VISIT/ADMIT DATE&TIME (9000010-.01) if not null, < now, .18 null","432: fixed value = #finished when VISIT - CHECK OUT DATE&TIME (9000010-.18) if not null, < now","Immun.ImmunizationContraRefusalEvent.VisitDateTime
+Outpat.Visit.VisitDateTime
+Outpat.VisitLogic.VisitDateTime
+Outpat.Workload.VisitDateTime","Outpat.Visit.CheckOutDateTime
+Outpat.Workload.CheckOutDateTime","Encounter.ConsultingClinician[CareProvider].Description
+Encounter.ConsultingClinician[CareProvider].Name","Encounter.ToTime","visit.dateTime
+visit.visitString","Event.status",".statusCode","FiveWs.status","No clear equivalent in HL7 v2; active/finished could be inferred from PV1-44, PV1-45, PV2-24; inactive could be inferred from PV2-16"
 "Encounter.statusHistory","Encounter.statusHistory","","","",0,*,"","","","BackboneElement {[]} {[]}
 ","List of past encounter statuses","The status history permits the encounter resource to contain the status history without needing to read through the historical versions of the resource, or even have the server store them.","The current status is always found in the current version of the resource, not the status history.","","","","","","","","",,,,,"",,,,"Encounter.statusHistory",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","n/a"
@@ -101,7 +110,8 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","n/a"
 "Encounter.class","Encounter.class","","","",1,1,"Y","","Y","Coding {[]} {[]}
 ","Classification of patient encounter","Concepts representing classification of patient encounter such as ambulatory (outpatient), inpatient, emergency, home health or others due to local variations.","","","","","","","","","",,"required","see mapping [VF_encounterClass](ConceptMap-VF-encounterClass.html)","http://va.gov/fhir/ValueSet/encounterClass","",,,,"Encounter.class",1,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","614: terminologyMaps using VF_encounterClass on VISIT - PATIENT STATUS IN/OUT (9000010-15002)","Outpat.Visit.PatientStatusInOut,Outpat.Workload.PatientStatusInOut","visit.patientClass",".inboundRelationship[typeCode=SUBJ].source[classCode=LIST].code","FiveWs.class","PV1-2"
+","614: terminologyMaps using VF_encounterClass on VISIT - PATIENT STATUS IN/OUT (9000010-15002)","Outpat.Visit.PatientStatusInOut
+Outpat.Workload.PatientStatusInOut","visit.patientClass",".inboundRelationship[typeCode=SUBJ].source[classCode=LIST].code","FiveWs.class","PV1-2"
 "Encounter.classHistory","Encounter.classHistory","","","",0,*,"","","","BackboneElement {[]} {[]}
 ","List of past encounter classes","The class history permits the tracking of the encounters transitions without needing to go  through the resource history.  This would be used for a case where an admission starts of as an emergency encounter, then transitions into an inpatient scenario. Doing this and not restarting a new encounter ensures that any lab/diagnostic results can more easily follow the patient and not require re-processing and not get lost or cancelled during a kind of discharge from emergency to inpatient.","","","","","","","","","",,,,,"",,,,"Encounter.classHistory",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","n/a"
@@ -125,7 +135,18 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","n/a"
 "Encounter.type","Encounter.type","","","",1,*,"Y","","Y","CodeableConcept {[]} {[]}
 ","Specific type of encounter","Specific type of encounter (e.g. e-mail consultation, surgical day-care, skilled nursing, rehabilitation).","Since there are many ways to further classify encounters, this element is 0..*.","","","","","","","","",,"extensible","Valueset to describe the Encounter Type","http://hl7.org/fhir/us/core/ValueSet/us-core-encounter-type","",,,,"Encounter.type",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","1615: source value based on V CPT - CPT > CPT (9000010.18-.01 > 81-)","Outpat.VProcedure.CPTIEN,Outpat.VProcedureCPTModifier.CPTIEN,Outpat.VProcedureDiagnosis.CPTIEN,Outpat.WorkloadVProcedure.CPTIEN,Outpat.WorkloadVProcedureCPTModifier.CPTIEN,Outpat.WorkloadVProcedureDiagnosis.CPTIEN","Encounter.Extension[EncounterExtension].Cpt,Encounter.Extension[EncounterExtension].Cpt,Procedure.Procedure,Procedure.Procedure[CodeTableDetail.Procedure].Code","visit.cpt [m] (>81-.01),visit.cpt [m] (>81-2),visit.type (>81-.01),visit.type (>81-2)","Event.code",".code","FiveWs.class","PV1-4 / PV1-18"
+","1615: source value based on V CPT - CPT > CPT (9000010.18-.01 > 81-)","Outpat.VProcedure.CPTIEN
+Outpat.VProcedureCPTModifier.CPTIEN
+Outpat.VProcedureDiagnosis.CPTIEN
+Outpat.WorkloadVProcedure.CPTIEN
+Outpat.WorkloadVProcedureCPTModifier.CPTIEN
+Outpat.WorkloadVProcedureDiagnosis.CPTIEN","Encounter.Extension[EncounterExtension].Cpt
+Encounter.Extension[EncounterExtension].Cpt
+Procedure.Procedure
+Procedure.Procedure[CodeTableDetail.Procedure].Code","visit.cpt [m] (>81-.01)
+visit.cpt [m] (>81-2)
+visit.type (>81-.01)
+visit.type (>81-2)","Event.code",".code","FiveWs.class","PV1-4 / PV1-18"
 "Encounter.type.id","Encounter.type.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"","","n/a"
 "Encounter.type.extension","Encounter.type.extension","","extensions
@@ -151,19 +172,55 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","./codeSystemVersion","C*E.7"
 "Encounter.type.coding.code","Encounter.type.coding.code","","","",0,1,"Y","","Y","code {[]} {[]}
 ","Symbol in syntax defined by the system","A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination).","","Need to refer to a particular code in the system.","","","","","","","",,,,,"",,,,"Coding.code",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","1615-2: source value based on V CPT - CPT > CPT - CPT CODE (9000010.18-.01 > 81-.01)","Outpat.VProcedure.CPTIEN,Outpat.VProcedureCPTModifier.CPTIEN,Outpat.VProcedureDiagnosis.CPTIEN,Outpat.WorkloadVProcedure.CPTIEN,Outpat.WorkloadVProcedureCPTModifier.CPTIEN,Outpat.WorkloadVProcedureDiagnosis.CPTIEN
-Dim.CPT.CPTCode,Dim.CPT.CPTCode","Encounter.Extension[EncounterExtension].Cpt,Encounter.Extension[EncounterExtension].Cpt,Procedure.Procedure,Procedure.Procedure[CodeTableDetail.Procedure].Code","visit.cpt [m] (>81-.01),visit.cpt [m] (>81-2),visit.type (>81-.01),visit.type (>81-2)","./code","C*E.1"
+","1615-2: source value based on V CPT - CPT > CPT - CPT CODE (9000010.18-.01 > 81-.01)","Outpat.VProcedure.CPTIEN
+Outpat.VProcedureCPTModifier.CPTIEN
+Outpat.VProcedureDiagnosis.CPTIEN
+Outpat.WorkloadVProcedure.CPTIEN
+Outpat.WorkloadVProcedureCPTModifier.CPTIEN
+Outpat.WorkloadVProcedureDiagnosis.CPTIEN
+Dim.CPT.CPTCode
+Dim.CPT.CPTCode","Encounter.Extension[EncounterExtension].Cpt
+Encounter.Extension[EncounterExtension].Cpt
+Procedure.Procedure
+Procedure.Procedure[CodeTableDetail.Procedure].Code","visit.cpt [m] (>81-.01)
+visit.cpt [m] (>81-2)
+visit.type (>81-.01)
+visit.type (>81-2)","./code","C*E.1"
 "Encounter.type.coding.display","Encounter.type.coding.display","","","",0,1,"Y","","Y","string {[]} {[]}
 ","Representation defined by the system","A representation of the meaning of the code in the system, following the rules of the system.","","Need to be able to carry a human-readable meaning of the code for readers that do not know  the system.","","","","","","","",,,,,"",,,,"Coding.display",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","1615-3: source value based on V CPT - CPT > CPT - SHORT NAME (9000010.18-.01 > 81-2)","Outpat.VProcedure.CPTIEN,Outpat.VProcedureCPTModifier.CPTIEN,Outpat.VProcedureDiagnosis.CPTIEN,Outpat.WorkloadVProcedure.CPTIEN,Outpat.WorkloadVProcedureCPTModifier.CPTIEN,Outpat.WorkloadVProcedureDiagnosis.CPTIEN
-Dim.CPT.CPTName,Dim.CPT.CPTName","Encounter.Extension[EncounterExtension].Cpt,Encounter.Extension[EncounterExtension].Cpt,Procedure.Procedure,Procedure.Procedure[CodeTableDetail.Procedure].Code","visit.cpt [m] (>81-.01),visit.cpt [m] (>81-2),visit.type (>81-.01),visit.type (>81-2)","CV.displayName","C*E.2 - but note this is not well followed"
+","1615-3: source value based on V CPT - CPT > CPT - SHORT NAME (9000010.18-.01 > 81-2)","Outpat.VProcedure.CPTIEN
+Outpat.VProcedureCPTModifier.CPTIEN
+Outpat.VProcedureDiagnosis.CPTIEN
+Outpat.WorkloadVProcedure.CPTIEN
+Outpat.WorkloadVProcedureCPTModifier.CPTIEN
+Outpat.WorkloadVProcedureDiagnosis.CPTIEN
+Dim.CPT.CPTName
+Dim.CPT.CPTName","Encounter.Extension[EncounterExtension].Cpt
+Encounter.Extension[EncounterExtension].Cpt
+Procedure.Procedure
+Procedure.Procedure[CodeTableDetail.Procedure].Code","visit.cpt [m] (>81-.01)
+visit.cpt [m] (>81-2)
+visit.type (>81-.01)
+visit.type (>81-2)","CV.displayName","C*E.2 - but note this is not well followed"
 "Encounter.type.coding.userSelected","Encounter.type.coding.userSelected","","","",0,1,"","","Y","boolean {[]} {[]}
 ","If this coding was chosen directly by the user","Indicates that this coding was chosen by a user directly - e.g. off a pick list of available items (codes or displays).","Amongst a set of alternatives, a directly chosen code is the most appropriate starting point for new translations. There is some ambiguity about what exactly 'directly chosen' implies, and trading partner agreement may be needed to clarify the use of this element and its consequences more completely.","This has been identified as a clinical safety criterium - that this exact system/code pair was chosen explicitly, rather than inferred by the system based on some rules or language processing.","","","","","","","",,,,,"",,,,"Coding.userSelected",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","CD.codingRationale","Sometimes implied by being first"
 "Encounter.type.text","Encounter.type.text","","","",0,1,"Y","","Y","string {[]} {[]}
 ","Plain text representation of the concept","A human language representation of the concept as seen/selected/uttered by the user who entered the data and/or which represents the intended meaning of the user.","Very often the text is the same as a displayName of one of the codings.","The codes from the terminologies do not always capture the correct meaning with all the nuances of the human using them, or sometimes there is no appropriate code at all. In these cases, the text is used to capture the full meaning of the source.","","","","","","","",,,,,"",,,,"CodeableConcept.text",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","1615-4: source value based on V CPT - CPT > CPT - SHORT NAME (9000010.18-.01 > 81-2)","Outpat.VProcedure.CPTIEN,Outpat.VProcedureCPTModifier.CPTIEN,Outpat.VProcedureDiagnosis.CPTIEN,Outpat.WorkloadVProcedure.CPTIEN,Outpat.WorkloadVProcedureCPTModifier.CPTIEN,Outpat.WorkloadVProcedureDiagnosis.CPTIEN
-Dim.CPT.CPTName,Dim.CPT.CPTName","Encounter.Extension[EncounterExtension].Cpt,Encounter.Extension[EncounterExtension].Cpt,Procedure.Procedure,Procedure.Procedure[CodeTableDetail.Procedure].Code","visit.cpt [m] (>81-.01),visit.cpt [m] (>81-2),visit.type (>81-.01),visit.type (>81-2)","./originalText[mediaType/code=""text/plain""]/data","C*E.9. But note many systems use C*E.2 for this"
+","1615-4: source value based on V CPT - CPT > CPT - SHORT NAME (9000010.18-.01 > 81-2)","Outpat.VProcedure.CPTIEN
+Outpat.VProcedureCPTModifier.CPTIEN
+Outpat.VProcedureDiagnosis.CPTIEN
+Outpat.WorkloadVProcedure.CPTIEN
+Outpat.WorkloadVProcedureCPTModifier.CPTIEN
+Outpat.WorkloadVProcedureDiagnosis.CPTIEN
+Dim.CPT.CPTName
+Dim.CPT.CPTName","Encounter.Extension[EncounterExtension].Cpt
+Encounter.Extension[EncounterExtension].Cpt
+Procedure.Procedure
+Procedure.Procedure[CodeTableDetail.Procedure].Code","visit.cpt [m] (>81-.01)
+visit.cpt [m] (>81-2)
+visit.type (>81-.01)
+visit.type (>81-2)","./originalText[mediaType/code=""text/plain""]/data","C*E.9. But note many systems use C*E.2 for this"
 "Encounter.serviceType","Encounter.serviceType","","","",0,1,"","","Y","CodeableConcept {[]} {[]}
 ","Specific type of service","Broad categorization of the service that is to be provided (e.g. cardiology).","","","","","","","","","",,"example","Broad categorization of the service that is to be provided.","http://hl7.org/fhir/ValueSet/service-type","",,,,"Encounter.serviceType",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","Event.code","n/a","PV1-10"
@@ -192,7 +249,11 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","./codeSystemVersion","C*E.7"
 "Encounter.serviceType.coding.code","Encounter.serviceType.coding.code","","","",0,1,"Y","","Y","code {[]} {[]}
 ","Symbol in syntax defined by the system","A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination).","","Need to refer to a particular code in the system.","","","","","","","",,,,,"",,,,"Coding.code",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","439: source value based on VISIT - SERVICE CATEGORY (9000010-.07)","Outpat.Visit.ServiceCategory,Outpat.Workload.ServiceCategory","Encounter.EncounterCodedType,Encounter.ExternalId,Encounter.ToTime","visit.serviceCategory,visit.visitString","./code","C*E.1"
+","439: source value based on VISIT - SERVICE CATEGORY (9000010-.07)","Outpat.Visit.ServiceCategory
+Outpat.Workload.ServiceCategory","Encounter.EncounterCodedType
+Encounter.ExternalId
+Encounter.ToTime","visit.serviceCategory
+visit.visitString","./code","C*E.1"
 "Encounter.serviceType.coding.display","Encounter.serviceType.coding.display","","","",0,1,"","","Y","string {[]} {[]}
 ","Representation defined by the system","A representation of the meaning of the code in the system, following the rules of the system.","","Need to be able to carry a human-readable meaning of the code for readers that do not know  the system.","","","","","","","",,,,,"",,,,"Coding.display",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","CV.displayName","C*E.2 - but note this is not well followed"
@@ -208,7 +269,8 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "Encounter.subject","Encounter.subject","","patient
 ","",1,1,"Y","","Y","Reference {[]} {[CanonicalType[http://va.gov/fhir/StructureDefinition/Patient]]}
 ","The patient or group present at the encounter","The patient or group present at the encounter.","While the encounter is always about the patient, the patient might not actually be known in all contexts of use, and there may be a group of patients that could be anonymous (such as in a group therapy for Alcoholics Anonymous - where the recording of the encounter could be used for billing on the number of people/staff and not important to the context of the specific patients) or alternately in veterinary care a herd of sheep receiving treatment (where the animals are not individually tracked).","","","","","","","","",,,,,"",,,,"Encounter.subject",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","440: reference based on VISIT - PATIENT NAME > PATIENT/IHS - NAME (9000010-.05 > 9000001-.01)","Outpat.Visit.PatientIEN,Outpat.Workload.PatientIEN","Encounter.EncounterMRN","Event.subject",".participation[typeCode=SBJ]/role[classCode=PAT]","FiveWs.subject[x]","FiveWs.subject","PID-3"
+","440: reference based on VISIT - PATIENT NAME > PATIENT/IHS - NAME (9000010-.05 > 9000001-.01)","Outpat.Visit.PatientIEN
+Outpat.Workload.PatientIEN","Encounter.EncounterMRN","Event.subject",".participation[typeCode=SBJ]/role[classCode=PAT]","FiveWs.subject[x]","FiveWs.subject","PID-3"
 "Encounter.episodeOfCare","Encounter.episodeOfCare","","","",0,*,"","","Y","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/EpisodeOfCare]]}
 ","Episode(s) of care that this encounter should be recorded against","Where a specific encounter should be classified as a part of a specific episode(s) of care this field should be used. This association can facilitate grouping of related encounters together for a specific purpose, such as government reporting, issue tracking, association via a common problem.  The association is recorded on the encounter as these are typically created after the episode of care and grouped on entry rather than editing the episode of care to append another encounter to it (the episode of care could span years).","","","","","","","","","",,,,,"",,,,"Encounter.episodeOfCare",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","Event.context","n/a","FiveWs.context","PV1-54, PV1-53"
@@ -233,13 +295,16 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}","N/A"
 "Encounter.participant.type","Encounter.participant.type","","","",0,*,"Y","","Y","CodeableConcept {[]} {[]}
 ","Role of participant in encounter","Role of participant in encounter.","The participant type indicates how an individual participates in an encounter. It includes non-practitioner participants, and for practitioners this is to describe the action type in the context of this encounter (e.g. Admitting Dr, Attending Dr, Translator, Consulting Dr). This is different to the practitioner roles which are functional roles, derived from terms of employment, education, licensing, etc.","","","","","","","","",,"required","see mapping [VF_encounterParticipationType](ConceptMap-VF-encounterParticipationType.html)","http://va.gov/fhir/ValueSet/encounterParticipationType","",,,,"Encounter.participant.type",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","1854: terminologyMaps using VF_encounterParticipationType on V PROVIDER - PRIMARY/SECONDARY (9000010.06-.04)","Outpat.VProvider.PrimarySecondary,Outpat.WorkloadVProvider.PrimarySecondary","visit.provider [m]","Event.performer.function",".functionCode","ROL-3 (or maybe PRT-4)"
+","1854: terminologyMaps using VF_encounterParticipationType on V PROVIDER - PRIMARY/SECONDARY (9000010.06-.04)","Outpat.VProvider.PrimarySecondary
+Outpat.WorkloadVProvider.PrimarySecondary","visit.provider [m]","Event.performer.function",".functionCode","ROL-3 (or maybe PRT-4)"
 "Encounter.participant.period","Encounter.participant.period","","","",0,1,"Y","","","Period {[]} {[]}
 ","Period of time during the encounter that the participant participated","The period of time that the specified participant participated in the encounter. These can overlap or be sub-sets of the overall encounter's period.","","","","","","","","","",,,,,"",,,,"Encounter.participant.period",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","1799: target not supported",".time","ROL-5, ROL-6 (or maybe PRT-5)"
 "Encounter.participant.individual","Encounter.participant.individual","","","",0,1,"Y","","Y","Reference {[]} {[CanonicalType[http://va.gov/fhir/StructureDefinition/Practitioner]]}
 ","Persons involved in the encounter other than the patient","Persons involved in the encounter other than the patient.","","","","","","","","","",,,,,"",,,,"Encounter.participant.individual",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","1614: reference based on V PROVIDER - PROVIDER > NEW PERSON (9000010.06-.01 > 200-)","Outpat.VProvider.ProviderIEN,Outpat.WorkloadVProvider.ProviderIEN","Encounter.ConsultingClinicians","visit.provider [m] (>200-.01),visit.provider [m] (>200-8932.1)","Event.performer.actor",".role","FiveWs.who","ROL-4"
+","1614: reference based on V PROVIDER - PROVIDER > NEW PERSON (9000010.06-.01 > 200-)","Outpat.VProvider.ProviderIEN
+Outpat.WorkloadVProvider.ProviderIEN","Encounter.ConsultingClinicians","visit.provider [m] (>200-.01)
+visit.provider [m] (>200-8932.1)","Event.performer.actor",".role","FiveWs.who","ROL-4"
 "Encounter.appointment","Encounter.appointment","","","",0,*,"","","Y","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/Appointment]]}
 ","The appointment that scheduled this encounter","The appointment that scheduled this encounter.","","","","","","","","","",,,,,"",,,,"Encounter.appointment",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","Event.basedOn",".outboundRelationship[typeCode=FLFS].target[classCode=ENC, moodCode=APT]","SCH-1 / SCH-2"
@@ -256,11 +321,17 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "Encounter.period.start","Encounter.period.start","","","",0,1,"Y","","Y","dateTime {[]} {[]}
 ","Starting time with inclusive boundary","The start of the period. The boundary is inclusive.","If the low element is missing, the meaning is that the low boundary is not known.","","","","","","","","",,,,,"",,,,"Period.start",0,1,"per-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","443: source value based on VISIT - VISIT/ADMIT DATE&TIME (9000010-.01)","Immun.ImmunizationContraRefusalEvent.VisitDateTime,Outpat.Visit.VisitDateTime,Outpat.VisitLogic.VisitDateTime,Outpat.Workload.VisitDateTime","Encounter.ConsultingClinician[CareProvider].Description,Encounter.ConsultingClinician[CareProvider].Name","visit.dateTime,visit.visitString","./low","DR.1"
+","443: source value based on VISIT - VISIT/ADMIT DATE&TIME (9000010-.01)","Immun.ImmunizationContraRefusalEvent.VisitDateTime
+Outpat.Visit.VisitDateTime
+Outpat.VisitLogic.VisitDateTime
+Outpat.Workload.VisitDateTime","Encounter.ConsultingClinician[CareProvider].Description
+Encounter.ConsultingClinician[CareProvider].Name","visit.dateTime
+visit.visitString","./low","DR.1"
 "Encounter.period.end","Encounter.period.end","","","",0,1,"Y","","Y","dateTime {[]} {[]}
 ","End time with inclusive boundary, if not ongoing","The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.","The high value includes any matching date/time. i.e. 2012-02-03T10:00:00 is in a period that has an end value of 2012-02-03.","","","If the end of the period is missing, it means that the period is ongoing","","","","","",,,,,"",,,,"Period.end",0,1,"per-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","444: source value based on VISIT - CHECK OUT DATE&TIME (9000010-.18)","Outpat.Visit.CheckOutDateTime,Outpat.Workload.CheckOutDateTime","Encounter.ToTime","./high","DR.2"
+","444: source value based on VISIT - CHECK OUT DATE&TIME (9000010-.18)","Outpat.Visit.CheckOutDateTime
+Outpat.Workload.CheckOutDateTime","Encounter.ToTime","./high","DR.2"
 "Encounter.length","Encounter.length","","","",0,1,"","","","Duration {[]} {[]}
 ","Quantity of time the encounter lasted (less time absent)","Quantity of time the encounter lasted. This excludes the time during leaves of absence.","May differ from the time the Encounter.period lasted because of leave of absence.","","","","","","","","",,,,,"",,,,"Encounter.length",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","Event.occurrence[x]",".lengthOfStayQuantity","(PV1-45 less PV1-44) iff ( (PV1-44 not empty) and (PV1-45 not empty) ); units in minutes"
@@ -293,8 +364,16 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","./codeSystemVersion","C*E.7"
 "Encounter.reasonCode.coding.code","Encounter.reasonCode.coding.code","","","",0,1,"Y","","Y","code {[]} {[]}
 ","Symbol in syntax defined by the system","A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination).","","Need to refer to a particular code in the system.","","","","","","","",,,,,"",,,,"Coding.code",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","447: source value based on V POV - POV > ICD DIAGNOSIS - CODE NUMBER (9000010.07-.01 > 80-.01)","Outpat.VDiagnosis.ICDIEN,Outpat.WorkloadVDiagnosis.ICDIEN
-Dim.ICD10.ICD10Code,Dim.ICD9.ICD9Code","Diagnosis.Diagnosis,Diagnosis.Diagnosis[CodeTableDetail.Diagnosis].Code","visit.icd [m] (>80-.01),visit.icd [m] (>80-1.1),visit.icd [m] (>80-10),visit.reason (>80-.01),visit.reason (>80-1.1),visit.reason (>80-10)","./code","C*E.1"
+","447: source value based on V POV - POV > ICD DIAGNOSIS - CODE NUMBER (9000010.07-.01 > 80-.01)","Outpat.VDiagnosis.ICDIEN
+Outpat.WorkloadVDiagnosis.ICDIEN
+Dim.ICD10.ICD10Code
+Dim.ICD9.ICD9Code","Diagnosis.Diagnosis
+Diagnosis.Diagnosis[CodeTableDetail.Diagnosis].Code","visit.icd [m] (>80-.01)
+visit.icd [m] (>80-1.1)
+visit.icd [m] (>80-10)
+visit.reason (>80-.01)
+visit.reason (>80-1.1)
+visit.reason (>80-10)","./code","C*E.1"
 "Encounter.reasonCode.coding.display","Encounter.reasonCode.coding.display","","","",0,1,"","","Y","string {[]} {[]}
 ","Representation defined by the system","A representation of the meaning of the code in the system, following the rules of the system.","","Need to be able to carry a human-readable meaning of the code for readers that do not know  the system.","","","","","","","",,,,,"",,,,"Coding.display",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","CV.displayName","C*E.2 - but note this is not well followed"
@@ -326,7 +405,8 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "Encounter.diagnosis.condition","Encounter.diagnosis.condition","","Admission diagnosis
 discharge diagnosisindication","",1,1,"Y","","Y","Reference {[]} {[CanonicalType[http://va.gov/fhir/StructureDefinition/ConditionEncounterDiagnosis]]}
 ","The diagnosis or procedure relevant to the encounter","Reason the encounter takes place, as specified using information from another resource. For admissions, this is the admission diagnosis. The indication will typically be a Condition (with other resources referenced in the evidence.detail), or a Procedure.","For systems that need to know which was the primary diagnosis, these will be marked with the standard extension primaryDiagnosis (which is a sequence value rather than a flag, 1 = primary diagnosis).","","","","","","","","",,,,,"",,,,"Encounter.diagnosis.condition",1,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","452: reference based on V POV - PROBLEM LIST ENTRY (9000010.07-.16)","Outpat.VDiagnosis.ProblemListIEN,Outpat.WorkloadVDiagnosis.ProblemListIEN","Diagnosis.Extension[DiagnosisExtension].ProblemId","Event.reasonReference",".outboundRelationship[typeCode=RSON].target","FiveWs.why[x]","Resources that would commonly referenced at Encounter.indication would be Condition and/or Procedure. These most closely align with DG1/PRB and PR1 respectively."
+","452: reference based on V POV - PROBLEM LIST ENTRY (9000010.07-.16)","Outpat.VDiagnosis.ProblemListIEN
+Outpat.WorkloadVDiagnosis.ProblemListIEN","Diagnosis.Extension[DiagnosisExtension].ProblemId","Event.reasonReference",".outboundRelationship[typeCode=RSON].target","FiveWs.why[x]","Resources that would commonly referenced at Encounter.indication would be Condition and/or Procedure. These most closely align with DG1/PRB and PR1 respectively."
 "Encounter.diagnosis.use","Encounter.diagnosis.use","","","",0,1,"","","","CodeableConcept {[]} {[]}
 ","Role that this diagnosis has within the encounter (e.g. admission, billing, discharge …)","Role that this diagnosis has within the encounter (e.g. admission, billing, discharge …).","","","","","","","","","",,"preferred","The type of diagnosis this condition represents.","http://hl7.org/fhir/ValueSet/diagnosis-role","",,,,"Encounter.diagnosis.use",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","n/a"
@@ -425,7 +505,10 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}","N/A"
 "Encounter.location:va-stop.location","Encounter.location.location","","","",1,1,"Y","","","Reference {[]} {[CanonicalType[http://va.gov/fhir/StructureDefinition/Location]]}
 ","Location the encounter takes place","The location where the encounter takes place.","","","","","","","","","",,,,,"",,,,"Encounter.location.location",1,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","458: reference based on VISIT - DSS ID (9000010-.08)","Outpat.Visit.PrimaryStopCodeIEN,Outpat.Visit.SecondaryStopCodeIEN,Outpat.Workload.PrimaryStopCodeIEN,Outpat.Workload.SecondaryStopCodeIEN","Encounter.Extension[EncounterExtension].StopCode","visit.stopCode (>40.7-.01)","Event.location",".role","FiveWs.where[x]","PV1-3 / PV1-6 / PV1-11 / PV1-42 / PV1-43"
+","458: reference based on VISIT - DSS ID (9000010-.08)","Outpat.Visit.PrimaryStopCodeIEN
+Outpat.Visit.SecondaryStopCodeIEN
+Outpat.Workload.PrimaryStopCodeIEN
+Outpat.Workload.SecondaryStopCodeIEN","Encounter.Extension[EncounterExtension].StopCode","visit.stopCode (>40.7-.01)","Event.location",".role","FiveWs.where[x]","PV1-3 / PV1-6 / PV1-11 / PV1-42 / PV1-43"
 "Encounter.location:va-stop.status","Encounter.location.status","","","",0,1,"","","","code {[]} {[]}
 ","planned | active | reserved | completed","The status of the participants' presence at the specified location during the period specified. If the participant is no longer at the location, then the period will have an end date/time.","When the patient is no longer active at a location, then the period end date is entered, and the status may be changed to completed.","","","","","","","","",,"required","The status of the location.","http://hl7.org/fhir/ValueSet/encounter-location-status|4.0.1","",,,,"Encounter.location.status",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".role.statusCode"
@@ -454,7 +537,11 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}","N/A"
 "Encounter.location:va-loc.location","Encounter.location.location","","","",1,1,"Y","","","Reference {[]} {[CanonicalType[http://va.gov/fhir/StructureDefinition/Location]]}
 ","Location the encounter takes place","The location where the encounter takes place.","","","","","","","","","",,,,,"",,,,"Encounter.location.location",1,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","459: reference based on VISIT - HOSPITAL LOCATION (9000010-.22)","Outpat.Visit.LocationIEN,Outpat.Workload.LocationIEN","Encounter.ExternalId,Encounter.HealthCareFacility","visit.creditStopCode (>44-2503),visit.location (>44-.01),visit.visitString","Event.location",".role","FiveWs.where[x]","PV1-3 / PV1-6 / PV1-11 / PV1-42 / PV1-43"
+","459: reference based on VISIT - HOSPITAL LOCATION (9000010-.22)","Outpat.Visit.LocationIEN
+Outpat.Workload.LocationIEN","Encounter.ExternalId
+Encounter.HealthCareFacility","visit.creditStopCode (>44-2503)
+visit.location (>44-.01)
+visit.visitString","Event.location",".role","FiveWs.where[x]","PV1-3 / PV1-6 / PV1-11 / PV1-42 / PV1-43"
 "Encounter.location:va-loc.status","Encounter.location.status","","","",0,1,"","","","code {[]} {[]}
 ","planned | active | reserved | completed","The status of the participants' presence at the specified location during the period specified. If the participant is no longer at the location, then the period will have an end date/time.","When the patient is no longer active at a location, then the period end date is entered, and the status may be changed to completed.","","","","","","","","",,"required","The status of the location.","http://hl7.org/fhir/ValueSet/encounter-location-status|4.0.1","",,,,"Encounter.location.status",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".role.statusCode"
@@ -468,7 +555,11 @@ There may be many levels in the hierachy, and this may only pic specific levels 
 ",".time"
 "Encounter.serviceProvider","Encounter.serviceProvider","","","",0,1,"Y","","","Reference {[]} {[CanonicalType[http://va.gov/fhir/StructureDefinition/Organization]]}
 ","The organization (facility) responsible for this encounter","The organization that is primarily responsible for this Encounter's services. This MAY be the same as the organization on the Patient record, however it could be different, such as if the actor performing the services was from an external organization (which may be billed seperately) for an external consultation.  Refer to the example bundle showing an abbreviated set of Encounters for a colonoscopy.","","","","","","","","","",,,,,"",,,,"Encounter.serviceProvider",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","1599: reference based on VISIT - LOC. OF ENCOUNTER > LOCATION - NAME (9000010-.06 > 9999999.06-.01)","Outpat.Visit.InstitutionIEN,Outpat.Workload.InstitutionIEN","Encounter.EncounterMRNAA,Encounter.EncounterNumberAssigningAuthority,Encounter.EnteredAt","visit.facility (>4-.01),visit.facility (>4-99)","Event.performer.actor",".particiaption[typeCode=PFM].role","PL.6  & PL.1"
+","1599: reference based on VISIT - LOC. OF ENCOUNTER > LOCATION - NAME (9000010-.06 > 9999999.06-.01)","Outpat.Visit.InstitutionIEN
+Outpat.Workload.InstitutionIEN","Encounter.EncounterMRNAA
+Encounter.EncounterNumberAssigningAuthority
+Encounter.EnteredAt","visit.facility (>4-.01)
+visit.facility (>4-99)","Event.performer.actor",".particiaption[typeCode=PFM].role","PL.6  & PL.1"
 "Encounter.partOf","Encounter.partOf","","","",0,1,"","","","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/Encounter]]}
 ","Another Encounter this encounter is part of","Another Encounter of which this encounter is a part of (administratively or in time).","This is also used for associating a child's encounter back to the mother's encounter.Refer to the Notes section in the Patient resource for further details.","","","","","","","","",,,,,"",,,,"Encounter.partOf",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","Event.partOf",".inboundRelationship[typeCode=COMP].source[classCode=COMP, moodCode=EVN]"

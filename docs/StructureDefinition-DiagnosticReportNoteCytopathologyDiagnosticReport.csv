@@ -63,11 +63,13 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "DiagnosticReport.basedOn","DiagnosticReport.basedOn","","Request
 ","",0,*,"Y","","","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/ServiceRequest]]}
 ","What was requested","Details concerning a service requested.","Note: Usually there is one test request for each result, however in some circumstances multiple test requests may be represented using a single test result resource. Note that there are also cases where one request leads to multiple reports.","This allows tracing of authorization for the report and tracking whether proposals/recommendations were acted upon.","","","","","","","",,,,,"",,,,"DiagnosticReport.basedOn",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","1688: reference based on CYTOPATHOLOGY - ORDERED TEST > ORDERED TEST - CPRS ORDER # (63.09-.35 > 63.51-3)","Pathology.CytoOrderedTest.CPRSOrderIEN,Pathology.CytoOrderedTest.CPRSOrderSID","Event.basedOn","ORC? OBR-2/3?","outboundRelationship[typeCode=FLFS].target"
+","1688: reference based on CYTOPATHOLOGY - ORDERED TEST > ORDERED TEST - CPRS ORDER # (63.09-.35 > 63.51-3)","Pathology.CytoOrderedTest.CPRSOrderIEN
+Pathology.CytoOrderedTest.CPRSOrderSID","Event.basedOn","ORC? OBR-2/3?","outboundRelationship[typeCode=FLFS].target"
 "DiagnosticReport.status","DiagnosticReport.status","","","",1,1,"Y","Y","Y","code {[]} {[]}
 ","registered | partial | preliminary | final +","The status of the diagnostic report.","","Diagnostic services routinely issue provisional/incomplete reports, and sometimes withdraw previously released reports.","","","","","","","",,"required","see mapping [VF_DiagnosticReportLabStatus](ConceptMap-VF-DiagnosticReportLabStatus.html)","http://va.gov/fhir/ValueSet/DiagnosticReportLabStatus","",,,,"DiagnosticReport.status",1,1,"us-core-10
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","1418: terminologyMaps using VF_DiagnosticReportLabStatus on CYTOPATHOLOGY - ORDERED TEST > ORDERED TEST - DISPOSITION (63.09-.35 > 63.51-10)","Pathology.CytoOrderedTest.DispositionLabCodeIEN,Pathology.CytoOrderedTest.DispositionLabCodeSID","Event.status","OBR-25 (not 1:1 mapping)","statusCode  Note: final and amended are distinguished by whether observation is the subject of a ControlAct event of type ""revise""","FiveWs.status"
+","1418: terminologyMaps using VF_DiagnosticReportLabStatus on CYTOPATHOLOGY - ORDERED TEST > ORDERED TEST - DISPOSITION (63.09-.35 > 63.51-10)","Pathology.CytoOrderedTest.DispositionLabCodeIEN
+Pathology.CytoOrderedTest.DispositionLabCodeSID","Event.status","OBR-25 (not 1:1 mapping)","statusCode  Note: final and amended are distinguished by whether observation is the subject of a ControlAct event of type ""revise""","FiveWs.status"
 "DiagnosticReport.category","DiagnosticReport.category","","Department
 Sub-departmentServiceDiscipline","",1,*,"Y","","Y","CodeableConcept {[]} {[]}
 ","Service category","A code that classifies the clinical discipline, department or diagnostic service that created the report (e.g. cardiology, biochemistry, hematology, MRI). This is used for searching, sorting and display purposes.","Multiple categories are allowed using various categorization schemes.   The level of granularity is defined by the category concepts in the value set. More fine-grained filtering can be performed using the metadata and/or terminology hierarchy in DiagnosticReport.code.","","","","","<valueCodeableConcept xmlns=""http://hl7.org/fhir"">
@@ -131,7 +133,25 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "DiagnosticReport.subject","DiagnosticReport.subject","","Patient
 ","",1,1,"Y","","Y","Reference {[]} {[CanonicalType[http://va.gov/fhir/StructureDefinition/Patient]]}
 ","The subject of the report - usually, but not always, the patient","The subject of the report. Usually, but not always, this is a patient. However, diagnostic services also perform analyses on specimens collected from a variety of other sources.","","SHALL know the subject context.","","","","","","","",,,,,"",,,,"DiagnosticReport.subject",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","2214: reference based on PATIENT - LABORATORY REFERENCE > LAB DATA - LRDFN (2-63 > 63-.01)","Micro.AntibioticSensitivity.LRDFN,Micro.AntibioticSensitivityComment.LRDFN,Micro.BacteriologyReports.LRDFN,Micro.MicroAntibioticLevel.LRDFN,Micro.MicroAudit.LRDFN,Micro.Microbiology.LRDFN,Micro.MicroOrderedTest.LRDFN,Micro.MicroSterilityResults.LRDFN,Micro.MycobacteriologyReports.LRDFN,Micro.Mycology.LRDFN,Micro.MycologyReports.LRDFN,Micro.Parasitology.LRDFN,Micro.ParasitologyReports.LRDFN,Micro.ParasitologyStage.LRDFN,Micro.Virology.LRDFN,Micro.VirologyReports.LRDFN,Pathology.Autopsy.LRDFN,Pathology.CytoOrganTissueFunction.StaffIEN,SStaff.SMicroOrderedTest.LRDFN","Patient.Extension[PatientExtension].VeteranLrdfn","demographics.lrdfn","Event.subject","PID-3 (no HL7 v2 mapping for Group or Device)","participation[typeCode=SBJ]","FiveWs.subject[x]","FiveWs.subject"
+","2214: reference based on PATIENT - LABORATORY REFERENCE > LAB DATA - LRDFN (2-63 > 63-.01)","Micro.AntibioticSensitivity.LRDFN
+Micro.AntibioticSensitivityComment.LRDFN
+Micro.BacteriologyReports.LRDFN
+Micro.MicroAntibioticLevel.LRDFN
+Micro.MicroAudit.LRDFN
+Micro.Microbiology.LRDFN
+Micro.MicroOrderedTest.LRDFN
+Micro.MicroSterilityResults.LRDFN
+Micro.MycobacteriologyReports.LRDFN
+Micro.Mycology.LRDFN
+Micro.MycologyReports.LRDFN
+Micro.Parasitology.LRDFN
+Micro.ParasitologyReports.LRDFN
+Micro.ParasitologyStage.LRDFN
+Micro.Virology.LRDFN
+Micro.VirologyReports.LRDFN
+Pathology.Autopsy.LRDFN
+Pathology.CytoOrganTissueFunction.StaffIEN
+SStaff.SMicroOrderedTest.LRDFN","Patient.Extension[PatientExtension].VeteranLrdfn","demographics.lrdfn","Event.subject","PID-3 (no HL7 v2 mapping for Group or Device)","participation[typeCode=SBJ]","FiveWs.subject[x]","FiveWs.subject"
 "DiagnosticReport.encounter","DiagnosticReport.encounter","","Context
 ","",0,1,"Y","","Y","Reference {[]} {[CanonicalType[http://va.gov/fhir/StructureDefinition/EncounterOutpatient]]}
 ","Health care event when test ordered","The healthcare event  (e.g. a patient and healthcare provider interaction) which this DiagnosticReport is about.","This will typically be the encounter the event occurred within, but some events may be initiated prior to or after the official completion of an encounter  but still be tied to the context of the encounter  (e.g. pre-admission laboratory tests).","Links the request to the Encounter context.","","","","","","","",,,,,"",,,,"DiagnosticReport.encounter",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
@@ -146,7 +166,31 @@ Period {[]} {[]}","Diagnostically relevant time (typically the time of the proce
 Effective TimeOccurrence","",0,1,"Y","","Y","dateTime {[]} {[]}
 ","Diagnostically relevant time (typically the time of the procedure)","The time or time-period the observed values are related to. When the subject of the report is a patient, this is usually either the time of the procedure or of specimen collection(s), but very often the source of the date/time is not known, only the date/time itself.","If the diagnostic procedure was performed on the patient, this is the time it was performed. If there are specimens, the diagnostically relevant time can be derived from the specimen collection times, but the specimen information is not always available, and the exact relationship between the specimens and the diagnostically relevant time is not always automatic.","Need to know where in the patient history to file/present this report.","","","","","","","",,,,,"",,,,"DiagnosticReport.effective[x]",0,1,"us-core-10
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","1426: source value based on CYTOPATHOLOGY - DATE/TIME SPECIMEN TAKEN (63.09-.01)","Pathology.CytoDelayedReportComment.SpecimenTakenDateTime,Pathology.CytoDiagnosis.SpecimenTakenDateTime,Pathology.CytoGrossDescription.SpecimenTakenDateTime,Pathology.CytoMicroscopicExam.SpecimenTakenDateTime,Pathology.CytoOpFinding.SpecimenTakenDateTime,Pathology.CytoOrderedTest.SpecimenTakenDateTime,Pathology.CytoOrganTissueDisease.SpecimenTakenDateTime,Pathology.CytoOrganTissueEtiology.SpecimenTakenDateTime,Pathology.CytoOrganTissueFunction.SpecimenTakenDateTime,Pathology.CytoOrganTissueMorphology.SpecimenTakenDateTime,Pathology.CytoOrganTissueProcedure.SpecimenTakenDateTime,Pathology.Cytopathology.SpecimenTakenDateTime,Pathology.CytoPostOpDiagnosis.SpecimenTakenDateTime,Pathology.CytoPreOpDiagnosis.SpecimenTakenDateTime,Pathology.CytoReportComment.SpecimenTakenDateTime,Pathology.CytoSpecimen.SpecimenTakenDateTime,Pathology.CytoStainBlock.SpecimenTakenDateTime,Pathology.CytoStainCytospin.SpecimenTakenDateTime,Pathology.CytoStainMembrane.SpecimenTakenDateTime,Pathology.CytoStainProcedure.SpecimenTakenDateTime,Pathology.CytoStainSlide.SpecimenTakenDateTime,Pathology.CytoSupplement.SpecimenTakenDateTime,Pathology.CytoSupplementDescript.SpecimenTakenDateTime,Pathology.CytoTIUReference.SpecimenTakenDateTime","document.encounter,document.referenceDateTime","Event.occurrence[x]","OBR-7","effectiveTime","FiveWs.done[x]"
+","1426: source value based on CYTOPATHOLOGY - DATE/TIME SPECIMEN TAKEN (63.09-.01)","Pathology.CytoDelayedReportComment.SpecimenTakenDateTime
+Pathology.CytoDiagnosis.SpecimenTakenDateTime
+Pathology.CytoGrossDescription.SpecimenTakenDateTime
+Pathology.CytoMicroscopicExam.SpecimenTakenDateTime
+Pathology.CytoOpFinding.SpecimenTakenDateTime
+Pathology.CytoOrderedTest.SpecimenTakenDateTime
+Pathology.CytoOrganTissueDisease.SpecimenTakenDateTime
+Pathology.CytoOrganTissueEtiology.SpecimenTakenDateTime
+Pathology.CytoOrganTissueFunction.SpecimenTakenDateTime
+Pathology.CytoOrganTissueMorphology.SpecimenTakenDateTime
+Pathology.CytoOrganTissueProcedure.SpecimenTakenDateTime
+Pathology.Cytopathology.SpecimenTakenDateTime
+Pathology.CytoPostOpDiagnosis.SpecimenTakenDateTime
+Pathology.CytoPreOpDiagnosis.SpecimenTakenDateTime
+Pathology.CytoReportComment.SpecimenTakenDateTime
+Pathology.CytoSpecimen.SpecimenTakenDateTime
+Pathology.CytoStainBlock.SpecimenTakenDateTime
+Pathology.CytoStainCytospin.SpecimenTakenDateTime
+Pathology.CytoStainMembrane.SpecimenTakenDateTime
+Pathology.CytoStainProcedure.SpecimenTakenDateTime
+Pathology.CytoStainSlide.SpecimenTakenDateTime
+Pathology.CytoSupplement.SpecimenTakenDateTime
+Pathology.CytoSupplementDescript.SpecimenTakenDateTime
+Pathology.CytoTIUReference.SpecimenTakenDateTime","document.encounter
+document.referenceDateTime","Event.occurrence[x]","OBR-7","effectiveTime","FiveWs.done[x]"
 "DiagnosticReport.issued","DiagnosticReport.issued","","Date published
 Date IssuedDate Verified","",0,1,"Y","","Y","instant {[]} {[]}
 ","DateTime this version was made","The date and time that this version of the report was made available to providers, typically after the report was reviewed and verified.","May be different from the update time of the resource itself, because that is the status of the record (potentially a secondary copy), not the actual release time of the report.","Clinicians need to be able to check the date that the report was released.","","","","","","","",,,,,"",,,,"DiagnosticReport.issued",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
@@ -159,15 +203,21 @@ ServicePractitionerDepartmentCompanyAuthorized byDirector","",0,*,"Y","","Y","Re
 "DiagnosticReport.performer:va-by","DiagnosticReport.performer","va-by","Laboratory
 ServicePractitionerDepartmentCompanyAuthorized byDirector","",0,1,"Y","","Y","Reference {[]} {[CanonicalType[http://va.gov/fhir/StructureDefinition/Practitioner]]}
 ","Responsible Diagnostic Service","The diagnostic service that is responsible for issuing the report.","This is not necessarily the source of the atomic data items or the entity that interpreted the results. It is the entity that takes responsibility for the clinical report.","Need to know whom to contact if there are queries about the results. Also may need to track the source of reports for secondary data analysis.","","","","","","","",,,,,"",,,,"DiagnosticReport.performer",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","1436: reference based on CYTOPATHOLOGY - RELEASED BY (63.09-.13)","Pathology.Cytopathology.ReleasedByStaffIEN,Pathology.Cytopathology.ReleasedByStaffSID","Documents.Extension[DocumentExtension].CareProviders","document.clinician [m]","Event.performer.actor","PRT-8 (where this PRT-4-Participation = ""PO"")",".participation[typeCode=PRF]","FiveWs.actor"
+","1436: reference based on CYTOPATHOLOGY - RELEASED BY (63.09-.13)","Pathology.Cytopathology.ReleasedByStaffIEN
+Pathology.Cytopathology.ReleasedByStaffSID","Documents.Extension[DocumentExtension].CareProviders","document.clinician [m]","Event.performer.actor","PRT-8 (where this PRT-4-Participation = ""PO"")",".participation[typeCode=PRF]","FiveWs.actor"
 "DiagnosticReport.performer:va-at","DiagnosticReport.performer","va-at","Laboratory
 ServicePractitionerDepartmentCompanyAuthorized byDirector","",0,1,"Y","","Y","Reference {[]} {[CanonicalType[http://va.gov/fhir/StructureDefinition/Organization]]}
 ","Responsible Diagnostic Service","The diagnostic service that is responsible for issuing the report.","This is not necessarily the source of the atomic data items or the entity that interpreted the results. It is the entity that takes responsibility for the clinical report.","Need to know whom to contact if there are queries about the results. Also may need to track the source of reports for secondary data analysis.","","","","","","","",,,,,"",,,,"DiagnosticReport.performer",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","1684: reference based on CYTOPATHOLOGY - RELEASING SITE (63.09-.345)","Pathology.Cytopathology.ReleasingInstitutionIEN,Pathology.Cytopathology.ReleasingInstitutionSID","Event.performer.actor","PRT-8 (where this PRT-4-Participation = ""PO"")",".participation[typeCode=PRF]","FiveWs.actor"
+","1684: reference based on CYTOPATHOLOGY - RELEASING SITE (63.09-.345)","Pathology.Cytopathology.ReleasingInstitutionIEN
+Pathology.Cytopathology.ReleasingInstitutionSID","Event.performer.actor","PRT-8 (where this PRT-4-Participation = ""PO"")",".participation[typeCode=PRF]","FiveWs.actor"
 "DiagnosticReport.resultsInterpreter","DiagnosticReport.resultsInterpreter","","Analyzed by
 Reported by","",0,*,"Y","","Y","Reference {[]} {[CanonicalType[http://va.gov/fhir/StructureDefinition/Practitioner]]}
 ","Primary result interpreter","The practitioner or organization that is responsible for the report's conclusions and interpretations.","Might not be the same entity that takes responsibility for the clinical report.","Need to know whom to contact if there are queries about the results. Also may need to track the source of reports for secondary data analysis.","","","","","","","",,,,,"",,,,"DiagnosticReport.resultsInterpreter",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","1694: reference based on CYTOPATHOLOGY - PATHOLOGIST/CYTOTECHNOLOGIST (63.09-.02)","Pathology.Cytopathology.PathologistStaffIEN,Pathology.Cytopathology.PathologistStaffSID","Documents.Clinician,Documents.EnteredBy","document.clinician [m] (>200-.01),document.clinician [m] (>200-20.2),document.clinician [m] (>200-8932.1)","Event.performer.actor","OBR-32, PRT-8 (where this PRT-4-Participation = ""PI"")",".participation[typeCode=PRF]","FiveWs.actor"
+","1694: reference based on CYTOPATHOLOGY - PATHOLOGIST/CYTOTECHNOLOGIST (63.09-.02)","Pathology.Cytopathology.PathologistStaffIEN
+Pathology.Cytopathology.PathologistStaffSID","Documents.Clinician
+Documents.EnteredBy","document.clinician [m] (>200-.01)
+document.clinician [m] (>200-20.2)
+document.clinician [m] (>200-8932.1)","Event.performer.actor","OBR-32, PRT-8 (where this PRT-4-Participation = ""PI"")",".participation[typeCode=PRF]","FiveWs.actor"
 "DiagnosticReport.specimen","DiagnosticReport.specimen","","","",0,*,"Y","","","Reference {[]} {[CanonicalType[http://va.gov/fhir/StructureDefinition/DiagnosticReportNoteCytopathologySpecimen]]}
 ","Specimens this report is based on","Details about the specimens on which this diagnostic report is based.","If the specimen is sufficiently specified with a code in the test result name, then this additional data may be redundant. If there are multiple specimens, these may be represented per observation or group.","Need to be able to report information about the collected specimens on which the report is based.","","","","","","","",,,,,"",,,,"DiagnosticReport.specimen",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","1692: reference based on CYTOPATHOLOGY - CYTOPATH ACC # (63.09-.06)","Pathology.Cytopathology.CytopathAccessionNumber","SPM","participation[typeCode=SBJ]"

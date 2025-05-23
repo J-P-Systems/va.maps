@@ -74,7 +74,22 @@ dppo-39-2222-1:If VF_DPPLungCancerScreeningFind then fixed value http://loinc.or
 "Observation.encounter","Observation.encounter","","Context
 ","",0,1,"Y","","Y","Reference {[]} {[CanonicalType[http://va.gov/fhir/StructureDefinition/EncounterOutpatient]]}
 ","Healthcare event during which this observation is made","The healthcare event  (e.g. a patient and healthcare provider interaction) during which this observation is made.","This will typically be the encounter the event occurred within, but some events may be initiated prior to or after the official completion of an encounter but still be tied to the context of the encounter (e.g. pre-admission laboratory tests).","For some observations it may be important to know the link between an observation and a particular encounter.","","","","","","","",,,,,"",,,,"Observation.encounter",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","2229: reference based on V HEALTH FACTORS - VISIT (9000010.23-.03)","HF.HealthFactor.VisitDateTime,HF.HealthFactor.VisitIEN","SocialHistory.EncounterNumber,SocialHistory.EnteredAt,SocialHistory.EnteredBy,SocialHistory.EnteredOn,Vaccination.EncounterNumber,Vaccination.EnteredAt,Vaccination.EnteredBy,Vaccination.EnteredOn,Vaccination.Administration.AdministeredAtLocation,FamilyHistory.EncounterNumber,FamilyHistory.EnteredAt,FamilyHistory.EnteredBy,FamilyHistory.EnteredOn","healthFactor.encounter,healthFactor.facility (>9000010-.06),healthFactor.recorded (>9000010-.01)","Event.context","PV1","inboundRelationship[typeCode=COMP].source[classCode=ENC, moodCode=EVN]","FiveWs.context"
+","2229: reference based on V HEALTH FACTORS - VISIT (9000010.23-.03)","HF.HealthFactor.VisitDateTime
+HF.HealthFactor.VisitIEN","SocialHistory.EncounterNumber
+SocialHistory.EnteredAt
+SocialHistory.EnteredBy
+SocialHistory.EnteredOn
+Vaccination.EncounterNumber
+Vaccination.EnteredAt
+Vaccination.EnteredBy
+Vaccination.EnteredOn
+Vaccination.Administration.AdministeredAtLocation
+FamilyHistory.EncounterNumber
+FamilyHistory.EnteredAt
+FamilyHistory.EnteredBy
+FamilyHistory.EnteredOn","healthFactor.encounter
+healthFactor.facility (>9000010-.06)
+healthFactor.recorded (>9000010-.01)","Event.context","PV1","inboundRelationship[typeCode=COMP].source[classCode=ENC, moodCode=EVN]","FiveWs.context"
 "Observation.effective[x]","Observation.effective[x]","","Occurrence
 ","",1,1,"","","Y","dateTime {[]} {[]}
 ","Clinically relevant time/time-period for observation","The time or time-period the observed value is asserted as being true. For biological subjects - e.g. human patients - this is usually called the ""physiologically relevant time"". This is usually either the time of the procedure or of specimen collection, but very often the source of the date/time is not known, only the date/time itself.","At least a date should be present unless this observation is a historical report.  For recording imprecise or ""fuzzy"" times (For example, a blood glucose measurement taken ""after breakfast"") use the [Timing](http://hl7.org/fhir/R4/datatypes.html#timing) datatype which allow the measurement to be tied to regular life events.","Knowing when an observation was deemed true is important to its relevance as well as determining trends.","","","","","","","",,,,,"","type:$this}
@@ -83,7 +98,10 @@ dppo-39-2222-1:If VF_DPPLungCancerScreeningFind then fixed value http://loinc.or
 "Observation.effective[x]:effectiveDateTime","Observation.effective[x]","effectiveDateTime","Occurrence
 ","",1,1,"Y","","Y","dateTime {[]} {[]}
 ","Clinically relevant time/time-period for observation","The time or time-period the observed value is asserted as being true. For biological subjects - e.g. human patients - this is usually called the ""physiologically relevant time"". This is usually either the time of the procedure or of specimen collection, but very often the source of the date/time is not known, only the date/time itself.","At least a date should be present unless this observation is a historical report.  For recording imprecise or ""fuzzy"" times (For example, a blood glucose measurement taken ""after breakfast"") use the [Timing](http://hl7.org/fhir/R4/datatypes.html#timing) datatype which allow the measurement to be tied to regular life events.","Knowing when an observation was deemed true is important to its relevance as well as determining trends.","","","","","","","",,,,,"",,,,"Observation.effective[x]",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","2227: source value based on V HEALTH FACTORS - EVENT DATE AND TIME (9000010.23-1201)","HF.HealthFactor.EventDateTime","SocialHistory.FromTime,Vaccination.FromTime,Vaccination.ToTime,FamilyHistory.FromTime","Event.occurrence[x]","OBX-14, and/or OBX-19 after v2.4  (depends on who observation made)","effectiveTime","FiveWs.done[x]"
+","2227: source value based on V HEALTH FACTORS - EVENT DATE AND TIME (9000010.23-1201)","HF.HealthFactor.EventDateTime","SocialHistory.FromTime
+Vaccination.FromTime
+Vaccination.ToTime
+FamilyHistory.FromTime","Event.occurrence[x]","OBX-14, and/or OBX-19 after v2.4  (depends on who observation made)","effectiveTime","FiveWs.done[x]"
 "Observation.issued","Observation.issued","","","",0,1,"","","Y","instant {[]} {[]}
 ","Date/Time this version was made available","The date and time this version of the observation was made available to providers, typically after the results have been reviewed and verified.","For Observations that don’t require review and verification, it may be the same as the [`lastUpdated` ](http://hl7.org/fhir/R4/resource-definitions.html#Meta.lastUpdated) time of the resource itself.  For Observations that do require review and verification for certain updates, it might not be the same as the `lastUpdated` time of the resource itself due to a non-clinically significant update that doesn’t require the new version to be reviewed and verified again.","","","","","","","","",,,,,"",,,,"Observation.issued",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","OBR.22 (or MSH.7), or perhaps OBX-19 (depends on who observation made)","participation[typeCode=AUT].time","FiveWs.recorded"
@@ -98,20 +116,40 @@ dppo-39-2222-1:If VF_DPPLungCancerScreeningFind then fixed value http://loinc.or
 "Observation.value[x]:valueCodeableConcept","Observation.value[x]","valueCodeableConcept","","",1,1,"Y","","Y","CodeableConcept {[]} {[]}
 ","Coded Responses from Smoking Status Value Set","The information determined as a result of making the observation, if the information has a simple value.","An observation may have; 1)  a single value here, 2)  both a value and a set of related or component values,  or 3)  only a set of related or component values. If a value is present, the datatype for this element should be determined by Observation.code.  A CodeableConcept with just a text would be used instead of a string if the field was usually coded, or if the type associated with the Observation.code defines a coded value.  For additional guidance, see the [Notes section](http://hl7.org/fhir/R4/observation.html#notes) below.","An observation exists to have a value, though it might not if it is in error, or if it represents a group of observations.","","","","","","","",,"required","see mapping [VF_DPPLungCancerScreeningFind](ConceptMap-VF-DPPLungCancerScreeningFind.html)","http://va.gov/fhir/ValueSet/DPPLungCancerScreeningFind","",,,,"Observation.value[x]",0,1,"obs-7
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-dppo-39-2222:If VF_DPPLungCancerScreeningFind then terminologyMaps (9000010.23-.01) using VF_DPPLungCancerScreeningFind {true}","2222: terminologyMaps using VF_DPPLungCancerScreeningFind on V HEALTH FACTORS - HEALTH FACTOR (9000010.23-.01) if VF_DPPLungCancerScreeningFind","HF.HealthFactor.HealthFactorTypeIEN","SocialHistory.SocialHabit,SocialHistory.SocialHabitCategory,SocialHistory.Extension[SocialHistoryExtension].Category,SocialHistory.Extension[SocialHistoryExtension].QuantityLabel,SocialHistory.SocialHabitCategory.Description,Vaccination.OrderItem,FamilyHistory.Diagnosis,FamilyHistory.Extension[FamilyHistoryExtension].Category,FamilyHistory.Diagnosis.Description","healthFactor.category (>9999999.64-.03),healthFactor.name (>9999999.64-.01)","< 441742003 |Evaluation finding|","OBX.2, OBX.5, OBX.6","value","363714003 |Interprets|"
+dppo-39-2222:If VF_DPPLungCancerScreeningFind then terminologyMaps (9000010.23-.01) using VF_DPPLungCancerScreeningFind {true}","2222: terminologyMaps using VF_DPPLungCancerScreeningFind on V HEALTH FACTORS - HEALTH FACTOR (9000010.23-.01) if VF_DPPLungCancerScreeningFind","HF.HealthFactor.HealthFactorTypeIEN","SocialHistory.SocialHabit
+SocialHistory.SocialHabitCategory
+SocialHistory.Extension[SocialHistoryExtension].Category
+SocialHistory.Extension[SocialHistoryExtension].QuantityLabel
+SocialHistory.SocialHabitCategory.Description
+Vaccination.OrderItem
+FamilyHistory.Diagnosis
+FamilyHistory.Extension[FamilyHistoryExtension].Category
+FamilyHistory.Diagnosis.Description","healthFactor.category (>9999999.64-.03)
+healthFactor.name (>9999999.64-.01)","< 441742003 |Evaluation finding|","OBX.2, OBX.5, OBX.6","value","363714003 |Interprets|"
 "Observation.dataAbsentReason","Observation.dataAbsentReason","","","",0,1,"Y","","","CodeableConcept {[]} {[]}
 ","Why the result is missing","Provides a reason why the expected value in the element Observation.value[x] is missing.","Null or exceptional values can be represented two ways in FHIR Observations.  One way is to simply include them in the value set and represent the exceptions in the value.  For example, measurement values for a serology test could be  ""detected"", ""not detected"", ""inconclusive"", or  ""specimen unsatisfactory"".   
 
 The alternate way is to use the value element for actual observations and use the explicit dataAbsentReason element to record exceptional values.  For example, the dataAbsentReason code ""error"" could be used when the measurement was not completed. Note that an observation may only be reported if there are values to report. For example differential cell counts values may be reported only when > 0.  Because of these options, use-case agreements are required to interpret general observations for null or exceptional values.","For many results it is necessary to handle exceptional values in measurements.","","","","","","","",,"required","see mapping [VF_DPPLungCancerScreeningDec](ConceptMap-VF-DPPLungCancerScreeningDec.html)","http://va.gov/fhir/ValueSet/DPPLungCancerScreeningDec","",,,,"Observation.dataAbsentReason",0,1,"obs-6
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-dppo-39-2232:If In VF_DPPLungCancerScreeningDec then terminologyMaps (9000010.23-.01) using VF_DPPLungCancerScreeningDec {true}","2232: terminologyMaps using VF_DPPLungCancerScreeningDec on V HEALTH FACTORS - HEALTH FACTOR (9000010.23-.01) if In VF_DPPLungCancerScreeningDec","HF.HealthFactor.HealthFactorTypeIEN","SocialHistory.SocialHabit,SocialHistory.SocialHabitCategory,SocialHistory.Extension[SocialHistoryExtension].Category,SocialHistory.Extension[SocialHistoryExtension].QuantityLabel,SocialHistory.SocialHabitCategory.Description,Vaccination.OrderItem,FamilyHistory.Diagnosis,FamilyHistory.Extension[FamilyHistoryExtension].Category,FamilyHistory.Diagnosis.Description","healthFactor.category (>9999999.64-.03),healthFactor.name (>9999999.64-.01)","N/A","value.nullFlavor"
+dppo-39-2232:If In VF_DPPLungCancerScreeningDec then terminologyMaps (9000010.23-.01) using VF_DPPLungCancerScreeningDec {true}","2232: terminologyMaps using VF_DPPLungCancerScreeningDec on V HEALTH FACTORS - HEALTH FACTOR (9000010.23-.01) if In VF_DPPLungCancerScreeningDec","HF.HealthFactor.HealthFactorTypeIEN","SocialHistory.SocialHabit
+SocialHistory.SocialHabitCategory
+SocialHistory.Extension[SocialHistoryExtension].Category
+SocialHistory.Extension[SocialHistoryExtension].QuantityLabel
+SocialHistory.SocialHabitCategory.Description
+Vaccination.OrderItem
+FamilyHistory.Diagnosis
+FamilyHistory.Extension[FamilyHistoryExtension].Category
+FamilyHistory.Diagnosis.Description","healthFactor.category (>9999999.64-.03)
+healthFactor.name (>9999999.64-.01)","N/A","value.nullFlavor"
 "Observation.interpretation","Observation.interpretation","","Abnormal Flag
 ","",0,*,"","","","CodeableConcept {[]} {[]}
 ","High, low, normal, etc.","A categorical assessment of an observation value.  For example, high, low, normal.","Historically used for laboratory results (known as 'abnormal flag' ),  its use extends to other use cases where coded interpretations  are relevant.  Often reported as one or more simple compact codes this element is often placed adjacent to the result value in reports and flow sheets to signal the meaning/normalcy status of the result.","For some results, particularly numeric results, an interpretation is necessary to fully understand the significance of a result.","","","","","","","",,"extensible","Codes identifying interpretations of observations.","http://hl7.org/fhir/ValueSet/observation-interpretation","",,,,"Observation.interpretation",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","< 260245000 |Findings values|","OBX-8","interpretationCode","363713009 |Has interpretation|"
 "Observation.note","Observation.note","","","",0,*,"Y","","","Annotation {[]} {[]}
 ","Comments about the observation","Comments about the observation or the results.","May include general statements about the observation, or statements about significant, unexpected or unreliable results values, or information about its source when relevant to its interpretation.","Need to be able to provide free text additional information.","","","","","","","",,,,,"",,,,"Observation.note",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","2228: source value based on V HEALTH FACTORS - COMMENTS (9000010.23-81101)","HF.HealthFactor.Comments","SocialHistory.SocialHabitComments,Vaccination.Administration.RefusalReason,FamilyHistory.NoteText","healthFactor.comment","NTE.3 (partner NTE to OBX, or sometimes another (child?) OBX)","subjectOf.observationEvent[code=""annotation""].value"
+","2228: source value based on V HEALTH FACTORS - COMMENTS (9000010.23-81101)","HF.HealthFactor.Comments","SocialHistory.SocialHabitComments
+Vaccination.Administration.RefusalReason
+FamilyHistory.NoteText","healthFactor.comment","NTE.3 (partner NTE to OBX, or sometimes another (child?) OBX)","subjectOf.observationEvent[code=""annotation""].value"
 "Observation.bodySite","Observation.bodySite","","","",0,1,"","","","CodeableConcept {[]} {[]}
 ","Observed body part","Indicates the site on the subject's body where the observation was made (i.e. the target site).","Only used if not implicit in code found in Observation.code.  In many systems, this may be represented as a related observation instead of an inline component.   
 

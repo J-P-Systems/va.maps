@@ -106,10 +106,12 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","./codeSystemVersion","C*E.7"
 "Procedure.code.coding.code","Procedure.code.coding.code","","","",0,1,"Y","","Y","code {[]} {[]}
 ","Symbol in syntax defined by the system","A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination).","","Need to refer to a particular code in the system.","","","","","","","",,,,,"",,,,"Coding.code",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","1344-1: source value based on SURGERY - PLANNED PRIN PROCEDURE CODE > CPT - CPT CODE (130-27 > 81-.01)","Dim.CPT.CPTCode,Dim.CPT.CPTCode","./code","C*E.1"
+","1344-1: source value based on SURGERY - PLANNED PRIN PROCEDURE CODE > CPT - CPT CODE (130-27 > 81-.01)","Dim.CPT.CPTCode
+Dim.CPT.CPTCode","./code","C*E.1"
 "Procedure.code.coding.display","Procedure.code.coding.display","","","",0,1,"Y","","Y","string {[]} {[]}
 ","Representation defined by the system","A representation of the meaning of the code in the system, following the rules of the system.","","Need to be able to carry a human-readable meaning of the code for readers that do not know  the system.","","","","","","","",,,,,"",,,,"Coding.display",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","1344-3: source value based on SURGERY - PLANNED PRIN PROCEDURE CODE > CPT - SHORT NAME (130-27 > 81-2)","Dim.CPT.CPTName,Dim.CPT.CPTName","CV.displayName","C*E.2 - but note this is not well followed"
+","1344-3: source value based on SURGERY - PLANNED PRIN PROCEDURE CODE > CPT - SHORT NAME (130-27 > 81-2)","Dim.CPT.CPTName
+Dim.CPT.CPTName","CV.displayName","C*E.2 - but note this is not well followed"
 "Procedure.code.coding.userSelected","Procedure.code.coding.userSelected","","","",0,1,"","","Y","boolean {[]} {[]}
 ","If this coding was chosen directly by the user","Indicates that this coding was chosen by a user directly - e.g. off a pick list of available items (codes or displays).","Amongst a set of alternatives, a directly chosen code is the most appropriate starting point for new translations. There is some ambiguity about what exactly 'directly chosen' implies, and trading partner agreement may be needed to clarify the use of this element and its consequences more completely.","This has been identified as a clinical safety criterium - that this exact system/code pair was chosen explicitly, rather than inferred by the system based on some rules or language processing.","","","","","","","",,,,,"",,,,"Coding.userSelected",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","CD.codingRationale","Sometimes implied by being first"
@@ -119,7 +121,50 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "Procedure.subject","Procedure.subject","","patient
 ","",1,1,"Y","","Y","Reference {[]} {[CanonicalType[http://va.gov/fhir/StructureDefinition/Patient]]}
 ","Who the procedure was performed on","The person, animal or group on which the procedure was performed.","","","","","","","","","",,,,,"",,,,"Procedure.subject",1,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","1287: reference based on SURGERY - PATIENT (130-.01)","SPatient.ImplantedProsthesis.PatientIEN,SPatient.OperationsIndication.PatientIEN,Surg.AnesthesiaAgent.PatientIEN,Surg.AnesthesiaBlockSite.PatientIEN,Surg.AnesthesiaTechnique.PatientIEN,Surg.AnesthesiaTestDose.PatientIEN,Surg.ReferringPhysician.PatientIEN,Surg.ReferringPhysician.PatientSID,Surg.ReplacementFluidType.PatientIEN,Surg.ReplacementFluidType.PatientSID,Surg.SurgeryAssistant.PatientIEN,Surg.SurgeryAssistantOther.PatientIEN,Surg.SurgeryDelay.PatientIEN,Surg.SurgeryINTRA.PatientIEN,Surg.SurgeryIrrigation.PatientIEN,Surg.SurgeryIrrigation.PatientSID,Surg.SurgeryMedication.PatientIEN,Surg.SurgeryOccurrenceNonOp.PatientIEN,Surg.SurgeryOccurrenceNonOp.PatientSID,Surg.SurgeryOtherPostOpDiagnosis.PatientIEN,Surg.SurgeryOtherProcedure.PatientIEN,Surg.SurgeryOtherProcedureCPTModifier.PatientIEN,Surg.SurgeryOtherProcedureCPTModifier.PatientSID,Surg.SurgeryOtherProcedureDiagnosis.PatientIEN,Surg.SurgeryPOST.PatientIEN,Surg.SurgeryPostOpDiagnosis.PatientIEN,Surg.SurgeryPreOpDiagnosis.PatientIEN,Surg.SurgeryPreOpDiagnosis.PatientSID,Surg.SurgeryPrincipalAssociatedDiagnosis.PatientIEN,Surg.SurgeryPrincipalAssociatedProcedure.PatientIEN,Surg.SurgeryPrincipalCPTModifier.PatientIEN,Surg.SurgeryPrincipalDiagnosis.PatientIEN,Surg.SurgeryProcedureCPTModifier.PatientIEN,Surg.SurgeryProcedureDiagnosisCode.PatientIEN,Surg.SurgeryProcedureOccurrence.PatientIEN,Surg.SurgeryProcedureOccurrence.PatientSID,Surg.SurgeryRequiredBloodProducts.PatientIEN,Surg.SurgeryReturnCase.PatientIEN,Surg.SurgORCircSupport.PatientIEN,Surg.SurgORCircSupportTime.PatientIEN,Surg.SurgORCircSupportTime.PatientSID,Surg.SurgORScrubSupport.PatientIEN,Surg.SurgORScrubSupportTime.PatientIEN,Surg.SurgORScrubSupportTime.PatientSID","Procedure.Procedure[CodeTableDetail.Procedure].Code","Event.subject",".participation[typeCode=SBJ].role","FiveWs.subject[x]","FiveWs.subject","PID-3"
+","1287: reference based on SURGERY - PATIENT (130-.01)","SPatient.ImplantedProsthesis.PatientIEN
+SPatient.OperationsIndication.PatientIEN
+Surg.AnesthesiaAgent.PatientIEN
+Surg.AnesthesiaBlockSite.PatientIEN
+Surg.AnesthesiaTechnique.PatientIEN
+Surg.AnesthesiaTestDose.PatientIEN
+Surg.ReferringPhysician.PatientIEN
+Surg.ReferringPhysician.PatientSID
+Surg.ReplacementFluidType.PatientIEN
+Surg.ReplacementFluidType.PatientSID
+Surg.SurgeryAssistant.PatientIEN
+Surg.SurgeryAssistantOther.PatientIEN
+Surg.SurgeryDelay.PatientIEN
+Surg.SurgeryINTRA.PatientIEN
+Surg.SurgeryIrrigation.PatientIEN
+Surg.SurgeryIrrigation.PatientSID
+Surg.SurgeryMedication.PatientIEN
+Surg.SurgeryOccurrenceNonOp.PatientIEN
+Surg.SurgeryOccurrenceNonOp.PatientSID
+Surg.SurgeryOtherPostOpDiagnosis.PatientIEN
+Surg.SurgeryOtherProcedure.PatientIEN
+Surg.SurgeryOtherProcedureCPTModifier.PatientIEN
+Surg.SurgeryOtherProcedureCPTModifier.PatientSID
+Surg.SurgeryOtherProcedureDiagnosis.PatientIEN
+Surg.SurgeryPOST.PatientIEN
+Surg.SurgeryPostOpDiagnosis.PatientIEN
+Surg.SurgeryPreOpDiagnosis.PatientIEN
+Surg.SurgeryPreOpDiagnosis.PatientSID
+Surg.SurgeryPrincipalAssociatedDiagnosis.PatientIEN
+Surg.SurgeryPrincipalAssociatedProcedure.PatientIEN
+Surg.SurgeryPrincipalCPTModifier.PatientIEN
+Surg.SurgeryPrincipalDiagnosis.PatientIEN
+Surg.SurgeryProcedureCPTModifier.PatientIEN
+Surg.SurgeryProcedureDiagnosisCode.PatientIEN
+Surg.SurgeryProcedureOccurrence.PatientIEN
+Surg.SurgeryProcedureOccurrence.PatientSID
+Surg.SurgeryRequiredBloodProducts.PatientIEN
+Surg.SurgeryReturnCase.PatientIEN
+Surg.SurgORCircSupport.PatientIEN
+Surg.SurgORCircSupportTime.PatientIEN
+Surg.SurgORCircSupportTime.PatientSID
+Surg.SurgORScrubSupport.PatientIEN
+Surg.SurgORScrubSupportTime.PatientIEN
+Surg.SurgORScrubSupportTime.PatientSID","Procedure.Procedure[CodeTableDetail.Procedure].Code","Event.subject",".participation[typeCode=SBJ].role","FiveWs.subject[x]","FiveWs.subject","PID-3"
 "Procedure.encounter","Procedure.encounter","","","",0,1,"Y","","Y","Reference {[]} {[CanonicalType[http://va.gov/fhir/StructureDefinition/EncounterOutpatient]]}
 ","Encounter created as part of","The Encounter during which this Procedure was created or performed or to which the creation of this record is tightly associated.","This will typically be the encounter the event occurred within, but some activities may be initiated prior to or after the official completion of an encounter but still be tied to the context of the encounter.","","","","","","","","",,,,,"",,,,"Procedure.encounter",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","1285: reference based on SURGERY - VISIT (130-.015)","Procedure.Extension[ProcedureExtension].SecondaryVisit","surgery.encounter","Event.context",".inboundRelationship[typeCode=COMP].source[classCode=ENC, moodCode=EVN]","FiveWs.context","PV1-19"
@@ -131,7 +176,42 @@ Period {[]} {[]}string {[]} {[]}Age {[]} {[]}Range {[]} {[]}","When the procedur
 "Procedure.performed[x]:performedDateTime","Procedure.performed[x]","performedDateTime","","",0,1,"Y","","Y","dateTime {[]} {[]}
 ","When the procedure was performed","Estimated or actual date, date-time, period, or age when the procedure was performed.  Allows a period to support complex procedures that span more than one date, and also allows for the length of the procedure to be captured.","Age is generally used when the patient reports an age at which the procedure was performed. Range is generally used when the patient reports an age range when the procedure was performed, such as sometime between 20-25 years old.  dateTime supports a range of precision due to some procedures being reported as past procedures that might not have millisecond precision while other procedures performed and documented during the encounter might have more precise UTC timestamps with timezone.","","","","","","","","",,,,,"",,,,"Procedure.performed[x]",0,1,"us-core-7
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","1286: source value based on SURGERY - DATE OF OPERATION (130-.09)","SPatient.ImplantedProsthesis.SurgeryDateTime,SPatient.OperationsIndication.SurgeryDateTime,Surg.AnesthesiaAgent.SurgeryDateTime,Surg.AnesthesiaBlockSite.SurgeryDateTime,Surg.AnesthesiaTechnique.SurgeryDateTime,Surg.AnesthesiaTestDose.SurgeryDateTime,Surg.ReferringPhysician.SurgeryDateTime,Surg.ReplacementFluidType.SurgeryDateTime,Surg.SurgeryAssistant.SurgeryDateTime,Surg.SurgeryAssistantOther.SurgeryDateTime,Surg.SurgeryDelay.SurgeryDateTime,Surg.SurgeryINTRA.SurgeryDateTime,Surg.SurgeryIrrigation.SurgeryDateTime,Surg.SurgeryMedication.SurgeryDateTime,Surg.SurgeryOccurrenceNonOp.SurgeryDateTime,Surg.SurgeryOtherPostOpDiagnosis.SurgeryDateTime,Surg.SurgeryOtherProcedure.SurgeryDateTime,Surg.SurgeryOtherProcedureCPTModifier.SurgeryDateTime,Surg.SurgeryOtherProcedureDiagnosis.SurgeryDateTime,Surg.SurgeryPOST.SurgeryDateTime,Surg.SurgeryPostOpDiagnosis.SurgeryDateTime,Surg.SurgeryPRE.SurgeryDateTime,Surg.SurgeryPreOpDiagnosis.SurgeryDateTime,Surg.SurgeryPrincipalAssociatedDiagnosis.SurgeryDateTime,Surg.SurgeryPrincipalAssociatedProcedure.SurgeryDateTime,Surg.SurgeryPrincipalCPTModifier.SurgeryDateTime,Surg.SurgeryPrincipalDiagnosis.SurgeryDateTime,Surg.SurgeryProcedureCPTModifier.SurgeryDateTime,Surg.SurgeryProcedureDiagnosisCode.SurgeryDateTime,Surg.SurgeryProcedureOccurrence.SurgeryDateTime,Surg.SurgeryRequiredBloodProducts.SurgeryDateTime,Surg.SurgeryReturnCase.SurgeryDateTime,Surg.SurgORCircSupport.SurgeryDateTime,Surg.SurgORCircSupportTime.SurgeryDateTime,Surg.SurgORScrubSupport.SurgeryDateTime,Surg.SurgORScrubSupportTime.SurgeryDateTime","Procedure.ProcedureTime","surgery.dateTime","Event.occurrence[x]",".effectiveTime","FiveWs.done[x]","OBR-7"
+","1286: source value based on SURGERY - DATE OF OPERATION (130-.09)","SPatient.ImplantedProsthesis.SurgeryDateTime
+SPatient.OperationsIndication.SurgeryDateTime
+Surg.AnesthesiaAgent.SurgeryDateTime
+Surg.AnesthesiaBlockSite.SurgeryDateTime
+Surg.AnesthesiaTechnique.SurgeryDateTime
+Surg.AnesthesiaTestDose.SurgeryDateTime
+Surg.ReferringPhysician.SurgeryDateTime
+Surg.ReplacementFluidType.SurgeryDateTime
+Surg.SurgeryAssistant.SurgeryDateTime
+Surg.SurgeryAssistantOther.SurgeryDateTime
+Surg.SurgeryDelay.SurgeryDateTime
+Surg.SurgeryINTRA.SurgeryDateTime
+Surg.SurgeryIrrigation.SurgeryDateTime
+Surg.SurgeryMedication.SurgeryDateTime
+Surg.SurgeryOccurrenceNonOp.SurgeryDateTime
+Surg.SurgeryOtherPostOpDiagnosis.SurgeryDateTime
+Surg.SurgeryOtherProcedure.SurgeryDateTime
+Surg.SurgeryOtherProcedureCPTModifier.SurgeryDateTime
+Surg.SurgeryOtherProcedureDiagnosis.SurgeryDateTime
+Surg.SurgeryPOST.SurgeryDateTime
+Surg.SurgeryPostOpDiagnosis.SurgeryDateTime
+Surg.SurgeryPRE.SurgeryDateTime
+Surg.SurgeryPreOpDiagnosis.SurgeryDateTime
+Surg.SurgeryPrincipalAssociatedDiagnosis.SurgeryDateTime
+Surg.SurgeryPrincipalAssociatedProcedure.SurgeryDateTime
+Surg.SurgeryPrincipalCPTModifier.SurgeryDateTime
+Surg.SurgeryPrincipalDiagnosis.SurgeryDateTime
+Surg.SurgeryProcedureCPTModifier.SurgeryDateTime
+Surg.SurgeryProcedureDiagnosisCode.SurgeryDateTime
+Surg.SurgeryProcedureOccurrence.SurgeryDateTime
+Surg.SurgeryRequiredBloodProducts.SurgeryDateTime
+Surg.SurgeryReturnCase.SurgeryDateTime
+Surg.SurgORCircSupport.SurgeryDateTime
+Surg.SurgORCircSupportTime.SurgeryDateTime
+Surg.SurgORScrubSupport.SurgeryDateTime
+Surg.SurgORScrubSupportTime.SurgeryDateTime","Procedure.ProcedureTime","surgery.dateTime","Event.occurrence[x]",".effectiveTime","FiveWs.done[x]","OBR-7"
 "Procedure.performed[x]:performedPeriod","Procedure.performed[x]","performedPeriod","","",0,1,"Y","","Y","Period {[]} {[]}
 ","When the procedure was performed","Estimated or actual date, date-time, period, or age when the procedure was performed.  Allows a period to support complex procedures that span more than one date, and also allows for the length of the procedure to be captured.","Age is generally used when the patient reports an age at which the procedure was performed. Range is generally used when the patient reports an age range when the procedure was performed, such as sometime between 20-25 years old.  dateTime supports a range of precision due to some procedures being reported as past procedures that might not have millisecond precision while other procedures performed and documented during the encounter might have more precise UTC timestamps with timezone.","","","","","","","","",,,,,"",,,,"Procedure.performed[x]",0,1,"us-core-7
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
@@ -146,11 +226,13 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "Procedure.performed[x]:performedPeriod.start","Procedure.performed[x].start","","","",0,1,"Y","","Y","dateTime {[]} {[]}
 ","Starting time with inclusive boundary","The start of the period. The boundary is inclusive.","If the low element is missing, the meaning is that the low boundary is not known.","","","","","","","","",,,,,"",,,,"Period.start",0,1,"per-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-psp-25-1290:If 130-118 NON-OR PROCEDURE == ‘Y’ then source value from (130-121) {true}psp-25-1292:If 130-118 NON-OR PROCEDURE != ‘Y’ then source value from (130-.22) {true}","1290: source value based on SURGERY - TIME PROCEDURE BEGAN (130-121) if 130-118 NON-OR PROCEDURE == ‘Y’","1292: source value based on SURGERY - TIME OPERATION BEGAN (130-.22) if 130-118 NON-OR PROCEDURE != ‘Y’","Surg.SurgeryINTRA.BeginNonORProcedureDateTime","Surg.SurgeryINTRA.BeginOperationDateTime,Surg.SurgeryPRE.BeginOperationDateTime","./low","DR.1"
+psp-25-1290:If 130-118 NON-OR PROCEDURE == ‘Y’ then source value from (130-121) {true}psp-25-1292:If 130-118 NON-OR PROCEDURE != ‘Y’ then source value from (130-.22) {true}","1290: source value based on SURGERY - TIME PROCEDURE BEGAN (130-121) if 130-118 NON-OR PROCEDURE == ‘Y’","1292: source value based on SURGERY - TIME OPERATION BEGAN (130-.22) if 130-118 NON-OR PROCEDURE != ‘Y’","Surg.SurgeryINTRA.BeginNonORProcedureDateTime","Surg.SurgeryINTRA.BeginOperationDateTime
+Surg.SurgeryPRE.BeginOperationDateTime","./low","DR.1"
 "Procedure.performed[x]:performedPeriod.end","Procedure.performed[x].end","","","",0,1,"Y","","Y","dateTime {[]} {[]}
 ","End time with inclusive boundary, if not ongoing","The end of the period. If the end of the period is missing, it means no end was known or planned at the time the instance was created. The start may be in the past, and the end date in the future, which means that period is expected/planned to end at that time.","The high value includes any matching date/time. i.e. 2012-02-03T10:00:00 is in a period that has an end value of 2012-02-03.","","","If the end of the period is missing, it means that the period is ongoing","","","","","",,,,,"",,,,"Period.end",0,1,"per-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-psp-25-1291:If 130-118 NON-OR PROCEDURE == ‘Y’ then source value from (130-122) {true}psp-25-1293:If 130-118 NON-OR PROCEDURE != ‘Y’ then source value from (130-.23) {true}","1291: source value based on SURGERY - TIME PROCEDURE ENDED (130-122) if 130-118 NON-OR PROCEDURE == ‘Y’","1293: source value based on SURGERY - TIME OPERATION ENDS (130-.23) if 130-118 NON-OR PROCEDURE != ‘Y’","Surg.SurgeryINTRA.EndNonORProcedureDateTime","Surg.SurgeryINTRA.EndOperationDateTime,Surg.SurgeryPRE.EndOperationDateTime","./high","DR.2"
+psp-25-1291:If 130-118 NON-OR PROCEDURE == ‘Y’ then source value from (130-122) {true}psp-25-1293:If 130-118 NON-OR PROCEDURE != ‘Y’ then source value from (130-.23) {true}","1291: source value based on SURGERY - TIME PROCEDURE ENDED (130-122) if 130-118 NON-OR PROCEDURE == ‘Y’","1293: source value based on SURGERY - TIME OPERATION ENDS (130-.23) if 130-118 NON-OR PROCEDURE != ‘Y’","Surg.SurgeryINTRA.EndNonORProcedureDateTime","Surg.SurgeryINTRA.EndOperationDateTime
+Surg.SurgeryPRE.EndOperationDateTime","./high","DR.2"
 "Procedure.recorder","Procedure.recorder","","","",0,1,"","","Y","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/Patient], CanonicalType[http://hl7.org/fhir/StructureDefinition/RelatedPerson], CanonicalType[http://hl7.org/fhir/StructureDefinition/Practitioner], CanonicalType[http://hl7.org/fhir/StructureDefinition/PractitionerRole]]}
 ","Who recorded the procedure","Individual who recorded the record and takes responsibility for its content.","","","","","","","","","",,,,,"",,,,"Procedure.recorder",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".participation[typeCode=AUT].role","FiveWs.author"
@@ -758,7 +840,9 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ",".scoper"
 "Procedure.location","Procedure.location","","","",0,1,"Y","","Y","Reference {[]} {[CanonicalType[http://va.gov/fhir/StructureDefinition/Location], CanonicalType[http://va.gov/fhir/StructureDefinition/ProcedureSurgeryLocationOR]]}
 ","Where the procedure happened","The location where the procedure actually happened.  E.g. a newborn at home, a tracheostomy at a restaurant.","","Ties a procedure to where the records are likely kept.","","","","","","","",,,,,"",,,,"Procedure.location",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-psp-25-1294:If 130-118 NON-OR PROCEDURE == ‘Y’ then reference /Location based on (130-119) {true}psp-25-1295:If 130-118 NON-OR PROCEDURE != ‘Y’ then reference LocationOR based on (130-.02) {true}","1294: reference based on SURGERY - NON-OR LOCATION (130-119) if 130-118 NON-OR PROCEDURE == ‘Y’","1295: reference based on SURGERY - OP ROOM PROCEDURE PERFORMED (130-.02) if 130-118 NON-OR PROCEDURE != ‘Y’","Surg.SurgeryINTRA.NonORLocationIEN,Surg.SurgeryPOST.NonORLocationIEN","Surg.SurgeryINTRA.OperatingRoomIEN,Surg.SurgeryPOST.OperatingRoomIEN",".participation[typeCode=LOC].role[classCode=SDLOC]","FiveWs.where[x]"
+psp-25-1294:If 130-118 NON-OR PROCEDURE == ‘Y’ then reference /Location based on (130-119) {true}psp-25-1295:If 130-118 NON-OR PROCEDURE != ‘Y’ then reference LocationOR based on (130-.02) {true}","1294: reference based on SURGERY - NON-OR LOCATION (130-119) if 130-118 NON-OR PROCEDURE == ‘Y’","1295: reference based on SURGERY - OP ROOM PROCEDURE PERFORMED (130-.02) if 130-118 NON-OR PROCEDURE != ‘Y’","Surg.SurgeryINTRA.NonORLocationIEN
+Surg.SurgeryPOST.NonORLocationIEN","Surg.SurgeryINTRA.OperatingRoomIEN
+Surg.SurgeryPOST.OperatingRoomIEN",".participation[typeCode=LOC].role[classCode=SDLOC]","FiveWs.where[x]"
 "Procedure.reasonCode","Procedure.reasonCode","","","",0,*,"","","Y","CodeableConcept {[]} {[]}
 ","Coded reason procedure performed","The coded reason why the procedure was performed. This may be a coded entity of some type, or may simply be present as text.","Use Procedure.reasonCode when a code sufficiently describes the reason.  Use Procedure.reasonReference when referencing a resource, which allows more information to be conveyed, such as onset date. Procedure.reasonCode and Procedure.reasonReference are not meant to be duplicative.  For a single reason, either Procedure.reasonCode or Procedure.reasonReference can be used.  Procedure.reasonCode may be a summary code, or Procedure.reasonReference may be used to reference a very precise definition of the reason using Condition | Observation | Procedure | DiagnosticReport | DocumentReference.  Both Procedure.reasonCode and Procedure.reasonReference can be used if they are describing different reasons for the procedure.","","","","","","","","",,"example","A code that identifies the reason a procedure is  required.","http://hl7.org/fhir/ValueSet/procedure-reason","",,,,"Procedure.reasonCode",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","Event.reasonCode",".reasonCode","FiveWs.why[x]"

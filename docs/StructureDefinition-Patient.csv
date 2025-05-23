@@ -211,7 +211,8 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""http://hl7.org/fhir/us/core/StructureDefinition/us-core-genderIdentity""/>","","","","",,,,,"",,,,"Extension.url",1,1,"","","N/A"
 "Patient.extension:genderIdentity.value[x]","Patient.extension.value[x]","","","",1,1,"Y","","","CodeableConcept {[]} {[]}
 ","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/extensibility.html) for a list).","","","","","","","","","",,"required","see mapping [VF_genderIdentity](ConceptMap-VF-genderIdentity.html)","http://va.gov/fhir/ValueSet/genderIdentity","",,,,"Extension.value[x]",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","1808: terminologyMaps using VF_genderIdentity on PATIENT - SELF IDENTIFIED GENDER (2-.024)","Patient.Patient.SelfIdentifiedGender,SPatient.SPatient.SelfIdentifiedGender","N/A"
+","1808: terminologyMaps using VF_genderIdentity on PATIENT - SELF IDENTIFIED GENDER (2-.024)","Patient.Patient.SelfIdentifiedGender
+SPatient.SPatient.SelfIdentifiedGender","N/A"
 "Patient.extension:patient-religion","Patient.extension","patient-religion","","",0,1,"","","","Extension {[CanonicalType[http://hl7.org/fhir/StructureDefinition/patient-religion]]} {[]}
 ","The patient's professed religious affiliations","The patient's professed religious affiliations.","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
@@ -227,7 +228,12 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "Patient.extension:patient-religion.value[x]","Patient.extension.value[x]","","","",1,1,"Y","","","CodeableConcept {[]} {[]}
 ","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R5/extensibility.html) for a list).","","","","","","","","","",,"required","see mapping [VF_Religion](ConceptMap-VF-Religion.html)","http://va.gov/fhir/ValueSet/Religion","",,,,"Extension.value[x]",0,1,"ext-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","1598: terminologyMaps using VF_Religion on PATIENT - RELIGIOUS PREFERENCE (2-.08)","Outpat.Visit.PatientReligion,Outpat.Visit.PatientReligionCode,Outpat.Workload.PatientReligion,Outpat.Workload.PatientReligionCode,Patient.Patient.ReligionIEN,SPatient.SPatient.ReligionIEN","Patient.Religion","demographics.religion","N/A"
+","1598: terminologyMaps using VF_Religion on PATIENT - RELIGIOUS PREFERENCE (2-.08)","Outpat.Visit.PatientReligion
+Outpat.Visit.PatientReligionCode
+Outpat.Workload.PatientReligion
+Outpat.Workload.PatientReligionCode
+Patient.Patient.ReligionIEN
+SPatient.SPatient.ReligionIEN","Patient.Religion","demographics.religion","N/A"
 "Patient.modifierExtension","Patient.modifierExtension","","extensions
 user content","",0,*,"","Y","","Extension {[]} {[]}
 ","Extensions that cannot be ignored","May be used to represent additional information that is not part of the basic definition of the resource and that modifies the understanding of the element that contains it and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.
@@ -290,7 +296,10 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","272-1: fixed value = urn:oid:2.16.840.1.113883.4.349","II.root or Role.id.root","CX.4 / EI-2-4"
 "Patient.identifier.value","Patient.identifier.value","","","",1,1,"Y","","Y","string {[]} {[]}
 ","The value that is unique within the system.","The portion of the identifier typically relevant to the user and which is unique within the context of the system.","If the value is a full URI, then the system SHALL be urn:ietf:rfc:3986.  The value's primary purpose is computational mapping.  As a result, it may be normalized for comparison purposes (e.g. removing non-significant whitespace, dashes, etc.)  A value formatted for human display can be conveyed using the [Rendered Value extension](http://hl7.org/fhir/R4/extension-rendered-value.html). Identifier.value is to be treated as case sensitive unless knowledge of the Identifier.system allows the processer to be confident that non-case-sensitive processing is safe.","","","","","","<valueString xmlns=""http://hl7.org/fhir"" value=""123456""/>","","",,,,,"",,,,"Identifier.value",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","272: source value based on PATIENT - INTEGRATION CONTROL NUMBER (2-991.01)","Patient.Patient.PatientICN,Patient.PatientICN.PatientICN,SPatient.SPatient.PatientICN,SPatient.SPatientGISAddress.PatientICN","demographics.icn","II.extension or II.root if system indicates OID or GUID (Or Role.id.extension or root)","CX.1 / EI.1"
+","272: source value based on PATIENT - INTEGRATION CONTROL NUMBER (2-991.01)","Patient.Patient.PatientICN
+Patient.PatientICN.PatientICN
+SPatient.SPatient.PatientICN
+SPatient.SPatientGISAddress.PatientICN","demographics.icn","II.extension or II.root if system indicates OID or GUID (Or Role.id.extension or root)","CX.1 / EI.1"
 "Patient.identifier.period","Patient.identifier.period","","","",0,1,"","","Y","Period {[]} {[]}
 ","Time period when id is/was valid for use","Time period during which identifier is/was valid for use.","","","","","","","","","",,,,,"",,,,"Identifier.period",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","Role.effectiveTime or implied by context","CX.7 + CX.8"
@@ -320,7 +329,13 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","unique(./use)","XPN.7, but often indicated by which field contains the name"
 "Patient.name.text","Patient.name.text","","","",0,1,"Y","","Y","string {[]} {[]}
 ","Text representation of the full name","Specifies the entire name as it should be displayed e.g. on an application UI. This may be provided instead of or as well as the specific parts.","Can provide both a text representation and parts. Applications updating a name SHALL ensure that when both text and parts are present,  no content is included in the text that isn't found in a part.","A renderable, unencoded form.","","","","","","","",,,,,"",,,,"HumanName.text",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","273: source value based on PATIENT - NAME (2-.01)","SPatient.SPatient.DestinationMergePatientIEN,SPatient.SPatient.PatientFirstName,SPatient.SPatient.PatientLastName,SPatient.SPatient.PatientName,SPatient.SPatientAlias.PatientName","Patient.Name","demographics.familyName,demographics.fullName,demographics.givenNames","./formatted","implied by XPN.11"
+","273: source value based on PATIENT - NAME (2-.01)","SPatient.SPatient.DestinationMergePatientIEN
+SPatient.SPatient.PatientFirstName
+SPatient.SPatient.PatientLastName
+SPatient.SPatient.PatientName
+SPatient.SPatientAlias.PatientName","Patient.Name","demographics.familyName
+demographics.fullName
+demographics.givenNames","./formatted","implied by XPN.11"
 "Patient.name.family","Patient.name.family","","surname
 ","",0,1,"Y","","Y","string {[]} {[]}
 ","Family name (often called 'Surname')","The part of a name that links to the genealogy. In some cultures (e.g. Eritrea) the family name of a son is the first name of his father.","Family Name may be decomposed into specific parts using extensions (de, nl, es related cultures).","","","","","<valueString xmlns=""http://hl7.org/fhir"" value=""LAST""/>","","","",,,,,"",,,,"HumanName.family",0,1,"us-core-6
@@ -447,17 +462,26 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","./usablePeriod[type=""IVL<TS>""]","N/A"
 "Patient.gender","Patient.gender","","","",1,1,"Y","","Y","code {[]} {[]}
 ","male | female | other | unknown","Administrative Gender - the gender that the patient is considered to have for administration and record keeping purposes.","The gender might not match the biological sex as determined by genetics or the individual's preferred identification. Note that for both humans and particularly animals, there are other legitimate possibilities than male and female, though the vast majority of systems and contexts only support male and female.  Systems providing decision support or enforcing business rules should ideally do this on the basis of Observations dealing with the specific sex or gender aspect of interest (anatomical, chromosomal, social, etc.)  However, because these observations are infrequently recorded, defaulting to the administrative gender is common practice.  Where such defaulting occurs, rule enforcement should allow for the variation between administrative and biological, chromosomal and other gender aspects.  For example, an alert about a hysterectomy on a male should be handled as a warning or overridable error, not a ""hard"" error.  See the Patient Gender and Sex section for additional information about communicating patient gender and sex.","Needed for identification of the individual, in combination with (at least) name and birth date.","","","","","","","",,"required","see mapping [VF_adminGender](ConceptMap-VF-adminGender.html)","http://va.gov/fhir/ValueSet/adminGender","",,,,"Patient.gender",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","555: terminologyMaps using VF_adminGender on PATIENT - SEX (2-.02)","Patient.Patient.Gender,Patient.PatientBirthSex.BirthSex,SPatient.SPatient.Gender,SPatient.SPatientBirthSex.BirthSex,SPatient.SPatientBirthSex.BirthSex","Patient.BirthGender,Patient.Gender","demographics.gender","player[classCode=PSN|ANM and determinerCode=INSTANCE]/administrativeGender",".patient.administrativeGenderCode","PID-8"
+","555: terminologyMaps using VF_adminGender on PATIENT - SEX (2-.02)","Patient.Patient.Gender
+Patient.PatientBirthSex.BirthSex
+SPatient.SPatient.Gender
+SPatient.SPatientBirthSex.BirthSex
+SPatient.SPatientBirthSex.BirthSex","Patient.BirthGender
+Patient.Gender","demographics.gender","player[classCode=PSN|ANM and determinerCode=INSTANCE]/administrativeGender",".patient.administrativeGenderCode","PID-8"
 "Patient.birthDate","Patient.birthDate","","","",0,1,"Y","","Y","date {[]} {[]}
 ","The date of birth for the individual","The date of birth for the individual.","At least an estimated year should be provided as a guess if the real DOB is unknown  There is a standard extension ""patient-birthTime"" available that should be used where Time is required (such as in maternity/infant care systems).","Age of the individual drives many clinical processes.","","","","","","","",,,,,"",,,,"Patient.birthDate",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","284: source value based on PATIENT - DATE OF BIRTH (2-.03)","SPatient.PlaceOfBirth.BirthDateTime,SPatient.SPatient.BirthDateTime","Patient.BirthTime,Patient.Extension[PatientExtension].Dob","demographics.dob","player[classCode=PSN|ANM and determinerCode=INSTANCE]/birthTime",".patient.birthTime","PID-7","21112-8"
+","284: source value based on PATIENT - DATE OF BIRTH (2-.03)","SPatient.PlaceOfBirth.BirthDateTime
+SPatient.SPatient.BirthDateTime","Patient.BirthTime
+Patient.Extension[PatientExtension].Dob","demographics.dob","player[classCode=PSN|ANM and determinerCode=INSTANCE]/birthTime",".patient.birthTime","PID-7","21112-8"
 "Patient.deceased[x]","Patient.deceased[x]","","","",0,1,"","Y","Y","boolean {[]} {[]}
 dateTime {[]} {[]}","Indicates if the individual is deceased or not","Indicates if the individual is deceased or not.","If there's no value in the instance, it means there is no statement on whether or not the individual is deceased. Most systems will interpret the absence of a value as a sign of the person being alive.","The fact that a patient is deceased influences the clinical process. Also, in human communication and relation management it is necessary to know whether the person is alive.","","","","","","","",,,,,"","type:$this}
 ","",,"open","Patient.deceased[x]",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","player[classCode=PSN|ANM and determinerCode=INSTANCE]/deceasedInd, player[classCode=PSN|ANM and determinerCode=INSTANCE]/deceasedTime","n/a","PID-30  (bool) and PID-29 (datetime)"
 "Patient.deceased[x]:deceasedDateTime","Patient.deceased[x]","deceasedDateTime","","",0,1,"Y","Y","Y","dateTime {[]} {[]}
 ","Indicates if the individual is deceased or not","Indicates if the individual is deceased or not.","If there's no value in the instance, it means there is no statement on whether or not the individual is deceased. Most systems will interpret the absence of a value as a sign of the person being alive.","The fact that a patient is deceased influences the clinical process. Also, in human communication and relation management it is necessary to know whether the person is alive.","","","","","","","",,,,,"",,,,"Patient.deceased[x]",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-p-7-285:If not null then source value from (2-.351) {true}","285: source value based on PATIENT - DATE OF DEATH (2-.351) if not null","Patient.Patient.DeathDateTime,SPatient.SPatient.DeathDateTime","Patient.DeathTime,Patient.IsDead","demographics.died","player[classCode=PSN|ANM and determinerCode=INSTANCE]/deceasedInd, player[classCode=PSN|ANM and determinerCode=INSTANCE]/deceasedTime","n/a","PID-30  (bool) and PID-29 (datetime)"
+p-7-285:If not null then source value from (2-.351) {true}","285: source value based on PATIENT - DATE OF DEATH (2-.351) if not null","Patient.Patient.DeathDateTime
+SPatient.SPatient.DeathDateTime","Patient.DeathTime
+Patient.IsDead","demographics.died","player[classCode=PSN|ANM and determinerCode=INSTANCE]/deceasedInd, player[classCode=PSN|ANM and determinerCode=INSTANCE]/deceasedTime","n/a","PID-30  (bool) and PID-29 (datetime)"
 "Patient.address","Patient.address","","","",0,*,"Y","","Y","Address {[]} {[]}
 ","An address for the individual","An address for the individual.","Patient may have multiple addresses with different uses or applicable periods.","May need to keep track of patient addresses for contacting, billing or reporting requirements and also to help with identification.","","","","","","","",,,,,"","value:$this}
 ","",,"open","Patient.address",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
@@ -539,7 +563,8 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "Patient.address:va-home.state","Patient.address.state","","Province
 Territory","",0,1,"Y","","Y","string {[]} {[]}
 ","Sub-unit of country (abbreviations ok)","Sub-unit of a country with limited sovereignty in a federally organized country. A code may be used if codes are in common use (e.g. US 2 letter state codes).","","","","","","","","","",,"extensible","Two Letter USPS alphabetic codes.","http://hl7.org/fhir/us/core/ValueSet/us-core-usps-state","",,,,"Address.state",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","290: source value based on PATIENT - STATE (2-.115)","SPatient.SPatientGISAddress.StateIEN,SPatient.SPatientGISAddress.StateSID","Patient.PermanentAddress[Address].State","demographics.address","AD.part[parttype = STA]","XAD.4"
+","290: source value based on PATIENT - STATE (2-.115)","SPatient.SPatientGISAddress.StateIEN
+SPatient.SPatientGISAddress.StateSID","Patient.PermanentAddress[Address].State","demographics.address","AD.part[parttype = STA]","XAD.4"
 "Patient.address:va-home.postalCode","Patient.address.postalCode","","Zip
 Zip Code","",0,1,"Y","","Y","string {[]} {[]}
 ","US Zip Codes","A postal code designating a region defined by the postal service.","","","","","","","<valueString xmlns=""http://hl7.org/fhir"" value=""9132""/>","","",,,,,"",,,,"Address.postalCode",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
@@ -570,7 +595,10 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","294: source value based on PATIENT - TEMPORARY ADDRESS END DATE (2-.1218)","Patient.TemporaryAddress[Address].ToTime","./high","DR.2"
 "Patient.maritalStatus","Patient.maritalStatus","","","",0,1,"Y","","","CodeableConcept {[]} {[]}
 ","Marital (civil) status of a patient","This field contains a patient's most recent marital (civil) status.","","Most, if not all systems capture it.","","","","","","","",,"required","see mapping [VF_MaritalStatus](ConceptMap-VF-MaritalStatus.html)","http://va.gov/fhir/ValueSet/MaritalStatus","",,,,"Patient.maritalStatus",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","1597: terminologyMaps using VF_MaritalStatus on PATIENT - MARITAL STATUS (2-.05)","Outpat.Visit.PatientMaritalStatus,Outpat.Workload.PatientMaritalStatus,Patient.Patient.MaritalStatusIEN,SPatient.SPatient.MaritalStatusIEN","Patient.MaritalStatus","demographics.maritalStatus","player[classCode=PSN]/maritalStatusCode",".patient.maritalStatusCode","PID-16"
+","1597: terminologyMaps using VF_MaritalStatus on PATIENT - MARITAL STATUS (2-.05)","Outpat.Visit.PatientMaritalStatus
+Outpat.Workload.PatientMaritalStatus
+Patient.Patient.MaritalStatusIEN
+SPatient.SPatient.MaritalStatusIEN","Patient.MaritalStatus","demographics.maritalStatus","player[classCode=PSN]/maritalStatusCode",".patient.maritalStatusCode","PID-16"
 "Patient.multipleBirth[x]","Patient.multipleBirth[x]","","","",0,1,"","","","boolean {[]} {[]}
 integer {[]} {[]}","Whether patient is part of a multiple birth","Indicates whether the patient is part of a multiple (boolean) or indicates the actual birth order (integer).","Where the valueInteger is provided, the number is the birth number in the sequence. E.g. The middle birth in triplets would be valueInteger=2 and the third born would have valueInteger=3 If a boolean value was provided for this triplets example, then all 3 patient records would have valueBoolean=true (the ordering is not indicated).","For disambiguation of multiple-birth children, especially relevant where the care provider doesn't meet the patient, such as labs.","","","","","","","",,,,,"",,,,"Patient.multipleBirth[x]",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","player[classCode=PSN|ANM and determinerCode=INSTANCE]/multipleBirthInd,  player[classCode=PSN|ANM and determinerCode=INSTANCE]/multipleBirthOrderNumber","n/a","PID-24 (bool), PID-25 (integer)"

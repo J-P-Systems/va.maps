@@ -54,9 +54,9 @@ Mapping: cdw-to-LabObservationMicrobiologyDiagnosticReport
 Id: cdw
 Title: "Clinical Data Warehouse (CDW)"
 Source: LabObservationMicrobiologyDiagnosticReport
-* basedOn -> "Micro.MicroOrderedTest.CPRSOrderIEN,SStaff.SMicroOrderedTest.CPRSOrderIEN"
-* status -> "Micro.MicroOrderedTest.DispositionLabCodeIEN,SStaff.SMicroOrderedTest.DispositionLabCodeIEN"
-* effectiveDateTime -> "Micro.AntibioticSensitivity.SpecimenTakenDateTime,Micro.AntibioticSensitivityComment.SpecimenTakenDateTime,Micro.BacteriologyReports.SpecimenTakenDateTime,Micro.MicroAntibioticLevel.SpecimenTakenDateTime,Micro.MicroAudit.SpecimenTakenDateTime,Micro.Microbiology.SpecimenTakenDateTime,Micro.MicroOrderedTest.SpecimenTakenDateTime,Micro.MicroSterilityResults.SpecimenTakenDateTime,Micro.MycobacteriologyReports.SpecimenTakenDateTime,Micro.Mycology.SpecimenTakenDateTime,Micro.MycologyReports.SpecimenTakenDateTime,Micro.Parasitology.SpecimenTakenDateTime,Micro.ParasitologyReports.SpecimenTakenDateTime,Micro.ParasitologyStage.SpecimenTakenDateTime,Micro.Virology.SpecimenTakenDateTime,Micro.VirologyReports.SpecimenTakenDateTime,SStaff.SMicroOrderedTest.SpecimenTakenDateTime"
+* basedOn -> "Micro.MicroOrderedTest.CPRSOrderIEN\nSStaff.SMicroOrderedTest.CPRSOrderIEN"
+* status -> "Micro.MicroOrderedTest.DispositionLabCodeIEN\nSStaff.SMicroOrderedTest.DispositionLabCodeIEN"
+* effectiveDateTime -> "Micro.AntibioticSensitivity.SpecimenTakenDateTime\nMicro.AntibioticSensitivityComment.SpecimenTakenDateTime\nMicro.BacteriologyReports.SpecimenTakenDateTime\nMicro.MicroAntibioticLevel.SpecimenTakenDateTime\nMicro.MicroAudit.SpecimenTakenDateTime\nMicro.Microbiology.SpecimenTakenDateTime\nMicro.MicroOrderedTest.SpecimenTakenDateTime\nMicro.MicroSterilityResults.SpecimenTakenDateTime\nMicro.MycobacteriologyReports.SpecimenTakenDateTime\nMicro.Mycology.SpecimenTakenDateTime\nMicro.MycologyReports.SpecimenTakenDateTime\nMicro.Parasitology.SpecimenTakenDateTime\nMicro.ParasitologyReports.SpecimenTakenDateTime\nMicro.ParasitologyStage.SpecimenTakenDateTime\nMicro.Virology.SpecimenTakenDateTime\nMicro.VirologyReports.SpecimenTakenDateTime\nSStaff.SMicroOrderedTest.SpecimenTakenDateTime"
 * issued -> "Micro.Microbiology.ReportCompletedDateTime"
 * performer[va-by] -> "Micro.Microbiology.VerifyingStaffIEN"
 * performer[va-at] -> "Micro.Microbiology.AccessioningInstitutionIEN"
@@ -70,12 +70,12 @@ Mapping: sda-to-LabObservationMicrobiologyDiagnosticReport
 Id: sda
 Title: "Summary Document Architecure (SDA)"
 Source: LabObservationMicrobiologyDiagnosticReport
-* issued -> "Documents.ToTime,LabOrder.Result.ResultTime"
-* performer[va-by] -> "Documents.Clinician,Documents.Extension[DocumentExtension].CareProviders,LabOrder.Result.VerifiedBy"
-* performer[va-at] -> "Documents.EnteredAt,LabOrder.Result.EnteredAt"
+* issued -> "Documents.ToTime\nLabOrder.Result.ResultTime"
+* performer[va-by] -> "Documents.Clinician\nDocuments.Extension[DocumentExtension].CareProviders\nLabOrder.Result.VerifiedBy"
+* performer[va-at] -> "Documents.EnteredAt\nLabOrder.Result.EnteredAt"
 
 Mapping: vpr-to-LabObservationMicrobiologyDiagnosticReport
 Id: vpr
 Title: "Virtual Patient Record XML (VPR)"
 Source: LabObservationMicrobiologyDiagnosticReport
-* code.text -> "panel.test,med.prescription,lab.test,pharmacy (med).prescription"
+* code.text -> "panel.test\nmed.prescription\nlab.test\npharmacy (med).prescription"

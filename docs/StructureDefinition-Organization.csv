@@ -59,7 +59,10 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","1252-1: fixed value = http://hl7.org/fhir/sid/us-npi","CX.4 / EI-2-4","II.root or Role.id.root","./IdentifierType"
 "Organization.identifier:NPI.value","Organization.identifier.value","","","",0,1,"","","Y","string {[]} {[]}
 ","The value that is unique","The portion of the identifier typically relevant to the user and which is unique within the context of the system.","If the value is a full URI, then the system SHALL be urn:ietf:rfc:3986.  The value's primary purpose is computational mapping.  As a result, it may be normalized for comparison purposes (e.g. removing non-significant whitespace, dashes, etc.)  A value formatted for human display can be conveyed using the [Rendered Value extension](http://hl7.org/fhir/R4/extension-rendered-value.html). Identifier.value is to be treated as case sensitive unless knowledge of the Identifier.system allows the processer to be confident that non-case-sensitive processing is safe.","","","","","","<valueString xmlns=""http://hl7.org/fhir"" value=""123456""/>","","",,,,,"",,,,"Identifier.value",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","1252: source value based on INSTITUTION - NPI (4-41.99)","Dim.Institution.NPI,Dim.Institution.NPI,Dim.InstitutionTimeZone.NPI,NDim.MVIInstitution.NPI","CX.1 / EI.1","II.extension or II.root if system indicates OID or GUID (Or Role.id.extension or root)","./Value"
+","1252: source value based on INSTITUTION - NPI (4-41.99)","Dim.Institution.NPI
+Dim.Institution.NPI
+Dim.InstitutionTimeZone.NPI
+NDim.MVIInstitution.NPI","CX.1 / EI.1","II.extension or II.root if system indicates OID or GUID (Or Role.id.extension or root)","./Value"
 "Organization.identifier:NPI.period","Organization.identifier.period","","","",0,1,"","","Y","Period {[]} {[]}
 ","Time period when id is/was valid for use","Time period during which identifier is/was valid for use.","","","","","","","","","",,,,,"",,,,"Identifier.period",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","CX.7 + CX.8","Role.effectiveTime or implied by context","./StartDate and ./EndDate"
@@ -92,12 +95,20 @@ We expect that some jurisdictions will profile this optionality to be a single c
 "Organization.name","Organization.name","","","",1,1,"Y","","Y","string {[]} {[]}
 ","Name used for the organization","A name associated with the organization.","If the name of an organization changes, consider putting the old name in the alias column so that it can still be located through searches.","Need to use the name as the label of the organization.","","","","","","","",,,,,"",,,,"Organization.name",0,1,"org-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","1251: source value based on INSTITUTION - NAME (4-.01)","Dim.AutoDiscontinuedRule.InstitutionName,Dim.Institution.InstitutionName,Dim.Institution.InstitutionName,Dim.InstitutionTimeZone.Institution,Dim.RequestService.IFCRoutingInstitution,NDim.MVIInstitution.InstitutionName","XON.1",".name",".PreferredName/Name"
+","1251: source value based on INSTITUTION - NAME (4-.01)","Dim.AutoDiscontinuedRule.InstitutionName
+Dim.Institution.InstitutionName
+Dim.Institution.InstitutionName
+Dim.InstitutionTimeZone.Institution
+Dim.RequestService.IFCRoutingInstitution
+NDim.MVIInstitution.InstitutionName","XON.1",".name",".PreferredName/Name"
 "Organization.alias","Organization.alias","","","",0,*,"Y","","","string {[]} {[]}
 ","A list of alternate names that the organization is known as, or was known as in the past","A list of alternate names that the organization is known as, or was known as in the past.","There are no dates associated with the alias/historic names, as this is not intended to track when names were used, but to assist in searching so that older names can still result in identifying the organization.","Over time locations and organizations go through many changes and can be known by different names.
 
 For searching knowing previous names that the organization was known by can be very useful.","","","","","","","",,,,,"",,,,"Organization.alias",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","1255: source value based on INSTITUTION - SHORT NAME (4-.05)","Dim.Institution.InstitutionShortName,Dim.Institution.InstitutionShortName,Dim.InstitutionTimeZone.InstitutionShortName,NDim.MVIInstitution.InstitutionShortName",".name"
+","1255: source value based on INSTITUTION - SHORT NAME (4-.05)","Dim.Institution.InstitutionShortName
+Dim.Institution.InstitutionShortName
+Dim.InstitutionTimeZone.InstitutionShortName
+NDim.MVIInstitution.InstitutionShortName",".name"
 "Organization.telecom","Organization.telecom","","","",0,*,"Y","","","ContactPoint {[]} {[]}
 ","A contact detail for the organization","A contact detail for the organization.","The use code 'home' is not to be used. Note that these contacts are not the contact details of people who are employed by or represent the organization, but official contacts for the organization itself.","Human contact for the organization.","","","","","","","",,,,,"",,,,"Organization.telecom",0,*,"org-3
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
@@ -196,27 +207,47 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","XAD.1 + XAD.2 + XAD.3 + XAD.4 + XAD.5 + XAD.6","./formatted"
 "Organization.address:va-physical.line","Organization.address.line","","","",0,4,"Y","","Y","string {[]} {[]}
 ","Street name, number, direction & P.O. Box etc.","This component contains the house number, apartment number, street name, street direction,  P.O. Box number, delivery hints, and similar address information.","","","","","","","<valueString xmlns=""http://hl7.org/fhir"" value=""137 Nowhere Street""/>","","",,,,,"",,,,"Address.line",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","1258: source value based on INSTITUTION - STREET ADDR. 1 (4-1.01)","1259: source value based on INSTITUTION - STREET ADDR. 2 (4-1.02)","Dim.Institution.StreetAddress1,Dim.Institution.StreetAddress1,Dim.InstitutionTimeZone.StreetAddress1,NDim.MVIInstitution.StreetAddress1","Dim.Institution.StreetAddress2,Dim.Institution.StreetAddress2,Dim.InstitutionTimeZone.StreetAddress2,NDim.MVIInstitution.StreetAddress2","XAD.1 + XAD.2 (note: XAD.1 and XAD.2 have different meanings for a company address than for a person address)","AD.part[parttype = AL]","./StreetAddress (newline delimitted)"
+","1258: source value based on INSTITUTION - STREET ADDR. 1 (4-1.01)","1259: source value based on INSTITUTION - STREET ADDR. 2 (4-1.02)","Dim.Institution.StreetAddress1
+Dim.Institution.StreetAddress1
+Dim.InstitutionTimeZone.StreetAddress1
+NDim.MVIInstitution.StreetAddress1","Dim.Institution.StreetAddress2
+Dim.Institution.StreetAddress2
+Dim.InstitutionTimeZone.StreetAddress2
+NDim.MVIInstitution.StreetAddress2","XAD.1 + XAD.2 (note: XAD.1 and XAD.2 have different meanings for a company address than for a person address)","AD.part[parttype = AL]","./StreetAddress (newline delimitted)"
 "Organization.address:va-physical.city","Organization.address.city","","Municpality
 ","",0,1,"Y","","Y","string {[]} {[]}
 ","Name of city, town etc.","The name of the city, town, suburb, village or other community or delivery center.","","","","","","","<valueString xmlns=""http://hl7.org/fhir"" value=""Erewhon""/>","","",,,,,"",,,,"Address.city",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","1260: source value based on INSTITUTION - CITY (4-1.03)","Dim.Institution.City,Dim.Institution.City,Dim.InstitutionTimeZone.City,NDim.MVIInstitution.City","XAD.3","AD.part[parttype = CTY]","./Jurisdiction"
+","1260: source value based on INSTITUTION - CITY (4-1.03)","Dim.Institution.City
+Dim.Institution.City
+Dim.InstitutionTimeZone.City
+NDim.MVIInstitution.City","XAD.3","AD.part[parttype = CTY]","./Jurisdiction"
 "Organization.address:va-physical.district","Organization.address.district","","County
 ","",0,1,"Y","","Y","string {[]} {[]}
 ","District name (aka county)","The name of the administrative area (county).","District is sometimes known as county, but in some regions 'county' is used in place of city (municipality), so county name should be conveyed in city instead.","","","","","","<valueString xmlns=""http://hl7.org/fhir"" value=""Madison""/>","","",,,,,"",,,,"Address.district",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","1261: source value based on INSTITUTION - DISTRICT (4-.03)","Dim.Institution.MedicalDistrict,Dim.Institution.MedicalDistrict,NDim.MVIInstitution.MedicalDistrict","XAD.9","AD.part[parttype = CNT | CPA]"
+","1261: source value based on INSTITUTION - DISTRICT (4-.03)","Dim.Institution.MedicalDistrict
+Dim.Institution.MedicalDistrict
+NDim.MVIInstitution.MedicalDistrict","XAD.9","AD.part[parttype = CNT | CPA]"
 "Organization.address:va-physical.state","Organization.address.state","","Province
 Territory","",0,1,"Y","","Y","string {[]} {[]}
 ","Sub-unit of country (abbreviations ok)","Sub-unit of a country with limited sovereignty in a federally organized country. A code may be used if codes are in common use (e.g. US 2 letter state codes).","","","","","","","","","",,"extensible","Two letter USPS alphabetic codes.","http://hl7.org/fhir/us/core/ValueSet/us-core-usps-state","",,,,"Address.state",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","1262: source value based on INSTITUTION - STATE > STATE - ABBREVIATION (4-.02 > 5-1)","Dim.Institution.StateIEN,Dim.InstitutionTimeZone.StateIEN,Dim.InstitutionTimeZone.StateSID,NDim.MVIInstitution.MVIStateIEN
-Dim.State.StateAbbrev,Dim.State.StateAbbrev,NDim.MVIState.StateAbbrev","XAD.4","AD.part[parttype = STA]","./Region"
+","1262: source value based on INSTITUTION - STATE > STATE - ABBREVIATION (4-.02 > 5-1)","Dim.Institution.StateIEN
+Dim.InstitutionTimeZone.StateIEN
+Dim.InstitutionTimeZone.StateSID
+NDim.MVIInstitution.MVIStateIEN
+Dim.State.StateAbbrev
+Dim.State.StateAbbrev
+NDim.MVIState.StateAbbrev","XAD.4","AD.part[parttype = STA]","./Region"
 "Organization.address:va-physical.postalCode","Organization.address.postalCode","","Zip
 ","",0,1,"Y","","Y","string {[]} {[]}
 ","US Zip Codes","A postal code designating a region defined by the postal service.","","","","","","","<valueString xmlns=""http://hl7.org/fhir"" value=""9132""/>","","",,,,,"",,,,"Address.postalCode",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","1263: source value based on INSTITUTION - ZIP (4-1.04)","Dim.Institution.Zip,Dim.Institution.Zip,Dim.InstitutionTimeZone.Zip,NDim.MVIInstitution.Zip","XAD.5","AD.part[parttype = ZIP]","./PostalIdentificationCode"
+","1263: source value based on INSTITUTION - ZIP (4-1.04)","Dim.Institution.Zip
+Dim.Institution.Zip
+Dim.InstitutionTimeZone.Zip
+NDim.MVIInstitution.Zip","XAD.5","AD.part[parttype = ZIP]","./PostalIdentificationCode"
 "Organization.address:va-physical.country","Organization.address.country","","","",0,1,"Y","","Y","string {[]} {[]}
 ","Country (e.g. can be ISO 3166 2 or 3 letter code)","Country - a nation as commonly understood or generally accepted.","ISO 3166 3 letter codes can be used in place of a human readable country name.","","","","","","","","",,,,,"",,,,"Address.country",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","1264: source value based on INSTITUTION - COUNTRY > COUNTRY CODE - CODE (4-801 > 779.004-.01)","Dim.Country.CountryCode,NDim.MVICountryCode.CountryCode","XAD.6","AD.part[parttype = CNT]","./Country"
+","1264: source value based on INSTITUTION - COUNTRY > COUNTRY CODE - CODE (4-801 > 779.004-.01)","Dim.Country.CountryCode
+NDim.MVICountryCode.CountryCode","XAD.6","AD.part[parttype = CNT]","./Country"
 "Organization.address:va-physical.period","Organization.address.period","","","",0,1,"","","Y","Period {[]} {[]}
 ","Time period when address was/is in use","Time period when address was/is in use.","","Allows addresses to be placed in historical context.","","","","","<valuePeriod xmlns=""http://hl7.org/fhir"">
   <start value=""2010-03-23""/>
@@ -257,14 +288,16 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "Organization.address:va-postal.state","Organization.address.state","","Province
 Territory","",0,1,"Y","","Y","string {[]} {[]}
 ","Sub-unit of country (abbreviations ok)","Sub-unit of a country with limited sovereignty in a federally organized country. A code may be used if codes are in common use (e.g. US 2 letter state codes).","","","","","","","","","",,"extensible","Two letter USPS alphabetic codes.","http://hl7.org/fhir/us/core/ValueSet/us-core-usps-state","",,,,"Address.state",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","1272: source value based on INSTITUTION - STATE (MAILING) (4-4.04)","Dim.InstitutionTimeZone.MailingStateIEN,Dim.InstitutionTimeZone.MailingStateSID","XAD.4","AD.part[parttype = STA]","./Region"
+","1272: source value based on INSTITUTION - STATE (MAILING) (4-4.04)","Dim.InstitutionTimeZone.MailingStateIEN
+Dim.InstitutionTimeZone.MailingStateSID","XAD.4","AD.part[parttype = STA]","./Region"
 "Organization.address:va-postal.postalCode","Organization.address.postalCode","","Zip
 ","",0,1,"Y","","Y","string {[]} {[]}
 ","US Zip Codes","A postal code designating a region defined by the postal service.","","","","","","","<valueString xmlns=""http://hl7.org/fhir"" value=""9132""/>","","",,,,,"",,,,"Address.postalCode",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","1273: source value based on INSTITUTION - ZIP (MAILING) (4-4.05)","Dim.InstitutionTimeZone.MailingZip","XAD.5","AD.part[parttype = ZIP]","./PostalIdentificationCode"
 "Organization.address:va-postal.country","Organization.address.country","","","",0,1,"Y","","Y","string {[]} {[]}
 ","Country (e.g. can be ISO 3166 2 or 3 letter code)","Country - a nation as commonly understood or generally accepted.","ISO 3166 3 letter codes can be used in place of a human readable country name.","","","","","","","","",,,,,"",,,,"Address.country",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","1274: source value based on INSTITUTION - COUNTRY > COUNTRY CODE - CODE (4-801 > 779.004-.01)","Dim.Country.CountryCode,NDim.MVICountryCode.CountryCode","XAD.6","AD.part[parttype = CNT]","./Country"
+","1274: source value based on INSTITUTION - COUNTRY > COUNTRY CODE - CODE (4-801 > 779.004-.01)","Dim.Country.CountryCode
+NDim.MVICountryCode.CountryCode","XAD.6","AD.part[parttype = CNT]","./Country"
 "Organization.address:va-postal.period","Organization.address.period","","","",0,1,"","","Y","Period {[]} {[]}
 ","Time period when address was/is in use","Time period when address was/is in use.","","Allows addresses to be placed in historical context.","","","","","<valuePeriod xmlns=""http://hl7.org/fhir"">
   <start value=""2010-03-23""/>

@@ -46,4 +46,4 @@ Mapping: vpr-to-LabObservationDiagnosticReport
 Id: vpr
 Title: "Virtual Patient Record XML (VPR)"
 Source: LabObservationDiagnosticReport
-* code.text -> "panel.test,med.prescription,lab.test,pharmacy (med).prescription"
+* code.text -> "panel.test\nmed.prescription\nlab.test\npharmacy (med).prescription"

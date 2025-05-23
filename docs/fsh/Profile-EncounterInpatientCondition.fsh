@@ -31,4 +31,4 @@ Mapping: sda-to-EncounterInpatientCondition
 Id: sda
 Title: "Summary Document Architecure (SDA)"
 Source: EncounterInpatientCondition
-* code -> "Diagnosis.Diagnosis,Diagnosis.DiagnosisType"
+* code -> "Diagnosis.Diagnosis\nDiagnosis.DiagnosisType"

@@ -82,9 +82,18 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","./codeSystemVersion","C*E.7"
 "MedicationDispense.medication[x]:medicationCodeableConcept.coding.code","MedicationDispense.medication[x].coding.code","","","",0,1,"Y","","Y","code {[]} {[]}
 ","Symbol in syntax defined by the system","A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination).","","Need to refer to a particular code in the system.","","","","","","","",,,,,"",,,,"Coding.code",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","1573: source value based on PRESCRIPTION - DRUG > DRUG - PSNDF VA PRODUCT NAME ENTRY (52-6 > 50-22)","RxOut.RxOutpat.LocalDrugIEN,RxOut.RxOutpat.NationalDrugIEN,RxOut.RxOutpatFill.LocalDrugIEN,RxOut.RxOutpatFill.NationalDrugIEN
-Dim.LocalDrug.DrugNameWithoutDoseIEN,Dim.LocalDrug.NationalDrugIEN,Dim.LocalDrug.NationalDrugIEN","Medication.DrugProduct,Medication.CMOP
-Medication.DrugProduct.Identifier2,Medication.DrugProduct.ProductName,Medication.Extension[DrugProductExtension].FederalSchedule","med.route (>51.2-1),pharmacy (med).route (>51.2-1)","./code","C*E.1"
+","1573: source value based on PRESCRIPTION - DRUG > DRUG - PSNDF VA PRODUCT NAME ENTRY (52-6 > 50-22)","RxOut.RxOutpat.LocalDrugIEN
+RxOut.RxOutpat.NationalDrugIEN
+RxOut.RxOutpatFill.LocalDrugIEN
+RxOut.RxOutpatFill.NationalDrugIEN
+Dim.LocalDrug.DrugNameWithoutDoseIEN
+Dim.LocalDrug.NationalDrugIEN
+Dim.LocalDrug.NationalDrugIEN","Medication.DrugProduct
+Medication.CMOP
+Medication.DrugProduct.Identifier2
+Medication.DrugProduct.ProductName
+Medication.Extension[DrugProductExtension].FederalSchedule","med.route (>51.2-1)
+pharmacy (med).route (>51.2-1)","./code","C*E.1"
 "MedicationDispense.medication[x]:medicationCodeableConcept.coding.display","MedicationDispense.medication[x].coding.display","","","",0,1,"","","Y","string {[]} {[]}
 ","Representation defined by the system","A representation of the meaning of the code in the system, following the rules of the system.","","Need to be able to carry a human-readable meaning of the code for readers that do not know  the system.","","","","","","","",,,,,"",,,,"Coding.display",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","CV.displayName","C*E.2 - but note this is not well followed"
@@ -93,12 +102,36 @@ Medication.DrugProduct.Identifier2,Medication.DrugProduct.ProductName,Medication
 ","CD.codingRationale","Sometimes implied by being first"
 "MedicationDispense.medication[x]:medicationCodeableConcept.text","MedicationDispense.medication[x].text","","","",0,1,"Y","","Y","string {[]} {[]}
 ","Plain text representation of the concept","A human language representation of the concept as seen/selected/uttered by the user who entered the data and/or which represents the intended meaning of the user.","Very often the text is the same as a displayName of one of the codings.","The codes from the terminologies do not always capture the correct meaning with all the nuances of the human using them, or sometimes there is no appropriate code at all. In these cases, the text is used to capture the full meaning of the source.","","","","","","","",,,,,"",,,,"CodeableConcept.text",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","1572: source value based on PRESCRIPTION - DRUG > DRUG - GENERIC NAME (52-6 > 50-.01)","RxOut.RxOutpat.LocalDrugIEN,RxOut.RxOutpat.NationalDrugIEN,RxOut.RxOutpatFill.LocalDrugIEN,RxOut.RxOutpatFill.NationalDrugIEN
-Dim.LocalDrug.LocalDrugNameWithDose,Dim.LocalDrug.LocalDrugNameWithDose,RxOut.RxOutpatFill.LocalDrugNameWithDose","Medication.DrugProduct,Medication.CMOP
-Medication.ComponentMeds[DrugProduct].Description,Medication.ComponentMeds[DrugProduct].OriginalText,Medication.DrugProduct.Description,Medication.DrugProduct.OriginalText,Medication.ATCCode.Code,Medication.Generic.Description,Medication.Route.Description,Medication.OrderCategory.Description,Medication.OriginalText,Medication.OriginalText","med.route (>51.2-1),pharmacy (med).route (>51.2-1)","./originalText[mediaType/code=""text/plain""]/data","C*E.9. But note many systems use C*E.2 for this"
+","1572: source value based on PRESCRIPTION - DRUG > DRUG - GENERIC NAME (52-6 > 50-.01)","RxOut.RxOutpat.LocalDrugIEN
+RxOut.RxOutpat.NationalDrugIEN
+RxOut.RxOutpatFill.LocalDrugIEN
+RxOut.RxOutpatFill.NationalDrugIEN
+Dim.LocalDrug.LocalDrugNameWithDose
+Dim.LocalDrug.LocalDrugNameWithDose
+RxOut.RxOutpatFill.LocalDrugNameWithDose","Medication.DrugProduct
+Medication.CMOP
+Medication.ComponentMeds[DrugProduct].Description
+Medication.ComponentMeds[DrugProduct].OriginalText
+Medication.DrugProduct.Description
+Medication.DrugProduct.OriginalText
+Medication.ATCCode.Code
+Medication.Generic.Description
+Medication.Route.Description
+Medication.OrderCategory.Description
+Medication.OriginalText
+Medication.OriginalText","med.route (>51.2-1)
+pharmacy (med).route (>51.2-1)","./originalText[mediaType/code=""text/plain""]/data","C*E.9. But note many systems use C*E.2 for this"
 "MedicationDispense.subject","MedicationDispense.subject","","","",0,1,"Y","","Y","Reference {[]} {[CanonicalType[http://va.gov/fhir/StructureDefinition/Patient]]}
 ","Who the dispense is for","A link to a resource representing the person or the group to whom the medication will be given.","SubstanceAdministration->subject->Patient.","","","","","","","","",,,,,"",,,,"MedicationDispense.subject",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","1563: reference based on PRESCRIPTION - PATIENT (52-2)","RxOut.ActivityLog.PatientIEN,RxOut.ActivityLogOtherComments.PatientIEN,RxOut.RxOutpat.PatientIEN,RxOut.RxOutpatExt.PatientIEN,RxOut.RxOutpatExt.PatientSID,RxOut.RxOutpatFill.PatientIEN,RxOut.RxOutpatMedInstructions.PatientIEN,RxOut.RxOutpatSig.PatientIEN","med.units (>50.607-.01),pharmacy (med).units (>50.607-.01)","Event.subject",".participation[typeCode=SBJ].role[classCode=PAT]","FiveWs.subject[x]","FiveWs.subject","PID-3-Patient ID List"
+","1563: reference based on PRESCRIPTION - PATIENT (52-2)","RxOut.ActivityLog.PatientIEN
+RxOut.ActivityLogOtherComments.PatientIEN
+RxOut.RxOutpat.PatientIEN
+RxOut.RxOutpatExt.PatientIEN
+RxOut.RxOutpatExt.PatientSID
+RxOut.RxOutpatFill.PatientIEN
+RxOut.RxOutpatMedInstructions.PatientIEN
+RxOut.RxOutpatSig.PatientIEN","med.units (>50.607-.01)
+pharmacy (med).units (>50.607-.01)","Event.subject",".participation[typeCode=SBJ].role[classCode=PAT]","FiveWs.subject[x]","FiveWs.subject","PID-3-Patient ID List"
 "MedicationDispense.context","MedicationDispense.context","","","",0,1,"","","","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/Encounter], CanonicalType[http://hl7.org/fhir/StructureDefinition/EpisodeOfCare]]}
 ","Encounter / Episode associated with event","The encounter or episode of care that establishes the context for this event.","","","","","","","","","",,,,,"",,,,"MedicationDispense.context",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","Event.context",".inboundRelationship[typeCode=COMP].source[classCode=ENC, moodCode=EVN, code=""type of encounter or episode""]"
@@ -131,7 +164,8 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","1714: reference based on PRESCRIPTION - PARTIAL DATE > PARTIAL DATE - DIVISION > OUTPATIENT SITE - DEFAULT ERX CLINIC (52-60 > 52.2-.09 > 59-10)","Medication.Fills",".participation[typeCode=LOC].role"
 "MedicationDispense.authorizingPrescription","MedicationDispense.authorizingPrescription","","","",0,*,"Y","","","Reference {[]} {[CanonicalType[http://va.gov/fhir/StructureDefinition/MedicationRequestOutpatient]]}
 ","Medication order that authorizes the dispense","Indicates the medication order that is being dispensed against.","Maps to basedOn in Event logical model.","","","","","","","","",,,,,"",,,,"MedicationDispense.authorizingPrescription",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","1565: reference based on PRESCRIPTION - PLACER ORDER # (52-39.3)","RxOut.RxOutpat.CPRSOrderEntryNumber","Medication.ExternalId,Medication.PlacerId","Event.basedOn",".outboundRelationship[typeCode=FLFS].target[moodCode=RQO]","CombinedMedicationDispense.inFulfillmentOf","ORC-2 Placer Order Number"
+","1565: reference based on PRESCRIPTION - PLACER ORDER # (52-39.3)","RxOut.RxOutpat.CPRSOrderEntryNumber","Medication.ExternalId
+Medication.PlacerId","Event.basedOn",".outboundRelationship[typeCode=FLFS].target[moodCode=RQO]","CombinedMedicationDispense.inFulfillmentOf","ORC-2 Placer Order Number"
 "MedicationDispense.type","MedicationDispense.type","","","",0,1,"Y","","","CodeableConcept {[]} {[]}
 ","Trial fill, partial fill, emergency fill, etc.","Indicates the type of dispensing event that is performed. For example, Trial Fill, Completion of Trial, Partial Fill, Emergency Fill, Samples, etc.","","","","","","<valueCodeableConcept xmlns=""http://hl7.org/fhir"">
   <coding>
@@ -300,20 +334,53 @@ user content","",0,*,"","","","Extension {[]} {[]}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}","n/a"
 "MedicationDispense.dosageInstruction.doseAndRate.dose[x]:doseQuantity.value","MedicationDispense.dosageInstruction.doseAndRate.dose[x].value","","","",0,1,"Y","","Y","decimal {[]} {[]}
 ","Numerical value (with implicit precision)","The value of the measured amount. The value includes an implicit precision in the presentation of the value.","The implicit precision in the value should always be honored. Monetary values have their own rules for handling precision (refer to standard accounting text books).","Precision is handled implicitly in almost all cases of measurement.","","","","","","","",,,,,"",,,,"Quantity.value",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-mdp-25-1570:If number then source value from (52-113 > 52.0113-.01) {true}","1570: source value based on PRESCRIPTION - MEDICATION INSTRUCTIONS > MEDICATION INSTRUCTIONS - DOSAGE ORDERED (52-113 > 52.0113-.01) if number","RxOut.RxOutpatMedInstructions.DoseOrdered","Medication.DosageSteps,Medication.Route,Medication.DoseQuantity,Medication.DoseUoM,Medication.Duration,Medication.Frequency,Medication.TextInstruction,Medication.Conjunction,Medication.Noun,Medication.UnitsPerDose,Medication.Verb","med.dose [m],pharmacy (med).dose [m]","PQ.value, CO.value, MO.value, IVL.high or IVL.low depending on the value","SN.2  / CQ - N/A"
+mdp-25-1570:If number then source value from (52-113 > 52.0113-.01) {true}","1570: source value based on PRESCRIPTION - MEDICATION INSTRUCTIONS > MEDICATION INSTRUCTIONS - DOSAGE ORDERED (52-113 > 52.0113-.01) if number","RxOut.RxOutpatMedInstructions.DoseOrdered","Medication.DosageSteps
+Medication.Route
+Medication.DoseQuantity
+Medication.DoseUoM
+Medication.Duration
+Medication.Frequency
+Medication.TextInstruction
+Medication.Conjunction
+Medication.Noun
+Medication.UnitsPerDose
+Medication.Verb","med.dose [m]
+pharmacy (med).dose [m]","PQ.value, CO.value, MO.value, IVL.high or IVL.low depending on the value","SN.2  / CQ - N/A"
 "MedicationDispense.dosageInstruction.doseAndRate.dose[x]:doseQuantity.comparator","MedicationDispense.dosageInstruction.doseAndRate.dose[x].comparator","","","",0,0,"","Y","Y","code {[]} {[]}
 ","< | <= | >= | > - how to understand the value","Not allowed to be used in this context","","Need a framework for handling measures where the value is <5ug/L or >400mg/L due to the limitations of measuring methodology.","","If there is no comparator, then there is no modification of the value","","","","","",,"required","How the Quantity should be understood and represented.","http://hl7.org/fhir/ValueSet/quantity-comparator|4.0.1","",,,,"Quantity.comparator",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","IVL properties","SN.1  / CQ.1"
 "MedicationDispense.dosageInstruction.doseAndRate.dose[x]:doseQuantity.unit","MedicationDispense.dosageInstruction.doseAndRate.dose[x].unit","","","",0,1,"Y","","Y","string {[]} {[]}
 ","Unit representation","A human-readable form of the unit.","","There are many representations for units of measure and in many contexts, particular representations are fixed and required. I.e. mcg for micrograms.","","","","","","","",,,,,"",,,,"Quantity.unit",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","1571: source value based on PRESCRIPTION - MEDICATION INSTRUCTIONS > MEDICATION INSTRUCTIONS - UNITS (52-113 > 52.0113-2)","RxOut.RxOutpatMedInstructions.Unit","Medication.DosageSteps,Medication.Route,Medication.DoseQuantity,Medication.DoseUoM,Medication.Duration,Medication.Frequency,Medication.TextInstruction,Medication.Conjunction,Medication.Noun,Medication.UnitsPerDose,Medication.Verb","med.dose [m],pharmacy (med).dose [m]","PQ.unit","(see OBX.6 etc.) / CQ.2"
+","1571: source value based on PRESCRIPTION - MEDICATION INSTRUCTIONS > MEDICATION INSTRUCTIONS - UNITS (52-113 > 52.0113-2)","RxOut.RxOutpatMedInstructions.Unit","Medication.DosageSteps
+Medication.Route
+Medication.DoseQuantity
+Medication.DoseUoM
+Medication.Duration
+Medication.Frequency
+Medication.TextInstruction
+Medication.Conjunction
+Medication.Noun
+Medication.UnitsPerDose
+Medication.Verb","med.dose [m]
+pharmacy (med).dose [m]","PQ.unit","(see OBX.6 etc.) / CQ.2"
 "MedicationDispense.dosageInstruction.doseAndRate.dose[x]:doseQuantity.system","MedicationDispense.dosageInstruction.doseAndRate.dose[x].system","","","",0,1,"","","Y","uri {[]} {[]}
 ","System that defines coded unit form","The identification of the system that provides the coded form of the unit.","","Need to know the system that defines the coded form of the unit.","","","","","","","",,,,,"",,,,"Quantity.system",0,1,"qty-3
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","CO.codeSystem, PQ.translation.codeSystem","(see OBX.6 etc.) / CQ.2"
 "MedicationDispense.dosageInstruction.doseAndRate.dose[x]:doseQuantity.code","MedicationDispense.dosageInstruction.doseAndRate.dose[x].code","","","",0,1,"Y","","Y","code {[]} {[]}
 ","Coded form of the unit","A computer processable form of the unit in some unit representation system.","The preferred system is UCUM, but SNOMED CT can also be used (for customary units) or ISO 4217 for currency.  The context of use may additionally require a code from a particular system.","Need a computable form of the unit that is fixed across all forms. UCUM provides this for quantities, but SNOMED CT provides many units of interest.","","","","","","","",,"required","see mapping [VF_DoseUnits](ConceptMap-VF-DoseUnits.html)","http://va.gov/fhir/ValueSet/DoseUnits","",,,,"Quantity.code",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","1576: terminologyMaps using VF_DoseUnits on PRESCRIPTION - MEDICATION INSTRUCTIONS > MEDICATION INSTRUCTIONS - UNITS (52-113 > 52.0113-2)","RxOut.RxOutpatMedInstructions.Unit","Medication.DosageSteps,Medication.Route,Medication.DoseQuantity,Medication.DoseUoM,Medication.Duration,Medication.Frequency,Medication.TextInstruction,Medication.Conjunction,Medication.Noun,Medication.UnitsPerDose,Medication.Verb","med.dose [m],pharmacy (med).dose [m]","PQ.code, MO.currency, PQ.translation.code","(see OBX.6 etc.) / CQ.2"
+","1576: terminologyMaps using VF_DoseUnits on PRESCRIPTION - MEDICATION INSTRUCTIONS > MEDICATION INSTRUCTIONS - UNITS (52-113 > 52.0113-2)","RxOut.RxOutpatMedInstructions.Unit","Medication.DosageSteps
+Medication.Route
+Medication.DoseQuantity
+Medication.DoseUoM
+Medication.Duration
+Medication.Frequency
+Medication.TextInstruction
+Medication.Conjunction
+Medication.Noun
+Medication.UnitsPerDose
+Medication.Verb","med.dose [m]
+pharmacy (med).dose [m]","PQ.code, MO.currency, PQ.translation.code","(see OBX.6 etc.) / CQ.2"
 "MedicationDispense.dosageInstruction.doseAndRate.rate[x]","MedicationDispense.dosageInstruction.doseAndRate.rate[x]","","","",0,1,"","","Y","Ratio {[]} {[]}
 Range {[]} {[]}Quantity {[CanonicalType[http://hl7.org/fhir/StructureDefinition/SimpleQuantity]]} {[]}","Amount of medication per unit of time","Amount of medication per unit of time.","It is possible to supply both a rate and a doseQuantity to provide full details about how the medication is to be administered and supplied. If the rate is intended to change over time, depending on local rules/regulations, each change should be captured as a new version of the MedicationRequest with an updated rate, or captured with a new MedicationRequest with the new rate.It is possible to specify a rate over time (for example, 100 ml/hour) using either the rateRatio and rateQuantity.  The rateQuantity approach requires systems to have the capability to parse UCUM grammer where ml/hour is included rather than a specific ratio where the time is specified as the denominator.  Where a rate such as 500ml over 2 hours is specified, the use of rateRatio may be more semantically correct than specifying using a rateQuantity of 250 mg/hour.","Identifies the speed with which the medication was or will be introduced into the patient. Typically the rate for an infusion e.g. 100 ml per 1 hour or 100 ml/hr.  May also be expressed as a rate per unit of time e.g. 500 ml per 2 hours.   Other examples: 200 mcg/min or 200 mcg/1 minute; 1 liter/8 hours.  Sometimes, a rate can imply duration when expressed as total volume / duration (e.g.  500mL/2 hours implies a duration of 2 hours).  However, when rate doesn't imply duration (e.g. 250mL/hour), then the timing.repeat.duration is needed to convey the infuse over time period.","","","","","","","",,,,,"",,,,"Dosage.doseAndRate.rate[x]",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".rateQuantity","RXE22, RXE23, RXE-24"
