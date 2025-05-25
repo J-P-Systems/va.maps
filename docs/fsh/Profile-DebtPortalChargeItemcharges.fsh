@@ -37,31 +37,31 @@ Expression: "true"
 * extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: dpci-27-2008
-Description: "If 360-1.04 == 350  && Outpatient then reference /EncounterOutpatient based on (360-1.02 > 399-304>399.0304-20>409.68-.05)"
+Description: "If {1.04>350} && Outpatient then reference /EncounterOutpatient based on (360-1.02 > 399-304>399.0304-20>409.68-.05)"
 Severity: #warning
 Expression: "true"
 * extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: dpci-27-2009
-Description: "If 360-1.04 == 350 && Inpatient then reference /EncounterInpatientEncounter based on (360-1.02 > 399-.08)"
+Description: "If {1.04>350} && Inpatient then reference /EncounterInpatientEncounter based on (360-1.02 > 399-.08)"
 Severity: #warning
 Expression: "true"
 * extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: dpci-27-2010
-Description: "If 52-106 == 350 then reference /MedicationDispenseOriginal based on (52-)"
+Description: "If {106>350} then reference /MedicationDispenseOriginal based on (52-)"
 Severity: #warning
 Expression: "true"
 * extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: dpci-27-2011
-Description: "If 52-106 == 350 then reference /MedicationDispenseRefill based on (52-)"
+Description: "If {106>350} then reference /MedicationDispenseRefill based on (52-)"
 Severity: #warning
 Expression: "true"
 * extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: dpci-27-2012
-Description: "If 52-106 == 350 then reference /MedicationDispensePartial based on (52-)"
+Description: "If {106>350} then reference /MedicationDispensePartial based on (52-)"
 Severity: #warning
 Expression: "true"
 * extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
@@ -78,13 +78,13 @@ Source: DebtPortalChargeItemcharges
 * subject -> "1839: reference based on INTEGRATED BILLING ACTION - PATIENT (350-.02)"
 * identifier.value -> "2218: source value based on INTEGRATED BILLING ACTION - AR TRANSACTION NUMBER (350-.12) if AR TRANSACTION - TRANSACTION TYPE > ACCOUNTS RECEIVABLE TRANS.TYPE - IEN = 1 OR 35"
 * identifier.type.text -> "2218-1: fixed value = Transaction Number if AR TRANSACTION - TRANSACTION TYPE > ACCOUNTS RECEIVABLE TRANS.TYPE - IEN = 1 OR 35" "generated from mapParameter line 1"
-* context -> "2008: reference based on IB-FB INTERFACE TRACKING - BILL/CLAIMS > BILL/CLAIMS - PROCEDURES > PROCEDURES - OUTPATIENT ENCOUNTER > OUTPATIENT ENCOUNTER - VISIT FILE ENTRY (360-1.02 > 399-304>399.0304-20>409.68-.05) if 360-1.04 == 350  && Outpatient" "Map path: 350 < 360-1.04 |360| 360-1.02 > 399-304 > 399.304-20 > 409.68-.05 > 9000010"
-* context -> "2009: reference based on IB-FB INTERFACE TRACKING - BILL/CLAIMS > BILL/CLAIMS - PTF ENTRY NUMBER (360-1.02 > 399-.08) if 360-1.04 == 350 && Inpatient" "Map path: 350 < 360-1.04 |360| 360-1.02 > 399-08 > 45"
+* context -> "2008: reference based on IB-FB INTERFACE TRACKING - BILL/CLAIMS > BILL/CLAIMS - PROCEDURES > PROCEDURES - OUTPATIENT ENCOUNTER > OUTPATIENT ENCOUNTER - VISIT FILE ENTRY (360-1.02 > 399-304>399.0304-20>409.68-.05) if {1.04>350} && Outpatient" "Map path: 350 < 360-1.04 |360| 360-1.02 > 399-304 > 399.304-20 > 409.68-.05 > 9000010"
+* context -> "2009: reference based on IB-FB INTERFACE TRACKING - BILL/CLAIMS > BILL/CLAIMS - PTF ENTRY NUMBER (360-1.02 > 399-.08) if {1.04>350} && Inpatient" "Map path: 350 < 360-1.04 |360| 360-1.02 > 399-08 > 45"
 * occurrencePeriod.start -> "1973: source value based on INTEGRATED BILLING ACTION - DATE BILLED FROM (350-.14)"
 * occurrencePeriod.end -> "1974: source value based on INTEGRATED BILLING ACTION - DATE BILLED TO (350-.15)"
-* service[va-rxorig] -> "2010: reference based on PRESCRIPTION - (52-) if 52-106 == 350"
-* service[va-rxrefill] -> "2011: reference based on PRESCRIPTION - (52-) if 52-106 == 350"
-* service[va-rxpartial] -> "2012: reference based on PRESCRIPTION - (52-) if 52-106 == 350"
+* service[va-rxorig] -> "2010: reference based on PRESCRIPTION - (52-) if {106>350}"
+* service[va-rxrefill] -> "2011: reference based on PRESCRIPTION - (52-) if {106>350}"
+* service[va-rxpartial] -> "2012: reference based on PRESCRIPTION - (52-) if {106>350}"
 
 Mapping: cdw-to-DebtPortalChargeItemcharges
 Id: cdw

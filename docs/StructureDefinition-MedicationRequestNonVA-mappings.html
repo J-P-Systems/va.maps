@@ -7,7 +7,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>MedicationRequest: NonVA - Mappings - US Veterans Health Administration FHIR Map Set Implementation Guide v1.5.23</title>
+    <title>MedicationRequest: NonVA - Mappings - US Veterans Health Administration FHIR Map Set Implementation Guide v1.5.30</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -65,7 +65,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">US Veterans Health Administration FHIR Map Set Implementation Guide</span>
             <br/>
-            <span style="display:inline-block;">1.5.23 - 250601
+            <span style="display:inline-block;">1.5.30 - 250601
 
 
 
@@ -264,7 +264,7 @@
         
           Draft
           
-            as of 2025-05-23
+            as of 2025-05-25
           
         
       </td>
@@ -285,7 +285,7 @@
 <p>Scroll down for the Raw FHIR, CDW &amp; SDA mappings (if any).</p>
 
 <blockquote>
-  <p>Note that the CDW, SDA and VPR XML mappings are derived from a look-up based on the VistA source mappings in CDW and VPR.</p>
+  <p>Note that the CDW, SDA and VPR XML mappings are derived from a look-up based on the VistA source.</p>
 </blockquote>
 
 <h3 id="mapping-sources">Mapping Sources</h3>
@@ -310,49 +310,7 @@
       <td>med.id<br />med.orderID<br />pharmacy (med).id<br />pharmacy (med).orderID</td>
     </tr>
     <tr>
-      <td>MedicationRequest.identifier[va-order-number].system</td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>MedicationRequest.identifier[va-order-number].type</td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
       <td>MedicationRequest.identifier[va-ien].value</td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>MedicationRequest.identifier[va-ien].system</td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>MedicationRequest.intent</td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>MedicationRequest.reportedBoolean</td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>MedicationRequest.requester.extension[http://hl7.org/fhir/StructureDefinition/data-absent-reason].valueCode</td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>MedicationRequest.encounter.extension[http://hl7.org/fhir/StructureDefinition/data-absent-reason].valueCode</td>
       <td> </td>
       <td> </td>
       <td> </td>
@@ -423,30 +381,6 @@
       <td>Medication.EnteredAt<br />Medication.EnteringOrganization</td>
       <td>med.facility (&gt;44-3)<br />med.location (&gt;44-.01)<br />pharmacy (med).facility (&gt;44-3)<br />pharmacy (med).location (&gt;44-.01)</td>
     </tr>
-    <tr>
-      <td>MedicationRequest.category[us-core]</td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>MedicationRequest.reportedReference</td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>MedicationRequest.medicationReference</td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>MedicationRequest.subject</td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-    </tr>
   </tbody>
 </table>
 
@@ -481,34 +415,6 @@
 <td>http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
-<td>1762-1</td>
-<td>for review</td>
-<td>V2F</td>
-<td></td>
-<td>fixed value</td>
-<td></td>
-<td>MedicationRequest.identifier[va-order-number]</td>
-<td>.system</td>
-<td>http://va.gov/identifiers/$Sta3n/55.05-7</td>
-<td></td>
-<td>generated from mapParameter line 1</td>
-<td>http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest | 5.0.1</td>
-</tr>
-<tr class="row-ro1">
-<td>1762-2</td>
-<td>for review</td>
-<td>V2F</td>
-<td></td>
-<td>fixed value</td>
-<td></td>
-<td>MedicationRequest.identifier[va-order-number]</td>
-<td>.type</td>
-<td>http://terminology.hl7.org/CodeSystem/v2-0203#FILL</td>
-<td></td>
-<td>generated from mapParameter line 2</td>
-<td>http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest | 5.0.1</td>
-</tr>
-<tr class="row-ro1">
 <td>1763</td>
 <td>for review</td>
 <td>V2F</td>
@@ -520,20 +426,6 @@
 <td></td>
 <td>.system=http://va.gov/identifiers/$Sta3n/55.05</td>
 <td>Not required by US Core</td>
-<td>http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest | 5.0.1</td>
-</tr>
-<tr class="row-ro1">
-<td>1763-1</td>
-<td>for review</td>
-<td>V2F</td>
-<td></td>
-<td>fixed value</td>
-<td></td>
-<td>MedicationRequest.identifier[va-ien]</td>
-<td>.system</td>
-<td>http://va.gov/identifiers/$Sta3n/55.05</td>
-<td></td>
-<td>generated from mapParameter line 1</td>
 <td>http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
@@ -1385,7 +1277,7 @@ pharmacy (med).sig</td> </tr>
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025 <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#1.5.23 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, May 23, 2025 16:30+0000">2025-05-23</span>
+          IG &#169; 2025 <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#1.5.30 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Sun, May 25, 2025 09:24+0000">2025-05-25</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

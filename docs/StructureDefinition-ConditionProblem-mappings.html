@@ -7,7 +7,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Condition: Problem - Mappings - US Veterans Health Administration FHIR Map Set Implementation Guide v1.5.23</title>
+    <title>Condition: Problem - Mappings - US Veterans Health Administration FHIR Map Set Implementation Guide v1.5.30</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -65,7 +65,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">US Veterans Health Administration FHIR Map Set Implementation Guide</span>
             <br/>
-            <span style="display:inline-block;">1.5.23 - 250601
+            <span style="display:inline-block;">1.5.30 - 250601
 
 
 
@@ -264,7 +264,7 @@
         
           Draft
           
-            as of 2025-05-23
+            as of 2025-05-25
           
         
       </td>
@@ -285,7 +285,7 @@
 <p>Scroll down for the Raw FHIR, CDW &amp; SDA mappings (if any).</p>
 
 <blockquote>
-  <p>Note that the CDW, SDA and VPR XML mappings are derived from a look-up based on the VistA source mappings in CDW and VPR.</p>
+  <p>Note that the CDW, SDA and VPR XML mappings are derived from a look-up based on the VistA source.</p>
 </blockquote>
 
 <h3 id="mapping-sources">Mapping Sources</h3>
@@ -304,19 +304,7 @@
   </thead>
   <tbody>
     <tr>
-      <td>Condition.category[us-core]</td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
       <td>Condition.identifier.value</td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>Condition.identifier.system</td>
       <td> </td>
       <td> </td>
       <td> </td>
@@ -334,12 +322,6 @@
       <td>problem.icd (&gt;80-.01)<br />problem.icdd (&gt;80-68)</td>
     </tr>
     <tr>
-      <td>Condition.code.coding[va-icd].system</td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
       <td>Condition.code.coding[va-icd].code</td>
       <td>Outpat.ProblemList.ICDIEN<br />Dim.ICD10.ICD10Code<br />Dim.ICD9.ICD9Code</td>
       <td> </td>
@@ -350,12 +332,6 @@
       <td>Outpat.ProblemList.SNOMEDCTConceptCode</td>
       <td>Problem.Extension[ProblemExtension].Problem</td>
       <td>problem.sctc<br />problem.sctt</td>
-    </tr>
-    <tr>
-      <td>Condition.code.coding[va-sct].system</td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
     </tr>
     <tr>
       <td>Condition.code.text</td>
@@ -398,12 +374,6 @@
       <td>Outpat.ProblemList.ResolvedDateTime</td>
       <td>Problem.Extension[ProblemExtension].ToTime</td>
       <td>problem.resolved</td>
-    </tr>
-    <tr>
-      <td>Condition.extension[assertedDate].valueDateTime</td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
     </tr>
   </tbody>
 </table>
@@ -453,20 +423,6 @@
 <td>http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-problems-health-concerns | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
-<td>345-1</td>
-<td>team-approved</td>
-<td>V2F</td>
-<td></td>
-<td>fixed value</td>
-<td></td>
-<td>Condition.identifier</td>
-<td>.system</td>
-<td>http://va.gov/identifiers/$Sta3n/9000011</td>
-<td></td>
-<td>generated from mapParameter line 1</td>
-<td>http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-problems-health-concerns | 5.0.1</td>
-</tr>
-<tr class="row-ro1">
 <td>349</td>
 <td>team-approved</td>
 <td>V2F</td>
@@ -495,34 +451,6 @@
 <td>http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-problems-health-concerns | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
-<td>365-1</td>
-<td>team-approved</td>
-<td>V2F</td>
-<td></td>
-<td>fixed value</td>
-<td></td>
-<td>Condition.code.coding[va-icd]</td>
-<td>.system</td>
-<td>urn:see-termmap-in-mapParameter</td>
-<td></td>
-<td>generated from mapParameter line 1</td>
-<td>http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-problems-health-concerns | 5.0.1</td>
-</tr>
-<tr class="row-ro1">
-<td>365-2</td>
-<td>team-approved</td>
-<td>V2F</td>
-<td>PROBLEM - DIAGNOSIS &gt; ICD DIAGNOSIS - CODE NUMBER (9000011-.01 &gt; 80-.01)</td>
-<td>source value</td>
-<td></td>
-<td>Condition.code.coding[va-icd]</td>
-<td>.code</td>
-<td></td>
-<td></td>
-<td>generated from mapParameter line 2</td>
-<td>http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-problems-health-concerns | 5.0.1</td>
-</tr>
-<tr class="row-ro1">
 <td>366</td>
 <td>team-approved</td>
 <td>V2F</td>
@@ -534,20 +462,6 @@
 <td></td>
 <td>.system = http://snomed.info/sct</td>
 <td></td>
-<td>http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-problems-health-concerns | 5.0.1</td>
-</tr>
-<tr class="row-ro1">
-<td>366-1</td>
-<td>team-approved</td>
-<td>V2F</td>
-<td></td>
-<td>fixed value</td>
-<td></td>
-<td>Condition.code.coding[va-sct]</td>
-<td>.system</td>
-<td>http://snomed.info/sct</td>
-<td></td>
-<td>generated from mapParameter line 1</td>
 <td>http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-problems-health-concerns | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
@@ -1009,7 +923,7 @@ OR &lt; 272379006 |Event|</td> </tr>
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025 <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#1.5.23 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, May 23, 2025 16:30+0000">2025-05-23</span>
+          IG &#169; 2025 <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#1.5.30 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Sun, May 25, 2025 09:24+0000">2025-05-25</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

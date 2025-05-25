@@ -67,19 +67,19 @@ Expression: "true"
 * extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: a-11-1722
-Description: "If PATIENT – APPOINTMENT (2-1900) = APPOINTMENT (2.98) then reference /Patient based on (2-)"
+Description: "If {1900>2.98} then reference /Patient based on (2-)"
 Severity: #warning
 Expression: "true"
 * extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: a-11-1722-1
-Description: "If PATIENT – APPOINTMENT (2-1900) = APPOINTMENT (2.98) then fixed value #PART"
+Description: "If {1900>2.98} then fixed value #PART"
 Severity: #warning
 Expression: "true"
 * extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: a-11-1722-2
-Description: "If PATIENT – APPOINTMENT (2-1900) = APPOINTMENT (2.98) then fixed value #accepted"
+Description: "If {1900>2.98} then fixed value #accepted"
 Severity: #warning
 Expression: "true"
 * extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
@@ -112,9 +112,9 @@ Source: Appointment
 * participant[va-clinic].actor -> "746: reference based on APPOINTMENT - CLINIC (2.98-.01)"
 * participant[va-clinic].type.coding.code -> "746-1: fixed value = #PART" "generated from mapParameter line 1"
 * participant[va-clinic].status -> "746-2: fixed value = #accepted" "generated from mapParameter line 2"
-* participant[va-patient].actor -> "1722: reference based on PATIENT - (2-) if PATIENT – APPOINTMENT (2-1900) = APPOINTMENT (2.98)" "Added patient to the appointment map so that it is not assumed"
-* participant[va-patient].type.coding.code -> "1722-1: fixed value = #PART if PATIENT – APPOINTMENT (2-1900) = APPOINTMENT (2.98)" "generated from mapParameter line 1"
-* participant[va-patient].status -> "1722-2: fixed value = #accepted if PATIENT – APPOINTMENT (2-1900) = APPOINTMENT (2.98)" "generated from mapParameter line 2"
+* participant[va-patient].actor -> "1722: reference based on PATIENT - (2-) if {1900>2.98}" "Added patient to the appointment map so that it is not assumed"
+* participant[va-patient].type.coding.code -> "1722-1: fixed value = #PART if {1900>2.98}" "generated from mapParameter line 1"
+* participant[va-patient].status -> "1722-2: fixed value = #accepted if {1900>2.98}" "generated from mapParameter line 2"
 * status -> "748: fixed value = #waitlist when SD WAIT LIST - PATIENT (409.3-.01) if not null" "LVH returns \"Waitlisted\". \"Waitlisted\" is the display value and \"waitlist\" is the code. This is a required FHIR value set. 3/15/2023 LVH will fix"
 * serviceCategory[va-stop-code].coding.code -> "749: source value based on SD WAIT LIST - APPT STOP CODE (409.3-13.4)"
 * serviceCategory[va-stop-code].coding.system -> "749-1: fixed value = http://va.gov/terminology/VistADefinedTerms/409.3-13.4" "generated from mapParameter line 1"

@@ -30,7 +30,7 @@ Description: "This StructureDefinition contains the maps for VistA file PATIENT 
 * reaction.onset obeys ai-18-1652
 
 Invariant: ai-18-557
-Description: "If ADVERSE REACTION REPORTING – RELATED REACTION (120.85-.03) == PATIENT ALLERGIES (120.8) then terminologyMaps (120.85-14.5) using VF_allergySeverity"
+Description: "If {.03>120.8} then terminologyMaps (120.85-14.5) using VF_allergySeverity"
 Severity: #warning
 Expression: "true"
 * extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
@@ -64,7 +64,7 @@ Source: AllergyIntolerance
 * clinicalStatus -> "536: terminologyMaps using VF_allergyActive on PATIENT ALLERGIES - ENTERED IN ERROR (120.8-22)" "confirm CHAPI"
 * verificationStatus -> "537: terminologyMaps using VF_allergyEnteredInError on PATIENT ALLERGIES - ENTERED IN ERROR (120.8-22)"
 * category -> "556: terminologyMaps using VF_allergySubstanceCategory on PATIENT ALLERGIES - ALLERGY TYPE (120.8-3.1)"
-* reaction.severity -> "557: terminologyMaps using VF_allergySeverity on ADVERSE REACTION REPORTING - SEVERITY (120.85-14.5) if ADVERSE REACTION REPORTING – RELATED REACTION (120.85-.03) == PATIENT ALLERGIES (120.8)" "This Data is not in CDW\nAssess for CHAPI via VPR"
+* reaction.severity -> "557: terminologyMaps using VF_allergySeverity on ADVERSE REACTION REPORTING - SEVERITY (120.85-14.5) if {.03>120.8}" "This Data is not in CDW\nAssess for CHAPI via VPR"
 * note.time -> "1502: source value based on PATIENT ALLERGIES - COMMENTS > COMMENTS - DATE/TIME COMMENT ENTERED (120.8-26 > 120.826-.01)"
 * note.authorString -> "1503: source value based on PATIENT ALLERGIES - COMMENTS > COMMENTS - USER ENTERING (120.8-26 > 120.826-1)"
 * note.text -> "1504: source value based on PATIENT ALLERGIES - COMMENTS > COMMENTS - COMMENTS (120.8-26 > 120.826-2)"

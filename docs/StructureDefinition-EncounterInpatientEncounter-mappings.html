@@ -7,7 +7,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Encounter: Inpatient Encounter - Mappings - US Veterans Health Administration FHIR Map Set Implementation Guide v1.5.23</title>
+    <title>Encounter: Inpatient Encounter - Mappings - US Veterans Health Administration FHIR Map Set Implementation Guide v1.5.30</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -65,7 +65,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">US Veterans Health Administration FHIR Map Set Implementation Guide</span>
             <br/>
-            <span style="display:inline-block;">1.5.23 - 250601
+            <span style="display:inline-block;">1.5.30 - 250601
 
 
 
@@ -264,7 +264,7 @@
         
           Draft
           
-            as of 2025-05-23
+            as of 2025-05-25
           
         
       </td>
@@ -285,7 +285,7 @@
 <p>Scroll down for the Raw FHIR, CDW &amp; SDA mappings (if any).</p>
 
 <blockquote>
-  <p>Note that the CDW, SDA and VPR XML mappings are derived from a look-up based on the VistA source mappings in CDW and VPR.</p>
+  <p>Note that the CDW, SDA and VPR XML mappings are derived from a look-up based on the VistA source.</p>
 </blockquote>
 
 <h3 id="mapping-sources">Mapping Sources</h3>
@@ -310,37 +310,7 @@
       <td> </td>
     </tr>
     <tr>
-      <td>Encounter.identifier[va-IEN].system</td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>Encounter.identifier[va-IEN].type.text</td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>Encounter.class</td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
       <td>Encounter.identifier[va-IA].value</td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>Encounter.identifier[va-IA].system</td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>Encounter.identifier[va-IA].type.text</td>
       <td> </td>
       <td> </td>
       <td> </td>
@@ -364,12 +334,6 @@
       <td> </td>
     </tr>
     <tr>
-      <td>Encounter.participant.type.coding</td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
       <td>Encounter.period.start</td>
       <td>Inpat.Census.AdmitDateSID<br />Inpat.Census.AdmitDateTime<br />Inpat.Census501.AdmitDateTime<br />Inpat.Census501Diagnosis.AdmitDateTime<br />Inpat.Census535.AdmitDateTime<br />Inpat.CensusDiagnosis.AdmitDateTime<br />Inpat.CensusICDProcedure.AdmitDateTime<br />Inpat.CensusSurgicalProcedure.AdmitDateTime<br />Inpat.Inpatient.AdmitDateTime<br />Inpat.Inpatient501Multiple.AdmitDateTime<br />Inpat.Inpatient501Transaction.AdmitDateTime<br />Inpat.Inpatient535Multiple.AdmitDateTime<br />Inpat.Inpatient535Transaction.AdmitDateTime<br />Inpat.InpatientDischargeDiagnosis.AdmitDateTime<br />Inpat.InpatientFeeBasis.AdmitDateTime<br />Inpat.InpatientFeeDiagnosis.AdmitDateTime<br />Inpat.InpatientICDProcedure.AdmitDateTime<br />Inpat.InpatientSurgicalProcedure.AdmitDateTime</td>
       <td>Diagnosis.FromTime</td>
@@ -388,32 +352,8 @@
       <td> </td>
     </tr>
     <tr>
-      <td>Encounter.reasonCode[va-principle].coding.system</td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>Encounter.diagnosis.condition</td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>Encounter.diagnosis.rank</td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
       <td>Encounter.reasonCode[va-secondary].coding.code</td>
       <td>Dim.ICD10.ICD10Code<br />Dim.ICD9.ICD9Code</td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>Encounter.reasonCode[va-secondary].coding.system</td>
-      <td> </td>
       <td> </td>
       <td> </td>
     </tr>
@@ -424,20 +364,8 @@
       <td> </td>
     </tr>
     <tr>
-      <td>Encounter.reasonCode[va-procedure].coding.system</td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
       <td>Encounter.hospitalization.admitSource.coding.code</td>
       <td>Inpat.Census.AdmitSourceIEN<br />Inpat.Inpatient.AdmitSourceIEN<br />Inpat.InpatientFeeBasis.AdmitSourceIEN<br />Dim.AdmitSource.AdmitSourceCode</td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>Encounter.hospitalization.admitSource.coding.system</td>
-      <td> </td>
       <td> </td>
       <td> </td>
     </tr>
@@ -466,12 +394,6 @@
       <td> </td>
     </tr>
     <tr>
-      <td>Encounter.hospitalization.dischargeDisposition.coding.system</td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
       <td>Encounter.location[va-ward].location</td>
       <td>Inpat.Inpatient.Discharge45WardLocationIEN<br />Dim.WardLocation.LocationIEN</td>
       <td> </td>
@@ -496,12 +418,6 @@
       <td> </td>
     </tr>
     <tr>
-      <td>Encounter.type.coding.system</td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
       <td>Encounter.type.coding.code</td>
       <td>Inpat.InpatientCPTProcedure.CPTIEN<br />Dim.CPT.CPTCode<br />Dim.CPT.CPTCode</td>
       <td> </td>
@@ -516,18 +432,6 @@
     <tr>
       <td>Encounter.type.text</td>
       <td>Inpat.InpatientCPTProcedure.CPTIEN<br />Dim.CPT.CPTName<br />Dim.CPT.CPTName</td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>Encounter.participant.period</td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>Encounter.reasonReference</td>
-      <td> </td>
       <td> </td>
       <td> </td>
     </tr>
@@ -565,34 +469,6 @@
 <td>http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
-<td>427-1</td>
-<td>team-approved</td>
-<td>V2F</td>
-<td></td>
-<td>fixed value</td>
-<td></td>
-<td>Encounter.identifier[va-IEN]</td>
-<td>.system</td>
-<td>http://va.gov/identifiers/$Sta3n/45</td>
-<td></td>
-<td>generated from mapParameter line 1</td>
-<td>http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter | 5.0.1</td>
-</tr>
-<tr class="row-ro1">
-<td>427-2</td>
-<td>team-approved</td>
-<td>V2F</td>
-<td></td>
-<td>fixed value</td>
-<td></td>
-<td>Encounter.identifier[va-IEN]</td>
-<td>.type.text</td>
-<td>IEN</td>
-<td></td>
-<td>generated from mapParameter line 2</td>
-<td>http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter | 5.0.1</td>
-</tr>
-<tr class="row-ro1">
 <td>1601</td>
 <td>for review</td>
 <td>V2F</td>
@@ -618,34 +494,6 @@
 <td></td>
 <td>.system=http://va.gov/identifiers/$Sta3n/45-2.1<br />.type.text = "Internal Admission #"</td>
 <td></td>
-<td>http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter | 5.0.1</td>
-</tr>
-<tr class="row-ro1">
-<td>428-1</td>
-<td>team-approved</td>
-<td>V2F</td>
-<td></td>
-<td>fixed value</td>
-<td></td>
-<td>Encounter.identifier[va-IA]</td>
-<td>.system</td>
-<td>http://va.gov/identifiers/$Sta3n/45-2.1</td>
-<td></td>
-<td>generated from mapParameter line 1</td>
-<td>http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter | 5.0.1</td>
-</tr>
-<tr class="row-ro1">
-<td>428-2</td>
-<td>team-approved</td>
-<td>V2F</td>
-<td></td>
-<td>fixed value</td>
-<td></td>
-<td>Encounter.identifier[va-IA]</td>
-<td>.type.text</td>
-<td>Internal Admission #</td>
-<td></td>
-<td>generated from mapParameter line 2</td>
 <td>http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
@@ -719,20 +567,6 @@
 <td>http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
-<td>442-1</td>
-<td>team-approved</td>
-<td>V2F</td>
-<td></td>
-<td>fixed value</td>
-<td></td>
-<td>Encounter.participant</td>
-<td>.type.coding</td>
-<td>http://terminology.hl7.org/CodeSystem/v3-ParticipationType#PPRF</td>
-<td></td>
-<td>generated from mapParameter line 1</td>
-<td>http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter | 5.0.1</td>
-</tr>
-<tr class="row-ro1">
 <td>445</td>
 <td>team-approved</td>
 <td>V2F</td>
@@ -775,20 +609,6 @@
 <td>http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
-<td>448-1</td>
-<td>team-approved</td>
-<td>V2F</td>
-<td></td>
-<td>fixed value</td>
-<td></td>
-<td>Encounter.reasonCode[va-principle].coding</td>
-<td>.system</td>
-<td>urn:see-termmap-in-mapParameter</td>
-<td></td>
-<td>generated from mapParameter line 1</td>
-<td>http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter | 5.0.1</td>
-</tr>
-<tr class="row-ro1">
 <td>1723</td>
 <td>for review</td>
 <td>V2F</td>
@@ -800,20 +620,6 @@
 <td>Condition</td>
 <td>.rank=1</td>
 <td>This points to the Condition identified at #956</td>
-<td>http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter | 5.0.1</td>
-</tr>
-<tr class="row-ro1">
-<td>1723-1</td>
-<td>for review</td>
-<td>V2F</td>
-<td></td>
-<td>fixed value</td>
-<td></td>
-<td>Encounter.diagnosis</td>
-<td>.rank</td>
-<td>1</td>
-<td></td>
-<td>generated from mapParameter line 1</td>
 <td>http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
@@ -831,20 +637,6 @@
 <td>http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
-<td>449-1</td>
-<td>team-approved</td>
-<td>V2F</td>
-<td></td>
-<td>fixed value</td>
-<td></td>
-<td>Encounter.reasonCode[va-secondary].coding</td>
-<td>.system</td>
-<td>urn:see-termmap-in-mapParameter</td>
-<td></td>
-<td>generated from mapParameter line 1</td>
-<td>http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter | 5.0.1</td>
-</tr>
-<tr class="row-ro1">
 <td>450</td>
 <td>team-approved</td>
 <td>V2F</td>
@@ -859,20 +651,6 @@
 <td>http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
-<td>450-1</td>
-<td>team-approved</td>
-<td>V2F</td>
-<td></td>
-<td>fixed value</td>
-<td></td>
-<td>Encounter.reasonCode[va-procedure].coding</td>
-<td>.system</td>
-<td>http://www.cms.gov/Medicare/Coding/ICD10</td>
-<td></td>
-<td>generated from mapParameter line 1</td>
-<td>http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter | 5.0.1</td>
-</tr>
-<tr class="row-ro1">
 <td>453</td>
 <td>team-approved</td>
 <td>V2F</td>
@@ -884,20 +662,6 @@
 <td></td>
 <td>.system = http://va.gov/terminology/vistaDefinedTerms/45.1</td>
 <td></td>
-<td>http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter | 5.0.1</td>
-</tr>
-<tr class="row-ro1">
-<td>453-1</td>
-<td>team-approved</td>
-<td>V2F</td>
-<td></td>
-<td>fixed value</td>
-<td></td>
-<td>Encounter.hospitalization.admitSource.coding</td>
-<td>.system</td>
-<td>http://va.gov/terminology/vistaDefinedTerms/45.1</td>
-<td></td>
-<td>generated from mapParameter line 1</td>
 <td>http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
@@ -957,20 +721,6 @@
 <td>http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
-<td>456-1</td>
-<td>team-approved</td>
-<td>V2F</td>
-<td></td>
-<td>fixed value</td>
-<td></td>
-<td>Encounter.hospitalization.dischargeDisposition.coding</td>
-<td>.system</td>
-<td>http://va.gov/terminology/vistaDefinedTerms/45.6</td>
-<td></td>
-<td>generated from mapParameter line 1</td>
-<td>http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter | 5.0.1</td>
-</tr>
-<tr class="row-ro1">
 <td>460</td>
 <td>team-approved</td>
 <td>V2F</td>
@@ -1025,62 +775,6 @@
 <td></td>
 <td>.coding.system=http://www.ama-assn.org/go/cpt<br />.coding.code = {CPT CODE (.01)}<br />.coding.display =  {SHORT NAME (2)} <br />.text = {SHORT NAME (2)}</td>
 <td></td>
-<td>http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter | 5.0.1</td>
-</tr>
-<tr class="row-ro1">
-<td>1616-1</td>
-<td>for review</td>
-<td>V2F</td>
-<td></td>
-<td>fixed value</td>
-<td></td>
-<td>Encounter.type</td>
-<td>.coding.system</td>
-<td>http://www.ama-assn.org/go/cpt</td>
-<td></td>
-<td>generated from mapParameter line 1</td>
-<td>http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter | 5.0.1</td>
-</tr>
-<tr class="row-ro1">
-<td>1616-2</td>
-<td>for review</td>
-<td>V2F</td>
-<td>INPATIENT CPT CODE - CPT CODE &gt; CPT - CPT CODE (46-.01 &gt; 81-.01)</td>
-<td>source value</td>
-<td></td>
-<td>Encounter.type</td>
-<td>.coding.code</td>
-<td></td>
-<td></td>
-<td>generated from mapParameter line 2</td>
-<td>http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter | 5.0.1</td>
-</tr>
-<tr class="row-ro1">
-<td>1616-3</td>
-<td>for review</td>
-<td>V2F</td>
-<td>INPATIENT CPT CODE - CPT CODE &gt; CPT - SHORT NAME (46-.01 &gt; 81-2)</td>
-<td>source value</td>
-<td></td>
-<td>Encounter.type</td>
-<td>.coding.display</td>
-<td></td>
-<td></td>
-<td>generated from mapParameter line 3</td>
-<td>http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter | 5.0.1</td>
-</tr>
-<tr class="row-ro1">
-<td>1616-4</td>
-<td>for review</td>
-<td>V2F</td>
-<td>INPATIENT CPT CODE - CPT CODE &gt; CPT - SHORT NAME (46-.01 &gt; 81-2)</td>
-<td>source value</td>
-<td></td>
-<td>Encounter.type</td>
-<td>.text</td>
-<td></td>
-<td></td>
-<td>generated from mapParameter line 4</td>
 <td>http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter | 5.0.1</td>
 </tr>
 <tr class="row-ro1">
@@ -1815,7 +1509,7 @@ Procedure.EnteredAt</td> </tr>
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025 <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#1.5.23 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, May 23, 2025 16:30+0000">2025-05-23</span>
+          IG &#169; 2025 <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#1.5.30 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Sun, May 25, 2025 09:24+0000">2025-05-25</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -90,73 +90,73 @@ Expression: "true"
 * extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: dpi-17-1999
-Description: "If 433-.03 == 430 then source value from (433-25)"
+Description: "If {.03>430} then source value from (433-25)"
 Severity: #warning
 Expression: "true"
 * extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: dpi-17-1999-1
-Description: "If 433-.03 == 430 then fixed value #surcharge"
+Description: "If {.03>430} then fixed value #surcharge"
 Severity: #warning
 Expression: "true"
 * extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: dpi-17-1999-2
-Description: "If 433-.03 == 430 then fixed value Marshal Fee Charged"
+Description: "If {.03>430} then fixed value Marshal Fee Charged"
 Severity: #warning
 Expression: "true"
 * extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: dpi-17-2000
-Description: "If 433-.03 == 430 then source value from (433-26)"
+Description: "If {.03>430} then source value from (433-26)"
 Severity: #warning
 Expression: "true"
 * extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: dpi-17-2000-1
-Description: "If 433-.03 == 430 then fixed value #surcharge"
+Description: "If {.03>430} then fixed value #surcharge"
 Severity: #warning
 Expression: "true"
 * extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: dpi-17-2000-2
-Description: "If 433-.03 == 430 then fixed value Court Cost Charged"
+Description: "If {.03>430} then fixed value Court Cost Charged"
 Severity: #warning
 Expression: "true"
 * extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: dpi-17-2001
-Description: "If 433-.03 == 430 then source value from (433-27)"
+Description: "If {.03>430} then source value from (433-27)"
 Severity: #warning
 Expression: "true"
 * extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: dpi-17-2001-1
-Description: "If 433-.03 == 430 then fixed value #surcharge"
+Description: "If {.03>430} then fixed value #surcharge"
 Severity: #warning
 Expression: "true"
 * extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: dpi-17-2001-2
-Description: "If 433-.03 == 430 then fixed value Interest Charged"
+Description: "If {.03>430} then fixed value Interest Charged"
 Severity: #warning
 Expression: "true"
 * extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: dpi-17-2002
-Description: "If 433-.03 == 430 then source value from (433-28)"
+Description: "If {.03>430} then source value from (433-28)"
 Severity: #warning
 Expression: "true"
 * extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: dpi-17-2002-1
-Description: "If 433-.03 == 430 then fixed value #surcharge"
+Description: "If {.03>430} then fixed value #surcharge"
 Severity: #warning
 Expression: "true"
 * extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Invariant: dpi-17-2002-2
-Description: "If 433-.03 == 430 then fixed value Administrative Charged"
+Description: "If {.03>430} then fixed value Administrative Charged"
 Severity: #warning
 Expression: "true"
 * extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
@@ -221,18 +221,18 @@ Source: DebtPortalInvoice
 * lineItem[va-charges].priceComponent.type -> "1840-1: fixed value = #base" "generated from mapParameter line 1"
 * lineItem[va-charges].priceComponent.code.text -> "1840-2: fixed value = Total Charge" "generated from mapParameter line 2"
 * lineItem[va-interest].chargeItemReference -> "1991: reference"
-* lineItem[va-interest].priceComponent[va-marshal-fee-charged].amount -> "1999: source value based on AR TRANSACTION - MARSHAL FEE (433-25) if 433-.03 == 430"
-* lineItem[va-interest].priceComponent[va-marshal-fee-charged].type -> "1999-1: fixed value = #surcharge if 433-.03 == 430" "generated from mapParameter line 1"
-* lineItem[va-interest].priceComponent[va-marshal-fee-charged].code.text -> "1999-2: fixed value = Marshal Fee Charged if 433-.03 == 430" "generated from mapParameter line 2"
-* lineItem[va-interest].priceComponent[va-court-cost-charged].amount -> "2000: source value based on AR TRANSACTION - COURT COST (433-26) if 433-.03 == 430"
-* lineItem[va-interest].priceComponent[va-court-cost-charged].type -> "2000-1: fixed value = #surcharge if 433-.03 == 430" "generated from mapParameter line 1"
-* lineItem[va-interest].priceComponent[va-court-cost-charged].code.text -> "2000-2: fixed value = Court Cost Charged if 433-.03 == 430" "generated from mapParameter line 2"
-* lineItem[va-interest].priceComponent[va-interest-charged].amount -> "2001: source value based on AR TRANSACTION - INT.CHARGE (433-27) if 433-.03 == 430"
-* lineItem[va-interest].priceComponent[va-interest-charged].type -> "2001-1: fixed value = #surcharge if 433-.03 == 430" "generated from mapParameter line 1"
-* lineItem[va-interest].priceComponent[va-interest-charged].code.text -> "2001-2: fixed value = Interest Charged if 433-.03 == 430" "generated from mapParameter line 2"
-* lineItem[va-interest].priceComponent[va-admin-charged].amount -> "2002: source value based on AR TRANSACTION - ADM.CHARGE (433-28) if 433-.03 == 430"
-* lineItem[va-interest].priceComponent[va-admin-charged].type -> "2002-1: fixed value = #surcharge if 433-.03 == 430" "generated from mapParameter line 1"
-* lineItem[va-interest].priceComponent[va-admin-charged].code.text -> "2002-2: fixed value = Administrative Charged if 433-.03 == 430" "generated from mapParameter line 2"
+* lineItem[va-interest].priceComponent[va-marshal-fee-charged].amount -> "1999: source value based on AR TRANSACTION - MARSHAL FEE (433-25) if {.03>430}"
+* lineItem[va-interest].priceComponent[va-marshal-fee-charged].type -> "1999-1: fixed value = #surcharge if {.03>430}" "generated from mapParameter line 1"
+* lineItem[va-interest].priceComponent[va-marshal-fee-charged].code.text -> "1999-2: fixed value = Marshal Fee Charged if {.03>430}" "generated from mapParameter line 2"
+* lineItem[va-interest].priceComponent[va-court-cost-charged].amount -> "2000: source value based on AR TRANSACTION - COURT COST (433-26) if {.03>430}"
+* lineItem[va-interest].priceComponent[va-court-cost-charged].type -> "2000-1: fixed value = #surcharge if {.03>430}" "generated from mapParameter line 1"
+* lineItem[va-interest].priceComponent[va-court-cost-charged].code.text -> "2000-2: fixed value = Court Cost Charged if {.03>430}" "generated from mapParameter line 2"
+* lineItem[va-interest].priceComponent[va-interest-charged].amount -> "2001: source value based on AR TRANSACTION - INT.CHARGE (433-27) if {.03>430}"
+* lineItem[va-interest].priceComponent[va-interest-charged].type -> "2001-1: fixed value = #surcharge if {.03>430}" "generated from mapParameter line 1"
+* lineItem[va-interest].priceComponent[va-interest-charged].code.text -> "2001-2: fixed value = Interest Charged if {.03>430}" "generated from mapParameter line 2"
+* lineItem[va-interest].priceComponent[va-admin-charged].amount -> "2002: source value based on AR TRANSACTION - ADM.CHARGE (433-28) if {.03>430}"
+* lineItem[va-interest].priceComponent[va-admin-charged].type -> "2002-1: fixed value = #surcharge if {.03>430}" "generated from mapParameter line 1"
+* lineItem[va-interest].priceComponent[va-admin-charged].code.text -> "2002-2: fixed value = Administrative Charged if {.03>430}" "generated from mapParameter line 2"
 
 Mapping: cdw-to-DebtPortalInvoice
 Id: cdw

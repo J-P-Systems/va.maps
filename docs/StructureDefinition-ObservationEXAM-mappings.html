@@ -7,7 +7,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Observation EXAM - Mappings - US Veterans Health Administration FHIR Map Set Implementation Guide v1.5.23</title>
+    <title>Observation EXAM - Mappings - US Veterans Health Administration FHIR Map Set Implementation Guide v1.5.30</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -65,7 +65,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">US Veterans Health Administration FHIR Map Set Implementation Guide</span>
             <br/>
-            <span style="display:inline-block;">1.5.23 - 250601
+            <span style="display:inline-block;">1.5.30 - 250601
 
 
 
@@ -264,7 +264,7 @@
         
           Draft
           
-            as of 2025-05-23
+            as of 2025-05-25
           
         
       </td>
@@ -285,7 +285,7 @@
 <p>Scroll down for the Raw FHIR, CDW &amp; SDA mappings (if any).</p>
 
 <blockquote>
-  <p>Note that the CDW, SDA and VPR XML mappings are derived from a look-up based on the VistA source mappings in CDW and VPR.</p>
+  <p>Note that the CDW, SDA and VPR XML mappings are derived from a look-up based on the VistA source.</p>
 </blockquote>
 
 <h3 id="mapping-sources">Mapping Sources</h3>
@@ -310,12 +310,6 @@
       <td> </td>
     </tr>
     <tr>
-      <td>Observation.code.coding[va-code].system</td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
       <td>Observation.code.coding[va-code].code</td>
       <td>Outpat.VExam.ExamIEN<br />Dim.Exam.Exam</td>
       <td>PhysicalExam.PhysExamCode<br />PhysicalExam.PhysExamCode[PhysExam].Description</td>
@@ -331,12 +325,6 @@
       <td>Observation.code.coding[va-sct]</td>
       <td>Outpat.VExam.ExamIEN</td>
       <td>PhysicalExam.PhysExamCode<br />PhysicalExam.PhysExamCode[PhysExam].Description</td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>Observation.code.coding[va-sct].system</td>
-      <td> </td>
-      <td> </td>
       <td> </td>
     </tr>
     <tr>
@@ -400,20 +388,8 @@
       <td> </td>
     </tr>
     <tr>
-      <td>Observation.status</td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
       <td>Observation.performer</td>
       <td>Outpat.VExam.EncounterProviderIEN</td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>Observation.category</td>
-      <td> </td>
       <td> </td>
       <td> </td>
     </tr>
@@ -451,48 +427,6 @@
 <td>http://hl7.org/fhir/StructureDefinition/Observation | 4.0.1</td>
 </tr>
 <tr class="row-ro1">
-<td>1580-1</td>
-<td>in process</td>
-<td>V2F</td>
-<td></td>
-<td>fixed value</td>
-<td></td>
-<td>Observation.code.coding[va-code]</td>
-<td>.system</td>
-<td>http://va.gov/terminology/vistaDefinedTerms/9999999.15</td>
-<td></td>
-<td>generated from mapParameter line 1</td>
-<td>http://hl7.org/fhir/StructureDefinition/Observation | 4.0.1</td>
-</tr>
-<tr class="row-ro1">
-<td>1580-2</td>
-<td>in process</td>
-<td>V2F</td>
-<td>V EXAM - EXAM &gt; EXAM - NAME (9000010.13-.01 &gt; 9999999.15-.01)</td>
-<td>source value</td>
-<td></td>
-<td>Observation.code.coding[va-code]</td>
-<td>.code</td>
-<td></td>
-<td></td>
-<td>generated from mapParameter line 2</td>
-<td>http://hl7.org/fhir/StructureDefinition/Observation | 4.0.1</td>
-</tr>
-<tr class="row-ro1">
-<td>1580-3</td>
-<td>in process</td>
-<td>V2F</td>
-<td>V EXAM - EXAM &gt; EXAM - PRINT NAME (9000010.13-.01 &gt; 9999999.15-200)</td>
-<td>source value</td>
-<td></td>
-<td>Observation.code.coding[va-code]</td>
-<td>.display</td>
-<td></td>
-<td></td>
-<td>generated from mapParameter line 3</td>
-<td>http://hl7.org/fhir/StructureDefinition/Observation | 4.0.1</td>
-</tr>
-<tr class="row-ro1">
 <td>1581</td>
 <td>in process</td>
 <td>V2F</td>
@@ -504,34 +438,6 @@
 <td></td>
 <td>.system = termmap(VF_ICDCodingSystems,{CODING SYSTEM(.01)})<br />.code = {CODE(1)}</td>
 <td>in CDW through ExamSID</td>
-<td>http://hl7.org/fhir/StructureDefinition/Observation | 4.0.1</td>
-</tr>
-<tr class="row-ro1">
-<td>1581-1</td>
-<td>in process</td>
-<td>V2F</td>
-<td></td>
-<td>fixed value</td>
-<td></td>
-<td>Observation.code.coding[va-sct]</td>
-<td>.system</td>
-<td>urn:see-termmap-in-mapParameter</td>
-<td></td>
-<td>generated from mapParameter line 1</td>
-<td>http://hl7.org/fhir/StructureDefinition/Observation | 4.0.1</td>
-</tr>
-<tr class="row-ro1">
-<td>1581-2</td>
-<td>in process</td>
-<td>V2F</td>
-<td>V EXAM - EXAM &gt; EXAM - CODE MAPPINGS &gt; CODE MAPPINGS - CODE (9000010.13-.01 &gt; 9999999.15-210&gt;9999999.18-1)</td>
-<td>source value</td>
-<td></td>
-<td>Observation.code.coding[va-sct]</td>
-<td>.code</td>
-<td></td>
-<td></td>
-<td>generated from mapParameter line 2</td>
 <td>http://hl7.org/fhir/StructureDefinition/Observation | 4.0.1</td>
 </tr>
 <tr class="row-ro1">
@@ -602,34 +508,6 @@
 <td></td>
 <td>.unit = {DESCRIPTION OF THE UNIT (.01)}  <br />.code= {UCUM CODE (1)}</td>
 <td></td>
-<td>http://hl7.org/fhir/StructureDefinition/Observation | 4.0.1</td>
-</tr>
-<tr class="row-ro1">
-<td>1586-1</td>
-<td>in process</td>
-<td>V2F</td>
-<td>V EXAM - UCUM CODE &gt; UCUM CODES - DESCRIPTION OF THE UNIT (9000010.13-221 &gt; 757.5-.01)</td>
-<td>source value</td>
-<td></td>
-<td>Observation.valueQuantity</td>
-<td>.unit</td>
-<td></td>
-<td></td>
-<td>generated from mapParameter line 1</td>
-<td>http://hl7.org/fhir/StructureDefinition/Observation | 4.0.1</td>
-</tr>
-<tr class="row-ro1">
-<td>1586-2</td>
-<td>in process</td>
-<td>V2F</td>
-<td>V EXAM - UCUM CODE &gt; UCUM CODES - UCUM CODE (9000010.13-221 &gt; 757.5-1)</td>
-<td>source value</td>
-<td></td>
-<td>Observation.valueQuantity</td>
-<td>.code</td>
-<td></td>
-<td></td>
-<td>generated from mapParameter line 2</td>
 <td>http://hl7.org/fhir/StructureDefinition/Observation | 4.0.1</td>
 </tr>
 <tr class="row-ro1">
@@ -1055,7 +933,7 @@ PhysicalExam.EnteredOn</td> </tr>
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025 <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#1.5.23 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, May 23, 2025 16:30+0000">2025-05-23</span>
+          IG &#169; 2025 <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#1.5.30 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Sun, May 25, 2025 09:24+0000">2025-05-25</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

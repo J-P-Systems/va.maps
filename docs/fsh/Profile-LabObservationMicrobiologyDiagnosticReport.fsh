@@ -23,7 +23,7 @@ Description: "This StructureDefinition contains the maps for VistA file MICROBIO
 * subject obeys lomdr-42-1421
 
 Invariant: lomdr-42-1421
-Description: "If PATIENT - LABORATORY REFERENCE (2-63) == LAB DATA – LRDFN (63-.01) then reference /Patient based on (2-)"
+Description: "If {63>63} then reference /Patient based on (2-)"
 Severity: #warning
 Expression: "true"
 * extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
@@ -47,7 +47,7 @@ Source: LabObservationMicrobiologyDiagnosticReport
 * code.coding.system -> "1420-2: fixed value = http://loinc.org" "generated from mapParameter line 2"
 * code.coding.display -> "1420-3: source value based on LABORATORY TEST - NATIONAL VA LAB CODE > WKLD CODE - DEFAULT LOINC CODE > LAB LOINC - COMPONENT (60-64 > 64-25 > 95.3-1)" "generated from mapParameter line 3"
 * code.text -> "1661: source value based on LABORATORY TEST - NAME (60-.01)" "Added the lab test name (non-standardized)"
-* subject -> "1421: reference based on PATIENT - (2-) if PATIENT - LABORATORY REFERENCE (2-63) == LAB DATA – LRDFN (63-.01)" "Pointer from PATIENT (2)"
+* subject -> "1421: reference based on PATIENT - (2-) if {63>63}" "Pointer from PATIENT (2)"
 * result -> "1437: reference based on See mapping for Lab Observation"
 
 Mapping: cdw-to-LabObservationMicrobiologyDiagnosticReport
