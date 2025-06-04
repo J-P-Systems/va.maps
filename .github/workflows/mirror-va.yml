@@ -1,0 +1,33 @@
+name: Mirror VA to JPSys
+
+on:
+    #  push:
+    #    branches:
+    #      - master
+      workflow_dispatch:
+
+#
+# This workflow mirrors (Forks) the JPSys repository to the VA GitHub
+# and is triggered manually every month.
+#
+# Changes are done in the Fork in a branch that is then mirrored to the VA using the mirror.yml action.
+# A PR of that branch is then created to the VA repo
+# Approve the PR and wait for the merge and extra checks to complete
+# Then run this workflow to bring the new main to the JPSys side
+# A new branch is created in the JPSys repo with the new main
+#
+jobs:
+    Mirror-to-JPSys:
+        name: Mirror the VA repository to the JPSys GitHub
+        runs-on: ubuntu-latest
+        steps:
+        - name: Clone origin
+          run: git clone --mirror https://${VA_USER}:${VA_TOKEN}@github.com/department-of-veterans-affairs/va-fhir-cop-mapset-ig.git
+          env:
+            VA_USER: ${{ vars.VA_USER }}
+            VA_TOKEN: ${{ secrets.VA_TOKEN }}
+        - name: Update mirror
+          run: cd va-fhir-cop-mapset-ig.git ; git push --mirror https://${JP_USER}:${JP_TOKEN}@github.com/J-P-Systems/va-fhir-cop-mapset-ig.git
+          env:
+            JP_USER: ${{ vars.JP_USER }}
+            JP_TOKEN: ${{ secrets.JP_TOKEN }}

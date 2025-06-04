@@ -1,0 +1,23 @@
+name: Mirror JPSys to VA
+
+on:
+    #  push:
+    #    branches:
+    #      - master
+      workflow_dispatch:
+
+jobs:
+    Mirror-to-VA:
+        name: Mirror the repository to the VA GitHub
+        runs-on: ubuntu-latest
+        steps:
+        - name: Clone origin
+          run: git clone --mirror https://${JP_USER}:${JP_TOKEN}@github.com/J-P-Systems/va-fhir-cop-mapset-ig.git
+          env:
+              JP_USER: ${{ vars.JP_USER }}
+              JP_TOKEN: ${{ secrets.JP_TOKEN }}
+        - name: Update mirror
+          run: cd va-fhir-cop-mapset-ig.git ; git push --mirror https://${VA_USER}:${VA_TOKEN}@github.com/department-of-veterans-affairs/va-fhir-cop-mapset-ig.git
+          env:
+              VA_USER: ${{ vars.VA_USER }}
+              VA_TOKEN: ${{ secrets.VA_TOKEN }}
