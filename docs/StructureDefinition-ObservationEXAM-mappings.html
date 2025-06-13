@@ -7,7 +7,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Observation EXAM - Mappings - US Veterans Health Administration FHIR Map Set Implementation Guide v1.5.30</title>
+    <title>Observation EXAM - Mappings - US Veterans Health Administration FHIR Map Set Implementation Guide v1.6.49</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -65,7 +65,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">US Veterans Health Administration FHIR Map Set Implementation Guide</span>
             <br/>
-            <span style="display:inline-block;">1.5.30 - 250601
+            <span style="display:inline-block;">1.6.49 - 250701
 
 
 
@@ -264,7 +264,7 @@
         
           Draft
           
-            as of 2025-05-25
+            as of 2025-06-13
           
         
       </td>
@@ -297,6 +297,7 @@
   <thead>
     <tr>
       <th>FHIR Path</th>
+      <th>VistA</th>
       <th>CDW</th>
       <th>SDA</th>
       <th>VPR</th>
@@ -305,90 +306,105 @@
   <tbody>
     <tr>
       <td>Observation.code.coding[va-code]</td>
-      <td>Outpat.VExam.ExamIEN</td>
-      <td>PhysicalExam.PhysExamCode<br />PhysicalExam.PhysExamCode[PhysExam].Description</td>
+      <td>9999999.15-</td>
+      <td> </td>
+      <td> </td>
       <td> </td>
     </tr>
     <tr>
       <td>Observation.code.coding[va-code].code</td>
-      <td>Outpat.VExam.ExamIEN<br />Dim.Exam.Exam</td>
-      <td>PhysicalExam.PhysExamCode<br />PhysicalExam.PhysExamCode[PhysExam].Description</td>
+      <td>9999999.15-.01</td>
+      <td>Dim.Exam.Exam</td>
+      <td> </td>
       <td> </td>
     </tr>
     <tr>
       <td>Observation.code.coding[va-code].display</td>
-      <td>Outpat.VExam.ExamIEN</td>
-      <td>PhysicalExam.PhysExamCode<br />PhysicalExam.PhysExamCode[PhysExam].Description</td>
+      <td>9999999.15-200</td>
+      <td> </td>
+      <td> </td>
       <td> </td>
     </tr>
     <tr>
       <td>Observation.code.coding[va-sct]</td>
-      <td>Outpat.VExam.ExamIEN</td>
-      <td>PhysicalExam.PhysExamCode<br />PhysicalExam.PhysExamCode[PhysExam].Description</td>
+      <td>9999999.18</td>
+      <td> </td>
+      <td> </td>
       <td> </td>
     </tr>
     <tr>
       <td>Observation.code.coding[va-sct].code</td>
-      <td>Outpat.VExam.ExamIEN</td>
-      <td>PhysicalExam.PhysExamCode<br />PhysicalExam.PhysExamCode[PhysExam].Description</td>
+      <td>9999999.18-1</td>
+      <td> </td>
+      <td> </td>
       <td> </td>
     </tr>
     <tr>
       <td>Observation.subject</td>
-      <td>Outpat.VExam.PatientIEN</td>
+      <td>9000001-.01</td>
+      <td> </td>
       <td> </td>
       <td> </td>
     </tr>
     <tr>
       <td>Observation.encounter</td>
+      <td>9000010.13-.03</td>
       <td>Outpat.VExam.VisitDateTime<br />Outpat.VExam.VisitIEN</td>
       <td>PhysicalExam.EncounterNumber<br />PhysicalExam.EnteredAt<br />PhysicalExam.EnteredBy<br />PhysicalExam.EnteredOn</td>
       <td> </td>
     </tr>
     <tr>
       <td>Observation.interpretation</td>
+      <td>9000010.13-.04</td>
       <td>Outpat.VExam.AbnormalNormal</td>
       <td>PhysicalExam.PhysExamObsValue</td>
       <td> </td>
     </tr>
     <tr>
       <td>Observation.valueQuantity.value</td>
+      <td>9000010.13-220</td>
       <td> </td>
       <td>PhysicalExam.Extension[PhysicalExamExtension].ResultValue</td>
       <td> </td>
     </tr>
     <tr>
       <td>Observation.valueQuantity</td>
+      <td>757.5-</td>
       <td> </td>
-      <td>PhysicalExam.Extension[PhysicalExamExtension].Units</td>
+      <td> </td>
       <td> </td>
     </tr>
     <tr>
       <td>Observation.valueQuantity.unit</td>
+      <td>757.5-.01</td>
       <td>Dim.UCUMCode.DescriptionOfTheUnit</td>
-      <td>PhysicalExam.Extension[PhysicalExamExtension].Units</td>
+      <td> </td>
       <td> </td>
     </tr>
     <tr>
       <td>Observation.valueQuantity.code</td>
+      <td>757.5-1</td>
       <td>Dim.UCUMCode.UCUMCode</td>
-      <td>PhysicalExam.Extension[PhysicalExamExtension].Units</td>
+      <td> </td>
       <td> </td>
     </tr>
     <tr>
       <td>Observation.note.text</td>
+      <td>9000010.13-81101</td>
       <td>Outpat.VExam.Comments</td>
       <td>PhysicalExam.NoteText</td>
       <td> </td>
     </tr>
     <tr>
       <td>Observation.effectiveDateTime</td>
+      <td>9000010.13-1201</td>
       <td>Outpat.VExam.EventDateTime</td>
       <td>PhysicalExam.PhysExamTime</td>
       <td> </td>
     </tr>
     <tr>
       <td>Observation.performer</td>
+      <td>9000010.13-1204</td>
       <td>Outpat.VExam.EncounterProviderIEN</td>
       <td> </td>
       <td> </td>
@@ -933,7 +949,7 @@ PhysicalExam.EnteredOn</td> </tr>
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025 <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#1.5.30 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Sun, May 25, 2025 09:24+0000">2025-05-25</span>
+          IG &#169; 2025 <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#1.6.49 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Jun 13, 2025 16:12+0000">2025-06-13</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

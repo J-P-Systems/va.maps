@@ -7,7 +7,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Appointment - Mappings - US Veterans Health Administration FHIR Map Set Implementation Guide v1.5.30</title>
+    <title>Appointment - Mappings - US Veterans Health Administration FHIR Map Set Implementation Guide v1.6.49</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -65,7 +65,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">US Veterans Health Administration FHIR Map Set Implementation Guide</span>
             <br/>
-            <span style="display:inline-block;">1.5.30 - 250601
+            <span style="display:inline-block;">1.6.49 - 250701
 
 
 
@@ -264,7 +264,7 @@
         
           Active
           
-            as of 2025-05-25
+            as of 2025-06-13
           
         
       </td>
@@ -297,6 +297,7 @@
   <thead>
     <tr>
       <th>FHIR Path</th>
+      <th>VistA</th>
       <th>CDW</th>
       <th>SDA</th>
       <th>VPR</th>
@@ -305,86 +306,100 @@
   <tbody>
     <tr>
       <td>Appointment.status</td>
+      <td>409.3-.01</td>
       <td>Appt.WaitList.PatientIEN</td>
       <td> </td>
       <td> </td>
     </tr>
     <tr>
       <td>Appointment.extension[http://va.gov/fhir/StructureDefinition/resource-serviceConnection].valueCoding</td>
-      <td>Appt.Appointment.AppointmentTypeIEN<br />Dim.AppointmentType.AppointmentType</td>
-      <td>Appointment.Type</td>
+      <td>409.1-.01</td>
+      <td>Dim.AppointmentType.AppointmentType</td>
+      <td> </td>
       <td>appointment.type (&gt;409.1-.01)</td>
     </tr>
     <tr>
       <td>Appointment.cancelationReason</td>
+      <td>2.98-16</td>
       <td>Appt.Appointment.CancellationReasonIEN</td>
       <td>Appointment.Extension[AppointmentExtension].CancelReason</td>
       <td> </td>
     </tr>
     <tr>
       <td>Appointment.appointmentType.text</td>
-      <td>Appt.Appointment.AppointmentTypeIEN<br />Dim.AppointmentType.AppointmentType</td>
-      <td>Appointment.Type</td>
+      <td>409.1-.01</td>
+      <td>Dim.AppointmentType.AppointmentType</td>
+      <td> </td>
       <td>appointment.type (&gt;409.1-.01)</td>
     </tr>
     <tr>
       <td>Appointment.start</td>
+      <td>409.3-22</td>
       <td>Appt.WaitList.AppointmentDesiredDate</td>
       <td> </td>
       <td> </td>
     </tr>
     <tr>
       <td>Appointment.end</td>
-      <td>Appt.Appointment.VisitIEN<br />Outpat.Visit.COProcessCompleteDateTime<br />Outpat.Workload.COProcessCompleteDateTime</td>
-      <td>Appointment.CareProvider<br />Appointment.EncounterNumber<br />Appointment.Extension[AppointmentExtension].AssociatedEncounterNumber</td>
+      <td>409.68-.07</td>
+      <td>Outpat.Visit.COProcessCompleteDateTime<br />Outpat.Workload.COProcessCompleteDateTime</td>
+      <td> </td>
       <td> </td>
     </tr>
     <tr>
       <td>Appointment.minutesDuration</td>
+      <td>44.003-1</td>
       <td>Appt.Appointment.LengthOfAppointment<br />Appt.AppointmentMultiple.LengthOfAppointment</td>
       <td>Appointment.Extension[AppointmentExtension].Length</td>
       <td> </td>
     </tr>
     <tr>
       <td>Appointment.created</td>
+      <td>409.3-1</td>
       <td>Appt.WaitList.OriginatingDate</td>
       <td> </td>
       <td> </td>
     </tr>
     <tr>
       <td>Appointment.participant[va-clinic].actor</td>
+      <td>2.98-.01</td>
       <td>Appt.Appointment.LocationIEN</td>
       <td>Appointment.CareProvider<br />Appointment.EnteredAt<br />Appointment.Location<br />Appointment.PlacerApptId<br />Appointment.Type</td>
       <td>appointment.clinicStop (&gt;44-8)<br />appointment.facility (&gt;44-3)<br />appointment.id<br />appointment.provider (&gt;44-2600)<br />appointment.service (&gt;44-9)<br />appointment.visitString</td>
     </tr>
     <tr>
       <td>Appointment.participant[va-patient].actor</td>
+      <td>2-</td>
       <td> </td>
       <td> </td>
       <td> </td>
     </tr>
     <tr>
       <td>Appointment.serviceCategory[va-stop-code].coding.code</td>
+      <td>409.3-13.4</td>
       <td>Appt.WaitList.AppointmentPrimaryStopCodeIEN</td>
       <td> </td>
       <td> </td>
     </tr>
     <tr>
       <td>Appointment.comment</td>
+      <td>409.3-25</td>
       <td>Appt.WaitList.WaitListComments</td>
       <td> </td>
       <td> </td>
     </tr>
     <tr>
       <td>Appointment.participant[va-apptclinic].actor</td>
+      <td>409.3-13.2</td>
       <td>Appt.WaitList.AppointmentLocationIEN</td>
       <td> </td>
       <td> </td>
     </tr>
     <tr>
       <td>Appointment.description</td>
-      <td>Appt.Appointment.AppointmentTypeIEN</td>
-      <td>Appointment.Type</td>
+      <td>409.1-10</td>
+      <td> </td>
+      <td> </td>
       <td>appointment.type (&gt;409.1-.01)</td>
     </tr>
   </tbody>
@@ -1199,7 +1214,7 @@ appointment.visitString</td> </tr>
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025 <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#1.5.30 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Sun, May 25, 2025 09:24+0000">2025-05-25</span>
+          IG &#169; 2025 <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#1.6.49 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Jun 13, 2025 16:12+0000">2025-06-13</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

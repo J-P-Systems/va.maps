@@ -7,7 +7,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Patient - Mappings - US Veterans Health Administration FHIR Map Set Implementation Guide v1.5.30</title>
+    <title>Patient - Mappings - US Veterans Health Administration FHIR Map Set Implementation Guide v1.6.49</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -65,7 +65,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">US Veterans Health Administration FHIR Map Set Implementation Guide</span>
             <br/>
-            <span style="display:inline-block;">1.5.30 - 250601
+            <span style="display:inline-block;">1.6.49 - 250701
 
 
 
@@ -264,7 +264,7 @@
         
           Active
           
-            as of 2025-05-25
+            as of 2025-06-13
           
         
       </td>
@@ -297,6 +297,7 @@
   <thead>
     <tr>
       <th>FHIR Path</th>
+      <th>VistA</th>
       <th>CDW</th>
       <th>SDA</th>
       <th>VPR</th>
@@ -305,138 +306,161 @@
   <tbody>
     <tr>
       <td>Patient.identifier.value</td>
+      <td>2-991.01</td>
       <td>Patient.Patient.PatientICN<br />Patient.PatientICN.PatientICN<br />SPatient.SPatient.PatientICN<br />SPatient.SPatientGISAddress.PatientICN</td>
       <td> </td>
       <td>demographics.icn</td>
     </tr>
     <tr>
       <td>Patient.name.text</td>
+      <td>2-.01</td>
       <td>SPatient.SPatient.DestinationMergePatientIEN<br />SPatient.SPatient.PatientFirstName<br />SPatient.SPatient.PatientLastName<br />SPatient.SPatient.PatientName<br />SPatient.SPatientAlias.PatientName</td>
       <td>Patient.Name</td>
       <td>demographics.familyName<br />demographics.fullName<br />demographics.givenNames</td>
     </tr>
     <tr>
       <td>Patient.telecom[va-home].value</td>
+      <td>2-.131</td>
       <td> </td>
       <td>Patient.HomePhoneNumber</td>
       <td>demographics.telecom</td>
     </tr>
     <tr>
       <td>Patient.telecom[va-work].value</td>
+      <td>2-.132</td>
       <td> </td>
       <td>Patient.WorkPhoneNumber</td>
       <td>demographics.telecom</td>
     </tr>
     <tr>
       <td>Patient.telecom[va-mobile].value</td>
+      <td>2-.134</td>
       <td> </td>
       <td>Patient.MobilePhoneNumber</td>
       <td>demographics.telecom</td>
     </tr>
     <tr>
       <td>Patient.birthDate</td>
+      <td>2-.03</td>
       <td>SPatient.PlaceOfBirth.BirthDateTime<br />SPatient.SPatient.BirthDateTime</td>
       <td>Patient.BirthTime<br />Patient.Extension[PatientExtension].Dob</td>
       <td>demographics.dob</td>
     </tr>
     <tr>
       <td>Patient.deceasedDateTime</td>
+      <td>2-.351</td>
       <td>Patient.Patient.DeathDateTime<br />SPatient.SPatient.DeathDateTime</td>
       <td>Patient.DeathTime<br />Patient.IsDead</td>
       <td>demographics.died</td>
     </tr>
     <tr>
       <td>Patient.address[va-home].line</td>
+      <td>2-.113</td>
       <td> </td>
       <td>Patient.PermanentAddress[Address].Street</td>
       <td>demographics.address</td>
     </tr>
     <tr>
       <td>Patient.address[va-home].city</td>
+      <td>2-.114</td>
       <td>SPatient.SPatientGISAddress.City</td>
       <td>Patient.PermanentAddress[Address].City</td>
       <td>demographics.address</td>
     </tr>
     <tr>
       <td>Patient.address[va-home].state</td>
+      <td>2-.115</td>
       <td>SPatient.SPatientGISAddress.StateIEN<br />SPatient.SPatientGISAddress.StateSID</td>
       <td>Patient.PermanentAddress[Address].State</td>
       <td>demographics.address</td>
     </tr>
     <tr>
       <td>Patient.address[va-home].postalCode</td>
+      <td>2-.1112</td>
       <td>SPatient.SPatientGISAddress.Zip4</td>
       <td> </td>
       <td>demographics.address</td>
     </tr>
     <tr>
       <td>Patient.address[va-home].country</td>
+      <td>2-.1173</td>
       <td> </td>
       <td>Patient.PermanentAddress[Address].Country</td>
       <td> </td>
     </tr>
     <tr>
       <td>Patient.address[va-home].period.start</td>
+      <td>2-.1217</td>
       <td> </td>
       <td>Patient.TemporaryAddress[Address].FromTime</td>
       <td> </td>
     </tr>
     <tr>
       <td>Patient.address[va-home].period.end</td>
+      <td>2-.1218</td>
       <td> </td>
       <td>Patient.TemporaryAddress[Address].ToTime</td>
       <td> </td>
     </tr>
     <tr>
       <td>Patient.communication.language</td>
+      <td>2.07-.02</td>
       <td>Patient.PreferredLanguage.PreferredLanguage</td>
       <td>Patient.PatientLanguage.Preferred Language</td>
       <td> </td>
     </tr>
     <tr>
       <td>Patient.gender</td>
+      <td>2-.02</td>
       <td>Patient.Patient.Gender<br />Patient.PatientBirthSex.BirthSex<br />SPatient.SPatient.Gender<br />SPatient.SPatientBirthSex.BirthSex<br />SPatient.SPatientBirthSex.BirthSex</td>
       <td>Patient.BirthGender<br />Patient.Gender</td>
       <td>demographics.gender</td>
     </tr>
     <tr>
       <td>Patient.extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-genderIdentity].valueCodeableConcept</td>
+      <td>2-.024</td>
       <td>Patient.Patient.SelfIdentifiedGender<br />SPatient.SPatient.SelfIdentifiedGender</td>
       <td> </td>
       <td> </td>
     </tr>
     <tr>
       <td>Patient.extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity].extension[ombCategory].valueCoding.code</td>
+      <td>2-6</td>
       <td> </td>
       <td>Patient.EthnicGroup</td>
       <td>demographics.ethnicity [m-P:10.2] (&gt;10.2-3)</td>
     </tr>
     <tr>
       <td>Patient.extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity].extension[text].valueString</td>
+      <td>2-6</td>
       <td> </td>
       <td>Patient.EthnicGroup</td>
       <td>demographics.ethnicity [m-P:10.2] (&gt;10.2-3)</td>
     </tr>
     <tr>
       <td>Patient.extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-race].extension[ombCategory].valueCoding.code</td>
+      <td>2-2</td>
       <td> </td>
       <td>Patient.Races</td>
       <td>demographics.race [m-P:10] (&gt;10-3)</td>
     </tr>
     <tr>
       <td>Patient.extension[http://hl7.org/fhir/us/core/StructureDefinition/us-core-race].extension[text].valueString</td>
+      <td>2-2</td>
       <td> </td>
       <td>Patient.Races</td>
       <td>demographics.race [m-P:10] (&gt;10-3)</td>
     </tr>
     <tr>
       <td>Patient.maritalStatus</td>
+      <td>2-.05</td>
       <td>Outpat.Visit.PatientMaritalStatus<br />Outpat.Workload.PatientMaritalStatus<br />Patient.Patient.MaritalStatusIEN<br />SPatient.SPatient.MaritalStatusIEN</td>
       <td>Patient.MaritalStatus</td>
       <td>demographics.maritalStatus</td>
     </tr>
     <tr>
       <td>Patient.extension[http://hl7.org/fhir/StructureDefinition/patient-religion].valueCodeableConcept</td>
+      <td>2-.08</td>
       <td>Outpat.Visit.PatientReligion<br />Outpat.Visit.PatientReligionCode<br />Outpat.Workload.PatientReligion<br />Outpat.Workload.PatientReligionCode<br />Patient.Patient.ReligionIEN<br />SPatient.SPatient.ReligionIEN</td>
       <td>Patient.Religion</td>
       <td>demographics.religion</td>
@@ -1460,7 +1484,7 @@ demographics.givenNames</td> </tr>
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025 <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#1.5.30 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Sun, May 25, 2025 09:24+0000">2025-05-25</span>
+          IG &#169; 2025 <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#1.6.49 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Jun 13, 2025 16:12+0000">2025-06-13</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

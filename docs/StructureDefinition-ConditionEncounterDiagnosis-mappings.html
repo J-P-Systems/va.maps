@@ -7,7 +7,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Condition: Encounter Diagnosis - Mappings - US Veterans Health Administration FHIR Map Set Implementation Guide v1.5.30</title>
+    <title>Condition: Encounter Diagnosis - Mappings - US Veterans Health Administration FHIR Map Set Implementation Guide v1.6.49</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -65,7 +65,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">US Veterans Health Administration FHIR Map Set Implementation Guide</span>
             <br/>
-            <span style="display:inline-block;">1.5.30 - 250601
+            <span style="display:inline-block;">1.6.49 - 250701
 
 
 
@@ -264,7 +264,7 @@
         
           Draft
           
-            as of 2025-05-25
+            as of 2025-06-13
           
         
       </td>
@@ -297,6 +297,7 @@
   <thead>
     <tr>
       <th>FHIR Path</th>
+      <th>VistA</th>
       <th>CDW</th>
       <th>SDA</th>
       <th>VPR</th>
@@ -305,54 +306,63 @@
   <tbody>
     <tr>
       <td>Condition.identifier.value</td>
+      <td>9000010.07-.001</td>
       <td> </td>
       <td> </td>
       <td> </td>
     </tr>
     <tr>
       <td>Condition.clinicalStatus</td>
+      <td>9000010.07-.06</td>
       <td>Outpat.VDiagnosis.Modifier<br />Outpat.WorkloadVDiagnosis.Modifier</td>
       <td>Diagnosis.Diagnosis[CodeTableDetail.Diagnosis].OriginalText</td>
       <td> </td>
     </tr>
     <tr>
       <td>Condition.code.coding.code</td>
-      <td>Outpat.VDiagnosis.ICDIEN<br />Outpat.WorkloadVDiagnosis.ICDIEN<br />Dim.ICD10.ICD10Code<br />Dim.ICD9.ICD9Code</td>
-      <td>Diagnosis.Diagnosis<br />Diagnosis.Diagnosis[CodeTableDetail.Diagnosis].Code</td>
+      <td>80-.01</td>
+      <td>Dim.ICD10.ICD10Code<br />Dim.ICD9.ICD9Code</td>
+      <td> </td>
       <td>visit.icd [m] (&gt;80-.01)<br />visit.icd [m] (&gt;80-1.1)<br />visit.icd [m] (&gt;80-10)<br />visit.reason (&gt;80-.01)<br />visit.reason (&gt;80-1.1)<br />visit.reason (&gt;80-10)</td>
     </tr>
     <tr>
       <td>Condition.subject</td>
-      <td>Outpat.VDiagnosis.PatientIEN<br />Outpat.WorkloadVDiagnosis.PatientIEN</td>
+      <td>9000001-.01</td>
+      <td> </td>
       <td> </td>
       <td> </td>
     </tr>
     <tr>
       <td>Condition.encounter</td>
+      <td>9000010.07-.03</td>
       <td>Outpat.VDiagnosis.VisitDateTime<br />Outpat.VDiagnosis.VisitIEN<br />Outpat.WorkloadVDiagnosis.VisitDateTime<br />Outpat.WorkloadVDiagnosis.VisitIEN</td>
       <td>Diagnosis.EncounterNumber<br />Diagnosis.EnteredAt<br />Diagnosis.EnteredBy<br />Diagnosis.EnteredOn<br />Diagnosis.FromTime<br />Diagnosis.ToTime</td>
       <td> </td>
     </tr>
     <tr>
       <td>Condition.onsetDateTime</td>
+      <td>9000010.07-.13</td>
       <td>Outpat.VDiagnosis.InjuryDateTime<br />Outpat.WorkloadVDiagnosis.InjuryDateTime</td>
       <td>Diagnosis.OnsetTime</td>
       <td> </td>
     </tr>
     <tr>
       <td>Condition.recordedDate</td>
-      <td>Outpat.VDiagnosis.VisitDateTime<br />Outpat.VDiagnosis.VisitIEN<br />Outpat.WorkloadVDiagnosis.VisitDateTime<br />Outpat.WorkloadVDiagnosis.VisitIEN<br />Immun.ImmunizationContraRefusalEvent.VisitDateTime<br />Outpat.Visit.VisitDateTime<br />Outpat.VisitLogic.VisitDateTime<br />Outpat.Workload.VisitDateTime</td>
-      <td>Diagnosis.EncounterNumber<br />Diagnosis.EnteredAt<br />Diagnosis.EnteredBy<br />Diagnosis.EnteredOn<br />Diagnosis.FromTime<br />Diagnosis.ToTime<br />Encounter.ConsultingClinician[CareProvider].Description<br />Encounter.ConsultingClinician[CareProvider].Name</td>
+      <td>9000010-.01</td>
+      <td>Immun.ImmunizationContraRefusalEvent.VisitDateTime<br />Outpat.Visit.VisitDateTime<br />Outpat.VisitLogic.VisitDateTime<br />Outpat.Workload.VisitDateTime</td>
+      <td>Encounter.ConsultingClinician[CareProvider].Description<br />Encounter.ConsultingClinician[CareProvider].Name</td>
       <td>visit.dateTime<br />visit.visitString</td>
     </tr>
     <tr>
       <td>Condition.verificationStatus</td>
+      <td>9000010.07-.06</td>
       <td>Outpat.VDiagnosis.Modifier<br />Outpat.WorkloadVDiagnosis.Modifier</td>
       <td>Diagnosis.Diagnosis[CodeTableDetail.Diagnosis].OriginalText</td>
       <td> </td>
     </tr>
     <tr>
       <td>Condition.recorder</td>
+      <td>9000010.07-1204</td>
       <td>Outpat.VDiagnosis.EncounterProviderIEN<br />Outpat.WorkloadVDiagnosis.EncounterProviderIEN</td>
       <td>Diagnosis.DiagnosingClinician</td>
       <td> </td>
@@ -882,7 +892,7 @@ OR &lt; 272379006 |Event|</td> </tr>
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025 <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#1.5.30 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Sun, May 25, 2025 09:24+0000">2025-05-25</span>
+          IG &#169; 2025 <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#1.6.49 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Jun 13, 2025 16:12+0000">2025-06-13</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

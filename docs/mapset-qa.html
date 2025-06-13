@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Mapset Qa - US Veterans Health Administration FHIR Map Set Implementation Guide v1.5.30</title>
+    <title>Mapset Qa - US Veterans Health Administration FHIR Map Set Implementation Guide v1.6.49</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -61,7 +61,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">US Veterans Health Administration FHIR Map Set Implementation Guide</span>
             <br/>
-            <span style="display:inline-block;">1.5.30 - 250601
+            <span style="display:inline-block;">1.6.49 - 250701
 
 
 
@@ -330,7 +330,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h3 id="termmaps">TermMaps</h3>
 <ol>
-  <li>ERROR: Vista_NCPDPCoverageRelationship targetSystem missing; manual lookup from FHIR resource!; using urn:undefined</li>
+  <li>ERROR: Vista_NCPDPCoverageRelationship targetSystem missing; manual lookup from FHIR resource!</li>
 </ol>
 
 <h3 id="qa-findings-per-use-case">QA Findings per Use Case</h3>
@@ -339,7 +339,6 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <ol>
   <li>check maps to <code class="language-plaintext highlighter-rouge">AllergyIntolerance.code</code> in AllergyIntolerance; maps=2 max=1</li>
   <li>check maps to <code class="language-plaintext highlighter-rouge">AllergyIntolerance.verificationStatus</code> in AllergyIntolerance; maps=2 max=1</li>
-  <li><del><em>557 expected only vistaFile <code class="language-plaintext highlighter-rouge">120.8</code> but got <code class="language-plaintext highlighter-rouge">120.85</code></em></del> reverse pointer w/ mapCase</li>
 </ol>
 
 <h4 id="patient">Patient</h4>
@@ -352,7 +351,6 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li>check maps to <code class="language-plaintext highlighter-rouge">Appointment.start</code> in Appointment; maps=2 max=1</li>
   <li>check maps to <code class="language-plaintext highlighter-rouge">Appointment.created</code> in Appointment; maps=2 max=1</li>
   <li>744 expected only vistaFile <code class="language-plaintext highlighter-rouge">2.98</code> but got <code class="language-plaintext highlighter-rouge">44.003</code></li>
-  <li><del><em>1722 expected only vistaFile <code class="language-plaintext highlighter-rouge">2.98</code> but got <code class="language-plaintext highlighter-rouge">2</code></em></del> reverse pointer w/ mapCase</li>
   <li>748 expected only vistaFile <code class="language-plaintext highlighter-rouge">2.98</code> but got <code class="language-plaintext highlighter-rouge">409.3</code></li>
   <li>749 expected only vistaFile <code class="language-plaintext highlighter-rouge">2.98</code> but got <code class="language-plaintext highlighter-rouge">409.3</code></li>
   <li>750 expected only vistaFile <code class="language-plaintext highlighter-rouge">2.98</code> but got <code class="language-plaintext highlighter-rouge">409.3</code></li>
@@ -375,9 +373,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h4 id="diagnostic-report-note-surgical-pathology">Diagnostic Report Note: Surgical Pathology</h4>
 <ol>
-  <li><del><em>2212 reference source path has type <code class="language-plaintext highlighter-rouge">NUMBER</code> and expected <code class="language-plaintext highlighter-rouge">PATIENT (2)</code> from profile</em></del> TODO: reverse pointer PATIENT - LABORATORY REFERENCE (2-63) == LAB DATA – LRDFN (63-.01)</li>
+  <li>2212 reference source path has type <code class="language-plaintext highlighter-rouge">NUMBER</code> and expected <code class="language-plaintext highlighter-rouge">PATIENT (2)</code> from ref. profile</li>
   <li>2207 unknown file-field <code class="language-plaintext highlighter-rouge">100-.01&lt;69.03-12</code></li>
-  <li>1701 reference source path has type <code class="language-plaintext highlighter-rouge">FREE TEXT</code> and expected <code class="language-plaintext highlighter-rouge">SURGICAL PATHOLOGY (63.08)</code> from profile</li>
+  <li>1701 reference source path has type <code class="language-plaintext highlighter-rouge">FREE TEXT</code> and expected <code class="language-plaintext highlighter-rouge">SURGICAL PATHOLOGY (63.08)</code> from ref. profile</li>
   <li>2212 expected only vistaFile <code class="language-plaintext highlighter-rouge">63.08</code> but got <code class="language-plaintext highlighter-rouge">2</code></li>
 </ol>
 
@@ -385,12 +383,12 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <ol>
   <li><del><em>1421 vistaFileFieldName expected ' - ' and fieldname</em></del> reverse pointer w/ mapCase</li>
   <li><del><em>1437 vistaFileFieldName expected ' - ' and fieldname</em></del> special case</li>
-  <li>1656 reference source path has type <code class="language-plaintext highlighter-rouge">FREE TEXT</code> and expected <code class="language-plaintext highlighter-rouge">CHEM, HEM, TOX, RIA, SER, etc. (63.04)</code> from profile</li>
+  <li>1656 reference source path has type <code class="language-plaintext highlighter-rouge">FREE TEXT</code> and expected <code class="language-plaintext highlighter-rouge">CHEM, HEM, TOX, RIA, SER, etc. (63.04)</code> from ref. profile</li>
   <li><del><em>852 unknown file-field <code class="language-plaintext highlighter-rouge">63.04-2+through+862</code></em></del> field pattern not yet handled by script; see mapComment</li>
   <li>2234 file-field <code class="language-plaintext highlighter-rouge">63.04-.03</code> expected <code class="language-plaintext highlighter-rouge">CHEM, HEM, TOX, RIA, SER, etc. - DATE REPORT COMPLETED</code> but got <code class="language-plaintext highlighter-rouge">CHEM, HEM, TOX, RIA, SER, etc. - ORDERED TEST</code></li>
   <li>2235 file-field <code class="language-plaintext highlighter-rouge">63.04-.03</code> expected <code class="language-plaintext highlighter-rouge">CHEM, HEM, TOX, RIA, SER, etc. - DATE REPORT COMPLETED</code> but got <code class="language-plaintext highlighter-rouge">CHEM, HEM, TOX, RIA, SER, etc. - ORDERED TEST</code></li>
   <li><del><em>857 unknown file-field <code class="language-plaintext highlighter-rouge">63.04-2+through+862</code></em></del> field pattern not yet handled by script; see mapComment</li>
-  <li><del><em>844 reference source path has type <code class="language-plaintext highlighter-rouge">NUMBER</code> and expected <code class="language-plaintext highlighter-rouge">PATIENT (2)</code> from profile</em></del> TODO: reverse pointer PATIENT - LABORATORY REFERENCE (2-63) == LAB DATA – LRDFN (63-.01)</li>
+  <li>844 reference source path has type <code class="language-plaintext highlighter-rouge">NUMBER</code> and expected <code class="language-plaintext highlighter-rouge">PATIENT (2)</code> from ref. profile</li>
   <li>check maps to <code class="language-plaintext highlighter-rouge">Observation.status</code> in Observation; maps=3 max=1</li>
   <li>1662 expected only vistaFile <code class="language-plaintext highlighter-rouge">63.04</code> but got <code class="language-plaintext highlighter-rouge">60</code></li>
   <li>1420 expected only vistaFile <code class="language-plaintext highlighter-rouge">63.04</code> but got <code class="language-plaintext highlighter-rouge">60</code></li>
@@ -403,9 +401,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h4 id="diagnostic-report-note-electron-microscopy">Diagnostic Report Note: Electron Microscopy</h4>
 <ol>
-  <li><del><em>2213 reference source path has type <code class="language-plaintext highlighter-rouge">NUMBER</code> and expected <code class="language-plaintext highlighter-rouge">PATIENT (2)</code> from profile</em></del> TODO: reverse pointer PATIENT - LABORATORY REFERENCE (2-63) == LAB DATA – LRDFN (63-.01)</li>
+  <li>2213 reference source path has type <code class="language-plaintext highlighter-rouge">NUMBER</code> and expected <code class="language-plaintext highlighter-rouge">PATIENT (2)</code> from ref. profile</li>
   <li>2209 unknown file-field <code class="language-plaintext highlighter-rouge">100-.01&lt;69.03-12</code></li>
-  <li>1697 reference source path has type <code class="language-plaintext highlighter-rouge">FREE TEXT</code> and expected <code class="language-plaintext highlighter-rouge">EM (63.02)</code> from profile</li>
+  <li>1697 reference source path has type <code class="language-plaintext highlighter-rouge">FREE TEXT</code> and expected <code class="language-plaintext highlighter-rouge">EM (63.02)</code> from ref. profile</li>
   <li>2213 expected only vistaFile <code class="language-plaintext highlighter-rouge">63.02</code> but got <code class="language-plaintext highlighter-rouge">2</code></li>
 </ol>
 
@@ -413,8 +411,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <ol>
   <li><del><em>1421 vistaFileFieldName expected ' - ' and fieldname</em></del> reverse pointer w/ mapCase</li>
   <li><del><em>1437 vistaFileFieldName expected ' - ' and fieldname</em></del> special case</li>
-  <li>1659 reference source path has type <code class="language-plaintext highlighter-rouge">FREE TEXT</code> and expected <code class="language-plaintext highlighter-rouge">MICROBIOLOGY (63.05)</code> from profile</li>
-  <li><del><em>844 reference source path has type <code class="language-plaintext highlighter-rouge">NUMBER</code> and expected <code class="language-plaintext highlighter-rouge">PATIENT (2)</code> from profile</em></del> TODO: reverse pointer PATIENT - LABORATORY REFERENCE (2-63) == LAB DATA – LRDFN (63-.01)</li>
+  <li>1659 reference source path has type <code class="language-plaintext highlighter-rouge">FREE TEXT</code> and expected <code class="language-plaintext highlighter-rouge">MICROBIOLOGY (63.05)</code> from ref. profile</li>
+  <li>844 reference source path has type <code class="language-plaintext highlighter-rouge">NUMBER</code> and expected <code class="language-plaintext highlighter-rouge">PATIENT (2)</code> from ref. profile</li>
   <li>1662 expected only vistaFile <code class="language-plaintext highlighter-rouge">63.05</code> but got <code class="language-plaintext highlighter-rouge">60</code></li>
   <li>1420 expected only vistaFile <code class="language-plaintext highlighter-rouge">63.05</code> but got <code class="language-plaintext highlighter-rouge">60</code></li>
   <li>1420-1 expected only vistaFile <code class="language-plaintext highlighter-rouge">63.05</code> but got <code class="language-plaintext highlighter-rouge">60</code></li>
@@ -431,8 +429,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><del><em>1522 unknown file-field <code class="language-plaintext highlighter-rouge">63.3-5+to+160</code></em></del> field pattern not yet handled by script; see mapComment</li>
   <li><del><em>1523 unknown file-field <code class="language-plaintext highlighter-rouge">63.3-5+to+160</code></em></del> field pattern not yet handled by script; see mapComment</li>
   <li><del><em>1524 unknown file-field <code class="language-plaintext highlighter-rouge">63.3-5.1+to+160.1</code></em></del> field pattern not yet handled by script; see mapComment</li>
-  <li>1659 reference source path has type <code class="language-plaintext highlighter-rouge">FREE TEXT</code> and expected <code class="language-plaintext highlighter-rouge">MICROBIOLOGY (63.05)</code> from profile</li>
-  <li><del><em>844 reference source path has type <code class="language-plaintext highlighter-rouge">NUMBER</code> and expected <code class="language-plaintext highlighter-rouge">PATIENT (2)</code> from profile</em></del> TODO: reverse pointer PATIENT - LABORATORY REFERENCE (2-63) == LAB DATA – LRDFN (63-.01)</li>
+  <li>1659 reference source path has type <code class="language-plaintext highlighter-rouge">FREE TEXT</code> and expected <code class="language-plaintext highlighter-rouge">MICROBIOLOGY (63.05)</code> from ref. profile</li>
+  <li>844 reference source path has type <code class="language-plaintext highlighter-rouge">NUMBER</code> and expected <code class="language-plaintext highlighter-rouge">PATIENT (2)</code> from ref. profile</li>
   <li>1662 expected only vistaFile <code class="language-plaintext highlighter-rouge">63.05</code> but got <code class="language-plaintext highlighter-rouge">60</code></li>
   <li>1420 expected only vistaFile <code class="language-plaintext highlighter-rouge">63.05</code> but got <code class="language-plaintext highlighter-rouge">60</code></li>
   <li>1420-1 expected only vistaFile <code class="language-plaintext highlighter-rouge">63.05</code> but got <code class="language-plaintext highlighter-rouge">60</code></li>
@@ -446,8 +444,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <ol>
   <li><del><em>1421 vistaFileFieldName expected ' - ' and fieldname</em></del> reverse pointer w/ mapCase</li>
   <li><del><em>1437 vistaFileFieldName expected ' - ' and fieldname</em></del> special case</li>
-  <li>1659 reference source path has type <code class="language-plaintext highlighter-rouge">FREE TEXT</code> and expected <code class="language-plaintext highlighter-rouge">MICROBIOLOGY (63.05)</code> from profile</li>
-  <li><del><em>844 reference source path has type <code class="language-plaintext highlighter-rouge">NUMBER</code> and expected <code class="language-plaintext highlighter-rouge">PATIENT (2)</code> from profile</em></del> TODO: reverse pointer PATIENT - LABORATORY REFERENCE (2-63) == LAB DATA – LRDFN (63-.01)</li>
+  <li>1659 reference source path has type <code class="language-plaintext highlighter-rouge">FREE TEXT</code> and expected <code class="language-plaintext highlighter-rouge">MICROBIOLOGY (63.05)</code> from ref. profile</li>
+  <li>844 reference source path has type <code class="language-plaintext highlighter-rouge">NUMBER</code> and expected <code class="language-plaintext highlighter-rouge">PATIENT (2)</code> from ref. profile</li>
   <li>1662 expected only vistaFile <code class="language-plaintext highlighter-rouge">63.05</code> but got <code class="language-plaintext highlighter-rouge">60</code></li>
   <li>1420 expected only vistaFile <code class="language-plaintext highlighter-rouge">63.05</code> but got <code class="language-plaintext highlighter-rouge">60</code></li>
   <li>1420-1 expected only vistaFile <code class="language-plaintext highlighter-rouge">63.05</code> but got <code class="language-plaintext highlighter-rouge">60</code></li>
@@ -461,8 +459,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <ol>
   <li><del><em>1421 vistaFileFieldName expected ' - ' and fieldname</em></del> reverse pointer w/ mapCase</li>
   <li><del><em>1437 vistaFileFieldName expected ' - ' and fieldname</em></del> special case</li>
-  <li>1659 reference source path has type <code class="language-plaintext highlighter-rouge">FREE TEXT</code> and expected <code class="language-plaintext highlighter-rouge">MICROBIOLOGY (63.05)</code> from profile</li>
-  <li><del><em>844 reference source path has type <code class="language-plaintext highlighter-rouge">NUMBER</code> and expected <code class="language-plaintext highlighter-rouge">PATIENT (2)</code> from profile</em></del> TODO: reverse pointer PATIENT - LABORATORY REFERENCE (2-63) == LAB DATA – LRDFN (63-.01)</li>
+  <li>1659 reference source path has type <code class="language-plaintext highlighter-rouge">FREE TEXT</code> and expected <code class="language-plaintext highlighter-rouge">MICROBIOLOGY (63.05)</code> from ref. profile</li>
+  <li>844 reference source path has type <code class="language-plaintext highlighter-rouge">NUMBER</code> and expected <code class="language-plaintext highlighter-rouge">PATIENT (2)</code> from ref. profile</li>
   <li>1662 expected only vistaFile <code class="language-plaintext highlighter-rouge">63.05</code> but got <code class="language-plaintext highlighter-rouge">60</code></li>
   <li>1420 expected only vistaFile <code class="language-plaintext highlighter-rouge">63.05</code> but got <code class="language-plaintext highlighter-rouge">60</code></li>
   <li>1420-1 expected only vistaFile <code class="language-plaintext highlighter-rouge">63.05</code> but got <code class="language-plaintext highlighter-rouge">60</code></li>
@@ -476,8 +474,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <ol>
   <li><del><em>1421 vistaFileFieldName expected ' - ' and fieldname</em></del> reverse pointer w/ mapCase</li>
   <li><del><em>1437 vistaFileFieldName expected ' - ' and fieldname</em></del> special case</li>
-  <li>1659 reference source path has type <code class="language-plaintext highlighter-rouge">FREE TEXT</code> and expected <code class="language-plaintext highlighter-rouge">MICROBIOLOGY (63.05)</code> from profile</li>
-  <li><del><em>844 reference source path has type <code class="language-plaintext highlighter-rouge">NUMBER</code> and expected <code class="language-plaintext highlighter-rouge">PATIENT (2)</code> from profile</em></del> TODO: reverse pointer PATIENT - LABORATORY REFERENCE (2-63) == LAB DATA – LRDFN (63-.01)</li>
+  <li>1659 reference source path has type <code class="language-plaintext highlighter-rouge">FREE TEXT</code> and expected <code class="language-plaintext highlighter-rouge">MICROBIOLOGY (63.05)</code> from ref. profile</li>
+  <li>844 reference source path has type <code class="language-plaintext highlighter-rouge">NUMBER</code> and expected <code class="language-plaintext highlighter-rouge">PATIENT (2)</code> from ref. profile</li>
   <li>1662 expected only vistaFile <code class="language-plaintext highlighter-rouge">63.05</code> but got <code class="language-plaintext highlighter-rouge">60</code></li>
   <li>1420 expected only vistaFile <code class="language-plaintext highlighter-rouge">63.05</code> but got <code class="language-plaintext highlighter-rouge">60</code></li>
   <li>1420-1 expected only vistaFile <code class="language-plaintext highlighter-rouge">63.05</code> but got <code class="language-plaintext highlighter-rouge">60</code></li>
@@ -491,8 +489,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <ol>
   <li><del><em>1421 vistaFileFieldName expected ' - ' and fieldname</em></del> reverse pointer w/ mapCase</li>
   <li><del><em>1437 vistaFileFieldName expected ' - ' and fieldname</em></del> special case</li>
-  <li>1659 reference source path has type <code class="language-plaintext highlighter-rouge">FREE TEXT</code> and expected <code class="language-plaintext highlighter-rouge">MICROBIOLOGY (63.05)</code> from profile</li>
-  <li><del><em>844 reference source path has type <code class="language-plaintext highlighter-rouge">NUMBER</code> and expected <code class="language-plaintext highlighter-rouge">PATIENT (2)</code> from profile</em></del> TODO: reverse pointer PATIENT - LABORATORY REFERENCE (2-63) == LAB DATA – LRDFN (63-.01)</li>
+  <li>1659 reference source path has type <code class="language-plaintext highlighter-rouge">FREE TEXT</code> and expected <code class="language-plaintext highlighter-rouge">MICROBIOLOGY (63.05)</code> from ref. profile</li>
+  <li>844 reference source path has type <code class="language-plaintext highlighter-rouge">NUMBER</code> and expected <code class="language-plaintext highlighter-rouge">PATIENT (2)</code> from ref. profile</li>
   <li>1662 expected only vistaFile <code class="language-plaintext highlighter-rouge">63.05</code> but got <code class="language-plaintext highlighter-rouge">60</code></li>
   <li>1420 expected only vistaFile <code class="language-plaintext highlighter-rouge">63.05</code> but got <code class="language-plaintext highlighter-rouge">60</code></li>
   <li>1420-1 expected only vistaFile <code class="language-plaintext highlighter-rouge">63.05</code> but got <code class="language-plaintext highlighter-rouge">60</code></li>
@@ -510,8 +508,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li>missing must-support <code class="language-plaintext highlighter-rouge">Condition.category[sdoh]</code> from <a href="http://hl7.org/fhir/us/core/STU5.0.1/StructureDefinition-us-core-condition-problems-health-concerns.html">US Core Condition Problems and Health Concerns Profile (5.0.1)</a></li>
   <li><del><em>449 unknown file-field <code class="language-plaintext highlighter-rouge">45-79.*</code></em></del> field pattern not yet accepted by script; see mapComment</li>
   <li><del><em>450 unknown file-field <code class="language-plaintext highlighter-rouge">45-45.01+to+45.05</code></em></del> field pattern not yet accepted by script; see mapComment</li>
-  <li>461 reference source path has type <code class="language-plaintext highlighter-rouge">NUMBER</code> and expected <code class="language-plaintext highlighter-rouge">HOSPITAL LOCATION (44)</code> from profile</li>
-  <li>1600 reference source path has type <code class="language-plaintext highlighter-rouge">NUMBER</code> and expected <code class="language-plaintext highlighter-rouge">INSTITUTION (4)</code> from profile</li>
+  <li>461 reference source path has type <code class="language-plaintext highlighter-rouge">NUMBER</code> and expected <code class="language-plaintext highlighter-rouge">HOSPITAL LOCATION (44)</code> from ref. profile</li>
+  <li>1600 reference source path has type <code class="language-plaintext highlighter-rouge">NUMBER</code> and expected <code class="language-plaintext highlighter-rouge">INSTITUTION (4)</code> from ref. profile</li>
   <li>1616 expected only vistaFile <code class="language-plaintext highlighter-rouge">45</code> but got <code class="language-plaintext highlighter-rouge">46</code></li>
   <li>1616-2 expected only vistaFile <code class="language-plaintext highlighter-rouge">45</code> but got <code class="language-plaintext highlighter-rouge">46</code></li>
   <li>1616-3 expected only vistaFile <code class="language-plaintext highlighter-rouge">45</code> but got <code class="language-plaintext highlighter-rouge">46</code></li>
@@ -521,18 +519,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h4 id="encounter-outpatient">Encounter: Outpatient</h4>
 <ol>
-  <li>2035 expected only vistaFile <code class="language-plaintext highlighter-rouge">9000010</code> but got <code class="language-plaintext highlighter-rouge">409.68</code></li>
-  <li>2036 expected only vistaFile <code class="language-plaintext highlighter-rouge">9000010</code> but got <code class="language-plaintext highlighter-rouge">409.68</code></li>
-  <li>447 expected only vistaFile <code class="language-plaintext highlighter-rouge">9000010</code> but got <code class="language-plaintext highlighter-rouge">9000010.07</code></li>
-  <li>452 expected only vistaFile <code class="language-plaintext highlighter-rouge">9000010</code> but got <code class="language-plaintext highlighter-rouge">9000010.07</code></li>
-  <li>1614 expected only vistaFile <code class="language-plaintext highlighter-rouge">9000010</code> but got <code class="language-plaintext highlighter-rouge">9000010.06</code></li>
-  <li>1854 expected only vistaFile <code class="language-plaintext highlighter-rouge">9000010</code> but got <code class="language-plaintext highlighter-rouge">9000010.06</code></li>
-  <li>1615 expected only vistaFile <code class="language-plaintext highlighter-rouge">9000010</code> but got <code class="language-plaintext highlighter-rouge">9000010.18</code></li>
-  <li>1615-2 expected only vistaFile <code class="language-plaintext highlighter-rouge">9000010</code> but got <code class="language-plaintext highlighter-rouge">9000010.18</code></li>
-  <li>1615-3 expected only vistaFile <code class="language-plaintext highlighter-rouge">9000010</code> but got <code class="language-plaintext highlighter-rouge">9000010.18</code></li>
-  <li>1615-4 expected only vistaFile <code class="language-plaintext highlighter-rouge">9000010</code> but got <code class="language-plaintext highlighter-rouge">9000010.18</code></li>
-  <li>452 reference source path has type <code class="language-plaintext highlighter-rouge">POINTER TO PROBLEM FILE (#9000011)</code> and expected <code class="language-plaintext highlighter-rouge">V POV (9000010.07)</code> from profile</li>
-  <li>458 reference source path has type <code class="language-plaintext highlighter-rouge">POINTER TO CLINIC STOP FILE (#40.7)</code> and expected <code class="language-plaintext highlighter-rouge">HOSPITAL LOCATION (44)</code> from profile</li>
+  <li>452 reference source path has type <code class="language-plaintext highlighter-rouge">POINTER TO PROBLEM FILE (#9000011)</code> and expected <code class="language-plaintext highlighter-rouge">V POV (9000010.07)</code> from ref. profile</li>
+  <li>458 reference source path has type <code class="language-plaintext highlighter-rouge">POINTER TO CLINIC STOP FILE (#40.7)</code> and expected <code class="language-plaintext highlighter-rouge">HOSPITAL LOCATION (44)</code> from ref. profile</li>
   <li><del><em>check maps to <code class="language-plaintext highlighter-rouge">Encounter.status</code> in Encounter; maps=3 max=1</em></del> mapCases are mutualy exclusive</li>
 </ol>
 
@@ -559,10 +547,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </ol>
 
 <h4 id="implantable-device-prosthesis">Implantable Device: Prosthesis</h4>
-<ol>
-  <li>1399 expected only vistaFile <code class="language-plaintext highlighter-rouge">130.01</code> but got <code class="language-plaintext highlighter-rouge">130</code></li>
-  <li>1807 expected only vistaFile <code class="language-plaintext highlighter-rouge">130.01</code> but got <code class="language-plaintext highlighter-rouge">130</code></li>
-</ol>
+<p><em>no QA findings</em></p>
 
 <h4 id="implantable-device-transmitter">Implantable Device: Transmitter</h4>
 <ol>
@@ -579,9 +564,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h4 id="diagnostic-report-note-cytopathology">Diagnostic Report Note: Cytopathology</h4>
 <ol>
-  <li>2214 reference source path has type <code class="language-plaintext highlighter-rouge">NUMBER</code> and expected <code class="language-plaintext highlighter-rouge">PATIENT (2)</code> from profile</li>
+  <li>2214 reference source path has type <code class="language-plaintext highlighter-rouge">NUMBER</code> and expected <code class="language-plaintext highlighter-rouge">PATIENT (2)</code> from ref. profile</li>
   <li>2211 unknown file-field <code class="language-plaintext highlighter-rouge">100-.01&lt;69.03-12</code></li>
-  <li>1692 reference source path has type <code class="language-plaintext highlighter-rouge">FREE TEXT</code> and expected <code class="language-plaintext highlighter-rouge">CYTOPATHOLOGY (63.09)</code> from profile</li>
+  <li>1692 reference source path has type <code class="language-plaintext highlighter-rouge">FREE TEXT</code> and expected <code class="language-plaintext highlighter-rouge">CYTOPATHOLOGY (63.09)</code> from ref. profile</li>
   <li>2214 expected only vistaFile <code class="language-plaintext highlighter-rouge">63.09</code> but got <code class="language-plaintext highlighter-rouge">2</code></li>
 </ol>
 
@@ -589,7 +574,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <ol>
   <li><del><em>1421 vistaFileFieldName expected ' - ' and fieldname</em></del> reverse pointer w/ mapCase</li>
   <li><del><em>1437 vistaFileFieldName expected ' - ' and fieldname</em></del> special case</li>
-  <li><del><em>844 reference source path has type <code class="language-plaintext highlighter-rouge">NUMBER</code> and expected <code class="language-plaintext highlighter-rouge">PATIENT (2)</code> from profile</em></del> TODO: reverse pointer PATIENT - LABORATORY REFERENCE (2-63) == LAB DATA – LRDFN (63-.01)</li>
+  <li>844 reference source path has type <code class="language-plaintext highlighter-rouge">NUMBER</code> and expected <code class="language-plaintext highlighter-rouge">PATIENT (2)</code> from ref. profile</li>
   <li><del><em>1421 expected only vistaFile <code class="language-plaintext highlighter-rouge">60</code> but got <code class="language-plaintext highlighter-rouge">2</code></em></del> reverse pointer w/ mapCase</li>
 </ol>
 
@@ -626,7 +611,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <ol>
   <li>missing must-support <code class="language-plaintext highlighter-rouge">MedicationRequest.category</code> from <a href="http://hl7.org/fhir/us/core/STU5.0.1/StructureDefinition-us-core-medicationrequest.html">US Core MedicationRequest Profile (5.0.1)</a></li>
   <li>missing must-support <code class="language-plaintext highlighter-rouge">MedicationRequest.category[us-core]</code> from <a href="http://hl7.org/fhir/us/core/STU5.0.1/StructureDefinition-us-core-medicationrequest.html">US Core MedicationRequest Profile (5.0.1)</a></li>
-  <li>1226 reference source path has type <code class="language-plaintext highlighter-rouge">VARIABLE POINTER</code> and expected <code class="language-plaintext highlighter-rouge">PATIENT (2)</code> from profile</li>
+  <li>1226 reference source path has type <code class="language-plaintext highlighter-rouge">VARIABLE POINTER</code> and expected <code class="language-plaintext highlighter-rouge">PATIENT (2)</code> from ref. profile</li>
 </ol>
 
 <h4 id="medicationrequest-nonva">MedicationRequest: NonVA</h4>
@@ -640,19 +625,19 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h4 id="medicationdispense-original">MedicationDispense: Original</h4>
 <ol>
-  <li>822 reference source path has type <code class="language-plaintext highlighter-rouge">NUMBER</code> and expected <code class="language-plaintext highlighter-rouge">PRESCRIPTION (52)</code> from profile</li>
+  <li>822 reference source path has type <code class="language-plaintext highlighter-rouge">NUMBER</code> and expected <code class="language-plaintext highlighter-rouge">PRESCRIPTION (52)</code> from ref. profile</li>
 </ol>
 
 <h4 id="medicationdispense-refill">MedicationDispense: Refill</h4>
 <ol>
-  <li>1553 reference source path has type <code class="language-plaintext highlighter-rouge">NUMBER</code> and expected <code class="language-plaintext highlighter-rouge">PRESCRIPTION (52)</code> from profile</li>
+  <li>1553 reference source path has type <code class="language-plaintext highlighter-rouge">NUMBER</code> and expected <code class="language-plaintext highlighter-rouge">PRESCRIPTION (52)</code> from ref. profile</li>
   <li>check maps to <code class="language-plaintext highlighter-rouge">MedicationDispense.destination</code> in MedicationDispense; maps=2 max=1</li>
   <li>check maps to <code class="language-plaintext highlighter-rouge">MedicationDispense.status</code> in MedicationDispense; maps=3 max=1</li>
 </ol>
 
 <h4 id="medicationdispense-partial">MedicationDispense: Partial</h4>
 <ol>
-  <li>1565 reference source path has type <code class="language-plaintext highlighter-rouge">NUMBER</code> and expected <code class="language-plaintext highlighter-rouge">PRESCRIPTION (52)</code> from profile</li>
+  <li>1565 reference source path has type <code class="language-plaintext highlighter-rouge">NUMBER</code> and expected <code class="language-plaintext highlighter-rouge">PRESCRIPTION (52)</code> from ref. profile</li>
   <li>check maps to <code class="language-plaintext highlighter-rouge">MedicationDispense.destination</code> in MedicationDispense; maps=2 max=1</li>
   <li>check maps to <code class="language-plaintext highlighter-rouge">MedicationDispense.status</code> in MedicationDispense; maps=2 max=1</li>
 </ol>
@@ -721,8 +706,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li>missing must-support <code class="language-plaintext highlighter-rouge">PractitionerRole.notAvailable</code> from <a href="http://hl7.org/fhir/us/davinci-pdex-plan-net/STU1.1/StructureDefinition-plannet-PractitionerRole.html">Plan-Net PractitionerRole (1.1.0)</a></li>
   <li>missing must-support <code class="language-plaintext highlighter-rouge">PractitionerRole.notAvailable.description</code> from <a href="http://hl7.org/fhir/us/davinci-pdex-plan-net/STU1.1/StructureDefinition-plannet-PractitionerRole.html">Plan-Net PractitionerRole (1.1.0)</a></li>
   <li>missing must-support <code class="language-plaintext highlighter-rouge">PractitionerRole.notAvailable.during</code> from <a href="http://hl7.org/fhir/us/davinci-pdex-plan-net/STU1.1/StructureDefinition-plannet-PractitionerRole.html">Plan-Net PractitionerRole (1.1.0)</a></li>
-  <li>414 reference source path has type <code class="language-plaintext highlighter-rouge">FREE TEXT</code> and expected <code class="language-plaintext highlighter-rouge">NEW PERSON (200)</code> from profile</li>
-  <li>1411 reference source path has type <code class="language-plaintext highlighter-rouge">POINTER Multiple #200.02</code> and expected <code class="language-plaintext highlighter-rouge">INSTITUTION (4)</code> from profile</li>
+  <li>414 reference source path has type <code class="language-plaintext highlighter-rouge">FREE TEXT</code> and expected <code class="language-plaintext highlighter-rouge">NEW PERSON (200)</code> from ref. profile</li>
+  <li>1411 reference source path has type <code class="language-plaintext highlighter-rouge">POINTER Multiple #200.02</code> and expected <code class="language-plaintext highlighter-rouge">INSTITUTION (4)</code> from ref. profile</li>
   <li>check maps to <code class="language-plaintext highlighter-rouge">PractitionerRole.active</code> in PractitionerRole; maps=2 max=1</li>
   <li>422 expected only vistaFile <code class="language-plaintext highlighter-rouge">200</code> but got <code class="language-plaintext highlighter-rouge">44</code></li>
 </ol>
@@ -778,7 +763,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li>missing must-support <code class="language-plaintext highlighter-rouge">Observation.category.coding.code</code> from <a href="http://hl7.org/fhir/us/core/STU5.0.1/StructureDefinition-us-core-vital-signs.html">US Core Vital Signs Profile (5.0.1)</a></li>
   <li>missing must-support <code class="language-plaintext highlighter-rouge">Observation.dataAbsentReason</code> from <a href="http://hl7.org/fhir/us/core/STU5.0.1/StructureDefinition-us-core-vital-signs.html">US Core Vital Signs Profile (5.0.1)</a></li>
   <li>missing must-support <code class="language-plaintext highlighter-rouge">Observation.component.dataAbsentReason</code> from <a href="http://hl7.org/fhir/us/core/STU5.0.1/StructureDefinition-us-core-vital-signs.html">US Core Vital Signs Profile (5.0.1)</a></li>
-  <li>1653 reference source path has type <code class="language-plaintext highlighter-rouge">POINTER TO HOSPITAL LOCATION FILE (#44)</code> and expected <code class="language-plaintext highlighter-rouge">INSTITUTION (4)</code> from profile</li>
+  <li>1653 reference source path has type <code class="language-plaintext highlighter-rouge">POINTER TO HOSPITAL LOCATION FILE (#44)</code> and expected <code class="language-plaintext highlighter-rouge">INSTITUTION (4)</code> from ref. profile</li>
   <li><del><em>check maps to <code class="language-plaintext highlighter-rouge">Observation.status</code> in Observation; maps=2 max=1</em></del> mapCases are mutualy exclusive</li>
 </ol>
 
@@ -789,7 +774,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li>missing must-support <code class="language-plaintext highlighter-rouge">Observation.category.coding.code</code> from <a href="http://hl7.org/fhir/us/core/STU5.0.1/StructureDefinition-us-core-blood-pressure.html">US Core Blood Pressure Profile (5.0.1)</a></li>
   <li>missing must-support <code class="language-plaintext highlighter-rouge">Observation.dataAbsentReason</code> from <a href="http://hl7.org/fhir/us/core/STU5.0.1/StructureDefinition-us-core-blood-pressure.html">US Core Blood Pressure Profile (5.0.1)</a></li>
   <li>missing must-support <code class="language-plaintext highlighter-rouge">Observation.component.dataAbsentReason</code> from <a href="http://hl7.org/fhir/us/core/STU5.0.1/StructureDefinition-us-core-blood-pressure.html">US Core Blood Pressure Profile (5.0.1)</a></li>
-  <li>1653 reference source path has type <code class="language-plaintext highlighter-rouge">POINTER TO HOSPITAL LOCATION FILE (#44)</code> and expected <code class="language-plaintext highlighter-rouge">INSTITUTION (4)</code> from profile</li>
+  <li>1653 reference source path has type <code class="language-plaintext highlighter-rouge">POINTER TO HOSPITAL LOCATION FILE (#44)</code> and expected <code class="language-plaintext highlighter-rouge">INSTITUTION (4)</code> from ref. profile</li>
   <li><del><em>check maps to <code class="language-plaintext highlighter-rouge">Observation.status</code> in Observation; maps=2 max=1</em></del> mapCases are mutualy exclusive</li>
 </ol>
 
@@ -800,7 +785,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li>missing must-support <code class="language-plaintext highlighter-rouge">Observation.category.coding.code</code> from <a href="http://hl7.org/fhir/us/core/STU5.0.1/StructureDefinition-us-core-pulse-oximetry.html">US Core Pulse Oximetry Profile (5.0.1)</a></li>
   <li>missing must-support <code class="language-plaintext highlighter-rouge">Observation.dataAbsentReason</code> from <a href="http://hl7.org/fhir/us/core/STU5.0.1/StructureDefinition-us-core-pulse-oximetry.html">US Core Pulse Oximetry Profile (5.0.1)</a></li>
   <li>missing must-support <code class="language-plaintext highlighter-rouge">Observation.component.dataAbsentReason</code> from <a href="http://hl7.org/fhir/us/core/STU5.0.1/StructureDefinition-us-core-pulse-oximetry.html">US Core Pulse Oximetry Profile (5.0.1)</a></li>
-  <li>1653 reference source path has type <code class="language-plaintext highlighter-rouge">POINTER TO HOSPITAL LOCATION FILE (#44)</code> and expected <code class="language-plaintext highlighter-rouge">INSTITUTION (4)</code> from profile</li>
+  <li>1653 reference source path has type <code class="language-plaintext highlighter-rouge">POINTER TO HOSPITAL LOCATION FILE (#44)</code> and expected <code class="language-plaintext highlighter-rouge">INSTITUTION (4)</code> from ref. profile</li>
   <li><del><em>check maps to <code class="language-plaintext highlighter-rouge">Observation.status</code> in Observation; maps=2 max=1</em></del> mapCases are mutualy exclusive</li>
 </ol>
 
@@ -814,7 +799,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h4 id="observation-imaging-result-radnuc">Observation Imaging Result: Rad/Nuc</h4>
 <ol>
-  <li>1620 reference source path has type <code class="language-plaintext highlighter-rouge">Multiple #70.03</code> and expected <code class="language-plaintext highlighter-rouge">SURGERY (130)</code> from profile</li>
+  <li>1620 reference source path has type <code class="language-plaintext highlighter-rouge">Multiple #70.03</code> and expected <code class="language-plaintext highlighter-rouge">SURGERY (130)</code> from ref. profile</li>
   <li>1620 expected only vistaFile <code class="language-plaintext highlighter-rouge">74</code> but got <code class="language-plaintext highlighter-rouge">70.02</code></li>
 </ol>
 
@@ -831,25 +816,16 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><del><em>2010 vistaFileFieldName expected ' - ' and fieldname</em></del> reverse pointer w/ mapCase</li>
   <li><del><em>2011 vistaFileFieldName expected ' - ' and fieldname</em></del> reverse pointer w/ mapCase</li>
   <li><del><em>2012 vistaFileFieldName expected ' - ' and fieldname</em></del> reverse pointer w/ mapCase</li>
-  <li>1818 reference source path has type <code class="language-plaintext highlighter-rouge">VARIABLE POINTER</code> and expected <code class="language-plaintext highlighter-rouge">ACCOUNTS RECEIVABLE (430)</code> from profile</li>
-  <li><del><em>2008 expected only vistaFile <code class="language-plaintext highlighter-rouge">350</code> but got <code class="language-plaintext highlighter-rouge">360</code></em></del> reverse pointer w/ mapCase</li>
-  <li><del><em>2009 expected only vistaFile <code class="language-plaintext highlighter-rouge">350</code> but got <code class="language-plaintext highlighter-rouge">360</code></em></del> reverse pointer w/ mapCase</li>
-  <li><del><em>2010 expected only vistaFile <code class="language-plaintext highlighter-rouge">350</code> but got <code class="language-plaintext highlighter-rouge">52</code></em></del> reverse pointer w/ mapCase</li>
-  <li><del><em>2011 expected only vistaFile <code class="language-plaintext highlighter-rouge">350</code> but got <code class="language-plaintext highlighter-rouge">52</code></em></del> reverse pointer w/ mapCase</li>
-  <li><del><em>2012 expected only vistaFile <code class="language-plaintext highlighter-rouge">350</code> but got <code class="language-plaintext highlighter-rouge">52</code></em></del> reverse pointer w/ mapCase</li>
-  <li>2032 reference source path has type <code class="language-plaintext highlighter-rouge">POINTER TO AR DEBTOR FILE (#340)</code> and expected <code class="language-plaintext highlighter-rouge">ACCOUNTS RECEIVABLE (430)</code> from profile</li>
+  <li>1818 reference source path has type <code class="language-plaintext highlighter-rouge">VARIABLE POINTER</code> and expected <code class="language-plaintext highlighter-rouge">ACCOUNTS RECEIVABLE (430)</code> from ref. profile</li>
+  <li>2032 reference source path has type <code class="language-plaintext highlighter-rouge">POINTER TO AR DEBTOR FILE (#340)</code> and expected <code class="language-plaintext highlighter-rouge">ACCOUNTS RECEIVABLE (430)</code> from ref. profile</li>
   <li><del><em>check maps to <code class="language-plaintext highlighter-rouge">ChargeItem.context</code> in ChargeItem[charges]; maps=2 max=1</em></del> mapCases are mutualy exclusive</li>
   <li>1840 expected only vistaFile <code class="language-plaintext highlighter-rouge">430</code> but got <code class="language-plaintext highlighter-rouge">350</code></li>
-  <li><del><em>1999 expected only vistaFile <code class="language-plaintext highlighter-rouge">430</code> but got <code class="language-plaintext highlighter-rouge">433</code></em></del> reverse pointer w/ mapCase</li>
-  <li><del><em>2000 expected only vistaFile <code class="language-plaintext highlighter-rouge">430</code> but got <code class="language-plaintext highlighter-rouge">433</code></em></del> reverse pointer w/ mapCase</li>
-  <li><del><em>2001 expected only vistaFile <code class="language-plaintext highlighter-rouge">430</code> but got <code class="language-plaintext highlighter-rouge">433</code></em></del> reverse pointer w/ mapCase</li>
-  <li><del><em>2002 expected only vistaFile <code class="language-plaintext highlighter-rouge">430</code> but got <code class="language-plaintext highlighter-rouge">433</code></em></del> reverse pointer w/ mapCase</li>
 </ol>
 
 <h4 id="medrefillrequestmhv">MedRefillRequestMHV</h4>
 <ol>
-  <li>1845 reference source path has type <code class="language-plaintext highlighter-rouge">FREE TEXT</code> and expected <code class="language-plaintext highlighter-rouge">PRESCRIPTION (52)</code> from profile</li>
-  <li>1846 reference source path has type <code class="language-plaintext highlighter-rouge">FREE TEXT</code> and expected <code class="language-plaintext highlighter-rouge">INSTITUTION (4)</code> from profile</li>
+  <li>1845 reference source path has type <code class="language-plaintext highlighter-rouge">FREE TEXT</code> and expected <code class="language-plaintext highlighter-rouge">PRESCRIPTION (52)</code> from ref. profile</li>
+  <li>1846 reference source path has type <code class="language-plaintext highlighter-rouge">FREE TEXT</code> and expected <code class="language-plaintext highlighter-rouge">INSTITUTION (4)</code> from ref. profile</li>
   <li>check maps to <code class="language-plaintext highlighter-rouge">Task.code</code> in Task; maps=2 max=1</li>
 </ol>
 
@@ -927,7 +903,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025 <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#1.5.30 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Sun, May 25, 2025 09:24+0000">2025-05-25</span>
+          IG &#169; 2025 <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#1.6.49 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Jun 13, 2025 16:12+0000">2025-06-13</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

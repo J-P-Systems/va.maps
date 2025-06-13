@@ -7,7 +7,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>MedicationDispense: Original - Mappings - US Veterans Health Administration FHIR Map Set Implementation Guide v1.5.30</title>
+    <title>MedicationDispense: Original - Mappings - US Veterans Health Administration FHIR Map Set Implementation Guide v1.6.49</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -65,7 +65,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">US Veterans Health Administration FHIR Map Set Implementation Guide</span>
             <br/>
-            <span style="display:inline-block;">1.5.30 - 250601
+            <span style="display:inline-block;">1.6.49 - 250701
 
 
 
@@ -264,7 +264,7 @@
         
           Active
           
-            as of 2025-05-25
+            as of 2025-06-13
           
         
       </td>
@@ -297,6 +297,7 @@
   <thead>
     <tr>
       <th>FHIR Path</th>
+      <th>VistA</th>
       <th>CDW</th>
       <th>SDA</th>
       <th>VPR</th>
@@ -305,102 +306,119 @@
   <tbody>
     <tr>
       <td>MedicationDispense.authorizingPrescription</td>
+      <td>52-39.3</td>
       <td>RxOut.RxOutpat.CPRSOrderEntryNumber</td>
       <td>Medication.ExternalId<br />Medication.PlacerId</td>
       <td> </td>
     </tr>
     <tr>
       <td>MedicationDispense.daysSupply</td>
+      <td>52-8</td>
       <td> </td>
       <td>Medication.DaysSupply</td>
       <td>med.daysSupply<br />pharmacy (med).daysSupply</td>
     </tr>
     <tr>
       <td>MedicationDispense.destination.display</td>
+      <td>52-11</td>
       <td> </td>
       <td> </td>
       <td> </td>
     </tr>
     <tr>
       <td>MedicationDispense.dosageInstruction.doseAndRate.doseQuantity.unit</td>
+      <td>52.0113-2</td>
       <td>RxOut.RxOutpatMedInstructions.Unit</td>
-      <td>Medication.DosageSteps<br />Medication.Route<br />Medication.DoseQuantity<br />Medication.DoseUoM<br />Medication.Duration<br />Medication.Frequency<br />Medication.TextInstruction<br />Medication.Conjunction<br />Medication.Noun<br />Medication.UnitsPerDose<br />Medication.Verb</td>
+      <td> </td>
       <td>med.dose [m]<br />pharmacy (med).dose [m]</td>
     </tr>
     <tr>
       <td>MedicationDispense.dosageInstruction.doseAndRate.doseQuantity.code</td>
+      <td>52.0113-2</td>
       <td>RxOut.RxOutpatMedInstructions.Unit</td>
-      <td>Medication.DosageSteps<br />Medication.Route<br />Medication.DoseQuantity<br />Medication.DoseUoM<br />Medication.Duration<br />Medication.Frequency<br />Medication.TextInstruction<br />Medication.Conjunction<br />Medication.Noun<br />Medication.UnitsPerDose<br />Medication.Verb</td>
+      <td> </td>
       <td>med.dose [m]<br />pharmacy (med).dose [m]</td>
     </tr>
     <tr>
       <td>MedicationDispense.dosageInstruction.doseAndRate.doseQuantity.value</td>
+      <td>52.0113-.01</td>
       <td>RxOut.RxOutpatMedInstructions.DoseOrdered</td>
-      <td>Medication.DosageSteps<br />Medication.Route<br />Medication.DoseQuantity<br />Medication.DoseUoM<br />Medication.Duration<br />Medication.Frequency<br />Medication.TextInstruction<br />Medication.Conjunction<br />Medication.Noun<br />Medication.UnitsPerDose<br />Medication.Verb</td>
+      <td> </td>
       <td>med.dose [m]<br />pharmacy (med).dose [m]</td>
     </tr>
     <tr>
       <td>MedicationDispense.dosageInstruction.patientInstruction</td>
+      <td>52-114</td>
       <td>RxOut.RxOutpatSig.PatientInstructions</td>
       <td>Medication.TextInstruction</td>
       <td> </td>
     </tr>
     <tr>
       <td>MedicationDispense.dosageInstruction.text</td>
+      <td>52-10</td>
       <td> </td>
       <td> </td>
       <td> </td>
     </tr>
     <tr>
       <td>MedicationDispense.medicationCodeableConcept.coding.code</td>
-      <td>RxOut.RxOutpat.LocalDrugIEN<br />RxOut.RxOutpat.NationalDrugIEN<br />RxOut.RxOutpatFill.LocalDrugIEN<br />RxOut.RxOutpatFill.NationalDrugIEN<br />Dim.LocalDrug.DrugNameWithoutDoseIEN<br />Dim.LocalDrug.NationalDrugIEN<br />Dim.LocalDrug.NationalDrugIEN</td>
-      <td>Medication.DrugProduct<br />Medication.CMOP<br />Medication.DrugProduct.Identifier2<br />Medication.DrugProduct.ProductName<br />Medication.Extension[DrugProductExtension].FederalSchedule</td>
+      <td>50-22</td>
+      <td>Dim.LocalDrug.DrugNameWithoutDoseIEN<br />Dim.LocalDrug.NationalDrugIEN<br />Dim.LocalDrug.NationalDrugIEN</td>
+      <td>Medication.DrugProduct.Identifier2<br />Medication.DrugProduct.ProductName<br />Medication.Extension[DrugProductExtension].FederalSchedule</td>
       <td>med.route (&gt;51.2-1)<br />pharmacy (med).route (&gt;51.2-1)</td>
     </tr>
     <tr>
       <td>MedicationDispense.medicationCodeableConcept.text</td>
-      <td>RxOut.RxOutpat.LocalDrugIEN<br />RxOut.RxOutpat.NationalDrugIEN<br />RxOut.RxOutpatFill.LocalDrugIEN<br />RxOut.RxOutpatFill.NationalDrugIEN<br />Dim.LocalDrug.LocalDrugNameWithDose<br />Dim.LocalDrug.LocalDrugNameWithDose<br />RxOut.RxOutpatFill.LocalDrugNameWithDose</td>
-      <td>Medication.DrugProduct<br />Medication.CMOP<br />Medication.ComponentMeds[DrugProduct].Description<br />Medication.ComponentMeds[DrugProduct].OriginalText<br />Medication.DrugProduct.Description<br />Medication.DrugProduct.OriginalText<br />Medication.ATCCode.Code<br />Medication.Generic.Description<br />Medication.Route.Description<br />Medication.OrderCategory.Description<br />Medication.OriginalText<br />Medication.OriginalText</td>
+      <td>50-.01</td>
+      <td>Dim.LocalDrug.LocalDrugNameWithDose<br />Dim.LocalDrug.LocalDrugNameWithDose<br />RxOut.RxOutpatFill.LocalDrugNameWithDose</td>
+      <td>Medication.ComponentMeds[DrugProduct].Description<br />Medication.ComponentMeds[DrugProduct].OriginalText<br />Medication.DrugProduct.Description<br />Medication.DrugProduct.OriginalText<br />Medication.ATCCode.Code<br />Medication.Generic.Description<br />Medication.Route.Description<br />Medication.OrderCategory.Description<br />Medication.OriginalText<br />Medication.OriginalText</td>
       <td>med.route (&gt;51.2-1)<br />pharmacy (med).route (&gt;51.2-1)</td>
     </tr>
     <tr>
       <td>MedicationDispense.quantity.value</td>
+      <td>52-7</td>
       <td> </td>
       <td>Medication.OrderQuantity</td>
       <td>med.schedule<br />pharmacy (med).schedule</td>
     </tr>
     <tr>
       <td>MedicationDispense.status</td>
+      <td>52-31</td>
       <td> </td>
       <td> </td>
       <td> </td>
     </tr>
     <tr>
       <td>MedicationDispense.subject</td>
+      <td>52-2</td>
       <td>RxOut.ActivityLog.PatientIEN<br />RxOut.ActivityLogOtherComments.PatientIEN<br />RxOut.RxOutpat.PatientIEN<br />RxOut.RxOutpatExt.PatientIEN<br />RxOut.RxOutpatExt.PatientSID<br />RxOut.RxOutpatFill.PatientIEN<br />RxOut.RxOutpatMedInstructions.PatientIEN<br />RxOut.RxOutpatSig.PatientIEN</td>
       <td> </td>
       <td>med.units (&gt;50.607-.01)<br />pharmacy (med).units (&gt;50.607-.01)</td>
     </tr>
     <tr>
       <td>MedicationDispense.whenPrepared</td>
+      <td>52-31</td>
       <td> </td>
       <td> </td>
       <td> </td>
     </tr>
     <tr>
       <td>MedicationDispense.location</td>
+      <td>59-10</td>
       <td> </td>
-      <td>Medication.OutpatientSite</td>
+      <td> </td>
       <td> </td>
     </tr>
     <tr>
       <td>MedicationDispense.note.text</td>
+      <td>52-12</td>
       <td> </td>
       <td>Medication.Remarks</td>
       <td> </td>
     </tr>
     <tr>
       <td>MedicationDispense.performer.actor</td>
+      <td>52-23</td>
       <td> </td>
       <td> </td>
       <td> </td>
@@ -1118,7 +1136,7 @@ pharmacy (med).dose [m]</td> </tr>
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025 <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#1.5.30 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Sun, May 25, 2025 09:24+0000">2025-05-25</span>
+          IG &#169; 2025 <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#1.6.49 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Jun 13, 2025 16:12+0000">2025-06-13</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

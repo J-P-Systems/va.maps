@@ -7,7 +7,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Encounter: Outpatient - Mappings - US Veterans Health Administration FHIR Map Set Implementation Guide v1.5.30</title>
+    <title>Encounter: Outpatient - Mappings - US Veterans Health Administration FHIR Map Set Implementation Guide v1.6.49</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -65,7 +65,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">US Veterans Health Administration FHIR Map Set Implementation Guide</span>
             <br/>
-            <span style="display:inline-block;">1.5.30 - 250601
+            <span style="display:inline-block;">1.6.49 - 250701
 
 
 
@@ -264,7 +264,7 @@
         
           Draft
           
-            as of 2025-05-25
+            as of 2025-06-13
           
         
       </td>
@@ -297,6 +297,7 @@
   <thead>
     <tr>
       <th>FHIR Path</th>
+      <th>VistA</th>
       <th>CDW</th>
       <th>SDA</th>
       <th>VPR</th>
@@ -305,116 +306,135 @@
   <tbody>
     <tr>
       <td>Encounter.identifier.value</td>
+      <td>9000010-15001</td>
       <td>Outpat.Visit.VisitIdentifier<br />Outpat.Workload.VisitIdentifier</td>
       <td>Encounter.Extension[EncounterExtension].VisitID<br />Encounter.Extension[EncounterExtension].VisitID</td>
       <td> </td>
     </tr>
     <tr>
       <td>Encounter.status</td>
+      <td>9000010-.18</td>
       <td>Outpat.Visit.CheckOutDateTime<br />Outpat.Workload.CheckOutDateTime</td>
       <td>Encounter.ToTime</td>
       <td> </td>
     </tr>
     <tr>
       <td>Encounter.extension[http://va.gov/fhir/StructureDefinition/resource-serviceConnection].valueCoding</td>
-      <td>Outpat.Visit.AppointmentTypeIEN<br />Outpat.Workload.AppointmentTypeIEN<br />Dim.AppointmentType.AppointmentType</td>
+      <td>409.1-.01</td>
+      <td>Dim.AppointmentType.AppointmentType</td>
       <td> </td>
       <td> </td>
     </tr>
     <tr>
       <td>Encounter.serviceType.coding.code</td>
+      <td>9000010-.07</td>
       <td>Outpat.Visit.ServiceCategory<br />Outpat.Workload.ServiceCategory</td>
       <td>Encounter.EncounterCodedType<br />Encounter.ExternalId<br />Encounter.ToTime</td>
       <td>visit.serviceCategory<br />visit.visitString</td>
     </tr>
     <tr>
       <td>Encounter.subject</td>
-      <td>Outpat.Visit.PatientIEN<br />Outpat.Workload.PatientIEN</td>
-      <td>Encounter.EncounterMRN</td>
+      <td>9000001-.01</td>
+      <td> </td>
+      <td> </td>
       <td> </td>
     </tr>
     <tr>
       <td>Encounter.period.start</td>
+      <td>9000010-.01</td>
       <td>Immun.ImmunizationContraRefusalEvent.VisitDateTime<br />Outpat.Visit.VisitDateTime<br />Outpat.VisitLogic.VisitDateTime<br />Outpat.Workload.VisitDateTime</td>
       <td>Encounter.ConsultingClinician[CareProvider].Description<br />Encounter.ConsultingClinician[CareProvider].Name</td>
       <td>visit.dateTime<br />visit.visitString</td>
     </tr>
     <tr>
       <td>Encounter.period.end</td>
+      <td>9000010-.18</td>
       <td>Outpat.Visit.CheckOutDateTime<br />Outpat.Workload.CheckOutDateTime</td>
       <td>Encounter.ToTime</td>
       <td> </td>
     </tr>
     <tr>
       <td>Encounter.reasonCode.coding.code</td>
-      <td>Outpat.VDiagnosis.ICDIEN<br />Outpat.WorkloadVDiagnosis.ICDIEN<br />Dim.ICD10.ICD10Code<br />Dim.ICD9.ICD9Code</td>
-      <td>Diagnosis.Diagnosis<br />Diagnosis.Diagnosis[CodeTableDetail.Diagnosis].Code</td>
+      <td>80-.01</td>
+      <td>Dim.ICD10.ICD10Code<br />Dim.ICD9.ICD9Code</td>
+      <td> </td>
       <td>visit.icd [m] (&gt;80-.01)<br />visit.icd [m] (&gt;80-1.1)<br />visit.icd [m] (&gt;80-10)<br />visit.reason (&gt;80-.01)<br />visit.reason (&gt;80-1.1)<br />visit.reason (&gt;80-10)</td>
     </tr>
     <tr>
       <td>Encounter.diagnosis.condition</td>
+      <td>9000010.07-.16</td>
       <td>Outpat.VDiagnosis.ProblemListIEN<br />Outpat.WorkloadVDiagnosis.ProblemListIEN</td>
       <td>Diagnosis.Extension[DiagnosisExtension].ProblemId</td>
       <td> </td>
     </tr>
     <tr>
       <td>Encounter.location[va-stop].location</td>
+      <td>9000010-.08</td>
       <td>Outpat.Visit.PrimaryStopCodeIEN<br />Outpat.Visit.SecondaryStopCodeIEN<br />Outpat.Workload.PrimaryStopCodeIEN<br />Outpat.Workload.SecondaryStopCodeIEN</td>
       <td>Encounter.Extension[EncounterExtension].StopCode</td>
       <td>visit.stopCode (&gt;40.7-.01)</td>
     </tr>
     <tr>
       <td>Encounter.location[va-loc].location</td>
+      <td>9000010-.22</td>
       <td>Outpat.Visit.LocationIEN<br />Outpat.Workload.LocationIEN</td>
       <td>Encounter.ExternalId<br />Encounter.HealthCareFacility</td>
       <td>visit.creditStopCode (&gt;44-2503)<br />visit.location (&gt;44-.01)<br />visit.visitString</td>
     </tr>
     <tr>
       <td>Encounter.class</td>
+      <td>9000010-15002</td>
       <td>Outpat.Visit.PatientStatusInOut<br />Outpat.Workload.PatientStatusInOut</td>
       <td> </td>
       <td>visit.patientClass</td>
     </tr>
     <tr>
       <td>Encounter.serviceProvider</td>
-      <td>Outpat.Visit.InstitutionIEN<br />Outpat.Workload.InstitutionIEN</td>
-      <td>Encounter.EncounterMRNAA<br />Encounter.EncounterNumberAssigningAuthority<br />Encounter.EnteredAt</td>
+      <td>9999999.06-.01</td>
+      <td> </td>
+      <td> </td>
       <td>visit.facility (&gt;4-.01)<br />visit.facility (&gt;4-99)</td>
     </tr>
     <tr>
       <td>Encounter.participant.individual</td>
-      <td>Outpat.VProvider.ProviderIEN<br />Outpat.WorkloadVProvider.ProviderIEN</td>
-      <td>Encounter.ConsultingClinicians</td>
+      <td>200-</td>
+      <td> </td>
+      <td> </td>
       <td>visit.provider [m] (&gt;200-.01)<br />visit.provider [m] (&gt;200-8932.1)</td>
     </tr>
     <tr>
       <td>Encounter.participant.type</td>
+      <td>9000010.06-.04</td>
       <td>Outpat.VProvider.PrimarySecondary<br />Outpat.WorkloadVProvider.PrimarySecondary</td>
       <td> </td>
       <td>visit.provider [m]</td>
     </tr>
     <tr>
       <td>Encounter.type</td>
-      <td>Outpat.VProcedure.CPTIEN<br />Outpat.VProcedureCPTModifier.CPTIEN<br />Outpat.VProcedureDiagnosis.CPTIEN<br />Outpat.WorkloadVProcedure.CPTIEN<br />Outpat.WorkloadVProcedureCPTModifier.CPTIEN<br />Outpat.WorkloadVProcedureDiagnosis.CPTIEN</td>
-      <td>Encounter.Extension[EncounterExtension].Cpt<br />Encounter.Extension[EncounterExtension].Cpt<br />Procedure.Procedure<br />Procedure.Procedure[CodeTableDetail.Procedure].Code</td>
+      <td>81-</td>
+      <td> </td>
+      <td> </td>
       <td>visit.cpt [m] (&gt;81-.01)<br />visit.cpt [m] (&gt;81-2)<br />visit.type (&gt;81-.01)<br />visit.type (&gt;81-2)</td>
     </tr>
     <tr>
       <td>Encounter.type.coding.code</td>
-      <td>Outpat.VProcedure.CPTIEN<br />Outpat.VProcedureCPTModifier.CPTIEN<br />Outpat.VProcedureDiagnosis.CPTIEN<br />Outpat.WorkloadVProcedure.CPTIEN<br />Outpat.WorkloadVProcedureCPTModifier.CPTIEN<br />Outpat.WorkloadVProcedureDiagnosis.CPTIEN<br />Dim.CPT.CPTCode<br />Dim.CPT.CPTCode</td>
-      <td>Encounter.Extension[EncounterExtension].Cpt<br />Encounter.Extension[EncounterExtension].Cpt<br />Procedure.Procedure<br />Procedure.Procedure[CodeTableDetail.Procedure].Code</td>
+      <td>81-.01</td>
+      <td>Dim.CPT.CPTCode<br />Dim.CPT.CPTCode</td>
+      <td> </td>
       <td>visit.cpt [m] (&gt;81-.01)<br />visit.cpt [m] (&gt;81-2)<br />visit.type (&gt;81-.01)<br />visit.type (&gt;81-2)</td>
     </tr>
     <tr>
       <td>Encounter.type.coding.display</td>
-      <td>Outpat.VProcedure.CPTIEN<br />Outpat.VProcedureCPTModifier.CPTIEN<br />Outpat.VProcedureDiagnosis.CPTIEN<br />Outpat.WorkloadVProcedure.CPTIEN<br />Outpat.WorkloadVProcedureCPTModifier.CPTIEN<br />Outpat.WorkloadVProcedureDiagnosis.CPTIEN<br />Dim.CPT.CPTName<br />Dim.CPT.CPTName</td>
-      <td>Encounter.Extension[EncounterExtension].Cpt<br />Encounter.Extension[EncounterExtension].Cpt<br />Procedure.Procedure<br />Procedure.Procedure[CodeTableDetail.Procedure].Code</td>
+      <td>81-2</td>
+      <td>Dim.CPT.CPTName<br />Dim.CPT.CPTName</td>
+      <td> </td>
       <td>visit.cpt [m] (&gt;81-.01)<br />visit.cpt [m] (&gt;81-2)<br />visit.type (&gt;81-.01)<br />visit.type (&gt;81-2)</td>
     </tr>
     <tr>
       <td>Encounter.type.text</td>
-      <td>Outpat.VProcedure.CPTIEN<br />Outpat.VProcedureCPTModifier.CPTIEN<br />Outpat.VProcedureDiagnosis.CPTIEN<br />Outpat.WorkloadVProcedure.CPTIEN<br />Outpat.WorkloadVProcedureCPTModifier.CPTIEN<br />Outpat.WorkloadVProcedureDiagnosis.CPTIEN<br />Dim.CPT.CPTName<br />Dim.CPT.CPTName</td>
-      <td>Encounter.Extension[EncounterExtension].Cpt<br />Encounter.Extension[EncounterExtension].Cpt<br />Procedure.Procedure<br />Procedure.Procedure[CodeTableDetail.Procedure].Code</td>
+      <td>81-2</td>
+      <td>Dim.CPT.CPTName<br />Dim.CPT.CPTName</td>
+      <td> </td>
       <td>visit.cpt [m] (&gt;81-.01)<br />visit.cpt [m] (&gt;81-2)<br />visit.type (&gt;81-.01)<br />visit.type (&gt;81-2)</td>
     </tr>
   </tbody>
@@ -1304,7 +1324,7 @@ visit.facility (&gt;4-99)</td> </tr>
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025 <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#1.5.30 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Sun, May 25, 2025 09:24+0000">2025-05-25</span>
+          IG &#169; 2025 <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#1.6.49 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Jun 13, 2025 16:12+0000">2025-06-13</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

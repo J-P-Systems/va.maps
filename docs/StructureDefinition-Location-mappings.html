@@ -7,7 +7,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Location - Mappings - US Veterans Health Administration FHIR Map Set Implementation Guide v1.5.30</title>
+    <title>Location - Mappings - US Veterans Health Administration FHIR Map Set Implementation Guide v1.6.49</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -65,7 +65,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">US Veterans Health Administration FHIR Map Set Implementation Guide</span>
             <br/>
-            <span style="display:inline-block;">1.5.30 - 250601
+            <span style="display:inline-block;">1.6.49 - 250701
 
 
 
@@ -264,7 +264,7 @@
         
           Active
           
-            as of 2025-05-25
+            as of 2025-06-13
           
         
       </td>
@@ -297,6 +297,7 @@
   <thead>
     <tr>
       <th>FHIR Path</th>
+      <th>VistA</th>
       <th>CDW</th>
       <th>SDA</th>
       <th>VPR</th>
@@ -305,96 +306,112 @@
   <tbody>
     <tr>
       <td>Location.identifier.value</td>
+      <td>44-.001</td>
       <td> </td>
       <td> </td>
       <td> </td>
     </tr>
     <tr>
       <td>Location.name</td>
+      <td>44-.01</td>
       <td>Dim.Location.LocationName<br />Dim.Location.LocationName</td>
       <td> </td>
       <td> </td>
     </tr>
     <tr>
       <td>Location.alias</td>
+      <td>44-13</td>
       <td> </td>
       <td> </td>
       <td> </td>
     </tr>
     <tr>
       <td>Location.description</td>
+      <td>44-60</td>
       <td>Dim.Location.PatientFriendlyLocationName<br />Dim.Location.PatientFriendlyLocationName</td>
       <td> </td>
       <td> </td>
     </tr>
     <tr>
       <td>Location.telecom.value</td>
+      <td>44-99</td>
       <td>Dim.Location.PhoneNumber<br />Dim.Location.PhoneNumber</td>
       <td> </td>
       <td> </td>
     </tr>
     <tr>
       <td>Location.physicalType.text</td>
+      <td>44-10</td>
       <td>Dim.Location.PhysicalLocation<br />Dim.Location.PhysicalLocation</td>
       <td> </td>
       <td> </td>
     </tr>
     <tr>
       <td>Location.address.state</td>
-      <td>Dim.Location.InstitutionIEN</td>
+      <td>5-1</td>
+      <td>Dim.State.StateAbbrev<br />Dim.State.StateAbbrev<br />NDim.MVIState.StateAbbrev</td>
       <td> </td>
       <td> </td>
     </tr>
     <tr>
       <td>Location.address.district</td>
-      <td>Dim.Location.InstitutionIEN<br />Dim.Institution.MedicalDistrict<br />Dim.Institution.MedicalDistrict<br />NDim.MVIInstitution.MedicalDistrict</td>
+      <td>4-.03</td>
+      <td>Dim.Institution.MedicalDistrict<br />Dim.Institution.MedicalDistrict<br />NDim.MVIInstitution.MedicalDistrict</td>
       <td> </td>
       <td> </td>
     </tr>
     <tr>
       <td>Location.address.line</td>
-      <td>Dim.Location.InstitutionIEN<br />Dim.Institution.StreetAddress2<br />Dim.Institution.StreetAddress2<br />Dim.InstitutionTimeZone.StreetAddress2<br />NDim.MVIInstitution.StreetAddress2</td>
+      <td>4-1.02</td>
+      <td>Dim.Institution.StreetAddress2<br />Dim.Institution.StreetAddress2<br />Dim.InstitutionTimeZone.StreetAddress2<br />NDim.MVIInstitution.StreetAddress2</td>
       <td> </td>
       <td> </td>
     </tr>
     <tr>
       <td>Location.address.city</td>
-      <td>Dim.Location.InstitutionIEN<br />Dim.Institution.City<br />Dim.Institution.City<br />Dim.InstitutionTimeZone.City<br />NDim.MVIInstitution.City</td>
+      <td>4-1.03</td>
+      <td>Dim.Institution.City<br />Dim.Institution.City<br />Dim.InstitutionTimeZone.City<br />NDim.MVIInstitution.City</td>
       <td> </td>
       <td> </td>
     </tr>
     <tr>
       <td>Location.address.postalCode</td>
-      <td>Dim.Location.InstitutionIEN<br />Dim.Institution.Zip<br />Dim.Institution.Zip<br />Dim.InstitutionTimeZone.Zip<br />NDim.MVIInstitution.Zip</td>
+      <td>4-1.04</td>
+      <td>Dim.Institution.Zip<br />Dim.Institution.Zip<br />Dim.InstitutionTimeZone.Zip<br />NDim.MVIInstitution.Zip</td>
       <td> </td>
       <td> </td>
     </tr>
     <tr>
       <td>Location.address.country</td>
-      <td>Dim.Location.InstitutionIEN</td>
+      <td>779.004-.01</td>
+      <td>Dim.Country.CountryCode<br />NDim.MVICountryCode.CountryCode</td>
       <td> </td>
       <td> </td>
     </tr>
     <tr>
       <td>Location.address.type</td>
+      <td>44-3</td>
       <td>Dim.Location.InstitutionIEN</td>
       <td> </td>
       <td> </td>
     </tr>
     <tr>
       <td>Location.type.coding.code</td>
+      <td>44-9</td>
       <td>Dim.Location.MedicalService<br />Dim.Location.MedicalService</td>
       <td> </td>
       <td> </td>
     </tr>
     <tr>
       <td>Location.type[va-stop-code].coding.code</td>
+      <td>44-8</td>
       <td>Dim.Location.PrimaryStopCodeIEN</td>
       <td> </td>
       <td> </td>
     </tr>
     <tr>
       <td>Location.type[va-credit-code].coding.code</td>
+      <td>44-2503</td>
       <td>Dim.Location.SecondaryStopCodeIEN</td>
       <td> </td>
       <td> </td>
@@ -994,7 +1011,7 @@ Dim.Location.PhysicalLocation</td> </tr>
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025 <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#1.5.30 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Sun, May 25, 2025 09:24+0000">2025-05-25</span>
+          IG &#169; 2025 <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#1.6.49 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Jun 13, 2025 16:12+0000">2025-06-13</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

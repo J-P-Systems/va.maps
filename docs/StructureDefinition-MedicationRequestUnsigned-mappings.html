@@ -7,7 +7,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>MedicationRequest: Unsigned - Mappings - US Veterans Health Administration FHIR Map Set Implementation Guide v1.5.30</title>
+    <title>MedicationRequest: Unsigned - Mappings - US Veterans Health Administration FHIR Map Set Implementation Guide v1.6.49</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -65,7 +65,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">US Veterans Health Administration FHIR Map Set Implementation Guide</span>
             <br/>
-            <span style="display:inline-block;">1.5.30 - 250601
+            <span style="display:inline-block;">1.6.49 - 250701
 
 
 
@@ -264,7 +264,7 @@
         
           Draft
           
-            as of 2025-05-25
+            as of 2025-06-13
           
         
       </td>
@@ -297,6 +297,7 @@
   <thead>
     <tr>
       <th>FHIR Path</th>
+      <th>VistA</th>
       <th>CDW</th>
       <th>SDA</th>
       <th>VPR</th>
@@ -305,48 +306,56 @@
   <tbody>
     <tr>
       <td>MedicationRequest.identifier.value</td>
+      <td>100-.01</td>
       <td> </td>
       <td>RadOrder.OrderItem[Order].Description<br />RadOrder.Extension[ResultExtension].null<br />LabOrder.OrderItem[Order].Description<br />LabOrder.Priority.Description<br />OtherOrder.OrderCategory.Description<br />OtherOrder.OrderItem[Order].Description<br />OtherOrder.OrderStatus[VA.VAStatus].Description<br />OtherOrder.Priority.Description<br />OtherOrder.OrderItem[Order].OriginalText</td>
       <td> </td>
     </tr>
     <tr>
       <td>MedicationRequest.subject</td>
+      <td>100-.02</td>
       <td>CPRSOrder.OrderAction.ObjectOfOrderIEN<br />CPRSOrder.OrderAction.ObjectofOrderLabReferralPatientIEN<br />CPRSOrder.OrderAction.ObjectOfOrderPatientIEN<br />CPRSOrder.OrderAction.ParentFileNumber<br />CPRSOrder.OrderedItem.PatientIEN</td>
       <td>RadOrder.Extension[ResultExtension].null</td>
       <td> </td>
     </tr>
     <tr>
       <td>MedicationRequest.requester</td>
+      <td>100-1</td>
       <td> </td>
       <td> </td>
       <td>med.orderingProvider (&gt;200-.01)<br />pharmacy (med).orderingProvider (&gt;200-.01)</td>
     </tr>
     <tr>
       <td>MedicationRequest.authoredOn</td>
+      <td>100-4</td>
       <td>CPRSOrder.CPRSOrder.EnteredDateTime<br />CPRSOrder.CPRSOrder.EnteredVistaDate<br />CPRSOrder.OrderedItem.EnteredDateTime<br />CPRSOrder.OrderedItem.EnteredVistaDate</td>
       <td>RadOrder.EnteredOn<br />RadOrder.NationalItem[CodeTable].SDACodingStandard<br />RadOrder.Extension[ResultExtension].CaseNumber<br />LabOrder.EnteredOn<br />LabOrder.NationalItem[CodeTable].SDACodingStandard<br />OtherOrder.EnteredOn<br />Medication.EnteredOn</td>
       <td>med.ordered<br />order.entered<br />pharmacy (med).ordered</td>
     </tr>
     <tr>
       <td>MedicationRequest.priorPrescription</td>
+      <td>100-9</td>
       <td> </td>
       <td>RadOrder.Extension[OrderExtension].ReplacedOrder<br />LabOrder.Extension[LabOrderExtension].ReplacedOrder<br />OtherOrder.Extension[OrderExtension].ReplacedOrder<br />Medication.Extension[MedicationExtension].ReplacedOrder</td>
       <td> </td>
     </tr>
     <tr>
       <td>MedicationRequest.dosageInstruction.timing.repeat.boundsPeriod.start</td>
+      <td>100-21</td>
       <td>CPRSOrder.CPRSOrder.OrderStartDateTime<br />CPRSOrder.CPRSOrder.OrderStartVistaDate<br />CPRSOrder.OrderAction.OrderStartDateTime<br />CPRSOrder.OrderedItem.OrderStartDateSID<br />CPRSOrder.OrderedItem.OrderStartDateTime<br />CPRSOrder.OrderedItem.OrderStartVistaDate</td>
       <td>RadOrder.FromTime<br />LabOrder.FromTime<br />LabOrder.SpecimenCollectedTime<br />OtherOrder.FromTime<br />Medication.FromTime</td>
       <td>med.start<br />order.start<br />pharmacy (med).start</td>
     </tr>
     <tr>
       <td>MedicationRequest.dosageInstruction.timing.repeat.boundsPeriod.end</td>
+      <td>100-22</td>
       <td>CPRSOrder.CPRSOrder.OrderStopDateTime<br />CPRSOrder.CPRSOrder.OrderStopVistaDate<br />CPRSOrder.OrderedItem.OrderStopDateSID<br />CPRSOrder.OrderedItem.OrderStopDateTime<br />CPRSOrder.OrderedItem.OrderStopVistaDate</td>
       <td>RadOrder.ToTime<br />LabOrder.ToTime<br />OtherOrder.ToTime<br />Medication.ToTime</td>
       <td>med.stop<br />order.stop<br />pharmacy (med).stop</td>
     </tr>
     <tr>
       <td>MedicationRequest.medicationCodeableConcept</td>
+      <td>100-7</td>
       <td>CPRSOrder.CPRSOrder.ItemOrderedParentFileIEN<br />CPRSOrder.CPRSOrder.ItemOrderedParentFileNumber</td>
       <td> </td>
       <td> </td>
@@ -1007,7 +1016,7 @@ pharmacy (med).stop</td> </tr>
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025 <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#1.5.30 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Sun, May 25, 2025 09:24+0000">2025-05-25</span>
+          IG &#169; 2025 <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#1.6.49 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Jun 13, 2025 16:12+0000">2025-06-13</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

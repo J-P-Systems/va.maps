@@ -57,16 +57,18 @@ Usage: #definition
 * group[=].element[=].target.dependsOn[=].value = "No laterality"
 * group[=].element[+].code = #4688640
 * group[=].element[=].display = "AXILLARY"
+* group[=].element[=].target.code = #764473004
 * group[=].element[=].target.display = "764473004 |Skin structure of left axilla (body structure)|
 20437008 |Structure of left axillary region (body structure)|"
-* group[=].element[=].target.equivalence = #unmatched
+* group[=].element[=].target.equivalence = #equal
 * group[=].element[=].target.dependsOn[+].property = "condition"
 * group[=].element[=].target.dependsOn[=].value = "Laterality Left"
 * group[=].element[+].code = #4688640
 * group[=].element[=].display = "AXILLARY"
+* group[=].element[=].target.code = #764474005
 * group[=].element[=].target.display = "764474005 |Skin structure of right axilla (body structure)|
 19654004 |Structure of right axillary region (body structure)|"
-* group[=].element[=].target.equivalence = #unmatched
+* group[=].element[=].target.equivalence = #equal
 * group[=].element[=].target.dependsOn[+].property = "condition"
 * group[=].element[=].target.dependsOn[=].value = "Laterality Right"
 * group[=].element[+].code = #4688642
@@ -485,6 +487,10 @@ Description: "FHIR Target ValueSet for Terminology Maps [VF_VitalsBodySite](Conc
 * include http://snomed.info/sct#128617001 "Arteriovenous fistula (morphologic abnormality)"
 * include http://snomed.info/sct#422543003 "Structure of axillary fossa (body structure)
 76261009 |Skin structure of axilla (body structure)|"
+* include http://snomed.info/sct#764473004 "764473004 |Skin structure of left axilla (body structure)|
+20437008 |Structure of left axillary region (body structure)|"
+* include http://snomed.info/sct#764474005 "764474005 |Skin structure of right axilla (body structure)|
+19654004 |Structure of right axillary region (body structure)|"
 * include http://snomed.info/sct#840581000 "Structure of peripheral artery (body structure)"
 * include http://snomed.info/sct#17137000 "Structure of brachial artery (body structure)"
 * include http://snomed.info/sct#723961002 "Structure of left brachial artery (body structure)"

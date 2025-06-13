@@ -7,7 +7,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Procedure: Radiology - Mappings - US Veterans Health Administration FHIR Map Set Implementation Guide v1.5.30</title>
+    <title>Procedure: Radiology - Mappings - US Veterans Health Administration FHIR Map Set Implementation Guide v1.6.49</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -65,7 +65,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">US Veterans Health Administration FHIR Map Set Implementation Guide</span>
             <br/>
-            <span style="display:inline-block;">1.5.30 - 250601
+            <span style="display:inline-block;">1.6.49 - 250701
 
 
 
@@ -264,7 +264,7 @@
         
           Active
           
-            as of 2025-05-25
+            as of 2025-06-13
           
         
       </td>
@@ -297,6 +297,7 @@
   <thead>
     <tr>
       <th>FHIR Path</th>
+      <th>VistA</th>
       <th>CDW</th>
       <th>SDA</th>
       <th>VPR</th>
@@ -305,68 +306,79 @@
   <tbody>
     <tr>
       <td>Procedure.status</td>
-      <td> </td>
+      <td>72-.01</td>
+      <td>Dim.RadiologyExamStatus.RadiologyExamStatus</td>
       <td> </td>
       <td> </td>
     </tr>
     <tr>
       <td>Procedure.statusReason.text</td>
-      <td> </td>
+      <td>75.2-.01</td>
+      <td>Dim.RadiologyHoldCancelReason.RadiologyHoldCancelReason</td>
       <td> </td>
       <td> </td>
     </tr>
     <tr>
       <td>Procedure.category.text</td>
-      <td>Rad.RadiologyRegisteredExam.ImagingTypeIEN<br />Dim.ImagingType.ImagingType</td>
+      <td>79.2-.01</td>
+      <td>Dim.ImagingType.ImagingType</td>
       <td> </td>
       <td> </td>
     </tr>
     <tr>
       <td>Procedure.code.coding</td>
+      <td>81-</td>
       <td> </td>
       <td> </td>
       <td> </td>
     </tr>
     <tr>
       <td>Procedure.code.coding.code</td>
-      <td> </td>
+      <td>81-.01</td>
+      <td>Dim.CPT.CPTCode<br />Dim.CPT.CPTCode</td>
       <td> </td>
       <td> </td>
     </tr>
     <tr>
       <td>Procedure.code.coding.display</td>
-      <td> </td>
+      <td>81-2</td>
+      <td>Dim.CPT.CPTName<br />Dim.CPT.CPTName</td>
       <td> </td>
       <td> </td>
     </tr>
     <tr>
       <td>Procedure.subject</td>
+      <td>70-.01</td>
       <td>Patient.RadiologyPatient.PatientIEN<br />Rad.RadiologyExam.PatientIEN<br />Rad.RadiologyExamActivityLog.PatientIEN<br />Rad.RadiologyExamContrastMedia.PatientIEN<br />Rad.RadiologyExamCPTModifier.PatientIEN<br />Rad.RadiologyExamMedication.PatientIEN<br />Rad.RadiologyExamSecondaryDiagnosticCode.PatientIEN<br />Rad.RadiologyExamStatusList.PatientIEN<br />Rad.RadiologyFilmRegistry.PatientIEN<br />Rad.RadiologyRegisteredExam.PatientIEN</td>
       <td> </td>
       <td> </td>
     </tr>
     <tr>
       <td>Procedure.encounter</td>
+      <td>70.03-27</td>
       <td>Rad.RadiologyExam.VisitIEN</td>
       <td> </td>
       <td> </td>
     </tr>
     <tr>
       <td>Procedure.performedDateTime</td>
+      <td>70.02-.01</td>
       <td>Rad.RadiologyExam.ExamDateTime<br />Rad.RadiologyExamActivityLog.ExamDateTime<br />Rad.RadiologyExamContrastMedia.ExamDateTime<br />Rad.RadiologyExamCPTModifier.ExamDateTime<br />Rad.RadiologyExamMedication.ExamDateTime<br />Rad.RadiologyExamSecondaryDiagnosticCode.ExamDateTime<br />Rad.RadiologyExamStatusList.ExamDateTime<br />Rad.RadiologyExamTechnologist.ExamDateTime<br />Rad.RadiologyRegisteredExam.ExamDateTime</td>
       <td>RadOrder.Result.FromTime</td>
       <td> </td>
     </tr>
     <tr>
       <td>Procedure.performer.actor</td>
+      <td>70.03-15</td>
       <td>Rad.RadiologyExam.PrimaryInterpretingStaffIEN</td>
       <td> </td>
       <td> </td>
     </tr>
     <tr>
       <td>Procedure.location</td>
-      <td>Rad.RadiologyRegisteredExam.RadiologyLocationIEN<br />Dim.RadiologyLocation.LocationIEN</td>
-      <td>RadOrder.Result.EnteredAt<br />RadOrder.Result.PerformedAt</td>
+      <td>79.1-.01</td>
+      <td>Dim.RadiologyLocation.LocationIEN</td>
+      <td> </td>
       <td> </td>
     </tr>
   </tbody>
@@ -768,7 +780,7 @@ RadOrder.Result.PerformedAt</td> </tr>
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025 <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#1.5.30 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Sun, May 25, 2025 09:24+0000">2025-05-25</span>
+          IG &#169; 2025 <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#1.6.49 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Jun 13, 2025 16:12+0000">2025-06-13</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

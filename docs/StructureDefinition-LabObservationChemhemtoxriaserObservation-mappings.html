@@ -7,7 +7,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Lab Observation: Chem, hem, tox, ria, ser Observation - Mappings - US Veterans Health Administration FHIR Map Set Implementation Guide v1.5.30</title>
+    <title>Lab Observation: Chem, hem, tox, ria, ser Observation - Mappings - US Veterans Health Administration FHIR Map Set Implementation Guide v1.6.49</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -65,7 +65,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">US Veterans Health Administration FHIR Map Set Implementation Guide</span>
             <br/>
-            <span style="display:inline-block;">1.5.30 - 250601
+            <span style="display:inline-block;">1.6.49 - 250701
 
 
 
@@ -264,7 +264,7 @@
         
           Draft
           
-            as of 2025-05-25
+            as of 2025-06-13
           
         
       </td>
@@ -297,6 +297,7 @@
   <thead>
     <tr>
       <th>FHIR Path</th>
+      <th>VistA</th>
       <th>CDW</th>
       <th>SDA</th>
       <th>VPR</th>
@@ -305,104 +306,121 @@
   <tbody>
     <tr>
       <td>Observation.effectiveDateTime</td>
+      <td>63.04-.01</td>
       <td>Chem.LabChem.LabChemSpecimenDateTime<br />Chem.LabPanel.LabChemSpecimenDateTime<br />Chem.OrderedLabPanel.LabChemSpecimenDateTime<br />Chem.PatientLabChem.LabChemSpecimenDateTime</td>
       <td>LabOrder.TestItemCode[LabTestItem].Description<br />LabOrder.PerformedAt[Organization].Description</td>
       <td>panel.collected<br />accession.collected<br />accession.test<br />lab.collected</td>
     </tr>
     <tr>
       <td>Observation.note</td>
+      <td>63.041-.01</td>
       <td>Chem.LabPanel.LabPanelComment</td>
-      <td>LabOrder.Result.Comments</td>
+      <td> </td>
       <td>panel.comment<br />accession.comment<br />lab.comment</td>
     </tr>
     <tr>
       <td>Observation.performer[va-at]</td>
+      <td>63.04-.112</td>
       <td>Chem.LabChem.AccessionInstitutionIEN<br />Chem.PatientLabChem.AccessionInstitutionIEN</td>
       <td>LabOrder.Result.EnteredAt</td>
       <td>panel.facility (&gt;4-.01)<br />panel.facility (&gt;4-99)<br />accession.facility (&gt;4-.01)<br />accession.facility (&gt;4-99)<br />lab.facility (&gt;4-.01)<br />lab.facility (&gt;4-99)</td>
     </tr>
     <tr>
       <td>Observation.performer[va-by]</td>
+      <td>63.04-.04</td>
       <td> </td>
       <td>LabOrder.Result.VerifiedBy</td>
       <td> </td>
     </tr>
     <tr>
       <td>Observation.specimen</td>
+      <td>63.04-.06</td>
       <td>Chem.LabChem.ShortAccessionNumber<br />Chem.PatientLabChem.ShortAccessionNumber</td>
       <td>LabOrder.Extension[ResultExtension].GroupName</td>
       <td>panel.groupName<br />accession.groupName<br />accession.name (&gt;68-.01)<br />lab.groupName</td>
     </tr>
     <tr>
       <td>Observation.referenceRange.high</td>
-      <td> </td>
+      <td>60.01-2</td>
+      <td>Dim.LabChemTestSpecimen.HighReference</td>
       <td> </td>
       <td> </td>
     </tr>
     <tr>
       <td>Observation.referenceRange.low</td>
-      <td> </td>
+      <td>60.01-1</td>
+      <td>Dim.LabChemTestSpecimen.LowReference</td>
       <td> </td>
       <td> </td>
     </tr>
     <tr>
       <td>Observation.identifier.value</td>
+      <td>63.04-.001</td>
       <td> </td>
       <td> </td>
       <td> </td>
     </tr>
     <tr>
       <td>Observation.interpretation</td>
+      <td>63.04-2+through+862</td>
       <td> </td>
       <td> </td>
       <td> </td>
     </tr>
     <tr>
       <td>Observation.code.coding</td>
+      <td>95.3-</td>
       <td> </td>
       <td> </td>
       <td> </td>
     </tr>
     <tr>
       <td>Observation.code.coding.code</td>
-      <td> </td>
+      <td>95.3-.01</td>
+      <td>Dim.LOINC.LOINC</td>
       <td> </td>
       <td> </td>
     </tr>
     <tr>
       <td>Observation.code.coding.display</td>
-      <td> </td>
+      <td>95.3-1</td>
+      <td>Dim.LOINC.Component</td>
       <td> </td>
       <td> </td>
     </tr>
     <tr>
       <td>Observation.issued</td>
+      <td>63.04-.03</td>
       <td>Chem.LabChem.LabChemCompleteDateTime<br />Chem.LabPanel.LabChemCompleteDateTime<br />Chem.OrderedLabPanel.LabChemCompleteDateTime<br />Chem.PatientLabChem.LabChemCompleteDateTime</td>
       <td>LabOrder.Result.ResultStatus<br />LabOrder.Result.ResultTime<br />LabOrder.ResultItem[LabResultItem].TestItemStatus</td>
       <td>panel.resulted<br />panel.status<br />accession.resulted<br />accession.status<br />lab.resulted<br />lab.status</td>
     </tr>
     <tr>
       <td>Observation.status</td>
+      <td>63.04-.03</td>
       <td>Chem.LabChem.LabChemCompleteDateTime<br />Chem.LabPanel.LabChemCompleteDateTime<br />Chem.OrderedLabPanel.LabChemCompleteDateTime<br />Chem.PatientLabChem.LabChemCompleteDateTime</td>
       <td>LabOrder.Result.ResultStatus<br />LabOrder.Result.ResultTime<br />LabOrder.ResultItem[LabResultItem].TestItemStatus</td>
       <td>panel.resulted<br />panel.status<br />accession.resulted<br />accession.status<br />lab.resulted<br />lab.status</td>
     </tr>
     <tr>
       <td>Observation.valueQuantity.value</td>
+      <td>63.04-2+through+862</td>
       <td> </td>
       <td> </td>
       <td> </td>
     </tr>
     <tr>
       <td>Observation.valueQuantity.unit</td>
-      <td> </td>
+      <td>60.01-6</td>
+      <td>Dim.LabChemTestSpecimen.Units</td>
       <td> </td>
       <td> </td>
     </tr>
     <tr>
       <td>Observation.subject</td>
+      <td>63-.01</td>
       <td>Micro.AntibioticSensitivity.LRDFN<br />Micro.AntibioticSensitivityComment.LRDFN<br />Micro.BacteriologyReports.LRDFN<br />Micro.MicroAntibioticLevel.LRDFN<br />Micro.MicroAudit.LRDFN<br />Micro.Microbiology.LRDFN<br />Micro.MicroOrderedTest.LRDFN<br />Micro.MicroSterilityResults.LRDFN<br />Micro.MycobacteriologyReports.LRDFN<br />Micro.Mycology.LRDFN<br />Micro.MycologyReports.LRDFN<br />Micro.Parasitology.LRDFN<br />Micro.ParasitologyReports.LRDFN<br />Micro.ParasitologyStage.LRDFN<br />Micro.Virology.LRDFN<br />Micro.VirologyReports.LRDFN<br />Pathology.Autopsy.LRDFN<br />Pathology.CytoOrganTissueFunction.StaffIEN<br />SStaff.SMicroOrderedTest.LRDFN</td>
-      <td>Patient.Extension[PatientExtension].VeteranLrdfn</td>
+      <td> </td>
       <td>demographics.lrdfn</td>
     </tr>
   </tbody>
@@ -1084,7 +1102,7 @@ lab.groupName</td> </tr>
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025 <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#1.5.30 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Sun, May 25, 2025 09:24+0000">2025-05-25</span>
+          IG &#169; 2025 <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#1.6.49 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Jun 13, 2025 16:12+0000">2025-06-13</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

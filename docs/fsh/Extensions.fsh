@@ -27,19 +27,19 @@ Context: MedicationRequest
 Extension: OrganizationAllowMultipleBedsections
 Id: organization-allowMultipleBedsections
 Description: "Extension organization-allowMultipleBedsections"
-Context: Organization
+Context: http://hl7.org/fhir/StructureDefinition/Organization
 * value[x] only boolean
 
 Extension: OrganizationOneOutpatVisitOnBillOnly
 Id: organization-oneOutpatVisitOnBillOnly
 Description: "Extension organization-oneOutpatVisitOnBillOnly"
-Context: Organization
+Context: http://hl7.org/fhir/StructureDefinition/Organization
 * value[x] only boolean
 
 Extension: OrganizationAnotherCompanyProcessesInpatClaims
 Id: organization-anotherCompanyProcessesInpatClaims
 Description: "Extension organization-anotherCompanyProcessesInpatClaims"
-Context: Organization
+Context: http://hl7.org/fhir/StructureDefinition/Organization
 * value[x] only boolean
 
 Extension: MedicationrequestRecordedLocation
@@ -57,7 +57,7 @@ Context: MedicationRequest
 Extension: PatientAgeAtVaccination
 Id: patient-ageAtVaccination
 Description: "Extension patient-ageAtVaccination"
-Context: Patient
+Context: http://hl7.org/fhir/StructureDefinition/Patient
 * value[x] only string
 
 Extension: AccountStatementGenerationDay

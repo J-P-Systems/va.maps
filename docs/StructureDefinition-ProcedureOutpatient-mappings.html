@@ -7,7 +7,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Procedure: Outpatient - Mappings - US Veterans Health Administration FHIR Map Set Implementation Guide v1.5.30</title>
+    <title>Procedure: Outpatient - Mappings - US Veterans Health Administration FHIR Map Set Implementation Guide v1.6.49</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -65,7 +65,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">US Veterans Health Administration FHIR Map Set Implementation Guide</span>
             <br/>
-            <span style="display:inline-block;">1.5.30 - 250601
+            <span style="display:inline-block;">1.6.49 - 250701
 
 
 
@@ -264,7 +264,7 @@
         
           Active
           
-            as of 2025-05-25
+            as of 2025-06-13
           
         
       </td>
@@ -297,6 +297,7 @@
   <thead>
     <tr>
       <th>FHIR Path</th>
+      <th>VistA</th>
       <th>CDW</th>
       <th>SDA</th>
       <th>VPR</th>
@@ -305,68 +306,79 @@
   <tbody>
     <tr>
       <td>Procedure.subject</td>
-      <td>Outpat.VProcedure.PatientIEN<br />Outpat.VProcedureCPTModifier.PatientIEN<br />Outpat.VProcedureDiagnosis.PatientIEN<br />Outpat.WorkloadVProcedure.PatientIEN<br />Outpat.WorkloadVProcedureCPTModifier.PatientIEN<br />Outpat.WorkloadVProcedureDiagnosis.PatientIEN</td>
+      <td>9000001-.01</td>
+      <td> </td>
       <td> </td>
       <td> </td>
     </tr>
     <tr>
       <td>Procedure.encounter</td>
+      <td>9000010.18-.03</td>
       <td>Outpat.VProcedure.VisitDateTime<br />Outpat.VProcedure.VisitIEN<br />Outpat.VProcedureCPTModifier.VisitDateTime<br />Outpat.VProcedureCPTModifier.VisitIEN<br />Outpat.VProcedureDiagnosis.VisitDateTime<br />Outpat.VProcedureDiagnosis.VisitIEN<br />Outpat.WorkloadVProcedure.VisitDateTime<br />Outpat.WorkloadVProcedure.VisitIEN<br />Outpat.WorkloadVProcedureCPTModifier.VisitDateTime<br />Outpat.WorkloadVProcedureCPTModifier.VisitIEN<br />Outpat.WorkloadVProcedureDiagnosis.VisitDateTime<br />Outpat.WorkloadVProcedureDiagnosis.VisitIEN</td>
       <td>Procedure.EncounterNumber<br />Procedure.EnteredAt<br />Procedure.EnteredBy<br />Procedure.EnteredOn<br />Procedure.Extension[ProcedureExtension].Location</td>
       <td> </td>
     </tr>
     <tr>
       <td>Procedure.code.text</td>
-      <td>Outpat.VProcedure.ProviderNarrativeIEN<br />Outpat.WorkloadVProcedure.ProviderNarrativeIEN<br />Dim.ProviderNarrative.ProviderNarrative</td>
-      <td>Procedure.Procedure<br />Procedure.Procedure[CodeTableDetail.Procedure].OriginalText</td>
+      <td>9999999.27-.01</td>
+      <td>Dim.ProviderNarrative.ProviderNarrative</td>
+      <td> </td>
       <td> </td>
     </tr>
     <tr>
       <td>Procedure.reasonCode</td>
+      <td>80-</td>
       <td> </td>
       <td> </td>
       <td> </td>
     </tr>
     <tr>
       <td>Procedure.reasonCode.coding.code</td>
+      <td>80-.01</td>
       <td>Dim.ICD10.ICD10Code<br />Dim.ICD9.ICD9Code</td>
       <td> </td>
       <td> </td>
     </tr>
     <tr>
       <td>Procedure.performedDateTime</td>
+      <td>9000010.18-1201</td>
       <td>Outpat.VProcedure.EventDateTime<br />Outpat.VProcedureDiagnosis.EventDateTime<br />Outpat.WorkloadVProcedure.EventDateTime<br />Outpat.WorkloadVProcedureDiagnosis.EventDateTime</td>
       <td>Procedure.FromTime<br />Procedure.ProcedureTime</td>
       <td> </td>
     </tr>
     <tr>
       <td>Procedure.performer.actor</td>
+      <td>9000010.18-1204</td>
       <td>Outpat.VProcedure.EncounterProviderIEN<br />Outpat.WorkloadVProcedure.EncounterProviderIEN</td>
       <td>Procedure.Clinician</td>
       <td> </td>
     </tr>
     <tr>
       <td>Procedure.note.text</td>
+      <td>9000010.18-81101</td>
       <td>Outpat.VProcedure.Comments<br />Outpat.WorkloadVProcedure.Comments</td>
       <td>Procedure.Extension[ProcedureExtension].Comments</td>
       <td> </td>
     </tr>
     <tr>
       <td>Procedure.code.coding</td>
-      <td>Outpat.VProcedure.CPTIEN<br />Outpat.VProcedureCPTModifier.CPTIEN<br />Outpat.VProcedureDiagnosis.CPTIEN<br />Outpat.WorkloadVProcedure.CPTIEN<br />Outpat.WorkloadVProcedureCPTModifier.CPTIEN<br />Outpat.WorkloadVProcedureDiagnosis.CPTIEN</td>
-      <td>Encounter.Extension[EncounterExtension].Cpt<br />Encounter.Extension[EncounterExtension].Cpt<br />Procedure.Procedure<br />Procedure.Procedure[CodeTableDetail.Procedure].Code</td>
+      <td>81-</td>
+      <td> </td>
+      <td> </td>
       <td>visit.cpt [m] (&gt;81-.01)<br />visit.cpt [m] (&gt;81-2)<br />visit.type (&gt;81-.01)<br />visit.type (&gt;81-2)</td>
     </tr>
     <tr>
       <td>Procedure.code.coding.code</td>
-      <td>Outpat.VProcedure.CPTIEN<br />Outpat.VProcedureCPTModifier.CPTIEN<br />Outpat.VProcedureDiagnosis.CPTIEN<br />Outpat.WorkloadVProcedure.CPTIEN<br />Outpat.WorkloadVProcedureCPTModifier.CPTIEN<br />Outpat.WorkloadVProcedureDiagnosis.CPTIEN<br />Dim.CPT.CPTCode<br />Dim.CPT.CPTCode</td>
-      <td>Encounter.Extension[EncounterExtension].Cpt<br />Encounter.Extension[EncounterExtension].Cpt<br />Procedure.Procedure<br />Procedure.Procedure[CodeTableDetail.Procedure].Code</td>
+      <td>81-.01</td>
+      <td>Dim.CPT.CPTCode<br />Dim.CPT.CPTCode</td>
+      <td> </td>
       <td>visit.cpt [m] (&gt;81-.01)<br />visit.cpt [m] (&gt;81-2)<br />visit.type (&gt;81-.01)<br />visit.type (&gt;81-2)</td>
     </tr>
     <tr>
       <td>Procedure.code.coding.display</td>
-      <td>Outpat.VProcedure.CPTIEN<br />Outpat.VProcedureCPTModifier.CPTIEN<br />Outpat.VProcedureDiagnosis.CPTIEN<br />Outpat.WorkloadVProcedure.CPTIEN<br />Outpat.WorkloadVProcedureCPTModifier.CPTIEN<br />Outpat.WorkloadVProcedureDiagnosis.CPTIEN<br />Dim.CPT.CPTName<br />Dim.CPT.CPTName</td>
-      <td>Encounter.Extension[EncounterExtension].Cpt<br />Encounter.Extension[EncounterExtension].Cpt<br />Procedure.Procedure<br />Procedure.Procedure[CodeTableDetail.Procedure].Code</td>
+      <td>81-2</td>
+      <td>Dim.CPT.CPTName<br />Dim.CPT.CPTName</td>
+      <td> </td>
       <td>visit.cpt [m] (&gt;81-.01)<br />visit.cpt [m] (&gt;81-2)<br />visit.type (&gt;81-.01)<br />visit.type (&gt;81-2)</td>
     </tr>
   </tbody>
@@ -988,7 +1000,7 @@ visit.type (&gt;81-2)</td> </tr>
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025 <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#1.5.30 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Sun, May 25, 2025 09:24+0000">2025-05-25</span>
+          IG &#169; 2025 <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#1.6.49 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Jun 13, 2025 16:12+0000">2025-06-13</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -7,7 +7,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Condition: Problem - Mappings - US Veterans Health Administration FHIR Map Set Implementation Guide v1.5.30</title>
+    <title>Condition: Problem - Mappings - US Veterans Health Administration FHIR Map Set Implementation Guide v1.6.49</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -65,7 +65,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">US Veterans Health Administration FHIR Map Set Implementation Guide</span>
             <br/>
-            <span style="display:inline-block;">1.5.30 - 250601
+            <span style="display:inline-block;">1.6.49 - 250701
 
 
 
@@ -264,7 +264,7 @@
         
           Draft
           
-            as of 2025-05-25
+            as of 2025-06-13
           
         
       </td>
@@ -297,6 +297,7 @@
   <thead>
     <tr>
       <th>FHIR Path</th>
+      <th>VistA</th>
       <th>CDW</th>
       <th>SDA</th>
       <th>VPR</th>
@@ -305,72 +306,84 @@
   <tbody>
     <tr>
       <td>Condition.identifier.value</td>
+      <td>9000011-.001</td>
       <td> </td>
       <td> </td>
       <td> </td>
     </tr>
     <tr>
       <td>Condition.clinicalStatus</td>
+      <td>9000011-.12</td>
       <td>Outpat.ProblemList.ActiveFlag</td>
       <td>Problem.Extension[ProblemExtension].Status</td>
       <td>problem.status</td>
     </tr>
     <tr>
       <td>Condition.code.coding[va-icd]</td>
-      <td>Outpat.ProblemList.ICDIEN</td>
+      <td>80-</td>
+      <td> </td>
       <td> </td>
       <td>problem.icd (&gt;80-.01)<br />problem.icdd (&gt;80-68)</td>
     </tr>
     <tr>
       <td>Condition.code.coding[va-icd].code</td>
-      <td>Outpat.ProblemList.ICDIEN<br />Dim.ICD10.ICD10Code<br />Dim.ICD9.ICD9Code</td>
+      <td>80-.01</td>
+      <td>Dim.ICD10.ICD10Code<br />Dim.ICD9.ICD9Code</td>
       <td> </td>
       <td>problem.icd (&gt;80-.01)<br />problem.icdd (&gt;80-68)</td>
     </tr>
     <tr>
       <td>Condition.code.coding[va-sct].code</td>
+      <td>9000011-80001</td>
       <td>Outpat.ProblemList.SNOMEDCTConceptCode</td>
       <td>Problem.Extension[ProblemExtension].Problem</td>
       <td>problem.sctc<br />problem.sctt</td>
     </tr>
     <tr>
       <td>Condition.code.text</td>
+      <td>9000011-.05</td>
       <td>Outpat.ProblemList.ProviderNarrativeIEN</td>
       <td>Problem.Extension[ProblemExtension].ProblemDetails</td>
       <td>problem.name (&gt;9999999.27-.01)</td>
     </tr>
     <tr>
       <td>Condition.subject</td>
-      <td>Outpat.ProblemList.PatientIEN</td>
+      <td>9000001-.01</td>
+      <td> </td>
       <td> </td>
       <td> </td>
     </tr>
     <tr>
       <td>Condition.onsetDateTime</td>
+      <td>9000011-.13</td>
       <td>Outpat.ProblemList.OnsetDateTime</td>
       <td>Problem.Extension[ProblemExtension].FromTime<br />Problem.Extension[ProblemExtension].OnsetDate</td>
       <td>problem.onset</td>
     </tr>
     <tr>
       <td>Condition.recordedDate</td>
+      <td>9000011-.08</td>
       <td>Outpat.ProblemList.EnteredDateTime</td>
       <td>Problem.EnteredOn</td>
       <td>problem.entered</td>
     </tr>
     <tr>
       <td>Condition.recorder</td>
+      <td>9000011-1.04</td>
       <td>Outpat.ProblemList.RecordingProviderIEN</td>
       <td> </td>
       <td> </td>
     </tr>
     <tr>
       <td>Condition.verificationStatus</td>
+      <td>9000011-1.02</td>
       <td>Outpat.ProblemList.ProblemListCondition</td>
       <td>Problem.Extension[ProblemExtension].IsRemoved<br />Problem.Extension[ProblemExtension].IsVerified<br />Problem.Extension[ProblemExtension].Removed</td>
       <td>problem.removed<br />problem.unverified</td>
     </tr>
     <tr>
       <td>Condition.abatementDateTime</td>
+      <td>9000011-1.07</td>
       <td>Outpat.ProblemList.ResolvedDateTime</td>
       <td>Problem.Extension[ProblemExtension].ToTime</td>
       <td>problem.resolved</td>
@@ -923,7 +936,7 @@ OR &lt; 272379006 |Event|</td> </tr>
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2025 <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#1.5.30 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Sun, May 25, 2025 09:24+0000">2025-05-25</span>
+          IG &#169; 2025 <a style="color:var(--footer-hyperlink-text-color)" href="https://www.va.gov">VA</a>.  Package va.maps#1.6.49 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Jun 13, 2025 16:12+0000">2025-06-13</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

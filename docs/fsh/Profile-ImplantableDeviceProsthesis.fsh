@@ -10,6 +10,20 @@ Description: "This StructureDefinition contains the maps for VistA file PROSTHES
 * identifier.system = "http://va.gov/identifiers/$Sta3n/131.01"
 * deviceName.type = #model-name
 * type = http://snomed.info/sct#63653004 "Biomedical device"
+* patient obeys idp-27-1399
+* owner obeys idp-27-1807
+
+Invariant: idp-27-1399
+Description: "If {.47>130.01} then reference /Patient based on (130-.01)"
+Severity: #warning
+Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
+
+Invariant: idp-27-1807
+Description: "If {.47>130.01} then reference /Organization based on (130-50)"
+Severity: #warning
+Expression: "true"
+* extension[http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice].valueBoolean = true
 
 Mapping: source-to-ImplantableDeviceProsthesis
 Id: vista
@@ -25,8 +39,8 @@ Source: ImplantableDeviceProsthesis
 * deviceName.type -> "1385-1: fixed value = #model-name" "generated from mapParameter line 1"
 * modelNumber -> "1387: source value based on PROSTHESIS INSTALLED - MODEL (130.01-2)"
 * type -> "1393: fixed value = http://snomed.info/sct#63653004 \"Biomedical device\"" "required, must support. SCT codes under 49062001 (Device)"
-* patient -> "1399: reference based on SURGERY - PATIENT (130-.01)" "Surgery points to Prosthesis Installed in field .47"
-* owner -> "1807: reference based on SURGERY - DIVISION (130-50)"
+* patient -> "1399: reference based on SURGERY - PATIENT (130-.01) if {.47>130.01}" "Surgery points to Prosthesis Installed in field .47"
+* owner -> "1807: reference based on SURGERY - DIVISION (130-50) if {.47>130.01}"
 * udiCarrier.deviceIdentifier -> "1353: target not supported"
 * status -> "1355: target not supported"
 * distinctIdentifier -> "1363: target not supported"
