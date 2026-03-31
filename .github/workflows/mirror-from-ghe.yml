@@ -16,6 +16,10 @@ jobs:
           env:
             VA_USER: ${{ vars.VA_GHE_USER }}
             VA_TOKEN: ${{ secrets.VA_GHE_TOKEN }}
+
+        - name: Clean Pull Refs 
+          run: cd va-fhir-cop-mapset-ig.git ; git for-each-ref --format="delete %(refname)" refs/pull | git update-ref --stdin
+
         - name: Update mirror
           run: cd va-fhir-cop-mapset-ig.git ; git push --mirror https://${JP_USER}:${JP_TOKEN}@github.com/J-P-Systems/va-fhir-cop-mapset-ig.git
           env:
